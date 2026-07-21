@@ -18,10 +18,13 @@ NORMALIZATION = {
 
 
 def build_loaders(root: Path, image_size: int, batch_size: int, validation_ratio: float, seed: int,
-                  train_size: int | None = None, normalization: str = "default"):
+                  train_size: int | None = None, normalization: str = "default", crop_augmentation: bool = False):
     mean, std = NORMALIZATION[normalization]
+    # RandomResizedCrop keeps native sharpness for high-res data; plain Resize is right for tiny images.
+    resize = (transforms.RandomResizedCrop(image_size, scale=(0.7, 1.0))
+              if crop_augmentation else transforms.Resize((image_size, image_size)))
     train_transform = transforms.Compose([
-        transforms.Resize((image_size, image_size)),
+        resize,
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(mean, std),
