@@ -74,7 +74,9 @@ export default function Home() {
     }
   }
 
-  const percent = analysis ? Math.round(analysis.p_ai * 100) : 0;
+  // A statistical model can never honestly claim 0% or 100%; clamp the display.
+  const percent = analysis ? Math.min(99.9, Math.max(0.1, analysis.p_ai * 100)) : 0;
+  const percentLabel = percent.toFixed(1);
 
   return (
     <main>
@@ -150,7 +152,7 @@ export default function Home() {
                 <div className="probability">
                   <div className="probability-labels">
                     <span>Gerçek</span>
-                    <strong>p(AI) = %{percent}</strong>
+                    <strong>p(AI) = %{percentLabel}</strong>
                     <span>AI</span>
                   </div>
                   <div className="probability-track">
