@@ -141,8 +141,8 @@ Train a model **only on real photographs** and flag anything that deviates as su
 - [x] Baseline training run finished (20 epochs, MPS): best val accuracy **96.8%**
   - Held-out test (20k): **accuracy 96.75%, F1 0.967, ROC-AUC 0.995**
   - External OOD set (995 high-res images): **accuracy 77.1%, F1 0.570, ROC-AUC 0.800** — the expected resolution-driven generalization gap; motivates Phases 2–3
-- [ ] Phase 2a: embeddings + classical classifiers (LogReg / SVM / RF / boosting) comparison table
-- [ ] Phase 2b: k-means + t-SNE/UMAP embedding analysis, error clustering
+- [x] Phase 2a: embeddings + classical classifiers — all four match the CNN head (±0.2 pts) → representation is the bottleneck, not the classifier (see `ml/EXPERIMENTS.md` E2)
+- [x] Phase 2b: k-means + t-SNE analysis — test embeddings nearly linearly separable (purity 0.965); structure collapses on OOD (purity 0.749, ARI 0.013); errors concentrate in the borderline band |p−0.5|<0.1 (see E3)
 - [ ] Phase 2c: learning-curve experiment (10k → 90k)
 - [ ] Phase 3: transfer-learning comparison (ResNet-18 / EfficientNet) + frequency-domain ensemble
 - [ ] Phase 4: high-res strategy (patches / new dataset)
