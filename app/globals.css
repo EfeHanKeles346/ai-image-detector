@@ -51,3 +51,19 @@ aside { margin-top: 20px; padding: 16px 18px; border: 1px solid #bfdbfe; border-
   .grid { grid-template-columns: 1fr; }
   .intro h1 { font-size: 27px; }
 }
+
+.result h3 { margin: 16px 0 6px; }
+.result > p { margin: 0 0 18px; max-width: 340px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.error-text { color: #b42318; font-size: 13px; margin-bottom: 12px; }
+.result-icon.verdict-ai { background: #fef3f2; }
+.result-icon.verdict-real { background: #ecfdf3; }
+.result-icon.verdict-uncertain { background: #fffaeb; }
+.probability { width: 100%; max-width: 340px; margin-bottom: 14px; }
+.probability-labels { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; font-size: 12px; color: var(--muted); }
+.probability-labels strong { color: var(--text); font-size: 14px; }
+.probability-track { height: 10px; border-radius: 6px; background: #e4e7ec; overflow: hidden; }
+.probability-fill { height: 100%; border-radius: 6px; transition: width 0.4s ease; }
+.probability-fill.verdict-ai { background: #d92d20; }
+.probability-fill.verdict-real { background: #12b76a; }
+.probability-fill.verdict-uncertain { background: #f79009; }
+.model-info { font-size: 12px !important; }
