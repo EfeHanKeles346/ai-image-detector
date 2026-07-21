@@ -1,0 +1,14 @@
+[project]
+name = "pixelproof-ml"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "torch>=2.3",
+  "torchvision>=0.18",
+  "scikit-learn>=1.5",
+  "pillow>=10.0",
+  "pyyaml>=6.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
