@@ -143,7 +143,7 @@ Train a model **only on real photographs** and flag anything that deviates as su
   - External OOD set (995 high-res images): **accuracy 77.1%, F1 0.570, ROC-AUC 0.800** — the expected resolution-driven generalization gap; motivates Phases 2–3
 - [x] Phase 2a: embeddings + classical classifiers — all four match the CNN head (±0.2 pts) → representation is the bottleneck, not the classifier (see `ml/EXPERIMENTS.md` E2)
 - [x] Phase 2b: k-means + t-SNE analysis — test embeddings nearly linearly separable (purity 0.965); structure collapses on OOD (purity 0.749, ARI 0.013); errors concentrate in the borderline band |p−0.5|<0.1 (see E3)
-- [ ] Phase 2c: learning-curve experiment (10k → 90k)
+- [x] Phase 2c: learning curve — accuracy linear in log(data) (93.8% @10k → 96.75% @90k, each doubling ≈ +1 pt); overfitting gap shrinks 5.1 → 1.2 pts; not saturated at 90k (see E4)
 - [ ] Phase 3: transfer-learning comparison (ResNet-18 / EfficientNet) + frequency-domain ensemble
 - [ ] Phase 4: high-res strategy (patches / new dataset)
 - [ ] Phase 5: unsupervised anomaly-detection track (train on real only)

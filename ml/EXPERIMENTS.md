@@ -36,3 +36,19 @@ evidence — key comparisons get ≥3 seeds.
 - **Result (external):** purity collapses to **0.749**, ARI **0.013** — in embedding space the OOD real/AI images are no longer separated; cluster 1 mixes 383 real with 210 AI (31.7% error rate).
 - **Figures:** `artifacts/figures/tsne_test.png`, `artifacts/figures/tsne_external.png`.
 - **Conclusion:** confirms E2. On in-distribution data the learned space is cleanly structured; on OOD data the structure disappears entirely → the model has learned CIFAKE-specific features. The borderline-probability band is a natural candidate for a "not sure" rejection threshold in the product.
+
+## 2026-07-21 — E4: Learning curve / data-size ablation (Phase 2c)
+
+- **Hypothesis (pre-registered):** accuracy grows roughly logarithmically with data; train/val gap widens at small sizes.
+- **Config:** identical to E1 (same seed, arch, hyperparameters, 20 epochs); only training-set size varies. Validation (10k) and test (20k) fixed across runs. Each run trained **from scratch**.
+- **Result:**
+
+| train size | test acc | best val acc | final train−val gap |
+|---|---|---|---|
+| 10k | 93.83% | 93.99% | 5.1 pts |
+| 20k | 94.81% | 94.64% | 3.8 pts |
+| 50k | 95.98% | 95.89% | 2.9 pts |
+| 90k (E1) | 96.75% | 96.83% | 1.2 pts |
+
+- **Figure:** `artifacts/figures/learning_curve.png`.
+- **Conclusion:** hypothesis confirmed on both counts. Accuracy is almost perfectly linear in log(data) — each ~doubling of data buys ≈1 point — and the overfitting gap shrinks monotonically with data (5.1 → 1.2 pts). Notably the curve has **not saturated at 90k**: more CIFAKE-like data would still help in-distribution. But per E2/E3 the binding constraint for real-world performance is representation quality under distribution shift, so Phase 3 (transfer learning) remains the priority over collecting more 32×32 data.

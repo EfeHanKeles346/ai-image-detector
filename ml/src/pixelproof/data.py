@@ -10,7 +10,7 @@ def invert_label(label: int) -> int:
     return 1 - label
 
 
-def build_loaders(root: Path, image_size: int, batch_size: int, validation_ratio: float, seed: int):
+def build_loaders(root: Path, image_size: int, batch_size: int, validation_ratio: float, seed: int, train_size: int | None = None):
     train_transform = transforms.Compose([
         transforms.Resize((image_size, image_size)),
         transforms.RandomHorizontalFlip(),
@@ -26,7 +26,12 @@ def build_loaders(root: Path, image_size: int, batch_size: int, validation_ratio
     deterministic = datasets.ImageFolder(root / "train", transform=validation_transform, target_transform=invert_label)
     indices = torch.randperm(len(augmented), generator=torch.Generator().manual_seed(seed)).tolist()
     val_size = int(len(augmented) * validation_ratio)
-    train = Subset(augmented, indices[val_size:])
+    # Validation always uses the same seeded 10% slice; train_size (learning-curve
+    # experiments) only truncates the remaining training indices.
+    train_indices = indices[val_size:]
+    if train_size is not None:
+        train_indices = train_indices[:train_size]
+    train = Subset(augmented, train_indices)
     validation = Subset(deterministic, indices[:val_size])
     return (
         DataLoader(train, batch_size=batch_size, shuffle=True, num_workers=4, pin_memory=True, persistent_workers=True),
