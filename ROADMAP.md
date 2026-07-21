@@ -148,4 +148,4 @@ Train a model **only on real photographs** and flag anything that deviates as su
 - [ ] Phase 3 (remaining): frequency-domain ensemble; EfficientNet comparison (deprioritized until Phase 4 fixes the data domain)
 - [ ] Phase 4: high-res strategy (patches / new dataset)
 - [ ] Phase 5: unsupervised anomaly-detection track (train on real only)
-- [ ] Phase 6: web integration + demo
+- [x] Phase 6: web demo — FastAPI inference service (dual model, resolution routing, uncertainty band) + upload/analyze UI, verified end-to-end locally
