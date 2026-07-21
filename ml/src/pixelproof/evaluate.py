@@ -13,11 +13,14 @@ from pixelproof.models import create_model
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
 
 
-def eval_transform(image_size: int) -> transforms.Compose:
+def eval_transform(image_size: int, normalization: str = "default") -> transforms.Compose:
+    from pixelproof.data import NORMALIZATION
+
+    mean, std = NORMALIZATION[normalization]
     return transforms.Compose([
         transforms.Resize((image_size, image_size)),
         transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+        transforms.Normalize(mean, std),
     ])
 
 
@@ -76,7 +79,7 @@ def main() -> None:
     model = create_model(config["model"]["name"], dropout=config["model"]["dropout"]).to(device)
     model.load_state_dict(checkpoint["model"])
 
-    transform = eval_transform(config["data"]["image_size"])
+    transform = eval_transform(config["data"]["image_size"], config["data"].get("normalization", "default"))
     test_set = datasets.ImageFolder(Path(config["data"]["root"]) / "test", transform=transform, target_transform=invert_label)
     labels, probabilities = collect_predictions(model, DataLoader(test_set, batch_size=256, num_workers=4), device)
     report("held-out test set", labels, probabilities)

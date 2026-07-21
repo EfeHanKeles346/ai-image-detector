@@ -10,17 +10,26 @@ def invert_label(label: int) -> int:
     return 1 - label
 
 
-def build_loaders(root: Path, image_size: int, batch_size: int, validation_ratio: float, seed: int, train_size: int | None = None):
+# Pretrained backbones expect the statistics they were trained with.
+NORMALIZATION = {
+    "default": ((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+    "imagenet": ((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
+}
+
+
+def build_loaders(root: Path, image_size: int, batch_size: int, validation_ratio: float, seed: int,
+                  train_size: int | None = None, normalization: str = "default"):
+    mean, std = NORMALIZATION[normalization]
     train_transform = transforms.Compose([
         transforms.Resize((image_size, image_size)),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+        transforms.Normalize(mean, std),
     ])
     validation_transform = transforms.Compose([
         transforms.Resize((image_size, image_size)),
         transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+        transforms.Normalize(mean, std),
     ])
     augmented = datasets.ImageFolder(root / "train", transform=train_transform, target_transform=invert_label)
     deterministic = datasets.ImageFolder(root / "train", transform=validation_transform, target_transform=invert_label)

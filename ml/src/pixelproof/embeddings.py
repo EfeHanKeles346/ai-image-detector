@@ -44,7 +44,7 @@ def main() -> None:
     model = create_model(config["model"]["name"], dropout=config["model"]["dropout"]).to(device)
     model.load_state_dict(checkpoint["model"])
 
-    transform = eval_transform(config["data"]["image_size"])
+    transform = eval_transform(config["data"]["image_size"], config["data"].get("normalization", "default"))
     root = Path(config["data"]["root"])
     splits = {
         "train": datasets.ImageFolder(root / "train", transform=transform, target_transform=invert_label),

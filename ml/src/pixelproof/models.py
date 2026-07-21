@@ -2,6 +2,7 @@ from collections.abc import Callable
 
 import torch
 from torch import nn
+from torchvision.models import ResNet18_Weights, resnet18
 
 
 class SmallCNN(nn.Module):
@@ -34,7 +35,24 @@ class SmallCNN(nn.Module):
         return self.classifier(self.features(images)).squeeze(1)
 
 
-MODEL_REGISTRY: dict[str, Callable[..., nn.Module]] = {"small_cnn": SmallCNN}
+class ResNet18Transfer(nn.Module):
+    """ImageNet-pretrained ResNet-18 backbone with a one-logit binary head.
+
+    Mirrors SmallCNN's features/classifier split so embeddings.py and the
+    training loop work unchanged (embeddings are 512-dim here).
+    """
+
+    def __init__(self, dropout: float = 0.0, pretrained: bool = True) -> None:
+        super().__init__()
+        backbone = resnet18(weights=ResNet18_Weights.DEFAULT if pretrained else None)
+        self.features = nn.Sequential(*list(backbone.children())[:-1])
+        self.classifier = nn.Sequential(nn.Flatten(), nn.Dropout(dropout), nn.Linear(512, 1))
+
+    def forward(self, images: torch.Tensor) -> torch.Tensor:
+        return self.classifier(self.features(images)).squeeze(1)
+
+
+MODEL_REGISTRY: dict[str, Callable[..., nn.Module]] = {"small_cnn": SmallCNN, "resnet18": ResNet18Transfer}
 
 
 def create_model(name: str, **kwargs: object) -> nn.Module:

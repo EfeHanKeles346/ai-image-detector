@@ -37,7 +37,7 @@ def main() -> None:
     config = yaml.safe_load(args.config.read_text())
     torch.manual_seed(config["seed"])
     device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
-    train_loader, val_loader = build_loaders(Path(config["data"]["root"]), config["data"]["image_size"], config["training"]["batch_size"], config["data"]["validation_ratio"], config["seed"], args.train_size)
+    train_loader, val_loader = build_loaders(Path(config["data"]["root"]), config["data"]["image_size"], config["training"]["batch_size"], config["data"]["validation_ratio"], config["seed"], args.train_size, config["data"].get("normalization", "default"))
     print(f"run tag={args.tag or 'full'} train_images={len(train_loader.dataset)}")
     model = create_model(config["model"]["name"], dropout=config["model"]["dropout"]).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=config["training"]["learning_rate"], weight_decay=config["training"]["weight_decay"])

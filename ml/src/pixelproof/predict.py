@@ -21,7 +21,7 @@ def main() -> None:
     model.load_state_dict(checkpoint["model"])
     model.eval()
 
-    transform = eval_transform(config["data"]["image_size"])
+    transform = eval_transform(config["data"]["image_size"], config["data"].get("normalization", "default"))
     with torch.no_grad():
         for path in args.images:
             image = transform(Image.open(path).convert("RGB")).unsqueeze(0).to(device)
