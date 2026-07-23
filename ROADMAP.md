@@ -132,7 +132,18 @@ Train a model **only on real photographs** and flag anything that deviates as su
 - Web UI: upload a photo → probability gauge "AI-generated vs real".
 - Report calibrated confidence, not just a hard yes/no.
 
-## 11. Progress Checklist
+## 11. Phase 7 — Manipulation Detection (Module 2) — mentor-approved design
+
+On 2026-07-23 the mentor approved the two-module architecture: **Module 1** (done — the existing real-vs-AI classifiers behind resolution routing) and **Module 2** — a separate detector answering "does this photo contain a locally tampered region?", with optional localization. Rationale: manipulation leaves local traces, not global ones (the Sunak-photo case: a mostly-real photo fools any whole-image classifier). Transfer learning was also explicitly approved.
+
+Planned steps, mirroring the Phase 1→3 methodology (cheap baseline first, learned model second):
+
+- **7a — ELA baseline (hand-written, no training):** Error Level Analysis re-saves the image as JPEG and maps how much each region changes; regions with a different compression history (pasted/inpainted) light up. Known limits (fails on PNG/screenshot pipelines, false-positives on sharp edges) are accepted — it is the SmallCNN of Module 2: quick to build, measurable, and the yardstick the learned model must beat.
+- **7b — Learned detector:** fine-tune a pretrained backbone on a manipulation dataset with ground-truth labels (e.g. CASIA v2). Input-representation ablation planned: raw image vs. ELA map vs. both.
+- **7c — Localization:** patch-based inference producing a "where was it tampered" heatmap.
+- **Integration:** third model in `serve.py` + combined verdict logic (single user-facing verdict: real / fully AI / real-but-tampered / uncertain).
+
+## 12. Progress Checklist
 
 - [x] Datasets inspected (CIFAKE 100k/20k + external OOD set)
 - [x] Python env with PyTorch + MPS
@@ -146,6 +157,12 @@ Train a model **only on real photographs** and flag anything that deviates as su
 - [x] Phase 2c: learning curve — accuracy linear in log(data) (93.8% @10k → 96.75% @90k, each doubling ≈ +1 pt); overfitting gap shrinks 5.1 → 1.2 pts; not saturated at 90k (see E4)
 - [x] Phase 3 (transfer learning): ResNet-18 fine-tune — best test acc **97.66%**, but OOD collapsed to 25.2% due to 32→224 upscale domain shift; control experiment (32px bottleneck) recovers 72% → strongest motivation for Phase 4 (see E5)
 - [ ] Phase 3 (remaining): frequency-domain ensemble; EfficientNet comparison (deprioritized until Phase 4 fixes the data domain)
-- [ ] Phase 4: high-res strategy (patches / new dataset)
+- [x] Phase 4: ResNet-18 retrained on natively high-res GenImage — best OOD discrimination so far (archive1 ROC-AUC 0.80 → **0.888**, AI recall 60% → 89.6%); calibration under distribution shift identified as the remaining gap; CIFAKE forgotten (catastrophic forgetting) → motivates dual-model routing (see E6)
 - [ ] Phase 5: unsupervised anomaly-detection track (train on real only)
 - [x] Phase 6: web demo — FastAPI inference service (dual model, resolution routing, uncertainty band) + upload/analyze UI, verified end-to-end locally
+- [x] Mentor decisions (2026-07-23): transfer learning approved; two-module architecture approved
+- [ ] Phase 7a: ELA baseline script (hand-written) + evaluation on known manipulated samples
+- [ ] Phase 7b: learned manipulation detector (CASIA v2 + transfer learning; input-representation ablation)
+- [ ] Phase 7c: patch-based localization heatmap
+- [ ] Phase 7 integration: Module 2 in serve.py + combined verdict in the demo
+- [ ] E7 (side experiment): evaluate existing models on the HuggingFace art dataset (out-of-domain content)
