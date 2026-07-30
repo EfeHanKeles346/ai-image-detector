@@ -4,8 +4,13 @@ dist/
 .wrangler/
 ml/.venv/
 ml/artifacts/
+!ml/artifacts/figures/
+!ml/artifacts/figures/**
 __pycache__/
 *.pyc
 .DS_Store
 .vinext/
 artifacts_train.log
+
+# macOS on ExFAT writes a 4 KB ._name stub beside every real file (see ROADMAP §2b.8)
+._*
