@@ -33,7 +33,8 @@ header { height: 64px; background: var(--surface); border-bottom: 1px solid var(
 .dropzone span { margin: 7px 0 18px; color: var(--muted); font-size: 12px; }
 .dropzone button, .result button { padding: 10px 16px; border: 0; border-radius: 6px; background: var(--primary); color: white; font-size: 13px; font-weight: 700; }
 .preview { margin-top: 18px; }
-.preview img { display: block; width: 100%; height: 270px; object-fit: contain; background: #eef1f5; border-radius: 7px; }
+.preview { text-align: center; }
+.preview img { display: block; height: 270px; width: auto; max-width: 100%; border-radius: 7px; }
 .file-info { margin-top: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .file-info div { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .file-info strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
@@ -67,3 +68,20 @@ aside { margin-top: 20px; padding: 16px 18px; border: 1px solid #bfdbfe; border-
 .probability-fill.verdict-real { background: #12b76a; }
 .probability-fill.verdict-uncertain { background: #f79009; }
 .model-info { font-size: 12px !important; }
+
+
+/* Method picker — four mutually exclusive methods, never blended (E9). */
+.methods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 18px 0 8px; }
+.method { padding: 9px 4px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--muted); font-size: 12px; font-weight: 600; cursor: pointer; transition: .12s; }
+.method:hover:not(:disabled) { border-color: var(--primary); color: var(--primary-dark); }
+.method.active { border-color: var(--primary); background: #eff6ff; color: var(--primary-dark); }
+.method:disabled { opacity: .55; cursor: default; }
+.method-hint { margin: 0 0 4px; color: var(--muted); font-size: 11px; text-align: center; min-height: 15px; }
+
+/* Tile heat-map drawn over the preview: the localisation view (Module 2 groundwork). */
+/* inline-block so the stage shrinks to the image itself — otherwise the tile
+   overlay would spill into the letterbox padding beside it. */
+.preview-stage { position: relative; display: inline-block; line-height: 0; background: #eef1f5; border-radius: 7px; }
+.tile-overlay { position: absolute; inset: 0; pointer-events: none; }
+.tile-overlay span { position: absolute; border: 1px solid transparent; border-radius: 2px; }
+.tile-note { margin: 10px 0 0; color: var(--muted); font-size: 11px; line-height: 1.45; }

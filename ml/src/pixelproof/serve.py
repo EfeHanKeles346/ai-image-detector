@@ -1,11 +1,22 @@
-"""Phase 6: inference service for the web demo.
+"""Inference service for the web demo.
 
-Loads both trained models and routes each upload by resolution — the practical
-answer to E5/E6's finding that each model is blind outside its resolution domain:
-- small inputs (max side < 128px) -> SmallCNN trained on 32x32 CIFAKE
-- everything else -> ResNet-18 fine-tuned on native-resolution GenImage
-Predictions inside the E3 uncertainty band (|p - 0.5| < 0.1) are reported as
-"uncertain" instead of a hard verdict.
+Module 1 — "is this image AI-generated?" — offers three methods. The caller picks
+one; the service does not blend them. E9 tested eight blending rules and the best
+beat the CNN alone by +0.002, because a fixed blend relocates accuracy rather
+than adding it (Defactify +0.036, archive1 -0.036).
+
+| method    | what it does                                    | strongest where          |
+|-----------|-------------------------------------------------|--------------------------|
+| `auto`    | picks by image size using the measured crossover | default                  |
+| `cnn`     | SmallCNN (<128px) or ResNet-18, resized to 224   | small / compressed input |
+| `stats`   | 68 statistics over every pixel, no resizing      | mid-size, low-texture    |
+| `tiles`   | 6x6 grid of native 128px crops, top-3 mean       | >=700px (best overall)   |
+
+The crossover is measured, not guessed (E11): above ~700px the tile method beats
+the CNN by +0.17 to +0.23 AUC on every modern generator tested; below it the CNN
+wins. `auto` encodes exactly that rule.
+
+Tile scores double as a localisation map — see /predict `tile_map`.
 
 Run: PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --port 8799
 """
@@ -14,15 +25,27 @@ import io
 from pathlib import Path
 
 import torch
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, Form, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 
 from pixelproof.evaluate import eval_transform
+from pixelproof.feature_model import load as load_feature_models
+from pixelproof.feature_model import score_image, score_tiles
 from pixelproof.models import create_model
 
-ROUTING_THRESHOLD_PX = 128
-UNCERTAINTY_BAND = 0.1
+# --- measured constants (see EXPERIMENTS.md) --------------------------------
+CNN_ROUTING_PX = 128      # E6: below this only SmallCNN has seen anything similar
+TILE_RELIABLE_PX = 700    # E11: above this the tile method wins decisively
+UNCERTAINTY_BAND = 0.1    # E3: errors concentrate inside |p-0.5| < 0.1
+EVIDENCE_FLOOR_PX = 48    # below this no method has enough pixels to measure texture
+
+METHODS = {
+    "auto":  "Otomatik — görsel boyutuna göre en güçlü yöntem",
+    "cnn":   "CNN — küçültülmüş görsel, sinir ağı",
+    "stats": "İstatistik — tüm görsel, küçültme yok",
+    "tiles": "Kare kare — 6×6 ızgara, orijinal çözünürlük",
+}
 
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 artifacts = Path(__file__).resolve().parents[2] / "artifacts"
@@ -34,42 +57,76 @@ def load(checkpoint_name: str):
     model = create_model(config["model"]["name"], dropout=config["model"]["dropout"]).to(device)
     model.load_state_dict(checkpoint["model"])
     model.eval()
-    transform = eval_transform(config["data"]["image_size"], config["data"].get("normalization", "default"))
+    transform = eval_transform(config["data"]["image_size"],
+                               config["data"].get("normalization", "default"))
     return model, transform
 
 
-MODELS = {
-    "small_cnn_cifake": load("best.pt"),
-    "resnet18_genimage": load("best_genimage.pt"),
-}
+CNNS = {"small_cnn_cifake": load("best.pt"), "resnet18_genimage": load("best_genimage.pt")}
+FEATURES = load_feature_models(artifacts)
 
 app = FastAPI(title="PixelProof inference")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
+def verdict_for(probability: float) -> str:
+    if abs(probability - 0.5) < UNCERTAINTY_BAND:
+        return "uncertain"
+    return "ai" if probability >= 0.5 else "real"
+
+
+def run_cnn(picture: Image.Image) -> tuple[float, str]:
+    name = ("small_cnn_cifake" if max(picture.size) < CNN_ROUTING_PX else "resnet18_genimage")
+    model, transform = CNNS[name]
+    with torch.no_grad():
+        probability = torch.sigmoid(model(transform(picture).unsqueeze(0).to(device))).item()
+    return probability, name
+
+
 @app.post("/predict")
-async def predict(image: UploadFile = File(...)):
+async def predict(image: UploadFile = File(...), method: str = Form("auto")):
     raw = await image.read()
     picture = Image.open(io.BytesIO(raw)).convert("RGB")
     width, height = picture.size
+    longest = max(width, height)
 
-    model_name = "small_cnn_cifake" if max(width, height) < ROUTING_THRESHOLD_PX else "resnet18_genimage"
-    model, transform = MODELS[model_name]
-    with torch.no_grad():
-        probability = torch.sigmoid(model(transform(picture).unsqueeze(0).to(device))).item()
+    if method not in METHODS:
+        method = "auto"
+    chosen = method
+    if method == "auto":
+        chosen = "tiles" if longest >= TILE_RELIABLE_PX else "cnn"
 
-    if abs(probability - 0.5) < UNCERTAINTY_BAND:
-        verdict = "uncertain"
+    tile_map = None
+    if chosen == "cnn":
+        probability, engine = run_cnn(picture)
+    elif chosen == "stats":
+        probability = score_image({"full": FEATURES["full"]}, picture)["full"]
+        engine = "feature_full"
     else:
-        verdict = "ai" if probability >= 0.5 else "real"
+        tile_map = score_tiles(FEATURES, picture)
+        probability = tile_map["p_ai"]
+        engine = "feature_tiles"
+
     return {
         "p_ai": round(probability, 4),
-        "verdict": verdict,
-        "model": model_name,
+        "verdict": verdict_for(probability),
+        "method": chosen,
+        "method_label": METHODS[chosen],
+        "auto_selected": method == "auto",
+        "engine": engine,
         "resolution": f"{width}x{height}",
+        "enough_evidence": longest >= EVIDENCE_FLOOR_PX,
+        "tile_map": tile_map,
     }
+
+
+@app.get("/methods")
+def methods():
+    return {"methods": [{"id": k, "label": v} for k, v in METHODS.items()],
+            "tile_reliable_px": TILE_RELIABLE_PX}
 
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "device": str(device), "models": list(MODELS)}
+    return {"status": "ok", "device": str(device),
+            "cnns": list(CNNS), "features": list(FEATURES)}
