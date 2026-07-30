@@ -38,44 +38,22 @@ Tooling: `ml/tools/audit_datasets.py` runs all five on any folder, reading insid
 
 **The crucial nuance — a flaw is a *usage condition*, not a disqualification.** A resolution or shape shortcut only exists if the model can perceive it. Feed whole images and it can; feed fixed-size native crops (§9b) and the information never reaches the model at all. So a dataset flagged "AI is 100% square 1024px" is **unusable for whole-image training and perfectly safe for tile-based training**. Every entry in §1c is labelled accordingly.
 
-## 1c. Dataset registry (255 GB, downloaded and audited 2026-07-28/29)
+## 1c. Dataset registry
 
-Stored on the external SSD: `/Volumes/LaCie/pixelproof-datasets/`
+255 GB acquired 2026-07-28/29, stored on the external SSD at
+`/Volumes/LaCie/pixelproof-datasets/`.
 
-### Clean — usable in any mode
+**The full inventory, per-dataset audit verdict, and the module assignment live in
+[`DATASETS.md`](DATASETS.md)** — kept there rather than duplicated here, so there is one
+authoritative answer to "which data may I train on, and in which mode".
 
-| Dataset | Size | Contents |
-|---|---|---|
-| `theminji/AI-vs-Real-balanced` | 12 GB | 19,960 AI / 19,660 real. Mixed formats both sides. |
-| `OwensLab/CommunityForensics-Small` | 47 of 260 GB | **228 distinct generator models**, with per-image `model_name`, `prompt`, `architecture`, `real_source` metadata. Partial download. |
-| `julienlucas/midjourney-dalle-sd-nanobananapro` | 2.9 GB | Midjourney + DALL-E + SD + **Nano Banana Pro**, with real photos. Formats deliberately mixed on both sides. |
+Summary of what it decides:
 
-### Conditionally usable — tile/crop mode only
-
-| Dataset | Size | Flaw | Why tiles fix it |
-|---|---|---|---|
-| `TheKernel01/AIGC-Detection-Benchmark` | 30 GB | Shape: AI 100% square, real 40% | Every tile is 128×128 — shape never reaches the model |
-| `theminji/ai-vs-real-200k` | 49 GB | Resolution: AI median 1024px, real 263px | Same |
-| `OwensLab/CommunityForensics-Small` | — | Mild: real 1024px, fake 512px (2×, under threshold) | Same |
-
-### Manipulation data — Module 2
-
-| Dataset | Size | Contents |
-|---|---|---|
-| `ductai199x/image-manipulation-dataset-compilation` | 78 GB | **13 forensic datasets**: OpenForensics, CASIA 2.0, **CocoGlide** (diffusion inpainting), IMD2020, NIST2016, Columbia, Coverage, DSO-1, CMFD, RealisticTampering, VIPP. Split `auth`/`manip`, **with pixel-level ground-truth masks**. |
-
-This is what makes Module 2 measurable rather than hypothetical: the masks let us score a localisation heat-map at pixel level.
-
-### Current generators, AI-only — must be paired with real photos
-
-| Dataset | Size | Model | Era |
-|---|---|---|---|
-| `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |
-| `kaupane/nano-banana-pro-gen`, `ash12321/nano-banana-pro-generated-1k` | 2.5 GB | Nano Banana Pro | 2026 |
-| `ash12321/flux-1-dev-generated-10k` | 3.0 GB | FLUX.1-dev | 2024-25 |
-| `a3xrfgb/gpt-image-mega-4k` | 3.3 GB (partial) | GPT Image, 4K | 2025-26 |
-
-⚠️ Pairing these with real photos **recreates the archive1 trap unless controlled**: these are PNG squares, camera photos are JPEG rectangles. Either push both classes through one identical pipeline, or use them only in tile mode.
+| | |
+|---|---|
+| Module 1 training | CommunityForensics-Small (228 generators) + AI-vs-Real-balanced, both clean; two larger sets usable in tile mode only |
+| Module 1 testing | `defactify_test` (established benchmark) and `julienlucas` (Nano Banana Pro, cleanest modern set) |
+| Module 2 | the 78 GB manipulation compilation — 13 forensic datasets with pixel-level masks |
 
 **Label convention (important):** everywhere in the code, `1 = AI-generated`, `0 = real`. `torchvision.datasets.ImageFolder` sorts folders alphabetically (`FAKE`=0, `REAL`=1), so we invert its labels (`invert_label` in `data.py`) to keep the convention consistent.
 
@@ -287,7 +265,7 @@ Existing artifacts: `best.pt` (SmallCNN/CIFAKE), `best_genimage.pt` (ResNet-18/G
 | File | Lines | Purpose |
 |---|---|---|
 | `IMAGE_STRUCTURE_NOTES.md` | 192 | How an image is physically structured and what that means for feature design: channel counts by format, JPEG's YCbCr with chroma subsampling, why channels are **not** independent (the CFA trace), and which normalisations destroy the evidence. |
-| `STATUS.md` | 131 | One-page "where are we / what did we find / what's next", updated after each experiment. Written so the roadmap does not have to be read day to day. |
+| `STATUS.md` → `DATASETS.md` | 131 | Started as a one-page status summary; on 2026-07-30 its findings were folded into §2b and the file was re-purposed as the dataset inventory and module assignment. |
 | `EXPERIMENTS.md` | +90 | E7–E10 in the project's pre-registered-hypothesis format, including the two negative results. |
 
 ### 2b.7 — The dataset acquisition, and how the auditing rule was born · 07-28 → 07-29
@@ -565,7 +543,123 @@ Two things changed:
 
 **Taxonomy correction carried over from `IMAGE_FORENSICS_REFERENCE.md` §4.2:** ChatGPT-family edits re-render every pixel, so at the pixel level they are *generated*, not *locally tampered*. `real-but-tampered` is recoverable only for classic edits and AI-spliced images. For fully-regenerated edits the honest verdict is "AI-regenerated"; promising localisation there would be a claim the field cannot currently support.
 
-## 13. Progress Checklist
+## 13. Target architecture and the ordered plan (2026-07-30)
+
+### 13a. Where the system is heading
+
+```
+                         ┌─────────────────────────────────────────┐
+   image ───────────────▶│  TILING  — 128px native crops, no resize│
+                         └────────────────┬────────────────────────┘
+                                          │  one feature vector per tile
+                   ┌──────────────────────┼──────────────────────┐
+                   ▼                      ▼                      ▼
+        ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
+        │  hand-crafted    │   │  frozen backbone │   │  per-tile map    │
+        │  68 statistics   │   │  CLIP / DINOv2   │   │  (no classifier) │
+        │  physics-based   │   │  learned, strong │   │                  │
+        └────────┬─────────┘   └────────┬─────────┘   └────────┬─────────┘
+                 └──────────┬───────────┘                      │
+                            ▼                                  ▼
+                 ┌────────────────────┐            ┌────────────────────────┐
+      MODULE 1   │ is it AI-generated?│  MODULE 2  │ where was it edited?   │
+                 │ aggregate: top-3   │            │ spatial pattern of the │
+                 └────────────────────┘            │ same tile scores       │
+                                                   └────────────────────────┘
+```
+
+The important structural point: **tiling is shared infrastructure, not a Module 1 trick.**
+Module 1 aggregates the tile scores into one number; Module 2 reads their spatial pattern. Both
+modules consume the same per-tile output, which is why Module 2's core machinery already exists.
+
+**How the three cases separate** — from the tile-score distribution, not from the aggregate:
+
+| Case | Tile scores | Variance | Spatial |
+|---|---|---|---|
+| Fully AI-generated | all high | low | uniform |
+| Authentic photograph | all low | low | uniform |
+| Locally manipulated | most low, few high | **high** | **clustered** |
+
+This is the answer to "won't a fully-AI image confuse Module 2" — it will not, provided we read
+variance and clustering rather than the mean. Matches `IMAGE_FORENSICS_REFERENCE.md` §4.1.
+
+**How tiles get labelled for Module 2:** from the ground-truth masks, mechanically. For each tile,
+compute the mask's coverage of it — >50% inside ⇒ tampered, 0% ⇒ authentic, in between ⇒ ambiguous
+(drop, or soft-label). We never tell the model where the edit is; the mask does.
+
+⚠️ Note the two tasks are not the same question. Module 1 asks *"does this tile look generated"* —
+absolute. Module 2 asks *"does this tile differ from the rest of this image"* — relative. A
+tampered region is betrayed by inconsistency with its surroundings, which suggests a second,
+almost-free formulation: normalise each tile's features against that image's own tile distribution
+(a within-image z-score) and flag outliers. Worth testing alongside the supervised version, since
+the features are already computed.
+
+### 13b. Replacing ResNet-18 — and why "a newer CNN" is the wrong answer
+
+ResNet-18 is a 2015 architecture and the obvious move is a modern one. But every failure measured
+in this project (E5, E6, E7) was a **preprocessing mismatch, not a capacity limit**. ConvNeXt or
+EfficientNetV2 would still resize to 224 and still delete the same evidence. Swapping the backbone
+without fixing the input would buy very little.
+
+The recommendation is therefore two-part:
+
+1. **Representation — a frozen CLIP-ViT or DINOv2 backbone with a linear probe.**
+   `IMAGE_FORENSICS_REFERENCE.md` §4.4: CLIP-feature detectors are *"currently among the best
+   out-of-distribution generalizers, even trained on little data"*. This is also the natural
+   completion of E2, which established that the representation is the bottleneck but only ever
+   tested that claim with a weak representation.
+2. **Applied to native tiles, not whole images.** A ViT resizes to 224 like everything else, so a
+   whole-image CLIP probe would inherit the §4 penalty. Feeding it 128–224px native tiles combines
+   the strongest known representation with the measured fix.
+
+Cost is low: the backbone stays frozen, so this is feature extraction plus logistic regression —
+the same shape as the existing feature model, and cacheable the same way.
+
+If a fine-tuned CNN is still wanted for comparison, the modern equivalent is **ConvNeXt-Tiny** —
+but trained with native crops, or it repeats ResNet's history.
+
+### 13c. Ordered plan
+
+Sequenced by dependency and by value-per-hour, not by ambition. Each step's output decides whether
+the next one is still the right move.
+
+**Step 1 — Native-crop retraining** *(1 training run, ~1h)*
+Change `RandomResizedCrop` to `RandomCrop` in `configs/`, retrain the ResNet. This is the fix §4b
+points at and it costs no extra compute (§4c). Unblocks everything else: until training and tile
+inference use the same input, no comparison between them is clean.
+
+**Step 2 — Module 2's first measurement** *(no training, ~2h)*
+Run the existing tile model over CASIA and CocoGlide, score the heat-map against the ground-truth
+masks (pixel F1 / IoU), **reported per sub-dataset**. Expected outcome: works on CocoGlide
+(diffusion inpainting), fails on classic splices. That asymmetry is the useful result and it costs
+nothing to obtain. Also implements the variance/clustering readout from §13a.
+
+**Step 3 — CLIP/DINOv2 tile probe** *(no fine-tuning, ~3h)*
+The §13b recommendation. Extract frozen features per tile, fit a linear probe, evaluate on
+Defactify. Direct comparison against the 68 hand-crafted features on identical tiles. Likely the
+single largest Module 1 gain available.
+
+**Step 4 — Train on the new data** *(several runs)*
+CommunityForensics-Small + AI-vs-Real-balanced, tile mode (`DATASETS.md`). Only now, because
+steps 1–3 decide *what* to train: which input pipeline, which representation.
+
+**Step 5 — Leave-one-generator-out** *(k runs)*
+CommunityForensics carries `model_name` for 228 generators. Hold one out, train on the rest, test
+only on the held-out one. This is the only honest way to claim generalisation, and no other
+dataset we hold makes it possible.
+
+**Step 6 — Compression robustness** *(no training)*
+Re-encode the test sets at JPEG-75 and WEBP and re-measure everything. Every image on the internet
+is recompressed and none of our numbers account for it. Cheap, and it recalibrates every claim.
+
+**Step 7 — Calibration**
+44% of real photographs are still called "AI" at threshold 0.5. E6 showed thresholds do not
+transfer across domains, so this is a research task, not a constant to tune.
+
+**Running throughout:** ≥3 seeds on any comparison we intend to report (§5), and an audit of every
+dataset *before* training on it (§1b, §2b.8).
+
+## 14. Progress Checklist
 
 - [x] Datasets inspected (CIFAKE 100k/20k + external OOD set)
 - [x] Python env with PyTorch + MPS
@@ -596,13 +690,18 @@ Two things changed:
 - [x] **255 GB of audited datasets** on the LaCie SSD, with an automated auditor and a per-dataset verdict (§1b, §1c)
 - [x] **Module 2 unblocked.** Mask-annotated manipulation data acquired; localisation is now measurable rather than hypothetical (§12)
 
-### Next
+### Next — the ordered plan lives in §13c
 
-- [ ] Retrain with native crops (`RandomCrop` instead of `RandomResizedCrop`) so training and tile inference finally match — the fix §4b points at, at no extra compute cost (§4c)
+- [ ] **Step 1** Native-crop retraining (`RandomCrop`) — unblocks everything else
+- [ ] **Step 2** Module 2's first measurement: tile heat-map vs ground-truth masks, per sub-dataset
+- [ ] **Step 3** CLIP/DINOv2 tile probe — the ResNet replacement (§13b)
+- [ ] **Step 4** Train on CommunityForensics + AI-vs-Real-balanced in tile mode
+- [ ] **Step 5** Leave-one-generator-out over the 228 models
+- [ ] **Step 6** Compression robustness matrix
+- [ ] **Step 7** Calibration — 44% of real photographs still called "AI" at 0.5
+
+Also open, not on the critical path:
 - [ ] Phase 7a: ELA baseline + **positive control** (a hand-made JPEG splice ELA can catch) — a flat map on AI images is correct behaviour, not a failed experiment
-- [ ] Phase 7c first measurement: score the tile heat-map against CASIA/CocoGlide ground-truth masks (pixel F1/IoU)
-- [ ] Calibration: 44% of real photographs are still called "AI" at threshold 0.5
-- [ ] Compression robustness matrix — still never tested, and every image on the internet is compressed
 - [ ] Seed variance: every experiment so far is single-seed, against our own ≥3 rule (§5)
-- [ ] Re-evaluate on the clean modern sets (§1c) now that `archive1`'s biases are documented
 - [ ] Build a small ChatGPT/Gemini test set by hand, both classes through one identical pipeline — the only uncontaminated route to 2026-era editing models
+- [ ] Verify the CommunityForensics slice we hold (47 of 260 GB) is representative before training on it

@@ -29,7 +29,7 @@ Full reasoning: [`ROADMAP.md`](ROADMAP.md) §4 and §9. Experiment log: [`ml/EXP
 
 | File | Read it when |
 |---|---|
-| [`STATUS.md`](STATUS.md) | You want to know where things stand right now |
+| [`DATASETS.md`](DATASETS.md) | You need to know which data you may train on, and in which mode |
 | [`ROADMAP.md`](ROADMAP.md) | You want the decision history and the plan — the report's reference |
 | [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md) | You want one experiment's hypothesis, config, numbers and conclusion |
 | [`IMAGE_FORENSICS_REFERENCE.md`](IMAGE_FORENSICS_REFERENCE.md) | You need the field background — how images are generated, edited, and detected |
