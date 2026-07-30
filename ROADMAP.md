@@ -9,9 +9,73 @@ Goal: build a model that decides whether a photo is **AI-generated** or a **real
 | Dataset | Location | Contents | Role |
 |---|---|---|---|
 | CIFAKE (`archive`) | `~/Desktop/archive` | 100k train + 20k test images, 32×32×3, balanced `REAL`/`FAKE` folders. Real half comes from CIFAR-10, fake half from Stable Diffusion. | Main training + held-out test set |
-| External set (`archive1`) | `~/Desktop/archive1` | High-resolution images in `Ai_generated_dataset/` and `real_dataset/`, organized by category (animals, city, food, nature, people). | **Out-of-distribution (OOD) evaluation only** — never used for training |
+| External set (`archive1`) | `~/Desktop/archive1` | High-resolution images in `Ai_generated_dataset/` and `real_dataset/`, organized by category (animals, city, food, nature, people). | **Out-of-distribution (OOD) evaluation only** — never used for training. **Audited 2026-07-27, see §1b** |
+| GenImage (`genimage_split`) | `~/Desktop/genimage_split` | 9,917 train / 1,742 test. REAL = ImageNet nature photos; FAKE = balanced across 7 generators. Perfectly balanced. | Training set for the ResNet **and** the feature model |
+| Defactify | `~/Desktop/defactify_test` | 16,875 images: 2,851 real MS-COCO + ~2,800 each from SD 2.1, SDXL, SD 3, DALL-E 3, Midjourney v6. Both classes JPEG. | Modern-generator test set — never trained on |
 
-Why keep `archive1` out of training? A model can score very well on data that looks like its training set while failing on anything else. Evaluating on a dataset from a completely different source answers the real question: *does the model generalize, or did it just memorize CIFAKE's statistics?*
+Why keep evaluation sets out of training? A model can score very well on data that looks like its training set while failing on anything else. Evaluating on a dataset from a completely different source answers the real question: *does the model generalize, or did it just memorize the training statistics?*
+
+## 1b. Dataset auditing — a rule learned the hard way
+
+`archive1` was this project's out-of-distribution benchmark from E1 through E6 before anyone inspected it. When we finally did (E10, 2026-07-27) the result was stark:
+
+| | real (745) | AI (250) |
+|---|---|---|
+| format | 100% JPEG | 100% PNG |
+| distinct sizes | 138 | 2 |
+| square | 2% | 100% (512×512) |
+
+**A logistic model on width/height/aspect alone separates the classes at AUC 1.000.** The dataset carries a perfect shortcut. (The CNNs turned out to be immune — see E10 — but that was luck, not design.)
+
+**Rule adopted for every dataset from now on:** audit before use, and record the verdict. The checks are mechanical:
+1. Do the classes differ in **file format**? (JPEG vs PNG is the classic trap)
+2. Do they differ in **shape**? (all AI square, all real rectangular)
+3. Do they differ in **resolution**? (median side ratio > 2)
+4. Do they differ in **compression** (bytes per pixel)?
+5. Is the class balance sane?
+
+Tooling: `ml/tools/audit_datasets.py` runs all five on any folder, reading inside parquet, zip and tar without extracting. Output: `DENETIM.md`.
+
+**The crucial nuance — a flaw is a *usage condition*, not a disqualification.** A resolution or shape shortcut only exists if the model can perceive it. Feed whole images and it can; feed fixed-size native crops (§9b) and the information never reaches the model at all. So a dataset flagged "AI is 100% square 1024px" is **unusable for whole-image training and perfectly safe for tile-based training**. Every entry in §1c is labelled accordingly.
+
+## 1c. Dataset registry (255 GB, downloaded and audited 2026-07-28/29)
+
+Stored on the external SSD: `/Volumes/LaCie/pixelproof-datasets/`
+
+### Clean — usable in any mode
+
+| Dataset | Size | Contents |
+|---|---|---|
+| `theminji/AI-vs-Real-balanced` | 12 GB | 19,960 AI / 19,660 real. Mixed formats both sides. |
+| `OwensLab/CommunityForensics-Small` | 47 of 260 GB | **228 distinct generator models**, with per-image `model_name`, `prompt`, `architecture`, `real_source` metadata. Partial download. |
+| `julienlucas/midjourney-dalle-sd-nanobananapro` | 2.9 GB | Midjourney + DALL-E + SD + **Nano Banana Pro**, with real photos. Formats deliberately mixed on both sides. |
+
+### Conditionally usable — tile/crop mode only
+
+| Dataset | Size | Flaw | Why tiles fix it |
+|---|---|---|---|
+| `TheKernel01/AIGC-Detection-Benchmark` | 30 GB | Shape: AI 100% square, real 40% | Every tile is 128×128 — shape never reaches the model |
+| `theminji/ai-vs-real-200k` | 49 GB | Resolution: AI median 1024px, real 263px | Same |
+| `OwensLab/CommunityForensics-Small` | — | Mild: real 1024px, fake 512px (2×, under threshold) | Same |
+
+### Manipulation data — Module 2
+
+| Dataset | Size | Contents |
+|---|---|---|
+| `ductai199x/image-manipulation-dataset-compilation` | 78 GB | **13 forensic datasets**: OpenForensics, CASIA 2.0, **CocoGlide** (diffusion inpainting), IMD2020, NIST2016, Columbia, Coverage, DSO-1, CMFD, RealisticTampering, VIPP. Split `auth`/`manip`, **with pixel-level ground-truth masks**. |
+
+This is what makes Module 2 measurable rather than hypothetical: the masks let us score a localisation heat-map at pixel level.
+
+### Current generators, AI-only — must be paired with real photos
+
+| Dataset | Size | Model | Era |
+|---|---|---|---|
+| `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |
+| `kaupane/nano-banana-pro-gen`, `ash12321/nano-banana-pro-generated-1k` | 2.5 GB | Nano Banana Pro | 2026 |
+| `ash12321/flux-1-dev-generated-10k` | 3.0 GB | FLUX.1-dev | 2024-25 |
+| `a3xrfgb/gpt-image-mega-4k` | 3.3 GB (partial) | GPT Image, 4K | 2025-26 |
+
+⚠️ Pairing these with real photos **recreates the archive1 trap unless controlled**: these are PNG squares, camera photos are JPEG rectangles. Either push both classes through one identical pipeline, or use them only in tile mode.
 
 **Label convention (important):** everywhere in the code, `1 = AI-generated`, `0 = real`. `torchvision.datasets.ImageFolder` sorts folders alphabetically (`FAKE`=0, `REAL`=1), so we invert its labels (`invert_label` in `data.py`) to keep the convention consistent.
 
@@ -19,15 +83,28 @@ Why keep `archive1` out of training? A model can score very well on data that lo
 
 ```
 ml/
-├── configs/baseline.yaml        # all hyperparameters in one place — no magic numbers in code
+├── configs/                     # one YAML per experiment — no magic numbers in code
 ├── src/pixelproof/
 │   ├── data.py                  # datasets, transforms, train/validation split
-│   ├── models.py                # model definitions + a registry to add new ones
-│   ├── train.py                 # training loop, checkpoints best model to artifacts/best.pt
+│   ├── models.py                # CNN definitions + registry
+│   ├── train.py                 # training loop, checkpoints to artifacts/
 │   ├── evaluate.py              # test-set metrics + external (OOD) evaluation
-│   └── predict.py               # classify arbitrary image files from the CLI
-├── tests/                       # fast sanity tests (model output shape, etc.)
-└── .venv/                       # Python virtualenv (PyTorch with Apple MPS GPU support)
+│   ├── predict.py               # classify arbitrary image files from the CLI
+│   ├── features.py              # 68 resolution-independent statistics + tiling (§9)
+│   ├── feature_model.py         # trains/serves the two feature models
+│   ├── feature_experiment.py    # the E8 harness
+│   ├── serve.py                 # FastAPI: four methods, user-selected (§11)
+│   ├── prepare_genimage.py      # dataset prep — GenImage
+│   ├── prepare_defactify.py     # dataset prep — Defactify
+│   ├── analyze.py / classical.py / embeddings.py / learning_curve.py   # Phase 2 (E2–E4)
+│   └── ela.py                   # Phase 7a baseline — written, not yet evaluated
+├── experiments/                 # one script per numbered experiment (E7–E11)
+├── tools/                       # dataset acquisition + auditing (§1b)
+├── tests/                       # fast sanity tests
+└── artifacts/
+    ├── best.pt, best_genimage.pt, feature_*.joblib    # the four served detectors
+    ├── experiments/             # E4/E5 checkpoints, kept as evidence
+    └── features/                # cached feature matrices (14 MB)
 ```
 
 Design principles worth remembering for any ML project:
@@ -35,7 +112,207 @@ Design principles worth remembering for any ML project:
 - **Fixed random seed** for the train/validation split and weight init — reruns are comparable.
 - **Model registry** (`MODEL_REGISTRY` dict): adding a new architecture later is one entry, and the config's `model.name` selects it.
 
-## 3. Phase 1 — Baseline CNN ✅ (current)
+## 2b. What was built in the 2026-07-27 → 07-29 session, and why
+
+Everything below is new since commit `6a65a86`. Roughly **2,300 lines** of code and documentation, two new trained models, and 255 GB of audited data. This section is written as a decision chain rather than an inventory: each thing exists because a specific measurement made the previous approach untenable.
+
+### 2b.1 — The chain of reasoning, in order · 07-27
+
+**Starting point.** After Phase 6 the project had two CNNs behind resolution routing, and one headline OOD number: ResNet-18 at AUC 0.888 on `archive1`. Two things about that number were unexamined: the generators it was measured against were all 2021–22 vintage, and `archive1` itself had never been inspected.
+
+**Step 1 — build a harder test set.** We downloaded Defactify (MS-COCOAI): 16,875 images, five generators (SD 2.1, SDXL, SD 3, DALL-E 3, Midjourney v6), *every one newer than anything in GenImage*, with real MS-COCO photos alongside. Both classes JPEG, so no format shortcut. `prepare_defactify.py` was written for this — and it writes **raw JPEG bytes** rather than decoding and re-saving, because re-encoding would have overwritten the compression history that half our features read.
+
+**Step 2 — the result reframed the project.** AUC fell 0.888 → **0.760**, which was expected. What was not expected: the per-generator scores lined up almost perfectly with *source resolution*, and in the direction opposite to a shortcut — the **smallest** images (DALL-E 3, 270px) scored best, the largest (SD 3, 1024px) worst. A model exploiting resolution would show the reverse. The only mechanism that produces this ordering is our own preprocessing: `Resize(224,224)` downscales a 1024² image 4.6×, and generation artefacts live in exactly the high frequencies a downscale removes. **We were deleting the evidence before the model saw it.** (§4b)
+
+**Step 3 — confirm the mechanism, and fail informatively.** We fed the existing model native-resolution 224px patches instead of downscaled whole images. Discrimination improved exactly where predicted (SD 3 0.672→0.776, SDXL 0.725→0.800), *and* the false-positive rate on real photographs went from 44% to 96%. The model had never seen a sharp native pixel in training, so sharpness itself read as "AI". This was the **third** independent instance of the same law (E5, E6, here) — see §4a. Conclusion: the idea is right, but it cannot be bolted onto a model trained the old way.
+
+**Step 4 — the reframing.** If the problem is that resizing destroys the signal, the fix is not a better network — it is a representation that never resizes. That produced the two models below.
+
+### 2b.2 — Model 3: the feature detector (`feature_full.joblib`) · 07-27
+
+**Where the idea came from.** Rather than feeding pixels to a network, reduce each image to a fixed-length vector of numbers and hand that to classical ML.
+
+**Why this dissolves the problem.** A statistic is scale-free by construction. "Average high-frequency energy per pixel" means the same thing on a 300×200 image and a 4000×3000 one, and both produce *one number*. Resolution changes how many pixels we average over — never how many numbers come out. So a 300px image and a 4000px image both produce the same 68-length vector, with no resizing, no cropping, and no pixel skipped. The scale mismatch that had dominated E5, E6 and Step 3 simply has nowhere to appear.
+
+**Why it was cheap to try.** E2 had already built the classical-ML machinery (LogReg / SVM / RF / HistGB on embeddings) and established that *the representation, not the classifier, is the bottleneck*. This experiment is E2 run again with a different representation — one built from physics instead of learned from CIFAKE.
+
+**Which 68 numbers, and why those.** Every feature is a ratio or a per-pixel average, never a total: a total grows with pixel count and would smuggle resolution back into the vector, recreating the shortcut we are trying to escape.
+
+| Group | Physical justification |
+|---|---|
+| Per-channel moments (mean/std/skew/kurtosis × RGB) | generated images occupy a measurably different colour regime |
+| **Cross-channel correlation + Bayer sub-lattice variance** | the strongest idea in the set. A real sensor measures **one** colour per photosite and interpolates the other two from neighbours (CFA/demosaicing), leaving a structured, periodic inter-channel dependency across the whole frame. A latent-diffusion image never passed through a sensor and has none. This encodes **camera physics**, not a generator's quirks — so it should survive a new generator shipping, which is exactly where supervised detectors fail |
+| Noise-residual statistics | real photos carry sensor shot/read noise everywhere; diffusion output carries whatever the VAE decoder invented |
+| 16-band radial FFT spectrum | upsamplers and VAE decoders leave periodic spectral traces; normalised by total power so it describes a *shape*, not an amount |
+| Local-variance percentiles | diffusion suppresses local high-frequency variance relative to optical imaging |
+| 8×8 JPEG-grid blockiness | compression history — the basis of ELA and double-JPEG analysis |
+| HSV statistics | saturation distributions differ systematically |
+
+**The controlled-comparison decision.** We trained it on the *identical* GenImage split the ResNet uses. Same images, same split, same test sets — the only variable is the method. Without that, "features vs CNN" would be an anecdote.
+
+**Result: a specialist, not a replacement.** Overall it loses (0.717 vs 0.760 on Defactify) but wins by +0.09 to +0.15 AUC on precisely the three high-resolution generators the CNN handles worst, and collapses on small heavily-compressed ones (DALL-E 3: 0.377, *below chance* — the model systematically calls those "real"). The two methods fail in disjoint places, which is the complementarity the literature's "RGB branch + low-level branch" architectures are built to exploit.
+
+### 2b.3 — Model 4: the tile detector (`feature_crop128.joblib` + 6×6 grid) · 07-29
+
+**The failure that produced it.** Testing a ChatGPT-generated image (1122×1402) in the demo: the ResNet said 48% ("uncertain" — wrong), the whole-image feature model said 94% (correct), and the 128px-crop model said 47% (wrong). Digging into the third: a 128×128 centre crop of that image is **1.04% of its pixels**, and in this photograph the centre is the subject's plain navy t-shirt — grey-level std 0.027 against 0.283 for the full image, i.e. **10.6× flatter**. We had handed the model a featureless patch of fabric and it correctly answered "no idea".
+
+So the fixed-crop idea was sound and its implementation was blind sampling: a single centre crop of a large image is an arbitrary 1% window that may land on sky, a wall, or clothing.
+
+**The fix.** Cut the image into a **grid** of native-resolution tiles, score every one, aggregate. Coverage goes from ~1% to ~100%, and the fixed-size property that kills the shortcut is preserved.
+
+**Why no retraining was needed** — this is the non-obvious part. Having just learned the preprocessing law three times, the instinct was to retrain. But `feature_crop128` was fitted on 128×128 native crops, and **every tile is a 128×128 native crop**. Same input distribution, evaluated several times per image instead of once. No mismatch exists. (The mild caveat: training used *centre* crops while tiles include edges, so content statistics differ slightly — far milder than the resize-vs-native gap that caused the earlier failures.)
+
+**Why the grid is 6×6 and the rule is top-3, both measured rather than chosen:**
+
+| Grid | Best AUC (high-res generators) |
+|---|---|
+| 2×2 | 0.760 |
+| 3×3 | 0.799 |
+| 4×4 | 0.801 |
+| 5×5 | 0.807 |
+| **6×6** | **0.821** |
+
+And the aggregation rule matters as much as the grid. A plain mean scores 0.781; the mean of the **top 3** tiles scores 0.821. The reason is the t-shirt problem again at scale: flat tiles score around 0.5, and averaging them in drags a confident image toward "no idea", drowning the tiles that carry evidence. Measured: 21% of all tiles fall below the texture floor. (Dropping flat tiles explicitly by texture threshold was also tested and gave no advantage over top-3.)
+
+**Result — the project's best numbers:**
+
+| Generator | Source | Tiled | CNN | Δ |
+|---|---|---|---|---|
+| SDXL | 1024px | **0.948** | 0.717 | +0.231 |
+| SD 3 | 1024px | **0.894** | 0.670 | +0.224 |
+| SD 2.1 | 768px | **0.863** | 0.696 | +0.167 |
+| Midjourney | 436px | 0.580 | 0.821 | −0.241 |
+
+0.948 exceeds E6's 0.888 headline. The crossover — **~700px** — is now measured, which is what lets `serve.py` replace its invented `128px` routing threshold with an evidence-based one.
+
+**The bonus nobody planned.** The per-tile scores *are* a localisation map: "which tiles look synthetic" is the same question as "where was this image tampered". Module 2's core machinery was therefore built as a side effect of solving a Module 1 problem (§9c).
+
+### 2b.4 — Ideas that were tested and lost · 07-27 → 07-29
+
+These are as valuable as the ones that worked, and they were all resolved by measurement rather than argument.
+
+**"Train only on AI, call everything else real."** Proposed on the grounds that this dataset holds 5× more AI than real, so learn the majority class. Tested as a third setup on identical features (one-class SVM / Isolation Forest). On `archive1` — the most out-of-distribution set — the result was decisive:
+
+| Setup | AUC |
+|---|---|
+| one-class on **real** | **0.688** |
+| supervised | 0.505 |
+| one-class on **AI** | **0.358** |
+
+Learning "what AI looks like" scored *below chance*, i.e. systematically inverted. The asymmetry has a physical cause: "AI" is an expanding set that changes every few months, so a boundary drawn around today's generators expires; "real photograph" is fixed by sensor physics and does not change when a new generator ships. And the failure mode runs the wrong way — a model that knows only today's AI meets a new generator, finds no match, and stamps it **authentic**, which is the worst possible error for a misinformation detector. Learning "real" fails safe instead. This is Phase 5's thesis, now with a number attached.
+
+**Blending the CNN and the feature model.** Since they fail in disjoint places, an ensemble should win. Eight rules tested (mean, weighted, max, min, and rank-normalised variants, the ranks specifically to remove the probability-scale mismatch between a neural net and gradient boosting). The best beat the ResNet alone by **+0.002** — noise. It *relocates* accuracy rather than adding it: Defactify +0.036, `archive1` −0.036, because the feature model is near-random on `archive1` (0.505) and averaging a random signal into a good one costs what the gains are worth. A fixed-weight blend cannot exploit a specialist; a conditional one needs a reliable "is this model trustworthy here?" signal we do not have. **Hence the demo shows both scores separately and flags disagreement rather than hiding it inside a mean.**
+
+**Suspicion about `archive1`.** The feature model scoring exactly 0.505 there, and logistic regression scoring 0.217 (systematically inverted), prompted an audit of a benchmark that had gone uninspected since E1. It turned out to be maximally confounded — width/height/aspect alone separate the classes at **AUC 1.000**. Two controls followed, changing one variable at a time: re-encoding the PNGs to JPEG, then also centre-cropping both classes square. CNN performance moved by **+0.008** — *upward*. Both networks were immune, for a mechanical reason: `PIL` decoding discards the container format and `Resize((N,N))` discards dimensions and aspect ratio, so neither could perceive the leak. **E1's 77.1% and E6's 0.888 stand.** The irony is worth recording: the aggressive downscaling criticised throughout §4 for destroying signal also, accidentally, destroyed the shortcut. And the immunity does **not** transfer — the feature model reads native pixels and its shortcut probe predicts image width at 92.6% accuracy, so any native-resolution method must control for this explicitly.
+
+### 2b.5 — Questions answered along the way · 07-27 → 07-28
+
+These came up as design questions and the answers shaped the code; full treatment in `IMAGE_STRUCTURE_NOTES.md`.
+
+- **Why were we downscaling at all?** Networks need fixed-size batches; ResNet-18 was pretrained at 224; and 1024² is 21× the pixels. But the deciding point is that the standard recipe was written for *semantic* classification — a cat survives downscaling, a generation artefact does not. The error was adopting a recipe built for a different problem.
+- **Is image structure constant across resolutions?** Channel count is: RGB is 3 channels at 32×32 and at 4000×3000; only height and width change. That invariance is precisely why the feature approach yields a fixed-length vector.
+- **Does it change by format?** By colour mode, yes: grey=1, RGB=3, RGBA=4. And **JPEG does not store RGB** — it stores YCbCr and usually subsamples the two colour channels to half resolution, so inside a single JPEG the channels are not even the same size.
+- **Are the channels independent?** No — and the dependency is one of the most valuable signals available (the CFA trace, §2b.2). Analysing channels in isolation throws it away.
+- **Can one model handle all of them at once?** Yes, by concatenation: per-channel features + cross-channel features + alternative colour spaces in a single vector. No fusion logic required.
+- **Does normalisation lose information?** Some kinds destroy exactly what we measure — resizing, grayscale conversion, per-image contrast standardisation, re-encoding. The rule adopted: **normalise after extraction, in feature space; never before extraction, in pixel space.**
+- **Would training at full resolution fix it?** Measured on the M3 Pro: feasible (80 min vs 4 min) but wrong, for three reasons unrelated to speed — see §4c.
+
+### 2b.6 — The models
+
+| Artifact | Size | What it is | Trained on |
+|---|---|---|---|
+| `artifacts/feature_full.joblib` | 0.5 MB | StandardScaler + HistGradientBoosting over 68 statistics of the **whole image** at native resolution | GenImage train (9,917) |
+| `artifacts/feature_crop128.joblib` | 0.5 MB | Same pipeline on a **128×128 native crop**; also the model the 6×6 tile scorer calls once per tile | GenImage train (9,917) |
+
+Gradient boosting was chosen deliberately: with ~68 columns and ~10k rows this is tabular data, where boosted trees are the standard strong baseline and a neural network would not be expected to win. Both models are ~85× smaller than the ResNet checkpoint and refit in seconds once features are cached, which is the real benefit — it turns an experiment cycle from minutes into seconds and makes ablations cheap.
+
+The project now holds **four detectors**: SmallCNN (32px), ResNet-18 (GenImage), feature-full, feature-tiles.
+
+### 2b.6b — How to run any of it
+
+All paths relative to `ml/`. Feature extraction caches to `artifacts/features/` (14 MB), so everything after the first run is seconds rather than minutes.
+
+```bash
+# --- reproduce the feature experiment (E8): extract, train 3 setups, per-generator table
+PYTHONPATH=src .venv/bin/python -m pixelproof.feature_experiment
+#   both modes (whole-image + 128px crop), supervised / one-class-real / one-class-AI,
+#   the shortcut probe, and the table that decides whether the resolution ordering survived
+
+# --- refit and save the two feature models (reads the cache, writes artifacts/*.joblib)
+PYTHONPATH=src .venv/bin/python -m pixelproof.feature_model
+
+# --- rebuild the Defactify test set from downloaded parquet shards
+PYTHONPATH=src .venv/bin/python -m pixelproof.prepare_defactify \
+  --source ~/Desktop/defactify/data --output ~/Desktop/defactify_test
+#   optional: --per-generator N   to build a class-balanced subset
+
+# --- serve all four detectors (returns CNN + feature-full + 6x6 tile map)
+PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --port 8799
+npm run dev          # from the repo root, UI on :3000
+
+# --- audit any dataset folder before using it (§1b)
+.venv/bin/python /Volumes/LaCie/pixelproof-datasets/audit.py [folder]
+#   no argument = audit everything on the SSD; writes DENETIM.md
+```
+
+Existing artifacts: `best.pt` (SmallCNN/CIFAKE), `best_genimage.pt` (ResNet-18/GenImage),
+`feature_full.joblib`, `feature_crop128.joblib`, plus `best_10k/20k/50k.pt` from the E4 learning curve.
+
+### New ML modules (`ml/src/pixelproof/`)
+
+| File | Lines | Purpose |
+|---|---|---|
+| `features.py` | 316 | The feature extractor. 68 resolution-independent statistics per image — channel moments, cross-channel/CFA traces, Bayer sub-lattice variance, noise residuals, 16-band radial FFT, local-variance percentiles, JPEG-grid blockiness, HSV. Also `extract_tiles()` + `tile_positions()`, which cut an image into a grid of native-resolution tiles and report each tile's texture so flat ones can be discounted. |
+| `feature_experiment.py` | 252 | The E8 harness: parallel feature extraction with on-disk caching, three learning setups (supervised, one-class on real, one-class on AI), the shortcut probe that predicts image width from features alone, and the per-generator table. |
+| `feature_model.py` | 137 | Trains and persists the two feature models; `score_image()` and `score_tiles()` are what `serve.py` calls. Holds the measured constants: `TILE_PX = 128`, `TILE_GRID = 36`. |
+| `prepare_defactify.py` | 104 | Unpacks the Defactify parquet shards into image folders. Writes **raw JPEG bytes** rather than decoding and re-saving — re-encoding would rewrite the compression history, which is part of what we measure. |
+
+### Rewritten
+
+| File | Change |
+|---|---|
+| `serve.py` | +122 lines. Three named signals instead of one verdict, input-dependent `primary`, score-based agreement, `enough_evidence` floor, per-tile map in the response. |
+| `app/page.tsx` + `globals.css` | +79 lines. "Which model said what" panel: every model named, its own bar and verdict, agreement badge. |
+
+### Dataset tooling (`/Volumes/LaCie/pixelproof-datasets/`)
+
+| File | Lines | Purpose |
+|---|---|---|
+| `fetch.py` | 333 | Unattended downloader. One subprocess per dataset (a poisoned HTTP client cannot cascade), exponential backoff with longer waits on 429, multiple passes over the queue, disk-cap guards. |
+| `audit.py` | 259 | Standalone auditor. Reads inside parquet, **zip and tar** without extracting; samples across the whole shard range rather than the first few files; applies the five §1b checks. Writes `DENETIM.md`. |
+| `watchdog.sh` | 21 | Outermost net: restarts `fetch.py` if it dies for any reason. |
+
+### New documentation
+
+| File | Lines | Purpose |
+|---|---|---|
+| `IMAGE_STRUCTURE_NOTES.md` | 192 | How an image is physically structured and what that means for feature design: channel counts by format, JPEG's YCbCr with chroma subsampling, why channels are **not** independent (the CFA trace), and which normalisations destroy the evidence. |
+| `STATUS.md` | 131 | One-page "where are we / what did we find / what's next", updated after each experiment. Written so the roadmap does not have to be read day to day. |
+| `EXPERIMENTS.md` | +90 | E7–E10 in the project's pre-registered-hypothesis format, including the two negative results. |
+
+### 2b.7 — The dataset acquisition, and how the auditing rule was born · 07-28 → 07-29
+
+**Why more data was needed.** Two things forced it. `archive1` turned out to be confounded (§2b.4), so the project's OOD benchmark needed replacing. And Defactify's newest generator is Midjourney v6 (~2024) — nothing in the project had seen a 2025–26 model.
+
+**What was collected.** 255 GB to an external SSD across two overnight runs, chosen by value-per-GB rather than raw size: modern generators (Nano Banana, Nano Banana Pro, FLUX.1-dev, GPT Image 4K), balanced real/AI sets, an 18-generator benchmark, CommunityForensics (228 distinct models with per-image metadata), and — the most consequential item — a compilation of 13 forensic datasets **with pixel-level manipulation masks**. Full registry with per-dataset verdicts in §1c.
+
+**The first run failed, instructively.** It died after 31 minutes: an anonymous HTTP 429 from the Hub put the download client into a bad state, and because there was no retry logic anywhere, every remaining dataset then failed instantly with "Previous task error" — ten of them in two seconds. The rebuild addressed each cause separately: **one subprocess per dataset** (a poisoned client dies with it and the next starts clean), **exponential backoff** with longer waits on 429, **multiple passes** over the queue so early failures get retried later, **lower concurrency** (8 workers was what triggered the throttling), and a **shell watchdog** outside the process. The queue was also reordered by *file count*, not size — the first run began with an 8,002-file dataset, i.e. 8,002 API calls, which is what provoked the rate limit in the first place.
+
+**Where the auditing rule came from.** `archive1` had been the OOD benchmark through six experiments before anyone looked inside it. The lesson generalises: **audit before use, and write the verdict down.** `audit.py` (259 lines) runs five mechanical checks — format split, shape split, resolution split, compression split, class balance — reading inside parquet, zip and tar without extracting anything. Every downloaded set carries a verdict in `DENETIM.md`.
+
+The most important refinement is in §1b and bears repeating: **a flaw is a usage condition, not a disqualification.** A shortcut only exists if the model can perceive it. "AI images are 100% square 1024px" makes a dataset unusable for whole-image training and perfectly safe for tile-based training, because a 128×128 tile carries no information about the size of the image it came from.
+
+### 2b.8 — Bugs found in this session's own code · 07-28 → 07-30
+
+All three would have quietly corrupted conclusions rather than raising errors — which is the kind worth cataloguing.
+
+1. **AppleDouble stubs.** ExFAT makes macOS write a 4 KB `._name` file beside every real file. Sorted alphabetically these come *first*, so the auditor opened them instead of the parquet and reported "corrupt file" for perfectly good data. Fix: filter `._*` everywhere. Filesystem-specific, invisible on APFS.
+2. **Shard-sorted labels.** `theminji/ai-vs-real-200k` stores class 0 in shards 0–133 and class 1 in 134–267. Sampling the first 8 shards reported **"single class" for a perfectly balanced dataset** (4,930 vs 4,926 once sampled properly). Fix: spread the sample across the whole shard range. This is the dangerous kind: it produced a confident, wrong verdict about data quality instead of an obvious failure.
+3. **Agreement computed from labels instead of scores.** The demo called 0.48 and 0.94 "in agreement" because one of them fell inside the uncertainty band, so only one *non-uncertain* verdict existed. Technically consistent with the rule as written, visibly absurd to anyone looking at the screen. Fix: compare the raw score spread (<0.20 agree, <0.40 partial, else conflict) — what the eye actually reads.
+
+A fourth, in method rather than code: **the datasets were audited after downloading rather than before.** The correct procedure is to pull a single shard, audit it, and only then commit to the full download. Recorded here so the next acquisition does it in the right order.
+
+## 3. Phase 1 — Baseline CNN ✅ (2026-07-20 → 07-21, commit `4c149ec`)
 
 ### Architecture (`SmallCNN`)
 Three convolutional blocks (Conv → BatchNorm → ReLU, ×2 per block) with max-pooling in between, then **global average pooling** and a single-logit linear head. ~300k parameters — small, fast, and hard to overfit on 100k images.
@@ -47,6 +324,7 @@ Three convolutional blocks (Conv → BatchNorm → ReLU, ×2 per block) with max
 ### Training setup
 - Split: 90k train / 10k validation (10%), stratified by the seed-fixed shuffle.
 - Augmentation: **horizontal flip only.** We deliberately avoid color jitter / blur / JPEG-style augmentations, because subtle color statistics and generation artifacts are exactly the signal that separates AI images from real ones — destroying them would hurt the model.
+  > ⚠️ **Status 2026-07-29: this is an assumption, not a result.** The literature says the opposite — CNNSpot's central finding is that JPEG/blur augmentation is *the* lever for cross-generator generalisation (`IMAGE_FORENSICS_REFERENCE.md` §4.4), and §4.5 there states the trade-off must be measured rather than assumed. It has never been tested here. Listed as open in §13.
 - Validation uses a deterministic transform (no augmentation) — you evaluate the model, not the noise.
 - Optimizer: AdamW, lr 1e-3, weight decay 1e-4, batch 128, 20 epochs, on Apple MPS (GPU).
 - The epoch with the best validation accuracy is saved to `artifacts/best.pt` (early-stopping-lite).
@@ -69,9 +347,54 @@ PYTHONPATH=src .venv/bin/python -m pixelproof.predict some_photo.jpg
 .venv/bin/python -m pytest        # sanity tests
 ```
 
-## 4. Known Limitation: Input Resolution
+## 4. The central finding: preprocessing, not architecture
 
-The model was trained on 32×32 images. `predict.py` resizes any input (even 1980×1980) down to 32×32 first, so nothing crashes — but downscaling destroys the fine textures and generation artifacts that betray modern AI images. Expect degraded accuracy on high-resolution, in-the-wild photos. Phases 2–3 address this directly.
+What began as a footnote about the 32×32 baseline turned out to be the dominant factor in this project's performance. Three separate experiments converged on the same law, and a fourth quantified its cost.
+
+### 4a. The law
+
+> **Whatever the model will be shown at test time is what it must be shown during training.**
+
+| Experiment | Trained on | Given at test | Result |
+|---|---|---|---|
+| E5 | blurry 32→224 upscales | sharp native photos | called 984/995 images "AI" |
+| E6 | native high resolution | 32×32 CIFAKE | 50% — total collapse |
+| E7 patch trial | downscaled crops | native-resolution patches | 96% of real photos called "AI" |
+
+Every one of these looked like a model failure and was a preprocessing mismatch. Model capacity never entered into it.
+
+### 4b. The cost of downscaling, measured
+
+`eval_transform` resizes every input to 224×224. Generation artefacts live in fine texture; downscaling is a low-pass filter. On Defactify — five generators the model had never seen — the results ordered themselves almost perfectly by *source resolution*:
+
+```
+DALL-E 3     270px  → AUC 0.896   (barely downscaled)
+Midjourney   436px  → AUC 0.821
+SD 2.1       768px  → AUC 0.696
+SDXL        1024px  → AUC 0.717
+SD 3        1024px  → AUC 0.670   (downscaled 4.6x)
+```
+
+Note the direction: the *smallest* images are detected best. A resolution shortcut would produce the opposite ordering, so this is not the model cheating — it is the model being starved of evidence before it ever sees the image.
+
+**Root cause in our own config:** `configs/genimage.yaml` sets `crop_augmentation: true` → `RandomResizedCrop(224, scale=(0.7,1.0))`. For a 1024² training image that is a 3.8–4.6× downscale, every epoch. **The ResNet has never seen a native-resolution pixel.**
+
+### 4c. Compute was never the constraint
+
+Measured on the M3 Pro (ResNet-18, forward+backward):
+
+| Input | Throughput | 10k images × 5 epochs |
+|---|---|---|
+| 224×224 | 193 img/s | 4 min |
+| 512×512 | 41 img/s | 20 min |
+| 1024×1024 | 10 img/s | 80 min |
+
+Training at full resolution is 20× slower but entirely feasible. It is still the wrong answer, for three reasons that have nothing to do with speed:
+1. **You still resize.** A 4000×3000 photo fed to a 1024² model is still downscaled 3.9×; the problem shrinks, it does not vanish.
+2. **Global average pooling dilutes.** At 1024 input the final feature map is 32×32 = 1024 positions, all averaged into one vector. A small local trace is divided by 1024 instead of 49. Bigger input makes local evidence *weaker*.
+3. **Pretraining scale breaks.** ImageNet weights were learned at 224; at 1024 the transfer benefit degrades.
+
+The right answer is to stop resizing altogether — §9b.
 
 ## 5. Experimental Methodology — why the phases are ordered this way
 
@@ -86,53 +409,141 @@ The phase ordering below follows the consensus workflow from three authoritative
    - A single seed produces "a number, not evidence" — key comparisons get ≥3 seeds, we report mean ± std.
    - Keep a written experiment log (`ml/EXPERIMENTS.md`): date, config, seed, metrics, conclusion.
 
-## 6. Phase 2 — Hybrid ML Experiments (next)
+## 6. Phase 2 — Hybrid ML Experiments ✅ (2026-07-21, commits `1b20eeb` · `ee21fa3` — E2, E3, E4)
 
 A core learning goal of this internship project: combine deep learning with classical ML instead of treating them as rivals. All three experiments reuse the trained CNN, so none of them require expensive retraining.
 
 **A note on terminology first.** This project is **supervised learning** (we have REAL/FAKE labels and train a classifier on them), *not* unsupervised learning. Clustering algorithms like k-means only enter the picture below as *analysis tools* on top of the supervised model — except for Phase 5, which is a genuinely unsupervised formulation of the problem.
 
-### 2a. CNN as a feature extractor + classical classifiers
+### 6a. CNN as a feature extractor + classical classifiers
 - Take the 128-dim embedding from the CNN's penultimate layer for every image.
 - Train classical models on those embeddings: Logistic Regression, SVM, Random Forest, Gradient Boosting.
 - Compare all of them against the CNN's own classification head on the same test sets.
 - What this teaches: deep nets as representation learners; strengths/weaknesses of each classical algorithm; a clean comparison table for the report.
 
-### 2b. Embedding analysis with clustering & projection
+### 6b. Embedding analysis with clustering & projection
 - Run k-means (k-means++ init) on the embeddings; project to 2D with t-SNE/UMAP, color by true label and by cluster.
 - Questions to answer: do real/AI images separate cleanly? Where do the misclassified images live? Do clusters align with semantic categories (animals, city, food…)?
 - What this teaches: what the network actually learned, communicated visually — and the correct role of clustering: *exploration and error analysis*, not classification.
 
-### 2c. Learning-curve experiment (data-size ablation)
+### 6c. Learning-curve experiment (data-size ablation)
 - Retrain the same CNN on subsets (e.g. 10k / 20k / 50k / 90k) and plot accuracy vs. training-set size.
 - Answers empirically: "how much does more data matter?" Expected: logarithmic gains and a widening train/val gap at small sizes.
 
-## 7. Phase 3 — Transfer Learning + Ensemble
+## 7. Phase 3 — Transfer Learning + Ensemble ✅ (2026-07-21, commit `08e9c76` — E5)
 
 - Fine-tune a pretrained backbone (ResNet-18 → EfficientNet-B0) at 224×224 input.
 - Compare against the baseline on the *same* test sets — this is why the metrics pipeline came first.
 - Ensemble idea: average/vote the CNN (pixel domain) with a gradient-boosting model trained on frequency-domain features (FFT/DCT) — diffusion models leave periodic fingerprints in the frequency spectrum that pixel-space models can miss.
+  > ⚠️ **Status 2026-07-29: done, and it did not work.** This is exactly what E8 + E9 built and tested. The frequency/gradient-boosting model exists and is genuinely complementary (§9a), but eight blending rules all failed to beat the CNN by more than noise (§9d). Do not re-propose a fixed-weight blend without reading E9 first.
 - Concepts to learn here: freezing vs. full fine-tuning, discriminative learning rates, pretrained normalization statistics, why diverse ensembles beat their members.
 
-## 8. Phase 4 — High-Resolution / Patch-Based Inference
+## 8. Phase 4 — High-Resolution / Patch-Based Inference ✅ (2026-07-21, commit `1fd4ea5` — E6)
 
 - Instead of downscaling a large image, crop several patches at native resolution, classify each, and aggregate (mean or max probability).
 - Needs a higher-resolution training dataset (e.g. GenImage or a scraped SD/Midjourney set) — CIFAKE alone can't teach high-res artifacts.
 
-## 9. Phase 5 — Unsupervised Track: Anomaly Detection (parked — do not skip)
+> **Status 2026-07-29: this phase is done, and it turned out to be the most important idea in the project — but not in the form written above.**
+> - The GenImage retraining happened (E6), and it fixed E5's collapse.
+> - Patch inference on the *CNN* was tried and failed for a specific reason: the ResNet had only ever seen downscaled crops, so native patches were a fresh preprocessing mismatch (§4a). It is not enough to patch at inference time.
+> - Patch inference on the **feature model** worked, because that model was already fitted on native 128px crops — so tiles are the same input distribution, not a new one. This is §9b, and it produced the project's best scores (SDXL 0.948).
+> - "Mean or max probability" was measured rather than assumed: **top-3 mean** beats both, because flat tiles score ~0.5 and dilute an ordinary average.
+
+## 9. Phase 4b — Resolution-independent detection (2026-07-27/29)
+
+The answer to §4 came from a question raised during the session: *instead of feeding pixels to a network, reduce the image to a fixed-length vector of numbers and classify that.* Two things follow from it, and both were measured.
+
+### 9a. Hand-crafted statistics (`features.py`, E8)
+
+68 numbers per image, computed over **every pixel at native resolution** — nothing resized, nothing cropped, nothing skipped. All of them are ratios or per-pixel averages, never totals, which is what makes the vector the same length and the same meaning at any image size.
+
+| Feature group | What it reads |
+|---|---|
+| Per-channel moments | global colour/tone behaviour |
+| **Cross-channel correlation + Bayer sub-lattice variance** | the **CFA/demosaicing trace** — a real sensor measures one colour per photosite and interpolates the other two, leaving a structured inter-channel dependency. Latent-diffusion output never passed through a sensor and has none. |
+| Noise-residual statistics | sensor shot/read noise |
+| 16-band radial FFT spectrum | upsampler / VAE decoder periodic traces |
+| Local-variance percentiles | texture consistency |
+| 8×8 JPEG-grid blockiness | compression history |
+| HSV statistics | generated images occupy a different saturation regime |
+
+Trained on the *identical* GenImage split as the ResNet, so the comparison is controlled. Result: a **specialist, not a replacement** — worse overall (0.717 vs 0.760 on Defactify) but better by +0.09 to +0.15 AUC on exactly the three high-resolution generators the CNN handles worst, and far worse on small heavily-compressed ones.
+
+Concepts covered here: why tabular data wants gradient boosting rather than a neural net; why normalisation must happen **after** extraction in feature space and never **before** in pixel space; why physics-based features (sensor noise, CFA, compression) should outlive generator-specific ones.
+
+### 9b. Tiling — the general answer to the scale problem
+
+The second idea: **cut the image into a grid of fixed-size native tiles, score every tile, aggregate.**
+
+This dissolves the whole §4 problem. The model always sees 128×128 native pixels; resolution changes only *how many tiles come out*, never what a tile looks like. No resizing anywhere in the pipeline, and — as a side effect — image dimensions can no longer act as a shortcut (§1b).
+
+No retraining was needed: the crop128 model was fitted on 128×128 native crops, and every tile is one.
+
+**Measured optimum: 6×6 grid, aggregating the mean of the top 3 tiles.**
+
+| Grid | Best AUC |
+|---|---|
+| 2×2 | 0.760 |
+| 3×3 | 0.799 |
+| 4×4 | 0.801 |
+| 5×5 | 0.807 |
+| **6×6** | **0.821** |
+
+Top-3 beats a plain mean (0.821 vs 0.781) because flat tiles — sky, a wall, plain clothing — score around 0.5 and drag an ordinary average toward "no idea", drowning the tiles that carry evidence.
+
+Against the CNN on Defactify's high-resolution generators:
+
+| Generator | Source | Tiled | CNN | Δ |
+|---|---|---|---|---|
+| **SDXL** | 1024px | **0.948** | 0.717 | **+0.231** |
+| **SD 3** | 1024px | **0.894** | 0.670 | **+0.224** |
+| **SD 2.1** | 768px | **0.863** | 0.696 | **+0.167** |
+| Midjourney | 436px | 0.580 | 0.821 | −0.241 |
+
+**0.948 is the highest score this project has produced**, above E6's 0.888 headline.
+
+The crossover is measured, not guessed: **above ~700px the tile model wins decisively, below it the CNN does.** That replaces the invented `128px` routing threshold in `serve.py` with an evidence-based one.
+
+### 9c. Why this also builds Module 2
+
+The per-tile scores *are* a localisation map. "Which tiles look synthetic" is the same question as "where was this image tampered". One implementation serves both modules — Module 2 no longer starts from zero, and with the mask-annotated compilation in §1c it can now be **scored at pixel level** rather than argued about.
+
+Open caveat: the tile model was trained on image-level labels ("is this whole image AI"), never on region labels. For a fully-AI image every tile lights up, which is correct but carries no localisation information. The interesting case — a real photo with a pasted AI region — is a well-founded hypothesis that is **still unvalidated**. The data to validate it is now on disk.
+
+### 9d. Ensembling: a negative result (E9)
+
+Since the CNN and the feature model fail in disjoint places, blending them should win. Eight rules were tested (mean, weighted, max, min, and rank-normalised variants). The best beat the ResNet by **+0.002** — noise. It *relocates* accuracy rather than adding it: Defactify +0.036, archive1 −0.036, because the feature model is near-random on archive1 (0.505) and averaging a random signal into a good one costs what the gains are worth.
+
+Conclusion: a fixed-weight blend cannot exploit a specialist. A conditional combination needs a reliable "when is this model trustworthy?" signal, which we do not have. **Decision: the demo reports both scores side by side and flags disagreement instead of averaging.**
+
+## 10. Phase 5 — Unsupervised Track: Anomaly Detection (parked; partially probed 2026-07-27 in E8)
 
 Train a model **only on real photographs** and flag anything that deviates as suspicious (one-class SVM on embeddings, or an autoencoder with reconstruction error).
 
 **Why this matters.** Every supervised detector has a built-in blind spot: it learns the artifacts of the generators it was trained against. When a new generator ships (Midjourney v7, Flux, whatever comes next), those artifacts change and supervised accuracy silently collapses — our own CIFAKE→`archive1` drop (96.75% → 77%) is a small-scale preview of exactly this failure mode. An anomaly detector inverts the question: instead of "what does AI look like?" it learns "what do real photos look like?" — and real photos don't change when a new generator is released. This is the closest thing the field has to future-proofing, which is why it deserves a dedicated phase even though it comes last.
 
-## 10. Phase 6 — Serving in the Web App
+## 11. Phase 6 — Serving in the Web App ✅ (2026-07-21 commit `3b02c53`; rebuilt 2026-07-28 → 07-30)
 
-- Export the trained model (TorchScript or ONNX).
-- Add an inference endpoint (Python microservice, or ONNX Runtime in the Node worker).
-- Web UI: upload a photo → probability gauge "AI-generated vs real".
-- Report calibrated confidence, not just a hard yes/no.
+`serve.py` + the Next.js UI, rebuilt 2026-07-28/29 around the findings above.
 
-## 11. Phase 7 — Manipulation Detection (Module 2) — mentor-approved design
+**Three named models, reported side by side, deliberately unblended** (§9d showed a fixed blend adds nothing):
+
+| Signal | Which model |
+|---|---|
+| CNN | SmallCNN (<128px) or ResNet-18 (≥128px) |
+| Statistics — whole image | feature model, `full` variant |
+| Tiles — 6×6 grid, top-3 mean | feature model on native 128px crops |
+
+Design decisions that came out of measurement rather than taste:
+
+- **`primary` follows the input, not a fixed favourite.** Above `TILE_RELIABLE_PX = 700` the tile model leads; below it the CNN does. Both numbers are measured (§9b).
+- **Agreement is computed from the scores, not the verdict labels.** An earlier version called 0.48 and 0.94 "in agreement" because one of them fell in the uncertainty band — technically true, visibly absurd. Now: spread <0.20 agree, <0.40 partial, else conflict.
+- **`enough_evidence` floor at 48px.** Below that no method has the pixels to measure texture; the honest output is "insufficient evidence", not a confident guess.
+- Disagreement between the two families is surfaced, not hidden — it is a real uncertainty signal.
+
+Still open: calibration. 44% of real photographs are still called "AI" at threshold 0.5.
+
+## 12. Phase 7 — Manipulation Detection (Module 2) — approved 2026-07-23, unblocked 2026-07-29
 
 On 2026-07-23 the mentor approved the two-module architecture: **Module 1** (done — the existing real-vs-AI classifiers behind resolution routing) and **Module 2** — a separate detector answering "does this photo contain a locally tampered region?", with optional localization. Rationale: manipulation leaves local traces, not global ones (the Sunak-photo case: a mostly-real photo fools any whole-image classifier). Transfer learning was also explicitly approved.
 
@@ -143,7 +554,18 @@ Planned steps, mirroring the Phase 1→3 methodology (cheap baseline first, lear
 - **7c — Localization:** patch-based inference producing a "where was it tampered" heatmap.
 - **Integration:** third model in `serve.py` + combined verdict logic (single user-facing verdict: real / fully AI / real-but-tampered / uncertain).
 
-## 12. Progress Checklist
+### Status update 2026-07-29 — 7c is half-built and now measurable
+
+Two things changed:
+
+1. **The machinery exists.** The tile scorer from §9b already produces a per-tile probability map at native resolution. "Which tiles look synthetic" is the localisation question. No new architecture is required for a first heat-map.
+2. **The ground truth exists.** `ductai199x/image-manipulation-dataset-compilation` (§1c) ships 13 forensic datasets with **pixel-level masks**, including CASIA 2.0 (the set 7b planned to use) and CocoGlide (diffusion inpainting). Until this landed, "the tiles will show where the manipulation is" was an untestable hypothesis. It can now be scored with pixel F1/IoU against real masks.
+
+**Honest limit before anyone over-claims:** the tile model was trained on *image-level* labels only. It answers "does this tile look like AI-generated texture", not "was this tile edited". Those coincide for a pasted synthetic region and diverge for everything else. The first experiment must therefore be a measurement, not a demo.
+
+**Taxonomy correction carried over from `IMAGE_FORENSICS_REFERENCE.md` §4.2:** ChatGPT-family edits re-render every pixel, so at the pixel level they are *generated*, not *locally tampered*. `real-but-tampered` is recoverable only for classic edits and AI-spliced images. For fully-regenerated edits the honest verdict is "AI-regenerated"; promising localisation there would be a claim the field cannot currently support.
+
+## 13. Progress Checklist
 
 - [x] Datasets inspected (CIFAKE 100k/20k + external OOD set)
 - [x] Python env with PyTorch + MPS
@@ -161,8 +583,26 @@ Planned steps, mirroring the Phase 1→3 methodology (cheap baseline first, lear
 - [ ] Phase 5: unsupervised anomaly-detection track (train on real only)
 - [x] Phase 6: web demo — FastAPI inference service (dual model, resolution routing, uncertainty band) + upload/analyze UI, verified end-to-end locally
 - [x] Mentor decisions (2026-07-23): transfer learning approved; two-module architecture approved
-- [ ] Phase 7a: ELA baseline script (hand-written) + evaluation on known manipulated samples
-- [ ] Phase 7b: learned manipulation detector (CASIA v2 + transfer learning; input-representation ablation)
-- [ ] Phase 7c: patch-based localization heatmap
-- [ ] Phase 7 integration: Module 2 in serve.py + combined verdict in the demo
-- [ ] E7 (side experiment): evaluate existing models on the HuggingFace art dataset (out-of-domain content)
+
+### Session 2026-07-27 → 07-29
+
+- [x] **E7 — modern-generator stress test.** Built the Defactify test set (16,875 images, 5 generators all newer than training). AUC 0.888 → **0.760**. Discovered results order by *source resolution* → downscaling is destroying the evidence (§4b)
+- [x] **E7 control — native patches.** Confirmed the mechanism (high-res generators improved) but exposed the mismatch: 96% of real photos called "AI". Third instance of the preprocessing law (§4a)
+- [x] **E8 — resolution-independent features.** 68 hand-crafted statistics + gradient boosting, trained on the same GenImage split as the ResNet. A specialist: wins by +0.09…+0.15 on high-res generators, collapses on small compressed ones (§9a)
+- [x] **E9 — ensemble.** Negative result: best rule beats the ResNet by +0.002. Relocates accuracy rather than adding it (§9d)
+- [x] **E10 — archive1 audit + two controls.** Dataset is maximally confounded (metadata alone → AUC 1.000), but both CNNs are immune because `Resize()` destroys format and dimensions before they see anything. **E1's 77.1% and E6's 0.888 stand.** Immunity does NOT transfer to native-resolution methods
+- [x] **Tiling.** 6×6 grid + top-3 mean, no retraining. **SDXL 0.948 · SD 3 0.894 · SD 2.1 0.863** — the project's best scores. Measured crossover at ~700px replaces the invented 128px threshold (§9b)
+- [x] **Demo rebuilt.** Three named signals side by side, score-based agreement flag, evidence floor at 48px (§11)
+- [x] **255 GB of audited datasets** on the LaCie SSD, with an automated auditor and a per-dataset verdict (§1b, §1c)
+- [x] **Module 2 unblocked.** Mask-annotated manipulation data acquired; localisation is now measurable rather than hypothetical (§12)
+
+### Next
+
+- [ ] Retrain with native crops (`RandomCrop` instead of `RandomResizedCrop`) so training and tile inference finally match — the fix §4b points at, at no extra compute cost (§4c)
+- [ ] Phase 7a: ELA baseline + **positive control** (a hand-made JPEG splice ELA can catch) — a flat map on AI images is correct behaviour, not a failed experiment
+- [ ] Phase 7c first measurement: score the tile heat-map against CASIA/CocoGlide ground-truth masks (pixel F1/IoU)
+- [ ] Calibration: 44% of real photographs are still called "AI" at threshold 0.5
+- [ ] Compression robustness matrix — still never tested, and every image on the internet is compressed
+- [ ] Seed variance: every experiment so far is single-seed, against our own ≥3 rule (§5)
+- [ ] Re-evaluate on the clean modern sets (§1c) now that `archive1`'s biases are documented
+- [ ] Build a small ChatGPT/Gemini test set by hand, both classes through one identical pipeline — the only uncontaminated route to 2026-era editing models
