@@ -1,0 +1,50 @@
+# Dataset tools
+
+Acquisition and auditing for the 255 GB of evaluation data described in `ROADMAP.md` §1c.
+These live in the repo rather than beside the data, because the *auditing rule* is part of the
+method — see `ROADMAP.md` §1b for why.
+
+## `audit_datasets.py`
+
+Runs five mechanical checks on any dataset folder and writes a verdict. The checks all answer one
+question: **could a model separate the classes without looking at image content?**
+
+1. format split (JPEG vs PNG — this is what `archive1` had)
+2. shape split (all AI square, all real rectangular)
+3. resolution split (median side ratio > 2.5)
+4. compression split (bytes per pixel)
+5. class balance
+
+Reads inside parquet, zip and tar without extracting anything.
+
+```bash
+.venv/bin/python tools/audit_datasets.py                 # everything on the SSD
+.venv/bin/python tools/audit_datasets.py <folder>        # one dataset
+```
+
+Two sampling details it gets right, both learned the hard way:
+- skips macOS AppleDouble stubs (`._name`), which ExFAT writes beside every real file
+- samples across the **whole** shard range, because some datasets are sorted by label and reading
+  the first few shards reports "single class" for a balanced set
+
+## `fetch_datasets.py` + `watchdog.sh`
+
+Unattended downloader, built after the first attempt died 31 minutes in. Four independent layers:
+one subprocess per dataset (a poisoned HTTP client cannot cascade), exponential backoff with
+longer waits on 429, multiple passes over the queue, and a shell watchdog outside the process.
+
+```bash
+./tools/watchdog.sh            # runs until every dataset is done
+```
+
+Edit `QUEUE` in `fetch_datasets.py` to change what gets downloaded. Order it by **file count**,
+not size: a dataset of 8,000 small files costs 8,000 API calls and will trigger rate limiting long
+before a 260 GB dataset made of 188 large ones.
+
+**Known gap:** these download first and audit second. The right order is to pull one shard, audit
+it, and only then commit to the full download — recorded in `ROADMAP.md` §2b.8.
+
+## Paths
+
+Both scripts hard-code `/Volumes/LaCie/pixelproof-datasets`. Nothing runs when the external SSD is
+unmounted.
