@@ -1,3 +1,40 @@
+# =============================================================================
+# data.py — WHAT THIS FILE DOES
+# -----------------------------------------------------------------------------
+# Turns image folders on disk into batched, shuffled, normalized tensors that
+# the training loop can consume. Everything data-related lives here: label
+# convention, augmentation, normalization, and the train/validation split.
+#
+# CODE BLOCKS IN THIS FILE
+# -----------------------------------------------------------------------------
+# imports          torch.utils.data = batching machinery (DataLoader feeds the
+#                  GPU, Subset picks indices from a dataset); torchvision =
+#                  datasets.ImageFolder (reads folder-per-class image trees)
+#                  and transforms (image -> tensor preprocessing pipelines).
+#
+# invert_label()   ImageFolder sorts folders alphabetically (FAKE=0, REAL=1),
+#                  the opposite of our project-wide contract (AI=1, real=0).
+#                  This one-liner flips every label at load time.
+#
+# NORMALIZATION    Per-channel mean/std used to scale pixel values.
+#                  "default" (0.5/0.5) for from-scratch models; "imagenet" for
+#                  pretrained backbones, which expect the exact statistics
+#                  they were originally trained with.
+#
+# build_loaders()  The heart of the file. Builds two transform pipelines:
+#                  - train: resize (or RandomResizedCrop for high-res data) +
+#                    RandomHorizontalFlip (the ONLY augmentation — color/blur
+#                    would destroy the AI-artifact signal) + ToTensor +
+#                    Normalize.
+#                  - validation: deterministic resize only, no augmentation
+#                    (evaluate the model, not the noise).
+#                  Then splits the train folder with a SEEDED shuffle:
+#                  first 10% of indices -> validation, rest -> training
+#                  (train_size can truncate it for learning-curve runs).
+#                  Returns two DataLoaders (batch=128, shuffled train,
+#                  parallel workers, pinned memory for fast GPU transfer).
+# =============================================================================
+
 from pathlib import Path
 
 import torch

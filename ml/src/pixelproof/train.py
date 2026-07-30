@@ -1,3 +1,38 @@
+# =============================================================================
+# train.py — WHAT THIS FILE DOES
+# -----------------------------------------------------------------------------
+# The training loop. Reads a YAML config (all hyperparameters live there, not
+# in code), trains the selected model on the selected data, and saves the
+# best-validation-accuracy checkpoint to artifacts/.
+#
+# CODE BLOCKS IN THIS FILE
+# -----------------------------------------------------------------------------
+# imports          argparse = CLI flags; yaml = parse the config file;
+#                  torch/nn = training engine + loss; build_loaders and
+#                  create_model = the data and model factories from this
+#                  package (train.py never hard-codes either).
+#
+# run_epoch()      ONE pass over a dataset, used for BOTH training and
+#                  validation: pass an optimizer -> gradients flow and weights
+#                  update; pass None -> pure evaluation (no gradients,
+#                  dropout/batchnorm switch to eval behavior via model.train).
+#                  Per batch: forward -> loss -> (backward -> step) and
+#                  accumulate running loss + accuracy (logit >= 0 means "AI",
+#                  same as probability >= 0.5, without needing sigmoid).
+#
+# main()           Orchestration, in order:
+#                  1. parse --config / --train-size / --tag flags
+#                  2. seed torch (reproducible weight init + shuffles)
+#                  3. pick device: cuda -> mps (Apple GPU) -> cpu
+#                  4. build loaders + model from the config
+#                  5. AdamW optimizer + BCEWithLogitsLoss (binary task)
+#                  6. epoch loop: train pass, then validation pass; if this
+#                     epoch's val accuracy is the best so far, save weights +
+#                     the full config + val accuracy into one .pt checkpoint
+#                     (the checkpoint describes itself — evaluate.py/serve.py
+#                     rebuild the exact model from it with no extra info).
+# =============================================================================
+
 import argparse
 from pathlib import Path
 
@@ -9,19 +44,20 @@ from pixelproof.data import build_loaders
 from pixelproof.models import create_model
 
 
-def run_epoch(model, loader, loss_fn, device, optimizer=None):
+def run_epoch(model, loader, loss_fn, device, optimizer=None): # device = cpu or gpu or mps
     training = optimizer is not None
-    model.train(training)
-    total_loss = total_correct = total = 0
-    for images, labels in loader:
-        images, labels = images.to(device), labels.float().to(device)
-        with torch.set_grad_enabled(training):
+    model.train(training) # traning is a flag:
+    total_loss = total_correct = total = 0 #initialize counters for loss, correct predictions, and total samples
+    for images, labels in loader: # take batch of images and labels from the data loader
+        images, labels = images.to(device), labels.float().to(device) # move data to the same device as the model
+        with torch.set_grad_enabled(training): # if training is True, enable gradient computation; if False, disable it (saves memory and computation)
             logits = model(images)
-            loss = loss_fn(logits, labels)
+            loss = loss_fn(logits, labels) #loss function: BCEWithLogitsLoss() = binary cross entropy with logits
             if training:
-                optimizer.zero_grad(set_to_none=True)
-                loss.backward()
-                optimizer.step()
+                optimizer.zero_grad(set_to_none=True) # clear previous batch's gradients to avoid accumulation (set_to_none=True is a memory optimization)
+                loss.backward() #backpropagation: compute gradients of the loss w.r.t. model parameters
+                optimizer.step() # update model parameters using the computed gradients
+        # count correct predictions and accumulate loss for reporting        
         total_loss += loss.item() * labels.size(0)
         total_correct += ((logits >= 0) == labels.bool()).sum().item()
         total += labels.size(0)

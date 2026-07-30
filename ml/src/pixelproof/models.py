@@ -1,3 +1,43 @@
+# =============================================================================
+# models.py — WHAT THIS FILE DOES
+# -----------------------------------------------------------------------------
+# Defines the neural networks that answer: "is this image AI-generated (1)
+# or real (0)?" Every model outputs ONE raw score (logit) per image;
+# sigmoid(logit) turns it into the probability of "AI".
+#
+# CODE BLOCKS IN THIS FILE
+# -----------------------------------------------------------------------------
+# imports          torch = tensor + autograd engine; torch.nn = layer building
+#                  blocks (Conv2d, Linear, BatchNorm...); torchvision.models =
+#                  ready-made ResNet-18 with downloadable ImageNet weights.
+#
+# SmallCNN         Our from-scratch baseline for 32x32 CIFAKE images.
+#                  .features   : 3 conv blocks with MaxPool in between
+#                                (32->16->8 px, channels 3
+#                                ending in GlobalAvgPool -> a 128-dim
+#                                EMBEDDING (the image's le
+#                  .classifier : Flatten -> Dropout -> Linear(128 -> 1 logit).
+#
+# SmallCNN._block  The repeating unit: (Conv -> BatchNorm -> ReLU) x2.
+#                  Conv finds patterns, BatchNorm stabiliz
+#                  ReLU adds non-linearity. bias=False because BatchNorm
+#                  re-centers the output anyway, making a
+#
+# forward()        How data flows when you call model(x):
+#                  images -> features -> embedding -> classifier -> logits,
+#                  squeezed to shape (batch,) to match the
+#
+# ResNet18Transfer Transfer learning model: ImageNet-pretr
+#                  with its 1000-class head cut off ([:-1]) and replaced by
+#                  our own Linear(512 -> 1) head. Mirrors
+#                  .features / .classifier split, so all other scripts
+#                  (train / evaluate / embeddings / serve)
+#
+# MODEL_REGISTRY   name -> class dict. The YAML config's `
+# create_model()   the architecture here; adding a new model = one class +
+#                  one dict entry, nothing else in the pip
+# =============================================================================
+
 from collections.abc import Callable
 
 import torch
