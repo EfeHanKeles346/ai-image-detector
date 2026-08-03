@@ -205,3 +205,83 @@ evidence — key comparisons get ≥3 seeds.
 - **Crossover measured:** above ~700px the tile method beats the CNN decisively; below it the CNN wins (Midjourney at 436px). This replaces the invented `128px` routing constant in `serve.py` with `TILE_RELIABLE_PX = 700`.
 - **Conclusion:** the scale problem that dominated E5, E6 and E7 is dissolved rather than mitigated — the model always sees 128×128 native pixels, and resolution changes only *how many tiles* come out, never what a tile looks like. Two consequences beyond Module 1: image dimensions can no longer act as a shortcut (so the datasets flagged in ROADMAP §1c become usable), and the per-tile scores are directly a localisation map, which is Module 2's core machinery obtained as a side effect.
 - **Known limit:** low-resolution and heavily-compressed sources get worse, not better (DALL-E 3 at 270px, ~16 KB, drops below chance). Those inputs remain the CNNs' domain. The suspected mechanism — the feature model reading compression level as a proxy — is untested and listed as open.
+
+## 2026-07-30 — E12: statistics model, 10x more training data
+
+- **Hypothesis (pre-registered):** training the 68-feature model on ~101k images instead of 9,917 improves detection, because E2 established that the representation — not the classifier — is the bottleneck, and more data should sharpen the representation's fit.
+- **Data:** a merged pool built from five sources (CommunityForensics 301 generators, AI-vs-Real-balanced, GenImage, AIGC-Benchmark, ai-vs-real-200k). Indexed by `build_pool.py`, features cached by `pool_features.py`. Two checks ran before any training:
+  - **contamination:** 38 pool images were perceptual-hash matches for Defactify test images (all from AIGC-Benchmark, which shares MS-COCO with Defactify's real half). Excluded from the index. Without this check we would have trained on our own test set.
+  - **merged-pool audit:** individually clean sources combined into a pool with a **3.4x resolution gap** between classes (real median 1024px, AI 300px). Rebalanced across six resolution bands to 1.08x, costing 40% of the data. Both models were then trained on this same balanced pool, so the v1/v2 comparison stays controlled.
+- **Result (mean over 3 seeds):**
+
+| eval set | v1 (9.9k) | v2 (101k) | delta |
+|---|---|---|---|
+| GenImage test | 0.974 | 0.913 | −0.061 |
+| archive1 | 0.706 | **0.839** | **+0.133** |
+| Defactify (all) | 0.717 | 0.692 | −0.025 |
+| pool held-out | — | 0.895 | — |
+
+| generator | src px | v1 | v2 | delta |
+|---|---|---|---|---|
+| DALL-E 3 | 270 | **0.808** | 0.620 | **−0.189** |
+| Midjourney v6 | 436 | 0.796 | 0.818 | +0.022 |
+| SD 2.1 | 768 | 0.676 | 0.661 | −0.015 |
+| SD 3 | 1024 | 0.620 | 0.662 | +0.043 |
+| SDXL | 1024 | 0.685 | 0.699 | +0.014 |
+
+- **Hypothesis NOT supported.** Ten times the data produced a large gain on archive1, a large loss on DALL-E 3, and a wash elsewhere. Note the GenImage comparison is unfair to v2: v1 trained exclusively on GenImage, so 0.974 is an in-distribution number while v2's 0.913 is nearly out-of-distribution (GenImage is 7.8% of v2's pool).
+- **Two hypotheses tested for the DALL-E 3 collapse:**
+  1. *Low-resolution contamination.* 26% of the pool was 32x32 (`ai_vs_real_balanced`), where the 68 statistics have almost nothing to measure. **Refuted** — v3, trained with a 256px floor on 74,139 images, scored 0.607 on DALL-E 3 against v2's 0.611. No change.
+  2. *Compression domain gap.* **Supported.** The pool sits at ~0.9 bytes/pixel (largely PNG and lightly-compressed JPEG); Defactify sits at ~0.12 — a **7x gap**. The extra data came from a different compression regime than the test set, which is the preprocessing law (E5/E6/E7) appearing in a fourth dimension. Compression is not a class cue *within* the pool (real 0.861 vs AI 0.922), so this is a train/test gap rather than a shortcut.
+- **Conclusion:** data volume alone does not help when the added data occupies a different domain. Compression augmentation — proposed before training and skipped — is the indicated fix and remains untested.
+
+## 2026-07-30 — E13: the tile model's false-positive rate on real photographs
+
+- **Motivation.** E11 reported the tile method's ranking quality (SDXL 0.948) and stopped there. AUC is threshold-free: a model can rank almost perfectly and still place its decision boundary in the wrong place. Manual testing surfaced a real photograph scored at 99% AI, so the operating point was measured directly.
+- **Result — real photographs, three sources with different processing histories:**
+
+| real-photograph set | n | called AI | median p | > 0.9 | > 0.99 |
+|---|---|---|---|---|---|
+| GenImage (ImageNet) — **trained on** | 300 | 45.3% | 0.461 | 4.0% | 0.0% |
+| Defactify (MS-COCO) | 300 | 93.3% | 0.935 | 63.3% | 11.7% |
+| archive1 (Instagram) | 300 | 99.3% | 0.939 | 73.7% | 2.0% |
+| **all** | 900 | **79.3%** | 0.887 | 47.0% | 4.6% |
+
+- **Operating point** — real photographs and generators on the same scale:
+
+| set | median p | >= 0.5 | >= 0.9 | >= 0.99 |
+|---|---|---|---|---|
+| real (Defactify) | 0.935 | 93.3% | 63.3% | 11.7% |
+| DALL-E 3 | 0.534 | 56.7% | 1.0% | 0.0% |
+| Midjourney v6 | 0.955 | 99.7% | 86.7% | 0.3% |
+| SD 2.1 | 0.990 | 100.0% | 98.7% | 51.3% |
+| SD 3 | 0.992 | 100.0% | 99.3% | 61.0% |
+| SDXL | 0.993 | 100.0% | 100.0% | 82.7% |
+
+  Real photographs sit at 0.935 and SDXL at 0.993 — 0.06 apart. Pushing the threshold to 0.992 for a 5% false-positive rate drops overall AI recall to **27.3%** (DALL-E 3 and Midjourney to 0%).
+- **Conclusion: the tile model has no usable operating point.** Its 0.948 AUC on SDXL is genuine ranking information and simultaneously useless in deployment. The decisive number is in the first table: the model scores its own training real source at 0.461 and every unseen real source at 0.93–0.94.
+
+## 2026-07-30 — E14: the cause — a narrow real class
+
+- **Hypothesis (pre-registered):** the failure in E13 is not calibration but a narrow negative class. A model whose real half comes from one source learns "does this look like that source" rather than "does this carry camera traces", and rejects real photographs from any other pipeline. Widening the real class — with the AI half held fixed — should cut the false-positive rate on unseen real sources at little cost to AI recall.
+- **Design.** Five arms, each training on real photographs from one source, plus one arm using all five. The AI half (50,940 images) is **identical in every arm**, and the real budget is equalised at 3,697 so the comparison isolates *diversity*, not volume. Each arm is evaluated on real photographs from sources it never trained on.
+- **Result — false-positive rate (% of real photographs called AI):**
+
+| training real source | own source | held-out sources |
+|---|---|---|
+| CommunityForensics | **0.3%** | **99.9%** |
+| GenImage | 23.7% | 91.7% |
+| ai-vs-real-200k | 43.7% | 98.2% |
+| AI-vs-Real-balanced | 45.4% | 99.3% |
+| AIGC-Benchmark | 64.0% | 88.6% |
+| **all five sources** | 14–94% | — |
+
+| arm | AI recall | AUC (whole pool) |
+|---|---|---|
+| single source (any) | 99.5–100% | 0.548–0.661 |
+| **all five sources** | 99.8% | **0.884** |
+
+- **Hypothesis confirmed, and the effect is the largest this project has measured.** A model trained on one real source calls 88–99.9% of other sources' real photographs "AI". Training on five sources raises AUC from ~0.6 to **0.884** — and costs nothing: AI recall stays at 99.8% in every arm.
+- **Caveat:** the real budget was fixed at the smallest source (3,697) while the AI half stayed at 50,940, so every arm carries a 1:14 imbalance that inflates the absolute false-positive rates. The comparison is unaffected — the imbalance is identical across arms — and AUC is threshold-free, so the 0.55 → 0.884 jump stands. Absolute operating points need a class-balanced repeat.
+- **Conclusion — this reframes every earlier result.** The models were not learning "what generated images look like"; they were learning "what my training set's real photographs look like" and labelling everything else AI. It explains the asymmetry noticed in manual testing (the CNN defaults to "real" because downscaling makes unfamiliar inputs look smooth; the statistics models default to "AI" because native texture unlike ImageNet's triggers them), why E12's tenfold data increase did not help (volume rose, real-class *diversity* did not), and why calibration collapses on archive1 (Instagram-processed reals are an unseen pipeline). `IMAGE_FORENSICS_REFERENCE.md` §4.1 states the correct target directly: a detector should read **camera traces** — PRNU, CFA correlation, compression history, which are physics and therefore source-independent — not "unlike my training set", which is source identity.
+- **Priority change:** real-class diversity now precedes any backbone upgrade. A stronger network trained on the same narrow real class would answer the same wrong question more sharply.

@@ -40,11 +40,18 @@ TILE_RELIABLE_PX = 700    # E11: above this the tile method wins decisively
 UNCERTAINTY_BAND = 0.1    # E3: errors concentrate inside |p-0.5| < 0.1
 EVIDENCE_FLOOR_PX = 48    # below this no method has enough pixels to measure texture
 
+# `stats` variants differ only in TRAINING DATA — same 68 features, same
+# pipeline. Exposed side by side so a real upload can be used to compare
+# training recipes, not just the benchmark (E12).
+STATS_VARIANTS = {"stats": "full", "stats2": "full_v2", "stats3": "full_v3"}
+
 METHODS = {
-    "auto":  "Otomatik — görsel boyutuna göre en güçlü yöntem",
-    "cnn":   "CNN — küçültülmüş görsel, sinir ağı",
-    "stats": "İstatistik — tüm görsel, küçültme yok",
-    "tiles": "Kare kare — 6×6 ızgara, orijinal çözünürlük",
+    "auto":   "Otomatik — görsel boyutuna göre en güçlü yöntem",
+    "cnn":    "CNN — küçültülmüş görsel, sinir ağı",
+    "stats":  "İstatistik v1 — 9.9k GenImage ile eğitildi",
+    "stats2": "İstatistik v2 — 101k dengeli havuz ile eğitildi",
+    "stats3": "İstatistik v3 — 74k havuz, 256px+ görseller",
+    "tiles":  "Kare kare — 6×6 ızgara, orijinal çözünürlük",
 }
 
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
@@ -99,9 +106,13 @@ async def predict(image: UploadFile = File(...), method: str = Form("auto")):
     tile_map = None
     if chosen == "cnn":
         probability, engine = run_cnn(picture)
-    elif chosen == "stats":
-        probability = score_image({"full": FEATURES["full"]}, picture)["full"]
-        engine = "feature_full"
+    elif chosen in STATS_VARIANTS:
+        variant = STATS_VARIANTS[chosen]
+        if variant not in FEATURES:                    # model not trained yet
+            variant = "full"
+            chosen = "stats"
+        probability = score_image({variant: FEATURES[variant]}, picture)[variant]
+        engine = f"feature_{variant}"
     else:
         tile_map = score_tiles(FEATURES, picture)
         probability = tile_map["p_ai"]

@@ -71,7 +71,7 @@ aside { margin-top: 20px; padding: 16px 18px; border: 1px solid #bfdbfe; border-
 
 
 /* Method picker — four mutually exclusive methods, never blended (E9). */
-.methods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 18px 0 8px; }
+.methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 18px 0 8px; }
 .method { padding: 9px 4px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--muted); font-size: 12px; font-weight: 600; cursor: pointer; transition: .12s; }
 .method:hover:not(:disabled) { border-color: var(--primary); color: var(--primary-dark); }
 .method.active { border-color: var(--primary); background: #eff6ff; color: var(--primary-dark); }

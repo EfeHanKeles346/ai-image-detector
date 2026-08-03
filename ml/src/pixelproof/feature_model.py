@@ -74,15 +74,32 @@ def train(cache_dir: Path, output_dir: Path, seed: int = 42) -> None:
 
 
 def load(artifacts_dir: Path) -> dict:
-    return {variant: joblib.load(artifacts_dir / f"feature_{variant}.joblib")
-            for variant in VARIANTS
-            if (artifacts_dir / f"feature_{variant}.joblib").exists()}
+    """Every feature model on disk, keyed by variant.
+
+    Beyond the two VARIANTS this module trains, it also picks up the retrained
+    whole-image models (`full_v2`, `full_v3`) so the demo can compare training
+    recipes on a real upload rather than only on the benchmark.
+    """
+    models = {variant: joblib.load(artifacts_dir / f"feature_{variant}.joblib")
+              for variant in VARIANTS
+              if (artifacts_dir / f"feature_{variant}.joblib").exists()}
+    for path in sorted(artifacts_dir.glob("feature_full_v*.joblib")):
+        models[path.stem.removeprefix("feature_")] = joblib.load(path)
+    return models
+
+
+def crop_for(variant: str) -> int | None:
+    """Crop size a variant expects. Retrained whole-image models (`full_v2`,
+    `full_v3`) are not in VARIANTS but read the whole image, same as `full`."""
+    if variant in VARIANTS:
+        return VARIANTS[variant]
+    return None if variant.startswith("full") else TILE_PX
 
 
 def score_image(models: dict, image: Image.Image) -> dict[str, float]:
     scores = {}
     for variant, pipeline in models.items():
-        vector = extract_from_image(image, VARIANTS[variant]).reshape(1, -1)
+        vector = extract_from_image(image, crop_for(variant)).reshape(1, -1)
         scores[variant] = float(pipeline.predict_proba(vector)[0, 1])
     return scores
 

@@ -543,6 +543,78 @@ Two things changed:
 
 **Taxonomy correction carried over from `IMAGE_FORENSICS_REFERENCE.md` §4.2:** ChatGPT-family edits re-render every pixel, so at the pixel level they are *generated*, not *locally tampered*. `real-but-tampered` is recoverable only for classic edits and AI-spliced images. For fully-regenerated edits the honest verdict is "AI-regenerated"; promising localisation there would be a claim the field cannot currently support.
 
+## 12b. The narrow-real-class finding (2026-07-30) — reframes everything above
+
+E13 and E14 changed what this project believes it was measuring. Recorded here rather than
+buried in the experiment log, because it invalidates the reading of several earlier results.
+
+### What was found
+
+Manual testing surfaced a real photograph the tile model scored at 99% AI. Measuring it properly
+(E13) gave this:
+
+| real-photograph set | called AI | median p |
+|---|---|---|
+| GenImage (ImageNet) — **the training source** | 45.3% | 0.461 |
+| Defactify (MS-COCO) | 93.3% | 0.935 |
+| archive1 (Instagram) | 99.3% | 0.939 |
+
+The model scores its own training real source near the middle and every unseen real source at
+0.93–0.94. Real photographs sit at 0.935; SDXL sits at 0.993. **There is no threshold that
+separates them** — 5% false positives costs 73 points of AI recall.
+
+E14 isolated the cause. Five arms, each trained on real photographs from one source, the AI half
+held identical, real budgets equalised so only *diversity* varies:
+
+| training real source | own source FP | held-out FP |
+|---|---|---|
+| CommunityForensics | 0.3% | **99.9%** |
+| GenImage | 23.7% | 91.7% |
+| AIGC-Benchmark | 64.0% | 88.6% |
+
+| arm | AI recall | AUC |
+|---|---|---|
+| single source | 99.5–100% | 0.548–0.661 |
+| **all five sources** | 99.8% | **0.884** |
+
+### What it means
+
+The detectors were never learning "what generated images look like". They were learning **"what
+my training set's real photographs look like"**, and labelling everything outside that manifold
+AI. The AI class in training was diverse (7, then 300+ generators); the real class was narrow. The
+model took the easier boundary.
+
+`IMAGE_FORENSICS_REFERENCE.md` §4.1 names the correct target: a detector should read **camera
+traces** — PRNU, CFA correlation, compression history — which are physics, and therefore
+source-independent. "Unlike my training set" is source identity, not physics.
+
+### What it explains
+
+| Earlier observation | Explanation |
+|---|---|
+| Tile model calls 79% of real photographs AI (E13) | Narrow real class |
+| CNN catches real but misses AI; statistics models do the opposite | Same disease, opposite expression — downscaling makes unfamiliar input look smooth (CNN defaults to "real"), native texture unlike ImageNet triggers the statistics models (default to "AI") |
+| Tenfold training data did not help (E12) | Volume rose; real-class **diversity** did not |
+| Calibration collapses on archive1 (E6) | Instagram-processed reals are an unseen camera pipeline |
+| E12's compression gap (0.9 vs 0.12 bytes/pixel) | A second axis of the same problem: the training real class is narrow in compression history too |
+
+### What it changes
+
+**Real-class diversity now precedes any backbone upgrade.** A stronger network — ConvNeXt,
+DINOv2, CLIP — trained on the same narrow real class would answer the same wrong question more
+sharply. Widening the real class costs nothing measurable: AI recall stayed at 99.8% in every arm
+of E14.
+
+Two methodology rules follow, and they apply to every experiment from here:
+
+1. **Report in-distribution and out-of-distribution separately for BOTH classes.** Every
+   experiment to date asked whether the AI class generalises to an unseen *generator*. None asked
+   whether the real class generalises to an unseen *camera pipeline*. That is where the models
+   were breaking.
+2. **A detector's claim must be an operating point, not an AUC.** E11 reported 0.948 and stopped;
+   E13 showed the same model has no usable threshold. Ranking quality and deployability are
+   different claims and need to be stated separately.
+
 ## 13. Target architecture and the ordered plan (2026-07-30)
 
 ### 13a. Where the system is heading
@@ -622,6 +694,11 @@ but trained with native crops, or it repeats ResNet's history.
 
 Sequenced by dependency and by value-per-hour, not by ambition. Each step's output decides whether
 the next one is still the right move.
+
+**Step 0 — Widen the real class** *(~10 min, features already cached)*
+Retrain on a class-balanced, multi-source real half (§12b). Measured effect: AUC 0.55 → 0.884 at
+no cost to AI recall. This precedes everything else — every other improvement is measured against
+a model that currently answers the wrong question.
 
 **Step 1 — Native-crop retraining** *(1 training run, ~1h)*
 Change `RandomResizedCrop` to `RandomCrop` in `configs/`, retrain the ResNet. This is the fix §4b

@@ -14,6 +14,12 @@ Four detectors, none of them blended, because blending was measured and did not 
 | Statistics | 68 hand-crafted features over every pixel, no resizing | mid-size, low-texture | 0.717 |
 | **Tiles** | 6×6 grid of native 128px crops, mean of top 3 | **≥700px** | **0.948 on SDXL** |
 
+> ⚠️ **Read `ROADMAP.md` §12b before trusting any of these numbers.** Measuring the tile model's
+> *operating point* rather than its AUC showed it calls **79% of real photographs "AI"** — and the
+> cause is a narrow real class, not calibration. Every detector here was partly learning "what my
+> training set's real photographs look like" instead of "what a generated image looks like".
+> Widening the real class raises AUC 0.55 → 0.884 at no cost to AI recall.
+
 Measured on **Defactify** — 16,875 images from five generators (SD 2.1, SDXL, SD 3, DALL-E 3,
 Midjourney v6), none of which any model was trained on.
 

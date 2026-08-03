@@ -25,7 +25,9 @@ const API_URL = "http://127.0.0.1:8799";
 const METHODS = [
   { id: "auto", label: "Otomatik", hint: "Boyuta göre en güçlü yöntem" },
   { id: "cnn", label: "CNN", hint: "Küçültülmüş görsel · küçük girdilerde güçlü" },
-  { id: "stats", label: "İstatistik", hint: "Tüm piksel · küçültme yok" },
+  { id: "stats", label: "İst. v1", hint: "68 istatistik · 9.9k GenImage ile eğitildi" },
+  { id: "stats2", label: "İst. v2", hint: "Aynı özellikler · 101k dengeli havuz ile eğitildi" },
+  { id: "stats3", label: "İst. v3", hint: "Aynı özellikler · 74k havuz, sadece 256px+ görseller" },
   { id: "tiles", label: "Kare kare", hint: "6×6 orijinal kesit · ≥700px'te en iyi" },
 ];
 
