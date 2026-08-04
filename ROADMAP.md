@@ -539,6 +539,33 @@ Two things changed:
 1. **The machinery exists.** The tile scorer from §9b already produces a per-tile probability map at native resolution. "Which tiles look synthetic" is the localisation question. No new architecture is required for a first heat-map.
 2. **The ground truth exists.** `ductai199x/image-manipulation-dataset-compilation` (§1c) ships 13 forensic datasets with **pixel-level masks**, including CASIA 2.0 (the set 7b planned to use) and CocoGlide (diffusion inpainting). Until this landed, "the tiles will show where the manipulation is" was an untestable hypothesis. It can now be scored with pixel F1/IoU against real masks.
 
+### First measurement, 2026-08-04 (E17/E18)
+
+Run, and the answer splits cleanly by manipulation type:
+
+| sub-dataset | type | tile model | ELA |
+|---|---|---|---|
+| **CocoGlide** | diffusion inpainting | **0.648** tile / 0.721 image | 0.339 |
+| CASIA 2.0 | classic splice | 0.606 tile / **0.481 image** | 0.468 |
+| hand-made JPEG splice (control) | classic splice | — | **0.719** |
+
+**Module 2 needs two detectors, not one.** The tile model asks an *absolute* question — "does
+this region look generated" — which is right for an AI-inpainted region and wrong for a splice,
+where the pasted pixels are camera output from a different camera. On CASIA it scores 0.481 at
+image level: manipulated 0.760 against authentic 0.755, i.e. it cannot see the edit at all, and
+is answering its own question correctly.
+
+The splice case needs a *relative* question — "is this region inconsistent with the rest of this
+image" — because the donor differs in sensor noise, demosaicing signature and JPEG history. ELA
+reads the last of those, and the controlled test confirms it works (0.719) even though it fails
+on the compilation (0.468). The cause is in the data: every image was converted to PNG, and that
+uniform re-encode flattens exactly the differential compression history ELA depends on
+(`IMAGE_FORENSICS_REFERENCE.md` §4.3). Splitting CASIA by original extension shows it directly —
+`.tif` originals 0.578, `.jpg` originals 0.338.
+
+So the two-detector design is supported, and **cannot be validated on this dataset**. That needs
+manipulation data preserving JPEG history, or splices constructed here.
+
 **Honest limit before anyone over-claims:** the tile model was trained on *image-level* labels only. It answers "does this tile look like AI-generated texture", not "was this tile edited". Those coincide for a pasted synthetic region and diverge for everything else. The first experiment must therefore be a measurement, not a demo.
 
 **Taxonomy correction carried over from `IMAGE_FORENSICS_REFERENCE.md` §4.2:** ChatGPT-family edits re-render every pixel, so at the pixel level they are *generated*, not *locally tampered*. `real-but-tampered` is recoverable only for classic edits and AI-spliced images. For fully-regenerated edits the honest verdict is "AI-regenerated"; promising localisation there would be a claim the field cannot currently support.
@@ -675,11 +702,16 @@ without fixing the input would buy very little.
 
 The recommendation is therefore two-part:
 
-1. **Representation — a frozen CLIP-ViT or DINOv2 backbone with a linear probe.**
-   `IMAGE_FORENSICS_REFERENCE.md` §4.4: CLIP-feature detectors are *"currently among the best
-   out-of-distribution generalizers, even trained on little data"*. This is also the natural
-   completion of E2, which established that the representation is the bottleneck but only ever
-   tested that claim with a weak representation.
+1. ~~**Representation — a frozen CLIP-ViT or DINOv2 backbone with a linear probe.**~~
+   > ⚠️ **Tested 2026-08-04 and falsified — see E16.** DINOv2 ViT-S/14 at 518px, frozen, probed
+   > on the same balanced pool as the statistics model, scored **0.480 on Defactify** — chance —
+   > against the statistics model's 0.692, while scoring 0.940 on GenImage. The split is
+   > diagnostic: DINOv2 is a *semantic* encoder, and Defactify's fakes are generated from the
+   > same MS-COCO captions as its reals, so there is no content difference to read. GenImage is
+   > not content-controlled, which means a high score there can come from recognising subject
+   > matter rather than generation — a warning that applies to every GenImage number in this
+   > project. Hand-crafted low-level statistics are the right family; a semantic backbone is not
+   > the upgrade path.
 2. **Applied to native tiles, not whole images.** A ViT resizes to 224 like everything else, so a
    whole-image CLIP probe would inherit the §4 penalty. Feeding it 128–224px native tiles combines
    the strongest known representation with the measured fix.

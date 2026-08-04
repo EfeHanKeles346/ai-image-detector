@@ -285,3 +285,86 @@ evidence — key comparisons get ≥3 seeds.
 - **Caveat:** the real budget was fixed at the smallest source (3,697) while the AI half stayed at 50,940, so every arm carries a 1:14 imbalance that inflates the absolute false-positive rates. The comparison is unaffected — the imbalance is identical across arms — and AUC is threshold-free, so the 0.55 → 0.884 jump stands. Absolute operating points need a class-balanced repeat.
 - **Conclusion — this reframes every earlier result.** The models were not learning "what generated images look like"; they were learning "what my training set's real photographs look like" and labelling everything else AI. It explains the asymmetry noticed in manual testing (the CNN defaults to "real" because downscaling makes unfamiliar inputs look smooth; the statistics models default to "AI" because native texture unlike ImageNet's triggers them), why E12's tenfold data increase did not help (volume rose, real-class *diversity* did not), and why calibration collapses on archive1 (Instagram-processed reals are an unseen pipeline). `IMAGE_FORENSICS_REFERENCE.md` §4.1 states the correct target directly: a detector should read **camera traces** — PRNU, CFA correlation, compression history, which are physics and therefore source-independent — not "unlike my training set", which is source identity.
 - **Priority change:** real-class diversity now precedes any backbone upgrade. A stronger network trained on the same narrow real class would answer the same wrong question more sharply.
+
+## 2026-08-04 — E15: Step 0 — class-balanced, multi-source real half
+
+- **Motivation:** E14 showed real-class diversity is the dominant lever but left every arm at a 1:14 class imbalance, which inflated the absolute false-positive rates. AUC was unaffected (it is threshold-free) but the operating point was unreadable.
+- **Config:** 36,970 images, exactly balanced (18,485 real / 18,485 AI), the real half drawn evenly — 3,697 from each of five sources. 3 seeds. Compared against v1 (9.9k GenImage) and v2 (101k, source-skewed real half).
+- **Result:**
+
+| eval set | v1 | v2 | v3 balanced |
+|---|---|---|---|
+| GenImage test | 0.974 | 0.914 | 0.919 |
+| **archive1** | 0.706 | 0.832 | **0.904** |
+| Defactify | 0.717 | 0.694 | 0.692 |
+
+| false positives on real photos | v1 | v2 | v3 |
+|---|---|---|---|
+| GenImage (trained on) | 8.2% | 12.8% | 13.8% |
+| archive1 (unseen) | 30.1% | 31.6% | **19.8%** |
+| Defactify (unseen) | 12.7% | 9.6% | **9.4%** |
+
+| AI recall at a 10% false-positive budget | v1 35.6% | v2 32.6% | v3 33.7% |
+|---|---|---|---|
+
+- **Conclusion — the fix works exactly where it was predicted to, and nowhere else.** Diversifying the real half cut the false-positive rate on unseen real sources (archive1 30.1% → 19.8%) and raised archive1 AUC by +0.198 over v1. Defactify was untouched: 0.717 → 0.692, and all three models sit at ~33–36% AI recall at a usable threshold. **E14's 0.55 → 0.884 was measured within the pool** — generalisation across the pool's own sources — and does not transfer to Defactify. Two separate problems: a narrow real class (fixed) and weak discrimination of modern generators (not fixed).
+
+## 2026-08-04 — E16: a frozen DINOv2 probe — a large negative result
+
+- **Hypothesis (pre-registered):** E15 exhausted the data explanation, so the ceiling is what the 68 features can express. `IMAGE_FORENSICS_REFERENCE.md` §4.4 names CLIP-style features as "currently among the best out-of-distribution generalizers"; a frozen backbone with a linear probe should beat hand-crafted statistics.
+- **Config:** DINOv2 ViT-S/14 at **518px** (a 1024px image is downscaled 2.0× instead of the 4.6× a 224px model forces), frozen, 384-dim embeddings, logistic-regression probe, 3 seeds. Trained on the *same* balanced multi-source pool as E15's v3, so representation is the only variable.
+- **Result:**
+
+| eval set | statistics v3 | DINOv2 probe | delta |
+|---|---|---|---|
+| GenImage test | 0.919 | **0.940** | +0.021 |
+| archive1 | 0.904 | 0.873 | −0.031 |
+| **Defactify** | 0.692 | **0.480** | **−0.212** |
+
+  Per generator on Defactify: 0.42–0.54 — chance, or inverted. False positives on real photographs: 9.2% on GenImage (trained on), 49.0% on archive1, 63.6% on Defactify. AI recall at a 10% false-positive budget: **9.5%** against the statistics model's 33.7%.
+- **Hypothesis falsified, and the failure is diagnostic.** DINOv2 is a *semantic* encoder: its features describe what is in an image, not how the image was produced. The two test sets differ in exactly the way that exposes this:
+
+| set | content control | DINOv2 |
+|---|---|---|
+| GenImage | reals are ImageNet nature photos, fakes are other content | **0.940** |
+| Defactify | fakes generated **from the same MS-COCO captions** as the reals | **0.480** |
+
+- **This carries a warning backwards.** Defactify is content-controlled by construction, so a semantic model has nothing to grab and scores at chance. GenImage is not — which means **a model can score highly there by recognising content rather than generation**, and every GenImage number in this log since E1 inherits that doubt. Defactify is the harder benchmark because it is the fairer one.
+- **Conclusion:** hand-crafted low-level statistics are the right *family* — they are weak (0.692) but they read production traces rather than subject matter. A stronger semantic backbone is not the upgrade path. The recommendation in ROADMAP §13b was wrong and is corrected there.
+
+## 2026-08-04 — E17: Module 2's first measurement, against ground-truth masks
+
+- **Motivation:** ROADMAP §9c called tile-based localisation "a well-founded hypothesis that is still unvalidated" for lack of ground truth. The manipulation compilation supplies it: pixel-level masks, plus a `.json` pointer to the authentic original.
+- **No training.** The question is narrower than "can we localise": does a model trained to answer *"does this tile look generated"* already answer *"was this tile edited"*? Those coincide for a diffusion-inpainted region and diverge for a Photoshop splice, so results are reported **per sub-dataset**.
+- **Prediction (pre-registered):** CocoGlide (diffusion inpainting) should work — the pasted region genuinely is generated texture. CASIA 2.0 and Columbia (classic splices) should not — the pasted region is camera output, just from a different camera.
+- **Result:**
+
+| sub-dataset | manipulation type | tampered tiles | clean tiles | tile AUC | IoU | image AUC |
+|---|---|---|---|---|---|---|
+| **CocoGlide** | diffusion inpainting | 0.600 | 0.455 | **0.648** | **0.419** | **0.721** |
+| CASIA 2.0 | classic splice | 0.625 | 0.517 | 0.606 | 0.284 | **0.481** |
+
+- **Prediction confirmed.** On CocoGlide the tile map carries signal at both levels — the model distinguishes tampered from clean tiles *within the same image*, and tampered images from authentic ones. On CASIA the image-level number is 0.481, i.e. chance: manipulated images score 0.760 and authentic ones 0.755. The model is answering its own question correctly; the question is simply the wrong one for a splice, where both host and donor pixels carry camera traces.
+- **Conclusion — Module 2 needs two capabilities, not one.** An *absolute* detector ("does this region look generated") covers AI inpainting. A *relative* one ("is this region inconsistent with the rest of this image") is required for classic splices, because the donor region differs from the host in sensor noise, demosaicing signature and JPEG history — none of which is a question about AI.
+
+## 2026-08-04 — E18: ELA for the splice case, and its positive control
+
+- **Hypothesis (pre-registered):** ELA covers the case E17 showed the tile model cannot. `IMAGE_FORENSICS_REFERENCE.md` §4.3 scopes it precisely — it works on JPEG splices where donor and host have different compression histories, and fails **by design** on generated images and uniformly re-encoded ones. So the prediction is the mirror of E17: ELA beats the tile model on CASIA and loses on CocoGlide.
+- **Result — on the compilation:**
+
+| sub-dataset | ELA pixel AUC | tile pixel AUC | ELA image AUC | tile image AUC |
+|---|---|---|---|---|
+| CASIA 2.0 | 0.468 | 0.606 | 0.567 | 0.481 |
+| CocoGlide | 0.339 | 0.648 | 0.470 | 0.721 |
+
+  ELA is at or below chance everywhere — including the case it was chosen for.
+- **The reference doc requires a positive control before reading a negative ELA result, and it changes the conclusion.** A hand-made splice — host re-encoded at JPEG q95, donor region at q55, composite saved at q90 — gives **tile AUC 0.719**. The implementation is sound and the method works when its precondition is met.
+- **Splitting CASIA by the original file extension makes the cause explicit:**
+
+| CASIA manip images | ELA tile AUC |
+|---|---|
+| originally `.tif` | 0.578 |
+| originally `.jpg` | 0.338 |
+
+  The compilation converted every image to PNG. That uniform re-encode is exactly the documented failure mode: the differential compression history ELA reads has been flattened. Testing ELA here was testing it outside its scope.
+- **Conclusion.** The two-detector design is sound — an absolute detector for generated regions, ELA for classic splices — and the pairing is supported by a controlled test (0.648 and 0.719 in their respective domains). **It cannot be validated on this dataset**, whose PNG pipeline removes ELA's input. Validating it needs manipulation data that preserves JPEG history, or splices we construct ourselves. Recorded so the negative number above is not read as "ELA does not work".
