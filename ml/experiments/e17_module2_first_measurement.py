@@ -23,6 +23,7 @@
 #   pixel level: do the high-scoring tiles land on the mask (IoU, and how much
 #               better than chance the tile ranking is)
 
+import argparse
 import warnings
 from collections import defaultdict
 from pathlib import Path
@@ -37,7 +38,10 @@ from pixelproof.features import extract_tiles, tile_positions
 warnings.filterwarnings("ignore")
 Image.MAX_IMAGE_PIXELS = None
 
-ROOT = Path("/tmp/m2")
+# The first run of this experiment read /tmp/m2, which macOS wipes on reboot —
+# and that was the only copy of the extracted data. Now a real dataset path,
+# alongside the others in ROADMAP 1.
+DEFAULT_ROOT = Path.home() / "Desktop/manipulation_test"
 TILE = 128
 GRID = 36
 LIMIT = 120
@@ -64,13 +68,21 @@ def mask_coverage(mask_path: Path, boxes, size):
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=DEFAULT_ROOT,
+                        help="folder holding <sub-dataset>/{manip,auth} (see prepare_manipulation.py)")
+    args = parser.parse_args()
+    root = args.root
+    if not root.exists():
+        raise SystemExit(f"{root} not found — build it with pixelproof.prepare_manipulation")
+
     model = joblib.load("artifacts/feature_crop128.joblib")
 
-    datasets = sorted(d.name for d in ROOT.iterdir() if d.is_dir())
+    datasets = sorted(d.name for d in root.iterdir() if d.is_dir())
     print(f"sub-datasets found: {', '.join(datasets)}\n")
 
     for name in datasets:
-        manip_dir, auth_dir = ROOT / name / "manip", ROOT / name / "auth"
+        manip_dir, auth_dir = root / name / "manip", root / name / "auth"
         if not manip_dir.exists():
             continue
 
@@ -118,11 +130,21 @@ def main() -> None:
         y = np.r_[np.zeros(len(outside_a)), np.ones(len(inside_a))]
         tile_auc = roc_auc_score(y, np.r_[outside_a, inside_a])
 
+        # IoU needs a baseline to mean anything. `flagged` marks exactly
+        # mask_frac of the tiles by construction, so flagging at RANDOM already
+        # scores f/(2-f) — which is 0.82 when a mask covers 90% of the image.
+        # Without this column a large mask reads as a triumph.
+        fraction = float(np.mean(mask_fracs))
+        chance_iou = fraction / (2 - fraction)
+        measured_iou = float(np.mean(ious))
+
         print(f"--- {name} ---")
         print(f"  images {len(image_scores_manip)} manip / {len(image_scores_auth)} auth"
-              f"   mask covers {np.mean(mask_fracs)*100:.0f}% of the image on average")
+              f"   mask covers {fraction*100:.0f}% of the image on average")
         print(f"  PIXEL LEVEL   tampered tiles {inside_a.mean():.3f} vs clean tiles "
-              f"{outside_a.mean():.3f}   tile AUC {tile_auc:.3f}   IoU {np.mean(ious):.3f}")
+              f"{outside_a.mean():.3f}   tile AUC {tile_auc:.3f}")
+        print(f"  IoU {measured_iou:.3f}   vs {chance_iou:.3f} at random"
+              f"   ({measured_iou - chance_iou:+.3f})")
         if image_scores_auth:
             yi = np.r_[np.zeros(len(image_scores_auth)), np.ones(len(image_scores_manip))]
             img_auc = roc_auc_score(yi, np.r_[image_scores_auth, image_scores_manip])

@@ -235,6 +235,24 @@ evidence — key comparisons get ≥3 seeds.
   2. *Compression domain gap.* **Supported.** The pool sits at ~0.9 bytes/pixel (largely PNG and lightly-compressed JPEG); Defactify sits at ~0.12 — a **7x gap**. The extra data came from a different compression regime than the test set, which is the preprocessing law (E5/E6/E7) appearing in a fourth dimension. Compression is not a class cue *within* the pool (real 0.861 vs AI 0.922), so this is a train/test gap rather than a shortcut.
 - **Conclusion:** data volume alone does not help when the added data occupies a different domain. Compression augmentation — proposed before training and skipped — is the indicated fix and remains untested.
 
+### Correction, 2026-08-04 — the balanced pool had no producer script
+
+The script that turned `pool_index.csv` into `pool_balanced.csv` was never committed: five files read that CSV and none wrote it, so **E12–E16 were not reproducible from the repo**. `make_balanced_pool.py` now reconstructs it. Three things were found while doing so, and two of them correct the entry above.
+
+- **Four bands, not six.** Candidate band grids were fitted against the surviving CSV. The rule is `min(n_real, n_ai)` per band over longest-side cut points **`[0,128) [128,256) [256,1024) [1024,∞)`** — this reproduces the artifact exactly, band for band, at 51,246 rows per class and 102,492 in total (39.6% of the index dropped, matching the "40%" above). No six-band grid reproduces it.
+- **The residual gap was 1.68×, not 1.08×.** The real class matches the original exactly (median 431px) but the AI class does not (256px here against the 400px reported). The original therefore sampled *non-uniformly inside* a band, and that rule is not recoverable from counts alone. The 1.08× figure should not be quoted.
+- **Band granularity saturates, and the knee is measurable.** Balancing is only as tight as the bands are narrow, because composition inside a band is unconstrained:
+
+| cut points | rows | class gap | cost |
+|---|---|---|---|
+| `128,256,1024` (the original) | 102,492 | 1.68× | 39.6% |
+| `128,256,512,768,1024` | 100,104 | 1.56× | 41.0% |
+| **`128,256,384,512,768,1024,1536`** | 74,162 | **1.00×** | 56.3% |
+| ten cut points | 74,104 | 1.00× | 56.3% |
+
+  Adding 384 and 1536 closes the gap completely, and refining further buys nothing — the pool's resolutions are piled on a few discrete values (32, 256, 500, 512, 1024), so once those are separated there is nothing left to split. **Any future pool should be built with the seven-cut grid**; the four-band default is kept only so the E12–E16 counts stay reproducible.
+- **Caveat on the metric:** the gap is a ratio of medians, so 1.00× means the medians coincide, not that the distributions are identical. Per-band counts are equal by construction, so the distributions match *at band granularity* — which is exactly why a finer grid is the stronger claim.
+
 ## 2026-07-30 — E13: the tile model's false-positive rate on real photographs
 
 - **Motivation.** E11 reported the tile method's ranking quality (SDXL 0.948) and stopped there. AUC is threshold-free: a model can rank almost perfectly and still place its decision boundary in the wrong place. Manual testing surfaced a real photograph scored at 99% AI, so the operating point was measured directly.
@@ -345,6 +363,41 @@ evidence — key comparisons get ≥3 seeds.
 | CASIA 2.0 | classic splice | 0.625 | 0.517 | 0.606 | 0.284 | **0.481** |
 
 - **Prediction confirmed.** On CocoGlide the tile map carries signal at both levels — the model distinguishes tampered from clean tiles *within the same image*, and tampered images from authentic ones. On CASIA the image-level number is 0.481, i.e. chance: manipulated images score 0.760 and authentic ones 0.755. The model is answering its own question correctly; the question is simply the wrong one for a splice, where both host and donor pixels carry camera traces.
+### E17 extended, 2026-08-04 — nine sub-datasets, and the IoU column was measuring the mask
+
+Re-running E17 after scripting the dataset preparation (`prepare_manipulation.py`) widened it from 2 usable sub-datasets to 9. The original CASIA/CocoGlide numbers reproduced exactly. Three things came out of the wider run, and one of them invalidates how the original IoU column was read.
+
+**1. IoU was a restatement of mask size, not a measure of skill.** The experiment flags exactly `mask_frac` of the tiles by construction, so flagging *at random* already scores `f/(2-f)` — 0.82 when a mask covers 90% of the image. Against that baseline the ranking nearly inverts:
+
+| sub-dataset | manipulation | mask % | tile AUC | IoU | at random | **margin** | image AUC |
+|---|---|---|---|---|---|---|---|
+| **CocoGlide** | **diffusion inpainting** | 42 | **0.648** | 0.419 | 0.264 | **+0.155** | **0.721** |
+| CASIA 2.0 | splice | 30 | 0.606 | 0.284 | 0.175 | +0.109 | 0.481 |
+| VIPP_Realistic | splice | 10 | 0.578 | 0.145 | 0.052 | +0.094 | 0.548 |
+| IMD2020 | mixed | 13 | 0.491 | 0.159 | 0.072 | +0.087 | 0.449 |
+| DSO-1 | splice | 85 | 0.669 | 0.808 | 0.738 | +0.070 | 0.537 |
+| Coverage | copy-move | 14 | 0.498 | 0.130 | 0.078 | +0.052 | 0.479 |
+| NIST2016 | splice | 90 | 0.632 | **0.864** | 0.823 | **+0.041** | 0.326 |
+| RealisticTampering | splice | 8 | 0.490 | 0.042 | 0.039 | +0.003 | 0.513 |
+| CMFD | copy-move | 6 | 0.458 | 0.031 | 0.029 | +0.003 | 0.471 |
+| Columbia | splice | — | — | — | — | — | no usable pairs |
+
+  NIST2016's 0.864 is the best-looking IoU in the project and is **+0.041 over chance**; CocoGlide's 0.419 is the real result. The baseline is now printed alongside every IoU.
+
+**2. The original prediction holds far more strongly with nine sets than with two.** CocoGlide is the only sub-dataset built from *diffusion inpainting*, and it is the only one with a real margin at both levels — pixel +0.155 and image 0.721. Every classic-manipulation set sits between 0.326 and 0.548 at image level, i.e. chance. The absolute/relative split argued in E17 is now supported by nine measurements instead of two.
+
+**3. The narrow real class (§12b) shows up again, on completely fresh data.** Read the raw scores rather than the AUCs — on the classic photographic sets the model calls *everything* AI:
+
+| sub-dataset | manipulated | authentic |
+|---|---|---|
+| NIST2016 | 0.992 | 0.992 |
+| CMFD | 0.989 | 0.990 |
+| RealisticTampering | 0.976 | 0.976 |
+| DSO-1 | 0.975 | 0.976 |
+
+  These are camera photographs from forensics datasets the model has never seen, and it scores them at 0.98. This is E13's 79% false-positive rate reappearing on nine independent sets, and it is why the image-level AUCs sit at chance: both classes are pinned to the ceiling, so there is nothing left to separate. NIST2016 is actually *inverted* (0.326).
+
+**4. Sample sizes are small, and the skips were silent.** A manipulated image is only usable when at least one tile falls clearly inside the mask and one clearly outside. Of a 120-image cap: CASIA 39, CocoGlide 35, VIPP_Realistic 38, CMFD 45, Coverage 62, NIST2016 68, IMD2020 77, RealisticTampering 76, DSO-1 95, **Columbia 0**. These are direction-of-effect results, not precise ones.
 - **Conclusion — Module 2 needs two capabilities, not one.** An *absolute* detector ("does this region look generated") covers AI inpainting. A *relative* one ("is this region inconsistent with the rest of this image") is required for classic splices, because the donor region differs from the host in sensor noise, demosaicing signature and JPEG history — none of which is a question about AI.
 
 ## 2026-08-04 — E18: ELA for the splice case, and its positive control

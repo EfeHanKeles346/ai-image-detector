@@ -231,7 +231,32 @@ npm run dev          # from the repo root, UI on :3000
 # --- audit any dataset folder before using it (§1b)
 .venv/bin/python /Volumes/LaCie/pixelproof-datasets/audit.py [folder]
 #   no argument = audit everything on the SSD; writes DENETIM.md
+
+# --- the training pool: index every source, then resolution-balance the index
+PYTHONPATH=src .venv/bin/python -m pixelproof.build_pool          # -> pool_index.csv
+PYTHONPATH=src .venv/bin/python -m pixelproof.make_balanced_pool  # -> pool_balanced.csv
+#   --bands 128,256,384,512,768,1024,1536   closes the class gap to 1.00x (use this for new pools)
+#   --min-side 128    drop images smaller than one tile — below this features.py
+#                     reflection-pads, i.e. the model is shown a synthetic pattern
+#   --verify-against artifacts/pool_balanced.csv    check a reconstruction
+
+# --- extract the 68 statistics for a pool index (caches to pool_features.npz)
+PYTHONPATH=src .venv/bin/python -m pixelproof.pool_features --index artifacts/pool_balanced.csv
+
+# --- frozen-backbone embeddings for the same pool (E16)
+PYTHONPATH=src .venv/bin/python -m pixelproof.backbone_features --backbone dinov2
+
+# --- Module 2 data: unpack the manipulation compilation (§12)
+PYTHONPATH=src .venv/bin/python -m pixelproof.prepare_manipulation --list
+PYTHONPATH=src .venv/bin/python -m pixelproof.prepare_manipulation
+#   default: every sub-dataset except OpenForensics, 1 tar per split -> ~/Desktop/manipulation_test
+#   idempotent; --force re-extracts, --tars-per-split N pulls more
+PYTHONPATH=src .venv/bin/python experiments/e17_module2_first_measurement.py
+PYTHONPATH=src .venv/bin/python experiments/e18_ela_vs_tiles.py
 ```
+
+⚠️ Everything in this block from `build_pool` down needs the SSD mounted at
+`/Volumes/LaCie`; the scripts hard-code that path.
 
 Existing artifacts: `best.pt` (SmallCNN/CIFAKE), `best_genimage.pt` (ResNet-18/GenImage),
 `feature_full.joblib`, `feature_crop128.joblib`, plus `best_10k/20k/50k.pt` from the E4 learning curve.
@@ -566,6 +591,24 @@ uniform re-encode flattens exactly the differential compression history ELA depe
 So the two-detector design is supported, and **cannot be validated on this dataset**. That needs
 manipulation data preserving JPEG history, or splices constructed here.
 
+**Widened to nine sub-datasets, 2026-08-04.** Scripting the extraction
+(`prepare_manipulation.py`) took the measurement from 2 usable sub-datasets to 9. The CocoGlide and
+CASIA numbers reproduced exactly, and the wider run added two things:
+
+- **CocoGlide is still the only one that works, and now against eight controls rather than one.**
+  Every classic-manipulation set sits between 0.326 and 0.548 at image level — chance. The
+  absolute-vs-relative split is no longer an argument from two data points.
+- **The IoU column was measuring mask size, not skill.** The experiment flags exactly `mask_frac`
+  of the tiles, so random flagging already scores `f/(2-f)`. NIST2016's 0.864 — the best-looking
+  localisation number this project has produced — is **+0.041 over chance**, while CocoGlide's
+  0.419 is +0.155. Ranking by raw IoU nearly inverts the true ranking. The baseline is now printed
+  next to every IoU.
+
+A third observation belongs to §12b rather than here: on the classic photographic sets the model
+scores manipulated and authentic images alike at 0.97–0.99. Nine fresh forensics datasets, and it
+calls all of them AI. That is E13's false-positive rate again, and it is *why* those image-level
+AUCs are at chance — both classes are pinned to the ceiling.
+
 **Honest limit before anyone over-claims:** the tile model was trained on *image-level* labels only. It answers "does this tile look like AI-generated texture", not "was this tile edited". Those coincide for a pasted synthetic region and diverge for everything else. The first experiment must therefore be a measurement, not a demo.
 
 **Taxonomy correction carried over from `IMAGE_FORENSICS_REFERENCE.md` §4.2:** ChatGPT-family edits re-render every pixel, so at the pixel level they are *generated*, not *locally tampered*. `real-but-tampered` is recoverable only for classic edits and AI-spliced images. For fully-regenerated edits the honest verdict is "AI-regenerated"; promising localisation there would be a claim the field cannot currently support.
@@ -724,6 +767,11 @@ but trained with native crops, or it repeats ResNet's history.
 
 ### 13c. Ordered plan
 
+> ⚠️ **Superseded on 2026-08-05 by §13d.** Steps 0, 2 and 3 were executed (E15, E17, E16) and two
+> of them changed what the rest should be: Step 3's frozen-backbone probe was falsified, and E13/E14
+> reframed the whole target. Kept here because the reasoning is still the reasoning — the ordering
+> is what expired.
+
 Sequenced by dependency and by value-per-hour, not by ambition. Each step's output decides whether
 the next one is still the right move.
 
@@ -768,6 +816,174 @@ transfer across domains, so this is a research task, not a constant to tune.
 **Running throughout:** ≥3 seeds on any comparison we intend to report (§5), and an audit of every
 dataset *before* training on it (§1b, §2b.8).
 
+### 13d. The phase plan (2026-08-05) — current
+
+§13c was written before E12–E18. Four things it could not have known now set the agenda:
+
+| Discovery | Consequence for the plan |
+|---|---|
+| **E13/E14** — detectors learn "what my training set's real photographs look like", not "what generation looks like" | The metric changes. Every comparison is now judged on **false positives on unseen real sources**, not AUC |
+| **E16** — a frozen semantic backbone on whole images scores 0.480 on content-controlled data | §13b's Step 3 is dead as written. But its *second* half — apply a strong backbone to **native tiles** — was never tested, and becomes the centrepiece |
+| **E17 extended** — only CocoGlide (diffusion inpainting) carries signal; eight classic-manipulation sets sit at chance | Module 2 is scoped to **AI-manipulated regions only**. The ELA/splice line is closed |
+| **Measured 2026-08-05** — the tile pipeline sees 4.8% of a 12 MP photo, and a CNN scores a tile 20× faster than the statistics model | Full coverage is affordable. The architecture choice and the cost problem are the same decision |
+
+**Standing rules for every phase below**
+1. The headline metric is the **operating point** — AI recall at a fixed false-positive budget on
+   *unseen real sources*. AUC is reported alongside, never alone (E11 → E13).
+2. ≥3 seeds on anything we intend to report (§5). A single seed is a number, not evidence.
+3. Audit before training (§1b), and audit the **merged** pool, not just each source (E12).
+4. One commit per phase, code and documentation together.
+
+---
+
+#### ✅ Phase 0 — Reproducibility *(done 2026-08-05)*
+
+Two pipeline steps existed only as artifacts on disk; the scripts that produced them were never
+committed, so E12–E18 could not be rebuilt from the repo.
+
+- [x] **0.1** `make_balanced_pool.py` — the resolution-balancing step recovered. Rule fitted against
+      the surviving CSV: four bands, `min(n_real, n_ai)` each. Corrected two figures in E12 ("six
+      bands" → four; "1.08× residual gap" → 1.68×) and measured that the band grid **saturates** at
+      seven cut points (gap 1.00×, and finer grids buy nothing).
+- [x] **0.2** `prepare_manipulation.py` — the Module 2 extraction recovered, and the data moved off
+      `/tmp`, where a reboot would have destroyed the only copy. 3 → 10 sub-datasets. Found that
+      three tars name their internal folder differently and were silently extracting zero files.
+- [x] Bonus: E17's IoU column was measuring **mask size, not skill** — flagging at random already
+      scores `f/(2-f)`. A baseline is now printed next to every IoU.
+
+#### ▶️ Phase 1 — Pool hygiene *(~1.5 h · needs the SSD)*
+
+Three measured defects sit in the pool everything else is about to be built on.
+
+- [ ] **1.1** Minimum-side floor. `ai_vs_real_balanced` has a **median longest side of 32 px**;
+      `features.py` reflection-pads anything under one tile, so the model is shown a synthetic
+      pattern rather than a photograph. ~26% of the pool.
+- [ ] **1.2** `communityforensics` → `whole_image_safe=False`. Class 0 is **entirely** 1024², class 1
+      **entirely** 512² — zero overlap, a perfect shortcut for any native-resolution model.
+- [ ] **1.3** Auditor threshold 2.5× → 2.0×. The split above is exactly 2.0× and slipped through.
+- [ ] **1.4** Regenerate `DENETIM.md` for **every** dataset. It currently holds one, while
+      `DATASETS.md` reads as though all were audited.
+- [ ] **1.5** Rebuild the pool on the seven-cut band grid (`128,256,384,512,768,1024,1536`).
+
+**Decision to take explicitly:** ~45k clean rows against 102k dirty ones. E12 (ten times the data
+did not help) and E14 (diversity beats volume) both argue for clean — but it should be a choice,
+not a side effect.
+
+#### Phase 2 — Rebuilding the tile pipeline *(~7 h)*
+
+The project's most visible model, and the only one the E15 real-class fix never reached.
+
+**2a — Geometry and cost** *(no training, ~2 h)* — fix the input before training on it.
+
+- [ ] **2a.1** Remove the 36-tile cap. A 4032×3024 photo yields 713 tiles and we score 36 — **4.8%
+      coverage**. The "~100% coverage" claim in §9b and the README holds only up to 768 px.
+- [ ] **2a.2** Edge anchoring — flush the last tile to the far edge. Loss is `C ≈ 2/k` where k is
+      tiles per axis: **41% at 500 px**, and every real photograph in GenImage is exactly 500 px.
+      The loss lands on the border, so edge manipulations are systematically invisible.
+- [ ] **2a.3** Cache the grey residual. The 3×3 median filter is **63% of a tile's cost** and the
+      grey channel is filtered **twice** per tile.
+- [ ] **2a.4** Texture prefilter. Measuring texture costs **1/307** of a full extraction, and flat
+      tiles score ~0.5 — they can never enter the top-k. ~21% saved at no accuracy cost.
+- [ ] **2a.5** Parallelise `score_tiles`. The demo path is a serial loop; the pool machinery already
+      exists elsewhere in the repo.
+- [ ] **2a.6** *(optional)* `cv2.medianBlur` — 8.9 ms → ~3 ms per tile, if border behaviour matches.
+
+**2b — Three models on identical tiles** *(training, ~4 h)* — one variable: the model.
+
+| arm | model | rationale |
+|---|---|---|
+| A | 68 statistics + gradient boosting | the incumbent, retrained on the clean pool |
+| B | **ResNet-18 @128 px**, fine-tuned on native tiles | §13b's untested second half. Already in `MODEL_REGISTRY`; fully convolutional |
+| C | **SmallCNN @128 px** | `AdaptiveAvgPool2d(1)` already accepts any input size — a data change, not an architecture change |
+| D | *(optional)* **Noiseprint++** | the only pretrained model that genuinely encodes camera traces — self-supervised on real photographs (§4.4) |
+
+Throughput on 713 tiles (full coverage of a 12 MP photo), measured 2026-08-05:
+statistics serial **6.3 s** · statistics parallel **0.6 s** · SmallCNN **0.40 s** · ResNet-18
+**0.31 s**. The CNN is faster because it batches, not because it is smaller — so choosing the
+architecture also dissolves the cost problem.
+
+⚠️ ImageNet backbones do not know camera traces; they know objects, and E16 charged 0.480 for
+assuming otherwise. The difference here is that a 128 px native tile rarely contains a recognisable
+object, so the model is shown texture. Expect the early layers to earn their keep and the semantic
+layers to be the risk.
+
+**2c — Aggregation and scale** *(~2 h)*
+
+- [ ] **2c.1** Extend the grid sweep past 36 (49 / 64 / 100). E11 stopped at 36 while the score was
+      **still climbing** (0.760 → 0.821); the cap was never justified.
+- [ ] **2c.2** Sweep `k`: fixed count vs fraction vs adaptive vs soft texture weighting. `3` was the
+      best of a five-item menu — **2, 4 and 5 were never tried** — and once the cap rises a fixed 3
+      silently degenerates toward `max`, which already measured worse.
+- [ ] **2c.3** Adaptive threshold `median + λ·MAD`, so `k` becomes a measurement rather than a
+      hyperparameter. It also separates the two cases Module 2 cares about: everything high (fully
+      AI) versus a few outliers (local manipulation).
+- [ ] **2c.4** Multi-scale training (128/192/256), which unlocks tiling at `B' = A/round(A/B)` —
+      zero remainder loss and zero overlap.
+
+#### Phase 2.5 — Module 2, AI-only *(~3 h)*
+
+Scope decision of 2026-08-05: Module 2 targets **AI-manipulated regions**, not manipulation in
+general. Of nine measured sub-datasets, only CocoGlide (diffusion inpainting) carries signal; the
+eight classic sets sit between 0.326 and 0.548 at image level. They earned their keep once, as the
+specificity control that proves the model reads AI texture rather than "something was edited".
+
+- [ ] **2.5.1** Loosen E17's mask-coverage filter. Only **35 of 120** images survive it today; a
+      half-tile step yielded 152 AI-filled tiles in a probe. **~10× more data, zero download.**
+- [ ] **2.5.2** Re-run E17 on the Phase 2 tile model — Module 2 rests entirely on it.
+- [ ] **2.5.3** Test the noise-energy signal. Measured on 120 image/original pairs: noise energy
+      **halves** inside AI-filled regions (0.0164 → 0.0088), exactly as §2 predicts.
+- [ ] **2.5.4** Close the ELA/splice line (E18). It answered a question we have decided not to ask.
+- [ ] **2.5.5** TGIF test split, when on Wi-Fi. §5 names it "the closest match to this project's
+      Module 2", and it is the only source that separates **spliced from fully-regenerated** —
+      the distinction that decides whether localisation is honest at all.
+
+⚠️ The CFA measurement came out opposite to theory on CocoGlide, most likely because its
+"authentic" images are MS-COCO — already-downscaled web photographs. **We cannot measure camera
+traces on data whose camera traces are already gone.** Phase 4 is the fix.
+
+#### Phase 3 — Two measured gaps *(~3 h)*
+
+- [ ] **3.1** Compression augmentation (JPEG q30–q95). Pool sits at **0.43–1.59 bytes/pixel**,
+      Defactify at **0.14–0.16** — a 3–10× gap. E12 named this fix and skipped it.
+- [ ] **3.2** A deployment-matched validation set: 30 phone photographs and 30 AI images at native
+      size, both pushed through one identical encoder. What the demo actually does on real input is
+      currently unknown.
+- [ ] **3.3** An honest "insufficient evidence" threshold based on measured high-frequency content
+      rather than pixel count. Where compression has removed the evidence, no method can recover it,
+      and the correct output is a refusal rather than a guess.
+
+#### Phase 4 — New data axes *(~4 h · needs the SSD)*
+
+- [ ] **4.1** Add a personal photo library as a **sixth** real source — the pool's only intact,
+      full-resolution camera output. As a sixth source, never as the only one (E14).
+- [ ] **4.2** Fold in `gpt-image-mega-4k` and `nano-banana-pro`: downloaded, audited, never used.
+- [ ] **4.3** Resolution augmentation (`native + ÷2 + ÷4`).
+- [ ] **4.4** Run `shortcut_probe()` after every addition — measure the leak, do not assume it away.
+
+#### Phase 5 — Documentation alignment *(~1 h)*
+
+- [ ] README's 0.948 headline against the E13/E15 reality
+- [ ] §14 checklist, frozen at E11
+- [ ] The **`v3` name collision**: `feature_full_v3` (E12, 256 px floor) is not the docs' "v3"
+      (E15, balanced multi-source) which is `feature_full_v4`
+- [ ] `feature_full_v4` loads but no API route reaches it
+- [ ] The "~100% coverage" claim (true only ≤768 px)
+- [ ] "Every experiment is single-seed" — no longer true
+
+#### Dependency chain
+
+```
+Phase 0 ✅
+  └─> Phase 1   pool hygiene            SSD
+        └─> Phase 2a  geometry + cost
+              └─> Phase 2b  three models        ← the decisive step
+                    └─> Phase 2c  k rule, multi-scale
+                          ├─> Phase 2.5  Module 2
+                          └─> Phase 3    compression, deployment set
+                                └─> Phase 4    SSD
+                                      └─> Phase 5
+```
+
 ## 14. Progress Checklist
 
 - [x] Datasets inspected (CIFAKE 100k/20k + external OOD set)
@@ -799,18 +1015,37 @@ dataset *before* training on it (§1b, §2b.8).
 - [x] **255 GB of audited datasets** on the LaCie SSD, with an automated auditor and a per-dataset verdict (§1b, §1c)
 - [x] **Module 2 unblocked.** Mask-annotated manipulation data acquired; localisation is now measurable rather than hypothetical (§12)
 
-### Next — the ordered plan lives in §13c
+### Session 2026-07-30 → 08-04
 
-- [ ] **Step 1** Native-crop retraining (`RandomCrop`) — unblocks everything else
-- [ ] **Step 2** Module 2's first measurement: tile heat-map vs ground-truth masks, per sub-dataset
-- [ ] **Step 3** CLIP/DINOv2 tile probe — the ResNet replacement (§13b)
-- [ ] **Step 4** Train on CommunityForensics + AI-vs-Real-balanced in tile mode
-- [ ] **Step 5** Leave-one-generator-out over the 228 models
-- [ ] **Step 6** Compression robustness matrix
-- [ ] **Step 7** Calibration — 44% of real photographs still called "AI" at 0.5
+- [x] **Pool infrastructure.** `build_pool.py` indexes five sources into one manifest and runs three checks before any training. The contamination check caught **38 pool images that were perceptual-hash matches for Defactify test images** — without it we would have trained on our own test set
+- [x] **E12 — ten times the data.** 9.9k → 101k. archive1 +0.133, DALL-E 3 −0.189, a wash elsewhere. Two hypotheses tested: low-resolution contamination **refuted**, compression domain gap (7×) **supported**
+- [x] **E13 — the operating point.** The tile model calls **79% of real photographs "AI"**. Real photos sit at 0.935, SDXL at 0.993 — no usable threshold exists. E11's 0.948 is genuine ranking information and simultaneously undeployable
+- [x] **E14 — the cause.** A narrow real class. One source → 88–99.9% false positives on other sources; five sources → AUC 0.55 → **0.884** at no cost to AI recall (§12b). Reframes every earlier result
+- [x] **E15 — Step 0 applied.** Class-balanced multi-source real half: archive1 0.706 → **0.904**, false positives 30.1% → 19.8%. Defactify untouched (0.717 → 0.692) — **E14's gain was within-pool and does not transfer**
+- [x] **E16 — DINOv2 falsified.** Frozen ViT-S/14 at 518 px: **0.480 on Defactify**, chance. It is a semantic encoder and Defactify is content-controlled. Carries a warning backwards: GenImage is *not* content-controlled, so every GenImage number inherits the doubt
+- [x] **E17/E18 — Module 2 measured.** Tile localisation works on diffusion inpainting (CocoGlide 0.648 / 0.721) and not on classic splices (CASIA image-level 0.481). ELA's positive control passes (0.719) while the compilation's PNG pipeline removes its input
+
+### Session 2026-08-05
+
+- [x] **Two lost pipeline steps recovered** (§13d Phase 0). `make_balanced_pool.py` and `prepare_manipulation.py`; the Module 2 data rescued from `/tmp` hours before a reboot would have deleted the only copy; 3 → 10 sub-datasets
+- [x] **E17 extended to nine sub-datasets**, and its IoU column shown to be measuring **mask size rather than skill** — NIST2016's 0.864 is +0.041 over random flagging, while CocoGlide's 0.419 is +0.155
+- [x] **Tile-pipeline cost and coverage measured.** 4.8% coverage on a 12 MP photo; `C ≈ 2/k` remainder loss (41% at 500 px); the 3×3 median filter is 63% of a tile's cost and runs twice on the grey channel; ResNet-18 scores a tile **20× faster** than the statistics model
+- [x] **Module 2 scoped to AI-manipulated regions only** — eight classic-manipulation sets measured at chance; they served as the specificity control and that job is done
+
+### Next — the plan lives in §13d
+
+- [ ] **Phase 1** Pool hygiene — 32 px floor, CommunityForensics shortcut, auditor threshold, full audit report
+- [ ] **Phase 2a** Tile geometry and cost — remove the cap, anchor the edges, cache, prefilter, parallelise
+- [ ] **Phase 2b** Three models on identical tiles: statistics · ResNet-18 · SmallCNN (+ Noiseprint++)
+- [ ] **Phase 2c** Aggregation rule and multi-scale tiles
+- [ ] **Phase 2.5** Module 2, AI-only — loosen the filter, re-measure, test noise energy, fetch TGIF
+- [ ] **Phase 3** Compression augmentation + a deployment-matched validation set
+- [ ] **Phase 4** New data axes — intact camera photographs, 4K generators, resolution augmentation
+- [ ] **Phase 5** Documentation alignment
 
 Also open, not on the critical path:
-- [ ] Phase 7a: ELA baseline + **positive control** (a hand-made JPEG splice ELA can catch) — a flat map on AI images is correct behaviour, not a failed experiment
-- [ ] Seed variance: every experiment so far is single-seed, against our own ≥3 rule (§5)
+- [ ] Leave-one-generator-out over CommunityForensics' 228 models — still the only honest generalisation claim available to us
+- [ ] Calibration as a research task (E6: thresholds do not transfer across domains)
 - [ ] Build a small ChatGPT/Gemini test set by hand, both classes through one identical pipeline — the only uncontaminated route to 2026-era editing models
 - [ ] Verify the CommunityForensics slice we hold (47 of 260 GB) is representative before training on it
+- [ ] Seed variance on E1–E11, which predate the ≥3-seed rule (§5)

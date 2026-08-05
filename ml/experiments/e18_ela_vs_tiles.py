@@ -25,6 +25,7 @@
 # Same protocol as E17: per-tile scores, matched to ground-truth masks, reported
 # per sub-dataset.
 
+import argparse
 import warnings
 from pathlib import Path
 
@@ -39,7 +40,7 @@ from pixelproof.features import extract_tiles, tile_positions
 warnings.filterwarnings("ignore")
 Image.MAX_IMAGE_PIXELS = None
 
-ROOT = Path("/tmp/m2")
+DEFAULT_ROOT = Path.home() / "Desktop/manipulation_test"   # was /tmp/m2 — see E17
 TILE = 128
 GRID = 36
 LIMIT = 120
@@ -69,10 +70,17 @@ def mask_coverage(mask_path: Path, boxes, size):
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=DEFAULT_ROOT)
+    args = parser.parse_args()
+    root = args.root
+    if not root.exists():
+        raise SystemExit(f"{root} not found — build it with pixelproof.prepare_manipulation")
+
     model = joblib.load("artifacts/feature_crop128.joblib")
 
-    for name in sorted(d.name for d in ROOT.iterdir() if d.is_dir()):
-        manip_dir, auth_dir = ROOT / name / "manip", ROOT / name / "auth"
+    for name in sorted(d.name for d in root.iterdir() if d.is_dir()):
+        manip_dir, auth_dir = root / name / "manip", root / name / "auth"
         if not manip_dir.exists():
             continue
         files = sorted(p for p in manip_dir.glob("*.png") if ".mask" not in p.name)[:LIMIT]

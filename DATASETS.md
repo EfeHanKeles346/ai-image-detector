@@ -15,9 +15,20 @@ because every tile arrives at 128×128 regardless of where it came from.
 | Location | Contents |
 |---|---|
 | `~/Desktop/` | The four original sets: `archive` (CIFAKE), `archive1`, `genimage_split`, `defactify_test` |
+| `~/Desktop/manipulation_test/` | Module 2 working set — 10 sub-datasets extracted from the 78 GB compilation (6.7 GB, 2,385 manipulated images each with a mask + 2,289 authentic). Rebuild: `python -m pixelproof.prepare_manipulation` |
 | `/Volumes/LaCie/pixelproof-datasets/` | 255 GB acquired 2026-07-28/29 |
 
 ⚠️ Nothing on the SSD is reachable when it is unmounted. Scripts hard-code the path.
+
+⚠️ `manipulation_test` lived in `/tmp/m2` until 2026-08-04, where macOS would have
+wiped it on the next reboot — and it was the only copy. E17/E18 now take `--root`
+and default to the Desktop path, and `prepare_manipulation.py` rebuilds it from
+the SSD.
+
+Extracted by default: everything except **OpenForensics**, which is 138 of the
+191 tars and is face manipulation rather than splicing or inpainting. One tar per
+split (~500 images) — more buys nothing until E17's mask-coverage filter is
+loosened, since only 35–95 images per set survive it today.
 
 ---
 
