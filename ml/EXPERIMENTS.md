@@ -421,3 +421,157 @@ Re-running E17 after scripting the dataset preparation (`prepare_manipulation.py
 
   The compilation converted every image to PNG. That uniform re-encode is exactly the documented failure mode: the differential compression history ELA reads has been flattened. Testing ELA here was testing it outside its scope.
 - **Conclusion.** The two-detector design is sound — an absolute detector for generated regions, ELA for classic splices — and the pairing is supported by a controlled test (0.648 and 0.719 in their respective domains). **It cannot be validated on this dataset**, whose PNG pipeline removes ELA's input. Validating it needs manipulation data that preserves JPEG history, or splices we construct ourselves. Recorded so the negative number above is not read as "ELA does not work".
+
+## 2026-08-05 — E19: pool hygiene, and a shortcut created by fixing another one
+
+- **Motivation (ROADMAP §13d Phase 1):** three defects were known before this ran — a 32px floor, a resolution shortcut in CommunityForensics, and an auditor that had missed it. The point of the phase was to clean the pool everything else will be built on. The result includes one thing nobody predicted.
+- **Method — a standing metadata probe.** Train a gradient-boosting model to predict the CLASS from image metadata alone (width, height, aspect, bytes/pixel, squareness). This is archive1's test, where the same probe scored **AUC 1.000**. Anything above chance is a shortcut a model could take instead of looking at content.
+
+### The three fixes
+
+| # | fix | evidence |
+|---|---|---|
+| 1.1 | 128px floor | `ai_vs_real_balanced` has a **median longest side of 32px**; `features.py` reflection-pads anything below one tile, so the model is shown a synthetic pattern. 27,153 rows dropped |
+| 1.2 | `communityforensics` → `whole_image_safe=False` | class 0 is **entirely** 1024², class 1 **entirely** 512² — p10 = median = p90 in both, i.e. two disjoint constants |
+| 1.3 | auditor: 2.5× → **2.0× inclusive**, plus a **non-overlap check** on p10–p90 | the split above is a ratio of *exactly* 2.0 and the old rule tested for `> 2.5`. A ratio cannot distinguish "overlapping distributions" from "two disjoint constants", and only the second is a perfect shortcut |
+
+Policy is now read from `SOURCES` at balancing time rather than from the `whole_image_safe` column in `pool_index.csv` — the index is a snapshot, and a stale snapshot silently reintroduces a shortcut. 39,990 rows were carrying the old value.
+
+### The unpredicted result: cleaning one axis broke another
+
+E12 measured compression and explicitly cleared it: *"compression is not a class cue within the pool (real 0.861 vs AI 0.922)"*. After the 32px floor, it was:
+
+| pool | metadata probe (all) | **compression alone** | size alone | bytes/pixel gap |
+|---|---|---|---|---|
+| raw index (169,668) | 0.916 | 0.684 | 0.885 | 1.01× |
+| old balanced (102,492) | 0.853 | 0.673 | 0.804 | 1.07× |
+| **resolution-only (45,712)** | 0.818 | **0.633** | 0.720 | **1.65×** |
+| **resolution × compression (43,010)** | 0.750 | **0.554** | 0.676 | **1.02×** |
+
+The 32px images were holding the compression axis in balance. Removing them — a fix — produced a **1.65× bytes-per-pixel split between the classes** that had not existed before. Balancing resolution and compression **jointly** removes it at a cost of 2,702 rows.
+
+### Which axes actually matter, and why the remaining 0.750 is not alarming
+
+| axis | AUC alone | survives into a 128px tile? |
+|---|---|---|
+| size (longest side) | 0.720 | **no** — a tile carries no record of its parent's dimensions |
+| aspect ratio | 0.591 | no |
+| squareness | 0.506 | no |
+| **compression** | **0.633 → 0.554** | **yes** — JPEG artefacts are in every tile |
+
+Only compression survives tiling, and it is now at chance. The residual 0.750 is carried by size and aspect, which a tile-trained model cannot see. **This is §1b's rule in action: a flaw is a usage condition. This pool is clean for tile training and still unfit for whole-image native-resolution training.**
+
+- **Caveat, and it is a real one.** "Size does not survive tiling" is true of *metadata*, not of *texture*. E8's shortcut probe predicted image width from the 68 features at **92.6% accuracy in crop128 mode**, where every input was already 128×128. Resolution leaks through texture. That probe can only be re-run once features are extracted for this pool (Phase 2), and it should be.
+- **Conclusion.** Auditing a merged pool is not a one-off gate but an invariant to re-check after every change, because the axes interact: the fix for one created a shortcut on another, and only re-running the probe caught it. The metadata probe is cheap and now belongs in the pool build itself.
+
+### E19b — the label direction was never checked, and two sources declare the opposite of ours
+
+Found on 2026-08-05 while auditing the pool for E19. It is the most consequential bug this project has produced, and the five existing audit checks could not have caught it: they inspect pixels and file properties, and this is a question about what a **number means**.
+
+**The project uses `0 = real, 1 = AI` everywhere. Two of the five training sources declare the reverse in their own HuggingFace metadata**, and `build_pool.py` was reading `int(row[label_col])` raw:
+
+| source | ClassLabel `names` | direction |
+|---|---|---|
+| `theminji/AI-vs-Real-balanced` | `["AiArtData", "RealArt"]` | **0 = AI** — inverted |
+| `theminji/ai-vs-real-200k` | `["ai", "real"]` | **0 = AI** — inverted |
+| `TheKernel01/AIGC-Detection-Benchmark` | `["real", "fake"]` | 0 = real — correct |
+| `OwensLab/CommunityForensics-Small` | *(no metadata)* | resolved below — correct |
+| `genimage` | *(folders)* | correct by construction |
+
+**Verification, three independent ways** — the metadata alone was not treated as sufficient:
+
+1. **Visual.** Sampling only images ≥200px (the 32px half is unreadable to the eye and misled a first attempt), every `label 0` sample from `AI-vs-Real-balanced` is unmistakably diffusion output — a product-render smartwatch in a rain-lit alley, a hyperreal golden-hour wheat field, both 1024². Every `label 1` sample is an ordinary candid photograph.
+2. **CommunityForensics has no ClassLabel metadata**, so its `model_name` column settled it: label 0 is **100% `FFHQ`** (Flickr-Faces-HQ, a real photograph set), label 1 carries diffusion model ids (`WarriorMama777/AbyssOrangeMix`, `lewdryuna/A-Rainier`, …). Correct order. *(Side finding: its entire real half is FFHQ — one dataset, one content type, one resolution. That is E14's narrow-real-class problem in its purest form, and it explains why the CommunityForensics-only arm scored 0.3% false positives on itself and 99.9% on everything else.)*
+3. **A transfer probe was run and proved inconclusive**, which is itself informative: a model trained on genimage scores `ai_vs_real_200k`'s two classes at 0.445 and 0.444, and CommunityForensics' at 0.741 and 0.739 — no separation at all. The reference model does not generalise to those sources (E14 again), so this test *cannot* resolve label direction, and reporting it as evidence either way would have been wrong.
+
+**Blast radius:**
+
+| artifact | rows | inverted |
+|---|---|---|
+| `pool_index.csv` | 169,668 | **79,838 (47.1%)** |
+| `pool_features.npz` — E12/E14/E15's training data | 101,027 | **49,724 (49.2%)** |
+| `pool_balanced.csv` | 102,492 | 50,816 (49.6%) |
+| `pool_balanced_v3.csv` — E15/E16 | 36,970 | 17,349 (46.9%) |
+| `pool_tile_v1.csv` — built earlier the same day | 43,010 | 21,343 (49.6%) |
+
+**Affected: E12, E14, E15, E16.** Every pool-trained model (`feature_full_v2`, `v3`, `v4`, the DINOv2 probe, E14's five arms) learned from a target that was wrong about half the time.
+
+**Not affected:** everything trained from image folders, where the mapping is ours — `best.pt`, `best_genimage.pt`, `feature_full.joblib`, and critically **`feature_crop128.joblib`**, the tile model behind the demo and all of Module 2. **E1–E11, E17 and E18 stand.**
+
+**What it might explain** — listed as suspects for re-measurement, not as conclusions: E12's "ten times the data did not help", E15's "the gain did not transfer to Defactify", E16's DINOv2 at 0.480, and the absolute magnitude of E14's false-positive rates.
+
+**Fixes:**
+- `SOURCES` now carries `label_map` (raw → project) and `label_names`; `to_project_label()` **raises** on an undeclared source rather than assuming, and `verify_labels()` compares the file's own ClassLabel order against what we expect and **raises on a mismatch** — a dataset re-exported with swapped classes must crash, not silently invert.
+- The auditor gained a sixth check, `label_direction()`, which reads the ClassLabel names and flags any source whose index 0 means AI.
+- The index was rebuilt rather than patched in place: a CSV that might hold raw or mapped labels is a double-inversion waiting to happen. The mislabelled one is kept as `pool_index_BOZUK_etiket.csv.bak`.
+
+**The lesson, and it is a new one for §1b:** auditing has been about whether a model can separate the classes *without looking at the image*. This bug is the opposite failure — the images were fine and the **question** was wrong. "Is this dataset biased?" and "does this dataset mean what I think it means?" are different checks, and only the first was being run.
+
+## 2026-08-05 — E19c: re-running E12/E14/E15/E16 with corrected labels
+
+Same images, same seeds, same code — **only the label column changed** (E19b), so the label bug is the single variable. `feature_full_v2` and `v4` were retrained and overwritten; the poisoned artifacts are kept as `*.BOZUK_etiket.bak`.
+
+| experiment | verdict |
+|---|---|
+| **E14** — narrow real class | **stands, essentially unchanged** |
+| **E12** — ten times the data | **partly revised** — it helped more than reported, on the axis it was reported not to help |
+| **E15** — balanced multi-source | **partly revised** — one conclusion inverted, the headline survives |
+| **E16** — frozen DINOv2 probe | **overturned. The falsification was an artifact of the bug** |
+
+### E14 stands
+
+| | old | corrected |
+|---|---|---|
+| single-source AUC (pool) | 0.548–0.661 | **0.558–0.684** |
+| all five sources | **0.884** | **0.894** |
+| held-out false positives | 88.6–99.9% | 85.6–99.9% |
+| AI recall, every arm | 99.5–100% | 99.6–100% |
+
+The dominant-lever finding is unaffected: a real class from one source rejects 86–99.9% of other sources' photographs, five sources lift pool AUC from ~0.6 to ~0.89, and diversity still costs nothing in AI recall. **§12b's reframing of the project survives the bug that was under it.**
+
+### E12 — "data volume alone does not help" was too pessimistic
+
+| eval set | v1 | v2 old | **v2 corrected** |
+|---|---|---|---|
+| GenImage test | 0.974 | 0.913 | 0.918 |
+| **archive1** | 0.706 | 0.839 | **0.922** (+0.217 over v1) |
+| Defactify | 0.717 | 0.692 | **0.715** (flat, not a loss) |
+| pool held-out | — | 0.895 | 0.904 |
+
+And false positives, which the original entry never reported: archive1 **30.1% → 12.3%**, Defactify **12.7% → 7.6%**. So ten times the data *did* help — substantially on an unseen real source, and on both false-positive rates. What it did not move is Defactify, the content-controlled benchmark. **The DALL-E 3 collapse persists and is larger (0.808 → 0.559)**, so E12's compression-gap explanation for it still stands.
+
+### E15 — the balanced arm's advantage inverted
+
+| eval set | v1 | v2 | v3 old | **v3 corrected** |
+|---|---|---|---|---|
+| **Defactify** | 0.717 | 0.705 | 0.692 | **0.728** — now the best of the three |
+| archive1 | 0.706 | 0.911 | 0.904 | 0.902 |
+
+| false positives | v2 old | v2 corrected | v3 old | v3 corrected |
+|---|---|---|---|---|
+| archive1 (unseen) | 31.6% | **13.6%** | **19.8%** | 28.6% |
+| Defactify (unseen) | 9.6% | **8.2%** | **9.4%** | 19.3% |
+
+v3 was reported as the deployment winner; corrected, **v2 is**. The premise for building v3 — that v2's real half was source-skewed — was itself partly a label artifact. But the conclusion that matters is untouched: **AI recall at a 10% false-positive budget is 35.6% / 29.1% / 33.8%.** Three pools, three recipes, ~33% either way. No configuration of the training data produces a usable operating point.
+
+### E16 — overturned, and it was the biggest claim in the log
+
+| eval set | statistics v3 | DINOv2 old | **DINOv2 corrected** |
+|---|---|---|---|
+| GenImage test | 0.919 | 0.940 | 0.917 |
+| archive1 | 0.904 | 0.873 | **0.929** |
+| **Defactify** | 0.692 | **0.480** | **0.764** |
+| AI recall @10% FP | 33.7% | **9.5%** | **40.4%** |
+
+Per generator on Defactify: dalle3 0.808, sd21 0.797, sdxl 0.770, sd3 0.706, midjourney 0.739 — nothing near chance.
+
+**0.764 is the highest whole-image Defactify AUC this project has produced** (ResNet-18: 0.760), and **40.4% is the best operating point measured**. Everything E16 concluded was wrong:
+
+- "DINOv2 scores at chance because it is a semantic encoder and Defactify is content-controlled" — it scores 0.764. The content-control argument was an explanation invented for a number produced by a broken label column.
+- "This carries a warning backwards: every GenImage number inherits the doubt that a model can score highly there by recognising content" — that warning rested on the 0.480, and does not survive it. GenImage remains not content-controlled, which is still worth stating, but there is no measurement behind the alarm.
+- "Hand-crafted low-level statistics are the right *family*; a semantic backbone is not the upgrade path" — reversed. The backbone beats the statistics on the fairest benchmark and at the operating point.
+
+`ROADMAP.md` §13b struck through its own CLIP/DINOv2 recommendation on the strength of this experiment. The strike-through is removed.
+
+- **Caveat.** DINOv2's false positives at threshold 0.5 are high (archive1 71.8%, Defactify 53.4%), so its *calibration* is poor while its *ranking* is the best available — the E11→E13 distinction again, now in the other direction. And this is still a **whole-image** probe at 518px; the native-tile version §13b actually recommended remains untested and is now the most promising open experiment in the project.
+- **Conclusion.** One mislabelled column produced a confident, well-argued, three-part falsification of the correct research direction. The mechanism was invisible to five audit checks that all inspect pixels, and the write-up's own plausibility is what made it stick. Re-running everything downstream of a data fix is not optional.

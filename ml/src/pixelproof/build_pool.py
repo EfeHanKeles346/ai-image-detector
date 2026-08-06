@@ -64,32 +64,66 @@ HOME = Path.home() / "Desktop"
 SSD = Path("/Volumes/LaCie/pixelproof-datasets")
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".JPEG"}
 
+# LABEL DIRECTION IS NOT A CONVENTION — IT IS A PER-DATASET FACT
+# ---------------------------------------------------------------------------
+# This project uses 0 = real, 1 = AI everywhere. Datasets do not. Two of the
+# five sources below declare the opposite order in their own HuggingFace
+# metadata, and until 2026-08-05 this file took int(row[label_col]) raw — so
+# 47% of pool_index.csv carried inverted labels, and every experiment trained
+# on the pool (E12, E14, E15, E16) learned from a half-poisoned target.
+#
+#   theminji/AI-vs-Real-balanced   names = ["AiArtData", "RealArt"]  -> 0 is AI
+#   theminji/ai-vs-real-200k       names = ["ai", "real"]            -> 0 is AI
+#   TheKernel01/AIGC-Detection...  names = ["real", "fake"]          -> 0 is real
+#   OwensLab/CommunityForensics    no metadata; resolved from model_name —
+#                                  label 0 is 100% "FFHQ" (a real photograph
+#                                  set), label 1 carries diffusion model ids
+#
+# `label_map` translates raw -> project. `label_names` records what we expect
+# to find in the file, and verify_labels() fails loudly if a dataset is
+# re-exported with a different order: a silent flip is far worse than a crash.
+#
 # whole_image_safe=False -> has a shape/resolution shortcut a native-resolution
 # model could exploit. Still fine for the CNN and for tile training.
 SOURCES = {
     "communityforensics": {
         "path": SSD / "OwensLab__CommunityForensics-Small",
         "kind": "parquet", "image_col": "image_data", "label_col": "label",
-        "extra_col": "model_name", "whole_image_safe": True,
+        # label 0 is 100% model_name="FFHQ" (real photographs); label 1 carries
+        # diffusion model ids. Same order as ours.
+        "label_map": {0: 0, 1: 1}, "label_names": None,
+        # Marked unsafe 2026-08-05. Measured: class 0 is ENTIRELY 1024x1024 and
+        # class 1 ENTIRELY 512x512 — p10 = median = p90 in both, so the two size
+        # distributions are disjoint constants. A single threshold on image size
+        # separates the classes perfectly, which is archive1's AUC 1.000 again.
+        # The original audit passed it because the ratio is exactly 2.0 and the
+        # rule tested for >2.5; both are fixed in tools/audit_datasets.py.
+        "extra_col": "model_name", "whole_image_safe": False,
     },
     "ai_vs_real_balanced": {
         "path": SSD / "theminji__AI-vs-Real-balanced",
         "kind": "parquet", "image_col": "image", "label_col": "label",
+        "label_map": {0: 1, 1: 0},                      # INVERTED
+        "label_names": ["AiArtData", "RealArt"],
         "extra_col": None, "whole_image_safe": True,
     },
     "genimage": {
         "path": HOME / "genimage_split/train",
         "kind": "folder", "folders": {"REAL": 0, "FAKE": 1},
+        "label_map": {0: 0, 1: 1}, "label_names": None,   # folders already carry our order
         "whole_image_safe": True,
     },
     "aigc_benchmark": {
         "path": SSD / "TheKernel01__AIGC-Detection-Benchmark",
         "kind": "parquet", "image_col": "image", "label_col": "label",
+        "label_map": {0: 0, 1: 1}, "label_names": ["real", "fake"],
         "extra_col": "generator", "whole_image_safe": False,   # AI 100% square
     },
     "ai_vs_real_200k": {
         "path": SSD / "theminji__ai-vs-real-200k",
         "kind": "parquet", "image_col": "image", "label_col": "label",
+        "label_map": {0: 1, 1: 0},                      # INVERTED
+        "label_names": ["ai", "real"],
         "extra_col": None, "whole_image_safe": False,          # AI 1024px, real 263px
     },
 }
@@ -111,6 +145,52 @@ def phash(image: Image.Image) -> str:
     grey = np.asarray(image.convert("L").resize((9, 8), Image.LANCZOS), dtype=np.float32)
     bits = (grey[:, 1:] > grey[:, :-1]).ravel()
     return f"{int(''.join('1' if b else '0' for b in bits), 2):016x}"
+
+
+def to_project_label(spec: dict, raw: int) -> int:
+    """Translate a dataset's own label into ours (0 = real, 1 = AI).
+
+    Raises rather than guessing. A source with no declared map is a source
+    nobody has checked, and an unchecked map is how 47% of the pool ended up
+    inverted for four experiments.
+    """
+    mapping = spec.get("label_map")
+    if not mapping:
+        raise ValueError("source has no label_map — declare it in SOURCES before indexing")
+    if raw not in mapping:
+        raise ValueError(f"unmapped raw label {raw!r}; SOURCES declares {sorted(mapping)}")
+    return mapping[raw]
+
+
+def verify_labels(name: str, spec: dict) -> str:
+    """Check the file's own ClassLabel names against what SOURCES expects.
+
+    HuggingFace stores the class order in the parquet schema metadata. If a
+    dataset is re-exported with the classes swapped, our map silently inverts
+    with it — so compare, and fail loudly on a mismatch. Returns a one-line
+    status for the log.
+    """
+    expected = spec.get("label_names")
+    if spec["kind"] != "parquet" or expected is None:
+        direction = "inverted" if spec["label_map"][0] == 1 else "same order"
+        return f"{name}: no ClassLabel metadata, map asserted by inspection ({direction})"
+
+    import json
+    import pyarrow.parquet as pq
+
+    shards = sorted(real_files(spec["path"], "*.parquet"))
+    if not shards:
+        return f"{name}: NOT FOUND, cannot verify"
+    metadata = (pq.ParquetFile(shards[0]).schema_arrow.metadata or {}).get(b"huggingface")
+    if not metadata:
+        return f"{name}: parquet carries no HuggingFace metadata, map unverified"
+    found = json.loads(metadata)["info"]["features"][spec["label_col"]].get("names")
+    if found != expected:
+        raise ValueError(
+            f"{name}: label order changed upstream — SOURCES expects {expected}, "
+            f"file declares {found}. Fix label_map before indexing anything.")
+    direction = "INVERTED" if spec["label_map"][0] == 1 else "same order"
+    return f"{name}: {found} -> {direction}, verified"
 
 
 def describe(image: Image.Image, byte_size: int) -> dict:
@@ -180,7 +260,8 @@ def _one_unit(job):
         stream = _iter_one_parquet(local_spec, unit, per_unit)
     else:
         stream = _iter_one_folder(local_spec, unit, per_unit)
-    for image, byte_size, label, location, extra in stream:
+    for image, byte_size, raw_label, location, extra in stream:
+        label = to_project_label(spec, raw_label)   # dataset order -> ours (0=real, 1=AI)
         digest = phash(image)
         if digest in held_out:
             overlaps.append((name, location, held_out[digest]))
@@ -234,6 +315,11 @@ def _iter_one_folder(spec, folder: Path, limit: int | None):
 
 def build(limit_per_source: int | None, held_out_hashes: dict[str, str]):
     from concurrent.futures import ProcessPoolExecutor
+
+    print("verifying label direction (0 = real, 1 = AI)…")
+    for name, spec in SOURCES.items():
+        print(f"  {verify_labels(name, spec)}")
+    print()
 
     jobs = []
     for name, spec in SOURCES.items():
@@ -301,7 +387,52 @@ def audit(rows: list[dict]) -> None:
     for p in problems:
         print(f"  !! {p}")
     if not problems:
-        print("  none detected")
+        print("  no threshold exceeded")
+    metadata_probe(rows)
+
+
+def metadata_probe(rows: list[dict]) -> float:
+    """Can a model pick the class from metadata alone, without seeing a pixel?
+
+    The five threshold checks above compare medians and ratios, which is a weak
+    instrument: on 2026-08-05 they reported "none detected" for a pool this probe
+    separated at AUC 0.956. Medians can coincide while the distributions differ,
+    and a boosted tree finds that difference immediately. archive1 scored 1.000
+    here, so this is the same test that defines the whole problem (ROADMAP 1b).
+
+    Reported, never enforced — a flaw is a usage condition (1b). Size, aspect and
+    squareness cannot reach a 128px tile; compression can, so read that column
+    separately when building a pool for tile training.
+    """
+    from sklearn.ensemble import HistGradientBoostingClassifier
+    from sklearn.metrics import roc_auc_score
+    from sklearn.model_selection import train_test_split
+
+    labels = np.array([int(r["label"]) for r in rows])
+    if len(set(labels.tolist())) < 2:
+        return float("nan")
+    width = np.array([int(r["w"]) for r in rows], dtype=np.float64)
+    height = np.array([int(r["h"]) for r in rows], dtype=np.float64)
+    longest = np.maximum(width, height)
+    aspect = longest / np.maximum(np.minimum(width, height), 1)
+    bpp = np.array([float(r["bpp"]) for r in rows])
+    square = np.array([int(r["square"]) for r in rows], dtype=np.float64)
+
+    def auc(columns: np.ndarray) -> float:
+        x_tr, x_te, y_tr, y_te = train_test_split(
+            columns, labels, test_size=0.3, random_state=42, stratify=labels)
+        model = HistGradientBoostingClassifier(random_state=42).fit(x_tr, y_tr)
+        return float(roc_auc_score(y_te, model.predict_proba(x_te)[:, 1]))
+
+    everything = auc(np.c_[width, height, aspect, bpp, square])
+    compression = auc(np.c_[bpp])
+    print("\nMETADATA PROBE — class from metadata alone, no pixels "
+          "(archive1 scored 1.000 here)")
+    print(f"  all metadata      {everything:.3f}"
+          f"   {'<-- exploitable by a whole-image model' if everything > 0.75 else ''}")
+    print(f"  compression only  {compression:.3f}"
+          f"   {'<-- SURVIVES INTO A TILE, fix this one' if compression > 0.6 else ''}")
+    return everything
 
 
 def main() -> None:

@@ -13,7 +13,10 @@ What it looks for is the archive1 failure: anything that lets a model separate
 the classes WITHOUT looking at image content.
   - format split      (real=JPEG / fake=PNG was archive1's giveaway)
   - shape split       (all fakes square, all reals rectangular)
-  - resolution split  (median side differing by more than 2.5x)
+  - resolution split  (median side differing by 2.0x or more, AND a separate
+                       check for p10-p90 ranges that do not overlap at all —
+                       CommunityForensics is 1024px vs 512px, a ratio of exactly
+                       2.0 that the old 2.5x rule waved through)
   - class imbalance
   - bytes-per-pixel   (compression level; the suspect behind the DALL-E 3
                        inversion in the tile experiment)
@@ -102,6 +105,44 @@ def from_archives(folder: Path, samples: list) -> str | None:
     return used
 
 
+def label_direction(folder: Path) -> str | None:
+    """Read the dataset's own ClassLabel order and compare it with ours.
+
+    This project uses 0 = real, 1 = AI. Datasets do not agree: two of the five
+    training sources declare the opposite, and because nothing checked, 47% of
+    the pool carried inverted labels through four experiments (E12, E14, E15,
+    E16). The five existing checks all look at pixels and file properties — none
+    of them can see that a label MEANS the opposite thing. This one can.
+    """
+    import json
+    import pyarrow.parquet as pq
+
+    shards = sorted(real_files(folder, "*.parquet"))
+    if not shards:
+        return None
+    try:
+        metadata = (pq.ParquetFile(shards[0]).schema_arrow.metadata or {}).get(b"huggingface")
+        if not metadata:
+            return None
+        features = json.loads(metadata)["info"]["features"]
+    except Exception:
+        return None
+
+    for column, spec in features.items():
+        names = spec.get("names") if isinstance(spec, dict) else None
+        if not names or len(names) != 2:
+            continue
+        first = str(names[0]).lower()
+        # index 0 should mean "real" under our convention
+        if any(token in first for token in ("ai", "fake", "synth", "generated", "gan")):
+            return (f"ETİKET YÖNÜ TERS — `{column}` = {names}, yani 0=AI/1=gerçek. "
+                    f"Projede 0=gerçek, 1=AI. Bu sette `label_map` ZORUNLU "
+                    f"(build_pool.py SOURCES)")
+        if any(token in first for token in ("real", "authentic", "natural", "photo")):
+            return None
+    return None
+
+
 def from_parquet(folder: Path, samples: list) -> str | None:
     import pyarrow.parquet as pq
 
@@ -178,6 +219,12 @@ def summarise(samples: list) -> dict:
             "top": ", ".join(f"{w}x{h}({c})" for (w, h), c in sizes.most_common(3)),
             "square": round(sum(1 for (w, h), _, _ in rows if w == h) / len(rows) * 100, 1),
             "side": int(np.median([max(w, h) for (w, h), _, _ in rows])),
+            # p10/p90 exist so the ratio-of-medians check can be backed by a
+            # separation check — see problems_in(). A median ratio hides the
+            # difference between "overlapping distributions" and "two disjoint
+            # constants", and only the second is a perfect shortcut.
+            "p10": int(np.percentile([max(w, h) for (w, h), _, _ in rows], 10)),
+            "p90": int(np.percentile([max(w, h) for (w, h), _, _ in rows], 90)),
             "bpp": round(float(np.mean([b / max(w * h, 1) for (w, h), _, b in rows])), 3),
         }
     return out
@@ -194,8 +241,19 @@ def problems_in(stats: dict) -> list[str]:
     if max(squares.values()) - min(squares.values()) > 60:
         issues.append(f"ŞEKİL TUZAĞI — kare oranları: {squares}")
     sides = {k: v["side"] for k, v in stats.items()}
-    if max(sides.values()) / max(min(sides.values()), 1) > 2.5:
+    # Threshold lowered 2.5 -> 2.0 (inclusive) on 2026-08-05. CommunityForensics
+    # is 1024px for one class and 512px for the other — a ratio of EXACTLY 2.0,
+    # which the old rule let through and which no model can fail to exploit.
+    if max(sides.values()) / max(min(sides.values()), 1) >= 2.0:
         issues.append(f"ÇÖZÜNÜRLÜK TUZAĞI — ortanca kenarlar: {sides}")
+    # The sharper test: if the two size distributions do not overlap at all, the
+    # ratio is irrelevant — a single threshold on image size separates the
+    # classes perfectly. This is archive1's AUC 1.000 in a different costume.
+    spans = {k: (v["p10"], v["p90"]) for k, v in stats.items()}
+    lows, highs = list(spans.values())[0], list(spans.values())[1]
+    if lows[0] > highs[1] or highs[0] > lows[1]:
+        issues.append(f"ÇÖZÜNÜRLÜK AYRIMI (KESİN) — p10-p90 aralıkları hiç örtüşmüyor: {spans}. "
+                      f"Boyuta bakan tek bir eşik sınıfları kusursuz ayırır")
     bpps = {k: v["bpp"] for k, v in stats.items()}
     if max(bpps.values()) / max(min(bpps.values()), 0.001) > 3:
         issues.append(f"SIKIŞTIRMA TUZAĞI — bayt/piksel çok farklı: {bpps} "
@@ -216,7 +274,11 @@ def audit_folder(folder: Path) -> tuple[dict, list[str], str]:
     if not samples:
         return {}, ["İNCELENEMEDİ — tanınan görsel/arşiv bulunamadı"], "?"
     stats = summarise(samples)
-    return stats, problems_in(stats), kind or "?"
+    issues = problems_in(stats)
+    flipped = label_direction(folder)
+    if flipped:
+        issues.insert(0, flipped)      # first, because it silently corrupts everything else
+    return stats, issues, kind or "?"
 
 
 def main() -> None:
@@ -237,11 +299,13 @@ def main() -> None:
         lines.append(f"\n## {folder.name}\n")
         lines.append(f"- {size:.1f} GB · örnekleme: {kind}")
         if stats:
-            lines.append("\n| sınıf | n | format | farklı boyut | en sık | kare% | ortanca kenar | bayt/piksel |")
-            lines.append("|---|---|---|---|---|---|---|---|")
+            lines.append("\n| sınıf | n | format | farklı boyut | en sık | kare% | "
+                         "kenar p10 | ortanca | p90 | bayt/piksel |")
+            lines.append("|---|---|---|---|---|---|---|---|---|---|")
             for label, v in sorted(stats.items()):
                 lines.append(f"| `{label}` | {v['n']} | {v['formats']} | {v['distinct']} | "
-                             f"{v['top']} | {v['square']} | {v['side']} | {v['bpp']} |")
+                             f"{v['top']} | {v['square']} | {v['p10']} | {v['side']} | "
+                             f"{v['p90']} | {v['bpp']} |")
         if issues:
             lines.append("\n**⚠️ Sorunlar:**")
             lines += [f"- {i}" for i in issues]

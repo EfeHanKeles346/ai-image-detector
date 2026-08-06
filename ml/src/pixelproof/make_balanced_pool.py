@@ -75,6 +75,8 @@ import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from pixelproof.build_pool import SOURCES
+
 # Recovered from artifacts/pool_balanced.csv — see PROVENANCE above.
 BANDS = [0, 128, 256, 1024, 10 ** 9]
 INFINITY = 10 ** 9
@@ -108,6 +110,28 @@ def _percentile(values: list[int], q: float) -> float:
     return float(values[min(len(values) - 1, int(q / 100 * len(values)))])
 
 
+def refresh_safety(rows: list[dict]) -> int:
+    """Rewrite `whole_image_safe` from the live SOURCES dict.
+
+    The flag is a per-source policy, not a per-image fact, and pool_index.csv is
+    a snapshot: when a source is re-classified the index keeps the old value
+    until someone re-runs the (expensive, SSD-bound) indexing pass. Reading the
+    policy from code instead means a stale index cannot silently reintroduce a
+    shortcut. CommunityForensics was re-classified on 2026-08-05 for exactly
+    this reason.
+    """
+    changed = 0
+    for row in rows:
+        spec = SOURCES.get(row["source"])
+        if spec is None:
+            continue
+        current = str(int(spec["whole_image_safe"]))
+        if row.get("whole_image_safe") != current:
+            row["whole_image_safe"] = current
+            changed += 1
+    return changed
+
+
 def profile(rows: list[dict], title: str) -> float:
     """Per-class resolution profile. Returns the class gap ratio (1.0 = no gap)."""
     sides = {label: [longest_side(r) for r in rows if int(r["label"]) == label]
@@ -130,21 +154,49 @@ def profile(rows: list[dict], title: str) -> float:
     return gap
 
 
-def balance(rows: list[dict], seed: int, bands: list[int]) -> tuple[list[dict], list[tuple]]:
-    """Keep min(n_real, n_ai) per resolution band, from both classes."""
-    buckets: dict[tuple[int, int], list[dict]] = defaultdict(list)
+def bpp_band_of(value: float, edges: list[float]) -> int:
+    for index, (low, high) in enumerate(zip(edges[:-1], edges[1:])):
+        if low <= value < high:
+            return index
+    return len(edges) - 2
+
+
+def balance(rows: list[dict], seed: int, bands: list[int],
+            bpp_edges: list[float] | None = None) -> tuple[list[dict], list[tuple]]:
+    """Keep min(n_real, n_ai) per cell, from both classes.
+
+    A cell is a resolution band, or — when bpp_edges is given — a
+    (resolution x compression) cell.
+
+    Balancing one axis can BREAK another, and did: dropping the 32px images to
+    fix the tile pipeline left the pool with a 1.65x bytes-per-pixel gap between
+    the classes (real 0.813, AI 0.492) where E12 had measured none. Compression
+    is the one metadata axis that survives into a 128px tile — size, aspect and
+    squareness do not — so it is the one that must be balanced for tile
+    training, and it has to be balanced JOINTLY with resolution or fixing either
+    one re-breaks the other.
+    """
+    axes = [bands] if bpp_edges is None else [bands, bpp_edges]
+    buckets: dict[tuple, list[dict]] = defaultdict(list)
     for row in rows:
-        buckets[(band_of(longest_side(row), bands), int(row["label"]))].append(row)
+        cell = (band_of(longest_side(row), bands),)
+        if bpp_edges is not None:
+            cell += (bpp_band_of(float(row["bpp"]), bpp_edges),)
+        buckets[cell + (int(row["label"]),)].append(row)
 
     rng = random.Random(seed)
     kept, report = [], []
-    for band in range(len(bands) - 1):
-        real, ai = buckets[(band, REAL)], buckets[(band, AI)]
+    cells = sorted({k[:-1] for k in buckets})
+    for cell in cells:
+        real, ai = buckets.get(cell + (REAL,), []), buckets.get(cell + (AI,), [])
         take = min(len(real), len(ai))
+        if not take:
+            report.append((cell, len(real), len(ai), 0))
+            continue
         for group in (real, ai):
             chosen = group[:] if len(group) == take else rng.sample(group, take)
             kept += chosen
-        report.append((bands[band], bands[band + 1], len(real), len(ai), take))
+        report.append((cell, len(real), len(ai), take))
     return kept, report
 
 
@@ -159,21 +211,45 @@ def main() -> None:
                              "model is shown a synthetic pattern rather than a photograph.")
     parser.add_argument("--exclude-source", action="append", default=[],
                         help="drop a source entirely; repeatable")
+    parser.add_argument("--whole-image-safe-only", action="store_true",
+                        help="keep only sources safe for NATIVE-RESOLUTION whole-image training. "
+                             "Tile training does not need this: a 128px tile carries no "
+                             "information about the size of the image it came from (1b).")
     parser.add_argument("--dedupe", action="store_true",
                         help="keep one row per perceptual hash (the original did not)")
     parser.add_argument("--bands", default=",".join(str(b) for b in BANDS[:-1]),
                         help="comma-separated longest-side cut points; 'inf' is appended. "
                              "Narrower bands balance tighter and drop more rows.")
+    parser.add_argument("--bpp-bands", default=None,
+                        help="comma-separated bytes-per-pixel cut points, e.g. 0.2,0.5,1.0,1.5. "
+                             "Balances compression JOINTLY with resolution. This is the axis "
+                             "that survives into a 128px tile, so tile pools want it.")
     parser.add_argument("--verify-against", type=Path,
                         help="compare the result with an existing balanced CSV")
     args = parser.parse_args()
 
     bands = sorted({int(b) for b in args.bands.split(",") if b.strip()} | {0}) + [INFINITY]
+    bpp_edges = None
+    if args.bpp_bands:
+        bpp_edges = sorted({float(b) for b in args.bpp_bands.split(",") if b.strip()} | {0.0}) + [1e9]
 
     with args.index.open() as handle:
         rows = list(csv.DictReader(handle))
     print(f"read {len(rows):,} rows from {args.index}")
+
+    changed = refresh_safety(rows)
+    if changed:
+        print(f"whole_image_safe refreshed from SOURCES: {changed:,} rows corrected "
+              f"(the index predates the current policy)")
+
     profile(rows, "BEFORE")
+
+    if args.whole_image_safe_only:
+        before = len(rows)
+        rows = [r for r in rows if r["whole_image_safe"] == "1"]
+        dropped = Counter(r["source"] for r in rows)
+        print(f"\nwhole-image-safe only: {before - len(rows):,} rows dropped; "
+              f"kept {', '.join(sorted(dropped))}")
 
     if args.exclude_source:
         before = len(rows)
@@ -192,12 +268,16 @@ def main() -> None:
         rows = unique
         print(f"dedupe: {before - len(rows):,} duplicate hashes dropped")
 
-    kept, report = balance(rows, args.seed, bands)
+    kept, report = balance(rows, args.seed, bands, bpp_edges)
 
-    print(f"\n{'band (longest side)':<22}{'real':>10}{'ai':>10}{'kept each':>12}")
-    for low, high, n_real, n_ai, take in report:
-        label = f"{low}-{high if high < INFINITY else 'inf'}"
-        print(f"{label:<22}{n_real:>10,}{n_ai:>10,}{take:>12,}")
+    header = "band (px)" if bpp_edges is None else "cell (px x bytes/px)"
+    print(f"\n{header:<26}{'real':>10}{'ai':>10}{'kept each':>12}")
+    for cell, n_real, n_ai, take in report:
+        label = f"{bands[cell[0]]}-{bands[cell[0] + 1] if bands[cell[0] + 1] < INFINITY else 'inf'}"
+        if bpp_edges is not None:
+            hi = bpp_edges[cell[1] + 1]
+            label += f" x {bpp_edges[cell[1]]:g}-{'inf' if hi > 1e8 else f'{hi:g}'}"
+        print(f"{label:<26}{n_real:>10,}{n_ai:>10,}{take:>12,}")
 
     gap = profile(kept, "AFTER")
     cost = 100 * (1 - len(kept) / max(len(rows), 1))

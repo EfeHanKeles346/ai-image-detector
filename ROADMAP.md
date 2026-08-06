@@ -745,16 +745,20 @@ without fixing the input would buy very little.
 
 The recommendation is therefore two-part:
 
-1. ~~**Representation — a frozen CLIP-ViT or DINOv2 backbone with a linear probe.**~~
-   > ⚠️ **Tested 2026-08-04 and falsified — see E16.** DINOv2 ViT-S/14 at 518px, frozen, probed
-   > on the same balanced pool as the statistics model, scored **0.480 on Defactify** — chance —
-   > against the statistics model's 0.692, while scoring 0.940 on GenImage. The split is
-   > diagnostic: DINOv2 is a *semantic* encoder, and Defactify's fakes are generated from the
-   > same MS-COCO captions as its reals, so there is no content difference to read. GenImage is
-   > not content-controlled, which means a high score there can come from recognising subject
-   > matter rather than generation — a warning that applies to every GenImage number in this
-   > project. Hand-crafted low-level statistics are the right family; a semantic backbone is not
-   > the upgrade path.
+1. **Representation — a frozen CLIP-ViT or DINOv2 backbone with a linear probe.**
+   > ✅ **Tested twice. Falsified on 2026-08-04, and the falsification itself was wrong — see E16
+   > and E19c.** The first run scored DINOv2 at **0.480 on Defactify** (chance) and this section
+   > struck the recommendation out on that basis, with a three-part argument about semantic
+   > encoders and content control. Re-run on 2026-08-05 with the label column fixed (E19b), the
+   > same probe on the same images scores **0.764 on Defactify** — the highest whole-image number
+   > this project has produced, above ResNet-18's 0.760 — and **40.4% AI recall at a 10%
+   > false-positive budget**, against the statistics model's 33.7%. Per generator it is 0.71–0.81,
+   > nothing near chance.
+   >
+   > So this recommendation stands, and stands stronger than when it was written. Its caveat is
+   > calibration, not discrimination: at threshold 0.5 the probe calls 71.8% of archive1's real
+   > photographs AI. Best ranking, worst operating point — the E11→E13 pattern in the other
+   > direction.
 2. **Applied to native tiles, not whole images.** A ViT resizes to 224 like everything else, so a
    whole-image CLIP probe would inherit the §4 penalty. Feeding it 128–224px native tiles combines
    the strongest known representation with the measured fix.
@@ -851,23 +855,72 @@ committed, so E12–E18 could not be rebuilt from the repo.
 - [x] Bonus: E17's IoU column was measuring **mask size, not skill** — flagging at random already
       scores `f/(2-f)`. A baseline is now printed next to every IoU.
 
-#### ▶️ Phase 1 — Pool hygiene *(~1.5 h · needs the SSD)*
+#### ▶️ Phase 1 — Pool hygiene *(~1.5 h · needs the SSD)* — see E19
 
-Three measured defects sit in the pool everything else is about to be built on.
+Three measured defects sat in the pool everything else is about to be built on. Fixing them exposed
+a fourth that nobody predicted.
 
-- [ ] **1.1** Minimum-side floor. `ai_vs_real_balanced` has a **median longest side of 32 px**;
+- [x] **1.1** Minimum-side floor. `ai_vs_real_balanced` has a **median longest side of 32 px**;
       `features.py` reflection-pads anything under one tile, so the model is shown a synthetic
-      pattern rather than a photograph. ~26% of the pool.
-- [ ] **1.2** `communityforensics` → `whole_image_safe=False`. Class 0 is **entirely** 1024², class 1
-      **entirely** 512² — zero overlap, a perfect shortcut for any native-resolution model.
-- [ ] **1.3** Auditor threshold 2.5× → 2.0×. The split above is exactly 2.0× and slipped through.
-- [ ] **1.4** Regenerate `DENETIM.md` for **every** dataset. It currently holds one, while
-      `DATASETS.md` reads as though all were audited.
-- [ ] **1.5** Rebuild the pool on the seven-cut band grid (`128,256,384,512,768,1024,1536`).
+      pattern rather than a photograph. 27,153 rows dropped.
+- [x] **1.2** `communityforensics` → `whole_image_safe=False`. Class 0 is **entirely** 1024², class 1
+      **entirely** 512² — zero overlap, a perfect shortcut for any native-resolution model. The flag
+      is now read from `SOURCES` at balancing time rather than from the index, because the index is
+      a snapshot and a stale one silently restores the shortcut (39,990 rows were carrying it).
+- [x] **1.3** Auditor threshold 2.5× → **2.0× inclusive**, plus a **non-overlap check** on p10–p90.
+      The split above is a ratio of exactly 2.0, and a ratio cannot tell "overlapping distributions"
+      from "two disjoint constants" — only the second is a perfect shortcut.
+- [x] **1.4** Regenerate `DENETIM.md` for **every** dataset — 16 sets, 660 bytes → 17.9 kB. The new
+      check fired on the first run: CommunityForensics now reports both a resolution trap and
+      `ÇÖZÜNÜRLÜK AYRIMI (KESİN)` with ranges (512,512) vs (1024,1024).
+- [x] **1.5** Rebuild the pool. → `artifacts/pool_tile_v2.csv`, **48,066 rows** (24,033 / 24,033),
+      balanced on **resolution × compression jointly**.
+- [x] **1.7 — the label bug (E19b).** Two of five sources declare `0 = AI` in their own metadata
+      while this project uses `0 = real`, and `build_pool.py` read the raw value: **47% of the index
+      was inverted**, poisoning E12/E14/E15/E16. `SOURCES` now carries `label_map` + `label_names`,
+      `to_project_label()` raises on an undeclared source, `verify_labels()` raises if a dataset is
+      re-exported with swapped classes, and the auditor gained a sixth check for it. The index was
+      rebuilt rather than patched (a CSV that might hold raw *or* mapped labels is a double-inversion
+      waiting to happen); the old one is kept as `pool_index_BOZUK_etiket.csv.bak`.
+- [x] **1.8** The metadata probe moved **into** `build_pool.audit()`. The five threshold checks
+      printed "none detected" for a pool the probe separates at **0.924** — medians can coincide
+      while distributions differ, and a boosted tree finds that instantly.
 
-**Decision to take explicitly:** ~45k clean rows against 102k dirty ones. E12 (ten times the data
-did not help) and E14 (diversity beats volume) both argue for clean — but it should be a choice,
-not a side effect.
+**1.6 — the unpredicted one.** A standing **metadata probe** (predict the class from width, height,
+aspect, bytes/pixel and squareness alone — archive1's AUC 1.000 test) showed that the 32px floor
+*created* a compression shortcut where E12 had explicitly measured none:
+
+| pool (labels corrected) | probe (all) | compression alone |
+|---|---|---|
+| raw index, 169,668 | 0.924 | 0.701 |
+| class balance only, 122,772 | **0.956** | 0.730 |
+| compression bands only, 53,022 | 0.912 | 0.616 |
+| resolution bands only, 91,270 | 0.916 | 0.700 |
+| **both, 48,066** ← shipped | **0.801** | **0.578** |
+
+Keeping 122k rows would have meant a pool whose class is predictable at 0.956 from metadata alone.
+48k clean beats 122k dirty. Note also that with the labels fixed the *raw* class resolution gap is
+**1.02×**, not the 3.41× E12 measured — **most of the "3.4× merged-pool resolution gap" that E12
+spent 40% of the data correcting was the label bug**, not a real bias. The bands are still needed:
+matching medians does not match distributions.
+
+Compression is the **only** metadata axis that survives into a 128 px tile — size, aspect and
+squareness do not — so it is the one that had to be fixed, and joint balancing costs 2,702 rows.
+The residual 0.750 is carried by axes a tile-trained model cannot see: **this pool is clean for tile
+training and still unfit for whole-image native-resolution training** (§1b: a flaw is a usage
+condition). Caveat: "size does not survive tiling" is true of metadata, not texture — E8's probe
+predicted image width from the 68 features at 92.6% *in crop128 mode*. Re-run it in Phase 2.
+
+**Decision taken:** 43k clean rows over 102k dirty ones. E12 (ten times the data did not help) and
+E14 (diversity beats volume) both argue for clean, and the metadata probe now says the dirty pool
+was 0.916-exploitable.
+
+```bash
+PYTHONPATH=src .venv/bin/python -m pixelproof.make_balanced_pool \
+  --index artifacts/pool_index.csv \
+  --bands 128,256,384,512,768,1024,1536 --bpp-bands 0.15,0.3,0.5,0.8,1.2,1.8 \
+  --min-side 128 --dedupe --output artifacts/pool_tile_v1.csv
+```
 
 #### Phase 2 — Rebuilding the tile pipeline *(~7 h)*
 
