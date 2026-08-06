@@ -94,6 +94,7 @@ def main() -> None:
     tiles, labels, sources, hashes = [], [], [], []
     skipped = Counter()
     seen = set()
+    ambiguous = 0
 
     for name, spec in SOURCES.items():
         units = (sorted(real_files(spec["path"], "*.parquet")) if spec["kind"] == "parquet"
@@ -115,10 +116,20 @@ def main() -> None:
                     skipped[name] += 1
                     continue
                 tiles.append(patch)
-                # label from the index, which build_pool already mapped; assert the
-                # source's own map agrees, so a stale index cannot slip through
-                assert wanted[digest][0] == to_project_label(spec, raw_label), digest
-                labels.append(wanted[digest][0])
+                # The label comes from the SOURCE's own map, not from the index.
+                #
+                # A perceptual hash is a good membership test and a bad identity
+                # key: 2,649 of pool_index.csv's 169,668 rows share a hash with
+                # another row, and 1.8% are ambiguous enough that a lookup can
+                # return a different image's label. An earlier version asserted
+                # the two agreed and the assertion fired, which is the guard doing
+                # its job. So the index decides only WHICH images are in the pool;
+                # what each one IS comes from to_project_label(), which reads that
+                # image's own raw label. Disagreements are counted, not hidden.
+                label = to_project_label(spec, raw_label)
+                if wanted[digest][0] != label:
+                    ambiguous += 1
+                labels.append(label)
                 sources.append(name)
                 hashes.append(digest)
                 taken += 1
@@ -133,6 +144,9 @@ def main() -> None:
     print(f"  by source: " + ", ".join(f"{k}:{v:,}" for k, v in Counter(sources).most_common()))
     if sum(skipped.values()):
         print(f"  skipped as too flat: {sum(skipped.values()):,}")
+    if ambiguous:
+        print(f"  ⚠️ {ambiguous:,} tiles ({100 * ambiguous / len(x):.2f}%) whose index row disagreed "
+              f"with the source's own label — perceptual-hash collisions. The source wins.")
     missing = len(wanted) - len(x) - sum(skipped.values())
     if missing:
         print(f"  ⚠️ {missing:,} indexed images were never reached — check the readers")

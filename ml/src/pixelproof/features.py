@@ -291,6 +291,35 @@ def tile_positions(width: int, height: int, tile: int,
     return [(int(x), int(y)) for y in ys for x in xs]
 
 
+def select_tiles(image: Image.Image, tile: int = 128, max_tiles: int | None = None,
+                 texture_floor: float = 0.0, min_tiles: int = 3
+                 ) -> tuple[list[Image.Image], list[float], list[tuple[int, int]]]:
+    """Which tiles are worth analysing — crops, textures and boxes, no features.
+
+    Split out from extract_tiles() so a consumer that does NOT want the 68
+    statistics can still get the same geometry and the same texture screening.
+    A CNN arm wants the pixels; making it pay for feature extraction just to
+    learn which tiles to keep would be measuring the wrong thing and paying
+    8.4 ms a tile for the privilege.
+    """
+    image = image.convert("RGB")
+    width, height = image.size
+    boxes = tile_positions(width, height, tile, max_tiles)
+    patches = [image.crop((x, y, x + tile, y + tile)) for x, y in boxes]
+    textures = [float((np.asarray(p.convert("L"), dtype=np.float32) / 255.0).std())
+                for p in patches]
+
+    keep = [i for i, t in enumerate(textures) if t >= texture_floor]
+    if len(keep) < min_tiles:
+        # Never starve the aggregation. A mostly-flat photograph can lose 19 of
+        # 20 tiles to the floor, and a top-3 mean over one surviving tile is one
+        # tile's opinion wearing an average's clothes. Fall back to the
+        # highest-texture `min_tiles` — they are the only ones carrying anything
+        # measurable anyway.
+        keep = sorted(np.argsort(textures)[-min_tiles:].tolist())
+    return ([patches[i] for i in keep], [textures[i] for i in keep], [boxes[i] for i in keep])
+
+
 def extract_tiles(image: Image.Image, tile: int = 128, max_tiles: int | None = None,
                   texture_floor: float = 0.0, min_tiles: int = 3
                   ) -> tuple[np.ndarray, np.ndarray, list[tuple[int, int]]]:
@@ -322,21 +351,8 @@ def extract_tiles(image: Image.Image, tile: int = 128, max_tiles: int | None = N
         return (np.stack([extract_from_image(image, tile)]),
                 np.array([grey.std()], dtype=np.float32), [(0, 0)])
 
-    boxes = tile_positions(width, height, tile, max_tiles)
-    patches = [image.crop((x, y, x + tile, y + tile)) for x, y in boxes]
-    textures = [float((np.asarray(p.convert("L"), dtype=np.float32) / 255.0).std())
-                for p in patches]
-
-    keep = [i for i, t in enumerate(textures) if t >= texture_floor]
-    if len(keep) < min_tiles:
-        # Never starve the aggregation. A mostly-flat photograph can lose 19 of
-        # 20 tiles to the floor, and a top-3 mean over one surviving tile is one
-        # tile's opinion wearing an average's clothes. Fall back to the
-        # highest-texture `min_tiles` — they are the only ones carrying anything
-        # measurable anyway.
-        keep = sorted(np.argsort(textures)[-min_tiles:].tolist())
-
-    arrays = [array_from_image(patches[i]) for i in keep]
+    patches, textures, boxes = select_tiles(image, tile, max_tiles, texture_floor, min_tiles)
+    arrays = [array_from_image(p) for p in patches]
     if len(arrays) >= PARALLEL_FROM:
         # THREADS, not processes. Most of a tile's cost is inside scipy's median
         # filter and numpy's FFT, both of which release the GIL, so threads give
@@ -348,9 +364,7 @@ def extract_tiles(image: Image.Image, tile: int = 128, max_tiles: int | None = N
     else:
         vectors = [_vector(a) for a in arrays]
 
-    return (np.stack(vectors),
-            np.array([textures[i] for i in keep], dtype=np.float32),
-            [boxes[i] for i in keep])
+    return np.stack(vectors), np.array(textures, dtype=np.float32), boxes
 
 
 def _vector(rgb: np.ndarray) -> np.ndarray:

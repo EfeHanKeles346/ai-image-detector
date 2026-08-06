@@ -575,3 +575,46 @@ Per generator on Defactify: dalle3 0.808, sd21 0.797, sdxl 0.770, sd3 0.706, mid
 
 - **Caveat.** DINOv2's false positives at threshold 0.5 are high (archive1 71.8%, Defactify 53.4%), so its *calibration* is poor while its *ranking* is the best available — the E11→E13 distinction again, now in the other direction. And this is still a **whole-image** probe at 518px; the native-tile version §13b actually recommended remains untested and is now the most promising open experiment in the project.
 - **Conclusion.** One mislabelled column produced a confident, well-argued, three-part falsification of the correct research direction. The mechanism was invisible to five audit checks that all inspect pixels, and the write-up's own plausibility is what made it stick. Re-running everything downstream of a data fix is not optional.
+
+## 2026-08-06 — E20: three model families on identical native tiles (Phase 2b)
+
+- **Hypothesis (pre-registered):** after Phase 1 cleaned the pool and Phase 2a fixed the tiling, the statistics model still stalls at ~32% AI recall at a 10% false-positive budget — the same figure v1, v2 and v3 reached in E15. If the training data is no longer the limit, the limit is what the 68 features can express, and a learned representation on the *same* tiles should beat them.
+- **Controlled:** all three arms read one cached tensor, `tiles_v1.npz` — 48,037 native 128px tiles, 24,011 real / 24,026 AI, one tile per pool image at a **seeded random position** (not the centre) with the **same texture floor inference uses**. Same crops, same seed, same evaluation. The only variable is the model.
+- **Evaluation is end-to-end, not per-tile:** each test image is tiled exactly as `serve.py` tiles it (full coverage, edge-anchored, texture floor), every tile scored, top-3 mean taken as the image's score. 1 seed, 200 images per set, 8-epoch ceiling with the epoch chosen on a source-stratified validation slice.
+
+### Result — AI recall at a 10% false-positive budget (the operating point)
+
+| | statistics | **ResNet-18 @128** | SmallCNN @128 |
+|---|---|---|---|
+| SDXL (1024px) | 72.5% | **83.5%** | 54.5% |
+| SD 3 (1024px) | 51.0% | **78.0%** | 41.5% |
+| SD 2.1 (768px) | 40.5% | **67.5%** | 47.5% |
+| Midjourney (436px) | 5.0% | **51.5%** | 24.5% |
+| DALL-E 3 (270px) | 4.5% | 9.5% | 4.0% |
+| **Defactify, all five** | **39.0%** | **55.5%** | 30.5% |
+
+### AUC (ranking only)
+
+| | statistics | **ResNet-18** | SmallCNN |
+|---|---|---|---|
+| Defactify | 0.603 | **0.770** | 0.655 |
+| GenImage test | 0.641 | **0.783** | 0.499 |
+
+- **Hypothesis confirmed. 55.5% is the best operating point this project has produced** — up from 39.0% on identical inputs, and above E19c's whole-image DINOv2 probe (40.4%). §13b's second half, "apply a strong representation to native tiles rather than whole images", was the untested half of that recommendation and it is now measured.
+- **The largest single gain is Midjourney: 5.0% → 51.5%.** The statistics model was effectively blind to that generator; the same tiles through a pretrained backbone are not. This is E2's conclusion — *the representation, not the classifier, is the bottleneck* — finally tested with a strong representation on the right input.
+- **SmallCNN loses to both (30.5%), and informatively.** 0.3M parameters from scratch on 48k tiles is not enough; the gap to ResNet-18 is 25 points on the same data. So the win is not "a CNN instead of statistics" — it is **ImageNet pretraining**. A from-scratch network of this size does worse than hand-crafted physics.
+
+### Two things this does NOT fix
+
+- **DALL-E 3 stays broken in all three arms** (4.0–9.5% recall, AUC 0.246–0.360, i.e. at or below chance). 270px at ~16 KB: the tile method has no measurable texture to read, exactly as E8 and E11 predicted. Small compressed inputs need a different route, not a better tile model.
+- **Calibration is now THE blocker, and it is worse than the ranking suggests.** At threshold 0.5 every arm calls the overwhelming majority of real photographs AI:
+
+| | statistics | ResNet-18 | SmallCNN |
+|---|---|---|---|
+| Defactify reals | 96.0% | 91.5% | 98.5% |
+| **2,314 authentic camera photographs, 10 forensics datasets** | 93.0% | **86.5%** | 94.6% |
+
+  So all three rank well and none can decide. This is the E11 → E13 pattern again: ranking quality and deployability are separate claims. **The bottleneck has moved — it is no longer the data (Phase 1) and no longer the representation (this experiment). It is the operating point.**
+
+- **Evaluation note:** `archive1` is deliberately absent. E10 showed the CNNs were immune to its metadata confound because `Resize()` destroys dimensions — but a 128px tile carries its parent's **compression**, and archive1's real half sits at 0.190 bytes/pixel against 1.331 for its AI half. That 7× split survives tiling, so a tile model could score there without reading a generation trace. It is replaced by 2,314 authentic photographs from ten forensics datasets, a real-only probe that cannot be gamed because there is no second class to shortcut toward. **E13's and E15's archive1 numbers should be read with that caveat.**
+- **Caveats.** One seed (the ≥3-seed rule is not met; the 16-point gap is far outside plausible seed noise but the figure should be repeated). 200 images per test set. The tile dataset holds one tile per image, chosen for the texture floor, so it under-represents flat regions by construction — deliberate, since inference drops them too, but it means the model has never seen the population it will refuse to score.

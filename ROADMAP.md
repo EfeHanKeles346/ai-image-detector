@@ -990,6 +990,29 @@ model — the one pretrained representation that encodes the camera traces §4.1
 target, instead of "unlike my training set" (§12b). It is also the honest answer to "a backbone
 that already knows camera traces", which an ImageNet CNN is not.
 
+**✅ Run 2026-08-06 — see E20. ResNet-18 wins, and by a lot.**
+
+| AI recall @ 10% FP budget | statistics | **ResNet-18 @128** | SmallCNN @128 |
+|---|---|---|---|
+| Defactify, all five generators | 39.0% | **55.5%** | 30.5% |
+| Midjourney alone | 5.0% | **51.5%** | 24.5% |
+| Defactify AUC | 0.603 | **0.770** | 0.655 |
+
+**55.5% is the best operating point the project has produced**, from 39.0% on identical tiles — and
+above E19c's whole-image DINOv2 probe (40.4%). The recommendation in §13b had two halves; the first
+(a strong pretrained representation) was tested on whole images in E16 and the second (apply it to
+**native tiles**) was never tested until now. It is the half that mattered.
+
+SmallCNN losing to both is the informative part: 0.3M parameters from scratch does worse than
+hand-crafted physics on the same data. So the win is **ImageNet pretraining**, not "a CNN".
+
+**And the bottleneck moved.** At threshold 0.5 all three arms call 86–99% of real photographs AI —
+including 86.5% of 2,314 authentic photographs from ten forensics datasets. Ranking is now good and
+deciding is still impossible. It is no longer the data (Phase 1) and no longer the representation
+(this experiment): **it is calibration.** DALL-E 3 also stays broken in all three arms (4–9.5%,
+AUC at or below chance) — 270px at 16 KB has no texture to read, and that needs a different route
+rather than a better tile model.
+
 Throughput on 713 tiles (full coverage of a 12 MP photo), measured 2026-08-05:
 statistics serial **6.3 s** · statistics parallel **0.6 s** · SmallCNN **0.40 s** · ResNet-18
 **0.31 s**. The CNN is faster because it batches, not because it is smaller — so choosing the
@@ -1012,6 +1035,27 @@ layers to be the risk.
       AI) versus a few outliers (local manipulation).
 - [ ] **2c.4** Multi-scale training (128/192/256), which unlocks tiling at `B' = A/round(A/B)` —
       zero remainder loss and zero overlap.
+
+#### Phase 2c-bis — Calibration *(new, 2026-08-06, promoted ahead of everything else)*
+
+E20 moved the bottleneck. Three arms, three data recipes and two architecture families all rank
+respectably and none can place a decision boundary: at threshold 0.5 they call 86–99% of real
+photographs AI. The project has now spent Phase 1 proving it is not the data and Phase 2b proving
+it is not the representation.
+
+- [ ] **Why the scores pile up high.** The top-3 aggregate is an upper-tail statistic over a
+      variable number of tiles, so it is biased upward by construction and the bias grows with tile
+      count. Measure the per-tile distribution against the aggregated one before touching anything
+      else — this may be arithmetic rather than a model property.
+- [ ] **Fit the threshold where it will be used.** E6 already established that calibration does not
+      transfer across domains, so a single global threshold is the wrong object. Candidates: per
+      input-size bands, or a threshold conditioned on the image's own tile-score distribution.
+- [ ] **Temperature / isotonic calibration on held-out real photographs**, fitted on sources the
+      model never trained on rather than on the training pool.
+- [ ] **An explicit "insufficient evidence" band** rather than a forced call. §11's floor is 48px;
+      the principled version keys on measured high-frequency content, and DALL-E 3's collapse
+      (4–9.5% recall at AUC ≤0.36 across all three arms) is exactly the population that should fall
+      into it rather than receive a confident guess.
 
 #### Phase 2.5 — Module 2, AI-only *(~3 h)*
 
@@ -1129,8 +1173,9 @@ Phase 0 ✅
 
 - [ ] **Phase 1** Pool hygiene — 32 px floor, CommunityForensics shortcut, auditor threshold, full audit report
 - [ ] **Phase 2a** Tile geometry and cost — remove the cap, anchor the edges, cache, prefilter, parallelise
-- [ ] **Phase 2b** Three models on identical tiles: statistics · ResNet-18@128 · SmallCNN@128
+- [x] **Phase 2b** Three models on identical tiles — **ResNet-18 wins, 39.0% → 55.5%** (E20). Bottleneck moves to calibration
 - [ ] **Phase 2b-2** Noiseprint++ arm — parked with download URL, size and licence in §13d
+- [ ] **Phase 2c-bis** Calibration — the bottleneck after E20; three arms rank well, none can decide
 - [ ] **Phase 2c** Aggregation rule and multi-scale tiles
 - [ ] **Phase 2.5** Module 2, AI-only — loosen the filter, re-measure, test noise energy, fetch TGIF
 - [ ] **Phase 3** Compression augmentation + a deployment-matched validation set
