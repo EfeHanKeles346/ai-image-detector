@@ -966,7 +966,29 @@ survivor is one tile's opinion wearing an average's clothes.
 | A | 68 statistics + gradient boosting | the incumbent, retrained on the clean pool |
 | B | **ResNet-18 @128 px**, fine-tuned on native tiles | §13b's untested second half. Already in `MODEL_REGISTRY`; fully convolutional |
 | C | **SmallCNN @128 px** | `AdaptiveAvgPool2d(1)` already accepts any input size — a data change, not an architecture change |
-| D | *(optional)* **Noiseprint++** | the only pretrained model that genuinely encodes camera traces — self-supervised on real photographs (§4.4) |
+| D | *(deferred — see below)* **Noiseprint++** | the only pretrained model that genuinely encodes camera traces — self-supervised on real photographs (§4.4) |
+
+**Arm D — Noiseprint++: parked 2026-08-05 with everything needed to pick it up.**
+The most interesting arm and the only one with real integration risk, so A/B/C build the harness
+first and D slots in afterwards as "one more feature extractor".
+
+| | |
+|---|---|
+| weights | `https://www.grip.unina.it/download/prog/TruFor/TruFor_weights.zip` |
+| size | **249 MB**, md5 `7bee48f3476c75616c3c5721ab256ff8` |
+| licence | GRIP-UNINA — *"informational and nonprofit purposes"*, which fits this project |
+| code | `github.com/grip-unina/TruFor`, network definition under `TruFor_train_test` |
+
+⚠️ **Noiseprint++ is not packaged separately.** It is the low-level encoder inside the full TruFor
+model, so using it alone means downloading the bundle, taking the network definition from the repo
+and extracting that submodule's weights. Estimate 1–2 hours, with a genuine chance of getting
+stuck on the third step.
+
+**Why it stays on the list:** every other backbone here learned objects from ImageNet.
+Noiseprint++ is trained self-supervised on **real photographs only** and is sensitive to camera
+model — the one pretrained representation that encodes the camera traces §4.1 names as the correct
+target, instead of "unlike my training set" (§12b). It is also the honest answer to "a backbone
+that already knows camera traces", which an ImageNet CNN is not.
 
 Throughput on 713 tiles (full coverage of a 12 MP photo), measured 2026-08-05:
 statistics serial **6.3 s** · statistics parallel **0.6 s** · SmallCNN **0.40 s** · ResNet-18
@@ -1107,7 +1129,8 @@ Phase 0 ✅
 
 - [ ] **Phase 1** Pool hygiene — 32 px floor, CommunityForensics shortcut, auditor threshold, full audit report
 - [ ] **Phase 2a** Tile geometry and cost — remove the cap, anchor the edges, cache, prefilter, parallelise
-- [ ] **Phase 2b** Three models on identical tiles: statistics · ResNet-18 · SmallCNN (+ Noiseprint++)
+- [ ] **Phase 2b** Three models on identical tiles: statistics · ResNet-18@128 · SmallCNN@128
+- [ ] **Phase 2b-2** Noiseprint++ arm — parked with download URL, size and licence in §13d
 - [ ] **Phase 2c** Aggregation rule and multi-scale tiles
 - [ ] **Phase 2.5** Module 2, AI-only — loosen the filter, re-measure, test noise energy, fetch TGIF
 - [ ] **Phase 3** Compression augmentation + a deployment-matched validation set
