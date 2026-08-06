@@ -59,8 +59,8 @@ def ela_tile_scores(image: Image.Image, boxes):
 
 
 def cnn_tile_scores(model, image: Image.Image):
-    features, _ = extract_tiles(image, tile=TILE, max_tiles=GRID)
-    return model.predict_proba(features)[:, 1]
+    features, _, boxes = extract_tiles(image, tile=TILE, max_tiles=GRID)
+    return model.predict_proba(features)[:, 1], boxes
 
 
 def mask_coverage(mask_path: Path, boxes, size):
@@ -95,12 +95,15 @@ def main() -> None:
                 image = image.convert("RGB")
                 if min(image.size) < TILE:
                     continue
-                boxes = tile_positions(image.width, image.height, TILE, GRID)
+                # boxes come back from the scorer, so ELA, the tile model and the
+                # mask are all indexed identically — re-deriving them separately
+                # only stays correct while nothing filters tiles, and extract_tiles
+                # can now filter by texture.
+                tile_s, boxes = cnn_tile_scores(model, image)
                 coverage = mask_coverage(mask_path, boxes, image.size)
                 if coverage.max() < 0.5 or coverage.min() > 0.5:
                     continue
                 ela_s = ela_tile_scores(image, boxes)
-                tile_s = cnn_tile_scores(model, image)
             ela_in += list(ela_s[coverage >= 0.5]); ela_out += list(ela_s[coverage < 0.5])
             tile_in += list(tile_s[coverage >= 0.5]); tile_out += list(tile_s[coverage < 0.5])
             ela_img.append(float(ela_s.max()))
@@ -114,9 +117,9 @@ def main() -> None:
                 image = image.convert("RGB")
                 if min(image.size) < TILE:
                     continue
-                boxes = tile_positions(image.width, image.height, TILE, GRID)
+                scores, boxes = cnn_tile_scores(model, image)
                 ela_auth.append(float(ela_tile_scores(image, boxes).max()))
-                tile_auth.append(float(np.sort(cnn_tile_scores(model, image))[-3:].mean()))
+                tile_auth.append(float(np.sort(scores)[-3:].mean()))
 
         if not ela_in:
             print(f"{name}: no usable pairs\n")

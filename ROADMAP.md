@@ -928,18 +928,36 @@ The project's most visible model, and the only one the E15 real-class fix never 
 
 **2a — Geometry and cost** *(no training, ~2 h)* — fix the input before training on it.
 
-- [ ] **2a.1** Remove the 36-tile cap. A 4032×3024 photo yields 713 tiles and we score 36 — **4.8%
+- [x] **2a.1** Remove the 36-tile cap. A 4032×3024 photo yields 713 tiles and we score 36 — **4.8%
       coverage**. The "~100% coverage" claim in §9b and the README holds only up to 768 px.
-- [ ] **2a.2** Edge anchoring — flush the last tile to the far edge. Loss is `C ≈ 2/k` where k is
+- [x] **2a.2** Edge anchoring — flush the last tile to the far edge. Loss is `C ≈ 2/k` where k is
       tiles per axis: **41% at 500 px**, and every real photograph in GenImage is exactly 500 px.
       The loss lands on the border, so edge manipulations are systematically invisible.
-- [ ] **2a.3** Cache the grey residual. The 3×3 median filter is **63% of a tile's cost** and the
+- [x] **2a.3** Cache the grey residual. The 3×3 median filter is **63% of a tile's cost** and the
       grey channel is filtered **twice** per tile.
-- [ ] **2a.4** Texture prefilter. Measuring texture costs **1/307** of a full extraction, and flat
+- [x] **2a.4** Texture prefilter. Measuring texture costs **1/307** of a full extraction, and flat
       tiles score ~0.5 — they can never enter the top-k. ~21% saved at no accuracy cost.
-- [ ] **2a.5** Parallelise `score_tiles`. The demo path is a serial loop; the pool machinery already
+- [x] **2a.5** Parallelise `score_tiles`. The demo path is a serial loop; the pool machinery already
       exists elsewhere in the repo.
-- [ ] **2a.6** *(optional)* `cv2.medianBlur` — 8.9 ms → ~3 ms per tile, if border behaviour matches.
+- [ ] **2a.6** *(optional, deferred)* `cv2.medianBlur` — 8.9 ms → ~3 ms per tile, if border
+      behaviour matches. Not needed yet: threading already brought a 12 MP photo to 2.0 s.
+
+**Measured after 2a** — full coverage, and faster than the capped version was:
+
+| image | before (cap 36) | after (full coverage) |
+|---|---|---|
+| 500×500 | 9 tiles, 59% | **16 tiles, 100%** · 0.06 s |
+| 1280×1280 | 36 tiles, 36% | **100 tiles, 100%** · 0.26 s |
+| 4032×3024 | 36 tiles, **4.8%** · 0.35 s | **768 tiles, 100%** · 2.00 s |
+
+21× the tiles for 5.7× the time. Threads, not processes: the median filter and FFT release the GIL,
+so 6 threads give 3.3× with no pickling and nothing to break inside a web worker.
+
+**Two things the work surfaced.** `extract_tiles` now returns tile positions instead of letting
+callers re-derive them — E17 and E18 were calling `tile_positions()` separately and zipping by
+index, which is only correct while nothing filters, and the texture floor filters. And the floor
+needed a `min_tiles` guard: a mostly-flat photograph lost 19 of 20 tiles, and a top-3 mean over one
+survivor is one tile's opinion wearing an average's clothes.
 
 **2b — Three models on identical tiles** *(training, ~4 h)* — one variable: the model.
 

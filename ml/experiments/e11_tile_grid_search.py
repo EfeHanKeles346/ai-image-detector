@@ -19,7 +19,7 @@ LIMIT = 800
 
 def _tiles(path, max_tiles):
     with Image.open(path) as image:
-        features, _ = extract_tiles(image, tile=128, max_tiles=max_tiles)
+        features, _, _ = extract_tiles(image, tile=128, max_tiles=max_tiles)
     return features
 
 

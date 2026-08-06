@@ -54,8 +54,7 @@ def tile_scores(model, path: Path):
         width, height = image.size
         if width < TILE or height < TILE:
             return None
-        features, _ = extract_tiles(image, tile=TILE, max_tiles=GRID)
-        boxes = tile_positions(width, height, TILE, GRID)
+        features, _, boxes = extract_tiles(image, tile=TILE, max_tiles=GRID)
     return model.predict_proba(features)[:, 1], boxes, (width, height)
 
 

@@ -40,7 +40,7 @@ def main() -> None:
     def score(path: Path) -> float | None:
         try:
             with Image.open(path) as image:
-                features, _ = extract_tiles(image, tile=128, max_tiles=36)
+                features, _, _ = extract_tiles(image, tile=128, max_tiles=36)
             probabilities = model.predict_proba(features)[:, 1]
             return float(np.sort(probabilities)[-3:].mean())   # top-3, as in serve.py
         except Exception:

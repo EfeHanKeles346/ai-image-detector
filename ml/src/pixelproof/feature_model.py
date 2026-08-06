@@ -48,12 +48,17 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
-from pixelproof.features import extract_from_image, extract_tiles, tile_positions
+from pixelproof.features import extract_from_image, extract_tiles
 
 VARIANTS = {"full": None, "crop128": 128}
 TRAIN_SETS = ["genimage_train_real", "genimage_train_ai"]
 TILE_PX = 128       # must match the crop the model was trained on
-TILE_GRID = 36      # 6x6 — measured optimum, see score_tiles()
+TILE_GRID = 36      # kept only for the experiments that reproduce the capped runs
+# Below this grey-level standard deviation a tile carries no measurable trace and
+# scores ~0.5, so it can never enter a top-k aggregate. Measuring texture costs
+# 1/290 of a full extraction, so screening first is nearly free. E11 measured 21%
+# of tiles under 0.04; 0.0 keeps everything (the pre-2026-08-05 behaviour).
+TEXTURE_FLOOR = 0.04
 
 
 def build_pipeline(seed: int = 42):
@@ -104,18 +109,31 @@ def score_image(models: dict, image: Image.Image) -> dict[str, float]:
     return scores
 
 
-def score_tiles(models: dict, image: Image.Image, grid: int = TILE_GRID) -> dict | None:
-    """Cut the image into a grid of 128px NATIVE tiles and score every one.
+def score_tiles(models: dict, image: Image.Image, grid: int | None = None,
+                texture_floor: float = TEXTURE_FLOOR) -> dict | None:
+    """Cut the image into 128px NATIVE tiles covering the whole image, score every one.
 
-    No retraining involved: the crop128 model was fitted on 128x128 native
-    crops and each tile IS one, so this is the same input distribution
-    evaluated several times instead of once.
+    No retraining involved: the crop128 model was fitted on 128x128 native crops
+    and each tile IS one, so this is the same input distribution evaluated
+    several times instead of once.
+
+    `grid=None` means full coverage, which is the default as of 2026-08-05. The
+    old cap of 36 inspected **4.8% of a 12 MP photograph** — 36 of its 713 tiles
+    — while the docstrings claimed "~100% coverage", which held only up to 768px.
+    Tiles are also anchored to the far edge now, so the `C ~ 2/k` remainder loss
+    (41% at 500px) is gone.
 
     Aggregation is the mean of the TOP 3 tiles, not the mean of all of them.
-    Measured on Defactify's high-resolution generators, a 6x6 grid with top-3
-    beats a plain mean (0.821 vs 0.781) because flat tiles -- sky, a wall,
-    plain clothing -- score around 0.5 and drag an ordinary average toward
-    "no idea", drowning the tiles that carry real evidence.
+    Measured on Defactify's high-resolution generators, top-3 beats a plain mean
+    (0.821 vs 0.781) because flat tiles -- sky, a wall, plain clothing -- score
+    around 0.5 and drag an ordinary average toward "no idea", drowning the tiles
+    that carry real evidence.
+
+    ⚠️ A fixed `3` was chosen against a five-item menu and its neighbours (2, 4,
+    5) were never tried. It is also a fixed COUNT while the tile count is now
+    variable: 3 of 36 is the top 8%, 3 of 713 is the top 0.4%, which degenerates
+    toward `max` — and `max` already measured worse (0.802 vs 0.821). Sweeping
+    count-vs-fraction-vs-adaptive is Phase 2c.
 
     The per-tile scores returned here are also the raw material for a
     localisation heat-map ("where does it look manipulated"), i.e. Module 2.
@@ -123,11 +141,10 @@ def score_tiles(models: dict, image: Image.Image, grid: int = TILE_GRID) -> dict
     pipeline = models.get("crop128")
     if pipeline is None:
         return None
-    features, texture = extract_tiles(image, tile=TILE_PX, max_tiles=grid)
+    features, texture, positions = extract_tiles(
+        image, tile=TILE_PX, max_tiles=grid, texture_floor=texture_floor)
     probabilities = pipeline.predict_proba(features)[:, 1]
     width, height = image.size
-    positions = (tile_positions(width, height, TILE_PX, grid)
-                 if width >= TILE_PX and height >= TILE_PX else [(0, 0)])
     top = float(np.sort(probabilities)[-3:].mean())
     return {
         "p_ai": top,
@@ -136,6 +153,7 @@ def score_tiles(models: dict, image: Image.Image, grid: int = TILE_GRID) -> dict
             for (x, y), p, t in zip(positions, probabilities, texture)
         ],
         "tile_px": TILE_PX,
+        "tile_count": len(probabilities),
         "image_w": width,
         "image_h": height,
     }

@@ -25,7 +25,8 @@ LIMIT = 1200                  # images per class — enough for a clear signal
 
 def _tiles(path):
     with Image.open(path) as image:
-        return extract_tiles(image, tile=128, max_tiles=9)
+        features, texture, _ = extract_tiles(image, tile=128, max_tiles=9)
+        return features, texture
 
 
 def tile_scores(folder: Path, model, tag: str) -> list[tuple[np.ndarray, np.ndarray]]:
