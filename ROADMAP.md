@@ -1036,26 +1036,55 @@ layers to be the risk.
 - [ ] **2c.4** Multi-scale training (128/192/256), which unlocks tiling at `B' = A/round(A/B)` —
       zero remainder loss and zero overlap.
 
-#### Phase 2c-bis — Calibration *(new, 2026-08-06, promoted ahead of everything else)*
+#### Phase 2c-bis — Calibration and source transfer *(revised 2026-08-06)*
 
-E20 moved the bottleneck. Three arms, three data recipes and two architecture families all rank
-respectably and none can place a decision boundary: at threshold 0.5 they call 86–99% of real
-photographs AI. The project has now spent Phase 1 proving it is not the data and Phase 2b proving
-it is not the representation.
+E20 moved the bottleneck, but protocol v2 then located it more precisely. The ResNet ranks
+Defactify reasonably (AUC 0.770), yet a threshold fitted to 10% FP does not even hold on an
+untouched half of the same source (19% FP), and collapses across other real pipelines (45% macro,
+96% worst-source FP). This is **calibration plus source-domain shift**, not a global scalar that
+temperature scaling alone can repair.
 
-- [ ] **Why the scores pile up high.** The top-3 aggregate is an upper-tail statistic over a
+- [x] **Why the scores pile up high.** The top-3 aggregate is an upper-tail statistic over a
       variable number of tiles, so it is biased upward by construction and the bias grows with tile
-      count. Measure the per-tile distribution against the aggregated one before touching anything
-      else — this may be arithmetic rather than a model property.
-- [ ] **Fit the threshold where it will be used.** E6 already established that calibration does not
-      transfer across domains, so a single global threshold is the wrong object. Candidates: per
-      input-size bands, or a threshold conditioned on the image's own tile-score distribution.
-- [ ] **Temperature / isotonic calibration on held-out real photographs**, fitted on sources the
-      model never trained on rather than on the training pool.
+      count. Protocol v2 compared top-10%, p90, mean and fixed-16 controls. They reduce false
+      positives but remain unusable; DSO-1 has more tiles than the worst source and far fewer false
+      alarms. Arithmetic contributes, but source/pipeline shift dominates.
+- [x] **Test threshold transfer before fitting a fancier calibrator.** A Defactify-calibrated 10%
+      threshold yields 19% on its untouched half and 45% macro / 96% worst on ten forensic sources.
+      A single global threshold is empirically falsified for the present representation.
+- [ ] **Source-balanced real calibration/training**, but only after external pretrained baselines.
+      Temperature and isotonic transforms are monotonic: they can rename a score but cannot repair
+      a source whose authentic images rank above synthetic ones. Any calibrator must be fitted on
+      multiple disjoint real pipelines and tested on held-out pipelines.
 - [ ] **An explicit "insufficient evidence" band** rather than a forced call. §11's floor is 48px;
       the principled version keys on measured high-frequency content, and DALL-E 3's collapse
       (4–9.5% recall at AUC ≤0.36 across all three arms) is exactly the population that should fall
       into it rather than receive a confident guess.
+
+**Protocol hardening implemented; checkpoint diagnostic complete; full retrain deferred.** The E20
+script now saves every per-image/per-tile score and makes the aggregation rule part of the measured
+contract. Defactify real and each generator are split into stable calibration/evaluation halves;
+aggregation and threshold see calibration only. Top-3 is compared with top-10%, p90, mean and a
+fixed-16-tile control. The selected threshold is then transferred unchanged to all ten forensic
+real sources, reported as macro and worst-source FP. Runs intended for the report default to three
+seeds, and checkpoints store the full inference/provenance contract.
+
+The existing ResNet seed-42 checkpoint was evaluated before retraining: selected top-3 gives
+61.4% untouched AI recall and AUC 0.770, but 19% Defactify FP, 45% forensic macro FP and 96%
+worst-source FP. Mean/fixed-16 controls still leave 58%/61.5% worst-source FP. The model is useful
+as a research baseline and **not deployable**. Full three-seed retraining stays pending, but a
+frozen external baseline now has higher information value than repeating the same failure nine
+times.
+
+- [x] **2c-bis.0** Implement raw score persistence, disjoint calibration/evaluation, aggregation
+      controls, source-transfer metrics, three-seed default and protocol tests.
+- [x] **2c-bis.1a** Evaluate the existing winning ResNet checkpoint under v2 as a go/no-go gate;
+      result is no-go for deployment.
+- [ ] **2c-bis.1b** Compare frozen **B-Free first, then CLIP**, under the same saved-score/source-
+      transfer protocol. Noiseprint++ remains the camera-trace specialist after those lower-risk
+      integrations. No external model earns an API route from its paper's own benchmark.
+- [ ] **2c-bis.2** Run three seeds for the best surviving representation/configuration. Do not pay
+      for nine confirmatory runs before the model family passes the cross-source specificity gate.
 
 #### Phase 2.5 — Module 2, AI-only *(~3 h)*
 
@@ -1173,9 +1202,9 @@ Phase 0 ✅
 
 - [ ] **Phase 1** Pool hygiene — 32 px floor, CommunityForensics shortcut, auditor threshold, full audit report
 - [ ] **Phase 2a** Tile geometry and cost — remove the cap, anchor the edges, cache, prefilter, parallelise
-- [x] **Phase 2b** Three models on identical tiles — **ResNet-18 wins, 39.0% → 55.5%** (E20). Bottleneck moves to calibration
+- [x] **Phase 2b** Three models on identical tiles — **ResNet-18 wins ranking, but fails source transfer** (E20-v2: 45% macro / 96% worst real FP)
 - [ ] **Phase 2b-2** Noiseprint++ arm — parked with download URL, size and licence in §13d
-- [ ] **Phase 2c-bis** Calibration — the bottleneck after E20; three arms rank well, none can decide
+- [ ] **Phase 2c-bis** Source-robust representation — B-Free then CLIP under E20-v2; calibrate only a survivor
 - [ ] **Phase 2c** Aggregation rule and multi-scale tiles
 - [ ] **Phase 2.5** Module 2, AI-only — loosen the filter, re-measure, test noise energy, fetch TGIF
 - [ ] **Phase 3** Compression augmentation + a deployment-matched validation set

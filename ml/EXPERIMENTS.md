@@ -618,3 +618,63 @@ Per generator on Defactify: dalle3 0.808, sd21 0.797, sdxl 0.770, sd3 0.706, mid
 
 - **Evaluation note:** `archive1` is deliberately absent. E10 showed the CNNs were immune to its metadata confound because `Resize()` destroys dimensions — but a 128px tile carries its parent's **compression**, and archive1's real half sits at 0.190 bytes/pixel against 1.331 for its AI half. That 7× split survives tiling, so a tile model could score there without reading a generation trace. It is replaced by 2,314 authentic photographs from ten forensics datasets, a real-only probe that cannot be gamed because there is no second class to shortcut toward. **E13's and E15's archive1 numbers should be read with that caveat.**
 - **Caveats.** One seed (the ≥3-seed rule is not met; the 16-point gap is far outside plausible seed noise but the figure should be repeated). 200 images per test set. The tile dataset holds one tile per image, chosen for the texture floor, so it under-represents flat regions by construction — deliberate, since inference drops them too, but it means the model has never seen the population it will refuse to score.
+
+### E20 protocol v2 — implemented, full rerun pending
+
+The numbers above are the original E20 measurement and are not relabelled as v2 results. The
+evaluation script has now been hardened before spending another multi-hour training run:
+
+- Every image's complete per-tile score vector is written to JSONL. Aggregation experiments no
+  longer re-run the model, and the evidence behind an image score is inspectable.
+- Defactify real images and each generator are split independently into stable, disjoint
+  calibration/evaluation halves. The aggregation rule and 10% FP threshold see calibration only;
+  AUC, recall and false positives come from untouched evaluation images.
+- Five aggregation candidates are compared: top-3, top-10%, p90, mean, and a fixed-16-tile top-3
+  control for the variable-tile-count/order-statistic shortcut.
+- The Defactify-calibrated threshold is transferred unchanged to each of the ten forensic real
+  sources. Macro and worst-source FP are now headline columns; pooled FP can no longer hide one
+  camera pipeline failing catastrophically.
+- Reportable runs default to all three registered seeds. CNN checkpoints now store the selected
+  aggregation, threshold, normalization, tile contract, best epoch/AUC and training-data
+  provenance instead of only `model/arm/seed`.
+
+### E20-v2 checkpoint diagnostic — 2026-08-06
+
+Before paying for a three-arm × three-seed retrain, the existing E20 ResNet-18 seed-42 checkpoint
+was passed through the hardened protocol. This is a **checkpoint-only diagnostic**, not a new
+training run and not a replacement for the registered three-seed comparison.
+
+| aggregation | calibration AI recall | evaluation AI recall | evaluation FP | evaluation AUC | forensic macro FP | worst-source FP |
+|---|---:|---:|---:|---:|---:|---:|
+| **top-3 (selected on calibration)** | **61.4%** | **61.4%** | 19.0% | **0.770** | 45.0% | 96.0% |
+| top-10% | 46.8% | 52.0% | 15.0% | 0.762 | 30.6% | 70.0% |
+| p90 | 50.4% | 53.4% | 16.0% | 0.758 | 31.8% | 75.5% |
+| mean | 47.2% | 52.4% | **10.0%** | 0.766 | 28.0% | **58.0%** |
+| fixed-16 top-3 | 49.0% | 49.8% | 14.0% | 0.730 | **27.4%** | 61.5% |
+
+- Top-3 is selected legitimately: only the calibration halves choose the rule, and it has the
+  highest macro generator recall there. Its 61.4% untouched recall is stronger than E20-v1's
+  55.5%, but deployability moves in the opposite direction.
+- A threshold fitted for 10% FP on Defactify calibration transfers to **19% FP on Defactify's
+  untouched half**. On ten authentic forensic sources it reaches **45.0% macro FP** and **96.0%
+  worst-source FP** (`RealisticTampering`). This is not a small calibration error.
+- Replacing top-3 helps but does not solve it. Mean aggregation reaches 28.0% macro / 58.0% worst
+  FP; fixed-16 reaches 27.4% / 61.5%. DSO-1 has more tiles than the worst source yet only 2% FP
+  under mean/top-10%, so variable tile count is a contributor, **not the primary cause**. The
+  dominant failure is source/pipeline shift.
+- Per-generator evaluation recall under selected top-3 is DALL-E 3 10%, Midjourney 57%, SD 2.1
+  66%, SD 3 82%, SDXL 92%. The small/compressed DALL-E route remains unsolved.
+
+**Decision:** do not expose this ResNet checkpoint as an API verdict and do not spend the next
+compute block merely repeating it. First put frozen B-Free and CLIP baselines through this exact
+evaluator. If neither improves cross-source specificity, the next experiment is source-balanced
+real calibration/training; if one does, only then pay for its three-seed confirmation. The full
+E20-v2 command remains the reproducibility target, but is no longer the highest-information next
+run:
+
+```bash
+cd ml
+PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
+  --seeds 3 --arms stats resnet18 small_cnn \
+  --raw-dir artifacts/e20/raw_scores --results artifacts/e20/results.json
+```

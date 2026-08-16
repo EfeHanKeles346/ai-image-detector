@@ -20,9 +20,12 @@
 # EVALUATION IS END-TO-END, NOT PER-TILE
 # ---------------------------------------------------------------------------
 # A test image is tiled exactly as serve.py tiles it (full coverage, edge
-# anchored, texture floor), every tile is scored, and the top-3 mean is the
-# image's score. Measuring per-tile accuracy would flatter every arm and answer a
-# question nobody asks.
+# anchored, texture floor) and every tile is scored ONCE.  The aggregation rule
+# is selected on disjoint calibration halves, then measured on untouched images.
+# This prevents top-3's variable-tile-count bias from being silently baked into
+# every conclusion and makes alternative rules free to compare from raw scores.
+# Measuring per-tile accuracy would flatter every arm and answer a question
+# nobody asks.
 #
 # GenImage is reported but discounted: its reals are ImageNet nature photos and
 # its fakes are other content, so it is not content-controlled and a model can
@@ -30,7 +33,9 @@
 # the same MS-COCO captions as its reals, which makes it the fair one.
 
 import argparse
+import json
 import time
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -44,6 +49,13 @@ from sklearn.preprocessing import StandardScaler
 from torch import nn
 
 from pixelproof.data import NORMALIZATION
+from pixelproof.evaluation_protocol import (
+    AGGREGATION_RULES,
+    aggregate_tile_scores,
+    operating_point,
+    records_to_scores,
+    stable_calibration_split,
+)
 from pixelproof.features import THREADS, _vector, select_tiles
 from pixelproof.models import create_model
 
@@ -117,6 +129,39 @@ def train_statistics(x: np.ndarray, y: np.ndarray, seed: int):
     model = make_pipeline(StandardScaler(),
                           HistGradientBoostingClassifier(random_state=seed)).fit(x, y)
     return lambda features: model.predict_proba(features)[:, 1]
+
+
+def build_cnn_scorer(name: str, model: nn.Module):
+    """Create the exact inference transform for a trained tile CNN."""
+    mean, std = NORMALIZATION["imagenet" if name == "resnet18" else "default"]
+    mean_t = torch.tensor(mean).view(1, 3, 1, 1).to(DEVICE)
+    std_t = torch.tensor(std).view(1, 3, 1, 1).to(DEVICE)
+    model = model.to(DEVICE).eval()
+
+    @torch.no_grad()
+    def score(batch_tiles: np.ndarray) -> np.ndarray:
+        out = []
+        for start in range(0, len(batch_tiles), 256):
+            chunk = batch_tiles[start:start + 256]
+            tensor = (torch.from_numpy(chunk).to(DEVICE)
+                      .permute(0, 3, 1, 2).contiguous().float() / 255.0)
+            tensor = (tensor - mean_t) / std_t
+            out.append(torch.sigmoid(model(tensor)).cpu().numpy())
+        return np.concatenate(out)
+
+    return score
+
+
+def load_cnn_checkpoint(path: Path):
+    """Load both legacy E20 and protocol-v2 checkpoints without retraining."""
+    checkpoint = torch.load(path, map_location=DEVICE, weights_only=False)
+    arm = checkpoint.get("arm")
+    if arm not in {"resnet18", "small_cnn"}:
+        raise ValueError(f"{path} does not declare a supported CNN arm: {arm!r}")
+    kwargs = {"dropout": 0.0, "pretrained": False} if arm == "resnet18" else {"dropout": 0.25}
+    model = create_model(arm, **kwargs)
+    model.load_state_dict(checkpoint["model"])
+    return arm, int(checkpoint.get("seed", 0)), build_cnn_scorer(arm, model), checkpoint
 
 
 def train_cnn(name: str, tiles: np.ndarray, y: np.ndarray, sources: np.ndarray,
@@ -199,22 +244,12 @@ def train_cnn(name: str, tiles: np.ndarray, y: np.ndarray, sources: np.ndarray,
     print(f"      keeping epoch {best[1]} (val AUC {best[0]:.4f})")
     model.eval()
 
-    @torch.no_grad()
-    def score(batch_tiles: np.ndarray) -> np.ndarray:
-        out = []
-        for start in range(0, len(batch_tiles), 256):
-            chunk = batch_tiles[start:start + 256]
-            tensor = (torch.from_numpy(chunk).to(DEVICE)
-                      .permute(0, 3, 1, 2).contiguous().float() / 255.0)
-            tensor = (tensor - mean_t) / std_t
-            out.append(torch.sigmoid(model(tensor)).cpu().numpy())
-        return np.concatenate(out)
-
-    return score, model
+    return build_cnn_scorer(name, model), model, {
+        "best_epoch": best[1], "validation_auc": best[0]}
 
 
 # --------------------------------------------------------------------------- #
-# evaluation — tile the image the way serve.py does, aggregate top-3
+# evaluation — score tiles ONCE, then compare image-level decision protocols
 # --------------------------------------------------------------------------- #
 def image_files(folder: Path, limit: int) -> list[Path]:
     files = sorted(p for p in folder.rglob("*")
@@ -223,178 +258,359 @@ def image_files(folder: Path, limit: int) -> list[Path]:
     return files[::max(1, len(files) // limit)][:limit]
 
 
-def image_tiles(path: Path) -> np.ndarray | None:
+def image_tiles(path: Path) -> tuple[np.ndarray, tuple[int, int], list[float]] | None:
     """Uint8 tiles for one test image, same geometry as inference."""
     try:
         with Image.open(path) as image:
-            patches, _, _ = select_tiles(image, tile=TILE, texture_floor=TEXTURE_FLOOR)
-            return np.stack([np.asarray(p, dtype=np.uint8) for p in patches])
+            size = image.size
+            patches, textures, _ = select_tiles(image, tile=TILE, texture_floor=TEXTURE_FLOOR)
+            return np.stack([np.asarray(p, dtype=np.uint8) for p in patches]), size, textures
     except Exception:
         return None
 
 
-def score_folder(folder: Path, arm_kind: str, scorer, limit: int = LIMIT) -> np.ndarray:
-    """One score per image: top-3 mean over its tiles."""
-    scores = []
+def score_folder_records(folder: Path, arm_kind: str, scorer, dataset: str,
+                         source: str, label: int, limit: int = LIMIT) -> list[dict]:
+    """Keep every per-tile score so aggregation can change without rescoring."""
+    records = []
     for path in image_files(folder, limit):
-        tiles = image_tiles(path)
-        if tiles is None or len(tiles) == 0:
+        loaded = image_tiles(path)
+        if loaded is None:
+            continue
+        tiles, (width, height), textures = loaded
+        if len(tiles) == 0:
             continue
         per_tile = scorer(tile_features(tiles) if arm_kind == "stats" else tiles)
-        scores.append(float(np.sort(per_tile)[-3:].mean()))
-    return np.array(scores)
+        records.append({
+            "path": str(path), "dataset": dataset, "source": source, "label": label,
+            "width": width, "height": height, "tile_count": len(per_tile),
+            "bytes_per_pixel": path.stat().st_size / max(width * height, 1),
+            "texture_mean": float(np.mean(textures)),
+            "texture_p50": float(np.median(textures)),
+            "texture_p90": float(np.percentile(textures, 90)),
+            "tile_scores": [float(value) for value in per_tile],
+        })
+    return records
 
 
-def operating_point(real: np.ndarray, ai: np.ndarray, budget: float) -> tuple[float, float]:
-    """AI recall at the threshold giving `budget` false positives on real photos."""
-    if len(real) == 0 or len(ai) == 0:
-        return float("nan"), float("nan")
-    cut = float(np.percentile(real, 100 * (1 - budget)))
-    return cut, float((ai >= cut).mean())
+def safe_auc(real: np.ndarray, ai: np.ndarray) -> float:
+    if not len(real) or not len(ai):
+        return float("nan")
+    truth = np.r_[np.zeros(len(real)), np.ones(len(ai))]
+    return float(roc_auc_score(truth, np.r_[real, ai]))
+
+
+def rate_at(scores: np.ndarray, threshold: float) -> float:
+    return float((scores >= threshold).mean()) if len(scores) else float("nan")
+
+
+def save_raw_records(path: Path, records: list[dict]) -> None:
+    """JSONL is intentionally boring: inspectable, streamable and tool-agnostic."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w") as handle:
+        for record in records:
+            handle.write(json.dumps(record, separators=(",", ":")) + "\n")
+
+
+def json_compatible(value):
+    """Replace NumPy scalars/non-finite floats so results.json is strict JSON."""
+    if isinstance(value, dict):
+        return {str(key): json_compatible(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_compatible(item) for item in value]
+    if isinstance(value, np.generic):
+        value = value.item()
+    if isinstance(value, float) and not np.isfinite(value):
+        return None
+    return value
+
+
+def evaluate_aggregations(real_records: list[dict], generator_records: dict[str, list[dict]],
+                          genimage_records: tuple[list[dict], list[dict]],
+                          forensic_records: dict[str, list[dict]], rules: list[str],
+                          calibration_fraction: float, split_seed: int) -> tuple[str, dict]:
+    """Select aggregation on calibration data; report only untouched eval metrics.
+
+    Defactify real and every generator are split separately.  The threshold and
+    aggregation choice see only calibration halves.  The evaluation halves and
+    all ten forensic real sources remain untouched until the final report.
+    """
+    real_cal, real_eval = stable_calibration_split(
+        real_records, calibration_fraction, split_seed)
+    generator_splits = {
+        name: stable_calibration_split(records, calibration_fraction, split_seed)
+        for name, records in generator_records.items()
+    }
+    if not real_cal or not real_eval or not generator_splits:
+        raise RuntimeError("evaluation needs at least two Defactify real images and one generator")
+
+    evaluated = {}
+    for rule in rules:
+        cal_real = records_to_scores(real_cal, rule)
+        eval_real = records_to_scores(real_eval, rule)
+        cal_by_generator = {
+            name: records_to_scores(parts[0], rule) for name, parts in generator_splits.items()
+        }
+        eval_by_generator = {
+            name: records_to_scores(parts[1], rule) for name, parts in generator_splits.items()
+        }
+        cal_ai = np.concatenate([scores for scores in cal_by_generator.values() if len(scores)])
+        eval_ai = np.concatenate([scores for scores in eval_by_generator.values() if len(scores)])
+        point = operating_point(cal_real, eval_real, eval_ai, FP_BUDGET)
+        cut = point["threshold"]
+
+        per_generator = {}
+        calibration_recalls = []
+        for name in sorted(generator_splits):
+            calibration_recall = rate_at(cal_by_generator[name], cut)
+            evaluation_recall = rate_at(eval_by_generator[name], cut)
+            calibration_recalls.append(calibration_recall)
+            per_generator[name] = {
+                "calibration_recall": calibration_recall,
+                "evaluation_recall": evaluation_recall,
+                "evaluation_auc": safe_auc(eval_real, eval_by_generator[name]),
+                "n_calibration": len(cal_by_generator[name]),
+                "n_evaluation": len(eval_by_generator[name]),
+            }
+
+        source_fp = {
+            source: rate_at(records_to_scores(records, rule), cut)
+            for source, records in forensic_records.items() if records
+        }
+        gen_real, gen_ai = genimage_records
+        gen_real_scores = records_to_scores(gen_real, rule)
+        gen_ai_scores = records_to_scores(gen_ai, rule)
+        evaluated[rule] = {
+            "selection_calibration_macro_recall": float(np.nanmean(calibration_recalls)),
+            "threshold": cut,
+            "defactify_calibration_fp": point["calibration_fp"],
+            "defactify_evaluation_fp": point["evaluation_fp"],
+            "defactify_evaluation_recall": point["evaluation_recall"],
+            "defactify_evaluation_auc": safe_auc(eval_real, eval_ai),
+            "genimage_auc": safe_auc(gen_real_scores, gen_ai_scores),
+            "forensics_macro_fp": float(np.mean(list(source_fp.values()))) if source_fp else float("nan"),
+            "forensics_worst_fp": float(max(source_fp.values())) if source_fp else float("nan"),
+            "forensics_source_fp": source_fp,
+            "per_generator": per_generator,
+            "counts": {
+                "defactify_real_calibration": len(cal_real),
+                "defactify_real_evaluation": len(real_eval),
+                "defactify_ai_calibration": len(cal_ai),
+                "defactify_ai_evaluation": len(eval_ai),
+                "forensics_real": sum(len(records) for records in forensic_records.values()),
+            },
+        }
+
+    # The evaluation half never chooses the winner.  Ties prefer the simpler,
+    # historic top-3 rule so a change needs positive calibration evidence.
+    preference = {rule: -index for index, rule in enumerate(rules)}
+    selected = max(rules, key=lambda rule: (
+        evaluated[rule]["selection_calibration_macro_recall"], preference[rule]))
+    return selected, evaluated
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--tiles", type=Path, default=Path("artifacts/tiles_v1.npz"))
-    parser.add_argument("--seeds", type=int, default=1, help="how many of SEEDS to run")
+    parser.add_argument("--seeds", type=int, default=3, choices=range(1, len(SEEDS) + 1),
+                        help="how many of SEEDS to run; reportable comparisons default to three")
     parser.add_argument("--epochs", type=int, default=8,
                         help="CEILING, not a choice — the best epoch is picked on a "
                              "source-stratified validation slice")
     parser.add_argument("--batch", type=int, default=128)
     parser.add_argument("--limit", type=int, default=LIMIT)
-    parser.add_argument("--arms", nargs="*", default=["stats", "resnet18", "small_cnn"])
+    parser.add_argument("--arms", nargs="+", default=["stats", "resnet18", "small_cnn"],
+                        choices=["stats", "resnet18", "small_cnn"])
+    parser.add_argument("--aggregations", nargs="+", default=list(AGGREGATION_RULES),
+                        choices=AGGREGATION_RULES)
+    parser.add_argument("--calibration-fraction", type=float, default=0.5)
+    parser.add_argument("--split-seed", type=int, default=2026,
+                        help="fixed across model seeds so every arm sees the same evaluation images")
+    parser.add_argument("--raw-dir", type=Path, default=Path("artifacts/e20/raw_scores"))
+    parser.add_argument("--results", type=Path, default=Path("artifacts/e20/results.json"))
+    parser.add_argument("--evaluate-checkpoint", type=Path,
+                        help="skip training and evaluate one existing ResNet/SmallCNN checkpoint; "
+                             "supports legacy E20 checkpoints")
     parser.add_argument("--train-limit", type=int, default=None,
                         help="subsample the training tiles, stratified by source and label. "
                              "For smoke tests: the point is to prove every arm runs end to end "
                              "before paying for the real thing.")
     args = parser.parse_args()
+    if args.limit < 2:
+        parser.error("--limit must be at least 2 for disjoint calibration/evaluation")
+    if not 0.0 < args.calibration_fraction < 1.0:
+        parser.error("--calibration-fraction must be strictly between 0 and 1")
 
-    data = np.load(args.tiles, allow_pickle=True)
-    tiles, y, sources = data["x"], data["y"], data["sources"]
-    if args.train_limit and args.train_limit < len(y):
-        # Stratified, not the first N: the tiles are written in SOURCE ORDER, so
-        # tiles[:N] is a subset of one or two sources. That exact slice produced a
-        # confidently wrong diagnosis earlier today.
-        keep, _ = stratified_holdout(y, sources, args.train_limit / len(y), 0)
-        take = np.setdiff1d(np.arange(len(y)), keep)[:args.train_limit]
-        tiles, y, sources = tiles[take], y[take], sources[take]
-        print(f"SMOKE TEST — training on a stratified {len(y):,} of the full set\n")
-    print(f"training tiles: {tiles.shape}  {int((y == 0).sum()):,} real / {int((y == 1).sum()):,} ai")
-    print(f"  sources: {', '.join(sorted(set(sources.tolist())))}")
-    print(f"  device: {DEVICE}\n")
+    loaded_run = None
+    if args.evaluate_checkpoint:
+        arm, seed, scorer, payload = load_cnn_checkpoint(args.evaluate_checkpoint)
+        loaded_run = {"arm": arm, "seed": seed, "scorer": scorer, "payload": payload}
+        args.arms = [arm]
+        tiles = y = sources = None
+        print(f"EVALUATION ONLY — {args.evaluate_checkpoint}  arm={arm} seed={seed}")
+        print(f"  device: {DEVICE}\n")
+    else:
+        data = np.load(args.tiles, allow_pickle=True)
+        tiles, y, sources = data["x"], data["y"], data["sources"]
+        if args.train_limit and args.train_limit < len(y):
+            # Stratified, not the first N: the tiles are written in SOURCE ORDER, so
+            # tiles[:N] is a subset of one or two sources. That exact slice produced a
+            # confidently wrong diagnosis earlier today.
+            keep, _ = stratified_holdout(y, sources, args.train_limit / len(y), 0)
+            take = np.setdiff1d(np.arange(len(y)), keep)[:args.train_limit]
+            tiles, y, sources = tiles[take], y[take], sources[take]
+            print(f"SMOKE TEST — training on a stratified {len(y):,} of the full set\n")
+        print(f"training tiles: {tiles.shape}  "
+              f"{int((y == 0).sum()):,} real / {int((y == 1).sum()):,} ai")
+        print(f"  sources: {', '.join(sorted(set(sources.tolist())))}")
+        print(f"  device: {DEVICE}\n")
 
     cached_features = None
-    if "stats" in args.arms:
+    if loaded_run is None and "stats" in args.arms:
         print("extracting 68 statistics for every training tile…")
         start = time.time()
         cached_features = tile_features(tiles)
         print(f"  {cached_features.shape} in {time.time() - start:.0f}s\n")
 
-    results: dict[str, dict] = {}
+    results: dict[str, list[dict]] = {}
     for arm in args.arms:
         print(f"=== ARM {arm} ===")
         per_seed = []
-        for seed in SEEDS[:args.seeds]:
+        run_seeds = [loaded_run["seed"]] if loaded_run else SEEDS[:args.seeds]
+        for seed in run_seeds:
             print(f"  seed {seed}")
             began = time.time()
-            if arm == "stats":
+            training_meta = {"best_epoch": None, "validation_auc": None}
+            checkpoint = None
+            checkpoint_path = None
+            if loaded_run:
+                scorer = loaded_run["scorer"]
+                training_meta = loaded_run["payload"].get("training", training_meta)
+            elif arm == "stats":
                 scorer = train_statistics(cached_features, y, seed)
             else:
-                scorer, model = train_cnn(arm, tiles, y, sources, seed, args.epochs, args.batch)
-                torch.save({"model": model.state_dict(), "arm": arm, "seed": seed},
-                           f"artifacts/tile_{arm}_seed{seed}.pt")
+                scorer, model, training_meta = train_cnn(
+                    arm, tiles, y, sources, seed, args.epochs, args.batch)
+                checkpoint = {
+                    "model": model.state_dict(), "arm": arm, "seed": seed,
+                    "training": {
+                        **training_meta, "max_epochs": args.epochs, "batch": args.batch,
+                        "tile_dataset": str(args.tiles), "tile_dataset_bytes": args.tiles.stat().st_size,
+                        "n_tiles": len(y), "labels": dict(Counter(int(v) for v in y)),
+                        "sources": dict(Counter(str(v) for v in sources)),
+                    },
+                    "inference": {
+                        "tile_px": TILE, "texture_floor": TEXTURE_FLOOR,
+                        "normalization": "imagenet" if arm == "resnet18" else "default",
+                        "aggregation_candidates": args.aggregations,
+                    },
+                }
+                checkpoint_path = Path(f"artifacts/tile_{arm}_seed{seed}.pt")
             print(f"    trained in {time.time() - began:.0f}s — evaluating")
 
             kind = "stats" if arm == "stats" else "cnn"
-            measured = {}
-
-            # Defactify's ai/ folder mixes five generators whose difficulty for a
-            # tile method spans almost the whole range — E8 measured crop128 at
-            # 0.867 on SDXL and 0.377 on DALL-E 3, i.e. below chance, and E11
-            # deliberately optimised the grid on the high-resolution generators
-            # only because "low-resolution inputs are the CNNs' domain". Pooling
-            # them into one AUC reports their average and hides the split that
-            # decides which method should handle which input.
-            real_def = score_folder(HOME / "defactify_test/real", kind, scorer, args.limit)
-            print(f"      {'per generator (vs defactify real)':<40}")
+            all_records = []
+            real_def = score_folder_records(
+                HOME / "defactify_test/real", kind, scorer,
+                "defactify", "real", 0, args.limit)
+            all_records += real_def
+            generator_records = {}
             for generator in GENERATORS:
-                gen = score_folder(HOME / "defactify_test/ai" / generator, kind, scorer, args.limit)
-                if not len(gen) or not len(real_def):
-                    continue
-                truth = np.r_[np.zeros(len(real_def)), np.ones(len(gen))]
-                gen_auc = roc_auc_score(truth, np.r_[real_def, gen])
-                _, gen_recall = operating_point(real_def, gen, FP_BUDGET)
-                measured[f"  defactify/{generator}"] = {
-                    "auc": float(gen_auc), "fp_at_half": float((real_def >= 0.5).mean()),
-                    "recall_at_budget": gen_recall, "cut": float("nan"),
-                    "n_real": len(real_def), "n_ai": len(gen)}
-                print(f"        {generator:<20} AUC {gen_auc:.3f}   "
-                      f"recall@{int(FP_BUDGET * 100)}%FP {100 * gen_recall:5.1f}%")
-            for label, (real_dir, ai_dir) in TEST_SETS.items():
-                real = score_folder(real_dir, kind, scorer, args.limit)
-                ai = score_folder(ai_dir, kind, scorer, args.limit)
-                truth = np.r_[np.zeros(len(real)), np.ones(len(ai))]
-                auc = roc_auc_score(truth, np.r_[real, ai]) if len(real) and len(ai) else float("nan")
-                cut, recall = operating_point(real, ai, FP_BUDGET)
-                measured[label] = {"auc": float(auc), "fp_at_half": float((real >= 0.5).mean()),
-                                   "recall_at_budget": recall, "cut": cut,
-                                   "n_real": len(real), "n_ai": len(ai)}
-                print(f"      {label:<40} AUC {auc:.3f}  FP@0.5 {100 * measured[label]['fp_at_half']:5.1f}%"
-                      f"  recall@{int(FP_BUDGET * 100)}%FP {100 * recall:5.1f}%")
+                records = score_folder_records(
+                    HOME / "defactify_test/ai" / generator, kind, scorer,
+                    "defactify", generator, 1, args.limit)
+                if records:
+                    generator_records[generator] = records
+                    all_records += records
 
-            # Real photographs only. No AUC is possible and none is wanted: the
-            # question is simply how often a camera photograph from a pipeline the
-            # model never saw gets called AI. Reported at 0.5 and at the threshold
-            # Defactify's reals calibrated, which is the one a product would ship.
-            shipped_cut = measured["defactify (unseen, content-controlled)"]["cut"]
-            for label, root in REAL_ONLY.items():
-                per_source = {}
+            gen_real_dir, gen_ai_dir = TEST_SETS["genimage (trained-on source)"]
+            gen_real = score_folder_records(
+                gen_real_dir, kind, scorer, "genimage", "real", 0, args.limit)
+            gen_ai = score_folder_records(
+                gen_ai_dir, kind, scorer, "genimage", "ai", 1, args.limit)
+            all_records += gen_real + gen_ai
+
+            forensic_records = {}
+            for root in REAL_ONLY.values():
                 for folder in sorted(root.glob("*/auth")):
-                    scores = score_folder(folder, kind, scorer, args.limit)
-                    if len(scores):
-                        per_source[folder.parent.name] = scores
-                if not per_source:
-                    continue
-                every = np.concatenate(list(per_source.values()))
-                measured[label] = {"auc": float("nan"),
-                                   "fp_at_half": float((every >= 0.5).mean()),
-                                   "recall_at_budget": float("nan"), "cut": float("nan"),
-                                   "n_real": len(every), "n_ai": 0,
-                                   "fp_at_shipped": float((every >= shipped_cut).mean())}
-                print(f"      {label:<40} n={len(every):<5} FP@0.5 "
-                      f"{100 * measured[label]['fp_at_half']:5.1f}%   "
-                      f"FP@defactify-cut({shipped_cut:.3f}) "
-                      f"{100 * measured[label]['fp_at_shipped']:5.1f}%")
-                worst = sorted(per_source.items(), key=lambda kv: -(kv[1] >= 0.5).mean())[:3]
-                print("        worst sources @0.5: " +
-                      ", ".join(f"{k} {100 * (v >= 0.5).mean():.0f}%" for k, v in worst))
+                    source = folder.parent.name
+                    records = score_folder_records(
+                        folder, kind, scorer, "forensics", source, 0, args.limit)
+                    if records:
+                        forensic_records[source] = records
+                        all_records += records
+
+            raw_path = args.raw_dir / f"{arm}_seed{seed}.jsonl"
+            save_raw_records(raw_path, all_records)
+            selected, aggregations = evaluate_aggregations(
+                real_def, generator_records, (gen_real, gen_ai), forensic_records,
+                args.aggregations, args.calibration_fraction, args.split_seed)
+            chosen = aggregations[selected]
+            measured = {
+                "arm": arm, "seed": seed, "training": training_meta,
+                "raw_scores": str(raw_path), "selected_aggregation": selected,
+                "aggregations": aggregations,
+            }
+            if checkpoint is not None:
+                checkpoint["inference"].update({
+                    "selected_aggregation": selected,
+                    "threshold": chosen["threshold"],
+                    "calibration_fraction": args.calibration_fraction,
+                    "split_seed": args.split_seed,
+                })
+                torch.save(checkpoint, checkpoint_path)
+            print("\n      aggregation selected ONLY on calibration halves")
+            print(f"      {'rule':<18}{'cal recall':>12}{'eval recall':>13}{'eval FP':>10}"
+                  f"{'eval AUC':>11}{'real macro FP':>15}{'worst FP':>11}")
+            for rule in args.aggregations:
+                row = aggregations[rule]
+                mark = "  <- selected" if rule == selected else ""
+                print(f"      {rule:<18}{100 * row['selection_calibration_macro_recall']:>11.1f}%"
+                      f"{100 * row['defactify_evaluation_recall']:>12.1f}%"
+                      f"{100 * row['defactify_evaluation_fp']:>9.1f}%"
+                      f"{row['defactify_evaluation_auc']:>11.3f}"
+                      f"{100 * row['forensics_macro_fp']:>14.1f}%"
+                      f"{100 * row['forensics_worst_fp']:>10.1f}%{mark}")
+            print("      selected per-generator evaluation recall: " + ", ".join(
+                f"{name} {100 * values['evaluation_recall']:.1f}%"
+                for name, values in chosen["per_generator"].items()))
+            print(f"      raw per-image/per-tile scores -> {raw_path}")
+            if checkpoint_path is not None:
+                print(f"      deployable checkpoint contract -> {checkpoint_path}")
             per_seed.append(measured)
         results[arm] = per_seed
 
     # ---- summary ----------------------------------------------------------
-    print(f"\n{'=' * 96}\nE20 — the operating point is the headline. "
-          f"AI recall at a {int(FP_BUDGET * 100)}% false-positive budget.\n{'=' * 96}")
-    header = f"{'test set':<42}" + "".join(f"{a:>20}" for a in args.arms)
-    for metric, title in (("recall_at_budget", f"AI RECALL @ {int(FP_BUDGET * 100)}% FP  ← headline"),
-                          ("auc", "AUC (ranking only)"),
-                          ("fp_at_half", "FALSE POSITIVES at threshold 0.5")):
-        print(f"\n{title}\n{header}")
-        rows = list(TEST_SETS) + [f"  defactify/{g}" for g in GENERATORS] + list(REAL_ONLY)
-        for label in rows:
-            row = f"{label:<42}"
-            for arm in args.arms:
-                values = [s[label][metric] for s in results[arm] if label in s]
-                if not values or np.all(np.isnan(values)):
-                    row += f"{'—':>20}"; continue
-                mean = float(np.nanmean(values))
-                spread = f"±{np.std(values):.3f}" if len(values) > 1 else ""
-                row += f"{(f'{mean:.3f}' if metric == 'auc' else f'{100 * mean:.1f}%') + spread:>20}"
-            print(row)
+    separator = "=" * 110
+    print(f"\n{separator}\nE20 PROTOCOL V2 — aggregation and threshold see calibration only; "
+          f"the headline comes from untouched evaluation images.\n{separator}")
+    print(f"{'arm':<15}{'seeds':>7}{'eval recall':>16}{'eval AUC':>13}"
+          f"{'eval FP':>12}{'real macro FP':>17}{'worst real FP':>16}")
+    for arm, runs in results.items():
+        selected_rows = [run["aggregations"][run["selected_aggregation"]] for run in runs]
+        values = lambda key: np.asarray([row[key] for row in selected_rows], dtype=float)
+        cell = lambda key, percent=False: (
+            f"{100 * values(key).mean():.1f}%±{100 * values(key).std():.1f}"
+            if percent else f"{values(key).mean():.3f}±{values(key).std():.3f}")
+        print(f"{arm:<15}{len(runs):>7}{cell('defactify_evaluation_recall', True):>16}"
+              f"{cell('defactify_evaluation_auc'):>13}{cell('defactify_evaluation_fp', True):>12}"
+              f"{cell('forensics_macro_fp', True):>17}{cell('forensics_worst_fp', True):>16}")
 
-    print("\nReminder: GenImage is not content-controlled — its reals are ImageNet nature photos "
-          "and its\nfakes are other content, so a high score there can come from recognising "
-          "subject matter.\nDefactify generates its fakes from the same captions as its reals. "
-          "Weight Defactify.")
+    payload = {
+        "protocol": {
+            "version": 2, "fp_budget": FP_BUDGET,
+            "calibration_fraction": args.calibration_fraction, "split_seed": args.split_seed,
+            "aggregations": args.aggregations, "limit_per_set": args.limit,
+            "selection": "macro generator recall on calibration halves only",
+        },
+        "runs": results,
+    }
+    args.results.parent.mkdir(parents=True, exist_ok=True)
+    with args.results.open("w") as handle:
+        json.dump(json_compatible(payload), handle, indent=2, allow_nan=False)
+    print(f"\nstructured results -> {args.results}")
+    print("Reminder: this protocol selects both aggregation and threshold without touching the "
+          "evaluation halves. GenImage remains a discounted, non-content-controlled diagnostic.")
 
 
 if __name__ == "__main__":
