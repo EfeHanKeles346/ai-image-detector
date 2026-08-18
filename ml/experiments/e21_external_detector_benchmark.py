@@ -1,13 +1,23 @@
 """E21 — evaluate an official external detector on PixelProof's protocol.
 
-This script intentionally does not vendor third-party source or weights.  It
-loads an explicitly supplied checkout of the official B-Free repository, runs
-the authors' native five-crop inference contract, and evaluates those image
-scores with the same disjoint calibration/source-transfer rules as E20-v2.
+This script intentionally does not vendor third-party source or weights.  Each
+supported detector is loaded exactly as its authors ship it, and its image
+scores are evaluated with the same disjoint calibration/source-transfer rules
+as E20-v2, so every external baseline answers the question our own models
+failed: does the threshold survive unseen real sources?
 
-B-Free's licence permits informational and nonprofit use only.  The explicit
-CLI acknowledgement prevents this research adapter from quietly becoming a
-commercial runtime dependency later.
+Two arms:
+
+- ``bfree`` — B-Free (GRIP-UNINA, CVPR 2025).  Loads an explicitly supplied
+  checkout of the official repository and runs the authors' native inference
+  contract.  The licence permits informational and nonprofit use only; the
+  explicit CLI acknowledgement prevents this research adapter from quietly
+  becoming a commercial runtime dependency later.
+- ``community-forensics`` — the Community-Forensics ViT-S (Park & Owens,
+  CVPR 2025; MIT licence), the strongest out-of-the-box detector in the
+  23-model benchmark of arXiv 2602.07814.  Loaded from a local snapshot, or
+  from the HuggingFace hub only when ``--allow-download`` is passed — the
+  script never downloads weights silently.
 """
 
 from __future__ import annotations
@@ -36,6 +46,8 @@ GENERATORS = ("dalle3", "midjourney", "sd21", "sd3", "sdxl")
 FP_BUDGET = 0.10
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 BFree_URL = "https://github.com/grip-unina/B-Free"
+CF_HUB_ID = "buildborderless/CommunityForensics-DeepfakeDet-ViT"
+CF_URL = f"https://huggingface.co/{CF_HUB_ID}"
 
 
 def json_compatible(value: Any) -> Any:
@@ -164,6 +176,95 @@ class BFreeDetector:
         return float(score.cpu()), width, height
 
 
+class CommunityForensicsDetector:
+    """The Community-Forensics ViT-S, loaded exactly as published (MIT)."""
+
+    def __init__(
+        self,
+        model_dir: Path | None,
+        device: torch.device,
+        allow_download: bool,
+    ) -> None:
+        try:
+            from transformers import ViTForImageClassification, ViTImageProcessor
+        except ImportError as error:
+            raise RuntimeError(
+                "transformers is required for --detector community-forensics "
+                "(.venv/bin/pip install transformers)"
+            ) from error
+
+        if model_dir is not None:
+            source = str(model_dir)
+            weights_path = model_dir / "model.safetensors"
+            if not weights_path.is_file():
+                raise FileNotFoundError(
+                    f"{weights_path} missing; expected a local snapshot of {CF_HUB_ID}"
+                )
+            local_only = True
+        elif allow_download:
+            # ~83 MB from the hub, cached under ~/.cache/huggingface afterwards.
+            from huggingface_hub import hf_hub_download
+
+            source = CF_HUB_ID
+            weights_path = Path(hf_hub_download(CF_HUB_ID, "model.safetensors"))
+            local_only = False
+        else:
+            raise FileNotFoundError(
+                "no --model-dir given and downloads are not allowed; pass a local "
+                f"snapshot of {CF_HUB_ID}, or --allow-download to fetch it (~83 MB, MIT)"
+            )
+
+        began = time.perf_counter()
+        model = ViTForImageClassification.from_pretrained(
+            source, local_files_only=local_only
+        )
+        self.processor = ViTImageProcessor.from_pretrained(
+            source, local_files_only=local_only
+        )
+        self.model = model.to(device).eval()
+        self.device = device
+        self.weights_sha256 = sha256_file(weights_path)
+        self.detector_id = f"cf-vit:{self.weights_sha256[:16]}"
+        self.metadata = {
+            "name": "Community-Forensics ViT-S",
+            "source": CF_URL,
+            "weights": str(weights_path.resolve()),
+            "weights_sha256": self.weights_sha256,
+            "architecture": model.config.model_type,
+            "num_labels": model.config.num_labels,
+            "preprocessing": {
+                "size": dict(self.processor.size),
+                "crop": dict(getattr(self.processor, "crop_size", {}) or {}),
+                "image_mean": list(self.processor.image_mean),
+                "image_std": list(self.processor.image_std),
+            },
+            "input_contract": (
+                "authors' processor: shortest edge to 440, centre-crop 384, CLIP "
+                "normalisation — whole image, no tiling"
+            ),
+            "license_scope": "MIT",
+            "device": str(device),
+            "load_seconds": time.perf_counter() - began,
+        }
+
+    @torch.inference_mode()
+    def score(self, path: Path) -> tuple[float, int, int]:
+        with Image.open(path) as image:
+            image = image.convert("RGB")
+            width, height = image.size
+            inputs = self.processor(images=image, return_tensors="pt")
+        logits = self.model(pixel_values=inputs["pixel_values"].to(self.device)).logits
+        if logits.ndim != 2 or logits.shape[0] != 1:
+            raise RuntimeError(f"unexpected CF-ViT output shape {tuple(logits.shape)}")
+        if logits.shape[1] == 1:  # single logit; sigmoid(logit) = P(fake)
+            score = logits[0, 0]
+        elif logits.shape[1] == 2:
+            score = logits[0, 1] - logits[0, 0]
+        else:
+            raise RuntimeError(f"unexpected CF-ViT class count {logits.shape[1]}")
+        return float(score.cpu()), width, height
+
+
 def image_files(folder: Path, limit: int) -> list[Path]:
     files = sorted(
         path
@@ -194,7 +295,7 @@ def load_cache(path: Path, detector_id: str) -> dict[str, dict]:
 
 def score_folder(
     folder: Path,
-    detector: BFreeDetector,
+    detector: BFreeDetector | CommunityForensicsDetector,
     cache: dict[str, dict],
     raw_path: Path,
     dataset: str,
@@ -248,22 +349,33 @@ def score_folder(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--detector", choices=["bfree"], default="bfree")
-    parser.add_argument("--repo", type=Path, required=True, help="official B-Free checkout")
+    parser.add_argument(
+        "--detector", choices=["bfree", "community-forensics"], default="bfree"
+    )
+    parser.add_argument("--repo", type=Path, help="official B-Free checkout (bfree only)")
     parser.add_argument(
         "--weights-dir",
         type=Path,
         help="directory containing BFREE_dino2reg4 (default: REPO/weights)",
     )
     parser.add_argument("--model", default="BFREE_dino2reg4")
+    parser.add_argument(
+        "--model-dir",
+        type=Path,
+        help=f"local snapshot of {CF_HUB_ID} (community-forensics only)",
+    )
+    parser.add_argument(
+        "--allow-download",
+        action="store_true",
+        help="permit fetching the community-forensics checkpoint (~83 MB, MIT) from "
+        "HuggingFace when no --model-dir is given",
+    )
     parser.add_argument("--device", default="auto")
     parser.add_argument("--limit", type=int, default=200)
     parser.add_argument("--calibration-fraction", type=float, default=0.5)
     parser.add_argument("--split-seed", type=int, default=2026)
-    parser.add_argument("--raw", type=Path, default=Path("artifacts/e21/bfree_scores.jsonl"))
-    parser.add_argument(
-        "--results", type=Path, default=Path("artifacts/e21/bfree_results.json")
-    )
+    parser.add_argument("--raw", type=Path, help="per-image score JSONL (default per detector)")
+    parser.add_argument("--results", type=Path, help="results JSON (default per detector)")
     parser.add_argument(
         "--acknowledge-noncommercial-license",
         action="store_true",
@@ -274,16 +386,27 @@ def main() -> None:
         parser.error("--limit must be at least 2 for disjoint calibration/evaluation")
     if not 0.0 < args.calibration_fraction < 1.0:
         parser.error("--calibration-fraction must be strictly between 0 and 1")
-    if not args.acknowledge_noncommercial_license:
-        parser.error("B-Free requires --acknowledge-noncommercial-license")
 
-    weights_dir = args.weights_dir or args.repo / "weights"
     device = select_device(args.device)
-    detector = BFreeDetector(args.repo, weights_dir, args.model, device)
+    if args.detector == "bfree":
+        if args.repo is None:
+            parser.error("--detector bfree requires --repo")
+        if not args.acknowledge_noncommercial_license:
+            parser.error("B-Free requires --acknowledge-noncommercial-license")
+        weights_dir = args.weights_dir or args.repo / "weights"
+        detector = BFreeDetector(args.repo, weights_dir, args.model, device)
+        stem = "bfree"
+    else:
+        detector = CommunityForensicsDetector(
+            args.model_dir, device, args.allow_download
+        )
+        stem = "cf_vit"
+    args.raw = args.raw or Path(f"artifacts/e21/{stem}_scores.jsonl")
+    args.results = args.results or Path(f"artifacts/e21/{stem}_results.json")
     print(
         f"E21 {detector.detector_id}\n"
         f"  device: {device}  load: {detector.metadata['load_seconds']:.1f}s\n"
-        "  contract: official whole-image five-crop inference\n",
+        f"  contract: {detector.metadata['input_contract']}\n",
         flush=True,
     )
 
@@ -352,7 +475,8 @@ def main() -> None:
         json.dump(json_compatible(payload), handle, indent=2, allow_nan=False)
 
     separator = "=" * 92
-    print(f"\n{separator}\nE21 B-FREE — untouched evaluation results\n{separator}")
+    detector_name = detector.metadata["name"].upper()
+    print(f"\n{separator}\nE21 {detector_name} — untouched evaluation results\n{separator}")
     print(
         f"Defactify: AUC {metrics['defactify_evaluation_auc']:.3f} · "
         f"recall {100 * metrics['defactify_evaluation_recall']:.1f}% · "

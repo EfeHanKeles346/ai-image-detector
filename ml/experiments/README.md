@@ -16,7 +16,7 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 | Script | Experiment | Purpose |
 |---|---|---|
 | `e20_tile_model_shootout.py` | E20 / E20-v2 | Three model families on identical native tiles, under the hardened protocol: per-image score persistence, disjoint calibration/evaluation halves, aggregation controls, source-transfer FP reporting, three-seed default. |
-| `e21_external_detector_benchmark.py` | E21 | Runs an official external detector (B-Free first) through the same protocol — the go/no-go gate before paying for any further training of our own. |
+| `e21_external_detector_benchmark.py` | E21 | Runs an official external detector through the same protocol — the go/no-go gate before paying for any further training of our own. Two arms: `--detector bfree` (GRIP-UNINA checkout, non-commercial licence acknowledgement required) and `--detector community-forensics` (ViT-S, MIT; local snapshot or `--allow-download`, ~83 MB). |
 
 Feature extraction caches to `../artifacts/features/`, so re-running anything after the
 first time costs seconds rather than minutes.
