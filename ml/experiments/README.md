@@ -1,27 +1,25 @@
 # Experiment scripts
 
-One script per numbered experiment in [`../EXPERIMENTS.md`](../EXPERIMENTS.md). These are the
-code that produced the numbers quoted in `EXPERIMENTS.md` and `HISTORY.md` — kept in the repo so
-every claim in the report is reproducible rather than remembered.
+Two kinds of script live here, and the split is the point:
+
+- **This folder** holds the scripts that are still *run*: the current evaluation protocol
+  and anything the plan (`../../PLAN.md`) calls for next.
+- **[`archive/`](archive/README.md)** holds the scripts that produced finished, written-up
+  results (E7–E18). They are frozen evidence for `../EXPERIMENTS.md` and are not maintained.
 
 Run from `ml/` with `PYTHONPATH=src`:
 
 ```bash
-PYTHONPATH=src .venv/bin/python experiments/e11_tile_grid_search.py
+PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 ```
 
-| Script | Experiment | Produces |
+| Script | Experiment | Purpose |
 |---|---|---|
-| `e07_patch_vs_resize.py` | E7 control | Native-resolution patches vs downscaling, per generator. Showed the mechanism was real *and* that patch inference cannot be bolted onto a resize-trained CNN (96% false positives on real photos). |
-| `e08_cnn_vs_features.py` | E8 | ResNet-18 vs the feature model on identical training data and test sets — the controlled method-vs-method comparison. |
-| `e09_ensemble.py` | E9 | Eight blending rules (mean, weighted, max, min, and rank-normalised variants). The negative result that decided the demo shows methods separately. |
-| `e10_archive1_format.py` | E10 | Format control: re-encode the AI half to JPEG, then both halves, and re-measure. Tests whether the JPEG/PNG split was doing the work. |
-| `e10_archive1_aspect.py` | E10 | Aspect control: centre-crop both classes square at native resolution. Also reports the metadata-only ceiling (AUC 1.000 from width/height alone). |
-| `e11_tile_aggregation.py` | E11 | Six aggregation rules over a tile grid, plus the fraction of tiles below the texture floor. |
-| `e11_tile_grid_search.py` | E11 | Grid-size sweep (2×2 … 6×6) × aggregation rule, optimised on high-resolution generators. Produced the 6×6 + top-3 choice and the ~700px crossover. |
+| `e20_tile_model_shootout.py` | E20 / E20-v2 | Three model families on identical native tiles, under the hardened protocol: per-image score persistence, disjoint calibration/evaluation halves, aggregation controls, source-transfer FP reporting, three-seed default. |
+| `e21_external_detector_benchmark.py` | E21 | Runs an official external detector (B-Free first) through the same protocol — the go/no-go gate before paying for any further training of our own. |
 
-Feature extraction caches to `../artifacts/features/`, so re-running any of these after the first
-time costs seconds rather than minutes.
+Feature extraction caches to `../artifacts/features/`, so re-running anything after the
+first time costs seconds rather than minutes.
 
-**Requires the datasets in `HISTORY.md` §1 to be present at the paths listed there.** Scripts fail
-fast with a clear error if a dataset folder is missing.
+**Requires the datasets in `../../DATASETS.md` to be present at the paths listed there.**
+Scripts fail fast with a clear error if a dataset folder is missing.
