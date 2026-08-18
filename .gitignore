@@ -14,3 +14,6 @@ artifacts_train.log
 
 # macOS on ExFAT writes a 4 KB ._name stub beside every real file (see HISTORY §2b.8)
 ._*
+
+# third-party checkouts + weights for E21 external baselines (licences differ from ours)
+ml/external/
