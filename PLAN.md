@@ -15,17 +15,66 @@ only what is *next*, so there is exactly one place to look and one place to upda
 - **Module 2** (where was it edited?) is measured and parked: tile localisation carries
   signal only on diffusion inpainting (CocoGlide); the classic-splice line is closed.
 
+## Literature survey, 2026-08-18 — what the field says about our two blockers
+
+A focused review (sources at the bottom of this section) mapped 2025–26 work onto the two
+problems E20-v2 left open. Two findings matter more than the rest:
+
+**1. Our E14 result is independently confirmed at scale.** A benchmark of 23 open-sourced
+detectors run out-of-the-box ([arXiv 2602.07814](https://arxiv.org/html/2602.07814v1))
+finds 20–60 point swings between identical architectures trained on different data, and
+concludes that *training-data alignment outweighs architecture* — the same conclusion E14
+and E20 reached here, measured independently. Two practical facts fall out of it:
+the **Community-Forensics ViT-S** is the strongest single out-of-the-box detector (first
+on 8 of 12 datasets, 75% mean accuracy, checkpoint on HuggingFace:
+[`buildborderless/CommunityForensics-DeepfakeDet-ViT`](https://huggingface.co/buildborderless/CommunityForensics-DeepfakeDet-ViT)),
+and even the best frozen detectors collapse to 18–30% on 2026-era generators (Flux Dev,
+Firefly v4, Midjourney v7) — so our DALL-E 3 failure has company, and our test sets need a
+2026-era column.
+
+**2. The narrow-real-class disease has a published cure to test.**
+[Stay-Positive](https://arxiv.org/html/2502.07778v1) diagnoses exactly what E14 measured —
+detectors learn spurious features of their *real* class — and constrains the final layer
+to **non-negative weights** so the model can only accumulate evidence *for* generation
+artefacts, never "unlike my training reals". Frozen backbone, minutes of retraining,
+directly applicable to our tile ResNet-18, and our E20-v2 evaluator measures precisely the
+number it claims to fix (worst-source FP, currently 96%).
+
+Also relevant: [B-Free](https://arxiv.org/pdf/2412.17671) (CVPR 2025) generates fakes as
+self-conditioned SD reconstructions of real images — content-aligned training pairs, the
+training-data version of Defactify's content control, and claims better *calibration*
+across 27 generators; [conformal abstention](https://arxiv.org/pdf/2502.07255) gives the
+planned "insufficient evidence" band a statistical footing instead of a hand-tuned floor;
+[TGIF/TGIF2](https://arxiv.org/abs/2407.11566) remains the right Module 2 target (FLUX.1
+inpainting, and the only set separating spliced from fully-regenerated edits).
+
 ## Next, in order
 
-1. **External baselines through our protocol** — run frozen B-Free, then CLIP, through the
-   E20-v2 evaluator (`ml/experiments/e21_external_detector_benchmark.py` is built for
-   this). No training. If neither fixes cross-source specificity, that is a finding.
-2. **Source-robust decision rule** — source-balanced real calibration, or an explicit
-   "insufficient evidence" band keyed on measured high-frequency content. Only pay for a
-   three-seed retrain once a configuration passes the cross-source gate.
-3. **Report + demo polish** — the internship report writes itself from HISTORY.md +
-   EXPERIMENTS.md; the demo stays as-is (three signals, unblended) until 1–2 change what
-   it should say.
+1. **External baselines through our protocol** *(no training)* — in cost order:
+   **Community-Forensics ViT-S first** (single HF checkpoint, ~86 MB), then **B-Free**
+   (`e21_external_detector_benchmark.py` was built for it), then CLIP. Every arm goes
+   through the same E20-v2 evaluator: disjoint calibration/evaluation halves, threshold
+   transferred to ten forensic real sources, macro + worst-source FP as headline columns.
+   If none fixes cross-source specificity, that is a finding worth reporting.
+2. **Stay-Positive constraint on our own tile ResNet-18** *(minutes of training)* —
+   freeze the backbone, retrain the final layer under non-negative weights, re-run E20-v2.
+   The claim under test: worst-source FP drops without giving back AI recall.
+3. **Source-robust decision rule** — source-balanced real calibration, and the
+   "insufficient evidence" band built as conformal abstention rather than a pixel floor.
+   Only pay for a three-seed retrain once a configuration passes the cross-source gate.
+4. **Data work** — compression augmentation (JPEG q30–q95; the E12 debt), a compressed
+   copy of every test set (q50 + 75% resize, the literature's social-media standard), and
+   optionally a B-Free-style content-aligned pool built from our own real photographs.
+5. **Report + demo polish** — the internship report writes itself from HISTORY.md +
+   EXPERIMENTS.md; the demo stays as-is until 1–4 change what it should say.
+
+Survey sources: [out-of-the-box benchmark](https://arxiv.org/html/2602.07814v1) ·
+[Stay-Positive](https://arxiv.org/html/2502.07778v1) ·
+[B-Free](https://grip-unina.github.io/B-Free/) ·
+[Community Forensics (CVPR 2025)](https://arxiv.org/abs/2411.04125) ·
+[conformal abstention](https://arxiv.org/pdf/2502.07255) ·
+[TGIF2](https://www.emergentmind.com/papers/2603.28613) ·
+[NTIRE 2026 challenge](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/papers/Gushchin_NTIRE_2026_Challenge_on_Robust_AI-Generated_Image_Detection_in_the_CVPRW_2026_paper.pdf)
 
 ## Standing rules (unchanged)
 
