@@ -12,5 +12,5 @@ __pycache__/
 .vinext/
 artifacts_train.log
 
-# macOS on ExFAT writes a 4 KB ._name stub beside every real file (see ROADMAP §2b.8)
+# macOS on ExFAT writes a 4 KB ._name stub beside every real file (see HISTORY §2b.8)
 ._*

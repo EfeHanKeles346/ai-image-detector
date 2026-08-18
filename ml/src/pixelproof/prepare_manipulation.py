@@ -55,7 +55,7 @@
 # safe_members() Yields tar members that are plain files inside the expected
 #                sub-tree. Blocks absolute paths and `..` traversal (a tar can
 #                name any path it likes), and skips the macOS AppleDouble stubs
-#                ExFAT writes beside every file (ROADMAP 2b.8).
+#                ExFAT writes beside every file (HISTORY 2b.8).
 # extract()      Unpacks the selected tars, skipping work already done.
 # validate()     The point of the whole file: counts images and masks, and
 #                reports every manip image whose mask is missing. A missing mask
@@ -106,7 +106,7 @@ def safe_members(archive: tarfile.TarFile, dataset: str, split: str):
     kept, which normalises all thirteen to one layout. An earlier version keyed
     on the tar filename and silently extracted ZERO files for those three — it
     reported "0 images" rather than failing, which is the quiet-wrong-answer
-    failure mode this project keeps cataloguing (ROADMAP 2b.8).
+    failure mode this project keeps cataloguing (HISTORY 2b.8).
     """
     for member in archive:
         if not member.isfile():

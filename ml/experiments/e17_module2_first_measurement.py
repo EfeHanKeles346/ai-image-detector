@@ -1,7 +1,7 @@
 # E17 — Module 2's first measurement: does the tile map find the tampered region?
 #
 # The tile scorer was built for Module 1 (E11) and produces a per-region
-# probability as a side effect. ROADMAP 9c called localisation "a well-founded
+# probability as a side effect. HISTORY 9c called localisation "a well-founded
 # hypothesis that is still unvalidated" because there was no ground truth. There
 # is now: 13 forensic datasets with pixel-level masks.
 #
@@ -40,7 +40,7 @@ Image.MAX_IMAGE_PIXELS = None
 
 # The first run of this experiment read /tmp/m2, which macOS wipes on reboot —
 # and that was the only copy of the extracted data. Now a real dataset path,
-# alongside the others in ROADMAP 1.
+# alongside the others in HISTORY 1.
 DEFAULT_ROOT = Path.home() / "Desktop/manipulation_test"
 TILE = 128
 GRID = 36

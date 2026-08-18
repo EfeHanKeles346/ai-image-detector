@@ -15,7 +15,7 @@
 # WHY THIS EXISTS
 # -----------------------------------------------------------------------------
 # archive1 was used as this project's benchmark through six experiments before
-# anyone looked inside it (ROADMAP 1b). The lesson generalises: look first.
+# anyone looked inside it (HISTORY 1b). The lesson generalises: look first.
 # Two sources that are individually clean can still combine into a biased pool —
 # if one contributes 1024px reals and the other 512px reals, the merged real
 # class has a distribution matching neither.
@@ -40,7 +40,7 @@
 # iter_parquet() / iter_folder()
 #                Streaming readers. Both skip macOS AppleDouble stubs (`._name`),
 #                which ExFAT writes beside every real file and which cost us one
-#                wrong dataset verdict already (ROADMAP 2b.8).
+#                wrong dataset verdict already (HISTORY 2b.8).
 #
 # build()        Walks every source, records one row per image, and hashes as it
 #                goes so contamination is detected during the pass rather than
@@ -398,7 +398,7 @@ def metadata_probe(rows: list[dict]) -> float:
     instrument: on 2026-08-05 they reported "none detected" for a pool this probe
     separated at AUC 0.956. Medians can coincide while the distributions differ,
     and a boosted tree finds that difference immediately. archive1 scored 1.000
-    here, so this is the same test that defines the whole problem (ROADMAP 1b).
+    here, so this is the same test that defines the whole problem (HISTORY 1b).
 
     Reported, never enforced — a flaw is a usage condition (1b). Size, aspect and
     squareness cannot reach a 128px tile; compression can, so read that column

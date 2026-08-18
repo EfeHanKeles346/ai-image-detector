@@ -1,7 +1,7 @@
 # Experiment scripts
 
 One script per numbered experiment in [`../EXPERIMENTS.md`](../EXPERIMENTS.md). These are the
-code that produced the numbers quoted in `EXPERIMENTS.md` and `ROADMAP.md` — kept in the repo so
+code that produced the numbers quoted in `EXPERIMENTS.md` and `HISTORY.md` — kept in the repo so
 every claim in the report is reproducible rather than remembered.
 
 Run from `ml/` with `PYTHONPATH=src`:
@@ -23,5 +23,5 @@ PYTHONPATH=src .venv/bin/python experiments/e11_tile_grid_search.py
 Feature extraction caches to `../artifacts/features/`, so re-running any of these after the first
 time costs seconds rather than minutes.
 
-**Requires the datasets in `ROADMAP.md` §1 to be present at the paths listed there.** Scripts fail
+**Requires the datasets in `HISTORY.md` §1 to be present at the paths listed there.** Scripts fail
 fast with a clear error if a dataset folder is missing.

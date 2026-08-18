@@ -3,7 +3,7 @@
 # One variable changes: the training data. Same 68 features, same pipeline, same
 # test sets. v2's pool is resolution-balanced (real 431px vs ai 400px median,
 # 1.08x) because the raw merged pool carried a 3.4x gap that a native-resolution
-# model reads as a shortcut — see ROADMAP 1b.
+# model reads as a shortcut — see HISTORY 1b.
 #
 # Evaluated on everything we hold, and reported per generator, because a single
 # pooled number hides where a detector actually fails.

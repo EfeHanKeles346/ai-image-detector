@@ -276,7 +276,7 @@ def tile_positions(width: int, height: int, tile: int,
 
     The cap used to default to 36, which sounds generous and is not: a
     4032x3024 photograph yields 713 tiles and scoring 36 of them inspects
-    **4.8% of the pixels**. (The "~100% coverage" claim in ROADMAP 9b holds only
+    **4.8% of the pixels**. (The "~100% coverage" claim in HISTORY 9b holds only
     up to 768px.) Full coverage is affordable now — measured 2026-08-05, a
     ResNet-18 scores a tile in 0.44 ms, so all 713 take 0.31 s.
 

@@ -1,9 +1,9 @@
 # Datasets — inventory and assignment
 
 What we hold, what each set is good for, and which module it feeds. Replaces the
-former `STATUS.md`, whose content is now covered in more detail by `ROADMAP.md` §2b.
+former `STATUS.md`, whose content is now covered in more detail by `HISTORY.md` §2b.
 
-**The rule that governs everything here** (`ROADMAP.md` §1b): a dataset flaw is a
+**The rule that governs everything here** (`HISTORY.md` §1b): a dataset flaw is a
 *usage condition*, not a disqualification. A shortcut only exists if the model can
 perceive it. Whole-image training can see image dimensions; tile training cannot,
 because every tile arrives at 128×128 regardless of where it came from.
@@ -53,7 +53,7 @@ Add the two tile-only sets once tile training is the default, for GAN coverage a
 |---|---|---|
 | **`defactify_test`** | 1.2 GB | Five generators newer than any training data, both classes JPEG. Our established benchmark — every number in `EXPERIMENTS.md` E7–E11 is measured here |
 | **`julienlucas/midjourney-dalle-sd-nanobananapro`** | 2.9 GB | Contains **Nano Banana Pro** (2026) with real photos, formats mixed on both sides. The cleanest modern set we have; small enough to be a test set rather than training data |
-| `archive1` | 240 MB | **Confounded** (see `ROADMAP.md` §1b). Keep only for continuity with E1–E6; do not use for new claims |
+| `archive1` | 240 MB | **Confounded** (see `HISTORY.md` §1b). Keep only for continuity with E1–E6; do not use for new claims |
 | `archive` (CIFAKE) | 469 MB | 32×32. Only SmallCNN's domain |
 
 ### Current generators, AI-only — pair with care

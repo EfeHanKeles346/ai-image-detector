@@ -171,7 +171,7 @@ def train_cnn(name: str, tiles: np.ndarray, y: np.ndarray, sources: np.ndarray,
     ImageNet normalisation for the pretrained backbone, 0.5/0.5 for the
     from-scratch one — each gets the statistics it expects (data.py).
     Augmentation is horizontal flip ONLY: colour or blur would destroy the
-    generation traces this whole project is built on reading (ROADMAP §3).
+    generation traces this whole project is built on reading (HISTORY §3).
 
     THE EPOCH COUNT IS MEASURED, NOT PICKED. An earlier draft trained for a flat
     3 epochs, inherited from E5's recipe, with nothing behind it — and this

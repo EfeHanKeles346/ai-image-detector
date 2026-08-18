@@ -37,7 +37,7 @@
 # -----------------------------------------------------------------------------
 # wanted()       Loads the pool CSV into {phash: label}. Defaults to the
 #                BALANCED pool, because the raw index carries a 3.4x resolution
-#                gap between classes (ROADMAP 1b) that a native-resolution model
+#                gap between classes (HISTORY 1b) that a native-resolution model
 #                reads as a shortcut.
 # _init_worker() Installs the hash set as a per-process global — sent once.
 # _one_unit()    Streams one shard (or class folder), keeps wanted images,

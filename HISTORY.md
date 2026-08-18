@@ -1,4 +1,11 @@
-# AI Image Detector — Project Roadmap
+# AI Image Detector — Decision History
+
+> **FROZEN 2026-08-18.** This file was the project's living roadmap from day one through E21.
+> It is now the complete decision history, kept verbatim as the source for the internship
+> report — nothing here is edited or appended anymore. The living plan is
+> [`PLAN.md`](PLAN.md). Note for readers: file paths named below describe the repo as it was
+> at the time of writing; finished experiment scripts have since moved to
+> `ml/experiments/archive/` and retired modules to `ml/src/pixelproof/archive/`.
 
 Goal: build a model that decides whether a photo is **AI-generated** or a **real photograph**, starting with a small CNN and iterating toward stronger models, then serving it through the web app in this repo.
 

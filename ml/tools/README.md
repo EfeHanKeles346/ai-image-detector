@@ -1,8 +1,8 @@
 # Dataset tools
 
-Acquisition and auditing for the 255 GB of evaluation data described in `ROADMAP.md` §1c.
+Acquisition and auditing for the 255 GB of evaluation data described in `HISTORY.md` §1c.
 These live in the repo rather than beside the data, because the *auditing rule* is part of the
-method — see `ROADMAP.md` §1b for why.
+method — see `HISTORY.md` §1b for why.
 
 ## `audit_datasets.py`
 
@@ -42,7 +42,7 @@ not size: a dataset of 8,000 small files costs 8,000 API calls and will trigger 
 before a 260 GB dataset made of 188 large ones.
 
 **Known gap:** these download first and audit second. The right order is to pull one shard, audit
-it, and only then commit to the full download — recorded in `ROADMAP.md` §2b.8.
+it, and only then commit to the full download — recorded in `HISTORY.md` §2b.8.
 
 ## Paths
 

@@ -10,7 +10,7 @@
 # Five individually-clean sources merged into a pool that was not clean. E12
 # measured it: real photographs sat at a median of 1024px and AI images at
 # 300px — a 3.4x resolution gap between the classes. A native-resolution model
-# reads that as a shortcut (ROADMAP 1b), so it would separate the classes
+# reads that as a shortcut (HISTORY 1b), so it would separate the classes
 # without ever looking at generation traces. Band-balancing removes the gap,
 # and it costs ~40% of the rows.
 #
@@ -56,7 +56,7 @@
 #
 # longest_side()  One definition of "how big is this image", used everywhere.
 #                 Longest side rather than area, because it is what decides how
-#                 much a 224px pipeline has to downscale (ROADMAP 4b).
+#                 much a 224px pipeline has to downscale (HISTORY 4b).
 #
 # profile()     Per-class median / p10 / p90 and the class gap ratio. Printed
 #               before and after, so the effect of balancing is visible rather
@@ -150,7 +150,7 @@ def profile(rows: list[dict], title: str) -> float:
         return float("inf")
     gap = max(medians) / min(medians)
     print(f"  class resolution gap: {gap:.2f}x"
-          f"{'   <-- shortcut risk (ROADMAP 1b)' if gap > 2.0 else ''}")
+          f"{'   <-- shortcut risk (HISTORY 1b)' if gap > 2.0 else ''}")
     return gap
 
 

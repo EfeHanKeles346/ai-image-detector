@@ -3,9 +3,16 @@
 Research project that decides whether a photo is **AI-generated** or a **real photograph**, and —
 work in progress — **where** an image was manipulated.
 
-## Where the project stands (2026-07-30)
+## Where the project stands (2026-08-18)
 
-Four detectors, none of them blended, because blending was measured and did not help:
+**The strongest model is a ResNet-18 fine-tuned on 128px native tiles** (E20): Defactify AUC
+0.770 and 61.4% AI recall on the untouched evaluation half — the project's best numbers. It is
+deliberately **not** exposed as an API verdict, because a threshold fitted for a 10% false-positive
+budget reaches **96% false positives on the worst unseen camera source** (E20-v2). Ranking is
+solved; deciding is not. The plan for that lives in [`PLAN.md`](PLAN.md).
+
+The demo still serves the four earlier detectors, none of them blended, because blending was
+measured and did not help:
 
 | Method | What it does | Best at | Defactify AUC |
 |---|---|---|---|
@@ -14,7 +21,7 @@ Four detectors, none of them blended, because blending was measured and did not 
 | Statistics | 68 hand-crafted features over every pixel, no resizing | mid-size, low-texture | 0.717 |
 | **Tiles** | 6×6 grid of native 128px crops, mean of top 3 | **≥700px** | **0.948 on SDXL** |
 
-> ⚠️ **Read `ROADMAP.md` §12b before trusting any of these numbers.** Measuring the tile model's
+> ⚠️ **Read `HISTORY.md` §12b before trusting any of these numbers.** Measuring the tile model's
 > *operating point* rather than its AUC showed it calls **79% of real photographs "AI"** — and the
 > cause is a narrow real class, not calibration. Every detector here was partly learning "what my
 > training set's real photographs look like" instead of "what a generated image looks like".
@@ -29,14 +36,15 @@ Detection quality lined up almost perfectly with source resolution — 270px sco
 scored 0.670. The tile method dissolves the problem: the model always sees 128×128 native pixels,
 so resolution changes only *how many tiles* come out, never what a tile looks like.
 
-Full reasoning: [`ROADMAP.md`](ROADMAP.md) §4 and §9. Experiment log: [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md).
+Full reasoning: [`HISTORY.md`](HISTORY.md) §4 and §9. Experiment log: [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md).
 
 ## Documentation map
 
 | File | Read it when |
 |---|---|
+| [`PLAN.md`](PLAN.md) | You want to know what happens **next** — the only living planning document |
+| [`HISTORY.md`](HISTORY.md) | You want the full decision history (frozen) — the internship report's reference |
 | [`DATASETS.md`](DATASETS.md) | You need to know which data you may train on, and in which mode |
-| [`ROADMAP.md`](ROADMAP.md) | You want the decision history and the plan — the report's reference |
 | [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md) | You want one experiment's hypothesis, config, numbers and conclusion |
 | [`IMAGE_FORENSICS_REFERENCE.md`](IMAGE_FORENSICS_REFERENCE.md) | You need the field background — how images are generated, edited, and detected |
 | [`IMAGE_STRUCTURE_NOTES.md`](IMAGE_STRUCTURE_NOTES.md) | You need the technical basis for a feature-design decision |
@@ -44,13 +52,15 @@ Full reasoning: [`ROADMAP.md`](ROADMAP.md) §4 and §9. Experiment log: [`ml/EXP
 ## Layout
 
 ```text
-app/                     Web UI (Next.js)
-ml/configs/              Reproducible experiment configs
-ml/src/pixelproof/       Data, models, training, features, serving
-ml/experiments/          One script per numbered experiment (E7–E11)
-ml/tools/                Dataset acquisition + auditing
-ml/artifacts/            Trained weights (not committed)
-ml/artifacts/experiments/  Checkpoints kept as evidence for E4/E5
+app/                       Web UI (Next.js)
+ml/configs/                Reproducible experiment configs
+ml/src/pixelproof/         The live spine: data, models, training, features, protocol, serving
+ml/src/pixelproof/archive/ Retired modules, frozen (E2–E4 analysis, ELA, DINOv2 extraction)
+ml/experiments/            Runnable protocol scripts (e20, e21)
+ml/experiments/archive/    Finished evidence scripts (E7–E18), frozen
+ml/tools/                  Dataset acquisition + auditing
+ml/artifacts/              Trained weights (not committed)
+ml/artifacts/archive/      Superseded artifacts — moved aside, never deleted
 ```
 
 Label convention everywhere: `1 = AI-generated`, `0 = real`.
@@ -75,7 +85,7 @@ PYTHONPATH=src .venv/bin/python -m pixelproof.evaluate \
 # reproduce any experiment
 PYTHONPATH=src .venv/bin/python experiments/e11_tile_grid_search.py
 
-# audit a dataset BEFORE using it (see ROADMAP §1b — this rule was learned the hard way)
+# audit a dataset BEFORE using it (see HISTORY §1b — this rule was learned the hard way)
 .venv/bin/python tools/audit_datasets.py /path/to/dataset
 
 .venv/bin/python -m pytest
@@ -101,4 +111,4 @@ That heat-map is also the groundwork for Module 2.
 - **Module 2 — where was it manipulated?** Not built yet, but no longer hypothetical: the tile
   scorer already produces a per-region map, and a 78 GB compilation of 13 forensic datasets with
   **pixel-level ground-truth masks** is on disk, so localisation can be scored rather than argued
-  about. See `ROADMAP.md` §12.
+  about. See `HISTORY.md` §12.
