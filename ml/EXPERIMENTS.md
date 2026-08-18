@@ -719,3 +719,44 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   representation for the source-robust calibration work (PLAN items 2–3). B-Free remains queued
   as the second arm; the interesting question it answers is whether content-aligned training
   (its bias-free recipe) closes the NIST2016-style source gap that generator diversity did not.
+
+### E21b — B-Free, same protocol, 2026-08-19
+
+- **Config:** `--detector bfree`, official checkout `c6a9f898`, weights `BFREE_dino2reg4`
+  (MD5-verified against upstream), authors' native contract: five-crop mean at 504px, no
+  resize. Resumed 1,050 scores from the 08-06 partial run via the JSONL cache; ~19 min total
+  on MPS. Licence: informational/nonprofit — acknowledged on the CLI.
+- **Result — all three detector families side by side:**
+
+| metric | tile ResNet-18 (ours) | CF ViT-S | **B-Free** |
+|---|---|---|---|
+| Defactify evaluation AUC | 0.770 | 0.876 | **0.926** |
+| AI recall (untouched half) | 61.4% | 70.8% | **81.2%** |
+| Defactify FP at fitted threshold | 19.0% | **8.0%** | 11.0% |
+| forensic macro FP | 45.0% | 29.9% | **23.6%** |
+| **worst-source FP** | 96.0% (RealisticTampering) | 81.6% (NIST2016) | **96.8% (NIST2016)** |
+| DALL-E 3 recall / AUC | 10% / ≤0.36 | 23% / 0.627 | **68% / 0.867** |
+| Midjourney recall | 57% | **61%** | 39% |
+
+  B-Free per source: NIST2016 **96.8**, Columbia 31.1, VIPP 22.1, CMFD 18.8, CASIA 17.5,
+  IMD2020 16.5, Coverage 13.0, RealisticTampering 11.0, CocoGlide 8.5, DSO-1 1.0 (% FP).
+- **Three observations, one conclusion.**
+  1. **The gate stands against three independent training philosophies.** Our tiles, a ViT
+     trained on 4,803 generators, and content-aligned bias-free training all fail the same
+     test: at least one unseen camera pipeline above 81% FP. B-Free is the best model on
+     nearly every column and simultaneously the *worst* on the gate column. Cross-source
+     decision-making is a property of the task; no amount of representation shopping has
+     touched it. PLAN items 2–3 (source-balanced calibration, conformal abstention) are now
+     the only untested lever.
+  2. **B-Free largely solves the DALL-E 3 route** (68% recall, AUC 0.867, against our 10%
+     at chance) — E20 concluded small/compressed inputs "need a different route, not a
+     better tile model", and this is that route: content-aligned training plus native
+     five-crop inference reads compressed 270px images our whole pipeline could not.
+  3. **NIST2016 is the universal poison source** (96.8 / 81.6 / inverted in E17). Whatever
+     that pipeline does to its authentic images, every detector family reads it as
+     synthetic — worth one diagnostic look before any calibration work, since a single
+     source dominates every macro number.
+- **Decision:** B-Free replaces CF-ViT as the strongest external baseline; the CLIP probe
+  is dropped (a third frozen model cannot answer a question two have already answered).
+  Next experiment: source-robust decision rules on top of the two external score sets we
+  now hold — both JSONLs are cached, so calibration experiments cost seconds, not GPU time.

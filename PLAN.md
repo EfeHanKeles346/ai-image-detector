@@ -57,9 +57,13 @@ inpainting, and the only set separating spliced from fully-regenerated edits).
      ResNet on every column (AUC 0.876, recall 70.8%, macro FP 29.9%) and **still fails
      the gate: 81.6% worst-source FP.** Representation-shopping alone does not solve
      cross-source specificity; CF-ViT becomes the strongest baseline going forward.
-   - [ ] **B-Free** — the remaining question it answers: does content-aligned training
-     close the source gap that generator diversity (4,803 models) did not?
-   - [ ] CLIP linear probe, only if B-Free adds information.
+   - [x] **B-Free** *(run 2026-08-19, see E21b)* — best on nearly every column (AUC
+     0.926, recall 81.2%, macro FP 23.6%, and it rescues DALL-E 3: 68% recall) yet
+     **worst on the gate: 96.8% FP on NIST2016.** Content-aligned training did not close
+     the source gap either. Three training philosophies, one shared failure.
+   - ~~CLIP linear probe~~ — dropped; a third frozen model cannot answer a question two
+     have already answered. Both external score JSONLs are cached, so all further
+     calibration experiments on them cost seconds.
 2. **Stay-Positive constraint on our own tile ResNet-18** *(minutes of training)* —
    freeze the backbone, retrain the final layer under non-negative weights, re-run E20-v2.
    The claim under test: worst-source FP drops without giving back AI recall.
