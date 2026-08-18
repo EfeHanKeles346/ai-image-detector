@@ -34,7 +34,7 @@ import numpy as np
 from PIL import Image
 from sklearn.metrics import roc_auc_score
 
-from pixelproof.ela import ela_map
+from pixelproof.archive.ela import ela_map
 from pixelproof.features import extract_tiles, tile_positions
 
 warnings.filterwarnings("ignore")
