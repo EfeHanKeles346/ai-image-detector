@@ -50,12 +50,16 @@ inpainting, and the only set separating spliced from fully-regenerated edits).
 
 ## Next, in order
 
-1. **External baselines through our protocol** *(no training)* — in cost order:
-   **Community-Forensics ViT-S first** (single HF checkpoint, ~86 MB), then **B-Free**
-   (`e21_external_detector_benchmark.py` was built for it), then CLIP. Every arm goes
-   through the same E20-v2 evaluator: disjoint calibration/evaluation halves, threshold
-   transferred to ten forensic real sources, macro + worst-source FP as headline columns.
-   If none fixes cross-source specificity, that is a finding worth reporting.
+1. **External baselines through our protocol** *(no training)* — every arm through the
+   same E20-v2 evaluator: disjoint calibration/evaluation halves, threshold transferred to
+   ten forensic real sources, macro + worst-source FP as headline columns.
+   - [x] **Community-Forensics ViT-S** *(run 2026-08-19, see E21)* — beats our tile
+     ResNet on every column (AUC 0.876, recall 70.8%, macro FP 29.9%) and **still fails
+     the gate: 81.6% worst-source FP.** Representation-shopping alone does not solve
+     cross-source specificity; CF-ViT becomes the strongest baseline going forward.
+   - [ ] **B-Free** — the remaining question it answers: does content-aligned training
+     close the source gap that generator diversity (4,803 models) did not?
+   - [ ] CLIP linear probe, only if B-Free adds information.
 2. **Stay-Positive constraint on our own tile ResNet-18** *(minutes of training)* —
    freeze the backbone, retrain the final layer under non-negative weights, re-run E20-v2.
    The claim under test: worst-source FP drops without giving back AI recall.

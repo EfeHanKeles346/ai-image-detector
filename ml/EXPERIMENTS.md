@@ -678,3 +678,44 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   --seeds 3 --arms stats resnet18 small_cnn \
   --raw-dir artifacts/e20/raw_scores --results artifacts/e20/results.json
 ```
+
+## 2026-08-19 — E21: the strongest frozen external detector, on our protocol
+
+- **Hypothesis (pre-registered in PLAN.md):** if any frozen external detector passes the
+  cross-source specificity gate our own models fail (E20-v2: 45% macro / 96% worst-source FP),
+  buying a representation is cheaper than fixing ours. First candidate: the **Community-Forensics
+  ViT-S** (Park & Owens, CVPR 2025, MIT) — first on 8 of 12 datasets in the 23-detector
+  out-of-the-box benchmark (arXiv 2602.07814).
+- **Config:** `e21_external_detector_benchmark.py --detector community-forensics`, checkpoint
+  `275ba982236ddd6a…` exactly as published (authors' processor: shortest edge 440, centre-crop
+  384, CLIP normalisation — whole image, no tiling). E20-v2 protocol unchanged: threshold fitted
+  for 10% FP on the Defactify real **calibration half only**, everything measured on untouched
+  halves; the same threshold transferred to ten forensic real sources. 3,056 images, 111 s on MPS.
+- **Result — against our best model (E20-v2 tile ResNet-18 checkpoint, selected top-3):**
+
+| metric | tile ResNet-18 (ours) | **CF ViT-S (frozen)** |
+|---|---|---|
+| Defactify evaluation AUC | 0.770 | **0.876** |
+| AI recall (untouched half) | 61.4% | **70.8%** |
+| Defactify FP at the fitted threshold | 19.0% | **8.0% — the budget holds** |
+| forensic macro FP | 45.0% | **29.9%** |
+| worst-source FP | 96.0% (RealisticTampering) | **81.6% (NIST2016)** |
+| DALL-E 3 recall | 10% | 23% (AUC 0.627) |
+| GenImage AUC | 0.783 | 0.997 |
+
+  Per forensic source: NIST2016 81.6, Columbia 48.6, CASIA2.0 32.0, VIPP 29.4, CocoGlide 24.0,
+  Coverage 24.0, IMD2020 19.5, CMFD 18.8, RealisticTampering 18.5, DSO-1 3.0 (% FP).
+- **Read with one caveat.** Community-Forensics trains its real class on FFHQ, VISION, COCO and
+  Landscapes HQ — and Defactify's real half **is** MS-COCO. Its clean 8% Defactify FP is therefore
+  partly an in-distribution number. The forensic sources are unseen camera pipelines for both
+  models, so the 29.9% / 81.6% columns are the honest cross-source comparison — and they are also
+  the gate.
+- **Conclusion — better everywhere, and still not deployable.** A frozen detector trained on
+  4,803 generators beats our tile ResNet on every headline column, holds its FP budget on its
+  evaluation domain, and *still* calls 82% of one unseen camera source's real photographs "AI".
+  Two consequences: (1) representation-shopping alone does not pass the gate — the cross-source
+  decision problem is a property of the task, not of our model, which is exactly what E14
+  predicted; (2) CF-ViT is now the strongest baseline in the project and the candidate
+  representation for the source-robust calibration work (PLAN items 2–3). B-Free remains queued
+  as the second arm; the interesting question it answers is whether content-aligned training
+  (its bias-free recipe) closes the NIST2016-style source gap that generator diversity did not.
