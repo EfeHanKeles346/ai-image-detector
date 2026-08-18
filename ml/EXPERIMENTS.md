@@ -760,3 +760,64 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   is dropped (a third frozen model cannot answer a question two have already answered).
   Next experiment: source-robust decision rules on top of the two external score sets we
   now hold — both JSONLs are cached, so calibration experiments cost seconds, not GPU time.
+
+## 2026-08-19 — E22: source-robust calibration — the decision layer, measured
+
+- **Hypotheses (pre-registered in the script header):** H1 — NIST2016's universal failure
+  has a measurable pipeline explanation. H2 — a threshold calibrated on many real pipelines
+  transfers to an unseen pipeline far better than the Defactify-only threshold, at a
+  measurable recall cost; the worst-source (max-over-pipelines) rule is the only one with a
+  chance of holding the budget. H3 — a two-threshold abstention band turns an undeployable
+  single threshold into a deployable partial decision.
+- **Config:** `e22_source_robust_calibration.py`, entirely on the cached per-image scores of
+  three arms (tile ResNet-18 top-3, CF ViT-S, B-Free) over the identical 3,056 images;
+  same deterministic path-hash splits as E20-v2/E21 (seed 2026, fraction 0.5); FP budget 10%,
+  miss budget 10%. A full run costs ~2 s — no model is loaded.
+- **H1 confirmed — NIST2016 is the 12-megapixel source.** Median 12.19 Mpx against 0.07–3.15
+  for every other pipeline, at the lowest bytes/pixel of the forensic set (0.67). Both
+  external models score it far above their other real sources (B-Free median −0.74 vs
+  −3.5…−5.0). A second gap surfaced in passing: Defactify reals sit at 0.16 B/px while every
+  forensic source sits at 1.1–1.9 — the calibration domain is heavily compressed, the
+  transfer domain is not. E12's compression gap, reappearing at the decision layer.
+- **H2 — leave-one-source-out, held-out pipelines only:**
+
+| arm · rule | worst FP | macro FP | macro recall |
+|---|---|---|---|
+| tile ResNet-18 · defactify-only | 99.0% | 45.9% | 61.4% |
+| tile ResNet-18 · worst-source | 12.0% | 1.2% | **1.2%** |
+| CF ViT-S · defactify-only | 74.6% | 28.7% | 70.8% |
+| **CF ViT-S · worst-source** | **6.6%** | **1.3%** | **28.4%** |
+| B-Free · defactify-only | 96.8% | 25.0% | 81.2% |
+| B-Free · worst-source | 44.4% (NIST2016; all others ≤5.0%) | 6.0% | 65.5% |
+
+  **CF ViT-S under the worst-source rule is the first operating point in this project's
+  history that passes the gate on genuinely unseen pipelines** — worst held-out FP 6.6%
+  (Columbia), NIST2016 held out included (3.2%) — at 28.4% macro recall (sd21 67.5%,
+  sdxl 42.8%, sd3 22.3%, midjourney 7.2%, dalle3 2.0%). B-Free passes on ten of eleven
+  pipelines with far better recall (65.5%) but its NIST2016 shift is so large that no
+  other source's calibration anticipates it. Our tile ResNet is **not salvageable by
+  calibration**: a source-robust threshold leaves 1.2% recall — its scores are not
+  source-invariant, full stop.
+- **H3 — the abstention band (t_ai worst-source over all 11 pipelines' calibration halves;
+  t_real at 10% miss on generator calibration halves; evaluation halves only):**
+
+| arm | worst real FP | macro real FP | AI recall | AI abstain | AI wrongly-real |
+|---|---|---|---|---|---|
+| tile ResNet-18 | 8.0% | 0.8% | 1.2% | 90.2% | 8.6% |
+| CF ViT-S | 6.6% | 1.3% | 28.0% | 59.0% | 13.0% |
+| **B-Free** | **7.9%** | **2.7%** | **65.2%** | **21.2%** | 13.6% |
+
+  The band does exactly what it exists for: NIST2016 lands at **92.1% abstain / 7.9% FP /
+  0% "real"** — the model's confusion is routed to "insufficient evidence" instead of a
+  false accusation. On the AI side the SD family is essentially solved (93–100% recall, 0%
+  wrongly-real); the honest weakness is midjourney (9% recall, 40% actively called real).
+- **Conclusion — the decision layer is solvable, and the lever is the pipeline library.**
+  Two deployable stories now exist: (a) for *unseen* pipelines, CF ViT-S + worst-source
+  calibration holds a ≤10% budget at 28% recall; (b) when every deployment pipeline family
+  can contribute ~100 calibration images (no retraining, threshold-only), B-Free's band
+  reaches 65% recall at ≤8% FP everywhere with a 21% abstention rate. What E13 called "no
+  usable operating point" was true of the model *and* of a one-source decision rule; with
+  the rule fixed, the frozen representations clear the bar the representations alone could
+  not. Caveats: one deterministic split (34–100 evaluation images per source), thresholds
+  are per-arm score-scale specific, and the Defactify-vs-forensics compression gap means
+  part of every defactify-only failure is compression, not source identity.

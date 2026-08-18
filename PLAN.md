@@ -64,17 +64,25 @@ inpainting, and the only set separating spliced from fully-regenerated edits).
    - ~~CLIP linear probe~~ — dropped; a third frozen model cannot answer a question two
      have already answered. Both external score JSONLs are cached, so all further
      calibration experiments on them cost seconds.
-2. **Stay-Positive constraint on our own tile ResNet-18** *(minutes of training)* —
-   freeze the backbone, retrain the final layer under non-negative weights, re-run E20-v2.
-   The claim under test: worst-source FP drops without giving back AI recall.
-3. **Source-robust decision rule** — source-balanced real calibration, and the
-   "insufficient evidence" band built as conformal abstention rather than a pixel floor.
-   Only pay for a three-seed retrain once a configuration passes the cross-source gate.
+2. ~~Stay-Positive constraint on our tile ResNet-18~~ — **mooted by E22**: under any
+   source-robust threshold our model keeps 1.2% recall; its scores are not
+   source-invariant, and a last-layer constraint cannot repair that. Recorded, not run.
+3. **Source-robust decision rule** — ✅ **measured 2026-08-19, see E22.** Two deployable
+   operating points now exist: CF ViT-S + worst-source calibration passes the gate on
+   *unseen* pipelines (worst held-out FP 6.6%, 28.4% recall); B-Free's abstention band
+   reaches **65% recall at ≤8% FP on all eleven pipelines** with 21% abstention, when each
+   pipeline family contributes ~100 calibration images (threshold-only, no retraining).
+   Remaining sub-items: grow the real-pipeline calibration library (Phase 4.1 personal
+   photos as a fresh unseen-pipeline test), and a midjourney diagnostic (40% of it is
+   actively called "real" by the band).
 4. **Data work** — compression augmentation (JPEG q30–q95; the E12 debt), a compressed
    copy of every test set (q50 + 75% resize, the literature's social-media standard), and
    optionally a B-Free-style content-aligned pool built from our own real photographs.
-5. **Report + demo polish** — the internship report writes itself from HISTORY.md +
-   EXPERIMENTS.md; the demo stays as-is until 1–4 change what it should say.
+   E22's H1 adds urgency: the calibration domain sits at 0.16 B/px, the transfer domain at
+   1.1–1.9 — the compression axis is now measurably entangled with the decision layer.
+5. **Report + demo polish** — the report's arc is now complete (data → representation →
+   decision, each measured); the demo could honestly ship the B-Free band as its verdict
+   layer, licence permitting, or stay research-only.
 
 Survey sources: [out-of-the-box benchmark](https://arxiv.org/html/2602.07814v1) ·
 [Stay-Positive](https://arxiv.org/html/2502.07778v1) ·
