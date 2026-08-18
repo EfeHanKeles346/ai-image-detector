@@ -92,6 +92,36 @@ Survey sources: [out-of-the-box benchmark](https://arxiv.org/html/2602.07814v1) 
 [TGIF2](https://www.emergentmind.com/papers/2603.28613) ·
 [NTIRE 2026 challenge](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/papers/Gushchin_NTIRE_2026_Challenge_on_Robust_AI-Generated_Image_Detection_in_the_CVPRW_2026_paper.pdf)
 
+## Execution checklist — decision-layer hardening (queued 2026-08-19, start 08-20)
+
+Every item was pre-flight-checked on 2026-08-19: cached score files present (e20 raw ×3,
+e21 ×2, e22 results), NIST2016/auth holds 250 originals, B-Free checkout + MD5-verified
+weights under `ml/external/`, CF-ViT checkpoint in the HF cache, `e20 --seeds 3 --arms
+resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing dependency.
+
+- [ ] **E23a — Midjourney diagnostic** *(cached scores only, ~1 h)*. Why does the band
+      call 40% of Midjourney "real"? Correlate scores with size/compression; test an
+      asymmetric band (restrict or drop `t_real`) and price the fix in lost "real"
+      verdicts on authentic sources.
+- [ ] **E23b — megapixel policy** *(~½ day; ~10 min of rescoring)*. Rescore NIST2016
+      authentics with the long side capped at 2048 px through B-Free and CF-ViT. If the
+      poison source comes back into line, adopt "cap before scoring" as an input policy
+      and re-run the E22 band with it.
+- [ ] **E23c — the compression column** *(~½ day; ~25 min of rescoring; ~1–2 GB)*.
+      q50 + 75%-resize copies of the 3,056 scored images, rescore both external arms,
+      repeat E22's LOSO + band on the degraded column. The question: does the band
+      survive internet conditions? (The E12 debt, now entangled with the decision layer.)
+- [ ] **E22 bootstrap CIs + E20 three-seed run** *(CIs are seconds; the run is overnight —
+      write results to `results_3seed.json`, never over the existing `results.json`)*.
+- [ ] **E24 — the library promise** *(blocked on input: ~100–200 personal phone photos in
+      a folder, e.g. `~/Desktop/kisisel_fotograflar`)*. First measure them as a truly
+      unseen 12th pipeline against the worst-source threshold; then add them to the
+      calibration library and measure the improvement. Photos never enter the repo; only
+      their scores are kept.
+- [ ] **Demo integration** *(after E23a–c so the band is integrated once, in its final
+      form)*. CF-ViT (MIT) + the band as the served verdict: AI / insufficient evidence /
+      real. B-Free stays research-only (nonprofit licence).
+
 ## Standing rules (unchanged)
 
 - Headline metric = AI recall at a fixed FP budget on **unseen real sources**; AUC is
