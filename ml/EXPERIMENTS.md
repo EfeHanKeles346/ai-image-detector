@@ -821,3 +821,38 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   not. Caveats: one deterministic split (34–100 evaluation images per source), thresholds
   are per-arm score-scale specific, and the Defactify-vs-forensics compression gap means
   part of every defactify-only failure is compression, not source identity.
+
+## 2026-08-19 — E23a: the Midjourney wrongly-real diagnostic, and the price of the "real" verdict
+
+- **Hypotheses (pre-registered in the script header):** H1 — the 40% of Midjourney that the
+  B-Free band actively calls "real" is a measurable subgroup (resolution or compression).
+  H2 — tightening the miss budget converts wrongly-real into abstention at a measurable
+  cost in authentic "real" coverage; the frontier decides whether an asymmetric band is
+  worth it. Cached scores only; ~2 s.
+- **H1 refuted, informatively.** The wrongly-real Midjourney images are *not* a subgroup:
+  same long side (436px) and same bytes/pixel (0.12) as the caught ones. The whole
+  generator's score distribution simply sits near the reals in B-Free's space (MJ median
+  −2.7 vs real −5.0, while the SD family sits at +5.2…+8.0). B-Free trains on SD-family
+  reconstructions; Midjourney's artefacts are the furthest from that family, and the 39%
+  recall of E21b is the same fact from the other side. CF-ViT separates MJ better (−5.9 vs
+  real −11.3; only 10% wrongly-real) — the arms' blind spots differ, as in E8/E9.
+- **H2 — the frontier (B-Free arm; AI recall stays 65.2% throughout, t_ai untouched):**
+
+| miss budget | MJ wrongly-real | macro AI wrongly-real | macro real coverage | min real coverage |
+|---|---|---|---|---|
+| 10% | 40.0% | 13.6% | 66.0% | **0.0%** |
+| 5% | 25.0% | 7.8% | 51.1% | **0.0%** |
+| 2% | 10.0% | 2.8% | 27.4% | **0.0%** |
+| none | 0.0% | 0.0% | 0.0% | 0.0% |
+
+- **The decisive column is the last one: at every budget, at least one authentic pipeline
+  (NIST2016) gets 0% "real" coverage.** The "real" verdict was never a consistent promise —
+  it is generous on friendly pipelines and silent on hostile ones, and it is the only
+  verdict through which AI content can be actively laundered ("a detector said this is
+  real").
+- **Decision: the band becomes asymmetric.** Two verdicts — "AI" (above the worst-source
+  threshold) and "insufficient evidence" (below it). No "real" verdict: the honest phrasing
+  is "no AI evidence found", which is not a certificate of authenticity. This costs nothing
+  measurable (AI recall unchanged, FP unchanged) and removes the band's only
+  laundering-capable output. If a product context ever demands a "leaning real" signal, the
+  2% miss budget is the recorded compromise (2.8% macro wrongly-real, 27% coverage).

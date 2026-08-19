@@ -99,10 +99,12 @@ e21 ×2, e22 results), NIST2016/auth holds 250 originals, B-Free checkout + MD5-
 weights under `ml/external/`, CF-ViT checkpoint in the HF cache, `e20 --seeds 3 --arms
 resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing dependency.
 
-- [ ] **E23a — Midjourney diagnostic** *(cached scores only, ~1 h)*. Why does the band
-      call 40% of Midjourney "real"? Correlate scores with size/compression; test an
-      asymmetric band (restrict or drop `t_real`) and price the fix in lost "real"
-      verdicts on authentic sources.
+- [x] **E23a — Midjourney diagnostic** *(done 2026-08-19, see E23a)*. Not a subgroup —
+      Midjourney's whole distribution sits near the reals in B-Free's space (its training
+      is SD-family reconstructions). And the "real" verdict was never consistent: NIST2016
+      gets 0% "real" coverage at every miss budget. **Decision: asymmetric band** — verdicts
+      are "AI" / "insufficient evidence" only; wrongly-real drops from 13.6% to 0% at zero
+      cost to recall or FP.
 - [ ] **E23b — megapixel policy** *(~½ day; ~10 min of rescoring)*. Rescore NIST2016
       authentics with the long side capped at 2048 px through B-Free and CF-ViT. If the
       poison source comes back into line, adopt "cap before scoring" as an input policy
