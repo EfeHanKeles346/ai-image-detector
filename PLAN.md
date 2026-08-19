@@ -105,10 +105,11 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
       gets 0% "real" coverage at every miss budget. **Decision: asymmetric band** — verdicts
       are "AI" / "insufficient evidence" only; wrongly-real drops from 13.6% to 0% at zero
       cost to recall or FP.
-- [ ] **E23b — megapixel policy** *(~½ day; ~10 min of rescoring)*. Rescore NIST2016
-      authentics with the long side capped at 2048 px through B-Free and CF-ViT. If the
-      poison source comes back into line, adopt "cap before scoring" as an input policy
-      and re-run the E22 band with it.
+- [x] **E23b — megapixel policy** *(done 2026-08-19, see E23b)*. The cap rescues the
+      last failing pipeline: NIST2016 under a truly-unseen LOSO threshold drops 35.2% →
+      **8.8% FP — under budget.** Policy adopted for the B-Free arm (no-op for CF, whose
+      preprocessing already shrinks). **The B-Free band now passes the gate on all eleven
+      pipelines at ~65% recall — the project's best deployable configuration.**
 - [ ] **E23c — the compression column** *(~½ day; ~25 min of rescoring; ~1–2 GB)*.
       q50 + 75%-resize copies of the 3,056 scored images, rescore both external arms,
       repeat E22's LOSO + band on the degraded column. The question: does the band

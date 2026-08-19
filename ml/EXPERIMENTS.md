@@ -898,3 +898,37 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   "insufficient evidence" verdict is exactly what it returns there (92–94% of GPT Image
   gets no verdict rather than a false "real"). Detecting the autoregressive family needs a
   representation trained on it; that is a data acquisition item, not a calibration one.
+
+## 2026-08-19 — E23b: the megapixel cap — the last failing pipeline passes
+
+- **Hypotheses (pre-registered):** H1 — capping NIST2016's long side to 2048px moves its
+  authentic scores toward the other forensic sources for both arms. H2 — under frozen
+  thresholds, capped NIST2016 falls to a passing FP rate, making "cap before scoring" an
+  input policy like the 48px floor.
+- **Config:** lossless capped copies (PNG, LANCZOS) of exactly the 125 NIST2016 images the
+  E21 runs scored — per-image before/after pairs, not population comparison. Both arms.
+- **Result:**
+
+| arm | median before → after | FP @ deployed t_ai | FP @ LOSO t_ai (NIST unseen) |
+|---|---|---|---|
+| CF ViT-S | −3.84 → −3.80 (no change) | 6.4% → 7.2% | — |
+| **B-Free** | −0.74 → **−1.36** | 8.8% → **1.6%** | **35.2% → 8.8% — passes** |
+
+- **H1 refuted for CF, and the refutation is mechanical:** CF's own preprocessing already
+  shrinks every input (shortest edge 440), so a pre-cap is a no-op — its NIST elevation is
+  about the pipeline's content, not resolution handling. **H1/H2 confirmed for B-Free**,
+  and the mechanism is equally mechanical: five 504px crops of a 12 Mpx frame see ~2% of
+  it; capped to 2048, the same five crops see ~30% and the score distribution drops toward
+  the other authentic sources.
+- **The decisive number is the LOSO one.** With NIST2016 held out of calibration entirely
+  (the truly-unseen scenario that was E22's only B-Free failure at 44.4% on the evaluation
+  half / 35.2% on all 125), capped scoring brings it to **8.8% — under the 10% budget.**
+  Every other pipeline was already ≤5.0%. **The B-Free band now passes the cross-source
+  gate on all eleven pipelines at ~65% recall** — up from CF's 28.4%, the best deployable
+  configuration the project has produced.
+- **Policy adopted, with its cost stated:** long side >2048px → downscale before scoring
+  (B-Free arm; harmless no-op for CF). The trade: E7 taught that downscaling erases
+  generation evidence, so a hypothetical >2048px *synthetic* image becomes harder to catch
+  — the policy exchanges megapixel-AI detectability (rare; GPT-4K class output is already
+  at chance) for megapixel-real protection (measured, was the worst failure mode). Recorded
+  so the exchange is a decision, not an accident.
