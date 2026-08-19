@@ -932,3 +932,28 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   — the policy exchanges megapixel-AI detectability (rare; GPT-4K class output is already
   at chance) for megapixel-real protection (measured, was the worst failure mode). Recorded
   so the exchange is a decision, not an accident.
+
+## 2026-08-19 — E22b: bootstrap intervals for the band's headline numbers
+
+- **Motivation:** every band number so far comes from one deterministic split with 34–100
+  evaluation images per source. Before any of them reaches the report they need honest
+  uncertainty. Full-pipeline bootstrap (2,000 replicates): every population's calibration
+  *and* evaluation half resampled, the worst-source threshold refit per replicate.
+- **Result (point · 95% interval):**
+
+| config | worst-source FP | macro FP | macro recall |
+|---|---|---|---|
+| CF ViT-S | 6.6% [2.0 … 13.2] | 1.3% [0.3 … 2.4] | 28.0% [17.8 … 34.2] |
+| B-Free (no cap) | 7.9% [3.0 … **31.7**] | 2.7% [0.8 … 6.0] | 65.2% [60.6 … 68.6] |
+| **B-Free + cap (deployed)** | 7.9% [4.0 … 15.9] | 4.0% [0.8 … 5.4] | **69.0%** [61.4 … 71.2] |
+
+- **Two honest readings.** (1) The point estimates pass the 10% budget; the 95% upper
+  bounds do not (13–16%). With ~50-image calibration halves per source this is expected
+  arithmetic, not a method failure — the fix is more calibration data per pipeline, which
+  is exactly what E24 grows. (2) The cap does more than rescue NIST: by lowering NIST's
+  calibration cut it lowers the deployed threshold itself, and recall rises 65.2% → 69.0%
+  for free. It also cuts the worst-FP upper tail in half (31.7 → 15.9) — the megapixel
+  pipeline was the band's variance problem too.
+- **Report rule adopted:** headline band numbers are quoted with their intervals from
+  here on; a guarantee claimed at 95% confidence needs the interval, not the point, under
+  the budget.
