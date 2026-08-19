@@ -856,3 +856,45 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   measurable (AI recall unchanged, FP unchanged) and removes the band's only
   laundering-capable output. If a product context ever demands a "leaning real" signal, the
   2% miss budget is the recorded compromise (2.8% macro wrongly-real, 27% coverage).
+
+## 2026-08-19 — E25: the 2026-generator probe — five never-used SSD sources meet the band
+
+- **Hypotheses (pre-registered in the script header):** H1 — recall varies by generator
+  *family*: diffusion-family generators should be caught, native multimodal ones (GPT
+  Image, Nano Banana) are the risk. H2 — julienlucas' real half is an honest 12th
+  unseen-pipeline test for the frozen worst-source thresholds.
+- **Config:** 200 images per source, stride-sampled and written as raw bytes (no
+  re-encode) from five never-used SSD sets; julienlucas' inverted label direction
+  (`0=fake`) declared and verified against parquet metadata — the E19b guard, firing on
+  the first new dataset since it was written. Both external arms, frozen t_ai from E22/E23a
+  (asymmetric band). ~13 min total.
+- **Result (AI verdict % at frozen t_ai · AUC vs julienlucas reals):**
+
+| source (2025–26 era) | CF ViT-S | B-Free |
+|---|---|---|
+| julienlucas real half — **FP** | **0.5%** | **6.0%** |
+| julienlucas AI (MJ/DALL-E/SD/NBP mix) | 22.5% · 0.780 | 60.5% · 0.794 |
+| FLUX.1-dev | 43.5% · 0.927 | 48.0% · 0.836 |
+| Nano Banana (Gemini 2.5 Flash Image) | 46.0% · **0.940** | 39.0% · 0.802 |
+| Nano Banana Pro | 23.0% · 0.869 | 51.5% · 0.848 |
+| **GPT Image 4K** | 6.0% · 0.695 | 8.0% · **0.478 — chance** |
+
+- **H2 confirmed, and it is the headline: the worst-source thresholds held on a genuinely
+  fresh 2026-era real pipeline they had never seen.** 0.5% / 6.0% FP with no recalibration
+  is the strongest evidence yet that E22's decision rule, not luck, passes the gate. (E24's
+  personal-photo test remains queued as the second fresh pipeline.)
+- **H1 confirmed with one surprise.** GPT Image 4K is the blind spot — 6–8% recall, and
+  for B-Free literally chance-level ranking (0.478): an autoregressive/native-multimodal
+  generator leaves none of the traces either detector reads. The literature's "18–30% on
+  commercial 2026 APIs" is our measurement too. The surprise is Nano Banana: also a native
+  multimodal stack, yet well-ranked (0.940 CF) — "native multimodal" is not one family
+  forensically.
+- **Caveats.** The AUC column pairs each AI set against julienlucas' reals — a
+  cross-collection comparison that can carry format/pipeline bias; the frozen-threshold
+  verdict rates are the cleaner claim. julienlucas' AI half is a pooled mix with no
+  per-generator column. Single split, 200 images per cell.
+- **Consequence.** The band ships with a known coverage statement: strong on
+  diffusion-family output, honest abstention on GPT-Image-class output — and the
+  "insufficient evidence" verdict is exactly what it returns there (92–94% of GPT Image
+  gets no verdict rather than a false "real"). Detecting the autoregressive family needs a
+  representation trained on it; that is a data acquisition item, not a calibration one.
