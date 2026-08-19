@@ -957,3 +957,41 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
 - **Report rule adopted:** headline band numbers are quoted with their intervals from
   here on; a guarantee claimed at 95% confidence needs the interval, not the point, under
   the budget.
+
+## 2026-08-19 — E23c: the compression column — the E12 debt, paid at the decision layer
+
+- **Hypotheses (pre-registered):** H1 — degradation (resize 75% + 2048 cap + JPEG q50, the
+  literature's social-media standard) hurts AI recall more than authentic FP: the band
+  should fail SAFE. H2 — thresholds are compression-domain-specific; refitting on degraded
+  calibration halves recovers the budget.
+- **Config:** degraded copies of all 3,056 scored images; halves inherited from original
+  paths so clean and degraded columns compare the same images. Both arms; ~35 min.
+- **Result (worst FP · macro FP · macro recall on evaluation halves):**
+
+| arm · scenario | worst FP | macro FP | recall | AUC (Defactify) |
+|---|---|---|---|---|
+| CF · clean reference | 6.6% | 1.3% | 28.0% | 0.882 |
+| CF · degraded, frozen threshold | **0.0%** | 0.0% | 12.4% | 0.869 |
+| CF · degraded, refit | 5.0% | 1.2% | 25.0% | — |
+| B-Free · clean reference | 7.9% | 2.7% | 65.2% | 0.930 |
+| B-Free · degraded, frozen threshold | **41.3% (NIST2016)** | 9.9% | 53.8% | 0.827 |
+| B-Free · degraded, refit | 8.0% | 2.8% | 42.8% | — |
+
+- **H1 split by arm, and the split matters.** CF fails safe exactly as predicted —
+  degradation lowers all its scores, the frozen threshold turns ultra-conservative, FP
+  goes to zero. **B-Free fails dangerous on the megapixel source:** q50 blocking pushes
+  authentic NIST scores *up* toward "generated", and the frozen threshold accuses 41% of
+  them. A compressed real photograph from the wrong pipeline is the risk case, not the
+  compressed fake.
+- **H2 confirmed for both.** Refitting on degraded calibration halves restores the budget
+  (worst 5.0% / 8.0%) at a recall price: CF barely pays (28.0 → 25.0), B-Free pays a
+  third of its recall (65.2 → 42.8). Ranking degrades likewise (0.930 → 0.827) — E12's
+  compression gap, now measured end-to-end at the decision layer.
+- **Design caveat:** the clean reference threshold here is fitted without the E23b cap, so
+  the frozen-threshold row conflates two changes for NIST; the refit row is the clean
+  claim. Single split; the E22b interval rule applies.
+- **Serving consequence.** Compression regime must be part of the serving contract: bytes
+  per pixel is already recorded per request, so route to a compression-matched threshold
+  (clean-domain band: 69% recall; degraded-domain band: 43%) rather than pretending one
+  threshold spans both. CF's robustness earns it the fallback role for heavily compressed
+  input — the two arms now have complementary, *measured* domains.

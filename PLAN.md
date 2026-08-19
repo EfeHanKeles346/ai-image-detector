@@ -110,7 +110,7 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
       **8.8% FP — under budget.** Policy adopted for the B-Free arm (no-op for CF, whose
       preprocessing already shrinks). **The B-Free band now passes the gate on all eleven
       pipelines at ~65% recall — the project's best deployable configuration.**
-- [ ] **E23c — the compression column** *(~½ day; ~25 min of rescoring; ~1–2 GB)*.
+- [x] **E23c — the compression column** *(done 2026-08-19, see E23c)*. Compression is a threshold domain: CF fails safe under q50 degradation, B-Free fails dangerous on megapixel reals (41% FP frozen) and refit restores the budget at 42.8% recall. Serving contract gains compression-regime routing.
       q50 + 75%-resize copies of the 3,056 scored images, rescore both external arms,
       repeat E22's LOSO + band on the degraded column. The question: does the band
       survive internet conditions? (The E12 debt, now entangled with the decision layer.)
