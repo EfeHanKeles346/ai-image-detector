@@ -129,6 +129,9 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
       12-pipeline thresholds with experiment provenance in every response. CF-ViT (MIT)
       always on; B-Free loads only behind `PIXELPROOF_BFREE=1` (nonprofit licence).
       Dead stats2/3 options removed from API and UI; verified end-to-end in the browser.
+      **E26 addendum:** verdict rule is now OR over arms (a blind primary cannot veto a
+      seeing one — budget unchanged at 9.7%, FLUX 64.5%, the missed ChatGPT upload caught);
+      the UI shows exactly one verdict, with the research signal demoted and labelled.
 
 ## Standing rules (unchanged)
 

@@ -71,6 +71,19 @@ def decide(score: float, threshold: float) -> str:
     return "ai" if score >= threshold else "insufficient"
 
 
+def combine(bands: dict[str, str]) -> tuple[str, list[str]]:
+    """E26 — the OR rule: any arm above its own worst-source threshold decides.
+
+    Measured on every cached score set (2026-08-20): the arms' false positives
+    live on different sources, so the union stays at 9.7% worst-source FP
+    (unchanged) while recall rises everywhere the arms disagree — Midjourney
+    7%→14%, FLUX 38%→64.5%, and the GPT-family images B-Free is blind to are
+    caught by CF. A single primary arm was discarding correct votes.
+    """
+    triggered = [name for name, band in bands.items() if band == "ai"]
+    return ("ai" if triggered else "insufficient"), triggered
+
+
 class CommunityForensicsArm:
     name = "cf_vit"
     label = "Community-Forensics ViT-S"
@@ -179,12 +192,13 @@ class VerdictService:
         if bytes_per_pixel <= COMPRESSED_BPP:
             caveats.append("sikistirilmis-girdi")    # E23c degraded regime
 
+        label, triggered = combine({n: a["band"] for n, a in arms.items()})
         return {
-            "label": arms[self.primary.name]["band"],
-            "primary": self.primary.name,
+            "label": label,
+            "triggered_by": triggered,
             "arms": arms,
             "caveats": caveats,
             "bytes_per_pixel": round(bytes_per_pixel, 3),
             "provenance": "eşikler: 12 kaynaklı kalibrasyon kütüphanesi, "
-                          "worst-source kuralı (E22/E23/E24)",
+                          "worst-source + OR kuralı (E22/E23/E24/E26)",
         }

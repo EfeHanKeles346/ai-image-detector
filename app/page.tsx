@@ -9,7 +9,7 @@ type TileMap = { p_ai: number; tiles: Tile[]; tile_px: number; image_w: number; 
 type DecisionArm = { label: string; score: number; threshold: number; band: "ai" | "insufficient" };
 type Decision = {
   label: "ai" | "insufficient";
-  primary: string;
+  triggered_by: string[];
   arms: Record<string, DecisionArm>;
   caveats: string[];
   bytes_per_pixel: number;
@@ -44,10 +44,10 @@ const METHODS = [
   { id: "tiles", label: "Kare kare", hint: "6×6 orijinal kesit · ≥700px'te en iyi · ısı haritası" },
 ];
 
-const VERDICT_TEXT: Record<Verdict, { icon: string; title: string; detail: string }> = {
-  ai: { icon: "🤖", title: "Yapay zekâ üretimi görünüyor", detail: "Model bu görselin AI tarafından üretildiğini düşünüyor." },
-  real: { icon: "📷", title: "Gerçek fotoğraf görünüyor", detail: "Model bu görselin gerçek bir fotoğraf olduğunu düşünüyor." },
-  uncertain: { icon: "🤔", title: "Emin değilim", detail: "Tahmin kararsızlık bandında — bu aralıkta hataların yoğunlaştığını ölçtük, dürüst cevap 'bilmiyorum'." },
+const SIGNAL_TEXT: Record<Verdict, string> = {
+  ai: "sinyal: AI yönünde",
+  real: "sinyal: gerçek yönünde",
+  uncertain: "sinyal: kararsız bantta",
 };
 
 const VERDICT_COLOR: Record<Verdict, string> = { ai: "#d92d20", real: "#12b76a", uncertain: "#f79009" };
@@ -219,61 +219,106 @@ export default function Home() {
               </div>
             ) : (
               <div className="result">
-                {analysis.decision && (
+                {/* ─── HÜKÜM — tek karar burada verilir (E22–E26) ─── */}
+                {analysis.decision ? (
                   <div
                     style={{
-                      borderRadius: 12,
-                      padding: "14px 16px",
-                      marginBottom: 16,
-                      textAlign: "left",
-                      background: analysis.decision.label === "ai" ? "rgba(217,45,32,.08)" : "rgba(90,98,112,.08)",
-                      border: `1px solid ${analysis.decision.label === "ai" ? "rgba(217,45,32,.4)" : "rgba(90,98,112,.3)"}`,
+                      borderRadius: 14,
+                      padding: "20px 18px",
+                      marginBottom: 18,
+                      textAlign: "center",
+                      background: analysis.decision.label === "ai" ? "rgba(217,45,32,.09)" : "rgba(90,98,112,.07)",
+                      border: `2px solid ${analysis.decision.label === "ai" ? "#d92d20" : "rgba(90,98,112,.35)"}`,
                     }}
                   >
-                    <strong style={{ fontSize: 15, color: analysis.decision.label === "ai" ? "#d92d20" : "#5a6270" }}>
-                      {analysis.decision.label === "ai" ? "⚠ YAPAY ZEKÂ TESPİT EDİLDİ" : "◌ YETERLİ KANIT YOK"}
+                    <div style={{ fontSize: 34, lineHeight: 1 }}>
+                      {analysis.decision.label === "ai" ? "⚠️" : "◌"}
+                    </div>
+                    <strong
+                      style={{
+                        display: "block",
+                        margin: "8px 0 4px",
+                        fontSize: 20,
+                        letterSpacing: 0.5,
+                        color: analysis.decision.label === "ai" ? "#d92d20" : "#475467",
+                      }}
+                    >
+                      {analysis.decision.label === "ai" ? "YAPAY ZEKÂ TESPİT EDİLDİ" : "YETERLİ KANIT YOK"}
                     </strong>
-                    <p style={{ margin: "6px 0 8px", fontSize: 13 }}>
+                    <p style={{ margin: "4px 0 12px", fontSize: 13.5 }}>
                       {analysis.decision.label === "ai"
-                        ? "Skor, 12 gerçek kaynağın hiçbirinde %10 yanlış alarmı aşmayan eşiğin üstünde."
-                        : "Skor karar eşiğinin altında. Bu bir 'gerçektir' garantisi değil — sistem bilerek 'gerçek' kararı vermez (E23a)."}
+                        ? `Yakalayan: ${analysis.decision.triggered_by
+                            .map((id) => analysis.decision!.arms[id]?.label ?? id)
+                            .join(" + ")} — skor, 12 gerçek kaynağın hiçbirinde %10 yanlış alarmı aşmayan eşiğin üstünde.`
+                        : "Hiçbir dedektör eşiğini aşmadı. Bu bir 'gerçektir' garantisi değil — sistem bilerek 'gerçek' kararı vermez (E23a)."}
                     </p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, fontSize: 12 }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, fontSize: 12, justifyContent: "center" }}>
                       {Object.entries(analysis.decision.arms).map(([id, arm]) => (
-                        <span key={id} style={{ padding: "2px 8px", borderRadius: 6, background: "rgba(0,0,0,.05)" }} title={arm.label}>
+                        <span
+                          key={id}
+                          style={{
+                            padding: "3px 9px",
+                            borderRadius: 6,
+                            background: arm.band === "ai" ? "rgba(217,45,32,.12)" : "rgba(0,0,0,.05)",
+                            fontWeight: arm.band === "ai" ? 600 : 400,
+                          }}
+                        >
                           {arm.label}: {arm.score.toFixed(2)} / eşik {arm.threshold.toFixed(2)}
-                          {id === analysis.decision!.primary && " · birincil"}
+                          {arm.band === "ai" ? " ✓" : ""}
                         </span>
                       ))}
                       {analysis.decision.caveats.map((c) => (
-                        <span key={c} style={{ padding: "2px 8px", borderRadius: 6, background: "rgba(247,144,9,.15)", color: "#b54708" }}>
+                        <span key={c} style={{ padding: "3px 9px", borderRadius: 6, background: "rgba(247,144,9,.15)", color: "#b54708" }}>
                           {CAVEAT_TEXT[c] ?? c}
                         </span>
                       ))}
                     </div>
-                    <p style={{ margin: "8px 0 0", fontSize: 11, opacity: 0.65 }}>{analysis.decision.provenance}</p>
+                    <p style={{ margin: "10px 0 0", fontSize: 11, opacity: 0.6 }}>{analysis.decision.provenance}</p>
                   </div>
+                ) : (
+                  <p className="error-text" style={{ marginBottom: 14 }}>
+                    Karar katmanı yüklenemedi — aşağıda yalnız araştırma sinyali gösteriliyor.
+                  </p>
                 )}
-                <div className={`result-icon verdict-${analysis.verdict}`}>{VERDICT_TEXT[analysis.verdict].icon}</div>
-                <h3>{VERDICT_TEXT[analysis.verdict].title}</h3>
-                <p>{VERDICT_TEXT[analysis.verdict].detail}</p>
-                <div className="probability">
-                  <div className="probability-labels">
-                    <span>Gerçek</span>
-                    <strong>p(AI) = %{percent.toFixed(1)}</strong>
-                    <span>AI</span>
+
+                {/* ─── ARAŞTIRMA SİNYALİ — karara dahil değildir ─── */}
+                <div
+                  style={{
+                    borderRadius: 10,
+                    border: "1px dashed rgba(90,98,112,.4)",
+                    padding: "12px 14px",
+                    textAlign: "left",
+                    opacity: 0.85,
+                  }}
+                >
+                  <p style={{ margin: 0, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.8, color: "#5a6270" }}>
+                    Araştırma sinyali — karara dahil değil
+                  </p>
+                  <p style={{ margin: "4px 0 10px", fontSize: 12, color: "#5a6270" }}>
+                    Projede eğittiğimiz modelin ham skoru. Görmediği kameraların gerçek fotoğraflarında
+                    %79–100 yanlış alarm verdiğini ölçtük (E13/E24) — burada dürüstlükle, eğitim amaçlı duruyor.
+                  </p>
+                  <div className="probability">
+                    <div className="probability-labels">
+                      <span>Gerçek</span>
+                      <strong>
+                        p(AI) = %{percent.toFixed(1)} · {SIGNAL_TEXT[analysis.verdict]}
+                      </strong>
+                      <span>AI</span>
+                    </div>
+                    <div className="probability-track">
+                      <div className="probability-fill" style={{ width: `${percent}%`, background: VERDICT_COLOR[analysis.verdict] }} />
+                    </div>
                   </div>
-                  <div className="probability-track">
-                    <div className="probability-fill" style={{ width: `${percent}%`, background: VERDICT_COLOR[analysis.verdict] }} />
-                  </div>
+                  <p className="model-info" style={{ marginTop: 8 }}>
+                    {analysis.method_label}
+                    {analysis.auto_selected && " · otomatik seçildi"}
+                    {" · "}{analysis.resolution}
+                    {!analysis.enough_evidence && " · ⚠️ ölçüm için çok küçük"}
+                  </p>
                 </div>
-                <p className="model-info">
-                  {analysis.method_label}
-                  {analysis.auto_selected && " · otomatik seçildi"}
-                  {" · "}{analysis.resolution}
-                  {!analysis.enough_evidence && " · ⚠️ ölçüm için çok küçük"}
-                </p>
-                <button type="button" onClick={() => analyze()} disabled={loading}>
+
+                <button type="button" onClick={() => analyze()} disabled={loading} style={{ marginTop: 14 }}>
                   {loading ? "Analiz ediliyor…" : "Tekrar analiz et"}
                 </button>
               </div>

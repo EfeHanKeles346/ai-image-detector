@@ -8,7 +8,7 @@
 import numpy as np
 from PIL import Image
 
-from pixelproof.verdict import CAP_PX, capped, decide
+from pixelproof.verdict import CAP_PX, capped, combine, decide
 
 
 def test_band_is_asymmetric():
@@ -17,6 +17,16 @@ def test_band_is_asymmetric():
     assert decide(1.0, 1.0) == "ai"          # ties go to the threshold rule >=
     assert decide(0.99, 1.0) == "insufficient"
     assert decide(-10.0, 1.0) == "insufficient"
+
+
+def test_or_rule_any_arm_decides():
+    # E26: one confident arm is enough — a blind primary cannot veto it.
+    assert combine({"cf_vit": "ai", "bfree": "insufficient"}) == ("ai", ["cf_vit"])
+    assert combine({"cf_vit": "insufficient", "bfree": "ai"}) == ("ai", ["bfree"])
+    assert combine({"cf_vit": "ai", "bfree": "ai"}) == ("ai", ["cf_vit", "bfree"])
+    assert combine({"cf_vit": "insufficient", "bfree": "insufficient"}) == (
+        "insufficient", [],
+    )
 
 
 def test_cap_only_touches_megapixel_input():

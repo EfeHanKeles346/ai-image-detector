@@ -1038,3 +1038,40 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   robustness column grows again. The deployment recipe is now measured twice, on a
   downloaded 2026 set (E25) and on a real phone (E24): **audit → cap → ~100 calibration
   images → refit → within budget.** That sentence is the product.
+
+## 2026-08-20 — E26: the OR rule — a blind primary arm cannot veto a seeing one
+
+- **Motivation:** live use surfaced a design fault the benchmarks had hidden. A
+  ChatGPT-generated upload scored CF 4.95 (seven times its threshold, band "ai") and
+  B-Free −4.41 (its documented GPT-family blindness, E25) — and the verdict was
+  "insufficient", because the single-primary design let the blind arm decide alone. The
+  fix candidate: any arm above its own worst-source threshold decides ("OR rule"). The
+  risk: two 10% budgets need not union to 10%.
+- **Measured on every cached score set (deployed thresholds, evaluation halves):**
+
+| | single primary (old) | **OR rule** |
+|---|---|---|
+| worst-source FP (12 pipelines) | 9.7% | **9.7% — unchanged** |
+| macro FP | — | 2.9% |
+| Midjourney recall | 7% | **14%** |
+| FLUX recall | 38% | **64.5%** |
+| Nano Banana / Pro recall | 29% / 42.5% | **56.5% / 55.5%** |
+| GPT Image 4K recall | 6.5% | 12.0% — the blind spot shrinks, does not close |
+| the user's ChatGPT upload | missed | **caught (by CF)** |
+
+  The union does not break the budget because the arms' false positives live on
+  *different* sources (CF's worst: Columbia 6.6%; B-Free's: iPhone 9.7%) — training-family
+  complementarity, the E8 lesson at the decision layer. **Adopted**; `combine()` in
+  `verdict.py`, responses now carry `triggered_by`.
+- **Gallery validation (the owner's prediction, tested):** all 207 iPhone camera
+  originals through both systems. The old tile signal called **207/207 "AI"** — every
+  single photo, median p 0.994 — E13's disease in its purest form, predicted by the owner
+  before the run. The decision layer flags 21/207 (10.1%, the designed budget). That
+  contrast — 100% → 10% — is the project's contribution in one line, measured on its
+  owner's own photographs.
+- **UI consequence (shipped with this entry):** the screen had been showing two
+  contradictory verdicts — the research signal, with its 79–100% FP, dressed as the
+  headline. Now there is exactly one verdict (the band's, with the triggering arm named),
+  and the research signal sits below it in a labelled box: "araştırma sinyali — karara
+  dahil değil", with its measured false-positive rate printed next to it. Verified
+  end-to-end in the browser, including the originally-missed ChatGPT image (now "ai").
