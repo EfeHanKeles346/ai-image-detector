@@ -2,7 +2,20 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "pixelproof-web",
+      "name": "api",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "PYTHONPATH=ml/src",
+        "PIXELPROOF_BFREE=1",
+        "ml/.venv/bin/uvicorn",
+        "pixelproof.serve:app",
+        "--port",
+        "8799"
+      ],
+      "port": 8799
+    },
+    {
+      "name": "web",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000

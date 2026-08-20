@@ -6,6 +6,15 @@ type Preview = { name: string; url: string; size: string; file: File };
 type Verdict = "ai" | "real" | "uncertain";
 type Tile = { x: number; y: number; p_ai: number; texture: number };
 type TileMap = { p_ai: number; tiles: Tile[]; tile_px: number; image_w: number; image_h: number };
+type DecisionArm = { label: string; score: number; threshold: number; band: "ai" | "insufficient" };
+type Decision = {
+  label: "ai" | "insufficient";
+  primary: string;
+  arms: Record<string, DecisionArm>;
+  caveats: string[];
+  bytes_per_pixel: number;
+  provenance: string;
+};
 type Analysis = {
   p_ai: number;
   verdict: Verdict;
@@ -16,6 +25,12 @@ type Analysis = {
   resolution: string;
   enough_evidence: boolean;
   tile_map: TileMap | null;
+  decision: Decision | null;
+};
+
+const CAVEAT_TEXT: Record<string, string> = {
+  "megapiksel-siniri": "2048px sınırı uygulandı (E23b)",
+  "sikistirilmis-girdi": "Sıkıştırılmış girdi — yakalama gücü bu rejimde düşük (E23c)",
 };
 
 const API_URL = "http://127.0.0.1:8799";
@@ -25,10 +40,8 @@ const API_URL = "http://127.0.0.1:8799";
 const METHODS = [
   { id: "auto", label: "Otomatik", hint: "Boyuta göre en güçlü yöntem" },
   { id: "cnn", label: "CNN", hint: "Küçültülmüş görsel · küçük girdilerde güçlü" },
-  { id: "stats", label: "İst. v1", hint: "68 istatistik · 9.9k GenImage ile eğitildi" },
-  { id: "stats2", label: "İst. v2", hint: "Aynı özellikler · 101k dengeli havuz ile eğitildi" },
-  { id: "stats3", label: "İst. v3", hint: "Aynı özellikler · 74k havuz, sadece 256px+ görseller" },
-  { id: "tiles", label: "Kare kare", hint: "6×6 orijinal kesit · ≥700px'te en iyi" },
+  { id: "stats", label: "İstatistik", hint: "68 istatistik · fizik izleri, küçültme yok" },
+  { id: "tiles", label: "Kare kare", hint: "6×6 orijinal kesit · ≥700px'te en iyi · ısı haritası" },
 ];
 
 const VERDICT_TEXT: Record<Verdict, { icon: string; title: string; detail: string }> = {
@@ -206,6 +219,41 @@ export default function Home() {
               </div>
             ) : (
               <div className="result">
+                {analysis.decision && (
+                  <div
+                    style={{
+                      borderRadius: 12,
+                      padding: "14px 16px",
+                      marginBottom: 16,
+                      textAlign: "left",
+                      background: analysis.decision.label === "ai" ? "rgba(217,45,32,.08)" : "rgba(90,98,112,.08)",
+                      border: `1px solid ${analysis.decision.label === "ai" ? "rgba(217,45,32,.4)" : "rgba(90,98,112,.3)"}`,
+                    }}
+                  >
+                    <strong style={{ fontSize: 15, color: analysis.decision.label === "ai" ? "#d92d20" : "#5a6270" }}>
+                      {analysis.decision.label === "ai" ? "⚠ YAPAY ZEKÂ TESPİT EDİLDİ" : "◌ YETERLİ KANIT YOK"}
+                    </strong>
+                    <p style={{ margin: "6px 0 8px", fontSize: 13 }}>
+                      {analysis.decision.label === "ai"
+                        ? "Skor, 12 gerçek kaynağın hiçbirinde %10 yanlış alarmı aşmayan eşiğin üstünde."
+                        : "Skor karar eşiğinin altında. Bu bir 'gerçektir' garantisi değil — sistem bilerek 'gerçek' kararı vermez (E23a)."}
+                    </p>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, fontSize: 12 }}>
+                      {Object.entries(analysis.decision.arms).map(([id, arm]) => (
+                        <span key={id} style={{ padding: "2px 8px", borderRadius: 6, background: "rgba(0,0,0,.05)" }} title={arm.label}>
+                          {arm.label}: {arm.score.toFixed(2)} / eşik {arm.threshold.toFixed(2)}
+                          {id === analysis.decision!.primary && " · birincil"}
+                        </span>
+                      ))}
+                      {analysis.decision.caveats.map((c) => (
+                        <span key={c} style={{ padding: "2px 8px", borderRadius: 6, background: "rgba(247,144,9,.15)", color: "#b54708" }}>
+                          {CAVEAT_TEXT[c] ?? c}
+                        </span>
+                      ))}
+                    </div>
+                    <p style={{ margin: "8px 0 0", fontSize: 11, opacity: 0.65 }}>{analysis.decision.provenance}</p>
+                  </div>
+                )}
                 <div className={`result-icon verdict-${analysis.verdict}`}>{VERDICT_TEXT[analysis.verdict].icon}</div>
                 <h3>{VERDICT_TEXT[analysis.verdict].title}</h3>
                 <p>{VERDICT_TEXT[analysis.verdict].detail}</p>
@@ -234,11 +282,13 @@ export default function Home() {
         </section>
 
         <aside>
-          <strong>Yöntemler neden ayrı:</strong> Dördünü tek bir skora karıştırmayı ölçtük ve
-          kazanç çıkmadı (+0.002, gürültü seviyesi) — çünkü her yöntem farklı girdide güçlü.
-          <em>Otomatik</em> bu yüzden karıştırmaz, ölçülmüş kurala göre birini seçer: 700
-          pikselin üstünde kare-kare yöntemi CNN&apos;i belirgin şekilde geçiyor, altında CNN
-          kazanıyor. Bu bir araştırma demosudur; yeni nesil üreteçlerde hata payı vardır.
+          <strong>Karar nasıl veriliyor:</strong> Üstteki karar, dondurulmuş bir dedektörün
+          skorunu 12 gerçek kamera kaynağıyla kalibre edilmiş eşikten geçirir (E22–E24) ve
+          yalnız iki cevap verir: &quot;AI tespit edildi&quot; ya da &quot;yeterli kanıt yok&quot; —
+          &quot;gerçektir&quot; demez, çünkü o kararın hiçbir kaynakta tutarlı verilemediğini ölçtük.
+          Alttaki yöntemler projenin kendi araştırma sinyalleridir; karıştırılmazlar (E9: en iyi
+          karışım +0.002). Bilinen sınırlar: GPT Image ailesinde ayrım gücü şans seviyesinde,
+          ağır sıkıştırmada yakalama düşer. Bu bir araştırma demosudur.
         </aside>
       </div>
     </main>

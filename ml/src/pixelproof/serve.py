@@ -33,6 +33,7 @@ from pixelproof.evaluate import eval_transform
 from pixelproof.feature_model import load as load_feature_models
 from pixelproof.feature_model import score_image, score_tiles
 from pixelproof.models import create_model
+from pixelproof.verdict import VerdictService
 
 # --- measured constants (see EXPERIMENTS.md) --------------------------------
 CNN_ROUTING_PX = 128      # E6: below this only SmallCNN has seen anything similar
@@ -40,17 +41,12 @@ TILE_RELIABLE_PX = 700    # E11: above this the tile method wins decisively
 UNCERTAINTY_BAND = 0.1    # E3: errors concentrate inside |p-0.5| < 0.1
 EVIDENCE_FLOOR_PX = 48    # below this no method has enough pixels to measure texture
 
-# `stats` variants differ only in TRAINING DATA — same 68 features, same
-# pipeline. Exposed side by side so a real upload can be used to compare
-# training recipes, not just the benchmark (E12).
-STATS_VARIANTS = {"stats": "full", "stats2": "full_v2", "stats3": "full_v3"}
+STATS_VARIANTS = {"stats": "full"}
 
 METHODS = {
     "auto":   "Otomatik — görsel boyutuna göre en güçlü yöntem",
     "cnn":    "CNN — küçültülmüş görsel, sinir ağı",
-    "stats":  "İstatistik v1 — 9.9k GenImage ile eğitildi",
-    "stats2": "İstatistik v2 — 101k dengeli havuz ile eğitildi",
-    "stats3": "İstatistik v3 — 74k havuz, 256px+ görseller",
+    "stats":  "İstatistik — 68 ölçüm, 9.9k GenImage ile eğitildi",
     "tiles":  "Kare kare — 6×6 ızgara, orijinal çözünürlük",
 }
 
@@ -71,6 +67,9 @@ def load(checkpoint_name: str):
 
 CNNS = {"small_cnn_cifake": load("best.pt"), "resnet18_genimage": load("best_genimage.pt")}
 FEATURES = load_feature_models(artifacts)
+# The decision layer (E22-E24): frozen external arms behind the asymmetric
+# band. Research signals above stay untouched; this is the served verdict.
+VERDICT = VerdictService(device, artifacts.parent)
 
 app = FastAPI(title="PixelProof inference")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -118,6 +117,8 @@ async def predict(image: UploadFile = File(...), method: str = Form("auto")):
         probability = tile_map["p_ai"]
         engine = "feature_tiles"
 
+    decision = VERDICT.run(picture, len(raw)) if VERDICT.available else None
+
     return {
         "p_ai": round(probability, 4),
         "verdict": verdict_for(probability),
@@ -128,6 +129,7 @@ async def predict(image: UploadFile = File(...), method: str = Form("auto")):
         "resolution": f"{width}x{height}",
         "enough_evidence": longest >= EVIDENCE_FLOOR_PX,
         "tile_map": tile_map,
+        "decision": decision,
     }
 
 
@@ -140,4 +142,6 @@ def methods():
 @app.get("/health")
 def health():
     return {"status": "ok", "device": str(device),
-            "cnns": list(CNNS), "features": list(FEATURES)}
+            "cnns": list(CNNS), "features": list(FEATURES),
+            "verdict_arms": [a.name for a in VERDICT.arms],
+            "verdict_primary": VERDICT.primary.name if VERDICT.available else None}

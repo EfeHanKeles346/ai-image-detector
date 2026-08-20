@@ -123,9 +123,12 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
       accuse 38.2% (E23b reproduced on real user data); cap + ~100-photo threshold-only
       refit lands the untouched half at **9.7% — budget met** at 62.2% recall. The
       deployment recipe (audit → cap → calibrate → refit) is now measured twice.
-- [ ] **Demo integration** *(after E23a–c so the band is integrated once, in its final
-      form)*. CF-ViT (MIT) + the band as the served verdict: AI / insufficient evidence /
-      real. B-Free stays research-only (nonprofit licence).
+- [x] **Demo integration** *(done 2026-08-20)*. `pixelproof/verdict.py` serves the
+      asymmetric band with every measured policy: 2048px cap (E23b), "AI / insufficient
+      evidence" verdicts only (E23a), compression-regime caveat (E23c), E24's
+      12-pipeline thresholds with experiment provenance in every response. CF-ViT (MIT)
+      always on; B-Free loads only behind `PIXELPROOF_BFREE=1` (nonprofit licence).
+      Dead stats2/3 options removed from API and UI; verified end-to-end in the browser.
 
 ## Standing rules (unchanged)
 
