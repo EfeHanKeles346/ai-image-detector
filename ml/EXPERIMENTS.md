@@ -1075,3 +1075,52 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   and the research signal sits below it in a labelled box: "araştırma sinyali — karara
   dahil değil", with its measured false-positive rate printed next to it. Verified
   end-to-end in the browser, including the originally-missed ChatGPT image (now "ai").
+
+## 2026-08-20 — E27: our own GPT-family arm — trained behind a gate that fought back
+
+- **Motivation:** the system's one measured capability gap — GPT Image recall 12% under the
+  two-arm OR (E25/E26), the family behind the live demo miss. Goal: train OUR OWN
+  specialist arm and admit it to the served ensemble only through a pre-registered gate.
+- **Process, in order — because the process is the result:**
+  1. **Adversarial design review before any training** (three-lens panel: shortcut /
+     contamination / training design; 14 findings, 3 fatal). It rewrote the design:
+     dimension-PAIR matching instead of a size cap, a pre-JPEG pass on half the AI class
+     (single-vs-double compression history), FFHQ as a third real source + 200-image
+     portrait-FP holdout, SHA256+dHash contamination scans, a real-vs-real CONTROL POOL
+     to separate shortcut ceiling from signal, frozen-trunk ladder before any fine-tune,
+     three seeds mandatory, the claim narrowed to **in-collection** recall.
+  2. **Gate v1 fired exactly as designed:** metadata probe 0.992 — the aspect channel
+     (all GPT images 2:3 portrait) survived my first encoder. Training was refused.
+  3. **Encoder fixed** (each AI image adopts the (w,h) pair of a sampled real), pool
+     rebuilt: 860 AI / 1,800 real (3 sources), zero dHash duplicates, zero cross-matches
+     against probe/Defactify/forensics (19,389 files scanned).
+  4. **Gate v2 passed:** metadata class-AUC **0.419** (channel closed; control 0.527);
+     texture class-AUC 0.872 vs control ceiling 0.687 — the +0.185 excess is generation
+     signal, not pipeline artifact (E18's positive-control method applied to a gate).
+- **Arm: a logistic head on frozen CF-ViT CLS embeddings** (the ladder's first step
+  sufficed; 22M-parameter fine-tuning never became necessary). Three seeds:
+
+| seed | val AUC | probe recall | probe q75 | arm worst FP (12 srcs) | FFHQ FP | rho(size) |
+|---|---|---|---|---|---|---|
+| 42 | 0.995 | 37.5% | 29.0% | 4.0% | 0.0% | −0.01 |
+| 1337 | 0.992 | 52.5% | 41.5% | 4.0% | 0.0% | −0.02 |
+| 2024 (deployed) | 0.994 | 40.5% | 32.5% | 4.0% | 0.0% | +0.00 |
+
+- **Union gate (exact, per-image, 12 pipelines incl. iPhone, cached e21/e23b/e24 scores):**
+  two-arm baseline worst FP on these halves is 10.7% (sampling variance of the same
+  deployed system; inside E22b's interval) and the three-arm union is **10.7% — the new
+  arm adds zero worst-case FP**. Its contribution is pure recall: **GPT probe 12% → 40.5%**
+  (in-collection, at the deployed threshold), and as a free side effect **DALL-E 3
+  21% → 35%** on evaluation halves. No source is pushed beyond max(budget, baseline).
+- **Integrated.** `artifacts/gpt_arm_v1.npz` + `GptFamilyArm` in `verdict.py`; the arm
+  shares CF-ViT's forward pass, so the third arm costs **zero additional compute**. The
+  live ChatGPT image: the arm alone scores it 7.82 (below its conservative 15.38 cut) —
+  the ensemble still catches it through CF; recorded honestly.
+- **Honest limits:** the recall claim is in-collection (train and probe share one Kaggle
+  collection; an out-of-collection ChatGPT holdout of 30-50 hand-generated images is the
+  owner's recorded TODO — gate G2b pending). q75 recompression costs ~8 points (32.5%),
+  consistent with E23c's regime finding, no collapse. theminji reals' provenance remains
+  unaudited upstream; FFHQ and genimage carry the diversity.
+- **The one-line conclusion for the report:** the served system now contains a model we
+  trained ourselves, admitted by the same gate that had rejected our earlier models —
+  and the gate's v1 refusal (0.992) is the best evidence the gate is real.

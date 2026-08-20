@@ -141,7 +141,9 @@ def methods():
 
 @app.get("/health")
 def health():
+    arms = [a.name for a in VERDICT.arms]
+    if VERDICT.gpt_arm is not None:
+        arms.append(VERDICT.gpt_arm.name)
     return {"status": "ok", "device": str(device),
             "cnns": list(CNNS), "features": list(FEATURES),
-            "verdict_arms": [a.name for a in VERDICT.arms],
-            "verdict_primary": VERDICT.primary.name if VERDICT.available else None}
+            "verdict_arms": arms, "verdict_rule": "OR (E26)"}

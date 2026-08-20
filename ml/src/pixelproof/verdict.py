@@ -106,9 +106,39 @@ class CommunityForensicsArm:
 
     @torch.inference_mode()
     def score(self, picture: Image.Image) -> float:
+        return self.score_with_embedding(picture)[0]
+
+    @torch.inference_mode()
+    def score_with_embedding(self, picture: Image.Image) -> tuple[float, "torch.Tensor"]:
+        """One ViT forward yields both the CF logit and the CLS embedding the
+        E27 GPT-family head consumes — the third arm costs zero extra compute."""
         inputs = self.processor(images=picture, return_tensors="pt")
-        logits = self.model(pixel_values=inputs["pixel_values"].to(self.device)).logits
-        return float(logits[0, 0].cpu())
+        cls = self.model.vit(
+            pixel_values=inputs["pixel_values"].to(self.device)
+        ).last_hidden_state[:, 0]
+        logit = self.model.classifier(cls)
+        return float(logit[0, 0].cpu()), cls[0].cpu()
+
+
+class GptFamilyArm:
+    """E27: our own GPT-family specialist — a linear head on CF-ViT embeddings,
+    trained on the gpt-image-mega-4k pool behind the pre-registered gate.
+    In-collection probe recall 40.5% at the deployed threshold (vs 12% for the
+    two-arm OR); adds zero worst-source FP (union gate, E27)."""
+
+    name = "gpt_arm"
+    label = "GPT-ailesi kolu (E27, bizim)"
+
+    def __init__(self, artifact: Path) -> None:
+        import numpy as np
+
+        head = np.load(artifact)
+        self.coef = torch.from_numpy(head["coef"].ravel()).float()
+        self.intercept = float(head["intercept"][0])
+        self.threshold = float(head["threshold"])
+
+    def score_from_embedding(self, cls: "torch.Tensor") -> float:
+        return float(cls @ self.coef + self.intercept)
 
 
 class BFreeArm:
@@ -148,11 +178,18 @@ class VerdictService:
 
     def __init__(self, device: torch.device, repo_root: Path) -> None:
         self.arms: list = []
+        self.gpt_arm: GptFamilyArm | None = None
         began = time.perf_counter()
         try:
             self.arms.append(CommunityForensicsArm(device))
         except Exception as error:  # missing cache/transformers: demo degrades gracefully
             print(f"[verdict] CF-ViT yüklenemedi: {error}")
+        gpt_artifact = repo_root / "artifacts/gpt_arm_v1.npz"
+        if self.arms and gpt_artifact.is_file():
+            try:
+                self.gpt_arm = GptFamilyArm(gpt_artifact)
+            except Exception as error:
+                print(f"[verdict] GPT kolu yüklenemedi: {error}")
         bfree_repo = repo_root / "external/B-Free"
         if os.environ.get(LICENCE_ENV) == "1" and bfree_repo.is_dir():
             try:
@@ -178,7 +215,17 @@ class VerdictService:
 
         arms = {}
         for arm in self.arms:
-            value = arm.score(scoring_input if arm.name == "bfree" else picture)
+            if arm.name == "cf_vit" and self.gpt_arm is not None:
+                value, cls = arm.score_with_embedding(picture)
+                gpt_value = self.gpt_arm.score_from_embedding(cls)
+                arms[self.gpt_arm.name] = {
+                    "label": self.gpt_arm.label,
+                    "score": round(gpt_value, 4),
+                    "threshold": round(self.gpt_arm.threshold, 4),
+                    "band": decide(gpt_value, self.gpt_arm.threshold),
+                }
+            else:
+                value = arm.score(scoring_input if arm.name == "bfree" else picture)
             arms[arm.name] = {
                 "label": arm.label,
                 "score": round(value, 4),

@@ -123,7 +123,7 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
       accuse 38.2% (E23b reproduced on real user data); cap + ~100-photo threshold-only
       refit lands the untouched half at **9.7% — budget met** at 62.2% recall. The
       deployment recipe (audit → cap → calibrate → refit) is now measured twice.
-- [x] **Demo integration** *(done 2026-08-20)*. `pixelproof/verdict.py` serves the
+- [x] **Demo integration** *(done 2026-08-20; E27 addendum: the served ensemble now carries OUR OWN GPT-family arm — a linear head on CF-ViT embeddings, admitted through the adversarial-reviewed gate; GPT probe 12%→40.5%, DALL-E 3 21%→35%, zero added worst-source FP, zero added compute)*. `pixelproof/verdict.py` serves the
       asymmetric band with every measured policy: 2048px cap (E23b), "AI / insufficient
       evidence" verdicts only (E23a), compression-regime caveat (E23c), E24's
       12-pipeline thresholds with experiment provenance in every response. CF-ViT (MIT)
