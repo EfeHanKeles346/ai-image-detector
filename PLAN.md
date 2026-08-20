@@ -114,13 +114,15 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
       q50 + 75%-resize copies of the 3,056 scored images, rescore both external arms,
       repeat E22's LOSO + band on the degraded column. The question: does the band
       survive internet conditions? (The E12 debt, now entangled with the decision layer.)
-- [ ] **E22 bootstrap CIs + E20 three-seed run** *(CIs are seconds; the run is overnight —
-      write results to `results_3seed.json`, never over the existing `results.json`)*.
-- [ ] **E24 — the library promise** *(blocked on input: ~100–200 personal phone photos in
-      a folder, e.g. `~/Desktop/kisisel_fotograflar`)*. First measure them as a truly
-      unseen 12th pipeline against the worst-source threshold; then add them to the
-      calibration library and measure the improvement. Photos never enter the repo; only
-      their scores are kept.
+- [x] **E22 bootstrap CIs + E20 three-seed run** *(done 2026-08-19/20, see E22b + the E20
+      addendum)*. Intervals attached to every headline number; three seeds confirm our
+      model within noise (AUC 0.751 ± 0.033, worst-source FP 86.2% ± 3.1 — the
+      cross-source failure is not a seed artifact).
+- [x] **E24 — the library promise** *(done 2026-08-20, see E24)*. 207 iPhone camera
+      originals as the 12th pipeline: CF passes frozen at 1.0% FP; uncapped B-Free would
+      accuse 38.2% (E23b reproduced on real user data); cap + ~100-photo threshold-only
+      refit lands the untouched half at **9.7% — budget met** at 62.2% recall. The
+      deployment recipe (audit → cap → calibrate → refit) is now measured twice.
 - [ ] **Demo integration** *(after E23a–c so the band is integrated once, in its final
       form)*. CF-ViT (MIT) + the band as the served verdict: AI / insufficient evidence /
       real. B-Free stays research-only (nonprofit licence).

@@ -995,3 +995,46 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   (clean-domain band: 69% recall; degraded-domain band: 43%) rather than pretending one
   threshold spans both. CF's robustness earns it the fallback role for heavily compressed
   input — the two arms now have complementary, *measured* domains.
+
+## 2026-08-20 — E20 three-seed addendum: the numbers hold within seed noise
+
+- **Config:** `--seeds 3 --arms resnet18` under protocol v2, results in
+  `artifacts/e20/results_3seed.json` (the single-seed `results.json` untouched). Training
+  is remarkably stable: validation AUC 0.909 ± 0.000, best epoch 6–7 in all seeds.
+- **Result (top-3 aggregation, mean ± std over seeds 42/1337/2024):** Defactify evaluation
+  AUC **0.751 ± 0.033**, evaluation recall **49.9% ± 6.1**, evaluation FP 8.7% ± 2.2,
+  forensics macro FP 42.7% ± 1.0, **worst-source FP 86.2% ± 3.1**.
+- **Conclusion:** every E20/E22 claim about our own model survives seed variance. The
+  ranking sits where the single seed said (0.770 is inside the band), and the cross-source
+  failure is not a seed artifact — the worst unseen pipeline is above 83% FP in *every*
+  seed. Recall carries the largest variance (±6 points), which is why the report should
+  quote the three-seed mean, not the best seed.
+
+## 2026-08-20 — E24: the library promise, tested on a real phone
+
+- **Motivation:** E22's product claim — a new real pipeline needs ~100 calibration images
+  and a threshold refit, no retraining. E25 tested it on a downloaded set; this tests it
+  on the most deployment-realistic pipeline available: **207 camera-original photographs
+  from the project owner's iPhone** (203 × iPhone 15 Pro + 4 × iPhone 16e, EXIF-verified;
+  median long side 4032px — a genuine 12-megapixel pipeline, the exact class that poisoned
+  NIST2016). Screenshots and non-EXIF files excluded by audit; photos never enter the
+  repo, only scores are kept. Scored on CPU overnight so the GPU stayed with the
+  three-seed run.
+- **Hypotheses (pre-registered):** H1 — frozen thresholds hold for CF; B-Free uncapped is
+  at risk (12 Mpx) and the E23b cap contains it. H2 — adding the pipeline's calibration
+  half and refitting meets the budget at little recall cost.
+- **Result:**
+
+| arm · variant | FP @ frozen threshold | FP @ refit (eval half) | macro recall after refit |
+|---|---|---|---|
+| CF ViT-S | **1.0%** | 1.9% (threshold unchanged) | 28.0% |
+| B-Free, uncapped | **38.2%** | 12.6% | 58.6% |
+| **B-Free + 2048 cap** | 12.6% | **9.7% — budget met** | **62.2%** |
+
+- **Both hypotheses confirmed, and E23b is validated on real user data.** Uncapped B-Free
+  would have accused 38% of the owner's own photographs; the cap alone cuts that to 12.6%,
+  and one threshold-only refit with ~104 calibration photos brings the untouched half to
+  9.7% at a three-point recall cost (65.2 → 62.2). CF passes untouched at 1.0% — its
+  robustness column grows again. The deployment recipe is now measured twice, on a
+  downloaded 2026 set (E25) and on a real phone (E24): **audit → cap → ~100 calibration
+  images → refit → within budget.** That sentence is the product.
