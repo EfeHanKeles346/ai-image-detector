@@ -150,6 +150,8 @@ export default function Home() {
             ) : (
               <div className="preview">
                 <div className="preview-stage">
+                  {/* Blob previews are local-only and cannot use the hosted image optimizer. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={preview.url} alt="Seçilen görsel" />
                   {analysis?.tile_map && (
                     <div className="tile-overlay">

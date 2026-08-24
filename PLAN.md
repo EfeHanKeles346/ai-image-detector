@@ -20,13 +20,19 @@ the measured result here, then commit. No unmeasured product claim is introduced
 
 ### Phase H1 — restore a trustworthy web verification baseline
 
-- [ ] Replace the deleted starter-skeleton tests with tests for the actual PixelProof page.
-- [ ] Add the Cloudflare Worker types required by TypeScript and make `tsc --noEmit` pass.
-- [ ] Keep ESLint out of the Python virtualenv, artifacts, external checkouts and generated
+- [x] Replace the deleted starter-skeleton tests with tests for the actual PixelProof page.
+- [x] Add the Cloudflare Worker types required by TypeScript and make `tsc --noEmit` pass.
+- [x] Keep ESLint out of the Python virtualenv, artifacts, external checkouts and generated
       output; make the repository lint command pass on owned source.
-- [ ] Update vulnerable web dependencies within compatible release lines, then record the
+- [x] Update vulnerable web dependencies within compatible release lines, then record the
       remaining `npm audit` result instead of claiming that every advisory is exploitable.
 - **Acceptance:** `npm test`, `npm run lint` and an explicit TypeScript check all exit zero.
+- **Measured 2026-08-24:** `npm test` rebuilt the deployment and passed 2/2 product/hosting
+  tests; `npm run lint` and `npm run typecheck` both exited zero. Compatible dependency
+  updates reduced `npm audit` from 21 findings to two high-severity entries, both the same
+  `vinext@0.0.50 -> image-size@2.0.2` denial-of-service chain. npm's available remediation
+  is the breaking `vinext@1.0.0-beta.8` line, so that migration is not hidden inside this
+  baseline phase and remains explicit dependency debt.
 
 ### Phase H2 — make the web/API contract honest and race-safe
 
