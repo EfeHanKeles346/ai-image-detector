@@ -1449,3 +1449,13 @@ evidence and hashes live in `evidence/e28_seed2024_rejection.json`; the large ca
 scores remain ignored local artifacts. The outcome narrows the next problem: E20's representation
 or data composition must change, because constraining only its final head did not cure source
 shift.
+
+### O0 — the next line changes representation, not the rejected threshold
+
+After E28's rejection, the next feasibility candidate was recorded before implementation: RINE's
+intermediate CLIP encoder-block representation with learned block importance. The official ECCV
+2024 repository is Apache-2.0, but code licence, checkpoint terms, transitive CLIP weights and
+training-data rights will be audited separately before anything is installed or downloaded. If
+that audit passes, the candidate remains isolated from serving and must meet PixelProof's own
+source-wise gate before a project-trained head is attempted. No external code, dependency, weight
+or runtime change was made in this planning phase; E20 remains the working model.

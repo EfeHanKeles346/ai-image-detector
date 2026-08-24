@@ -1274,3 +1274,19 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   ignored local `artifacts/e28/` directory. The constraint preserved AUC/recall but did not repair
   source shift, so the next candidate must change the representation or training data rather than
   merely constraining E20's final head.
+
+## 2026-08-24 — O0 pre-registration: representation feasibility line
+
+- **Reason for the pivot:** E28 retained AUC/recall but worsened selected-rule macro and worst-source
+  FP, so another head-only constraint on the same final E20 embedding is not justified. Evaluation
+  diagnostics will not be used to retune E28.
+- **Candidate class:** intermediate CLIP encoder-block representations with trainable block
+  importance, motivated by RINE (ECCV 2024): <https://arxiv.org/abs/2402.19091>. The official
+  repository is Apache-2.0: <https://github.com/mever-team/rine>. This entry records a feasibility
+  direction, not permission to redistribute its checkpoints or their transitive base weights.
+- **Ordered protocol:** first pin and audit code/checkpoint/base-weight/data licences; then build an
+  isolated optional adapter and smoke; then evaluate once with E20 protocol v2. No RINE dependency,
+  code, weight or serving path has been added at O0.
+- **O2 feasibility gate (all required):** AUC >=0.850, recall >=35%, Defactify FP <=15%, forensic
+  macro FP <=15% and worst-source FP <=30%. Only a pass may justify pre-registering and training a
+  project-owned intermediate-block head; integration would still require three seeds.

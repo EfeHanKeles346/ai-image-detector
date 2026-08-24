@@ -5,6 +5,61 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Active goal — representation feasibility before another training run (2026-08-24)
+
+E28 showed that changing only E20's final-head constraint leaves its source failure intact. The
+next candidate class must therefore expose a materially different representation. The first
+feasibility target is RINE, the ECCV 2024 intermediate-CLIP-block detector: its official paper/code
+uses trainable importance over multiple encoder-block CLS representations instead of only the last
+feature vector. Sources: [paper](https://arxiv.org/abs/2402.19091) and
+[official Apache-2.0 repository](https://github.com/mever-team/rine).
+
+This is not an integration decision. The repository licence does not by itself prove every
+checkpoint and transitive base weight may be redistributed, and the paper's reported datasets are
+not this project's source-wise evaluation. PixelProof will first audit those boundaries, then run
+the candidate through its own frozen protocol. E20 remains the runnable project model throughout.
+
+### Phase O0 — record the representation-first direction before implementation
+
+- [x] Convert E28's measured failure into a new representation-level candidate rather than
+      evaluation-driven retuning of its head or aggregation.
+- [x] Order the work as licence/provenance audit, isolated adapter smoke, frozen-protocol benchmark,
+      and only then a project-trained head experiment.
+- **Acceptance:** no external checkout, checkpoint or serving change precedes this recorded plan.
+- **Recorded 2026-08-24:** the RINE/CLIP feasibility line below was selected from its published
+  representation design and official Apache-2.0 repository; no dependency, code or weight has yet
+  been added.
+
+### Phase O1 — audit feasibility and ownership boundaries
+
+- [ ] Pin an official repository revision; identify the code, RINE checkpoint, CLIP implementation,
+      base-weight and training-data licences separately. Record what may be used locally, committed
+      and redistributed.
+- [ ] Map model input, normalization, score direction, checkpoint schema, memory and dependency
+      requirements without changing the locked serving environment.
+- **Acceptance:** a written PASS/FAIL matrix exists. Any unclear checkpoint or base-weight licence
+  stops redistribution and limits the work to a local research comparison.
+
+### Phase O2 — benchmark the representation in isolation
+
+- [ ] Build the smallest project-owned adapter needed to score images through a pinned, verified
+      local RINE candidate; keep its environment/artifacts optional and separate from E20 serving.
+- [ ] Prove score direction, deterministic preprocessing, bounded input and a CPU/MPS smoke before
+      the real evaluation.
+- [ ] Run the unchanged E20 calibration/evaluation split once. Advance only if AUC >=0.850, recall
+      >=35%, Defactify FP <=15%, forensic macro FP <=15% and worst-source FP <=30%.
+- **Acceptance:** exact per-source evidence is archived; failure ends the candidate without
+  integration or evaluation-driven threshold changes.
+
+### Phase O3 — train a project head only after representation feasibility
+
+- [ ] If O2 passes and licensing permits, freeze the pinned CLIP backbone and train only an
+      independently implemented intermediate-block importance/projection head on the existing
+      audited project training pool. Pre-register its recipe and gates before training.
+- [ ] Require seed 2024 advancement followed by seeds 42/1337 before registering any artifact.
+- **Acceptance:** only a three-seed, source-gated project-trained head may replace E20; otherwise
+  E20 stays runnable and O3 becomes another reportable negative result.
+
 ## Completed experiment goal — source-robust project model v2 (2026-08-24)
 
 **Milestone status: completed with a pre-registered rejection on 2026-08-24.** E28 failed N2, so
