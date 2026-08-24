@@ -54,18 +54,24 @@ the measured result here, then commit. No unmeasured product claim is introduced
 
 ### Phase H3 — harden inference inputs and execution
 
-- [ ] Enforce upload byte, pixel, dimension and supported-format limits with explicit 4xx
+- [x] Enforce upload byte, pixel, dimension and supported-format limits with explicit 4xx
       responses; malformed files must not become generic 500 errors.
-- [ ] Apply EXIF orientation and a documented transparency background before every arm sees
+- [x] Apply EXIF orientation and a documented transparency background before every arm sees
       the image, so preview geometry and model geometry agree.
-- [ ] Make evidence sufficiency depend on both dimensions and prevent an official verdict
+- [x] Make evidence sufficiency depend on both dimensions and prevent an official verdict
       below the supported floor.
-- [ ] Bound expensive tile work, move blocking inference off the async event loop, use CUDA
+- [x] Bound expensive tile work, move blocking inference off the async event loop, use CUDA
       when available and expose truthful readiness/degraded health.
-- [ ] Restrict CORS to configured origins and document rate-limit/auth expectations for any
+- [x] Restrict CORS to configured origins and document rate-limit/auth expectations for any
       non-local deployment.
 - **Acceptance:** API tests cover invalid bytes, oversize input, tiny/extreme aspect ratios,
   EXIF orientation, transparency, unavailable verdict arms and one valid prediction.
+- **Measured 2026-08-24:** `pytest -q` passed 18/18 tests, including six API-policy tests.
+  The real local runtime then loaded both CNNs, both feature models and the CF-ViT + E27
+  arms on `mps`, reported `status=ready` with no load errors, and completed one 64x64 CNN
+  prediction. Limits are 12 MiB / 16 MP / 16,384 px / 20:1, tile extraction is capped at
+  256, inference runs off the async event loop through one bounded runtime slot, wildcard
+  CORS is rejected, and the external auth/rate/queue boundary is recorded in `ml/SERVING.md`.
 
 ### Phase H4 — repair the scientific/product contract
 
