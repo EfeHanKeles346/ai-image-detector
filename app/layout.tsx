@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PixelProof — Görsel Özgünlük Analizi",
-  description: "Fotoğraflardaki gerçek ve yapay zekâ üretimi izlerini inceleyen deneysel analiz arayüzü.",
+  title: "PixelProof — E20 Proje Modeli",
+  description: "Projede eğitilen E20 ResNet-18 AI görsel modelini çalıştıran ve sınırlarını açıkça gösteren deneysel demo.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

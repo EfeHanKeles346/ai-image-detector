@@ -72,13 +72,23 @@ available as a measured comparison, not as a substitute for presenting the proje
 
 ### Phase M3 — make the web demo model-first
 
-- [ ] Replace the four-method-first interaction with one primary action: run the project model.
-- [ ] Show the project model's experimental result, score, threshold, model revision and honest
+- [x] Replace the four-method-first interaction with one primary action: run the project model.
+- [x] Show the project model's experimental result, score, threshold, model revision and honest
       worst-source limitation together; never label a negative result as proof that an image is real.
-- [ ] Keep the external decision layer in a clearly separated comparison panel when available,
+- [x] Keep the external decision layer in a clearly separated comparison panel when available,
       and move the older CNN/statistics/tile-feature methods behind an optional research-details view.
 - **Acceptance:** a user can upload one JPG/PNG/WEBP and understand which result belongs to the
   project-owned model; rendered, contract, accessibility and stale-request tests pass.
+- **Measured 2026-08-24:** the Turkish UI now selects `project_model` by default and gives the E20
+  result the primary card. It renders raw score, stored threshold, trigger state, revision,
+  aggregation, tile count and verified artifact hash prefix together with the measured 86.2% +/-
+  3.1 worst-source false-positive limitation. A below-threshold score explicitly says that the
+  image has not been proven real. E26 appears only in a separate external-comparison card; the
+  retired `auto`, `cnn`, `stats` and `tiles` paths are inside an optional research disclosure.
+  The response parser now validates the full project-model payload, including the 64-character
+  SHA-256 and positive integer tile contract. `git diff --check`, ESLint, TypeScript, production
+  build and all 6/6 web tests passed; rendered-product assertions cover the Turkish model-first
+  shell and its limitation, while the existing request-gate test still proves stale cancellation.
 
 ### Phase M4 — add a repeatable folder evaluation command
 

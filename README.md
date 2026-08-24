@@ -6,7 +6,15 @@ It never certifies that an image is real.
 
 ## Current scientific contract (2026-08-24)
 
-The served decision layer is the E26 OR rule over frozen external detectors:
+The primary API, CLI and web-demo path is now the project-owned E20 ResNet-18 checkpoint
+(`e20-tile-resnet18-seed2024`). It scores native 128 px tiles, aggregates the three highest
+texture-qualified tile scores and compares the result with its stored calibration threshold.
+Every load verifies the checkpoint's SHA-256 and inference schema. This is an experimental AI
+signal, not an authenticity verdict: an under-threshold result is reported as uncertain, never
+as proof that an image is real. On E20's three-seed evaluation, worst-source authentic false
+positives were **86.2% +/- 3.1**.
+
+The web UI presents the E26 OR rule over frozen external detectors in a separate comparison card:
 
 - **Community-Forensics ViT-S** is the default arm (MIT, pinned local snapshot).
 - **B-Free** is optional because its upstream terms are research/non-commercial; it loads only
@@ -23,9 +31,10 @@ the candidate threshold from 15.38 to 21.71 and reduced its in-collection GPT re
 to 14.5%, below its pre-registered 40% gate. The append-only correction is in
 [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md).
 
-The UI also exposes four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) as
-**uncalibrated research scores**. They are not the verdict: unseen-camera false positives reached
-79–100% in E13/E24. The tile overlay is a detector-score map, not validated localisation evidence.
+Four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) remain behind the optional
+research-details view as **uncalibrated research scores**. They are neither the primary project
+model nor the external comparison verdict: unseen-camera false positives reached 79–100% in
+E13/E24. The tile overlay is a detector-score map, not validated localisation evidence.
 
 Module 2 (“where was it edited?”) is parked. It does not resume until a localisation model is
 measured against pixel masks on the relevant manipulation family; current signal was limited to

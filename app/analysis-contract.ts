@@ -21,6 +21,20 @@ export type Decision = {
   bytes_per_pixel: number;
   provenance: string;
 };
+export type ProjectModelResult = {
+  score: number;
+  threshold: number;
+  triggered: boolean;
+  research_only: true;
+  limitation: string;
+  artifact_id: string;
+  artifact_sha256: string;
+  revision: string;
+  seed: number;
+  aggregation: string;
+  tile_px: number;
+  tile_count: number;
+};
 export type Analysis = {
   p_ai: number;
   verdict: Verdict;
@@ -31,6 +45,7 @@ export type Analysis = {
   resolution: string;
   enough_evidence: boolean;
   tile_map: TileMap | null;
+  project_model: ProjectModelResult | null;
   decision: Decision | null;
 };
 
@@ -124,6 +139,38 @@ function parseTileMap(value: unknown): TileMap | null {
   return value as TileMap;
 }
 
+function parseProjectModel(value: unknown): ProjectModelResult | null {
+  if (value === null) return null;
+  if (
+    !record(value) ||
+    !finite(value.score) ||
+    value.score < 0 ||
+    value.score > 1 ||
+    !finite(value.threshold) ||
+    value.threshold < 0 ||
+    value.threshold > 1 ||
+    typeof value.triggered !== "boolean" ||
+    value.research_only !== true ||
+    typeof value.limitation !== "string" ||
+    typeof value.artifact_id !== "string" ||
+    typeof value.artifact_sha256 !== "string" ||
+    !/^[a-f0-9]{64}$/.test(value.artifact_sha256) ||
+    typeof value.revision !== "string" ||
+    typeof value.seed !== "number" ||
+    !Number.isInteger(value.seed) ||
+    typeof value.aggregation !== "string" ||
+    typeof value.tile_px !== "number" ||
+    !Number.isInteger(value.tile_px) ||
+    value.tile_px <= 0 ||
+    typeof value.tile_count !== "number" ||
+    !Number.isInteger(value.tile_count) ||
+    value.tile_count <= 0
+  ) {
+    throw new AnalysisResponseError();
+  }
+  return value as ProjectModelResult;
+}
+
 export function parseAnalysis(value: unknown): Analysis {
   if (
     !record(value) ||
@@ -142,8 +189,9 @@ export function parseAnalysis(value: unknown): Analysis {
   }
 
   return {
-    ...(value as Omit<Analysis, "tile_map" | "decision">),
+    ...(value as Omit<Analysis, "tile_map" | "project_model" | "decision">),
     tile_map: parseTileMap(value.tile_map),
+    project_model: parseProjectModel(value.project_model ?? null),
     decision: parseDecision(value.decision),
   };
 }

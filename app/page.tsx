@@ -10,6 +10,7 @@ import {
   parseAnalysis,
   resolveApiOrigin,
   type Analysis,
+  type Decision,
   type Verdict,
 } from "./analysis-contract";
 
@@ -25,29 +26,146 @@ const API_ORIGIN = resolveApiOrigin(
   process.env.NODE_ENV === "development",
 );
 
-// Four methods, never blended — E9 showed a fixed blend adds +0.002 (noise).
-// "auto" applies the measured 700px crossover from E11.
-const METHODS = [
-  { id: "auto", label: "Otomatik", hint: "Boyuta göre en güçlü yöntem" },
-  { id: "cnn", label: "CNN", hint: "Küçültülmüş görsel · küçük girdilerde güçlü" },
-  { id: "stats", label: "İstatistik", hint: "68 istatistik · fizik izleri, küçültme yok" },
-  { id: "tiles", label: "Kare kare", hint: "En fazla 256 yerel kesit · dedektör-skor haritası" },
+const PROJECT_METHOD = {
+  id: "project_model",
+  label: "E20 ResNet-18",
+  hint: "Projede eğitildi · 128 px yerel kesitler · top-3",
+};
+
+const RESEARCH_METHODS = [
+  { id: "auto", label: "Eski otomatik", hint: "Boyuta göre eski yöntem seçimi" },
+  { id: "cnn", label: "CNN", hint: "Küçültülmüş görsel CNN'i" },
+  { id: "stats", label: "İstatistik", hint: "68 elle tasarlanmış özellik" },
+  { id: "tiles", label: "Özellik tile'ları", hint: "Eski istatistiksel kesit haritası" },
 ];
 
 const SIGNAL_TEXT: Record<Verdict, string> = {
-  ai: "sinyal: AI yönünde",
-  real: "sinyal: gerçek yönünde",
-  uncertain: "sinyal: kararsız bantta",
+  ai: "sinyal AI yönünde",
+  real: "sinyal gerçek yönünde",
+  uncertain: "sinyal kararsız bantta",
 };
 
-const VERDICT_COLOR: Record<Verdict, string> = { ai: "#d92d20", real: "#12b76a", uncertain: "#f79009" };
+function ExternalComparison({ decision, enoughEvidence }: {
+  decision: Decision | null;
+  enoughEvidence: boolean;
+}) {
+  return (
+    <section className="comparison-card" aria-label="Haricî dedektör karşılaştırması">
+      <div className="section-kicker">Haricî karşılaştırma · E26</div>
+      {!enoughEvidence ? (
+        <p>Karşılaştırma için görselin her iki boyutu da en az 48 piksel olmalıdır.</p>
+      ) : !decision ? (
+        <p>Haricî karşılaştırma modeli bu çalıştırmada kullanılamıyor.</p>
+      ) : (
+        <>
+          <h4 className={decision.label === "ai" ? "comparison-ai" : "comparison-quiet"}>
+            {decision.label === "ai"
+              ? "Haricî katman AI kanıtı buldu"
+              : "Haricî katmanda yeterli kanıt yok"}
+          </h4>
+          <p>
+            {decision.label === "ai"
+              ? `Eşiği aşan: ${decision.triggered_by
+                  .map((id) => decision.arms[id]?.label ?? id)
+                  .join(" + ")}. Bu sonuç da yeni kaynaklar için garanti değildir.`
+              : "Bu sonuç ‘gerçektir’ anlamına gelmez; haricî katman da yalnız AI yönlü kanıt arar."}
+          </p>
+          <div className="arm-list">
+            {Object.entries(decision.arms).map(([id, arm]) => (
+              <span key={id} className={arm.band === "ai" ? "arm-hit" : ""}>
+                {arm.label}: {arm.score.toFixed(2)} / {arm.threshold.toFixed(2)}
+              </span>
+            ))}
+            {decision.caveats.map((caveat) => (
+              <span key={caveat} className="arm-caveat">
+                {CAVEAT_TEXT[caveat] ?? caveat}
+              </span>
+            ))}
+          </div>
+          <small>{decision.provenance}</small>
+        </>
+      )}
+    </section>
+  );
+}
+
+function ProjectResult({ analysis }: { analysis: Analysis }) {
+  const project = analysis.project_model;
+  if (!project) return null;
+  const scorePercent = Math.min(100, Math.max(0, project.score * 100));
+  const thresholdPercent = Math.min(100, Math.max(0, project.threshold * 100));
+
+  return (
+    <section
+      className={`project-result ${project.triggered ? "project-triggered" : "project-below"}`}
+      aria-label="Proje modeli sonucu"
+    >
+      <div className="section-kicker">Proje modeli · {project.revision}</div>
+      <div className="project-result-heading">
+        <span aria-hidden="true">{project.triggered ? "◆" : "◇"}</span>
+        <div>
+          <h3>{project.triggered ? "AI yönünde deneysel sinyal" : "Deneysel eşik aşılmadı"}</h3>
+          <p>
+            {project.triggered
+              ? "Kendi modelimizin ham skoru, E20 kalibrasyonunda seçilen eşiğin üzerinde."
+              : "Kendi modelimizin ham skoru deneysel eşiğin altında; bu, görselin gerçek olduğunu kanıtlamaz."}
+          </p>
+        </div>
+      </div>
+
+      <div className="project-meter" aria-label={`Skor ${project.score.toFixed(3)}, eşik ${project.threshold.toFixed(3)}`}>
+        <div className="project-meter-track">
+          <span className="project-meter-fill" style={{ width: `${scorePercent}%` }} />
+          <span className="project-meter-threshold" style={{ left: `${thresholdPercent}%` }} />
+        </div>
+        <div className="project-meter-labels">
+          <strong>Ham skor {project.score.toFixed(3)}</strong>
+          <span>Deneysel eşik {project.threshold.toFixed(3)}</span>
+        </div>
+      </div>
+
+      <dl className="model-facts">
+        <div><dt>Model</dt><dd>{project.artifact_id}</dd></div>
+        <div><dt>Kesit</dt><dd>{project.tile_count} × {project.tile_px}px</dd></div>
+        <div><dt>Birleştirme</dt><dd>{project.aggregation}</dd></div>
+        <div><dt>Artifact</dt><dd title={project.artifact_sha256}>{project.artifact_sha256.slice(0, 12)}…</dd></div>
+      </dl>
+
+      <p className="limitation-note"><strong>Açık sınır:</strong> {project.limitation}</p>
+    </section>
+  );
+}
+
+function LegacyResult({ analysis }: { analysis: Analysis }) {
+  const scorePosition = Math.min(100, Math.max(0, analysis.p_ai * 100));
+  return (
+    <section className="legacy-result" aria-label="Eski araştırma yöntemi sonucu">
+      <div className="section-kicker">Eski araştırma yöntemi</div>
+      <p>
+        Bu skor kanonik proje modeli değildir ve karara dahil edilmez. Yalnız geçmiş deneyleri
+        karşılaştırmak için gösterilir.
+      </p>
+      <div className="probability">
+        <div className="probability-labels">
+          <span>0</span>
+          <strong>{analysis.p_ai.toFixed(3)} · {SIGNAL_TEXT[analysis.verdict]}</strong>
+          <span>1</span>
+        </div>
+        <div className="probability-track">
+          <div className={`probability-fill verdict-${analysis.verdict}`} style={{ width: `${scorePosition}%` }} />
+        </div>
+      </div>
+      <small>{analysis.method_label} · {analysis.resolution}</small>
+    </section>
+  );
+}
 
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const previewUrlRef = useRef<string | null>(null);
   const requestGateRef = useRef(new LatestRequestGate());
   const [preview, setPreview] = useState<Preview | null>(null);
-  const [method, setMethod] = useState("auto");
+  const [method, setMethod] = useState(PROJECT_METHOD.id);
   const [dragging, setDragging] = useState(false);
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
@@ -121,7 +239,8 @@ export default function Home() {
       }
       if (!response.ok) {
         const detail =
-          typeof payload === "object" && payload !== null && "detail" in payload && typeof payload.detail === "string"
+          typeof payload === "object" && payload !== null &&
+          "detail" in payload && typeof payload.detail === "string"
             ? payload.detail
             : undefined;
         throw new AnalysisHttpError(response.status, detail);
@@ -141,35 +260,38 @@ export default function Home() {
     if (analysis) analyze(id);
   }
 
-  // This is a display position for a raw research score, not a calibrated probability.
-  const scorePosition = analysis ? Math.min(100, Math.max(0, analysis.p_ai * 100)) : 0;
+  const isProjectMethod = method === PROJECT_METHOD.id;
 
   return (
     <main>
       <header>
         <div className="header-content">
-          <strong>AI Image Detector</strong>
-          <span>Module 1 · 4 yöntem</span>
+          <strong>PixelProof</strong>
+          <span>Proje modeli · E20</span>
         </div>
       </header>
 
       <div className="container">
         <section className="intro">
-          <h1>Görsel Gerçeklik Analizi</h1>
-          <p>Bir fotoğraf yükleyin, hangi yöntemle inceleneceğini seçin.</p>
+          <span className="intro-kicker">Çalıştırılabilir model demosu</span>
+          <h1>Kendi AI görsel modelimizi deneyin</h1>
+          <p>
+            Bir görsel yükleyin. Önce projede eğitilen ResNet-18 çalışır; varsa haricî karar
+            katmanı sonucu ayrı bir karşılaştırma olarak gösterilir.
+          </p>
         </section>
 
         <section className="grid">
           <div className="panel">
             <div className="panel-title">
               <h2>1. Görsel yükle</h2>
-              <p>JPG, PNG veya WEBP</p>
+              <p>JPG, PNG veya WEBP · en fazla 12 MB</p>
             </div>
 
             {!preview ? (
               <div
                 className={`dropzone ${dragging ? "dragging" : ""}`}
-                onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+                onDragOver={(event) => { event.preventDefault(); setDragging(true); }}
                 onDragLeave={() => setDragging(false)}
                 onDrop={onDrop}
               >
@@ -186,31 +308,30 @@ export default function Home() {
                   <img src={preview.url} alt="Seçilen görsel" />
                   {analysis?.tile_map && (
                     <div className="tile-overlay">
-                      {analysis.tile_map.tiles.map((t, i) => (
+                      {analysis.tile_map.tiles.map((tile, index) => (
                         <span
-                          key={i}
-                          title={`%${(t.p_ai * 100).toFixed(0)}`}
+                          key={index}
+                          title={`Ham kesit skoru ${tile.p_ai.toFixed(3)}`}
                           style={{
-                            left: `${(t.x / analysis.tile_map!.image_w) * 100}%`,
-                            top: `${(t.y / analysis.tile_map!.image_h) * 100}%`,
+                            left: `${(tile.x / analysis.tile_map!.image_w) * 100}%`,
+                            top: `${(tile.y / analysis.tile_map!.image_h) * 100}%`,
                             width: `${(analysis.tile_map!.tile_px / analysis.tile_map!.image_w) * 100}%`,
                             height: `${(analysis.tile_map!.tile_px / analysis.tile_map!.image_h) * 100}%`,
-                            background: `rgba(217,45,32,${Math.max(0, t.p_ai - 0.5) * 1.4})`,
-                            borderColor: t.p_ai >= 0.7 ? "rgba(217,45,32,.85)" : "transparent",
+                            background: `rgba(217,45,32,${Math.max(0, tile.p_ai - 0.5) * 1.4})`,
+                            borderColor: tile.p_ai >= 0.7 ? "rgba(217,45,32,.85)" : "transparent",
                           }}
                         />
                       ))}
                     </div>
                   )}
                 </div>
-                <div className="file-info" style={{ textAlign: "left" }}>
+                <div className="file-info">
                   <div><strong>{preview.name}</strong><span>{preview.size}</span></div>
                   <button type="button" onClick={clear}>Kaldır</button>
                 </div>
                 {analysis?.tile_map && (
                   <p className="tile-note">
-                    Kırmızı yoğunluk o kesitin ham AI-yönlü dedektör skorudur. Konum doğruluğu
-                    piksel maskeleriyle doğrulanmadı; bir düzenleme yerinin kanıtı değildir.
+                    Harita her kesitin ham model skorunu gösterir; düzenleme konumunun kanıtı değildir.
                   </p>
                 )}
               </div>
@@ -221,149 +342,73 @@ export default function Home() {
               type="file"
               accept="image/jpeg,image/png,image/webp"
               aria-label="Analiz edilecek görseli seç"
-              onChange={(e: ChangeEvent<HTMLInputElement>) => choose(e.target.files?.[0])}
+              onChange={(event: ChangeEvent<HTMLInputElement>) => choose(event.target.files?.[0])}
             />
           </div>
 
-          <div className="panel">
+          <div className="panel result-panel">
             <div className="panel-title">
-              <h2>2. Yöntem ve sonuç</h2>
-              <p>Yöntemi değiştirince analiz yenilenir</p>
+              <h2>2. Proje modelini çalıştır</h2>
+              <p>Birincil sonuç her zaman kendi E20 modelimize aittir</p>
             </div>
 
-            <div className="methods">
-              {METHODS.map((m) => (
-                <button
-                  key={m.id}
-                  type="button"
-                  className={`method ${method === m.id ? "active" : ""}`}
-                  onClick={() => pick(m.id)}
-                  disabled={loading}
-                  aria-pressed={method === m.id}
-                  title={m.hint}
-                >
-                  {m.label}
-                </button>
-              ))}
-            </div>
-            <p className="method-hint">{METHODS.find((m) => m.id === method)?.hint}</p>
+            <button
+              type="button"
+              className={`primary-method ${isProjectMethod ? "active" : ""}`}
+              onClick={() => pick(PROJECT_METHOD.id)}
+              disabled={loading}
+              aria-pressed={isProjectMethod}
+            >
+              <span><strong>{PROJECT_METHOD.label}</strong><small>{PROJECT_METHOD.hint}</small></span>
+              <b>{isProjectMethod ? "Seçili" : "Seç"}</b>
+            </button>
+
+            <details className="research-methods">
+              <summary>Eski araştırma yöntemlerini aç</summary>
+              <p>Geçmiş deneyleri karşılaştırmak içindir; proje modelinin yerine geçmez.</p>
+              <div className="methods">
+                {RESEARCH_METHODS.map((candidate) => (
+                  <button
+                    key={candidate.id}
+                    type="button"
+                    className={`method ${method === candidate.id ? "active" : ""}`}
+                    onClick={() => pick(candidate.id)}
+                    disabled={loading}
+                    aria-pressed={method === candidate.id}
+                    title={candidate.hint}
+                  >
+                    {candidate.label}
+                  </button>
+                ))}
+              </div>
+            </details>
 
             {!analysis ? (
-              <div className="result" aria-live="polite" aria-busy={loading}>
-                <div className="result-icon">?</div>
-                <h3>{preview ? "Görsel analize hazır" : "Henüz sonuç yok"}</h3>
-                <p>{preview ? "Analiz butonuna basarak modeli çalıştırın." : "Analiz için önce bir görsel yükleyin."}</p>
+              <div className="result empty-result" aria-live="polite" aria-busy={loading}>
+                <div className="result-icon">P</div>
+                <h3>{preview ? "Proje modeli hazır" : "Önce bir görsel yükleyin"}</h3>
+                <p>
+                  {preview
+                    ? "Tek düğmeyle doğrulanmış E20 checkpoint’ini çalıştırabilirsiniz."
+                    : "Model, görseli doğal çözünürlükte 128 px kesitler üzerinden inceler."}
+                </p>
                 {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" disabled={!preview || loading} onClick={() => analyze()}>
-                  {loading ? "Analiz ediliyor…" : "Analiz et"}
+                  {loading ? "Model çalışıyor…" : isProjectMethod ? "Proje modelini çalıştır" : "Seçili yöntemi çalıştır"}
                 </button>
               </div>
             ) : (
-              <div className="result" aria-live="polite" aria-busy={loading}>
-                {/* ─── HÜKÜM — tek karar burada verilir (E22–E26) ─── */}
-                {analysis.decision ? (
-                  <div
-                    style={{
-                      borderRadius: 14,
-                      padding: "20px 18px",
-                      marginBottom: 18,
-                      textAlign: "center",
-                      background: analysis.decision.label === "ai" ? "rgba(217,45,32,.09)" : "rgba(90,98,112,.07)",
-                      border: `2px solid ${analysis.decision.label === "ai" ? "#d92d20" : "rgba(90,98,112,.35)"}`,
-                    }}
-                  >
-                    <div style={{ fontSize: 34, lineHeight: 1 }}>
-                      {analysis.decision.label === "ai" ? "⚠️" : "◌"}
-                    </div>
-                    <strong
-                      style={{
-                        display: "block",
-                        margin: "8px 0 4px",
-                        fontSize: 20,
-                        letterSpacing: 0.5,
-                        color: analysis.decision.label === "ai" ? "#d92d20" : "#475467",
-                      }}
-                    >
-                      {analysis.decision.label === "ai" ? "YAPAY ZEKÂ TESPİT EDİLDİ" : "YETERLİ KANIT YOK"}
-                    </strong>
-                    <p style={{ margin: "4px 0 12px", fontSize: 13.5 }}>
-                      {analysis.decision.label === "ai"
-                        ? `Yakalayan: ${analysis.decision.triggered_by
-                            .map((id) => analysis.decision!.arms[id]?.label ?? id)
-                            .join(" + ")} — skor dondurulmuş eşiğin üstünde. Ayrı değerlendirmedeki en yüksek yanlış alarm %10,7 idi; bu sonuç yeni kamera veya platformlar için garanti değildir.`
-                        : "Hiçbir dedektör eşiğini aşmadı. Bu bir 'gerçektir' garantisi değil — sistem bilerek 'gerçek' kararı vermez (E23a)."}
-                    </p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, fontSize: 12, justifyContent: "center" }}>
-                      {Object.entries(analysis.decision.arms).map(([id, arm]) => (
-                        <span
-                          key={id}
-                          style={{
-                            padding: "3px 9px",
-                            borderRadius: 6,
-                            background: arm.band === "ai" ? "rgba(217,45,32,.12)" : "rgba(0,0,0,.05)",
-                            fontWeight: arm.band === "ai" ? 600 : 400,
-                          }}
-                        >
-                          {arm.label}: {arm.score.toFixed(2)} / eşik {arm.threshold.toFixed(2)}
-                          {arm.band === "ai" ? " ✓" : ""}
-                        </span>
-                      ))}
-                      {analysis.decision.caveats.map((c) => (
-                        <span key={c} style={{ padding: "3px 9px", borderRadius: 6, background: "rgba(247,144,9,.15)", color: "#b54708" }}>
-                          {CAVEAT_TEXT[c] ?? c}
-                        </span>
-                      ))}
-                    </div>
-                    <p style={{ margin: "10px 0 0", fontSize: 11, opacity: 0.6 }}>{analysis.decision.provenance}</p>
-                  </div>
-                ) : (
-                  <p className="error-text" style={{ marginBottom: 14 }}>
-                    {!analysis.enough_evidence
-                      ? "Resmî karar için görselin her iki boyutu da en az 48 piksel olmalıdır."
-                      : "Karar katmanı kullanılamıyor — aşağıda yalnız araştırma skoru gösteriliyor."}
-                  </p>
-                )}
-
-                {/* ─── ARAŞTIRMA SİNYALİ — karara dahil değildir ─── */}
-                <div
-                  style={{
-                    borderRadius: 10,
-                    border: "1px dashed rgba(90,98,112,.4)",
-                    padding: "12px 14px",
-                    textAlign: "left",
-                    opacity: 0.85,
-                  }}
-                >
-                  <p style={{ margin: 0, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.8, color: "#5a6270" }}>
-                    Araştırma skoru — karara dahil değil
-                  </p>
-                  <p style={{ margin: "4px 0 10px", fontSize: 12, color: "#5a6270" }}>
-                    Projede eğittiğimiz modelin kalibre edilmemiş ham skoru. Görmediği kameraların gerçek fotoğraflarında
-                    %79–100 yanlış alarm verdiğini ölçtük (E13/E24) — burada dürüstlükle, eğitim amaçlı duruyor.
-                  </p>
-                  <div className="probability">
-                    <div className="probability-labels">
-                      <span>0</span>
-                      <strong>
-                        ham skor = {analysis.p_ai.toFixed(3)} · {SIGNAL_TEXT[analysis.verdict]}
-                      </strong>
-                      <span>1</span>
-                    </div>
-                    <div className="probability-track">
-                      <div className="probability-fill" style={{ width: `${scorePosition}%`, background: VERDICT_COLOR[analysis.verdict] }} />
-                    </div>
-                  </div>
-                  <p className="model-info" style={{ marginTop: 8 }}>
-                    {analysis.method_label}
-                    {analysis.auto_selected && " · otomatik seçildi"}
-                    {" · "}{analysis.resolution}
-                    {!analysis.enough_evidence && " · ⚠️ ölçüm için çok küçük"}
-                  </p>
-                </div>
-
+              <div className="result result-stack" aria-live="polite" aria-busy={loading}>
+                {analysis.project_model
+                  ? <ProjectResult analysis={analysis} />
+                  : <LegacyResult analysis={analysis} />}
+                <ExternalComparison
+                  decision={analysis.decision}
+                  enoughEvidence={analysis.enough_evidence}
+                />
                 {error && <p className="error-text" role="alert">{error}</p>}
-                <button type="button" onClick={() => analyze()} disabled={loading} style={{ marginTop: 14 }}>
-                  {loading ? "Analiz ediliyor…" : "Tekrar analiz et"}
+                <button type="button" onClick={() => analyze()} disabled={loading}>
+                  {loading ? "Model çalışıyor…" : "Tekrar çalıştır"}
                 </button>
               </div>
             )}
@@ -371,16 +416,11 @@ export default function Home() {
         </section>
 
         <aside>
-          <strong>Karar nasıl veriliyor:</strong> Üstteki karar, dondurulmuş bir dedektörün
-          skorunu 12 gerçek kamera kaynağıyla kalibre edilmiş eşikten geçirir (E22–E24) ve
-          yalnız iki cevap verir: &quot;AI tespit edildi&quot; ya da &quot;yeterli kanıt yok&quot; —
-          &quot;gerçektir&quot; demez, çünkü o kararın hiçbir kaynakta tutarlı verilemediğini ölçtük.
-          Alttaki yöntemler projenin kendi araştırma sinyalleridir; karıştırılmazlar (E9: en iyi
-          karışım +0.002). Bilinen sınırlar: GPT Image ailesinde ayrım gücü şans seviyesinde,
-          ağır sıkıştırmada yakalama düşer. Bu bir araştırma demosudur.
-          E26 iki-kollu OR sisteminin ayrı değerlendirmedeki worst-source yanlış alarmı
-          iPhone kaynağında 11/103, yani %10,7 idi (Wilson %95 güven aralığı %6,1–%18,1).
-          Bu sayı yalnız ölçülen 12 kaynak ve mevcut örneklem için geçerlidir.
+          <strong>Bu ekrandaki ayrım:</strong> Birinci kart projede eğittiğimiz E20 ResNet-18’in
+          deneysel sonucudur. Üç seed değerlendirmesinde worst-source yanlış alarmı
+          %86,2 ± %3,1 olduğu için gerçeklik sertifikası değildir. Haricî E26 karşılaştırması
+          ayrı tutulur; onun ölçülen iki-kollu worst-source sonucu 11/103, yani %10,7 idi
+          (Wilson %95: %6,1–%18,1). İki sistem de negatif sonuçta “gerçektir” demez.
         </aside>
       </div>
     </main>

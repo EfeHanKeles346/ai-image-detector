@@ -20,6 +20,20 @@ const validAnalysis = {
   resolution: "1024×768",
   enough_evidence: true,
   tile_map: null,
+  project_model: {
+    score: 0.72,
+    threshold: 0.9895,
+    triggered: false,
+    research_only: true,
+    limitation: "E20 worst-source limitation",
+    artifact_id: "e20-tile-resnet18-seed2024",
+    artifact_sha256: "a".repeat(64),
+    revision: "E20-v2 seed 2024",
+    seed: 2024,
+    aggregation: "top3",
+    tile_px: 128,
+    tile_count: 51,
+  },
   decision: {
     label: "ai",
     triggered_by: ["cf_vit"],
@@ -51,6 +65,13 @@ test("analysis responses are validated before UI state receives them", () => {
   );
   assert.throws(
     () => parseAnalysis({ ...validAnalysis, tile_map: { image_w: 0, tiles: [] } }),
+    AnalysisResponseError,
+  );
+  assert.throws(
+    () => parseAnalysis({
+      ...validAnalysis,
+      project_model: { ...validAnalysis.project_model, artifact_sha256: "not-a-hash" },
+    }),
     AnalysisResponseError,
   );
 });

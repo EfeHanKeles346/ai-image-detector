@@ -20,6 +20,7 @@ header { height: 64px; background: var(--surface); border-bottom: 1px solid var(
 .header-content span { padding: 6px 10px; border-radius: 6px; background: #eff6ff; color: var(--primary-dark); font-size: 12px; font-weight: 700; }
 .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 52px 0; }
 .intro { margin-bottom: 28px; }
+.intro-kicker { display: inline-block; margin-bottom: 10px; color: var(--primary-dark); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .intro h1 { margin: 0 0 10px; font-size: 32px; letter-spacing: -0.02em; }
 .intro p { margin: 0; color: var(--muted); line-height: 1.5; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -71,7 +72,17 @@ aside { margin-top: 20px; padding: 16px 18px; border: 1px solid #bfdbfe; border-
 .model-info { font-size: 12px !important; }
 
 
-/* Method picker — four mutually exclusive methods, never blended (E9). */
+/* The project model is primary; older mutually exclusive methods stay in research details. */
+.primary-method { width: 100%; margin: 18px 0 12px; padding: 14px 15px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); color: var(--text); text-align: left; cursor: pointer; }
+.primary-method:hover:not(:disabled), .primary-method.active { border-color: var(--primary); background: #eff6ff; }
+.primary-method span { display: flex; flex-direction: column; gap: 3px; }
+.primary-method strong { font-size: 14px; }
+.primary-method small { color: var(--muted); font-size: 11px; }
+.primary-method b { padding: 5px 8px; border-radius: 5px; background: var(--primary); color: white; font-size: 10px; }
+.primary-method:disabled { opacity: .55; cursor: default; }
+.research-methods { margin-bottom: 6px; padding: 10px 12px; border: 1px solid #eaecf0; border-radius: 8px; background: #fcfcfd; }
+.research-methods summary { color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer; }
+.research-methods > p { margin: 8px 0 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
 .methods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 18px 0 8px; }
 .method { padding: 9px 4px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--muted); font-size: 12px; font-weight: 600; cursor: pointer; transition: .12s; }
 .method:hover:not(:disabled) { border-color: var(--primary); color: var(--primary-dark); }
@@ -87,6 +98,45 @@ aside { margin-top: 20px; padding: 16px 18px; border: 1px solid #bfdbfe; border-
 .tile-overlay span { position: absolute; border: 1px solid transparent; border-radius: 2px; }
 .tile-note { margin: 10px 0 0; color: var(--muted); font-size: 11px; line-height: 1.45; }
 
+.result-panel { min-height: 520px; }
+.empty-result { min-height: 300px; }
+.result-stack { min-height: 0; padding-top: 14px; align-items: stretch; justify-content: flex-start; gap: 14px; text-align: left; }
+.result-stack > button { align-self: center; }
+.section-kicker { margin-bottom: 8px; color: var(--primary-dark); font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.project-result, .comparison-card, .legacy-result { width: 100%; padding: 16px; border-radius: 10px; }
+.project-result { border: 1px solid #b8cdfc; background: #f5f8ff; }
+.project-result.project-triggered { border-color: #fda29b; background: #fff7f6; }
+.project-result-heading { display: flex; align-items: flex-start; gap: 11px; }
+.project-result-heading > span { width: 34px; height: 34px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; background: #dbe7ff; color: var(--primary-dark); font-size: 17px; }
+.project-triggered .project-result-heading > span { background: #fee4e2; color: #b42318; }
+.project-result h3 { margin: 0 0 5px; font-size: 18px; }
+.project-result p, .comparison-card p, .legacy-result p { max-width: none; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.project-meter { margin: 17px 0 13px; }
+.project-meter-track { position: relative; height: 10px; overflow: hidden; border-radius: 999px; background: #dfe5ef; }
+.project-meter-fill { display: block; height: 100%; border-radius: 999px; background: var(--primary); }
+.project-triggered .project-meter-fill { background: #d92d20; }
+.project-meter-threshold { position: absolute; top: -3px; width: 2px; height: 16px; background: #172033; transform: translateX(-1px); }
+.project-meter-labels { margin-top: 6px; display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 10px; }
+.project-meter-labels strong { color: var(--text); }
+.model-facts { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.model-facts div { min-width: 0; padding: 8px 9px; border-radius: 7px; background: rgba(255,255,255,.75); }
+.model-facts dt { margin-bottom: 2px; color: var(--muted); font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.model-facts dd { margin: 0; overflow: hidden; color: var(--text); font-size: 11px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.limitation-note { margin-top: 12px !important; padding-top: 11px; border-top: 1px solid rgba(37,99,235,.16); color: #475467 !important; }
+.comparison-card { border: 1px solid #e4e7ec; background: #fcfcfd; }
+.comparison-card h4 { margin: 0 0 5px; font-size: 14px; }
+.comparison-ai { color: #b42318; }
+.comparison-quiet { color: #475467; }
+.arm-list { margin: 10px 0 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+.arm-list span { padding: 4px 7px; border-radius: 5px; background: #eef1f5; color: #475467; font-size: 10px; }
+.arm-list .arm-hit { background: #fee4e2; color: #b42318; font-weight: 700; }
+.arm-list .arm-caveat { background: #fef0c7; color: #b54708; }
+.comparison-card small, .legacy-result small { color: var(--muted); font-size: 9px; }
+.legacy-result { border: 1px dashed #98a2b3; background: #fcfcfd; }
+.legacy-result .probability { margin: 12px 0 8px; max-width: none; }
+
 @media (max-width: 460px) {
   .methods { grid-template-columns: repeat(2, 1fr); }
+  .model-facts { grid-template-columns: 1fr; }
+  .project-meter-labels { flex-direction: column; gap: 2px; }
 }

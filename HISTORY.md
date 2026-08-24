@@ -1310,3 +1310,27 @@ separately. Automated coverage includes padded 64 px input, a 2304 px input held
 tiles, unavailable artifact and project-only readiness. Python passed 33/33; web lint, typecheck,
 build and 6/6 tests remained clean. The model works end to end; M3 now makes that path visible as
 the primary web experience.
+
+### M3 — the web demo becomes model-first
+
+M3 removed the four-method chooser from the main interaction without deleting the earlier research
+paths. `project_model` is now the initial selection and the primary action explicitly runs the E20
+ResNet-18. Its result card keeps the raw score beside the stored experimental threshold, trigger
+state, E20 revision, tile count, `top3` aggregation and verified artifact hash prefix. An
+under-threshold result says only that the experimental threshold was not crossed and explicitly
+warns that this does not prove the image is real.
+
+The measured limitation is part of the result rather than a footnote: E20's 86.2% +/- 3.1
+worst-source authentic false-positive result is visible in the interface. The frozen E26 decision
+layer remains available as a separately titled external comparison, including its own provenance
+and caveats. The old `auto`, `cnn`, `stats` and `tiles` paths moved behind an optional research
+disclosure and their output is labelled as a legacy score that does not replace the canonical
+model.
+
+The browser contract now validates every project-model response field before publishing it,
+including score ranges, the 64-character checkpoint SHA-256, integer seed, positive tile size and
+positive tile count. The existing request gate still prevents an older response from replacing a
+newer one, and upload controls retain keyboard-visible button semantics and an accessible file
+label. Verification passed `git diff --check`, ESLint, TypeScript, the production Vinext build and
+all 6/6 web tests. Public hosting remains deferred: this phase completes the local, testable model
+experience without changing the deployment boundary.

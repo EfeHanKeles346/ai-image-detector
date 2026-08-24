@@ -30,12 +30,16 @@ test("server-renders the PixelProof product shell", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="tr">/i);
-  assert.match(html, /<title>PixelProof — Görsel Özgünlük Analizi<\/title>/i);
-  assert.match(html, /Görsel Gerçeklik Analizi/);
+  assert.match(html, /<title>PixelProof — E20 Proje Modeli<\/title>/i);
+  assert.match(html, /Kendi AI görsel modelimizi deneyin/);
   assert.match(html, /Fotoğrafı buraya bırakın/);
-  assert.match(html, /Otomatik/);
-  assert.match(html, /Kare kare/);
-  assert.match(html, /YETERLİ KANIT YOK|yeterli kanıt yok/i);
+  assert.match(html, /E20 ResNet-18/);
+  assert.match(html, /Proje modelini çalıştır/);
+  assert.match(html, /Eski araştırma yöntemlerini aç/);
+  assert.match(html, /aria-label="Analiz edilecek görseli seç"/);
+  assert.match(html, /aria-pressed="true"/);
+  assert.match(html, /gerçeklik sertifikası değildir/i);
+  assert.match(html, /%86,2/);
   assert.match(html, /11\/103/);
   assert.match(html, /%10,7/);
 
