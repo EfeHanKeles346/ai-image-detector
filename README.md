@@ -41,7 +41,7 @@ diffusion inpainting and did not generalise to classic splicing.
 | `ml/EXPERIMENTS.md` | Append-only measured experiment log |
 | `ml/artifacts.manifest.json` | Pinned model identity, hashes, licences and schemas |
 | `PLAN.md` | Living roadmap and measured hardening results |
-| `HISTORY.md` | Frozen project history |
+| `HISTORY.md` | Append-only chronological project and decision archive |
 | `DATASETS.md` | Dataset inventory, allowed uses and portable path contract |
 | `rapor/` | Historical report/talk snapshot; see its boundary note |
 

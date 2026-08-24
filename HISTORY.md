@@ -1,10 +1,11 @@
 # AI Image Detector — Decision History
 
-> **FROZEN 2026-08-18.** This file was the project's living roadmap from day one through E21.
-> It is now the complete decision history, kept verbatim as the source for the internship
-> report — nothing here is edited or appended anymore. The living plan is
-> [`PLAN.md`](PLAN.md). Note for readers: file paths named below describe the repo as it was
-> at the time of writing; finished experiment scripts have since moved to
+> **APPEND-ONLY ARCHIVE SINCE 2026-08-24.** The original history from day one through E21 is
+> preserved verbatim as the source for the internship report. It is never silently rewritten;
+> later completed development phases are appended as dated entries at the end. The living plan
+> remains [`PLAN.md`](PLAN.md), while measured scientific results remain append-only in
+> [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md). Paths in older entries describe the repository as it
+> existed at that time; finished experiment scripts have since moved to
 > `ml/experiments/archive/` and retired modules to `ml/src/pixelproof/archive/`.
 
 Goal: build a model that decides whether a photo is **AI-generated** or a **real photograph**, starting with a small CNN and iterating toward stronger models, then serving it through the web app in this repo.
@@ -1224,3 +1225,45 @@ Also open, not on the critical path:
 - [ ] Build a small ChatGPT/Gemini test set by hand, both classes through one identical pipeline — the only uncontaminated route to 2026-era editing models
 - [ ] Verify the CommunityForensics slice we hold (47 of 260 GB) is representative before training on it
 - [ ] Seed variance on E1–E11, which predate the ≥3-seed rule (§5)
+
+## 15. Session 2026-08-24 — repository hardening and the model-first milestone
+
+The E20-E27 research line had produced meaningful measurements, but a full repository audit found
+that the serving, browser contract, reproducibility and documentation did not yet enforce the same
+discipline as the experiments. The correction was executed as H0-H6, with every phase planned,
+measured, recorded in `PLAN.md` and committed separately:
+
+| Phase | Commit | Durable result |
+|---|---|---|
+| H0 | `ef9edaa` | Ordered hardening roadmap recorded before implementation |
+| H1 | `6509ebf` | Web lint, typecheck, build and current-product tests restored |
+| H2 | `18ab632` | Deployment API origin, runtime response validation and stale-request cancellation |
+| H3 | `364d9f0` | Bounded image decoding/inference, normalized inputs, restricted CORS and truthful health |
+| H4 | `d0d856d` | E27 evaluation leak corrected; calibration-only rerun failed G1 and the arm was removed |
+| H5 | `dbafd05` | Locked Python serving environment and hash-verified artifact registry |
+| H6 | `9830d31` | Documentation alignment, CI/Dependabot and real local end-to-end verification |
+
+The most important scientific outcome was a refusal, not a higher score. E27's original union
+procedure could consult evaluation halves while choosing its threshold. After the threshold was
+fitted from calibration sources only, the candidate moved from 15.38 to 21.71 and GPT-probe recall
+fell from 40.5% to 14.5%, below the pre-registered 40% gate. The failed arm was removed from serving
+and the correction was appended to `ml/EXPERIMENTS.md`; the earlier entry was retained as history.
+
+Repository verification at the end of H6 passed 6/6 web tests and 25/25 Python tests, plus lint,
+TypeScript, production build, Python dependency checks, artifact hashes and a real API/web smoke
+run. Two high-severity `vinext -> image-size` advisories remain explicit dependency debt because
+npm's available remediation crosses into the breaking vinext beta line.
+
+### Model-first transition
+
+The immediate project goal was then narrowed deliberately: before production deployment or another
+research branch, make one project-owned model easy to start, test and present. Commit `774520b`
+recorded M0-M6 in `PLAN.md` before implementation. The canonical checkpoint is the E20 native-tile
+ResNet-18, seed 2024 (`artifacts/tile_resnet18_seed2024.pt`): 128 px tiles, ImageNet normalization,
+0.04 texture floor, `top3` aggregation and calibration-only threshold 0.9894907.
+
+This is a working project result, not an authenticity certificate. Its three-seed result is
+Defactify evaluation AUC 0.751 +/- 0.033 and recall 49.9% +/- 6.1; worst-source authentic false
+positives remain 86.2% +/- 3.1. M1-M6 therefore focus on a verified artifact, one canonical API/UI
+path, repeatable folder evaluation, one-command local demonstration and traceable presentation
+evidence, with the limitation displayed rather than hidden.

@@ -1,7 +1,8 @@
 # Plan — the living document
 
 Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTORY.md)
-(frozen) and [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md) (append-only log). This file holds
+(append-only project archive) and [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md) (append-only scientific
+log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
 ## Active goal — a runnable project-owned model (2026-08-24)
@@ -109,7 +110,8 @@ available as a measured comparison, not as a substitute for presenting the proje
 | H6 | `9830d31` | Documentation aligned; CI, dependency audit and final E2E gates added |
 
 Every completed phase below contains its acceptance checks and measured result. Git history is the
-immutable implementation record; `ml/EXPERIMENTS.md` remains append-only for scientific results.
+immutable implementation record; `HISTORY.md` receives dated completion summaries and
+`ml/EXPERIMENTS.md` remains append-only for scientific results.
 
 ## Completed hardening roadmap (2026-08-24)
 
