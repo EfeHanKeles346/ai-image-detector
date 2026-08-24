@@ -36,10 +36,13 @@ test("server-renders the PixelProof product shell", async () => {
   assert.match(html, /Otomatik/);
   assert.match(html, /Kare kare/);
   assert.match(html, /YETERLİ KANIT YOK|yeterli kanıt yok/i);
+  assert.match(html, /11\/103/);
+  assert.match(html, /%10,7/);
 
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
   assert.doesNotMatch(html, /name=["']codex-preview["']/i);
   assert.doesNotMatch(html, /\/Users\/|file:\/\//i);
+  assert.doesNotMatch(html, /p\(AI\)|AI olasılığı/i);
 });
 
 test("packages the Sites hosting contract without stale starter assets", async () => {

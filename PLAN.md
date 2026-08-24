@@ -75,17 +75,25 @@ the measured result here, then commit. No unmeasured product claim is introduced
 
 ### Phase H4 — repair the scientific/product contract
 
-- [ ] Replace the false UI statement that no source exceeds 10% FP with the exact measured
+- [x] Replace the false UI statement that no source exceeds 10% FP with the exact measured
       operating point and its uncertainty/limited-population wording.
-- [ ] Ensure the E27 union gate can never tune a threshold by reading evaluation halves;
+- [x] Ensure the E27 union gate can never tune a threshold by reading evaluation halves;
       evaluation data is measured once after the threshold is frozen.
-- [ ] Label research outputs as scores, not calibrated probabilities, and describe the tile
+- [x] Label research outputs as scores, not calibrated probabilities, and describe the tile
       map as a detector-score map rather than proof of manipulation location.
-- [ ] Emit the megapixel caveat only when an enabled arm actually receives the capped input;
+- [x] Emit the megapixel caveat only when an enabled arm actually receives the capped input;
       describe bytes-per-pixel as a heuristic, not a compression classifier.
-- [ ] Bring the CLI into the same asymmetric `ai` / `insufficient` verdict contract.
+- [x] Bring the CLI into the same asymmetric `ai` / `insufficient` verdict contract.
 - **Acceptance:** pure tests pin the decision/caveat rules and a synthetic protocol test
   proves that changing evaluation scores cannot change a fitted threshold.
+- **Measured 2026-08-24:** the corrected calibration-only E27 rerun froze the candidate
+  threshold at 21.71, then measured evaluation exactly once: worst-source FP 10.7%
+  (iPhone 11/103; Wilson 95% CI 6.1–18.1%) and macro FP 2.95%. The resulting GPT-probe
+  recall was only 14.5% (q75 9.0%), below E27's pre-registered >=40% G1, so the E27 arm
+  was rejected and removed from serving; the append-only experiment log records the
+  correction. Python tests passed 22/22 and web contract/product tests passed 6/6, with
+  lint, typecheck and build all clean. Pure tests pin asymmetric CLI/caveat behavior and
+  prove that replacing every evaluation arm score cannot move the union threshold.
 
 ### Phase H5 — make a clean clone reproducible
 

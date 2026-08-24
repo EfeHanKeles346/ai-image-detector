@@ -157,8 +157,6 @@ class ModelRuntime:
         arms: list[str] = []
         if self.verdict is not None:
             arms.extend(arm.name for arm in self.verdict.arms)
-            if self.verdict.gpt_arm is not None:
-                arms.append(self.verdict.gpt_arm.name)
         return {
             "status": status,
             "device": str(self.device),

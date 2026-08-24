@@ -98,6 +98,81 @@ def threshold_at_fpr(real_scores: Sequence[float], budget: float) -> float:
     return float(np.nextafter(descending[allowed], np.inf))
 
 
+def union_threshold_at_fpr(
+    calibration_baseline_hits: Mapping[str, Sequence[bool]],
+    calibration_arm_scores: Mapping[str, Sequence[float]],
+    budget: float,
+) -> float:
+    """Fit a new OR arm without allowing evaluation data into the threshold.
+
+    For each calibration source, the new arm may use only the false-positive
+    capacity left by the already-frozen baseline. If that baseline is itself
+    above ``budget``, the new arm may not add another hit on that source. The
+    strictest source threshold is transferred unchanged to evaluation data.
+    """
+    if not 0.0 <= budget < 1.0:
+        raise ValueError("false-positive budget must be in [0, 1)")
+    if set(calibration_baseline_hits) != set(calibration_arm_scores):
+        raise ValueError("baseline-hit and arm-score sources must match")
+    if not calibration_baseline_hits:
+        raise ValueError("at least one calibration source is required")
+
+    source_thresholds = []
+    for source in calibration_baseline_hits:
+        baseline = np.asarray(calibration_baseline_hits[source], dtype=bool)
+        scores = np.asarray(calibration_arm_scores[source], dtype=np.float64)
+        if len(baseline) != len(scores) or not len(scores):
+            raise ValueError(f"source {source!r} must have aligned non-empty arrays")
+        scores = np.where(np.isfinite(scores), scores, -np.inf)
+
+        baseline_count = int(baseline.sum())
+        target_rate = max(budget, baseline_count / len(baseline))
+        allowed_total = int(np.floor(len(baseline) * target_rate + 1e-12))
+        remaining = max(0, allowed_total - baseline_count)
+        eligible = np.sort(scores[~baseline])[::-1]
+        if remaining >= len(eligible):
+            source_thresholds.append(float("-inf"))
+        else:
+            source_thresholds.append(float(np.nextafter(eligible[remaining], np.inf)))
+    return float(max(source_thresholds))
+
+
+def union_operating_point(
+    calibration_baseline_hits: Mapping[str, Sequence[bool]],
+    calibration_arm_scores: Mapping[str, Sequence[float]],
+    evaluation_baseline_hits: Mapping[str, Sequence[bool]],
+    evaluation_arm_scores: Mapping[str, Sequence[float]],
+    budget: float,
+) -> dict:
+    """Fit the union on calibration populations, then measure evaluation once."""
+    threshold = union_threshold_at_fpr(
+        calibration_baseline_hits,
+        calibration_arm_scores,
+        budget,
+    )
+
+    def rates(
+        baseline_by_source: Mapping[str, Sequence[bool]],
+        scores_by_source: Mapping[str, Sequence[float]],
+    ) -> dict[str, float]:
+        if set(baseline_by_source) != set(scores_by_source):
+            raise ValueError("baseline-hit and arm-score sources must match")
+        output = {}
+        for source, raw_hits in baseline_by_source.items():
+            baseline = np.asarray(raw_hits, dtype=bool)
+            scores = np.asarray(scores_by_source[source], dtype=np.float64)
+            if len(baseline) != len(scores) or not len(scores):
+                raise ValueError(f"source {source!r} must have aligned non-empty arrays")
+            output[source] = float(np.mean(baseline | (scores >= threshold)))
+        return output
+
+    return {
+        "threshold": threshold,
+        "calibration_union_fp": rates(calibration_baseline_hits, calibration_arm_scores),
+        "evaluation_union_fp": rates(evaluation_baseline_hits, evaluation_arm_scores),
+    }
+
+
 def operating_point(
     calibration_real: Sequence[float],
     evaluation_real: Sequence[float],

@@ -8,7 +8,8 @@
 import numpy as np
 from PIL import Image
 
-from pixelproof.verdict import CAP_PX, capped, combine, decide
+from pixelproof.predict import official_label
+from pixelproof.verdict import CAP_PX, capped, combine, decide, input_caveats
 
 
 def test_band_is_asymmetric():
@@ -40,3 +41,18 @@ def test_cap_only_touches_megapixel_input():
     assert max(shrunk.size) == CAP_PX
     # aspect ratio preserved within rounding
     assert abs(shrunk.size[0] / shrunk.size[1] - 4032 / 3024) < 0.01
+
+
+def test_caveats_describe_only_an_enabled_policy_and_a_coarse_byte_density_flag():
+    # A large image does not earn the cap caveat when no B-Free arm consumed
+    # the capped copy. Low byte density is still flagged as a heuristic.
+    assert input_caveats(0.8, bfree_was_capped=False) == []
+    assert input_caveats(0.2, bfree_was_capped=False) == ["sikistirilmis-girdi"]
+    assert input_caveats(0.8, bfree_was_capped=True) == ["megapiksel-siniri"]
+
+
+def test_cli_never_turns_a_research_score_into_a_real_certificate():
+    assert official_label({"enough_evidence": True, "decision": {"label": "ai"}}) == "AI detected"
+    assert official_label({"enough_evidence": True, "decision": {"label": "insufficient"}}) == "insufficient evidence"
+    assert official_label({"enough_evidence": True, "decision": None}) == "insufficient evidence"
+    assert official_label({"enough_evidence": False, "decision": {"label": "ai"}}) == "insufficient evidence"

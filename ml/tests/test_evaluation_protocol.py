@@ -8,6 +8,8 @@ from pixelproof.evaluation_protocol import (
     operating_point,
     stable_calibration_split,
     threshold_at_fpr,
+    union_operating_point,
+    union_threshold_at_fpr,
 )
 
 
@@ -49,6 +51,49 @@ def test_operating_point_never_uses_evaluation_real_to_fit_threshold():
 
     assert original["threshold"] == shifted["threshold"]
     assert original["evaluation_fp"] != shifted["evaluation_fp"]
+
+
+def test_union_threshold_uses_only_remaining_calibration_capacity():
+    baseline = {
+        "clean": [True, False, False, False, False],
+        "shifted": [True, True, False, False, False],
+    }
+    arm = {
+        "clean": [100.0, 0.9, 0.8, 0.1, 0.0],
+        "shifted": [100.0, 99.0, 0.7, 0.6, 0.5],
+    }
+    threshold = union_threshold_at_fpr(baseline, arm, budget=0.2)
+
+    # clean has one baseline hit (its full budget); shifted is already above the
+    # budget. Neither source may gain a new calibration hit.
+    assert threshold > 0.9
+    for source in baseline:
+        hits = np.asarray(baseline[source]) | (np.asarray(arm[source]) >= threshold)
+        assert hits.mean() <= max(0.2, np.mean(baseline[source]))
+
+
+def test_union_evaluation_scores_cannot_change_the_fitted_threshold():
+    calibration_baseline = {"camera": [False] * 10}
+    calibration_arm = {"camera": np.linspace(0.0, 0.9, 10)}
+    evaluation_baseline = {"camera": [False] * 5}
+
+    original = union_operating_point(
+        calibration_baseline,
+        calibration_arm,
+        evaluation_baseline,
+        {"camera": [0.0] * 5},
+        budget=0.1,
+    )
+    shifted = union_operating_point(
+        calibration_baseline,
+        calibration_arm,
+        evaluation_baseline,
+        {"camera": [100.0] * 5},
+        budget=0.1,
+    )
+
+    assert original["threshold"] == shifted["threshold"]
+    assert original["evaluation_union_fp"] != shifted["evaluation_union_fp"]
 
 
 def test_invalid_protocol_parameters_fail_loudly():

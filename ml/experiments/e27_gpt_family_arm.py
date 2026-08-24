@@ -47,10 +47,10 @@
 #       out-of-collection ChatGPT holdout is a recorded TODO for the owner.
 #   G2  q75-recompressed probe recall reported; a collapse marks a
 #       compression shortcut (review finding).
-#   G3  three-arm OR worst-source FP over the 12 pipelines' evaluation
-#       halves <= 10.0% — the project budget, NOT loosened (review). If the
-#       union exceeds it, the arm's threshold is raised on calibration
-#       halves until the union fits, then G1 is re-checked.
+#   G3  fit the three-arm OR threshold on calibration halves only, then measure
+#       the untouched evaluation halves exactly once. Evaluation cannot trigger
+#       another threshold change. If the calibration-safe threshold breaks G1,
+#       the arm is rejected rather than post-hoc loosened.
 #   G4  FFHQ portrait-real holdout FP reported (content-shortcut row).
 #   G5  the live ChatGPT desktop image, scored (single out-of-collection
 #       smoke sample).
@@ -74,8 +74,12 @@ import numpy as np
 import torch
 from PIL import Image
 
-from pixelproof.evaluation_protocol import (safe_auc, stable_calibration_split,
-                                            threshold_at_fpr)
+from pixelproof.evaluation_protocol import (
+    safe_auc,
+    stable_calibration_split,
+    threshold_at_fpr,
+    union_operating_point,
+)
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -403,7 +407,8 @@ def stage_train_eval() -> None:
     from scipy.stats import spearmanr
     from sklearn.linear_model import LogisticRegression
 
-    device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else
+                          "mps" if torch.backends.mps.is_available() else "cpu")
     model, proc = load_backbone(device)
     rows = [json.loads(l) for l in (ART / "pool_manifest.jsonl").open()]
     paths = [r["path"] for r in rows]
@@ -513,7 +518,8 @@ def stage_union() -> None:
     """G3'ün kesin ölçümü: 3-kollu OR, e21/e23b/e24 önbellekleriyle görsel-bazında,
     12 pipeline (iPhone dahil). Kol eşiği 12 kaynaklı kütüphaneyle yeniden kesilir;
     birleşim bütçeyi aşarsa eşik kalibrasyon yarılarında yükseltilir (E22 kuralı)."""
-    device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else
+                          "mps" if torch.backends.mps.is_available() else "cpu")
     model, proc = load_backbone(device)
     CF_T, BF_T = 0.6617392, 1.0439179
 
@@ -567,9 +573,6 @@ def stage_union() -> None:
     cal_h, ev_h = {}, {}
     for n in real_names:
         cal_h[n], ev_h[n] = halves(pops[n])
-    t_arm = max(threshold_at_fpr(np.array([arm_scores[p] for p in cal_h[n]]),
-                                 FP_BUDGET) for n in real_names)
-
     def bf_score(p, source):
         if source == "iphone":
             return iph["bfree:capped"][Path(p).stem]
@@ -582,29 +585,27 @@ def stage_union() -> None:
             return iph["cf_vit:native"][Path(p).stem]
         return cf[p]["image_score"]
 
-    # G3 v2: taban çizgisi (2-kollu OR) hesaplanır; kolun kuralı —
-    # hiçbir kaynağı max(bütçe, taban) ötesine itmemek. Taban zaten bütçe
-    # üstündeyse (örnekleme varyansı, E22b CI) kol o kaynağı HİÇ kötüleştiremez.
-    baseline_fp = {}
-    for n in real_names:
-        hits = [cf_score(p, n) >= CF_T or bf_score(p, n) >= BF_T for p in ev_h[n]]
-        baseline_fp[n] = float(np.mean(hits))
-
-    def union_at(t):
-        out = {}
-        for n in real_names:
-            hits = [cf_score(p, n) >= CF_T or bf_score(p, n) >= BF_T
-                    or arm_scores[p] >= t for p in ev_h[n]]
-            out[n] = float(np.mean(hits))
-        return out
-
-    for _ in range(60):
-        union_fp = union_at(t_arm)
-        bad = [n for n in real_names
-               if union_fp[n] > max(FP_BUDGET, baseline_fp[n]) + 1e-9]
-        if not bad:
-            break
-        t_arm = float(t_arm + 0.5)
+    # G3 v3: every threshold decision is made from calibration halves only.
+    # Evaluation halves enter once, after the strictest source threshold freezes.
+    baseline_cal = {
+        n: [cf_score(p, n) >= CF_T or bf_score(p, n) >= BF_T for p in cal_h[n]]
+        for n in real_names
+    }
+    baseline_eval = {
+        n: [cf_score(p, n) >= CF_T or bf_score(p, n) >= BF_T for p in ev_h[n]]
+        for n in real_names
+    }
+    fitted = union_operating_point(
+        baseline_cal,
+        {n: [arm_scores[p] for p in cal_h[n]] for n in real_names},
+        baseline_eval,
+        {n: [arm_scores[p] for p in ev_h[n]] for n in real_names},
+        FP_BUDGET,
+    )
+    t_arm = fitted["threshold"]
+    calibration_union_fp = fitted["calibration_union_fp"]
+    union_fp = fitted["evaluation_union_fp"]
+    baseline_fp = {n: float(np.mean(hits)) for n, hits in baseline_eval.items()}
     worst = max(union_fp.values())
 
     recalls, base_recalls = {}, {}
@@ -626,7 +627,9 @@ def stage_union() -> None:
     ffhq_final = float((head_scores("ffhq_holdout") >= t_arm).mean())
     live = head_scores("live_chatgpt") if (ART / "embed_live_chatgpt.npy").is_file() else None
 
-    out = {"t_arm_deployed": t_arm,
+    admission_pass = probe_final >= 0.40
+    out = {"t_arm_candidate": t_arm,
+           "calibration_union_fp": calibration_union_fp,
            "baseline_fp": baseline_fp, "union_fp": union_fp,
            "union_worst_fp": worst,
            "union_macro_fp": float(np.mean(list(union_fp.values()))),
@@ -638,12 +641,19 @@ def stage_union() -> None:
            "probe_q75_recall_final": probe_q75_final,
            "ffhq_holdout_fp_final": ffhq_final,
            "live_chatgpt_above_final": (bool(live[0] >= t_arm)
-                                        if live is not None else None)}
+                                        if live is not None else None),
+           "admission_pass": admission_pass,
+           "admission_reason": ("all gates passed" if admission_pass else
+                                "G1 failed: in-collection probe recall < 40%")}
     (ART / "union.json").write_text(json.dumps(out, indent=2))
+    if admission_pass:
+        np.savez(Path("artifacts/gpt_arm_v1.npz"), coef=coef.reshape(1, -1),
+                 intercept=np.array([intercept]), threshold=np.array(t_arm))
     print(f"taban 2-kol worst: {100*max(baseline_fp.values()):.1f}% · "
           f"3-kol worst: {100*worst:.1f}% · eşik {t_arm:.2f}")
     print(f"probe (nihai eşik): {100*probe_final:.1f}% (q75 {100*probe_q75_final:.1f}%) · "
           f"ffhq FP {100*ffhq_final:.1f}%")
+    print("admission:", "PASS" if admission_pass else "REJECT — G1 <40%")
     print("2-kol recall:", {g: f"{100*v:.0f}%" for g, v in base_recalls.items()})
     print("3-kol recall:", {g: f"{100*v:.0f}%" for g, v in recalls.items()})
     print(f"Results -> {ART/'union.json'}")

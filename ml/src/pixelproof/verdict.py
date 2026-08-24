@@ -26,7 +26,7 @@
 # PER BLOCK
 # -----------------------------------------------------------------------------
 # CommunityForensicsArm  MIT-licensed ViT-S, loaded from the local HF cache.
-#                        Always servable.
+#                        The default servable arm.
 # BFreeArm               GRIP-UNINA B-Free — informational/nonprofit licence,
 #                        so it loads only when the official checkout exists
 #                        AND PIXELPROOF_BFREE=1 acknowledges that scope.
@@ -50,7 +50,7 @@ from PIL import Image
 CAP_PX = 2048            # E23b: rescues megapixel pipelines (NIST 35.2% -> 8.8% FP)
 CF_T_AI = 0.6617392      # E24: worst-source threshold, 12-pipeline library
 BFREE_T_AI = 1.0439179   # E24: same rule, capped B-Free arm
-COMPRESSED_BPP = 0.30    # E23c: below this, recall sits in the degraded regime
+COMPRESSED_BPP = 0.30    # E23c: a coarse byte-density flag, not a codec diagnosis
 LICENCE_ENV = "PIXELPROOF_BFREE"
 
 
@@ -84,6 +84,16 @@ def combine(bands: dict[str, str]) -> tuple[str, list[str]]:
     return ("ai" if triggered else "insufficient"), triggered
 
 
+def input_caveats(bytes_per_pixel: float, bfree_was_capped: bool) -> list[str]:
+    """Return only policies that actually fired for an enabled verdict arm."""
+    caveats = []
+    if bfree_was_capped:
+        caveats.append("megapiksel-siniri")
+    if bytes_per_pixel <= COMPRESSED_BPP:
+        caveats.append("sikistirilmis-girdi")
+    return caveats
+
+
 class CommunityForensicsArm:
     name = "cf_vit"
     label = "Community-Forensics ViT-S"
@@ -106,39 +116,9 @@ class CommunityForensicsArm:
 
     @torch.inference_mode()
     def score(self, picture: Image.Image) -> float:
-        return self.score_with_embedding(picture)[0]
-
-    @torch.inference_mode()
-    def score_with_embedding(self, picture: Image.Image) -> tuple[float, "torch.Tensor"]:
-        """One ViT forward yields both the CF logit and the CLS embedding the
-        E27 GPT-family head consumes — the third arm costs zero extra compute."""
         inputs = self.processor(images=picture, return_tensors="pt")
-        cls = self.model.vit(
-            pixel_values=inputs["pixel_values"].to(self.device)
-        ).last_hidden_state[:, 0]
-        logit = self.model.classifier(cls)
-        return float(logit[0, 0].cpu()), cls[0].cpu()
-
-
-class GptFamilyArm:
-    """E27: our own GPT-family specialist — a linear head on CF-ViT embeddings,
-    trained on the gpt-image-mega-4k pool behind the pre-registered gate.
-    In-collection probe recall 40.5% at the deployed threshold (vs 12% for the
-    two-arm OR); adds zero worst-source FP (union gate, E27)."""
-
-    name = "gpt_arm"
-    label = "GPT-ailesi kolu (E27, bizim)"
-
-    def __init__(self, artifact: Path) -> None:
-        import numpy as np
-
-        head = np.load(artifact)
-        self.coef = torch.from_numpy(head["coef"].ravel()).float()
-        self.intercept = float(head["intercept"][0])
-        self.threshold = float(head["threshold"])
-
-    def score_from_embedding(self, cls: "torch.Tensor") -> float:
-        return float(cls @ self.coef + self.intercept)
+        output = self.model(pixel_values=inputs["pixel_values"].to(self.device))
+        return float(output.logits[0, 0].cpu())
 
 
 class BFreeArm:
@@ -178,18 +158,15 @@ class VerdictService:
 
     def __init__(self, device: torch.device, repo_root: Path) -> None:
         self.arms: list = []
-        self.gpt_arm: GptFamilyArm | None = None
         began = time.perf_counter()
         try:
             self.arms.append(CommunityForensicsArm(device))
         except Exception as error:  # missing cache/transformers: demo degrades gracefully
             print(f"[verdict] CF-ViT yüklenemedi: {error}")
-        gpt_artifact = repo_root / "artifacts/gpt_arm_v1.npz"
-        if self.arms and gpt_artifact.is_file():
-            try:
-                self.gpt_arm = GptFamilyArm(gpt_artifact)
-            except Exception as error:
-                print(f"[verdict] GPT kolu yüklenemedi: {error}")
+        # E27 is deliberately not loaded. Its original union loop inspected
+        # evaluation halves while raising the threshold. The calibration-only
+        # rerun cut in-collection recall from 40.5% to 14.5%, failing its own
+        # >=40% admission gate (E27 correction, 2026-08-24).
         bfree_repo = repo_root / "external/B-Free"
         if os.environ.get(LICENCE_ENV) == "1" and bfree_repo.is_dir():
             try:
@@ -211,21 +188,12 @@ class VerdictService:
     def run(self, picture: Image.Image, byte_size: int) -> dict:
         width, height = picture.size
         bytes_per_pixel = byte_size / max(width * height, 1)
-        scoring_input, was_capped = capped(picture)
+        has_bfree = any(arm.name == "bfree" for arm in self.arms)
+        bfree_input, bfree_was_capped = capped(picture) if has_bfree else (picture, False)
 
         arms = {}
         for arm in self.arms:
-            if arm.name == "cf_vit" and self.gpt_arm is not None:
-                value, cls = arm.score_with_embedding(picture)
-                gpt_value = self.gpt_arm.score_from_embedding(cls)
-                arms[self.gpt_arm.name] = {
-                    "label": self.gpt_arm.label,
-                    "score": round(gpt_value, 4),
-                    "threshold": round(self.gpt_arm.threshold, 4),
-                    "band": decide(gpt_value, self.gpt_arm.threshold),
-                }
-            else:
-                value = arm.score(scoring_input if arm.name == "bfree" else picture)
+            value = arm.score(bfree_input if arm.name == "bfree" else picture)
             arms[arm.name] = {
                 "label": arm.label,
                 "score": round(value, 4),
@@ -233,11 +201,7 @@ class VerdictService:
                 "band": decide(value, arm.threshold),
             }
 
-        caveats = []
-        if was_capped:
-            caveats.append("megapiksel-siniri")      # E23b policy fired
-        if bytes_per_pixel <= COMPRESSED_BPP:
-            caveats.append("sikistirilmis-girdi")    # E23c degraded regime
+        caveats = input_caveats(bytes_per_pixel, bfree_was_capped)
 
         label, triggered = combine({n: a["band"] for n, a in arms.items()})
         return {

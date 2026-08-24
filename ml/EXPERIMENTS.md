@@ -1124,3 +1124,24 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
 - **The one-line conclusion for the report:** the served system now contains a model we
   trained ourselves, admitted by the same gate that had rejected our earlier models —
   and the gate's v1 refusal (0.992) is the best evidence the gate is real.
+
+## 2026-08-24 — E27 protocol correction: evaluation leaked into union threshold selection
+
+- **Audit finding:** E27's union stage initially computed two-arm baseline and three-arm
+  false positives on the evaluation halves, then increased the GPT-arm threshold in a loop
+  until those evaluation results met `max(10%, baseline)`. The saved run happened not to
+  enter the loop, but the algorithm made future threshold/model admission conditional on
+  evaluation data and therefore violated the project's frozen-evaluation rule.
+- **Correction:** `union_threshold_at_fpr()` now assigns the new arm only the false-positive
+  capacity left by the frozen baseline on each **calibration half**. The strictest source
+  cut is frozen; evaluation halves are measured once. A synthetic test replaces every
+  evaluation arm score and proves the fitted threshold cannot change.
+- **Recomputed result on the same cached images:** candidate threshold **15.38 → 21.71**;
+  evaluation worst-source FP remains **10.7%** (iPhone 11/103; this is baseline sampling
+  variance), macro FP **2.95%**, and the GPT arm adds zero evaluation false positives.
+  But in-collection GPT-probe recall falls **40.5% → 14.5%** (q75: 32.5% → 9.0%);
+  DALL-E 3 recall rises only 21% → 25%, while Midjourney stays 14%.
+- **Decision:** **E27 fails its pre-registered G1 >=40% admission gate and is removed from
+  serving.** The valid served scientific contract returns to E26's two-arm OR (CF-ViT by
+  default; B-Free only under its explicit non-commercial opt-in). The earlier E27 entry is
+  retained above as history and is superseded by this correction, not silently rewritten.

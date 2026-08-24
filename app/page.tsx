@@ -16,8 +16,8 @@ import {
 type Preview = { name: string; url: string; size: string; file: File };
 
 const CAVEAT_TEXT: Record<string, string> = {
-  "megapiksel-siniri": "2048px sınırı uygulandı (E23b)",
-  "sikistirilmis-girdi": "Sıkıştırılmış girdi — yakalama gücü bu rejimde düşük (E23c)",
+  "megapiksel-siniri": "Etkin B-Free koluna 2048px sınırı uygulandı (E23b)",
+  "sikistirilmis-girdi": "Düşük byte/piksel — yalnız kaba sıkıştırma uyarısı (E23c)",
 };
 
 const API_ORIGIN = resolveApiOrigin(
@@ -31,7 +31,7 @@ const METHODS = [
   { id: "auto", label: "Otomatik", hint: "Boyuta göre en güçlü yöntem" },
   { id: "cnn", label: "CNN", hint: "Küçültülmüş görsel · küçük girdilerde güçlü" },
   { id: "stats", label: "İstatistik", hint: "68 istatistik · fizik izleri, küçültme yok" },
-  { id: "tiles", label: "Kare kare", hint: "6×6 orijinal kesit · ≥700px'te en iyi · ısı haritası" },
+  { id: "tiles", label: "Kare kare", hint: "En fazla 256 yerel kesit · dedektör-skor haritası" },
 ];
 
 const SIGNAL_TEXT: Record<Verdict, string> = {
@@ -141,8 +141,8 @@ export default function Home() {
     if (analysis) analyze(id);
   }
 
-  // A statistical model can never honestly claim 0% or 100%; clamp the display.
-  const percent = analysis ? Math.min(99.9, Math.max(0.1, analysis.p_ai * 100)) : 0;
+  // This is a display position for a raw research score, not a calibrated probability.
+  const scorePosition = analysis ? Math.min(100, Math.max(0, analysis.p_ai * 100)) : 0;
 
   return (
     <main>
@@ -209,8 +209,8 @@ export default function Home() {
                 </div>
                 {analysis?.tile_map && (
                   <p className="tile-note">
-                    Kırmızı yoğunluk = o karenin AI olasılığı. Tüm kareler kırmızıysa görselin
-                    tamamı üretilmiş; sadece bir bölge kırmızıysa orası şüpheli.
+                    Kırmızı yoğunluk o kesitin ham AI-yönlü dedektör skorudur. Konum doğruluğu
+                    piksel maskeleriyle doğrulanmadı; bir düzenleme yerinin kanıtı değildir.
                   </p>
                 )}
               </div>
@@ -290,7 +290,7 @@ export default function Home() {
                       {analysis.decision.label === "ai"
                         ? `Yakalayan: ${analysis.decision.triggered_by
                             .map((id) => analysis.decision!.arms[id]?.label ?? id)
-                            .join(" + ")} — skor, 12 gerçek kaynağın hiçbirinde %10 yanlış alarmı aşmayan eşiğin üstünde.`
+                            .join(" + ")} — skor dondurulmuş eşiğin üstünde. Ayrı değerlendirmedeki en yüksek yanlış alarm %10,7 idi; bu sonuç yeni kamera veya platformlar için garanti değildir.`
                         : "Hiçbir dedektör eşiğini aşmadı. Bu bir 'gerçektir' garantisi değil — sistem bilerek 'gerçek' kararı vermez (E23a)."}
                     </p>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 8, fontSize: 12, justifyContent: "center" }}>
@@ -318,7 +318,9 @@ export default function Home() {
                   </div>
                 ) : (
                   <p className="error-text" style={{ marginBottom: 14 }}>
-                    Karar katmanı yüklenemedi — aşağıda yalnız araştırma sinyali gösteriliyor.
+                    {!analysis.enough_evidence
+                      ? "Resmî karar için görselin her iki boyutu da en az 48 piksel olmalıdır."
+                      : "Karar katmanı kullanılamıyor — aşağıda yalnız araştırma skoru gösteriliyor."}
                   </p>
                 )}
 
@@ -333,22 +335,22 @@ export default function Home() {
                   }}
                 >
                   <p style={{ margin: 0, fontSize: 11, textTransform: "uppercase", letterSpacing: 0.8, color: "#5a6270" }}>
-                    Araştırma sinyali — karara dahil değil
+                    Araştırma skoru — karara dahil değil
                   </p>
                   <p style={{ margin: "4px 0 10px", fontSize: 12, color: "#5a6270" }}>
-                    Projede eğittiğimiz modelin ham skoru. Görmediği kameraların gerçek fotoğraflarında
+                    Projede eğittiğimiz modelin kalibre edilmemiş ham skoru. Görmediği kameraların gerçek fotoğraflarında
                     %79–100 yanlış alarm verdiğini ölçtük (E13/E24) — burada dürüstlükle, eğitim amaçlı duruyor.
                   </p>
                   <div className="probability">
                     <div className="probability-labels">
-                      <span>Gerçek</span>
+                      <span>0</span>
                       <strong>
-                        p(AI) = %{percent.toFixed(1)} · {SIGNAL_TEXT[analysis.verdict]}
+                        ham skor = {analysis.p_ai.toFixed(3)} · {SIGNAL_TEXT[analysis.verdict]}
                       </strong>
-                      <span>AI</span>
+                      <span>1</span>
                     </div>
                     <div className="probability-track">
-                      <div className="probability-fill" style={{ width: `${percent}%`, background: VERDICT_COLOR[analysis.verdict] }} />
+                      <div className="probability-fill" style={{ width: `${scorePosition}%`, background: VERDICT_COLOR[analysis.verdict] }} />
                     </div>
                   </div>
                   <p className="model-info" style={{ marginTop: 8 }}>
@@ -376,6 +378,9 @@ export default function Home() {
           Alttaki yöntemler projenin kendi araştırma sinyalleridir; karıştırılmazlar (E9: en iyi
           karışım +0.002). Bilinen sınırlar: GPT Image ailesinde ayrım gücü şans seviyesinde,
           ağır sıkıştırmada yakalama düşer. Bu bir araştırma demosudur.
+          E26 iki-kollu OR sisteminin ayrı değerlendirmedeki worst-source yanlış alarmı
+          iPhone kaynağında 11/103, yani %10,7 idi (Wilson %95 güven aralığı %6,1–%18,1).
+          Bu sayı yalnız ölçülen 12 kaynak ve mevcut örneklem için geçerlidir.
         </aside>
       </div>
     </main>
