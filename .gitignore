@@ -8,6 +8,7 @@ ml/artifacts/
 !ml/artifacts/figures/**
 __pycache__/
 *.pyc
+*.egg-info/
 .DS_Store
 .vinext/
 artifacts_train.log
@@ -17,3 +18,5 @@ artifacts_train.log
 
 # third-party checkouts + weights for E21 external baselines (licences differ from ours)
 ml/external/
+ml/data/
+ml/work/

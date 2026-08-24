@@ -21,5 +21,7 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 Feature extraction caches to `../artifacts/features/`, so re-running anything after the
 first time costs seconds rather than minutes.
 
-**Requires the datasets in `../../DATASETS.md` to be present at the paths listed there.**
-Scripts fail fast with a clear error if a dataset folder is missing.
+**Requires the datasets in `../../DATASETS.md`.** Active scripts read
+`PIXELPROOF_DATA_ROOT` (acquired sources) and `PIXELPROOF_WORK_ROOT` (prepared sets), with
+portable `ml/data` and `ml/work` defaults. Scripts fail fast with a clear error if a required
+dataset folder is missing.

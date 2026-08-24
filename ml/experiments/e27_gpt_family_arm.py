@@ -80,15 +80,16 @@ from pixelproof.evaluation_protocol import (
     threshold_at_fpr,
     union_operating_point,
 )
+from pixelproof.project_paths import DATA_ROOT, WORK_ROOT
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-SSD = Path("/Volumes/LaCie/pixelproof-datasets")
-HOME = Path.home() / "Desktop"
+SSD = DATA_ROOT
+HOME = WORK_ROOT
 POOL = HOME / "e27_pool"
 ART = Path("artifacts/e27")
 PROBE_DIR = HOME / "e25_modern_probe/gpt_image_4k"
-LIVE_IMAGE = HOME / "ChatGPT Image 28 Tem 2026 16_12_34.png"
+LIVE_IMAGE = HOME / "live-chatgpt.png"
 SPLIT_SEED = 2026
 CAL_FRACTION = 0.5
 FP_BUDGET = 0.10

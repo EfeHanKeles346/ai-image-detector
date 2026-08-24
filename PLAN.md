@@ -97,18 +97,27 @@ the measured result here, then commit. No unmeasured product claim is introduced
 
 ### Phase H5 — make a clean clone reproducible
 
-- [ ] Declare the live service and experiment dependency groups completely and add a locked
+- [x] Declare the live service and experiment dependency groups completely and add a locked
       Python environment artifact suitable for the supported Python version.
-- [ ] Add a runtime artifact manifest containing source, licence, revision, SHA-256, expected
+- [x] Add a runtime artifact manifest containing source, licence, revision, SHA-256, expected
       path and model/feature schema; loading must reject mismatched artifacts.
-- [ ] Provide an explicit artifact preparation/check command. A missing model must yield an
+- [x] Provide an explicit artifact preparation/check command. A missing model must yield an
       actionable readiness result, not an import-time traceback.
-- [ ] Replace personal absolute dataset paths in active commands with CLI/config/environment
+- [x] Replace personal absolute dataset paths in active commands with CLI/config/environment
       inputs while preserving the current machine as an optional local configuration.
-- [ ] Record the project's own licence posture and keep B-Free opt-in/non-commercial use
+- [x] Record the project's own licence posture and keep B-Free opt-in/non-commercial use
       separate from the default servable configuration.
 - **Acceptance:** documented clean-environment setup reaches a truthful health response;
   artifact verification and missing-artifact paths are tested without network access.
+- **Measured 2026-08-24:** the Python 3.13/macOS-arm64 serving lock resolved successfully
+  with installed packages ignored, `pip check` found no broken requirements, and editable
+  package metadata resolved with both `test` and `experiments` groups. The offline registry
+  verified all five default artifacts plus the optional pinned B-Free checkout; the real
+  runtime reported `ready` with CF-ViT only by default. Python tests passed 25/25, including
+  offline good/tampered/missing/optional artifact cases, and a missing core produced
+  `status=unavailable` with an actionable manifest error. Active scripts contain no personal
+  absolute path; `PIXELPROOF_DATA_ROOT` / `PIXELPROOF_WORK_ROOT` preserve arbitrary local
+  layouts. `LICENSE.md` records no granted project licence and isolates upstream terms.
 
 ### Phase H6 — align documentation and automate the gates
 

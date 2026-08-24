@@ -66,8 +66,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import OneClassSVM
 
 from pixelproof.features import FEATURE_NAMES, extract
+from pixelproof.project_paths import WORK_ROOT
 
-HOME = Path.home() / "Desktop"
+HOME = WORK_ROOT
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".JPEG"}
 
 # name -> (folder, label 1=AI/0=real)

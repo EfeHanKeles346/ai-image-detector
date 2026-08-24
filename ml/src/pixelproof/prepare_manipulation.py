@@ -68,9 +68,11 @@ import tarfile
 from collections import defaultdict
 from pathlib import Path
 
-SSD = Path("/Volumes/LaCie/pixelproof-datasets")
+from pixelproof.project_paths import DATA_ROOT, WORK_ROOT
+
+SSD = DATA_ROOT
 SOURCE = SSD / "ductai199x__image-manipulation-dataset-compilation"
-OUTPUT = Path.home() / "Desktop/manipulation_test"
+OUTPUT = WORK_ROOT / "manipulation_test"
 
 # Everything except OpenForensics — see the header for why.
 SKIP_PREFIX = "OpenForensics"

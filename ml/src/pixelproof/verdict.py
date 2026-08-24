@@ -46,12 +46,15 @@ from pathlib import Path
 import torch
 from PIL import Image
 
+from pixelproof.artifact_registry import verify_registry
+
 # --- measured constants ------------------------------------------------------
 CAP_PX = 2048            # E23b: rescues megapixel pipelines (NIST 35.2% -> 8.8% FP)
 CF_T_AI = 0.6617392      # E24: worst-source threshold, 12-pipeline library
 BFREE_T_AI = 1.0439179   # E24: same rule, capped B-Free arm
 COMPRESSED_BPP = 0.30    # E23c: a coarse byte-density flag, not a codec diagnosis
 LICENCE_ENV = "PIXELPROOF_BFREE"
+CF_REVISION = "ac6ee457bea904a373065754107451793b56db00"
 
 
 def capped(picture: Image.Image) -> tuple[Image.Image, bool]:
@@ -105,6 +108,7 @@ class CommunityForensicsArm:
 
         local = snapshot_download(
             "buildborderless/CommunityForensics-DeepfakeDet-ViT",
+            revision=CF_REVISION,
             local_files_only=True,   # E21 cached it; serving never downloads
         )
         self.model = (
@@ -169,10 +173,19 @@ class VerdictService:
         # >=40% admission gate (E27 correction, 2026-08-24).
         bfree_repo = repo_root / "external/B-Free"
         if os.environ.get(LICENCE_ENV) == "1" and bfree_repo.is_dir():
-            try:
-                self.arms.append(BFreeArm(device, bfree_repo))
-            except Exception as error:
-                print(f"[verdict] B-Free yüklenemedi: {error}")
+            verification = verify_registry(
+                repo_root,
+                groups={"bfree"},
+                include_optional=True,
+            )
+            if verification["ok"]:
+                try:
+                    self.arms.append(BFreeArm(device, bfree_repo))
+                except Exception as error:
+                    print(f"[verdict] B-Free yüklenemedi: {error}")
+            else:
+                print(f"[verdict] B-Free artifact doğrulaması başarısız: "
+                      f"{'; '.join(verification['issues'])}")
         elif bfree_repo.is_dir():
             print(f"[verdict] B-Free mevcut ama {LICENCE_ENV}=1 verilmedi "
                   "(lisans: yalnız araştırma/kâr amaçsız) — CF ile devam")

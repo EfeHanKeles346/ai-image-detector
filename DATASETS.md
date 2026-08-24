@@ -14,16 +14,18 @@ because every tile arrives at 128×128 regardless of where it came from.
 
 | Location | Contents |
 |---|---|
-| `~/Desktop/` | The four original sets: `archive` (CIFAKE), `archive1`, `genimage_split`, `defactify_test` |
-| `~/Desktop/manipulation_test/` | Module 2 working set — 10 sub-datasets extracted from the 78 GB compilation (6.7 GB, 2,385 manipulated images each with a mask + 2,289 authentic). Rebuild: `python -m pixelproof.prepare_manipulation` |
-| `/Volumes/LaCie/pixelproof-datasets/` | 255 GB acquired 2026-07-28/29 |
+| `$PIXELPROOF_WORK_ROOT` (default `ml/work/`) | Prepared working sets: `archive`, `archive1`, `genimage_split`, `defactify_test`, probes and temporary experiment encodings |
+| `$PIXELPROOF_WORK_ROOT/manipulation_test/` | Module 2 working set — 10 sub-datasets extracted from the 78 GB compilation (6.7 GB, 2,385 manipulated images each with a mask + 2,289 authentic). Rebuild: `python -m pixelproof.prepare_manipulation` |
+| `$PIXELPROOF_DATA_ROOT` (default `ml/data/`) | Acquired source datasets; may point at an external volume |
 
-⚠️ Nothing on the SSD is reachable when it is unmounted. Scripts hard-code the path.
+The original machine can retain its existing layout without code edits by exporting, for
+example, `PIXELPROOF_WORK_ROOT=/path/to/prepared-work` and
+`PIXELPROOF_DATA_ROOT=/path/to/pixelproof-datasets`. Active commands no longer contain a
+personal absolute path. Both portable defaults are gitignored.
 
 ⚠️ `manipulation_test` lived in `/tmp/m2` until 2026-08-04, where macOS would have
-wiped it on the next reboot — and it was the only copy. E17/E18 now take `--root`
-and default to the Desktop path, and `prepare_manipulation.py` rebuilds it from
-the SSD.
+wiped it on the next reboot — and it was the only copy. E17/E18 take `--root`, and
+`prepare_manipulation.py` rebuilds the portable work directory from the data root.
 
 Extracted by default: everything except **OpenForensics**, which is 138 of the
 191 tars and is face manipulation rather than splicing or inpainting. One tar per

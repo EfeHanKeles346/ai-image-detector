@@ -46,5 +46,12 @@ it, and only then commit to the full download — recorded in `HISTORY.md` §2b.
 
 ## Paths
 
-Both scripts hard-code `/Volumes/LaCie/pixelproof-datasets`. Nothing runs when the external SSD is
-unmounted.
+Both scripts read `PIXELPROOF_DATA_ROOT`; the portable default is `ml/data/`. For an external
+volume, set it explicitly before either command, for example:
+
+```bash
+export PIXELPROOF_DATA_ROOT=/path/to/pixelproof-datasets
+```
+
+`watchdog.sh` uses `ml/.venv/bin/python` by default. `PIXELPROOF_PYTHON` can select another
+interpreter without editing the script.

@@ -39,9 +39,10 @@ from PIL import Image
 from torchvision.transforms import Compose
 
 from pixelproof.evaluation_protocol import evaluate_image_score_records
+from pixelproof.project_paths import WORK_ROOT
 
 
-HOME = Path.home() / "Desktop"
+HOME = WORK_ROOT
 GENERATORS = ("dalle3", "midjourney", "sd21", "sd3", "sdxl")
 FP_BUDGET = 0.10
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}

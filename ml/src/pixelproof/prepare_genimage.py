@@ -10,6 +10,8 @@ import argparse
 import random
 from pathlib import Path
 
+from pixelproof.project_paths import WORK_ROOT
+
 GENERATORS = ["ADM", "BigGAN", "Midjourney", "VQDM", "glide", "stable_diffusion_v_1_5", "wukong"]
 
 
@@ -29,8 +31,8 @@ def split_and_link(files: list[Path], label_dir: str, output: Path, test_ratio: 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source", type=Path, default=Path("/Users/efehankeles/Desktop/genimage"))
-    parser.add_argument("--output", type=Path, default=Path("/Users/efehankeles/Desktop/genimage_split"))
+    parser.add_argument("--source", type=Path, default=WORK_ROOT / "genimage")
+    parser.add_argument("--output", type=Path, default=WORK_ROOT / "genimage_split")
     parser.add_argument("--per-generator", type=int, default=833)
     parser.add_argument("--test-ratio", type=float, default=0.15)
     parser.add_argument("--seed", type=int, default=42)

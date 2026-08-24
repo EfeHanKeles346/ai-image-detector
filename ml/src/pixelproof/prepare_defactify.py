@@ -45,6 +45,8 @@ from pathlib import Path
 
 import pyarrow.parquet as pq
 
+from pixelproof.project_paths import WORK_ROOT
+
 GENERATORS = {0: "real", 1: "sd21", 2: "sdxl", 3: "sd3", 4: "dalle3", 5: "midjourney"}
 BATCH_SIZE = 64
 
@@ -80,8 +82,8 @@ def extract(shards: list[Path], output: Path, per_generator: int | None) -> Coun
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source", type=Path, default=Path.home() / "Desktop/defactify/data")
-    parser.add_argument("--output", type=Path, default=Path.home() / "Desktop/defactify_test")
+    parser.add_argument("--source", type=Path, default=WORK_ROOT / "defactify/data")
+    parser.add_argument("--output", type=Path, default=WORK_ROOT / "defactify_test")
     parser.add_argument("--per-generator", type=int, default=None,
                         help="Cap images per class (use it to build a balanced set)")
     args = parser.parse_args()

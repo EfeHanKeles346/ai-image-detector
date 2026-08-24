@@ -57,11 +57,12 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image
+from pixelproof.project_paths import DATA_ROOT, WORK_ROOT
 
 Image.MAX_IMAGE_PIXELS = None
 
-HOME = Path.home() / "Desktop"
-SSD = Path("/Volumes/LaCie/pixelproof-datasets")
+HOME = WORK_ROOT
+SSD = DATA_ROOT
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".JPEG"}
 
 # LABEL DIRECTION IS NOT A CONVENTION — IT IS A PER-DATASET FACT

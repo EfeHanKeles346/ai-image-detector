@@ -47,14 +47,15 @@ import pyarrow.parquet as pq
 
 from pixelproof.evaluation_protocol import (safe_auc, stable_calibration_split,
                                             threshold_at_fpr)
+from pixelproof.project_paths import DATA_ROOT, WORK_ROOT
 
 sys.path.insert(0, str(Path(__file__).parent))
 from e21_external_detector_benchmark import (BFreeDetector,  # noqa: E402
                                              CommunityForensicsDetector,
                                              select_device)
 
-SSD = Path("/Volumes/LaCie/pixelproof-datasets")
-PROBE = Path.home() / "Desktop/e25_modern_probe"
+SSD = DATA_ROOT
+PROBE = WORK_ROOT / "e25_modern_probe"
 PER_SOURCE = 200
 SPLIT_SEED = 2026
 CAL_FRACTION = 0.5

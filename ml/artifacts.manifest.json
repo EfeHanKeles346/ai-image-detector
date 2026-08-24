@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "generated_from": "PixelProof E6/E11/E21/E24; audited 2026-08-24",
+  "artifacts": [
+    {
+      "id": "small-cnn-cifake",
+      "kind": "file",
+      "group": "core",
+      "path": "artifacts/best.pt",
+      "sha256": "fe1d32f523b37dd25e3ac250d1282387288725318c5c51cf0b67ebdd0dc5f9f4",
+      "source": "project-trained CIFAKE checkpoint",
+      "revision": "E6",
+      "license": "project-local; no redistribution licence granted",
+      "schema": "torch checkpoint: config + model state_dict; labels 0=real, 1=AI"
+    },
+    {
+      "id": "resnet18-genimage",
+      "kind": "file",
+      "group": "core",
+      "path": "artifacts/best_genimage.pt",
+      "sha256": "997e5727eca25b96c2007645eb28667a4bf8d3a46e55c58917e4424aa6144315",
+      "source": "project-trained GenImage checkpoint",
+      "revision": "E6",
+      "license": "project-local; no redistribution licence granted",
+      "schema": "torch checkpoint: config + model state_dict; labels 0=real, 1=AI"
+    },
+    {
+      "id": "feature-full",
+      "kind": "file",
+      "group": "core",
+      "path": "artifacts/feature_full.joblib",
+      "sha256": "bd9f3da7605f380c231562fbcf4f761492ef462bdf6744d04a4130b2eb8cbbb3",
+      "source": "project-trained GenImage 68-feature pipeline",
+      "revision": "E8",
+      "license": "project-local; no redistribution licence granted",
+      "schema": "scikit-learn pipeline; 68 ordered pixelproof.features values"
+    },
+    {
+      "id": "feature-crop128",
+      "kind": "file",
+      "group": "core",
+      "path": "artifacts/feature_crop128.joblib",
+      "sha256": "fd504af03f223557d42f2fce6bbd5e2e93493a34adba15a884828a439446f11f",
+      "source": "project-trained GenImage native-128-crop feature pipeline",
+      "revision": "E8/E11",
+      "license": "project-local; no redistribution licence granted",
+      "schema": "scikit-learn pipeline; 68 ordered pixelproof.features values"
+    },
+    {
+      "id": "community-forensics-vit-s",
+      "kind": "huggingface",
+      "group": "cf_vit",
+      "repo_id": "buildborderless/CommunityForensics-DeepfakeDet-ViT",
+      "revision": "ac6ee457bea904a373065754107451793b56db00",
+      "source": "https://huggingface.co/buildborderless/CommunityForensics-DeepfakeDet-ViT",
+      "license": "MIT",
+      "schema": "ViTForImageClassification; logit[0] is AI-oriented score",
+      "files": {
+        "model.safetensors": "275ba982236ddd6afddf7131f8133e89f537574b964cf8fa5825b4956d741692",
+        "config.json": "4b425d089842fecf8f25fc52aa44d09f49607ef89a0e2ff685ced6ec1c70e9b1",
+        "preprocessor_config.json": "d5e70eaba99880a52978157cf4e6ee71502fed9479dd7b659854107e131ee8f6"
+      }
+    },
+    {
+      "id": "bfree-dino2reg4",
+      "kind": "checkout",
+      "group": "bfree",
+      "optional": true,
+      "path": "external/B-Free",
+      "revision": "c6a9f898782fb466b29af01f21960b67415afb0e",
+      "source": "https://github.com/grip-unina/B-Free",
+      "license": "upstream research/non-commercial terms; PIXELPROOF_BFREE=1 required",
+      "schema": "BFREE_dino2reg4 config + PyTorch weights; two-logit AI score",
+      "files": {
+        "weights/BFREE_dino2reg4/config.yaml": "1f0cb4988933de06a4c2427b1b5b015baa18cea7bc5223a9f54ca5e077ec8d40",
+        "weights/BFREE_dino2reg4/model_epoch_best.pth": "5948ca78f4d94e820c250d24cdf155035b4a85960443800bfe6bb7f06bffe947"
+      }
+    }
+  ]
+}

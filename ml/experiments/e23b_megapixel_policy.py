@@ -50,6 +50,7 @@ from PIL import Image
 
 from pixelproof.evaluation_protocol import (stable_calibration_split,
                                             threshold_at_fpr)
+from pixelproof.project_paths import WORK_ROOT
 
 sys.path.insert(0, str(Path(__file__).parent))
 from e21_external_detector_benchmark import (BFreeDetector,  # noqa: E402
@@ -57,7 +58,7 @@ from e21_external_detector_benchmark import (BFreeDetector,  # noqa: E402
                                              select_device)
 
 CAP_PX = 2048
-WORK = Path.home() / "Desktop/e23b_nist_capped"
+WORK = WORK_ROOT / "e23b_nist_capped"
 SPLIT_SEED = 2026
 CAL_FRACTION = 0.5
 FP_BUDGET = 0.10

@@ -36,7 +36,7 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
-ROOT = Path("/Volumes/LaCie/pixelproof-datasets")
+ROOT = Path(os.environ.get("PIXELPROOF_DATA_ROOT", Path(__file__).resolve().parents[1] / "data"))
 REPORT = ROOT / "RAPOR.md"
 STATE = ROOT / ".state.json"
 DONE_MARKER = ROOT / ".ALL_DONE"

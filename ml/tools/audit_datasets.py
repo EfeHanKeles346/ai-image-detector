@@ -26,6 +26,7 @@ Usage:  python audit.py            # audit everything
 """
 
 import io
+import os
 import sys
 import tarfile
 import zipfile
@@ -38,7 +39,7 @@ from PIL import Image
 
 Image.MAX_IMAGE_PIXELS = None
 
-ROOT = Path("/Volumes/LaCie/pixelproof-datasets")
+ROOT = Path(os.environ.get("PIXELPROOF_DATA_ROOT", Path(__file__).resolve().parents[1] / "data"))
 OUTPUT = ROOT / "DENETIM.md"
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tif", ".tiff"}
 LIMIT = 400

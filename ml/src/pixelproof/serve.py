@@ -22,6 +22,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 from starlette.concurrency import run_in_threadpool
 
+from pixelproof.artifact_registry import verify_registry
 from pixelproof.evaluate import eval_transform
 from pixelproof.feature_model import load as load_feature_models
 from pixelproof.feature_model import score_image, score_tiles
@@ -79,7 +80,7 @@ class ModelRuntime:
 
     def __init__(self, artifacts_dir: Path | None = None) -> None:
         self.device = select_device()
-        self.artifacts = artifacts_dir or Path(__file__).resolve().parents[2] / "artifacts"
+        self.artifacts = (artifacts_dir or Path(__file__).resolve().parents[2] / "artifacts").resolve()
         self.cnns: dict[str, tuple[Any, Any]] = {}
         self.features: dict[str, Any] = {}
         self.verdict: VerdictService | None = None
@@ -113,6 +114,15 @@ class ModelRuntime:
                 return self.core_ready
             self.load_attempted = True
 
+            try:
+                core_report = verify_registry(self.artifacts.parent, groups={"core"})
+            except Exception as error:
+                self.load_errors["artifact_manifest"] = f"{type(error).__name__}: {error}"
+                return False
+            if not core_report["ok"]:
+                self.load_errors["artifact_manifest"] = "; ".join(core_report["issues"])
+                return False
+
             for name, filename in {
                 "small_cnn_cifake": "best.pt",
                 "resnet18_genimage": "best_genimage.pt",
@@ -128,7 +138,11 @@ class ModelRuntime:
                 self.load_errors["features"] = f"{type(error).__name__}: {error}"
 
             try:
-                self.verdict = VerdictService(self.device, self.artifacts.parent)
+                cf_report = verify_registry(self.artifacts.parent, groups={"cf_vit"})
+                if cf_report["ok"]:
+                    self.verdict = VerdictService(self.device, self.artifacts.parent)
+                else:
+                    self.load_errors["cf_vit_manifest"] = "; ".join(cf_report["issues"])
             except Exception as error:
                 self.load_errors["verdict"] = f"{type(error).__name__}: {error}"
             return self.core_ready

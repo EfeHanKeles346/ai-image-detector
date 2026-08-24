@@ -38,14 +38,15 @@ from PIL import Image
 
 from pixelproof.evaluation_protocol import (stable_calibration_split,
                                             threshold_at_fpr)
+from pixelproof.project_paths import WORK_ROOT
 
 sys.path.insert(0, str(Path(__file__).parent))
 from e21_external_detector_benchmark import (BFreeDetector,  # noqa: E402
                                              CommunityForensicsDetector,
                                              select_device)
 
-PHOTOS = Path.home() / "Desktop/fotoğraf galeri"
-CAPPED = Path.home() / "Desktop/e24_iphone_capped"
+PHOTOS = WORK_ROOT / "iphone-gallery"
+CAPPED = WORK_ROOT / "e24_iphone_capped"
 CAP_PX = 2048
 SPLIT_SEED = 2026
 CAL_FRACTION = 0.5

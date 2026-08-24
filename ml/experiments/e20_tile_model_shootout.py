@@ -58,8 +58,9 @@ from pixelproof.evaluation_protocol import (
 )
 from pixelproof.features import THREADS, _vector, select_tiles
 from pixelproof.models import create_model
+from pixelproof.project_paths import WORK_ROOT
 
-HOME = Path.home() / "Desktop"
+HOME = WORK_ROOT
 TILE = 128
 TEXTURE_FLOOR = 0.04
 SEEDS = [42, 1337, 2024]
