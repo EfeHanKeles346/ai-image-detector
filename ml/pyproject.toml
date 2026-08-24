@@ -34,6 +34,7 @@ test = [
 pixelproof-artifacts = "pixelproof.artifact_registry:main"
 pixelproof-evaluate-project = "pixelproof.project_evaluate:main"
 pixelproof-predict = "pixelproof.predict:main"
+pixelproof-train-stay-positive = "pixelproof.stay_positive:main"
 
 [build-system]
 requires = ["setuptools>=83"]

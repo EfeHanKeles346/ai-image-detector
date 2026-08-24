@@ -1,6 +1,6 @@
 # Runnable experiment index
 
-These scripts are the reproducible protocol surface. E7–E18 are frozen under `archive/`; E20–E27
+These scripts are the reproducible protocol surface. E7–E18 are frozen under `archive/`; E20–E28
 remain runnable because later decisions reuse their cached scores and source-wise splits.
 
 Run from `ml/` with the declared environment and portable dataset roots:
@@ -23,6 +23,7 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 | `e24_library_promise.py` | measured | New iPhone pipeline, threshold-only calibration and held-out transfer |
 | `e25_modern_generator_probe.py` | measured limitation | Modern-generator recall probes, including GPT-family blindness |
 | `e27_gpt_family_arm.py` | **rejected** | GPT specialist experiment; corrected calibration-only union threshold fails G1 (14.5% < 40%), so it is not served |
+| `pixelproof-train-stay-positive` | candidate, not served | E28 independent Stay-Positive head training over the frozen E20 backbone; N2/N3 gates decide whether it advances |
 
 The current served decision contract is E26's OR rule, implemented in `pixelproof/verdict.py`:
 CF-ViT is default; B-Free is optional and licence-gated. E27 is retained to reproduce the
@@ -31,3 +32,12 @@ rejection, not as a deployment recipe. Exact results and the append-only correct
 
 Feature extraction caches under `artifacts/` are not committed. Runtime artifacts must pass
 `pixelproof-artifacts check`; see `../ARTIFACTS.md`.
+
+E28 is an installed research command rather than a stand-alone script. From any working directory:
+
+```bash
+pixelproof-train-stay-positive --help
+```
+
+Its default output is `artifacts/e28/stay_positive_seed2024.pt`. It never overwrites or registers
+the served E20 checkpoint; evaluation remains a separate, gated phase.

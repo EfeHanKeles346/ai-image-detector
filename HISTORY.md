@@ -1417,3 +1417,18 @@ three-seed integration gate were recorded in `PLAN.md` and `ml/EXPERIMENTS.md` b
 code changed. The official research repository is not vendored because its reviewed page exposed
 no explicit software licence; only the paper's described method is being reimplemented. This entry
 starts a new experiment line and does not alter the currently served model.
+
+### N1 — the constrained-head candidate is implemented without touching serving
+
+The new `pixelproof.stay_positive` module independently implements the paper's small algorithm:
+E20's feature extractor is frozen, normalized tile embeddings are made explicitly non-negative, a
+linear head starts from zero, and feature weights are clamped to non-negative values after every
+optimizer step while the bias remains free. An installed experiment command writes only to the
+ignored `artifacts/e28/` candidate area; the registered E20 checkpoint and all API/web behavior are
+unchanged.
+
+Five focused tests and a real 120-tile CPU smoke established the mechanical contract. The smoke
+checkpoint loaded back into ResNet18, selected epoch 1 at validation AUC 0.9000 and had no negative
+feature weights. The complete Python suite rose from 43 to 48 tests and passed 48/48; compileall and
+`pip check` also passed. This phase proves the experiment can run, not that the model generalizes.
+Only N2's already-frozen seed-2024 evaluation may answer that question.

@@ -1225,3 +1225,21 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   recall >= 45%, Defactify FP <= 15%, forensic macro FP <= 35%, worst-source FP <= 65%; every seed
   must remain below 75% worst-source FP. Passing this gate permits artifact/runtime integration;
   it does not permit a production or authenticity-certification claim.
+
+## 2026-08-24 — N1 mechanical validation: independent Stay-Positive head
+
+- **Implementation:** `pixelproof.stay_positive` loads the existing E20 ResNet18 state, freezes all
+  backbone parameters, applies the stored ImageNet normalization, flattens explicit non-negative
+  ReLU embeddings, zero-initializes a 512-to-1 head, trains it with BCE and AdamW, and clamps only
+  feature weights to `>= 0` after every step. The bias remains unconstrained. The implementation
+  uses no upstream code, weights or assets.
+- **Isolation:** the installed `pixelproof-train-stay-positive` command writes a new candidate under
+  `artifacts/e28/`; it does not alter E20, the artifact registry, API, web UI or served threshold.
+- **Mechanical result:** five focused tests passed for zero initialization/projection, frozen
+  backbone and non-negative embeddings, deterministic source+label holdout, balanced smoke
+  sampling, invalid-input rejection and compatible head installation. The full Python suite passed
+  **48/48**; compileall and `pip check` passed.
+- **Real-checkpoint smoke:** CPU, seed 2024, balanced 120-tile subset, two head epochs, batch 32.
+  The candidate reloaded into ResNet18, selected epoch 1 at validation AUC **0.9000**, and contained
+  minimum feature weight **0.000000** with **zero negative weights**. This is execution evidence,
+  not performance evidence; it cannot satisfy or revise N2's pre-registered full-data gate.

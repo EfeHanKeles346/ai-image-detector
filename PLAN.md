@@ -36,14 +36,23 @@ mathematical description using this project's existing code and data.
 
 ### Phase N1 — implement and mechanically verify the constrained head
 
-- [ ] Add one reusable, independently written training primitive that freezes E20's backbone,
+- [x] Add one reusable, independently written training primitive that freezes E20's backbone,
       exposes non-negative embeddings, zero-initializes the final linear head and prevents negative
       feature weights after every update. The bias remains unconstrained as described in the paper.
-- [ ] Add a separate experiment command; do not overwrite E20 or change the served artifact.
-- [ ] Test zero initialization, frozen backbone, non-negative weights, deterministic splitting and
+- [x] Add a separate experiment command; do not overwrite E20 or change the served artifact.
+- [x] Test zero initialization, frozen backbone, non-negative weights, deterministic splitting and
       compatible checkpoint metadata on tiny synthetic data.
 - **Acceptance:** focused tests and the complete Python suite pass; a CPU smoke run produces a
   loadable candidate whose feature-weight minimum is at least zero.
+- **Measured 2026-08-24:** `pixelproof-train-stay-positive` now loads the verified-shape E20
+  ResNet18, freezes its feature extractor, applies exact ImageNet normalization, extracts explicit
+  ReLU embeddings and trains only a zero-initialized linear head with BCE/AdamW while projecting
+  feature weights to `>= 0` after each update. The bias is unconstrained. Five focused tests cover
+  the invariant, frozen backbone, deterministic source+label split, balanced smoke sampling,
+  invalid negative features and model compatibility. A real CPU smoke used the canonical E20
+  checkpoint and a balanced 120-tile subset, produced a loadable isolated checkpoint at validation
+  AUC 0.900 with zero negative weights, and did not modify serving. The full suite passed 48/48;
+  compileall and `pip check` passed. Full-data scientific measurement remains N2.
 
 ### Phase N2 — run one full seed and apply the frozen advancement gate
 
