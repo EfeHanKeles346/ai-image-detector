@@ -1,10 +1,14 @@
 import io
 
+import numpy as np
+import pytest
+import torch
 from fastapi.testclient import TestClient
 from PIL import Image
 
 from pixelproof.image_input import ImageLimits
-from pixelproof.serve import create_app
+from pixelproof.project_model import ProjectModelMetadata, ProjectTileModel
+from pixelproof.serve import MAX_TILES, ModelRuntime, RuntimeUnavailable, create_app
 
 
 class FakeRuntime:
@@ -47,6 +51,7 @@ class FakeRuntime:
             "resolution": "overridden-by-route",
             "enough_evidence": True,
             "tile_map": None,
+            "project_model": None,
             "decision": decision,
         }
 
@@ -168,3 +173,90 @@ def test_cors_accepts_only_the_configured_browser_origin():
         )
     assert allowed.headers["access-control-allow-origin"] == "https://pixelproof.example"
     assert "access-control-allow-origin" not in denied.headers
+
+
+class TinyProjectModel(torch.nn.Module):
+    def forward(self, images):
+        return images.mean(dim=(1, 2, 3))
+
+
+def ready_project_runtime(tmp_path):
+    artifacts = tmp_path / "artifacts"
+    artifacts.mkdir()
+    runtime = ModelRuntime(artifacts)
+    runtime.project_model = ProjectTileModel(
+        TinyProjectModel(),
+        torch.device("cpu"),
+        ProjectModelMetadata(
+            artifact_id="test-project-model",
+            sha256="a" * 64,
+            revision="test-revision",
+            arm="resnet18",
+            seed=2024,
+            tile_px=128,
+            texture_floor=0.0,
+            normalization="imagenet",
+            aggregation="top3",
+            threshold=0.75,
+            calibration_fraction=0.5,
+            split_seed=2026,
+            validation_auc=0.91,
+        ),
+    )
+    runtime.load_attempted = True
+    return runtime
+
+
+def test_project_model_api_returns_traceable_research_result_for_small_image(tmp_path):
+    runtime = ready_project_runtime(tmp_path)
+    health = runtime.health()
+    assert health["status"] == "ready"
+    assert health["project_model_ready"] is True
+    assert health["core_ready"] is False
+    assert health["decision_ready"] is False
+    app = create_app(runtime=runtime, allowed_origins=[])
+    with TestClient(app) as client:
+        response = post(client, encoded_image(size=(64, 64)), method="project_model")
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["method"] == "project_model"
+    assert payload["project_model"] == {
+        "score": payload["p_ai"],
+        "threshold": 0.75,
+        "triggered": False,
+        "research_only": True,
+        "limitation": payload["project_model"]["limitation"],
+        "artifact_id": "test-project-model",
+        "artifact_sha256": "a" * 64,
+        "revision": "test-revision",
+        "seed": 2024,
+        "aggregation": "top3",
+        "tile_px": 128,
+        "tile_count": 1,
+    }
+    assert "%86,2" in payload["project_model"]["limitation"]
+    assert len(payload["tile_map"]["tiles"]) == 1
+
+
+def test_project_model_large_image_is_bounded_and_matches_shared_scorer(tmp_path):
+    runtime = ready_project_runtime(tmp_path)
+    picture = Image.fromarray(np.zeros((2304, 2304, 3), dtype=np.uint8))
+    direct = runtime.project_model.score_image(picture, max_tiles=MAX_TILES)
+    result = runtime.predict(picture, byte_size=1024, method="project_model")
+
+    assert direct.tile_count == MAX_TILES
+    assert result["project_model"]["tile_count"] == MAX_TILES
+    assert result["p_ai"] == pytest.approx(direct.score, abs=0.0001)
+    assert result["project_model"]["score"] == pytest.approx(direct.score, abs=0.0001)
+
+
+def test_project_model_unavailable_does_not_fall_back_to_unverified_method(tmp_path):
+    artifacts = tmp_path / "artifacts"
+    artifacts.mkdir()
+    runtime = ModelRuntime(artifacts)
+    runtime.load_attempted = True
+    runtime.load_errors["project_model"] = "verified artifact missing"
+
+    with pytest.raises(RuntimeUnavailable, match="verified artifact missing"):
+        runtime.predict(Image.new("RGB", (128, 128)), 100, "project_model")

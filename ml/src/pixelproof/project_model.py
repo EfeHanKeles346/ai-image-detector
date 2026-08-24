@@ -14,6 +14,7 @@ from PIL import Image
 from pixelproof.artifact_registry import DEFAULT_REPO_ROOT, load_manifest, verify_registry
 from pixelproof.data import NORMALIZATION
 from pixelproof.evaluation_protocol import AGGREGATION_RULES, aggregate_tile_scores
+from pixelproof.features import select_tiles
 from pixelproof.models import create_model
 
 
@@ -46,6 +47,21 @@ class ProjectModelMetadata:
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+@dataclass(frozen=True)
+class ProjectImageScore:
+    score: float
+    triggered: bool
+    tile_scores: tuple[float, ...]
+    textures: tuple[float, ...]
+    positions: tuple[tuple[int, int], ...]
+    width: int
+    height: int
+
+    @property
+    def tile_count(self) -> int:
+        return len(self.tile_scores)
 
 
 def _number(value: Any, field: str) -> float:
@@ -197,6 +213,28 @@ class ProjectTileModel:
 
     def triggered(self, image_score: float) -> bool:
         return bool(image_score >= self.metadata.threshold)
+
+    def score_image(self, picture: Image.Image, max_tiles: int = 256) -> ProjectImageScore:
+        """Apply the checkpoint-owned tile policy and return one image-level score."""
+        if max_tiles <= 0:
+            raise ValueError("max_tiles must be positive")
+        patches, textures, positions = select_tiles(
+            picture,
+            tile=self.metadata.tile_px,
+            max_tiles=max_tiles,
+            texture_floor=self.metadata.texture_floor,
+        )
+        tile_scores = self.score_tiles(patches)
+        image_score = self.aggregate(tile_scores)
+        return ProjectImageScore(
+            score=image_score,
+            triggered=self.triggered(image_score),
+            tile_scores=tuple(float(value) for value in tile_scores),
+            textures=tuple(float(value) for value in textures),
+            positions=tuple(positions),
+            width=picture.width,
+            height=picture.height,
+        )
 
 
 def load_project_model(

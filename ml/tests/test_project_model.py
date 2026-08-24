@@ -73,6 +73,21 @@ def test_valid_checkpoint_loads_metadata_scores_and_aggregation(tmp_path, monkey
     assert loaded.triggered(0.75)
 
 
+def test_image_scoring_uses_checkpoint_policy_and_respects_tile_cap(tmp_path, monkeypatch):
+    path = write_checkpoint(tmp_path)
+    write_manifest(tmp_path, path)
+    monkeypatch.setattr(project_model, "create_model", lambda *args, **kwargs: TinyModel())
+    loaded = load_project_model(tmp_path, torch.device("cpu"))
+
+    result = loaded.score_image(Image.new("RGB", (2304, 2304)), max_tiles=16)
+
+    # The spatial sampler is capped at sixteen; the checkpoint's texture floor
+    # may conservatively reduce that set further (this flat fixture falls back to three).
+    assert 0 < result.tile_count <= 16
+    assert len(result.positions) == len(result.textures) == len(result.tile_scores)
+    assert result.score == pytest.approx(loaded.aggregate(result.tile_scores))
+
+
 def test_missing_checkpoint_is_rejected_before_deserialization(tmp_path):
     missing = tmp_path / "artifacts/project.pt"
     write_manifest(tmp_path, missing, "0" * 64)

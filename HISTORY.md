@@ -1287,3 +1287,26 @@ Measured locally: the real 44,789,451-byte artifact loaded on CPU, reproduced se
 aggregation. Tests cover valid, missing, tampered and incompatible artifacts. The full Python
 suite passed 29/29; compileall, `pip check` and all six default artifact hashes passed. This phase
 does not claim image-level API availability yet — that is M2's separately testable boundary.
+
+### M2 — one image reaches the project model through API and CLI
+
+M2 made `project_model` the FastAPI and CLI default and connected it to the single verified E20
+loader from M1. One shared image scorer now selects native 128 px tiles, applies the checkpoint's
+0.04 texture floor, scores every retained tile once in batches, aggregates with stored `top3` and
+compares against stored threshold 0.9894907. Spatial sampling remains capped at 256 tiles.
+
+The response is deliberately evidence rather than marketing: raw score, experimental threshold,
+trigger state, `research_only=true`, the measured 86.2% worst-source FP limitation, artifact id,
+full SHA-256, E20 revision, seed, aggregation and tile count travel together. A negative result is
+`uncertain`, never “real”. The older methods and external decision can still be returned for
+comparison, but their readiness is independent; a missing retired artifact cannot disable the
+canonical project model.
+
+Measured on the real MPS runtime with `ml/artifacts/figures/generators.png`: 51 texture-qualified
+tiles produced 0.2409 through the common scorer and exactly 0.2409 through HTTP. The CLI, invoked
+from the repository root without a path override, reported the same rounded 0.241 against 0.990.
+Health reported `project_model_ready`, legacy `core_ready` and external `decision_ready`
+separately. Automated coverage includes padded 64 px input, a 2304 px input held to exactly 256
+tiles, unavailable artifact and project-only readiness. Python passed 33/33; web lint, typecheck,
+build and 6/6 tests remained clean. The model works end to end; M3 now makes that path visible as
+the primary web experience.

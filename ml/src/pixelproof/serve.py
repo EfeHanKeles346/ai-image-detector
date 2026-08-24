@@ -34,6 +34,11 @@ from pixelproof.image_input import (
     enough_evidence,
 )
 from pixelproof.models import create_model
+from pixelproof.project_model import (
+    ProjectImageScore,
+    ProjectTileModel,
+    load_project_model,
+)
 from pixelproof.verdict import VerdictService
 
 
@@ -44,11 +49,24 @@ MAX_TILES = 256
 
 STATS_VARIANTS = {"stats": "full"}
 METHODS = {
+    "project_model": "Proje modeli — E20 yerel-tile ResNet-18",
     "auto": "Otomatik — görsel boyutuna göre en güçlü yöntem",
     "cnn": "CNN — küçültülmüş görsel, sinir ağı",
     "stats": "İstatistik — 68 ölçüm, 9.9k GenImage ile eğitildi",
     "tiles": "Kare kare — en fazla 256 yerel kesit",
 }
+
+CORE_ARTIFACT_IDS = {
+    "small-cnn-cifake",
+    "resnet18-genimage",
+    "feature-full",
+    "feature-crop128",
+}
+CF_ARTIFACT_ID = "community-forensics-vit-s"
+PROJECT_LIMITATION = (
+    "Araştırma modeli: E20 üç-seed değerlendirmesinde en kötü gerçek kaynakta "
+    "%86,2 yanlış pozitif verdi; sonuç gerçeklik sertifikası değildir."
+)
 
 
 def select_device() -> torch.device:
@@ -83,6 +101,7 @@ class ModelRuntime:
         self.artifacts = (artifacts_dir or Path(__file__).resolve().parents[2] / "artifacts").resolve()
         self.cnns: dict[str, tuple[Any, Any]] = {}
         self.features: dict[str, Any] = {}
+        self.project_model: ProjectTileModel | None = None
         self.verdict: VerdictService | None = None
         self.load_errors: dict[str, str] = {}
         self.load_attempted = False
@@ -111,41 +130,58 @@ class ModelRuntime:
     def ensure_loaded(self) -> bool:
         with self._load_lock:
             if self.load_attempted:
-                return self.core_ready
+                return self.available
             self.load_attempted = True
+
+            try:
+                self.project_model = load_project_model(self.artifacts.parent, self.device)
+            except Exception as error:
+                self.load_errors["project_model"] = f"{type(error).__name__}: {error}"
 
             try:
                 core_report = verify_registry(self.artifacts.parent, groups={"core"})
             except Exception as error:
                 self.load_errors["artifact_manifest"] = f"{type(error).__name__}: {error}"
-                return False
+                core_report = {"ok": False, "checked": [], "issues": []}
+            checked_core = set(core_report["checked"])
             if not core_report["ok"]:
-                self.load_errors["artifact_manifest"] = "; ".join(core_report["issues"])
-                return False
+                if core_report["issues"]:
+                    self.load_errors["artifact_manifest"] = "; ".join(core_report["issues"])
+            elif checked_core != CORE_ARTIFACT_IDS:
+                missing = sorted(CORE_ARTIFACT_IDS - checked_core)
+                self.load_errors["artifact_manifest"] = (
+                    f"core manifest entries missing: {', '.join(missing)}"
+                )
 
-            for name, filename in {
-                "small_cnn_cifake": "best.pt",
-                "resnet18_genimage": "best_genimage.pt",
-            }.items():
+            if "artifact_manifest" not in self.load_errors:
+                for name, filename in {
+                    "small_cnn_cifake": "best.pt",
+                    "resnet18_genimage": "best_genimage.pt",
+                }.items():
+                    try:
+                        self.cnns[name] = self._load_checkpoint(filename)
+                    except Exception as error:
+                        self.load_errors[name] = f"{type(error).__name__}: {error}"
+
                 try:
-                    self.cnns[name] = self._load_checkpoint(filename)
+                    self.features = load_feature_models(self.artifacts)
                 except Exception as error:
-                    self.load_errors[name] = f"{type(error).__name__}: {error}"
-
-            try:
-                self.features = load_feature_models(self.artifacts)
-            except Exception as error:
-                self.load_errors["features"] = f"{type(error).__name__}: {error}"
+                    self.load_errors["features"] = f"{type(error).__name__}: {error}"
 
             try:
                 cf_report = verify_registry(self.artifacts.parent, groups={"cf_vit"})
-                if cf_report["ok"]:
+                if cf_report["ok"] and CF_ARTIFACT_ID in cf_report["checked"]:
                     self.verdict = VerdictService(self.device, self.artifacts.parent)
                 else:
-                    self.load_errors["cf_vit_manifest"] = "; ".join(cf_report["issues"])
+                    issues = cf_report["issues"] or [f"manifest entry missing: {CF_ARTIFACT_ID}"]
+                    self.load_errors["cf_vit_manifest"] = "; ".join(issues)
             except Exception as error:
                 self.load_errors["verdict"] = f"{type(error).__name__}: {error}"
-            return self.core_ready
+            return self.available
+
+    @property
+    def project_model_ready(self) -> bool:
+        return self.project_model is not None
 
     @property
     def core_ready(self) -> bool:
@@ -158,15 +194,19 @@ class ModelRuntime:
     def decision_ready(self) -> bool:
         return self.verdict is not None and self.verdict.available
 
+    @property
+    def available(self) -> bool:
+        return self.project_model_ready or self.core_ready or self.decision_ready
+
     def health(self) -> dict[str, Any]:
         if not self.load_attempted:
             status = "starting"
-        elif not self.core_ready:
-            status = "unavailable"
-        elif not self.decision_ready:
+        elif self.project_model_ready:
+            status = "ready"
+        elif self.core_ready or self.decision_ready:
             status = "degraded"
         else:
-            status = "ready"
+            status = "unavailable"
 
         arms: list[str] = []
         if self.verdict is not None:
@@ -174,6 +214,10 @@ class ModelRuntime:
         return {
             "status": status,
             "device": str(self.device),
+            "project_model_ready": self.project_model_ready,
+            "project_model": (
+                self.project_model.metadata.to_dict() if self.project_model is not None else None
+            ),
             "core_ready": self.core_ready,
             "decision_ready": self.decision_ready,
             "cnns": sorted(self.cnns),
@@ -192,9 +236,55 @@ class ModelRuntime:
             ).item()
         return score, name
 
+    def _run_project_model(
+        self,
+        picture: Image.Image,
+    ) -> tuple[float, dict[str, Any], dict[str, Any]]:
+        if self.project_model is None:
+            detail = self.load_errors.get("project_model", "canonical E20 artifact unavailable")
+            raise RuntimeUnavailable(f"Proje modeli kullanılamıyor: {detail}")
+        measured: ProjectImageScore = self.project_model.score_image(
+            picture,
+            max_tiles=MAX_TILES,
+        )
+        metadata = self.project_model.metadata
+        project_payload = {
+            "score": round(measured.score, 4),
+            "threshold": round(metadata.threshold, 4),
+            "triggered": measured.triggered,
+            "research_only": True,
+            "limitation": PROJECT_LIMITATION,
+            "artifact_id": metadata.artifact_id,
+            "artifact_sha256": metadata.sha256,
+            "revision": metadata.revision,
+            "seed": metadata.seed,
+            "aggregation": metadata.aggregation,
+            "tile_px": metadata.tile_px,
+            "tile_count": measured.tile_count,
+        }
+        tile_map = {
+            "p_ai": round(measured.score, 4),
+            "tiles": [
+                {
+                    "x": x,
+                    "y": y,
+                    "p_ai": round(score, 4),
+                    "texture": round(texture, 4),
+                }
+                for (x, y), score, texture in zip(
+                    measured.positions,
+                    measured.tile_scores,
+                    measured.textures,
+                )
+            ],
+            "tile_px": metadata.tile_px,
+            "image_w": measured.width,
+            "image_h": measured.height,
+        }
+        return measured.score, project_payload, tile_map
+
     def predict(self, picture: Image.Image, byte_size: int, method: str) -> dict[str, Any]:
-        if not self.ensure_loaded():
-            raise RuntimeUnavailable("Temel model artifact'leri yüklenemedi; /health ayrıntılarını kontrol edin.")
+        self.ensure_loaded()
 
         with self._inference_slot:
             chosen = method
@@ -202,7 +292,17 @@ class ModelRuntime:
                 chosen = "tiles" if max(picture.size) >= TILE_RELIABLE_PX else "cnn"
 
             tile_map = None
-            if chosen == "cnn":
+            project_payload = None
+            if chosen == "project_model":
+                score, project_payload, tile_map = self._run_project_model(picture)
+                engine = self.project_model.metadata.artifact_id
+            elif not self.core_ready:
+                detail = self.load_errors.get(
+                    "artifact_manifest",
+                    "legacy research artifacts unavailable",
+                )
+                raise RuntimeUnavailable(f"Eski araştırma yöntemi kullanılamıyor: {detail}")
+            elif chosen == "cnn":
                 score, engine = self._run_cnn(picture)
             elif chosen in STATS_VARIANTS:
                 variant = STATS_VARIANTS[chosen]
@@ -219,7 +319,10 @@ class ModelRuntime:
             width, height = picture.size
             return {
                 "p_ai": round(score, 4),
-                "verdict": verdict_for(score),
+                "verdict": (
+                    "ai" if project_payload and project_payload["triggered"] else
+                    "uncertain" if project_payload else verdict_for(score)
+                ),
                 "method": chosen,
                 "method_label": METHODS[chosen],
                 "auto_selected": method == "auto",
@@ -227,6 +330,7 @@ class ModelRuntime:
                 "resolution": f"{width}x{height}",
                 "enough_evidence": True,
                 "tile_map": tile_map,
+                "project_model": project_payload,
                 "decision": decision,
             }
 
@@ -267,7 +371,7 @@ def create_app(
     @application.post("/predict")
     async def predict_endpoint(
         image: UploadFile = File(...),
-        method: str = Form("auto"),
+        method: str = Form("project_model"),
     ):
         if method not in METHODS:
             raise HTTPException(422, f"Bilinmeyen yöntem: {method}")

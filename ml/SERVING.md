@@ -15,7 +15,9 @@ PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --host 127.0.0.1 --port 87
 - `PIXELPROOF_CORS_ORIGINS` is a comma-separated allow-list. Its local default is
   `http://localhost:3000,http://127.0.0.1:3000`; wildcard origins are rejected. Same-origin
   deployments do not need CORS.
-- `POST /predict` accepts `JPG`, `PNG` or `WEBP` and one of `auto`, `cnn`, `stats`, `tiles`.
+- `POST /predict` accepts `JPG`, `PNG` or `WEBP`. Its default `project_model` method runs the
+  verified E20 native-tile ResNet-18. `auto`, `cnn`, `stats` and `tiles` retain the older
+  research paths for comparison until M3 moves them behind research details.
 - Default limits are 12 MiB, 16 million decoded pixels, 16,384 pixels per side and a 20:1
   maximum aspect ratio. EXIF orientation is applied, and transparent pixels are composited
   onto white before every detector sees the image.
@@ -24,8 +26,10 @@ PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --host 127.0.0.1 --port 87
   unbounded request queue.
 - Inputs below 48 pixels on either axis can still return a research score, but the official
   `decision` is suppressed and `enough_evidence` is false.
-- `/health` distinguishes `starting`, `unavailable`, `degraded` (research models available,
-  official verdict arms absent) and `ready`.
+- `/health` distinguishes `starting`, `unavailable`, `degraded` and `ready`. `ready` now means
+  the canonical project model is verified and loaded; `project_model_ready`, legacy `core_ready`
+  and external `decision_ready` are reported separately so one optional subsystem cannot mask
+  another's state.
 
 ## Required edge controls
 

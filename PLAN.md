@@ -49,15 +49,26 @@ available as a measured comparison, not as a substitute for presenting the proje
 
 ### Phase M2 — expose one canonical project-model inference path
 
-- [ ] Add a bounded `project_model` inference path using native 128 px tiles, the stored texture
+- [x] Add a bounded `project_model` inference path using native 128 px tiles, the stored texture
       floor and stored `top3` aggregation; every tile is scored once and the existing 256-tile
       resource ceiling remains in force.
-- [ ] Return the raw score, stored experimental threshold, triggered/not-triggered result,
+- [x] Return the raw score, stored experimental threshold, triggered/not-triggered result,
       checkpoint hash and explicit `research_only` limitation in the API response.
-- [ ] Decouple project-model readiness from the optional external verdict arms and from retired
+- [x] Decouple project-model readiness from the optional external verdict arms and from retired
       CNN/statistics artifacts, so one missing comparison model cannot disable the main demo.
 - **Acceptance:** API tests cover small/large images, bounded tiles, unavailable artifact and a
   real checkpoint prediction; the same image produces the same aggregate through CLI and API.
+- **Measured 2026-08-24:** `project_model` is now the API and CLI default. API responses carry
+  score, experimental threshold, trigger state, `research_only`, limitation, revision, seed,
+  aggregation, tile count and the verified artifact SHA-256. Unit tests cover a padded 64 px
+  image, a 2304 px image capped at exactly 256 tiles, missing project artifact, and project-ready
+  operation with both legacy core and external verdict unavailable. The full Python suite passed
+  33/33; web lint/type/build and 6/6 web tests stayed clean. On the real MPS runtime,
+  `generators.png` used 51 texture-qualified tiles and returned 0.2409 through both the shared
+  scorer and HTTP API; the root-invoked CLI returned the same rounded 0.241 against threshold
+  0.990. Health reported project/core/decision ready independently and the result included the
+  canonical `b9f39e...65adf` hash. This is a functioning research-model path; M3 still owns the
+  model-first web presentation.
 
 ### Phase M3 — make the web demo model-first
 
