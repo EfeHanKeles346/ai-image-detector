@@ -1,39 +1,29 @@
 "use client";
 
-import { ChangeEvent, DragEvent, useRef, useState } from "react";
+import { ChangeEvent, DragEvent, useEffect, useRef, useState } from "react";
+import {
+  AnalysisHttpError,
+  AnalysisResponseError,
+  LatestRequestGate,
+  analysisEndpoint,
+  analysisErrorMessage,
+  parseAnalysis,
+  resolveApiOrigin,
+  type Analysis,
+  type Verdict,
+} from "./analysis-contract";
 
 type Preview = { name: string; url: string; size: string; file: File };
-type Verdict = "ai" | "real" | "uncertain";
-type Tile = { x: number; y: number; p_ai: number; texture: number };
-type TileMap = { p_ai: number; tiles: Tile[]; tile_px: number; image_w: number; image_h: number };
-type DecisionArm = { label: string; score: number; threshold: number; band: "ai" | "insufficient" };
-type Decision = {
-  label: "ai" | "insufficient";
-  triggered_by: string[];
-  arms: Record<string, DecisionArm>;
-  caveats: string[];
-  bytes_per_pixel: number;
-  provenance: string;
-};
-type Analysis = {
-  p_ai: number;
-  verdict: Verdict;
-  method: string;
-  method_label: string;
-  auto_selected: boolean;
-  engine: string;
-  resolution: string;
-  enough_evidence: boolean;
-  tile_map: TileMap | null;
-  decision: Decision | null;
-};
 
 const CAVEAT_TEXT: Record<string, string> = {
   "megapiksel-siniri": "2048px sınırı uygulandı (E23b)",
   "sikistirilmis-girdi": "Sıkıştırılmış girdi — yakalama gücü bu rejimde düşük (E23c)",
 };
 
-const API_URL = "http://127.0.0.1:8799";
+const API_ORIGIN = resolveApiOrigin(
+  process.env.NEXT_PUBLIC_PIXELPROOF_API_URL,
+  process.env.NODE_ENV === "development",
+);
 
 // Four methods, never blended — E9 showed a fixed blend adds +0.002 (noise).
 // "auto" applies the measured 700px crossover from E11.
@@ -54,6 +44,8 @@ const VERDICT_COLOR: Record<Verdict, string> = { ai: "#d92d20", real: "#12b76a",
 
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
+  const previewUrlRef = useRef<string | null>(null);
+  const requestGateRef = useRef(new LatestRequestGate());
   const [preview, setPreview] = useState<Preview | null>(null);
   const [method, setMethod] = useState("auto");
   const [dragging, setDragging] = useState(false);
@@ -61,16 +53,39 @@ export default function Home() {
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  useEffect(() => () => {
+    requestGateRef.current.cancel();
+    if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current);
+  }, []);
+
+  function cancelAnalysis() {
+    requestGateRef.current.cancel();
+    setLoading(false);
+  }
+
+  function releasePreview() {
+    if (previewUrlRef.current) URL.revokeObjectURL(previewUrlRef.current);
+    previewUrlRef.current = null;
+  }
+
   function choose(file?: File) {
-    if (!file || !file.type.startsWith("image/")) return;
-    if (preview) URL.revokeObjectURL(preview.url);
+    if (!file) return;
+    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+      setError("Bu dosya desteklenmiyor. JPG, PNG veya WEBP seçin.");
+      return;
+    }
+    cancelAnalysis();
+    releasePreview();
     setAnalysis(null);
     setError(null);
-    setPreview({ name: file.name, url: URL.createObjectURL(file), size: `${(file.size / 1024 / 1024).toFixed(2)} MB`, file });
+    const url = URL.createObjectURL(file);
+    previewUrlRef.current = url;
+    setPreview({ name: file.name, url, size: `${(file.size / 1024 / 1024).toFixed(2)} MB`, file });
   }
 
   function clear() {
-    if (preview) URL.revokeObjectURL(preview.url);
+    cancelAnalysis();
+    releasePreview();
     setPreview(null);
     setAnalysis(null);
     setError(null);
@@ -85,19 +100,39 @@ export default function Home() {
 
   async function analyze(useMethod = method) {
     if (!preview) return;
+    const selectedPreview = preview;
+    const ticket = requestGateRef.current.begin();
     setLoading(true);
     setError(null);
     try {
       const body = new FormData();
-      body.append("image", preview.file);
+      body.append("image", selectedPreview.file);
       body.append("method", useMethod);
-      const response = await fetch(`${API_URL}/predict`, { method: "POST", body });
-      if (!response.ok) throw new Error(`${response.status}`);
-      setAnalysis(await response.json());
-    } catch {
-      setError("Analiz servisine ulaşılamadı. Model servisi çalışıyor mu? (port 8799)");
+      const response = await fetch(analysisEndpoint(API_ORIGIN), {
+        method: "POST",
+        body,
+        signal: ticket.signal,
+      });
+      let payload: unknown;
+      try {
+        payload = await response.json();
+      } catch {
+        throw new AnalysisResponseError();
+      }
+      if (!response.ok) {
+        const detail =
+          typeof payload === "object" && payload !== null && "detail" in payload && typeof payload.detail === "string"
+            ? payload.detail
+            : undefined;
+        throw new AnalysisHttpError(response.status, detail);
+      }
+      const parsed = parseAnalysis(payload);
+      if (requestGateRef.current.isCurrent(ticket.id)) setAnalysis(parsed);
+    } catch (caught) {
+      if (ticket.signal.aborted || !requestGateRef.current.isCurrent(ticket.id)) return;
+      setError(analysisErrorMessage(caught));
     } finally {
-      setLoading(false);
+      if (requestGateRef.current.isCurrent(ticket.id)) setLoading(false);
     }
   }
 
@@ -137,15 +172,11 @@ export default function Home() {
                 onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
                 onDragLeave={() => setDragging(false)}
                 onDrop={onDrop}
-                onClick={() => inputRef.current?.click()}
-                onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && inputRef.current?.click()}
-                role="button"
-                tabIndex={0}
               >
                 <div className="upload-symbol">↑</div>
                 <strong>Fotoğrafı buraya bırakın</strong>
                 <span>veya bilgisayarınızdan seçin</span>
-                <button type="button">Dosya seç</button>
+                <button type="button" onClick={() => inputRef.current?.click()}>Dosya seç</button>
               </div>
             ) : (
               <div className="preview">
@@ -184,7 +215,14 @@ export default function Home() {
                 )}
               </div>
             )}
-            <input ref={inputRef} hidden type="file" accept="image/jpeg,image/png,image/webp" onChange={(e: ChangeEvent<HTMLInputElement>) => choose(e.target.files?.[0])} />
+            <input
+              ref={inputRef}
+              hidden
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              aria-label="Analiz edilecek görseli seç"
+              onChange={(e: ChangeEvent<HTMLInputElement>) => choose(e.target.files?.[0])}
+            />
           </div>
 
           <div className="panel">
@@ -201,6 +239,7 @@ export default function Home() {
                   className={`method ${method === m.id ? "active" : ""}`}
                   onClick={() => pick(m.id)}
                   disabled={loading}
+                  aria-pressed={method === m.id}
                   title={m.hint}
                 >
                   {m.label}
@@ -210,17 +249,17 @@ export default function Home() {
             <p className="method-hint">{METHODS.find((m) => m.id === method)?.hint}</p>
 
             {!analysis ? (
-              <div className="result">
+              <div className="result" aria-live="polite" aria-busy={loading}>
                 <div className="result-icon">?</div>
                 <h3>{preview ? "Görsel analize hazır" : "Henüz sonuç yok"}</h3>
                 <p>{preview ? "Analiz butonuna basarak modeli çalıştırın." : "Analiz için önce bir görsel yükleyin."}</p>
-                {error && <p className="error-text">{error}</p>}
+                {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" disabled={!preview || loading} onClick={() => analyze()}>
                   {loading ? "Analiz ediliyor…" : "Analiz et"}
                 </button>
               </div>
             ) : (
-              <div className="result">
+              <div className="result" aria-live="polite" aria-busy={loading}>
                 {/* ─── HÜKÜM — tek karar burada verilir (E22–E26) ─── */}
                 {analysis.decision ? (
                   <div
@@ -320,6 +359,7 @@ export default function Home() {
                   </p>
                 </div>
 
+                {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" onClick={() => analyze()} disabled={loading} style={{ marginTop: 14 }}>
                   {loading ? "Analiz ediliyor…" : "Tekrar analiz et"}
                 </button>

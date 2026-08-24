@@ -36,16 +36,21 @@ the measured result here, then commit. No unmeasured product claim is introduced
 
 ### Phase H2 — make the web/API contract honest and race-safe
 
-- [ ] Replace the hard-coded browser localhost assumption with one documented API-origin
+- [x] Replace the hard-coded browser localhost assumption with one documented API-origin
       contract: same-origin or an explicitly configured URL, with local development as a
       deliberate fallback rather than a deploy-time accident.
-- [ ] Distinguish unavailable service, rejected input and inference failure in the UI.
-- [ ] Validate the response shape before rendering, cancel stale requests, revoke preview
+- [x] Distinguish unavailable service, rejected input and inference failure in the UI.
+- [x] Validate the response shape before rendering, cancel stale requests, revoke preview
       URLs on unmount and prevent a cleared/changed image receiving an old result.
-- [ ] Fix the upload control's nested interactive element, live status announcements,
+- [x] Fix the upload control's nested interactive element, live status announcements,
       keyboard/focus behavior and four-method layout.
 - **Acceptance:** unit tests cover API URL selection, response validation and stale-request
   behavior; the deployment build succeeds.
+- **Measured 2026-08-24:** the production default now posts to same-origin `/predict`, while
+  `NEXT_PUBLIC_PIXELPROOF_API_URL` selects a separately hosted API and development alone
+  falls back to `127.0.0.1:8799`. A configured-origin production build embedded the supplied
+  HTTPS origin. `npm test` rebuilt successfully and passed 6/6 tests, including four pure
+  contract/race/error tests; `npm run lint` and `npm run typecheck` also exited zero.
 
 ### Phase H3 — harden inference inputs and execution
 
