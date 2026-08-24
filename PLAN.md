@@ -4,7 +4,114 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 (frozen) and [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md) (append-only log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active hardening roadmap (2026-08-24)
+## Active goal — a runnable project-owned model (2026-08-24)
+
+The immediate goal is not a production-perfect universal detector. It is a reproducible,
+project-owned model that the author can start, give an image to, inspect in the web demo and
+evaluate on labelled folders. The canonical model is the E20 ResNet-18 trained on native 128 px
+tiles, seed 2024. Its existing checkpoint is 44.8 MB and records ImageNet normalization,
+`top3` aggregation, a 0.04 texture floor and calibration-only threshold 0.9894907.
+
+This milestone does not turn that model into an authenticity authority. E20's three-seed result
+was Defactify evaluation AUC 0.751 +/- 0.033 and recall 49.9% +/- 6.1, while worst-source real
+false positives remained 86.2% +/- 3.1. The model is nevertheless a valid, working project
+result when its limitations are shown beside it. The external CF-ViT/B-Free decision layer stays
+available as a measured comparison, not as a substitute for presenting the project-owned model.
+
+### Phase M0 — record the model-first milestone before implementation
+
+- [x] Name one canonical project-owned checkpoint and freeze its current inference contract.
+- [x] Record the ordered M1-M6 implementation plan before changing model-serving code.
+- [x] Keep the completed H0-H6 hardening work addressable through the commit ledger below.
+- **Acceptance:** the next implementation phase, its evidence and its reporting boundary are
+  unambiguous before code changes begin.
+
+### Phase M1 — make the E20 checkpoint a verified runtime artifact
+
+- [ ] Add `tile_resnet18_seed2024.pt` to the artifact manifest with SHA-256, training provenance,
+      label direction and exact inference schema.
+- [ ] Implement one reusable E20 loader/scorer that reads the checkpoint contract instead of
+      duplicating preprocessing and aggregation constants in serving code.
+- [ ] Reject missing, tampered or schema-incompatible checkpoints with an actionable status.
+- **Acceptance:** offline tests cover valid, missing, tampered and incompatible checkpoints;
+  one real local load reproduces the stored seed/model/inference metadata.
+
+### Phase M2 — expose one canonical project-model inference path
+
+- [ ] Add a bounded `project_model` inference path using native 128 px tiles, the stored texture
+      floor and stored `top3` aggregation; every tile is scored once and the existing 256-tile
+      resource ceiling remains in force.
+- [ ] Return the raw score, stored experimental threshold, triggered/not-triggered result,
+      checkpoint hash and explicit `research_only` limitation in the API response.
+- [ ] Decouple project-model readiness from the optional external verdict arms and from retired
+      CNN/statistics artifacts, so one missing comparison model cannot disable the main demo.
+- **Acceptance:** API tests cover small/large images, bounded tiles, unavailable artifact and a
+  real checkpoint prediction; the same image produces the same aggregate through CLI and API.
+
+### Phase M3 — make the web demo model-first
+
+- [ ] Replace the four-method-first interaction with one primary action: run the project model.
+- [ ] Show the project model's experimental result, score, threshold, model revision and honest
+      worst-source limitation together; never label a negative result as proof that an image is real.
+- [ ] Keep the external decision layer in a clearly separated comparison panel when available,
+      and move the older CNN/statistics/tile-feature methods behind an optional research-details view.
+- **Acceptance:** a user can upload one JPG/PNG/WEBP and understand which result belongs to the
+  project-owned model; rendered, contract, accessibility and stale-request tests pass.
+
+### Phase M4 — add a repeatable folder evaluation command
+
+- [ ] Provide a command that accepts user-supplied `real/` and `ai/` folders, runs the canonical
+      checkpoint once per image and writes machine-readable JSON/CSV results.
+- [ ] Report image counts, decode failures, ROC-AUC, recall at the stored threshold, FP rate,
+      confusion counts and per-folder/source results without silently pooling away failures.
+- [ ] Include checkpoint hash, configuration, environment and command provenance in each run.
+- **Acceptance:** a tiny fixture proves the output schema and error paths; a held-out local subset
+  completes end to end and its exact measured result is appended to `ml/EXPERIMENTS.md`.
+
+### Phase M5 — provide a one-command local demonstration
+
+- [ ] Add a documented bootstrap/check command that verifies dependencies and the canonical
+      checkpoint before starting the API and web client.
+- [ ] Add a smoke command that checks `/health`, submits one image and validates the response.
+- [ ] Make startup errors identify the missing dependency/artifact/port instead of ending with an
+      unexplained traceback.
+- **Acceptance:** from a fresh shell on the supported machine, the documented flow reaches a web
+  prediction and CLI/folder evaluation without source edits.
+
+### Phase M6 — freeze presentation and report evidence
+
+- [ ] Add a concise model card covering training data, architecture, inference contract, measured
+      strengths, worst-source failure, intended use and prohibited authenticity claims.
+- [ ] Record every M1-M5 commit, command, test count and measured model result in this plan and the
+      append-only experiment log; generate report-ready tables/figures only from stored results.
+- [ ] Capture one reproducible demo scenario for the internship presentation: input, project-model
+      output, comparison output and the explanation of why they may disagree.
+- **Acceptance:** a reader can trace every presentation claim to a result file, experiment entry,
+  artifact hash and commit without relying on an undocumented manual run.
+
+### Deferred until the runnable-model milestone passes
+
+- Public deployment, authentication, rate limiting, autoscaling and latency SLOs.
+- A stronger commercially usable arm (for example a pre-registered Stay-Positive experiment).
+- C2PA/Content Credentials fusion and Module 2 localisation.
+- Any claim that the system is a general-purpose or production-grade authenticity detector.
+
+## Completed hardening commit ledger
+
+| Phase | Commit | Recorded outcome |
+|---|---|---|
+| H0 | `ef9edaa` | Ordered hardening roadmap written before implementation |
+| H1 | `6509ebf` | Web lint, typecheck, build and product-test baseline restored |
+| H2 | `18ab632` | Browser/API contract, response validation and request races hardened |
+| H3 | `364d9f0` | Image limits, normalization, bounded inference and truthful health added |
+| H4 | `d0d856d` | Evaluation leakage fixed; E27 rerun failed G1 and was removed from serving |
+| H5 | `dbafd05` | Locked dependencies and hash-verified model artifact registry added |
+| H6 | `9830d31` | Documentation aligned; CI, dependency audit and final E2E gates added |
+
+Every completed phase below contains its acceptance checks and measured result. Git history is the
+immutable implementation record; `ml/EXPERIMENTS.md` remains append-only for scientific results.
+
+## Completed hardening roadmap (2026-08-24)
 
 The E20-E27 research line produced a defensible asymmetric decision layer, but a full
 repository audit found that the product, serving, reproducibility and verification layers
