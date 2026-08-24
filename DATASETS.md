@@ -79,6 +79,11 @@ the recall; that needs no real half and answers "does our detector see FLUX at a
 
 ## Module 2 — where was the image manipulated?
 
+**Status: parked, not served.** The current tile overlay is an uncalibrated detector-score map.
+E17/E18 found localisation signal on diffusion inpainting (CocoGlide) but not a general result on
+classic splicing. Module 2 resumes only after a localisation model is evaluated against the pixel
+masks below on the relevant manipulation family.
+
 | Dataset | Size | Contents |
 |---|---|---|
 | **`ductai199x/image-manipulation-dataset-compilation`** | 78 GB | 13 forensic datasets, split `auth` / `manip`, **with pixel-level ground-truth masks** |

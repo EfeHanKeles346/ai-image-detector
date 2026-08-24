@@ -15,7 +15,7 @@ the measured result here, then commit. No unmeasured product claim is introduced
 ### Phase H0 — record the plan
 
 - [x] Turn the audit findings into this ordered roadmap before changing product code.
-- [ ] Keep every later phase in a separate commit and update its checkbox only after its
+- [x] Keep every later phase in a separate commit and update its checkbox only after its
       acceptance checks pass.
 
 ### Phase H1 — restore a trustworthy web verification baseline
@@ -67,11 +67,13 @@ the measured result here, then commit. No unmeasured product claim is introduced
 - **Acceptance:** API tests cover invalid bytes, oversize input, tiny/extreme aspect ratios,
   EXIF orientation, transparency, unavailable verdict arms and one valid prediction.
 - **Measured 2026-08-24:** `pytest -q` passed 18/18 tests, including six API-policy tests.
-  The real local runtime then loaded both CNNs, both feature models and the CF-ViT + E27
-  arms on `mps`, reported `status=ready` with no load errors, and completed one 64x64 CNN
-  prediction. Limits are 12 MiB / 16 MP / 16,384 px / 20:1, tile extraction is capped at
-  256, inference runs off the async event loop through one bounded runtime slot, wildcard
-  CORS is rejected, and the external auth/rate/queue boundary is recorded in `ml/SERVING.md`.
+  The real local runtime then loaded both CNNs, both feature models and the then-current
+  CF-ViT + E27 arms on `mps`, reported `status=ready` with no load errors, and completed
+  one 64x64 CNN prediction. Limits are 12 MiB / 16 MP / 16,384 px / 20:1, tile extraction
+  is capped at 256, inference runs off the async event loop through one bounded runtime
+  slot, wildcard CORS is rejected, and the external auth/rate/queue boundary is recorded
+  in `ml/SERVING.md`.
+  H4 subsequently rejected and removed E27 under the corrected calibration-only gate.
 
 ### Phase H4 — repair the scientific/product contract
 
@@ -121,16 +123,28 @@ the measured result here, then commit. No unmeasured product claim is introduced
 
 ### Phase H6 — align documentation and automate the gates
 
-- [ ] Update README, this plan, DATASETS, the active experiment index and the report boundary
-      so each distinguishes the E27 served system, the research-only signals and Module 2's
-      parked state.
-- [ ] Add CI for web lint/type/test/build, Python tests and dependency auditing with generated
+- [x] Update README, this plan, DATASETS, the active experiment index and the report boundary
+      so each distinguishes the E26 served system, rejected E27 arm, research-only signals
+      and Module 2's parked state.
+- [x] Add CI for web lint/type/test/build, Python tests and dependency auditing with generated
       directories excluded.
-- [ ] Remove or regenerate stale local deployment output; a production artifact must never
+- [x] Remove or regenerate stale local deployment output; a production artifact must never
       contain an old UI or an absolute developer filesystem path.
-- [ ] Run the final local end-to-end verification and record exact commands/results here.
+- [x] Run the final local end-to-end verification and record exact commands/results here.
 - **Acceptance:** all CI-equivalent checks pass from owned source, the working tree contains
   no accidental generated files, and the remaining known limitations are stated in README.
+- **Measured 2026-08-24:** `npm ci`, `npm run lint`, `npm run typecheck` and `npm test`
+  all exited zero; the production build passed 6/6 web tests. The command
+  `npm audit --audit-level=critical` exited zero while still printing the two documented
+  high-severity `vinext -> image-size` advisories. `pytest -q` passed 25/25; `compileall`, `pip check`,
+  `pip-audit -r ml/requirements-serving.lock` and the five-entry artifact check all passed
+  (no known Python vulnerabilities). CI and Dependabot YAML parsed successfully. A real
+  uvicorn runtime reported `ready` on `mps` with CF-ViT as the only default verdict arm;
+  `POST /predict` accepted a 1280x800 PNG and returned HTTP 200 (`research p_ai=0.7923`,
+  official decision `insufficient`), while the production web server rendered PixelProof
+  and the exact 11/103 limitation. The final regenerated `dist/` contains neither a stale
+  starter screen nor `/Users/` / `file://` paths. All H1-H6 phases were roadmap-updated and
+  committed separately before this final phase commit.
 
 ### Non-negotiable project rules for H0-H6
 
@@ -146,7 +160,10 @@ the measured result here, then commit. No unmeasured product claim is introduced
 - Module 2 remains parked until a localisation model is measured against pixel masks on the
   relevant manipulation family.
 
-## Where the project stands (2026-08-18, after E20-v2 / E21 protocol work)
+## Historical checkpoint (2026-08-18, after E20-v2 / E21 protocol work)
+
+This section is retained as research history and is superseded by the 2026-08-24 active
+hardening roadmap and current contract above. It does not describe today's served system.
 
 - **Best detector:** ResNet-18 fine-tuned on 128px native tiles — Defactify AUC 0.770,
   61.4% AI recall on the untouched evaluation half. Best numbers the project has produced.
@@ -190,7 +207,7 @@ planned "insufficient evidence" band a statistical footing instead of a hand-tun
 [TGIF/TGIF2](https://arxiv.org/abs/2407.11566) remains the right Module 2 target (FLUX.1
 inpainting, and the only set separating spliced from fully-regenerated edits).
 
-## Next, in order
+## Historical research queue (completed or superseded)
 
 1. **External baselines through our protocol** *(no training)* — every arm through the
    same E20-v2 evaluator: disjoint calibration/evaluation halves, threshold transferred to
@@ -265,14 +282,17 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
       accuse 38.2% (E23b reproduced on real user data); cap + ~100-photo threshold-only
       refit lands the untouched half at **9.7% — budget met** at 62.2% recall. The
       deployment recipe (audit → cap → calibrate → refit) is now measured twice.
-- [x] **Demo integration** *(done 2026-08-20; E27 addendum: the served ensemble now carries OUR OWN GPT-family arm — a linear head on CF-ViT embeddings, admitted through the adversarial-reviewed gate; GPT probe 12%→40.5%, DALL-E 3 21%→35%, zero added worst-source FP, zero added compute)*. `pixelproof/verdict.py` serves the
+- [x] **Demo integration** *(E26 shipped 2026-08-20; E27 was temporarily integrated and
+      then removed by the 2026-08-24 protocol correction after its calibration-only recall
+      fell to 14.5%, failing G1)*. `pixelproof/verdict.py` serves the
       asymmetric band with every measured policy: 2048px cap (E23b), "AI / insufficient
       evidence" verdicts only (E23a), compression-regime caveat (E23c), E24's
       12-pipeline thresholds with experiment provenance in every response. CF-ViT (MIT)
       always on; B-Free loads only behind `PIXELPROOF_BFREE=1` (nonprofit licence).
       Dead stats2/3 options removed from API and UI; verified end-to-end in the browser.
-      **E26 addendum:** verdict rule is now OR over arms (a blind primary cannot veto a
-      seeing one — budget unchanged at 9.7%, FLUX 64.5%, the missed ChatGPT upload caught);
+      **E26 contract:** verdict rule is OR over verified arms (a blind primary cannot veto a
+      seeing one — corrected 12-source evaluation worst 10.7%, FLUX 64.5%, the missed
+      ChatGPT upload caught);
       the UI shows exactly one verdict, with the research signal demoted and labelled.
 
 ## Standing rules (unchanged)
@@ -284,7 +304,7 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
 
 ## Repo conventions after the 2026-08-18 tidy-up
 
-- `ml/experiments/` holds only runnable protocol scripts (e20, e21); finished evidence
+- `ml/experiments/` holds the runnable E20–E27 protocol scripts; finished earlier evidence
   scripts are frozen in `ml/experiments/archive/`.
 - `ml/src/pixelproof/archive/` holds retired modules (E2–E4 analysis, ELA, DINOv2
   extraction). Nothing in the live path imports them.

@@ -1,114 +1,111 @@
-# PixelProof — AI Image Detector
+# PixelProof — AI image evidence demo
 
-Research project that decides whether a photo is **AI-generated** or a **real photograph**, and —
-work in progress — **where** an image was manipulated.
+PixelProof is a research system that looks for evidence consistent with AI generation. Its
+official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
+It never certifies that an image is real.
 
-## Where the project stands (2026-08-18)
+## Current scientific contract (2026-08-24)
 
-**The strongest model is a ResNet-18 fine-tuned on 128px native tiles** (E20): Defactify AUC
-0.770 and 61.4% AI recall on the untouched evaluation half — the project's best numbers. It is
-deliberately **not** exposed as an API verdict, because a threshold fitted for a 10% false-positive
-budget reaches **96% false positives on the worst unseen camera source** (E20-v2). Ranking is
-solved; deciding is not. The plan for that lives in [`PLAN.md`](PLAN.md).
+The served decision layer is the E26 OR rule over frozen external detectors:
 
-The demo still serves the four earlier detectors, none of them blended, because blending was
-measured and did not help:
+- **Community-Forensics ViT-S** is the default arm (MIT, pinned local snapshot).
+- **B-Free** is optional because its upstream terms are research/non-commercial; it loads only
+  after artifact verification and explicit `PIXELPROOF_BFREE=1` acknowledgement.
+- Each arm uses a threshold fitted on source-wise calibration halves. Evaluation halves never
+  select a threshold, model or gate.
+- On the measured 12-source evaluation library, the two-arm union's worst-source false-positive
+  point estimate is **10.7%** on iPhone originals (11/103; Wilson 95% CI 6.1–18.1%). This is a
+  limited-population estimate, not a guarantee for a new camera, editor or upload pipeline.
 
-| Method | What it does | Best at | Defactify AUC |
-|---|---|---|---|
-| SmallCNN | 32×32 CIFAKE baseline | tiny inputs | — |
-| ResNet-18 | fine-tuned on native-resolution GenImage | <700px, compressed | 0.760 |
-| Statistics | 68 hand-crafted features over every pixel, no resizing | mid-size, low-texture | 0.717 |
-| **Tiles** | 6×6 grid of native 128px crops, mean of top 3 | **≥700px** | **0.948 on SDXL** |
+E27's project-trained GPT-family arm is **not served**. A 2026-08-24 audit found that its union
+threshold procedure could inspect evaluation halves. The corrected calibration-only rerun raised
+the candidate threshold from 15.38 to 21.71 and reduced its in-collection GPT recall from 40.5%
+to 14.5%, below its pre-registered 40% gate. The append-only correction is in
+[`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md).
 
-> ⚠️ **Read `HISTORY.md` §12b before trusting any of these numbers.** Measuring the tile model's
-> *operating point* rather than its AUC showed it calls **79% of real photographs "AI"** — and the
-> cause is a narrow real class, not calibration. Every detector here was partly learning "what my
-> training set's real photographs look like" instead of "what a generated image looks like".
-> Widening the real class raises AUC 0.55 → 0.884 at no cost to AI recall.
+The UI also exposes four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) as
+**uncalibrated research scores**. They are not the verdict: unseen-camera false positives reached
+79–100% in E13/E24. The tile overlay is a detector-score map, not validated localisation evidence.
 
-Measured on **Defactify** — 16,875 images from five generators (SD 2.1, SDXL, SD 3, DALL-E 3,
-Midjourney v6), none of which any model was trained on.
+Module 2 (“where was it edited?”) is parked. It does not resume until a localisation model is
+measured against pixel masks on the relevant manipulation family; current signal was limited to
+diffusion inpainting and did not generalise to classic splicing.
 
-**The finding that drove all of it:** the pipeline was resizing every image to 224×224 before the
-model saw it, and generation artefacts live in exactly the high frequencies a downscale removes.
-Detection quality lined up almost perfectly with source resolution — 270px scored 0.896, 1024px
-scored 0.670. The tile method dissolves the problem: the model always sees 128×128 native pixels,
-so resolution changes only *how many tiles* come out, never what a tile looks like.
+## Repository map
 
-Full reasoning: [`HISTORY.md`](HISTORY.md) §4 and §9. Experiment log: [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md).
-
-## Documentation map
-
-| File | Read it when |
+| Path | Purpose |
 |---|---|
-| [`PLAN.md`](PLAN.md) | You want to know what happens **next** — the only living planning document |
-| [`HISTORY.md`](HISTORY.md) | You want the full decision history (frozen) — the internship report's reference |
-| [`DATASETS.md`](DATASETS.md) | You need to know which data you may train on, and in which mode |
-| [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md) | You want one experiment's hypothesis, config, numbers and conclusion |
-| [`IMAGE_FORENSICS_REFERENCE.md`](IMAGE_FORENSICS_REFERENCE.md) | You need the field background — how images are generated, edited, and detected |
-| [`IMAGE_STRUCTURE_NOTES.md`](IMAGE_STRUCTURE_NOTES.md) | You need the technical basis for a feature-design decision |
+| `app/` | Turkish web client |
+| `ml/src/pixelproof/` | Models, input policy, decision protocol, CLI and FastAPI service |
+| `ml/experiments/` | Runnable E20–E27 protocol scripts |
+| `ml/EXPERIMENTS.md` | Append-only measured experiment log |
+| `ml/artifacts.manifest.json` | Pinned model identity, hashes, licences and schemas |
+| `PLAN.md` | Living roadmap and measured hardening results |
+| `HISTORY.md` | Frozen project history |
+| `DATASETS.md` | Dataset inventory, allowed uses and portable path contract |
+| `rapor/` | Historical report/talk snapshot; see its boundary note |
 
-## Layout
+Label convention everywhere is `1 = AI-generated`, `0 = real`.
 
-```text
-app/                       Web UI (Next.js)
-ml/configs/                Reproducible experiment configs
-ml/src/pixelproof/         The live spine: data, models, training, features, protocol, serving
-ml/src/pixelproof/archive/ Retired modules, frozen (E2–E4 analysis, ELA, DINOv2 extraction)
-ml/experiments/            Runnable protocol scripts (e20, e21)
-ml/experiments/archive/    Finished evidence scripts (E7–E18), frozen
-ml/tools/                  Dataset acquisition + auditing
-ml/artifacts/              Trained weights (not committed)
-ml/artifacts/archive/      Superseded artifacts — moved aside, never deleted
-```
+## Reproducible setup
 
-Label convention everywhere: `1 = AI-generated`, `0 = real`.
-
-## Quickstart
+The checked serving lock targets Python 3.13 on macOS arm64. PyTorch wheels are platform-specific,
+so another platform must deliberately re-resolve the declared ranges in `ml/pyproject.toml`.
 
 ```bash
 cd ml
-python3 -m venv .venv
-.venv/bin/pip install torch torchvision scikit-learn pillow pyyaml pytest scipy joblib
-
-# train a CNN (data paths live in the config; datasets are not committed)
-PYTHONPATH=src .venv/bin/python -m pixelproof.train --config configs/genimage.yaml
-
-# fit and save the two feature models
-PYTHONPATH=src .venv/bin/python -m pixelproof.feature_model
-
-# evaluate a CNN on the held-out test set + an external set
-PYTHONPATH=src .venv/bin/python -m pixelproof.evaluate \
-  --external-ai /path/to/ai --external-real /path/to/real
-
-# reproduce any experiment
-PYTHONPATH=src .venv/bin/python experiments/e11_tile_grid_search.py
-
-# audit a dataset BEFORE using it (see HISTORY §1b — this rule was learned the hard way)
-.venv/bin/python tools/audit_datasets.py /path/to/dataset
-
-.venv/bin/python -m pytest
+python3.13 -m venv .venv
+.venv/bin/pip install -r requirements-serving.lock
+.venv/bin/pip install --no-deps -e .
 ```
 
-## Demo
-
-Two processes:
+Weights are intentionally not committed. Follow [`ml/ARTIFACTS.md`](ml/ARTIFACTS.md), place the
+four project-owned files, prepare the pinned MIT snapshot, then verify everything before serving:
 
 ```bash
-cd ml && PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --port 8799
-npm install && npm run dev     # from the repo root, UI on :3000
+.venv/bin/pixelproof-artifacts prepare
+.venv/bin/pixelproof-artifacts check
+PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --host 127.0.0.1 --port 8799
 ```
 
-Upload an image, pick a method (or leave it on **Otomatik**, which applies the measured 700px
-crossover). With the tile method the per-tile scores are drawn over the image as a heat-map —
-uniform red means the whole image is synthetic, a single red region means that region is suspect.
-That heat-map is also the groundwork for Module 2.
+Missing core artifacts produce a truthful `status=unavailable`; missing verdict artifacts produce
+`status=degraded`. Neither condition crashes module import. Input limits, CORS and required edge
+authentication/rate controls are documented in [`ml/SERVING.md`](ml/SERVING.md).
 
-## Two modules
+Prepared datasets default to `ml/work/` and acquired sources to `ml/data/`. Existing layouts are
+selected without code edits:
 
-- **Module 1 — is this AI-generated?** The four detectors above.
-- **Module 2 — where was it manipulated?** Not built yet, but no longer hypothetical: the tile
-  scorer already produces a per-region map, and a 78 GB compilation of 13 forensic datasets with
-  **pixel-level ground-truth masks** is on disk, so localisation can be scored rather than argued
-  about. See `HISTORY.md` §12.
+```bash
+export PIXELPROOF_WORK_ROOT=/path/to/prepared-work
+export PIXELPROOF_DATA_ROOT=/path/to/source-datasets
+```
+
+## Web client
+
+```bash
+npm ci
+npm run dev
+```
+
+Development deliberately falls back to `http://127.0.0.1:8799`. A production build posts to
+same-origin `/predict` unless `NEXT_PUBLIC_PIXELPROOF_API_URL` is set to an absolute HTTP(S)
+origin; see [`.env.example`](.env.example).
+
+## Verification
+
+```bash
+npm test
+npm run lint
+npm run typecheck
+
+PYTHONPATH=ml/src ml/.venv/bin/pytest -q
+PYTHONPATH=ml/src ml/.venv/bin/python -m pixelproof.artifact_registry check
+ml/.venv/bin/pip check
+```
+
+Known dependency debt: `npm audit` currently reports two high entries in one development/build
+chain, `vinext@0.0.50 -> image-size@2.0.2`. npm's offered remediation is the breaking
+`vinext@1.0.0-beta.8` line; CI fails on critical advisories while this migration remains explicit.
+
+This repository currently grants no open-source licence. See [`LICENSE.md`](LICENSE.md) for the
+project and external-model boundaries.

@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - name: Audit production/build dependencies (known high vinext debt is documented)
+        run: npm audit --audit-level=critical
+
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: ml/requirements-serving.lock
+      - run: python -m pip install -r ml/requirements-serving.lock
+      - run: python -m pip install --no-deps -e ml
+      - run: python -m pip install pytest==9.1.1 pip-audit==2.10.1
+      - run: PYTHONPATH=ml/src pytest -q ml/tests
+      - run: PYTHONPATH=ml/src python -m compileall -q ml/src ml/experiments ml/tools
+      - run: python -m pip check
+      - run: python -m pip_audit -r ml/requirements-serving.lock

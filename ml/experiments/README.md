@@ -1,27 +1,33 @@
-# Experiment scripts
+# Runnable experiment index
 
-Two kinds of script live here, and the split is the point:
+These scripts are the reproducible protocol surface. E7–E18 are frozen under `archive/`; E20–E27
+remain runnable because later decisions reuse their cached scores and source-wise splits.
 
-- **This folder** holds the scripts that are still *run*: the current evaluation protocol
-  and anything the plan (`../../PLAN.md`) calls for next.
-- **[`archive/`](archive/README.md)** holds the scripts that produced finished, written-up
-  results (E7–E18). They are frozen evidence for `../EXPERIMENTS.md` and are not maintained.
-
-Run from `ml/` with `PYTHONPATH=src`:
+Run from `ml/` with the declared environment and portable dataset roots:
 
 ```bash
+export PIXELPROOF_DATA_ROOT=/path/to/source-datasets
+export PIXELPROOF_WORK_ROOT=/path/to/prepared-work
 PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 ```
 
-| Script | Experiment | Purpose |
+| Script | State | Purpose |
 |---|---|---|
-| `e20_tile_model_shootout.py` | E20 / E20-v2 | Three model families on identical native tiles, under the hardened protocol: per-image score persistence, disjoint calibration/evaluation halves, aggregation controls, source-transfer FP reporting, three-seed default. |
-| `e21_external_detector_benchmark.py` | E21 | Runs an official external detector through the same protocol — the go/no-go gate before paying for any further training of our own. Two arms: `--detector bfree` (GRIP-UNINA checkout, non-commercial licence acknowledgement required) and `--detector community-forensics` (ViT-S, MIT; local snapshot or `--allow-download`, ~83 MB). |
+| `e20_tile_model_shootout.py` | measured baseline | Three native-tile model families; image-level aggregation, disjoint calibration/evaluation, multi-seed and worst-source FP |
+| `e21_external_detector_benchmark.py` | measured baseline | Pinned Community-Forensics and opt-in B-Free through the same protocol |
+| `e22_source_robust_calibration.py` | adopted | Worst-source calibration and asymmetric decision operating points |
+| `e22b_bootstrap_ci.py` | adopted reporting rule | Source-wise bootstrap intervals for headline operating points |
+| `e23a_midjourney_diagnostic.py` | measured | Why a symmetric “real” verdict is unsafe |
+| `e23b_megapixel_policy.py` | adopted for B-Free | 2048px B-Free input cap on megapixel authentic sources |
+| `e23c_compression_column.py` | measured limitation | Clean/degraded threshold domains; bytes-per-pixel remains only a heuristic |
+| `e24_library_promise.py` | measured | New iPhone pipeline, threshold-only calibration and held-out transfer |
+| `e25_modern_generator_probe.py` | measured limitation | Modern-generator recall probes, including GPT-family blindness |
+| `e27_gpt_family_arm.py` | **rejected** | GPT specialist experiment; corrected calibration-only union threshold fails G1 (14.5% < 40%), so it is not served |
 
-Feature extraction caches to `../artifacts/features/`, so re-running anything after the
-first time costs seconds rather than minutes.
+The current served decision contract is E26's OR rule, implemented in `pixelproof/verdict.py`:
+CF-ViT is default; B-Free is optional and licence-gated. E27 is retained to reproduce the
+rejection, not as a deployment recipe. Exact results and the append-only correction are in
+`../EXPERIMENTS.md`.
 
-**Requires the datasets in `../../DATASETS.md`.** Active scripts read
-`PIXELPROOF_DATA_ROOT` (acquired sources) and `PIXELPROOF_WORK_ROOT` (prepared sets), with
-portable `ml/data` and `ml/work` defaults. Scripts fail fast with a clear error if a required
-dataset folder is missing.
+Feature extraction caches under `artifacts/` are not committed. Runtime artifacts must pass
+`pixelproof-artifacts check`; see `../ARTIFACTS.md`.
