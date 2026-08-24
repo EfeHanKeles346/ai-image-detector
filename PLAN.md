@@ -5,7 +5,11 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active goal — source-robust project model v2 (2026-08-24)
+## Completed experiment goal — source-robust project model v2 (2026-08-24)
+
+**Milestone status: completed with a pre-registered rejection on 2026-08-24.** E28 failed N2, so
+N3 was correctly cancelled and serving stayed unchanged. The next plan must target representation
+or data composition; it must not retune this rejected candidate against its evaluation results.
 
 The runnable-model milestone proved the complete E20 path, but it also froze the central failure:
 seed 2024 reaches Defactify AUC 0.720 and recall 48.1% while misclassifying 83.2% of the worst
@@ -56,34 +60,47 @@ mathematical description using this project's existing code and data.
 
 ### Phase N2 — run one full seed and apply the frozen advancement gate
 
-- [ ] Train seed 2024 against the existing 48,037-tile E20 training corpus. Training/validation
+- [x] Train seed 2024 against the existing 48,037-tile E20 training corpus. Training/validation
       choices may see only that corpus; the frozen E20 calibration/evaluation split is used once
       after the candidate is fixed.
-- [ ] Compare with the exact E20 seed-2024 baseline: AUC 0.7197, recall 48.1%, Defactify FP 11.3%,
+- [x] Compare with the exact E20 seed-2024 baseline: AUC 0.7197, recall 48.1%, Defactify FP 11.3%,
       forensic macro FP 43.3%, worst-source FP 83.2%.
 - **Advance only if all single-seed conditions pass:** AUC >= 0.710, recall >= 42%, Defactify FP
   <= 15%, forensic macro FP <= 35%, and worst-source FP <= 70%. These tolerances prioritize the
   named failure while refusing a trivial always-real classifier.
 - **Stop condition:** a failed gate is appended as a negative result and is not integrated; no
   threshold or hyperparameter is retuned against evaluation.
+- **Measured 2026-08-24 — rejected:** all 48,037 tiles produced frozen 512-dimensional features;
+  the validation-only choice kept epoch 1/15 at AUC 0.8947 with zero negative feature weights.
+  E20 protocol v2 then selected `top3` on calibration macro recall and measured untouched
+  evaluation AUC 0.7290, recall 48.9%, Defactify FP 12.7%, forensic macro FP 44.6% and worst-source
+  FP 85.0% (`RealisticTampering`). The first three gates passed; macro <=35% and worst <=70%
+  failed. The candidate is rejected and cannot advance.
 
 ### Phase N3 — require three-seed evidence before integration
 
+- [x] Apply the N2 prerequisite before spending two more training/evaluation runs.
 - [ ] Only after N2 passes, train seeds 42 and 1337 with the identical frozen recipe and report
       population mean +/- standard deviation for all gate metrics.
 - **Final gate:** mean AUC >= 0.740, recall >= 45%, Defactify FP <= 15%, forensic macro FP <= 35%
   and worst-source FP <= 65%; all seeds must remain below 75% worst-source FP.
 - **Acceptance:** the stored three-seed result either passes every condition or records an explicit
   rejection. A single favourable seed never becomes the served model.
+- **Status 2026-08-24:** cancelled by the pre-registered N2 stop condition. Seeds 42/1337 were not
+  run; this is deliberate protocol compliance, not unfinished work.
 
 ### Phase N4 — integrate only a passing model and freeze new evidence
 
 - [ ] If N3 passes, register a hash-verified v2 artifact, update the shared scorer/API/UI/model card
       and add a before/after presentation table. Keep E20 addressable for reproducibility.
-- [ ] If N3 fails, leave serving unchanged, archive the result, and choose the next method from the
-      measured failure rather than adding unverified product features.
+- [x] If the candidate fails N2 or N3, leave serving unchanged, archive the result, and choose the
+      next method from the measured failure rather than adding unverified product features.
 - **Acceptance:** serving changes only after a passing three-seed artifact; otherwise the current
   runnable E20 system remains intact and the negative experiment is fully reportable.
+- **Measured 2026-08-24:** `evidence/e28_seed2024_rejection.json` preserves the exact baseline,
+  candidate, all diagnostic aggregations, individual gate decisions and hashes. The candidate is
+  absent from the runtime manifest; E20 remains the runnable project model. The failure says the
+  frozen E20 representation—not merely the sign of its final weights—must change next.
 
 ## Completed goal — a runnable project-owned model (2026-08-24)
 

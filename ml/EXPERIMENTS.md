@@ -1243,3 +1243,34 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   The candidate reloaded into ResNet18, selected epoch 1 at validation AUC **0.9000**, and contained
   minimum feature weight **0.000000** with **zero negative weights**. This is execution evidence,
   not performance evidence; it cannot satisfy or revise N2's pre-registered full-data gate.
+
+## 2026-08-24 — E28 / N2: Stay-Positive candidate fails the source-robustness gate
+
+- **Training:** canonical E20 seed-2024 backbone SHA-256 `b9f39eda...65adf`, all **48,037** existing
+  tiles, frozen 512-dimensional feature extractor, seed 2024, 15-epoch ceiling, batch 1024,
+  AdamW lr 1e-3, source+label-stratified 90/10 training/validation. Validation alone selected epoch
+  **1** at AUC **0.894699**. Minimum head feature weight was 0.0; negative count was zero. Candidate
+  SHA-256: `73b8bed6...08a5`.
+- **Evaluation:** unchanged E20 protocol v2, split seed 2026, 50% calibration, 10% real FP budget,
+  150 Defactify real + 750 AI evaluation images and 1,776 authentic images from ten unseen forensic
+  sources. Aggregation was selected by calibration macro generator recall before evaluation.
+
+| model / rule | AUC | recall | Defactify FP | forensic macro FP | worst-source FP |
+|---|---:|---:|---:|---:|---:|
+| E20 seed 2024 · top3 baseline | 0.7197 | 48.1% | 11.3% | 43.3% | 83.2% |
+| **E28 Stay-Positive · top3 selected** | **0.7290** | **48.9%** | **12.7%** | **44.6%** | **85.0%** |
+| E28 · top10pct diagnostic | 0.6935 | 37.5% | 11.3% | 30.8% | 60.0% |
+| E28 · p90 diagnostic | 0.7106 | 35.6% | 5.3% | 29.4% | 59.0% |
+| E28 · mean diagnostic | 0.7135 | 37.6% | 8.7% | 28.7% | 72.0% |
+| E28 · fixed16_top3 diagnostic | 0.6816 | 37.2% | 10.0% | 28.7% | 63.0% |
+
+- **Gate:** AUC >=0.710 passed; recall >=42% passed; Defactify FP <=15% passed; macro FP <=35%
+  **failed**; worst-source FP <=70% **failed** (`RealisticTampering`, 85.0%). The lower-FP
+  aggregation diagnostics were not selected by the frozen calibration rule and all fell below the
+  42% recall floor; choosing one after seeing evaluation would be leakage.
+- **Decision:** **rejected after one seed.** Do not run seeds 42/1337, do not register the artifact,
+  do not alter serving, and do not tune against these evaluation results. Exact compact evidence is
+  committed as `evidence/e28_seed2024_rejection.json`; raw tile scores and candidate remain in the
+  ignored local `artifacts/e28/` directory. The constraint preserved AUC/recall but did not repair
+  source shift, so the next candidate must change the representation or training data rather than
+  merely constraining E20's final head.

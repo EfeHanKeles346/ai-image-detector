@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "experiment": "E28 / N2",
+  "date": "2026-08-24",
+  "method": "stay_positive_independent_v1",
+  "implementation_commit": "d488a75",
+  "provenance": {
+    "paper": "https://arxiv.org/abs/2502.07778",
+    "base_artifact_sha256": "b9f39eda10ba3de54b706d6448b67d93ce8e4c7bae97a685f3c1b57ebfd65adf",
+    "candidate_sha256": "73b8bed630cfd125b745e986d4b24160184043a14ae3ce649f03896958ee08a5",
+    "local_results_sha256": "15e9ad969081f53fa4a6ac862b1ae7c75c98d39d1d06ff4b2924215af47d7021",
+    "training_tiles": 48037,
+    "seed": 2024,
+    "device": "mps"
+  },
+  "training": {
+    "backbone_frozen": true,
+    "feature_relu": true,
+    "head_zero_initialized": true,
+    "feature_weights_nonnegative": true,
+    "bias_constrained": false,
+    "epochs_ceiling": 15,
+    "selected_epoch": 1,
+    "validation_auc": 0.894699180213978,
+    "minimum_feature_weight": 0.0,
+    "negative_feature_weights": 0
+  },
+  "protocol": {
+    "e20_protocol_version": 2,
+    "false_positive_budget": 0.1,
+    "calibration_fraction": 0.5,
+    "split_seed": 2026,
+    "selection": "macro generator recall on calibration halves only",
+    "evaluation_counts": {
+      "defactify_real": 150,
+      "defactify_ai": 750,
+      "forensics_real": 1776
+    }
+  },
+  "baseline_seed2024_top3": {
+    "roc_auc": 0.7197244444444445,
+    "recall": 0.48133333333333334,
+    "defactify_false_positive_rate": 0.11333333333333333,
+    "forensics_macro_false_positive_rate": 0.43339271499956167,
+    "forensics_worst_false_positive_rate": 0.8318181818181818
+  },
+  "candidate_selected": {
+    "aggregation": "top3",
+    "threshold": 0.8282409707705181,
+    "calibration_macro_recall": 0.5106666666666666,
+    "roc_auc": 0.7290044444444445,
+    "recall": 0.48933333333333334,
+    "defactify_false_positive_rate": 0.12666666666666668,
+    "forensics_macro_false_positive_rate": 0.4458264705882353,
+    "forensics_worst_false_positive_rate": 0.85,
+    "worst_source": "RealisticTampering"
+  },
+  "diagnostic_aggregations_not_selected": {
+    "top10pct": {
+      "roc_auc": 0.6935377777777778,
+      "recall": 0.37466666666666665,
+      "defactify_false_positive_rate": 0.11333333333333333,
+      "forensics_macro_false_positive_rate": 0.3079687078109933,
+      "forensics_worst_false_positive_rate": 0.6
+    },
+    "p90": {
+      "roc_auc": 0.7106133333333333,
+      "recall": 0.356,
+      "defactify_false_positive_rate": 0.05333333333333334,
+      "forensics_macro_false_positive_rate": 0.2943351041757985,
+      "forensics_worst_false_positive_rate": 0.59
+    },
+    "mean": {
+      "roc_auc": 0.7135288888888889,
+      "recall": 0.376,
+      "defactify_false_positive_rate": 0.08666666666666667,
+      "forensics_macro_false_positive_rate": 0.28720463019783177,
+      "forensics_worst_false_positive_rate": 0.72
+    },
+    "fixed16_top3": {
+      "roc_auc": 0.6816444444444445,
+      "recall": 0.372,
+      "defactify_false_positive_rate": 0.1,
+      "forensics_macro_false_positive_rate": 0.2870838067268636,
+      "forensics_worst_false_positive_rate": 0.63
+    }
+  },
+  "single_seed_gate": {
+    "roc_auc_at_least_0_710": true,
+    "recall_at_least_0_42": true,
+    "defactify_false_positive_rate_at_most_0_15": true,
+    "forensics_macro_false_positive_rate_at_most_0_35": false,
+    "forensics_worst_false_positive_rate_at_most_0_70": false,
+    "all_passed": false
+  },
+  "decision": "rejected_after_single_seed_gate",
+  "serving_changed": false,
+  "three_seed_run_allowed": false
+}

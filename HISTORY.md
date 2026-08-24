@@ -1432,3 +1432,20 @@ checkpoint loaded back into ResNet18, selected epoch 1 at validation AUC 0.9000 
 feature weights. The complete Python suite rose from 43 to 48 tests and passed 48/48; compileall and
 `pip check` also passed. This phase proves the experiment can run, not that the model generalizes.
 Only N2's already-frozen seed-2024 evaluation may answer that question.
+
+### N2–N4 — E28 is rejected and never reaches serving
+
+The full seed-2024 experiment used all 48,037 E20 tiles and kept epoch 1 solely from its
+source-stratified training validation slice (AUC 0.8947). Under the untouched E20 protocol,
+calibration selected `top3`; evaluation measured AUC 0.7290, recall 48.9%, Defactify FP 12.7%,
+forensic macro FP 44.6% and worst-source FP 85.0%. Against the pre-registered advancement gate,
+the AUC, recall and Defactify conditions passed, but macro <=35% and worst-source <=70% failed.
+
+The tempting lower-FP aggregations are retained as diagnostics, not substituted after the fact:
+`p90`, for example, reached 29.4% macro and 59.0% worst-source FP but only 35.6% recall, below the
+frozen 42% floor. Seeds 42/1337 were therefore not run, the E28 candidate was not added to the
+artifact manifest, and API/web serving remained on the verified E20 checkpoint. Compact exact
+evidence and hashes live in `evidence/e28_seed2024_rejection.json`; the large candidate and raw
+scores remain ignored local artifacts. The outcome narrows the next problem: E20's representation
+or data composition must change, because constraining only its final head did not cure source
+shift.
