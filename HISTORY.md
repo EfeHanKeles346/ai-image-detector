@@ -1459,3 +1459,16 @@ training-data rights will be audited separately before anything is installed or 
 that audit passes, the candidate remains isolated from serving and must meet PixelProof's own
 source-wise gate before a project-trained head is attempted. No external code, dependency, weight
 or runtime change was made in this planning phase; E20 remains the working model.
+
+### O1 — RINE is conditionally admissible only as an isolated local benchmark
+
+The provenance audit pinned RINE revision `9b7fd585...620` and its Apache-2.0 code, the official
+25.3 MB 4-class trainable checkpoint, OpenAI CLIP revision `d05afc4...35f6` and the official
+932.8 MB ViT-L/14 base hash. RINE's save path excludes all CLIP parameters, but a separate licence
+for redistributing the CLIP base bytes was not found, so those weights may remain local only.
+
+The audit also refused the upstream environment recipe: it is unpinned, assumes Python 3.9,
+Torch 2.1.1 and CUDA, and dynamically assigns checkpoint fields with `exec`. None of that entered
+the locked serving environment. `ml/RINE_FEASIBILITY.md` records the full PASS/FAIL matrix, exact
+input normalization, score direction, storage/memory estimate and O2 boundaries. The result is a
+conditional GO for a pinned, hash-verified, strict CPU/MPS research adapter—not for integration.

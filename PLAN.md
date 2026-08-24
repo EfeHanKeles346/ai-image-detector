@@ -32,13 +32,20 @@ the candidate through its own frozen protocol. E20 remains the runnable project 
 
 ### Phase O1 — audit feasibility and ownership boundaries
 
-- [ ] Pin an official repository revision; identify the code, RINE checkpoint, CLIP implementation,
+- [x] Pin an official repository revision; identify the code, RINE checkpoint, CLIP implementation,
       base-weight and training-data licences separately. Record what may be used locally, committed
       and redistributed.
-- [ ] Map model input, normalization, score direction, checkpoint schema, memory and dependency
+- [x] Map model input, normalization, score direction, checkpoint schema, memory and dependency
       requirements without changing the locked serving environment.
 - **Acceptance:** a written PASS/FAIL matrix exists. Any unclear checkpoint or base-weight licence
   stops redistribution and limits the work to a local research comparison.
+- **Measured 2026-08-24 — conditional GO:** `ml/RINE_FEASIBILITY.md` pins RINE revision
+  `9b7fd585...620`, its Apache-2.0 source and 25,298,182-byte 4-class trainable checkpoint, plus
+  OpenAI CLIP revision `d05afc4...35f6`, MIT code and the official ViT-L/14 SHA-256/932,768,134-byte
+  base. RINE excludes CLIP parameters from its saved head, but no separate CLIP base-weight licence
+  was found; base weights therefore stay local and unredistributed. The unpinned git dependency,
+  Python 3.9/Torch 2.1/CUDA assumptions and dynamic `exec` checkpoint loader are rejected. O2 may
+  proceed only with a pinned, hash-checked, strict independent adapter outside serving.
 
 ### Phase O2 — benchmark the representation in isolation
 

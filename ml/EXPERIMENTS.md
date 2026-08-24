@@ -1290,3 +1290,21 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
 - **O2 feasibility gate (all required):** AUC >=0.850, recall >=35%, Defactify FP <=15%, forensic
   macro FP <=15% and worst-source FP <=30%. Only a pass may justify pre-registering and training a
   project-owned intermediate-block head; integration would still require three seeds.
+
+## 2026-08-24 — O1 RINE feasibility/provenance audit
+
+- **Pinned sources:** RINE `9b7fd585...620` (Apache-2.0), OpenAI CLIP `d05afc4...35f6` (MIT code),
+  official RINE 4-class trainable checkpoint (25,298,182 bytes; Git blob `bf5cd405...c457`) and
+  official CLIP ViT-L/14 URL-embedded SHA-256 `b8cca3fd...03836` (932,768,134 bytes).
+- **Boundary:** the RINE save path explicitly excludes `clip` keys, so the small checkpoint contains
+  only its trainable components. The CLIP base-weight page did not expose a separate weight licence;
+  it may be fetched for local research but will not be committed or redistributed. No upstream
+  training/evaluation dataset is required or authorized for O2.
+- **Technical finding:** score direction is sigmoid(fake logit), evaluation is RGB center-crop 224
+  plus CLIP normalization, and the backbone is frozen ViT-L/14 with hooks on intermediate `ln_2`
+  blocks. The upstream recipe is not admitted to PixelProof: it uses an unpinned git dependency,
+  Python 3.9/Torch 2.1/CUDA assumptions and dynamic `exec` state assignment.
+- **Decision:** **conditional GO for isolated O2 only.** A strict project adapter may fetch pinned
+  files into ignored storage, hash before deserialization, support CPU/MPS and leave serving locks,
+  manifest, API, web and E20 unchanged. Full matrix and resource contract:
+  `ml/RINE_FEASIBILITY.md`. No model/dependency/checkpoint was downloaded during O1.
