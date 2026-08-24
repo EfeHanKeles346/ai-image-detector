@@ -5,7 +5,42 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active goal — representation feasibility before another training run (2026-08-24)
+## Active goal — real iPhone gallery compatibility and measurement (2026-08-24)
+
+A local owner-supplied gallery exposed a serving blocker before model comparison: 187 of 210
+JPEG-family images are iPhone two-frame MPO files. Pillow identifies their container as `MPO`, so
+the shared decoder rejects them even though the primary frame is a valid JPEG photograph. The
+first 23 decodable images are not a representative result and must not be used to tune a model.
+
+### Phase P0 — record the correction and evaluation boundary before code
+
+- [x] Freeze the input-only scope: accept MPO as a JPEG-family container, decode only its primary
+      frame, and preserve the existing byte, pixel, dimension, aspect, EXIF and transparency rules.
+- [x] Freeze the gallery protocol: score every supported still image once after the fix, retain
+      decode/inference failures in the count, and report authentic false positives without fitting
+      any threshold or training on the gallery.
+- **Acceptance:** the plan and experiment log exist before decoder code changes.
+
+### Phase P1 — support bounded iPhone MPO input
+
+- [ ] Add `MPO` to the JPEG-family decoder contract while explicitly seeking only frame zero before
+      load/orientation/flattening. MOV remains unsupported.
+- [ ] Add automated coverage for a multi-frame MPO-like Pillow input and prove JPEG/PNG/WEBP,
+      malformed input and resource limits remain unchanged.
+- **Acceptance:** full Python tests, compileall and dependency checks pass; real local smoke decodes
+  previously rejected iPhone MPO files without changing model artifacts or scores.
+
+### Phase P2 — measure every authentic gallery image across all current arms
+
+- [ ] Run project E20, legacy CNN, full-image statistics, legacy tile statistics and the available
+      E26 external arm once per unique file; record duplicates separately and skip the MOV.
+- [ ] Report score distributions, authentic FP/abstention counts, cross-model agreement and the
+      practical product conclusion. Do not store personal images, GPS, filenames or per-image
+      hashes in the repository.
+- **Acceptance:** all supported stills are accounted for and aggregate evidence is appended to
+  `ml/EXPERIMENTS.md` and `HISTORY.md`; no gallery image enters training or calibration.
+
+## Paused research goal — representation feasibility before another training run (2026-08-24)
 
 E28 showed that changing only E20's final-head constraint leaves its source failure intact. The
 next candidate class must therefore expose a materially different representation. The first

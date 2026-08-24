@@ -1308,3 +1308,22 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   files into ignored storage, hash before deserialization, support CPU/MPS and leave serving locks,
   manifest, API, web and E20 unchanged. Full matrix and resource contract:
   `ml/RINE_FEASIBILITY.md`. No model/dependency/checkpoint was downloaded during O1.
+
+## 2026-08-24 — P0 pre-registration: owner iPhone gallery input correction
+
+- **Discovery:** the local gallery has 210 supported still-image extensions plus one MOV. Only 23
+  stills passed the shared decoder; 187 were rejected because Pillow identifies iPhone two-frame
+  JPEG files as `MPO`, outside the declared `JPEG`/`PNG`/`WEBP` set. A five-file probe confirmed
+  failed files are RGB, two-frame MPO at ordinary iPhone dimensions while accepted files are
+  one-frame JPEG or PNG.
+- **Correction boundary:** admit `MPO` as a JPEG-family input and decode frame zero only. Preserve
+  upload-byte, pixel, dimension, aspect, decompression-bomb, EXIF-orientation and RGB/alpha rules.
+  MOV stays unsupported. This is an input compatibility fix, not a model or threshold change.
+- **Frozen measurement:** after automated and real-file smoke checks, run every still once through
+  E20, legacy CNN, full statistics, legacy tile statistics and the available E26 decision arm.
+  The gallery is authentic-only and may measure false positives; it may not train, calibrate,
+  select aggregation or change a threshold. Count exact duplicate bytes separately. Repository
+  evidence will contain aggregates only—no personal image, GPS, filename or per-image hash.
+- **Invalid partial result:** among the first 23 decodable files E20 triggered on 20 and legacy
+  tiles on 23, while CF-ViT triggered on zero. These are a format-selected subset and are recorded
+  only to explain why a complete rerun is required, not as the gallery result.

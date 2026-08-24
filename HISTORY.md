@@ -1485,3 +1485,16 @@ conditional GO for a pinned, hash-verified, strict CPU/MPS research adapter—no
 
 This table is an index into Git's immutable record. The detailed measured values remain in the
 preceding append-only entries, `ml/EXPERIMENTS.md` and the compact E28 evidence JSON.
+
+### P0 — the owner's gallery exposes an iPhone MPO decoder gap
+
+A local, authentic-only gallery test stopped before model comparison: 187 of 210 still images use
+iPhone's two-frame MPO JPEG container, which Pillow reports as `MPO`; PixelProof allowed only the
+literal `JPEG`, `PNG` and `WEBP` identifiers. Twenty-three files decoded, but that format-selected
+subset cannot support a fair model conclusion.
+
+The correction was scoped before implementation: accept only the primary MPO frame through the
+same bounded decoder, keep MOV unsupported, then rerun every still once without training,
+calibration or threshold changes. Only aggregate results will enter the repository; personal
+images, GPS, filenames and per-image hashes remain outside it. RINE O2 pauses until this direct
+product blocker and its complete real-camera measurement are resolved.
