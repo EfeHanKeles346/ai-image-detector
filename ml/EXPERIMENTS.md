@@ -1350,3 +1350,43 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
 - This run cannot revise E28's failed macro/worst-source gate, select a new threshold, enter the
   artifact manifest or change serving. Its sole question is whether the failed method behaves
   differently on this authentic iPhone pipeline.
+
+## 2026-08-24 — P2: complete owner-gallery comparison
+
+- **Accounting and privacy:** the local folder contained 210 supported still-image instances and
+  one unsupported MOV. SHA-256 byte deduplication found 206 unique stills and four duplicate
+  excess instances. The repository stores only these aggregates: no image, filename, EXIF/GPS or
+  per-image digest entered evidence, training, calibration or threshold selection.
+- **Two distinct decoder results:** the unchanged 16,000,000-pixel product policy accepted
+  137/210 instances and rejected 73/210, all because 5712x4284 is 24.47 MP. The comparison then
+  used the pre-declared local-only 26,000,000-pixel ceiling. All 206 unique stills decoded and all
+  requested arms completed with **zero failures**. This measurement does not change API limits.
+- **Authentic-only outcomes:** an AI trigger is a false positive here. Legacy three-band arms use
+  AI / uncertain / real only as their historical output labels; CF-ViT is asymmetric and returns
+  AI or `insufficient`, never proof of realness.
+
+| arm | frozen decision outcome on 206 unique authentic photos | score summary |
+|---|---|---|
+| project E20, `top3`, threshold 0.9894907 | **178 AI / 28 below = 86.4% FP** | mean 0.9815; median 0.9998; range 0.2035–1.0000 |
+| rejected E28 Stay-Positive, `top3`, threshold 0.8282410 | **170 AI / 36 below = 82.5% FP** | mean 0.8933; median 0.9127; range 0.5912–0.9840 |
+| legacy ResNet-18 CNN | **100 AI / 18 uncertain / 88 real** | mean 0.5191; median 0.5615 |
+| legacy full-image statistics | **134 AI / 40 uncertain / 32 real** | mean 0.7301; median 0.8668 |
+| legacy tile statistics | **206 AI / 0 uncertain / 0 real = 100% FP** | mean 0.9884; median 0.9918 |
+| legacy `auto` | identical to tile statistics: **206 AI** | every image exceeded its 700 px tile-selection boundary |
+| external CF-ViT / E26 threshold 0.6617392 | **1 AI / 205 insufficient = 0.49% FP** | logits: mean -8.5315; median -8.8754; max 8.3387 |
+
+- **Agreement:** E20 and CF-ViT never triggered together: 178 were E20-only, one was CF-only and
+  27 triggered neither. All three legacy arms (CNN, full statistics and tile statistics) agreed on
+  AI for 73/206. These disagreements are model-family/source-pipeline sensitivity, not confidence
+  estimates that can be averaged into a valid probability.
+- **E28 diagnostic:** candidate SHA-256
+  `73b8bed630cfd125b745e986d4b24160184043a14ae3ce649f03896958ee08a5` ran on MPS with the frozen
+  N2 threshold and at most 256 texture-qualified 128 px tiles (observed 11–255, median 152). Its
+  82.5% FP is only eight images better than E20 and remains unusable. The earlier rejection stands;
+  the candidate stays outside the manifest and serving.
+- **Product conclusion:** MPO compatibility fixed a real input blocker, but none of the
+  project-owned/legacy outputs is a trustworthy authenticity decision on this camera pipeline.
+  CF-ViT is the strongest available comparison here, yet 205 abstentions mean this real-only run
+  does not establish useful AI recall or a complete classifier. The next experiment must change
+  representation and be evaluated on both authentic camera pipelines and held-out modern AI;
+  threshold tuning on this gallery is forbidden.

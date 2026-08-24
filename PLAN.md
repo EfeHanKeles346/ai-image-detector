@@ -5,7 +5,7 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active goal — real iPhone gallery compatibility and measurement (2026-08-24)
+## Completed goal — real iPhone gallery compatibility and measurement (2026-08-24)
 
 A local owner-supplied gallery exposed a serving blocker before model comparison: 187 of 210
 JPEG-family images are iPhone two-frame MPO files. Pillow identifies their container as `MPO`, so
@@ -37,22 +37,33 @@ first 23 decodable images are not a representative result and must not be used t
 
 ### Phase P2 — measure every authentic gallery image across all current arms
 
-- [ ] Record the default product decoder result for all 210 stills, then run project E20, legacy
+- [x] Record the default product decoder result for all 210 stills, then run project E20, legacy
       CNN, full-image statistics, legacy tile statistics and the available E26 external arm once
       per unique file under an explicit 26,000,000-pixel local evaluation ceiling. This second
       ceiling is measurement-only and does not alter API policy. Record duplicates separately and
       skip the MOV.
-- [ ] Run the rejected E28 Stay-Positive checkpoint as a clearly separated diagnostic with its
+- [x] Run the rejected E28 Stay-Positive checkpoint as a clearly separated diagnostic with its
       already-frozen N2 `top3` threshold. This cannot reverse its rejection or alter serving.
-- [ ] Report score distributions, authentic FP/abstention counts, cross-model agreement and the
+- [x] Report score distributions, authentic FP/abstention counts, cross-model agreement and the
       practical product conclusion. Do not store personal images, GPS, filenames or per-image
       hashes in the repository.
 - **Acceptance:** all supported stills are accounted for and aggregate evidence is appended to
   `ml/EXPERIMENTS.md` and `HISTORY.md`; no gallery image enters training or calibration.
+- **Measured 2026-08-24:** the folder contained 210 still-image instances, representing 206 unique
+  byte-identical inputs plus four duplicate instances, and one unsupported MOV. The unchanged
+  product decoder accepted 137/210 instances; all 73 rejections were 24.47 MP files above its
+  16 MP ceiling. Under the declared 26 MP measurement-only ceiling, all 206 unique stills decoded
+  and every arm completed with zero failures. Authentic false alarms were E20 178/206 (86.4%),
+  rejected E28 170/206 (82.5%), legacy CNN 100/206 (plus 18 uncertain), full statistics 134/206
+  (plus 40 uncertain), and legacy tiles/auto 206/206. External CF-ViT triggered once and returned
+  `insufficient` for 205/206; it never certifies an image as real. E28's rejection is confirmed,
+  E20 remains runnable but not trustworthy on this camera pipeline, and the gallery was not used
+  for fitting or threshold selection.
 
-## Paused research goal — representation feasibility before another training run (2026-08-24)
+## Next research goal — representation feasibility before another training run (2026-08-24)
 
-E28 showed that changing only E20's final-head constraint leaves its source failure intact. The
+E28 showed that changing only E20's final-head constraint leaves its source failure intact, and P2
+confirmed the same failure on the owner's real camera pipeline. The
 next candidate class must therefore expose a materially different representation. The first
 feasibility target is RINE, the ECCV 2024 intermediate-CLIP-block detector: its official paper/code
 uses trainable importance over multiple encoder-block CLS representations instead of only the last

@@ -1514,3 +1514,29 @@ all stills under a declared 26 MP local-only evaluation ceiling, without changin
 Before the final P2 report, the owner also requested the newly developed model. The rejected E28
 Stay-Positive checkpoint was therefore added to the gallery comparison as a diagnostic under its
 already-frozen N2 threshold. This does not reopen its failed gate or authorize integration.
+
+### P2 — every current arm was measured on the complete private gallery
+
+The completed run accounted for 210 still-image instances, four of which were exact duplicate
+bytes, plus one unsupported MOV. At the unchanged product boundary, 137/210 stills are accepted
+and 73 high-resolution 24.47 MP stills are rejected by the 16 MP safety ceiling. A separately
+declared 26 MP local-only measurement admitted all 206 unique stills with zero decode or inference
+failures. This did not change the API policy. No personal image, filename, EXIF/GPS field or
+per-image hash was committed, and the photos were not used for training, calibration or threshold
+selection.
+
+The camera-pipeline result is decisive. Canonical E20 falsely triggered on 178/206 authentic
+photos (86.4%). The rejected E28 Stay-Positive candidate triggered on 170/206 (82.5%), only eight
+fewer, so its earlier source-wise rejection is independently confirmed and it remains outside the
+manifest and serving. Legacy ResNet-18 produced 100 AI, 18 uncertain and 88 real labels; full-image
+statistics produced 134/40/32; tile statistics and therefore `auto` called all 206 AI. The
+external CF-ViT comparison triggered once and abstained as `insufficient` on 205. Its 0.49% false
+alarm result is excellent specificity on this real-only slice, but abstention is not proof of
+authenticity and this run says nothing about AI recall.
+
+This closes the iPhone compatibility/measurement phase with two separate truths. PixelProof now
+decodes the primary frame of ordinary iPhone MPO photographs through its shared bounded input
+path, so the demo is materially more testable. The project-owned model genuinely runs end to end,
+but its decision is not trustworthy on the owner's camera pipeline. More threshold adjustment on
+these private photos would contaminate evaluation; the next justified model line must change the
+representation and then face both unseen real pipelines and held-out modern AI.
