@@ -1472,3 +1472,16 @@ Torch 2.1.1 and CUDA, and dynamically assigns checkpoint fields with `exec`. Non
 the locked serving environment. `ml/RINE_FEASIBILITY.md` records the full PASS/FAIL matrix, exact
 input normalization, score direction, storage/memory estimate and O2 boundaries. The result is a
 conditional GO for a pinned, hash-verified, strict CPU/MPS research adapter—not for integration.
+
+### N/O development commit ledger
+
+| Phase | Commit | Archived outcome |
+|---|---|---|
+| N0 | `e5fd980` | Stay-Positive method, data boundary and stop/go gates pre-registered |
+| N1 | `d488a75` | Independent constrained-head command, tests and real-checkpoint smoke added |
+| N2–N4 | `2ade393` | Full seed-2024 E28 gate failure frozen; candidate excluded from serving |
+| O0 | `c601e25` | Representation-first RINE/CLIP feasibility direction recorded before work |
+| O1 | `8d31806` | Pinned licence, provenance, runtime and redistribution audit completed |
+
+This table is an index into Git's immutable record. The detailed measured values remain in the
+preceding append-only entries, `ml/EXPERIMENTS.md` and the compact E28 evidence JSON.
