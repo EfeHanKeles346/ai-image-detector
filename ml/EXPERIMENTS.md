@@ -1341,3 +1341,12 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   73 files are no longer misreported as unsupported format; they are 5712x4284 (24.47 MP) and
   correctly receive the unchanged 16 MP product-limit response. P2 will preserve that product
   count while using an explicit 26 MP local-only ceiling to measure model behavior on all stills.
+
+## 2026-08-24 — P2 pre-run amendment: rejected E28 gallery diagnostic
+
+- The owner requested the new development beside every current model. Before reading any E28
+  gallery score, the rejected `stay_positive_seed2024.pt` candidate is added as a diagnostic only.
+  It uses N2's frozen `top3` aggregation and threshold 0.8282409708 under the same 256-tile ceiling.
+- This run cannot revise E28's failed macro/worst-source gate, select a new threshold, enter the
+  artifact manifest or change serving. Its sole question is whether the failed method behaves
+  differently on this authentic iPhone pipeline.

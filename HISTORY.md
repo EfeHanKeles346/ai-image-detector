@@ -1510,3 +1510,7 @@ On the real gallery, default acceptance rose from 23/210 to 137/210. The other 7
 truthfully rejected for exceeding the unchanged 16 MP product ceiling (5712x4284), rather than
 being mislabeled as unsupported formats. P2 will report that product boundary and separately score
 all stills under a declared 26 MP local-only evaluation ceiling, without changing API policy.
+
+Before the final P2 report, the owner also requested the newly developed model. The rejected E28
+Stay-Positive checkpoint was therefore added to the gallery comparison as a diagnostic under its
+already-frozen N2 threshold. This does not reopen its failed gate or authorize integration.

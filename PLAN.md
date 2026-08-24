@@ -42,6 +42,8 @@ first 23 decodable images are not a representative result and must not be used t
       per unique file under an explicit 26,000,000-pixel local evaluation ceiling. This second
       ceiling is measurement-only and does not alter API policy. Record duplicates separately and
       skip the MOV.
+- [ ] Run the rejected E28 Stay-Positive checkpoint as a clearly separated diagnostic with its
+      already-frozen N2 `top3` threshold. This cannot reverse its rejection or alter serving.
 - [ ] Report score distributions, authentic FP/abstention counts, cross-model agreement and the
       practical product conclusion. Do not store personal images, GPS, filenames or per-image
       hashes in the repository.
