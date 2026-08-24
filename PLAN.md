@@ -5,7 +5,78 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active goal — a runnable project-owned model (2026-08-24)
+## Active goal — source-robust project model v2 (2026-08-24)
+
+The runnable-model milestone proved the complete E20 path, but it also froze the central failure:
+seed 2024 reaches Defactify AUC 0.720 and recall 48.1% while misclassifying 83.2% of the worst
+authentic source. The next goal is therefore narrowly defined: reduce source-specific authentic
+false positives without losing the already modest AI signal. This is research advancement, not a
+production or universal-authenticity claim.
+
+The candidate is an independent implementation of the Stay-Positive last-layer constraint from
+*Stay-Positive: A Case for Ignoring Real Image Features in Fake Image Detection* (ICML 2025):
+freeze E20's feature extractor, reset its linear head to zero, train only that head over
+non-negative features, and clamp its feature weights to be non-negative after each optimizer
+step. Sources: [paper](https://arxiv.org/abs/2502.07778) and
+[official research repository](https://github.com/AniSundar18/AlignedForensics). The repository
+page reviewed on 2026-08-24 did not expose an explicit software licence, so no upstream source,
+weights or assets will be copied; the experiment will implement the published algorithm from its
+mathematical description using this project's existing code and data.
+
+### Phase N0 — pre-register the experiment before implementation
+
+- [x] Record the method, baseline, stop/go gates, evaluation boundary and licence boundary before
+      changing model code.
+- [x] Preserve E20 seed 2024 as the exact comparator and keep evaluation data out of head training,
+      validation, threshold choice and hyperparameter selection.
+- **Acceptance:** `PLAN.md`, `ml/EXPERIMENTS.md` and append-only `HISTORY.md` agree on what may be
+  tried and what result permits the next phase.
+- **Recorded 2026-08-24:** the N1-N4 order and the single-seed/final gates below were frozen before
+  implementation. No external code or weight was imported.
+
+### Phase N1 — implement and mechanically verify the constrained head
+
+- [ ] Add one reusable, independently written training primitive that freezes E20's backbone,
+      exposes non-negative embeddings, zero-initializes the final linear head and prevents negative
+      feature weights after every update. The bias remains unconstrained as described in the paper.
+- [ ] Add a separate experiment command; do not overwrite E20 or change the served artifact.
+- [ ] Test zero initialization, frozen backbone, non-negative weights, deterministic splitting and
+      compatible checkpoint metadata on tiny synthetic data.
+- **Acceptance:** focused tests and the complete Python suite pass; a CPU smoke run produces a
+  loadable candidate whose feature-weight minimum is at least zero.
+
+### Phase N2 — run one full seed and apply the frozen advancement gate
+
+- [ ] Train seed 2024 against the existing 48,037-tile E20 training corpus. Training/validation
+      choices may see only that corpus; the frozen E20 calibration/evaluation split is used once
+      after the candidate is fixed.
+- [ ] Compare with the exact E20 seed-2024 baseline: AUC 0.7197, recall 48.1%, Defactify FP 11.3%,
+      forensic macro FP 43.3%, worst-source FP 83.2%.
+- **Advance only if all single-seed conditions pass:** AUC >= 0.710, recall >= 42%, Defactify FP
+  <= 15%, forensic macro FP <= 35%, and worst-source FP <= 70%. These tolerances prioritize the
+  named failure while refusing a trivial always-real classifier.
+- **Stop condition:** a failed gate is appended as a negative result and is not integrated; no
+  threshold or hyperparameter is retuned against evaluation.
+
+### Phase N3 — require three-seed evidence before integration
+
+- [ ] Only after N2 passes, train seeds 42 and 1337 with the identical frozen recipe and report
+      population mean +/- standard deviation for all gate metrics.
+- **Final gate:** mean AUC >= 0.740, recall >= 45%, Defactify FP <= 15%, forensic macro FP <= 35%
+  and worst-source FP <= 65%; all seeds must remain below 75% worst-source FP.
+- **Acceptance:** the stored three-seed result either passes every condition or records an explicit
+  rejection. A single favourable seed never becomes the served model.
+
+### Phase N4 — integrate only a passing model and freeze new evidence
+
+- [ ] If N3 passes, register a hash-verified v2 artifact, update the shared scorer/API/UI/model card
+      and add a before/after presentation table. Keep E20 addressable for reproducibility.
+- [ ] If N3 fails, leave serving unchanged, archive the result, and choose the next method from the
+      measured failure rather than adding unverified product features.
+- **Acceptance:** serving changes only after a passing three-seed artifact; otherwise the current
+  runnable E20 system remains intact and the negative experiment is fully reportable.
+
+## Completed goal — a runnable project-owned model (2026-08-24)
 
 **Milestone status: completed through M6 on 2026-08-24.** The deferred items below are a new
 product/research horizon, not missing requirements for the runnable-model milestone.

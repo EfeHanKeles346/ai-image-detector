@@ -1200,3 +1200,28 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   trigger. The models have different representations and source populations; disagreement is
   expected under source shift. This case is presented specifically to justify separate UI cards,
   the research-only label and the prohibition on authenticity certification.
+
+## 2026-08-24 — N0 pre-registration: source-robust project model v2
+
+- **Observed problem:** the runnable E20 seed-2024 model has Defactify AUC 0.7197, recall 48.1%,
+  Defactify authentic FP 11.3%, forensic macro FP 43.3% and worst-source FP 83.2%. The next
+  experiment targets the source-specific authentic false positives; a better demo surface cannot
+  repair this scientific failure.
+- **Hypothesis:** constraining a newly initialized linear head to use only non-negative weights over
+  E20's frozen non-negative ResNet18 features will reduce reliance on source-specific authentic
+  features while retaining enough fake-associated signal to avoid an always-real solution. This is
+  an independent implementation of the algorithm described in *Stay-Positive* (ICML 2025):
+  <https://arxiv.org/abs/2502.07778>. The official repository is used only as provenance:
+  <https://github.com/AniSundar18/AlignedForensics>. Its reviewed page did not expose an explicit
+  licence, so no upstream code, weights or assets may enter this repository.
+- **Frozen protocol:** train only on the existing 48,037 E20 tiles; make the validation split
+  deterministic and source-stratified; freeze the backbone; reset the linear head to zero; clamp
+  feature weights to `>= 0` after every optimizer update; leave bias unconstrained. Hyperparameters,
+  checkpoint selection and threshold selection may not see E20 evaluation images.
+- **Single-seed advancement gate (seed 2024; all required):** AUC >= 0.710, recall >= 42%,
+  Defactify FP <= 15%, forensic macro FP <= 35%, worst-source FP <= 70%. Failure ends this candidate
+  without evaluation-driven tuning.
+- **Three-seed integration gate (only after single-seed pass):** population mean AUC >= 0.740,
+  recall >= 45%, Defactify FP <= 15%, forensic macro FP <= 35%, worst-source FP <= 65%; every seed
+  must remain below 75% worst-source FP. Passing this gate permits artifact/runtime integration;
+  it does not permit a production or authenticity-certification claim.

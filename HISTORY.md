@@ -1406,3 +1406,14 @@ the intended teaching example: the project model demonstrably runs, yet its sour
 failure is visible in the same evidence package. Python passed 43/43 after adding the evidence
 integrity tests. M0-M6 are now complete; deployment and stronger-model research remain explicitly
 deferred rather than being confused with the achieved runnable-model goal.
+
+### N0 — source-robust model v2 is pre-registered before code
+
+With the runnable E20 path complete, development returned to its largest measured model failure:
+seed 2024's 83.2% worst-source and 43.3% macro authentic false-positive rates. The next candidate
+is an independently implemented Stay-Positive linear head over the frozen E20 ResNet18 backbone.
+The published algorithm, exact E20 comparator, data boundary, single-seed advancement gate and
+three-seed integration gate were recorded in `PLAN.md` and `ml/EXPERIMENTS.md` before any training
+code changed. The official research repository is not vendored because its reviewed page exposed
+no explicit software licence; only the paper's described method is being reimplemented. This entry
+starts a new experiment line and does not alter the currently served model.
