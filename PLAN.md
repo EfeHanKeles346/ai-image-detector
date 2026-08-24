@@ -4,6 +4,114 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 (frozen) and [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md) (append-only log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Active hardening roadmap (2026-08-24)
+
+The E20-E27 research line produced a defensible asymmetric decision layer, but a full
+repository audit found that the product, serving, reproducibility and verification layers
+have not yet caught up with the experiment discipline. The work below is ordered by risk.
+Each phase follows the same rule: implement, verify against its acceptance checks, record
+the measured result here, then commit. No unmeasured product claim is introduced.
+
+### Phase H0 — record the plan
+
+- [x] Turn the audit findings into this ordered roadmap before changing product code.
+- [ ] Keep every later phase in a separate commit and update its checkbox only after its
+      acceptance checks pass.
+
+### Phase H1 — restore a trustworthy web verification baseline
+
+- [ ] Replace the deleted starter-skeleton tests with tests for the actual PixelProof page.
+- [ ] Add the Cloudflare Worker types required by TypeScript and make `tsc --noEmit` pass.
+- [ ] Keep ESLint out of the Python virtualenv, artifacts, external checkouts and generated
+      output; make the repository lint command pass on owned source.
+- [ ] Update vulnerable web dependencies within compatible release lines, then record the
+      remaining `npm audit` result instead of claiming that every advisory is exploitable.
+- **Acceptance:** `npm test`, `npm run lint` and an explicit TypeScript check all exit zero.
+
+### Phase H2 — make the web/API contract honest and race-safe
+
+- [ ] Replace the hard-coded browser localhost assumption with one documented API-origin
+      contract: same-origin or an explicitly configured URL, with local development as a
+      deliberate fallback rather than a deploy-time accident.
+- [ ] Distinguish unavailable service, rejected input and inference failure in the UI.
+- [ ] Validate the response shape before rendering, cancel stale requests, revoke preview
+      URLs on unmount and prevent a cleared/changed image receiving an old result.
+- [ ] Fix the upload control's nested interactive element, live status announcements,
+      keyboard/focus behavior and four-method layout.
+- **Acceptance:** unit tests cover API URL selection, response validation and stale-request
+  behavior; the deployment build succeeds.
+
+### Phase H3 — harden inference inputs and execution
+
+- [ ] Enforce upload byte, pixel, dimension and supported-format limits with explicit 4xx
+      responses; malformed files must not become generic 500 errors.
+- [ ] Apply EXIF orientation and a documented transparency background before every arm sees
+      the image, so preview geometry and model geometry agree.
+- [ ] Make evidence sufficiency depend on both dimensions and prevent an official verdict
+      below the supported floor.
+- [ ] Bound expensive tile work, move blocking inference off the async event loop, use CUDA
+      when available and expose truthful readiness/degraded health.
+- [ ] Restrict CORS to configured origins and document rate-limit/auth expectations for any
+      non-local deployment.
+- **Acceptance:** API tests cover invalid bytes, oversize input, tiny/extreme aspect ratios,
+  EXIF orientation, transparency, unavailable verdict arms and one valid prediction.
+
+### Phase H4 — repair the scientific/product contract
+
+- [ ] Replace the false UI statement that no source exceeds 10% FP with the exact measured
+      operating point and its uncertainty/limited-population wording.
+- [ ] Ensure the E27 union gate can never tune a threshold by reading evaluation halves;
+      evaluation data is measured once after the threshold is frozen.
+- [ ] Label research outputs as scores, not calibrated probabilities, and describe the tile
+      map as a detector-score map rather than proof of manipulation location.
+- [ ] Emit the megapixel caveat only when an enabled arm actually receives the capped input;
+      describe bytes-per-pixel as a heuristic, not a compression classifier.
+- [ ] Bring the CLI into the same asymmetric `ai` / `insufficient` verdict contract.
+- **Acceptance:** pure tests pin the decision/caveat rules and a synthetic protocol test
+  proves that changing evaluation scores cannot change a fitted threshold.
+
+### Phase H5 — make a clean clone reproducible
+
+- [ ] Declare the live service and experiment dependency groups completely and add a locked
+      Python environment artifact suitable for the supported Python version.
+- [ ] Add a runtime artifact manifest containing source, licence, revision, SHA-256, expected
+      path and model/feature schema; loading must reject mismatched artifacts.
+- [ ] Provide an explicit artifact preparation/check command. A missing model must yield an
+      actionable readiness result, not an import-time traceback.
+- [ ] Replace personal absolute dataset paths in active commands with CLI/config/environment
+      inputs while preserving the current machine as an optional local configuration.
+- [ ] Record the project's own licence posture and keep B-Free opt-in/non-commercial use
+      separate from the default servable configuration.
+- **Acceptance:** documented clean-environment setup reaches a truthful health response;
+  artifact verification and missing-artifact paths are tested without network access.
+
+### Phase H6 — align documentation and automate the gates
+
+- [ ] Update README, this plan, DATASETS, the active experiment index and the report boundary
+      so each distinguishes the E27 served system, the research-only signals and Module 2's
+      parked state.
+- [ ] Add CI for web lint/type/test/build, Python tests and dependency auditing with generated
+      directories excluded.
+- [ ] Remove or regenerate stale local deployment output; a production artifact must never
+      contain an old UI or an absolute developer filesystem path.
+- [ ] Run the final local end-to-end verification and record exact commands/results here.
+- **Acceptance:** all CI-equivalent checks pass from owned source, the working tree contains
+  no accidental generated files, and the remaining known limitations are stated in README.
+
+### Non-negotiable project rules for H0-H6
+
+- Labels remain `1 = AI-generated`, `0 = real`.
+- User-facing decisions remain asymmetric: `AI detected` or `insufficient evidence`; never
+  an authenticity certificate.
+- Threshold selection sees calibration data only. Evaluation halves never influence a
+  threshold, model choice or post-hoc gate.
+- Headline quality remains AI recall at a fixed false-positive budget with macro and
+  worst-source FP; AUC is supporting evidence, not the deployment decision.
+- External model licences and revisions are enforced in the runtime path, not left only in
+  prose. B-Free stays explicit opt-in.
+- Module 2 remains parked until a localisation model is measured against pixel masks on the
+  relevant manipulation family.
+
 ## Where the project stands (2026-08-18, after E20-v2 / E21 protocol work)
 
 - **Best detector:** ResNet-18 fine-tuned on 128px native tiles — Defactify AUC 0.770,
