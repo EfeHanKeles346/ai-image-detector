@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_ROOT=$(dirname -- "$SCRIPT_DIR")
+VENV_PYTHON="$REPO_ROOT/ml/.venv/bin/python"
+
+if [ ! -x "$VENV_PYTHON" ]; then
+  echo "PixelProof environment missing: $VENV_PYTHON" >&2
+  echo "Follow the Reproducible setup section in $REPO_ROOT/README.md, then retry." >&2
+  exit 2
+fi
+
+PYTHONPATH="$REPO_ROOT/ml/src${PYTHONPATH:+:$PYTHONPATH}" \
+  exec "$VENV_PYTHON" -m pixelproof.demo "$@"

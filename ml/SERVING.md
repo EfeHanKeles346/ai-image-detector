@@ -15,9 +15,13 @@ PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --host 127.0.0.1 --port 87
 - `PIXELPROOF_CORS_ORIGINS` is a comma-separated allow-list. Its local default is
   `http://localhost:3000,http://127.0.0.1:3000`; wildcard origins are rejected. Same-origin
   deployments do not need CORS.
+- `PIXELPROOF_RUNTIME_PROFILE=project` loads only the canonical E20 model. The default `full`
+  profile also attempts the retired research methods and external E26 comparison. The local
+  one-command demo deliberately uses `project`, so optional comparison artifacts cannot delay or
+  break the primary model demonstration.
 - `POST /predict` accepts `JPG`, `PNG` or `WEBP`. Its default `project_model` method runs the
   verified E20 native-tile ResNet-18. `auto`, `cnn`, `stats` and `tiles` retain the older
-  research paths for comparison until M3 moves them behind research details.
+  research paths behind the web UI's optional research details.
 - Default limits are 12 MiB, 16 million decoded pixels, 16,384 pixels per side and a 20:1
   maximum aspect ratio. EXIF orientation is applied, and transparent pixels are composited
   onto white before every detector sees the image.

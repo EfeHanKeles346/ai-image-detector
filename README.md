@@ -82,6 +82,31 @@ Missing core artifacts produce a truthful `status=unavailable`; missing verdict 
 `status=degraded`. Neither condition crashes module import. Input limits, CORS and required edge
 authentication/rate controls are documented in [`ml/SERVING.md`](ml/SERVING.md).
 
+### One-command local demo
+
+After the reproducible setup above, start the verified E20 API and Turkish web UI together from
+the repository root:
+
+```bash
+./tools/pixelproof-demo start
+```
+
+`start` first checks the venv, imports, dependency graph, canonical checkpoint hash, installed
+project CLIs, Node/npm installation and loopback ports. It starts the API in project-only mode,
+waits for truthful readiness, submits the tracked smoke image and validates the project-model
+response before starting the web UI at `http://127.0.0.1:3000`. Press `Ctrl+C` once to stop both
+processes. No external or retired comparison artifact is required for this primary demo.
+
+The same checks and API smoke can be run separately when diagnosing a startup:
+
+```bash
+./tools/pixelproof-demo check
+./tools/pixelproof-demo smoke --api-url http://127.0.0.1:8799
+```
+
+Use `--api-port` and `--web-port` with `check`/`start` when the defaults are intentionally occupied.
+Errors identify the missing dependency, artifact or port and include the corrective command.
+
 ### Evaluate the project model on labelled folders
 
 Place supported JPG, PNG or WEBP files under separate class roots. Immediate or nested folder

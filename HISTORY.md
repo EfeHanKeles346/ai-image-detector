@@ -1358,3 +1358,27 @@ recall 1.000, FP rate 1.000, TP=2/FN=0/FP=2/TN=0. Both real examples crossed the
 exact scores are preserved in `ml/EXPERIMENTS.md`; the result verifies the runnable evaluator and
 again demonstrates E20's source-transfer weakness rather than claiming performance from four
 samples.
+
+### M5 — one-command local model demonstration
+
+M5 replaced the manual two-terminal startup recipe with executable
+`./tools/pixelproof-demo`. Its `check` command verifies the active venv and imports, `pip check`,
+the canonical artifact registry entry and hash, installed prediction/evaluation CLIs, Node version,
+npm dependency tree and requested loopback ports. Every failure exits with the missing component
+and a concrete repair instruction. `smoke` checks a running API's health identity, submits a real
+multipart image and refuses responses that omit the research-only flag, verified hash, bounded
+score/threshold, positive tile count or asymmetric `ai`/`uncertain` result.
+
+`start` composes those operations: preflight, loopback API, readiness wait, real smoke inference,
+loopback web UI and readiness check. It owns both child process groups, treats an early exit as an
+error and shuts both down on one `Ctrl+C`. A new `PIXELPROOF_RUNTIME_PROFILE=project` mode prevents
+the primary demo from loading retired research and optional external models; the default runtime
+profile remains `full` for comparison work. Tests cover both profiles, invalid profile rejection
+and the smoke response invariants.
+
+The final live run verified Python 3.13.5, Node v25.2.1, both dependency graphs, both installed
+project CLIs, ports 8799/3000 and the complete E20 artifact. On MPS the tracked generators figure
+returned 0.2409 against threshold 0.9895 from 51 tiles with the canonical hash. The Turkish E20 web
+shell then returned HTTP 200 at `127.0.0.1:3000`; one interrupt stopped both services cleanly with
+exit code zero. Python passed 41/41. Exact operational evidence is also appended to
+`ml/EXPERIMENTS.md` so the internship report does not depend on memory or an unrecorded terminal.

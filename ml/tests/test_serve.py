@@ -207,6 +207,24 @@ def ready_project_runtime(tmp_path):
     return runtime
 
 
+def test_project_runtime_profile_skips_optional_legacy_and_external_loads(tmp_path, monkeypatch):
+    project_model = ready_project_runtime(tmp_path).project_model
+    runtime = ModelRuntime(tmp_path / "artifacts", profile="project")
+    monkeypatch.setattr("pixelproof.serve.load_project_model", lambda *args: project_model)
+
+    assert runtime.ensure_loaded() is True
+    assert runtime.health()["runtime_profile"] == "project"
+    assert runtime.project_model_ready is True
+    assert runtime.core_ready is False
+    assert runtime.decision_ready is False
+    assert runtime.load_errors == {}
+
+
+def test_invalid_runtime_profile_is_rejected_before_loading(tmp_path):
+    with pytest.raises(ValueError, match="PIXELPROOF_RUNTIME_PROFILE"):
+        ModelRuntime(tmp_path / "artifacts", profile="everything")
+
+
 def test_project_model_api_returns_traceable_research_result_for_small_image(tmp_path):
     runtime = ready_project_runtime(tmp_path)
     health = runtime.health()

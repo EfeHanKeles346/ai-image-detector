@@ -113,13 +113,23 @@ available as a measured comparison, not as a substitute for presenting the proje
 
 ### Phase M5 — provide a one-command local demonstration
 
-- [ ] Add a documented bootstrap/check command that verifies dependencies and the canonical
+- [x] Add a documented bootstrap/check command that verifies dependencies and the canonical
       checkpoint before starting the API and web client.
-- [ ] Add a smoke command that checks `/health`, submits one image and validates the response.
-- [ ] Make startup errors identify the missing dependency/artifact/port instead of ending with an
+- [x] Add a smoke command that checks `/health`, submits one image and validates the response.
+- [x] Make startup errors identify the missing dependency/artifact/port instead of ending with an
       unexplained traceback.
 - **Acceptance:** from a fresh shell on the supported machine, the documented flow reaches a web
   prediction and CLI/folder evaluation without source edits.
+- **Measured 2026-08-24:** executable `./tools/pixelproof-demo` now provides `check`, `smoke` and
+  `start`. `start` includes the complete preflight, starts loopback API/web process groups, waits
+  for canonical-model readiness, validates a real multipart response and shuts both children down
+  on one `Ctrl+C`. A new `project` runtime profile skips all retired/external loaders for this
+  primary demo while the normal server default remains `full`. The real preflight verified Python
+  3.13.5, the locked import/dependency graph, canonical E20 artifact, both installed CLIs, Node
+  v25.2.1, npm graph and ports 8799/3000. The clean live run reached health `ready`, predicted the
+  tracked `generators.png` on MPS at score 0.2409 versus threshold 0.9895 using 51 tiles and hash
+  `b9f39e...65adf`, served the E20 web shell with HTTP 200, then exited both processes cleanly.
+  Python passed 41/41. M4's installed folder evaluator remained available in the same preflight.
 
 ### Phase M6 — freeze presentation and report evidence
 

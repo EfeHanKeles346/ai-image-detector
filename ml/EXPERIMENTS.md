@@ -1166,3 +1166,20 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   authentic examples cross the 0.9894907 threshold, matching E20's already recorded cross-source
   false-positive failure. This smoke run is operational evidence for M4 and another warning
   against using the project model as an authenticity certificate; it is not a new benchmark.
+
+## 2026-08-24 — M5 one-command local-demo verification
+
+- **Purpose:** operational verification only. `./tools/pixelproof-demo start` must prove the
+  canonical artifact, API, real inference contract and model-first web UI work together without
+  manual environment variables or process management.
+- **Preflight result:** Python 3.13.5, serving imports and `pip check` passed; the registry verified
+  `e20-tile-resnet18-seed2024`; `pixelproof-predict` and `pixelproof-evaluate-project` were
+  installed; Node v25.2.1 and `npm ls --depth=0` passed; loopback ports 8799/3000 were free.
+- **Live result:** the API's project-only profile reached `status=ready`. The tracked
+  `artifacts/figures/generators.png` smoke request returned score **0.2409**, stored threshold
+  **0.9895**, **51 tiles** and checkpoint prefix `b9f39eda10ba...`. The command then received HTTP
+  200 from the server-rendered E20 web shell at `127.0.0.1:3000`. One `Ctrl+C` shut down both
+  process groups with exit code 0 and no leftover model-worker warning.
+- **Interpretation:** this does not add a performance claim. It is direct evidence that the model
+  can now be demonstrated from a fresh shell after documented setup, and that the smoke path is
+  the same verified project-model contract used by CLI, folder evaluation and the browser.

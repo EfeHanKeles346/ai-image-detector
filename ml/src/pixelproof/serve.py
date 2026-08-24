@@ -96,9 +96,12 @@ class RuntimeContract(Protocol):
 class ModelRuntime:
     """Owns model state and serializes expensive inference on one worker."""
 
-    def __init__(self, artifacts_dir: Path | None = None) -> None:
+    def __init__(self, artifacts_dir: Path | None = None, profile: str | None = None) -> None:
         self.device = select_device()
         self.artifacts = (artifacts_dir or Path(__file__).resolve().parents[2] / "artifacts").resolve()
+        self.profile = profile or os.environ.get("PIXELPROOF_RUNTIME_PROFILE", "full")
+        if self.profile not in {"full", "project"}:
+            raise ValueError("PIXELPROOF_RUNTIME_PROFILE must be 'full' or 'project'")
         self.cnns: dict[str, tuple[Any, Any]] = {}
         self.features: dict[str, Any] = {}
         self.project_model: ProjectTileModel | None = None
@@ -137,6 +140,9 @@ class ModelRuntime:
                 self.project_model = load_project_model(self.artifacts.parent, self.device)
             except Exception as error:
                 self.load_errors["project_model"] = f"{type(error).__name__}: {error}"
+
+            if self.profile == "project":
+                return self.available
 
             try:
                 core_report = verify_registry(self.artifacts.parent, groups={"core"})
@@ -214,6 +220,7 @@ class ModelRuntime:
         return {
             "status": status,
             "device": str(self.device),
+            "runtime_profile": self.profile,
             "project_model_ready": self.project_model_ready,
             "project_model": (
                 self.project_model.metadata.to_dict() if self.project_model is not None else None
