@@ -5,6 +5,9 @@
 > “integrated” sonucu 2026-08-24'te calibration/evaluation sızıntısı nedeniyle yeniden
 > ölçüldü, G1'i geçemedi ve servisten çıkarıldı. Güncel bilimsel sözleşme için kök
 > `README.md`, `PLAN.md` H4–H6 ve `ml/EXPERIMENTS.md` son düzeltme kaydı esas alınmalıdır.
+> Çalışabilir E20 proje-modeli kilometre taşı ve güncel sunum kanıtları için ayrıca kök
+> `MODEL_CARD.md` ile `PRESENTATION_EVIDENCE.md` kullanılmalıdır; aşağıdaki iki tarihsel metin
+> M1–M6'yı kendiliğinden içermez.
 
 - `STAJ_RAPORU.md` — staj bitirme raporunun kaynak metni (Word kopyası Desktop'ta;
   `pandoc STAJ_RAPORU.md -o STAJ_RAPORU.docx --toc -M lang=tr` ile yeniden üretilir).

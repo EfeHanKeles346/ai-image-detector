@@ -1183,3 +1183,20 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
 - **Interpretation:** this does not add a performance claim. It is direct evidence that the model
   can now be demonstrated from a fresh shell after documented setup, and that the smoke path is
   the same verified project-model contract used by CLI, folder evaluation and the browser.
+
+## 2026-08-24 — M6 presentation disagreement evidence
+
+- **Purpose:** freeze one input and both visible result layers for the internship presentation.
+  This is an explanatory case study, not a metric. Input: B-Free upstream demo `img0000.png`,
+  labelled `0 = real` by its `metainfo.csv`, SHA-256 `c7351aee67f37fe5acf1aa7781612b2760b90e0d56010038ec2e48ff9a79360e`,
+  checkout revision `c6a9f898782fb466b29af01f21960b67415afb0e`.
+- **Runtime:** PixelProof commit `95fe2b2`, full profile on MPS, real `POST /predict`, canonical E20
+  hash `b9f39eda...65adf`; B-Free was not enabled as a detector, so the external comparison arm was
+  the pinned MIT Community-Forensics ViT-S.
+- **Result:** E20 returned **1.0000 >= 0.9895**, triggered, research-only, 69 tiles. CF-ViT returned
+  **-2.4631 < 0.6617**, so E26 returned `insufficient`. The exact presentation payload and input
+  provenance are committed in `evidence/demo_disagreement.json`.
+- **Interpretation:** E20 is wrong on this authentic source while the external comparison does not
+  trigger. The models have different representations and source populations; disagreement is
+  expected under source shift. This case is presented specifically to justify separate UI cards,
+  the research-only label and the prohibition on authenticity certification.

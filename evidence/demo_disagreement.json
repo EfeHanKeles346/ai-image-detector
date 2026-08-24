@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-08-24",
+  "purpose": "Reproducible presentation example showing why project-model evidence and the external comparison are displayed separately.",
+  "input": {
+    "path": "ml/external/B-Free/code/demo_images/img0000.png",
+    "sha256": "c7351aee67f37fe5acf1aa7781612b2760b90e0d56010038ec2e48ff9a79360e",
+    "bytes": 1868487,
+    "width": 835,
+    "height": 1256,
+    "upstream_label": 0,
+    "upstream_label_name": "real",
+    "label_source": "ml/external/B-Free/code/demo_images/metainfo.csv",
+    "source_repository": "https://github.com/grip-unina/B-Free",
+    "source_revision": "c6a9f898782fb466b29af01f21960b67415afb0e"
+  },
+  "runtime": {
+    "pixelproof_commit": "95fe2b2",
+    "profile": "full",
+    "device": "mps",
+    "http_path": "POST /predict",
+    "method": "project_model",
+    "bfree_detector_enabled": false,
+    "external_arms": [
+      "cf_vit"
+    ]
+  },
+  "project_model": {
+    "score": 1.0,
+    "threshold": 0.9895,
+    "triggered": true,
+    "research_only": true,
+    "artifact_id": "e20-tile-resnet18-seed2024",
+    "artifact_sha256": "b9f39eda10ba3de54b706d6448b67d93ce8e4c7bae97a685f3c1b57ebfd65adf",
+    "revision": "E20-v2 seed 2024",
+    "aggregation": "top3",
+    "tile_px": 128,
+    "tile_count": 69,
+    "display_result": "AI-oriented experimental signal"
+  },
+  "external_comparison": {
+    "decision": "insufficient",
+    "triggered_by": [],
+    "arm": "cf_vit",
+    "arm_label": "Community-Forensics ViT-S",
+    "score": -2.4631,
+    "threshold": 0.6617,
+    "display_result": "insufficient evidence"
+  },
+  "interpretation": "The authentic upstream example is a false positive for E20 while the frozen external comparison does not trigger. The disagreement is expected under source shift and is direct evidence that E20 must remain research-only; neither a project-model negative nor an external-comparison negative certifies authenticity."
+}

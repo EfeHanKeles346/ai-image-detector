@@ -1382,3 +1382,27 @@ returned 0.2409 against threshold 0.9895 from 51 tiles with the canonical hash. 
 shell then returned HTTP 200 at `127.0.0.1:3000`; one interrupt stopped both services cleanly with
 exit code zero. Python passed 41/41. Exact operational evidence is also appended to
 `ml/EXPERIMENTS.md` so the internship report does not depend on memory or an unrecorded terminal.
+
+### M6 — model card and internship evidence freeze
+
+M6 completed the runnable-model milestone with two current documents outside the historical
+`rapor/` snapshot. `MODEL_CARD.md` freezes the canonical artifact identity, exact five-source
+48,037-tile training inventory, architecture and preprocessing, calibration-only inference
+contract, three-seed and deployed-seed measurements, intended uses, prohibited claims and known
+failure modes. `PRESENTATION_EVIDENCE.md` turns M0-M5 into a presentation-ready commit/test ledger,
+maps each claim to its durable and raw source, and gives a six-step live-demo sequence. The
+historical report boundary now points to both files rather than implying it contains M1-M6.
+
+The presentation disagreement is also machine-readable. `evidence/demo_disagreement.json` binds
+the input path, upstream real label, byte size, dimensions, SHA-256 and pinned B-Free checkout
+revision to runtime commit `95fe2b2`, device/profile, E20 artifact hash and both displayed result
+blocks. Tests cross-check those identities against `artifacts.manifest.json`, verify the optional
+local input bytes when present and require every M0-M5 commit in the presentation ledger.
+
+The example was reproduced through real `POST /predict` on the full MPS runtime. On upstream-real
+`img0000.png`, E20 returned 1.0000 against 0.9895 from 69 tiles — a false positive — while the
+external CF-ViT comparison returned -2.4631 against 0.6617 and therefore `insufficient`. This is
+the intended teaching example: the project model demonstrably runs, yet its source-transfer
+failure is visible in the same evidence package. Python passed 43/43 after adding the evidence
+integrity tests. M0-M6 are now complete; deployment and stronger-model research remain explicitly
+deferred rather than being confused with the achieved runnable-model goal.

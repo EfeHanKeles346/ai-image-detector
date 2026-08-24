@@ -7,6 +7,9 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Active goal — a runnable project-owned model (2026-08-24)
 
+**Milestone status: completed through M6 on 2026-08-24.** The deferred items below are a new
+product/research horizon, not missing requirements for the runnable-model milestone.
+
 The immediate goal is not a production-perfect universal detector. It is a reproducible,
 project-owned model that the author can start, give an image to, inspect in the web demo and
 evaluate on labelled folders. The canonical model is the E20 ResNet-18 trained on native 128 px
@@ -133,14 +136,25 @@ available as a measured comparison, not as a substitute for presenting the proje
 
 ### Phase M6 — freeze presentation and report evidence
 
-- [ ] Add a concise model card covering training data, architecture, inference contract, measured
+- [x] Add a concise model card covering training data, architecture, inference contract, measured
       strengths, worst-source failure, intended use and prohibited authenticity claims.
-- [ ] Record every M1-M5 commit, command, test count and measured model result in this plan and the
+- [x] Record every M1-M5 commit, command, test count and measured model result in this plan and the
       append-only experiment log; generate report-ready tables/figures only from stored results.
-- [ ] Capture one reproducible demo scenario for the internship presentation: input, project-model
+- [x] Capture one reproducible demo scenario for the internship presentation: input, project-model
       output, comparison output and the explanation of why they may disagree.
 - **Acceptance:** a reader can trace every presentation claim to a result file, experiment entry,
   artifact hash and commit without relying on an undocumented manual run.
+- **Measured 2026-08-24:** `MODEL_CARD.md` freezes the exact E20 artifact, 48,037-tile source
+  inventory, architecture, inference contract, three-seed and deployed-seed metrics, intended use,
+  prohibited claims and limitations. `PRESENTATION_EVIDENCE.md` provides the report-ready metric
+  table, M0-M5 commit/test ledger, live-demo order and source map. Machine-readable
+  `evidence/demo_disagreement.json` binds an upstream-authentic B-Free demo input to SHA-256
+  `c7351a...a79360e`, pinned revision `c6a9f89...`, runtime commit `95fe2b2`, canonical model hash
+  and exact project/external outputs. Real full-profile HTTP reproduced the disagreement on MPS:
+  E20 score 1.0000/0.9895 and 69 tiles versus CF-ViT -2.4631/0.6617 (`insufficient`). The example
+  is an E20 false positive and is documented as a limitation, not a success. Tests bind the model
+  card and evidence to the manifest, optional input hash and every M0-M5 commit; Python passed
+  43/43. The historical `rapor/` boundary now points readers to this current evidence package.
 
 ### Deferred until the runnable-model milestone passes
 

@@ -51,6 +51,9 @@ diffusion inpainting and did not generalise to classic splicing.
 | `ml/artifacts.manifest.json` | Pinned model identity, hashes, licences and schemas |
 | `PLAN.md` | Living roadmap and measured hardening results |
 | `HISTORY.md` | Append-only chronological project and decision archive |
+| `MODEL_CARD.md` | Canonical E20 identity, training data, metrics, limits and allowed uses |
+| `PRESENTATION_EVIDENCE.md` | Current internship presentation ledger and reproducible demo scenario |
+| `evidence/` | Machine-readable presentation evidence bound to artifact/input hashes |
 | `DATASETS.md` | Dataset inventory, allowed uses and portable path contract |
 | `rapor/` | Historical report/talk snapshot; see its boundary note |
 
