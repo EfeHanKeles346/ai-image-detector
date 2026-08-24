@@ -1145,3 +1145,24 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   serving.** The valid served scientific contract returns to E26's two-arm OR (CF-ViT by
   default; B-Free only under its explicit non-commercial opt-in). The earlier E27 entry is
   retained above as history and is superseded by this correction, not silently rewritten.
+
+## 2026-08-24 — M4 operational folder-evaluation smoke
+
+- **Purpose:** validate the new user-facing `pixelproof-evaluate-project` path with the real
+  canonical checkpoint, not estimate generalisation from four images. The inputs were the four
+  labelled demo files in the pinned local B-Free checkout (`metainfo.csv`: two real, two AI),
+  copied into separate `real/bfree_demo/` and `ai/bfree_demo/` roots. They are upstream demo
+  examples and are too few for a scientific performance claim.
+- **Runtime:** MPS, E20-v2 seed 2024 checkpoint SHA-256
+  `b9f39eda10ba3de54b706d6448b67d93ce8e4c7bae97a685f3c1b57ebfd65adf`, native 128 px tiles,
+  texture floor 0.04, `top3`, stored threshold 0.9894907, maximum 256 tiles. The command wrote
+  `artifacts/m4_folder_smoke/results.json` and `predictions.csv` with environment, command and
+  git provenance; both files remain local because `ml/artifacts/` is intentionally ignored.
+- **Result:** 4/4 decoded and scored, zero read/decode/inference failures. ROC-AUC **0.500**,
+  stored-threshold recall **1.000**, false-positive rate **1.000**, accuracy **0.500**;
+  TP=2, FN=0, FP=2, TN=0. Exact image scores were: real `img0000` 0.9999969,
+  real `img0001` 0.9987636, AI `img0002` 0.9999561, AI `img0003` 0.9999164.
+- **Interpretation:** the evaluator works end to end and preserves an uncomfortable result. Both
+  authentic examples cross the 0.9894907 threshold, matching E20's already recorded cross-source
+  false-positive failure. This smoke run is operational evidence for M4 and another warning
+  against using the project model as an authenticity certificate; it is not a new benchmark.

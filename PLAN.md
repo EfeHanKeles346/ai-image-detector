@@ -92,13 +92,24 @@ available as a measured comparison, not as a substitute for presenting the proje
 
 ### Phase M4 — add a repeatable folder evaluation command
 
-- [ ] Provide a command that accepts user-supplied `real/` and `ai/` folders, runs the canonical
+- [x] Provide a command that accepts user-supplied `real/` and `ai/` folders, runs the canonical
       checkpoint once per image and writes machine-readable JSON/CSV results.
-- [ ] Report image counts, decode failures, ROC-AUC, recall at the stored threshold, FP rate,
+- [x] Report image counts, decode failures, ROC-AUC, recall at the stored threshold, FP rate,
       confusion counts and per-folder/source results without silently pooling away failures.
-- [ ] Include checkpoint hash, configuration, environment and command provenance in each run.
+- [x] Include checkpoint hash, configuration, environment and command provenance in each run.
 - **Acceptance:** a tiny fixture proves the output schema and error paths; a held-out local subset
   completes end to end and its exact measured result is appended to `ml/EXPERIMENTS.md`.
+- **Measured 2026-08-24:** `pixelproof-evaluate-project` recursively discovers supported files in
+  separate `real/` and `ai/` roots, applies the same bounded decoder and verified shared E20
+  scorer, and writes non-overwriting `results.json` plus `predictions.csv`. Every failure retains
+  its row and stage; a partial run writes its evidence then exits non-zero. Fixture coverage proves
+  once-only scoring, the complete output schema, perfect known metrics, per-folder grouping,
+  malformed-image retention, invalid nested roots and output-overwrite refusal. Python passed
+  36/36. The installed command then ran the real `b9f39e...65adf` checkpoint on MPS against the
+  four labelled upstream B-Free demo images: 4/4 decoded, AUC 0.500, recall 1.000, FP rate 1.000,
+  confusion TP=2/FN=0/FP=2/TN=0. Exact scores and the operational interpretation are appended to
+  `ml/EXPERIMENTS.md`; this tiny smoke set verifies execution and illustrates source failure, not
+  generalisation performance.
 
 ### Phase M5 — provide a one-command local demonstration
 

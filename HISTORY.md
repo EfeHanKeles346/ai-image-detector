@@ -1334,3 +1334,27 @@ newer one, and upload controls retain keyboard-visible button semantics and an a
 label. Verification passed `git diff --check`, ESLint, TypeScript, the production Vinext build and
 all 6/6 web tests. Public hosting remains deferred: this phase completes the local, testable model
 experience without changing the deployment boundary.
+
+### M4 — repeatable labelled-folder evaluation
+
+M4 added the installed `pixelproof-evaluate-project` command around the same verified loader and
+image scorer used by API and CLI. It accepts distinct `real/` and `ai/` roots, recursively keeps
+their source folders, applies the serving decoder limits, scores each supported image once and
+writes a self-contained `results.json` plus row-level `predictions.csv`. The report carries the
+full model metadata and SHA-256, input/configuration limits, Python/platform/library/device state,
+exact command, working directory and git revision/state.
+
+Failure accounting is part of the data contract. Read, decode and inference failures retain a row,
+are counted per class and source, and make a partially completed command exit non-zero after its
+evidence is written. The evaluator refuses nested class roots, empty classes and non-empty output
+directories. Successful rows produce ROC-AUC, recall, false-positive rate, accuracy and TP/FN/FP/TN
+at the checkpoint's stored threshold; no new threshold is fitted to the user's evaluation set.
+
+Tests with controlled images proved once-only scoring, exact metrics and schema, per-folder
+breakdown, malformed-image retention and overwrite refusal. The suite rose from 33 to 36 tests and
+passed 36/36. The newly installed command then loaded the real canonical checkpoint on MPS and
+processed the pinned B-Free checkout's two real and two AI demo images: 4/4 succeeded, AUC 0.500,
+recall 1.000, FP rate 1.000, TP=2/FN=0/FP=2/TN=0. Both real examples crossed the threshold. The
+exact scores are preserved in `ml/EXPERIMENTS.md`; the result verifies the runnable evaluator and
+again demonstrates E20's source-transfer weakness rather than claiming performance from four
+samples.

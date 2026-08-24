@@ -82,6 +82,26 @@ Missing core artifacts produce a truthful `status=unavailable`; missing verdict 
 `status=degraded`. Neither condition crashes module import. Input limits, CORS and required edge
 authentication/rate controls are documented in [`ml/SERVING.md`](ml/SERVING.md).
 
+### Evaluate the project model on labelled folders
+
+Place supported JPG, PNG or WEBP files under separate class roots. Immediate or nested folder
+names are retained as source groups in the report.
+
+```bash
+cd ml
+.venv/bin/pixelproof-evaluate-project \
+  --real /path/to/evaluation/real \
+  --ai /path/to/evaluation/ai \
+  --output artifacts/my-evaluation
+```
+
+The command verifies and loads the canonical E20 checkpoint, scores each discovered image once,
+then writes `results.json` and `predictions.csv`. The JSON includes image/error counts, ROC-AUC,
+recall and false-positive rate at the checkpoint's stored threshold, confusion counts, per-folder
+AI-signal rates, full checkpoint/configuration/environment/command provenance and every individual
+row. Decode and inference failures remain in both files and make the command exit non-zero after
+writing the report. A non-empty output directory is never overwritten.
+
 Prepared datasets default to `ml/work/` and acquired sources to `ml/data/`. Existing layouts are
 selected without code edits:
 
