@@ -1540,3 +1540,15 @@ path, so the demo is materially more testable. The project-owned model genuinely
 but its decision is not trustworthy on the owner's camera pipeline. More threshold adjustment on
 these private photos would contaminate evaluation; the next justified model line must change the
 representation and then face both unseen real pipelines and held-out modern AI.
+
+### P0–P2 development commit ledger
+
+| Phase | Commit | Archived outcome |
+|---|---|---|
+| P0 | `703908b` | iPhone MPO correction and private-gallery protocol recorded before code |
+| P1 | `b4cc339` | bounded primary-frame MPO support, regression test and 50/50 suite completed |
+| P2 amendment | `dfe6993` | rejected E28 diagnostic frozen before reading gallery scores |
+| P2 result | `48f9696` | complete anonymous model comparison and practical conclusion archived |
+
+The gallery itself remains outside Git. This ledger links the append-only narrative to the
+immutable implementation and measurement record needed for the internship report.
