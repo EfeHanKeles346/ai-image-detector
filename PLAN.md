@@ -23,17 +23,25 @@ first 23 decodable images are not a representative result and must not be used t
 
 ### Phase P1 — support bounded iPhone MPO input
 
-- [ ] Add `MPO` to the JPEG-family decoder contract while explicitly seeking only frame zero before
+- [x] Add `MPO` to the JPEG-family decoder contract while explicitly seeking only frame zero before
       load/orientation/flattening. MOV remains unsupported.
-- [ ] Add automated coverage for a multi-frame MPO-like Pillow input and prove JPEG/PNG/WEBP,
+- [x] Add automated coverage for a multi-frame MPO-like Pillow input and prove JPEG/PNG/WEBP,
       malformed input and resource limits remain unchanged.
 - **Acceptance:** full Python tests, compileall and dependency checks pass; real local smoke decodes
   previously rejected iPhone MPO files without changing model artifacts or scores.
+- **Measured 2026-08-24:** the shared decoder now treats `MPO` as a JPEG-family container and seeks
+  frame zero explicitly. Focused tests passed 12/12 and the full Python suite passed 50/50;
+  compileall and `pip check` passed. Real-gallery decode acceptance rose from 23/210 to 137/210.
+  The remaining 73 are correctly distinguished as 5712x4284 images above the unchanged 16,000,000
+  pixel product ceiling, not format failures. Model artifacts and inference code are untouched.
 
 ### Phase P2 — measure every authentic gallery image across all current arms
 
-- [ ] Run project E20, legacy CNN, full-image statistics, legacy tile statistics and the available
-      E26 external arm once per unique file; record duplicates separately and skip the MOV.
+- [ ] Record the default product decoder result for all 210 stills, then run project E20, legacy
+      CNN, full-image statistics, legacy tile statistics and the available E26 external arm once
+      per unique file under an explicit 26,000,000-pixel local evaluation ceiling. This second
+      ceiling is measurement-only and does not alter API policy. Record duplicates separately and
+      skip the MOV.
 - [ ] Report score distributions, authentic FP/abstention counts, cross-model agreement and the
       practical product conclusion. Do not store personal images, GPS, filenames or per-image
       hashes in the repository.

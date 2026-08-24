@@ -1498,3 +1498,15 @@ same bounded decoder, keep MOV unsupported, then rerun every still once without 
 calibration or threshold changes. Only aggregate results will enter the repository; personal
 images, GPS, filenames and per-image hashes remain outside it. RINE O2 pauses until this direct
 product blocker and its complete real-camera measurement are resolved.
+
+### P1 — iPhone MPO primary frames now enter the shared bounded decoder
+
+PixelProof now accepts `MPO` as a JPEG-family container and explicitly decodes only frame zero;
+auxiliary iPhone frames are never scored. Existing byte, geometry, decompression, orientation and
+color rules remain in the same shared path. A new automated contract test raised the complete
+Python suite to 50/50; compileall and dependency checks passed.
+
+On the real gallery, default acceptance rose from 23/210 to 137/210. The other 73 files are now
+truthfully rejected for exceeding the unchanged 16 MP product ceiling (5712x4284), rather than
+being mislabeled as unsupported formats. P2 will report that product boundary and separately score
+all stills under a declared 26 MP local-only evaluation ceiling, without changing API policy.

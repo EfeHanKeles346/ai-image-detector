@@ -6,7 +6,7 @@ import torch
 from fastapi.testclient import TestClient
 from PIL import Image
 
-from pixelproof.image_input import ImageLimits
+from pixelproof.image_input import ImageLimits, decode_image
 from pixelproof.project_model import ProjectModelMetadata, ProjectTileModel
 from pixelproof.serve import MAX_TILES, ModelRuntime, RuntimeUnavailable, create_app
 
@@ -126,6 +126,27 @@ def test_exif_orientation_and_white_transparency_background_are_shared_inputs():
         assert response.status_code == 200
         assert runtime.last_image.mode == "RGB"
         assert runtime.last_image.getpixel((0, 0)) == (255, 255, 255)
+
+
+def test_iphone_mpo_uses_only_the_primary_jpeg_frame(monkeypatch):
+    raw = encoded_image(size=(64, 48), image_format="JPEG", color=(20, 40, 60))
+    source = Image.open(io.BytesIO(raw))
+    source.format = "MPO"
+    seek_calls = []
+    original_seek = source.seek
+
+    def tracked_seek(frame):
+        seek_calls.append(frame)
+        return original_seek(frame)
+
+    source.seek = tracked_seek
+    monkeypatch.setattr("pixelproof.image_input.Image.open", lambda _: source)
+
+    decoded = decode_image(raw)
+
+    assert seek_calls == [0]
+    assert decoded.mode == "RGB"
+    assert decoded.size == (64, 48)
 
 
 def test_both_dimensions_gate_official_verdict_but_keep_research_signal():

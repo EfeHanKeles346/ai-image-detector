@@ -1327,3 +1327,17 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
 - **Invalid partial result:** among the first 23 decodable files E20 triggered on 20 and legacy
   tiles on 23, while CF-ViT triggered on zero. These are a format-selected subset and are recorded
   only to explain why a complete rerun is required, not as the gallery result.
+
+## 2026-08-24 — P1 iPhone MPO decoder correction
+
+- **Implementation:** the shared bounded decoder admits Pillow's `MPO` identifier as a JPEG-family
+  container and explicitly seeks frame zero before geometry validation, load, EXIF orientation and
+  RGB conversion. It never iterates auxiliary frames. MOV remains unsupported and every existing
+  upload/geometry/decompression rule is unchanged.
+- **Verification:** an automated MPO-like two-frame contract test proves only frame zero is sought;
+  existing malformed input, JPEG orientation, PNG alpha and resource tests remain green. Focused
+  API tests passed 12/12; the full Python suite passed **50/50**, compileall and `pip check` passed.
+- **Real-gallery smoke:** default decoder acceptance increased **23/210 -> 137/210**. The remaining
+  73 files are no longer misreported as unsupported format; they are 5712x4284 (24.47 MP) and
+  correctly receive the unchanged 16 MP product-limit response. P2 will preserve that product
+  count while using an explicit 26 MP local-only ceiling to measure model behavior on all stills.

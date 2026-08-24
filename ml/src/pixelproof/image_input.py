@@ -9,7 +9,10 @@ from dataclasses import dataclass
 from PIL import Image, ImageOps, UnidentifiedImageError
 
 
-SUPPORTED_FORMATS = frozenset({"JPEG", "PNG", "WEBP"})
+# Pillow reports iPhone JPEGs with an auxiliary depth/preview frame as MPO.
+# The primary frame is the photograph users selected; auxiliary frames are not
+# independent uploads and must never be iterated into inference.
+SUPPORTED_FORMATS = frozenset({"JPEG", "MPO", "PNG", "WEBP"})
 TRANSPARENCY_BACKGROUND = (255, 255, 255, 255)
 
 
@@ -77,6 +80,8 @@ def decode_image(raw: bytes, limits: ImageLimits = DEFAULT_LIMITS) -> Image.Imag
                         415,
                         "Yalnız JPG, PNG ve WEBP biçimleri destekleniyor.",
                     )
+                if source.format == "MPO":
+                    source.seek(0)
                 _validate_geometry(*source.size, limits)
                 source.load()
                 oriented = ImageOps.exif_transpose(source)
