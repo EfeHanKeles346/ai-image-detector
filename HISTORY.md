@@ -1267,3 +1267,23 @@ Defactify evaluation AUC 0.751 +/- 0.033 and recall 49.9% +/- 6.1; worst-source 
 positives remain 86.2% +/- 3.1. M1-M6 therefore focus on a verified artifact, one canonical API/UI
 path, repeatable folder evaluation, one-command local demonstration and traceable presentation
 evidence, with the limitation displayed rather than hidden.
+
+### M1 — the E20 model becomes a verified runtime artifact
+
+The canonical checkpoint was previously a local experiment output: it existed and carried a good
+internal inference dictionary, but the runtime artifact registry did not know its identity and no
+owned module enforced the dictionary. M1 added it as `e20-tile-resnet18-seed2024`, with SHA-256
+`b9f39eda10ba3de54b706d6448b67d93ce8e4c7bae97a685f3c1b57ebfd65adf`, E20-v2/seed-2024
+provenance, label direction and project-local licence boundary.
+
+`pixelproof.project_model` now verifies that hash before `torch.load`, then rejects a checkpoint
+unless its arm, state dict, seed, validation metadata, tile size, normalization, texture floor,
+selected aggregation, threshold and calibration split are compatible. The same module owns
+batched normalized tile scoring, checkpoint-selected aggregation and threshold comparison, so M2
+does not need to copy experimental constants into the API.
+
+Measured locally: the real 44,789,451-byte artifact loaded on CPU, reproduced seed 2024,
+`top3`, threshold 0.9894907 and validation AUC 0.909627, then completed a three-tile score and
+aggregation. Tests cover valid, missing, tampered and incompatible artifacts. The full Python
+suite passed 29/29; compileall, `pip check` and all six default artifact hashes passed. This phase
+does not claim image-level API availability yet — that is M2's separately testable boundary.

@@ -60,7 +60,8 @@ python3.13 -m venv .venv
 ```
 
 Weights are intentionally not committed. Follow [`ml/ARTIFACTS.md`](ml/ARTIFACTS.md), place the
-four project-owned files, prepare the pinned MIT snapshot, then verify everything before serving:
+five project-owned files (including the canonical E20 model), prepare the pinned MIT snapshot,
+then verify everything before serving:
 
 ```bash
 .venv/bin/pixelproof-artifacts prepare

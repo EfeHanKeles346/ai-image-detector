@@ -16,9 +16,10 @@ python3.13 -m venv .venv
 .venv/bin/pip install --no-deps -e .
 ```
 
-Copy the four project-trained files from the owner's controlled artifact storage to their
+Copy the five project-trained files from the owner's controlled artifact storage to their
 manifest paths:
 
+- `artifacts/tile_resnet18_seed2024.pt` — canonical E20 project model
 - `artifacts/best.pt`
 - `artifacts/best_genimage.pt`
 - `artifacts/feature_full.joblib`
@@ -37,6 +38,11 @@ and every non-optional artifact checked offline:
 project-trained weights. `check` exits 2 on a missing or mismatched file. The service repeats the
 same verification before deserialising anything: a core failure yields `status=unavailable`; a
 missing/mismatched verdict snapshot yields `status=degraded` while research methods remain usable.
+
+The canonical E20 checkpoint is also schema-checked after its hash passes: the runtime requires
+the recorded ResNet-18 arm, seed, state dict, validation metadata, 128 px tile size, ImageNet
+normalization, texture floor, selected aggregation, calibration threshold and split provenance.
+It never deserialises an unverified checkpoint.
 
 ## Optional B-Free arm
 

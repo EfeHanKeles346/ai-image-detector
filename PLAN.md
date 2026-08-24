@@ -29,13 +29,23 @@ available as a measured comparison, not as a substitute for presenting the proje
 
 ### Phase M1 — make the E20 checkpoint a verified runtime artifact
 
-- [ ] Add `tile_resnet18_seed2024.pt` to the artifact manifest with SHA-256, training provenance,
+- [x] Add `tile_resnet18_seed2024.pt` to the artifact manifest with SHA-256, training provenance,
       label direction and exact inference schema.
-- [ ] Implement one reusable E20 loader/scorer that reads the checkpoint contract instead of
+- [x] Implement one reusable E20 loader/scorer that reads the checkpoint contract instead of
       duplicating preprocessing and aggregation constants in serving code.
-- [ ] Reject missing, tampered or schema-incompatible checkpoints with an actionable status.
+- [x] Reject missing, tampered or schema-incompatible checkpoints with an actionable status.
 - **Acceptance:** offline tests cover valid, missing, tampered and incompatible checkpoints;
   one real local load reproduces the stored seed/model/inference metadata.
+- **Measured 2026-08-24:** the new `project_model` artifact group verified
+  `tile_resnet18_seed2024.pt` at SHA-256
+  `b9f39eda10ba3de54b706d6448b67d93ce8e4c7bae97a685f3c1b57ebfd65adf` before
+  deserialization. The real 44,789,451-byte checkpoint loaded on CPU and reproduced arm
+  `resnet18`, seed 2024, 128 px tiles, ImageNet normalization, texture floor 0.04, `top3`,
+  threshold 0.9894907, split seed 2026 and validation AUC 0.909627. A three-tile smoke score
+  completed through the reusable scorer/aggregator. Valid, missing, tampered and incompatible
+  cases passed; the full Python suite passed 29/29, compileall and `pip check` passed, and all
+  six default registry entries verified offline. API/UI integration remains correctly scoped
+  to M2/M3.
 
 ### Phase M2 — expose one canonical project-model inference path
 

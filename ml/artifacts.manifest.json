@@ -1,7 +1,18 @@
 {
   "schema_version": 1,
-  "generated_from": "PixelProof E6/E11/E21/E24; audited 2026-08-24",
+  "generated_from": "PixelProof E6/E11/E20/E21/E24; audited 2026-08-24",
   "artifacts": [
+    {
+      "id": "e20-tile-resnet18-seed2024",
+      "kind": "file",
+      "group": "project_model",
+      "path": "artifacts/tile_resnet18_seed2024.pt",
+      "sha256": "b9f39eda10ba3de54b706d6448b67d93ce8e4c7bae97a685f3c1b57ebfd65adf",
+      "source": "project-trained E20 native-tile ResNet-18 checkpoint",
+      "revision": "E20-v2 seed 2024",
+      "license": "project-local; no redistribution licence granted",
+      "schema": "torch checkpoint: arm=resnet18, seed, model state_dict, training metadata and inference contract; native 128 px tiles; labels 0=real, 1=AI"
+    },
     {
       "id": "small-cnn-cifake",
       "kind": "file",
