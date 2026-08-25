@@ -290,8 +290,12 @@ def freeze_manifest(assets: Iterable[RemoteAsset], path: Path) -> dict[str, Any]
 
 
 def _request_with_retry(method: str, url: str, **kwargs: Any):
+    request_timeout = float(kwargs.pop("request_timeout", 30))
+    max_attempts = int(kwargs.pop("max_attempts", 5))
+    if request_timeout <= 0 or max_attempts <= 0:
+        raise ValueError("request timeout and attempt count must be positive")
     last_error: Exception | None = None
-    for attempt in range(5):
+    for attempt in range(max_attempts):
         try:
             session = get_session()
             request_kwargs = dict(kwargs)
@@ -302,7 +306,9 @@ def _request_with_retry(method: str, url: str, **kwargs: Any):
                 )
             )
             if stream and hasattr(session, "build_request"):
-                request = session.build_request(method, url, timeout=30, **request_kwargs)
+                request = session.build_request(
+                    method, url, timeout=request_timeout, **request_kwargs
+                )
                 response = session.send(
                     request,
                     stream=True,
@@ -312,7 +318,7 @@ def _request_with_retry(method: str, url: str, **kwargs: Any):
                 response = session.request(
                     method,
                     url,
-                    timeout=30,
+                    timeout=request_timeout,
                     follow_redirects=follow_redirects,
                     **request_kwargs,
                 )
@@ -320,9 +326,11 @@ def _request_with_retry(method: str, url: str, **kwargs: Any):
             return response
         except Exception as error:
             last_error = error
-            if attempt < 4:
+            if attempt < max_attempts - 1:
                 time.sleep(0.5 * (2**attempt))
-    raise RuntimeError(f"{method} {url} failed after five attempts: {last_error}")
+    raise RuntimeError(
+        f"{method} {url} failed after {max_attempts} attempts: {last_error}"
+    )
 
 
 def download_resumable(
@@ -582,13 +590,20 @@ def freeze_laion_assets(rows: Iterable[Mapping[str, str]], head_requester: Calla
     failures = []
     running_bytes = 0
     for make, model in LAION_PIPELINES:
+        print(f"preflighting LAION pipeline {make}:{model}", flush=True)
         accepted = 0
         for row in grouped[(make, model)]:
             if accepted >= LAION_PER_PIPELINE:
                 break
             url = str(row["url"])
             try:
-                response = head_requester("HEAD", url, allow_redirects=True)
+                response = head_requester(
+                    "HEAD",
+                    url,
+                    allow_redirects=True,
+                    request_timeout=8,
+                    max_attempts=2,
+                )
                 length = int(response.headers.get("content-length", "0"))
                 content_type = response.headers.get("content-type", "").lower()
                 if not 0 < length <= LAION_PER_FILE_CEILING:
@@ -624,6 +639,11 @@ def freeze_laion_assets(rows: Iterable[Mapping[str, str]], head_requester: Calla
             )
             running_bytes += length
             accepted += 1
+            print(
+                f"  accepted {accepted}/{LAION_PER_PIPELINE} "
+                f"({running_bytes:,} declared image bytes)",
+                flush=True,
+            )
         if accepted != LAION_PER_PIPELINE:
             raise RuntimeError(f"LAION pipeline {(make, model)!r} filled only {accepted}/10")
     enforce_byte_ceiling(
