@@ -410,7 +410,12 @@ def freeze(root: Path, eligibility: Mapping[str, set[str]] | None = None) -> dic
     }
 
 
-def scan_eligibility(root: Path, source_id: str) -> dict[str, Any]:
+def scan_eligibility(
+    root: Path,
+    source_id: str,
+    protected_exact: set[str] | None = None,
+    protected_dhash: set[str] | None = None,
+) -> dict[str, Any]:
     """Decode every row of one source and freeze the mechanical 128 px input floor."""
     contracts = [contract for contract in SOURCES if contract.source_id == source_id]
     if not contracts:
@@ -444,6 +449,16 @@ def scan_eligibility(root: Path, source_id: str) -> dict[str, Any]:
                     counts[f"decode_failure:{candidate.label}"] += 1
                     row_index += 1
                     continue
+                raw_sha = hashlib.sha256(raw).hexdigest()
+                image_dhash = dhash_image(image)
+                if protected_exact is not None and raw_sha in protected_exact:
+                    counts[f"protected_exact:{candidate.label}"] += 1
+                    row_index += 1
+                    continue
+                if protected_dhash is not None and image_dhash in protected_dhash:
+                    counts[f"protected_dhash_only:{candidate.label}"] += 1
+                    row_index += 1
+                    continue
                 if image.width < 128 or image.height < 128:
                     counts[f"below_128:{candidate.label}"] += 1
                     row_index += 1
@@ -471,17 +486,57 @@ def scan_eligibility(root: Path, source_id: str) -> dict[str, Any]:
     }
 
 
+def screen_sources(
+    root: Path,
+    source_ids: Sequence[str],
+    protected_directories: Sequence[Path],
+    protected_parquet_directories: Sequence[Path],
+) -> dict[str, Any]:
+    repo_root = Path(__file__).resolve().parents[2]
+    exact, perceptual, e30_manifest_count = _e30_protected(repo_root)
+    loose_exact, loose_perceptual, protected_counts = _loose_protected(protected_directories)
+    parquet_exact, parquet_perceptual, parquet_counts = _parquet_protected(
+        protected_parquet_directories
+    )
+    exact |= loose_exact | parquet_exact
+    perceptual |= loose_perceptual | parquet_perceptual
+    protected_counts.update(parquet_counts)
+    sources = [
+        scan_eligibility(root, source_id, exact, perceptual)
+        for source_id in sorted(set(source_ids))
+    ]
+    return {
+        "schema_version": 1,
+        "experiment": "E31/B2",
+        "state": "protected_mechanical_eligibility_before_selection_v3",
+        "sources": sources,
+        "protected_scope": {
+            "e30_manifest_files": e30_manifest_count,
+            "exact_hashes": len(exact),
+            "dhashes": len(perceptual),
+            "directory_counts": dict(sorted(protected_counts.items())),
+        },
+        "boundary": "Rows are rejected only for input ineligibility or protected content; no model score is read.",
+    }
+
+
 def load_eligibility(paths: Sequence[Path]) -> dict[str, set[str]]:
     output: dict[str, set[str]] = {}
     for path in paths:
         payload = json.loads(path.read_text())
-        if payload.get("state") != "mechanical_input_eligibility_before_selection_v2":
+        state = payload.get("state")
+        if state == "mechanical_input_eligibility_before_selection_v2":
+            sources = [payload]
+        elif state == "protected_mechanical_eligibility_before_selection_v3":
+            sources = payload.get("sources", [])
+        else:
             raise ValueError(f"invalid eligibility state in {path}")
-        keys = list(payload.get("eligible_keys", []))
-        digest = hashlib.sha256("\n".join(sorted(keys)).encode()).hexdigest()
-        if digest != payload.get("eligible_set_sha256"):
-            raise ValueError(f"eligibility SHA mismatch in {path}")
-        output[payload["source_id"]] = set(keys)
+        for source in sources:
+            keys = list(source.get("eligible_keys", []))
+            digest = hashlib.sha256("\n".join(sorted(keys)).encode()).hexdigest()
+            if digest != source.get("eligible_set_sha256"):
+                raise ValueError(f"eligibility SHA mismatch in {path}")
+            output[source["source_id"]] = set(keys)
     return output
 
 
@@ -813,6 +868,12 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     eligibility_parser.add_argument("--root", type=Path, required=True)
     eligibility_parser.add_argument("--source", required=True)
     eligibility_parser.add_argument("--output", type=Path, required=True)
+    screen_parser = sub.add_parser("screen")
+    screen_parser.add_argument("--root", type=Path, required=True)
+    screen_parser.add_argument("--source", action="append", required=True)
+    screen_parser.add_argument("--output", type=Path, required=True)
+    screen_parser.add_argument("--protect", action="append", type=Path, default=[])
+    screen_parser.add_argument("--protect-parquet", action="append", type=Path, default=[])
     realize_parser = sub.add_parser("realize")
     realize_parser.add_argument("--root", type=Path, required=True)
     realize_parser.add_argument("--selection", type=Path, required=True)
@@ -836,6 +897,18 @@ def main(argv: Iterable[str] | None = None) -> int:
         write_json_atomic(payload, args.output, args.root)
         print(json.dumps(payload["counts"], indent=2, sort_keys=True))
         print(f"wrote eligibility {args.output}")
+        return 0
+    if args.command == "screen":
+        payload = screen_sources(
+            args.root,
+            args.source,
+            args.protect,
+            args.protect_parquet,
+        )
+        write_json_atomic(payload, args.output, args.root)
+        for source in payload["sources"]:
+            print(source["source_id"], json.dumps(source["counts"], sort_keys=True))
+        print(f"wrote protected eligibility {args.output}")
         return 0
     payload = realize(
         args.root,

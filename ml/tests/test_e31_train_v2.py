@@ -108,3 +108,25 @@ def test_eligibility_sha_rejects_mutation(tmp_path):
 
 def test_rejected_realization_state_is_non_success():
     assert "rejected" != "realized_train_v2"
+
+
+def test_combined_screen_eligibility_loads_each_source(tmp_path):
+    sources = []
+    for source_id, keys in (("a", ["a:1"]), ("b", ["b:1", "b:2"])):
+        sources.append(
+            {
+                "source_id": source_id,
+                "eligible_keys": keys,
+                "eligible_set_sha256": e31.hashlib.sha256("\n".join(keys).encode()).hexdigest(),
+            }
+        )
+    path = tmp_path / "screen.json"
+    path.write_text(
+        json.dumps(
+            {
+                "state": "protected_mechanical_eligibility_before_selection_v3",
+                "sources": sources,
+            }
+        )
+    )
+    assert e31.load_eligibility([path]) == {"a": {"a:1"}, "b": {"b:1", "b:2"}}

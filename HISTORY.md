@@ -1847,3 +1847,17 @@ One operational lesson from v1 was also kept: a long rejected run needs a receip
 traceback. Before v2 reads bytes, realization now persists only rejected record ids/reasons and
 aggregate protected-scope counts, returns a non-zero status and still refuses to write tiles. This
 changes observability, not the frozen selection or acceptance rule.
+
+Selection v2 then completed the expensive scan and was correctly rejected again. It produced
+11,299 candidate tiles but found one too-flat Nano Banana Pro row, 74 exact protected-test matches
+and 83 dHash matches; 74 rows were in both overlap sets, leaving nine re-encoded/content matches.
+The exact collisions were 8 balanced AI, 10 Flux, 10 Nano Banana and 46 Nano Banana Pro rows—mostly
+the predictable consequence of E25 having already sampled those modern collections. Nothing was
+written to the tile archive. The ignored rejection receipt has SHA `55364ed2...b9c8`.
+
+Replacing only those selected ids would turn leakage discovery into an iterative lottery. The next
+screen is therefore committed before use and processes every candidate row in balanced, Flux,
+Nano Banana and Nano Banana Pro against the same complete protected exact/dHash set plus the input
+floor. It records eligible keys, not protected hashes or model scores. Selection v3 may use only
+that set. CommunityForensics remains unchanged because its selected v2 rows had zero overlap and
+zero input failure.

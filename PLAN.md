@@ -101,6 +101,12 @@ test leakage, and only then ask E30 whether the frozen system advances.
   Eligible-set SHA is `91089e22...eb2`. Selection v2 retains every count/role/group rule, keeps
   7,767 rows and replaces 3,533 mechanically ineligible rows; new selection SHA is
   `5355e430...9b2`. It is committed before the second realization.
+- **Selection-v2 rejection:** 11,299/11,300 rows produced tiles, but one Nano Banana Pro row was
+  still too flat; 74 rows exactly matched protected tests and nine more matched only by dHash.
+  No tile archive was written. Before selection v3, exhaustively screen balanced + Flux + Nano
+  Banana + Nano Banana Pro against the same protected exact/dHash library and input floor, then
+  select only from that safe set. CommunityForensics stays fixed because its v2 rows had zero
+  failure/overlap. Screening is committed before it reads candidate bytes.
 
 ### Phase B3 — screen a small heterogeneous representation ladder
 

@@ -1737,3 +1737,18 @@ Before selection-v2 byte access, rejection handling was made evidentiary: a fail
 writes a compact ignored receipt with record ids/reasons and protected-scope counts while still
 refusing the tile archive. This prevents another 15-minute scan from ending with only a traceback;
 it does not relax any gate or alter selection v2.
+
+### B2 selection-v2 realization rejected by protected-content evidence
+
+Selection v2 tiled 11,299/11,300 rows; one TRAIN Nano Banana Pro row remained too flat. More
+importantly, the full protected library found **74 exact** and **83 dHash** overlaps (74 shared,
+nine dHash-only). Exact hits comprise 8 balanced AI, 10 Flux, 10 Nano Banana and 46 Nano Banana Pro
+rows; additional dHash-only hits affect one balanced real, six Flux and two Nano Banana rows. The
+tile archive was refused. Receipt SHA is `55364ed2...b9c8` under ignored `ml/data/e31/`.
+
+Rather than replacing only these 84 selected ids and risking another test collision, the next
+pre-registered command builds one protected mechanical eligibility set over every row of balanced,
+Flux, Nano Banana and Nano Banana Pro. It reuses the identical 176,961-exact / 172,087-dHash
+protected scope and rejects only decode/input failures or protected content. CommunityForensics is
+not reselected because v2 measured zero failure and zero overlap there. Nine focused tests pass
+before this screen reads candidate bytes.
