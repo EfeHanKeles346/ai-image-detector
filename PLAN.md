@@ -69,20 +69,28 @@ test leakage, and only then ask E30 whether the frozen system advances.
 
 ### Phase B2 — freeze a source-aware TRAIN v2 and CALIBRATION contract
 
-- [ ] Build manifests by source/generator/pipeline rather than maximizing row count. Balance
+- [x] Build manifests by source/generator/pipeline rather than maximizing row count. Balance
       labels, cap dominant sources, preserve rare current generators and assign group-disjoint
       folds so one generator/pipeline cannot appear in both a fit fold and its validation fold.
-- [ ] Start with audited CommunityForensics-Small plus AI-vs-Real-balanced as controls; admit AIGC,
+- [x] Start with audited CommunityForensics-Small plus AI-vs-Real-balanced as controls; admit AIGC,
       ai-vs-real-200k and AI-only Flux/Nano-Banana/GPT holdings only through a representation where
       their known geometry/encoding shortcuts are neutralized and only after leakage checks.
       Test-only Defactify, Julien Lucas modern, CIFAKE, the owner gallery and all E30 sources stay
       excluded.
-- [ ] Create CALIBRATION from held-out source groups or out-of-fold predictions only. Do not reuse
+- [x] Create CALIBRATION from held-out source groups or out-of-fold predictions only. Do not reuse
       a training row, E30 score or final row to select a threshold or fusion rule.
-- [ ] Freeze exact row ids, label map, source caps, folds, transforms, acquisition cutoff and
+- [x] Freeze exact row ids, label map, source caps, folds, transforms, acquisition cutoff and
       manifest SHA before feature extraction or training.
 - **Acceptance:** shortcut probes pass, exact/content leakage is zero, each fold has class and
   source support, and re-running selection reproduces the same manifest hash.
+- **Frozen pre-byte selection:** 11,300 parents / 5,650 per label across 383 indivisible groups and
+  303 named AI identities. TRAIN has 8,561 rows; CALIBRATION has 2,739. Every one of the five
+  source collections has both roles, while no group crosses them. CommunityForensics contributes
+  8 rows per each of 300 AI generators plus 2,400 real; balanced contributes 2,000 AI / 3,250 real;
+  current AI adds 500 Flux, 500 Nano Banana and 250 Nano Banana Pro. AIGC/200k remain deferred
+  controls, not silently admitted. Selection SHA is `5907c14b...bfb`; its exact 11,300 row ids are
+  committed before realization. B2 acceptance remains open until every frozen row is decoded,
+  exact/dHash checked against all protected content, and the deterministic tile archive passes.
 
 ### Phase B3 — screen a small heterogeneous representation ladder
 

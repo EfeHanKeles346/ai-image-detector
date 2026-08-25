@@ -1672,3 +1672,26 @@ resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` di
 - **Evidence:** `evidence/e31_ssd_audit.json`, SHA-256
   `2f7399bed965a8a428b4180aab059405fbcc4d4aa4d3754a5295ee4e97021f29`. No source byte was
   written or committed; E30 Qwen LOCKED FINAL remains unscored and no E31 training has started.
+
+## 2026-08-25 — E31/B2 selection freeze: 11,300 rows fixed before bytes
+
+- **Selection-only checkpoint:** `e31_train_v2.py freeze` reads label/generator metadata and
+  Parquet row counts but never the image column. It pins each source by a digest over relative
+  shard path, byte count, row count and schema. Missing/changed shards invalidate realization.
+- **Composition:** 5,650 AI / 5,650 real. CommunityForensics supplies 2,400 AI (exactly 8 from
+  each of 300 generator ids) and 2,400 real; AI-vs-Real-balanced supplies 2,000 AI / 3,250 real;
+  current AI-only sources supply 500 Flux, 500 Nano Banana and 250 Nano Banana Pro. AIGC and 200k
+  are deferred rather than adding redundant volume before this candidate is measured.
+- **Role split:** 383 whole groups are stably ranked within source and round-robin assigned to five
+  folds; fold 0 is CALIBRATION. TRAIN has 4,456 AI / 4,105 real and CALIBRATION 1,194 AI / 1,545
+  real. Every source appears in both roles and no generator/shard group crosses them. The first
+  dry rule used raw hash modulo and happened to place all seven Flux shards in TRAIN; it was
+  corrected before byte access or commit because that left no Flux calibration evidence.
+- **Frozen identity:** selection SHA
+  `5907c14ba3e173c125c024a30658fb8e7e56788a469614808ad4ef5519a5fbfb`; complete deterministic
+  row contract in `evidence/e31_train_v2_selection.json`. The report itself has SHA-256
+  `59f95563da578c8274518ae0394b00064bd1b0109ad652077a68ad3967ff5620`.
+- **Next gate:** realization must reproduce source/selection hashes, decode all 11,300 rows, reject
+  any exact or dHash match against E30, Defactify, real-pipeline calibration, owner gallery and
+  named test-only data, then create exactly one seeded native 128 px texture-qualified tile per
+  parent. No model or embedding may read a selected image before this checkpoint is committed.

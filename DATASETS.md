@@ -85,6 +85,29 @@ any feature extraction or training. Aggregate evidence SHA-256 is
 `2f7399bed965a8a428b4180aab059405fbcc4d4aa4d3754a5295ee4e97021f29` in
 `evidence/e31_ssd_audit.json`; no source image or private identifier is committed.
 
+### E31-B2 TRAIN-v2 frozen selection (before image-byte access)
+
+The first training contract deliberately selects breadth rather than all available volume. Exact
+Parquet shard/row ids were frozen from metadata only; no image byte, protected test hash or model
+score influenced selection.
+
+| selected source | AI | real | grouping/role boundary |
+|---|---:|---:|---|
+| CommunityForensics-Small | 2,400 | 2,400 | exactly 8 per each of 300 AI generators; real groups are whole shards |
+| AI-vs-Real-balanced | 2,000 | 3,250 | whole Parquet shards assign TRAIN or CALIBRATION |
+| FLUX.1-dev | 500 | 0 | whole shards; fixed native-tile representation only |
+| Nano Banana | 500 | 0 | whole shards; fixed native-tile representation only |
+| Nano Banana Pro | 250 | 0 | whole shards; fixed native-tile representation only |
+| **total** | **5,650** | **5,650** | 383 groups; 8,561 TRAIN / 2,739 CALIBRATION |
+
+Every source has both roles; no group crosses roles. AIGC and ai-vs-real-200k stay deferred because
+the first candidate already supplies 11,300 balanced parents and 303 AI identities without their
+severe native shortcuts. Test-only Defactify, Julien Lucas, CommunityForensics probes, owner gallery
+and every E30 row are absent. Selection SHA-256 is
+`5907c14ba3e173c125c024a30658fb8e7e56788a469614808ad4ef5519a5fbfb`; the complete row contract
+is `evidence/e31_train_v2_selection.json`. B2 is not realized until every selected row passes full
+exact/dHash protected-content checks and deterministic tile extraction.
+
 ### E30 pinned current-science sources — role assignment before download
 
 | Source (pinned revision) | Full source | E30 role and initial slice | Why selected | Boundary |

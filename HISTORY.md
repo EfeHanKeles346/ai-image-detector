@@ -1794,3 +1794,27 @@ rows per registered source, while full row/generator counts still read all metad
 tests pin root safety, AppleDouble exclusion, label behavior, bounded shard spread, implicit folder
 labels and inclusion of derived E30 manifests. Internet was not required, no external-disk byte was
 changed, no E31 training began and the Qwen LOCKED FINAL scout remains unscored.
+
+### E31/B2 selection — breadth is frozen before opening 11,300 images
+
+The first TRAIN-v2 contract selects 5,650 AI and 5,650 real parents rather than consuming every
+available row. CommunityForensics contributes eight rows from each of its 300 AI model identities
+plus 2,400 real rows. AI-vs-Real-balanced contributes 2,000 AI and 3,250 real; the extra real rows
+provide the matched counterweight for 500 Flux, 500 Nano Banana and 250 Nano Banana Pro rows. AIGC
+and ai-vs-real-200k remain deferred: their fixed-view metadata probes passed, but adding another
+84 GB before measuring the smaller candidate would test volume instead of the hypothesis.
+
+Groups—not individual rows—receive one of five folds. Fold zero is CALIBRATION and the other four
+are TRAIN. An initial metadata-only dry assignment used hash modulo; by chance none of Flux's seven
+shards entered CALIBRATION. Because no image byte or score had been opened and nothing was committed,
+the rule was corrected to stable within-source rank plus round-robin folds. The frozen result has
+8,561 TRAIN and 2,739 CALIBRATION rows; all five collections support both roles and none of the 383
+generator/shard groups crosses roles.
+
+The exact source shard and row ids, maps, source fingerprints and counts are committed in
+`evidence/e31_train_v2_selection.json`. Selection SHA is
+`5907c14ba3e173c125c024a30658fb8e7e56788a469614808ad4ef5519a5fbfb`; evidence-file SHA is
+`59f95563da578c8274518ae0394b00064bd1b0109ad652077a68ad3967ff5620`. This checkpoint exists
+before realization by design. Next, every frozen row must reproduce the source fingerprints,
+decode, avoid exact/dHash overlap with every protected role and yield one deterministic native
+128 px tile. No E31 model or embedding has read these rows yet.
