@@ -59,6 +59,7 @@ DERIVED_VARIANTS = {
     "jpeg_q50": {"quality": 50, "long_side": None},
     "resize256_q90": {"quality": 90, "long_side": 256},
 }
+QWEN_STANDARD_VARIANT = {"quality": 90, "transport": "standardized_jpeg_q90"}
 MLLM_REGIMES = {
     "Hybrid Images": "hybrid",
     "Structure Images": "structure",
@@ -596,6 +597,87 @@ def derive_mllm_variants(output_dir: Path) -> dict[str, Any]:
     return manifest
 
 
+def derive_qwen_standardized(output_dir: Path) -> dict[str, Any]:
+    """Create one deterministic JPEG view without changing locked-final ownership."""
+    source_manifest, parents = load_manifest(
+        output_dir / "manifest.json", require_hashes=True
+    )
+    if {record.role for record in parents} != {DataRole.LOCKED_FINAL_TEST}:
+        raise PermissionError("Qwen derivatives require locked-final-test parents only")
+    derived: list[DataRecord] = []
+    for parent in parents:
+        raw = (output_dir / parent.path).read_bytes()
+        if sha256_bytes(raw) != parent.sha256:
+            raise RuntimeError(f"parent hash changed before derivation: {parent.record_id}")
+        with Image.open(io.BytesIO(raw)) as opened:
+            image = ImageOps.exif_transpose(opened).convert("RGB")
+        buffer = io.BytesIO()
+        image.save(
+            buffer,
+            format="JPEG",
+            quality=int(QWEN_STANDARD_VARIANT["quality"]),
+            optimize=True,
+            subsampling=2,
+        )
+        encoded = buffer.getvalue()
+        relative = f"derived/{parent.record_id}_standardized_q90.jpg"
+        path = output_dir / relative
+        if path.is_file() and path.read_bytes() != encoded:
+            raise RuntimeError(f"Qwen derivative changed for {parent.record_id}")
+        if not path.is_file():
+            path.parent.mkdir(parents=True, exist_ok=True)
+            temporary = path.with_suffix(".jpg.part")
+            temporary.write_bytes(encoded)
+            temporary.replace(path)
+        with Image.open(io.BytesIO(encoded)) as checked:
+            checked.load()
+            width, height = checked.size
+            perceptual = dhash_image(checked)
+        derived.append(
+            DataRecord(
+                record_id=sha256_bytes(
+                    f"{parent.record_id}:{QWEN_STANDARD_VARIANT['transport']}".encode()
+                )[:24],
+                role=parent.role,
+                source_id=parent.source_id,
+                source_revision=parent.source_revision,
+                source_key=(
+                    f"{parent.source_key}#{QWEN_STANDARD_VARIANT['transport']}"
+                ),
+                label=parent.label,
+                group=parent.group,
+                transport=str(QWEN_STANDARD_VARIANT["transport"]),
+                path=relative,
+                generator=parent.generator,
+                camera_pipeline=parent.camera_pipeline,
+                content_id=parent.content_id,
+                parent_id=parent.record_id,
+                sha256=sha256_bytes(encoded),
+                dhash=perceptual,
+                bytes=len(encoded),
+                width=width,
+                height=height,
+                image_format="JPEG",
+            )
+        )
+    records = validate_records([*parents, *derived], require_hashes=True)
+    if len({record.sha256 for record in records}) != len(records):
+        raise RuntimeError("Qwen parents and derivatives contain duplicate image bytes")
+    manifest = {
+        "schema_version": 1,
+        "state": "derived_verified",
+        "parent_manifest_content_set_sha256": source_manifest["content_set_sha256"],
+        "parent_count": len(parents),
+        "derived_count": len(derived),
+        "derived_bytes": sum(int(record.bytes or 0) for record in derived),
+        "content_set_sha256": content_set_sha256(records),
+        "unique_sha256": len({record.sha256 for record in records}),
+        "records": [record_to_dict(record) for record in records],
+    }
+    _atomic_json(output_dir / "derived_manifest.json", manifest)
+    return manifest
+
+
 def laion_candidates(metadata: Iterable[Mapping[str, str]]) -> dict[tuple[str, str], list[Mapping[str, str]]]:
     grouped: dict[tuple[str, str], list[Mapping[str, str]]] = {key: [] for key in LAION_PIPELINES}
     for row in metadata:
@@ -770,6 +852,7 @@ def main() -> None:
             "derive-mllm",
             "freeze-qwen",
             "download-qwen",
+            "derive-qwen",
             "freeze-laion",
             "download-laion",
         ),
@@ -780,6 +863,8 @@ def main() -> None:
 
     if args.command == "derive-mllm":
         payload = derive_mllm_variants(root / "mllm_development")
+    elif args.command == "derive-qwen":
+        payload = derive_qwen_standardized(root / "qwen_locked_final")
     elif args.command.endswith("mllm"):
         assets = freeze_mllm_assets()
         output = root / "mllm_development"

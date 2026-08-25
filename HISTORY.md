@@ -1702,3 +1702,10 @@ path and prompt id is archived in `evidence/e30_qwen_sealed_selection.json` with
 
 The small sample is still only a pipeline scout. Its existence does not authorize threshold
 tuning or a pass/fail statement, and the locked images remain unread until this seal is committed.
+
+After that seal commit, acquisition completed without interruption: 40/40 files, 37,907,745 exact
+bytes, 21 PNG plus 19 JPEG, 40 unique byte hashes and zero decode failure. A network-free q90 JPEG
+view was then created for every parent. The 9,449,715 derivative bytes retain LOCKED FINAL role,
+prompt identity and parent linkage; all 80 byte hashes remain unique. Native and combined
+content-set hashes are archived in `evidence/e30_qwen_realization.json`. No detector score was
+computed, so the locked-final boundary remains intact at the end of A3.

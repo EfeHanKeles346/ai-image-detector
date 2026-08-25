@@ -125,12 +125,14 @@ certify universal real-photo safety.
       bytes and selection SHA `50e3fec1...eeb`; exact paths are committed in
       `evidence/e30_qwen_sealed_selection.json`. This is scout-only and cannot produce a pass/fail
       claim until a frozen candidate is tested on at least 40 items per reported generator cell.
-- [ ] Keep original source encodings (the pre-download tree audit corrected the initial all-PNG
+- [x] Keep original source encodings (the pre-download tree audit corrected the initial all-PNG
       assumption to mixed PNG/JPEG) and separately create role-inherited standardized JPEG
-      variants. Enforce a 70 MB low-bandwidth download ceiling for the scout and a manifest-first
-      resume path.
-- [ ] Commit only provenance, hashes, aggregate audits and the sealed row list; keep image bytes and
-      any per-image visual material ignored. Do not inspect or score the locked rows during A3.
+      variants. All 40 parents downloaded and verified at 37,907,745 B; 40 deterministic q90
+      derivatives add 9,449,715 B without network use. Both stay below the 70 MB download ceiling.
+- [x] Commit only provenance, hashes, aggregate audits and the sealed row list; keep image bytes and
+      any per-image visual material ignored. A3 completed with `detector_scored=false`; no locked
+      row was inspected or scored. Aggregate realization is in
+      `evidence/e30_qwen_realization.json`.
 - **Acceptance:** selected rows and content hashes are sealed, cross-collection overlap checks pass,
   and the working tree is clean before any final score is read.
 

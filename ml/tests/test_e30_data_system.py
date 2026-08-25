@@ -269,3 +269,59 @@ def test_derived_variants_inherit_parent_role_content_and_split(tmp_path):
         parent = parents[record["parent_id"]]
         assert record["content_id"] == parent["content_id"]
         assert record["label"] == parent["label"]
+
+
+def test_qwen_standardized_variant_inherits_locked_role_and_content(tmp_path):
+    output = tmp_path / "qwen_locked_final"
+    images = output / "images"
+    images.mkdir(parents=True)
+    records = []
+    for index, image_format in enumerate(("PNG", "JPEG")):
+        image = Image.new("RGB", (320 + index, 240 + index), color=(40, 80, 120))
+        suffix = ".png" if image_format == "PNG" else ".jpg"
+        path = images / f"{index}{suffix}"
+        image.save(path, format=image_format)
+        raw = path.read_bytes()
+        records.append(
+            {
+                "record_id": f"locked-{index}",
+                "role": "locked_final_test",
+                "source_id": e30.QWEN_ID,
+                "source_revision": "2" * 40,
+                "source_key": f"source/{index}{suffix}",
+                "label": "ai",
+                "group": f"generator-{index}",
+                "transport": "native_source",
+                "path": f"images/{index}{suffix}",
+                "generator": f"generator-{index}",
+                "camera_pipeline": None,
+                "content_id": f"prompt-{index}",
+                "parent_id": None,
+                "sha256": e30.sha256_bytes(raw),
+                "dhash": None,
+                "bytes": len(raw),
+                "width": image.width,
+                "height": image.height,
+                "image_format": image_format,
+            }
+        )
+    (output / "manifest.json").write_text(
+        __import__("json").dumps(
+            {
+                "schema_version": 1,
+                "content_set_sha256": "b" * 64,
+                "records": records,
+            }
+        )
+    )
+    result = e30.derive_qwen_standardized(output)
+    assert result["parent_count"] == 2
+    assert result["derived_count"] == 2
+    children = [record for record in result["records"] if record["parent_id"]]
+    parents = {record["record_id"]: record for record in result["records"] if not record["parent_id"]}
+    for child in children:
+        parent = parents[child["parent_id"]]
+        assert child["role"] == "locked_final_test"
+        assert child["content_id"] == parent["content_id"]
+        assert child["image_format"] == "JPEG"
+        assert child["transport"] == "standardized_jpeg_q90"

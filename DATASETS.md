@@ -102,6 +102,14 @@ encodings will be preserved. The complete sealed list is
 `evidence/e30_qwen_sealed_selection.json`. Five examples per generator support only a pipeline
 scout, never a success/failure claim or threshold choice.
 
+The sealed scout subsequently downloaded **40/40** unique, decodable originals with no byte or
+format mismatch. Native image bytes exactly equal the declaration at **37,907,745** and content-set
+SHA-256 is `0f25bfe7...8a1`. One deterministic q90 JPEG child was created for every parent
+(40 files / 9,449,715 B); all 80 parent/child byte hashes are unique and the combined content-set
+SHA-256 is `93dcbc01...49c`. Children inherit LOCKED FINAL role, label, generator, prompt content id
+and parent id. Since this arm is AI-only, no real-vs-AI metadata shortcut AUC can be computed.
+No detector has read these images. Aggregate evidence is `evidence/e30_qwen_realization.json`.
+
 ### Current generators, AI-only — pair with care
 
 | Dataset | Size | Model | Era |

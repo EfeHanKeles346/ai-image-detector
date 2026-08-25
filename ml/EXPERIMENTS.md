@@ -1564,3 +1564,17 @@ resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` di
 - `evidence/e30_qwen_sealed_selection.json` commits every source path, generator, prompt id and
   declared byte count while `detector_scored=false`. No image was downloaded before this seal.
   This remains a 5-per-generator scout; it cannot satisfy the >=40-per-cell reporting gate.
+
+### A3 realization after the committed seal
+
+- The post-seal acquisition downloaded and decoded **40/40** source files with zero failure and
+  exact declared total **37,907,745 B**, safely below 70 MB. There are 21 PNG and 19 JPEG parents,
+  five per generator, with 40 unique SHA-256 values. Native content-set SHA-256 is
+  `0f25bfe73cf6fb7e06015fdc36d16044d554352f917fa1d7012f24815f3638a1`.
+- A deterministic RGB JPEG q90 child was generated for every parent without network use. The 40
+  children occupy **9,449,715 B**, inherit the same LOCKED FINAL role/content id and point to their
+  parent. All 80 hashes are unique; combined content-set SHA-256 is
+  `93dcbc01e517eaa61e693c4753a72e8d69136b0105c9c36cb8353c6ad98b749c`.
+- This AI-only arm cannot support a metadata-only real-vs-AI shortcut AUC. Count, format, decode,
+  role inheritance, exact-byte and uniqueness gates passed. `detector_scored=false` remains true;
+  no locked image was inspected or inferred during acquisition.
