@@ -108,6 +108,15 @@ and every E30 row are absent. Selection SHA-256 is
 is `evidence/e31_train_v2_selection.json`. B2 is not realized until every selected row passes full
 exact/dHash protected-content checks and deterministic tile extraction.
 
+The first realization rejected that selection: 3,534 rows could not produce the frozen native
+128 px tile. A complete mechanical scan then measured AI-vs-Real-balanced's hidden size problem:
+47,233/71,535 AI and 50,000/71,535 real are below 128 px; 24,301 AI and 21,532 real pass, with only
+four additional texture-floor rejects. Eligibility-set SHA is `91089e22...eb2` and the full key
+set is `evidence/e31_balanced_eligibility.json`. Selection v2 preserves the table above exactly,
+keeps 7,767 old rows and replaces 3,533 with eligible alternatives. Its SHA is
+`5355e4307eb72053a01fcfc3c13e2a431feed7a313a316317fed4303bd2679b2` and exact rows are frozen in
+`evidence/e31_train_v2_selection_v2.json` before another realization.
+
 ### E30 pinned current-science sources — role assignment before download
 
 | Source (pinned revision) | Full source | E30 role and initial slice | Why selected | Boundary |

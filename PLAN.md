@@ -96,6 +96,11 @@ test leakage, and only then ask E30 whether the frozen system advances.
   v2 selection, scan the full balanced source for mechanical eligibility only (decode, dimensions,
   texture; never a model score), freeze the eligible-key set, then reproduce the same source caps
   from eligible rows. The rejected `5907c14b...bfb` selection remains historical evidence.
+- **Eligibility + selection v2:** the balanced scan found 24,301/71,535 AI and 21,532/71,535 real
+  rows eligible; 47,233 AI + 50,000 real are below 128 px and four additional rows are too flat.
+  Eligible-set SHA is `91089e22...eb2`. Selection v2 retains every count/role/group rule, keeps
+  7,767 rows and replaces 3,533 mechanically ineligible rows; new selection SHA is
+  `5355e430...9b2`. It is committed before the second realization.
 
 ### Phase B3 — screen a small heterogeneous representation ladder
 

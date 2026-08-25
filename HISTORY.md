@@ -1833,3 +1833,12 @@ archived. A new eligibility command is committed before use: it may inspect only
 width/height and the unchanged 0.04 texture rule across the balanced source, freezes eligible row
 keys by SHA and cannot read a model score. Only after that mechanical set exists may selection v2
 be frozen.
+
+The full balanced scan found the hidden distribution precisely: 47,233 AI and 50,000 real rows are
+smaller than 128 px; 24,301 AI and 21,532 real rows are eligible, while only one AI and three real
+rows fail solely for texture. The eligible key set is archived with SHA `91089e22...eb2`. Selection
+v2 preserves the 11,300 total, every source cap, label balance and group role; 7,767 rows stay and
+3,533 balanced rows are replaced by their next deterministic eligible candidates. Its frozen SHA
+is `5355e430...9b2`. Because v1 rejected 3,534 total, the remaining possible one-row failure outside
+balanced is not inferred; v2 realization must expose it mechanically. Both eligibility and exact
+v2 row ids are committed before that run.

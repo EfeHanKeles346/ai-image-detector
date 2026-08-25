@@ -1716,3 +1716,19 @@ stream all 143,070 AI-vs-Real-balanced rows once, record only keys that decode, 
 dimensions and pass the unchanged 0.04 texture-floor tile rule, then freeze a new 11,300-row
 selection from that eligible set. The old selection and failure count remain in the log. Seven
 focused tests pin eligibility-set hashing before the scan runs.
+
+### B2 balanced eligibility result and selection v2 freeze
+
+- **Complete source result:** of 71,535 rows per class, 47,233 AI and 50,000 real are below 128 px;
+  24,301 AI and 21,532 real pass decode/size/texture. One AI and three real rows are large enough
+  but below the unchanged texture threshold. Eligible-set SHA is
+  `91089e227821fb6e4dcdd06487c7943958afccb7a6e281d1f94718881bff1eb2`.
+- **Selection v2:** exact composition, source caps, 383 groups and fold roles are unchanged. Of
+  11,300 rows, 7,767 remain and 3,533 balanced rows are replaced by the next deterministic eligible
+  candidates. Selection SHA is
+  `5355e4307eb72053a01fcfc3c13e2a431feed7a313a316317fed4303bd2679b2`; evidence-file SHA is
+  `594ca2cbec7450372c2c2876b5913c542e6dd251c9e4166e12da05b2b11891a1`.
+- **Boundary:** eligibility contains no model score and cannot tune a test result. Selection v1
+  remains committed as the rejected input. Selection v2 is committed before its image bytes are
+  realized. The one-row difference between 3,534 total v1 rejects and 3,533 balanced replacements
+  is left for the second exact realization to identify rather than guessed away.
