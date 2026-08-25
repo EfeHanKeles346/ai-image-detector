@@ -1586,3 +1586,24 @@ chunk. It was stopped before preflight and before any image existed. E29 now per
 revision-matched metadata chunks atomically, refuses signed URLs near expiry, prints each fetch
 boundary and reuses fully validated image files after interruption. This converts another network
 cut from a restart-from-zero risk into an explicit, auditable resume path; focused tests passed 3/3.
+
+### Q2 — the best real-gallery arm sees only 19 of 100 current AI images
+
+The resumed run completed all six pinned source chunks, preflighted the selected assets at
+11,546,660 bytes and downloaded exactly 100 unique 1024x1024 JPEG cache representations. Including
+resumable metadata, manifest and scores, the ignored local folder occupies 12,092,513 bytes—far
+below the requested 100 MB maximum. All images decoded and all CF-ViT inferences completed on MPS
+without failure; no third-party image entered Git.
+
+At the unchanged 0.6617392 decision threshold, CF-ViT detected only 19/100 AI images. GPT Image 1
+was 2/20, Imagen 4 and Imagen 4 Ultra were each 4/20, Nano Banana was 4/20 and Seedream 3 was 5/20.
+Hard prompts were 7/50 and simple prompts 12/50. This is consistent with the earlier GPT-family
+blind spot and demonstrates the central tradeoff directly: the same external arm that falsely
+flagged only 1/206 owner camera photos also misses 81/100 images in this current AI-only slice.
+
+The result is intentionally not called accuracy. There is no real class, the sample has only 20
+items per generator, and the dataset-server JPEGs are recompressed derivatives of documented raw
+PNGs. It nevertheless falsifies the useful claim that CF-ViT's strong owner-gallery specificity
+makes it the project's successful universal detector. It remains a valuable external comparison;
+the project still needs a representation evaluated jointly on unseen camera pipelines and modern
+AI families.

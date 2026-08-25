@@ -1438,3 +1438,37 @@ atomically caches each complete 100-row response. A resumed chunk is accepted on
 revision matches and every signed asset URL has more than one hour before expiry. Completed image
 files are likewise revalidated and reused after a later interruption. Focused tests, including the
 new revision/completeness/expiry cache contract, passed 3/3 before retrying the network run.
+
+## 2026-08-25 — E29/Q2 result: CF-ViT misses 81% of the compact 2025 slice
+
+- **Dataset realization:** all 100 frozen rows downloaded as unique, decodable 1024x1024 cached
+  JPEGs with zero failures. Image bytes are **11,546,660**; the whole ignored local E29 directory,
+  including row caches, manifest and results, is **12,092,513 bytes**, safely below 100 MB.
+  Content-set SHA-256 is
+  `0e5a2452c2eac44846fb3bc0118fc6bb262db814f693f2183d489b0835c1b9be`.
+- **Detector contract:** Community-Forensics ViT-S weights SHA-256
+  `275ba982236ddd6afddf7131f8133e89f537574b964cf8fa5825b4956d741692`, authors' shortest-edge
+  440 / center-crop 384 / CLIP normalization, MPS, frozen `t_ai=0.6617392`. All 100 scored with
+  zero inference failures; no threshold or row changed after results.
+
+| generator | n | AI triggers | recall | median logit |
+|---|---:|---:|---:|---:|
+| GPT Image 1 | 20 | 2 | **10%** | -3.7979 |
+| Imagen 4 | 20 | 4 | **20%** | -3.7647 |
+| Imagen 4 Ultra | 20 | 4 | **20%** | -3.4842 |
+| Nano Banana | 20 | 4 | **20%** | -3.1395 |
+| Seedream 3 | 20 | 5 | **25%** | -1.9572 |
+| **overall** | **100** | **19** | **19%** | **-3.1943** |
+
+- **Diagnostics, not selection:** recall by prompt type was color 10%, numeracy 15%, shape 25%,
+  spatial 30% and texture 15%. Hard prompts reached 7/50 (14%) versus simple 12/50 (24%). Overall
+  logits ranged -10.2364 to 8.4434 with mean -2.8989. No post-hoc threshold is substituted.
+- **Interpretation:** E29 independently repeats E25's GPT-family blind spot (E25 GPT Image 4K was
+  6% recall) and shows it extends across this compressed structured-prompt slice: even the best
+  family reaches only 25%. Nano Banana's 20% here versus E25's 46% on a different 200-image source
+  also warns that content/encoding distribution materially changes detector recall.
+- **Boundary:** this is an AI-only, 20-per-model diagnostic from cached JPEGs, and the SANEval card
+  itself says its 600-row sample is not for statistical inference. E29 cannot report FP,
+  specificity, accuracy or AUC and does not represent native PNG performance. The defensible
+  conclusion is narrow but important: CF-ViT's 0.49% false-alarm result on the owner's real gallery
+  coexists with only 19% recall here, so it is not a complete detector for current generators.

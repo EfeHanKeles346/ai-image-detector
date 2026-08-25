@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "experiment": "E29 / Q2",
+  "date": "2026-08-25",
+  "implementation_commit": "32c770c",
+  "network_resume_commit": "d96dde5",
+  "source": {
+    "dataset_id": "saneval-ann/saneval-sample",
+    "url": "https://huggingface.co/datasets/saneval-ann/saneval-sample",
+    "revision": "e9e188f6018b3d491708f29e7a387f5043dc8841",
+    "license": "MIT",
+    "source_rows": 600,
+    "representation": "Hugging Face dataset-server cached JPEG; source card documents raw PNG"
+  },
+  "selection": {
+    "rule": "two lowest row ids per target model x prompt type x difficulty split",
+    "models": [
+      "GPT Image 1",
+      "Imagen 4.0",
+      "Imagen 4.0 Ultra",
+      "Nano Banana",
+      "Seedream 3.0"
+    ],
+    "prompt_types": ["color", "numeracy", "shape", "spatial", "texture"],
+    "splits": ["hard", "simple"],
+    "rows_per_group": 2,
+    "count": 100,
+    "selected_before_scoring": true
+  },
+  "local_data": {
+    "image_count": 100,
+    "unique_image_sha256_count": 100,
+    "image_bytes": 11546660,
+    "complete_directory_file_bytes": 12092513,
+    "hard_ceiling_bytes": 100000000,
+    "geometry": "1024x1024",
+    "decoded_format": "JPEG",
+    "content_set_sha256": "0e5a2452c2eac44846fb3bc0118fc6bb262db814f693f2183d489b0835c1b9be",
+    "local_manifest_sha256": "74ed61e47798baab189b7bb067a5d8966145d31d2cdee9142cd3af79d444eedc",
+    "local_results_sha256": "90203252d493d260617653f1a89c671f7b81baa6077837b390cf03c71da847ec",
+    "images_committed": false
+  },
+  "detector": {
+    "name": "Community-Forensics ViT-S",
+    "weights_sha256": "275ba982236ddd6afddf7131f8133e89f537574b964cf8fa5825b4956d741692",
+    "threshold": 0.6617392,
+    "device": "mps",
+    "input_contract": "shortest edge 440, center crop 384, CLIP normalization"
+  },
+  "overall": {
+    "n": 100,
+    "triggered": 19,
+    "recall": 0.19,
+    "mean_logit": -2.8988906163536012,
+    "median_logit": -3.1942524909973145,
+    "minimum_logit": -10.23637866973877,
+    "maximum_logit": 8.443370819091797,
+    "failures": 0
+  },
+  "by_model": {
+    "GPT Image 1": {"n": 20, "triggered": 2, "recall": 0.1, "median_logit": -3.7978562116622925},
+    "Imagen 4.0": {"n": 20, "triggered": 4, "recall": 0.2, "median_logit": -3.7647037506103516},
+    "Imagen 4.0 Ultra": {"n": 20, "triggered": 4, "recall": 0.2, "median_logit": -3.484248638153076},
+    "Nano Banana": {"n": 20, "triggered": 4, "recall": 0.2, "median_logit": -3.139521837234497},
+    "Seedream 3.0": {"n": 20, "triggered": 5, "recall": 0.25, "median_logit": -1.9572349786758423}
+  },
+  "by_prompt_type_recall": {
+    "color": 0.1,
+    "numeracy": 0.15,
+    "shape": 0.25,
+    "spatial": 0.3,
+    "texture": 0.15
+  },
+  "by_split": {
+    "hard": {"n": 50, "triggered": 7, "recall": 0.14},
+    "simple": {"n": 50, "triggered": 12, "recall": 0.24}
+  },
+  "limitations": [
+    "AI-only recall probe; false positives, specificity, accuracy and AUC are undefined",
+    "cached JPEG representation, not native SANEval PNG performance",
+    "20 images per generator and not the full SANEval benchmark"
+  ],
+  "decision": "cf_vit_retained_as_external_comparison_not_a_current_generator_solution",
+  "threshold_changed": false,
+  "serving_changed": false
+}
