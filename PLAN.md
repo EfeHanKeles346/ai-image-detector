@@ -5,7 +5,139 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active goal — E30 current-science data and OOD test system (2026-08-25)
+## Active goal — E31 SSD audit, representation ladder and evidence-gated ensemble (2026-08-25)
+
+The immediate product goal is a genuinely runnable detector with useful signal on current
+generators—not another attractive in-distribution score. The attached LaCie disk makes a broader
+training pool possible, but volume alone is not the remedy. E20 was already trained after the
+E19 label correction on 48,037 balanced 128 px tiles and its three seeds agreed; repeating that
+same recipe is therefore not an experiment. E28 also showed that changing only the last head does
+not repair the representation.
+
+The proposed multi-model direction is scientifically reasonable only after its component models
+show complementary, transferable signal. E9 already rejected eight fixed ResNet/feature blends
+(best AUC gain only +0.002). On E30 DEVELOPMENT, the frozen E20 and CF-ViT decisions have zero
+positive overlap, yet their OR still detects only 52/600 correlated AI views while falsely
+triggering on 28/300 real views. Connecting weak arms cannot manufacture evidence. E31 therefore
+integrates the user's dataset/retraining/ensemble proposal in this order: audit data, build a new
+source-aware TRAIN contract, screen genuinely different representations, calibrate fusion without
+test leakage, and only then ask E30 whether the frozen system advances.
+
+### Phase B0 — freeze the decision tree before implementation
+
+- [x] Preserve the E30 five-role contract. The 900-row MLLM battery and owner gallery remain
+      **DEVELOPMENT TEST**; Qwen remains **LOCKED FINAL TEST** and unscored. None may fit weights,
+      gates, ensemble coefficients or thresholds.
+- [x] Record the no-op boundary: do not rerun E20 unchanged and do not average every available
+      checkpoint. Retraining is authorized only after the data composition and/or representation
+      differs materially and is identified by a versioned contract.
+- [x] Use the external disk read-only during audit. Ignore exFAT AppleDouble `._*` files, never
+      modify third-party datasets in place, and keep image bytes out of Git.
+- [x] Fix the advancement order below before producing an E31 model score.
+- **Acceptance:** this section is committed before an E31 audit artifact, TRAIN v2 manifest,
+  embedding cache, new checkpoint or ensemble fit exists.
+
+### Phase B1 — inventory and scientifically audit the SSD holdings
+
+- [ ] Add a deterministic metadata-first audit command that resolves dataset roots explicitly and
+      reports physical files/bytes, Parquet rows/schema, label direction, source/generator
+      coverage, formats/geometries, decode failures and duplicate hashes without writing to the
+      external disk.
+- [ ] Re-run shortcut checks at each proposed model input: native whole image and fixed native
+      tile/encoder view. Reject any mode where format, resolution, aspect ratio or compression can
+      separate labels beyond the existing frozen shortcut ceiling.
+- [ ] Hash-check proposed TRAIN content against E22/E24 calibration, owner gallery, all E30
+      DEVELOPMENT and LOCKED manifests, and named test-only datasets. Exact/content overlap is a
+      hard failure; unresolved provenance is recorded rather than guessed.
+- [ ] Commit a compact aggregate evidence file and update `DATASETS.md`, `ml/EXPERIMENTS.md` and
+      append-only `HISTORY.md`. No copied images or per-image private identifiers enter Git.
+- **Current pre-plan observation:** the disk contains about 255 GB of candidate data.
+  CommunityForensics-Small has 44,884 rows (32,912 real, 11,972 AI) and 300 distinct AI
+  `model_name` values, but its Real/LatDiff architecture and 1024/512 geometry separation makes
+  whole-image use unsafe. AI-vs-Real-balanced has 143,070 balanced rows; AIGC has 125,026 balanced
+  rows over 18 generator codes; ai-vs-real-200k has 241,609 rows. These counts establish
+  availability, not eligibility.
+- **Acceptance:** every included/excluded source and safe input mode has a machine-readable reason;
+  the audit can be rerun from a user-supplied root and fails clearly if the disk is absent.
+
+### Phase B2 — freeze a source-aware TRAIN v2 and CALIBRATION contract
+
+- [ ] Build manifests by source/generator/pipeline rather than maximizing row count. Balance
+      labels, cap dominant sources, preserve rare current generators and assign group-disjoint
+      folds so one generator/pipeline cannot appear in both a fit fold and its validation fold.
+- [ ] Start with audited CommunityForensics-Small plus AI-vs-Real-balanced as controls; admit AIGC,
+      ai-vs-real-200k and AI-only Flux/Nano-Banana/GPT holdings only through a representation where
+      their known geometry/encoding shortcuts are neutralized and only after leakage checks.
+      Test-only Defactify, Julien Lucas modern, CIFAKE, the owner gallery and all E30 sources stay
+      excluded.
+- [ ] Create CALIBRATION from held-out source groups or out-of-fold predictions only. Do not reuse
+      a training row, E30 score or final row to select a threshold or fusion rule.
+- [ ] Freeze exact row ids, label map, source caps, folds, transforms, acquisition cutoff and
+      manifest SHA before feature extraction or training.
+- **Acceptance:** shortcut probes pass, exact/content leakage is zero, each fold has class and
+  source support, and re-running selection reproduces the same manifest hash.
+
+### Phase B3 — screen a small heterogeneous representation ladder
+
+- [ ] Run one-seed, low-cost probes before full fine-tuning: (R0) unchanged E20 as the control,
+      (R1) a frozen modern ViT/CLIP-family intermediate representation with a regularized linear
+      head, and (R2) a low-level residual/frequency specialist. Reuse pinned local artifacts where
+      scientifically compatible; record weights, licence, revision and preprocessing exactly.
+- [ ] Evaluate on source-held-out TRAIN v2 folds and untouched CALIBRATION. Headline gates are
+      recall at the fixed real-FP budget, macro/worst-source FP, worst-generator recall and
+      compression/resize stability; pooled accuracy cannot advance an arm.
+- [ ] Stop an arm after one seed if it cannot beat the E20 control materially or adds no
+      complementary true positives within the FP budget. Run three seeds only for survivors.
+- [ ] Fine-tune a backbone or adapter only if the frozen probe has transferable signal but misses
+      the gate; otherwise change data/representation instead of spending compute on the same
+      failure.
+- **Acceptance:** at least one new arm independently meets its pre-registered CALIBRATION gate and
+  its three-seed interval is recorded before ensemble work. If none passes, B4 is blocked and the
+  negative result becomes the next data/representation decision.
+
+### Phase B4 — fit an ensemble only from out-of-fold calibration evidence
+
+- [ ] Cache score rows under immutable model/data contracts and measure error correlation,
+      disagreement, oracle-union recall and incremental false positives. Only arms with measurable
+      complementarity enter fusion.
+- [ ] Pre-register and compare a deliberately small rule set: OR/max as transparent baselines,
+      calibrated logistic stacking, and at most one quality-aware gate whose inputs are label-blind
+      image-quality/transport features. No per-test-source manual weight is allowed.
+- [ ] Select coefficients, abstention band and threshold on out-of-fold CALIBRATION only under the
+      <=5% macro / <=10% worst-source FP budget. Report single-arm and fusion ablations so an
+      apparent gain cannot hide one useless component.
+- [ ] Package the winner behind one verdict interface. It may behave like one product model, but
+      its response must retain component provenance, uncertainty and `AI detected` /
+      `insufficient evidence` asymmetry.
+- **Acceptance:** the fused system improves macro current-AI recall by at least 5 percentage points
+  over its best component without breaking either FP budget, and the gain survives group-wise
+  bootstrap intervals. Otherwise serve the best single arm and record ensemble rejection.
+
+### Phase B5 — frozen DEVELOPMENT gate, then one LOCKED FINAL scout
+
+- [ ] Commit candidate checkpoint hashes, preprocessing, ensemble rule, thresholds and stop/go
+      gates before reading a new E30 score.
+- [ ] Run once on E30 MLLM DEVELOPMENT. Require the existing working-v1 point gates: macro real FP
+      <=5%, worst real-source FP <=10%, current-AI macro recall >=50%, every sufficiently sized
+      generator/protocol >=30%, and q75/resize recall loss <=15 points. Treat 20-item cells and
+      correlated transport views honestly.
+- [ ] Only a DEVELOPMENT-passing frozen candidate may consume the sealed Qwen LOCKED scout. Its
+      five-per-generator cells are diagnostic and cannot substantiate a production claim; no
+      threshold, coefficient or retry changes after seeing them.
+- [ ] Keep A5's untouched multi-phone native vault mandatory before claiming general real-photo
+      safety.
+
+### Phase B6 — integrate, document and preserve presentation evidence
+
+- [ ] Replace the served verdict only after B5 passes; keep the last verified contract available
+      for rollback. Add readiness, artifact-integrity, deterministic-inference and end-to-end tests.
+- [ ] Update `MODEL_CARD.md`, `README.md`, `ml/SERVING.md`, `PRESENTATION_EVIDENCE.md`,
+      `DATASETS.md`, `ml/EXPERIMENTS.md` and append-only `HISTORY.md` with exact claims and limits.
+- [ ] Follow the project procedure for every phase: pre-register in this plan, implement/verify,
+      close the phase in the roadmap and archive, then make a scoped commit. Never rewrite a failed
+      result into success and never commit third-party/personal image bytes.
+
+## Ongoing benchmark contract — E30 current-science data and OOD test system (2026-08-25)
 
 The immediate goal is not another unconstrained training run. It is a reproducible data contract
 that can tell us whether a candidate is genuinely usable on modern camera photographs and 2026
