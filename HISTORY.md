@@ -1607,3 +1607,15 @@ PNGs. It nevertheless falsifies the useful claim that CF-ViT's strong owner-gall
 makes it the project's successful universal detector. It remains a valuable external comparison;
 the project still needs a representation evaluated jointly on unseen camera pipelines and modern
 AI families.
+
+### Q0–Q2 development commit ledger
+
+| Phase | Commit | Archived outcome |
+|---|---|---|
+| Q0 | `075df5f` | source, balanced row selection, 100 MB ceiling and frozen threshold recorded before download |
+| Q1 | `32c770c` | reproducible capped downloader, CF-ViT probe and contract tests added |
+| Q1 correction | `d96dde5` | interrupted metadata retrieval converted into revision/expiry-checked resume |
+| Q2 | `5c9bd4d` | 100-image result, limitations and compact evidence archived |
+
+The local subset can be reproduced by the E29 command but its image bytes remain ignored. The
+ledger and `evidence/e29_cfvit_2025_probe.json` are the presentation-safe scientific record.
