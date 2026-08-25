@@ -1656,3 +1656,30 @@ argument at call construction. The correction uses the client's native streamed 
 both iterator APIs, closes responses and leaves the frozen selection unchanged. As with E29's
 interruption, the failed attempt is retained because proving that recovery did not reselect data is
 part of the scientific record.
+
+### E30/A2 — compact development data is real; an incompatible source is not disguised
+
+The fixed downloader completed the frozen MLLMGenSet development slice: 180 JPEG parents across
+all nine cells (120 current AI and 60 matched real) in 4,419,610 bytes. It then generated q90,
+q75, q50 and resize256-q90 descendants for every parent without further network use. The 720
+derivatives add 14,029,255 bytes, retain the parents' DEVELOPMENT role and content identity, and
+produce 900 unique byte hashes overall. All five metadata-only shortcut probes passed the frozen
+0.65 AUC ceiling; the worst was q50 at 0.6362. These results make the battery eligible for model
+diagnosis, not a universal benchmark and not evidence about native generator files.
+
+LAION-Mobile exposed two separate failure modes. The first run lost connectivity after accepting
+one iPhone 11 URL. The preflight was changed to persist a `source_incomplete` manifest with every
+pipeline count and rejection category; an automated regression test prevents future silent
+rebalancing. The connected retry filled all four Apple cells but only 9/10, 5/10, 1/10 and 0/10
+in the frozen Samsung/Xiaomi cells. Of 361 rejections, 287 were over the 375 KB per-file contract,
+33 lacked content length, 40 failed HTTP/network checks and one was not an image. The smallest
+reachable ten-per-cell combination itself would be about 45.96 MB, so relaxing the cap would break
+the pre-registered low-bandwidth budget. No LAION image was downloaded, the 55-row partial result
+was not called a dataset, and no easier phone group replaced a failed one.
+
+This is the intended behavior of A2's scientific line: the complete local battery remains
+18,448,865 image bytes, while an unsuitable source becomes an archived negative result rather
+than an invisible distribution change. `evidence/e30_development_realization.json` preserves the
+aggregate counts, hashes and audits needed for the internship report; detailed third-party URLs
+and all images remain ignored. A larger full-internet attempt must be a separately pre-registered
+version, preferably with a native multi-phone vault, rather than mutating this result.

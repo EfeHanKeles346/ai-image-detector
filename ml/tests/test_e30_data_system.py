@@ -67,6 +67,14 @@ class FakeHttpxResponse:
         self.closed = True
 
 
+class FakeHeadResponse:
+    def __init__(self, length=100_000, content_type="image/jpeg"):
+        self.headers = {
+            "content-length": str(length),
+            "content-type": content_type,
+        }
+
+
 def test_interrupted_asset_resumes_with_range_and_atomic_replace(tmp_path):
     destination = tmp_path / "image.bin"
     partial = destination.with_suffix(".bin.part")
@@ -143,6 +151,37 @@ def test_laion_candidates_require_every_frozen_pipeline():
     rows.pop()
     with pytest.raises(RuntimeError, match="only 9"):
         e30.laion_candidates(rows)
+
+
+def test_laion_incomplete_preflight_is_persistable_and_not_silently_rebalanced(tmp_path):
+    rows = []
+    image_id = 0
+    for make, model in e30.LAION_PIPELINES:
+        for _ in range(10):
+            rows.append(
+                {
+                    "image_id": str(image_id),
+                    "make": make,
+                    "model": model,
+                    "url": f"https://example.invalid/{image_id}.jpg",
+                    "content_sha256": f"{image_id:064x}",
+                }
+            )
+            image_id += 1
+
+    def head_requester(method, url, **kwargs):
+        image_id = int(Path(url).stem)
+        return FakeHeadResponse(length=500_000 if image_id % 10 else 100_000)
+
+    assets, failures, status = e30.freeze_laion_assets(rows, head_requester)
+    manifest = e30._laion_selection_manifest(
+        assets, failures, status, tmp_path / "selection.json"
+    )
+    assert manifest["state"] == "source_incomplete"
+    assert len(assets) == len(e30.LAION_PIPELINES)
+    assert manifest["preflight_failure_counts"] == {"over_per_file_cap": 72}
+    assert all(item["selected"] == 1 for item in status.values())
+    assert (tmp_path / "selection.json").is_file()
 
 
 def test_derived_variants_inherit_parent_role_content_and_split(tmp_path):

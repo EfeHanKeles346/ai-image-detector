@@ -72,6 +72,26 @@ reported totals, not local acquisitions. Exact selected counts, downloaded bytes
 results will replace the planned slice descriptions after E30-A2/A3 realization. E30 test bytes
 remain under ignored `ml/data/e30/` and are forbidden from TRAIN/CALIBRATION.
 
+### E30-A2 low-bandwidth realization (2026-08-25)
+
+| Arm | Realized local data | Audit outcome | Scientific use |
+|---|---:|---|---|
+| MLLMGenSet parents | 180 JPEGs / 4,419,610 B: 120 AI, 60 matched real; exactly 20 per nine frozen generator/class x regime cells | 180 unique SHA-256; metadata-only AUC 0.6238, pass | DEVELOPMENT TEST only; standardized-JPEG GPT Image 2 / Nano Banana 2 diagnostic |
+| MLLMGenSet derivatives | 720 JPEGs / 14,029,255 B: q90, q75, q50 and resize256-q90 for every parent | 900/900 hashes unique across parents+children; transport AUCs 0.6096, 0.6191, 0.6362, 0.6127, all pass | Robustness views of the same underlying content; never independent samples or another split |
+| LAION-Mobile attempt | Metadata manifest 2,639,565 B; 55/80 URLs eligible under the frozen 375 KB/file rule; **zero images downloaded** | `source_incomplete`: Apple cells 10/10 each; Samsung/Xiaomi cells 9/10, 5/10, 1/10, 0/10. 287/361 rejects exceeded the per-file cap | No benchmark arm exists yet. Do not report the 55-row partial selection or substitute other phone groups |
+
+The complete realized MLLM image battery is **18,448,865 bytes**, below the 30 MB target. Its
+parent content-set SHA-256 is `1f3a7333...df2e`; the parents-plus-derivatives content-set SHA-256
+is `7634755c...24b8`. The frozen parent selection remains `f71c8d02...035e`. All third-party
+bytes and detailed URL diagnostics stay under ignored `ml/data/e30/`; the compact, presentation-safe
+aggregate is `evidence/e30_development_realization.json`.
+
+The LAION outcome is not repaired post hoc. Selecting the ten smallest reachable candidates in
+each frozen phone cell would require about 45.96 MB for that arm alone (the Redmi cell about
+22.81 MB), exceeding both its 30 MB arm contract and the complete low-bandwidth development
+budget once MLLM is included. A future full-internet profile may pre-register a larger budget or
+replace this source with a native multi-phone vault, but must create a new selection version.
+
 ### Current generators, AI-only — pair with care
 
 | Dataset | Size | Model | Era |

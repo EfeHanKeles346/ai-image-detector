@@ -1,0 +1,63 @@
+{
+  "experiment": "E30-A2",
+  "recorded_at": "2026-08-25",
+  "role": "development_test",
+  "detector_scored": false,
+  "mllm_genset": {
+    "source_revision": "1498eead24292a9a2d134476b2c559193b68b9de",
+    "selection_sha256": "f71c8d02709b311308017f7bb1b30acc859e543579cf36df6a26ee0b0a88035e",
+    "parent_count": 180,
+    "parent_bytes": 4419610,
+    "parent_content_set_sha256": "1f3a733340582045225684ae49679d547035b5e1a995e05faf1e44dfe6b4df2e",
+    "labels": {"ai": 120, "real": 60},
+    "cells": 9,
+    "items_per_cell": 20,
+    "parent_transport": "standardized_jpeg",
+    "derived_count": 720,
+    "derived_bytes": 14029255,
+    "all_content_set_sha256": "7634755c75f855064e0d6c3c2731c6fe63d6582f2b6065654698adbf32e924b8",
+    "unique_byte_hashes": 900,
+    "metadata_probe_auc": {
+      "standardized_jpeg": 0.6238194444444446,
+      "jpeg_q90": 0.6095833333333334,
+      "jpeg_q75": 0.6190972222222223,
+      "jpeg_q50": 0.6361805555555554,
+      "resize256_q90": 0.6127083333333333
+    },
+    "metadata_probe_ceiling": 0.65,
+    "all_metadata_probes_pass": true
+  },
+  "laion_mobile": {
+    "source_revision": "0c60f598e67cffe8475f54edd71307648cd03465",
+    "state": "source_incomplete",
+    "metadata_manifest_bytes": 2639565,
+    "selected_rows": 55,
+    "required_rows": 80,
+    "downloaded_images": 0,
+    "declared_selected_bytes": 13623835,
+    "selection_sha256": "5d5b32a29a638474acd284a671c2470512066e5572d80da137f25e85fc8d7e3b",
+    "pipeline_selected": {
+      "apple:iPhone 11": 10,
+      "apple:iPhone 11 Pro": 10,
+      "apple:iPhone XS": 10,
+      "apple:iPhone XR": 10,
+      "samsung:SM-G930F": 9,
+      "samsung:SM-G950F": 5,
+      "samsung:SM-G935F": 1,
+      "xiaomi:Redmi Note 4": 0
+    },
+    "preflight_failure_counts": {
+      "over_per_file_cap": 287,
+      "missing_length": 33,
+      "network_or_http": 40,
+      "non_image_content_type": 1
+    },
+    "estimated_smallest_complete_cell_balanced_bytes": 45961524,
+    "per_file_ceiling_bytes": 375000,
+    "arm_ceiling_bytes": 30000000,
+    "partial_arm_used": false
+  },
+  "realized_development_image_bytes": 18448865,
+  "low_bandwidth_target_bytes": 30000000,
+  "hard_stop_bytes": 40000000
+}

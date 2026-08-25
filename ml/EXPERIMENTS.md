@@ -1519,3 +1519,31 @@ an httpx client whose `request()` does not accept requests-style `stream=True`. 
 file existed. The adapter now opens httpx streams through `build_request`/`send`, accepts both
 `iter_bytes` and requests-compatible `iter_content`, closes the response and keeps the same Range
 resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` did not change.
+
+## 2026-08-25 — E30/A2 result: development battery realized; LAION arm honestly incomplete
+
+- **MLLM realization:** the frozen nine cells downloaded exactly 180/180 unique, decodable JPEGs:
+  60 GPT Image 2, 60 Nano Banana 2 and 60 matched real, each split 20/20/20 over hybrid,
+  structure and texture. Parent bytes are **4,419,610**; selection SHA-256 is
+  `f71c8d02709b311308017f7bb1b30acc859e543579cf36df6a26ee0b0a88035e`; content-set SHA-256 is
+  `1f3a733340582045225684ae49679d547035b5e1a995e05faf1e44dfe6b4df2e`.
+- **Transport battery:** every parent produced deterministic q90, q75, q50 and resize256-q90
+  children in the same DEVELOPMENT role and with the same content id. The 720 children occupy
+  **14,029,255 B**; all 900 parent/child files have unique byte hashes. Combined content-set
+  SHA-256 is `7634755c75f855064e0d6c3c2731c6fe63d6582f2b6065654698adbf32e924b8`.
+- **Shortcut gate:** metadata-only AUC is 0.6238 on parents, then 0.6096 / 0.6191 / 0.6362 /
+  0.6127 for q90 / q75 / q50 / resize256-q90. All are below the pre-registered 0.65 ceiling;
+  formats are JPEG on both labels and no audit issue fired. This permits model evaluation but
+  does not prove semantic independence or native-output performance.
+- **LAION interruption and retry:** the first preflight stopped at 1/10 when connectivity failed.
+  The corrected runner now persists incomplete selections and per-pipeline/failure diagnostics
+  instead of throwing away the evidence. On retry, 55/80 rows passed unchanged requirements:
+  10 each for iPhone 11, 11 Pro, XS and XR; 9 SM-G930F; 5 SM-G950F; 1 SM-G935F; 0 Redmi Note 4.
+- **Why no partial download:** among 361 rejected URLs, 287 exceeded 375 KB, 33 lacked a declared
+  length, 40 failed HTTP/network preflight and one returned non-image content. Even the ten
+  smallest reachable candidates per frozen group total about **45.96 MB**, versus the arm's
+  30 MB ceiling; combined with MLLM they exceed the 40 MB development stop. The source is recorded
+  `source_incomplete`, no LAION image was downloaded and no replacement cell was introduced.
+- **Acceptance boundary:** realized development image bytes are **18,448,865**, all from MLLM.
+  `evidence/e30_development_realization.json` is the compact committed record. No detector has
+  read E30 rows yet; A3 must seal the independent Qwen paths before any A4 development score.

@@ -98,21 +98,25 @@ certify universal real-photo safety.
 
 ### Phase A2 — realize the low-bandwidth development battery
 
-- [ ] Download a deterministic MLLMGenSet preprocessed slice with 20 examples per
+- [x] Download a deterministic MLLMGenSet preprocessed slice with 20 examples per
       class x artifact regime: 2 AI generators x 3 regimes x 20 = 120 AI plus
       3 regimes x 20 = 60 matched real, 180 images total. Require all nine cells and disclose this
       as a standardized-JPEG development test, not native-output performance.
-- [ ] Reconstruct a capped LAION-Mobile real-only slice across multiple declared phone/pipeline
-      groups. Cap each asset and the complete arm, retain upstream URL/licence metadata, reject
-      dead/replaced content and treat the arm as web-processed smartphone regression only.
-- [ ] Materialize matched deterministic q90/q75/q50 and resize variants locally without network
+- [x] Attempt the pre-registered capped LAION-Mobile real-only slice across eight declared
+      phone/pipeline groups. The unchanged 375 KB/file and 30 MB arm limits yielded only 55/80
+      eligible URLs (10/10 in four Apple groups; 9/10, 5/10, 1/10 and 0/10 in the remaining
+      groups), so this source is explicitly `source_incomplete` and no partial arm is downloaded
+      or silently rebalanced. The ignored diagnostic retains upstream URL/hash and failure cause.
+- [x] Materialize matched deterministic q90/q75/q50 and resize variants locally without network
       cost, after parent-role assignment. Keep every derivative beside its parent id so no variant
       can leak across roles.
 - **Low-bandwidth ceiling:** target <=30 MB for development bytes and stop at 40 MB. A source that
   cannot meet its frozen cell counts within the ceiling is reported incomplete rather than
   silently rebalanced.
-- **Acceptance:** exact counts, bytes, source revisions, content hashes, licence boundaries and all
-  audit outcomes are recorded before any detector is run.
+- **Acceptance:** complete. The realized MLLM arm is 180 parents / 4,419,610 B plus 720 local
+  derivatives / 14,029,255 B (18,448,865 image bytes total). All five transport-specific metadata
+  probes pass the frozen AUC <=0.65 rule (0.610–0.636). Exact hashes and the LAION incomplete-source
+  audit are archived in `evidence/e30_development_realization.json` before detector scoring.
 
 ### Phase A3 — freeze and realize the compact current-generator final candidate
 

@@ -583,18 +583,25 @@ def fetch_laion_metadata(output_dir: Path) -> list[dict[str, str]]:
     return list(csv.DictReader(io.StringIO(raw.decode("utf-8"))))
 
 
-def freeze_laion_assets(rows: Iterable[Mapping[str, str]], head_requester: Callable[..., Any] = _request_with_retry) -> tuple[list[RemoteAsset], list[dict[str, str]]]:
+def freeze_laion_assets(
+    rows: Iterable[Mapping[str, str]],
+    head_requester: Callable[..., Any] = _request_with_retry,
+) -> tuple[list[RemoteAsset], list[dict[str, str]], dict[str, dict[str, int]]]:
     source = registry()[LAION_ID]
     grouped = laion_candidates(rows)
     selected = []
     failures = []
+    pipeline_status: dict[str, dict[str, int]] = {}
     running_bytes = 0
     for make, model in LAION_PIPELINES:
+        pipeline = f"{make}:{model}"
         print(f"preflighting LAION pipeline {make}:{model}", flush=True)
         accepted = 0
+        attempted = 0
         for row in grouped[(make, model)]:
             if accepted >= LAION_PER_PIPELINE:
                 break
+            attempted += 1
             url = str(row["url"])
             try:
                 response = head_requester(
@@ -607,13 +614,34 @@ def freeze_laion_assets(rows: Iterable[Mapping[str, str]], head_requester: Calla
                 length = int(response.headers.get("content-length", "0"))
                 content_type = response.headers.get("content-type", "").lower()
                 if not 0 < length <= LAION_PER_FILE_CEILING:
-                    raise RuntimeError(f"size {length} outside cap")
+                    category = "missing_length" if length <= 0 else "over_per_file_cap"
+                    raise RuntimeError(f"{category}: size {length} outside cap")
                 if "image" not in content_type:
-                    raise RuntimeError(f"content type {content_type!r} is not image")
+                    raise RuntimeError(
+                        f"non_image_content_type: content type {content_type!r} is not image"
+                    )
                 if running_bytes + length > LAION_IMAGE_CEILING:
-                    raise RuntimeError("complete LAION image ceiling would be exceeded")
+                    raise RuntimeError(
+                        "total_byte_ceiling: complete LAION image ceiling would be exceeded"
+                    )
             except Exception as error:
-                failures.append({"image_id": row["image_id"], "reason": str(error)[:160]})
+                reason = str(error)[:240]
+                category = reason.split(":", 1)[0]
+                if category not in {
+                    "missing_length",
+                    "over_per_file_cap",
+                    "non_image_content_type",
+                    "total_byte_ceiling",
+                }:
+                    category = "network_or_http"
+                failures.append(
+                    {
+                        "image_id": row["image_id"],
+                        "pipeline": pipeline,
+                        "category": category,
+                        "reason": reason,
+                    }
+                )
                 continue
             suffix = Path(urlparse(url).path).suffix.lower()
             if suffix not in {".jpg", ".jpeg", ".png", ".webp"}:
@@ -644,14 +672,39 @@ def freeze_laion_assets(rows: Iterable[Mapping[str, str]], head_requester: Calla
                 f"({running_bytes:,} declared image bytes)",
                 flush=True,
             )
-        if accepted != LAION_PER_PIPELINE:
-            raise RuntimeError(f"LAION pipeline {(make, model)!r} filled only {accepted}/10")
+        pipeline_status[pipeline] = {
+            "available_metadata_rows": len(grouped[(make, model)]),
+            "attempted": attempted,
+            "selected": accepted,
+            "required": LAION_PER_PIPELINE,
+        }
     enforce_byte_ceiling(
         [int(asset.expected_bytes or 0) for asset in selected],
         total_ceiling=LAION_IMAGE_CEILING,
         per_file_ceiling=LAION_PER_FILE_CEILING,
     )
-    return selected, failures
+    return selected, failures, pipeline_status
+
+
+def _laion_selection_manifest(
+    assets: Iterable[RemoteAsset],
+    failures: list[dict[str, str]],
+    pipeline_status: Mapping[str, Mapping[str, int]],
+    path: Path,
+) -> dict[str, Any]:
+    frozen = freeze_manifest(assets, path)
+    complete = all(
+        status["selected"] == status["required"] for status in pipeline_status.values()
+    )
+    frozen["state"] = "selection_frozen" if complete else "source_incomplete"
+    frozen["pipeline_status"] = pipeline_status
+    frozen["preflight_failure_counts"] = {
+        category: sum(failure["category"] == category for failure in failures)
+        for category in sorted({failure["category"] for failure in failures})
+    }
+    frozen["preflight_failures"] = failures
+    _atomic_json(path, frozen)
+    return frozen
 
 
 def _selection_summary(payload: Mapping[str, Any]) -> dict[str, Any]:
@@ -709,10 +762,14 @@ def main() -> None:
     else:
         output = root / "laion_mobile_development"
         rows = fetch_laion_metadata(output / "metadata")
-        assets, failures = freeze_laion_assets(rows)
-        frozen = freeze_manifest(assets, output / "selection.json")
-        frozen["preflight_failures"] = failures
-        _atomic_json(output / "selection.json", frozen)
+        assets, failures, pipeline_status = freeze_laion_assets(rows)
+        frozen = _laion_selection_manifest(
+            assets, failures, pipeline_status, output / "selection.json"
+        )
+        if args.command.startswith("download") and frozen["state"] != "selection_frozen":
+            raise RuntimeError(
+                "LAION selection is source_incomplete; see selection.json diagnostics"
+            )
         payload = (
             download_assets(assets, output, total_ceiling=LAION_IMAGE_CEILING)
             if args.command.startswith("download")
