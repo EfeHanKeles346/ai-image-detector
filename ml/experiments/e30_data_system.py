@@ -16,14 +16,14 @@ import io
 import json
 import os
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping
 from urllib.parse import urlparse
 
 from huggingface_hub import HfApi, hf_hub_url
 from huggingface_hub.utils import get_session
-from PIL import Image
+from PIL import Image, ImageOps
 
 from pixelproof.data_contract import (
     DataRecord,
@@ -31,6 +31,7 @@ from pixelproof.data_contract import (
     content_set_sha256,
     dhash_image,
     enforce_byte_ceiling,
+    load_manifest,
     record_to_dict,
     sha256_bytes,
     shortcut_audit,
@@ -52,6 +53,12 @@ QWEN_TOTAL_CEILING = 70_000_000
 LAION_PER_PIPELINE = 10
 LAION_PER_FILE_CEILING = 375_000
 LAION_IMAGE_CEILING = 30_000_000
+DERIVED_VARIANTS = {
+    "jpeg_q90": {"quality": 90, "long_side": None},
+    "jpeg_q75": {"quality": 75, "long_side": None},
+    "jpeg_q50": {"quality": 50, "long_side": None},
+    "resize256_q90": {"quality": 90, "long_side": 256},
+}
 MLLM_REGIMES = {
     "Hybrid Images": "hybrid",
     "Structure Images": "structure",
@@ -446,6 +453,102 @@ def download_assets(
     return manifest
 
 
+def derive_mllm_variants(output_dir: Path) -> dict[str, Any]:
+    """Create independent, role-inherited transport variants from each parent JPEG."""
+    source_manifest, loaded = load_manifest(
+        output_dir / "manifest.json", require_hashes=True
+    )
+    if {record.role for record in loaded} != {DataRole.DEVELOPMENT_TEST}:
+        raise PermissionError("MLLM derivatives require development-test parents only")
+    parents = [
+        replace(record, content_id=record.content_id or f"mllm:{record.record_id}")
+        for record in loaded
+    ]
+    derived: list[DataRecord] = []
+    for parent in parents:
+        raw = (output_dir / parent.path).read_bytes()
+        if sha256_bytes(raw) != parent.sha256:
+            raise RuntimeError(f"parent hash changed before derivation: {parent.record_id}")
+        with Image.open(io.BytesIO(raw)) as opened:
+            base = ImageOps.exif_transpose(opened).convert("RGB")
+        for variant, settings in DERIVED_VARIANTS.items():
+            image = base.copy()
+            long_side = settings["long_side"]
+            if long_side is not None and max(image.size) > int(long_side):
+                image.thumbnail((int(long_side), int(long_side)), Image.Resampling.LANCZOS)
+            relative = f"derived/{parent.record_id}_{variant}.jpg"
+            path = output_dir / relative
+            if path.is_file():
+                encoded = path.read_bytes()
+            else:
+                buffer = io.BytesIO()
+                image.save(
+                    buffer,
+                    format="JPEG",
+                    quality=int(settings["quality"]),
+                    optimize=True,
+                    subsampling=2,
+                )
+                encoded = buffer.getvalue()
+                path.parent.mkdir(parents=True, exist_ok=True)
+                temporary = path.with_suffix(".jpg.part")
+                temporary.write_bytes(encoded)
+                temporary.replace(path)
+            with Image.open(io.BytesIO(encoded)) as checked:
+                checked.load()
+                width, height = checked.size
+                image_format = str(checked.format or "UNKNOWN").upper()
+                perceptual = dhash_image(checked)
+            derived.append(
+                DataRecord(
+                    record_id=sha256_bytes(f"{parent.record_id}:{variant}".encode())[:24],
+                    role=parent.role,
+                    source_id=parent.source_id,
+                    source_revision=parent.source_revision,
+                    source_key=f"{parent.source_key}#{variant}",
+                    label=parent.label,
+                    group=parent.group,
+                    transport=variant,
+                    path=relative,
+                    generator=parent.generator,
+                    camera_pipeline=parent.camera_pipeline,
+                    content_id=parent.content_id,
+                    parent_id=parent.record_id,
+                    sha256=sha256_bytes(encoded),
+                    dhash=perceptual,
+                    bytes=len(encoded),
+                    width=width,
+                    height=height,
+                    image_format=image_format,
+                )
+            )
+    records = validate_records([*parents, *derived], require_hashes=True)
+    audits = {
+        transport: shortcut_audit(
+            [
+                replace(record, parent_id=None)
+                for record in records
+                if record.transport == transport
+            ]
+        )
+        for transport in (parents[0].transport, *DERIVED_VARIANTS)
+    }
+    manifest = {
+        "schema_version": 1,
+        "state": "derived_verified",
+        "parent_manifest_content_set_sha256": source_manifest["content_set_sha256"],
+        "parent_count": len(parents),
+        "derived_count": len(derived),
+        "derived_bytes": sum(int(record.bytes or 0) for record in derived),
+        "content_set_sha256": content_set_sha256(records),
+        "unique_sha256": len({record.sha256 for record in records}),
+        "shortcut_audits_by_transport": audits,
+        "records": [record_to_dict(record) for record in records],
+    }
+    _atomic_json(output_dir / "derived_manifest.json", manifest)
+    return manifest
+
+
 def laion_candidates(metadata: Iterable[Mapping[str, str]]) -> dict[tuple[str, str], list[Mapping[str, str]]]:
     grouped: dict[tuple[str, str], list[Mapping[str, str]]] = {key: [] for key in LAION_PIPELINES}
     for row in metadata:
@@ -552,6 +655,7 @@ def main() -> None:
         choices=(
             "freeze-mllm",
             "download-mllm",
+            "derive-mllm",
             "freeze-qwen",
             "download-qwen",
             "freeze-laion",
@@ -562,7 +666,9 @@ def main() -> None:
     args = parser.parse_args()
     root = args.output_root.resolve()
 
-    if args.command.endswith("mllm"):
+    if args.command == "derive-mllm":
+        payload = derive_mllm_variants(root / "mllm_development")
+    elif args.command.endswith("mllm"):
         assets = freeze_mllm_assets()
         output = root / "mllm_development"
         frozen = freeze_manifest(assets, output / "selection.json")

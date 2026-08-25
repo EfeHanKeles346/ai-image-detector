@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from PIL import Image
 
 
 MODULE_PATH = Path(__file__).parents[1] / "experiments/e30_data_system.py"
@@ -142,3 +143,63 @@ def test_laion_candidates_require_every_frozen_pipeline():
     rows.pop()
     with pytest.raises(RuntimeError, match="only 9"):
         e30.laion_candidates(rows)
+
+
+def test_derived_variants_inherit_parent_role_content_and_split(tmp_path):
+    output = tmp_path / "mllm_development"
+    images = output / "images"
+    images.mkdir(parents=True)
+    records = []
+    for index in range(10):
+        label = "real" if index < 5 else "ai"
+        image = Image.new(
+            "RGB",
+            (320 + index, 240 + index),
+            color=(index * 20, 100, 200 - index * 10),
+        )
+        path = images / f"{index}.jpg"
+        image.save(path, format="JPEG", quality=95)
+        raw = path.read_bytes()
+        records.append(
+            {
+                "record_id": f"parent-{index}",
+                "role": "development_test",
+                "source_id": e30.MLLM_ID,
+                "source_revision": "1" * 40,
+                "source_key": f"source/{index}.jpg",
+                "label": label,
+                "group": "matched",
+                "transport": "standardized_jpeg",
+                "path": f"images/{index}.jpg",
+                "generator": "generator" if label == "ai" else None,
+                "camera_pipeline": "camera" if label == "real" else None,
+                "content_id": None,
+                "parent_id": None,
+                "sha256": e30.sha256_bytes(raw),
+                "dhash": None,
+                "bytes": len(raw),
+                "width": image.width,
+                "height": image.height,
+                "image_format": "JPEG",
+            }
+        )
+    (output / "manifest.json").write_text(
+        __import__("json").dumps(
+            {
+                "schema_version": 1,
+                "content_set_sha256": "a" * 64,
+                "records": records,
+            }
+        )
+    )
+    result = e30.derive_mllm_variants(output)
+    assert result["parent_count"] == 10
+    assert result["derived_count"] == 40
+    assert len(result["records"]) == 50
+    assert all(record["role"] == "development_test" for record in result["records"])
+    derived = [record for record in result["records"] if record["parent_id"]]
+    parents = {record["record_id"]: record for record in result["records"] if not record["parent_id"]}
+    for record in derived:
+        parent = parents[record["parent_id"]]
+        assert record["content_id"] == parent["content_id"]
+        assert record["label"] == parent["label"]
