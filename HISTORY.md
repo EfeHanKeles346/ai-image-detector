@@ -1683,3 +1683,22 @@ than an invisible distribution change. `evidence/e30_development_realization.jso
 aggregate counts, hashes and audits needed for the internship report; detailed third-party URLs
 and all images remain ignored. A larger full-internet attempt must be a separately pre-registered
 version, preferably with a native multi-phone vault, rather than mutating this result.
+
+### E30/A3 seal — the independent frontier scout is fixed before download
+
+The first Qwen Image Bench metadata call tried to paginate large directories and was stopped after
+90 silent seconds, before producing a selection or downloading an image. A bounded pinned-revision
+tree query replaced it and now fetches only enough metadata to apply the unchanged numeric-first
+rule. A regression test fixes the endpoint revision, encoded directory, 20-item page and 15-second
+attempt timeout.
+
+This pre-download audit also corrected the project's all-PNG assumption. The selected source rows
+are 21 PNG and 19 JPEG, so acquisition now preserves the original mixed encoding under one
+`native_source` transport instead of silently excluding four generators' early rows or converting
+them. The sealed result is 40 paths, five for each of eight 2026 generator families, totaling
+37,907,745 declared bytes under the 70 MB ceiling. Selection SHA is `50e3fec1...eeb`; every exact
+path and prompt id is archived in `evidence/e30_qwen_sealed_selection.json` with
+`detector_scored=false`.
+
+The small sample is still only a pipeline scout. Its existence does not authorize threshold
+tuning or a pass/fail statement, and the locked images remain unread until this seal is committed.

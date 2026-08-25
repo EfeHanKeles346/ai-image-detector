@@ -23,7 +23,10 @@ def fake_tree(repo_id, revision, directory):
             for index in range(1, 31)
         ]
     return [
-        {"path": f"{directory}/{index:06d}_hash.png", "size": 1_000_000 + index}
+        {
+            "path": f"{directory}/{index:06d}_hash{'.jpg' if index % 2 else '.png'}",
+            "size": 1_000_000 + index,
+        }
         for index in range(1, 11)
     ]
 
@@ -43,6 +46,30 @@ def test_qwen_selection_is_generator_balanced_and_capped():
     for generator in e30.QWEN_GENERATORS:
         assert sum(asset.generator == generator for asset in assets) == e30.QWEN_PER_GENERATOR
     assert all(asset.role == e30.DataRole.LOCKED_FINAL_TEST for asset in assets)
+    assert all(asset.transport == "native_source" for asset in assets)
+    assert {Path(asset.filename).suffix for asset in assets} == {".jpg", ".png"}
+
+
+def test_bounded_repo_tree_requests_only_first_page_at_pinned_revision():
+    calls = []
+
+    class JsonResponse:
+        def json(self):
+            return [{"path": "images/a model/000001_hash.png", "size": 123}]
+
+    def requester(method, url, **kwargs):
+        calls.append((method, url, kwargs))
+        return JsonResponse()
+
+    files = e30._repo_files_first_page(
+        "owner/repo", "a" * 40, "images/a model", requester=requester
+    )
+    assert files == [{"path": "images/a model/000001_hash.png", "size": 123}]
+    method, url, kwargs = calls[0]
+    assert method == "GET"
+    assert f"/{'a' * 40}/images%2Fa%20model" in url
+    assert kwargs["params"]["limit"] == 20
+    assert kwargs["request_timeout"] == 15
 
 
 class FakeResponse:

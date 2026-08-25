@@ -1,0 +1,298 @@
+{
+  "experiment": "E30-A3-seal",
+  "recorded_at": "2026-08-25",
+  "role": "locked_final_test",
+  "source_id": "Qwen/Qwen-Image-Bench",
+  "source_revision": "d2493deb153b020cf169c7e3f57d15e4dd697038",
+  "state": "selection_frozen",
+  "detector_scored": false,
+  "count": 40,
+  "declared_bytes": 37907745,
+  "selection_sha256": "50e3fec166c900365145854bfe5183764bbb8d655149d81c524dcbff18901eeb",
+  "format_counts": {
+    "jpg": 19,
+    "png": 21
+  },
+  "records": [
+    {
+      "record_id": "3ff6bbf5381815b25293d52a",
+      "source_key": "images/gpt-image-2/000001_3f50975f.png",
+      "expected_bytes": 1249383,
+      "generator": "gpt-image-2",
+      "prompt_id": "qwen-prompt:000001"
+    },
+    {
+      "record_id": "19685b85f0d5ba40f1a6c5ef",
+      "source_key": "images/gpt-image-2/000002_f738bd55.png",
+      "expected_bytes": 1187106,
+      "generator": "gpt-image-2",
+      "prompt_id": "qwen-prompt:000002"
+    },
+    {
+      "record_id": "cd99f76716af7d1685572c60",
+      "source_key": "images/gpt-image-2/000003_1e887447.png",
+      "expected_bytes": 1282704,
+      "generator": "gpt-image-2",
+      "prompt_id": "qwen-prompt:000003"
+    },
+    {
+      "record_id": "b58257324207237cbf5ab9c3",
+      "source_key": "images/gpt-image-2/000004_83758b43.png",
+      "expected_bytes": 1501814,
+      "generator": "gpt-image-2",
+      "prompt_id": "qwen-prompt:000004"
+    },
+    {
+      "record_id": "723700e332e72366e23a70de",
+      "source_key": "images/gpt-image-2/000005_6bcc250f.png",
+      "expected_bytes": 1843371,
+      "generator": "gpt-image-2",
+      "prompt_id": "qwen-prompt:000005"
+    },
+    {
+      "record_id": "dcd30a531d242d3d21d1a061",
+      "source_key": "images/nano-banana-2.0/000001_2fa84d24.png",
+      "expected_bytes": 1711482,
+      "generator": "nano-banana-2.0",
+      "prompt_id": "qwen-prompt:000001"
+    },
+    {
+      "record_id": "1ad67180f80f1604b91d17af",
+      "source_key": "images/nano-banana-2.0/000002_36d91b97.jpg",
+      "expected_bytes": 283405,
+      "generator": "nano-banana-2.0",
+      "prompt_id": "qwen-prompt:000002"
+    },
+    {
+      "record_id": "77ffc9dd9b40a7fbcb462417",
+      "source_key": "images/nano-banana-2.0/000003_05b0b65c.jpg",
+      "expected_bytes": 329475,
+      "generator": "nano-banana-2.0",
+      "prompt_id": "qwen-prompt:000003"
+    },
+    {
+      "record_id": "87a4c59f65226629f2620468",
+      "source_key": "images/nano-banana-2.0/000004_6b04da2c.jpg",
+      "expected_bytes": 442123,
+      "generator": "nano-banana-2.0",
+      "prompt_id": "qwen-prompt:000004"
+    },
+    {
+      "record_id": "e010cc71105f3ceb6b04227d",
+      "source_key": "images/nano-banana-2.0/000005_9ef61b49.jpg",
+      "expected_bytes": 506508,
+      "generator": "nano-banana-2.0",
+      "prompt_id": "qwen-prompt:000005"
+    },
+    {
+      "record_id": "effb641ecdcc76007e0e2116",
+      "source_key": "images/Seedream-5.0/000001_cff9bb2b.jpg",
+      "expected_bytes": 235106,
+      "generator": "Seedream-5.0",
+      "prompt_id": "qwen-prompt:000001"
+    },
+    {
+      "record_id": "f90978be229b5f73a0033415",
+      "source_key": "images/Seedream-5.0/000002_098d7c4e.jpg",
+      "expected_bytes": 233579,
+      "generator": "Seedream-5.0",
+      "prompt_id": "qwen-prompt:000002"
+    },
+    {
+      "record_id": "4d915be36f54dce6b3c91198",
+      "source_key": "images/Seedream-5.0/000003_db15bb85.jpg",
+      "expected_bytes": 298012,
+      "generator": "Seedream-5.0",
+      "prompt_id": "qwen-prompt:000003"
+    },
+    {
+      "record_id": "917992de9443db2d640663fc",
+      "source_key": "images/Seedream-5.0/000004_8c061de2.jpg",
+      "expected_bytes": 283648,
+      "generator": "Seedream-5.0",
+      "prompt_id": "qwen-prompt:000004"
+    },
+    {
+      "record_id": "cb44cd8a760dfbdbd67d7438",
+      "source_key": "images/Seedream-5.0/000005_0eef1f91.jpg",
+      "expected_bytes": 317106,
+      "generator": "Seedream-5.0",
+      "prompt_id": "qwen-prompt:000005"
+    },
+    {
+      "record_id": "696b9b1d97a3d09bbd8114e5",
+      "source_key": "images/Qwen-Image-2.0-pro/000001_5d1aea33.png",
+      "expected_bytes": 1729493,
+      "generator": "Qwen-Image-2.0-pro",
+      "prompt_id": "qwen-prompt:000001"
+    },
+    {
+      "record_id": "43e30185c10dfbebc5e4faf3",
+      "source_key": "images/Qwen-Image-2.0-pro/000002_e588458a.png",
+      "expected_bytes": 1487967,
+      "generator": "Qwen-Image-2.0-pro",
+      "prompt_id": "qwen-prompt:000002"
+    },
+    {
+      "record_id": "831c2381bf378d7cda7815f9",
+      "source_key": "images/Qwen-Image-2.0-pro/000003_9ac2aa31.png",
+      "expected_bytes": 1438402,
+      "generator": "Qwen-Image-2.0-pro",
+      "prompt_id": "qwen-prompt:000003"
+    },
+    {
+      "record_id": "79fba6667c83e62787835ec4",
+      "source_key": "images/Qwen-Image-2.0-pro/000004_0955161a.png",
+      "expected_bytes": 1745969,
+      "generator": "Qwen-Image-2.0-pro",
+      "prompt_id": "qwen-prompt:000004"
+    },
+    {
+      "record_id": "ba2477424753c5278376d3b5",
+      "source_key": "images/Qwen-Image-2.0-pro/000005_850e049e.png",
+      "expected_bytes": 1760768,
+      "generator": "Qwen-Image-2.0-pro",
+      "prompt_id": "qwen-prompt:000005"
+    },
+    {
+      "record_id": "6b29f4704f528797bffcea2a",
+      "source_key": "images/FLUX.2_max/000001_de6f47e9.jpg",
+      "expected_bytes": 343579,
+      "generator": "FLUX.2_max",
+      "prompt_id": "qwen-prompt:000001"
+    },
+    {
+      "record_id": "62201fff973e53988e4d3b99",
+      "source_key": "images/FLUX.2_max/000002_75895750.jpg",
+      "expected_bytes": 294913,
+      "generator": "FLUX.2_max",
+      "prompt_id": "qwen-prompt:000002"
+    },
+    {
+      "record_id": "4de654afa6a8da2d72761724",
+      "source_key": "images/FLUX.2_max/000003_fdcf395e.jpg",
+      "expected_bytes": 468039,
+      "generator": "FLUX.2_max",
+      "prompt_id": "qwen-prompt:000003"
+    },
+    {
+      "record_id": "ba9d7cf0f6cf74ef944e3777",
+      "source_key": "images/FLUX.2_max/000004_f59678b5.jpg",
+      "expected_bytes": 447813,
+      "generator": "FLUX.2_max",
+      "prompt_id": "qwen-prompt:000004"
+    },
+    {
+      "record_id": "efb1c280d4aaf9a1bf96ab2a",
+      "source_key": "images/FLUX.2_max/000005_5253c33b.jpg",
+      "expected_bytes": 375303,
+      "generator": "FLUX.2_max",
+      "prompt_id": "qwen-prompt:000005"
+    },
+    {
+      "record_id": "fad5a16d9ca545cf5c8460ad",
+      "source_key": "images/FLUX.2-pro/000001_9abeb34a.png",
+      "expected_bytes": 1139472,
+      "generator": "FLUX.2-pro",
+      "prompt_id": "qwen-prompt:000001"
+    },
+    {
+      "record_id": "a5f0d6f29656fbd373c22ad5",
+      "source_key": "images/FLUX.2-pro/000002_bd1f0d9c.png",
+      "expected_bytes": 1239747,
+      "generator": "FLUX.2-pro",
+      "prompt_id": "qwen-prompt:000002"
+    },
+    {
+      "record_id": "489f33260b38ffcc95ed8902",
+      "source_key": "images/FLUX.2-pro/000003_084eb030.png",
+      "expected_bytes": 1176224,
+      "generator": "FLUX.2-pro",
+      "prompt_id": "qwen-prompt:000003"
+    },
+    {
+      "record_id": "37ffba349db93df7ce5c5a17",
+      "source_key": "images/FLUX.2-pro/000004_47a50d10.png",
+      "expected_bytes": 1319342,
+      "generator": "FLUX.2-pro",
+      "prompt_id": "qwen-prompt:000004"
+    },
+    {
+      "record_id": "4f6ad8b99d696c925c06b59e",
+      "source_key": "images/FLUX.2-pro/000005_f83b4579.png",
+      "expected_bytes": 1311001,
+      "generator": "FLUX.2-pro",
+      "prompt_id": "qwen-prompt:000005"
+    },
+    {
+      "record_id": "f75193ea825aa50fb019fbbc",
+      "source_key": "images/GLM-Image/000001_a70b644b.jpg",
+      "expected_bytes": 358317,
+      "generator": "GLM-Image",
+      "prompt_id": "qwen-prompt:000001"
+    },
+    {
+      "record_id": "afcc07404c22b254cbdf7c2a",
+      "source_key": "images/GLM-Image/000002_37644e2d.jpg",
+      "expected_bytes": 287417,
+      "generator": "GLM-Image",
+      "prompt_id": "qwen-prompt:000002"
+    },
+    {
+      "record_id": "6e390e14bb8909b505675770",
+      "source_key": "images/GLM-Image/000003_a30693cc.jpg",
+      "expected_bytes": 329786,
+      "generator": "GLM-Image",
+      "prompt_id": "qwen-prompt:000003"
+    },
+    {
+      "record_id": "c4280aa850346985f6194141",
+      "source_key": "images/GLM-Image/000004_473d77cf.jpg",
+      "expected_bytes": 282207,
+      "generator": "GLM-Image",
+      "prompt_id": "qwen-prompt:000004"
+    },
+    {
+      "record_id": "51e4633bbec8d72278f62804",
+      "source_key": "images/GLM-Image/000005_8ae784aa.jpg",
+      "expected_bytes": 351608,
+      "generator": "GLM-Image",
+      "prompt_id": "qwen-prompt:000005"
+    },
+    {
+      "record_id": "0f6ab1157a9f992a36799779",
+      "source_key": "images/HunyuanImage-3.0/000001_349033c8.png",
+      "expected_bytes": 1720824,
+      "generator": "HunyuanImage-3.0",
+      "prompt_id": "qwen-prompt:000001"
+    },
+    {
+      "record_id": "2357285e28b3b482f1fce4a4",
+      "source_key": "images/HunyuanImage-3.0/000002_90116a99.png",
+      "expected_bytes": 1468112,
+      "generator": "HunyuanImage-3.0",
+      "prompt_id": "qwen-prompt:000002"
+    },
+    {
+      "record_id": "2aefee079674dc8da33288f8",
+      "source_key": "images/HunyuanImage-3.0/000003_545aecda.png",
+      "expected_bytes": 1525108,
+      "generator": "HunyuanImage-3.0",
+      "prompt_id": "qwen-prompt:000003"
+    },
+    {
+      "record_id": "1ef66c8f7620f5331b42b263",
+      "source_key": "images/HunyuanImage-3.0/000004_ae5c4309.png",
+      "expected_bytes": 1729773,
+      "generator": "HunyuanImage-3.0",
+      "prompt_id": "qwen-prompt:000004"
+    },
+    {
+      "record_id": "421d8fb7eab4d2a4f0df5fc7",
+      "source_key": "images/HunyuanImage-3.0/000005_df3676fe.png",
+      "expected_bytes": 1871739,
+      "generator": "HunyuanImage-3.0",
+      "prompt_id": "qwen-prompt:000005"
+    }
+  ]
+}

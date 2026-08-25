@@ -120,11 +120,15 @@ certify universal real-photo safety.
 
 ### Phase A3 — freeze and realize the compact current-generator final candidate
 
-- [ ] From Qwen Image Bench, freeze 2026 generator directories and deterministic image paths before
-      download. The first scout may use 5 per generator, but no pass/fail claim is allowed until a
-      frozen candidate is tested on at least 40 items per reported generator cell.
-- [ ] Keep original PNGs and separately create role-inherited standardized JPEG variants. Enforce a
-      70 MB low-bandwidth download ceiling for the scout and a manifest-first resume path.
+- [x] From Qwen Image Bench, freeze 2026 generator directories and deterministic image paths before
+      download. The sealed selection contains 5 per generator / 40 total, 37,907,745 declared
+      bytes and selection SHA `50e3fec1...eeb`; exact paths are committed in
+      `evidence/e30_qwen_sealed_selection.json`. This is scout-only and cannot produce a pass/fail
+      claim until a frozen candidate is tested on at least 40 items per reported generator cell.
+- [ ] Keep original source encodings (the pre-download tree audit corrected the initial all-PNG
+      assumption to mixed PNG/JPEG) and separately create role-inherited standardized JPEG
+      variants. Enforce a 70 MB low-bandwidth download ceiling for the scout and a manifest-first
+      resume path.
 - [ ] Commit only provenance, hashes, aggregate audits and the sealed row list; keep image bytes and
       any per-image visual material ignored. Do not inspect or score the locked rows during A3.
 - **Acceptance:** selected rows and content hashes are sealed, cross-collection overlap checks pass,

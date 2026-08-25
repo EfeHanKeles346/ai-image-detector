@@ -63,7 +63,7 @@ Add the two tile-only sets once tile training is the default, for GAN coverage a
 | Source (pinned revision) | Full source | E30 role and initial slice | Why selected | Boundary |
 |---|---:|---|---|---|
 | `zr-zhang/MLLM-Generated-Image-Detection-Dataset` (`1498eead…b9de`) | 4,356 rows / 3.32 GB | **DEVELOPMENT TEST**; planned 180 preprocessed JPEGs: 20 per GPT Image 2 / Nano Banana 2 / real × texture / structure / hybrid cell | Matched 2026 generators and real class with three explicit artifact regimes; independent of detector score | Dataset card is research-use restricted. JPEG arm is standardized transport, not native output; raw arm remains separate |
-| `Qwen/Qwen-Image-Bench` (`d2493deb…7038`) | 12.7 GB | **LOCKED FINAL TEST candidate**; first sealed scout is 5 each from 8 named 2026 generators (40 PNGs) | Independent collection and broad frontier coverage: GPT Image 2, Nano Banana 2, Seedream 5, Qwen Image 2 Pro, FLUX.2 Max/Pro, GLM-Image, Hunyuan Image 3 | Five per generator is scout-only. No success claim below 40 per reported generator; selected rows stay unscored until candidate/threshold freeze |
+| `Qwen/Qwen-Image-Bench` (`d2493deb…7038`) | 12.7 GB | **LOCKED FINAL TEST candidate**; first sealed scout is 5 each from 8 named 2026 generators (40 original mixed PNG/JPEG files) | Independent collection and broad frontier coverage: GPT Image 2, Nano Banana 2, Seedream 5, Qwen Image 2 Pro, FLUX.2 Max/Pro, GLM-Image, Hunyuan Image 3 | Five per generator is scout-only. No success claim below 40 per reported generator; selected rows stay unscored until candidate/threshold freeze |
 | `laionmobile/laion-mobile` (`0c60f598…3465`) | 935,399 metadata rows / 151 MB; evaluation manifest 9,115 rows / 2,639,565 B | **DEVELOPMENT TEST**; planned 8 declared phone/web pipeline groups × 10 local reconstructions | Real-only false-positive stress test with EXIF make/model and upstream content hashes, fetched row-wise rather than mirroring the corpus | Metadata is CC-BY-4.0; image licences remain upstream. Web-reprocessed and mostly older phones, not a native-camera vault |
 | New private multi-phone vault | Not yet collected | **LOCKED FINAL TEST**, target 4 pipelines × 40 untouched originals | Only reliable way to match native iPhone/Samsung/Pixel computational-photography pipelines without web laundering | Existing owner gallery is exposed development regression; no personal bytes, names, GPS or per-image identifiers enter Git |
 
@@ -91,6 +91,16 @@ each frozen phone cell would require about 45.96 MB for that arm alone (the Redm
 22.81 MB), exceeding both its 30 MB arm contract and the complete low-bandwidth development
 budget once MLLM is included. A future full-internet profile may pre-register a larger budget or
 replace this source with a native multi-phone vault, but must create a new selection version.
+
+### E30-A3 sealed Qwen scout (before image download)
+
+The exact 40-row LOCKED FINAL TEST scout is frozen at five score-blind, numerically first source
+paths per each of eight generators. Its declared size is **37,907,745 bytes**, selection SHA-256
+is `50e3fec1...eeb`, and the source tree contains 21 PNG plus 19 JPEG files. The initial all-PNG
+assumption was corrected from repository metadata before any image or model score was read; native
+encodings will be preserved. The complete sealed list is
+`evidence/e30_qwen_sealed_selection.json`. Five examples per generator support only a pipeline
+scout, never a success/failure claim or threshold choice.
 
 ### Current generators, AI-only — pair with care
 

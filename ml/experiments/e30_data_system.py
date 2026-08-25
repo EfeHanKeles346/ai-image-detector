@@ -19,7 +19,7 @@ import time
 from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse
 
 from huggingface_hub import HfApi, hf_hub_url
 from huggingface_hub.utils import get_session
@@ -79,6 +79,7 @@ QWEN_GENERATORS = (
     "GLM-Image",
     "HunyuanImage-3.0",
 )
+SOURCE_IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 LAION_PIPELINES = (
     ("apple", "iPhone 11"),
     ("apple", "iPhone 11 Pro"),
@@ -130,6 +131,39 @@ def _repo_files(repo_id: str, revision: str, directory: str) -> list[dict[str, A
     ):
         path = getattr(item, "path", "")
         size = getattr(item, "size", None)
+        if path and size:
+            output.append({"path": str(path), "size": int(size)})
+    return output
+
+
+def _repo_files_first_page(
+    repo_id: str,
+    revision: str,
+    directory: str,
+    requester: Callable[..., Any] | None = None,
+) -> list[dict[str, Any]]:
+    """Read a bounded, lexically ordered tree page when only its first rows are needed."""
+    if requester is None:
+        requester = _request_with_retry
+    encoded_directory = quote(directory, safe="")
+    url = (
+        f"https://huggingface.co/api/datasets/{repo_id}/tree/"
+        f"{revision}/{encoded_directory}"
+    )
+    response = requester(
+        "GET",
+        url,
+        params={"recursive": "false", "expand": "true", "limit": 20},
+        request_timeout=15,
+        max_attempts=3,
+    )
+    payload = response.json()
+    if not isinstance(payload, list):
+        raise RuntimeError("bounded repository tree did not return a list")
+    output = []
+    for item in payload:
+        path = item.get("path") if isinstance(item, Mapping) else None
+        size = item.get("size") if isinstance(item, Mapping) else None
         if path and size:
             output.append({"path": str(path), "size": int(size)})
     return output
@@ -201,7 +235,11 @@ def freeze_mllm_assets(file_lister: Callable[[str, str, str], list[dict[str, Any
     return assets
 
 
-def freeze_qwen_assets(file_lister: Callable[[str, str, str], list[dict[str, Any]]] = _repo_files) -> list[RemoteAsset]:
+def freeze_qwen_assets(
+    file_lister: Callable[
+        [str, str, str], list[dict[str, Any]]
+    ] = _repo_files_first_page,
+) -> list[RemoteAsset]:
     source = registry()[QWEN_ID]
     assets = []
     for generator in QWEN_GENERATORS:
@@ -209,13 +247,14 @@ def freeze_qwen_assets(file_lister: Callable[[str, str, str], list[dict[str, Any
         files = [
             item
             for item in file_lister(QWEN_ID, source["revision"], directory)
-            if Path(item["path"]).suffix.lower() == ".png"
+            if Path(item["path"]).suffix.lower() in SOURCE_IMAGE_SUFFIXES
         ]
         ordered = sorted(files, key=lambda item: _numeric_stem(item["path"]))
         if len(ordered) < QWEN_PER_GENERATOR:
-            raise RuntimeError(f"Qwen generator {generator!r} has only {len(ordered)} PNGs")
+            raise RuntimeError(f"Qwen generator {generator!r} has only {len(ordered)} images")
         for item in ordered[:QWEN_PER_GENERATOR]:
             prompt_id = Path(item["path"]).stem.split("_", 1)[0]
+            suffix = Path(item["path"]).suffix.lower()
             assets.append(
                 RemoteAsset(
                     source_id=QWEN_ID,
@@ -226,8 +265,8 @@ def freeze_qwen_assets(file_lister: Callable[[str, str, str], list[dict[str, Any
                     generator=generator,
                     camera_pipeline=None,
                     group=generator,
-                    transport="native_png",
-                    filename=f"{sha256_bytes(item['path'].encode())[:16]}.png",
+                    transport="native_source",
+                    filename=f"{sha256_bytes(item['path'].encode())[:16]}{suffix}",
                     expected_bytes=int(item["size"]),
                     content_id=f"qwen-prompt:{prompt_id}",
                 )

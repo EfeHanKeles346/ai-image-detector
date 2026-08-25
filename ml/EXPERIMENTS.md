@@ -1481,7 +1481,7 @@ new revision/completeness/expiry cache contract, passed 3/3 before retrying the 
   FUTURE TEST before source selection or scores.
 - **Frozen source roles:** existing audited project data remains TRAIN; E22/E24 source scores remain
   CALIBRATION; pinned MLLMGenSet GPT Image 2/Nano Banana 2/matched-real JPEGs and capped
-  LAION-Mobile reconstructions are DEVELOPMENT; pinned Qwen Image Bench 2026-generator PNG paths
+  LAION-Mobile reconstructions are DEVELOPMENT; pinned Qwen Image Bench 2026-generator source paths
   are the first LOCKED FINAL candidate; FUTURE stays empty until a post-cutoff release exists.
   The exposed owner gallery remains development regression only.
 - **Frozen gates:** working-v1 requires real macro FP <=5%, worst-source point FP <=10%, current-AI
@@ -1547,3 +1547,20 @@ resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` di
 - **Acceptance boundary:** realized development image bytes are **18,448,865**, all from MLLM.
   `evidence/e30_development_realization.json` is the compact committed record. No detector has
   read E30 rows yet; A3 must seal the independent Qwen paths before any A4 development score.
+
+## 2026-08-25 — E30/A3 seal: Qwen rows fixed before bytes or scores
+
+- The first tree-listing attempt used the general Hugging Face paginator and was stopped after
+  90 seconds without a response. It created neither image bytes nor a selection. The acquisition
+  path now requests only the first 20 lexically ordered entries from the pinned directory endpoint,
+  with a 15-second attempt timeout and bounded retries; selection still takes numeric rows 1–5.
+- Repository metadata falsified the planned all-PNG assumption before download: the frozen paths
+  contain **21 PNG and 19 JPEG** files. The tool now accepts declared image formats, retains each
+  original suffix and marks transport `native_source`; it does not transcode during acquisition.
+- Exactly **40 rows / 37,907,745 declared bytes** are frozen: five each for GPT Image 2,
+  Nano Banana 2.0, Seedream 5.0, Qwen Image 2.0 Pro, FLUX.2 Max, FLUX.2 Pro, GLM-Image and
+  HunyuanImage 3.0. Selection SHA-256 is
+  `50e3fec166c900365145854bfe5183764bbb8d655149d81c524dcbff18901eeb`.
+- `evidence/e30_qwen_sealed_selection.json` commits every source path, generator, prompt id and
+  declared byte count while `detector_scored=false`. No image was downloaded before this seal.
+  This remains a 5-per-generator scout; it cannot satisfy the >=40-per-cell reporting gate.
