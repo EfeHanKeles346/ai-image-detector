@@ -1818,3 +1818,9 @@ The exact source shard and row ids, maps, source fingerprints and counts are com
 before realization by design. Next, every frozen row must reproduce the source fingerprints,
 decode, avoid exact/dHash overlap with every protected role and yield one deterministic native
 128 px tile. No E31 model or embedding has read these rows yet.
+
+Before realization, one boundary was strengthened: protected loose directories and E30 manifests
+were already supported, but named test-only images stored inside Parquet were not. The reader now
+streams those embedded bytes too, so all 12,695 Julien Lucas rows and the separate 8,000-real /
+8,000-fake CommunityForensics probes can reject exact or dHash overlap. This amendment happened
+before the frozen selection opened an image and does not change its SHA.

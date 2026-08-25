@@ -7,6 +7,10 @@ from collections import Counter
 from pathlib import Path
 
 import pytest
+import pyarrow as pa
+import pyarrow.parquet as pq
+from PIL import Image
+import io
 
 
 MODULE_PATH = Path(__file__).parents[1] / "experiments/e31_train_v2.py"
@@ -70,3 +74,16 @@ def test_report_cannot_be_written_inside_source_root(tmp_path):
     root.mkdir()
     with pytest.raises(ValueError, match="refusing"):
         e31.write_json_atomic({"ok": True}, root / "selection.json", root)
+
+
+def test_parquet_protection_hashes_embedded_images(tmp_path):
+    buffer = io.BytesIO()
+    Image.new("RGB", (32, 32), (20, 40, 60)).save(buffer, format="PNG")
+    raw = buffer.getvalue()
+    folder = tmp_path / "protected"
+    folder.mkdir()
+    pq.write_table(pa.Table.from_pylist([{"image": {"bytes": raw, "path": None}}]), folder / "x.parquet")
+    exact, perceptual, counts = e31._parquet_protected([folder])
+    assert e31.hashlib.sha256(raw).hexdigest() in exact
+    assert len(perceptual) == 1
+    assert counts["protected"] == 1

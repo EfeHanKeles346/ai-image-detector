@@ -29,6 +29,7 @@ SEED = 20260825
 CALIBRATION_FOLD = 0
 N_FOLDS = 5
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".bmp", ".tif", ".tiff"}
+PROTECTED_IMAGE_COLUMNS = ("image", "image_data", "img", "picture")
 
 
 @dataclass(frozen=True)
@@ -464,6 +465,40 @@ def _loose_protected(directories: Sequence[Path]) -> tuple[set[str], set[str], C
     return exact, perceptual, counts
 
 
+def _parquet_protected(directories: Sequence[Path]) -> tuple[set[str], set[str], Counter[str]]:
+    exact: set[str] = set()
+    perceptual: set[str] = set()
+    counts: Counter[str] = Counter()
+    for directory in directories:
+        if not directory.exists():
+            continue
+        for path in real_parquets(directory):
+            parquet = pq.ParquetFile(path)
+            image_col = next(
+                (column for column in PROTECTED_IMAGE_COLUMNS if column in parquet.schema_arrow.names),
+                None,
+            )
+            if image_col is None:
+                counts[f"missing_image_column:{directory.name}"] += parquet.metadata.num_rows
+                continue
+            for batch in parquet.iter_batches(columns=[image_col], batch_size=64):
+                for row in batch.to_pylist():
+                    raw = _raw_image(row[image_col])
+                    if raw is None:
+                        counts[f"missing_bytes:{directory.name}"] += 1
+                        continue
+                    try:
+                        with Image.open(io.BytesIO(raw)) as image:
+                            image.load()
+                            perceptual.add(dhash_image(image))
+                    except Exception:
+                        counts[f"decode_failure:{directory.name}"] += 1
+                        continue
+                    exact.add(hashlib.sha256(raw).hexdigest())
+                    counts[directory.name] += 1
+    return exact, perceptual, counts
+
+
 def _e30_protected(repo_root: Path) -> tuple[set[str], set[str], int]:
     exact: set[str] = set()
     perceptual: set[str] = set()
@@ -486,14 +521,21 @@ def realize(
     selection_path: Path,
     tile_output: Path,
     protected_directories: Sequence[Path],
+    protected_parquet_directories: Sequence[Path],
 ) -> dict[str, Any]:
     selection = json.loads(selection_path.read_text())
     records = _validate_frozen(selection, root)
     repo_root = Path(__file__).resolve().parents[2]
     exact, perceptual, e30_manifest_count = _e30_protected(repo_root)
     loose_exact, loose_perceptual, protected_counts = _loose_protected(protected_directories)
+    parquet_exact, parquet_perceptual, parquet_counts = _parquet_protected(
+        protected_parquet_directories
+    )
     exact |= loose_exact
     perceptual |= loose_perceptual
+    exact |= parquet_exact
+    perceptual |= parquet_perceptual
+    protected_counts.update(parquet_counts)
 
     wanted_by_shard: dict[str, dict[int, dict[str, Any]]] = defaultdict(dict)
     for record in records:
@@ -659,6 +701,7 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     realize_parser.add_argument("--tiles", type=Path, required=True)
     realize_parser.add_argument("--output", type=Path, required=True)
     realize_parser.add_argument("--protect", action="append", type=Path, default=[])
+    realize_parser.add_argument("--protect-parquet", action="append", type=Path, default=[])
     return parser.parse_args(argv)
 
 
@@ -670,7 +713,13 @@ def main(argv: Iterable[str] | None = None) -> int:
         print(json.dumps(payload["counts"], indent=2, sort_keys=True))
         print(f"wrote frozen selection {args.output}")
         return 0
-    payload = realize(args.root, args.selection, args.tiles, args.protect)
+    payload = realize(
+        args.root,
+        args.selection,
+        args.tiles,
+        args.protect,
+        args.protect_parquet,
+    )
     write_json_atomic(payload, args.output, args.root)
     print(json.dumps(payload["counts"], indent=2, sort_keys=True))
     print(f"wrote realized evidence {args.output}")

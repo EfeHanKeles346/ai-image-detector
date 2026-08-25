@@ -1695,3 +1695,11 @@ resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` di
   any exact or dHash match against E30, Defactify, real-pipeline calibration, owner gallery and
   named test-only data, then create exactly one seeded native 128 px texture-qualified tile per
   parent. No model or embedding may read a selected image before this checkpoint is committed.
+
+### B2 realization protection amendment before selected-byte access
+
+The realization implementation originally hashed loose protected folders and E30 manifests but
+could not inspect test-only images embedded in Parquet. Before running it, protection was extended
+to stream every image in the Julien Lucas modern set and the separate CommunityForensics real/fake
+test Parquets. The six focused tests include an embedded-image protection fixture. This change does
+not alter selection SHA `5907c14b...bfb`; it only makes the post-freeze rejection gate stricter.
