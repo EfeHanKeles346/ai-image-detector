@@ -1413,3 +1413,18 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   recall and score distribution overall/per generator plus type/split diagnostics and failures.
   Because every item is AI, this probe cannot estimate FP, specificity, accuracy or AUC; no
   training, calibration, threshold choice or serving change is authorized.
+
+## 2026-08-25 — E29/Q1 implementation checkpoint before download
+
+- Added `experiments/e29_saneval_2025_probe.py`. It resolves all 600 source rows with bounded
+  retry, rejects a changed `x-revision`, applies the frozen group selection, HEAD-preflights every
+  selected JPEG and aborts above 100,000,000 bytes before downloading.
+- Each downloaded cell must match HEAD length, decode as JPEG at the declared geometry and have a
+  unique SHA-256. Writes use a temporary sibling followed by atomic replace; the ignored local
+  manifest records row/model/type/split, file hash, total bytes and a deterministic content-set
+  hash without persisting expiring cache URLs.
+- The same command resolves the already-cached, hash-verified CF-ViT through the existing E21
+  adapter and reads `CF_T_AI=0.6617392` from the served decision contract. It reports recall by
+  model/type/split and preserves per-row local scores for audit.
+- Automated selection/budget tests passed 2/2. Full Python tests passed **52/52**; compileall and
+  `pip check` passed. The implementation checkpoint precedes all image download and scoring.

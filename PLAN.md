@@ -28,12 +28,19 @@ selected the MIT-licensed `saneval-ann/saneval-sample` at revision
 
 ### Phase Q1 — build and verify the compact local subset
 
-- [ ] Add a reproducible downloader/probe command with retry, schema/revision checks, deterministic
+- [x] Add a reproducible downloader/probe command with retry, schema/revision checks, deterministic
       row selection, byte cap, SHA-256 manifest and resume-safe writes.
 - [ ] Download into ignored `ml/data/e29_saneval_2025/`; verify exactly 100 unique decodable JPEGs,
       20 per model, and report the exact on-disk bytes below 100 MB.
 - **Acceptance:** unit tests cover row selection and the hard byte ceiling; no third-party image is
   committed and the committed evidence contains only provenance, hashes/aggregates and results.
+- **Implementation checkpoint 2026-08-25:** `e29_saneval_2025_probe.py` now fetches the pinned row
+  schema with bounded retry, verifies the revision header, selects the pre-registered 100 rows,
+  preflights every cache asset, enforces the decimal 100 MB ceiling, validates JPEG/decode/geometry
+  and uniqueness, and writes ignored atomic local files plus a SHA-256 manifest. It reuses the
+  existing local CF-ViT adapter and frozen threshold for Q2. Selection/size tests passed 2/2; the
+  full Python suite passed 52/52, compileall and `pip check` passed. No image has been downloaded
+  at this checkpoint.
 
 ### Phase Q2 — run frozen CF-ViT once and report recall
 

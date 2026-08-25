@@ -1567,3 +1567,16 @@ and revision checks. The row service exposes cached JPEGs although the source ca
 PNGs, so the result will explicitly be a web-recompression diagnostic. CF-ViT keeps threshold
 0.6617392; this AI-only slice can measure recall but cannot measure false positives, specificity,
 accuracy or AUC. No training, tuning or serving change is part of Q0–Q2.
+
+### Q1 implementation — the capped probe is ready before network data enters
+
+The new E29 command turns the pre-registration into an enforceable contract: bounded network
+retry, pinned revision and schema checks, deterministic balanced selection, 100,000,000-byte
+preflight/stream guard, JPEG/decode/geometry checks, unique file hashes and atomic local writes.
+It stores the third-party subset only under ignored `ml/data/` and reuses the existing verified
+CF-ViT adapter and frozen threshold rather than adding or tuning a model.
+
+Two new contract tests cover the exact 100-row balance and strict size failure. The complete
+Python suite passed 52/52, compileall and dependency checks passed. The internet interruption
+occurred before any image download, so no partial dataset existed; the pinned dataset endpoint was
+reachable again with the expected revision before this implementation checkpoint was closed.

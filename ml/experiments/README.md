@@ -24,6 +24,7 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 | `e25_modern_generator_probe.py` | measured limitation | Modern-generator recall probes, including GPT-family blindness |
 | `e27_gpt_family_arm.py` | **rejected** | GPT specialist experiment; corrected calibration-only union threshold fails G1 (14.5% < 40%), so it is not served |
 | `pixelproof-train-stay-positive` | candidate, not served | E28 independent Stay-Positive head training over the frozen E20 backbone; N2/N3 gates decide whether it advances |
+| `e29_saneval_2025_probe.py` | pre-registered diagnostic | Pinned, balanced, sub-100 MB 2025-generator JPEG subset and frozen-threshold CF-ViT recall probe |
 
 The current served decision contract is E26's OR rule, implemented in `pixelproof/verdict.py`:
 CF-ViT is default; B-Free is optional and licence-gated. E27 is retained to reproduce the
