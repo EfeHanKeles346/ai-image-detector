@@ -1703,3 +1703,16 @@ could not inspect test-only images embedded in Parquet. Before running it, prote
 to stream every image in the Julien Lucas modern set and the separate CommunityForensics real/fake
 test Parquets. The six focused tests include an embedded-image protection fixture. This change does
 not alter selection SHA `5907c14b...bfb`; it only makes the post-freeze rejection gate stricter.
+
+### B2 first realization rejected at the mechanical input gate
+
+The committed 11,300-row selection decoded with zero corrupt-image failure but **3,534 rows** did
+not yield a native 128 px texture-qualified tile. The run refused to silently drop them and wrote
+no tile archive: post-selection loss would alter class/source proportions after the contract was
+frozen. This repeats E19's known small-image floor at a larger, source-aware selection.
+
+The next action is pre-registered as a data eligibility correction, not model-driven resampling:
+stream all 143,070 AI-vs-Real-balanced rows once, record only keys that decode, meet both 128 px
+dimensions and pass the unchanged 0.04 texture-floor tile rule, then freeze a new 11,300-row
+selection from that eligible set. The old selection and failure count remain in the log. Seven
+focused tests pin eligibility-set hashing before the scan runs.

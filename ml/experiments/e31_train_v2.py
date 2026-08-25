@@ -264,8 +264,14 @@ def evenly_select(candidates: Sequence[Candidate], target: int) -> list[Candidat
     return selected
 
 
-def select_contract_rows(root: Path, contract: SourceContract) -> list[Candidate]:
+def select_contract_rows(
+    root: Path,
+    contract: SourceContract,
+    eligible_keys: set[str] | None = None,
+) -> list[Candidate]:
     candidates = list(iter_candidates(root, contract))
+    if eligible_keys is not None:
+        candidates = [candidate for candidate in candidates if candidate.key in eligible_keys]
     if any(candidate.label not in {"real", "ai"} for candidate in candidates):
         raise ValueError(f"{contract.source_id} produced an unmapped label")
     if contract.selection == "cf_ai_per_generator":
@@ -319,7 +325,7 @@ def assign_group_folds(candidates: Sequence[Candidate]) -> dict[str, int]:
     return output
 
 
-def freeze(root: Path) -> dict[str, Any]:
+def freeze(root: Path, eligibility: Mapping[str, set[str]] | None = None) -> dict[str, Any]:
     if not root.is_dir():
         raise FileNotFoundError(f"dataset root is unavailable: {root}")
     selected: dict[str, Candidate] = {}
@@ -327,7 +333,8 @@ def freeze(root: Path) -> dict[str, Any]:
     for contract in SOURCES:
         fingerprint_key = f"{contract.source_id}:{contract.dirname}"
         fingerprints.setdefault(fingerprint_key, source_fingerprint(root, contract))
-        for candidate in select_contract_rows(root, contract):
+        eligible_keys = eligibility.get(contract.source_id) if eligibility else None
+        for candidate in select_contract_rows(root, contract, eligible_keys):
             if candidate.key in selected:
                 raise ValueError(f"duplicate selected source row {candidate.key}")
             selected[candidate.key] = candidate
@@ -401,6 +408,81 @@ def freeze(root: Path) -> dict[str, Any]:
             "Realization must reproduce every source fingerprint and selection SHA before decoding.",
         ],
     }
+
+
+def scan_eligibility(root: Path, source_id: str) -> dict[str, Any]:
+    """Decode every row of one source and freeze the mechanical 128 px input floor."""
+    contracts = [contract for contract in SOURCES if contract.source_id == source_id]
+    if not contracts:
+        raise ValueError(f"unknown TRAIN-v2 source {source_id!r}")
+    # Repeated label-specific contracts share the same physical source/schema.
+    contract = contracts[0]
+    candidates = list(iter_candidates(root, contract))
+    by_shard: dict[str, dict[int, Candidate]] = defaultdict(dict)
+    for candidate in candidates:
+        by_shard[candidate.shard][candidate.row_index] = candidate
+    eligible: list[str] = []
+    counts: Counter[str] = Counter()
+    for shard in sorted(by_shard):
+        path = root / shard
+        wanted = by_shard[shard]
+        parquet = pq.ParquetFile(path)
+        row_index = 0
+        for batch in parquet.iter_batches(columns=[contract.image_col], batch_size=64):
+            for row in batch.to_pylist():
+                candidate = wanted[row_index]
+                raw = _raw_image(row[contract.image_col])
+                if raw is None:
+                    counts[f"missing_bytes:{candidate.label}"] += 1
+                    row_index += 1
+                    continue
+                try:
+                    with Image.open(io.BytesIO(raw)) as opened:
+                        opened.load()
+                        image = opened.convert("RGB")
+                except Exception:
+                    counts[f"decode_failure:{candidate.label}"] += 1
+                    row_index += 1
+                    continue
+                if image.width < 128 or image.height < 128:
+                    counts[f"below_128:{candidate.label}"] += 1
+                    row_index += 1
+                    continue
+                rng_seed = int(stable_digest(f"tile:{SEED}:{stable_digest(candidate.key)[:24]}")[:8], 16)
+                if pick_tile(image, np.random.RandomState(rng_seed)) is None:
+                    counts[f"too_flat:{candidate.label}"] += 1
+                    row_index += 1
+                    continue
+                eligible.append(candidate.key)
+                counts[f"eligible:{candidate.label}"] += 1
+                row_index += 1
+    return {
+        "schema_version": 1,
+        "experiment": "E31/B2",
+        "state": "mechanical_input_eligibility_before_selection_v2",
+        "source_id": source_id,
+        "source_fingerprint": source_fingerprint(root, contract),
+        "tile_px": 128,
+        "texture_floor": 0.04,
+        "counts": dict(sorted(counts.items())),
+        "eligible_keys": sorted(eligible),
+        "eligible_set_sha256": hashlib.sha256("\n".join(sorted(eligible)).encode()).hexdigest(),
+        "boundary": "Eligibility uses decode, size and texture only; no model score or evaluation label outcome.",
+    }
+
+
+def load_eligibility(paths: Sequence[Path]) -> dict[str, set[str]]:
+    output: dict[str, set[str]] = {}
+    for path in paths:
+        payload = json.loads(path.read_text())
+        if payload.get("state") != "mechanical_input_eligibility_before_selection_v2":
+            raise ValueError(f"invalid eligibility state in {path}")
+        keys = list(payload.get("eligible_keys", []))
+        digest = hashlib.sha256("\n".join(sorted(keys)).encode()).hexdigest()
+        if digest != payload.get("eligible_set_sha256"):
+            raise ValueError(f"eligibility SHA mismatch in {path}")
+        output[payload["source_id"]] = set(keys)
+    return output
 
 
 def write_json_atomic(payload: Mapping[str, Any], output: Path, source_root: Path) -> None:
@@ -695,6 +777,11 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     freeze_parser = sub.add_parser("freeze")
     freeze_parser.add_argument("--root", type=Path, required=True)
     freeze_parser.add_argument("--output", type=Path, required=True)
+    freeze_parser.add_argument("--eligibility", action="append", type=Path, default=[])
+    eligibility_parser = sub.add_parser("eligibility")
+    eligibility_parser.add_argument("--root", type=Path, required=True)
+    eligibility_parser.add_argument("--source", required=True)
+    eligibility_parser.add_argument("--output", type=Path, required=True)
     realize_parser = sub.add_parser("realize")
     realize_parser.add_argument("--root", type=Path, required=True)
     realize_parser.add_argument("--selection", type=Path, required=True)
@@ -708,10 +795,16 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
 def main(argv: Iterable[str] | None = None) -> int:
     args = parse_args(argv)
     if args.command == "freeze":
-        payload = freeze(args.root)
+        payload = freeze(args.root, load_eligibility(args.eligibility))
         write_json_atomic(payload, args.output, args.root)
         print(json.dumps(payload["counts"], indent=2, sort_keys=True))
         print(f"wrote frozen selection {args.output}")
+        return 0
+    if args.command == "eligibility":
+        payload = scan_eligibility(args.root, args.source)
+        write_json_atomic(payload, args.output, args.root)
+        print(json.dumps(payload["counts"], indent=2, sort_keys=True))
+        print(f"wrote eligibility {args.output}")
         return 0
     payload = realize(
         args.root,

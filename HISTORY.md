@@ -1824,3 +1824,12 @@ were already supported, but named test-only images stored inside Parquet were no
 streams those embedded bytes too, so all 12,695 Julien Lucas rows and the separate 8,000-real /
 8,000-fake CommunityForensics probes can reject exact or dHash overlap. This amendment happened
 before the frozen selection opened an image and does not change its SHA.
+
+The first full realization then stopped for a different reason. All accessed rows decoded, but
+3,534 of 11,300 could not produce the required native 128 px texture-qualified tile. The program
+did not write a partial archive or let those losses silently rebalance sources. This is the E19
+small-image floor returning in the much larger balanced corpus. The rejected selection remains
+archived. A new eligibility command is committed before use: it may inspect only decode success,
+width/height and the unchanged 0.04 texture rule across the balanced source, freezes eligible row
+keys by SHA and cannot read a model score. Only after that mechanical set exists may selection v2
+be frozen.

@@ -87,3 +87,20 @@ def test_parquet_protection_hashes_embedded_images(tmp_path):
     assert e31.hashlib.sha256(raw).hexdigest() in exact
     assert len(perceptual) == 1
     assert counts["protected"] == 1
+
+
+def test_eligibility_sha_rejects_mutation(tmp_path):
+    keys = ["source:a:1", "source:b:2"]
+    payload = {
+        "state": "mechanical_input_eligibility_before_selection_v2",
+        "source_id": "source",
+        "eligible_keys": keys,
+        "eligible_set_sha256": e31.hashlib.sha256("\n".join(keys).encode()).hexdigest(),
+    }
+    path = tmp_path / "eligibility.json"
+    path.write_text(json.dumps(payload))
+    assert e31.load_eligibility([path]) == {"source": set(keys)}
+    payload["eligible_keys"].append("tampered")
+    path.write_text(json.dumps(payload))
+    with pytest.raises(ValueError, match="SHA mismatch"):
+        e31.load_eligibility([path])

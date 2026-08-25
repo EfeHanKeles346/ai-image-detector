@@ -91,6 +91,11 @@ test leakage, and only then ask E30 whether the frozen system advances.
   controls, not silently admitted. Selection SHA is `5907c14b...bfb`; its exact 11,300 row ids are
   committed before realization. B2 acceptance remains open until every frozen row is decoded,
   exact/dHash checked against all protected content, and the deterministic tile archive passes.
+- **First realization stop:** all selected bytes decoded, but 3,534/11,300 rows could not satisfy
+  the frozen native 128 px / texture-floor input contract. No tile archive was written. Before a
+  v2 selection, scan the full balanced source for mechanical eligibility only (decode, dimensions,
+  texture; never a model score), freeze the eligible-key set, then reproduce the same source caps
+  from eligible rows. The rejected `5907c14b...bfb` selection remains historical evidence.
 
 ### Phase B3 — screen a small heterogeneous representation ladder
 
