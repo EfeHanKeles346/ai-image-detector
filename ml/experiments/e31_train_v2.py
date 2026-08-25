@@ -634,6 +634,7 @@ def realize(
     dhash_overlaps = 0
     decode_failures = 0
     too_small_or_flat = 0
+    rejected_rows: list[dict[str, str]] = []
 
     for shard in sorted(wanted_by_shard):
         path = root / shard
@@ -651,6 +652,7 @@ def realize(
                     raw = _raw_image(row[image_col])
                     if raw is None:
                         decode_failures += 1
+                        rejected_rows.append({"record_id": record["record_id"], "reason": "missing_bytes"})
                         row_index += 1
                         continue
                     try:
@@ -659,6 +661,7 @@ def realize(
                             image = opened.convert("RGB")
                     except Exception:
                         decode_failures += 1
+                        rejected_rows.append({"record_id": record["record_id"], "reason": "decode_failure"})
                         row_index += 1
                         continue
                     raw_sha = hashlib.sha256(raw).hexdigest()
@@ -667,10 +670,24 @@ def realize(
                     dhash_hit = raw_dhash in perceptual
                     exact_overlaps += int(exact_hit)
                     dhash_overlaps += int(dhash_hit)
+                    if exact_hit or dhash_hit:
+                        rejected_rows.append(
+                            {
+                                "record_id": record["record_id"],
+                                "reason": (
+                                    "protected_exact_and_dhash"
+                                    if exact_hit and dhash_hit
+                                    else "protected_exact" if exact_hit else "protected_dhash"
+                                ),
+                            }
+                        )
                     rng_seed = int(stable_digest(f"tile:{SEED}:{record['record_id']}")[:8], 16)
                     tile = pick_tile(image, np.random.RandomState(rng_seed))
                     if tile is None:
                         too_small_or_flat += 1
+                        rejected_rows.append(
+                            {"record_id": record["record_id"], "reason": "tile_ineligible"}
+                        )
                         row_index += 1
                         continue
                     tile_sha = hashlib.sha256(tile.tobytes()).hexdigest()
@@ -697,15 +714,29 @@ def realize(
         if missing:
             raise ValueError(f"{shard} did not contain selected rows {missing[:3]}")
 
-    if decode_failures or too_small_or_flat:
-        raise RuntimeError(
-            f"realization incomplete: decode_failures={decode_failures}, "
-            f"too_small_or_flat={too_small_or_flat}"
-        )
-    if exact_overlaps or dhash_overlaps:
-        raise RuntimeError(
-            f"protected-content overlap: exact={exact_overlaps}, dhash={dhash_overlaps}"
-        )
+    if decode_failures or too_small_or_flat or exact_overlaps or dhash_overlaps:
+        return {
+            "schema_version": 1,
+            "experiment": "E31/B2",
+            "state": "rejected_realization_no_tile_archive",
+            "selection_sha256": selection["selection_sha256"],
+            "counts": {
+                "selected": len(records),
+                "decoded_and_tiled_before_rejection": len(realized_rows),
+                "decode_failures": decode_failures,
+                "too_small_or_flat": too_small_or_flat,
+                "protected_exact_overlaps": exact_overlaps,
+                "protected_dhash_overlaps": dhash_overlaps,
+            },
+            "protected_scope": {
+                "e30_manifest_files": e30_manifest_count,
+                "e30_and_loose_exact_hashes": len(exact),
+                "e30_and_loose_dhashes": len(perceptual),
+                "loose_directory_counts": dict(sorted(protected_counts.items())),
+            },
+            "rejected_rows": sorted(rejected_rows, key=lambda row: (row["record_id"], row["reason"])),
+            "boundary": "No tile archive was written because the frozen selection failed realization.",
+        }
     if len(realized_rows) != len(records):
         raise RuntimeError(f"realized {len(realized_rows)} of {len(records)} selected rows")
 
@@ -815,8 +846,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     )
     write_json_atomic(payload, args.output, args.root)
     print(json.dumps(payload["counts"], indent=2, sort_keys=True))
-    print(f"wrote realized evidence {args.output}")
-    return 0
+    print(f"wrote realization evidence {args.output}")
+    return 0 if payload["state"] == "realized_train_v2" else 2
 
 
 if __name__ == "__main__":

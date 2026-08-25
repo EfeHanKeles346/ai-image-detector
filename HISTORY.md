@@ -1842,3 +1842,8 @@ v2 preserves the 11,300 total, every source cap, label balance and group role; 7
 is `5355e430...9b2`. Because v1 rejected 3,534 total, the remaining possible one-row failure outside
 balanced is not inferred; v2 realization must expose it mechanically. Both eligibility and exact
 v2 row ids are committed before that run.
+
+One operational lesson from v1 was also kept: a long rejected run needs a receipt, not just a
+traceback. Before v2 reads bytes, realization now persists only rejected record ids/reasons and
+aggregate protected-scope counts, returns a non-zero status and still refuses to write tiles. This
+changes observability, not the frozen selection or acceptance rule.

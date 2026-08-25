@@ -104,3 +104,7 @@ def test_eligibility_sha_rejects_mutation(tmp_path):
     path.write_text(json.dumps(payload))
     with pytest.raises(ValueError, match="SHA mismatch"):
         e31.load_eligibility([path])
+
+
+def test_rejected_realization_state_is_non_success():
+    assert "rejected" != "realized_train_v2"

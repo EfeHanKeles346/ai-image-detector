@@ -1732,3 +1732,8 @@ focused tests pin eligibility-set hashing before the scan runs.
   remains committed as the rejected input. Selection v2 is committed before its image bytes are
   realized. The one-row difference between 3,534 total v1 rejects and 3,533 balanced replacements
   is left for the second exact realization to identify rather than guessed away.
+
+Before selection-v2 byte access, rejection handling was made evidentiary: a failed realization now
+writes a compact ignored receipt with record ids/reasons and protected-scope counts while still
+refusing the tile archive. This prevents another 15-minute scan from ending with only a traceback;
+it does not relax any gate or alter selection v2.
