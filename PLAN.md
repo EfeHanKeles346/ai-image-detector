@@ -39,17 +39,17 @@ test leakage, and only then ask E30 whether the frozen system advances.
 
 ### Phase B1 — inventory and scientifically audit the SSD holdings
 
-- [ ] Add a deterministic metadata-first audit command that resolves dataset roots explicitly and
+- [x] Add a deterministic metadata-first audit command that resolves dataset roots explicitly and
       reports physical files/bytes, Parquet rows/schema, label direction, source/generator
       coverage, formats/geometries, decode failures and duplicate hashes without writing to the
       external disk.
-- [ ] Re-run shortcut checks at each proposed model input: native whole image and fixed native
+- [x] Re-run shortcut checks at each proposed model input: native whole image and fixed native
       tile/encoder view. Reject any mode where format, resolution, aspect ratio or compression can
       separate labels beyond the existing frozen shortcut ceiling.
 - [ ] Hash-check proposed TRAIN content against E22/E24 calibration, owner gallery, all E30
       DEVELOPMENT and LOCKED manifests, and named test-only datasets. Exact/content overlap is a
       hard failure; unresolved provenance is recorded rather than guessed.
-- [ ] Commit a compact aggregate evidence file and update `DATASETS.md`, `ml/EXPERIMENTS.md` and
+- [x] Commit a compact aggregate evidence file and update `DATASETS.md`, `ml/EXPERIMENTS.md` and
       append-only `HISTORY.md`. No copied images or per-image private identifiers enter Git.
 - **Current pre-plan observation:** the disk contains about 255 GB of candidate data.
   CommunityForensics-Small has 44,884 rows (32,912 real, 11,972 AI) and 300 distinct AI
@@ -59,6 +59,13 @@ test leakage, and only then ask E30 whether the frozen system advances.
   availability, not eligibility.
 - **Acceptance:** every included/excluded source and safe input mode has a machine-readable reason;
   the audit can be rerun from a user-supplied root and fails clearly if the disk is absent.
+- **B1 metadata/probe checkpoint:** registered sources occupy 173.58 GB and inventory-only sources
+  97.34 GB. Complete metadata covers 603,991 Parquet rows. The bounded first/middle/last-shard
+  probe decoded 3,000/3,000 images, found zero sampled exact overlaps against 980 E30 protected
+  parent/derived hashes, and confirmed native shortcut AUCs of 1.000 / 0.967 / 0.841 for
+  CommunityForensics / AIGC / ai-vs-real-200k. Their fixed 128 probes pass at 0.636 / 0.540 /
+  0.552. B1 remains open only for the hard leakage condition: B2 must select exact TRAIN-v2 rows
+  before every selected row can be hashed against every protected role.
 
 ### Phase B2 — freeze a source-aware TRAIN v2 and CALIBRATION contract
 

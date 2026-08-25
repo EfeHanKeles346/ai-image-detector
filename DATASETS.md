@@ -40,23 +40,50 @@ loosened, since only 35–95 images per set survive it today.
 
 | Dataset | Size | Contents | Mode | Why |
 |---|---|---|---|---|
-| **`OwensLab/CommunityForensics-Small`** | 47 of 260 GB | **228 distinct generator models**, per-image `model_name` / `prompt` / `architecture` / `real_source` | any | The single most valuable training set we hold. Generator diversity is the known lever for cross-generator generalisation, and the metadata makes leave-one-generator-out possible — the only honest way to claim generalisation |
-| **`theminji/AI-vs-Real-balanced`** | 12 GB | 19,960 AI / 19,660 real, mixed formats both sides | any | Clean and balanced. Good second source so training is not tied to one collection's quirks |
-| `TheKernel01/AIGC-Detection-Benchmark` | 30 GB | 18 generators incl. GANs, balanced | **tiles only** | Shape trap: AI 100% square, real 40%. Adds GAN-era diversity that CommunityForensics (all latent-diffusion) lacks |
-| `theminji/ai-vs-real-200k` | 49 GB | 200k balanced | **tiles only** | Resolution trap: AI median 1024px, real 263px. Volume, but the least clean of the four |
+| **`OwensLab/CommunityForensics-Small`** | 49.77 GB / 44,884 rows | **300 distinct AI `model_name` values**; 11,972 AI / 32,912 real; prompt / architecture / real-source metadata | **fixed tile/encoder only** | Highest measured generator breadth, but native metadata AUC is 1.000 because reals are 1024 px and AI images 512 px. E31's fixed 128 RGB/JPEG probe falls to 0.636, below the frozen 0.65 ceiling |
+| **`theminji/AI-vs-Real-balanced`** | 12.96 GB / 143,070 rows | 71,535 AI / 71,535 real; upstream order is `0=AI, 1=real` | **fixed tile/encoder preferred** | Balanced and the cleanest large paired source, but E31 still found different native format sets. Native AUC 0.549; fixed 128 probe 0.586 and passes |
+| `TheKernel01/AIGC-Detection-Benchmark` | 32.03 GB / 125,026 rows | 62,513 per class; 17 AI generator codes plus the real code | **fixed tile/encoder only** | Native geometry shortcut is severe (AUC 0.967); fixed 128 probe falls to 0.540. Adds GAN-era breadth only after identical input normalization |
+| `theminji/ai-vs-real-200k` | 51.93 GB / 241,609 rows | 124,209 AI / 117,400 real; upstream order is `0=AI, 1=real` | **fixed tile/encoder only** | Native resolution/format shortcut remains (AUC 0.841); fixed 128 probe is 0.552. Useful volume only under the audited representation |
 | `genimage_split` | ~2 GB | 7 older generators, perfectly balanced | any | Keep as the control: every model to date was trained on it, so it is the fair comparison baseline |
 
-**Recommended starting mix:** CommunityForensics-Small + AI-vs-Real-balanced (~59 GB, both clean).
-Add the two tile-only sets once tile training is the default, for GAN coverage and volume.
+**E31 starting policy:** do not call any large source unconditionally clean. Start TRAIN v2 from
+source-capped CommunityForensics-Small + AI-vs-Real-balanced under one fixed tile/encoder input;
+admit AIGC and ai-vs-real-200k only after selected-row leakage hashes and the same representation
+contract pass. Generator/source-disjoint folds matter more than consuming all 138+ GB.
 
 ### Testing — never train on these
 
 | Dataset | Size | Why it is a test set |
 |---|---|---|
 | **`defactify_test`** | 1.2 GB | Five generators newer than any training data, both classes JPEG. Our established benchmark — every number in `EXPERIMENTS.md` E7–E11 is measured here |
-| **`julienlucas/midjourney-dalle-sd-nanobananapro`** | 2.9 GB | Contains **Nano Banana Pro** (2026) with real photos, formats mixed on both sides. The cleanest modern set we have; small enough to be a test set rather than training data |
+| **`julienlucas/midjourney-dalle-sd-nanobananapro`** | 3.12 GB / 12,695 rows | Contains **Nano Banana Pro** (2026) with 6,195 AI / 6,500 real. E31's first/middle/last-shard sample found a severe native metadata shortcut (AUC 0.974; differing format and square distributions), while the fixed 128 probe was 0.560. Keep it test-only, but never call native pooled accuracy a clean generalisation result; report standardized and source/generator slices |
 | `archive1` | 240 MB | **Confounded** (see `HISTORY.md` §1b). Keep only for continuity with E1–E6; do not use for new claims |
 | `archive` (CIFAKE) | 469 MB | 32×32. Only SmallCNN's domain |
+
+### E31-B1 attached-disk audit (2026-08-25)
+
+The LaCie source root was audited read-only with `ml/experiments/e31_ssd_audit.py`. Registered
+sources occupy **173.58 GB** and inventory-only sources another **97.34 GB** (270.91 decimal GB
+total). Complete Parquet metadata covers 603,991 registered rows. A deterministic
+first/middle/last-shard image probe decoded **3,000/3,000** samples without failure and compared
+their exact byte hashes with **980** E30 parent/derived protected hashes; no sampled exact overlap
+was found.
+
+| paired source | native metadata AUC | fixed 128 RGB/JPEG probe | decision |
+|---|---:|---:|---|
+| CommunityForensics-Small | **1.000** | 0.636 | native reject; fixed representation may enter TRAIN-v2 selection |
+| AI-vs-Real-balanced | 0.549 plus differing format sets | 0.586 | fixed representation preferred |
+| AIGC benchmark | **0.967** | 0.540 | native reject; conditional fixed-representation candidate |
+| ai-vs-real-200k | **0.841** | 0.552 | native reject; conditional fixed-representation candidate |
+| Julien Lucas modern | **0.974** | 0.560 | stays test-only; native pooled claims unsafe |
+
+The fixed probe neutralizes geometry/format metadata; it does **not** prove that decoded pixels are
+free of compression or collection artefacts. The overlap result is also explicitly sampled, not a
+full-pool guarantee. E31-B2 must first freeze the exact TRAIN v2 rows, then hash every selected row
+against calibration, owner-gallery, DEVELOPMENT, LOCKED FINAL and named test-only content before
+any feature extraction or training. Aggregate evidence SHA-256 is
+`2f7399bed965a8a428b4180aab059405fbcc4d4aa4d3754a5295ee4e97021f29` in
+`evidence/e31_ssd_audit.json`; no source image or private identifier is committed.
 
 ### E30 pinned current-science sources — role assignment before download
 
@@ -172,13 +199,13 @@ distinction that matters.
 
 ```
 MODULE 1 train   CommunityForensics-Small ┐
-                 AI-vs-Real-balanced      ├─ clean, any mode
-                 genimage_split           ┘  (control)
+                 AI-vs-Real-balanced      ├─ fixed tile/encoder TRAIN-v2 candidates
+                 genimage_split           ┘  (older control)
                  AIGC-Detection-Benchmark ┐
                  ai-vs-real-200k          ┘  tiles only
 
 MODULE 1 test    defactify_test              established benchmark
-                 julienlucas                 Nano Banana Pro, cleanest modern
+                 julienlucas                 Nano Banana Pro; fixed-view test only
                  AI-only sets                per-generator recall probes
 
 MODULE 2         image-manipulation-compilation   masks, 13 sub-datasets
@@ -189,9 +216,10 @@ MODULE 2         image-manipulation-compilation   masks, 13 sub-datasets
 
 ## Gaps
 
-1. **CommunityForensics is 47 of 260 GB.** Before training on it, check whether the shards we
-   hold are representative — if they are ordered by generator, our slice may cover only a few of
-   the 228 models. (The auditor already learned this lesson once, on `theminji/ai-vs-real-200k`.)
+1. **Generator inventory is known; selected-row coverage is not yet frozen.** E31 measured all
+   44,884 local CommunityForensics rows and 300 distinct AI `model_name` values, overturning the
+   old 228-model estimate. B2 must still source-cap these highly uneven groups, create
+   generator-disjoint folds and hash every selected TRAIN-v2 row before training.
 2. **No realized native 2026 editing arm yet.** E30 pins GPT Image 2 / Nano Banana 2 data whose
    paper covers direct generation, reference reconstruction and local editing, but the compact
    local slice has not yet been downloaded/audited and the exposed HF folder hierarchy does not

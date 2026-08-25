@@ -1742,3 +1742,55 @@ pre-registered cells contain 20 items rather than the formal 40 minimum, but agg
 the 50% target so widely—and worst AI point recall is 0%—that consuming the final set would add no
 scientific value. `evidence/e30_development_benchmark.json` records the contracts and outcome;
 Qwen remains sealed and unscored. Work must return to representation/training, not threshold tuning.
+
+### E31/B0 — the attached disk changes the options, not the scientific rules
+
+The LaCie disk was attached after the existing E30 arms failed on current-generator DEVELOPMENT.
+The proposed recovery had three parts: inspect the large local datasets, retrain if old data had
+poisoned the models, and connect several models behind one decision. The proposal was evaluated
+against the archive before implementation. E20 did **not** use the old inverted-label pool: it was
+trained after E19's correction on 48,037 native tiles, and its three seeds reproduced the same
+source-shift failure. E28 had also shown that replacing only its head was insufficient. Repeating
+the identical E20 run would therefore create another checkpoint, not new evidence.
+
+The ensemble idea was kept but narrowed. E9 had already tested eight fixed blends and gained at
+most 0.002 AUC. E20 and CF-ViT make disjoint positive decisions on E30, but their simple OR catches
+only 52/600 correlated AI views and falsely triggers on 28/300 real views. This proves only that the
+current two-arm union is unusable; it does not rule out a later ensemble of genuinely heterogeneous
+and independently useful representations. `PLAN.md` now freezes E31 in the order SSD audit →
+source-aware TRAIN v2 → representation ladder → out-of-fold calibrated fusion → frozen E30 gate.
+The plan was committed first as `a929901`, before an E31 model score, checkpoint or ensemble fit.
+
+### E31/B1 checkpoint — 270.91 GB inventoried without writing to the source disk
+
+`e31_ssd_audit.py` was added as a reusable read-only audit instead of treating one mount path as
+project configuration. It requires `--root`, refuses to write its report under that root, ignores
+exFAT AppleDouble/cache artifacts, verifies known upstream label orders and reports aggregate data
+only. Ten registered sources occupy 173,576,436,217 bytes and seven inventory-only sources another
+97,337,151,271 bytes. Complete registered Parquet metadata covers 603,991 rows.
+
+The old CommunityForensics estimate was wrong in a useful direction: the 44,884 local rows contain
+11,972 AI, 32,912 real and **300** distinct AI model names—not 228 and not merely a few generators
+from an ordered partial shard set. Yet the pixels cannot be used natively without repeating the
+project's oldest mistake. Native metadata alone separates CommunityForensics at AUC 1.000, AIGC at
+0.967 and ai-vs-real-200k at 0.841. After an identical fixed 128 RGB/JPEG probe those values fall to
+0.636, 0.540 and 0.552. AI-vs-Real-balanced reaches native AUC 0.549 but still has different format
+sets; its fixed probe is 0.586. The Julien Lucas modern test set, previously described as the
+cleanest modern set, shows native AUC 0.974 in the deterministic shard-spread sample and must not
+support a naive pooled native claim; its fixed probe is 0.560.
+
+The final bounded run decoded 3,000/3,000 images and found no sampled exact match against all 980
+E30 parent and derived protected hashes. This is deliberately recorded as **sampled evidence**, not
+full decontamination. B2 must choose exact TRAIN-v2 rows and hash every one against calibration,
+owner gallery, E30 DEVELOPMENT/LOCKED and named test-only data before training. The compact evidence
+is `evidence/e31_ssd_audit.json` with SHA-256
+`2f7399bed965a8a428b4180aab059405fbcc4d4aa4d3754a5295ee4e97021f29`.
+
+Two local audit attempts were stopped rather than hidden. The first allocated 600 samples across
+every shard; Parquet then decompressed enormous embedded-image row groups for even one requested
+row. Limiting the range to 12 shards was still wasteful after a single CommunityForensics shard was
+measured at 4.09 GB. The final tested rule selects the lexical first, middle and last shard and 300
+rows per registered source, while full row/generator counts still read all metadata. Six focused
+tests pin root safety, AppleDouble exclusion, label behavior, bounded shard spread, implicit folder
+labels and inclusion of derived E30 manifests. Internet was not required, no external-disk byte was
+changed, no E31 training began and the Qwen LOCKED FINAL scout remains unscored.

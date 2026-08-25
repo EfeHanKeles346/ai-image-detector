@@ -26,6 +26,7 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 | `pixelproof-train-stay-positive` | candidate, not served | E28 independent Stay-Positive head training over the frozen E20 backbone; N2/N3 gates decide whether it advances |
 | `e29_saneval_2025_probe.py` | pre-registered diagnostic | Pinned, balanced, sub-100 MB 2025-generator JPEG subset and frozen-threshold CF-ViT recall probe |
 | `e30_data_system.py` | active data/OOD system | Five-role manifests, deterministic capped/resumable acquisition, shortcut audit and sealed current-generator selection |
+| `e31_ssd_audit.py` | active TRAIN-v2 audit | Read-only attached-disk inventory, verified label direction, bounded shard-spread decode/shortcut probes and explicit hash-coverage boundary |
 
 The current served decision contract is E26's OR rule, implemented in `pixelproof/verdict.py`:
 CF-ViT is default; B-Free is optional and licence-gated. E27 is retained to reproduce the

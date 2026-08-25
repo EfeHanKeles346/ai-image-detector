@@ -1,0 +1,838 @@
+{
+  "audit_mode": "complete_physical_and_parquet_metadata_plus_bounded_image_sample",
+  "boundaries": [
+    "The source root was read only; no source file was created, changed or removed.",
+    "Sample hashes do not prove full-dataset decontamination; B2 must hash every selected TRAIN v2 row.",
+    "A fixed-size metadata probe neutralizes geometry/format metadata but does not prove pixel-level shortcut removal.",
+    "Test-only and E30 rows remain forbidden for training, calibration and ensemble fitting."
+  ],
+  "experiment": "E31/B1",
+  "protected_e30_hash_count": 980,
+  "registered_sources": [
+    {
+      "ai_generator_top_counts": {
+        "AACEE/textual_inversion_cat": 41,
+        "AACEE/textual_inversion_sksship": 41,
+        "JamesFlare/pastel-mix": 41,
+        "KORguy/textual_inversion_shirt": 41,
+        "MohitSK/RealisticComicBook": 41,
+        "Subhamoy12/my-pet-cat-xzr": 51,
+        "TopdeckingLands/ArtOfMtg_V1": 41,
+        "VegaKH/Ultraskin": 41,
+        "WarriorMama777/AbyssOrangeMix": 46,
+        "alea31415/onimai-characters": 41,
+        "danbochman/ccxl": 41,
+        "employelalisa/min": 51,
+        "iamgokul/my-pet-dog-ggs": 51,
+        "kalebanana/textual_inversion_mvtec": 41,
+        "lewdryuna/A-Rainier": 46,
+        "nota-ai/bk-sdm-small": 41,
+        "songhee/rugged-sporty-car": 51,
+        "tensor-diffusion/AsianRealistic_SDLife_ChiasedammeV9.0": 41,
+        "tensor-diffusion/Dark-Sushi-2.5D": 41,
+        "tensor-diffusion/chilloutmix-NI": 41
+      },
+      "ai_generator_unique": 300,
+      "dirname": "OwensLab__CommunityForensics-Small",
+      "fixed_128_rgb_jpeg_probe": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "JPEG": 100
+            },
+            "mean_bytes_per_pixel": 0.4064697265625,
+            "median_long_side": 128.0,
+            "n": 100,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          },
+          "real": {
+            "formats": {
+              "JPEG": 200
+            },
+            "mean_bytes_per_pixel": 0.3863485717773438,
+            "median_long_side": 128.0,
+            "n": 200,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          }
+        },
+        "issues": [],
+        "metadata_probe_auc": 0.63645,
+        "pass": true
+      },
+      "image_column": "image_data",
+      "known_native_risk": "real images are 1024 px while AI images are 512 px",
+      "label_direction_status": "asserted_from_source_metadata",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "PNG": 100
+            },
+            "mean_bytes_per_pixel": 1.290838165283203,
+            "median_long_side": 512.0,
+            "n": 100,
+            "p10_long_side": 512.0,
+            "p90_long_side": 512.0,
+            "square_fraction": 1.0
+          },
+          "real": {
+            "formats": {
+              "PNG": 200
+            },
+            "mean_bytes_per_pixel": 1.3070790004730224,
+            "median_long_side": 1024.0,
+            "n": 200,
+            "p10_long_side": 1024.0,
+            "p90_long_side": 1024.0,
+            "square_fraction": 1.0
+          }
+        },
+        "issues": [
+          "metadata_probe_auc=1.000 exceeds 0.65"
+        ],
+        "metadata_probe_auc": 1.0,
+        "pass": false
+      },
+      "parquet_file_count": 15,
+      "parquet_rows": 44884,
+      "physical_bytes": 49764880239,
+      "physical_file_count": 17,
+      "project_label_counts": {
+        "ai": 11972,
+        "real": 32912
+      },
+      "raw_label_counts": {
+        "0": 32912,
+        "1": 11972
+      },
+      "role": "train_candidate",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image_name",
+            "format",
+            "resolution",
+            "mode",
+            "image_data",
+            "model_name",
+            "nsfw_flag",
+            "prompt",
+            "real_source",
+            "subset",
+            "split",
+            "label",
+            "architecture"
+          ],
+          "file_count": 15
+        }
+      ],
+      "source_id": "communityforensics-small",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {},
+      "ai_generator_unique": 0,
+      "dirname": "theminji__AI-vs-Real-balanced",
+      "fixed_128_rgb_jpeg_probe": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "JPEG": 162
+            },
+            "mean_bytes_per_pixel": 0.28476667992862653,
+            "median_long_side": 128.0,
+            "n": 162,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          },
+          "real": {
+            "formats": {
+              "JPEG": 138
+            },
+            "mean_bytes_per_pixel": 0.26385542275249096,
+            "median_long_side": 128.0,
+            "n": 138,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          }
+        },
+        "issues": [],
+        "metadata_probe_auc": 0.5855922347468241,
+        "pass": true
+      },
+      "image_column": "image",
+      "known_native_risk": null,
+      "label_direction_status": "verified_huggingface_classlabel",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "JPEG": 142,
+              "PNG": 20
+            },
+            "mean_bytes_per_pixel": 0.7623539338164221,
+            "median_long_side": 32.0,
+            "n": 162,
+            "p10_long_side": 32.0,
+            "p90_long_side": 1024.0,
+            "square_fraction": 0.9938271604938271
+          },
+          "real": {
+            "formats": {
+              "JPEG": 138
+            },
+            "mean_bytes_per_pixel": 0.6312934329767214,
+            "median_long_side": 32.0,
+            "n": 138,
+            "p10_long_side": 32.0,
+            "p90_long_side": 256.0,
+            "square_fraction": 0.9927536231884058
+          }
+        },
+        "issues": [
+          "real and AI format sets differ"
+        ],
+        "metadata_probe_auc": 0.5488012166756129,
+        "pass": false
+      },
+      "parquet_file_count": 29,
+      "parquet_rows": 143070,
+      "physical_bytes": 12961854823,
+      "physical_file_count": 31,
+      "project_label_counts": {
+        "ai": 71535,
+        "real": 71535
+      },
+      "raw_label_counts": {
+        "0": 71535,
+        "1": 71535
+      },
+      "role": "train_candidate",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "label"
+          ],
+          "file_count": 29
+        }
+      ],
+      "source_id": "ai-vs-real-balanced",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {
+        "1": 6000,
+        "10": 8000,
+        "11": 2000,
+        "12": 1999,
+        "13": 1997,
+        "14": 1997,
+        "15": 6000,
+        "16": 1000,
+        "17": 6000,
+        "2": 2000,
+        "3": 1320,
+        "4": 1000,
+        "5": 5000,
+        "6": 6000,
+        "7": 6000,
+        "8": 200,
+        "9": 6000
+      },
+      "ai_generator_unique": 17,
+      "dirname": "TheKernel01__AIGC-Detection-Benchmark",
+      "fixed_128_rgb_jpeg_probe": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "JPEG": 150
+            },
+            "mean_bytes_per_pixel": 0.4091267903645833,
+            "median_long_side": 128.0,
+            "n": 150,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          },
+          "real": {
+            "formats": {
+              "JPEG": 150
+            },
+            "mean_bytes_per_pixel": 0.421859130859375,
+            "median_long_side": 128.0,
+            "n": 150,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          }
+        },
+        "issues": [],
+        "metadata_probe_auc": 0.5395555555555556,
+        "pass": true
+      },
+      "image_column": "image",
+      "known_native_risk": "native geometry is label-separable",
+      "label_direction_status": "verified_huggingface_classlabel",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "JPEG": 3,
+              "PNG": 147
+            },
+            "mean_bytes_per_pixel": 1.6965718460083008,
+            "median_long_side": 512.0,
+            "n": 150,
+            "p10_long_side": 256.0,
+            "p90_long_side": 1024.0,
+            "square_fraction": 1.0
+          },
+          "real": {
+            "formats": {
+              "JPEG": 123,
+              "PNG": 27
+            },
+            "mean_bytes_per_pixel": 0.8346611649412774,
+            "median_long_side": 500.0,
+            "n": 150,
+            "p10_long_side": 256.0,
+            "p90_long_side": 536.9999999999995,
+            "square_fraction": 0.23333333333333334
+          }
+        },
+        "issues": [
+          "metadata_probe_auc=0.967 exceeds 0.65",
+          "real and AI square fractions differ by more than 0.60"
+        ],
+        "metadata_probe_auc": 0.9667777777777777,
+        "pass": false
+      },
+      "parquet_file_count": 60,
+      "parquet_rows": 125026,
+      "physical_bytes": 32032889648,
+      "physical_file_count": 62,
+      "project_label_counts": {
+        "ai": 62513,
+        "real": 62513
+      },
+      "raw_label_counts": {
+        "0": 62513,
+        "1": 62513
+      },
+      "role": "conditional_train_candidate",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "label",
+            "generator"
+          ],
+          "file_count": 60
+        }
+      ],
+      "source_id": "aigc-detection-benchmark",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {},
+      "ai_generator_unique": 0,
+      "dirname": "theminji__ai-vs-real-200k",
+      "fixed_128_rgb_jpeg_probe": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "JPEG": 100
+            },
+            "mean_bytes_per_pixel": 0.369295654296875,
+            "median_long_side": 128.0,
+            "n": 100,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          },
+          "real": {
+            "formats": {
+              "JPEG": 200
+            },
+            "mean_bytes_per_pixel": 0.364310302734375,
+            "median_long_side": 128.0,
+            "n": 200,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          }
+        },
+        "issues": [],
+        "metadata_probe_auc": 0.5515,
+        "pass": true
+      },
+      "image_column": "image",
+      "known_native_risk": "native resolution is label-separable",
+      "label_direction_status": "verified_huggingface_classlabel",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "PNG": 100
+            },
+            "mean_bytes_per_pixel": 1.3692173548069204,
+            "median_long_side": 256.0,
+            "n": 100,
+            "p10_long_side": 256.0,
+            "p90_long_side": 1024.0,
+            "square_fraction": 0.98
+          },
+          "real": {
+            "formats": {
+              "JPEG": 100,
+              "PNG": 100
+            },
+            "mean_bytes_per_pixel": 0.748518986022678,
+            "median_long_side": 259.0,
+            "n": 200,
+            "p10_long_side": 256.0,
+            "p90_long_side": 1002.3999999999999,
+            "square_fraction": 0.655
+          }
+        },
+        "issues": [
+          "metadata_probe_auc=0.841 exceeds 0.65",
+          "real and AI format sets differ"
+        ],
+        "metadata_probe_auc": 0.84085,
+        "pass": false
+      },
+      "parquet_file_count": 293,
+      "parquet_rows": 241609,
+      "physical_bytes": 51933909446,
+      "physical_file_count": 295,
+      "project_label_counts": {
+        "ai": 124209,
+        "real": 117400
+      },
+      "raw_label_counts": {
+        "0": 124209,
+        "1": 117400
+      },
+      "role": "conditional_train_candidate",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "label"
+          ],
+          "file_count": 293
+        }
+      ],
+      "source_id": "ai-vs-real-200k",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {},
+      "ai_generator_unique": 0,
+      "dirname": "julienlucas__midjourney-dalle-sd-nanobananapro-dataset",
+      "fixed_128_rgb_jpeg_probe": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "JPEG": 100
+            },
+            "mean_bytes_per_pixel": 0.4472711181640625,
+            "median_long_side": 128.0,
+            "n": 100,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          },
+          "real": {
+            "formats": {
+              "JPEG": 200
+            },
+            "mean_bytes_per_pixel": 0.37505584716796875,
+            "median_long_side": 128.0,
+            "n": 200,
+            "p10_long_side": 128.0,
+            "p90_long_side": 128.0,
+            "square_fraction": 1.0
+          }
+        },
+        "issues": [],
+        "metadata_probe_auc": 0.5595749999999999,
+        "pass": true
+      },
+      "image_column": "image",
+      "known_native_risk": null,
+      "label_direction_status": "verified_huggingface_classlabel",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "groups": {
+          "ai": {
+            "formats": {
+              "JPEG": 61,
+              "PNG": 39
+            },
+            "mean_bytes_per_pixel": 0.32920497069822624,
+            "median_long_side": 1024.0,
+            "n": 100,
+            "p10_long_side": 979.5000000000001,
+            "p90_long_side": 2048.0,
+            "square_fraction": 0.68
+          },
+          "real": {
+            "formats": {
+              "JPEG": 200
+            },
+            "mean_bytes_per_pixel": 0.1602850327513241,
+            "median_long_side": 1300.0,
+            "n": 200,
+            "p10_long_side": 800.0,
+            "p90_long_side": 1849.3999999999999,
+            "square_fraction": 0.035
+          }
+        },
+        "issues": [
+          "metadata_probe_auc=0.974 exceeds 0.65",
+          "real and AI format sets differ",
+          "real and AI square fractions differ by more than 0.60"
+        ],
+        "metadata_probe_auc": 0.974175,
+        "pass": false
+      },
+      "parquet_file_count": 11,
+      "parquet_rows": 12695,
+      "physical_bytes": 3117656869,
+      "physical_file_count": 13,
+      "project_label_counts": {
+        "ai": 6195,
+        "real": 6500
+      },
+      "raw_label_counts": {
+        "0": 6195,
+        "1": 6500
+      },
+      "role": "test_only",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "label"
+          ],
+          "file_count": 11
+        }
+      ],
+      "source_id": "julienlucas-modern",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {},
+      "ai_generator_unique": 0,
+      "dirname": "ash12321__flux-1-dev-generated-10k",
+      "fixed_128_rgb_jpeg_probe": {
+        "labels": [
+          "ai"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "image_column": "image",
+      "known_native_risk": null,
+      "label_direction_status": "implicit_ai",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "labels": [
+          "ai"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "parquet_file_count": 7,
+      "parquet_rows": 10000,
+      "physical_bytes": 3231877594,
+      "physical_file_count": 9,
+      "project_label_counts": {
+        "ai": 10000
+      },
+      "raw_label_counts": {},
+      "role": "ai_only_candidate",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "filename",
+            "seed",
+            "prompt"
+          ],
+          "file_count": 7
+        }
+      ],
+      "source_id": "flux-1-dev",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {},
+      "ai_generator_unique": 0,
+      "dirname": "bitmind__nano-banana",
+      "fixed_128_rgb_jpeg_probe": {
+        "labels": [
+          "ai"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "image_column": "image",
+      "known_native_risk": null,
+      "label_direction_status": "implicit_ai",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "labels": [
+          "ai"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "parquet_file_count": 31,
+      "parquet_rows": 9457,
+      "physical_bytes": 14853199670,
+      "physical_file_count": 33,
+      "project_label_counts": {
+        "ai": 9457
+      },
+      "raw_label_counts": {},
+      "role": "ai_only_candidate",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "id",
+            "image",
+            "format",
+            "mode",
+            "width",
+            "height",
+            "uploadtime"
+          ],
+          "file_count": 31
+        }
+      ],
+      "source_id": "nano-banana",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {},
+      "ai_generator_unique": 0,
+      "dirname": "kaupane__nano-banana-pro-gen",
+      "fixed_128_rgb_jpeg_probe": {
+        "labels": [
+          "ai"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "image_column": "image",
+      "known_native_risk": null,
+      "label_direction_status": "implicit_ai",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "labels": [
+          "ai"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "parquet_file_count": 5,
+      "parquet_rows": 1250,
+      "physical_bytes": 2205250281,
+      "physical_file_count": 7,
+      "project_label_counts": {
+        "ai": 1250
+      },
+      "raw_label_counts": {},
+      "role": "ai_only_candidate",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "prompt"
+          ],
+          "file_count": 5
+        }
+      ],
+      "source_id": "nano-banana-pro",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {},
+      "ai_generator_unique": 0,
+      "dirname": "34data__communityforensics-fake",
+      "fixed_128_rgb_jpeg_probe": {
+        "labels": [
+          "ai"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "image_column": "image",
+      "known_native_risk": null,
+      "label_direction_status": "implicit_ai",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "labels": [
+          "ai"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "parquet_file_count": 1,
+      "parquet_rows": 8000,
+      "physical_bytes": 3063091385,
+      "physical_file_count": 2,
+      "project_label_counts": {
+        "ai": 8000
+      },
+      "raw_label_counts": {},
+      "role": "test_only",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "filename"
+          ],
+          "file_count": 1
+        }
+      ],
+      "source_id": "communityforensics-fake",
+      "state": "present"
+    },
+    {
+      "ai_generator_top_counts": {},
+      "ai_generator_unique": 0,
+      "dirname": "34data__communityforensics-real",
+      "fixed_128_rgb_jpeg_probe": {
+        "labels": [
+          "real"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "image_column": "image",
+      "known_native_risk": null,
+      "label_direction_status": "implicit_real",
+      "metadata_errors": [],
+      "native_shortcut_audit": {
+        "labels": [
+          "real"
+        ],
+        "state": "not_applicable_single_class"
+      },
+      "parquet_file_count": 1,
+      "parquet_rows": 8000,
+      "physical_bytes": 411826262,
+      "physical_file_count": 2,
+      "project_label_counts": {
+        "real": 8000
+      },
+      "raw_label_counts": {},
+      "role": "test_only",
+      "sample_count": 300,
+      "sample_decode_failures": 0,
+      "sample_exact_overlap_with_e30": 0,
+      "sample_hash_scope": "bounded_shard_spread_not_full_dataset",
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "filename"
+          ],
+          "file_count": 1
+        }
+      ],
+      "source_id": "communityforensics-real",
+      "state": "present"
+    }
+  ],
+  "sample_limit_per_registered_source": 300,
+  "sample_shard_limit_per_registered_source": 3,
+  "schema_version": 1,
+  "source_root_name": "pixelproof-datasets",
+  "unregistered_inventory": [
+    {
+      "dirname": "MaybeRichard__GPT-Image",
+      "parquet_file_count": 0,
+      "physical_bytes": 93397,
+      "physical_file_count": 18,
+      "state": "inventory_only_unregistered"
+    },
+    {
+      "dirname": "OwensLab__CommunityForensics-Eval",
+      "parquet_file_count": 0,
+      "physical_bytes": 15454,
+      "physical_file_count": 2,
+      "state": "inventory_only_unregistered"
+    },
+    {
+      "dirname": "a3xrfgb__gpt-image-mega-4k",
+      "parquet_file_count": 0,
+      "physical_bytes": 2260502012,
+      "physical_file_count": 2122,
+      "state": "inventory_only_unregistered"
+    },
+    {
+      "dirname": "ash12321__nano-banana-pro-generated-1k",
+      "parquet_file_count": 0,
+      "physical_bytes": 346757202,
+      "physical_file_count": 202,
+      "state": "inventory_only_unregistered"
+    },
+    {
+      "dirname": "bitmind__Nano-banana-150k",
+      "parquet_file_count": 0,
+      "physical_bytes": 10642043397,
+      "physical_file_count": 3,
+      "state": "inventory_only_unregistered"
+    },
+    {
+      "dirname": "ductai199x__image-manipulation-dataset-compilation",
+      "parquet_file_count": 0,
+      "physical_bytes": 84087739809,
+      "physical_file_count": 192,
+      "state": "inventory_only_unregistered"
+    }
+  ]
+}

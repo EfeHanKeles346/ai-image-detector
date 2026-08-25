@@ -1626,3 +1626,49 @@ resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` di
   MLLM or Qwen is forbidden.
 - **Evidence:** `evidence/e30_development_benchmark.json` contains contracts, hashes, counts,
   exact per-transport intervals, generator/regime breakdowns and rejection rationale.
+
+## 2026-08-25 — E31/B0-B1: attached-disk audit before TRAIN v2
+
+- **Question:** should the attached ~255 GiB collection justify retraining E20 or building a
+  multi-model verdict now? The pre-registered answer is conditional: identical E20 retraining is a
+  no-op because E20 already used the corrected E19 labels and three seeds were stable; fusion is
+  admissible only after independently useful, complementary representations exist.
+- **Pre-existing ensemble evidence:** E9's eight fixed ResNet/feature blends improved best AUC by
+  only 0.002. On E30 DEVELOPMENT, E20 and CF-ViT have zero overlapping positive decisions, but
+  their OR still yields only 52/600 descriptive AI detections and 28/300 real false alarms. This
+  rejects “connect every checkpoint” as a candidate, not heterogeneous fusion as a future method.
+- **Tool/contract:** `experiments/e31_ssd_audit.py` requires an explicit source root, rejects an
+  output inside that root, ignores exFAT `._*` and cache files, verifies declared Hugging Face
+  label order, counts all Parquet rows/generator fields, and samples first/middle/last shards
+  deterministically. It commits aggregate JSON only. Missing disks and label drift fail clearly.
+- **Inventory:** 10 registered sources occupy **173,576,436,217 B** and seven additional
+  inventory-only sources **97,337,151,271 B**, for **270,913,587,488 B** total. Registered Parquet
+  metadata covers **603,991 rows**. CommunityForensics-Small contains 44,884 rows—11,972 AI,
+  32,912 real—and **300 distinct AI model names**, so the old 228-generator/local-coverage gap is
+  closed at inventory level.
+- **Bounded image evidence:** 300 rows per registered source / **3,000 total** decoded with zero
+  failure. Exact sampled bytes had zero overlap with **980** protected E30 parent/derived hashes.
+  This is a diagnostic sample, not full decontamination; B2 must hash every selected TRAIN-v2 row.
+
+| paired source | native metadata AUC / issue | fixed 128 RGB-JPEG probe | E31 use |
+|---|---:|---:|---|
+| CommunityForensics-Small | **1.000** | 0.636 | native reject; conditional TRAIN v2 |
+| AI-vs-Real-balanced | 0.549; format sets differ | 0.586 | fixed representation preferred |
+| AIGC benchmark | **0.967** | 0.540 | native reject; conditional TRAIN v2 |
+| ai-vs-real-200k | **0.841** | 0.552 | native reject; conditional TRAIN v2 |
+| Julien Lucas modern test | **0.974** | 0.560 | remains test-only; native pooled claim unsafe |
+
+- **Interpretation:** the user's data concern is supported, but the defect is not simply “too few
+  images.” Large sources encode class in geometry/format, and a model can exploit it before
+  learning generation traces. Identical fixed input removes the measured metadata separation but
+  does not prove pixel-level compression/collection cues are gone. B2 therefore freezes a
+  source-capped, group-disjoint TRAIN v2; B3 screens heterogeneous frozen representations before
+  any expensive fine-tune; B4 fits fusion on out-of-fold CALIBRATION only.
+- **Interrupted-run record:** the first audit spread 600 samples over every shard and was stopped
+  after exposing Parquet row-group amplification. A nominal one-row read could decompress a
+  4.09 GB CommunityForensics shard. A 12-shard revision remained needlessly expensive and was also
+  stopped. The committed first/middle/last three-shard rule retains range coverage with bounded
+  I/O; six focused tests pin this behavior and the complete run then finished locally.
+- **Evidence:** `evidence/e31_ssd_audit.json`, SHA-256
+  `2f7399bed965a8a428b4180aab059405fbcc4d4aa4d3754a5295ee4e97021f29`. No source byte was
+  written or committed; E30 Qwen LOCKED FINAL remains unscored and no E31 training has started.
