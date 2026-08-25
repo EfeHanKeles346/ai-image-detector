@@ -143,9 +143,9 @@ certify universal real-photo safety.
       and reports exact 95% binomial intervals plus per-transport/group metrics. Raw rows remain
       ignored; Qwen LOCKED FINAL paths are not accepted by this command.
 
-- [ ] Benchmark existing E20/E26 arms on DEVELOPMENT TEST only. Freeze the candidate artifact
-      hashes, preprocessing, aggregation and calibration-only thresholds before requesting a
-      LOCKED FINAL TEST run.
+- [x] Benchmark existing E20/E26 arms on DEVELOPMENT TEST only. E20 and the available E26 CF-ViT
+      arm were scored under committed artifact/preprocessing/threshold contracts. Both are rejected
+      at development screening; neither is admitted to a LOCKED FINAL TEST run.
 - [ ] Score the sealed final candidate exactly once, accounting for every row and failure. The run
       may reject a candidate but may not trigger threshold/row replacement on the same final set.
 - [ ] Report macro and worst-group FP/recall, per-generator/protocol results, exact 95% intervals,
@@ -154,6 +154,10 @@ certify universal real-photo safety.
 - **Acceptance:** every metric is reproducible from committed aggregate evidence and ignored local
   manifests; a failed gate sends the next model back to TRAIN/DEVELOPMENT, not into final-set
   retuning.
+- **Current disposition:** return to TRAIN/DEVELOPMENT. Qwen remains unscored. E20 descriptive
+  all-transport FP/recall is 9.33%/7.67%; CF-ViT is 0%/1.00%. Frozen cells contain 20 underlying
+  items, below the 40-item formal gate minimum, but both candidates already miss aggregate point
+  targets by large margins. Full aggregate evidence is `evidence/e30_development_benchmark.json`.
 
 ### Phase A5 — build the first genuinely unseen native-camera vault
 

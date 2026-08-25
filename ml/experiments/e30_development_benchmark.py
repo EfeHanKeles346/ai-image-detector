@@ -55,16 +55,21 @@ def exact_interval(successes: int, total: int, alpha: float = 0.05) -> list[floa
     return [lower, upper]
 
 
-def _rate(rows: Iterable[Mapping[str, Any]]) -> dict[str, Any]:
+def _rate(
+    rows: Iterable[Mapping[str, Any]], *, independent: bool = True
+) -> dict[str, Any]:
     values = list(rows)
     successes = sum(bool(row["predicted_ai"]) for row in values)
     total = len(values)
-    return {
+    result = {
         "n": total,
         "ai_triggers": successes,
         "rate": successes / total if total else None,
-        "exact_95_ci": exact_interval(successes, total),
+        "exact_95_ci": exact_interval(successes, total) if independent else None,
     }
+    if not independent:
+        result["interval_reason"] = "transport views repeat underlying parent content"
+    return result
 
 
 def summarize(
@@ -106,6 +111,14 @@ def summarize(
         grouped[f"{row['transport']}::{row['group']}"].append(row)
     per_group = {name: _rate(group) for name, group in sorted(grouped.items())}
 
+    by_generator: dict[str, list[Mapping[str, Any]]] = defaultdict(list)
+    by_regime: dict[str, list[Mapping[str, Any]]] = defaultdict(list)
+    for row in ok:
+        if row["label"] == "ai":
+            by_generator[str(row["generator"])].append(row)
+        regime = str(row["group"]).split(":", 1)[0]
+        by_regime[f"{row['label']}::{regime}"].append(row)
+
     base_recall = per_transport["standardized_jpeg"]["ai_recall"]["rate"]
     deltas = {
         transport: (
@@ -131,9 +144,9 @@ def summarize(
         "accounting": {"expected": len(values), "succeeded": len(ok), "failed": len(failures)},
         "overall": {
             "roc_auc": float(roc_auc_score(labels, scores)),
-            "real_false_positive": _rate(real),
-            "ai_recall": _rate(ai),
-            "abstention_rate": 1.0 - _rate(ok)["rate"] if abstains_below_threshold else 0.0,
+            "real_false_positive": _rate(real, independent=False),
+            "ai_recall": _rate(ai, independent=False),
+            "abstention_rate": 1.0 - _rate(ok, independent=False)["rate"] if abstains_below_threshold else 0.0,
         },
         "macro": {
             "real_false_positive": float(np.mean(real_group_rates)),
@@ -142,6 +155,14 @@ def summarize(
             "worst_ai_group_recall": min(ai_group_rates),
         },
         "per_transport": per_transport,
+        "per_generator": {
+            name: _rate(group, independent=False)
+            for name, group in sorted(by_generator.items())
+        },
+        "per_artifact_regime": {
+            name: _rate(group, independent=False)
+            for name, group in sorted(by_regime.items())
+        },
         "recall_delta_vs_standardized": deltas,
         "per_transport_group": per_group,
         "failures": failures,

@@ -1,0 +1,477 @@
+{
+  "experiment": "E30-A4-development-result",
+  "recorded_at": "2026-08-25",
+  "dataset_content_set_sha256": "7634755c75f855064e0d6c3c2731c6fe63d6582f2b6065654698adbf32e924b8",
+  "role": "development_test",
+  "underlying_parent_count": 180,
+  "transport_view_count": 900,
+  "repeated_measure_note": "Overall rates are descriptive across five views per parent; exact 95% intervals are reported only within one transport or one 20-item transport x group cell.",
+  "locked_final_scored": false,
+  "metadata_probe_auc": {
+    "standardized_jpeg": 0.6238194444444446,
+    "jpeg_q90": 0.6095833333333334,
+    "jpeg_q75": 0.6190972222222223,
+    "jpeg_q50": 0.6361805555555554,
+    "resize256_q90": 0.6127083333333333
+  },
+  "arms": {
+    "e20": {
+      "contract": {
+        "detector_id": "e20_project",
+        "artifact_id": "e20-tile-resnet18-seed2024",
+        "sha256": "b9f39eda10ba3de54b706d6448b67d93ce8e4c7bae97a685f3c1b57ebfd65adf",
+        "revision": "E20-v2 seed 2024",
+        "arm": "resnet18",
+        "seed": 2024,
+        "tile_px": 128,
+        "texture_floor": 0.04,
+        "normalization": "imagenet",
+        "aggregation": "top3",
+        "threshold": 0.9894907077153525,
+        "calibration_fraction": 0.5,
+        "split_seed": 2026,
+        "validation_auc": 0.9096272752535779,
+        "max_tiles": 256,
+        "decision": "binary AI/real at checkpoint threshold; no abstention"
+      },
+      "contract_sha256": "8351d09e92110866811c4411df3b2a686daa91991f1c9fceddbde294e15e8bb4",
+      "accounting": {
+        "expected": 900,
+        "succeeded": 900,
+        "failed": 0
+      },
+      "overall": {
+        "roc_auc": 0.4625666666666667,
+        "real_false_positive": {
+          "n": 300,
+          "ai_triggers": 28,
+          "rate": 0.09333333333333334,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "ai_recall": {
+          "n": 600,
+          "ai_triggers": 46,
+          "rate": 0.07666666666666666,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "abstention_rate": 0.0
+      },
+      "macro": {
+        "real_false_positive": 0.09333333333333334,
+        "worst_real_group_false_positive": 0.35,
+        "ai_recall": 0.07666666666666666,
+        "worst_ai_group_recall": 0.0
+      },
+      "per_transport": {
+        "standardized_jpeg": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 8,
+            "rate": 0.13333333333333333,
+            "exact_95_ci": [
+              0.05936442270535719,
+              0.24592222113041987
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 15,
+            "rate": 0.125,
+            "exact_95_ci": [
+              0.07167967688875211,
+              0.19777641035182564
+            ]
+          },
+          "roc_auc": 0.46805555555555556
+        },
+        "jpeg_q90": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 9,
+            "rate": 0.15,
+            "exact_95_ci": [
+              0.07095619525709117,
+              0.2657404477572951
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 18,
+            "rate": 0.15,
+            "exact_95_ci": [
+              0.09138957252822999,
+              0.22666714341262836
+            ]
+          },
+          "roc_auc": 0.4656944444444444
+        },
+        "jpeg_q75": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 6,
+            "rate": 0.1,
+            "exact_95_ci": [
+              0.037591269108566035,
+              0.20505773670806393
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 6,
+            "rate": 0.05,
+            "exact_95_ci": [
+              0.018567586782669152,
+              0.10565385451871234
+            ]
+          },
+          "roc_auc": 0.45208333333333334
+        },
+        "jpeg_q50": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 4,
+            "rate": 0.06666666666666667,
+            "exact_95_ci": [
+              0.0184617775758815,
+              0.1619867551977289
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 1,
+            "rate": 0.008333333333333333,
+            "exact_95_ci": [
+              0.00021095947812170912,
+              0.04555551323359298
+            ]
+          },
+          "roc_auc": 0.39722222222222225
+        },
+        "resize256_q90": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 1,
+            "rate": 0.016666666666666666,
+            "exact_95_ci": [
+              0.00042187445234200883,
+              0.08939905005748702
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 6,
+            "rate": 0.05,
+            "exact_95_ci": [
+              0.018567586782669152,
+              0.10565385451871234
+            ]
+          },
+          "roc_auc": 0.5131944444444445
+        }
+      },
+      "per_generator": {
+        "GPT Image 2": {
+          "n": 300,
+          "ai_triggers": 29,
+          "rate": 0.09666666666666666,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "Nano Banana 2": {
+          "n": 300,
+          "ai_triggers": 17,
+          "rate": 0.056666666666666664,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        }
+      },
+      "per_artifact_regime": {
+        "ai::hybrid": {
+          "n": 200,
+          "ai_triggers": 0,
+          "rate": 0.0,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "ai::structure": {
+          "n": 200,
+          "ai_triggers": 6,
+          "rate": 0.03,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "ai::texture": {
+          "n": 200,
+          "ai_triggers": 40,
+          "rate": 0.2,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "real::hybrid": {
+          "n": 100,
+          "ai_triggers": 4,
+          "rate": 0.04,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "real::structure": {
+          "n": 100,
+          "ai_triggers": 0,
+          "rate": 0.0,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "real::texture": {
+          "n": 100,
+          "ai_triggers": 24,
+          "rate": 0.24,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        }
+      },
+      "recall_delta_vs_standardized": {
+        "jpeg_q90": 0.024999999999999994,
+        "jpeg_q75": -0.075,
+        "jpeg_q50": -0.11666666666666667,
+        "resize256_q90": -0.075
+      }
+    },
+    "cf_vit": {
+      "contract": {
+        "arm": "cf_vit",
+        "source_id": "buildborderless/CommunityForensics-DeepfakeDet-ViT",
+        "source_revision": "ac6ee457bea904a373065754107451793b56db00",
+        "weights_sha256": "275ba982236ddd6afddf7131f8133e89f537574b964cf8fa5825b4956d741692",
+        "threshold": 0.6617392,
+        "preprocessing": "shortest edge 440, center crop 384, CLIP normalization",
+        "decision": "ai at/above threshold; otherwise insufficient"
+      },
+      "contract_sha256": "b9a168e9f1629a1faa6d55e81cf73a0b5d377ab1159787b2a39d6c34df7f8c2f",
+      "accounting": {
+        "expected": 900,
+        "succeeded": 900,
+        "failed": 0
+      },
+      "overall": {
+        "roc_auc": 0.5754444444444444,
+        "real_false_positive": {
+          "n": 300,
+          "ai_triggers": 0,
+          "rate": 0.0,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "ai_recall": {
+          "n": 600,
+          "ai_triggers": 6,
+          "rate": 0.01,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "abstention_rate": 0.9933333333333333
+      },
+      "macro": {
+        "real_false_positive": 0.0,
+        "worst_real_group_false_positive": 0.0,
+        "ai_recall": 0.01,
+        "worst_ai_group_recall": 0.0
+      },
+      "per_transport": {
+        "standardized_jpeg": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 0,
+            "rate": 0.0,
+            "exact_95_ci": [
+              0.0,
+              0.05962949228616691
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 2,
+            "rate": 0.016666666666666666,
+            "exact_95_ci": [
+              0.0020248223376930826,
+              0.05890921946702682
+            ]
+          },
+          "roc_auc": 0.6163888888888889
+        },
+        "jpeg_q90": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 0,
+            "rate": 0.0,
+            "exact_95_ci": [
+              0.0,
+              0.05962949228616691
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 3,
+            "rate": 0.025,
+            "exact_95_ci": [
+              0.00518557495832136,
+              0.07132319415690504
+            ]
+          },
+          "roc_auc": 0.6191666666666668
+        },
+        "jpeg_q75": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 0,
+            "rate": 0.0,
+            "exact_95_ci": [
+              0.0,
+              0.05962949228616691
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 1,
+            "rate": 0.008333333333333333,
+            "exact_95_ci": [
+              0.00021095947812170912,
+              0.04555551323359298
+            ]
+          },
+          "roc_auc": 0.6006944444444444
+        },
+        "jpeg_q50": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 0,
+            "rate": 0.0,
+            "exact_95_ci": [
+              0.0,
+              0.05962949228616691
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 0,
+            "rate": 0.0,
+            "exact_95_ci": [
+              0.0,
+              0.03027297257742007
+            ]
+          },
+          "roc_auc": 0.48944444444444446
+        },
+        "resize256_q90": {
+          "real_false_positive": {
+            "n": 60,
+            "ai_triggers": 0,
+            "rate": 0.0,
+            "exact_95_ci": [
+              0.0,
+              0.05962949228616691
+            ]
+          },
+          "ai_recall": {
+            "n": 120,
+            "ai_triggers": 0,
+            "rate": 0.0,
+            "exact_95_ci": [
+              0.0,
+              0.03027297257742007
+            ]
+          },
+          "roc_auc": 0.5469444444444445
+        }
+      },
+      "per_generator": {
+        "GPT Image 2": {
+          "n": 300,
+          "ai_triggers": 6,
+          "rate": 0.02,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "Nano Banana 2": {
+          "n": 300,
+          "ai_triggers": 0,
+          "rate": 0.0,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        }
+      },
+      "per_artifact_regime": {
+        "ai::hybrid": {
+          "n": 200,
+          "ai_triggers": 0,
+          "rate": 0.0,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "ai::structure": {
+          "n": 200,
+          "ai_triggers": 2,
+          "rate": 0.01,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "ai::texture": {
+          "n": 200,
+          "ai_triggers": 4,
+          "rate": 0.02,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "real::hybrid": {
+          "n": 100,
+          "ai_triggers": 0,
+          "rate": 0.0,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "real::structure": {
+          "n": 100,
+          "ai_triggers": 0,
+          "rate": 0.0,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        },
+        "real::texture": {
+          "n": 100,
+          "ai_triggers": 0,
+          "rate": 0.0,
+          "exact_95_ci": null,
+          "interval_reason": "transport views repeat underlying parent content"
+        }
+      },
+      "recall_delta_vs_standardized": {
+        "jpeg_q90": 0.008333333333333335,
+        "jpeg_q75": -0.008333333333333333,
+        "jpeg_q50": -0.016666666666666666,
+        "resize256_q90": -0.016666666666666666
+      }
+    }
+  },
+  "screening": {
+    "working_v1_targets": {
+      "real_macro_fp_max": 0.05,
+      "worst_real_group_fp_max": 0.10,
+      "ai_macro_recall_min": 0.50,
+      "worst_ai_group_recall_min": 0.30,
+      "q75_or_resize_loss_max": 0.15,
+      "min_items_per_reported_cell": 40
+    },
+    "e20": {
+      "formal_gate_eligible": false,
+      "reason": "frozen cells have 20 items; point estimates also fail FP and recall targets",
+      "candidate_admitted": false
+    },
+    "cf_vit": {
+      "formal_gate_eligible": false,
+      "reason": "frozen cells have 20 items; point estimates fail recall targets",
+      "candidate_admitted": false
+    }
+  },
+  "decision": "Reject both existing arms at DEVELOPMENT screening; do not score or tune on Qwen LOCKED FINAL."
+}

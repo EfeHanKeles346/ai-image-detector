@@ -1594,3 +1594,35 @@ resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` di
   rates, robustness deltas and abstention semantics.
 - Synthetic exact-interval and transport-accounting tests plus the existing E30 acquisition tests
   passed 12/12. This checkpoint contains no E30 detector result.
+
+## 2026-08-25 — E30/A4 DEVELOPMENT result: neither existing arm earns final access
+
+- **Accounting:** E20 and CF-ViT each scored all 900 transport views of the 180 MLLM parents with
+  zero decode/inference failure. Raw rows remain ignored and resumable. Qwen LOCKED FINAL was not
+  opened or scored.
+- **Repeated-measure boundary:** the 900 rows are five views of 180 underlying contents. Pooled
+  rates and AUC are descriptive; they do not receive falsely narrow binomial intervals. Exact 95%
+  Clopper-Pearson intervals are reported per independent transport (60 real / 120 AI) and per
+  20-item transport x source cell.
+
+| frozen arm / view | real FP | current-AI recall | ROC-AUC |
+|---|---:|---:|---:|
+| E20, standardized parent | 8/60 = 13.33% (95% CI 5.94–24.59) | 15/120 = 12.50% (7.17–19.78) | 0.468 |
+| E20, all five views (descriptive) | 28/300 = 9.33% | 46/600 = 7.67% | 0.463 |
+| CF-ViT, standardized parent | 0/60 = 0% (upper 95% 5.96) | 2/120 = 1.67% (0.20–5.89) | 0.616 |
+| CF-ViT, all five views (descriptive) | 0/300 = 0% | 6/600 = 1.00% | 0.575 |
+
+- **Generator/regime diagnosis:** across repeated views E20 recalls GPT Image 2 at 9.67% and Nano
+  Banana 2 at 5.67%; CF-ViT reaches 2.00% and 0%. E20's AI signal is concentrated in texture
+  (20%) while hybrid is 0% and, critically, matched-real texture false alarms reach 24%. CF-ViT
+  reaches only 0%/1%/2% on hybrid/structure/texture and 0% FP in all three real regimes.
+- **Transport robustness:** E20 standardized recall 12.5% rises to 15% at q90, then falls to 5%
+  at q75, 0.83% at q50 and 5% after resize256-q90. CF-ViT is 1.67%, 2.5%, 0.83%, 0%, 0%.
+  Compression-loss limits are moot because the undegraded operating points already fail recall.
+- **Decision:** both candidates return to TRAIN/DEVELOPMENT. The 20-item cells are below the formal
+  >=40 gate size, so no universal pass/fail claim is made; nevertheless their aggregate point
+  recall is far below the 50% target and worst AI cells are 0%. Scoring the Qwen set would consume
+  the locked final without a viable candidate, so it remains untouched. Threshold retuning on
+  MLLM or Qwen is forbidden.
+- **Evidence:** `evidence/e30_development_benchmark.json` contains contracts, hashes, counts,
+  exact per-transport intervals, generator/regime breakdowns and rejection rationale.

@@ -1720,3 +1720,25 @@ Reports include exact 95% binomial intervals, macro/worst groups and transport d
 tests passed before inference, and the Qwen LOCKED FINAL path is absent from the evaluator. Thus
 the implementation commit remains a genuine pre-result checkpoint rather than documentation
 written after seeing performance.
+
+### E30/A4 result — high specificity is not a working detector
+
+Both existing arms completed all 900 DEVELOPMENT inferences without failure, but neither earned
+access to the locked Qwen set. On the independent standardized view, project-owned E20 falsely
+triggered on 8/60 real images (13.3%) and detected only 15/120 current AI images (12.5%). Across all
+five correlated transports its descriptive FP/recall was 9.33%/7.67% and AUC 0.463. Its apparent
+signal came mainly from texture: AI texture recall was 20%, but matched-real texture false alarms
+were 24%, the same shortcut pattern the project is trying to escape.
+
+CF-ViT made zero false alarms on 60 standardized real images but detected only 2/120 AI (1.67%);
+across all views it triggered on 6/600 AI and abstained on 99.33% of inputs. Nano Banana 2 recall
+was exactly zero. This strengthens the earlier E29 conclusion: CF-ViT is the safest real-gallery
+comparison, not a usable current-generator detector. E20 is neither selective enough nor sensitive
+enough on this battery.
+
+The report does not pretend that 900 derived views are 900 independent photographs. Pooled rates
+are marked descriptive and exact intervals are limited to one transport or one source cell. The
+pre-registered cells contain 20 items rather than the formal 40 minimum, but aggregate recall misses
+the 50% target so widely—and worst AI point recall is 0%—that consuming the final set would add no
+scientific value. `evidence/e30_development_benchmark.json` records the contracts and outcome;
+Qwen remains sealed and unscored. Work must return to representation/training, not threshold tuning.

@@ -20,6 +20,7 @@ def row(label, predicted, transport="standardized_jpeg", group=None, score=None)
         "predicted_ai": predicted,
         "transport": transport,
         "group": group or ("hybrid:generator" if label == "ai" else "hybrid:MLLMGenSet matched real"),
+        "generator": "synthetic" if label == "ai" else None,
         "score": float(predicted) if score is None else score,
     }
 
@@ -44,7 +45,11 @@ def test_summary_keeps_transport_metrics_and_exact_counts():
     report = e30.summarize(rows, 0.5)
     assert report["accounting"] == {"expected": 20, "succeeded": 20, "failed": 0}
     assert report["overall"]["real_false_positive"]["rate"] == 0.5
+    assert report["overall"]["real_false_positive"]["exact_95_ci"] is None
     assert report["overall"]["ai_recall"]["rate"] == 0.5
     assert report["overall"]["roc_auc"] == 0.5
     assert set(report["per_transport"]) == set(e30.TRANSPORTS)
+    assert report["per_transport"]["standardized_jpeg"]["ai_recall"]["exact_95_ci"]
+    assert report["per_generator"]["synthetic"]["rate"] == 0.5
+    assert report["per_artifact_regime"]["ai::hybrid"]["rate"] == 0.5
     assert all(value == 0.0 for value in report["recall_delta_vs_standardized"].values())
