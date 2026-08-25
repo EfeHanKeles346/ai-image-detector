@@ -1552,3 +1552,18 @@ representation and then face both unseen real pipelines and held-out modern AI.
 
 The gallery itself remains outside Git. This ledger links the append-only narrative to the
 immutable implementation and measurement record needed for the internship report.
+
+### Q0 — a current, sub-100 MB AI-only probe is frozen before download
+
+Internet research selected the MIT-licensed SANEval sample at pinned Hugging Face revision
+`e9e188f6018b3d491708f29e7a387f5043dc8841`. Its commercial API outputs include the requested
+2025 generation families. The planned subset contains 100 images: 20 each from GPT Image 1,
+Imagen 4, Imagen 4 Ultra, Nano Banana and Seedream 3, balanced over five structured prompt types
+and simple/hard difficulty. Imagen 3 is excluded as outside the requested date boundary.
+
+Selection is fixed by source row id before any detector score is read. Downloaded image bytes must
+remain below 100,000,000, stay in ignored local data and pass count, balance, uniqueness, decode
+and revision checks. The row service exposes cached JPEGs although the source card describes raw
+PNGs, so the result will explicitly be a web-recompression diagnostic. CF-ViT keeps threshold
+0.6617392; this AI-only slice can measure recall but cannot measure false positives, specificity,
+accuracy or AUC. No training, tuning or serving change is part of Q0–Q2.

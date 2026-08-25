@@ -5,6 +5,46 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Active diagnostic goal — compact 2025-generator CF-ViT probe (2026-08-25)
+
+The owner requested an internet-sourced, at-most-100 MB AI-only set from popular 2025-or-newer
+generators and a one-pass evaluation with the current strongest gallery arm, CF-ViT. Research
+selected the MIT-licensed `saneval-ann/saneval-sample` at revision
+`e9e188f6018b3d491708f29e7a387f5043dc8841`: its API-generated images cover GPT Image 1, Imagen
+4, Imagen 4 Ultra, Nano Banana and Seedream 3. Imagen 3 is excluded because it predates the stated
+2025 boundary.
+
+### Phase Q0 — freeze source, size and decision rules before downloading
+
+- [x] Select 100 rows without reading model scores: 20 per generator, balanced as two fixed rows
+      from each of five prompt types x two difficulty splits. Preserve source row ids and revision.
+- [x] Use the Hugging Face dataset-server cached JPEG representation and disclose that the source
+      card describes raw PNG originals; this is therefore a web-recompression diagnostic, not a
+      native-file benchmark.
+- [x] Freeze a strict 100,000,000-byte downloaded-image ceiling and CF-ViT's already-adopted
+      `0.6617392` AI threshold. Abort before scoring if count, model balance, revision or size fails.
+- **Acceptance:** PLAN, `ml/EXPERIMENTS.md` and `HISTORY.md` contain this protocol before an image
+  is downloaded or a score is read.
+
+### Phase Q1 — build and verify the compact local subset
+
+- [ ] Add a reproducible downloader/probe command with retry, schema/revision checks, deterministic
+      row selection, byte cap, SHA-256 manifest and resume-safe writes.
+- [ ] Download into ignored `ml/data/e29_saneval_2025/`; verify exactly 100 unique decodable JPEGs,
+      20 per model, and report the exact on-disk bytes below 100 MB.
+- **Acceptance:** unit tests cover row selection and the hard byte ceiling; no third-party image is
+  committed and the committed evidence contains only provenance, hashes/aggregates and results.
+
+### Phase Q2 — run frozen CF-ViT once and report recall
+
+- [ ] Score every downloaded image with the existing hash-verified CF-ViT and frozen E24/E26
+      threshold. Do not train, calibrate, select rows or change a threshold from these results.
+- [ ] Report overall and per-generator recall, prompt-type/difficulty diagnostics, failures, score
+      distribution, detector hash and dataset limitations. This AI-only set cannot measure false
+      positives, specificity, accuracy or AUC.
+- **Acceptance:** all 100 inputs are accounted for, compact evidence and append-only history are
+  committed, full relevant tests pass and the working tree is clean.
+
 ## Completed goal — real iPhone gallery compatibility and measurement (2026-08-24)
 
 A local owner-supplied gallery exposed a serving blocker before model comparison: 187 of 210

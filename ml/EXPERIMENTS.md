@@ -1390,3 +1390,26 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   does not establish useful AI recall or a complete classifier. The next experiment must change
   representation and be evaluated on both authentic camera pipelines and held-out modern AI;
   threshold tuning on this gallery is forbidden.
+
+## 2026-08-25 — E29/Q0 pre-registration: compact 2025-generator CF-ViT probe
+
+- **Question:** at CF-ViT's frozen E24/E26 AI threshold `0.6617392`, what recall does the current
+  strongest gallery arm achieve on a small, current, generator-balanced AI-only diagnostic?
+- **Pinned source:** `saneval-ann/saneval-sample`, Hugging Face revision
+  `e9e188f6018b3d491708f29e7a387f5043dc8841`, MIT dataset card. The source has 600 API-generated
+  outputs across six commercial generators, five structured prompt types and simple/hard splits.
+- **Frozen subset before scores:** exclude pre-2025 Imagen 3; retain GPT Image 1, Imagen 4, Imagen
+  4 Ultra, Nano Banana and Seedream 3. For each model x prompt-type x split group, take the two
+  lowest source row ids: 5 models x 5 types x 2 splits x 2 rows = exactly 100 images. No visual
+  quality or detector output participates in selection.
+- **Storage gate:** download only the dataset-server cached JPEG cells into ignored
+  `ml/data/e29_saneval_2025/`. Preflight and enforce a strict 100,000,000-byte image total; require
+  100 unique SHA-256 values, pinned revision response, declared model/group balance and successful
+  shared decoding. Abort on any mismatch.
+- **Representation caveat:** the dataset card describes raw PNG outputs, while the row service
+  supplies JPEG cache assets. Results therefore measure current model content after one known web
+  recompression and must not be presented as native-output performance or a full SANEval result.
+- **Frozen report:** CF-ViT only, existing weights and preprocessing, threshold unchanged. Report
+  recall and score distribution overall/per generator plus type/split diagnostics and failures.
+  Because every item is AI, this probe cannot estimate FP, specificity, accuracy or AUC; no
+  training, calibration, threshold choice or serving change is authorized.
