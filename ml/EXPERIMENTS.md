@@ -1511,3 +1511,11 @@ new revision/completeness/expiry cache contract, passed 3/3 before retrying the 
   deterministic cells, hard byte failure, perfect metadata shortcut detection, immutable final
   receipt and interrupted-download resume. Full Python suite **65/65**, compileall and `pip check`
   passed. No E30 image was downloaded or scored before this checkpoint.
+
+### A1 network-client correction before acquisition
+
+The first `download-mllm` call failed before an HTTP response because Hugging Face Hub 1.25 exposes
+an httpx client whose `request()` does not accept requests-style `stream=True`. No image or partial
+file existed. The adapter now opens httpx streams through `build_request`/`send`, accepts both
+`iter_bytes` and requests-compatible `iter_content`, closes the response and keeps the same Range
+resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` did not change.

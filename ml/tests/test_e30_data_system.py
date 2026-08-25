@@ -53,6 +53,19 @@ class FakeResponse:
         yield from self._chunks
 
 
+class FakeHttpxResponse:
+    def __init__(self, chunks, status_code=200):
+        self._chunks = chunks
+        self.status_code = status_code
+        self.closed = False
+
+    def iter_bytes(self, chunk_size):
+        yield from self._chunks
+
+    def close(self):
+        self.closed = True
+
+
 def test_interrupted_asset_resumes_with_range_and_atomic_replace(tmp_path):
     destination = tmp_path / "image.bin"
     partial = destination.with_suffix(".bin.part")
@@ -88,6 +101,23 @@ def test_asset_download_refuses_stream_above_declared_size(tmp_path):
             hard_ceiling=10,
             requester=request,
         )
+
+
+def test_httpx_style_stream_is_consumed_and_closed(tmp_path):
+    response = FakeHttpxResponse([b"abc"])
+
+    def request(method, url, **kwargs):
+        return response
+
+    raw = e30.download_resumable(
+        "https://example.invalid/image",
+        tmp_path / "image.bin",
+        expected_bytes=3,
+        hard_ceiling=3,
+        requester=request,
+    )
+    assert raw == b"abc"
+    assert response.closed
 
 
 def test_laion_candidates_require_every_frozen_pipeline():

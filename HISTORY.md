@@ -1649,3 +1649,10 @@ be overwritten after a run.
 Twelve focused tests and the complete 65-test Python suite passed; compileall and dependency checks
 were clean. This checkpoint still contains zero E30 images and zero E30 model scores. That ordering
 is deliberate evidence for the internship report: the decision rules existed before the result.
+
+The first acquisition attempt then exposed a library-boundary bug before downloading a byte:
+Hugging Face Hub's installed client is httpx-based, not requests-based, so it rejected the stream
+argument at call construction. The correction uses the client's native streamed send path, handles
+both iterator APIs, closes responses and leaves the frozen selection unchanged. As with E29's
+interruption, the failed attempt is retained because proving that recovery did not reselect data is
+part of the scientific record.

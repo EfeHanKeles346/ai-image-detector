@@ -89,6 +89,12 @@ certify universal real-photo safety.
   validates hashes/decode/geometry and writes atomic ignored manifests. Twelve focused tests and
   the complete **65/65** suite passed; compileall and `pip check` passed. No E30 image existed when
   these checks completed.
+- **Network compatibility correction before first byte:** the first A2 invocation reached the
+  frozen 180-row selection but the installed Hugging Face `httpx` session rejected the
+  requests-style `stream=True` argument before opening a response or local partial file. The
+  adapter now uses the client's streamed `build_request`/`send` path, consumes either httpx
+  `iter_bytes` or requests-compatible `iter_content`, closes streamed responses and preserves the
+  same Range resume contract. The selection SHA and rows are unchanged.
 
 ### Phase A2 — realize the low-bandwidth development battery
 

@@ -286,7 +286,29 @@ def _request_with_retry(method: str, url: str, **kwargs: Any):
     last_error: Exception | None = None
     for attempt in range(5):
         try:
-            response = get_session().request(method, url, timeout=30, **kwargs)
+            session = get_session()
+            request_kwargs = dict(kwargs)
+            stream = bool(request_kwargs.pop("stream", False))
+            follow_redirects = bool(
+                request_kwargs.pop(
+                    "allow_redirects", request_kwargs.pop("follow_redirects", True)
+                )
+            )
+            if stream and hasattr(session, "build_request"):
+                request = session.build_request(method, url, timeout=30, **request_kwargs)
+                response = session.send(
+                    request,
+                    stream=True,
+                    follow_redirects=follow_redirects,
+                )
+            else:
+                response = session.request(
+                    method,
+                    url,
+                    timeout=30,
+                    follow_redirects=follow_redirects,
+                    **request_kwargs,
+                )
             response.raise_for_status()
             return response
         except Exception as error:
@@ -319,16 +341,25 @@ def download_resumable(
         offset = 0
     mode = "ab" if append else "wb"
     total = offset
-    with partial.open(mode) as handle:
-        for chunk in response.iter_content(chunk_size=64 * 1024):
-            if not chunk:
-                continue
-            total += len(chunk)
-            if total > hard_ceiling or (expected_bytes is not None and total > expected_bytes):
-                raise RuntimeError(f"asset exceeded its byte contract at {total:,} bytes")
-            handle.write(chunk)
-            handle.flush()
-            os.fsync(handle.fileno())
+    chunks = (
+        response.iter_content(chunk_size=64 * 1024)
+        if hasattr(response, "iter_content")
+        else response.iter_bytes(chunk_size=64 * 1024)
+    )
+    try:
+        with partial.open(mode) as handle:
+            for chunk in chunks:
+                if not chunk:
+                    continue
+                total += len(chunk)
+                if total > hard_ceiling or (expected_bytes is not None and total > expected_bytes):
+                    raise RuntimeError(f"asset exceeded its byte contract at {total:,} bytes")
+                handle.write(chunk)
+                handle.flush()
+                os.fsync(handle.fileno())
+    finally:
+        if hasattr(response, "close"):
+            response.close()
     if expected_bytes is not None and total != expected_bytes:
         raise RuntimeError(f"asset is incomplete: expected {expected_bytes:,}, got {total:,}")
     partial.replace(path)
