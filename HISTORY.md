@@ -1619,3 +1619,33 @@ AI families.
 
 The local subset can be reproduced by the E29 command but its image bytes remain ignored. The
 ledger and `evidence/e29_cfvit_2025_probe.json` are the presentation-safe scientific record.
+
+### E30/A0–A1 — the dataset idea becomes a role-enforced scientific system
+
+The next step began from the owner's correct diagnosis that the project lacked a trustworthy,
+current real-vs-AI test environment. The correction to the proposed “one real dataset plus one AI
+dataset” is structural: two collections can be separated perfectly by format, geometry or
+compression without learning authenticity, exactly as `archive1` demonstrated at metadata-only
+AUC 1.000. E30 therefore records five non-interchangeable roles—TRAIN, CALIBRATION, DEVELOPMENT
+TEST, LOCKED FINAL TEST and chronological FUTURE TEST—and makes the role part of each row rather
+than a folder naming convention.
+
+Plan commit `c55be75` froze the working-v1 gates, the owner's exposed gallery boundary, the need for
+a new native multi-phone vault, the low/full-bandwidth profiles and three pinned public sources
+before implementation or download. MLLMGenSet supplies matched GPT Image 2, Nano Banana 2 and real
+development cells; LAION-Mobile supplies only web-laundered real-phone regression; Qwen Image
+Bench supplies an independent sealed current-generator collection. Existing project training and
+E22/E24 calibration data keep their old roles, and FUTURE remains honestly empty until a later
+generator release.
+
+A1 turns those words into refusal conditions. A manifest cannot carry an ambiguous label,
+unpinned revision, unsafe path, unnamed generator/camera pipeline, derived image in another role,
+or exact/underlying content shared across roles. A TRAIN request for test rows raises instead of
+loading them. Downloads are deterministic, capped, atomic and resumable; decoded geometry,
+SHA-256 and dHash enter ignored local manifests. A metadata-only classifier measures whether
+format/shape/resolution/compression can solve the merged classes, and a locked-final receipt cannot
+be overwritten after a run.
+
+Twelve focused tests and the complete 65-test Python suite passed; compileall and dependency checks
+were clean. This checkpoint still contains zero E30 images and zero E30 model scores. That ordering
+is deliberate evidence for the internship report: the decision rules existed before the result.

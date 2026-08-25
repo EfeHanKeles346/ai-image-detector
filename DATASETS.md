@@ -58,6 +58,20 @@ Add the two tile-only sets once tile training is the default, for GAN coverage a
 | `archive1` | 240 MB | **Confounded** (see `HISTORY.md` §1b). Keep only for continuity with E1–E6; do not use for new claims |
 | `archive` (CIFAKE) | 469 MB | 32×32. Only SmallCNN's domain |
 
+### E30 pinned current-science sources — role assignment before download
+
+| Source (pinned revision) | Full source | E30 role and initial slice | Why selected | Boundary |
+|---|---:|---|---|---|
+| `zr-zhang/MLLM-Generated-Image-Detection-Dataset` (`1498eead…b9de`) | 4,356 rows / 3.32 GB | **DEVELOPMENT TEST**; planned 180 preprocessed JPEGs: 20 per GPT Image 2 / Nano Banana 2 / real × texture / structure / hybrid cell | Matched 2026 generators and real class with three explicit artifact regimes; independent of detector score | Dataset card is research-use restricted. JPEG arm is standardized transport, not native output; raw arm remains separate |
+| `Qwen/Qwen-Image-Bench` (`d2493deb…7038`) | 12.7 GB | **LOCKED FINAL TEST candidate**; first sealed scout is 5 each from 8 named 2026 generators (40 PNGs) | Independent collection and broad frontier coverage: GPT Image 2, Nano Banana 2, Seedream 5, Qwen Image 2 Pro, FLUX.2 Max/Pro, GLM-Image, Hunyuan Image 3 | Five per generator is scout-only. No success claim below 40 per reported generator; selected rows stay unscored until candidate/threshold freeze |
+| `laionmobile/laion-mobile` (`0c60f598…3465`) | 935,399 metadata rows / 151 MB; evaluation manifest 9,115 rows / 2,639,565 B | **DEVELOPMENT TEST**; planned 8 declared phone/web pipeline groups × 10 local reconstructions | Real-only false-positive stress test with EXIF make/model and upstream content hashes, fetched row-wise rather than mirroring the corpus | Metadata is CC-BY-4.0; image licences remain upstream. Web-reprocessed and mostly older phones, not a native-camera vault |
+| New private multi-phone vault | Not yet collected | **LOCKED FINAL TEST**, target 4 pipelines × 40 untouched originals | Only reliable way to match native iPhone/Samsung/Pixel computational-photography pipelines without web laundering | Existing owner gallery is exposed development regression; no personal bytes, names, GPS or per-image identifiers enter Git |
+
+`ml/e30_sources.json` is the machine-readable source registry. The pinned sizes above are upstream
+reported totals, not local acquisitions. Exact selected counts, downloaded bytes, hashes and audit
+results will replace the planned slice descriptions after E30-A2/A3 realization. E30 test bytes
+remain under ignored `ml/data/e30/` and are forbidden from TRAIN/CALIBRATION.
+
 ### Current generators, AI-only — pair with care
 
 | Dataset | Size | Model | Era |
@@ -140,10 +154,12 @@ MODULE 2         image-manipulation-compilation   masks, 13 sub-datasets
 1. **CommunityForensics is 47 of 260 GB.** Before training on it, check whether the shards we
    hold are representative — if they are ordered by generator, our slice may cover only a few of
    the 228 models. (The auditor already learned this lesson once, on `theminji/ai-vs-real-200k`.)
-2. **No 2026-era editing data.** Every manipulation set is classic or 2023-era inpainting. There
-   is nothing from ChatGPT or Gemini image editing, and per `IMAGE_FORENSICS_REFERENCE.md` §3.2
-   those re-render every pixel — a different problem that localisation may not address at all.
-3. **Nothing has been evaluated under compression.** Every image on the internet is recompressed;
-   none of our measurements are.
+2. **No realized native 2026 editing arm yet.** E30 pins GPT Image 2 / Nano Banana 2 data whose
+   paper covers direct generation, reference reconstruction and local editing, but the compact
+   local slice has not yet been downloaded/audited and the exposed HF folder hierarchy does not
+   carry every protocol field. It cannot close Module 2's localisation gap by assumption.
+3. **Compression is measured but remains regime-specific.** E23c evaluated q50 degradation and
+   showed thresholds do not transfer safely between compression regimes. E30 therefore keeps
+   native/standardized/q90/q75/q50 claims separate instead of treating augmentation as a cure.
 4. **The AI-only sets are unusable as-is.** They need either a controlled real half or tile-mode
    evaluation.

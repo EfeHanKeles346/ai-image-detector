@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-25T00:00:00+03:00",
+  "acquisition_cutoff": "2026-08-25",
+  "sources": [
+    {
+      "id": "zr-zhang/MLLM-Generated-Image-Detection-Dataset",
+      "revision": "1498eead24292a9a2d134476b2c559193b68b9de",
+      "url": "https://huggingface.co/datasets/zr-zhang/MLLM-Generated-Image-Detection-Dataset",
+      "license": "Apache-2.0 metadata; dataset card restricts use to research and related academic purposes",
+      "reported_rows": 4356,
+      "reported_full_bytes": 3320000000,
+      "assigned_role": "development_test",
+      "representation": "Preprocessing JPEG branch for E30-A2; Raw branch reserved as a separate fidelity regime",
+      "reason": "Matched 2026 GPT Image 2, Nano Banana 2 and real images across texture, structure and hybrid regimes"
+    },
+    {
+      "id": "Qwen/Qwen-Image-Bench",
+      "revision": "d2493deb153b020cf169c7e3f57d15e4dd697038",
+      "url": "https://huggingface.co/datasets/Qwen/Qwen-Image-Bench",
+      "license": "Apache-2.0",
+      "reported_full_bytes": 12700000000,
+      "assigned_role": "locked_final_test",
+      "representation": "Original per-generator PNG files; standardized derivatives inherit the parent role",
+      "reason": "Independent current-generator collection spanning multiple 2026 commercial and open model families"
+    },
+    {
+      "id": "laionmobile/laion-mobile",
+      "revision": "0c60f598e67cffe8475f54edd71307648cd03465",
+      "url": "https://huggingface.co/datasets/laionmobile/laion-mobile",
+      "license": "CC-BY-4.0 metadata; every reconstructed image retains its upstream licence",
+      "reported_rows": 935399,
+      "reported_full_bytes": 151000000,
+      "eval_manifest_rows": 9115,
+      "eval_manifest_bytes": 2639565,
+      "assigned_role": "development_test",
+      "representation": "Metadata-only reconstruction of web-processed smartphone photographs",
+      "reason": "Real-only false-positive stress test across declared phone makes and web transport pipelines"
+    }
+  ],
+  "reserved_roles": {
+    "train": "Existing audited project pool; E30 test downloads are excluded",
+    "calibration": "Existing E22/E24 source library; threshold-only",
+    "development_test": "MLLMGenSet JPEG and capped LAION-Mobile reconstruction",
+    "locked_final_test": "Sealed Qwen Image Bench current-generator rows",
+    "future_test": "Empty until a generator family is released after the frozen candidate cutoff"
+  }
+}

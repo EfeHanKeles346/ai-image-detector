@@ -65,21 +65,30 @@ certify universal real-photo safety.
 
 ### Phase A1 — implement an enforceable, interruption-safe data contract
 
-- [ ] Add a source registry and versioned manifest schema for the five roles. Pin repository
+- [x] Add a source registry and versioned manifest schema for the five roles. Pin repository
       revisions, dataset/card licences, exact paths/row ids, class direction and acquisition
       cutoff; store third-party bytes only under ignored local data.
-- [ ] Add deterministic stratified selection, per-file and total-byte preflight, bounded retry,
+- [x] Add deterministic stratified selection, per-file and total-byte preflight, bounded retry,
       resumable atomic writes, content-type/decoder/geometry validation and SHA-256/dHash
       deduplication against all available train/calibration/development/final manifests.
-- [ ] Add merged-pool shortcut probes for file format, width, height, aspect, squareness and
+- [x] Add merged-pool shortcut probes for file format, width, height, aspect, squareness and
       bytes-per-pixel. Audit native and standardized encodes separately; never erase the raw/native
       regime to manufacture a clean result.
-- [ ] Enforce role boundaries in code: TRAIN loaders reject non-TRAIN rows; final scoring requires
+- [x] Enforce role boundaries in code: TRAIN loaders reject non-TRAIN rows; final scoring requires
       a committed candidate/threshold contract and writes an immutable run receipt; derived copies
       cannot cross their parent's role.
 - **Acceptance:** focused tests cover selection, label direction, byte ceilings, resume, role
   violations, duplicate leakage and shortcut-audit failure; full Python tests, compileall and
   dependency checks pass before downloading images.
+- **Implemented 2026-08-25 before download:** `e30_sources.json` pins MLLMGenSet
+  `1498eead...b9de`, Qwen Image Bench `d2493deb...7038` and LAION-Mobile
+  `0c60f598...3465`. `pixelproof.data_contract` validates the five roles, explicit real/AI label
+  direction, revisions, safe paths, parent inheritance, exact/underlying-content leakage,
+  training-role access, byte gates, metadata-only shortcut AUC and immutable final-run receipts.
+  `e30_data_system.py` freezes numeric source paths, resumes Range-capable partial downloads,
+  validates hashes/decode/geometry and writes atomic ignored manifests. Twelve focused tests and
+  the complete **65/65** suite passed; compileall and `pip check` passed. No E30 image existed when
+  these checks completed.
 
 ### Phase A2 — realize the low-bandwidth development battery
 

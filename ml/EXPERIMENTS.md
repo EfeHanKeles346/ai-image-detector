@@ -1472,3 +1472,42 @@ new revision/completeness/expiry cache contract, passed 3/3 before retrying the 
   specificity, accuracy or AUC and does not represent native PNG performance. The defensible
   conclusion is narrow but important: CF-ViT's 0.49% false-alarm result on the owner's real gallery
   coexists with only 19% recall here, so it is not a complete detector for current generators.
+
+## 2026-08-25 — E30/A0: five-role current-data and OOD protocol pre-registration
+
+- **Question:** can the next candidate be judged without repeating E10's collection shortcut or
+  E27's evaluation leakage, while keeping the unstable-network acquisition below a strict local
+  budget? E30 separates TRAIN, CALIBRATION, DEVELOPMENT TEST, LOCKED FINAL TEST and chronological
+  FUTURE TEST before source selection or scores.
+- **Frozen source roles:** existing audited project data remains TRAIN; E22/E24 source scores remain
+  CALIBRATION; pinned MLLMGenSet GPT Image 2/Nano Banana 2/matched-real JPEGs and capped
+  LAION-Mobile reconstructions are DEVELOPMENT; pinned Qwen Image Bench 2026-generator PNG paths
+  are the first LOCKED FINAL candidate; FUTURE stays empty until a post-cutoff release exists.
+  The exposed owner gallery remains development regression only.
+- **Frozen gates:** working-v1 requires real macro FP <=5%, worst-source point FP <=10%, current-AI
+  macro recall >=50%, every generator/protocol >=30%, and q75/resize recall loss <=15 points.
+  Per-source exact 95% intervals and abstention coverage are mandatory; 40 examples is a minimum
+  gate cell and 5–10 is scout-only. A new native multi-phone vault is required before any universal
+  real-photo claim.
+- **Acquisition boundary:** low-bandwidth development target <=30 MB (hard 40 MB); Qwen scout hard
+  70 MB. Rows are deterministic and score-blind, revisions/licences are pinned, third-party bytes
+  are ignored, and every derivative inherits its parent role.
+
+## 2026-08-25 — E30/A1: role/data contract implemented before image download
+
+- **Pinned registry:** MLLMGenSet `1498eead...b9de`, Qwen Image Bench `d2493deb...7038` and
+  LAION-Mobile `0c60f598...3465`, including upstream total sizes, licence boundaries, intended
+  role and representation caveats.
+- **Mechanical contract:** explicit label direction and five-role validation; safe relative paths;
+  one revision per source; AI generator / real pipeline requirement; derived-parent role, label and
+  content inheritance; exact SHA and underlying-content cross-role leak rejection; role-gated
+  loading; deterministic stratification; per-file/total byte gates; SHA-256/dHash; metadata-only
+  geometry/format/compression probe; immutable locked-final receipt.
+- **Network contract:** exact source paths freeze before bytes, Range-capable partial files resume,
+  a non-Range server restarts safely, streams cannot exceed declared/remaining bytes, verified
+  files and JSON manifests replace atomically, and LAION URL replacements must match upstream
+  hashes.
+- **Verification:** 12 focused tests passed, including role violation, parent/content leakage,
+  deterministic cells, hard byte failure, perfect metadata shortcut detection, immutable final
+  receipt and interrupted-download resume. Full Python suite **65/65**, compileall and `pip check`
+  passed. No E30 image was downloaded or scored before this checkpoint.
