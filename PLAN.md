@@ -5,6 +5,162 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Active goal — E30 current-science data and OOD test system (2026-08-25)
+
+The immediate goal is not another unconstrained training run. It is a reproducible data contract
+that can tell us whether a candidate is genuinely usable on modern camera photographs and 2026
+generation families. E10/E19 showed that a nominal real-vs-AI dataset can be solved through
+format, geometry or compression shortcuts; E27 showed that even a promising detector can be
+invalidated by evaluation leakage. E30 therefore separates data by scientific role before any new
+image is downloaded or score is read.
+
+### The five-role contract
+
+| role | what it may do | what it must never do |
+|---|---|---|
+| **TRAIN** | fit model weights and training-time preprocessing | set a decision threshold or contribute to a reported test metric |
+| **CALIBRATION** | select aggregation/thresholds after weights are frozen | update model weights or select examples from evaluation results |
+| **DEVELOPMENT TEST** | reject weak ideas and expose known failure modes repeatedly | support a final/generalization claim after it has guided development |
+| **LOCKED FINAL TEST** | run once per pre-registered frozen candidate and decide its gate | influence training, hyperparameters, threshold, row selection or retries |
+| **FUTURE TEST** | evaluate generator families released after the candidate's acquisition cutoff | be populated retrospectively with already-seen sources and called future OOD |
+
+Every acquired row must carry one role, source collection, source revision, class, generator or
+camera pipeline, content/protocol group, underlying-content id when available, native/derived
+status and SHA-256. Derived encodes inherit the role and split of their parent. A command must
+refuse ambiguous labels, cross-role hashes and training access to non-TRAIN rows.
+
+The owner's 206-unique-image iPhone gallery is already exposed to several models and remains a
+named **development regression** only. It cannot calibrate a threshold, enter training or become a
+pristine final test. A new native-camera final vault requires untouched transfers from independent
+modern phones; until it exists, E30 may produce a rigorous current-generator result but may not
+certify universal real-photo safety.
+
+### Phase A0 — freeze sources, roles and stop/go gates before implementation
+
+- [x] Assign the 2026 `zr-zhang/MLLM-Generated-Image-Detection-Dataset` to a compact, matched
+      **DEVELOPMENT TEST**: GPT Image 2, Nano Banana 2 and its real class, stratified independently
+      over texture/structure/hybrid. Use only deterministic source paths; never visual quality or
+      detector score. Start with the uniformly preprocessed JPEG branch to control transport cost
+      and preserve the raw branch as a separate later fidelity regime.
+- [x] Assign a deterministic multi-generator slice from the Apache-2.0
+      `Qwen/Qwen-Image-Bench` to the first **LOCKED FINAL TEST** candidate. Its source collection is
+      independent of MLLMGenSet and covers 2026 families such as GPT Image 2, Nano Banana 2,
+      Seedream 5, Qwen Image 2 Pro and FLUX.2. No score may be read until candidate hashes,
+      thresholds and the exact selected rows are committed.
+- [x] Assign a capped `laionmobile/laion-mobile` URL reconstruction to a real-only
+      **DEVELOPMENT TEST** for web-laundered smartphone photographs. It is not a native-camera
+      substitute: the source itself says its heavy-ISP tier ends around 2020 and individual image
+      licences remain upstream.
+- [x] Preserve existing audited E20 training data as **TRAIN** and the E22/E24 source library as
+      **CALIBRATION**. E30 downloads do not silently enter either role. The first **FUTURE TEST**
+      remains empty and is defined by a release date later than the eventual candidate's frozen
+      acquisition cutoff.
+- **Working-model v1 gate:** real macro FP <=5%; worst real-source point FP <=10%; current-AI macro
+  recall >=50%; every named generator/protocol recall >=30%; JPEG-q75/resize recall loss <=15
+  percentage points. Report per-source exact 95% intervals, abstention/coverage and secondary AUC;
+  never use pooled accuracy alone. A 40-item source cell is the minimum gate cell, while 5–10 items
+  are explicitly scout-only.
+- **Acceptance:** this plan is committed before an E30 downloader, local E30 image, model score or
+  role manifest exists.
+
+### Phase A1 — implement an enforceable, interruption-safe data contract
+
+- [ ] Add a source registry and versioned manifest schema for the five roles. Pin repository
+      revisions, dataset/card licences, exact paths/row ids, class direction and acquisition
+      cutoff; store third-party bytes only under ignored local data.
+- [ ] Add deterministic stratified selection, per-file and total-byte preflight, bounded retry,
+      resumable atomic writes, content-type/decoder/geometry validation and SHA-256/dHash
+      deduplication against all available train/calibration/development/final manifests.
+- [ ] Add merged-pool shortcut probes for file format, width, height, aspect, squareness and
+      bytes-per-pixel. Audit native and standardized encodes separately; never erase the raw/native
+      regime to manufacture a clean result.
+- [ ] Enforce role boundaries in code: TRAIN loaders reject non-TRAIN rows; final scoring requires
+      a committed candidate/threshold contract and writes an immutable run receipt; derived copies
+      cannot cross their parent's role.
+- **Acceptance:** focused tests cover selection, label direction, byte ceilings, resume, role
+  violations, duplicate leakage and shortcut-audit failure; full Python tests, compileall and
+  dependency checks pass before downloading images.
+
+### Phase A2 — realize the low-bandwidth development battery
+
+- [ ] Download a deterministic MLLMGenSet preprocessed slice with 20 examples per
+      class x artifact regime: 2 AI generators x 3 regimes x 20 = 120 AI plus
+      3 regimes x 20 = 60 matched real, 180 images total. Require all nine cells and disclose this
+      as a standardized-JPEG development test, not native-output performance.
+- [ ] Reconstruct a capped LAION-Mobile real-only slice across multiple declared phone/pipeline
+      groups. Cap each asset and the complete arm, retain upstream URL/licence metadata, reject
+      dead/replaced content and treat the arm as web-processed smartphone regression only.
+- [ ] Materialize matched deterministic q90/q75/q50 and resize variants locally without network
+      cost, after parent-role assignment. Keep every derivative beside its parent id so no variant
+      can leak across roles.
+- **Low-bandwidth ceiling:** target <=30 MB for development bytes and stop at 40 MB. A source that
+  cannot meet its frozen cell counts within the ceiling is reported incomplete rather than
+  silently rebalanced.
+- **Acceptance:** exact counts, bytes, source revisions, content hashes, licence boundaries and all
+  audit outcomes are recorded before any detector is run.
+
+### Phase A3 — freeze and realize the compact current-generator final candidate
+
+- [ ] From Qwen Image Bench, freeze 2026 generator directories and deterministic image paths before
+      download. The first scout may use 5 per generator, but no pass/fail claim is allowed until a
+      frozen candidate is tested on at least 40 items per reported generator cell.
+- [ ] Keep original PNGs and separately create role-inherited standardized JPEG variants. Enforce a
+      70 MB low-bandwidth download ceiling for the scout and a manifest-first resume path.
+- [ ] Commit only provenance, hashes, aggregate audits and the sealed row list; keep image bytes and
+      any per-image visual material ignored. Do not inspect or score the locked rows during A3.
+- **Acceptance:** selected rows and content hashes are sealed, cross-collection overlap checks pass,
+  and the working tree is clean before any final score is read.
+
+### Phase A4 — establish candidate and threshold contracts, then score once
+
+- [ ] Benchmark existing E20/E26 arms on DEVELOPMENT TEST only. Freeze the candidate artifact
+      hashes, preprocessing, aggregation and calibration-only thresholds before requesting a
+      LOCKED FINAL TEST run.
+- [ ] Score the sealed final candidate exactly once, accounting for every row and failure. The run
+      may reject a candidate but may not trigger threshold/row replacement on the same final set.
+- [ ] Report macro and worst-group FP/recall, per-generator/protocol results, exact 95% intervals,
+      compression/resize deltas, abstention coverage and shortcut-probe context. Keep native and
+      standardized transport claims separate.
+- **Acceptance:** every metric is reproducible from committed aggregate evidence and ignored local
+  manifests; a failed gate sends the next model back to TRAIN/DEVELOPMENT, not into final-set
+  retuning.
+
+### Phase A5 — build the first genuinely unseen native-camera vault
+
+- [ ] Collect at least 40 untouched stills from each of four independent modern phone pipelines
+      (target: current iPhone, Samsung, Pixel and one additional device), transferred by USB/AirDrop
+      rather than messaging/social media. Balance indoor/outdoor, day/night, portrait, food,
+      landscape and close-up scenes; retain native HEIC/JPEG/MPO provenance privately.
+- [ ] Audit and seal the vault without committing personal images, filenames, GPS or per-image
+      identifiers. Separate native originals from explicitly derived transport variants.
+- [ ] Run only a pre-registered frozen candidate. Until this phase passes, label E30 outcomes
+      “current-generator benchmark” rather than “universal deployable detector”.
+
+### Phase A6 — full-internet expansion without contaminating the benchmark
+
+- [ ] At the high-bandwidth location, expand by breadth before volume: at least 100 final examples
+      per locked generator/pipeline, raw MLLMGenSet fidelity arms, and additional independent 2026
+      collections. Download full 3.32 GB MLLMGenSet or 12.7 GB Qwen assets only when the manifest
+      shows which rows add a missing generator/protocol/transport cell; do not mirror data merely
+      because bandwidth is available.
+- [ ] Keep all E30 development/final sources out of TRAIN. Build a separate representation-curated
+      TRAIN pool from the existing 255 GB holdings plus independent current-generator sources,
+      targeting source diversity and embedding coverage rather than raw image count.
+- [ ] Evaluate a frozen modern multimodal encoder plus lightweight linear/adapter head before
+      another end-to-end backbone fine-tune. Select representative generator families in embedding
+      space, then require the A4/A5 gates and three training seeds before serving.
+- [ ] Populate FUTURE TEST only with generator families released after the candidate's frozen
+      acquisition cutoff; version each chronological test rather than rewriting an old one.
+
+### Documentation and commit contract
+
+Each phase is pre-registered before code or measurement, then closed with a separate scoped commit.
+`DATASETS.md` records where every source came from, exact selected/full bytes and counts, licence,
+role, selection reason, limitations and intended use. `ml/EXPERIMENTS.md` records hypotheses,
+protocols and measurements. Append-only `HISTORY.md` records the narrative, rejected attempts and
+phase-to-commit ledger needed for the internship report. Third-party and personal images never
+enter Git.
+
 ## Completed diagnostic goal — compact 2025-generator CF-ViT probe (2026-08-25)
 
 The owner requested an internet-sourced, at-most-100 MB AI-only set from popular 2025-or-newer
