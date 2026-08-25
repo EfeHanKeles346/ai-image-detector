@@ -1580,3 +1580,9 @@ Two new contract tests cover the exact 100-row balance and strict size failure. 
 Python suite passed 52/52, compileall and dependency checks passed. The internet interruption
 occurred before any image download, so no partial dataset existed; the pinned dataset endpoint was
 reachable again with the expected revision before this implementation checkpoint was closed.
+
+The first invocation then confirmed that a nominally reachable endpoint can still stall on a row
+chunk. It was stopped before preflight and before any image existed. E29 now persists only complete,
+revision-matched metadata chunks atomically, refuses signed URLs near expiry, prints each fetch
+boundary and reuses fully validated image files after interruption. This converts another network
+cut from a restart-from-zero risk into an explicit, auditable resume path; focused tests passed 3/3.

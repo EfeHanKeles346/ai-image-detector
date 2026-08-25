@@ -1428,3 +1428,13 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py \
   model/type/split and preserves per-row local scores for audit.
 - Automated selection/budget tests passed 2/2. Full Python tests passed **52/52**; compileall and
   `pip check` passed. The implementation checkpoint precedes all image download and scoring.
+
+### Q1 network-interruption correction
+
+The first real invocation stalled before preflight while waiting for a dataset-server row chunk;
+it was interrupted after three silent 30-second polls. No image or partial dataset had been
+created. The fetcher now prints each chunk boundary, uses a shorter bounded request timeout and
+atomically caches each complete 100-row response. A resumed chunk is accepted only when its
+revision matches and every signed asset URL has more than one hour before expiry. Completed image
+files are likewise revalidated and reused after a later interruption. Focused tests, including the
+new revision/completeness/expiry cache contract, passed 3/3 before retrying the network run.

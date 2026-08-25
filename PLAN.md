@@ -35,12 +35,13 @@ selected the MIT-licensed `saneval-ann/saneval-sample` at revision
 - **Acceptance:** unit tests cover row selection and the hard byte ceiling; no third-party image is
   committed and the committed evidence contains only provenance, hashes/aggregates and results.
 - **Implementation checkpoint 2026-08-25:** `e29_saneval_2025_probe.py` now fetches the pinned row
-  schema with bounded retry, verifies the revision header, selects the pre-registered 100 rows,
+  schema with bounded retry and resumable revision/expiry-checked 100-row metadata chunks, verifies
+  the revision header, selects the pre-registered 100 rows,
   preflights every cache asset, enforces the decimal 100 MB ceiling, validates JPEG/decode/geometry
   and uniqueness, and writes ignored atomic local files plus a SHA-256 manifest. It reuses the
   existing local CF-ViT adapter and frozen threshold for Q2. Selection/size tests passed 2/2; the
-  full Python suite passed 52/52, compileall and `pip check` passed. No image has been downloaded
-  at this checkpoint.
+  initial full Python suite passed 52/52, compileall and `pip check` passed; the interruption fix's
+  focused tests passed 3/3. No image has been downloaded at this checkpoint.
 
 ### Phase Q2 — run frozen CF-ViT once and report recall
 

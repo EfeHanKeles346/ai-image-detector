@@ -75,12 +75,12 @@ class SourceRow:
     height: int
 
 
-def _request(method: str, url: str, **kwargs: Any):
+def _request(method: str, url: str, *, request_timeout: float = 20, **kwargs: Any):
     """Retry transient dataset-server/cache failures without hiding final errors."""
     last_error: Exception | None = None
     for attempt in range(5):
         try:
-            response = get_session().request(method, url, timeout=60, **kwargs)
+            response = get_session().request(method, url, timeout=request_timeout, **kwargs)
             response.raise_for_status()
             return response
         except Exception as error:  # network status is reported after bounded retries
@@ -90,27 +90,70 @@ def _request(method: str, url: str, **kwargs: Any):
     raise RuntimeError(f"{method} {url} failed after five attempts: {last_error}")
 
 
-def fetch_source_rows() -> list[SourceRow]:
+def _cached_payload(path: Path) -> dict[str, Any] | None:
+    if not path.is_file():
+        return None
+    try:
+        cached = json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError):
+        return None
+    if cached.get("revision") != DATASET_REVISION:
+        return None
+    payload = cached.get("payload")
+    if not isinstance(payload, dict) or len(payload.get("rows", [])) != ROWS_PER_REQUEST:
+        return None
+    # Dataset-server URLs are signed. Do not resume metadata too close to expiry.
+    for item in payload["rows"]:
+        url = str(item.get("row", {}).get("image", {}).get("src", ""))
+        marker = "Expires="
+        if marker not in url:
+            return None
+        try:
+            expires = int(url.split(marker, 1)[1].split("&", 1)[0])
+        except ValueError:
+            return None
+        if expires <= time.time() + 3600:
+            return None
+    return payload
+
+
+def fetch_source_rows(cache_dir: Path | None = None) -> list[SourceRow]:
     rows: list[SourceRow] = []
+    if cache_dir is not None:
+        cache_dir.mkdir(parents=True, exist_ok=True)
     for offset in range(0, TOTAL_SOURCE_ROWS, ROWS_PER_REQUEST):
-        response = _request(
-            "GET",
-            ROWS_URL,
-            params={
-                "dataset": DATASET_ID,
-                "config": "default",
-                "split": "train",
-                "offset": offset,
-                "length": ROWS_PER_REQUEST,
-                "revision": DATASET_REVISION,
-            },
-        )
-        revision = response.headers.get("x-revision")
-        if revision != DATASET_REVISION:
-            raise RuntimeError(
-                f"dataset revision changed: expected {DATASET_REVISION}, got {revision}"
+        cache_path = cache_dir / f"rows_{offset:03d}.json" if cache_dir else None
+        payload = _cached_payload(cache_path) if cache_path else None
+        if payload is None:
+            print(f"fetching source rows {offset}–{offset + ROWS_PER_REQUEST - 1}", flush=True)
+            response = _request(
+                "GET",
+                ROWS_URL,
+                params={
+                    "dataset": DATASET_ID,
+                    "config": "default",
+                    "split": "train",
+                    "offset": offset,
+                    "length": ROWS_PER_REQUEST,
+                    "revision": DATASET_REVISION,
+                },
             )
-        payload = response.json()
+            revision = response.headers.get("x-revision")
+            if revision != DATASET_REVISION:
+                raise RuntimeError(
+                    f"dataset revision changed: expected {DATASET_REVISION}, got {revision}"
+                )
+            payload = response.json()
+            if len(payload.get("rows", [])) != ROWS_PER_REQUEST:
+                raise RuntimeError(f"source chunk {offset} is incomplete")
+            if cache_path is not None:
+                temporary = cache_path.with_suffix(".json.part")
+                temporary.write_text(
+                    json.dumps({"revision": revision, "payload": payload}) + "\n"
+                )
+                temporary.replace(cache_path)
+        else:
+            print(f"resuming cached source rows {offset}–{offset + ROWS_PER_REQUEST - 1}", flush=True)
         for item in payload.get("rows", []):
             row = item.get("row", {})
             image = row.get("image", {})
@@ -171,7 +214,7 @@ def validate_content_lengths(lengths: list[int], ceiling: int = MAX_IMAGE_BYTES)
 
 
 def _content_length(row: SourceRow) -> int:
-    response = _request("HEAD", row.image_url)
+    response = _request("HEAD", row.image_url, request_timeout=30)
     try:
         return int(response.headers["content-length"])
     except (KeyError, ValueError) as error:
@@ -200,8 +243,11 @@ def download_subset(rows: list[SourceRow], output_dir: Path) -> dict[str, Any]:
     for index, (row, expected_length) in enumerate(zip(rows, lengths), 1):
         filename = f"{row.row_idx:04d}_{_slug(row.model)}.jpg"
         path = output_dir / filename
-        response = _request("GET", row.image_url)
-        raw = response.content
+        if path.is_file():
+            raw = path.read_bytes()
+        else:
+            response = _request("GET", row.image_url, request_timeout=60)
+            raw = response.content
         if len(raw) != expected_length:
             raise RuntimeError(
                 f"row {row.row_idx} changed size: HEAD={expected_length}, GET={len(raw)}"
@@ -224,9 +270,10 @@ def download_subset(rows: list[SourceRow], output_dir: Path) -> dict[str, Any]:
                 f"row {row.row_idx} geometry changed: API={(row.width, row.height)}, "
                 f"decoded={picture.size}"
             )
-        temporary = path.with_suffix(".jpg.part")
-        temporary.write_bytes(raw)
-        temporary.replace(path)
+        if not path.is_file():
+            temporary = path.with_suffix(".jpg.part")
+            temporary.write_bytes(raw)
+            temporary.replace(path)
         records.append(
             {
                 **asdict(row),
@@ -365,8 +412,9 @@ def main() -> None:
     parser.add_argument("--download-only", action="store_true")
     args = parser.parse_args()
 
-    rows = select_rows(fetch_source_rows())
-    manifest = download_subset(rows, args.output_dir.resolve())
+    output_dir = args.output_dir.resolve()
+    rows = select_rows(fetch_source_rows(output_dir / "_row_cache"))
+    manifest = download_subset(rows, output_dir)
     print(
         f"verified subset: n={manifest['selection']['count']} "
         f"bytes={manifest['download']['image_bytes']:,} "
@@ -375,7 +423,7 @@ def main() -> None:
     )
     if args.download_only:
         return
-    results = score_subset(manifest, args.output_dir.resolve(), args.device)
+    results = score_subset(manifest, output_dir, args.device)
     print(json.dumps({"overall": results["overall"], "by_model": results["by_model"]}, indent=2))
 
 

@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import sys
+import time
 from pathlib import Path
 
 import pytest
@@ -62,3 +64,21 @@ def test_download_size_gate_is_strict_and_requires_every_row():
         e29.validate_content_lengths([1] * 99)
     with pytest.raises(RuntimeError, match="positive"):
         e29.validate_content_lengths([1] * 99 + [0])
+
+
+def test_row_cache_requires_pinned_revision_complete_chunk_and_live_urls(tmp_path):
+    path = tmp_path / "rows.json"
+    payload = {
+        "rows": [
+            {"row": {"image": {"src": f"https://example.invalid/{index}?Expires={int(time.time()) + 7200}"}}}
+            for index in range(100)
+        ]
+    }
+    path.write_text(json.dumps({"revision": e29.DATASET_REVISION, "payload": payload}))
+    assert e29._cached_payload(path) == payload
+
+    payload["rows"][0]["row"]["image"]["src"] = (
+        f"https://example.invalid/expired?Expires={int(time.time())}"
+    )
+    path.write_text(json.dumps({"revision": e29.DATASET_REVISION, "payload": payload}))
+    assert e29._cached_payload(path) is None
