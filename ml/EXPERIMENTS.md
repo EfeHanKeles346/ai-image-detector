@@ -1578,3 +1578,19 @@ resume/byte ceiling. The frozen 180 paths and selection SHA `f71c8d02...035e` di
 - This AI-only arm cannot support a metadata-only real-vs-AI shortcut AUC. Count, format, decode,
   role inheritance, exact-byte and uniqueness gates passed. `detector_scored=false` remains true;
   no locked image was inspected or inferred during acquisition.
+
+## 2026-08-25 — E30/A4 implementation checkpoint before DEVELOPMENT scores
+
+- Added `experiments/e30_development_benchmark.py` before running either model. It refuses any
+  manifest other than the frozen 900-row DEVELOPMENT content set and has no code path to the Qwen
+  LOCKED FINAL directory.
+- E20 loads only through the verified project artifact registry, including checkpoint-owned 128 px
+  tiling, texture floor, top-k aggregation and threshold. CF-ViT requires the pinned upstream
+  revision, cached weights SHA-256 `275ba982...1692`, authors' processor and unchanged
+  `t_ai=0.6617392`.
+- Per-row JSONL scores are ignored, contract-hash bound, append-and-fsync resumable and keyed by
+  record id. Each image byte hash is rechecked before inference. The aggregate includes full
+  accounting, ROC-AUC, FP, recall, Clopper-Pearson 95% intervals, macro/worst transport-group
+  rates, robustness deltas and abstention semantics.
+- Synthetic exact-interval and transport-accounting tests plus the existing E30 acquisition tests
+  passed 12/12. This checkpoint contains no E30 detector result.

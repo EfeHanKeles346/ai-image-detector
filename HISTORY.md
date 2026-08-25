@@ -1709,3 +1709,14 @@ view was then created for every parent. The 9,449,715 derivative bytes retain LO
 prompt identity and parent linkage; all 80 byte hashes remain unique. Native and combined
 content-set hashes are archived in `evidence/e30_qwen_realization.json`. No detector score was
 computed, so the locked-final boundary remains intact at the end of A3.
+
+### E30/A4 implementation — scoring rules exist before development output
+
+The next tool can read only the frozen 900-row MLLM DEVELOPMENT manifest. It verifies the complete
+content-set hash and each individual byte hash, binds resumable score rows to a hash of the model
+contract, and rejects a changed E20 checkpoint or CF-ViT weight file. E20 retains its checkpoint
+threshold and binary semantics; CF-ViT retains its E24 threshold and honest `insufficient` band.
+Reports include exact 95% binomial intervals, macro/worst groups and transport deltas. Two focused
+tests passed before inference, and the Qwen LOCKED FINAL path is absent from the evaluator. Thus
+the implementation commit remains a genuine pre-result checkpoint rather than documentation
+written after seeing performance.

@@ -138,6 +138,11 @@ certify universal real-photo safety.
 
 ### Phase A4 — establish candidate and threshold contracts, then score once
 
+- [x] Implement the DEVELOPMENT-only, resumable benchmark before reading a score. It refuses a
+      changed 900-row content set or model artifact, keeps E20/CF-ViT decision semantics distinct,
+      and reports exact 95% binomial intervals plus per-transport/group metrics. Raw rows remain
+      ignored; Qwen LOCKED FINAL paths are not accepted by this command.
+
 - [ ] Benchmark existing E20/E26 arms on DEVELOPMENT TEST only. Freeze the candidate artifact
       hashes, preprocessing, aggregation and calibration-only thresholds before requesting a
       LOCKED FINAL TEST run.
