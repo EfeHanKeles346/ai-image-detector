@@ -1910,3 +1910,19 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   `b871004f...8ecc` is superseded by `e9c3d3da...af7a`.
 - **Decision:** decoder gate passes and bulk may proceed, mechanically tied to the new SHA. Actual
   format is decoded from bytes; identical REAL/AI input normalization remains mandatory.
+
+## 2026-08-26 — E32/C1-C2: source-realization gate implemented before bulk completion
+
+- **Hypothesis:** successful transfer and a plausible folder name are insufficient evidence that
+  a source is eligible; roles must remain impossible until complete byte-level validation passes.
+- **Method:** selection-SHA binding; exact expected-file/byte/partial checks; full Pillow decode;
+  payload format, dimensions, mode, EXIF, bytes/pixel, SHA-256 and dHash inventory; comparison with
+  protected E30 manifests and earlier passed E32 source reports.
+- **AI-specific contract:** four image plus four prompt members per frozen group, matching non-empty
+  UTF-8 prompt text, expected dimensions and byte-derived format. A Qwen live sidecar sample had
+  four identical prompt hashes as expected.
+- **Verification:** 18 focused C1/C2 tests pass. A PNG payload named `.jxl` is correctly recorded as
+  PNG; a missing group member produces `source_realization_rejected_no_role_assignment`.
+- **Decision:** tooling is accepted, source data are not. Detailed production receipts will be
+  written to the external E32 audit directory only after each transfer completes; a pass means
+  `candidate_only` and cannot assign TRAIN/CALIBRATION.

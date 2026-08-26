@@ -270,6 +270,13 @@ declare JPEG XL, but the two exact smoke files contain **PNG payloads**: Qwen de
 mechanically forbidden without that receipt. Actual format comes from decoded bytes, and REAL/AI
 must receive the same model-input normalization so PNG versus JPEG cannot become the classifier.
 
+Bulk completion is intentionally separate from eligibility. The precommitted C1/C2 realization
+gate requires every frozen image/prompt byte, full decode, payload-derived format/dimensions,
+SHA-256+dHash decontamination against protected E30 and passed E32 sources, and complete four-output
+AI prompt groups. Its detailed row receipts remain under external `e32/audits/`; only compact
+hash-bound evidence enters Git. Until those receipts pass, the table above remains a frozen
+acquisition selection—not a TRAIN/CALIBRATION dataset count.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

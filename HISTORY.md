@@ -2109,3 +2109,21 @@ smoke evidence stores exact image hashes and the new selection SHA. Bulk code no
 unless `evidence/e32_ai_gap_decoder_smoke.json` says `decoder_smoke_passed` for that exact receipt.
 Six focused tests pass, including missing/stale gate rejection. The format mismatch is a new
 shortcut warning: E32 must infer format from bytes and normalize REAL/AI identically.
+
+### E32/C1-C2 realization gate — downloaded bytes still have no training role
+
+The completion gate was implemented while the frozen VISION, Qwen and FLUX transfers continued,
+so the arrival of files cannot silently become a TRAIN manifest. `e32_source_realization.py`
+binds each source report to its exact frozen selection SHA, requires every expected file to exist
+without a `.partial` sibling, decodes content by its byte signature, and records SHA-256, dHash,
+format, mode, dimensions, EXIF/orientation and bytes-per-pixel. It compares candidates with all E30
+manifest hashes and every previously passed E32 source audit. Detailed per-row reports stay on the
+LaCie E32 audit root; Git receives only compact, hash-bound evidence after a real source run.
+
+The AI contract adds an indivisible prompt-group check: four selected images, four declared-byte
+sidecars, valid non-empty UTF-8, one identical prompt across the four variations, and the frozen
+source dimensions. A live four-sidecar Qwen check reproduced the same prompt hash on all variants.
+The gate also preserves the discovered extension mismatch as measurement—`.jxl` may decode as
+PNG—but never treats an extension as truth or a class feature. Eighteen focused C1/C2 tests pass,
+including byte-format sniffing, missing-member rejection and REAL device/EXIF accounting. No
+production E32 source has passed this gate yet, no role was assigned and no model was trained.

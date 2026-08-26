@@ -70,6 +70,11 @@ small manifests, aggregate evidence, code and documentation.
       detailed SHA-256 is `200a7aeb...ca4d`. Freeze downloaded zero image bytes.
 - [ ] Complete the frozen transfers and final content hashes without overwriting existing E31
       holdings or modifying an upstream archive in place.
+- [x] Implement the role-free realization gate before any transfer completes. It binds every audit
+      to the frozen selection SHA, ignores exFAT AppleDouble sidecars, requires all selected bytes
+      to decode, derives format from payload bytes, records geometry/EXIF/compression summaries,
+      and rejects exact/dHash repeats against protected E30 roles and already-passed E32 sources.
+      A pass means only `candidate`; the gate cannot assign TRAIN/CALIBRATION itself.
 - [ ] Decode and inventory every selected parent; record camera/device/model, scene/event group,
       native/social state, format, dimensions, orientation, EXIF availability, bytes/pixel and
       licence/provenance. Remove exact and perceptual duplicates against every protected role.
@@ -104,6 +109,10 @@ small manifests, aggregate evidence, code and documentation.
       add a JPEG XL dependency or let extension become a label feature.
 - [ ] Acquire the frozen 6,000 gap images after the passed decoder gate. OpenFake
       `core/test`/Reddit splits and frontier held-out models remain test candidates, never TRAIN.
+- [x] Pin the AI realization contract before bulk completion: every four-output prompt group needs
+      four decodable images, four non-empty matching UTF-8 prompt sidecars, declared byte counts
+      and expected dimensions. Missing/partial/mislabeled rows produce a rejected audit and never
+      a silently smaller training pool.
 - [ ] Verify generator version, generation date, prompt/content group, native output status,
       licence/usage boundary and label direction for every admitted collection. Unknown generator
       identity may contribute only to a capped `unknown` group and cannot satisfy the five-family
