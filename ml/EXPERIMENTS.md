@@ -2382,3 +2382,21 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Added aggregate-only owner-gallery DEVELOPMENT runner; no model/head/threshold mutation exists.
 - Verification: ten focused candidate/input/trainer tests pass.
 - **Decision:** commit method, then score the 210 supported gallery stills once.
+
+### C4-R0 owner-real DEVELOPMENT smoke — fail, no refit
+
+- 210 supported authentic stills scored; one MOV excluded.
+- Fixed threshold 0.141444: 159 false positives, REAL recall 24.29%.
+- Score median 0.6806; p90 0.9941; maximum 0.9999975.
+- This sharply disagrees with CALIBRATION REAL recall 90.14% and proves authentic source/pipeline
+  shift. It is not a threshold-selection dataset and no parameter changed.
+- **Decision:** preserve runnable artifact but reject advancement to serving/LOCKED FINAL. Use the
+  failure to redesign source-held-out validation and representation/data coverage.
+
+### C4-R0 final engineering verification
+
+- Hash-verified CLI scored `IMG_8540.jpeg` at 0.699661 against threshold 0.141444 (false AI).
+- Full suite: 174 Python tests pass; six web tests pass; production web build and TypeScript
+  typecheck pass. One existing Starlette/httpx deprecation warning remains.
+- **Conclusion:** implementation is runnable and reproducible; model generalization is the failed
+  layer. Keep E32 out of the service while planning source-held-out correction.

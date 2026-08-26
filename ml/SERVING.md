@@ -43,6 +43,15 @@ so the B6 condition “replace only after B5 passes” evaluated false. The veri
 contract remains unchanged. E31 may be run only through `experiments/e31_score_folder.py`; that
 output is marked research-only and cannot claim authenticity. Qwen LOCKED FINAL was not scored.
 
+## E32 non-integration decision
+
+E32's rebuilt data contract and frozen DINOv2-S head are runnable, but the candidate is deliberately
+absent from `/predict`, readiness and the web UI. It passed source-stratified CALIBRATION and then
+misclassified 159/210 authentic owner-gallery DEVELOPMENT stills. The verified research CLI
+`pixelproof-predict-e32` exposes scores for diagnosis only; below threshold is not proof of reality
+and above threshold is not reliable enough for product action. No gallery-derived recalibration is
+allowed for the frozen artifact.
+
 ## Required edge controls
 
 Before binding outside loopback, require all of the following at the proxy/gateway:

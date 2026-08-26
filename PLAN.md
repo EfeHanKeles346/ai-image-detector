@@ -354,6 +354,11 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Implement the hash-verified batch/single-image E32 CLI and aggregate-only owner-gallery smoke
       runner before opening gallery pixels. The CLI reproduces the JPEG round-trip exactly, emits
       JSON and rejects unsupported paths; ten focused candidate/input/trainer tests pass.
+- [x] Run the frozen E32 R0 artifact once on the previously consumed owner-real DEVELOPMENT
+      gallery without refit: 210 stills scored, one MOV excluded, 159 false positives and only
+      24.29% REAL recall at threshold 0.141444. Preserve the internal CALIBRATION pass and this
+      external-pipeline failure together. R0 remains runnable research software but cannot advance
+      to serving or LOCKED FINAL; do not tune its threshold on this gallery.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

@@ -77,3 +77,17 @@ SHA-256 `99901219ec47e49a36fca7edd35a1c1737eb1cd9088f6465893054023914d860`). It 
 encoder contract: timm `vit_small_patch14_dinov2.lvd142m`, 224 px, pretrained blob SHA
 `04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081`. It is a B5 candidate,
 not yet a serving artifact; no E30 result was used to choose it.
+
+## Local E32 runnable research artifact
+
+With `PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets`, E32 stores its ignored fitted head at
+`e32/models/e32_r0_dinov2s.joblib` (12,720 bytes, SHA-256
+`7f170340ab050543f60ceda129224a67b5adaf22a628e52049d401bc96e8a85e`). It binds the standardized
+input receipt SHA `2255b123...5199`, frozen feature archive SHA `716df956...be3b`, DINOv2-S model
+identity, selected C=0.1 and threshold 0.141444. The feature cache is 33,439,283 bytes at
+`e32/features/r0_dinov2s_features.npz`.
+
+The artifact is research-runnable but rejected for serving: its owner-gallery DEVELOPMENT REAL
+recall is only 24.29%. Use `PIXELPROOF_DATA_ROOT=... HF_HUB_OFFLINE=1
+PYTHONPATH=ml/src ml/.venv/bin/python -m pixelproof.e32_candidate /path/to/image`; do not copy it
+into the canonical artifact registry or treat its verdict as authenticity proof.

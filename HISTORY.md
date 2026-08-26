@@ -2653,3 +2653,22 @@ supports batched files/directories with one JSON verdict per image. A separate g
 stores only aggregate DEVELOPMENT evidence plus the ten highest basenames; it does not refit or
 change threshold. Ten focused candidate/input/trainer tests pass. Gallery pixels remain unopened
 by this method commit.
+
+The frozen E32 R0 candidate then failed its first owner-real DEVELOPMENT stress badly. Of 210
+supported still images, 159 crossed the untouched 0.141444 threshold; REAL recall is only 24.29%
+and median AI score is 0.6806. One MOV was excluded by contract. This directly contradicts the
+90.14% REAL recall seen inside source-stratified CALIBRATION and shows severe authentic-pipeline
+shift/source shortcut learning. The artifact was not refit and the threshold was not changed.
+
+Evidence is `evidence/e32_owner_gallery_smoke.json`, bound to artifact SHA `7f170340...a85e` and
+gallery identity SHA `390e3c21...ac09`. The success and failure are both retained: E32 achieved a
+working end-to-end model and an excellent within-collection group holdout, but not a trustworthy
+real-world detector. It is blocked from service and locked finals. The next scientific correction
+must change validation/data/representation—not cosmetically recalibrate on these 210 known photos.
+
+Final engineering verification reproduced the hash-checked one-image CLI on owner photo
+`IMG_8540.jpeg` (score 0.699661, false AI trigger), then passed 174 Python tests, six web tests,
+the production web build and TypeScript typecheck. This separates two facts cleanly: the E32
+pipeline, model artifact and inference program operate correctly; the learned decision does not
+generalize to the owner's authentic camera pipeline. That distinction is now presentation-grade
+evidence rather than an unrecorded failure.

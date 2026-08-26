@@ -6,7 +6,24 @@
 
 **Last verified:** 2026-08-24
 
-## E31 successor candidate decision (2026-08-26)
+## Successor candidate decisions (2026-08-26)
+
+### E32 runnable candidate decision (2026-08-26)
+
+E32 produced a technically runnable frozen-DINOv2-S candidate after rebuilding the pool around
+22,688 balanced modern-AI/authentic parents. Its 4,534-row group-held-out, source-stratified
+CALIBRATION result passed the preregistered screen (AUC 0.9964, AI recall 99.07%, REAL recall
+90.14%). However, the untouched threshold then mislabeled 159/210 already-consumed owner-gallery
+authentic stills as AI: only 24.29% REAL recall. This proves the internal split still rewards
+source/pipeline shortcuts.
+
+E32 is therefore available only through the research CLI `pixelproof-predict-e32`; it does not
+replace the canonical E20 API/web contract and is not an authenticity authority. Its artifact SHA
+is `7f170340...a85e`; evidence is `evidence/e32_r0_dinov2s.json` plus
+`evidence/e32_owner_gallery_smoke.json`. The owner gallery did not select a new threshold or refit
+the head.
+
+### E31 candidate decision
 
 E31 did **not** replace this served E20 contract. Its single-DINOv2 research candidate is locally
 runnable and hash-verified (`99901219...4d860`), but it failed the pre-registered independent E30

@@ -1,0 +1,74 @@
+{
+  "artifact_sha256": "7f170340ab050543f60ceda129224a67b5adaf22a628e52049d401bc96e8a85e",
+  "boundary": "Previously consumed owner-real DEVELOPMENT only; no refit or threshold change is allowed.",
+  "excluded_nonimage_count": 1,
+  "experiment": "E32/C4-owner-gallery-development-smoke",
+  "false_positive_count": 159,
+  "gallery_identity_sha256": "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09",
+  "highest_scores": [
+    {
+      "name": "30B13E96-C5D2-4014-9151-3FD18DAA59F6.jpg",
+      "predicted_ai": true,
+      "score": 0.9999974966049194
+    },
+    {
+      "name": "IMG_8753.jpeg",
+      "predicted_ai": true,
+      "score": 0.9999938011169434
+    },
+    {
+      "name": "IMG_8755.jpeg",
+      "predicted_ai": true,
+      "score": 0.9999767541885376
+    },
+    {
+      "name": "IMG_8754.jpeg",
+      "predicted_ai": true,
+      "score": 0.9999550580978394
+    },
+    {
+      "name": "IMG_8752.jpeg",
+      "predicted_ai": true,
+      "score": 0.999887228012085
+    },
+    {
+      "name": "4b203081-8b67-4757-9d00-37af74c22983.jpg",
+      "predicted_ai": true,
+      "score": 0.999687910079956
+    },
+    {
+      "name": "IMG_8056.jpeg",
+      "predicted_ai": true,
+      "score": 0.999306321144104
+    },
+    {
+      "name": "IMG_8058.jpeg",
+      "predicted_ai": true,
+      "score": 0.9987799525260925
+    },
+    {
+      "name": "IMG_8226.PNG",
+      "predicted_ai": true,
+      "score": 0.9985846281051636
+    },
+    {
+      "name": "IMG_8726.jpeg",
+      "predicted_ai": true,
+      "score": 0.9984075427055359
+    }
+  ],
+  "real_recall": 0.24285714285714288,
+  "schema_version": 1,
+  "score_summary": {
+    "max": 0.9999974966049194,
+    "median": 0.6805743873119354,
+    "min": 2.84121892946132e-06,
+    "p25": 0.16246039047837257,
+    "p75": 0.9357961267232895,
+    "p90": 0.9941016137599945,
+    "p95": 0.9983299553394318
+  },
+  "state": "development_owner_gallery_scored_no_refit",
+  "supported_still_count": 210,
+  "threshold": 0.14144447445869446
+}

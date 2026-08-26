@@ -38,6 +38,13 @@ E30 DEVELOPMENT gate then falsified it: 80.67% AI recall came with **83.63% macr
 AUC 0.385. A diagnostic threshold that restores the real budget leaves 0.33% AI recall, so this is
 representation/source shift rather than a fixable threshold. Qwen LOCKED FINAL remained unscored.
 
+E32 is the first new end-to-end candidate that is genuinely runnable after the modern-data rebuild,
+but it is **not served**. A balanced 22,688-parent frozen-DINOv2-S screen reached 0.9964 internal
+CALIBRATION AUC, then mislabeled 159/210 authentic owner-gallery DEVELOPMENT stills as AI. This
+24.29% REAL recall exposes source/pipeline shift despite the strong internal score. The research
+CLI remains useful for reproducible diagnosis; the model cannot certify authenticity and did not
+consume LOCKED FINAL.
+
 Four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) remain behind the optional
 research-details view as **uncalibrated research scores**. They are neither the primary project
 model nor the external comparison verdict: unseen-camera false positives reached 79–100% in
@@ -147,6 +154,17 @@ HF_HUB_OFFLINE=1 PYTHONPATH=ml/src ml/.venv/bin/python \
 
 This research-only JSON never fits a new threshold and always carries the measured 83.63% real-FP
 warning. An under-threshold score is `insufficient_evidence`, never a claim that the image is real.
+
+The newer E32 research candidate is also runnable without changing the API/web model:
+
+```bash
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+HF_HUB_OFFLINE=1 PYTHONPATH=ml/src ml/.venv/bin/python \
+  -m pixelproof.e32_candidate /path/to/image-or-folder
+```
+
+It emits one JSON score/verdict per image and verifies the head plus DINO weights before loading.
+Its owner-gallery REAL recall is only 24.29%, so the output is diagnostic rather than actionable.
 
 Prepared datasets default to `ml/work/` and acquired sources to `ml/data/`. Existing layouts are
 selected without code edits:
