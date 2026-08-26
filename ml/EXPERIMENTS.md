@@ -2055,3 +2055,26 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - External receipt 2,045,961 B / SHA `53c0793b...1451`; compact rejection committed.
 - **Decision:** preserve rejection. Later overlay keeps deterministic canonical groups across
   cross-group conflicts, drops internally duplicated groups, and cannot add unseen replacements.
+
+### C2c GPT first full realization — reject, diagnose prompt encoding
+
+- Transfer completed all 3,000 selected image/prompt pairs: 6,000 assets, 1,703 reused and 4,297
+  downloaded under the frozen selection.
+- UTF-8-only prompt validation rejects 107 sidecars; 2,893 RGB PNG images therefore reach hashes.
+- Realized subset: 2,893 unique SHA, 2,887 unique pHash, five confirmed perceptual duplicate pairs,
+  zero protected or passed-peer overlap.
+- Byte diagnosis: all 107 failures decode as Windows-1252; observed non-ASCII characters are em
+  dashes, curly quotes, `é` and `ç` only.
+- External rejected receipt 1,792,420 B / SHA `9ce487a2...5184`.
+- **Decision:** preserve this rejection, precommit a UTF-8-first/Windows-1252-fallback decoder with
+  tests, then rerun the unchanged selection. Duplicate rows remain visible for the later overlay.
+
+### C1 VISION full realization — reject intact source, keep balanced core
+
+- 3,500/3,500 RGB JPEG parents decode with EXIF; every one of 35 camera pipelines contributes
+  exactly 100 images.
+- 3,500 unique SHA, 3,497 unique pHash; four dHash buckets contain three confirmed perceptual pairs.
+- Zero protected or passed-peer overlap.
+- External rejected receipt 1,939,155 B / SHA `3312c774...e6b1`.
+- **Decision:** preserve rejection. Later receipt-bound eligibility overlay keeps one stable
+  canonical row from each pair and excludes losers without replacement or role assignment.

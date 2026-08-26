@@ -340,6 +340,21 @@ and editing variations. Detailed rejected receipt is 2,045,961 B / SHA `53c0793b
 evidence is `evidence/e32_flux2-klein-9b_realization.json`. Group-safe canonical pruning is pending
 the combined eligibility overlay; no replacement row is selected post-decode.
 
+GPT transfer is physically complete at 3,000 selected image/prompt pairs. Its first strict audit is
+rejected: 107 sidecars are Windows-1252 rather than UTF-8, so 2,893 images were realized; those have
+zero protected/peer overlap but five confirmed perceptual duplicate pairs. All 107 sidecars decode
+under the one explicit Windows-1252 fallback and contain only audited punctuation/accent characters.
+Detailed rejected receipt is 1,792,420 B / SHA `9ce487a2...5184`; compact evidence is
+`evidence/e32_gpt-image-1_realization.json`. A decoder-method commit and unchanged-selection rerun
+are required; duplicate losers remain an eligibility-overlay concern.
+
+VISION transfer is physically complete at 3,500 native JPEG parents / 10,289,109,711 bytes. All
+images decode with EXIF, 100 per each of 35 pipelines, and all SHA values are unique. Three
+confirmed perceptual pairs reject the intact source despite zero protected/peer overlap. Detailed
+receipt is 1,939,155 B / SHA `3312c774...e6b1`; compact evidence is
+`evidence/e32_vision-base-native_realization.json`. Stable loser exclusion is pending; no role is
+assigned and no after-the-fact replacement is allowed.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

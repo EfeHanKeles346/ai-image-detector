@@ -171,6 +171,19 @@ small manifests, aggregate evidence, code and documentation.
       unique SHA / 2,932 unique pHash. Duplicate members touch 32 prompt groups, especially
       `diffusiondb_orig` and editing. Defer exact canonical-group exclusions until every 15K arm is
       audited; do not rewrite FLUX selection or fill from unseen rows.
+- [x] Preserve the first GPT and VISION full-audit results before repair. GPT realizes 2,893/3,000
+      images: 107 prompt sidecars fail the UTF-8-only gate, five perceptual duplicate pairs remain,
+      and protected/peer overlap is zero. VISION realizes all 3,500 balanced camera parents with
+      3,500 unique SHA values and zero protected/peer overlap, but three within-source perceptual
+      pairs reject the intact source.
+- [ ] Add and test a byte-preserving GPT prompt decoder that accepts UTF-8 first and Windows-1252
+      only as an explicit fallback. The 107 failing sidecars must all decode under that one fallback
+      and expose only audited punctuation/accent characters; rerun the same immutable selection,
+      preserve the first rejection receipt in HISTORY, and leave its five duplicate pairs for the
+      eligibility overlay rather than silently replacing rows.
+- [ ] Extend the immutable-selection eligibility overlay to VISION parent rows as well as AI prompt
+      groups. Resolve each duplicate component by a stable content-independent canonical key,
+      exclude losers only, bind the overlay to every detailed receipt SHA, and assign no role yet.
 - [ ] Match semantic topics across classes before representation training. Measure topic/source,
       format, geometry, compression and bytes/pixel shortcuts on native and every proposed model
       input. Apply transport augmentation with the same probability/range to REAL and AI; never

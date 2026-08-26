@@ -2284,3 +2284,26 @@ External rejected receipt is 2,045,961 B / SHA `53c0793b...1451`; compact eviden
 prompt-group conflict graph: keep a deterministic canonical group between cross-group copies and
 drop any group containing an internal duplicate. Exact counts remain deliberately unfrozen until
 Community and GPT complete their own audits. No new/unseen FLUX row may be added as replacement.
+
+The first full GPT realization was preserved as rejected rather than normalizing unexpected text
+silently. Transfer itself completed all 3,000 selected image/prompt pairs (6,000 assets), reusing
+1,703 exact-size local/E32 assets and downloading 4,297. The UTF-8-only prompt gate rejected 107
+sidecars, so 2,893/3,000 images reached hashing. Those images are RGB PNG with 2,893 unique SHA,
+2,887 unique pHash, zero protected/peer overlap and five confirmed perceptual duplicate pairs.
+External rejected receipt is 1,792,420 B / SHA `9ce487a2...5184`; compact evidence is
+`evidence/e32_gpt-image-1_realization.json`.
+
+A bounded byte audit established the cause before any code change: every one of the 107 files
+decodes as Windows-1252, and their non-ASCII characters consist only of em dashes, curly quotes,
+`é` and `ç`; none fails that codec. The next committed method change will therefore use UTF-8 first
+and Windows-1252 as an explicit, counted fallback while preserving original bytes and byte hashes.
+It will not hide the five duplicate pairs or change the immutable 3,000-row selection.
+
+VISION's first complete realization was also preserved as rejected. All 3,500/3,500 native JPEGs
+decode as RGB, contain EXIF and retain exact device balance: 100 parents for each of 35 camera
+pipelines. All 3,500 SHA values are unique and protected/peer overlap is zero. Four dHash candidate
+buckets reduce to three confirmed perceptual duplicate pairs, leaving 3,497 unique pHash values;
+therefore the intact source receives no role. External rejected receipt is 1,939,155 B / SHA
+`3312c774...e6b1`; compact evidence is `evidence/e32_vision-base-native_realization.json`. A later
+receipt-bound eligibility overlay may keep one stable canonical parent per pair and exclude the
+other; it may not replace selected parents after decode.
