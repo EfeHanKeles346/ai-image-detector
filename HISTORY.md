@@ -2225,3 +2225,10 @@ receipt SHA is `bfc217f0...d17b`; compact evidence is
 `evidence/e32_nano-banana-pro-ash-local_realization.json`. State is explicitly
 `source_realization_passed_candidate_only`: the source is usable for later pool construction but
 still has no TRAIN/CALIBRATION role.
+
+The first 3,000-row Nano Banana realization attempt decoded its selected Parquet images but stopped
+before writing evidence when the peer-audit directory scan tried to parse exFAT's binary
+`._nano-banana-pro-ash-local.json` AppleDouble sidecar as UTF-8 JSON. This is an audit-tool path
+filter defect, not a source decode failure. The generic peer scanner now excludes `._*` receipts
+and tolerates undecodable/non-JSON filesystem debris; a regression fixture recreates the binary
+sidecar. The failed attempt claims no Nano result and will be rerun independently after this fix.

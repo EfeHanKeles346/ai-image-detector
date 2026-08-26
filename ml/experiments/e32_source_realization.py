@@ -92,9 +92,11 @@ def _passed_peer_hashes(source_id: str) -> tuple[set[str], set[str], int]:
     if not AUDIT_ROOT.exists():
         return exact, perceptual, reports
     for path in sorted(AUDIT_ROOT.glob("*.json")):
+        if path.name.startswith("._"):
+            continue
         try:
             payload = json.loads(path.read_text())
-        except (OSError, json.JSONDecodeError):
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
             continue
         if payload.get("source_id") == source_id:
             continue

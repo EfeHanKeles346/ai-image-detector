@@ -2005,3 +2005,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - **Receipt:** external 91,762 B / SHA `bfc217f0...d17b`; compact evidence committed.
 - **Decision:** source passes as `candidate_only`. Alpha/mode will be normalized identically across
   classes before any representation sees it; no role is assigned here.
+
+### C2c Nano first realization attempt — infrastructure stop, no result
+
+- All 3,000 selected Parquet images reached decode, but final peer comparison encountered a binary
+  exFAT `._*.json` AppleDouble receipt and raised `UnicodeDecodeError` before evidence write.
+- This is not a Nano data verdict. No compact/detailed Nano result was accepted.
+- Fix: exclude AppleDouble receipts and tolerate undecodable/non-JSON filesystem debris; regression
+  test added. Rerun the unchanged frozen selection after committing the fix.

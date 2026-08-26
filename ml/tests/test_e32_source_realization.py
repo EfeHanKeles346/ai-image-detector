@@ -217,3 +217,23 @@ def test_pool_parquet_audit_reads_selected_image_bytes(tmp_path, monkeypatch):
     assert failures == []
     assert len(records) == 1
     assert records[0]["sha256"] == hashlib.sha256(raw).hexdigest()
+
+
+def test_passed_peer_scan_ignores_exfat_appledouble_receipts(tmp_path, monkeypatch):
+    audit_root = tmp_path / "audits"
+    audit_root.mkdir()
+    (audit_root / "._peer.json").write_bytes(b"\x00\x05\x16\xb0appledouble")
+    (audit_root / "peer.json").write_text(
+        json.dumps(
+            {
+                "source_id": "peer",
+                "state": "source_realization_passed_candidate_only",
+                "records": [{"sha256": "exact", "dhash": "perceptual"}],
+            }
+        )
+    )
+    monkeypatch.setattr(e32, "AUDIT_ROOT", audit_root)
+    exact, perceptual, reports = e32._passed_peer_hashes("current")
+    assert exact == {"exact"}
+    assert perceptual == {"perceptual"}
+    assert reports == 1
