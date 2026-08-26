@@ -2742,3 +2742,20 @@ weight SHA; it reproduces R0's JPEG round-trip before the official CF processor 
 JSON scores/verdicts. The separate gallery runner can only write aggregate DEVELOPMENT evidence
 and cannot alter the head or threshold. Four focused candidate/input/trainer tests pass. This
 method checkpoint is committed before the one allowed gallery run.
+
+The frozen R1a gallery run failed. At the untouched 0.118110 threshold, 154/210 authentic stills
+were labeled AI: only 26.67% REAL recall, versus R0's 24.29%; median AI score was 0.4892. One MOV
+was excluded. The gallery identity remained `390e3c21...ac09`, proving this is the same evaluation
+population, and neither the head nor threshold changed. Evidence SHA is `2e242ef5...b3a`.
+
+This closes the encoder-only hypothesis: both generic DINOv2-S and a forensic CF-ViT trunk achieve
+near-perfect source-stratified CALIBRATION yet collapse on a new authentic camera pipeline. R1a is
+rejected from serving and LOCKED FINAL. The next admissible correction is a licensed,
+provenance-complete fourth REAL camera source plus a source-held-out REAL gate; the consumed owner
+gallery stays DEVELOPMENT and may not become training or threshold data. E26 remains the working
+demo while E32 R0/R1a remain reproducible rejected controls.
+
+Final verification reproduced the hash-checked R1a CLI on `IMG_8540.jpeg` (score 0.016521, correctly
+below threshold), passed all 178 Python tests, all six web tests, the production web build and
+TypeScript typecheck. The isolated correct example does not override the 210-image aggregate
+failure; it only confirms that the inference path itself is operational.

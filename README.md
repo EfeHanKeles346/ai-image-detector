@@ -45,6 +45,11 @@ CALIBRATION AUC, then mislabeled 159/210 authentic owner-gallery DEVELOPMENT sti
 CLI remains useful for reproducible diagnosis; the model cannot certify authenticity and did not
 consume LOCKED FINAL.
 
+The follow-up R1a control reused the exact data/roles with a forensic CF-ViT representation. It
+reached 0.9982 internal AUC but still mislabeled 154/210 owner stills (26.67% REAL recall). Because
+two different encoders fail almost identically, further encoder shopping is paused until a fourth
+licensed, provenance-complete authentic camera source and a REAL-source-held-out gate are added.
+
 Four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) remain behind the optional
 research-details view as **uncalibrated research scores**. They are neither the primary project
 model nor the external comparison verdict: unseen-camera false positives reached 79–100% in
@@ -165,6 +170,17 @@ HF_HUB_OFFLINE=1 PYTHONPATH=ml/src ml/.venv/bin/python \
 
 It emits one JSON score/verdict per image and verifies the head plus DINO weights before loading.
 Its owner-gallery REAL recall is only 24.29%, so the output is diagnostic rather than actionable.
+
+The rejected R1a forensic-representation control is also reproducible:
+
+```bash
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+HF_HUB_OFFLINE=1 PYTHONPATH=ml/src ml/.venv/bin/python \
+  -m pixelproof.e32_cfvit_candidate /path/to/image-or-folder
+```
+
+R1a verifies its head, pinned CF revision and weight hash. Its owner-gallery REAL recall is 26.67%,
+so it is not an authenticity verdict and is not integrated into the API or web application.
 
 Prepared datasets default to `ml/work/` and acquired sources to `ml/data/`. Existing layouts are
 selected without code edits:

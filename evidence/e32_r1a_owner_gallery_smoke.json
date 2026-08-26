@@ -1,0 +1,78 @@
+{
+  "artifact_sha256": "6288acba5e50f11588b48907351cbd0fd1b741d3dab079376491bae5938ed670",
+  "boundary": "Previously consumed owner-real DEVELOPMENT; no refit or threshold change.",
+  "comparison": {
+    "historical_frozen_cf_unique_gallery_real_recall": 0.9951456310679612,
+    "r0_real_recall": 0.24285714285714288
+  },
+  "excluded_nonimage_count": 1,
+  "experiment": "E32/C4-R1a-owner-gallery-development-smoke",
+  "false_positive_count": 154,
+  "gallery_identity_sha256": "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09",
+  "highest_scores": [
+    {
+      "name": "96B4AFB1-04FB-4F82-AAE6-D9A989B8FEEF.jpg",
+      "predicted_ai": true,
+      "score": 0.9983927607536316
+    },
+    {
+      "name": "IMG_8430.jpeg",
+      "predicted_ai": true,
+      "score": 0.9961026906967163
+    },
+    {
+      "name": "5DBE56F0-D44B-4038-B0CF-7BA9B0580207.jpg",
+      "predicted_ai": true,
+      "score": 0.9934304356575012
+    },
+    {
+      "name": "IMG_8021.jpeg",
+      "predicted_ai": true,
+      "score": 0.9932564496994019
+    },
+    {
+      "name": "IMG_8328.jpeg",
+      "predicted_ai": true,
+      "score": 0.9931301474571228
+    },
+    {
+      "name": "IMG_8423.jpeg",
+      "predicted_ai": true,
+      "score": 0.9924960136413574
+    },
+    {
+      "name": "IMG_8194.jpeg",
+      "predicted_ai": true,
+      "score": 0.9891027212142944
+    },
+    {
+      "name": "IMG_8752.jpeg",
+      "predicted_ai": true,
+      "score": 0.9890322089195251
+    },
+    {
+      "name": "IMG_8069.jpeg",
+      "predicted_ai": true,
+      "score": 0.9843122363090515
+    },
+    {
+      "name": "A6F9804E-FED7-45C8-B73B-DE06A4714991.jpg",
+      "predicted_ai": true,
+      "score": 0.9835042953491211
+    }
+  ],
+  "real_recall": 0.2666666666666667,
+  "schema_version": 1,
+  "score_summary": {
+    "max": 0.9983927607536316,
+    "median": 0.4892163723707199,
+    "min": 0.00037577017792500556,
+    "p25": 0.10366422683000565,
+    "p75": 0.8185587078332901,
+    "p90": 0.9599958062171936,
+    "p95": 0.9817452669143676
+  },
+  "state": "r1a_development_owner_gallery_scored_no_refit",
+  "supported_still_count": 210,
+  "threshold": 0.11810988187789917
+}

@@ -4,7 +4,7 @@
 
 **Status:** runnable research model; not an authenticity authority
 
-**Last verified:** 2026-08-24
+**Last verified:** 2026-08-27
 
 ## Successor candidate decisions (2026-08-26)
 
@@ -22,6 +22,12 @@ replace the canonical E20 API/web contract and is not an authenticity authority.
 is `7f170340...a85e`; evidence is `evidence/e32_r0_dinov2s.json` plus
 `evidence/e32_owner_gallery_smoke.json`. The owner gallery did not select a new threshold or refit
 the head.
+
+A second frozen-head screen, R1a, replaced DINOv2-S embeddings with the pinned forensic CF-ViT CLS
+representation and passed internal CALIBRATION even more strongly (AUC 0.9982, AI recall 99.91%).
+It still mislabeled 154/210 owner stills: 26.67% REAL recall. R1a is likewise research-only via
+`pixelproof-predict-e32-cf` and rejected from serving. The result rules out an encoder-only fix;
+the next correction must add licensed authentic camera-source coverage and source-held-out gates.
 
 ### E31 candidate decision
 

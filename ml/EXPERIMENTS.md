@@ -2471,3 +2471,16 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   score distribution and highest-scoring basenames but has no fit or threshold-selection path.
 - Verification: four focused R1a/R0 candidate and trainer tests pass; gallery pixels remain closed.
 - **Decision:** commit method before the single frozen owner-gallery run.
+
+### C4-R1a owner-real DEVELOPMENT smoke — fail, no refit
+
+- 210 supported authentic stills scored; one MOV excluded; gallery identity
+  `390e3c21...ac09` matches R0 exactly.
+- Fixed threshold 0.118110: 154 false positives and 26.67% REAL recall, only +2.38 points over
+  R0's 24.29%. Median score 0.4892; p90 0.9600; maximum 0.99839.
+- Evidence: `evidence/e32_r1a_owner_gallery_smoke.json`, SHA `2e242ef5...b3a`; artifact unchanged.
+- **Decision:** reject R1a from serving/LOCKED advancement. Two distinct encoders now reproduce the
+  same authentic-source collapse, so add licensed camera-source diversity and require a complete
+  REAL-source holdout before spending on R2/R3 or ensembles.
+- Engineering verification: hash-checked single-image CLI reproduced; 178 Python tests, six web
+  tests, production build and TypeScript typecheck pass.

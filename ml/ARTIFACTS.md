@@ -91,3 +91,11 @@ The artifact is research-runnable but rejected for serving: its owner-gallery DE
 recall is only 24.29%. Use `PIXELPROOF_DATA_ROOT=... HF_HUB_OFFLINE=1
 PYTHONPATH=ml/src ml/.venv/bin/python -m pixelproof.e32_candidate /path/to/image`; do not copy it
 into the canonical artifact registry or treat its verdict as authenticity proof.
+
+R1a stores `e32/models/e32_r1a_cfvit.joblib` (12,703 bytes, SHA-256
+`6288acba5e50f11588b48907351cbd0fd1b741d3dab079376491bae5938ed670`) and its frozen 22,688x384
+feature cache at `e32/features/r1a_cfvit_features.npz` (33,436,875 bytes, SHA-256
+`c170a1f6688421f73c72c3b9ed6f1de10a57bf9850a535246e64a15bc71bbc6b`). It binds CF revision
+`ac6ee457...db00`, weight SHA `275ba982...1692`, C=0.01 and threshold 0.118110. R1a is also
+rejected for serving after only 26.67% owner-gallery REAL recall; the reproducibility CLI is
+`pixelproof.e32_cfvit_candidate`.

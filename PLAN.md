@@ -403,9 +403,16 @@ small manifests, aggregate evidence, code and documentation.
       owner pixels. The scorer hard-verifies artifact/revision/weight identities, applies the exact
       R0 JPEG round-trip followed by the official CF processor and exposes single/batch JSON through
       `pixelproof-predict-e32-cf`; four focused candidate/input/trainer tests pass.
-- [ ] Run the frozen R1a artifact once on the 210 supported owner stills, preserve the result without
-      refit or threshold change, then decide whether it can advance to genuinely unseen-source
-      validation. A failure rejects R1a; a pass still does not convert DEVELOPMENT into LOCKED FINAL.
+- [x] Run the frozen R1a artifact once on the 210 supported owner stills with no refit or threshold
+      change. It fails: 154 false positives, 26.67% REAL recall (R0 24.29%) and median AI score
+      0.4892. Freeze evidence SHA `2e242ef5...b3a`; reject R1a from serving/LOCKED advancement.
+      The near-identical failure across DINOv2-S and CF-ViT proves that the present E32 real pool
+      and source-stratified head objective—not merely the encoder—are the limiting components.
+- [ ] Enroll a fourth, licensed and provenance-complete REAL camera collection only after recording
+      its source/device/scene groups and decontaminating it against every protected role. Re-run a
+      REAL-source-held-out gate before any R2/R3 expense; do not use the owner gallery for training
+      or threshold selection. Until this data gate exists, retain E26 as the working demo and both
+      E32 artifacts as reproducible rejected controls.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

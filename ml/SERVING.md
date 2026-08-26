@@ -52,6 +52,11 @@ misclassified 159/210 authentic owner-gallery DEVELOPMENT stills. The verified r
 and above threshold is not reliable enough for product action. No gallery-derived recalibration is
 allowed for the frozen artifact.
 
+R1a's frozen forensic CF-ViT representation is also excluded. Despite 0.9982 internal AUC, its
+untouched threshold mislabeled 154/210 owner-gallery authentic stills (26.67% REAL recall). The
+`pixelproof-predict-e32-cf` CLI exists for reproducibility only; it does not change `/predict`,
+readiness or the web UI, and the owner gallery cannot recalibrate it.
+
 ## Required edge controls
 
 Before binding outside loopback, require all of the following at the proxy/gateway:
