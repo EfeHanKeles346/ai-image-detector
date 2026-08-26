@@ -1752,3 +1752,20 @@ Flux, Nano Banana and Nano Banana Pro. It reuses the identical 176,961-exact / 1
 protected scope and rejects only decode/input failures or protected content. CommunityForensics is
 not reselected because v2 measured zero failure and zero overlap there. Nine focused tests pass
 before this screen reads candidate bytes.
+
+### B2 protected candidate screen and selection-v3 freeze
+
+The full screen completed on 2026-08-26 without internet access. Across 163,777 candidates it
+accepted 65,650 and rejected 97,982 exact protected matches, 137 additional dHash-only matches and
+six texture-floor failures. Eligible counts remain comfortably above every frozen cap: balanced
+24,133 AI / 21,528 real, Flux 9,709 AI, Nano Banana 9,232 AI and Nano Banana Pro 1,048 AI. The
+detailed ignored receipt has SHA `16ff5f14...bad10`; aggregate committed evidence has SHA
+`e1a3f811...122ff`.
+
+Selection v3 preserves 11,300 parents, 5,650 per label, 383 indivisible groups, 303 AI identities
+and the existing role/source counts. It keeps 11,216 v2 ids and replaces exactly 84: nine balanced,
+16 Flux, 12 Nano Banana and 47 Nano Banana Pro rows. The 4,800 CommunityForensics ids are unchanged.
+Selection SHA is `1a3a5c98c4b0614a0af4bd1bc65ca4fbb8ea33404dbb6a2db53b2da17b79df2e`;
+evidence-file SHA is `c6748b12270f12298a2723bb2c338a9698a0d0bbdc05cb56e258575b8c20d98c`.
+No image score influenced screening or selection. The next independent realization must still
+reproduce zero rejection before any representation may train.

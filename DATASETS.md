@@ -117,6 +117,23 @@ keeps 7,767 old rows and replaces 3,533 with eligible alternatives. Its SHA is
 `5355e4307eb72053a01fcfc3c13e2a431feed7a313a316317fed4303bd2679b2` and exact rows are frozen in
 `evidence/e31_train_v2_selection_v2.json` before another realization.
 
+Selection v2 was then rejected because 84 unique rows overlapped protected content or failed the
+tile floor. The pre-registered full protected screen inspected **163,777** candidates from the
+four replaceable sources against 176,961 exact and 172,087 dHash protected fingerprints. It left
+65,650 eligible rows and excluded 97,982 exact matches, 137 additional dHash-only matches and six
+flat rows. Large exact counts in the balanced source are expected because the protected historical
+`archive` contains 120,000 earlier project images; those rows are deliberately unavailable for
+fresh E31 training.
+
+Selection v3 keeps the same 5,650/5,650 balance, 383 groups, 303 AI identities and TRAIN/CALIBRATION
+roles. It retains 11,216 v2 rows and replaces exactly 84 rows source-for-source; all 4,800 selected
+CommunityForensics rows remain unchanged after their zero-overlap v2 result. Selection SHA is
+`1a3a5c98c4b0614a0af4bd1bc65ca4fbb8ea33404dbb6a2db53b2da17b79df2e`; exact ids are in
+`evidence/e31_train_v2_selection_v3.json`. Compact screen evidence is
+`evidence/e31_protected_screen.json`; the full eligible-key receipt stays ignored under
+`ml/data/e31/` with SHA `16ff5f14...bad10`. This is still a frozen candidate contract, not a
+realized training set, until the independent v3 byte pass succeeds.
+
 ### E30 pinned current-science sources — role assignment before download
 
 | Source (pinned revision) | Full source | E30 role and initial slice | Why selected | Boundary |

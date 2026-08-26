@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "experiment": "E31/B2",
+  "state": "protected_mechanical_eligibility_before_selection_v3",
+  "run_date": "2026-08-26",
+  "boundary": "Rows were rejected only for decode/input ineligibility or exact/dHash overlap with protected content; no model score was read. Eligible row keys remain in the ignored detailed receipt and protected hashes are not committed.",
+  "detailed_receipt": {
+    "path": "ml/data/e31/protected_eligibility.json",
+    "sha256": "16ff5f14e1c53cae3b693fb0c16d72db09a0b7f17ac02f8d8a0f9d1651ebad10",
+    "committed": false
+  },
+  "protected_scope": {
+    "exact_hashes": 176961,
+    "dhashes": 172087,
+    "e30_manifest_files": 4,
+    "directory_counts": {
+      "34data__communityforensics-fake": 8000,
+      "34data__communityforensics-real": 8000,
+      "archive": 120000,
+      "archive1": 995,
+      "defactify_test": 16875,
+      "e23b_nist_capped": 125,
+      "e23c_degraded": 3056,
+      "e24_iphone_capped": 207,
+      "e25_modern_probe": 1200,
+      "fotograf_galeri_private": 210,
+      "julienlucas_modern": 12695,
+      "manipulation_test": 7064
+    }
+  },
+  "totals": {
+    "candidate_rows": 163777,
+    "eligible_rows": 65650,
+    "protected_exact": 97982,
+    "protected_dhash_only": 137,
+    "too_flat": 6
+  },
+  "sources": [
+    {
+      "source_id": "ai-vs-real-balanced",
+      "source_fingerprint": "6af1b6955216f59651847578a2c5450e7e19be70ac3999f874c6ba643b7ca30c",
+      "eligible_set_sha256": "31f45ac450340df653ddc3998cae9b67b9d7f5d64bcf82548480d8836ce6d155",
+      "counts": {
+        "eligible:ai": 24133,
+        "eligible:real": 21528,
+        "protected_exact:ai": 47382,
+        "protected_exact:real": 50000,
+        "protected_dhash_only:ai": 19,
+        "protected_dhash_only:real": 4,
+        "too_flat:ai": 1,
+        "too_flat:real": 3
+      }
+    },
+    {
+      "source_id": "flux-1-dev",
+      "source_fingerprint": "393c338129a67160e5128d22c283d800d1ac253ac1cdced11dd98f4ac1967969",
+      "eligible_set_sha256": "4c5d64e5807f5e08a590c9b3a03728125f557e6d824e60f9e8e81ec9659517e7",
+      "counts": {
+        "eligible:ai": 9709,
+        "protected_exact:ai": 200,
+        "protected_dhash_only:ai": 89,
+        "too_flat:ai": 2
+      }
+    },
+    {
+      "source_id": "nano-banana",
+      "source_fingerprint": "ac4287cd9c9cfde849841c4e1f04f0839ab315e2433362ace7eaea52b5f9d52f",
+      "eligible_set_sha256": "65a91814bf4de32891282aa512207a3575029d5d67f0433f451cd408f146284d",
+      "counts": {
+        "eligible:ai": 9232,
+        "protected_exact:ai": 200,
+        "protected_dhash_only:ai": 25
+      }
+    },
+    {
+      "source_id": "nano-banana-pro",
+      "source_fingerprint": "c3a0ebd76e63f4d2f680fccb3d383a3c70acf41edfc3001f603b72939035b05f",
+      "eligible_set_sha256": "bdf8abba5fd204d30aa6b2c1ce4670e6b6bc1d3e734d0485f622858d5d77e125",
+      "counts": {
+        "eligible:ai": 1048,
+        "protected_exact:ai": 200,
+        "too_flat:ai": 2
+      }
+    }
+  ]
+}

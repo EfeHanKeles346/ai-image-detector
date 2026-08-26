@@ -107,6 +107,13 @@ test leakage, and only then ask E30 whether the frozen system advances.
   Banana + Nano Banana Pro against the same protected exact/dHash library and input floor, then
   select only from that safe set. CommunityForensics stays fixed because its v2 rows had zero
   failure/overlap. Screening is committed before it reads candidate bytes.
+- **Protected screen + selection v3:** the complete 163,777-row candidate scan leaves 65,650
+  mechanically eligible/decontaminated rows after rejecting 97,982 exact protected matches, 137
+  dHash-only matches and six texture-floor failures. The 11,300-row v3 contract preserves every
+  class/source/role/group count, keeps 11,216 v2 rows and replaces exactly the 84 previously
+  rejected rows from their own sources. Selection SHA is `1a3a5c98...df2e`; exact ids and compact
+  aggregate evidence are committed before v3 realization. B2 remains open until realization
+  independently reproduces zero overlap/failure and writes the deterministic tile archive.
 
 ### Phase B3 — screen a small heterogeneous representation ladder
 

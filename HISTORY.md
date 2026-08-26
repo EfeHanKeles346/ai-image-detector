@@ -1861,3 +1861,20 @@ Nano Banana and Nano Banana Pro against the same complete protected exact/dHash 
 floor. It records eligible keys, not protected hashes or model scores. Selection v3 may use only
 that set. CommunityForensics remains unchanged because its selected v2 rows had zero overlap and
 zero input failure.
+
+### E31/B2 checkpoint — the protected pool is screened and selection v3 is frozen
+
+After the office restart, the LaCie scan resumed locally without downloading anything. It inspected
+all 163,777 candidate rows from balanced, Flux, Nano Banana and Nano Banana Pro. The safe pool has
+65,650 rows; 97,982 exact protected matches, 137 additional dHash-only matches and six flat rows
+were excluded before selection. The unusually large balanced exact count is explained by the
+120,000-image historical project archive being protected: old training content cannot quietly
+return as new E31 evidence. The committed aggregate is `evidence/e31_protected_screen.json` with
+SHA `e1a3f811...122ff`; detailed eligible keys remain ignored with SHA `16ff5f14...bad10`.
+
+The deterministic v3 freeze preserves all scientific controls: 11,300 balanced parents, 383
+indivisible groups, 303 AI identities, and unchanged TRAIN/CALIBRATION/source counts. Exactly the
+84 v2 rejects are replaced source-for-source while 11,216 rows stay fixed; CommunityForensics is
+unchanged. Selection SHA is `1a3a5c98...df2e`, evidence-file SHA `c6748b12...d98c`. This checkpoint
+is committed before the independent realization opens v3 bytes. It does not yet claim a usable
+training archive or model result.
