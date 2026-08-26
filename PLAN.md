@@ -97,6 +97,13 @@ small manifests, aggregate evidence, code and documentation.
       (registered 1,250 plus a separate bounded holding), GPT Image 1 (1,060 PNG plus 1,061 text
       sidecars—not 2,122 images) and the Julien modern mixture. A folder name is not generator
       provenance.
+- [x] Pre-register the nominal **15,000-parent source allocation** before remaining byte selection:
+      Qwen Image 2512 3,000; FLUX.2 Klein 9B 3,000; Nano Banana 3,000; GPT Image 1 3,000; licensed
+      Nano Banana Pro 200; CommunityForensics AI diversity anchor 2,800. The first four sources
+      each equal—not exceed—the 20% ceiling; CommunityForensics is 18.67% and does not count as a
+      sixth current family. The five-family gate is Qwen, FLUX.2, Nano Banana, GPT Image 1 and Nano
+      Banana Pro. If pinned GPT cannot supply its missing 1,940 local pairs, stop and document a
+      replacement source; never inflate another source or reuse a protected final to hide the gap.
 - [x] Research and freeze only the measured two-family gap, without downloading OpenFake's full
       3.44 TB or reassigning protected tests. C2b pins Qwen Image 2512 (CC BY-SA 4.0) and FLUX.2
       Klein 9B Base (CC BY 4.0), selecting 750 complete prompt groups / 3,000 JPEG XL outputs from

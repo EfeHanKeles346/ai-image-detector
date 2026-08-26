@@ -277,6 +277,14 @@ AI prompt groups. Its detailed row receipts remain under external `e32/audits/`;
 hash-bound evidence enters Git. Until those receipts pass, the table above remains a frozen
 acquisition selection—not a TRAIN/CALIBRATION dataset count.
 
+The nominal post-audit AI composition is preregistered at exactly 15,000 parents: Qwen 3,000,
+FLUX.2 3,000, Nano Banana 3,000, GPT Image 1 3,000, licensed NBP 200 and CommunityForensics AI
+2,800. The first four are each 20%; CommunityForensics is 18.67% and NBP 1.33%. The five verified
+current families exclude CommunityForensics, which is only the broad model-identity anchor. Local
+metadata supports 9,457 unique Nano ids and 11,972 Community AI rows across 300 model identities;
+GPT still needs 1,940 of its pinned upstream pairs to reach its frozen 3,000 share. These are target
+counts, not realized counts, until every source passes the byte/decontamination gate.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

@@ -1926,3 +1926,17 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - **Decision:** tooling is accepted, source data are not. Detailed production receipts will be
   written to the external E32 audit directory only after each transfer completes; a pass means
   `candidate_only` and cannot assign TRAIN/CALIBRATION.
+
+## 2026-08-26 — E32/C2c: nominal 15K AI allocation preregistration
+
+- **Metadata result:** Nano Banana 9,457 unique ids / uniform declared PNG RGB 1024²;
+  CommunityForensics 11,972 AI rows across 300 AI model identities plus 32,912 excluded REAL rows;
+  licensed NBP 200 PNG; GPT local 1,060 matched image/prompt pairs of 4,000 upstream.
+- **Frozen allocation:** Qwen 3,000; FLUX.2 3,000; Nano Banana 3,000; GPT Image 1 3,000; NBP 200;
+  CommunityForensics AI 2,800 = exactly 15,000 parents.
+- **Caps/families:** no source exceeds 20%; Qwen, FLUX.2, Nano Banana, GPT Image 1 and NBP satisfy
+  the five verified modern-family requirement. CommunityForensics remains a non-counting diversity
+  anchor and will be sampled across model identity rather than by row order.
+- **Stop rule:** failure to obtain the pinned GPT source's missing 1,940 selected pairs requires a
+  documented source revision/replacement; it cannot be repaired by protected-test leakage or a
+  larger share from another family.

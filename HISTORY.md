@@ -2127,3 +2127,22 @@ The gate also preserves the discovered extension mismatch as measurement—`.jxl
 PNG—but never treats an extension as truth or a class feature. Eighteen focused C1/C2 tests pass,
 including byte-format sniffing, missing-member rejection and REAL device/EXIF accounting. No
 production E32 source has passed this gate yet, no role was assigned and no model was trained.
+
+### E32/C2c — the 15K AI allocation is fixed before remaining selection
+
+A column-only read of the already inventoried local candidates established the available structure
+without decoding or scoring images. Nano Banana has 9,457/9,457 unique ids and uniform declared
+PNG RGB 1024x1024 metadata. CommunityForensics has 11,972 raw-label-1 AI rows, 32,912 real rows and
+300 AI model identities; only its AI rows are candidates for this C2 allocation. The licensed NBP
+holding has 200 PNGs. GPT Image 1 remains a partial 1,060-image/1,060-matching-prompt local snapshot
+of the pinned 4,000-image source. An initial ad-hoc scan hit an exFAT `._*.parquet` AppleDouble
+stub; the already documented filter was reapplied and the 31 Nano plus 15 Community real Parquets
+then reproduced the counts above. No source data were damaged or changed.
+
+Before exact row selection or the missing GPT transfer, the nominal pool is fixed at 15,000:
+3,000 each from Qwen Image 2512, FLUX.2 Klein 9B, Nano Banana and GPT Image 1; all 200 licensed Nano
+Banana Pro images; and 2,800 CommunityForensics AI rows selected across its model identities. The
+largest source share is exactly 20%, not above it. CommunityForensics is a diversity anchor and
+does not count toward the five-current-family claim. If GPT's remaining 1,940 selected pairs cannot
+be obtained from the pinned source, the run stops for a documented replacement rather than
+silently oversampling another source or opening a protected final arm.
