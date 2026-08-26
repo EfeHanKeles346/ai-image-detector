@@ -2526,3 +2526,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 
 Append-only correction: post-stop `stat` is 92,274,688 bytes. The two occurrences of 92,159,662
 above are transcription errors; production range planning binds the filesystem value.
+
+### C4-R1b iPhone 14 range implementation checkpoint
+
+- Exhaustive/disjoint four-range planner plus strict 206/Content-Range/length checks implemented.
+- Each range resumes independently; assembly is separate and promotes only after exact total+MD5.
+- Eighteen combined R1b and original acquisition tests pass.
+- **Decision:** commit implementation before launching production ranges.

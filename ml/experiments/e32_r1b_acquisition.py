@@ -18,6 +18,7 @@ import json
 import re
 import shutil
 import subprocess
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Iterable, Mapping
@@ -61,6 +62,9 @@ CSAFE = {
     "md5": "dfc01c89b14356141f53d253b72e946c",
 }
 MD5_RE = re.compile(r"^[0-9a-f]{32}$")
+CONTENT_RANGE_RE = re.compile(r"^bytes (\d+)-(\d+)/(\d+)$")
+CSAFE_RANGE_WORKERS = 4
+RETRY_DELAYS = (0, 5, 20, 60, 180)
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -299,6 +303,133 @@ def download_csafe() -> dict[str, Any]:
     return receipt
 
 
+def range_plan(start: int, stop: int, workers: int = CSAFE_RANGE_WORKERS) -> list[tuple[int, int]]:
+    if start < 0 or stop <= start or workers <= 0:
+        raise ValueError("invalid byte-range plan")
+    width = ((stop - start) + workers - 1) // workers
+    return [(left, min(stop - 1, left + width - 1)) for left in range(start, stop, width)]
+
+
+def parse_content_range(value: str | None) -> tuple[int, int, int]:
+    match = CONTENT_RANGE_RE.fullmatch(value or "")
+    if match is None:
+        raise ValueError(f"invalid Content-Range: {value!r}")
+    return tuple(int(part) for part in match.groups())
+
+
+def _download_range(url: str, path: Path, start: int, end: int, total: int) -> dict[str, Any]:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    expected = end - start + 1
+    last_error: Exception | None = None
+    for delay in RETRY_DELAYS:
+        current = path.stat().st_size if path.exists() else 0
+        if current == expected:
+            return {"path": path, "bytes": current, "state": "already_complete"}
+        if current > expected:
+            raise ValueError(f"range partial exceeds expected size: {path}")
+        if delay:
+            time.sleep(delay)
+        requested = start + current
+        try:
+            with requests.get(
+                url,
+                headers={"Range": f"bytes={requested}-{end}"},
+                stream=True,
+                timeout=(20, 120),
+                allow_redirects=True,
+            ) as response:
+                response.raise_for_status()
+                if response.status_code != 206:
+                    raise ValueError(f"range request returned HTTP {response.status_code}")
+                found = parse_content_range(response.headers.get("Content-Range"))
+                if found != (requested, end, total):
+                    raise ValueError(
+                        f"range response mismatch: expected {(requested, end, total)}, found {found}"
+                    )
+                with path.open("ab") as handle:
+                    for chunk in response.iter_content(8 * 1024**2):
+                        if chunk:
+                            handle.write(chunk)
+        except (requests.RequestException, OSError) as error:
+            last_error = error
+            continue
+    found_bytes = path.stat().st_size if path.exists() else 0
+    if found_bytes != expected:
+        raise RuntimeError(f"range failed after retries: {start}-{end}") from last_error
+    return {"path": path, "bytes": found_bytes, "state": "downloaded"}
+
+
+def _assemble_ranges(
+    prefix: Path,
+    ranges: list[Path],
+    destination: Path,
+    expected_bytes: int,
+    expected_md5: str,
+) -> dict[str, Any]:
+    assembled = destination.with_suffix(destination.suffix + ".parallel.partial")
+    if assembled.exists():
+        raise ValueError(f"stale assembled partial requires review: {assembled}")
+    digest = hashlib.md5(usedforsecurity=False)
+    written = 0
+    with assembled.open("xb") as target:
+        for source in (prefix, *ranges):
+            with source.open("rb") as handle:
+                while chunk := handle.read(8 * 1024**2):
+                    target.write(chunk)
+                    digest.update(chunk)
+                    written += len(chunk)
+    if written != expected_bytes:
+        raise ValueError(f"assembled byte mismatch: expected {expected_bytes}, found {written}")
+    found_md5 = digest.hexdigest()
+    if found_md5 != expected_md5:
+        raise ValueError(f"assembled MD5 mismatch: expected {expected_md5}, found {found_md5}")
+    assembled.replace(destination)
+    return {"bytes": written, "md5": found_md5}
+
+
+def download_csafe_ranges() -> dict[str, Any]:
+    payload = _selection()
+    asset = payload["csafe"]
+    destination = OUTPUT_ROOT / "real" / "csafe" / "archives" / str(asset["name"])
+    if destination.exists():
+        return download_csafe()
+    prefix = destination.with_suffix(destination.suffix + ".partial")
+    expected = int(asset["bytes"])
+    if not prefix.is_file() or not 0 < prefix.stat().st_size < expected:
+        raise ValueError("range recovery requires a non-empty strict-prefix partial")
+    prefix_bytes = prefix.stat().st_size
+    plan = range_plan(prefix_bytes, expected)
+    _ensure_capacity((expected - prefix_bytes) + expected)
+
+    def fetch(bounds: tuple[int, int]) -> dict[str, Any]:
+        start, end = bounds
+        part = destination.with_name(f"{destination.name}.range-{start}-{end}.partial")
+        result = _download_range(str(asset["url"]), part, start, end, expected)
+        print(f"CSAFE iPhone14 range {start}-{end} complete", flush=True)
+        return result
+
+    with ThreadPoolExecutor(max_workers=CSAFE_RANGE_WORKERS) as executor:
+        results = list(executor.map(fetch, plan))
+    range_paths = [Path(result["path"]) for result in results]
+    assembled = _assemble_ranges(prefix, range_paths, destination, expected, str(asset["md5"]))
+    prefix.unlink()
+    for path in range_paths:
+        path.unlink()
+    receipt = {
+        "schema_version": 1,
+        "state": "csafe_iphone14_download_complete_md5_verified",
+        "selection_sha256": _sha256(SELECTION.read_bytes()),
+        "path": str(destination.relative_to(OUTPUT_ROOT)),
+        "bytes": assembled["bytes"],
+        "md5": assembled["md5"],
+        "preserved_prefix_bytes": prefix_bytes,
+        "range_count": len(plan),
+    }
+    _write_atomic(CSAFE_RECEIPT, receipt)
+    print("CSAFE iPhone14 ranges assembled and whole-file MD5 verified", flush=True)
+    return receipt
+
+
 def status() -> dict[str, Any]:
     return {
         "selection_exists": SELECTION.exists(),
@@ -311,7 +442,10 @@ def status() -> dict[str, Any]:
 
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("freeze", "download-ipn", "download-csafe", "status"))
+    parser.add_argument(
+        "command",
+        choices=("freeze", "download-ipn", "download-csafe", "download-csafe-ranges", "status"),
+    )
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args(argv)
     if args.command == "freeze":
@@ -320,6 +454,8 @@ def main(argv: Iterable[str] | None = None) -> int:
         result = download_ipn(args.workers)
     elif args.command == "download-csafe":
         result = download_csafe()
+    elif args.command == "download-csafe-ranges":
+        result = download_csafe_ranges()
     else:
         result = status()
     print(json.dumps(result, indent=2, sort_keys=True))

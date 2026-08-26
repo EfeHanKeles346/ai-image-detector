@@ -430,7 +430,8 @@ small manifests, aggregate evidence, code and documentation.
       recovery before changing transfer code. Split only the exact remaining interval, require HTTP
       206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary
       file, verify the published whole-file MD5 and atomically promote; retain every partial on any
-      failure. The concurrently independent IPN transfer may continue.
+      failure. The concurrently independent IPN transfer may continue. Implementation and combined
+      acquisition tests pass (18/18); commit before launching production ranges.
 - [ ] Freeze R1b roles by adding only audited iPhone 14 natural parents to the training-side REAL
       pool with device/scene grouping and a balanced source-capped AI selection. Refit R0/R1a heads
       under the unchanged CALIBRATION budgets; no owner/IPN pixel may be opened before artifacts

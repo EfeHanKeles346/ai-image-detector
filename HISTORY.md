@@ -2789,3 +2789,8 @@ transfer and continues unaffected.
 Append-only correction: the filesystem `stat` captured immediately after the preceding checkpoint
 is authoritative; the preserved prefix is **92,274,688 bytes**, not the mistyped 92,159,662. Range
 planning reads the live prefix size and binds 92,274,688.
+
+Four-range iPhone recovery was implemented against that live prefix. Range planning is exhaustive
+and disjoint; every response must be HTTP 206 with the exact requested interval and total. Assembly
+uses a distinct temporary path and whole-file MD5 before atomic promotion. Eighteen combined
+R1b/original acquisition tests pass. Production ranges remain unopened by this method commit.

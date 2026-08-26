@@ -4,7 +4,13 @@ from copy import deepcopy
 
 import pytest
 
-from experiments.e32_r1b_acquisition import CSAFE, select_csafe, select_ipn_natural
+from experiments.e32_r1b_acquisition import (
+    CSAFE,
+    parse_content_range,
+    range_plan,
+    select_csafe,
+    select_ipn_natural,
+)
 
 
 def _license() -> dict[str, str]:
@@ -79,3 +85,17 @@ def test_csafe_selection_rejects_size_drift() -> None:
     payload["files"][0]["size"] += 1
     with pytest.raises(ValueError, match="contract changed"):
         select_csafe(payload)
+
+
+def test_range_plan_is_exhaustive_and_disjoint() -> None:
+    plan = range_plan(92_274_688, CSAFE["bytes"], workers=4)
+    assert len(plan) == 4
+    assert plan[0][0] == 92_274_688
+    assert plan[-1][1] == CSAFE["bytes"] - 1
+    assert all(left_end + 1 == right_start for (_, left_end), (right_start, _) in zip(plan, plan[1:]))
+
+
+def test_content_range_parser_rejects_non_exact_shape() -> None:
+    assert parse_content_range("bytes 10-19/100") == (10, 19, 100)
+    with pytest.raises(ValueError, match="invalid Content-Range"):
+        parse_content_range("10-19/100")
