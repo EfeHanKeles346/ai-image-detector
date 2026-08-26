@@ -66,6 +66,13 @@ social transports per device/scene parent and extracts only originals; CSAFE rep
 MD5 and inventories without selecting rows. Fifteen focused tests pass; production inventory waits
 for all frozen archive bytes.
 
+FODB's production archive inventory now passes. The three archives occupy 22,940,347,533 declared
+bytes and reproduce SHAs `c719cac3...517c`, `271e07da...e5f1`, `a3c2d69f...2a6d`. It proves 3,851
+parents across 27 camera pipelines / 143 scene groups, each with one `orig` and five named social
+derivatives. Exactly 4,004 `inspection` helpers / 2,834,597,196 B are excluded as nonparents.
+Detailed inventory is 5,356,810 B / SHA `d378573f...9631`; compact evidence is
+`evidence/e32_fodb_archive_inventory.json`. Originals remain unextracted and role-free here.
+
 ### Training
 
 | Dataset | Size | Contents | Mode | Why |

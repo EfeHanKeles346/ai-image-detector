@@ -2173,3 +2173,12 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   member/root/byte totals in evidence.
 - All other unknown roots and nonconforming device members still fail closed.
 - Verification: 17 focused archive/realization tests pass; production rerun remains separate.
+
+### C1 FODB production archive inventory — pass
+
+- Three archives / 22,940,347,533 B pass CRC, SHA, path, symlink, encryption, duplicate and
+  expansion gates; SHAs `c719cac3...517c`, `271e07da...e5f1`, `a3c2d69f...2a6d`.
+- Exact parent contract: 3,851 parents, 27 camera pipelines, 143 scene groups, six linked transports.
+- Explicit nonparents: 4,004 `inspection` JPEG / 2,834,597,196 B.
+- External inventory 5,356,810 B / SHA `d378573f...9631`.
+- **Decision:** pass inventory; commit receipt before extracting only `orig` members.

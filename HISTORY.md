@@ -2412,3 +2412,15 @@ The repair now excludes exactly the precommitted top-level `inspection` root, re
 other unrecognized root or device-member pattern remains a hard failure. A regression locks the
 single allowed root; 17 focused archive/realization tests pass. Production archives were not
 reopened by this repair commit and will be rerun independently.
+
+The untouched three-archive FODB rerun passed the corrected safety gate. Declared physical bytes
+total 22,940,347,533; archive SHAs are `c719cac3...517c`, `271e07da...e5f1` and
+`a3c2d69f...2a6d`. CRC, path, symlink, encryption, duplicate-name and expansion checks pass.
+Exactly 3,851 device/scene parents span 27 camera pipelines and 143 scene groups, and every parent
+has one `orig` plus Facebook, Instagram, Telegram, Twitter and WhatsApp derivatives. The 4,004
+`inspection` JPEGs / 2,834,597,196 B are published as excluded nonparents.
+
+The detailed external inventory is 5,356,810 B / SHA `d378573f...9631`; compact evidence is
+`evidence/e32_fodb_archive_inventory.json`. State is
+`archive_inventory_passed_orig_parents_unextracted`. No archive member was extracted by this
+checkpoint; the next independent action may extract only the 3,851 `orig` members.

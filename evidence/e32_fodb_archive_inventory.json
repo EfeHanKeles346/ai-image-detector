@@ -1,0 +1,126 @@
+{
+  "archive_count": 3,
+  "archives": [
+    {
+      "archive": "part01.zip",
+      "archive_bytes": 5843764041,
+      "archive_sha256": "c719cac3e8f7f7bb8a8a10aadb6eaaee3ede8aed2fad4bb153f8fb2a56ae517c",
+      "compressed_member_bytes": 5841939963,
+      "file_members": 7710,
+      "root_counts": {
+        "D01_Motorola_E3_1": 858,
+        "D02_LG_OptimusL50_1": 858,
+        "D03_Wiko_Lenny2_1": 858,
+        "D04_LG_G3_1": 852,
+        "D05_Apple_iPhone6s_1": 858,
+        "D06_LG_G6_1": 858,
+        "D07_Motorola_Z2Play_1": 858,
+        "D08_Motorola_G8Plus_1": 852,
+        "D09_Samsung_GalaxyS4mini_1": 858
+      },
+      "second_level_counts": {
+        "facebook": 1285,
+        "instagram": 1285,
+        "orig": 1285,
+        "telegram": 1285,
+        "twitter": 1285,
+        "whatsapp": 1285
+      },
+      "suffix_counts": {
+        ".jpg": 7710
+      },
+      "uncompressed_bytes": 6024111303
+    },
+    {
+      "archive": "part02.zip",
+      "archive_bytes": 7492625473,
+      "archive_sha256": "271e07dad7f237f76147457244753834bc131ea54b308c240f368c8c3c6de5f1",
+      "compressed_member_bytes": 7490538355,
+      "file_members": 8544,
+      "root_counts": {
+        "D10_Samsung_GalaxyJ1_1": 852,
+        "D11_Samsung_GalaxyJ3_1": 858,
+        "D12_Samsung_GalaxyStar5280_1": 858,
+        "D13_Sony_XperiaE5_1": 846,
+        "D14_Apple_iPhone3_1": 852,
+        "D15_Samsung_GalaxyA6_1": 858,
+        "D16_Samsung_GalaxyA6_2": 852,
+        "D17_Apple_iPhone7_1": 852,
+        "D18_Samsung_GalaxyS4_1": 858,
+        "D19_Apple_iPhone8Plus_1": 858
+      },
+      "second_level_counts": {
+        "facebook": 1424,
+        "instagram": 1424,
+        "orig": 1424,
+        "telegram": 1424,
+        "twitter": 1424,
+        "whatsapp": 1424
+      },
+      "suffix_counts": {
+        ".jpg": 8544
+      },
+      "uncompressed_bytes": 7528615007
+    },
+    {
+      "archive": "part03.zip",
+      "archive_bytes": 9603958019,
+      "archive_sha256": "a3c2d69f13231743da7200021c50f5fb4721b194f9108ddcefaf58c75b6c2a6d",
+      "compressed_member_bytes": 9601177861,
+      "file_members": 10856,
+      "root_counts": {
+        "D20_Google_Pixel3_1": 858,
+        "D21_Google_Nexus5_1": 858,
+        "D22_BQ_AquarisX_1": 858,
+        "D23_Huawei_P9lite_1": 858,
+        "D24_Huawei_P8lite_1": 852,
+        "D25_Huawei_P9lite_2": 858,
+        "D26_Huawei_P20lite_1": 852,
+        "D27_Google_PixelXL_1": 858,
+        "inspection": 4004
+      },
+      "second_level_counts": {
+        "check_devices": 3861,
+        "compare_devices": 143,
+        "facebook": 1142,
+        "instagram": 1142,
+        "orig": 1142,
+        "telegram": 1142,
+        "twitter": 1142,
+        "whatsapp": 1142
+      },
+      "suffix_counts": {
+        ".jpg": 10856
+      },
+      "uncompressed_bytes": 9643753713
+    }
+  ],
+  "boundary": "Only orig members may be extracted as role-free candidates; social members remain parent-linked transport evidence.",
+  "detailed_report_bytes": 5356810,
+  "detailed_report_external_path": "fodb_archive_inventory.json",
+  "detailed_report_sha256": "d378573ff55dab4e4e4b0fffa16607cbdb595ce4a63005476ca4d4fd6df19631",
+  "device_count": 27,
+  "excluded_nonparent_bytes": 2834597196,
+  "excluded_nonparent_members": 4004,
+  "excluded_nonparent_root_counts": {
+    "inspection": 4004
+  },
+  "excluded_nonparent_roots": [
+    "inspection"
+  ],
+  "experiment": "E32/C1-fodb-archive-inventory",
+  "license": "Research use; no modification, commercial use or redistribution without author agreement",
+  "parent_count": 3851,
+  "scene_group_count": 143,
+  "schema_version": 1,
+  "source_id": "forchheim-fodb",
+  "state": "archive_inventory_passed_orig_parents_unextracted",
+  "transports": [
+    "facebook",
+    "instagram",
+    "orig",
+    "telegram",
+    "twitter",
+    "whatsapp"
+  ]
+}

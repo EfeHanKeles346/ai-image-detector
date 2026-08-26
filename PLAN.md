@@ -88,6 +88,9 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Precommit an explicit `inspection/` exclusion while continuing to fail every other unknown
       root/member, record excluded counts/bytes in evidence, then rerun all CRC/SHA checks.
       Seventeen focused archive/realization tests pass before the production rerun.
+- [x] Pass the corrected production FODB inventory: all three archives pass CRC/SHA and declared
+      size; 3,851 parents / 27 pipelines / 143 scene groups each have `orig` plus five transports.
+      Preserve 4,004 `inspection` derivatives / 2,834,597,196 B as explicit nonparents.
 - [x] Implement the role-free realization gate before any transfer completes. It binds every audit
       to the frozen selection SHA, ignores exFAT AppleDouble sidecars, requires all selected bytes
       to decode, derives format from payload bytes, records geometry/EXIF/compression summaries,
