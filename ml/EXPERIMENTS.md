@@ -2025,3 +2025,12 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   exclusion because no legacy pHash exists.
 - **Decision:** old receipt remains rejected; selected rows and labels do not change. Commit the
   method correction, then rerun independently. E32 tests pass 36/36.
+
+### C2c Nano schema-v2 realization — pass
+
+- 3,000/3,000 selected rows decode as RGB PNG; 3,000 unique SHA-256 and 3,000 unique pHash.
+- Zero exact duplicate, zero confirmed perceptual duplicate, zero protected or passed-peer overlap.
+- The five-row equal-dHash bucket remains reported as one candidate collision; pHash distances
+  24–32 prevent false rejection under the precommitted <=5 rule.
+- External receipt 1,767,170 B / SHA `8cb04e52...fe2f`; compact evidence committed.
+- **Decision:** Nano passes as `candidate_only`; no model role is assigned.

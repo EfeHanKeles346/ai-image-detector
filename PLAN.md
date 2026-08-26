@@ -154,6 +154,10 @@ small manifests, aggregate evidence, code and documentation.
       200 unique dHash, zero within-source duplicate and zero exact/dHash overlap with all four E30
       protected manifests. It passes only as a role-free candidate; 136 RGB and 64 RGBA modes must
       receive the same later input normalization as every other source.
+- [x] Realize the frozen Nano Banana arm under schema v2: 3,000/3,000 RGB PNG decode, 3,000 unique
+      SHA-256 and pHash, zero exact/confirmed-perceptual duplicate and zero protected/passed-peer
+      overlap. Preserve the five-row dHash candidate collision in evidence; it is not a confirmed
+      duplicate because pairwise pHash distances are 24–32.
 - [ ] Match semantic topics across classes before representation training. Measure topic/source,
       format, geometry, compression and bytes/pixel shortcuts on native and every proposed model
       input. Apply transport augmentation with the same probability/range to REAL and AI; never

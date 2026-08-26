@@ -2248,3 +2248,11 @@ Legacy protected E30 manifests contain only dHash, so those hits remain conserva
 exclusions rather than weakening final-role isolation. This changes no selected row and uses no
 model label/score. A regression test proves both a far-pHash collision and a close-pHash match; 36
 E32 tests pass.
+
+The independent schema-v2 rerun passed the unchanged Nano selection. All 3,000/3,000 images decode
+as RGB PNG, with 3,000 unique SHA-256 and 3,000 unique pHash values. There is no exact or confirmed
+perceptual duplicate and no exact/dHash overlap with protected E30 or the passed NBP peer. The
+five-row equal-dHash bucket remains visible as one candidate collision rather than disappearing
+from evidence. Detailed external receipt is 1,767,170 bytes with SHA-256 `8cb04e52...fe2f`;
+compact evidence is `evidence/e32_nano-banana-local_realization.json`. Nano is now a role-free
+candidate, not TRAIN/CALIBRATION.

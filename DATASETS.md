@@ -319,6 +319,12 @@ EXIF is absent, so alpha/mode cannot be exposed as a class shortcut. Detailed ex
 91,762 B / SHA `bfc217f0...d17b`; compact evidence is
 `evidence/e32_nano-banana-pro-ash-local_realization.json`. Its role remains `candidate_only`.
 
+The frozen Nano Banana source also passes schema-v2 realization: 3,000/3,000 RGB PNG, 3,000 unique
+SHA-256 and pHash, zero exact/confirmed-perceptual duplicate, and zero protected/passed-peer
+overlap. One five-image dHash collision bucket is retained in evidence but all pairwise pHash
+distances are 24–32, so it is not a near-duplicate group. Detailed receipt is 1,767,170 B / SHA
+`8cb04e52...fe2f`; compact evidence is `evidence/e32_nano-banana-local_realization.json`.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |
