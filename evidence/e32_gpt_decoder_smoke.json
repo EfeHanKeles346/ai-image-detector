@@ -1,0 +1,17 @@
+{
+  "bulk_boundary": "Bulk requires this exact selection SHA and passed decoder/prompt smoke.",
+  "decoded_format": "PNG",
+  "experiment": "E32/C2c",
+  "height": 1536,
+  "image_bytes": 3486339,
+  "image_sha256": "8f30398f5e02dbe11e8222873774515d94babc50a3fed601cd3aa64a648b6e96",
+  "mode": "RGB",
+  "prompt_bytes": 1341,
+  "prompt_sha256": "e4f291e3fdff48977c32a1f7d0ede25a13f65f5296a67fa9b29b65eca9909c28",
+  "schema_version": 1,
+  "selection_sha256": "2a31e7921054ac4915533735f3649cbb2d6b204439e93a6277a2164cd26a0ef7",
+  "source_key": "GPTIMG_852.png",
+  "source_revision": "bba366cb4b73605ddd569a916976a0e422164825",
+  "state": "gpt_decoder_smoke_passed",
+  "width": 1024
+}

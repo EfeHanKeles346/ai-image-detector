@@ -295,6 +295,11 @@ with record-selection SHA `2a31e7921054ac4915533735f3649cbb2d6b204439e93a6277a21
 A partial local folder remains an availability cache, not a selection rule: only 795/3,000 exact
 GPT pairs are already local and 2,205 require download.
 
+The selected missing GPT smoke pair passed before bulk: `GPTIMG_852.png`, RGB PNG 1024x1536,
+3,486,339 B, SHA-256 `8f30398f...6e96`, plus a non-empty 1,341-byte UTF-8 prompt. Compact evidence
+`evidence/e32_gpt_decoder_smoke.json` binds it to record-selection SHA `2a31e792...0ef7`. This is a
+decoder/acquisition result only, not source eligibility.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

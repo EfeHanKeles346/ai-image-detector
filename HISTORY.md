@@ -2200,3 +2200,9 @@ retry, free-space and `.partial` machinery. One deterministic selected missing i
 must decode with a non-empty UTF-8 prompt before bulk is enabled; stale or missing smoke evidence
 hard-fails. Eleven focused GPT/pool tests plus the existing E32 suite pass. No GPT image byte was
 downloaded by this implementation checkpoint.
+
+The authorized GPT smoke then fetched selected missing pair `GPTIMG_852`. Its image is a
+3,486,339-byte RGB PNG, SHA-256 `8f30398f...6e96`, decoding at 1024x1536; its 1,341-byte UTF-8
+prompt is non-empty with normalized SHA `e4f291e3...09c28`. Evidence binds both to 15K selection
+SHA `2a31e792...0ef7`. The decoder/prompt gate passes and bulk may start; this does not make the
+source eligible or alter the 3,000 selected GPT parents.

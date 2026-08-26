@@ -116,6 +116,9 @@ small manifests, aggregate evidence, code and documentation.
       local pairs, writes missing pairs only below external `e32/ai/gpt-image-1`, preserves
       `.partial` resume and requires one selected missing image/prompt pair to pass decode and
       UTF-8 prompt smoke before the 2,205-pair bulk transfer.
+- [x] Pass the exact GPT smoke: selected `GPTIMG_852.png` is a 3,486,339-byte RGB PNG at
+      1024x1536 with non-empty 1,341-byte UTF-8 prompt. Evidence is bound to selection SHA
+      `2a31e792...0ef7`; bulk may start without changing the selected rows.
 - [x] Research and freeze only the measured two-family gap, without downloading OpenFake's full
       3.44 TB or reassigning protected tests. C2b pins Qwen Image 2512 (CC BY-SA 4.0) and FLUX.2
       Klein 9B Base (CC BY 4.0), selecting 750 complete prompt groups / 3,000 JPEG XL outputs from

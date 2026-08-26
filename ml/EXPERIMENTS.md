@@ -1974,3 +1974,12 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Require one deterministic missing image/prompt pair to decode and contain non-empty UTF-8 before
   bulk; bind the gate to the current selection SHA.
 - Implementation tests pass; this checkpoint downloaded zero GPT image bytes.
+
+### C2c GPT decoder/prompt smoke result
+
+- Selected missing pair: `GPTIMG_852.png`; 3,486,339 B; SHA `8f30398f...6e96`; direct Pillow
+  decode as RGB PNG 1024x1536.
+- Prompt: 1,341 B, valid non-empty UTF-8, normalized SHA `e4f291e3...09c28`.
+- Gate binding: 15K record-selection SHA `2a31e792...0ef7`.
+- **Decision:** smoke passes; bulk transfer is permitted, but eligibility still requires all 3,000
+  selected pairs and the later byte/decontamination audit.
