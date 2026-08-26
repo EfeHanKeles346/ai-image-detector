@@ -83,7 +83,7 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Pass CSAFE ZIP inventory: 7,996 JPEG under ten physical S21 devices; 4,000 `blank` flat-field
       images and 3,996 `natural` images across front/telephoto/ultra/wide pipelines. Preserve all
       rows as unselected and precommit natural-only selection before extraction.
-- [ ] Freeze all 3,996 CSAFE `natural` members from inventory metadata before reading member bytes;
+- [x] Freeze all 3,996 CSAFE `natural` members from inventory metadata before reading member bytes;
       bind device and lens pipeline, exclude all 4,000 `blank` rows by contract, then extract only
       the frozen natural set atomically with per-file SHA. Implement the realization gate before
       production extraction and keep all outputs role-free.
@@ -94,13 +94,16 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Extract the frozen 3,996 CSAFE natural parents atomically: 13,219,178,988 B with per-file SHA,
       device/lens metadata and exact selection binding. No blank member was extracted; keep rows
       role-free until full realization.
+- [x] Pass CSAFE full realization: 3,996/3,996 RGB JPEG with EXIF, unique SHA/pHash, zero confirmed
+      duplicate and zero protected/passed-peer overlap. One equal-dHash pair remains a visible
+      nonduplicate candidate; all rows stay role-free pending global overlay.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly
       3,851 `orig` JPEG parents across 27 device roots and parent-link each social transport by
       scene index; extract only `orig` candidates atomically. CSAFE rows remain unopened and
       unselected until its verified `s21.zip` inventory is frozen. Fifteen focused tests pass.
-- [ ] After the frozen transfers finish, run the committed inventory gates, preserve their receipts,
+- [x] After the frozen transfers finish, run the committed inventory gates, preserve their receipts,
       extract only FODB `orig` members, and audit every extracted parent before role assignment.
 - [x] Extract all 3,851 FODB `orig` parents atomically from the passed inventory: 15,416,129,383 B,
       each with extraction SHA and device/scene binding. No social or `inspection` member was

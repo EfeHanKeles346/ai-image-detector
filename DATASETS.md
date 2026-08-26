@@ -64,6 +64,12 @@ SHA and device/lens metadata; no blank member was extracted. Detailed receipt is
 `32acdfb3...d7e4`; compact evidence is `evidence/e32_csafe_natural_extraction.json`. These rows are
 role-free until the full decode/decontamination audit passes.
 
+CSAFE realization passes: 3,996/3,996 RGB JPEG with EXIF, unique SHA/pHash, ten devices and four
+lenses; zero protected/passed-peer overlap. One equal-dHash pair is not pHash-confirmed. Detailed
+audit is 2,521,737 B / SHA `3ea951ec...b701`; compact evidence is
+`evidence/e32_csafe-mcsidb-s21_realization.json`. Candidate-only volume is sufficient for the REAL
+floor once the global overlay confirms no cross-source/cross-label collision.
+
 | frozen source | selected transfer | intended value | licence / role boundary |
 |---|---:|---|---|
 | VISION base native | 3,500 JPEG parents / 35 devices | Device-balanced native camera data; excludes flat fields, video and all social derivatives | CC BY-SA 4.0; TRAIN/CALIBRATION candidate only after audit |

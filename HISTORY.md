@@ -2528,3 +2528,13 @@ member, device, lens and camera-pipeline metadata. No `blank` member was extract
 receipt is 1,775,854 B / SHA `32acdfb3...d7e4`, bound to selection SHA `3a24bd50...ad1c`; compact
 evidence is `evidence/e32_csafe_natural_extraction.json`. State remains
 `natural_extraction_complete_role_free` pending independent realization.
+
+CSAFE full realization passed. All 3,996/3,996 natural members decode as RGB JPEG and carry EXIF;
+all 3,996 SHA and pHash values are unique. One cross-device wide-lens pair shares dHash but is not
+pHash-confirmed, and every protected/passed-peer overlap count is zero. The balanced ten-device /
+four-lens structure remains intact.
+
+Detailed external audit is 2,521,737 B / SHA `3ea951ec...b701`; compact evidence is
+`evidence/e32_csafe-mcsidb-s21_realization.json`. State is
+`source_realization_passed_candidate_only`. C1 now has enough source-audited volume to exceed the
+10,000 REAL floor, subject to the final global cross-source/cross-label overlay rerun.

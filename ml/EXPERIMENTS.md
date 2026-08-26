@@ -2257,3 +2257,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Zero blank members extracted.
 - External receipt 1,775,854 B / SHA `32acdfb3...d7e4`, bound to selection `3a24bd50...ad1c`.
 - **Decision:** commit extraction receipt, then run independent full realization.
+
+### C1 CSAFE full realization — pass
+
+- 3,996/3,996 RGB JPEG with EXIF; ten devices / four lens pipelines.
+- 3,996 unique SHA and pHash; one dHash bucket, zero confirmed perceptual duplicate.
+- Zero protected or passed-peer overlap.
+- External audit 2,521,737 B / SHA `3ea951ec...b701`.
+- **Decision:** pass as `candidate_only`; add to global overlay before role freezing.
