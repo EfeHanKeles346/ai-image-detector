@@ -2500,3 +2500,10 @@ Detailed external inventory is 1,306,218 B / SHA `77a88649...fd8d`; compact evid
 `evidence/e32_csafe_archive_inventory.json`. State remains
 `archive_inventory_frozen_internal_rows_unselected`. A separate committed selector must choose
 natural rows only and preserve device/lens identity before extraction.
+
+The CSAFE natural-only path was precommitted before opening an internal JPEG. The selector will
+take all 3,996 inventory-declared `natural` members, bind physical device and lens pipeline and
+exclude every one of the 4,000 `blank` fields mechanically. Only that frozen list may be extracted
+atomically with per-file SHA. A receipt-bound realization command must exist before production
+extraction and must apply the shared decode/protected/duplicate gate. Selection, extraction and
+realization remain separate commits and none assigns TRAIN/CALIBRATION.
