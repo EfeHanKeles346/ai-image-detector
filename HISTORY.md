@@ -2819,3 +2819,8 @@ removed only afterward. Central-directory-only inspection (no member pixel decod
 JPEGs across ten device roots: 4,000 blank and 3,996 natural, with front/telephoto/ultra/wide
 lenses. A receipt-bound safe inventory, natural-only freezer and atomic extractor were
 precommitted before member bytes are opened.
+
+The iPhone archive handler was implemented without reading member payloads. It reuses the proven
+ZIP traversal/symlink/encryption/CRC/expansion gates, binds acquisition receipts, accepts only the
+exact iPhone14/device/content/lens/JPEG hierarchy, freezes natural rows from metadata and extracts
+through size/CRC/SHA-checked atomic writes. Twenty-four combined archive/acquisition tests pass.

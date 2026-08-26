@@ -2567,3 +2567,11 @@ above are transcription errors; production range planning binds the filesystem v
 - Implement receipt-bound traversal/symlink/encryption/CRC/expansion inventory, then freeze only
   natural rows from inventory metadata and extract atomically with size/CRC/SHA checks.
 - **Decision:** commit before reading any ZIP member payload.
+
+### C4-R1b iPhone 14 archive implementation checkpoint
+
+- Exact hierarchy parser plus receipt-bound safe inventory, metadata-only natural freezer and
+  size/CRC/SHA-checked atomic extractor implemented.
+- Blank rows cannot enter extraction; no function assigns TRAIN/CALIBRATION.
+- Twenty-four combined iPhone/archive/acquisition tests pass.
+- **Decision:** commit method before production CRC inventory.
