@@ -2397,3 +2397,12 @@ original through the common format/EXIF/dHash/pHash gate, and records camera pip
 scene group and `orig` state. It then uses the same protected-E30 and passed-peer boundaries as the
 other E32 sources and still assigns no role. A receipt-bound fixture brings the focused archive and
 realization suite to 16 passing tests. No FODB image was opened by this method checkpoint.
+
+The first production FODB inventory correctly stopped without emitting evidence or extracting a
+member. Every device-root file matched the frozen six-transport contract, but `part03.zip` also
+contains 4,004 JPEG / 2,834,597,196 bytes under an undocumented-by-our-parser `inspection/` root:
+3,861 `check_devices` and 143 `compare_devices` helpers. The latter count equals reported scenes
+and the former approximates the original-parent count, so treating them as independent parents
+would create derived duplicates and inflate REAL. The repair will explicitly exclude only the
+whole `inspection/` root, publish its counts/bytes, and continue rejecting every other unknown
+path. The failed run produced no inventory receipt and changed no archive.

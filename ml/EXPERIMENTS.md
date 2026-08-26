@@ -2156,3 +2156,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   shared SHA/dHash/pHash and protected-role checks.
 - Verification: 16 focused archive/realization tests pass; production originals remain unopened.
 - **Decision:** commit method before extraction, then run it only after archive inventory passes.
+
+### C1 FODB first production inventory — safe stop
+
+- Device roots conform, but part03 contains 4,004 extra JPEG / 2,834,597,196 B under
+  `inspection/`: 3,861 device-check plus 143 scene-comparison helpers.
+- These are derived inspection artifacts, not independent authentic parents; counting them would
+  inflate and contaminate REAL.
+- No receipt was emitted and no member extracted.
+- **Decision:** precommit an exact-root exclusion with published excluded counts/bytes, retain hard
+  failure for every other unknown path, then rerun from untouched archives.

@@ -81,6 +81,12 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Implement the FODB role-free realization command before extraction. It binds the extraction
       receipt, rechecks byte count and SHA, decodes every original, records camera/device/scene and
       native state, and applies the shared protected/duplicate gate. Sixteen focused tests pass.
+- [x] Preserve the first production FODB inventory stop: all device members matched, but part03
+      also contains 4,004 JPEGs / 2,834,597,196 bytes under `inspection/` (3,861 device-check and
+      143 scene-comparison helpers). They are derived inspection material, not new parents; no
+      inventory receipt or extraction was accepted.
+- [ ] Precommit an explicit `inspection/` exclusion while continuing to fail every other unknown
+      root/member, record excluded counts/bytes in evidence, then rerun all CRC/SHA checks.
 - [x] Implement the role-free realization gate before any transfer completes. It binds every audit
       to the frozen selection SHA, ignores exFAT AppleDouble sidecars, requires all selected bytes
       to decode, derives format from payload bytes, records geometry/EXIF/compression summaries,
