@@ -2617,3 +2617,11 @@ exactly reproduce the transform. The trainer binds the complete receipt, recheck
 hash, caches record-aligned frozen DINO features, fits only TRAIN and saves a preprocessing/model/
 threshold-bound joblib artifact. Thirteen focused role/input/training tests pass. No production R0
 input, feature or model was created by this method commit.
+
+Production R0 input realization completed without losing a parent. All 22,688 C3 rows were
+source-SHA verified and transformed to the same 224x224 RGB JPEG q90/4:4:4 input. The result is
+exactly balanced at 11,344/class and preserves TRAIN 18,154 / CALIBRATION 4,534. Logical payload is
+487,845,683 bytes; exFAT allocation is larger because 22,688 small files occupy full allocation
+units. Record-list SHA is `f9424d3d...f14b`; detailed receipt is 9,021,504 B / SHA
+`2255b123...5199`, with compact evidence `evidence/e32_r0_input_receipt.json`. This freezes the
+only input set the R0 feature extractor may open.

@@ -1,0 +1,39 @@
+{
+  "boundary": "Only TRAIN and CALIBRATION parents are materialized; no DEVELOPMENT or LOCKED bytes are read.",
+  "class_counts": {
+    "ai": 11344,
+    "real": 11344
+  },
+  "detailed_report_bytes": 9021504,
+  "detailed_report_external_path": "r0_input_receipt.json",
+  "detailed_report_sha256": "2255b123a24b2cd7cb371878a134f39f7ef352ed437dd57494c55280e01f5199",
+  "experiment": "E32/C4-R0-standardized-input",
+  "manifest_sha256": "0b6656a25762dbb097d18634d4193282e7c03d2e6bbe257f31471434f67b91eb",
+  "preprocessing": {
+    "crop": "center-224",
+    "encoding": "JPEG quality=90 subsampling=0 optimize=false progressive=false",
+    "mode": "RGB",
+    "orientation": "PIL ImageOps.exif_transpose",
+    "resize_short_side": 256
+  },
+  "record_count": 22688,
+  "records_sha256": "f9424d3d3564d125b22647288c1290cdb6ace942546c50dd11d4bb5786aef14b",
+  "role_counts": {
+    "CALIBRATION": 4534,
+    "TRAIN": 18154
+  },
+  "schema_version": 1,
+  "source_counts": {
+    "communityforensics-ai-local": 2226,
+    "csafe-mcsidb-s21": 3996,
+    "flux2-klein-9b": 2232,
+    "forchheim-fodb": 3851,
+    "gpt-image-1": 2227,
+    "nano-banana-local": 2227,
+    "nano-banana-pro-ash-local": 200,
+    "qwen-image-2512": 2232,
+    "vision-base-native": 3497
+  },
+  "state": "r0_input_realization_complete",
+  "total_input_bytes": 487845683
+}

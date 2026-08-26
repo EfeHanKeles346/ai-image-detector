@@ -337,6 +337,10 @@ small manifests, aggregate evidence, code and documentation.
       before production bytes. The realizer rechecks each original SHA and refuses changed derived
       bytes; the trainer rechecks all 22,688 input hashes, caches record-aligned features and saves
       a hash-bound artifact. Thirteen focused input/train/role tests pass.
+- [x] Realize every C3 parent under the fixed R0 input contract: 22,688/22,688 standardized JPEGs,
+      487,845,683 logical bytes, exactly 11,344/class and unchanged TRAIN/CALIBRATION counts. Every
+      original and derived SHA passes; no protected role is read. Freeze receipt SHA
+      `2255b123...5199` before DINO feature extraction.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract.
       - **R1 current-science:** a feasible pinned PE-Core frozen encoder (begin B/16; advance to

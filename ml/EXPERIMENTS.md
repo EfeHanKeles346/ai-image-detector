@@ -2345,3 +2345,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Verification: 13 focused role/input/trainer tests pass, including fixed RGB/geometry, deterministic
   transform, group selection and per-authentic-source threshold budgets.
 - **Decision:** commit method; production input realization is the next separate action.
+
+### C4-R0 standardized-input realization — pass
+
+- 22,688/22,688 parent inputs; 11,344 AI / 11,344 REAL.
+- TRAIN 18,154 / CALIBRATION 4,534; all nine source counts reproduce C3 exactly.
+- Fixed 224x224 RGB JPEG q90/4:4:4; 487,845,683 logical bytes.
+- Record SHA `f9424d3d...f14b`; detailed receipt 9,021,504 B / SHA `2255b123...5199`.
+- **Decision:** freeze input receipt; DINOv2-S may now extract features from this root only.

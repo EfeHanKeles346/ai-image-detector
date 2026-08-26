@@ -558,3 +558,8 @@ group intersection is zero for the declared device/scene/prompt/generator bounda
 SHA is `568e8e26...d887`; compact receipt is `evidence/e32_c3_role_manifest.json`. FODB remains
 scene-disjoint rather than camera-disjoint because its complete crossed design connects all 27
 cameras through the same 143 scenes; it cannot support an unseen-camera claim.
+
+R0 derives one class-identical model input from every C3 parent: EXIF transpose, RGB, short-side
+256, center-crop 224 and JPEG q90/4:4:4. All 22,688 outputs passed original/derived SHA checks and
+occupy 487,845,683 logical bytes (larger allocated size on exFAT due to small-file allocation).
+Receipt SHA is `2255b123...5199`; no DEVELOPMENT or LOCKED image was materialized.
