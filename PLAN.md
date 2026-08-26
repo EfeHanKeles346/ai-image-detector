@@ -454,7 +454,8 @@ small manifests, aggregate evidence, code and documentation.
       `8325aaf4...05fd`; precommit a deterministic overlay that excludes the entire two-row
       perceptual component (never choose a preferred side) and freezes 3,994 role-free candidates.
       Overlay implementation binds the stopped audit and exact component; two focused tests pass.
-      Commit before production eligibility freeze.
+      Commit before production eligibility freeze. Production overlay passes at 3,994 eligible,
+      two excluded, detailed SHA `a71c4a06...57bf`; raw files remain intact.
 - [x] Preserve the first iPhone 14 single-stream stop at 92,274,688 bytes and precommit four-range
       recovery before changing transfer code. Split only the exact remaining interval, require HTTP
       206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary
@@ -465,6 +466,11 @@ small manifests, aggregate evidence, code and documentation.
       pool with device/scene grouping and a balanced source-capped AI selection. Refit R0/R1a heads
       under the unchanged CALIBRATION budgets; no owner/IPN pixel may be opened before artifacts
       freeze. Advance only the stronger internal candidate.
+      Controlled correction rule: preserve all 22,688 C3 roles byte-for-byte and append the 3,994
+      eligible iPhone parents only; allocate eight complete physical devices to TRAIN and two to
+      CALIBRATION by stable hash. Do not add AI rows or rebalance—class-weighted heads isolate the
+      causal effect of authentic Apple coverage. Standardize every appended parent through the
+      identical JPEG q90/4:4:4 route before either frozen encoder.
 - [ ] Score the frozen R1b candidate once on all IPN-NFID devices and the consumed owner gallery.
       Require <=20% worst-device IPN FP and <=20% owner-gallery FP while preserving >=90% modern-AI
       recall before any locked AI arm or serving replacement. Failure returns to data/objective

@@ -631,3 +631,9 @@ despite `.JPG` names—an important container fact that the standardized JPEG mo
 neutralize. Detailed rejected audit is 2,638,999 B / SHA `8325aaf4...05fd`; compact evidence is
 `evidence/e32_csafe-mcsidb-iphone14_realization.json`. The correction excludes both burst rows,
 not an outcome-selected preferred member.
+
+The deterministic overlay excludes both burst members and freezes 3,994 eligible, role-free iPhone
+parents; source bytes remain intact. Eligible payloads are 3,943 MPO + 51 JPEG. Detailed overlay is
+2,364,384 B / SHA `a71c4a06...57bf`; compact evidence is
+`evidence/e32_r1b_csafe_iphone14_eligibility.json`. R1b will neutralize this container imbalance by
+the same derived JPEG contract used for every earlier parent.

@@ -2864,3 +2864,9 @@ The corrective overlay was implemented as a receipt transformer, not a file muta
 only the exact single failure/component above, marks both members ineligible, retains every source
 byte and assigns no role. Two focused component/owner-identity tests pass. Production eligibility
 remains unopened by this method commit.
+
+Production overlay passed exactly as frozen: both duplicate-burst rows excluded, 3,994 role-free
+parents retained, detailed SHA `a71c4a06...57bf`; no source file was removed. R1b's controlled
+data test is now fixed: preserve all old C3 roles, append only these iPhone parents, split complete
+devices 8/2 between TRAIN/CALIBRATION by stable hash, add no AI rows and rely on class-weighted
+heads. This isolates authentic Apple coverage rather than silently changing two variables.

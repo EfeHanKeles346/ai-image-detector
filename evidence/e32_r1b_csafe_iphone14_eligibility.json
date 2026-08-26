@@ -1,0 +1,22 @@
+{
+  "boundary": "Role-free eligibility only; files remain intact and no TRAIN/CALIBRATION assignment occurs.",
+  "detailed_report_bytes": 2364384,
+  "detailed_report_external_path": "r1b_csafe_iphone14_eligibility.json",
+  "detailed_report_sha256": "a71c4a06f02765382779f15458de1decf1f42db1f9a9f7fbc95417c6256a57bf",
+  "eligible_format_counts": {
+    "JPEG": 51,
+    "MPO": 3943
+  },
+  "eligible_parents": 3994,
+  "excluded_parents": 2,
+  "excluded_source_keys": [
+    "real/csafe_iphone14/natural/iPhone14_5/telephoto/IMG_1290.JPG",
+    "real/csafe_iphone14/natural/iPhone14_5/telephoto/IMG_1291.JPG"
+  ],
+  "experiment": "E32/C4-R1b-csafe-iphone14-eligibility",
+  "realization_sha256": "8325aaf46dedd60689a2ebd37c70a315155c963d75b26e94de31d3148fbe05fd",
+  "schema_version": 1,
+  "selected_parents": 3996,
+  "source_id": "csafe-mcsidb-iphone14",
+  "state": "eligibility_frozen_role_free"
+}

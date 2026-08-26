@@ -2621,3 +2621,11 @@ above are transcription errors; production range planning binds the filesystem v
 - Receipt transformer accepts only the exact one-failure/two-row component and excludes every side.
 - Source bytes remain intact; output is role-free. Two focused component/identity tests pass.
 - **Decision:** commit method before production eligibility freeze.
+
+### C4-R1b iPhone 14 production eligibility — pass
+
+- 3,996 selected -> exclude both members of one burst -> 3,994 eligible, role-free.
+- Eligible payloads: 3,943 MPO + 51 JPEG; detailed receipt 2,364,384 B / SHA `a71c4a06...57bf`.
+- R1b controlled rule: retain all old C3 roles, append iPhone only, complete devices 8/2 TRAIN/CAL,
+  no new AI/rebalancing, class-weighted heads, identical derived JPEG input.
+- **Decision:** freeze eligibility and role rule before implementing the R1b manifest.
