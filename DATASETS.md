@@ -590,3 +590,9 @@ iPhone XR, Motorola G4 Plus/G Play/G20, Samsung Galaxy A01/Note 9, Sony Xperia M
 Y9 2019 and LG L65. The CSAFE source is Figshare article `26932084`, version 1. API id, version,
 licence, filename, size and checksum must match before a transfer. Both downloads retain `.partial`
 state and preserve a 100 GiB disk floor; no selected image byte existed at this checkpoint.
+
+Production metadata freeze reproduced every declared contract: 960 IPN natural JPEGs across twelve
+devices / 3,889,897,594 B and the 20,428,338,922-byte CSAFE iPhone 14 archive. The detailed external
+selection is 385,191 B / SHA `c807d140...1c7f`; compact Git evidence is
+`evidence/e32_r1b_acquisition_selection.json`. State remains
+`selection_frozen_no_selected_bytes_claimed`.

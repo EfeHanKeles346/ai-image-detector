@@ -2773,3 +2773,8 @@ official metadata, downloads IPN files with four bounded workers, downloads the 
 resumable curl, preserves `.partial` state and verifies every completed file against its published
 size and MD5 before promotion. A 100 GiB free-space floor is enforced. Four focused selection and
 drift tests pass; no selected image byte was fetched by this method checkpoint.
+
+The production R1b metadata freeze then reproduced all official contracts without downloading a
+selected image: 960 IPN natural JPEGs / 3,889,897,594 bytes across twelve devices and the
+20,428,338,922-byte CSAFE iPhone 14 archive. Detailed selection SHA is `c807d140...1c7f`; this
+receipt is frozen before either transfer begins.

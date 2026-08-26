@@ -1,0 +1,17 @@
+{
+  "csafe_archive": {
+    "bytes": 20428338922,
+    "file_id": 49389769,
+    "md5": "dfc01c89b14356141f53d253b72e946c",
+    "name": "iPhone14.zip"
+  },
+  "detailed_selection_bytes": 385191,
+  "detailed_selection_sha256": "c807d140a984dde4f40572e6965b483f5a79b1d3ab870b9d393a5527ad931c7f",
+  "experiment": "E32/C4-R1b-corrective-acquisition",
+  "ipn_device_count": 12,
+  "ipn_natural_bytes": 3889897594,
+  "ipn_natural_count": 960,
+  "new_selected_bytes_downloaded_by_freeze": 0,
+  "schema_version": 1,
+  "state": "selection_frozen_no_selected_bytes_claimed"
+}

@@ -2507,3 +2507,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   verify before atomic promotion and enforce >=100 GiB free.
 - Four focused tests cover natural-only selection, device binding and checksum/size drift stops.
 - **Decision:** commit method before production metadata freeze or selected-byte transfer.
+
+### C4-R1b production metadata freeze — pass
+
+- IPN: 960/960 natural JPEGs, twelve devices, 3,889,897,594 declared bytes.
+- CSAFE: `iPhone14.zip`, 20,428,338,922 bytes, MD5 `dfc01c89...946c`.
+- Detailed receipt: 385,191 B / SHA `c807d140...1c7f`; selected bytes downloaded by freeze: zero.
+- **Decision:** freeze receipt; transfers may now resume only against these rows.
