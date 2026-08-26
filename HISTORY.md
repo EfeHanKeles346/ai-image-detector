@@ -2586,3 +2586,14 @@ nearest-target subset assignment over each source's protected role groups. It fa
 inputs, impossible exact counts, duplicate IDs, empty source-role cells or any role-group overlap.
 Eight focused role/overlay tests pass; no production role manifest or image byte was opened by this
 method commit.
+
+The production C3 role freeze succeeded over metadata only. It retained all 11,344 eligible REAL
+parents and the precommitted 11,344 AI subset. TRAIN contains 18,154 rows (9,081 AI / 9,073 REAL);
+CALIBRATION contains 4,534 (2,263 AI / 2,271 REAL). Every one of nine sources appears in both
+roles. Device, scene, prompt and generator-identity group intersections are exactly zero under the
+declared per-source contract, and no DEVELOPMENT or LOCKED row exists.
+
+The detailed manifest's record-list SHA is `568e8e26...d887`; compact evidence is
+`evidence/e32_c3_role_manifest.json`. The manifest remains a parent-role contract, not a feature
+archive or fitted model. It now authorizes a byte-identical preprocessing audit and the R0 frozen
+DINOv2-S screen without opening any protected final.

@@ -2309,3 +2309,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   leakage. Detailed output is external; compact evidence contains hashes and aggregate checks.
 - Verification: eight focused role-manifest/overlay tests pass.
 - **Decision:** commit method before running it on the 26,130 eligible production records.
+
+### C3 production balanced role manifest — pass
+
+- Total 22,688, exactly 11,344 AI / 11,344 REAL.
+- TRAIN 18,154 (AI 9,081 / REAL 9,073); CALIBRATION 4,534 (AI 2,263 / REAL 2,271).
+- All nine source-role cells are nonempty; declared role-group overlap is zero; no DEVELOPMENT or
+  LOCKED row exists.
+- Record-list SHA `568e8e26...d887`; state `train_calibration_manifest_frozen`.
+- **Decision:** freeze roles. Next run identical decoded-RGB preprocessing and the R0 frozen
+  DINOv2-S control; threshold selection may read CALIBRATION, not protected final arms.

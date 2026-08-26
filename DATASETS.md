@@ -551,3 +551,10 @@ retains 59 known duplicate components and excludes 20 same-label noncanonical un
 within-parent rows. Detailed evidence is 1,431,190 B / SHA `45830283...78b6`; compact evidence is
 `evidence/e32_eligibility_overlay.json`. The state is `eligibility_frozen_role_free`: these rows
 may now feed a precommitted group-aware TRAIN/CALIBRATION split, but none is a locked test sample.
+
+The C3 balanced role manifest selects 22,688 of those eligible parents: all 11,344 REAL and an
+exact source-capped 11,344 AI subset. TRAIN has 18,154 rows and CALIBRATION 4,534. Its protected
+group intersection is zero for the declared device/scene/prompt/generator boundaries. Record-list
+SHA is `568e8e26...d887`; compact receipt is `evidence/e32_c3_role_manifest.json`. FODB remains
+scene-disjoint rather than camera-disjoint because its complete crossed design connects all 27
+cameras through the same 143 scenes; it cannot support an unseen-camera claim.

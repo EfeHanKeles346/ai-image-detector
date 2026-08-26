@@ -1,0 +1,169 @@
+{
+  "calibration_fraction_target": 0.2,
+  "checks": {
+    "balanced_classes": true,
+    "development_or_locked_rows": 0,
+    "role_group_overlap_count": 0,
+    "source_role_cells_nonempty": true,
+    "unique_record_ids": true
+  },
+  "class_counts": {
+    "ai": 11344,
+    "real": 11344
+  },
+  "detailed_report_bytes": 13430131,
+  "detailed_report_external_path": "c3_role_manifest.json",
+  "detailed_report_sha256": "0b6656a25762dbb097d18634d4193282e7c03d2e6bbe257f31471434f67b91eb",
+  "eligibility_overlay_sha256": "45830283562b4e2e5f321022373f4c7df206eb41064094b88cbad0ca69cb78b6",
+  "experiment": "E32/C3-balanced-role-manifest",
+  "limitations": [
+    "FODB roles are scene-disjoint but not camera-disjoint because its crossed design connects every device through shared scenes.",
+    "This manifest contains no DEVELOPMENT or LOCKED FINAL row and cannot support final-performance claims."
+  ],
+  "records_sha256": "568e8e26caf08636f5f60356f96bd44017d6f0a6e2ffdb4384cdac771f6ed887",
+  "role_class_counts": {
+    "CALIBRATION": {
+      "ai": 2263,
+      "real": 2271
+    },
+    "TRAIN": {
+      "ai": 9081,
+      "real": 9073
+    }
+  },
+  "role_counts": {
+    "CALIBRATION": 4534,
+    "TRAIN": 18154
+  },
+  "schema_version": 1,
+  "seed": 20260826,
+  "sources": [
+    {
+      "label": "ai",
+      "role_counts": {
+        "CALIBRATION": 445,
+        "TRAIN": 1781
+      },
+      "role_group_counts": {
+        "CALIBRATION": 60,
+        "TRAIN": 240
+      },
+      "role_group_kind": "generator_identity",
+      "selected_rows": 2226,
+      "source_id": "communityforensics-ai-local"
+    },
+    {
+      "label": "real",
+      "role_counts": {
+        "CALIBRATION": 799,
+        "TRAIN": 3197
+      },
+      "role_group_counts": {
+        "CALIBRATION": 2,
+        "TRAIN": 8
+      },
+      "role_group_kind": "device",
+      "selected_rows": 3996,
+      "source_id": "csafe-mcsidb-s21"
+    },
+    {
+      "label": "ai",
+      "role_counts": {
+        "CALIBRATION": 444,
+        "TRAIN": 1788
+      },
+      "role_group_counts": {
+        "CALIBRATION": 111,
+        "TRAIN": 447
+      },
+      "role_group_kind": "prompt",
+      "selected_rows": 2232,
+      "source_id": "flux2-klein-9b"
+    },
+    {
+      "label": "real",
+      "role_counts": {
+        "CALIBRATION": 773,
+        "TRAIN": 3078
+      },
+      "role_group_counts": {
+        "CALIBRATION": 29,
+        "TRAIN": 114
+      },
+      "role_group_kind": "scene",
+      "selected_rows": 3851,
+      "source_id": "forchheim-fodb"
+    },
+    {
+      "label": "ai",
+      "role_counts": {
+        "CALIBRATION": 445,
+        "TRAIN": 1782
+      },
+      "role_group_counts": {
+        "CALIBRATION": 445,
+        "TRAIN": 1782
+      },
+      "role_group_kind": "parent",
+      "selected_rows": 2227,
+      "source_id": "gpt-image-1"
+    },
+    {
+      "label": "ai",
+      "role_counts": {
+        "CALIBRATION": 445,
+        "TRAIN": 1782
+      },
+      "role_group_counts": {
+        "CALIBRATION": 445,
+        "TRAIN": 1782
+      },
+      "role_group_kind": "parent",
+      "selected_rows": 2227,
+      "source_id": "nano-banana-local"
+    },
+    {
+      "label": "ai",
+      "role_counts": {
+        "CALIBRATION": 40,
+        "TRAIN": 160
+      },
+      "role_group_counts": {
+        "CALIBRATION": 40,
+        "TRAIN": 160
+      },
+      "role_group_kind": "parent",
+      "selected_rows": 200,
+      "source_id": "nano-banana-pro-ash-local"
+    },
+    {
+      "label": "ai",
+      "role_counts": {
+        "CALIBRATION": 444,
+        "TRAIN": 1788
+      },
+      "role_group_counts": {
+        "CALIBRATION": 111,
+        "TRAIN": 447
+      },
+      "role_group_kind": "prompt",
+      "selected_rows": 2232,
+      "source_id": "qwen-image-2512"
+    },
+    {
+      "label": "real",
+      "role_counts": {
+        "CALIBRATION": 699,
+        "TRAIN": 2798
+      },
+      "role_group_counts": {
+        "CALIBRATION": 7,
+        "TRAIN": 28
+      },
+      "role_group_kind": "device",
+      "selected_rows": 3497,
+      "source_id": "vision-base-native"
+    }
+  ],
+  "state": "train_calibration_manifest_frozen"
+}

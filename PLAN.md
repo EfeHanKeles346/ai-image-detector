@@ -294,9 +294,11 @@ small manifests, aggregate evidence, code and documentation.
       overlay and every audit SHA, uses deterministic exact group-preserving selection plus
       nearest-target subset assignment, rejects duplicate IDs/role-group leakage/empty role cells
       and writes only the detailed manifest to the SSD. Eight focused manifest/overlay tests pass.
-- [ ] Build a balanced parent manifest with source/device/generator/scene-disjoint folds. TRAIN may
+- [x] Build a balanced parent manifest with source/device/generator/scene-disjoint folds. TRAIN may
       fit representations and heads; CALIBRATION may select aggregation, abstention and thresholds;
-      neither may receive a row or derivative from DEVELOPMENT or LOCKED FINAL.
+      neither may receive a row or derivative from DEVELOPMENT or LOCKED FINAL. Result: 22,688
+      parents, exactly 11,344/class; TRAIN 18,154 and CALIBRATION 4,534, with zero protected-group
+      overlap and every source represented in both roles.
 - [ ] Keep tests as separate arms and report source-macro metrics; never pool them into one large
       accuracy number that lets the largest arm hide a failure:
       1. **E30 DEVELOPMENT:** already consumed, diagnostic comparison only.
