@@ -622,3 +622,12 @@ member was rechecked against frozen size+CRC, written through a partial and SHA-
 blank member was extracted. Detailed receipt is 1,884,013 B / SHA `46b36e56...09de`; compact
 evidence is `evidence/e32_r1b_csafe_iphone14_natural_extraction.json`. These files remain role-free
 pending decode/decontamination.
+
+The decode/decontamination audit deliberately stops role assignment on one confirmed two-image
+burst: `iPhone14_5/telephoto/IMG_1290.JPG` and `IMG_1291.JPG` are byte-distinct but have equal
+dHash+pHash and visibly the same composition. All 3,996 decode RGB with EXIF; unique SHA is 3,996;
+protected E30/passed-peer/IPN/owner exact overlap is zero. Payload format is 3,945 MPO + 51 JPEG
+despite `.JPG` names—an important container fact that the standardized JPEG model-input route must
+neutralize. Detailed rejected audit is 2,638,999 B / SHA `8325aaf4...05fd`; compact evidence is
+`evidence/e32_csafe-mcsidb-iphone14_realization.json`. The correction excludes both burst rows,
+not an outcome-selected preferred member.

@@ -1,0 +1,119 @@
+{
+  "boundary": "A passing source is only an eligible candidate. This report assigns no TRAIN, CALIBRATION, DEVELOPMENT or LOCKED FINAL role.",
+  "camera_pipeline_counts": {
+    "iPhone14_10:front": 100,
+    "iPhone14_10:telephoto": 100,
+    "iPhone14_10:ultra": 100,
+    "iPhone14_10:wide": 100,
+    "iPhone14_1:front": 100,
+    "iPhone14_1:telephoto": 100,
+    "iPhone14_1:ultra": 100,
+    "iPhone14_1:wide": 100,
+    "iPhone14_2:front": 100,
+    "iPhone14_2:telephoto": 100,
+    "iPhone14_2:ultra": 100,
+    "iPhone14_2:wide": 100,
+    "iPhone14_3:front": 100,
+    "iPhone14_3:telephoto": 100,
+    "iPhone14_3:ultra": 100,
+    "iPhone14_3:wide": 100,
+    "iPhone14_4:front": 100,
+    "iPhone14_4:telephoto": 100,
+    "iPhone14_4:ultra": 100,
+    "iPhone14_4:wide": 100,
+    "iPhone14_5:front": 100,
+    "iPhone14_5:telephoto": 100,
+    "iPhone14_5:ultra": 100,
+    "iPhone14_5:wide": 100,
+    "iPhone14_6:front": 100,
+    "iPhone14_6:telephoto": 100,
+    "iPhone14_6:ultra": 100,
+    "iPhone14_6:wide": 100,
+    "iPhone14_7:front": 99,
+    "iPhone14_7:telephoto": 100,
+    "iPhone14_7:ultra": 99,
+    "iPhone14_7:wide": 100,
+    "iPhone14_8:front": 100,
+    "iPhone14_8:telephoto": 100,
+    "iPhone14_8:ultra": 99,
+    "iPhone14_8:wide": 100,
+    "iPhone14_9:front": 99,
+    "iPhone14_9:telephoto": 100,
+    "iPhone14_9:ultra": 100,
+    "iPhone14_9:wide": 100
+  },
+  "counts": {
+    "failures": 1,
+    "passed_peer_dhash_overlaps": 0,
+    "passed_peer_exact_overlaps": 0,
+    "protected_dhash_overlaps": 0,
+    "protected_exact_overlaps": 0,
+    "unique_dhash": 3994,
+    "unique_phash": 3995,
+    "unique_sha256": 3996,
+    "within_source_confirmed_perceptual_duplicate_groups": 1,
+    "within_source_dhash_candidate_groups": 2,
+    "within_source_exact_duplicate_groups": 0
+  },
+  "detailed_report_bytes": 2638999,
+  "detailed_report_external_path": "audits/csafe-mcsidb-iphone14.json",
+  "detailed_report_sha256": "8325aaf46dedd60689a2ebd37c70a315155c963d75b26e94de31d3148fbe05fd",
+  "device_counts": {
+    "iPhone14_1": 400,
+    "iPhone14_10": 400,
+    "iPhone14_2": 400,
+    "iPhone14_3": 400,
+    "iPhone14_4": 400,
+    "iPhone14_5": 400,
+    "iPhone14_6": 400,
+    "iPhone14_7": 398,
+    "iPhone14_8": 399,
+    "iPhone14_9": 399
+  },
+  "exif_present": 3996,
+  "expected_images": 3996,
+  "experiment": "E32/C1-C2-source-realization",
+  "failure_examples": [
+    {
+      "count": "1",
+      "reason": "within_source_confirmed_perceptual_duplicates"
+    }
+  ],
+  "failure_reason_counts": {
+    "within_source_confirmed_perceptual_duplicates": 1
+  },
+  "format_counts": {
+    "JPEG": 51,
+    "MPO": 3945
+  },
+  "kind": "real",
+  "lens_counts": {
+    "front": 998,
+    "telephoto": 1000,
+    "ultra": 998,
+    "wide": 1000
+  },
+  "mode_counts": {
+    "RGB": 3996
+  },
+  "native_social_state_counts": {
+    "native": 3996
+  },
+  "owner_boundary": "Only raw exact SHA identity was read; no owner detector score or perceptual feature was computed.",
+  "protected_ipn_exact_or_perceptual_overlaps": 0,
+  "protected_ipn_realization_sha256": "f5827dcea69484421b15a6608555a7c64556d206c991d02606222b1892bc243b",
+  "protected_owner_count": 210,
+  "protected_owner_exact_overlaps": 0,
+  "protected_owner_gallery_identity_sha256": "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09",
+  "protected_scope": {
+    "e30_dhashes": 382,
+    "e30_exact_hashes": 980,
+    "e30_manifest_files": 4,
+    "passed_peer_audit_files": 5
+  },
+  "realized_images": 3996,
+  "schema_version": 2,
+  "selection_sha256": "46b36e567cb73a11710106b45da9c1114985e6452740aa8588291b563b6d09de",
+  "source_id": "csafe-mcsidb-iphone14",
+  "state": "source_realization_rejected_no_role_assignment"
+}

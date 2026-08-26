@@ -448,6 +448,11 @@ small manifests, aggregate evidence, code and documentation.
       stored IPN hashes and owner-gallery exact bytes only (identity must remain `390e3c21...ac09`);
       it must not score IPN/owner or assign a TRAIN role. Implementation passes 18 focused
       iPhone/realization/protected-identity tests; commit before production pixel decode.
+      Production realization decodes all 3,996 RGB+EXIF parents and finds zero protected/IPN/owner
+      overlap, but correctly stops on one two-image near-identical burst (`IMG_1290/1291.JPG`).
+      It also records 3,945 MPO containers and 51 JPEG. Preserve rejected audit SHA
+      `8325aaf4...05fd`; precommit a deterministic overlay that excludes the entire two-row
+      perceptual component (never choose a preferred side) and freezes 3,994 role-free candidates.
 - [x] Preserve the first iPhone 14 single-stream stop at 92,274,688 bytes and precommit four-range
       recovery before changing transfer code. Split only the exact remaining interval, require HTTP
       206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary

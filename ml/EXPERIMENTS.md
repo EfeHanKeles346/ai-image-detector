@@ -2606,3 +2606,12 @@ above are transcription errors; production range planning binds the filesystem v
   reproduce the 210-file `390e3c21...ac09` identity; no detector/perceptual owner read exists.
 - Eighteen focused iPhone/realization/identity tests pass; no role is assigned.
 - **Decision:** commit method before production iPhone pixel decode.
+
+### C4-R1b iPhone 14 realization — stopped on one duplicate component
+
+- 3,996/3,996 RGB+EXIF decode; 3,996 unique SHA; zero protected/peer/IPN/owner overlap.
+- Payload formats: 3,945 MPO, 51 JPEG despite `.JPG`; standardized JPEG input is mandatory.
+- One confirmed duplicate burst: iPhone14_5 telephoto `IMG_1290.JPG` + `IMG_1291.JPG`, equal
+  dHash+pHash. Detailed rejected audit 2,638,999 B / SHA `8325aaf4...05fd`.
+- Precommitted correction: exclude both rows, freeze 3,994 role-free; never choose one member.
+- **Decision:** preserve the rejection, commit before implementing the eligibility overlay.

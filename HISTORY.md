@@ -2847,3 +2847,15 @@ decodes and hashes every candidate, applies the existing protected/peer duplicat
 only stored IPN hashes and verifies the owner population through raw exact-file identity. It has no
 detector import or score path and assigns no role. Eighteen focused iPhone/realization/identity
 tests pass.
+
+Production realization decoded all 3,996 iPhone parents as RGB with EXIF and found zero overlap
+with protected E30, passed peers, stored IPN or the exact 210-photo owner population. It still
+stopped, correctly, on one confirmed duplicate burst: byte-distinct `IMG_1290.JPG`/`IMG_1291.JPG`
+from the same iPhone14_5 telephoto pipeline have equal dHash+pHash and the same visible scene.
+Another key observation is 3,945 MPO payloads versus 51 JPEG despite `.JPG` suffixes. Rejected audit
+SHA is `8325aaf4...05fd`; no role was assigned.
+
+Before correction code, the rule was frozen: exclude the entire two-row perceptual component,
+never select one side, preserve the raw audit and freeze the remaining 3,994 as role-free only.
+MPO/JPEG differences must be removed by the existing standardized JPEG input contract before any
+head fitting so container type cannot define REAL.
