@@ -11,6 +11,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any, Callable, Iterable, Mapping, Sequence
 
 from huggingface_hub import HfApi, hf_hub_url
+from PIL import Image
 
 import e32_data_system as real_acquisition
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
@@ -20,6 +21,7 @@ REGISTRY_PATH = ML_ROOT / "e32_gap_sources.json"
 OUTPUT_ROOT = DATA_ROOT / "e32"
 DETAILED_SELECTION = OUTPUT_ROOT / "ai_gap_selection.json"
 COMPACT_EVIDENCE = ML_ROOT.parent / "evidence" / "e32_ai_gap_selection.json"
+SMOKE_EVIDENCE = ML_ROOT.parent / "evidence" / "e32_ai_gap_decoder_smoke.json"
 WORKERS = 4
 
 
@@ -177,6 +179,8 @@ def freeze_source(
         "family": spec["family"],
         "license_tag": spec["license_tag"],
         "native_format": spec["native_format"],
+        "expected_width": int(spec["expected_width"]),
+        "expected_height": int(spec["expected_height"]),
         "available_generated_images": len(included_images),
         "available_prompt_groups": len(groups),
         "selected_prompt_groups": len(selected_groups),
@@ -233,6 +237,70 @@ def _load_selection() -> dict[str, Any]:
     return payload
 
 
+def verify_smokes(payload: Mapping[str, Any]) -> dict[str, Any]:
+    selection_raw = DETAILED_SELECTION.read_bytes()
+    rows = []
+    for source in payload["sources"]:
+        asset = next(item for item in source["assets"] if item["path"].endswith(".jxl"))
+        path = _destination(str(source["source_id"]), str(asset["path"]))
+        if not path.is_file():
+            raise FileNotFoundError(f"decoder smoke image is missing: {path}")
+        raw = path.read_bytes()
+        if len(raw) != int(asset["bytes"]):
+            raise ValueError(f"decoder smoke size mismatch: {path}")
+        with Image.open(path) as image:
+            image.load()
+            width, height = image.size
+            decoded_format = str(image.format or "UNKNOWN").upper()
+            mode = image.mode
+        expected_size = (int(source["expected_width"]), int(source["expected_height"]))
+        if (width, height) != expected_size:
+            raise ValueError(
+                f"{source['source_id']} smoke expected {expected_size}, found {(width, height)}"
+            )
+        rows.append(
+            {
+                "source_id": source["source_id"],
+                "source_key": asset["path"],
+                "bytes": len(raw),
+                "sha256": _sha256(raw),
+                "declared_extension": PurePosixPath(asset["path"]).suffix.lower(),
+                "decoded_format": decoded_format,
+                "extension_matches_decoded_format": (
+                    PurePosixPath(asset["path"]).suffix.lower().lstrip(".")
+                    == decoded_format.lower()
+                ),
+                "width": width,
+                "height": height,
+                "mode": mode,
+            }
+        )
+    report = {
+        "schema_version": 1,
+        "experiment": "E32/C2b",
+        "state": "decoder_smoke_passed",
+        "selection_sha256": _sha256(selection_raw),
+        "sources": rows,
+        "finding": "Both .jxl source paths decode as PNG payloads; extension metadata is wrong.",
+        "bulk_boundary": (
+            "Bulk may proceed, but decoded format must be measured from bytes and both classes "
+            "must share the chosen model-input normalization."
+        ),
+    }
+    _write_atomic(SMOKE_EVIDENCE, _json_bytes(report))
+    return report
+
+
+def _require_smoke_gate() -> None:
+    if not SMOKE_EVIDENCE.is_file():
+        raise PermissionError("decoder smoke evidence is missing; bulk acquisition is forbidden")
+    report = json.loads(SMOKE_EVIDENCE.read_text())
+    if report.get("state") != "decoder_smoke_passed":
+        raise PermissionError("decoder smoke did not pass; bulk acquisition is forbidden")
+    if report.get("selection_sha256") != _sha256(DETAILED_SELECTION.read_bytes()):
+        raise PermissionError("decoder smoke belongs to a different AI gap selection")
+
+
 def _selected_source(payload: Mapping[str, Any], source_id: str) -> Mapping[str, Any]:
     try:
         return next(source for source in payload["sources"] if source["source_id"] == source_id)
@@ -248,6 +316,8 @@ def _destination(source_id: str, path: str) -> Path:
 
 
 def download_assets(source: Mapping[str, Any], *, smoke: bool) -> dict[str, Any]:
+    if not smoke:
+        _require_smoke_gate()
     assets = list(source["assets"])
     if smoke:
         image = next(asset for asset in assets if asset["path"].endswith(".jxl"))
@@ -286,6 +356,7 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("freeze")
+    subparsers.add_parser("verify-smoke")
     download = subparsers.add_parser("download")
     download.add_argument("--source", choices=("qwen-image-2512", "flux2-klein-9b"), required=True)
     download.add_argument("--smoke", action="store_true")
@@ -296,6 +367,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     args = parse_args(argv)
     if args.command == "freeze":
         result = freeze_gap_sources()
+    elif args.command == "verify-smoke":
+        result = verify_smokes(_load_selection())
     else:
         source = _selected_source(_load_selection(), args.source)
         result = download_assets(source, smoke=bool(args.smoke))

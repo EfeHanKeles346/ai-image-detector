@@ -21,6 +21,8 @@
       "reported_prompt_groups": 984,
       "reported_image_bytes": 9340969314,
       "native_format": "JPEG XL",
+      "expected_width": 1328,
+      "expected_height": 1328,
       "include_prefixes": ["data/"],
       "exclude_prefixes": [],
       "reason": "December-2025 Qwen family with explicit full-precision generation recipe and four unfiltered outputs per prompt"
@@ -36,6 +38,8 @@
       "reported_prompt_groups": 1018,
       "reported_image_bytes_excluding_references": null,
       "native_format": "JPEG XL",
+      "expected_width": 1024,
+      "expected_height": 1024,
       "include_prefixes": ["data/", "data_edit/edited/"],
       "exclude_prefixes": ["data_edit/reference/"],
       "reason": "2026 FLUX.2 family with explicit generation recipe; generated edits are retained while non-generated references are excluded"

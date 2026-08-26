@@ -1898,3 +1898,15 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - **Result:** gap selection is frozen with zero image bytes and five focused tests passing.
 - **Decision:** run one JXL decoder smoke per source. Bulk download is forbidden until both pass;
   prompt groups remain indivisible and Qwen LOCKED FINAL remains untouched.
+
+### C2b decoder-smoke result
+
+- **Authorized bytes:** one selected image+prompt per source only. Qwen 2,579,073 B, SHA
+  `288eaa...3965`; FLUX 1,215,314 B, SHA `f9d7dc...8890`.
+- **Decode:** direct Pillow success; Qwen RGB 1328x1328, FLUX RGB 1024x1024.
+- **Unexpected result:** both `.jxl` paths contain PNG payloads. Extension metadata is false; no
+  JXL dependency or conversion is required.
+- **Receipt version:** unchanged asset selection gained expected dimensions, so detailed SHA
+  `b871004f...8ecc` is superseded by `e9c3d3da...af7a`.
+- **Decision:** decoder gate passes and bulk may proceed, mechanically tied to the new SHA. Actual
+  format is decoded from bytes; identical REAL/AI input normalization remains mandatory.

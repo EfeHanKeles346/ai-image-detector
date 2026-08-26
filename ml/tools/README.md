@@ -82,11 +82,17 @@ PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
 PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
   PYTHONPATH=src:experiments .venv/bin/python experiments/e32_gap_acquisition.py download \
   --source qwen-image-2512 --smoke
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+  PYTHONPATH=src:experiments .venv/bin/python experiments/e32_gap_acquisition.py verify-smoke
 ```
 
 Run one `--smoke` for both `qwen-image-2512` and `flux2-klein-9b`, verify JPEG XL decode, then
 remove `--smoke` for the frozen bulk. This sequence is a scientific role gate, not merely a download
 optimization.
+
+The current smoke found PNG bytes behind both `.jxl` suffixes; Pillow decodes them directly. Bulk
+still requires the committed smoke evidence because the check also pins dimensions, byte hashes
+and the exact detailed-selection SHA.
 
 ## Paths
 

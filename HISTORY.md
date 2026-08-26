@@ -2094,3 +2094,18 @@ native JPEG XL support, but availability is not assumed to equal a successful mo
 bulk 11.51 GB selection is blocked until exactly one frozen JXL per source downloads and decodes.
 Five focused tests pin complete four-image grouping, balanced category selection, reference
 rejection and destination containment.
+
+### E32/C2b decoder smoke — paths say JXL, bytes say PNG
+
+The authorized smoke downloaded one selected image plus its prompt sidecar from each gap source:
+2,579,073-byte Qwen and 1,215,314-byte FLUX images. Both load directly with Pillow. Qwen is RGB
+1328x1328 and FLUX RGB 1024x1024, matching the cards' dimensions. However `file`, `sips` and Pillow
+all identify the payloads as PNG despite `.jxl` suffixes. No JPEG XL plugin or bulk conversion is
+needed; actual decoded format must override path metadata.
+
+Expected dimensions were added to the receipt schema without changing selected groups/assets,
+superseding detailed receipt SHA `b871004f...8ecc` with `e9c3d3da...af7a` (2,349,078 bytes). The
+smoke evidence stores exact image hashes and the new selection SHA. Bulk code now refuses to run
+unless `evidence/e32_ai_gap_decoder_smoke.json` says `decoder_smoke_passed` for that exact receipt.
+Six focused tests pass, including missing/stale gate rejection. The format mismatch is a new
+shortcut warning: E32 must infer format from bytes and normalize REAL/AI identically.

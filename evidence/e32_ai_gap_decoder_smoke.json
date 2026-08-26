@@ -1,0 +1,34 @@
+{
+  "bulk_boundary": "Bulk may proceed, but decoded format must be measured from bytes and both classes must share the chosen model-input normalization.",
+  "experiment": "E32/C2b",
+  "finding": "Both .jxl source paths decode as PNG payloads; extension metadata is wrong.",
+  "schema_version": 1,
+  "selection_sha256": "e9c3d3dad2ceb245b157f6e851e142128573726fe8b963d1811dfdaac4ceaf7a",
+  "sources": [
+    {
+      "bytes": 2579073,
+      "declared_extension": ".jxl",
+      "decoded_format": "PNG",
+      "extension_matches_decoded_format": false,
+      "height": 1328,
+      "mode": "RGB",
+      "sha256": "288eaab13f5fe2566522a065fa8efa4071ad3a4e2f1b0d481a1174265c283965",
+      "source_id": "qwen-image-2512",
+      "source_key": "data/animal/dataset_0/animal_00001_0.jxl",
+      "width": 1328
+    },
+    {
+      "bytes": 1215314,
+      "declared_extension": ".jxl",
+      "decoded_format": "PNG",
+      "extension_matches_decoded_format": false,
+      "height": 1024,
+      "mode": "RGB",
+      "sha256": "f9d7dc3ea0888318aaa084e5e75de49311529b4fd14085cd257fa6eaa82a8890",
+      "source_id": "flux2-klein-9b",
+      "source_key": "data/animal/dataset_0/animal_00001_0.jxl",
+      "width": 1024
+    }
+  ],
+  "state": "decoder_smoke_passed"
+}

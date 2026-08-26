@@ -253,8 +253,8 @@ test sources cannot be reassigned to fill the training gap.
 #### E32/C2b licensed gap-source selection — frozen, decoder smoke pending
 
 The two-family gap was filled by source research, not by relaxing C2a's rules. Exact selections
-stay at external `e32/ai_gap_selection.json` (2,348,956 B; SHA-256
-`b871004f381a16e54d30122004a5ffc81b0cdb4811cbad755e6a6531dc068ecc`); compact evidence is
+stay at external `e32/ai_gap_selection.json` (2,349,078 B; SHA-256
+`e9c3d3dad2ceb245b157f6e851e142128573726fe8b963d1811dfdaac4ceaf7a`); compact evidence is
 `evidence/e32_ai_gap_selection.json`. Freeze downloaded zero image bytes.
 
 | pinned source | available upstream | frozen selection | why / boundary |
@@ -263,11 +263,12 @@ stay at external `e32/ai_gap_selection.json` (2,348,956 B; SHA-256
 | `stablellama/FLUX.2-klein-base-9B_samples@c07dd3c…` | 4,072 generated JPEG XL / 1,018 groups | 750 groups / 3,000 images / 4,400,537,141 B | CC BY 4.0; explicit FLUX.2 Klein 9B recipe; 160 non-generated editing references excluded |
 
 Category round-robin prevents alphabetic selection from filling the cap with one subject. All four
-unfiltered variations of a selected prompt remain one future split group. The native format is not
-yet supported by Pillow in the project environment, although macOS reports JPEG XL support through
-`sips`; therefore exactly one selected image from each source must decode before the 11.51 GB bulk
-transfer is allowed. A decoder failure rejects the transfer rather than silently converting the
-complete dataset or changing the input contract.
+unfiltered variations of a selected prompt remain one future split group. The cards/path suffixes
+declare JPEG XL, but the two exact smoke files contain **PNG payloads**: Qwen decoded RGB
+1328x1328 / 2,579,073 B and FLUX decoded RGB 1024x1024 / 1,215,314 B directly through Pillow.
+`evidence/e32_ai_gap_decoder_smoke.json` binds these hashes to selection `e9c3...af7a`; bulk is
+mechanically forbidden without that receipt. Actual format comes from decoded bytes, and REAL/AI
+must receive the same model-input normalization so PNG versus JPEG cannot become the classifier.
 
 | Dataset | Size | Model | Era |
 |---|---|---|---|

@@ -1,6 +1,6 @@
 {
-  "detailed_selection_bytes": 2348956,
-  "detailed_selection_sha256": "b871004f381a16e54d30122004a5ffc81b0cdb4811cbad755e6a6531dc068ecc",
+  "detailed_selection_bytes": 2349078,
+  "detailed_selection_sha256": "e9c3d3dad2ceb245b157f6e851e142128573726fe8b963d1811dfdaac4ceaf7a",
   "experiment": "E32/C2b",
   "new_image_bytes_downloaded_by_freeze": 0,
   "schema_version": 1,
@@ -8,6 +8,8 @@
     {
       "available_generated_images": 3936,
       "available_prompt_groups": 984,
+      "expected_height": 1328,
+      "expected_width": 1328,
       "family": "Qwen Image 2512",
       "license_tag": "license:cc-by-sa-4.0",
       "native_format": "JPEG XL",
@@ -36,6 +38,8 @@
     {
       "available_generated_images": 4072,
       "available_prompt_groups": 1018,
+      "expected_height": 1024,
+      "expected_width": 1024,
       "family": "FLUX.2 Klein 9B Base",
       "license_tag": "license:cc-by-4.0",
       "native_format": "JPEG XL",

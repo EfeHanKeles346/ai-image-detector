@@ -32,6 +32,8 @@ def _fixture_spec() -> dict:
         "reported_images": 8,
         "reported_prompt_groups": 2,
         "native_format": "JPEG XL",
+        "expected_width": 1328,
+        "expected_height": 1328,
         "include_prefixes": ["data/"],
         "exclude_prefixes": [],
     }
@@ -81,3 +83,19 @@ def test_reference_hierarchy_is_not_a_generated_flux_group():
         e32._category_and_group(
             "flux2-klein-9b", "data_edit/reference/dataset_0/edit_00001_0.jxl"
         )
+
+
+def test_bulk_download_requires_matching_decoder_smoke(tmp_path, monkeypatch):
+    selection = tmp_path / "selection.json"
+    selection.write_text("{}")
+    smoke = tmp_path / "smoke.json"
+    monkeypatch.setattr(e32, "DETAILED_SELECTION", selection)
+    monkeypatch.setattr(e32, "SMOKE_EVIDENCE", smoke)
+    with pytest.raises(PermissionError, match="missing"):
+        e32._require_smoke_gate()
+
+    smoke.write_text(
+        '{"state":"decoder_smoke_passed","selection_sha256":"wrong"}'
+    )
+    with pytest.raises(PermissionError, match="different"):
+        e32._require_smoke_gate()

@@ -97,8 +97,12 @@ small manifests, aggregate evidence, code and documentation.
       Klein 9B Base (CC BY 4.0), selecting 750 complete prompt groups / 3,000 JPEG XL outputs from
       each by category round-robin. Selected native image bytes are 7,108,445,821 and
       4,400,537,141 respectively; FLUX editing references are excluded. Detailed selection SHA is
-      `b871004f...8ecc`. Exactly one image per source must pass a decoder smoke before bulk.
-- [ ] Complete the two decoder smokes and only then acquire the frozen 6,000 gap images. OpenFake
+      `e9c3d3da...af7a` after adding expected dimensions to the unchanged row selection.
+- [x] Pass one-image decoder smokes for both sources and bind the bulk gate to the current selection
+      SHA. Both `.jxl` paths contain PNG payloads: Qwen decodes RGB 1328x1328 and FLUX RGB
+      1024x1024 directly through Pillow. Record the upstream extension/byte-format mismatch; do not
+      add a JPEG XL dependency or let extension become a label feature.
+- [ ] Acquire the frozen 6,000 gap images after the passed decoder gate. OpenFake
       `core/test`/Reddit splits and frontier held-out models remain test candidates, never TRAIN.
 - [ ] Verify generator version, generation date, prompt/content group, native output status,
       licence/usage boundary and label direction for every admitted collection. Unknown generator
