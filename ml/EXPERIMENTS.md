@@ -2284,3 +2284,18 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   `eligibility_frozen_role_free`.
 - **Decision:** C1/C2 candidate-volume and source-diversity gates pass. Freeze this pool; create a
   group-aware TRAIN/CALIBRATION manifest before any feature extraction or model fitting.
+
+## 2026-08-26 — E32/C3: balanced role-manifest preregistration
+
+- **Hypothesis:** a balanced 22,688-parent pool with group-aware CALIBRATION will give a more honest
+  first DINOv2-S screen than training over all 26,130 eligible rows with source/class imbalance.
+- **Selection:** all 11,344 REAL; AI Qwen 2,232, FLUX.2 2,232, Nano 2,227, GPT 2,227, NBP 200,
+  Community 2,226. Stable metadata hashes only; Qwen/FLUX four-output parents stay indivisible.
+- **Roles:** target 20% CALIBRATION per source. Disjoint units are VISION/CSAFE device, FODB scene,
+  Qwen/FLUX prompt, Community model identity and individual parent for Nano/GPT/NBP.
+- **Known constraint:** FODB scenes cross all devices, so simultaneous scene/device disjointness
+  collapses to one connected collection. Choose scene-disjointness and forbid an unseen-camera
+  claim from this arm.
+- **Stop rule:** fail on changed overlay/audit bindings, count mismatch, duplicate record IDs,
+  group leakage, empty source-role cells or any DEVELOPMENT/LOCKED reference. Do not open pixels.
+- **Decision:** commit this contract before implementing or running the role freezer.

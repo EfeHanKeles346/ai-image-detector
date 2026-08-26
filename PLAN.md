@@ -279,6 +279,17 @@ small manifests, aggregate evidence, code and documentation.
 
 ### Phase C3 — freeze TRAIN/CALIBRATION and the Champions League test battery
 
+- [x] Precommit the first role-free-to-role transition before reading image bytes. Balance the
+      parent pool at 11,344 REAL + 11,344 AI. Retain all eligible REAL; deterministically select AI
+      as Qwen 2,232, FLUX.2 2,232, Nano 2,227, GPT 2,227, NBP 200 and Community 2,226. Preserve
+      Qwen/FLUX prompt groups as indivisible. Assign about 20% CALIBRATION within every source by
+      stable parent-group hashing; keep VISION and CSAFE physical devices disjoint, FODB scenes
+      disjoint, Qwen/FLUX prompts disjoint and Community generator identities disjoint. FODB's
+      crossed 27-device x 143-scene design makes simultaneous device- and scene-disjoint roles
+      impossible without placing the entire collection in one role; prioritize scene identity and
+      report this limitation explicitly. The detailed manifest stays on the SSD; Git receives its
+      hash, role/source/group counts and leakage checks only. No image byte, feature or score may
+      influence selection or role assignment.
 - [ ] Build a balanced parent manifest with source/device/generator/scene-disjoint folds. TRAIN may
       fit representations and heads; CALIBRATION may select aggregation, abstention and thresholds;
       neither may receive a row or derivative from DEVELOPMENT or LOCKED FINAL.

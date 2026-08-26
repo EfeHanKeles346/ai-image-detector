@@ -2565,3 +2565,16 @@ to AI SHA `3230f026...80b7`, VISION SHA `200a7aeb...ca4d`, FODB extraction SHA
 meet their 10K–20K eligible-volume targets, three-collection REAL floor and five-modern-family AI
 floor. This is deliberately not a trained model: the next irreversible boundary is a committed,
 group-aware TRAIN/CALIBRATION manifest followed by the cheapest frozen DINOv2-S control.
+
+Before opening an eligible image for representation training, the C3 role transition was
+precommitted. The model pool will be exactly balanced at 11,344 parents per class. Every eligible
+REAL parent remains; AI is deterministically reduced to Qwen 2,232, FLUX.2 2,232, Nano 2,227, GPT
+2,227, Nano Banana Pro 200 and CommunityForensics 2,226. No model score, pixel statistic or image
+byte may select these rows.
+
+CALIBRATION targets about 20% inside every source using stable group assignment. Qwen/FLUX prompt
+groups, Community generator identities, VISION/CSAFE devices and FODB scenes cannot cross roles.
+FODB is a crossed 27-camera-by-143-scene design: enforcing both camera- and scene-disjoint roles
+connects the whole collection and makes a split impossible. The contract therefore prioritizes
+scene leakage prevention, reports device overlap honestly and keeps this limitation out of any
+unseen-camera claim. The method, tests and production role receipt are separate later commits.
