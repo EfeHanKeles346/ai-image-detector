@@ -2870,3 +2870,9 @@ parents retained, detailed SHA `a71c4a06...57bf`; no source file was removed. R1
 data test is now fixed: preserve all old C3 roles, append only these iPhone parents, split complete
 devices 8/2 between TRAIN/CALIBRATION by stable hash, add no AI rows and rely on class-weighted
 heads. This isolates authentic Apple coverage rather than silently changing two variables.
+
+The controlled R1b role extension was implemented as an append-only manifest transformation. It
+hard-binds the C3 and iPhone eligibility receipts, preserves every old record and role in order,
+splits exactly eight/two complete iPhone devices by the existing stable subset rule, refuses id or
+group leakage and intentionally does not rebalance. Six focused role tests pass; production roles
+remain unopened by this method commit.

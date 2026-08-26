@@ -470,7 +470,8 @@ small manifests, aggregate evidence, code and documentation.
       eligible iPhone parents only; allocate eight complete physical devices to TRAIN and two to
       CALIBRATION by stable hash. Do not add AI rows or rebalance—class-weighted heads isolate the
       causal effect of authentic Apple coverage. Standardize every appended parent through the
-      identical JPEG q90/4:4:4 route before either frozen encoder.
+      identical JPEG q90/4:4:4 route before either frozen encoder. Manifest extension implementation
+      preserves the C3 prefix and device groups; six focused role tests pass. Commit before freeze.
 - [ ] Score the frozen R1b candidate once on all IPN-NFID devices and the consumed owner gallery.
       Require <=20% worst-device IPN FP and <=20% owner-gallery FP while preserving >=90% modern-AI
       recall before any locked AI arm or serving replacement. Failure returns to data/objective

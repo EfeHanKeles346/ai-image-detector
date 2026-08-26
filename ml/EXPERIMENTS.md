@@ -2629,3 +2629,11 @@ above are transcription errors; production range planning binds the filesystem v
 - R1b controlled rule: retain all old C3 roles, append iPhone only, complete devices 8/2 TRAIN/CAL,
   no new AI/rebalancing, class-weighted heads, identical derived JPEG input.
 - **Decision:** freeze eligibility and role rule before implementing the R1b manifest.
+
+### C4-R1b role-extension implementation checkpoint
+
+- C3 manifest and every old row/role/order are hash-bound and preserved; only eligible iPhone REAL
+  rows append. Existing stable subset rule assigns eight complete devices TRAIN, two CALIBRATION.
+- No rebalancing/new AI rows; class-weighted heads isolate authentic Apple coverage.
+- Six focused role tests pass; no DEVELOPMENT/LOCKED row is accessible.
+- **Decision:** commit method before production role freeze.
