@@ -365,6 +365,10 @@ small manifests, aggregate evidence, code and documentation.
       all held-out rows. Report REAL FP or AI recall per held-out source. This diagnostic cannot
       mutate the accepted artifact or promote a candidate; it decides whether data/source coverage
       must precede richer representations.
+- [x] Implement and test the receipt/hash-bound nine-arm LOCO runner before results. It uses the
+      frozen feature matrix only, rejects a missing class after exclusion, applies the original FP
+      budget and emits source-specific FP/recall without mutating the artifact. Five focused tests
+      pass.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

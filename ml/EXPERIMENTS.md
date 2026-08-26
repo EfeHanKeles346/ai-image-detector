@@ -2409,3 +2409,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Report FP for held-out REAL collections and recall for held-out AI sources across all nine arms.
 - No owner-gallery row is opened and no accepted artifact field may change.
 - **Decision:** commit before implementing or reading LOCO results.
+
+### C4-R0 LOCO implementation checkpoint
+
+- Nine-arm runner binds input receipt `2255b123...5199` and feature archive
+  `716df956...be3b`, excludes one source from fit/threshold and uses the original FP budgets.
+- Five focused LOCO/threshold tests pass.
+- **Decision:** commit method before production diagnostic.

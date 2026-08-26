@@ -2678,3 +2678,8 @@ and cannot tune against the owner gallery. Nine LOCO rounds will remove one comp
 from both fitting and threshold selection, reproduce C=0.1 plus the authentic FP budgets on the
 remaining roles and measure only the held-out collection. The result is diagnostic: it may decide
 the next data/representation action but cannot alter or rescue the already-frozen R0 artifact.
+
+The LOCO runner was implemented and tested before reading results. It hard-binds the input receipt
+and feature-cache SHAs, removes the held-out source from both TRAIN fitting and CALIBRATION
+thresholding, refuses any arm that loses a class and reports the absent source separately. Five
+focused LOCO/threshold tests pass. The accepted artifact and owner-gallery evidence are read-only.
