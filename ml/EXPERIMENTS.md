@@ -1964,3 +1964,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   superseded for transfer planning, not silently rewritten as a selection result.
 - **Decision:** exact metadata freeze passes with zero image bytes downloaded. Proceed to the
   selected GPT transfer and per-source realization; all records remain role-free candidates.
+
+### C2c GPT acquisition gate — implemented before selected bytes
+
+- Recompute the 15K selection hash and reuse exact-size local/E32 assets; never select from
+  availability or overwrite the original checkout.
+- Download only missing selected pairs below the E32 root with TLS, retry, free-space floor and
+  atomic `.partial` resume.
+- Require one deterministic missing image/prompt pair to decode and contain non-empty UTF-8 before
+  bulk; bind the gate to the current selection SHA.
+- Implementation tests pass; this checkpoint downloaded zero GPT image bytes.

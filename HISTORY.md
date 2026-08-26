@@ -2192,3 +2192,11 @@ present pairs, so 2,205 selected pairs—not 1,940—require download. This is t
 that local availability did not choose content. Counts remain Qwen 3,000, FLUX.2 3,000, Nano
 Banana 3,000, GPT Image 1 3,000, NBP 200 and CommunityForensics AI 2,800; five current families,
 15,000 total parents and no source above 20%. No row has yet earned TRAIN/CALIBRATION.
+
+Before fetching a missing GPT image, a receipt-bound acquisition runner was added. It recomputes
+the 15K record-selection SHA, reuses any exact-size selected pair already present in the pinned
+local checkout or E32 download root, and writes only missing assets through the existing TLS,
+retry, free-space and `.partial` machinery. One deterministic selected missing image/prompt pair
+must decode with a non-empty UTF-8 prompt before bulk is enabled; stale or missing smoke evidence
+hard-fails. Eleven focused GPT/pool tests plus the existing E32 suite pass. No GPT image byte was
+downloaded by this implementation checkpoint.
