@@ -2166,3 +2166,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - No receipt was emitted and no member extracted.
 - **Decision:** precommit an exact-root exclusion with published excluded counts/bytes, retain hard
   failure for every other unknown path, then rerun from untouched archives.
+
+### C1 FODB inspection-root repair checkpoint
+
+- Exclude exactly top-level `inspection` from parent parsing and device-root counts; expose its
+  member/root/byte totals in evidence.
+- All other unknown roots and nonconforming device members still fail closed.
+- Verification: 17 focused archive/realization tests pass; production rerun remains separate.

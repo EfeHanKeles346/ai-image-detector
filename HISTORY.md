@@ -2406,3 +2406,9 @@ and the former approximates the original-parent count, so treating them as indep
 would create derived duplicates and inflate REAL. The repair will explicitly exclude only the
 whole `inspection/` root, publish its counts/bytes, and continue rejecting every other unknown
 path. The failed run produced no inventory receipt and changed no archive.
+
+The repair now excludes exactly the precommitted top-level `inspection` root, removes it from the
+27-device-root assertion, and publishes excluded member/root/byte totals in the receipt. Every
+other unrecognized root or device-member pattern remains a hard failure. A regression locks the
+single allowed root; 17 focused archive/realization tests pass. Production archives were not
+reopened by this repair commit and will be rerun independently.

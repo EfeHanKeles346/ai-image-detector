@@ -28,6 +28,7 @@ FODB_MEMBER = re.compile(
     r"(?P<device>D\d+)_img_(?P<name_transport>[^_]+)_(?P<scene>\d+)\.(?P<suffix>jpe?g)$",
     re.IGNORECASE,
 )
+FODB_EXCLUDED_ROOTS = {"inspection"}
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -121,14 +122,21 @@ def inventory_fodb() -> dict[str, Any]:
     inventories = []
     seen_roots: set[str] = set()
     parents: dict[tuple[str, str], dict[str, Any]] = {}
+    excluded = Counter()
     for expected in source["archives"]:
         path = OUTPUT_ROOT / "real" / "fodb" / "archives" / str(expected["name"])
         inventory = _inventory_zip(path, int(expected["bytes"]))
-        roots = set(inventory["root_counts"])
+        roots = set(inventory["root_counts"]) - FODB_EXCLUDED_ROOTS
         if roots & seen_roots:
             raise ValueError(f"FODB device root repeated across archives: {sorted(roots & seen_roots)}")
         seen_roots.update(roots)
         for member in inventory["members"]:
+            member_root = PurePosixPath(str(member["name"])).parts[0]
+            if member_root in FODB_EXCLUDED_ROOTS:
+                excluded["members"] += 1
+                excluded["bytes"] += int(member["bytes"])
+                excluded[f"root:{member_root}"] += 1
+                continue
             match = FODB_MEMBER.fullmatch(str(member["name"]))
             if match is None:
                 raise ValueError(f"unexpected FODB member contract: {member['name']}")
@@ -178,6 +186,14 @@ def inventory_fodb() -> dict[str, Any]:
         "parent_count": len(parents),
         "scene_group_count": len({parent["scene_group"] for parent in parents.values()}),
         "transports": sorted(expected_transports),
+        "excluded_nonparent_roots": sorted(FODB_EXCLUDED_ROOTS),
+        "excluded_nonparent_members": excluded["members"],
+        "excluded_nonparent_bytes": excluded["bytes"],
+        "excluded_nonparent_root_counts": {
+            key.removeprefix("root:"): value
+            for key, value in sorted(excluded.items())
+            if key.startswith("root:")
+        },
         "parents": sorted(parents.values(), key=lambda row: (row["camera_pipeline"], row["scene_index"])),
         "boundary": "Only orig members may be extracted as role-free candidates; social members remain parent-linked transport evidence.",
     }

@@ -52,3 +52,9 @@ def test_fodb_member_contract_links_transport_and_scene():
     assert match.group("pipeline") == "D01_Motorola_E3_1"
     assert match.group("transport") == "orig"
     assert match.group("scene") == "0063"
+
+
+def test_fodb_excludes_only_the_precommitted_inspection_root():
+    assert e32.FODB_EXCLUDED_ROOTS == {"inspection"}
+    assert e32.FODB_MEMBER.fullmatch("inspection/check_devices/helper.jpg") is None
+    assert e32.FODB_MEMBER.fullmatch("unknown/helper.jpg") is None

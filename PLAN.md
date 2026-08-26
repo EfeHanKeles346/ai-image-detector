@@ -85,8 +85,9 @@ small manifests, aggregate evidence, code and documentation.
       also contains 4,004 JPEGs / 2,834,597,196 bytes under `inspection/` (3,861 device-check and
       143 scene-comparison helpers). They are derived inspection material, not new parents; no
       inventory receipt or extraction was accepted.
-- [ ] Precommit an explicit `inspection/` exclusion while continuing to fail every other unknown
+- [x] Precommit an explicit `inspection/` exclusion while continuing to fail every other unknown
       root/member, record excluded counts/bytes in evidence, then rerun all CRC/SHA checks.
+      Seventeen focused archive/realization tests pass before the production rerun.
 - [x] Implement the role-free realization gate before any transfer completes. It binds every audit
       to the frozen selection SHA, ignores exFAT AppleDouble sidecars, requires all selected bytes
       to decode, derives format from payload bytes, records geometry/EXIF/compression summaries,
