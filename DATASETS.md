@@ -79,6 +79,12 @@ inventory; no social or `inspection` helper was extracted. Detailed receipt is 1
 `a1626b0b...8b05`; compact evidence is `evidence/e32_fodb_orig_extraction.json`. These are still
 role-free candidates until the decode/decontamination audit passes.
 
+FODB realization passes: 3,851/3,851 RGB JPEG with EXIF, 3,851 unique SHA, 143 scene groups and 27
+camera pipelines; protected/passed-peer overlap is zero. Seven equal-dHash cross-camera scene pairs
+are not confirmed by pHash, so no perceptual duplicate is removed. Detailed audit is 2,588,737 B /
+SHA `dcbf8b55...fd11`; compact evidence is `evidence/e32_forchheim-fodb_realization.json`. Role is
+still candidate-only and later folds must group the 143 shared scenes.
+
 ### Training
 
 | Dataset | Size | Contents | Mode | Why |

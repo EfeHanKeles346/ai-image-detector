@@ -2189,3 +2189,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Social transports and `inspection` helpers were not extracted.
 - External receipt 1,311,414 B / SHA `a1626b0b...8b05`, bound to inventory `d378573f...9631`.
 - **Decision:** commit extraction receipt, then run the independent full realization audit.
+
+### C1 FODB full realization — pass
+
+- 3,851/3,851 RGB JPEG with EXIF; 27 pipelines / 143 scene groups.
+- 3,851 unique SHA; seven same-scene cross-camera dHash buckets, zero pHash-confirmed duplicate.
+- Zero protected or passed-peer overlap.
+- External audit 2,588,737 B / SHA `dcbf8b55...fd11`.
+- **Decision:** pass as `candidate_only`; freeze roles only with scene/device-disjoint grouping.

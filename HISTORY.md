@@ -2432,3 +2432,14 @@ Twitter, WhatsApp or `inspection` member was extracted. Detailed extraction rece
 / SHA `a1626b0b...8b05`, bound to inventory SHA `d378573f...9631`; compact evidence is
 `evidence/e32_fodb_orig_extraction.json`. State is `orig_extraction_complete_role_free`, not a
 training role or data-quality pass.
+
+FODB's independent full realization passed. All 3,851/3,851 originals decode as RGB JPEG and carry
+EXIF; all 3,851 SHA values are unique, all protected/passed-peer overlap counts are zero and all 143
+scene groups / 27 camera pipelines are retained. Seven same-scene cross-camera pairs share dHash,
+but none meets the frozen pHash <=5 confirmation rule, so there is no confirmed perceptual
+duplicate. This is expected evidence that different devices photographed the same scene, not a
+reason to inflate or delete parents.
+
+Detailed external audit is 2,588,737 B / SHA `dcbf8b55...fd11`; compact evidence is
+`evidence/e32_forchheim-fodb_realization.json`. FODB passes only as
+`source_realization_passed_candidate_only`; scene/device-disjoint role freezing remains pending.

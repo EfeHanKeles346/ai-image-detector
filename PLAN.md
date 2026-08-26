@@ -81,6 +81,9 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Extract all 3,851 FODB `orig` parents atomically from the passed inventory: 15,416,129,383 B,
       each with extraction SHA and device/scene binding. No social or `inspection` member was
       extracted; all rows remain role-free pending realization.
+- [x] Pass FODB full realization: 3,851/3,851 RGB JPEG with EXIF, 3,851 unique SHA, zero confirmed
+      perceptual duplicate and zero protected/passed-peer overlap. Preserve seven equal-dHash
+      candidate pairs as nonduplicates under pHash; retain all rows as role-free candidates.
 - [x] Implement the FODB role-free realization command before extraction. It binds the extraction
       receipt, rechecks byte count and SHA, decodes every original, records camera/device/scene and
       native state, and applies the shared protected/duplicate gate. Sixteen focused tests pass.
