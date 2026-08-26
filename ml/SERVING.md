@@ -35,6 +35,14 @@ PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --host 127.0.0.1 --port 87
   and external `decision_ready` are reported separately so one optional subsystem cannot mask
   another's state.
 
+## E31 non-integration decision
+
+The E31 single-DINOv2 candidate is deliberately absent from `/predict`, readiness and the web UI.
+Its frozen E30 DEVELOPMENT run measured 83.63% macro / 100% worst-group authentic false positives,
+so the B6 condition “replace only after B5 passes” evaluated false. The verified E20 serving
+contract remains unchanged. E31 may be run only through `experiments/e31_score_folder.py`; that
+output is marked research-only and cannot claim authenticity. Qwen LOCKED FINAL was not scored.
+
 ## Required edge controls
 
 Before binding outside loopback, require all of the following at the proxy/gateway:

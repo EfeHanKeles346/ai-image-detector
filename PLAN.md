@@ -211,13 +211,18 @@ test leakage, and only then ask E30 whether the frozen system advances.
 
 ### Phase B6 — integrate, document and preserve presentation evidence
 
-- [ ] Replace the served verdict only after B5 passes; keep the last verified contract available
+- [x] Replace the served verdict only after B5 passes; keep the last verified contract available
       for rollback. Add readiness, artifact-integrity, deterministic-inference and end-to-end tests.
-- [ ] Update `MODEL_CARD.md`, `README.md`, `ml/SERVING.md`, `PRESENTATION_EVIDENCE.md`,
+- [x] Update `MODEL_CARD.md`, `README.md`, `ml/SERVING.md`, `PRESENTATION_EVIDENCE.md`,
       `DATASETS.md`, `ml/EXPERIMENTS.md` and append-only `HISTORY.md` with exact claims and limits.
-- [ ] Follow the project procedure for every phase: pre-register in this plan, implement/verify,
+- [x] Follow the project procedure for every phase: pre-register in this plan, implement/verify,
       close the phase in the roadmap and archive, then make a scoped commit. Never rewrite a failed
       result into success and never commit third-party/personal image bytes.
+- **B6 outcome:** the “replace served verdict” condition evaluated false because B5 failed, so the
+  verified E20/API/UI contract remains untouched and rollback was unnecessary. E31 is exposed only
+  through a research folder scorer whose JSON embeds the 83.63% DEVELOPMENT real-FP warning and
+  never says “real.” Documentation/presentation evidence records the clean-data/DINO gain and the
+  independent-real falsification together. No third-party/personal bytes or Qwen scores enter Git.
 
 ## Ongoing benchmark contract — E30 current-science data and OOD test system (2026-08-25)
 

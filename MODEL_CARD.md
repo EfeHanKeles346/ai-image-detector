@@ -6,6 +6,20 @@
 
 **Last verified:** 2026-08-24
 
+## E31 successor candidate decision (2026-08-26)
+
+E31 did **not** replace this served E20 contract. Its single-DINOv2 research candidate is locally
+runnable and hash-verified (`99901219...4d860`), but it failed the pre-registered independent E30
+DEVELOPMENT gate: AUC 0.385, 80.67% current-AI macro recall, **83.63% macro authentic false
+positives** and 100% worst authentic group FP. Three of 900 transport views were tile-ineligible.
+
+Earlier E31 CALIBRATION performance—0.966 AUC, 90.72% current-generator macro recall, 4.67% macro
+and 6.70% worst real FP—therefore does not transfer to independent MLLM-matched real content. A
+diagnostic threshold meeting the real budgets reduces AI macro recall to 0.33%, so recalibration
+cannot rescue the candidate. Qwen LOCKED FINAL was not opened. `pixelproof.e31_candidate` and
+`ml/experiments/e31_score_folder.py` exist only for labelled research/error analysis; the FastAPI,
+CLI and web model remain E20. Evidence: `evidence/e31_b5_development.json`.
+
 ## What this model is
 
 The canonical project-owned model answers a narrow question: *does this image contain a signal

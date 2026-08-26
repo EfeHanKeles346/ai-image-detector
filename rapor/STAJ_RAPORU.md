@@ -250,6 +250,29 @@ Canlı kullanım, kıyasların gizlediği bir tasarım hatasını yakaladı: Cha
 
 Kapanış doğrulaması sahibinin öngörüsüyle geldi: 207 iPhone fotoğrafının tamamı iki sistemden geçirildi. Eski tile sinyali **207/207'sine "yapay"** dedi (medyan p 0.994 — E13'ün hastalığı en saf halinde); karar katmanı **21/207** işaretledi (%10.1 — tasarlanan bütçe). Arayüz de buna göre düzeltildi: ekranda artık tek hüküm var, araştırma sinyali "karara dahil değil" etiketiyle ve ölçülmüş FP oranıyla altta duruyor.
 
+### 6.6 E31: temiz veri, DINOv2 ve bağımsız gerçek-foto kapısı
+
+Staj sonrasında “en azından gerçekten eğitilmiş ve denenebilir yeni bir model” hedefiyle bağlı
+LaCie arşivini baştan denetledik. 270,91 GB / 603.991 Parquet satırından hacmi değil çeşitliliği
+seçtik; kaynak ve üreteç kotaları, grup-ayrık TRAIN/CALIBRATION rolleri ve kilitli testlerle exact
+/ dHash sızıntı kontrolü kurduk. İki mekanik ret turundan sonra 5.650 yapay / 5.650 gerçek olmak
+üzere 11.300/11.300 doğal 128px karo sıfır decode, boyut ve protected-overlap kaybıyla üretildi
+(E31/B2).
+
+Aynı sözleşmede E20, donmuş DINOv2 ViT-S/14 ve 68 adli özellik karşılaştırıldı. DINOv2 CALIBRATION'da
+0,966 AUC, %90,72 güncel-üreteç macro recall, %4,67 macro ve %6,70 worst gerçek FP ile kazandı
+(E31/B3). E20 ve fizik özellikleriyle max/stack birleşimleri gerçek tamamlayıcılık gösterdi; fakat
+en iyi kazanç +3,05 puanda kaldı, ön-kayıt şartı +5'ti ve macro FP %5,34'e çıktı. Bu nedenle “çok
+model tek model gibi çalışsın” önerisi ölçülerek reddedildi ve tek DINO adayı donduruldu (E31/B4).
+
+Son kapı sonucu tersine çevirdi. Aday bağımsız 900-görünümlü MLLM DEVELOPMENT setinde GPT Image 2 ve
+Nano Banana 2'yi yaklaşık %80,6 yakaladı, fakat gerçek görüntülerde macro FP **%83,63**, worst grup
+%100 ve AUC **0,385** oldu (E31/B5). Gerçek bütçeyi sağlayan tanısal eşik AI recall'ı %0,33'e
+indirdi; sorun kalibrasyon değil temsildi. Aday teknik olarak çalışır ve ayrı klasör CLI'siyle
+denenebilir, ama servise alınmadı. DEVELOPMENT geçmediği için Qwen LOCKED FINAL'ın 40+40 satırı hiç
+skorlanmadı. Bu fazın ana kazanımı bir başarı sayısı değil, temiz iç testin bile bağımsız gerçek
+fotoğraf kapısının yerini tutmadığını gösteren uçtan uca bilimsel süreçtir.
+
 ## 7. Sınırlar ve Gelecek Çalışmalar
 
 Sistemin sınırlarını sattığımız sayılar kadar net yazıyoruz:
@@ -271,7 +294,7 @@ Yöntem tarafında dört yetkinlik edindik. **Deney disiplini:** her deneyin hip
 
 ---
 
-## Ek A — Deney Dizini (E1–E26)
+## Ek A — Deney Dizini (E1–E31)
 
 | Deney | Tek satırla |
 |---|---|
@@ -300,3 +323,5 @@ Yöntem tarafında dört yetkinlik edindik. **Deney disiplini:** her deneyin hip
 | E24 | Sahibinin telefonu: eski model 207/207'ye karşı yeni katman 21/207 |
 | E25 | 2026 üreteçleri probu: donmuş eşikler taze kaynakta tuttu; GPT ailesi kör nokta |
 | E26 | OR kuralı: kör birincil kol gören kolu veto edemez; tek hüküm ekranı |
+| E27–E30 | GPT-kol düzeltmesi ve güncel veri/test sistemi: MLLM DEVELOPMENT + sealed Qwen |
+| E31 | 11.300 temiz karo, DINOv2 kazanımı, ensemble reddi ve bağımsız gerçek-foto falsifikasyonu |

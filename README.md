@@ -4,7 +4,7 @@ PixelProof is a research system that looks for evidence consistent with AI gener
 official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
 It never certifies that an image is real.
 
-## Current scientific contract (2026-08-24)
+## Current scientific contract (2026-08-26)
 
 The primary API, CLI and web-demo path is now the project-owned E20 ResNet-18 checkpoint
 (`e20-tile-resnet18-seed2024`). It scores native 128 px tiles, aggregates the three highest
@@ -30,6 +30,13 @@ threshold procedure could inspect evaluation halves. The corrected calibration-o
 the candidate threshold from 15.38 to 21.71 and reduced its in-collection GPT recall from 40.5%
 to 14.5%, below its pre-registered 40% gate. The append-only correction is in
 [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md).
+
+E31 is also **not served**. It produced the project's cleanest new training contract (11,300
+balanced, source-capped, protected-overlap-free native tiles) and a frozen DINOv2 probe reached
+90.72% current-generator macro recall at 4.67% CALIBRATION macro real FP. The independent 900-view
+E30 DEVELOPMENT gate then falsified it: 80.67% AI recall came with **83.63% macro real FP** and
+AUC 0.385. A diagnostic threshold that restores the real budget leaves 0.33% AI recall, so this is
+representation/source shift rather than a fixable threshold. Qwen LOCKED FINAL remained unscored.
 
 Four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) remain behind the optional
 research-details view as **uncalibrated research scores**. They are neither the primary project
@@ -129,6 +136,17 @@ recall and false-positive rate at the checkpoint's stored threshold, confusion c
 AI-signal rates, full checkpoint/configuration/environment/command provenance and every individual
 row. Decode and inference failures remain in both files and make the command exit non-zero after
 writing the report. A non-empty output directory is never overwritten.
+
+The rejected-but-runnable E31 candidate can be inspected separately without changing the service:
+
+```bash
+HF_HUB_OFFLINE=1 PYTHONPATH=ml/src ml/.venv/bin/python \
+  ml/experiments/e31_score_folder.py /path/to/images \
+  --output ml/data/e31/my_folder_scores.json
+```
+
+This research-only JSON never fits a new threshold and always carries the measured 83.63% real-FP
+warning. An under-threshold score is `insufficient_evidence`, never a claim that the image is real.
 
 Prepared datasets default to `ml/work/` and acquired sources to `ml/data/`. Existing layouts are
 selected without code edits:

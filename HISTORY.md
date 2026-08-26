@@ -1978,3 +1978,17 @@ Qwen runner cannot pass its gate. The 40 native + 40 standardized LOCKED rows re
 must not replace the current serving model with E31; the next research step is real-pipeline data
 breadth or a camera-trace representation, followed by a new pre-registered candidate—not tuning on
 this DEVELOPMENT result.
+
+### E31/B6 closure — runnable research scorer preserved, serving remains unchanged
+
+Because B5 failed, B6 did not touch FastAPI, the web UI or the verified E20 runtime. A separate
+`e31_score_folder.py` tool preserves the exact DINO candidate for labelled research: immutable
+artifact/weight hashes, one content-keyed tile, fixed threshold, asymmetric verdict and a mandatory
+83.63% DEVELOPMENT FP warning in every JSON. It refuses to overwrite an earlier evaluation.
+
+The end-to-end CPU smoke used scikit-learn's bundled real `china.jpg`; the candidate ran without
+error and scored it 0.999826 above threshold 0.709007—another false AI signal consistent with B5,
+not a success example. The output correctly declared `rejected_for_serving_after_E30_DEVELOPMENT`
+and never claimed authenticity. Model card, README, serving boundary, dataset ledger, experiment
+log, presentation evidence and internship report now tell the same story. E31 ends with a working
+experimental model and a successful safety gate, not a deployable replacement.

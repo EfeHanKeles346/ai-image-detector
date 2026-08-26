@@ -9,6 +9,10 @@ Projede eğitilmiş, hash ile doğrulanan bir E20 ResNet-18 artık CLI, klasör 
 web arayüzü üzerinden gerçekten çalışıyor; fakat üç-seed ölçümündeki %86,2 ± %3,1 worst-source
 gerçek yanlış alarmı nedeniyle yalnız araştırma sinyali olarak sunuluyor.
 
+E31'de 11.300 satırlık temiz veri sözleşmesi ve DINOv2 adayı gerçekten üretildi; aday CALIBRATION'da
+%90,72 güncel-AI macro recall'a ulaştı. Bağımsız E30 DEVELOPMENT ise %83,63 gerçek yanlış alarm ve
+0,385 AUC ile adayı reddetti. Bu nedenle servis değiştirilmedi ve Qwen LOCKED FINAL açılmadı.
+
 ## Sunumda kullanılacak ana tablo
 
 | Soru | Kanıtlanmış cevap | Birincil kaynak |
@@ -19,6 +23,21 @@ gerçek yanlış alarmı nedeniyle yalnız araştırma sinyali olarak sunuluyor.
 | Güvenlik sınırı nedir? | Worst-source gerçek FP %86,2 ± %3,1; negatif sonuç “gerçek” değildir | `MODEL_CARD.md`, E20 üç-seed addendum |
 | Kullanıcı kendi verisini ölçebilir mi? | Evet; JSON+CSV, hata satırları ve tam provenance ile | `pixelproof-evaluate-project`, M4 |
 | Demo tek komut mu? | Evet; preflight, gerçek smoke, API ve web birlikte | `./tools/pixelproof-demo start`, M5 |
+| E31 daha iyi model oldu mu? | CALIBRATION'da evet; bağımsız gerçeklerde hayır, serving reddedildi | `evidence/e31_b3_representation_screen.json`, `evidence/e31_b5_development.json` |
+
+## E31 karar zinciri
+
+| Faz | Değişmez çıktı | Sonuç |
+|---|---|---|
+| B2 | 11.300/11.300 tile, 0 protected overlap, SHA `508330c2...9f2b` | Eğitime hazır temiz sözleşme |
+| B3 | DINOv2: AUC 0,966; güncel recall %90,72; macro real FP %4,67 | E20'yi geçti |
+| B4 | En iyi ensemble +3,05 puan, şart +5; macro FP %5,34 | Ensemble reddedildi |
+| B5 | E30: AUC 0,385; AI recall %80,67; macro real FP %83,63 | Aday/serving reddedildi |
+| LOCKED | Qwen 40 native + 40 türev | Skorlanmadı; DEVELOPMENT kapısı korundu |
+
+Sunumdaki ana ders: temiz veri ve güçlü iç-kalibrasyon gerekli ama yeterli değildir; bağımsız gerçek
+fotoğraf hattı son kapıdır. E31'in değeri “başarılı model” iddiası değil, bu kapının sahte başarıyı
+engellediğini deneysel olarak göstermesidir.
 
 ## M0–M5 geliştirme ve commit defteri
 

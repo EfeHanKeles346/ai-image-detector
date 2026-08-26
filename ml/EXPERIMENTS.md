@@ -1846,3 +1846,12 @@ representation is inverted on independent real content, not merely miscalibrated
 The candidate is technically executable and detects GPT Image 2 / Nano Banana 2 at about 80.6%,
 but is unsafe as a real/AI detector. B5 fails; Qwen LOCKED FINAL remains unscored by construction.
 Compact evidence: `evidence/e31_b5_development.json`.
+
+### B6 operational hand-off
+
+Serving was intentionally left unchanged. The research-only folder CLI loaded the hash-pinned E31
+candidate and cached DINO weights on CPU, scored scikit-learn's bundled real `china.jpg` once and
+returned 0.999826 / threshold 0.709007 (`ai_signal_detected`). This false positive agrees with the
+DEVELOPMENT failure and validates that the CLI warning—not a deployment claim—is necessary. Its
+JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and error cases use
+`insufficient_evidence`, never “real.”
