@@ -2645,3 +2645,10 @@ above are transcription errors; production range planning binds the filesystem v
 - iPhone: TRAIN 3,195 on eight devices; CAL 799 on iPhone14_4+iPhone14_8; zero device leakage.
 - Detailed SHA `16deb276...750f`; record-list SHA `263af46b...5611`; no protected row.
 - **Decision:** freeze roles before realizing appended standardized inputs.
+
+### C4-R1b input-extension implementation checkpoint
+
+- R1b manifest + old R0 receipt hard-bound; all 22,688 old derived rows reused byte-for-byte.
+- Only 3,994 iPhone parents append through identical EXIF/RGB/256/224/JPEG-q90-4:4:4 transform.
+- Seven focused input tests pass; no DEVELOPMENT/owner path exists.
+- **Decision:** commit method before production standardization.

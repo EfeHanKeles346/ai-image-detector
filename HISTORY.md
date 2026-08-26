@@ -2882,3 +2882,8 @@ counts are 11,344 AI / 15,338 REAL; role counts TRAIN 21,349 / CALIBRATION 5,333
 3,195 TRAIN rows from eight devices and 799 CALIBRATION rows from iPhone14_4/iPhone14_8, with zero
 device overlap. Detailed manifest SHA is `16deb276...750f`, records SHA `263af46b...5611`. No
 DEVELOPMENT or LOCKED row was included.
+
+The R1b input extension was implemented before derived bytes. It binds the R1b manifest and old R0
+receipt, reuses all 22,688 old standardized files byte-for-byte and materializes only the 3,994 new
+iPhone rows through the identical EXIF-transpose/RGB/short-256/center-224/JPEG-q90-4:4:4 function.
+Seven focused input tests pass; IPN/owner paths are absent.

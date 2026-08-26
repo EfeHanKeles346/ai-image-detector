@@ -475,6 +475,9 @@ small manifests, aggregate evidence, code and documentation.
       freezes 26,682 rows: AI 11,344 / REAL 15,338; TRAIN 21,349 / CALIBRATION 5,333. iPhone is
       TRAIN 3,195 on eight devices and CALIBRATION 799 on devices 4/8, with zero group leakage.
       Detailed SHA `16deb276...750f`; commit before derived input work.
+      Input extension implementation hard-binds the R1b manifest and old R0 receipt, reuses every
+      old derived byte and appends only iPhone through the exact EXIF/RGB/256/224/JPEG-q90 contract.
+      Seven focused input tests pass; commit before production standardization.
 - [ ] Score the frozen R1b candidate once on all IPN-NFID devices and the consumed owner gallery.
       Require <=20% worst-device IPN FP and <=20% owner-gallery FP while preserving >=90% modern-AI
       recall before any locked AI arm or serving replacement. Failure returns to data/objective
