@@ -419,8 +419,10 @@ small manifests, aggregate evidence, code and documentation.
       linked device articles: exactly 960 `natural` JPEGs / 3,889,897,594 B, CC BY 4.0, as a
       source-held-out DEVELOPMENT set that may never fit data, representation, threshold or policy.
       API article/version/licence/file-size/MD5 drift and <100 GiB free space are hard stops.
-- [ ] Implement and test resumable, MD5-bound acquisition plus safe archive/inventory handling for
-      the frozen correction sources; commit the method before downloading any selected image byte.
+- [x] Implement and test resumable, MD5-bound acquisition for both frozen correction sources.
+      `e32_r1b_acquisition.py` separates metadata freeze from transfer, preserves `.partial` bytes,
+      enforces the 100 GiB floor and refuses article/version/licence/size/checksum drift. Four
+      focused selection/contract tests pass; commit the method before selected-byte transfer.
 - [ ] Download and verify IPN-NFID natural bytes and CSAFE iPhone 14 archive, preserving partials on
       interruption. Inventory iPhone 14 before selecting natural members; decode/hash/decontaminate
       both sources and record exact realized counts/bytes/limitations in DATASETS and evidence.

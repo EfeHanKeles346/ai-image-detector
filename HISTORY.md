@@ -2767,3 +2767,9 @@ IPN-NFID v3 independently links twelve CC-BY-4.0 smartphone articles containing 
 natural JPEGs / 3,889,897,594 bytes; that whole source is reserved as DEVELOPMENT and forbidden
 from fitting or threshold selection. This pairing adds a relevant Apple training pipeline while
 retaining a genuinely absent-source gate. Drift in API identity/licence/size/MD5 is a hard stop.
+
+The R1b acquisition method was implemented before selected-byte transfer. It separately freezes
+official metadata, downloads IPN files with four bounded workers, downloads the CSAFE archive with
+resumable curl, preserves `.partial` state and verifies every completed file against its published
+size and MD5 before promotion. A 100 GiB free-space floor is enforced. Four focused selection and
+drift tests pass; no selected image byte was fetched by this method checkpoint.

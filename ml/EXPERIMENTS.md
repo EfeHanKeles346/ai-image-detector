@@ -2498,3 +2498,12 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   artifact freeze. External pass requires <=20% IPN worst-device FP, <=20% owner FP and >=90%
   current-AI recall; no test-derived recalibration.
 - **Decision:** commit before implementing acquisition or downloading selected bytes.
+
+### C4-R1b acquisition implementation checkpoint
+
+- Metadata freeze and selected-byte transfer are separate commands. Official Figshare id/version/
+  licence plus every selected size/MD5 are hard-bound.
+- IPN uses four bounded resumable workers; CSAFE uses one resumable stream. Both preserve partials,
+  verify before atomic promotion and enforce >=100 GiB free.
+- Four focused tests cover natural-only selection, device binding and checksum/size drift stops.
+- **Decision:** commit method before production metadata freeze or selected-byte transfer.
