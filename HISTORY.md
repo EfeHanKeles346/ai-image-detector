@@ -2307,3 +2307,11 @@ therefore the intact source receives no role. External rejected receipt is 1,939
 `3312c774...e6b1`; compact evidence is `evidence/e32_vision-base-native_realization.json`. A later
 receipt-bound eligibility overlay may keep one stable canonical parent per pair and exclude the
 other; it may not replace selected parents after decode.
+
+The GPT encoding repair was implemented as a method checkpoint before rerunning production bytes.
+Prompt decoding now tries UTF-8 first and exactly one declared fallback, Windows-1252; undefined
+Windows-1252 bytes still fail rather than being replaced. Each realized GPT row will retain the
+SHA-256 of original prompt bytes, the SHA-256 of normalized UTF-8 text and its chosen encoding, and
+the compact report will publish encoding counts. Two new regression cases prove fallback behavior
+and rejection of undefined byte `0x81`; 20 focused E32 selection/acquisition/realization tests pass.
+No production receipt was overwritten in this commit.

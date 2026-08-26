@@ -190,6 +190,26 @@ def test_raw_image_accepts_bytes_and_arrow_style_mapping():
     assert (record["width"], record["height"]) == (12, 10)
 
 
+def test_prompt_decoder_is_utf8_first_with_one_explicit_windows_1252_fallback():
+    utf8 = "İstanbul — café".encode("utf-8")
+    windows_1252 = "A painter’s studio — façade".encode("windows-1252")
+
+    assert e32._decode_prompt(utf8) == ("İstanbul — café", "utf-8")
+    assert e32._decode_prompt(windows_1252) == (
+        "A painter’s studio — façade",
+        "windows-1252",
+    )
+
+
+def test_prompt_decoder_rejects_bytes_undefined_in_windows_1252():
+    try:
+        e32._decode_prompt(b"prompt\x81")
+    except UnicodeDecodeError:
+        pass
+    else:
+        raise AssertionError("undefined Windows-1252 byte must not be silently replaced")
+
+
 def test_pool_parquet_audit_reads_selected_image_bytes(tmp_path, monkeypatch):
     folder = tmp_path / "nano"
     folder.mkdir()

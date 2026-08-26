@@ -178,6 +178,14 @@ def _raw_image(value: Any) -> bytes | None:
     return None
 
 
+def _decode_prompt(raw: bytes) -> tuple[str, str]:
+    """Decode pinned prompt bytes without guessing across an open-ended codec list."""
+    try:
+        return raw.decode("utf-8"), "utf-8"
+    except UnicodeDecodeError:
+        return raw.decode("windows-1252"), "windows-1252"
+
+
 def _duplicates(records: Sequence[Mapping[str, Any]], key: str) -> list[list[str]]:
     grouped: dict[str, list[str]] = defaultdict(list)
     for row in records:
@@ -713,7 +721,8 @@ def _audit_pool_gpt(
             continue
         try:
             prompt_raw = prompt_path.read_bytes()
-            prompt = prompt_raw.decode("utf-8").strip()
+            prompt_text, prompt_encoding = _decode_prompt(prompt_raw)
+            prompt = prompt_text.strip()
         except (OSError, UnicodeDecodeError) as error:
             failures.append(
                 {
@@ -737,7 +746,9 @@ def _audit_pool_gpt(
                 "source_key": image_key,
                 "parent_group": selected["parent_group"],
                 "prompt_sha256": _sha256_bytes(prompt.encode()),
+                "prompt_bytes_sha256": _sha256_bytes(prompt_raw),
                 "prompt_bytes": len(prompt_raw),
+                "prompt_encoding": prompt_encoding,
                 "storage": selected["storage"],
             }
         )
@@ -775,6 +786,15 @@ def audit_pool_source(root: Path, source_id: str) -> dict[str, Any]:
                 sorted(
                     Counter(
                         str(row["model_name"]) for row in records if row.get("model_name")
+                    ).items()
+                )
+            ),
+            "prompt_encoding_counts": dict(
+                sorted(
+                    Counter(
+                        str(row["prompt_encoding"])
+                        for row in records
+                        if row.get("prompt_encoding")
                     ).items()
                 )
             ),

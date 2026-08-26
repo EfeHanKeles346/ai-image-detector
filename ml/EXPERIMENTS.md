@@ -2078,3 +2078,14 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - External rejected receipt 1,939,155 B / SHA `3312c774...e6b1`.
 - **Decision:** preserve rejection. Later receipt-bound eligibility overlay keeps one stable
   canonical row from each pair and excludes losers without replacement or role assignment.
+
+### C2c GPT prompt-decoder method checkpoint
+
+- Decoder order is fixed: UTF-8, then Windows-1252; there is no open-ended codec guessing or
+  replacement-character recovery.
+- Every accepted GPT record preserves original prompt-byte SHA, normalized UTF-8 text SHA and the
+  selected encoding; aggregate evidence publishes encoding counts.
+- Regression coverage proves a valid UTF-8 prompt remains UTF-8, typographic Windows-1252 text
+  decodes under the fallback, and undefined byte `0x81` still fails.
+- Verification: 20 focused E32 tests pass.
+- **Decision:** commit the method independently, then rerun all 3,000 frozen GPT pairs.

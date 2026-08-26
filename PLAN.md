@@ -176,11 +176,12 @@ small manifests, aggregate evidence, code and documentation.
       and protected/peer overlap is zero. VISION realizes all 3,500 balanced camera parents with
       3,500 unique SHA values and zero protected/peer overlap, but three within-source perceptual
       pairs reject the intact source.
-- [ ] Add and test a byte-preserving GPT prompt decoder that accepts UTF-8 first and Windows-1252
-      only as an explicit fallback. The 107 failing sidecars must all decode under that one fallback
-      and expose only audited punctuation/accent characters; rerun the same immutable selection,
-      preserve the first rejection receipt in HISTORY, and leave its five duplicate pairs for the
-      eligibility overlay rather than silently replacing rows.
+- [x] Add and test a byte-preserving GPT prompt decoder that accepts UTF-8 first and Windows-1252
+      only as an explicit fallback. Preserve both original-byte and normalized-text hashes and
+      report encoding counts; 20 focused selection/acquisition/realization tests pass.
+- [ ] Rerun the same immutable GPT selection after the decoder commit, preserve the first rejection
+      receipt in HISTORY, and leave its five duplicate pairs for the eligibility overlay rather than
+      silently replacing rows.
 - [ ] Extend the immutable-selection eligibility overlay to VISION parent rows as well as AI prompt
       groups. Resolve each duplicate component by a stable content-independent canonical key,
       exclude losers only, bind the overlay to every detailed receipt SHA, and assign no role yet.
