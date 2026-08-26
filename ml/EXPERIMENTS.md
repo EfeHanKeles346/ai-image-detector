@@ -1940,3 +1940,15 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - **Stop rule:** failure to obtain the pinned GPT source's missing 1,940 selected pairs requires a
   documented source revision/replacement; it cannot be repaired by protected-test leakage or a
   larger share from another family.
+
+### C2c exact-selection implementation checkpoint
+
+- **Local dry run:** Qwen 3,000; FLUX.2 3,000; Nano 3,000/9,457 with fingerprint
+  `65dfa0a3...ee60f`; NBP 200/200 with `fdbe22b1...6c58`; Community 2,800/11,972 AI across all 300
+  model identities, max ten/model, fingerprint `375b8b66...e8055`.
+- **Selection controls:** stable hash rather than row/download order for Nano and GPT; model-level
+  round-robin for Community; inherited four-output groups for Qwen/FLUX; no image decode or score.
+- **GPT stop:** repository metadata was unreachable once due to a connection reset on the active
+  mobile link. No receipt was written. Exact revision/licence/4,000-pair verification remains a
+  hard prerequisite, so the local partial checkout cannot bias the chosen 3,000.
+- **Verification:** 26 E32 tests pass, including deterministic-order and local-availability tests.

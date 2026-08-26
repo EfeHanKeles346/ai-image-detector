@@ -2146,3 +2146,17 @@ largest source share is exactly 20%, not above it. CommunityForensics is a diver
 does not count toward the five-current-family claim. If GPT's remaining 1,940 selected pairs cannot
 be obtained from the pinned source, the run stops for a documented replacement rather than
 silently oversampling another source or opening a protected final arm.
+
+The selection engine was then implemented without fabricating the unavailable GPT listing. On
+real local metadata it deterministically reproduced 3,000/9,457 Nano rows (source fingerprint
+`65dfa0a3...ee60f`), all 200 NBP files (`fdbe22b1...6c58`), and 2,800/11,972 Community AI rows
+across all 300 model identities with a maximum of ten rows per model (`375b8b66...e8055`). The two
+already-frozen gap receipts each contribute exactly 3,000 rows. Stable hashing makes Nano/GPT
+selection independent of filesystem and partial-download order; Community round-robin prevents
+large model identities from dominating.
+
+The full receipt remains unwritten by design. A pinned GPT repository-info request was reset while
+the three authorized transfers saturated the mobile link. Rather than infer filenames or let the
+local first 1,060 pairs dictate selection, the command requires the exact upstream revision,
+CC-BY-4.0 tag and 4,000 complete PNG/TXT pairs before selecting 3,000. Twenty-six E32 tests pass,
+including input-order invariance, model-spread selection and GPT local-availability independence.

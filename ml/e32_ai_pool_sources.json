@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "experiment": "E32/C2c",
+  "seed": 32026,
+  "target_parents": 15000,
+  "max_source_share": 0.2,
+  "sources": [
+    {
+      "id": "qwen-image-2512",
+      "selection_kind": "frozen_gap_receipt",
+      "target": 3000,
+      "family": "Qwen Image 2512",
+      "counts_as_current_family": true
+    },
+    {
+      "id": "flux2-klein-9b",
+      "selection_kind": "frozen_gap_receipt",
+      "target": 3000,
+      "family": "FLUX.2 Klein 9B Base",
+      "counts_as_current_family": true
+    },
+    {
+      "id": "nano-banana-local",
+      "selection_kind": "parquet_stable_hash",
+      "dirname": "bitmind__nano-banana",
+      "revision": "9ea8da32a5be03f4946e6cb10c2d2f8e90f0a0a4",
+      "target": 3000,
+      "family": "Gemini 2.5 Flash Image Preview (Nano Banana)",
+      "counts_as_current_family": true
+    },
+    {
+      "id": "gpt-image-1",
+      "selection_kind": "huggingface_stable_hash_pairs",
+      "repo_id": "a3xrfgb/gpt-image-mega-4k",
+      "revision": "bba366cb4b73605ddd569a916976a0e422164825",
+      "license_tag": "license:cc-by-4.0",
+      "expected_available_pairs": 4000,
+      "local_dirname": "a3xrfgb__gpt-image-mega-4k",
+      "target": 3000,
+      "family": "GPT Image 1",
+      "counts_as_current_family": true
+    },
+    {
+      "id": "nano-banana-pro-ash-local",
+      "selection_kind": "all_loose_images",
+      "dirname": "ash12321__nano-banana-pro-generated-1k",
+      "revision": "01f43edd35eb2f47f5ea77cfb223d173083d61ad",
+      "target": 200,
+      "family": "Nano Banana Pro",
+      "counts_as_current_family": true
+    },
+    {
+      "id": "communityforensics-ai-local",
+      "selection_kind": "parquet_model_round_robin",
+      "dirname": "OwensLab__CommunityForensics-Small",
+      "revision": "local_revision_previously_pinned_by_E31",
+      "target": 2800,
+      "family": "CommunityForensics AI diversity anchor",
+      "counts_as_current_family": false
+    }
+  ]
+}

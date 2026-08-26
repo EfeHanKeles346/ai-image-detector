@@ -285,6 +285,12 @@ metadata supports 9,457 unique Nano ids and 11,972 Community AI rows across 300 
 GPT still needs 1,940 of its pinned upstream pairs to reach its frozen 3,000 share. These are target
 counts, not realized counts, until every source passes the byte/decontamination gate.
 
+The metadata-only selector has reproduced every non-GPT allocation without opening image bytes:
+Nano 3,000/9,457 unique ids, NBP 200/200, Community AI 2,800/11,972 across all 300 model identities
+with at most ten selected per model, plus the existing 3,000+3,000 Qwen/FLUX receipts. The complete
+15K receipt is intentionally absent until the pinned GPT revision exposes its exact 4,000 PNG/TXT
+pairs and CC-BY-4.0 tag. A partial local folder is an availability cache, not a selection rule.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

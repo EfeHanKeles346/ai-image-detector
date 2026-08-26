@@ -104,6 +104,11 @@ small manifests, aggregate evidence, code and documentation.
       sixth current family. The five-family gate is Qwen, FLUX.2, Nano Banana, GPT Image 1 and Nano
       Banana Pro. If pinned GPT cannot supply its missing 1,940 local pairs, stop and document a
       replacement source; never inflate another source or reuse a protected final to hide the gap.
+- [x] Implement the metadata-only exact selector without writing a production receipt prematurely.
+      Nano uses stable-hash id selection; CommunityForensics uses model-identity round-robin; NBP
+      uses all 200 licensed images; Qwen/FLUX inherit their frozen prompt groups; GPT selects from
+      all pinned upstream pairs independently of local availability. The full freeze hard-stops
+      until GPT revision, licence tag and exact 4,000-pair listing are reachable and verified.
 - [x] Research and freeze only the measured two-family gap, without downloading OpenFake's full
       3.44 TB or reassigning protected tests. C2b pins Qwen Image 2512 (CC BY-SA 4.0) and FLUX.2
       Klein 9B Base (CC BY 4.0), selecting 750 complete prompt groups / 3,000 JPEG XL outputs from
