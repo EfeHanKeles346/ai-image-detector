@@ -2697,3 +2697,18 @@ authentic gate. The already-local CommunityForensics REAL half is the cheapest c
 its AI half is already admitted and its matched container route can suppress a major source
 shortcut; it still requires independent metadata selection, licence/provenance confirmation and
 full decontamination before use.
+
+Metadata inspection rejected that apparent shortcut. CommunityForensics-Small has 32,912 REAL
+rows, but all identify as FFHQ/Real and therefore add only a face domain—not diverse owner-like
+camera content. The already-local `34data__communityforensics-real` has 8,000 embedded JPEGs and
+useful geometry, but it is an unofficial repack with no local/upstream dataset card, licence or
+source identity. The `theminji` real parquets have the same provenance/licence gap and were already
+implicated in earlier shortcut failures. None is admitted merely to inflate volume.
+
+The next representation screen was precommitted without new downloads. R1a will pass the exact
+22,688 standardized R0 inputs through the pinned MIT Community-Forensics ViT-S and fit a fresh
+regularized binary head on its frozen CLS embeddings under the same C grid, roles and authentic FP
+budgets. This is motivated by measured complementarity: the frozen CF decision made only one
+false alarm on 206 unique owner images, while its old fixed head missed most current AI. A new head
+on the modern E32 pool tests whether the representation can keep real specificity and learn the new
+families. Owner pixels remain closed until an internal artifact is independently frozen.

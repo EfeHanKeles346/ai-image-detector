@@ -374,6 +374,18 @@ small manifests, aggregate evidence, code and documentation.
       34.85% (CSAFE 15.74%, VISION 19.82%). Combined with owner-gallery FP 75.71%, prioritize a
       fourth format/content-matched REAL collection and source-held-out real gating before PE-Core,
       intermediate-block or full-fine-tune expense.
+- [x] Reject the tempting already-local REAL shortcuts before enrollment. CommunityForensics-Small
+      exposes 32,912 REAL rows but every one is FFHQ/face-only; `34data` exposes 8,000 diverse JPEGs
+      through an unofficial repack with no dataset card/licence/provenance; the `theminji` real
+      parquets likewise lack upstream provenance/licence. None may silently become E32 correction
+      data merely because it is local.
+- [x] Precommit an R1a forensic-representation screen before feature extraction. Reuse the exact
+      22,688 R0 standardized inputs and C3 roles, but extract the frozen CLS embedding from the
+      pinned/hash-verified MIT Community-Forensics ViT-S via its official processor. Fit the same
+      class-weighted C grid and authentic FP-budget threshold on TRAIN/CALIBRATION. This is not an
+      ensemble and does not open the owner gallery. If the internal screen passes, freeze the
+      artifact first; only a separately precommitted refit-free gallery stress may then decide
+      whether the forensic trunk improves authentic-pipeline transfer.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

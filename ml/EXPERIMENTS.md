@@ -2424,3 +2424,14 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Accepted artifact and gallery evidence unchanged; owner gallery was not opened.
 - **Conclusion:** modern-generator representation transfers, authentic pipelines do not. Prioritize
   diverse/matched REAL coverage plus REAL-source-held-out gates before richer encoders or ensemble.
+
+### C4 REAL-complement triage and R1a preregistration
+
+- Reject CF-Small REAL: 32,912 rows are all FFHQ, not a diverse camera complement.
+- Reject local `34data` REAL and `theminji` REAL for E32 enrollment: no adequate upstream
+  provenance/licence contract; local bytes do not override that boundary.
+- R1a: exact R0 inputs/roles, pinned Community-Forensics ViT-S frozen CLS, class-weighted logistic
+  C grid {0.01, 0.1, 1, 10}, same CAL authentic FP budgets and screen metrics.
+- No owner-gallery access during feature/head selection. A passing artifact must be frozen before a
+  separately committed gallery stress.
+- **Decision:** commit before implementation or CF feature extraction.

@@ -563,3 +563,12 @@ R0 derives one class-identical model input from every C3 parent: EXIF transpose,
 256, center-crop 224 and JPEG q90/4:4:4. All 22,688 outputs passed original/derived SHA checks and
 occupy 487,845,683 logical bytes (larger allocated size on exFAT due to small-file allocation).
 Receipt SHA is `2255b123...5199`; no DEVELOPMENT or LOCKED image was materialized.
+
+Post-R0 REAL-complement audit rejected three already-local shortcuts. The REAL half of
+`OwensLab__CommunityForensics-Small` is 32,912/32,912 FFHQ faces, so it cannot supply broad current
+camera/content coverage. `34data__communityforensics-real` contains 8,000 JPEGs but revision
+`fc9fe1b...81ce` has no dataset card, declared licence or parent-source field. The `theminji`
+balanced/200K cards expose only labels/counts and no source/licence. These bytes remain outside
+E32 roles. Official Community Forensics documentation says the Small release includes separately
+licensed real datasets and is limited to non-commercial research; that does not establish the
+unofficial repack's provenance.
