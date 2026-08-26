@@ -2859,3 +2859,8 @@ Before correction code, the rule was frozen: exclude the entire two-row perceptu
 never select one side, preserve the raw audit and freeze the remaining 3,994 as role-free only.
 MPO/JPEG differences must be removed by the existing standardized JPEG input contract before any
 head fitting so container type cannot define REAL.
+
+The corrective overlay was implemented as a receipt transformer, not a file mutation. It accepts
+only the exact single failure/component above, marks both members ineligible, retains every source
+byte and assigns no role. Two focused component/owner-identity tests pass. Production eligibility
+remains unopened by this method commit.

@@ -2615,3 +2615,9 @@ above are transcription errors; production range planning binds the filesystem v
   dHash+pHash. Detailed rejected audit 2,638,999 B / SHA `8325aaf4...05fd`.
 - Precommitted correction: exclude both rows, freeze 3,994 role-free; never choose one member.
 - **Decision:** preserve the rejection, commit before implementing the eligibility overlay.
+
+### C4-R1b iPhone 14 eligibility implementation checkpoint
+
+- Receipt transformer accepts only the exact one-failure/two-row component and excludes every side.
+- Source bytes remain intact; output is role-free. Two focused component/identity tests pass.
+- **Decision:** commit method before production eligibility freeze.
