@@ -2507,3 +2507,10 @@ exclude every one of the 4,000 `blank` fields mechanically. Only that frozen lis
 atomically with per-file SHA. A receipt-bound realization command must exist before production
 extraction and must apply the shared decode/protected/duplicate gate. Selection, extraction and
 realization remain separate commits and none assigns TRAIN/CALIBRATION.
+
+The CSAFE natural-only method was implemented before production selection. The parser permits only
+the ten frozen device IDs, `blank|natural`, four known lenses and JPEG suffix. Metadata selection
+requires exact 4,000/3,996 counts and reads no member bytes; extraction verifies inventory
+size/CRC, writes only natural rows atomically and records SHA; realization binds that receipt and
+applies shared decode/protected/duplicate checks while publishing device/lens counts. Twenty-three
+focused archive/realization tests pass. No production member was selected or opened by this commit.

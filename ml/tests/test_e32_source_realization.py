@@ -213,6 +213,42 @@ def test_fodb_audit_is_bound_to_extraction_receipt_and_records_scene(tmp_path, m
     assert report["records"][0]["native_social_state"] == "orig"
 
 
+def test_csafe_audit_is_bound_to_natural_extraction_and_records_lens(tmp_path, monkeypatch):
+    output, evidence = _isolate(tmp_path, monkeypatch)
+    source_key = "real/csafe/natural/s21_1/wide/image.jpg"
+    image_path = output / source_key
+    _png(image_path, (30, 60, 90), (20, 18))
+    image_sha = hashlib.sha256(image_path.read_bytes()).hexdigest()
+    receipt = {
+        "state": "natural_extraction_complete_role_free",
+        "parent_count": 1,
+        "records": [
+            {
+                "source_key": source_key,
+                "camera_pipeline": "s21_1:wide",
+                "device": "s21_1",
+                "lens": "wide",
+                "parent_group": "csafe:s21_1:wide:image",
+                "bytes": image_path.stat().st_size,
+                "sha256": image_sha,
+            }
+        ],
+    }
+    receipt_raw = (json.dumps(receipt) + "\n").encode()
+    (output / "csafe_natural_extraction.json").write_bytes(receipt_raw)
+    evidence.mkdir(parents=True)
+    (evidence / "e32_csafe_natural_extraction.json").write_text(
+        json.dumps({"detailed_report_sha256": hashlib.sha256(receipt_raw).hexdigest()})
+    )
+
+    report = e32.audit_csafe()
+
+    assert report["state"] == "source_realization_passed_candidate_only"
+    assert report["device_counts"] == {"s21_1": 1}
+    assert report["lens_counts"] == {"wide": 1}
+    assert report["content_type_counts"] == {"natural": 1}
+
+
 def test_raw_image_accepts_bytes_and_arrow_style_mapping():
     buffer = io.BytesIO()
     Image.new("RGB", (12, 10), (1, 2, 3)).save(buffer, format="PNG")

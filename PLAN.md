@@ -87,6 +87,8 @@ small manifests, aggregate evidence, code and documentation.
       bind device and lens pipeline, exclude all 4,000 `blank` rows by contract, then extract only
       the frozen natural set atomically with per-file SHA. Implement the realization gate before
       production extraction and keep all outputs role-free.
+- [x] Implement/test CSAFE natural selection, atomic extraction and receipt-bound realization before
+      production use. Unknown device/content/lens/suffix paths fail closed; 23 focused tests pass.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly

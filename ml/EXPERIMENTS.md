@@ -2235,3 +2235,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Content contract: 4,000 `blank` flat fields + 3,996 `natural`; neither selected yet.
 - External inventory 1,306,218 B / SHA `77a88649...fd8d`.
 - **Decision:** commit inventory, explicitly exclude blank fields, then freeze natural-only rows.
+
+### C1 CSAFE natural-only method checkpoint
+
+- Fail closed outside ten device IDs, `blank|natural`, front/telephoto/ultra/wide and JPEG.
+- Freeze exact natural metadata before bytes; extraction checks size/CRC and writes atomic SHA
+  receipts; realization binds receipt and records device/lens/content.
+- Verification: 23 focused archive/realization tests pass; no production member selected/opened.
+- **Decision:** commit method, then freeze the 3,996-row production selection independently.

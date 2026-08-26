@@ -58,3 +58,29 @@ def test_fodb_excludes_only_the_precommitted_inspection_root():
     assert e32.FODB_EXCLUDED_ROOTS == {"inspection"}
     assert e32.FODB_MEMBER.fullmatch("inspection/check_devices/helper.jpg") is None
     assert e32.FODB_MEMBER.fullmatch("unknown/helper.jpg") is None
+
+
+def test_csafe_member_contract_extracts_device_content_and_lens():
+    parsed = e32._parse_csafe_member(
+        "s21/s21_10/natural/telephoto/20221002_144549.jpg"
+    )
+    assert parsed == {
+        "device": "s21_10",
+        "content_type": "natural",
+        "lens": "telephoto",
+        "filename": "20221002_144549.jpg",
+    }
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "s21/s21_11/natural/wide/image.jpg",
+        "s21/s21_1/unknown/wide/image.jpg",
+        "s21/s21_1/natural/macro/image.jpg",
+        "s21/s21_1/natural/wide/image.png",
+    ],
+)
+def test_csafe_member_contract_rejects_unknown_hierarchy(name):
+    with pytest.raises(ValueError, match="unexpected CSAFE"):
+        e32._parse_csafe_member(name)

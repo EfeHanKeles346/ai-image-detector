@@ -29,6 +29,8 @@ FODB_MEMBER = re.compile(
     re.IGNORECASE,
 )
 FODB_EXCLUDED_ROOTS = {"inspection"}
+CSAFE_LENSES = {"front", "telephoto", "ultra", "wide"}
+CSAFE_CONTENT_TYPES = {"blank", "natural"}
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -323,9 +325,179 @@ def inventory_csafe() -> dict[str, Any]:
     return compact
 
 
+def _parse_csafe_member(name: str) -> dict[str, str]:
+    parts = PurePosixPath(name).parts
+    if len(parts) != 5 or parts[0] != "s21":
+        raise ValueError(f"unexpected CSAFE member hierarchy: {name}")
+    _, device, content_type, lens, filename = parts
+    if not re.fullmatch(r"s21_(?:10|[1-9])", device):
+        raise ValueError(f"unexpected CSAFE device: {name}")
+    if content_type not in CSAFE_CONTENT_TYPES:
+        raise ValueError(f"unexpected CSAFE content type: {name}")
+    if lens not in CSAFE_LENSES:
+        raise ValueError(f"unexpected CSAFE lens: {name}")
+    if PurePosixPath(filename).suffix.lower() != ".jpg":
+        raise ValueError(f"unexpected CSAFE suffix: {name}")
+    return {
+        "device": device,
+        "content_type": content_type,
+        "lens": lens,
+        "filename": filename,
+    }
+
+
+def freeze_csafe_natural() -> dict[str, Any]:
+    inventory_path = OUTPUT_ROOT / "csafe_archive_inventory.json"
+    compact_path = EVIDENCE_ROOT / "e32_csafe_archive_inventory.json"
+    inventory_raw = inventory_path.read_bytes()
+    compact = json.loads(compact_path.read_text())
+    if _sha256(inventory_raw) != compact["detailed_report_sha256"]:
+        raise ValueError("CSAFE inventory binding changed")
+    inventory = json.loads(inventory_raw)
+    if inventory.get("state") != "archive_inventory_frozen_internal_rows_unselected":
+        raise ValueError("CSAFE inventory has unexpected state")
+    records = []
+    counts: Counter[str] = Counter()
+    for member in inventory["members"]:
+        parsed = _parse_csafe_member(str(member["name"]))
+        counts[parsed["content_type"]] += 1
+        if parsed["content_type"] != "natural":
+            continue
+        records.append(
+            {
+                "source_key": member["name"],
+                "expected_bytes": member["bytes"],
+                "expected_crc32": member["crc32"],
+                "device": parsed["device"],
+                "lens": parsed["lens"],
+                "camera_pipeline": f"{parsed['device']}:{parsed['lens']}",
+                "parent_group": f"csafe:{parsed['device']}:{parsed['lens']}:{PurePosixPath(parsed['filename']).stem}",
+            }
+        )
+    if counts != {"blank": 4000, "natural": 3996}:
+        raise ValueError(f"CSAFE content counts changed: {dict(counts)}")
+    records.sort(key=lambda row: row["source_key"])
+    detailed = {
+        "schema_version": 1,
+        "experiment": "E32/C1-csafe-natural-selection",
+        "state": "natural_selection_frozen_no_member_bytes_read",
+        "source_id": "csafe-mcsidb-s21",
+        "inventory_sha256": compact["detailed_report_sha256"],
+        "selected": len(records),
+        "excluded_blank": counts["blank"],
+        "device_counts": dict(sorted(Counter(row["device"] for row in records).items())),
+        "lens_counts": dict(sorted(Counter(row["lens"] for row in records).items())),
+        "records": records,
+        "boundary": "Selection uses archive metadata only; no ZIP member byte was opened and no role is assigned.",
+    }
+    detailed_path = OUTPUT_ROOT / "csafe_natural_selection.json"
+    raw = _json_bytes(detailed)
+    _write_atomic(detailed_path, raw)
+    result = {key: value for key, value in detailed.items() if key != "records"}
+    result.update(
+        {
+            "detailed_report_sha256": _sha256(raw),
+            "detailed_report_bytes": len(raw),
+            "detailed_report_external_path": detailed_path.relative_to(OUTPUT_ROOT).as_posix(),
+        }
+    )
+    _write_atomic(EVIDENCE_ROOT / "e32_csafe_natural_selection.json", _json_bytes(result))
+    return result
+
+
+def extract_csafe_natural() -> dict[str, Any]:
+    selection_path = OUTPUT_ROOT / "csafe_natural_selection.json"
+    compact_path = EVIDENCE_ROOT / "e32_csafe_natural_selection.json"
+    selection_raw = selection_path.read_bytes()
+    compact = json.loads(compact_path.read_text())
+    if _sha256(selection_raw) != compact["detailed_report_sha256"]:
+        raise ValueError("CSAFE natural selection binding changed")
+    selection = json.loads(selection_raw)
+    if selection.get("state") != "natural_selection_frozen_no_member_bytes_read":
+        raise ValueError("CSAFE natural selection has unexpected state")
+    archive_path = OUTPUT_ROOT / "real" / "csafe" / "archives" / "s21.zip"
+    records = []
+    with ZipFile(archive_path) as archive:
+        for index, selected in enumerate(selection["records"], start=1):
+            source_key = str(selected["source_key"])
+            info = archive.getinfo(source_key)
+            if info.file_size != int(selected["expected_bytes"]):
+                raise ValueError(f"CSAFE selected member size changed: {source_key}")
+            if f"{info.CRC:08x}" != str(selected["expected_crc32"]):
+                raise ValueError(f"CSAFE selected member CRC changed: {source_key}")
+            parsed = _parse_csafe_member(source_key)
+            destination = acquisition._safe_destination(
+                f"real/csafe/natural/{parsed['device']}/{parsed['lens']}/{parsed['filename']}"
+            )
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            expected_bytes = int(selected["expected_bytes"])
+            if destination.exists():
+                if destination.stat().st_size != expected_bytes:
+                    raise ValueError(f"existing CSAFE parent size mismatch: {destination}")
+                state = "already_complete"
+            else:
+                partial = destination.with_suffix(destination.suffix + ".partial")
+                if partial.exists():
+                    raise ValueError(f"stale CSAFE extraction partial requires review: {partial}")
+                with archive.open(info) as source, partial.open("xb") as target:
+                    while chunk := source.read(CHUNK_BYTES):
+                        target.write(chunk)
+                if partial.stat().st_size != expected_bytes:
+                    raise ValueError(f"extracted CSAFE parent size mismatch: {source_key}")
+                os.replace(partial, destination)
+                state = "extracted"
+            records.append(
+                {
+                    "source_key": destination.relative_to(OUTPUT_ROOT).as_posix(),
+                    "archive_member": source_key,
+                    "device": selected["device"],
+                    "lens": selected["lens"],
+                    "camera_pipeline": selected["camera_pipeline"],
+                    "parent_group": selected["parent_group"],
+                    "bytes": expected_bytes,
+                    "sha256": _sha256_file(destination),
+                    "state": state,
+                }
+            )
+            if index % 200 == 0 or index == len(selection["records"]):
+                print(f"CSAFE natural {index}/{len(selection['records'])} complete", flush=True)
+    receipt = {
+        "schema_version": 1,
+        "experiment": "E32/C1-csafe-natural-extraction",
+        "state": "natural_extraction_complete_role_free",
+        "selection_sha256": compact["detailed_report_sha256"],
+        "parent_count": len(records),
+        "bytes": sum(row["bytes"] for row in records),
+        "records": records,
+        "boundary": "Natural images are role-free candidates; blank fields were not extracted.",
+    }
+    receipt_path = OUTPUT_ROOT / "csafe_natural_extraction.json"
+    receipt_raw = _json_bytes(receipt)
+    _write_atomic(receipt_path, receipt_raw)
+    result = {key: value for key, value in receipt.items() if key != "records"}
+    result.update(
+        {
+            "detailed_report_sha256": _sha256(receipt_raw),
+            "detailed_report_bytes": len(receipt_raw),
+            "detailed_report_external_path": receipt_path.relative_to(OUTPUT_ROOT).as_posix(),
+        }
+    )
+    _write_atomic(EVIDENCE_ROOT / "e32_csafe_natural_extraction.json", _json_bytes(result))
+    return result
+
+
 def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("inventory-fodb", "extract-fodb-orig", "inventory-csafe"))
+    parser.add_argument(
+        "command",
+        choices=(
+            "inventory-fodb",
+            "extract-fodb-orig",
+            "inventory-csafe",
+            "freeze-csafe-natural",
+            "extract-csafe-natural",
+        ),
+    )
     return parser.parse_args(argv)
 
 
@@ -335,6 +507,8 @@ def main(argv: Iterable[str] | None = None) -> int:
         "inventory-fodb": inventory_fodb,
         "extract-fodb-orig": extract_fodb_orig,
         "inventory-csafe": inventory_csafe,
+        "freeze-csafe-natural": freeze_csafe_natural,
+        "extract-csafe-natural": extract_csafe_natural,
     }[args.command]()
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
