@@ -2824,3 +2824,8 @@ The iPhone archive handler was implemented without reading member payloads. It r
 ZIP traversal/symlink/encryption/CRC/expansion gates, binds acquisition receipts, accepts only the
 exact iPhone14/device/content/lens/JPEG hierarchy, freezes natural rows from metadata and extracts
 through size/CRC/SHA-checked atomic writes. Twenty-four combined archive/acquisition tests pass.
+
+Production iPhone 14 inventory passed every CRC and safety check. The 20,428,338,922-byte archive
+SHA is `22f04a95...8cbb9`; all 7,996 members are expected JPEGs, split exactly into 4,000 blank and
+3,996 natural across ten devices and four lenses. Detailed inventory SHA is `8931a535...912e`.
+No member was selected/extracted, so the inventory can now be frozen before natural selection.

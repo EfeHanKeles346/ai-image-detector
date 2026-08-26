@@ -2575,3 +2575,10 @@ above are transcription errors; production range planning binds the filesystem v
 - Blank rows cannot enter extraction; no function assigns TRAIN/CALIBRATION.
 - Twenty-four combined iPhone/archive/acquisition tests pass.
 - **Decision:** commit method before production CRC inventory.
+
+### C4-R1b iPhone 14 production inventory — pass
+
+- 20,428,338,922-byte ZIP; MD5 `dfc01c89...946c`; SHA-256 `22f04a95...8cbb9`.
+- 7,996/7,996 JPEG members pass CRC/safety: 4,000 blank, 3,996 natural, ten devices, four lenses.
+- Detailed inventory 1,295,576 B / SHA `8931a535...912e`; no member selected or extracted.
+- **Decision:** freeze inventory before running the natural-only metadata selector.

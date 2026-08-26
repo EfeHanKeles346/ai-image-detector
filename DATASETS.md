@@ -603,3 +603,10 @@ The names bind 80 scene groups shared across all twelve devices (50 landscape + 
 captures each). Protected E30 overlap, passed E32 peer overlap and cross-scene perceptual collision
 are all zero. Detailed realization is 642,208 B / SHA `f5827dce...243b`; compact evidence is
 `evidence/e32_r1b_ipn_realization.json`. Role remains unscored DEVELOPMENT—not a new training pool.
+
+CSAFE iPhone 14 transfer and safe inventory now pass. The promoted ZIP is exactly 20,428,338,922 B,
+reproduces published MD5 `dfc01c89...946c` and has SHA-256 `22f04a95...8cbb9`. All 7,996 JPEG
+members pass CRC/path/symlink/encryption/expansion checks: 4,000 blank + 3,996 natural across ten
+physical devices and front/telephoto/ultra/wide. Detailed inventory is 1,295,576 B / SHA
+`8931a535...912e`; compact evidence is `evidence/e32_r1b_csafe_iphone14_inventory.json`. No member
+was selected or extracted by inventory.

@@ -1,0 +1,64 @@
+{
+  "acquisition_selection_sha256": "c807d140a984dde4f40572e6965b483f5a79b1d3ab870b9d393a5527ad931c7f",
+  "archive": "iPhone14.zip",
+  "archive_bytes": 20428338922,
+  "archive_sha256": "22f04a95c67f8004bf81003a2a933c4d83e28d2bb57efd1465e5af6096b8cbb9",
+  "boundary": "CRC/path inventory only; no member selected, extracted or assigned a role.",
+  "compressed_member_bytes": 20426618144,
+  "content_counts": {
+    "blank": 4000,
+    "natural": 3996
+  },
+  "detailed_report_bytes": 1295576,
+  "detailed_report_external_path": "r1b_csafe_iphone14_inventory.json",
+  "detailed_report_sha256": "8931a53583362c63cefac963601c1fbbd609e5649a3a0a45ee90e2eb887d912e",
+  "device_counts": {
+    "iPhone14_1": 800,
+    "iPhone14_10": 800,
+    "iPhone14_2": 800,
+    "iPhone14_3": 800,
+    "iPhone14_4": 800,
+    "iPhone14_5": 800,
+    "iPhone14_6": 800,
+    "iPhone14_7": 798,
+    "iPhone14_8": 799,
+    "iPhone14_9": 799
+  },
+  "download_receipt_sha256": "e00af9804f95dc04e18e15bf66873ef8ebba21fa89b633e28a00f233cea14ef3",
+  "experiment": "E32/C4-R1b-csafe-iphone14-inventory",
+  "file_members": 7996,
+  "lens_counts": {
+    "blank:front": 1000,
+    "blank:telephoto": 1000,
+    "blank:ultra": 1000,
+    "blank:wide": 1000,
+    "natural:front": 998,
+    "natural:telephoto": 1000,
+    "natural:ultra": 998,
+    "natural:wide": 1000
+  },
+  "license": "CC BY 4.0",
+  "published_md5": "dfc01c89b14356141f53d253b72e946c",
+  "root_counts": {
+    "iPhone14": 7996
+  },
+  "schema_version": 1,
+  "second_level_counts": {
+    "iPhone14_1": 800,
+    "iPhone14_10": 800,
+    "iPhone14_2": 800,
+    "iPhone14_3": 800,
+    "iPhone14_4": 800,
+    "iPhone14_5": 800,
+    "iPhone14_6": 800,
+    "iPhone14_7": 798,
+    "iPhone14_8": 799,
+    "iPhone14_9": 799
+  },
+  "source_id": "csafe-mcsidb-iphone14",
+  "state": "archive_inventory_passed_internal_rows_unselected",
+  "suffix_counts": {
+    ".jpg": 7996
+  },
+  "uncompressed_bytes": 20532363988
+}
