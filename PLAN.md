@@ -496,6 +496,8 @@ small manifests, aggregate evidence, code and documentation.
       weights and threshold 0.125935; verify IPN realization `f5827dce...243b` and owner identity
       `390e3c21...ac09`; score CF only, once, with exact standardized JPEG round-trip. Report every
       IPN device plus aggregate and owner aggregate/high scores. No DINO fallback, refit or policy.
+      Hash-verified CLI and aggregate-only runner implemented; three focused tests pass. Commit
+      method before loading either DEVELOPMENT population into the selected model.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

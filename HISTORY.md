@@ -2910,3 +2910,9 @@ selected artifact/CF weights/0.125935 threshold, bind the clean 960-row IPN real
 210-photo owner identity, reproduce the same JPEG round-trip and score CF only once. Passing needs
 IPN worst-device FP <=20% and owner FP <=20%; internal current-AI macro is already >90%. No refit,
 threshold change, DINO fallback or test-derived policy is allowed.
+
+The selected R1b inference boundary was implemented while external pixels remained model-closed.
+`pixelproof-predict-e32-r1b` verifies selection/artifact/CF weights and reproduces the exact JPEG
+round-trip. A separate runner binds IPN and owner identities, reports per-device/aggregate metrics
+and contains only the frozen gate. Three focused candidate/gate tests pass; the method commit
+precedes the one external run.

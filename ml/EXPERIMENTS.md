@@ -2684,3 +2684,10 @@ above are transcription errors; production range planning binds the filesystem v
 - Score selected CF once. Pass iff IPN worst-device FP <=20%, owner FP <=20% and already-frozen
   internal current-AI macro >=90%. Report per-device IPN and aggregate score distributions.
 - No refit/rethreshold/DINO fallback/test policy. **Decision:** commit before scorer implementation.
+
+### C4-R1b external scorer implementation checkpoint
+
+- Hash-verified selected-CF CLI reproduces standardized JPEG round-trip and frozen threshold.
+- Aggregate runner binds IPN/owner identities, reports every IPN device and exact frozen gate.
+- Three focused candidate/gate tests pass; no fitting or DINO fallback path exists.
+- **Decision:** commit method before the single external DEVELOPMENT run.
