@@ -59,6 +59,13 @@ article version, filenames, sizes and published CSAFE MD5. Downloads use TLS-ver
 `curl`, `.partial` resume, retry and a 100 GiB free-space floor. FODB's TLS chain is not accepted by
 the Python CA bundle on this machine; verification moved to system `curl`, never disabled.
 
+Archive handling is now code-gated before extraction. `e32_archive_inventory.py` checks declared
+archive size, CRC, traversal/absolute/backslash paths, symlinks, encryption, duplicate names,
+member limits and expansion ratio. FODB additionally requires one original plus all five linked
+social transports per device/scene parent and extracts only originals; CSAFE repeats its published
+MD5 and inventories without selecting rows. Fifteen focused tests pass; production inventory waits
+for all frozen archive bytes.
+
 ### Training
 
 | Dataset | Size | Contents | Mode | Why |

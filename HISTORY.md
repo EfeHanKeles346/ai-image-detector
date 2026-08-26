@@ -2382,3 +2382,11 @@ FODB must prove exactly 3,851 `orig` JPEG parents under 27 device roots and link
 copies by device/scene index; only `orig` candidates may be atomically extracted. CSAFE `s21.zip`
 must first pass its published MD5 and a separate hierarchy inventory, after which internal rows can
 be selected—never before. This planning checkpoint writes no archive member.
+
+The ZIP safety/inventory implementation was committed before the remaining archives completed.
+It validates physical archive size and CRC, rejects unsafe paths, backslashes, symlinks, encrypted
+members, duplicate names, oversized members and >4:1 expansion. FODB parsing requires matching
+device/transport identifiers, exactly one `orig` plus five named social derivatives per parent,
+3,851 parents and 27 roots; extraction can write only `orig` members atomically and records each
+SHA. CSAFE repeats the published MD5 before inventory and leaves all internal rows unselected.
+Fifteen focused acquisition/archive tests pass. This method checkpoint extracted nothing.

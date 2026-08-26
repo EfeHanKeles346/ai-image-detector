@@ -2137,3 +2137,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - External overlay 913,980 B / SHA `b6c2101f...32e4`.
 - **Decision:** freeze as `eligibility_frozen_role_free`; do not train until remaining REAL sources
   are acquired/audited and source/device-disjoint TRAIN/CALIBRATION roles are separately frozen.
+
+### C1 archive safety/inventory method checkpoint
+
+- Reject ZIP traversal/absolute/backslash paths, symlinks, encryption, duplicate names, CRC errors,
+  declared-size drift, oversized members and >4:1 expansion.
+- FODB contract requires 3,851 parents / 27 roots and one `orig` plus five parent-linked transports;
+  extraction is atomic and restricted to `orig`.
+- CSAFE repeats published MD5 and freezes hierarchy only; no internal row is selected.
+- Verification: 15 focused tests pass; no production member was extracted.
+- **Decision:** commit method before running it on completed archive transfers.
