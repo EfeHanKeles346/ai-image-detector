@@ -1,0 +1,73 @@
+{
+  "arm": "cf",
+  "artifact_bytes": 12979,
+  "artifact_sha256": "68a54aa2a5a7f85713669302ba5151983e3a9217cb2f49cc894e2a802802701c",
+  "boundary": "Internal device-held-out/source-stratified screen only; IPN and owner model scores remain unopened.",
+  "c_grid_auc": {
+    "0.01": 0.9980788524068682,
+    "0.1": 0.9978547401117827,
+    "1.0": 0.9974734469392191,
+    "10.0": 0.9973764323683214
+  },
+  "calibration_rows": 5333,
+  "experiment": "E32/C4-R1b-cf-controlled-head",
+  "feature_archive_bytes": 39330305,
+  "feature_archive_sha256": "e34086919dac1860dd9768a6dfe6c36e47ba45488f28cd8818c54bb6bb6b4592",
+  "feature_shape": [
+    26682,
+    384
+  ],
+  "input_receipt_sha256": "400a990d89f569ededa4b72ad33a3fafce63285caa61e5ae429d4f9e3bb26af8",
+  "metrics": {
+    "ai_recall": 0.997348652231551,
+    "ai_recall_by_source": {
+      "communityforensics-ai-local": 0.9955056179775281,
+      "flux2-klein-9b": 0.9954954954954955,
+      "gpt-image-1": 0.9977528089887641,
+      "nano-banana-local": 1.0,
+      "nano-banana-pro-ash-local": 1.0,
+      "qwen-image-2512": 0.9977477477477478
+    },
+    "auc": 0.9980788524068682,
+    "average_precision": 0.9977113806080739,
+    "balanced_accuracy": 0.948837192565287,
+    "count": 5333,
+    "current_ai_macro_recall": 0.9981992104464016,
+    "current_ai_worst_source_recall": 0.9954954954954955,
+    "f1": 0.9353501864898467,
+    "macro_real_fp": 0.09974399501041033,
+    "real_fp_by_source": {
+      "csafe-mcsidb-iphone14": 0.12640801001251564,
+      "csafe-mcsidb-s21": 0.10262828535669587,
+      "forchheim-fodb": 0.056921086675291076,
+      "vision-base-native": 0.11301859799713877
+    },
+    "real_recall": 0.9003257328990228,
+    "threshold": 0.1259349137544632,
+    "worst_real_fp": 0.12640801001251564
+  },
+  "model_repo": "buildborderless/CommunityForensics-DeepfakeDet-ViT",
+  "model_revision": "ac6ee457bea904a373065754107451793b56db00",
+  "model_weight_sha256": "275ba982236ddd6afddf7131f8133e89f537574b964cf8fa5825b4956d741692",
+  "new_feature_archive_bytes": 5887075,
+  "new_feature_archive_sha256": "579d302aa294b44e37ebd1f5f29756eab39cd1f6290fd4da90b619524c9dd5c6",
+  "new_feature_shape": [
+    3994,
+    384
+  ],
+  "old_feature_archive_sha256": "c170a1f6688421f73c72c3b9ed6f1de10a57bf9850a535246e64a15bc71bbc6b",
+  "schema_version": 1,
+  "screen_gate": {
+    "checks": {
+      "auc_gte_0.85": true,
+      "current_ai_macro_recall_gte_0.60": true,
+      "current_ai_worst_source_recall_gte_0.40": true,
+      "macro_real_fp_lte_0.10": true,
+      "worst_real_fp_lte_0.20": true
+    },
+    "passed": true
+  },
+  "selected_c": 0.01,
+  "state": "r1b_internal_screen_passed",
+  "train_rows": 21349
+}

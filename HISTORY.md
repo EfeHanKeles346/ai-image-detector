@@ -2897,3 +2897,10 @@ CF feature archives, extracts only 3,994 iPhone embeddings, merges strictly by r
 the unchanged class-weighted C grid plus authentic-source FP budgets. Six focused merge/head tests
 pass. Before results, external-arm selection was fixed: among passing arms choose higher CAL AUC;
 exact tie chooses smaller selected C, then DINO. IPN/owner model scores remain closed.
+
+Both controlled internal arms passed. DINO: CAL AUC 0.996860, current-AI macro/worst recall
+99.18%/97.5%, REAL macro/worst FP 9.97%/15.91%, artifact `aca41dd8...8e86`. CF: CAL AUC 0.998079,
+current-AI macro/worst 99.82%/99.55%, REAL macro/worst FP 9.97%/12.64%, artifact
+`68a54aa2...701c`. The preregistered higher-AUC rule therefore freezes CF at C=0.01 and threshold
+0.125935. A deterministic selection receipt binds both evidence files; external scores remain
+unopened and DINO is no longer eligible for outcome-based rescue.

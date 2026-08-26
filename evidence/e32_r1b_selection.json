@@ -1,0 +1,26 @@
+{
+  "arm_receipts": {
+    "cf": {
+      "artifact_sha256": "68a54aa2a5a7f85713669302ba5151983e3a9217cb2f49cc894e2a802802701c",
+      "auc": 0.9980788524068682,
+      "evidence_sha256": "cce69cc1b2e9a85c061dd49889c23f0385ab8763d8d9a6a36709feb0baf426d2",
+      "passed": true,
+      "selected_c": 0.01
+    },
+    "dino": {
+      "artifact_sha256": "aca41dd86d3bfb2d6c6cb722c0d4882e5866640149fc5a684535f5eca8da8e86",
+      "auc": 0.9968601248522831,
+      "evidence_sha256": "b19edfdee556f51f16df110f52fd170896bbd5de0136e7a6a58f8e15f489d4b6",
+      "passed": true,
+      "selected_c": 0.1
+    }
+  },
+  "boundary": "Selection uses internal TRAIN/CALIBRATION evidence only; IPN and owner model scores remain unopened.",
+  "experiment": "E32/C4-R1b-internal-arm-selection",
+  "rule": "passing arm with higher CALIBRATION AUC; exact tie smaller selected C; exact tie DINO",
+  "schema_version": 1,
+  "selected_arm": "cf",
+  "selected_artifact_sha256": "68a54aa2a5a7f85713669302ba5151983e3a9217cb2f49cc894e2a802802701c",
+  "selected_threshold": 0.1259349137544632,
+  "state": "r1b_internal_arm_frozen_external_unopened"
+}

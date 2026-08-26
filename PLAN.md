@@ -484,6 +484,10 @@ small manifests, aggregate evidence, code and documentation.
       budgets. Six focused head/merge tests pass. Run DINO then CF separately. If both pass, select
       higher CALIBRATION AUC; exact AUC tie -> smaller selected C -> DINO lexical tie. Freeze that
       choice before opening IPN/owner model scores; if neither passes, stop.
+      Both pass. DINO AUC 0.996860 / current-AI macro 99.18% / macro-worst REAL FP 9.97/15.91%;
+      CF AUC 0.998079 / current-AI macro 99.82% / macro-worst REAL FP 9.97/12.64%. Frozen rule selects
+      CF, C=0.01, threshold 0.125935, artifact SHA `68a54aa2...701c`. Selection receipt is committed
+      before any IPN/owner model score; DINO cannot be promoted by external outcomes.
 - [ ] Score the frozen R1b candidate once on all IPN-NFID devices and the consumed owner gallery.
       Require <=20% worst-device IPN FP and <=20% owner-gallery FP while preserving >=90% modern-AI
       recall before any locked AI arm or serving replacement. Failure returns to data/objective

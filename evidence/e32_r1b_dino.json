@@ -1,0 +1,73 @@
+{
+  "arm": "dino",
+  "artifact_bytes": 12915,
+  "artifact_sha256": "aca41dd86d3bfb2d6c6cb722c0d4882e5866640149fc5a684535f5eca8da8e86",
+  "boundary": "Internal device-held-out/source-stratified screen only; IPN and owner model scores remain unopened.",
+  "c_grid_auc": {
+    "0.01": 0.9968260114200831,
+    "0.1": 0.9968601248522831,
+    "1.0": 0.9965962855222306,
+    "10.0": 0.9965234526247911
+  },
+  "calibration_rows": 5333,
+  "experiment": "E32/C4-R1b-dino-controlled-head",
+  "feature_archive_bytes": 39330864,
+  "feature_archive_sha256": "ae1737f2114583e6c05c46b265bbda5bce3a2ac36464c84c70625b006a3416de",
+  "feature_shape": [
+    26682,
+    384
+  ],
+  "input_receipt_sha256": "400a990d89f569ededa4b72ad33a3fafce63285caa61e5ae429d4f9e3bb26af8",
+  "input_size": 224,
+  "metrics": {
+    "ai_recall": 0.9924878479893946,
+    "ai_recall_by_source": {
+      "communityforensics-ai-local": 0.9797752808988764,
+      "flux2-klein-9b": 0.9932432432432432,
+      "gpt-image-1": 1.0,
+      "nano-banana-local": 0.9932584269662922,
+      "nano-banana-pro-ash-local": 0.975,
+      "qwen-image-2512": 0.9977477477477478
+    },
+    "auc": 0.9968601248522831,
+    "average_precision": 0.9963645202594641,
+    "balanced_accuracy": 0.9472211226917657,
+    "count": 5333,
+    "current_ai_macro_recall": 0.9918498835914565,
+    "current_ai_worst_source_recall": 0.975,
+    "f1": 0.9338877338877339,
+    "macro_real_fp": 0.09968238755285982,
+    "real_fp_by_source": {
+      "csafe-mcsidb-iphone14": 0.05506883604505632,
+      "csafe-mcsidb-s21": 0.05006257822277847,
+      "forchheim-fodb": 0.1591203104786546,
+      "vision-base-native": 0.13447782546494993
+    },
+    "real_recall": 0.9019543973941369,
+    "threshold": 0.09510107338428497,
+    "worst_real_fp": 0.1591203104786546
+  },
+  "model_id": "vit_small_patch14_dinov2.lvd142m",
+  "model_weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+  "new_feature_archive_bytes": 5884854,
+  "new_feature_archive_sha256": "2832c32a76ab44abd5512176447f34224710e22c692df3911daa4ee963057fa0",
+  "new_feature_shape": [
+    3994,
+    384
+  ],
+  "old_feature_archive_sha256": "716df956fc40b1cf557b30c34e1adb216d2abeb2314c20b2edf10671a387be3b",
+  "schema_version": 1,
+  "screen_gate": {
+    "checks": {
+      "auc_gte_0.85": true,
+      "current_ai_macro_recall_gte_0.60": true,
+      "current_ai_worst_source_recall_gte_0.40": true,
+      "macro_real_fp_lte_0.10": true,
+      "worst_real_fp_lte_0.20": true
+    },
+    "passed": true
+  },
+  "selected_c": 0.1,
+  "state": "r1b_internal_screen_passed",
+  "train_rows": 21349
+}

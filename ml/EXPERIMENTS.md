@@ -2666,3 +2666,12 @@ above are transcription errors; production range planning binds the filesystem v
 - Six focused merge/head tests pass.
 - Pre-result arm rule: passing arm with higher CAL AUC; exact tie -> smaller selected C -> DINO.
 - **Decision:** commit before either production embedding run; IPN/owner model scores stay closed.
+
+### C4-R1b controlled internal screens and arm freeze
+
+- DINO: AUC 0.996860; current-AI macro/worst 99.18%/97.5%; REAL macro/worst FP 9.97%/15.91%;
+  C=0.1, threshold 0.095101, artifact `aca41dd8...8e86`.
+- CF: AUC 0.998079; current-AI macro/worst 99.82%/99.55%; REAL macro/worst FP 9.97%/12.64%;
+  C=0.01, threshold 0.125935, artifact `68a54aa2...701c`.
+- Both pass. Frozen rule selects CF on higher AUC; selection receipt binds both evidence SHAs.
+- **Decision:** freeze CF as the only external candidate before implementing/scoring IPN or owner.
