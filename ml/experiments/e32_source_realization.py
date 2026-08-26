@@ -543,6 +543,69 @@ POOL_SOURCE_IDS = (
 )
 
 
+def audit_fodb() -> dict[str, Any]:
+    receipt_path = OUTPUT_ROOT / "fodb_orig_extraction.json"
+    compact_path = EVIDENCE_ROOT / "e32_fodb_orig_extraction.json"
+    receipt_raw = receipt_path.read_bytes()
+    compact = json.loads(compact_path.read_text())
+    if _sha256_bytes(receipt_raw) != compact.get("detailed_report_sha256"):
+        raise ValueError("FODB extraction receipt binding changed")
+    receipt = json.loads(receipt_raw)
+    if receipt.get("state") != "orig_extraction_complete_role_free":
+        raise ValueError("FODB extraction receipt has unexpected state")
+    records: list[dict[str, Any]] = []
+    failures: list[dict[str, str]] = []
+    for selected in receipt["records"]:
+        source_key = str(selected["source_key"])
+        path = OUTPUT_ROOT / source_key
+        partial = path.with_suffix(path.suffix + ".partial")
+        if partial.exists():
+            failures.append({"source_key": source_key, "reason": "partial_file_present"})
+        if not path.is_file():
+            failures.append({"source_key": source_key, "reason": "missing_file"})
+            continue
+        if path.stat().st_size != int(selected["bytes"]):
+            failures.append({"source_key": source_key, "reason": "byte_count_mismatch"})
+        try:
+            record = _image_record(path)
+        except Exception as error:
+            failures.append(
+                {"source_key": source_key, "reason": f"decode_failure:{type(error).__name__}"}
+            )
+            continue
+        if record["sha256"] != str(selected["sha256"]):
+            failures.append({"source_key": source_key, "reason": "extraction_sha256_mismatch"})
+        record.update(
+            {
+                "source_key": source_key,
+                "parent_group": f"fodb:{selected['camera_pipeline']}:{PurePosixPath(source_key).stem}",
+                "camera_pipeline": selected["camera_pipeline"],
+                "device": selected["device"],
+                "scene_group": selected["scene_group"],
+                "native_social_state": "orig",
+            }
+        )
+        records.append(record)
+    return _finalize(
+        source_id="forchheim-fodb",
+        kind="real",
+        selection_raw=receipt_raw,
+        expected_images=int(receipt["parent_count"]),
+        records=records,
+        failures=failures,
+        extra={
+            "camera_pipeline_counts": dict(
+                sorted(Counter(str(row["camera_pipeline"]) for row in records).items())
+            ),
+            "device_counts": dict(sorted(Counter(str(row["device"]) for row in records).items())),
+            "scene_group_count": len({str(row["scene_group"]) for row in records}),
+            "native_social_state_counts": dict(
+                sorted(Counter(str(row["native_social_state"]) for row in records).items())
+            ),
+        },
+    )
+
+
 def _pool_spec(source_id: str) -> Mapping[str, Any]:
     try:
         return next(
@@ -806,6 +869,7 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("audit-vision")
+    subparsers.add_parser("audit-fodb")
     ai_parser = subparsers.add_parser("audit-ai")
     ai_parser.add_argument(
         "--source", choices=("qwen-image-2512", "flux2-klein-9b"), required=True
@@ -820,6 +884,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     args = parse_args(argv)
     if args.command == "audit-vision":
         report = audit_vision()
+    elif args.command == "audit-fodb":
+        report = audit_fodb()
     elif args.command == "audit-ai":
         report = audit_ai_source(args.source)
     else:

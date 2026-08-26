@@ -2390,3 +2390,10 @@ device/transport identifiers, exactly one `orig` plus five named social derivati
 3,851 parents and 27 roots; extraction can write only `orig` members atomically and records each
 SHA. CSAFE repeats the published MD5 before inventory and leaves all internal rows unselected.
 Fifteen focused acquisition/archive tests pass. This method checkpoint extracted nothing.
+
+The FODB realization path was also implemented before production extraction. It requires the
+Git/external extraction-receipt SHA binding, checks missing/partial/size/SHA drift, decodes every
+original through the common format/EXIF/dHash/pHash gate, and records camera pipeline, device,
+scene group and `orig` state. It then uses the same protected-E30 and passed-peer boundaries as the
+other E32 sources and still assigns no role. A receipt-bound fixture brings the focused archive and
+realization suite to 16 passing tests. No FODB image was opened by this method checkpoint.

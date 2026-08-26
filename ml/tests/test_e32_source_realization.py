@@ -178,6 +178,41 @@ def test_vision_audit_records_device_and_exif_summary(tmp_path, monkeypatch):
     assert report["records"][0]["exif_present"] is False
 
 
+def test_fodb_audit_is_bound_to_extraction_receipt_and_records_scene(tmp_path, monkeypatch):
+    output, evidence = _isolate(tmp_path, monkeypatch)
+    source_key = "real/fodb/orig/D01_Phone/D01_img_orig_0001.jpg"
+    image_path = output / source_key
+    _png(image_path, (70, 80, 90), (18, 16))
+    image_sha = hashlib.sha256(image_path.read_bytes()).hexdigest()
+    receipt = {
+        "state": "orig_extraction_complete_role_free",
+        "parent_count": 1,
+        "records": [
+            {
+                "source_key": source_key,
+                "camera_pipeline": "D01_Phone",
+                "device": "D01",
+                "scene_group": "fodb-scene:0001",
+                "bytes": image_path.stat().st_size,
+                "sha256": image_sha,
+            }
+        ],
+    }
+    receipt_raw = (json.dumps(receipt) + "\n").encode()
+    (output / "fodb_orig_extraction.json").write_bytes(receipt_raw)
+    evidence.mkdir(parents=True)
+    (evidence / "e32_fodb_orig_extraction.json").write_text(
+        json.dumps({"detailed_report_sha256": hashlib.sha256(receipt_raw).hexdigest()})
+    )
+
+    report = e32.audit_fodb()
+
+    assert report["state"] == "source_realization_passed_candidate_only"
+    assert report["scene_group_count"] == 1
+    assert report["camera_pipeline_counts"] == {"D01_Phone": 1}
+    assert report["records"][0]["native_social_state"] == "orig"
+
+
 def test_raw_image_accepts_bytes_and_arrow_style_mapping():
     buffer = io.BytesIO()
     Image.new("RGB", (12, 10), (1, 2, 3)).save(buffer, format="PNG")

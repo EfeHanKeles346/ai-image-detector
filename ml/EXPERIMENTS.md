@@ -2147,3 +2147,12 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - CSAFE repeats published MD5 and freezes hierarchy only; no internal row is selected.
 - Verification: 15 focused tests pass; no production member was extracted.
 - **Decision:** commit method before running it on completed archive transfers.
+
+### C1 FODB realization method checkpoint
+
+- Bind external extraction receipt to its compact SHA; reject missing, partial, size-changed or
+  SHA-changed original parents.
+- Decode and record format/geometry/EXIF, camera pipeline, device, scene and native state; apply
+  shared SHA/dHash/pHash and protected-role checks.
+- Verification: 16 focused archive/realization tests pass; production originals remain unopened.
+- **Decision:** commit method before extraction, then run it only after archive inventory passes.

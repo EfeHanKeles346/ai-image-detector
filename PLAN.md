@@ -78,6 +78,9 @@ small manifests, aggregate evidence, code and documentation.
       unselected until its verified `s21.zip` inventory is frozen. Fifteen focused tests pass.
 - [ ] After the frozen transfers finish, run the committed inventory gates, preserve their receipts,
       extract only FODB `orig` members, and audit every extracted parent before role assignment.
+- [x] Implement the FODB role-free realization command before extraction. It binds the extraction
+      receipt, rechecks byte count and SHA, decodes every original, records camera/device/scene and
+      native state, and applies the shared protected/duplicate gate. Sixteen focused tests pass.
 - [x] Implement the role-free realization gate before any transfer completes. It binds every audit
       to the frozen selection SHA, ignores exFAT AppleDouble sidecars, requires all selected bytes
       to decode, derives format from payload bytes, records geometry/EXIF/compression summaries,
