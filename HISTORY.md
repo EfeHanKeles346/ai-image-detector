@@ -2794,3 +2794,9 @@ Four-range iPhone recovery was implemented against that live prefix. Range plann
 and disjoint; every response must be HTTP 206 with the exact requested interval and total. Assembly
 uses a distinct temporary path and whole-file MD5 before atomic promotion. Eighteen combined
 R1b/original acquisition tests pass. Production ranges remain unopened by this method commit.
+
+IPN-NFID transfer then completed independently: 960/960 natural JPEGs, twelve devices and exactly
+3,889,897,594 bytes, with each published MD5 verified before promotion. Before any pixel decode or
+model score, a separate audit was precommitted: bind selection+download receipts, retain shared
+scene identities across phones, reject decode/exact/protected-peer overlap and record perceptual
+candidates. The audit is data-quality only; DEVELOPMENT images remain forbidden from fitting.

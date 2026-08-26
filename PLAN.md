@@ -426,6 +426,10 @@ small manifests, aggregate evidence, code and documentation.
 - [ ] Download and verify IPN-NFID natural bytes and CSAFE iPhone 14 archive, preserving partials on
       interruption. Inventory iPhone 14 before selecting natural members; decode/hash/decontaminate
       both sources and record exact realized counts/bytes/limitations in DATASETS and evidence.
+      IPN transfer is complete at 960/960 files, 12 devices and 3,889,897,594 MD5-verified bytes.
+      Before decoding it, implement a receipt-bound DEVELOPMENT audit that preserves shared scene
+      groups, fails decode/exact/protected-peer overlap and records dHash+pHash candidates without
+      allowing any model score. Commit the audit method before opening IPN pixels.
 - [x] Preserve the first iPhone 14 single-stream stop at 92,274,688 bytes and precommit four-range
       recovery before changing transfer code. Split only the exact remaining interval, require HTTP
       206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary

@@ -2533,3 +2533,11 @@ above are transcription errors; production range planning binds the filesystem v
 - Each range resumes independently; assembly is separate and promotes only after exact total+MD5.
 - Eighteen combined R1b and original acquisition tests pass.
 - **Decision:** commit implementation before launching production ranges.
+
+### C4-R1b IPN transfer and audit preregistration
+
+- Transfer passes: 960/960 files, twelve devices, 3,889,897,594 bytes; every published MD5 passed.
+- Audit must bind frozen selection+download receipt, decode every file, retain shared scene groups,
+  reject exact/protected/passed-peer overlap and report dHash+pHash candidates.
+- No detector is loaded and no score/threshold is produced; IPN remains DEVELOPMENT only.
+- **Decision:** commit before implementing the decoder/audit or opening IPN pixels.
