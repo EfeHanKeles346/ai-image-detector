@@ -2050,3 +2050,6 @@ four concurrent curl progress meters interleaved into a large unreadable PTY str
 stopped explicitly after 95 completed JPEGs plus resumable partials; no completed file was removed.
 The downloader now uses curl's quiet-success/error-visible mode and retains one aggregate message
 per 100 completions. A focused test pins the quiet TLS curl and atomic `.partial` destination.
+Successful VISION destinations have no published per-file size but exist only after curl exits
+cleanly and atomic rename succeeds; they are now reused directly, while only `.partial` files are
+resumed. This prevents a reconnect from redownloading every completed native JPEG.

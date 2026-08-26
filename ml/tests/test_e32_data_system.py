@@ -57,6 +57,12 @@ def test_completed_file_is_reused_without_network(tmp_path, monkeypatch):
     assert result["state"] == "already_complete"
     assert result["bytes"] == 4
 
+    result_without_declared_size = e32._stream_download(
+        "https://invalid.example/archive.zip", destination
+    )
+    assert result_without_declared_size["state"] == "already_complete"
+    assert result_without_declared_size["bytes"] == 4
+
 
 def test_new_download_uses_quiet_tls_curl_and_atomic_partial(tmp_path, monkeypatch):
     monkeypatch.setattr(e32, "OUTPUT_ROOT", tmp_path / "e32")

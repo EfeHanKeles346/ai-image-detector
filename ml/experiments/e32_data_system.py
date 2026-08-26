@@ -288,8 +288,18 @@ def _ensure_capacity(expected_remaining: int) -> None:
 
 def _stream_download(url: str, destination: Path, expected_bytes: int | None = None) -> dict[str, Any]:
     destination.parent.mkdir(parents=True, exist_ok=True)
-    if destination.exists() and expected_bytes is not None and destination.stat().st_size == expected_bytes:
-        return {"path": destination.relative_to(OUTPUT_ROOT).as_posix(), "bytes": expected_bytes, "state": "already_complete"}
+    if destination.exists():
+        found_bytes = destination.stat().st_size
+        if expected_bytes is None or found_bytes == expected_bytes:
+            return {
+                "path": destination.relative_to(OUTPUT_ROOT).as_posix(),
+                "bytes": found_bytes,
+                "state": "already_complete",
+            }
+        raise ValueError(
+            f"completed file size mismatch for {destination}: "
+            f"expected {expected_bytes}, found {found_bytes}"
+        )
     partial = destination.with_suffix(destination.suffix + ".partial")
     offset = partial.stat().st_size if partial.exists() else 0
     if expected_bytes is not None and offset > expected_bytes:
