@@ -2652,3 +2652,17 @@ above are transcription errors; production range planning binds the filesystem v
 - Only 3,994 iPhone parents append through identical EXIF/RGB/256/224/JPEG-q90-4:4:4 transform.
 - Seven focused input tests pass; no DEVELOPMENT/owner path exists.
 - **Decision:** commit method before production standardization.
+
+### C4-R1b production standardized inputs — pass
+
+- 26,682/26,682 rows; 22,688 old bytes reused + 3,994 iPhone appended.
+- 568,959,891 logical bytes; detailed SHA `400a990d...6af8`; records SHA `3e51f87a...1395`.
+- MPO/JPEG source-container difference is removed before encoders; no protected input accessed.
+
+### C4-R1b controlled trainer implementation checkpoint
+
+- Frozen old DINO/CF caches hash-bound; extract only 3,994 new embeddings and merge by record id.
+- Same class-weighted C grid and macro<=10%/worst<=20% real-FP threshold budgets.
+- Six focused merge/head tests pass.
+- Pre-result arm rule: passing arm with higher CAL AUC; exact tie -> smaller selected C -> DINO.
+- **Decision:** commit before either production embedding run; IPN/owner model scores stay closed.

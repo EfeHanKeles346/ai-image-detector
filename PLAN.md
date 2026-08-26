@@ -477,7 +477,13 @@ small manifests, aggregate evidence, code and documentation.
       Detailed SHA `16deb276...750f`; commit before derived input work.
       Input extension implementation hard-binds the R1b manifest and old R0 receipt, reuses every
       old derived byte and appends only iPhone through the exact EXIF/RGB/256/224/JPEG-q90 contract.
-      Seven focused input tests pass; commit before production standardization.
+      Seven focused input tests pass. Production realizes 26,682/26,682 rows / 568,959,891 logical
+      bytes, detailed receipt SHA `400a990d...6af8`; commit before feature work.
+      Trainer implementation reuses each frozen 22,688-row feature archive, extracts only 3,994
+      iPhone embeddings, merges by record id and refits the unchanged class-weighted C grid/FP
+      budgets. Six focused head/merge tests pass. Run DINO then CF separately. If both pass, select
+      higher CALIBRATION AUC; exact AUC tie -> smaller selected C -> DINO lexical tie. Freeze that
+      choice before opening IPN/owner model scores; if neither passes, stop.
 - [ ] Score the frozen R1b candidate once on all IPN-NFID devices and the consumed owner gallery.
       Require <=20% worst-device IPN FP and <=20% owner-gallery FP while preserving >=90% modern-AI
       recall before any locked AI arm or serving replacement. Failure returns to data/objective

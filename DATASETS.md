@@ -644,3 +644,9 @@ appends only 3,994 eligible iPhone parents. Total is 26,682: 11,344 AI / 15,338 
 complete devices / 3,195 rows; CALIBRATION uses iPhone14_4 + iPhone14_8 / 799 rows. Detailed
 manifest is 15,909,170 B / SHA `16deb276...750f`; records SHA `263af46b...5611`; compact evidence
 is `evidence/e32_r1b_role_manifest.json`. IPN/owner remain absent.
+
+All 3,994 appended iPhone parents were standardized through the identical R0 derived-input route;
+the 22,688 old derived bytes were reused. The complete 26,682-row receipt represents 568,959,891
+logical JPEG bytes; detailed receipt is 10,631,702 B / SHA `400a990d...6af8`, records SHA
+`3e51f87a...1395`; compact evidence is `evidence/e32_r1b_input_receipt.json`. This removes the
+observed MPO/JPEG container difference before representation extraction.

@@ -1,0 +1,43 @@
+{
+  "appended_records": 3994,
+  "boundary": "Only TRAIN/CALIBRATION bytes realized; IPN and owner gallery remain unread by preprocessing.",
+  "class_counts": {
+    "ai": 11344,
+    "real": 15338
+  },
+  "controlled_change": "reuse all R0 derived bytes; append iPhone14 through identical transform",
+  "detailed_report_bytes": 10631702,
+  "detailed_report_external_path": "r1b_input_receipt.json",
+  "detailed_report_sha256": "400a990d89f569ededa4b72ad33a3fafce63285caa61e5ae429d4f9e3bb26af8",
+  "experiment": "E32/C4-R1b-standardized-input-extension",
+  "manifest_sha256": "16deb276ef7b1c74fdddb4fdbc450b07e67e8beb693b1bdeded546c1e434750f",
+  "preprocessing": {
+    "crop": "center-224",
+    "encoding": "JPEG quality=90 subsampling=0 optimize=false progressive=false",
+    "mode": "RGB",
+    "orientation": "PIL ImageOps.exif_transpose",
+    "resize_short_side": 256
+  },
+  "r0_receipt_sha256": "2255b123a24b2cd7cb371878a134f39f7ef352ed437dd57494c55280e01f5199",
+  "record_count": 26682,
+  "records_sha256": "3e51f87a1e5cf882f4e737584b94a3f4bb5dca62145914bf623bf9d2f1261395",
+  "role_counts": {
+    "CALIBRATION": 5333,
+    "TRAIN": 21349
+  },
+  "schema_version": 1,
+  "source_counts": {
+    "communityforensics-ai-local": 2226,
+    "csafe-mcsidb-iphone14": 3994,
+    "csafe-mcsidb-s21": 3996,
+    "flux2-klein-9b": 2232,
+    "forchheim-fodb": 3851,
+    "gpt-image-1": 2227,
+    "nano-banana-local": 2227,
+    "nano-banana-pro-ash-local": 200,
+    "qwen-image-2512": 2232,
+    "vision-base-native": 3497
+  },
+  "state": "r1b_input_realization_complete",
+  "total_input_bytes": 568959891
+}

@@ -2887,3 +2887,13 @@ The R1b input extension was implemented before derived bytes. It binds the R1b m
 receipt, reuses all 22,688 old standardized files byte-for-byte and materializes only the 3,994 new
 iPhone rows through the identical EXIF-transpose/RGB/short-256/center-224/JPEG-q90-4:4:4 function.
 Seven focused input tests pass; IPN/owner paths are absent.
+
+Production standardization completed all 26,682 inputs / 568,959,891 logical bytes; detailed
+receipt SHA is `400a990d...6af8`, record-list SHA `3e51f87a...1395`. Every old standardized row was
+reused and only iPhone rows were added, neutralizing MPO versus JPEG before the encoder.
+
+The controlled trainer was implemented next. It verifies and reuses the frozen 22,688-row DINO and
+CF feature archives, extracts only 3,994 iPhone embeddings, merges strictly by record id and runs
+the unchanged class-weighted C grid plus authentic-source FP budgets. Six focused merge/head tests
+pass. Before results, external-arm selection was fixed: among passing arms choose higher CAL AUC;
+exact tie chooses smaller selected C, then DINO. IPN/owner model scores remain closed.
