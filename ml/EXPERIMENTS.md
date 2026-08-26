@@ -2557,3 +2557,13 @@ above are transcription errors; production range planning binds the filesystem v
 - Zero protected/passed-peer overlap and zero cross-scene perceptual collision.
 - Detailed report 642,208 B / SHA `f5827dce...243b`.
 - **Decision:** freeze as a clean absent-source DEVELOPMENT gate; do not score before R1b freezes.
+
+### C4-R1b iPhone 14 transfer and archive-method preregistration
+
+- Four ranges plus preserved prefix assembled to 20,428,338,922 B; published MD5
+  `dfc01c89...946c` passed before atomic promotion and temporary cleanup.
+- Central directory reports 7,996 JPEGs / ten devices: 4,000 blank and 3,996 natural across four
+  lenses. This is structural metadata, not yet a CRC/decode pass.
+- Implement receipt-bound traversal/symlink/encryption/CRC/expansion inventory, then freeze only
+  natural rows from inventory metadata and extract atomically with size/CRC/SHA checks.
+- **Decision:** commit before reading any ZIP member payload.

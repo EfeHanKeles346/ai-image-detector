@@ -433,6 +433,10 @@ small manifests, aggregate evidence, code and documentation.
       audit method before opening IPN pixels. Production audit passes: 960 RGB JPEGs, all with EXIF,
       960 unique SHA, 80 shared scene groups and zero protected/peer/cross-scene collision. Preserve
       detailed SHA `f5827dce...243b`; do not score until R1b artifact freeze.
+      iPhone 14 transfer also passes exact size+MD5. Central-directory-only inspection finds the
+      expected CSAFE shape: 7,996 JPEGs, ten physical devices, 4,000 blank and 3,996 natural rows
+      across front/telephoto/ultra/wide. Precommit a receipt-bound CRC/path/symlink/encryption/
+      expansion inventory, natural-only freezer and atomic extractor before reading member pixels.
 - [x] Preserve the first iPhone 14 single-stream stop at 92,274,688 bytes and precommit four-range
       recovery before changing transfer code. Split only the exact remaining interval, require HTTP
       206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary

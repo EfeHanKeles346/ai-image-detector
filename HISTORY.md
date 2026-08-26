@@ -2812,3 +2812,10 @@ JPEG with EXIF and had a unique SHA; the dataset contains 80 shared scene groups
 portrait) across twelve devices. There is zero protected E30 overlap, passed E32 peer overlap or
 cross-scene perceptual collision. Detailed report SHA is `f5827dce...243b`. IPN is now a clean,
 source-held-out DEVELOPMENT gate and stays unscored until an R1b artifact is frozen.
+
+CSAFE iPhone 14 range recovery also completed: 20,428,338,922 bytes and published MD5
+`dfc01c89...946c` passed before promotion; the 92,274,688-byte prefix and four range files were
+removed only afterward. Central-directory-only inspection (no member pixel decode) exposes 7,996
+JPEGs across ten device roots: 4,000 blank and 3,996 natural, with front/telephoto/ultra/wide
+lenses. A receipt-bound safe inventory, natural-only freezer and atomic extractor were
+precommitted before member bytes are opened.
