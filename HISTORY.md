@@ -2456,3 +2456,13 @@ exact role-free extraction receipt, derives the same camera-parent unit IDs as r
 the receipt SHA alongside AI/REAL selections and demands exact row equality with the FODB
 schema-v2 audit. Thirteen focused overlay/realization tests pass. This method commit does not yet
 replace the 18,500-row overlay evidence.
+
+The independent 22,351-row global overlay rerun passed. Adding all 3,851 FODB parents created no
+new exact/perceptual component and no REAL/AI ambiguity; the 59 known components and all AI
+eligible keys therefore remain unchanged. AI stays 14,786 with maximum source share 19.998647%.
+REAL is now 7,348 role-free parents: 3,497 VISION plus all 3,851 FODB.
+
+The new detailed overlay is 1,179,329 B / SHA `510e94eb...fc3b`, bound additionally to FODB
+extraction SHA `a1626b0b...8b05` and audit SHA `dcbf8b55...fd11`. Compact evidence at
+`evidence/e32_eligibility_overlay.json` supersedes the 18,500-row aggregate while HISTORY retains
+both. The C1 acceptance floor is not yet met; CSAFE remains necessary for >=10,000 REAL parents.

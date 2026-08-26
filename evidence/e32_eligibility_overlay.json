@@ -12,6 +12,11 @@
       "sha256": "53c0793b5832181056b9588043d6562eb2ac9ef819c821a202dadc5c4d661451",
       "state": "source_realization_rejected_no_role_assignment"
     },
+    "forchheim-fodb": {
+      "bytes": 2588737,
+      "sha256": "dcbf8b55e8ba8e16c9d9a3641944128413c9bf191ce448b5f0633d0526f0fd11",
+      "state": "source_realization_passed_candidate_only"
+    },
     "gpt-image-1": {
       "bytes": 2239691,
       "sha256": "48945f7fb7fb164ef3d80c7890e60479c132cde32914a4a6b4ea307b5c6073d5",
@@ -44,20 +49,21 @@
     "Same-label duplicates keep a deterministic parent unit; cross-label duplicates lose every affected unit.",
     "Four-variant Qwen and FLUX prompt groups remain indivisible."
   ],
-  "detailed_report_bytes": 913980,
+  "detailed_report_bytes": 1179329,
   "detailed_report_external_path": "eligibility_overlay.json",
-  "detailed_report_sha256": "b6c2101fbf63ee1f9bf41993b48eb126acfdaf661a0581928b4cc081cc2f32e4",
+  "detailed_report_sha256": "510e94eb9afebdf9000470483455a0a7eefde6aa56a1144dac450aed389cfc3b",
   "duplicate_excluded_unit_reason_counts": {
     "same_label_duplicate_noncanonical": 20,
     "within_parent_duplicate": 13
   },
   "experiment": "E32/C2-eligibility-overlay",
   "global_duplicate_row_components": 59,
-  "global_realized_rows": 18500,
-  "real_eligible_rows": 3497,
+  "global_realized_rows": 22351,
+  "real_eligible_rows": 7348,
   "schema_version": 1,
   "selection_sha256": {
     "ai": "3230f0267ca1b9a252ec61d7f94c90bdb820cf8aeec5fce2174ebc5a7ed980b7",
+    "fodb_extraction": "a1626b0b2aeb2579b2657c832a918fa84311909f384b191a3f349e7771198b05",
     "real": "200a7aeb23d9c303d880dff76a08b21e38efe666531a6552ffe4bdd5841eca4d"
   },
   "sources": [
@@ -135,7 +141,7 @@
     },
     {
       "eligible_rows": 3497,
-      "eligible_share": 1.0,
+      "eligible_share": 0.47591181,
       "eligible_units": 3497,
       "exclusion_reason_counts": {
         "same_label_duplicate_noncanonical": 3
@@ -144,6 +150,16 @@
       "selected_rows": 3500,
       "selected_units": 3500,
       "source_id": "vision-base-native"
+    },
+    {
+      "eligible_rows": 3851,
+      "eligible_share": 0.52408819,
+      "eligible_units": 3851,
+      "exclusion_reason_counts": {},
+      "label": "real",
+      "selected_rows": 3851,
+      "selected_units": 3851,
+      "source_id": "forchheim-fodb"
     }
   ],
   "state": "eligibility_frozen_role_free"

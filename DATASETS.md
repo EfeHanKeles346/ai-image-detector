@@ -85,6 +85,12 @@ are not confirmed by pHash, so no perceptual duplicate is removed. Detailed audi
 SHA `dcbf8b55...fd11`; compact evidence is `evidence/e32_forchheim-fodb_realization.json`. Role is
 still candidate-only and later folds must group the 143 shared scenes.
 
+The updated global overlay compares 15,000 AI plus 7,351 REAL selected rows. FODB adds no new
+duplicate component or REAL/AI ambiguity, so AI remains exactly 14,786 and REAL becomes 7,348:
+3,497 VISION + 3,851 FODB. Detailed overlay is 1,179,329 B / SHA `510e94eb...fc3b`; compact evidence
+is `evidence/e32_eligibility_overlay.json`. The >=10,000 REAL floor still requires the selected
+CSAFE complement.
+
 ### Training
 
 | Dataset | Size | Contents | Mode | Why |

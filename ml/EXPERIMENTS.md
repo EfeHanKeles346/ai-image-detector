@@ -2204,3 +2204,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Preserve one parent unit per camera original while carrying scene metadata in the source audit.
 - Verification: 13 focused overlay/realization tests pass; production overlay remains unchanged.
 - **Decision:** commit method, then independently recompute across 22,351 selected rows.
+
+### C2 global overlay with FODB — pass
+
+- 22,351 selected rows compared globally; adding FODB creates zero new duplicate component and zero
+  REAL/AI ambiguity.
+- AI eligible subset remains bit-for-bit 14,786; REAL becomes 7,348 (VISION 3,497 + FODB 3,851).
+- External overlay 1,179,329 B / SHA `510e94eb...fc3b`.
+- **Decision:** freeze role-free result; continue CSAFE acquisition to reach the REAL floor.
