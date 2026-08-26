@@ -2597,3 +2597,15 @@ The detailed manifest's record-list SHA is `568e8e26...d887`; compact evidence i
 `evidence/e32_c3_role_manifest.json`. The manifest remains a parent-role contract, not a feature
 archive or fitted model. It now authorizes a byte-identical preprocessing audit and the R0 frozen
 DINOv2-S screen without opening any protected final.
+
+The first runnable E32 model contract was precommitted before derived inputs or embeddings. Every
+C3 parent will receive one identical EXIF-aware RGB transform: short side 256, center crop 224,
+then JPEG q90/4:4:4. This prevents the classifier API from reading container type, alpha channel,
+native geometry or path, while honestly retaining the possibility of content and earlier codec
+bias. Every output byte must be hashed back to C3.
+
+R0 is the already-cached frozen DINOv2-S final embedding plus a standardized, class-weighted
+logistic head. Only TRAIN fits the head. CALIBRATION chooses C from {0.01, 0.1, 1, 10} by AUC and
+then the lowest threshold meeting <=10% authentic source-macro FP and <=20% worst-source FP. The
+saved artifact must bind model ID, input receipt, feature archive and threshold. This is a
+group-held-out, source-stratified prototype screen—not unseen-source or final evidence.

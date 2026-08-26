@@ -2319,3 +2319,19 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Record-list SHA `568e8e26...d887`; state `train_calibration_manifest_frozen`.
 - **Decision:** freeze roles. Next run identical decoded-RGB preprocessing and the R0 frozen
   DINOv2-S control; threshold selection may read CALIBRATION, not protected final arms.
+
+## 2026-08-26 — E32/C4-R0: runnable DINOv2-S preregistration
+
+- **Input:** C3 parents only; EXIF transpose -> RGB -> short-side 256 -> centered 224 crop -> JPEG
+  q90, 4:4:4 for both labels. Persist/hash one derived view per parent externally.
+- **Representation:** cached `vit_small_patch14_dinov2.lvd142m`, frozen final embedding.
+- **Head:** StandardScaler + class-weighted LogisticRegression fitted on TRAIN. C grid
+  {0.01, 0.1, 1, 10}; CALIBRATION AUC chooses C, smaller value wins a tie.
+- **Threshold:** lowest CALIBRATION threshold with authentic macro FP <=10% and worst-source FP
+  <=20%; report AUC/AP/recalls/balanced accuracy/F1 and source-level FP/FN.
+- **Gate:** AUC >=0.85, current-family macro recall >=60%, weakest sized current family >=40%,
+  authentic macro FP <=10%, worst-source FP <=20%. This screen is source-stratified/group-held-out,
+  not unseen-source final evidence.
+- **Stop:** input/feature hash mismatch, unreadable parent, role count mismatch or accidental
+  DEVELOPMENT/LOCKED access aborts; no silent row loss.
+- **Decision:** commit before implementing input realization or feature fitting.

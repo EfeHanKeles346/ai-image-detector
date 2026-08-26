@@ -320,6 +320,19 @@ small manifests, aggregate evidence, code and documentation.
 
 ### Phase C4 — screen representations before paying for full fine-tuning
 
+- [x] Precommit the first runnable R0 contract before materializing model inputs. Decode every C3
+      parent with EXIF orientation, convert to RGB, resize the short side to 256, center-crop 224
+      and re-encode all classes identically as JPEG quality 90 / 4:4:4 under the external E32
+      model-input root. This removes container, mode, geometry and filename from the model API,
+      though pre-existing compression/content bias remains a limitation. Bind every derived byte
+      and the complete input receipt to C3's detailed-manifest SHA; never read DEVELOPMENT/LOCKED.
+      Extract the cached `vit_small_patch14_dinov2.lvd142m` frozen final embedding, fit only a
+      standardized class-weighted logistic head on TRAIN over C in {0.01, 0.1, 1.0, 10.0}, select
+      C by CALIBRATION AUC with smaller-C tie break, and select the lowest threshold satisfying
+      CALIBRATION authentic macro FP <=10% and worst-source FP <=20%. Report AUC/AP, recall,
+      balanced accuracy, F1 and per-source errors. Save a locally runnable, hash-bound artifact.
+      CALIBRATION is source-stratified but group-held-out; genuinely unseen-source evidence remains
+      reserved for DEVELOPMENT/LOCKED and no final-generalization claim is permitted here.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract.
       - **R1 current-science:** a feasible pinned PE-Core frozen encoder (begin B/16; advance to
