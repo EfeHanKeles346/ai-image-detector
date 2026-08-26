@@ -5,7 +5,181 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active goal — E31 SSD audit, representation ladder and evidence-gated ensemble (2026-08-25)
+## Active goal — E32 in-the-wild data rebuild and Champions League evaluation (2026-08-26)
+
+The product goal remains a genuinely testable binary detector, not a high score on a familiar
+dataset. E31 proved that the label-clean, source-capped DINOv2 candidate can recall current AI
+generators but rank independent authentic photographs backwards: E30 DEVELOPMENT AUC 0.385,
+80.67% current-AI macro recall and 83.63% authentic macro false positives. Recalibration reduced
+AI recall to 0.33%, so the next experiment must change the authentic data distribution and the
+image representation together. It must not reinterpret that failure as a threshold problem.
+
+The user's gallery is excluded from TRAIN and CALIBRATION. Existing gallery scores are historical
+DEVELOPMENT evidence; newly contributed, never-scored gallery content may enter a separately
+sealed owner-real final arm. The attached `/Volumes/LaCie` disk has about 651 GiB free and is the
+only target for third-party image bytes, caches and derived E32 image archives. Git receives only
+small manifests, aggregate evidence, code and documentation.
+
+### Phase C0 — freeze scope, roles and stop/go order before acquisition
+
+- [x] Keep the project label invariant explicit at every boundary: `0 = REAL`, `1 = AI`. Every
+      source declares its raw label names and `raw -> project` mapping; ambiguous numeric labels,
+      changed upstream class names or an undeclared source are hard failures. Never auto-flip a
+      model merely because an external AUC is below 0.5.
+- [x] Preserve all earlier protected roles. E30 MLLM DEVELOPMENT, the scored owner gallery,
+      Julien/Defactify named test sets and Qwen LOCKED FINAL cannot fit rows, weights, crop rules,
+      augmentation, thresholds, model selection or ensemble coefficients. ITW-SM and newly
+      generated API/gallery final rows remain unopened until their exact gate permits scoring.
+- [x] Treat parent content as the indivisible unit. Crops, JPEG/WebP versions, resizes and social
+      derivatives inherit their parent's label, role and group; no derivative may cross a split.
+- [x] Fix the order: source/licence audit -> resumable acquisition -> byte/label/shortcut audit ->
+      frozen TRAIN/CALIBRATION manifest -> low-cost representation screen -> controlled training ->
+      DEVELOPMENT gate -> one locked Champions League final. No model score may select download
+      rows or repair the test after results are known.
+- **Acceptance:** this E32 section is committed before a new dataset byte, E32 manifest, embedding,
+  checkpoint, API-generated image or candidate score exists.
+- **C0 recorded:** the SSD was inspected read-only at 651 GiB free; the existing AI holdings and
+  public source metadata were inventoried without downloading an E32 image. SSAFE/PE-Core,
+  DINOv2/RINE and Hive/EfficientNet-B4 are frozen as comparable representation hypotheses rather
+  than assumed winners. C1 may start only after this plan/history checkpoint is committed.
+
+### Phase C1 — acquire a compact, diverse authentic-photo pool on the SSD
+
+- [ ] Target **10,000–20,000 eligible REAL parents**, nominally about 15,000, across native camera,
+      modern computational-photography and web-photo pipelines. Cap devices/scenes so a repeated
+      burst, camera or source cannot dominate. Prefer the following audited candidates, not a blind
+      union:
+      - VISION native parents: 35 portable devices / 11 brands; social variants remain derived
+        transport evidence rather than additional independent photographs.
+      - Forchheim FODB original parents: 3,851 photos / 143 scenes / 27 devices / 25 models / nine
+        brands. Group all cameras' versions of one scene together; its Facebook, Instagram,
+        Telegram, Twitter and WhatsApp copies remain derivatives.
+      - CSAFE Multi-camera Smartphone Image Database: roughly 50,000 JPEGs / 60 modern phones,
+        CC BY 4.0. It is 123.62 GB in six 17–29 GB model archives, so inspect archive inventories
+        and fetch only the minimum device/model subset needed for modern Apple/Samsung coverage.
+      - A 2,000–3,000 row web/professional-photo complement from a source with per-image provenance
+        and compatible research terms; do not scrape a site whose terms do not permit it.
+- [ ] Keep SOCRatES (9,700 images / 103 phones / 15 makes) conditional because it requires a
+      signed licence agreement, and keep ForensiCam-215K conditional because its only public
+      download is Baidu and its repository exposes no clear dataset licence. Neither may silently
+      become a dependency.
+- [ ] Download through a resumable receipt: pinned URL/revision, declared expected bytes/hash where
+      published, `.partial` state, retry/resume, free-space floor, final hash and explicit target
+      below `/Volumes/LaCie/pixelproof-datasets/e32/`. Never overwrite existing E31 holdings or
+      modify an upstream archive in place.
+- [ ] Decode and inventory every selected parent; record camera/device/model, scene/event group,
+      native/social state, format, dimensions, orientation, EXIF availability, bytes/pixel and
+      licence/provenance. Remove exact and perceptual duplicates against every protected role.
+- **Acceptance:** at least 10,000 eligible REAL parents, at least three independent collections,
+  broad device/brand support, groupable provenance, zero protected overlap and no one source,
+  device or repeated scene capable of defining the REAL class. `DATASETS.md` records exact realized
+  counts, bytes, revisions, terms, selection reason and limitations.
+
+### Phase C2 — build a modern, source-capped AI pool without redownloading blindly
+
+- [ ] Target **10,000–20,000 eligible AI parents**, nominally about 15,000, with at least five
+      verified modern generator families and no family above 20% of the selected pool. Audit the
+      current SSD holdings first: FLUX.1-dev (10,000), Nano Banana (9,457), Nano Banana Pro
+      (registered 1,250 plus a separate bounded holding), GPT-image 4K (about 2,122 physical image
+      files) and the Julien modern mixture. A folder name is not generator provenance.
+- [ ] Add a new public source only for a measured missing generator/semantic cluster. Prefer
+      selective, revision-pinned acquisition; do not download OpenFake's full 3.44 TB. Its
+      `core/test`/Reddit splits and frontier held-out models are test candidates, never TRAIN.
+- [ ] Verify generator version, generation date, prompt/content group, native output status,
+      licence/usage boundary and label direction for every admitted collection. Unknown generator
+      identity may contribute only to a capped `unknown` group and cannot satisfy the five-family
+      requirement.
+- [ ] Match semantic topics across classes before representation training. Measure topic/source,
+      format, geometry, compression and bytes/pixel shortcuts on native and every proposed model
+      input. Apply transport augmentation with the same probability/range to REAL and AI; never
+      make PNG/JPEG, resize or screenshot history a label proxy.
+- **Acceptance:** 10,000–20,000 decontaminated AI parents, five or more verified current families,
+  source caps, topic coverage and zero overlap with E30/Qwen/ITW/API final roles. Native risks and
+  safe model-input conditions are frozen in `DATASETS.md` before training.
+
+### Phase C3 — freeze TRAIN/CALIBRATION and the Champions League test battery
+
+- [ ] Build a balanced parent manifest with source/device/generator/scene-disjoint folds. TRAIN may
+      fit representations and heads; CALIBRATION may select aggregation, abstention and thresholds;
+      neither may receive a row or derivative from DEVELOPMENT or LOCKED FINAL.
+- [ ] Keep tests as separate arms and report source-macro metrics; never pool them into one large
+      accuracy number that lets the largest arm hide a failure:
+      1. **E30 DEVELOPMENT:** already consumed, diagnostic comparison only.
+      2. **Owner-real stress:** the already-scored gallery remains DEVELOPMENT; only new unscored
+         content can form a locked owner-real arm, grouped by event/burst/device.
+      3. **API-current LOCKED:** about 1,000 newly generated parents across at least five current
+         commercial families, using a frozen topic/prompt matrix and balanced provider counts.
+      4. **Unseen-camera/web LOCKED:** authentic devices/sources absent from TRAIN and CALIBRATION.
+      5. **ITW-SM LOCKED EXTERNAL:** untouched 10,000-row social-media benchmark after overlap
+         screening and access approval.
+      6. **Qwen LOCKED FINAL:** retain the existing conditional one-shot scout and its small-cell
+         claim limit.
+- [ ] Produce transport columns from each parent (`native`, standardized JPEG, q90/q75/q50,
+      resize/screenshot-like) but count uncertainty and confidence intervals by parent, not by
+      correlated derivative.
+- **Acceptance:** immutable manifests/hashes and a role-access test prove that candidate code cannot
+  read a locked arm early. Threshold-independent AUC/AP and thresholded AI recall, REAL recall,
+  balanced accuracy, F1, macro/worst-source FP/FN and parent-group bootstrap intervals are fixed.
+
+### Phase C4 — screen representations before paying for full fine-tuning
+
+- [ ] Use the same selected parents, folds and input views for a small representation ladder:
+      - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract.
+      - **R1 current-science:** a feasible pinned PE-Core frozen encoder (begin B/16; advance to
+        L/14 only after memory/latency/licence smoke) plus regularized linear head, inspired by the
+        2026 SSAFE result that curated 10K data can outperform much larger pools.
+      - **R2 low+high-level ViT:** DINOv2-L intermediate-block/RINE-style head over a global view
+        plus texture-aware native crops, testing the ITW-SM finding rather than repeating E31's
+        single upscaled 128 px tile.
+      - **R3 Hive control:** ImageNet-pretrained EfficientNet-B4 under the exact winning crop,
+        augmentation and data contract. Hive's public architecture motivates this ablation; its
+        unknown private recipe and 0.9 threshold are not copied.
+- [ ] For multi-view candidates, compare a fixed small set only: global-only, texture-only and
+      global+texture; mean/top-k aggregation is selected on CALIBRATION. Do not change inference
+      crops after DEVELOPMENT.
+- [ ] Train frozen linear heads first. Permit an adapter or last-block fine-tune only when the
+      frozen representation shows transferable signal; permit full fine-tuning only after a
+      controlled data-sufficiency/overfit gate. A 10–20K pool does not automatically justify
+      end-to-end tuning of a large encoder.
+- [ ] Consider Hive-like auxiliary generator supervision only after the binary candidate passes
+      independently. It is an ablation regularizer, not a product requirement and not an ensemble.
+- **Screen gate:** on untouched source-held-out CALIBRATION, require AUC >=0.85, current-AI macro
+  recall >=60%, weakest sufficiently sized AI family >=40%, authentic macro FP <=10%, worst-source
+  FP <=20% and no transport recall loss above 15 points. Otherwise stop or change the data/input
+  representation; do not tune against DEVELOPMENT.
+
+### Phase C5 — controlled training, complementarity and final decision
+
+- [ ] Advance only the cheapest representation that passes C4 materially over R0. Run at least
+      seeds 42/2024/2026, report source/group intervals and freeze the candidate artifact,
+      preprocessing, threshold, aggregation, abstention and hashes before DEVELOPMENT.
+- [ ] Compare model families individually first. An ensemble may be fitted only from out-of-fold
+      TRAIN/CALIBRATION rows when two independently passing arms make complementary errors. Require
+      at least +5 percentage points macro current-AI recall without worsening either authentic FP
+      budget; otherwise retain the best single arm, as E9/E31 required.
+- [ ] Run the frozen candidate on the DEVELOPMENT arms once. Advancement requires AUC >=0.85,
+      authentic macro FP <=10%, worst authentic source <=20%, AI macro recall >=60%, every sized
+      AI family >=40% and bounded transport loss. A failing candidate cannot consume locked finals.
+- [ ] Run the surviving candidate and frozen baselines (E20, E31 and locally permitted external
+      controls) over the Champions League final under identical bytes. Hive API may be an optional
+      paid external reference on a pre-budgeted subset; its scores never become labels or training
+      targets.
+- **Successful prototype:** on untouched ITW-SM after decontamination, AUC >=0.90, balanced
+  accuracy >=0.85, AI recall >=0.80 and REAL recall >=0.80, with per-platform/source results. A
+  lower result remains a runnable research detector, not a universal authenticity authority.
+
+### Phase C6 — evidence, history and serving boundary
+
+- [ ] After every completed/rejected phase, update `PLAN.md`, append `HISTORY.md`, append the exact
+      hypothesis/config/result to `ml/EXPERIMENTS.md`, update `DATASETS.md` for any data change and
+      make one scoped commit. Preserve failures and superseded labels rather than rewriting them.
+- [ ] Keep third-party/API/personal images, prompts that reveal private content, credentials,
+      embeddings and large score tables out of Git. Commit only aggregate evidence and hashes.
+- [ ] Replace the served E20 contract only if C5 passes its locked gate and all dependency,
+      licence, artifact-integrity, latency and end-to-end tests pass. Otherwise preserve the best
+      new candidate behind a clearly research-only scorer with its measured warning.
+
+## Completed goal — E31 SSD audit, representation ladder and evidence-gated ensemble (2026-08-25)
 
 The immediate product goal is a genuinely runnable detector with useful signal on current
 generators—not another attractive in-distribution score. The attached LaCie disk makes a broader

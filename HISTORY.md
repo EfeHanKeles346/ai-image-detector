@@ -1992,3 +1992,32 @@ not a success example. The output correctly declared `rejected_for_serving_after
 and never claimed authenticity. Model card, README, serving boundary, dataset ledger, experiment
 log, presentation evidence and internship report now tell the same story. E31 ends with a working
 experimental model and a successful safety gate, not a deployable replacement.
+
+### E32/C0 — in-the-wild rebuild is frozen before acquisition
+
+E31's failure was converted into a new data-and-representation experiment before a new image byte
+or model score existed. The attached LaCie disk was inspected read-only and has about 651 GiB free.
+Its existing holdings already include 10,000 FLUX.1-dev, 9,457 Nano Banana, 1,250 registered Nano
+Banana Pro and about 2,122 physical GPT-image files, so E32 will audit and cap these sources rather
+than redownload volume blindly. No E32 dataset directory, API-generated image, manifest, embedding
+or checkpoint exists at this checkpoint.
+
+The authentic pool now targets 10,000–20,000 parents from at least three independent collections.
+VISION, Forchheim FODB and a selective CSAFE subset are the preferred candidates because they
+provide explicit device/scene structure; modern web/professional photos fill semantic rather than
+camera-count coverage. SOCRatES remains conditional on its signed agreement. ForensiCam-215K is not
+admitted while its Baidu-only access and dataset licence remain unresolved. Every realized source,
+revision, byte count, term and limitation must enter `DATASETS.md`; candidate counts in the plan
+are availability evidence, not a claim that data was downloaded.
+
+The model direction is deliberately not “train DINO again.” E32 first compares the rejected E31
+DINO-S contract with a feasible frozen PE-Core linear probe motivated by 2026 SSAFE, a DINOv2-L
+intermediate-block/global-plus-texture candidate motivated by ITW-SM/RINE, and EfficientNet-B4 as
+the narrow public Hive architecture ablation. All see the same frozen data roles and input-view
+ablation. Fine-tuning and ensemble work are earned only by transferable single-arm evidence.
+
+The Champions League test remains a battery, not one pooled accuracy: historical E30 and owner
+gallery DEVELOPMENT, new API-current AI, unseen-camera/web authentic content, untouched ITW-SM and
+conditional Qwen locked arms. Existing gallery content cannot become a fresh final merely by being
+renamed; only never-scored additions may be sealed. `PLAN.md` records exact role, label, leakage,
+metric and stop/go rules. This C0/history checkpoint must be committed before C1 acquisition.
