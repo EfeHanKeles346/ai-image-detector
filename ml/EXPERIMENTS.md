@@ -2637,3 +2637,11 @@ above are transcription errors; production range planning binds the filesystem v
 - No rebalancing/new AI rows; class-weighted heads isolate authentic Apple coverage.
 - Six focused role tests pass; no DEVELOPMENT/LOCKED row is accessible.
 - **Decision:** commit method before production role freeze.
+
+### C4-R1b controlled production roles — frozen
+
+- C3 prefix 22,688/22,688 exact; append iPhone 3,994 -> total 26,682.
+- AI 11,344 / REAL 15,338; TRAIN 21,349 / CALIBRATION 5,333.
+- iPhone: TRAIN 3,195 on eight devices; CAL 799 on iPhone14_4+iPhone14_8; zero device leakage.
+- Detailed SHA `16deb276...750f`; record-list SHA `263af46b...5611`; no protected row.
+- **Decision:** freeze roles before realizing appended standardized inputs.

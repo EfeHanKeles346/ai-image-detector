@@ -1,0 +1,68 @@
+{
+  "c3_manifest_sha256": "0b6656a25762dbb097d18634d4193282e7c03d2e6bbe257f31471434f67b91eb",
+  "c3_records_sha256": "568e8e26caf08636f5f60356f96bd44017d6f0a6e2ffdb4384cdac771f6ed887",
+  "calibration_fraction_target": 0.2,
+  "checks": {
+    "c3_prefix_exact": true,
+    "development_or_locked_rows": 0,
+    "iphone_device_role_overlap_count": 0,
+    "unique_record_ids": true
+  },
+  "class_counts": {
+    "ai": 11344,
+    "real": 15338
+  },
+  "controlled_change": "append eligible iPhone14 REAL only; preserve every C3 record and role",
+  "detailed_report_bytes": 15909170,
+  "detailed_report_external_path": "r1b_role_manifest.json",
+  "detailed_report_sha256": "16deb276ef7b1c74fdddb4fdbc450b07e67e8beb693b1bdeded546c1e434750f",
+  "experiment": "E32/C4-R1b-controlled-role-extension",
+  "iphone_eligibility_sha256": "a71c4a06f02765382779f15458de1decf1f42db1f9a9f7fbc95417c6256a57bf",
+  "iphone_source": {
+    "calibration_devices": [
+      "iPhone14_4",
+      "iPhone14_8"
+    ],
+    "role_counts": {
+      "CALIBRATION": 799,
+      "TRAIN": 3195
+    },
+    "role_group_counts": {
+      "CALIBRATION": 2,
+      "TRAIN": 8
+    },
+    "selected_rows": 3994,
+    "train_devices": [
+      "iPhone14_1",
+      "iPhone14_10",
+      "iPhone14_2",
+      "iPhone14_3",
+      "iPhone14_5",
+      "iPhone14_6",
+      "iPhone14_7",
+      "iPhone14_9"
+    ]
+  },
+  "limitations": [
+    "Class counts are intentionally not balanced; class-weighted heads isolate the effect of added authentic Apple coverage.",
+    "iPhone14 TRAIN/CALIBRATION is device-disjoint but not source-disjoint; IPN remains the absent-source DEVELOPMENT gate."
+  ],
+  "records_sha256": "263af46b76296bf46736539b4028e20aff67d2b8fc9deda6812ab1adeb475611",
+  "role_class_counts": {
+    "CALIBRATION": {
+      "ai": 2263,
+      "real": 3070
+    },
+    "TRAIN": {
+      "ai": 9081,
+      "real": 12268
+    }
+  },
+  "role_counts": {
+    "CALIBRATION": 5333,
+    "TRAIN": 21349
+  },
+  "schema_version": 1,
+  "seed": 20260826,
+  "state": "train_calibration_manifest_frozen"
+}

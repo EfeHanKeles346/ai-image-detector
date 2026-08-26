@@ -637,3 +637,10 @@ parents; source bytes remain intact. Eligible payloads are 3,943 MPO + 51 JPEG. 
 2,364,384 B / SHA `a71c4a06...57bf`; compact evidence is
 `evidence/e32_r1b_csafe_iphone14_eligibility.json`. R1b will neutralize this container imbalance by
 the same derived JPEG contract used for every earlier parent.
+
+R1b's controlled role manifest preserves all 22,688 C3 rows/roles in their original order and
+appends only 3,994 eligible iPhone parents. Total is 26,682: 11,344 AI / 15,338 REAL; TRAIN 21,349
+(AI 9,081 / REAL 12,268) and CALIBRATION 5,333 (AI 2,263 / REAL 3,070). iPhone TRAIN uses eight
+complete devices / 3,195 rows; CALIBRATION uses iPhone14_4 + iPhone14_8 / 799 rows. Detailed
+manifest is 15,909,170 B / SHA `16deb276...750f`; records SHA `263af46b...5611`; compact evidence
+is `evidence/e32_r1b_role_manifest.json`. IPN/owner remain absent.

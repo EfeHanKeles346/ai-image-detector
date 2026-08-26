@@ -2876,3 +2876,9 @@ hard-binds the C3 and iPhone eligibility receipts, preserves every old record an
 splits exactly eight/two complete iPhone devices by the existing stable subset rule, refuses id or
 group leakage and intentionally does not rebalance. Six focused role tests pass; production roles
 remain unopened by this method commit.
+
+Production R1b roles froze 26,682 rows while preserving the 22,688-row C3 prefix exactly. Class
+counts are 11,344 AI / 15,338 REAL; role counts TRAIN 21,349 / CALIBRATION 5,333. iPhone contributes
+3,195 TRAIN rows from eight devices and 799 CALIBRATION rows from iPhone14_4/iPhone14_8, with zero
+device overlap. Detailed manifest SHA is `16deb276...750f`, records SHA `263af46b...5611`. No
+DEVELOPMENT or LOCKED row was included.
