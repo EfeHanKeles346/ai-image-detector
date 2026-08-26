@@ -74,6 +74,20 @@ PYTHONPATH=src .venv/bin/python experiments/e32_ai_inventory.py \
 It counts Parquet rows, loose image/sidecar pairs and ZIP image members, but deliberately refuses
 to infer missing dataset licences or to move protected test sources into training.
 
+The licensed two-family gap selection is also metadata-first:
+
+```bash
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+  PYTHONPATH=src:experiments .venv/bin/python experiments/e32_gap_acquisition.py freeze
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+  PYTHONPATH=src:experiments .venv/bin/python experiments/e32_gap_acquisition.py download \
+  --source qwen-image-2512 --smoke
+```
+
+Run one `--smoke` for both `qwen-image-2512` and `flux2-klein-9b`, verify JPEG XL decode, then
+remove `--smoke` for the frozen bulk. This sequence is a scientific role gate, not merely a download
+optimization.
+
 ## Paths
 
 Both scripts read `PIXELPROOF_DATA_ROOT`; the portable default is `ml/data/`. For an external

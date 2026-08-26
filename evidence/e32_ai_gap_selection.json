@@ -1,0 +1,67 @@
+{
+  "detailed_selection_bytes": 2348956,
+  "detailed_selection_sha256": "b871004f381a16e54d30122004a5ffc81b0cdb4811cbad755e6a6531dc068ecc",
+  "experiment": "E32/C2b",
+  "new_image_bytes_downloaded_by_freeze": 0,
+  "schema_version": 1,
+  "sources": [
+    {
+      "available_generated_images": 3936,
+      "available_prompt_groups": 984,
+      "family": "Qwen Image 2512",
+      "license_tag": "license:cc-by-sa-4.0",
+      "native_format": "JPEG XL",
+      "repo_id": "stablellama/Qwen-Image-2512_samples",
+      "revision": "46849cd67db5d660ef4342e95919fbd87ecb1267",
+      "selected_category_group_counts": {
+        "animal": 63,
+        "architecture": 60,
+        "composition": 40,
+        "diffusiondb": 63,
+        "dynamic": 63,
+        "hand": 63,
+        "human": 63,
+        "landscape": 20,
+        "logo": 63,
+        "object": 63,
+        "style": 63,
+        "text_cn": 63,
+        "text_en": 63
+      },
+      "selected_image_bytes": 7108445821,
+      "selected_images": 3000,
+      "selected_prompt_groups": 750,
+      "source_id": "qwen-image-2512"
+    },
+    {
+      "available_generated_images": 4072,
+      "available_prompt_groups": 1018,
+      "family": "FLUX.2 Klein 9B Base",
+      "license_tag": "license:cc-by-4.0",
+      "native_format": "JPEG XL",
+      "repo_id": "stablellama/FLUX.2-klein-base-9B_samples",
+      "revision": "c07dd3cf504b2c4ca67251e21febf3e8b0a46c36",
+      "selected_category_group_counts": {
+        "animal": 60,
+        "architecture": 59,
+        "composition": 40,
+        "diffusiondb": 59,
+        "diffusiondb_orig": 59,
+        "dynamic": 59,
+        "editing": 40,
+        "hand": 59,
+        "human": 59,
+        "landscape": 20,
+        "logo": 59,
+        "object": 59,
+        "style": 59,
+        "text_en": 59
+      },
+      "selected_image_bytes": 4400537141,
+      "selected_images": 3000,
+      "selected_prompt_groups": 750,
+      "source_id": "flux2-klein-9b"
+    }
+  ],
+  "state": "selection_frozen_decoder_smoke_required_before_bulk"
+}

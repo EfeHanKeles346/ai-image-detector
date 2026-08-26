@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-26T15:15:00+03:00",
+  "experiment": "E32/C2b",
+  "selection_contract": {
+    "prompt_groups_per_source": 750,
+    "images_per_prompt_group": 4,
+    "selected_images_per_source": 3000,
+    "family_cap_at_nominal_15000_pool": 0.2,
+    "selection": "deterministic category round-robin over complete four-image prompt groups"
+  },
+  "sources": [
+    {
+      "id": "qwen-image-2512",
+      "repo_id": "stablellama/Qwen-Image-2512_samples",
+      "revision": "46849cd67db5d660ef4342e95919fbd87ecb1267",
+      "readme_sha256": "34531a2e44aaf7f1ccb49d5d46afefad7cb20f6488179fcecbaa4482269ea436",
+      "license_tag": "license:cc-by-sa-4.0",
+      "family": "Qwen Image 2512",
+      "reported_images": 3936,
+      "reported_prompt_groups": 984,
+      "reported_image_bytes": 9340969314,
+      "native_format": "JPEG XL",
+      "include_prefixes": ["data/"],
+      "exclude_prefixes": [],
+      "reason": "December-2025 Qwen family with explicit full-precision generation recipe and four unfiltered outputs per prompt"
+    },
+    {
+      "id": "flux2-klein-9b",
+      "repo_id": "stablellama/FLUX.2-klein-base-9B_samples",
+      "revision": "c07dd3cf504b2c4ca67251e21febf3e8b0a46c36",
+      "readme_sha256": "e5c0c863c4d9495cf1786dbc92e366ef1b44a6f5804ee7f10f191a42b19c8b4c",
+      "license_tag": "license:cc-by-4.0",
+      "family": "FLUX.2 Klein 9B Base",
+      "reported_images": 4072,
+      "reported_prompt_groups": 1018,
+      "reported_image_bytes_excluding_references": null,
+      "native_format": "JPEG XL",
+      "include_prefixes": ["data/", "data_edit/edited/"],
+      "exclude_prefixes": ["data_edit/reference/"],
+      "reason": "2026 FLUX.2 family with explicit generation recipe; generated edits are retained while non-generated references are excluded"
+    }
+  ],
+  "format_gate": "Download and decode exactly one selected JPEG XL from each source before bulk transfer"
+}

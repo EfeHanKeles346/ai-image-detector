@@ -92,9 +92,14 @@ small manifests, aggregate evidence, code and documentation.
       (registered 1,250 plus a separate bounded holding), GPT Image 1 (1,060 PNG plus 1,061 text
       sidecars—not 2,122 images) and the Julien modern mixture. A folder name is not generator
       provenance.
-- [ ] Add a new public source only for a measured missing generator/semantic cluster. Prefer
-      selective, revision-pinned acquisition; do not download OpenFake's full 3.44 TB. Its
-      `core/test`/Reddit splits and frontier held-out models are test candidates, never TRAIN.
+- [x] Research and freeze only the measured two-family gap, without downloading OpenFake's full
+      3.44 TB or reassigning protected tests. C2b pins Qwen Image 2512 (CC BY-SA 4.0) and FLUX.2
+      Klein 9B Base (CC BY 4.0), selecting 750 complete prompt groups / 3,000 JPEG XL outputs from
+      each by category round-robin. Selected native image bytes are 7,108,445,821 and
+      4,400,537,141 respectively; FLUX editing references are excluded. Detailed selection SHA is
+      `b871004f...8ecc`. Exactly one image per source must pass a decoder smoke before bulk.
+- [ ] Complete the two decoder smokes and only then acquire the frozen 6,000 gap images. OpenFake
+      `core/test`/Reddit splits and frontier held-out models remain test candidates, never TRAIN.
 - [ ] Verify generator version, generation date, prompt/content group, native output status,
       licence/usage boundary and label direction for every admitted collection. Unknown generator
       identity may contribute only to a capped `unknown` group and cannot satisfy the five-family

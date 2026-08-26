@@ -1885,3 +1885,16 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   editing 127,835 remain conditional because dataset licence/provenance/count contracts fail.
 - **Decision:** C2 pool freeze stops at a two-family gap. Research two licensed modern families;
   protected test sets cannot be reassigned and ambiguous sources cannot be counted.
+
+## 2026-08-26 — E32/C2b: licensed modern-family gap freeze
+
+- **Hypothesis:** Qwen Image 2512 and FLUX.2 Klein 9B can close C2a's two-family gap with explicit
+  provenance and licensing, but selection must cap each family and keep prompt variants grouped.
+- **Sources:** pinned `46849cd…` Qwen / CC BY-SA 4.0 and `c07dd3c…` FLUX.2 / CC BY 4.0. Upstream
+  counts reproduce 3,936/984 and 4,072/1,018 generated images/prompt groups; 160 FLUX reference
+  inputs are excluded.
+- **Selection:** category round-robin, 750 complete prompt groups × four = 3,000 images per source;
+  7,108,445,821 Qwen + 4,400,537,141 FLUX native JXL bytes. Detailed SHA `b871004f...8ecc`.
+- **Result:** gap selection is frozen with zero image bytes and five focused tests passing.
+- **Decision:** run one JXL decoder smoke per source. Bulk download is forbidden until both pass;
+  prompt groups remain indivisible and Qwen LOCKED FINAL remains untouched.

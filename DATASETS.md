@@ -250,6 +250,25 @@ Pro. Therefore C2 cannot freeze its 10–20K parent manifest yet. At least two a
 explicitly generated modern families must be researched; protected AIGC, Julien, MLLM and Qwen
 test sources cannot be reassigned to fill the training gap.
 
+#### E32/C2b licensed gap-source selection — frozen, decoder smoke pending
+
+The two-family gap was filled by source research, not by relaxing C2a's rules. Exact selections
+stay at external `e32/ai_gap_selection.json` (2,348,956 B; SHA-256
+`b871004f381a16e54d30122004a5ffc81b0cdb4811cbad755e6a6531dc068ecc`); compact evidence is
+`evidence/e32_ai_gap_selection.json`. Freeze downloaded zero image bytes.
+
+| pinned source | available upstream | frozen selection | why / boundary |
+|---|---:|---:|---|
+| `stablellama/Qwen-Image-2512_samples@46849cd…` | 3,936 JPEG XL / 984 four-output prompt groups | 750 groups / 3,000 images / 7,108,445,821 B | CC BY-SA 4.0; explicit bf16 Qwen Image 2512 recipe; separate TRAIN/CALIBRATION candidate, not the Qwen Image 2 Pro locked final |
+| `stablellama/FLUX.2-klein-base-9B_samples@c07dd3c…` | 4,072 generated JPEG XL / 1,018 groups | 750 groups / 3,000 images / 4,400,537,141 B | CC BY 4.0; explicit FLUX.2 Klein 9B recipe; 160 non-generated editing references excluded |
+
+Category round-robin prevents alphabetic selection from filling the cap with one subject. All four
+unfiltered variations of a selected prompt remain one future split group. The native format is not
+yet supported by Pillow in the project environment, although macOS reports JPEG XL support through
+`sips`; therefore exactly one selected image from each source must decode before the 11.51 GB bulk
+transfer is allowed. A decoder failure rejects the transfer rather than silently converting the
+complete dataset or changing the input contract.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

@@ -2074,3 +2074,23 @@ MLLMGenSet and Qwen retain their protected test roles. Compact evidence
 `evidence/e32_ai_inventory.json` records every revision, physical byte/count and decision. The next
 C2 action is to find at least two licensed, explicitly sourced modern families—not to download
 more volume from ambiguous holdings.
+
+### E32/C2b — the two-family gap is filled on paper, with a decoder gate before bytes
+
+Source research selected Qwen Image 2512 and FLUX.2 Klein 9B Base instead of weakening C2a's
+licence/provenance rules. Their pinned cards declare CC BY-SA 4.0 and CC BY 4.0 respectively and
+describe the exact generation settings. Qwen exposes 3,936 outputs across 984 four-variation
+prompt groups; FLUX exposes 4,072 generated outputs across 1,018 groups. FLUX's 160 reference
+inputs are explicitly non-generated and excluded.
+
+For each source, deterministic category round-robin froze 750 whole prompt groups / 3,000 images.
+Qwen contributes 7,108,445,821 selected image bytes and FLUX 4,400,537,141. All four variants of a
+prompt remain indivisible for future splitting. Detailed receipt SHA is
+`b871004f381a16e54d30122004a5ffc81b0cdb4811cbad755e6a6531dc068ecc`; no image byte was fetched
+by freeze. These are separate training candidates and do not open or relabel Qwen LOCKED FINAL.
+
+Both sources use JPEG XL, which the current Pillow build does not register. macOS `sips` advertises
+native JPEG XL support, but availability is not assumed to equal a successful model decode. The
+bulk 11.51 GB selection is blocked until exactly one frozen JXL per source downloads and decodes.
+Five focused tests pin complete four-image grouping, balanced category selection, reference
+rejection and destination containment.
