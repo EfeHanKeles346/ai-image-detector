@@ -88,6 +88,9 @@ small manifests, aggregate evidence, code and documentation.
       then recompute exact/perceptual components across 15,000 AI + 7,351 REAL selected rows.
       Preserve scene parent metadata, exclude both sides of any REAL/AI ambiguity, and do not alter
       the already-frozen AI source-cap selection unless a new global duplicate requires exclusion.
+- [x] Implement and test the FODB overlay input binding before production rerun. Require the exact
+      extraction-receipt SHA/state and exact equality with the FODB schema-v2 audit; 13 focused
+      overlay/realization tests pass.
 - [x] Implement the FODB role-free realization command before extraction. It binds the extraction
       receipt, rechecks byte count and SHA, decodes every original, records camera/device/scene and
       native state, and applies the shared protected/duplicate gate. Sixteen focused tests pass.

@@ -2450,3 +2450,9 @@ all 3,851 FODB rows against the existing 15,000 AI plus 3,500 VISION rows using 
 SHA/dHash+pHash rule. Scene metadata remains available for later group-disjoint folds. Any REAL/AI
 component loses both sides; absent a new collision, the already-frozen AI source-cap subset must
 remain identical. This planning checkpoint changes no overlay.
+
+The FODB overlay extension was implemented before reopening production receipts. It requires the
+exact role-free extraction receipt, derives the same camera-parent unit IDs as realization, binds
+the receipt SHA alongside AI/REAL selections and demands exact row equality with the FODB
+schema-v2 audit. Thirteen focused overlay/realization tests pass. This method commit does not yet
+replace the 18,500-row overlay evidence.

@@ -10,7 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 from collections import Counter, defaultdict
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any, Iterable, Mapping, Sequence
 
 import e32_ai_pool_selection as pool_selection
@@ -33,7 +33,7 @@ AI_SOURCE_IDS = (
     "nano-banana-pro-ash-local",
     "communityforensics-ai-local",
 )
-REAL_SOURCE_IDS = ("vision-base-native",)
+REAL_SOURCE_IDS = ("vision-base-native", "forchheim-fodb")
 ALLOWED_AUDIT_FAILURES = {
     "within_source_exact_duplicates",
     "within_source_confirmed_perceptual_duplicates",
@@ -177,8 +177,12 @@ def _stable_unit_order(selection_sha256: str, source_id: str, unit_id: str) -> t
 def _selection_records() -> tuple[list[dict[str, Any]], dict[str, str], dict[str, bytes]]:
     ai_raw = pool_selection.DETAILED_SELECTION.read_bytes()
     real_raw = real_acquisition.DETAILED_SELECTION.read_bytes()
+    fodb_raw = (OUTPUT_ROOT / "fodb_orig_extraction.json").read_bytes()
     ai = json.loads(ai_raw)
     real = json.loads(real_raw)
+    fodb = json.loads(fodb_raw)
+    if fodb.get("state") != "orig_extraction_complete_role_free":
+        raise ValueError("FODB extraction receipt has unexpected state")
     records: list[dict[str, Any]] = []
     for source_id in AI_SOURCE_IDS:
         source = next(item for item in ai["sources"] if item["source_id"] == source_id)
@@ -192,6 +196,18 @@ def _selection_records() -> tuple[list[dict[str, Any]], dict[str, str], dict[str
                 }
             )
     for source_id in REAL_SOURCE_IDS:
+        if source_id == "forchheim-fodb":
+            for row in fodb["records"]:
+                key = str(row["source_key"])
+                records.append(
+                    {
+                        "source_id": source_id,
+                        "source_key": key,
+                        "unit_id": f"fodb:{row['camera_pipeline']}:{PurePosixPath(key).stem}",
+                        "label": "real",
+                    }
+                )
+            continue
         source = next(item for item in real["sources"] if item["source_id"] == source_id)
         for row in source["assets"]:
             key = str(row["source_key"])
@@ -203,8 +219,12 @@ def _selection_records() -> tuple[list[dict[str, Any]], dict[str, str], dict[str
                     "label": "real",
                 }
             )
-    hashes = {"ai": _sha256(ai_raw), "real": _sha256(real_raw)}
-    return records, hashes, {"ai": ai_raw, "real": real_raw}
+    hashes = {
+        "ai": _sha256(ai_raw),
+        "real": _sha256(real_raw),
+        "fodb_extraction": _sha256(fodb_raw),
+    }
+    return records, hashes, {"ai": ai_raw, "real": real_raw, "fodb_extraction": fodb_raw}
 
 
 def freeze_overlay() -> dict[str, Any]:

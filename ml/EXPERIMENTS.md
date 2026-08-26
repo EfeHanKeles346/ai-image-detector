@@ -2197,3 +2197,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Zero protected or passed-peer overlap.
 - External audit 2,588,737 B / SHA `dcbf8b55...fd11`.
 - **Decision:** pass as `candidate_only`; freeze roles only with scene/device-disjoint grouping.
+
+### C2 FODB global-overlay extension checkpoint
+
+- Bind FODB extraction receipt SHA/state and require exact equality with its schema-v2 audit.
+- Preserve one parent unit per camera original while carrying scene metadata in the source audit.
+- Verification: 13 focused overlay/realization tests pass; production overlay remains unchanged.
+- **Decision:** commit method, then independently recompute across 22,351 selected rows.
