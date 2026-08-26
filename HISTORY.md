@@ -2443,3 +2443,10 @@ reason to inflate or delete parents.
 Detailed external audit is 2,588,737 B / SHA `dcbf8b55...fd11`; compact evidence is
 `evidence/e32_forchheim-fodb_realization.json`. FODB passes only as
 `source_realization_passed_candidate_only`; scene/device-disjoint role freezing remains pending.
+
+Before admitting FODB to the role-free combined pool, the global overlay extension was
+precommitted. It will bind the original extraction receipt as a third selection input and compare
+all 3,851 FODB rows against the existing 15,000 AI plus 3,500 VISION rows using the unchanged
+SHA/dHash+pHash rule. Scene metadata remains available for later group-disjoint folds. Any REAL/AI
+component loses both sides; absent a new collision, the already-frozen AI source-cap subset must
+remain identical. This planning checkpoint changes no overlay.

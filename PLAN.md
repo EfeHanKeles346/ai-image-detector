@@ -84,6 +84,10 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Pass FODB full realization: 3,851/3,851 RGB JPEG with EXIF, 3,851 unique SHA, zero confirmed
       perceptual duplicate and zero protected/passed-peer overlap. Preserve seven equal-dHash
       candidate pairs as nonduplicates under pHash; retain all rows as role-free candidates.
+- [ ] Extend the committed global eligibility overlay with the extraction-bound 3,851 FODB rows,
+      then recompute exact/perceptual components across 15,000 AI + 7,351 REAL selected rows.
+      Preserve scene parent metadata, exclude both sides of any REAL/AI ambiguity, and do not alter
+      the already-frozen AI source-cap selection unless a new global duplicate requires exclusion.
 - [x] Implement the FODB role-free realization command before extraction. It binds the extraction
       receipt, rechecks byte count and SHA, decodes every original, records camera/device/scene and
       native state, and applies the shared protected/duplicate gate. Sixteen focused tests pass.
