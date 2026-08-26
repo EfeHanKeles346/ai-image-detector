@@ -2160,3 +2160,19 @@ the three authorized transfers saturated the mobile link. Rather than infer file
 local first 1,060 pairs dictate selection, the command requires the exact upstream revision,
 CC-BY-4.0 tag and 4,000 complete PNG/TXT pairs before selecting 3,000. Twenty-six E32 tests pass,
 including input-order invariance, model-spread selection and GPT local-availability independence.
+
+### E32 acquisition pause — mobile link stopped without discarding bytes
+
+The user reported that internet access was ending, so all three active transfers were stopped
+before starting another source. Thread-pool shutdown required three interrupt signals for VISION
+and Qwen; FLUX stopped on the first. The tracebacks were operator interrupts during executor
+shutdown, not decode or data-integrity failures. A process audit afterwards found no remaining E32
+Python downloader or curl process.
+
+The preserved checkpoint contains 1,715 completed VISION files / 5,096,745,086 bytes, 1,891
+completed Qwen image-or-prompt assets / 2,367,125,910 bytes, and 2,096 completed FLUX
+image-or-prompt assets / 1,577,354,843 bytes. Total completed payload is 9,041,225,839 bytes. Eleven
+VISION, five Qwen and two FLUX `.partial` files remain intentionally in place. No file was deleted,
+no source was claimed complete, no realization audit was run and no model role or score changed;
+the existing commands will reuse completed files and resume these partials when connectivity
+returns.
