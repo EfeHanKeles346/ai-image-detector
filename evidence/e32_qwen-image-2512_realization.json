@@ -1,0 +1,75 @@
+{
+  "boundary": "A passing source is only an eligible candidate. This report assigns no TRAIN, CALIBRATION, DEVELOPMENT or LOCKED FINAL role.",
+  "category_counts": {
+    "animal": 252,
+    "architecture": 240,
+    "composition": 160,
+    "diffusiondb": 252,
+    "dynamic": 252,
+    "hand": 252,
+    "human": 252,
+    "landscape": 80,
+    "logo": 252,
+    "object": 252,
+    "style": 252,
+    "text_cn": 252,
+    "text_en": 252
+  },
+  "counts": {
+    "failures": 2,
+    "passed_peer_dhash_overlaps": 0,
+    "passed_peer_exact_overlaps": 0,
+    "protected_dhash_overlaps": 0,
+    "protected_exact_overlaps": 0,
+    "unique_dhash": 2991,
+    "unique_phash": 2990,
+    "unique_sha256": 2992,
+    "within_source_confirmed_perceptual_duplicate_groups": 9,
+    "within_source_dhash_candidate_groups": 9,
+    "within_source_exact_duplicate_groups": 8
+  },
+  "detailed_report_bytes": 2020166,
+  "detailed_report_external_path": "audits/qwen-image-2512.json",
+  "detailed_report_sha256": "fbdc34d47239cedddd3947b2615b8597bbab126c616a37f0d02378ba87d5ad57",
+  "exif_present": 0,
+  "expected_images": 3000,
+  "expected_prompt_groups": 750,
+  "experiment": "E32/C1-C2-source-realization",
+  "extension_matches_decoded_format": 0,
+  "failure_examples": [
+    {
+      "count": "8",
+      "reason": "within_source_exact_duplicates"
+    },
+    {
+      "count": "9",
+      "reason": "within_source_confirmed_perceptual_duplicates"
+    }
+  ],
+  "failure_reason_counts": {
+    "within_source_confirmed_perceptual_duplicates": 1,
+    "within_source_exact_duplicates": 1
+  },
+  "family": "Qwen Image 2512",
+  "format_counts": {
+    "PNG": 3000
+  },
+  "kind": "ai",
+  "license_tag": "license:cc-by-sa-4.0",
+  "mode_counts": {
+    "RGB": 3000
+  },
+  "protected_scope": {
+    "e30_dhashes": 382,
+    "e30_exact_hashes": 980,
+    "e30_manifest_files": 4,
+    "passed_peer_audit_files": 2
+  },
+  "realized_images": 3000,
+  "realized_prompt_groups": 750,
+  "revision": "46849cd67db5d660ef4342e95919fbd87ecb1267",
+  "schema_version": 2,
+  "selection_sha256": "e9c3d3dad2ceb245b157f6e851e142128573726fe8b963d1811dfdaac4ceaf7a",
+  "source_id": "qwen-image-2512",
+  "state": "source_realization_rejected_no_role_assignment"
+}

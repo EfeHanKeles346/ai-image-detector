@@ -2034,3 +2034,14 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   24–32 prevent false rejection under the precommitted <=5 rule.
 - External receipt 1,767,170 B / SHA `8cb04e52...fe2f`; compact evidence committed.
 - **Decision:** Nano passes as `candidate_only`; no model role is assigned.
+
+### C2c Qwen full realization — reject intact source, mechanical repair required
+
+- 3,000/3,000 RGB PNG and 750/750 prompt groups decode; zero protected or passed-peer overlap.
+- Eight exact duplicate groups: all four variants of `composition_00038` duplicate
+  `architecture_00058`, and `composition_00039` duplicates `architecture_00059`.
+- One additional confirmed pair exists within `style_00053` variants 1/2.
+- Result: 2,992 unique SHA, 2,990 unique pHash; external receipt 2,020,166 B / SHA
+  `fbdc34d4...ad57`.
+- **Decision:** preserve rejection. Future eligibility overlay drops the two composition groups and
+  entire style group (12 rows) and may only trim—not add—rows to restore source caps.

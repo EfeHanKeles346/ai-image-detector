@@ -325,6 +325,14 @@ overlap. One five-image dHash collision bucket is retained in evidence but all p
 distances are 24–32, so it is not a near-duplicate group. Detailed receipt is 1,767,170 B / SHA
 `8cb04e52...fe2f`; compact evidence is `evidence/e32_nano-banana-local_realization.json`.
 
+Qwen's frozen 3,000-output source does **not** pass intact. It decodes fully with zero protected or
+peer overlap, but two composition prompt groups duplicate two architecture groups across all four
+variants (eight exact duplicate pairs), and one style prompt group contains a confirmed
+near-duplicate pair. The source has 2,992 unique SHA and 2,990 unique pHash. Detailed rejected
+receipt is 2,020,166 B / SHA `fbdc34d4...ad57`; compact evidence is
+`evidence/e32_qwen-image-2512_realization.json`. A later immutable-selection eligibility overlay
+must drop all three affected prompt groups as units before any TRAIN/CAL role.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

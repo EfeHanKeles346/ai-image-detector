@@ -2256,3 +2256,18 @@ five-row equal-dHash bucket remains visible as one candidate collision rather th
 from evidence. Detailed external receipt is 1,767,170 bytes with SHA-256 `8cb04e52...fe2f`;
 compact evidence is `evidence/e32_nano-banana-local_realization.json`. Nano is now a role-free
 candidate, not TRAIN/CALIBRATION.
+
+Qwen's first complete source realization was then rejected for genuine duplicate content. All
+3,000/3,000 selected outputs and 750 prompt groups decoded as RGB PNG, with zero protected-E30 or
+passed-E32-peer overlap. However, `composition_00038` duplicates all four
+`architecture_00058` variants byte-for-byte and `composition_00039` duplicates all four
+`architecture_00059` variants. Separately, variants 1 and 2 of `style_00053` are confirmed
+perceptual duplicates. Totals are 2,992 unique SHA-256, 2,990 unique pHash, eight exact duplicate
+groups and nine confirmed perceptual groups.
+
+The rejected receipt is preserved rather than repaired in place: external detail is 2,020,166 B /
+SHA `fbdc34d4...ad57`, with compact `evidence/e32_qwen-image-2512_realization.json`. Parent-group
+integrity means the later eligibility overlay must remove the two redundant composition groups and
+the affected style group in full—12 rows—not individual convenient variants. It may also trim
+other top sources deterministically to retain the <=20% cap, but it cannot add post-audit
+replacement rows or change the immutable 15K selection.

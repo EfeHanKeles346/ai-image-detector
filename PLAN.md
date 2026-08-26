@@ -158,6 +158,14 @@ small manifests, aggregate evidence, code and documentation.
       SHA-256 and pHash, zero exact/confirmed-perceptual duplicate and zero protected/passed-peer
       overlap. Preserve the five-row dHash candidate collision in evidence; it is not a confirmed
       duplicate because pairwise pHash distances are 24–32.
+- [x] Preserve the first full Qwen realization as rejected: 3,000/3,000 decode and zero
+      protected/peer overlap, but eight exact duplicate pairs link two composition groups to two
+      architecture groups, and one style group contains a confirmed near-duplicate pair. Do not
+      rewrite the receipt or cherry-pick individual variants.
+- [ ] Precommit a pool eligibility overlay that removes the three affected Qwen prompt groups as
+      indivisible units and applies deterministic source-cap trimming to the other 3,000-row arms.
+      The overlay must remain bound to the immutable 15K selection and every realization receipt;
+      it may exclude audited failures but cannot add an unselected replacement after byte access.
 - [ ] Match semantic topics across classes before representation training. Measure topic/source,
       format, geometry, compression and bytes/pixel shortcuts on native and every proposed model
       input. Apply transport augmentation with the same probability/range to REAL and AI; never
