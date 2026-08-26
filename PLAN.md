@@ -333,6 +333,10 @@ small manifests, aggregate evidence, code and documentation.
       balanced accuracy, F1 and per-source errors. Save a locally runnable, hash-bound artifact.
       CALIBRATION is source-stratified but group-held-out; genuinely unseen-source evidence remains
       reserved for DEVELOPMENT/LOCKED and no final-generalization claim is permitted here.
+- [x] Implement and test the resumable standardized-input realizer and receipt-bound R0 trainer
+      before production bytes. The realizer rechecks each original SHA and refuses changed derived
+      bytes; the trainer rechecks all 22,688 input hashes, caches record-aligned features and saves
+      a hash-bound artifact. Thirteen focused input/train/role tests pass.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract.
       - **R1 current-science:** a feasible pinned PE-Core frozen encoder (begin B/16; advance to

@@ -2335,3 +2335,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - **Stop:** input/feature hash mismatch, unreadable parent, role count mismatch or accidental
   DEVELOPMENT/LOCKED access aborts; no silent row loss.
 - **Decision:** commit before implementing input realization or feature fitting.
+
+### C4-R0 implementation checkpoint
+
+- The resumable input realizer resolves loose and Parquet-backed rows, rechecks original SHA,
+  applies the identical 224-pixel JPEG contract and atomically records every derived SHA.
+- The trainer binds the complete input receipt, verifies each file again, extracts record-aligned
+  frozen DINOv2-S embeddings, evaluates the fixed C grid and emits a hash-bound joblib artifact.
+- Verification: 13 focused role/input/trainer tests pass, including fixed RGB/geometry, deterministic
+  transform, group selection and per-authentic-source threshold budgets.
+- **Decision:** commit method; production input realization is the next separate action.

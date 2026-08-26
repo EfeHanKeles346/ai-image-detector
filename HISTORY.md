@@ -2609,3 +2609,11 @@ logistic head. Only TRAIN fits the head. CALIBRATION chooses C from {0.01, 0.1, 
 then the lowest threshold meeting <=10% authentic source-macro FP and <=20% worst-source FP. The
 saved artifact must bind model ID, input receipt, feature archive and threshold. This is a
 group-held-out, source-stratified prototype screen—not unseen-source or final evidence.
+
+The R0 input realizer and trainer were implemented before production bytes. Loose JPEG/PNG/JXL
+payloads and the two Parquet-backed sources share one decoder and one fixed transform; source SHA
+is rechecked before an atomic derived write. Reruns accept an existing output only when its bytes
+exactly reproduce the transform. The trainer binds the complete receipt, rechecks every derived
+hash, caches record-aligned frozen DINO features, fits only TRAIN and saves a preprocessing/model/
+threshold-bound joblib artifact. Thirteen focused role/input/training tests pass. No production R0
+input, feature or model was created by this method commit.
