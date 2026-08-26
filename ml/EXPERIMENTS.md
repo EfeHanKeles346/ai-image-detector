@@ -1983,3 +1983,15 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Gate binding: 15K record-selection SHA `2a31e792...0ef7`.
 - **Decision:** smoke passes; bulk transfer is permitted, but eligibility still requires all 3,000
   selected pairs and the later byte/decontamination audit.
+
+### C2c local-pool realization implementation checkpoint
+
+- Nano/Community: revalidate selected source fingerprint and read actual embedded bytes at exact
+  frozen Parquet shard/row locators.
+- NBP: require every selected loose image and declared byte count.
+- GPT: resolve each frozen image/prompt pair from original local or isolated E32 storage; reject
+  partial, wrong-size, invalid/empty prompt or decode failure.
+- Shared gate: payload format/geometry, SHA-256, dHash, within-source duplicate, protected E30 and
+  previously passed E32 peer overlap; no role assignment.
+- Verification: 34 E32 tests pass, including a real temporary Parquet byte-decode fixture. No
+  production local-pool row was opened by this implementation checkpoint.

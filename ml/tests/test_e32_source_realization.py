@@ -2,10 +2,13 @@ from __future__ import annotations
 
 import hashlib
 import importlib.util
+import io
 import json
 import sys
 from pathlib import Path
 
+import pyarrow as pa
+import pyarrow.parquet as pq
 from PIL import Image
 
 
@@ -173,3 +176,44 @@ def test_vision_audit_records_device_and_exif_summary(tmp_path, monkeypatch):
     assert report["device_counts"] == {"D01": 1}
     assert report["format_counts"] == {"PNG": 1}
     assert report["records"][0]["exif_present"] is False
+
+
+def test_raw_image_accepts_bytes_and_arrow_style_mapping():
+    buffer = io.BytesIO()
+    Image.new("RGB", (12, 10), (1, 2, 3)).save(buffer, format="PNG")
+    raw = buffer.getvalue()
+    assert e32._raw_image(raw) == raw
+    assert e32._raw_image({"bytes": raw, "path": None}) == raw
+    assert e32._raw_image({"path": "missing"}) is None
+    record = e32._image_record_raw(raw)
+    assert record["decoded_format"] == "PNG"
+    assert (record["width"], record["height"]) == (12, 10)
+
+
+def test_pool_parquet_audit_reads_selected_image_bytes(tmp_path, monkeypatch):
+    folder = tmp_path / "nano"
+    folder.mkdir()
+    buffer = io.BytesIO()
+    Image.new("RGB", (14, 13), (20, 30, 40)).save(buffer, format="PNG")
+    raw = buffer.getvalue()
+    pq.write_table(pa.table({"image": [raw, raw + b"unused"]}), folder / "part.parquet")
+    monkeypatch.setattr(e32, "_pool_spec", lambda source_id: {"dirname": "nano"})
+    source = {
+        "source_id": "nano-banana-local",
+        "records": [
+            {
+                "source_key": "part.parquet:0",
+                "shard": "part.parquet",
+                "row_index": 0,
+                "parent_group": "nano:0",
+                "declared_width": 14,
+                "declared_height": 13,
+                "declared_mode": "RGB",
+                "declared_format": "PNG",
+            }
+        ],
+    }
+    records, failures = e32._audit_pool_parquet(tmp_path, source, image_column="image")
+    assert failures == []
+    assert len(records) == 1
+    assert records[0]["sha256"] == hashlib.sha256(raw).hexdigest()

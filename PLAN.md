@@ -135,6 +135,11 @@ small manifests, aggregate evidence, code and documentation.
       four decodable images, four non-empty matching UTF-8 prompt sidecars, declared byte counts
       and expected dimensions. Missing/partial/mislabeled rows produce a rejected audit and never
       a silently smaller training pool.
+- [x] Extend the same role-free realization gate to the exact 15K local pool before opening its
+      production rows. Nano and Community read only the frozen Parquet row locators and actual
+      embedded image bytes; NBP resolves exact-size loose files; GPT resolves each frozen pair from
+      the original checkout or E32 acquisition root. All paths share full decode, SHA-256, dHash,
+      protected/peer overlap and duplicate rejection; passing still assigns no model role.
 - [ ] Verify generator version, generation date, prompt/content group, native output status,
       licence/usage boundary and label direction for every admitted collection. Unknown generator
       identity may contribute only to a capped `unknown` group and cannot satisfy the five-family

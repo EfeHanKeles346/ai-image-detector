@@ -300,6 +300,12 @@ The selected missing GPT smoke pair passed before bulk: `GPTIMG_852.png`, RGB PN
 `evidence/e32_gpt_decoder_smoke.json` binds it to record-selection SHA `2a31e792...0ef7`. This is a
 decoder/acquisition result only, not source eligibility.
 
+The realization implementation now covers every storage form in the frozen pool: embedded
+Parquet `image`/`image_data`, licensed loose images, local GPT pairs and isolated E32 downloads.
+It revalidates source fingerprints and exact row locators before decode, then applies one shared
+hash/duplicate/protected-overlap gate. A successful source receipt still means `candidate_only`;
+TRAIN/CALIBRATION assignment remains a later frozen-manifest operation.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

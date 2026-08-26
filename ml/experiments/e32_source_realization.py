@@ -10,15 +10,19 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 from collections import Counter, defaultdict
 from pathlib import Path, PurePosixPath
 from typing import Any, Iterable, Mapping, Sequence
 
+import pyarrow.parquet as pq
 from PIL import Image
 
+import e32_ai_pool_selection as pool_selection
 import e32_data_system as real_acquisition
 import e32_gap_acquisition as ai_acquisition
+import e32_gpt_acquisition as gpt_acquisition
 from pixelproof.project_paths import ML_ROOT
 
 
@@ -105,10 +109,8 @@ def _passed_peer_hashes(source_id: str) -> tuple[set[str], set[str], int]:
     return exact, perceptual, reports
 
 
-def _image_record(path: Path) -> dict[str, Any]:
-    raw_bytes = path.stat().st_size
-    raw_sha256 = _sha256_file(path)
-    with Image.open(path) as opened:
+def _image_record_raw(raw: bytes) -> dict[str, Any]:
+    with Image.open(io.BytesIO(raw)) as opened:
         opened.load()
         decoded_format = str(opened.format or "UNKNOWN").upper()
         mode = opened.mode
@@ -117,8 +119,8 @@ def _image_record(path: Path) -> dict[str, Any]:
         orientation = exif.get(274) if exif else None
         perceptual = _dhash(opened)
     return {
-        "bytes": raw_bytes,
-        "sha256": raw_sha256,
+        "bytes": len(raw),
+        "sha256": _sha256_bytes(raw),
         "dhash": perceptual,
         "decoded_format": decoded_format,
         "mode": mode,
@@ -126,8 +128,20 @@ def _image_record(path: Path) -> dict[str, Any]:
         "height": height,
         "orientation": orientation,
         "exif_present": bool(exif),
-        "bytes_per_pixel": round(raw_bytes / max(1, width * height), 6),
+        "bytes_per_pixel": round(len(raw) / max(1, width * height), 6),
     }
+
+
+def _image_record(path: Path) -> dict[str, Any]:
+    return _image_record_raw(path.read_bytes())
+
+
+def _raw_image(value: Any) -> bytes | None:
+    if isinstance(value, (bytes, bytearray)):
+        return bytes(value)
+    if isinstance(value, Mapping) and isinstance(value.get("bytes"), (bytes, bytearray)):
+        return bytes(value["bytes"])
+    return None
 
 
 def _duplicates(records: Sequence[Mapping[str, Any]], key: str) -> list[list[str]]:
@@ -420,6 +434,251 @@ def audit_ai_source(source_id: str) -> dict[str, Any]:
     )
 
 
+POOL_SOURCE_IDS = (
+    "nano-banana-local",
+    "nano-banana-pro-ash-local",
+    "communityforensics-ai-local",
+    "gpt-image-1",
+)
+
+
+def _pool_spec(source_id: str) -> Mapping[str, Any]:
+    try:
+        return next(
+            source for source in pool_selection.registry()["sources"] if source["id"] == source_id
+        )
+    except StopIteration as error:
+        raise KeyError(f"missing AI-pool registry source {source_id}") from error
+
+
+def _verify_pool_fingerprint(root: Path, source: Mapping[str, Any]) -> None:
+    source_id = str(source["source_id"])
+    spec = _pool_spec(source_id)
+    if source_id == "nano-banana-local":
+        _, fingerprint = pool_selection._parquet_locator_rows(
+            root / str(spec["dirname"]),
+            ("id", "format", "mode", "width", "height", "uploadtime"),
+        )
+    elif source_id == "communityforensics-ai-local":
+        _, fingerprint = pool_selection._parquet_locator_rows(
+            root / str(spec["dirname"]),
+            (
+                "image_name",
+                "model_name",
+                "subset",
+                "split",
+                "label",
+                "architecture",
+                "prompt",
+            ),
+        )
+    elif source_id == "nano-banana-pro-ash-local":
+        fingerprint = pool_selection._freeze_nbp(root, spec)["source_fingerprint"]
+    else:
+        return
+    if fingerprint != source.get("source_fingerprint"):
+        raise ValueError(f"{source_id} local source fingerprint changed after selection freeze")
+
+
+def _audit_pool_parquet(
+    root: Path,
+    source: Mapping[str, Any],
+    *,
+    image_column: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, str]]]:
+    spec = _pool_spec(str(source["source_id"]))
+    folder = root / str(spec["dirname"])
+    wanted_by_shard: dict[str, dict[int, Mapping[str, Any]]] = defaultdict(dict)
+    for selected in source["records"]:
+        wanted_by_shard[str(selected["shard"])][int(selected["row_index"])] = selected
+    records: list[dict[str, Any]] = []
+    failures: list[dict[str, str]] = []
+    for shard, wanted in sorted(wanted_by_shard.items()):
+        path = folder / shard
+        if not path.is_file():
+            failures.append({"source_key": shard, "reason": "missing_parquet_shard"})
+            continue
+        parquet = pq.ParquetFile(path)
+        if image_column not in parquet.schema_arrow.names:
+            failures.append({"source_key": shard, "reason": "missing_image_column"})
+            continue
+        row_index = 0
+        found: set[int] = set()
+        for batch in parquet.iter_batches(columns=[image_column], batch_size=64):
+            for row in batch.to_pylist():
+                selected = wanted.get(row_index)
+                if selected is not None:
+                    found.add(row_index)
+                    raw = _raw_image(row[image_column])
+                    if raw is None:
+                        failures.append(
+                            {"source_key": selected["source_key"], "reason": "missing_image_bytes"}
+                        )
+                        row_index += 1
+                        continue
+                    try:
+                        record = _image_record_raw(raw)
+                    except Exception as error:
+                        failures.append(
+                            {
+                                "source_key": selected["source_key"],
+                                "reason": f"decode_failure:{type(error).__name__}",
+                            }
+                        )
+                        row_index += 1
+                        continue
+                    if source["source_id"] == "nano-banana-local" and (
+                        record["width"] != int(selected["declared_width"])
+                        or record["height"] != int(selected["declared_height"])
+                        or record["mode"] != str(selected["declared_mode"])
+                        or record["decoded_format"] != str(selected["declared_format"]).upper()
+                    ):
+                        failures.append(
+                            {"source_key": selected["source_key"], "reason": "declared_metadata_mismatch"}
+                        )
+                    record.update(
+                        {
+                            "source_key": selected["source_key"],
+                            "parent_group": selected["parent_group"],
+                            "model_name": selected.get("model_name"),
+                            "architecture": selected.get("architecture"),
+                            "prompt_sha256": selected.get("prompt_sha256"),
+                            "storage": "local_parquet",
+                        }
+                    )
+                    records.append(record)
+                row_index += 1
+        for missing in sorted(set(wanted) - found):
+            failures.append(
+                {"source_key": wanted[missing]["source_key"], "reason": "missing_selected_row"}
+            )
+    return records, failures
+
+
+def _audit_pool_nbp(
+    root: Path, source: Mapping[str, Any]
+) -> tuple[list[dict[str, Any]], list[dict[str, str]]]:
+    folder = root / str(_pool_spec(str(source["source_id"]))["dirname"])
+    records: list[dict[str, Any]] = []
+    failures: list[dict[str, str]] = []
+    for selected in source["records"]:
+        path = folder / str(selected["source_key"])
+        if not path.is_file():
+            failures.append({"source_key": selected["source_key"], "reason": "missing_file"})
+            continue
+        if path.stat().st_size != int(selected["expected_bytes"]):
+            failures.append({"source_key": selected["source_key"], "reason": "byte_count_mismatch"})
+        try:
+            record = _image_record(path)
+        except Exception as error:
+            failures.append(
+                {
+                    "source_key": selected["source_key"],
+                    "reason": f"decode_failure:{type(error).__name__}",
+                }
+            )
+            continue
+        record.update(
+            {
+                "source_key": selected["source_key"],
+                "parent_group": selected["parent_group"],
+                "storage": "local_loose",
+            }
+        )
+        records.append(record)
+    return records, failures
+
+
+def _audit_pool_gpt(
+    root: Path, source: Mapping[str, Any]
+) -> tuple[list[dict[str, Any]], list[dict[str, str]]]:
+    records: list[dict[str, Any]] = []
+    failures: list[dict[str, str]] = []
+    for selected in source["records"]:
+        image_key = str(selected["source_key"])
+        prompt_key = str(selected["prompt_key"])
+        image_path = gpt_acquisition._available_asset(
+            root, image_key, int(selected["expected_image_bytes"])
+        )
+        prompt_path = gpt_acquisition._available_asset(
+            root, prompt_key, int(selected["expected_prompt_bytes"])
+        )
+        for key in (image_key, prompt_key):
+            partial = gpt_acquisition._e32_asset(key).with_suffix(
+                gpt_acquisition._e32_asset(key).suffix + ".partial"
+            )
+            if partial.exists():
+                failures.append({"source_key": key, "reason": "partial_file_present"})
+        if image_path is None:
+            failures.append({"source_key": image_key, "reason": "missing_or_wrong_size"})
+        if prompt_path is None:
+            failures.append({"source_key": prompt_key, "reason": "missing_or_wrong_size"})
+        if image_path is None or prompt_path is None:
+            continue
+        try:
+            prompt_raw = prompt_path.read_bytes()
+            prompt = prompt_raw.decode("utf-8").strip()
+        except (OSError, UnicodeDecodeError) as error:
+            failures.append(
+                {"source_key": prompt_key, "reason": f"prompt_decode_failure:{type(error).__name__}"}
+            )
+            continue
+        if not prompt:
+            failures.append({"source_key": prompt_key, "reason": "empty_prompt"})
+            continue
+        try:
+            record = _image_record(image_path)
+        except Exception as error:
+            failures.append(
+                {"source_key": image_key, "reason": f"decode_failure:{type(error).__name__}"}
+            )
+            continue
+        record.update(
+            {
+                "source_key": image_key,
+                "parent_group": selected["parent_group"],
+                "prompt_sha256": _sha256_bytes(prompt.encode()),
+                "prompt_bytes": len(prompt_raw),
+                "storage": selected["storage"],
+            }
+        )
+        records.append(record)
+    return records, failures
+
+
+def audit_pool_source(root: Path, source_id: str) -> dict[str, Any]:
+    payload = gpt_acquisition._load_selection()
+    selection_raw = pool_selection.DETAILED_SELECTION.read_bytes()
+    source = _selection_source(payload, source_id)
+    _verify_pool_fingerprint(root, source)
+    if source_id == "nano-banana-local":
+        records, failures = _audit_pool_parquet(root, source, image_column="image")
+    elif source_id == "communityforensics-ai-local":
+        records, failures = _audit_pool_parquet(root, source, image_column="image_data")
+    elif source_id == "nano-banana-pro-ash-local":
+        records, failures = _audit_pool_nbp(root, source)
+    elif source_id == "gpt-image-1":
+        records, failures = _audit_pool_gpt(root, source)
+    else:
+        raise KeyError(source_id)
+    return _finalize(
+        source_id=source_id,
+        kind="ai",
+        selection_raw=selection_raw,
+        expected_images=int(source["selected"]),
+        records=records,
+        failures=failures,
+        extra={
+            "family": source["family"],
+            "revision": source["revision"],
+            "pool_record_selection_sha256": payload["selection_sha256"],
+            "model_identity_counts": dict(
+                sorted(Counter(str(row["model_name"]) for row in records if row.get("model_name")).items())
+            ),
+        },
+    )
+
+
 def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -428,12 +687,20 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     ai_parser.add_argument(
         "--source", choices=("qwen-image-2512", "flux2-klein-9b"), required=True
     )
+    pool_parser = subparsers.add_parser("audit-pool-ai")
+    pool_parser.add_argument("--root", type=Path, required=True)
+    pool_parser.add_argument("--source", choices=POOL_SOURCE_IDS, required=True)
     return parser.parse_args(argv)
 
 
 def main(argv: Iterable[str] | None = None) -> int:
     args = parse_args(argv)
-    report = audit_vision() if args.command == "audit-vision" else audit_ai_source(args.source)
+    if args.command == "audit-vision":
+        report = audit_vision()
+    elif args.command == "audit-ai":
+        report = audit_ai_source(args.source)
+    else:
+        report = audit_pool_source(args.root, args.source)
     print(json.dumps({key: value for key, value in report.items() if key != "records"}, indent=2, sort_keys=True))
     return int(report["state"] != "source_realization_passed_candidate_only")
 

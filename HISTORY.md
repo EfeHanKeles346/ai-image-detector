@@ -2206,3 +2206,13 @@ The authorized GPT smoke then fetched selected missing pair `GPTIMG_852`. Its im
 prompt is non-empty with normalized SHA `e4f291e3...09c28`. Evidence binds both to 15K selection
 SHA `2a31e792...0ef7`. The decoder/prompt gate passes and bulk may start; this does not make the
 source eligible or alter the 3,000 selected GPT parents.
+
+The role-free realization gate was extended to the remaining 15K sources before their production
+rows were opened. Nano Banana and CommunityForensics now verify the frozen Parquet-file
+fingerprints, seek only exact selected row indices and decode the embedded `image`/`image_data`
+bytes. The licensed NBP arm verifies all selected loose-file byte counts. GPT resolves every exact
+selected image/prompt pair from either the untouched local checkout or the isolated E32 root and
+rejects partials, size changes, invalid UTF-8 or empty prompts. All four then use the same
+SHA-256/dHash, protected-E30, passed-peer, format/geometry and duplicate gates as VISION/Qwen/FLUX.
+Two additional byte-level fixtures bring the E32 suite to 34 passing tests. This checkpoint added
+capability only; no production pool source was opened or accepted before commit.
