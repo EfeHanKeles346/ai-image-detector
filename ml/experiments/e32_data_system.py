@@ -306,6 +306,7 @@ def _stream_download(url: str, destination: Path, expected_bytes: int | None = N
         "/usr/bin/curl",
         "--fail",
         "--location",
+        "--silent",
         "--show-error",
         "--connect-timeout",
         "30",

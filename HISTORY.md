@@ -2044,3 +2044,9 @@ TLS-verifying `/usr/bin/curl` for metadata and image bytes, never `verify=False`
 retry, declared archive sizes and a 100 GiB free-space floor remain mandatory. SOCRatES and
 ForensiCam decisions are unchanged. C1a freezes availability, not eligibility: no source becomes
 TRAIN/CALIBRATION until full decode, grouping, duplicate and shortcut audits pass.
+
+The first VISION transfer smoke exposed a terminal-operability problem rather than a data failure:
+four concurrent curl progress meters interleaved into a large unreadable PTY stream. The run was
+stopped explicitly after 95 completed JPEGs plus resumable partials; no completed file was removed.
+The downloader now uses curl's quiet-success/error-visible mode and retains one aggregate message
+per 100 completions. A focused test pins the quiet TLS curl and atomic `.partial` destination.

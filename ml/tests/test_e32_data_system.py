@@ -58,6 +58,26 @@ def test_completed_file_is_reused_without_network(tmp_path, monkeypatch):
     assert result["bytes"] == 4
 
 
+def test_new_download_uses_quiet_tls_curl_and_atomic_partial(tmp_path, monkeypatch):
+    monkeypatch.setattr(e32, "OUTPUT_ROOT", tmp_path / "e32")
+    monkeypatch.setattr(e32, "MIN_FREE_BYTES", 0)
+    seen = {}
+
+    def fake_run(command, check):
+        seen["command"] = command
+        output_index = command.index("--output") + 1
+        Path(command[output_index]).write_bytes(b"image")
+
+    monkeypatch.setattr(e32.subprocess, "run", fake_run)
+    destination = e32._safe_destination("real/source/image.jpg")
+    result = e32._stream_download("https://example.test/image.jpg", destination, 5)
+    assert result["state"] == "downloaded"
+    assert destination.read_bytes() == b"image"
+    assert "--silent" in seen["command"]
+    assert "--show-error" in seen["command"]
+    assert seen["command"][-1] == "https://example.test/image.jpg"
+
+
 def test_frozen_selection_loader_rejects_unexpected_state(tmp_path, monkeypatch):
     path = tmp_path / "selection.json"
     path.write_text(json.dumps({"state": "downloaded"}))
