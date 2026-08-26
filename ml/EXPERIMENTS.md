@@ -2212,3 +2212,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - AI eligible subset remains bit-for-bit 14,786; REAL becomes 7,348 (VISION 3,497 + FODB 3,851).
 - External overlay 1,179,329 B / SHA `510e94eb...fc3b`.
 - **Decision:** freeze role-free result; continue CSAFE acquisition to reach the REAL floor.
+
+### C1 CSAFE four-range recovery checkpoint
+
+- Preserve the contiguous prefix; split only missing bytes into four exact resumable ranges.
+- Require HTTP 206 and exact `Content-Range`/length; assemble beside the prefix and promote only
+  after full published MD5.
+- Verification: 19 focused acquisition/archive tests pass, including MD5-failure prefix survival.
+- **Decision:** commit recovery method, then run it independently on the stalled production prefix.

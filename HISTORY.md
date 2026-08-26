@@ -2473,3 +2473,11 @@ support. Before interrupting that resumable prefix, a four-range recovery path w
 each remaining range must download to an independent partial, validate `Content-Range` and length,
 assemble beside—not over—the original prefix, reproduce the published full MD5, and only then
 promote atomically. Any failure leaves the original prefix and range partials recoverable.
+
+The four-range CSAFE recovery was implemented and tested before production use. It partitions only
+the missing suffix, resumes each independent range file, requires HTTP 206 plus exact
+`Content-Range`, assembles prefix+ranges into a separate file while computing MD5, and promotes
+only on the published `5c5f...91d8`. Prefix/ranges are deleted only after verified promotion; a
+failure preserves them and the assembled artifact for review. Three new range/assembly regressions
+bring the focused acquisition/archive suite to 19 passing tests. Production recovery remains a
+separate action.

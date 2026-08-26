@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -90,3 +91,47 @@ def test_frozen_selection_loader_rejects_unexpected_state(tmp_path, monkeypatch)
     monkeypatch.setattr(e32, "DETAILED_SELECTION", path)
     with pytest.raises(ValueError, match="unexpected"):
         e32._load_selection()
+
+
+def test_range_plan_is_contiguous_and_exact():
+    plan = e32._range_plan(20, 101, 4)
+    assert plan == [(20, 40), (41, 61), (62, 82), (83, 100)]
+    assert sum(end - start + 1 for start, end in plan) == 81
+    assert e32._parse_content_range("bytes 20-40/101") == (20, 40, 101)
+
+
+def test_range_assembly_preserves_prefix_and_verifies_full_md5(tmp_path):
+    prefix = tmp_path / "archive.zip.partial"
+    first = tmp_path / "range-1.partial"
+    second = tmp_path / "range-2.partial"
+    destination = tmp_path / "archive.zip"
+    prefix.write_bytes(b"prefix-")
+    first.write_bytes(b"middle-")
+    second.write_bytes(b"end")
+    expected = b"prefix-middle-end"
+
+    result = e32._assemble_ranges(
+        prefix,
+        [first, second],
+        destination,
+        len(expected),
+        hashlib.md5(expected, usedforsecurity=False).hexdigest(),
+    )
+
+    assert destination.read_bytes() == expected
+    assert result["bytes"] == len(expected)
+    assert prefix.read_bytes() == b"prefix-"
+
+
+def test_range_assembly_keeps_prefix_when_md5_fails(tmp_path):
+    prefix = tmp_path / "archive.zip.partial"
+    part = tmp_path / "range.partial"
+    destination = tmp_path / "archive.zip"
+    prefix.write_bytes(b"safe-prefix")
+    part.write_bytes(b"tail")
+
+    with pytest.raises(ValueError, match="MD5"):
+        e32._assemble_ranges(prefix, [part], destination, 15, "0" * 32)
+
+    assert prefix.read_bytes() == b"safe-prefix"
+    assert not destination.exists()

@@ -18,12 +18,14 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import re
 import shutil
 import subprocess
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path, PurePosixPath
-from typing import Any, Iterable, Mapping
+from typing import Any, Iterable, Mapping, Sequence
 from urllib.parse import urlparse
 
 import requests
@@ -37,9 +39,11 @@ DETAILED_SELECTION = OUTPUT_ROOT / "real_acquisition_selection.json"
 COMPACT_EVIDENCE = ML_ROOT.parent / "evidence" / "e32_real_acquisition_selection.json"
 MIN_FREE_BYTES = 100 * 1024**3
 VISION_WORKERS = 4
+CSAFE_RANGE_WORKERS = 4
 CHUNK_BYTES = 8 * 1024**2
 RETRY_DELAYS = (0, 5, 20, 60, 180)
 IMAGE_SUFFIXES = {".jpg", ".jpeg"}
+CONTENT_RANGE = re.compile(r"^bytes (\d+)-(\d+)/(\d+)$")
 
 
 def _sha256(raw: bytes) -> str:
@@ -404,6 +408,144 @@ def download_csafe(payload: Mapping[str, Any]) -> dict[str, Any]:
     return {"source_id": source["source_id"], "files": 1, "bytes": result["bytes"], "md5": digest}
 
 
+def _range_plan(start: int, stop: int, workers: int) -> list[tuple[int, int]]:
+    if start < 0 or stop <= start or workers <= 0:
+        raise ValueError("invalid byte-range plan")
+    remaining = stop - start
+    width = (remaining + workers - 1) // workers
+    return [
+        (left, min(stop - 1, left + width - 1))
+        for left in range(start, stop, width)
+    ]
+
+
+def _parse_content_range(value: str | None) -> tuple[int, int, int]:
+    match = CONTENT_RANGE.fullmatch(value or "")
+    if match is None:
+        raise ValueError(f"invalid Content-Range: {value!r}")
+    return tuple(int(item) for item in match.groups())
+
+
+def _download_range(url: str, path: Path, start: int, end: int, total: int) -> dict[str, Any]:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    expected = end - start + 1
+    for attempt, delay in enumerate(RETRY_DELAYS):
+        current = path.stat().st_size if path.exists() else 0
+        if current == expected:
+            return {"path": path, "bytes": current, "state": "already_complete"}
+        if current > expected:
+            raise ValueError(f"range partial exceeds expected size: {path}")
+        if delay:
+            time.sleep(delay)
+        requested = start + current
+        try:
+            with requests.get(
+                url,
+                headers={"Range": f"bytes={requested}-{end}"},
+                stream=True,
+                timeout=(20, 120),
+                allow_redirects=True,
+            ) as response:
+                response.raise_for_status()
+                if response.status_code != 206:
+                    raise ValueError(f"range request returned HTTP {response.status_code}")
+                found_start, found_end, found_total = _parse_content_range(
+                    response.headers.get("Content-Range")
+                )
+                if (found_start, found_end, found_total) != (requested, end, total):
+                    raise ValueError(
+                        "range response mismatch: "
+                        f"expected {(requested, end, total)}, found {(found_start, found_end, found_total)}"
+                    )
+                with path.open("ab") as handle:
+                    for chunk in response.iter_content(CHUNK_BYTES):
+                        if chunk:
+                            handle.write(chunk)
+        except (requests.RequestException, OSError) as error:
+            if attempt == len(RETRY_DELAYS) - 1:
+                raise RuntimeError(f"range failed after retries: {start}-{end}") from error
+            continue
+    found = path.stat().st_size
+    if found != expected:
+        raise ValueError(f"range size mismatch: expected {expected}, found {found}")
+    return {"path": path, "bytes": found, "state": "downloaded"}
+
+
+def _assemble_ranges(
+    prefix: Path,
+    ranges: Sequence[Path],
+    destination: Path,
+    expected_bytes: int,
+    expected_md5: str,
+) -> dict[str, Any]:
+    assembled = destination.with_suffix(destination.suffix + ".parallel.partial")
+    if assembled.exists():
+        raise ValueError(f"stale assembled partial requires review: {assembled}")
+    digest = hashlib.md5(usedforsecurity=False)
+    written = 0
+    with assembled.open("xb") as target:
+        for source in (prefix, *ranges):
+            with source.open("rb") as handle:
+                while chunk := handle.read(CHUNK_BYTES):
+                    target.write(chunk)
+                    digest.update(chunk)
+                    written += len(chunk)
+    if written != expected_bytes:
+        raise ValueError(f"assembled byte mismatch: expected {expected_bytes}, found {written}")
+    found_md5 = digest.hexdigest()
+    if found_md5 != expected_md5:
+        raise ValueError(f"assembled MD5 mismatch: expected {expected_md5}, found {found_md5}")
+    os.replace(assembled, destination)
+    return {"bytes": written, "md5": found_md5}
+
+
+def download_csafe_ranges(payload: Mapping[str, Any]) -> dict[str, Any]:
+    source = _source(payload, "csafe-mcsidb-s21")
+    archive = source["archive"]
+    destination = _safe_destination(f"real/csafe/archives/{archive['name']}")
+    if destination.exists():
+        return download_csafe(payload)
+    prefix = destination.with_suffix(destination.suffix + ".partial")
+    if not prefix.is_file() or prefix.stat().st_size <= 0:
+        raise ValueError("parallel CSAFE recovery requires a non-empty contiguous prefix")
+    expected = int(archive["bytes"])
+    prefix_bytes = prefix.stat().st_size
+    if prefix_bytes >= expected:
+        raise ValueError("CSAFE prefix is not a strict partial")
+    plan = _range_plan(prefix_bytes, expected, CSAFE_RANGE_WORKERS)
+    _ensure_capacity((expected - prefix_bytes) + expected)
+
+    def fetch(bounds: tuple[int, int]) -> dict[str, Any]:
+        start, end = bounds
+        part = destination.with_name(f"{destination.name}.range-{start}-{end}.partial")
+        result = _download_range(str(archive["url"]), part, start, end, expected)
+        print(f"CSAFE range {start}-{end} complete", flush=True)
+        return result
+
+    with ThreadPoolExecutor(max_workers=CSAFE_RANGE_WORKERS) as executor:
+        results = list(executor.map(fetch, plan))
+    range_paths = [Path(result["path"]) for result in results]
+    assembled = _assemble_ranges(
+        prefix,
+        range_paths,
+        destination,
+        expected,
+        str(archive["md5"]),
+    )
+    prefix.unlink()
+    for path in range_paths:
+        path.unlink()
+    print("CSAFE parallel ranges assembled and MD5 verified", flush=True)
+    return {
+        "source_id": source["source_id"],
+        "files": 1,
+        "bytes": assembled["bytes"],
+        "md5": assembled["md5"],
+        "preserved_prefix_bytes": prefix_bytes,
+        "range_count": len(plan),
+    }
+
+
 def status() -> dict[str, Any]:
     files = []
     if OUTPUT_ROOT.exists():
@@ -425,6 +567,7 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     subparsers.add_parser("freeze-real")
     download = subparsers.add_parser("download-real")
     download.add_argument("--source", required=True, choices=("vision", "fodb", "csafe"))
+    subparsers.add_parser("download-csafe-ranges")
     subparsers.add_parser("status")
     return parser.parse_args(argv)
 
@@ -435,6 +578,8 @@ def main(argv: Iterable[str] | None = None) -> int:
         result = freeze_real()
     elif args.command == "status":
         result = status()
+    elif args.command == "download-csafe-ranges":
+        result = download_csafe_ranges(_load_selection())
     else:
         payload = _load_selection()
         result = {
