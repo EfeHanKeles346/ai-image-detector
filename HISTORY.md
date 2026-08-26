@@ -2315,3 +2315,17 @@ SHA-256 of original prompt bytes, the SHA-256 of normalized UTF-8 text and its c
 the compact report will publish encoding counts. Two new regression cases prove fallback behavior
 and rejection of undefined byte `0x81`; 20 focused E32 selection/acquisition/realization tests pass.
 No production receipt was overwritten in this commit.
+
+CommunityForensics then completed the schema-v2 realization cleanly. All 2,800 selected embedded
+PNG rows decode as RGB; all 2,800 SHA-256, dHash and pHash values are unique, with zero protected
+E30 or passed-E32-peer overlap. The source-cap selection still represents all 300 frozen model
+identities, normally nine or ten rows each. External detailed receipt is 1,980,274 B / SHA
+`cb4bffe2...76b2`; compact evidence is
+`evidence/e32_communityforensics-ai-local_realization.json`. State is role-free
+`source_realization_passed_candidate_only`.
+
+Nano Banana Pro was independently rerun to replace its schema-v1 audit artifact with the common
+schema-v2 pHash receipt. The result remains unchanged in substance: 200/200 PNGs decode (136 RGB,
+64 RGBA), all 200 SHA/dHash/pHash values are unique and all protected/peer overlap counts are zero.
+The new detailed receipt is 98,924 B / SHA `55ec23ec...eb8e`; the compact evidence path is unchanged.
+This is a method-version refresh, not a new selection or role assignment.

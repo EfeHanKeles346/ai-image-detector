@@ -182,6 +182,12 @@ small manifests, aggregate evidence, code and documentation.
 - [ ] Rerun the same immutable GPT selection after the decoder commit, preserve the first rejection
       receipt in HISTORY, and leave its five duplicate pairs for the eligibility overlay rather than
       silently replacing rows.
+- [x] Realize the 2,800-row CommunityForensics diversity anchor under schema v2: all 300 model
+      identities remain represented, every SHA/dHash/pHash is unique, and protected/passed-peer
+      overlap is zero. Retain it only as a role-free candidate.
+- [x] Reissue Nano Banana Pro's 200-row receipt under schema v2 so every AI arm uses the same
+      SHA+dHash+pHash rule. All 200 hashes remain unique and overlap-free; state stays
+      `candidate_only`.
 - [ ] Extend the immutable-selection eligibility overlay to VISION parent rows as well as AI prompt
       groups. Resolve each duplicate component by a stable content-independent canonical key,
       exclude losers only, bind the overlay to every detailed receipt SHA, and assign no role yet.

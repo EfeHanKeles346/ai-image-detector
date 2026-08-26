@@ -355,6 +355,13 @@ receipt is 1,939,155 B / SHA `3312c774...e6b1`; compact evidence is
 `evidence/e32_vision-base-native_realization.json`. Stable loser exclusion is pending; no role is
 assigned and no after-the-fact replacement is allowed.
 
+CommunityForensics' selected diversity anchor passes schema-v2 realization: 2,800/2,800 RGB PNG,
+2,800 unique SHA/dHash/pHash, 300 represented model identities and zero protected/peer overlap.
+Detailed receipt is 1,980,274 B / SHA `cb4bffe2...76b2`; compact evidence is
+`evidence/e32_communityforensics-ai-local_realization.json`. Nano Banana Pro's 200-row receipt was
+also refreshed under schema v2 and remains clean; its new detail is 98,924 B / SHA
+`55ec23ec...eb8e`. Both remain role-free candidates.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

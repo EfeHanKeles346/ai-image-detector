@@ -2089,3 +2089,18 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   decodes under the fallback, and undefined byte `0x81` still fails.
 - Verification: 20 focused E32 tests pass.
 - **Decision:** commit the method independently, then rerun all 3,000 frozen GPT pairs.
+
+### C2c CommunityForensics diversity-anchor realization — pass
+
+- 2,800/2,800 embedded images decode as RGB PNG.
+- All 2,800 SHA, dHash and pHash values are unique; zero protected/passed-peer overlap.
+- All 300 frozen model identities remain represented at nine or ten rows each.
+- External receipt 1,980,274 B / SHA `cb4bffe2...76b2`.
+- **Decision:** pass as `candidate_only`; assign no TRAIN/CALIBRATION role.
+
+### C2c Nano Banana Pro schema-v2 refresh — pass
+
+- 200/200 PNG (136 RGB, 64 RGBA), with 200 unique SHA/dHash/pHash and zero overlap.
+- External schema-v2 receipt 98,924 B / SHA `55ec23ec...eb8e` supersedes the earlier schema-v1
+  artifact at the same evidence path; HISTORY retains both results.
+- **Decision:** remains `candidate_only`; selection and role are unchanged.
