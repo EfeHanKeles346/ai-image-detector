@@ -1904,3 +1904,18 @@ The real operating point requires <=5% source-macro and <=10% worst-source FP; t
 Three focused tests pin source-aware threshold ties, zero-FP behavior and the acceptance gate.
 This implementation and protocol are committed before extracting a B3 feature or producing a
 model score; E30 remains unopened.
+
+### E31/B3 result — frozen DINOv2 is the first new arm to beat E20 cleanly
+
+On untouched E31 CALIBRATION, the old E20 control already performs well: 0.960 AUC, 4.49% source-
+macro / 6.70% worst-source real FP and 84.49% macro recall across Flux, Nano Banana and Nano Banana
+Pro. The frozen DINOv2 linear probe improves this to 0.966 AUC and **90.72% current-AI macro recall**
+while holding 4.67% / 6.70% real FP; its weakest current source is Nano Banana Pro at 84%. The
+68-feature specialist holds slightly lower FP (4.24% / 5.51%) but only 56.24% current recall.
+
+Seeds 42, 2024 and 2026 reproduce the same DINOv2 and feature metrics—the expected outcome for the
+converged convex linear head. No backbone was fine-tuned and E30 was not opened. DINOv2 therefore
+passes B3 independently and is the leading project candidate. The forensic arm is not promoted by
+its standalone floor alone; B4 must prove complementary row-level errors before any fusion. Compact
+evidence is `evidence/e31_b3_representation_screen.json`; the ignored feature cache SHA is
+`f59e1fb6...c4c49`.

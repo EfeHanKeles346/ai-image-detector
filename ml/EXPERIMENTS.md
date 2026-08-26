@@ -1779,3 +1779,24 @@ protected overlaps are all **zero**; all 11,300 tile hashes are unique. The 395,
 NPZ has SHA `508330c2...9f2b`, while the detailed receipt has SHA `340d593c...09dc`. Compact evidence
 is committed at `evidence/e31_train_v2_realization_v3.json` with SHA `5bff123c...619d`. B2 is
 accepted; B3 representations may now train, but no model result or E30 score exists yet.
+
+## 2026-08-26 — E31/B3: source-aware representation ladder
+
+- **Protocol:** accepted 11,300-tile SHA `508330c2...9f2b`; fold 1–4 TRAIN out-of-fold threshold
+  evidence; untouched 2,739-row CALIBRATION; <=5% source-macro / <=10% worst-source real FP; >=50%
+  current-AI macro / >=30% weakest current-source recall. E30 remained unopened.
+- **Arms:** unchanged E20 control; cached timm DINOv2 ViT-S/14 frozen at 224 px with a balanced
+  logistic head; existing 68 forensic/frequency features with the same head.
+
+| arm | AUC | macro real FP | worst real FP | current AI macro recall | weakest current source |
+|---|---:|---:|---:|---:|---:|
+| E20 control | 0.960 | 4.49% | 6.70% | 84.49% | 74.0% |
+| **frozen DINOv2** | **0.966** | 4.67% | 6.70% | **90.72%** | **84.0%** |
+| 68 forensic features | 0.849 | 4.24% | 5.51% | 56.24% | 44.0% |
+
+DINOv2 recalls Flux 91.67%, Nano Banana 96.49% and Nano Banana Pro 84.0%, materially improving
+over E20's 84.72% / 94.74% / 74.0%. Seeds 42, 2024 and 2026 yield identical metrics because the
+standardized logistic head converges to the same convex solution; this is a zero-width three-run
+interval, not three independent data samples. DINOv2 advances. The feature arm clears the absolute
+floor but is far below the control; B4 may retain it only if cached row scores demonstrate useful
+incremental true positives inside the FP budget. Evidence: `evidence/e31_b3_representation_screen.json`.

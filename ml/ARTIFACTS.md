@@ -64,3 +64,9 @@ artifact. E31/B2 realized 11,300 unique 128 px RGB tiles into a 395,082,960-byte
 `508330c2d8318bcd4c8a92c86a86a627ff98ee1bdc97a67772540a68c8569f2b`. Its frozen selection,
 source/role counts and compact realization receipt live under `../evidence/`; source images and
 protected hashes do not enter Git. B3 code must verify this SHA before extracting features.
+
+E31/B3's ignored `data/e31/b3_features.npz` cache is 19,002,342 bytes with SHA-256
+`f59e1fb616d9bcf7384bd571f92570b9cd70f8a043e1b659bf1c258bb97c4c49`. It contains aligned E20
+scores, 384-dimensional frozen DINOv2 embeddings and 68-dimensional forensic vectors for the
+accepted tile archive. Seed-specific convex heads under `artifacts/e31/` remain experimental,
+ignored and non-servable until B4/B5 gates choose and freeze a candidate.

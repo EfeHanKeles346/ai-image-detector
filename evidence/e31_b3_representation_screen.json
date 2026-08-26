@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "experiment": "E31/B3",
+  "state": "representation_screen_accepted",
+  "run_date": "2026-08-26",
+  "boundaries": {
+    "selection_sha256": "1a3a5c98c4b0614a0af4bd1bc65ca4fbb8ea33404dbb6a2db53b2da17b79df2e",
+    "tile_archive_sha256": "508330c2d8318bcd4c8a92c86a86a627ff98ee1bdc97a67772540a68c8569f2b",
+    "threshold_source": "group-disjoint TRAIN OOF; R0 uses label-blind TRAIN real scores",
+    "evaluation_role": "untouched CALIBRATION",
+    "e30_opened": false,
+    "macro_real_fp_budget": 0.05,
+    "worst_real_fp_budget": 0.10,
+    "current_ai_macro_recall_gate": 0.50,
+    "current_ai_worst_source_recall_gate": 0.30
+  },
+  "feature_cache": {
+    "path": "ml/data/e31/b3_features.npz",
+    "bytes": 19002342,
+    "sha256": "f59e1fb616d9bcf7384bd571f92570b9cd70f8a043e1b659bf1c258bb97c4c49",
+    "committed": false,
+    "shapes": {
+      "r0_e20": [11300],
+      "r1_dinov2": [11300, 384],
+      "r2_forensic68": [11300, 68]
+    }
+  },
+  "seeds": [42, 2024, 2026],
+  "calibration_count": 2739,
+  "arms": [
+    {
+      "arm": "r0_e20",
+      "status": "control_pass",
+      "seeds_run": 1,
+      "auc": 0.9598873547890476,
+      "macro_real_fp": 0.04493689657993782,
+      "worst_real_fp": 0.06696428571428571,
+      "current_ai_macro_recall": 0.8448635477582845,
+      "current_ai_worst_source_recall": 0.74,
+      "current_source_recall": {
+        "flux-1-dev": 0.8472222222222222,
+        "nano-banana": 0.9473684210526315,
+        "nano-banana-pro": 0.74
+      }
+    },
+    {
+      "arm": "r1_dinov2",
+      "status": "three_seed_survivor",
+      "backbone": "vit_small_patch14_dinov2.lvd142m",
+      "input_px": 224,
+      "auc": {"min": 0.9655787025743605, "mean": 0.9655787025743605, "max": 0.9655787025743605},
+      "macro_real_fp": {"min": 0.04665510963835706, "mean": 0.04665510963835706, "max": 0.04665510963835706},
+      "worst_real_fp": {"min": 0.06696428571428571, "mean": 0.06696428571428571, "max": 0.06696428571428571},
+      "current_ai_macro_recall": {"min": 0.9071929824561403, "mean": 0.9071929824561403, "max": 0.9071929824561403},
+      "current_ai_worst_source_recall": {"min": 0.84, "mean": 0.84, "max": 0.84},
+      "current_source_recall": {
+        "flux-1-dev": 0.9166666666666666,
+        "nano-banana": 0.9649122807017544,
+        "nano-banana-pro": 0.84
+      }
+    },
+    {
+      "arm": "r2_forensic68",
+      "status": "absolute_gate_pass_but_below_control_pending_complementarity",
+      "auc": {"min": 0.848838041339383, "mean": 0.848838041339383, "max": 0.848838041339383},
+      "macro_real_fp": {"min": 0.042420941744395355, "mean": 0.042420941744395355, "max": 0.042420941744395355},
+      "worst_real_fp": {"min": 0.05505952380952381, "mean": 0.05505952380952381, "max": 0.05505952380952381},
+      "current_ai_macro_recall": {"min": 0.5623586744639376, "mean": 0.5623586744639376, "max": 0.5623586744639376},
+      "current_ai_worst_source_recall": {"min": 0.44, "mean": 0.44, "max": 0.44},
+      "current_source_recall": {
+        "flux-1-dev": 0.6944444444444444,
+        "nano-banana": 0.5526315789473685,
+        "nano-banana-pro": 0.44
+      }
+    }
+  ],
+  "conclusion": "DINOv2 independently passes B3 and materially improves current-generator recall over E20. The forensic arm may enter B4 only if row-level complementarity offsets its much weaker ranking; no fine-tuning or E30 scoring is justified yet."
+}

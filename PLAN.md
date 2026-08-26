@@ -121,16 +121,16 @@ test leakage, and only then ask E30 whether the frozen system advances.
 
 ### Phase B3 — screen a small heterogeneous representation ladder
 
-- [ ] Run one-seed, low-cost probes before full fine-tuning: (R0) unchanged E20 as the control,
+- [x] Run one-seed, low-cost probes before full fine-tuning: (R0) unchanged E20 as the control,
       (R1) a frozen modern ViT/CLIP-family intermediate representation with a regularized linear
       head, and (R2) a low-level residual/frequency specialist. Reuse pinned local artifacts where
       scientifically compatible; record weights, licence, revision and preprocessing exactly.
-- [ ] Evaluate on source-held-out TRAIN v2 folds and untouched CALIBRATION. Headline gates are
+- [x] Evaluate on source-held-out TRAIN v2 folds and untouched CALIBRATION. Headline gates are
       recall at the fixed real-FP budget, macro/worst-source FP, worst-generator recall and
       compression/resize stability; pooled accuracy cannot advance an arm.
-- [ ] Stop an arm after one seed if it cannot beat the E20 control materially or adds no
+- [x] Stop an arm after one seed if it cannot beat the E20 control materially or adds no
       complementary true positives within the FP budget. Run three seeds only for survivors.
-- [ ] Fine-tune a backbone or adapter only if the frozen probe has transferable signal but misses
+- [x] Fine-tune a backbone or adapter only if the frozen probe has transferable signal but misses
       the gate; otherwise change data/representation instead of spending compute on the same
       failure.
 - **Acceptance:** at least one new arm independently meets its pre-registered CALIBRATION gate and
@@ -143,6 +143,12 @@ test leakage, and only then ask E30 whether the frozen system advances.
   <=5% source-macro and <=10% worst-source FP. Final heads fit all TRAIN and read CALIBRATION once.
   An arm passes only if CALIBRATION also holds both FP budgets, current Flux/Nano/Nano-Pro macro
   recall is >=50%, and its weakest current source recall is >=30%. E30 remains unopened.
+- **B3 result:** E20 control reaches 0.960 AUC / 84.49% current-AI macro recall; frozen DINOv2
+  reaches 0.966 / **90.72%** with 4.67% macro and 6.70% worst real FP; the 68-feature arm reaches
+  0.849 / 56.24% with 4.24% / 5.51% FP. DINOv2 and the feature arm pass the absolute gate, but
+  only DINOv2 materially beats E20. Seeds 42/2024/2026 reproduce identical convex-head metrics.
+  No fine-tuning is needed. B4 must first prove whether R2 adds row-level complementarity; it may
+  not enter fusion merely because it passed its standalone floor.
 
 ### Phase B4 — fit an ensemble only from out-of-fold calibration evidence
 
