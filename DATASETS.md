@@ -572,3 +572,21 @@ balanced/200K cards expose only labels/counts and no source/licence. These bytes
 E32 roles. Official Community Forensics documentation says the Small release includes separately
 licensed real datasets and is limited to non-commercial research; that does not establish the
 unofficial repack's provenance.
+
+### E32 post-R1a corrective authentic sources — frozen before bytes (2026-08-27)
+
+R0 and R1a both collapsed on the same owner-camera DEVELOPMENT population, so the correction
+targets authentic pipelines rather than adding more AI volume or shopping another encoder.
+
+| source | frozen transfer | role boundary | selection reason / limitation |
+|---|---:|---|---|
+| CSAFE MCSIDB iPhone 14 | `iPhone14.zip`, 20,428,338,922 B, MD5 `dfc01c89b14356141f53d253b72e946c` | role-free TRAIN/CALIBRATION candidate only after archive inventory, natural-only selection, decode and decontamination | CC BY 4.0; directly adds a current Apple computational-photo pipeline, but is the same collection as S21 and cannot by itself prove source transfer |
+| IPN-NFID v3 linked device articles | 960 `natural` JPEGs, 3,889,897,594 B, twelve device instances | source-held-out DEVELOPMENT only; never fit/select threshold, crop, representation or policy | CC BY 4.0; compact independent smartphone-camera stress. Only 80 natural images/device and structured landscape/portrait captures, so it is a gate rather than a broad training corpus |
+
+The IPN umbrella article is Figshare `25201319`, version 3 (2025-03-28), linking twelve immutable
+device articles. Each exposes 80 filenames containing `natural`; all selected API rows include
+published byte size, download URL and MD5. Devices are iPhone SE 2020 (two physical instances),
+iPhone XR, Motorola G4 Plus/G Play/G20, Samsung Galaxy A01/Note 9, Sony Xperia M4, Huawei P20 Lite/
+Y9 2019 and LG L65. The CSAFE source is Figshare article `26932084`, version 1. API id, version,
+licence, filename, size and checksum must match before a transfer. Both downloads retain `.partial`
+state and preserve a 100 GiB disk floor; no selected image byte existed at this checkpoint.

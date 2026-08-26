@@ -2759,3 +2759,11 @@ Final verification reproduced the hash-checked R1a CLI on `IMG_8540.jpeg` (score
 below threshold), passed all 178 Python tests, all six web tests, the production web build and
 TypeScript typecheck. The isolated correct example does not override the 210-image aggregate
 failure; it only confirms that the inference path itself is operational.
+
+The corrective data move was frozen next, before any new selected image byte. CSAFE's official
+Figshare API exposes a CC-BY-4.0 iPhone 14 archive at 20,428,338,922 bytes with published MD5
+`dfc01c89...946c`; it is a training-side candidate only after natural-only inventory and audit.
+IPN-NFID v3 independently links twelve CC-BY-4.0 smartphone articles containing exactly 960
+natural JPEGs / 3,889,897,594 bytes; that whole source is reserved as DEVELOPMENT and forbidden
+from fitting or threshold selection. This pairing adds a relevant Apple training pipeline while
+retaining a genuinely absent-source gate. Drift in API identity/licence/size/MD5 is a hard stop.

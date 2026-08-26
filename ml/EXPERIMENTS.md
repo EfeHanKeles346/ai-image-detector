@@ -2484,3 +2484,17 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   REAL-source holdout before spending on R2/R3 or ensembles.
 - Engineering verification: hash-checked single-image CLI reproduced; 178 Python tests, six web
   tests, production build and TypeScript typecheck pass.
+
+### C4-R1b corrective data preregistration
+
+- TRAIN/CAL candidate: official CSAFE MCSIDB `iPhone14.zip`, 20,428,338,922 B, published MD5
+  `dfc01c89...946c`, CC BY 4.0. Inventory first; only frozen natural parents may advance.
+- Absent-source DEVELOPMENT: IPN-NFID v3's twelve linked device articles, exactly 960 natural JPEGs
+  / 3,889,897,594 B, CC BY 4.0. It cannot fit any data/model/threshold/policy choice.
+- Acquisition must bind official API ids, versions, licence, filenames, sizes and MD5s; use
+  resumable partials and retain >=100 GiB free. Archive traversal/CRC/decode/decontamination gates
+  precede role assignment.
+- R1b may freeze only after iPhone rows are grouped and balanced; owner/IPN pixels stay closed until
+  artifact freeze. External pass requires <=20% IPN worst-device FP, <=20% owner FP and >=90%
+  current-AI recall; no test-derived recalibration.
+- **Decision:** commit before implementing acquisition or downloading selected bytes.

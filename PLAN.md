@@ -413,6 +413,25 @@ small manifests, aggregate evidence, code and documentation.
       REAL-source-held-out gate before any R2/R3 expense; do not use the owner gallery for training
       or threshold selection. Until this data gate exists, retain E26 as the working demo and both
       E32 artifacts as reproducible rejected controls.
+- [x] Freeze the corrective acquisition before new bytes. Use CSAFE MCSIDB `iPhone14.zip`
+      (20,428,338,922 B, MD5 `dfc01c89...946c`, CC BY 4.0) only as a role-free TRAIN/CALIBRATION
+      candidate after natural-only inventory/audit. Independently freeze IPN-NFID v3's twelve
+      linked device articles: exactly 960 `natural` JPEGs / 3,889,897,594 B, CC BY 4.0, as a
+      source-held-out DEVELOPMENT set that may never fit data, representation, threshold or policy.
+      API article/version/licence/file-size/MD5 drift and <100 GiB free space are hard stops.
+- [ ] Implement and test resumable, MD5-bound acquisition plus safe archive/inventory handling for
+      the frozen correction sources; commit the method before downloading any selected image byte.
+- [ ] Download and verify IPN-NFID natural bytes and CSAFE iPhone 14 archive, preserving partials on
+      interruption. Inventory iPhone 14 before selecting natural members; decode/hash/decontaminate
+      both sources and record exact realized counts/bytes/limitations in DATASETS and evidence.
+- [ ] Freeze R1b roles by adding only audited iPhone 14 natural parents to the training-side REAL
+      pool with device/scene grouping and a balanced source-capped AI selection. Refit R0/R1a heads
+      under the unchanged CALIBRATION budgets; no owner/IPN pixel may be opened before artifacts
+      freeze. Advance only the stronger internal candidate.
+- [ ] Score the frozen R1b candidate once on all IPN-NFID devices and the consumed owner gallery.
+      Require <=20% worst-device IPN FP and <=20% owner-gallery FP while preserving >=90% modern-AI
+      recall before any locked AI arm or serving replacement. Failure returns to data/objective
+      redesign; it cannot be threshold-repaired on either test.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.
