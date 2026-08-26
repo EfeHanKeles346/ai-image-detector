@@ -140,6 +140,12 @@ small manifests, aggregate evidence, code and documentation.
       embedded image bytes; NBP resolves exact-size loose files; GPT resolves each frozen pair from
       the original checkout or E32 acquisition root. All paths share full decode, SHA-256, dHash,
       protected/peer overlap and duplicate rejection; passing still assigns no model role.
+- [x] Correct the perceptual-duplicate gate after Nano exposed a real dHash collision. Exact
+      SHA-256 remains definitive; exact dHash now creates candidates and a separately computed
+      64-bit DCT pHash must also be within Hamming distance <=5 to confirm a within-source/modern
+      E32 peer duplicate. The five collided Nano images are visibly unrelated and 24–32 pHash bits
+      apart. Legacy protected E30 dHash hits remain conservative hard exclusions because their
+      original audit contract did not persist pHash. Commit this schema-v2 rule before rerun.
 - [ ] Verify generator version, generation date, prompt/content group, native output status,
       licence/usage boundary and label direction for every admitted collection. Unknown generator
       identity may contribute only to a capped `unknown` group and cannot satisfy the five-family

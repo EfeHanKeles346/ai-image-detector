@@ -17,6 +17,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any, Iterable, Mapping, Sequence
 
 import pyarrow.parquet as pq
+import numpy as np
 from PIL import Image
 
 import e32_ai_pool_selection as pool_selection
@@ -31,6 +32,7 @@ OUTPUT_ROOT = real_acquisition.OUTPUT_ROOT
 AUDIT_ROOT = OUTPUT_ROOT / "audits"
 EVIDENCE_ROOT = REPO_ROOT / "evidence"
 CHUNK_BYTES = 8 * 1024**2
+PHASH_DUPLICATE_MAX_DISTANCE = 5
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -85,12 +87,15 @@ def _protected_hashes(repo_root: Path = REPO_ROOT) -> tuple[set[str], set[str], 
     return exact, perceptual, len(manifests)
 
 
-def _passed_peer_hashes(source_id: str) -> tuple[set[str], set[str], int]:
+def _passed_peer_hashes(
+    source_id: str,
+) -> tuple[set[str], set[tuple[str, str]], set[str], int]:
     exact: set[str] = set()
-    perceptual: set[str] = set()
+    perceptual: set[tuple[str, str]] = set()
+    legacy_dhash: set[str] = set()
     reports = 0
     if not AUDIT_ROOT.exists():
-        return exact, perceptual, reports
+        return exact, perceptual, legacy_dhash, reports
     for path in sorted(AUDIT_ROOT.glob("*.json")):
         if path.name.startswith("._"):
             continue
@@ -106,9 +111,34 @@ def _passed_peer_hashes(source_id: str) -> tuple[set[str], set[str], int]:
         for row in payload.get("records", []):
             if row.get("sha256"):
                 exact.add(str(row["sha256"]))
-            if row.get("dhash"):
-                perceptual.add(str(row["dhash"]))
-    return exact, perceptual, reports
+            if row.get("dhash") and row.get("phash"):
+                perceptual.add((str(row["dhash"]), str(row["phash"])))
+            elif row.get("dhash"):
+                legacy_dhash.add(str(row["dhash"]))
+    return exact, perceptual, legacy_dhash, reports
+
+
+def _phash(image: Image.Image) -> str:
+    size = 32
+    low = 8
+    values = np.asarray(
+        image.convert("L").resize((size, size), Image.Resampling.LANCZOS), dtype=np.float64
+    )
+    positions = np.arange(size, dtype=np.float64)
+    frequencies = positions[:, None]
+    transform = np.cos(np.pi * (2 * positions + 1) * frequencies / (2 * size))
+    transform[0] /= np.sqrt(2.0)
+    coefficients = transform @ values @ transform.T
+    block = coefficients[:low, :low].reshape(-1)
+    median = float(np.median(block[1:]))
+    bits = 0
+    for value in block:
+        bits = (bits << 1) | int(value > median)
+    return f"{bits:016x}"
+
+
+def _hamming(left: str, right: str) -> int:
+    return (int(left, 16) ^ int(right, 16)).bit_count()
 
 
 def _image_record_raw(raw: bytes) -> dict[str, Any]:
@@ -120,10 +150,12 @@ def _image_record_raw(raw: bytes) -> dict[str, Any]:
         exif = opened.getexif()
         orientation = exif.get(274) if exif else None
         perceptual = _dhash(opened)
+        phash = _phash(opened)
     return {
         "bytes": len(raw),
         "sha256": _sha256_bytes(raw),
         "dhash": perceptual,
+        "phash": phash,
         "decoded_format": decoded_format,
         "mode": mode,
         "width": width,
@@ -153,6 +185,43 @@ def _duplicates(records: Sequence[Mapping[str, Any]], key: str) -> list[list[str
     return [sorted(paths) for paths in grouped.values() if len(paths) > 1]
 
 
+def _confirmed_perceptual_duplicates(
+    records: Sequence[Mapping[str, Any]],
+) -> list[list[str]]:
+    by_dhash: dict[str, list[Mapping[str, Any]]] = defaultdict(list)
+    for row in records:
+        by_dhash[str(row["dhash"])].append(row)
+    output: list[list[str]] = []
+    for candidates in by_dhash.values():
+        if len(candidates) < 2:
+            continue
+        parent = list(range(len(candidates)))
+
+        def find(index: int) -> int:
+            while parent[index] != index:
+                parent[index] = parent[parent[index]]
+                index = parent[index]
+            return index
+
+        def union(left: int, right: int) -> None:
+            left_root, right_root = find(left), find(right)
+            if left_root != right_root:
+                parent[right_root] = left_root
+
+        for left in range(len(candidates)):
+            for right in range(left + 1, len(candidates)):
+                distance = _hamming(
+                    str(candidates[left]["phash"]), str(candidates[right]["phash"])
+                )
+                if distance <= PHASH_DUPLICATE_MAX_DISTANCE:
+                    union(left, right)
+        groups: dict[int, list[str]] = defaultdict(list)
+        for index, row in enumerate(candidates):
+            groups[find(index)].append(str(row["source_key"]))
+        output.extend(sorted(paths) for paths in groups.values() if len(paths) > 1)
+    return sorted(output)
+
+
 def _selection_source(payload: Mapping[str, Any], source_id: str) -> Mapping[str, Any]:
     try:
         return next(source for source in payload["sources"] if source["source_id"] == source_id)
@@ -171,9 +240,10 @@ def _finalize(
     extra: Mapping[str, Any],
 ) -> dict[str, Any]:
     protected_exact, protected_dhash, protected_manifests = _protected_hashes()
-    peer_exact, peer_dhash, peer_reports = _passed_peer_hashes(source_id)
+    peer_exact, peer_perceptual, peer_legacy_dhash, peer_reports = _passed_peer_hashes(source_id)
     within_exact = _duplicates(records, "sha256")
-    within_dhash = _duplicates(records, "dhash")
+    within_dhash_candidates = _duplicates(records, "dhash")
+    within_perceptual = _confirmed_perceptual_duplicates(records)
     protected_exact_hits = sorted(
         row["source_key"] for row in records if row["sha256"] in protected_exact
     )
@@ -181,11 +251,23 @@ def _finalize(
         row["source_key"] for row in records if row["dhash"] in protected_dhash
     )
     peer_exact_hits = sorted(row["source_key"] for row in records if row["sha256"] in peer_exact)
-    peer_dhash_hits = sorted(row["source_key"] for row in records if row["dhash"] in peer_dhash)
+    peer_dhash_hits = sorted(
+        row["source_key"]
+        for row in records
+        if (row["dhash"], row["phash"]) in peer_perceptual
+        or row["dhash"] in peer_legacy_dhash
+    )
     if within_exact:
-        failures.append({"reason": "within_source_exact_duplicates", "count": str(len(within_exact))})
-    if within_dhash:
-        failures.append({"reason": "within_source_dhash_duplicates", "count": str(len(within_dhash))})
+        failures.append(
+            {"reason": "within_source_exact_duplicates", "count": str(len(within_exact))}
+        )
+    if within_perceptual:
+        failures.append(
+            {
+                "reason": "within_source_confirmed_perceptual_duplicates",
+                "count": str(len(within_perceptual)),
+            }
+        )
     for reason, hits in (
         ("protected_exact_overlap", protected_exact_hits),
         ("protected_dhash_overlap", protected_dhash_hits),
@@ -208,7 +290,7 @@ def _finalize(
         else "source_realization_passed_candidate_only"
     )
     report = {
-        "schema_version": 1,
+        "schema_version": 2,
         "experiment": "E32/C1-C2-source-realization",
         "state": state,
         "source_id": source_id,
@@ -220,8 +302,10 @@ def _finalize(
             "failures": len(failures),
             "unique_sha256": len({row["sha256"] for row in records}),
             "unique_dhash": len({row["dhash"] for row in records}),
+            "unique_phash": len({row["phash"] for row in records}),
             "within_source_exact_duplicate_groups": len(within_exact),
-            "within_source_dhash_duplicate_groups": len(within_dhash),
+            "within_source_dhash_candidate_groups": len(within_dhash_candidates),
+            "within_source_confirmed_perceptual_duplicate_groups": len(within_perceptual),
             "protected_exact_overlaps": len(protected_exact_hits),
             "protected_dhash_overlaps": len(protected_dhash_hits),
             "passed_peer_exact_overlaps": len(peer_exact_hits),
@@ -236,7 +320,11 @@ def _finalize(
             "e30_dhashes": len(protected_dhash),
             "passed_peer_audit_files": peer_reports,
         },
-        "duplicate_groups": {"exact": within_exact, "dhash": within_dhash},
+        "duplicate_groups": {
+            "exact": within_exact,
+            "dhash_candidates": within_dhash_candidates,
+            "perceptual_confirmed": within_perceptual,
+        },
         "overlap_source_keys": {
             "protected_exact": protected_exact_hits,
             "protected_dhash": protected_dhash_hits,
@@ -378,7 +466,10 @@ def audit_ai_source(source_id: str) -> dict[str, Any]:
                 prompt = prompt_raw.decode("utf-8").strip()
             except (OSError, UnicodeDecodeError) as error:
                 failures.append(
-                    {"source_key": text_key, "reason": f"prompt_decode_failure:{type(error).__name__}"}
+                    {
+                        "source_key": text_key,
+                        "reason": f"prompt_decode_failure:{type(error).__name__}",
+                    }
                 )
                 continue
             if not prompt:
@@ -536,7 +627,10 @@ def _audit_pool_parquet(
                         or record["decoded_format"] != str(selected["declared_format"]).upper()
                     ):
                         failures.append(
-                            {"source_key": selected["source_key"], "reason": "declared_metadata_mismatch"}
+                            {
+                                "source_key": selected["source_key"],
+                                "reason": "declared_metadata_mismatch",
+                            }
                         )
                     record.update(
                         {
@@ -622,7 +716,10 @@ def _audit_pool_gpt(
             prompt = prompt_raw.decode("utf-8").strip()
         except (OSError, UnicodeDecodeError) as error:
             failures.append(
-                {"source_key": prompt_key, "reason": f"prompt_decode_failure:{type(error).__name__}"}
+                {
+                    "source_key": prompt_key,
+                    "reason": f"prompt_decode_failure:{type(error).__name__}",
+                }
             )
             continue
         if not prompt:
@@ -675,7 +772,11 @@ def audit_pool_source(root: Path, source_id: str) -> dict[str, Any]:
             "revision": source["revision"],
             "pool_record_selection_sha256": payload["selection_sha256"],
             "model_identity_counts": dict(
-                sorted(Counter(str(row["model_name"]) for row in records if row.get("model_name")).items())
+                sorted(
+                    Counter(
+                        str(row["model_name"]) for row in records if row.get("model_name")
+                    ).items()
+                )
             ),
         },
     )
@@ -703,7 +804,8 @@ def main(argv: Iterable[str] | None = None) -> int:
         report = audit_ai_source(args.source)
     else:
         report = audit_pool_source(args.root, args.source)
-    print(json.dumps({key: value for key, value in report.items() if key != "records"}, indent=2, sort_keys=True))
+    summary = {key: value for key, value in report.items() if key != "records"}
+    print(json.dumps(summary, indent=2, sort_keys=True))
     return int(report["state"] != "source_realization_passed_candidate_only")
 
 

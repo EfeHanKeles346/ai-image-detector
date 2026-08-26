@@ -306,6 +306,13 @@ It revalidates source fingerprints and exact row locators before decode, then ap
 hash/duplicate/protected-overlap gate. A successful source receipt still means `candidate_only`;
 TRAIN/CALIBRATION assignment remains a later frozen-manifest operation.
 
+Realization schema v2 separates **candidate collision** from **confirmed perceptual duplicate**.
+Exact SHA-256 still proves byte identity. Equal 64-bit dHash only creates a candidate pair; the pair
+must additionally have DCT-pHash Hamming distance <=5 to be rejected as a modern E32 duplicate.
+This was required after five visibly unrelated Nano images shared one dHash but were 24–32 pHash
+bits apart. Protected E30 dHash hits remain conservative exclusions because those legacy manifests
+did not store pHash. No row selection or role changed while correcting this audit method.
+
 The complete licensed NBP source is the first 15K arm to pass realization: 200/200 PNG, 200 unique
 SHA-256, 200 unique dHash, zero duplicate or protected-E30 overlap. Modes are 136 RGB / 64 RGBA and
 EXIF is absent, so alpha/mode cannot be exposed as a class shortcut. Detailed external receipt is

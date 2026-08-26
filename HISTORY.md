@@ -2232,3 +2232,19 @@ before writing evidence when the peer-audit directory scan tried to parse exFAT'
 filter defect, not a source decode failure. The generic peer scanner now excludes `._*` receipts
 and tolerates undecodable/non-JSON filesystem debris; a regression fixture recreates the binary
 sidecar. The failed attempt claims no Nano result and will be rerun independently after this fix.
+
+The unchanged Nano rerun then produced a real methodological finding rather than a corrupt row:
+3,000/3,000 images decoded and all SHA-256 values were unique, but five unrelated images shared
+dHash `0f0f0f0f0f0f0f0f`. A bounded diagnostic showed an enchanted forest, flamingo lake, urban
+portal, fireworks and cave angel—same dark-edge/bright-centre layout, different content. Their
+independent 64-bit DCT pHashes are 24–32 Hamming bits apart. Treating exact dHash as a duplicate was
+therefore a false positive; the source correctly remained rejected under the old gate and no role
+was assigned.
+
+Realization schema v2 is frozen before another rerun: SHA-256 exact matches remain definitive;
+dHash is only a cheap candidate bucket, and a candidate pair must also have DCT-pHash Hamming
+distance <=5 to become a confirmed perceptual duplicate. New E32 peer receipts use the same pair.
+Legacy protected E30 manifests contain only dHash, so those hits remain conservative hard
+exclusions rather than weakening final-role isolation. This changes no selected row and uses no
+model label/score. A regression test proves both a far-pHash collision and a close-pHash match; 36
+E32 tests pass.

@@ -2013,3 +2013,15 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - This is not a Nano data verdict. No compact/detailed Nano result was accepted.
 - Fix: exclude AppleDouble receipts and tolerate undecodable/non-JSON filesystem debris; regression
   test added. Rerun the unchanged frozen selection after committing the fix.
+
+### C2c Nano rerun — dHash collision reveals an audit false positive
+
+- **Decode/hashes:** 3,000/3,000 decoded, 3,000 unique SHA-256, zero protected or passed-peer hits.
+- **Old-gate failure:** five unrelated images share dHash `0f0f0f0f0f0f0f0f` solely through a
+  dark-edge/bright-centre composition; bounded visual audit confirms different subjects.
+- **Independent check:** their 64-bit DCT-pHash pair distances are 24–32 bits.
+- **Schema-v2 rule frozen before rerun:** exact SHA is definitive; dHash creates a candidate; DCT
+  pHash distance <=5 confirms a perceptual duplicate. Legacy protected E30 dHash remains a hard
+  exclusion because no legacy pHash exists.
+- **Decision:** old receipt remains rejected; selected rows and labels do not change. Commit the
+  method correction, then rerun independently. E32 tests pass 36/36.

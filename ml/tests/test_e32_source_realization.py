@@ -233,7 +233,21 @@ def test_passed_peer_scan_ignores_exfat_appledouble_receipts(tmp_path, monkeypat
         )
     )
     monkeypatch.setattr(e32, "AUDIT_ROOT", audit_root)
-    exact, perceptual, reports = e32._passed_peer_hashes("current")
+    exact, perceptual, legacy_dhash, reports = e32._passed_peer_hashes("current")
     assert exact == {"exact"}
-    assert perceptual == {"perceptual"}
+    assert perceptual == set()
+    assert legacy_dhash == {"perceptual"}
     assert reports == 1
+
+
+def test_dhash_collision_needs_close_phash_to_be_duplicate():
+    distinct = [
+        {"source_key": "a", "dhash": "0f" * 8, "phash": "00" * 8},
+        {"source_key": "b", "dhash": "0f" * 8, "phash": "ff" * 8},
+    ]
+    assert e32._confirmed_perceptual_duplicates(distinct) == []
+    close = [
+        {"source_key": "a", "dhash": "0f" * 8, "phash": "00" * 8},
+        {"source_key": "b", "dhash": "0f" * 8, "phash": "0000000000000003"},
+    ]
+    assert e32._confirmed_perceptual_duplicates(close) == [["a", "b"]]
