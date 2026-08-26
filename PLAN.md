@@ -136,6 +136,13 @@ test leakage, and only then ask E30 whether the frozen system advances.
 - **Acceptance:** at least one new arm independently meets its pre-registered CALIBRATION gate and
   its three-seed interval is recorded before ensemble work. If none passes, B4 is blocked and the
   negative result becomes the next data/representation decision.
+- **Frozen B3 screen implementation (before scores):** R0 uses the unchanged canonical E20 tile
+  checkpoint; R1 uses cached `vit_small_patch14_dinov2.lvd142m` frozen at a fixed 224 px encoder
+  view; R2 uses the 68 native-tile forensic statistics. R1/R2 fit the same balanced logistic head.
+  Fold 1–4 TRAIN predictions are out-of-fold; their real rows choose the lowest threshold meeting
+  <=5% source-macro and <=10% worst-source FP. Final heads fit all TRAIN and read CALIBRATION once.
+  An arm passes only if CALIBRATION also holds both FP budgets, current Flux/Nano/Nano-Pro macro
+  recall is >=50%, and its weakest current source recall is >=30%. E30 remains unopened.
 
 ### Phase B4 — fit an ensemble only from out-of-fold calibration evidence
 

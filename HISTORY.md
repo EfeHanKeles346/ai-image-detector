@@ -1893,3 +1893,14 @@ output by itself: unlike earlier corpora,
 the next model will train on a balanced, source-capped, generator-broad, group-disjoint and fully
 decontaminated contract. Whether its representation transfers remains the B3 question, not an
 assumption.
+
+### E31/B3 pre-score checkpoint — the representation ladder is executable
+
+`ml/experiments/e31_representation_ladder.py` now pins the accepted tile/selection SHA values and
+implements the planned R0 E20, R1 frozen DINOv2 and R2 68-feature arms. R1/R2 use group-disjoint
+TRAIN out-of-fold scores for threshold selection, then fit all TRAIN and open CALIBRATION once.
+The real operating point requires <=5% source-macro and <=10% worst-source FP; transfer requires
+>=50% macro recall and >=30% weakest-source recall across Flux, Nano Banana and Nano Banana Pro.
+Three focused tests pin source-aware threshold ties, zero-FP behavior and the acceptance gate.
+This implementation and protocol are committed before extracting a B3 feature or producing a
+model score; E30 remains unopened.
