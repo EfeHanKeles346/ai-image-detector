@@ -102,13 +102,16 @@ small manifests, aggregate evidence, code and documentation.
       Nano Banana Pro 200; CommunityForensics AI diversity anchor 2,800. The first four sources
       each equal—not exceed—the 20% ceiling; CommunityForensics is 18.67% and does not count as a
       sixth current family. The five-family gate is Qwen, FLUX.2, Nano Banana, GPT Image 1 and Nano
-      Banana Pro. If pinned GPT cannot supply its missing 1,940 local pairs, stop and document a
-      replacement source; never inflate another source or reuse a protected final to hide the gap.
-- [x] Implement the metadata-only exact selector without writing a production receipt prematurely.
+      Banana Pro. If pinned GPT cannot supply every pair in the later exact selection, stop and
+      document a replacement source; never inflate another source or reuse a protected final to
+      hide the gap.
+- [x] Implement and run the metadata-only exact selector after the GPT gate passed.
       Nano uses stable-hash id selection; CommunityForensics uses model-identity round-robin; NBP
       uses all 200 licensed images; Qwen/FLUX inherit their frozen prompt groups; GPT selects from
-      all pinned upstream pairs independently of local availability. The full freeze hard-stops
-      until GPT revision, licence tag and exact 4,000-pair listing are reachable and verified.
+      all pinned upstream pairs independently of local availability. GPT revision, CC-BY-4.0 tag
+      and exact 4,000-pair listing reproduced; the 4,752,567-byte detailed 15K receipt is frozen at
+      SHA-256 `3230f026...80b7`, with content-selection SHA `2a31e792...0ef7`. It selected 795
+      already-local GPT pairs and 2,205 download-required pairs; freeze downloaded zero image bytes.
 - [x] Research and freeze only the measured two-family gap, without downloading OpenFake's full
       3.44 TB or reassigning protected tests. C2b pins Qwen Image 2512 (CC BY-SA 4.0) and FLUX.2
       Klein 9B Base (CC BY 4.0), selecting 750 complete prompt groups / 3,000 JPEG XL outputs from

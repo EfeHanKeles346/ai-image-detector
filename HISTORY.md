@@ -2176,3 +2176,19 @@ VISION, five Qwen and two FLUX `.partial` files remain intentionally in place. N
 no source was claimed complete, no realization audit was run and no model role or score changed;
 the existing commands will reuse completed files and resume these partials when connectivity
 returns.
+
+### E32/C2c exact freeze — 15,000 AI parents are now immutable
+
+After connectivity returned, the pinned GPT metadata gate reproduced revision
+`bba366cb...4825`, the `license:cc-by-4.0` tag, and exactly 4,000 PNG plus 4,000 TXT files. The
+metadata-only selector then froze all six source allocations into a 4,752,567-byte external
+receipt with SHA-256 `3230f026...80b7`; normalized record selection SHA is `2a31e792...0ef7` and
+the inherited Qwen/FLUX gap-receipt SHA remains `e9c3d3da...af7a`. Freeze downloaded zero image
+bytes and opened no image or model score.
+
+The exact GPT result corrected the earlier arithmetic bandwidth estimate without rewriting that
+history: stable selection from all 4,000 upstream pairs overlaps only 795 of the 1,060 locally
+present pairs, so 2,205 selected pairs—not 1,940—require download. This is the intended evidence
+that local availability did not choose content. Counts remain Qwen 3,000, FLUX.2 3,000, Nano
+Banana 3,000, GPT Image 1 3,000, NBP 200 and CommunityForensics AI 2,800; five current families,
+15,000 total parents and no source above 20%. No row has yet earned TRAIN/CALIBRATION.

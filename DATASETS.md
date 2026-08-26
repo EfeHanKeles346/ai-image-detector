@@ -282,14 +282,18 @@ FLUX.2 3,000, Nano Banana 3,000, GPT Image 1 3,000, licensed NBP 200 and Communi
 2,800. The first four are each 20%; CommunityForensics is 18.67% and NBP 1.33%. The five verified
 current families exclude CommunityForensics, which is only the broad model-identity anchor. Local
 metadata supports 9,457 unique Nano ids and 11,972 Community AI rows across 300 model identities;
-GPT still needs 1,940 of its pinned upstream pairs to reach its frozen 3,000 share. These are target
-counts, not realized counts, until every source passes the byte/decontamination gate.
+The exact receipt later selected 795 already-local GPT pairs and 2,205 download-required pairs;
+the arithmetic 1,940 local-volume shortfall was not used as a row-selection rule. These remain
+target counts, not realized counts, until every source passes the byte/decontamination gate.
 
-The metadata-only selector has reproduced every non-GPT allocation without opening image bytes:
+The metadata-only selector reproduced every allocation without opening image bytes:
 Nano 3,000/9,457 unique ids, NBP 200/200, Community AI 2,800/11,972 across all 300 model identities
-with at most ten selected per model, plus the existing 3,000+3,000 Qwen/FLUX receipts. The complete
-15K receipt is intentionally absent until the pinned GPT revision exposes its exact 4,000 PNG/TXT
-pairs and CC-BY-4.0 tag. A partial local folder is an availability cache, not a selection rule.
+with at most ten selected per model, plus the existing 3,000+3,000 Qwen/FLUX receipts. The pinned
+GPT SHA, CC-BY-4.0 tag and 4,000 complete PNG/TXT pairs reproduced. Detailed selection is external
+`e32/ai_pool_selection.json` (4,752,567 B; SHA-256 `3230f0267ca1b9a252ec61d7f94c90bdb820cf8aeec5fce2174ebc5a7ed980b7`),
+with record-selection SHA `2a31e7921054ac4915533735f3649cbb2d6b204439e93a6277a2164cd26a0ef7`.
+A partial local folder remains an availability cache, not a selection rule: only 795/3,000 exact
+GPT pairs are already local and 2,205 require download.
 
 | Dataset | Size | Model | Era |
 |---|---|---|---|

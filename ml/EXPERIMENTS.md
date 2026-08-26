@@ -1952,3 +1952,15 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   mobile link. No receipt was written. Exact revision/licence/4,000-pair verification remains a
   hard prerequisite, so the local partial checkout cannot bias the chosen 3,000.
 - **Verification:** 26 E32 tests pass, including deterministic-order and local-availability tests.
+
+### C2c exact-freeze result
+
+- **GPT gate:** pinned SHA `bba366cb...4825`, CC-BY-4.0 tag, 4,000 PNG and 4,000 TXT files all
+  reproduced from upstream metadata.
+- **Receipt:** 15,000 exact parents; detailed 4,752,567 B / SHA `3230f026...80b7`; normalized
+  record-selection SHA `2a31e792...0ef7`; inherited gap-selection SHA `e9c3d3da...af7a`.
+- **Availability correction:** deterministic GPT selection overlaps 795 local pairs and requires
+  2,205 downloads. The earlier 1,940 figure was only the raw 3,000-minus-1,060 volume gap and is
+  superseded for transfer planning, not silently rewritten as a selection result.
+- **Decision:** exact metadata freeze passes with zero image bytes downloaded. Proceed to the
+  selected GPT transfer and per-source realization; all records remain role-free candidates.

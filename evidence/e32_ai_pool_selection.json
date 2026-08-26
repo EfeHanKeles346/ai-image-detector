@@ -1,0 +1,22 @@
+{
+  "counts_by_source": {
+    "communityforensics-ai-local": 2800,
+    "flux2-klein-9b": 3000,
+    "gpt-image-1": 3000,
+    "nano-banana-local": 3000,
+    "nano-banana-pro-ash-local": 200,
+    "qwen-image-2512": 3000
+  },
+  "current_family_count": 5,
+  "detailed_selection_bytes": 4752567,
+  "detailed_selection_sha256": "3230f0267ca1b9a252ec61d7f94c90bdb820cf8aeec5fce2174ebc5a7ed980b7",
+  "experiment": "E32/C2c",
+  "gap_selection_sha256": "e9c3d3dad2ceb245b157f6e851e142128573726fe8b963d1811dfdaac4ceaf7a",
+  "gpt_selected_pairs_already_local": 795,
+  "gpt_selected_pairs_requiring_download": 2205,
+  "new_image_bytes_downloaded_by_freeze": 0,
+  "schema_version": 1,
+  "selection_sha256": "2a31e7921054ac4915533735f3649cbb2d6b204439e93a6277a2164cd26a0ef7",
+  "state": "frozen_ai_parent_selection_before_remaining_bytes_or_decode",
+  "target_parents": 15000
+}
