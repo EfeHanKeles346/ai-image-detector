@@ -2104,3 +2104,14 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - External schema-v2 receipt 98,924 B / SHA `55ec23ec...eb8e` supersedes the earlier schema-v1
   artifact at the same evidence path; HISTORY retains both results.
 - **Decision:** remains `candidate_only`; selection and role are unchanged.
+
+### C2c GPT full realization after encoding fix — reject intact source
+
+- 3,000/3,000 RGB PNG and prompts realize; all 3,000 image SHA values are unique.
+- Prompt encoding is measured rather than guessed: 2,893 UTF-8 and 107 Windows-1252, with original
+  byte and normalized text hashes retained.
+- Zero protected/passed-peer overlap; six dHash buckets are six confirmed perceptual duplicate
+  pairs, leaving 2,993 unique pHash values.
+- External receipt 2,239,691 B / SHA `48945f7f...73d5`.
+- **Decision:** preserve intact-source rejection. Later overlay keeps a deterministic canonical row
+  per pair and excludes six losers without replacement.

@@ -1,128 +1,54 @@
 {
   "boundary": "A passing source is only an eligible candidate. This report assigns no TRAIN, CALIBRATION, DEVELOPMENT or LOCKED FINAL role.",
   "counts": {
-    "failures": 109,
+    "failures": 1,
     "passed_peer_dhash_overlaps": 0,
     "passed_peer_exact_overlaps": 0,
     "protected_dhash_overlaps": 0,
     "protected_exact_overlaps": 0,
-    "unique_dhash": 2888,
-    "unique_phash": 2887,
-    "unique_sha256": 2893,
-    "within_source_confirmed_perceptual_duplicate_groups": 5,
-    "within_source_dhash_candidate_groups": 5,
+    "unique_dhash": 2994,
+    "unique_phash": 2993,
+    "unique_sha256": 3000,
+    "within_source_confirmed_perceptual_duplicate_groups": 6,
+    "within_source_dhash_candidate_groups": 6,
     "within_source_exact_duplicate_groups": 0
   },
-  "detailed_report_bytes": 1792420,
+  "detailed_report_bytes": 2239691,
   "detailed_report_external_path": "audits/gpt-image-1.json",
-  "detailed_report_sha256": "9ce487a2341e9d0b481bbbb09c4abd9a3a1c2a405b05accb42a52ad757fe5184",
+  "detailed_report_sha256": "48945f7fb7fb164ef3d80c7890e60479c132cde32914a4a6b4ea307b5c6073d5",
   "exif_present": 0,
   "expected_images": 3000,
   "experiment": "E32/C1-C2-source-realization",
   "failure_examples": [
     {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_03.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_28.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_119.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_22.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_131.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_42.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_124.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_04.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_182.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_170.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_123.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_184.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_179.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_37.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_181.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_156.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_21.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_08.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_127.txt"
-    },
-    {
-      "reason": "prompt_decode_failure:UnicodeDecodeError",
-      "source_key": "GPTIMG_176.txt"
+      "count": "6",
+      "reason": "within_source_confirmed_perceptual_duplicates"
     }
   ],
   "failure_reason_counts": {
-    "prompt_decode_failure:UnicodeDecodeError": 107,
-    "realized_count_mismatch": 1,
     "within_source_confirmed_perceptual_duplicates": 1
   },
   "family": "GPT Image 1",
   "format_counts": {
-    "PNG": 2893
+    "PNG": 3000
   },
   "kind": "ai",
   "mode_counts": {
-    "RGB": 2893
+    "RGB": 3000
   },
   "model_identity_counts": {},
   "pool_record_selection_sha256": "2a31e7921054ac4915533735f3649cbb2d6b204439e93a6277a2164cd26a0ef7",
+  "prompt_encoding_counts": {
+    "utf-8": 2893,
+    "windows-1252": 107
+  },
   "protected_scope": {
     "e30_dhashes": 382,
     "e30_exact_hashes": 980,
     "e30_manifest_files": 4,
-    "passed_peer_audit_files": 2
+    "passed_peer_audit_files": 3
   },
-  "realized_images": 2893,
+  "realized_images": 3000,
   "revision": "bba366cb4b73605ddd569a916976a0e422164825",
   "schema_version": 2,
   "selection_sha256": "3230f0267ca1b9a252ec61d7f94c90bdb820cf8aeec5fce2174ebc5a7ed980b7",

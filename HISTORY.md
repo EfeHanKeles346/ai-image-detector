@@ -2329,3 +2329,15 @@ schema-v2 pHash receipt. The result remains unchanged in substance: 200/200 PNGs
 64 RGBA), all 200 SHA/dHash/pHash values are unique and all protected/peer overlap counts are zero.
 The new detailed receipt is 98,924 B / SHA `55ec23ec...eb8e`; the compact evidence path is unchanged.
 This is a method-version refresh, not a new selection or role assignment.
+
+The unchanged 3,000-row GPT selection was rerun after the independently committed decoder fix.
+All 3,000 RGB PNG images and all prompts now realize: 2,893 prompts decode as UTF-8 and exactly the
+previously diagnosed 107 use Windows-1252. All 3,000 image SHA values are unique, all
+protected/peer overlap counts remain zero, and every original prompt byte hash is retained.
+
+The intact GPT source still remains correctly rejected: complete visibility reveals six confirmed
+perceptual duplicate pairs (one more than the incomplete first audit could observe), leaving 2,993
+unique pHash values. External rejected receipt is 2,239,691 B / SHA `48945f7f...73d5`; compact
+evidence at `evidence/e32_gpt-image-1_realization.json` supersedes the first compact artifact while
+HISTORY retains both audit outcomes. The later eligibility overlay will keep one stable canonical
+row per pair and exclude six losers; it cannot download replacements.

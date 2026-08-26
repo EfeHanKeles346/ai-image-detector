@@ -362,6 +362,13 @@ Detailed receipt is 1,980,274 B / SHA `cb4bffe2...76b2`; compact evidence is
 also refreshed under schema v2 and remains clean; its new detail is 98,924 B / SHA
 `55ec23ec...eb8e`. Both remain role-free candidates.
 
+GPT's unchanged-selection rerun realizes all 3,000 RGB PNGs and prompts: 2,893 UTF-8 plus 107
+Windows-1252, each with original-byte and normalized-text hashes. All image SHA values are unique
+and protected/peer overlap is zero. Six confirmed perceptual pairs still reject the intact source;
+the deterministic overlay must exclude one loser per pair without replacement. Detailed receipt is
+2,239,691 B / SHA `48945f7f...73d5`; compact evidence remains
+`evidence/e32_gpt-image-1_realization.json`.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

@@ -179,9 +179,10 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Add and test a byte-preserving GPT prompt decoder that accepts UTF-8 first and Windows-1252
       only as an explicit fallback. Preserve both original-byte and normalized-text hashes and
       report encoding counts; 20 focused selection/acquisition/realization tests pass.
-- [ ] Rerun the same immutable GPT selection after the decoder commit, preserve the first rejection
-      receipt in HISTORY, and leave its five duplicate pairs for the eligibility overlay rather than
-      silently replacing rows.
+- [x] Rerun the same immutable GPT selection after the decoder commit: all 3,000 RGB PNGs and
+      prompts realize; 2,893 prompts are UTF-8 and 107 are Windows-1252. Preserve the intact-source
+      rejection because six perceptual pairs remain, and send only stable loser exclusions to the
+      later eligibility overlay rather than replacing rows.
 - [x] Realize the 2,800-row CommunityForensics diversity anchor under schema v2: all 300 model
       identities remain represented, every SHA/dHash/pHash is unique, and protected/passed-peer
       overlap is zero. Retain it only as a role-free candidate.
