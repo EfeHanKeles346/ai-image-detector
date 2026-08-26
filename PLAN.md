@@ -390,6 +390,10 @@ small manifests, aggregate evidence, code and documentation.
       before production extraction. It verifies every standardized input SHA, freezes CLS features,
       evaluates the preregistered C grid and writes a separate artifact/evidence receipt. Four
       focused CF-head/threshold tests pass.
+- [x] Complete and freeze the R1a internal screen. Selected C=0.01; CALIBRATION AUC 0.99822, AP
+      0.99835, AI recall 99.91%, REAL recall 90.05%, balanced accuracy 94.98%, macro REAL FP 9.97%
+      and worst-source FP 12.77%. All five gates pass; artifact SHA `6288acba...d670`. Preserve it
+      before any owner-gallery access.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

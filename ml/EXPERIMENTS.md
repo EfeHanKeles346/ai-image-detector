@@ -2443,3 +2443,14 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Separate feature cache/artifact; unchanged C grid, roles, threshold budgets and screen gate.
 - Four focused CF-head/threshold tests pass.
 - **Decision:** commit method before production extraction.
+
+### C4-R1a frozen CF-ViT CLS screen — pass
+
+- Feature matrix 22,688x384; 33,436,875 B / SHA `c170a1f6...bc6b`.
+- C-grid AUC: 0.01=0.998222, 0.1=0.997986, 1=0.997487, 10=0.997285; choose C=0.01.
+- CAL: AUC 0.998222, AP 0.998351, AI recall 99.91%, REAL recall 90.05%, balanced accuracy 94.98%,
+  F1 95.20%, macro/worst REAL FP 9.97%/12.77%.
+- Current-family macro/worst recall 99.95%/99.77%; all screen gates pass.
+- Artifact 12,703 B / SHA `6288acba...d670`.
+- **Decision:** freeze artifact. Owner gallery may be opened only by a separately committed,
+  refit-free inference stress.

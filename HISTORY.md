@@ -2718,3 +2718,14 @@ CF-ViT revision and weight SHA, every R0 input byte and record order, caches onl
 embeddings, then applies the unchanged C-grid and CALIBRATION threshold budgets. A separate
 artifact prevents any accidental replacement of R0. Four focused CF-head/threshold tests pass; no
 production CF feature, head result or owner image was opened by this commit.
+
+R1a completed its internal screen successfully. The frozen CF-ViT CLS matrix is 22,688x384; C=0.01
+won the preregistered grid. CALIBRATION AUC is 0.998222, AP 0.998351, AI recall 99.91%, REAL recall
+90.05%, balanced accuracy 94.98% and F1 95.20%. Current-family macro AI recall is 99.95% and its
+weakest family is 99.77%. Authentic macro FP is 9.97%, with 12.77% worst-source FP. Every screen
+gate passes.
+
+The feature archive is 33,436,875 B / SHA `c170a1f6...bc6b`; the 12,703-byte artifact SHA is
+`6288acba...d670`; compact evidence is `evidence/e32_r1a_cfvit.json`. This artifact is now frozen
+before owner-gallery use. Its strong source-stratified result is still not a generalization claim;
+the next separate gate is the already-consumed, refit-forbidden owner-real DEVELOPMENT stress.

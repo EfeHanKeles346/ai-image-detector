@@ -1,0 +1,62 @@
+{
+  "artifact_bytes": 12703,
+  "artifact_sha256": "6288acba5e50f11588b48907351cbd0fd1b741d3dab079376491bae5938ed670",
+  "boundary": "Internal group-held-out screen only; owner gallery and locked finals were not accessed.",
+  "c_grid_auc": {
+    "0.01": 0.9982215383382046,
+    "0.1": 0.9979855127369183,
+    "1.0": 0.9974873878075751,
+    "10.0": 0.9972848299749789
+  },
+  "experiment": "E32/C4-R1a-CF-ViT-CLS",
+  "feature_archive_bytes": 33436875,
+  "feature_archive_sha256": "c170a1f6688421f73c72c3b9ed6f1de10a57bf9850a535246e64a15bc71bbc6b",
+  "feature_shape": [
+    22688,
+    384
+  ],
+  "input_receipt_sha256": "2255b123a24b2cd7cb371878a134f39f7ef352ed437dd57494c55280e01f5199",
+  "metrics": {
+    "ai_recall": 0.999116217410517,
+    "ai_recall_by_source": {
+      "communityforensics-ai-local": 0.9977528089887641,
+      "flux2-klein-9b": 1.0,
+      "gpt-image-1": 1.0,
+      "nano-banana-local": 1.0,
+      "nano-banana-pro-ash-local": 1.0,
+      "qwen-image-2512": 0.9977477477477478
+    },
+    "auc": 0.9982215383382046,
+    "average_precision": 0.9983508507886936,
+    "balanced_accuracy": 0.9498002927651441,
+    "count": 4534,
+    "current_ai_macro_recall": 0.9995495495495496,
+    "current_ai_worst_source_recall": 0.9977477477477478,
+    "f1": 0.952,
+    "macro_real_fp": 0.09967662476834523,
+    "real_fp_by_source": {
+      "csafe-mcsidb-s21": 0.1276595744680851,
+      "forchheim-fodb": 0.056921086675291076,
+      "vision-base-native": 0.11444921316165951
+    },
+    "real_recall": 0.9004843681197711,
+    "threshold": 0.11810988187789917,
+    "worst_real_fp": 0.1276595744680851
+  },
+  "model_repo": "buildborderless/CommunityForensics-DeepfakeDet-ViT",
+  "model_revision": "ac6ee457bea904a373065754107451793b56db00",
+  "model_weight_sha256": "275ba982236ddd6afddf7131f8133e89f537574b964cf8fa5825b4956d741692",
+  "schema_version": 1,
+  "screen_gate": {
+    "checks": {
+      "auc_gte_0.85": true,
+      "current_ai_macro_recall_gte_0.60": true,
+      "current_ai_worst_source_recall_gte_0.40": true,
+      "macro_real_fp_lte_0.10": true,
+      "worst_real_fp_lte_0.20": true
+    },
+    "passed": true
+  },
+  "selected_c": 0.01,
+  "state": "r1a_screen_passed_runnable_candidate"
+}
