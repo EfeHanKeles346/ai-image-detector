@@ -97,6 +97,10 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Pass CSAFE full realization: 3,996/3,996 RGB JPEG with EXIF, unique SHA/pHash, zero confirmed
       duplicate and zero protected/passed-peer overlap. One equal-dHash pair remains a visible
       nonduplicate candidate; all rows stay role-free pending global overlay.
+- [ ] Bind CSAFE's exact natural-extraction receipt and schema-v2 audit into the global overlay,
+      recompute across 15,000 AI + 11,347 REAL selected rows, and freeze >=10,000 eligible REAL
+      only if no unresolved cross-label component survives. Preserve the existing AI subset absent
+      a newly discovered collision.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly

@@ -2538,3 +2538,9 @@ Detailed external audit is 2,521,737 B / SHA `3ea951ec...b701`; compact evidence
 `evidence/e32_csafe-mcsidb-s21_realization.json`. State is
 `source_realization_passed_candidate_only`. C1 now has enough source-audited volume to exceed the
 10,000 REAL floor, subject to the final global cross-source/cross-label overlay rerun.
+
+Before adding CSAFE to the combined pool, its overlay extension was precommitted. The rerun must
+bind the exact natural-extraction receipt and schema-v2 audit, compare 15,000 AI plus 11,347 REAL
+selected rows globally, exclude both labels from any ambiguous component and preserve the existing
+AI eligible keys if no new collision exists. Only this result may close the >=10,000 REAL gate;
+source realization alone is insufficient.
