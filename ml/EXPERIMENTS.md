@@ -2115,3 +2115,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - External receipt 2,239,691 B / SHA `48945f7f...73d5`.
 - **Decision:** preserve intact-source rejection. Later overlay keeps a deterministic canonical row
   per pair and excludes six losers without replacement.
+
+### C2 eligibility-overlay method checkpoint
+
+- Validate exact selection/audit row-set equality and bind every audit receipt SHA.
+- Recompute exact SHA and dHash+pHash components globally across AI and VISION, including sources
+  rejected by their own intact-source gate.
+- Preserve parent groups; keep one stable same-label unit, remove all REAL/AI ambiguous units, and
+  apply an exact <=20% AI source cap with stable-hash trimming.
+- Verification: 32 focused E32 tests pass; production receipts were not opened by this checkpoint.
+- **Decision:** commit method first, then freeze the production role-free overlay independently.

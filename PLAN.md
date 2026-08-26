@@ -192,11 +192,12 @@ small manifests, aggregate evidence, code and documentation.
 - [ ] Extend the immutable-selection eligibility overlay to VISION parent rows as well as AI prompt
       groups. Resolve each duplicate component by a stable content-independent canonical key,
       exclude losers only, bind the overlay to every detailed receipt SHA, and assign no role yet.
-- [ ] Before freezing that overlay, globally decontaminate all 15,000 AI plus 3,500 VISION audit
-      records—not only previously passed peers—using exact SHA and the frozen dHash+pHash rule.
-      Keep one deterministic parent unit for same-label components; exclude every affected unit on
-      both sides of a REAL/AI component because its label is ambiguous. Apply the <=20% AI-source
-      cap with indivisible four-variant prompt groups and stable-hash trimming.
+- [x] Implement and test global decontamination over all 15,000 AI plus 3,500 VISION audit records,
+      not only previously passed peers. Exact SHA and frozen dHash+pHash components preserve parent
+      units; REAL/AI components lose both sides; source-cap trimming respects four-variant groups.
+      The method checkpoint passes 32 focused E32 tests and opens no production receipt.
+- [ ] Run the committed overlay on the production receipts, verify every <=20% share and receipt
+      binding, then freeze only the role-free eligible subset; never add a replacement row.
 - [ ] Match semantic topics across classes before representation training. Measure topic/source,
       format, geometry, compression and bytes/pixel shortcuts on native and every proposed model
       input. Apply transport augmentation with the same probability/range to REAL and AI; never

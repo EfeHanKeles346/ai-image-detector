@@ -2350,3 +2350,12 @@ across all 15,000 AI records plus 3,500 VISION records. Same-label components re
 parent unit; any REAL/AI component excludes every affected unit on both sides as label-ambiguous.
 The subsequent <=20% AI source cap must respect four-row prompt groups and use only selection-bound
 stable hashes. This checkpoint changes no data and assigns no role.
+
+The combined eligibility-overlay implementation was then completed without opening production
+receipts. It validates exact equality between every frozen selection and audit row set, permits
+only duplicate-related source rejections, recomputes global exact/perceptual connected components,
+preserves parent groups, removes both labels from cross-label components, and maximizes retained AI
+rows subject to an exact <=20% source share. Stable-hash cap trimming is bound to the immutable AI
+selection SHA; Qwen/FLUX four-row units remain indivisible. The detailed output will retain every
+eligible key and exclusion reason while Git receives only aggregates. Three focused overlay tests
+plus 29 related E32 tests pass. No production overlay was emitted by this method commit.
