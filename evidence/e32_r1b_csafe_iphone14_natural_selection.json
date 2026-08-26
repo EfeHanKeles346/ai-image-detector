@@ -1,0 +1,31 @@
+{
+  "boundary": "Natural-only metadata selection; no member payload opened and no role assigned.",
+  "detailed_report_bytes": 1425474,
+  "detailed_report_external_path": "r1b_csafe_iphone14_natural_selection.json",
+  "detailed_report_sha256": "88dc326e37773d2bab704b3a2c1345dc0740286f2c2dce218c3ddacc63c17b74",
+  "device_counts": {
+    "iPhone14_1": 400,
+    "iPhone14_10": 400,
+    "iPhone14_2": 400,
+    "iPhone14_3": 400,
+    "iPhone14_4": 400,
+    "iPhone14_5": 400,
+    "iPhone14_6": 400,
+    "iPhone14_7": 398,
+    "iPhone14_8": 399,
+    "iPhone14_9": 399
+  },
+  "excluded_blank": 4000,
+  "experiment": "E32/C4-R1b-csafe-iphone14-natural-selection",
+  "inventory_sha256": "8931a53583362c63cefac963601c1fbbd609e5649a3a0a45ee90e2eb887d912e",
+  "lens_counts": {
+    "front": 998,
+    "telephoto": 1000,
+    "ultra": 998,
+    "wide": 1000
+  },
+  "schema_version": 1,
+  "selected": 3996,
+  "source_id": "csafe-mcsidb-iphone14",
+  "state": "natural_selection_frozen_no_member_bytes_read"
+}

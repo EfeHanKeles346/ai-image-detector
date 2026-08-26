@@ -2829,3 +2829,8 @@ Production iPhone 14 inventory passed every CRC and safety check. The 20,428,338
 SHA is `22f04a95...8cbb9`; all 7,996 members are expected JPEGs, split exactly into 4,000 blank and
 3,996 natural across ten devices and four lenses. Detailed inventory SHA is `8931a535...912e`.
 No member was selected/extracted, so the inventory can now be frozen before natural selection.
+
+The frozen inventory then produced an exact natural-only metadata selection: 3,996 members at
+398-400/device and 998-1,000/lens; all 4,000 blank captures are excluded. Detailed selection SHA
+is `88dc326e...7b74`. No member payload was opened and no role assigned; this receipt is committed
+before extraction.

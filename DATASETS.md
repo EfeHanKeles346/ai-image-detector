@@ -610,3 +610,9 @@ members pass CRC/path/symlink/encryption/expansion checks: 4,000 blank + 3,996 n
 physical devices and front/telephoto/ultra/wide. Detailed inventory is 1,295,576 B / SHA
 `8931a535...912e`; compact evidence is `evidence/e32_r1b_csafe_iphone14_inventory.json`. No member
 was selected or extracted by inventory.
+
+The subsequent metadata-only selection freezes all 3,996 natural members and excludes all 4,000
+blank images before payload extraction. Device counts are 398-400; lens counts are front 998,
+telephoto 1,000, ultra 998 and wide 1,000. Detailed selection is 1,425,474 B / SHA
+`88dc326e...7b74`; compact evidence is `evidence/e32_r1b_csafe_iphone14_natural_selection.json`.
+Rows remain role-free and unextracted at this checkpoint.

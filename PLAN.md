@@ -440,7 +440,9 @@ small manifests, aggregate evidence, code and documentation.
       Implementation passes 24 combined archive/acquisition tests; commit before production CRC.
       Production inventory passes all CRC/path/ratio checks: archive SHA `22f04a95...8cbb9`, exact
       content/device/lens counts and no unknown member. Freeze inventory SHA `8931a535...912e`
-      before running the already-implemented natural-only metadata selector.
+      before running the already-implemented natural-only metadata selector. Selection freezes all
+      3,996 natural rows (398-400/device; 998-1,000/lens), excludes 4,000 blank and binds detailed
+      SHA `88dc326e...7b74`; commit before extraction.
 - [x] Preserve the first iPhone 14 single-stream stop at 92,274,688 bytes and precommit four-range
       recovery before changing transfer code. Split only the exact remaining interval, require HTTP
       206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary

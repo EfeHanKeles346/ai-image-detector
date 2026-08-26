@@ -2582,3 +2582,10 @@ above are transcription errors; production range planning binds the filesystem v
 - 7,996/7,996 JPEG members pass CRC/safety: 4,000 blank, 3,996 natural, ten devices, four lenses.
 - Detailed inventory 1,295,576 B / SHA `8931a535...912e`; no member selected or extracted.
 - **Decision:** freeze inventory before running the natural-only metadata selector.
+
+### C4-R1b iPhone 14 natural selection — frozen before member bytes
+
+- 3,996 natural selected; 4,000 blank excluded. Devices 398-400 each; lenses 998-1,000 each.
+- Detailed selection 1,425,474 B / SHA `88dc326e...7b74`.
+- No member payload read and no role assigned.
+- **Decision:** commit selection before atomic extraction.
