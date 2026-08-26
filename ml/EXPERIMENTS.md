@@ -2435,3 +2435,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - No owner-gallery access during feature/head selection. A passing artifact must be frozen before a
   separately committed gallery stress.
 - **Decision:** commit before implementation or CF feature extraction.
+
+### C4-R1a implementation checkpoint
+
+- Pinned revision `ac6ee457...db00`, weight SHA `275ba982...1692`; record/input SHA checks precede
+  frozen CLS extraction.
+- Separate feature cache/artifact; unchanged C grid, roles, threshold budgets and screen gate.
+- Four focused CF-head/threshold tests pass.
+- **Decision:** commit method before production extraction.

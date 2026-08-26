@@ -2712,3 +2712,9 @@ budgets. This is motivated by measured complementarity: the frozen CF decision m
 false alarm on 206 unique owner images, while its old fixed head missed most current AI. A new head
 on the modern E32 pool tests whether the representation can keep real specificity and learn the new
 families. Owner pixels remain closed until an internal artifact is independently frozen.
+
+The R1a implementation was completed before feature extraction. It hard-verifies the pinned
+CF-ViT revision and weight SHA, every R0 input byte and record order, caches only aligned CLS
+embeddings, then applies the unchanged C-grid and CALIBRATION threshold budgets. A separate
+artifact prevents any accidental replacement of R0. Four focused CF-head/threshold tests pass; no
+production CF feature, head result or owner image was opened by this commit.

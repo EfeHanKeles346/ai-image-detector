@@ -386,6 +386,10 @@ small manifests, aggregate evidence, code and documentation.
       ensemble and does not open the owner gallery. If the internal screen passes, freeze the
       artifact first; only a separately precommitted refit-free gallery stress may then decide
       whether the forensic trunk improves authentic-pipeline transfer.
+- [x] Implement and test the R1a receipt/weight/record-bound feature cache and fixed head screen
+      before production extraction. It verifies every standardized input SHA, freezes CLS features,
+      evaluates the preregistered C grid and writes a separate artifact/evidence receipt. Four
+      focused CF-head/threshold tests pass.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.
