@@ -70,6 +70,10 @@ small manifests, aggregate evidence, code and documentation.
       detailed SHA-256 is `200a7aeb...ca4d`. Freeze downloaded zero image bytes.
 - [ ] Complete the frozen transfers and final content hashes without overwriting existing E31
       holdings or modifying an upstream archive in place.
+- [ ] Replace only the stalled CSAFE single stream with a tested four-range resume path. Preserve
+      the existing contiguous prefix, download disjoint exact byte ranges to separate partials,
+      verify every `Content-Range`/length, assemble to a new temporary file, verify the published
+      full MD5, and only then atomically promote. Never overwrite the source prefix on failure.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly

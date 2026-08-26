@@ -2466,3 +2466,10 @@ The new detailed overlay is 1,179,329 B / SHA `510e94eb...fc3b`, bound additiona
 extraction SHA `a1626b0b...8b05` and audit SHA `dcbf8b55...fd11`. Compact evidence at
 `evidence/e32_eligibility_overlay.json` supersedes the 18,500-row aggregate while HISTORY retains
 both. The C1 acceptance floor is not yet met; CSAFE remains necessary for >=10,000 REAL parents.
+
+CSAFE's single-stream Figshare/S3 transfer later degraded to roughly 9 MB/min after preserving a
+contiguous ~4.70 GB prefix. A one-byte diagnostic request confirmed HTTP 206 and exact byte-range
+support. Before interrupting that resumable prefix, a four-range recovery path was precommitted:
+each remaining range must download to an independent partial, validate `Content-Range` and length,
+assemble beside—not over—the original prefix, reproduce the published full MD5, and only then
+promote atomically. Any failure leaves the original prefix and range partials recoverable.
