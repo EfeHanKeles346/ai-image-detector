@@ -2800,3 +2800,9 @@ IPN-NFID transfer then completed independently: 960/960 natural JPEGs, twelve de
 model score, a separate audit was precommitted: bind selection+download receipts, retain shared
 scene identities across phones, reject decode/exact/protected-peer overlap and record perceptual
 candidates. The audit is data-quality only; DEVELOPMENT images remain forbidden from fitting.
+
+The IPN audit implementation binds both receipts, derives landscape/portrait scene ids across
+devices, decodes and hashes without importing a detector, distinguishes legitimate same-scene
+cross-camera similarity from cross-scene collision and checks protected/passed-peer overlap.
+Twenty focused audit/acquisition/realization tests pass. Pixels remain unopened by this method
+commit.

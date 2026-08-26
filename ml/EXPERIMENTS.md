@@ -2541,3 +2541,11 @@ above are transcription errors; production range planning binds the filesystem v
   reject exact/protected/passed-peer overlap and report dHash+pHash candidates.
 - No detector is loaded and no score/threshold is produced; IPN remains DEVELOPMENT only.
 - **Decision:** commit before implementing the decoder/audit or opening IPN pixels.
+
+### C4-R1b IPN audit implementation checkpoint
+
+- Selection/download receipt binding, exact decode/container/EXIF/SHA checks and protected/peer
+  decontamination implemented; shared landscape/portrait scene ids are retained across devices.
+- Same-scene perceptual candidates remain visible; only cross-scene candidates are gate failures.
+- Twenty focused audit/acquisition/realization tests pass; no detector dependency exists.
+- **Decision:** commit method before the production 960-image decode.
