@@ -2182,3 +2182,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Explicit nonparents: 4,004 `inspection` JPEG / 2,834,597,196 B.
 - External inventory 5,356,810 B / SHA `d378573f...9631`.
 - **Decision:** pass inventory; commit receipt before extracting only `orig` members.
+
+### C1 FODB original-only extraction — complete, role-free
+
+- 3,851 JPEG parents / 15,416,129,383 B extracted atomically; per-file SHA/device/scene retained.
+- Social transports and `inspection` helpers were not extracted.
+- External receipt 1,311,414 B / SHA `a1626b0b...8b05`, bound to inventory `d378573f...9631`.
+- **Decision:** commit extraction receipt, then run the independent full realization audit.

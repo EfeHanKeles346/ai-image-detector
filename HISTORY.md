@@ -2424,3 +2424,11 @@ The detailed external inventory is 5,356,810 B / SHA `d378573f...9631`; compact 
 `evidence/e32_fodb_archive_inventory.json`. State is
 `archive_inventory_passed_orig_parents_unextracted`. No archive member was extracted by this
 checkpoint; the next independent action may extract only the 3,851 `orig` members.
+
+FODB original-only extraction then completed from the committed inventory. Exactly 3,851 JPEG
+parents / 15,416,129,383 B were written atomically below `e32/real/fodb/orig`, with per-file SHA,
+camera pipeline, device and scene group in the external receipt. No Facebook, Instagram, Telegram,
+Twitter, WhatsApp or `inspection` member was extracted. Detailed extraction receipt is 1,311,414 B
+/ SHA `a1626b0b...8b05`, bound to inventory SHA `d378573f...9631`; compact evidence is
+`evidence/e32_fodb_orig_extraction.json`. State is `orig_extraction_complete_role_free`, not a
+training role or data-quality pass.

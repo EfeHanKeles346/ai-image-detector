@@ -1,0 +1,12 @@
+{
+  "boundary": "Extracted originals are role-free candidates; social derivatives were not extracted.",
+  "bytes": 15416129383,
+  "detailed_report_bytes": 1311414,
+  "detailed_report_external_path": "fodb_orig_extraction.json",
+  "detailed_report_sha256": "a1626b0b2aeb2579b2657c832a918fa84311909f384b191a3f349e7771198b05",
+  "experiment": "E32/C1-fodb-orig-extraction",
+  "inventory_sha256": "d378573ff55dab4e4e4b0fffa16607cbdb595ce4a63005476ca4d4fd6df19631",
+  "parent_count": 3851,
+  "schema_version": 1,
+  "state": "orig_extraction_complete_role_free"
+}

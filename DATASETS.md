@@ -73,6 +73,12 @@ derivatives. Exactly 4,004 `inspection` helpers / 2,834,597,196 B are excluded a
 Detailed inventory is 5,356,810 B / SHA `d378573f...9631`; compact evidence is
 `evidence/e32_fodb_archive_inventory.json`. Originals remain unextracted and role-free here.
 
+The subsequent original-only extraction produced exactly 3,851 FODB JPEG parents /
+15,416,129,383 B below the isolated E32 root. Per-parent SHA/device/scene metadata is bound to the
+inventory; no social or `inspection` helper was extracted. Detailed receipt is 1,311,414 B / SHA
+`a1626b0b...8b05`; compact evidence is `evidence/e32_fodb_orig_extraction.json`. These are still
+role-free candidates until the decode/decontamination audit passes.
+
 ### Training
 
 | Dataset | Size | Contents | Mode | Why |
