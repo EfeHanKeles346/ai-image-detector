@@ -1,0 +1,150 @@
+{
+  "ai_eligible_rows": 14786,
+  "ai_source_cap": "<=20% of eligible AI rows",
+  "audit_bindings": {
+    "communityforensics-ai-local": {
+      "bytes": 1980274,
+      "sha256": "cb4bffe2c9710ba50315d4f22dd3e7b03184dfa172514dc2fb55c845cf5776b2",
+      "state": "source_realization_passed_candidate_only"
+    },
+    "flux2-klein-9b": {
+      "bytes": 2045961,
+      "sha256": "53c0793b5832181056b9588043d6562eb2ac9ef819c821a202dadc5c4d661451",
+      "state": "source_realization_rejected_no_role_assignment"
+    },
+    "gpt-image-1": {
+      "bytes": 2239691,
+      "sha256": "48945f7fb7fb164ef3d80c7890e60479c132cde32914a4a6b4ea307b5c6073d5",
+      "state": "source_realization_rejected_no_role_assignment"
+    },
+    "nano-banana-local": {
+      "bytes": 1767170,
+      "sha256": "8cb04e525741d264420afbcff0de26d4233fa9bc76b31e877f6602f75098fe2f",
+      "state": "source_realization_passed_candidate_only"
+    },
+    "nano-banana-pro-ash-local": {
+      "bytes": 98924,
+      "sha256": "55ec23ec6ea5d5708b5b8b71d01babaa4b37706093454df7d06e9d1be07deb8e",
+      "state": "source_realization_passed_candidate_only"
+    },
+    "qwen-image-2512": {
+      "bytes": 2020166,
+      "sha256": "fbdc34d47239cedddd3947b2615b8597bbab126c616a37f0d02378ba87d5ad57",
+      "state": "source_realization_rejected_no_role_assignment"
+    },
+    "vision-base-native": {
+      "bytes": 1939155,
+      "sha256": "3312c7744599a5d822f94a47cc58d7f4a5ddaff9e184cccfb676ecc7c3a1e6b1",
+      "state": "source_realization_rejected_no_role_assignment"
+    }
+  },
+  "boundaries": [
+    "The overlay only excludes immutable selected rows and never adds replacements.",
+    "No eligible row has TRAIN, CALIBRATION, DEVELOPMENT or LOCKED FINAL role.",
+    "Same-label duplicates keep a deterministic parent unit; cross-label duplicates lose every affected unit.",
+    "Four-variant Qwen and FLUX prompt groups remain indivisible."
+  ],
+  "detailed_report_bytes": 913980,
+  "detailed_report_external_path": "eligibility_overlay.json",
+  "detailed_report_sha256": "b6c2101fbf63ee1f9bf41993b48eb126acfdaf661a0581928b4cc081cc2f32e4",
+  "duplicate_excluded_unit_reason_counts": {
+    "same_label_duplicate_noncanonical": 20,
+    "within_parent_duplicate": 13
+  },
+  "experiment": "E32/C2-eligibility-overlay",
+  "global_duplicate_row_components": 59,
+  "global_realized_rows": 18500,
+  "real_eligible_rows": 3497,
+  "schema_version": 1,
+  "selection_sha256": {
+    "ai": "3230f0267ca1b9a252ec61d7f94c90bdb820cf8aeec5fce2174ebc5a7ed980b7",
+    "real": "200a7aeb23d9c303d880dff76a08b21e38efe666531a6552ffe4bdd5841eca4d"
+  },
+  "sources": [
+    {
+      "eligible_rows": 2956,
+      "eligible_share": 0.19991884,
+      "eligible_units": 739,
+      "exclusion_reason_counts": {
+        "same_label_duplicate_noncanonical": 2,
+        "source_cap_trim": 8,
+        "within_parent_duplicate": 1
+      },
+      "label": "ai",
+      "selected_rows": 3000,
+      "selected_units": 750,
+      "source_id": "qwen-image-2512"
+    },
+    {
+      "eligible_rows": 2916,
+      "eligible_share": 0.19721358,
+      "eligible_units": 729,
+      "exclusion_reason_counts": {
+        "same_label_duplicate_noncanonical": 9,
+        "within_parent_duplicate": 12
+      },
+      "label": "ai",
+      "selected_rows": 3000,
+      "selected_units": 750,
+      "source_id": "flux2-klein-9b"
+    },
+    {
+      "eligible_rows": 2957,
+      "eligible_share": 0.19998647,
+      "eligible_units": 2957,
+      "exclusion_reason_counts": {
+        "source_cap_trim": 43
+      },
+      "label": "ai",
+      "selected_rows": 3000,
+      "selected_units": 3000,
+      "source_id": "nano-banana-local"
+    },
+    {
+      "eligible_rows": 2957,
+      "eligible_share": 0.19998647,
+      "eligible_units": 2957,
+      "exclusion_reason_counts": {
+        "same_label_duplicate_noncanonical": 6,
+        "source_cap_trim": 37
+      },
+      "label": "ai",
+      "selected_rows": 3000,
+      "selected_units": 3000,
+      "source_id": "gpt-image-1"
+    },
+    {
+      "eligible_rows": 200,
+      "eligible_share": 0.01352631,
+      "eligible_units": 200,
+      "exclusion_reason_counts": {},
+      "label": "ai",
+      "selected_rows": 200,
+      "selected_units": 200,
+      "source_id": "nano-banana-pro-ash-local"
+    },
+    {
+      "eligible_rows": 2800,
+      "eligible_share": 0.18936832,
+      "eligible_units": 2800,
+      "exclusion_reason_counts": {},
+      "label": "ai",
+      "selected_rows": 2800,
+      "selected_units": 2800,
+      "source_id": "communityforensics-ai-local"
+    },
+    {
+      "eligible_rows": 3497,
+      "eligible_share": 1.0,
+      "eligible_units": 3497,
+      "exclusion_reason_counts": {
+        "same_label_duplicate_noncanonical": 3
+      },
+      "label": "real",
+      "selected_rows": 3500,
+      "selected_units": 3500,
+      "source_id": "vision-base-native"
+    }
+  ],
+  "state": "eligibility_frozen_role_free"
+}

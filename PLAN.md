@@ -162,7 +162,7 @@ small manifests, aggregate evidence, code and documentation.
       protected/peer overlap, but eight exact duplicate pairs link two composition groups to two
       architecture groups, and one style group contains a confirmed near-duplicate pair. Do not
       rewrite the receipt or cherry-pick individual variants.
-- [ ] Precommit a pool eligibility overlay that removes the three affected Qwen prompt groups as
+- [x] Precommit a pool eligibility overlay that removes the three affected Qwen prompt groups as
       indivisible units and applies deterministic source-cap trimming to the other 3,000-row arms.
       The overlay must remain bound to the immutable 15K selection and every realization receipt;
       it may exclude audited failures but cannot add an unselected replacement after byte access.
@@ -189,15 +189,17 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Reissue Nano Banana Pro's 200-row receipt under schema v2 so every AI arm uses the same
       SHA+dHash+pHash rule. All 200 hashes remain unique and overlap-free; state stays
       `candidate_only`.
-- [ ] Extend the immutable-selection eligibility overlay to VISION parent rows as well as AI prompt
+- [x] Extend the immutable-selection eligibility overlay to VISION parent rows as well as AI prompt
       groups. Resolve each duplicate component by a stable content-independent canonical key,
       exclude losers only, bind the overlay to every detailed receipt SHA, and assign no role yet.
 - [x] Implement and test global decontamination over all 15,000 AI plus 3,500 VISION audit records,
       not only previously passed peers. Exact SHA and frozen dHash+pHash components preserve parent
       units; REAL/AI components lose both sides; source-cap trimming respects four-variant groups.
       The method checkpoint passes 32 focused E32 tests and opens no production receipt.
-- [ ] Run the committed overlay on the production receipts, verify every <=20% share and receipt
+- [x] Run the committed overlay on the production receipts, verify every <=20% share and receipt
       binding, then freeze only the role-free eligible subset; never add a replacement row.
+      Result: 14,786/15,000 AI and 3,497/3,500 VISION rows remain; maximum AI source share is
+      19.998647%, no REAL/AI duplicate component exists, and all seven audit SHAs are bound.
 - [ ] Match semantic topics across classes before representation training. Measure topic/source,
       format, geometry, compression and bytes/pixel shortcuts on native and every proposed model
       input. Apply transport augmentation with the same probability/range to REAL and AI; never

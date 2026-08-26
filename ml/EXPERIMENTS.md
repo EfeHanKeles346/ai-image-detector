@@ -2125,3 +2125,15 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   apply an exact <=20% AI source cap with stable-hash trimming.
 - Verification: 32 focused E32 tests pass; production receipts were not opened by this checkpoint.
 - **Decision:** commit method first, then freeze the production role-free overlay independently.
+
+### C2 production eligibility overlay — freeze succeeds
+
+- Inputs: 15,000 AI + 3,500 VISION realized rows, immutable selection SHAs and seven audit receipts.
+- Global result: 59 duplicate row components; 13 internal-parent exclusions, 20 noncanonical
+  same-label units, zero REAL/AI ambiguous component.
+- Eligible AI 14,786: Qwen 2,956; FLUX.2 2,916; Nano 2,957; GPT 2,957; NBP 200; Community 2,800.
+  Maximum share 19.998647%; Qwen/FLUX four-row groups remain intact.
+- Eligible VISION: 3,497/3,500.
+- External overlay 913,980 B / SHA `b6c2101f...32e4`.
+- **Decision:** freeze as `eligibility_frozen_role_free`; do not train until remaining REAL sources
+  are acquired/audited and source/device-disjoint TRAIN/CALIBRATION roles are separately frozen.

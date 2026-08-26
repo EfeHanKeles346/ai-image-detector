@@ -369,6 +369,14 @@ the deterministic overlay must exclude one loser per pair without replacement. D
 2,239,691 B / SHA `48945f7f...73d5`; compact evidence remains
 `evidence/e32_gpt-image-1_realization.json`.
 
+The receipt-bound global eligibility overlay now retains 14,786/15,000 AI parents and 3,497/3,500
+VISION parents. AI counts are Qwen 2,956; FLUX.2 2,916; Nano Banana 2,957; GPT Image 1 2,957; Nano
+Banana Pro 200; CommunityForensics 2,800. Maximum source share is 19.998647%; Qwen/FLUX parent groups
+remain indivisible. Across 18,500 records, 59 duplicate components produced 13 internal-parent and
+20 noncanonical-unit exclusions, with zero REAL/AI component. Detailed overlay is 913,980 B / SHA
+`b6c2101f...32e4`; compact evidence is `evidence/e32_eligibility_overlay.json`. Rows remain
+role-free until real-source acquisition and fold design finish.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

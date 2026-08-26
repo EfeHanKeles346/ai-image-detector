@@ -2359,3 +2359,18 @@ rows subject to an exact <=20% source share. Stable-hash cap trimming is bound t
 selection SHA; Qwen/FLUX four-row units remain indivisible. The detailed output will retain every
 eligible key and exclusion reason while Git receives only aggregates. Three focused overlay tests
 plus 29 related E32 tests pass. No production overlay was emitted by this method commit.
+
+The independently run production overlay then froze a clean role-free subset. It bound immutable
+AI selection SHA `3230f026...80b7`, REAL selection SHA `200a7aeb...a4d` and all seven detailed audit
+SHAs, and globally compared 18,500 realized rows. It found 59 duplicate row components but no
+REAL/AI component and no new cross-source collision beyond the recorded within-source findings.
+Thirteen parent units contain an internal duplicate and 20 noncanonical same-label units lose
+their components; no replacement is added.
+
+The eligible AI pool is 14,786/15,000: Qwen 2,956, FLUX.2 2,916, Nano Banana 2,957, GPT Image 1
+2,957, Nano Banana Pro 200 and CommunityForensics 2,800. Maximum source share is 19.998647%, below
+the exact 20% cap; Qwen/FLUX remain divisible into intact four-row prompt groups. VISION retains
+3,497/3,500 parents after three canonical-loser exclusions. Detailed external overlay is 913,980 B
+/ SHA `b6c2101f...32e4`; compact evidence is `evidence/e32_eligibility_overlay.json`. State is
+`eligibility_frozen_role_free`: this is not yet TRAIN/CALIBRATION and does not authorize evaluation
+on protected roles.
