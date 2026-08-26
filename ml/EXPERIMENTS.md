@@ -2250,3 +2250,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Ten devices contribute 398–400 rows; lens counts front 998, telephoto 998, ultra 1,000, wide 1,000.
 - External selection 1,193,310 B / SHA `3a24bd50...ad1c`.
 - **Decision:** commit exact selection, then extract only these rows independently.
+
+### C1 CSAFE natural-only extraction — complete, role-free
+
+- 3,996 selected JPEG / 13,219,178,988 B extracted atomically with SHA/device/lens metadata.
+- Zero blank members extracted.
+- External receipt 1,775,854 B / SHA `32acdfb3...d7e4`, bound to selection `3a24bd50...ad1c`.
+- **Decision:** commit extraction receipt, then run independent full realization.

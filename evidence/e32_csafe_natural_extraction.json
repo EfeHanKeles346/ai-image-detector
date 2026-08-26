@@ -1,0 +1,12 @@
+{
+  "boundary": "Natural images are role-free candidates; blank fields were not extracted.",
+  "bytes": 13219178988,
+  "detailed_report_bytes": 1775854,
+  "detailed_report_external_path": "csafe_natural_extraction.json",
+  "detailed_report_sha256": "32acdfb31e5e84707443cc1c06a9791e937fbee4b97cf3c671bc221fd874d7e4",
+  "experiment": "E32/C1-csafe-natural-extraction",
+  "parent_count": 3996,
+  "schema_version": 1,
+  "selection_sha256": "3a24bd5046193461a1428425bbed090de60938da9c71c8c3c7d12b7520bdad1c",
+  "state": "natural_extraction_complete_role_free"
+}

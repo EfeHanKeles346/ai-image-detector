@@ -91,6 +91,9 @@ small manifests, aggregate evidence, code and documentation.
       production use. Unknown device/content/lens/suffix paths fail closed; 23 focused tests pass.
 - [x] Freeze the exact CSAFE natural selection before member bytes: all 3,996 natural JPEGs, ten
       devices (398–400 each) and four lenses (998–1,000 each); exclude all 4,000 blank fields.
+- [x] Extract the frozen 3,996 CSAFE natural parents atomically: 13,219,178,988 B with per-file SHA,
+      device/lens metadata and exact selection binding. No blank member was extracted; keep rows
+      role-free until full realization.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly

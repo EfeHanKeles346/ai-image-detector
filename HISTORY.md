@@ -2521,3 +2521,10 @@ wide 1,000 each. All 4,000 blank fields are excluded. No ZIP member byte was ope
 selection is 1,193,310 B / SHA `3a24bd50...ad1c`, bound to inventory SHA `77a88649...fd8d`;
 compact evidence is `evidence/e32_csafe_natural_selection.json`. State is
 `natural_selection_frozen_no_member_bytes_read` and assigns no role.
+
+CSAFE natural-only extraction completed from the committed selection. Exactly 3,996 JPEG parents /
+13,219,178,988 B were written atomically below the isolated E32 root with per-file SHA, archive
+member, device, lens and camera-pipeline metadata. No `blank` member was extracted. Detailed
+receipt is 1,775,854 B / SHA `32acdfb3...d7e4`, bound to selection SHA `3a24bd50...ad1c`; compact
+evidence is `evidence/e32_csafe_natural_extraction.json`. State remains
+`natural_extraction_complete_role_free` pending independent realization.

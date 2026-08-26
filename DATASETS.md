@@ -59,6 +59,11 @@ front/telephoto 998 each and ultra/wide 1,000 each. All 4,000 blank fields are e
 selection is 1,193,310 B / SHA `3a24bd50...ad1c`; compact evidence is
 `evidence/e32_csafe_natural_selection.json`. Rows remain unextracted and role-free.
 
+CSAFE extraction produced the exact 3,996 natural JPEG parents / 13,219,178,988 B with per-file
+SHA and device/lens metadata; no blank member was extracted. Detailed receipt is 1,775,854 B / SHA
+`32acdfb3...d7e4`; compact evidence is `evidence/e32_csafe_natural_extraction.json`. These rows are
+role-free until the full decode/decontamination audit passes.
+
 | frozen source | selected transfer | intended value | licence / role boundary |
 |---|---:|---|---|
 | VISION base native | 3,500 JPEG parents / 35 devices | Device-balanced native camera data; excludes flat fields, video and all social derivatives | CC BY-SA 4.0; TRAIN/CALIBRATION candidate only after audit |
