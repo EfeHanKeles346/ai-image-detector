@@ -2589,3 +2589,12 @@ above are transcription errors; production range planning binds the filesystem v
 - Detailed selection 1,425,474 B / SHA `88dc326e...7b74`.
 - No member payload read and no role assigned.
 - **Decision:** commit selection before atomic extraction.
+
+### C4-R1b iPhone 14 natural extraction — complete, role-free
+
+- 3,996/3,996 selected members / 12,914,703,500 B; size+CRC verified, atomic write, per-file SHA.
+- No blank member extracted. Detailed receipt 1,884,013 B / SHA `46b36e56...09de`.
+- Realization will bind the receipt, decode/hash and compare protected E30/peers, stored IPN hashes
+  and owner exact-byte hashes only after reproducing gallery identity `390e3c21...ac09`.
+- No protected detector score or role assignment is allowed.
+- **Decision:** commit extraction receipt and realization boundary before decoding iPhone pixels.

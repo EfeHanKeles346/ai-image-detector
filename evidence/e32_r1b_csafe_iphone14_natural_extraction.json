@@ -1,0 +1,12 @@
+{
+  "boundary": "Natural parents are role-free; no TRAIN/CALIBRATION assignment occurs here.",
+  "bytes": 12914703500,
+  "detailed_report_bytes": 1884013,
+  "detailed_report_external_path": "r1b_csafe_iphone14_natural_extraction.json",
+  "detailed_report_sha256": "46b36e567cb73a11710106b45da9c1114985e6452740aa8588291b563b6d09de",
+  "experiment": "E32/C4-R1b-csafe-iphone14-natural-extraction",
+  "parent_count": 3996,
+  "schema_version": 1,
+  "selection_sha256": "88dc326e37773d2bab704b3a2c1345dc0740286f2c2dce218c3ddacc63c17b74",
+  "state": "natural_extraction_complete_role_free"
+}

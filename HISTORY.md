@@ -2834,3 +2834,10 @@ The frozen inventory then produced an exact natural-only metadata selection: 3,9
 398-400/device and 998-1,000/lens; all 4,000 blank captures are excluded. Detailed selection SHA
 is `88dc326e...7b74`. No member payload was opened and no role assigned; this receipt is committed
 before extraction.
+
+iPhone 14 natural extraction completed all 3,996 frozen members / 12,914,703,500 bytes with
+size+CRC checks, atomic writes and per-file SHA; no blank member was extracted. Detailed receipt
+SHA is `46b36e56...09de`. Before decoding pixels, the realization gate was precommitted to bind this
+receipt, check format/EXIF/SHA+dHash+pHash and compare against protected E30/passed peers plus stored
+IPN hashes. The already-consumed owner gallery may contribute raw exact hashes only after its
+identity reproduces `390e3c21...ac09`; no gallery/IPN model score or threshold access is allowed.

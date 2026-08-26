@@ -616,3 +616,9 @@ blank images before payload extraction. Device counts are 398-400; lens counts a
 telephoto 1,000, ultra 998 and wide 1,000. Detailed selection is 1,425,474 B / SHA
 `88dc326e...7b74`; compact evidence is `evidence/e32_r1b_csafe_iphone14_natural_selection.json`.
 Rows remain role-free and unextracted at this checkpoint.
+
+Atomic natural extraction then completed 3,996/3,996 parents / 12,914,703,500 B. Each selected ZIP
+member was rechecked against frozen size+CRC, written through a partial and SHA-256 recorded; no
+blank member was extracted. Detailed receipt is 1,884,013 B / SHA `46b36e56...09de`; compact
+evidence is `evidence/e32_r1b_csafe_iphone14_natural_extraction.json`. These files remain role-free
+pending decode/decontamination.
