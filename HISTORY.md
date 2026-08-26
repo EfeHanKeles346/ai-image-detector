@@ -1919,3 +1919,12 @@ passes B3 independently and is the leading project candidate. The forensic arm i
 its standalone floor alone; B4 must prove complementary row-level errors before any fusion. Compact
 evidence is `evidence/e31_b3_representation_screen.json`; the ignored feature cache SHA is
 `f59e1fb6...c4c49`.
+
+### E31/B4 pre-score checkpoint — fusion can win only on paired evidence
+
+The B4 runner is committed before a fusion score. It assigns source-stratified CALIBRATION groups
+to five meta-folds, cross-fits both stacking coefficients and real-FP thresholds, and compares only
+DINO alone, DINO+E20 max/stack and DINO+68-feature max/stack. A fused rule needs at least +5 points
+of current-source macro recall, both real-FP budgets, and a positive paired group-bootstrap 95%
+lower bound. Otherwise DINO remains the single winner. Three focused tests pin group containment,
+source-macro metrics and paired bootstrap behavior. No E30 row is opened.

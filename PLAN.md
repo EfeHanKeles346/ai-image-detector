@@ -167,6 +167,12 @@ test leakage, and only then ask E30 whether the frozen system advances.
 - **Acceptance:** the fused system improves macro current-AI recall by at least 5 percentage points
   over its best component without breaking either FP budget, and the gain survives group-wise
   bootstrap intervals. Otherwise serve the best single arm and record ensemble rejection.
+- **Frozen implementation before B4 scores:** CALIBRATION groups receive five deterministic,
+  source-stratified meta-folds. Compare DINO alone against DINO+E20 max/stack and DINO+R2
+  max/stack only. Each held fold receives coefficients and a real-FP threshold fitted on the other
+  four folds. A fused rule advances only at >=5-point current-source macro-recall gain, <=5% macro
+  / <=10% worst real FP and paired source/group-bootstrap 95% lower gain >0. Otherwise the frozen
+  DINO single arm wins. No quality gate or all-arm search is admitted, and E30 remains unopened.
 
 ### Phase B5 — frozen DEVELOPMENT gate, then one LOCKED FINAL scout
 

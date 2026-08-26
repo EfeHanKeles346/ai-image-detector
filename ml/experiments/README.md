@@ -29,6 +29,7 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 | `e31_ssd_audit.py` | active TRAIN-v2 audit | Read-only attached-disk inventory, verified label direction, bounded shard-spread decode/shortcut probes and explicit hash-coverage boundary |
 | `e31_train_v2.py` | active TRAIN-v2 contract | Metadata freeze, full-pool protected eligibility screening, exact row freeze and deterministic native-tile realization |
 | `e31_representation_ladder.py` | active representation screen | SHA-pinned E31 tiles; E20 control vs frozen DINOv2 vs 68 forensic features with TRAIN-OOF thresholds and untouched CALIBRATION |
+| `e31_ensemble.py` | active fusion gate | Five-fold group-cross-fitted max/stack rules, row-level complementarity and paired group-bootstrap acceptance |
 
 The current served decision contract is E26's OR rule, implemented in `pixelproof/verdict.py`:
 CF-ViT is default; B-Free is optional and licence-gated. E27 is retained to reproduce the
