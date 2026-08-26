@@ -50,6 +50,12 @@ reached 0.9982 internal AUC but still mislabeled 154/210 owner stills (26.67% RE
 two different encoders fail almost identically, further encoder shopping is paused until a fourth
 licensed, provenance-complete authentic camera source and a REAL-source-held-out gate are added.
 
+R1b completed that controlled data ablation with 3,994 audited CSAFE iPhone 14 photos. The selected
+CF head retained 99.82% internal current-AI macro recall but failed untouched authentic transfer:
+249/960 IPN-NFID photos and 144/210 owner-gallery photos were falsely flagged. It is therefore not
+served and no threshold was repaired on either set. The result shifts the next work from simply
+downloading more volume to source-invariant objectives and a newly reserved multi-camera REAL gate.
+
 Four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) remain behind the optional
 research-details view as **uncalibrated research scores**. They are neither the primary project
 model nor the external comparison verdict: unseen-camera false positives reached 79–100% in
@@ -181,6 +187,17 @@ HF_HUB_OFFLINE=1 PYTHONPATH=ml/src ml/.venv/bin/python \
 
 R1a verifies its head, pinned CF revision and weight hash. Its owner-gallery REAL recall is 26.67%,
 so it is not an authenticity verdict and is not integrated into the API or web application.
+
+The rejected R1b clean-real-data ablation is reproducible with its separately verified CLI:
+
+```bash
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+HF_HUB_OFFLINE=1 PYTHONPATH=ml/src ml/.venv/bin/python \
+  -m pixelproof.e32_r1b_candidate /path/to/image-or-folder
+```
+
+R1b binds artifact SHA `68a54aa2...701c` and threshold 0.125935. Its 40.0% worst-device IPN FP
+and 68.57% owner-gallery FP make every output research-only.
 
 Prepared datasets default to `ml/work/` and acquired sources to `ml/data/`. Existing layouts are
 selected without code edits:

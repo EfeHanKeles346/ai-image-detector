@@ -1,0 +1,161 @@
+{
+  "artifact_sha256": "68a54aa2a5a7f85713669302ba5151983e3a9217cb2f49cc894e2a802802701c",
+  "boundary": "Frozen DEVELOPMENT scoring only; no refit, threshold change, DINO fallback or test-derived policy.",
+  "experiment": "E32/C4-R1b-external-development",
+  "external_gate": {
+    "checks": {
+      "internal_current_ai_macro_gte_0.90": true,
+      "ipn_worst_device_fp_lte_0.20": false,
+      "owner_fp_lte_0.20": false
+    },
+    "passed": false
+  },
+  "internal_current_ai_macro_recall": 0.9981992104464016,
+  "ipn": {
+    "device_fp": {
+      "huawei-p20-lite": 0.3,
+      "huawei-y9-2019": 0.2,
+      "iphone-se-2020-1": 0.4,
+      "iphone-se-2020-2": 0.375,
+      "iphone-xr": 0.3875,
+      "lg-l65": 0.125,
+      "motorola-g-play": 0.225,
+      "motorola-g20": 0.25,
+      "motorola-g4-plus": 0.1875,
+      "samsung-galaxy-a01": 0.15,
+      "samsung-galaxy-note9": 0.375,
+      "sony-xperia-m4": 0.1375
+    },
+    "false_positives": 249,
+    "highest_scores": [
+      {
+        "device": "motorola-g20",
+        "name": "44414819.jpg",
+        "score": 0.9971120357513428
+      },
+      {
+        "device": "iphone-xr",
+        "name": "44381594.jpg",
+        "score": 0.9942020773887634
+      },
+      {
+        "device": "iphone-se-2020-2",
+        "name": "44415626.jpg",
+        "score": 0.994149923324585
+      },
+      {
+        "device": "iphone-xr",
+        "name": "44381603.jpg",
+        "score": 0.9915458559989929
+      },
+      {
+        "device": "samsung-galaxy-a01",
+        "name": "44385632.jpg",
+        "score": 0.9896458983421326
+      },
+      {
+        "device": "motorola-g-play",
+        "name": "44393372.jpg",
+        "score": 0.989176332950592
+      },
+      {
+        "device": "samsung-galaxy-note9",
+        "name": "44392868.jpg",
+        "score": 0.986155092716217
+      },
+      {
+        "device": "huawei-p20-lite",
+        "name": "44416769.jpg",
+        "score": 0.9857006072998047
+      },
+      {
+        "device": "iphone-se-2020-1",
+        "name": "44383049.jpg",
+        "score": 0.9849454164505005
+      },
+      {
+        "device": "iphone-se-2020-1",
+        "name": "44383040.jpg",
+        "score": 0.9848047494888306
+      }
+    ],
+    "macro_device_fp": 0.25937499999999997,
+    "real_images": 960,
+    "real_recall": 0.740625,
+    "realization_sha256": "f5827dcea69484421b15a6608555a7c64556d206c991d02606222b1892bc243b",
+    "score_summary": {
+      "max": 0.9971120357513428,
+      "median": 0.013952584937214851,
+      "min": 8.328303238158696e-07,
+      "p25": 0.0010234944929834455,
+      "p75": 0.13235505670309067,
+      "p90": 0.6368299722671512,
+      "p95": 0.8652063876390454
+    },
+    "worst_device_fp": 0.4
+  },
+  "owner": {
+    "comparison": {
+      "r0_real_recall": 0.24285714285714288,
+      "r1a_real_recall": 0.2666666666666667
+    },
+    "false_positives": 144,
+    "gallery_identity_sha256": "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09",
+    "highest_scores": [
+      {
+        "name": "96B4AFB1-04FB-4F82-AAE6-D9A989B8FEEF.jpg",
+        "score": 0.9931053519248962
+      },
+      {
+        "name": "IMG_8021.jpeg",
+        "score": 0.9918239712715149
+      },
+      {
+        "name": "IMG_8430.jpeg",
+        "score": 0.9915124773979187
+      },
+      {
+        "name": "IMG_8752.jpeg",
+        "score": 0.9906736016273499
+      },
+      {
+        "name": "IMG_8423.jpeg",
+        "score": 0.9894207715988159
+      },
+      {
+        "name": "IMG_8194.jpeg",
+        "score": 0.9892471432685852
+      },
+      {
+        "name": "IMG_8328.jpeg",
+        "score": 0.9872112274169922
+      },
+      {
+        "name": "5DBE56F0-D44B-4038-B0CF-7BA9B0580207.jpg",
+        "score": 0.9857081770896912
+      },
+      {
+        "name": "IMG_8177.jpeg",
+        "score": 0.9850422739982605
+      },
+      {
+        "name": "IMG_8069.jpeg",
+        "score": 0.9841751456260681
+      }
+    ],
+    "real_images": 210,
+    "real_recall": 0.3142857142857143,
+    "score_summary": {
+      "max": 0.9931053519248962,
+      "median": 0.40388642251491547,
+      "min": 0.0005001086392439902,
+      "p25": 0.0861760564148426,
+      "p75": 0.8070195764303207,
+      "p90": 0.9485521078109741,
+      "p95": 0.9820820093154906
+    }
+  },
+  "schema_version": 1,
+  "state": "r1b_external_failed",
+  "threshold": 0.1259349137544632
+}

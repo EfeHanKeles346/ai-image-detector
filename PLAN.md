@@ -423,7 +423,7 @@ small manifests, aggregate evidence, code and documentation.
       `e32_r1b_acquisition.py` separates metadata freeze from transfer, preserves `.partial` bytes,
       enforces the 100 GiB floor and refuses article/version/licence/size/checksum drift. Four
       focused selection/contract tests pass; commit the method before selected-byte transfer.
-- [ ] Download and verify IPN-NFID natural bytes and CSAFE iPhone 14 archive, preserving partials on
+- [x] Download and verify IPN-NFID natural bytes and CSAFE iPhone 14 archive, preserving partials on
       interruption. Inventory iPhone 14 before selecting natural members; decode/hash/decontaminate
       both sources and record exact realized counts/bytes/limitations in DATASETS and evidence.
       IPN transfer is complete at 960/960 files, 12 devices and 3,889,897,594 MD5-verified bytes.
@@ -462,7 +462,7 @@ small manifests, aggregate evidence, code and documentation.
       file, verify the published whole-file MD5 and atomically promote; retain every partial on any
       failure. The concurrently independent IPN transfer may continue. Implementation and combined
       acquisition tests pass (18/18); commit before launching production ranges.
-- [ ] Freeze R1b roles by adding only audited iPhone 14 natural parents to the training-side REAL
+- [x] Freeze R1b roles by adding only audited iPhone 14 natural parents to the training-side REAL
       pool with device/scene grouping and a balanced source-capped AI selection. Refit R0/R1a heads
       under the unchanged CALIBRATION budgets; no owner/IPN pixel may be opened before artifacts
       freeze. Advance only the stronger internal candidate.
@@ -488,7 +488,7 @@ small manifests, aggregate evidence, code and documentation.
       CF AUC 0.998079 / current-AI macro 99.82% / macro-worst REAL FP 9.97/12.64%. Frozen rule selects
       CF, C=0.01, threshold 0.125935, artifact SHA `68a54aa2...701c`. Selection receipt is committed
       before any IPN/owner model score; DINO cannot be promoted by external outcomes.
-- [ ] Score the frozen R1b candidate once on all IPN-NFID devices and the consumed owner gallery.
+- [x] Score the frozen R1b candidate once on all IPN-NFID devices and the consumed owner gallery.
       Require <=20% worst-device IPN FP and <=20% owner-gallery FP while preserving >=90% modern-AI
       recall before any locked AI arm or serving replacement. Failure returns to data/objective
       redesign; it cannot be threshold-repaired on either test.
@@ -498,6 +498,19 @@ small manifests, aggregate evidence, code and documentation.
       IPN device plus aggregate and owner aggregate/high scores. No DINO fallback, refit or policy.
       Hash-verified CLI and aggregate-only runner implemented; three focused tests pass. Commit
       method before loading either DEVELOPMENT population into the selected model.
+      **Result: failed without repair.** IPN produced 249/960 false positives (25.94% macro-device,
+      40.0% worst-device FP; 74.06% REAL recall). The owner gallery produced 144/210 false
+      positives (31.43% REAL recall). Internal current-AI macro recall remained 99.82%, so both
+      authentic gates failed while the AI gate passed. Evidence:
+      `evidence/e32_r1b_external_development.json`. R1b is rejected from serving and no LOCKED AI
+      set was opened.
+- [ ] **R1c objective redesign — next, not another volume download.** Keep R1b as a frozen failed
+      control. Build a source-adversarial or source-balanced authentic objective and test a
+      conservative two-stage/cascade rule using TRAIN/CALIBRATION only. A candidate may advance
+      only if every internal real source is held out in turn and the resulting threshold is frozen.
+      IPN and the owner gallery are now consumed DEVELOPMENT populations and may not tune R1c.
+      Acquire a genuinely new, provenance-complete multi-camera REAL collection for the next final
+      gate; retain the untouched modern-AI LOCKED arm until that authentic gate passes.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

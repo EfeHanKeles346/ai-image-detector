@@ -29,6 +29,14 @@ It still mislabeled 154/210 owner stills: 26.67% REAL recall. R1a is likewise re
 `pixelproof-predict-e32-cf` and rejected from serving. The result rules out an encoder-only fix;
 the next correction must add licensed authentic camera-source coverage and source-held-out gates.
 
+R1b then added 3,994 audited CSAFE iPhone 14 natural photos while preserving every earlier role,
+input transform and AI row. Its selected CF-ViT head passed internal CALIBRATION at AUC 0.9981 and
+99.82% current-AI macro recall, but failed the frozen external authentic gate: 249/960 IPN-NFID
+images were false positives (40.0% worst-device FP) and 144/210 owner-gallery stills were false
+positives (31.43% REAL recall). R1b is research-only and excluded from all served paths. Neither
+external population changed its threshold or weights; no LOCKED AI set was opened. Evidence:
+`evidence/e32_r1b_external_development.json`.
+
 ### E31 candidate decision
 
 E31 did **not** replace this served E20 contract. Its single-DINOv2 research candidate is locally

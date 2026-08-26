@@ -650,3 +650,12 @@ the 22,688 old derived bytes were reused. The complete 26,682-row receipt repres
 logical JPEG bytes; detailed receipt is 10,631,702 B / SHA `400a990d...6af8`, records SHA
 `3e51f87a...1395`; compact evidence is `evidence/e32_r1b_input_receipt.json`. This removes the
 observed MPO/JPEG container difference before representation extraction.
+
+The controlled R1b experiment confirms that these valid bytes were useful for training coverage
+but were not sufficient to establish authentic-source transfer. The selected CF head passed its
+internal source-stratified screen, then mislabeled 249/960 IPN images (25.94% macro-device and
+40.0% worst-device FP) and 144/210 owner-gallery stills. IPN and the owner gallery are therefore
+consumed DEVELOPMENT populations from this point forward: they may document regressions but may
+not select an R1c representation, loss, threshold, cascade or policy. The iPhone rows remain valid
+TRAIN/CALIBRATION data; a new provenance-complete multi-camera REAL source is required for the next
+unseen final gate. Evidence is `evidence/e32_r1b_external_development.json`.

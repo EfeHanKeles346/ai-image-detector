@@ -99,3 +99,13 @@ feature cache at `e32/features/r1a_cfvit_features.npz` (33,436,875 bytes, SHA-25
 `ac6ee457...db00`, weight SHA `275ba982...1692`, C=0.01 and threshold 0.118110. R1a is also
 rejected for serving after only 26.67% owner-gallery REAL recall; the reproducibility CLI is
 `pixelproof.e32_cfvit_candidate`.
+
+R1b stores two controlled ignored heads after adding 3,994 audited iPhone rows. DINO is
+`e32/models/e32_r1b_dinov2s.joblib`, SHA-256 `aca41dd86d3bfb2d6c6cb722c0d4882e5866640149fc5a684535f5eca8da8e86`;
+CF is `e32/models/e32_r1b_cfvit.joblib`, SHA-256
+`68a54aa2a5a7f85713669302ba5151983e3a9217cb2f49cc894e2a802802701c`. The preregistered internal
+rule selected CF at C=0.01 / threshold 0.1259349137544632. Its complete and appended-only feature
+archive SHAs are `e3408691...4592` and `579d302a...d5c6`; the artifact binds the R1b input receipt
+and pinned CF weights. The external gate then failed at 40.0% worst-device IPN FP and 68.57%
+owner-gallery FP. Both heads remain ignored research evidence and must not enter the canonical
+registry or service.

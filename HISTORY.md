@@ -2916,3 +2916,18 @@ The selected R1b inference boundary was implemented while external pixels remain
 round-trip. A separate runner binds IPN and owner identities, reports per-device/aggregate metrics
 and contains only the frozen gate. Three focused candidate/gate tests pass; the method commit
 precedes the one external run.
+
+The single frozen R1b external DEVELOPMENT run failed both authentic gates and changed no model
+parameter. IPN-NFID produced 249/960 false positives: REAL recall 74.06%, macro-device FP 25.94%
+and worst-device FP 40.0% (iPhone SE 2020 instance 1). The already-consumed owner gallery produced
+144/210 false positives and 31.43% REAL recall, modestly above R0's 24.29% and R1a's 26.67% but far
+below the required 80%. Internal current-AI macro recall remained 99.82%, so the AI gate passed
+while both authentic gates failed. Evidence is `evidence/e32_r1b_external_development.json`.
+
+R1b is rejected from serving; the threshold was not changed, DINO was not substituted and no
+LOCKED AI arm was opened. The experiment establishes a stronger conclusion than the earlier
+encoder controls: adding nearly four thousand clean iPhone images repairs the represented Apple
+domain but does not create camera-source invariance. The next step is an objective/decision-layer
+redesign evaluated with leave-one-real-source-out calibration, followed by a genuinely new
+multi-camera authentic gate. IPN and the owner gallery are now permanently consumed DEVELOPMENT
+sets and cannot tune that redesign.

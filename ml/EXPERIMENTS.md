@@ -2691,3 +2691,16 @@ above are transcription errors; production range planning binds the filesystem v
 - Aggregate runner binds IPN/owner identities, reports every IPN device and exact frozen gate.
 - Three focused candidate/gate tests pass; no fitting or DINO fallback path exists.
 - **Decision:** commit method before the single external DEVELOPMENT run.
+
+### C4-R1b external DEVELOPMENT run — fail, no repair
+
+- Frozen candidate: CF-ViT head SHA `68a54aa2...701c`, C=0.01, threshold 0.125935.
+- IPN-NFID: 249/960 FP; REAL recall 74.0625%; macro-device FP 25.9375%; worst-device FP 40.0%.
+- Owner gallery: 144/210 FP; REAL recall 31.4286% (R0 24.2857%, R1a 26.6667%).
+- Frozen internal current-AI macro recall: 99.8199%; that gate alone passes.
+- Gate result: fail (`IPN worst-device <=20%` false, `owner FP <=20%` false). No threshold change,
+  refit, DINO fallback or test-derived policy; no LOCKED AI population opened.
+- Evidence: `evidence/e32_r1b_external_development.json`.
+- **Decision:** reject R1b from serving. Preserve it as the controlled clean-real-data ablation;
+  redesign the source-invariance objective/decision layer and reserve a new authentic source for
+  the next final gate. IPN and owner are consumed DEVELOPMENT from now on.

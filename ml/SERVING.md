@@ -57,6 +57,12 @@ untouched threshold mislabeled 154/210 owner-gallery authentic stills (26.67% RE
 `pixelproof-predict-e32-cf` CLI exists for reproducibility only; it does not change `/predict`,
 readiness or the web UI, and the owner gallery cannot recalibrate it.
 
+R1b is excluded for the same reason after the controlled addition of 3,994 audited iPhone 14
+photos. Its selected CF head mislabeled 249/960 independent IPN-NFID authentic photos (40.0%
+worst-device FP) and 144/210 owner-gallery stills. `pixelproof-predict-e32-r1b` exists only to
+reproduce that frozen research artifact; it is absent from `/predict`, readiness, the artifact
+registry and the web UI. IPN/owner results cannot recalibrate or route the model.
+
 ## Required edge controls
 
 Before binding outside loopback, require all of the following at the proxy/gateway:
