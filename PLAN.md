@@ -75,11 +75,14 @@ small manifests, aggregate evidence, code and documentation.
       verify every `Content-Range`/length, assemble to a new temporary file, verify the published
       full MD5, and only then atomically promote. Never overwrite the source prefix on failure.
       Nineteen focused acquisition/archive tests pass.
-- [ ] Run the committed four-range recovery on the preserved CSAFE prefix, require published MD5,
+- [x] Run the committed four-range recovery on the preserved CSAFE prefix, require published MD5,
       then freeze the ZIP inventory before selecting or extracting internal rows.
 - [x] Complete CSAFE four-range recovery: preserve 4,723,834,880 prefix bytes, fetch four exact
       ranges, assemble 17,588,803,163 bytes and reproduce published MD5 `5c5f...91d8` before
       promotion. Temporary range files were removed only after verification.
+- [x] Pass CSAFE ZIP inventory: 7,996 JPEG under ten physical S21 devices; 4,000 `blank` flat-field
+      images and 3,996 `natural` images across front/telephoto/ultra/wide pipelines. Preserve all
+      rows as unselected and precommit natural-only selection before extraction.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly

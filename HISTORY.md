@@ -2488,3 +2488,15 @@ the prefix and reproduced published MD5 `5c5f79e3e508a5cbf7a19e75846091d8`. Only
 verification was `s21.zip` promoted and the prefix/range temporaries removed. This completes every
 frozen C1 transfer without modifying an upstream archive; internal CSAFE rows remain unselected
 until the independent ZIP inventory passes.
+
+CSAFE's independent archive inventory then passed published MD5, CRC, path/symlink/encryption,
+member-size and expansion checks. The 17,588,803,163-byte ZIP has SHA `54a7193c...25df` and 7,996
+JPEG members under ten physical devices (`s21_1` through `s21_10`, 798–800 each). Its hierarchy is
+scientifically decisive: 4,000 `blank` flat-field images and 3,996 `natural` images, each divided
+across front, telephoto, ultra and wide pipelines. Blank fields must not define REAL or inflate the
+parent count.
+
+Detailed external inventory is 1,306,218 B / SHA `77a88649...fd8d`; compact evidence is
+`evidence/e32_csafe_archive_inventory.json`. State remains
+`archive_inventory_frozen_internal_rows_unselected`. A separate committed selector must choose
+natural rows only and preserve device/lens identity before extraction.

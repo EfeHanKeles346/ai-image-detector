@@ -2227,3 +2227,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Final archive: 17,588,803,163 B; MD5 `5c5f79e3e508a5cbf7a19e75846091d8` matches publication.
 - Prefix/range temporaries were removed only after atomic promotion.
 - **Decision:** transfer passes; commit result, then inventory ZIP before selecting internal rows.
+
+### C1 CSAFE production archive inventory — pass
+
+- 17,588,803,163 B / ZIP SHA `54a7193c...25df`; safety/CRC/MD5 gates pass.
+- 7,996 JPEG, ten S21 physical devices (798–800 each), four lens pipelines.
+- Content contract: 4,000 `blank` flat fields + 3,996 `natural`; neither selected yet.
+- External inventory 1,306,218 B / SHA `77a88649...fd8d`.
+- **Decision:** commit inventory, explicitly exclude blank fields, then freeze natural-only rows.

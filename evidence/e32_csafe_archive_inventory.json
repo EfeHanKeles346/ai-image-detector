@@ -1,0 +1,36 @@
+{
+  "archive": "s21.zip",
+  "archive_bytes": 17588803163,
+  "archive_sha256": "54a7193c661fc0fdc685fb0103a04885c74240fe4466cac796a9393a0a0825df",
+  "boundary": "Inventory does not select, extract or assign a role to any internal row.",
+  "compressed_member_bytes": 17587061533,
+  "detailed_report_bytes": 1306218,
+  "detailed_report_external_path": "csafe_archive_inventory.json",
+  "detailed_report_sha256": "77a88649fc2a5c50feb290f929b2308c56357a86d062ffa5173094d4de3efd8d",
+  "experiment": "E32/C1-csafe-archive-inventory",
+  "file_members": 7996,
+  "license": "CC BY 4.0",
+  "published_md5": "5c5f79e3e508a5cbf7a19e75846091d8",
+  "root_counts": {
+    "s21": 7996
+  },
+  "schema_version": 1,
+  "second_level_counts": {
+    "s21_1": 800,
+    "s21_10": 800,
+    "s21_2": 799,
+    "s21_3": 800,
+    "s21_4": 800,
+    "s21_5": 798,
+    "s21_6": 800,
+    "s21_7": 799,
+    "s21_8": 800,
+    "s21_9": 800
+  },
+  "source_id": "csafe-mcsidb-s21",
+  "state": "archive_inventory_frozen_internal_rows_unselected",
+  "suffix_counts": {
+    ".jpg": 7996
+  },
+  "uncompressed_bytes": 17778392619
+}

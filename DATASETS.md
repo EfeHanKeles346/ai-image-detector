@@ -48,6 +48,12 @@ and reproduces published MD5 `5c5f79e3e508a5cbf7a19e75846091d8`; a stalled 4,723
 prefix was completed through four exact HTTP ranges and promoted only after whole-file MD5. Its
 internal rows are still unselected pending ZIP inventory.
 
+CSAFE inventory passes: ZIP SHA `54a7193c...25df`, 7,996 JPEG under ten S21 devices. Exactly 4,000
+are `blank` flat-field captures and 3,996 are `natural`; each class spans front/telephoto/ultra/wide
+camera paths, with 798–800 total rows per physical device. Blank fields are ineligible for the REAL
+training pool. Detailed inventory is 1,306,218 B / SHA `77a88649...fd8d`; compact evidence is
+`evidence/e32_csafe_archive_inventory.json`. Natural rows remain unselected/unextracted here.
+
 | frozen source | selected transfer | intended value | licence / role boundary |
 |---|---:|---|---|
 | VISION base native | 3,500 JPEG parents / 35 devices | Device-balanced native camera data; excludes flat fields, video and all social derivatives | CC BY-SA 4.0; TRAIN/CALIBRATION candidate only after audit |
