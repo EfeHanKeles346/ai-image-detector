@@ -2341,3 +2341,12 @@ unique pHash values. External rejected receipt is 2,239,691 B / SHA `48945f7f...
 evidence at `evidence/e32_gpt-image-1_realization.json` supersedes the first compact artifact while
 HISTORY retains both audit outcomes. The later eligibility overlay will keep one stable canonical
 row per pair and exclude six losers; it cannot download replacements.
+
+Before implementing the combined overlay, its scope was tightened to close a peer-order hole.
+Source realization compares against previously *passed* peers, so internally rejected Qwen, FLUX
+and GPT receipts have not necessarily been cross-compared with one another. The precommitted
+overlay will therefore recompute exact SHA and frozen dHash+pHash duplicate components globally
+across all 15,000 AI records plus 3,500 VISION records. Same-label components retain one stable
+parent unit; any REAL/AI component excludes every affected unit on both sides as label-ambiguous.
+The subsequent <=20% AI source cap must respect four-row prompt groups and use only selection-bound
+stable hashes. This checkpoint changes no data and assigns no role.
