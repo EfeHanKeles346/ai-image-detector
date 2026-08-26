@@ -2778,3 +2778,10 @@ The production R1b metadata freeze then reproduced all official contracts withou
 selected image: 960 IPN natural JPEGs / 3,889,897,594 bytes across twelve devices and the
 20,428,338,922-byte CSAFE iPhone 14 archive. Detailed selection SHA is `c807d140...1c7f`; this
 receipt is frozen before either transfer begins.
+
+The first CSAFE iPhone 14 single stream was intentionally stopped after preserving a 92,159,662-byte
+contiguous prefix because mobile throughput made a 20.4 GB serial transfer impractical. No byte was
+deleted or promoted. Before code changes, the S21-proven recovery contract was reused: four exact
+remaining ranges, strict HTTP 206/Content-Range/length checks, prefix-plus-ranges assembly to a new
+temporary file, whole-archive published MD5, then atomic promotion. IPN remains an independent
+transfer and continues unaffected.

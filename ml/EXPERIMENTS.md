@@ -2514,3 +2514,12 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - CSAFE: `iPhone14.zip`, 20,428,338,922 bytes, MD5 `dfc01c89...946c`.
 - Detailed receipt: 385,191 B / SHA `c807d140...1c7f`; selected bytes downloaded by freeze: zero.
 - **Decision:** freeze receipt; transfers may now resume only against these rows.
+
+### C4-R1b iPhone 14 range-recovery preregistration
+
+- Preserve the 92,159,662-byte serial prefix; do not restart or overwrite it.
+- Divide `[92,159,662, 20,428,338,922)` into four disjoint exhaustive ranges. Require status 206,
+  exact Content-Range and exact part length; resume each part independently.
+- Assemble into a distinct temporary, verify 20,428,338,922 bytes and MD5 `dfc01c89...946c`, then
+  atomically promote. Delete prefix/ranges only after verified promotion; preserve all on failure.
+- **Decision:** commit this recovery boundary before implementation while IPN continues separately.

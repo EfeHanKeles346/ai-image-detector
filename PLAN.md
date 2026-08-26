@@ -426,6 +426,11 @@ small manifests, aggregate evidence, code and documentation.
 - [ ] Download and verify IPN-NFID natural bytes and CSAFE iPhone 14 archive, preserving partials on
       interruption. Inventory iPhone 14 before selecting natural members; decode/hash/decontaminate
       both sources and record exact realized counts/bytes/limitations in DATASETS and evidence.
+- [x] Preserve the first iPhone 14 single-stream stop at 92,159,662 bytes and precommit four-range
+      recovery before changing transfer code. Split only the exact remaining interval, require HTTP
+      206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary
+      file, verify the published whole-file MD5 and atomically promote; retain every partial on any
+      failure. The concurrently independent IPN transfer may continue.
 - [ ] Freeze R1b roles by adding only audited iPhone 14 natural parents to the training-side REAL
       pool with device/scene grouping and a balanced source-capped AI selection. Refit R0/R1a heads
       under the unchanged CALIBRATION budgets; no owner/IPN pixel may be opened before artifacts
