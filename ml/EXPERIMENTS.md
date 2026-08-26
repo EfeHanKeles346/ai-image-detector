@@ -2265,3 +2265,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Zero protected or passed-peer overlap.
 - External audit 2,521,737 B / SHA `3ea951ec...b701`.
 - **Decision:** pass as `candidate_only`; add to global overlay before role freezing.
+
+### C2 CSAFE global-overlay extension checkpoint
+
+- Bind exact natural-extraction receipt state/SHA and require exact schema-v2 audit row equality.
+- Preserve each natural image as one camera parent and add no row outside the frozen selection.
+- Verification: 14 focused overlay/realization tests pass; production overlay remains unchanged.
+- **Decision:** commit method, then independently recompute across 26,347 selected rows.

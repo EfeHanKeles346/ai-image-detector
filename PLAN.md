@@ -101,6 +101,8 @@ small manifests, aggregate evidence, code and documentation.
       recompute across 15,000 AI + 11,347 REAL selected rows, and freeze >=10,000 eligible REAL
       only if no unresolved cross-label component survives. Preserve the existing AI subset absent
       a newly discovered collision.
+- [x] Implement/test CSAFE overlay binding before production rerun; require exact extraction state,
+      row equality and audit SHA. Fourteen focused overlay/realization tests pass.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly

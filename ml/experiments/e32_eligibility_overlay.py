@@ -33,7 +33,7 @@ AI_SOURCE_IDS = (
     "nano-banana-pro-ash-local",
     "communityforensics-ai-local",
 )
-REAL_SOURCE_IDS = ("vision-base-native", "forchheim-fodb")
+REAL_SOURCE_IDS = ("vision-base-native", "forchheim-fodb", "csafe-mcsidb-s21")
 ALLOWED_AUDIT_FAILURES = {
     "within_source_exact_duplicates",
     "within_source_confirmed_perceptual_duplicates",
@@ -178,11 +178,15 @@ def _selection_records() -> tuple[list[dict[str, Any]], dict[str, str], dict[str
     ai_raw = pool_selection.DETAILED_SELECTION.read_bytes()
     real_raw = real_acquisition.DETAILED_SELECTION.read_bytes()
     fodb_raw = (OUTPUT_ROOT / "fodb_orig_extraction.json").read_bytes()
+    csafe_raw = (OUTPUT_ROOT / "csafe_natural_extraction.json").read_bytes()
     ai = json.loads(ai_raw)
     real = json.loads(real_raw)
     fodb = json.loads(fodb_raw)
+    csafe = json.loads(csafe_raw)
     if fodb.get("state") != "orig_extraction_complete_role_free":
         raise ValueError("FODB extraction receipt has unexpected state")
+    if csafe.get("state") != "natural_extraction_complete_role_free":
+        raise ValueError("CSAFE extraction receipt has unexpected state")
     records: list[dict[str, Any]] = []
     for source_id in AI_SOURCE_IDS:
         source = next(item for item in ai["sources"] if item["source_id"] == source_id)
@@ -208,6 +212,17 @@ def _selection_records() -> tuple[list[dict[str, Any]], dict[str, str], dict[str
                     }
                 )
             continue
+        if source_id == "csafe-mcsidb-s21":
+            for row in csafe["records"]:
+                records.append(
+                    {
+                        "source_id": source_id,
+                        "source_key": str(row["source_key"]),
+                        "unit_id": str(row["parent_group"]),
+                        "label": "real",
+                    }
+                )
+            continue
         source = next(item for item in real["sources"] if item["source_id"] == source_id)
         for row in source["assets"]:
             key = str(row["source_key"])
@@ -223,8 +238,14 @@ def _selection_records() -> tuple[list[dict[str, Any]], dict[str, str], dict[str
         "ai": _sha256(ai_raw),
         "real": _sha256(real_raw),
         "fodb_extraction": _sha256(fodb_raw),
+        "csafe_extraction": _sha256(csafe_raw),
     }
-    return records, hashes, {"ai": ai_raw, "real": real_raw, "fodb_extraction": fodb_raw}
+    return records, hashes, {
+        "ai": ai_raw,
+        "real": real_raw,
+        "fodb_extraction": fodb_raw,
+        "csafe_extraction": csafe_raw,
+    }
 
 
 def freeze_overlay() -> dict[str, Any]:

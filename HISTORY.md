@@ -2544,3 +2544,9 @@ bind the exact natural-extraction receipt and schema-v2 audit, compare 15,000 AI
 selected rows globally, exclude both labels from any ambiguous component and preserve the existing
 AI eligible keys if no new collision exists. Only this result may close the >=10,000 REAL gate;
 source realization alone is insufficient.
+
+The CSAFE overlay input was implemented before production rerun. It requires the exact
+natural-extraction state/SHA, maps each selected camera parent without inventing rows and demands
+exact equality with the CSAFE schema-v2 audit. The selection hash joins AI, VISION, FODB and CSAFE
+bindings. Fourteen focused overlay/realization tests pass. The previous 22,351-row production
+overlay remains unchanged by this method commit.
