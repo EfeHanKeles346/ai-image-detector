@@ -43,6 +43,11 @@ the external data root at `e32/real_acquisition_selection.json` (1,166,007 bytes
 `200a7aeb23d9c303d880dff76a08b21e38efe666531a6552ffe4bdd5841eca4d`); the compact receipt is
 `evidence/e32_real_acquisition_selection.json`. Candidate counts below are not yet usable rows.
 
+All frozen C1 transfers are now physically complete. CSAFE `s21.zip` is exactly 17,588,803,163 B
+and reproduces published MD5 `5c5f79e3e508a5cbf7a19e75846091d8`; a stalled 4,723,834,880-byte
+prefix was completed through four exact HTTP ranges and promoted only after whole-file MD5. Its
+internal rows are still unselected pending ZIP inventory.
+
 | frozen source | selected transfer | intended value | licence / role boundary |
 |---|---:|---|---|
 | VISION base native | 3,500 JPEG parents / 35 devices | Device-balanced native camera data; excludes flat fields, video and all social derivatives | CC BY-SA 4.0; TRAIN/CALIBRATION candidate only after audit |

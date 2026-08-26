@@ -2481,3 +2481,10 @@ only on the published `5c5f...91d8`. Prefix/ranges are deleted only after verifi
 failure preserves them and the assembled artifact for review. Three new range/assembly regressions
 bring the focused acquisition/archive suite to 19 passing tests. Production recovery remains a
 separate action.
+
+The production CSAFE range recovery completed successfully. It preserved the 4,723,834,880-byte
+single-stream prefix, fetched four disjoint exact ranges, assembled all 17,588,803,163 bytes beside
+the prefix and reproduced published MD5 `5c5f79e3e508a5cbf7a19e75846091d8`. Only after this full-file
+verification was `s21.zip` promoted and the prefix/range temporaries removed. This completes every
+frozen C1 transfer without modifying an upstream archive; internal CSAFE rows remain unselected
+until the independent ZIP inventory passes.

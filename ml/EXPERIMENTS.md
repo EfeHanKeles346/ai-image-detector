@@ -2220,3 +2220,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   after full published MD5.
 - Verification: 19 focused acquisition/archive tests pass, including MD5-failure prefix survival.
 - **Decision:** commit recovery method, then run it independently on the stalled production prefix.
+
+### C1 CSAFE production range recovery — pass
+
+- Preserved prefix: 4,723,834,880 B; fetched four exact remaining ranges.
+- Final archive: 17,588,803,163 B; MD5 `5c5f79e3e508a5cbf7a19e75846091d8` matches publication.
+- Prefix/range temporaries were removed only after atomic promotion.
+- **Decision:** transfer passes; commit result, then inventory ZIP before selecting internal rows.

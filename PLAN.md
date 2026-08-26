@@ -68,7 +68,7 @@ small manifests, aggregate evidence, code and documentation.
       floor and an explicit target below `/Volumes/LaCie/pixelproof-datasets/e32/`. The C1a receipt
       selects 3,500 VISION native parents, all three FODB archives and only CSAFE `s21.zip`; its
       detailed SHA-256 is `200a7aeb...ca4d`. Freeze downloaded zero image bytes.
-- [ ] Complete the frozen transfers and final content hashes without overwriting existing E31
+- [x] Complete the frozen transfers and final content hashes without overwriting existing E31
       holdings or modifying an upstream archive in place.
 - [x] Replace only the stalled CSAFE single stream with a tested four-range resume path. Preserve
       the existing contiguous prefix, download disjoint exact byte ranges to separate partials,
@@ -77,6 +77,9 @@ small manifests, aggregate evidence, code and documentation.
       Nineteen focused acquisition/archive tests pass.
 - [ ] Run the committed four-range recovery on the preserved CSAFE prefix, require published MD5,
       then freeze the ZIP inventory before selecting or extracting internal rows.
+- [x] Complete CSAFE four-range recovery: preserve 4,723,834,880 prefix bytes, fetch four exact
+      ranges, assemble 17,588,803,163 bytes and reproduce published MD5 `5c5f...91d8` before
+      promotion. Temporary range files were removed only after verification.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly
