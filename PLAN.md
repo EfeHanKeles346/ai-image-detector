@@ -185,11 +185,11 @@ test leakage, and only then ask E30 whether the frozen system advances.
 
 - [x] Commit candidate checkpoint hashes, preprocessing, ensemble rule, thresholds and stop/go
       gates before reading a new E30 score.
-- [ ] Run once on E30 MLLM DEVELOPMENT. Require the existing working-v1 point gates: macro real FP
+- [x] Run once on E30 MLLM DEVELOPMENT. Require the existing working-v1 point gates: macro real FP
       <=5%, worst real-source FP <=10%, current-AI macro recall >=50%, every sufficiently sized
       generator/protocol >=30%, and q75/resize recall loss <=15 points. Treat 20-item cells and
       correlated transport views honestly.
-- [ ] Only a DEVELOPMENT-passing frozen candidate may consume the sealed Qwen LOCKED scout. Its
+- [x] Only a DEVELOPMENT-passing frozen candidate may consume the sealed Qwen LOCKED scout. Its
       five-per-generator cells are diagnostic and cannot substantiate a production claim; no
       threshold, coefficient or retry changes after seeing them.
 - [ ] Keep A5's untouched multi-phone native vault mandatory before claiming general real-photo
@@ -201,6 +201,13 @@ test leakage, and only then ask E30 whether the frozen system advances.
   `7634755c...24b8`; no threshold, crop, retry or gate may change after its scores. Qwen code is
   committed but refuses to open its 40+40 LOCKED rows unless a committed evidence file states
   `development_passed` for this exact candidate. The final scout remains diagnostic only.
+- **B5 result — DEVELOPMENT failed, Qwen remains sealed:** 897/900 rows scored; three resize views
+  were tile-ineligible. AI macro recall is 80.67% and both transport-loss gates pass, but real macro
+  FP is **83.63%**, worst real group FP is **100%**, and AUC is 0.385. Standardized-only real FP is
+  already 81.67%, so resize is not the root cause. A diagnostic (never adopted) threshold meeting
+  the real budgets leaves only 0.33% AI macro recall / 0% worst group, proving recalibration cannot
+  repair the inverted ranking. Candidate is rejected; the conditional Qwen step was correctly not
+  consumed and B6 serving integration is blocked.
 
 ### Phase B6 — integrate, document and preserve presentation evidence
 

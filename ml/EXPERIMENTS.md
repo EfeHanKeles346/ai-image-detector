@@ -1821,3 +1821,28 @@ FP budget under fold transfer. The ensemble is rejected; this is a measured trad
 assumption. The packaged winner is single DINOv2 at final full-CALIBRATION threshold
 `0.7090073824`; artifact SHA `99901219...4d860` includes the linear head and pinned encoder
 contract. Compact evidence: `evidence/e31_b4_ensemble.json`. E30 remains unopened.
+
+## 2026-08-26 — E31/B5: frozen MLLM DEVELOPMENT gate
+
+The frozen single-DINO candidate scored the existing 900-row DEVELOPMENT contract once. It
+accounted for 897 rows; three `resize256_q90` views were too flat for the unchanged tile floor.
+
+| metric | frozen gate | result | decision |
+|---|---:|---:|---|
+| macro real FP | <=5% | **83.63%** | fail |
+| worst real-group FP | <=10% | **100%** | fail |
+| current AI macro recall | >=50% | 80.67% | pass |
+| worst AI-group recall | >=30% | 60.0% | pass |
+| q75 recall loss | <=15 points | 2.50 points | pass |
+| resize recall loss | <=15 points | gain 4.76 points | pass |
+| ROC-AUC | diagnostic | **0.385** | inverted ranking |
+
+The failure is present before heavy degradation: standardized-JPEG real FP is 81.67% and AUC
+0.387. Real scores have median 0.994 versus AI median 0.977. A diagnostic DEVELOPMENT-label oracle
+must raise the threshold to 0.999986 to meet both real budgets, at which point macro AI recall is
+0.33% and the worst AI group is 0%. This threshold was not adopted and no retry is allowed: the
+representation is inverted on independent real content, not merely miscalibrated.
+
+The candidate is technically executable and detects GPT Image 2 / Nano Banana 2 at about 80.6%,
+but is unsafe as a real/AI detector. B5 fails; Qwen LOCKED FINAL remains unscored by construction.
+Compact evidence: `evidence/e31_b5_development.json`.

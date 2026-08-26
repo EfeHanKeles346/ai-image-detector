@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "experiment": "E31/B5-DEVELOPMENT",
+  "state": "development_failed",
+  "run_date": "2026-08-26",
+  "role": "development_test",
+  "candidate_sha256": "99901219ec47e49a36fca7edd35a1c1737eb1cd9088f6465893054023914d860",
+  "candidate_contract_sha256": "6f54aed1f926f233df60e3dd816a77ccc1535e15da83243022ff0a2a6f9d5ff4",
+  "dataset_content_set_sha256": "7634755c75f855064e0d6c3c2731c6fe63d6582f2b6065654698adbf32e924b8",
+  "accounting": {
+    "expected": 900,
+    "succeeded": 897,
+    "failed": 3,
+    "failure_reason": "three resize256_q90 views could not produce a 128 px texture-qualified tile"
+  },
+  "headline": {
+    "roc_auc": 0.38545709779532666,
+    "macro_real_false_positive": 0.8363157894736841,
+    "worst_real_group_false_positive": 1.0,
+    "macro_ai_recall": 0.8066666666666668,
+    "worst_ai_group_recall": 0.6,
+    "gpt_image_2_recall": 0.8066666666666666,
+    "nano_banana_2_recall": 0.8053691275167785
+  },
+  "by_transport": {
+    "standardized_jpeg": {"real_fp": 0.8166666666666667, "ai_recall": 0.8083333333333333, "auc": 0.3869444444444444},
+    "jpeg_q90": {"real_fp": 0.8333333333333334, "ai_recall": 0.8083333333333333, "auc": 0.38875},
+    "jpeg_q75": {"real_fp": 0.7833333333333333, "ai_recall": 0.7833333333333333, "auc": 0.3911111111111111},
+    "jpeg_q50": {"real_fp": 0.8, "ai_recall": 0.775, "auc": 0.38513888888888886},
+    "resize256_q90": {"real_fp": 0.9491525423728814, "ai_recall": 0.8559322033898306, "auc": 0.38264866417696064}
+  },
+  "score_quantiles": {
+    "real": {"q10": 0.511321, "q25": 0.945815, "median": 0.994032, "q75": 0.999067, "q90": 0.999887},
+    "ai": {"q10": 0.328344, "q25": 0.804468, "median": 0.976724, "q75": 0.996267, "q90": 0.99931}
+  },
+  "diagnostic_only_oracle": {
+    "not_used_for_candidate_or_retry": true,
+    "threshold_meeting_real_budgets": 0.9999860525131226,
+    "macro_ai_recall": 0.0033333333333333335,
+    "worst_ai_group_recall": 0.0,
+    "macro_real_fp": 0.023333333333333334,
+    "worst_real_fp": 0.1,
+    "conclusion": "Threshold recalibration cannot rescue the inverted DEVELOPMENT ranking."
+  },
+  "gate": {
+    "passed": false,
+    "checks": {
+      "all_900_rows_scored": false,
+      "macro_real_fp_lte_0.05": false,
+      "worst_real_group_fp_lte_0.10": false,
+      "macro_ai_recall_gte_0.50": true,
+      "worst_ai_group_recall_gte_0.30": true,
+      "jpeg_q75_recall_loss_lte_0.15": true,
+      "resize256_q90_recall_loss_lte_0.15": true
+    }
+  },
+  "locked_final": {
+    "qwen_scored": false,
+    "reason": "The frozen candidate failed DEVELOPMENT; the sealed runner requires state=development_passed."
+  },
+  "ignored_receipts": {
+    "score_rows_sha256": "276696b1870592e5aa82e2bc5ceaab3c79209acb4793bec35546b1bfd542d52a",
+    "result_sha256": "98be802df5fdc6503fd4cacaf7d803d132e22c3452ffa74508095f662bca0eb2"
+  },
+  "conclusion": "The candidate is operational and recalls current AI, but catastrophically misclassifies independent real images. It is rejected for serving and Qwen remains sealed."
+}

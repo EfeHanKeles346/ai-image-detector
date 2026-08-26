@@ -195,6 +195,15 @@ SHA-256 is `93dcbc01...49c`. Children inherit LOCKED FINAL role, label, generato
 and parent id. Since this arm is AI-only, no real-vs-AI metadata shortcut AUC can be computed.
 No detector has read these images. Aggregate evidence is `evidence/e30_qwen_realization.json`.
 
+### E31 role outcome (2026-08-26)
+
+The frozen E31 DINO candidate consumed only the 900-row MLLM DEVELOPMENT battery and failed its
+real-photo gate (83.63% source/regime macro FP, 100% worst group). Consequently the conditional
+Qwen step was not authorized: all 40 native + 40 standardized Qwen rows remain unscored and retain
+LOCKED FINAL ownership. `evidence/e31_b5_development.json` records the failure and the sealed runner
+rejects that state before reading the Qwen manifest or loading a detector. No E30 row has moved into
+TRAIN/CALIBRATION and no new dataset was selected after seeing the result.
+
 ### Current generators, AI-only — pair with care
 
 | Dataset | Size | Model | Era |

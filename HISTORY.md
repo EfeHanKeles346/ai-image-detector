@@ -1958,3 +1958,23 @@ the old scorer now exposes the E31 arm without altering E20/CF caches. The Qwen 
 also committed but requires a committed `development_passed` receipt for this candidate before it
 will open 40 native + 40 standardized LOCKED rows. Focused tests pin crop reproducibility, role
 gate rejection, generator/transport reporting and every DEVELOPMENT stop/go condition.
+
+### E31/B5 result — the new model runs, but independent real photos falsify it
+
+The frozen candidate processed 897/900 DEVELOPMENT views; three resize derivatives could not meet
+the tile texture floor. It retained strong AI sensitivity—80.67% macro recall, about 80.6% on both
+GPT Image 2 and Nano Banana 2—and was stable under JPEG/resize. Yet it called **83.63% of real
+groups AI**, reached 100% FP on the worst real group and ranked the task backwards at AUC 0.385.
+Even standardized JPEG real FP is 81.67%; the problem is not just the resize view.
+
+A diagnostic-only threshold search makes the failure sharper: satisfying <=5% macro / <=10% worst
+real FP requires threshold 0.999986 and leaves 0.33% macro AI recall with a 0% worst AI group. No
+threshold or retry was adopted. The scientific conclusion is that E31 fixed the data contract and
+found a strong in-contract DINO representation, but the real class still does not span independent
+MLLM/web photographic pipelines. The model is runnable, not deployable.
+
+Because DEVELOPMENT failed, `evidence/e31_b5_development.json` records `development_failed` and the
+Qwen runner cannot pass its gate. The 40 native + 40 standardized LOCKED rows remain unscored. B6
+must not replace the current serving model with E31; the next research step is real-pipeline data
+breadth or a camera-trace representation, followed by a new pre-registered candidate—not tuning on
+this DEVELOPMENT result.
