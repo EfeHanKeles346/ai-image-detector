@@ -430,7 +430,9 @@ small manifests, aggregate evidence, code and documentation.
       Before decoding it, implement a receipt-bound DEVELOPMENT audit that preserves shared scene
       groups, fails decode/exact/protected-peer overlap and records dHash+pHash candidates without
       allowing any model score. Twenty focused audit/acquisition/realization tests pass; commit the
-      audit method before opening IPN pixels.
+      audit method before opening IPN pixels. Production audit passes: 960 RGB JPEGs, all with EXIF,
+      960 unique SHA, 80 shared scene groups and zero protected/peer/cross-scene collision. Preserve
+      detailed SHA `f5827dce...243b`; do not score until R1b artifact freeze.
 - [x] Preserve the first iPhone 14 single-stream stop at 92,274,688 bytes and precommit four-range
       recovery before changing transfer code. Split only the exact remaining interval, require HTTP
       206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary

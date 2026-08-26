@@ -596,3 +596,10 @@ devices / 3,889,897,594 B and the 20,428,338,922-byte CSAFE iPhone 14 archive. T
 selection is 385,191 B / SHA `c807d140...1c7f`; compact Git evidence is
 `evidence/e32_r1b_acquisition_selection.json`. State remains
 `selection_frozen_no_selected_bytes_claimed`.
+
+IPN selected-byte transfer and realization now pass. All 960 natural JPEGs / 3,889,897,594 B were
+individually MD5-verified, decode as RGB JPEG and retain EXIF; all 960 SHA-256 values are unique.
+The names bind 80 scene groups shared across all twelve devices (50 landscape + 30 portrait, twelve
+captures each). Protected E30 overlap, passed E32 peer overlap and cross-scene perceptual collision
+are all zero. Detailed realization is 642,208 B / SHA `f5827dce...243b`; compact evidence is
+`evidence/e32_r1b_ipn_realization.json`. Role remains unscored DEVELOPMENT—not a new training pool.

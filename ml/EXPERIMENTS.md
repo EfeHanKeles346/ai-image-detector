@@ -2549,3 +2549,11 @@ above are transcription errors; production range planning binds the filesystem v
 - Same-scene perceptual candidates remain visible; only cross-scene candidates are gate failures.
 - Twenty focused audit/acquisition/realization tests pass; no detector dependency exists.
 - **Decision:** commit method before the production 960-image decode.
+
+### C4-R1b IPN DEVELOPMENT realization — pass, unscored
+
+- 960/960 RGB JPEGs decode; all retain EXIF and all SHA-256 values are unique.
+- Twelve devices x 80 images; 80 shared scenes (50 landscape + 30 portrait) x twelve cameras.
+- Zero protected/passed-peer overlap and zero cross-scene perceptual collision.
+- Detailed report 642,208 B / SHA `f5827dce...243b`.
+- **Decision:** freeze as a clean absent-source DEVELOPMENT gate; do not score before R1b freezes.

@@ -2806,3 +2806,9 @@ devices, decodes and hashes without importing a detector, distinguishes legitima
 cross-camera similarity from cross-scene collision and checks protected/passed-peer overlap.
 Twenty focused audit/acquisition/realization tests pass. Pixels remain unopened by this method
 commit.
+
+Production IPN realization passed without loading a detector. Every one of 960 files decoded as RGB
+JPEG with EXIF and had a unique SHA; the dataset contains 80 shared scene groups (50 landscape, 30
+portrait) across twelve devices. There is zero protected E30 overlap, passed E32 peer overlap or
+cross-scene perceptual collision. Detailed report SHA is `f5827dce...243b`. IPN is now a clean,
+source-held-out DEVELOPMENT gate and stays unscored until an R1b artifact is frozen.
