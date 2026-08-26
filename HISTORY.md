@@ -2578,3 +2578,11 @@ FODB is a crossed 27-camera-by-143-scene design: enforcing both camera- and scen
 connects the whole collection and makes a split impossible. The contract therefore prioritizes
 scene leakage prevention, reports device overlap honestly and keeps this limitation out of any
 unseen-camera claim. The method, tests and production role receipt are separate later commits.
+
+The metadata-only C3 role freezer was implemented before production use. It binds the final
+eligibility-overlay byte count/SHA and all nine audit receipts, makes the exact precommitted AI
+downselection while keeping Qwen/FLUX prompt groups indivisible, then solves a deterministic
+nearest-target subset assignment over each source's protected role groups. It fails on changed
+inputs, impossible exact counts, duplicate IDs, empty source-role cells or any role-group overlap.
+Eight focused role/overlay tests pass; no production role manifest or image byte was opened by this
+method commit.

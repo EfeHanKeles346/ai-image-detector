@@ -290,6 +290,10 @@ small manifests, aggregate evidence, code and documentation.
       report this limitation explicitly. The detailed manifest stays on the SSD; Git receives its
       hash, role/source/group counts and leakage checks only. No image byte, feature or score may
       influence selection or role assignment.
+- [x] Implement and test the metadata-only role freezer before production use. It binds the final
+      overlay and every audit SHA, uses deterministic exact group-preserving selection plus
+      nearest-target subset assignment, rejects duplicate IDs/role-group leakage/empty role cells
+      and writes only the detailed manifest to the SSD. Eight focused manifest/overlay tests pass.
 - [ ] Build a balanced parent manifest with source/device/generator/scene-disjoint folds. TRAIN may
       fit representations and heads; CALIBRATION may select aggregation, abstention and thresholds;
       neither may receive a row or derivative from DEVELOPMENT or LOCKED FINAL.

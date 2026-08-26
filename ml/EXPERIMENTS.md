@@ -2299,3 +2299,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - **Stop rule:** fail on changed overlay/audit bindings, count mismatch, duplicate record IDs,
   group leakage, empty source-role cells or any DEVELOPMENT/LOCKED reference. Do not open pixels.
 - **Decision:** commit this contract before implementing or running the role freezer.
+
+### C3 role-freezer method checkpoint
+
+- Implementation binds overlay size/SHA and all audit SHA receipts before selecting metadata.
+- Exact AI downselection preserves Qwen/FLUX prompt units; deterministic subset assignment targets
+  20% CALIBRATION while keeping each source's declared device/scene/prompt/generator group intact.
+- Hard failures cover impossible counts, duplicate identities, empty source-role cells and group
+  leakage. Detailed output is external; compact evidence contains hashes and aggregate checks.
+- Verification: eight focused role-manifest/overlay tests pass.
+- **Decision:** commit method before running it on the 26,130 eligible production records.
