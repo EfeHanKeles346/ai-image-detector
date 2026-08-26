@@ -2454,3 +2454,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Artifact 12,703 B / SHA `6288acba...d670`.
 - **Decision:** freeze artifact. Owner gallery may be opened only by a separately committed,
   refit-free inference stress.
+
+### C4-R1a owner-gallery stress preregistration
+
+- Hard-bind artifact `6288acba...d670`, CF weights `275ba982...1692`, standardized JPEG round-trip
+  and threshold 0.118110.
+- Score 210 supported owner stills once; exclude MOV; no refit/recalibration.
+- Compare REAL recall with R0 24.29% and historical frozen-CF 99.51% (206 unique images).
+- **Decision:** commit before implementing scorer or reopening gallery pixels.

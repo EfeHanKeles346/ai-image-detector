@@ -2729,3 +2729,9 @@ The feature archive is 33,436,875 B / SHA `c170a1f6...bc6b`; the 12,703-byte art
 `6288acba...d670`; compact evidence is `evidence/e32_r1a_cfvit.json`. This artifact is now frozen
 before owner-gallery use. Its strong source-stratified result is still not a generalization claim;
 the next separate gate is the already-consumed, refit-forbidden owner-real DEVELOPMENT stress.
+
+Only after freezing R1a was its owner-gallery stress precommitted. A separate scorer must verify
+the artifact, CF model revision/weight and exact R0-style JPEG round-trip before applying the new
+CLS head. It will score the same 210 supported stills once at threshold 0.118110, exclude MOV and
+make no parameter change. The comparison is diagnostic and fixed in advance: R1a versus R0's
+24.29% REAL recall and the original CF decision's historical 99.51% on 206 unique gallery images.

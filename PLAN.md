@@ -394,6 +394,11 @@ small manifests, aggregate evidence, code and documentation.
       0.99835, AI recall 99.91%, REAL recall 90.05%, balanced accuracy 94.98%, macro REAL FP 9.97%
       and worst-source FP 12.77%. All five gates pass; artifact SHA `6288acba...d670`. Preserve it
       before any owner-gallery access.
+- [x] Precommit R1a's external stress after artifact freeze. Add a hash-verified CF-ViT/head scorer
+      that first reproduces R0's standardized-array JPEG round-trip, then uses the pinned official
+      processor and frozen CLS head. Score the same 210 owner stills once at threshold 0.118110;
+      exclude MOV, forbid refit/threshold change and compare REAL recall directly with R0's 24.29%
+      and the original frozen CF decision's historical 99.51%.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.
