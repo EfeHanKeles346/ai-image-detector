@@ -35,6 +35,7 @@ pixelproof-artifacts = "pixelproof.artifact_registry:main"
 pixelproof-evaluate-project = "pixelproof.project_evaluate:main"
 pixelproof-predict = "pixelproof.predict:main"
 pixelproof-predict-e32 = "pixelproof.e32_candidate:main"
+pixelproof-predict-e32-cf = "pixelproof.e32_cfvit_candidate:main"
 pixelproof-train-stay-positive = "pixelproof.stay_positive:main"
 
 [build-system]

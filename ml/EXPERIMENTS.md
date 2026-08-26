@@ -2462,3 +2462,12 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Score 210 supported owner stills once; exclude MOV; no refit/recalibration.
 - Compare REAL recall with R0 24.29% and historical frozen-CF 99.51% (206 unique images).
 - **Decision:** commit before implementing scorer or reopening gallery pixels.
+
+### C4-R1a inference implementation checkpoint
+
+- Added `pixelproof-predict-e32-cf` with hard artifact/revision/weight identities and the frozen
+  0.118110 threshold; input is the exact R0 JPEG round-trip followed by the official CF processor.
+- Added a separate aggregate-only owner-gallery DEVELOPMENT runner. It records gallery identity,
+  score distribution and highest-scoring basenames but has no fit or threshold-selection path.
+- Verification: four focused R1a/R0 candidate and trainer tests pass; gallery pixels remain closed.
+- **Decision:** commit method before the single frozen owner-gallery run.

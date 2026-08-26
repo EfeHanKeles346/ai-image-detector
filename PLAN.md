@@ -399,6 +399,13 @@ small manifests, aggregate evidence, code and documentation.
       processor and frozen CLS head. Score the same 210 owner stills once at threshold 0.118110;
       exclude MOV, forbid refit/threshold change and compare REAL recall directly with R0's 24.29%
       and the original frozen CF decision's historical 99.51%.
+- [x] Implement and unit-test the R1a scorer and aggregate-only DEVELOPMENT runner before reopening
+      owner pixels. The scorer hard-verifies artifact/revision/weight identities, applies the exact
+      R0 JPEG round-trip followed by the official CF processor and exposes single/batch JSON through
+      `pixelproof-predict-e32-cf`; four focused candidate/input/trainer tests pass.
+- [ ] Run the frozen R1a artifact once on the 210 supported owner stills, preserve the result without
+      refit or threshold change, then decide whether it can advance to genuinely unseen-source
+      validation. A failure rejects R1a; a pass still does not convert DEVELOPMENT into LOCKED FINAL.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

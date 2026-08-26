@@ -2735,3 +2735,10 @@ the artifact, CF model revision/weight and exact R0-style JPEG round-trip before
 CLS head. It will score the same 210 supported stills once at threshold 0.118110, exclude MOV and
 make no parameter change. The comparison is diagnostic and fixed in advance: R1a versus R0's
 24.29% REAL recall and the original CF decision's historical 99.51% on 206 unique gallery images.
+
+The R1a inference boundary was then implemented and tested while owner pixels remained closed.
+`pixelproof-predict-e32-cf` verifies the frozen 12,703-byte artifact, pinned CF revision and cached
+weight SHA; it reproduces R0's JPEG round-trip before the official CF processor and emits stable
+JSON scores/verdicts. The separate gallery runner can only write aggregate DEVELOPMENT evidence
+and cannot alter the head or threshold. Four focused candidate/input/trainer tests pass. This
+method checkpoint is committed before the one allowed gallery run.
