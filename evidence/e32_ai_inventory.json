@@ -1,0 +1,208 @@
+{
+  "audit_mode": "complete_physical_metadata_no_image_decode",
+  "boundaries": [
+    "A repository or folder name is not sufficient generator provenance.",
+    "A missing dataset licence is not inferred from a model or code licence.",
+    "Protected test-only sources cannot repair the training-family gap.",
+    "Counts are inventory evidence, not decoded, decontaminated or selected parents."
+  ],
+  "decision": "research_and_freeze_at_least_two_additional_licensed_families",
+  "experiment": "E32/C2a",
+  "family_gap": 2,
+  "label_invariant": {
+    "ai": 1,
+    "real": 0
+  },
+  "required_modern_family_count": 5,
+  "schema_version": 1,
+  "source_root_name": "pixelproof-datasets",
+  "sources": [
+    {
+      "admission_state": "conditional_license_and_provenance",
+      "counts_toward_verified_modern_families": false,
+      "family": "FLUX.1-dev",
+      "id": "flux-1-dev-local",
+      "license": null,
+      "parquet_files": 7,
+      "physical_bytes": 3231877594,
+      "physical_file_count": 9,
+      "provenance": "Repository name claims FLUX.1-dev; rows include prompt and seed, but the card has no narrative generation statement",
+      "readme_present": true,
+      "repo_id": "ash12321/flux-1-dev-generated-10k",
+      "revision": "d1ccb59d1455232a49f3aa5d9ef7efb8f865f9a7",
+      "row_count": 10000,
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "filename",
+            "seed",
+            "prompt"
+          ],
+          "file_count": 7
+        }
+      ],
+      "state": "present"
+    },
+    {
+      "admission_state": "eligible_candidate_pending_byte_audit",
+      "counts_toward_verified_modern_families": true,
+      "family": "Gemini 2.5 Flash Image Preview (Nano Banana)",
+      "id": "nano-banana-local",
+      "license": "MIT",
+      "parquet_files": 31,
+      "physical_bytes": 14853199670,
+      "physical_file_count": 33,
+      "provenance": "Dataset card explicitly declares 9,457 Nano Banana generated images",
+      "readme_present": true,
+      "repo_id": "bitmind/nano-banana",
+      "revision": "9ea8da32a5be03f4946e6cb10c2d2f8e90f0a0a4",
+      "row_count": 9457,
+      "schemas": [
+        {
+          "columns": [
+            "id",
+            "image",
+            "format",
+            "mode",
+            "width",
+            "height",
+            "uploadtime"
+          ],
+          "file_count": 31
+        }
+      ],
+      "state": "present"
+    },
+    {
+      "admission_state": "conditional_license_and_provenance",
+      "counts_toward_verified_modern_families": false,
+      "family": "Nano Banana Pro",
+      "id": "nano-banana-pro-kaupane-local",
+      "license": null,
+      "parquet_files": 5,
+      "physical_bytes": 2205250281,
+      "physical_file_count": 7,
+      "provenance": "Repository name claims Nano Banana Pro and rows contain prompts; the card contains only generated dataset metadata",
+      "readme_present": true,
+      "repo_id": "kaupane/nano-banana-pro-gen",
+      "revision": "5c61390a0307e6c38788ab85a5280fbc9893415b",
+      "row_count": 1250,
+      "schemas": [
+        {
+          "columns": [
+            "image",
+            "prompt"
+          ],
+          "file_count": 5
+        }
+      ],
+      "state": "present"
+    },
+    {
+      "admission_state": "eligible_candidate_pending_byte_audit",
+      "counts_toward_verified_modern_families": true,
+      "family": "Nano Banana Pro",
+      "id": "nano-banana-pro-ash-local",
+      "image_formats": {
+        ".png": 200
+      },
+      "image_with_matching_sidecar_count": 0,
+      "license": "MIT",
+      "loose_image_count": 200,
+      "physical_bytes": 346757202,
+      "physical_file_count": 202,
+      "provenance": "Dataset card explicitly declares 200 Nano Banana Pro AI-generated images",
+      "readme_present": true,
+      "repo_id": "ash12321/nano-banana-pro-generated-1k",
+      "revision": "01f43edd35eb2f47f5ea77cfb223d173083d61ad",
+      "sidecar_count": 0,
+      "state": "present"
+    },
+    {
+      "admission_state": "eligible_candidate_pending_byte_audit",
+      "counts_toward_verified_modern_families": true,
+      "family": "GPT Image 1",
+      "id": "gpt-image-1-local",
+      "image_formats": {
+        ".png": 1060
+      },
+      "image_with_matching_sidecar_count": 1060,
+      "license": "CC BY 4.0",
+      "loose_image_count": 1060,
+      "physical_bytes": 2260502012,
+      "physical_file_count": 2122,
+      "provenance": "Dataset card explicitly declares 4,000 curated GPT Image 1 images; the local snapshot is partial",
+      "readme_present": false,
+      "repo_id": "a3xrfgb/gpt-image-mega-4k",
+      "revision": "bba366cb4b73605ddd569a916976a0e422164825",
+      "sidecar_count": 1061,
+      "state": "present"
+    },
+    {
+      "admission_state": "conditional_license_count_and_task_identity",
+      "archives": [
+        {
+          "bytes": 10642040722,
+          "image_members": 127835,
+          "name": "AI.zip"
+        }
+      ],
+      "counts_toward_verified_modern_families": false,
+      "family": "Nano Banana editing",
+      "id": "nano-banana-150k-local",
+      "license": null,
+      "physical_bytes": 10642043397,
+      "physical_file_count": 3,
+      "provenance": "Card claims more than 150k identity-consistent editing samples; local AI.zip contains fewer image members and no row manifest",
+      "readme_present": true,
+      "repo_id": "bitmind/Nano-banana-150k",
+      "revision": "00f31db3345f40f2f22d69de9785a60b0f78833c",
+      "state": "present",
+      "zip_files": 1,
+      "zip_image_members": 127835
+    },
+    {
+      "admission_state": "eligible_diversity_anchor_under_E31_fixed_input_only",
+      "counts_toward_verified_modern_families": false,
+      "family": "community generator diversity anchor",
+      "id": "communityforensics-small-local",
+      "license": "CC BY-NC-SA 4.0, with per-generator model licence metadata",
+      "parquet_files": 15,
+      "physical_bytes": 49764880239,
+      "physical_file_count": 17,
+      "provenance": "Prompt, model_name, architecture and subset fields; 300 AI model identities in the local small snapshot",
+      "readme_present": true,
+      "repo_id": "OwensLab/CommunityForensics-Small",
+      "revision": "local_revision_previously_pinned_by_E31",
+      "row_count": 44884,
+      "schemas": [
+        {
+          "columns": [
+            "image_name",
+            "format",
+            "resolution",
+            "mode",
+            "image_data",
+            "model_name",
+            "nsfw_flag",
+            "prompt",
+            "real_source",
+            "subset",
+            "split",
+            "label",
+            "architecture"
+          ],
+          "file_count": 15
+        }
+      ],
+      "state": "present"
+    }
+  ],
+  "verified_admissible_modern_families": [
+    "GPT Image 1",
+    "Gemini 2.5 Flash Image Preview (Nano Banana)",
+    "Nano Banana Pro"
+  ],
+  "verified_admissible_modern_family_count": 3
+}

@@ -1871,3 +1871,17 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   1,166,007-byte detailed receipt SHA is `200a7aeb...ca4d`; eight focused tests pass.
 - **Decision:** proceed to the frozen transfer, then decode and decontaminate. This is not a data or
   model acceptance result.
+
+## 2026-08-26 — E32/C2a: modern-AI physical/provenance inventory
+
+- **Hypothesis:** the attached disk may already satisfy the 10–20K / five-family goal, but only
+  decoded image counts with explicit generator provenance and dataset licences may count.
+- **Method:** complete file/byte, Parquet-row/schema, loose image/sidecar and ZIP central-directory
+  inventory; pinned Hugging Face revisions and cards; no image decode, score or role change.
+- **Corrections:** GPT holding is 1,060 PNG, not 2,122 images; Nano-Banana-150k ZIP has 127,835
+  image members despite its >150k claim.
+- **Result:** three admissible modern families—Nano Banana 9,457 rows (MIT), Nano Banana Pro 200
+  PNG (MIT), GPT Image 1 partial 1,060 PNG (CC BY 4.0). FLUX 10,000, second NBP 1,250 and Nano
+  editing 127,835 remain conditional because dataset licence/provenance/count contracts fail.
+- **Decision:** C2 pool freeze stops at a two-family gap. Research two licensed modern families;
+  protected test sets cannot be reassigned and ambiguous sources cannot be counted.

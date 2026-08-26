@@ -229,6 +229,27 @@ TRAIN/CALIBRATION and no new dataset was selected after seeing the result.
 
 ### Current generators, AI-only — pair with care
 
+#### E32/C2a physical and licence inventory (2026-08-26)
+
+`evidence/e32_ai_inventory.json` counts the complete local storage metadata without decoding an
+image or changing a role. A folder/repository name is not accepted as generator provenance, and a
+model/code licence is not substituted for a missing dataset licence.
+
+| holding | realized local content | provenance/licence verdict | C2 use |
+|---|---:|---|---|
+| FLUX.1-dev | 10,000 Parquet rows / 3,231,877,594 B | Prompt+seed exist, but card has no dataset licence or narrative generation statement | Conditional; does not count toward five families |
+| Nano Banana | 9,457 Parquet rows / 14,853,199,670 B | Card explicitly names Gemini 2.5 Flash Image Preview; MIT | Eligible candidate after byte/decontamination audit |
+| Nano Banana Pro (`kaupane`) | 1,250 Parquet rows / 2,205,250,281 B | Repository name and prompts only; no dataset licence or narrative statement | Conditional; does not count |
+| Nano Banana Pro (`ash12321`) | 200 PNG / 346,757,202 B | Card explicitly declares AI-generated NBP; MIT | Eligible candidate, same family as above |
+| GPT Image 1 | **partial** 1,060 PNG + 1,061 text files / 2,260,502,012 B | 1,060 image/prompt pairs; card declares 4,000 GPT Image 1 images; CC BY 4.0 | Eligible candidate; missing upstream rows are not claimed |
+| Nano Banana 150k | one ZIP / 127,835 image members / 10,642,043,397 B | Card claims >150k identity-consistent editing samples; no dataset licence or row manifest | Conditional for licence, count and task identity |
+| CommunityForensics-Small | 44,884 rows / 49,764,880,239 B; 300 local AI identities | CC BY-NC-SA 4.0 plus per-model terms; already E31-audited | Diversity anchor only; not a fifth current family |
+
+The verified admissible modern-family count is **3/5**: GPT Image 1, Nano Banana and Nano Banana
+Pro. Therefore C2 cannot freeze its 10–20K parent manifest yet. At least two additional licensed,
+explicitly generated modern families must be researched; protected AIGC, Julien, MLLM and Qwen
+test sources cannot be reassigned to fill the training gap.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

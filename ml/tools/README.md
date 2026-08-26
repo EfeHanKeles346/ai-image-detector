@@ -63,6 +63,17 @@ Valid source names are `vision`, `fodb` and `csafe`. Downloads use `.partial` fi
 declared archive sizes and a 100 GiB free-space floor. A completed transfer is still not training
 data until its decoded parent inventory and protected-content audit pass.
 
+The separate AI-holdings inventory is read-only:
+
+```bash
+PYTHONPATH=src .venv/bin/python experiments/e32_ai_inventory.py \
+  --root /Volumes/LaCie/pixelproof-datasets \
+  --output ../evidence/e32_ai_inventory.json
+```
+
+It counts Parquet rows, loose image/sidecar pairs and ZIP image members, but deliberately refuses
+to infer missing dataset licences or to move protected test sources into training.
+
 ## Paths
 
 Both scripts read `PIXELPROOF_DATA_ROOT`; the portable default is `ml/data/`. For an external

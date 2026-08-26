@@ -80,11 +80,18 @@ small manifests, aggregate evidence, code and documentation.
 
 ### Phase C2 — build a modern, source-capped AI pool without redownloading blindly
 
+- [x] Complete a physical metadata/licence/provenance inventory before selecting rows. C2a finds
+      only three currently admissible modern families: GPT Image 1 (1,060 local images), Nano
+      Banana (9,457 rows) and Nano Banana Pro (200 licensed loose images). FLUX.1-dev (10,000), the
+      1,250-row second NBP source and the 127,835-member Nano editing archive remain conditional;
+      missing dataset licences or contradictory counts are not inferred away. At least two
+      additional licensed, explicitly generated families are required.
 - [ ] Target **10,000–20,000 eligible AI parents**, nominally about 15,000, with at least five
       verified modern generator families and no family above 20% of the selected pool. Audit the
       current SSD holdings first: FLUX.1-dev (10,000), Nano Banana (9,457), Nano Banana Pro
-      (registered 1,250 plus a separate bounded holding), GPT-image 4K (about 2,122 physical image
-      files) and the Julien modern mixture. A folder name is not generator provenance.
+      (registered 1,250 plus a separate bounded holding), GPT Image 1 (1,060 PNG plus 1,061 text
+      sidecars—not 2,122 images) and the Julien modern mixture. A folder name is not generator
+      provenance.
 - [ ] Add a new public source only for a measured missing generator/semantic cluster. Prefer
       selective, revision-pinned acquisition; do not download OpenFake's full 3.44 TB. Its
       `core/test`/Reddit splits and frontier held-out models are test candidates, never TRAIN.

@@ -2053,3 +2053,24 @@ per 100 completions. A focused test pins the quiet TLS curl and atomic `.partial
 Successful VISION destinations have no published per-file size but exist only after curl exits
 cleanly and atomic rename succeeds; they are now reused directly, while only `.partial` files are
 resumed. This prevents a reconnect from redownloading every completed native JPEG.
+
+### E32/C2a — volume is not provenance: only three modern AI families are admitted
+
+A complete physical metadata inventory corrected the earlier rough file counts. The partial GPT
+Image 1 checkout contains 1,060 PNG images and 1,061 text files—2,122 physical files did not mean
+2,122 images. The Nano-Banana-150k archive contains 127,835 image members, not the card's claimed
+more-than-150k quantity. These corrections happened before C2 row selection or training.
+
+Only three present families currently have both an explicit generator statement and dataset
+licence: 9,457-row Nano Banana (MIT), 200-image Nano Banana Pro (MIT), and the 1,060-image partial
+GPT Image 1 snapshot (CC BY 4.0). The 10,000-row FLUX.1-dev and 1,250-row second NBP holdings have
+prompts but their cards expose no dataset licence and insufficient generation narrative. The
+127,835-member Nano editing archive also lacks a dataset licence and manifest. They remain on disk
+but do not count toward the five-family gate.
+
+CommunityForensics remains a licensed, high-breadth diversity anchor under its already audited
+fixed-input conditions; it is not relabelled as a new current family. AIGC Benchmark, Julien,
+MLLMGenSet and Qwen retain their protected test roles. Compact evidence
+`evidence/e32_ai_inventory.json` records every revision, physical byte/count and decision. The next
+C2 action is to find at least two licensed, explicitly sourced modern families—not to download
+more volume from ambiguous holdings.

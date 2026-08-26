@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-26T14:30:00+03:00",
+  "experiment": "E32/C2a",
+  "sources": [
+    {
+      "id": "flux-1-dev-local",
+      "repo_id": "ash12321/flux-1-dev-generated-10k",
+      "revision": "d1ccb59d1455232a49f3aa5d9ef7efb8f865f9a7",
+      "dirname": "ash12321__flux-1-dev-generated-10k",
+      "storage": "parquet",
+      "family": "FLUX.1-dev",
+      "license": null,
+      "provenance": "Repository name claims FLUX.1-dev; rows include prompt and seed, but the card has no narrative generation statement",
+      "admission_state": "conditional_license_and_provenance",
+      "counts_toward_verified_modern_families": false
+    },
+    {
+      "id": "nano-banana-local",
+      "repo_id": "bitmind/nano-banana",
+      "revision": "9ea8da32a5be03f4946e6cb10c2d2f8e90f0a0a4",
+      "dirname": "bitmind__nano-banana",
+      "storage": "parquet",
+      "family": "Gemini 2.5 Flash Image Preview (Nano Banana)",
+      "license": "MIT",
+      "provenance": "Dataset card explicitly declares 9,457 Nano Banana generated images",
+      "admission_state": "eligible_candidate_pending_byte_audit",
+      "counts_toward_verified_modern_families": true
+    },
+    {
+      "id": "nano-banana-pro-kaupane-local",
+      "repo_id": "kaupane/nano-banana-pro-gen",
+      "revision": "5c61390a0307e6c38788ab85a5280fbc9893415b",
+      "dirname": "kaupane__nano-banana-pro-gen",
+      "storage": "parquet",
+      "family": "Nano Banana Pro",
+      "license": null,
+      "provenance": "Repository name claims Nano Banana Pro and rows contain prompts; the card contains only generated dataset metadata",
+      "admission_state": "conditional_license_and_provenance",
+      "counts_toward_verified_modern_families": false
+    },
+    {
+      "id": "nano-banana-pro-ash-local",
+      "repo_id": "ash12321/nano-banana-pro-generated-1k",
+      "revision": "01f43edd35eb2f47f5ea77cfb223d173083d61ad",
+      "dirname": "ash12321__nano-banana-pro-generated-1k",
+      "storage": "loose_images",
+      "family": "Nano Banana Pro",
+      "license": "MIT",
+      "provenance": "Dataset card explicitly declares 200 Nano Banana Pro AI-generated images",
+      "admission_state": "eligible_candidate_pending_byte_audit",
+      "counts_toward_verified_modern_families": true
+    },
+    {
+      "id": "gpt-image-1-local",
+      "repo_id": "a3xrfgb/gpt-image-mega-4k",
+      "revision": "bba366cb4b73605ddd569a916976a0e422164825",
+      "dirname": "a3xrfgb__gpt-image-mega-4k",
+      "storage": "loose_images_with_text_sidecars",
+      "family": "GPT Image 1",
+      "license": "CC BY 4.0",
+      "provenance": "Dataset card explicitly declares 4,000 curated GPT Image 1 images; the local snapshot is partial",
+      "admission_state": "eligible_candidate_pending_byte_audit",
+      "counts_toward_verified_modern_families": true
+    },
+    {
+      "id": "nano-banana-150k-local",
+      "repo_id": "bitmind/Nano-banana-150k",
+      "revision": "00f31db3345f40f2f22d69de9785a60b0f78833c",
+      "dirname": "bitmind__Nano-banana-150k",
+      "storage": "zip",
+      "family": "Nano Banana editing",
+      "license": null,
+      "provenance": "Card claims more than 150k identity-consistent editing samples; local AI.zip contains fewer image members and no row manifest",
+      "admission_state": "conditional_license_count_and_task_identity",
+      "counts_toward_verified_modern_families": false
+    },
+    {
+      "id": "communityforensics-small-local",
+      "repo_id": "OwensLab/CommunityForensics-Small",
+      "revision": "local_revision_previously_pinned_by_E31",
+      "dirname": "OwensLab__CommunityForensics-Small",
+      "storage": "parquet",
+      "family": "community generator diversity anchor",
+      "license": "CC BY-NC-SA 4.0, with per-generator model licence metadata",
+      "provenance": "Prompt, model_name, architecture and subset fields; 300 AI model identities in the local small snapshot",
+      "admission_state": "eligible_diversity_anchor_under_E31_fixed_input_only",
+      "counts_toward_verified_modern_families": false
+    }
+  ],
+  "protected_test_only": [
+    "TheKernel01/AIGC-Detection-Benchmark",
+    "julienlucas/midjourney-dalle-sd-nanobananapro-dataset",
+    "Qwen/Qwen-Image-Bench",
+    "zr-zhang/MLLM-Generated-Image-Detection-Dataset"
+  ]
+}
