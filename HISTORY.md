@@ -2683,3 +2683,17 @@ The LOCO runner was implemented and tested before reading results. It hard-binds
 and feature-cache SHAs, removes the held-out source from both TRAIN fitting and CALIBRATION
 thresholding, refuses any arm that loses a class and reports the absent source separately. Five
 focused LOCO/threshold tests pass. The accepted artifact and owner-gallery evidence are read-only.
+
+All nine LOCO rounds completed. Generator transfer is not the immediate bottleneck: held-out AI
+macro recall is 98.34% and the weakest absent source, CommunityForensics, still reaches 95.78%.
+Authentic transfer fails: held-out CSAFE FP 15.74%, VISION FP 19.82% and FODB FP 34.85%, for 23.47%
+macro / 34.85% worst-source FP. These results explain why the source-stratified split looked
+excellent and why a genuinely new owner pipeline collapsed even harder.
+
+Evidence is `evidence/e32_r0_loco.json`; the original artifact remains byte-for-byte unchanged.
+The next priority is therefore not a model ensemble or expensive full fine-tune. First add a
+licensed, diverse REAL complement with a matched storage/input route and enforce a source-held-out
+authentic gate. The already-local CommunityForensics REAL half is the cheapest candidate because
+its AI half is already admitted and its matched container route can suppress a major source
+shortcut; it still requires independent metadata selection, licence/provenance confirmation and
+full decontamination before use.

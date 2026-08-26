@@ -2416,3 +2416,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   `716df956...be3b`, excludes one source from fit/threshold and uses the original FP budgets.
 - Five focused LOCO/threshold tests pass.
 - **Decision:** commit method before production diagnostic.
+
+### C4-R0 nine-source LOCO postmortem — complete
+
+- Held-out AI: macro recall 98.34%, worst 95.78% (Community); current families 97.67–99.50%.
+- Held-out REAL FP: CSAFE 15.74%, VISION 19.82%, FODB 34.85%; macro 23.47%, worst 34.85%.
+- Accepted artifact and gallery evidence unchanged; owner gallery was not opened.
+- **Conclusion:** modern-generator representation transfers, authentic pipelines do not. Prioritize
+  diverse/matched REAL coverage plus REAL-source-held-out gates before richer encoders or ensemble.

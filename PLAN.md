@@ -369,6 +369,11 @@ small manifests, aggregate evidence, code and documentation.
       frozen feature matrix only, rejects a missing class after exclusion, applies the original FP
       budget and emits source-specific FP/recall without mutating the artifact. Five focused tests
       pass.
+- [x] Complete nine LOCO diagnostics. Held-out AI transfer remains strong: macro recall 98.34%,
+      worst source 95.78%. Held-out REAL transfer fails the budget: macro FP 23.47%, worst FODB
+      34.85% (CSAFE 15.74%, VISION 19.82%). Combined with owner-gallery FP 75.71%, prioritize a
+      fourth format/content-matched REAL collection and source-held-out real gating before PE-Core,
+      intermediate-block or full-fine-tune expense.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.
