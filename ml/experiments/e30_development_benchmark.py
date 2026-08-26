@@ -18,6 +18,7 @@ from scipy.stats import beta
 from sklearn.metrics import roc_auc_score
 
 from pixelproof.data_contract import DataRecord, DataRole, load_manifest, sha256_bytes
+from pixelproof.e31_candidate import E31Candidate
 from pixelproof.project_model import load_project_model
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 from pixelproof.verdict import CF_REVISION, CF_T_AI, CommunityForensicsArm
@@ -169,6 +170,22 @@ def summarize(
     }
 
 
+def development_gate(summary: Mapping[str, Any]) -> dict[str, Any]:
+    deltas = summary["recall_delta_vs_standardized"]
+    checks = {
+        "all_900_rows_scored": summary["accounting"]["failed"] == 0,
+        "macro_real_fp_lte_0.05": summary["macro"]["real_false_positive"] <= 0.05,
+        "worst_real_group_fp_lte_0.10": (
+            summary["macro"]["worst_real_group_false_positive"] <= 0.10
+        ),
+        "macro_ai_recall_gte_0.50": summary["macro"]["ai_recall"] >= 0.50,
+        "worst_ai_group_recall_gte_0.30": summary["macro"]["worst_ai_group_recall"] >= 0.30,
+        "jpeg_q75_recall_loss_lte_0.15": deltas["jpeg_q75"] >= -0.15,
+        "resize256_q90_recall_loss_lte_0.15": deltas["resize256_q90"] >= -0.15,
+    }
+    return {"passed": all(checks.values()), "checks": checks}
+
+
 def _contract_sha(payload: Mapping[str, Any]) -> str:
     return sha256_bytes(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode())
 
@@ -219,6 +236,13 @@ def _cf(device: torch.device) -> tuple[dict[str, Any], Callable[[Image.Image], f
     return contract, lambda image: float(arm.score(image))
 
 
+def _e31(device: torch.device) -> tuple[dict[str, Any], Callable[[Image.Image, str], float]]:
+    model = E31Candidate(device=device)
+    return model.contract(), lambda image, content_key: float(
+        model.score_image(image, content_key).score
+    )
+
+
 def _load_rows() -> tuple[dict[str, Any], list[DataRecord]]:
     manifest, rows = load_manifest(MANIFEST_PATH, require_hashes=True)
     if manifest.get("content_set_sha256") != EXPECTED_CONTENT_SET:
@@ -244,7 +268,12 @@ def _read_cache(path: Path, contract_sha: str) -> dict[str, dict[str, Any]]:
 
 
 def run_arm(name: str, device: torch.device, rows: list[DataRecord]) -> dict[str, Any]:
-    contract, scorer = _e20(device) if name == "e20" else _cf(device)
+    if name == "e20":
+        contract, scorer = _e20(device)
+    elif name == "cf_vit":
+        contract, scorer = _cf(device)
+    else:
+        contract, scorer = _e31(device)
     contract_sha = _contract_sha(contract)
     cache_path = OUTPUT_DIR / f"{name}.jsonl"
     cache_path.parent.mkdir(parents=True, exist_ok=True)
@@ -270,7 +299,11 @@ def run_arm(name: str, device: torch.device, rows: list[DataRecord]) -> dict[str
                     raise RuntimeError("image hash changed")
                 with Image.open(path) as opened:
                     image = opened.convert("RGB")
-                score = scorer(image)
+                score = (
+                    scorer(image, record.content_id or record.record_id)
+                    if name == "dinov2_e31"
+                    else scorer(image)
+                )
                 if not np.isfinite(score):
                     raise RuntimeError("non-finite score")
                 result = {
@@ -298,23 +331,26 @@ def run_arm(name: str, device: torch.device, rows: list[DataRecord]) -> dict[str
     summary = summarize(
         ordered,
         float(contract["threshold"]),
-        abstains_below_threshold=name == "cf_vit",
+        abstains_below_threshold=name in {"cf_vit", "dinov2_e31"},
     )
     return {
         "contract": contract,
         "contract_sha256": contract_sha,
         "summary": summary,
+        "development_gate": development_gate(summary),
     }
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--arm", choices=("e20", "cf_vit", "all"), default="all")
+    parser.add_argument(
+        "--arm", choices=("e20", "cf_vit", "dinov2_e31", "all"), default="all"
+    )
     parser.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="auto")
     args = parser.parse_args()
     manifest, rows = _load_rows()
     device = _device(args.device)
-    arms = ("e20", "cf_vit") if args.arm == "all" else (args.arm,)
+    arms = ("e20", "cf_vit", "dinov2_e31") if args.arm == "all" else (args.arm,)
     results = {
         "experiment": "E30-A4-development",
         "dataset_content_set_sha256": manifest["content_set_sha256"],
@@ -334,6 +370,7 @@ def main() -> None:
             "overall": value["summary"]["overall"],
             "macro": value["summary"]["macro"],
             "recall_delta_vs_standardized": value["summary"]["recall_delta_vs_standardized"],
+            "development_gate": value["development_gate"],
         }
         for name, value in results["arms"].items()
     }

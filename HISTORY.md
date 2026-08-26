@@ -1943,3 +1943,18 @@ artifact embeds its fitted head plus the DINO model/input/weight contract, uses 
 threshold `0.7090073824`, and has SHA `99901219...4d860`. Compact B4 evidence is
 `evidence/e31_b4_ensemble.json`; row scores remain ignored with SHA `04f5dc59...d5bc5`. This is the
 first candidate allowed to approach B5. E30 has still not been read.
+
+### E31/B5 pre-score checkpoint — candidate, crop and final lock are frozen
+
+The B5 scorer verifies candidate SHA `99901219...4d860` and DINO weight SHA `04d27f34...0081` before
+loading. It uses exactly one native 128 px texture-qualified tile, chosen from a parent `content_id`
+so transport derivatives share the selection key, then the fixed 224 px DINO view and threshold
+`0.7090073824`. This preserves the one-tile training/calibration distribution instead of inventing
+an uncalibrated top-k rule. A synthetic-noise smoke image scored successfully; no E30 image was
+opened.
+
+The existing 900-row MLLM DEVELOPMENT manifest remains pinned to content set `7634755c...24b8` and
+the old scorer now exposes the E31 arm without altering E20/CF caches. The Qwen one-shot runner is
+also committed but requires a committed `development_passed` receipt for this candidate before it
+will open 40 native + 40 standardized LOCKED rows. Focused tests pin crop reproducibility, role
+gate rejection, generator/transport reporting and every DEVELOPMENT stop/go condition.

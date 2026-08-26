@@ -183,7 +183,7 @@ test leakage, and only then ask E30 whether the frozen system advances.
 
 ### Phase B5 — frozen DEVELOPMENT gate, then one LOCKED FINAL scout
 
-- [ ] Commit candidate checkpoint hashes, preprocessing, ensemble rule, thresholds and stop/go
+- [x] Commit candidate checkpoint hashes, preprocessing, ensemble rule, thresholds and stop/go
       gates before reading a new E30 score.
 - [ ] Run once on E30 MLLM DEVELOPMENT. Require the existing working-v1 point gates: macro real FP
       <=5%, worst real-source FP <=10%, current-AI macro recall >=50%, every sufficiently sized
@@ -194,6 +194,13 @@ test leakage, and only then ask E30 whether the frozen system advances.
       threshold, coefficient or retry changes after seeing them.
 - [ ] Keep A5's untouched multi-phone native vault mandatory before claiming general real-photo
       safety.
+- **Frozen B5 scorer before DEVELOPMENT:** candidate SHA `99901219...4d860`, single DINOv2 head,
+  cached encoder-weight SHA `04d27f34...0081`, one content-id-seeded native 128 px texture-qualified
+  tile, fixed 224 px encoder view and threshold `0.7090073824`. Parent/derivative views share the
+  same content key. DEVELOPMENT is exactly the existing 900-row content set
+  `7634755c...24b8`; no threshold, crop, retry or gate may change after its scores. Qwen code is
+  committed but refuses to open its 40+40 LOCKED rows unless a committed evidence file states
+  `development_passed` for this exact candidate. The final scout remains diagnostic only.
 
 ### Phase B6 — integrate, document and preserve presentation evidence
 

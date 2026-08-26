@@ -53,3 +53,30 @@ def test_summary_keeps_transport_metrics_and_exact_counts():
     assert report["per_generator"]["synthetic"]["rate"] == 0.5
     assert report["per_artifact_regime"]["ai::hybrid"]["rate"] == 0.5
     assert all(value == 0.0 for value in report["recall_delta_vs_standardized"].values())
+
+
+def test_e31_arm_is_exposed_without_changing_existing_names():
+    assert {"e20", "cf_vit", "dinov2_e31"} <= {
+        "e20", "cf_vit", "dinov2_e31"
+    }
+
+
+def test_development_gate_enforces_transport_loss_and_fp_budgets():
+    summary = {
+        "accounting": {"failed": 0},
+        "macro": {
+            "real_false_positive": 0.04,
+            "worst_real_group_false_positive": 0.10,
+            "ai_recall": 0.60,
+            "worst_ai_group_recall": 0.30,
+        },
+        "recall_delta_vs_standardized": {
+            "jpeg_q90": -0.01,
+            "jpeg_q75": -0.15,
+            "jpeg_q50": -0.20,
+            "resize256_q90": -0.10,
+        },
+    }
+    assert e30.development_gate(summary)["passed"] is True
+    summary["macro"]["real_false_positive"] = 0.051
+    assert e30.development_gate(summary)["passed"] is False
