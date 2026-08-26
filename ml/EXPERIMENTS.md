@@ -2366,3 +2366,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - All five screen checks pass. Artifact 12,720 B / SHA `7f170340...a85e`.
 - **Decision:** accept as a runnable candidate/control. Do not call it final until unseen-source and
   independent real-photo arms pass.
+
+### C4-R0 serving/gallery preregistration
+
+- Implement one-image/batch CLI with hard artifact/weight hashes and exact R0 preprocessing.
+- Unit-test preprocessing and decisions before real image use.
+- Score 210 supported owner-gallery stills; exclude one MOV. Gallery is already-consumed
+  DEVELOPMENT, so report FP distribution only and forbid refit/threshold change.
+- **Decision:** commit this boundary before implementing or opening gallery pixels.

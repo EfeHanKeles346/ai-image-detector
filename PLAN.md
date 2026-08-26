@@ -346,6 +346,11 @@ small manifests, aggregate evidence, code and documentation.
       94.60%, macro REAL FP 9.97% and worst-source FP 13.84%. Every preregistered screen check
       passes. Artifact SHA is `7f170340...a85e`; this remains group-held-out/source-stratified
       evidence, not unseen-source final validation.
+- [x] Precommit the serving smoke boundary: add a hash-verifying `pixelproof-predict-e32` CLI that
+      reproduces the exact EXIF/RGB/resize/crop/JPEG contract in memory, verifies the fitted
+      artifact and cached DINO weights, and emits score/threshold/verdict JSON per image. Test the
+      implementation on synthetic images first, then score the previously consumed 210-image
+      owner gallery as DEVELOPMENT only; never relabel it locked or use its results to refit.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

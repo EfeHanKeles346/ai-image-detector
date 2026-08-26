@@ -2639,3 +2639,10 @@ has SHA `7f170340...a85e`. Compact evidence is `evidence/e32_r0_dinov2s.json`, s
 generalization result: every CALIBRATION source also has TRAIN groups, and DEVELOPMENT/LOCKED arms
 remain untouched. The next step is a stable one-image inference boundary plus independent smoke
 tests, then an actually unseen-source evaluation before any universal claim.
+
+Before re-opening the already-consumed owner gallery, the R0 inference boundary was precommitted.
+The CLI must verify artifact and DINO weight hashes, reproduce the complete in-memory R0 transform
+and return machine-readable score/threshold/verdict per supported still image. Unit tests precede
+gallery use. The 210 JPEG/PNG gallery images remain DEVELOPMENT because earlier models already
+scored them; the MOV file is out of this still-image contract. Its result may diagnose practical
+false positives but may not change the artifact or become a locked claim.
