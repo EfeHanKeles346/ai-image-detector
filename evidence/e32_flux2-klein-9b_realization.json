@@ -1,0 +1,76 @@
+{
+  "boundary": "A passing source is only an eligible candidate. This report assigns no TRAIN, CALIBRATION, DEVELOPMENT or LOCKED FINAL role.",
+  "category_counts": {
+    "animal": 240,
+    "architecture": 236,
+    "composition": 160,
+    "diffusiondb": 236,
+    "diffusiondb_orig": 236,
+    "dynamic": 236,
+    "editing": 160,
+    "hand": 236,
+    "human": 236,
+    "landscape": 80,
+    "logo": 236,
+    "object": 236,
+    "style": 236,
+    "text_en": 236
+  },
+  "counts": {
+    "failures": 2,
+    "passed_peer_dhash_overlaps": 0,
+    "passed_peer_exact_overlaps": 0,
+    "protected_dhash_overlaps": 0,
+    "protected_exact_overlaps": 0,
+    "unique_dhash": 2940,
+    "unique_phash": 2932,
+    "unique_sha256": 2964,
+    "within_source_confirmed_perceptual_duplicate_groups": 41,
+    "within_source_dhash_candidate_groups": 44,
+    "within_source_exact_duplicate_groups": 28
+  },
+  "detailed_report_bytes": 2045961,
+  "detailed_report_external_path": "audits/flux2-klein-9b.json",
+  "detailed_report_sha256": "53c0793b5832181056b9588043d6562eb2ac9ef819c821a202dadc5c4d661451",
+  "exif_present": 0,
+  "expected_images": 3000,
+  "expected_prompt_groups": 750,
+  "experiment": "E32/C1-C2-source-realization",
+  "extension_matches_decoded_format": 0,
+  "failure_examples": [
+    {
+      "count": "28",
+      "reason": "within_source_exact_duplicates"
+    },
+    {
+      "count": "41",
+      "reason": "within_source_confirmed_perceptual_duplicates"
+    }
+  ],
+  "failure_reason_counts": {
+    "within_source_confirmed_perceptual_duplicates": 1,
+    "within_source_exact_duplicates": 1
+  },
+  "family": "FLUX.2 Klein 9B Base",
+  "format_counts": {
+    "PNG": 3000
+  },
+  "kind": "ai",
+  "license_tag": "license:cc-by-4.0",
+  "mode_counts": {
+    "RGB": 3000
+  },
+  "protected_scope": {
+    "e30_dhashes": 382,
+    "e30_exact_hashes": 980,
+    "e30_manifest_files": 4,
+    "passed_peer_audit_files": 2
+  },
+  "realized_images": 3000,
+  "realized_prompt_groups": 750,
+  "revision": "c07dd3cf504b2c4ca67251e21febf3e8b0a46c36",
+  "schema_version": 2,
+  "selection_sha256": "e9c3d3dad2ceb245b157f6e851e142128573726fe8b963d1811dfdaac4ceaf7a",
+  "source_id": "flux2-klein-9b",
+  "state": "source_realization_rejected_no_role_assignment"
+}

@@ -2045,3 +2045,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   `fbdc34d4...ad57`.
 - **Decision:** preserve rejection. Future eligibility overlay drops the two composition groups and
   entire style group (12 rows) and may only trim—not add—rows to restore source caps.
+
+### C2c FLUX.2 full realization — reject intact source
+
+- 3,000/3,000 RGB PNG and 750 groups decode; zero protected or passed-peer overlap.
+- 2,964 unique SHA / 2,932 unique pHash; 28 exact and 41 confirmed perceptual duplicate groups.
+- Combined duplicate graph touches 98 images / 32 prompt groups, concentrated in
+  `diffusiondb_orig` repeated prompts and editing variants.
+- External receipt 2,045,961 B / SHA `53c0793b...1451`; compact rejection committed.
+- **Decision:** preserve rejection. Later overlay keeps deterministic canonical groups across
+  cross-group conflicts, drops internally duplicated groups, and cannot add unseen replacements.

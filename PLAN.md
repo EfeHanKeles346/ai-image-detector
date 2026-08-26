@@ -166,6 +166,11 @@ small manifests, aggregate evidence, code and documentation.
       indivisible units and applies deterministic source-cap trimming to the other 3,000-row arms.
       The overlay must remain bound to the immutable 15K selection and every realization receipt;
       it may exclude audited failures but cannot add an unselected replacement after byte access.
+- [x] Preserve the first full FLUX.2 realization as rejected: 3,000/3,000 decode and zero
+      protected/peer overlap, but 28 exact and 41 confirmed perceptual duplicate groups leave 2,964
+      unique SHA / 2,932 unique pHash. Duplicate members touch 32 prompt groups, especially
+      `diffusiondb_orig` and editing. Defer exact canonical-group exclusions until every 15K arm is
+      audited; do not rewrite FLUX selection or fill from unseen rows.
 - [ ] Match semantic topics across classes before representation training. Measure topic/source,
       format, geometry, compression and bytes/pixel shortcuts on native and every proposed model
       input. Apply transport augmentation with the same probability/range to REAL and AI; never

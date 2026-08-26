@@ -2271,3 +2271,16 @@ integrity means the later eligibility overlay must remove the two redundant comp
 the affected style group in full—12 rows—not individual convenient variants. It may also trim
 other top sources deterministically to retain the <=20% cap, but it cannot add post-audit
 replacement rows or change the immutable 15K selection.
+
+FLUX.2 also failed intact-source realization despite complete decode and clean protected-role
+boundaries. All 3,000 images / 750 prompt groups decode as RGB PNG and have zero protected-E30 or
+passed-E32-peer overlap, but only 2,964 SHA-256 and 2,932 pHash values are unique. The audit found
+28 exact duplicate groups and 41 confirmed perceptual groups. Duplication is concentrated in
+repeated `diffusiondb_orig` prompts and several editing variants; the combined conflict set touches
+98 image keys across 32 prompt groups.
+
+External rejected receipt is 2,045,961 B / SHA `53c0793b...1451`; compact evidence is
+`evidence/e32_flux2-klein-9b_realization.json`. The later eligibility overlay will operate on a
+prompt-group conflict graph: keep a deterministic canonical group between cross-group copies and
+drop any group containing an internal duplicate. Exact counts remain deliberately unfrozen until
+Community and GPT complete their own audits. No new/unseen FLUX row may be added as replacement.

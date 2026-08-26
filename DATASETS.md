@@ -333,6 +333,13 @@ receipt is 2,020,166 B / SHA `fbdc34d4...ad57`; compact evidence is
 `evidence/e32_qwen-image-2512_realization.json`. A later immutable-selection eligibility overlay
 must drop all three affected prompt groups as units before any TRAIN/CAL role.
 
+FLUX.2 likewise fails intact-source hygiene: 3,000/3,000 decode and zero protected/peer overlap,
+but 28 exact plus 41 confirmed perceptual duplicate groups leave 2,964 unique SHA and 2,932 unique
+pHash. The conflict set covers 98 image keys / 32 prompt groups, mainly `diffusiondb_orig` repeats
+and editing variations. Detailed rejected receipt is 2,045,961 B / SHA `53c0793b...1451`; compact
+evidence is `evidence/e32_flux2-klein-9b_realization.json`. Group-safe canonical pruning is pending
+the combined eligibility overlay; no replacement row is selected post-decode.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |
