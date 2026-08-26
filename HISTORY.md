@@ -2646,3 +2646,10 @@ and return machine-readable score/threshold/verdict per supported still image. U
 gallery use. The 210 JPEG/PNG gallery images remain DEVELOPMENT because earlier models already
 scored them; the MOV file is out of this still-image contract. Its result may diagnose practical
 false positives but may not change the artifact or become a locked claim.
+
+The E32 serving boundary was implemented before gallery use. `pixelproof-predict-e32` hard-verifies
+the 12,720-byte head artifact and cached DINO weight SHA, reproduces the exact JPEG round-trip and
+supports batched files/directories with one JSON verdict per image. A separate gallery runner
+stores only aggregate DEVELOPMENT evidence plus the ten highest basenames; it does not refit or
+change threshold. Ten focused candidate/input/trainer tests pass. Gallery pixels remain unopened
+by this method commit.

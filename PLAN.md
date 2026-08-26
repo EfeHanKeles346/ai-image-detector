@@ -351,6 +351,9 @@ small manifests, aggregate evidence, code and documentation.
       artifact and cached DINO weights, and emits score/threshold/verdict JSON per image. Test the
       implementation on synthetic images first, then score the previously consumed 210-image
       owner gallery as DEVELOPMENT only; never relabel it locked or use its results to refit.
+- [x] Implement the hash-verified batch/single-image E32 CLI and aggregate-only owner-gallery smoke
+      runner before opening gallery pixels. The CLI reproduces the JPEG round-trip exactly, emits
+      JSON and rejects unsupported paths; ten focused candidate/input/trainer tests pass.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

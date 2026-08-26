@@ -2374,3 +2374,11 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Score 210 supported owner-gallery stills; exclude one MOV. Gallery is already-consumed
   DEVELOPMENT, so report FP distribution only and forbid refit/threshold change.
 - **Decision:** commit this boundary before implementing or opening gallery pixels.
+
+### C4-R0 inference implementation checkpoint
+
+- Added `pixelproof-predict-e32`: artifact/weight SHA checks, exact standardized input, batch MPS/CPU
+  scoring and JSON results.
+- Added aggregate-only owner-gallery DEVELOPMENT runner; no model/head/threshold mutation exists.
+- Verification: ten focused candidate/input/trainer tests pass.
+- **Decision:** commit method, then score the 210 supported gallery stills once.
