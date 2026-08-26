@@ -2400,3 +2400,12 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   typecheck pass. One existing Starlette/httpx deprecation warning remains.
 - **Conclusion:** implementation is runnable and reproducible; model generalization is the failed
   layer. Keep E32 out of the service while planning source-held-out correction.
+
+### C4-R0 LOCO postmortem preregistration
+
+- Reuse only frozen R0 features and roles; hold one complete source out of fit and thresholding.
+- Fit C=0.1 on remaining TRAIN; threshold on remaining CALIBRATION at macro REAL FP <=10% and
+  worst-source FP <=20%; score every row from the absent source.
+- Report FP for held-out REAL collections and recall for held-out AI sources across all nine arms.
+- No owner-gallery row is opened and no accepted artifact field may change.
+- **Decision:** commit before implementing or reading LOCO results.

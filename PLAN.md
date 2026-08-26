@@ -359,6 +359,12 @@ small manifests, aggregate evidence, code and documentation.
       24.29% REAL recall at threshold 0.141444. Preserve the internal CALIBRATION pass and this
       external-pipeline failure together. R0 remains runnable research software but cannot advance
       to serving or LOCKED FINAL; do not tune its threshold on this gallery.
+- [x] Precommit a cheap leave-one-collection-out (LOCO) diagnosis over the frozen R0 features. For
+      each of nine sources, remove every row from head fitting and threshold selection; fit C=0.1
+      on remaining TRAIN, choose the same FP-budget threshold on remaining CALIBRATION and score
+      all held-out rows. Report REAL FP or AI recall per held-out source. This diagnostic cannot
+      mutate the accepted artifact or promote a candidate; it decides whether data/source coverage
+      must precede richer representations.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

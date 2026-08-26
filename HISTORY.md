@@ -2672,3 +2672,9 @@ the production web build and TypeScript typecheck. This separates two facts clea
 pipeline, model artifact and inference program operate correctly; the learned decision does not
 generalize to the owner's authentic camera pipeline. That distinction is now presentation-grade
 evidence rather than an unrecorded failure.
+
+A source-held-out postmortem was precommitted next because it reuses the frozen 22,688x384 cache
+and cannot tune against the owner gallery. Nine LOCO rounds will remove one complete collection
+from both fitting and threshold selection, reproduce C=0.1 plus the authentic FP budgets on the
+remaining roles and measure only the held-out collection. The result is diagnostic: it may decide
+the next data/representation action but cannot alter or rescue the already-frozen R0 artifact.
