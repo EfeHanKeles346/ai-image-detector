@@ -1995,3 +1995,13 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   previously passed E32 peer overlap; no role assignment.
 - Verification: 34 E32 tests pass, including a real temporary Parquet byte-decode fixture. No
   production local-pool row was opened by this implementation checkpoint.
+
+### C2c Nano Banana Pro full realization
+
+- **Input:** all 200 frozen licensed NBP parents, selection `2a31e792...0ef7`.
+- **Decode:** 200/200 PNG; 136 RGB, 64 RGBA; no EXIF.
+- **Hygiene:** 200 unique SHA-256 and dHash; zero within-source duplicates; zero exact/dHash overlap
+  with four protected E30 manifests (980 exact / 382 perceptual hashes).
+- **Receipt:** external 91,762 B / SHA `bfc217f0...d17b`; compact evidence committed.
+- **Decision:** source passes as `candidate_only`. Alpha/mode will be normalized identically across
+  classes before any representation sees it; no role is assigned here.

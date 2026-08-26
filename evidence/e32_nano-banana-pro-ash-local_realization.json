@@ -1,0 +1,45 @@
+{
+  "boundary": "A passing source is only an eligible candidate. This report assigns no TRAIN, CALIBRATION, DEVELOPMENT or LOCKED FINAL role.",
+  "counts": {
+    "failures": 0,
+    "passed_peer_dhash_overlaps": 0,
+    "passed_peer_exact_overlaps": 0,
+    "protected_dhash_overlaps": 0,
+    "protected_exact_overlaps": 0,
+    "unique_dhash": 200,
+    "unique_sha256": 200,
+    "within_source_dhash_duplicate_groups": 0,
+    "within_source_exact_duplicate_groups": 0
+  },
+  "detailed_report_bytes": 91762,
+  "detailed_report_external_path": "audits/nano-banana-pro-ash-local.json",
+  "detailed_report_sha256": "bfc217f029c1c44b9c3a9f29ba263e0acdf63e7b132f621e12754784f763d17b",
+  "exif_present": 0,
+  "expected_images": 200,
+  "experiment": "E32/C1-C2-source-realization",
+  "failure_examples": [],
+  "failure_reason_counts": {},
+  "family": "Nano Banana Pro",
+  "format_counts": {
+    "PNG": 200
+  },
+  "kind": "ai",
+  "mode_counts": {
+    "RGB": 136,
+    "RGBA": 64
+  },
+  "model_identity_counts": {},
+  "pool_record_selection_sha256": "2a31e7921054ac4915533735f3649cbb2d6b204439e93a6277a2164cd26a0ef7",
+  "protected_scope": {
+    "e30_dhashes": 382,
+    "e30_exact_hashes": 980,
+    "e30_manifest_files": 4,
+    "passed_peer_audit_files": 0
+  },
+  "realized_images": 200,
+  "revision": "01f43edd35eb2f47f5ea77cfb223d173083d61ad",
+  "schema_version": 1,
+  "selection_sha256": "3230f0267ca1b9a252ec61d7f94c90bdb820cf8aeec5fce2174ebc5a7ed980b7",
+  "source_id": "nano-banana-pro-ash-local",
+  "state": "source_realization_passed_candidate_only"
+}

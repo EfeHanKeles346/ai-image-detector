@@ -2216,3 +2216,12 @@ rejects partials, size changes, invalid UTF-8 or empty prompts. All four then us
 SHA-256/dHash, protected-E30, passed-peer, format/geometry and duplicate gates as VISION/Qwen/FLUX.
 Two additional byte-level fixtures bring the E32 suite to 34 passing tests. This checkpoint added
 capability only; no production pool source was opened or accepted before commit.
+
+The first production local-pool realization then passed. All 200/200 licensed Nano Banana Pro
+images decoded as PNG: 136 RGB and 64 RGBA, with no EXIF. All 200 SHA-256 and all 200 dHash values
+are unique; there is no exact or dHash overlap with the 980 exact / 382 perceptual hashes across
+four protected E30 manifests, and no passed E32 peer existed yet. The 91,762-byte detailed external
+receipt SHA is `bfc217f0...d17b`; compact evidence is
+`evidence/e32_nano-banana-pro-ash-local_realization.json`. State is explicitly
+`source_realization_passed_candidate_only`: the source is usable for later pool construction but
+still has no TRAIN/CALIBRATION role.

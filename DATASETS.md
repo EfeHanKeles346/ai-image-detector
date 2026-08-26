@@ -306,6 +306,12 @@ It revalidates source fingerprints and exact row locators before decode, then ap
 hash/duplicate/protected-overlap gate. A successful source receipt still means `candidate_only`;
 TRAIN/CALIBRATION assignment remains a later frozen-manifest operation.
 
+The complete licensed NBP source is the first 15K arm to pass realization: 200/200 PNG, 200 unique
+SHA-256, 200 unique dHash, zero duplicate or protected-E30 overlap. Modes are 136 RGB / 64 RGBA and
+EXIF is absent, so alpha/mode cannot be exposed as a class shortcut. Detailed external receipt is
+91,762 B / SHA `bfc217f0...d17b`; compact evidence is
+`evidence/e32_nano-banana-pro-ash-local_realization.json`. Its role remains `candidate_only`.
+
 | Dataset | Size | Model | Era |
 |---|---|---|---|
 | `bitmind/nano-banana` + `Nano-banana-150k` | 24 GB | Gemini 2.5 Flash Image | 2025 |

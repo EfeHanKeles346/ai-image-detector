@@ -144,6 +144,10 @@ small manifests, aggregate evidence, code and documentation.
       licence/usage boundary and label direction for every admitted collection. Unknown generator
       identity may contribute only to a capped `unknown` group and cannot satisfy the five-family
       requirement.
+- [x] Realize the complete licensed Nano Banana Pro arm: 200/200 PNG decode, 200 unique SHA-256,
+      200 unique dHash, zero within-source duplicate and zero exact/dHash overlap with all four E30
+      protected manifests. It passes only as a role-free candidate; 136 RGB and 64 RGBA modes must
+      receive the same later input normalization as every other source.
 - [ ] Match semantic topics across classes before representation training. Measure topic/source,
       format, geometry, compression and bytes/pixel shortcuts on native and every proposed model
       input. Apply transport augmentation with the same probability/range to REAL and AI; never
