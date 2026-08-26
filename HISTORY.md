@@ -2625,3 +2625,17 @@ exactly balanced at 11,344/class and preserves TRAIN 18,154 / CALIBRATION 4,534.
 units. Record-list SHA is `f9424d3d...f14b`; detailed receipt is 9,021,504 B / SHA
 `2255b123...5199`, with compact evidence `evidence/e32_r0_input_receipt.json`. This freezes the
 only input set the R0 feature extractor may open.
+
+The first E32 model is now genuinely fitted and runnable. Frozen DINOv2-S produced a 22,688x384
+feature archive; a class-weighted logistic head selected C=0.1 from the preregistered grid. On the
+4,534-row group-held-out CALIBRATION role it achieves AUC 0.996404, AP 0.996769, AI recall 99.07%,
+REAL recall 90.14%, balanced accuracy 94.60% and F1 94.82%. Authentic source-macro FP is 9.97%; the
+worst source is FODB at 13.84%, below the 20% ceiling. Current-family macro AI recall is 99.14% and
+the weakest current family, Nano Banana Pro, is 97.5%. All five preregistered R0 screen checks pass.
+
+The cached feature archive is 33,439,283 B / SHA `716df956...be3b`; the 12,720-byte fitted artifact
+has SHA `7f170340...a85e`. Compact evidence is `evidence/e32_r0_dinov2s.json`, state
+`r0_screen_passed_runnable_candidate`. This is the first successful E32 model but not yet a final
+generalization result: every CALIBRATION source also has TRAIN groups, and DEVELOPMENT/LOCKED arms
+remain untouched. The next step is a stable one-image inference boundary plus independent smoke
+tests, then an actually unseen-source evaluation before any universal claim.

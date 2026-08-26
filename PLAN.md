@@ -341,8 +341,14 @@ small manifests, aggregate evidence, code and documentation.
       487,845,683 logical bytes, exactly 11,344/class and unchanged TRAIN/CALIBRATION counts. Every
       original and derived SHA passes; no protected role is read. Freeze receipt SHA
       `2255b123...5199` before DINO feature extraction.
+- [x] Complete the R0 frozen DINOv2-S screen and save a runnable candidate. Selected C=0.1;
+      CALIBRATION AUC 0.9964, AP 0.9968, AI recall 99.07%, REAL recall 90.14%, balanced accuracy
+      94.60%, macro REAL FP 9.97% and worst-source FP 13.84%. Every preregistered screen check
+      passes. Artifact SHA is `7f170340...a85e`; this remains group-held-out/source-stratified
+      evidence, not unseen-source final validation.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
-      - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract.
+      - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
+        under the new standardized global-input contract; use as the runnable baseline.
       - **R1 current-science:** a feasible pinned PE-Core frozen encoder (begin B/16; advance to
         L/14 only after memory/latency/licence smoke) plus regularized linear head, inspired by the
         2026 SSAFE result that curated 10K data can outperform much larger pools.

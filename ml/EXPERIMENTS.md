@@ -2353,3 +2353,16 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Fixed 224x224 RGB JPEG q90/4:4:4; 487,845,683 logical bytes.
 - Record SHA `f9424d3d...f14b`; detailed receipt 9,021,504 B / SHA `2255b123...5199`.
 - **Decision:** freeze input receipt; DINOv2-S may now extract features from this root only.
+
+### C4-R0 frozen DINOv2-S screen — pass
+
+- Feature matrix 22,688x384; archive 33,439,283 B / SHA `716df956...be3b`.
+- C-grid CAL AUC: 0.01=0.996305, 0.1=0.996404, 1=0.995980, 10=0.995866; choose C=0.1.
+- Frozen threshold 0.141444 at authentic macro FP 9.97% / worst-source FP 13.84%.
+- CAL: AUC 0.996404; AP 0.996769; AI recall 99.07%; REAL recall 90.14%; balanced accuracy
+  94.60%; F1 94.82%.
+- AI recalls: Qwen 99.77%, FLUX.2 99.55%, GPT 100%, Nano 98.88%, NBP 97.5%, Community 97.30%.
+- REAL FP: CSAFE 4.63%, FODB 13.84%, VISION 11.44%.
+- All five screen checks pass. Artifact 12,720 B / SHA `7f170340...a85e`.
+- **Decision:** accept as a runnable candidate/control. Do not call it final until unseen-source and
+  independent real-photo arms pass.
