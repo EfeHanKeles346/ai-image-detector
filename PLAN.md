@@ -492,6 +492,10 @@ small manifests, aggregate evidence, code and documentation.
       Require <=20% worst-device IPN FP and <=20% owner-gallery FP while preserving >=90% modern-AI
       recall before any locked AI arm or serving replacement. Failure returns to data/objective
       redesign; it cannot be threshold-repaired on either test.
+      External method is precommitted after CF selection: hard-bind artifact `68a54aa2...701c`, CF
+      weights and threshold 0.125935; verify IPN realization `f5827dce...243b` and owner identity
+      `390e3c21...ac09`; score CF only, once, with exact standardized JPEG round-trip. Report every
+      IPN device plus aggregate and owner aggregate/high scores. No DINO fallback, refit or policy.
 - [ ] Use the same selected parents, folds and input views for a small representation ladder:
       - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
         under the new standardized global-input contract; use as the runnable baseline.

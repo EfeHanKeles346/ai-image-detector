@@ -2904,3 +2904,9 @@ current-AI macro/worst 99.82%/99.55%, REAL macro/worst FP 9.97%/12.64%, artifact
 `68a54aa2...701c`. The preregistered higher-AUC rule therefore freezes CF at C=0.01 and threshold
 0.125935. A deterministic selection receipt binds both evidence files; external scores remain
 unopened and DINO is no longer eligible for outcome-based rescue.
+
+After CF selection, the external R1b gate was precommitted before scorer code. It will verify the
+selected artifact/CF weights/0.125935 threshold, bind the clean 960-row IPN realization and exact
+210-photo owner identity, reproduce the same JPEG round-trip and score CF only once. Passing needs
+IPN worst-device FP <=20% and owner FP <=20%; internal current-AI macro is already >90%. No refit,
+threshold change, DINO fallback or test-derived policy is allowed.

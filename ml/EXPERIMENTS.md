@@ -2675,3 +2675,12 @@ above are transcription errors; production range planning binds the filesystem v
   C=0.01, threshold 0.125935, artifact `68a54aa2...701c`.
 - Both pass. Frozen rule selects CF on higher AUC; selection receipt binds both evidence SHAs.
 - **Decision:** freeze CF as the only external candidate before implementing/scoring IPN or owner.
+
+### C4-R1b external DEVELOPMENT gate preregistration
+
+- Hard-bind CF artifact `68a54aa2...701c`, pinned CF weights and threshold 0.125935.
+- Bind IPN realization `f5827dce...243b` (960/12 devices) and owner identity
+  `390e3c21...ac09` (210 stills); exact standardized JPEG round-trip.
+- Score selected CF once. Pass iff IPN worst-device FP <=20%, owner FP <=20% and already-frozen
+  internal current-AI macro >=90%. Report per-device IPN and aggregate score distributions.
+- No refit/rethreshold/DINO fallback/test policy. **Decision:** commit before scorer implementation.
