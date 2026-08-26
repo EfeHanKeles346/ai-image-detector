@@ -70,6 +70,12 @@ small manifests, aggregate evidence, code and documentation.
       detailed SHA-256 is `200a7aeb...ca4d`. Freeze downloaded zero image bytes.
 - [ ] Complete the frozen transfers and final content hashes without overwriting existing E31
       holdings or modifying an upstream archive in place.
+- [ ] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
+      traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
+      implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly
+      3,851 `orig` JPEG parents across 27 device roots and parent-link each social transport by
+      scene index; extract only `orig` candidates atomically. CSAFE rows remain unopened and
+      unselected until its verified `s21.zip` inventory is frozen.
 - [x] Implement the role-free realization gate before any transfer completes. It binds every audit
       to the frozen selection SHA, ignores exFAT AppleDouble sidecars, requires all selected bytes
       to decode, derives format from payload bytes, records geometry/EXIF/compression summaries,

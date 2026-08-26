@@ -2374,3 +2374,11 @@ the exact 20% cap; Qwen/FLUX remain divisible into intact four-row prompt groups
 / SHA `b6c2101f...32e4`; compact evidence is `evidence/e32_eligibility_overlay.json`. State is
 `eligibility_frozen_role_free`: this is not yet TRAIN/CALIBRATION and does not authorize evaluation
 on protected roles.
+
+The next C1 archive step was precommitted while the frozen FODB transfer continued. Archives will
+not be blindly expanded: a reproducible gate must reject traversal/absolute paths, symlinks,
+encryption, duplicate names, declared-size drift and implausible expansion before extraction.
+FODB must prove exactly 3,851 `orig` JPEG parents under 27 device roots and link its five social
+copies by device/scene index; only `orig` candidates may be atomically extracted. CSAFE `s21.zip`
+must first pass its published MD5 and a separate hierarchy inventory, after which internal rows can
+be selected—never before. This planning checkpoint writes no archive member.
