@@ -2598,3 +2598,11 @@ above are transcription errors; production range planning binds the filesystem v
   and owner exact-byte hashes only after reproducing gallery identity `390e3c21...ac09`.
 - No protected detector score or role assignment is allowed.
 - **Decision:** commit extraction receipt and realization boundary before decoding iPhone pixels.
+
+### C4-R1b iPhone 14 realization implementation checkpoint
+
+- Extraction-bound decode/SHA+dHash+pHash plus existing protected/peer gates implemented.
+- Stored IPN exact/perceptual hashes are protected. Owner access is raw exact SHA only and must
+  reproduce the 210-file `390e3c21...ac09` identity; no detector/perceptual owner read exists.
+- Eighteen focused iPhone/realization/identity tests pass; no role is assigned.
+- **Decision:** commit method before production iPhone pixel decode.

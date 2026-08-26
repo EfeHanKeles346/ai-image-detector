@@ -2841,3 +2841,9 @@ SHA is `46b36e56...09de`. Before decoding pixels, the realization gate was preco
 receipt, check format/EXIF/SHA+dHash+pHash and compare against protected E30/passed peers plus stored
 IPN hashes. The already-consumed owner gallery may contribute raw exact hashes only after its
 identity reproduces `390e3c21...ac09`; no gallery/IPN model score or threshold access is allowed.
+
+The iPhone realization gate was implemented before decoding its pixels. It hard-binds extraction,
+decodes and hashes every candidate, applies the existing protected/peer duplicate gates, consumes
+only stored IPN hashes and verifies the owner population through raw exact-file identity. It has no
+detector import or score path and assigns no role. Eighteen focused iPhone/realization/identity
+tests pass.

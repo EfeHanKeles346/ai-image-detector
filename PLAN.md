@@ -446,7 +446,8 @@ small manifests, aggregate evidence, code and documentation.
       12,914,703,500 B with receipt SHA `46b36e56...09de`. Before pixel decode, precommit a
       receipt-bound realization that checks format/EXIF/SHA+dHash+pHash, protected E30/passed peers,
       stored IPN hashes and owner-gallery exact bytes only (identity must remain `390e3c21...ac09`);
-      it must not score IPN/owner or assign a TRAIN role.
+      it must not score IPN/owner or assign a TRAIN role. Implementation passes 18 focused
+      iPhone/realization/protected-identity tests; commit before production pixel decode.
 - [x] Preserve the first iPhone 14 single-stream stop at 92,274,688 bytes and precommit four-range
       recovery before changing transfer code. Split only the exact remaining interval, require HTTP
       206 plus exact `Content-Range`/length per part, assemble prefix+ranges into a new temporary
