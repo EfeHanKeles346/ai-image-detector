@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-08-26T13:30:00+03:00",
+  "experiment": "E32/C1",
+  "sources": [
+    {
+      "id": "vision-base-native",
+      "collection": "VISION",
+      "index_url": "https://lesc.dinfo.unifi.it/VISION/VISION_base_files.txt",
+      "index_sha256": "11af7ca862dd40525785d7449b7e3808953bb18e6ac0cd7b5a37c41a2bb98994",
+      "readme_url": "https://lesc.dinfo.unifi.it/VISION/README.txt",
+      "readme_sha256": "22896dffbc6448e96102c4bb5d15b061efd10c9aa776766d1b48ac9fec515c45",
+      "revision": "VISION_base_files.txt etag 5fc501cd-183ba6, 2020-11-30",
+      "license": "CC BY-SA 4.0",
+      "assigned_role": "train_or_calibration_candidate",
+      "selection": "Only /images/nat/ JPEG parents from the base list; flat fields, videos and every social derivative are excluded",
+      "expected_parent_count": 3500,
+      "expected_devices": 35,
+      "reported_collection_brands": 11,
+      "reason": "Device-balanced native-camera coverage with an explicit device namespace"
+    },
+    {
+      "id": "forchheim-fodb",
+      "collection": "Forchheim Image Database",
+      "index_url": "https://faui1-files.cs.fau.de/public/mmsec/datasets/fodb/",
+      "readme_url": "https://faui1-files.cs.fau.de/public/mmsec/datasets/fodb/README.md",
+      "readme_sha256": "d879e666b86ca54baceefce18cca67fc26ca93c6f50d156c4af0fd4f23585d5a",
+      "revision": "published archive set, 2020-11-04",
+      "license": "Research use; no modification, commercial use or redistribution without author agreement",
+      "assigned_role": "train_or_calibration_candidate",
+      "selection": "Extract orig parents only for model fitting; five social copies inherit the same scene/device parent and are transport evidence",
+      "expected_parent_count": 3851,
+      "expected_devices": 27,
+      "reported_collection_brands": 9,
+      "archives": [
+        {
+          "name": "part01.zip",
+          "url": "https://faui1-files.cs.fau.de/public/mmsec/datasets/fodb/part01.zip",
+          "bytes": 5843764041,
+          "etag": "15c50c349-5b343d9a26cc4"
+        },
+        {
+          "name": "part02.zip",
+          "url": "https://faui1-files.cs.fau.de/public/mmsec/datasets/fodb/part02.zip",
+          "bytes": 7492625473,
+          "etag": "1be986441-5b343e2182315"
+        },
+        {
+          "name": "part03.zip",
+          "url": "https://faui1-files.cs.fau.de/public/mmsec/datasets/fodb/part03.zip",
+          "bytes": 9603958019,
+          "etag": "23c70c503-5b343f0e362ab"
+        }
+      ],
+      "reason": "Scene-disjoint camera coverage plus parent-linked real-world transport variants"
+    },
+    {
+      "id": "csafe-mcsidb-s21",
+      "collection": "CSAFE Multi-camera Smartphone Image Database",
+      "article_api": "https://api.figshare.com/v2/articles/26932084",
+      "article_id": 26932084,
+      "doi": "10.25380/iastate.26932084.v1",
+      "revision": "Figshare article version 1, 2024-09-25",
+      "license": "CC BY 4.0",
+      "assigned_role": "train_or_calibration_candidate",
+      "selection": "Download only the Galaxy S21 model archive, then cap devices/scenes after inspecting its internal hierarchy",
+      "archive": {
+        "file_id": 49387618,
+        "name": "s21.zip",
+        "url": "https://ndownloader.figshare.com/files/49387618",
+        "bytes": 17588803163,
+        "md5": "5c5f79e3e508a5cbf7a19e75846091d8"
+      },
+      "reported_full_collection_rows": 50000,
+      "reported_full_collection_devices": 60,
+      "reported_full_collection_bytes": 132734864055,
+      "reason": "A bounded modern computational-photography complement without mirroring the 123.6 GiB collection"
+    }
+  ],
+  "excluded_or_conditional": [
+    {
+      "id": "socrates",
+      "state": "conditional",
+      "reason": "Requires a signed licence agreement before acquisition"
+    },
+    {
+      "id": "forensicam-215k",
+      "state": "not_admitted",
+      "reason": "Baidu-only public transfer and no clear dataset licence in the repository"
+    },
+    {
+      "id": "csafe-full",
+      "state": "deferred",
+      "reason": "123.6 GiB is unnecessary before the selected S21 archive is inventoried"
+    }
+  ]
+}

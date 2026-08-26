@@ -59,14 +59,17 @@ small manifests, aggregate evidence, code and documentation.
         and fetch only the minimum device/model subset needed for modern Apple/Samsung coverage.
       - A 2,000–3,000 row web/professional-photo complement from a source with per-image provenance
         and compatible research terms; do not scrape a site whose terms do not permit it.
-- [ ] Keep SOCRatES (9,700 images / 103 phones / 15 makes) conditional because it requires a
+- [x] Keep SOCRatES (9,700 images / 103 phones / 15 makes) conditional because it requires a
       signed licence agreement, and keep ForensiCam-215K conditional because its only public
       download is Baidu and its repository exposes no clear dataset licence. Neither may silently
       become a dependency.
-- [ ] Download through a resumable receipt: pinned URL/revision, declared expected bytes/hash where
-      published, `.partial` state, retry/resume, free-space floor, final hash and explicit target
-      below `/Volumes/LaCie/pixelproof-datasets/e32/`. Never overwrite existing E31 holdings or
-      modify an upstream archive in place.
+- [x] Freeze a resumable acquisition receipt before transfer: pinned URL/revision, declared
+      expected bytes/hash where published, `.partial` state, retry/resume, 100 GiB free-space
+      floor and an explicit target below `/Volumes/LaCie/pixelproof-datasets/e32/`. The C1a receipt
+      selects 3,500 VISION native parents, all three FODB archives and only CSAFE `s21.zip`; its
+      detailed SHA-256 is `200a7aeb...ca4d`. Freeze downloaded zero image bytes.
+- [ ] Complete the frozen transfers and final content hashes without overwriting existing E31
+      holdings or modifying an upstream archive in place.
 - [ ] Decode and inventory every selected parent; record camera/device/model, scene/event group,
       native/social state, format, dimensions, orientation, EXIF availability, bytes/pixel and
       licence/provenance. Remove exact and perceptual duplicates against every protected role.

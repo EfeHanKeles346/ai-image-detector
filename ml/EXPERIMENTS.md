@@ -1855,3 +1855,19 @@ returned 0.999826 / threshold 0.709007 (`ai_signal_detected`). This false positi
 DEVELOPMENT failure and validates that the CLI warning—not a deployment claim—is necessary. Its
 JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and error cases use
 `insufficient_evidence`, never “real.”
+
+## 2026-08-26 — E32/C1a: authentic acquisition freeze
+
+- **Hypothesis:** replacing E31's narrow real distribution requires a device/scene-groupable
+  authentic pool; downloading volume before roles, licences and parent identity are frozen would
+  make the next score uninterpretable.
+- **Frozen sources:** 3,500 VISION native parents / 35 devices; three FODB archives totalling
+  22,940,347,533 declared bytes / 3,851 expected originals; one 17,588,803,163-byte CSAFE Galaxy
+  S21 archive, not the full 132.7 GB collection.
+- **Controls:** owner gallery absent; `0=REAL, 1=AI`; VISION derivatives excluded; FODB derivatives
+  inherit scene/device parents; CSAFE rows remain unselected; explicit TLS, `.partial` resume,
+  retry and 100 GiB free-space floor.
+- **Result:** selection metadata verified and frozen; zero image bytes and zero model scores. The
+  1,166,007-byte detailed receipt SHA is `200a7aeb...ca4d`; eight focused tests pass.
+- **Decision:** proceed to the frozen transfer, then decode and decontaminate. This is not a data or
+  model acceptance result.

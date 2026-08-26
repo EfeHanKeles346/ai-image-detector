@@ -1,0 +1,42 @@
+{
+  "csafe_state": "archive_frozen_internal_rows_pending_inventory",
+  "declared_archive_download_bytes": 40529150696,
+  "detailed_selection_bytes": 1166007,
+  "detailed_selection_sha256": "200a7aeb23d9c303d880dff76a08b21e38efe666531a6552ffe4bdd5841eca4d",
+  "experiment": "E32/C1",
+  "fodb_expected_orig_parent_count": 3851,
+  "new_image_bytes_downloaded_by_freeze": 0,
+  "schema_version": 1,
+  "sources": [
+    {
+      "device_count": 35,
+      "label": "real",
+      "license": "CC BY-SA 4.0",
+      "parent_count": 3500,
+      "role": "train_or_calibration_candidate",
+      "source_id": "vision-base-native",
+      "source_revision": "31380e1f78b69090e20edab0e7bf8ab0a5cb3b2f"
+    },
+    {
+      "declared_download_bytes": 22940347533,
+      "device_count": 27,
+      "label": "real",
+      "license": "Research use; no modification, commercial use or redistribution without author agreement",
+      "parent_count_after_orig_extraction": 3851,
+      "role": "train_or_calibration_candidate",
+      "source_id": "forchheim-fodb",
+      "source_revision": "098f4e1eebcbcd379af7fffa2dc271d48d2d6581"
+    },
+    {
+      "declared_download_bytes": 17588803163,
+      "label": "real",
+      "license": "CC BY 4.0",
+      "role": "train_or_calibration_candidate",
+      "selection_state": "archive_frozen_internal_rows_pending_inventory",
+      "source_id": "csafe-mcsidb-s21",
+      "source_revision": "65199d357498310d468685c145ff702c109b78f3"
+    }
+  ],
+  "state": "selection_frozen_no_image_bytes_claimed",
+  "vision_selected_parent_count": 3500
+}

@@ -44,6 +44,25 @@ before a 260 GB dataset made of 188 large ones.
 **Known gap:** these download first and audit second. The right order is to pull one shard, audit
 it, and only then commit to the full download — recorded in `HISTORY.md` §2b.8.
 
+## E32 authentic-photo acquisition
+
+`experiments/e32_data_system.py` is the role-safe replacement for adding the E32 camera sources.
+Its default operation freezes and verifies metadata only; every image transfer is explicit. The
+exact receipt and third-party bytes remain below `$PIXELPROOF_DATA_ROOT/e32`.
+
+```bash
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+  PYTHONPATH=src .venv/bin/python experiments/e32_data_system.py freeze-real
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+  PYTHONPATH=src .venv/bin/python experiments/e32_data_system.py download-real --source vision
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets \
+  PYTHONPATH=src .venv/bin/python experiments/e32_data_system.py status
+```
+
+Valid source names are `vision`, `fodb` and `csafe`. Downloads use `.partial` files, retry/resume,
+declared archive sizes and a 100 GiB free-space floor. A completed transfer is still not training
+data until its decoded parent inventory and protected-content audit pass.
+
 ## Paths
 
 Both scripts read `PIXELPROOF_DATA_ROOT`; the portable default is `ml/data/`. For an external

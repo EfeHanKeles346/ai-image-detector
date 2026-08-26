@@ -2021,3 +2021,26 @@ gallery DEVELOPMENT, new API-current AI, unseen-camera/web authentic content, un
 conditional Qwen locked arms. Existing gallery content cannot become a fresh final merely by being
 renamed; only never-scored additions may be sealed. `PLAN.md` records exact role, label, leakage,
 metric and stop/go rules. This C0/history checkpoint must be committed before C1 acquisition.
+
+### E32/C1a — authentic sources frozen before the first image transfer
+
+The source registry and tested acquisition runner froze three complementary authentic collections.
+VISION contributes exactly 3,500 `/images/nat/` JPEG parents over 35 devices; the selection rejects
+flat fields, videos and all social encodes mechanically. FODB contributes three fixed archives
+totalling 22,940,347,533 declared bytes and an expected 3,851 `orig` parents; its five social
+copies will inherit scene/device parent identity. CSAFE is bounded to the 17,588,803,163-byte
+Galaxy S21 archive with published MD5 `5c5f79e3e508a5cbf7a19e75846091d8`, rather than mirroring the
+132.7 GB collection.
+
+The detailed external receipt is 1,166,007 bytes with SHA-256
+`200a7aeb23d9c303d880dff76a08b21e38efe666531a6552ffe4bdd5841eca4d`; compact evidence is
+`evidence/e32_real_acquisition_selection.json`. Freeze created no image, archive, embedding,
+checkpoint or score. Eight focused tests pin registry uniqueness, native-only VISION filtering,
+path containment, completed-file reuse and receipt-state rejection.
+
+One operational fault was caught before bulk transfer: Python Requests rejects FODB's incomplete
+certificate chain while macOS system `curl` verifies it successfully. The implementation now uses
+TLS-verifying `/usr/bin/curl` for metadata and image bytes, never `verify=False`; `.partial` resume,
+retry, declared archive sizes and a 100 GiB free-space floor remain mandatory. SOCRatES and
+ForensiCam decisions are unchanged. C1a freezes availability, not eligibility: no source becomes
+TRAIN/CALIBRATION until full decode, grouping, duplicate and shortcut audits pass.

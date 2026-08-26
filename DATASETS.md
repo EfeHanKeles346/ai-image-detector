@@ -36,6 +36,29 @@ loosened, since only 35–95 images per set survive it today.
 
 ## Module 1 — is this image AI-generated?
 
+### E32/C1 authentic-photo acquisition — frozen, not yet realized
+
+The exact acquisition was frozen on 2026-08-26 before an image download. Detailed URLs stay on
+the external data root at `e32/real_acquisition_selection.json` (1,166,007 bytes; SHA-256
+`200a7aeb23d9c303d880dff76a08b21e38efe666531a6552ffe4bdd5841eca4d`); the compact receipt is
+`evidence/e32_real_acquisition_selection.json`. Candidate counts below are not yet usable rows.
+
+| frozen source | selected transfer | intended value | licence / role boundary |
+|---|---:|---|---|
+| VISION base native | 3,500 JPEG parents / 35 devices | Device-balanced native camera data; excludes flat fields, video and all social derivatives | CC BY-SA 4.0; TRAIN/CALIBRATION candidate only after audit |
+| Forchheim FODB | 3 archives / 22,940,347,533 declared bytes; 3,851 expected `orig` parents | 27 devices, 143 scene groups and five parent-linked social transports | Research use; no modification, commercial use or redistribution without author agreement |
+| CSAFE MCSIDB Galaxy S21 | `s21.zip` / 17,588,803,163 declared bytes / MD5 `5c5f...91d8` | Modern Samsung computational-photography complement; one archive instead of the 132.7 GB collection | CC BY 4.0; internal devices/scenes remain unselected until archive inventory |
+
+The two declared archive collections total 40,529,150,696 bytes; VISION consists of individual
+files whose realized bytes will be measured during transfer. SOCRatES remains unavailable without
+a signed agreement, ForensiCam-215K remains excluded for unclear dataset licensing/Baidu-only
+transfer, and the other five CSAFE archives remain deferred. The owner gallery is absent.
+
+`ml/experiments/e32_data_system.py` verifies the upstream VISION list, source licences, Figshare
+article version, filenames, sizes and published CSAFE MD5. Downloads use TLS-verifying system
+`curl`, `.partial` resume, retry and a 100 GiB free-space floor. FODB's TLS chain is not accepted by
+the Python CA bundle on this machine; verification moved to system `curl`, never disabled.
+
 ### Training
 
 | Dataset | Size | Contents | Mode | Why |
