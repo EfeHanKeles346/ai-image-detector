@@ -114,6 +114,10 @@ test leakage, and only then ask E30 whether the frozen system advances.
   rejected rows from their own sources. Selection SHA is `1a3a5c98...df2e`; exact ids and compact
   aggregate evidence are committed before v3 realization. B2 remains open until realization
   independently reproduces zero overlap/failure and writes the deterministic tile archive.
+- **B2 accepted:** independent v3 realization produced all 11,300/11,300 native 128 px tiles with
+  zero decode/input failure, zero exact/dHash protected overlap and 11,300 unique tile hashes.
+  TRAIN remains 8,561 and CALIBRATION 2,739. The ignored 395,082,960-byte archive SHA is
+  `508330c2...9f2b`; compact committed evidence freezes its identity. B3 may now read this archive.
 
 ### Phase B3 — screen a small heterogeneous representation ladder
 

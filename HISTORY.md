@@ -1878,3 +1878,18 @@ indivisible groups, 303 AI identities, and unchanged TRAIN/CALIBRATION/source co
 unchanged. Selection SHA is `1a3a5c98...df2e`, evidence-file SHA `c6748b12...d98c`. This checkpoint
 is committed before the independent realization opens v3 bytes. It does not yet claim a usable
 training archive or model result.
+
+### E31/B2 accepted — the first decontaminated source-aware tile archive exists
+
+The independent realization then opened the frozen v3 rows and passed every hard gate. It created
+11,300/11,300 native 128 px tiles: 5,650 AI / 5,650 real, split into 8,561 TRAIN and 2,739
+CALIBRATION exactly as pre-registered. There were zero decode failures, zero small/flat losses,
+zero exact protected overlaps and zero dHash protected overlaps. Every tile hash is unique.
+
+The image-bearing NPZ remains ignored local data (395,082,960 bytes, SHA `508330c2...9f2b`); its
+compact committed receipt is `evidence/e31_train_v2_realization_v3.json` (SHA
+`5bff123c...619d`). This closes B2 without touching the E30/Qwen final test. It is a useful project
+output by itself: unlike earlier corpora,
+the next model will train on a balanced, source-capped, generator-broad, group-disjoint and fully
+decontaminated contract. Whether its representation transfers remains the B3 question, not an
+assumption.

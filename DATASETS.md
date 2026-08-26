@@ -134,6 +134,15 @@ CommunityForensics rows remain unchanged after their zero-overlap v2 result. Sel
 `ml/data/e31/` with SHA `16ff5f14...bad10`. This is still a frozen candidate contract, not a
 realized training set, until the independent v3 byte pass succeeds.
 
+The independent v3 realization subsequently accepted **11,300/11,300** rows: 5,650 AI / 5,650
+real, 8,561 TRAIN / 2,739 CALIBRATION, with zero decode failure, zero input-floor loss, zero exact
+protected overlap and zero dHash protected overlap. All 11,300 produced tiles have unique hashes;
+the 37 repeated raw-byte hashes occur only across selected parents and do not collapse to duplicate
+deterministic tiles. The ignored local archive is 395,082,960 bytes with SHA
+`508330c2d8318bcd4c8a92c86a86a627ff98ee1bdc97a67772540a68c8569f2b`. Its compact identity and
+full source/role counts are committed in `evidence/e31_train_v2_realization_v3.json`. E31-B2 is now
+accepted for representation training; no E30 test image entered the archive.
+
 ### E30 pinned current-science sources — role assignment before download
 
 | Source (pinned revision) | Full source | E30 role and initial slice | Why selected | Boundary |

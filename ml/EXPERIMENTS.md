@@ -1769,3 +1769,13 @@ Selection SHA is `1a3a5c98c4b0614a0af4bd1bc65ca4fbb8ea33404dbb6a2db53b2da17b79df
 evidence-file SHA is `c6748b12270f12298a2723bb2c338a9698a0d0bbdc05cb56e258575b8c20d98c`.
 No image score influenced screening or selection. The next independent realization must still
 reproduce zero rejection before any representation may train.
+
+### B2 selection-v3 realization accepted
+
+The independent byte pass reproduced selection SHA `1a3a5c98...df2e` and realized all
+**11,300/11,300** rows into native 128 px tiles. Counts remain 5,650 AI / 5,650 real and 8,561 TRAIN
+/ 2,739 CALIBRATION. Decode failures, size/texture rejects, exact protected overlaps and dHash
+protected overlaps are all **zero**; all 11,300 tile hashes are unique. The 395,082,960-byte ignored
+NPZ has SHA `508330c2...9f2b`, while the detailed receipt has SHA `340d593c...09dc`. Compact evidence
+is committed at `evidence/e31_train_v2_realization_v3.json` with SHA `5bff123c...619d`. B2 is
+accepted; B3 representations may now train, but no model result or E30 score exists yet.

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "experiment": "E31/B2",
+  "state": "realized_train_v2",
+  "run_date": "2026-08-26",
+  "selection_sha256": "1a3a5c98c4b0614a0af4bd1bc65ca4fbb8ea33404dbb6a2db53b2da17b79df2e",
+  "realized_manifest_sha256": "19b492c9ae9aac1668c3bbeb388bd75b5aba9fbd7104f92effd8f874a5300b28",
+  "tile_archive": {
+    "path": "ml/data/e31/train_v2_tiles.npz",
+    "bytes": 395082960,
+    "sha256": "508330c2d8318bcd4c8a92c86a86a627ff98ee1bdc97a67772540a68c8569f2b",
+    "committed": false,
+    "shape": [11300, 128, 128, 3],
+    "dtype": "uint8"
+  },
+  "detailed_receipt": {
+    "path": "ml/data/e31/train_v2_realization_v3.json",
+    "sha256": "340d593ca5272ae1f95f5035140b0251ac5434bf3cbefa5f74f3dfb7033509dc",
+    "committed": false
+  },
+  "counts": {
+    "selected": 11300,
+    "realized": 11300,
+    "ai": 5650,
+    "real": 5650,
+    "train": 8561,
+    "calibration": 2739,
+    "decode_failures": 0,
+    "too_small_or_flat": 0,
+    "protected_exact_overlaps": 0,
+    "protected_dhash_overlaps": 0,
+    "unique_raw_sha256": 11263,
+    "unique_tile_sha256": 11300
+  },
+  "by_role_label_source": {
+    "calibration:ai:ai-vs-real-balanced": 414,
+    "calibration:ai:communityforensics-small": 472,
+    "calibration:ai:flux-1-dev": 144,
+    "calibration:ai:nano-banana": 114,
+    "calibration:ai:nano-banana-pro": 50,
+    "calibration:real:ai-vs-real-balanced": 672,
+    "calibration:real:communityforensics-small": 873,
+    "train:ai:ai-vs-real-balanced": 1586,
+    "train:ai:communityforensics-small": 1928,
+    "train:ai:flux-1-dev": 356,
+    "train:ai:nano-banana": 386,
+    "train:ai:nano-banana-pro": 200,
+    "train:real:ai-vs-real-balanced": 2578,
+    "train:real:communityforensics-small": 1527
+  },
+  "protected_scope": {
+    "exact_hashes": 176961,
+    "dhashes": 172087,
+    "e30_manifest_files": 4
+  },
+  "boundaries": [
+    "The detailed tile archive remains ignored local data and contains no test image.",
+    "Protected hashes were used only for overlap rejection and are not included in evidence.",
+    "TRAIN and CALIBRATION groups remain disjoint exactly as frozen before byte access."
+  ]
+}

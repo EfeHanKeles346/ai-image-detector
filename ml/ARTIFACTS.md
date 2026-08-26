@@ -56,3 +56,11 @@ To use it within its upstream research/non-commercial terms:
 
 Revision and both file hashes are checked before the arm can load. CORS, authentication and rate
 limits remain separate deployment controls described in `SERVING.md`.
+
+## Local E31 training archive
+
+`data/e31/train_v2_tiles.npz` is an ignored, reproducible training input rather than a serving
+artifact. E31/B2 realized 11,300 unique 128 px RGB tiles into a 395,082,960-byte NPZ with SHA-256
+`508330c2d8318bcd4c8a92c86a86a627ff98ee1bdc97a67772540a68c8569f2b`. Its frozen selection,
+source/role counts and compact realization receipt live under `../evidence/`; source images and
+protected hashes do not enter Git. B3 code must verify this SHA before extracting features.
