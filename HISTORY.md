@@ -2785,3 +2785,7 @@ deleted or promoted. Before code changes, the S21-proven recovery contract was r
 remaining ranges, strict HTTP 206/Content-Range/length checks, prefix-plus-ranges assembly to a new
 temporary file, whole-archive published MD5, then atomic promotion. IPN remains an independent
 transfer and continues unaffected.
+
+Append-only correction: the filesystem `stat` captured immediately after the preceding checkpoint
+is authoritative; the preserved prefix is **92,274,688 bytes**, not the mistyped 92,159,662. Range
+planning reads the live prefix size and binds 92,274,688.

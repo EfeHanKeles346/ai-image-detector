@@ -2523,3 +2523,6 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Assemble into a distinct temporary, verify 20,428,338,922 bytes and MD5 `dfc01c89...946c`, then
   atomically promote. Delete prefix/ranges only after verified promotion; preserve all on failure.
 - **Decision:** commit this recovery boundary before implementation while IPN continues separately.
+
+Append-only correction: post-stop `stat` is 92,274,688 bytes. The two occurrences of 92,159,662
+above are transcription errors; production range planning binds the filesystem value.
