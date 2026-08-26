@@ -89,6 +89,8 @@ small manifests, aggregate evidence, code and documentation.
       production extraction and keep all outputs role-free.
 - [x] Implement/test CSAFE natural selection, atomic extraction and receipt-bound realization before
       production use. Unknown device/content/lens/suffix paths fail closed; 23 focused tests pass.
+- [x] Freeze the exact CSAFE natural selection before member bytes: all 3,996 natural JPEGs, ten
+      devices (398–400 each) and four lenses (998–1,000 each); exclude all 4,000 blank fields.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
       traversal paths, symlinks, encryption, duplicate member names, undeclared archive sizes and
       implausible expansion; summarize member hierarchy/suffixes/bytes. For FODB, verify exactly

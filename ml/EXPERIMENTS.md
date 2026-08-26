@@ -2243,3 +2243,10 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
   receipts; realization binds receipt and records device/lens/content.
 - Verification: 23 focused archive/realization tests pass; no production member selected/opened.
 - **Decision:** commit method, then freeze the 3,996-row production selection independently.
+
+### C1 CSAFE natural metadata selection — freeze succeeds
+
+- Selected all 3,996 natural JPEG; excluded all 4,000 blank fields without opening member bytes.
+- Ten devices contribute 398–400 rows; lens counts front 998, telephoto 998, ultra 1,000, wide 1,000.
+- External selection 1,193,310 B / SHA `3a24bd50...ad1c`.
+- **Decision:** commit exact selection, then extract only these rows independently.

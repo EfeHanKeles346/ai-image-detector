@@ -54,6 +54,11 @@ camera paths, with 798–800 total rows per physical device. Blank fields are in
 training pool. Detailed inventory is 1,306,218 B / SHA `77a88649...fd8d`; compact evidence is
 `evidence/e32_csafe_archive_inventory.json`. Natural rows remain unselected/unextracted here.
 
+CSAFE natural selection is now frozen before member bytes: 3,996 JPEG, ten devices at 398–400 rows,
+front/telephoto 998 each and ultra/wide 1,000 each. All 4,000 blank fields are excluded. Detailed
+selection is 1,193,310 B / SHA `3a24bd50...ad1c`; compact evidence is
+`evidence/e32_csafe_natural_selection.json`. Rows remain unextracted and role-free.
+
 | frozen source | selected transfer | intended value | licence / role boundary |
 |---|---:|---|---|
 | VISION base native | 3,500 JPEG parents / 35 devices | Device-balanced native camera data; excludes flat fields, video and all social derivatives | CC BY-SA 4.0; TRAIN/CALIBRATION candidate only after audit |

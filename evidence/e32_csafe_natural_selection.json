@@ -1,0 +1,31 @@
+{
+  "boundary": "Selection uses archive metadata only; no ZIP member byte was opened and no role is assigned.",
+  "detailed_report_bytes": 1193310,
+  "detailed_report_external_path": "csafe_natural_selection.json",
+  "detailed_report_sha256": "3a24bd5046193461a1428425bbed090de60938da9c71c8c3c7d12b7520bdad1c",
+  "device_counts": {
+    "s21_1": 400,
+    "s21_10": 400,
+    "s21_2": 399,
+    "s21_3": 400,
+    "s21_4": 400,
+    "s21_5": 398,
+    "s21_6": 400,
+    "s21_7": 399,
+    "s21_8": 400,
+    "s21_9": 400
+  },
+  "excluded_blank": 4000,
+  "experiment": "E32/C1-csafe-natural-selection",
+  "inventory_sha256": "77a88649fc2a5c50feb290f929b2308c56357a86d062ffa5173094d4de3efd8d",
+  "lens_counts": {
+    "front": 998,
+    "telephoto": 998,
+    "ultra": 1000,
+    "wide": 1000
+  },
+  "schema_version": 1,
+  "selected": 3996,
+  "source_id": "csafe-mcsidb-s21",
+  "state": "natural_selection_frozen_no_member_bytes_read"
+}

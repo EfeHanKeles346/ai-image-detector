@@ -2514,3 +2514,10 @@ requires exact 4,000/3,996 counts and reads no member bytes; extraction verifies
 size/CRC, writes only natural rows atomically and records SHA; realization binds that receipt and
 applies shared decode/protected/duplicate checks while publishing device/lens counts. Twenty-three
 focused archive/realization tests pass. No production member was selected or opened by this commit.
+
+The metadata-only CSAFE selection then froze all and only the 3,996 natural JPEG members. Ten
+physical devices contribute 398–400 rows each; front and telephoto contribute 998 each, ultra and
+wide 1,000 each. All 4,000 blank fields are excluded. No ZIP member byte was opened. Detailed
+selection is 1,193,310 B / SHA `3a24bd50...ad1c`, bound to inventory SHA `77a88649...fd8d`;
+compact evidence is `evidence/e32_csafe_natural_selection.json`. State is
+`natural_selection_frozen_no_member_bytes_read` and assigns no role.
