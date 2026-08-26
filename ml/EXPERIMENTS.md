@@ -2272,3 +2272,15 @@ JSON state is `rejected_for_serving_after_E30_DEVELOPMENT`; under-threshold and 
 - Preserve each natural image as one camera parent and add no row outside the frozen selection.
 - Verification: 14 focused overlay/realization tests pass; production overlay remains unchanged.
 - **Decision:** commit method, then independently recompute across 26,347 selected rows.
+
+### C2 final global eligibility overlay — C1/C2 volume gates pass
+
+- 26,347 selected parents compared globally: 15,000 AI + 11,347 REAL.
+- Eligible AI remains exactly 14,786; eligible REAL reaches 11,344: VISION 3,497, FODB 3,851,
+  CSAFE 3,996.
+- CSAFE adds zero duplicate component and zero cross-label ambiguity. Global components remain 59;
+  exclusion reasons remain 20 same-label noncanonical units and 13 within-parent rows.
+- Detailed overlay 1,431,190 B / SHA `45830283...78b6`; state
+  `eligibility_frozen_role_free`.
+- **Decision:** C1/C2 candidate-volume and source-diversity gates pass. Freeze this pool; create a
+  group-aware TRAIN/CALIBRATION manifest before any feature extraction or model fitting.

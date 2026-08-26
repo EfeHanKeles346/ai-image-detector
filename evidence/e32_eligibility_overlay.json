@@ -7,6 +7,11 @@
       "sha256": "cb4bffe2c9710ba50315d4f22dd3e7b03184dfa172514dc2fb55c845cf5776b2",
       "state": "source_realization_passed_candidate_only"
     },
+    "csafe-mcsidb-s21": {
+      "bytes": 2521737,
+      "sha256": "3ea951ec866da658c1f3105678ce26fb1a80e2bf4c722df3da771fcdd473b701",
+      "state": "source_realization_passed_candidate_only"
+    },
     "flux2-klein-9b": {
       "bytes": 2045961,
       "sha256": "53c0793b5832181056b9588043d6562eb2ac9ef819c821a202dadc5c4d661451",
@@ -49,20 +54,21 @@
     "Same-label duplicates keep a deterministic parent unit; cross-label duplicates lose every affected unit.",
     "Four-variant Qwen and FLUX prompt groups remain indivisible."
   ],
-  "detailed_report_bytes": 1179329,
+  "detailed_report_bytes": 1431190,
   "detailed_report_external_path": "eligibility_overlay.json",
-  "detailed_report_sha256": "510e94eb9afebdf9000470483455a0a7eefde6aa56a1144dac450aed389cfc3b",
+  "detailed_report_sha256": "45830283562b4e2e5f321022373f4c7df206eb41064094b88cbad0ca69cb78b6",
   "duplicate_excluded_unit_reason_counts": {
     "same_label_duplicate_noncanonical": 20,
     "within_parent_duplicate": 13
   },
   "experiment": "E32/C2-eligibility-overlay",
   "global_duplicate_row_components": 59,
-  "global_realized_rows": 22351,
-  "real_eligible_rows": 7348,
+  "global_realized_rows": 26347,
+  "real_eligible_rows": 11344,
   "schema_version": 1,
   "selection_sha256": {
     "ai": "3230f0267ca1b9a252ec61d7f94c90bdb820cf8aeec5fce2174ebc5a7ed980b7",
+    "csafe_extraction": "32acdfb31e5e84707443cc1c06a9791e937fbee4b97cf3c671bc221fd874d7e4",
     "fodb_extraction": "a1626b0b2aeb2579b2657c832a918fa84311909f384b191a3f349e7771198b05",
     "real": "200a7aeb23d9c303d880dff76a08b21e38efe666531a6552ffe4bdd5841eca4d"
   },
@@ -141,7 +147,7 @@
     },
     {
       "eligible_rows": 3497,
-      "eligible_share": 0.47591181,
+      "eligible_share": 0.30826869,
       "eligible_units": 3497,
       "exclusion_reason_counts": {
         "same_label_duplicate_noncanonical": 3
@@ -153,13 +159,23 @@
     },
     {
       "eligible_rows": 3851,
-      "eligible_share": 0.52408819,
+      "eligible_share": 0.33947461,
       "eligible_units": 3851,
       "exclusion_reason_counts": {},
       "label": "real",
       "selected_rows": 3851,
       "selected_units": 3851,
       "source_id": "forchheim-fodb"
+    },
+    {
+      "eligible_rows": 3996,
+      "eligible_share": 0.3522567,
+      "eligible_units": 3996,
+      "exclusion_reason_counts": {},
+      "label": "real",
+      "selected_rows": 3996,
+      "selected_units": 3996,
+      "source_id": "csafe-mcsidb-s21"
     }
   ],
   "state": "eligibility_frozen_role_free"

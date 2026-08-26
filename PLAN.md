@@ -45,7 +45,7 @@ small manifests, aggregate evidence, code and documentation.
 
 ### Phase C1 — acquire a compact, diverse authentic-photo pool on the SSD
 
-- [ ] Target **10,000–20,000 eligible REAL parents**, nominally about 15,000, across native camera,
+- [x] Target **10,000–20,000 eligible REAL parents**, nominally about 15,000, across native camera,
       modern computational-photography and web-photo pipelines. Cap devices/scenes so a repeated
       burst, camera or source cannot dominate. Prefer the following audited candidates, not a blind
       union:
@@ -97,10 +97,11 @@ small manifests, aggregate evidence, code and documentation.
 - [x] Pass CSAFE full realization: 3,996/3,996 RGB JPEG with EXIF, unique SHA/pHash, zero confirmed
       duplicate and zero protected/passed-peer overlap. One equal-dHash pair remains a visible
       nonduplicate candidate; all rows stay role-free pending global overlay.
-- [ ] Bind CSAFE's exact natural-extraction receipt and schema-v2 audit into the global overlay,
+- [x] Bind CSAFE's exact natural-extraction receipt and schema-v2 audit into the global overlay,
       recompute across 15,000 AI + 11,347 REAL selected rows, and freeze >=10,000 eligible REAL
       only if no unresolved cross-label component survives. Preserve the existing AI subset absent
-      a newly discovered collision.
+      a newly discovered collision. Result: no new component or cross-label ambiguity; AI remains
+      14,786 and REAL reaches 11,344 (VISION 3,497 + FODB 3,851 + CSAFE 3,996).
 - [x] Implement/test CSAFE overlay binding before production rerun; require exact extraction state,
       row equality and audit SHA. Fourteen focused overlay/realization tests pass.
 - [x] Before extracting FODB/CSAFE, commit a ZIP safety and inventory gate: reject absolute or
@@ -143,7 +144,7 @@ small manifests, aggregate evidence, code and documentation.
       to decode, derives format from payload bytes, records geometry/EXIF/compression summaries,
       and rejects exact/dHash repeats against protected E30 roles and already-passed E32 sources.
       A pass means only `candidate`; the gate cannot assign TRAIN/CALIBRATION itself.
-- [ ] Decode and inventory every selected parent; record camera/device/model, scene/event group,
+- [x] Decode and inventory every selected parent; record camera/device/model, scene/event group,
       native/social state, format, dimensions, orientation, EXIF availability, bytes/pixel and
       licence/provenance. Remove exact and perceptual duplicates against every protected role.
 - **Acceptance:** at least 10,000 eligible REAL parents, at least three independent collections,
@@ -159,7 +160,7 @@ small manifests, aggregate evidence, code and documentation.
       1,250-row second NBP source and the 127,835-member Nano editing archive remain conditional;
       missing dataset licences or contradictory counts are not inferred away. At least two
       additional licensed, explicitly generated families are required.
-- [ ] Target **10,000–20,000 eligible AI parents**, nominally about 15,000, with at least five
+- [x] Target **10,000–20,000 eligible AI parents**, nominally about 15,000, with at least five
       verified modern generator families and no family above 20% of the selected pool. Audit the
       current SSD holdings first: FLUX.1-dev (10,000), Nano Banana (9,457), Nano Banana Pro
       (registered 1,250 plus a separate bounded holding), GPT Image 1 (1,060 PNG plus 1,061 text
@@ -197,7 +198,7 @@ small manifests, aggregate evidence, code and documentation.
       SHA. Both `.jxl` paths contain PNG payloads: Qwen decodes RGB 1328x1328 and FLUX RGB
       1024x1024 directly through Pillow. Record the upstream extension/byte-format mismatch; do not
       add a JPEG XL dependency or let extension become a label feature.
-- [ ] Acquire the frozen 6,000 gap images after the passed decoder gate. OpenFake
+- [x] Acquire the frozen 6,000 gap images after the passed decoder gate. OpenFake
       `core/test`/Reddit splits and frontier held-out models remain test candidates, never TRAIN.
 - [x] Pin the AI realization contract before bulk completion: every four-output prompt group needs
       four decodable images, four non-empty matching UTF-8 prompt sidecars, declared byte counts

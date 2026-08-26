@@ -526,3 +526,28 @@ MODULE 2         image-manipulation-compilation   masks, 13 sub-datasets
    native/standardized/q90/q75/q50 claims separate instead of treating augmentation as a cure.
 4. **The AI-only sets are unusable as-is.** They need either a controlled real half or tile-mode
    evaluation.
+
+### E32 final role-free candidate pool (2026-08-26)
+
+The receipt-bound global overlay is complete. It compared 26,347 frozen selected parents and
+retained 26,130 eligible, still role-free parents:
+
+| class/source | selected | eligible | role/group boundary |
+|---|---:|---:|---|
+| AI / Qwen Image 2512 | 3,000 | 2,956 | four outputs per prompt group |
+| AI / FLUX.2 Klein 9B | 3,000 | 2,916 | four outputs per prompt group |
+| AI / Nano Banana | 3,000 | 2,957 | generated parent |
+| AI / GPT Image 1 | 3,000 | 2,957 | image/prompt pair |
+| AI / Nano Banana Pro | 200 | 200 | generated parent |
+| AI / CommunityForensics | 2,800 | 2,800 | generator-model identity retained |
+| REAL / VISION native | 3,500 | 3,497 | device/native parent |
+| REAL / Forchheim FODB original | 3,851 | 3,851 | device plus 143 shared scenes |
+| REAL / CSAFE S21 natural | 3,996 | 3,996 | ten physical devices/four lenses |
+| **AI total** | **15,000** | **14,786** | max source share 19.998647% |
+| **REAL total** | **11,347** | **11,344** | three independent collections |
+
+No newly added CSAFE parent creates a cross-source or cross-label collision. The global overlay
+retains 59 known duplicate components and excludes 20 same-label noncanonical units plus 13
+within-parent rows. Detailed evidence is 1,431,190 B / SHA `45830283...78b6`; compact evidence is
+`evidence/e32_eligibility_overlay.json`. The state is `eligibility_frozen_role_free`: these rows
+may now feed a precommitted group-aware TRAIN/CALIBRATION split, but none is a locked test sample.

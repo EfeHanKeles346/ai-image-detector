@@ -2550,3 +2550,18 @@ natural-extraction state/SHA, maps each selected camera parent without inventing
 exact equality with the CSAFE schema-v2 audit. The selection hash joins AI, VISION, FODB and CSAFE
 bindings. Fourteen focused overlay/realization tests pass. The previous 22,351-row production
 overlay remains unchanged by this method commit.
+
+The production CSAFE-inclusive global overlay then closed the E32 candidate-pool volume gates.
+Exactly 26,347 immutable selected rows were compared together: 15,000 AI and 11,347 REAL. No new
+global duplicate component and no REAL/AI ambiguity appeared. The eligible AI subset therefore
+remains bit-for-bit 14,786, while eligible REAL reaches 11,344: VISION 3,497, FODB 3,851 and CSAFE
+3,996. The 59 already-known duplicate components remain globally visible; exclusions still total
+20 same-label noncanonical units and 13 within-parent rows.
+
+The detailed overlay is now 1,431,190 B / SHA `45830283...78b6`, with the combined selection bound
+to AI SHA `3230f026...80b7`, VISION SHA `200a7aeb...ca4d`, FODB extraction SHA
+`a1626b0b...8b05` and CSAFE extraction SHA `32acdfb3...d7e4`. Compact evidence remains
+`evidence/e32_eligibility_overlay.json`; state is `eligibility_frozen_role_free`. C1 and C2 now
+meet their 10K–20K eligible-volume targets, three-collection REAL floor and five-modern-family AI
+floor. This is deliberately not a trained model: the next irreversible boundary is a committed,
+group-aware TRAIN/CALIBRATION manifest followed by the cheapest frozen DINOv2-S control.
