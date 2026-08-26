@@ -1800,3 +1800,24 @@ standardized logistic head converges to the same convex solution; this is a zero
 interval, not three independent data samples. DINOv2 advances. The feature arm clears the absolute
 floor but is far below the control; B4 may retain it only if cached row scores demonstrate useful
 incremental true positives inside the FP budget. Evidence: `evidence/e31_b3_representation_screen.json`.
+
+## 2026-08-26 — E31/B4: cross-fitted ensemble gate
+
+Row-level complementarity exists but is too expensive in real false positives. At B3 thresholds,
+E20 recovers 12 of DINO's 24 current-AI misses while adding 50 real false positives; the 68-feature
+arm recovers eight and adds 42. Five source-stratified group meta-folds then cross-fit coefficients
+and thresholds for the frozen small rule set.
+
+| rule | current AI macro recall | gain vs DINO | macro / worst real FP | paired group-bootstrap gain 95% |
+|---|---:|---:|---:|---:|
+| DINO single | 90.72% | — | 5.04% / 6.99% | — |
+| DINO+E20 max | **93.77%** | **+3.05** | 5.34% / 8.04% | +1.87 to +4.20 |
+| DINO+E20 stack | 92.90% | +2.18 | 5.13% / 7.74% | +1.59 to +3.05 |
+| DINO+R2 max | 92.58% | +1.86 | 5.08% / 7.29% | +0.87 to +2.84 |
+| DINO+R2 stack | 91.62% | +0.90 | 5.02% / 7.29% | +0.67 to +1.13 |
+
+No fusion reaches the pre-registered +5-point gain and every fusion slightly exceeds the 5% macro
+FP budget under fold transfer. The ensemble is rejected; this is a measured trade-off, not an
+assumption. The packaged winner is single DINOv2 at final full-CALIBRATION threshold
+`0.7090073824`; artifact SHA `99901219...4d860` includes the linear head and pinned encoder
+contract. Compact evidence: `evidence/e31_b4_ensemble.json`. E30 remains unopened.

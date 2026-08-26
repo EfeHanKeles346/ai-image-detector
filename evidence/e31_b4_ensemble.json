@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "experiment": "E31/B4",
+  "state": "fusion_rejected_single_arm_selected",
+  "run_date": "2026-08-26",
+  "boundaries": {
+    "selection_sha256": "1a3a5c98c4b0614a0af4bd1bc65ca4fbb8ea33404dbb6a2db53b2da17b79df2e",
+    "tile_archive_sha256": "508330c2d8318bcd4c8a92c86a86a627ff98ee1bdc97a67772540a68c8569f2b",
+    "feature_cache_sha256": "f59e1fb616d9bcf7384bd571f92570b9cd70f8a043e1b659bf1c258bb97c4c49",
+    "meta_folds": 5,
+    "bootstrap_replicates": 2000,
+    "minimum_recall_gain": 0.05,
+    "macro_real_fp_budget": 0.05,
+    "worst_real_fp_budget": 0.10,
+    "e30_opened": false
+  },
+  "complementarity": {
+    "e20": {
+      "dino_current_ai_misses": 24,
+      "incremental_current_ai_true_positives": 12,
+      "incremental_real_false_positives": 50,
+      "decision_phi": 0.6845480276359055,
+      "score_pearson": 0.7833537597277961
+    },
+    "forensic68": {
+      "dino_current_ai_misses": 24,
+      "incremental_current_ai_true_positives": 8,
+      "incremental_real_false_positives": 42,
+      "decision_phi": 0.5589470293263317,
+      "score_pearson": 0.6615912836227882
+    }
+  },
+  "rules": [
+    {
+      "name": "single_dinov2",
+      "current_ai_macro_recall": 0.9071929824561403,
+      "macro_real_fp": 0.05043415562101129,
+      "worst_real_fp": 0.06994047619047619,
+      "gain": 0.0,
+      "accepted_fusion": false
+    },
+    {
+      "name": "max_dinov2_e20",
+      "current_ai_macro_recall": 0.9376705653021443,
+      "macro_real_fp": 0.05335153820978564,
+      "worst_real_fp": 0.08035714285714286,
+      "gain": 0.030477582846003992,
+      "bootstrap_gain_95": [0.018677248677248737, 0.042024747859988165],
+      "accepted_fusion": false
+    },
+    {
+      "name": "stack_dinov2_e20",
+      "current_ai_macro_recall": 0.9289668615984406,
+      "macro_real_fp": 0.051290705285550645,
+      "worst_real_fp": 0.07738095238095238,
+      "gain": 0.021773879142300223,
+      "bootstrap_gain_95": [0.015925925925925937, 0.030545808966861616],
+      "accepted_fusion": false
+    },
+    {
+      "name": "max_dinov2_forensic68",
+      "current_ai_macro_recall": 0.9257651072124756,
+      "macro_real_fp": 0.05077677548682703,
+      "worst_real_fp": 0.07291666666666667,
+      "gain": 0.018572124756335295,
+      "bootstrap_gain_95": [0.008703703703703694, 0.028440545808966895],
+      "accepted_fusion": false
+    },
+    {
+      "name": "stack_dinov2_forensic68",
+      "current_ai_macro_recall": 0.9161744639376218,
+      "macro_real_fp": 0.05020403780068729,
+      "worst_real_fp": 0.07291666666666667,
+      "gain": 0.00898148148148148,
+      "bootstrap_gain_95": [0.006666666666666672, 0.011296296296296285],
+      "accepted_fusion": false
+    }
+  ],
+  "winner": {
+    "rule": "single_dinov2",
+    "final_calibration_threshold": 0.7090073823928833,
+    "candidate_path": "ml/artifacts/e31/b4_candidate.joblib",
+    "candidate_bytes": 12759,
+    "candidate_sha256": "99901219ec47e49a36fca7edd35a1c1737eb1cd9088f6465893054023914d860",
+    "dino_model_id": "vit_small_patch14_dinov2.lvd142m",
+    "dino_input_px": 224,
+    "dino_weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081"
+  },
+  "score_cache": {
+    "path": "ml/data/e31/b4_scores.npz",
+    "bytes": 174614,
+    "sha256": "04f5dc5916f2b8f85645f9901fd83598d04fa9accf7c8e7ac5ce592f417d5bc5",
+    "committed": false
+  },
+  "detailed_receipt": {
+    "path": "ml/data/e31/b4_ensemble.json",
+    "sha256": "8b10aaf16a73d1fc44e72c6fbc6de67e55302a03ba2f64299cc5f1952ae91a79",
+    "committed": false
+  },
+  "conclusion": "Complementarity is real but no fusion reaches the preregistered +5 point gain while holding the real-FP budgets. The packaged single DINOv2 arm advances to B5."
+}

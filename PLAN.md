@@ -152,16 +152,16 @@ test leakage, and only then ask E30 whether the frozen system advances.
 
 ### Phase B4 — fit an ensemble only from out-of-fold calibration evidence
 
-- [ ] Cache score rows under immutable model/data contracts and measure error correlation,
+- [x] Cache score rows under immutable model/data contracts and measure error correlation,
       disagreement, oracle-union recall and incremental false positives. Only arms with measurable
       complementarity enter fusion.
-- [ ] Pre-register and compare a deliberately small rule set: OR/max as transparent baselines,
+- [x] Pre-register and compare a deliberately small rule set: OR/max as transparent baselines,
       calibrated logistic stacking, and at most one quality-aware gate whose inputs are label-blind
       image-quality/transport features. No per-test-source manual weight is allowed.
-- [ ] Select coefficients, abstention band and threshold on out-of-fold CALIBRATION only under the
+- [x] Select coefficients, abstention band and threshold on out-of-fold CALIBRATION only under the
       <=5% macro / <=10% worst-source FP budget. Report single-arm and fusion ablations so an
       apparent gain cannot hide one useless component.
-- [ ] Package the winner behind one verdict interface. It may behave like one product model, but
+- [x] Package the winner behind one verdict interface. It may behave like one product model, but
       its response must retain component provenance, uncertainty and `AI detected` /
       `insufficient evidence` asymmetry.
 - **Acceptance:** the fused system improves macro current-AI recall by at least 5 percentage points
@@ -173,6 +173,13 @@ test leakage, and only then ask E30 whether the frozen system advances.
   four folds. A fused rule advances only at >=5-point current-source macro-recall gain, <=5% macro
   / <=10% worst real FP and paired source/group-bootstrap 95% lower gain >0. Otherwise the frozen
   DINO single arm wins. No quality gate or all-arm search is admitted, and E30 remains unopened.
+- **B4 result — fusion rejected:** DINO+E20 max has the largest paired gain, +3.05 points
+  (group-bootstrap 95% +1.87 to +4.20), but misses the +5-point gate and reaches 5.34% macro FP.
+  DINO+R2 max gains only +1.86 points at 5.08% macro FP; both stacking rules are weaker. E20 catches
+  12/24 DINO current-AI misses but adds 50 real false positives; R2 catches 8/24 and adds 42.
+  Winner is therefore packaged **single DINOv2**, final CALIBRATION threshold `0.7090073824`,
+  candidate SHA `99901219...4d860`. Its head, encoder contract and weight SHA are embedded; E30 is
+  still unopened. B5 may test this single candidate once.
 
 ### Phase B5 — frozen DEVELOPMENT gate, then one LOCKED FINAL scout
 

@@ -30,6 +30,9 @@ from experiments.e31_representation_ladder import (
 META_FOLDS = 5
 BOOTSTRAP_REPLICATES = 2000
 MIN_GAIN = 0.05
+DINO_MODEL_ID = "vit_small_patch14_dinov2.lvd142m"
+DINO_INPUT_PX = 224
+DINO_WEIGHT_SHA256 = "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081"
 
 
 def assign_meta_folds(sources: np.ndarray, groups: np.ndarray, n_folds: int = META_FOLDS) -> np.ndarray:
@@ -202,6 +205,7 @@ def main() -> None:
 
     base_scores: dict[str, np.ndarray] = {"r0_e20": matrices["r0_e20"].astype(np.float64)}
     b3_thresholds: dict[str, float] = {}
+    base_models: dict[str, Any] = {}
     for arm in ("r1_dinov2", "r2_forensic68"):
         oof, model = linear_oof(
             matrices[arm], labels, roles, contract["folds"], seed=args.seed
@@ -210,6 +214,7 @@ def main() -> None:
         scores[train] = oof[train]
         scores[calibration] = model.predict_proba(matrices[arm][calibration])[:, 1]
         base_scores[arm] = scores
+        base_models[arm] = model
     for arm, scores in base_scores.items():
         real_train = train & (labels == 0)
         b3_thresholds[arm], _ = threshold_at_source_fp_budget(
@@ -311,8 +316,17 @@ def main() -> None:
         "rule": winner["name"],
         "kind": contract["kind"],
         "components": contract["components"],
+        "component_models": {
+            arm: base_models[arm] for arm in contract["components"] if arm in base_models
+        },
         "meta_model": contract["model"],
         "threshold": contract["threshold"],
+        "dinov2": {
+            "model_id": DINO_MODEL_ID,
+            "input_px": DINO_INPUT_PX,
+            "weight_sha256": DINO_WEIGHT_SHA256,
+            "feature_dim": 384,
+        },
         "selection_sha256": SELECTION_SHA256,
         "tile_archive_sha256": TILE_SHA256,
         "feature_cache_sha256": sha256_file(args.features),

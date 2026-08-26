@@ -1928,3 +1928,18 @@ DINO alone, DINO+E20 max/stack and DINO+68-feature max/stack. A fused rule needs
 of current-source macro recall, both real-FP budgets, and a positive paired group-bootstrap 95%
 lower bound. Otherwise DINO remains the single winner. Three focused tests pin group containment,
 source-macro metrics and paired bootstrap behavior. No E30 row is opened.
+
+### E31/B4 result — the ensemble idea helps, but not enough to earn deployment
+
+The best fusion, DINO+E20 max, raises current-source macro recall from 90.72% to 93.77%; its paired
+group-bootstrap interval is positive (+1.87 to +4.20 points), so the complementarity is real. It
+still fails both decisive requirements: the gain is below +5 points and macro real FP rises to
+5.34%. DINO+68-feature max gains only +1.86 points at 5.08% macro FP; stacking is weaker. In raw
+terms E20 catches 12 of DINO's 24 current-AI misses but creates 50 additional real false positives;
+R2 catches eight and creates 42.
+
+The honest outcome is therefore **ensemble rejected, single DINOv2 selected**. The candidate
+artifact embeds its fitted head plus the DINO model/input/weight contract, uses full-CALIBRATION
+threshold `0.7090073824`, and has SHA `99901219...4d860`. Compact B4 evidence is
+`evidence/e31_b4_ensemble.json`; row scores remain ignored with SHA `04f5dc59...d5bc5`. This is the
+first candidate allowed to approach B5. E30 has still not been read.

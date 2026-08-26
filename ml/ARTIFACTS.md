@@ -70,3 +70,10 @@ E31/B3's ignored `data/e31/b3_features.npz` cache is 19,002,342 bytes with SHA-2
 scores, 384-dimensional frozen DINOv2 embeddings and 68-dimensional forensic vectors for the
 accepted tile archive. Seed-specific convex heads under `artifacts/e31/` remain experimental,
 ignored and non-servable until B4/B5 gates choose and freeze a candidate.
+
+B4 selected the ignored `artifacts/e31/b4_candidate.joblib` single-DINO package (12,759 bytes,
+SHA-256 `99901219ec47e49a36fca7edd35a1c1737eb1cd9088f6465893054023914d860`). It embeds the fitted
+384-dimensional linear head, threshold `0.7090073824`, selection/tile/cache identities and the
+encoder contract: timm `vit_small_patch14_dinov2.lvd142m`, 224 px, pretrained blob SHA
+`04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081`. It is a B5 candidate,
+not yet a serving artifact; no E30 result was used to choose it.
