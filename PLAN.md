@@ -339,10 +339,10 @@ value is permanently contaminated and cannot be served or used to relabel E38 as
 
 - [x] Download resumably to a new role-separated directory, verify every published checksum and
       keep a 100 GiB disk floor. Do not open the E39 model while acquisition/audit runs.
-- [ ] Decode every parent; verify explicit labels, source counts, native dimensions and licence
+- [x] Decode every parent; verify explicit labels, source counts, native dimensions and licence
       receipts. Run exact and perceptual overlap checks against all TRAIN/CAL/DEVELOPMENT/FINAL
       manifests. Derived resize/JPEG/social copies remain grouped children and never increase N.
-- [ ] Commit the unscored manifest and compact evidence before the first prediction. Once frozen,
+- [x] Commit the unscored manifest and compact evidence before the first prediction. Once frozen,
       no source, row, threshold or model setting may change.
 
 #### E39-D — one-shot decision and product promotion

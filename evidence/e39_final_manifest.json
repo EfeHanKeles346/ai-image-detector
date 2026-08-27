@@ -1,0 +1,31 @@
+{
+  "ai_family_counts": {
+    "Adobe Firefly Image 5": 40,
+    "Gemini 3 Pro Image": 40,
+    "HiDream I1 Dev": 40,
+    "Ideogram 3": 40,
+    "Midjourney v7": 40,
+    "Reve Image 1.0": 40,
+    "Z Image Turbo": 40
+  },
+  "counts": {
+    "ai": 280,
+    "real": 160,
+    "total": 440
+  },
+  "decision_contract_sha256": "7d49792911b9b24acca2ad58d08d5ecc14bded5ee85174218d08d1a4d3712cef",
+  "detailed_manifest_bytes": 412914,
+  "detailed_manifest_sha256": "1076df20adc700a1893814e477891e9270e4f88502dbad2571e022f3a7127306",
+  "prior_dhash_overlap_count": 0,
+  "prior_exact_overlap_count": 0,
+  "prompt_rows": 280,
+  "real_source_counts": {
+    "D14_Apple_iPhone13mini": 40,
+    "D27_DOOGEE_S96Pro": 40,
+    "D34_Google_Pixel5": 40,
+    "D43_OnePlus_8T": 40
+  },
+  "schema_version": 1,
+  "state": "final_manifest_frozen_unscored",
+  "within_final_duplicate_dhash_count": 0
+}

@@ -904,3 +904,10 @@ counts are 305 Reve, 305 HiDream, 305 Ideogram, 300 Midjourney, 150 Firefly, 305
 Gemini 3; deterministic member ranking selected 40 each. The publisher's 1,256,612-byte prompt
 metadata CSV is bound at SHA-256 `46e484bd...0b22`. Images remain unscored and the unselected
 archive members do not enter PixelProof's parent count.
+
+The frozen E39 FINAL realization contains exactly 440 parents: 40 each from four FloreView phones
+and 40 each from seven AIGenImages2026 generators. All 440 decode, all REAL rows are >=2 MP with
+EXIF, and all AI rows retain prompt provenance. There are zero exact or dHash overlaps with earlier
+roles and zero within-FINAL exact/dHash duplicate parents. Detailed external manifest is 412,914 B
+/ SHA-256 `1076df20...7306`; compact unscored evidence is
+`evidence/e39_final_manifest.json`. No E39 prediction existed when this ledger entry was committed.

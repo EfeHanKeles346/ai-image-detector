@@ -2912,3 +2912,8 @@ Acquisition reproduced the 11,138,511,098-byte AI archive SHA-256 and all 160 RE
 inventory passed 10,905 members/10,879 regular files and froze 40 rows per each of the seven AI
 families from 150–307 eligible members. Detailed selection SHA-256 is `bf6a6ecf...40dfb`; no image
 was scored or selected using model output.
+
+- **Frozen realization:** 160/160 REAL and 280/280 AI decode; REAL >=2 MP with EXIF; AI prompt
+  provenance 280/280. Prior-role exact/dHash overlap 0/0; within-FINAL exact/dHash duplicates 0/0.
+  Detailed unscored manifest is 412,914 B / SHA-256 `1076df20...7306`. This is the one-use E39
+  FINAL boundary; no score existed when it was written.

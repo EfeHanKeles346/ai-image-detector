@@ -3389,3 +3389,10 @@ SHA-256 `67c60427...c498`. Safety inventory found 10,905 tar members/10,879 regu
 11,197,937,530 expanded bytes. Every selected family exceeded the 40-row floor (150–307 eligible),
 and the deterministic ranking froze exactly 40 per family. Detailed inventory SHA-256 is
 `bf6a6ecf...40dfb`; compact unscored evidence is `evidence/e39_ai_inventory.json`.
+
+The selected 280 AI members were then extracted in one archive pass and audited alongside all 160
+REAL parents. Every row decoded; every REAL parent was at least 2 MP and retained EXIF; all 280 AI
+rows linked to publisher prompt metadata. Exact and dHash overlap with earlier roles were both
+zero, as were exact/dHash duplicates inside E39 FINAL. The 412,914-byte detailed unscored manifest
+SHA-256 is `1076df20...7306`; compact evidence is `evidence/e39_final_manifest.json`. This commit is
+the irreversible boundary before the first and only E39 prediction.
