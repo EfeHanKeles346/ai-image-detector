@@ -95,7 +95,7 @@ it before paying for another architecture or training run.
       Complete: RR train is 1,860,689,134 decoded image bytes; the combined frozen manifest has
       6,884 unique parents across 63 sources, 4,638 TRAIN +2,246 DEVELOPMENT, with zero cross-role
       exact SHA-256 or exact dHash group. Manifest SHA-256 is `15124d93...3e238`.
-- [ ] Implement one fixed RINE-inspired representation ladder: normalized CLS tokens from four
+- [x] Implement one fixed RINE-inspired representation ladder: normalized CLS tokens from four
       intermediate DINOv2 blocks, aggregated over one global crop plus two deterministic highest-
       texture native crops. Compare DINOv2-S and DINOv2-L only; DINO-L reuses the hash-pinned pure
       backbone tensors already present inside the official Apache-2.0 DDA checkpoint, avoiding a
@@ -103,16 +103,21 @@ it before paying for another architecture or training run.
       DINOv2-S feature extraction is complete for all 20,506 planned views /61,518 crops, shape
       20,506x3,072, 235,605,776 bytes and SHA-256 `452fec98...69ac5a`. Evaluate S first; because
       the fixed rule prefers the smallest full pass, DINOv2-L can change selection only if S fails.
-- [ ] Give every training parent one clean view plus one deterministic, class-symmetric transport
+- [x] Give every training parent one clean view plus one deterministic, class-symmetric transport
       view chosen from JPEG, WebP, resize+JPEG and mild blur. Evaluate every DEVELOPMENT parent as
       clean plus all four transports. Fit one source-balanced logistic head per backbone at fixed
       C=0.01; use source-held-out clean OOF scores for the threshold and require the unchanged cut
       to pass the frozen clean success gate plus robust AUC >=0.85 / balanced accuracy >=0.80.
+      E42-S passes every check at threshold 0.660046: clean AUC 0.99287, balanced 0.95477, REAL
+      macro/worst FP 1.23%/20%, AI macro/worst recall 92.69%/75%; robust combined AUC 0.99338,
+      balanced 0.93923, REAL macro/worst FP 0.84%/13.5%, AI macro/worst recall 88.99%/68.13%.
 - [ ] Select DINOv2-S immediately if it fully passes; otherwise evaluate the only remaining fixed
       DINOv2-L candidate and select it only on a full pass. If
       neither passes, stop without another backbone/threshold sweep. If one passes, refit once on
       all consumed training+development parents, freeze a research candidate, then and only then
       transfer/inventory the unopened RR test for a one-shot external result.
+      E42-S is the full pass and therefore wins without running L. The 87,977-byte candidate SHA-256
+      is `6768466a...9062e7`; state remains research-only awaiting RR external evidence.
 
 ### F3 — recording and stop rules
 

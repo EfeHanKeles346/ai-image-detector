@@ -3045,3 +3045,20 @@ was scored or selected using model output.
   a second E41 score cannot reverse this mandatory-gate failure.
 - **Evidence:** `evidence/e42_bfree_result.json`; score stream SHA-256
   `83783551...c33fc`; exact manifest SHA-256 `338a2f2...f37ca2`.
+
+### E42-S — texture/intermediate source-held-out DEVELOPMENT pass
+
+- **Inputs:** 4,638 TRAIN +2,246 consumed DEVELOPMENT parents across 63 total sources; zero cross-
+  role exact SHA/dHash overlap. Each view uses global +two deterministic texture crops and four
+  DINOv2-S intermediate blocks. Five OOF folds keep all 34 DEVELOPMENT sources intact.
+- **Frozen head/cut:** source-balanced StandardScaler + LogisticRegression C=0.01; first clean OOF
+  REAL-safe threshold `0.6600460410`. The 11,230-row OOF stream has SHA-256
+  `0fbd15d5...dd32ff` and full coverage.
+- **Clean result:** AUC **0.99287**, TPR@FPR10 **0.98462**, EER **0.04047**, balanced accuracy
+  **0.95477**; REAL macro/worst FP **1.23% /20.0%**; AI macro/worst recall **92.69% /75.0%**.
+- **Robust result:** four conditions combined AUC **0.99338**, balanced accuracy **0.93923**; REAL
+  macro/worst FP **0.84% /13.5%**; AI macro/worst recall **88.99% /68.13%**. Every individual
+  JPEG/WebP/resize+JPEG/blur condition remains above AUC 0.992 and balanced accuracy 0.928.
+- **Decision:** all 12 preregistered checks pass. The fixed smallest-pass rule selects S and skips
+  DINOv2-L because L cannot replace a passing S. Refit candidate is 87,977 bytes /SHA-256
+  `6768466a...9062e7`, research-only until one-shot RR external testing.

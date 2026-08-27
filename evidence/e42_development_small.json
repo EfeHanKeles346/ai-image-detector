@@ -1,0 +1,5131 @@
+{
+  "backbone": "small",
+  "boundary": "Consumed source-held-out DEVELOPMENT only; B-Free and RR test remain excluded.",
+  "candidate": {
+    "bytes": 87977,
+    "path": "e42_small.joblib",
+    "sha256": "6768466ab6eaaae6ae3ee00c784b13ff337955ccb38a5c2db09662939f9062e7"
+  },
+  "clean": {
+    "metrics": {
+      "accuracy_counting_failures_wrong": 0.9697239536954586,
+      "ai_recall": 0.926923076923077,
+      "balanced_accuracy": 0.9547709243248061,
+      "brier_nontarget_real": 0.019777840768922916,
+      "brier_target_ai": 0.04550678814296324,
+      "confusion": {
+        "fn": 38,
+        "fp": 30,
+        "tn": 1696,
+        "tp": 482
+      },
+      "counts": {
+        "ai_succeeded": 520,
+        "failed": 0,
+        "real_succeeded": 1726,
+        "succeeded": 2246,
+        "total": 2246
+      },
+      "coverage": 1.0,
+      "eer": 0.040470407344683115,
+      "per_group": [
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 0.85,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 6,
+            "fp": 0,
+            "tn": 0,
+            "tp": 34
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 20,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.2,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 2,
+            "tn": 98,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.02,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 0.75,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 10,
+            "fp": 0,
+            "tn": 0,
+            "tp": 30
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": 0.95,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 38
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 0.925,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 37
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 0.95,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 38
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 0.9,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 4,
+            "fp": 0,
+            "tn": 0,
+            "tp": 36
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 0.775,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 9,
+            "fp": 0,
+            "tn": 0,
+            "tp": 31
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-p20-lite"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-y9-2019"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-1"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-2"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-xr"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:lg-l65"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g-play"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g20"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g4-plus"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-a01"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-note9"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:sony-xperia-m4"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 8,
+            "tn": 198,
+            "tp": 0
+          },
+          "count": 206,
+          "label": 0,
+          "real_false_positive_rate": 0.038834951456310676,
+          "source": "owner_gallery"
+        }
+      ],
+      "real_false_positive_rate": 0.01738122827346466,
+      "roc_auc": 0.9928736964078795,
+      "stored_threshold": 0.6600460410118104,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9846153846153847
+      }
+    },
+    "rates": {
+      "ai_macro_recall": 0.926923076923077,
+      "ai_recall_by_source": {
+        "e36:FLUX.2-pro": 1.0,
+        "e36:GPT-Image-1.5": 0.975,
+        "e36:HunyuanImage-3.0": 1.0,
+        "e36:Imagen-4.0-Ultra": 1.0,
+        "e36:Seedream-4.5": 0.85,
+        "e36:nano-banana-pro": 0.975,
+        "e39:Adobe Firefly Image 5": 0.75,
+        "e39:Gemini 3 Pro Image": 0.95,
+        "e39:HiDream I1 Dev": 0.925,
+        "e39:Ideogram 3": 1.0,
+        "e39:Midjourney v7": 0.95,
+        "e39:Reve Image 1.0": 0.9,
+        "e39:Z Image Turbo": 0.775
+      },
+      "ai_worst_source_recall": 0.75,
+      "real_fp_by_source": {
+        "e36:device_004": 0.2,
+        "e36:device_006": 0.0,
+        "e36:device_007": 0.0,
+        "e36:device_008": 0.02,
+        "e39:D14_Apple_iPhone13mini": 0.0,
+        "e39:D27_DOOGEE_S96Pro": 0.0,
+        "e39:D34_Google_Pixel5": 0.0,
+        "e39:D43_OnePlus_8T": 0.0,
+        "ipn:huawei-p20-lite": 0.0,
+        "ipn:huawei-y9-2019": 0.0,
+        "ipn:iphone-se-2020-1": 0.0,
+        "ipn:iphone-se-2020-2": 0.0,
+        "ipn:iphone-xr": 0.0,
+        "ipn:lg-l65": 0.0,
+        "ipn:motorola-g-play": 0.0,
+        "ipn:motorola-g20": 0.0,
+        "ipn:motorola-g4-plus": 0.0,
+        "ipn:samsung-galaxy-a01": 0.0,
+        "ipn:samsung-galaxy-note9": 0.0,
+        "ipn:sony-xperia-m4": 0.0,
+        "owner_gallery": 0.038834951456310676
+      },
+      "real_macro_fp": 0.012325473878871937,
+      "real_worst_source_fp": 0.2,
+      "threshold": 0.6600460410118104
+    }
+  },
+  "experiment": "E42/texture-intermediate-source-heldout-recovery",
+  "feature_archive_sha256": "452fec98990aaf425a2ae2a494a16d9c0d9c111d02cdda60e9e31529a069ac5a",
+  "fold_assignments": {
+    "e36:FLUX.2-pro": 4,
+    "e36:GPT-Image-1.5": 2,
+    "e36:HunyuanImage-3.0": 3,
+    "e36:Imagen-4.0-Ultra": 4,
+    "e36:Seedream-4.5": 3,
+    "e36:device_004": 3,
+    "e36:device_006": 2,
+    "e36:device_007": 1,
+    "e36:device_008": 4,
+    "e36:nano-banana-pro": 1,
+    "e39:Adobe Firefly Image 5": 1,
+    "e39:D14_Apple_iPhone13mini": 0,
+    "e39:D27_DOOGEE_S96Pro": 4,
+    "e39:D34_Google_Pixel5": 0,
+    "e39:D43_OnePlus_8T": 4,
+    "e39:Gemini 3 Pro Image": 2,
+    "e39:HiDream I1 Dev": 0,
+    "e39:Ideogram 3": 1,
+    "e39:Midjourney v7": 0,
+    "e39:Reve Image 1.0": 2,
+    "e39:Z Image Turbo": 0,
+    "ipn:huawei-p20-lite": 0,
+    "ipn:huawei-y9-2019": 1,
+    "ipn:iphone-se-2020-1": 2,
+    "ipn:iphone-se-2020-2": 1,
+    "ipn:iphone-xr": 3,
+    "ipn:lg-l65": 3,
+    "ipn:motorola-g-play": 4,
+    "ipn:motorola-g20": 4,
+    "ipn:motorola-g4-plus": 1,
+    "ipn:samsung-galaxy-a01": 2,
+    "ipn:samsung-galaxy-note9": 2,
+    "ipn:sony-xperia-m4": 3,
+    "owner_gallery": 0
+  },
+  "gate": {
+    "checks": {
+      "ai_macro_recall_gte_0_80": true,
+      "ai_worst_source_recall_gte_0_60": true,
+      "clean_auc_gte_0_90": true,
+      "clean_balanced_accuracy_gte_0_85": true,
+      "clean_coverage_eq_1": true,
+      "clean_eer_lte_0_15": true,
+      "clean_tpr_at_fpr10_gte_0_80": true,
+      "real_macro_fp_lte_0_10": true,
+      "real_worst_source_fp_lte_0_20": true,
+      "robust_auc_gte_0_85": true,
+      "robust_balanced_accuracy_gte_0_80": true,
+      "robust_coverage_eq_1": true
+    },
+    "passed": true
+  },
+  "robust_by_condition": {
+    "jpeg": {
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9639358860195903,
+        "ai_recall": 0.8634615384615385,
+        "balanced_accuracy": 0.9288338978518584,
+        "brier_nontarget_real": 0.010207626334459569,
+        "brier_target_ai": 0.06900556845611724,
+        "confusion": {
+          "fn": 71,
+          "fp": 10,
+          "tn": 1716,
+          "tp": 449
+        },
+        "counts": {
+          "ai_succeeded": 520,
+          "failed": 0,
+          "real_succeeded": 1726,
+          "succeeded": 2246,
+          "total": 2246
+        },
+        "coverage": 1.0,
+        "eer": 0.03835012033158034,
+        "per_group": [
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 0.95,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 2,
+              "fp": 0,
+              "tn": 0,
+              "tp": 38
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 0.9,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 4,
+              "fp": 0,
+              "tn": 0,
+              "tp": 36
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 7,
+              "tn": 93,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.07,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 100,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 100,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 99,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.01,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": 0.925,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 3,
+              "fp": 0,
+              "tn": 0,
+              "tp": 37
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 0.75,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 10,
+              "fp": 0,
+              "tn": 0,
+              "tp": 30
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.775,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 9,
+              "fp": 0,
+              "tn": 0,
+              "tp": 31
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.925,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 3,
+              "fp": 0,
+              "tn": 0,
+              "tp": 37
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 0.925,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 3,
+              "fp": 0,
+              "tn": 0,
+              "tp": 37
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 0.775,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 9,
+              "fp": 0,
+              "tn": 0,
+              "tp": 31
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 0.725,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 11,
+              "fp": 0,
+              "tn": 0,
+              "tp": 29
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 0.625,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 15,
+              "fp": 0,
+              "tn": 0,
+              "tp": 25
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:huawei-p20-lite"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:huawei-y9-2019"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-se-2020-1"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-se-2020-2"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-xr"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:lg-l65"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g-play"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g20"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g4-plus"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:samsung-galaxy-a01"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:samsung-galaxy-note9"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:sony-xperia-m4"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 2,
+              "tn": 204,
+              "tp": 0
+            },
+            "count": 206,
+            "label": 0,
+            "real_false_positive_rate": 0.009708737864077669,
+            "source": "owner_gallery"
+          }
+        ],
+        "real_false_positive_rate": 0.005793742757821553,
+        "roc_auc": 0.9938552901328104,
+        "stored_threshold": 0.6600460410118104,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9865384615384616
+        }
+      },
+      "rates": {
+        "ai_macro_recall": 0.8634615384615386,
+        "ai_recall_by_source": {
+          "e36:FLUX.2-pro": 0.975,
+          "e36:GPT-Image-1.5": 0.95,
+          "e36:HunyuanImage-3.0": 1.0,
+          "e36:Imagen-4.0-Ultra": 0.975,
+          "e36:Seedream-4.5": 0.9,
+          "e36:nano-banana-pro": 0.925,
+          "e39:Adobe Firefly Image 5": 0.75,
+          "e39:Gemini 3 Pro Image": 0.775,
+          "e39:HiDream I1 Dev": 0.925,
+          "e39:Ideogram 3": 0.925,
+          "e39:Midjourney v7": 0.775,
+          "e39:Reve Image 1.0": 0.725,
+          "e39:Z Image Turbo": 0.625
+        },
+        "ai_worst_source_recall": 0.625,
+        "real_fp_by_source": {
+          "e36:device_004": 0.07,
+          "e36:device_006": 0.0,
+          "e36:device_007": 0.0,
+          "e36:device_008": 0.01,
+          "e39:D14_Apple_iPhone13mini": 0.0,
+          "e39:D27_DOOGEE_S96Pro": 0.0,
+          "e39:D34_Google_Pixel5": 0.0,
+          "e39:D43_OnePlus_8T": 0.0,
+          "ipn:huawei-p20-lite": 0.0,
+          "ipn:huawei-y9-2019": 0.0,
+          "ipn:iphone-se-2020-1": 0.0,
+          "ipn:iphone-se-2020-2": 0.0,
+          "ipn:iphone-xr": 0.0,
+          "ipn:lg-l65": 0.0,
+          "ipn:motorola-g-play": 0.0,
+          "ipn:motorola-g20": 0.0,
+          "ipn:motorola-g4-plus": 0.0,
+          "ipn:samsung-galaxy-a01": 0.0,
+          "ipn:samsung-galaxy-note9": 0.0,
+          "ipn:sony-xperia-m4": 0.0,
+          "owner_gallery": 0.009708737864077669
+        },
+        "real_macro_fp": 0.004271844660194175,
+        "real_worst_source_fp": 0.07,
+        "threshold": 0.6600460410118104
+      }
+    },
+    "mild_blur": {
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9666073018699911,
+        "ai_recall": 0.9096153846153846,
+        "balanced_accuracy": 0.946696452446742,
+        "brier_nontarget_real": 0.018675897721080727,
+        "brier_target_ai": 0.04552325168778476,
+        "confusion": {
+          "fn": 47,
+          "fp": 28,
+          "tn": 1698,
+          "tp": 473
+        },
+        "counts": {
+          "ai_succeeded": 520,
+          "failed": 0,
+          "real_succeeded": 1726,
+          "succeeded": 2246,
+          "total": 2246
+        },
+        "coverage": 1.0,
+        "eer": 0.03835012033158034,
+        "per_group": [
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 0.95,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 2,
+              "fp": 0,
+              "tn": 0,
+              "tp": 38
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 0.875,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 5,
+              "fp": 0,
+              "tn": 0,
+              "tp": 35
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 19,
+              "tn": 81,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.19,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 100,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 100,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 99,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.01,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": 0.95,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 2,
+              "fp": 0,
+              "tn": 0,
+              "tp": 38
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 0.75,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 10,
+              "fp": 0,
+              "tn": 0,
+              "tp": 30
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.9,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 4,
+              "fp": 0,
+              "tn": 0,
+              "tp": 36
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 0.9,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 4,
+              "fp": 0,
+              "tn": 0,
+              "tp": 36
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 0.875,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 5,
+              "fp": 0,
+              "tn": 0,
+              "tp": 35
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 0.7,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 12,
+              "fp": 0,
+              "tn": 0,
+              "tp": 28
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:huawei-p20-lite"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:huawei-y9-2019"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-se-2020-1"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-se-2020-2"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-xr"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:lg-l65"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g-play"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g20"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g4-plus"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:samsung-galaxy-a01"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:samsung-galaxy-note9"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:sony-xperia-m4"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 8,
+              "tn": 198,
+              "tp": 0
+            },
+            "count": 206,
+            "label": 0,
+            "real_false_positive_rate": 0.038834951456310676,
+            "source": "owner_gallery"
+          }
+        ],
+        "real_false_positive_rate": 0.016222479721900347,
+        "roc_auc": 0.9939165701042874,
+        "stored_threshold": 0.6600460410118104,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9903846153846154
+        }
+      },
+      "rates": {
+        "ai_macro_recall": 0.9096153846153846,
+        "ai_recall_by_source": {
+          "e36:FLUX.2-pro": 1.0,
+          "e36:GPT-Image-1.5": 0.95,
+          "e36:HunyuanImage-3.0": 1.0,
+          "e36:Imagen-4.0-Ultra": 0.975,
+          "e36:Seedream-4.5": 0.875,
+          "e36:nano-banana-pro": 0.95,
+          "e39:Adobe Firefly Image 5": 0.75,
+          "e39:Gemini 3 Pro Image": 0.9,
+          "e39:HiDream I1 Dev": 0.975,
+          "e39:Ideogram 3": 0.975,
+          "e39:Midjourney v7": 0.9,
+          "e39:Reve Image 1.0": 0.875,
+          "e39:Z Image Turbo": 0.7
+        },
+        "ai_worst_source_recall": 0.7,
+        "real_fp_by_source": {
+          "e36:device_004": 0.19,
+          "e36:device_006": 0.0,
+          "e36:device_007": 0.0,
+          "e36:device_008": 0.01,
+          "e39:D14_Apple_iPhone13mini": 0.0,
+          "e39:D27_DOOGEE_S96Pro": 0.0,
+          "e39:D34_Google_Pixel5": 0.0,
+          "e39:D43_OnePlus_8T": 0.0,
+          "ipn:huawei-p20-lite": 0.0,
+          "ipn:huawei-y9-2019": 0.0,
+          "ipn:iphone-se-2020-1": 0.0,
+          "ipn:iphone-se-2020-2": 0.0,
+          "ipn:iphone-xr": 0.0,
+          "ipn:lg-l65": 0.0,
+          "ipn:motorola-g-play": 0.0,
+          "ipn:motorola-g20": 0.0,
+          "ipn:motorola-g4-plus": 0.0,
+          "ipn:samsung-galaxy-a01": 0.0,
+          "ipn:samsung-galaxy-note9": 0.0,
+          "ipn:sony-xperia-m4": 0.0,
+          "owner_gallery": 0.038834951456310676
+        },
+        "real_macro_fp": 0.011373092926490984,
+        "real_worst_source_fp": 0.19,
+        "threshold": 0.6600460410118104
+      }
+    },
+    "resize_jpeg": {
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9697239536954586,
+        "ai_recall": 0.9076923076923077,
+        "balanced_accuracy": 0.9480524110883323,
+        "brier_nontarget_real": 0.015065228486206074,
+        "brier_target_ai": 0.04942418953435818,
+        "confusion": {
+          "fn": 48,
+          "fp": 20,
+          "tn": 1706,
+          "tp": 472
+        },
+        "counts": {
+          "ai_succeeded": 520,
+          "failed": 0,
+          "real_succeeded": 1726,
+          "succeeded": 2246,
+          "total": 2246
+        },
+        "coverage": 1.0,
+        "eer": 0.04018072020679203,
+        "per_group": [
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 0.925,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 3,
+              "fp": 0,
+              "tn": 0,
+              "tp": 37
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 10,
+              "tn": 90,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.1,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 99,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.01,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 99,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.01,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 100,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 0.825,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 7,
+              "fp": 0,
+              "tn": 0,
+              "tp": 33
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.925,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 3,
+              "fp": 0,
+              "tn": 0,
+              "tp": 37
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 0.85,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 6,
+              "fp": 0,
+              "tn": 0,
+              "tp": 34
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 0.725,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 11,
+              "fp": 0,
+              "tn": 0,
+              "tp": 29
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 0.7,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 12,
+              "fp": 0,
+              "tn": 0,
+              "tp": 28
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:huawei-p20-lite"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:huawei-y9-2019"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 79,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0125,
+            "source": "ipn:iphone-se-2020-1"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-se-2020-2"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-xr"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:lg-l65"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g-play"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g20"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g4-plus"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:samsung-galaxy-a01"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 79,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0125,
+            "source": "ipn:samsung-galaxy-note9"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:sony-xperia-m4"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 6,
+              "tn": 200,
+              "tp": 0
+            },
+            "count": 206,
+            "label": 0,
+            "real_false_positive_rate": 0.02912621359223301,
+            "source": "owner_gallery"
+          }
+        ],
+        "real_false_positive_rate": 0.011587485515643106,
+        "roc_auc": 0.9940034762456547,
+        "stored_threshold": 0.6600460410118104,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9884615384615385
+        }
+      },
+      "rates": {
+        "ai_macro_recall": 0.9076923076923075,
+        "ai_recall_by_source": {
+          "e36:FLUX.2-pro": 0.975,
+          "e36:GPT-Image-1.5": 0.975,
+          "e36:HunyuanImage-3.0": 0.975,
+          "e36:Imagen-4.0-Ultra": 1.0,
+          "e36:Seedream-4.5": 0.925,
+          "e36:nano-banana-pro": 0.975,
+          "e39:Adobe Firefly Image 5": 0.825,
+          "e39:Gemini 3 Pro Image": 0.925,
+          "e39:HiDream I1 Dev": 0.975,
+          "e39:Ideogram 3": 0.975,
+          "e39:Midjourney v7": 0.85,
+          "e39:Reve Image 1.0": 0.725,
+          "e39:Z Image Turbo": 0.7
+        },
+        "ai_worst_source_recall": 0.7,
+        "real_fp_by_source": {
+          "e36:device_004": 0.1,
+          "e36:device_006": 0.01,
+          "e36:device_007": 0.01,
+          "e36:device_008": 0.0,
+          "e39:D14_Apple_iPhone13mini": 0.0,
+          "e39:D27_DOOGEE_S96Pro": 0.0,
+          "e39:D34_Google_Pixel5": 0.0,
+          "e39:D43_OnePlus_8T": 0.0,
+          "ipn:huawei-p20-lite": 0.0,
+          "ipn:huawei-y9-2019": 0.0,
+          "ipn:iphone-se-2020-1": 0.0125,
+          "ipn:iphone-se-2020-2": 0.0,
+          "ipn:iphone-xr": 0.0,
+          "ipn:lg-l65": 0.0,
+          "ipn:motorola-g-play": 0.0,
+          "ipn:motorola-g20": 0.0,
+          "ipn:motorola-g4-plus": 0.0,
+          "ipn:samsung-galaxy-a01": 0.0,
+          "ipn:samsung-galaxy-note9": 0.0125,
+          "ipn:sony-xperia-m4": 0.0,
+          "owner_gallery": 0.02912621359223301
+        },
+        "real_macro_fp": 0.008291724456773,
+        "real_worst_source_fp": 0.1,
+        "threshold": 0.6600460410118104
+      }
+    },
+    "webp": {
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.96260017809439,
+        "ai_recall": 0.8788461538461538,
+        "balanced_accuracy": 0.9333396470273643,
+        "brier_nontarget_real": 0.014560441400357395,
+        "brier_target_ai": 0.06537600117056071,
+        "confusion": {
+          "fn": 63,
+          "fp": 21,
+          "tn": 1705,
+          "tp": 457
+        },
+        "counts": {
+          "ai_succeeded": 520,
+          "failed": 0,
+          "real_succeeded": 1726,
+          "succeeded": 2246,
+          "total": 2246
+        },
+        "coverage": 1.0,
+        "eer": 0.0423010072198948,
+        "per_group": [
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 0.925,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 3,
+              "fp": 0,
+              "tn": 0,
+              "tp": 37
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 0.9,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 4,
+              "fp": 0,
+              "tn": 0,
+              "tp": 36
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 18,
+              "tn": 82,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.18,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 100,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 100,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 99,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.01,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": 0.95,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 2,
+              "fp": 0,
+              "tn": 0,
+              "tp": 38
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 0.775,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 9,
+              "fp": 0,
+              "tn": 0,
+              "tp": 31
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.825,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 7,
+              "fp": 0,
+              "tn": 0,
+              "tp": 33
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.9,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 4,
+              "fp": 0,
+              "tn": 0,
+              "tp": 36
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 0.925,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 3,
+              "fp": 0,
+              "tn": 0,
+              "tp": 37
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 0.8,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 8,
+              "fp": 0,
+              "tn": 0,
+              "tp": 32
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 0.75,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 10,
+              "fp": 0,
+              "tn": 0,
+              "tp": 30
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 0.7,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 12,
+              "fp": 0,
+              "tn": 0,
+              "tp": 28
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:huawei-p20-lite"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:huawei-y9-2019"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-se-2020-1"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-se-2020-2"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:iphone-xr"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:lg-l65"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g-play"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g20"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:motorola-g4-plus"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:samsung-galaxy-a01"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:samsung-galaxy-note9"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 80,
+              "tp": 0
+            },
+            "count": 80,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "ipn:sony-xperia-m4"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 2,
+              "tn": 204,
+              "tp": 0
+            },
+            "count": 206,
+            "label": 0,
+            "real_false_positive_rate": 0.009708737864077669,
+            "source": "owner_gallery"
+          }
+        ],
+        "real_false_positive_rate": 0.01216685979142526,
+        "roc_auc": 0.9922508690614137,
+        "stored_threshold": 0.6600460410118104,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9846153846153847
+        }
+      },
+      "rates": {
+        "ai_macro_recall": 0.8788461538461539,
+        "ai_recall_by_source": {
+          "e36:FLUX.2-pro": 0.975,
+          "e36:GPT-Image-1.5": 0.925,
+          "e36:HunyuanImage-3.0": 1.0,
+          "e36:Imagen-4.0-Ultra": 1.0,
+          "e36:Seedream-4.5": 0.9,
+          "e36:nano-banana-pro": 0.95,
+          "e39:Adobe Firefly Image 5": 0.775,
+          "e39:Gemini 3 Pro Image": 0.825,
+          "e39:HiDream I1 Dev": 0.9,
+          "e39:Ideogram 3": 0.925,
+          "e39:Midjourney v7": 0.8,
+          "e39:Reve Image 1.0": 0.75,
+          "e39:Z Image Turbo": 0.7
+        },
+        "ai_worst_source_recall": 0.7,
+        "real_fp_by_source": {
+          "e36:device_004": 0.18,
+          "e36:device_006": 0.0,
+          "e36:device_007": 0.0,
+          "e36:device_008": 0.01,
+          "e39:D14_Apple_iPhone13mini": 0.0,
+          "e39:D27_DOOGEE_S96Pro": 0.0,
+          "e39:D34_Google_Pixel5": 0.0,
+          "e39:D43_OnePlus_8T": 0.0,
+          "ipn:huawei-p20-lite": 0.0,
+          "ipn:huawei-y9-2019": 0.0,
+          "ipn:iphone-se-2020-1": 0.0,
+          "ipn:iphone-se-2020-2": 0.0,
+          "ipn:iphone-xr": 0.0,
+          "ipn:lg-l65": 0.0,
+          "ipn:motorola-g-play": 0.0,
+          "ipn:motorola-g20": 0.0,
+          "ipn:motorola-g4-plus": 0.0,
+          "ipn:samsung-galaxy-a01": 0.0,
+          "ipn:samsung-galaxy-note9": 0.0,
+          "ipn:sony-xperia-m4": 0.0,
+          "owner_gallery": 0.009708737864077669
+        },
+        "real_macro_fp": 0.009509939898289414,
+        "real_worst_source_fp": 0.18,
+        "threshold": 0.6600460410118104
+      }
+    }
+  },
+  "robust_combined": {
+    "metrics": {
+      "accuracy_counting_failures_wrong": 0.9657168299198575,
+      "ai_recall": 0.8899038461538461,
+      "balanced_accuracy": 0.9392306021035743,
+      "brier_nontarget_real": 0.014627298485525938,
+      "brier_target_ai": 0.05733225271220522,
+      "confusion": {
+        "fn": 229,
+        "fp": 79,
+        "tn": 6825,
+        "tp": 1851
+      },
+      "counts": {
+        "ai_succeeded": 2080,
+        "failed": 0,
+        "real_succeeded": 6904,
+        "succeeded": 8984,
+        "total": 8984
+      },
+      "coverage": 1.0,
+      "eer": 0.04184335725109188,
+      "per_group": [
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 0.95,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 38
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 0.95,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 38
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 0.925,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 37
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 0.9,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 4,
+            "fp": 0,
+            "tn": 0,
+            "tp": 36
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": 0.875,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 5,
+            "fp": 0,
+            "tn": 0,
+            "tp": 35
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": 0.925,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 37
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": 0.9,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 4,
+            "fp": 0,
+            "tn": 0,
+            "tp": 36
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 7,
+            "tn": 93,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.07,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 19,
+            "tn": 81,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.19,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 10,
+            "tn": 90,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.1,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 18,
+            "tn": 82,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.18,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 99,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.01,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 99,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.01,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 99,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.01,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 99,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.01,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 100,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 99,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.01,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": 0.925,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 37
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 0.95,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 38
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 0.95,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 38
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 0.75,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 10,
+            "fp": 0,
+            "tn": 0,
+            "tp": 30
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": 0.75,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 10,
+            "fp": 0,
+            "tn": 0,
+            "tp": 30
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": 0.825,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 7,
+            "fp": 0,
+            "tn": 0,
+            "tp": 33
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": 0.775,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 9,
+            "fp": 0,
+            "tn": 0,
+            "tp": 31
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": 0.775,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 9,
+            "fp": 0,
+            "tn": 0,
+            "tp": 31
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 0.9,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 4,
+            "fp": 0,
+            "tn": 0,
+            "tp": 36
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 0.925,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 37
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 0.825,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 7,
+            "fp": 0,
+            "tn": 0,
+            "tp": 33
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 0.925,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 37
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 0.9,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 4,
+            "fp": 0,
+            "tn": 0,
+            "tp": 36
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 0.925,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 37
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 0.925,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 37
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 0.775,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 9,
+            "fp": 0,
+            "tn": 0,
+            "tp": 31
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 0.9,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 4,
+            "fp": 0,
+            "tn": 0,
+            "tp": 36
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 0.85,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 6,
+            "fp": 0,
+            "tn": 0,
+            "tp": 34
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 0.8,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 8,
+            "fp": 0,
+            "tn": 0,
+            "tp": 32
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 0.725,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 11,
+            "fp": 0,
+            "tn": 0,
+            "tp": 29
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 0.875,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 5,
+            "fp": 0,
+            "tn": 0,
+            "tp": 35
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 0.725,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 11,
+            "fp": 0,
+            "tn": 0,
+            "tp": 29
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 0.75,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 10,
+            "fp": 0,
+            "tn": 0,
+            "tp": 30
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 0.625,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 15,
+            "fp": 0,
+            "tn": 0,
+            "tp": 25
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": 0.7,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 12,
+            "fp": 0,
+            "tn": 0,
+            "tp": 28
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": 0.7,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 12,
+            "fp": 0,
+            "tn": 0,
+            "tp": 28
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": 0.7,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 12,
+            "fp": 0,
+            "tn": 0,
+            "tp": 28
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-p20-lite"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-p20-lite"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-p20-lite"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-p20-lite"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-y9-2019"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-y9-2019"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-y9-2019"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:huawei-y9-2019"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-1"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-1"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 79,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0125,
+          "source": "ipn:iphone-se-2020-1"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-1"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-2"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-2"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-2"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-se-2020-2"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-xr"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-xr"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-xr"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:iphone-xr"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:lg-l65"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:lg-l65"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:lg-l65"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:lg-l65"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g-play"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g-play"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g-play"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g-play"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g20"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g20"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g20"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g20"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g4-plus"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g4-plus"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g4-plus"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:motorola-g4-plus"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-a01"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-a01"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-a01"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-a01"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-note9"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-note9"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 79,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0125,
+          "source": "ipn:samsung-galaxy-note9"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:samsung-galaxy-note9"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:sony-xperia-m4"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:sony-xperia-m4"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:sony-xperia-m4"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 80,
+            "tp": 0
+          },
+          "count": 80,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "ipn:sony-xperia-m4"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 2,
+            "tn": 204,
+            "tp": 0
+          },
+          "count": 206,
+          "label": 0,
+          "real_false_positive_rate": 0.009708737864077669,
+          "source": "owner_gallery"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 8,
+            "tn": 198,
+            "tp": 0
+          },
+          "count": 206,
+          "label": 0,
+          "real_false_positive_rate": 0.038834951456310676,
+          "source": "owner_gallery"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 6,
+            "tn": 200,
+            "tp": 0
+          },
+          "count": 206,
+          "label": 0,
+          "real_false_positive_rate": 0.02912621359223301,
+          "source": "owner_gallery"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 2,
+            "tn": 204,
+            "tp": 0
+          },
+          "count": 206,
+          "label": 0,
+          "real_false_positive_rate": 0.009708737864077669,
+          "source": "owner_gallery"
+        }
+      ],
+      "real_false_positive_rate": 0.011442641946697567,
+      "roc_auc": 0.9933822505348071,
+      "stored_threshold": 0.6600460410118104,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9875
+      }
+    },
+    "rates": {
+      "ai_macro_recall": 0.8899038461538462,
+      "ai_recall_by_source": {
+        "e36:FLUX.2-pro": 0.98125,
+        "e36:GPT-Image-1.5": 0.95,
+        "e36:HunyuanImage-3.0": 0.99375,
+        "e36:Imagen-4.0-Ultra": 0.9875,
+        "e36:Seedream-4.5": 0.9,
+        "e36:nano-banana-pro": 0.95,
+        "e39:Adobe Firefly Image 5": 0.775,
+        "e39:Gemini 3 Pro Image": 0.85625,
+        "e39:HiDream I1 Dev": 0.94375,
+        "e39:Ideogram 3": 0.95,
+        "e39:Midjourney v7": 0.83125,
+        "e39:Reve Image 1.0": 0.76875,
+        "e39:Z Image Turbo": 0.68125
+      },
+      "ai_worst_source_recall": 0.68125,
+      "real_fp_by_source": {
+        "e36:device_004": 0.135,
+        "e36:device_006": 0.0025,
+        "e36:device_007": 0.0025,
+        "e36:device_008": 0.0075,
+        "e39:D14_Apple_iPhone13mini": 0.0,
+        "e39:D27_DOOGEE_S96Pro": 0.0,
+        "e39:D34_Google_Pixel5": 0.0,
+        "e39:D43_OnePlus_8T": 0.0,
+        "ipn:huawei-p20-lite": 0.0,
+        "ipn:huawei-y9-2019": 0.0,
+        "ipn:iphone-se-2020-1": 0.003125,
+        "ipn:iphone-se-2020-2": 0.0,
+        "ipn:iphone-xr": 0.0,
+        "ipn:lg-l65": 0.0,
+        "ipn:motorola-g-play": 0.0,
+        "ipn:motorola-g20": 0.0,
+        "ipn:motorola-g4-plus": 0.0,
+        "ipn:samsung-galaxy-a01": 0.0,
+        "ipn:samsung-galaxy-note9": 0.003125,
+        "ipn:sony-xperia-m4": 0.0,
+        "owner_gallery": 0.021844660194174758
+      },
+      "real_macro_fp": 0.008361650485436892,
+      "real_worst_source_fp": 0.135,
+      "threshold": 0.6600460410118104
+    }
+  },
+  "schema_version": 1,
+  "score_stream": {
+    "bytes": 3174684,
+    "sha256": "0fbd15d55f945445b4e6d7aaac07c098776ea1fab21c61260185b0d0ecdd32ff"
+  },
+  "state": "development_passed",
+  "threshold": 0.6600460410118104
+}

@@ -3715,3 +3715,21 @@ views must additionally reach AUC 0.85 and balanced accuracy 0.80 with full cove
 tests plus a real-cache structural dry run pass before any classifier fit. A full S pass packages
 S immediately; only an S miss authorizes the already-fixed L representation. B-Free and RR test
 remain inaccessible to this decision.
+
+### E42-S DEVELOPMENT result — the real-photo collapse is repaired on consumed sources
+
+All five source-held-out folds completed with 11,230/11,230 scored views and no failure. At the
+first REAL-safe clean OOF threshold 0.660046, DINOv2-S reaches AUC 0.99287, TPR@FPR10 0.98462, EER
+0.04047 and balanced accuracy 0.95477. REAL macro FP is 1.23%; the weakest source is device_004 at
+the exact 20% ceiling, while all 12 IPN devices are 0% and the deduplicated owner gallery is 3.88%.
+AI macro/worst-family recall is 92.69%/75%. This is the first project head to satisfy every clean
+gate while retaining high modern-AI recall on whole held-out sources.
+
+The unchanged threshold also passes all transport checks. JPEG/WebP/resize+JPEG/blur combined AUC
+is 0.99338, balanced accuracy 0.93923, REAL macro/worst FP 0.84%/13.5% and AI macro/worst recall
+88.99%/68.13%; each condition stays above 0.992 AUC and 0.928 balanced accuracy. All 12 fixed checks
+pass. The smallest-pass rule selects S without spending compute on L. One refit on all consumed
+fit-eligible views produced the 87,977-byte research candidate SHA-256 `6768466a...9062e7` at the
+same threshold. This is a major DEVELOPMENT success, not an external-final claim: B-Free was never
+used for E42 decisions and RR test remains unopened. OOF stream SHA-256 is `0fbd15d5...dd32ff`;
+tracked report is `evidence/e42_development_small.json`.
