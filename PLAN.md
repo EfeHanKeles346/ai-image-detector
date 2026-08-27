@@ -5,6 +5,100 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Current execution slice — R1c threshold repair and external benchmark (2026-08-27)
+
+The immediate product defect is no longer ambiguous: E32/R1b ranks the existing modern-AI pool
+well but its internally fitted `0.125935` threshold does not transfer to independent camera
+pipelines. The next candidate therefore changes **only the threshold**, using genuinely new data;
+it does not add an ensemble, retrain the CF-ViT head or use the already-consumed owner gallery/IPN
+scores. In parallel, the project's loose Desktop assets are consolidated without touching any
+unrelated personal, academic or EOE material.
+
+### D0 — consolidate only proven PixelProof Desktop assets
+
+- [ ] Keep the active Git checkout at `~/Desktop/ai-image-detector`; moving the live workspace adds
+      no model value and would invalidate the current app/tool path. Create
+      `~/Desktop/PixelProof Workspace/{Documents,Legacy Datasets,Samples}` and move only items whose
+      content or recorded history proves PixelProof ownership. Never use a broad glob.
+- [ ] Move the known legacy dataset directories (`archive`, `archive1`, `defactify`,
+      `defactify_test`, `e23b_nist_capped`, `e23c_degraded`, `e24_iphone_capped`,
+      `e25_modern_probe`, `e27_pool`, `genimage`, `genimage_split`, `manipulation_test`) and the
+      original `archive.zip` into `Legacy Datasets`; move the owner gallery, empty `ai gen foto`
+      staging folder and the verified ChatGPT sample into `Samples`. Move only the closed report,
+      plan and presentation copies into `Documents`.
+- [ ] Do not move the currently open `PixelProof_Sunum.pptx` or its PowerPoint lock file; defer both
+      until PowerPoint is closed. Do not touch screenshots/forms containing personal information,
+      `Improvements.md`, or any non-PixelProof folder. Update the six tracked legacy path defaults
+      that would otherwise break, then verify exact source/destination counts and Git references.
+
+### D1 — freeze the benchmark hierarchy and honest meaning of “pass”
+
+- [ ] Treat NIST GenAI Image-D as the highest-authority future **external blind evaluation**. It
+      requires participant registration/data terms, forbids inspecting or tuning on the test set,
+      and reports ROC-AUC, EER, TPR at a fixed FPR and target/non-target Brier scores. NIST defines
+      metrics, not a universal certification score, and explicitly does not endorse participants;
+      the project must never claim “NIST approved/passed.”
+- [ ] Use NTIRE 2026 only as a published competitive reference until its missing dataset licence is
+      clarified. Its 10k clean validation ZIP (3,185,123,401 B), 10k hard/transformed ZIP
+      (804,902,498 B) and labels are public, but public access is not a reusable licence. Do not
+      download those image bytes under the project's fail-closed licence policy.
+- [ ] Select ICCV 2025 RRDataset as the immediate open robustness benchmark: official Zenodo record
+      `14963880`, CC BY 4.0, a 2,163,176,547-byte original train/validation archive and a
+      20,117,869,400-byte test archive spanning original, multi-platform transmission and physical
+      re-digitization. Its authors report a best detector overall accuracy of 89.59%; that is a
+      research reference, not a vendor-independent certification threshold.
+- [ ] Pre-register project-owned gates rather than inventing an industry standard. **Working
+      candidate:** all files counted, ROC-AUC >=0.85 and balanced accuracy >=0.80. **Internship
+      success:** ROC-AUC >=0.90, TPR@FPR=10% >=0.80, EER <=0.15, balanced accuracy >=0.85,
+      authentic macro FPR <=10%, worst sufficiently sized authentic pipeline FPR <=20%, AI macro
+      recall >=80% and weakest sufficiently sized AI family recall >=60%. Report calibration
+      (Brier target/non-target) but do not gate it until the candidate emits calibrated
+      probabilities. NTIRE robust AUC around 0.93 is a competitive reference and about 0.97 is
+      top-challenge territory, not the minimum for this internship prototype.
+
+### D2 — acquire with receipts; never tune on the locked test
+
+- [ ] Before image bytes, freeze source URL, revision/record id, CC licence, filenames, exact
+      published sizes, MD5 and destination under
+      `/Volumes/LaCie/pixelproof-datasets/e33_rrdataset/`. Require >=100 GiB free, resumable
+      `.partial` transfers, exact final checksum and archive safety inventory. Git stores only
+      compact receipts/aggregate evidence.
+- [ ] Download and audit `RRDataset_original_train_val.tar.gz` first. Decode and label-audit every
+      member, infer no label from an unexplained number, preserve original/transmission/redigital
+      parent groups, and decontaminate against protected PixelProof roles. Only its declared
+      train/validation portion may form `R1C_CAL`; no RR test row may select a threshold, transform
+      or retry.
+- [ ] Download `RRDataset_test.tar.gz` only after the R1c-T artifact/threshold contract is frozen.
+      Inventory and extract safely, then open/score the official labels once. If transfer time is
+      interrupted, preserve the partial and stop honestly; do not substitute an easier set after
+      seeing any score.
+
+### D3 — implement and evaluate R1c-T before another model change
+
+- [ ] Add one reusable E32 benchmark adapter that accepts a manifest with explicit
+      `0=REAL, 1=AI`, parent/source/condition columns, counts decode/inference failures as failed
+      rows, and reports ROC-AUC, EER, TPR@FPR=10%, balanced accuracy, confusion, per-source/per-
+      condition rates and uncalibrated-score Brier diagnostics. Tests use synthetic scores/files.
+- [ ] Keep R1b backbone, CF head, preprocessing and score direction byte-identical. Select one
+      R1c-T threshold exclusively on eligible `R1C_CAL` authentic rows under macro FPR <=10% and
+      worst-pipeline FPR <=20%; use CAL AI rows only to reject a threshold below the pre-registered
+      recall gates. Freeze the threshold, source receipt, score hashes and code revision.
+- [ ] Reopen IPN and the owner gallery only as consumed DEVELOPMENT regression. Pass requires
+      IPN worst-device and owner FPR <=20% while the frozen internal modern-AI macro recall remains
+      >=80% and weakest family >=60%. They cannot move the threshold.
+- [ ] A DEVELOPMENT pass permits exactly one RRDataset locked test. Meeting the internship-success
+      gate promotes R1c-T to the API/web path; a miss remains a documented working/rejected
+      candidate according to the frozen tiers. Only a clean threshold-transfer failure opens the
+      already-planned paired semantic+frequency R1c-P training path; ensembles and new encoders
+      remain later hypotheses.
+
+### D4 — close the slice reproducibly
+
+- [ ] Append acquisition facts to `DATASETS.md`, measured results to `ml/EXPERIMENTS.md`, and every
+      move/decision/result to append-only `HISTORY.md`. Update this checklist after each gate,
+      verify focused tests plus the full Python/web suite, commit in reviewable checkpoints, push
+      through protected `main`, and require green CI.
+
 ## Current execution slice — repository rewiring and R1c pre-acquisition (2026-08-27)
 
 This slice makes the project easier to understand without changing a model, threshold, API
