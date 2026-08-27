@@ -3018,3 +3018,13 @@ was scored or selected using model output.
 - **Integrity:** packager hashes every learned scaler/logistic numeric array before/after writing.
 - **Boundary:** role amendment, fixed contract, code and tests are committed before packaging. The
   resulting artifact, if produced, remains research-only until a new one-shot FINAL passes.
+
+### E41 candidate — frozen, independent FINAL absent
+
+- **Artifact:** 13,064 B / SHA-256 `9bcc021e...ab65`; threshold 0.619554.
+- **Identity:** learned-head numeric SHA-256 `4211d8d8...f49f` before and after packaging; identical
+  to E40. Only name/status/calibration binding and threshold metadata changed.
+- **Calibration:** 650 consumed rows, REAL macro/worst 4%/20%, AI macro/worst 92.14%/90%, AUC
+  0.97218, TPR@FPR10 0.90714, EER 0.10, balanced accuracy 0.90396. These values selected the
+  threshold and are not validation evidence.
+- **Decision:** stop before data. No API/web promotion and no E41 FINAL byte or score exists.

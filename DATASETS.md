@@ -962,3 +962,10 @@ For E41, the 440 native E39 rows and 210 owner-gallery rows are now formally con
 `E41_BROAD_REAL_CALIBRATION` (650 parents). The 880 compressed/resize views stay linked robustness
 derivatives and are excluded from threshold selection. None of these bytes can enter E41 FINAL.
 This role change creates no copy and downloads no data.
+
+The packaged E41 artifact is a 13,064-byte derived model file at
+`/Volumes/LaCie/pixelproof-datasets/e41/e41_dinov2s.joblib`, SHA-256
+`9bcc021e74b617ee48cf297bd384a8dbe946240ec04822323af1e7c3fe63ab65`. It contains no dataset bytes.
+At this checkpoint E41 FINAL has zero images and zero rows. Future FINAL must exclude E39/FloreView/
+AIGenImages2026 and the owner gallery, and cannot begin until exact new source/licence allocations
+are frozen separately.

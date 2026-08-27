@@ -429,17 +429,19 @@ transfer to the owner's casual-gallery score scale. A sealed post-hoc diagnostic
 scores finds a complete-gate frontier at 0.619554. This is not E40 evidence; E41 may package it only
 as a contaminated calibration candidate for a genuinely new FINAL.
 
-- [ ] Reclassify the 440 E39 native rows plus 210 owner-gallery rows as consumed
+- [x] Reclassify the 440 E39 native rows plus 210 owner-gallery rows as consumed
       `E41_BROAD_REAL_CALIBRATION`; bind E40 draft, robustness report and score hashes. Derivatives
       remain parent-linked stress evidence and never enter threshold selection.
-- [ ] Package the byte-identical uniform E40 head with the single diagnostic threshold
+- [x] Package the byte-identical uniform E40 head with the single diagnostic threshold
       `0.6195540428161622`. Forbid retraining, another threshold, row filtering or web/API promotion.
 - [ ] Before transfer, freeze a disjoint E41 FINAL source contract: at least four new native
       devices/sessions and six new generator/model-version cells, 40 parents/group, with licences,
       scene/prompt provenance and exact/perceptual decontamination. E39 sources and the owner gallery
       are forbidden.
-- [ ] Stop before downloading. When new data is authorized/available, acquire without model access,
-      freeze the unscored manifest, score once, and promote only if every original joint gate passes.
+- [x] Stop before downloading; E41 FINAL remains zero bytes/zero rows until exact sources and
+      licences are frozen and new transfer is authorized/available.
+- [ ] Then acquire without model access, freeze the unscored manifest, score once, and promote only
+      if every original joint gate passes.
 
 ### D4 — close the slice reproducibly
 

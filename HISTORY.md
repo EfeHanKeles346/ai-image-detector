@@ -3504,3 +3504,22 @@ E41 operation changes only threshold 0.170801 -> 0.619554 on the existing E40 un
 scaler/logistic arrays receive their own numeric checksum before and after serialization. Any fit,
 second threshold, row exclusion, product promotion or FINAL access is prohibited. Implementation,
 two focused tests and the role/contract are committed before artifact creation.
+
+### E41 candidate checkpoint — broad-real threshold frozen, head unchanged
+
+The E41 packager produced a 13,064-byte research artifact, SHA-256 `9bcc021e...ab65`, at threshold
+0.619554. The learned StandardScaler and logistic arrays are numerically identical to the E40 draft
+under checksum `4211d8d8...f49f`; there was no fit, feature, crop or preprocessing change. The
+consumed 650-row calibration frontier remains REAL macro/worst 4%/20%, AI macro/worst 92.14%/90%,
+AUC 0.97218, TPR@FPR10 0.90714, EER 0.10 and balanced accuracy 0.90396.
+
+State is `candidate_frozen_awaiting_independent_final`, not validated or served. No E41 FINAL image
+has been selected, transferred or scored. Work stops at the planned data boundary: the next action
+must first bind genuinely new real devices/sessions and generator/model versions, then acquire them
+without model access. Existing E39, FloreView, AIGenImages2026 and owner-gallery bytes are forbidden.
+
+Final checkpoint verification passes 268/268 Python tests, bytecode compilation and dependency
+integrity. The unchanged web product passes its production build, all six tests, TypeScript and
+ESLint. One known upstream Starlette/httpx deprecation warning remains non-functional. All E40/E41
+role, method, result and stop decisions are recorded and pushed; the working product remains on its
+previous validated served model until E41 earns independent evidence.

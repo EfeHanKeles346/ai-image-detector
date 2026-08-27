@@ -1,0 +1,58 @@
+{
+  "bindings": {
+    "e40_draft_sha256": "72b8d8cd05f0f4d51ab5008e19bf4ab3418988b3444b2e640a25fdd0e54819c0",
+    "e40_threshold_diagnostic_sha256": "53829c3bbadaec13f3562030b15891aaa215aa91e15d08d69eeeaf23f69baeba",
+    "e41_fixed_contract_sha256": "482cb58d48766c9697de817fa85668be90c4e7dbb09aa04a9213b199cb665c39",
+    "e41_role_amendment_sha256": "db5235c6783c14f003fb995f2bbd7f642de77fc4aeb434b5c52f466d054d4aea"
+  },
+  "boundary": "No retraining or preprocessing change. No E41 FINAL byte exists; candidate is not served or validated.",
+  "calibration_measurements": {
+    "claim": "consumed calibration only; not independent evidence",
+    "counts": {
+      "ai": 280,
+      "real": 370,
+      "total": 650
+    },
+    "metrics": {
+      "balanced_accuracy": 0.903957528957529,
+      "coverage": 1.0,
+      "eer": 0.09999999999999999,
+      "roc_auc": 0.9721814671814671,
+      "tpr_at_fpr10": 0.9071428571428571
+    },
+    "selected_frontier": {
+      "ai_macro_recall": 0.9214285714285716,
+      "ai_recall_by_family": {
+        "Adobe Firefly Image 5": 0.925,
+        "Gemini 3 Pro Image": 0.9,
+        "HiDream I1 Dev": 0.95,
+        "Ideogram 3": 0.9,
+        "Midjourney v7": 0.975,
+        "Reve Image 1.0": 0.9,
+        "Z Image Turbo": 0.9
+      },
+      "ai_worst_family_recall": 0.9,
+      "real_fp_by_source": {
+        "D14_Apple_iPhone13mini": 0.0,
+        "D27_DOOGEE_S96Pro": 0.0,
+        "D34_Google_Pixel5": 0.0,
+        "D43_OnePlus_8T": 0.0,
+        "owner_gallery": 0.2
+      },
+      "real_macro_fp": 0.04,
+      "real_worst_source_fp": 0.2,
+      "threshold": 0.6195540428161622
+    }
+  },
+  "candidate": {
+    "bytes": 13064,
+    "head_numeric_identical_to_e40": true,
+    "head_numeric_sha256": "4211d8d813fae83fad94b3ac6b0f11e099a02ed8b85f679db84a66f058e5f49f",
+    "path": "e41_dinov2s.joblib",
+    "sha256": "9bcc021e74b617ee48cf297bd384a8dbe946240ec04822323af1e7c3fe63ab65",
+    "threshold": 0.6195540428161622
+  },
+  "experiment": "E41/broad-real-threshold-transfer",
+  "schema_version": 1,
+  "state": "candidate_frozen_awaiting_independent_final"
+}
