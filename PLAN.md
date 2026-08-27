@@ -116,11 +116,12 @@ unrelated personal, academic or EOE material.
       The official DDA training set is Apache-2.0 but consists of ten 10,737,418,240-byte parts plus
       a 5,591,345,987-byte final ZIP (~112.97 GB); this violates the current minimum-data objective
       and is deferred to full home internet.
-- [ ] Freeze the official `Junwei-Xi/Dual-Data-Alignment` checkpoint at revision
+- [x] Freeze the official `Junwei-Xi/Dual-Data-Alignment` checkpoint at revision
       `4390d902...16c`, Apache-2.0, `DDA_ckpt.pth` 1,255,621,296 B / SHA-256
       `b27a31d3...e3e`. Vendor the minimal Apache inference modules with attribution, pin the
-      DINOv2-L base revision/weight hash, reproduce center-crop 336 + published normalization and
-      verify state/score direction with synthetic contract tests before production scoring.
+      offline DINOv2-L architecture (the checkpoint supplies every base tensor), reproduce
+      center-crop 336 + published normalization and verify strict state/score direction with
+      synthetic contract tests before production scoring.
 - [ ] Score official DDA first on consumed RR validation, IPN and owner gallery as DEVELOPMENT—no
       threshold fit on them. Use the checkpoint's published 0.5 decision cut for the first gate and
       report raw AUC/frontiers only as diagnostics. If authentic FP and AI coverage pass the frozen

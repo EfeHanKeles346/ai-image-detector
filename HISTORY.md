@@ -3149,3 +3149,11 @@ The unopened DDA-COCO range transfer was then paused without deleting any part s
 official checkpoint could take network priority. A receipt-bound resumable checkpoint command was
 committed first; it preserves a 100 GiB floor and promotes only the exact 1,255,621,296-byte file
 after whole-file SHA-256 verification. Benchmark transfer state remains recoverable.
+
+The official DDA checkpoint transfer completed and reproduced its exact Xet SHA-256. Before any
+production image score, PixelProof implemented a minimal Apache-attributed adapter: offline timm
+DINOv2-L/14 architecture, the official rank-8 LoRA target layout, strict `weights_only` checkpoint
+loading, published RGB center-crop-336/normalization, sigmoid score direction and untouched 0.5
+cut. The full 537-tensor state loaded strictly; the only compatibility shim retains torch.hub's
+unused `mask_token` parameter that timm omits. Nine focused LoRA/preprocessing/acquisition tests
+passed. No RR/IPN/owner or DDA-COCO member was scored at this checkpoint.

@@ -731,4 +731,7 @@ Xet SHA-256 `b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e` a
 DINOv2-L/14 LoRA detector. It is the next compact candidate; it must be pinned and tested before
 DDA-COCO is opened.
 Its metadata-only E35 selection is 962 B / SHA-256 `7bdbe886...3fd9`; compact evidence is
-`evidence/e35_dda_model_acquisition.json`. Freeze downloaded zero checkpoint bytes.
+`evidence/e35_dda_model_acquisition.json`. Freeze downloaded zero checkpoint bytes. The subsequent
+resumable transfer completed at exactly 1,255,621,296 B and reproduced SHA-256
+`b27a31d3...e3e`; the model can be constructed offline because this checkpoint contains all 537
+base, LoRA and classifier tensors.
