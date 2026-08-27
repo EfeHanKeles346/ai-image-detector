@@ -1,0 +1,26 @@
+{
+  "boundary": "Recorded before E39 threshold packaging and before any E39 FINAL image transfer. The 640 E38 FINAL parents are now consumed calibration evidence and can never be final evidence again.",
+  "counts": {
+    "ai": 240,
+    "real": 400,
+    "total": 640
+  },
+  "e38_candidate_sha256": "fddbe475adb807bcf523127095b2a8221443761ad4afa71d8c163829afc44067",
+  "e38_final_evidence_sha256": "c0485a9e9b1f5d0901a0eb3904a885c77d414cdf720ec5d0113af7e386e220ff",
+  "e38_final_manifest_sha256": "cad71ff5c631894805d1bb97c3b302732a23a069ce0b050faaf09e00314a66e6",
+  "e38_final_scores_sha256": "dd4f181de50d56ee5862db8b623053d0eb1f8e6471ff84c3e3506d8fe728dc2d",
+  "experiment": "E39/calibration-transfer-correction",
+  "new_role": "E39_CALIBRATION",
+  "previous_role": "E38_LOCKED_FINAL_CONSUMED",
+  "rules": {
+    "architecture_change": "forbidden",
+    "candidate_bytes_change": "forbidden",
+    "crop_or_preprocessing_change": "forbidden",
+    "e38_reinterpretation": "forbidden; E38 remains final_failed",
+    "new_final_access": "forbidden until the E39 candidate and source contract are frozen",
+    "score_direction_change": "forbidden",
+    "threshold_source": "exactly one source-robust threshold selected from all 640 consumed E38 scores"
+  },
+  "schema_version": 1,
+  "state": "role_amended_before_e39_candidate"
+}

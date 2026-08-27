@@ -313,7 +313,7 @@ value is permanently contaminated and cannot be served or used to relabel E38 as
 
 #### E39-A — correct the decision layer without retraining
 
-- [ ] Reclassify all 640 E38 FINAL parents as consumed `E39_CALIBRATION`; they can select E39 but
+- [x] Reclassify all 640 E38 FINAL parents as consumed `E39_CALIBRATION`; they can select E39 but
       can never again provide final evidence.
 - [ ] Keep the DINOv2-S representation and fitted head byte-identical (`fddbe475...4067`). Freeze
       exactly one E39 threshold from the consumed calibration scores under the same REAL and AI
