@@ -5,6 +5,76 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Current execution slice — repository rewiring and R1c pre-acquisition (2026-08-27)
+
+This slice makes the project easier to understand without changing a model, threshold, API
+decision or measured claim. It also turns the already-selected R1c direction into an explicit
+stop/go path up to—but not including—the next image transfer.
+
+**Hard boundary for this slice:** download no dataset, model, API image or third-party binary.
+Do not delete `HISTORY.md`, `ml/EXPERIMENTS.md`, evidence, experiment scripts, local datasets or
+model artifacts. Generated caches may be ignored/removed, but scientific bytes and append-only
+records are not “cleanup.” The Sites/Vinext chain (`.openai/`, `vite.config.ts`, `build/`,
+`worker/`, PostCSS and the lockfile) remains because it is the verified web build path.
+
+### S0 — map the live circuit before moving wires
+
+- [x] Re-audit every Markdown surface, the tracked tree, package entry points, Python imports,
+      browser/API boundaries and ignored disk usage. The 5.1 GB `ml/` directory is dominated by
+      ignored local artifacts/data, not tracked source bloat; it must not be erased as a code tidy.
+- [x] Freeze the three ownership zones: active product (`app/`, `pixelproof.serve`, project model,
+      verdict and demo launcher), reproducible research (`ml/experiments`, E31/E32 research CLIs
+      and compact evidence), and frozen history (`archive/`, HISTORY/EXPERIMENTS/report material).
+      Cleanup may cross none of these boundaries silently.
+
+### S1 — remove only proven residue
+
+- [ ] Delete the unused Claude-specific launcher that automatically opts into B-Free's restricted
+      licence, the empty no-op Next configuration and the three unreferenced starter SVG assets.
+      Keep the project favicon/social card and every file required by the Sites/Vinext build.
+- [ ] Add explicit ignore coverage for pytest caches so local verification noise cannot re-enter
+      the project view. Remove only empty/generated cache directories after validation; preserve
+      environments, installed packages, model artifacts and datasets.
+
+### S2 — separate web orchestration from result presentation
+
+- [ ] Move the four result-only React components out of `app/page.tsx` into one focused module.
+      Keep upload/request lifecycle in the page and response validation in
+      `app/analysis-contract.ts`; do not change endpoint, payload, labels, thresholds or copy.
+- [ ] Remove CSS selectors belonging to the retired method picker, tile overlay, legacy result,
+      old R1b card and probability meter. Prove every removed selector has no live markup owner;
+      preserve responsive, keyboard, touch and reduced-motion behavior.
+
+### S3 — make the remaining structure self-explanatory
+
+- [ ] Replace the flat repository map in `README.md` with active product, research/archive and
+      generated-local boundaries. Update the runnable experiment index through E32 so a reader can
+      tell which code serves users, which reproduces rejected candidates and which must stay frozen.
+- [ ] Run the complete 207-test Python suite without caller `PYTHONPATH`, compileall, dependency
+      and artifact checks, plus web lint, typecheck, production build and all browser-contract tests.
+      Record exact results in `HISTORY.md`, commit and push, then require green GitHub CI.
+
+### S4 — R1c work allowed before the next data transfer
+
+- [ ] Consolidate the existing C4-R1c requirements into one metadata-only source receipt for three
+      mutually disjoint roles: `R1C_CAL`, `R1C_LOCKED_REAL` and `R1C_LOCKED_AI`. Each proposed
+      source must declare revision, licence, label direction, parent/group identity, pipeline or
+      generator version, expected count/bytes/checksum where published and protected-role overlap
+      policy before any image is selected.
+- [ ] Prefer unused, licensed local holdings and a compact new multi-device capture. Admit no source
+      merely because its folder says REAL/AI; require at least five unused authentic pipelines in
+      CAL, five other authentic pipelines in LOCKED_REAL, and five current AI families with at
+      least 100 native parents each in LOCKED_AI. IPN, the owner gallery, E30 and named older tests
+      remain consumed DEVELOPMENT and cannot fill these roles.
+- [ ] Implement only the metadata/schema validator, deterministic parent-level allocator,
+      protected-hash interface, free-space estimate and resumable acquisition-receipt generator.
+      Unit tests use synthetic metadata/temporary files; no network image byte is permitted.
+- [ ] **Stop boundary:** present the frozen source allocation, estimated transfer size, licence
+      decisions, exact destination and acceptance tests to the user. Actual download begins only
+      in a later authorized slice with suitable internet. After bytes arrive, the existing order
+      remains audit -> R1c-T threshold selection on CAL only -> consumed DEVELOPMENT gate -> one
+      locked final; paired training R1c-P starts only if threshold transfer fails.
+
 ## Active goal — E32/R1c conservative generalization recovery (2026-08-27)
 
 The product goal remains a genuinely testable binary detector, not a high score on a familiar
