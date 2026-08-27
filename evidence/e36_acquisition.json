@@ -1,0 +1,32 @@
+{
+  "ai_cal_bytes": 468420944,
+  "ai_cal_families": [
+    "gpt-image-2",
+    "nano-banana-2.0",
+    "Seedream-5.0",
+    "Qwen-Image-2.0-pro",
+    "FLUX.2_max",
+    "GLM-Image"
+  ],
+  "ai_cal_rows": 600,
+  "ai_final_bytes": 311236195,
+  "ai_final_families": [
+    "GPT-Image-1.5",
+    "nano-banana-pro",
+    "Imagen-4.0-Ultra",
+    "HunyuanImage-3.0",
+    "FLUX.2-pro",
+    "Seedream-4.5"
+  ],
+  "ai_final_rows": 240,
+  "detailed_selection_bytes": 395300,
+  "detailed_selection_sha256": "01eec03e4bce295ed43aca3fef1a9997668ef792cb416b2116623896449c2dcc",
+  "experiment": "E36/balanced-clean-cal-final",
+  "new_image_bytes_downloaded_by_freeze": 0,
+  "real_cal_archive_bytes": 2052606020,
+  "real_cal_archives": 5,
+  "real_final_archive_bytes": 2038841380,
+  "real_final_archives": 4,
+  "schema_version": 1,
+  "state": "selection_frozen_no_image_bytes_claimed"
+}

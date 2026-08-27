@@ -143,10 +143,12 @@ representation ranks RR images well and that the dominant defect is operating-po
 native camera pipelines. Do not discard DDA, deploy the post-hoc 0.90 value, mix old models, or pay
 113 GB for training until this threshold-transfer hypothesis receives one clean replication.
 
-- [ ] **Freeze source registry before bytes.** CAL and FINAL must have disjoint parent images,
+- [x] **Freeze source registry before bytes.** CAL and FINAL must have disjoint parent images,
       capture sessions/devices, prompts/seeds and generator accounts. Perceptual-hash and exact-hash
       deduplication must also cover every earlier TRAIN/CAL/DEVELOPMENT manifest. Licences, URLs/API
       model versions, timestamps, expected counts and failure policy enter `DATASETS.md` first.
+      Frozen selection SHA-256 `01eec03e...2dcc`; 600 CAL AI / 240 family-disjoint FINAL AI and
+      five CAL / four FINAL REAL archives. Metadata freeze downloaded zero image bytes.
 - [ ] **Build a compact new CAL (target 1,200 parents, not 20,000 arbitrary files).** Acquire 600
       native authentic stills from at least six previously unseen phone/camera pipelines (target
       100/device, scene-balanced, original bytes/EXIF retained) and 600 clean AI images from at least
@@ -208,6 +210,9 @@ normal/QQ/Weibo views.
       with AI macro recall >=80% and worst family >=60%; also report pooled balanced accuracy, AUC,
       EER and TPR@FPR10. This explicitly prevents fixing real false alarms by simply calling every
       image REAL.
+      Source/role metadata is now frozen; no CAL image or FINAL byte had been downloaded at this
+      checkpoint. Compact evidence: `evidence/e36_acquisition.json` and the unscored old-scout role
+      amendment `evidence/e36_qwen_role_amendment.json`.
 
 ### D4 — close the slice reproducibly
 

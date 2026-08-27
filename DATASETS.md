@@ -766,6 +766,13 @@ Derived degradation variants stay grouped by parent. Exact source/licence/API re
 checks must be appended here before the first acquisition byte; no named source is approved merely
 because it is downloadable.
 
+The E36 metadata freeze reproduced every selected contract before image transfer. The five REAL
+CAL archives total 2,052,606,020 B; the four locked REAL FINAL archives total 2,038,841,380 B. AI
+selection is 600 CAL rows / 468,420,944 B and 240 locked FINAL rows / 311,236,195 B. The detailed
+395,300-byte selection has SHA-256 `01eec03e...2dcc`; compact evidence is
+`evidence/e36_acquisition.json`. `evidence/e36_qwen_role_amendment.json` records that the older
+unscored 40-row scout is superseded before E36 acquisition. Image bytes downloaded by freeze: zero.
+
 ### E36-A selected CAL/FINAL sources — metadata decision before image bytes (2026-08-27)
 
 REAL source: Zenodo `18136670`, `sns-homogenization-forensics-dataset` v1.0.0, publication

@@ -3227,3 +3227,10 @@ different families/prompt 1–40 to FINAL before download. Threshold selection w
 generator macros equally and must satisfy authentic FP and AI recall floors together. Thus E36
 cannot appear to fix real photos by predicting REAL for everything, and the final set cannot tune
 the candidate it evaluates.
+
+The fail-closed acquisition implementation was committed before live metadata. Four focused tests
+cover source identity/licence/checksum drift, CAL/FINAL family disjointness, exact selection counts
+and hostile ZIP paths. Live freeze then bound 600 CAL AI rows (468,420,944 B), 240 locked FINAL AI
+rows (311,236,195 B), five CAL REAL archives (2,052,606,020 B) and four locked FINAL REAL archives
+(2,038,841,380 B). Detailed selection SHA-256 is `01eec03e...2dcc`; no image byte moved. The old
+unscored Qwen scout was superseded by a recorded role amendment before any E36 score.

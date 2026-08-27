@@ -1,0 +1,7 @@
+{
+  "invariant": "No old scout row was scored; CAL uses prompt ids 101-200 only.",
+  "old_selection": "evidence/e30_qwen_sealed_selection.json",
+  "reason": "E36 uses family-disjoint CAL and FINAL cells with adequate per-family counts.",
+  "schema_version": 1,
+  "state": "old_qwen_scout_superseded_unscored_before_e36_bytes"
+}
