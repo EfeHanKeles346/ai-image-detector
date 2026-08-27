@@ -100,12 +100,16 @@ it before paying for another architecture or training run.
       texture native crops. Compare DINOv2-S and DINOv2-L only; DINO-L reuses the hash-pinned pure
       backbone tensors already present inside the official Apache-2.0 DDA checkpoint, avoiding a
       redundant network download.
+      DINOv2-S feature extraction is complete for all 20,506 planned views /61,518 crops, shape
+      20,506x3,072, 235,605,776 bytes and SHA-256 `452fec98...69ac5a`. Evaluate S first; because
+      the fixed rule prefers the smallest full pass, DINOv2-L can change selection only if S fails.
 - [ ] Give every training parent one clean view plus one deterministic, class-symmetric transport
       view chosen from JPEG, WebP, resize+JPEG and mild blur. Evaluate every DEVELOPMENT parent as
       clean plus all four transports. Fit one source-balanced logistic head per backbone at fixed
       C=0.01; use source-held-out clean OOF scores for the threshold and require the unchanged cut
       to pass the frozen clean success gate plus robust AUC >=0.85 / balanced accuracy >=0.80.
-- [ ] Select the smaller DINOv2-S if both candidates pass; otherwise select the only full pass. If
+- [ ] Select DINOv2-S immediately if it fully passes; otherwise evaluate the only remaining fixed
+      DINOv2-L candidate and select it only on a full pass. If
       neither passes, stop without another backbone/threshold sweep. If one passes, refit once on
       all consumed training+development parents, freeze a research candidate, then and only then
       transfer/inventory the unopened RR test for a one-shot external result.

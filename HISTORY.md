@@ -3691,3 +3691,11 @@ but the independent transport/crop preparation is now mapped over six worker thr
 unchanged tensor batch. This is an execution-only correction: the same functions, arrays, ordering
 and model inputs are used. A focused deterministic-feature test still passes and no partial cache
 exists.
+
+The optimized DINOv2-S run completed every planned row: 20,506 views from 6,884 parents, three
+crops per view and four intermediate blocks, producing a 20,506x3,072 finite float32 matrix. The
+compressed cache is 235,605,776 bytes / SHA-256 `452fec98...69ac5a`, bound to DINOv2-S weights
+`04d27f34...20081` and manifest `15124d93...3e238`. No classifier or score was produced. The fixed
+smallest-pass rule now short-circuits redundant computation: S is evaluated first, and DINOv2-L is
+needed only if S misses a mandatory development gate because a passing L cannot replace a passing
+S.

@@ -1,0 +1,27 @@
+{
+  "backbone": "small",
+  "block_indices": [
+    2,
+    5,
+    8,
+    11
+  ],
+  "boundary": "Consumed TRAIN/DEVELOPMENT features only; no classifier, B-Free or RR-test access.",
+  "counts": {
+    "crops_per_view": 3,
+    "parents": 6884,
+    "views": 20506
+  },
+  "experiment": "E42/texture-intermediate-features",
+  "feature_archive_bytes": 235605776,
+  "feature_archive_sha256": "452fec98990aaf425a2ae2a494a16d9c0d9c111d02cdda60e9e31529a069ac5a",
+  "feature_shape": [
+    20506,
+    3072
+  ],
+  "manifest_sha256": "15124d93f195d618b00c9cf79bec6151ae26fd4397cd9f5529c41842c4e3e238",
+  "model_id": "vit_small_patch14_dinov2.lvd142m",
+  "schema_version": 1,
+  "state": "small_features_frozen_before_fit",
+  "weight_binding_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081"
+}
