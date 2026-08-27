@@ -374,7 +374,7 @@ E39 population, E40 must improve source/content generalization without hiding th
 
 - [x] Reclassify all 440 E39 FINAL parents as consumed `E40_ADAPTATION_DEVELOPMENT`; they can train
       and select E40 but can never be final evidence again. Bind E39 manifest/result/score hashes.
-- [ ] Cache one unchanged DINOv2-S embedding per E39 parent without filtering rows. Create seven
+- [x] Cache one unchanged DINOv2-S embedding per E39 parent without filtering rows. Create seven
       source-held-out folds so every AI family and every REAL device receives predictions from a
       head that did not see that source. Content clusters may weight training rows but must never
       select rows or define folds, because each FloreView device shares the same scene catalog.

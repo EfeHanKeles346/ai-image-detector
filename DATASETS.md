@@ -933,3 +933,9 @@ select `round(5%)` rows by the lowest SHA-256 of `E40_REPLAY_V1|record_id`. The 
 1,067 existing feature rows; no image is copied or downloaded. All 1,071 existing E36 consumed
 development rows remain in every E40 fold. Replay record IDs and final feature archives will be
 hash-recorded by the experiment, but none of these sources becomes independent evaluation data.
+
+The E39 consumed-image feature cache now exists at
+`/Volumes/LaCie/pixelproof-datasets/e40/e39_dinov2s_features.npz`: 440x384 float32, 642,070 bytes,
+SHA-256 `ec0501713a966b1ceaef41539907638b26440c4c3b1f39f69a8de5ff0c794e68`. It contains one embedding,
+record ID, label and source per frozen parent—no image copy and no extra row. This is development
+material only; `evidence/e40_features.json` records the compact binding.

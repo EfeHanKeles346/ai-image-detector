@@ -1,0 +1,31 @@
+{
+  "all_rows_finite": true,
+  "bindings": {
+    "dinov2s_weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+    "e39_manifest_sha256": "1076df20adc700a1893814e477891e9270e4f88502dbad2571e022f3a7127306",
+    "e40_role_amendment_sha256": "c475a529e9f9d03761d42bf021dd8a4ba5212b3a44c59d8fce508fc1fff62f0f",
+    "feature_archive_sha256": "ec0501713a966b1ceaef41539907638b26440c4c3b1f39f69a8de5ff0c794e68"
+  },
+  "boundary": "All 440 consumed E39 parents, unchanged preprocessing/backbone, no filtering, clustering or head fit.",
+  "counts": {
+    "ai": 280,
+    "folds": {
+      "0": 80,
+      "1": 80,
+      "2": 80,
+      "3": 80,
+      "4": 40,
+      "5": 40,
+      "6": 40
+    },
+    "real": 160,
+    "total": 440
+  },
+  "experiment": "E40/model-free-feature-cache",
+  "feature_shape": [
+    440,
+    384
+  ],
+  "schema_version": 1,
+  "state": "features_frozen_before_e40_fit"
+}

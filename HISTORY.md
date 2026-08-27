@@ -3442,3 +3442,11 @@ unchanged for seeds 41 and 43. DDA/CF-ViT features, ensembles, per-source thresh
 and further hyperparameter sweeps are prohibited. The implementation and six focused unit tests
 pass; the complete Python suite passes 264/264 with dependency and bytecode checks. No E40 model
 score, feature cache or new FINAL byte exists at this commit.
+
+### E40-A feature checkpoint — all 440 parents represented exactly once
+
+The unchanged, locally cached DINOv2-S backbone processed every consumed E39 parent successfully.
+The resulting 440x384 float32 archive is 642,070 bytes, SHA-256 `ec050171...94e68`; all values are
+finite and all 440 record IDs are unique. Counts remain 160 REAL and 280 AI, with fold sizes
+80/80/80/80/40/40/40 under the frozen seven-source contract. No row was removed, clustered,
+weighted, fitted or scored by a classifier. Compact evidence is `evidence/e40_features.json`.

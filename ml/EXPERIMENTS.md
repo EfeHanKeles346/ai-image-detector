@@ -2957,3 +2957,12 @@ was scored or selected using model output.
   order, freeze its OOF threshold, and require that unchanged threshold to pass seeds 41/42/43.
 - **Boundary:** `evidence/e40_fixed_contract.json` is hash-bound in code before any features/scores.
   Six new focused tests and all 264 Python tests pass. No measurements exist yet.
+
+### E40-A — frozen E39 DINO feature cache
+
+- **Coverage:** 440/440 consumed E39 parents, 160 REAL +280 AI; 440 unique IDs and no non-finite
+  embedding value. Feature shape is 440x384 float32.
+- **Binding:** local archive is 642,070 B / SHA-256 `ec050171...94e68`; DINO weight SHA-256 remains
+  `04d27f34...0081`, manifest `1076df20...7306`, role amendment `c475a529...2f0f`.
+- **Folds:** fixed assignments contain 80 rows in each paired REAL+AI fold and 40 in each of the
+  remaining three AI-only folds. This checkpoint performs no clustering, fitting or scoring.
