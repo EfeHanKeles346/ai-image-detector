@@ -23,8 +23,9 @@ from torch.utils.data import DataLoader
 
 from pixelproof.evaluate import FolderPairDataset, collect_predictions, eval_transform
 from pixelproof.models import create_model
+from pixelproof.project_paths import LEGACY_DATA_ROOT
 
-SRC = Path.home() / "Desktop/archive1"
+SRC = LEGACY_DATA_ROOT / "archive1"
 WORK = Path("/private/tmp/claude-501/-Users-efehankeles-Desktop-ai-image-detector/"
             "238e1a7f-1cab-4e73-92da-2333ce2ae064/scratchpad/archive1_fmt")
 QUALITY = 90

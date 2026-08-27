@@ -16,3 +16,7 @@ def configured_path(environment_name: str, default: Path) -> Path:
 
 DATA_ROOT = configured_path("PIXELPROOF_DATA_ROOT", ML_ROOT / "data")
 WORK_ROOT = configured_path("PIXELPROOF_WORK_ROOT", ML_ROOT / "work")
+LEGACY_DATA_ROOT = configured_path(
+    "PIXELPROOF_LEGACY_DATA_ROOT",
+    Path.home() / "Desktop" / "PixelProof Workspace" / "Legacy Datasets",
+)

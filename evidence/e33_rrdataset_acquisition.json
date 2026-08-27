@@ -1,0 +1,25 @@
+{
+  "detailed_selection_bytes": 1166,
+  "detailed_selection_sha256": "ad6fc31f320cd66c9f4119dd877e0ecca7060f9400788038e7be4434a8243519",
+  "experiment": "E33/R1c-RRDataset",
+  "files": {
+    "cal": {
+      "bytes": 2163176547,
+      "md5": "2f4498c3690d8f4c7a30d2e41dd34500",
+      "name": "RRDataset_original_train_val.tar.gz",
+      "role": "r1c_cal_candidate"
+    },
+    "test": {
+      "bytes": 20117869400,
+      "md5": "13c3ff3d61986170cc0c8cf76a35cd4b",
+      "name": "RRDataset_test.tar.gz",
+      "role": "locked_final_test"
+    }
+  },
+  "license": "CC BY 4.0",
+  "new_archive_bytes_downloaded_by_freeze": 0,
+  "record_id": 14963880,
+  "record_url": "https://zenodo.org/records/14963880",
+  "schema_version": 1,
+  "state": "selection_frozen_no_archive_bytes_claimed"
+}

@@ -3037,3 +3037,31 @@ job completed in 37 seconds and the clean `python` job in 2 minutes 7 seconds. T
 simplification phases S0–S3 are therefore closed. S4 remains intentionally open and stops before
 network image bytes: it will freeze R1c CAL/LOCKED metadata, allocation, licence and acquisition
 receipts before a later explicitly authorized transfer.
+
+The user then authorized the next data/evaluation slice and a narrowly scoped Desktop cleanup.
+A read-only inventory distinguished PixelProof material from personal forms, screenshots,
+academic files and unrelated EOE/rork projects. Twenty-one proven PixelProof items were moved—no
+copy was deleted—into `~/Desktop/PixelProof Workspace`: twelve legacy dataset directories plus
+`archive.zip` under `Legacy Datasets`, the owner gallery/empty AI staging directory/verified
+ChatGPT sample under `Samples`, and five closed project documents under `Documents`. The active Git
+checkout stayed at its existing path. The open `PixelProof_Sunum.pptx` and its PowerPoint lock file
+were deliberately left on the Desktop until the application is closed. Eight live legacy path
+defaults were redirected through the consolidated root; syntax compilation and exact destination
+existence checks passed.
+
+A primary-source benchmark audit found no honest universal company-standard “pass score.” NIST
+GenAI Image-D is the strongest future blind authority, but requires registration/data terms,
+forbids test inspection/tuning, reports ROC-AUC/EER/TPR@FPR/Brier metrics and explicitly cannot be
+presented as NIST endorsement. NTIRE 2026 supplies the most current public competitive reference
+(42 generators and real-world transformations), but its public validation card has no declared
+dataset licence, so PixelProof downloaded none of its 3.99 GB image payload. The project instead
+selected ICCV 2025 RRDataset: official Zenodo record `14963880`, CC BY 4.0, original plus repeated
+internet transmission and physical re-digitization conditions. The paper's best reported detector
+overall accuracy is 89.59%, a comparison point rather than a certification cutoff.
+
+Before any RRDataset archive byte, E33 froze both official Zenodo assets, URLs, roles, exact sizes
+and MD5 values. The 2,163,176,547-byte original train/validation archive is the only possible new
+R1c calibration source; the 20,117,869,400-byte test archive is locked until the threshold-only
+candidate is frozen. The detailed selection receipt is 1,166 B / SHA-256
+`ad6fc31f...3519`; compact evidence is `evidence/e33_rrdataset_acquisition.json`. Ten focused data
+contract/acquisition tests passed and status confirmed zero archive/partial bytes at the freeze.

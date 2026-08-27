@@ -16,38 +16,38 @@ unrelated personal, academic or EOE material.
 
 ### D0 — consolidate only proven PixelProof Desktop assets
 
-- [ ] Keep the active Git checkout at `~/Desktop/ai-image-detector`; moving the live workspace adds
+- [x] Keep the active Git checkout at `~/Desktop/ai-image-detector`; moving the live workspace adds
       no model value and would invalidate the current app/tool path. Create
       `~/Desktop/PixelProof Workspace/{Documents,Legacy Datasets,Samples}` and move only items whose
       content or recorded history proves PixelProof ownership. Never use a broad glob.
-- [ ] Move the known legacy dataset directories (`archive`, `archive1`, `defactify`,
+- [x] Move the known legacy dataset directories (`archive`, `archive1`, `defactify`,
       `defactify_test`, `e23b_nist_capped`, `e23c_degraded`, `e24_iphone_capped`,
       `e25_modern_probe`, `e27_pool`, `genimage`, `genimage_split`, `manipulation_test`) and the
       original `archive.zip` into `Legacy Datasets`; move the owner gallery, empty `ai gen foto`
       staging folder and the verified ChatGPT sample into `Samples`. Move only the closed report,
       plan and presentation copies into `Documents`.
-- [ ] Do not move the currently open `PixelProof_Sunum.pptx` or its PowerPoint lock file; defer both
+- [x] Do not move the currently open `PixelProof_Sunum.pptx` or its PowerPoint lock file; defer both
       until PowerPoint is closed. Do not touch screenshots/forms containing personal information,
-      `Improvements.md`, or any non-PixelProof folder. Update the six tracked legacy path defaults
+      `Improvements.md`, or any non-PixelProof folder. Update the eight tracked legacy path defaults
       that would otherwise break, then verify exact source/destination counts and Git references.
 
 ### D1 — freeze the benchmark hierarchy and honest meaning of “pass”
 
-- [ ] Treat NIST GenAI Image-D as the highest-authority future **external blind evaluation**. It
+- [x] Treat NIST GenAI Image-D as the highest-authority future **external blind evaluation**. It
       requires participant registration/data terms, forbids inspecting or tuning on the test set,
       and reports ROC-AUC, EER, TPR at a fixed FPR and target/non-target Brier scores. NIST defines
       metrics, not a universal certification score, and explicitly does not endorse participants;
       the project must never claim “NIST approved/passed.”
-- [ ] Use NTIRE 2026 only as a published competitive reference until its missing dataset licence is
+- [x] Use NTIRE 2026 only as a published competitive reference until its missing dataset licence is
       clarified. Its 10k clean validation ZIP (3,185,123,401 B), 10k hard/transformed ZIP
       (804,902,498 B) and labels are public, but public access is not a reusable licence. Do not
       download those image bytes under the project's fail-closed licence policy.
-- [ ] Select ICCV 2025 RRDataset as the immediate open robustness benchmark: official Zenodo record
+- [x] Select ICCV 2025 RRDataset as the immediate open robustness benchmark: official Zenodo record
       `14963880`, CC BY 4.0, a 2,163,176,547-byte original train/validation archive and a
       20,117,869,400-byte test archive spanning original, multi-platform transmission and physical
       re-digitization. Its authors report a best detector overall accuracy of 89.59%; that is a
       research reference, not a vendor-independent certification threshold.
-- [ ] Pre-register project-owned gates rather than inventing an industry standard. **Working
+- [x] Pre-register project-owned gates rather than inventing an industry standard. **Working
       candidate:** all files counted, ROC-AUC >=0.85 and balanced accuracy >=0.80. **Internship
       success:** ROC-AUC >=0.90, TPR@FPR=10% >=0.80, EER <=0.15, balanced accuracy >=0.85,
       authentic macro FPR <=10%, worst sufficiently sized authentic pipeline FPR <=20%, AI macro
@@ -58,7 +58,7 @@ unrelated personal, academic or EOE material.
 
 ### D2 — acquire with receipts; never tune on the locked test
 
-- [ ] Before image bytes, freeze source URL, revision/record id, CC licence, filenames, exact
+- [x] Before image bytes, freeze source URL, revision/record id, CC licence, filenames, exact
       published sizes, MD5 and destination under
       `/Volumes/LaCie/pixelproof-datasets/e33_rrdataset/`. Require >=100 GiB free, resumable
       `.partial` transfers, exact final checksum and archive safety inventory. Git stores only

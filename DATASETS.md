@@ -659,3 +659,28 @@ consumed DEVELOPMENT populations from this point forward: they may document regr
 not select an R1c representation, loss, threshold, cascade or policy. The iPhone rows remain valid
 TRAIN/CALIBRATION data; a new provenance-complete multi-camera REAL source is required for the next
 unseen final gate. Evidence is `evidence/e32_r1b_external_development.json`.
+
+### E33/R1c licensed calibration and robustness benchmark — frozen before bytes (2026-08-27)
+
+NIST GenAI Image-D is retained as the future external blind authority, not a locally downloadable
+test: access requires registration/data terms and its hidden trials may not be inspected or used
+for tuning. NTIRE 2026 is retained only as a 2026 competitive reference because its public
+validation repository currently declares no dataset licence. Public downloadability alone does not
+satisfy PixelProof's provenance/licence gate.
+
+The immediate reproducible source is **RRDataset**, the ICCV 2025 Real-World Robustness benchmark,
+from the official Zenodo record `14963880` under CC BY 4.0. It contains high-impact/everyday scenes
+and evaluates original files, repeated internet/social-platform transmission and physical
+re-digitization. This is intentionally a robustness source rather than a claim that its two
+generator families represent every 2026 commercial model.
+
+| frozen file | exact bytes | published MD5 | PixelProof role |
+|---|---:|---|---|
+| `RRDataset_original_train_val.tar.gz` | 2,163,176,547 | `2f4498c3690d8f4c7a30d2e41dd34500` | role-free `R1C_CAL` candidate; may select only the threshold after archive/label/decontamination audit |
+| `RRDataset_test.tar.gz` | 20,117,869,400 | `13c3ff3d61986170cc0c8cf76a35cd4b` | locked final robustness test; forbidden until the R1c-T contract is frozen |
+
+Destination is `/Volumes/LaCie/pixelproof-datasets/e33_rrdataset/`. The detailed 1,166-byte
+selection receipt has SHA-256 `ad6fc31f...3519`; compact evidence is
+`evidence/e33_rrdataset_acquisition.json`. Metadata freeze downloaded zero archive bytes. Transfer
+must remain resumable, preserve a 100 GiB disk floor and promote a `.partial` only after exact byte
+count and MD5 verification.

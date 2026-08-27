@@ -36,11 +36,12 @@ from sklearn.metrics import roc_auc_score
 
 from pixelproof.archive.ela import ela_map
 from pixelproof.features import extract_tiles, tile_positions
+from pixelproof.project_paths import LEGACY_DATA_ROOT
 
 warnings.filterwarnings("ignore")
 Image.MAX_IMAGE_PIXELS = None
 
-DEFAULT_ROOT = Path.home() / "Desktop/manipulation_test"   # was /tmp/m2 — see E17
+DEFAULT_ROOT = LEGACY_DATA_ROOT / "manipulation_test"   # was /tmp/m2 — see E17
 TILE = 128
 GRID = 36
 LIMIT = 120

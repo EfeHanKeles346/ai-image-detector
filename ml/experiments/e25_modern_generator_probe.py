@@ -24,7 +24,7 @@
 #                 RAISES if the parquet metadata disagrees (the E19b guard).
 # extract()       deterministic stride-sample of up to 200 images per source,
 #                 written as RAW BYTES (no re-encode — compression history is
-#                 part of what the detectors read) to ~/Desktop/e25_modern_probe.
+#                 part of what the detectors read) to PIXELPROOF_WORK_ROOT/e25_modern_probe.
 # score()         both external detectors via the untouched E21 adapters,
 #                 JSONL-cached per arm under artifacts/e25/.
 # band()          the asymmetric band of E23a: t_ai = worst-source threshold

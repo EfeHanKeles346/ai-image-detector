@@ -1,7 +1,7 @@
 experiment_name: resnet18_transfer_v1
 seed: 42
 data:
-  root: /Users/efehankeles/Desktop/archive
+  root: /Users/efehankeles/Desktop/PixelProof Workspace/Legacy Datasets/archive
   image_size: 224
   validation_ratio: 0.1
   normalization: imagenet

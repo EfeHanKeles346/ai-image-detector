@@ -12,6 +12,7 @@ from sklearn.metrics import roc_auc_score
 from torchvision import transforms
 
 from pixelproof.models import create_model
+from pixelproof.project_paths import LEGACY_DATA_ROOT
 
 PATCH = 224
 N_PER_CLASS = 1000
@@ -52,7 +53,7 @@ def score(files):
     return shrink_p, patch_p
 
 
-root = Path.home() / "Desktop/defactify_test"
+root = LEGACY_DATA_ROOT / "defactify_test"
 random.seed(42)
 folders = {"real": root / "real", **{g: root / "ai" / g for g in
            ["dalle3", "midjourney", "sd21", "sd3", "sdxl"]}}

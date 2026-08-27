@@ -34,6 +34,7 @@ from PIL import Image
 from sklearn.metrics import roc_auc_score
 
 from pixelproof.features import extract_tiles, tile_positions
+from pixelproof.project_paths import LEGACY_DATA_ROOT
 
 warnings.filterwarnings("ignore")
 Image.MAX_IMAGE_PIXELS = None
@@ -41,7 +42,7 @@ Image.MAX_IMAGE_PIXELS = None
 # The first run of this experiment read /tmp/m2, which macOS wipes on reboot —
 # and that was the only copy of the extracted data. Now a real dataset path,
 # alongside the others in HISTORY 1.
-DEFAULT_ROOT = Path.home() / "Desktop/manipulation_test"
+DEFAULT_ROOT = LEGACY_DATA_ROOT / "manipulation_test"
 TILE = 128
 GRID = 36
 LIMIT = 120
