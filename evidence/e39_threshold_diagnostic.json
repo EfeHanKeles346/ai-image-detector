@@ -1,0 +1,38 @@
+{
+  "boundary": "Post-hoc diagnosis on consumed E39 FINAL scores. It cannot change E39, define a pass or evaluate a retry on these rows.",
+  "experiment": "E39/posthoc-real-safe-frontier",
+  "first_real_safe_frontier": {
+    "ai_macro_recall": 0.7714285714285714,
+    "ai_recall_by_family": {
+      "Adobe Firefly Image 5": 0.825,
+      "Gemini 3 Pro Image": 0.675,
+      "HiDream I1 Dev": 0.8,
+      "Ideogram 3": 0.775,
+      "Midjourney v7": 0.925,
+      "Reve Image 1.0": 0.725,
+      "Z Image Turbo": 0.675
+    },
+    "ai_worst_family_recall": 0.675,
+    "balanced_accuracy": 0.8357142857142857,
+    "real_fp_by_device": {
+      "D14_Apple_iPhone13mini": 0.1,
+      "D27_DOOGEE_S96Pro": 0.1,
+      "D34_Google_Pixel5": 0.15,
+      "D43_OnePlus_8T": 0.05
+    },
+    "real_macro_fp": 0.1,
+    "real_worst_device_fp": 0.15,
+    "threshold": 0.6229419112205506
+  },
+  "interpretation": "No threshold satisfies every frozen gate. At the first REAL-safe point, AI macro recall, balanced accuracy, TPR@FPR10 and EER still fail; E40 must adapt representation/head rather than repeat threshold tuning.",
+  "joint_threshold_exists": false,
+  "metrics_independent_of_threshold": {
+    "eer": 0.1933035714285714,
+    "roc_auc": 0.9003348214285714,
+    "tpr_at_fpr10": 0.7714285714285715
+  },
+  "result_evidence_sha256": "644e33dcbe390cfbeb61f25a93a8224197027813f137c7aa4f9105cc51781a1e",
+  "schema_version": 1,
+  "scores_sha256": "2a47e8a80e289f3a1a2f492df21f289c66aa50e9364ed66b61e4597962cbbb86",
+  "state": "diagnostic_only_consumed_final"
+}

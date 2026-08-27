@@ -347,17 +347,69 @@ value is permanently contaminated and cannot be served or used to relabel E38 as
 
 #### E39-D — one-shot decision and product promotion
 
-- [ ] Score the frozen 400-parent minimum exactly once. Require 100% coverage, AUC >=0.90,
+- [x] Score the frozen 440-parent FINAL exactly once. Require 100% coverage, AUC >=0.90,
       TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy >=0.85, REAL macro/worst FP <=10%/20% and
       AI macro/worst recall >=80%/60%. Report every source and confidence interval.
-- [ ] Promote E39 to the API/web result only if every gate passes. The UI may then lead with the
-      E39 answer while keeping the score explicitly non-probabilistic and the authenticity caveat.
-- [ ] If E39 misses only the thresholded gates while AUC remains strong, do not tune on the new
+      **Result: failed.** Coverage 440/440, AUC 0.90033, TPR@FPR10 0.7714, EER 0.1933,
+      balanced accuracy 0.7004, REAL macro/worst FP 53.13%/60.0%, AI macro/worst recall
+      93.21%/90.0%. The new AI side is strong; new native REAL transfer is unsafe.
+- [x] Apply the promotion rule. E39 failed multiple gates, so it is explicitly not promoted to the
+      API/web verdict; the currently served model remains unchanged.
+- [x] If E39 misses only the thresholded gates while AUC remains strong, do not tune on the new
       FINAL; consume it as the next calibration source and obtain another independent final. If AUC
       itself falls below 0.90, stop threshold work and open paired/content-aligned backbone training.
+      E39's AUC is only marginally above 0.90 and TPR@FPR10/EER also fail. A post-hoc REAL-safe
+      threshold still misses AI macro, balanced accuracy, TPR and EER; threshold-only work is closed.
 - [ ] After each completed phase, append facts to `HISTORY.md`, measurements to
       `ml/EXPERIMENTS.md`, data roles to `DATASETS.md`, update this checklist, run the full test
       suite, commit, push and require green CI.
+
+### D3.10 — E40 content-balanced source-held-out adaptation
+
+E39 proves the candidate recognizes seven unseen current generators, but its REAL score distribution
+shifts sharply on coordinated outdoor phone photographs. Because no threshold passes the consumed
+E39 population, E40 must improve source/content generalization without hiding the failed result.
+
+#### E40-A — consume E39 correctly and build model-free features
+
+- [ ] Reclassify all 440 E39 FINAL parents as consumed `E40_ADAPTATION_DEVELOPMENT`; they can train
+      and select E40 but can never be final evidence again. Bind E39 manifest/result/score hashes.
+- [ ] Cache one unchanged DINOv2-S embedding per E39 parent without filtering rows. Create seven
+      source-held-out folds so every AI family and every REAL device receives predictions from a
+      head that saw neither that source nor its paired semantic cluster.
+- [ ] Cluster frozen embeddings only to balance content, not to label/select examples. Use inverse
+      class x source x content-cluster weighting so repeated FloreView scenes and generator prompt
+      styles cannot dominate the decision boundary.
+
+#### E40-B — a small preregistered head ladder, not another sweep
+
+- [ ] Compare exactly three fixed linear heads on the same source-held-out predictions: uniform
+      modern replay, source-balanced replay and source+content-balanced replay. Reuse the unchanged
+      DINO backbone and include a fixed 5% stratified replay buffer from historical E32 TRAIN to
+      reduce forgetting; do not add DDA/CF-ViT score features or an ad-hoc ensemble.
+- [ ] Select only by the complete frozen gate: coverage 100%, AUC >=0.90, TPR@FPR10 >=0.80,
+      EER <=0.15, balanced accuracy >=0.85, REAL macro/worst FP <=10%/20%, AI macro/worst recall
+      >=80%/60%. If none passes, stop E40 before refit; do not soften thresholds.
+- [ ] For a passing head, repeat three fixed seeds and require every seed to preserve the REAL and
+      AI subgroup gates. Then refit one artifact on all consumed adaptation rows and freeze one OOF
+      threshold; no E40 FINAL byte may exist yet.
+
+#### E40-C — robustness checks with already consumed/local data
+
+- [ ] Run grouped JPEG/resize derivatives as parent-linked stress tests and use the owner gallery
+      only as a disclosed DEVELOPMENT smoke. Require no collapse toward either class; derivatives
+      never inflate N and cannot promote the model.
+- [ ] Package the research candidate only if E40-A/B/C all pass. Record artifact, feature cache,
+      replay selection, threshold and seed hashes in HISTORY/EXPERIMENTS/DATASETS.
+
+#### E40-D — stop at the next-data boundary
+
+- [ ] Before downloading, preregister another independent FINAL with at least four new native
+      devices/sessions and six new generator/model-version cells from sources outside E39. Keep
+      40 parents/group, source balance, prompt/scene provenance and exact/perceptual decontamination.
+- [ ] Score that new FINAL exactly once and promote only if every original joint gate passes. E39
+      rows, unused members from its same archive and extra FloreView rows are not substitutes for
+      this final independence.
 
 ### D4 — close the slice reproducibly
 

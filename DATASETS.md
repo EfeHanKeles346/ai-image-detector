@@ -911,3 +911,10 @@ EXIF, and all AI rows retain prompt provenance. There are zero exact or dHash ov
 roles and zero within-FINAL exact/dHash duplicate parents. Detailed external manifest is 412,914 B
 / SHA-256 `1076df20...7306`; compact unscored evidence is
 `evidence/e39_final_manifest.json`. No E39 prediction existed when this ledger entry was committed.
+
+The one-shot result permanently consumes all 440 E39 FINAL parents. Detailed local scores are
+`/Volumes/LaCie/pixelproof-datasets/e39/final_scores.jsonl`, 146,705 B / SHA-256
+`2a47e8a8...bb86`; compact result is `evidence/e39_final_result.json`. From this point their only
+eligible role is E40 adaptation/development. They cannot test E40 or any later candidate, and the
+unselected rows from the same FloreView/AIGenImages2026 source collections cannot be called an
+independent substitute merely because their filenames differ.

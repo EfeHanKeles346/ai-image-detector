@@ -2917,3 +2917,19 @@ was scored or selected using model output.
   provenance 280/280. Prior-role exact/dHash overlap 0/0; within-FINAL exact/dHash duplicates 0/0.
   Detailed unscored manifest is 412,914 B / SHA-256 `1076df20...7306`. This is the one-use E39
   FINAL boundary; no score existed when it was written.
+
+### E39 FINAL — new AI generalizes; new phone REAL does not
+
+- **One-shot boundary:** 440/440 coverage, no retry; detailed score stream 146,705 B / SHA-256
+  `2a47e8a8...bb86` at frozen threshold `0.270069`.
+- **AI:** 261/280 correct; family macro/worst recall **93.21%/90.0%**. Per-family recall is Firefly
+  97.5%, Gemini 3 90.0%, HiDream 90.0%, Ideogram 95.0%, Midjourney 97.5%, Reve 90.0% and Z Image
+  92.5%. Both AI gates pass strongly.
+- **REAL:** 75/160 correct; device FP **55.0%/55.0%/60.0%/42.5%**, macro/worst
+  **53.13%/60.0%**. Both safety gates fail decisively.
+- **Global:** AUC **0.90033** passes by 0.00033, but TPR@FPR10 **0.7714**, EER **0.1933** and
+  balanced accuracy **0.7004** fail. State `final_failed`; no product promotion.
+- **Post-hoc diagnosis only:** first REAL-safe threshold `0.622942` still gives AI macro/worst
+  77.14%/67.5% and balanced accuracy 0.8357. No joint threshold exists, so E40 must adapt the
+  representation/head using consumed E39 source/content-balanced development. Evidence:
+  `evidence/e39_final_result.json`, `evidence/e39_threshold_diagnostic.json`.

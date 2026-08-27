@@ -3396,3 +3396,21 @@ rows linked to publisher prompt metadata. Exact and dHash overlap with earlier r
 zero, as were exact/dHash duplicates inside E39 FINAL. The 412,914-byte detailed unscored manifest
 SHA-256 is `1076df20...7306`; compact evidence is `evidence/e39_final_manifest.json`. This commit is
 the irreversible boundary before the first and only E39 prediction.
+
+### E39 FINAL result — modern AI transfer succeeds, native REAL safety collapses
+
+The one-shot scorer completed all 440 parents without decode or inference failure. E39 detects
+261/280 new AI images: 93.21% family-macro recall, 90.0% worst-family recall and 90–97.5% per-family
+recall across all seven unseen generators. This is the strongest evidence so far that the frozen
+DINO representation carries useful modern-generator signal.
+
+The same threshold falsely accused 85/160 genuine phone photos. Device FP is 55.0% iPhone 13 mini,
+55.0% DOOGEE S96 Pro, 60.0% Pixel 5 and 42.5% OnePlus 8T; macro is 53.13%. Overall balanced
+accuracy is 0.7004, AUC 0.90033, TPR@FPR10 0.7714 and EER 0.1933. REAL safety, balanced accuracy,
+TPR and EER gates fail. E39 is `final_failed` and is not promoted to the web/API verdict.
+
+A post-hoc threshold diagnostic confirms this is not another scale-only error. The first REAL-safe
+threshold (`0.622942`) gives 10%/15% REAL macro/worst FP but only 77.14% AI macro, 67.5% worst AI
+and 0.8357 balanced accuracy; TPR@FPR10/EER remain threshold-independent failures. No joint
+threshold exists. E39 now becomes consumed E40 adaptation data, and E40 will use source/content-
+balanced replay rather than another threshold retry or ensemble.
