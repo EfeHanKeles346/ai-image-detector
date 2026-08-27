@@ -234,9 +234,11 @@ selection is out-of-fold by source. FINAL devices/families remain inaccessible. 
 balanced transfer: reducing REAL accusations cannot be accepted unless modern-AI coverage passes
 at the same frozen operating point.
 
-- [ ] **Amend the role before fitting.** Record E36 CAL as consumed `E37_ADAPTATION`; it can no
+- [x] **Amend the role before fitting.** Record E36 CAL as consumed `E37_ADAPTATION`; it can no
       longer provide an independent DDA calibration claim. Preserve all 1,071 rows and labels—no
       score-based removal, hard-example cherry-picking or family/device reweighting after results.
+      Frozen before feature extraction/fitting in `evidence/e37_role_amendment.json`, including
+      the five exact source-held-out folds and fixed head contract.
 - [ ] **Reuse the smallest adequate frozen representation.** Reuse the existing E32 DINOv2-S/14
       feature archive and preprocessing for the old TRAIN rows, extract the same 384-dimensional
       embedding only for the 1,071 E36 parents, and fit only a standardized class-weighted logistic
