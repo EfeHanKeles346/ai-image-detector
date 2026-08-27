@@ -897,3 +897,10 @@ The metadata-only preflight reproduced the exact upstream state and froze 160 in
 URLs plus the single AI archive before transfer. Detailed external selection is 35,473 bytes,
 SHA-256 `4253497a...7be4`; compact zero-image-byte receipt is
 `evidence/e39_source_preflight.json`.
+
+Physical transfer reproduced the full AI archive hash and acquired all 160 REAL URLs. Archive
+safety inventory passed 10,905 members with no unsafe path/link/oversized expansion. Eligible AI
+counts are 305 Reve, 305 HiDream, 305 Ideogram, 300 Midjourney, 150 Firefly, 305 Z Image and 307
+Gemini 3; deterministic member ranking selected 40 each. The publisher's 1,256,612-byte prompt
+metadata CSV is bound at SHA-256 `46e484bd...0b22`. Images remain unscored and the unselected
+archive members do not enter PixelProof's parent count.

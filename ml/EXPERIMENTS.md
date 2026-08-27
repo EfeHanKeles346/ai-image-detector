@@ -2907,3 +2907,8 @@ above are transcription errors; production range planning binds the filesystem v
 - **Boundary:** source contract and acquisition code recorded with zero E39 FINAL image bytes.
   Candidate/model access remains forbidden until decode, provenance and overlap audits freeze the
   unscored manifest.
+
+Acquisition reproduced the 11,138,511,098-byte AI archive SHA-256 and all 160 REAL URLs. Tar safety
+inventory passed 10,905 members/10,879 regular files and froze 40 rows per each of the seven AI
+families from 150–307 eligible members. Detailed selection SHA-256 is `bf6a6ecf...40dfb`; no image
+was scored or selected using model output.

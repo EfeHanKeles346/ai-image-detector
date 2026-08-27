@@ -3382,3 +3382,10 @@ The live metadata preflight then reproduced both licence receipts, the FloreView
 exact four-device 160-URL selection, Hugging Face revision and the 11.14 GB archive LFS/Xet
 identity. Detailed external selection SHA-256 is `4253497a...7be4`; compact evidence is
 `evidence/e39_source_preflight.json`. The receipt still records zero downloaded FINAL image bytes.
+
+Acquisition then completed resumably without model access. FloreView supplied all 160 individual
+native JPEGs; the AIGenImages2026 archive matched its exact 11,138,511,098-byte size and published
+SHA-256 `67c60427...c498`. Safety inventory found 10,905 tar members/10,879 regular files and
+11,197,937,530 expanded bytes. Every selected family exceeded the 40-row floor (150–307 eligible),
+and the deterministic ranking froze exactly 40 per family. Detailed inventory SHA-256 is
+`bf6a6ecf...40dfb`; compact unscored evidence is `evidence/e39_ai_inventory.json`.

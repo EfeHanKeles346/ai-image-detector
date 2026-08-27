@@ -1,0 +1,29 @@
+{
+  "archive_sha256": "67c6042712f783aebfdb29f8a8903dfc94fc7ac54fee5c154eaf6b880d0ec498",
+  "detailed_inventory_bytes": 120972,
+  "detailed_inventory_sha256": "bf6a6ecf1da0fd515b62188b75e698526e8163d78a6195b5c7e7f7dcc8d40dfb",
+  "eligible_counts": {
+    "Adobe Firefly Image 5": 150,
+    "Gemini 3 Pro Image": 307,
+    "HiDream I1 Dev": 305,
+    "Ideogram 3": 305,
+    "Midjourney v7": 300,
+    "Reve Image 1.0": 305,
+    "Z Image Turbo": 305
+  },
+  "metadata_sha256": "46e484bd1923d5f5408feeff5ff04468639b4814ea1d5c244b4a1a4a167d0b22",
+  "regular_files": 10879,
+  "schema_version": 1,
+  "selected_counts": {
+    "Adobe Firefly Image 5": 40,
+    "Gemini 3 Pro Image": 40,
+    "HiDream I1 Dev": 40,
+    "Ideogram 3": 40,
+    "Midjourney v7": 40,
+    "Reve Image 1.0": 40,
+    "Z Image Turbo": 40
+  },
+  "state": "ai_inventory_passed_selected_unextracted_unscored",
+  "total_members": 10905,
+  "total_regular_bytes": 11197937530
+}
