@@ -66,3 +66,15 @@ def test_summary_keeps_url_failures_visible() -> None:
     assert summary["coverage"] == pytest.approx(2 / 3)
     assert summary["failure_statuses"] == {"request_failed": 1}
     assert summary["covered_sources_by_label"] == {"REAL": 1, "FAKE": 1}
+
+
+def test_overlap_excludes_whole_parent_event_and_cross_event_duplicates() -> None:
+    rows = [
+        {"source_id": "r1", "sha256": "a", "dhash": "1"},
+        {"source_id": "r1", "sha256": "b", "dhash": "2"},
+        {"source_id": "f1", "sha256": "c", "dhash": "3"},
+        {"source_id": "f2", "sha256": "d", "dhash": "3"},
+    ]
+    excluded, cross = external.excluded_event_ids(rows, {"b"}, set())
+    assert excluded == {"r1", "f1", "f2"}
+    assert cross == {"dhash:3": ["f1", "f2"]}

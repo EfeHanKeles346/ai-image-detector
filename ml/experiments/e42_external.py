@@ -14,6 +14,7 @@ from typing import Any, Mapping, Sequence
 import requests
 from PIL import Image
 
+from pixelproof.data_contract import dhash_image
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 
 
@@ -25,6 +26,8 @@ BFREE_REVISION = "c6a9f898782fb466b29af01f21960b67415afb0e"
 OUTPUT_ROOT = DATA_ROOT / "e42_external" / "bfree_viral"
 DETAIL = OUTPUT_ROOT / "acquisition_manifest.json"
 EVIDENCE = REPO_ROOT / "evidence" / "e42_bfree_acquisition.json"
+MANIFEST = OUTPUT_ROOT / "unscored_manifest.json"
+MANIFEST_EVIDENCE = REPO_ROOT / "evidence" / "e42_bfree_manifest.json"
 CONTRACT = REPO_ROOT / "evidence" / "e42_external_contract.json"
 EXPECTED_ROWS = 1_111
 EXPECTED_BY_LABEL = {"REAL": 361, "FAKE": 750}
@@ -195,6 +198,142 @@ def summarize(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     }
 
 
+def excluded_event_ids(
+    rows: Sequence[Mapping[str, Any]], prior_exact: set[str], prior_dhash: set[str]
+) -> tuple[set[str], dict[str, list[str]]]:
+    excluded = {
+        str(row["source_id"])
+        for row in rows
+        if str(row["sha256"]) in prior_exact or str(row["dhash"]) in prior_dhash
+    }
+    cross_event: dict[str, list[str]] = {}
+    for field in ("sha256", "dhash"):
+        by_hash: dict[str, set[str]] = {}
+        for row in rows:
+            by_hash.setdefault(str(row[field]), set()).add(str(row["source_id"]))
+        for value, sources in by_hash.items():
+            if len(sources) > 1:
+                key = f"{field}:{value}"
+                cross_event[key] = sorted(sources)
+                excluded.update(sources)
+    return excluded, cross_event
+
+
+def _prior_hashes() -> tuple[set[str], set[str], int]:
+    exact: set[str] = set()
+    perceptual: set[str] = set()
+    paths = list(sorted((DATA_ROOT / "e32" / "audits").glob("*.json")))
+    paths.extend([
+        DATA_ROOT / "e33_rrdataset" / "r1c_cal_manifest.json",
+        DATA_ROOT / "e36" / "cal_manifest.json",
+        DATA_ROOT / "e36" / "final_manifest.json",
+        DATA_ROOT / "e39" / "final_manifest.json",
+    ])
+    seen = 0
+    for path in paths:
+        if not path.is_file() or path.name.startswith("._"):
+            continue
+        payload = json.loads(path.read_text())
+        records = payload.get("records", payload.get("rows", []))
+        for row in records:
+            if row.get("sha256"):
+                exact.add(str(row["sha256"]))
+            if row.get("dhash"):
+                perceptual.add(str(row["dhash"]))
+        seen += 1
+    return exact, perceptual, seen
+
+
+def freeze_manifest() -> dict[str, Any]:
+    if MANIFEST.exists() or MANIFEST_EVIDENCE.exists():
+        raise FileExistsError("B-Free unscored manifest already exists; no silent remanifest")
+    contract = json.loads(CONTRACT.read_text())
+    acquisition = json.loads(DETAIL.read_text())
+    if contract.get("state") != "frozen_before_external_bytes":
+        raise ValueError("E42 external contract changed")
+    if (
+        acquisition.get("state") != "acquisition_complete_with_declared_coverage"
+        or acquisition.get("candidate_sha256") != contract["e41"]["artifact_sha256"]
+        or hashlib.sha256(_json_bytes(acquisition)).hexdigest()
+        != json.loads(EVIDENCE.read_text()).get("detailed_manifest_sha256")
+    ):
+        raise ValueError("B-Free acquisition binding changed")
+
+    audited: list[dict[str, Any]] = []
+    for row in acquisition["rows"]:
+        if row["status"] != "verified":
+            continue
+        path = Path(str(row["local_path"]))
+        if _digest(path) != row["sha256"] or _digest(path, "md5") != row["expected_md5"]:
+            raise ValueError(f"B-Free verified bytes changed: {row['relative_path']}")
+        with Image.open(path) as image:
+            image.load()
+            dhash = dhash_image(image.convert("RGB"))
+        audited.append({
+            "record_id": row["record_id"],
+            "parent_id": f"bfree-viral:{row['source_id']}",
+            "source_id": row["source_id"],
+            "path": row["local_path"],
+            "relative_path": row["relative_path"],
+            "label": int(row["label"]),
+            "label_name": row["label_name"],
+            "condition": "web_propagated_version",
+            "days_since_first_post": row["days_since_first_post"],
+            "sha256": row["sha256"],
+            "dhash": dhash,
+            "bytes": row["bytes"],
+            "width": row["actual_width"],
+            "height": row["actual_height"],
+        })
+    prior_exact, prior_dhash, prior_files = _prior_hashes()
+    excluded, cross_event = excluded_event_ids(audited, prior_exact, prior_dhash)
+    selected = [row for row in audited if row["source_id"] not in excluded]
+    source_counts = {
+        label: len({row["source_id"] for row in selected if row["label_name"] == label})
+        for label in LABEL_MAP
+    }
+    if min(source_counts.values()) < 15:
+        raise ValueError(f"B-Free decontamination leaves too few parent events: {source_counts}")
+    payload = {
+        "schema_version": 1,
+        "experiment": "E41/B-Free-viral-external-stress",
+        "state": "wild_stress_manifest_frozen_unscored",
+        "candidate_sha256": contract["e41"]["artifact_sha256"],
+        "threshold": contract["e41"]["threshold"],
+        "acquisition_manifest_sha256": hashlib.sha256(_json_bytes(acquisition)).hexdigest(),
+        "counts": {
+            "rows": len(selected),
+            "real_rows": sum(row["label"] == 0 for row in selected),
+            "ai_rows": sum(row["label"] == 1 for row in selected),
+            "source_events": sum(source_counts.values()),
+        },
+        "source_events_by_label": source_counts,
+        "prior_manifest_files": prior_files,
+        "prior_exact_hashes": len(prior_exact),
+        "prior_dhashes": len(prior_dhash),
+        "excluded_source_events": sorted(excluded),
+        "cross_event_duplicate_groups": cross_event,
+        "rows": selected,
+        "boundary": "Decoded, parent-grouped and decontaminated before the first E41 score. Model access remains forbidden.",
+    }
+    raw = _json_bytes(payload)
+    _write_atomic(MANIFEST, payload)
+    compact = {
+        "schema_version": 1,
+        "state": payload["state"],
+        "candidate_sha256": payload["candidate_sha256"],
+        "counts": payload["counts"],
+        "source_events_by_label": source_counts,
+        "excluded_source_events": sorted(excluded),
+        "cross_event_duplicate_group_count": len(cross_event),
+        "prior_manifest_files": prior_files,
+        "detailed_manifest_bytes": len(raw),
+        "detailed_manifest_sha256": hashlib.sha256(raw).hexdigest(),
+    }
+    _write_atomic(MANIFEST_EVIDENCE, compact)
+    return compact
+
+
 def acquire(workers: int = 16, timeout: float = 60) -> dict[str, Any]:
     contract = json.loads(CONTRACT.read_text())
     if contract.get("state") != "frozen_before_external_bytes" or contract.get("e41", {}).get("threshold") != 0.6195540428161622:
@@ -239,15 +378,17 @@ def acquire(workers: int = 16, timeout: float = 60) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=("validate-registry", "acquire"))
+    parser.add_argument("command", choices=("validate-registry", "acquire", "freeze-manifest"))
     parser.add_argument("--workers", type=int, default=16)
     parser.add_argument("--timeout", type=float, default=60)
     args = parser.parse_args()
     if args.command == "validate-registry":
         rows = load_registry()
         print(json.dumps({"rows": len(rows), "summary": summarize([{**row, "status": "verified"} for row in rows])}, indent=2))
-    else:
+    elif args.command == "acquire":
         print(json.dumps(acquire(args.workers, args.timeout), indent=2))
+    else:
+        print(json.dumps(freeze_manifest(), indent=2))
 
 
 if __name__ == "__main__":
