@@ -1663,6 +1663,21 @@ the measured result here, then commit. No unmeasured product claim is introduced
   worst-source FP; AUC is supporting evidence, not the deployment decision.
 - External model licences and revisions are enforced in the runtime path, not left only in
   prose. B-Free stays explicit opt-in.
+
+### CI portability correction — queued 2026-08-27
+
+- [ ] Reproduce the first GitHub `main` run failure from run `33070433088`: the web job passes,
+      while Python collection fails because the workflow omits the `experiments` import root and
+      installs only serving dependencies although the full suite imports `pyarrow`.
+- [ ] Make pytest's repository-owned configuration expose both `src` and the `ml` project root;
+      install the declared `experiments` and `test` optional groups in CI instead of maintaining a
+      second incomplete hand-written test environment.
+- [ ] Run all 207 Python tests without a caller-supplied `PYTHONPATH`, plus compileall, `pip check`,
+      web build/tests/typecheck/lint and artifact verification. Append the result to HISTORY, commit,
+      push `main` and wait for the replacement GitHub CI run to finish green.
+- [ ] After CI is green, protect `main` against force-push/deletion and require the `web` and
+      `python` checks before future merges; do not enable a rule that blocks the current owner from
+      administering the repository.
 - Module 2 remains parked until a localisation model is measured against pixel masks on the
   relevant manipulation family.
 
