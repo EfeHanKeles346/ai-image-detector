@@ -1,0 +1,60 @@
+{
+  "boundary": "Computed only after E40-C was sealed robustness_failed. This diagnostic cannot change, retry, package or promote E40; it may only motivate a separately preregistered E41 candidate and new independent FINAL.",
+  "counts": {
+    "ai": 280,
+    "real": 370,
+    "total": 650
+  },
+  "experiment": "E40/posthoc-broad-real-threshold-diagnostic",
+  "gate": {
+    "checks": {
+      "ai_macro_recall_gte_0.80": true,
+      "ai_worst_family_recall_gte_0.60": true,
+      "balanced_accuracy_gte_0.85": true,
+      "coverage_eq_1": true,
+      "eer_lte_0.15": true,
+      "real_macro_fp_lte_0.10": true,
+      "real_worst_device_fp_lte_0.20": true,
+      "roc_auc_gte_0.90": true,
+      "tpr_at_fpr10_gte_0.80": true
+    },
+    "passed_diagnostic_only": true
+  },
+  "inputs": {
+    "population": "440 E39 native E40-draft rows plus 210 owner-gallery native rows; all consumed DEVELOPMENT",
+    "robustness_report_sha256": "74e23b66ba644d5e8f85b69f9a462a0a4b2614396a36507c6d948a4ba571a463",
+    "robustness_scores_sha256": "a126e81482a05d85622aaab1cb30a4e3b8cb099f961b83c7866b6aa836c20e3b"
+  },
+  "metrics": {
+    "balanced_accuracy": 0.903957528957529,
+    "coverage": 1.0,
+    "eer": 0.09999999999999999,
+    "roc_auc": 0.9721814671814671,
+    "tpr_at_fpr10": 0.9071428571428571
+  },
+  "selected_frontier": {
+    "ai_macro_recall": 0.9214285714285716,
+    "ai_recall_by_family": {
+      "Adobe Firefly Image 5": 0.925,
+      "Gemini 3 Pro Image": 0.9,
+      "HiDream I1 Dev": 0.95,
+      "Ideogram 3": 0.9,
+      "Midjourney v7": 0.975,
+      "Reve Image 1.0": 0.9,
+      "Z Image Turbo": 0.9
+    },
+    "ai_worst_family_recall": 0.9,
+    "real_fp_by_source": {
+      "D14_Apple_iPhone13mini": 0.0,
+      "D27_DOOGEE_S96Pro": 0.0,
+      "D34_Google_Pixel5": 0.0,
+      "D43_OnePlus_8T": 0.0,
+      "owner_gallery": 0.2
+    },
+    "real_macro_fp": 0.04,
+    "real_worst_source_fp": 0.2,
+    "threshold": 0.6195540428161622
+  },
+  "schema_version": 1,
+  "state": "posthoc_diagnostic_not_e40_evidence"
+}

@@ -401,7 +401,7 @@ E39 population, E40 must improve source/content generalization without hiding th
 
 #### E40-C — robustness checks with already consumed/local data
 
-- [ ] Run grouped JPEG/resize derivatives as parent-linked stress tests and use the owner gallery
+- [x] Run grouped JPEG/resize derivatives as parent-linked stress tests and use the owner gallery
       only as a disclosed DEVELOPMENT smoke. Require no collapse toward either class; derivatives
       never inflate N and cannot promote the model.
       **Frozen implementation:** native, JPEG-q50 and 75%-resize+q50 views share the same 440 E39
@@ -410,6 +410,8 @@ E39 population, E40 must improve source/content generalization without hiding th
       hash-bound 210-photo owner gallery must remain <=20% FP; no row may tune E40.
 - [ ] Package the research candidate only if E40-A/B/C all pass. Record artifact, feature cache,
       replay selection, threshold and seed hashes in HISTORY/EXPERIMENTS/DATASETS.
+      **Measured stop:** transports pass strongly, but owner-gallery FP is 69.52% at the frozen
+      threshold, so E40-C fails and no `e40_candidate.joblib` is created. No retry is allowed.
 
 #### E40-D — stop at the next-data boundary
 
@@ -419,6 +421,25 @@ E39 population, E40 must improve source/content generalization without hiding th
 - [ ] Score that new FINAL exactly once and promote only if every original joint gate passes. E39
       rows, unused members from its same archive and extra FloreView rows are not substitutes for
       this final independence.
+
+### D3.11 — E41 broad-real threshold transfer, then new FINAL
+
+E40 repaired representation/head ranking and transport robustness, but its OOF threshold did not
+transfer to the owner's casual-gallery score scale. A sealed post-hoc diagnostic on consumed native
+scores finds a complete-gate frontier at 0.619554. This is not E40 evidence; E41 may package it only
+as a contaminated calibration candidate for a genuinely new FINAL.
+
+- [ ] Reclassify the 440 E39 native rows plus 210 owner-gallery rows as consumed
+      `E41_BROAD_REAL_CALIBRATION`; bind E40 draft, robustness report and score hashes. Derivatives
+      remain parent-linked stress evidence and never enter threshold selection.
+- [ ] Package the byte-identical uniform E40 head with the single diagnostic threshold
+      `0.6195540428161622`. Forbid retraining, another threshold, row filtering or web/API promotion.
+- [ ] Before transfer, freeze a disjoint E41 FINAL source contract: at least four new native
+      devices/sessions and six new generator/model-version cells, 40 parents/group, with licences,
+      scene/prompt provenance and exact/perceptual decontamination. E39 sources and the owner gallery
+      are forbidden.
+- [ ] Stop before downloading. When new data is authorized/available, acquire without model access,
+      freeze the unscored manifest, score once, and promote only if every original joint gate passes.
 
 ### D4 — close the slice reproducibly
 

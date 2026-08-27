@@ -2992,3 +2992,20 @@ was scored or selected using model output.
   unchanged threshold 0.170801. It cannot select or tune anything.
 - **Boundary:** method and code are committed before scores. A pass packages only a research
   candidate awaiting new FINAL; a fail stops without retry.
+
+### E40-C — robustness result and stop
+
+| Population/view | AUC | Bal. acc. | REAL macro/worst FP | AI macro/worst recall | Decision agreement |
+|---|---:|---:|---:|---:|---:|
+| E39 native (diagnostic) | 0.99955 | 0.95759 | 8.13% / 15.0% | 99.64% / 97.5% | reference |
+| E39 JPEG q50 | 0.99951 | 0.96696 | 6.25% / 15.0% | 99.64% / 97.5% | REAL 98.13%, AI 100% |
+| E39 resize75+q50 | 0.99949 | 0.96071 | 7.50% / 15.0% | 99.64% / 97.5% | REAL 98.13%, AI 100% |
+| owner gallery native | n/a | n/a | **69.52% aggregate** | n/a | n/a |
+
+- **Gate:** fail only on owner-gallery FP <=20%; 146/210 false AI, REAL recall 30.48%. No candidate
+  artifact exists and there is no retry/model switch.
+- **Bindings:** 487,011-byte score stream SHA-256 `a126e814...0e3b`; 23,591-byte report/evidence
+  SHA-256 `74e23b66...a463`.
+- **Post-hoc diagnostic only:** on 370 consumed REAL +280 consumed AI native scores, threshold
+  0.619554 would pass all gates: REAL 4%/20%, AI 92.14%/90%, AUC 0.97218, TPR@FPR10 0.90714,
+  EER 0.10, balanced 0.90396. It cannot change E40 and may only seed a new-final E41 contract.

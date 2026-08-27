@@ -3475,3 +3475,23 @@ Each derivative must retain fixed AUC/TPR/balanced/source floors and at least 80
 within both classes. The unchanged threshold must also keep the hash-bound 210-photo owner gallery
 at or below 20% false positives. Passing packages a research candidate only; it cannot serve or
 claim generalization until a new FINAL. Two focused robustness tests pass before pixel access.
+
+### E40-C result — transport passes, personal-gallery safety does not
+
+All 1,320 parent-linked E39 views and all 210 declared owner-gallery stills scored once at the
+unchanged 0.170801 threshold. JPEG q50 and resize75+q50 are stable: AUC 0.99951/0.99949, balanced
+accuracy 0.96696/0.96071, REAL macro/worst FP 6.25%/15.0% and 7.5%/15.0%, AI macro/worst recall
+99.64%/97.5% in both, and per-class decision agreement 98.13–100%.
+
+The owner gallery instead produces 146/210 false AI decisions, **69.52% FP** and only 30.48% REAL
+recall. This essentially reproduces the previous 68.57% warning: E40 learned the new FloreView phone
+distribution but not the broader casual personal-photo manifold. E40 is therefore
+`robustness_failed`; no research candidate was packaged, no product code changed and no FINAL data
+was downloaded. Score stream SHA-256 is `a126e814...0e3b`; sealed report/evidence SHA-256 is
+`74e23b66...a463`.
+
+After sealing the failure, a diagnostic combined the 440 native E39 draft scores with the 210
+gallery scores. Its first REAL-safe boundary is 0.619554: REAL macro/worst 4%/20%, AI macro/worst
+92.14%/90%, AUC 0.97218, TPR@FPR10 0.90714, EER 0.10 and balanced accuracy 0.90396. This proves a
+broad-real threshold candidate exists, but the number is contaminated and cannot rescue E40. It is
+recorded only to justify an explicit E41 calibration-transfer candidate and a wholly new FINAL.

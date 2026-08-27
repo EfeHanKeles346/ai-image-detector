@@ -951,3 +951,9 @@ E40-C introduces no new dataset. It reuses all 440 E39 parents under two determi
 linked transport views and the already-consumed 210-photo owner-gallery DEVELOPMENT smoke (identity
 SHA-256 `390e3c21...ac09`). The one declared extra WhatsApp reserve remains excluded and unscored.
 No derivative changes the unique-parent count, and no gallery or derivative row can become FINAL.
+
+E40-C scored exactly 1,320 parent-linked E39 views (440 unique parents x3 transports) and 210
+owner-gallery parents. The output is derived DEVELOPMENT only; score stream is 487,011 B / SHA-256
+`a126e814...0e3b`. The one reserve remains excluded. After the sealed failure, only the 440 native
+E39 rows and 210 gallery parents entered a post-hoc threshold diagnostic; both populations were
+already consumed. No image role was upgraded and no new data was acquired.
