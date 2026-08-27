@@ -38,11 +38,12 @@ def test_texture_crops_are_three_deterministic_224_rgb_arrays() -> None:
 
 
 def test_every_transport_decodes_to_rgb() -> None:
-    image = Image.new("RGB", (320, 240), (10, 20, 30))
+    image = Image.new("RGB", (3000, 2200), (10, 20, 30))
     for condition in ("clean", *TRANSPORTS):
         result = transport_image(image, condition)
         assert result.mode == "RGB"
         assert result.width > 0 and result.height > 0
+        assert max(result.size) <= 2048
 
 
 def test_intermediate_crop_aggregation_shape_and_values() -> None:

@@ -97,7 +97,7 @@ def _encoded(image: Image.Image, format_name: str, quality: int) -> Image.Image:
 
 
 def transport_image(image: Image.Image, condition: str) -> Image.Image:
-    oriented = ImageOps.exif_transpose(image).convert("RGB")
+    oriented = _cap_long_side(ImageOps.exif_transpose(image).convert("RGB"))
     if condition == "clean":
         return oriented.copy()
     if condition == "jpeg":
@@ -114,7 +114,7 @@ def transport_image(image: Image.Image, condition: str) -> Image.Image:
     raise ValueError(f"unknown E42 transport: {condition}")
 
 
-def _cap_and_floor(image: Image.Image) -> Image.Image:
+def _cap_long_side(image: Image.Image) -> Image.Image:
     result = image
     long_side = max(result.size)
     if long_side > MAX_LONG_SIDE:
@@ -123,6 +123,11 @@ def _cap_and_floor(image: Image.Image) -> Image.Image:
             (max(1, round(result.width * scale)), max(1, round(result.height * scale))),
             Image.Resampling.LANCZOS,
         )
+    return result
+
+
+def _cap_and_floor(image: Image.Image) -> Image.Image:
+    result = _cap_long_side(image)
     short_side = min(result.size)
     if short_side < CROP_SIZE:
         scale = CROP_SIZE / short_side

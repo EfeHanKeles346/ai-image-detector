@@ -3677,3 +3677,10 @@ symmetry/cardinality, deterministic crop geometry, all transports and aggregatio
 224px smoke inference confirms the small 4x384 and large 4x1024 intermediate-token contracts; no
 project image, label outcome or classifier score was accessed. Feature code is committed before a
 real E42 cache may be created.
+
+The first DINOv2-S cache run was interrupted at 4,464/20,506 views before any output file existed.
+Timing exposed that JPEG/WebP/blur was being computed on full 12–48 MP inputs and only then capped,
+even though the frozen inference contract requires a 2048px safety cap before 224px crops. The cap
+is now applied once before every transport, with a regression assertion for all five conditions.
+This changes no declared view, crop, label or model feature; it removes discarded computation. No
+partial feature archive/evidence exists, so the optimized run begins from a clean write-once state.
