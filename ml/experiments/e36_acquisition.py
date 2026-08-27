@@ -256,12 +256,18 @@ def download_cal(workers: int = 8) -> dict[str, Any]:
     if shutil.disk_usage(ROOT).free < MIN_FREE_BYTES + 8 * 1024**3:
         raise OSError("E36 free-space floor is not satisfied")
     real_states = {}
-    for name in CAL_REAL:
-        item = selection["real"]["archives"][name]
-        if item["role"] != "cal":
-            raise ValueError("FINAL REAL archive reached CAL downloader")
-        real_states[name] = _curl_verified(item, ROOT / "archives" / name, "md5")
-        print(f"E36 REAL CAL {name} complete", flush=True)
+    real_items = {name: selection["real"]["archives"][name] for name in CAL_REAL}
+    if any(item["role"] != "cal" for item in real_items.values()):
+        raise ValueError("FINAL REAL archive reached CAL downloader")
+    with ThreadPoolExecutor(max_workers=min(workers, len(real_items))) as executor:
+        real_futures = {
+            executor.submit(_curl_verified, item, ROOT / "archives" / name, "md5"): name
+            for name, item in real_items.items()
+        }
+        for future in as_completed(real_futures):
+            name = real_futures[future]
+            real_states[name] = future.result()
+            print(f"E36 REAL CAL {name} complete", flush=True)
     ai_rows = selection["ai"]["rows"]["cal"]
     if any(row["role"] != "cal" for row in ai_rows):
         raise ValueError("FINAL AI row reached CAL downloader")
