@@ -939,3 +939,10 @@ The E39 consumed-image feature cache now exists at
 SHA-256 `ec0501713a966b1ceaef41539907638b26440c4c3b1f39f69a8de5ff0c794e68`. It contains one embedding,
 record ID, label and source per frozen parent—no image copy and no extra row. This is development
 material only; `evidence/e40_features.json` records the compact binding.
+
+E40 training used exactly the preregistered existing rows: 1,067 E32 TRAIN replay features, all
+1,071 E36 consumed development features and all 440 E39 consumed rows under source-held-out OOF.
+The sorted replay-ID list binds to SHA-256 `646a85a2...e13b`. No new image was downloaded, copied or
+promoted to a test role. The generated score streams and 12,690-byte draft remain under local
+`/Volumes/LaCie/pixelproof-datasets/e40/`; they are derived development artifacts, not datasets or
+independent evidence.

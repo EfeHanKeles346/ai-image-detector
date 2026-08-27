@@ -378,13 +378,13 @@ E39 population, E40 must improve source/content generalization without hiding th
       source-held-out folds so every AI family and every REAL device receives predictions from a
       head that did not see that source. Content clusters may weight training rows but must never
       select rows or define folds, because each FloreView device shares the same scene catalog.
-- [ ] Cluster frozen embeddings only to balance content, not to label/select examples. Use inverse
+- [x] Cluster frozen embeddings only to balance content, not to label/select examples. Use inverse
       class x source x content-cluster weighting so repeated FloreView scenes and generator prompt
       styles cannot dominate the decision boundary.
 
 #### E40-B — a small preregistered head ladder, not another sweep
 
-- [ ] Compare exactly three fixed linear heads on the same source-held-out predictions: uniform
+- [x] Compare exactly three fixed linear heads on the same source-held-out predictions: uniform
       modern replay, source-balanced replay and source+content-balanced replay. Reuse the unchanged
       DINO backbone and include a fixed 5% stratified replay buffer from historical E32 TRAIN to
       reduce forgetting; do not add DDA/CF-ViT score features or an ad-hoc ensemble.
@@ -392,10 +392,10 @@ E39 population, E40 must improve source/content generalization without hiding th
       seven source folds; C=0.01; 16 training-fold-only KMeans cells; primary seed 42; fixed
       simplest-first order uniform -> source -> source+content. Exact contract is
       `evidence/e40_fixed_contract.json` and must be committed before feature/scoring commands.
-- [ ] Select only by the complete frozen gate: coverage 100%, AUC >=0.90, TPR@FPR10 >=0.80,
+- [x] Select only by the complete frozen gate: coverage 100%, AUC >=0.90, TPR@FPR10 >=0.80,
       EER <=0.15, balanced accuracy >=0.85, REAL macro/worst FP <=10%/20%, AI macro/worst recall
       >=80%/60%. If none passes, stop E40 before refit; do not soften thresholds.
-- [ ] For a passing head, repeat three fixed seeds and require every seed to preserve the REAL and
+- [x] For a passing head, repeat three fixed seeds and require every seed to preserve the REAL and
       AI subgroup gates. Then refit one artifact on all consumed adaptation rows and freeze one OOF
       threshold; no E40 FINAL byte may exist yet.
 

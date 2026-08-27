@@ -3450,3 +3450,18 @@ The resulting 440x384 float32 archive is 642,070 bytes, SHA-256 `ec050171...94e6
 finite and all 440 record IDs are unique. Counts remain 160 REAL and 280 AI, with fold sizes
 80/80/80/80/40/40/40 under the frozen seven-source contract. No row was removed, clustered,
 weighted, fitted or scored by a classifier. Compact evidence is `evidence/e40_features.json`.
+
+### E40-B result — the simple head clears every development gate
+
+All three preregistered source-held-out heads passed without retry. Uniform weighting reached AUC
+0.99464, TPR@FPR10 0.98929, EER 0.03661 and balanced accuracy 0.94464. At its frozen threshold
+0.170801, REAL device-macro/worst FP is 10.0%/17.5% and AI family-macro/worst recall is
+98.93%/97.5%. Source-balanced was slightly stronger (AUC 0.99699), while source+content-balanced
+also passed (AUC 0.99071); the fixed simplest-first rule correctly selected uniform rather than
+optimizing after seeing scores.
+
+Seeds 41, 42 and 43 then reproduced the selected head and unchanged threshold exactly, each passing
+all nine gates. A 12,690-byte development draft was refit on the 1,067-row historical replay, all
+1,071 E36 rows and all 440 E39 rows; SHA-256 `72b8d8cd...819c0`. It is explicitly not packaged or
+served: E39 is consumed development, and E40-C local robustness plus a genuinely new FINAL are
+still required. Detailed development evidence SHA-256 is `93f98f07...ebcc`.

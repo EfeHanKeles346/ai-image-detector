@@ -2966,3 +2966,17 @@ was scored or selected using model output.
   `04d27f34...0081`, manifest `1076df20...7306`, role amendment `c475a529...2f0f`.
 - **Folds:** fixed assignments contain 80 rows in each paired REAL+AI fold and 40 in each of the
   remaining three AI-only folds. This checkpoint performs no clustering, fitting or scoring.
+
+### E40-B — three-head source-held-out result
+
+| Fixed head | Gate | AUC | TPR@FPR10 | EER | Bal. acc. | REAL macro/worst FP | AI macro/worst recall |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| uniform | pass | 0.99464 | 0.98929 | 0.03661 | 0.94464 | 10.0% / 17.5% | 98.93% / 97.5% |
+| source-balanced | pass | 0.99699 | 0.99286 | 0.02009 | 0.94643 | 10.0% / 17.5% | 99.29% / 97.5% |
+| source+content | pass | 0.99071 | 0.98571 | 0.05000 | 0.94286 | 10.0% / 15.0% | 98.57% / 95.0% |
+
+- **Selection:** fixed simplest-first priority selects `uniform`, threshold `0.1708009988`; no
+  post-result preference for the marginally stronger source-balanced score is permitted.
+- **Stability:** seeds 41/42/43 with that unchanged threshold are identical and pass all nine gates.
+- **Draft:** 12,690 B / SHA-256 `72b8d8cd...819c0`; detailed report/evidence is 61,190 B /
+  SHA-256 `93f98f07...ebcc`. Status is development draft, not FINAL-validated product.

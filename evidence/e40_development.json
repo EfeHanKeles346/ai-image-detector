@@ -1,0 +1,2163 @@
+{
+  "bindings": {
+    "e32_feature_archive_sha256": "ae1737f2114583e6c05c46b265bbda5bce3a2ac36464c84c70625b006a3416de",
+    "e36_feature_archive_sha256": "3a08e0dcacce6441efa0d422531871b964d100b126a6884715f5616c1a26f178",
+    "e39_feature_archive_sha256": "ec0501713a966b1ceaef41539907638b26440c4c3b1f39f69a8de5ff0c794e68",
+    "e39_manifest_sha256": "1076df20adc700a1893814e477891e9270e4f88502dbad2571e022f3a7127306",
+    "e40_role_amendment_sha256": "c475a529e9f9d03761d42bf021dd8a4ba5212b3a44c59d8fce508fc1fff62f0f",
+    "fixed_contract_sha256": "c97361960e38128339655bb5d97a373162338d936f6096aece1502bfec756bf6",
+    "replay_record_ids_sha256": "646a85a26859f77702932cc21443c3b07a850a6c6bd1c6bdd2a14826c3c8e13b"
+  },
+  "boundary": "Consumed development only. E39 is not independent evidence; no E40 FINAL data exists.",
+  "counts": {
+    "e32_replay": 1067,
+    "e36_adaptation": 1071,
+    "e39_adaptation_oof": 440
+  },
+  "draft": {
+    "bytes": 12690,
+    "path": "e40_head_draft.joblib",
+    "sha256": "72b8d8cd05f0f4d51ab5008e19bf4ab3418988b3444b2e640a25fdd0e54819c0",
+    "status": "not packaged; E40-C robustness still required"
+  },
+  "experiment": "E40/content-balanced-source-held-out-adaptation",
+  "model": {
+    "backbone": "vit_small_patch14_dinov2.lvd142m",
+    "c": 0.01,
+    "clusters": 16,
+    "primary_seed": 42,
+    "stability_seeds": [
+      41,
+      42,
+      43
+    ]
+  },
+  "primary_ladder": {
+    "source_balanced": {
+      "folds": [
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 0,
+          "held_ai_sources": [
+            "Adobe Firefly Image 5"
+          ],
+          "held_real_sources": [
+            "D14_Apple_iPhone13mini"
+          ],
+          "held_rows": 80,
+          "weight_max": 8.67361111111111,
+          "weight_min": 0.6505208333333333
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 1,
+          "held_ai_sources": [
+            "Gemini 3 Pro Image"
+          ],
+          "held_real_sources": [
+            "D27_DOOGEE_S96Pro"
+          ],
+          "held_rows": 80,
+          "weight_max": 8.67361111111111,
+          "weight_min": 0.6505208333333333
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 2,
+          "held_ai_sources": [
+            "HiDream I1 Dev"
+          ],
+          "held_real_sources": [
+            "D34_Google_Pixel5"
+          ],
+          "held_rows": 80,
+          "weight_max": 8.67361111111111,
+          "weight_min": 0.6505208333333333
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 3,
+          "held_ai_sources": [
+            "Ideogram 3"
+          ],
+          "held_real_sources": [
+            "D43_OnePlus_8T"
+          ],
+          "held_rows": 80,
+          "weight_max": 8.67361111111111,
+          "weight_min": 0.6505208333333333
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 4,
+          "held_ai_sources": [
+            "Midjourney v7"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 8.8125,
+          "weight_min": 0.6100961538461539
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 5,
+          "held_ai_sources": [
+            "Reve Image 1.0"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 8.8125,
+          "weight_min": 0.6100961538461539
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 6,
+          "held_ai_sources": [
+            "Z Image Turbo"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 8.8125,
+          "weight_min": 0.6100961538461539
+        }
+      ],
+      "gate": {
+        "checks": {
+          "ai_macro_recall_gte_0.80": true,
+          "ai_worst_family_recall_gte_0.60": true,
+          "balanced_accuracy_gte_0.85": true,
+          "coverage_eq_1": true,
+          "eer_lte_0.15": true,
+          "real_macro_fp_lte_0.10": true,
+          "real_worst_device_fp_lte_0.20": true,
+          "roc_auc_gte_0.90": true,
+          "tpr_at_fpr10_gte_0.80": true
+        },
+        "passed": true
+      },
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9590909090909091,
+        "ai_recall": 0.9928571428571429,
+        "balanced_accuracy": 0.9464285714285714,
+        "brier_nontarget_real": 0.0067920853455218,
+        "brier_target_ai": 0.06051020605096606,
+        "confusion": {
+          "fn": 2,
+          "fp": 16,
+          "tn": 144,
+          "tp": 278
+        },
+        "counts": {
+          "ai_succeeded": 280,
+          "failed": 0,
+          "real_succeeded": 160,
+          "succeeded": 440,
+          "total": 440
+        },
+        "coverage": 1.0,
+        "eer": 0.020089285714285733,
+        "per_group": [
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 2,
+              "tn": 38,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.05,
+            "source": "D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 5,
+              "tn": 35,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.125,
+            "source": "D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 7,
+              "tn": 33,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.175,
+            "source": "D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 2,
+              "tn": 38,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.05,
+            "source": "D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Midjourney v7"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Z Image Turbo"
+          }
+        ],
+        "real_false_positive_rate": 0.1,
+        "roc_auc": 0.9969866071428571,
+        "stored_threshold": 0.10666423290967943,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9928571428571429
+        }
+      },
+      "scores_sha256": "9ffdae23032a7287815b5b7031c5e48b06ca7cb50023785d1e0fe3f66c3f3389",
+      "selected_frontier": {
+        "ai_macro_recall": 0.9928571428571428,
+        "ai_recall_by_family": {
+          "Adobe Firefly Image 5": 1.0,
+          "Gemini 3 Pro Image": 0.975,
+          "HiDream I1 Dev": 1.0,
+          "Ideogram 3": 1.0,
+          "Midjourney v7": 1.0,
+          "Reve Image 1.0": 0.975,
+          "Z Image Turbo": 1.0
+        },
+        "ai_worst_family_recall": 0.975,
+        "real_fp_by_device": {
+          "D14_Apple_iPhone13mini": 0.05,
+          "D27_DOOGEE_S96Pro": 0.125,
+          "D34_Google_Pixel5": 0.175,
+          "D43_OnePlus_8T": 0.05
+        },
+        "real_macro_fp": 0.09999999999999999,
+        "real_worst_device_fp": 0.175,
+        "threshold": 0.10666423290967943
+      }
+    },
+    "source_content_balanced": {
+      "folds": [
+        {
+          "cluster": {
+            "inertia": 2582431.5,
+            "occupied": 16
+          },
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 0,
+          "held_ai_sources": [
+            "Adobe Firefly Image 5"
+          ],
+          "held_real_sources": [
+            "D14_Apple_iPhone13mini"
+          ],
+          "held_rows": 80,
+          "weight_max": 14.869047619047619,
+          "weight_min": 0.10174323884001303
+        },
+        {
+          "cluster": {
+            "inertia": 2579257.75,
+            "occupied": 16
+          },
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 1,
+          "held_ai_sources": [
+            "Gemini 3 Pro Image"
+          ],
+          "held_real_sources": [
+            "D27_DOOGEE_S96Pro"
+          ],
+          "held_rows": 80,
+          "weight_max": 20.816666666666666,
+          "weight_min": 0.11120014245014245
+        },
+        {
+          "cluster": {
+            "inertia": 2590186.25,
+            "occupied": 16
+          },
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 2,
+          "held_ai_sources": [
+            "HiDream I1 Dev"
+          ],
+          "held_real_sources": [
+            "D34_Google_Pixel5"
+          ],
+          "held_rows": 80,
+          "weight_max": 20.816666666666666,
+          "weight_min": 0.12368785898197662
+        },
+        {
+          "cluster": {
+            "inertia": 2578273.75,
+            "occupied": 16
+          },
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 3,
+          "held_ai_sources": [
+            "Ideogram 3"
+          ],
+          "held_real_sources": [
+            "D43_OnePlus_8T"
+          ],
+          "held_rows": 80,
+          "weight_max": 20.816666666666666,
+          "weight_min": 0.14701035781544255
+        },
+        {
+          "cluster": {
+            "inertia": 2639018.75,
+            "occupied": 16
+          },
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 4,
+          "held_ai_sources": [
+            "Midjourney v7"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 24.403846153846157,
+          "weight_min": 0.13932806324110672
+        },
+        {
+          "cluster": {
+            "inertia": 2649035.0,
+            "occupied": 16
+          },
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 5,
+          "held_ai_sources": [
+            "Reve Image 1.0"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 16.26923076923077,
+          "weight_min": 0.08841973244147157
+        },
+        {
+          "cluster": {
+            "inertia": 2649389.5,
+            "occupied": 16
+          },
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 6,
+          "held_ai_sources": [
+            "Z Image Turbo"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 17.625,
+          "weight_min": 0.09920262664165103
+        }
+      ],
+      "gate": {
+        "checks": {
+          "ai_macro_recall_gte_0.80": true,
+          "ai_worst_family_recall_gte_0.60": true,
+          "balanced_accuracy_gte_0.85": true,
+          "coverage_eq_1": true,
+          "eer_lte_0.15": true,
+          "real_macro_fp_lte_0.10": true,
+          "real_worst_device_fp_lte_0.20": true,
+          "roc_auc_gte_0.90": true,
+          "tpr_at_fpr10_gte_0.80": true
+        },
+        "passed": true
+      },
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9545454545454546,
+        "ai_recall": 0.9857142857142858,
+        "balanced_accuracy": 0.9428571428571428,
+        "brier_nontarget_real": 0.01580968663588741,
+        "brier_target_ai": 0.07361624575621149,
+        "confusion": {
+          "fn": 4,
+          "fp": 16,
+          "tn": 144,
+          "tp": 276
+        },
+        "counts": {
+          "ai_succeeded": 280,
+          "failed": 0,
+          "real_succeeded": 160,
+          "succeeded": 440,
+          "total": 440
+        },
+        "coverage": 1.0,
+        "eer": 0.050000000000000024,
+        "per_group": [
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 4,
+              "tn": 36,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.1,
+            "source": "D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 6,
+              "tn": 34,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.15,
+            "source": "D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 6,
+              "tn": 34,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.15,
+            "source": "D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.95,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 2,
+              "fp": 0,
+              "tn": 0,
+              "tp": 38
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Midjourney v7"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Z Image Turbo"
+          }
+        ],
+        "real_false_positive_rate": 0.1,
+        "roc_auc": 0.9907142857142857,
+        "stored_threshold": 0.19083465635776523,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9857142857142858
+        }
+      },
+      "scores_sha256": "98aa745429f6b33132ec9344a9b62d70c0a731b2c2184fe83411464464c0e101",
+      "selected_frontier": {
+        "ai_macro_recall": 0.9857142857142857,
+        "ai_recall_by_family": {
+          "Adobe Firefly Image 5": 1.0,
+          "Gemini 3 Pro Image": 0.95,
+          "HiDream I1 Dev": 0.975,
+          "Ideogram 3": 1.0,
+          "Midjourney v7": 1.0,
+          "Reve Image 1.0": 0.975,
+          "Z Image Turbo": 1.0
+        },
+        "ai_worst_family_recall": 0.95,
+        "real_fp_by_device": {
+          "D14_Apple_iPhone13mini": 0.1,
+          "D27_DOOGEE_S96Pro": 0.15,
+          "D34_Google_Pixel5": 0.15,
+          "D43_OnePlus_8T": 0.0
+        },
+        "real_macro_fp": 0.1,
+        "real_worst_device_fp": 0.15,
+        "threshold": 0.19083465635776523
+      }
+    },
+    "uniform": {
+      "folds": [
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 0,
+          "held_ai_sources": [
+            "Adobe Firefly Image 5"
+          ],
+          "held_real_sources": [
+            "D14_Apple_iPhone13mini"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 1,
+          "held_ai_sources": [
+            "Gemini 3 Pro Image"
+          ],
+          "held_real_sources": [
+            "D27_DOOGEE_S96Pro"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 2,
+          "held_ai_sources": [
+            "HiDream I1 Dev"
+          ],
+          "held_real_sources": [
+            "D34_Google_Pixel5"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 3,
+          "held_ai_sources": [
+            "Ideogram 3"
+          ],
+          "held_real_sources": [
+            "D43_OnePlus_8T"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 4,
+          "held_ai_sources": [
+            "Midjourney v7"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 5,
+          "held_ai_sources": [
+            "Reve Image 1.0"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 6,
+          "held_ai_sources": [
+            "Z Image Turbo"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        }
+      ],
+      "gate": {
+        "checks": {
+          "ai_macro_recall_gte_0.80": true,
+          "ai_worst_family_recall_gte_0.60": true,
+          "balanced_accuracy_gte_0.85": true,
+          "coverage_eq_1": true,
+          "eer_lte_0.15": true,
+          "real_macro_fp_lte_0.10": true,
+          "real_worst_device_fp_lte_0.20": true,
+          "roc_auc_gte_0.90": true,
+          "tpr_at_fpr10_gte_0.80": true
+        },
+        "passed": true
+      },
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9568181818181818,
+        "ai_recall": 0.9892857142857143,
+        "balanced_accuracy": 0.9446428571428571,
+        "brier_nontarget_real": 0.012721667352393348,
+        "brier_target_ai": 0.06426359851516689,
+        "confusion": {
+          "fn": 3,
+          "fp": 16,
+          "tn": 144,
+          "tp": 277
+        },
+        "counts": {
+          "ai_succeeded": 280,
+          "failed": 0,
+          "real_succeeded": 160,
+          "succeeded": 440,
+          "total": 440
+        },
+        "coverage": 1.0,
+        "eer": 0.03660714285714285,
+        "per_group": [
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 3,
+              "tn": 37,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.075,
+            "source": "D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 6,
+              "tn": 34,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.15,
+            "source": "D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 7,
+              "tn": 33,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.175,
+            "source": "D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Midjourney v7"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Z Image Turbo"
+          }
+        ],
+        "real_false_positive_rate": 0.1,
+        "roc_auc": 0.9946428571428572,
+        "stored_threshold": 0.17080099880695346,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9892857142857143
+        }
+      },
+      "scores_sha256": "f56112195a63c97759025205ac815ec805a435743f6dabe1e8643004c5596d52",
+      "selected_frontier": {
+        "ai_macro_recall": 0.9892857142857142,
+        "ai_recall_by_family": {
+          "Adobe Firefly Image 5": 1.0,
+          "Gemini 3 Pro Image": 0.975,
+          "HiDream I1 Dev": 0.975,
+          "Ideogram 3": 1.0,
+          "Midjourney v7": 1.0,
+          "Reve Image 1.0": 0.975,
+          "Z Image Turbo": 1.0
+        },
+        "ai_worst_family_recall": 0.975,
+        "real_fp_by_device": {
+          "D14_Apple_iPhone13mini": 0.075,
+          "D27_DOOGEE_S96Pro": 0.15,
+          "D34_Google_Pixel5": 0.175,
+          "D43_OnePlus_8T": 0.0
+        },
+        "real_macro_fp": 0.09999999999999999,
+        "real_worst_device_fp": 0.175,
+        "threshold": 0.17080099880695346
+      }
+    }
+  },
+  "schema_version": 1,
+  "selected_mode": "uniform",
+  "stability": {
+    "41": {
+      "folds": [
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 0,
+          "held_ai_sources": [
+            "Adobe Firefly Image 5"
+          ],
+          "held_real_sources": [
+            "D14_Apple_iPhone13mini"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 1,
+          "held_ai_sources": [
+            "Gemini 3 Pro Image"
+          ],
+          "held_real_sources": [
+            "D27_DOOGEE_S96Pro"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 2,
+          "held_ai_sources": [
+            "HiDream I1 Dev"
+          ],
+          "held_real_sources": [
+            "D34_Google_Pixel5"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 3,
+          "held_ai_sources": [
+            "Ideogram 3"
+          ],
+          "held_real_sources": [
+            "D43_OnePlus_8T"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 4,
+          "held_ai_sources": [
+            "Midjourney v7"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 5,
+          "held_ai_sources": [
+            "Reve Image 1.0"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 6,
+          "held_ai_sources": [
+            "Z Image Turbo"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        }
+      ],
+      "gate": {
+        "checks": {
+          "ai_macro_recall_gte_0.80": true,
+          "ai_worst_family_recall_gte_0.60": true,
+          "balanced_accuracy_gte_0.85": true,
+          "coverage_eq_1": true,
+          "eer_lte_0.15": true,
+          "real_macro_fp_lte_0.10": true,
+          "real_worst_device_fp_lte_0.20": true,
+          "roc_auc_gte_0.90": true,
+          "tpr_at_fpr10_gte_0.80": true
+        },
+        "passed": true
+      },
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9568181818181818,
+        "ai_recall": 0.9892857142857143,
+        "balanced_accuracy": 0.9446428571428571,
+        "brier_nontarget_real": 0.012721667352393348,
+        "brier_target_ai": 0.06426359851516689,
+        "confusion": {
+          "fn": 3,
+          "fp": 16,
+          "tn": 144,
+          "tp": 277
+        },
+        "counts": {
+          "ai_succeeded": 280,
+          "failed": 0,
+          "real_succeeded": 160,
+          "succeeded": 440,
+          "total": 440
+        },
+        "coverage": 1.0,
+        "eer": 0.03660714285714285,
+        "per_group": [
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 3,
+              "tn": 37,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.075,
+            "source": "D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 6,
+              "tn": 34,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.15,
+            "source": "D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 7,
+              "tn": 33,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.175,
+            "source": "D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Midjourney v7"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Z Image Turbo"
+          }
+        ],
+        "real_false_positive_rate": 0.1,
+        "roc_auc": 0.9946428571428572,
+        "stored_threshold": 0.17080099880695346,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9892857142857143
+        }
+      },
+      "scores_sha256": "f56112195a63c97759025205ac815ec805a435743f6dabe1e8643004c5596d52",
+      "selected_frontier": {
+        "ai_macro_recall": 0.9892857142857142,
+        "ai_recall_by_family": {
+          "Adobe Firefly Image 5": 1.0,
+          "Gemini 3 Pro Image": 0.975,
+          "HiDream I1 Dev": 0.975,
+          "Ideogram 3": 1.0,
+          "Midjourney v7": 1.0,
+          "Reve Image 1.0": 0.975,
+          "Z Image Turbo": 1.0
+        },
+        "ai_worst_family_recall": 0.975,
+        "real_fp_by_device": {
+          "D14_Apple_iPhone13mini": 0.075,
+          "D27_DOOGEE_S96Pro": 0.15,
+          "D34_Google_Pixel5": 0.175,
+          "D43_OnePlus_8T": 0.0
+        },
+        "real_macro_fp": 0.09999999999999999,
+        "real_worst_device_fp": 0.175,
+        "threshold": 0.17080099880695346
+      }
+    },
+    "42": {
+      "folds": [
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 0,
+          "held_ai_sources": [
+            "Adobe Firefly Image 5"
+          ],
+          "held_real_sources": [
+            "D14_Apple_iPhone13mini"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 1,
+          "held_ai_sources": [
+            "Gemini 3 Pro Image"
+          ],
+          "held_real_sources": [
+            "D27_DOOGEE_S96Pro"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 2,
+          "held_ai_sources": [
+            "HiDream I1 Dev"
+          ],
+          "held_real_sources": [
+            "D34_Google_Pixel5"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 3,
+          "held_ai_sources": [
+            "Ideogram 3"
+          ],
+          "held_real_sources": [
+            "D43_OnePlus_8T"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 4,
+          "held_ai_sources": [
+            "Midjourney v7"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 5,
+          "held_ai_sources": [
+            "Reve Image 1.0"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 6,
+          "held_ai_sources": [
+            "Z Image Turbo"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        }
+      ],
+      "gate": {
+        "checks": {
+          "ai_macro_recall_gte_0.80": true,
+          "ai_worst_family_recall_gte_0.60": true,
+          "balanced_accuracy_gte_0.85": true,
+          "coverage_eq_1": true,
+          "eer_lte_0.15": true,
+          "real_macro_fp_lte_0.10": true,
+          "real_worst_device_fp_lte_0.20": true,
+          "roc_auc_gte_0.90": true,
+          "tpr_at_fpr10_gte_0.80": true
+        },
+        "passed": true
+      },
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9568181818181818,
+        "ai_recall": 0.9892857142857143,
+        "balanced_accuracy": 0.9446428571428571,
+        "brier_nontarget_real": 0.012721667352393348,
+        "brier_target_ai": 0.06426359851516689,
+        "confusion": {
+          "fn": 3,
+          "fp": 16,
+          "tn": 144,
+          "tp": 277
+        },
+        "counts": {
+          "ai_succeeded": 280,
+          "failed": 0,
+          "real_succeeded": 160,
+          "succeeded": 440,
+          "total": 440
+        },
+        "coverage": 1.0,
+        "eer": 0.03660714285714285,
+        "per_group": [
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 3,
+              "tn": 37,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.075,
+            "source": "D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 6,
+              "tn": 34,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.15,
+            "source": "D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 7,
+              "tn": 33,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.175,
+            "source": "D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Midjourney v7"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Z Image Turbo"
+          }
+        ],
+        "real_false_positive_rate": 0.1,
+        "roc_auc": 0.9946428571428572,
+        "stored_threshold": 0.17080099880695346,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9892857142857143
+        }
+      },
+      "scores_sha256": "f56112195a63c97759025205ac815ec805a435743f6dabe1e8643004c5596d52",
+      "selected_frontier": {
+        "ai_macro_recall": 0.9892857142857142,
+        "ai_recall_by_family": {
+          "Adobe Firefly Image 5": 1.0,
+          "Gemini 3 Pro Image": 0.975,
+          "HiDream I1 Dev": 0.975,
+          "Ideogram 3": 1.0,
+          "Midjourney v7": 1.0,
+          "Reve Image 1.0": 0.975,
+          "Z Image Turbo": 1.0
+        },
+        "ai_worst_family_recall": 0.975,
+        "real_fp_by_device": {
+          "D14_Apple_iPhone13mini": 0.075,
+          "D27_DOOGEE_S96Pro": 0.15,
+          "D34_Google_Pixel5": 0.175,
+          "D43_OnePlus_8T": 0.0
+        },
+        "real_macro_fp": 0.09999999999999999,
+        "real_worst_device_fp": 0.175,
+        "threshold": 0.17080099880695346
+      }
+    },
+    "43": {
+      "folds": [
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 0,
+          "held_ai_sources": [
+            "Adobe Firefly Image 5"
+          ],
+          "held_real_sources": [
+            "D14_Apple_iPhone13mini"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 1,
+          "held_ai_sources": [
+            "Gemini 3 Pro Image"
+          ],
+          "held_real_sources": [
+            "D27_DOOGEE_S96Pro"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 2,
+          "held_ai_sources": [
+            "HiDream I1 Dev"
+          ],
+          "held_real_sources": [
+            "D34_Google_Pixel5"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 360,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2498,
+          "fold": 3,
+          "held_ai_sources": [
+            "Ideogram 3"
+          ],
+          "held_real_sources": [
+            "D43_OnePlus_8T"
+          ],
+          "held_rows": 80,
+          "weight_max": 1.0365145228215766,
+          "weight_min": 0.9659706109822119
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 4,
+          "held_ai_sources": [
+            "Midjourney v7"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 5,
+          "held_ai_sources": [
+            "Reve Image 1.0"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        },
+        {
+          "cluster": null,
+          "fit_e36_rows": 1071,
+          "fit_e39_rows": 400,
+          "fit_replay_rows": 1067,
+          "fit_rows": 2538,
+          "fold": 6,
+          "held_ai_sources": [
+            "Z Image Turbo"
+          ],
+          "held_real_sources": [],
+          "held_rows": 40,
+          "weight_max": 1.0192771084337349,
+          "weight_min": 0.9814385150812064
+        }
+      ],
+      "gate": {
+        "checks": {
+          "ai_macro_recall_gte_0.80": true,
+          "ai_worst_family_recall_gte_0.60": true,
+          "balanced_accuracy_gte_0.85": true,
+          "coverage_eq_1": true,
+          "eer_lte_0.15": true,
+          "real_macro_fp_lte_0.10": true,
+          "real_worst_device_fp_lte_0.20": true,
+          "roc_auc_gte_0.90": true,
+          "tpr_at_fpr10_gte_0.80": true
+        },
+        "passed": true
+      },
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9568181818181818,
+        "ai_recall": 0.9892857142857143,
+        "balanced_accuracy": 0.9446428571428571,
+        "brier_nontarget_real": 0.012721667352393348,
+        "brier_target_ai": 0.06426359851516689,
+        "confusion": {
+          "fn": 3,
+          "fp": 16,
+          "tn": 144,
+          "tp": 277
+        },
+        "counts": {
+          "ai_succeeded": 280,
+          "failed": 0,
+          "real_succeeded": 160,
+          "succeeded": 440,
+          "total": 440
+        },
+        "coverage": 1.0,
+        "eer": 0.03660714285714285,
+        "per_group": [
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 3,
+              "tn": 37,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.075,
+            "source": "D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 6,
+              "tn": 34,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.15,
+            "source": "D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 7,
+              "tn": 33,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.175,
+            "source": "D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "camera_native_outdoor",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Midjourney v7"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean_generator_output",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "Z Image Turbo"
+          }
+        ],
+        "real_false_positive_rate": 0.1,
+        "roc_auc": 0.9946428571428572,
+        "stored_threshold": 0.17080099880695346,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 0.9892857142857143
+        }
+      },
+      "scores_sha256": "f56112195a63c97759025205ac815ec805a435743f6dabe1e8643004c5596d52",
+      "selected_frontier": {
+        "ai_macro_recall": 0.9892857142857142,
+        "ai_recall_by_family": {
+          "Adobe Firefly Image 5": 1.0,
+          "Gemini 3 Pro Image": 0.975,
+          "HiDream I1 Dev": 0.975,
+          "Ideogram 3": 1.0,
+          "Midjourney v7": 1.0,
+          "Reve Image 1.0": 0.975,
+          "Z Image Turbo": 1.0
+        },
+        "ai_worst_family_recall": 0.975,
+        "real_fp_by_device": {
+          "D14_Apple_iPhone13mini": 0.075,
+          "D27_DOOGEE_S96Pro": 0.15,
+          "D34_Google_Pixel5": 0.175,
+          "D43_OnePlus_8T": 0.0
+        },
+        "real_macro_fp": 0.09999999999999999,
+        "real_worst_device_fp": 0.175,
+        "threshold": 0.17080099880695346
+      }
+    }
+  },
+  "state": "development_gate_passed_draft_frozen"
+}
