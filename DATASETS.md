@@ -706,7 +706,7 @@ REAL-safe threshold was 0.998400 with 10.0% REAL FP but only 52.0% pooled AI rec
 scenario-macro recall and 26.88% worst-scenario recall. The 20.12 GB RR locked test archive remains
 undownloaded and unopened.
 
-### E34/R1c-P aligned-pair source — proposed before bytes (2026-08-27)
+### E34 official DDA aligned benchmark — frozen before bytes (2026-08-27)
 
 The next data is not another unrelated AI pile. The selected candidate is the official NeurIPS
 2025 **DDA-COCO** release (`Junwei-Xi/DDA-COCO`) at revision
@@ -716,9 +716,17 @@ The next data is not another unrelated AI pile. The selected candidate is the of
 MS-COCO validation reals and semantically corresponding synthetic VAE reconstructions across five
 alignment variants, directly targeting the semantic/frequency shortcut revealed by R1b/E33.
 
-PixelProof will use it only as a pair-preserving TRAIN/CAL candidate after archive safety,
-parent-link and protected-hash audits. Once used for fitting, PixelProof will make no DDA benchmark
-claim. The target is a deterministic 2,000–4,000-pair subset rather than all rows; variants of one
-COCO parent stay in one role. Detailed metadata selection is 916 B / SHA-256
+The first metadata plan treated the compact aligned archive as a possible pair source. Primary
+official code documentation corrected that before any member was opened: DDA-COCO is an evaluation
+benchmark, while `DDA-Training-Set` is the fitting source. The latter is roughly 112.97 GB in a
+mandatory split ZIP (ten 10 GiB parts plus a 5.59 GB final part), so it is deferred rather than
+quietly training on test data. DDA-COCO remains locked for the official pretrained DDA candidate.
+Detailed metadata selection is 916 B / SHA-256
 `f0bc21a7...5184`; compact evidence is `evidence/e34_dda_acquisition.json`. No image byte existed
 at this preregistration.
+
+The corresponding official model candidate is `Junwei-Xi/Dual-Data-Alignment`, revision
+`4390d9023899196b437480bb6a441915ef5d816c`, Apache-2.0. Its `DDA_ckpt.pth` is 1,255,621,296 B with
+Xet SHA-256 `b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e` and uses a
+DINOv2-L/14 LoRA detector. It is the next compact candidate; it must be pinned and tested before
+DDA-COCO is opened.

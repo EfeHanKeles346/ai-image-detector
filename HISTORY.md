@@ -3129,3 +3129,12 @@ parallel recovery pattern proven on CSAFE: split only the exact remaining interv
 into a new file, verify whole-file size/SHA-256, atomically promote, then remove temporary pieces.
 No DDA archive member was opened and the preserved prefix could not be mistaken for a completed
 archive.
+
+A follow-up read of the official DDA repository corrected the E34 role before any member was
+opened: DDA-COCO is explicitly an evaluation benchmark. The actual official training release is a
+~112.97 GB split ZIP, so using the 4.30 GB benchmark as a convenient training subset would be test
+contamination. PixelProof therefore keeps DDA-COCO locked, defers the full training release to
+home internet, and preregisters the official Apache-2.0 DDA checkpoint as the next compact
+candidate (1,255,621,296 B, revision `4390d902...16c`, SHA-256 `b27a31d3...e3e`). This correction
+changes no measured result and preserves the already-downloaded partial only as unopened benchmark
+bytes.

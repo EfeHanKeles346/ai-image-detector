@@ -104,24 +104,29 @@ unrelated personal, academic or EOE material.
       No 20.12 GB locked-test byte was downloaded because the prerequisite candidate does not
       exist.
 
-### D3.5 — open R1c-P with licensed aligned pairs, not another threshold sweep
+### D3.5 — evaluate official DDA before paying the 113 GB training-data cost
 
-- [ ] Freeze official NeurIPS 2025 `Junwei-Xi/DDA-COCO` at Hugging Face revision
+- [x] Freeze official NeurIPS 2025 `Junwei-Xi/DDA-COCO` at Hugging Face revision
       `8c9330a3...68fb`: Apache-2.0, one 4,301,452,066-byte ZIP, Xet SHA-256
       `8cd60077...9c24`. It contains MS-COCO validation reals and corresponding VAE reconstructions
-      across five alignment variants. Treat it as TRAIN/CAL candidate, never as an untouched DDA
-      benchmark after training on it.
-- [ ] Download resumably to `/Volumes/LaCie/pixelproof-datasets/e34_dda_coco/`, verify size/SHA-256,
-      run the ZIP safety inventory, and freeze exact parent links before extraction. Decontaminate
-      every proposed pair against E30/E32 protected hashes and the now-consumed RR validation rows.
-- [ ] Select a compact 2,000–4,000-pair source-balanced subset before model scores. Put complete
-      real/reconstruction parent groups into deterministic TRAIN/CAL roles; never let two VAE
-      variants of one COCO parent cross roles. Standardize both labels identically.
-- [ ] Reuse frozen CF-ViT first. Compare only the unchanged R1b linear-head baseline against one
-      source-balanced head trained with the aligned DDA pairs plus a capped modern-AI regularizer.
-      Freeze seed 2024/C-grid/role hashes before features. A clean new CAL selects threshold;
-      consumed RR validation, IPN and owner gallery can reject but never tune. Only a pass may
-      unlock another locked benchmark or API/web promotion.
+      across five alignment variants. Official project documentation identifies this as an
+      **evaluation benchmark**, not the training release; keep it locked and never fit on it.
+- [ ] Download resumably to `/Volumes/LaCie/pixelproof-datasets/e34_dda_coco/`, verify size/SHA-256
+      and run ZIP safety inventory, but do not extract/open members before a DDA candidate contract.
+      The official DDA training set is Apache-2.0 but consists of ten 10,737,418,240-byte parts plus
+      a 5,591,345,987-byte final ZIP (~112.97 GB); this violates the current minimum-data objective
+      and is deferred to full home internet.
+- [ ] Freeze the official `Junwei-Xi/Dual-Data-Alignment` checkpoint at revision
+      `4390d902...16c`, Apache-2.0, `DDA_ckpt.pth` 1,255,621,296 B / SHA-256
+      `b27a31d3...e3e`. Vendor the minimal Apache inference modules with attribution, pin the
+      DINOv2-L base revision/weight hash, reproduce center-crop 336 + published normalization and
+      verify state/score direction with synthetic contract tests before production scoring.
+- [ ] Score official DDA first on consumed RR validation, IPN and owner gallery as DEVELOPMENT—no
+      threshold fit on them. Use the checkpoint's published 0.5 decision cut for the first gate and
+      report raw AUC/frontiers only as diagnostics. If authentic FP and AI coverage pass the frozen
+      gates, open DDA-COCO once as its aligned benchmark and only then consider API/web promotion.
+      If it fails, the honest next cost is official DDA training data or self-generated aligned
+      pairs; do not train on DDA-COCO or hide the cost by calling it a training subset.
 
 ### D4 — close the slice reproducibly
 

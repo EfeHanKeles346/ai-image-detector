@@ -1,4 +1,4 @@
-"""Freeze and acquire the licensed E34 DDA-COCO aligned-pair archive."""
+"""Freeze and acquire the licensed E34 DDA-COCO aligned benchmark archive."""
 
 from __future__ import annotations
 

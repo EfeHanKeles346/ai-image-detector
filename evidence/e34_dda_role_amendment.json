@@ -1,0 +1,11 @@
+{
+  "amendment": "role_only_before_archive_open",
+  "new_role": "locked_external_benchmark",
+  "opened_or_scored_members_at_amendment": 0,
+  "prior_compact_evidence_sha256": "cb2ea51eb9f0098ccf8b07ca6e62b2dfda90e01d30b1cc3e276bf60bc1065b41",
+  "prior_detailed_selection_sha256": "f0bc21a7927b7a272726da90895ef9da1f80e837b665739e0f797da4abec5184",
+  "reason": "Official DDA documentation identifies DDA-COCO as an evaluation benchmark and DDA-Training-Set as the fitting source.",
+  "schema_version": 1,
+  "source": "Junwei-Xi/DDA-COCO",
+  "state": "locked_role_amended_transfer_may_continue_unopened"
+}
