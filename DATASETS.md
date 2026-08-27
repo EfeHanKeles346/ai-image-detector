@@ -892,3 +892,8 @@ recorded in `evidence/e39_source_contract.json` before image transfer. CID2013 w
 its presentation images are scaled and only about six images exist per device; SCIMD-6/17 because
 they are 224px resizes; ForensiCam-215K because no adequate downloadable-data licence was found;
 VISION/FODB/CSAFE/IPN because those collections are already consumed by earlier roles.
+
+The metadata-only preflight reproduced the exact upstream state and froze 160 individual REAL
+URLs plus the single AI archive before transfer. Detailed external selection is 35,473 bytes,
+SHA-256 `4253497a...7be4`; compact zero-image-byte receipt is
+`evidence/e39_source_preflight.json`.

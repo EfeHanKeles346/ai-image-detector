@@ -3377,3 +3377,8 @@ is larger than the selected 280 rows but is the only authoritative package; its 
 binds the future extraction. The combined 440-row allocation, licence receipts, catalog/archive
 hashes and score-blind selection rules were committed while E39 FINAL still had zero local image
 bytes. Acquisition may now proceed without loading the detector.
+
+The live metadata preflight then reproduced both licence receipts, the FloreView catalog hash, the
+exact four-device 160-URL selection, Hugging Face revision and the 11.14 GB archive LFS/Xet
+identity. Detailed external selection SHA-256 is `4253497a...7be4`; compact evidence is
+`evidence/e39_source_preflight.json`. The receipt still records zero downloaded FINAL image bytes.

@@ -1,0 +1,29 @@
+{
+  "ai_archive_bytes": 11138511098,
+  "ai_generators": [
+    "Reve Image 1.0",
+    "HiDream I1 Dev",
+    "Ideogram 3",
+    "Midjourney v7",
+    "Adobe Firefly Image 5",
+    "Z Image Turbo",
+    "Gemini 3 Pro Image"
+  ],
+  "counts": {
+    "ai": 280,
+    "real": 160,
+    "total": 440
+  },
+  "detailed_selection_bytes": 35473,
+  "detailed_selection_sha256": "4253497a09138ad1b024452ffda086d44ebd1d5f14217f621af9c922c1bf7be4",
+  "new_image_bytes_downloaded_by_freeze": 0,
+  "real_devices": [
+    "D14_Apple_iPhone13mini",
+    "D27_DOOGEE_S96Pro",
+    "D34_Google_Pixel5",
+    "D43_OnePlus_8T"
+  ],
+  "real_rows": 160,
+  "schema_version": 1,
+  "state": "source_selection_frozen_zero_image_bytes"
+}
