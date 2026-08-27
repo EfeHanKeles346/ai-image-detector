@@ -50,7 +50,7 @@ records are not “cleanup.” The Sites/Vinext chain (`.openai/`, `vite.config.
 - [x] Replace the flat repository map in `README.md` with active product, research/archive and
       generated-local boundaries. Update the runnable experiment index through E32 so a reader can
       tell which code serves users, which reproduces rejected candidates and which must stay frozen.
-- [ ] Run the complete 207-test Python suite without caller `PYTHONPATH`, compileall, dependency
+- [x] Run the complete 207-test Python suite without caller `PYTHONPATH`, compileall, dependency
       and artifact checks, plus web lint, typecheck, production build and all browser-contract tests.
       Record exact results in `HISTORY.md`, commit and push, then require green GitHub CI.
 

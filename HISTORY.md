@@ -3031,3 +3031,9 @@ Starlette/httpx deprecation warning), compileall, `pip check`, all six registere
 ESLint, TypeScript, the production Sites/Vinext build and all six web tests. Generated pytest,
 Python bytecode, Vinext and `dist` caches were removed after validation; they are rebuildable and
 contain no project evidence.
+
+Pushed commit `700e49c` then passed protected GitHub Actions run `33073029567`: the clean `web`
+job completed in 37 seconds and the clean `python` job in 2 minutes 7 seconds. The repository
+simplification phases S0–S3 are therefore closed. S4 remains intentionally open and stops before
+network image bytes: it will freeze R1c CAL/LOCKED metadata, allocation, licence and acquisition
+receipts before a later explicitly authorized transfer.
