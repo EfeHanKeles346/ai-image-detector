@@ -3733,3 +3733,14 @@ fit-eligible views produced the 87,977-byte research candidate SHA-256 `6768466a
 same threshold. This is a major DEVELOPMENT success, not an external-final claim: B-Free was never
 used for E42 decisions and RR test remains unopened. OOF stream SHA-256 is `0fbd15d5...dd32ff`;
 tracked report is `evidence/e42_development_small.json`.
+
+### E42-S external contract — candidate bound before RR test transfer
+
+The one-shot external candidate is now fixed at artifact SHA-256 `6768466a...9062e7`, 87,977 bytes
+and threshold 0.660046. Its next source is only Zenodo 14963880's CC BY 4.0 RR test archive, exactly
+20,117,869,400 bytes /MD5 `13c3ff3d...cd4b`. Transfer may reveal archive structure for safe
+inventory, but the model cannot open a test pixel until a decoded, parent/condition-aware unscored
+manifest and overlap audit are frozen. Original images must pass the full internship gate; every
+sufficient robust condition must retain AUC 0.85 and balanced accuracy 0.80 at full coverage.
+Partial transfer, row removal, threshold repair and B-Free-informed tuning are forbidden. The
+machine contract is `evidence/e42_rr_final_contract.json` and is committed before network bytes.

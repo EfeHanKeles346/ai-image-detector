@@ -1,0 +1,50 @@
+{
+  "candidate": {
+    "artifact_bytes": 87977,
+    "artifact_sha256": "6768466ab6eaaae6ae3ee00c784b13ff337955ccb38a5c2db09662939f9062e7",
+    "backbone": "dinov2_small_texture_intermediate",
+    "development_report_sha256": "2aa0b7e39527fd4858dd7b9b85e28bf7611c94d122fdca5cbe31dd3508e52ab3",
+    "threshold": 0.6600460410118104
+  },
+  "dataset": {
+    "archive_bytes": 20117869400,
+    "archive_md5": "13c3ff3d61986170cc0c8cf76a35cd4b",
+    "filename": "RRDataset_test.tar.gz",
+    "license": "CC BY 4.0",
+    "record_id": 14963880,
+    "role": "E42_LOCKED_EXTERNAL_ROBUSTNESS",
+    "source": "https://zenodo.org/records/14963880"
+  },
+  "decision": {
+    "clean_gate": {
+      "ai_macro_recall_gte": 0.8,
+      "ai_worst_source_recall_gte": 0.6,
+      "balanced_accuracy_gte": 0.85,
+      "eer_lte": 0.15,
+      "real_macro_fp_lte": 0.1,
+      "real_worst_source_fp_lte": 0.2,
+      "roc_auc_gte": 0.9,
+      "tpr_at_fpr_0_10_gte": 0.8
+    },
+    "coverage_eq": 1.0,
+    "robust_condition_gate": {
+      "balanced_accuracy_gte": 0.8,
+      "roc_auc_gte": 0.85
+    },
+    "selection": "one score per declared test file at the unchanged candidate threshold; report original and every discovered transmission/redigitization condition separately",
+    "success": "clean gate and every sufficiently populated declared robust condition gate pass"
+  },
+  "experiment": "E42/RRDataset-one-shot-external-robustness",
+  "forbidden": [
+    "opening any RR test image with the E42 model before archive inventory, extraction receipt and unscored manifest are frozen",
+    "threshold, crop, transport, head or row changes after any RR test score",
+    "using B-Free or RR test outcomes to fit E42",
+    "calling a partial transfer or incomplete coverage a pass"
+  ],
+  "label_invariant": {
+    "ai": 1,
+    "real": 0
+  },
+  "schema_version": 1,
+  "state": "fixed_before_rr_test_archive_transfer"
+}

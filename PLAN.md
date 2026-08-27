@@ -119,6 +119,19 @@ it before paying for another architecture or training run.
       E42-S is the full pass and therefore wins without running L. The 87,977-byte candidate SHA-256
       is `6768466a...9062e7`; state remains research-only awaiting RR external evidence.
 
+### F2.2 — one-shot RR external gate
+
+- [x] Bind E42-S artifact `6768466a...9062e7`, threshold 0.660046 and the exact 20,117,869,400-byte
+      CC BY 4.0 RR test archive /MD5 `13c3ff3d...cd4b` before transfer. The machine-readable contract
+      is `evidence/e42_rr_final_contract.json`; B-Free and RR labels cannot alter the candidate.
+- [ ] Resume the archive to LaCie with >=100 GiB reserve, verify exact size+MD5, inventory every tar
+      member and extract safely. Then freeze decoded counts, parent/condition mapping and protected-
+      role exact/dHash audit without loading E42.
+- [ ] Score each declared test file once. The original/clean population must pass all internship
+      success gates; every sufficiently populated transmission/redigitization condition must retain
+      AUC >=0.85 and balanced accuracy >=0.80, with 100% coverage. A pass promotes E42-S to the
+      research API/web; a miss is final for this candidate and cannot trigger threshold repair.
+
 ### F3 — recording and stop rules
 
 - [ ] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis
