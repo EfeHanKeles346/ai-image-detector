@@ -2974,3 +2974,22 @@ This changed only information hierarchy: R1b stays research-only and non-voting,
 artifact, API decision rule or external-development result was altered. Final verification passed
 207 Python tests, the production web build and all six web tests, TypeScript, ESLint, `pip check`
 and the six-entry canonical artifact registry.
+
+A full result review then separated R1b's representation from its operating threshold. Without
+writing a new artifact or changing serving, the unchanged model was rescored on the already
+consumed IPN and owner DEVELOPMENT populations and its frozen internal AI CAL features. The
+post-hoc frontier revealed a potentially useful conservative region: threshold 0.863312 would have
+reduced owner FP from 68.57% to 20.0% and IPN worst-device FP from 40.0% to 15.0%, while internal
+current-family macro/worst recall remained 90.01%/80.0% (91.00% across all six AI sources). At
+0.95, owner FP was 9.52%, IPN worst 7.5% and internal current-family macro/worst was 83.28%/65.0%
+(85.13% across all six). These are diagnostic, test-derived numbers—not a repair—and neither
+threshold may become a candidate.
+
+The next plan was therefore narrowed from a broad architecture sweep to E32/R1c threshold-first
+recovery. It will preserve the R1b backbone/head and select a new conservative threshold only on a
+new, provenance-complete multi-pipeline calibration population, then pass consumed DEVELOPMENT and
+one untouched real+modern-AI final. If clean transfer fails, the next controlled change is a compact
+paired-content/frequency-aligned dataset and source-held-out CF adapter, following B-Free/DDA; new
+spectral/global architectures and ensembles remain later gates. This ordering reflects the local
+evidence and 2025–2026 Community Forensics, B-Free, DDA, SPAI, GAPL, NTIRE and GlobalForge results,
+while avoiding another large blind download.

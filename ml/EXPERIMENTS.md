@@ -2740,3 +2740,25 @@ above are transcription errors; production range planning binds the filesystem v
   artifact changed.
 - Verification: 207 Python tests, production build + six web tests, TypeScript, ESLint, `pip check`
   and the six-entry canonical artifact registry all pass.
+
+### C4-R1c pre-plan threshold-feasibility diagnostic — no candidate
+
+- **Question:** did R1b fail because CF-ViT no longer separates the classes, or because its
+  internally selected 0.125935 threshold does not transfer to independent authentic pipelines?
+- **Boundary:** read-only rescore of the already-consumed 960-image IPN and 210-image owner
+  DEVELOPMENT sets plus the frozen internal CAL AI feature cache. No output artifact, score cache,
+  threshold, model parameter, serving path or decision was written. The sweep is post hoc and can
+  justify only a future clean replication; it cannot select R1c.
+- **Frozen R1b point:** owner FP 68.57%; IPN macro/worst-device FP 25.94%/40.0%; internal current-AI
+  macro/worst-family recall 99.82%/99.55% (six-source macro 99.78%) at 0.125935.
+- **First joint diagnostic point:** 0.863312 yields owner FP 20.0%, IPN macro/worst-device FP
+  5.42%/15.0%, internal current-AI macro/worst recall 90.01%/80.0% (six-source macro 91.00%).
+  Per-family internal recall: CommunityForensics 95.96%, FLUX.2 Klein 88.96%, GPT Image 1 95.73%,
+  Nano Banana 92.81%, Nano Banana Pro 80.0%, Qwen Image 2512 92.57%.
+- **Stricter diagnostic point:** 0.95 yields owner FP 9.52%, IPN macro/worst-device FP 3.02%/7.5%,
+  internal current-AI macro/worst recall 83.28%/65.0% (six-source macro 85.13%).
+- **Conclusion:** unlike E31's inverted DEVELOPMENT ranking, R1b contains a potentially useful
+  conservative operating region. The next experiment is threshold-only transfer using genuinely
+  new calibration sources. IPN/owner-derived 0.863312 and 0.95 are permanently ineligible values;
+  failure to reproduce cleanly triggers paired semantic+frequency alignment, not another arbitrary
+  data-volume or encoder sweep.

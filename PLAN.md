@@ -5,14 +5,24 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active goal — E32 in-the-wild data rebuild and Champions League evaluation (2026-08-26)
+## Active goal — E32/R1c conservative generalization recovery (2026-08-27)
 
 The product goal remains a genuinely testable binary detector, not a high score on a familiar
-dataset. E31 proved that the label-clean, source-capped DINOv2 candidate can recall current AI
-generators but rank independent authentic photographs backwards: E30 DEVELOPMENT AUC 0.385,
-80.67% current-AI macro recall and 83.63% authentic macro false positives. Recalibration reduced
-AI recall to 0.33%, so the next experiment must change the authentic data distribution and the
-image representation together. It must not reinterpret that failure as a threshold problem.
+dataset. E32/R1b changed the diagnosis materially: its frozen CF-ViT representation recalls modern
+AI extremely well internally, but the 0.125935 CALIBRATION threshold transfers badly to independent
+authentic pipelines. It produces 25.94% IPN macro / 40.0% worst-device false positives and 68.57%
+owner-gallery false positives. This is unacceptable, but it is not the inverted ranking seen in
+E31: a read-only post-hoc frontier on the already-consumed DEVELOPMENT scores found that threshold
+0.863312 would reduce owner FP to 20.0% and IPN worst-device FP to 15.0% while retaining 91.00%
+six-source / 90.01% current-family internal AI macro recall (80.0% weakest family). At 0.95 the
+same diagnostic is 9.52% owner FP, 7.5% IPN worst-device FP and 85.13% six-source / 83.28%
+current-family internal AI macro recall (65.0% weakest family).
+
+Those thresholds are **evidence of feasibility, not candidates**: IPN and the owner gallery were
+already consumed and may never select a deployable threshold. The next development is therefore a
+threshold-first R1c recovery on genuinely new CALIBRATION sources. Only if that clean replication
+fails will the project spend on paired-content training or a new representation. More arbitrary
+volume, another encoder-only swap and an ensemble are explicitly lower priority.
 
 The user's gallery is excluded from TRAIN and CALIBRATION. Existing gallery scores are historical
 DEVELOPMENT evidence; newly contributed, never-scored gallery content may enter a separately
@@ -504,44 +514,90 @@ small manifests, aggregate evidence, code and documentation.
       authentic gates failed while the AI gate passed. Evidence:
       `evidence/e32_r1b_external_development.json`. R1b is rejected from serving and no LOCKED AI
       set was opened.
-- [ ] **R1c objective redesign — next, not another volume download.** Keep R1b as a frozen failed
-      control. Build a source-adversarial or source-balanced authentic objective and test a
-      conservative two-stage/cascade rule using TRAIN/CALIBRATION only. A candidate may advance
-      only if every internal real source is held out in turn and the resulting threshold is frozen.
-      IPN and the owner gallery are now consumed DEVELOPMENT populations and may not tune R1c.
-      Acquire a genuinely new, provenance-complete multi-camera REAL collection for the next final
-      gate; retain the untouched modern-AI LOCKED arm until that authentic gate passes.
-- [ ] Use the same selected parents, folds and input views for a small representation ladder:
-      - **R0 control:** frozen E31 DINOv2-S final embedding / one-tile contract. **Complete/pass**
-        under the new standardized global-input contract; use as the runnable baseline.
-      - **R1 current-science:** a feasible pinned PE-Core frozen encoder (begin B/16; advance to
-        L/14 only after memory/latency/licence smoke) plus regularized linear head, inspired by the
-        2026 SSAFE result that curated 10K data can outperform much larger pools.
-      - **R2 low+high-level ViT:** DINOv2-L intermediate-block/RINE-style head over a global view
-        plus texture-aware native crops, testing the ITW-SM finding rather than repeating E31's
-        single upscaled 128 px tile.
-      - **R3 Hive control:** ImageNet-pretrained EfficientNet-B4 under the exact winning crop,
-        augmentation and data contract. Hive's public architecture motivates this ablation; its
-        unknown private recipe and 0.9 threshold are not copied.
-- [ ] For multi-view candidates, compare a fixed small set only: global-only, texture-only and
-      global+texture; mean/top-k aggregation is selected on CALIBRATION. Do not change inference
-      crops after DEVELOPMENT.
-- [ ] Train frozen linear heads first. Permit an adapter or last-block fine-tune only when the
-      frozen representation shows transferable signal; permit full fine-tuning only after a
-      controlled data-sufficiency/overfit gate. A 10–20K pool does not automatically justify
-      end-to-end tuning of a large encoder.
-- [ ] Consider Hive-like auxiliary generator supervision only after the binary candidate passes
-      independently. It is an ablation regularizer, not a product requirement and not an ensemble.
-- **Screen gate:** on untouched source-held-out CALIBRATION, require AUC >=0.85, current-AI macro
-  recall >=60%, weakest sufficiently sized AI family >=40%, authentic macro FP <=10%, worst-source
-  FP <=20% and no transport recall loss above 15 points. Otherwise stop or change the data/input
-  representation; do not tune against DEVELOPMENT.
+
+### Phase C4-R1c — threshold-first recovery before another training run
+
+- [x] **Record a no-write feasibility diagnostic, not a new result.** Re-score the unchanged R1b
+      head on the already-consumed 960 IPN and 210 owner images and sweep thresholds only to decide
+      whether clean replication is worth attempting. Do not write an artifact or change serving.
+      Result: the first post-hoc threshold satisfying owner FP <=20% and every IPN device FP <=20%
+      is 0.863312; owner FP 20.0%, IPN macro/worst FP 5.42%/15.0%, internal current-AI macro/worst
+      recall 90.01%/80.0% (six-source macro 91.00%). This rescues the *hypothesis*, not R1b: the
+      number is test-derived and permanently forbidden from candidate selection.
+- [ ] **Freeze new roles before acquiring or scoring pixels.** Create three disjoint parent-level
+      populations with exact hashes, provenance, licences and camera/generator groups:
+      1. `R1C_CAL`: at least 1,000 authentic parents from >=5 previously unused pipelines, nominally
+         >=200 per pipeline, spanning native modern phones/cameras plus one web/repost pipeline.
+      2. `R1C_LOCKED_REAL`: at least 1,000 untouched parents from >=5 other pipelines, never used
+         for threshold, model, crop, quality rule or stop/go selection.
+      3. `R1C_LOCKED_AI`: >=100 native outputs from each of >=5 current families, with generation
+         version/date/prompt group and transport parentage; keep Qwen Image Bench sealed until the
+         preceding gates pass.
+      Prefer unused licensed holdings and a small new multi-phone capture over another 100 GB blind
+      download. IPN, owner gallery, E30 MLLM and every prior named test remain DEVELOPMENT only.
+- [ ] **Build R1c-T, a threshold-only candidate.** Keep the exact R1b CF backbone, head, weights,
+      input transform and score direction. Fit no model parameter. Select one threshold solely from
+      `R1C_CAL` plus the existing frozen internal AI CAL rows using source-wise finite-sample
+      quantiles: target authentic macro FP <=5%, every-source FP <=10%, current-AI macro recall
+      >=80% and every sufficiently sized AI family >=60%. If no threshold meets all four, reject
+      R1c-T; never loosen a gate after seeing DEVELOPMENT.
+- [ ] **Separate calibration quality from discrimination.** Report ROC/PR curves, source-wise score
+      histograms, Brier score and expected calibration error, but do not mistake temperature,
+      isotonic or beta calibration for improved ranking. Add quality/transport-conditioned
+      calibration only if pre-registered CAL ablations show a stable score shift across native,
+      JPEG q90/q75/q50, resize and blur views. Every derivative inherits its parent role; the same
+      transform policy is applied to both labels.
+- [ ] **Freeze R1c-T, then reopen consumed DEVELOPMENT only as a gate.** Score IPN, owner gallery and
+      E30's five transport views without any refit. Require owner FP <=20%, IPN macro FP <=10%,
+      IPN worst-device FP <=20%, E30 current-AI macro recall >=60%, every AI family >=40% and no
+      transport recall loss above 15 points. Bootstrap by parent/device and report 95% intervals.
+      Failure moves to R1c-P; success freezes hashes and permits exactly one locked run.
+- [ ] **Run the locked final once.** Require authentic macro FP <=10%, worst-pipeline FP <=20%,
+      modern-AI macro recall >=80%, weakest family recall >=60%, ROC AUC >=0.90 and balanced
+      accuracy >=0.85, with every input/failure counted. Only this result may promote R1c-T into
+      the canonical scorer and the web/API decision path. Below threshold remains “insufficient
+      evidence”, never a certificate that the image is real.
+
+### Phase C4-R1c-P — paired-content repair only if threshold transfer fails
+
+- [ ] Build a compact 2,000–4,000-pair ablation from licensed TRAIN real parents and semantically
+      matched reconstructions, following B-Free's content alignment and DDA's additional frequency
+      alignment. Preserve exact real/synthetic parent links; estimate/match JPEG quality and apply
+      identical transport augmentations to both labels. Existing unrelated modern-AI parents remain
+      a diversity regularizer, not the source of pair labels.
+- [ ] Reuse the pinned CF-ViT representation first. Compare only: frozen linear head, source-balanced
+      worst-group head, then a small LoRA adapter if the frozen head fails. Use leave-one-real-source
+      and leave-one-generator-family-out outer folds; select by worst-group FP/recall, not pooled
+      accuracy. Do not combine source-adversarial losses with label-confounded groups unless every
+      domain contains both labels.
+- [ ] Add one degradation-stability ablation inspired by NTIRE 2026 and GlobalForge: contrast clean
+      and compound JPEG/resize/blur views of the same parent while retaining a global image token.
+      A spectral/phase or real-envelope branch (SPAI/REM direction) is a later alternative only if
+      the paired CF adapter fails; do not launch several architectures at once.
+- [ ] Generator-aware prototypes/auxiliary source labels (GAPL/Hive-inspired) are permitted only if
+      modern-AI family recall, rather than authentic FP, becomes the limiting gate. Any ensemble is
+      deferred until two independently passing arms show >=5-point complementary recall at unchanged
+      real-FP budgets.
+
+**Why this order is current-science aligned:** Community Forensics supports generator breadth, which
+R1b already inherits; B-Free and DDA show that semantic and frequency alignment target dataset
+shortcuts; SPAI and GlobalForge motivate real-centric/global degradation-stable cues; GAPL warns
+that blindly adding generators can eventually create representation conflict; NTIRE 2026 measures
+36 realistic transformations. Sources: [Community Forensics (CVPR 2025)](https://openaccess.thecvf.com/content/CVPR2025/html/Park_Community_Forensics_Using_Thousands_of_Generators_to_Train_Fake_Image_CVPR_2025_paper.html) ·
+[B-Free (CVPR 2025)](https://openaccess.thecvf.com/content/CVPR2025/html/Guillaro_A_Bias-Free_Training_Paradigm_for_More_General_AI-generated_Image_Detection_CVPR_2025_paper.html) ·
+[DDA](https://arxiv.org/abs/2505.14359) · [SPAI (CVPR 2025)](https://openaccess.thecvf.com/content/CVPR2025/html/Karageorgiou_Any-Resolution_AI-Generated_Image_Detection_by_Spectral_Learning_CVPR_2025_paper.html) ·
+[GAPL (CVPR 2026)](https://openaccess.thecvf.com/content/CVPR2026/html/Qin_Scaling_Up_AI-Generated_Image_Detection_with_Generator-Aware_Prototypes_CVPR_2026_paper.html) ·
+[NTIRE 2026](https://arxiv.org/abs/2604.11487) · [GlobalForge](https://arxiv.org/abs/2607.14684).
 
 ### Phase C5 — controlled training, complementarity and final decision
 
-- [ ] Advance only the cheapest representation that passes C4 materially over R0. Run at least
-      seeds 42/2024/2026, report source/group intervals and freeze the candidate artifact,
-      preprocessing, threshold, aggregation, abstention and hashes before DEVELOPMENT.
+- [ ] Execute in strict cost order: deterministic R1c-T threshold transfer first; only a failed
+      clean gate permits R1c-P paired training; only a failed paired CF adapter permits a new
+      spectral/global representation. R1c-T has no training seed. Every trained R1c-P candidate
+      must pass seed 2024 before identical seeds 42/2026 and report source/group intervals.
+- [ ] Freeze candidate artifact, preprocessing, threshold, aggregation, abstention, role receipts
+      and hashes before DEVELOPMENT. A successful DEVELOPMENT result permits one locked run; it
+      does not permit another parameter, threshold or policy choice.
 - [ ] Compare model families individually first. An ensemble may be fitted only from out-of-fold
       TRAIN/CALIBRATION rows when two independently passing arms make complementary errors. Require
       at least +5 percentage points macro current-AI recall without worsening either authentic FP
@@ -586,16 +642,6 @@ small manifests, aggregate evidence, code and documentation.
       Completed locally: the primary card now explains the threshold crossing in plain language;
       E26/E20 and measured limitations are collapsed under `Teknik detaylar`. The real R1b E2E
       returned 31.3% against the frozen 12.6% threshold. Presentation changed, voting did not.
-- [ ] Run the frozen candidate on the DEVELOPMENT arms once. Advancement requires AUC >=0.85,
-      authentic macro FP <=10%, worst authentic source <=20%, AI macro recall >=60%, every sized
-      AI family >=40% and bounded transport loss. A failing candidate cannot consume locked finals.
-- [ ] Run the surviving candidate and frozen baselines (E20, E31 and locally permitted external
-      controls) over the Champions League final under identical bytes. Hive API may be an optional
-      paid external reference on a pre-budgeted subset; its scores never become labels or training
-      targets.
-- **Successful prototype:** on untouched ITW-SM after decontamination, AUC >=0.90, balanced
-  accuracy >=0.85, AI recall >=0.80 and REAL recall >=0.80, with per-platform/source results. A
-  lower result remains a runnable research detector, not a universal authenticity authority.
 
 ### Phase C6 — evidence, history and serving boundary
 
