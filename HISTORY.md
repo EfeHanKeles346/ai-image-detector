@@ -3414,3 +3414,16 @@ threshold (`0.622942`) gives 10%/15% REAL macro/worst FP but only 77.14% AI macr
 and 0.8357 balanced accuracy; TPR@FPR10/EER remain threshold-independent failures. No joint
 threshold exists. E39 now becomes consumed E40 adaptation data, and E40 will use source/content-
 balanced replay rather than another threshold retry or ensemble.
+
+### E40-A role boundary — E39 becomes development, never evidence again
+
+Before E40 feature extraction or fitting, all 440 sealed E39 FINAL parents were reclassified as
+consumed `E40_ADAPTATION_DEVELOPMENT`. The amendment binds the E39 manifest, complete score stream,
+compact failed result and decision-contract hashes. E39 remains `final_failed`; neither these rows
+nor unused rows from the same FloreView/AIGenImages2026 sources may be reused as independent FINAL.
+
+The source-held-out protocol was also corrected before scores existed: every E39 source will be
+predicted only by a head that did not train on that source. Frozen-embedding content clusters may
+balance weights, but cannot define folds or remove rows—the four FloreView phones share a scene
+catalog, making a simultaneous device-and-cluster holdout impossible without discarding evidence.
+The next operation is therefore a model-free, all-row DINOv2-S feature cache.

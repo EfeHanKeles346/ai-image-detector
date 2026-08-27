@@ -2933,3 +2933,14 @@ was scored or selected using model output.
   77.14%/67.5% and balanced accuracy 0.8357. No joint threshold exists, so E40 must adapt the
   representation/head using consumed E39 source/content-balanced development. Evidence:
   `evidence/e39_final_result.json`, `evidence/e39_threshold_diagnostic.json`.
+
+### E40-A — preregistered consumed-data boundary
+
+- **Role:** all 160 REAL +280 AI E39 parents become `E40_ADAPTATION_DEVELOPMENT` before any E40
+  feature extraction or fitting. `evidence/e40_role_amendment.json` binds the E39 manifest,
+  score-stream, result and decision-contract hashes.
+- **Leakage rule:** each source receives one out-of-fold prediction from a head that never trained
+  on that source. Frozen DINO content clusters affect weights only; they cannot select examples or
+  define folds. This correction is model-free and was made before E40 scores existed.
+- **FINAL rule:** E39 and unused same-collection rows are permanently ineligible. No new FINAL data
+  may be acquired until an E40 development candidate passes its frozen gate and robustness checks.

@@ -1,0 +1,26 @@
+{
+  "boundary": "Recorded after the sealed E39 one-shot FINAL failed and before E40 feature extraction, clustering, fitting or model selection. All 440 E39 parents are consumed development data and can never support an independent final claim again.",
+  "counts": {
+    "ai": 280,
+    "real": 160,
+    "total": 440
+  },
+  "e39_decision_contract_sha256": "7d49792911b9b24acca2ad58d08d5ecc14bded5ee85174218d08d1a4d3712cef",
+  "e39_final_evidence_sha256": "644e33dcbe390cfbeb61f25a93a8224197027813f137c7aa4f9105cc51781a1e",
+  "e39_final_manifest_sha256": "1076df20adc700a1893814e477891e9270e4f88502dbad2571e022f3a7127306",
+  "e39_final_scores_sha256": "2a47e8a80e289f3a1a2f492df21f289c66aa50e9364ed66b61e4597962cbbb86",
+  "experiment": "E40/content-balanced-source-held-out-adaptation",
+  "new_role": "E40_ADAPTATION_DEVELOPMENT",
+  "previous_role": "E39_LOCKED_FINAL_CONSUMED",
+  "rules": {
+    "e39_reinterpretation": "forbidden; E39 remains final_failed",
+    "e39_row_selection": "all 440 rows; no score-based exclusion",
+    "future_final_use": "forbidden, including unused rows from the same FloreView and AIGenImages2026 sources",
+    "model_selection": "source-held-out E40 predictions only",
+    "new_final_access": "forbidden until one E40 candidate passes development and robustness gates",
+    "representation": "unchanged frozen DINOv2-S embedding",
+    "threshold_source": "E40 out-of-fold development predictions only"
+  },
+  "schema_version": 1,
+  "state": "role_amended_before_e40_features"
+}

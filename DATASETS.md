@@ -918,3 +918,12 @@ The one-shot result permanently consumes all 440 E39 FINAL parents. Detailed loc
 eligible role is E40 adaptation/development. They cannot test E40 or any later candidate, and the
 unselected rows from the same FloreView/AIGenImages2026 source collections cannot be called an
 independent substitute merely because their filenames differ.
+
+### E40 consumed development role (2026-08-27)
+
+`evidence/e40_role_amendment.json` formally assigns every E39 parent to
+`E40_ADAPTATION_DEVELOPMENT` before E40 feature extraction. Counts remain 160 REAL +280 AI; no row
+is filtered. The amendment cryptographically binds the 440-row manifest, full one-shot score
+stream, compact failed result and E39 decision contract. These bytes may train/select E40 only.
+They can never be counted as E40 FINAL, and extra FloreView/AIGenImages2026 rows do not restore
+source independence. No new dataset was downloaded at this checkpoint.
