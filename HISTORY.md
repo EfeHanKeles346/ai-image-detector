@@ -3003,3 +3003,10 @@ instead of duplicating an incomplete dependency list. Verification without a cal
 `PYTHONPATH` passed all 207 Python tests; compileall, `pip check`, the six-entry artifact registry,
 ESLint, TypeScript, the production web build and all six web tests also passed. No model artifact,
 threshold, dataset, inference rule or measured result changed.
+
+Replacement GitHub Actions run `33070928471` then completed green on the pushed `main` commit:
+both the `web` and clean-environment `python` jobs passed. Only after that evidence existed, GitHub
+branch protection was enabled for `main`: both checks are required with strict up-to-date status,
+force-push and branch deletion are disabled, and administrator enforcement remains off so the
+repository owner retains recovery access. This closes the first shared-repository CI failure and
+replaces the unprotected-main warning with an enforceable test boundary.
