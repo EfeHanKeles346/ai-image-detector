@@ -1,4 +1,4 @@
-"""Freeze, acquire and realize E36 CAL while keeping FINAL physically sealed."""
+"""Freeze, acquire and realize role-disjoint E36 CAL and E38-authorized FINAL."""
 
 from __future__ import annotations
 
@@ -63,10 +63,16 @@ FINAL_AI_RANGE = range(1, 41)
 ROOT = DATA_ROOT / "e36"
 SELECTION = ROOT / "acquisition_selection.json"
 CAL_MANIFEST = ROOT / "cal_manifest.json"
+FINAL_MANIFEST = ROOT / "final_manifest.json"
 EVIDENCE_ROOT = ML_ROOT.parent / "evidence"
 EVIDENCE = EVIDENCE_ROOT / "e36_acquisition.json"
 ROLE_AMENDMENT = EVIDENCE_ROOT / "e36_qwen_role_amendment.json"
 CAL_EVIDENCE = EVIDENCE_ROOT / "e36_cal_manifest.json"
+FINAL_EVIDENCE = EVIDENCE_ROOT / "e38_final_manifest.json"
+E38_EVIDENCE = EVIDENCE_ROOT / "e38_development.json"
+E38_EVIDENCE_SHA256 = "a22f76b1451e67aa67137eb9bda9604418f0edb8bce25faf28f025d0e180bdfc"
+E38_CANDIDATE = DATA_ROOT / "e38" / "e38_dinov2s.joblib"
+E38_CANDIDATE_SHA256 = "fddbe475adb807bcf523127095b2a8221443761ad4afa71d8c163829afc44067"
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
 MIN_FREE_BYTES = 100 * 1024**3
 MAX_MEMBER_BYTES = 100 * 1024**2
@@ -297,6 +303,63 @@ def download_cal(workers: int = 8) -> dict[str, Any]:
     return receipt
 
 
+def _assert_final_unlocked() -> dict[str, Any]:
+    if not E38_EVIDENCE.is_file() or _digest(E38_EVIDENCE, "sha256") != E38_EVIDENCE_SHA256:
+        raise ValueError("E38 passed-development evidence is absent or changed")
+    evidence = json.loads(E38_EVIDENCE.read_text())
+    if evidence.get("state") != "development_gate_passed_candidate_frozen" or not evidence.get("gate", {}).get("passed"):
+        raise ValueError("E38 did not pass every development gate")
+    if not E38_CANDIDATE.is_file() or _digest(E38_CANDIDATE, "sha256") != E38_CANDIDATE_SHA256:
+        raise ValueError("E38 candidate is absent or changed")
+    return evidence
+
+
+def download_final(workers: int = 8) -> dict[str, Any]:
+    _assert_final_unlocked()
+    selection = _selection()
+    if shutil.disk_usage(ROOT).free < MIN_FREE_BYTES + 8 * 1024**3:
+        raise OSError("E38 FINAL free-space floor is not satisfied")
+    real_items = {name: selection["real"]["archives"][name] for name in FINAL_REAL}
+    if any(item["role"] != "locked_final" for item in real_items.values()):
+        raise ValueError("non-FINAL REAL archive reached FINAL downloader")
+    real_states = {}
+    with ThreadPoolExecutor(max_workers=min(workers, len(real_items))) as executor:
+        futures = {
+            executor.submit(_curl_verified, item, ROOT / "archives" / name, "md5"): name
+            for name, item in real_items.items()
+        }
+        for future in as_completed(futures):
+            name = futures[future]
+            real_states[name] = future.result()
+            print(f"E38 REAL FINAL {name} complete", flush=True)
+    ai_rows = selection["ai"]["rows"]["locked_final"]
+    if any(row["role"] != "locked_final" for row in ai_rows):
+        raise ValueError("non-FINAL AI row reached FINAL downloader")
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {
+            executor.submit(_curl_verified, row, ROOT / "final" / "ai" / row["path"], "sha256"): row
+            for row in ai_rows
+        }
+        done = 0
+        for future in as_completed(futures):
+            future.result()
+            done += 1
+            if done % 40 == 0:
+                print(f"E38 AI FINAL {done}/{len(ai_rows)}", flush=True)
+    receipt = {
+        "schema_version": 1,
+        "state": "final_download_complete_verified_unopened",
+        "selection_sha256": _sha256(SELECTION.read_bytes()),
+        "candidate_sha256": E38_CANDIDATE_SHA256,
+        "real_archive_states": real_states,
+        "real_archive_bytes": sum(selection["real"]["archives"][name]["bytes"] for name in FINAL_REAL),
+        "ai_rows": len(ai_rows),
+        "ai_bytes": sum(row["bytes"] for row in ai_rows),
+    }
+    _write_atomic(ROOT / "final_download_receipt.json", receipt)
+    return receipt
+
+
 def inspect_zip(infos: Sequence[zipfile.ZipInfo]) -> dict[str, Any]:
     names = set()
     image_rows = []
@@ -355,6 +418,35 @@ def inventory_cal() -> dict[str, Any]:
     return result
 
 
+def inventory_final() -> dict[str, Any]:
+    _assert_final_unlocked()
+    selection = _selection()
+    archives = {}
+    for name in FINAL_REAL:
+        path = ROOT / "archives" / name
+        item = selection["real"]["archives"][name]
+        if not path.is_file() or path.stat().st_size != item["bytes"] or _digest(path, "md5") != item["md5"]:
+            raise FileNotFoundError(f"verified FINAL archive unavailable: {name}")
+        with zipfile.ZipFile(path) as bundle:
+            summary = inspect_zip(bundle.infolist())
+            bad = bundle.testzip()
+        if bad is not None:
+            raise ValueError(f"CRC failure in {name}: {bad}")
+        condition_counts = {}
+        for row in summary.pop("images"):
+            condition_counts[row["condition"]] = condition_counts.get(row["condition"], 0) + 1
+        archives[name] = {**summary, "condition_counts": dict(sorted(condition_counts.items()))}
+    result = {
+        "schema_version": 1,
+        "state": "final_real_archive_inventory_passed_unscored",
+        "selection_sha256": _sha256(SELECTION.read_bytes()),
+        "candidate_sha256": E38_CANDIDATE_SHA256,
+        "archives": archives,
+    }
+    _write_atomic(ROOT / "final_real_inventory.json", result)
+    return result
+
+
 def _protected_hashes() -> tuple[set[str], set[str]]:
     exact, perceptual = set(), set()
     for path in sorted((DATA_ROOT / "e32" / "audits").glob("*.json")):
@@ -369,6 +461,16 @@ def _protected_hashes() -> tuple[set[str], set[str]]:
             if row.get("dhash"):
                 perceptual.add(str(row["dhash"]))
     return exact, perceptual
+
+
+def _cal_hashes() -> tuple[set[str], set[str]]:
+    if _digest(CAL_MANIFEST, "sha256") != "4ed1b7341df39fed1f1fc19a20424f15362c0df224bcc77189045ba4a4af2e03":
+        raise ValueError("E36 CAL manifest changed before FINAL")
+    payload = json.loads(CAL_MANIFEST.read_text())
+    return (
+        {str(row["sha256"]) for row in payload["rows"]},
+        {str(row["dhash"]) for row in payload["rows"]},
+    )
 
 
 def _audit_image(path: Path) -> dict[str, Any]:
@@ -518,23 +620,155 @@ def extract_and_manifest_cal() -> dict[str, Any]:
     return compact
 
 
+def extract_and_manifest_final() -> dict[str, Any]:
+    _assert_final_unlocked()
+    if FINAL_MANIFEST.exists() or FINAL_EVIDENCE.exists():
+        raise FileExistsError("E38 FINAL manifest already exists; no silent rerun")
+    inventory = json.loads((ROOT / "final_real_inventory.json").read_text())
+    if inventory.get("state") != "final_real_archive_inventory_passed_unscored":
+        raise ValueError("E38 FINAL inventory has not passed")
+    real_root = ROOT / "final" / "real"
+    real_rows = []
+    for archive_name in FINAL_REAL:
+        device = archive_name.removesuffix(".zip")
+        archive = ROOT / "archives" / archive_name
+        destination_root = real_root / device
+        with zipfile.ZipFile(archive) as bundle:
+            members = sorted(
+                [
+                    info for info in bundle.infolist()
+                    if not info.is_dir()
+                    and PurePosixPath(info.filename).suffix.lower() in IMAGE_SUFFIXES
+                    and "view_000" in PurePosixPath(info.filename).parts
+                ],
+                key=lambda info: info.filename,
+            )[:100]
+            if len(members) < 40:
+                raise ValueError(f"E38 FINAL device has fewer than 40 native originals: {device}")
+            expected_names = [
+                f"{index:03d}{PurePosixPath(info.filename).suffix.lower()}"
+                for index, info in enumerate(members)
+            ]
+            if destination_root.exists():
+                found = sorted(
+                    path.name for path in destination_root.iterdir()
+                    if path.is_file() and not path.name.startswith("._")
+                )
+                if found != expected_names:
+                    raise FileExistsError(f"E38 FINAL extraction does not match inventory: {device}")
+            else:
+                temporary = real_root / f"{device}.partial"
+                if temporary.exists():
+                    raise FileExistsError(f"partial FINAL extraction requires audit: {temporary}")
+                temporary.mkdir(parents=True)
+                for info, name in zip(members, expected_names, strict=True):
+                    destination = temporary / name
+                    with bundle.open(info) as source, destination.open("xb") as output:
+                        shutil.copyfileobj(source, output, length=8 * 1024**2)
+                    if destination.stat().st_size != info.file_size:
+                        raise ValueError(f"E38 FINAL extraction size mismatch: {info.filename}")
+                temporary.replace(destination_root)
+            for info, name in zip(members, expected_names, strict=True):
+                destination = destination_root / name
+                audit = _audit_image(destination)
+                real_rows.append({
+                    "role": "locked_final",
+                    "label": 0,
+                    "source": device,
+                    "condition": "native_view_000",
+                    "parent_id": f"{device}:{info.filename}",
+                    "path": str(destination.relative_to(ROOT)),
+                    **audit,
+                })
+    selection = _selection()
+    ai_rows = []
+    for row in selection["ai"]["rows"]["locked_final"]:
+        path = ROOT / "final" / "ai" / row["path"]
+        audit = _audit_image(path)
+        if audit["sha256"] != row["sha256"] or audit["bytes"] != row["bytes"]:
+            raise ValueError(f"E38 FINAL AI realization mismatch: {row['path']}")
+        ai_rows.append({
+            "role": "locked_final",
+            "label": 1,
+            "source": row["family"],
+            "condition": "clean",
+            "parent_id": f"qwen-bench:{row['family']}:{row['prompt_id']}",
+            "prompt_id": row["prompt_id"],
+            "path": str(path.relative_to(ROOT)),
+            **audit,
+        })
+    rows = real_rows + ai_rows
+    exact = [row["sha256"] for row in rows]
+    if len(exact) != len(set(exact)):
+        raise ValueError("E38 FINAL contains exact duplicate bytes")
+    protected_exact, protected_dhash = _protected_hashes()
+    cal_exact, cal_dhash = _cal_hashes()
+    if any(row["sha256"] in protected_exact | cal_exact for row in rows):
+        raise ValueError("E38 FINAL exact-overlaps an earlier role")
+    by_dhash: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        by_dhash.setdefault(row["dhash"], []).append(row)
+    if any(len({item["label"] for item in group}) > 1 for group in by_dhash.values()):
+        raise ValueError("E38 FINAL has cross-label perceptual duplicates")
+    manifest = {
+        "schema_version": 1,
+        "experiment": "E38/locked-final-native-clean",
+        "state": "final_manifest_frozen_unscored",
+        "selection_sha256": _sha256(SELECTION.read_bytes()),
+        "candidate_sha256": E38_CANDIDATE_SHA256,
+        "counts": {"real": len(real_rows), "ai": len(ai_rows), "total": len(rows)},
+        "real_source_counts": {source: sum(row["source"] == source for row in real_rows) for source in sorted({row["source"] for row in real_rows})},
+        "ai_family_counts": {source: sum(row["source"] == source for row in ai_rows) for source in sorted({row["source"] for row in ai_rows})},
+        "prior_exact_overlap_count": 0,
+        "prior_dhash_match_count_diagnostic": sum(row["dhash"] in protected_dhash | cal_dhash for row in rows),
+        "rows": rows,
+        "boundary": "Untouched FINAL native/clean parents frozen before first E38 model score.",
+    }
+    raw = _json_bytes(manifest)
+    _write_atomic(FINAL_MANIFEST, manifest)
+    compact = {
+        "schema_version": 1,
+        "state": manifest["state"],
+        "candidate_sha256": E38_CANDIDATE_SHA256,
+        "counts": manifest["counts"],
+        "real_source_counts": manifest["real_source_counts"],
+        "ai_family_counts": manifest["ai_family_counts"],
+        "prior_exact_overlap_count": 0,
+        "prior_dhash_match_count_diagnostic": manifest["prior_dhash_match_count_diagnostic"],
+        "detailed_manifest_bytes": len(raw),
+        "detailed_manifest_sha256": _sha256(raw),
+    }
+    _write_atomic(FINAL_EVIDENCE, compact)
+    return compact
+
+
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("freeze")
     download_parser = sub.add_parser("download-cal")
     download_parser.add_argument("--workers", type=int, default=8)
+    final_download_parser = sub.add_parser("download-final")
+    final_download_parser.add_argument("--workers", type=int, default=8)
     sub.add_parser("inventory-cal")
+    sub.add_parser("inventory-final")
     sub.add_parser("manifest-cal")
+    sub.add_parser("manifest-final")
     args = parser.parse_args(argv)
     if args.command == "freeze":
         result = freeze()
     elif args.command == "download-cal":
         result = download_cal(args.workers)
+    elif args.command == "download-final":
+        result = download_final(args.workers)
     elif args.command == "inventory-cal":
         result = inventory_cal()
-    else:
+    elif args.command == "inventory-final":
+        result = inventory_final()
+    elif args.command == "manifest-cal":
         result = extract_and_manifest_cal()
+    else:
+        result = extract_and_manifest_final()
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
 

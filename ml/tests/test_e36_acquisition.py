@@ -18,6 +18,7 @@ from experiments.e36_acquisition import (
     inspect_zip,
     validate_huggingface,
     validate_zenodo,
+    _assert_final_unlocked,
 )
 
 
@@ -83,3 +84,12 @@ def test_zip_inventory_exposes_conditions_and_rejects_traversal() -> None:
     assert [row["condition"] for row in result["images"]] == ["view_000", "view_001"]
     with pytest.raises(ValueError, match="unsafe"):
         inspect_zip([_info("device/../escape.jpg")])
+
+
+def test_final_unlock_fails_closed_without_bound_evidence(monkeypatch, tmp_path) -> None:
+    import experiments.e36_acquisition as acquisition
+
+    monkeypatch.setattr(acquisition, "E38_EVIDENCE", tmp_path / "missing.json")
+    monkeypatch.setattr(acquisition, "E38_CANDIDATE", tmp_path / "missing.joblib")
+    with pytest.raises(ValueError, match="evidence"):
+        _assert_final_unlocked()
