@@ -87,6 +87,11 @@ class _DINOHead(nn.Module):
             pretrained=False,
             num_classes=0,
             img_size=518,
+            # The official DDA checkpoint retains DINOv2-L's 518px positional
+            # grid but evaluates a published 336px center crop.  torch.hub's
+            # DINOv2 interpolates that grid at inference; timm requires this
+            # compatibility switch to provide the same behaviour.
+            dynamic_img_size=True,
         )
         # torch.hub DINOv2 exposes this training-time token; timm omits it from inference.
         # Retain it so the published full checkpoint loads strictly without changing forward.

@@ -4,7 +4,12 @@ import torch
 from PIL import Image
 from torch import nn
 
-from pixelproof.dda_candidate import LoRALinear, apply_lora_to_linear_layers, official_transform
+from pixelproof.dda_candidate import (
+    _DINOHead,
+    LoRALinear,
+    apply_lora_to_linear_layers,
+    official_transform,
+)
 
 
 class _Attention(nn.Module):
@@ -33,3 +38,10 @@ def test_official_preprocessing_is_fixed_336_rgb_tensor() -> None:
     tensor = official_transform()(Image.new("RGB", (500, 400), "white"))
     assert tensor.shape == (3, 336, 336)
     assert tensor.dtype == torch.float32
+
+
+def test_timm_dinov2_adapter_accepts_official_336_crop() -> None:
+    model = _DINOHead().eval()
+    with torch.inference_mode():
+        result = model(torch.zeros(1, 3, 336, 336))
+    assert result.shape == (1, 1)
