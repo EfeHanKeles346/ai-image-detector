@@ -311,16 +311,52 @@ finds a jointly feasible region near `0.270069` (REAL macro/worst FP 10%/17%; AI
 95%/90%), proving the failure is operating-point transfer rather than missing separation. That
 value is permanently contaminated and cannot be served or used to relabel E38 as passed.
 
-- [ ] Reclassify all 640 E38 FINAL parents as consumed E39 DEVELOPMENT/CALIBRATION and freeze one
-      threshold-only E39 candidate with the unchanged `fddbe475...4067` head. Record the observed
-      `0.270069` boundary as development-selected, not independent evidence.
-- [ ] Before using that candidate, preregister a genuinely new FINAL: at least four native camera
-      devices/sessions absent from every E32/E36/E38 role and six unused modern generator families
-      or model-version cells. No QQ/Weibo child, extra prompt from a consumed family, owner-gallery
-      row or old academic TRAIN source may impersonate source-independent FINAL evidence.
-- [ ] Acquire/audit/freeze the new sources before model access, then score once under the unchanged
-      gates. Until that new FINAL passes, keep E38 out of the product decision path and present it
-      only as a conservative research prototype with measured 0% REAL FP /67.5% AI recall on E38.
+#### E39-A — correct the decision layer without retraining
+
+- [ ] Reclassify all 640 E38 FINAL parents as consumed `E39_CALIBRATION`; they can select E39 but
+      can never again provide final evidence.
+- [ ] Keep the DINOv2-S representation and fitted head byte-identical (`fddbe475...4067`). Freeze
+      exactly one E39 threshold from the consumed calibration scores under the same REAL and AI
+      subgroup budgets. Do not change examples, weights, architecture, crop or score direction.
+- [ ] Package the threshold as a new research candidate with explicit E38/E39 provenance. The
+      currently observed `0.270069` value is development-selected; it is eligible only for a new
+      independent test and must not alter the recorded E38 result.
+
+#### E39-B — freeze a genuinely new compact FINAL before bytes
+
+- [ ] Research licensed sources and write the source/role decision to `DATASETS.md` before any
+      image transfer. REAL must contain at least four native camera devices/sessions absent from
+      every earlier role. AI must contain at least six unused modern generator/model-version cells.
+- [ ] Target 40 native REAL parents/device and 40 clean AI parents/family: minimum 160 REAL +240 AI
+      =400 parents. Prefer diversity and provenance over another 20,000-image download. Cap every
+      source equally so no large group dominates the result.
+- [ ] Freeze URLs/API versions, licences, exact counts/checksums, prompts/seeds where available,
+      allocation and failure policy. Reject social copies of consumed parents, extra prompts from
+      consumed families, owner-gallery rows and old TRAIN sources as substitutes for independence.
+
+#### E39-C — acquire and audit without model access
+
+- [ ] Download resumably to a new role-separated directory, verify every published checksum and
+      keep a 100 GiB disk floor. Do not open the E39 model while acquisition/audit runs.
+- [ ] Decode every parent; verify explicit labels, source counts, native dimensions and licence
+      receipts. Run exact and perceptual overlap checks against all TRAIN/CAL/DEVELOPMENT/FINAL
+      manifests. Derived resize/JPEG/social copies remain grouped children and never increase N.
+- [ ] Commit the unscored manifest and compact evidence before the first prediction. Once frozen,
+      no source, row, threshold or model setting may change.
+
+#### E39-D — one-shot decision and product promotion
+
+- [ ] Score the frozen 400-parent minimum exactly once. Require 100% coverage, AUC >=0.90,
+      TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy >=0.85, REAL macro/worst FP <=10%/20% and
+      AI macro/worst recall >=80%/60%. Report every source and confidence interval.
+- [ ] Promote E39 to the API/web result only if every gate passes. The UI may then lead with the
+      E39 answer while keeping the score explicitly non-probabilistic and the authenticity caveat.
+- [ ] If E39 misses only the thresholded gates while AUC remains strong, do not tune on the new
+      FINAL; consume it as the next calibration source and obtain another independent final. If AUC
+      itself falls below 0.90, stop threshold work and open paired/content-aligned backbone training.
+- [ ] After each completed phase, append facts to `HISTORY.md`, measurements to
+      `ml/EXPERIMENTS.md`, data roles to `DATASETS.md`, update this checklist, run the full test
+      suite, commit, push and require green CI.
 
 ### D4 — close the slice reproducibly
 
@@ -328,7 +364,7 @@ value is permanently contaminated and cannot be served or used to relabel E38 as
       move/decision/result to append-only `HISTORY.md`. Update this checklist after each gate,
       verify focused tests plus the full Python/web suite, commit in reviewable checkpoints, push
       through protected `main`, and require green CI.
-      **Local closeout:** 236 Python tests, compileall, `pip check`, six-artifact registry, web
+      **Latest closeout:** 251 Python tests, compileall, `pip check`, six-artifact registry, web
       production build + six tests, TypeScript and ESLint all pass. One upstream Starlette/httpx
       deprecation warning remains; it does not affect inference or the result.
 
