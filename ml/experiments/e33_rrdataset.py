@@ -34,6 +34,10 @@ CLASS_DIRECTORIES = {
     "cal": {"real": "real", "ai": "ai"},
     "test": {"real_images": "real", "ai_images": "ai"},
 }
+DECLARED_SPLITS = {
+    "cal": {"train", "val"},
+    "test": {"original", "transfer", "redigital"},
+}
 FILES = {
     "cal": {
         "name": "RRDataset_original_train_val.tar.gz",
@@ -231,6 +235,8 @@ def inspect_members(
             if len(path.parts) < 4:
                 raise ValueError(f"image lacks split/class path: {member.name}")
             split, raw_class_name = path.parts[1:3]
+            if split not in DECLARED_SPLITS[role]:
+                raise ValueError(f"image split/condition is not declared: {member.name}")
             class_name = CLASS_DIRECTORIES[role].get(raw_class_name)
             if class_name is None:
                 raise ValueError(f"image class is not explicit real/ai: {member.name}")

@@ -101,3 +101,8 @@ def test_test_archive_inventory_requires_declared_condition_and_class() -> None:
         "redigital/ai": 1,
         "transfer/real": 1,
     }
+    with pytest.raises(ValueError, match="not declared"):
+        inspect_members(
+            [_member(f"{root}/mystery/real_images/real_000001.jpg")],
+            role="test",
+        )
