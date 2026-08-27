@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "experiment": "E41/open-external-proof",
+  "state": "frozen_before_external_bytes",
+  "e41": {
+    "artifact_sha256": "9bcc021e74b617ee48cf297bd384a8dbe946240ec04822323af1e7c3fe63ab65",
+    "threshold": 0.6195540428161622,
+    "learned_head_numeric_sha256": "4211d8d813fae83fad94b3ac6b0f11e099a02ed8b85f679db84a66f058e5f49f"
+  },
+  "bfree_viral": {
+    "role": "E41_WILD_STRESS",
+    "revision": "c6a9f898782fb466b29af01f21960b67415afb0e",
+    "registry_sha256": "3c727c4f8990ca91e129c97842fbf3c997b25fa6430fc316ffccc756f2373fc8",
+    "declared_rows": 1111,
+    "declared_source_events": 34,
+    "boundary": "Parent-weighted web propagation stress; not a 2026-generator final."
+  },
+  "rrdataset_test": {
+    "role": "E41_EXTERNAL_ROBUSTNESS",
+    "record_id": 14963880,
+    "license": "CC BY 4.0",
+    "bytes": 20117869400,
+    "md5": "13c3ff3d61986170cc0c8cf76a35cd4b",
+    "boundary": "Independent test rows, but prior validation exposure prevents a collection-independent claim."
+  },
+  "itw_sm": {
+    "role": "preferred_E42_locked_external",
+    "revision": "3060094fb576669927134193de3f517d7e64af86",
+    "declared_rows": 10000,
+    "declared_bytes": 3570000000,
+    "access": "manual gated; no local authentication or accepted access"
+  },
+  "prohibitions": [
+    "No model access during acquisition or manifest freeze.",
+    "No E41 threshold, head, preprocessing or ensemble change after any external score.",
+    "No failed external row may enter E42 training or calibration.",
+    "No pass threshold may be lowered after results."
+  ]
+}

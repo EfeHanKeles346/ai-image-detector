@@ -3553,3 +3553,14 @@ JPEG/WebP/resize/blur augmentation and source-held-out calibration. Do not train
 test rows or sweep an ensemble after seeing them. Existing success gates remain unchanged, so the
 project cannot create progress by lowering the bar. `PLAN.md` and `DATASETS.md` hold the complete
 pre-byte contract and exact source receipts.
+
+### E42 external acquisition method — committed before production transfer
+
+The B-Free URL collector now fails closed on the pinned CSV hash/schema, unsafe paths, unknown or
+cross-label parent events, invalid MD5/geometry and changed population counts. It maps labels only
+through the explicit invariant REAL=0/FAKE=1, downloads each URL independently, verifies the
+authors' per-row MD5 and decoded dimensions, and keeps every failed/dead URL visible in coverage.
+All versions retain their 34 source-event parents so repost volume cannot masquerade as independent
+sample size. Three focused synthetic tests and the pinned 1,111-row registry validation pass before
+any production URL is opened. `evidence/e42_external_contract.json` binds the unchanged E41
+artifact, B-Free registry, RR test receipt, ITW-SM access limitation and no-retuning rules.
