@@ -2779,3 +2779,33 @@ above are transcription errors; production range planning binds the filesystem v
 - **Decision:** reject R1c-T before DEVELOPMENT and do not download/open the 20.12 GB locked RR
   test. Threshold transfer alone cannot satisfy both authentic safety and AI coverage. Open one
   paired semantic+frequency-aligned R1c-P experiment; do not sweep another threshold or ensemble.
+
+### E35 — official DDA transfer screen: benchmark-strong, authentic gate failed
+
+- **Frozen candidate:** official `Junwei-Xi/Dual-Data-Alignment` DINOv2-L/14 + rank-8 LoRA,
+  revision `4390d902...16c`, full checkpoint SHA-256 `b27a31d3...e3e`, RGB center crop 336,
+  published CLIP normalization, sigmoid score and untouched threshold 0.5. The local timm adapter
+  enables dynamic positional interpolation to reproduce torch.hub DINOv2's published 336px path;
+  a focused forward test and one-image smoke passed before production scoring.
+- **Boundary/integrity:** one run over 500 RR, 960 IPN and the exact old 210-owner set; 1,670/1,670
+  successes. The new 211th owner still was hash-identified, preserved and excluded unscored. Score
+  stream is 348,372 B / SHA-256 `ae352ffe...83a`. DDA-COCO remained unopened.
+- **RR result:** ROC-AUC **0.978192**, EER **0.080**, TPR@FPR=10% **0.920**, balanced accuracy
+  **92.4%**, REAL FP **6.4%**, pooled AI recall **91.2%**, scenario macro/worst recall
+  **94.38%/81.72%**. All RR gates pass.
+- **Authentic transfer:** IPN macro-device FP **15.0%**, worst-device FP **36.25%**
+  (Samsung Galaxy Note9); owner-gallery FP **34.76%** / REAL recall **65.24%**. Both frozen <=20%
+  transfer gates fail, so the overall state is `dda_development_failed`.
+- **Post-hoc diagnosis only:** the first score boundary satisfying all three consumed real gates is
+  0.901156, with RR REAL FP 0.4%, IPN worst-device FP 20.0%, owner FP 13.33% and RR AI recall 82.4%.
+  At 0.95, RR AI recall falls to 76.8%. This proves a conservative region may exist; it does not
+  authorize 0.901156 because all populations used to find it are consumed DEVELOPMENT.
+- **Decision:** keep DDA as the E36 representation candidate but reject its published operating
+  point. Collect one compact, genuinely new multi-device + modern-generator CAL, estimate exactly
+  one threshold under preregistered gates, then score one new LOCKED FINAL set. Do not serve DDA,
+  open DDA-COCO, ensemble old models or download the 112.97 GB training release before that CAL.
+  Evidence: `evidence/e35_dda_development.json` and
+  `evidence/e35_dda_threshold_diagnostic.json`.
+- **Engineering verification:** 236 Python tests, bytecode compilation, dependency integrity,
+  six-entry artifact registry, production web build + six web tests, TypeScript and ESLint pass.
+  One upstream Starlette/httpx deprecation warning remains unrelated to DDA inference.

@@ -735,3 +735,33 @@ Its metadata-only E35 selection is 962 B / SHA-256 `7bdbe886...3fd9`; compact ev
 resumable transfer completed at exactly 1,255,621,296 B and reproduced SHA-256
 `b27a31d3...e3e`; the model can be constructed offline because this checkpoint contains all 537
 base, LoRA and classifier tensors.
+
+### E35 DDA DEVELOPMENT realization and E36 data boundary (2026-08-27)
+
+The verified DDA checkpoint scored 1,670 previously declared DEVELOPMENT rows: 250 RRDataset REAL
++ 250 RRDataset AI, 960 IPN native-phone reals across 12 devices and the exact frozen 210-still
+owner gallery. The newly added owner image `WhatsApp Image 2026-08-25 at 17.14.51.jpeg` remains
+untouched as an explicit reserve and is not in these counts. Local detailed scores live outside Git
+at `/Volumes/LaCie/pixelproof-datasets/e35_dda_model/development_scores.jsonl` (348,372 B,
+SHA-256 `ae352ffe...83a`); compact aggregate evidence is
+`evidence/e35_dda_development.json`.
+
+At the official 0.5 cut, RR REAL FP is 6.4% and AI recall 91.2%, but IPN worst-device FP is 36.25%
+and owner FP is 34.76%. All three sources are consumed DEVELOPMENT and may never calibrate a
+deployable threshold. A post-hoc diagnostic shows the first all-real-safe observed boundary at
+0.901156 (RR AI recall 82.4%, RR REAL FP 0.4%, IPN worst-device FP 20.0%, owner FP 13.33%); that
+number and every other inspected E35 cut are permanently ineligible. Evidence is
+`evidence/e35_dda_threshold_diagnostic.json`.
+
+DDA-COCO remains an unopened benchmark. Its preserved transfer consists of an exact 212,860,928 B
+prefix plus four non-overlapping range files totaling 4,039,521,881 B: 4,252,382,809 of
+4,301,452,066 B (98.86%). The missing 49,069,257 B is intentionally not fetched until a new E36 CAL
+passes; no ZIP member has been listed, extracted, decoded or trained on.
+
+E36 requires new, role-separated bytes rather than more volume from old sources: target 600 native
+authentic CAL parents from >=6 unseen capture pipelines and 600 clean modern-generator CAL parents
+from >=6 pinned production families. A separate locked FINAL minimum is 160 authentic parents from
+four unseen device/session pipelines plus 240 AI parents from six held-out model/version cells.
+Derived degradation variants stay grouped by parent. Exact source/licence/API receipts and overlap
+checks must be appended here before the first acquisition byte; no named source is approved merely
+because it is downloadable.

@@ -116,25 +116,75 @@ unrelated personal, academic or EOE material.
       The official DDA training set is Apache-2.0 but consists of ten 10,737,418,240-byte parts plus
       a 5,591,345,987-byte final ZIP (~112.97 GB); this violates the current minimum-data objective
       and is deferred to full home internet.
+      **Paused safely:** 4,252,382,809/4,301,452,066 B (98.86%) exist as one prefix plus four range
+      parts. No member has been opened. Do not fetch the missing 49,069,257 B until E36 CAL passes.
 - [x] Freeze the official `Junwei-Xi/Dual-Data-Alignment` checkpoint at revision
       `4390d902...16c`, Apache-2.0, `DDA_ckpt.pth` 1,255,621,296 B / SHA-256
       `b27a31d3...e3e`. Vendor the minimal Apache inference modules with attribution, pin the
       offline DINOv2-L architecture (the checkpoint supplies every base tensor), reproduce
       center-crop 336 + published normalization and verify strict state/score direction with
       synthetic contract tests before production scoring.
-- [ ] Score official DDA first on consumed RR validation, IPN and owner gallery as DEVELOPMENT—no
+- [x] Score official DDA first on consumed RR validation, IPN and owner gallery as DEVELOPMENT—no
       threshold fit on them. Use the checkpoint's published 0.5 decision cut for the first gate and
       report raw AUC/frontiers only as diagnostics. If authentic FP and AI coverage pass the frozen
       gates, open DDA-COCO once as its aligned benchmark and only then consider API/web promotion.
       If it fails, the honest next cost is official DDA training data or self-generated aligned
       pairs; do not train on DDA-COCO or hide the cost by calling it a training subset.
+      **Measured result:** RR is strong (AUC 0.978192, EER 0.08, TPR@FPR10 0.92, balanced accuracy
+      92.4%, REAL FP 6.4%, AI recall 91.2%), but the published cut fails transfer: IPN worst-device
+      FP 36.25% and owner-gallery FP 34.76%. The candidate therefore fails DEVELOPMENT and
+      DDA-COCO remains locked. A post-hoc curve finds a conservative region near 0.90, but every
+      displayed value is contaminated by consumed DEVELOPMENT and is permanently ineligible.
+
+### D3.6 — E36 clean DDA calibration and a genuinely unseen final gate
+
+This is the shortest scientifically defensible route to a usable detector. E35 proves that the
+representation ranks RR images well and that the dominant defect is operating-point transfer on
+native camera pipelines. Do not discard DDA, deploy the post-hoc 0.90 value, mix old models, or pay
+113 GB for training until this threshold-transfer hypothesis receives one clean replication.
+
+- [ ] **Freeze source registry before bytes.** CAL and FINAL must have disjoint parent images,
+      capture sessions/devices, prompts/seeds and generator accounts. Perceptual-hash and exact-hash
+      deduplication must also cover every earlier TRAIN/CAL/DEVELOPMENT manifest. Licences, URLs/API
+      model versions, timestamps, expected counts and failure policy enter `DATASETS.md` first.
+- [ ] **Build a compact new CAL (target 1,200 parents, not 20,000 arbitrary files).** Acquire 600
+      native authentic stills from at least six previously unseen phone/camera pipelines (target
+      100/device, scene-balanced, original bytes/EXIF retained) and 600 clean AI images from at least
+      six current production generator families (target 100/family, matched prompt/content strata,
+      provider/model/version/seed receipt where available). VISION/Dresden-style academic native
+      camera sources are candidates only after licence and overlap audit; web-resaved stock photos
+      cannot stand in for native camera output. Current commercial AI families should be generated
+      through pinned APIs at collection time rather than scraped from uncertain web labels.
+- [ ] **Calibrate one threshold only.** Keep the verified DDA checkpoint, 336 crop, normalization
+      and score direction fixed. Select the lowest threshold satisfying CAL real macro FP <=10% and
+      worst-device FP <=20%, then require AI family macro recall >=80% and worst-family >=60%.
+      Bootstrap 95% confidence intervals by parent; count decode/inference failures as errors.
+      No architecture, ensemble or second threshold may be selected from the same CAL.
+- [ ] **Freeze a new LOCKED FINAL set before scoring.** Minimum 160 native reals from four unseen
+      device/session pipelines (40 each) plus 240 clean modern AI parents from six held-out
+      model/version cells (40 each). Add deterministic JPEG, resize, screenshot/social-transmission
+      derivatives, but split and bootstrap by parent so copies never inflate N. The old IPN,
+      RR-validation and owner gallery remain diagnostic only and cannot be called final again.
+- [ ] **One-shot promotion gate.** Require ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15,
+      balanced accuracy >=0.85, real macro FP <=10%, worst real pipeline FP <=20%, AI macro recall
+      >=80%, worst AI family >=60%, with 100% declared coverage. Report Wilson/bootstrap intervals
+      and every subgroup; these are PixelProof preregistered gates, not NIST certification.
+- [ ] **Only after a CAL pass:** complete the last 49,069,257 B of DDA-COCO, verify the full
+      4,301,452,066-byte SHA-256, inventory safely and score it once as an aligned benchmark. A CAL
+      or FINAL miss keeps the current web verdict unchanged and opens exactly one training path:
+      content-matched real/reconstruction pairs using the official 112.97 GB DDA training release
+      at home internet, or a smaller self-generated paired equivalent. NIST GenAI Image-D remains
+      the later registered blind external evaluation; there is no universal public pass score.
 
 ### D4 — close the slice reproducibly
 
-- [ ] Append acquisition facts to `DATASETS.md`, measured results to `ml/EXPERIMENTS.md`, and every
+- [x] Append acquisition facts to `DATASETS.md`, measured results to `ml/EXPERIMENTS.md`, and every
       move/decision/result to append-only `HISTORY.md`. Update this checklist after each gate,
       verify focused tests plus the full Python/web suite, commit in reviewable checkpoints, push
       through protected `main`, and require green CI.
+      **Local closeout:** 236 Python tests, compileall, `pip check`, six-artifact registry, web
+      production build + six tests, TypeScript and ESLint all pass. One upstream Starlette/httpx
+      deprecation warning remains; it does not affect inference or the result.
 
 ## Current execution slice — repository rewiring and R1c pre-acquisition (2026-08-27)
 

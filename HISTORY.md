@@ -3169,3 +3169,45 @@ stills rather than the frozen 210. A model-free identity comparison proved the s
 that row exactly reproduces protected identity `390e3c21...ac09`. The file remains untouched and
 unscored as a possible future reserve. The runner was amended to accept only the exact old set plus
 this exact optional reserve—any other membership change still fails closed.
+
+### Desktop maintenance — PixelProof material isolated without touching other work
+
+The Desktop inventory was classified conservatively by exact PixelProof names and prior documented
+paths. Twenty-one proven project items were moved—not copied or deleted—under `PixelProof Workspace`:
+13 retired dataset/artifact roots in `Legacy Datasets`, three sample/gallery items in `Samples`, and
+five report/presentation/reference files in `Documents`. The active Git repository remains at its
+original path. Eight live/archive path defaults now resolve the new legacy root through
+`LEGACY_DATA_ROOT` instead of relying on Desktop clutter. Unrelated academic, EOE, Rork, Erasmus,
+form and screenshot files were untouched. `PixelProof_Sunum.pptx` and its Office lock file remain on
+Desktop because Microsoft PowerPoint has the deck open; moving an open document was intentionally
+refused.
+
+### E35 — DDA works as a ranker but the published cut fails real-camera transfer
+
+The first DDA scoring attempt produced no scientific output because the offline timm DINOv2-L
+adapter retained a fixed 518px assertion while the official DDA preprocessing supplies a 336px
+center crop. PixelProof did not label that runtime mismatch as a model result. Enabling timm's
+dynamic positional-grid interpolation reproduces torch.hub DINOv2 behaviour; three focused tests
+and a real one-image inference passed, and the compatibility change was committed before the only
+production run.
+
+That one run scored all 1,670 declared rows without failure. On 250 RR REAL + 250 RR AI, official
+DDA is strong: AUC 0.978192, EER 0.08, TPR@FPR10 0.92, balanced accuracy 92.4%, REAL FP 6.4%, AI
+recall 91.2% and worst scenario recall 81.72%. The same untouched 0.5 cut, however, falsely marks
+36.25% of the worst IPN phone and 34.76% of the owner gallery as AI. The preregistered DEVELOPMENT
+gate therefore fails; DDA is not added to serving and the almost-complete DDA-COCO benchmark stays
+unopened.
+
+A separately recorded post-hoc curve explains the next move without laundering the failure. The
+first observed boundary satisfying all consumed real gates is 0.901156, retaining 82.4% RR AI
+recall, but it was discovered from RR/IPN/owner outcomes and is permanently barred from deployment.
+E36 will test the hypothesis once on a newly acquired, role-separated CAL: >=6 unseen native camera
+pipelines and >=6 pinned modern generator families. Only a clean CAL pass can freeze a threshold,
+complete/open DDA-COCO and unlock a one-shot unseen FINAL. A failure opens paired-data training at
+home internet; it does not justify another arbitrary ensemble or benchmark-derived threshold.
+
+The slice closed with 236 Python tests, compileall, dependency integrity, the six-entry canonical
+artifact registry, production web build plus six web tests, TypeScript and ESLint all passing. The
+only warning is an upstream Starlette/httpx deprecation already present before E35. The result,
+post-hoc diagnostic, dataset ledger and next-data plan are committed together so the internship
+archive can reproduce both the promising RR result and the authentic-transfer rejection.

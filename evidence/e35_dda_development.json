@@ -1,0 +1,243 @@
+{
+  "boundary": "Published threshold DEVELOPMENT only; no threshold fit, retry arm or locked DDA-COCO access.",
+  "checkpoint_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e",
+  "contract": {
+    "boundary": "external research candidate; DEVELOPMENT cannot tune it",
+    "checkpoint_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e",
+    "detector_id": "official_dda_dinov2l_lora",
+    "input": "official RGB center-crop 336 and published CLIP normalization",
+    "model_repo_id": "Junwei-Xi/Dual-Data-Alignment",
+    "model_revision": "4390d9023899196b437480bb6a441915ef5d816c",
+    "score_direction": "higher means AI-generated",
+    "threshold": 0.5
+  },
+  "counts": {
+    "ipn": 960,
+    "owner": 210,
+    "rr": 500
+  },
+  "development_gate": {
+    "checks": {
+      "ipn_worst_device_fp_lte_0.20": false,
+      "owner_fp_lte_0.20": false,
+      "rr_ai_macro_gte_0.80": true,
+      "rr_ai_worst_gte_0.60": true,
+      "rr_auc_gte_0.85": true,
+      "rr_real_fp_lte_0.20": true
+    },
+    "passed": false
+  },
+  "experiment": "E35/official-DDA-development",
+  "ipn": {
+    "device_fp": {
+      "huawei-p20-lite": 0.0875,
+      "huawei-y9-2019": 0.1125,
+      "iphone-se-2020-1": 0.1125,
+      "iphone-se-2020-2": 0.1875,
+      "iphone-xr": 0.1,
+      "lg-l65": 0.0875,
+      "motorola-g-play": 0.15,
+      "motorola-g20": 0.1625,
+      "motorola-g4-plus": 0.1375,
+      "samsung-galaxy-a01": 0.125,
+      "samsung-galaxy-note9": 0.3625,
+      "sony-xperia-m4": 0.175
+    },
+    "macro_device_fp": 0.15,
+    "score_summary": {
+      "max": 0.9802380800247192,
+      "median": 0.15769267827272415,
+      "min": 0.02297431416809559,
+      "p25": 0.0872633159160614,
+      "p75": 0.3368590921163559,
+      "p95": 0.8398982316255568
+    },
+    "worst_device_fp": 0.3625
+  },
+  "owner": {
+    "false_positive_rate": 0.3476190476190476,
+    "gallery_identity_sha256": "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09",
+    "new_unscored_reserve_excluded": {
+      "bytes": 206418,
+      "name": "WhatsApp Image 2026-08-25 at 17.14.51.jpeg",
+      "sha256": "e04755bfa5ef63da5536dc10395bd3f1faf2f79a6e304bc4eeba87a5e4ec57e3"
+    },
+    "real_recall": 0.6523809523809524,
+    "score_summary": {
+      "max": 0.9810571670532227,
+      "median": 0.2564942538738251,
+      "min": 0.032953858375549316,
+      "p25": 0.10901334695518017,
+      "p75": 0.7358568757772446,
+      "p95": 0.9637885242700577
+    }
+  },
+  "rr": {
+    "ai_macro_recall": 0.9438242169237961,
+    "ai_recall_by_scenario": {
+      "culture_and_religion": 1.0,
+      "everyday_life": 0.8172043010752689,
+      "labor_and_production": 0.8695652173913043,
+      "medical_and_public_health": 1.0,
+      "natural_disasters_and_accidents": 1.0,
+      "political_and_social_events": 0.96,
+      "war_and_conflict": 0.96
+    },
+    "ai_worst_recall": 0.8172043010752689,
+    "metrics": {
+      "accuracy_counting_failures_wrong": 0.924,
+      "ai_recall": 0.912,
+      "balanced_accuracy": 0.924,
+      "brier_nontarget_real": 0.04770079101580066,
+      "brier_target_ai": 0.06405397428494532,
+      "confusion": {
+        "fn": 22,
+        "fp": 16,
+        "tn": 234,
+        "tp": 228
+      },
+      "counts": {
+        "ai_succeeded": 250,
+        "failed": 0,
+        "real_succeeded": 250,
+        "succeeded": 500,
+        "total": 500
+      },
+      "coverage": 1.0,
+      "eer": 0.07999999999999999,
+      "per_group": [
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 29
+          },
+          "count": 29,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "culture_and_religion"
+        },
+        {
+          "ai_recall": 0.8172043010752689,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 17,
+            "fp": 0,
+            "tn": 0,
+            "tp": 76
+          },
+          "count": 93,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "everyday_life"
+        },
+        {
+          "ai_recall": 0.8695652173913043,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 20
+          },
+          "count": 23,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "labor_and_production"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 33
+          },
+          "count": 33,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "medical_and_public_health"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 22
+          },
+          "count": 22,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "natural_disasters_and_accidents"
+        },
+        {
+          "ai_recall": 0.96,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 24
+          },
+          "count": 25,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "political_and_social_events"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 16,
+            "tn": 234,
+            "tp": 0
+          },
+          "count": 250,
+          "label": 0,
+          "real_false_positive_rate": 0.064,
+          "source": "rrdataset_real_pool"
+        },
+        {
+          "ai_recall": 0.96,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 24
+          },
+          "count": 25,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "war_and_conflict"
+        }
+      ],
+      "real_false_positive_rate": 0.064,
+      "roc_auc": 0.9781920000000001,
+      "stored_threshold": 0.5,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.92
+      }
+    }
+  },
+  "schema_version": 1,
+  "scores_bytes": 348372,
+  "scores_sha256": "ae352ffe1311fd267f4e649c3fe12f8455531471ebf77d519de40f6f685d883a",
+  "state": "dda_development_failed"
+}

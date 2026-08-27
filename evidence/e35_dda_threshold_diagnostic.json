@@ -1,0 +1,65 @@
+{
+  "experiment": "E35/official-DDA-posthoc-threshold-diagnostic",
+  "first_all_real_safe_score_boundary": {
+    "ipn_macro_device_fp": 0.029166666666666664,
+    "ipn_worst_device_fp": 0.2,
+    "owner_fp": 0.13333333333333333,
+    "rr_ai_recall": 0.824,
+    "rr_real_fp": 0.004,
+    "threshold": 0.9011563658714294
+  },
+  "fixed_frontiers": [
+    {
+      "ipn_macro_device_fp": 0.15,
+      "ipn_worst_device_fp": 0.3625,
+      "owner_fp": 0.3476190476190476,
+      "rr_ai_recall": 0.912,
+      "rr_real_fp": 0.064,
+      "threshold": 0.5
+    },
+    {
+      "ipn_macro_device_fp": 0.06666666666666667,
+      "ipn_worst_device_fp": 0.2625,
+      "owner_fp": 0.23333333333333334,
+      "rr_ai_recall": 0.864,
+      "rr_real_fp": 0.02,
+      "threshold": 0.75
+    },
+    {
+      "ipn_macro_device_fp": 0.057291666666666664,
+      "ipn_worst_device_fp": 0.2625,
+      "owner_fp": 0.19047619047619047,
+      "rr_ai_recall": 0.856,
+      "rr_real_fp": 0.02,
+      "threshold": 0.8
+    },
+    {
+      "ipn_macro_device_fp": 0.04479166666666667,
+      "ipn_worst_device_fp": 0.2375,
+      "owner_fp": 0.18095238095238095,
+      "rr_ai_recall": 0.848,
+      "rr_real_fp": 0.012,
+      "threshold": 0.85
+    },
+    {
+      "ipn_macro_device_fp": 0.030208333333333334,
+      "ipn_worst_device_fp": 0.2125,
+      "owner_fp": 0.13333333333333333,
+      "rr_ai_recall": 0.824,
+      "rr_real_fp": 0.004,
+      "threshold": 0.9
+    },
+    {
+      "ipn_macro_device_fp": 0.015625,
+      "ipn_worst_device_fp": 0.15,
+      "owner_fp": 0.10476190476190476,
+      "rr_ai_recall": 0.768,
+      "rr_real_fp": 0.0,
+      "threshold": 0.95
+    }
+  ],
+  "interpretation": "A conservative region exists on consumed DEVELOPMENT, but every displayed cut is ineligible for deployment because RR/IPN/owner outcomes were inspected. E36 must re-estimate a threshold on new CAL and validate it once on a new LOCKED FINAL set.",
+  "schema_version": 1,
+  "source_scores_sha256": "ae352ffe1311fd267f4e649c3fe12f8455531471ebf77d519de40f6f685d883a",
+  "source_state": "dda_development_failed"
+}
