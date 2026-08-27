@@ -24,6 +24,8 @@ from starlette.concurrency import run_in_threadpool
 
 from pixelproof.artifact_registry import verify_registry
 from pixelproof.evaluate import eval_transform
+from pixelproof.e32_r1b_candidate import ARTIFACT_SHA256 as R1B_ARTIFACT_SHA256
+from pixelproof.e32_r1b_candidate import E32R1bCandidate
 from pixelproof.feature_model import load as load_feature_models
 from pixelproof.feature_model import score_image, score_tiles
 from pixelproof.image_input import (
@@ -63,9 +65,14 @@ CORE_ARTIFACT_IDS = {
     "feature-crop128",
 }
 CF_ARTIFACT_ID = "community-forensics-vit-s"
+R1B_ENV = "PIXELPROOF_R1B"
 PROJECT_LIMITATION = (
     "Araştırma modeli: E20 üç-seed değerlendirmesinde en kötü gerçek kaynakta "
     "%86,2 yanlış pozitif verdi; sonuç gerçeklik sertifikası değildir."
+)
+R1B_LIMITATION = (
+    "Araştırma adayı: bağımsız IPN testinde en kötü cihaz yanlış pozitifi %40,0; "
+    "owner-gallery yanlış pozitifi %68,57. Ana kararı değiştirmez."
 )
 
 
@@ -100,12 +107,13 @@ class ModelRuntime:
         self.device = select_device()
         self.artifacts = (artifacts_dir or Path(__file__).resolve().parents[2] / "artifacts").resolve()
         self.profile = profile or os.environ.get("PIXELPROOF_RUNTIME_PROFILE", "full")
-        if self.profile not in {"full", "project"}:
-            raise ValueError("PIXELPROOF_RUNTIME_PROFILE must be 'full' or 'project'")
+        if self.profile not in {"full", "demo", "project"}:
+            raise ValueError("PIXELPROOF_RUNTIME_PROFILE must be 'full', 'demo' or 'project'")
         self.cnns: dict[str, tuple[Any, Any]] = {}
         self.features: dict[str, Any] = {}
         self.project_model: ProjectTileModel | None = None
         self.verdict: VerdictService | None = None
+        self.r1b: E32R1bCandidate | None = None
         self.load_errors: dict[str, str] = {}
         self.load_attempted = False
         self._load_lock = threading.Lock()
@@ -144,35 +152,36 @@ class ModelRuntime:
             if self.profile == "project":
                 return self.available
 
-            try:
-                core_report = verify_registry(self.artifacts.parent, groups={"core"})
-            except Exception as error:
-                self.load_errors["artifact_manifest"] = f"{type(error).__name__}: {error}"
-                core_report = {"ok": False, "checked": [], "issues": []}
-            checked_core = set(core_report["checked"])
-            if not core_report["ok"]:
-                if core_report["issues"]:
-                    self.load_errors["artifact_manifest"] = "; ".join(core_report["issues"])
-            elif checked_core != CORE_ARTIFACT_IDS:
-                missing = sorted(CORE_ARTIFACT_IDS - checked_core)
-                self.load_errors["artifact_manifest"] = (
-                    f"core manifest entries missing: {', '.join(missing)}"
-                )
-
-            if "artifact_manifest" not in self.load_errors:
-                for name, filename in {
-                    "small_cnn_cifake": "best.pt",
-                    "resnet18_genimage": "best_genimage.pt",
-                }.items():
-                    try:
-                        self.cnns[name] = self._load_checkpoint(filename)
-                    except Exception as error:
-                        self.load_errors[name] = f"{type(error).__name__}: {error}"
-
+            if self.profile == "full":
                 try:
-                    self.features = load_feature_models(self.artifacts)
+                    core_report = verify_registry(self.artifacts.parent, groups={"core"})
                 except Exception as error:
-                    self.load_errors["features"] = f"{type(error).__name__}: {error}"
+                    self.load_errors["artifact_manifest"] = f"{type(error).__name__}: {error}"
+                    core_report = {"ok": False, "checked": [], "issues": []}
+                checked_core = set(core_report["checked"])
+                if not core_report["ok"]:
+                    if core_report["issues"]:
+                        self.load_errors["artifact_manifest"] = "; ".join(core_report["issues"])
+                elif checked_core != CORE_ARTIFACT_IDS:
+                    missing = sorted(CORE_ARTIFACT_IDS - checked_core)
+                    self.load_errors["artifact_manifest"] = (
+                        f"core manifest entries missing: {', '.join(missing)}"
+                    )
+
+                if "artifact_manifest" not in self.load_errors:
+                    for name, filename in {
+                        "small_cnn_cifake": "best.pt",
+                        "resnet18_genimage": "best_genimage.pt",
+                    }.items():
+                        try:
+                            self.cnns[name] = self._load_checkpoint(filename)
+                        except Exception as error:
+                            self.load_errors[name] = f"{type(error).__name__}: {error}"
+
+                    try:
+                        self.features = load_feature_models(self.artifacts)
+                    except Exception as error:
+                        self.load_errors["features"] = f"{type(error).__name__}: {error}"
 
             try:
                 cf_report = verify_registry(self.artifacts.parent, groups={"cf_vit"})
@@ -183,6 +192,22 @@ class ModelRuntime:
                     self.load_errors["cf_vit_manifest"] = "; ".join(issues)
             except Exception as error:
                 self.load_errors["verdict"] = f"{type(error).__name__}: {error}"
+
+            if os.environ.get(R1B_ENV) == "1":
+                try:
+                    shared = next(
+                        (arm for arm in (self.verdict.arms if self.verdict else []) if arm.name == "cf_vit"),
+                        None,
+                    )
+                    if shared is None:
+                        raise RuntimeError("shared CF-ViT arm unavailable")
+                    self.r1b = E32R1bCandidate(
+                        device=self.device,
+                        model=shared.model,
+                        processor=shared.processor,
+                    )
+                except Exception as error:
+                    self.load_errors["r1b_research"] = f"{type(error).__name__}: {error}"
             return self.available
 
     @property
@@ -227,6 +252,7 @@ class ModelRuntime:
             ),
             "core_ready": self.core_ready,
             "decision_ready": self.decision_ready,
+            "r1b_research_ready": self.r1b is not None,
             "cnns": sorted(self.cnns),
             "features": sorted(self.features),
             "verdict_arms": arms,
@@ -290,6 +316,28 @@ class ModelRuntime:
         }
         return measured.score, project_payload, tile_map
 
+    def _run_r1b(self, picture: Image.Image) -> dict[str, Any] | None:
+        if self.r1b is None:
+            return None
+        score = self.r1b.score_image(picture)
+        triggered = score >= self.r1b.threshold
+        return {
+            "id": "e32_r1b_cfvit_iphone_correction",
+            "label": "E32 R1b · CF-ViT",
+            "score": round(score, 4),
+            "threshold": round(self.r1b.threshold, 4),
+            "triggered": triggered,
+            "band": "ai_signal" if triggered else "insufficient_evidence",
+            "research_only": True,
+            "affects_decision": False,
+            "artifact_sha256": R1B_ARTIFACT_SHA256,
+            "limitation": R1B_LIMITATION,
+            "evaluation": {
+                "ipn_worst_device_fp": 0.4,
+                "owner_gallery_fp": 144 / 210,
+            },
+        }
+
     def predict(self, picture: Image.Image, byte_size: int, method: str) -> dict[str, Any]:
         self.ensure_loaded()
 
@@ -323,6 +371,11 @@ class ModelRuntime:
                 engine = "feature_tiles"
 
             decision = self.verdict.run(picture, byte_size) if self.decision_ready else None
+            try:
+                r1b_research = self._run_r1b(picture)
+            except Exception as error:
+                self.load_errors["r1b_inference"] = f"{type(error).__name__}: {error}"
+                r1b_research = None
             width, height = picture.size
             return {
                 "p_ai": round(score, 4),
@@ -339,6 +392,7 @@ class ModelRuntime:
                 "tile_map": tile_map,
                 "project_model": project_payload,
                 "decision": decision,
+                "r1b_research": r1b_research,
             }
 
 

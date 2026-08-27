@@ -246,6 +246,84 @@ def test_invalid_runtime_profile_is_rejected_before_loading(tmp_path):
         ModelRuntime(tmp_path / "artifacts", profile="everything")
 
 
+def test_demo_profile_shares_cf_backbone_with_optional_r1b(tmp_path, monkeypatch):
+    project_model = ready_project_runtime(tmp_path).project_model
+    shared_model = object()
+    shared_processor = object()
+
+    class Arm:
+        name = "cf_vit"
+        model = shared_model
+        processor = shared_processor
+
+    class FakeVerdict:
+        available = True
+        arms = [Arm()]
+
+    captured = {}
+
+    class FakeR1b:
+        def __init__(self, *, device, model, processor):
+            captured.update(device=device, model=model, processor=processor)
+
+    runtime = ModelRuntime(tmp_path / "artifacts", profile="demo")
+    monkeypatch.setenv("PIXELPROOF_R1B", "1")
+    monkeypatch.setattr("pixelproof.serve.load_project_model", lambda *args: project_model)
+    monkeypatch.setattr(
+        "pixelproof.serve.verify_registry",
+        lambda *args, **kwargs: {
+            "ok": True,
+            "checked": ["community-forensics-vit-s"],
+            "issues": [],
+        },
+    )
+    monkeypatch.setattr("pixelproof.serve.VerdictService", lambda *args: FakeVerdict())
+    monkeypatch.setattr("pixelproof.serve.E32R1bCandidate", FakeR1b)
+
+    assert runtime.ensure_loaded() is True
+    assert runtime.core_ready is False
+    assert runtime.health()["r1b_research_ready"] is True
+    assert captured["model"] is shared_model
+    assert captured["processor"] is shared_processor
+
+
+def test_r1b_payload_is_research_only_and_never_changes_decision(tmp_path):
+    runtime = ready_project_runtime(tmp_path)
+
+    class FakeR1b:
+        threshold = 0.125
+
+        def score_image(self, picture):
+            assert picture.size == (128, 128)
+            return 0.8
+
+    runtime.r1b = FakeR1b()
+    result = runtime.predict(Image.new("RGB", (128, 128)), 1024, "project_model")
+
+    assert result["verdict"] == "uncertain"
+    assert result["r1b_research"]["triggered"] is True
+    assert result["r1b_research"]["affects_decision"] is False
+    assert result["r1b_research"]["band"] == "ai_signal"
+    assert result["r1b_research"]["evaluation"]["ipn_worst_device_fp"] == 0.4
+
+
+def test_r1b_inference_failure_degrades_only_optional_card(tmp_path):
+    runtime = ready_project_runtime(tmp_path)
+
+    class BrokenR1b:
+        threshold = 0.125
+
+        def score_image(self, picture):
+            raise RuntimeError("synthetic failure")
+
+    runtime.r1b = BrokenR1b()
+    result = runtime.predict(Image.new("RGB", (128, 128)), 1024, "project_model")
+
+    assert result["project_model"] is not None
+    assert result["r1b_research"] is None
+    assert "synthetic failure" in runtime.health()["load_errors"]["r1b_inference"]
+
+
 def test_project_model_api_returns_traceable_research_result_for_small_image(tmp_path):
     runtime = ready_project_runtime(tmp_path)
     health = runtime.health()

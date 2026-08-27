@@ -307,7 +307,12 @@ def _stop(process: subprocess.Popen[Any] | None) -> None:
             process.wait(timeout=5)
 
 
-def start_demo(api_port: int, web_port: int, image: Path) -> None:
+def start_demo(
+    api_port: int,
+    web_port: int,
+    image: Path,
+    r1b_data_root: Path | None = None,
+) -> None:
     for result in check_environment(api_port, web_port):
         print(f"check: {result}")
 
@@ -316,7 +321,14 @@ def start_demo(api_port: int, web_port: int, image: Path) -> None:
     api_env = os.environ.copy()
     api_env["PYTHONPATH"] = str(ML_ROOT / "src")
     api_env["PIXELPROOF_CORS_ORIGINS"] = web_url
-    api_env["PIXELPROOF_RUNTIME_PROFILE"] = "project"
+    api_env["PIXELPROOF_RUNTIME_PROFILE"] = "demo"
+    if r1b_data_root is not None:
+        root = r1b_data_root.expanduser().resolve()
+        expected = root / "e32/models/e32_r1b_cf.joblib"
+        if not expected.is_file():
+            raise DemoError(f"R1b artifact is missing below the selected data root: {expected}")
+        api_env["PIXELPROOF_DATA_ROOT"] = str(root)
+        api_env["PIXELPROOF_R1B"] = "1"
     web_env = os.environ.copy()
     web_env["NEXT_PUBLIC_PIXELPROOF_API_URL"] = api_url
     api = None
@@ -339,6 +351,12 @@ def start_demo(api_port: int, web_port: int, image: Path) -> None:
             start_new_session=True,
         )
         _wait_for_api(api_url, api)
+        if r1b_data_root is not None:
+            health = _request_json(urllib.request.Request(f"{api_url}/health"), 10.0)
+            if health.get("r1b_research_ready") is not True:
+                raise DemoError(
+                    f"R1b research signal did not load: {health.get('load_errors', health)}"
+                )
         smoke = smoke_api(api_url, image)
         print(
             f"smoke: score={smoke['score']:.4f}, threshold={smoke['threshold']:.4f}, "
@@ -393,6 +411,11 @@ def main() -> None:
     start_parser.add_argument("--api-port", type=int, default=8799)
     start_parser.add_argument("--web-port", type=int, default=3000)
     start_parser.add_argument("--image", type=Path, default=DEFAULT_IMAGE)
+    start_parser.add_argument(
+        "--r1b-data-root",
+        type=Path,
+        help="enable the frozen R1b research card from this PixelProof dataset root",
+    )
     args = parser.parse_args()
 
     try:
@@ -403,7 +426,7 @@ def main() -> None:
         elif args.command == "smoke":
             print(json.dumps(smoke_api(args.api_url, args.image), indent=2))
         else:
-            start_demo(args.api_port, args.web_port, args.image)
+            start_demo(args.api_port, args.web_port, args.image, args.r1b_data_root)
     except DemoError as error:
         parser.exit(2, f"PixelProof demo error: {error}\n")
 

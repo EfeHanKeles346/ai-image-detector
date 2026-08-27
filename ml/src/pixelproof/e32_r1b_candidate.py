@@ -7,7 +7,7 @@ import hashlib
 import json
 from dataclasses import asdict
 from pathlib import Path
-from typing import Iterable, Sequence
+from typing import Any, Iterable, Sequence
 
 import joblib
 import numpy as np
@@ -26,7 +26,14 @@ SELECTION = ML_ROOT.parent / "evidence" / "e32_r1b_selection.json"
 
 
 class E32R1bCandidate:
-    def __init__(self, artifact_path: Path = DEFAULT_ARTIFACT, device: torch.device | None = None):
+    def __init__(
+        self,
+        artifact_path: Path = DEFAULT_ARTIFACT,
+        device: torch.device | None = None,
+        *,
+        model: Any | None = None,
+        processor: Any | None = None,
+    ):
         selection = json.loads(SELECTION.read_text())
         if selection.get("selected_arm") != "cf" or selection.get("selected_artifact_sha256") != ARTIFACT_SHA256:
             raise RuntimeError("R1b arm selection changed")
@@ -37,17 +44,32 @@ class E32R1bCandidate:
         actual = (artifact.get("model_repo"), artifact.get("model_revision"), artifact.get("model_weight_sha256"))
         if actual != expected:
             raise RuntimeError("R1b CF model contract changed")
+        active = device or torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+        if (model is None) != (processor is None):
+            raise ValueError("model and processor must be shared together")
         local = Path(snapshot_download(MODEL_REPO, revision=MODEL_REVISION, local_files_only=True))
         if sha256_file(local / "model.safetensors") != MODEL_WEIGHT_SHA256:
             raise RuntimeError("cached CF-ViT weights changed")
-        from transformers import ViTForImageClassification, ViTImageProcessor
+        if model is None:
+            from transformers import ViTForImageClassification, ViTImageProcessor
 
-        active = device or torch.device("mps" if torch.backends.mps.is_available() else "cpu")
-        self.model = ViTForImageClassification.from_pretrained(local, local_files_only=True).to(active).eval()
-        self.processor = ViTImageProcessor.from_pretrained(local, local_files_only=True)
+            model = ViTForImageClassification.from_pretrained(local, local_files_only=True).to(active).eval()
+            processor = ViTImageProcessor.from_pretrained(local, local_files_only=True)
+        self.model = model
+        self.processor = processor
         self.device = active
         self.head = artifact["head"]
         self.threshold = float(artifact["threshold"])
+
+    @torch.inference_mode()
+    def score_image(self, picture: Image.Image) -> float:
+        standardized = Image.fromarray(standardized_array(picture), mode="RGB")
+        pixels = self.processor(images=[standardized], return_tensors="pt")["pixel_values"].to(self.device)
+        embedding = self.model.vit(pixel_values=pixels).last_hidden_state[:, 0].cpu().numpy()
+        score = float(self.head.predict_proba(embedding)[0, 1])
+        if not np.isfinite(score):
+            raise RuntimeError("non-finite R1b score")
+        return score
 
     @torch.inference_mode()
     def score_paths(self, paths: Sequence[Path], batch_size: int = 24) -> list[E32Score]:
