@@ -3075,3 +3075,12 @@ AI family floors fail. The RR acquisition tool now rejects traversal, links/devi
 members, undeclared class paths, implausible files and excessive expansion before atomic
 validation-only extraction. Nine focused metric/acquisition tests pass. No production image was
 scored and the locked test archive remained unopened at this checkpoint.
+
+The R1c-T production path was also committed before its manifest or first score. It derives the
+seven declared RRDataset scenario groups from strict filenames, preserves explicit class labels,
+records that scenarios are not camera-pipeline identities, and freezes a role-only manifest before
+loading R1b. Batch inference falls back recursively to isolate a bad file rather than dropping a
+whole batch. The single-run score receipt binds the manifest, unchanged R1b contract and score-file
+hash; the candidate freezer can change only the threshold and refuses to rerun over an existing
+score/candidate. Fifteen focused archive/metric/manifest tests pass. DEVELOPMENT and the locked RR
+test remained unopened.
