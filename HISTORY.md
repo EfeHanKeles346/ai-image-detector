@@ -3643,3 +3643,11 @@ gets clean plus one class-symmetric transport view for fitting, while DEVELOPMEN
 clean and all four fixed transports. Source-held-out OOF selects one threshold; the smaller model
 wins if both pass. Failure stops the ladder, while a pass permits exactly one unopened RR-test
 transfer. Exact bindings and gates are machine-readable in `evidence/e42_fixed_contract.json`.
+
+The first combined-manifest attempt stopped before writing a manifest or loading a model because
+the provisional parent key was not unique. E36 deliberately reuses each of 100 prompt/content IDs
+across six distinct generator families, so keys such as `qwen-bench:101` appeared six times even
+though the image hashes differ. This is an identifier collision, not duplicate imagery. E42 now
+qualifies those image-parent keys with the source family while retaining the original content ID;
+a regression test proves two generators sharing a prompt cannot merge. The completed 2,500-row RR
+train extraction remains valid and is reused; the failed manifest produced no accepted output.

@@ -84,7 +84,7 @@ def _write_atomic(path: Path, value: Any) -> bytes:
 
 def _dhash(image: Image.Image) -> str:
     grey = ImageOps.exif_transpose(image).convert("L").resize((9, 8), Image.Resampling.LANCZOS)
-    pixels = list(grey.getdata())
+    pixels = list(grey.get_flattened_data())
     value = 0
     for y in range(8):
         for x in range(8):
@@ -217,6 +217,13 @@ def _resolved(root: Path, value: str) -> Path:
     return path if path.is_absolute() else root / path
 
 
+def source_qualified_parent(prefix: str, source: str, parent_id: str) -> str:
+    """Keep prompt/content groups visible without merging distinct source images."""
+    if not prefix or not source or not parent_id:
+        raise ValueError("source-qualified parent fields cannot be empty")
+    return f"{prefix}:{source}:{parent_id}"
+
+
 def _row(
     *, path: Path, parent_id: str, label: int, source: str, role: str,
     provenance: str, expected_sha256: str | None = None,
@@ -301,7 +308,8 @@ def freeze_manifest(owner_gallery: Path = OWNER_DEFAULT) -> dict[str, Any]:
         for item in payload["rows"]:
             rows.append(_row(
                 path=_resolved(root, str(item["path"])),
-                parent_id=f"{prefix}:{item['parent_id']}", label=int(item["label"]),
+                parent_id=source_qualified_parent(prefix, str(item["source"]), str(item["parent_id"])),
+                label=int(item["label"]),
                 source=f"{prefix}:{item['source']}", role=role, provenance=provenance,
                 expected_sha256=item["sha256"],
             ))

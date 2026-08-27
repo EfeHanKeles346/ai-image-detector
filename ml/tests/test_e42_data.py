@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from experiments.e42_data import fixed_replay, rr_source
+from experiments.e42_data import fixed_replay, rr_source, source_qualified_parent
 
 
 def test_rr_source_requires_declared_class_filename() -> None:
@@ -33,3 +33,10 @@ def test_fixed_replay_is_group_local_and_deterministic() -> None:
     assert [row["record_id"] for row in first] == [row["record_id"] for row in second]
     assert len(first) == 8
     assert {row["role"] for row in first} == {"TRAIN"}
+
+
+def test_source_qualified_parent_does_not_merge_same_prompt_across_generators() -> None:
+    flux = source_qualified_parent("e36", "FLUX.2_max", "qwen-bench:101")
+    qwen = source_qualified_parent("e36", "Qwen-Image-2.0-pro", "qwen-bench:101")
+    assert flux != qwen
+    assert flux.endswith("qwen-bench:101")
