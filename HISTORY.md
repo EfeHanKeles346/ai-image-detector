@@ -3583,3 +3583,9 @@ preserved as `evidence/e42_bfree_manifest_rejected_wrong_root.json`; no model wa
 verified bytes and the acquisition receipt were moved intact to the declared LaCie destination,
 avoiding a redownload. The manifest code now hard-fails when it finds zero protected prior files,
 with a regression test, before decontamination can be accepted.
+
+The next dry manifest attempt found a second relocation edge before writing output: the acquisition
+receipt correctly preserved original absolute paths, but the manifest reader followed those stale
+paths after the byte-preserving move. It now derives every live path from the pinned safe relative
+filename plus the configured data root; receipt paths remain provenance only. This correction also
+has a focused relocation test and still precedes every model score.

@@ -40,6 +40,8 @@ def test_registry_preserves_label_and_parent_event(monkeypatch, tmp_path: Path) 
     loaded = external.load_registry(path)
     assert [row["label"] for row in loaded] == [0, 1]
     assert [row["source_id"] for row in loaded] == ["event-a", "event-b"]
+    moved = external.verified_path(loaded[0], tmp_path / "new-root")
+    assert moved == tmp_path / "new-root" / "images" / "REAL" / "event-a" / "a.jpg"
 
 
 def test_registry_rejects_cross_label_parent(monkeypatch, tmp_path: Path) -> None:

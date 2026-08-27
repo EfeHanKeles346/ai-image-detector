@@ -65,6 +65,11 @@ def _safe_relative_path(value: str, label: str) -> PurePosixPath:
     return path
 
 
+def verified_path(row: Mapping[str, Any], root: Path = OUTPUT_ROOT) -> Path:
+    relative = _safe_relative_path(str(row["relative_path"]), str(row["label_name"]))
+    return root / "images" / Path(*relative.parts)
+
+
 def load_registry(path: Path = REGISTRY) -> list[dict[str, Any]]:
     if _digest(path) != REGISTRY_SHA256:
         raise ValueError("B-Free viral registry changed")
@@ -263,7 +268,7 @@ def freeze_manifest() -> dict[str, Any]:
     for row in acquisition["rows"]:
         if row["status"] != "verified":
             continue
-        path = Path(str(row["local_path"]))
+        path = verified_path(row)
         if _digest(path) != row["sha256"] or _digest(path, "md5") != row["expected_md5"]:
             raise ValueError(f"B-Free verified bytes changed: {row['relative_path']}")
         with Image.open(path) as image:
@@ -273,7 +278,7 @@ def freeze_manifest() -> dict[str, Any]:
             "record_id": row["record_id"],
             "parent_id": f"bfree-viral:{row['source_id']}",
             "source_id": row["source_id"],
-            "path": row["local_path"],
+            "path": str(path),
             "relative_path": row["relative_path"],
             "label": int(row["label"]),
             "label_name": row["label_name"],
