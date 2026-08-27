@@ -2931,3 +2931,12 @@ domain but does not create camera-source invariance. The next step is an objecti
 redesign evaluated with leave-one-real-source-out calibration, followed by a genuinely new
 multi-camera authentic gate. IPN and the owner gallery are now permanently consumed DEVELOPMENT
 sets and cannot tune that redesign.
+
+Final engineering verification after the R1b rejection passed 203 Python tests, the production web
+build and six web tests, TypeScript typecheck, ESLint, `pip check` and the canonical artifact
+registry check. The compact external evidence SHA-256 is
+`8752699f643609588d8725f34c469c44791f6712cffcca7c03677de30b1c8d48`. A hash-verified R1b CLI
+smoke on one owner still loaded the pinned CF model and emitted score 0.313247 at threshold
+0.125935 (incorrect AI verdict), reproducing that the failure is model generalization rather than
+a broken runtime. Disk audit found no real `.partial` acquisition file or active transfer; E32
+occupies 137 GB and the LaCie volume retains 514 GiB free.

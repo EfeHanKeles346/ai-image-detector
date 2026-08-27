@@ -2704,3 +2704,12 @@ above are transcription errors; production range planning binds the filesystem v
 - **Decision:** reject R1b from serving. Preserve it as the controlled clean-real-data ablation;
   redesign the source-invariance objective/decision layer and reserve a new authentic source for
   the next final gate. IPN and owner are consumed DEVELOPMENT from now on.
+
+### C4-R1b final engineering verification
+
+- Evidence SHA-256: `8752699f643609588d8725f34c469c44791f6712cffcca7c03677de30b1c8d48`.
+- 203 Python tests; production web build + 6 web tests; typecheck; ESLint; `pip check`; artifact
+  registry: all pass (one upstream Starlette deprecation warning only).
+- Hash-verified CLI smoke loaded the pinned CF artifact and scored one owner still; the incorrect
+  AI verdict reproduces the measured generalization failure through the public research boundary.
+- Storage audit: no real `.partial` or active transfer; E32 137 GB; LaCie 514 GiB free.
