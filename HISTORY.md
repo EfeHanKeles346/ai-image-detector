@@ -3699,3 +3699,19 @@ compressed cache is 235,605,776 bytes / SHA-256 `452fec98...69ac5a`, bound to DI
 smallest-pass rule now short-circuits redundant computation: S is evaluated first, and DINOv2-L is
 needed only if S misses a mandatory development gate because a passing L cannot replace a passing
 S.
+
+### E42 decision method — fixed before OOF scores
+
+The consumed DEVELOPMENT population contains 34 whole source families. A deterministic greedy
+assignment keeps each source intact across five folds (7/7/7/6/7 sources), balanced separately by
+class. Each fold fits on all base TRAIN views plus only clean and hash-assigned transport views from
+the other development sources, then scores all five conditions of the held sources exactly once.
+The resulting OOF population is fixed at 11,230 rows; 2,246 clean rows alone select the first REAL-
+safe threshold, while 8,984 transformed rows can only pass/fail that unchanged cut.
+
+The head is fixed to StandardScaler + LogisticRegression C=0.01 with equal class mass and equal
+source mass inside each class. Clean must pass all nine standing success checks; combined robust
+views must additionally reach AUC 0.85 and balanced accuracy 0.80 with full coverage. Eight focused
+tests plus a real-cache structural dry run pass before any classifier fit. A full S pass packages
+S immediately; only an S miss authorizes the already-fixed L representation. B-Free and RR test
+remain inaccessible to this decision.
