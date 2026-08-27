@@ -358,6 +358,8 @@ def inventory_cal() -> dict[str, Any]:
 def _protected_hashes() -> tuple[set[str], set[str]]:
     exact, perceptual = set(), set()
     for path in sorted((DATA_ROOT / "e32" / "audits").glob("*.json")):
+        if path.name.startswith("._"):
+            continue
         payload = json.loads(path.read_text())
         if payload.get("state") not in {"realization_passed", "source_realization_passed"}:
             continue
@@ -401,8 +403,6 @@ def extract_and_manifest_cal() -> dict[str, Any]:
         device = archive_name.removesuffix(".zip")
         archive = ROOT / "archives" / archive_name
         destination_root = real_root / device
-        if destination_root.exists():
-            raise FileExistsError(f"E36 partial/old extraction requires audit: {destination_root}")
         with zipfile.ZipFile(archive) as bundle:
             members = [
                 info for info in bundle.infolist()
@@ -415,17 +415,33 @@ def extract_and_manifest_cal() -> dict[str, Any]:
                 raise ValueError(
                     f"E36 CAL device has fewer than {MIN_REAL_PER_DEVICE} normal originals: {device}"
                 )
-            temporary = real_root / f"{device}.partial"
-            if temporary.exists():
-                raise FileExistsError(f"partial extraction requires audit: {temporary}")
-            temporary.mkdir(parents=True)
-            for index, info in enumerate(members):
-                suffix = PurePosixPath(info.filename).suffix.lower()
-                destination = temporary / f"{index:03d}{suffix}"
-                with bundle.open(info) as source, destination.open("xb") as output:
-                    shutil.copyfileobj(source, output, length=8 * 1024**2)
+            expected_names = [
+                f"{index:03d}{PurePosixPath(info.filename).suffix.lower()}"
+                for index, info in enumerate(members)
+            ]
+            if destination_root.exists():
+                found_names = sorted(
+                    path.name for path in destination_root.iterdir()
+                    if path.is_file() and not path.name.startswith("._")
+                )
+                if found_names != expected_names:
+                    raise FileExistsError(f"E36 completed extraction does not match inventory: {device}")
+            else:
+                temporary = real_root / f"{device}.partial"
+                if temporary.exists():
+                    raise FileExistsError(f"partial extraction requires audit: {temporary}")
+                temporary.mkdir(parents=True)
+                for info, name in zip(members, expected_names, strict=True):
+                    destination = temporary / name
+                    with bundle.open(info) as source, destination.open("xb") as output:
+                        shutil.copyfileobj(source, output, length=8 * 1024**2)
+                    if destination.stat().st_size != info.file_size:
+                        raise ValueError(f"E36 extraction size mismatch: {info.filename}")
+                temporary.replace(destination_root)
+            for info, name in zip(members, expected_names, strict=True):
+                destination = destination_root / name
                 if destination.stat().st_size != info.file_size:
-                    raise ValueError(f"E36 extraction size mismatch: {info.filename}")
+                    raise ValueError(f"E36 reused extraction size mismatch: {info.filename}")
                 audit = _audit_image(destination)
                 real_rows.append({
                     "role": "cal",
@@ -433,10 +449,9 @@ def extract_and_manifest_cal() -> dict[str, Any]:
                     "source": device,
                     "condition": "native_view_000",
                     "parent_id": f"{device}:{info.filename}",
-                    "path": str((destination_root / destination.name).relative_to(ROOT)),
+                    "path": str(destination.relative_to(ROOT)),
                     **audit,
                 })
-            temporary.replace(destination_root)
     selection = _selection()
     ai_rows = []
     for row in selection["ai"]["rows"]["cal"]:
