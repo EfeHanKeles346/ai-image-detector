@@ -3307,3 +3307,11 @@ threshold is frozen at `0.896190`. The archive explicitly retains the caveat tha
 weight were chosen from consumed DEVELOPMENT diagnostics. E38 has therefore earned a test, not a
 success claim: only the four reserved REAL devices and six family-disjoint AI cells may now be
 acquired and scored once.
+
+The candidate-gated FINAL acquisition path was committed before transfer and refused to operate
+unless both E38 evidence and artifact hashes matched. It then verified 2.04 GB of four reserved
+REAL device archives and 311.24 MB of 240 family-disjoint AI blobs. CRC/safety inventory, native
+extraction, decode and decontamination all completed before model scoring. The resulting unscored
+manifest has 400 REAL (100 each from devices 004/006/007/008) and 240 AI (40 each from six held-out
+families), zero overlap with prior roles and SHA-256 `cad71ff5...66e6`. This is now a one-use FINAL;
+no row, candidate setting or threshold may change after the next command.

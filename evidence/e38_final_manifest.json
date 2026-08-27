@@ -1,0 +1,28 @@
+{
+  "ai_family_counts": {
+    "FLUX.2-pro": 40,
+    "GPT-Image-1.5": 40,
+    "HunyuanImage-3.0": 40,
+    "Imagen-4.0-Ultra": 40,
+    "Seedream-4.5": 40,
+    "nano-banana-pro": 40
+  },
+  "candidate_sha256": "fddbe475adb807bcf523127095b2a8221443761ad4afa71d8c163829afc44067",
+  "counts": {
+    "ai": 240,
+    "real": 400,
+    "total": 640
+  },
+  "detailed_manifest_bytes": 319091,
+  "detailed_manifest_sha256": "cad71ff5c631894805d1bb97c3b302732a23a069ce0b050faaf09e00314a66e6",
+  "prior_dhash_match_count_diagnostic": 0,
+  "prior_exact_overlap_count": 0,
+  "real_source_counts": {
+    "device_004": 100,
+    "device_006": 100,
+    "device_007": 100,
+    "device_008": 100
+  },
+  "schema_version": 1,
+  "state": "final_manifest_frozen_unscored"
+}

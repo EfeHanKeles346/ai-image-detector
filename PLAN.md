@@ -287,10 +287,13 @@ not fresh validation. Its only honest confirmation is the already locked FINAL.
       REAL macro/worst FP 4.34%/19.72%; AI macro/worst recall 82.5%/77.0%, coverage 100%.
       Candidate SHA-256 `fddbe475...4067`, threshold `0.896190`. This is DEVELOPMENT-selected and
       authorizes one untouched FINAL only; it is not itself final evidence.
-- [ ] **Acquire/audit the preregistered FINAL without model access.** Download only REAL devices
+- [x] **Acquire/audit the preregistered FINAL without model access.** Download only REAL devices
       004/006/007/008 and the six family-disjoint AI cells already frozen in E36-A. Verify exact
       archive/blob checksums, safe extraction, decode, label/source counts and exact/dHash overlap.
       No source, prompt, row, transform or threshold may change after any FINAL score.
+      Verified 2,038,841,380 REAL archive bytes +311,236,195 AI bytes. The frozen unscored manifest
+      contains 400 REAL (4x100) +240 AI (6x40), zero prior exact/dHash overlap, SHA-256
+      `cad71ff5...66e6`; candidate and threshold remain unchanged.
 - [ ] **Score FINAL exactly once.** Require the unchanged internship gates on native/clean parents
       first. Only after sealing that result may parent-linked QQ/Weibo or deterministic degradation
       children be reported as robustness columns. A miss is the final result for this candidate;

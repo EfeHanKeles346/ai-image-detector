@@ -840,3 +840,11 @@ cells. Candidate artifact SHA-256 is `fddbe475...4067`; threshold `0.896190`. Ne
 after FINAL bytes begin. The FINAL native/clean parent manifest must be frozen and committed before
 the first model score; QQ/Weibo copies remain grouped derivatives and cannot enter the headline
 parent count.
+
+FINAL acquisition then reproduced all four published REAL archive MD5 values and all 240 pinned AI
+blob SHA-256 values: 2,350,077,575 downloaded bytes. Safe ZIP/CRC inventory found at least 100
+native `view_000` originals in every reserved device. Before model access, PixelProof extracted and
+decoded exactly 100 native originals/device and audited all six AI families at 40 rows each. The
+frozen FINAL contains 400 REAL +240 AI =640 parents, zero exact/perceptual match to earlier passed
+roles and no within-FINAL cross-label dHash collision. Detailed manifest is 319,091 B / SHA-256
+`cad71ff5...66e6`; compact unscored evidence is `evidence/e38_final_manifest.json`.
