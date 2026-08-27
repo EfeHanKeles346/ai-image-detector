@@ -286,6 +286,10 @@ def freeze_manifest() -> dict[str, Any]:
             "height": row["actual_height"],
         })
     prior_exact, prior_dhash, prior_files = _prior_hashes()
+    if prior_files == 0:
+        raise ValueError(
+            "no protected prior manifests found; set PIXELPROOF_DATA_ROOT to the established dataset root"
+        )
     excluded, cross_event = excluded_event_ids(audited, prior_exact, prior_dhash)
     selected = [row for row in audited if row["source_id"] not in excluded]
     source_counts = {

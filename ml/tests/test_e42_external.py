@@ -78,3 +78,27 @@ def test_overlap_excludes_whole_parent_event_and_cross_event_duplicates() -> Non
     excluded, cross = external.excluded_event_ids(rows, {"b"}, set())
     assert excluded == {"r1", "f1", "f2"}
     assert cross == {"dhash:3": ["f1", "f2"]}
+
+
+def test_manifest_refuses_an_empty_protected_role_root(monkeypatch, tmp_path: Path) -> None:
+    acquisition = {
+        "state": "acquisition_complete_with_declared_coverage",
+        "candidate_sha256": "candidate",
+        "rows": [],
+    }
+    evidence = {"detailed_manifest_sha256": hashlib.sha256(external._json_bytes(acquisition)).hexdigest()}
+    contract = {"state": "frozen_before_external_bytes", "e41": {"artifact_sha256": "candidate", "threshold": 0.6195540428161622}}
+    for target, payload in (
+        (tmp_path / "acquisition.json", acquisition),
+        (tmp_path / "evidence.json", evidence),
+        (tmp_path / "contract.json", contract),
+    ):
+        target.write_bytes(external._json_bytes(payload))
+    monkeypatch.setattr(external, "DETAIL", tmp_path / "acquisition.json")
+    monkeypatch.setattr(external, "EVIDENCE", tmp_path / "evidence.json")
+    monkeypatch.setattr(external, "CONTRACT", tmp_path / "contract.json")
+    monkeypatch.setattr(external, "MANIFEST", tmp_path / "manifest.json")
+    monkeypatch.setattr(external, "MANIFEST_EVIDENCE", tmp_path / "manifest_evidence.json")
+    monkeypatch.setattr(external, "_prior_hashes", lambda: (set(), set(), 0))
+    with pytest.raises(ValueError, match="no protected prior manifests"):
+        external.freeze_manifest()

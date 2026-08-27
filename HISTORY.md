@@ -3575,3 +3575,11 @@ coverage, every one of the 17 REAL and 17 FAKE source events retains at least on
 so the effective 34-event parent structure remains complete. Detailed acquisition SHA-256 is
 `e95f514...b221d`. No E41 score, embedding or threshold was accessed; decontamination and the
 unscored parent manifest remain the next gate.
+
+The first manifest command exposed a path-safety defect before scoring: `PIXELPROOF_DATA_ROOT` was
+not set, so the verified B-Free bytes had landed under the ignored project data root and the prior
+E32/E33/E36/E39 manifests appeared empty. The resulting zero-prior manifest was rejected and
+preserved as `evidence/e42_bfree_manifest_rejected_wrong_root.json`; no model was loaded. All
+verified bytes and the acquisition receipt were moved intact to the declared LaCie destination,
+avoiding a redownload. The manifest code now hard-fails when it finds zero protected prior files,
+with a regression test, before decontamination can be accepted.
