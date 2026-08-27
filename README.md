@@ -73,20 +73,42 @@ diffusion inpainting and did not generalise to classic splicing.
 
 ## Repository map
 
+The repository has three deliberate zones. A file being runnable does not mean it participates in
+the served verdict.
+
+### Active product circuit
+
+| Path | Owner |
+|---|---|
+| `app/page.tsx` | Upload lifecycle and API request orchestration |
+| `app/result-panels.tsx` | R1b primary result plus collapsed E26/E20 presentation |
+| `app/analysis-contract.ts` | Browser-side validation of the API response |
+| `ml/src/pixelproof/serve.py` | FastAPI boundary and runtime profiles |
+| `ml/src/pixelproof/project_model.py` | Hash-verified canonical E20 scorer |
+| `ml/src/pixelproof/verdict.py` | Measured E26 comparison decision |
+| `ml/src/pixelproof/demo.py`, `tools/pixelproof-demo` | One-command local demo and smoke checks |
+| `ml/artifacts.manifest.json` | Pinned model identities, hashes, licences and schemas |
+
+### Research and evidence
+
 | Path | Purpose |
 |---|---|
-| `app/` | Turkish web client |
-| `ml/src/pixelproof/` | Models, input policy, decision protocol, CLI and FastAPI service |
-| `ml/experiments/` | Runnable E20–E27 protocol scripts |
-| `ml/EXPERIMENTS.md` | Append-only measured experiment log |
-| `ml/artifacts.manifest.json` | Pinned model identity, hashes, licences and schemas |
-| `PLAN.md` | Living roadmap and measured hardening results |
+| `ml/experiments/` | Runnable E20–E32 protocols; many reproduce rejected candidates, not serving |
+| `ml/src/pixelproof/e31_candidate.py`, `e32*_candidate.py` | Research-only scorers with frozen warnings |
+| `evidence/` | Compact machine-readable receipts bound to artifact/input hashes |
+| `DATASETS.md` | Dataset inventory, roles, licences and portable path contract |
+| `ml/EXPERIMENTS.md` | Append-only scientific log |
+| `MODEL_CARD.md`, `PRESENTATION_EVIDENCE.md` | Canonical model limits and internship evidence ledger |
+
+### History and local generated state
+
+| Path | Purpose |
+|---|---|
 | `HISTORY.md` | Append-only chronological project and decision archive |
-| `MODEL_CARD.md` | Canonical E20 identity, training data, metrics, limits and allowed uses |
-| `PRESENTATION_EVIDENCE.md` | Current internship presentation ledger and reproducible demo scenario |
-| `evidence/` | Machine-readable presentation evidence bound to artifact/input hashes |
-| `DATASETS.md` | Dataset inventory, allowed uses and portable path contract |
+| `PLAN.md` | Current execution slice and gated roadmap; completed context is retained below it |
+| `ml/experiments/archive/`, `ml/src/pixelproof/archive/` | Frozen historical reproduction code |
 | `rapor/` | Historical report/talk snapshot; see its boundary note |
+| `ml/data/`, `ml/artifacts/`, `ml/external/`, `dist/`, `.wrangler/`, `.vinext/` | Ignored local data, weights, third-party code and generated builds—not source cleanup targets |
 
 Label convention everywhere is `1 = AI-generated`, `0 = real`.
 

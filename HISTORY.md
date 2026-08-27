@@ -3010,3 +3010,24 @@ branch protection was enabled for `main`: both checks are required with strict u
 force-push and branch deletion are disabled, and administrator enforcement remains off so the
 repository owner retains recovery access. This closes the first shared-repository CI failure and
 replaces the unprotected-main warning with an enforceable test boundary.
+
+Repository simplification was then preregistered before moving active code. A dependency/read-only
+audit separated the live product circuit, reproducible research and frozen history. It also showed
+that the apparent 5.1 GB `ml/` size was ignored local datasets/artifacts rather than tracked source
+bloat, so no scientific byte, model, evidence receipt or append-only record was deleted.
+
+The web circuit was rewired without changing output: `app/page.tsx` now owns only file/request
+lifecycle, while four result-only components live together in `app/result-panels.tsx`; response
+validation remains in `analysis-contract.ts`. The page fell from 411 to 224 lines, and 38 lines of
+unowned CSS for the retired method picker, tile overlay, legacy cards and probability meters were
+removed. The obsolete Claude launcher—which silently acknowledged B-Free's restricted licence—an
+empty Next configuration and three unreferenced starter SVGs were deleted. Sites/Vinext hosting,
+worker, PostCSS, favicon/social card and lockfile paths were deliberately preserved. README and the
+experiment index now distinguish served code from E20–E32 reproducibility and frozen archives.
+
+No dataset, model or API image was downloaded, and no threshold, model artifact, API field,
+decision rule or measured result changed. Local verification passed 207 Python tests (one upstream
+Starlette/httpx deprecation warning), compileall, `pip check`, all six registered artifact hashes,
+ESLint, TypeScript, the production Sites/Vinext build and all six web tests. Generated pytest,
+Python bytecode, Vinext and `dist` caches were removed after validation; they are rebuildable and
+contain no project evidence.

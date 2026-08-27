@@ -29,25 +29,25 @@ records are not “cleanup.” The Sites/Vinext chain (`.openai/`, `vite.config.
 
 ### S1 — remove only proven residue
 
-- [ ] Delete the unused Claude-specific launcher that automatically opts into B-Free's restricted
+- [x] Delete the unused Claude-specific launcher that automatically opts into B-Free's restricted
       licence, the empty no-op Next configuration and the three unreferenced starter SVG assets.
       Keep the project favicon/social card and every file required by the Sites/Vinext build.
-- [ ] Add explicit ignore coverage for pytest caches so local verification noise cannot re-enter
+- [x] Add explicit ignore coverage for pytest caches so local verification noise cannot re-enter
       the project view. Remove only empty/generated cache directories after validation; preserve
       environments, installed packages, model artifacts and datasets.
 
 ### S2 — separate web orchestration from result presentation
 
-- [ ] Move the four result-only React components out of `app/page.tsx` into one focused module.
+- [x] Move the four result-only React components out of `app/page.tsx` into one focused module.
       Keep upload/request lifecycle in the page and response validation in
       `app/analysis-contract.ts`; do not change endpoint, payload, labels, thresholds or copy.
-- [ ] Remove CSS selectors belonging to the retired method picker, tile overlay, legacy result,
+- [x] Remove CSS selectors belonging to the retired method picker, tile overlay, legacy result,
       old R1b card and probability meter. Prove every removed selector has no live markup owner;
       preserve responsive, keyboard, touch and reduced-motion behavior.
 
 ### S3 — make the remaining structure self-explanatory
 
-- [ ] Replace the flat repository map in `README.md` with active product, research/archive and
+- [x] Replace the flat repository map in `README.md` with active product, research/archive and
       generated-local boundaries. Update the runnable experiment index through E32 so a reader can
       tell which code serves users, which reproduces rejected candidates and which must stay frozen.
 - [ ] Run the complete 207-test Python suite without caller `PYTHONPATH`, compileall, dependency

@@ -1,7 +1,8 @@
 # Runnable experiment index
 
-These scripts are the reproducible protocol surface. E7–E18 are frozen under `archive/`; E20–E28
-remain runnable because later decisions reuse their cached scores and source-wise splits.
+These scripts are the reproducible protocol surface. E7–E18 are frozen under `archive/`; E20–E32
+remain runnable because later decisions reuse their receipts, cached scores and source-wise splits.
+Runnable means reproducible research, not served or scientifically accepted.
 
 Run from `ml/` with the declared environment and portable dataset roots:
 
@@ -32,6 +33,14 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 | `e31_ensemble.py` | active fusion gate | Five-fold group-cross-fitted max/stack rules, row-level complementarity and paired group-bootstrap acceptance |
 | `e31_qwen_locked.py` | sealed final scout | Refuses access without a committed passing E31 DEVELOPMENT receipt; then scores the fixed 40 native + 40 standardized Qwen rows once |
 | `e31_score_folder.py` | research-only E31 inspection | Hash-verified rejected DINO candidate over a folder; immutable threshold, asymmetric verdicts and explicit DEVELOPMENT warning |
+| `e32_ai_inventory.py`, `e32_ai_pool_selection.py` | E32 AI metadata boundary | Audits generator identity/licence and freezes the exact source-capped modern-AI selection before bytes |
+| `e32_archive_inventory.py`, `e32_data_system.py`, `e32_source_realization.py`, `e32_eligibility_overlay.py`, `e32_role_manifest.py` | E32 data contract | Safe archive inventory, role-free decode/decontamination, global eligibility and group-disjoint TRAIN/CALIBRATION roles |
+| `e32_gap_acquisition.py`, `e32_gpt_acquisition.py` | receipt-bound acquisition | Resumable exact-row transfer tools; network work is allowed only after a committed selection and decoder gate |
+| `e32_r0_input.py`, `e32_r0_train.py`, `e32_r0_loco.py` | rejected E32 R0 | Standardized input receipt, frozen-DINO head and leave-one-real-source-out diagnostic |
+| `e32_cfvit_train.py`, `e32_owner_gallery_smoke.py`, `e32_r1a_gallery_smoke.py` | rejected R1a control | CF-ViT representation control and consumed owner-gallery DEVELOPMENT gate |
+| `e32_r1b_acquisition.py`, `e32_r1b_csafe_iphone14.py`, `e32_r1b_ipn_audit.py` | R1b corrective data path | Frozen iPhone/IPN selections, safe extraction and independent authentic-pipeline realization |
+| `e32_r1b_iphone14_audit.py`, `e32_r1b_iphone14_eligibility.py`, `e32_r1b_role_manifest.py`, `e32_r1b_input.py` | R1b role/input contract | Removes one confirmed burst, extends roles and reproduces the shared standardized input |
+| `e32_r1b_train.py`, `e32_r1b_select.py`, `e32_r1b_external.py` | rejected R1b experiment | DINO/CF controlled heads, preregistered CF selection and one consumed external DEVELOPMENT run |
 
 The current served decision contract is E26's OR rule, implemented in `pixelproof/verdict.py`:
 CF-ViT is default; B-Free is optional and licence-gated. E27 is retained to reproduce the
