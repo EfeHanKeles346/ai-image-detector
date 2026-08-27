@@ -3157,3 +3157,8 @@ loading, published RGB center-crop-336/normalization, sigmoid score direction an
 cut. The full 537-tensor state loaded strictly; the only compatibility shim retains torch.hub's
 unused `mask_token` parameter that timm omits. Nine focused LoRA/preprocessing/acquisition tests
 passed. No RR/IPN/owner or DDA-COCO member was scored at this checkpoint.
+
+The DDA DEVELOPMENT runner was then frozen before its first image. It binds the 500-row consumed
+RR manifest, 960-row IPN realization and exact 210-still owner identity; scores the published 0.5
+cut only; stores a hashed local row stream; and gates RR AUC/REAL FP/scenario recall plus IPN
+worst-device and owner FP simultaneously. No threshold-fit, retry arm or DDA-COCO read path exists.
