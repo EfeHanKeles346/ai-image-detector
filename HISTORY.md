@@ -3465,3 +3465,13 @@ all nine gates. A 12,690-byte development draft was refit on the 1,067-row histo
 1,071 E36 rows and all 440 E39 rows; SHA-256 `72b8d8cd...819c0`. It is explicitly not packaged or
 served: E39 is consumed development, and E40-C local robustness plus a genuinely new FINAL are
 still required. Detailed development evidence SHA-256 is `93f98f07...ebcc`.
+
+### E40-C robustness protocol — frozen before reopening local pixels
+
+The passed E40 draft is now bound to one non-tunable robustness gate before its first owner-gallery
+or transport score. All 440 consumed E39 parents will be viewed natively, at JPEG q50 and after
+75% resize plus q50; the latter two remain parent-linked derivatives, never 880 new observations.
+Each derivative must retain fixed AUC/TPR/balanced/source floors and at least 80% decision agreement
+within both classes. The unchanged threshold must also keep the hash-bound 210-photo owner gallery
+at or below 20% false positives. Passing packages a research candidate only; it cannot serve or
+claim generalization until a new FINAL. Two focused robustness tests pass before pixel access.

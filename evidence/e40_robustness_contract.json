@@ -1,0 +1,46 @@
+{
+  "boundary": "Frozen after E40-B passed and before any E40 draft score on owner-gallery pixels or E39 derivatives. All populations are consumed DEVELOPMENT; no FINAL data exists.",
+  "experiment": "E40/grouped-transport-and-owner-robustness",
+  "gates": {
+    "each_derivative_transport": {
+      "ai_macro_recall_gte": 0.8,
+      "ai_worst_family_recall_gte": 0.6,
+      "balanced_accuracy_gte": 0.8,
+      "coverage_eq": 1.0,
+      "real_macro_fp_lte": 0.2,
+      "real_worst_device_fp_lte": 0.3,
+      "roc_auc_gte": 0.85,
+      "tpr_at_fpr10_gte": 0.8
+    },
+    "owner_gallery_fp_lte": 0.2,
+    "parent_decision_agreement_per_class_gte": 0.8,
+    "score_direction": "mean AI score > mean REAL score for every E39 transport"
+  },
+  "inputs": {
+    "e39_manifest_sha256": "1076df20adc700a1893814e477891e9270e4f88502dbad2571e022f3a7127306",
+    "e40_development_report_sha256": "93f98f07663855c9fc918406c93fad8ca27b7434e29019ec88afd49279c2ebcc",
+    "e40_draft_sha256": "72b8d8cd05f0f4d51ab5008e19bf4ab3418988b3444b2e640a25fdd0e54819c0",
+    "owner_gallery_count": 210,
+    "owner_gallery_identity_sha256": "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09"
+  },
+  "model": {
+    "selected_mode": "uniform",
+    "threshold": 0.17080099880695346,
+    "threshold_change": "forbidden"
+  },
+  "package_rule": "Create an E40 research candidate only if every fixed derivative, agreement, direction and owner-gallery check passes. Never serve or call it final-validated before a new independent FINAL.",
+  "prohibited": [
+    "threshold or head refit",
+    "row exclusion after scoring",
+    "counting derivatives as independent parents",
+    "using owner-gallery or derivative scores to choose another model",
+    "new FINAL download in this phase"
+  ],
+  "schema_version": 1,
+  "state": "fixed_before_e40_robustness_scores",
+  "transports": {
+    "jpeg_q50": "EXIF transpose, RGB, native dimensions, JPEG quality=50/subsampling=2/optimize=false/progressive=false",
+    "native": "unchanged parent decode followed by the candidate's fixed preprocessing",
+    "resize75_q50": "EXIF transpose, RGB, LANCZOS 75% dimensions, long-side cap 2048, JPEG quality=50/subsampling=2/optimize=false/progressive=false"
+  }
+}

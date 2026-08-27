@@ -946,3 +946,8 @@ The sorted replay-ID list binds to SHA-256 `646a85a2...e13b`. No new image was d
 promoted to a test role. The generated score streams and 12,690-byte draft remain under local
 `/Volumes/LaCie/pixelproof-datasets/e40/`; they are derived development artifacts, not datasets or
 independent evidence.
+
+E40-C introduces no new dataset. It reuses all 440 E39 parents under two deterministic, parent-
+linked transport views and the already-consumed 210-photo owner-gallery DEVELOPMENT smoke (identity
+SHA-256 `390e3c21...ac09`). The one declared extra WhatsApp reserve remains excluded and unscored.
+No derivative changes the unique-parent count, and no gallery or derivative row can become FINAL.

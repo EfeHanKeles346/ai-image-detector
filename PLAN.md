@@ -404,6 +404,10 @@ E39 population, E40 must improve source/content generalization without hiding th
 - [ ] Run grouped JPEG/resize derivatives as parent-linked stress tests and use the owner gallery
       only as a disclosed DEVELOPMENT smoke. Require no collapse toward either class; derivatives
       never inflate N and cannot promote the model.
+      **Frozen implementation:** native, JPEG-q50 and 75%-resize+q50 views share the same 440 E39
+      parents and unchanged threshold; derivative AUC/TPR/balanced/REAL/AI floors plus >=80%
+      per-class decision agreement are fixed in `evidence/e40_robustness_contract.json`. The
+      hash-bound 210-photo owner gallery must remain <=20% FP; no row may tune E40.
 - [ ] Package the research candidate only if E40-A/B/C all pass. Record artifact, feature cache,
       replay selection, threshold and seed hashes in HISTORY/EXPERIMENTS/DATASETS.
 

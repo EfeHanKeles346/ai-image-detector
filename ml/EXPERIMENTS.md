@@ -2980,3 +2980,15 @@ was scored or selected using model output.
 - **Stability:** seeds 41/42/43 with that unchanged threshold are identical and pass all nine gates.
 - **Draft:** 12,690 B / SHA-256 `72b8d8cd...819c0`; detailed report/evidence is 61,190 B /
   SHA-256 `93f98f07...ebcc`. Status is development draft, not FINAL-validated product.
+
+### E40-C — fixed robustness gate before scoring
+
+- **Views:** each of the 440 consumed E39 parents appears under native, JPEG-q50 and
+  75%-resize+q50 transports. All views retain one parent ID; derivative N is never added.
+- **Fixed gate:** every derivative needs AUC >=0.85, TPR@FPR10 >=0.80, balanced accuracy >=0.80,
+  REAL macro/worst FP <=20%/30%, AI macro/worst recall >=80%/60%, and >=80% native-decision
+  agreement per class. Every transport must keep mean AI score above mean REAL score.
+- **Owner smoke:** the previously consumed identity-bound 210-photo gallery must stay <=20% FP at
+  unchanged threshold 0.170801. It cannot select or tune anything.
+- **Boundary:** method and code are committed before scores. A pass packages only a research
+  candidate awaiting new FINAL; a fail stops without retry.
