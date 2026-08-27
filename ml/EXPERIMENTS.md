@@ -3028,3 +3028,20 @@ was scored or selected using model output.
   0.97218, TPR@FPR10 0.90714, EER 0.10, balanced accuracy 0.90396. These values selected the
   threshold and are not validation evidence.
 - **Decision:** stop before data. No API/web promotion and no E41 FINAL byte or score exists.
+
+### E41/B-Free viral external stress — failed, no retry
+
+- **Population:** 811/1,111 MD5-verified surviving web versions, 278 REAL +533 AI, grouped under all
+  17 REAL +17 AI original source events. Exact/dHash screening found no prior-role overlap.
+- **Frozen decision:** unchanged E41 artifact `9bcc021e...ab65`, threshold 0.619554 and preprocessing.
+  Each URL version is scored, but each original source event has equal decision weight.
+- **Result:** AI parent-weighted recall **100%**, REAL parent-weighted recall **18.41%** (81.59% FP),
+  parent-weighted balanced accuracy **59.20%**. Event-mean AUC is 0.76125, TPR@FPR10 is 0.35294,
+  EER is 0.35294. Balanced-accuracy 95% bootstrap CI is [0.5226, 0.6775].
+- **Gate:** fail: balanced accuracy <0.80 and REAL recall <0.75; AI recall alone passes. Version-
+  weighted diagnostics agree (AUC 0.77456, balanced accuracy 0.58273, REAL FP 83.45%).
+- **Decision:** E41 remains rejected/research-only; no threshold change, row exclusion, retry or
+  product promotion. The unopened 20.12 GB RR test is preserved for the future E42 winner because
+  a second E41 score cannot reverse this mandatory-gate failure.
+- **Evidence:** `evidence/e42_bfree_result.json`; score stream SHA-256
+  `83783551...c33fc`; exact manifest SHA-256 `338a2f2...f37ca2`.

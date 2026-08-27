@@ -47,6 +47,8 @@ it before paying for another architecture or training run.
       exact 20,117,869,400-byte archive, reproduce MD5 `13c3ff3d61986170cc0c8cf76a35cd4b`,
       inventory/extract safely and score once. Prior RR validation exposure weakens collection-level
       independence, so report this as robustness transfer, never as the sole final claim.
+      **Deferred without transfer:** B-Free already rejected E41, so spending 20.12 GB to seek a
+      second E41 verdict cannot promote it. Preserve RR test unopened for the eventual E42 winner.
 - [ ] Freeze both unscored manifests and protected-role overlap audits before model access. E41 may
       be called an externally validated prototype only if the original global gates pass on the RR
       clean-parent population, the declared robust/transmission columns remain above working AUC
@@ -57,13 +59,16 @@ it before paying for another architecture or training run.
       one score per surviving web version, equal weighting of the 34 source events, 10,000-event
       bootstrap confidence intervals and the 0.80/0.75/0.75 gate are executable and covered by
       focused tests. Repost volume is diagnostic only and cannot dominate the verdict.
+      **B-Free result: failed.** AI parent recall is 100%, but REAL parent recall is only 18.41%
+      and parent-weighted balanced accuracy is 59.20%; the candidate's broad-real threshold did not
+      transfer to viral/web-propagated authentic images. No threshold retry is allowed.
 
 ### F2 — success branch and controlled failure branch
 
 - [ ] **If E41 passes:** package the same artifact for the research API/web path, keep the current
       uncertainty wording, run all Python/web/registry checks and retain ITW-SM/NIST as stronger
       later external confirmation. Do not claim NIST approval or universal detection.
-- [ ] **If E41 fails:** preserve the failed external scores and do not use RR test or B-Free viral
+- [x] **E41 failed:** preserve the failed external scores and do not use RR test or B-Free viral
       rows for E42 training or threshold selection. Open exactly one E42 line based on the research:
       DINOv2 global semantics plus deterministic texture-rich multi-crop aggregation, symmetric
       JPEG/WebP/resize/blur augmentation for both labels, and source-held-out calibration. Compare

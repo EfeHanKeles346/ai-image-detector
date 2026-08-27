@@ -1,0 +1,1130 @@
+{
+  "bootstrap": {
+    "ai_parent_weighted_recall_95ci": [
+      1.0,
+      1.0
+    ],
+    "parent_weighted_balanced_accuracy_95ci": [
+      0.5226244343891403,
+      0.6774880905539472
+    ],
+    "real_parent_weighted_recall_95ci": [
+      0.045248868778280604,
+      0.3549761811078945
+    ]
+  },
+  "boundary": "First and only E41 score on the frozen B-Free manifest; no retry, threshold change or tuning.",
+  "candidate_sha256": "9bcc021e74b617ee48cf297bd384a8dbe946240ec04822323af1e7c3fe63ab65",
+  "counts": {
+    "source_events": 34,
+    "versions": 811
+  },
+  "experiment": "E41/B-Free-viral-external-stress",
+  "gate": {
+    "checks": {
+      "ai_parent_weighted_recall_gte_0_75": true,
+      "parent_weighted_balanced_accuracy_gte_0_80": false,
+      "real_parent_weighted_recall_gte_0_75": false
+    },
+    "passed": false
+  },
+  "limitations": [
+    "811/1111 URL versions were recoverable; all 34 source events are represented.",
+    "Images date through 2024, so this is web-propagation stress rather than a current-generator final.",
+    "Confidence intervals are wide because effective independent N is 17 events per class."
+  ],
+  "manifest_sha256": "338a2f2b2135a4bbfcb8ce0ceef7da5d8cbe2a5b1ffbe745c0e05a1248f37ca2",
+  "parent_event_metrics": {
+    "accuracy_counting_failures_wrong": 0.5882352941176471,
+    "ai_recall": 1.0,
+    "balanced_accuracy": 0.5882352941176471,
+    "brier_nontarget_real": 0.6583767009582514,
+    "brier_target_ai": 0.011285667945471596,
+    "confusion": {
+      "fn": 0,
+      "fp": 14,
+      "tn": 3,
+      "tp": 17
+    },
+    "counts": {
+      "ai_succeeded": 17,
+      "failed": 0,
+      "real_succeeded": 17,
+      "succeeded": 34,
+      "total": 34
+    },
+    "coverage": 1.0,
+    "eer": 0.3529411764705882,
+    "per_group": [
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:Ed7JvuVXsAUTp-j"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FC736BnXoAAC4os"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FP7N6a0XMAEBq0n"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FP7N6a1X0AELPsX"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 1,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "bfree-viral:FP7N6a2XMAAEtZl"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 1,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "bfree-viral:FP7N6bBXEAEMgen"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FYsE6EsXEAE1hci"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FkiOl6wUYAIoylp"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FofsGeJaIAAqBmm"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FrHge_2agAAMNVw"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrWpvhQXwAgB-l6"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrWpvhUXwAQb8qg"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrpemYXWcAMOdk4"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsWi88WcAAx-4C"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsWiwRXwAAi6Qq"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsXCRSXgAEfOm8"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsXCgHXoAMPZei"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsY488WAAA7x9r"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsY4u3XgAQSHvd"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsZs7XWwAIIgab"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsZsv0WcAARGLs"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsaSV-XsAQYcrf"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrsaSiaWwAM1bvx"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FrusauNX0AETQwG"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FrvIUyZXoAEqp0h"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FrvV-KSXwAIx3p2"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrxUdK6X0CQPtCh"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FrxUdKcX0B4aI7M"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FsF6HuhXoAET9VZ"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FsII2EGWYAARBh2"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FsImFWOWcAAPCPv"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 1,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "bfree-viral:FsL1ChiXwAAaVFk"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "bfree-viral:FwKwNmNX0AEc4z7"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "mean_across_web_versions",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 1,
+          "tp": 0
+        },
+        "count": 1,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "bfree-viral:GTnAAAXWoAA809h"
+      }
+    ],
+    "real_false_positive_rate": 0.8235294117647058,
+    "roc_auc": 0.7612456747404843,
+    "stored_threshold": 0.6195540428161622,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.35294117647058826
+    }
+  },
+  "parent_weighted_decisions": {
+    "ai_parent_weighted_recall": 1.0,
+    "parent_weighted_balanced_accuracy": 0.5920374169734783,
+    "real_parent_weighted_fp": 0.8159251660530432,
+    "real_parent_weighted_recall": 0.18407483394695678
+  },
+  "schema_version": 1,
+  "scores_bytes": 231948,
+  "scores_sha256": "83783551ae025fef61bd87e63e6bf680a3dddbf4a4b0cbe7fba0bd62544c33fc",
+  "state": "wild_stress_failed",
+  "threshold": 0.6195540428161622,
+  "version_weighted_metrics_diagnostic": {
+    "accuracy_counting_failures_wrong": 0.7139334155363748,
+    "ai_recall": 1.0,
+    "balanced_accuracy": 0.5827338129496403,
+    "brier_nontarget_real": 0.6155859943601483,
+    "brier_target_ai": 0.00838318938098901,
+    "confusion": {
+      "fn": 0,
+      "fp": 232,
+      "tn": 46,
+      "tp": 533
+    },
+    "counts": {
+      "ai_succeeded": 533,
+      "failed": 0,
+      "real_succeeded": 278,
+      "succeeded": 811,
+      "total": 811
+    },
+    "coverage": 1.0,
+    "eer": 0.31313523290185863,
+    "per_group": [
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 2,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 2,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "Ed7JvuVXsAUTp-j"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 4,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 4,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FC736BnXoAAC4os"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 30,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 30,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FP7N6a0XMAEBq0n"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 21,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 21,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FP7N6a1X0AELPsX"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 3,
+          "tn": 20,
+          "tp": 0
+        },
+        "count": 23,
+        "label": 0,
+        "real_false_positive_rate": 0.13043478260869565,
+        "source": "FP7N6a2XMAAEtZl"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 3,
+          "tn": 10,
+          "tp": 0
+        },
+        "count": 13,
+        "label": 0,
+        "real_false_positive_rate": 0.23076923076923078,
+        "source": "FP7N6bBXEAEMgen"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 4,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 4,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FYsE6EsXEAE1hci"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 7,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 7,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FkiOl6wUYAIoylp"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 8,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 8,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FofsGeJaIAAqBmm"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 40,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 40,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FrHge_2agAAMNVw"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 7
+        },
+        "count": 7,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrWpvhQXwAgB-l6"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 4
+        },
+        "count": 4,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrWpvhUXwAQb8qg"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 3
+        },
+        "count": 3,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrpemYXWcAMOdk4"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 100
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsWi88WcAAx-4C"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 48
+        },
+        "count": 48,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsWiwRXwAAi6Qq"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 60
+        },
+        "count": 60,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsXCRSXgAEfOm8"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 56
+        },
+        "count": 56,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsXCgHXoAMPZei"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 33
+        },
+        "count": 33,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsY488WAAA7x9r"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 20
+        },
+        "count": 20,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsY4u3XgAQSHvd"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 14
+        },
+        "count": 14,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsZs7XWwAIIgab"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 11
+        },
+        "count": 11,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsZsv0WcAARGLs"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 4
+        },
+        "count": 4,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsaSV-XsAQYcrf"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 22
+        },
+        "count": 22,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrsaSiaWwAM1bvx"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 2,
+          "tn": 1,
+          "tp": 0
+        },
+        "count": 3,
+        "label": 0,
+        "real_false_positive_rate": 0.6666666666666666,
+        "source": "FrusauNX0AETQwG"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 59,
+          "tn": 11,
+          "tp": 0
+        },
+        "count": 70,
+        "label": 0,
+        "real_false_positive_rate": 0.8428571428571429,
+        "source": "FrvIUyZXoAEqp0h"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 13,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 13,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FrvV-KSXwAIx3p2"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 22
+        },
+        "count": 22,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrxUdK6X0CQPtCh"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 12
+        },
+        "count": 12,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FrxUdKcX0B4aI7M"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 109
+        },
+        "count": 109,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FsF6HuhXoAET9VZ"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 2,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 2,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FsII2EGWYAARBh2"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 12,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 12,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FsImFWOWcAAPCPv"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 8
+        },
+        "count": 8,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FsL1ChiXwAAaVFk"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 22,
+          "tn": 0,
+          "tp": 0
+        },
+        "count": 22,
+        "label": 0,
+        "real_false_positive_rate": 1.0,
+        "source": "FwKwNmNX0AEc4z7"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "web_propagated_version",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 4,
+          "tp": 0
+        },
+        "count": 4,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "GTnAAAXWoAA809h"
+      }
+    ],
+    "real_false_positive_rate": 0.8345323741007195,
+    "roc_auc": 0.7745555900495363,
+    "stored_threshold": 0.6195540428161622,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.2795497185741088
+    }
+  }
+}

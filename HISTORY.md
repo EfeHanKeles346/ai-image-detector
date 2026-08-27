@@ -3606,3 +3606,22 @@ parent-weighted balanced accuracy >=0.80 and both REAL and AI parent-weighted re
 10,000 event-level bootstrap draws expose the uncertainty of only 17 parents per class. The score
 stream is write-once: an existing result blocks a retry. Two focused method tests and the complete
 seven-test E42 external suite pass before the model is loaded. No B-Free score has yet been seen.
+
+### E41 external stress result — perfect AI recall hides another real-photo collapse
+
+The frozen E41 candidate scored all 811 manifest rows once with full inference coverage. Every AI
+parent is detected, but the unchanged decision calls 81.59% of equally weighted REAL-parent web
+versions AI: REAL parent recall is 18.41%, AI parent recall 100% and balanced accuracy 59.20%
+(95% event bootstrap interval 52.26–67.75%). Event-mean AUC is only 0.76125, TPR@FPR10 0.35294 and
+EER 0.35294. The pre-registered 0.80 balanced /0.75 per-class stress gate therefore fails on both
+balanced accuracy and REAL safety. Version-weighted results tell the same story, so URL attrition
+or parent weighting did not manufacture the diagnosis.
+
+There is no threshold retry and E41 is not promoted. The external result confirms that the broad-
+real threshold repaired a consumed gallery but did not repair the representation's dependence on
+the authentic source domain. Because one mandatory gate already failed, the unopened 20.12 GB RR
+test cannot make E41 pass and remains untouched for the eventual E42 winner. The frozen failure
+opens only the preregistered E42 route: texture-aware multi-crop evidence, symmetric transport
+augmentation and source-held-out calibration, selected without B-Free or RR-test tuning. Score
+stream SHA-256 is `83783551...c33fc`; tracked evidence is
+`evidence/e42_bfree_result.json`.
