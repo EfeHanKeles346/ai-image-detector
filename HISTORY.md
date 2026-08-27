@@ -3099,3 +3099,25 @@ minimum reportable group size 20; IPN per-device and owner-gallery DEVELOPMENT r
 transfer gates. The unscored detailed manifest is 124,960 B / SHA-256 `5d575a08...b521`, and compact
 evidence is `evidence/e33_r1c_cal_manifest.json`. Sixteen focused tests passed before the first
 production score.
+
+R1c-T then scored all 500/500 frozen RR validation rows with zero decode/inference failure and the
+unchanged R1b artifact. The clean result rejects the threshold-only hypothesis: ROC-AUC 0.80728,
+EER 0.276 and TPR@FPR=10% 0.52. R1b's old 0.125935 cut retains 96.4% AI recall but falsely flags
+82.8% of RR reals. The first pre-specified REAL-safe cut is 0.998400 at exactly 10.0% REAL FP; it
+falls to 52.0% pooled AI recall, 60.52% scenario-macro and 26.88% worst-scenario recall. Both the
+working AUC tier and 80%/60% AI gates fail. Detailed rejected candidate SHA is
+`b521edbc...7538`; compact evidence is `evidence/e33_r1c_threshold.json`.
+
+Because CAL failed, IPN/owner DEVELOPMENT was not reopened, no threshold was promoted, and the
+20.12 GB RR locked test was neither downloaded nor inspected. Research then identified official
+NeurIPS 2025 DDA-COCO as the next causally relevant input rather than another volume-only dataset:
+Apache-2.0, 4,301,452,066 B, revision `8c9330a3...68fb`, Xet SHA-256 `8cd60077...9c24`, with
+MS-COCO reals and semantically/frequency-aligned VAE reconstructions. E34 preregisters it as a
+pair-preserving TRAIN/CAL source; using it for fitting permanently forfeits a DDA benchmark claim.
+
+E34 acquisition code was implemented and tested before transfer. It hard-binds the official
+revision/licence/file size/Xet SHA, preserves resumable partial bytes and a 100 GiB disk floor, and
+adds ZIP traversal/symlink/encryption/duplicate/CRC/expansion gates. Live metadata freeze produced
+a 916 B detailed receipt / SHA-256 `f0bc21a7...5184` and compact
+`evidence/e34_dda_acquisition.json`; status confirmed zero complete/partial archive bytes. Sixteen
+focused E33/E34 metric/manifest/acquisition tests passed before download authorization was used.

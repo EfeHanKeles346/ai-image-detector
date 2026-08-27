@@ -1,0 +1,17 @@
+{
+  "detailed_selection_bytes": 916,
+  "detailed_selection_sha256": "f0bc21a7927b7a272726da90895ef9da1f80e837b665739e0f797da4abec5184",
+  "experiment": "E34/R1c-P-DDA-COCO",
+  "new_archive_bytes_downloaded_by_freeze": 0,
+  "schema_version": 1,
+  "source": {
+    "bytes": 4301452066,
+    "filename": "DDA-COCO.zip",
+    "license": "Apache-2.0",
+    "repo_id": "Junwei-Xi/DDA-COCO",
+    "revision": "8c9330a3b374bcac46a8045a0e3c09ebcf7868fb",
+    "role": "paired_train_cal_candidate",
+    "sha256": "8cd600779aaecef21605b07bff9ab3963a7fb9b9614a3d9a0588cd4a5e099c24"
+  },
+  "state": "selection_frozen_no_archive_bytes_claimed"
+}

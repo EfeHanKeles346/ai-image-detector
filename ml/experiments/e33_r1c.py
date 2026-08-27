@@ -9,7 +9,11 @@ import re
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
-from pixelproof.benchmark_metrics import select_source_robust_threshold
+from pixelproof.benchmark_metrics import (
+    BenchmarkContractError,
+    evaluate_binary_scores,
+    select_source_robust_threshold,
+)
 from pixelproof.e32_candidate import sha256_file
 from pixelproof.e32_r1b_candidate import ARTIFACT_SHA256, E32R1bCandidate
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
@@ -198,16 +202,37 @@ def freeze_threshold() -> dict[str, Any]:
     rows = _score_rows()
     # The official 500-row validation split exposes 250 pooled REAL rows and roughly 22-93
     # AI rows per scenario. Twenty is frozen from filenames, before any model score is opened.
-    result = select_source_robust_threshold(rows, min_group_size=20)
+    try:
+        result = select_source_robust_threshold(rows, min_group_size=20)
+        passed = True
+        failure = None
+    except BenchmarkContractError as error:
+        # Preserve the first REAL-safe frontier point as diagnostic evidence without promoting it.
+        result = select_source_robust_threshold(
+            rows,
+            min_group_size=20,
+            macro_ai_recall_floor=0.0,
+            worst_ai_recall_floor=0.0,
+        )
+        passed = False
+        failure = str(error)
     receipt = json.loads((OUTPUT_ROOT / "r1c_cal_score_receipt.json").read_text())
+    old_metrics = evaluate_binary_scores(rows, threshold=0.1259349137544632)
+    selected_metrics = evaluate_binary_scores(rows, threshold=float(result["threshold"]))
     detailed = {
         "schema_version": 1,
-        "state": "r1c_threshold_candidate_frozen",
+        "state": "r1c_threshold_candidate_frozen" if passed else "r1c_threshold_rejected_on_calibration",
         "candidate": "E32/R1c-T",
+        "passed": passed,
+        "failure": failure,
         "base_artifact_sha256": ARTIFACT_SHA256,
         "score_receipt_sha256": sha256_file(OUTPUT_ROOT / "r1c_cal_score_receipt.json"),
         "scores_sha256": receipt["scores_sha256"],
         "selection": result,
+        "metrics": {
+            "frozen_r1b_threshold": old_metrics,
+            "first_real_safe_threshold": selected_metrics,
+        },
         "boundary": "threshold selected only on RRDataset validation scenario groups; DEVELOPMENT remains unopened",
     }
     _write_atomic(CANDIDATE, detailed)

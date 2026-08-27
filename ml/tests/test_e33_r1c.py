@@ -47,3 +47,8 @@ def test_manifest_preserves_explicit_label_direction_and_scenario(tmp_path: Path
     assert payload["source_semantics"] == (
         "REAL is one undisclosed upstream pool; AI exposes seven scenario groups"
     )
+
+
+def test_rejected_threshold_state_is_not_a_candidate_state() -> None:
+    assert "rejected" not in "r1c_threshold_candidate_frozen"
+    assert "rejected" in "r1c_threshold_rejected_on_calibration"

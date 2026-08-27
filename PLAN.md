@@ -80,22 +80,48 @@ unrelated personal, academic or EOE material.
 
 ### D3 — implement and evaluate R1c-T before another model change
 
-- [ ] Add one reusable E32 benchmark adapter that accepts a manifest with explicit
+- [x] Add one reusable E32 benchmark adapter that accepts a manifest with explicit
       `0=REAL, 1=AI`, parent/source/condition columns, counts decode/inference failures as failed
       rows, and reports ROC-AUC, EER, TPR@FPR=10%, balanced accuracy, confusion, per-source/per-
       condition rates and uncalibrated-score Brier diagnostics. Tests use synthetic scores/files.
-- [ ] Keep R1b backbone, CF head, preprocessing and score direction byte-identical. Select one
+- [x] Keep R1b backbone, CF head, preprocessing and score direction byte-identical. Select one
       R1c-T threshold exclusively on eligible `R1C_CAL` authentic rows under macro FPR <=10% and
       worst-pipeline FPR <=20%; use CAL AI rows only to reject a threshold below the pre-registered
       recall gates. Freeze the threshold, source receipt, score hashes and code revision.
+      **CAL result: rejected.** All 500 rows scored, but ROC-AUC was 0.80728. The frozen R1b cut
+      produced 82.8% REAL FP; the first aggregate-REAL-safe cut was 0.998400 at 10.0% REAL FP but
+      only 60.52% AI scenario-macro / 26.88% worst-scenario recall. It fails both the working AUC
+      tier and the 80%/60% AI gates. This is a rejection receipt, not a deployable threshold.
 - [ ] Reopen IPN and the owner gallery only as consumed DEVELOPMENT regression. Pass requires
       IPN worst-device and owner FPR <=20% while the frozen internal modern-AI macro recall remains
       >=80% and weakest family >=60%. They cannot move the threshold.
+      Not opened: R1c-T failed CAL, so DEVELOPMENT cannot rescue or retune it.
 - [ ] A DEVELOPMENT pass permits exactly one RRDataset locked test. Meeting the internship-success
       gate promotes R1c-T to the API/web path; a miss remains a documented working/rejected
       candidate according to the frozen tiers. Only a clean threshold-transfer failure opens the
       already-planned paired semantic+frequency R1c-P training path; ensembles and new encoders
       remain later hypotheses.
+      No 20.12 GB locked-test byte was downloaded because the prerequisite candidate does not
+      exist.
+
+### D3.5 — open R1c-P with licensed aligned pairs, not another threshold sweep
+
+- [ ] Freeze official NeurIPS 2025 `Junwei-Xi/DDA-COCO` at Hugging Face revision
+      `8c9330a3...68fb`: Apache-2.0, one 4,301,452,066-byte ZIP, Xet SHA-256
+      `8cd60077...9c24`. It contains MS-COCO validation reals and corresponding VAE reconstructions
+      across five alignment variants. Treat it as TRAIN/CAL candidate, never as an untouched DDA
+      benchmark after training on it.
+- [ ] Download resumably to `/Volumes/LaCie/pixelproof-datasets/e34_dda_coco/`, verify size/SHA-256,
+      run the ZIP safety inventory, and freeze exact parent links before extraction. Decontaminate
+      every proposed pair against E30/E32 protected hashes and the now-consumed RR validation rows.
+- [ ] Select a compact 2,000–4,000-pair source-balanced subset before model scores. Put complete
+      real/reconstruction parent groups into deterministic TRAIN/CAL roles; never let two VAE
+      variants of one COCO parent cross roles. Standardize both labels identically.
+- [ ] Reuse frozen CF-ViT first. Compare only the unchanged R1b linear-head baseline against one
+      source-balanced head trained with the aligned DDA pairs plus a capped modern-AI regularizer.
+      Freeze seed 2024/C-grid/role hashes before features. A clean new CAL selects threshold;
+      consumed RR validation, IPN and owner gallery can reject but never tune. Only a pass may
+      unlock another locked benchmark or API/web promotion.
 
 ### D4 — close the slice reproducibly
 

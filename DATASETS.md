@@ -698,3 +698,27 @@ one `rrdataset_real_pool`, uses an aggregate calibration false-positive budget a
 multi-camera calibration claim. The detailed 124,960-byte manifest SHA-256 is
 `5d575a08...b521`; compact evidence is `evidence/e33_r1c_cal_manifest.json`. No model score existed
 when this allocation was frozen.
+
+All 500 validation rows later decoded/scored successfully, so the RR validation role is now
+consumed CAL/diagnostic and cannot serve a new candidate. R1c-T failed before DEVELOPMENT: AUC
+0.80728, EER 0.276 and TPR@FPR=10% 0.52. At the original R1b threshold REAL FP was 82.8%; the first
+REAL-safe threshold was 0.998400 with 10.0% REAL FP but only 52.0% pooled AI recall, 60.52% AI
+scenario-macro recall and 26.88% worst-scenario recall. The 20.12 GB RR locked test archive remains
+undownloaded and unopened.
+
+### E34/R1c-P aligned-pair source — proposed before bytes (2026-08-27)
+
+The next data is not another unrelated AI pile. The selected candidate is the official NeurIPS
+2025 **DDA-COCO** release (`Junwei-Xi/DDA-COCO`) at revision
+`8c9330a3b374bcac46a8045a0e3c09ebcf7868fb`, Apache-2.0. Its single
+`DDA-COCO.zip` is 4,301,452,066 B with Xet SHA-256
+`8cd600779aaecef21605b07bff9ab3963a7fb9b9614a3d9a0588cd4a5e099c24`. The source provides
+MS-COCO validation reals and semantically corresponding synthetic VAE reconstructions across five
+alignment variants, directly targeting the semantic/frequency shortcut revealed by R1b/E33.
+
+PixelProof will use it only as a pair-preserving TRAIN/CAL candidate after archive safety,
+parent-link and protected-hash audits. Once used for fitting, PixelProof will make no DDA benchmark
+claim. The target is a deterministic 2,000–4,000-pair subset rather than all rows; variants of one
+COCO parent stay in one role. Detailed metadata selection is 916 B / SHA-256
+`f0bc21a7...5184`; compact evidence is `evidence/e34_dda_acquisition.json`. No image byte existed
+at this preregistration.

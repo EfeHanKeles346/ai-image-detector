@@ -2762,3 +2762,20 @@ above are transcription errors; production range planning binds the filesystem v
   new calibration sources. IPN/owner-derived 0.863312 and 0.95 are permanently ineligible values;
   failure to reproduce cleanly triggers paired semantic+frequency alignment, not another arbitrary
   data-volume or encoder sweep.
+
+### E33 — licensed RRDataset threshold transfer: rejected on CAL
+
+- **Boundary:** official ICCV 2025 RRDataset validation only, frozen as 250 REAL + 250 AI before
+  scoring. R1b backbone/head/input/score direction stayed byte-identical. RR test, IPN and owner
+  gallery remained unopened; no model weight was fitted.
+- **Integrity:** 500/500 decode and inference successes; score SHA
+  `1a3dd4c7...98f6`. Filenames expose seven AI scenarios but only one pooled REAL identity, so the
+  authentic gate is aggregate and cannot claim camera-source transfer.
+- **Ranking:** ROC-AUC 0.80728, EER 0.276, TPR@FPR=10% 0.52. This is below the preregistered working
+  AUC 0.85 and far below internship-success AUC 0.90.
+- **Frozen R1b threshold 0.125935:** AI recall 96.4%, REAL FP 82.8%, balanced accuracy 56.8%.
+- **First REAL-safe frontier 0.998400:** REAL FP 10.0%, pooled AI recall 52.0%, balanced accuracy
+  71.0%, AI scenario macro/worst recall 60.52%/26.88%. Everyday-life AI is the weakest at 26.88%.
+- **Decision:** reject R1c-T before DEVELOPMENT and do not download/open the 20.12 GB locked RR
+  test. Threshold transfer alone cannot satisfy both authentic safety and AI coverage. Open one
+  paired semantic+frequency-aligned R1c-P experiment; do not sweep another threshold or ensemble.
