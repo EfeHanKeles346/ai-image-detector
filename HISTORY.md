@@ -3138,3 +3138,9 @@ home internet, and preregisters the official Apache-2.0 DDA checkpoint as the ne
 candidate (1,255,621,296 B, revision `4390d902...16c`, SHA-256 `b27a31d3...e3e`). This correction
 changes no measured result and preserves the already-downloaded partial only as unopened benchmark
 bytes.
+
+The official DDA checkpoint metadata was then frozen independently before transfer: exact model
+repository/revision, Apache-2.0 licence, 1,255,621,296-byte `DDA_ckpt.pth` and Xet SHA-256. The
+detailed E35 selection is 962 B / SHA-256 `7bdbe886...3fd9`; compact evidence is
+`evidence/e35_dda_model_acquisition.json`. Seven focused DDA archive/model contract tests passed,
+and status confirmed zero checkpoint bytes while the unopened benchmark transfer continued.

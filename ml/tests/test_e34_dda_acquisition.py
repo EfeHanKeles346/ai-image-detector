@@ -8,11 +8,16 @@ import pytest
 from experiments.e34_dda_acquisition import (
     EXPECTED_BYTES,
     FILENAME,
+    MODEL_BYTES,
+    MODEL_FILENAME,
+    MODEL_REPO_ID,
+    MODEL_REVISION,
     REPO_ID,
     REVISION,
     inspect_zip,
     parse_content_range,
     range_plan,
+    validate_model_repository,
     validate_repository,
 )
 
@@ -37,6 +42,18 @@ def test_dda_repository_rejects_revision_drift() -> None:
     payload["sha"] = "0" * 40
     with pytest.raises(ValueError, match="revision"):
         validate_repository(payload)
+
+
+def test_official_dda_model_binds_checkpoint_contract() -> None:
+    payload = {
+        "id": MODEL_REPO_ID,
+        "sha": MODEL_REVISION,
+        "cardData": {"license": "apache-2.0"},
+        "siblings": [{"rfilename": MODEL_FILENAME}],
+    }
+    result = validate_model_repository(payload)
+    assert result["bytes"] == MODEL_BYTES
+    assert result["role"] == "external_candidate_checkpoint"
 
 
 def _zip_info(name: str, size: int = 10) -> zipfile.ZipInfo:

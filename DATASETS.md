@@ -730,3 +730,5 @@ The corresponding official model candidate is `Junwei-Xi/Dual-Data-Alignment`, r
 Xet SHA-256 `b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e` and uses a
 DINOv2-L/14 LoRA detector. It is the next compact candidate; it must be pinned and tested before
 DDA-COCO is opened.
+Its metadata-only E35 selection is 962 B / SHA-256 `7bdbe886...3fd9`; compact evidence is
+`evidence/e35_dda_model_acquisition.json`. Freeze downloaded zero checkpoint bytes.

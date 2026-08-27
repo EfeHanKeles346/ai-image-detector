@@ -34,6 +34,14 @@ MAX_MEMBER_BYTES = 100 * 1024**2
 MAX_EXPANDED_BYTES = 40 * 1024**3
 CONTENT_RANGE_RE = re.compile(r"^bytes (\d+)-(\d+)/(\d+)$")
 RETRY_DELAYS = (0, 5, 20, 60, 180)
+MODEL_REPO_ID = "Junwei-Xi/Dual-Data-Alignment"
+MODEL_REVISION = "4390d9023899196b437480bb6a441915ef5d816c"
+MODEL_FILENAME = "DDA_ckpt.pth"
+MODEL_BYTES = 1_255_621_296
+MODEL_SHA256 = "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e"
+MODEL_ROOT = DATA_ROOT / "e35_dda_model"
+MODEL_SELECTION = MODEL_ROOT / "acquisition_selection.json"
+MODEL_EVIDENCE = ML_ROOT.parent / "evidence" / "e35_dda_model_acquisition.json"
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -82,6 +90,25 @@ def validate_repository(payload: Mapping[str, Any]) -> dict[str, Any]:
     }
 
 
+def validate_model_repository(payload: Mapping[str, Any]) -> dict[str, Any]:
+    if payload.get("id") != MODEL_REPO_ID or payload.get("sha") != MODEL_REVISION:
+        raise ValueError("official DDA model identity/revision changed")
+    if payload.get("cardData", {}).get("license") != "apache-2.0":
+        raise ValueError("official DDA model licence is not Apache-2.0")
+    if not any(item.get("rfilename") == MODEL_FILENAME for item in payload.get("siblings", [])):
+        raise ValueError("official DDA checkpoint disappeared")
+    return {
+        "repo_id": MODEL_REPO_ID,
+        "revision": MODEL_REVISION,
+        "license": "Apache-2.0",
+        "filename": MODEL_FILENAME,
+        "bytes": MODEL_BYTES,
+        "sha256": MODEL_SHA256,
+        "url": f"https://huggingface.co/{MODEL_REPO_ID}/resolve/{MODEL_REVISION}/{MODEL_FILENAME}?download=true",
+        "role": "external_candidate_checkpoint",
+    }
+
+
 def freeze() -> dict[str, Any]:
     response = requests.get(API_URL, timeout=(20, 120))
     response.raise_for_status()
@@ -110,6 +137,37 @@ def freeze() -> dict[str, Any]:
         "new_archive_bytes_downloaded_by_freeze": 0,
     }
     _write_atomic(EVIDENCE, compact)
+    return compact
+
+
+def freeze_model() -> dict[str, Any]:
+    response = requests.get(f"https://huggingface.co/api/models/{MODEL_REPO_ID}", timeout=(20, 120))
+    response.raise_for_status()
+    source = validate_model_repository(response.json())
+    detailed = {
+        "schema_version": 1,
+        "experiment": "E35/official-DDA-candidate",
+        "state": "model_selection_frozen_no_checkpoint_bytes_claimed",
+        "source": source,
+        "boundaries": [
+            "The official 0.5 inference cut is evaluated before any project threshold fit.",
+            "RR validation, IPN and owner gallery are consumed DEVELOPMENT and cannot tune DDA.",
+            "DDA-COCO stays locked until the candidate contract and DEVELOPMENT gate pass.",
+            "No checkpoint byte was downloaded by metadata freeze.",
+        ],
+    }
+    raw = _json_bytes(detailed)
+    _write_atomic(MODEL_SELECTION, detailed)
+    compact = {
+        "schema_version": 1,
+        "experiment": detailed["experiment"],
+        "state": detailed["state"],
+        "source": {key: source[key] for key in ("repo_id", "revision", "license", "filename", "bytes", "sha256", "role")},
+        "detailed_selection_bytes": len(raw),
+        "detailed_selection_sha256": _sha256(raw),
+        "new_checkpoint_bytes_downloaded_by_freeze": 0,
+    }
+    _write_atomic(MODEL_EVIDENCE, compact)
     return compact
 
 
@@ -351,13 +409,31 @@ def status() -> dict[str, Any]:
     }
 
 
+def model_status() -> dict[str, Any]:
+    destination = MODEL_ROOT / MODEL_FILENAME
+    partial = destination.with_suffix(destination.suffix + ".partial")
+    return {
+        "selection_exists": MODEL_SELECTION.exists(),
+        "complete_bytes": destination.stat().st_size if destination.exists() else 0,
+        "partial_bytes": partial.stat().st_size if partial.exists() else 0,
+        "expected_bytes": MODEL_BYTES,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("freeze", "download", "download-ranges", "inventory", "status"))
+    parser.add_argument(
+        "command",
+        choices=("freeze", "freeze-model", "download", "download-ranges", "inventory", "status", "model-status"),
+    )
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
     if args.command == "download-ranges":
         result = download_ranges(args.workers)
+    elif args.command == "freeze-model":
+        result = freeze_model()
+    elif args.command == "model-status":
+        result = model_status()
     else:
         result = {"freeze": freeze, "download": download, "inventory": inventory, "status": status}[args.command]()
     print(json.dumps(result, indent=2, sort_keys=True))

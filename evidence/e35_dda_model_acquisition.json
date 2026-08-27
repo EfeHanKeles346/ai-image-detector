@@ -1,0 +1,17 @@
+{
+  "detailed_selection_bytes": 962,
+  "detailed_selection_sha256": "7bdbe886684f4f9d9d2eb0d68a56d5e8e878d4a78d50410ee1f98c6090ae3fd9",
+  "experiment": "E35/official-DDA-candidate",
+  "new_checkpoint_bytes_downloaded_by_freeze": 0,
+  "schema_version": 1,
+  "source": {
+    "bytes": 1255621296,
+    "filename": "DDA_ckpt.pth",
+    "license": "Apache-2.0",
+    "repo_id": "Junwei-Xi/Dual-Data-Alignment",
+    "revision": "4390d9023899196b437480bb6a441915ef5d816c",
+    "role": "external_candidate_checkpoint",
+    "sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e"
+  },
+  "state": "model_selection_frozen_no_checkpoint_bytes_claimed"
+}
