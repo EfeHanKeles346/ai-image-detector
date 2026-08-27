@@ -833,3 +833,10 @@ one source-held-out score per parent. The resulting feature archive is local-onl
 `3a08e0dc...f178`; OOF scores SHA-256 `5f66c32e...2d1d`. These are DEVELOPMENT derivatives and
 cannot be reassigned to FINAL. The four reserved REAL archives and 240 reserved AI blobs still
 have zero local bytes and remain the only authorized E38 FINAL cells.
+
+E38 consumes the same rows with uniform sample emphasis and creates no new dataset role. Its fixed
+candidate passed DEVELOPMENT and therefore unlocks acquisition of only the already named FINAL
+cells. Candidate artifact SHA-256 is `fddbe475...4067`; threshold `0.896190`. Neither may change
+after FINAL bytes begin. The FINAL native/clean parent manifest must be frozen and committed before
+the first model score; QQ/Weibo copies remain grouped derivatives and cannot enter the headline
+parent count.

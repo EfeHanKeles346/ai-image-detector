@@ -2843,3 +2843,20 @@ above are transcription errors; production range planning binds the filesystem v
   adaptation-weight diagnostic on this now-consumed DEVELOPMENT population found a feasible region
   without source/example selection; E38 must freeze one such setting and can be validated only by
   the untouched FINAL. Evidence: `evidence/e37_source_heldout.json`.
+
+### E38 — uniform modern-domain emphasis passes DEVELOPMENT and freezes one candidate
+
+- **Fixed change:** identical DINOv2-S backbone/input/folds and complete row set; `C=0.0003`, old
+  E32 TRAIN sample weight 1 and every E36 adaptation row weight 100. No DDA feature, ensemble,
+  per-source weighting, example removal or further grid. Contract SHA `c61ec080...eedd`.
+- **OOF result:** 1,071/1,071 coverage; ROC-AUC **0.98062**, TPR@FPR10 **0.975**, EER **0.06162**
+  and balanced accuracy **0.8955** at threshold `0.896190`.
+- **Balanced frontier:** REAL device-macro/worst FP **4.34%/19.72%**; AI family-macro/worst recall
+  **82.5%/77.0%**. Every preregistered DEVELOPMENT gate passes simultaneously. Bootstrap 95% CIs
+  are 2.54–6.27% REAL macro FP and 79.5–85.5% AI macro recall.
+- **Candidate:** external 13,078-byte artifact SHA-256 `fddbe475...4067`, fitted on 21,349 old TRAIN
+  + all 1,071 adaptation rows with the OOF threshold unchanged.
+- **Caveat/decision:** the uniform weight and C were chosen after consumed E37 diagnostics; this is
+  a development-selected candidate, not independent proof. It earns exactly one evaluation on the
+  source/family-disjoint FINAL frozen before those diagnostics. Evidence:
+  `evidence/e38_development.json`.

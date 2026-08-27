@@ -278,11 +278,15 @@ not fresh validation. Its only honest confirmation is the already locked FINAL.
       of 100 for every E36 adaptation row versus 1 for every historical E32 TRAIN row. Do not use
       DDA scores, an ensemble, per-source weights or another grid.
       Frozen in `evidence/e38_fixed_contract.json` before the formal OOF reproduction/artifact fit.
-- [ ] **Reproduce the fixed DEVELOPMENT frontier and freeze one artifact.** Generate one OOF score
+- [x] **Reproduce the fixed DEVELOPMENT frontier and freeze one artifact.** Generate one OOF score
       per E36 row, select the same REAL-budget threshold and require the unchanged eight quality
       gates plus full coverage. Record explicitly that the hyperparameters were selected on this
       consumed population. If it fails, no artifact/FINAL access; if it passes, refit the identical
       head on all E32 TRAIN + E36 rows and bind its artifact/hash/threshold.
+      **Passed:** AUC 0.98062, TPR@FPR10 0.975, EER 0.06162, balanced accuracy 0.8955;
+      REAL macro/worst FP 4.34%/19.72%; AI macro/worst recall 82.5%/77.0%, coverage 100%.
+      Candidate SHA-256 `fddbe475...4067`, threshold `0.896190`. This is DEVELOPMENT-selected and
+      authorizes one untouched FINAL only; it is not itself final evidence.
 - [ ] **Acquire/audit the preregistered FINAL without model access.** Download only REAL devices
       004/006/007/008 and the six family-disjoint AI cells already frozen in E36-A. Verify exact
       archive/blob checksums, safe extraction, decode, label/source counts and exact/dHash overlap.

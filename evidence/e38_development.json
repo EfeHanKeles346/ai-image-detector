@@ -1,0 +1,344 @@
+{
+  "bindings": {
+    "e32_feature_archive_sha256": "ae1737f2114583e6c05c46b265bbda5bce3a2ac36464c84c70625b006a3416de",
+    "e36_feature_archive_sha256": "3a08e0dcacce6441efa0d422531871b964d100b126a6884715f5616c1a26f178",
+    "e36_manifest_sha256": "4ed1b7341df39fed1f1fc19a20424f15362c0df224bcc77189045ba4a4af2e03",
+    "oof_scores_sha256": "83a076ea81f998e1c70e61fec0c4777544bb6ef0f6eb548203537eb53fd6dd91"
+  },
+  "bootstrap": {
+    "ai_macro_recall": {
+      "estimate": 0.8249999999999998,
+      "high_95": 0.855,
+      "iterations": 2000,
+      "low_95": 0.795
+    },
+    "real_macro_fp": {
+      "estimate": 0.04343661971830985,
+      "high_95": 0.06271549295774642,
+      "iterations": 2000,
+      "low_95": 0.02535211267605634
+    }
+  },
+  "boundary": "Consumed DEVELOPMENT only; no FINAL archive/blob downloaded or scored.",
+  "candidate": {
+    "bytes": 13078,
+    "path": "e38_dinov2s.joblib",
+    "sha256": "fddbe475adb807bcf523127095b2a8221443761ad4afa71d8c163829afc44067",
+    "threshold": 0.8961896300315858
+  },
+  "contract_sha256": "c61ec08006a6fe6e433dd6ea6a7cafa90b92d55a13ddbcc26a33260d95b2eedd",
+  "counts": {
+    "adaptation": 1071,
+    "base_train": 21349,
+    "oof": 1071
+  },
+  "experiment": "E38/fixed-adaptation-emphasis",
+  "folds": [
+    {
+      "fit_adaptation_rows": 871,
+      "fit_historical_rows": 21349,
+      "fold": 0,
+      "held_ai_sources": [
+        "FLUX.2_max"
+      ],
+      "held_real_sources": [
+        "device_001"
+      ],
+      "held_rows": 200
+    },
+    {
+      "fit_adaptation_rows": 871,
+      "fit_historical_rows": 21349,
+      "fold": 1,
+      "held_ai_sources": [
+        "GLM-Image"
+      ],
+      "held_real_sources": [
+        "device_002"
+      ],
+      "held_rows": 200
+    },
+    {
+      "fit_adaptation_rows": 871,
+      "fit_historical_rows": 21349,
+      "fold": 2,
+      "held_ai_sources": [
+        "Qwen-Image-2.0-pro"
+      ],
+      "held_real_sources": [
+        "device_003"
+      ],
+      "held_rows": 200
+    },
+    {
+      "fit_adaptation_rows": 871,
+      "fit_historical_rows": 21349,
+      "fold": 3,
+      "held_ai_sources": [
+        "Seedream-5.0"
+      ],
+      "held_real_sources": [
+        "device_005"
+      ],
+      "held_rows": 200
+    },
+    {
+      "fit_adaptation_rows": 800,
+      "fit_historical_rows": 21349,
+      "fold": 4,
+      "held_ai_sources": [
+        "gpt-image-2",
+        "nano-banana-2.0"
+      ],
+      "held_real_sources": [
+        "device_009"
+      ],
+      "held_rows": 271
+    }
+  ],
+  "gate": {
+    "checks": {
+      "ai_macro_recall_gte_0.80": true,
+      "ai_worst_family_recall_gte_0.60": true,
+      "balanced_accuracy_gte_0.85": true,
+      "coverage_eq_1": true,
+      "eer_lte_0.15": true,
+      "real_macro_fp_lte_0.10": true,
+      "real_worst_device_fp_lte_0.20": true,
+      "roc_auc_gte_0.90": true,
+      "tpr_at_fpr10_gte_0.80": true
+    },
+    "passed": true
+  },
+  "metrics": {
+    "accuracy_counting_failures_wrong": 0.8870214752567693,
+    "ai_recall": 0.825,
+    "balanced_accuracy": 0.8955148619957537,
+    "brier_nontarget_real": 0.09169406243491836,
+    "brier_target_ai": 0.014656931464092053,
+    "confusion": {
+      "fn": 105,
+      "fp": 16,
+      "tn": 455,
+      "tp": 495
+    },
+    "counts": {
+      "ai_succeeded": 600,
+      "failed": 0,
+      "real_succeeded": 471,
+      "succeeded": 1071,
+      "total": 1071
+    },
+    "coverage": 1.0,
+    "eer": 0.061618895966029714,
+    "per_group": [
+      {
+        "ai_recall": 0.81,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 19,
+          "fp": 0,
+          "tn": 0,
+          "tp": 81
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FLUX.2_max"
+      },
+      {
+        "ai_recall": 0.88,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 12,
+          "fp": 0,
+          "tn": 0,
+          "tp": 88
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "GLM-Image"
+      },
+      {
+        "ai_recall": 0.77,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 23,
+          "fp": 0,
+          "tn": 0,
+          "tp": 77
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "Qwen-Image-2.0-pro"
+      },
+      {
+        "ai_recall": 0.86,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 14,
+          "fp": 0,
+          "tn": 0,
+          "tp": 86
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "Seedream-5.0"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 100,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "device_001"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 99,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.01,
+        "source": "device_002"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 100,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "device_003"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 99,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.01,
+        "source": "device_005"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 14,
+          "tn": 57,
+          "tp": 0
+        },
+        "count": 71,
+        "label": 0,
+        "real_false_positive_rate": 0.19718309859154928,
+        "source": "device_009"
+      },
+      {
+        "ai_recall": 0.79,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 21,
+          "fp": 0,
+          "tn": 0,
+          "tp": 79
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "gpt-image-2"
+      },
+      {
+        "ai_recall": 0.84,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 16,
+          "fp": 0,
+          "tn": 0,
+          "tp": 84
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "nano-banana-2.0"
+      }
+    ],
+    "real_false_positive_rate": 0.03397027600849257,
+    "roc_auc": 0.980622788393489,
+    "stored_threshold": 0.8961896300315858,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.975
+    }
+  },
+  "model": {
+    "adaptation_sample_weight": 100.0,
+    "backbone": "vit_small_patch14_dinov2.lvd142m",
+    "backbone_weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+    "c": 0.0003,
+    "class_weight": "balanced",
+    "head": "StandardScaler + LogisticRegression",
+    "historical_sample_weight": 1.0,
+    "seed": 42
+  },
+  "provenance_caveat": "Hyperparameters were selected from consumed E36/E37 DEVELOPMENT diagnostics; only untouched FINAL can validate this candidate.",
+  "schema_version": 1,
+  "selected_frontier": {
+    "ai_macro_recall": 0.8249999999999998,
+    "ai_recall_by_family": {
+      "FLUX.2_max": 0.81,
+      "GLM-Image": 0.88,
+      "Qwen-Image-2.0-pro": 0.77,
+      "Seedream-5.0": 0.86,
+      "gpt-image-2": 0.79,
+      "nano-banana-2.0": 0.84
+    },
+    "ai_worst_family_recall": 0.77,
+    "real_fp_by_device": {
+      "device_001": 0.0,
+      "device_002": 0.01,
+      "device_003": 0.0,
+      "device_005": 0.01,
+      "device_009": 0.19718309859154928
+    },
+    "real_macro_fp": 0.04343661971830985,
+    "real_worst_device_fp": 0.19718309859154928,
+    "threshold": 0.8961896300315858
+  },
+  "state": "development_gate_passed_candidate_frozen"
+}

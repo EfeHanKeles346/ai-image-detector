@@ -3292,3 +3292,18 @@ freezes one simple setting (`C=0.0003`, every E36 row weight 100, every old TRAI
 retains all sources/rows and the same five held-source folds, and may earn only the right to face
 the already-preregistered untouched FINAL. The FINAL result—not another E36 number—will decide
 whether this candidate is successful.
+
+### E38 checkpoint — the first jointly balanced development-selected candidate
+
+The fixed E38 reproduction applied the same uniform weight to every modern adaptation row and did
+not select sources or examples. All nine gates passed together: AUC 0.98062, TPR@FPR10 0.975, EER
+0.06162, balanced accuracy 0.8955, 4.34% REAL device-macro and 19.72% worst-device FP, plus 82.5%
+AI family-macro and 77.0% worst-family recall. Coverage was 1,071/1,071. This is the first stage in
+the current recovery line that improves authentic safety without becoming AI-blind.
+
+The final head was fitted on the unchanged 21,349 historical TRAIN rows plus all 1,071 modern
+adaptation rows. Its 13,078-byte artifact SHA-256 is `fddbe475...4067`; its source-held-out OOF
+threshold is frozen at `0.896190`. The archive explicitly retains the caveat that C and the uniform
+weight were chosen from consumed DEVELOPMENT diagnostics. E38 has therefore earned a test, not a
+success claim: only the four reserved REAL devices and six family-disjoint AI cells may now be
+acquired and scored once.
