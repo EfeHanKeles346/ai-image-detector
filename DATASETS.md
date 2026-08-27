@@ -848,3 +848,10 @@ decoded exactly 100 native originals/device and audited all six AI families at 4
 frozen FINAL contains 400 REAL +240 AI =640 parents, zero exact/perceptual match to earlier passed
 roles and no within-FINAL cross-label dHash collision. Detailed manifest is 319,091 B / SHA-256
 `cad71ff5...66e6`; compact unscored evidence is `evidence/e38_final_manifest.json`.
+
+The one-shot E38 score consumes every one of these 640 parents permanently. They may support E39
+diagnosis/calibration but can never again be called LOCKED FINAL. At the frozen E38 threshold, all
+400 REAL parents were below the AI boundary and 162/240 AI parents were detected. Detailed scores
+are local-only at `/Volumes/LaCie/pixelproof-datasets/e38/final_scores.jsonl`, SHA-256
+`dd4f181d...dc2d`; compact result is `evidence/e38_final_result.json`. Any E39 success claim needs
+new device- and generator-family-disjoint parents.

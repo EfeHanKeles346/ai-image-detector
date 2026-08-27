@@ -3315,3 +3315,24 @@ extraction, decode and decontamination all completed before model scoring. The r
 manifest has 400 REAL (100 each from devices 004/006/007/008) and 240 AI (40 each from six held-out
 families), zero overlap with prior roles and SHA-256 `cad71ff5...66e6`. This is now a one-use FINAL;
 no row, candidate setting or threshold may change after the next command.
+
+### E38 FINAL result — working conservative detector, strict gate not passed
+
+The hash-bound scorer processed all 640 FINAL parents exactly once. E38 retained excellent
+source-disjoint ranking: AUC 0.98185, TPR@FPR10 0.95 and EER 0.075. More importantly for the
+original false-accusation defect, every one of the 400 unseen native camera originals was correctly
+kept below the frozen AI threshold: 0% FP on all four devices.
+
+The same conservative operating point missed too many synthetic images. It detected 162/240;
+family recall was 72.5% FLUX.2 Pro, 77.5% GPT Image 1.5, 72.5% Hunyuan 3, 57.5% Imagen 4 Ultra,
+50.0% Seedream 4.5 and 75.0% Nano Banana Pro. AI macro/worst recall was 67.5%/50.0% and balanced
+accuracy 0.8375, so three frozen gates failed. The recorded state is `final_failed`, not a softened
+pass. E38 is a genuinely functioning conservative prototype but is not promoted to the product
+verdict.
+
+A post-hoc curve was inspected only after sealing that result. At `0.270069`, the same frozen
+scores would have satisfied every joint source gate—10% REAL macro, 17% worst REAL, 95% AI macro
+and 90% worst AI—showing the remaining defect is OOF-to-refit threshold scale, not representation.
+Because the value comes from FINAL it is permanently ineligible for E38. The 640 rows are now
+consumed E39 development/calibration data; a corrected threshold may face only a newly sourced,
+fully disjoint FINAL.

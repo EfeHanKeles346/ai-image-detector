@@ -294,10 +294,33 @@ not fresh validation. Its only honest confirmation is the already locked FINAL.
       Verified 2,038,841,380 REAL archive bytes +311,236,195 AI bytes. The frozen unscored manifest
       contains 400 REAL (4x100) +240 AI (6x40), zero prior exact/dHash overlap, SHA-256
       `cad71ff5...66e6`; candidate and threshold remain unchanged.
-- [ ] **Score FINAL exactly once.** Require the unchanged internship gates on native/clean parents
+- [x] **Score FINAL exactly once.** Require the unchanged internship gates on native/clean parents
       first. Only after sealing that result may parent-linked QQ/Weibo or deterministic degradation
       children be reported as robustness columns. A miss is the final result for this candidate;
       it cannot trigger a retry on the same FINAL.
+      **Result: failed the strict joint gate.** AUC 0.98185, TPR@FPR10 0.95, EER 0.075 and all
+      400/400 REAL correct at the frozen threshold, but AI macro/worst recall are 67.5%/50.0% and
+      balanced accuracy is 0.8375. Coverage is 640/640. The result is final for E38; no threshold,
+      model or subgroup was retried.
+
+### D3.9 — E39 calibration-transfer correction requires a new FINAL
+
+E38 is a strong ranker and conservative working prototype, but its OOF threshold did not retain
+the same score scale after the final head was refit on all adaptation rows. A post-hoc FINAL curve
+finds a jointly feasible region near `0.270069` (REAL macro/worst FP 10%/17%; AI macro/worst recall
+95%/90%), proving the failure is operating-point transfer rather than missing separation. That
+value is permanently contaminated and cannot be served or used to relabel E38 as passed.
+
+- [ ] Reclassify all 640 E38 FINAL parents as consumed E39 DEVELOPMENT/CALIBRATION and freeze one
+      threshold-only E39 candidate with the unchanged `fddbe475...4067` head. Record the observed
+      `0.270069` boundary as development-selected, not independent evidence.
+- [ ] Before using that candidate, preregister a genuinely new FINAL: at least four native camera
+      devices/sessions absent from every E32/E36/E38 role and six unused modern generator families
+      or model-version cells. No QQ/Weibo child, extra prompt from a consumed family, owner-gallery
+      row or old academic TRAIN source may impersonate source-independent FINAL evidence.
+- [ ] Acquire/audit/freeze the new sources before model access, then score once under the unchanged
+      gates. Until that new FINAL passes, keep E38 out of the product decision path and present it
+      only as a conservative research prototype with measured 0% REAL FP /67.5% AI recall on E38.
 
 ### D4 — close the slice reproducibly
 

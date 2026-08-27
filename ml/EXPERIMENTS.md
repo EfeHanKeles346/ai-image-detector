@@ -2860,3 +2860,19 @@ above are transcription errors; production range planning binds the filesystem v
   a development-selected candidate, not independent proof. It earns exactly one evaluation on the
   source/family-disjoint FINAL frozen before those diagnostics. Evidence:
   `evidence/e38_development.json`.
+
+### E38 FINAL — excellent separation, conservative threshold misses AI gate
+
+- **One-shot boundary:** the frozen 13,078-byte candidate and `0.896190` threshold scored all 640
+  untouched parents once: four unseen REAL devices x100 and six family-disjoint AI cells x40.
+  There were no failures, retries, model changes or threshold changes.
+- **Ranking:** ROC-AUC **0.98185**, TPR@FPR10 **0.950**, EER **0.075**. The representation transfers
+  strongly to the held families/devices.
+- **Frozen operating point:** 400/400 REAL correct, REAL device-macro/worst FP **0%/0%**; 162/240
+  AI correct, AI family-macro recall **67.5%** (95% CI 61.67–73.33%) and worst-family **50.0%**
+  (Seedream 4.5). Balanced accuracy **0.8375**. AI macro/worst and balanced-accuracy gates fail.
+- **Decision:** state `final_failed`; E38 is not promoted and this FINAL cannot evaluate another
+  retry. A post-hoc diagnostic finds a feasible threshold at `0.270069` (REAL macro/worst FP
+  10%/17%; AI macro/worst 95%/90%), identifying refit-to-OOF score-scale transfer as the remaining
+  defect. That threshold is contaminated and ineligible; it can only define an E39 candidate for a
+  genuinely new FINAL. Evidence: `evidence/e38_final_result.json`.
