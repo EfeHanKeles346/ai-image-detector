@@ -3234,3 +3234,10 @@ and hostile ZIP paths. Live freeze then bound 600 CAL AI rows (468,420,944 B), 2
 rows (311,236,195 B), five CAL REAL archives (2,052,606,020 B) and four locked FINAL REAL archives
 (2,038,841,380 B). Detailed selection SHA-256 is `01eec03e...2dcc`; no image byte moved. The old
 unscored Qwen scout was superseded by a recorded role amendment before any E36 score.
+
+The resumable CAL transfer completed all five REAL archives and 600 AI blobs with exact published
+MD5/SHA-256 and zero FINAL bytes. CRC/safety inventory then exposed one model-free feasibility fact:
+device 009 has 71 normal originals, below the planned 80 floor, while the other four provide at
+least 100. Before extraction or model loading, E36 recorded an amendment to accept >=70 and retain
+device 009 rather than dropping the difficult source or substituting an easier device. The 100-row
+per-device cap and every performance gate remain unchanged.

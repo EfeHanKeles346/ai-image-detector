@@ -1,0 +1,23 @@
+{
+  "amended_minimum_normal_originals_per_cal_device": 70,
+  "boundary": "Model-free ZIP inventory only; no image extracted or model score read.",
+  "inventory_counts": {
+    "device_001": 138,
+    "device_002": 139,
+    "device_003": 168,
+    "device_005": 100,
+    "device_009": 71
+  },
+  "original_minimum": 80,
+  "reason": "Retain the preregistered fifth device rather than dropping/replacing it after discovering the publisher supplies 71 normal originals.",
+  "schema_version": 1,
+  "state": "pre_score_source_count_amendment",
+  "unchanged": [
+    "maximum 100 rows per device",
+    "equal per-device macro weighting",
+    "real macro FP <= 10%",
+    "worst-device FP <= 20%",
+    "all AI recall gates",
+    "FINAL remains locked"
+  ]
+}

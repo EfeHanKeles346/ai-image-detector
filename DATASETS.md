@@ -782,6 +782,13 @@ uses archives 001/002/003/005/009 only; FINAL reserves 004/006/007/008 before an
 at most 100 normal originals per device and requires at least 80; FINAL uses at most 100 per device.
 Social copies remain children of the same parent and never inflate sample size.
 
+CAL transfer reproduced all five MD5 values and all 600 AI blob SHA-256 values: 2,521,026,964 B
+total, with zero FINAL bytes. ZIP CRC/safety inventory found normal/QQ/Weibo image counts of
+138/143/138 (device 001), 139/139/139 (002), 168/165/168 (003), 100/100/100 (005) and 71/71/71
+(009). Because device 009 has only 71 normal originals, the preregistered >=80 availability floor
+is amended to >=70 before extraction or any model score. It remains in CAL and each device remains
+capped at 100; no easier replacement source is introduced.
+
 AI source: Hugging Face `Qwen/Qwen-Image-Bench` revision
 `d2493deb153b020cf169c7e3f57d15e4dd697038`, dataset-card Apache-2.0. The pinned repository exposes
 18 generator directories with 1,000 prompt-aligned outputs each. CAL is six families × prompt ids

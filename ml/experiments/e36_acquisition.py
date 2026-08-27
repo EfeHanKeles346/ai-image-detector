@@ -71,6 +71,7 @@ IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
 MIN_FREE_BYTES = 100 * 1024**3
 MAX_MEMBER_BYTES = 100 * 1024**2
 MAX_ARCHIVE_EXPANSION = 12 * 1024**3
+MIN_REAL_PER_DEVICE = 70
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -410,8 +411,10 @@ def extract_and_manifest_cal() -> dict[str, Any]:
                 and "view_000" in PurePosixPath(info.filename).parts
             ]
             members = sorted(members, key=lambda info: info.filename)[:100]
-            if len(members) < 80:
-                raise ValueError(f"E36 CAL device has fewer than 80 normal originals: {device}")
+            if len(members) < MIN_REAL_PER_DEVICE:
+                raise ValueError(
+                    f"E36 CAL device has fewer than {MIN_REAL_PER_DEVICE} normal originals: {device}"
+                )
             temporary = real_root / f"{device}.partial"
             if temporary.exists():
                 raise FileExistsError(f"partial extraction requires audit: {temporary}")

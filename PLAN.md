@@ -190,8 +190,9 @@ normal/QQ/Weibo views.
 
 - [ ] **E36 CAL REAL:** download only devices 001, 002, 003, 005 and 009 (five previously unseen
       phone pipelines; 2,052,606,020 B declared archive bytes). Inventory
-      safely, bind derivatives by parent, select at most 100 `view_000` originals per device and
-      require >=80/device. Five independent phone groups replace the generic six-device target
+      safely, bind derivatives by parent and select at most 100 `view_000` originals per device.
+      Model-free inventory found 138/139/168/100/71 normal originals; a pre-score amendment accepts
+      >=70/device rather than silently dropping device 009. Five independent phone groups replace the generic six-device target
       because the source's remaining four named devices are reserved intact for FINAL; subgroup
       confidence and worst-device gates remain unchanged.
 - [ ] **E36 FINAL REAL:** keep devices 004, 006, 007 and 008 fully locked until CAL freeze. These
@@ -213,6 +214,8 @@ normal/QQ/Weibo views.
       Source/role metadata is now frozen; no CAL image or FINAL byte had been downloaded at this
       checkpoint. Compact evidence: `evidence/e36_acquisition.json` and the unscored old-scout role
       amendment `evidence/e36_qwen_role_amendment.json`.
+      CAL transfer and CRC inventory later completed with FINAL still at zero bytes; the model-free
+      71-row device-009 count amendment is `evidence/e36_real_count_amendment.json`.
 
 ### D4 — close the slice reproducibly
 
