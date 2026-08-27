@@ -789,6 +789,13 @@ total, with zero FINAL bytes. ZIP CRC/safety inventory found normal/QQ/Weibo ima
 is amended to >=70 before extraction or any model score. It remains in CAL and each device remains
 capped at 100; no easier replacement source is introduced.
 
+CAL realization then passed 1,071/1,071 decodes: 471 REAL normal originals and 600 clean AI
+parents. REAL device counts are 100/100/100/100/71; all six AI families contribute exactly 100.
+There are zero exact-byte duplicates, zero cross-label dHash collisions and zero exact/dHash match
+to prior passed E32 realizations. The unscored detailed manifest is 518,606 B / SHA-256
+`4ed1b734...2e03`; compact evidence is `evidence/e36_cal_manifest.json`. FINAL downloaded bytes
+remain zero and no DDA score existed when this manifest was frozen.
+
 AI source: Hugging Face `Qwen/Qwen-Image-Bench` revision
 `d2493deb153b020cf169c7e3f57d15e4dd697038`, dataset-card Apache-2.0. The pinned repository exposes
 18 generator directories with 1,000 prompt-aligned outputs each. CAL is six families × prompt ids

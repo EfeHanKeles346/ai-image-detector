@@ -149,7 +149,7 @@ native camera pipelines. Do not discard DDA, deploy the post-hoc 0.90 value, mix
       model versions, timestamps, expected counts and failure policy enter `DATASETS.md` first.
       Frozen selection SHA-256 `01eec03e...2dcc`; 600 CAL AI / 240 family-disjoint FINAL AI and
       five CAL / four FINAL REAL archives. Metadata freeze downloaded zero image bytes.
-- [ ] **Build a compact new CAL (target 1,200 parents, not 20,000 arbitrary files).** Acquire 600
+- [x] **Build a compact new CAL (target 1,200 parents, not 20,000 arbitrary files).** Acquire 600
       native authentic stills from at least six previously unseen phone/camera pipelines (target
       100/device, scene-balanced, original bytes/EXIF retained) and 600 clean AI images from at least
       six current production generator families (target 100/family, matched prompt/content strata,
@@ -157,6 +157,9 @@ native camera pipelines. Do not discard DDA, deploy the post-hoc 0.90 value, mix
       camera sources are candidates only after licence and overlap audit; web-resaved stock photos
       cannot stand in for native camera output. Current commercial AI families should be generated
       through pinned APIs at collection time rather than scraped from uncertain web labels.
+      Realized as 471 native REAL +600 current AI =1,071 unscored parents. Exact/dHash overlap with
+      prior E32 realizations is zero; every AI family has 100 rows and FINAL downloaded bytes are
+      zero. Detailed manifest SHA-256 `4ed1b734...2e03`.
 - [ ] **Calibrate one threshold only.** Keep the verified DDA checkpoint, 336 crop, normalization
       and score direction fixed. Select the lowest threshold satisfying CAL real macro FP <=10% and
       worst-device FP <=20%, then require AI family macro recall >=80% and worst-family >=60%.
@@ -188,7 +191,7 @@ iPhone14 training source. The selected REAL source is Zenodo record `18136670`, 
 CC BY 4.0, published 2026-02-03. It preserves device-separated archives and explicit
 normal/QQ/Weibo views.
 
-- [ ] **E36 CAL REAL:** download only devices 001, 002, 003, 005 and 009 (five previously unseen
+- [x] **E36 CAL REAL:** download only devices 001, 002, 003, 005 and 009 (five previously unseen
       phone pipelines; 2,052,606,020 B declared archive bytes). Inventory
       safely, bind derivatives by parent and select at most 100 `view_000` originals per device.
       Model-free inventory found 138/139/168/100/71 normal originals; a pre-score amendment accepts
@@ -199,7 +202,7 @@ normal/QQ/Weibo views.
       are the source authors' held-out Honor/Samsung/Motorola phone groups plus Sony NEX-7 camera;
       use up to 100 normal originals/group. Derived QQ/Weibo views are robustness children, never
       independent N, and may be scored only after the native-parent result is sealed.
-- [ ] **E36 CAL AI:** pin Apache-2.0 `Qwen/Qwen-Image-Bench` revision
+- [x] **E36 CAL AI:** pin Apache-2.0 `Qwen/Qwen-Image-Bench` revision
       `d2493deb...7038`; select prompt indices 101–200 from exactly six families: GPT Image 2,
       Nano Banana 2, Seedream 5, Qwen Image 2 Pro, FLUX.2 Max and GLM-Image (600 clean parents).
 - [ ] **E36 FINAL AI:** reserve prompt indices 1–40 from six family-disjoint cells: GPT Image 1.5,

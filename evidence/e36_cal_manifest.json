@@ -1,0 +1,29 @@
+{
+  "ai_family_counts": {
+    "FLUX.2_max": 100,
+    "GLM-Image": 100,
+    "Qwen-Image-2.0-pro": 100,
+    "Seedream-5.0": 100,
+    "gpt-image-2": 100,
+    "nano-banana-2.0": 100
+  },
+  "counts": {
+    "ai": 600,
+    "real": 471,
+    "total": 1071
+  },
+  "detailed_manifest_bytes": 518606,
+  "detailed_manifest_sha256": "4ed1b7341df39fed1f1fc19a20424f15362c0df224bcc77189045ba4a4af2e03",
+  "final_bytes_downloaded": 0,
+  "prior_dhash_match_count_diagnostic": 0,
+  "prior_exact_overlap_count": 0,
+  "real_source_counts": {
+    "device_001": 100,
+    "device_002": 100,
+    "device_003": 100,
+    "device_005": 100,
+    "device_009": 71
+  },
+  "schema_version": 1,
+  "state": "cal_manifest_frozen_unscored"
+}

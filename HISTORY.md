@@ -3241,3 +3241,10 @@ device 009 has 71 normal originals, below the planned 80 floor, while the other 
 least 100. Before extraction or model loading, E36 recorded an amendment to accept >=70 and retain
 device 009 rather than dropping the difficult source or substituting an easier device. The 100-row
 per-device cap and every performance gate remain unchanged.
+
+The restart-safe realization pass then decoded and audited all 1,071 CAL parents: 471 native REAL
+and 600 modern AI. Every AI family contributes 100; REAL contributes 100 from devices 001/002/003/
+005 and all 71 available originals from device 009. Exact and perceptual overlap with prior passed
+E32 realizations is zero, as are within-CAL exact and cross-label dHash collisions. Manifest SHA is
+`4ed1b734...2e03`. It was committed unscored with zero FINAL bytes, preserving a clean boundary for
+the one-threshold DDA calibration.
