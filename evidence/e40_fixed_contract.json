@@ -1,0 +1,105 @@
+{
+  "boundary": "Frozen before E39 feature extraction, clustering, E40 fitting or score generation. No new FINAL data exists.",
+  "candidate_priority": [
+    "uniform",
+    "source_balanced",
+    "source_content_balanced"
+  ],
+  "content_balance": {
+    "clusters": 16,
+    "fit_scope": "training rows in each fold only; held-out-source rows never enter KMeans.fit",
+    "n_init": 10,
+    "role": "sample weighting only; never row or fold selection",
+    "weight": "equal class mass, equal source mass inside class, equal occupied-cluster mass inside source",
+    "algorithm": "sklearn KMeans k-means++"
+  },
+  "experiment": "E40/content-balanced-source-held-out-adaptation",
+  "folds": [
+    {
+      "fold": 0,
+      "held_ai_sources": ["Adobe Firefly Image 5"],
+      "held_real_sources": ["D14_Apple_iPhone13mini"]
+    },
+    {
+      "fold": 1,
+      "held_ai_sources": ["Gemini 3 Pro Image"],
+      "held_real_sources": ["D27_DOOGEE_S96Pro"]
+    },
+    {
+      "fold": 2,
+      "held_ai_sources": ["HiDream I1 Dev"],
+      "held_real_sources": ["D34_Google_Pixel5"]
+    },
+    {
+      "fold": 3,
+      "held_ai_sources": ["Ideogram 3"],
+      "held_real_sources": ["D43_OnePlus_8T"]
+    },
+    {
+      "fold": 4,
+      "held_ai_sources": ["Midjourney v7"],
+      "held_real_sources": []
+    },
+    {
+      "fold": 5,
+      "held_ai_sources": ["Reve Image 1.0"],
+      "held_real_sources": []
+    },
+    {
+      "fold": 6,
+      "held_ai_sources": ["Z Image Turbo"],
+      "held_real_sources": []
+    }
+  ],
+  "gate": {
+    "ai_macro_recall_gte": 0.8,
+    "ai_worst_family_recall_gte": 0.6,
+    "balanced_accuracy_gte": 0.85,
+    "coverage_eq": 1.0,
+    "eer_lte": 0.15,
+    "real_macro_fp_lte": 0.1,
+    "real_worst_device_fp_lte": 0.2,
+    "roc_auc_gte": 0.9,
+    "tpr_at_fpr10_gte": 0.8
+  },
+  "head": {
+    "c": 0.01,
+    "class_weight": null,
+    "max_iter": 3000,
+    "pipeline": "sample-weighted StandardScaler + sample-weighted LogisticRegression",
+    "solver": "lbfgs"
+  },
+  "inputs": {
+    "e32_dinov2s_features_sha256": "ae1737f2114583e6c05c46b265bbda5bce3a2ac36464c84c70625b006a3416de",
+    "e36_dinov2s_features_sha256": "3a08e0dcacce6441efa0d422531871b964d100b126a6884715f5616c1a26f178",
+    "e39_final_manifest_sha256": "1076df20adc700a1893814e477891e9270e4f88502dbad2571e022f3a7127306",
+    "e40_role_amendment_sha256": "c475a529e9f9d03761d42bf021dd8a4ba5212b3a44c59d8fce508fc1fff62f0f"
+  },
+  "model": {
+    "backbone": "vit_small_patch14_dinov2.lvd142m",
+    "backbone_change": "forbidden",
+    "preprocessing": "unchanged E32 EXIF transpose/RGB/short-side-256/center-224/JPEG-q90-444"
+  },
+  "prohibited": [
+    "C, cluster-count, fold, replay or candidate-priority sweep",
+    "row removal or score-based filtering",
+    "DDA/CF-ViT features or ensemble",
+    "per-source thresholds",
+    "new FINAL acquisition before E40 development and robustness pass"
+  ],
+  "replay": {
+    "expected_rows": 1067,
+    "population": "E32 TRAIN only",
+    "rate": 0.05,
+    "selection": "round(5% of each label x source stratum), lowest SHA-256(salt|record_id)",
+    "salt": "E40_REPLAY_V1"
+  },
+  "schema_version": 1,
+  "seeds": {
+    "primary": 42,
+    "stability": [41, 42, 43]
+  },
+  "selection": "Evaluate all three primary-seed heads; choose the first complete-gate pass in fixed candidate_priority order. Freeze that seed-42 threshold and require it to pass unchanged for stability seeds 41 and 43.",
+  "state": "fixed_before_e40_features_or_fit",
+  "threshold": "lowest primary-seed OOF boundary satisfying REAL device-macro FP <=0.10 and worst-device FP <=0.20; then require every remaining gate"
+}

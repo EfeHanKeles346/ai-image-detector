@@ -2944,3 +2944,16 @@ was scored or selected using model output.
   define folds. This correction is model-free and was made before E40 scores existed.
 - **FINAL rule:** E39 and unused same-collection rows are permanently ineligible. No new FINAL data
   may be acquired until an E40 development candidate passes its frozen gate and robustness checks.
+
+### E40 fixed head-ladder contract
+
+- **Inputs:** deterministic round(5%)-per-label/source E32 TRAIN replay (expected 1,067), all 1,071
+  E36 consumed rows, and source-held-out E39 development rows. Backbone/preprocessing are unchanged.
+- **Heads:** StandardScaler + LogisticRegression, C=0.01, weighted at both scaler and classifier;
+  exactly uniform, class/source-balanced and class/source/occupied-content-cell-balanced variants.
+- **Folds/content:** 7 complete E39 source folds. The content variant fits KMeans(k=16, n_init=10)
+  only on modern training rows inside each fold, then uses clusters for weights only.
+- **Selection:** evaluate all variants at seed 42, take the first full-gate pass in fixed complexity
+  order, freeze its OOF threshold, and require that unchanged threshold to pass seeds 41/42/43.
+- **Boundary:** `evidence/e40_fixed_contract.json` is hash-bound in code before any features/scores.
+  Six new focused tests and all 264 Python tests pass. No measurements exist yet.

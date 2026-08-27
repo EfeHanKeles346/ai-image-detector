@@ -388,6 +388,10 @@ E39 population, E40 must improve source/content generalization without hiding th
       modern replay, source-balanced replay and source+content-balanced replay. Reuse the unchanged
       DINO backbone and include a fixed 5% stratified replay buffer from historical E32 TRAIN to
       reduce forgetting; do not add DDA/CF-ViT score features or an ad-hoc ensemble.
+      **Frozen implementation:** 1,067 deterministic E32 replay rows plus all E36/E39 development;
+      seven source folds; C=0.01; 16 training-fold-only KMeans cells; primary seed 42; fixed
+      simplest-first order uniform -> source -> source+content. Exact contract is
+      `evidence/e40_fixed_contract.json` and must be committed before feature/scoring commands.
 - [ ] Select only by the complete frozen gate: coverage 100%, AUC >=0.90, TPR@FPR10 >=0.80,
       EER <=0.15, balanced accuracy >=0.85, REAL macro/worst FP <=10%/20%, AI macro/worst recall
       >=80%/60%. If none passes, stop E40 before refit; do not soften thresholds.

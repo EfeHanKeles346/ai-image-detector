@@ -927,3 +927,9 @@ is filtered. The amendment cryptographically binds the 440-row manifest, full on
 stream, compact failed result and E39 decision contract. These bytes may train/select E40 only.
 They can never be counted as E40 FINAL, and extra FloreView/AIGenImages2026 rows do not restore
 source independence. No new dataset was downloaded at this checkpoint.
+
+E40's historical replay is also fixed before fitting: for every label/source stratum in E32 TRAIN,
+select `round(5%)` rows by the lowest SHA-256 of `E40_REPLAY_V1|record_id`. The expected union is
+1,067 existing feature rows; no image is copied or downloaded. All 1,071 existing E36 consumed
+development rows remain in every E40 fold. Replay record IDs and final feature archives will be
+hash-recorded by the experiment, but none of these sources becomes independent evaluation data.

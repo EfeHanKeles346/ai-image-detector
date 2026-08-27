@@ -3427,3 +3427,18 @@ predicted only by a head that did not train on that source. Frozen-embedding con
 balance weights, but cannot define folds or remove rows—the four FloreView phones share a scene
 catalog, making a simultaneous device-and-cluster holdout impossible without discarding evidence.
 The next operation is therefore a model-free, all-row DINOv2-S feature cache.
+
+### E40 fixed protocol — three heads, no hidden sweep
+
+Before extracting E39 features or generating any E40 score, the complete implementation contract
+was frozen. E40 will compare exactly three DINOv2-S logistic heads in simplest-first order:
+uniform, source-balanced, then source-and-content-balanced. Every head uses the same seven E39
+source-held-out folds, C=0.01 and all E36 development rows plus a deterministic 1,067-row E32 TRAIN
+replay. The content arm fits 16 KMeans cells on each training fold only; held sources do not enter
+clustering, and clusters influence weights rather than row selection.
+
+Primary seed 42 chooses the first complete-gate pass. Its one REAL-safe threshold is then frozen
+unchanged for seeds 41 and 43. DDA/CF-ViT features, ensembles, per-source thresholds, row removal
+and further hyperparameter sweeps are prohibited. The implementation and six focused unit tests
+pass; the complete Python suite passes 264/264 with dependency and bytecode checks. No E40 model
+score, feature cache or new FINAL byte exists at this commit.
