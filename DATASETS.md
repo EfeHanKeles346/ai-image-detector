@@ -868,3 +868,27 @@ The resulting E39 decision contract is local-only at
 `7d497929...2cef`. It contains no image or new fitted weight and points to the unchanged E38 model
 artifact. At this checkpoint E39 FINAL contains **zero bytes and zero rows**. Source research,
 licence acceptance and allocation must be committed before any E39 FINAL transfer.
+
+### E39-B independent FINAL source contract (2026-08-27)
+
+REAL is frozen to the University of Florence FloreView dataset, whose publisher describes 6,637
+outdoor images from 46 smartphones/11 brands and licenses the download CC BY-SA 4.0. PixelProof
+selects only camera-native `Nat/jpeg-h264` JPEG parents: 40 each from D14 Apple iPhone 13 mini,
+D27 DOOGEE S96 Pro, D34 Google Pixel 5 and D43 OnePlus 8T. The 955,483-byte official URL catalog
+is bound at SHA-256 `90d8408c...186b`; selection is a fixed capture/subject/location ordering that
+spreads every device across locations. No flat field, video, social derivative or extra-data row is
+eligible.
+
+AI is frozen to CERTH-ITI's AIGenImages2026 release (`sha6th/AIGenImages2026`), revision
+`d634f663...c0c5`, dataset-card CC BY 4.0. Its 2026 MAD paper reports 5,439 images from 19 recent
+models with generator, prompt and split metadata. PixelProof reserves seven previously unused 2025
+cells: Reve Image 1.0, HiDream I1 Dev, Ideogram 3, Midjourney v7, Adobe Firefly Image 5, Z Image
+Turbo and Gemini 3 Pro Image, capped at 40 clean parents each. The single 11,138,511,098-byte
+archive is pinned at LFS SHA-256 `67c60427...c498` and Xet hash `6ff1c1e7...533a`.
+
+The resulting E39 FINAL target is 160 REAL +280 AI =440 parents. The archive/catalog identities,
+licences, candidate hashes, deterministic score-blind selection and fail-closed overlap policy are
+recorded in `evidence/e39_source_contract.json` before image transfer. CID2013 was rejected because
+its presentation images are scaled and only about six images exist per device; SCIMD-6/17 because
+they are 224px resizes; ForensiCam-215K because no adequate downloadable-data licence was found;
+VISION/FODB/CSAFE/IPN because those collections are already consumed by earlier roles.

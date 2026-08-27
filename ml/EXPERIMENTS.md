@@ -2893,3 +2893,17 @@ above are transcription errors; production range planning binds the filesystem v
 - **Decision:** freeze one research candidate and obtain a genuinely new FINAL. These measurements
   are contaminated by threshold selection and cannot promote the detector. Candidate JSON SHA-256
   `7d497929...2cef`; compact evidence `evidence/e39_calibration.json`.
+
+### E39-B — independent native/recent FINAL preregistration
+
+- **REAL:** FloreView camera-native natural JPEGs, four source-new devices/brands x40: iPhone 13
+  mini, DOOGEE S96 Pro, Pixel 5 and OnePlus 8T. CC BY-SA 4.0; official URL catalog SHA-256
+  `90d8408c...186b`; fixed location-diverse ordering.
+- **AI:** AIGenImages2026 revision `d634f663...c0c5`, seven unused 2025 generator cells x40: Reve
+  1.0, HiDream I1 Dev, Ideogram 3, Midjourney v7, Firefly Image 5, Z Image Turbo and Gemini 3 Pro
+  Image. CC BY 4.0; 11,138,511,098-byte archive SHA-256 `67c60427...c498`.
+- **Population:** 160 REAL +280 AI =440 clean/native parents. Every source is equally capped;
+  selection is deterministic and cannot access scores, embeddings or image appearance.
+- **Boundary:** source contract and acquisition code recorded with zero E39 FINAL image bytes.
+  Candidate/model access remains forbidden until decode, provenance and overlap audits freeze the
+  unscored manifest.

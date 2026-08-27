@@ -1,0 +1,68 @@
+{
+  "ai": {
+    "allocation": {
+      "Adobe Firefly Image 5": 40,
+      "Gemini 3 Pro Image": 40,
+      "HiDream I1 Dev": 40,
+      "Ideogram 3": 40,
+      "Midjourney v7": 40,
+      "Reve Image 1.0": 40,
+      "Z Image Turbo": 40
+    },
+    "archive_bytes": 11138511098,
+    "archive_path": "aigenimages2026.tar.gz",
+    "archive_sha256": "67c6042712f783aebfdb29f8a8903dfc94fc7ac54fee5c154eaf6b880d0ec498",
+    "archive_xet_hash": "6ff1c1e7bc2c29f34a7c0ad0ab75852a11dc186930f7e377fbf536771164533a",
+    "license": "CC BY 4.0",
+    "paper": "https://arxiv.org/abs/2605.02567",
+    "repo_id": "sha6th/AIGenImages2026",
+    "revision": "d634f663049678ef33ba66f785b12496b250c0c5",
+    "selection": "For each exact paper generator cell, sort eligible decoded clean parent members by SHA-256(generator + member path) and take the first 40. No score, embedding, prompt content or image appearance may affect selection.",
+    "source_url": "https://huggingface.co/datasets/sha6th/AIGenImages2026",
+    "total": 280
+  },
+  "bound_candidate": {
+    "decision_contract_sha256": "7d49792911b9b24acca2ad58d08d5ecc14bded5ee85174218d08d1a4d3712cef",
+    "underlying_artifact_sha256": "fddbe475adb807bcf523127095b2a8221443761ad4afa71d8c163829afc44067"
+  },
+  "boundaries": [
+    "No E39 FINAL image byte existed locally when this contract was recorded.",
+    "Acquisition and audit must run without loading or scoring the E39 model.",
+    "Published archive/catalog identities must match before transfer; any mismatch fails closed.",
+    "Every selected parent must decode and receive a local SHA-256 before the unscored manifest is frozen.",
+    "Exact and perceptual overlap with every earlier role is forbidden; derived copies never increase N.",
+    "The first frozen 440-parent manifest is the only E39 FINAL and may be scored exactly once."
+  ],
+  "counts": {
+    "ai": 280,
+    "real": 160,
+    "total": 440
+  },
+  "experiment": "E39/new-native-modern-final",
+  "real": {
+    "allocation": {
+      "D14_Apple_iPhone13mini": 40,
+      "D27_DOOGEE_S96Pro": 40,
+      "D34_Google_Pixel5": 40,
+      "D43_OnePlus_8T": 40
+    },
+    "catalog_bytes": 955483,
+    "catalog_sha256": "90d8408c47d8290cd31db2c6cde6ae2aa17b8c5b3b65191cec3f70969e7b186b",
+    "catalog_url": "https://lesc.dinfo.unifi.it/FloreView/FloreView_Dataset.txt",
+    "license": "CC BY-SA 4.0",
+    "readme_bytes": 2048,
+    "readme_sha256": "bc690a1337d3ee7be7c7984bae7b3f87ec9fbb53327ffc8a39ae6e9b754270b1",
+    "readme_url": "https://lesc.dinfo.unifi.it/FloreView/readme.md",
+    "selection": "Only camera-native Nat/jpeg-h264 JPEG parents. Within each device sort by capture index, subject index, location index and URL, then take the first 40; this spreads selection across locations before repeating captures.",
+    "source_url": "https://lesc.dinfo.unifi.it/materials/datasets/",
+    "total": 160
+  },
+  "rejections": {
+    "CID2013": "licensed consumer photos, but database presentation images are scaled to 1600x1200 and only about six images/device",
+    "ForensiCam-215K": "modern and diverse, but no sufficiently explicit downloadable dataset licence was found",
+    "SCIMD-6/17": "all released images are resized to 224x224 and therefore are not native camera output",
+    "VISION/FODB/CSAFE/IPN": "already consumed by earlier PixelProof roles or source collections and therefore not independent FINAL evidence"
+  },
+  "schema_version": 1,
+  "state": "source_contract_frozen_zero_image_bytes"
+}

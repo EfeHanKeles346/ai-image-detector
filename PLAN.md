@@ -324,13 +324,14 @@ value is permanently contaminated and cannot be served or used to relabel E38 as
 
 #### E39-B — freeze a genuinely new compact FINAL before bytes
 
-- [ ] Research licensed sources and write the source/role decision to `DATASETS.md` before any
+- [x] Research licensed sources and write the source/role decision to `DATASETS.md` before any
       image transfer. REAL must contain at least four native camera devices/sessions absent from
       every earlier role. AI must contain at least six unused modern generator/model-version cells.
-- [ ] Target 40 native REAL parents/device and 40 clean AI parents/family: minimum 160 REAL +240 AI
-      =400 parents. Prefer diversity and provenance over another 20,000-image download. Cap every
+- [x] Target 40 native REAL parents/device and 40 clean AI parents/family: frozen allocation is four
+      REAL devices plus seven AI families, 160 REAL +280 AI =440 parents. Prefer diversity and
+      provenance over another 20,000-image download. Cap every
       source equally so no large group dominates the result.
-- [ ] Freeze URLs/API versions, licences, exact counts/checksums, prompts/seeds where available,
+- [x] Freeze URLs/API versions, licences, exact counts/checksums, prompts/seeds where available,
       allocation and failure policy. Reject social copies of consumed parents, extra prompts from
       consumed families, owner-gallery rows and old TRAIN sources as substitutes for independence.
 

@@ -3362,3 +3362,18 @@ The E39 candidate is a small decision-layer contract pointing to the unchanged a
 `evidence/e39_calibration.json` (`5f9a000e...4b0e`). No E39 FINAL image has been transferred or
 scored. The next valid claim therefore requires a source-frozen, licensed and genuinely disjoint
 FINAL collected without model access.
+
+### E39-B checkpoint — new FINAL sources fixed before bytes
+
+Primary-source research replaced the tentative CID2013 plan with a stronger native-phone source.
+FloreView exposes individually downloadable camera-native outdoor JPEGs, explicit CC BY-SA 4.0
+terms and device/EXIF metadata. Four source-new devices from four brands contribute 40 parents
+each. This directly targets the real-photo false-accusation risk without reusing VISION, FODB,
+CSAFE, IPN or owner-gallery evidence.
+
+The AI side uses the 2026 AIGenImages2026 benchmark release and seven model-version cells absent
+from all prior PixelProof roles, again capped at 40 each. The publisher's pinned 11.14 GB archive
+is larger than the selected 280 rows but is the only authoritative package; its complete LFS hash
+binds the future extraction. The combined 440-row allocation, licence receipts, catalog/archive
+hashes and score-blind selection rules were committed while E39 FINAL still had zero local image
+bytes. Acquisition may now proceed without loading the detector.
