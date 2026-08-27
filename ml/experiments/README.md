@@ -43,6 +43,7 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 | `e32_r1b_train.py`, `e32_r1b_select.py`, `e32_r1b_external.py` | rejected R1b experiment | DINO/CF controlled heads, preregistered CF selection and one consumed external DEVELOPMENT run |
 | `e36_acquisition.py`, `e36_calibrate.py`, `e37_source_heldout.py` | modern balanced recovery | Frozen disjoint CAL/FINAL acquisition, rejected DDA threshold transfer and fixed source-held-out DINO adaptation |
 | `e38_fixed_adaptation.py` | fixed pre-FINAL candidate | Uniformly emphasizes every consumed modern adaptation row and freezes one development-selected DINO head |
+| `e38_final.py` | one-shot untouched FINAL | Hash-binds the E38 candidate/threshold and scores the family/device-disjoint native/clean parents exactly once |
 
 The current served decision contract is E26's OR rule, implemented in `pixelproof/verdict.py`:
 CF-ViT is default; B-Free is optional and licence-gated. E27 is retained to reproduce the
