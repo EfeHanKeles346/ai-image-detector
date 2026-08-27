@@ -3523,3 +3523,33 @@ integrity. The unchanged web product passes its production build, all six tests,
 ESLint. One known upstream Starlette/httpx deprecation warning remains non-functional. All E40/E41
 role, method, result and stop decisions are recorded and pushed; the working product remains on its
 previous validated served model until E41 earns independent evidence.
+
+## 2026-08-28 — E41 external-proof route selected from current evidence
+
+The new objective was stated plainly: achieve success, not merely add another experiment. The
+entire E1–E41 chain and current primary literature were re-audited before any new dataset byte.
+Three findings changed the order of work. First, the MAD 2026 ITW-SM study reports that a DINOv2-L
+RINE variant reaches 0.9823 AUC on 10,000 real social-media images only when in-the-wild training,
+texture-aware crops and realistic augmentations are combined; SPAI reaches 0.9810 with a distinct
+spectral route. Second, NTIRE 2026's winner reaches 0.9723 robust AUC with millions of training
+images, multiple DINOv3 backbones and hierarchical degradations—evidence that data and transport
+coverage dominate a simple backbone swap. Third, a 2026 23-detector/12-dataset comparison finds no
+universal winner; even its best released ensemble averages only 0.780 accuracy and current
+commercial generators defeat most frozen detectors.
+
+This evidence does not justify throwing away E41. Its learned head already separates seven recent
+families well and its only change from E40 is the broad-real threshold. The shortest honest route
+is therefore fixed: score the unchanged E41 candidate first on two open external surfaces. The
+B-Free viral set supplies a difficult, parent-grouped web-propagation stress test; RRDataset's
+still-unopened 20.12 GB CC BY 4.0 test archive supplies a larger clean/transmission/redigitization
+robustness transfer. Neither may tune E41. ITW-SM remains the preferred stronger social-media final,
+but its 3.57 GB release is manually gated, the machine has no Hugging Face identity and the user
+has not yet personally accepted its non-commercial terms; no silent access request or download was
+made.
+
+The failure branch is also frozen before scores: if E41 misses, preserve both external tests and
+open one E42 line combining DINOv2 global features, texture-rich multi-crop aggregation, symmetric
+JPEG/WebP/resize/blur augmentation and source-held-out calibration. Do not train on failed external
+test rows or sweep an ensemble after seeing them. Existing success gates remain unchanged, so the
+project cannot create progress by lowering the bar. `PLAN.md` and `DATASETS.md` hold the complete
+pre-byte contract and exact source receipts.

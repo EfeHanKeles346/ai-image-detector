@@ -706,6 +706,41 @@ REAL-safe threshold was 0.998400 with 10.0% REAL FP but only 52.0% pooled AI rec
 scenario-macro recall and 26.88% worst-scenario recall. The 20.12 GB RR locked test archive remains
 undownloaded and unopened.
 
+### E41 external-proof sources — frozen before bytes (2026-08-28)
+
+E41 is already frozen at artifact SHA-256
+`9bcc021e74b617ee48cf297bd384a8dbe946240ec04822323af1e7c3fe63ab65` and threshold
+`0.6195540428161622`. The next sources therefore evaluate this exact candidate; they cannot select
+another threshold, crop, model or ensemble.
+
+**B-Free viral-image stress.** The official GRIP-UNINA checkout is pinned at Git revision
+`c6a9f898782fb466b29af01f21960b67415afb0e`. Its 260,491-byte
+`viral_images_dataset/BFree_viral_images.csv` has SHA-256
+`3c727c4f8990ca91e129c97842fbf3c997b25fa6430fc316ffccc756f2373fc8` and declares 1,111 URL
+rows: 361 REAL and 750 FAKE versions derived from only 34 source events, balanced as 17 events per
+class. Each row supplies filename, label, source id, post time, dimensions, MD5 and source URL.
+The latest declared post is 2024-03-29, so this source measures web propagation/robustness rather
+than 2026-generator coverage. Use is informational/nonprofit under the included 1,843-byte GRIP
+licence (SHA-256 `cd00edf99fbfdbb173831bb0a4d5bfc40423c6e5041f62d7afdda220c4be8b27`);
+third-party image rights and dead URLs remain limitations. Destination is
+`/Volumes/LaCie/pixelproof-datasets/e42_external/bfree_viral/`. No aggregate byte count is
+published, so exact per-row MD5, URL status, decode and source-event grouping are mandatory.
+
+**RRDataset external robustness.** Reuse the already frozen official Zenodo record `14963880`,
+CC BY 4.0 receipt for `RRDataset_test.tar.gz`: exactly 20,117,869,400 bytes, published MD5
+`13c3ff3d61986170cc0c8cf76a35cd4b`, destination
+`/Volumes/LaCie/pixelproof-datasets/e33_rrdataset/archives/`. It remains zero local bytes at this
+freeze. Because RR validation was previously observed, the test is an independent-row robustness
+transfer but not collection-independent proof.
+
+**ITW-SM locked external.** Official `dkarageo/itw-sm` revision
+`3060094fb576669927134193de3f517d7e64af86` contains 10,000 social-media images (5,000/class,
+Facebook/Instagram/LinkedIn/X), declares 3.57 GB and is manual-gated for non-commercial research.
+The machine currently has no Hugging Face login and no access approval. No image byte may be
+downloaded until the user authenticates and personally accepts the dataset terms; metadata access
+does not imply consent. ITW-SM stays the preferred E42 independent final, not a silent dependency
+of E41's open-test run.
+
 ### E34 official DDA aligned benchmark — frozen before bytes (2026-08-27)
 
 The next data is not another unrelated AI pile. The selected candidate is the official NeurIPS

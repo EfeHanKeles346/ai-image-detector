@@ -5,6 +5,80 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Current execution slice — E41 external proof, then E42 only if needed (2026-08-28)
+
+The goal is **success**, defined as a detector that survives independent, source-aware tests while
+keeping both authentic-photo false accusations and modern-AI misses within the frozen budgets. A
+high internal AUC, a visually convincing demo or a threshold selected on an owner gallery is not
+success. E41 is already a runnable frozen candidate; therefore the shortest honest route is to test
+it before paying for another architecture or training run.
+
+### F0 — freeze what current science changes and what it does not
+
+- [x] Re-audit E1–E41 and the 2025–2026 primary literature before new bytes. The strongest repeated
+      finding is data/pipeline alignment, not a magic backbone: ITW-SM reaches 0.9823 AUC with a
+      DINOv2-L RINE variant only after in-the-wild training, texture-aware crops and realistic
+      augmentations; SPAI reaches 0.9810 with spectral any-resolution processing; NTIRE 2026's top
+      robust AUC is 0.9723 using very large DINOv3 ensembles, millions of images and hierarchical
+      degradation. A 2026 out-of-box study finds no universal winner and only 0.780 mean accuracy
+      even for its leading released ensemble.
+- [x] Keep the internship-success gate unchanged: AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15,
+      balanced accuracy >=0.85, REAL macro/worst FP <=10%/20%, AI macro/worst recall >=80%/60%
+      and complete declared coverage. NTIRE's 0.97 robust AUC is top-challenge territory, not a
+      defensible minimum for a local prototype. NIST defines blind metrics but no universal
+      certification mark.
+- [x] Reject immediate ensemble/model churn. E41 already has strong current-family separation and
+      a broad-real threshold; testing it is cheaper and more informative than choosing a new model
+      from the same consumed scores.
+
+### F1 — two open external gates before any E42 training
+
+- [ ] Acquire the official B-Free viral-image URL registry as `E41_WILD_STRESS`, preserving its
+      34 source events (17 REAL, 17 AI) and every surviving web version as a child of that event.
+      Verify the published MD5 for each download, count every dead/changed URL as coverage failure,
+      and never let heavily reposted events dominate metrics. This is a difficult web-propagation
+      stress test, not a modern-generator final: its dated rows end in 2024 and its effective
+      independent N is 34.
+- [ ] Reassign the still-unopened CC BY 4.0 `RRDataset_test.tar.gz` only as
+      `E41_EXTERNAL_ROBUSTNESS`, bound to the frozen E41 artifact/threshold before bytes. Resume the
+      exact 20,117,869,400-byte archive, reproduce MD5 `13c3ff3d61986170cc0c8cf76a35cd4b`,
+      inventory/extract safely and score once. Prior RR validation exposure weakens collection-level
+      independence, so report this as robustness transfer, never as the sole final claim.
+- [ ] Freeze both unscored manifests and protected-role overlap audits before model access. E41 may
+      be called an externally validated prototype only if the original global gates pass on the RR
+      clean-parent population, the declared robust/transmission columns remain above working AUC
+      0.85 and balanced accuracy 0.80, and the parent-weighted B-Free stress result has balanced
+      accuracy >=0.80 with no class below 0.75 recall. Report confidence intervals and limitations;
+      no retry or threshold change is allowed.
+
+### F2 — success branch and controlled failure branch
+
+- [ ] **If E41 passes:** package the same artifact for the research API/web path, keep the current
+      uncertainty wording, run all Python/web/registry checks and retain ITW-SM/NIST as stronger
+      later external confirmation. Do not claim NIST approval or universal detection.
+- [ ] **If E41 fails:** preserve the failed external scores and do not use RR test or B-Free viral
+      rows for E42 training or threshold selection. Open exactly one E42 line based on the research:
+      DINOv2 global semantics plus deterministic texture-rich multi-crop aggregation, symmetric
+      JPEG/WebP/resize/blur augmentation for both labels, and source-held-out calibration. Compare
+      the smallest adequate DINOv2-S implementation with one DINOv2-L intermediate-block candidate;
+      pick by consumed DEVELOPMENT only, not by the external tests.
+- [ ] E42 may train on the existing licensed TRAIN pools, RR's official **train** split and all
+      explicitly consumed adaptation populations. It must retain source caps, parent grouping,
+      label `0=REAL, 1=AI`, equal transform probabilities and exact/perceptual decontamination.
+      The untouched ITW-SM 10,000-row social-media benchmark becomes E42's preferred independent
+      final after the user authenticates and accepts its non-commercial terms; no local Hugging
+      Face identity or approval exists today, so its 3.57 GB cannot be fetched silently.
+
+### F3 — recording and stop rules
+
+- [ ] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis
+      in `ml/EXPERIMENTS.md`, and every decision/result in append-only `HISTORY.md`. Commit the
+      source contract before transfer and each completed scientific gate afterward; push only
+      verified checkpoints with green CI.
+- [ ] If B-Free URLs are too incomplete, the RR server cannot resume, or ITW-SM remains gated,
+      stop with the exact external blocker. Do not replace a difficult test with an easier dataset
+      after seeing scores and do not manufacture a “pass” by lowering the gate.
+
 ## Current execution slice — R1c threshold repair and external benchmark (2026-08-27)
 
 The immediate product defect is no longer ambiguous: E32/R1b ranks the existing modern-AI pool
