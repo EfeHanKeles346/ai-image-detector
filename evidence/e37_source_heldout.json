@@ -1,0 +1,331 @@
+{
+  "bindings": {
+    "e32_feature_archive_sha256": "ae1737f2114583e6c05c46b265bbda5bce3a2ac36464c84c70625b006a3416de",
+    "e36_feature_archive_sha256": "3a08e0dcacce6441efa0d422531871b964d100b126a6884715f5616c1a26f178",
+    "e36_manifest_sha256": "4ed1b7341df39fed1f1fc19a20424f15362c0df224bcc77189045ba4a4af2e03",
+    "oof_scores_sha256": "5f66c32ec3d15b56ef429908cc9006d708d94d9648014dc6de96c4f6a6e42d1d",
+    "role_amendment_sha256": "2ddafc644f56c49853587e8c9d376bfb170eae027d9d76d57fd079186c1b3014"
+  },
+  "bootstrap": {
+    "ai_macro_recall": {
+      "estimate": 0.5750000000000001,
+      "high_95": 0.6133749999999998,
+      "iterations": 2000,
+      "low_95": 0.5366666666666666
+    },
+    "real_macro_fp": {
+      "estimate": 0.04143661971830986,
+      "high_95": 0.06115492957746479,
+      "iterations": 2000,
+      "low_95": 0.023688732394366196
+    }
+  },
+  "boundary": "E36 source-held-out OOF only; no FINAL byte downloaded or scored.",
+  "counts": {
+    "adaptation": 1071,
+    "base_train": 21349,
+    "oof": 1071
+  },
+  "experiment": "E37/DINOv2-S-source-held-out-adaptation",
+  "folds": [
+    {
+      "fit_rows": 22220,
+      "fold": 0,
+      "held_ai_sources": [
+        "FLUX.2_max"
+      ],
+      "held_real_sources": [
+        "device_001"
+      ],
+      "held_rows": 200
+    },
+    {
+      "fit_rows": 22220,
+      "fold": 1,
+      "held_ai_sources": [
+        "GLM-Image"
+      ],
+      "held_real_sources": [
+        "device_002"
+      ],
+      "held_rows": 200
+    },
+    {
+      "fit_rows": 22220,
+      "fold": 2,
+      "held_ai_sources": [
+        "Qwen-Image-2.0-pro"
+      ],
+      "held_real_sources": [
+        "device_003"
+      ],
+      "held_rows": 200
+    },
+    {
+      "fit_rows": 22220,
+      "fold": 3,
+      "held_ai_sources": [
+        "Seedream-5.0"
+      ],
+      "held_real_sources": [
+        "device_005"
+      ],
+      "held_rows": 200
+    },
+    {
+      "fit_rows": 22149,
+      "fold": 4,
+      "held_ai_sources": [
+        "gpt-image-2",
+        "nano-banana-2.0"
+      ],
+      "held_real_sources": [
+        "device_009"
+      ],
+      "held_rows": 271
+    }
+  ],
+  "gate": {
+    "checks": {
+      "ai_macro_recall_gte_0.80": false,
+      "ai_worst_family_recall_gte_0.60": false,
+      "balanced_accuracy_gte_0.85": false,
+      "coverage_eq_1": true,
+      "eer_lte_0.15": true,
+      "real_macro_fp_lte_0.10": true,
+      "real_worst_device_fp_lte_0.20": true,
+      "roc_auc_gte_0.90": true,
+      "tpr_at_fpr10_gte_0.80": true
+    },
+    "passed": false
+  },
+  "metrics": {
+    "accuracy_counting_failures_wrong": 0.7478991596638656,
+    "ai_recall": 0.575,
+    "balanced_accuracy": 0.7715764331210191,
+    "brier_nontarget_real": 0.19087431019666765,
+    "brier_target_ai": 0.02728391368589166,
+    "confusion": {
+      "fn": 255,
+      "fp": 15,
+      "tn": 456,
+      "tp": 345
+    },
+    "counts": {
+      "ai_succeeded": 600,
+      "failed": 0,
+      "real_succeeded": 471,
+      "succeeded": 1071,
+      "total": 1071
+    },
+    "coverage": 1.0,
+    "eer": 0.12975583864118895,
+    "per_group": [
+      {
+        "ai_recall": 0.42,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 58,
+          "fp": 0,
+          "tn": 0,
+          "tp": 42
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FLUX.2_max"
+      },
+      {
+        "ai_recall": 0.7,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 30,
+          "fp": 0,
+          "tn": 0,
+          "tp": 70
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "GLM-Image"
+      },
+      {
+        "ai_recall": 0.5,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 50,
+          "fp": 0,
+          "tn": 0,
+          "tp": 50
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "Qwen-Image-2.0-pro"
+      },
+      {
+        "ai_recall": 0.68,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 32,
+          "fp": 0,
+          "tn": 0,
+          "tp": 68
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "Seedream-5.0"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 100,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "device_001"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 99,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.01,
+        "source": "device_002"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 100,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "device_003"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 100,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.0,
+        "source": "device_005"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 14,
+          "tn": 57,
+          "tp": 0
+        },
+        "count": 71,
+        "label": 0,
+        "real_false_positive_rate": 0.19718309859154928,
+        "source": "device_009"
+      },
+      {
+        "ai_recall": 0.49,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 51,
+          "fp": 0,
+          "tn": 0,
+          "tp": 49
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "gpt-image-2"
+      },
+      {
+        "ai_recall": 0.66,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 34,
+          "fp": 0,
+          "tn": 0,
+          "tp": 66
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "nano-banana-2.0"
+      }
+    ],
+    "real_false_positive_rate": 0.03184713375796178,
+    "roc_auc": 0.9481104033970276,
+    "stored_threshold": 0.9991205334663392,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.82
+    }
+  },
+  "model": {
+    "backbone": "vit_small_patch14_dinov2.lvd142m",
+    "backbone_weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+    "c": 0.1,
+    "class_weight": "balanced",
+    "head": "StandardScaler + LogisticRegression",
+    "input": "EXIF transpose, RGB, short-side 256, center 224, JPEG q90 4:4:4",
+    "seed": 42
+  },
+  "schema_version": 1,
+  "selected_frontier": {
+    "ai_macro_recall": 0.5750000000000001,
+    "ai_recall_by_family": {
+      "FLUX.2_max": 0.42,
+      "GLM-Image": 0.7,
+      "Qwen-Image-2.0-pro": 0.5,
+      "Seedream-5.0": 0.68,
+      "gpt-image-2": 0.49,
+      "nano-banana-2.0": 0.66
+    },
+    "ai_worst_family_recall": 0.42,
+    "real_fp_by_device": {
+      "device_001": 0.0,
+      "device_002": 0.01,
+      "device_003": 0.0,
+      "device_005": 0.0,
+      "device_009": 0.19718309859154928
+    },
+    "real_macro_fp": 0.04143661971830986,
+    "real_worst_device_fp": 0.19718309859154928,
+    "threshold": 0.9991205334663392
+  },
+  "state": "oof_gate_failed"
+}

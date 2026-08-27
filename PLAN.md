@@ -239,26 +239,57 @@ at the same frozen operating point.
       score-based removal, hard-example cherry-picking or family/device reweighting after results.
       Frozen before feature extraction/fitting in `evidence/e37_role_amendment.json`, including
       the five exact source-held-out folds and fixed head contract.
-- [ ] **Reuse the smallest adequate frozen representation.** Reuse the existing E32 DINOv2-S/14
+- [x] **Reuse the smallest adequate frozen representation.** Reuse the existing E32 DINOv2-S/14
       feature archive and preprocessing for the old TRAIN rows, extract the same 384-dimensional
       embedding only for the 1,071 E36 parents, and fit only a standardized class-weighted logistic
       head. Do not sweep encoders, crops or ensembles on E36. This tests whether source-balanced
       adaptation is sufficient without another dataset download or full-backbone fine-tune.
-- [ ] **Generate honest E36 out-of-fold predictions.** Use five fixed source-disjoint folds. Each
+- [x] **Generate honest E36 out-of-fold predictions.** Use five fixed source-disjoint folds. Each
       fold holds out one complete REAL device and one or two complete AI families while always
       retaining the original E32 TRAIN base. Every E36 parent is scored exactly once by a head that
       saw neither its device nor its generator family. Fit `StandardScaler + LogisticRegression`
       with fixed `C=0.1`, `class_weight=balanced`, seed 42; no hyperparameter sweep.
-- [ ] **Select exactly one OOF threshold and gate both classes.** Choose the lowest OOF threshold
+- [x] **Select exactly one OOF threshold and gate both classes.** Choose the lowest OOF threshold
       with REAL device-macro FP <=10% and worst-device FP <=20%; require AI family-macro recall
       >=80%, worst-family >=60%, ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy
       >=0.85 and 100% coverage. Bootstrap by parent. A REAL-safe but AI-blind head fails; an
       AI-sensitive but camera-unsafe head also fails.
+      **Result: rejected, but representation recovered.** ROC-AUC 0.94811, TPR@FPR10 0.82 and EER
+      0.12976 pass. At the first source-safe threshold, REAL macro/worst FP are 4.14%/19.72%, but
+      AI macro/worst recall are only 57.5%/42.0% and balanced accuracy is 0.7716. No E37 artifact
+      was created and FINAL remains absent.
 - [ ] **Only after the OOF gate passes, freeze the candidate.** Refit the identical fixed head on
       old E32 TRAIN plus all E36 adaptation rows, store feature/input/role/code hashes and retain
       the OOF-selected threshold unchanged. Then acquire the already-preregistered FINAL bytes,
       audit/decontaminate them without model access and score exactly once. Failure leaves FINAL
       sealed and opens paired DDA-style training—not another post-hoc threshold or ensemble.
+
+### D3.8 — E38 fixed adaptation emphasis, then the one untouched FINAL
+
+E37 proved DINOv2-S ranks the new domain well but the 21,349-row historical base overwhelms only
+1,071 current adaptation rows. A consumed-DEVELOPMENT diagnostic varied regularization and a
+single uniform adaptation weight; it did not write an artifact or access FINAL. It found that
+uniformly emphasizing every E36 row—not selecting examples or sources—can move the joint frontier
+past all gates. Because those outcomes were inspected, E38 is a DEVELOPMENT-selected candidate,
+not fresh validation. Its only honest confirmation is the already locked FINAL.
+
+- [ ] **Freeze E38 before fitting.** Keep the same backbone, preprocessing, five source folds and
+      complete row set. Fix `C=0.0003`, `class_weight=balanced`, seed 42 and a uniform sample weight
+      of 100 for every E36 adaptation row versus 1 for every historical E32 TRAIN row. Do not use
+      DDA scores, an ensemble, per-source weights or another grid.
+- [ ] **Reproduce the fixed DEVELOPMENT frontier and freeze one artifact.** Generate one OOF score
+      per E36 row, select the same REAL-budget threshold and require the unchanged eight quality
+      gates plus full coverage. Record explicitly that the hyperparameters were selected on this
+      consumed population. If it fails, no artifact/FINAL access; if it passes, refit the identical
+      head on all E32 TRAIN + E36 rows and bind its artifact/hash/threshold.
+- [ ] **Acquire/audit the preregistered FINAL without model access.** Download only REAL devices
+      004/006/007/008 and the six family-disjoint AI cells already frozen in E36-A. Verify exact
+      archive/blob checksums, safe extraction, decode, label/source counts and exact/dHash overlap.
+      No source, prompt, row, transform or threshold may change after any FINAL score.
+- [ ] **Score FINAL exactly once.** Require the unchanged internship gates on native/clean parents
+      first. Only after sealing that result may parent-linked QQ/Weibo or deterministic degradation
+      children be reported as robustness columns. A miss is the final result for this candidate;
+      it cannot trigger a retry on the same FINAL.
 
 ### D4 — close the slice reproducibly
 

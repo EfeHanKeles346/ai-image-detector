@@ -2828,3 +2828,18 @@ above are transcription errors; production range planning binds the filesystem v
   Its rows become a consumed adaptation pool for the separately preregistered E37 source-held-out
   head; only out-of-fold source predictions may choose E37's operating point. Compact evidence:
   `evidence/e36_calibration.json`; local detailed scores remain under the external E36 directory.
+
+### E37 — source-held-out DINO adaptation restores ranking, not the operating point
+
+- **Boundary:** frozen DINOv2-S features from 21,349 E32 TRAIN rows were reused; only the 1,071 E36
+  parents received new embeddings. Five fixed folds held every E36 REAL device and AI family out
+  exactly once. Each head used fixed `C=0.1`, balanced classes and no FINAL/DDA score feature.
+- **Result:** 1,071/1,071 OOF coverage, ROC-AUC **0.94811**, TPR@FPR10 **0.820** and EER
+  **0.12976**. These pass the ranking gates and improve dramatically over E36 DDA's AUC 0.58753.
+- **Joint frontier:** threshold `0.999121` gives REAL device-macro/worst FP **4.14%/19.72%**, but AI
+  family-macro/worst recall only **57.5%/42.0%** and balanced accuracy **0.7716**. Device 009 alone
+  contributes 14/15 false accusations; AI family recall ranges from 42% FLUX.2 Max to 70% GLM.
+- **Decision:** `oof_gate_failed`; no candidate artifact and no FINAL access. A post-hoc uniform
+  adaptation-weight diagnostic on this now-consumed DEVELOPMENT population found a feasible region
+  without source/example selection; E38 must freeze one such setting and can be validated only by
+  the untouched FINAL. Evidence: `evidence/e37_source_heldout.json`.

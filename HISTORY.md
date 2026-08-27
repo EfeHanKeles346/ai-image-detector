@@ -3271,3 +3271,24 @@ its AI family; one threshold must then pass both authentic FP and modern-AI reca
 pass permits final refit and one-shot FINAL acquisition/evaluation. This preserves the project's
 central lesson: fewer REAL accusations are not progress if the detector achieves them by missing
 AI images.
+
+### E37 result — ranking recovered; historical volume diluted current adaptation
+
+E37 reused the existing 26,682-row DINOv2-S feature cache and extracted only 1,071 new embeddings.
+Five complete source-held-out folds ensured every modern AI family and native REAL device was
+scored by a head that had not seen that source. The fixed head produced ROC-AUC 0.94811,
+TPR@FPR10 0.82 and EER 0.12976—clear evidence that the compact representation can separate the new
+domain, unlike DDA on E36.
+
+It still failed the frozen joint decision gate. The first REAL-safe threshold kept device-macro/
+worst FP at 4.14%/19.72%, but AI family-macro/worst recall reached only 57.5%/42.0% and balanced
+accuracy 0.7716. No artifact was written. A read-only DEVELOPMENT diagnostic then identified the
+mechanism: 21,349 historical TRAIN rows numerically dominate 1,071 current adaptation rows. A
+uniform adaptation multiplier plus stronger regularization improved the joint frontier; simple
+DDA/DINO min, max, product and linear blends did not, so an ensemble was rejected.
+
+Because that diagnostic inspected E36 outcomes, it is tuning, not new evidence. E38 therefore
+freezes one simple setting (`C=0.0003`, every E36 row weight 100, every old TRAIN row weight 1),
+retains all sources/rows and the same five held-source folds, and may earn only the right to face
+the already-preregistered untouched FINAL. The FINAL result—not another E36 number—will decide
+whether this candidate is successful.

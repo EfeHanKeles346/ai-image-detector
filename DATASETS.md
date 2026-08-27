@@ -826,3 +826,10 @@ are out-of-fold by complete REAL device and complete AI generator family; no row
 a head trained on its own source group. The original E32 TRAIN pool may remain the fixed base.
 Evidence is `evidence/e36_calibration.json`; detailed score bytes stay outside Git at
 `/Volumes/LaCie/pixelproof-datasets/e36/`.
+
+E37 extracted one DINOv2-S embedding for each of these 1,071 consumed rows and generated exactly
+one source-held-out score per parent. The resulting feature archive is local-only at
+`/Volumes/LaCie/pixelproof-datasets/e37/e36_dinov2s_features.npz`, SHA-256
+`3a08e0dc...f178`; OOF scores SHA-256 `5f66c32e...2d1d`. These are DEVELOPMENT derivatives and
+cannot be reassigned to FINAL. The four reserved REAL archives and 240 reserved AI blobs still
+have zero local bytes and remain the only authorized E38 FINAL cells.
