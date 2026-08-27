@@ -164,7 +164,8 @@ native camera pipelines. Do not discard DDA, deploy the post-hoc 0.90 value, mix
       and score direction fixed. Select the lowest threshold satisfying CAL real macro FP <=10% and
       worst-device FP <=20%, then require AI family macro recall >=80% and worst-family >=60%.
       Bootstrap 95% confidence intervals by parent; count decode/inference failures as errors.
-      No architecture, ensemble or second threshold may be selected from the same CAL.
+      CAL must also retain ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15 and balanced accuracy
+      >=0.85. No architecture, ensemble or second threshold may be selected from the same CAL.
 - [ ] **Freeze a new LOCKED FINAL set before scoring.** Minimum 160 native reals from four unseen
       device/session pipelines (40 each) plus 240 clean modern AI parents from six held-out
       model/version cells (40 each). Add deterministic JPEG, resize, screenshot/social-transmission
