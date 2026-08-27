@@ -570,6 +570,19 @@ small manifests, aggregate evidence, code and documentation.
       visible by design and R1b has `affects_decision=false`. Full verification passes: 207 Python
       tests, web 6/6 with production build, typecheck, ESLint, dependency graph and artifact
       registry. Local processes were stopped; no disk or model endpoint was published.
+
+### Demo hierarchy correction — answer the user's first question first (queued 2026-08-27)
+
+- [ ] Make E32 R1b the first and only primary result card after an upload. State its direct answer
+      in plain Turkish (`AI yönünde sinyal` / `yeterli AI sinyali yok`) and show its 0–100 scaled
+      signal bar plus frozen threshold. Explicitly say this is a model score, not calibrated
+      probability or authenticity proof.
+- [ ] Move E26, E20, artifact identity, thresholds and external FP measurements below one collapsed
+      `Teknik detaylar` control. Remove E20 routing language and tile overlay from the default view;
+      these implementation details must not compete with the requested R1b answer.
+- [ ] Preserve the scientific boundary: presentation priority does not promote R1b into E26's
+      decision rule. Verify keyboard/touch behavior, response parsing, production build and a real
+      local R1b request; append results to HISTORY/README/SERVING and commit.
 - [ ] Run the frozen candidate on the DEVELOPMENT arms once. Advancement requires AUC >=0.85,
       authentic macro FP <=10%, worst authentic source <=20%, AI macro recall >=60%, every sized
       AI family >=40% and bounded transport loss. A failing candidate cannot consume locked finals.
