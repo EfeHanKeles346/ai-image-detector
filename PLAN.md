@@ -81,6 +81,32 @@ it before paying for another architecture or training run.
       final after the user authenticates and accepts its non-commercial terms; no local Hugging
       Face identity or approval exists today, so its 3.57 GB cannot be fetched silently.
 
+### F2.1 — executable E42 recovery contract (frozen before extraction/features)
+
+- [x] Bind exactly 4,638 base-training parents: the fixed 1,067-row E32 TRAIN replay, all 1,071
+      consumed E36 CAL rows and RRDataset's 2,500 official train rows. Bind 2,250 consumed
+      source-held-out DEVELOPMENT parents: 640 E36 former-final rows, 440 E39 rows, 960 IPN phone
+      originals and the declared 210-image owner gallery. B-Free viral and RR test are prohibited
+      from fitting, threshold selection and model choice.
+- [ ] Safely extract only RR `train/{real,ai}` from the already MD5-verified 2.16 GB archive. Decode,
+      hash and count all 2,500 rows; preserve seven AI topic/scenario groups and one explicitly
+      pooled REAL source. Freeze the combined parent manifest and exact/dHash overlap audit before
+      any E42 feature extraction.
+- [ ] Implement one fixed RINE-inspired representation ladder: normalized CLS tokens from four
+      intermediate DINOv2 blocks, aggregated over one global crop plus two deterministic highest-
+      texture native crops. Compare DINOv2-S and DINOv2-L only; DINO-L reuses the hash-pinned pure
+      backbone tensors already present inside the official Apache-2.0 DDA checkpoint, avoiding a
+      redundant network download.
+- [ ] Give every training parent one clean view plus one deterministic, class-symmetric transport
+      view chosen from JPEG, WebP, resize+JPEG and mild blur. Evaluate every DEVELOPMENT parent as
+      clean plus all four transports. Fit one source-balanced logistic head per backbone at fixed
+      C=0.01; use source-held-out clean OOF scores for the threshold and require the unchanged cut
+      to pass the frozen clean success gate plus robust AUC >=0.85 / balanced accuracy >=0.80.
+- [ ] Select the smaller DINOv2-S if both candidates pass; otherwise select the only full pass. If
+      neither passes, stop without another backbone/threshold sweep. If one passes, refit once on
+      all consumed training+development parents, freeze a research candidate, then and only then
+      transfer/inventory the unopened RR test for a one-shot external result.
+
 ### F3 — recording and stop rules
 
 - [ ] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis

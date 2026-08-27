@@ -3625,3 +3625,21 @@ opens only the preregistered E42 route: texture-aware multi-crop evidence, symme
 augmentation and source-held-out calibration, selected without B-Free or RR-test tuning. Score
 stream SHA-256 is `83783551...c33fc`; tracked evidence is
 `evidence/e42_bfree_result.json`.
+
+### E42 recovery design — representation and data diversity change together
+
+The recovery line is now specific enough to execute and is frozen before RR train extraction or
+E42 feature access. It binds 4,638 base-training parents from the existing E32 replay, E36 CAL and
+RR official train split, plus 2,250 already-consumed source-held-out DEVELOPMENT parents spanning
+E36/E39, 12 IPN devices and the owner gallery. B-Free and RR test are excluded from every adaptive
+decision. This directly addresses the observed defect: previous global DINO heads could rank
+their known AI families but treated unfamiliar authentic pipelines as evidence of generation.
+
+Only two representations may compete. Both aggregate normalized CLS tokens from four DINOv2
+blocks over a global view and two deterministic texture-rich native crops; one uses DINOv2-S and
+one DINOv2-L. The large backbone will reuse its original frozen tensors already present in the
+hash-pinned official DDA checkpoint, so no duplicate gigabyte download is justified. Each parent
+gets clean plus one class-symmetric transport view for fitting, while DEVELOPMENT is measured on
+clean and all four fixed transports. Source-held-out OOF selects one threshold; the smaller model
+wins if both pass. Failure stops the ladder, while a pass permits exactly one unopened RR-test
+transfer. Exact bindings and gates are machine-readable in `evidence/e42_fixed_contract.json`.

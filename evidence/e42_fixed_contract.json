@@ -1,0 +1,60 @@
+{
+  "backbones": {
+    "dinov2_large": {
+      "block_indices": [5, 11, 17, 23],
+      "model_id": "vit_large_patch14_dinov2.lvd142m",
+      "weight_container_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e"
+    },
+    "dinov2_small": {
+      "block_indices": [2, 5, 8, 11],
+      "model_id": "vit_small_patch14_dinov2.lvd142m",
+      "weight_sha256": "04d27f34e8e3328e0bb97b7d287d888473e271e2052b158b32624817c1bc0081"
+    }
+  },
+  "development": {
+    "e36_former_final": 640,
+    "e39_consumed": 440,
+    "ipn_phone_originals": 960,
+    "owner_gallery": 210,
+    "total_parents": 2250
+  },
+  "experiment": "E42/texture-intermediate-source-heldout-recovery",
+  "feature_contract": {
+    "aggregation": "mean+standard_deviation across three crops for each normalized intermediate CLS block",
+    "crops": "one global center view plus two deterministic highest-texture native 224px crops",
+    "development_views": ["clean", "jpeg", "webp", "resize_jpeg", "mild_blur"],
+    "training_views": "clean plus one deterministic transport assigned independently of label"
+  },
+  "fit_contract": {
+    "classifier": "StandardScaler + LogisticRegression(C=0.01, source-balanced sample weights)",
+    "selection": "clean source-held-out OOF success gate plus robust AUC>=0.85 and balanced_accuracy>=0.80; smallest passing backbone wins",
+    "threshold": "first clean OOF threshold satisfying REAL macro FP<=0.10 and worst-source FP<=0.20"
+  },
+  "forbidden": [
+    "B-Free viral rows in E42 fitting, threshold selection or model choice",
+    "RRDataset test rows before one E42 candidate is frozen",
+    "a third backbone, threshold retry or gate reduction after results"
+  ],
+  "input_bindings": {
+    "bfree_failure_evidence_sha256": "ee83c8952dddac173907e865708544a2034c348c599afd3abb992a8700f99ef4",
+    "e32_input_receipt_sha256": "400a990d89f569ededa4b72ad33a3fafce63285caa61e5ae429d4f9e3bb26af8",
+    "e36_cal_manifest_sha256": "4ed1b7341df39fed1f1fc19a20424f15362c0df224bcc77189045ba4a4af2e03",
+    "e36_final_manifest_sha256": "cad71ff5c631894805d1bb97c3b302732a23a069ce0b050faaf09e00314a66e6",
+    "e39_manifest_sha256": "1076df20adc700a1893814e477891e9270e4f88502dbad2571e022f3a7127306",
+    "ipn_realization_sha256": "f5827dcea69484421b15a6608555a7c64556d206c991d02606222b1892bc243b",
+    "owner_gallery_identity_sha256": "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09",
+    "rr_cal_inventory_sha256": "a8ed63d83c360f1044b53fc6edaf3078cc50122e11b5a5f14c072a95dc427ef2"
+  },
+  "label_invariant": {
+    "ai": 1,
+    "real": 0
+  },
+  "schema_version": 1,
+  "state": "fixed_before_e42_rr_train_extraction_or_features",
+  "training": {
+    "e32_fixed_replay": 1067,
+    "e36_cal_consumed": 1071,
+    "rrdataset_official_train": 2500,
+    "total_parents": 4638
+  }
+}

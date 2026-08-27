@@ -1019,3 +1019,18 @@ The packaged E41 artifact is a 13,064-byte derived model file at
 At this checkpoint E41 FINAL has zero images and zero rows. Future FINAL must exclude E39/FloreView/
 AIGenImages2026 and the owner gallery, and cannot begin until exact new source/licence allocations
 are frozen separately.
+
+## E42 recovery roles (frozen 2026-08-28 before extraction)
+
+E42 downloads no new image source before development. Its base training population is exactly the
+fixed 1,067-parent E32 TRAIN replay, all 1,071 consumed E36 CAL parents and only the 2,500 official
+`train/{real,ai}` members inside the already downloaded, MD5-verified CC BY 4.0 RRDataset original
+train/validation archive. The RR archive remains 2,163,176,547 bytes with MD5
+`2f4498c3690d8f4c7a30d2e41dd34500`; its 500 validation members are not promoted to E42 TRAIN.
+
+E42 source-held-out DEVELOPMENT is fixed at 2,250 previously consumed parents: 640 E36 former-
+final rows, 440 E39 rows, 960 IPN native phone originals across 12 devices and the 210-image owner
+gallery under identity SHA-256 `390e3c21...ac09`. These rows may select the E42 backbone and
+threshold and can never validate it independently afterward. The 811 B-Free viral rows and the
+unopened 20.12 GB RR test archive are forbidden from training, calibration and model choice. RR
+test remains locked for one candidate; ITW-SM remains untouched and manually gated.
