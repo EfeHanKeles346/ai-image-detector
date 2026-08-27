@@ -1,0 +1,282 @@
+{
+  "bootstrap": {
+    "ai_macro_recall": {
+      "estimate": 0.27666666666666667,
+      "high_95": 0.30833333333333335,
+      "iterations": 2000,
+      "low_95": 0.24499999999999997
+    },
+    "real_macro_fp": {
+      "estimate": 0.09363380281690142,
+      "high_95": 0.11763380281690142,
+      "iterations": 2000,
+      "low_95": 0.06999999999999999
+    }
+  },
+  "boundary": "One threshold selected on frozen CAL; no FINAL archive/blob downloaded or scored.",
+  "calibration_gate": {
+    "checks": {
+      "ai_macro_recall_gte_0.80": false,
+      "ai_worst_family_recall_gte_0.60": false,
+      "balanced_accuracy_gte_0.85": false,
+      "eer_lte_0.15": false,
+      "real_macro_fp_lte_0.10": true,
+      "real_worst_device_fp_lte_0.20": true,
+      "roc_auc_gte_0.90": false,
+      "tpr_at_fpr10_gte_0.80": false
+    },
+    "passed": false
+  },
+  "checkpoint_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e",
+  "counts": {
+    "ai": 600,
+    "real": 471,
+    "total": 1071
+  },
+  "experiment": "E36/DDA-clean-calibration",
+  "manifest_sha256": "4ed1b7341df39fed1f1fc19a20424f15362c0df224bcc77189045ba4a4af2e03",
+  "published_threshold_diagnostic": {
+    "ai_macro_recall": 0.37999999999999995,
+    "ai_recall_by_family": {
+      "FLUX.2_max": 0.06,
+      "GLM-Image": 0.44,
+      "Qwen-Image-2.0-pro": 0.3,
+      "Seedream-5.0": 0.58,
+      "gpt-image-2": 0.3,
+      "nano-banana-2.0": 0.6
+    },
+    "ai_worst_family_recall": 0.06,
+    "real_fp_by_device": {
+      "device_001": 0.35,
+      "device_002": 0.08,
+      "device_003": 0.31,
+      "device_005": 0.02,
+      "device_009": 0.07042253521126761
+    },
+    "real_macro_fp": 0.16608450704225353,
+    "real_worst_device_fp": 0.35,
+    "threshold": 0.5
+  },
+  "schema_version": 1,
+  "scores_bytes": 222263,
+  "scores_sha256": "0080f9aaf0b5f4e1b3bdfe77bcf652283b4d541e060de0386d4d5a4029d698cc",
+  "selected_frontier": {
+    "ai_macro_recall": 0.27666666666666667,
+    "ai_recall_by_family": {
+      "FLUX.2_max": 0.01,
+      "GLM-Image": 0.3,
+      "Qwen-Image-2.0-pro": 0.21,
+      "Seedream-5.0": 0.5,
+      "gpt-image-2": 0.18,
+      "nano-banana-2.0": 0.46
+    },
+    "ai_worst_family_recall": 0.01,
+    "real_fp_by_device": {
+      "device_001": 0.2,
+      "device_002": 0.03,
+      "device_003": 0.2,
+      "device_005": 0.01,
+      "device_009": 0.028169014084507043
+    },
+    "real_macro_fp": 0.09363380281690142,
+    "real_worst_device_fp": 0.2,
+    "threshold": 0.7563318610191345
+  },
+  "selected_metrics": {
+    "accuracy_counting_failures_wrong": 0.5518207282913166,
+    "ai_recall": 0.27666666666666667,
+    "balanced_accuracy": 0.5895010615711253,
+    "brier_nontarget_real": 0.14261364253033057,
+    "brier_target_ai": 0.4597206222164143,
+    "confusion": {
+      "fn": 434,
+      "fp": 46,
+      "tn": 425,
+      "tp": 166
+    },
+    "counts": {
+      "ai_succeeded": 600,
+      "failed": 0,
+      "real_succeeded": 471,
+      "succeeded": 1071,
+      "total": 1071
+    },
+    "coverage": 1.0,
+    "eer": 0.4267091295116773,
+    "per_group": [
+      {
+        "ai_recall": 0.01,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 99,
+          "fp": 0,
+          "tn": 0,
+          "tp": 1
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FLUX.2_max"
+      },
+      {
+        "ai_recall": 0.3,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 70,
+          "fp": 0,
+          "tn": 0,
+          "tp": 30
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "GLM-Image"
+      },
+      {
+        "ai_recall": 0.21,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 79,
+          "fp": 0,
+          "tn": 0,
+          "tp": 21
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "Qwen-Image-2.0-pro"
+      },
+      {
+        "ai_recall": 0.5,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 50,
+          "fp": 0,
+          "tn": 0,
+          "tp": 50
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "Seedream-5.0"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 20,
+          "tn": 80,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.2,
+        "source": "device_001"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 3,
+          "tn": 97,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.03,
+        "source": "device_002"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 20,
+          "tn": 80,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.2,
+        "source": "device_003"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 1,
+          "tn": 99,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.01,
+        "source": "device_005"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 2,
+          "tn": 69,
+          "tp": 0
+        },
+        "count": 71,
+        "label": 0,
+        "real_false_positive_rate": 0.028169014084507043,
+        "source": "device_009"
+      },
+      {
+        "ai_recall": 0.18,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 82,
+          "fp": 0,
+          "tn": 0,
+          "tp": 18
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "gpt-image-2"
+      },
+      {
+        "ai_recall": 0.46,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 54,
+          "fp": 0,
+          "tn": 0,
+          "tp": 46
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "nano-banana-2.0"
+      }
+    ],
+    "real_false_positive_rate": 0.09766454352441614,
+    "roc_auc": 0.5875336164189667,
+    "stored_threshold": 0.7563318610191345,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.285
+    }
+  },
+  "state": "calibration_failed"
+}

@@ -2809,3 +2809,22 @@ above are transcription errors; production range planning binds the filesystem v
 - **Engineering verification:** 236 Python tests, bytecode compilation, dependency integrity,
   six-entry artifact registry, production web build + six web tests, TypeScript and ESLint pass.
   One upstream Starlette/httpx deprecation warning remains unrelated to DDA inference.
+
+### E36 — clean modern CAL rejects threshold-only DDA repair
+
+- **Boundary:** the frozen 1,071-parent CAL contains 471 native originals from five unseen devices
+  and 600 clean outputs from six 2026 generator families. All rows scored exactly once with the
+  unchanged official DDA checkpoint; FINAL remained at zero downloaded/scored bytes.
+- **Published threshold 0.5:** REAL device-macro/worst FP **16.61%/35.0%** and AI family-macro/
+  worst recall **38.0%/6.0%**. It is neither camera-safe nor sufficiently AI-sensitive.
+- **First preregistered REAL-safe frontier 0.756332:** REAL device-macro FP **9.36%** (bootstrap
+  95% CI 7.00–11.76%) and worst-device FP **20.0%** pass, but AI family-macro recall is only
+  **27.67%** (95% CI 24.50–30.83%) and worst-family recall is **1.0%** on FLUX.2 Max.
+- **Ranking at the selected frontier:** ROC-AUC **0.58753**, TPR@FPR=10% **0.285**, EER
+  **0.4267**, balanced accuracy **0.5895**, with 1,071/1,071 coverage. All representation/AI gates
+  fail despite the authentic FP gates passing.
+- **Decision:** state `calibration_failed`; create no candidate, download/score no FINAL row and do
+  not complete/open DDA-COCO. E36 disproves the threshold-only hypothesis on current generators.
+  Its rows become a consumed adaptation pool for the separately preregistered E37 source-held-out
+  head; only out-of-fold source predictions may choose E37's operating point. Compact evidence:
+  `evidence/e36_calibration.json`; local detailed scores remain under the external E36 directory.

@@ -3248,3 +3248,26 @@ and 600 modern AI. Every AI family contributes 100; REAL contributes 100 from de
 E32 realizations is zero, as are within-CAL exact and cross-label dHash collisions. Manifest SHA is
 `4ed1b734...2e03`. It was committed unscored with zero FINAL bytes, preserving a clean boundary for
 the one-threshold DDA calibration.
+
+### E36 result — threshold-only repair is closed; FINAL remains clean
+
+The preregistered DDA calibration scored every one of the 1,071 frozen CAL parents exactly once,
+with no decode/inference failure and without downloading a FINAL byte. The published 0.5 cut was
+already unbalanced: 16.61% REAL device-macro and 35.0% worst-device false positives while detecting
+only 38.0% of the average AI family and 6.0% of FLUX.2 Max.
+
+Moving to the first authentic-safe threshold did not solve the joint task. At `0.756332`, REAL
+device-macro/worst FP reached the required 9.36%/20.0%, but AI family-macro/worst recall fell to
+27.67%/1.0%. ROC-AUC was 0.58753, TPR@FPR10 0.285, EER 0.4267 and balanced accuracy 0.5895. This is
+not an almost-pass and cannot be repaired by choosing another value from the same scores. E36 is
+recorded as `calibration_failed`; no candidate artifact exists, DDA-COCO remains unopened and all
+preregistered FINAL device/family cells remain untouched.
+
+The next experiment changes one controlled component instead of contaminating FINAL. E36's rows
+are role-amended to consumed adaptation data, and E37 will reuse the existing frozen DINOv2-S
+representation plus old E32 TRAIN features to fit a lightweight source-balanced logistic head.
+Every E36 parent must receive an out-of-fold score from a model that saw neither its REAL device nor
+its AI family; one threshold must then pass both authentic FP and modern-AI recall gates. Only that
+pass permits final refit and one-shot FINAL acquisition/evaluation. This preserves the project's
+central lesson: fewer REAL accusations are not progress if the detector achieves them by missing
+AI images.

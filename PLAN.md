@@ -160,12 +160,17 @@ native camera pipelines. Do not discard DDA, deploy the post-hoc 0.90 value, mix
       Realized as 471 native REAL +600 current AI =1,071 unscored parents. Exact/dHash overlap with
       prior E32 realizations is zero; every AI family has 100 rows and FINAL downloaded bytes are
       zero. Detailed manifest SHA-256 `4ed1b734...2e03`.
-- [ ] **Calibrate one threshold only.** Keep the verified DDA checkpoint, 336 crop, normalization
+- [x] **Calibrate one threshold only.** Keep the verified DDA checkpoint, 336 crop, normalization
       and score direction fixed. Select the lowest threshold satisfying CAL real macro FP <=10% and
       worst-device FP <=20%, then require AI family macro recall >=80% and worst-family >=60%.
       Bootstrap 95% confidence intervals by parent; count decode/inference failures as errors.
       CAL must also retain ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15 and balanced accuracy
       >=0.85. No architecture, ensemble or second threshold may be selected from the same CAL.
+      **Result: rejected.** At the first real-safe threshold `0.756332`, REAL device-macro/worst
+      FP are 9.36%/20.0%, but AI family-macro/worst recall collapse to 27.67%/1.0%. ROC-AUC is
+      0.58753, TPR@FPR10 0.285, EER 0.4267 and balanced accuracy 0.5895. The published 0.5 cut also
+      fails both sides (REAL macro/worst FP 16.61%/35.0%; AI macro/worst recall 38.0%/6.0%). No
+      E36 threshold is eligible and no FINAL byte may be downloaded for this candidate.
 - [ ] **Freeze a new LOCKED FINAL set before scoring.** Minimum 160 native reals from four unseen
       device/session pipelines (40 each) plus 240 clean modern AI parents from six held-out
       model/version cells (40 each). Add deterministic JPEG, resize, screenshot/social-transmission
@@ -220,6 +225,38 @@ normal/QQ/Weibo views.
       amendment `evidence/e36_qwen_role_amendment.json`.
       CAL transfer and CRC inventory later completed with FINAL still at zero bytes; the model-free
       71-row device-009 count amendment is `evidence/e36_real_count_amendment.json`.
+
+### D3.7 — E37 source-held-out adaptation before FINAL
+
+E36 falsifies threshold-only repair but creates a useful, now-consumed DEVELOPMENT adaptation
+pool. E37 may fit a new head from these rows only if every E36 score used for model/threshold
+selection is out-of-fold by source. FINAL devices/families remain inaccessible. The goal is
+balanced transfer: reducing REAL accusations cannot be accepted unless modern-AI coverage passes
+at the same frozen operating point.
+
+- [ ] **Amend the role before fitting.** Record E36 CAL as consumed `E37_ADAPTATION`; it can no
+      longer provide an independent DDA calibration claim. Preserve all 1,071 rows and labels—no
+      score-based removal, hard-example cherry-picking or family/device reweighting after results.
+- [ ] **Reuse the smallest adequate frozen representation.** Reuse the existing E32 DINOv2-S/14
+      feature archive and preprocessing for the old TRAIN rows, extract the same 384-dimensional
+      embedding only for the 1,071 E36 parents, and fit only a standardized class-weighted logistic
+      head. Do not sweep encoders, crops or ensembles on E36. This tests whether source-balanced
+      adaptation is sufficient without another dataset download or full-backbone fine-tune.
+- [ ] **Generate honest E36 out-of-fold predictions.** Use five fixed source-disjoint folds. Each
+      fold holds out one complete REAL device and one or two complete AI families while always
+      retaining the original E32 TRAIN base. Every E36 parent is scored exactly once by a head that
+      saw neither its device nor its generator family. Fit `StandardScaler + LogisticRegression`
+      with fixed `C=0.1`, `class_weight=balanced`, seed 42; no hyperparameter sweep.
+- [ ] **Select exactly one OOF threshold and gate both classes.** Choose the lowest OOF threshold
+      with REAL device-macro FP <=10% and worst-device FP <=20%; require AI family-macro recall
+      >=80%, worst-family >=60%, ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy
+      >=0.85 and 100% coverage. Bootstrap by parent. A REAL-safe but AI-blind head fails; an
+      AI-sensitive but camera-unsafe head also fails.
+- [ ] **Only after the OOF gate passes, freeze the candidate.** Refit the identical fixed head on
+      old E32 TRAIN plus all E36 adaptation rows, store feature/input/role/code hashes and retain
+      the OOF-selected threshold unchanged. Then acquire the already-preregistered FINAL bytes,
+      audit/decontaminate them without model access and score exactly once. Failure leaves FINAL
+      sealed and opens paired DDA-style training—not another post-hoc threshold or ensemble.
 
 ### D4 — close the slice reproducibly
 

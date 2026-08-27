@@ -810,3 +810,19 @@ native phone output or owner-gallery behaviour. Remaining CSAFE archives are nat
 but share the source collection/scenes already used through S21 and iPhone14; spending another
 18–29 GB would add weaker independence than the selected 2026 source. No image byte from either
 rejected source is authorized for E36.
+
+### E36-B CAL consumption and E37 role amendment (2026-08-27)
+
+The unchanged official DDA checkpoint scored all 1,071 CAL parents once. The first threshold that
+met REAL device-macro/worst FP budgets retained only 27.67% AI family-macro and 1.0% worst-family
+recall; ROC-AUC was 0.58753. E36 is therefore a failed calibration experiment, not a candidate.
+No FINAL REAL archive or FINAL AI blob has been downloaded, opened or scored, and the final cells
+listed above remain eligible for exactly one later frozen candidate.
+
+From this result onward, the 471 CAL REAL and 600 CAL AI parents are consumed
+`E37_ADAPTATION/DEVELOPMENT`. They may fit a new head, but they may not be presented again as an
+independent DDA calibration set. E37 threshold selection is permitted only from predictions that
+are out-of-fold by complete REAL device and complete AI generator family; no row may be scored by
+a head trained on its own source group. The original E32 TRAIN pool may remain the fixed base.
+Evidence is `evidence/e36_calibration.json`; detailed score bytes stay outside Git at
+`/Volumes/LaCie/pixelproof-datasets/e36/`.
