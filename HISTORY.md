@@ -3162,3 +3162,10 @@ The DDA DEVELOPMENT runner was then frozen before its first image. It binds the 
 RR manifest, 960-row IPN realization and exact 210-still owner identity; scores the published 0.5
 cut only; stores a hashed local row stream; and gates RR AUC/REAL FP/scenario recall plus IPN
 worst-device and owner FP simultaneously. No threshold-fit, retry arm or DDA-COCO read path exists.
+
+The first invocation stopped before model loading because the owner folder now held 211 supported
+stills rather than the frozen 210. A model-free identity comparison proved the sole addition is
+`WhatsApp Image 2026-08-25 at 17.14.51.jpeg` (206,418 B, SHA-256 `e04755bf...57e3`); removing only
+that row exactly reproduces protected identity `390e3c21...ac09`. The file remains untouched and
+unscored as a possible future reserve. The runner was amended to accept only the exact old set plus
+this exact optional reserve—any other membership change still fails closed.

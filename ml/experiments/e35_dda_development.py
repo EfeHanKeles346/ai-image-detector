@@ -23,6 +23,11 @@ RR_MANIFEST = DATA_ROOT / "e33_rrdataset" / "r1c_cal_manifest.json"
 EXPECTED_IPN_SHA = "f5827dcea69484421b15a6608555a7c64556d206c991d02606222b1892bc243b"
 EXPECTED_RR_MANIFEST_SHA = "5d575a08a214002b962a128f8684de9ef161f85ecaf06a53b8dbfb7fede8b521"
 EXPECTED_OWNER_IDENTITY = "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09"
+NEW_OWNER_RESERVE = {
+    "name": "WhatsApp Image 2026-08-25 at 17.14.51.jpeg",
+    "bytes": 206_418,
+    "sha256": "e04755bfa5ef63da5536dc10395bd3f1faf2f79a6e304bc4eeba87a5e4ec57e3",
+}
 SCORES = E35_ROOT / "development_scores.jsonl"
 REPORT = E35_ROOT / "development_report.json"
 EVIDENCE = ML_ROOT.parent / "evidence" / "e35_dda_development.json"
@@ -80,7 +85,19 @@ def run(owner_gallery: Path, batch_size: int = 2) -> dict[str, Any]:
         raise ValueError("RR validation manifest binding changed")
     ipn = json.loads(IPN_AUDIT.read_text())
     rr = json.loads(RR_MANIFEST.read_text())
-    owner_paths = image_paths([str(owner_gallery)])
+    discovered_owner_paths = image_paths([str(owner_gallery)])
+    reserve = [
+        path for path in discovered_owner_paths
+        if path.name == NEW_OWNER_RESERVE["name"]
+        and path.stat().st_size == NEW_OWNER_RESERVE["bytes"]
+        and sha256_file(path) == NEW_OWNER_RESERVE["sha256"]
+    ]
+    if len(discovered_owner_paths) == 211 and len(reserve) == 1:
+        owner_paths = [path for path in discovered_owner_paths if path != reserve[0]]
+    elif len(discovered_owner_paths) == 210 and not reserve:
+        owner_paths = discovered_owner_paths
+    else:
+        raise ValueError("owner gallery has an undeclared membership change")
     owner_identity = [
         {"name": path.name, "bytes": path.stat().st_size, "sha256": sha256_file(path)}
         for path in owner_paths
@@ -179,6 +196,7 @@ def run(owner_gallery: Path, batch_size: int = 2) -> dict[str, Any]:
             "real_recall": 1.0 - owner_fp,
             "score_summary": _summary([row["score"] for row in owner_rows]),
             "gallery_identity_sha256": owner_sha,
+            "new_unscored_reserve_excluded": NEW_OWNER_RESERVE if reserve else None,
         },
         "development_gate": gate,
         "boundary": "Published threshold DEVELOPMENT only; no threshold fit, retry arm or locked DDA-COCO access.",
