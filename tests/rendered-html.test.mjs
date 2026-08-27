@@ -31,15 +31,14 @@ test("server-renders the PixelProof product shell", async () => {
   const html = await response.text();
   assert.match(html, /<html lang="tr">/i);
   assert.match(html, /<title>PixelProof — AI Görsel Kanıt Laboratuvarı<\/title>/i);
-  assert.match(html, /Bir görsel yükle, modellerin ne gördüğünü karşılaştır/);
+  assert.match(html, /Yeni modelimiz bu görsel için ne diyor/);
   assert.match(html, /Fotoğrafı buraya bırakın/);
-  assert.match(html, /E20 ResNet-18/);
+  assert.match(html, /E32 R1b/);
   assert.match(html, /Görseli analiz et/);
   assert.match(html, /aria-label="Analiz edilecek görseli seç"/);
-  assert.match(html, /aria-label="Çalışacak model zinciri"/);
   assert.match(html, /gerçeklik sertifikası değildir/i);
-  assert.match(html, /Sonucu nasıl okuyacaksın/);
-  assert.match(html, /R1b en yeni fakat/);
+  assert.match(html, /Ana kart yalnız yeni E32 R1b modelimizin cevabıdır/);
+  assert.doesNotMatch(html, /E26 ana karar katmanıdır/);
 
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
   assert.doesNotMatch(html, /name=["']codex-preview["']/i);

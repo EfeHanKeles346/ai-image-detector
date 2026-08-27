@@ -280,9 +280,9 @@ def _wait_for_web(url: str, process: subprocess.Popen[Any], timeout: float = 60.
         try:
             with urllib.request.urlopen(url, timeout=2.0) as response:
                 html = response.read().decode("utf-8")
-            if response.status == 200 and "PixelProof" in html and "E20 ResNet-18" in html:
+            if response.status == 200 and "PixelProof" in html and "E32 R1b" in html:
                 return
-            last_error = f"HTTP {response.status} without the PixelProof E20 shell"
+            last_error = f"HTTP {response.status} without the PixelProof R1b shell"
         except (urllib.error.URLError, TimeoutError, OSError, UnicodeDecodeError) as error:
             last_error = str(error)
         time.sleep(0.5)

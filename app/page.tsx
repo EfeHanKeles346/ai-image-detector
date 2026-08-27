@@ -26,11 +26,7 @@ const API_ORIGIN = resolveApiOrigin(
   process.env.NODE_ENV === "development",
 );
 
-const PROJECT_METHOD = {
-  id: "project_model",
-  label: "E20 ResNet-18",
-  hint: "Projede eğitildi · 128 px yerel kesitler · top-3",
-};
+const PROJECT_METHOD = "project_model";
 
 function ExternalComparison({ decision, enoughEvidence }: {
   decision: Decision | null;
@@ -80,42 +76,88 @@ function ExternalComparison({ decision, enoughEvidence }: {
 }
 
 function R1bResearch({ candidate }: { candidate: R1bResearchResult | null }) {
-  if (!candidate) return null;
+  if (!candidate) {
+    return (
+      <section className="main-model-card model-unavailable" aria-label="Yeni model kullanılamıyor">
+        <div className="model-answer-icon" aria-hidden="true">—</div>
+        <span className="main-model-kicker">Yeni modelimiz · E32 R1b</span>
+        <h2>Yeni model bu oturumda etkin değil</h2>
+        <p>R1b veri köküyle yerel demoyu başlattığınızda sonucu burada doğrudan göreceksiniz.</p>
+      </section>
+    );
+  }
   const scorePercent = candidate.score * 100;
   const thresholdPercent = candidate.threshold * 100;
 
   return (
     <section
-      className={`r1b-card ${candidate.triggered ? "r1b-triggered" : "r1b-quiet"}`}
-      aria-label="E32 R1b deneysel ikinci görüş"
+      className={`main-model-card ${candidate.triggered ? "model-ai" : "model-insufficient"}`}
+      aria-label="Yeni E32 R1b modelinin sonucu"
     >
-      <div className="card-topline">
-        <div className="section-kicker">Yeni proje adayı · R1b</div>
-        <span className="status-chip status-research">Kararı etkilemez</span>
+      <div className="model-answer-heading">
+        <div className="model-answer-icon" aria-hidden="true">{candidate.triggered ? "AI" : "?"}</div>
+        <div>
+          <span className="main-model-kicker">Yeni modelimizin cevabı · E32 R1b</span>
+          <h2>{candidate.triggered ? "AI yönünde sinyal buldu" : "Yeterli AI sinyali bulamadı"}</h2>
+        </div>
       </div>
-      <h3>{candidate.triggered ? "R1b, AI yönünde sinyal verdi" : "R1b eşiği aşılmadı"}</h3>
-      <p>
+      <p className="model-answer-copy">
         {candidate.triggered
-          ? "Bu yalnız deneysel bir tetiklenmedir; gerçek fotoğraflardaki yüksek yanlış alarm nedeniyle ana hüküm değildir."
-          : "Bu yalnız yetersiz AI kanıtı demektir; görselin gerçek olduğunu doğrulamaz."}
+          ? "Model bu görseli AI yönünde işaretledi."
+          : "Model bu görseli AI olarak işaretlemedi; bu, görselin kesinlikle gerçek olduğu anlamına gelmez."}
       </p>
-      <div className="research-meter" aria-label={`R1b skoru ${candidate.score.toFixed(3)}, eşik ${candidate.threshold.toFixed(3)}`}>
-        <div className="research-meter-track">
-          <span className="research-meter-fill" style={{ width: `${scorePercent}%` }} />
-          <span className="research-meter-threshold" style={{ left: `${thresholdPercent}%` }} />
+      <div className="signal-score-row">
+        <span>AI sinyal skoru</span>
+        <strong>%{scorePercent.toFixed(1)}</strong>
+      </div>
+      <div
+        className="signal-meter"
+        role="progressbar"
+        aria-label={`AI sinyal skoru yüzde ${scorePercent.toFixed(1)}`}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Number(scorePercent.toFixed(1))}
+      >
+        <div className="signal-meter-track">
+          <span className="signal-meter-fill" style={{ width: `${scorePercent}%` }} />
+          <span className="signal-meter-threshold" style={{ left: `${thresholdPercent}%` }}>
+            <i>Eşik %{thresholdPercent.toFixed(1)}</i>
+          </span>
         </div>
-        <div className="project-meter-labels">
-          <strong>Model skoru {candidate.score.toFixed(3)}</strong>
-          <span>Eşik {candidate.threshold.toFixed(3)} · olasılık değil</span>
+        <div className="signal-meter-labels">
+          <span>Düşük sinyal</span>
+          <span>Yüksek sinyal</span>
         </div>
       </div>
-      <div className="risk-grid">
-        <div><strong>%{(candidate.evaluation.ipn_worst_device_fp * 100).toFixed(0)}</strong><span>IPN en kötü cihaz FP</span></div>
-        <div><strong>%{(candidate.evaluation.owner_gallery_fp * 100).toFixed(1)}</strong><span>Galeri FP</span></div>
-      </div>
-      <p className="limitation-note"><strong>Ölçülen sınır:</strong> {candidate.limitation}</p>
-      <small title={candidate.artifact_sha256}>Artifact {candidate.artifact_sha256.slice(0, 12)}…</small>
+      <p className="score-disclaimer">Bu yüzde kalibre edilmiş olasılık değil, modelin 0–100 ölçeğine çevrilmiş ham AI sinyal skorudur.</p>
     </section>
+  );
+}
+
+function TechnicalDetails({ analysis }: { analysis: Analysis }) {
+  const candidate = analysis.r1b_research;
+  return (
+    <details className="technical-details">
+      <summary>
+        <span><strong>Teknik detaylar</strong><small>Diğer modeller, eşikler ve test sonuçları</small></span>
+        <b aria-hidden="true">＋</b>
+      </summary>
+      <div className="technical-stack">
+        {candidate && (
+          <section className="r1b-diagnostics" aria-label="R1b teknik sınırları">
+            <div className="section-kicker">R1b test sınırları</div>
+            <div className="risk-grid">
+              <div><strong>%{(candidate.evaluation.ipn_worst_device_fp * 100).toFixed(0)}</strong><span>IPN en kötü cihaz FP</span></div>
+              <div><strong>%{(candidate.evaluation.owner_gallery_fp * 100).toFixed(1)}</strong><span>Galeri FP</span></div>
+            </div>
+            <p className="limitation-note"><strong>Ölçülen sınır:</strong> {candidate.limitation}</p>
+            <small title={candidate.artifact_sha256}>Artifact {candidate.artifact_sha256.slice(0, 12)}…</small>
+          </section>
+        )}
+        <ExternalComparison decision={analysis.decision} enoughEvidence={analysis.enough_evidence} />
+        {analysis.project_model && <ProjectResult analysis={analysis} />}
+      </div>
+    </details>
   );
 }
 
@@ -230,7 +272,7 @@ export default function Home() {
     try {
       const body = new FormData();
       body.append("image", selectedPreview.file);
-      body.append("method", PROJECT_METHOD.id);
+      body.append("method", PROJECT_METHOD);
       const response = await fetch(analysisEndpoint(API_ORIGIN), {
         method: "POST",
         body,
@@ -271,11 +313,11 @@ export default function Home() {
 
       <div className="container">
         <section className="intro">
-          <span className="intro-kicker">Tek görsel · ayrıştırılmış kanıt katmanları</span>
-          <h1>Bir görsel yükle, modellerin ne gördüğünü karşılaştır.</h1>
+          <span className="intro-kicker">Yeni modelimiz · E32 R1b</span>
+          <h1>Yeni modelimiz bu görsel için ne diyor?</h1>
           <p>
-            Ana E26 yorumu, yeni R1b araştırma adayı ve E20 taban modeli birbirine karıştırılmadan
-            gösterilir. Hiçbir negatif sonuç gerçeklik sertifikası değildir.
+            Fotoğrafını yükle; modelin doğrudan cevabını ve AI sinyal barını gör. Ayrıntılı teknik
+            ölçümler yalnız istersen açılır.
           </p>
           <div className="intro-pills" aria-label="Demo özellikleri">
             <span>Dosya cihazında kalır</span><span>Tek seferde analiz</span><span>Sınırlar açıkça görünür</span>
@@ -307,34 +349,11 @@ export default function Home() {
                   {/* Blob previews are local-only and cannot use the hosted image optimizer. */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={preview.url} alt="Seçilen görsel" />
-                  {analysis?.tile_map && (
-                    <div className="tile-overlay">
-                      {analysis.tile_map.tiles.map((tile, index) => (
-                        <span
-                          key={index}
-                          title={`Ham kesit skoru ${tile.p_ai.toFixed(3)}`}
-                          style={{
-                            left: `${(tile.x / analysis.tile_map!.image_w) * 100}%`,
-                            top: `${(tile.y / analysis.tile_map!.image_h) * 100}%`,
-                            width: `${(analysis.tile_map!.tile_px / analysis.tile_map!.image_w) * 100}%`,
-                            height: `${(analysis.tile_map!.tile_px / analysis.tile_map!.image_h) * 100}%`,
-                            background: `rgba(217,45,32,${Math.max(0, tile.p_ai - 0.5) * 1.4})`,
-                            borderColor: tile.p_ai >= 0.7 ? "rgba(217,45,32,.85)" : "transparent",
-                          }}
-                        />
-                      ))}
-                    </div>
-                  )}
                 </div>
                 <div className="file-info">
                   <div><strong>{preview.name}</strong><span>{preview.size}</span></div>
                   <button type="button" onClick={clear}>Kaldır</button>
                 </div>
-                {analysis?.tile_map && (
-                  <p className="tile-note">
-                    Harita her kesitin ham model skorunu gösterir; düzenleme konumunun kanıtı değildir.
-                  </p>
-                )}
               </div>
             )}
             <input
@@ -349,13 +368,8 @@ export default function Home() {
 
           <div className="panel result-panel">
             <div className="panel-title">
-              <h2>Analiz</h2>
-              <p>Ölçülmüş karar ile deneysel sinyaller ayrı kalır</p>
-            </div>
-
-            <div className="primary-method active" aria-label="Çalışacak model zinciri">
-              <span><strong>{PROJECT_METHOD.label}</strong><small>{PROJECT_METHOD.hint}</small></span>
-              <b>Sabit taban</b>
+              <h2>Yeni modelin sonucu</h2>
+              <p>E32 R1b · doğrudan model cevabı</p>
             </div>
 
             {!analysis ? (
@@ -364,8 +378,8 @@ export default function Home() {
                 <h3>{preview ? "Analize hazır" : "Önce bir görsel yükleyin"}</h3>
                 <p>
                   {preview
-                    ? "Tek çalıştırmada karar katmanı, R1b adayı ve E20 tabanı ayrı ayrı görünecek."
-                    : "JPG, PNG veya WEBP seçin; sonuçlar aynı görsel üzerinde karşılaştırılsın."}
+                    ? "Tek düğmeyle E32 R1b modelinin cevabını görebilirsin."
+                    : "JPG, PNG veya WEBP seç; yeni modelimizin cevabı burada görünsün."}
                 </p>
                 {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" disabled={!preview || loading} onClick={() => analyze()}>
@@ -374,17 +388,8 @@ export default function Home() {
               </div>
             ) : (
               <div className="result result-stack" aria-live="polite" aria-busy={loading}>
-                <ExternalComparison
-                  decision={analysis.decision}
-                  enoughEvidence={analysis.enough_evidence}
-                />
                 <R1bResearch candidate={analysis.r1b_research} />
-                {analysis.project_model && (
-                  <details className="baseline-details">
-                    <summary>E20 taban modelinin teknik sonucunu göster</summary>
-                    <ProjectResult analysis={analysis} />
-                  </details>
-                )}
+                <TechnicalDetails analysis={analysis} />
                 {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" onClick={() => analyze()} disabled={loading}>
                   {loading ? "Modeller inceliyor…" : "Yeniden analiz et"}
@@ -395,10 +400,9 @@ export default function Home() {
         </section>
 
         <aside>
-          <strong>Sonucu nasıl okuyacaksın?</strong> E26 ana karar katmanıdır; R1b en yeni fakat
-          başarısız dış teste sahip proje adayıdır; E20 ise teknik tabandır. Modeller uyuşmazsa bu
-          hata değil, veri kaymasının görünür kanıtıdır. Hiçbiri tek başına gerçeklik sertifikası
-          vermez.
+          <strong>Kısa not:</strong> Ana kart yalnız yeni E32 R1b modelimizin cevabıdır. Skor bir
+          olasılık veya gerçeklik sertifikası değildir; model gerçek fotoğraflarda yanlış alarm
+          verebildiği için sonucu deneysel kanıt olarak yorumla.
         </aside>
       </div>
     </main>
