@@ -1,0 +1,28 @@
+{
+  "bfree_revision": "c6a9f898782fb466b29af01f21960b67415afb0e",
+  "candidate_sha256": "9bcc021e74b617ee48cf297bd384a8dbe946240ec04822323af1e7c3fe63ab65",
+  "detailed_manifest_bytes": 913506,
+  "detailed_manifest_sha256": "e95f514942654107d60b244c8ca47e50da09f1bf49c67c5f5976bebbe0bb221d",
+  "experiment": "E41/B-Free-viral-external-stress",
+  "registry_sha256": "3c727c4f8990ca91e129c97842fbf3c997b25fa6430fc316ffccc756f2373fc8",
+  "schema_version": 1,
+  "state": "acquisition_complete_with_declared_coverage",
+  "summary": {
+    "coverage": 0.72997299729973,
+    "covered_sources_by_label": {
+      "FAKE": 17,
+      "REAL": 17
+    },
+    "declared_rows": 1111,
+    "failure_statuses": {
+      "downloaded_md5_mismatch": 109,
+      "request_failed": 191
+    },
+    "verified_by_label": {
+      "FAKE": 533,
+      "REAL": 278
+    },
+    "verified_bytes": 162894149,
+    "verified_rows": 811
+  }
+}

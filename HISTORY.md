@@ -3564,3 +3564,14 @@ All versions retain their 34 source-event parents so repost volume cannot masque
 sample size. Three focused synthetic tests and the pinned 1,111-row registry validation pass before
 any production URL is opened. `evidence/e42_external_contract.json` binds the unchanged E41
 artifact, B-Free registry, RR test receipt, ITW-SM access limitation and no-retuning rules.
+
+### B-Free external bytes — every parent event survives, URL attrition stays visible
+
+The committed collector opened all 1,111 pinned registry URLs without model access. It verified
+811 rows / 162,894,149 bytes against the authors' exact MD5 and dimensions: 278 REAL and 533 FAKE.
+There are 191 dead/request-failed URLs and 109 live URLs whose returned bytes no longer match the
+published MD5; the latter were discarded instead of silently relabelled. Despite 72.9973% row
+coverage, every one of the 17 REAL and 17 FAKE source events retains at least one valid web version,
+so the effective 34-event parent structure remains complete. Detailed acquisition SHA-256 is
+`e95f514...b221d`. No E41 score, embedding or threshold was accessed; decontamination and the
+unscored parent manifest remain the next gate.

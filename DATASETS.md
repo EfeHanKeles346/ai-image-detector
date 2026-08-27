@@ -726,6 +726,14 @@ third-party image rights and dead URLs remain limitations. Destination is
 `/Volumes/LaCie/pixelproof-datasets/e42_external/bfree_viral/`. No aggregate byte count is
 published, so exact per-row MD5, URL status, decode and source-event grouping are mandatory.
 
+The first complete URL pass verified 811/1,111 declared versions (72.9973% coverage), 162,894,149
+bytes: 278 REAL and 533 FAKE. Crucially, all 17 REAL and all 17 FAKE source events retain at least
+one verified child, so event-level coverage is 34/34 even though 191 URLs are dead/unreachable and
+109 now return bytes that fail the authors' published MD5. Changed bytes were discarded rather
+than accepted under their labels. The 913,506-byte detailed acquisition manifest has SHA-256
+`e95f514942654107d60b244c8ca47e50da09f1bf49c67c5f5976bebbe0bb221d`; compact evidence is
+`evidence/e42_bfree_acquisition.json`. No model was loaded and no score exists at this checkpoint.
+
 **RRDataset external robustness.** Reuse the already frozen official Zenodo record `14963880`,
 CC BY 4.0 receipt for `RRDataset_test.tar.gz`: exactly 20,117,869,400 bytes, published MD5
 `13c3ff3d61986170cc0c8cf76a35cd4b`, destination
