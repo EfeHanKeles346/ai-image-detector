@@ -734,6 +734,13 @@ than accepted under their labels. The 913,506-byte detailed acquisition manifest
 `e95f514942654107d60b244c8ca47e50da09f1bf49c67c5f5976bebbe0bb221d`; compact evidence is
 `evidence/e42_bfree_acquisition.json`. No model was loaded and no score exists at this checkpoint.
 
+The corrected LaCie-root audit compared every verified child against 14 earlier E32/E33/E36/E39
+role manifests. It found zero exact/dHash overlap with earlier roles and zero exact/dHash collision
+across distinct B-Free events; no source event or row was removed. The frozen unscored manifest
+therefore contains all 811 verified rows and all 34 parent events. Its detailed 544,189-byte JSON
+has SHA-256 `338a2f2b2135a4bbfcb8ce0ceef7da5d8cbe2a5b1ffbe745c0e05a1248f37ca2`;
+compact evidence is `evidence/e42_bfree_manifest.json`.
+
 **RRDataset external robustness.** Reuse the already frozen official Zenodo record `14963880`,
 CC BY 4.0 receipt for `RRDataset_test.tar.gz`: exactly 20,117,869,400 bytes, published MD5
 `13c3ff3d61986170cc0c8cf76a35cd4b`, destination

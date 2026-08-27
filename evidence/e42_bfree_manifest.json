@@ -1,0 +1,20 @@
+{
+  "candidate_sha256": "9bcc021e74b617ee48cf297bd384a8dbe946240ec04822323af1e7c3fe63ab65",
+  "counts": {
+    "ai_rows": 533,
+    "real_rows": 278,
+    "rows": 811,
+    "source_events": 34
+  },
+  "cross_event_duplicate_group_count": 0,
+  "detailed_manifest_bytes": 544189,
+  "detailed_manifest_sha256": "338a2f2b2135a4bbfcb8ce0ceef7da5d8cbe2a5b1ffbe745c0e05a1248f37ca2",
+  "excluded_source_events": [],
+  "prior_manifest_files": 14,
+  "schema_version": 1,
+  "source_events_by_label": {
+    "FAKE": 17,
+    "REAL": 17
+  },
+  "state": "wild_stress_manifest_frozen_unscored"
+}

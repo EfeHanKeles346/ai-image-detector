@@ -33,12 +33,15 @@ it before paying for another architecture or training run.
 
 ### F1 — two open external gates before any E42 training
 
-- [ ] Acquire the official B-Free viral-image URL registry as `E41_WILD_STRESS`, preserving its
+- [x] Acquire the official B-Free viral-image URL registry as `E41_WILD_STRESS`, preserving its
       34 source events (17 REAL, 17 AI) and every surviving web version as a child of that event.
       Verify the published MD5 for each download, count every dead/changed URL as coverage failure,
       and never let heavily reposted events dominate metrics. This is a difficult web-propagation
       stress test, not a modern-generator final: its dated rows end in 2024 and its effective
       independent N is 34.
+      Verified 811/1,111 rows / 162,894,149 B while retaining all 34 events. The decontaminated
+      unscored manifest keeps all 811 rows: zero earlier-role overlap and zero cross-event duplicate
+      group against 14 protected prior manifests.
 - [ ] Reassign the still-unopened CC BY 4.0 `RRDataset_test.tar.gz` only as
       `E41_EXTERNAL_ROBUSTNESS`, bound to the frozen E41 artifact/threshold before bytes. Resume the
       exact 20,117,869,400-byte archive, reproduce MD5 `13c3ff3d61986170cc0c8cf76a35cd4b`,

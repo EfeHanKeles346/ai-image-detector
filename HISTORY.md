@@ -3589,3 +3589,9 @@ receipt correctly preserved original absolute paths, but the manifest reader fol
 paths after the byte-preserving move. It now derives every live path from the pinned safe relative
 filename plus the configured data root; receipt paths remain provenance only. This correction also
 has a focused relocation test and still precedes every model score.
+
+With the corrected LaCie root, the production manifest found 14 protected earlier-role files and
+screened all 811 verified B-Free children. There is no exact or dHash overlap with any prior role,
+no cross-event duplicate group and therefore no hash-driven source exclusion. The frozen unscored
+population remains 278 REAL +533 FAKE versions under 17+17 parent events. Detailed manifest
+SHA-256 is `338a2f2...f37ca2`. E41 still has not been loaded; this closes the B-Free pre-score gate.
