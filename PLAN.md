@@ -176,6 +176,39 @@ native camera pipelines. Do not discard DDA, deploy the post-hoc 0.90 value, mix
       at home internet, or a smaller self-generated paired equivalent. NIST GenAI Image-D remains
       the later registered blind external evaluation; there is no universal public pass score.
 
+#### E36-A source decision — frozen before image bytes (2026-08-27)
+
+Primary-source inspection changes the generic 600/600 target into a more independent, lower-byte
+design without weakening subgroup gates. Zenodo SCIMD-17 is rejected for this purpose because its
+17 phone folders were pre-resized to 224×224; it is not native gallery-like evidence. CSAFE's
+remaining 18–29 GB model archives are deferred because their scenes/collection overlap the S21 and
+iPhone14 training source. The selected REAL source is Zenodo record `18136670`, version 1.0.0,
+CC BY 4.0, published 2026-02-03. It preserves device-separated archives and explicit
+normal/QQ/Weibo views.
+
+- [ ] **E36 CAL REAL:** download only devices 001, 002, 003, 005 and 009 (five previously unseen
+      phone pipelines; 2,052,606,020 B declared archive bytes). Inventory
+      safely, bind derivatives by parent, select at most 100 `view_000` originals per device and
+      require >=80/device. Five independent phone groups replace the generic six-device target
+      because the source's remaining four named devices are reserved intact for FINAL; subgroup
+      confidence and worst-device gates remain unchanged.
+- [ ] **E36 FINAL REAL:** keep devices 004, 006, 007 and 008 fully locked until CAL freeze. These
+      are the source authors' held-out Honor/Samsung/Motorola phone groups plus Sony NEX-7 camera;
+      use up to 100 normal originals/group. Derived QQ/Weibo views are robustness children, never
+      independent N, and may be scored only after the native-parent result is sealed.
+- [ ] **E36 CAL AI:** pin Apache-2.0 `Qwen/Qwen-Image-Bench` revision
+      `d2493deb...7038`; select prompt indices 101–200 from exactly six families: GPT Image 2,
+      Nano Banana 2, Seedream 5, Qwen Image 2 Pro, FLUX.2 Max and GLM-Image (600 clean parents).
+- [ ] **E36 FINAL AI:** reserve prompt indices 1–40 from six family-disjoint cells: GPT Image 1.5,
+      Nano Banana Pro, Imagen 4 Ultra, Hunyuan Image 3, FLUX.2 Pro and Seedream 4.5 (240 parents).
+      The old unscored 40-row Qwen scout is superseded by a pre-score role amendment: overlapping
+      rows remain sealed unless they belong to these new FINAL cells; none may enter CAL.
+- [ ] **Balanced selection:** choose one threshold from CAL under equal per-device/per-family macro
+      weights, not raw class counts. Require REAL macro FP <=10% and worst phone FP <=20% together
+      with AI macro recall >=80% and worst family >=60%; also report pooled balanced accuracy, AUC,
+      EER and TPR@FPR10. This explicitly prevents fixing real false alarms by simply calling every
+      image REAL.
+
 ### D4 — close the slice reproducibly
 
 - [x] Append acquisition facts to `DATASETS.md`, measured results to `ml/EXPERIMENTS.md`, and every

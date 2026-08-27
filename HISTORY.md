@@ -3211,3 +3211,19 @@ artifact registry, production web build plus six web tests, TypeScript and ESLin
 only warning is an upstream Starlette/httpx deprecation already present before E35. The result,
 post-hoc diagnostic, dataset ledger and next-data plan are committed together so the internship
 archive can reproduce both the promising RR result and the authentic-transfer rejection.
+
+### E36-A planning — balance is enforced by disjoint sources, not by moving one threshold blindly
+
+The next-stage source audit rejected two easy-looking shortcuts before bytes. VISION/FODB/S21/
+iPhone14 are already training-side sources and cannot become new evidence by renaming them. Zenodo
+SCIMD-17 is compact and licensed but explicitly resizes every phone image to 224×224, so it does not
+answer the native-gallery false-positive problem. The selected 2026 Zenodo SNS dataset instead
+separates nine device archives and normal/QQ/Weibo parent views. Five previously unseen phone
+archives enter CAL; four author-held-out device archives remain inaccessible FINAL.
+
+For AI balance, the pinned Apache-2.0 Qwen Image Bench contains 18 current generator cells with
+1,000 aligned prompts each. Six families/prompt 101–200 are assigned to CAL and six completely
+different families/prompt 1–40 to FINAL before download. Threshold selection will weight device and
+generator macros equally and must satisfy authentic FP and AI recall floors together. Thus E36
+cannot appear to fix real photos by predicting REAL for everything, and the final set cannot tune
+the candidate it evaluates.

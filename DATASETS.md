@@ -765,3 +765,27 @@ four unseen device/session pipelines plus 240 AI parents from six held-out model
 Derived degradation variants stay grouped by parent. Exact source/licence/API receipts and overlap
 checks must be appended here before the first acquisition byte; no named source is approved merely
 because it is downloadable.
+
+### E36-A selected CAL/FINAL sources — metadata decision before image bytes (2026-08-27)
+
+REAL source: Zenodo `18136670`, `sns-homogenization-forensics-dataset` v1.0.0, publication
+2026-02-03, record-level CC BY 4.0. The source declares nine device ZIPs and three parent-linked
+conditions: `view_000` normal/unprocessed, `view_001` QQ and `view_002` Sina Weibo. PixelProof CAL
+uses archives 001/002/003/005/009 only; FINAL reserves 004/006/007/008 before any score. CAL selects
+at most 100 normal originals per device and requires at least 80; FINAL uses at most 100 per device.
+Social copies remain children of the same parent and never inflate sample size.
+
+AI source: Hugging Face `Qwen/Qwen-Image-Bench` revision
+`d2493deb153b020cf169c7e3f57d15e4dd697038`, dataset-card Apache-2.0. The pinned repository exposes
+18 generator directories with 1,000 prompt-aligned outputs each. CAL is six families × prompt ids
+101–200: `gpt-image-2`, `nano-banana-2.0`, `Seedream-5.0`, `Qwen-Image-2.0-pro`, `FLUX.2_max` and
+`GLM-Image`. FINAL is six different families × ids 1–40: `GPT-Image-1.5`, `nano-banana-pro`,
+`Imagen-4.0-Ultra`, `HunyuanImage-3.0`, `FLUX.2-pro` and `Seedream-4.5`. This makes FINAL generator-
+cell-held-out, not merely new prompts from families that calibrated the threshold.
+
+Two tempting alternatives are explicitly rejected. SCIMD-17/Zenodo `17317613` is CC BY 4.0 and
+small, but the publisher states every image was preprocessed to 224×224, so it cannot represent
+native phone output or owner-gallery behaviour. Remaining CSAFE archives are native and licensed,
+but share the source collection/scenes already used through S21 and iPhone14; spending another
+18–29 GB would add weaker independence than the selected 2026 source. No image byte from either
+rejected source is authorized for E36.
