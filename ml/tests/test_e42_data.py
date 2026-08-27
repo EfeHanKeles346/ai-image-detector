@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
-from experiments.e42_data import fixed_replay, rr_source, source_qualified_parent
+from experiments.e42_data import fixed_replay, rr_source, source_qualified_parent, unique_by_sha
 
 
 def test_rr_source_requires_declared_class_filename() -> None:
@@ -40,3 +42,13 @@ def test_source_qualified_parent_does_not_merge_same_prompt_across_generators() 
     qwen = source_qualified_parent("e36", "Qwen-Image-2.0-pro", "qwen-bench:101")
     assert flux != qwen
     assert flux.endswith("qwen-bench:101")
+
+
+def test_exact_duplicate_files_collapse_to_one_parent() -> None:
+    pairs = [
+        (Path("first.jpg"), {"sha256": "same"}),
+        (Path("first 2.jpg"), {"sha256": "same"}),
+        (Path("other.jpg"), {"sha256": "different"}),
+    ]
+    unique = unique_by_sha(pairs)
+    assert [path.name for path, _ in unique] == ["first.jpg", "other.jpg"]

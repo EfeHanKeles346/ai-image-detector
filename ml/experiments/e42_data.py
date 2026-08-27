@@ -33,7 +33,7 @@ RR_RECEIPT = E42_ROOT / "rr_train_receipt.json"
 MANIFEST = E42_ROOT / "parent_manifest.json"
 EVIDENCE = REPO_ROOT / "evidence" / "e42_data_manifest.json"
 CONTRACT = REPO_ROOT / "evidence" / "e42_fixed_contract.json"
-CONTRACT_SHA256 = "dfb61d51a9b5188b5d3e8d7a7e406430f3c7447d8cf74d657e50e1d1156341c2"
+CONTRACT_SHA256 = "859d4ba812ba22678c0a6ec5e299244b999cab5d3b8ad72888d7c40f309ed279"
 
 E32_RECEIPT = E32_ROOT / "r1b_input_receipt.json"
 E36_CAL = E36_ROOT / "cal_manifest.json"
@@ -224,6 +224,16 @@ def source_qualified_parent(prefix: str, source: str, parent_id: str) -> str:
     return f"{prefix}:{source}:{parent_id}"
 
 
+def unique_by_sha(
+    pairs: Sequence[tuple[Path, Mapping[str, Any]]],
+) -> list[tuple[Path, Mapping[str, Any]]]:
+    """Collapse exact duplicate files while keeping the first deterministic path."""
+    unique: dict[str, tuple[Path, Mapping[str, Any]]] = {}
+    for path, item in pairs:
+        unique.setdefault(str(item["sha256"]), (path, item))
+    return list(unique.values())
+
+
 def _row(
     *, path: Path, parent_id: str, label: int, source: str, role: str,
     provenance: str, expected_sha256: str | None = None,
@@ -258,13 +268,16 @@ def _owner_rows(folder: Path) -> list[dict[str, Any]]:
     ]
     if len(selected) != OWNER_COUNT or hashlib.sha256(_json_bytes(identity)).hexdigest() != OWNER_IDENTITY:
         raise ValueError("owner gallery identity changed")
+    unique = unique_by_sha(list(zip(selected, identity, strict=True)))
+    if len(unique) != 206:
+        raise ValueError("owner gallery unique-parent count changed")
     return [
         _row(
             path=path, parent_id=f"owner:{item['sha256']}", label=0,
             source="owner_gallery", role="development", provenance="owner_gallery",
             expected_sha256=item["sha256"],
         )
-        for path, item in zip(selected, identity, strict=True)
+        for path, item in unique
     ]
 
 
@@ -331,10 +344,10 @@ def freeze_manifest(owner_gallery: Path = OWNER_DEFAULT) -> dict[str, Any]:
     rows.extend(_owner_rows(owner_gallery))
     rows.sort(key=lambda row: row["parent_id"])
 
-    if len(rows) != 6888 or len({row["parent_id"] for row in rows}) != len(rows):
+    if len(rows) != 6884 or len({row["parent_id"] for row in rows}) != len(rows):
         raise ValueError("E42 parent population changed")
     role_counts = Counter(row["role"] for row in rows)
-    if role_counts != {"train": 4638, "development": 2250}:
+    if role_counts != {"train": 4638, "development": 2246}:
         raise ValueError(f"E42 role counts changed: {role_counts}")
     exact: dict[str, set[str]] = defaultdict(set)
     perceptual: dict[str, set[str]] = defaultdict(set)

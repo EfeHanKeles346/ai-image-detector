@@ -3651,3 +3651,10 @@ though the image hashes differ. This is an identifier collision, not duplicate i
 qualifies those image-parent keys with the source family while retaining the original content ID;
 a regression test proves two generators sharing a prompt cannot merge. The completed 2,500-row RR
 train extraction remains valid and is reused; the failed manifest produced no accepted output.
+
+The corrected-key rerun exposed a second pre-feature data fact: the declared 210-file owner-gallery
+identity contains four exact duplicate pairs (`IMG_8335` through `IMG_8338`, each also saved with a
+` 2` suffix). They are 206 unique image parents, not 210 independent observations. The manifest
+again stopped before output/model access. E42 collapses each exact pair deterministically and
+amends DEVELOPMENT from 2,250 file rows to 2,246 unique parents; the original 210-file identity is
+still preserved as provenance. This reduces duplicate weighting instead of hiding it.

@@ -1028,9 +1028,11 @@ fixed 1,067-parent E32 TRAIN replay, all 1,071 consumed E36 CAL parents and only
 train/validation archive. The RR archive remains 2,163,176,547 bytes with MD5
 `2f4498c3690d8f4c7a30d2e41dd34500`; its 500 validation members are not promoted to E42 TRAIN.
 
-E42 source-held-out DEVELOPMENT is fixed at 2,250 previously consumed parents: 640 E36 former-
-final rows, 440 E39 rows, 960 IPN native phone originals across 12 devices and the 210-image owner
-gallery under identity SHA-256 `390e3c21...ac09`. These rows may select the E42 backbone and
+E42 source-held-out DEVELOPMENT is fixed at 2,246 previously consumed unique parents: 640 E36
+former-final rows, 440 E39 rows, 960 IPN native phone originals across 12 devices and 206 unique
+owner-gallery images from the declared 210-file identity SHA-256 `390e3c21...ac09`. The four
+duplicate pairs (`IMG_8335` through `IMG_8338`, with and without the ` 2` suffix) are byte-identical
+and collapse to one parent each. These rows may select the E42 backbone and
 threshold and can never validate it independently afterward. The 811 B-Free viral rows and the
 unopened 20.12 GB RR test archive are forbidden from training, calibration and model choice. RR
 test remains locked for one candidate; ITW-SM remains untouched and manually gated.

@@ -15,8 +15,9 @@
     "e36_former_final": 640,
     "e39_consumed": 440,
     "ipn_phone_originals": 960,
-    "owner_gallery": 210,
-    "total_parents": 2250
+    "owner_gallery_files": 210,
+    "owner_gallery_unique_parents": 206,
+    "total_parents": 2246
   },
   "experiment": "E42/texture-intermediate-source-heldout-recovery",
   "feature_contract": {

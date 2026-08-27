@@ -86,7 +86,7 @@ it before paying for another architecture or training run.
 - [x] Bind exactly 4,638 base-training parents: the fixed 1,067-row E32 TRAIN replay, all 1,071
       consumed E36 CAL rows and RRDataset's 2,500 official train rows. Bind 2,250 consumed
       source-held-out DEVELOPMENT parents: 640 E36 former-final rows, 440 E39 rows, 960 IPN phone
-      originals and the declared 210-image owner gallery. B-Free viral and RR test are prohibited
+      originals and 206 unique parents in the declared 210-file owner gallery. B-Free viral and RR test are prohibited
       from fitting, threshold selection and model choice.
 - [ ] Safely extract only RR `train/{real,ai}` from the already MD5-verified 2.16 GB archive. Decode,
       hash and count all 2,500 rows; preserve seven AI topic/scenario groups and one explicitly
