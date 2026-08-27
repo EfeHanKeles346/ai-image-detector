@@ -53,6 +53,10 @@ it before paying for another architecture or training run.
       0.85 and balanced accuracy 0.80, and the parent-weighted B-Free stress result has balanced
       accuracy >=0.80 with no class below 0.75 recall. Report confidence intervals and limitations;
       no retry or threshold change is allowed.
+      The B-Free half is now frozen before score: E41 artifact/threshold, the 811-row manifest hash,
+      one score per surviving web version, equal weighting of the 34 source events, 10,000-event
+      bootstrap confidence intervals and the 0.80/0.75/0.75 gate are executable and covered by
+      focused tests. Repost volume is diagnostic only and cannot dominate the verdict.
 
 ### F2 — success branch and controlled failure branch
 

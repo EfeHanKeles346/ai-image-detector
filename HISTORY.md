@@ -3595,3 +3595,14 @@ screened all 811 verified B-Free children. There is no exact or dHash overlap wi
 no cross-event duplicate group and therefore no hash-driven source exclusion. The frozen unscored
 population remains 278 REAL +533 FAKE versions under 17+17 parent events. Detailed manifest
 SHA-256 is `338a2f2...f37ca2`. E41 still has not been loaded; this closes the B-Free pre-score gate.
+
+### B-Free score method — frozen before the candidate sees a pixel
+
+The one-shot scorer is now bound to the E41 artifact SHA-256, its unchanged 0.619554 threshold and
+the exact 811-row unscored-manifest SHA-256. It verifies every image hash during inference, records
+every surviving URL version, but gives each of the 34 original source events equal decision weight
+so a heavily reposted image cannot dominate the result. The pre-registered stress pass requires
+parent-weighted balanced accuracy >=0.80 and both REAL and AI parent-weighted recall >=0.75;
+10,000 event-level bootstrap draws expose the uncertainty of only 17 parents per class. The score
+stream is write-once: an existing result blocks a retry. Two focused method tests and the complete
+seven-test E42 external suite pass before the model is loaded. No B-Free score has yet been seen.
