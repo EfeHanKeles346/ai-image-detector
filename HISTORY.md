@@ -3744,3 +3744,22 @@ manifest and overlap audit are frozen. Original images must pass the full intern
 sufficient robust condition must retain AUC 0.85 and balanced accuracy 0.80 at full coverage.
 Partial transfer, row removal, threshold repair and B-Free-informed tuning are forbidden. The
 machine contract is `evidence/e42_rr_final_contract.json` and is committed before network bytes.
+
+### E42 RR execution method — frozen while transfer is still incomplete
+
+The official 20,117,869,400-byte archive transfer now runs as a resumable `.partial` file on LaCie;
+an interrupted connection cannot create a completed receipt or expose the model to test pixels.
+Before archive completion, the project added a fail-closed extractor that accepts only the three
+official RR conditions and explicit REAL/AI paths, verifies extracted row and byte totals against
+the tar inventory and records that extraction itself decoded/scored nothing.
+
+The external evaluator is likewise executable before any result. It decodes and hashes every
+extracted image, maps `transfer_`/`redigital_` filenames back to their original parent, preserves
+the seven declared AI scenario families and pooled REAL limitation, and rejects duplicate
+parent-condition rows, cross-label parents, exact cross-parent copies or exact/dHash overlap with
+E42 development/training and the B-Free stress set. Only after that zero-score manifest exists may
+a second contract bind its SHA-256 to the unchanged E42-S artifact and threshold. The scorer then
+uses the same global-plus-two-texture-crop, four-intermediate-block feature path and reports
+original, transfer and redigital separately. Original must pass the full project gate; both robust
+conditions must pass AUC 0.85/balanced accuracy 0.80 with complete coverage. Ten focused tests pass.
+No RR model score has been created at this checkpoint.

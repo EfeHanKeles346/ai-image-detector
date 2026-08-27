@@ -30,6 +30,10 @@ TOP_LEVEL = {
     "test": "RRDataset_test",
 }
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
+CLASS_DIRECTORIES = {
+    "cal": {"real": "real", "ai": "ai"},
+    "test": {"real_images": "real", "ai_images": "ai"},
+}
 FILES = {
     "cal": {
         "name": "RRDataset_original_train_val.tar.gz",
@@ -226,8 +230,9 @@ def inspect_members(
         if path.suffix.lower() in IMAGE_SUFFIXES:
             if len(path.parts) < 4:
                 raise ValueError(f"image lacks split/class path: {member.name}")
-            split, class_name = path.parts[1:3]
-            if class_name not in {"real", "ai"}:
+            split, raw_class_name = path.parts[1:3]
+            class_name = CLASS_DIRECTORIES[role].get(raw_class_name)
+            if class_name is None:
                 raise ValueError(f"image class is not explicit real/ai: {member.name}")
             key = f"{split}/{class_name}"
             by_split_class[key] = by_split_class.get(key, 0) + 1
@@ -329,6 +334,79 @@ def extract_calibration() -> dict[str, Any]:
     return result
 
 
+def extract_test() -> dict[str, Any]:
+    """Safely extract every declared RR test image without decoding or model access."""
+    inventory_path = OUTPUT_ROOT / "test_archive_inventory.json"
+    inventory_payload = json.loads(inventory_path.read_text())
+    if inventory_payload.get("state") != "test_archive_inventory_passed":
+        raise ValueError("test archive inventory has not passed")
+    archive = OUTPUT_ROOT / "archives" / FILES["test"]["name"]
+    final_root = OUTPUT_ROOT / "test"
+    temporary_root = OUTPUT_ROOT / "test.partial"
+    if final_root.exists():
+        receipt_path = OUTPUT_ROOT / "test_extraction_receipt.json"
+        if not receipt_path.is_file():
+            raise FileExistsError("test extraction exists without its receipt")
+        receipt = json.loads(receipt_path.read_text())
+        if receipt.get("state") != "test_extraction_complete_unscored":
+            raise ValueError("existing test extraction receipt is not complete")
+        return receipt
+    if temporary_root.exists():
+        raise FileExistsError(f"partial extraction requires manual audit: {temporary_root}")
+    temporary_root.mkdir(parents=True)
+    extracted = 0
+    extracted_bytes = 0
+    try:
+        with tarfile.open(archive, mode="r:gz") as bundle:
+            for member in bundle:
+                path = _safe_member_name(member.name, TOP_LEVEL["test"])
+                if not member.isfile():
+                    continue
+                if (
+                    len(path.parts) < 4
+                    or path.parts[1] not in {"original", "transfer", "redigital"}
+                    or path.parts[2] not in CLASS_DIRECTORIES["test"]
+                    or path.suffix.lower() not in IMAGE_SUFFIXES
+                ):
+                    continue
+                relative = Path(
+                    path.parts[1],
+                    CLASS_DIRECTORIES["test"][path.parts[2]],
+                    *path.parts[3:],
+                )
+                destination = temporary_root / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                source = bundle.extractfile(member)
+                if source is None:
+                    raise ValueError(f"cannot read tar member: {member.name}")
+                with source, destination.open("xb") as output:
+                    shutil.copyfileobj(source, output, length=8 * 1024**2)
+                if destination.stat().st_size != member.size:
+                    raise ValueError(f"extracted size mismatch: {member.name}")
+                extracted += 1
+                extracted_bytes += member.size
+        expected = int(inventory_payload["image_count"])
+        if extracted != expected or extracted_bytes != int(inventory_payload["image_bytes"]):
+            raise ValueError(
+                "test extraction population mismatch: "
+                f"rows={extracted}/{expected}, bytes={extracted_bytes}/{inventory_payload['image_bytes']}"
+            )
+        temporary_root.replace(final_root)
+    except Exception:
+        raise
+    result = {
+        "schema_version": 1,
+        "state": "test_extraction_complete_unscored",
+        "inventory_sha256": _sha256(inventory_path.read_bytes()),
+        "path": str(final_root.relative_to(OUTPUT_ROOT)),
+        "image_count": extracted,
+        "image_bytes": extracted_bytes,
+        "boundary": "Archive members only; no image was decoded and no model was loaded.",
+    }
+    _write_atomic(OUTPUT_ROOT / "test_extraction_receipt.json", result)
+    return result
+
+
 def status() -> dict[str, Any]:
     result: dict[str, Any] = {"selection_exists": SELECTION.exists(), "files": {}}
     for role, item in FILES.items():
@@ -348,7 +426,7 @@ def main() -> int:
         "command",
         choices=(
             "freeze", "download-cal", "download-test", "inventory-cal", "inventory-test",
-            "extract-cal", "status",
+            "extract-cal", "extract-test", "status",
         ),
     )
     args = parser.parse_args()
@@ -364,6 +442,8 @@ def main() -> int:
         result = inventory("test")
     elif args.command == "extract-cal":
         result = extract_calibration()
+    elif args.command == "extract-test":
+        result = extract_test()
     else:
         result = status()
     print(json.dumps(result, indent=2, sort_keys=True))

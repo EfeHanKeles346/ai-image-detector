@@ -127,10 +127,16 @@ it before paying for another architecture or training run.
 - [ ] Resume the archive to LaCie with >=100 GiB reserve, verify exact size+MD5, inventory every tar
       member and extract safely. Then freeze decoded counts, parent/condition mapping and protected-
       role exact/dHash audit without loading E42.
+      The fail-closed implementation is now committed before archive completion: test extraction
+      accepts only `original|transfer|redigital` and explicit `real|ai` paths; manifesting decodes
+      and hashes every row, normalizes derivative filenames to parent IDs, audits E42/B-Free
+      overlap and writes a zero-score receipt. Transfer remains resumable and incomplete.
 - [ ] Score each declared test file once. The original/clean population must pass all internship
       success gates; every sufficiently populated transmission/redigitization condition must retain
       AUC >=0.85 and balanced accuracy >=0.80, with 100% coverage. A pass promotes E42-S to the
       research API/web; a miss is final for this candidate and cannot trigger threshold repair.
+      Scoring code is also frozen ahead of the manifest: the final manifest hash and candidate hash
+      must be rebound in a second machine contract and committed before the DINO model can load.
 
 ### F3 — recording and stop rules
 

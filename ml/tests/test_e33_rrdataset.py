@@ -81,3 +81,23 @@ def test_archive_inventory_rejects_traversal_and_links() -> None:
     link.type = tarfile.SYMTYPE
     with pytest.raises(ValueError, match="unsupported"):
         inspect_members([link], role="cal")
+
+
+def test_test_archive_inventory_requires_declared_condition_and_class() -> None:
+    root = "RRDataset_test"
+    result = inspect_members(
+        [
+            _member(f"{root}/original/real_images/real_000001.jpg"),
+            _member(f"{root}/original/ai_images/normal_000001.png"),
+            _member(f"{root}/transfer/real_images/transfer_real_000001.png"),
+            _member(f"{root}/redigital/ai_images/redigital_normal_000001.jpg"),
+        ],
+        role="test",
+    )
+    assert result["image_count"] == 4
+    assert result["by_split_class"] == {
+        "original/ai": 1,
+        "original/real": 1,
+        "redigital/ai": 1,
+        "transfer/real": 1,
+    }

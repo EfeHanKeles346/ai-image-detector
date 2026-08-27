@@ -3062,3 +3062,19 @@ was scored or selected using model output.
 - **Decision:** all 12 preregistered checks pass. The fixed smallest-pass rule selects S and skips
   DINOv2-L because L cannot replace a passing S. Refit candidate is 87,977 bytes /SHA-256
   `6768466a...9062e7`, research-only until one-shot RR external testing.
+
+### E42 RR FINAL — extraction/manifest/scoring method fixed before data access
+
+- **Archive boundary:** resumable transfer only; exact size and published MD5 must complete before
+  inventory. Safe extraction is restricted to `original|transfer|redigital/{real,ai}` and verifies
+  both member count and expanded bytes. Extraction does not decode images or load the model.
+- **Unscored manifest:** every row is decoded, SHA-256/dHash audited and grouped by canonical
+  filename parent. Prior E42 and B-Free exact/dHash overlap is fatal; cross-parent exact duplicates,
+  duplicate conditions and label-crossing parents are fatal. dHash collisions within the external
+  set remain an explicit diagnostic rather than an automatic identity claim.
+- **Second lock:** the final manifest SHA, unchanged candidate `6768466a...9062e7`, threshold
+  `0.6600460410` and declared row count must be frozen and committed before model loading.
+- **Inference/gate:** reuse the exact E42 clean feature path; score one row once. Original must pass
+  the full nine-check success gate; transfer and redigital each need at least 20 successful rows per
+  class, AUC >=0.85, balanced accuracy >=0.80 and coverage 1.0. Completed output forbids retry.
+- **Verification:** ten focused RR acquisition/evaluator tests pass; production score rows remain 0.
