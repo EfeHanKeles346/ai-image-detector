@@ -3665,3 +3665,15 @@ under 63 sources: 4,638 TRAIN (2,335 REAL, 2,303 AI) and 2,246 consumed DEVELOPM
 520 AI). There is no cross-role exact SHA-256 or exact dHash group. The 3,737,406-byte detailed
 manifest has SHA-256 `15124d93...3e238`; the RR receipt has SHA-256 `ba8f4ab1...41813`. This closes
 the data gate. No feature extractor, classifier, B-Free row or RR-test byte participated.
+
+### E42 feature method — executable before any real feature cache
+
+The fixed extractor now implements the preregistered 20,506-view population: TRAIN receives clean
+plus one hash-assigned transport; DEVELOPMENT receives clean plus JPEG, WebP, resize+JPEG and mild
+blur. Every view becomes one global center crop plus two deterministic, preferably non-overlapping
+highest-texture native crops after a 2048px safety cap. Normalized CLS tokens from four fixed DINO
+blocks are reduced only by per-block crop mean and standard deviation. Four unit tests cover view
+symmetry/cardinality, deterministic crop geometry, all transports and aggregation math. Synthetic
+224px smoke inference confirms the small 4x384 and large 4x1024 intermediate-token contracts; no
+project image, label outcome or classifier score was accessed. Feature code is committed before a
+real E42 cache may be created.
