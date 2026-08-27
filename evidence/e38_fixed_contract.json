@@ -1,0 +1,33 @@
+{
+  "boundary": "Frozen after the consumed E37 diagnostic and before E38 fitting; FINAL local bytes remain zero.",
+  "experiment": "E38/fixed-adaptation-emphasis",
+  "final_access": "allowed only if every fixed E38 OOF gate passes and the candidate artifact is hash-frozen",
+  "folds": "identical five complete source-held-out folds from e37_role_amendment.json",
+  "head": {
+    "adaptation_sample_weight": 100.0,
+    "c": 0.0003,
+    "class_weight": "balanced",
+    "historical_sample_weight": 1.0,
+    "max_iter": 3000,
+    "pipeline": "StandardScaler + LogisticRegression",
+    "random_seed": 42,
+    "solver": "lbfgs"
+  },
+  "inputs": {
+    "e32_dinov2s_features_sha256": "ae1737f2114583e6c05c46b265bbda5bce3a2ac36464c84c70625b006a3416de",
+    "e36_dinov2s_features_sha256": "3a08e0dcacce6441efa0d422531871b964d100b126a6884715f5616c1a26f178",
+    "e36_manifest_sha256": "4ed1b7341df39fed1f1fc19a20424f15362c0df224bcc77189045ba4a4af2e03",
+    "e37_role_amendment_sha256": "2ddafc644f56c49853587e8c9d376bfb170eae027d9d76d57fd079186c1b3014"
+  },
+  "provenance_caveat": "C and the uniform adaptation multiplier were selected after inspecting consumed E36/E37 development outcomes; E38 OOF reproduction is not independent validation.",
+  "prohibited": [
+    "DDA score feature or ensemble",
+    "per-device, per-family or per-example weights",
+    "row removal",
+    "another C/weight/threshold grid",
+    "FINAL access before all OOF gates pass"
+  ],
+  "schema_version": 1,
+  "state": "fixed_before_e38_fit",
+  "threshold_rule": "lowest E36 OOF score boundary with REAL device-macro FP <=0.10 and worst-device FP <=0.20; unchanged AI/ranking gates"
+}

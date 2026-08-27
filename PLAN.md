@@ -273,10 +273,11 @@ uniformly emphasizing every E36 row—not selecting examples or sources—can mo
 past all gates. Because those outcomes were inspected, E38 is a DEVELOPMENT-selected candidate,
 not fresh validation. Its only honest confirmation is the already locked FINAL.
 
-- [ ] **Freeze E38 before fitting.** Keep the same backbone, preprocessing, five source folds and
+- [x] **Freeze E38 before fitting.** Keep the same backbone, preprocessing, five source folds and
       complete row set. Fix `C=0.0003`, `class_weight=balanced`, seed 42 and a uniform sample weight
       of 100 for every E36 adaptation row versus 1 for every historical E32 TRAIN row. Do not use
       DDA scores, an ensemble, per-source weights or another grid.
+      Frozen in `evidence/e38_fixed_contract.json` before the formal OOF reproduction/artifact fit.
 - [ ] **Reproduce the fixed DEVELOPMENT frontier and freeze one artifact.** Generate one OOF score
       per E36 row, select the same REAL-budget threshold and require the unchanged eight quality
       gates plus full coverage. Record explicitly that the hyperparameters were selected on this
