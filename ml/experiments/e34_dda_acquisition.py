@@ -420,11 +420,61 @@ def model_status() -> dict[str, Any]:
     }
 
 
+def download_model() -> dict[str, Any]:
+    payload = json.loads(MODEL_SELECTION.read_text())
+    if payload.get("state") != "model_selection_frozen_no_checkpoint_bytes_claimed":
+        raise ValueError("official DDA model selection is not frozen")
+    source = payload["source"]
+    destination = MODEL_ROOT / MODEL_FILENAME
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if destination.exists():
+        if destination.stat().st_size != MODEL_BYTES or _sha256_file(destination) != MODEL_SHA256:
+            raise ValueError("completed official DDA checkpoint contract mismatch")
+        transfer_state = "already_complete"
+    else:
+        partial = destination.with_suffix(destination.suffix + ".partial")
+        current = partial.stat().st_size if partial.exists() else 0
+        if current > MODEL_BYTES:
+            raise ValueError("official DDA checkpoint partial exceeds expected size")
+        free = shutil.disk_usage(MODEL_ROOT).free
+        remaining = MODEL_BYTES - current
+        if free < remaining + MIN_FREE_BYTES:
+            raise OSError("insufficient free space for official DDA checkpoint")
+        command = [
+            "/usr/bin/curl", "--fail", "--location", "--silent", "--show-error",
+            "--connect-timeout", "30", "--retry", "8", "--retry-delay", "5",
+            "--retry-all-errors", "--speed-limit", "1024", "--speed-time", "120",
+            "--output", str(partial),
+        ]
+        if current:
+            command.extend(["--continue-at", "-"])
+        command.append(str(source["url"]))
+        subprocess.run(command, check=True)
+        if partial.stat().st_size != MODEL_BYTES or _sha256_file(partial) != MODEL_SHA256:
+            raise ValueError("official DDA checkpoint final size/SHA-256 mismatch")
+        partial.replace(destination)
+        transfer_state = "downloaded"
+    receipt = {
+        "schema_version": 1,
+        "state": "official_dda_checkpoint_complete_sha256_verified",
+        "transfer_state": transfer_state,
+        "selection_sha256": _sha256(MODEL_SELECTION.read_bytes()),
+        "path": str(destination.relative_to(MODEL_ROOT)),
+        "bytes": MODEL_BYTES,
+        "sha256": MODEL_SHA256,
+    }
+    _write_atomic(MODEL_ROOT / "download_receipt.json", receipt)
+    return receipt
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "command",
-        choices=("freeze", "freeze-model", "download", "download-ranges", "inventory", "status", "model-status"),
+        choices=(
+            "freeze", "freeze-model", "download", "download-ranges", "download-model",
+            "inventory", "status", "model-status",
+        ),
     )
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
@@ -434,6 +484,8 @@ def main() -> int:
         result = freeze_model()
     elif args.command == "model-status":
         result = model_status()
+    elif args.command == "download-model":
+        result = download_model()
     else:
         result = {"freeze": freeze, "download": download, "inventory": inventory, "status": status}[args.command]()
     print(json.dumps(result, indent=2, sort_keys=True))

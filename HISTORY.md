@@ -3144,3 +3144,8 @@ repository/revision, Apache-2.0 licence, 1,255,621,296-byte `DDA_ckpt.pth` and X
 detailed E35 selection is 962 B / SHA-256 `7bdbe886...3fd9`; compact evidence is
 `evidence/e35_dda_model_acquisition.json`. Seven focused DDA archive/model contract tests passed,
 and status confirmed zero checkpoint bytes while the unopened benchmark transfer continued.
+
+The unopened DDA-COCO range transfer was then paused without deleting any part so the smaller
+official checkpoint could take network priority. A receipt-bound resumable checkpoint command was
+committed first; it preserves a 100 GiB floor and promotes only the exact 1,255,621,296-byte file
+after whole-file SHA-256 verification. Benchmark transfer state remains recoverable.
