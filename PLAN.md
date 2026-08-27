@@ -546,6 +546,25 @@ small manifests, aggregate evidence, code and documentation.
       TRAIN/CALIBRATION rows when two independently passing arms make complementary errors. Require
       at least +5 percentage points macro current-AI recall without worsening either authentic FP
       budget; otherwise retain the best single arm, as E9/E31 required.
+
+### Demo hardening — R1b research visibility without promotion (queued 2026-08-27)
+
+- [ ] Add the frozen R1b CF head to the local full-profile API only as an optional, hash-verified
+      `research_signal`; never add it to E26's OR verdict, `project_model`, readiness or the
+      canonical artifact registry. Reuse the already-loaded CF-ViT backbone when available so the
+      demo does not pay for a duplicate model in memory. Absence/failure must degrade only this
+      card and remain explicit in `/health`.
+- [ ] Extend the typed browser contract and show R1b as a visually subordinate “experimental second
+      opinion” with its score, frozen threshold, artifact identity and measured 40.0% IPN
+      worst-device / 68.57% owner-gallery FP warning. Below threshold must say “insufficient
+      evidence”, never REAL; R1b may not influence the page's official E26 result.
+- [ ] Simplify the one-page flow and interaction polish without hiding uncertainty: clearer upload
+      state, stable result hierarchy, restrained motion with reduced-motion support, keyboard/touch
+      focus, responsive layout and no fabricated confidence percentage.
+- [ ] Verify API schema rejection, optional-load behavior, shared-backbone scoring, web parsing,
+      production build, accessibility shell and an end-to-end local image run. Then append measured
+      results to HISTORY/EXPERIMENTS/SERVING and commit; do not publish a model endpoint from a
+      workstation or expose the external disk.
 - [ ] Run the frozen candidate on the DEVELOPMENT arms once. Advancement requires AUC >=0.85,
       authentic macro FP <=10%, worst authentic source <=20%, AI macro recall >=60%, every sized
       AI family >=40% and bounded transport loss. A failing candidate cannot consume locked finals.
