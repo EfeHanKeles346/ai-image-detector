@@ -8,6 +8,7 @@ from experiments.e39_acquisition import (
     HF_REPO,
     HF_REVISION,
     REAL_DEVICES,
+    select_ai_members,
     select_real_urls,
     validate_huggingface,
 )
@@ -47,3 +48,24 @@ def test_huggingface_contract_requires_pinned_archive() -> None:
         assert "archive contract changed" in str(error)
     else:
         raise AssertionError("changed archive must fail closed")
+
+
+def test_ai_selection_is_generator_balanced_and_score_blind() -> None:
+    prefixes = {
+        "Reve Image 1.0": "fal-ai_reve_text-to-image_",
+        "HiDream I1 Dev": "fal-ai_hidream-i1-dev_",
+        "Ideogram 3": "fal-ai_ideogram_v3_",
+        "Midjourney v7": "image_midjourneyv7_",
+        "Adobe Firefly Image 5": "Firefly_",
+        "Z Image Turbo": "fal-ai_z-image_turbo_",
+        "Gemini 3 Pro Image": "fal-ai_gemini-3-pro-image-preview_",
+    }
+    members = [
+        {"member": f"root/train/1_fake/{prefix}{index:03d}.png", "bytes": 100 + index}
+        for prefix in prefixes.values()
+        for index in range(45)
+    ]
+    selected, eligible = select_ai_members(members)
+    assert eligible == {generator: 45 for generator in prefixes}
+    assert {generator: len(rows) for generator, rows in selected.items()} == {generator: 40 for generator in prefixes}
+    assert all("score" not in row for rows in selected.values() for row in rows)

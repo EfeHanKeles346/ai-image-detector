@@ -4,16 +4,21 @@ from __future__ import annotations
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import csv
 import hashlib
+import io
 import json
 import re
 import shutil
 import subprocess
+import tarfile
 from pathlib import Path, PurePosixPath
 from typing import Any, Iterable, Mapping, Sequence
 
 import requests
+from PIL import Image
 
+from pixelproof.data_contract import dhash_image
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 
 
@@ -21,6 +26,10 @@ ROOT = DATA_ROOT / "e39"
 SOURCE_CONTRACT = ML_ROOT.parent / "evidence" / "e39_source_contract.json"
 SOURCE_SELECTION = ROOT / "source_selection.json"
 PREFLIGHT_EVIDENCE = ML_ROOT.parent / "evidence" / "e39_source_preflight.json"
+AI_INVENTORY = ROOT / "ai_inventory.json"
+AI_INVENTORY_EVIDENCE = ML_ROOT.parent / "evidence" / "e39_ai_inventory.json"
+FINAL_MANIFEST = ROOT / "final_manifest.json"
+FINAL_MANIFEST_EVIDENCE = ML_ROOT.parent / "evidence" / "e39_final_manifest.json"
 DECISION_CONTRACT = ROOT / "e39_threshold_candidate.json"
 DECISION_CONTRACT_SHA256 = "7d49792911b9b24acca2ad58d08d5ecc14bded5ee85174218d08d1a4d3712cef"
 FLOREVIEW_CATALOG_URL = "https://lesc.dinfo.unifi.it/FloreView/FloreView_Dataset.txt"
@@ -53,6 +62,18 @@ AI_GENERATORS = (
 )
 AI_PER_GENERATOR = 40
 MIN_FREE_BYTES = 100 * 1024**3
+IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
+MAX_TAR_MEMBER_BYTES = 100 * 1024**2
+MAX_TAR_TOTAL_BYTES = 30 * 1024**3
+AI_PREFIXES = {
+    "Reve Image 1.0": "fal-ai_reve_text-to-image_",
+    "HiDream I1 Dev": "fal-ai_hidream-i1-dev_",
+    "Ideogram 3": "fal-ai_ideogram_v3_",
+    "Midjourney v7": "image_midjourneyv7_",
+    "Adobe Firefly Image 5": "Firefly_",
+    "Z Image Turbo": "fal-ai_z-image_turbo_",
+    "Gemini 3 Pro Image": "fal-ai_gemini-3-pro-image-preview_",
+}
 
 
 def _sha256(raw: bytes) -> str:
@@ -259,6 +280,313 @@ def download_ai() -> dict[str, Any]:
     return receipt
 
 
+def _generator_for_member(name: str) -> str | None:
+    path = PurePosixPath(name)
+    if "1_fake" not in path.parts or path.suffix.lower() not in IMAGE_SUFFIXES:
+        return None
+    basename = path.name
+    return next((generator for generator, prefix in AI_PREFIXES.items() if basename.startswith(prefix)), None)
+
+
+def select_ai_members(members: Sequence[Mapping[str, Any]]) -> tuple[dict[str, list[dict[str, Any]]], dict[str, int]]:
+    eligible: dict[str, list[dict[str, Any]]] = {generator: [] for generator in AI_GENERATORS}
+    for member in members:
+        name = str(member["member"])
+        generator = _generator_for_member(name)
+        if generator is None:
+            continue
+        split = "train" if "/train/" in name else "test" if "/val/" in name else "unknown"
+        rank_key = _sha256(f"{generator}\0{name}".encode())
+        eligible[generator].append({**member, "source": generator, "upstream_split": split, "rank_key": rank_key})
+    selected: dict[str, list[dict[str, Any]]] = {}
+    for generator, rows in eligible.items():
+        rows.sort(key=lambda row: (row["rank_key"], row["member"]))
+        if len(rows) < AI_PER_GENERATOR:
+            raise ValueError(f"AIGenImages2026 has fewer than 40 eligible rows for {generator}")
+        selected[generator] = [
+            {**row, "local_name": f"{index:03d}_{row['rank_key'][:12]}{PurePosixPath(row['member']).suffix.lower()}"}
+            for index, row in enumerate(rows[:AI_PER_GENERATOR])
+        ]
+    return selected, {generator: len(rows) for generator, rows in eligible.items()}
+
+
+def inventory_ai() -> dict[str, Any]:
+    if AI_INVENTORY.exists() or AI_INVENTORY_EVIDENCE.exists():
+        raise FileExistsError("E39 AI inventory already exists; no silent reinventory")
+    receipt = json.loads((ROOT / "ai_download_receipt.json").read_text())
+    archive_path = ROOT / "archives" / AI_ARCHIVE
+    if (
+        receipt.get("state") != "ai_archive_download_complete_verified_unscored"
+        or not archive_path.is_file()
+        or archive_path.stat().st_size != AI_ARCHIVE_BYTES
+        or _digest(archive_path) != AI_ARCHIVE_SHA256
+    ):
+        raise ValueError("E39 AI archive binding changed before inventory")
+    members: list[dict[str, Any]] = []
+    metadata_raw: bytes | None = None
+    total_members = 0
+    regular_files = 0
+    total_regular_bytes = 0
+    with tarfile.open(archive_path, "r:gz") as bundle:
+        for member in bundle:
+            total_members += 1
+            path = PurePosixPath(member.name)
+            if path.is_absolute() or ".." in path.parts or member.issym() or member.islnk():
+                raise ValueError(f"unsafe E39 tar member: {member.name}")
+            if member.isdir():
+                continue
+            if not member.isfile() or member.size < 0 or member.size > MAX_TAR_MEMBER_BYTES:
+                raise ValueError(f"unsupported E39 tar member: {member.name}")
+            regular_files += 1
+            total_regular_bytes += member.size
+            if total_regular_bytes > MAX_TAR_TOTAL_BYTES:
+                raise ValueError("E39 tar expansion exceeds the frozen safety ceiling")
+            members.append({"member": member.name, "bytes": member.size})
+            if path.name == "fake_metadata.csv":
+                stream = bundle.extractfile(member)
+                if stream is None:
+                    raise ValueError("E39 fake metadata cannot be read")
+                metadata_raw = stream.read()
+    if metadata_raw is None:
+        raise ValueError("E39 archive lacks fake_metadata.csv")
+    selected, eligible_counts = select_ai_members(members)
+    metadata_path = ROOT / "metadata" / "fake_metadata.csv"
+    metadata_path.parent.mkdir(parents=True, exist_ok=True)
+    metadata_part = metadata_path.with_suffix(".csv.part")
+    metadata_part.write_bytes(metadata_raw)
+    metadata_part.replace(metadata_path)
+    payload = {
+        "schema_version": 1,
+        "experiment": "E39/new-native-modern-final",
+        "state": "ai_inventory_passed_selected_unextracted_unscored",
+        "archive_sha256": AI_ARCHIVE_SHA256,
+        "total_members": total_members,
+        "regular_files": regular_files,
+        "total_regular_bytes": total_regular_bytes,
+        "eligible_counts": eligible_counts,
+        "selected_counts": {generator: len(rows) for generator, rows in selected.items()},
+        "selected": selected,
+        "metadata_bytes": len(metadata_raw),
+        "metadata_sha256": _sha256(metadata_raw),
+        "boundary": "Archive safety and deterministic member selection only; no image extracted, decoded or scored.",
+    }
+    raw = _json_bytes(payload)
+    _write_atomic(AI_INVENTORY, payload)
+    evidence = {
+        "schema_version": 1,
+        "state": payload["state"],
+        "archive_sha256": AI_ARCHIVE_SHA256,
+        "total_members": total_members,
+        "regular_files": regular_files,
+        "total_regular_bytes": total_regular_bytes,
+        "eligible_counts": eligible_counts,
+        "selected_counts": payload["selected_counts"],
+        "metadata_sha256": payload["metadata_sha256"],
+        "detailed_inventory_bytes": len(raw),
+        "detailed_inventory_sha256": _sha256(raw),
+    }
+    _write_atomic(AI_INVENTORY_EVIDENCE, evidence)
+    return evidence
+
+
+def _audit_image(path: Path) -> dict[str, Any]:
+    with Image.open(path) as image:
+        image.load()
+        width, height = image.size
+        decoded_format = image.format
+        exif_present = bool(image.getexif())
+        dhash = dhash_image(image.convert("RGB"))
+    if min(width, height) < 336:
+        raise ValueError(f"E39 image is below the native/clean input floor: {path}")
+    return {
+        "bytes": path.stat().st_size,
+        "sha256": _digest(path),
+        "dhash": dhash,
+        "width": width,
+        "height": height,
+        "megapixels": width * height / 1_000_000,
+        "decoded_format": decoded_format,
+        "exif_present": exif_present,
+    }
+
+
+def _prior_hashes() -> tuple[set[str], set[str]]:
+    exact: set[str] = set()
+    perceptual: set[str] = set()
+    for path in sorted((DATA_ROOT / "e32" / "audits").glob("*.json")):
+        if path.name.startswith("._"):
+            continue
+        payload = json.loads(path.read_text())
+        for row in payload.get("records", []):
+            if row.get("sha256"):
+                exact.add(str(row["sha256"]))
+            if row.get("dhash"):
+                perceptual.add(str(row["dhash"]))
+    for path in (DATA_ROOT / "e36" / "cal_manifest.json", DATA_ROOT / "e36" / "final_manifest.json"):
+        payload = json.loads(path.read_text())
+        for row in payload.get("rows", []):
+            exact.add(str(row["sha256"]))
+            perceptual.add(str(row["dhash"]))
+    return exact, perceptual
+
+
+def _metadata_prompts(path: Path) -> dict[str, str]:
+    rows = list(csv.DictReader(io.StringIO(path.read_text(errors="replace"))))
+    if not rows:
+        return {}
+    filename_keys = ("filename", "file_name", "image", "image_name", "path")
+    prompt_keys = ("prompt", "text", "caption")
+    output: dict[str, str] = {}
+    for row in rows:
+        filename = next((str(row[key]) for key in filename_keys if row.get(key)), "")
+        prompt = next((str(row[key]) for key in prompt_keys if row.get(key)), "")
+        if filename and prompt:
+            output[PurePosixPath(filename).name] = prompt
+    return output
+
+
+def manifest_final() -> dict[str, Any]:
+    if FINAL_MANIFEST.exists() or FINAL_MANIFEST_EVIDENCE.exists():
+        raise FileExistsError("E39 FINAL manifest already exists; no silent remanifest")
+    selection = json.loads(SOURCE_SELECTION.read_text())
+    inventory = json.loads(AI_INVENTORY.read_text())
+    if selection.get("state") != "source_selection_frozen_zero_image_bytes":
+        raise ValueError("E39 source selection changed")
+    if inventory.get("state") != "ai_inventory_passed_selected_unextracted_unscored":
+        raise ValueError("E39 AI inventory has not passed")
+    if json.loads((ROOT / "real_download_receipt.json").read_text()).get("rows") != 160:
+        raise ValueError("E39 REAL download is incomplete")
+
+    real_rows = []
+    for device, rows in selection["real"].items():
+        for selected in rows:
+            path = ROOT / "final" / "real" / device / PurePosixPath(selected["remote_path"]).name
+            audit = _audit_image(path)
+            if audit["megapixels"] < 2.0 or not audit["exif_present"]:
+                raise ValueError(f"E39 REAL row is not a native high-resolution camera parent: {path}")
+            real_rows.append({
+                "role": "locked_final",
+                "label": 0,
+                "source": device,
+                "condition": "camera_native_outdoor",
+                "parent_id": f"floreview:{selected['remote_path']}",
+                "upstream_url": selected["url"],
+                "path": str(path.relative_to(ROOT)),
+                **audit,
+            })
+
+    selected_by_member = {
+        row["member"]: row
+        for rows in inventory["selected"].values()
+        for row in rows
+    }
+    ai_root = ROOT / "final" / "ai"
+    expected_paths = {
+        member: ai_root / re.sub(r"[^a-z0-9]+", "-", row["source"].lower()).strip("-") / row["local_name"]
+        for member, row in selected_by_member.items()
+    }
+    missing = {member for member, path in expected_paths.items() if not path.exists()}
+    if missing:
+        archive_path = ROOT / "archives" / AI_ARCHIVE
+        with tarfile.open(archive_path, "r|gz") as bundle:
+            for member in bundle:
+                if member.name not in missing:
+                    continue
+                destination = expected_paths[member.name]
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                partial = destination.with_suffix(destination.suffix + ".partial")
+                if partial.exists():
+                    raise FileExistsError(f"partial E39 extraction requires audit: {partial}")
+                source = bundle.extractfile(member)
+                if source is None:
+                    raise ValueError(f"cannot extract E39 AI member: {member.name}")
+                with partial.open("xb") as output:
+                    shutil.copyfileobj(source, output, length=8 * 1024**2)
+                if partial.stat().st_size != int(selected_by_member[member.name]["bytes"]):
+                    raise ValueError(f"E39 AI extraction size mismatch: {member.name}")
+                partial.replace(destination)
+                missing.remove(member.name)
+                if len(missing) % 40 == 0:
+                    print(f"E39 AI extracted {len(expected_paths) - len(missing)}/{len(expected_paths)}", flush=True)
+                if not missing:
+                    break
+    if missing:
+        raise ValueError(f"E39 AI selected members missing after extraction: {len(missing)}")
+
+    prompts = _metadata_prompts(ROOT / "metadata" / "fake_metadata.csv")
+    ai_rows = []
+    for member, selected in sorted(selected_by_member.items(), key=lambda item: (item[1]["source"], item[1]["rank_key"])):
+        path = expected_paths[member]
+        audit = _audit_image(path)
+        row = {
+            "role": "locked_final",
+            "label": 1,
+            "source": selected["source"],
+            "condition": "clean_generator_output",
+            "parent_id": f"aigenimages2026:{member}",
+            "upstream_member": member,
+            "upstream_split": selected["upstream_split"],
+            "path": str(path.relative_to(ROOT)),
+            **audit,
+        }
+        prompt = prompts.get(PurePosixPath(member).name)
+        if prompt:
+            row["prompt"] = prompt
+        ai_rows.append(row)
+
+    rows = real_rows + ai_rows
+    if len(real_rows) != 160 or len(ai_rows) != 280 or len(rows) != 440:
+        raise ValueError("E39 FINAL count contract changed")
+    if len({row["sha256"] for row in rows}) != len(rows):
+        raise ValueError("E39 FINAL contains exact duplicate bytes")
+    prior_exact, prior_dhash = _prior_hashes()
+    if any(row["sha256"] in prior_exact for row in rows):
+        raise ValueError("E39 FINAL exact-overlaps an earlier role")
+    if any(row["dhash"] in prior_dhash for row in rows):
+        raise ValueError("E39 FINAL perceptually overlaps an earlier role")
+    by_dhash: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        by_dhash.setdefault(row["dhash"], []).append(row)
+    if any(len(group) > 1 for group in by_dhash.values()):
+        raise ValueError("E39 FINAL contains within-role perceptual duplicate parents")
+
+    payload = {
+        "schema_version": 1,
+        "experiment": "E39/new-native-modern-final",
+        "state": "final_manifest_frozen_unscored",
+        "decision_contract_sha256": DECISION_CONTRACT_SHA256,
+        "source_selection_sha256": _digest(SOURCE_SELECTION),
+        "ai_inventory_sha256": _digest(AI_INVENTORY),
+        "counts": {"real": 160, "ai": 280, "total": 440},
+        "real_source_counts": {source: sum(row["source"] == source for row in real_rows) for source in REAL_DEVICES},
+        "ai_family_counts": {source: sum(row["source"] == source for row in ai_rows) for source in AI_GENERATORS},
+        "prompt_rows": sum("prompt" in row for row in ai_rows),
+        "prior_exact_overlap_count": 0,
+        "prior_dhash_overlap_count": 0,
+        "within_final_duplicate_dhash_count": 0,
+        "rows": rows,
+        "boundary": "Frozen, decoded and decontaminated before first E39 prediction; one score only.",
+    }
+    raw = _json_bytes(payload)
+    _write_atomic(FINAL_MANIFEST, payload)
+    evidence = {
+        "schema_version": 1,
+        "state": payload["state"],
+        "decision_contract_sha256": DECISION_CONTRACT_SHA256,
+        "counts": payload["counts"],
+        "real_source_counts": payload["real_source_counts"],
+        "ai_family_counts": payload["ai_family_counts"],
+        "prompt_rows": payload["prompt_rows"],
+        "prior_exact_overlap_count": 0,
+        "prior_dhash_overlap_count": 0,
+        "within_final_duplicate_dhash_count": 0,
+        "detailed_manifest_bytes": len(raw),
+        "detailed_manifest_sha256": _sha256(raw),
+    }
+    _write_atomic(FINAL_MANIFEST_EVIDENCE, evidence)
+    return evidence
+
+
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
@@ -266,13 +594,19 @@ def main(argv: Iterable[str] | None = None) -> int:
     real = sub.add_parser("download-real")
     real.add_argument("--workers", type=int, default=8)
     sub.add_parser("download-ai")
+    sub.add_parser("inventory-ai")
+    sub.add_parser("manifest-final")
     args = parser.parse_args(argv)
     if args.command == "freeze":
         result = freeze()
     elif args.command == "download-real":
         result = download_real(args.workers)
-    else:
+    elif args.command == "download-ai":
         result = download_ai()
+    elif args.command == "inventory-ai":
+        result = inventory_ai()
+    else:
+        result = manifest_final()
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
 
