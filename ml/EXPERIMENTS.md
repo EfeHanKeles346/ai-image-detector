@@ -2727,3 +2727,16 @@ above are transcription errors; production range planning binds the filesystem v
   ESLint, dependency graph and canonical artifact registry all pass. One upstream Starlette
   deprecation warning remains unrelated.
 - **Decision:** keep the card as presentation-grade failure analysis, never a product verdict.
+
+### C4-R1b demo hierarchy correction — presentation only
+
+- The result surface now leads with R1b's direct `ai_signal` / `insufficient_evidence` answer and
+  one 0–100 raw-signal bar. It states the score's distance above or below the frozen 0.125935
+  threshold, eliminating the misleading impression that a low-looking percentage cannot trigger.
+- The percentage remains explicitly non-probabilistic. E26, E20, artifact identifiers, thresholds
+  and measured IPN/owner false-positive limits move under collapsed technical details.
+- A real local R1b request returned 0.3132 > 0.1259 and rendered the direct AI-signal answer.
+  R1b remains `research_only=true`, `affects_decision=false`; no score, threshold, API vote or
+  artifact changed.
+- Verification: 207 Python tests, production build + six web tests, TypeScript, ESLint, `pip check`
+  and the six-entry canonical artifact registry all pass.

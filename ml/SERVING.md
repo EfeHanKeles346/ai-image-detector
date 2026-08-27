@@ -64,6 +64,12 @@ frozen head as an optional `r1b_research` card. It is explicitly `research_only`
 E26's decision, readiness or the canonical registry, and below threshold means only insufficient
 evidence. IPN/owner results cannot recalibrate or route it.
 
+The local browser deliberately gives this optional R1b card visual priority so a demonstration
+answers “what did the new model say?” directly. It shows why the label fired (score distance from
+the frozen threshold) and identifies the percentage as a raw signal rather than a calibrated
+probability. E26, E20 and external false-positive measurements sit under collapsed technical
+details. This is presentation only: API fields, decision voting and promotion status are unchanged.
+
 ## Required edge controls
 
 Before binding outside loopback, require all of the following at the proxy/gateway:

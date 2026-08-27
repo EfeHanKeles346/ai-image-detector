@@ -14,7 +14,12 @@ signal, not an authenticity verdict: an under-threshold result is reported as un
 as proof that an image is real. On E20's three-seed evaluation, worst-source authentic false
 positives were **86.2% +/- 3.1**.
 
-The web UI presents the E26 OR rule over frozen external detectors in a separate comparison card:
+The web UI now answers the demo's immediate question with the optional E32 R1b research model as
+the single primary card. It shows the raw 0–100 AI signal, the frozen decision threshold and the
+exact distance above or below that threshold; the number is not a calibrated probability. E26 and
+E20 remain available under the collapsed **Technical details** control and do not blend with R1b.
+Presentation priority does not change the official scientific boundary: R1b is non-voting and
+rejected for serving. The technical E26 comparison is an OR rule over frozen external detectors:
 
 - **Community-Forensics ViT-S** is the default arm (MIT, pinned local snapshot).
 - **B-Free** is optional because its upstream terms are research/non-commercial; it loads only
@@ -133,8 +138,9 @@ To add the frozen R1b score as a visibly non-voting research card from an extern
   --r1b-data-root /path/to/pixelproof-datasets
 ```
 
-The command refuses a missing artifact and `/health` reports `r1b_research_ready`; the page keeps
-E26 as its measured decision even when R1b disagrees.
+The command refuses a missing artifact and `/health` reports `r1b_research_ready`. The page leads
+with R1b's direct research answer while E26 remains the measured, non-blended comparison under
+**Technical details**, even when the two disagree.
 
 The same checks and API smoke can be run separately when diagnosing a startup:
 

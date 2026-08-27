@@ -2963,3 +2963,14 @@ than a decision vote. Focused verification passed 20 Python tests, production we
 tests, TypeScript and ESLint. Final regression then passed all 207 Python tests, the dependency
 graph and canonical artifact registry. The local API/web processes were stopped after the smoke;
 no model endpoint or external disk was published.
+
+The demo hierarchy was then corrected after the primary R1b answer proved too easy to confuse with
+the older E26/E20 layers. R1b is now the only primary result card; E26, E20, artifact identity and
+external false-positive measurements are behind one collapsed technical-details control. Its bar
+shows the frozen threshold and the result sentence now says exactly how many percentage points the
+raw score sits above or below it. The percentage is still explicitly a model signal, not a
+calibrated probability. A local owner-still request rendered 31.3% versus the 12.6% threshold.
+This changed only information hierarchy: R1b stays research-only and non-voting, and no threshold,
+artifact, API decision rule or external-development result was altered. Final verification passed
+207 Python tests, the production web build and all six web tests, TypeScript, ESLint, `pip check`
+and the six-entry canonical artifact registry.

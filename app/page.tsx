@@ -88,6 +88,7 @@ function R1bResearch({ candidate }: { candidate: R1bResearchResult | null }) {
   }
   const scorePercent = candidate.score * 100;
   const thresholdPercent = candidate.threshold * 100;
+  const thresholdDistance = Math.abs(scorePercent - thresholdPercent);
 
   return (
     <section
@@ -103,8 +104,8 @@ function R1bResearch({ candidate }: { candidate: R1bResearchResult | null }) {
       </div>
       <p className="model-answer-copy">
         {candidate.triggered
-          ? "Model bu görseli AI yönünde işaretledi."
-          : "Model bu görseli AI olarak işaretlemedi; bu, görselin kesinlikle gerçek olduğu anlamına gelmez."}
+          ? `Skor, karar eşiğinin ${thresholdDistance.toFixed(1)} puan üzerinde olduğu için model bu görseli AI yönünde işaretledi.`
+          : `Skor, karar eşiğinin ${thresholdDistance.toFixed(1)} puan altında olduğu için model bu görseli AI olarak işaretlemedi; bu, görselin kesinlikle gerçek olduğu anlamına gelmez.`}
       </p>
       <div className="signal-score-row">
         <span>AI sinyal skoru</span>
