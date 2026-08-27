@@ -263,13 +263,17 @@ def extract(backbone: str, batch_views: int) -> dict[str, Any]:
     mean = torch.tensor(mean_values, device=device).view(1, 3, 1, 1)
     std = torch.tensor(std_values, device=device).view(1, 3, 1, 1)
     chunks = []
+    verified_paths: dict[str, str] = {}
     with torch.inference_mode():
         for start in range(0, len(rows), batch_views):
             group = rows[start : start + batch_views]
             arrays = []
             for row in group:
                 path = Path(str(row["path"]))
-                if _sha256_file(path) != row["sha256"]:
+                key = str(path)
+                if key not in verified_paths:
+                    verified_paths[key] = _sha256_file(path)
+                if verified_paths[key] != row["sha256"]:
                     raise ValueError(f"E42 feature input changed: {row['parent_id']}")
                 with Image.open(path) as opened:
                     transformed = transport_image(opened, str(row["condition"]))
