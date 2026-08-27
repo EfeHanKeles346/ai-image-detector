@@ -1036,3 +1036,12 @@ and collapse to one parent each. These rows may select the E42 backbone and
 threshold and can never validate it independently afterward. The 811 B-Free viral rows and the
 unopened 20.12 GB RR test archive are forbidden from training, calibration and model choice. RR
 test remains locked for one candidate; ITW-SM remains untouched and manually gated.
+
+The RR train-only extraction is complete at `/Volumes/LaCie/pixelproof-datasets/e42/rr_train`:
+2,500/2,500 decoded images, 1,250 REAL +1,250 AI and 1,860,689,134 image bytes. Seven AI groups are
+retained (113–479 rows) rather than collapsed. Detailed receipt SHA-256 is
+`ba8f4ab1...a4941813`. The frozen combined manifest contains 6,884 unique parents from 63 declared
+sources: TRAIN 4,638 (2,335 REAL /2,303 AI) and DEVELOPMENT 2,246 (1,726 REAL /520 AI). Cross-role
+exact SHA-256 and exact dHash overlap are both zero. Manifest SHA-256 is
+`15124d93f195d618b00c9cf79bec6151ae26fd4397cd9f5529c41842c4e3e238`; compact tracked receipt is
+`evidence/e42_data_manifest.json`. No B-Free or RR-test row appears.

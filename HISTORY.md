@@ -3658,3 +3658,10 @@ identity contains four exact duplicate pairs (`IMG_8335` through `IMG_8338`, eac
 again stopped before output/model access. E42 collapses each exact pair deterministically and
 amends DEVELOPMENT from 2,250 file rows to 2,246 unique parents; the original 210-file identity is
 still preserved as provenance. This reduces duplicate weighting instead of hiding it.
+
+The third manifest pass completed before model access. RR official train contributes all 2,500
+declared rows /1,860,689,134 decoded image bytes. The full E42 manifest binds 6,884 unique parents
+under 63 sources: 4,638 TRAIN (2,335 REAL, 2,303 AI) and 2,246 consumed DEVELOPMENT (1,726 REAL,
+520 AI). There is no cross-role exact SHA-256 or exact dHash group. The 3,737,406-byte detailed
+manifest has SHA-256 `15124d93...3e238`; the RR receipt has SHA-256 `ba8f4ab1...41813`. This closes
+the data gate. No feature extractor, classifier, B-Free row or RR-test byte participated.

@@ -88,10 +88,13 @@ it before paying for another architecture or training run.
       source-held-out DEVELOPMENT parents: 640 E36 former-final rows, 440 E39 rows, 960 IPN phone
       originals and 206 unique parents in the declared 210-file owner gallery. B-Free viral and RR test are prohibited
       from fitting, threshold selection and model choice.
-- [ ] Safely extract only RR `train/{real,ai}` from the already MD5-verified 2.16 GB archive. Decode,
+- [x] Safely extract only RR `train/{real,ai}` from the already MD5-verified 2.16 GB archive. Decode,
       hash and count all 2,500 rows; preserve seven AI topic/scenario groups and one explicitly
       pooled REAL source. Freeze the combined parent manifest and exact/dHash overlap audit before
       any E42 feature extraction.
+      Complete: RR train is 1,860,689,134 decoded image bytes; the combined frozen manifest has
+      6,884 unique parents across 63 sources, 4,638 TRAIN +2,246 DEVELOPMENT, with zero cross-role
+      exact SHA-256 or exact dHash group. Manifest SHA-256 is `15124d93...3e238`.
 - [ ] Implement one fixed RINE-inspired representation ladder: normalized CLS tokens from four
       intermediate DINOv2 blocks, aggregated over one global crop plus two deterministic highest-
       texture native crops. Compare DINOv2-S and DINOv2-L only; DINO-L reuses the hash-pinned pure
