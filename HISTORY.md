@@ -3684,3 +3684,10 @@ even though the frozen inference contract requires a 2048px safety cap before 22
 is now applied once before every transport, with a regression assertion for all five conditions.
 This changes no declared view, crop, label or model feature; it removes discarded computation. No
 partial feature archive/evidence exists, so the optimized run begins from a clean write-once state.
+
+The capped rerun was also interrupted before output at 4,416 views after timing showed sequential
+PIL preparation leaving the accelerator idle. Hash verification remains single-pass and ordered,
+but the independent transport/crop preparation is now mapped over six worker threads before each
+unchanged tensor batch. This is an execution-only correction: the same functions, arrays, ordering
+and model inputs are used. A focused deterministic-feature test still passes and no partial cache
+exists.

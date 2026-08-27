@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import io
 import json
@@ -248,6 +249,11 @@ def _save_npz(path: Path, values: Mapping[str, np.ndarray]) -> None:
     temporary.replace(path)
 
 
+def _prepare_view(row: Mapping[str, Any]) -> list[np.ndarray]:
+    with Image.open(Path(str(row["path"]))) as opened:
+        return texture_crops(transport_image(opened, str(row["condition"])))
+
+
 def extract(backbone: str, batch_views: int) -> dict[str, Any]:
     output = FEATURE_ROOT / f"{backbone}.npz"
     evidence = REPO_ROOT / "evidence" / f"e42_features_{backbone}.json"
@@ -269,10 +275,9 @@ def extract(backbone: str, batch_views: int) -> dict[str, Any]:
     std = torch.tensor(std_values, device=device).view(1, 3, 1, 1)
     chunks = []
     verified_paths: dict[str, str] = {}
-    with torch.inference_mode():
+    with torch.inference_mode(), ThreadPoolExecutor(max_workers=6) as pool:
         for start in range(0, len(rows), batch_views):
             group = rows[start : start + batch_views]
-            arrays = []
             for row in group:
                 path = Path(str(row["path"]))
                 key = str(path)
@@ -280,9 +285,7 @@ def extract(backbone: str, batch_views: int) -> dict[str, Any]:
                     verified_paths[key] = _sha256_file(path)
                 if verified_paths[key] != row["sha256"]:
                     raise ValueError(f"E42 feature input changed: {row['parent_id']}")
-                with Image.open(path) as opened:
-                    transformed = transport_image(opened, str(row["condition"]))
-                    arrays.extend(texture_crops(transformed))
+            arrays = [array for pack in pool.map(_prepare_view, group) for array in pack]
             tensor = torch.from_numpy(np.stack(arrays)).to(device)
             tensor = tensor.permute(0, 3, 1, 2).float().div_(255.0)
             intermediates = model.forward_intermediates(
