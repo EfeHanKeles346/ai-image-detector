@@ -1,0 +1,27 @@
+{
+  "boundary": "Frozen before E41 artifact packaging and before any E41 FINAL source/byte access.",
+  "candidate": {
+    "head": "byte/numeric-identical fitted StandardScaler + LogisticRegression from E40 draft",
+    "new_threshold": 0.6195540428161622,
+    "old_threshold": 0.17080099880695346,
+    "preprocessing_change": "forbidden",
+    "retraining": "forbidden"
+  },
+  "experiment": "E41/broad-real-threshold-transfer",
+  "final_access": "allowed only after candidate packaging and a separate disjoint source contract are committed",
+  "inputs": {
+    "e40_draft_sha256": "72b8d8cd05f0f4d51ab5008e19bf4ab3418988b3444b2e640a25fdd0e54819c0",
+    "e40_threshold_diagnostic_sha256": "53829c3bbadaec13f3562030b15891aaa215aa91e15d08d69eeeaf23f69baeba",
+    "e41_role_amendment_sha256": "db5235c6783c14f003fb995f2bbd7f642de77fc4aeb434b5c52f466d054d4aea"
+  },
+  "prohibited": [
+    "fit, partial_fit or coefficient mutation",
+    "another threshold or calibration subset",
+    "E39, FloreView, AIGenImages2026 or owner-gallery rows in E41 FINAL",
+    "web/API promotion before independent FINAL",
+    "calling calibration metrics validation evidence"
+  ],
+  "schema_version": 1,
+  "state": "fixed_before_e41_candidate",
+  "validation_rule": "A wholly new one-shot FINAL must pass all original joint gates at the fixed E41 threshold."
+}

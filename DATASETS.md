@@ -957,3 +957,8 @@ owner-gallery parents. The output is derived DEVELOPMENT only; score stream is 4
 `a126e814...0e3b`. The one reserve remains excluded. After the sealed failure, only the 440 native
 E39 rows and 210 gallery parents entered a post-hoc threshold diagnostic; both populations were
 already consumed. No image role was upgraded and no new data was acquired.
+
+For E41, the 440 native E39 rows and 210 owner-gallery rows are now formally consumed
+`E41_BROAD_REAL_CALIBRATION` (650 parents). The 880 compressed/resize views stay linked robustness
+derivatives and are excluded from threshold selection. None of these bytes can enter E41 FINAL.
+This role change creates no copy and downloads no data.

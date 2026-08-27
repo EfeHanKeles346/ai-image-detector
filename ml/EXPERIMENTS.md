@@ -3009,3 +3009,12 @@ was scored or selected using model output.
 - **Post-hoc diagnostic only:** on 370 consumed REAL +280 consumed AI native scores, threshold
   0.619554 would pass all gates: REAL 4%/20%, AI 92.14%/90%, AUC 0.97218, TPR@FPR10 0.90714,
   EER 0.10, balanced 0.90396. It cannot change E40 and may only seed a new-final E41 contract.
+
+### E41 — fixed broad-real calibration-transfer protocol
+
+- **Consumed CAL:** all 440 E39 native E40-draft rows +210 owner-gallery rows; derivatives excluded.
+- **Only change:** reuse the byte-identical E40 uniform head and fixed preprocessing, replacing
+  threshold 0.170801 with diagnostic threshold 0.619554. No fit or second threshold exists.
+- **Integrity:** packager hashes every learned scaler/logistic numeric array before/after writing.
+- **Boundary:** role amendment, fixed contract, code and tests are committed before packaging. The
+  resulting artifact, if produced, remains research-only until a new one-shot FINAL passes.

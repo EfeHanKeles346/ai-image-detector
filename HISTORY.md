@@ -3495,3 +3495,12 @@ gallery scores. Its first REAL-safe boundary is 0.619554: REAL macro/worst 4%/20
 92.14%/90%, AUC 0.97218, TPR@FPR10 0.90714, EER 0.10 and balanced accuracy 0.90396. This proves a
 broad-real threshold candidate exists, but the number is contaminated and cannot rescue E40. It is
 recorded only to justify an explicit E41 calibration-transfer candidate and a wholly new FINAL.
+
+### E41 protocol — broad-real calibration without another fit
+
+Before packaging, all 440 native E39 draft rows and all 210 owner-gallery rows were explicitly
+assigned `E41_BROAD_REAL_CALIBRATION`; compressed derivatives remain robustness-only. The frozen
+E41 operation changes only threshold 0.170801 -> 0.619554 on the existing E40 uniform head. Learned
+scaler/logistic arrays receive their own numeric checksum before and after serialization. Any fit,
+second threshold, row exclusion, product promotion or FINAL access is prohibited. Implementation,
+two focused tests and the role/contract are committed before artifact creation.

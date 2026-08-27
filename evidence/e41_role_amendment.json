@@ -1,0 +1,29 @@
+{
+  "boundary": "Recorded after the sealed E40 robustness failure/diagnostic and before E41 candidate packaging. All 650 native rows are consumed calibration and can never validate E41.",
+  "counts": {
+    "ai": 280,
+    "real": 370,
+    "total": 650
+  },
+  "e40_draft_sha256": "72b8d8cd05f0f4d51ab5008e19bf4ab3418988b3444b2e640a25fdd0e54819c0",
+  "e40_robustness_report_sha256": "74e23b66ba644d5e8f85b69f9a462a0a4b2614396a36507c6d948a4ba571a463",
+  "e40_robustness_scores_sha256": "a126e81482a05d85622aaab1cb30a4e3b8cb099f961b83c7866b6aa836c20e3b",
+  "e40_threshold_diagnostic_sha256": "53829c3bbadaec13f3562030b15891aaa215aa91e15d08d69eeeaf23f69baeba",
+  "experiment": "E41/broad-real-threshold-transfer",
+  "new_role": "E41_BROAD_REAL_CALIBRATION",
+  "previous_roles": {
+    "e39_native_rows": "E40_ADAPTATION_DEVELOPMENT",
+    "owner_gallery_rows": "consumed owner-gallery DEVELOPMENT"
+  },
+  "rules": {
+    "derivative_use": "forbidden for threshold selection; E40 robustness evidence only",
+    "e40_reinterpretation": "forbidden; E40 remains robustness_failed",
+    "future_final_use": "forbidden for all 650 parents",
+    "head_or_preprocessing_change": "forbidden",
+    "new_final_access": "forbidden until E41 candidate and FINAL source contract are frozen",
+    "row_selection": "all 440 E39 native rows plus all 210 declared gallery rows",
+    "threshold": "exactly 0.6195540428161622 from the sealed post-hoc diagnostic; no second threshold"
+  },
+  "schema_version": 1,
+  "state": "role_amended_before_e41_candidate"
+}
