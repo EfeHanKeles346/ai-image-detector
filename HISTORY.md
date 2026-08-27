@@ -2993,3 +2993,13 @@ paired-content/frequency-aligned dataset and source-held-out CF adapter, followi
 spectral/global architectures and ensembles remain later gates. This ordering reflects the local
 evidence and 2025–2026 Community Forensics, B-Free, DDA, SPAI, GAPL, NTIRE and GlobalForge results,
 while avoiding another large blind download.
+
+The first GitHub CI run on `main` exposed a portable-environment defect rather than a model or web
+regression. Run `33070433088` passed the web job but could not collect Python tests: the workflow
+installed only serving dependencies and exposed `ml/src`, while the full suite also imports the
+repository-owned `ml/experiments` package and `pyarrow`. Pytest configuration now owns both import
+roots, and CI installs the existing `experiments` and `test` extras declared in `ml/pyproject.toml`
+instead of duplicating an incomplete dependency list. Verification without a caller-provided
+`PYTHONPATH` passed all 207 Python tests; compileall, `pip check`, the six-entry artifact registry,
+ESLint, TypeScript, the production web build and all six web tests also passed. No model artifact,
+threshold, dataset, inference rule or measured result changed.
