@@ -3121,3 +3121,11 @@ adds ZIP traversal/symlink/encryption/duplicate/CRC/expansion gates. Live metada
 a 916 B detailed receipt / SHA-256 `f0bc21a7...5184` and compact
 `evidence/e34_dda_acquisition.json`; status confirmed zero complete/partial archive bytes. Sixteen
 focused E33/E34 metric/manifest/acquisition tests passed before download authorization was used.
+
+The first DDA single-stream transfer was intentionally stopped without deleting its verified-size
+prefix after throughput settled near 2–3 MB/s. Before resuming, E34 gained the same fail-closed
+parallel recovery pattern proven on CSAFE: split only the exact remaining interval, require HTTP
+206 and exact `Content-Range`/length for each resumable part, assemble prefix plus ordered ranges
+into a new file, verify whole-file size/SHA-256, atomically promote, then remove temporary pieces.
+No DDA archive member was opened and the preserved prefix could not be mistaken for a completed
+archive.

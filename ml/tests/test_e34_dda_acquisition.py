@@ -11,6 +11,8 @@ from experiments.e34_dda_acquisition import (
     REPO_ID,
     REVISION,
     inspect_zip,
+    parse_content_range,
+    range_plan,
     validate_repository,
 )
 
@@ -53,3 +55,16 @@ def test_dda_zip_inventory_counts_images() -> None:
 def test_dda_zip_inventory_rejects_traversal() -> None:
     with pytest.raises(ValueError, match="unsafe"):
         inspect_zip([_zip_info("DDA/../escape.jpg")])
+
+
+def test_dda_parallel_range_plan_is_disjoint_and_exhaustive() -> None:
+    plan = range_plan(211_812_352, EXPECTED_BYTES, workers=4)
+    assert plan[0][0] == 211_812_352
+    assert plan[-1][1] == EXPECTED_BYTES - 1
+    assert all(left[1] + 1 == right[0] for left, right in zip(plan, plan[1:]))
+
+
+def test_dda_content_range_must_be_exact() -> None:
+    assert parse_content_range("bytes 10-19/100") == (10, 19, 100)
+    with pytest.raises(ValueError, match="invalid Content-Range"):
+        parse_content_range("10-19/100")

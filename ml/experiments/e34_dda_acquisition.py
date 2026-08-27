@@ -3,10 +3,13 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import json
+import re
 import shutil
 import subprocess
+import time
 import zipfile
 from pathlib import Path, PurePosixPath
 from typing import Any, Mapping
@@ -29,6 +32,8 @@ EVIDENCE = ML_ROOT.parent / "evidence" / "e34_dda_acquisition.json"
 MIN_FREE_BYTES = 100 * 1024**3
 MAX_MEMBER_BYTES = 100 * 1024**2
 MAX_EXPANDED_BYTES = 40 * 1024**3
+CONTENT_RANGE_RE = re.compile(r"^bytes (\d+)-(\d+)/(\d+)$")
+RETRY_DELAYS = (0, 5, 20, 60, 180)
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -161,6 +166,120 @@ def download() -> dict[str, Any]:
     return receipt
 
 
+def parse_content_range(value: str | None) -> tuple[int, int, int]:
+    match = CONTENT_RANGE_RE.fullmatch(value or "")
+    if match is None:
+        raise ValueError(f"invalid Content-Range: {value!r}")
+    return tuple(int(part) for part in match.groups())
+
+
+def range_plan(start: int, total: int, workers: int = 4) -> list[tuple[int, int]]:
+    if not 0 <= start < total or workers <= 0:
+        raise ValueError("invalid range plan")
+    remaining = total - start
+    count = min(workers, remaining)
+    base, extra = divmod(remaining, count)
+    ranges = []
+    cursor = start
+    for index in range(count):
+        size = base + (1 if index < extra else 0)
+        ranges.append((cursor, cursor + size - 1))
+        cursor += size
+    return ranges
+
+
+def _download_range(url: str, path: Path, start: int, end: int, total: int) -> dict[str, Any]:
+    expected = end - start + 1
+    current = path.stat().st_size if path.exists() else 0
+    if current > expected:
+        raise ValueError(f"range partial exceeds expected size: {path}")
+    if current == expected:
+        return {"path": path, "bytes": current, "state": "already_complete"}
+    for delay in RETRY_DELAYS:
+        if delay:
+            time.sleep(delay)
+        current = path.stat().st_size if path.exists() else 0
+        request_start = start + current
+        try:
+            with requests.get(
+                url,
+                headers={"Range": f"bytes={request_start}-{end}"},
+                stream=True,
+                timeout=(30, 180),
+            ) as response:
+                response.raise_for_status()
+                found = parse_content_range(response.headers.get("Content-Range"))
+                if response.status_code != 206 or found != (request_start, end, total):
+                    raise ValueError(f"range response mismatch: {(response.status_code, found)}")
+                with path.open("ab") as output:
+                    for chunk in response.iter_content(8 * 1024**2):
+                        if chunk:
+                            output.write(chunk)
+            break
+        except (requests.RequestException, OSError) as error:
+            if delay == RETRY_DELAYS[-1]:
+                raise RuntimeError(f"range download failed: {start}-{end}") from error
+    found_bytes = path.stat().st_size
+    if found_bytes != expected:
+        raise ValueError(f"range length mismatch: {path} ({found_bytes} != {expected})")
+    return {"path": path, "bytes": found_bytes, "state": "downloaded"}
+
+
+def download_ranges(workers: int = 4) -> dict[str, Any]:
+    source = _selection()["source"]
+    destination = OUTPUT_ROOT / "archives" / FILENAME
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    if destination.exists():
+        return download()
+    prefix = destination.with_suffix(destination.suffix + ".partial")
+    prefix_bytes = prefix.stat().st_size if prefix.exists() else 0
+    if not 0 < prefix_bytes < EXPECTED_BYTES:
+        return download()
+    _remaining = EXPECTED_BYTES - prefix_bytes
+    free = shutil.disk_usage(OUTPUT_ROOT).free
+    if free < EXPECTED_BYTES + _remaining + MIN_FREE_BYTES:
+        raise OSError("insufficient free space for verified parallel assembly")
+    plan = range_plan(prefix_bytes, EXPECTED_BYTES, workers)
+    paths = [
+        destination.with_name(f"{FILENAME}.range-{start}-{end}.partial")
+        for start, end in plan
+    ]
+    with ThreadPoolExecutor(max_workers=len(plan)) as executor:
+        futures = {
+            executor.submit(_download_range, str(source["url"]), path, start, end, EXPECTED_BYTES): (start, end)
+            for (start, end), path in zip(plan, paths, strict=True)
+        }
+        for future in as_completed(futures):
+            start, end = futures[future]
+            future.result()
+            print(f"DDA range {start}-{end} complete", flush=True)
+    assembled = destination.with_suffix(destination.suffix + ".parallel.partial")
+    if assembled.exists():
+        raise FileExistsError(f"parallel assembly already exists: {assembled}")
+    with assembled.open("xb") as output:
+        for part in (prefix, *paths):
+            with part.open("rb") as source_file:
+                shutil.copyfileobj(source_file, output, length=8 * 1024**2)
+    if assembled.stat().st_size != EXPECTED_BYTES or _sha256_file(assembled) != EXPECTED_SHA256:
+        raise ValueError("parallel DDA-COCO assembly failed final size/SHA-256")
+    assembled.replace(destination)
+    for part in (prefix, *paths):
+        part.unlink()
+    receipt = {
+        "schema_version": 1,
+        "state": "archive_complete_sha256_verified",
+        "transfer_state": "parallel_ranges_assembled",
+        "selection_sha256": _sha256(SELECTION.read_bytes()),
+        "path": str(destination.relative_to(OUTPUT_ROOT)),
+        "bytes": EXPECTED_BYTES,
+        "sha256": EXPECTED_SHA256,
+        "preserved_prefix_bytes": prefix_bytes,
+        "range_count": len(plan),
+    }
+    _write_atomic(OUTPUT_ROOT / "download_receipt.json", receipt)
+    return receipt
+
+
 def inspect_zip(infos: list[zipfile.ZipInfo]) -> dict[str, Any]:
     names: set[str] = set()
     file_count = 0
@@ -234,9 +353,13 @@ def status() -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("freeze", "download", "inventory", "status"))
+    parser.add_argument("command", choices=("freeze", "download", "download-ranges", "inventory", "status"))
+    parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
-    result = {"freeze": freeze, "download": download, "inventory": inventory, "status": status}[args.command]()
+    if args.command == "download-ranges":
+        result = download_ranges(args.workers)
+    else:
+        result = {"freeze": freeze, "download": download, "inventory": inventory, "status": status}[args.command]()
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
 
