@@ -3084,3 +3084,18 @@ whole batch. The single-run score receipt binds the manifest, unchanged R1b cont
 hash; the candidate freezer can change only the threshold and refuses to rerun over an existing
 score/candidate. Fifteen focused archive/metric/manifest tests pass. DEVELOPMENT and the locked RR
 test remained unopened.
+
+The licensed RR calibration transfer then completed resumably and reproduced its published byte
+count and MD5. Archive inventory passed 3,000 images with the official 1,250+1,250 train and
+250+250 validation class counts; validation-only extraction produced 500 logical images. macOS
+created exFAT AppleDouble sidecars, which the manifest now rejects by name and cross-checks against
+the extraction receipt so they cannot silently double the sample count.
+
+Pre-score filename inspection corrected one planned assumption without reading a model output:
+the 250 AI validation files expose seven scenario prefixes, but every authentic filename is only
+`real_*`. RRDataset therefore cannot support a camera-pipeline or even per-site calibration claim.
+R1c CAL was honestly frozen as 250 pooled REAL plus 250 AI across seven scenario groups, with
+minimum reportable group size 20; IPN per-device and owner-gallery DEVELOPMENT remain mandatory
+transfer gates. The unscored detailed manifest is 124,960 B / SHA-256 `5d575a08...b521`, and compact
+evidence is `evidence/e33_r1c_cal_manifest.json`. Sixteen focused tests passed before the first
+production score.

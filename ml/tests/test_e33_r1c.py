@@ -12,6 +12,7 @@ from experiments import e33_r1c
     ("name", "expected"),
     [
         ("normal_000001.jpg", "everyday_life"),
+        ("real_000001.jpg", "rrdataset_real_pool"),
         ("production_000002.png", "labor_and_production"),
         ("Culture_&_Religion_000003.png", "culture_and_religion"),
         ("War_&_Conflict_Scenes_000004.png", "war_and_conflict"),
@@ -32,8 +33,9 @@ def test_manifest_preserves_explicit_label_direction_and_scenario(tmp_path: Path
         folder = root / class_name
         folder.mkdir(parents=True)
         Image.new("RGB", (8, 8)).save(folder / "normal_000001.jpg")
+        (folder / "._normal_000001.jpg").write_bytes(b"AppleDouble")
     receipt = tmp_path / "calibration_extraction_receipt.json"
-    receipt.write_text('{"state":"calibration_extraction_complete"}')
+    receipt.write_text('{"state":"calibration_extraction_complete","image_count":2}')
     monkeypatch.setattr(e33_r1c, "OUTPUT_ROOT", tmp_path)
     monkeypatch.setattr(e33_r1c, "MANIFEST", tmp_path / "manifest.json")
     monkeypatch.setattr(e33_r1c, "MANIFEST_EVIDENCE", tmp_path / "evidence.json")
@@ -42,4 +44,6 @@ def test_manifest_preserves_explicit_label_direction_and_scenario(tmp_path: Path
     assert result["real_count"] == result["ai_count"] == 1
     assert {row["label"] for row in payload["rows"]} == {0, 1}
     assert {row["source"] for row in payload["rows"]} == {"everyday_life"}
-    assert payload["source_semantics"] == "scenario groups, not camera-pipeline identities"
+    assert payload["source_semantics"] == (
+        "REAL is one undisclosed upstream pool; AI exposes seven scenario groups"
+    )

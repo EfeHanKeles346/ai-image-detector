@@ -684,3 +684,17 @@ selection receipt has SHA-256 `ad6fc31f...3519`; compact evidence is
 `evidence/e33_rrdataset_acquisition.json`. Metadata freeze downloaded zero archive bytes. Transfer
 must remain resumable, preserve a 100 GiB disk floor and promote a `.partial` only after exact byte
 count and MD5 verification.
+
+The calibration archive subsequently completed at its exact 2,163,176,547 B and reproduced MD5
+`2f4498c3...34500`. Safe inventory passed 3,000 images / 2,185,661,793 expanded bytes with no
+other file, unsafe path or unsupported member: train is 1,250 REAL + 1,250 AI and validation is
+250 REAL + 250 AI. Only the 500 validation images were atomically extracted (324,972,659 logical
+bytes); exFAT AppleDouble sidecars are ignored and never become manifest rows.
+
+The unscored `R1C_CAL` manifest contains exactly 250 REAL + 250 AI. RRDataset's validation
+filenames expose seven AI scenario groups (22–93 rows) but label every REAL file only as `real_*`;
+they do not expose the real upstream site, scene or camera. PixelProof therefore records REAL as
+one `rrdataset_real_pool`, uses an aggregate calibration false-positive budget and makes no
+multi-camera calibration claim. The detailed 124,960-byte manifest SHA-256 is
+`5d575a08...b521`; compact evidence is `evidence/e33_r1c_cal_manifest.json`. No model score existed
+when this allocation was frozen.

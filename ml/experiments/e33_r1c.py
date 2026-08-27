@@ -24,6 +24,7 @@ MANIFEST_EVIDENCE = ML_ROOT.parent / "evidence" / "e33_r1c_cal_manifest.json"
 CANDIDATE_EVIDENCE = ML_ROOT.parent / "evidence" / "e33_r1c_threshold.json"
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
 SCENARIOS = {
+    "real": "rrdataset_real_pool",
     "normal": "everyday_life",
     "production": "labor_and_production",
     "Culture_&_Religion": "culture_and_religion",
@@ -67,7 +68,11 @@ def build_manifest(root: Path = CAL_ROOT) -> dict[str, Any]:
         if not class_root.is_dir():
             raise FileNotFoundError(f"missing calibration class directory: {class_root}")
         for path in sorted(class_root.iterdir()):
-            if not path.is_file() or path.suffix.lower() not in IMAGE_SUFFIXES:
+            if (
+                not path.is_file()
+                or path.name.startswith("._")
+                or path.suffix.lower() not in IMAGE_SUFFIXES
+            ):
                 continue
             scenario = scenario_from_filename(path.name)
             rows.append({
@@ -81,6 +86,10 @@ def build_manifest(root: Path = CAL_ROOT) -> dict[str, Any]:
             })
     if not rows or {row["label"] for row in rows} != {0, 1}:
         raise ValueError("calibration manifest needs explicit REAL and AI rows")
+    if len(rows) != int(extraction["image_count"]):
+        raise ValueError(
+            f"calibration manifest count mismatch: {len(rows)} != {extraction['image_count']}"
+        )
     if len({row["path"] for row in rows}) != len(rows):
         raise ValueError("calibration manifest repeats a path")
     if len({row["parent_id"] for row in rows}) != len(rows):
@@ -94,9 +103,10 @@ def build_manifest(root: Path = CAL_ROOT) -> dict[str, Any]:
         "state": "r1c_cal_manifest_frozen_unscored",
         "label_invariant": {"real": 0, "ai": 1},
         "role": "calibration_only",
-        "source_semantics": "scenario groups, not camera-pipeline identities",
+        "source_semantics": "REAL is one undisclosed upstream pool; AI exposes seven scenario groups",
         "limitations": [
-            "RRDataset filenames expose scenario but not the originating camera pipeline.",
+            "RRDataset validation filenames expose AI scenario but not REAL scenario or camera pipeline.",
+            "The REAL false-positive budget is aggregate and cannot claim cross-camera calibration.",
             "Owner-gallery and IPN scores are absent and cannot select this threshold.",
             "The RRDataset test archive is absent and locked at this stage.",
         ],
@@ -186,7 +196,9 @@ def _score_rows() -> list[dict[str, Any]]:
 
 def freeze_threshold() -> dict[str, Any]:
     rows = _score_rows()
-    result = select_source_robust_threshold(rows, min_group_size=100)
+    # The official 500-row validation split exposes 250 pooled REAL rows and roughly 22-93
+    # AI rows per scenario. Twenty is frozen from filenames, before any model score is opened.
+    result = select_source_robust_threshold(rows, min_group_size=20)
     receipt = json.loads((OUTPUT_ROOT / "r1c_cal_score_receipt.json").read_text())
     detailed = {
         "schema_version": 1,

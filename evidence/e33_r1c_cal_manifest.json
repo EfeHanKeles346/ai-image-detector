@@ -1,0 +1,22 @@
+{
+  "ai_count": 250,
+  "by_class_source": {
+    "ai/culture_and_religion": 29,
+    "ai/everyday_life": 93,
+    "ai/labor_and_production": 23,
+    "ai/medical_and_public_health": 33,
+    "ai/natural_disasters_and_accidents": 22,
+    "ai/political_and_social_events": 25,
+    "ai/war_and_conflict": 25,
+    "real/rrdataset_real_pool": 250
+  },
+  "detailed_manifest_bytes": 124960,
+  "detailed_manifest_sha256": "5d575a08a214002b962a128f8684de9ef161f85ecaf06a53b8dbfb7fede8b521",
+  "production_scores_created": 0,
+  "real_count": 250,
+  "role": "calibration_only",
+  "row_count": 500,
+  "schema_version": 1,
+  "source_semantics": "REAL is one undisclosed upstream pool; AI exposes seven scenario groups",
+  "state": "r1c_cal_manifest_frozen_unscored"
+}

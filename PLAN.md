@@ -68,6 +68,11 @@ unrelated personal, academic or EOE material.
       parent groups, and decontaminate against protected PixelProof roles. Only its declared
       train/validation portion may form `R1C_CAL`; no RR test row may select a threshold, transform
       or retry.
+      The passed pre-score inventory contains 1,250 REAL + 1,250 AI train and 250 REAL + 250 AI
+      validation images. R1c-T uses only the official 500-row validation split. Filenames expose
+      seven AI scenario groups (22–93 rows) but collapse REAL to one undisclosed pool, so the
+      frozen minimum reportable group size is 20 and the REAL gate is aggregate—not a multi-camera
+      transfer claim. IPN per-device and owner-gallery DEVELOPMENT must still verify transfer.
 - [ ] Download `RRDataset_test.tar.gz` only after the R1c-T artifact/threshold contract is frozen.
       Inventory and extract safely, then open/score the official labels once. If transfer time is
       interrupted, preserve the partial and stop honestly; do not substitute an easier set after
