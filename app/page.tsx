@@ -11,7 +11,7 @@ import {
   resolveApiOrigin,
   type Analysis,
   type Decision,
-  type Verdict,
+  type R1bResearchResult,
 } from "./analysis-contract";
 
 type Preview = { name: string; url: string; size: string; file: File };
@@ -32,26 +32,16 @@ const PROJECT_METHOD = {
   hint: "Projede eğitildi · 128 px yerel kesitler · top-3",
 };
 
-const RESEARCH_METHODS = [
-  { id: "auto", label: "Eski otomatik", hint: "Boyuta göre eski yöntem seçimi" },
-  { id: "cnn", label: "CNN", hint: "Küçültülmüş görsel CNN'i" },
-  { id: "stats", label: "İstatistik", hint: "68 elle tasarlanmış özellik" },
-  { id: "tiles", label: "Özellik tile'ları", hint: "Eski istatistiksel kesit haritası" },
-];
-
-const SIGNAL_TEXT: Record<Verdict, string> = {
-  ai: "sinyal AI yönünde",
-  real: "sinyal gerçek yönünde",
-  uncertain: "sinyal kararsız bantta",
-};
-
 function ExternalComparison({ decision, enoughEvidence }: {
   decision: Decision | null;
   enoughEvidence: boolean;
 }) {
   return (
-    <section className="comparison-card" aria-label="Haricî dedektör karşılaştırması">
-      <div className="section-kicker">Haricî karşılaştırma · E26</div>
+    <section className="comparison-card" aria-label="Ana karar katmanı">
+      <div className="card-topline">
+        <div className="section-kicker">Ana karar katmanı · E26</div>
+        <span className="status-chip status-measured">Ölçülmüş</span>
+      </div>
       {!enoughEvidence ? (
         <p>Karşılaştırma için görselin her iki boyutu da en az 48 piksel olmalıdır.</p>
       ) : !decision ? (
@@ -85,6 +75,46 @@ function ExternalComparison({ decision, enoughEvidence }: {
           <small>{decision.provenance}</small>
         </>
       )}
+    </section>
+  );
+}
+
+function R1bResearch({ candidate }: { candidate: R1bResearchResult | null }) {
+  if (!candidate) return null;
+  const scorePercent = candidate.score * 100;
+  const thresholdPercent = candidate.threshold * 100;
+
+  return (
+    <section
+      className={`r1b-card ${candidate.triggered ? "r1b-triggered" : "r1b-quiet"}`}
+      aria-label="E32 R1b deneysel ikinci görüş"
+    >
+      <div className="card-topline">
+        <div className="section-kicker">Yeni proje adayı · R1b</div>
+        <span className="status-chip status-research">Kararı etkilemez</span>
+      </div>
+      <h3>{candidate.triggered ? "R1b, AI yönünde sinyal verdi" : "R1b eşiği aşılmadı"}</h3>
+      <p>
+        {candidate.triggered
+          ? "Bu yalnız deneysel bir tetiklenmedir; gerçek fotoğraflardaki yüksek yanlış alarm nedeniyle ana hüküm değildir."
+          : "Bu yalnız yetersiz AI kanıtı demektir; görselin gerçek olduğunu doğrulamaz."}
+      </p>
+      <div className="research-meter" aria-label={`R1b skoru ${candidate.score.toFixed(3)}, eşik ${candidate.threshold.toFixed(3)}`}>
+        <div className="research-meter-track">
+          <span className="research-meter-fill" style={{ width: `${scorePercent}%` }} />
+          <span className="research-meter-threshold" style={{ left: `${thresholdPercent}%` }} />
+        </div>
+        <div className="project-meter-labels">
+          <strong>Model skoru {candidate.score.toFixed(3)}</strong>
+          <span>Eşik {candidate.threshold.toFixed(3)} · olasılık değil</span>
+        </div>
+      </div>
+      <div className="risk-grid">
+        <div><strong>%{(candidate.evaluation.ipn_worst_device_fp * 100).toFixed(0)}</strong><span>IPN en kötü cihaz FP</span></div>
+        <div><strong>%{(candidate.evaluation.owner_gallery_fp * 100).toFixed(1)}</strong><span>Galeri FP</span></div>
+      </div>
+      <p className="limitation-note"><strong>Ölçülen sınır:</strong> {candidate.limitation}</p>
+      <small title={candidate.artifact_sha256}>Artifact {candidate.artifact_sha256.slice(0, 12)}…</small>
     </section>
   );
 }
@@ -136,36 +166,11 @@ function ProjectResult({ analysis }: { analysis: Analysis }) {
   );
 }
 
-function LegacyResult({ analysis }: { analysis: Analysis }) {
-  const scorePosition = Math.min(100, Math.max(0, analysis.p_ai * 100));
-  return (
-    <section className="legacy-result" aria-label="Eski araştırma yöntemi sonucu">
-      <div className="section-kicker">Eski araştırma yöntemi</div>
-      <p>
-        Bu skor kanonik proje modeli değildir ve karara dahil edilmez. Yalnız geçmiş deneyleri
-        karşılaştırmak için gösterilir.
-      </p>
-      <div className="probability">
-        <div className="probability-labels">
-          <span>0</span>
-          <strong>{analysis.p_ai.toFixed(3)} · {SIGNAL_TEXT[analysis.verdict]}</strong>
-          <span>1</span>
-        </div>
-        <div className="probability-track">
-          <div className={`probability-fill verdict-${analysis.verdict}`} style={{ width: `${scorePosition}%` }} />
-        </div>
-      </div>
-      <small>{analysis.method_label} · {analysis.resolution}</small>
-    </section>
-  );
-}
-
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const previewUrlRef = useRef<string | null>(null);
   const requestGateRef = useRef(new LatestRequestGate());
   const [preview, setPreview] = useState<Preview | null>(null);
-  const [method, setMethod] = useState(PROJECT_METHOD.id);
   const [dragging, setDragging] = useState(false);
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
@@ -216,7 +221,7 @@ export default function Home() {
     choose(event.dataTransfer.files?.[0]);
   }
 
-  async function analyze(useMethod = method) {
+  async function analyze() {
     if (!preview) return;
     const selectedPreview = preview;
     const ticket = requestGateRef.current.begin();
@@ -225,7 +230,7 @@ export default function Home() {
     try {
       const body = new FormData();
       body.append("image", selectedPreview.file);
-      body.append("method", useMethod);
+      body.append("method", PROJECT_METHOD.id);
       const response = await fetch(analysisEndpoint(API_ORIGIN), {
         method: "POST",
         body,
@@ -255,36 +260,32 @@ export default function Home() {
     }
   }
 
-  function pick(id: string) {
-    setMethod(id);
-    if (analysis) analyze(id);
-  }
-
-  const isProjectMethod = method === PROJECT_METHOD.id;
-
   return (
     <main>
       <header>
         <div className="header-content">
-          <strong>PixelProof</strong>
-          <span>Proje modeli · E20</span>
+          <div className="brand"><i aria-hidden="true">P</i><strong>PixelProof</strong></div>
+          <span>Yerel araştırma demosu</span>
         </div>
       </header>
 
       <div className="container">
         <section className="intro">
-          <span className="intro-kicker">Çalıştırılabilir model demosu</span>
-          <h1>Kendi AI görsel modelimizi deneyin</h1>
+          <span className="intro-kicker">Tek görsel · ayrıştırılmış kanıt katmanları</span>
+          <h1>Bir görsel yükle, modellerin ne gördüğünü karşılaştır.</h1>
           <p>
-            Bir görsel yükleyin. Önce projede eğitilen ResNet-18 çalışır; varsa haricî karar
-            katmanı sonucu ayrı bir karşılaştırma olarak gösterilir.
+            Ana E26 yorumu, yeni R1b araştırma adayı ve E20 taban modeli birbirine karıştırılmadan
+            gösterilir. Hiçbir negatif sonuç gerçeklik sertifikası değildir.
           </p>
+          <div className="intro-pills" aria-label="Demo özellikleri">
+            <span>Dosya cihazında kalır</span><span>Tek seferde analiz</span><span>Sınırlar açıkça görünür</span>
+          </div>
         </section>
 
         <section className="grid">
           <div className="panel">
             <div className="panel-title">
-              <h2>1. Görsel yükle</h2>
+              <h2>Görsel</h2>
               <p>JPG, PNG veya WEBP · en fazla 12 MB</p>
             </div>
 
@@ -295,7 +296,7 @@ export default function Home() {
                 onDragLeave={() => setDragging(false)}
                 onDrop={onDrop}
               >
-                <div className="upload-symbol">↑</div>
+                <div className="upload-symbol" aria-hidden="true">＋</div>
                 <strong>Fotoğrafı buraya bırakın</strong>
                 <span>veya bilgisayarınızdan seçin</span>
                 <button type="button" onClick={() => inputRef.current?.click()}>Dosya seç</button>
@@ -348,67 +349,45 @@ export default function Home() {
 
           <div className="panel result-panel">
             <div className="panel-title">
-              <h2>2. Proje modelini çalıştır</h2>
-              <p>Birincil sonuç her zaman kendi E20 modelimize aittir</p>
+              <h2>Analiz</h2>
+              <p>Ölçülmüş karar ile deneysel sinyaller ayrı kalır</p>
             </div>
 
-            <button
-              type="button"
-              className={`primary-method ${isProjectMethod ? "active" : ""}`}
-              onClick={() => pick(PROJECT_METHOD.id)}
-              disabled={loading}
-              aria-pressed={isProjectMethod}
-            >
+            <div className="primary-method active" aria-label="Çalışacak model zinciri">
               <span><strong>{PROJECT_METHOD.label}</strong><small>{PROJECT_METHOD.hint}</small></span>
-              <b>{isProjectMethod ? "Seçili" : "Seç"}</b>
-            </button>
-
-            <details className="research-methods">
-              <summary>Eski araştırma yöntemlerini aç</summary>
-              <p>Geçmiş deneyleri karşılaştırmak içindir; proje modelinin yerine geçmez.</p>
-              <div className="methods">
-                {RESEARCH_METHODS.map((candidate) => (
-                  <button
-                    key={candidate.id}
-                    type="button"
-                    className={`method ${method === candidate.id ? "active" : ""}`}
-                    onClick={() => pick(candidate.id)}
-                    disabled={loading}
-                    aria-pressed={method === candidate.id}
-                    title={candidate.hint}
-                  >
-                    {candidate.label}
-                  </button>
-                ))}
-              </div>
-            </details>
+              <b>Sabit taban</b>
+            </div>
 
             {!analysis ? (
               <div className="result empty-result" aria-live="polite" aria-busy={loading}>
-                <div className="result-icon">P</div>
-                <h3>{preview ? "Proje modeli hazır" : "Önce bir görsel yükleyin"}</h3>
+                <div className="result-icon" aria-hidden="true">◎</div>
+                <h3>{preview ? "Analize hazır" : "Önce bir görsel yükleyin"}</h3>
                 <p>
                   {preview
-                    ? "Tek düğmeyle doğrulanmış E20 checkpoint’ini çalıştırabilirsiniz."
-                    : "Model, görseli doğal çözünürlükte 128 px kesitler üzerinden inceler."}
+                    ? "Tek çalıştırmada karar katmanı, R1b adayı ve E20 tabanı ayrı ayrı görünecek."
+                    : "JPG, PNG veya WEBP seçin; sonuçlar aynı görsel üzerinde karşılaştırılsın."}
                 </p>
                 {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" disabled={!preview || loading} onClick={() => analyze()}>
-                  {loading ? "Model çalışıyor…" : isProjectMethod ? "Proje modelini çalıştır" : "Seçili yöntemi çalıştır"}
+                  {loading ? "Modeller inceliyor…" : "Görseli analiz et"}
                 </button>
               </div>
             ) : (
               <div className="result result-stack" aria-live="polite" aria-busy={loading}>
-                {analysis.project_model
-                  ? <ProjectResult analysis={analysis} />
-                  : <LegacyResult analysis={analysis} />}
                 <ExternalComparison
                   decision={analysis.decision}
                   enoughEvidence={analysis.enough_evidence}
                 />
+                <R1bResearch candidate={analysis.r1b_research} />
+                {analysis.project_model && (
+                  <details className="baseline-details">
+                    <summary>E20 taban modelinin teknik sonucunu göster</summary>
+                    <ProjectResult analysis={analysis} />
+                  </details>
+                )}
                 {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" onClick={() => analyze()} disabled={loading}>
-                  {loading ? "Model çalışıyor…" : "Tekrar çalıştır"}
+                  {loading ? "Modeller inceliyor…" : "Yeniden analiz et"}
                 </button>
               </div>
             )}
@@ -416,11 +395,10 @@ export default function Home() {
         </section>
 
         <aside>
-          <strong>Bu ekrandaki ayrım:</strong> Birinci kart projede eğittiğimiz E20 ResNet-18’in
-          deneysel sonucudur. Üç seed değerlendirmesinde worst-source yanlış alarmı
-          %86,2 ± %3,1 olduğu için gerçeklik sertifikası değildir. Haricî E26 karşılaştırması
-          ayrı tutulur; onun ölçülen iki-kollu worst-source sonucu 11/103, yani %10,7 idi
-          (Wilson %95: %6,1–%18,1). İki sistem de negatif sonuçta “gerçektir” demez.
+          <strong>Sonucu nasıl okuyacaksın?</strong> E26 ana karar katmanıdır; R1b en yeni fakat
+          başarısız dış teste sahip proje adayıdır; E20 ise teknik tabandır. Modeller uyuşmazsa bu
+          hata değil, veri kaymasının görünür kanıtıdır. Hiçbiri tek başına gerçeklik sertifikası
+          vermez.
         </aside>
       </div>
     </main>

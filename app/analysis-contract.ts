@@ -35,6 +35,22 @@ export type ProjectModelResult = {
   tile_px: number;
   tile_count: number;
 };
+export type R1bResearchResult = {
+  id: string;
+  label: string;
+  score: number;
+  threshold: number;
+  triggered: boolean;
+  band: "ai_signal" | "insufficient_evidence";
+  research_only: true;
+  affects_decision: false;
+  artifact_sha256: string;
+  limitation: string;
+  evaluation: {
+    ipn_worst_device_fp: number;
+    owner_gallery_fp: number;
+  };
+};
 export type Analysis = {
   p_ai: number;
   verdict: Verdict;
@@ -47,6 +63,7 @@ export type Analysis = {
   tile_map: TileMap | null;
   project_model: ProjectModelResult | null;
   decision: Decision | null;
+  r1b_research: R1bResearchResult | null;
 };
 
 export class AnalysisResponseError extends Error {
@@ -171,6 +188,32 @@ function parseProjectModel(value: unknown): ProjectModelResult | null {
   return value as ProjectModelResult;
 }
 
+function parseR1bResearch(value: unknown): R1bResearchResult | null {
+  if (value === null) return null;
+  if (
+    !record(value) ||
+    typeof value.id !== "string" ||
+    typeof value.label !== "string" ||
+    !finite(value.score) || value.score < 0 || value.score > 1 ||
+    !finite(value.threshold) || value.threshold < 0 || value.threshold > 1 ||
+    typeof value.triggered !== "boolean" ||
+    (value.band !== "ai_signal" && value.band !== "insufficient_evidence") ||
+    value.research_only !== true ||
+    value.affects_decision !== false ||
+    typeof value.artifact_sha256 !== "string" ||
+    !/^[a-f0-9]{64}$/.test(value.artifact_sha256) ||
+    typeof value.limitation !== "string" ||
+    !record(value.evaluation) ||
+    !finite(value.evaluation.ipn_worst_device_fp) ||
+    !finite(value.evaluation.owner_gallery_fp) ||
+    value.evaluation.ipn_worst_device_fp < 0 || value.evaluation.ipn_worst_device_fp > 1 ||
+    value.evaluation.owner_gallery_fp < 0 || value.evaluation.owner_gallery_fp > 1
+  ) {
+    throw new AnalysisResponseError();
+  }
+  return value as R1bResearchResult;
+}
+
 export function parseAnalysis(value: unknown): Analysis {
   if (
     !record(value) ||
@@ -193,6 +236,7 @@ export function parseAnalysis(value: unknown): Analysis {
     tile_map: parseTileMap(value.tile_map),
     project_model: parseProjectModel(value.project_model ?? null),
     decision: parseDecision(value.decision),
+    r1b_research: parseR1bResearch(value.r1b_research ?? null),
   };
 }
 

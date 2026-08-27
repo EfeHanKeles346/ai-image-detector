@@ -44,6 +44,19 @@ const validAnalysis = {
     bytes_per_pixel: 0.8,
     provenance: "test fixture",
   },
+  r1b_research: {
+    id: "e32_r1b_cfvit_iphone_correction",
+    label: "E32 R1b · CF-ViT",
+    score: 0.82,
+    threshold: 0.1259,
+    triggered: true,
+    band: "ai_signal",
+    research_only: true,
+    affects_decision: false,
+    artifact_sha256: "b".repeat(64),
+    limitation: "Measured external real false positives",
+    evaluation: { ipn_worst_device_fp: 0.4, owner_gallery_fp: 144 / 210 },
+  },
 };
 
 test("API origin is explicit in deployments and deliberately local in development", () => {
@@ -71,6 +84,13 @@ test("analysis responses are validated before UI state receives them", () => {
     () => parseAnalysis({
       ...validAnalysis,
       project_model: { ...validAnalysis.project_model, artifact_sha256: "not-a-hash" },
+    }),
+    AnalysisResponseError,
+  );
+  assert.throws(
+    () => parseAnalysis({
+      ...validAnalysis,
+      r1b_research: { ...validAnalysis.r1b_research, affects_decision: true },
     }),
     AnalysisResponseError,
   );
