@@ -3065,3 +3065,13 @@ R1c calibration source; the 20,117,869,400-byte test archive is locked until the
 candidate is frozen. The detailed selection receipt is 1,166 B / SHA-256
 `ad6fc31f...3519`; compact evidence is `evidence/e33_rrdataset_acquisition.json`. Ten focused data
 contract/acquisition tests passed and status confirmed zero archive/partial bytes at the freeze.
+
+E33's measurement and archive-safety code was then implemented before opening or scoring a
+production member. The shared metric layer enforces explicit `0=REAL, 1=AI`, preserves failed rows,
+and reports ROC-AUC, EER, TPR@FPR, separate target/non-target Brier diagnostics, thresholded
+confusion/balanced accuracy and per-source/condition rates. Its CAL-only selector chooses the
+lowest threshold satisfying frozen macro/worst authentic false-positive budgets and rejects it if
+AI family floors fail. The RR acquisition tool now rejects traversal, links/devices, duplicate
+members, undeclared class paths, implausible files and excessive expansion before atomic
+validation-only extraction. Nine focused metric/acquisition tests pass. No production image was
+scored and the locked test archive remained unopened at this checkpoint.

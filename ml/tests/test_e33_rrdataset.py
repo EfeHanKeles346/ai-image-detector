@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 from copy import deepcopy
+import tarfile
 
 import pytest
 
-from experiments.e33_rrdataset import FILES, RECORD_ID, validate_record
+from experiments.e33_rrdataset import FILES, RECORD_ID, inspect_members, validate_record
 
 
 def _record() -> dict:
@@ -44,3 +45,39 @@ def test_rrdataset_record_rejects_checksum_drift() -> None:
     payload["files"][0]["checksum"] = "md5:" + "0" * 32
     with pytest.raises(ValueError, match="contract changed"):
         validate_record(payload)
+
+
+def _member(name: str, size: int = 10) -> tarfile.TarInfo:
+    item = tarfile.TarInfo(name)
+    item.size = size
+    item.type = tarfile.REGTYPE
+    return item
+
+
+def test_cal_archive_inventory_requires_explicit_split_and_class() -> None:
+    root = "RRDataset_original_train_val"
+    result = inspect_members(
+        [
+            _member(f"{root}/train/real/a.jpg"),
+            _member(f"{root}/train/ai/b.png"),
+            _member(f"{root}/val/real/c.jpeg"),
+            _member(f"{root}/val/ai/d.png"),
+        ],
+        role="cal",
+    )
+    assert result["image_count"] == 4
+    assert result["by_split_class"] == {
+        "train/ai": 1,
+        "train/real": 1,
+        "val/ai": 1,
+        "val/real": 1,
+    }
+
+
+def test_archive_inventory_rejects_traversal_and_links() -> None:
+    with pytest.raises(ValueError, match="unsafe"):
+        inspect_members([_member("RRDataset_original_train_val/../escape.jpg")], role="cal")
+    link = tarfile.TarInfo("RRDataset_original_train_val/val/real/link.jpg")
+    link.type = tarfile.SYMTYPE
+    with pytest.raises(ValueError, match="unsupported"):
+        inspect_members([link], role="cal")

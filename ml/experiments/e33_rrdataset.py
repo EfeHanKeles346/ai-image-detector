@@ -7,6 +7,7 @@ import hashlib
 import json
 import shutil
 import subprocess
+import tarfile
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -22,6 +23,13 @@ OUTPUT_ROOT = DATA_ROOT / "e33_rrdataset"
 SELECTION = OUTPUT_ROOT / "acquisition_selection.json"
 EVIDENCE = ML_ROOT.parent / "evidence" / "e33_rrdataset_acquisition.json"
 MIN_FREE_BYTES = 100 * 1024**3
+MAX_MEMBER_BYTES = 100 * 1024**2
+MAX_EXPANDED_BYTES = {"cal": 40 * 1024**3, "test": 240 * 1024**3}
+TOP_LEVEL = {
+    "cal": "RRDataset_original_train_val",
+    "test": "RRDataset_test",
+}
+IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
 FILES = {
     "cal": {
         "name": "RRDataset_original_train_val.tar.gz",
@@ -183,6 +191,144 @@ def download(role: str) -> dict[str, Any]:
     return receipt
 
 
+def _safe_member_name(name: str, expected_top: str) -> Path:
+    path = Path(name)
+    if path.is_absolute() or ".." in path.parts or not path.parts:
+        raise ValueError(f"unsafe tar path: {name!r}")
+    if path.parts[0] != expected_top:
+        raise ValueError(f"unexpected tar root: {name!r}")
+    return path
+
+
+def inspect_members(
+    members: list[tarfile.TarInfo], *, role: str
+) -> dict[str, Any]:
+    if role not in FILES:
+        raise ValueError(f"unknown role {role!r}")
+    names: set[str] = set()
+    image_count = 0
+    image_bytes = 0
+    other_files: list[str] = []
+    by_split_class: dict[str, int] = {}
+    for member in members:
+        path = _safe_member_name(member.name, TOP_LEVEL[role])
+        if member.name in names:
+            raise ValueError(f"duplicate tar member: {member.name}")
+        names.add(member.name)
+        if member.issym() or member.islnk() or member.isdev() or member.isfifo():
+            raise ValueError(f"unsupported tar member type: {member.name}")
+        if not (member.isdir() or member.isfile()):
+            raise ValueError(f"unknown tar member type: {member.name}")
+        if member.size < 0 or member.size > MAX_MEMBER_BYTES:
+            raise ValueError(f"implausible tar member size: {member.name}")
+        if not member.isfile():
+            continue
+        if path.suffix.lower() in IMAGE_SUFFIXES:
+            if len(path.parts) < 4:
+                raise ValueError(f"image lacks split/class path: {member.name}")
+            split, class_name = path.parts[1:3]
+            if class_name not in {"real", "ai"}:
+                raise ValueError(f"image class is not explicit real/ai: {member.name}")
+            key = f"{split}/{class_name}"
+            by_split_class[key] = by_split_class.get(key, 0) + 1
+            image_count += 1
+            image_bytes += member.size
+        else:
+            other_files.append(member.name)
+    if image_bytes > MAX_EXPANDED_BYTES[role]:
+        raise ValueError("archive expansion exceeds the frozen safety ceiling")
+    if not image_count:
+        raise ValueError("archive contains no supported image")
+    return {
+        "member_count": len(members),
+        "image_count": image_count,
+        "image_bytes": image_bytes,
+        "by_split_class": dict(sorted(by_split_class.items())),
+        "other_files": sorted(other_files),
+    }
+
+
+def inventory(role: str) -> dict[str, Any]:
+    selection = _selection()
+    item = selection["files"][role]
+    archive = OUTPUT_ROOT / "archives" / item["name"]
+    if not archive.is_file() or archive.stat().st_size != int(item["bytes"]):
+        raise FileNotFoundError(f"verified {role} archive is not complete")
+    receipt_path = OUTPUT_ROOT / f"{role}_download_receipt.json"
+    receipt = json.loads(receipt_path.read_text())
+    if receipt.get("state") != f"{role}_archive_complete_md5_verified":
+        raise ValueError(f"{role} download receipt is not verified")
+    with tarfile.open(archive, mode="r:gz") as bundle:
+        summary = inspect_members(bundle.getmembers(), role=role)
+    result = {
+        "schema_version": 1,
+        "state": f"{role}_archive_inventory_passed",
+        "selection_sha256": _sha256(SELECTION.read_bytes()),
+        "download_receipt_sha256": _sha256(receipt_path.read_bytes()),
+        "archive": {key: item[key] for key in ("name", "bytes", "md5", "role")},
+        **summary,
+    }
+    _write_atomic(OUTPUT_ROOT / f"{role}_archive_inventory.json", result)
+    return result
+
+
+def extract_calibration() -> dict[str, Any]:
+    inventory_path = OUTPUT_ROOT / "cal_archive_inventory.json"
+    inventory_payload = json.loads(inventory_path.read_text())
+    if inventory_payload.get("state") != "cal_archive_inventory_passed":
+        raise ValueError("calibration archive inventory has not passed")
+    archive = OUTPUT_ROOT / "archives" / FILES["cal"]["name"]
+    final_root = OUTPUT_ROOT / "calibration"
+    temporary_root = OUTPUT_ROOT / "calibration.partial"
+    if final_root.exists():
+        return {"state": "calibration_already_extracted", "path": str(final_root)}
+    if temporary_root.exists():
+        raise FileExistsError(f"partial extraction requires manual audit: {temporary_root}")
+    temporary_root.mkdir(parents=True)
+    extracted = 0
+    extracted_bytes = 0
+    try:
+        with tarfile.open(archive, mode="r:gz") as bundle:
+            for member in bundle:
+                path = _safe_member_name(member.name, TOP_LEVEL["cal"])
+                if not member.isfile() or len(path.parts) < 4 or path.parts[1] != "val":
+                    continue
+                if path.parts[2] not in {"real", "ai"} or path.suffix.lower() not in IMAGE_SUFFIXES:
+                    continue
+                relative = Path(*path.parts[2:])
+                destination = temporary_root / relative
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                source = bundle.extractfile(member)
+                if source is None:
+                    raise ValueError(f"cannot read tar member: {member.name}")
+                with source, destination.open("xb") as output:
+                    shutil.copyfileobj(source, output, length=8 * 1024**2)
+                if destination.stat().st_size != member.size:
+                    raise ValueError(f"extracted size mismatch: {member.name}")
+                extracted += 1
+                extracted_bytes += member.size
+        expected = sum(
+            int(count)
+            for key, count in inventory_payload["by_split_class"].items()
+            if key.startswith("val/")
+        )
+        if extracted != expected:
+            raise ValueError(f"calibration extraction count mismatch: {extracted} != {expected}")
+        temporary_root.replace(final_root)
+    except Exception:
+        raise
+    result = {
+        "schema_version": 1,
+        "state": "calibration_extraction_complete",
+        "inventory_sha256": _sha256(inventory_path.read_bytes()),
+        "path": str(final_root.relative_to(OUTPUT_ROOT)),
+        "image_count": extracted,
+        "image_bytes": extracted_bytes,
+    }
+    _write_atomic(OUTPUT_ROOT / "calibration_extraction_receipt.json", result)
+    return result
+
+
 def status() -> dict[str, Any]:
     result: dict[str, Any] = {"selection_exists": SELECTION.exists(), "files": {}}
     for role, item in FILES.items():
@@ -198,7 +344,13 @@ def status() -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("freeze", "download-cal", "download-test", "status"))
+    parser.add_argument(
+        "command",
+        choices=(
+            "freeze", "download-cal", "download-test", "inventory-cal", "inventory-test",
+            "extract-cal", "status",
+        ),
+    )
     args = parser.parse_args()
     if args.command == "freeze":
         result = freeze()
@@ -206,6 +358,12 @@ def main() -> int:
         result = download("cal")
     elif args.command == "download-test":
         result = download("test")
+    elif args.command == "inventory-cal":
+        result = inventory("cal")
+    elif args.command == "inventory-test":
+        result = inventory("test")
+    elif args.command == "extract-cal":
+        result = extract_calibration()
     else:
         result = status()
     print(json.dumps(result, indent=2, sort_keys=True))
