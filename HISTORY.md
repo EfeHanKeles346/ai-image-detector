@@ -3336,3 +3336,10 @@ and 90% worst AI—showing the remaining defect is OOF-to-refit threshold scale,
 Because the value comes from FINAL it is permanently ineligible for E38. The 640 rows are now
 consumed E39 development/calibration data; a corrected threshold may face only a newly sourced,
 fully disjoint FINAL.
+
+The E36–E38 slice closed with 251/251 Python tests, bytecode compilation and dependency integrity;
+the six-entry canonical runtime artifact registry also passed. The production web build, all six
+web tests, TypeScript and ESLint passed unchanged. One known upstream Starlette/httpx deprecation
+warning remains unrelated to inference. Acquisition, manifests, experiment contracts, failed and
+passed intermediate gates, the one-shot FINAL result and the E39 boundary are all committed and
+pushed; no local scientific result is left undocumented.
