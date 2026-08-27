@@ -3343,3 +3343,22 @@ web tests, TypeScript and ESLint passed unchanged. One known upstream Starlette/
 warning remains unrelated to inference. Acquisition, manifests, experiment contracts, failed and
 passed intermediate gates, the one-shot FINAL result and the E39 boundary are all committed and
 pushed; no local scientific result is left undocumented.
+
+### E39-A checkpoint — decision layer corrected, independent proof still required
+
+Before changing a threshold, the complete 640-parent E38 FINAL was explicitly reclassified as
+consumed `E39_CALIBRATION`. The role amendment binds the failed E38 evidence, original manifest,
+score stream and byte-identical DINOv2-S logistic artifact. It forbids retraining, row selection,
+crop/preprocessing changes, score reversal and any reinterpretation of the failed E38 claim.
+
+One source-robust threshold was then selected from every consumed score under the unchanged joint
+budgets. The frozen value is `0.27006945014`. On calibration it gives 10.0% REAL device-macro and
+17.0% worst-device false positives, 95.0% AI family-macro and 90.0% worst-family recall, balanced
+accuracy 0.925, AUC 0.98185, TPR@FPR10 0.95 and EER 0.075. All calibration gates pass with 640/640
+coverage. These are development measurements, not a new model result.
+
+The E39 candidate is a small decision-layer contract pointing to the unchanged artifact SHA-256
+`fddbe475...4067`; candidate JSON SHA-256 is `7d497929...2cef`. Compact calibration evidence is
+`evidence/e39_calibration.json` (`5f9a000e...4b0e`). No E39 FINAL image has been transferred or
+scored. The next valid claim therefore requires a source-frozen, licensed and genuinely disjoint
+FINAL collected without model access.

@@ -315,10 +315,10 @@ value is permanently contaminated and cannot be served or used to relabel E38 as
 
 - [x] Reclassify all 640 E38 FINAL parents as consumed `E39_CALIBRATION`; they can select E39 but
       can never again provide final evidence.
-- [ ] Keep the DINOv2-S representation and fitted head byte-identical (`fddbe475...4067`). Freeze
+- [x] Keep the DINOv2-S representation and fitted head byte-identical (`fddbe475...4067`). Freeze
       exactly one E39 threshold from the consumed calibration scores under the same REAL and AI
       subgroup budgets. Do not change examples, weights, architecture, crop or score direction.
-- [ ] Package the threshold as a new research candidate with explicit E38/E39 provenance. The
+- [x] Package the threshold as a new research candidate with explicit E38/E39 provenance. The
       currently observed `0.270069` value is development-selected; it is eligible only for a new
       independent test and must not alter the recorded E38 result.
 

@@ -1,0 +1,232 @@
+{
+  "boundary": "Development-selected on consumed E38 FINAL scores. Eligible only for one new independent E39 FINAL; not evidence that E38 passed.",
+  "consumed_scores_sha256": "dd4f181de50d56ee5862db8b623053d0eb1f8e6471ff84c3e3506d8fe728dc2d",
+  "counts": {
+    "ai": 240,
+    "real": 400,
+    "total": 640
+  },
+  "experiment": "E39/calibration-transfer-correction",
+  "frontier": {
+    "ai_macro_recall": 0.9500000000000001,
+    "ai_recall_by_source": {
+      "FLUX.2-pro": 0.975,
+      "GPT-Image-1.5": 0.95,
+      "HunyuanImage-3.0": 0.975,
+      "Imagen-4.0-Ultra": 0.975,
+      "Seedream-4.5": 0.9,
+      "nano-banana-pro": 0.925
+    },
+    "ai_worst_recall": 0.9,
+    "min_group_size": 20,
+    "real_false_positive_rate_by_source": {
+      "device_004": 0.03,
+      "device_006": 0.13,
+      "device_007": 0.07,
+      "device_008": 0.17
+    },
+    "real_macro_false_positive_rate": 0.1,
+    "real_worst_false_positive_rate": 0.17,
+    "threshold": 0.27006945013999945
+  },
+  "gate": {
+    "checks": {
+      "ai_macro_recall_gte_0.80": true,
+      "ai_worst_family_recall_gte_0.60": true,
+      "balanced_accuracy_gte_0.85": true,
+      "coverage_eq_1": true,
+      "eer_lte_0.15": true,
+      "real_macro_fp_lte_0.10": true,
+      "real_worst_device_fp_lte_0.20": true,
+      "roc_auc_gte_0.90": true,
+      "tpr_at_fpr10_gte_0.80": true
+    },
+    "passed": true
+  },
+  "metrics": {
+    "accuracy_counting_failures_wrong": 0.91875,
+    "ai_recall": 0.95,
+    "balanced_accuracy": 0.925,
+    "brier_nontarget_real": 0.028914204692738785,
+    "brier_target_ai": 0.07639922833203991,
+    "confusion": {
+      "fn": 12,
+      "fp": 40,
+      "tn": 360,
+      "tp": 228
+    },
+    "counts": {
+      "ai_succeeded": 240,
+      "failed": 0,
+      "real_succeeded": 400,
+      "succeeded": 640,
+      "total": 640
+    },
+    "coverage": 1.0,
+    "eer": 0.07499999999999998,
+    "per_group": [
+      {
+        "ai_recall": 0.975,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 0,
+          "tp": 39
+        },
+        "count": 40,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FLUX.2-pro"
+      },
+      {
+        "ai_recall": 0.95,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 0,
+          "tp": 38
+        },
+        "count": 40,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "GPT-Image-1.5"
+      },
+      {
+        "ai_recall": 0.975,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 0,
+          "tp": 39
+        },
+        "count": 40,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "HunyuanImage-3.0"
+      },
+      {
+        "ai_recall": 0.975,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 0,
+          "tp": 39
+        },
+        "count": 40,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "Imagen-4.0-Ultra"
+      },
+      {
+        "ai_recall": 0.9,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 4,
+          "fp": 0,
+          "tn": 0,
+          "tp": 36
+        },
+        "count": 40,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "Seedream-4.5"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 3,
+          "tn": 97,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.03,
+        "source": "device_004"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 13,
+          "tn": 87,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.13,
+        "source": "device_006"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 7,
+          "tn": 93,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.07,
+        "source": "device_007"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "native_view_000",
+        "confusion": {
+          "fn": 0,
+          "fp": 17,
+          "tn": 83,
+          "tp": 0
+        },
+        "count": 100,
+        "label": 0,
+        "real_false_positive_rate": 0.17,
+        "source": "device_008"
+      },
+      {
+        "ai_recall": 0.925,
+        "balanced_accuracy": null,
+        "condition": "clean",
+        "confusion": {
+          "fn": 3,
+          "fp": 0,
+          "tn": 0,
+          "tp": 37
+        },
+        "count": 40,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "nano-banana-pro"
+      }
+    ],
+    "real_false_positive_rate": 0.1,
+    "roc_auc": 0.9818541666666667,
+    "stored_threshold": 0.27006945013999945,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.95
+    }
+  },
+  "role_amendment_sha256": "7b060b14277cbfdf2b90f6b31828d5976e6782f3c455cd2be09f37b52140f26a",
+  "schema_version": 1,
+  "state": "calibration_passed_candidate_frozen",
+  "threshold": 0.27006945013999945,
+  "underlying_candidate_sha256": "fddbe475adb807bcf523127095b2a8221443761ad4afa71d8c163829afc44067"
+}

@@ -2876,3 +2876,20 @@ above are transcription errors; production range planning binds the filesystem v
   10%/17%; AI macro/worst 95%/90%), identifying refit-to-OOF score-scale transfer as the remaining
   defect. That threshold is contaminated and ineligible; it can only define an E39 candidate for a
   genuinely new FINAL. Evidence: `evidence/e38_final_result.json`.
+
+### E39-A — consumed-FINAL threshold correction
+
+- **Role boundary:** all 400 REAL +240 AI E38 FINAL rows are now consumed `E39_CALIBRATION`; E38
+  remains `final_failed`. Role evidence binds the original candidate, manifest, result and detailed
+  score hashes before E39 candidate packaging.
+- **Controlled change:** threshold only. DINOv2-S weights, 224px preprocessing, fitted logistic
+  head, positive label and 13,078-byte artifact remain byte-identical at SHA-256
+  `fddbe475...4067`. No row/source selection or retraining occurred.
+- **Selected threshold:** `0.27006945014`, the lowest candidate satisfying all frozen source-level
+  budgets over the complete 640-row consumed calibration set.
+- **Calibration frontier:** REAL device-macro/worst FP **10.0%/17.0%**; AI family-macro/worst
+  recall **95.0%/90.0%**; balanced accuracy **0.925**, AUC **0.98185**, TPR@FPR10 **0.950**, EER
+  **0.075**, coverage **640/640**. Every calibration gate passes.
+- **Decision:** freeze one research candidate and obtain a genuinely new FINAL. These measurements
+  are contaminated by threshold selection and cannot promote the detector. Candidate JSON SHA-256
+  `7d497929...2cef`; compact evidence `evidence/e39_calibration.json`.

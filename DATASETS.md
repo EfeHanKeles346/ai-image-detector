@@ -855,3 +855,16 @@ diagnosis/calibration but can never again be called LOCKED FINAL. At the frozen 
 are local-only at `/Volumes/LaCie/pixelproof-datasets/e38/final_scores.jsonl`, SHA-256
 `dd4f181d...dc2d`; compact result is `evidence/e38_final_result.json`. Any E39 success claim needs
 new device- and generator-family-disjoint parents.
+
+### E39-A role ledger (2026-08-27)
+
+All 640 E38 FINAL parents are formally consumed `E39_CALIBRATION`. They remain stored under the
+external E38 directory with unchanged score SHA-256 `dd4f181d...dc2d`; no image is copied or
+counted again. Their sole new use was selecting the one E39 threshold. They are permanently barred
+from E39 FINAL and every later independent success claim.
+
+The resulting E39 decision contract is local-only at
+`/Volumes/LaCie/pixelproof-datasets/e39/e39_threshold_candidate.json`, SHA-256
+`7d497929...2cef`. It contains no image or new fitted weight and points to the unchanged E38 model
+artifact. At this checkpoint E39 FINAL contains **zero bytes and zero rows**. Source research,
+licence acceptance and allocation must be committed before any E39 FINAL transfer.
