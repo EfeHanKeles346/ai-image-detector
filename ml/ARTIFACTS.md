@@ -108,4 +108,5 @@ rule selected CF at C=0.01 / threshold 0.1259349137544632. Its complete and appe
 archive SHAs are `e3408691...4592` and `579d302a...d5c6`; the artifact binds the R1b input receipt
 and pinned CF weights. The external gate then failed at 40.0% worst-device IPN FP and 68.57%
 owner-gallery FP. Both heads remain ignored research evidence and must not enter the canonical
-registry or service.
+registry or an official decision. The selected CF head may be loaded from the external data root
+by the local demo only as a hash-verified, non-voting `r1b_research` payload.

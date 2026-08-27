@@ -33,8 +33,9 @@ R1b then added 3,994 audited CSAFE iPhone 14 natural photos while preserving eve
 input transform and AI row. Its selected CF-ViT head passed internal CALIBRATION at AUC 0.9981 and
 99.82% current-AI macro recall, but failed the frozen external authentic gate: 249/960 IPN-NFID
 images were false positives (40.0% worst-device FP) and 144/210 owner-gallery stills were false
-positives (31.43% REAL recall). R1b is research-only and excluded from all served paths. Neither
-external population changed its threshold or weights; no LOCKED AI set was opened. Evidence:
+positives (31.43% REAL recall). R1b is excluded from every official decision path; the local demo
+may show its frozen score only as a non-voting `research_only` card. Neither external population
+changed its threshold or weights; no LOCKED AI set was opened. Evidence:
 `evidence/e32_r1b_external_development.json`.
 
 ### E31 candidate decision

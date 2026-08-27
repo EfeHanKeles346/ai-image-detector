@@ -2713,3 +2713,17 @@ above are transcription errors; production range planning binds the filesystem v
 - Hash-verified CLI smoke loaded the pinned CF artifact and scored one owner still; the incorrect
   AI verdict reproduces the measured generalization failure through the public research boundary.
 - Storage audit: no real `.partial` or active transfer; E32 137 GB; LaCie 514 GiB free.
+
+### C4-R1b local demo integration — research visibility only
+
+- New `demo` runtime profile: E20 + E26; R1b only with explicit `--r1b-data-root`.
+- R1b shares the verified CF-ViT backbone/processor and separately verifies selection, head and
+  weight hashes. It never enters the E26 OR rule, canonical registry or readiness.
+- Typed API invariants: `research_only=true`, `affects_decision=false`, band is only `ai_signal` or
+  `insufficient_evidence`; optional load/inference failure degrades only the R1b card.
+- Real owner-still E2E: E26 `insufficient` / CF -8.6586; R1b 0.3132 > 0.1259; E20 0.9988 > 0.9895.
+  The disagreement is exposed, not blended or converted into confidence.
+- Verification: focused 20/20 then full 207/207 Python; production build + 6 web tests, typecheck,
+  ESLint, dependency graph and canonical artifact registry all pass. One upstream Starlette
+  deprecation warning remains unrelated.
+- **Decision:** keep the card as presentation-grade failure analysis, never a product verdict.

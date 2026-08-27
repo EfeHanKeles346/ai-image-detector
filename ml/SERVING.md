@@ -15,13 +15,13 @@ PYTHONPATH=src .venv/bin/uvicorn pixelproof.serve:app --host 127.0.0.1 --port 87
 - `PIXELPROOF_CORS_ORIGINS` is a comma-separated allow-list. Its local default is
   `http://localhost:3000,http://127.0.0.1:3000`; wildcard origins are rejected. Same-origin
   deployments do not need CORS.
-- `PIXELPROOF_RUNTIME_PROFILE=project` loads only the canonical E20 model. The default `full`
-  profile also attempts the retired research methods and external E26 comparison. The local
-  one-command demo deliberately uses `project`, so optional comparison artifacts cannot delay or
-  break the primary model demonstration.
+- `PIXELPROOF_RUNTIME_PROFILE=project` loads only E20; `demo` loads E20 plus the E26 comparison but
+  skips retired legacy models; the default `full` also attempts those legacy methods. The local
+  one-command demo uses `demo`. R1b additionally requires `PIXELPROOF_R1B=1` plus the correct
+  `PIXELPROOF_DATA_ROOT`; load or inference failure affects only `r1b_research`.
 - `POST /predict` accepts `JPG`, `PNG` or `WEBP`. Its default `project_model` method runs the
-  verified E20 native-tile ResNet-18. `auto`, `cnn`, `stats` and `tiles` retain the older
-  research paths behind the web UI's optional research details.
+  verified E20 native-tile ResNet-18. `auto`, `cnn`, `stats` and `tiles` remain API-compatible in
+  `full`, but are removed from the simplified browser flow.
 - Default limits are 12 MiB, 16 million decoded pixels, 16,384 pixels per side and a 20:1
   maximum aspect ratio. EXIF orientation is applied, and transparent pixels are composited
   onto white before every detector sees the image.
@@ -57,11 +57,12 @@ untouched threshold mislabeled 154/210 owner-gallery authentic stills (26.67% RE
 `pixelproof-predict-e32-cf` CLI exists for reproducibility only; it does not change `/predict`,
 readiness or the web UI, and the owner gallery cannot recalibrate it.
 
-R1b is excluded for the same reason after the controlled addition of 3,994 audited iPhone 14
+R1b is excluded from the official decision for the same reason after adding 3,994 audited iPhone 14
 photos. Its selected CF head mislabeled 249/960 independent IPN-NFID authentic photos (40.0%
-worst-device FP) and 144/210 owner-gallery stills. `pixelproof-predict-e32-r1b` exists only to
-reproduce that frozen research artifact; it is absent from `/predict`, readiness, the artifact
-registry and the web UI. IPN/owner results cannot recalibrate or route the model.
+worst-device FP) and 144/210 owner-gallery stills. The local `demo` profile may expose the exact
+frozen head as an optional `r1b_research` card. It is explicitly `research_only`, cannot affect
+E26's decision, readiness or the canonical registry, and below threshold means only insufficient
+evidence. IPN/owner results cannot recalibrate or route it.
 
 ## Required edge controls
 

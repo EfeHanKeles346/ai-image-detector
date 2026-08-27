@@ -2940,3 +2940,26 @@ smoke on one owner still loaded the pinned CF model and emitted score 0.313247 a
 0.125935 (incorrect AI verdict), reproducing that the failure is model generalization rather than
 a broken runtime. Disk audit found no real `.partial` acquisition file or active transfer; E32
 occupies 137 GB and the LaCie volume retains 514 GiB free.
+
+R1b was then connected to the local web demo under a new, precommitted non-promotion contract. The
+API's `demo` profile loads E20 and E26, and optionally R1b only when an explicit data root is passed.
+R1b reuses E26's already-loaded, pinned CF-ViT model/processor but independently verifies the R1b
+head, selection and CF weight hashes. Its typed payload is permanently `research_only=true` and
+`affects_decision=false`; load or inference failure removes only the optional card and is exposed
+in health. It cannot vote in E26's OR rule, readiness or the canonical registry.
+
+The page was simplified to one upload and one analysis action. Results now appear in honest order:
+E26 measured decision, optional R1b experimental second opinion, then expandable E20 technical
+baseline. The R1b card prints its raw score/threshold as non-probability plus the measured 40.0%
+IPN worst-device and 68.57% owner-gallery false-positive warnings. Legacy method selectors were
+removed from the lightweight browser flow while their API compatibility remains. Responsive,
+keyboard/touch focus and reduced-motion behavior were retained; a project-specific social card was
+added without changing inference.
+
+The real local end-to-end run used the LaCie R1b artifact and one owner still. E26 returned
+`insufficient` (CF logit -8.6586), R1b returned 0.3132 at 0.1259 (`ai_signal`) and E20 returned
+0.9988 at 0.9895. This deliberately visible disagreement demonstrates why R1b is diagnostic rather
+than a decision vote. Focused verification passed 20 Python tests, production web build, six web
+tests, TypeScript and ESLint. Final regression then passed all 207 Python tests, the dependency
+graph and canonical artifact registry. The local API/web processes were stopped after the smoke;
+no model endpoint or external disk was published.

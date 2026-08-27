@@ -53,11 +53,12 @@ licensed, provenance-complete authentic camera source and a REAL-source-held-out
 R1b completed that controlled data ablation with 3,994 audited CSAFE iPhone 14 photos. The selected
 CF head retained 99.82% internal current-AI macro recall but failed untouched authentic transfer:
 249/960 IPN-NFID photos and 144/210 owner-gallery photos were falsely flagged. It is therefore not
-served and no threshold was repaired on either set. The result shifts the next work from simply
+an official decision and no threshold was repaired on either set. The local demo can display its
+frozen score as a clearly non-voting research card. The result shifts the next work from simply
 downloading more volume to source-invariant objectives and a newly reserved multi-camera REAL gate.
 
-Four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) remain behind the optional
-research-details view as **uncalibrated research scores**. They are neither the primary project
+Four older project-trained methods (`auto`, `cnn`, `stats`, `tiles`) remain API-compatible only in
+the `full` profile as **uncalibrated research scores**. They are neither the primary project
 model nor the external comparison verdict: unseen-camera false positives reached 79–100% in
 E13/E24. The tile overlay is a detector-score map, not validated localisation evidence.
 
@@ -112,7 +113,7 @@ authentication/rate controls are documented in [`ml/SERVING.md`](ml/SERVING.md).
 
 ### One-command local demo
 
-After the reproducible setup above, start the verified E20 API and Turkish web UI together from
+After the reproducible setup above, start the verified E20/E26 API and Turkish web UI together from
 the repository root:
 
 ```bash
@@ -120,10 +121,20 @@ the repository root:
 ```
 
 `start` first checks the venv, imports, dependency graph, canonical checkpoint hash, installed
-project CLIs, Node/npm installation and loopback ports. It starts the API in project-only mode,
+project CLIs, Node/npm installation and loopback ports. It starts the API in lightweight demo mode,
 waits for truthful readiness, submits the tracked smoke image and validates the project-model
 response before starting the web UI at `http://127.0.0.1:3000`. Press `Ctrl+C` once to stop both
-processes. No external or retired comparison artifact is required for this primary demo.
+processes. Retired legacy models are not loaded.
+
+To add the frozen R1b score as a visibly non-voting research card from an external dataset disk:
+
+```bash
+./tools/pixelproof-demo start \
+  --r1b-data-root /path/to/pixelproof-datasets
+```
+
+The command refuses a missing artifact and `/health` reports `r1b_research_ready`; the page keeps
+E26 as its measured decision even when R1b disagrees.
 
 The same checks and API smoke can be run separately when diagnosing a startup:
 
