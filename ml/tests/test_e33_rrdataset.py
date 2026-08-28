@@ -84,13 +84,13 @@ def test_archive_inventory_rejects_traversal_and_links() -> None:
 
 
 def test_test_archive_inventory_requires_declared_condition_and_class() -> None:
-    root = "RRDataset_test"
+    root = "RRDataset_final"
     result = inspect_members(
         [
-            _member(f"{root}/original/real_images/real_000001.jpg"),
-            _member(f"{root}/original/ai_images/normal_000001.png"),
-            _member(f"{root}/transfer/real_images/transfer_real_000001.png"),
-            _member(f"{root}/redigital/ai_images/redigital_normal_000001.jpg"),
+            _member(f"{root}/original/real/real_000001.jpg"),
+            _member(f"{root}/original/ai/normal_000001.png"),
+            _member(f"{root}/transfer/real/transfer_real_000001.png"),
+            _member(f"{root}/redigital/ai/redigital_normal_000001.jpg"),
         ],
         role="test",
     )
@@ -103,6 +103,6 @@ def test_test_archive_inventory_requires_declared_condition_and_class() -> None:
     }
     with pytest.raises(ValueError, match="not declared"):
         inspect_members(
-            [_member(f"{root}/mystery/real_images/real_000001.jpg")],
+            [_member(f"{root}/mystery/real/real_000001.jpg")],
             role="test",
         )

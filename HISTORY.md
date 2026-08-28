@@ -3763,3 +3763,10 @@ uses the same global-plus-two-texture-crop, four-intermediate-block feature path
 original, transfer and redigital separately. Original must pass the full project gate; both robust
 conditions must pass AUC 0.85/balanced accuracy 0.80 with complete coverage. Ten focused tests pass.
 No RR model score has been created at this checkpoint.
+
+The first full inventory stopped safely before producing a receipt because the published archive
+root is `RRDataset_final`, whereas the archive filename/initial acquisition assumption used
+`RRDataset_test`. A read-only member sample also established that the actual archive uses
+`{condition}/{real,ai}`, despite the repository README documenting `real_images/ai_images`. The
+inventory/extractor contract is narrowed to the observed archive layout and recommitted before a
+second inventory. This is a packaging correction only: no image was decoded and E42 stayed closed.

@@ -27,12 +27,12 @@ MAX_MEMBER_BYTES = 100 * 1024**2
 MAX_EXPANDED_BYTES = {"cal": 40 * 1024**3, "test": 240 * 1024**3}
 TOP_LEVEL = {
     "cal": "RRDataset_original_train_val",
-    "test": "RRDataset_test",
+    "test": "RRDataset_final",
 }
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
 CLASS_DIRECTORIES = {
     "cal": {"real": "real", "ai": "ai"},
-    "test": {"real_images": "real", "ai_images": "ai"},
+    "test": {"real": "real", "ai": "ai"},
 }
 DECLARED_SPLITS = {
     "cal": {"train", "val"},

@@ -3078,3 +3078,7 @@ was scored or selected using model output.
   the full nine-check success gate; transfer and redigital each need at least 20 successful rows per
   class, AUC >=0.85, balanced accuracy >=0.80 and coverage 1.0. Completed output forbids retry.
 - **Verification:** ten focused RR acquisition/evaluator tests pass; production score rows remain 0.
+- **Observed package correction:** the first inventory rejected root `RRDataset_final` because the
+  pre-transfer assumption was `RRDataset_test`. Read-only member names show the archive actually
+  uses `RRDataset_final/{original,transfer,redigital}/{real,ai}`; code/tests are corrected and
+  recommitted before reinventory. No decode or model access occurred.
