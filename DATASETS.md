@@ -1068,3 +1068,11 @@ Selected counts are original REAL/AI 8,454/8,499, transfer 8,454/8,499 and redig
 The detailed unscored manifest is 31,091,691 bytes /SHA-256
 `b2d815afab0bbafa339baf70eac19afbaf955e545041c550193340763ac30c98`; tracked receipts are
 `evidence/e42_rr_manifest.json` and `evidence/e42_rr_score_contract.json`.
+
+The one-shot E42 run has now consumed every selected RR row: 50,858/50,858 inference successes,
+with no new image download or copy. The derived JSONL score stream is 14,572,649 bytes /SHA-256
+`c065957e21df795712ae367566f5f86358443d66829739125092a74fee868434`; the 17,498-byte report
+SHA-256 is `516c6d92ca8d712aa740bb929ea835bfbc19324c16df3b9f786042589496252e`.
+RRDataset is no longer eligible as an independent FINAL for a later candidate. Its images may be
+declared only as consumed `E43_DIAGNOSTIC_DEVELOPMENT`; a new final source must exclude all RR,
+E42, B-Free and earlier protected parents.

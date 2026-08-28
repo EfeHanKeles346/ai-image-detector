@@ -3096,3 +3096,23 @@ was scored or selected using model output.
   `b2d815af...30c98`; score rows 0.
 - **One-shot binding:** detailed score contract SHA-256 `a5387eb9...de658` binds the unchanged E42-S
   candidate, threshold, manifest and 50,858 rows before the first model load.
+
+### E42 RR FINAL — failed once, no retry
+
+- **Coverage/integrity:** 50,858/50,858 scored rows, zero inference failures. Score stream is
+  14,572,649 B /SHA-256 `c065957e...68434`; report/evidence is 17,498 B /SHA-256
+  `516c6d92...6252e`. Candidate `6768466a...9062e7` and threshold `0.6600460410` are unchanged.
+- **Original:** AUC **0.94448**, TPR@FPR10 **0.85139**, EER **0.12434**, balanced accuracy
+  **0.84634**; AI recall **93.54%**, REAL FP **24.27%** (2,052/8,454). AUC, TPR, EER and AI-source
+  checks pass; balanced accuracy and both pooled-REAL FP checks fail.
+- **Transfer:** AUC **0.92582**, balanced accuracy **0.83993**, AI recall 89.89%, REAL FP 21.91%.
+  Its preregistered AUC/balanced/coverage checks pass.
+- **Redigital:** AUC **0.85629**, balanced accuracy **0.78756**, AI recall 77.03%, REAL FP 19.52%.
+  AUC and coverage pass, balanced accuracy fails.
+- **Gate/decision:** external final failed. No score deletion, threshold change, second run or
+  serving promotion is permitted; E42 remains a reproducible rejected research candidate.
+- **Post-hoc diagnosis only:** original's best balanced point is threshold 0.92704 /balanced
+  0.87686 /REAL FP 9.25% /AI recall 84.62%. Redigital's condition-specific maximum is only
+  balanced 0.78943 at threshold 0.74033, and no single threshold satisfies all declared gates.
+  Therefore E43 needs a representation plus redigitalization-coverage change, not calibration
+  theatre. RR is consumed DEVELOPMENT for any future candidate; a new untouched FINAL is required.

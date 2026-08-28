@@ -3799,3 +3799,27 @@ A second immutable score contract now binds that manifest to E42-S artifact `676
 threshold 0.660046 and exactly 50,858 declared rows. Contract SHA-256 is `a5387eb9...de658`.
 Threshold change, row removal, test-informed fitting and retry after a completed stream remain
 forbidden. The model has still not accessed an RR pixel at this checkpoint.
+
+### E42 RR one-shot result — useful ranking, final gate failed
+
+The frozen scorer completed its first and only stream over all 50,858 declared rows with 100%
+inference coverage. E42-S did not pass the external gate. On original images it achieved AUC
+0.94448, TPR@FPR10 0.85139, EER 0.12434 and AI recall 93.54%, but the unchanged 0.660046 threshold
+marked 2,052/8,454 authentic images as AI: REAL FP 24.27% and balanced accuracy 0.84634. Those two
+REAL checks and the 0.85 balanced-accuracy check fail. Transfer remains above its working gate at
+AUC 0.92582 /balanced accuracy 0.83993. Redigital retains AUC 0.85629 but falls to balanced accuracy
+0.78756, so that condition also fails. The 14,572,649-byte score stream SHA-256 is
+`c065957e...68434`; the identical local/tracked result is 17,498 bytes /SHA-256
+`516c6d92...6252e`.
+
+A read-only post-hoc threshold audit shows why E42 cannot be repaired and rerun. Original's best
+balanced threshold would be 0.92704 (balanced 0.87686, REAL FP 9.25%, AI recall 84.62%), but
+redigital's own best threshold reaches only 0.78943 balanced accuracy. No single threshold satisfies
+the declared original, transfer and redigital gates. This is therefore a representation/transport
+generalization miss, not merely the old low-threshold mistake. E42 stays research-only and is not
+promoted into the API or web demo.
+
+RR labels and scores are now consumed. Any E43 work must declare RR as DEVELOPMENT, change the
+representation or realistic redigitalization training coverage, and use a genuinely untouched
+final such as manually authorized ITW-SM or registered NIST Image-D. Calling a retuned RR result a
+new final would invalidate the project record and is prohibited.

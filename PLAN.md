@@ -111,7 +111,7 @@ it before paying for another architecture or training run.
       E42-S passes every check at threshold 0.660046: clean AUC 0.99287, balanced 0.95477, REAL
       macro/worst FP 1.23%/20%, AI macro/worst recall 92.69%/75%; robust combined AUC 0.99338,
       balanced 0.93923, REAL macro/worst FP 0.84%/13.5%, AI macro/worst recall 88.99%/68.13%.
-- [ ] Select DINOv2-S immediately if it fully passes; otherwise evaluate the only remaining fixed
+- [x] Select DINOv2-S immediately if it fully passes; otherwise evaluate the only remaining fixed
       DINOv2-L candidate and select it only on a full pass. If
       neither passes, stop without another backbone/threshold sweep. If one passes, refit once on
       all consumed training+development parents, freeze a research candidate, then and only then
@@ -141,16 +141,39 @@ it before paying for another architecture or training run.
       Complete: 47 parents /141 rows excluded before score, leaving 50,858 images from 16,953
       parents and 99.7235% official-row coverage. Manifest SHA-256 is `b2d815af...30c98`; the second
       immutable score contract binds that manifest, candidate and threshold for exactly one run.
-- [ ] Score each declared test file once. The original/clean population must pass all internship
+- [x] Score each declared test file once. The original/clean population must pass all internship
       success gates; every sufficiently populated transmission/redigitization condition must retain
       AUC >=0.85 and balanced accuracy >=0.80, with 100% coverage. A pass promotes E42-S to the
       research API/web; a miss is final for this candidate and cannot trigger threshold repair.
       Scoring code is also frozen ahead of the manifest: the final manifest hash and candidate hash
       must be rebound in a second machine contract and committed before the DINO model can load.
+      **Completed once; failed without retry.** All 50,858 rows scored with 100% coverage. Original
+      AUC is 0.94448, TPR@FPR10 0.85139 and AI recall 93.54%, but balanced accuracy is 0.84634 and
+      REAL FP is 24.27%. Transfer passes its AUC/balanced gate at 0.92582/0.83993. Redigital AUC
+      passes at 0.85629 but balanced accuracy is 0.78756, below 0.80. E42-S therefore remains a
+      rejected research candidate and cannot replace the served model.
+
+### F2.3 — E43 success route after the honest E42 miss
+
+- [x] Diagnose the completed RR score stream without changing E42. This is not a threshold-only
+      defect: the best condition-specific redigital threshold reaches only 0.78943 balanced
+      accuracy, and no single threshold satisfies the frozen original/transfer/redigital gates.
+      The next candidate must change representation and realistic transport coverage.
+- [ ] Formally consume RR test only as `E43_DIAGNOSTIC_DEVELOPMENT`; it can never be independent
+      FINAL again. Freeze E43 before fitting: compare the existing DINOv2-S path with exactly one
+      DINOv2-L intermediate-feature arm, add class-symmetric screen/recapture and stronger social-
+      transport views, retain parent/source grouping and optimize no threshold on the future final.
+- [ ] Secure a genuinely untouched final before spending the E43 training run. Preferred route is
+      ITW-SM after the user authenticates to Hugging Face and accepts its manual non-commercial
+      terms; NIST Image-D remains the stronger registered blind route. Until one is available, an
+      E43 development improvement may be measured but cannot honestly be called project success.
+- [ ] Run the chosen E43 candidate exactly once on the newly bound final population. Only a pass of
+      the same class-balanced, source-aware gates permits API/web promotion; otherwise preserve the
+      miss and stop rather than retuning on final labels.
 
 ### F3 — recording and stop rules
 
-- [ ] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis
+- [x] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis
       in `ml/EXPERIMENTS.md`, and every decision/result in append-only `HISTORY.md`. Commit the
       source contract before transfer and each completed scientific gate afterward; push only
       verified checkpoints with green CI.
