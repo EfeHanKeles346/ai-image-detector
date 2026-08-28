@@ -3770,3 +3770,20 @@ root is `RRDataset_final`, whereas the archive filename/initial acquisition assu
 `{condition}/{real,ai}`, despite the repository README documenting `real_images/ai_images`. The
 inventory/extractor contract is narrowed to the observed archive layout and recommitted before a
 second inventory. This is a packaging correction only: no image was decoded and E42 stayed closed.
+
+The corrected inventory and extraction then completed. The pinned 20,117,869,400-byte archive
+matches MD5 `13c3ff3d...cd4b` and contains 50,999 declared images /20,354,797,721 expanded bytes:
+8,500 in each condition/class cell except redigital REAL at 8,499. This differs from the paper's
+description of 10,000 REAL +10,000 AI parents per condition and is preserved as a public-package
+limitation, not silently filled or resampled. Compact acquisition evidence is
+`evidence/e42_rr_acquisition.json`.
+
+The first complete decode/hash pass also stopped before writing a manifest. It found 35 same-label
+cross-parent exact duplicate components, 13 original REAL files exactly overlapping protected E42
+roles, and one AI parent whose original/transfer dHash matches protected data. This is precisely why
+the manifest precedes model access. The corrected decontamination rule excludes a protected parent
+across all available conditions, propagates exclusion through exact-copy components and retains
+only the lexical canonical parent in otherwise clean same-label exact components. Cross-label exact
+copies, repeated conditions or label-crossing parents remain fatal. Official-to-selected coverage
+and every excluded parent/reason remain in the detailed manifest. No threshold/model change and no
+RR score occurred.

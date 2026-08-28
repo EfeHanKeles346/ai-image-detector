@@ -1,0 +1,25 @@
+{
+  "archive": {
+    "bytes": 20117869400,
+    "md5": "13c3ff3d61986170cc0c8cf76a35cd4b",
+    "name": "RRDataset_test.tar.gz",
+    "record_id": 14963880
+  },
+  "by_condition_class": {
+    "original/ai": 8500,
+    "original/real": 8500,
+    "redigital/ai": 8500,
+    "redigital/real": 8499,
+    "transfer/ai": 8500,
+    "transfer/real": 8500
+  },
+  "download_receipt_sha256": "17872714fd9694895ee46492ecf7941ea4bedbffbdc5296c36accbd69d98db19",
+  "expanded_image_bytes": 20354797721,
+  "extraction_receipt_sha256": "d8a15aa278efed414362e60914029c16d1874eeaee4c6ce98809b7cf513cce77",
+  "image_count": 50999,
+  "inventory_sha256": "70cbfe31f38122f0988e76448454223a70a15cfd32e7514fcb659812e1c45490",
+  "license": "CC BY 4.0",
+  "publication_archive_population_difference": "The paper describes 10,000 REAL and 10,000 AI parents per condition; the pinned public archive contains 8,500 per cell except redigital/real=8,499.",
+  "schema_version": 1,
+  "state": "rr_test_archive_verified_inventoried_extracted_unscored"
+}

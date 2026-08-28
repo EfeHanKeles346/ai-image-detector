@@ -3082,3 +3082,11 @@ was scored or selected using model output.
   pre-transfer assumption was `RRDataset_test`. Read-only member names show the archive actually
   uses `RRDataset_final/{original,transfer,redigital}/{real,ai}`; code/tests are corrected and
   recommitted before reinventory. No decode or model access occurred.
+- **Acquisition result:** exact size/MD5 pass; inventory/extraction contain 50,999 images and
+  20,354,797,721 expanded image bytes. Counts are 8,500 per condition/class except redigital REAL
+  8,499, below the paper-described 10,000+10,000 parent population. This discrepancy is explicit.
+- **First decode audit stop:** 35 same-label exact duplicate components, 13 protected exact REAL
+  overlaps and one protected-dHash AI parent were found before any score. The revised fixed rule
+  removes protected parents in every condition, propagates through exact components and retains one
+  lexical parent per other exact component. Exclusions and official coverage are immutable manifest
+  fields; cross-label exact or structural parent failures still abort. Eleven focused tests pass.

@@ -24,7 +24,7 @@ def _row(record: str, parent: str, condition: str, label: int, sha: str, dhash: 
     }
 
 
-def test_audit_allows_derivatives_of_one_parent_but_rejects_prior_overlap() -> None:
+def test_audit_allows_derivatives_and_excludes_whole_prior_parent() -> None:
     rows = [
         _row("o", "real:1", "original", 0, "a", "1"),
         _row("t", "real:1", "transfer", 0, "b", "2"),
@@ -33,12 +33,13 @@ def test_audit_allows_derivatives_of_one_parent_but_rejects_prior_overlap() -> N
     passed = rr.audit_rows(rows, set(), set())
     assert passed["passed"] is True
     assert passed["condition_sets_by_parent"] == {"original+redigital+transfer": 1}
-    failed = rr.audit_rows(rows, {"b"}, set())
-    assert failed["passed"] is False
-    assert failed["failures"]["prior_exact_overlap"] == ["t"]
+    decontaminated = rr.audit_rows(rows, {"b"}, set())
+    assert decontaminated["passed"] is True
+    assert decontaminated["prior_exact_overlap_records"] == ["t"]
+    assert decontaminated["excluded_parent_ids"] == ["real:1"]
 
 
-def test_audit_rejects_duplicate_condition_and_cross_parent_exact() -> None:
+def test_audit_rejects_duplicate_condition_and_deduplicates_same_label_parents() -> None:
     rows = [
         _row("a", "real:1", "original", 0, "same", "1"),
         _row("b", "real:1", "original", 0, "b", "2"),
@@ -47,7 +48,18 @@ def test_audit_rejects_duplicate_condition_and_cross_parent_exact() -> None:
     result = rr.audit_rows(rows, set(), set())
     assert result["passed"] is False
     assert result["failures"]["duplicate_parent_condition"] == ["real:1"]
-    assert result["failures"]["cross_parent_exact"][0]["parents"] == ["real:1", "real:2"]
+    assert result["cross_parent_exact_diagnostic"][0]["parents"] == ["real:1", "real:2"]
+    assert result["excluded_parent_ids"] == ["real:2"]
+
+
+def test_audit_rejects_cross_label_exact_duplicate() -> None:
+    rows = [
+        _row("a", "real:1", "original", 0, "same", "1"),
+        _row("b", "ai:1", "original", 1, "same", "2"),
+    ]
+    result = rr.audit_rows(rows, set(), set())
+    assert result["passed"] is False
+    assert result["failures"]["cross_label_exact"][0]["labels"] == [0, 1]
 
 
 def _condition(auc: float, balanced: float, coverage: float = 1.0) -> dict:

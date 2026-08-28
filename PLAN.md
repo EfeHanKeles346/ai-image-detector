@@ -130,7 +130,14 @@ it before paying for another architecture or training run.
       The fail-closed implementation is now committed before archive completion: test extraction
       accepts only `original|transfer|redigital` and explicit `real|ai` paths; manifesting decodes
       and hashes every row, normalizes derivative filenames to parent IDs, audits E42/B-Free
-      overlap and writes a zero-score receipt. Transfer remains resumable and incomplete.
+      overlap and writes a zero-score receipt. Transfer, MD5, inventory and safe extraction are now
+      complete: 50,999 official rows and 20,354,797,721 expanded image bytes. The public archive
+      has 8,500 rows per condition/class except redigital REAL=8,499, rather than the paper's
+      described 10,000+10,000 population. The first full decode audit correctly stopped on 35
+      same-label exact duplicate components, 13 prior exact REAL overlaps and one prior-dHash AI
+      parent. Before any score, exclude every protected parent across all conditions and keep one
+      lexical parent per clean exact component; freeze/report official coverage rather than hiding
+      the removals.
 - [ ] Score each declared test file once. The original/clean population must pass all internship
       success gates; every sufficiently populated transmission/redigitization condition must retain
       AUC >=0.85 and balanced accuracy >=0.80, with 100% coverage. A pass promotes E42-S to the

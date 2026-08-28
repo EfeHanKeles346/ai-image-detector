@@ -141,17 +141,64 @@ def audit_rows(
     dhash_cross = cross_parent(by_dhash)
     prior_exact_rows = sorted(str(row["record_id"]) for row in rows if str(row["sha256"]) in prior_exact)
     prior_dhash_rows = sorted(str(row["record_id"]) for row in rows if str(row["dhash"]) in prior_dhash)
+    prior_parents = {
+        str(row["parent_id"])
+        for row in rows
+        if str(row["sha256"]) in prior_exact or str(row["dhash"]) in prior_dhash
+    }
+
+    adjacency: dict[str, set[str]] = {parent: set() for parent in by_parent}
+    cross_label_exact = []
+    for group in exact_cross:
+        parents = [str(parent) for parent in group["parents"]]
+        if len(group["labels"]) > 1:
+            cross_label_exact.append(group)
+        for parent in parents:
+            adjacency[parent].update(other for other in parents if other != parent)
+
+    components = []
+    seen: set[str] = set()
+    for parent in sorted(adjacency):
+        if parent in seen or not adjacency[parent]:
+            continue
+        stack = [parent]
+        component: set[str] = set()
+        while stack:
+            current = stack.pop()
+            if current in component:
+                continue
+            component.add(current)
+            stack.extend(adjacency[current] - component)
+        seen.update(component)
+        components.append(sorted(component))
+
+    exclusions: dict[str, list[str]] = defaultdict(list)
+    for parent in sorted(prior_parents):
+        exclusions[parent].append("protected_exact_or_dhash_overlap")
+    for component in components:
+        if set(component) & prior_parents:
+            for parent in component:
+                exclusions[parent].append("exact_duplicate_component_touches_protected_role")
+        else:
+            for parent in component[1:]:
+                exclusions[parent].append(f"same_label_exact_duplicate_of:{component[0]}")
+
     failures = {
         "duplicate_parent_condition": duplicate_parent_conditions,
         "label_crossing_parent": label_crossing_parents,
-        "cross_parent_exact": exact_cross,
-        "prior_exact_overlap": prior_exact_rows,
-        "prior_dhash_overlap": prior_dhash_rows,
+        "cross_label_exact": cross_label_exact,
     }
     return {
         "passed": not any(failures.values()),
         "failures": failures,
+        "prior_exact_overlap_records": prior_exact_rows,
+        "prior_dhash_overlap_records": prior_dhash_rows,
+        "exact_duplicate_components": components,
+        "excluded_parent_ids": sorted(exclusions),
+        "exclusion_reasons": {parent: sorted(set(reasons)) for parent, reasons in sorted(exclusions.items())},
         "condition_sets_by_parent": dict(sorted(condition_sets.items())),
+        "cross_parent_exact_diagnostic_count": len(exact_cross),
+        "cross_parent_exact_diagnostic": exact_cross,
         "cross_parent_dhash_diagnostic_count": len(dhash_cross),
         "cross_parent_dhash_diagnostic": dhash_cross,
     }
@@ -213,13 +260,27 @@ def build_manifest() -> dict[str, Any]:
     prior_exact, prior_dhash, prior_manifests = _protected_hashes()
     audit = audit_rows(rows, prior_exact, prior_dhash)
     if not audit["passed"]:
-        raise ValueError(f"RR final decontamination failed: {audit['failures']}")
+        raise ValueError(f"RR final structural audit failed: {audit['failures']}")
+    excluded_parents = set(audit["excluded_parent_ids"])
+    selected = [row for row in rows if str(row["parent_id"]) not in excluded_parents]
+    if any(
+        str(row["sha256"]) in prior_exact or str(row["dhash"]) in prior_dhash
+        for row in selected
+    ):
+        raise ValueError("RR decontamination left a protected-role overlap")
     by_condition_class = {
         f"{condition}/{class_name}": sum(
-            row["condition"] == condition and row["class_name"] == class_name for row in rows
+            row["condition"] == condition and row["class_name"] == class_name for row in selected
         )
         for condition in CONDITIONS
         for class_name in CLASS_LABELS
+    }
+    if min(by_condition_class.values()) < MIN_CONDITION_CLASS:
+        raise ValueError(f"RR decontamination emptied a required condition/class: {by_condition_class}")
+    official_counts = {
+        "rows": len(rows),
+        "parents": len({str(row["parent_id"]) for row in rows}),
+        "image_bytes": sum(int(row["bytes"]) for row in rows),
     }
     payload = {
         "schema_version": 1,
@@ -229,18 +290,22 @@ def build_manifest() -> dict[str, Any]:
         "candidate_sha256": CANDIDATE_SHA256,
         "threshold": THRESHOLD,
         "extraction_receipt_sha256": _digest(extraction_path),
+        "official_archive_counts": official_counts,
         "counts": {
-            "rows": len(rows),
-            "parents": len({str(row["parent_id"]) for row in rows}),
-            "image_bytes": sum(int(row["bytes"]) for row in rows),
+            "rows": len(selected),
+            "parents": len({str(row["parent_id"]) for row in selected}),
+            "image_bytes": sum(int(row["bytes"]) for row in selected),
             "by_condition_class": by_condition_class,
+            "official_row_coverage_after_decontamination": len(selected) / len(rows),
+            "excluded_parents": len(excluded_parents),
+            "excluded_rows": len(rows) - len(selected),
         },
         "protected_manifests": prior_manifests,
         "protected_exact_hashes": len(prior_exact),
         "protected_dhashes": len(prior_dhash),
         "audit": audit,
-        "rows": rows,
-        "boundary": "Every declared image was decoded, parent-mapped and audited before model access; no score exists.",
+        "rows": selected,
+        "boundary": "Every official image was decoded and audited before model access; protected/duplicate parents were excluded as whole events before the scored manifest was declared.",
     }
     raw = _write_atomic(MANIFEST, payload)
     compact = {
@@ -252,7 +317,9 @@ def build_manifest() -> dict[str, Any]:
         "audit": {
             "passed": audit["passed"],
             "condition_sets_by_parent": audit["condition_sets_by_parent"],
+            "cross_parent_exact_diagnostic_count": audit["cross_parent_exact_diagnostic_count"],
             "cross_parent_dhash_diagnostic_count": audit["cross_parent_dhash_diagnostic_count"],
+            "excluded_parent_count": len(excluded_parents),
         },
         "detailed_manifest_bytes": len(raw),
         "detailed_manifest_sha256": hashlib.sha256(raw).hexdigest(),

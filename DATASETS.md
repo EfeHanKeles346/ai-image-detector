@@ -1045,3 +1045,19 @@ sources: TRAIN 4,638 (2,335 REAL /2,303 AI) and DEVELOPMENT 2,246 (1,726 REAL /5
 exact SHA-256 and exact dHash overlap are both zero. Manifest SHA-256 is
 `15124d93f195d618b00c9cf79bec6151ae26fd4397cd9f5529c41842c4e3e238`; compact tracked receipt is
 `evidence/e42_data_manifest.json`. No B-Free or RR-test row appears.
+
+## E42 RR external robustness acquisition (2026-08-28)
+
+The locked CC BY 4.0 Zenodo 14963880 test archive is now complete on LaCie: 20,117,869,400 bytes,
+published MD5 `13c3ff3d61986170cc0c8cf76a35cd4b`. Full tar inventory and safe extraction contain 50,999
+images /20,354,797,721 expanded image bytes: original REAL/AI 8,500/8,500, transfer REAL/AI
+8,500/8,500 and redigital REAL/AI 8,499/8,500. The public package therefore differs from the
+paper's described 10,000 REAL +10,000 AI parent population; no missing row is synthesized.
+
+The actual archive layout is `RRDataset_final/{original,transfer,redigital}/{real,ai}`, despite the
+repository README's `real_images/ai_images` example. Extraction preserves only declared image
+members and creates no model score. The first decoded audit found 35 same-label exact-copy parent
+components, 13 protected-role exact REAL overlaps and one protected-dHash AI parent. Final selection
+must remove contaminated parents as whole events and deduplicate clean exact components before the
+unscored manifest is bound. `evidence/e42_rr_acquisition.json` records archive, receipt and inventory
+hashes; final selected counts remain pending until that manifest passes.
