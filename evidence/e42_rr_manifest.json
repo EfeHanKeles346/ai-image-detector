@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "condition_sets_by_parent": {
+      "original+redigital+transfer": 16999,
+      "original+transfer": 1
+    },
+    "cross_parent_dhash_diagnostic_count": 53,
+    "cross_parent_exact_diagnostic_count": 35,
+    "excluded_parent_count": 47,
+    "passed": true
+  },
+  "candidate_sha256": "6768466ab6eaaae6ae3ee00c784b13ff337955ccb38a5c2db09662939f9062e7",
+  "counts": {
+    "by_condition_class": {
+      "original/ai": 8499,
+      "original/real": 8454,
+      "redigital/ai": 8499,
+      "redigital/real": 8453,
+      "transfer/ai": 8499,
+      "transfer/real": 8454
+    },
+    "excluded_parents": 47,
+    "excluded_rows": 141,
+    "image_bytes": 20341312914,
+    "official_row_coverage_after_decontamination": 0.9972352399066648,
+    "parents": 16953,
+    "rows": 50858
+  },
+  "detailed_manifest_bytes": 31091691,
+  "detailed_manifest_sha256": "b2d815afab0bbafa339baf70eac19afbaf955e545041c550193340763ac30c98",
+  "production_scores_created": 0,
+  "schema_version": 1,
+  "state": "rr_final_manifest_frozen_unscored",
+  "threshold": 0.6600460410118104
+}

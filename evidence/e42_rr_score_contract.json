@@ -1,0 +1,19 @@
+{
+  "candidate_sha256": "6768466ab6eaaae6ae3ee00c784b13ff337955ccb38a5c2db09662939f9062e7",
+  "decision": "one score per manifest row; original full gate; transfer and redigital AUC >=0.85 and balanced accuracy >=0.80; coverage 1.0",
+  "declared_rows": 50858,
+  "detailed_contract_bytes": 746,
+  "detailed_contract_sha256": "a5387eb9dda787ad1abca27131130967a87e90ca08584e9580368e20c83de658",
+  "experiment": "E42/RRDataset-one-shot-external-robustness",
+  "forbidden": [
+    "threshold change",
+    "row removal",
+    "retry after a completed score stream",
+    "test-informed fitting"
+  ],
+  "manifest_sha256": "b2d815afab0bbafa339baf70eac19afbaf955e545041c550193340763ac30c98",
+  "root_contract_sha256": "bc986c83bb4b1f04c5f2f6b2097682999cdcf8ee77bfc22780f5ffd7699e080b",
+  "schema_version": 1,
+  "state": "rr_final_score_contract_frozen",
+  "threshold": 0.6600460410118104
+}

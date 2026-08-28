@@ -124,7 +124,7 @@ it before paying for another architecture or training run.
 - [x] Bind E42-S artifact `6768466a...9062e7`, threshold 0.660046 and the exact 20,117,869,400-byte
       CC BY 4.0 RR test archive /MD5 `13c3ff3d...cd4b` before transfer. The machine-readable contract
       is `evidence/e42_rr_final_contract.json`; B-Free and RR labels cannot alter the candidate.
-- [ ] Resume the archive to LaCie with >=100 GiB reserve, verify exact size+MD5, inventory every tar
+- [x] Resume the archive to LaCie with >=100 GiB reserve, verify exact size+MD5, inventory every tar
       member and extract safely. Then freeze decoded counts, parent/condition mapping and protected-
       role exact/dHash audit without loading E42.
       The fail-closed implementation is now committed before archive completion: test extraction
@@ -138,6 +138,9 @@ it before paying for another architecture or training run.
       parent. Before any score, exclude every protected parent across all conditions and keep one
       lexical parent per clean exact component; freeze/report official coverage rather than hiding
       the removals.
+      Complete: 47 parents /141 rows excluded before score, leaving 50,858 images from 16,953
+      parents and 99.7235% official-row coverage. Manifest SHA-256 is `b2d815af...30c98`; the second
+      immutable score contract binds that manifest, candidate and threshold for exactly one run.
 - [ ] Score each declared test file once. The original/clean population must pass all internship
       success gates; every sufficiently populated transmission/redigitization condition must retain
       AUC >=0.85 and balanced accuracy >=0.80, with 100% coverage. A pass promotes E42-S to the

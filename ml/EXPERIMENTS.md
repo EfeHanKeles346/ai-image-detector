@@ -3090,3 +3090,9 @@ was scored or selected using model output.
   removes protected parents in every condition, propagates through exact components and retains one
   lexical parent per other exact component. Exclusions and official coverage are immutable manifest
   fields; cross-label exact or structural parent failures still abort. Eleven focused tests pass.
+- **Frozen unscored result:** 47 whole parents /141 rows excluded, leaving 50,858 rows /16,953
+  parents /20,341,312,914 bytes and 99.7235% official archive coverage. Condition counts are
+  original 8,454 REAL +8,499 AI, transfer 8,454+8,499 and redigital 8,453+8,499. Manifest SHA-256
+  `b2d815af...30c98`; score rows 0.
+- **One-shot binding:** detailed score contract SHA-256 `a5387eb9...de658` binds the unchanged E42-S
+  candidate, threshold, manifest and 50,858 rows before the first model load.

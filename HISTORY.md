@@ -3787,3 +3787,15 @@ only the lexical canonical parent in otherwise clean same-label exact components
 copies, repeated conditions or label-crossing parents remain fatal. Official-to-selected coverage
 and every excluded parent/reason remain in the detailed manifest. No threshold/model change and no
 RR score occurred.
+
+The revised write-once manifest passed. Whole-parent removal excludes 47 contaminated or redundant
+parents /141 derivative rows, leaving 50,858 images from 16,953 parents and 20,341,312,914 image
+bytes: original 8,454 REAL +8,499 AI, transfer 8,454 +8,499 and redigital 8,453 +8,499. Official
+row coverage after decontamination is 99.7235%. Exactly 16,999 official parents have all three
+conditions and one REAL parent lacks only redigital before exclusion. The 31,091,691-byte detailed
+unscored manifest SHA-256 is `b2d815af...30c98`; its compact tracked receipt reports zero scores.
+
+A second immutable score contract now binds that manifest to E42-S artifact `6768466a...9062e7`,
+threshold 0.660046 and exactly 50,858 declared rows. Contract SHA-256 is `a5387eb9...de658`.
+Threshold change, row removal, test-informed fitting and retry after a completed stream remain
+forbidden. The model has still not accessed an RR pixel at this checkpoint.

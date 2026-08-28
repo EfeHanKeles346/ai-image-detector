@@ -1061,3 +1061,10 @@ components, 13 protected-role exact REAL overlaps and one protected-dHash AI par
 must remove contaminated parents as whole events and deduplicate clean exact components before the
 unscored manifest is bound. `evidence/e42_rr_acquisition.json` records archive, receipt and inventory
 hashes; final selected counts remain pending until that manifest passes.
+
+Decontamination is complete without model access. Forty-seven entire parents /141 rows are excluded,
+leaving 50,858 images from 16,953 parents and 20,341,312,914 bytes, or 99.7235% of official rows.
+Selected counts are original REAL/AI 8,454/8,499, transfer 8,454/8,499 and redigital 8,453/8,499.
+The detailed unscored manifest is 31,091,691 bytes /SHA-256
+`b2d815afab0bbafa339baf70eac19afbaf955e545041c550193340763ac30c98`; tracked receipts are
+`evidence/e42_rr_manifest.json` and `evidence/e42_rr_score_contract.json`.
