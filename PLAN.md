@@ -262,6 +262,11 @@ it before paying for another architecture or training run.
       SHA-256 `4f7e2ccb...82f05`; all 5,000 JPEGs passed schema and ZIP/CRC validation. Exactly 4,969
       parents have REAL plus all six synthetic views (34,783 rows). Decode, decontamination and
       model scoring are still pending and must preserve seven-view parent groups.
+      Before decode, freeze the duplicate rule: any exact SHA-256 or exact dHash hit against a
+      protected prior role removes the whole seven-view parent; a cross-label exact duplicate
+      removes every touched parent; a same-label cross-parent exact component retains only its
+      lexical first parent. Within-DDA cross-parent dHash matches remain a diagnostic because an
+      exact 64-bit perceptual collision alone is not identity evidence.
 - [ ] Score the frozen manifest exactly once with the unchanged E43-S candidate/threshold. Require
       100% coverage, ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy >=0.85,
       REAL FP <=10%, AI macro/worst reconstruction recall >=80%/60%. A miss is preserved without
