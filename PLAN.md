@@ -335,9 +335,11 @@ it before paying for another architecture or training run.
       score and official-DDA specialist score. No image label, filename, source or device may be an
       inference-time feature. Coverage is 1,670/1,670; score-stream SHA-256 is
       `35d9d2c2...ad5af`.
-- [ ] Fit only `StandardScaler + LogisticRegression` on clamped logits of the two scores, with
+- [x] Fit only `StandardScaler + LogisticRegression` on clamped logits of the two scores, with
       source/label-balanced weights. Select one threshold on CAL under REAL macro/worst-FP and AI
       macro/worst-recall constraints; freeze the artifact before reading DEVELOPMENT metrics.
+      Candidate SHA-256 is `19fd7bbc...b100`; threshold is `0.3423850493` and DEVELOPMENT scores
+      created remain zero.
 - [ ] Accept the fusion only if DEVELOPMENT coverage is 100%, pooled AUC >=0.90 and balanced
       accuracy >=0.85; DDA all-six macro/worst recall >=75%/50%; RR AI macro/worst recall
       >=80%/60% with REAL FP <=10%; IPN worst-device FP <=20%; and owner-gallery FP <=20%.

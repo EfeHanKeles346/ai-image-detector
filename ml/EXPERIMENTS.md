@@ -3260,3 +3260,7 @@ was scored or selected using model output.
 - **Joint score completion:** E43-S scored all 1,670 frozen E35 rows locally with 100% coverage;
   the 455,631-byte stream SHA-256 is `35d9d2c2...ad5af`. No fusion head was fit and no DEVELOPMENT
   aggregate was read at this checkpoint.
+- **Frozen candidate:** the two-logit head fit 3,657 FIT rows and selected threshold
+  `0.3423850493` on 1,307 CAL rows. CAL AUC is 0.96936, balanced accuracy 0.91637, REAL FP 7.22%,
+  AI group-macro recall 95.38% and worst recall 68.00%. Candidate SHA-256 is
+  `19fd7bbc...b100`; `development_scores_created` is zero.

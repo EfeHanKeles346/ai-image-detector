@@ -4035,3 +4035,8 @@ zero new scores and transferred zero image bytes.
 E43-S then produced the missing companion probability for all 1,670 E35 rows with 100% coverage.
 The 455,631-byte stream SHA-256 is `35d9d2c2...ad5af`. Every input passed its bound byte hash; no
 fusion head or DEVELOPMENT result existed at this checkpoint.
+
+The fixed two-logit logistic head then fit 3,657 FIT rows and selected its single threshold on
+1,307 CAL rows. Threshold `0.3423850493` yielded CAL AUC 0.96936, balanced accuracy 0.91637, REAL
+FP 7.22%, AI group-macro recall 95.38% and worst recall 68.00%. Candidate SHA-256 is
+`19fd7bbc...b100`; no DEVELOPMENT score had been created when it was frozen.
