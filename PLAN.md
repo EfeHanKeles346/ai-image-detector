@@ -372,6 +372,8 @@ it before paying for another architecture or training run.
       E43-S stream and evaluate the E44-C candidate once. Require real-camera macro/worst FP,
       modern-AI macro/worst recall, transport robustness and coverage gates simultaneously. Keep
       ITW-SM or a future NIST round as the only independent final.
+- [x] Complete the official-DDA arm on 5,100/5,100 bound views before fusion aggregation. The
+      1,793,353-byte score stream SHA-256 is `3618b158...d3108`; coverage is 100%.
 
 ### F3 — recording and stop rules
 

@@ -3289,3 +3289,6 @@ was scored or selected using model output.
   overlap. Detailed contract SHA-256 is `b3c399e9...e1152`; population SHA-256 is
   `ac79ea36...89aa3`. Threshold `0.3477933653`, candidate `19fd7bbc...b100` and all gates are bound;
   `dda_scores_created` is zero.
+- **DDA arm complete:** all 5,100 bound views scored successfully. The 1,793,353-byte stream
+  SHA-256 is `3618b158...d3108`; coverage is 1.0. Fusion metrics had not been aggregated at this
+  checkpoint.
