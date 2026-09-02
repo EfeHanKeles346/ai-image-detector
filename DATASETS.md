@@ -735,6 +735,14 @@ It has zero within-pool exact groups, zero cross-label exact groups and zero cro
 diagnostics. Detailed manifest SHA-256 is `e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db`;
 it is unscored and cannot be changed after seeing model output.
 
+The frozen DDA-COCO manifest has now been scored exactly once and is scientifically consumed. All
+34,755 rows completed; score-stream SHA-256 is
+`1eefbdb7111154c408f08f84cfe155a0697715a974c965b4ea19d938671642dd`. E43-S failed the aligned
+benchmark (AUC 0.54178, balanced accuracy 0.51114, REAL FP 14.44%, AI macro recall 16.67%). These
+rows may support diagnosis and future DEVELOPMENT comparisons, but never a second independent
+final claim or test-informed row/threshold repair. Any E44 training population must use different
+COCO parents/assets and remain parent- and generator-separated from this consumed snapshot.
+
 The immediate reproducible source is **RRDataset**, the ICCV 2025 Real-World Robustness benchmark,
 from the official Zenodo record `14963880` under CC BY 4.0. It contains high-impact/everyday scenes
 and evaluates original files, repeated internet/social-platform transmission and physical

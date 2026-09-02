@@ -3983,3 +3983,17 @@ E43-S artifact, threshold `0.8712875247`, manifest `e663d679...a3db`, 4,965 pare
 seven conditions and all eight pass gates before model access. It explicitly forbids threshold
 repair, post-score row removal, test-informed fitting and retry after a completed stream. Model
 scores at this checkpoint remain zero.
+
+The unchanged E43-S candidate then completed the DDA-COCO test once with 34,755/34,755 successful
+scores. It failed decisively: pooled AUC 0.54178, TPR@FPR10 0.11712, EER 0.47051, balanced accuracy
+0.51114, REAL FP 14.44% and AI macro/worst-variant recall 16.67%/12.77%. Every performance/safety
+gate failed; only coverage passed. Score-stream SHA-256 is `1eefbdb7...42dd` and report SHA-256 is
+`b91f4a52...c844b`.
+
+The result is not a calibration accident. A post-hoc read-only diagnostic found a maximum pooled
+balanced accuracy of only 0.53159 at threshold 0.32859, where REAL FP rises to 43.26% and AI TPR is
+49.58%. The model therefore lacks a transferable representation for DDA's content/frequency-
+aligned reconstruction regime. The first result stays immutable; DDA-COCO becomes consumed
+DEVELOPMENT for a future E44 paired/adapter design, while ITW-SM or a future NIST round remains the
+required untouched final. This negative result materially narrows the next research question and
+prevents another ineffective threshold-only cycle.

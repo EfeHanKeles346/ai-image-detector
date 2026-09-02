@@ -272,7 +272,7 @@ it before paying for another architecture or training run.
       frozen unscored manifest contains 4,965 parents /34,755 rows, zero exact duplicate groups,
       zero cross-label exact groups and zero within-pool cross-parent dHash diagnostics. Detailed
       manifest SHA-256 is `e663d679...a3db`; model scores remain zero.
-- [ ] Score the frozen manifest exactly once with the unchanged E43-S candidate/threshold. Require
+- [x] Score the frozen manifest exactly once with the unchanged E43-S candidate/threshold. Require
       100% coverage, ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy >=0.85,
       REAL FP <=10%, AI macro/worst reconstruction recall >=80%/60%. A miss is preserved without
       threshold repair; a pass is strong independent aligned-benchmark evidence but not a NIST
@@ -283,6 +283,26 @@ it before paying for another architecture or training run.
       separately and in the pooled gate.
       **Score contract frozen:** SHA-256 `a414e500...b69da` binds 4,965 parents /34,755 rows, the
       unchanged candidate, threshold and all eight gates with zero model scores.
+      **Failed once, no retry:** coverage is 100%, but pooled AUC **0.54178**, TPR@FPR10
+      **0.11712**, EER **0.47051**, balanced accuracy **0.51114**, REAL FP **14.44%**, AI
+      macro/worst recall **16.67%/12.77%**. Only coverage passes. Post-hoc, even the best pooled
+      threshold reaches balanced accuracy just **0.53159** with 43.26% REAL FP, proving this is a
+      representation/generalization failure rather than an operating-threshold repair.
+
+### F2b — response to the consumed DDA-COCO failure
+
+- [ ] Reclassify DDA-COCO as consumed DEVELOPMENT for every future candidate; preserve its first
+      score and never present a later run as independent final evidence.
+- [ ] Design E44 around content-matched REAL/AI training pairs and generator-held-out validation.
+      A lightweight DINOv2 adapter or selectively unfrozen late blocks must learn causal synthesis
+      traces; a new linear threshold over the unchanged representation is not justified by the
+      post-hoc ceiling.
+- [ ] Acquire or generate a separate paired TRAIN/CAL population (not these 4,965 test parents),
+      including reconstruction-style and modern diffusion/flow families. Keep complete prompt or
+      image parents in one role and reserve at least one generator family from fitting.
+- [ ] Retain the current real-camera/RR regression gates so improving DDA recall cannot silently
+      restore the old “real photos become AI” failure. ITW-SM or a future NIST round remains the
+      untouched final; no universal-success claim until that independent gate passes.
 
 ### F3 — recording and stop rules
 

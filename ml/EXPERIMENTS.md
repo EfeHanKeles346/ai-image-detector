@@ -3192,3 +3192,21 @@ was scored or selected using model output.
 - **One-shot binding:** tracked contract SHA-256 `a414e500...b69da` binds the immutable manifest,
   E43-S candidate/threshold, 34,755 declared rows and all eight success checks before model load.
   It forbids threshold repair, post-score row removal, test-informed fit and completed-run retry.
+
+### E43 Plan C — DDA-COCO failed once, no retry
+
+- **Integrity:** 34,755/34,755 rows scored, zero failures. Score stream is 7,171,203 bytes /SHA-256
+  `1eefbdb7...42dd`; report SHA-256 is `b91f4a52...c844b`. Candidate, threshold, manifest and score
+  contract are unchanged.
+- **Pooled result:** AUC **0.54178**, TPR@FPR10 **0.11712**, EER **0.47051**, balanced accuracy
+  **0.51114**, REAL FP **14.44%**, AI macro/worst-variant recall **16.67%/12.77%**. Only the 100%
+  coverage check passes; the seven performance/safety checks fail.
+- **AI recall:** FLUX.1 **12.77%**, SD VAE EMA **16.74%**, SD VAE MSE **18.27%**, SDXL VAE
+  **18.61%**, SD 2.1 **18.21%**, SD 3.5 Large **15.43%**.
+- **Post-hoc diagnosis only:** the best possible pooled balanced point is just **0.53159** at
+  threshold 0.32859, with REAL FP **43.26%** and AI TPR **49.58%**. Per-variant best balanced
+  accuracy ranges 0.50262–0.54804. This rules out threshold repair and exposes a representation /
+  causal-generalization failure on content/frequency-aligned reconstructions.
+- **Decision:** preserve the failed first result. DDA-COCO is now consumed DEVELOPMENT for E44; do
+  not retry, tune on it and call it final, or promote E43-S. Train on distinct paired parents with
+  generator-held-out validation while retaining real-camera/RR regression safety.
