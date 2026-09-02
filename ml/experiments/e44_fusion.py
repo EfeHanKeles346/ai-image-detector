@@ -331,7 +331,7 @@ def select_threshold(rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     feasible = []
     for threshold in candidates:
         rates = _rates(rows, threshold)
-        metrics = evaluate_binary_scores(rows, threshold)
+        metrics = evaluate_binary_scores(rows, threshold=threshold)
         if (rates["real_macro_fp"] <= 0.10 and rates["real_worst_fp"] <= 0.25
                 and rates["ai_macro_recall"] >= 0.75 and rates["ai_worst_recall"] >= 0.40):
             feasible.append((float(metrics["balanced_accuracy"]), threshold, rates, metrics))
@@ -379,7 +379,7 @@ def fit() -> dict[str, Any]:
 
 
 def development_gate(rows: Sequence[Mapping[str, Any]], threshold: float) -> dict[str, Any]:
-    metrics = evaluate_binary_scores(rows, threshold)
+    metrics = evaluate_binary_scores(rows, threshold=threshold)
     dda = [row for row in rows if row["population"] == "dda"]
     rr = [row for row in rows if row["population"] == "rr"]
     ipn = [row for row in rows if row["population"] == "ipn"]
