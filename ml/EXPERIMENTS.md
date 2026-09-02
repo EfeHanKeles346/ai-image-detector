@@ -3171,3 +3171,16 @@ was scored or selected using model output.
   replayed in fit, so it is only a forgetting diagnostic, not independent evidence.
 - **Decision:** every frozen E43-S local gate passes. DINOv2-L stays locked. Package E43-S and wait
   for the untouched ITW-SM one-shot final; do not promote it solely from this consumed result.
+
+### E43 Plan C — DDA-COCO acquisition and paired structure (unscored)
+
+- **Synthetic archive:** official pinned DDA-COCO, 4,301,452,066 bytes /SHA-256
+  `8cd60077...99c24`; safe ZIP and full CRC pass. It contains 29,969 images across six synthetic
+  variants and no bundled REAL folder.
+- **REAL companion:** official COCO val2017 transfer completed once using the prebound URL,
+  815,585,330-byte size and S3 ETag. SHA-256 is `4f7e2ccb...82f05`; all 5,000 JPEG members pass the
+  exact path schema and full CRC.
+- **Pair structure:** exactly 4,969 parent IDs occur in REAL and every synthetic variant, yielding
+  34,783 prospective rows. Parent-ID-set SHA-256 is `2b68c4aa...a3a7b`.
+- **Boundary:** zero pixels decoded for manifest selection, zero model loads and zero scores. Next
+  freeze a seven-view parent-group manifest after decode/hash and protected-overlap audit.

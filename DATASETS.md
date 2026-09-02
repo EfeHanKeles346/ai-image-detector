@@ -719,6 +719,14 @@ bucket, exactly 815,585,330 bytes /5,000 JPEGs. Before transfer, E43 binds URL
 first verified download will compute and freeze SHA-256 before pixels or scores. Only parent IDs
 present in REAL and all six DDA folders may enter the score-blind candidate manifest.
 
+That transfer completed once: 815,585,330 network bytes, SHA-256
+`4f7e2ccb2866ec5041993c9cf2a952bbed69647b115d0f74da7ce8f4bef82f05`. All 5,000 members match
+the declared JPEG schema and pass full ZIP CRC; expanded bytes are 814,705,164. Cross-archive
+structure leaves 4,969 complete seven-view parents /34,783 rows. These are inventory facts, not
+decoded samples or model results. DDA-COCO's archive is Apache-2.0; the companion COCO images retain
+their individual source/Flickr licence terms and are research evaluation material, not relicensed
+by this project.
+
 The immediate reproducible source is **RRDataset**, the ICCV 2025 Real-World Robustness benchmark,
 from the official Zenodo record `14963880` under CC BY 4.0. It contains high-impact/everyday scenes
 and evaluates original files, repeated internet/social-platform transmission and physical

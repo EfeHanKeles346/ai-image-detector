@@ -1,0 +1,20 @@
+{
+  "complete_parent_count": 4969,
+  "complete_parent_ids_sha256": "2b68c4aaf75ef8785b3fb701af5815c4271b952f75f48134d7f54ca1c21a3a7b",
+  "complete_row_count": 34783,
+  "dda_archive_sha256": "8cd600779aaecef21605b07bff9ab3963a7fb9b9614a3d9a0588cd4a5e099c24",
+  "model_scores_created": 0,
+  "next": "Decode/hash complete seven-view parent groups and audit protected overlap before scoring.",
+  "real_archive_sha256": "4f7e2ccb2866ec5041993c9cf2a952bbed69647b115d0f74da7ce8f4bef82f05",
+  "real_count": 5000,
+  "schema_version": 1,
+  "state": "e43_dda_coco_structure_passed_before_decode",
+  "variant_counts": {
+    "FLUX.1": 4971,
+    "sd-vae-ft-ema": 5000,
+    "sd-vae-ft-mse": 5000,
+    "sdxl-vae": 5000,
+    "stable-diffusion-2-1": 5000,
+    "stable-diffusion-3.5-large": 4998
+  }
+}

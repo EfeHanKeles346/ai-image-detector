@@ -258,6 +258,10 @@ it before paying for another architecture or training run.
       schema; bind the newly computed SHA-256 before decoding. Retain only IDs present in all six
       DDA variants (`sd-vae-ft-ema`, `sd-vae-ft-mse`, `sdxl-vae`, `stable-diffusion-2-1`,
       `stable-diffusion-3.5-large`, `FLUX.1`).
+      **Source and structure checks passed:** the 815,585,330-byte transfer completed once with
+      SHA-256 `4f7e2ccb...82f05`; all 5,000 JPEGs passed schema and ZIP/CRC validation. Exactly 4,969
+      parents have REAL plus all six synthetic views (34,783 rows). Decode, decontamination and
+      model scoring are still pending and must preserve seven-view parent groups.
 - [ ] Score the frozen manifest exactly once with the unchanged E43-S candidate/threshold. Require
       100% coverage, ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy >=0.85,
       REAL FP <=10%, AI macro/worst reconstruction recall >=80%/60%. A miss is preserved without

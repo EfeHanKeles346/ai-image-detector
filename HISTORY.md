@@ -3960,3 +3960,11 @@ REAL source, so Plan C now freezes one 815,585,330-byte official COCO val2017 co
 Its S3 size, Last-Modified and multipart ETag are bound before transfer; the resulting SHA-256 and
 5,000-file schema must be sealed before decode/decontamination. This correction changes no model
 or score and keeps total new transfer well below the user's 4 GB ceiling.
+
+The official COCO val2017 companion then downloaded exactly once: 815,585,330 network bytes and
+SHA-256 `4f7e2ccb2866ec5041993c9cf2a952bbed69647b115d0f74da7ce8f4bef82f05`. Its 5,000 JPEGs passed
+the frozen member schema and full ZIP CRC. Cross-archive structure found 4,969 parents shared by
+REAL and all six DDA synthetic variants, giving 34,783 candidate rows. No pixel was decoded for
+selection and no model score exists; the next immutable checkpoint is parent-group decode/hash and
+protected-role decontamination. This immediately available open benchmark advances the project
+while ITW-SM and NIST remain access-gated, but it does not replace their real-world final scope.
