@@ -3226,3 +3226,15 @@ was scored or selected using model output.
   SHA-256 is `b1ac6bb2...1990`; detailed contract SHA-256 is `df256498...5ce9`. It binds the frozen
   manifest `e663d679...a3db`, official checkpoint `b27a31d3...e3e`, threshold 0.5 and all gates.
   `model_scores_created` is zero at this checkpoint.
+- **Fixed result:** all 4,900 rows scored successfully at threshold 0.5. AUC **0.99006**, balanced
+  accuracy **0.93917**, EER **0.04845**, REAL FP **0.86%** and pooled AI recall **88.69%**. Core-
+  variant macro recall is **98.61%**, all-six macro recall **88.69%** and worst recall **64.57%**.
+  All seven preregistered gates pass. Score-stream SHA-256 is `3d24d1c1...31d75`; detailed report
+  SHA-256 is `a57e001d...090e`.
+- **Variant recall:** FLUX.1 64.57%, SD VAE EMA 99.71%, SD VAE MSE 99.71%, SDXL VAE 95.29%,
+  SD 2.1 99.71% and SD 3.5 Large 73.14%. The official representation supplies the aligned-
+  reconstruction capability missing from E43-S, but weaker modern-flow recall and prior smartphone
+  false positives prohibit serving it alone.
+- **Decision:** retain the official DDA representation as an E44 specialist and move to a frozen,
+  conservative fusion/adaptation using existing training roles plus real-camera regression gates.
+  Do not download replacement VAE data. This consumed screen is diagnostic, not final evidence.

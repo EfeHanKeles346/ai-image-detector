@@ -4005,3 +4005,17 @@ parent-list hash is `b1ac6bb2...1990`. Contract SHA-256 `df256498...5ce9` binds 
 official checkpoint, published threshold 0.5 and seven pass gates. No score was produced at this
 checkpoint. This screen can isolate useful aligned-reconstruction expertise, but cannot become a
 new independent final because DDA-COCO was already consumed by E43.
+
+The frozen E44-A screen then completed all 4,900 rows without failure. The official DDA specialist
+passed every preregistered gate: AUC 0.99006, balanced accuracy 0.93917, REAL false-positive rate
+0.86%, core-four macro recall 98.61%, all-six macro recall 88.69% and worst-variant recall 64.57%.
+Its strongest recalls were 99.71% on both SD VAE variants and SD 2.1; SDXL reached 95.29%, while
+FLUX.1 and SD 3.5 Large were weaker at 64.57% and 73.14%. Score-stream SHA-256 is
+`3d24d1c1...31d75`; detailed report SHA-256 is `a57e001d...090e`.
+
+This resolves the low-score mystery: E43-S did not fail because the disk or manifest was broken;
+its compact scalar representation omitted the content/frequency-aligned reconstruction evidence
+that the official DDA representation learned. The official model still cannot be served alone
+because earlier E35/E36 work found unsafe smartphone and modern-generator transfer. E44 therefore
+keeps it as a specialist and proceeds to conservative fusion/adaptation with existing real-camera
+safeguards. No replacement VAE dataset will be downloaded at this branch.

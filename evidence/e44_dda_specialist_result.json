@@ -1,0 +1,547 @@
+{
+  "boundary": "Consumed comparative DEVELOPMENT only; cannot validate or promote a detector.",
+  "by_variant": {
+    "FLUX.1": {
+      "accuracy_counting_failures_wrong": 0.8185714285714286,
+      "ai_recall": 0.6457142857142857,
+      "balanced_accuracy": 0.8185714285714285,
+      "brier_nontarget_real": 0.010202138309787686,
+      "brier_target_ai": 0.24780351848825588,
+      "confusion": {
+        "fn": 248,
+        "fp": 6,
+        "tn": 694,
+        "tp": 452
+      },
+      "counts": {
+        "ai_succeeded": 700,
+        "failed": 0,
+        "real_succeeded": 700,
+        "succeeded": 1400,
+        "total": 1400
+      },
+      "coverage": 1.0,
+      "eer": 0.09285714285714286,
+      "per_group": [
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "REAL",
+          "confusion": {
+            "fn": 0,
+            "fp": 6,
+            "tn": 694,
+            "tp": 0
+          },
+          "count": 700,
+          "label": 0,
+          "real_false_positive_rate": 0.008571428571428572,
+          "source": "COCO-val2017"
+        },
+        {
+          "ai_recall": 0.6457142857142857,
+          "balanced_accuracy": null,
+          "condition": "FLUX.1",
+          "confusion": {
+            "fn": 248,
+            "fp": 0,
+            "tn": 0,
+            "tp": 452
+          },
+          "count": 700,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "FLUX.1"
+        }
+      ],
+      "real_false_positive_rate": 0.008571428571428572,
+      "roc_auc": 0.9689857142857143,
+      "stored_threshold": 0.5,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9142857142857143
+      }
+    },
+    "sd-vae-ft-ema": {
+      "accuracy_counting_failures_wrong": 0.9942857142857143,
+      "ai_recall": 0.9971428571428571,
+      "balanced_accuracy": 0.9942857142857142,
+      "brier_nontarget_real": 0.010202138309787686,
+      "brier_target_ai": 0.00384243064067884,
+      "confusion": {
+        "fn": 2,
+        "fp": 6,
+        "tn": 694,
+        "tp": 698
+      },
+      "counts": {
+        "ai_succeeded": 700,
+        "failed": 0,
+        "real_succeeded": 700,
+        "succeeded": 1400,
+        "total": 1400
+      },
+      "coverage": 1.0,
+      "eer": 0.005714285714285693,
+      "per_group": [
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "REAL",
+          "confusion": {
+            "fn": 0,
+            "fp": 6,
+            "tn": 694,
+            "tp": 0
+          },
+          "count": 700,
+          "label": 0,
+          "real_false_positive_rate": 0.008571428571428572,
+          "source": "COCO-val2017"
+        },
+        {
+          "ai_recall": 0.9971428571428571,
+          "balanced_accuracy": null,
+          "condition": "sd-vae-ft-ema",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 698
+          },
+          "count": 700,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "sd-vae-ft-ema"
+        }
+      ],
+      "real_false_positive_rate": 0.008571428571428572,
+      "roc_auc": 0.999561224489796,
+      "stored_threshold": 0.5,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9985714285714286
+      }
+    },
+    "sd-vae-ft-mse": {
+      "accuracy_counting_failures_wrong": 0.9942857142857143,
+      "ai_recall": 0.9971428571428571,
+      "balanced_accuracy": 0.9942857142857142,
+      "brier_nontarget_real": 0.010202138309787686,
+      "brier_target_ai": 0.0020457865153050607,
+      "confusion": {
+        "fn": 2,
+        "fp": 6,
+        "tn": 694,
+        "tp": 698
+      },
+      "counts": {
+        "ai_succeeded": 700,
+        "failed": 0,
+        "real_succeeded": 700,
+        "succeeded": 1400,
+        "total": 1400
+      },
+      "coverage": 1.0,
+      "eer": 0.004285714285714311,
+      "per_group": [
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "REAL",
+          "confusion": {
+            "fn": 0,
+            "fp": 6,
+            "tn": 694,
+            "tp": 0
+          },
+          "count": 700,
+          "label": 0,
+          "real_false_positive_rate": 0.008571428571428572,
+          "source": "COCO-val2017"
+        },
+        {
+          "ai_recall": 0.9971428571428571,
+          "balanced_accuracy": null,
+          "condition": "sd-vae-ft-mse",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 698
+          },
+          "count": 700,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "sd-vae-ft-mse"
+        }
+      ],
+      "real_false_positive_rate": 0.008571428571428572,
+      "roc_auc": 0.9998428571428571,
+      "stored_threshold": 0.5,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 1.0
+      }
+    },
+    "sdxl-vae": {
+      "accuracy_counting_failures_wrong": 0.9721428571428572,
+      "ai_recall": 0.9528571428571428,
+      "balanced_accuracy": 0.9721428571428572,
+      "brier_nontarget_real": 0.010202138309787686,
+      "brier_target_ai": 0.032091872078479015,
+      "confusion": {
+        "fn": 33,
+        "fp": 6,
+        "tn": 694,
+        "tp": 667
+      },
+      "counts": {
+        "ai_succeeded": 700,
+        "failed": 0,
+        "real_succeeded": 700,
+        "succeeded": 1400,
+        "total": 1400
+      },
+      "coverage": 1.0,
+      "eer": 0.02000000000000001,
+      "per_group": [
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "REAL",
+          "confusion": {
+            "fn": 0,
+            "fp": 6,
+            "tn": 694,
+            "tp": 0
+          },
+          "count": 700,
+          "label": 0,
+          "real_false_positive_rate": 0.008571428571428572,
+          "source": "COCO-val2017"
+        },
+        {
+          "ai_recall": 0.9528571428571428,
+          "balanced_accuracy": null,
+          "condition": "sdxl-vae",
+          "confusion": {
+            "fn": 33,
+            "fp": 0,
+            "tn": 0,
+            "tp": 667
+          },
+          "count": 700,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "sdxl-vae"
+        }
+      ],
+      "real_false_positive_rate": 0.008571428571428572,
+      "roc_auc": 0.9978285714285714,
+      "stored_threshold": 0.5,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9971428571428571
+      }
+    },
+    "stable-diffusion-2-1": {
+      "accuracy_counting_failures_wrong": 0.9942857142857143,
+      "ai_recall": 0.9971428571428571,
+      "balanced_accuracy": 0.9942857142857142,
+      "brier_nontarget_real": 0.010202138309787686,
+      "brier_target_ai": 0.002147966851996328,
+      "confusion": {
+        "fn": 2,
+        "fp": 6,
+        "tn": 694,
+        "tp": 698
+      },
+      "counts": {
+        "ai_succeeded": 700,
+        "failed": 0,
+        "real_succeeded": 700,
+        "succeeded": 1400,
+        "total": 1400
+      },
+      "coverage": 1.0,
+      "eer": 0.004285714285714311,
+      "per_group": [
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "REAL",
+          "confusion": {
+            "fn": 0,
+            "fp": 6,
+            "tn": 694,
+            "tp": 0
+          },
+          "count": 700,
+          "label": 0,
+          "real_false_positive_rate": 0.008571428571428572,
+          "source": "COCO-val2017"
+        },
+        {
+          "ai_recall": 0.9971428571428571,
+          "balanced_accuracy": null,
+          "condition": "stable-diffusion-2-1",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 698
+          },
+          "count": 700,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "stable-diffusion-2-1"
+        }
+      ],
+      "real_false_positive_rate": 0.008571428571428572,
+      "roc_auc": 0.999834693877551,
+      "stored_threshold": 0.5,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 1.0
+      }
+    },
+    "stable-diffusion-3.5-large": {
+      "accuracy_counting_failures_wrong": 0.8614285714285714,
+      "ai_recall": 0.7314285714285714,
+      "balanced_accuracy": 0.8614285714285714,
+      "brier_nontarget_real": 0.010202138309787686,
+      "brier_target_ai": 0.1872792585257328,
+      "confusion": {
+        "fn": 188,
+        "fp": 6,
+        "tn": 694,
+        "tp": 512
+      },
+      "counts": {
+        "ai_succeeded": 700,
+        "failed": 0,
+        "real_succeeded": 700,
+        "succeeded": 1400,
+        "total": 1400
+      },
+      "coverage": 1.0,
+      "eer": 0.08285714285714285,
+      "per_group": [
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "REAL",
+          "confusion": {
+            "fn": 0,
+            "fp": 6,
+            "tn": 694,
+            "tp": 0
+          },
+          "count": 700,
+          "label": 0,
+          "real_false_positive_rate": 0.008571428571428572,
+          "source": "COCO-val2017"
+        },
+        {
+          "ai_recall": 0.7314285714285714,
+          "balanced_accuracy": null,
+          "condition": "stable-diffusion-3.5-large",
+          "confusion": {
+            "fn": 188,
+            "fp": 0,
+            "tn": 0,
+            "tp": 512
+          },
+          "count": 700,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "stable-diffusion-3.5-large"
+        }
+      ],
+      "real_false_positive_rate": 0.008571428571428572,
+      "roc_auc": 0.9742816326530612,
+      "stored_threshold": 0.5,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9228571428571428
+      }
+    }
+  },
+  "checkpoint_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e",
+  "contract_sha256": "df256498a3b78bae002a35dd81ca7d074200f66d1660b6ff3529ffffadb05ce9",
+  "detailed_report_bytes": 14411,
+  "detailed_report_sha256": "a57e001dee400c0d835c082c7722c865bb3eb15572e3525d9bd9613fc0ca090e",
+  "gate": {
+    "checks": {
+      "all_macro_recall_gte_0_70": true,
+      "balanced_accuracy_gte_0_80": true,
+      "core_macro_recall_gte_0_80": true,
+      "coverage_eq_1": true,
+      "real_fp_lte_0_20": true,
+      "roc_auc_gte_0_85": true,
+      "worst_recall_gte_0_40": true
+    },
+    "passed": true
+  },
+  "metrics": {
+    "accuracy_counting_failures_wrong": 0.9018367346938776,
+    "ai_recall": 0.8869047619047619,
+    "balanced_accuracy": 0.9391666666666667,
+    "brier_nontarget_real": 0.010202138309787686,
+    "brier_target_ai": 0.07920180551674132,
+    "confusion": {
+      "fn": 475,
+      "fp": 6,
+      "tn": 694,
+      "tp": 3725
+    },
+    "counts": {
+      "ai_succeeded": 4200,
+      "failed": 0,
+      "real_succeeded": 700,
+      "succeeded": 4900,
+      "total": 4900
+    },
+    "coverage": 1.0,
+    "eer": 0.048452380952380955,
+    "per_group": [
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "REAL",
+        "confusion": {
+          "fn": 0,
+          "fp": 6,
+          "tn": 694,
+          "tp": 0
+        },
+        "count": 700,
+        "label": 0,
+        "real_false_positive_rate": 0.008571428571428572,
+        "source": "COCO-val2017"
+      },
+      {
+        "ai_recall": 0.6457142857142857,
+        "balanced_accuracy": null,
+        "condition": "FLUX.1",
+        "confusion": {
+          "fn": 248,
+          "fp": 0,
+          "tn": 0,
+          "tp": 452
+        },
+        "count": 700,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FLUX.1"
+      },
+      {
+        "ai_recall": 0.9971428571428571,
+        "balanced_accuracy": null,
+        "condition": "sd-vae-ft-ema",
+        "confusion": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 0,
+          "tp": 698
+        },
+        "count": 700,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "sd-vae-ft-ema"
+      },
+      {
+        "ai_recall": 0.9971428571428571,
+        "balanced_accuracy": null,
+        "condition": "sd-vae-ft-mse",
+        "confusion": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 0,
+          "tp": 698
+        },
+        "count": 700,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "sd-vae-ft-mse"
+      },
+      {
+        "ai_recall": 0.9528571428571428,
+        "balanced_accuracy": null,
+        "condition": "sdxl-vae",
+        "confusion": {
+          "fn": 33,
+          "fp": 0,
+          "tn": 0,
+          "tp": 667
+        },
+        "count": 700,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "sdxl-vae"
+      },
+      {
+        "ai_recall": 0.9971428571428571,
+        "balanced_accuracy": null,
+        "condition": "stable-diffusion-2-1",
+        "confusion": {
+          "fn": 2,
+          "fp": 0,
+          "tn": 0,
+          "tp": 698
+        },
+        "count": 700,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "stable-diffusion-2-1"
+      },
+      {
+        "ai_recall": 0.7314285714285714,
+        "balanced_accuracy": null,
+        "condition": "stable-diffusion-3.5-large",
+        "confusion": {
+          "fn": 188,
+          "fp": 0,
+          "tn": 0,
+          "tp": 512
+        },
+        "count": 700,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "stable-diffusion-3.5-large"
+      }
+    ],
+    "real_false_positive_rate": 0.008571428571428572,
+    "roc_auc": 0.9900557823129252,
+    "stored_threshold": 0.5,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.9721428571428572
+    }
+  },
+  "next": "adapt official DDA representation with real-camera safeguards",
+  "rates": {
+    "ai_recall_by_variant": {
+      "FLUX.1": 0.6457142857142857,
+      "sd-vae-ft-ema": 0.9971428571428571,
+      "sd-vae-ft-mse": 0.9971428571428571,
+      "sdxl-vae": 0.9528571428571428,
+      "stable-diffusion-2-1": 0.9971428571428571,
+      "stable-diffusion-3.5-large": 0.7314285714285714
+    },
+    "all_variant_macro_recall": 0.8869047619047619,
+    "core_variant_macro_recall": 0.9860714285714285,
+    "real_false_positive_rate": 0.008571428571428572,
+    "worst_variant_recall": 0.6457142857142857
+  },
+  "role": "consumed_development_comparison_not_final",
+  "schema_version": 1,
+  "score_stream": {
+    "bytes": 1008758,
+    "rows": 4900,
+    "sha256": "3d24d1c1fdc1d67571166ee2983b11944c6f689c9f43155588dc035c9e331d75"
+  },
+  "state": "e44_dda_specialist_screen_passed",
+  "threshold": 0.5
+}
