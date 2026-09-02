@@ -203,7 +203,7 @@ it before paying for another architecture or training run.
       selected threshold `0.8712875247`: AUC 0.97369, balanced accuracy 0.92551, REAL FP 10.0%
       and AI recall 95.10%. Frozen candidate SHA-256 is `a3aec445...47390`; RR DEVELOPMENT and
       ITW-SM still have zero scores.
-- [ ] Require the unchanged full clean gate on RR DEVELOPMENT original, AUC >=0.85 and balanced
+- [x] Require the unchanged full clean gate on RR DEVELOPMENT original, AUC >=0.85 and balanced
       accuracy >=0.80 on both transfer and redigital, plus no material regression on the earlier
       E42 multi-source DEVELOPMENT checks. Freeze “no material regression” before score as clean
       AUC within 0.02 and balanced accuracy within 0.05 of E42-S, robust AUC within 0.02 and
@@ -212,6 +212,11 @@ it before paying for another architecture or training run.
       S fails may the already-local DINOv2-L intermediate arm run on the identical frozen roles.
       Neither local result is final evidence and neither may open ITW-SM before its own score
       contract is committed.
+      **E43-S passed on the first frozen run:** original AUC/balanced 0.98194/0.93265 with 7.96%
+      REAL FP and 94.49% AI recall; transfer 0.97826/0.92755; redigital 0.95186/0.88673. Historical
+      regression checks also pass, although they are explicitly consumed/replayed diagnostics.
+      Candidate `a3aec445...47390` is now packaged in `evidence/e43_candidate_contract.json` and
+      waits for ITW-SM author approval; DINOv2-L remains locked because S did not fail.
 
 ### F3 — recording and stop rules
 

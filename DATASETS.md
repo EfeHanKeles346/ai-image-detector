@@ -1158,3 +1158,10 @@ artifact is 87,916 bytes /SHA-256
 `a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390`; its compact fit receipt is
 `evidence/e43_small_predev.json`. This is a derived research candidate, not a new dataset or final
 result. ITW-SM still contributes zero local payload images and zero scores pending author approval.
+
+The one permitted E43-S run has now consumed all 2,940 RR `DEVELOPMENT` condition rows (980 each
+for original, transfer and redigital) and 11,230 earlier E42 development-regression views. The
+combined 14,170-row local score stream is 4,192,797 bytes /SHA-256
+`8398f763b44f97b3e7ca426b74dd665d72850b740b2ecd2fb6ebbab30df1ccc4`. These roles can never be
+reused as independent final evidence. No new source image was downloaded, copied or relabelled;
+ITW-SM remains untouched with zero local payload images and zero scores.

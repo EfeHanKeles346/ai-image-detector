@@ -3904,3 +3904,18 @@ REAL FP 10.0% and AI recall 95.10%. The 87,916-byte candidate SHA-256 is
 `a3aec445...47390`. This promising calibration result is not a pass: the candidate and threshold
 are now immutable for the separate consumed DEVELOPMENT run, and both RR DEVELOPMENT and ITW-SM
 still have zero scores at this checkpoint.
+
+The separately committed one-shot evaluator then opened the 2,940 RR DEVELOPMENT rows exactly
+once. E43-S passed every frozen local gate: original AUC/balanced accuracy are 0.98194/0.93265 with
+7.96% REAL FP and 94.49% AI recall; transfer is 0.97826/0.92755; redigital is
+0.95186/0.88673. This repairs the old E42 redigital balanced-accuracy failure from 0.78756 to
+0.88673 while also reducing original REAL FP from 24.27% to 7.96% on the selected score-blind
+development slice. The `everyday_life` redigital subgroup remains a visible weakness at 48.57%
+recall. Historical clean/robust regression checks pass, but are explicitly not independent because
+that consumed population is partly replayed during fit.
+
+The immutable local stream contains 14,170 rows /4,192,797 bytes with SHA-256
+`8398f763...1ccc4`; tracked report SHA-256 is `eda98604...5319`. The pass locks DINOv2-L rather
+than spending a larger model after S succeeded. E43-S is now a research candidate awaiting the
+untouched ITW-SM final, not a promoted detector. ITW-SM still has zero payload images and zero
+scores until manual author approval arrives.

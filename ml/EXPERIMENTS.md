@@ -3152,3 +3152,22 @@ was scored or selected using model output.
   measurements, not independent success evidence.
 - **Binding:** 87,916-byte candidate SHA-256 `a3aec445...47390`; 5,322-byte tracked report SHA-256
   `d24109c7...a14c8`. It explicitly records zero RR DEVELOPMENT and zero ITW-SM scores.
+
+### E43-S consumed DEVELOPMENT — passed once
+
+- **Integrity:** candidate `a3aec445...47390` and threshold `0.8712875247` were hash-bound before
+  score. Exactly 2,940 RR DEVELOPMENT rows plus 11,230 historical regression views were scored
+  once with full coverage. The 4,192,797-byte score stream SHA-256 is `8398f763...1ccc4`; compact
+  tracked report SHA-256 is `eda98604...5319`. ITW-SM scores remain zero.
+- **RR original:** AUC **0.981941**, TPR@FPR10 **0.957143**, EER **0.069388**, balanced accuracy
+  **0.932653**, REAL FP **7.959%**, AI macro/worst recall **94.490%/71.429%**.
+- **RR transfer:** AUC **0.978263**, balanced accuracy **0.927551**, REAL FP **7.143%**, AI recall
+  **92.653%**. **RR redigital:** AUC **0.951862**, balanced accuracy **0.886735**, REAL FP
+  **8.571%**, AI recall **85.918%**. Redigital's `everyday_life` subgroup is still weak at
+  **48.571%** recall; the preregistered robustness gate is pooled AUC/balanced accuracy, so this is
+  a disclosed residual risk rather than a hidden extra failure rule.
+- **Historical regression:** clean AUC/balanced **1.000000/0.991346**, robust
+  **0.999900/0.958028**; all fixed tolerance checks pass. This population is consumed and partly
+  replayed in fit, so it is only a forgetting diagnostic, not independent evidence.
+- **Decision:** every frozen E43-S local gate passes. DINOv2-L stays locked. Package E43-S and wait
+  for the untouched ITW-SM one-shot final; do not promote it solely from this consumed result.

@@ -1,0 +1,24 @@
+{
+  "candidate": {
+    "bytes": 87916,
+    "path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+    "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "threshold": 0.8712875247001649
+  },
+  "development": {
+    "gate_passed": true,
+    "report_sha256": "eda9860448a036f2c7128ead741f54ca348b0a53cdb50fb48bae1cb823805319",
+    "score_rows": 14170,
+    "score_sha256": "8398f763b44f97b3e7ca426b74dd665d72850b740b2ecd2fb6ebbab30df1ccc4"
+  },
+  "final": {
+    "access_state": "awaiting manual author review",
+    "dataset": "dkarageo/itw-sm",
+    "local_payload_images": 0,
+    "revision": "3060094fb576669927134193de3f517d7e64af86",
+    "scores_created": 0
+  },
+  "next_action": "After author approval, acquire and audit the pinned ITW-SM snapshot, bind its unscored manifest, then run this candidate once without threshold or model changes.",
+  "schema_version": 1,
+  "state": "research_candidate_awaiting_untouched_itwsm_final"
+}
