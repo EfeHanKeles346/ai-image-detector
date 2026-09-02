@@ -205,7 +205,10 @@ it before paying for another architecture or training run.
       ITW-SM still have zero scores.
 - [ ] Require the unchanged full clean gate on RR DEVELOPMENT original, AUC >=0.85 and balanced
       accuracy >=0.80 on both transfer and redigital, plus no material regression on the earlier
-      E42 multi-source DEVELOPMENT checks. If E43-S passes, package it and wait for ITW-SM. Only if
+      E42 multi-source DEVELOPMENT checks. Freeze “no material regression” before score as clean
+      AUC within 0.02 and balanced accuracy within 0.05 of E42-S, robust AUC within 0.02 and
+      balanced accuracy within 0.05, plus clean REAL macro/worst FP <=10%/20%, AI macro/worst
+      recall >=85%/60% and 100% coverage. If E43-S passes, package it and wait for ITW-SM. Only if
       S fails may the already-local DINOv2-L intermediate arm run on the identical frozen roles.
       Neither local result is final evidence and neither may open ITW-SM before its own score
       contract is committed.
