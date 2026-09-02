@@ -3846,3 +3846,12 @@ checkpoint access approval, authenticated download, local bytes, file counts and
 still pending; **zero ITW-SM image bytes have been downloaded or exposed to a model**. The dataset
 must remain unopened until the E43 artifact, threshold, manifest rules and one-shot score contract
 are frozen.
+
+On 2026-09-02 the student accepted the ITW-SM terms and completed local OAuth authentication. The
+authenticated repository inventory is now frozen before image transfer at commit
+`3060094fb576669927134193de3f517d7e64af86`: 10,004 files /3,573,691,324 bytes, including exactly
+5,000 REAL and 5,000 AI images. A fail-closed, revision-pinned LaCie downloader and focused tests
+were added before acquisition. It preserves partial Hugging Face state across connection loss,
+requires 100 GiB free after the expected payload, rejects missing/extra/wrong-sized files and emits
+no receipt until the complete local snapshot matches the remote inventory. No model score is part
+of acquisition.

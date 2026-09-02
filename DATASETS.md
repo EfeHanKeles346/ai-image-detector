@@ -1088,7 +1088,7 @@ E42, B-Free and earlier protected parents.
 | Labels | `0_real` /target `0`; `1_fake` /target `1` |
 | Intended role | `E43_UNTOUCHED_FINAL`; never TRAIN, CAL or DEVELOPMENT |
 | Licence/access | ITW-SM research-use terms; individual gated access, non-commercial research only, no redistribution, privacy/non-identification and citation obligations |
-| Current physical state | **Not downloaded**; access approval, authentication, receipt, counts and hashes pending |
+| Current physical state | **Not downloaded**; access approved/authenticated, exact transfer and receipt pending |
 
 ITW-SM was selected because it preserves the resolution, compression and content distribution of
 images encountered on real social platforms. Controlled generator datasets can reward format,
@@ -1105,3 +1105,12 @@ exact bytes and hashes, reconcile `metadata.csv`, and decontaminate whole parent
 prior TRAIN/CAL/DEVELOPMENT/FINAL role. Only a zero-score manifest and a candidate-bound score
 contract may unlock one E43 run. No row removal, threshold repair or retry is allowed after a
 completed result.
+
+The student's individual access request and non-commercial terms were accepted on 2026-09-02;
+local OAuth authentication succeeded without recording credentials in Git. The authenticated Hub
+API resolves `dkarageo/itw-sm` to immutable revision
+`3060094fb576669927134193de3f517d7e64af86`: 10,004 files /3,573,691,324 bytes. Its exact remote
+layout is 5,000 images under `0_real`, 5,000 under `1_fake`, plus `.gitattributes`, `LICENSE`,
+`README.md` and `metadata.csv`. These are remote inventory facts, not a completed-download claim.
+The revision-pinned acquisition tool is committed before the first image transfer and will write a
+receipt only after all local paths and sizes match this inventory.
