@@ -3129,3 +3129,12 @@ was scored or selected using model output.
   unchanged `b2d815af...30c98`. Zero scores read, zero model scores created and zero image copies.
 - **Meaning:** RR is consumed local DEVELOPMENT and may improve/measure E43, never validate it
   externally. ITW-SM remains the untouched final pending manual author approval.
+
+### E43-S RR features — complete before fit
+
+- **Input:** exact role manifest `29dd9b56...4b16`; 11,760 condition rows /3,920 parents.
+- **Representation:** unchanged E42-S DINOv2-S weights `04d27f34...0081`, CLS tokens from blocks
+  2/5/8/11 over one global plus two deterministic texture crops; crop mean+std aggregation.
+- **Result:** shape 11,760x3,072, 134,777,581 B /SHA-256 `fdc5d4c8...a4aa4`; complete coverage.
+- **Boundary:** features only. Zero head fit, threshold selection, DEVELOPMENT scores or ITW-SM
+  access occurred.

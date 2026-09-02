@@ -197,6 +197,9 @@ it before paying for another architecture or training run.
       Fit one source- and parent-balanced logistic head at fixed C=0.01 on earlier consumed E42 fit
       views plus RR TRAIN triplets. CAL alone chooses a REAL-safe threshold; DEVELOPMENT stays
       unopened until the head and threshold are frozen.
+      Feature half complete before fit: all 11,760 RR rows produced a 11,760x3,072 archive,
+      134,777,581 bytes /SHA-256 `fdc5d4c8...a4aa4`, with zero model scores. Head fitting,
+      threshold selection and DEVELOPMENT access remain pending behind the next method commit.
 - [ ] Require the unchanged full clean gate on RR DEVELOPMENT original, AUC >=0.85 and balanced
       accuracy >=0.80 on both transfer and redigital, plus no material regression on the earlier
       E42 multi-source DEVELOPMENT checks. If E43-S passes, package it and wait for ITW-SM. Only if

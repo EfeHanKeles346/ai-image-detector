@@ -3889,3 +3889,9 @@ condition has 3,920 rows. The 7,645,807-byte detailed manifest SHA-256 is
 `29dd9b56...4b16`; tracked evidence explicitly reports zero score files read and zero model scores.
 This closes the data-role gate and permits E43-S feature extraction, but not fitting or final access
 before their own contracts.
+
+The E43-S RR feature pass then covered all 11,760 rows without a decode/hash failure. It reused the
+unchanged DINOv2-S weights and E42 global-plus-two-texture-crop, four-intermediate-block mean+std
+representation, producing shape 11,760x3,072. The compressed 134,777,581-byte archive SHA-256 is
+`fdc5d4c8...a4aa4`. No head, threshold or score exists at this checkpoint; DEVELOPMENT has not been
+used. Compact evidence is `evidence/e43_rr_features_small.json`.

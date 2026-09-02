@@ -1145,3 +1145,9 @@ class-balanced and each condition contributes 3,920 rows. The 7,645,807-byte det
 SHA-256 is `29dd9b564061098101bcaf178cda0c75cdacc659113ce8b01cc389371bef4b16`;
 tracked receipt is `evidence/e43_rr_roles.json`. It records `score_files_read=0`, creates no model
 score and references existing image paths without copying bytes.
+
+E43-S feature extraction adds no dataset and copies no source image. The derived local archive at
+`/Volumes/LaCie/pixelproof-datasets/e43/rr_features_small.npz` contains 11,760x3,072 float features
+and role/parent/source/condition identifiers: 134,777,581 bytes /SHA-256
+`fdc5d4c8b28136898eb1431939b6c38997a6dd501153fd545a0cb092f5ca4aa4`. It was created only from
+the fixed RR role manifest with the hash-pinned E42-S encoder and reports zero model scores.

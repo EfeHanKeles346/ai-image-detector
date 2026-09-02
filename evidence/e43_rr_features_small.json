@@ -1,0 +1,21 @@
+{
+  "block_indices": [
+    2,
+    5,
+    8,
+    11
+  ],
+  "feature_archive_bytes": 134777581,
+  "feature_archive_sha256": "fdc5d4c8b28136898eb1431939b6c38997a6dd501153fd545a0cb092f5ca4aa4",
+  "feature_contract": "global plus two deterministic texture crops; per-block crop mean+std",
+  "manifest_sha256": "29dd9b564061098101bcaf178cda0c75cdacc659113ce8b01cc389371bef4b16",
+  "model_id": "vit_small_patch14_dinov2.lvd142m",
+  "model_scores_created": 0,
+  "model_weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+  "schema_version": 1,
+  "shape": [
+    11760,
+    3072
+  ],
+  "state": "e43_rr_small_features_complete_before_fit"
+}
