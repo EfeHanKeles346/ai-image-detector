@@ -3919,3 +3919,12 @@ The immutable local stream contains 14,170 rows /4,192,797 bytes with SHA-256
 than spending a larger model after S succeeded. E43-S is now a research candidate awaiting the
 untouched ITW-SM final, not a promoted detector. ITW-SM still has zero payload images and zero
 scores until manual author approval arrives.
+
+With ITW-SM still awaiting manual review, the project opened its preregistered NIST Plan B without
+touching evaluation data. The official GenAI Image portal still offers participant registration
+through Login.gov and requires a completed data agreement before resources or submissions become
+available. However, the visible Image-D round-3 schedule is already historical: D-Testset-3 was
+released on 2026-02-23, outputs closed on 2026-04-03 and results followed on 2026-04-10. The portal
+is therefore paused at the user-controlled Login.gov boundary so the authenticated account can be
+checked for a late or future Image-D round. No team registration, agreement, NIST byte, system
+submission or score exists yet; the project will not reinterpret an expired round as access.

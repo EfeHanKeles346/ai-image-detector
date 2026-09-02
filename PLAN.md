@@ -174,6 +174,12 @@ it before paying for another architecture or training run.
       3,573,691,324 bytes, including 5,000 `0_real` and 5,000 `1_fake` images. Download only to
       LaCie with a 100 GiB reserve and resumable Hugging Face local-dir state; a receipt is forbidden
       until every pinned file and byte is present. Acquisition creates zero scores.
+      **Plan B initiated on 2026-09-02:** the official NIST GenAI Image portal still exposes
+      participant sign-in/registration through Login.gov, but the published Image-D round-3
+      schedule released D-Testset-3 on 2026-02-23 and closed outputs on 2026-04-03. The next step is
+      user-controlled Login.gov authentication, followed by a read-only check for late/new-round
+      registration and the required data agreement. Do not claim availability, download data or
+      submit a system until the portal confirms an active Image-D participation path.
 - [ ] Run the chosen E43 candidate exactly once on the newly bound final population. Only a pass of
       the same class-balanced, source-aware gates permits API/web promotion; otherwise preserve the
       miss and stop rather than retuning on final labels.

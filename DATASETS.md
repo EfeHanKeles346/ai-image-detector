@@ -668,6 +668,14 @@ for tuning. NTIRE 2026 is retained only as a 2026 competitive reference because 
 validation repository currently declares no dataset licence. Public downloadability alone does not
 satisfy PixelProof's provenance/licence gate.
 
+**NIST access check, 2026-09-02.** The official GenAI Image portal remains online and offers
+participant authentication only through Login.gov. Its currently published Image-D schedule lists
+D-Testset-3 release on 2026-02-23, output deadline on 2026-04-03 and results on 2026-04-10; therefore
+the completed round cannot be assumed open to a new submission. PixelProof has opened the official
+registration route as Plan B but has not authenticated, accepted a data agreement, obtained a team
+ID, downloaded a byte or created a NIST score. After user-controlled login, only an explicitly
+available late/new-round Image-D route may be bound as an untouched external evaluation.
+
 The immediate reproducible source is **RRDataset**, the ICCV 2025 Real-World Robustness benchmark,
 from the official Zenodo record `14963880` under CC BY 4.0. It contains high-impact/everyday scenes
 and evaluates original files, repeated internet/social-platform transmission and physical
