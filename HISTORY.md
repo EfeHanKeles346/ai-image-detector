@@ -3895,3 +3895,12 @@ unchanged DINOv2-S weights and E42 global-plus-two-texture-crop, four-intermedia
 representation, producing shape 11,760x3,072. The compressed 134,777,581-byte archive SHA-256 is
 `fdc5d4c8...a4aa4`. No head, threshold or score exists at this checkpoint; DEVELOPMENT has not been
 used. Compact evidence is `evidence/e43_rr_features_small.json`.
+
+The next committed method fitted the single E43-S head before opening DEVELOPMENT. It combined
+13,768 consumed E42 fit views with 5,880 RR TRAIN triplet views and used fixed `C=0.01`
+source/parent-balanced logistic learning. On the permitted 980 RR CAL originals, the frozen
+REAL-safe threshold is `0.8712875247`; calibration AUC is 0.97369, balanced accuracy 0.92551,
+REAL FP 10.0% and AI recall 95.10%. The 87,916-byte candidate SHA-256 is
+`a3aec445...47390`. This promising calibration result is not a pass: the candidate and threshold
+are now immutable for the separate consumed DEVELOPMENT run, and both RR DEVELOPMENT and ITW-SM
+still have zero scores at this checkpoint.

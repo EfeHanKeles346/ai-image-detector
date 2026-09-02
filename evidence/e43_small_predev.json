@@ -1,0 +1,198 @@
+{
+  "boundary": "Candidate and threshold frozen using TRAIN/CAL only; RR DEVELOPMENT and ITW-SM remain unscored.",
+  "calibration": {
+    "metrics": {
+      "accuracy_counting_failures_wrong": 0.9255102040816326,
+      "ai_recall": 0.9510204081632653,
+      "balanced_accuracy": 0.9255102040816326,
+      "brier_nontarget_real": 0.18875790721935343,
+      "brier_target_ai": 0.01882718869952261,
+      "confusion": {
+        "fn": 24,
+        "fp": 49,
+        "tn": 441,
+        "tp": 466
+      },
+      "counts": {
+        "ai_succeeded": 490,
+        "failed": 0,
+        "real_succeeded": 490,
+        "succeeded": 980,
+        "total": 980
+      },
+      "coverage": 1.0,
+      "eer": 0.07346938775510203,
+      "per_group": [
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "culture_and_religion"
+        },
+        {
+          "ai_recall": 0.7,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 21,
+            "fp": 0,
+            "tn": 0,
+            "tp": 49
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "everyday_life"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "labor_and_production"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "medical_and_public_health"
+        },
+        {
+          "ai_recall": 0.9857142857142858,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 69
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "natural_disasters_and_accidents"
+        },
+        {
+          "ai_recall": 0.9857142857142858,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 69
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "political_and_social_events"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 49,
+            "tn": 441,
+            "tp": 0
+          },
+          "count": 490,
+          "label": 0,
+          "real_false_positive_rate": 0.1,
+          "source": "rrdataset_real_pool"
+        },
+        {
+          "ai_recall": 0.9857142857142858,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 69
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "war_and_conflict"
+        }
+      ],
+      "real_false_positive_rate": 0.1,
+      "roc_auc": 0.9736859641815911,
+      "stored_threshold": 0.8712875247001649,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9510204081632653
+      }
+    },
+    "rows": 980,
+    "threshold": 0.8712875247001649,
+    "threshold_rates": {
+      "ai_macro_recall": 0.9510204081632654,
+      "ai_recall_by_source": {
+        "culture_and_religion": 1.0,
+        "everyday_life": 0.7,
+        "labor_and_production": 1.0,
+        "medical_and_public_health": 1.0,
+        "natural_disasters_and_accidents": 0.9857142857142858,
+        "political_and_social_events": 0.9857142857142858,
+        "war_and_conflict": 0.9857142857142858
+      },
+      "ai_worst_source_recall": 0.7,
+      "real_fp_by_source": {
+        "rrdataset_real_pool": 0.1
+      },
+      "real_macro_fp": 0.1,
+      "real_worst_source_fp": 0.1,
+      "threshold": 0.8712875247001649
+    }
+  },
+  "candidate_bytes": 87916,
+  "candidate_path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+  "candidate_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "fit": {
+    "C": 0.01,
+    "by_label": {
+      "0": 11062,
+      "1": 8586
+    },
+    "by_origin": {
+      "e42_consumed": 13768,
+      "rr_train": 5880
+    },
+    "parents": 8844,
+    "source_parent_balanced": true,
+    "views": 19648
+  },
+  "itwsm_scores_created": 0,
+  "rr_development_scores_created": 0,
+  "schema_version": 1,
+  "state": "e43_small_candidate_frozen_before_consumed_development"
+}

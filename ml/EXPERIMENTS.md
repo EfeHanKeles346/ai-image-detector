@@ -3138,3 +3138,17 @@ was scored or selected using model output.
 - **Result:** shape 11,760x3,072, 134,777,581 B /SHA-256 `fdc5d4c8...a4aa4`; complete coverage.
 - **Boundary:** features only. Zero head fit, threshold selection, DEVELOPMENT scores or ITW-SM
   access occurred.
+
+### E43-S pre-DEVELOPMENT fit — candidate and threshold frozen
+
+- **Method:** fixed StandardScaler + LogisticRegression (`C=0.01`, seed 42) on 13,768 consumed E42
+  fit-eligible views plus all 5,880 RR TRAIN triplet views. Sample weights equalize labels, sources,
+  parents and each parent's views. No hyperparameter search was performed.
+- **CAL rule:** only the 980 RR CAL originals may choose the REAL-safe operating point. RR
+  DEVELOPMENT, the old RR score stream and ITW-SM are not inputs.
+- **CAL result:** threshold **0.8712875247**; AUC **0.973686**, TPR@FPR10 **0.951020**, EER
+  **0.073469**, balanced accuracy **0.925510**, REAL FP **10.0%**, AI recall **95.102%** and 100%
+  coverage. Worst AI scenario recall is **70.0%** (`everyday_life`). These are calibration
+  measurements, not independent success evidence.
+- **Binding:** 87,916-byte candidate SHA-256 `a3aec445...47390`; 5,322-byte tracked report SHA-256
+  `d24109c7...a14c8`. It explicitly records zero RR DEVELOPMENT and zero ITW-SM scores.

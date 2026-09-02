@@ -1151,3 +1151,10 @@ E43-S feature extraction adds no dataset and copies no source image. The derived
 and role/parent/source/condition identifiers: 134,777,581 bytes /SHA-256
 `fdc5d4c8b28136898eb1431939b6c38997a6dd501153fd545a0cb092f5ca4aa4`. It was created only from
 the fixed RR role manifest with the hash-pinned E42-S encoder and reports zero model scores.
+
+The E43-S fit consumes only the already-declared E42 fit-eligible views and RR `TRAIN`; RR `CAL`
+originals select one threshold, while all RR `DEVELOPMENT` rows remain unopened. The fitted local
+artifact is 87,916 bytes /SHA-256
+`a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390`; its compact fit receipt is
+`evidence/e43_small_predev.json`. This is a derived research candidate, not a new dataset or final
+result. ITW-SM still contributes zero local payload images and zero scores pending author approval.

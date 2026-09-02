@@ -192,14 +192,17 @@ it before paying for another architecture or training run.
       Complete without reading a score: 3,920 parents /11,760 rows, roles exactly 1,960/980/980,
       every condition 3,920 and every role class-balanced. Detailed manifest SHA-256 is
       `29dd9b56...4b16`; compact tracked evidence records zero scores and zero image copies.
-- [ ] Reuse the already frozen E42-S representation and cached earlier E42 features. Extract its
+- [x] Reuse the already frozen E42-S representation and cached earlier E42 features. Extract its
       exact global+two-texture-crop /four-intermediate-block features only for the 11,760 RR rows.
       Fit one source- and parent-balanced logistic head at fixed C=0.01 on earlier consumed E42 fit
       views plus RR TRAIN triplets. CAL alone chooses a REAL-safe threshold; DEVELOPMENT stays
       unopened until the head and threshold are frozen.
-      Feature half complete before fit: all 11,760 RR rows produced a 11,760x3,072 archive,
-      134,777,581 bytes /SHA-256 `fdc5d4c8...a4aa4`, with zero model scores. Head fitting,
-      threshold selection and DEVELOPMENT access remain pending behind the next method commit.
+      Complete before DEVELOPMENT: all 11,760 RR rows produced a 11,760x3,072 archive,
+      134,777,581 bytes /SHA-256 `fdc5d4c8...a4aa4`. The fixed head then fitted 19,648 views
+      (13,768 consumed E42 +5,880 RR TRAIN) with source/parent-balanced weights. Original-only CAL
+      selected threshold `0.8712875247`: AUC 0.97369, balanced accuracy 0.92551, REAL FP 10.0%
+      and AI recall 95.10%. Frozen candidate SHA-256 is `a3aec445...47390`; RR DEVELOPMENT and
+      ITW-SM still have zero scores.
 - [ ] Require the unchanged full clean gate on RR DEVELOPMENT original, AUC >=0.85 and balanced
       accuracy >=0.80 on both transfer and redigital, plus no material regression on the earlier
       E42 multi-source DEVELOPMENT checks. If E43-S passes, package it and wait for ITW-SM. Only if
