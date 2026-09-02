@@ -180,6 +180,13 @@ it before paying for another architecture or training run.
       user-controlled Login.gov authentication, followed by a read-only check for late/new-round
       registration and the required data agreement. Do not claim availability, download data or
       submit a system until the portal confirms an active Image-D participation path.
+      **Authenticated portal finding:** Login.gov succeeded, but NIST permits individuals to
+      participate only on behalf of a legally registered/incorporated organization; foreign
+      organizations may apply and can require IAAO approval. The account currently has no NIST
+      `site`, so track registration, licence and downloads remain locked. Complete the truthful
+      profile only after the user supplies the exact official university/organization name and
+      confirms authority to register under it. Keep every NIST download <=4 GB total unless the
+      user later changes that cap.
 - [ ] Run the chosen E43 candidate exactly once on the newly bound final population. Only a pass of
       the same class-balanced, source-aware gates permits API/web promotion; otherwise preserve the
       miss and stop rather than retuning on final labels.

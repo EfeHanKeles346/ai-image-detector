@@ -3928,3 +3928,12 @@ released on 2026-02-23, outputs closed on 2026-04-03 and results followed on 202
 is therefore paused at the user-controlled Login.gov boundary so the authenticated account can be
 checked for a late or future Image-D round. No team registration, agreement, NIST byte, system
 submission or score exists yet; the project will not reinterpret an expired round as access.
+
+The user then completed Login.gov authentication and capped any future NIST transfer at 4 GB. The
+authenticated dashboard did not expose data: it requires every individual to act for a legally
+registered/incorporated organization, allows foreign organizations subject to possible IAAO
+approval, and shows no organization `site` associated with this account. The truthful profile form
+requires country, full name, affiliation and affiliation type before site creation/joining, track
+registration and licence upload can begin. Work stopped before submitting personal/affiliation
+data because the exact official institution and authority to register under it must come from the
+student. No site, track, agreement, NIST byte or score was created.

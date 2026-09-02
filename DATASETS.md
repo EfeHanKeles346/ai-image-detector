@@ -676,6 +676,15 @@ registration route as Plan B but has not authenticated, accepted a data agreemen
 ID, downloaded a byte or created a NIST score. After user-controlled login, only an explicitly
 available late/new-round Image-D route may be bound as an untouched external evaluation.
 
+After successful Login.gov authentication, the participant dashboard exposed a stronger access
+constraint: individuals may participate only for a legally registered/incorporated organization;
+foreign organizations may request participation and may need NIST IAAO approval. The account has
+no associated organization `site`. Profile completion asks for country, full name, affiliation and
+academic/government/industry type, after which site creation/joining, track registration and licence
+upload would follow. PixelProof stopped before transmitting affiliation data or creating a site.
+The user authorizes at most 4 GB of NIST transfer if access is eventually granted; current NIST
+payload and score counts remain exactly zero.
+
 The immediate reproducible source is **RRDataset**, the ICCV 2025 Real-World Robustness benchmark,
 from the official Zenodo record `14963880` under CC BY 4.0. It contains high-impact/everyday scenes
 and evaluates original files, repeated internet/social-platform transmission and physical
