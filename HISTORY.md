@@ -3823,3 +3823,26 @@ RR labels and scores are now consumed. Any E43 work must declare RR as DEVELOPME
 representation or realistic redigitalization training coverage, and use a genuinely untouched
 final such as manually authorized ITW-SM or registered NIST Image-D. Calling a retuned RR result a
 new final would invalidate the project record and is prohibited.
+
+### E43 final source decision — ITW-SM selected, access pending
+
+The next untouched final is now explicitly selected as **ITW-SM (In The Wild – Social Media)**,
+the 2026 MAD benchmark distributed through the gated Hugging Face repository
+[`dkarageo/itw-sm`](https://huggingface.co/datasets/dkarageo/itw-sm). It contains 10,000 balanced
+examples (5,000 REAL /5,000 AI) collected from Facebook, Instagram, LinkedIn and X while preserving
+native resolution, platform compression and real social-media semantics. This is materially closer
+to the project's intended user input than another clean generator benchmark.
+
+The choice directly follows the E42 failure mechanism. RR showed useful ranking but excessive REAL
+false positives and a redigital robustness ceiling that no threshold could repair. ITW-SM is
+therefore reserved as a never-trained-on, never-calibrated-on external final that can test whether
+E43 transfers to uncontrolled social-media imagery. A pass will be strong independent evidence,
+not a universal authenticity certificate or NIST approval.
+
+Access is individual, non-commercial-research-only and gated by explicit terms: no redistribution,
+no identity/re-identification attempts, respect third-party rights and cite the associated paper.
+The student access form has been prepared honestly for an internship research project. At this
+checkpoint access approval, authenticated download, local bytes, file counts and hashes are all
+still pending; **zero ITW-SM image bytes have been downloaded or exposed to a model**. The dataset
+must remain unopened until the E43 artifact, threshold, manifest rules and one-shot score contract
+are frozen.

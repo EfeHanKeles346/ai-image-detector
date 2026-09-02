@@ -1076,3 +1076,32 @@ SHA-256 is `516c6d92ca8d712aa740bb929ea835bfbc19324c16df3b9f786042589496252e`.
 RRDataset is no longer eligible as an independent FINAL for a later candidate. Its images may be
 declared only as consumed `E43_DIAGNOSTIC_DEVELOPMENT`; a new final source must exclude all RR,
 E42, B-Free and earlier protected parents.
+
+## E43 untouched final — ITW-SM access decision (2026-09-02, zero bytes)
+
+| Item | Frozen fact |
+|---|---|
+| Source | [`dkarageo/itw-sm`](https://huggingface.co/datasets/dkarageo/itw-sm) |
+| Meaning | **In The Wild – Social Media**; a real-world AI-image-detection benchmark |
+| Declared size | 10,000 images /3.57 GB: 5,000 REAL +5,000 AI |
+| Platforms | Facebook, Instagram, LinkedIn and X |
+| Labels | `0_real` /target `0`; `1_fake` /target `1` |
+| Intended role | `E43_UNTOUCHED_FINAL`; never TRAIN, CAL or DEVELOPMENT |
+| Licence/access | ITW-SM research-use terms; individual gated access, non-commercial research only, no redistribution, privacy/non-identification and citation obligations |
+| Current physical state | **Not downloaded**; access approval, authentication, receipt, counts and hashes pending |
+
+ITW-SM was selected because it preserves the resolution, compression and content distribution of
+images encountered on real social platforms. Controlled generator datasets can reward format,
+resolution or collection shortcuts that disappear in actual uploads; ITW-SM specifically measures
+that deployment gap. It is also balanced by class and exposes platform metadata, allowing both
+overall metrics and per-platform REAL false-positive /AI-recall reporting. This makes it a stronger
+answer to E42's authentic-photo and redigital-transfer failure than another internal random split.
+
+The dataset is not a new training source and must not be used to choose E43's architecture,
+threshold, transforms or stopping point. Before any download the project must preserve the accepted
+terms and resolved repository revision. After authenticated transfer to the external dataset root,
+the acquisition gate must verify the declared 5,000/5,000 label counts, decode every file, record
+exact bytes and hashes, reconcile `metadata.csv`, and decontaminate whole parents against every
+prior TRAIN/CAL/DEVELOPMENT/FINAL role. Only a zero-score manifest and a candidate-bound score
+contract may unlock one E43 run. No row removal, threshold repair or retry is allowed after a
+completed result.
