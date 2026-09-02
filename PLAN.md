@@ -277,6 +277,10 @@ it before paying for another architecture or training run.
       REAL FP <=10%, AI macro/worst reconstruction recall >=80%/60%. A miss is preserved without
       threshold repair; a pass is strong independent aligned-benchmark evidence but not a NIST
       certification or a substitute for the pending ITW-SM in-the-wild final.
+      Bind manifest/candidate/threshold/counts and these gates in a tracked score contract before
+      model loading. Score original archive bytes with the existing E43-S clean three-view DINOv2-S
+      feature path; add no test-only resize/compression and report every synthetic variant both
+      separately and in the pooled gate.
 
 ### F3 — recording and stop rules
 
