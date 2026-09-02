@@ -3864,3 +3864,20 @@ attempt stopped without an image payload or receipt. Only approximately 6.3 MB o
 dir cache/tree/lock metadata exists on LaCie. The acquisition method now probes one non-image file
 before scheduling the image pool, and E43 final remains blocked until the authors approve the
 individual request. No retry is useful while that external state is unchanged.
+
+### E43 work continues locally — data alignment before a larger backbone
+
+The manual ITW-SM wait does not block DEVELOPMENT. A record audit rejected the tempting
+DINO-plus-forensic sidecar: E8/E9 and E31 already measured real complementarity but insufficient AI
+gain and increased authentic false positives. E42's RR post-hoc ceiling also rules out another
+threshold-only repair. The next smallest scientific change is therefore an E43-S head learned on
+real transport/redigital examples while preserving E42's successful multi-crop intermediate DINO
+representation.
+
+Before selecting a row, E43 fixes a score-blind RR population of 1,960 complete REAL parents and
+1,960 complete AI parents balanced as 280 from each of seven scenarios. Separate deterministic
+hashes select parents and split every stratum 50/25/25 into TRAIN/CAL/DEVELOPMENT, keeping each
+parent's three conditions together. TRAIN changes the 3,072-dimensional logistic decision boundary;
+CAL alone selects a REAL-safe threshold; DEVELOPMENT tests the frozen local candidate. Only an S
+failure can unlock the already-local DINOv2-L arm. Passing this consumed benchmark creates a better
+candidate, never a final claim; ITW-SM remains unopened and mandatory.

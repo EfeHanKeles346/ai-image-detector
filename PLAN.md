@@ -178,6 +178,29 @@ it before paying for another architecture or training run.
       the same class-balanced, source-aware gates permits API/web promotion; otherwise preserve the
       miss and stop rather than retuning on final labels.
 
+### F2.4 — E43 local development while ITW-SM approval is pending
+
+- [x] Re-read the prior fusion record before proposing a new architecture. E8/E9 and E31 already
+      showed that fixed or stacked DINO/68-feature fusion recovers too few AI misses for the added
+      authentic-photo false positives. Do not repeat that branch. E42 RR also proves threshold-only
+      repair is impossible; change the learned boundary using transport-aligned data first.
+- [ ] Freeze a score-blind, parent-linked RR adaptation population from the now-consumed external
+      set: only parents with original+transfer+redigital versions; 1,960 REAL from the pooled source
+      and 280 AI from each of seven scenario sources (1,960 AI). Use independent SHA-256 selection
+      and role keys to assign exactly 1,960 TRAIN, 980 CAL and 980 DEVELOPMENT parents, preserving
+      all three conditions (11,760 rows). No E42 score may influence selection or role.
+- [ ] Reuse the already frozen E42-S representation and cached earlier E42 features. Extract its
+      exact global+two-texture-crop /four-intermediate-block features only for the 11,760 RR rows.
+      Fit one source- and parent-balanced logistic head at fixed C=0.01 on earlier consumed E42 fit
+      views plus RR TRAIN triplets. CAL alone chooses a REAL-safe threshold; DEVELOPMENT stays
+      unopened until the head and threshold are frozen.
+- [ ] Require the unchanged full clean gate on RR DEVELOPMENT original, AUC >=0.85 and balanced
+      accuracy >=0.80 on both transfer and redigital, plus no material regression on the earlier
+      E42 multi-source DEVELOPMENT checks. If E43-S passes, package it and wait for ITW-SM. Only if
+      S fails may the already-local DINOv2-L intermediate arm run on the identical frozen roles.
+      Neither local result is final evidence and neither may open ITW-SM before its own score
+      contract is committed.
+
 ### F3 — recording and stop rules
 
 - [x] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis

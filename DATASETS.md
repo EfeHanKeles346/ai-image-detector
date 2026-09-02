@@ -1122,3 +1122,18 @@ attempt created only about 6.3 MB of resumable Hugging Face cache/tree/lock scaf
 external root: no payload image exists, no detector opened a file and no acquisition receipt was
 written. The tool now performs a single non-image `.gitattributes` content preflight before starting
 the 10,000-image worker pool, so future pending-review checks stop before scheduling image paths.
+
+## E43 RR adaptation roles — planned before selection (2026-09-02)
+
+RRDataset's 50,858-row E42 score stream has already consumed its final status, so RR may now support
+E43 only as labelled DEVELOPMENT. The fixed local adaptation sample will require complete
+original/transfer/redigital parent triplets and will be selected without reading E42 scores:
+1,960 pooled REAL parents plus 280 parents from each of the seven AI scenario sources. Independent
+SHA-256 keys will select parents and assign 50% TRAIN /25% CAL /25% DEVELOPMENT within every
+stratum. Expected totals are 3,920 parents and 11,760 image rows: 1,960/980/980 parents by role,
+with both labels balanced in each role.
+
+RR TRAIN triplets may fit the E43 head; RR CAL may select one threshold; RR DEVELOPMENT may only
+evaluate the frozen local candidate. All three roles are scientifically consumed and none is a new
+external final. ITW-SM remains the only planned untouched E43 final. No new image is downloaded or
+copied by this role decision; paths continue to reference the existing decontaminated RR snapshot.
