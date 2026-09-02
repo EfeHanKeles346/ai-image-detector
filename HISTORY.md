@@ -3881,3 +3881,11 @@ parent's three conditions together. TRAIN changes the 3,072-dimensional logistic
 CAL alone selects a REAL-safe threshold; DEVELOPMENT tests the frozen local candidate. Only an S
 failure can unlock the already-local DINOv2-L arm. Passing this consumed benchmark creates a better
 candidate, never a final claim; ITW-SM remains unopened and mandatory.
+
+The E43 RR role freeze then passed on the real manifest without loading the old score stream. It
+selected the declared 3,920 complete parents /11,760 linked condition rows and produced exact
+TRAIN/CAL/DEVELOPMENT parent counts 1,960/980/980, with both labels balanced in each role. Every
+condition has 3,920 rows. The 7,645,807-byte detailed manifest SHA-256 is
+`29dd9b56...4b16`; tracked evidence explicitly reports zero score files read and zero model scores.
+This closes the data-role gate and permits E43-S feature extraction, but not fitting or final access
+before their own contracts.

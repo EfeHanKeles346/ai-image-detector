@@ -1137,3 +1137,11 @@ RR TRAIN triplets may fit the E43 head; RR CAL may select one threshold; RR DEVE
 evaluate the frozen local candidate. All three roles are scientifically consumed and none is a new
 external final. ITW-SM remains the only planned untouched E43 final. No new image is downloaded or
 copied by this role decision; paths continue to reference the existing decontaminated RR snapshot.
+
+The score-blind role freeze completed exactly as declared. Available complete-parent counts were
+8,453 REAL and 8,499 AI across the seven scenarios. Selection retained 3,920 parents /11,760 rows:
+TRAIN 1,960 parents /5,880 rows, CAL 980 /2,940 and DEVELOPMENT 980 /2,940. Every role is exactly
+class-balanced and each condition contributes 3,920 rows. The 7,645,807-byte detailed manifest
+SHA-256 is `29dd9b564061098101bcaf178cda0c75cdacc659113ce8b01cc389371bef4b16`;
+tracked receipt is `evidence/e43_rr_roles.json`. It records `score_files_read=0`, creates no model
+score and references existing image paths without copying bytes.

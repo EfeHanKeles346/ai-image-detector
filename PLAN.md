@@ -184,11 +184,14 @@ it before paying for another architecture or training run.
       showed that fixed or stacked DINO/68-feature fusion recovers too few AI misses for the added
       authentic-photo false positives. Do not repeat that branch. E42 RR also proves threshold-only
       repair is impossible; change the learned boundary using transport-aligned data first.
-- [ ] Freeze a score-blind, parent-linked RR adaptation population from the now-consumed external
+- [x] Freeze a score-blind, parent-linked RR adaptation population from the now-consumed external
       set: only parents with original+transfer+redigital versions; 1,960 REAL from the pooled source
       and 280 AI from each of seven scenario sources (1,960 AI). Use independent SHA-256 selection
       and role keys to assign exactly 1,960 TRAIN, 980 CAL and 980 DEVELOPMENT parents, preserving
       all three conditions (11,760 rows). No E42 score may influence selection or role.
+      Complete without reading a score: 3,920 parents /11,760 rows, roles exactly 1,960/980/980,
+      every condition 3,920 and every role class-balanced. Detailed manifest SHA-256 is
+      `29dd9b56...4b16`; compact tracked evidence records zero scores and zero image copies.
 - [ ] Reuse the already frozen E42-S representation and cached earlier E42 features. Extract its
       exact global+two-texture-crop /four-intermediate-block features only for the 11,760 RR rows.
       Fit one source- and parent-balanced logistic head at fixed C=0.01 on earlier consumed E42 fit

@@ -3116,3 +3116,16 @@ was scored or selected using model output.
   balanced 0.78943 at threshold 0.74033, and no single threshold satisfies all declared gates.
   Therefore E43 needs a representation plus redigitalization-coverage change, not calibration
   theatre. RR is consumed DEVELOPMENT for any future candidate; a new untouched FINAL is required.
+
+### E43 RR role freeze — score-blind transport adaptation population
+
+- **Method:** require complete original/transfer/redigital triplets; select with SHA-256 namespace
+  `E43_SELECT`; assign roles independently with `E43_ROLE`. Cap REAL at 1,960 and every one of seven
+  AI scenario sources at 280. No E42 score file is an input.
+- **Result:** 3,920 parents /11,760 rows; TRAIN 1,960 parents /5,880 rows, CAL 980 /2,940,
+  DEVELOPMENT 980 /2,940. Every role is class-balanced; original/transfer/redigital each contain
+  3,920 rows.
+- **Integrity:** detailed manifest is 7,645,807 B /SHA-256 `29dd9b56...4b16`; source manifest is
+  unchanged `b2d815af...30c98`. Zero scores read, zero model scores created and zero image copies.
+- **Meaning:** RR is consumed local DEVELOPMENT and may improve/measure E43, never validate it
+  externally. ITW-SM remains the untouched final pending manual author approval.

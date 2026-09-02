@@ -1,0 +1,46 @@
+{
+  "detailed_manifest_bytes": 7645807,
+  "detailed_manifest_sha256": "29dd9b564061098101bcaf178cda0c75cdacc659113ce8b01cc389371bef4b16",
+  "model_scores_created": 0,
+  "schema_version": 1,
+  "score_files_read": 0,
+  "source_manifest_sha256": "b2d815afab0bbafa339baf70eac19afbaf955e545041c550193340763ac30c98",
+  "state": "e43_rr_roles_frozen_before_features",
+  "summary": {
+    "available_complete_parents_by_stratum": {
+      "culture_and_religion": 842,
+      "everyday_life": 3435,
+      "labor_and_production": 843,
+      "medical_and_public_health": 845,
+      "natural_disasters_and_accidents": 845,
+      "political_and_social_events": 858,
+      "real": 8453,
+      "war_and_conflict": 831
+    },
+    "parents_by_role": {
+      "calibration": 980,
+      "development": 980,
+      "train": 1960
+    },
+    "rows_by_condition": {
+      "original": 3920,
+      "redigital": 3920,
+      "transfer": 3920
+    },
+    "rows_by_role": {
+      "calibration": 2940,
+      "development": 2940,
+      "train": 5880
+    },
+    "rows_by_role_label": {
+      "calibration/0": 1470,
+      "calibration/1": 1470,
+      "development/0": 1470,
+      "development/1": 1470,
+      "train/0": 2940,
+      "train/1": 2940
+    },
+    "selected_parents": 3920,
+    "selected_rows": 11760
+  }
+}
