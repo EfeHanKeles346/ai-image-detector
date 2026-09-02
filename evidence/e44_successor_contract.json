@@ -1,0 +1,29 @@
+{
+  "counts": {
+    "e42": 2160,
+    "rows": 5100,
+    "rr": 2940,
+    "unique_paths": 4020
+  },
+  "dda_scores_created": 0,
+  "detailed_contract_bytes": 2914989,
+  "detailed_contract_sha256": "b3c399e91f9ac78fa50d085f03e6abe8ebd429b9b9b1d50aed2566dc8f7e1152",
+  "forbidden": [
+    "threshold change",
+    "row removal",
+    "test-informed refit",
+    "final claim"
+  ],
+  "fusion_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+  "inputs": {
+    "e42_manifest_sha256": "15124d93f195d618b00c9cf79bec6151ae26fd4397cd9f5529c41842c4e3e238",
+    "generalist_scores_sha256": "8398f763b44f97b3e7ca426b74dd665d72850b740b2ecd2fb6ebbab30df1ccc4",
+    "rr_manifest_sha256": "29dd9b564061098101bcaf178cda0c75cdacc659113ce8b01cc389371bef4b16"
+  },
+  "population_sha256": "ac79ea36b84e76b3e699febd13005f1dc2a432b5c5a40752780885c9aad89aa3",
+  "role": "new_comparative_development_not_final",
+  "schema_version": 1,
+  "specialist_checkpoint_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e",
+  "state": "e44_successor_contract_frozen_before_dda_scores",
+  "successor_threshold": 0.34779336534869326
+}

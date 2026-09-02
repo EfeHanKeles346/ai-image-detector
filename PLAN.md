@@ -358,14 +358,16 @@ it before paying for another architecture or training run.
       and margin patterns read-only, but never rename a post-hoc E44-B threshold as validated.
       The smallest diagnostic cut satisfying both missed budgets is `0.3477933653`; at that cut the
       old population would pass 10/10, but this is hypothesis generation only.
-- [ ] Freeze `0.3477933653` as the E44-C successor cut using the consumed E44-B evidence, then bind
+- [x] Freeze `0.3477933653` as the E44-C successor cut using the consumed E44-B evidence, then bind
       5,100 new comparative DEVELOPMENT views: all 2,940 source/parent-separated E43 RR development
       views plus clean and one hash-assigned robust view for 1,080 E42 E36/E39 parents (2,160 views).
       Exclude E42 IPN/owner rows already scored by E35 and reject every E35 exact-byte overlap.
-- [ ] Create a new
+      Detailed contract SHA-256 is `b3c399e9...e1152`; population SHA-256 is `ac79ea36...89aa3`.
+- [x] Create a new
       comparative DEVELOPMENT population from already-local, parent/source-separated E43 RR and
       E42 real-camera/modern-AI roles that have never received an official-DDA score. Download zero
-      new images and bind identities/roles before DDA inference.
+      new images and bind identities/roles before DDA inference. All 4,020 unique paths passed their
+      frozen hashes; `dda_scores_created` is zero.
 - [ ] Score the official DDA expert on the new bound population, combine it with the already-frozen
       E43-S stream and evaluate the E44-C candidate once. Require real-camera macro/worst FP,
       modern-AI macro/worst recall, transport robustness and coverage gates simultaneously. Keep

@@ -3285,3 +3285,7 @@ was scored or selected using model output.
   DEVELOPMENT views and 2,160 clean/hash-assigned-robust views from 1,080 E42 E36/E39 parents.
   E42 IPN/owner parents are excluded because E35 already scored them. Reject every E35 exact-byte
   overlap; use the already-frozen E43-S scores as the other arm. No image download is needed.
+- **Bound contract:** 5,100 rows /4,020 unique paths passed exact-byte verification with zero E35
+  overlap. Detailed contract SHA-256 is `b3c399e9...e1152`; population SHA-256 is
+  `ac79ea36...89aa3`. Threshold `0.3477933653`, candidate `19fd7bbc...b100` and all gates are bound;
+  `dda_scores_created` is zero.

@@ -4057,3 +4057,8 @@ cut, would meet both missed real-image budgets on the consumed rows while retain
 gate. This does not change the failed E44-B record. E44-C instead freezes that value as a successor
 hypothesis before scoring a different local population: 2,940 E43 RR views plus 2,160 E42 E36/E39
 clean/robust views whose official-DDA scores do not yet exist. IPN/owner repeats are excluded.
+
+The E44-C contract then verified 5,100 rows across 4,020 unique local files, with zero exact-byte
+overlap against the E35 fusion population. Detailed contract SHA-256 is `b3c399e9...e1152` and
+population SHA-256 is `ac79ea36...89aa3`. It binds successor cut `0.3477933653`, the unchanged
+fusion artifact and all gates while `dda_scores_created` remains zero. No network byte was used.
