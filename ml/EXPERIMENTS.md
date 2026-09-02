@@ -3222,3 +3222,7 @@ was scored or selected using model output.
 - **Gate:** coverage 1.0, pooled AUC >=0.85, balanced accuracy >=0.80, REAL FP <=20%, core four-
   reconstruction macro recall >=80%, all-six macro >=70% and worst variant >=40%. Passing opens
   representation adaptation; failing opens separate full DDA pair construction.
+- **Bound contract:** 700 parents /4,900 rows were selected without scores. The selected-parent-list
+  SHA-256 is `b1ac6bb2...1990`; detailed contract SHA-256 is `df256498...5ce9`. It binds the frozen
+  manifest `e663d679...a3db`, official checkpoint `b27a31d3...e3e`, threshold 0.5 and all gates.
+  `model_scores_created` is zero at this checkpoint.

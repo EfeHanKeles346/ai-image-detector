@@ -1,0 +1,39 @@
+{
+  "checkpoint_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e",
+  "conditions": [
+    "REAL",
+    "FLUX.1",
+    "sd-vae-ft-ema",
+    "sd-vae-ft-mse",
+    "sdxl-vae",
+    "stable-diffusion-2-1",
+    "stable-diffusion-3.5-large"
+  ],
+  "declared_parents": 700,
+  "declared_rows": 4900,
+  "detailed_contract_bytes": 1112,
+  "detailed_contract_sha256": "df256498a3b78bae002a35dd81ca7d074200f66d1660b6ff3529ffffadb05ce9",
+  "experiment": "E44-A/official-DDA-consumed-specialist-screen",
+  "forbidden": [
+    "parent reselection",
+    "threshold change",
+    "test-informed fitting",
+    "final claim"
+  ],
+  "gates": {
+    "all_variant_macro_recall_min": 0.7,
+    "balanced_accuracy_min": 0.8,
+    "core_variant_macro_recall_min": 0.8,
+    "coverage": 1.0,
+    "real_false_positive_rate_max": 0.2,
+    "roc_auc_min": 0.85,
+    "worst_variant_recall_min": 0.4
+  },
+  "manifest_sha256": "e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db",
+  "model_scores_created": 0,
+  "parent_ids_sha256": "b1ac6bb23e7d82f16dc03e5d2e07bdfaba4d07262184876c93eebeab0b0e1990",
+  "role": "consumed_development_comparison_not_final",
+  "schema_version": 1,
+  "state": "e44_dda_specialist_contract_frozen",
+  "threshold": 0.5
+}

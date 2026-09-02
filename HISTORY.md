@@ -3997,3 +3997,11 @@ aligned reconstruction regime. The first result stays immutable; DDA-COCO become
 DEVELOPMENT for a future E44 paired/adapter design, while ITW-SM or a future NIST round remains the
 required untouched final. This negative result materially narrows the next research question and
 prevents another ineffective threshold-only cycle.
+
+Before downloading another representation or generating weaker VAE-only pairs, E44-A froze a
+comparative screen for the already-pinned official DDA detector. Exactly 700 complete DDA parents
+and all 4,900 real/synthetic views were selected only by a namespaced SHA-256 rank; the selected-
+parent-list hash is `b1ac6bb2...1990`. Contract SHA-256 `df256498...5ce9` binds the consumed manifest,
+official checkpoint, published threshold 0.5 and seven pass gates. No score was produced at this
+checkpoint. This screen can isolate useful aligned-reconstruction expertise, but cannot become a
+new independent final because DDA-COCO was already consumed by E43.

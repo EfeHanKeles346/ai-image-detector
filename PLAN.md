@@ -306,8 +306,10 @@ it before paying for another architecture or training run.
 
 ### F2c — E44 capability isolation before new training bytes
 
-- [ ] Freeze a score-blind 700-parent /4,900-row hash sample from the now-consumed DDA manifest and
-      score the already-pinned official DDA DINOv2-L/14 rank-8 LoRA checkpoint at its published
+- [x] Freeze a score-blind 700-parent /4,900-row hash sample from the now-consumed DDA manifest.
+      Contract SHA-256 is `df256498...5ce9`; selected-parent-list SHA-256 is
+      `b1ac6bb2...1990`. No model score existed when this contract was sealed.
+- [ ] Score the already-pinned official DDA DINOv2-L/14 rank-8 LoRA checkpoint at its published
       threshold 0.5. This is a comparative DEVELOPMENT screen, never a second external-final claim;
       E43 scores cannot select parents or alter the cut.
 - [ ] Treat the official DDA representation as a useful E44 specialist only if the fixed screen has
