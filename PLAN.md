@@ -291,7 +291,7 @@ it before paying for another architecture or training run.
 
 ### F2b — response to the consumed DDA-COCO failure
 
-- [ ] Reclassify DDA-COCO as consumed DEVELOPMENT for every future candidate; preserve its first
+- [x] Reclassify DDA-COCO as consumed DEVELOPMENT for every future candidate; preserve its first
       score and never present a later run as independent final evidence.
 - [ ] Design E44 around content-matched REAL/AI training pairs and generator-held-out validation.
       A lightweight DINOv2 adapter or selectively unfrozen late blocks must learn causal synthesis
@@ -303,6 +303,22 @@ it before paying for another architecture or training run.
 - [ ] Retain the current real-camera/RR regression gates so improving DDA recall cannot silently
       restore the old “real photos become AI” failure. ITW-SM or a future NIST round remains the
       untouched final; no universal-success claim until that independent gate passes.
+
+### F2c — E44 capability isolation before new training bytes
+
+- [ ] Freeze a score-blind 700-parent /4,900-row hash sample from the now-consumed DDA manifest and
+      score the already-pinned official DDA DINOv2-L/14 rank-8 LoRA checkpoint at its published
+      threshold 0.5. This is a comparative DEVELOPMENT screen, never a second external-final claim;
+      E43 scores cannot select parents or alter the cut.
+- [ ] Treat the official DDA representation as a useful E44 specialist only if the fixed screen has
+      100% coverage, pooled AUC >=0.85, balanced accuracy >=0.80, REAL FP <=20%, four core
+      reconstruction variants macro recall >=80%, all-six macro recall >=70% and worst recall
+      >=40%. Otherwise stop this branch and construct distinct DDA-style TRAIN pairs.
+- [ ] If the specialist passes, adapt one conservative head on existing source/parent-separated
+      RR/E36/E39 training roles while retaining an aligned-data replay/anchor; then require both the
+      consumed DDA diagnostic and every real-camera/RR regression gate. If it fails, generate a
+      compact separate DDA population using VAE reconstruction, matched JPEG quality and fixed
+      pixel-mixup (`Ppixel=0.2`, `Rpixel=0.8`) rather than VAE reconstruction alone.
 
 ### F3 — recording and stop rules
 

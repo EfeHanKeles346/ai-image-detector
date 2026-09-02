@@ -3210,3 +3210,15 @@ was scored or selected using model output.
 - **Decision:** preserve the failed first result. DDA-COCO is now consumed DEVELOPMENT for E44; do
   not retry, tune on it and call it final, or promote E43-S. Train on distinct paired parents with
   generator-held-out validation while retaining real-camera/RR regression safety.
+
+### E44-A — official DDA specialist screen frozen before scores
+
+- **Reason:** the E43-S scalar is near chance on content/frequency-aligned pairs, but the disk
+  already contains the official 1.26 GB DINOv2-L + rank-8 LoRA detector trained on 118K DDA pairs.
+  Recreating a weaker VAE-only dataset before isolating this existing capability is unjustified.
+- **Method:** select 700 complete DDA parents solely by SHA-256 namespace, retain all seven views,
+  and score the published checkpoint/cut once. E43 scores, labels beyond required pairing and image
+  appearance cannot affect selection. The screen is consumed comparative DEVELOPMENT.
+- **Gate:** coverage 1.0, pooled AUC >=0.85, balanced accuracy >=0.80, REAL FP <=20%, core four-
+  reconstruction macro recall >=80%, all-six macro >=70% and worst variant >=40%. Passing opens
+  representation adaptation; failing opens separate full DDA pair construction.
