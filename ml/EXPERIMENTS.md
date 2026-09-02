@@ -3304,3 +3304,17 @@ was scored or selected using model output.
 - **Decision:** preserve the failed result. Stop scalar-threshold iteration and design selective
   classification with an explicit `UNCERTAIN` outcome; future evidence must report risk and
   automatic coverage together on a genuinely new population.
+
+### E44-D — selective-policy post-hoc design, not validation
+
+- **Population:** union of consumed E44-B and E44-C DEVELOPMENT, 6,706 rows (3,240 REAL /3,466 AI).
+  Existing score streams only; no model rerun, refit or new byte.
+- **Fixed design budgets:** choose the smallest AI cut with REAL group macro/worst FP <=5%/10%,
+  and the largest REAL cut with AI group macro/worst false-REAL <=10%/20%. Scores between cuts
+  abstain. This yields REAL `<0.2545712170`, AI `>=0.6938513176`, otherwise `UNCERTAIN`.
+- **Consumed diagnostic:** automatic coverage **87.40%**, abstention **12.60%**, covered accuracy
+  **96.47%**. It auto-decides 2,852 REAL and 3,009 AI, leaving 845 uncertain. REAL group macro/worst
+  false-AI is **2.11%/10%**; AI group macro/worst false-REAL is **2.36%/20%**. Automatic AI recall
+  is 83.81% and automatic REAL recall is 84.85% over all labeled rows.
+- **Boundary:** this is a post-hoc hypothesis on consumed data, not a passed model or deployable
+  threshold. Freeze it before ITW-SM/NIST or a genuinely new source-separated validation.

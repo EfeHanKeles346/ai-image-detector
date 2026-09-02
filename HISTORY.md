@@ -4077,3 +4077,10 @@ E42 clean REAL macro FP passed at 6.94%, `e36:device_004` reached 31% against th
 limit. The result remains failed. Since ranking and AI recall are already strong while residual
 errors are concentrated in DDA-triggered camera pipelines, the next architecture is selective
 classification (`AI`/`REAL`/`UNCERTAIN`), not another post-hoc scalar-threshold repair.
+
+A read-only selective-risk diagnostic then combined the consumed E44-B/C score streams without
+rerunning either model. Requiring group-level REAL false-AI macro/worst <=5%/10% and AI false-REAL
+macro/worst <=10%/20% produced hypothesis cuts REAL `<0.2545712170` and AI
+`>=0.6938513176`, with the middle marked `UNCERTAIN`. On the same consumed 6,706 rows this covers
+87.40%, abstains on 12.60% and is 96.47% accurate among covered rows. These numbers design E44-D;
+they do not validate it. A new independent population remains mandatory.

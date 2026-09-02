@@ -1,0 +1,33 @@
+{
+  "automatic_ai_recall": 0.8381419503750721,
+  "automatic_coverage": 0.8739934387116015,
+  "automatic_real_recall": 0.8484567901234568,
+  "boundary": "Post-hoc design on consumed E44-B/C DEVELOPMENT; not validation or deployment evidence.",
+  "counts": {
+    "ai": 3466,
+    "automatic_ai": 3009,
+    "automatic_real": 2852,
+    "real": 3240,
+    "rows": 6706,
+    "uncertain": 845
+  },
+  "covered_accuracy": 0.9646817949155434,
+  "inputs": {
+    "e44_b_score_stream_sha256": "ce10c43fd6699937a6c5e6dfb4e0cb0b58b996aa5a3706f4d2a5e5c57d267969",
+    "e44_c_score_stream_sha256": "0507cc4dba4917242433c88d96978dce9f8775bd52b29e4639ec11686203d6bd"
+  },
+  "policy": {
+    "ai_if_score_gte": 0.6938513176357805,
+    "real_if_score_lt": 0.254571216982131,
+    "otherwise": "uncertain"
+  },
+  "risk": {
+    "ai_false_real_group_macro": 0.02363242908327549,
+    "ai_false_real_group_worst": 0.2,
+    "real_false_ai_group_macro": 0.021143483709273186,
+    "real_false_ai_group_worst": 0.1
+  },
+  "schema_version": 1,
+  "state": "e44_selective_policy_posthoc_hypothesis",
+  "uncertain_rate": 0.1260065612883985
+}

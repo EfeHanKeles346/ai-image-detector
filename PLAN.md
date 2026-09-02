@@ -379,12 +379,16 @@ it before paying for another architecture or training run.
 
 ### F2f — stop binary threshold chasing; add a selective decision layer
 
-- [ ] Preserve E44-B/C as consumed failures. Measure score-arm disagreement and risk-versus-
+- [x] Preserve E44-B/C as consumed failures. Measure score-arm disagreement and risk-versus-
       coverage curves without changing either record. The remaining error is concentrated in
       camera-specific DDA false positives, while ranking and modern-AI recall are already strong.
-- [ ] Design a three-outcome policy (`AI`, `REAL`, `UNCERTAIN`) using only the two frozen scores.
+      The consumed 6,706-row diagnostic supports 87.40% automatic coverage at 96.47% covered
+      accuracy with 12.60% `UNCERTAIN`.
+- [x] Design a three-outcome policy (`AI`, `REAL`, `UNCERTAIN`) using only the two frozen scores.
       Require high-confidence AI and REAL decisions to meet their class/device budgets; send model
       disagreement and unsafe margins to `UNCERTAIN` instead of forcing a wrong binary claim.
+      Hypothesis cuts are REAL below `0.2545712170`, AI at/above `0.6938513176`, otherwise
+      `UNCERTAIN`; these are not validated deployment thresholds.
 - [ ] Freeze the selective policy on consumed DEVELOPMENT, then validate it only on ITW-SM/NIST or
       another genuinely new source-separated population. Report both automatic coverage and error
       among covered rows; never quote selective accuracy without its abstention rate.
