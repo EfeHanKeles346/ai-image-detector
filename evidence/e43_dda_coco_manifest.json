@@ -1,0 +1,34 @@
+{
+  "audit": {
+    "cross_label_exact_groups": 0,
+    "cross_parent_dhash_diagnostic": 0,
+    "cross_parent_exact_groups": 0,
+    "passed": true,
+    "protected_dhash_overlap_records": 19,
+    "protected_exact_overlap_records": 0
+  },
+  "candidate_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "counts": {
+    "by_condition": {
+      "FLUX.1": 4965,
+      "REAL": 4965,
+      "sd-vae-ft-ema": 4965,
+      "sd-vae-ft-mse": 4965,
+      "sdxl-vae": 4965,
+      "stable-diffusion-2-1": 4965,
+      "stable-diffusion-3.5-large": 4965
+    },
+    "excluded_parents": 4,
+    "excluded_rows": 28,
+    "image_bytes": 5080919889,
+    "parents": 4965,
+    "rows": 34755
+  },
+  "detailed_manifest_bytes": 15467369,
+  "detailed_manifest_sha256": "e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db",
+  "model_scores_created": 0,
+  "protected_manifest_count": 17,
+  "schema_version": 1,
+  "state": "e43_dda_coco_manifest_frozen_unscored",
+  "threshold": 0.8712875247001649
+}

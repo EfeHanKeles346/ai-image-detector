@@ -727,6 +727,14 @@ decoded samples or model results. DDA-COCO's archive is Apache-2.0; the companio
 their individual source/Flickr licence terms and are research evaluation material, not relicensed
 by this project.
 
+The score-blind pixel audit decoded all 34,783 complete-group candidate rows. Nineteen exact dHash
+hits against 17 protected manifests touched four parent IDs; the protocol therefore excluded all
+28 views from those parents. The resulting frozen test manifest contains 4,965 parents and exactly
+4,965 rows in each of REAL plus six synthetic conditions (34,755 rows /5,080,919,889 image bytes).
+It has zero within-pool exact groups, zero cross-label exact groups and zero cross-parent dHash
+diagnostics. Detailed manifest SHA-256 is `e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db`;
+it is unscored and cannot be changed after seeing model output.
+
 The immediate reproducible source is **RRDataset**, the ICCV 2025 Real-World Robustness benchmark,
 from the official Zenodo record `14963880` under CC BY 4.0. It contains high-impact/everyday scenes
 and evaluates original files, repeated internet/social-platform transmission and physical

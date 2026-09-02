@@ -248,7 +248,7 @@ it before paying for another architecture or training run.
       ZIP/CRC safety passes and the archive contains 29,969 images /4,298,688,287 expanded bytes.
       Observed structure corrects the card-level assumption: six synthetic variants are present,
       while original COCO reals are not bundled.
-- [ ] Build a score-blind paired manifest. Keep every real parent and all its reconstruction
+- [x] Build a score-blind paired manifest. Keep every real parent and all its reconstruction
       variants indivisible; audit exact SHA-256 and dHash against every E42/E43 protected role and
       exclude an entire pair group for any prior overlap. Freeze counts, bytes, source variants,
       archive/manifest hashes and zero scores before model loading.
@@ -267,6 +267,11 @@ it before paying for another architecture or training run.
       removes every touched parent; a same-label cross-parent exact component retains only its
       lexical first parent. Within-DDA cross-parent dHash matches remain a diagnostic because an
       exact 64-bit perceptual collision alone is not identity evidence.
+      **Completed:** all 34,783 candidate rows decoded successfully. Nineteen protected dHash hits
+      touched four parents, so those four complete seven-view groups /28 rows were excluded. The
+      frozen unscored manifest contains 4,965 parents /34,755 rows, zero exact duplicate groups,
+      zero cross-label exact groups and zero within-pool cross-parent dHash diagnostics. Detailed
+      manifest SHA-256 is `e663d679...a3db`; model scores remain zero.
 - [ ] Score the frozen manifest exactly once with the unchanged E43-S candidate/threshold. Require
       100% coverage, ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy >=0.85,
       REAL FP <=10%, AI macro/worst reconstruction recall >=80%/60%. A miss is preserved without

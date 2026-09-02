@@ -3968,3 +3968,11 @@ REAL and all six DDA synthetic variants, giving 34,783 candidate rows. No pixel 
 selection and no model score exists; the next immutable checkpoint is parent-group decode/hash and
 protected-role decontamination. This immediately available open benchmark advances the project
 while ITW-SM and NIST remain access-gated, but it does not replace their real-world final scope.
+
+The pre-score DDA-COCO pixel audit then decoded all 34,783 candidate images. Nineteen dHash hits
+against 17 protected manifests touched four parent IDs; following the frozen pair rule removed all
+28 real/synthetic views belonging to those parents. The final unscored manifest holds 4,965
+complete parents /34,755 rows /5,080,919,889 source bytes, with zero exact duplicate groups, zero
+cross-label exact groups and zero cross-parent dHash diagnostics. Its SHA-256 is
+`e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db`. No model was loaded and no
+threshold or result changed; this is the immutable population for the next one-shot score.

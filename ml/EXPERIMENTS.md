@@ -3184,3 +3184,8 @@ was scored or selected using model output.
   34,783 prospective rows. Parent-ID-set SHA-256 is `2b68c4aa...a3a7b`.
 - **Boundary:** zero pixels decoded for manifest selection, zero model loads and zero scores. Next
   freeze a seven-view parent-group manifest after decode/hash and protected-overlap audit.
+- **Frozen manifest:** all 34,783 candidate rows decoded; 19 protected dHash hits touched four
+  parents, so their 28 views were removed together. The immutable remainder is 4,965 parents /
+  34,755 rows, balanced across REAL and six synthetic conditions. It contains no within-pool exact,
+  cross-label exact or cross-parent dHash group. Detailed manifest SHA-256 is
+  `e663d679...a3db`; model scores remain zero.
