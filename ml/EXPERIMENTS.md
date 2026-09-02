@@ -3253,3 +3253,7 @@ was scored or selected using model output.
 - **Gate:** coverage 1.0, AUC >=0.90, balanced accuracy >=0.85, DDA macro/worst recall >=75%/50%,
   RR macro/worst AI recall >=80%/60%, RR REAL FP <=10%, IPN worst-device FP <=20%, owner FP <=20%.
   A failure keeps the experts separate; it cannot be repaired by a post-hoc threshold.
+- **Bound identities:** 4,900 DDA rows and 1,670 E35 RR/IPN/owner rows were bound before the missing
+  E43-S scores. Detailed contract SHA-256 is `25681b62...3fb4`; E35 byte-identity SHA-256 is
+  `919a0586...6b10` and DDA role-map SHA-256 is `330000bf...8547`. The owner images are all
+  development-only and `model_scores_created` remains zero.

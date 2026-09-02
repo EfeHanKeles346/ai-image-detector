@@ -4025,3 +4025,9 @@ model probabilities, source/parent/device-disjoint roles and a regularized logis
 The 210 owner-gallery images remain development-only. Success requires simultaneous aligned-DDA,
 RR, IPN and owner safety gates; failure preserves separate experts rather than manufacturing one
 universal score. This stage requires no new image download.
+
+The E44-B contract then verified all 1,670 frozen E35 image identities locally and joined their
+existing DDA stream with the unchanged E43-S artifact, while binding the 4,900-row E44 aligned
+sample to its immutable E43 stream. Detailed contract SHA-256 is `25681b62...3fb4`; E35 identity
+SHA-256 is `919a0586...6b10` and the DDA role-map hash is `330000bf...8547`. The contract contains
+zero new scores and transferred zero image bytes.

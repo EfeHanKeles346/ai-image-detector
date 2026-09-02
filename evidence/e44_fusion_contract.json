@@ -1,0 +1,27 @@
+{
+  "counts": {
+    "dda": 4900,
+    "e35": 1670
+  },
+  "dda_roles_sha256": "330000bfcc2d590d4457013694d5264f1d29efbd4ee424d36d5dd4a7a98d8547",
+  "detailed_contract_bytes": 1461268,
+  "detailed_contract_sha256": "25681b62d6a6d6718ec136a89e9de078b56a661e5efb969c16d6532559543fb4",
+  "e35_identity_sha256": "919a0586b9988d5c073074b0a6180dc4c63a76313d91360ead489cdd63716b10",
+  "forbidden": [
+    "source/device inference feature",
+    "owner fit",
+    "role change after score",
+    "post-development threshold repair",
+    "final claim"
+  ],
+  "generalist_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "inputs": {
+    "e35_dda_scores_sha256": "ae352ffe1311fd267f4e649c3fe12f8455531471ebf77d519de40f6f685d883a",
+    "e43_dda_scores_sha256": "1eefbdb7111154c408f08f84cfe155a0697715a974c965b4ea19d938671642dd",
+    "e44_dda_scores_sha256": "3d24d1c1fdc1d67571166ee2983b11944c6f689c9f43155588dc035c9e331d75"
+  },
+  "model_scores_created": 0,
+  "role": "consumed_development_only_not_final",
+  "schema_version": 1,
+  "state": "e44_fusion_contract_frozen_before_missing_joint_scores"
+}
