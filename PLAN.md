@@ -231,6 +231,29 @@ it before paying for another architecture or training run.
       Candidate `a3aec445...47390` is now packaged in `evidence/e43_candidate_contract.json` and
       waits for ITW-SM author approval; DINOv2-L remains locked because S did not fail.
 
+### F2.5 — immediate open Plan C: E43 on untouched DDA-COCO
+
+- [x] Select a licence-clear, ungated and still-untouched external source without searching for an
+      easier result after seeing E43 scores. Reuse the already pinned NeurIPS 2025 DDA-COCO
+      evaluation benchmark at revision `8c9330a3...68fb`, Apache-2.0, 4,301,452,066 bytes and
+      SHA-256 `8cd60077...9c24`. It pairs MS-COCO validation reals with five semantically/frequency-
+      aligned VAE reconstruction variants. It tests non-causal shortcut reliance; it cannot replace
+      ITW-SM's social-media/camera-pipeline claim.
+- [ ] Assemble the five existing multipart files only after binding E43-S candidate
+      `a3aec445...47390` and threshold `0.8712875247`. The parts now sum exactly 4,301,452,066 bytes,
+      so expected new network transfer is zero; if final SHA verification fails, stop rather than
+      silently redownloading beyond the user's 4 GB cap. Run safe ZIP/CRC inventory before decoding
+      or extracting a member.
+- [ ] Build a score-blind paired manifest. Keep every real parent and all its reconstruction
+      variants indivisible; audit exact SHA-256 and dHash against every E42/E43 protected role and
+      exclude an entire pair group for any prior overlap. Freeze counts, bytes, source variants,
+      archive/manifest hashes and zero scores before model loading.
+- [ ] Score the frozen manifest exactly once with the unchanged E43-S candidate/threshold. Require
+      100% coverage, ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy >=0.85,
+      REAL FP <=10%, AI macro/worst reconstruction recall >=80%/60%. A miss is preserved without
+      threshold repair; a pass is strong independent aligned-benchmark evidence but not a NIST
+      certification or a substitute for the pending ITW-SM in-the-wild final.
+
 ### F3 — recording and stop rules
 
 - [x] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis

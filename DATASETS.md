@@ -685,6 +685,25 @@ upload would follow. PixelProof stopped before transmitting affiliation data or 
 The user authorizes at most 4 GB of NIST transfer if access is eventually granted; current NIST
 payload and score counts remain exactly zero.
 
+### E43 Plan C — untouched DDA-COCO reassigned to the frozen E43 candidate (2026-09-02)
+
+The NIST organization gate and ITW-SM manual review motivate an immediate open benchmark, not a
+lower-quality replacement. DDA-COCO remains the official NeurIPS 2025 evaluation release from
+`Junwei-Xi/DDA-COCO`, immutable revision `8c9330a3b374bcac46a8045a0e3c09ebcf7868fb`,
+Apache-2.0. Its 4,301,452,066-byte `DDA-COCO.zip` is bound to SHA-256
+`8cd600779aaecef21605b07bff9ab3963a7fb9b9614a3d9a0588cd4a5e099c24`. It uses MS-COCO
+validation reals and five content/frequency-aligned VAE reconstruction variants, making it a test
+of shortcut resistance rather than social-media transfer.
+
+No E43 fit, calibration or DEVELOPMENT step accessed an archive member. The LaCie staging area now
+contains one 212,860,928-byte prefix and four disjoint range parts of 1,022,147,785,
+1,022,147,785, 1,022,147,784 and 1,022,147,784 bytes. They sum exactly to the official archive
+size, correcting the earlier intermediate note that 49,069,257 bytes were still missing. This is
+not yet a completed dataset claim: the pieces remain unassembled, final SHA/ZIP/CRC verification is
+pending, and no member name or pixel has been opened. Expected new transfer is zero; a failed whole-
+file hash stops rather than triggering an unplanned download. E43 binding is
+`evidence/e43_dda_coco_contract.json`.
+
 The immediate reproducible source is **RRDataset**, the ICCV 2025 Real-World Robustness benchmark,
 from the official Zenodo record `14963880` under CC BY 4.0. It contains high-impact/everyday scenes
 and evaluates original files, repeated internet/social-platform transmission and physical

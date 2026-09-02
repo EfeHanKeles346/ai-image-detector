@@ -3937,3 +3937,18 @@ requires country, full name, affiliation and affiliation type before site creati
 registration and licence upload can begin. Work stopped before submitting personal/affiliation
 data because the exact official institution and authority to register under it must come from the
 student. No site, track, agreement, NIST byte or score was created.
+
+The access delay triggered the preregistered open-data fallback rather than more tuning on consumed
+RR. A record audit found that the official NeurIPS 2025 DDA-COCO benchmark is still untouched by
+every E43 decision and already sits on LaCie as five unopened multipart files. A fresh byte count
+corrected the old interrupted-transfer note: the 212,860,928-byte prefix plus four disjoint ranges
+sum exactly to the official 4,301,452,066-byte archive, so no further network transfer should be
+needed. Whole-file SHA, safe ZIP inventory, member structure, decontamination and scores remain
+absent.
+
+Before assembly, Plan C binds the unchanged E43-S candidate `a3aec445...47390`, threshold
+`0.8712875247`, DDA-COCO revision `8c9330a3...68fb`, Apache-2.0 archive hash and one-shot gates.
+DDA-COCO directly tests whether the detector survives content/frequency alignment; it cannot prove
+social-media robustness or replace ITW-SM. Any overlap will remove the entire real/reconstruction
+pair before a score, and any failed archive hash stops without silently exceeding the user's 4 GB
+download ceiling.

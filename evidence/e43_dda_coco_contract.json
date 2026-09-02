@@ -1,0 +1,37 @@
+{
+  "archive": {
+    "bytes": 4301452066,
+    "filename": "DDA-COCO.zip",
+    "license": "Apache-2.0",
+    "repo_id": "Junwei-Xi/DDA-COCO",
+    "revision": "8c9330a3b374bcac46a8045a0e3c09ebcf7868fb",
+    "selection_sha256": "f0bc21a7927b7a272726da90895ef9da1f80e837b665739e0f797da4abec5184",
+    "sha256": "8cd600779aaecef21605b07bff9ab3963a7fb9b9614a3d9a0588cd4a5e099c24"
+  },
+  "candidate": {
+    "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "threshold": 0.8712875247001649
+  },
+  "multipart_state": {
+    "members_opened": 0,
+    "network_bytes_expected": 0,
+    "part_bytes": [
+      212860928,
+      1022147785,
+      1022147785,
+      1022147784,
+      1022147784
+    ],
+    "total_bytes": 4301452066
+  },
+  "rules": [
+    "Verify assembled archive size and SHA-256 before listing a ZIP member.",
+    "Reject unsafe paths, duplicate names, links, encryption, CRC failure or expanded-size drift.",
+    "Keep each real parent and every reconstruction variant in one indivisible group.",
+    "Exclude a whole pair group for any exact or protected perceptual overlap before scoring.",
+    "Freeze the decontaminated zero-score manifest and score E43-S exactly once.",
+    "DDA-COCO is aligned-benchmark evidence and does not replace ITW-SM social-media evidence."
+  ],
+  "schema_version": 1,
+  "state": "e43_dda_coco_frozen_before_archive_assembly"
+}
