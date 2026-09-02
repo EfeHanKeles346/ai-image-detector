@@ -4051,3 +4051,9 @@ The near miss is not rewritten as success and its threshold is not repaired afte
 E44-B remains consumed DEVELOPMENT and the experts remain separate. E44-C may use this failure to
 set a more conservative successor, but must bind and score a different already-local population
 before judging it; ITW-SM or a future NIST round remains the independent final requirement.
+
+A read-only E44-B margin diagnostic found that cut `0.3477933653`, only 0.00541 above the frozen
+cut, would meet both missed real-image budgets on the consumed rows while retaining every other
+gate. This does not change the failed E44-B record. E44-C instead freezes that value as a successor
+hypothesis before scoring a different local population: 2,940 E43 RR views plus 2,160 E42 E36/E39
+clean/robust views whose official-DDA scores do not yet exist. IPN/owner repeats are excluded.

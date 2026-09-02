@@ -354,9 +354,15 @@ it before paying for another architecture or training run.
 
 ### F2e — E44-C successor without test-set threshold laundering
 
-- [ ] Treat all E44-B rows and its threshold miss as consumed DEVELOPMENT. Diagnose disagreement
+- [x] Treat all E44-B rows and its threshold miss as consumed DEVELOPMENT. Diagnose disagreement
       and margin patterns read-only, but never rename a post-hoc E44-B threshold as validated.
-- [ ] Freeze a successor calibration rule using the consumed E44-B evidence, then create a new
+      The smallest diagnostic cut satisfying both missed budgets is `0.3477933653`; at that cut the
+      old population would pass 10/10, but this is hypothesis generation only.
+- [ ] Freeze `0.3477933653` as the E44-C successor cut using the consumed E44-B evidence, then bind
+      5,100 new comparative DEVELOPMENT views: all 2,940 source/parent-separated E43 RR development
+      views plus clean and one hash-assigned robust view for 1,080 E42 E36/E39 parents (2,160 views).
+      Exclude E42 IPN/owner rows already scored by E35 and reject every E35 exact-byte overlap.
+- [ ] Create a new
       comparative DEVELOPMENT population from already-local, parent/source-separated E43 RR and
       E42 real-camera/modern-AI roles that have never received an official-DDA score. Download zero
       new images and bind identities/roles before DDA inference.

@@ -3274,3 +3274,14 @@ was scored or selected using model output.
 - **Decision:** E44-B is not served as a universal scalar. Preserve it as a near-pass and design
   E44-C on a separately bound local population that has not received official-DDA scores; an
   untouched ITW-SM/NIST evaluation is still required for a final claim.
+
+### E44-C — successor hypothesis before new DDA scores
+
+- **Consumed diagnostic:** the minimum cut that would reduce E44-B RR REAL FP from 6/50 to 5/50
+  and owner FP from 43/210 to 42/210 is `0.3477933653`. At that cut the old rows pass 10/10 while
+  DDA macro/worst recall remains 91.22%/74.67% and RR AI macro/worst remains 99.29%/95.00%.
+  This is explicitly not a repaired E44-B result.
+- **New population:** freeze the diagnostic cut before official-DDA access to 2,940 E43 RR
+  DEVELOPMENT views and 2,160 clean/hash-assigned-robust views from 1,080 E42 E36/E39 parents.
+  E42 IPN/owner parents are excluded because E35 already scored them. Reject every E35 exact-byte
+  overlap; use the already-frozen E43-S scores as the other arm. No image download is needed.
