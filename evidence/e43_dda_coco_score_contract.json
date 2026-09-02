@@ -1,0 +1,39 @@
+{
+  "candidate_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "conditions": [
+    "REAL",
+    "FLUX.1",
+    "sd-vae-ft-ema",
+    "sd-vae-ft-mse",
+    "sdxl-vae",
+    "stable-diffusion-2-1",
+    "stable-diffusion-3.5-large"
+  ],
+  "declared_parents": 4965,
+  "declared_rows": 34755,
+  "detailed_contract_bytes": 1098,
+  "detailed_contract_sha256": "a414e5005da69ea55ca2f7376421d4eae6956ff9a52c23a5cb7d8c06cb9b69da",
+  "experiment": "E43/DDA-COCO-open-independent-test",
+  "forbidden": [
+    "threshold change",
+    "row or parent removal after score",
+    "test-informed fitting",
+    "retry after a complete score stream"
+  ],
+  "gates": {
+    "ai_macro_recall_min": 0.8,
+    "ai_worst_variant_recall_min": 0.6,
+    "balanced_accuracy_min": 0.85,
+    "coverage": 1.0,
+    "eer_max": 0.15,
+    "real_false_positive_rate_max": 0.1,
+    "roc_auc_min": 0.9,
+    "tpr_at_fpr10_min": 0.8
+  },
+  "inference": "unchanged E43-S clean global+two-texture-crop DINOv2-S feature path",
+  "manifest_sha256": "e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db",
+  "model_scores_created": 0,
+  "schema_version": 1,
+  "state": "e43_dda_coco_score_contract_frozen",
+  "threshold": 0.8712875247001649
+}

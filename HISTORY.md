@@ -3976,3 +3976,10 @@ complete parents /34,755 rows /5,080,919,889 source bytes, with zero exact dupli
 cross-label exact groups and zero cross-parent dHash diagnostics. Its SHA-256 is
 `e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db`. No model was loaded and no
 threshold or result changed; this is the immutable population for the next one-shot score.
+
+The DDA-COCO one-shot score contract was then frozen with SHA-256
+`a414e5005da69ea55ca2f7376421d4eae6956ff9a52c23a5cb7d8c06cb9b69da`. It binds the unchanged
+E43-S artifact, threshold `0.8712875247`, manifest `e663d679...a3db`, 4,965 parents /34,755 rows,
+seven conditions and all eight pass gates before model access. It explicitly forbids threshold
+repair, post-score row removal, test-informed fitting and retry after a completed stream. Model
+scores at this checkpoint remain zero.

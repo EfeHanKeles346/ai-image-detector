@@ -281,6 +281,8 @@ it before paying for another architecture or training run.
       model loading. Score original archive bytes with the existing E43-S clean three-view DINOv2-S
       feature path; add no test-only resize/compression and report every synthetic variant both
       separately and in the pooled gate.
+      **Score contract frozen:** SHA-256 `a414e500...b69da` binds 4,965 parents /34,755 rows, the
+      unchanged candidate, threshold and all eight gates with zero model scores.
 
 ### F3 — recording and stop rules
 

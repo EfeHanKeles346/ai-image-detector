@@ -3189,3 +3189,6 @@ was scored or selected using model output.
   34,755 rows, balanced across REAL and six synthetic conditions. It contains no within-pool exact,
   cross-label exact or cross-parent dHash group. Detailed manifest SHA-256 is
   `e663d679...a3db`; model scores remain zero.
+- **One-shot binding:** tracked contract SHA-256 `a414e500...b69da` binds the immutable manifest,
+  E43-S candidate/threshold, 34,755 declared rows and all eight success checks before model load.
+  It forbids threshold repair, post-score row removal, test-informed fit and completed-run retry.
