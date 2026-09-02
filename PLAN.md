@@ -163,11 +163,13 @@ it before paying for another architecture or training run.
       FINAL again. Freeze E43 before fitting: compare the existing DINOv2-S path with exactly one
       DINOv2-L intermediate-feature arm, add class-symmetric screen/recapture and stronger social-
       transport views, retain parent/source grouping and optimize no threshold on the future final.
-- [x] Secure a genuinely untouched final before spending the E43 training run. Preferred route is
+- [ ] Secure a genuinely untouched final before spending the E43 training run. Preferred route is
       ITW-SM after the user authenticates to Hugging Face and accepts its manual non-commercial
       terms; NIST Image-D remains the stronger registered blind route. Until one is available, an
       E43 development improvement may be measured but cannot honestly be called project success.
-      Access was accepted by the student account on 2026-09-02. Before image transfer, bind gated
+      The student accepted the terms and authenticated locally on 2026-09-02, but the first content
+      request returned `awaiting manual author review`; repository metadata visibility is not file
+      access. Before image transfer, bind gated
       repository revision `3060094fb576669927134193de3f517d7e64af86`: exactly 10,004 files /
       3,573,691,324 bytes, including 5,000 `0_real` and 5,000 `1_fake` images. Download only to
       LaCie with a 100 GiB reserve and resumable Hugging Face local-dir state; a receipt is forbidden

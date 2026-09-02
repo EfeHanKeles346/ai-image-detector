@@ -3855,3 +3855,12 @@ were added before acquisition. It preserves partial Hugging Face state across co
 requires 100 GiB free after the expected payload, rejects missing/extra/wrong-sized files and emits
 no receipt until the complete local snapshot matches the remote inventory. No model score is part
 of acquisition.
+
+**Access-state correction.** The first frozen content request established that successful OAuth and
+visibility of the 10,004-file metadata inventory do not equal dataset approval. Hugging Face
+returned HTTP 403 with `awaiting manual author review`; the earlier wording “access accepted” meant
+that the student submitted/accepted the terms, not that the authors had granted file access. The
+attempt stopped without an image payload or receipt. Only approximately 6.3 MB of resumable local-
+dir cache/tree/lock metadata exists on LaCie. The acquisition method now probes one non-image file
+before scheduling the image pool, and E43 final remains blocked until the authors approve the
+individual request. No retry is useful while that external state is unchanged.

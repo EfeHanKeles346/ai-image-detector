@@ -10,7 +10,8 @@ from pathlib import Path, PurePosixPath
 import shutil
 from typing import Any, Iterable, Mapping, Sequence
 
-from huggingface_hub import HfApi, snapshot_download
+from huggingface_hub import HfApi, hf_hub_download, snapshot_download
+from huggingface_hub.errors import GatedRepoError
 
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 
@@ -109,6 +110,19 @@ def acquire() -> dict[str, Any]:
     free_before = shutil.disk_usage(ROOT).free
     if free_before < EXPECTED_BYTES + MIN_FREE_BYTES:
         raise OSError("insufficient free space for ITW-SM plus 100 GiB reserve")
+
+    try:
+        hf_hub_download(
+            repo_id=REPO_ID,
+            repo_type="dataset",
+            revision=REVISION,
+            filename=".gitattributes",
+            local_dir=SNAPSHOT,
+        )
+    except GatedRepoError as error:
+        raise PermissionError(
+            "ITW-SM content access is still awaiting manual author review; no image transfer started"
+        ) from error
 
     resolved = Path(snapshot_download(
         repo_id=REPO_ID,
