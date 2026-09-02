@@ -4019,3 +4019,9 @@ that the official DDA representation learned. The official model still cannot be
 because earlier E35/E36 work found unsafe smartphone and modern-generator transfer. E44 therefore
 keeps it as a specialist and proceeds to conservative fusion/adaptation with existing real-camera
 safeguards. No replacement VAE dataset will be downloaded at this branch.
+
+E44-B was then planned before creating the missing joint scores. It will use only the two frozen
+model probabilities, source/parent/device-disjoint roles and a regularized logistic decision layer.
+The 210 owner-gallery images remain development-only. Success requires simultaneous aligned-DDA,
+RR, IPN and owner safety gates; failure preserves separate experts rather than manufacturing one
+universal score. This stage requires no new image download.

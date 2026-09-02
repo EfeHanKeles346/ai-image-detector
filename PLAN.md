@@ -323,6 +323,26 @@ it before paying for another architecture or training run.
       compact separate DDA population using VAE reconstruction, matched JPEG quality and fixed
       pixel-mixup (`Ppixel=0.2`, `Rpixel=0.8`) rather than VAE reconstruction alone.
 
+### F2d — E44-B conservative two-specialist fusion
+
+- [ ] Bind the existing E44 DDA specialist stream, the immutable full E43 DDA stream, the frozen
+      E35 RR/IPN/owner DDA stream and unchanged E43-S artifact before producing any missing joint
+      score. Download zero new image bytes. Assign DDA parents, RR parents and whole IPN devices to
+      fit/calibration/development solely by namespaced SHA-256; keep the 210 owner-gallery images
+      development-only.
+- [ ] Produce the missing E43-S score for the frozen 1,670-row E35 population, preserving every
+      original identity and path hash. Join exactly two scalar inputs per row: E43-S generalist
+      score and official-DDA specialist score. No image label, filename, source or device may be an
+      inference-time feature.
+- [ ] Fit only `StandardScaler + LogisticRegression` on clamped logits of the two scores, with
+      source/label-balanced weights. Select one threshold on CAL under REAL macro/worst-FP and AI
+      macro/worst-recall constraints; freeze the artifact before reading DEVELOPMENT metrics.
+- [ ] Accept the fusion only if DEVELOPMENT coverage is 100%, pooled AUC >=0.90 and balanced
+      accuracy >=0.85; DDA all-six macro/worst recall >=75%/50%; RR AI macro/worst recall
+      >=80%/60% with REAL FP <=10%; IPN worst-device FP <=20%; and owner-gallery FP <=20%.
+      Otherwise preserve the negative result and retain separate expert outputs instead of serving
+      a falsely universal scalar.
+
 ### F3 — recording and stop rules
 
 - [x] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis

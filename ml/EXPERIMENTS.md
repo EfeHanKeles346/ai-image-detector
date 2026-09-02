@@ -3238,3 +3238,18 @@ was scored or selected using model output.
 - **Decision:** retain the official DDA representation as an E44 specialist and move to a frozen,
   conservative fusion/adaptation using existing training roles plus real-camera regression gates.
   Do not download replacement VAE data. This consumed screen is diagnostic, not final evidence.
+
+### E44-B — two-score fusion method frozen before missing joint scores
+
+- **Inputs:** unchanged E43-S generalist probability and official DDA specialist probability only.
+  The fit may not inspect filename, source, device or label at inference. Existing consumed E44 and
+  E35 populations supply aligned AI/REAL, RR, IPN and owner-gallery coverage; no new images transfer.
+- **Roles:** assign complete DDA/RR parents and whole IPN devices by namespaced SHA-256. The owner
+  gallery is development-only. This prevents sibling-view and device leakage and prevents personal
+  images from teaching the detector their own appearance.
+- **Model:** clamp each probability before logit conversion, then fit one source/label-weighted
+  `StandardScaler + LogisticRegression`. Select one CAL threshold under real-safety and AI-recall
+  constraints; freeze it before DEVELOPMENT aggregation.
+- **Gate:** coverage 1.0, AUC >=0.90, balanced accuracy >=0.85, DDA macro/worst recall >=75%/50%,
+  RR macro/worst AI recall >=80%/60%, RR REAL FP <=10%, IPN worst-device FP <=20%, owner FP <=20%.
+  A failure keeps the experts separate; it cannot be repaired by a post-hoc threshold.
