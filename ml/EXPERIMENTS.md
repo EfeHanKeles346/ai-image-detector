@@ -3292,3 +3292,15 @@ was scored or selected using model output.
 - **DDA arm complete:** all 5,100 bound views scored successfully. The 1,793,353-byte stream
   SHA-256 is `3618b158...d3108`; coverage is 1.0. Fusion metrics had not been aggregated at this
   checkpoint.
+- **One-shot result:** E44-C passed **20/22** frozen checks. Pooled AUC **0.98181**, balanced
+  accuracy **0.92731**, AI recall **96.85%**, REAL FP **11.39%** and EER **0.07373**. The fused
+  score stream SHA-256 is `0507cc4d...3d6bd`.
+- **Strong cells:** RR original AI macro/worst recall 99.80%/98.57%; E42 clean AUC/BA
+  0.99307/0.95501 with AI macro/worst 99.04%/95%; E42 robust AUC/BA 0.99198/0.96538 with AI
+  macro/worst 98.08%/90%. All robustness, ranking, coverage and AI-recall gates pass.
+- **Failed safety cells:** RR-original REAL FP is **16.33%** against 10%; E42 clean REAL macro FP
+  passes at 6.94%, but `e36:device_004` reaches **31%**, making worst-device FP fail the 20% cap.
+  The failure is camera-specific DDA overactivation, not weak modern-AI recognition.
+- **Decision:** preserve the failed result. Stop scalar-threshold iteration and design selective
+  classification with an explicit `UNCERTAIN` outcome; future evidence must report risk and
+  automatic coverage together on a genuinely new population.

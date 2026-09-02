@@ -4066,3 +4066,14 @@ fusion artifact and all gates while `dda_scores_created` remains zero. No networ
 The official DDA arm then completed 5,100/5,100 E44-C views with 100% coverage. Its 1,793,353-byte
 stream SHA-256 is `3618b158...d3108`. The run survived the internet interruption because every
 input and model weight was local. No fused E44-C metric existed at this checkpoint.
+
+E44-C then completed its frozen 5,100-row comparison and passed 20/22 gates. Pooled AUC was
+0.98181, balanced accuracy 0.92731, AI recall 96.85%, REAL FP 11.39% and EER 0.07373. RR-original
+AI macro/worst recall reached 99.80%/98.57%; E42 clean and robust balanced accuracy reached
+0.95501 and 0.96538. Fused score-stream SHA-256 is `0507cc4d...3d6bd`.
+
+Two camera-safety checks failed: RR-original REAL FP was 16.33% against a 10% limit, and although
+E42 clean REAL macro FP passed at 6.94%, `e36:device_004` reached 31% against the 20% worst-device
+limit. The result remains failed. Since ranking and AI recall are already strong while residual
+errors are concentrated in DDA-triggered camera pipelines, the next architecture is selective
+classification (`AI`/`REAL`/`UNCERTAIN`), not another post-hoc scalar-threshold repair.

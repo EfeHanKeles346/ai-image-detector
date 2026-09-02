@@ -368,12 +368,26 @@ it before paying for another architecture or training run.
       E42 real-camera/modern-AI roles that have never received an official-DDA score. Download zero
       new images and bind identities/roles before DDA inference. All 4,020 unique paths passed their
       frozen hashes; `dda_scores_created` is zero.
-- [ ] Score the official DDA expert on the new bound population, combine it with the already-frozen
+- [x] Score the official DDA expert on the new bound population, combine it with the already-frozen
       E43-S stream and evaluate the E44-C candidate once. Require real-camera macro/worst FP,
       modern-AI macro/worst recall, transport robustness and coverage gates simultaneously. Keep
-      ITW-SM or a future NIST round as the only independent final.
+      ITW-SM or a future NIST round as the only independent final. E44-C passed 20/22 checks but
+      failed RR-original REAL FP (16.33% >10%) and E42 clean worst-device FP (31% >20%); preserve
+      the failed result and do not tune on it.
 - [x] Complete the official-DDA arm on 5,100/5,100 bound views before fusion aggregation. The
       1,793,353-byte score stream SHA-256 is `3618b158...d3108`; coverage is 100%.
+
+### F2f — stop binary threshold chasing; add a selective decision layer
+
+- [ ] Preserve E44-B/C as consumed failures. Measure score-arm disagreement and risk-versus-
+      coverage curves without changing either record. The remaining error is concentrated in
+      camera-specific DDA false positives, while ranking and modern-AI recall are already strong.
+- [ ] Design a three-outcome policy (`AI`, `REAL`, `UNCERTAIN`) using only the two frozen scores.
+      Require high-confidence AI and REAL decisions to meet their class/device budgets; send model
+      disagreement and unsafe margins to `UNCERTAIN` instead of forcing a wrong binary claim.
+- [ ] Freeze the selective policy on consumed DEVELOPMENT, then validate it only on ITW-SM/NIST or
+      another genuinely new source-separated population. Report both automatic coverage and error
+      among covered rows; never quote selective accuracy without its abstention rate.
 
 ### F3 — recording and stop rules
 

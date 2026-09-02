@@ -1,0 +1,4226 @@
+{
+  "boundary": "New comparative DEVELOPMENT only; not independent final evidence.",
+  "counts": {
+    "rows": 5100
+  },
+  "detailed_report_sha256": "dfd5f18840e606f181a0c1b6c2fe678f4a95fcd2fa03b1e070ebad7492b6f41c",
+  "fusion_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+  "gate": {
+    "checks": {
+      "coverage_eq_1": true,
+      "e42_clean_ai_macro_gte_0_80": true,
+      "e42_clean_ai_worst_gte_0_60": true,
+      "e42_clean_auc_gte_0_90": true,
+      "e42_clean_balanced_accuracy_gte_0_85": true,
+      "e42_clean_real_macro_fp_lte_0_10": true,
+      "e42_clean_real_worst_fp_lte_0_20": false,
+      "e42_robust_ai_macro_gte_0_80": true,
+      "e42_robust_ai_worst_gte_0_60": true,
+      "e42_robust_auc_gte_0_85": true,
+      "e42_robust_balanced_accuracy_gte_0_80": true,
+      "e42_robust_real_macro_fp_lte_0_10": true,
+      "e42_robust_real_worst_fp_lte_0_20": true,
+      "pooled_auc_gte_0_90": true,
+      "pooled_balanced_accuracy_gte_0_85": true,
+      "rr_original_ai_macro_gte_0_80": true,
+      "rr_original_ai_worst_gte_0_60": true,
+      "rr_original_auc_gte_0_90": true,
+      "rr_original_balanced_accuracy_gte_0_85": true,
+      "rr_original_real_fp_lte_0_10": false,
+      "rr_redigital_balanced_accuracy_gte_0_80": true,
+      "rr_transfer_balanced_accuracy_gte_0_80": true
+    },
+    "e42_clean": {
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9537037037037037,
+        "ai_recall": 0.9903846153846154,
+        "balanced_accuracy": 0.9550137362637363,
+        "brier_nontarget_real": 0.042408413383473564,
+        "brier_target_ai": 0.0231556660333063,
+        "confusion": {
+          "fn": 5,
+          "fp": 45,
+          "tn": 515,
+          "tp": 515
+        },
+        "counts": {
+          "ai_succeeded": 520,
+          "failed": 0,
+          "real_succeeded": 560,
+          "succeeded": 1080,
+          "total": 1080
+        },
+        "coverage": 1.0,
+        "eer": 0.046291208791208766,
+        "per_group": [
+          {
+            "ai_recall": 0.95,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 2,
+              "fp": 0,
+              "tn": 0,
+              "tp": 38
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 31,
+              "tn": 69,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.31,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 99,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.01,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 99,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.01,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 5,
+              "tn": 95,
+              "tp": 0
+            },
+            "count": 100,
+            "label": 0,
+            "real_false_positive_rate": 0.05,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 2,
+              "tn": 38,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.05,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 40,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 5,
+              "tn": 35,
+              "tp": 0
+            },
+            "count": 40,
+            "label": 0,
+            "real_false_positive_rate": 0.125,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 40
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 0.975,
+            "balanced_accuracy": null,
+            "condition": "clean",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 39
+            },
+            "count": 40,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          }
+        ],
+        "real_false_positive_rate": 0.08035714285714286,
+        "roc_auc": 0.9930666208791209,
+        "stored_threshold": 0.34779336534869326,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 1.0
+        }
+      },
+      "rates": {
+        "ai_macro_recall": 0.9903846153846154,
+        "ai_recall_by_group": {
+          "e42:e36:FLUX.2-pro": 0.95,
+          "e42:e36:GPT-Image-1.5": 0.975,
+          "e42:e36:HunyuanImage-3.0": 1.0,
+          "e42:e36:Imagen-4.0-Ultra": 1.0,
+          "e42:e36:Seedream-4.5": 0.975,
+          "e42:e36:nano-banana-pro": 1.0,
+          "e42:e39:Adobe Firefly Image 5": 1.0,
+          "e42:e39:Gemini 3 Pro Image": 1.0,
+          "e42:e39:HiDream I1 Dev": 1.0,
+          "e42:e39:Ideogram 3": 1.0,
+          "e42:e39:Midjourney v7": 1.0,
+          "e42:e39:Reve Image 1.0": 1.0,
+          "e42:e39:Z Image Turbo": 0.975
+        },
+        "ai_worst_recall": 0.95,
+        "real_fp_by_group": {
+          "e42:e36:device_004": 0.31,
+          "e42:e36:device_006": 0.01,
+          "e42:e36:device_007": 0.01,
+          "e42:e36:device_008": 0.05,
+          "e42:e39:D14_Apple_iPhone13mini": 0.05,
+          "e42:e39:D27_DOOGEE_S96Pro": 0.0,
+          "e42:e39:D34_Google_Pixel5": 0.0,
+          "e42:e39:D43_OnePlus_8T": 0.125
+        },
+        "real_macro_fp": 0.06937499999999999,
+        "real_worst_fp": 0.31
+      }
+    },
+    "e42_robust": {
+      "metrics": {
+        "accuracy_counting_failures_wrong": 0.9648148148148148,
+        "ai_recall": 0.9807692307692307,
+        "balanced_accuracy": 0.9653846153846153,
+        "brier_nontarget_real": 0.021569714901205347,
+        "brier_target_ai": 0.07143813059428661,
+        "confusion": {
+          "fn": 10,
+          "fp": 28,
+          "tn": 532,
+          "tp": 510
+        },
+        "counts": {
+          "ai_succeeded": 520,
+          "failed": 0,
+          "real_succeeded": 560,
+          "succeeded": 1080,
+          "total": 1080
+        },
+        "coverage": 1.0,
+        "eer": 0.04258241758241756,
+        "per_group": [
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 8
+            },
+            "count": 8,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:FLUX.2-pro"
+          },
+          {
+            "ai_recall": 0.8571428571428571,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 6
+            },
+            "count": 7,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 17
+            },
+            "count": 17,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 9
+            },
+            "count": 9,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 7
+            },
+            "count": 7,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:GPT-Image-1.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 4
+            },
+            "count": 4,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 12
+            },
+            "count": 12,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 13
+            },
+            "count": 13,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:HunyuanImage-3.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 8
+            },
+            "count": 8,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Imagen-4.0-Ultra"
+          },
+          {
+            "ai_recall": 0.875,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 7
+            },
+            "count": 8,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 9
+            },
+            "count": 9,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 12
+            },
+            "count": 12,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:Seedream-4.5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 22,
+              "tp": 0
+            },
+            "count": 23,
+            "label": 0,
+            "real_false_positive_rate": 0.043478260869565216,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 6,
+              "tn": 19,
+              "tp": 0
+            },
+            "count": 25,
+            "label": 0,
+            "real_false_positive_rate": 0.24,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 3,
+              "tn": 24,
+              "tp": 0
+            },
+            "count": 27,
+            "label": 0,
+            "real_false_positive_rate": 0.1111111111111111,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 2,
+              "tn": 23,
+              "tp": 0
+            },
+            "count": 25,
+            "label": 0,
+            "real_false_positive_rate": 0.08,
+            "source": "e36:device_004"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 25,
+              "tp": 0
+            },
+            "count": 25,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 14,
+              "tp": 0
+            },
+            "count": 14,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 31,
+              "tp": 0
+            },
+            "count": 32,
+            "label": 0,
+            "real_false_positive_rate": 0.03125,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 29,
+              "tp": 0
+            },
+            "count": 29,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_006"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 24,
+              "tp": 0
+            },
+            "count": 24,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 4,
+              "tn": 19,
+              "tp": 0
+            },
+            "count": 23,
+            "label": 0,
+            "real_false_positive_rate": 0.17391304347826086,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 20,
+              "tp": 0
+            },
+            "count": 20,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 33,
+              "tp": 0
+            },
+            "count": 33,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e36:device_007"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 20,
+              "tp": 0
+            },
+            "count": 21,
+            "label": 0,
+            "real_false_positive_rate": 0.047619047619047616,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 3,
+              "tn": 22,
+              "tp": 0
+            },
+            "count": 25,
+            "label": 0,
+            "real_false_positive_rate": 0.12,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 23,
+              "tp": 0
+            },
+            "count": 24,
+            "label": 0,
+            "real_false_positive_rate": 0.041666666666666664,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 29,
+              "tp": 0
+            },
+            "count": 30,
+            "label": 0,
+            "real_false_positive_rate": 0.03333333333333333,
+            "source": "e36:device_008"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 7
+            },
+            "count": 7,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 12
+            },
+            "count": 12,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e36:nano-banana-pro"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 7
+            },
+            "count": 7,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 14
+            },
+            "count": 14,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": 0.8888888888888888,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 8
+            },
+            "count": 9,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Adobe Firefly Image 5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 10,
+              "tp": 0
+            },
+            "count": 10,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 5,
+              "tp": 0
+            },
+            "count": 5,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 6,
+              "tp": 0
+            },
+            "count": 7,
+            "label": 0,
+            "real_false_positive_rate": 0.14285714285714285,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 18,
+              "tp": 0
+            },
+            "count": 18,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D14_Apple_iPhone13mini"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 10,
+              "tp": 0
+            },
+            "count": 10,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 9,
+              "tp": 0
+            },
+            "count": 9,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 12,
+              "tp": 0
+            },
+            "count": 12,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 9,
+              "tp": 0
+            },
+            "count": 9,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D27_DOOGEE_S96Pro"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 1,
+              "tp": 0
+            },
+            "count": 1,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 14,
+              "tp": 0
+            },
+            "count": 15,
+            "label": 0,
+            "real_false_positive_rate": 0.06666666666666667,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 18,
+              "tp": 0
+            },
+            "count": 18,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 6,
+              "tp": 0
+            },
+            "count": 6,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D34_Google_Pixel5"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 9,
+              "tp": 0
+            },
+            "count": 9,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 2,
+              "tn": 7,
+              "tp": 0
+            },
+            "count": 9,
+            "label": 0,
+            "real_false_positive_rate": 0.2222222222222222,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 1,
+              "tn": 12,
+              "tp": 0
+            },
+            "count": 13,
+            "label": 0,
+            "real_false_positive_rate": 0.07692307692307693,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": null,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 9,
+              "tp": 0
+            },
+            "count": 9,
+            "label": 0,
+            "real_false_positive_rate": 0.0,
+            "source": "e39:D43_OnePlus_8T"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 6
+            },
+            "count": 6,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 13
+            },
+            "count": 13,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 0.7777777777777778,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 2,
+              "fp": 0,
+              "tn": 0,
+              "tp": 7
+            },
+            "count": 9,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 12
+            },
+            "count": 12,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Gemini 3 Pro Image"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 12
+            },
+            "count": 12,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 9
+            },
+            "count": 9,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 12
+            },
+            "count": 12,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 7
+            },
+            "count": 7,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:HiDream I1 Dev"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 5
+            },
+            "count": 5,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 6
+            },
+            "count": 6,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 19
+            },
+            "count": 19,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Ideogram 3"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 0.8888888888888888,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 8
+            },
+            "count": 9,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Midjourney v7"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 8
+            },
+            "count": 8,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 11
+            },
+            "count": 11,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Reve Image 1.0"
+          },
+          {
+            "ai_recall": 0.8333333333333334,
+            "balanced_accuracy": null,
+            "condition": "jpeg",
+            "confusion": {
+              "fn": 1,
+              "fp": 0,
+              "tn": 0,
+              "tp": 5
+            },
+            "count": 6,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "mild_blur",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 10
+            },
+            "count": 10,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          },
+          {
+            "ai_recall": 0.75,
+            "balanced_accuracy": null,
+            "condition": "resize_jpeg",
+            "confusion": {
+              "fn": 3,
+              "fp": 0,
+              "tn": 0,
+              "tp": 9
+            },
+            "count": 12,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          },
+          {
+            "ai_recall": 1.0,
+            "balanced_accuracy": null,
+            "condition": "webp",
+            "confusion": {
+              "fn": 0,
+              "fp": 0,
+              "tn": 0,
+              "tp": 12
+            },
+            "count": 12,
+            "label": 1,
+            "real_false_positive_rate": null,
+            "source": "e39:Z Image Turbo"
+          }
+        ],
+        "real_false_positive_rate": 0.05,
+        "roc_auc": 0.9919848901098901,
+        "stored_threshold": 0.34779336534869326,
+        "tpr_at_fpr": {
+          "fpr": 0.1,
+          "tpr": 1.0
+        }
+      },
+      "rates": {
+        "ai_macro_recall": 0.9807692307692307,
+        "ai_recall_by_group": {
+          "e42:e36:FLUX.2-pro": 1.0,
+          "e42:e36:GPT-Image-1.5": 0.975,
+          "e42:e36:HunyuanImage-3.0": 1.0,
+          "e42:e36:Imagen-4.0-Ultra": 1.0,
+          "e42:e36:Seedream-4.5": 0.975,
+          "e42:e36:nano-banana-pro": 1.0,
+          "e42:e39:Adobe Firefly Image 5": 0.975,
+          "e42:e39:Gemini 3 Pro Image": 0.95,
+          "e42:e39:HiDream I1 Dev": 1.0,
+          "e42:e39:Ideogram 3": 1.0,
+          "e42:e39:Midjourney v7": 0.975,
+          "e42:e39:Reve Image 1.0": 1.0,
+          "e42:e39:Z Image Turbo": 0.9
+        },
+        "ai_worst_recall": 0.9,
+        "real_fp_by_group": {
+          "e42:e36:device_004": 0.12,
+          "e42:e36:device_006": 0.01,
+          "e42:e36:device_007": 0.04,
+          "e42:e36:device_008": 0.06,
+          "e42:e39:D14_Apple_iPhone13mini": 0.025,
+          "e42:e39:D27_DOOGEE_S96Pro": 0.0,
+          "e42:e39:D34_Google_Pixel5": 0.025,
+          "e42:e39:D43_OnePlus_8T": 0.075
+        },
+        "real_macro_fp": 0.044375,
+        "real_worst_fp": 0.12
+      }
+    },
+    "passed": false,
+    "pooled": {
+      "accuracy_counting_failures_wrong": 0.9266666666666666,
+      "ai_recall": 0.9685258964143426,
+      "balanced_accuracy": 0.9273131412573643,
+      "brier_nontarget_real": 0.054579638166331185,
+      "brier_target_ai": 0.05508024768763673,
+      "confusion": {
+        "fn": 79,
+        "fp": 295,
+        "tn": 2295,
+        "tp": 2431
+      },
+      "counts": {
+        "ai_succeeded": 2510,
+        "failed": 0,
+        "real_succeeded": 2590,
+        "succeeded": 5100,
+        "total": 5100
+      },
+      "coverage": 1.0,
+      "eer": 0.07372517651402116,
+      "per_group": [
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "culture_and_religion"
+        },
+        {
+          "ai_recall": 0.9285714285714286,
+          "balanced_accuracy": null,
+          "condition": "redigital",
+          "confusion": {
+            "fn": 5,
+            "fp": 0,
+            "tn": 0,
+            "tp": 65
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "culture_and_religion"
+        },
+        {
+          "ai_recall": 0.9571428571428572,
+          "balanced_accuracy": null,
+          "condition": "transfer",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 67
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "culture_and_religion"
+        },
+        {
+          "ai_recall": 0.95,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 38
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 8
+          },
+          "count": 8,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:FLUX.2-pro"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 0.8571428571428571,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 6
+          },
+          "count": 7,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 17
+          },
+          "count": 17,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 9
+          },
+          "count": 9,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 7
+          },
+          "count": 7,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:GPT-Image-1.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 4
+          },
+          "count": 4,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 12
+          },
+          "count": 12,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 13
+          },
+          "count": 13,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:HunyuanImage-3.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 8
+          },
+          "count": 8,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Imagen-4.0-Ultra"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": 0.875,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 7
+          },
+          "count": 8,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 9
+          },
+          "count": 9,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 12
+          },
+          "count": 12,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:Seedream-4.5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 31,
+            "tn": 69,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.31,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 22,
+            "tp": 0
+          },
+          "count": 23,
+          "label": 0,
+          "real_false_positive_rate": 0.043478260869565216,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 6,
+            "tn": 19,
+            "tp": 0
+          },
+          "count": 25,
+          "label": 0,
+          "real_false_positive_rate": 0.24,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 3,
+            "tn": 24,
+            "tp": 0
+          },
+          "count": 27,
+          "label": 0,
+          "real_false_positive_rate": 0.1111111111111111,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 2,
+            "tn": 23,
+            "tp": 0
+          },
+          "count": 25,
+          "label": 0,
+          "real_false_positive_rate": 0.08,
+          "source": "e36:device_004"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 99,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.01,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 25,
+            "tp": 0
+          },
+          "count": 25,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 14,
+            "tp": 0
+          },
+          "count": 14,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 31,
+            "tp": 0
+          },
+          "count": 32,
+          "label": 0,
+          "real_false_positive_rate": 0.03125,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 29,
+            "tp": 0
+          },
+          "count": 29,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_006"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 99,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.01,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 24,
+            "tp": 0
+          },
+          "count": 24,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 4,
+            "tn": 19,
+            "tp": 0
+          },
+          "count": 23,
+          "label": 0,
+          "real_false_positive_rate": 0.17391304347826086,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 20,
+            "tp": 0
+          },
+          "count": 20,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 33,
+            "tp": 0
+          },
+          "count": 33,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e36:device_007"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 5,
+            "tn": 95,
+            "tp": 0
+          },
+          "count": 100,
+          "label": 0,
+          "real_false_positive_rate": 0.05,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 20,
+            "tp": 0
+          },
+          "count": 21,
+          "label": 0,
+          "real_false_positive_rate": 0.047619047619047616,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 3,
+            "tn": 22,
+            "tp": 0
+          },
+          "count": 25,
+          "label": 0,
+          "real_false_positive_rate": 0.12,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 23,
+            "tp": 0
+          },
+          "count": 24,
+          "label": 0,
+          "real_false_positive_rate": 0.041666666666666664,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 29,
+            "tp": 0
+          },
+          "count": 30,
+          "label": 0,
+          "real_false_positive_rate": 0.03333333333333333,
+          "source": "e36:device_008"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 7
+          },
+          "count": 7,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 12
+          },
+          "count": 12,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e36:nano-banana-pro"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 7
+          },
+          "count": 7,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 14
+          },
+          "count": 14,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": 0.8888888888888888,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 8
+          },
+          "count": 9,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Adobe Firefly Image 5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 2,
+            "tn": 38,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.05,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 10,
+            "tp": 0
+          },
+          "count": 10,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 5,
+            "tp": 0
+          },
+          "count": 5,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 6,
+            "tp": 0
+          },
+          "count": 7,
+          "label": 0,
+          "real_false_positive_rate": 0.14285714285714285,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 18,
+            "tp": 0
+          },
+          "count": 18,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D14_Apple_iPhone13mini"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 10,
+            "tp": 0
+          },
+          "count": 10,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 9,
+            "tp": 0
+          },
+          "count": 9,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 12,
+            "tp": 0
+          },
+          "count": 12,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 9,
+            "tp": 0
+          },
+          "count": 9,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D27_DOOGEE_S96Pro"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 40,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 1,
+            "tp": 0
+          },
+          "count": 1,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 14,
+            "tp": 0
+          },
+          "count": 15,
+          "label": 0,
+          "real_false_positive_rate": 0.06666666666666667,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 18,
+            "tp": 0
+          },
+          "count": 18,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 6,
+            "tp": 0
+          },
+          "count": 6,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D34_Google_Pixel5"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 5,
+            "tn": 35,
+            "tp": 0
+          },
+          "count": 40,
+          "label": 0,
+          "real_false_positive_rate": 0.125,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 9,
+            "tp": 0
+          },
+          "count": 9,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 2,
+            "tn": 7,
+            "tp": 0
+          },
+          "count": 9,
+          "label": 0,
+          "real_false_positive_rate": 0.2222222222222222,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 1,
+            "tn": 12,
+            "tp": 0
+          },
+          "count": 13,
+          "label": 0,
+          "real_false_positive_rate": 0.07692307692307693,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 9,
+            "tp": 0
+          },
+          "count": 9,
+          "label": 0,
+          "real_false_positive_rate": 0.0,
+          "source": "e39:D43_OnePlus_8T"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 6
+          },
+          "count": 6,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 13
+          },
+          "count": 13,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 0.7777777777777778,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 7
+          },
+          "count": 9,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 12
+          },
+          "count": 12,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Gemini 3 Pro Image"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 12
+          },
+          "count": 12,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 9
+          },
+          "count": 9,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 12
+          },
+          "count": 12,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 7
+          },
+          "count": 7,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:HiDream I1 Dev"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 5
+          },
+          "count": 5,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 6
+          },
+          "count": 6,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 19
+          },
+          "count": 19,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Ideogram 3"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 0.8888888888888888,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 8
+          },
+          "count": 9,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Midjourney v7"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 40
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 8
+          },
+          "count": 8,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 11
+          },
+          "count": 11,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Reve Image 1.0"
+        },
+        {
+          "ai_recall": 0.975,
+          "balanced_accuracy": null,
+          "condition": "clean",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 39
+          },
+          "count": 40,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": 0.8333333333333334,
+          "balanced_accuracy": null,
+          "condition": "jpeg",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 5
+          },
+          "count": 6,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "mild_blur",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 10
+          },
+          "count": 10,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": 0.75,
+          "balanced_accuracy": null,
+          "condition": "resize_jpeg",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 9
+          },
+          "count": 12,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "webp",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 12
+          },
+          "count": 12,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "e39:Z Image Turbo"
+        },
+        {
+          "ai_recall": 0.9857142857142858,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 69
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "everyday_life"
+        },
+        {
+          "ai_recall": 0.7285714285714285,
+          "balanced_accuracy": null,
+          "condition": "redigital",
+          "confusion": {
+            "fn": 19,
+            "fp": 0,
+            "tn": 0,
+            "tp": 51
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "everyday_life"
+        },
+        {
+          "ai_recall": 0.9857142857142858,
+          "balanced_accuracy": null,
+          "condition": "transfer",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 69
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "everyday_life"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "labor_and_production"
+        },
+        {
+          "ai_recall": 0.9571428571428572,
+          "balanced_accuracy": null,
+          "condition": "redigital",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 67
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "labor_and_production"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "transfer",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "labor_and_production"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "medical_and_public_health"
+        },
+        {
+          "ai_recall": 0.9857142857142858,
+          "balanced_accuracy": null,
+          "condition": "redigital",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 69
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "medical_and_public_health"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "transfer",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "medical_and_public_health"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "natural_disasters_and_accidents"
+        },
+        {
+          "ai_recall": 0.8857142857142857,
+          "balanced_accuracy": null,
+          "condition": "redigital",
+          "confusion": {
+            "fn": 8,
+            "fp": 0,
+            "tn": 0,
+            "tp": 62
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "natural_disasters_and_accidents"
+        },
+        {
+          "ai_recall": 0.9571428571428572,
+          "balanced_accuracy": null,
+          "condition": "transfer",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 67
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "natural_disasters_and_accidents"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "political_and_social_events"
+        },
+        {
+          "ai_recall": 0.8428571428571429,
+          "balanced_accuracy": null,
+          "condition": "redigital",
+          "confusion": {
+            "fn": 11,
+            "fp": 0,
+            "tn": 0,
+            "tp": 59
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "political_and_social_events"
+        },
+        {
+          "ai_recall": 0.9571428571428572,
+          "balanced_accuracy": null,
+          "condition": "transfer",
+          "confusion": {
+            "fn": 3,
+            "fp": 0,
+            "tn": 0,
+            "tp": 67
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "political_and_social_events"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 80,
+            "tn": 410,
+            "tp": 0
+          },
+          "count": 490,
+          "label": 0,
+          "real_false_positive_rate": 0.16326530612244897,
+          "source": "rrdataset_real_pool"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "redigital",
+          "confusion": {
+            "fn": 0,
+            "fp": 56,
+            "tn": 434,
+            "tp": 0
+          },
+          "count": 490,
+          "label": 0,
+          "real_false_positive_rate": 0.11428571428571428,
+          "source": "rrdataset_real_pool"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "transfer",
+          "confusion": {
+            "fn": 0,
+            "fp": 86,
+            "tn": 404,
+            "tp": 0
+          },
+          "count": 490,
+          "label": 0,
+          "real_false_positive_rate": 0.17551020408163265,
+          "source": "rrdataset_real_pool"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 70
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "war_and_conflict"
+        },
+        {
+          "ai_recall": 0.9428571428571428,
+          "balanced_accuracy": null,
+          "condition": "redigital",
+          "confusion": {
+            "fn": 4,
+            "fp": 0,
+            "tn": 0,
+            "tp": 66
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "war_and_conflict"
+        },
+        {
+          "ai_recall": 0.9714285714285714,
+          "balanced_accuracy": null,
+          "condition": "transfer",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 68
+          },
+          "count": 70,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "war_and_conflict"
+        }
+      ],
+      "real_false_positive_rate": 0.1138996138996139,
+      "roc_auc": 0.9818142103401067,
+      "stored_threshold": 0.34779336534869326,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9585657370517928
+      }
+    },
+    "rr_by_condition": {
+      "original": {
+        "metrics": {
+          "accuracy_counting_failures_wrong": 0.9173469387755102,
+          "ai_recall": 0.9979591836734694,
+          "balanced_accuracy": 0.9173469387755102,
+          "brier_nontarget_real": 0.07873408641400262,
+          "brier_target_ai": 0.0057020465463629155,
+          "confusion": {
+            "fn": 1,
+            "fp": 80,
+            "tn": 410,
+            "tp": 489
+          },
+          "counts": {
+            "ai_succeeded": 490,
+            "failed": 0,
+            "real_succeeded": 490,
+            "succeeded": 980,
+            "total": 980
+          },
+          "coverage": 1.0,
+          "eer": 0.02653061224489795,
+          "per_group": [
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 70
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "culture_and_religion"
+            },
+            {
+              "ai_recall": 0.9857142857142858,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 1,
+                "fp": 0,
+                "tn": 0,
+                "tp": 69
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "everyday_life"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 70
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "labor_and_production"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 70
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "medical_and_public_health"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 70
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 70
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 80,
+                "tn": 410,
+                "tp": 0
+              },
+              "count": 490,
+              "label": 0,
+              "real_false_positive_rate": 0.16326530612244897,
+              "source": "rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 70
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.16326530612244897,
+          "roc_auc": 0.9968721366097459,
+          "stored_threshold": 0.34779336534869326,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 0.9918367346938776
+          }
+        },
+        "rates": {
+          "ai_macro_recall": 0.9979591836734694,
+          "ai_recall_by_group": {
+            "rr:culture_and_religion": 1.0,
+            "rr:everyday_life": 0.9857142857142858,
+            "rr:labor_and_production": 1.0,
+            "rr:medical_and_public_health": 1.0,
+            "rr:natural_disasters_and_accidents": 1.0,
+            "rr:political_and_social_events": 1.0,
+            "rr:war_and_conflict": 1.0
+          },
+          "ai_worst_recall": 0.9857142857142858,
+          "real_fp_by_group": {
+            "rr:rrdataset_real_pool": 0.16326530612244897
+          },
+          "real_macro_fp": 0.16326530612244897,
+          "real_worst_fp": 0.16326530612244897
+        }
+      },
+      "redigital": {
+        "metrics": {
+          "accuracy_counting_failures_wrong": 0.8908163265306123,
+          "ai_recall": 0.8959183673469387,
+          "balanced_accuracy": 0.8908163265306122,
+          "brier_nontarget_real": 0.056660384410825965,
+          "brier_target_ai": 0.13149898032251614,
+          "confusion": {
+            "fn": 51,
+            "fp": 56,
+            "tn": 434,
+            "tp": 439
+          },
+          "counts": {
+            "ai_succeeded": 490,
+            "failed": 0,
+            "real_succeeded": 490,
+            "succeeded": 980,
+            "total": 980
+          },
+          "coverage": 1.0,
+          "eer": 0.11020408163265305,
+          "per_group": [
+            {
+              "ai_recall": 0.9285714285714286,
+              "balanced_accuracy": null,
+              "condition": "redigital",
+              "confusion": {
+                "fn": 5,
+                "fp": 0,
+                "tn": 0,
+                "tp": 65
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "culture_and_religion"
+            },
+            {
+              "ai_recall": 0.7285714285714285,
+              "balanced_accuracy": null,
+              "condition": "redigital",
+              "confusion": {
+                "fn": 19,
+                "fp": 0,
+                "tn": 0,
+                "tp": 51
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "everyday_life"
+            },
+            {
+              "ai_recall": 0.9571428571428572,
+              "balanced_accuracy": null,
+              "condition": "redigital",
+              "confusion": {
+                "fn": 3,
+                "fp": 0,
+                "tn": 0,
+                "tp": 67
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "labor_and_production"
+            },
+            {
+              "ai_recall": 0.9857142857142858,
+              "balanced_accuracy": null,
+              "condition": "redigital",
+              "confusion": {
+                "fn": 1,
+                "fp": 0,
+                "tn": 0,
+                "tp": 69
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "medical_and_public_health"
+            },
+            {
+              "ai_recall": 0.8857142857142857,
+              "balanced_accuracy": null,
+              "condition": "redigital",
+              "confusion": {
+                "fn": 8,
+                "fp": 0,
+                "tn": 0,
+                "tp": 62
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 0.8428571428571429,
+              "balanced_accuracy": null,
+              "condition": "redigital",
+              "confusion": {
+                "fn": 11,
+                "fp": 0,
+                "tn": 0,
+                "tp": 59
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "redigital",
+              "confusion": {
+                "fn": 0,
+                "fp": 56,
+                "tn": 434,
+                "tp": 0
+              },
+              "count": 490,
+              "label": 0,
+              "real_false_positive_rate": 0.11428571428571428,
+              "source": "rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 0.9428571428571428,
+              "balanced_accuracy": null,
+              "condition": "redigital",
+              "confusion": {
+                "fn": 4,
+                "fp": 0,
+                "tn": 0,
+                "tp": 66
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.11428571428571428,
+          "roc_auc": 0.9554935443565182,
+          "stored_threshold": 0.34779336534869326,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 0.8775510204081632
+          }
+        },
+        "rates": {
+          "ai_macro_recall": 0.8959183673469387,
+          "ai_recall_by_group": {
+            "rr:culture_and_religion": 0.9285714285714286,
+            "rr:everyday_life": 0.7285714285714285,
+            "rr:labor_and_production": 0.9571428571428572,
+            "rr:medical_and_public_health": 0.9857142857142858,
+            "rr:natural_disasters_and_accidents": 0.8857142857142857,
+            "rr:political_and_social_events": 0.8428571428571429,
+            "rr:war_and_conflict": 0.9428571428571428
+          },
+          "ai_worst_recall": 0.7285714285714285,
+          "real_fp_by_group": {
+            "rr:rrdataset_real_pool": 0.11428571428571428
+          },
+          "real_macro_fp": 0.11428571428571428,
+          "real_worst_fp": 0.11428571428571428
+        }
+      },
+      "transfer": {
+        "metrics": {
+          "accuracy_counting_failures_wrong": 0.9,
+          "ai_recall": 0.9755102040816327,
+          "balanced_accuracy": 0.9,
+          "brier_nontarget_real": 0.07998004144328895,
+          "brier_target_ai": 0.044559478130345206,
+          "confusion": {
+            "fn": 12,
+            "fp": 86,
+            "tn": 404,
+            "tp": 478
+          },
+          "counts": {
+            "ai_succeeded": 490,
+            "failed": 0,
+            "real_succeeded": 490,
+            "succeeded": 980,
+            "total": 980
+          },
+          "coverage": 1.0,
+          "eer": 0.07551020408163267,
+          "per_group": [
+            {
+              "ai_recall": 0.9571428571428572,
+              "balanced_accuracy": null,
+              "condition": "transfer",
+              "confusion": {
+                "fn": 3,
+                "fp": 0,
+                "tn": 0,
+                "tp": 67
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "culture_and_religion"
+            },
+            {
+              "ai_recall": 0.9857142857142858,
+              "balanced_accuracy": null,
+              "condition": "transfer",
+              "confusion": {
+                "fn": 1,
+                "fp": 0,
+                "tn": 0,
+                "tp": 69
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "everyday_life"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "transfer",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 70
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "labor_and_production"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "transfer",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 70
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "medical_and_public_health"
+            },
+            {
+              "ai_recall": 0.9571428571428572,
+              "balanced_accuracy": null,
+              "condition": "transfer",
+              "confusion": {
+                "fn": 3,
+                "fp": 0,
+                "tn": 0,
+                "tp": 67
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 0.9571428571428572,
+              "balanced_accuracy": null,
+              "condition": "transfer",
+              "confusion": {
+                "fn": 3,
+                "fp": 0,
+                "tn": 0,
+                "tp": 67
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "transfer",
+              "confusion": {
+                "fn": 0,
+                "fp": 86,
+                "tn": 404,
+                "tp": 0
+              },
+              "count": 490,
+              "label": 0,
+              "real_false_positive_rate": 0.17551020408163265,
+              "source": "rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 0.9714285714285714,
+              "balanced_accuracy": null,
+              "condition": "transfer",
+              "confusion": {
+                "fn": 2,
+                "fp": 0,
+                "tn": 0,
+                "tp": 68
+              },
+              "count": 70,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.17551020408163265,
+          "roc_auc": 0.9771137026239067,
+          "stored_threshold": 0.34779336534869326,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 0.9448979591836735
+          }
+        },
+        "rates": {
+          "ai_macro_recall": 0.9755102040816327,
+          "ai_recall_by_group": {
+            "rr:culture_and_religion": 0.9571428571428572,
+            "rr:everyday_life": 0.9857142857142858,
+            "rr:labor_and_production": 1.0,
+            "rr:medical_and_public_health": 1.0,
+            "rr:natural_disasters_and_accidents": 0.9571428571428572,
+            "rr:political_and_social_events": 0.9571428571428572,
+            "rr:war_and_conflict": 0.9714285714285714
+          },
+          "ai_worst_recall": 0.9571428571428572,
+          "real_fp_by_group": {
+            "rr:rrdataset_real_pool": 0.17551020408163265
+          },
+          "real_macro_fp": 0.17551020408163265,
+          "real_worst_fp": 0.17551020408163265
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "score_stream": {
+    "bytes": 1944066,
+    "sha256": "0507cc4dba4917242433c88d96978dce9f8775bd52b29e4639ec11686203d6bd"
+  },
+  "state": "e44_successor_development_failed",
+  "threshold": 0.34779336534869326
+}
