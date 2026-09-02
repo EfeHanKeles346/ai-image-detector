@@ -4031,3 +4031,7 @@ existing DDA stream with the unchanged E43-S artifact, while binding the 4,900-r
 sample to its immutable E43 stream. Detailed contract SHA-256 is `25681b62...3fb4`; E35 identity
 SHA-256 is `919a0586...6b10` and the DDA role-map hash is `330000bf...8547`. The contract contains
 zero new scores and transferred zero image bytes.
+
+E43-S then produced the missing companion probability for all 1,670 E35 rows with 100% coverage.
+The 455,631-byte stream SHA-256 is `35d9d2c2...ad5af`. Every input passed its bound byte hash; no
+fusion head or DEVELOPMENT result existed at this checkpoint.

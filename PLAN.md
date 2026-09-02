@@ -330,10 +330,11 @@ it before paying for another architecture or training run.
       score. Download zero new image bytes. Assign DDA parents, RR parents and whole IPN devices to
       fit/calibration/development solely by namespaced SHA-256; keep the 210 owner-gallery images
       development-only. Detailed contract SHA-256 is `25681b62...3fb4`; model scores created: zero.
-- [ ] Produce the missing E43-S score for the frozen 1,670-row E35 population, preserving every
+- [x] Produce the missing E43-S score for the frozen 1,670-row E35 population, preserving every
       original identity and path hash. Join exactly two scalar inputs per row: E43-S generalist
       score and official-DDA specialist score. No image label, filename, source or device may be an
-      inference-time feature.
+      inference-time feature. Coverage is 1,670/1,670; score-stream SHA-256 is
+      `35d9d2c2...ad5af`.
 - [ ] Fit only `StandardScaler + LogisticRegression` on clamped logits of the two scores, with
       source/label-balanced weights. Select one threshold on CAL under REAL macro/worst-FP and AI
       macro/worst-recall constraints; freeze the artifact before reading DEVELOPMENT metrics.

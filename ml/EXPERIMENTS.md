@@ -3257,3 +3257,6 @@ was scored or selected using model output.
   E43-S scores. Detailed contract SHA-256 is `25681b62...3fb4`; E35 byte-identity SHA-256 is
   `919a0586...6b10` and DDA role-map SHA-256 is `330000bf...8547`. The owner images are all
   development-only and `model_scores_created` remains zero.
+- **Joint score completion:** E43-S scored all 1,670 frozen E35 rows locally with 100% coverage;
+  the 455,631-byte stream SHA-256 is `35d9d2c2...ad5af`. No fusion head was fit and no DEVELOPMENT
+  aggregate was read at this checkpoint.
