@@ -340,11 +340,30 @@ it before paying for another architecture or training run.
       macro/worst-recall constraints; freeze the artifact before reading DEVELOPMENT metrics.
       Candidate SHA-256 is `19fd7bbc...b100`; threshold is `0.3423850493` and DEVELOPMENT scores
       created remain zero.
-- [ ] Accept the fusion only if DEVELOPMENT coverage is 100%, pooled AUC >=0.90 and balanced
+- [x] Evaluate the frozen fusion once: DEVELOPMENT coverage is 100%, pooled AUC 0.97165 and
+      balanced accuracy 0.91099; DDA macro/worst recall is 91.33%/74.67%, RR AI macro/worst is
+      99.29%/95.00% and IPN worst-device FP is 1.25%. It nevertheless fails the preregistered
+      acceptance gate because RR REAL FP is 12.00% (>10%) and owner-gallery FP is 20.48% (>20%),
+      each by one image. Preserve this result; do not repair its threshold post hoc.
+- [x] Apply the frozen acceptance rule: DEVELOPMENT coverage must be 100%, pooled AUC >=0.90 and
+      balanced
       accuracy >=0.85; DDA all-six macro/worst recall >=75%/50%; RR AI macro/worst recall
       >=80%/60% with REAL FP <=10%; IPN worst-device FP <=20%; and owner-gallery FP <=20%.
-      Otherwise preserve the negative result and retain separate expert outputs instead of serving
-      a falsely universal scalar.
+      The candidate fails 2/10 checks, so retain separate expert outputs instead of serving a
+      falsely universal scalar.
+
+### F2e — E44-C successor without test-set threshold laundering
+
+- [ ] Treat all E44-B rows and its threshold miss as consumed DEVELOPMENT. Diagnose disagreement
+      and margin patterns read-only, but never rename a post-hoc E44-B threshold as validated.
+- [ ] Freeze a successor calibration rule using the consumed E44-B evidence, then create a new
+      comparative DEVELOPMENT population from already-local, parent/source-separated E43 RR and
+      E42 real-camera/modern-AI roles that have never received an official-DDA score. Download zero
+      new images and bind identities/roles before DDA inference.
+- [ ] Score the official DDA expert on the new bound population, combine it with the already-frozen
+      E43-S stream and evaluate the E44-C candidate once. Require real-camera macro/worst FP,
+      modern-AI macro/worst recall, transport robustness and coverage gates simultaneously. Keep
+      ITW-SM or a future NIST round as the only independent final.
 
 ### F3 — recording and stop rules
 

@@ -3264,3 +3264,13 @@ was scored or selected using model output.
   `0.3423850493` on 1,307 CAL rows. CAL AUC is 0.96936, balanced accuracy 0.91637, REAL FP 7.22%,
   AI group-macro recall 95.38% and worst recall 68.00%. Candidate SHA-256 is
   `19fd7bbc...b100`; `development_scores_created` is zero.
+- **One-shot DEVELOPMENT result:** 1,606/1,606 rows scored. AUC **0.97165**, balanced accuracy
+  **0.91099**, pooled REAL FP **9.54%**, pooled AI recall **91.74%**, DDA macro/worst recall
+  **91.33%/74.67%**, RR AI macro/worst **99.29%/95.00%** and IPN worst-device FP **1.25%**.
+  Score-stream SHA-256 is `ce10c43f...67969`.
+- **Gate:** failed 2/10 checks. RR REAL FP is **12.00%** (6/50; limit 10%) and owner-gallery FP is
+  **20.48%** (43/210; limit 20%). Each miss is exactly one image, but that does not authorize a
+  threshold repair. The eight other coverage/ranking/AI/IPN checks pass.
+- **Decision:** E44-B is not served as a universal scalar. Preserve it as a near-pass and design
+  E44-C on a separately bound local population that has not received official-DDA scores; an
+  untouched ITW-SM/NIST evaluation is still required for a final claim.

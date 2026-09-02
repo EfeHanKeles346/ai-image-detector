@@ -4040,3 +4040,14 @@ The fixed two-logit logistic head then fit 3,657 FIT rows and selected its singl
 1,307 CAL rows. Threshold `0.3423850493` yielded CAL AUC 0.96936, balanced accuracy 0.91637, REAL
 FP 7.22%, AI group-macro recall 95.38% and worst recall 68.00%. Candidate SHA-256 is
 `19fd7bbc...b100`; no DEVELOPMENT score had been created when it was frozen.
+
+E44-B then completed its one-shot 1,606-row DEVELOPMENT score. It achieved AUC 0.97165, balanced
+accuracy 0.91099, DDA macro/worst recall 91.33%/74.67%, RR AI macro/worst recall 99.29%/95.00%
+and IPN worst-device FP 1.25%. However, the preregistered gate failed 2/10 checks: RR REAL FP was
+12.00% (6/50, one image above the allowed count) and owner-gallery FP was 20.48% (43/210, also one
+image above). Score-stream SHA-256 is `ce10c43f...67969`.
+
+The near miss is not rewritten as success and its threshold is not repaired after inspection.
+E44-B remains consumed DEVELOPMENT and the experts remain separate. E44-C may use this failure to
+set a more conservative successor, but must bind and score a different already-local population
+before judging it; ITW-SM or a future NIST round remains the independent final requirement.
