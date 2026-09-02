@@ -1,0 +1,19 @@
+{
+  "archive": {
+    "bytes": 4301452066,
+    "download_receipt_sha256": "70cc0546a56622ddd9d162bce629cff0bdafd51d4122637ef58922e59de6cb00",
+    "network_bytes_during_assembly": 0,
+    "sha256": "8cd600779aaecef21605b07bff9ab3963a7fb9b9614a3d9a0588cd4a5e099c24"
+  },
+  "inventory": {
+    "expanded_bytes": 4298688287,
+    "file_count": 29969,
+    "image_count": 29969,
+    "inventory_sha256": "ca17b2c003cca355277853cc8665641dc3f439f76c6d9f17a1cba610bccbbe82",
+    "member_count": 29982,
+    "zip_crc_passed": true
+  },
+  "model_scores_created": 0,
+  "schema_version": 1,
+  "state": "e43_dda_coco_archive_verified_before_manifest"
+}

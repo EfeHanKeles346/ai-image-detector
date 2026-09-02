@@ -3952,3 +3952,11 @@ DDA-COCO directly tests whether the detector survives content/frequency alignmen
 social-media robustness or replace ITW-SM. Any overlap will remove the entire real/reconstruction
 pair before a score, and any failed archive hash stops without silently exceeding the user's 4 GB
 download ceiling.
+
+The assembled DDA-COCO archive matched the official SHA-256 and passed safe ZIP plus full CRC
+inspection without a model load. It contains 29,969 synthetic images across six—not five—variant
+folders, with counts 5,000/5,000/5,000/5,000/4,998/4,971. The release does not bundle its MS-COCO
+REAL source, so Plan C now freezes one 815,585,330-byte official COCO val2017 companion download.
+Its S3 size, Last-Modified and multipart ETag are bound before transfer; the resulting SHA-256 and
+5,000-file schema must be sealed before decode/decontamination. This correction changes no model
+or score and keeps total new transfer well below the user's 4 GB ceiling.

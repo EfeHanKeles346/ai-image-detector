@@ -704,6 +704,21 @@ pending, and no member name or pixel has been opened. Expected new transfer is z
 file hash stops rather than triggering an unplanned download. E43 binding is
 `evidence/e43_dda_coco_contract.json`.
 
+Assembly completed without a network request and reproduced the official archive SHA-256. Safe
+ZIP and full CRC validation passed: 29,982 members, 29,969 image/files and 4,298,688,287 expanded
+bytes, all under `DDA-COCO`. The observed release contains six synthetic folders rather than the
+card-level five-subset description: 5,000 each for `sd-vae-ft-ema`, `sd-vae-ft-mse`, `sdxl-vae`
+and `stable-diffusion-2-1`; 4,998 for `stable-diffusion-3.5-large`; 4,971 for `FLUX.1`. No original
+REAL folder is bundled.
+
+The paired REAL companion is therefore the official COCO 2017 validation archive from the COCO S3
+bucket, exactly 815,585,330 bytes /5,000 JPEGs. Before transfer, E43 binds URL
+`https://s3.amazonaws.com/images.cocodataset.org/zips/val2017.zip`, observed Last-Modified
+`2018-07-11`, multipart ETag `d366be60d3dc737327160d62453e3973-98` and exact schema
+`val2017/<12-digit>.jpg`. Because COCO does not publish a cryptographic digest on this surface, the
+first verified download will compute and freeze SHA-256 before pixels or scores. Only parent IDs
+present in REAL and all six DDA folders may enter the score-blind candidate manifest.
+
 The immediate reproducible source is **RRDataset**, the ICCV 2025 Real-World Robustness benchmark,
 from the official Zenodo record `14963880` under CC BY 4.0. It contains high-impact/everyday scenes
 and evaluates original files, repeated internet/social-platform transmission and physical

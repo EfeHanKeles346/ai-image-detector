@@ -244,10 +244,20 @@ it before paying for another architecture or training run.
       so expected new network transfer is zero; if final SHA verification fails, stop rather than
       silently redownloading beyond the user's 4 GB cap. Run safe ZIP/CRC inventory before decoding
       or extracting a member.
+      **Assembly passed with zero network bytes:** the official 4,301,452,066-byte SHA-256 matches,
+      ZIP/CRC safety passes and the archive contains 29,969 images /4,298,688,287 expanded bytes.
+      Observed structure corrects the card-level assumption: six synthetic variants are present,
+      while original COCO reals are not bundled.
 - [ ] Build a score-blind paired manifest. Keep every real parent and all its reconstruction
       variants indivisible; audit exact SHA-256 and dHash against every E42/E43 protected role and
       exclude an entire pair group for any prior overlap. Freeze counts, bytes, source variants,
       archive/manifest hashes and zero scores before model loading.
+      First acquire the official 5,000-image COCO `val2017.zip` companion from the COCO S3 bucket:
+      815,585,330 bytes, immutable observed ETag `d366be60d3dc737327160d62453e3973-98` and no more than
+      this single 815 MB transfer. Validate its size, ZIP/CRC and exact `val2017/<12-digit>.jpg`
+      schema; bind the newly computed SHA-256 before decoding. Retain only IDs present in all six
+      DDA variants (`sd-vae-ft-ema`, `sd-vae-ft-mse`, `sdxl-vae`, `stable-diffusion-2-1`,
+      `stable-diffusion-3.5-large`, `FLUX.1`).
 - [ ] Score the frozen manifest exactly once with the unchanged E43-S candidate/threshold. Require
       100% coverage, ROC-AUC >=0.90, TPR@FPR10 >=0.80, EER <=0.15, balanced accuracy >=0.85,
       REAL FP <=10%, AI macro/worst reconstruction recall >=80%/60%. A miss is preserved without
