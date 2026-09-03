@@ -525,6 +525,8 @@ it before paying for another architecture or training run.
       Final score contract is now frozen before model load at SHA-256 `1cf28d2d...7c4262`. It binds
       the 2,000 rows, candidate and both model hashes, threshold `0.6688565013`, selective cuts,
       all ten gates and 10,000 source-stratified bootstrap samples. Final score count is zero.
+      Final generalist arm is complete at 2,000/2,000 rows; stream SHA-256 is
+      `43eb1562...b5f25c`. DDA and fused result remain unopened.
 
 ### F3 — recording and stop rules
 

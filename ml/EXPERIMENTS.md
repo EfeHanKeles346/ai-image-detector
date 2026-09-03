@@ -3478,3 +3478,6 @@ was scored or selected using model output.
   manifest, E46 candidate and both inference-arm hashes, global-fusion threshold `0.6688565013`,
   selective cuts, ten E45-style gates and 10,000 source/label-stratified bootstraps at seed 46.
   Forbidden actions include row removal, repair, refit and retry. Model scores created: zero.
+- **Final generalist arm:** E43-S completed 2,000/2,000 TrueFake rows with full coverage. The
+  298,721-byte stream SHA-256 is `43eb1562...b5f25c`. DDA and fused metrics remain unopened; this
+  checkpoint records inference output only, not a partial final claim.

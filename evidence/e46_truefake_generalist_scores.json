@@ -1,0 +1,9 @@
+{
+  "bytes": 298721,
+  "coverage": 1.0,
+  "manifest_sha256": "4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b",
+  "rows": 2000,
+  "schema_version": 1,
+  "sha256": "43eb1562ab79c8a35a08a6893895697c6aae02c952e79f95a10265bbc8b5f25c",
+  "state": "e46_truefake_generalist_scores_complete"
+}

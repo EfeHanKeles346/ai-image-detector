@@ -4290,3 +4290,7 @@ SHA-256 `1cf28d2d...7c4262` fixes all 2,000 rows, the candidate and two model id
 `0.6688565013`, selective band, ten pass/fail gates and 10,000 source-stratified bootstrap draws.
 No later score may change these values, remove a hard image or trigger a retry. At this checkpoint
 the independent final still contains zero model scores.
+
+E43-S then scored all 2,000 contracted TrueFake rows with 100% coverage. The immutable 298,721-byte
+generalist stream hashes to `43eb1562...b5f25c`. DDA and fused results remained unopened, so this
+checkpoint contains no partial interpretation of the final.
