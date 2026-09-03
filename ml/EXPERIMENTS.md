@@ -3579,3 +3579,5 @@ was scored or selected using model output.
   immutable; score count zero.
 - **E43-S arm:** 2,400/2,400 rows, 100% coverage; 399,398-byte stream SHA-256
   `073110f4...f30c03`. Other arms and all CAL/DEVELOPMENT metrics remain unopened.
+- **DDA arm:** 2,400/2,400 rows, 100% coverage; 399,187-byte stream SHA-256
+  `8001c60b...d75f5`. UnivFD/UNINA and all fitted results remain unopened.

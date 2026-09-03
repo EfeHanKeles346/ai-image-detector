@@ -611,6 +611,7 @@ source >=60% on a genuinely new final.
       Four-arm score contract SHA-256 `ee2a2958...95798` now binds the manifest, E43-S, DDA,
       E44 fusion, UnivFD backbone/head and capped UNINA weights before model load. Score count zero.
       E43-S completed 2,400/2,400 with stream SHA-256 `073110f4...f30c03`; no metric opened.
+      DDA completed 2,400/2,400 with stream SHA-256 `8001c60b...d75f5`; no metric opened.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32
