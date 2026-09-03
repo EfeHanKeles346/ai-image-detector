@@ -1163,7 +1163,7 @@ E42, B-Free and earlier protected parents.
 | Labels | `0_real` /target `0`; `1_fake` /target `1` |
 | Intended role | `E43_UNTOUCHED_FINAL`; never TRAIN, CAL or DEVELOPMENT |
 | Licence/access | ITW-SM research-use terms; individual gated access, non-commercial research only, no redistribution, privacy/non-identification and citation obligations |
-| Current physical state | **Not downloaded**; authenticated request awaits manual author approval; zero payload images and no receipt |
+| Current physical state | **Not downloaded**; authenticated request still awaited manual author approval on 2026-09-03; zero payload images and no receipt |
 
 ITW-SM was selected because it preserves the resolution, compression and content distribution of
 images encountered on real social platforms. Controlled generator datasets can reward format,
@@ -1197,6 +1197,12 @@ attempt created only about 6.3 MB of resumable Hugging Face cache/tree/lock scaf
 external root: no payload image exists, no detector opened a file and no acquisition receipt was
 written. The tool now performs a single non-image `.gitattributes` content preflight before starting
 the 10,000-image worker pool, so future pending-review checks stop before scheduling image paths.
+
+The authenticated access check was repeated on 2026-09-03 after the student reported receiving
+several emails. Hugging Face again returned HTTP 403 with the exact repository state `awaiting a
+review from the repo authors` during the non-image `.gitattributes` preflight. The repository still
+contains zero local payload files, no acquisition receipt and zero model scores; only the prior
+6.3 MB resumable cache scaffolding remains. No part of the 3.57 GB snapshot transfer started.
 
 ## E43 RR adaptation roles — planned before selection (2026-09-02)
 

@@ -174,6 +174,9 @@ it before paying for another architecture or training run.
       3,573,691,324 bytes, including 5,000 `0_real` and 5,000 `1_fake` images. Download only to
       LaCie with a 100 GiB reserve and resumable Hugging Face local-dir state; a receipt is forbidden
       until every pinned file and byte is present. Acquisition creates zero scores.
+      **2026-09-03 recheck:** authenticated content preflight still returns HTTP 403 `awaiting a
+      review from the repo authors`; zero payload file and no receipt exist, so this item remains
+      blocked on the dataset authors rather than local authentication.
       **Plan B initiated on 2026-09-02:** the official NIST GenAI Image portal still exposes
       participant sign-in/registration through Login.gov, but the published Image-D round-3
       schedule released D-Testset-3 on 2026-02-23 and closed outputs on 2026-04-03. The next step is

@@ -4084,3 +4084,10 @@ macro/worst <=10%/20% produced hypothesis cuts REAL `<0.2545712170` and AI
 `>=0.6938513176`, with the middle marked `UNCERTAIN`. On the same consumed 6,706 rows this covers
 87.40%, abstains on 12.60% and is 96.47% accurate among covered rows. These numbers design E44-D;
 they do not validate it. A new independent population remains mandatory.
+
+On 2026-09-03 the authenticated ITW-SM acquisition was retried after the student reported several
+new emails. The pinned `.gitattributes` content preflight again returned HTTP 403 with Hugging
+Face's explicit state `awaiting a review from the repo authors`. The downloader stopped before
+scheduling any image: zero payload file, no acquisition receipt and zero model score exist; only
+the previous 6.3 MB resumable cache scaffolding remains. The blocker is still author approval, not
+local OAuth authentication or internet connectivity.
