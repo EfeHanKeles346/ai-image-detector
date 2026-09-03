@@ -3356,3 +3356,7 @@ was scored or selected using model output.
 - **Generalist arm:** E43-S completed 9,978/9,978 rows with 100% coverage. The 1,338,053-byte
   score stream SHA-256 is `43ecaa3f...fc171`. It was written in resumable, manifest-order batches;
   every ZIP payload hash matched. No specialist or fused result existed at this checkpoint.
+- **Specialist arm:** official DDA completed 9,978/9,978 rows with 100% coverage. The 1,338,964-
+  byte score stream SHA-256 is `88946986...69bb7`. The first 200 rows at batch 2 and the remainder
+  at batch 8 used the same frozen model/transform; the resumable prefix prevented recomputation.
+  Every payload hash matched, and the fused result remained unopened at this checkpoint.

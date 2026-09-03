@@ -438,7 +438,8 @@ it before paying for another architecture or training run.
       all 9,978 rows, E43-S `a3aec445...47390`, official DDA `b27a31d3...e3e`, fusion
       `19fd7bbc...b100`, binary cut `0.3477933653`, the E44-D selective cuts and all ten gates.
       The generalist arm has since completed 9,978/9,978 rows with SHA-256
-      `43ecaa3f...fc171`; specialist and fused score rows remain zero.
+      `43ecaa3f...fc171`; the official-DDA specialist also completed 9,978/9,978 with SHA-256
+      `88946986...69bb7`. Fused score rows remain zero.
 
 ### F3 — recording and stop rules
 

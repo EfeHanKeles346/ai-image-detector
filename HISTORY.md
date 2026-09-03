@@ -4145,3 +4145,9 @@ decode, identity or inference failure. The 1,338,053-byte score stream has SHA-2
 `43ecaa3f...fc171` and 100% manifest coverage. Batch results were fsync'd in manifest order so an
 interruption could resume safely. This is only one frozen arm; no metric was inspected and both the
 official-DDA arm and fused final result were still absent.
+
+The official-DDA/DINOv2-L specialist then scored the same 9,978 rows with zero failure and 100%
+manifest coverage. Its 1,338,964-byte stream SHA-256 is `88946986...69bb7`. The resumable design
+preserved the first 200 batch-2 results when throughput was increased to the already-permitted
+batch 8; model weights, preprocessing, row order and scores were not changed. Both arms are now
+complete, but no fused metric had been opened at this checkpoint.
