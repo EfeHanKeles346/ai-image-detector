@@ -507,6 +507,10 @@ it before paying for another architecture or training run.
       E43-S scoring is now complete at 1,708/1,708 rows; its resumable stream SHA-256 is
       `8be0aefd...ce88d`. Official DDA also completed 1,708/1,708 at SHA-256
       `a7fbd7e2...257eda`. All fused/calibrated results remain unopened.
+      Calibration-method contract SHA-256 `6799231f...c9228c` now splits CAL score-blind into 612
+      QUALITY_FIT and 412 OPERATING_CAL rows within every source. It freezes the REAL-10% threshold
+      rule, method eligibility, simple-model preference and selective-band rule before reading any
+      score. DEVELOPMENT and TrueFake reads remain zero.
 - [ ] Freeze the chosen artifact, threshold(s), selective band and ten E45-style gates before
       opening TrueFake labels/scores. Score the 2,000-row Facebook final exactly once and report
       source/generator metrics plus bootstrap intervals. E45 remains archived and prohibited;

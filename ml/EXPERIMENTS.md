@@ -3456,3 +3456,8 @@ was scored or selected using model output.
 - **Specialist arm:** official DDA scored the same 1,708 identities with 100% coverage. The
   268,844-byte stream SHA-256 is `a7fbd7e2...257eda`. Both immutable arms now exist; no fusion,
   calibration, DEVELOPMENT metric or TrueFake score has yet been produced.
+- **Calibration-method lock:** contract SHA-256 `6799231f...c9228c` assigns the 1,024 CAL rows
+  source-stratified to QUALITY_FIT 612 and OPERATING_CAL 412, including 148/100 REAL. It freezes
+  ridge-1.0 quality-Gaussian fitting, pooled REAL-10% thresholding, eligibility, the conservative
+  quality-replacement test and CAL-only selective-band search. Score rows read: zero;
+  DEVELOPMENT/TrueFake reads: zero.

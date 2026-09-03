@@ -4262,3 +4262,10 @@ Official DDA then completed the matching 1,708-row SynthWildX stream with full c
 268,844-byte output hashes to `a7fbd7e2...257eda`. Both expensive inference arms are now safely
 recoverable and immutable; fusion/calibration statistics remain unopened, and the TrueFake final
 still has zero scores.
+
+Before opening either stored score stream, E46 froze a second internal split and selection rule.
+Contract SHA-256 `6799231f...c9228c` divides the 1,024 CAL identities within every source into 612
+QUALITY_FIT and 412 OPERATING_CAL rows. The quality-aware Gaussian may learn only on the first;
+the REAL-10% threshold and method comparison use only the second. Global methods win by default,
+and the quality method may replace them only when non-inferior on every safety/recall/AUC measure
+and materially better on at least one. DEVELOPMENT and TrueFake remain unread.

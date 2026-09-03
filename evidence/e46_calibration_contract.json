@@ -1,0 +1,58 @@
+{
+  "contract_bytes": 72600,
+  "contract_sha256": "6799231f1f7bf9d55ef8e597e244cd6582982a9611557467ce84240657c9228c",
+  "development_scores_read": 0,
+  "eligibility": {
+    "operating_cal_ai_recall_min": 0.75,
+    "operating_cal_worst_generator_recall_min": 0.5
+  },
+  "final_scores_created": 0,
+  "forbidden": [
+    "DEVELOPMENT read",
+    "TrueFake read",
+    "E45 use",
+    "method addition",
+    "threshold change after OPERATING_CAL",
+    "backbone refit"
+  ],
+  "identities": {
+    "fusion_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+    "generalist_model_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "generalist_score_sha256": "8be0aefdd995ab16e409c070c897ee91ac102dd61ad281dd8da7114d1c0ce88d",
+    "manifest_sha256": "953490a9c63669fac2305e6abcc4259f2f4066e8c58b7851efddedaa7e2da8d4",
+    "specialist_model_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e",
+    "specialist_score_sha256": "a7fbd7e2075d9687a042995a5b30412460564bf6f931d8974b440527b2257eda"
+  },
+  "internal_split": {
+    "by_source_role": {
+      "dalle3:OPERATING_CAL": 95,
+      "dalle3:QUALITY_FIT": 142,
+      "firefly:OPERATING_CAL": 113,
+      "firefly:QUALITY_FIT": 168,
+      "midjourney_v5:OPERATING_CAL": 104,
+      "midjourney_v5:QUALITY_FIT": 154,
+      "real:OPERATING_CAL": 100,
+      "real:QUALITY_FIT": 148
+    },
+    "counts": {
+      "OPERATING_CAL": 412,
+      "QUALITY_FIT": 612
+    },
+    "namespace": "E46_CAL_INTERNAL_V1",
+    "rule": "within-source SHA-256 rank, first floor(60%) QUALITY_FIT, rest OPERATING_CAL"
+  },
+  "methods": {
+    "dda_global": "official DDA probability + OPERATING_CAL REAL-10% threshold",
+    "fusion_global": "frozen E44 fusion probability + OPERATING_CAL REAL-10% threshold",
+    "fusion_quality_gaussian": "QuAD-inspired class-conditional Gaussian of frozen-fusion logit given three standardized quality proxies; ridge=1.0; OPERATING_CAL REAL-10% threshold"
+  },
+  "schema_version": 1,
+  "score_rows_read": 0,
+  "selection": {
+    "fallback": "if none eligible, choose same ordering but mark calibration failure",
+    "global": "eligible DDA/fusion ordered by worst-generator recall, AI recall, AUC, then DDA simplicity",
+    "quality_replacement": "eligible quality method must be non-inferior to best global in REAL FP, AI recall, worst-generator recall and AUC, and improve at least one recall/AUC metric by >=0.01"
+  },
+  "selective_policy": "AI cut is binary cut; choose CAL-only REAL cut maximizing automatic coverage with covered accuracy >=0.95 and uncertainty <=0.20; otherwise REAL cut equals AI cut",
+  "state": "e46_calibration_method_frozen_before_score_read"
+}
