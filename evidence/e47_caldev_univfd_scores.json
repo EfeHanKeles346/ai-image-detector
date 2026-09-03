@@ -1,0 +1,9 @@
+{
+  "bytes": 403436,
+  "coverage": 1.0,
+  "manifest_sha256": "378b83fe56bcf4bbf61d5b626efa71899bea571abeeeca05c74774daa8585739",
+  "rows": 2400,
+  "schema_version": 1,
+  "sha256": "67b7b94c41a3ed9a732d7c82b412dd25c4f6879226517b82351ed50fc6ee2829",
+  "state": "e47_caldev_univfd_scores_complete"
+}

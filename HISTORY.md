@@ -4384,3 +4384,6 @@ DEVELOPMENT result was opened.
 Official DDA then completed the matching 2,400 identities. Its 399,187-byte stream hashes to
 `8001c60b...d75f5`. Both base inputs for the frozen E44 fusion are now safe on disk; specialist
 comparison and CAL fitting remain unopened.
+
+MIT-licensed UnivFD then scored all 2,400 rows. Its 403,436-byte stream hashes to
+`67b7b94c...e2829`. No class/source metric was read; capped UNINA and decision-gate fitting remain.

@@ -3581,3 +3581,5 @@ was scored or selected using model output.
   `073110f4...f30c03`. Other arms and all CAL/DEVELOPMENT metrics remain unopened.
 - **DDA arm:** 2,400/2,400 rows, 100% coverage; 399,187-byte stream SHA-256
   `8001c60b...d75f5`. UnivFD/UNINA and all fitted results remain unopened.
+- **UnivFD arm:** 2,400/2,400 rows, 100% coverage; 403,436-byte stream SHA-256
+  `67b7b94c...e2829`. UNINA and all CAL/DEVELOPMENT results remain unopened.
