@@ -35,6 +35,7 @@ CHECKOUT = ML_ROOT / "external" / "GANimageDetection"
 CHECKOUT_COMMIT = "543943cdf281df7417751e794109431d0975df88"
 WEIGHTS = ROOT / "models" / "gandetection_resnet50nodown_stylegan2.pth"
 WEIGHTS_SHA256 = "65467594eeb53945417c909390a3d872d55b6dbd819aa12cf01e4ced9c4d5a08"
+LONG_SIDE_CAP = 512
 SCORES = ROOT / "unina_stylegan2_scores.jsonl"
 REPORT = ROOT / "unina_stylegan2_diagnostic.json"
 EVIDENCE = ML_ROOT.parent / "evidence" / "e47_unina_diagnostic.json"
@@ -105,7 +106,14 @@ def run(sync_every: int = 8, batch_size: int = 2) -> dict[str, Any]:
                 if _digest(path) != row["sha256"]:
                     raise ValueError(f"E47 UNINA payload changed: {row['record_id']}")
                 with Image.open(path) as opened:
-                    tensors.append(model.transform(opened.convert("RGB")))
+                    picture = opened.convert("RGB")
+                    scale = min(1.0, LONG_SIDE_CAP / max(picture.size))
+                    if scale < 1.0:
+                        picture = picture.resize(
+                            (round(picture.width * scale), round(picture.height * scale)),
+                            Image.Resampling.LANCZOS,
+                        )
+                    tensors.append(model.transform(picture))
             values = model(torch.stack(tensors).to(device)).flatten().cpu().numpy()
             output = []
             for row, value in zip(group, values, strict=True):
@@ -129,9 +137,10 @@ def run(sync_every: int = 8, batch_size: int = 2) -> dict[str, Any]:
     diagnostic = analyze(scored, _read_jsonl(E46_FUSED))
     report = {
         "schema_version": 1,
-        "state": "e47_unina_stylegan2_diagnostic_complete",
+        "state": "e47_unina_stylegan2_capped_diagnostic_complete",
         "boundary": "Post-final nonprofit research triage only; cannot repair E46 or fit E47.",
-        "score_semantics": "raw official fake-oriented logit; monotonic threshold/AUC only",
+        "score_semantics": "raw fake-oriented logit after aspect-preserving 512px long-side cap",
+        "long_side_cap": LONG_SIDE_CAP,
         "identities": identities,
         "counts": {"rows": len(scored), "real": 1_000, "ai": 1_000},
         "score_stream": {"bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest()},

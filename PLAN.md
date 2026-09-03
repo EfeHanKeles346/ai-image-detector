@@ -582,6 +582,10 @@ source >=60% on a genuinely new final.
       ResNet50-NoDown is 282,549,121 bytes /SHA-256 `65467594...d5a08`. Licence is nonprofit-only,
       so it can inform research and an opt-in arm but cannot become an unrestricted default.
       Official-example direction/load smoke passes; performance metrics remain unopened.
+      Native-resolution inference was stopped before any metric at 655/2,000 rows because
+      throughput fell below 0.5 image/s on ordinary 960 px inputs—unfit for the web objective.
+      Preserve the partial stream (`87417d5f...733a4`), then restart from zero with a score-blind,
+      aspect-preserving 512 px long-side cap. The cap is frozen for all rows before result access.
 - [ ] **R3 — new CAL/DEVELOPMENT, identity-separated.** Build a compact source-balanced pool from
       data that was never in E46 final: at least two independent camera-real sources, StyleGAN
       generations, and the modern diffusion generators already protected by E46. Split by source,

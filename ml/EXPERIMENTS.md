@@ -3543,3 +3543,8 @@ was scored or selected using model output.
 - **Pre-score state:** official real/fake examples produce finite logits in the documented
   direction (fake minus real +49.18). No E46 performance metric was opened. Use the unchanged R1
   diagnostic identities and unlock rule; reject it if REAL safety is not better than UnivFD.
+- **Runtime amendment before metrics:** native-resolution processing was stopped at 655/2,000
+  because 960 px throughput fell below 0.5 image/s, incompatible with a web detector. No aggregate,
+  label-rate or threshold metric was opened. Preserve partial SHA-256 `87417d5f...733a4`, exclude
+  it, and restart all rows with an aspect-preserving 512 px long-side Lanczos cap. This fixed cap is
+  the only allowed UNINA variant and is bound before any result.

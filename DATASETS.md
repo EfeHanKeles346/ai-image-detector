@@ -1403,3 +1403,9 @@ bytes /SHA-256 `65467594eeb53945417c909390a3d872d55b6dbd819aa12cf01e4ced9c4d5a08
 `543943cdf281df7417751e794109431d0975df88`. No UNINA training or test image was downloaded. Its
 licence restricts use to informational/nonprofit purposes, so any future runtime must remain
 research-only/opt-in unless a different licence is obtained.
+
+UNINA native-resolution inference produced 655 ordered rows before a score-blind runtime stop; no
+metric was calculated. The preserved 88,487-byte partial stream SHA-256 is
+`87417d5f86b14b725accd42c776949533d639ec354e283675347fa76117733a4`. It is excluded from all
+comparisons. E47-R2b restarts the same identities from row zero with a frozen aspect-preserving
+512 px long-side cap; this is an inference policy change, not a data or role change.

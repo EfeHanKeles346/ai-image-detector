@@ -4341,3 +4341,9 @@ commit `543943c...df88` and checkpoint SHA `65467594...d5a08`. Only 282.5 MB of 
 downloaded; no training/test corpus. The licence is nonprofit research only, an important product
 constraint even if accuracy is strong. A two-official-example smoke test verified finite logits and
 the documented fake direction without opening E46 metrics.
+
+The first UNINA pass exposed a product blocker before exposing a metric: native-resolution
+ResNet50-NoDown dropped below 0.5 image/s on common 960 px inputs. It was stopped at 655/2,000;
+the 88,487-byte partial stream was hash-preserved but excluded. Before restarting, E47 froze an
+aspect-preserving 512 px long-side cap for every row. This changes only deployment preprocessing,
+not labels, identities or the admission rule, and makes latency part of model selection.
