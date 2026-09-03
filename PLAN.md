@@ -608,6 +608,8 @@ source >=60% on a genuinely new final.
       Extraction/audit completed: all 2,880 candidates decode; one SD1.5 reserve row is excluded
       for protected dHash overlap. The clean manifest fills all nine quotas at 1,200 CAL and 1,200
       DEVELOPMENT, each 600 REAL/600 AI. Manifest SHA-256 `378b83fe...85739`; scores remain zero.
+      Four-arm score contract SHA-256 `ee2a2958...95798` now binds the manifest, E43-S, DDA,
+      E44 fusion, UnivFD backbone/head and capped UNINA weights before model load. Score count zero.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32

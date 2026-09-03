@@ -4371,3 +4371,8 @@ Extraction then validated every one of the 2,880 candidate payloads. A single SD
 matched a protected perceptual hash and was removed before model access; the 20% headroom absorbed
 it without changing any quota. The frozen clean population is exactly 1,200 CAL and 1,200
 DEVELOPMENT, each 600 REAL/600 AI, at manifest SHA `378b83fe...85739`. Scores remain zero.
+
+All four inference identities were then frozen together under contract SHA
+`ee2a2958...95798`: E43-S, official DDA, the old fusion, UnivFD and capped UNINA. The contract binds
+the exact 2,400 rows and forbids role drift, backbone updates and DEVELOPMENT-informed fitting.
+No score existed when it was committed.

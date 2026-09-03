@@ -3574,3 +3574,6 @@ was scored or selected using model output.
 - **Identity result:** all 2,880 candidates decoded; one SD1.5 reserve row was removed for a
   protected dHash overlap. The selected manifest reaches 2,400 rows with exact 600/600 class
   balance inside both CAL and DEVELOPMENT. Manifest SHA-256 `378b83fe...85739`; scores zero.
+- **Four-arm score lock:** contract SHA-256 `ee2a2958...95798` binds all 2,400 rows and exact E43-S,
+  DDA, E44 fusion, UnivFD and capped-UNINA artifacts before any model load. Roles and backbones are
+  immutable; score count zero.
