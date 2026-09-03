@@ -4139,3 +4139,9 @@ DDA specialist and E44 fusion hashes. Binary threshold `0.3477933653`, selective
 ten pass gates and a 10,000-repeat platform/label-stratified bootstrap are now immutable. Detailed
 contract SHA-256 is `4a5d4999...9ac83`. Generalist, specialist and fused score streams still contain
 zero rows at this checkpoint; inference may begin only after this code and contract reach GitHub.
+
+After the contract reached GitHub, the E43-S generalist processed all 9,978 frozen rows without a
+decode, identity or inference failure. The 1,338,053-byte score stream has SHA-256
+`43ecaa3f...fc171` and 100% manifest coverage. Batch results were fsync'd in manifest order so an
+interruption could resume safely. This is only one frozen arm; no metric was inspected and both the
+official-DDA arm and fused final result were still absent.

@@ -3353,3 +3353,6 @@ was scored or selected using model output.
   unchanged E43-S /official-DDA /fusion artifact hashes, binary threshold `0.3477933653`, E44-D
   selective cuts and all ten gates. Confidence intervals use 10,000 platform-and-label-stratified
   row bootstraps at seed 45. Model score rows are still zero.
+- **Generalist arm:** E43-S completed 9,978/9,978 rows with 100% coverage. The 1,338,053-byte
+  score stream SHA-256 is `43ecaa3f...fc171`. It was written in resumable, manifest-order batches;
+  every ZIP payload hash matched. No specialist or fused result existed at this checkpoint.
