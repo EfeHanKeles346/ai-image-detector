@@ -4269,3 +4269,11 @@ QUALITY_FIT and 412 OPERATING_CAL rows. The quality-aware Gaussian may learn onl
 the REAL-10% threshold and method comparison use only the second. Global methods win by default,
 and the quality method may replace them only when non-inferior on every safety/recall/AUC measure
 and materially better on at least one. DEVELOPMENT and TrueFake remain unread.
+
+The CAL-only comparison selected a much safer operating point without touching E45 or TrueFake.
+Official DDA reached 0.9003 balanced accuracy and 90.06% AI recall at 10% REAL false alarms. Global
+fusion improved to 0.9179 balanced accuracy and 93.59% AI recall at the same REAL budget, with
+threshold `0.6688565013`. The QuAD-inspired quality model pushed AI recall to 96.79% but slightly
+lowered AUC; the frozen conservative rule therefore rejected the added complexity and kept global
+fusion. Candidate SHA-256 is `9fec91b8...b84a1`; its CAL-only selective band is REAL below
+`0.5185430496`, AI at or above `0.6688565013`. DEVELOPMENT and the final remained unread.

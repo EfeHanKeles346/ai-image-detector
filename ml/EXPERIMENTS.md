@@ -3461,3 +3461,10 @@ was scored or selected using model output.
   ridge-1.0 quality-Gaussian fitting, pooled REAL-10% thresholding, eligibility, the conservative
   quality-replacement test and CAL-only selective-band search. Score rows read: zero;
   DEVELOPMENT/TrueFake reads: zero.
+- **CAL-only candidate:** all three methods were fit/thresholded exactly as frozen. DDA gives
+  AUC/BA/REAL-FP/AI-recall/worst-generator 0.95670/0.90032/10.0%/90.06%/81.42%; global fusion gives
+  **0.97362/0.91795/10.0%/93.59%/84.07%**. Quality Gaussian raises recall to 96.79% and worst
+  generator to 92.04%, but AUC falls to 0.97120; it fails the registered all-metric
+  non-inferiority condition. Select `fusion_global`, threshold `0.6688565013`, candidate SHA-256
+  `9fec91b8...b84a1`. CAL selective cuts are REAL `<0.5185430496`, AI `>=0.6688565013`, yielding
+  97.09% coverage at exactly 95% covered accuracy. DEVELOPMENT rows read: zero; final scores: zero.

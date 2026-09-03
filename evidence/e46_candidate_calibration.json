@@ -1,0 +1,67 @@
+{
+  "boundary": "QUALITY_FIT and OPERATING_CAL only; DEVELOPMENT and TrueFake remain unread.",
+  "calibration_eligibility_passed": true,
+  "candidate_bytes": 1021,
+  "candidate_sha256": "9fec91b8a28a842784562654ec49f74add63ce4c5d588d5170c75a4fd2bb84a1",
+  "development_rows_read": 0,
+  "final_scores_created": 0,
+  "method_results": {
+    "dda_global": {
+      "ai_recall": 0.9006410256410257,
+      "ai_recall_by_generator": {
+        "dalle3": 0.9263157894736842,
+        "firefly": 0.8141592920353983,
+        "midjourney_v5": 0.9711538461538461
+      },
+      "balanced_accuracy": 0.9003205128205128,
+      "real_false_ai": 0.1,
+      "roc_auc": 0.956698717948718,
+      "rows": 412,
+      "threshold": 0.6548873782157899,
+      "worst_generator_recall": 0.8141592920353983
+    },
+    "fusion_global": {
+      "ai_recall": 0.9358974358974359,
+      "ai_recall_by_generator": {
+        "dalle3": 1.0,
+        "firefly": 0.8407079646017699,
+        "midjourney_v5": 0.9807692307692307
+      },
+      "balanced_accuracy": 0.917948717948718,
+      "real_false_ai": 0.1,
+      "roc_auc": 0.9736217948717948,
+      "rows": 412,
+      "threshold": 0.6688565012954346,
+      "worst_generator_recall": 0.8407079646017699
+    },
+    "fusion_quality_gaussian": {
+      "ai_recall": 0.967948717948718,
+      "ai_recall_by_generator": {
+        "dalle3": 1.0,
+        "firefly": 0.9203539823008849,
+        "midjourney_v5": 0.9903846153846154
+      },
+      "balanced_accuracy": 0.933974358974359,
+      "real_false_ai": 0.1,
+      "roc_auc": 0.971201923076923,
+      "rows": 412,
+      "threshold": 0.00045650458783090704,
+      "worst_generator_recall": 0.9203539823008849
+    }
+  },
+  "operating_cal_rows": 412,
+  "quality_fit_rows": 612,
+  "report_sha256": "f673399ffcfe5b7e2280417f07722c7f818d74c0624a1648bbd26a96ca276063",
+  "schema_version": 1,
+  "selected_method": "fusion_global",
+  "selected_threshold": 0.6688565012954346,
+  "selective_policy": {
+    "ai_if_score_gte": 0.6688565012954346,
+    "cal_constraint_passed": true,
+    "cal_coverage": 0.970873786407767,
+    "cal_covered_accuracy": 0.95,
+    "cal_uncertainty": 0.029126213592232997,
+    "real_if_score_lt": 0.5185430496088231
+  },
+  "state": "e46_candidate_frozen_before_development"
+}

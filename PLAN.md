@@ -511,6 +511,10 @@ it before paying for another architecture or training run.
       QUALITY_FIT and 412 OPERATING_CAL rows within every source. It freezes the REAL-10% threshold
       rule, method eligibility, simple-model preference and selective-band rule before reading any
       score. DEVELOPMENT and TrueFake reads remain zero.
+      CAL-only fitting selected the simpler `fusion_global` at threshold `0.6688565013` and
+      candidate SHA-256 `9fec91b8...b84a1`. On OPERATING_CAL it has AUC 0.97362, BA 0.91795,
+      REAL FP 10.0% and AI recall 93.59% (worst generator 84.07%). The quality Gaussian improved
+      recall but had lower AUC and was correctly rejected by the frozen non-inferiority rule.
 - [ ] Freeze the chosen artifact, threshold(s), selective band and ten E45-style gates before
       opening TrueFake labels/scores. Score the 2,000-row Facebook final exactly once and report
       source/generator metrics plus bootstrap intervals. E45 remains archived and prohibited;
