@@ -16,6 +16,7 @@ import shutil
 import subprocess
 from typing import Any, Iterable, Mapping, Sequence
 import zipfile
+import zlib
 
 import requests
 
@@ -122,6 +123,28 @@ def inspect_infos(infos: Sequence[zipfile.ZipInfo]) -> dict[str, Any]:
     }
 
 
+def crc_failures(bundle: zipfile.ZipFile) -> list[dict[str, Any]]:
+    failures: list[dict[str, Any]] = []
+    for index, info in enumerate(bundle.infolist()):
+        if info.is_dir():
+            continue
+        try:
+            with bundle.open(info) as stream:
+                while stream.read(8 * 1024**2):
+                    pass
+        except (OSError, RuntimeError, zipfile.BadZipFile, zlib.error) as error:
+            failures.append({
+                "index": index,
+                "member": info.filename,
+                "header_offset": info.header_offset,
+                "compressed_bytes": info.compress_size,
+                "expanded_bytes": info.file_size,
+                "error_type": type(error).__name__,
+                "error": str(error),
+            })
+    return failures
+
+
 def _head() -> dict[str, Any]:
     response = requests.head(URL, allow_redirects=True, timeout=(20, 120))
     response.raise_for_status()
@@ -200,19 +223,29 @@ def inventory() -> dict[str, Any]:
         raise ValueError("MediaEval archive changed after acquisition")
     with zipfile.ZipFile(ARCHIVE) as bundle:
         summary = inspect_infos(bundle.infolist())
-        bad_member = bundle.testzip()
-    if bad_member is not None:
-        raise ValueError(f"MediaEval ZIP CRC failure: {bad_member}")
+        failures = crc_failures(bundle)
+    usable_files = summary["files"] - len(failures)
+    state = (
+        "mediaeval_itwsm_inventory_passed_unscored"
+        if not failures
+        else "mediaeval_itwsm_inventory_crc_failure_unscored"
+    )
     report = {
         "schema_version": 1,
-        "state": "mediaeval_itwsm_inventory_passed_unscored",
+        "state": state,
         "archive_sha256": receipt["sha256"],
         "archive_bytes": EXPECTED_BYTES,
         **summary,
-        "zip_crc_passed": True,
+        "usable_files": usable_files,
+        "official_archive_coverage": usable_files / summary["files"],
+        "crc_failures": failures,
+        "zip_crc_passed": not failures,
         "images_decoded": 0,
         "model_scores_created": 0,
-        "boundary": "Archive and CRC inventory only; no image was extracted or scored.",
+        "boundary": (
+            "Archive and per-member CRC inventory only; no image was extracted or scored. "
+            "Any failed member is ineligible for the zero-score manifest."
+        ),
     }
     raw = _write_atomic(INVENTORY, report)
     evidence = {

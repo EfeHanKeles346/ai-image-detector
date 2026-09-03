@@ -410,11 +410,16 @@ it before paying for another architecture or training run.
       Selective reporting additionally requires automatic coverage >=80%, covered accuracy >=95%
       and uncertainty <=20%. The fixed policy is REAL `<0.2545712170`, AI
       `>=0.6938513176`, otherwise `UNCERTAIN`.
-- [ ] Download only to LaCie with curl resume and >=100 GiB reserve. Require the bound HTTP size,
+- [x] Download only to LaCie with curl resume and >=100 GiB reserve. Require the bound HTTP size,
       ETag and Last-Modified, compute SHA-256 after completion, then perform safe ZIP schema and full
       CRC inventory without extraction or model access. Compare the archive identity/layout with
       the still-gated Hugging Face ITW-SM inventory; never report them as independent benchmarks if
       they are the same distribution.
+      Transfer completed at exactly 3,553,693,205 bytes /SHA-256 `18f1806e...b6e3`; all 10,000
+      declared paths are structurally present. Per-member CRC found exactly one publisher-side
+      corrupt entry, `ITW-SM/1_fake/x_618.jpg`. Its local compressed range is byte-identical to a
+      fresh HTTP range response, so redownloading cannot repair it. Preserve 9,999 usable rows and
+      disclose 99.99% official-archive coverage; the bad member is excluded before any model load.
 - [ ] Decode/hash every member, reconcile any bundled metadata, audit exact and dHash overlap
       against all protected prior roles and remove an overlapping parent before scores only. Freeze
       the complete zero-score manifest and its exclusions. If source/platform metadata is absent,

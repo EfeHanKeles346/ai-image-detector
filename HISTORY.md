@@ -4107,3 +4107,16 @@ recall >=60%; plus selective automatic coverage >=80%, covered accuracy >=95% an
 UNCERTAIN between them. A resumable, identity-bound, LaCie-only downloader and fail-closed ZIP/CRC
 inventory were added with focused tests. At this checkpoint E45 contains zero downloaded bytes,
 zero decoded images and zero scores; the plan/contract checkpoint must be committed before transfer.
+
+After that checkpoint reached GitHub, the official archive downloaded completely to LaCie. It
+matches the frozen 3,553,693,205-byte HTTP identity and has SHA-256 `18f1806e...b6e3`; the interrupted
+internet caused no partial loss. The 10,000-path structure is exactly balanced, but the mandatory
+per-member scan caught one published corruption: `ITW-SM/1_fake/x_618.jpg` cannot decompress.
+A fresh range request around that member matched the local compressed bytes exactly, so another
+3.55 GB download would reproduce the fault rather than fix it.
+
+The archive is not relabelled as fully clean. E45 will disclose 9,999 usable rows /99.99% official
+coverage, excluding this single AI member before pixels or model access. The exclusion is technical
+and preregistered by the integrity gate, not selected from a score. Acquisition and inventory
+evidence contain zero decoded images and zero model scores; next comes local decode/hash and
+protected-role overlap audit.

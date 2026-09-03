@@ -7,6 +7,7 @@ from experiments.e45_mediaeval_acquisition import (
     EXPECTED_ETAG,
     EXPECTED_LAST_MODIFIED,
     classify_member,
+    crc_failures,
     validate_headers,
 )
 
@@ -53,3 +54,19 @@ def test_encrypted_member_fact_is_representable():
     info = zipfile.ZipInfo("0_real/a.jpg")
     info.flag_bits |= 0x1
     assert info.flag_bits & 0x1
+
+
+def test_crc_failures_reports_a_broken_member(tmp_path):
+    archive = tmp_path / "broken.zip"
+    with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as bundle:
+        bundle.writestr("0_real/a.jpg", b"a" * 1000)
+    raw = bytearray(archive.read_bytes())
+    with zipfile.ZipFile(archive) as bundle:
+        info = bundle.getinfo("0_real/a.jpg")
+        payload_offset = info.header_offset + 30 + len(info.filename.encode()) + len(info.extra)
+    raw[payload_offset + 1] ^= 0xFF
+    archive.write_bytes(raw)
+    with zipfile.ZipFile(archive) as bundle:
+        failures = crc_failures(bundle)
+    assert len(failures) == 1
+    assert failures[0]["member"] == "0_real/a.jpg"

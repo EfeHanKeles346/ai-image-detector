@@ -1,0 +1,34 @@
+{
+  "archive_bytes": 3553693205,
+  "archive_root": "ITW-SM",
+  "archive_sha256": "18f1806e1cef6bc9f7ed6e49b61379a6cb4bac63cb4f3ed4f9fffffdf177b6e3",
+  "boundary": "Archive and per-member CRC inventory only; no image was extracted or scored. Any failed member is ineligible for the zero-score manifest.",
+  "crc_failures": [
+    {
+      "compressed_bytes": 491133,
+      "error": "Error -3 while decompressing data: invalid stored block lengths",
+      "error_type": "error",
+      "expanded_bytes": 491721,
+      "header_offset": 3491430481,
+      "index": 9763,
+      "member": "ITW-SM/1_fake/x_618.jpg"
+    }
+  ],
+  "detailed_inventory_bytes": 960,
+  "detailed_inventory_sha256": "18a0ce8de70a7698e3957a7041dbc8212a787c5178103731cd16091ec9744db0",
+  "expanded_bytes": 3573258595,
+  "files": 10000,
+  "images_by_class": {
+    "0_real": 5000,
+    "1_fake": 5000
+  },
+  "images_decoded": 0,
+  "model_scores_created": 0,
+  "official_archive_coverage": 0.9999,
+  "schema_version": 1,
+  "source_repository": "https://github.com/mever-team/mediaeval2026-sid",
+  "state": "mediaeval_itwsm_inventory_crc_failure_unscored",
+  "url": "https://artifacts.mever.iti.gr/MediaEval2025/itw-sm-sid-val.zip",
+  "usable_files": 9999,
+  "zip_crc_passed": false
+}

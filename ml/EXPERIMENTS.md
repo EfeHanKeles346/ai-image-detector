@@ -3335,3 +3335,10 @@ was scored or selected using model output.
   are all zero. Acquisition, safe inventory, decontaminated manifest and a second score lock must
   complete in that order. The official archive and gated HF snapshot may be the same distribution
   and can never be counted as two independent finals without identity evidence.
+- **Acquisition result:** exact HTTP identity and 3,553,693,205-byte transfer passed; archive
+  SHA-256 is `18f1806e...b6e3`. The central directory exposes all 10,000 declared class paths.
+- **CRC result:** 9,999 members decompress successfully. Only `ITW-SM/1_fake/x_618.jpg` fails with
+  `invalid stored block lengths`; a fresh HTTP byte-range is identical to the local compressed
+  region, establishing publisher-artifact corruption rather than transfer corruption. Preserve the
+  failure, exclude that member before manifest/model access and report official coverage 99.99%.
+  Zero image decode and zero model score still hold.

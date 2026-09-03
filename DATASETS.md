@@ -1225,6 +1225,20 @@ TRAIN/CAL/DEVELOPMENT. Download target is LaCie, with resume, a 100 GiB free-spa
 SHA-256 and CRC/schema inventory. At this checkpoint downloaded E45 bytes are zero, decoded images
 are zero and model scores are zero.
 
+The transfer subsequently completed at the exact bound size. Local archive SHA-256 is
+`18f1806e1cef6bc9f7ed6e49b61379a6cb4bac63cb4f3ed4f9fffffdf177b6e3`; LaCie retained more than
+431 GiB free. ZIP structure contains exactly 5,000 declared REAL and 5,000 declared AI paths under
+root `ITW-SM`. A complete member-by-member decompression/CRC scan found one unusable publisher
+entry: `ITW-SM/1_fake/x_618.jpg`, at ZIP index 9,763. A fresh HTTP range covering its local header
+and compressed payload matched the local bytes exactly, proving that the corruption is present in
+the published artifact rather than caused by the interrupted connection or disk.
+
+E45 therefore retains 9,999 structurally usable images before decode: 5,000 REAL and 4,999 AI,
+99.99% of official rows. The broken AI member is a disclosed technical exclusion fixed before
+model access, not a model inference failure or post-score row removal. The inventory remains
+explicitly `zip_crc_passed=false`; it is never rewritten as a clean 10,000-row archive. Images
+decoded and model scores created remain zero at this checkpoint.
+
 ## E43 RR adaptation roles — planned before selection (2026-09-02)
 
 RRDataset's 50,858-row E42 score stream has already consumed its final status, so RR may now support
