@@ -3474,3 +3474,7 @@ was scored or selected using model output.
   The score stream is 110,362 bytes /SHA-256 `e9443455...24c9b8`. Selective coverage is 96.49%,
   but covered accuracy is 94.39%; preserve this near-miss and do not tune from DEVELOPMENT.
   TrueFake scores created: zero.
+- **Final score lock:** contract SHA-256 `1cf28d2d...7c4262` binds the exact 2,000-row TrueFake
+  manifest, E46 candidate and both inference-arm hashes, global-fusion threshold `0.6688565013`,
+  selective cuts, ten E45-style gates and 10,000 source/label-stratified bootstraps at seed 46.
+  Forbidden actions include row removal, repair, refit and retry. Model scores created: zero.

@@ -1,0 +1,68 @@
+{
+  "binary_threshold": 0.6688565012954346,
+  "confidence_intervals": {
+    "method": "publisher-source-and-label-stratified row bootstrap",
+    "percentiles": [
+      0.025,
+      0.975
+    ],
+    "samples": 10000,
+    "seed": 46
+  },
+  "contract_bytes": 1957,
+  "contract_sha256": "1cf28d2d8e2c37997246b8991f3647f7ef3857eb78e7425bf593cbb4107c4262",
+  "counts": {
+    "ai": 1000,
+    "by_source": {
+      "FFHQ": 500,
+      "FLUX.1": 125,
+      "FORLAB": 500,
+      "StableDiffusion1.5": 125,
+      "StableDiffusion2": 125,
+      "StableDiffusion3": 125,
+      "StableDiffusionXL": 125,
+      "StyleGAN": 125,
+      "StyleGAN2": 125,
+      "StyleGAN3": 125
+    },
+    "real": 1000,
+    "rows": 2000
+  },
+  "forbidden": [
+    "threshold/policy change",
+    "row removal after score",
+    "refit",
+    "completed-run retry",
+    "training on TrueFake",
+    "E45 repair"
+  ],
+  "gates": {
+    "automatic_coverage_min": 0.8,
+    "binary_auc_min": 0.9,
+    "binary_balanced_accuracy_min": 0.85,
+    "covered_accuracy_min": 0.95,
+    "pooled_ai_recall_min": 0.8,
+    "pooled_real_false_ai_max": 0.1,
+    "score_coverage": 1.0,
+    "source_ai_recall_worst_min": 0.6,
+    "source_real_false_ai_worst_max": 0.2,
+    "uncertain_rate_max": 0.2
+  },
+  "identities": {
+    "candidate_sha256": "9fec91b8a28a842784562654ec49f74add63ce4c5d588d5170c75a4fd2bb84a1",
+    "fusion_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+    "generalist_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "manifest_sha256": "4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b",
+    "specialist_checkpoint_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e"
+  },
+  "model_scores_created": 0,
+  "role": "E46_UNTOUCHED_FINAL",
+  "schema_version": 1,
+  "selected_method": "fusion_global",
+  "selective_policy": {
+    "ai_if_score_gte": 0.6688565012954346,
+    "otherwise": "uncertain",
+    "real_if_score_lt": 0.5185430496088231
+  },
+  "state": "e46_truefake_final_score_contract_frozen_before_model_load"
+}

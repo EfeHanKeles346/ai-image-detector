@@ -4284,3 +4284,9 @@ The frozen candidate then passed all four SynthWildX DEVELOPMENT gates without r
 valid improvement over E45's 34.13% REAL false alarms so far. The selective diagnostic covered
 96.49% but reached 94.39% covered accuracy, narrowly missing the future 95% claim; it remains
 unchanged. Score stream SHA-256 is `e9443455...24c9b8`, and TrueFake still has zero scores.
+
+The successful DEVELOPMENT candidate was then bound to TrueFake before model load. Final contract
+SHA-256 `1cf28d2d...7c4262` fixes all 2,000 rows, the candidate and two model identities, binary cut
+`0.6688565013`, selective band, ten pass/fail gates and 10,000 source-stratified bootstrap draws.
+No later score may change these values, remove a hard image or trigger a retry. At this checkpoint
+the independent final still contains zero model scores.
