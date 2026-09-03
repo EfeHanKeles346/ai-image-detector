@@ -3548,3 +3548,10 @@ was scored or selected using model output.
   label-rate or threshold metric was opened. Preserve partial SHA-256 `87417d5f...733a4`, exclude
   it, and restart all rows with an aspect-preserving 512 px long-side Lanczos cap. This fixed cap is
   the only allowed UNINA variant and is bound before any result.
+- **Result:** capped UNINA has pooled AUC 0.8408 and 61.5% AI recall at the diagnostic 10% REAL cut.
+  Its intended domain is excellent: StyleGAN/2/3 recall **100%/94.4%/73.6%**, with one-vs-REAL AUC
+  0.999/0.972/0.920. It recovers 375/475 E46 misses and diagnostic OR AI recall reaches **90.0%**.
+  Yet 99 additional REAL errors make OR REAL false-AI **15.5%**, again failing the frozen 15% cap.
+  Therefore neither specialist is directly admitted. Stream SHA-256 `17251695...6d99e6`; report
+  SHA-256 `280b973a...ff7fa`. Scientific conclusion: use new CAL/DEVELOPMENT to learn when to trust
+  the specialist, not another backbone or a post-final threshold.

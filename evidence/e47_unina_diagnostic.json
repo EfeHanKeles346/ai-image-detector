@@ -1,0 +1,66 @@
+{
+  "boundary": "Post-final nonprofit research triage only; cannot repair E46 or fit E47.",
+  "complementarity": {
+    "e46_ai_misses": 475,
+    "extra_real_false_ai": 99,
+    "miss_recovery_rate": 0.7894736842105263,
+    "misses_recovered": 375,
+    "or_fusion_ai_recall": 0.9,
+    "or_fusion_real_false_ai": 0.155
+  },
+  "counts": {
+    "ai": 1000,
+    "real": 1000,
+    "rows": 2000
+  },
+  "diagnostic_threshold": -12.033328056335447,
+  "identities": {
+    "checkout_commit": "543943cdf281df7417751e794109431d0975df88",
+    "e46_fused_scores_sha256": "6a51a9b11163fc8bb45889e38cc400a1b210cff7bcd6f36d6a760edc1fa68c97",
+    "e46_result_sha256": "e7e14fdfae15f20aba0b668acbc70ac34db68689adc905dcaa4594fa85d7a7ed",
+    "manifest_sha256": "4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b",
+    "weights_sha256": "65467594eeb53945417c909390a3d872d55b6dbd819aa12cf01e4ced9c4d5a08"
+  },
+  "legacy": {
+    "ai_recall": 0.615,
+    "ai_recall_by_source": {
+      "FLUX.1": 0.168,
+      "StableDiffusion1.5": 0.984,
+      "StableDiffusion2": 0.216,
+      "StableDiffusion3": 0.584,
+      "StableDiffusionXL": 0.288,
+      "StyleGAN": 1.0,
+      "StyleGAN2": 0.944,
+      "StyleGAN3": 0.736
+    },
+    "auc_by_ai_source_vs_all_real": {
+      "FLUX.1": 0.5765119999999999,
+      "StableDiffusion1.5": 0.9914320000000001,
+      "StableDiffusion2": 0.7053760000000001,
+      "StableDiffusion3": 0.8619439999999999,
+      "StableDiffusionXL": 0.7003520000000001,
+      "StyleGAN": 0.99884,
+      "StyleGAN2": 0.972232,
+      "StyleGAN3": 0.919744
+    },
+    "real_false_ai": 0.1,
+    "roc_auc": 0.840804
+  },
+  "long_side_cap": 512,
+  "next_action": "no frozen specialist passed; design new GAN training data",
+  "report_bytes": 2191,
+  "report_sha256": "280b973a5f541c95edd50918fdb3a0c92d51ac72fc8583e359715036a04ff7fa",
+  "schema_version": 1,
+  "score_semantics": "raw fake-oriented logit after aspect-preserving 512px long-side cap",
+  "score_stream": {
+    "bytes": 298486,
+    "sha256": "1725169559c53bcf8e56a53bbc1cc697844cbef664d3a5cf9b872fc3ae6d99e6"
+  },
+  "state": "e47_unina_stylegan2_capped_diagnostic_complete",
+  "unlock": {
+    "each_stylegan_recall_gte_0_30": true,
+    "mean_stylegan_recall_gte_0_50": true,
+    "or_fusion_real_false_ai_lte_0_15": false,
+    "passed": false
+  }
+}

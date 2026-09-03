@@ -566,7 +566,7 @@ source >=60% on a genuinely new final.
       The arm failed every unlock condition: StyleGAN/2/3 recall is 4%/8%/8%, pooled AI recall
       23.6%, and OR-fusion reaches only 58.5% AI recall while REAL false-AI rises to 15.1%.
       Reject the legacy arm; do not spend new training time on this representation.
-- [ ] **R2 — external specialist only if R1 fails.** Acquire a hash-pinned official GAN detector
+- [x] **R2 — external specialist only if R1 fails.** Acquire a hash-pinned official GAN detector
       (prefer UnivFD's frozen CLIP linear head or UNINA's compression-trained GAN detector) under
       its licence; do not download the 72 GB training corpus. First run the same consumed-data
       diagnostic and reject any arm that merely increases REAL accusations.
@@ -586,6 +586,10 @@ source >=60% on a genuinely new final.
       throughput fell below 0.5 image/s on ordinary 960 px inputs—unfit for the web objective.
       Preserve the partial stream (`87417d5f...733a4`), then restart from zero with a score-blind,
       aspect-preserving 512 px long-side cap. The cap is frozen for all rows before result access.
+      Capped UNINA catches StyleGAN/2/3 at 100%/94.4%/73.6%, recovers 375/475 E46 misses, and
+      raises diagnostic OR AI recall to 90.0%. It still reaches 15.5% REAL false-AI, so the direct
+      frozen-arm unlock fails exactly like UnivFD. Conclusion: the representation gap is solved,
+      but a new-data decision gate is mandatory; neither specialist can be OR-ed into serving.
 - [ ] **R3 — new CAL/DEVELOPMENT, identity-separated.** Build a compact source-balanced pool from
       data that was never in E46 final: at least two independent camera-real sources, StyleGAN
       generations, and the modern diffusion generators already protected by E46. Split by source,

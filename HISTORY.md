@@ -4347,3 +4347,10 @@ ResNet50-NoDown dropped below 0.5 image/s on common 960 px inputs. It was stoppe
 the 88,487-byte partial stream was hash-preserved but excluded. Before restarting, E47 froze an
 aspect-preserving 512 px long-side cap for every row. This changes only deployment preprocessing,
 not labels, identities or the admission rule, and makes latency part of model selection.
+
+The capped UNINA comparison completed and made the next problem precise. It sees
+StyleGAN/2/3 at 100%/94.4%/73.6%, recovers 375 of 475 E46 misses, and would lift pooled AI recall
+to 90%. But a naive OR still raises REAL false accusations to 15.5%, so the unchanged admission
+gate rejects direct serving. UnivFD and UNINA independently prove that the missing GAN
+representation now exists; what E47 lacks is a decision layer trained on separate data to know
+when the specialist is trustworthy. No E46 score will be used to learn that decision.

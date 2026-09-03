@@ -1409,3 +1409,8 @@ metric was calculated. The preserved 88,487-byte partial stream SHA-256 is
 `87417d5f86b14b725accd42c776949533d639ec354e283675347fa76117733a4`. It is excluded from all
 comparisons. E47-R2b restarts the same identities from row zero with a frozen aspect-preserving
 512 px long-side cap; this is an inference policy change, not a data or role change.
+
+The capped UNINA restart completed all 2,000 consumed identities with 100% coverage. Its 298,486-
+byte external stream SHA-256 is `1725169559c53bcf8e56a53bbc1cc697844cbef664d3a5cf9b872fc3ae6d99e6`.
+Like every E47-R1/R2 stream, it is post-final diagnostic evidence only and cannot train, calibrate,
+validate or prove a successor.
