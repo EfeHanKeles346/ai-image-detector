@@ -3424,3 +3424,8 @@ was scored or selected using model output.
   including 250/168 REAL. All three AI generators retain at least 159 development rows. Two exact
   hash groups are quarantined for the next identity audit. Manifest SHA-256 after external-store
   relocation is `fd8008a...a89f3f`; image bytes changed by relocation: zero; scores created: zero.
+- **TrueFake acquisition:** the Facebook archive completed at 4,207,525,545 bytes /SHA-256
+  `413cb7f9...cda0d63`. Full gzip integrity and TAR enumeration pass. Exactly 60,000 JPG payloads
+  are present: 20,000 REAL evenly split FFHQ/FORLAB and 40,000 AI evenly split across eight
+  publisher generators. This confirms all declared strata before sampling. No member was extracted
+  and no detector loaded at this checkpoint; final selection remains hash-only.

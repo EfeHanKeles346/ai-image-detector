@@ -1141,5 +1141,21 @@
       "real": 418
     }
   },
-  "truefake_facebook": null
+  "truefake_facebook": {
+    "accept_ranges": "bytes",
+    "advertised_filename": "Facebook.tar.gz",
+    "bytes": 4207525545,
+    "content_disposition": "attachment; filename=\"Facebook.tar.gz\"",
+    "free_bytes_after": 458533502976,
+    "free_bytes_before": 462741176320,
+    "landing_url": "https://drive.usercontent.google.com/download?id=10cQq48JtpRZgrHuckMyeFOwPvZZHDMXd",
+    "last_modified": "Sat, 01 Nov 2025 18:21:12 GMT",
+    "model_scores_created": 0,
+    "network_bytes_this_run": 4207525545,
+    "path": "/Volumes/LaCie/pixelproof-datasets/e46/truefake_facebook/Facebook.tar.gz",
+    "role": "E46_UNTOUCHED_FINAL",
+    "schema_version": 1,
+    "sha256": "413cb7f9664cf5f4e37a2ae0bea5d1a999c47398ca1c267a2173e88c2cda0d63",
+    "state": "e46_truefake_facebook_archive_complete_unscored_uninventoried"
+  }
 }

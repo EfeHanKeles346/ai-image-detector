@@ -485,6 +485,10 @@ it before paying for another architecture or training run.
       available real origins and 1,000 AI balanced as closely as possible across generator
       families. Exclude corrupt files and exact/perceptual overlaps with protected earlier roles;
       disclose every exclusion. No label or score may influence selection.
+      Transfer complete and still unscored: 4,207,525,545 bytes /SHA-256 `413cb7f9...cda0d63`.
+      Independent `gzip -t` and TAR listing pass; the archive contains exactly 60,000 JPG files,
+      including 10,000 FFHQ, 10,000 FORLAB and 5,000 from each of eight declared AI generators.
+      Score-blind manifest binding and protected-overlap audit remain before this item closes.
 - [ ] On SynthWildX CAL only, compare the unchanged official DDA arm, frozen E44 fusion, a global
       REAL-safe cut, and a small QuAD-inspired quality-conditioned calibration. Method choice may
       inspect only CAL. DEVELOPMENT must retain REAL FP <= 20%, worst available REAL group FP <=

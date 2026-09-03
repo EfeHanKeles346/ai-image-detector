@@ -1338,3 +1338,12 @@ later result. Bytes were relocated unchanged from ignored local scratch to
 `/Volumes/LaCie/pixelproof-datasets/e46/synthwildx`; the path-corrected 1,224,028-byte unscored
 manifest SHA-256 is `fd8008a6781e3feef632ce7250a6ece08d15457c1f903579c8b9a80da2a89f3f`.
 No model was loaded and no score exists.
+
+The TrueFake Facebook transfer is also complete in the external store. Google Drive's exact
+4,207,525,545-byte payload hashes to
+`413cb7f9664cf5f4e37a2ae0bea5d1a999c47398ca1c267a2173e88c2cda0d63`; Last-Modified is
+2025-11-01 18:21:12 GMT and byte-range resume was available. `gzip -t` and a full TAR listing both
+pass. The archive contains exactly 60,000 JPG payloads: 10,000 FFHQ REAL, 10,000 FORLAB REAL, and
+5,000 each from FLUX.1, Stable Diffusion 1.5/2/3/XL and StyleGAN 1/2/3. The archive remains
+unscored and only 3,500 score-blind reserve candidates will be decoded to obtain the frozen 2,000-
+row balanced final after contamination checks; the remaining 56,500 images need not be extracted.

@@ -4213,3 +4213,12 @@ research store. Only absolute manifest paths and their receipt hash changed; ima
 were zero. The resulting unscored manifest is 1,224,028 bytes /SHA-256 `fd8008a...a89f3f`.
 Two exact duplicate groups are disclosed for the identity-audit stage. No detector has read the
 data yet.
+
+The second E46 source then arrived intact on LaCie: TrueFake's Facebook archive is
+4,207,525,545 bytes /SHA-256 `413cb7f9...cda0d63`. Its complete gzip and TAR checks pass, and the
+publisher structure matches the paper exactly—20,000 REAL images split between FFHQ and FORLAB,
+plus 40,000 AI images split evenly across eight GAN/diffusion generators. This resolves the earlier
+final-data availability blocker within the 3–4 GB planning envelope. The archive is still sealed
+from the model: the next committed code will first freeze a hash-ranked 3,500-candidate reserve,
+decode only enough to produce the balanced 2,000-row final, and reject prior-data overlaps before
+any score exists.
