@@ -1204,6 +1204,27 @@ review from the repo authors` during the non-image `.gitattributes` preflight. T
 contains zero local payload files, no acquisition receipt and zero model scores; only the prior
 6.3 MB resumable cache scaffolding remains. No part of the 3.57 GB snapshot transfer started.
 
+## E45 official MediaEval validation distribution — frozen before transfer (2026-09-03)
+
+The official MediaEval 2026 SID repository publicly links the labeled validation archive
+`itw-sm-sid-val.zip`. The task authors declare 10,000 in-the-wild images in `0_real` and `1_fake`,
+5,000 per class. A live source preflight returned HTTP 200, 3,553,693,205 bytes, ETag
+`"68555a02-d3d10e15"`, Last-Modified `Fri, 20 Jun 2025 12:54:26 GMT` and byte-range support. These
+facts are bound in `evidence/e45_mediaeval_contract.json` before transfer.
+
+This is the preferred immediate E44-D final because it tests online/social-media distribution shift
+and is published by the challenge organizers, while Hugging Face manual approval and NIST
+organization registration remain blocked. The filename and declared class structure strongly
+suggest that it is the official MediaEval distribution associated with ITW-SM. It must therefore
+be treated as one candidate final—not as a second independent benchmark beside the gated snapshot—
+until post-download inventory/hashes establish their relationship.
+
+The archive retains the already accepted research-only, non-redistribution ITW-SM usage boundary;
+the project does not infer broader rights from an open URL. It is `E45_UNTOUCHED_FINAL`, never
+TRAIN/CAL/DEVELOPMENT. Download target is LaCie, with resume, a 100 GiB free-space reserve, full
+SHA-256 and CRC/schema inventory. At this checkpoint downloaded E45 bytes are zero, decoded images
+are zero and model scores are zero.
+
 ## E43 RR adaptation roles — planned before selection (2026-09-02)
 
 RRDataset's 50,858-row E42 score stream has already consumed its final status, so RR may now support

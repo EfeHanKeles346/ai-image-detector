@@ -1,0 +1,44 @@
+{
+  "candidate": {
+    "fusion_artifact_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+    "policy": {
+      "ai_if_score_gte": 0.6938513176357805,
+      "otherwise": "uncertain",
+      "real_if_score_lt": 0.254571216982131
+    },
+    "selective_diagnostic": "evidence/e44_selective_diagnostic.json"
+  },
+  "dataset": {
+    "declared_classes": {
+      "0_real": 5000,
+      "1_fake": 5000
+    },
+    "etag": "\"68555a02-d3d10e15\"",
+    "expected_archive_bytes": 3553693205,
+    "last_modified": "Fri, 20 Jun 2025 12:54:26 GMT",
+    "source_repository": "https://github.com/mever-team/mediaeval2026-sid",
+    "url": "https://artifacts.mever.iti.gr/MediaEval2025/itw-sm-sid-val.zip"
+  },
+  "gates": {
+    "automatic_coverage_min": 0.8,
+    "binary_auc_min": 0.9,
+    "binary_balanced_accuracy_min": 0.85,
+    "covered_accuracy_min": 0.95,
+    "pooled_ai_recall_min": 0.8,
+    "pooled_real_false_ai_max": 0.1,
+    "score_coverage": 1.0,
+    "source_ai_recall_worst_min": 0.6,
+    "source_real_false_ai_worst_max": 0.2,
+    "uncertain_rate_max": 0.2
+  },
+  "role": "E45_UNTOUCHED_FINAL",
+  "schema_version": 1,
+  "state": "mediaeval_source_and_success_contract_frozen_before_transfer",
+  "stop_rules": [
+    "Dataset images may not fit a model, threshold, transform, policy cut or stopping decision.",
+    "The public archive and gated Hugging Face snapshot may be one dataset; compare inventory and do not claim two independent tests.",
+    "Freeze a decoded and decontaminated zero-score manifest plus a candidate-bound score contract before inference.",
+    "After a completed score, preserve the result without threshold repair, row removal or retry.",
+    "Report binary discrimination and selective risk together; selective accuracy without coverage is forbidden."
+  ]
+}

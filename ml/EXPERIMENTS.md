@@ -3318,3 +3318,20 @@ was scored or selected using model output.
   is 83.81% and automatic REAL recall is 84.85% over all labeled rows.
 - **Boundary:** this is a post-hoc hypothesis on consumed data, not a passed model or deployable
   threshold. Freeze it before ITW-SM/NIST or a genuinely new source-separated validation.
+
+### E45 — official MediaEval/ITW-SM final contract frozen before transfer
+
+- **Question:** can the fixed E44-D three-outcome policy retain high automatic coverage while
+  avoiding the camera-specific false-AI errors seen in E44-C on genuinely in-the-wild images?
+- **Source:** the official MediaEval 2026 SID repository links a labeled 10,000-image validation
+  archive (5,000 REAL/5,000 synthetic). HTTP identity is frozen at 3,553,693,205 bytes, ETag
+  `"68555a02-d3d10e15"` and Last-Modified `Fri, 20 Jun 2025 12:54:26 GMT`.
+- **Candidate:** unchanged fusion artifact `19fd7bbc...b100`; REAL `<0.2545712170`, AI
+  `>=0.6938513176`, middle `UNCERTAIN`. No E45 image, label or score may alter these values.
+- **Gates:** score coverage 1.0; binary AUC >=0.90 /balanced accuracy >=0.85 /REAL false-AI <=10%
+  /AI recall >=80%; source worst REAL false-AI <=20% /AI recall >=60%; selective automatic
+  coverage >=80% /covered accuracy >=95% /uncertain <=20%.
+- **Boundary:** source and gate contract only. E45 downloaded bytes, decoded images and model scores
+  are all zero. Acquisition, safe inventory, decontaminated manifest and a second score lock must
+  complete in that order. The official archive and gated HF snapshot may be the same distribution
+  and can never be counted as two independent finals without identity evidence.

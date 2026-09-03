@@ -4091,3 +4091,19 @@ Face's explicit state `awaiting a review from the repo authors`. The downloader 
 scheduling any image: zero payload file, no acquisition receipt and zero model score exist; only
 the previous 6.3 MB resumable cache scaffolding remains. The blocker is still author approval, not
 local OAuth authentication or internet connectivity.
+
+The open replacement route was then frozen before downloading a byte. MediaEval's official 2026
+SID repository publicly links `itw-sm-sid-val.zip`, declaring the same scientific target: 10,000
+in-the-wild images, 5,000 REAL and 5,000 synthetic. The live archive identity is 3,553,693,205 bytes,
+ETag `"68555a02-d3d10e15"` and Last-Modified 2025-06-20, with byte-range resume. E45 assigns it once
+as the untouched final for the already-fixed E44-D policy. It preserves the accepted research-only
+and no-redistribution boundary and explicitly refuses to count this public distribution and the
+gated Hugging Face snapshot as two tests unless later identity evidence proves they differ.
+
+The success rules are fixed before transfer: complete scores; binary AUC >=0.90, balanced accuracy
+>=0.85, pooled REAL false-AI <=10% and AI recall >=80%; source worst REAL false-AI <=20% and AI
+recall >=60%; plus selective automatic coverage >=80%, covered accuracy >=95% and uncertainty
+<=20%. The unchanged E44-D cuts remain REAL below 0.2545712170, AI at/above 0.6938513176 and
+UNCERTAIN between them. A resumable, identity-bound, LaCie-only downloader and fail-closed ZIP/CRC
+inventory were added with focused tests. At this checkpoint E45 contains zero downloaded bytes,
+zero decoded images and zero scores; the plan/contract checkpoint must be committed before transfer.

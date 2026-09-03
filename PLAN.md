@@ -396,6 +396,35 @@ it before paying for another architecture or training run.
       another genuinely new source-separated population. Report both automatic coverage and error
       among covered rows; never quote selective accuracy without its abstention rate.
 
+### F2g — E45 official MediaEval/ITW-SM independent final (2026-09-03)
+
+- [x] Bind the official MediaEval public validation distribution before transfer: repository
+      `mever-team/mediaeval2026-sid`, direct archive `itw-sm-sid-val.zip`, HTTP identity
+      3,553,693,205 bytes /ETag `"68555a02-d3d10e15"` /Last-Modified 2025-06-20. The publisher
+      declares 10,000 in-the-wild images, exactly 5,000 REAL and 5,000 synthetic. Preserve the
+      already accepted ITW-SM research-only/no-redistribution terms; public reachability is not a
+      licence expansion.
+- [x] Freeze E44-D and the success contract before bytes. Binary gates remain AUC >=0.90, balanced
+      accuracy >=0.85, pooled REAL false-AI <=10%, pooled AI recall >=80% and complete score
+      coverage. Source/platform worst REAL false-AI must be <=20% and worst AI recall >=60%.
+      Selective reporting additionally requires automatic coverage >=80%, covered accuracy >=95%
+      and uncertainty <=20%. The fixed policy is REAL `<0.2545712170`, AI
+      `>=0.6938513176`, otherwise `UNCERTAIN`.
+- [ ] Download only to LaCie with curl resume and >=100 GiB reserve. Require the bound HTTP size,
+      ETag and Last-Modified, compute SHA-256 after completion, then perform safe ZIP schema and full
+      CRC inventory without extraction or model access. Compare the archive identity/layout with
+      the still-gated Hugging Face ITW-SM inventory; never report them as independent benchmarks if
+      they are the same distribution.
+- [ ] Decode/hash every member, reconcile any bundled metadata, audit exact and dHash overlap
+      against all protected prior roles and remove an overlapping parent before scores only. Freeze
+      the complete zero-score manifest and its exclusions. If source/platform metadata is absent,
+      report pooled groups honestly rather than inventing platform labels.
+- [ ] Bind the unchanged E44 fusion artifact and E44-D cuts to that manifest in a second score
+      contract. Score every retained member once, report binary and selective gates with 10,000-
+      sample bootstrap intervals, and preserve pass or failure without threshold repair. The final
+      dataset never enters training; a failure may define a future hypothesis only after E45 is
+      marked consumed.
+
 ### F3 — recording and stop rules
 
 - [x] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis
