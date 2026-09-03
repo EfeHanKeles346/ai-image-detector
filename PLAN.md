@@ -471,10 +471,14 @@ it before paying for another architecture or training run.
       Midjourney v5 and Firefly) only as `E46_CAL_DEV`. Reserve the official UNITN **TrueFake
       Facebook** distribution (advertised 3.9 GB; one Facebook-processed copy of the paper's
       60,000-image shared subset) as `E46_UNTOUCHED_FINAL`. Never exchange these roles.
-- [ ] Acquire SynthWildX from the publisher's immutable `list.csv` first. Preserve URL/filename/
+- [x] Acquire SynthWildX from the publisher's immutable `list.csv` first. Preserve URL/filename/
       label metadata, per-file hashes and failures; do not redistribute social-media bytes. Split
       identities deterministically and label-stratified into 60% CAL / 40% DEVELOPMENT before
       model scoring. Do not silently replace dead URLs with lookalike images.
+      Completed score-blind: 1,723/2,000 publisher URLs yielded valid images (553,125,164 bytes),
+      while 277 current X CDN URLs returned persistent 403/404 failures and were preserved as
+      failures. Successful CAL/DEVELOPMENT counts are 1,034/689; REAL remains 418 and each AI
+      generator retains 396–474 images. The external manifest SHA-256 is `fd8008a...a89f3f`.
 - [ ] Acquire the TrueFake Facebook archive with resume into the external LaCie store, record the
       exact byte count and SHA-256, then inventory it without extraction. Before any score, freeze
       a deterministic, class-balanced 2,000-row final manifest: 1,000 REAL balanced across the

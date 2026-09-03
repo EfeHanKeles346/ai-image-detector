@@ -1,0 +1,1145 @@
+{
+  "model_scores_created": 0,
+  "schema_version": 1,
+  "state": "e46_acquisition_progress_unscored",
+  "synthwildx": {
+    "declared_rows": 2000,
+    "failed_rows": 277,
+    "failures": [
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_obFDYa0AAT6jQ?format=jpg&name=large",
+        "filename": "dalle3/F_obFDYa0AAT6jQ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_qVOOmaQAAD0L9?format=jpg&name=large",
+        "filename": "dalle3/F_qVOOmaQAAD0L9.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_qjwaXakAA3_K_?format=jpg&name=large",
+        "filename": "dalle3/F_qjwaXakAA3_K_.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_sPwMiawAAdajF?format=jpg&name=large",
+        "filename": "dalle3/F_sPwMiawAAdajF.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-aH_pGbMAAQdMu?format=jpg&name=large",
+        "filename": "dalle3/F-aH_pGbMAAQdMu.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-VIixwa4AAKItO?format=jpg&name=large",
+        "filename": "dalle3/F-VIixwa4AAKItO.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCZglZaXAAAYRvF?format=jpg&name=large",
+        "filename": "dalle3/GCZglZaXAAAYRvF.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-Yu8q5X0AAc29X?format=jpg&name=large",
+        "filename": "dalle3/F-Yu8q5X0AAc29X.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fYEKNaMAAlQ7O?format=jpg&name=large",
+        "filename": "dalle3/F-fYEKNaMAAlQ7O.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F-f-r06bUAAHkFE?format=jpg&name=large",
+        "filename": "dalle3/F-f-r06bUAAHkFE.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fnPTfaUAAmDrA?format=jpg&name=large",
+        "filename": "dalle3/F-fnPTfaUAAmDrA.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fONZaa8AAOegb?format=jpg&name=large",
+        "filename": "dalle3/F-fONZaa8AAOegb.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-aXodcboAAm72K?format=jpg&name=large",
+        "filename": "dalle3/F-aXodcboAAm72K.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dFNdJWgAArKRO?format=jpg&name=large",
+        "filename": "dalle3/F-dFNdJWgAArKRO.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_r5FwEXkAAi947?format=jpg&name=large",
+        "filename": "dalle3/F_r5FwEXkAAi947.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_v4L2PaAAA8Wyc?format=jpg&name=large",
+        "filename": "dalle3/F_v4L2PaAAA8Wyc.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-h8D2ubAAAEoqV?format=jpg&name=large",
+        "filename": "dalle3/F-h8D2ubAAAEoqV.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eVTXMXgAAR3vh?format=jpg&name=large",
+        "filename": "dalle3/F-eVTXMXgAAR3vh.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_xI5SObQAAA5Q-?format=jpg&name=large",
+        "filename": "dalle3/F_xI5SObQAAA5Q-.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC74ctraAAETgZq?format=jpg&name=large",
+        "filename": "dalle3/GC74ctraAAETgZq.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F-fXrpcXMAAMj6l?format=jpg&name=large",
+        "filename": "dalle3/F-fXrpcXMAAMj6l.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-ZvlcRbkAAg9OM?format=jpg&name=large",
+        "filename": "dalle3/F-ZvlcRbkAAg9OM.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fbxqeXoAACPqr?format=jpg&name=large",
+        "filename": "dalle3/F-fbxqeXoAACPqr.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eWNnlbMAAeFY2?format=jpg&name=large",
+        "filename": "dalle3/F-eWNnlbMAAeFY2.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-WvT-MW4AAqwuc?format=jpg&name=large",
+        "filename": "dalle3/F-WvT-MW4AAqwuc.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_r_7pfagAAixIp?format=jpg&name=large",
+        "filename": "dalle3/F_r_7pfagAAixIp.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fTWy_XEAA_UMn?format=jpg&name=large",
+        "filename": "dalle3/F-fTWy_XEAA_UMn.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eTyZ-WgAAS4tN?format=jpg&name=large",
+        "filename": "dalle3/F-eTyZ-WgAAS4tN.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC8XE9PWcAE9ytc?format=jpg&name=large",
+        "filename": "dalle3/GC8XE9PWcAE9ytc.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-e3n0QakAAL_BR?format=jpg&name=large",
+        "filename": "dalle3/F-e3n0QakAAL_BR.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F-fXrpbX0AAloJH?format=jpg&name=large",
+        "filename": "dalle3/F-fXrpbX0AAloJH.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F-fXrpbXsAAzSL4?format=jpg&name=large",
+        "filename": "dalle3/F-fXrpbXsAAzSL4.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-VItOAbcAAZiI_?format=jpg&name=large",
+        "filename": "dalle3/F-VItOAbcAAZiI_.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-c8NxOasAAkEX6?format=jpg&name=large",
+        "filename": "dalle3/F-c8NxOasAAkEX6.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC8nSUWXYAAljmS?format=jpg&name=large",
+        "filename": "dalle3/GC8nSUWXYAAljmS.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eVT4wW8AAcU4k?format=jpg&name=large",
+        "filename": "dalle3/F-eVT4wW8AAcU4k.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fx38ga0AAAJNT?format=jpg&name=large",
+        "filename": "dalle3/F-fx38ga0AAAJNT.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-euK2ra0AAKjjJ?format=jpg&name=large",
+        "filename": "dalle3/F-euK2ra0AAKjjJ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-cSdcyWgAA_SLi?format=jpg&name=large",
+        "filename": "dalle3/F-cSdcyWgAA_SLi.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eXwqLXIAAVosB?format=jpg&name=large",
+        "filename": "dalle3/F-eXwqLXIAAVosB.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eNU1nWEAAJuQI?format=jpg&name=large",
+        "filename": "dalle3/F-eNU1nWEAAJuQI.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-h8D0TasAARbix?format=jpg&name=large",
+        "filename": "dalle3/F-h8D0TasAARbix.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dVqtMWIAA5Gzb?format=jpg&name=large",
+        "filename": "dalle3/F-dVqtMWIAA5Gzb.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_qzrp4W0AAc56Y?format=jpg&name=large",
+        "filename": "dalle3/F_qzrp4W0AAc56Y.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-c37koasAA1FLi?format=jpg&name=large",
+        "filename": "dalle3/F-c37koasAA1FLi.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-gn4L9WIAARopq?format=jpg&name=large",
+        "filename": "dalle3/F-gn4L9WIAARopq.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC9uUR7asAAPNiR?format=jpg&name=large",
+        "filename": "dalle3/GC9uUR7asAAPNiR.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_s3wwZaQAAD5zh?format=jpg&name=large",
+        "filename": "dalle3/F_s3wwZaQAAD5zh.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dbHMJWgAAZKlT?format=jpg&name=large",
+        "filename": "dalle3/F-dbHMJWgAAZKlT.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fllj8akAAnNGI?format=jpg&name=large",
+        "filename": "dalle3/F-fllj8akAAnNGI.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dbGuUWgAACJ5i?format=jpg&name=large",
+        "filename": "dalle3/F-dbGuUWgAACJ5i.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC_hVFcboAA6SWV?format=jpg&name=large",
+        "filename": "dalle3/GC_hVFcboAA6SWV.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dFNdGWEAA9PVt?format=jpg&name=large",
+        "filename": "dalle3/F-dFNdGWEAA9PVt.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fx384aQAAK207?format=jpg&name=large",
+        "filename": "dalle3/F-fx384aQAAK207.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_r4-WEWYAA49pa?format=jpg&name=large",
+        "filename": "dalle3/F_r4-WEWYAA49pa.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-Yu8q3WwAAERo-?format=jpg&name=large",
+        "filename": "dalle3/F-Yu8q3WwAAERo-.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC_hVFia8AAUXzJ?format=jpg&name=large",
+        "filename": "dalle3/GC_hVFia8AAUXzJ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC_hVFlaYAAtwP8?format=jpg&name=large",
+        "filename": "dalle3/GC_hVFlaYAAtwP8.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eXvJMXQAAIBaK?format=jpg&name=large",
+        "filename": "dalle3/F-eXvJMXQAAIBaK.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-emCyyaYAAKrXg?format=jpg&name=large",
+        "filename": "dalle3/F-emCyyaYAAKrXg.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_wvoLRb0AA7ciB?format=jpg&name=large",
+        "filename": "dalle3/F_wvoLRb0AA7ciB.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_sC6hzaQAAs946?format=jpg&name=large",
+        "filename": "dalle3/F_sC6hzaQAAs946.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_r4-jSWsAABwHd?format=jpg&name=large",
+        "filename": "dalle3/F_r4-jSWsAABwHd.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eVSkFXwAAdz5f?format=jpg&name=large",
+        "filename": "dalle3/F-eVSkFXwAAdz5f.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eVS-UXQAAl5kV?format=jpg&name=large",
+        "filename": "dalle3/F-eVS-UXQAAl5kV.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fbxqiXQAAvXNc?format=jpg&name=large",
+        "filename": "dalle3/F-fbxqiXQAAvXNc.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eNXE_WcAAl8O-?format=jpg&name=large",
+        "filename": "dalle3/F-eNXE_WcAAl8O-.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F-fXrpdXMAAQldB?format=jpg&name=large",
+        "filename": "dalle3/F-fXrpdXMAAQldB.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GC-2_TyXUAAwWtR?format=jpg&name=large",
+        "filename": "dalle3/GC-2_TyXUAAwWtR.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eXwK_XEAAg82o?format=jpg&name=large",
+        "filename": "dalle3/F-eXwK_XEAAg82o.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eTwvtWQAASse4?format=jpg&name=large",
+        "filename": "dalle3/F-eTwvtWQAASse4.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-XvzUIaYAAnttk?format=jpg&name=large",
+        "filename": "dalle3/F-XvzUIaYAAnttk.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_sYfZ7aAAA6qPq?format=jpg&name=large",
+        "filename": "dalle3/F_sYfZ7aAAA6qPq.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dLbomakAAlzGE?format=jpg&name=large",
+        "filename": "dalle3/F-dLbomakAAlzGE.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC72pjyaAAAUewx?format=jpg&name=large",
+        "filename": "dalle3/GC72pjyaAAAUewx.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_s3wf8acAA8Cxm?format=jpg&name=large",
+        "filename": "dalle3/F_s3wf8acAA8Cxm.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_rPXCcaoAAXmsN?format=jpg&name=large",
+        "filename": "dalle3/F_rPXCcaoAAXmsN.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_r5KR-XQAA1J6s?format=jpg&name=large",
+        "filename": "dalle3/F_r5KR-XQAA1J6s.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-eXvdeXsAAdplT?format=jpg&name=large",
+        "filename": "dalle3/F-eXvdeXsAAdplT.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-UajmSasAAvgsK?format=jpg&name=large",
+        "filename": "dalle3/F-UajmSasAAvgsK.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F-hvIlXWEAEuce0?format=jpg&name=large",
+        "filename": "dalle3/F-hvIlXWEAEuce0.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC_gl5xbcAAC2uV?format=jpg&name=large",
+        "filename": "dalle3/GC_gl5xbcAAC2uV.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-gREHxbwAAHzHo?format=jpg&name=large",
+        "filename": "dalle3/F-gREHxbwAAHzHo.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC7MPrgXgAA7rnE?format=jpg&name=large",
+        "filename": "dalle3/GC7MPrgXgAA7rnE.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-h8D1fbkAAIz0z?format=jpg&name=large",
+        "filename": "dalle3/F-h8D1fbkAAIz0z.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dhJMEXMAArrR8?format=jpg&name=large",
+        "filename": "dalle3/F-dhJMEXMAArrR8.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dbF6yXgAAlKy2?format=jpg&name=large",
+        "filename": "dalle3/F-dbF6yXgAAlKy2.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fjQDCacAAp1bz?format=jpg&name=large",
+        "filename": "dalle3/F-fjQDCacAAp1bz.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dPPsMXoAAGUxN?format=jpg&name=large",
+        "filename": "dalle3/F-dPPsMXoAAGUxN.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-VhjOJacAAPP4W?format=jpg&name=large",
+        "filename": "dalle3/F-VhjOJacAAPP4W.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fONZaacAAddOa?format=jpg&name=large",
+        "filename": "dalle3/F-fONZaacAAddOa.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-VIY1rbMAAQl0L?format=jpg&name=large",
+        "filename": "dalle3/F-VIY1rbMAAQl0L.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GC_QxE2XAAAGH4J?format=jpg&name=large",
+        "filename": "dalle3/GC_QxE2XAAAGH4J.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-h8DzvbQAAbaQt?format=jpg&name=large",
+        "filename": "dalle3/F-h8DzvbQAAbaQt.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_sjySZaMAAtycA?format=jpg&name=large",
+        "filename": "dalle3/F_sjySZaMAAtycA.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_ocbCPbkAA2jgf?format=jpg&name=large",
+        "filename": "dalle3/F_ocbCPbkAA2jgf.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fd5aeacAASPlx?format=jpg&name=large",
+        "filename": "dalle3/F-fd5aeacAASPlx.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dZRwIXcAAOtia?format=jpg&name=large",
+        "filename": "dalle3/F-dZRwIXcAAOtia.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC_gdglaQAAJk1o?format=jpg&name=large",
+        "filename": "dalle3/GC_gdglaQAAJk1o.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCwxGaQbEAAFO_O?format=jpg&name=large",
+        "filename": "dalle3/GCwxGaQbEAAFO_O.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dVB21WQAAzemj?format=jpg&name=large",
+        "filename": "dalle3/F-dVB21WQAAzemj.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC9z58OagAA6ZlU?format=jpg&name=large",
+        "filename": "dalle3/GC9z58OagAA6ZlU.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-fWbAqboAES_nG?format=jpg&name=large",
+        "filename": "dalle3/F-fWbAqboAES_nG.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-dbGTvXsAAlTec?format=jpg&name=large",
+        "filename": "dalle3/F-dbGTvXsAAlTec.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_dzGgYXQAAaveB?format=jpg&name=large",
+        "filename": "firefly/F_dzGgYXQAAaveB.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F9n1IW-WAAANq1P?format=jpg&name=large",
+        "filename": "firefly/F9n1IW-WAAANq1P.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCYWX4_XUAA_9Ed?format=jpg&name=large",
+        "filename": "firefly/GCYWX4_XUAA_9Ed.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F99do1ZXkAAnwWb?format=jpg&name=large",
+        "filename": "firefly/F99do1ZXkAAnwWb.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GDPOeXVXYAASVTL?format=jpg&name=large",
+        "filename": "firefly/GDPOeXVXYAASVTL.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_jBdAZWUAA7Hab?format=jpg&name=large",
+        "filename": "firefly/F_jBdAZWUAA7Hab.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GE1UYrza8AA_Sci?format=jpg&name=large",
+        "filename": "firefly/GE1UYrza8AA_Sci.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCxhaWeWIAASyok?format=jpg&name=large",
+        "filename": "firefly/GCxhaWeWIAASyok.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GDPOdoVWgAACI2t?format=jpg&name=large",
+        "filename": "firefly/GDPOdoVWgAACI2t.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCxjj85WkAMtu-u?format=jpg&name=large",
+        "filename": "firefly/GCxjj85WkAMtu-u.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCxhaooXIAAs3V9?format=jpg&name=large",
+        "filename": "firefly/GCxhaooXIAAs3V9.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCYWkuiWEAAuxhB?format=jpg&name=large",
+        "filename": "firefly/GCYWkuiWEAAuxhB.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F9YLNS2XUAAULHz?format=jpg&name=large",
+        "filename": "firefly/F9YLNS2XUAAULHz.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_I6I24XgAAvppE?format=jpg&name=large",
+        "filename": "firefly/F_I6I24XgAAvppE.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-Zd2WubAAA57vp?format=jpg&name=large",
+        "filename": "firefly/F-Zd2WubAAA57vp.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCxha6GWwAA4dl5?format=jpg&name=large",
+        "filename": "firefly/GCxha6GWwAA4dl5.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCxhaGvXgAAO0N6?format=jpg&name=large",
+        "filename": "firefly/GCxhaGvXgAAO0N6.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F9WvTpLasAAv-3S?format=jpg&name=large",
+        "filename": "firefly/F9WvTpLasAAv-3S.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_ln-7qXoAAHe7b?format=jpg&name=large",
+        "filename": "firefly/F_ln-7qXoAAHe7b.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GDPOd3fXwAAnAbX?format=jpg&name=large",
+        "filename": "firefly/GDPOd3fXwAAnAbX.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC67-psXEAATXe2?format=jpg&name=large",
+        "filename": "firefly/GC67-psXEAATXe2.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCxjjRjXYAA994T?format=jpg&name=large",
+        "filename": "firefly/GCxjjRjXYAA994T.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F4_vm2JaEAAeJoX?format=jpg&name=large",
+        "filename": "firefly/F4_vm2JaEAAeJoX.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GC2TdAfXQAAtNSn?format=jpg&name=large",
+        "filename": "firefly/GC2TdAfXQAAtNSn.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F9131UyXMAA6O-0?format=jpg&name=large",
+        "filename": "firefly/F9131UyXMAA6O-0.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F9XtUKzXMAALulZ?format=jpg&name=large",
+        "filename": "firefly/F9XtUKzXMAALulZ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCO3vkDaYAAoUrO?format=jpg&name=large",
+        "filename": "midjourney_v5/GCO3vkDaYAAoUrO.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCONQEybkAANkuf?format=jpg&name=large",
+        "filename": "midjourney_v5/GCONQEybkAANkuf.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCQD6CqaQAAI-Cq?format=jpg&name=large",
+        "filename": "midjourney_v5/GCQD6CqaQAAI-Cq.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GBk0dz1WcAAY0DQ?format=jpg&name=large",
+        "filename": "midjourney_v5/GBk0dz1WcAAY0DQ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F2XErnuXUAAZxZG?format=jpg&name=large",
+        "filename": "midjourney_v5/F2XErnuXUAAZxZG.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCQD7LDaIAAjaMS?format=jpg&name=large",
+        "filename": "midjourney_v5/GCQD7LDaIAAjaMS.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOPAZxasAAmyxZ?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOPAZxasAAmyxZ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOjG4MasAAy6tX?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOjG4MasAAy6tX.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOQa5ObYAAwe6Q?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOQa5ObYAAwe6Q.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOPTIBbIAAgfE8?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOPTIBbIAAgfE8.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOvAuJbIAEq1Ws?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOvAuJbIAEq1Ws.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOu-AobsAA290g?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOu-AobsAA290g.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOjRzYaUAAaFp-?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOjRzYaUAAaFp-.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOkeI_acAAt_eV?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOkeI_acAAt_eV.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F4yKHDCWEAIdfTq?format=jpg&name=large",
+        "filename": "midjourney_v5/F4yKHDCWEAIdfTq.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F4yKHDAW8AA-5S1?format=jpg&name=large",
+        "filename": "midjourney_v5/F4yKHDAW8AA-5S1.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOJKpdbMAAj8Hl?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOJKpdbMAAj8Hl.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOJL-1bwAAbRU6?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOJL-1bwAAbRU6.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F1zTNZGWcAAo1Ng?format=jpg&name=large",
+        "filename": "midjourney_v5/F1zTNZGWcAAo1Ng.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F4yKHDGW4AQdaY9?format=jpg&name=large",
+        "filename": "midjourney_v5/F4yKHDGW4AQdaY9.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F7f7q7wW8AAss_Z?format=jpg&name=large",
+        "filename": "midjourney_v5/F7f7q7wW8AAss_Z.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GBk0d0AXEAARX1K?format=jpg&name=large",
+        "filename": "midjourney_v5/GBk0d0AXEAARX1K.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F7bUzcEXoAAoyK4?format=jpg&name=large",
+        "filename": "midjourney_v5/F7bUzcEXoAAoyK4.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCjbdYlX0AABWkD?format=jpg&name=large",
+        "filename": "midjourney_v5/GCjbdYlX0AABWkD.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F5iY60XWEAAMNtW?format=jpg&name=large",
+        "filename": "midjourney_v5/F5iY60XWEAAMNtW.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GBSe68ta4AAKtrD?format=jpg&name=large",
+        "filename": "midjourney_v5/GBSe68ta4AAKtrD.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOOSF-bEAANlBi?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOOSF-bEAANlBi.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F2R7H50W0AAS9ha?format=jpg&name=large",
+        "filename": "midjourney_v5/F2R7H50W0AAS9ha.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCP-EEUagAAgAMv?format=jpg&name=large",
+        "filename": "midjourney_v5/GCP-EEUagAAgAMv.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOJNW6aAAA3gp4?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOJNW6aAAA3gp4.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/FsUlvXMXgA0oV2B?format=jpg&name=large",
+        "filename": "midjourney_v5/FsUlvXMXgA0oV2B.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOjFY8bQAEJ4He?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOjFY8bQAEJ4He.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOPUhcbQAAKPhw?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOPUhcbQAAKPhw.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOO_BgaQAACbpC?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOO_BgaQAACbpC.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOOT1nbYAAXc0i?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOOT1nbYAAXc0i.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F9rejMpXoAAEbU1?format=jpg&name=large",
+        "filename": "midjourney_v5/F9rejMpXoAAEbU1.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOOVaFbkAAL3jY?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOOVaFbkAAL3jY.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F5_GrE_WsAAO2wj?format=jpg&name=large",
+        "filename": "midjourney_v5/F5_GrE_WsAAO2wj.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F7rAsA0WcAASBUl?format=jpg&name=large",
+        "filename": "midjourney_v5/F7rAsA0WcAASBUl.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCO3yZYbYAA5i6F?format=jpg&name=large",
+        "filename": "midjourney_v5/GCO3yZYbYAA5i6F.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCQD8ZZbYAA0byW?format=jpg&name=large",
+        "filename": "midjourney_v5/GCQD8ZZbYAA0byW.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/FsMnwWoagAA7vFF?format=jpg&name=large",
+        "filename": "midjourney_v5/FsMnwWoagAA7vFF.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCO3zr4bUAAc8aQ?format=jpg&name=large",
+        "filename": "midjourney_v5/GCO3zr4bUAAc8aQ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F7WdJ3wXIAAldB8?format=jpg&name=large",
+        "filename": "midjourney_v5/F7WdJ3wXIAAldB8.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/FsUlvXMWYAAN6Fy?format=jpg&name=large",
+        "filename": "midjourney_v5/FsUlvXMWYAAN6Fy.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCQD4tIawAAlb7O?format=jpg&name=large",
+        "filename": "midjourney_v5/GCQD4tIawAAlb7O.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOkfQmaEAA4ofF?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOkfQmaEAA4ofF.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOu_ZIb0AA1ONx?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOu_ZIb0AA1ONx.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-ZcMY9bQAArkcf?format=jpg&name=large",
+        "filename": "midjourney_v5/F-ZcMY9bQAArkcf.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F30-AsbXwAcSz7g?format=jpg&name=large",
+        "filename": "midjourney_v5/F30-AsbXwAcSz7g.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/FzoralZagAAIIT5?format=jpg&name=large",
+        "filename": "midjourney_v5/FzoralZagAAIIT5.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F36BptrWAAA6G6G?format=jpg&name=large",
+        "filename": "midjourney_v5/F36BptrWAAA6G6G.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F-L3rNrWEAAnzSB?format=jpg&name=large",
+        "filename": "midjourney_v5/F-L3rNrWEAAnzSB.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/FsUlvXMXgBETkUR?format=jpg&name=large",
+        "filename": "midjourney_v5/FsUlvXMXgBETkUR.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GB5RG3dagAMIvPt?format=jpg&name=large",
+        "filename": "midjourney_v5/GB5RG3dagAMIvPt.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GBk0dzwWoAEUcUG?format=jpg&name=large",
+        "filename": "midjourney_v5/GBk0dzwWoAEUcUG.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCfBZ1eaEAAqR7v?format=jpg&name=large",
+        "filename": "midjourney_v5/GCfBZ1eaEAAqR7v.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOQZfTbcAA0Ghf?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOQZfTbcAA0Ghf.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F5MC0LcWAAAVqZ_?format=jpg&name=large",
+        "filename": "midjourney_v5/F5MC0LcWAAAVqZ_.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F430NotXsAE6v0Q?format=jpg&name=large",
+        "filename": "midjourney_v5/F430NotXsAE6v0Q.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F5gFw0wXUAAEDsl?format=jpg&name=large",
+        "filename": "midjourney_v5/F5gFw0wXUAAEDsl.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GBga3pAXMAAhJad?format=jpg&name=large",
+        "filename": "midjourney_v5/GBga3pAXMAAhJad.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/F_tYMPsb0AAg8l-?format=jpg&name=large",
+        "filename": "midjourney_v5/F_tYMPsb0AAg8l-.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GCOQcKBaAAAAbXz?format=jpg&name=large",
+        "filename": "midjourney_v5/GCOQcKBaAAAAbXz.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F5ZiAH_XQAAtldJ?format=jpg&name=large",
+        "filename": "midjourney_v5/F5ZiAH_XQAAtldJ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/FsTbiGeWwAE_joF?format=jpg&name=large",
+        "filename": "real/FsTbiGeWwAE_joF.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/FsVZH00XsAUsy6l?format=jpg&name=large",
+        "filename": "real/FsVZH00XsAUsy6l.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnhOijaoAAfQxu?format=jpg&name=large",
+        "filename": "real/GGnhOijaoAAfQxu.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGggxrIW4AAeUy8?format=jpg&name=large",
+        "filename": "real/GGggxrIW4AAeUy8.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgIZqeXAAAAeWu?format=jpg&name=large",
+        "filename": "real/GGgIZqeXAAAAeWu.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgmIauasAAxaJU?format=jpg&name=large",
+        "filename": "real/GGgmIauasAAxaJU.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGhNa5dXUAADqgd?format=jpg&name=large",
+        "filename": "real/GGhNa5dXUAADqgd.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhW-OKXgAAYJxu?format=jpg&name=large",
+        "filename": "real/GGhW-OKXgAAYJxu.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/F_IJTPXbgAAJWSH?format=jpg&name=large",
+        "filename": "real/F_IJTPXbgAAJWSH.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/Fr2s9WSagAEHpJm?format=jpg&name=large",
+        "filename": "real/Fr2s9WSagAEHpJm.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnOs_cXEAAPrNL?format=jpg&name=large",
+        "filename": "real/GGnOs_cXEAAPrNL.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGg-o2jWIAAYIz8?format=jpg&name=large",
+        "filename": "real/GGg-o2jWIAAYIz8.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGYjFJrXAAAaSuJ?format=jpg&name=large",
+        "filename": "real/GGYjFJrXAAAaSuJ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGcfu8qbYAAE98p?format=jpg&name=large",
+        "filename": "real/GGcfu8qbYAAE98p.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGYQGBtXkAA6YhN?format=jpg&name=large",
+        "filename": "real/GGYQGBtXkAA6YhN.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGYh_jBW4AEgd-6?format=jpg&name=large",
+        "filename": "real/GGYh_jBW4AEgd-6.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgSkRwWQAAE876?format=jpg&name=large",
+        "filename": "real/GGgSkRwWQAAE876.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGhDppFXkAA5MmR?format=jpg&name=large",
+        "filename": "real/GGhDppFXkAA5MmR.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGhKWOOXgAATE2h?format=jpg&name=large",
+        "filename": "real/GGhKWOOXgAATE2h.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGcjOqJXIAABZZ0?format=jpg&name=large",
+        "filename": "real/GGcjOqJXIAABZZ0.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGggh2ZXcAAroaP?format=jpg&name=large",
+        "filename": "real/GGggh2ZXcAAroaP.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGkyaZjXwAAc5vu?format=jpg&name=large",
+        "filename": "real/GGkyaZjXwAAc5vu.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhMlnNXkAA8Prl?format=jpg&name=large",
+        "filename": "real/GGhMlnNXkAA8Prl.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/FsSxsQHXgAI_Y6H?format=jpg&name=large",
+        "filename": "real/FsSxsQHXgAI_Y6H.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGcwf27XsAAVNLP?format=jpg&name=large",
+        "filename": "real/GGcwf27XsAAVNLP.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGYYgrta0AAeiTU?format=jpg&name=large",
+        "filename": "real/GGYYgrta0AAeiTU.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnTj52XkAA-hHy?format=jpg&name=large",
+        "filename": "real/GGnTj52XkAA-hHy.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgx8bUXYAAqksT?format=jpg&name=large",
+        "filename": "real/GGgx8bUXYAAqksT.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGg8fqYboAAz5Fo?format=jpg&name=large",
+        "filename": "real/GGg8fqYboAAz5Fo.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGg8fXBbwAASa2v?format=jpg&name=large",
+        "filename": "real/GGg8fXBbwAASa2v.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnXSOMWgAAo9fj?format=jpg&name=large",
+        "filename": "real/GGnXSOMWgAAo9fj.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgWqUnXEAE_Ll0?format=jpg&name=large",
+        "filename": "real/GGgWqUnXEAE_Ll0.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/Dxd6NyHXcAMLXqO?format=jpg&name=large",
+        "filename": "real/Dxd6NyHXcAMLXqO.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhPs6UWUAANZRi?format=jpg&name=large",
+        "filename": "real/GGhPs6UWUAANZRi.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhxk5GXYAAOZOU?format=jpg&name=large",
+        "filename": "real/GGhxk5GXYAAOZOU.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnTImOakAAA0iA?format=jpg&name=large",
+        "filename": "real/GGnTImOakAAA0iA.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhxIQ1W8AA5WPj?format=jpg&name=large",
+        "filename": "real/GGhxIQ1W8AA5WPj.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGYY7RZWwAAMX_7?format=jpg&name=large",
+        "filename": "real/GGYY7RZWwAAMX_7.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhxxg-WYAA1izP?format=jpg&name=large",
+        "filename": "real/GGhxxg-WYAA1izP.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGYV773bwAAzaJu?format=jpg&name=large",
+        "filename": "real/GGYV773bwAAzaJu.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGl_DA4XkAADi36?format=jpg&name=large",
+        "filename": "real/GGl_DA4XkAADi36.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnX0gNXMAE7kr1?format=jpg&name=large",
+        "filename": "real/GGnX0gNXMAE7kr1.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhxDamXAAAqvAM?format=jpg&name=large",
+        "filename": "real/GGhxDamXAAAqvAM.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhxCRfXEAAFEMA?format=jpg&name=large",
+        "filename": "real/GGhxCRfXEAAFEMA.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/FsY-LjwWcAAQEId?format=jpg&name=large",
+        "filename": "real/FsY-LjwWcAAQEId.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/Fr3CQG1aUAIUMr_?format=jpg&name=large",
+        "filename": "real/Fr3CQG1aUAIUMr_.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgqbSIbsAAE2lB?format=jpg&name=large",
+        "filename": "real/GGgqbSIbsAAE2lB.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGnNv-6WoAECJWL?format=jpg&name=large",
+        "filename": "real/GGnNv-6WoAECJWL.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGcfu9HaUAAKZ7l?format=jpg&name=large",
+        "filename": "real/GGcfu9HaUAAKZ7l.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGnhGBsasAACnBA?format=jpg&name=large",
+        "filename": "real/GGnhGBsasAACnBA.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGhGbVDWUAAynjr?format=jpg&name=large",
+        "filename": "real/GGhGbVDWUAAynjr.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhyCfSWwAAuxfJ?format=jpg&name=large",
+        "filename": "real/GGhyCfSWwAAuxfJ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgWsxTW8AA0QHd?format=jpg&name=large",
+        "filename": "real/GGgWsxTW8AA0QHd.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGg8fgnacAA2h2q?format=jpg&name=large",
+        "filename": "real/GGg8fgnacAA2h2q.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhUXWmWAAA-kry?format=jpg&name=large",
+        "filename": "real/GGhUXWmWAAA-kry.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgCDylWsAA3aPa?format=jpg&name=large",
+        "filename": "real/GGgCDylWsAA3aPa.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnSuFgWIAAAxY3?format=jpg&name=large",
+        "filename": "real/GGnSuFgWIAAAxY3.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/FsPupW0WwBIZnxH?format=jpg&name=large",
+        "filename": "real/FsPupW0WwBIZnxH.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/FsII2EGWYAARBh2?format=jpg&name=large",
+        "filename": "real/FsII2EGWYAARBh2.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnge7gWQAAthma?format=jpg&name=large",
+        "filename": "real/GGnge7gWQAAthma.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/FrsW0KfWIAYM7qe?format=jpg&name=large",
+        "filename": "real/FrsW0KfWIAYM7qe.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGnhINbbkAALudo?format=jpg&name=large",
+        "filename": "real/GGnhINbbkAALudo.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGYjFcAbYAAW-cx?format=jpg&name=large",
+        "filename": "real/GGYjFcAbYAAW-cx.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGnhDtIbIAAzvzD?format=jpg&name=large",
+        "filename": "real/GGnhDtIbIAAzvzD.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhwfIgX0AA7ro6?format=jpg&name=large",
+        "filename": "real/GGhwfIgX0AA7ro6.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgqbRfbgAARIYn?format=jpg&name=large",
+        "filename": "real/GGgqbRfbgAARIYn.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhxoHmX0AApllq?format=jpg&name=large",
+        "filename": "real/GGhxoHmX0AApllq.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/FseUxhDacAIQAnJ?format=jpg&name=large",
+        "filename": "real/FseUxhDacAIQAnJ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGYbqeuboAAmqN1?format=jpg&name=large",
+        "filename": "real/GGYbqeuboAAmqN1.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGhya4lXAAApR8B?format=jpg&name=large",
+        "filename": "real/GGhya4lXAAApR8B.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGYa6Qua8AAbiLn?format=jpg&name=large",
+        "filename": "real/GGYa6Qua8AAbiLn.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhw-wmWoAAtgI2?format=jpg&name=large",
+        "filename": "real/GGhw-wmWoAAtgI2.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgTvwPXEAAcsW_?format=jpg&name=large",
+        "filename": "real/GGgTvwPXEAAcsW_.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnIxB_awAAuk8e?format=jpg&name=large",
+        "filename": "real/GGnIxB_awAAuk8e.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhPar8WsAADSoP?format=jpg&name=large",
+        "filename": "real/GGhPar8WsAADSoP.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGYav20WgAAg4C0?format=jpg&name=large",
+        "filename": "real/GGYav20WgAAg4C0.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGlPpTdXsAAMdhf?format=jpg&name=large",
+        "filename": "real/GGlPpTdXsAAMdhf.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgIZsdXwAAkqqi?format=jpg&name=large",
+        "filename": "real/GGgIZsdXwAAkqqi.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhx9QrWQAAcSTC?format=jpg&name=large",
+        "filename": "real/GGhx9QrWQAAcSTC.jpg"
+      },
+      {
+        "error": "HTTPError: 403 Client Error: Forbidden for url: https://pbs.twimg.com/media/GGhx2W3XkAAEA9H?format=jpg&name=large",
+        "filename": "real/GGhx2W3XkAAEA9H.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGgHpR4WIAAYVAZ?format=jpg&name=large",
+        "filename": "real/GGgHpR4WIAAYVAZ.jpg"
+      },
+      {
+        "error": "HTTPError: 404 Client Error: Not Found for url: https://pbs.twimg.com/media/GGnau9KbQAA5-j_?format=jpg&name=large",
+        "filename": "real/GGnau9KbQAA5-j_.jpg"
+      }
+    ],
+    "manifest_bytes": 1224028,
+    "manifest_sha256": "fd8008a6781e3feef632ce7250a6ece08d15457c1f903579c8b9a80da2a89f3f",
+    "model_scores_created": 0,
+    "relocation": {
+      "from": "project ignored ml/data",
+      "image_bytes_changed": 0,
+      "to": "external LaCie research store"
+    },
+    "role_counts": {
+      "CAL": 1034,
+      "DEVELOPMENT": 689
+    },
+    "schema_version": 1,
+    "source_list_bytes": 206017,
+    "source_list_sha256": "a40a374e5fdd9531b0927facf0e047f9e50c3a379936c37eec5e13bbd9a28188",
+    "source_list_url": "https://raw.githubusercontent.com/grip-unina/ClipBased-SyntheticImageDetection/main/data/synthwildx/list.csv",
+    "state": "e46_synthwildx_partial_unscored",
+    "successful_bytes": 553125164,
+    "successful_rows": 1723,
+    "type_counts": {
+      "dalle3": 396,
+      "firefly": 474,
+      "midjourney_v5": 435,
+      "real": 418
+    }
+  },
+  "truefake_facebook": null
+}

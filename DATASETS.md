@@ -1327,3 +1327,14 @@ final uses an independently constructed corpus passed through Facebook. Exact SH
 checks against all protected prior roles are mandatory before scoring. SynthWildX/TrueFake overlap,
 corrupt members and unavailable URLs must be excluded and disclosed before any model is loaded.
 At this pre-transfer checkpoint, both local payload counts and model-score counts are zero.
+
+SynthWildX acquisition subsequently followed the frozen official list exactly. Of 2,000 declared
+X CDN URLs, 1,723 returned structurally valid images and 277 persistently returned HTTP 403/404;
+no failed row was substituted. The valid payload is 553,125,164 bytes: DALL-E 3 396, Firefly 474,
+Midjourney v5 435 and REAL 418. The preassigned surviving roles are CAL 1,034 and DEVELOPMENT 689
+(CAL/DEVELOPMENT by type: DALL-E 3 237/159, Firefly 283/191, Midjourney 264/171, REAL 250/168).
+Two exact-payload duplicate groups remain pending the formal identity audit and cannot inflate a
+later result. Bytes were relocated unchanged from ignored local scratch to
+`/Volumes/LaCie/pixelproof-datasets/e46/synthwildx`; the path-corrected 1,224,028-byte unscored
+manifest SHA-256 is `fd8008a6781e3feef632ce7250a6ece08d15457c1f903579c8b9a80da2a89f3f`.
+No model was loaded and no score exists.

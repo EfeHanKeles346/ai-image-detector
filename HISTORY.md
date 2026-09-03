@@ -4202,3 +4202,14 @@ protected-overlap auditing. The first candidate comparison keeps both existing m
 and tests a global REAL-safe cut against a small quality-conditioned calibration inspired by the
 2026 QuAD work. No downloaded image or score exists at this checkpoint, and neither E45 nor the
 future TrueFake final may participate in fitting or selection.
+
+The official SynthWildX transfer then recovered 1,723 of 2,000 live X-hosted images, totaling
+553,125,164 bytes. The other 277 publisher URLs consistently returned 403/404 and were recorded
+rather than silently replaced. The surviving data still contains 418 REAL images and 1,305 AI
+images spread across DALL-E 3, Firefly and Midjourney v5; the score-blind role split leaves 1,034
+CAL and 689 DEVELOPMENT rows. A path-default mistake initially placed these ignored bytes under
+`ml/data`; it was caught before scoring, and all payloads were moved unchanged to the LaCie
+research store. Only absolute manifest paths and their receipt hash changed; image-byte changes
+were zero. The resulting unscored manifest is 1,224,028 bytes /SHA-256 `fd8008a...a89f3f`.
+Two exact duplicate groups are disclosed for the identity-audit stage. No detector has read the
+data yet.

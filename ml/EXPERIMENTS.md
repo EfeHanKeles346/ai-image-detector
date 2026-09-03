@@ -3418,3 +3418,9 @@ was scored or selected using model output.
   excessive protected overlap, CAL/DEVELOPMENT leakage or a failed development gate stops the
   claim. Passing the easier development source is not success; only transferred TrueFake results
   can support the new checkpoint, and they do not erase the archived E45 failure.
+- **Score-blind acquisition:** the immutable 206,017-byte publisher list matched SHA-256
+  `a40a374e...a28188`. Valid payload recovery is 1,723/2,000 rows (86.15%) /553,125,164 bytes; 277
+  rows are disclosed persistent 403/404 failures. Surviving CAL/DEVELOPMENT counts are 1,034/689,
+  including 250/168 REAL. All three AI generators retain at least 159 development rows. Two exact
+  hash groups are quarantined for the next identity audit. Manifest SHA-256 after external-store
+  relocation is `fd8008a...a89f3f`; image bytes changed by relocation: zero; scores created: zero.
