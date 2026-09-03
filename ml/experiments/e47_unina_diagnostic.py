@@ -55,7 +55,7 @@ def _checkout_head() -> str:
     return head
 
 
-def run(sync_every: int = 8) -> dict[str, Any]:
+def run(sync_every: int = 8, batch_size: int = 2) -> dict[str, Any]:
     if SCORES.exists() or REPORT.exists() or EVIDENCE.exists():
         raise FileExistsError("E47 UNINA diagnostic already complete; do not overwrite")
     identities = {
@@ -90,19 +90,33 @@ def run(sync_every: int = 8) -> dict[str, Any]:
     model = resnet50nodown(device, str(WEIGHTS))
     partial.parent.mkdir(parents=True, exist_ok=True)
     with torch.inference_mode(), partial.open("ab") as stream:
-        for index in range(len(scored), len(rows)):
-            row = rows[index]
-            path = Path(row["path"])
-            if _digest(path) != row["sha256"]:
-                raise ValueError(f"E47 UNINA payload changed: {row['record_id']}")
-            with Image.open(path) as opened:
-                value = float(model.apply(opened.convert("RGB")))
-            if not np.isfinite(value):
-                raise ValueError(f"non-finite UNINA logit: {row['record_id']}")
-            item = {"record_id": row["record_id"], "label": int(row["label"]),
-                    "source": row["source"], "score": value, "status": "ok"}
-            stream.write((json.dumps(item, sort_keys=True) + "\n").encode())
-            scored.append(item)
+        while len(scored) < len(rows):
+            start = len(scored)
+            first_size = (int(rows[start]["width"]), int(rows[start]["height"]))
+            stop = start + 1
+            while stop < min(start + batch_size, len(rows)):
+                if (int(rows[stop]["width"]), int(rows[stop]["height"])) != first_size:
+                    break
+                stop += 1
+            group = rows[start:stop]
+            tensors = []
+            for row in group:
+                path = Path(row["path"])
+                if _digest(path) != row["sha256"]:
+                    raise ValueError(f"E47 UNINA payload changed: {row['record_id']}")
+                with Image.open(path) as opened:
+                    tensors.append(model.transform(opened.convert("RGB")))
+            values = model(torch.stack(tensors).to(device)).flatten().cpu().numpy()
+            output = []
+            for row, value in zip(group, values, strict=True):
+                score = float(value)
+                if not np.isfinite(score):
+                    raise ValueError(f"non-finite UNINA logit: {row['record_id']}")
+                output.append({"record_id": row["record_id"], "label": int(row["label"]),
+                               "source": row["source"], "score": score, "status": "ok"})
+            for item in output:
+                stream.write((json.dumps(item, sort_keys=True) + "\n").encode())
+            scored.extend(output)
             if len(scored) % sync_every == 0 or len(scored) == len(rows):
                 stream.flush()
                 os.fsync(stream.fileno())
@@ -135,8 +149,9 @@ def run(sync_every: int = 8) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sync-every", type=int, default=8)
+    parser.add_argument("--batch-size", type=int, default=2)
     args = parser.parse_args()
-    print(json.dumps(run(args.sync_every), indent=2, sort_keys=True))
+    print(json.dumps(run(args.sync_every, args.batch_size), indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":
