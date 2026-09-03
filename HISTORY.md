@@ -4257,3 +4257,8 @@ The E43-S arm then completed all 1,708 SynthWildX rows with full coverage. Its 3
 resumable score-and-quality stream hashes to `8be0aefd...ce88d`. No DDA, fusion, calibration or
 TrueFake result existed at this checkpoint, preserving a clean recovery point before the heavier
 specialist run.
+
+Official DDA then completed the matching 1,708-row SynthWildX stream with full coverage. Its
+268,844-byte output hashes to `a7fbd7e2...257eda`. Both expensive inference arms are now safely
+recoverable and immutable; fusion/calibration statistics remain unopened, and the TrueFake final
+still has zero scores.

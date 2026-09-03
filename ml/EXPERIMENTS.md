@@ -3453,3 +3453,6 @@ was scored or selected using model output.
 - **Generalist arm:** E43-S scored all 1,708 rows with 100% coverage while also recording the three
   frozen quality proxies. The 394,197-byte stream SHA-256 is `8be0aefd...ce88d`. The specialist,
   fusion and candidate comparison remain unopened; no TrueFake row was read.
+- **Specialist arm:** official DDA scored the same 1,708 identities with 100% coverage. The
+  268,844-byte stream SHA-256 is `a7fbd7e2...257eda`. Both immutable arms now exist; no fusion,
+  calibration, DEVELOPMENT metric or TrueFake score has yet been produced.
