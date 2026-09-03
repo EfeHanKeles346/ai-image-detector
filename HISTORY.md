@@ -4191,3 +4191,14 @@ it was learned from the final, but it changes the next engineering decision: do 
 a new backbone. Obtain a separate in-the-wild CAL population to learn transfer-safe calibration,
 lock a different untouched FINAL, and keep E45 only as archived diagnosis. Detailed diagnostic
 SHA-256 is `2ba9234a...41164`.
+
+E46-A was then frozen before any new image transfer. The recovery no longer jumps directly to a
+larger backbone: the official 2,000-row SynthWildX list is assigned only to calibration and
+development, while the independent 3.9 GB TrueFake Facebook partition is reserved as untouched
+final material. The scientific test is deliberately cross-platform—learn the operating behavior
+from X, then transfer it unchanged to Facebook. SynthWildX will be split deterministically before
+scoring; TrueFake will receive a score-blind balanced 2,000-row manifest after integrity and
+protected-overlap auditing. The first candidate comparison keeps both existing model arms fixed
+and tests a global REAL-safe cut against a small quality-conditioned calibration inspired by the
+2026 QuAD work. No downloaded image or score exists at this checkpoint, and neither E45 nor the
+future TrueFake final may participate in fitting or selection.

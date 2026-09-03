@@ -464,6 +464,34 @@ it before paying for another architecture or training run.
       MediaEval/ITW-SM, RR, DDA-COCO and every earlier role. If no such final is legally available,
       E46 may be reported only as development progress, never as project success.
 
+#### E46-A — cross-platform calibration recovery (frozen before transfer, 2026-09-03)
+
+- [x] Select two role-separated primary sources before downloading any image. Use the official
+      GRIP-UNINA **SynthWildX** list (2,000 X-hosted images: 500 REAL, and 500 each DALL-E 3,
+      Midjourney v5 and Firefly) only as `E46_CAL_DEV`. Reserve the official UNITN **TrueFake
+      Facebook** distribution (advertised 3.9 GB; one Facebook-processed copy of the paper's
+      60,000-image shared subset) as `E46_UNTOUCHED_FINAL`. Never exchange these roles.
+- [ ] Acquire SynthWildX from the publisher's immutable `list.csv` first. Preserve URL/filename/
+      label metadata, per-file hashes and failures; do not redistribute social-media bytes. Split
+      identities deterministically and label-stratified into 60% CAL / 40% DEVELOPMENT before
+      model scoring. Do not silently replace dead URLs with lookalike images.
+- [ ] Acquire the TrueFake Facebook archive with resume into the external LaCie store, record the
+      exact byte count and SHA-256, then inventory it without extraction. Before any score, freeze
+      a deterministic, class-balanced 2,000-row final manifest: 1,000 REAL balanced across the
+      available real origins and 1,000 AI balanced as closely as possible across generator
+      families. Exclude corrupt files and exact/perceptual overlaps with protected earlier roles;
+      disclose every exclusion. No label or score may influence selection.
+- [ ] On SynthWildX CAL only, compare the unchanged official DDA arm, frozen E44 fusion, a global
+      REAL-safe cut, and a small QuAD-inspired quality-conditioned calibration. Method choice may
+      inspect only CAL. DEVELOPMENT must retain REAL FP <= 20%, worst available REAL group FP <=
+      25%, AI recall >= 80%, and worst AI-generator recall >= 60%; otherwise preserve the failure.
+      Keep a simpler global cut when the quality model does not materially improve both safety and
+      AI retention. Do not retrain a backbone in this stage.
+- [ ] Freeze the chosen artifact, threshold(s), selective band and ten E45-style gates before
+      opening TrueFake labels/scores. Score the 2,000-row Facebook final exactly once and report
+      source/generator metrics plus bootstrap intervals. E45 remains archived and prohibited;
+      passing TrueFake does not rewrite the E45 failure, and both are required in the final claim.
+
 ### F3 — recording and stop rules
 
 - [x] Record every source/byte/label fact in `DATASETS.md`, every measurement or failed hypothesis

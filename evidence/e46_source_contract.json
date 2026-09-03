@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "state": "e46_sources_frozen_before_transfer",
+  "frozen_at": "2026-09-03",
+  "development": {
+    "name": "SynthWildX",
+    "role": "E46_CAL_DEV",
+    "publisher": "GRIP-UNINA",
+    "manifest_url": "https://raw.githubusercontent.com/grip-unina/ClipBased-SyntheticImageDetection/main/data/synthwildx/list.csv",
+    "declared_rows": 2000,
+    "declared_classes": {
+      "real": 500,
+      "dalle3": 500,
+      "midjourney_v5": 500,
+      "firefly": 500
+    },
+    "split": {
+      "algorithm": "sha256(namespace|typ|filename), first 60% CAL, remainder DEVELOPMENT",
+      "namespace": "E46_SYNTHWILDX_ROLE_V1"
+    },
+    "redistribution": "external research bytes only; dataset README does not grant image redistribution"
+  },
+  "final": {
+    "name": "TrueFake Facebook",
+    "role": "E46_UNTOUCHED_FINAL",
+    "publisher": "MMLab UNITN",
+    "archive_url": "https://drive.usercontent.google.com/download?id=10cQq48JtpRZgrHuckMyeFOwPvZZHDMXd",
+    "advertised_filename": "Facebook.tar.gz",
+    "advertised_size": "3.9G",
+    "declared_rows": 60000,
+    "declared_classes": {
+      "real": 20000,
+      "diffusion": 25000,
+      "gan": 15000
+    },
+    "future_manifest": {
+      "rows": 2000,
+      "real": 1000,
+      "ai": 1000,
+      "algorithm": "score-blind SHA-256 rank, balanced across available publisher origins/generators"
+    },
+    "license": "CC-BY-4.0 release repository"
+  },
+  "hard_boundaries": [
+    "E45 is prohibited from all fitting and selection",
+    "SynthWildX can never become final evidence",
+    "TrueFake labels or scores cannot alter the candidate or final row selection",
+    "no social-media image bytes are committed to git",
+    "all failures and protected overlaps are disclosed"
+  ],
+  "downloaded_image_bytes": 0,
+  "model_scores_created": 0
+}

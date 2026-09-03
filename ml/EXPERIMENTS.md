@@ -3395,3 +3395,26 @@ was scored or selected using model output.
 - **Decision:** do not retrain a backbone first and do not deploy the post-hoc cut. E46 needs a
   distinct, licensed in-the-wild CAL population to estimate transfer-safe cuts, plus another
   untouched FINAL. Detailed diagnostic SHA-256 is `2ba9234a...41164`.
+
+### E46-A — cross-platform calibration recovery pre-registration
+
+- **Causal hypothesis:** E45 failed mainly because a development-domain fusion cut transferred
+  poorly to social-media scores, not because both encoders lost ranking information. A cut or
+  compact quality-conditioned calibration learned on an independent social population should
+  recover REAL safety while preserving enough modern-AI recall.
+- **Development role:** official SynthWildX `list.csv`, 2,000 X-hosted rows (500 REAL; 500 each
+  DALL-E 3, Midjourney v5, Firefly), deterministically split by label/generator into 60% CAL and
+  40% DEVELOPMENT before score creation. Unavailable URLs are failures, never substitutions.
+- **Candidate comparison:** unchanged official DDA, frozen E44 fusion, a CAL-only global REAL-safe
+  cut, and a compact QuAD-inspired quality-conditioned calibration. No backbone retraining.
+  Prefer the simplest method unless the quality model materially improves REAL safety and AI
+  retention on DEVELOPMENT. Minimum development gates: pooled REAL FP <=20%, worst reported REAL
+  group FP <=25%, pooled AI recall >=80%, worst generator recall >=60%.
+- **Untouched proof:** official TrueFake Facebook archive, advertised 3.9 GB and containing 60,000
+  Facebook-processed rows. After byte/structure/overlap audit, freeze a score-blind balanced sample
+  of 1,000 REAL and 1,000 AI across available origins/generators. Bind candidate and E45-style gates
+  before the one permitted final score. E45 remains consumed and cannot repair E46.
+- **Stop rules:** source-list drift, ambiguous labels, unacceptable licence, unrecoverable archive,
+  excessive protected overlap, CAL/DEVELOPMENT leakage or a failed development gate stops the
+  claim. Passing the easier development source is not success; only transferred TrueFake results
+  can support the new checkpoint, and they do not erase the archived E45 failure.

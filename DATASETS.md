@@ -1300,3 +1300,30 @@ combined 14,170-row local score stream is 4,192,797 bytes /SHA-256
 `8398f763b44f97b3e7ca426b74dd665d72850b740b2ecd2fb6ebbab30df1ccc4`. These roles can never be
 reused as independent final evidence. No new source image was downloaded, copied or relabelled;
 ITW-SM remains untouched with zero local payload images and zero scores.
+
+## E46 cross-platform recovery sources — frozen before transfer (2026-09-03)
+
+E46 separates model development from final proof with two publisher-controlled sources. The
+calibration/development source is **SynthWildX**, published in the official GRIP-UNINA repository
+for *Raising the Bar of AI-generated Image Detection with CLIP*. Its immutable source list is
+`https://raw.githubusercontent.com/grip-unina/ClipBased-SyntheticImageDetection/main/data/synthwildx/list.csv`.
+The list declares 2,000 X-hosted images: 500 REAL and 500 each from DALL-E 3, Midjourney v5 and
+Firefly. It is assigned once to `E46_CAL_DEV`; it can never become final evidence. The repository
+code is Apache-2.0, but the social-media images have no explicit redistribution grant in the
+dataset README. Therefore image bytes stay in the external research store, are not committed or
+redistributed, and dead publisher URLs may only be recorded as failures.
+
+The untouched final source is the **TrueFake Facebook** partition from the official UNITN IJCNN
+2025 release: `https://drive.usercontent.google.com/download?id=10cQq48JtpRZgrHuckMyeFOwPvZZHDMXd`.
+Google Drive advertises `Facebook.tar.gz` as 3.9 GB. The paper states that each platform contains
+the same 60,000-source subset after native API sharing: 20,000 REAL, 25,000 diffusion-generated and
+15,000 GAN-generated images. The release repository is CC-BY-4.0. The archive is assigned to
+`E46_UNTOUCHED_FINAL`; only a score-blind, hash-selected 2,000-row balanced manifest will be scored
+after archive integrity, structure, labels and protected-overlap checks. No TrueFake score may
+alter model, calibration, threshold, abstention band, gate or row selection.
+
+The two sources differ in both origin and transport: development uses naturally posted X images;
+final uses an independently constructed corpus passed through Facebook. Exact SHA-256 and dHash
+checks against all protected prior roles are mandatory before scoring. SynthWildX/TrueFake overlap,
+corrupt members and unavailable URLs must be excluded and disclosed before any model is loaded.
+At this pre-transfer checkpoint, both local payload counts and model-score counts are zero.
