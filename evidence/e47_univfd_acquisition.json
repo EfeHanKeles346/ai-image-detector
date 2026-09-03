@@ -1,0 +1,30 @@
+{
+  "backbone": {
+    "bytes": 932768134,
+    "path": "/Volumes/LaCie/pixelproof-datasets/e47/models/ViT-L-14.pt",
+    "sha256": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+    "source": "https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt"
+  },
+  "boundary": "Frozen pretrained inference artifacts only; no 72 GB training corpus was acquired.",
+  "head": {
+    "bytes": 4083,
+    "path": "ml/external/UniversalFakeDetect/pretrained_weights/fc_weights.pth",
+    "sha256": "477100745713bcc957beb2b40859536859b6483fd6301b3b9293151b194c7847"
+  },
+  "license": {
+    "name": "MIT",
+    "sha256": "923dbc0fe040cc826122491e98b20d6f401e510d50c8b666de908e59ebf2f2b2"
+  },
+  "repository": {
+    "commit": "030495aea3300a8b54c0ec37ec7fe1dd7e63c619",
+    "readme_sha256": "b349f2ab1f882023427b5863d2ede50f6804287db482afe04053d8fbb3666e6a",
+    "url": "https://github.com/WisconsinAIVision/UniversalFakeDetect"
+  },
+  "schema_version": 1,
+  "smoke_test": {
+    "finite_outputs": true,
+    "performance_metrics_opened": false,
+    "rows": 2
+  },
+  "state": "e47_univfd_artifacts_acquired_and_verified"
+}

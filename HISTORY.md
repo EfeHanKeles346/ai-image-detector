@@ -4321,3 +4321,10 @@ Facebook-transported StyleGAN/2/3 at a diagnostic 10% REAL false-positive cut. O
 E46 recovers 60 of 475 misses but raises REAL false accusations to 15.1% and leaves AI recall at
 58.5%. Because all three frozen unlock conditions fail, the arm is retired from E47. The next
 permitted action is an official frozen GAN specialist, not another threshold adjustment.
+
+E47-R2 chose official UniversalFakeDetect rather than retraining another local CNN. Its repository,
+MIT licence, 4 KB ProGAN-trained linear head and 932.8 MB OpenAI CLIP ViT-L/14 backbone were each
+hash-pinned; the advertised 72 GB training corpus was deliberately skipped. The old code needed
+two non-semantic compatibility shims for removed text-only dependencies, after which a two-image
+smoke test returned finite outputs. No performance score was inspected. The unchanged R1 unlock
+rule will decide whether this arm earns a new calibration/development population.

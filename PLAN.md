@@ -570,6 +570,10 @@ source >=60% on a genuinely new final.
       (prefer UnivFD's frozen CLIP linear head or UNINA's compression-trained GAN detector) under
       its licence; do not download the 72 GB training corpus. First run the same consumed-data
       diagnostic and reject any arm that merely increases REAL accusations.
+      UnivFD repository is pinned at `030495a...c619`; its 4,083-byte head hashes to
+      `47710074...c7847`. The official 932,768,134-byte CLIP ViT-L/14 backbone hashes to the
+      publisher-declared `b8cca3fd...03836`. A two-row hidden-score smoke test passes; no metric
+      has been opened. Apply the R1 unlock rule unchanged before admitting this arm to R3.
 - [ ] **R3 — new CAL/DEVELOPMENT, identity-separated.** Build a compact source-balanced pool from
       data that was never in E46 final: at least two independent camera-real sources, StyleGAN
       generations, and the modern diffusion generators already protected by E46. Split by source,

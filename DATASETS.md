@@ -1384,3 +1384,11 @@ E47-R1 reused the exact consumed 2,000-row final only for post-final architectur
 no source image and changed no role. The legacy GenImage-ResNet diagnostic stream is 297,858 bytes
 /SHA-256 `e4bbcde82d810e95a220ec3265052c22356a1d77db08f24484c84ced06c7cb27` under the external
 E47 store. These scores are also consumed and cannot support a final claim.
+
+E47-R2 acquired no image dataset. It pinned the official MIT-licensed UniversalFakeDetect code at
+commit `030495aea3300a8b54c0ec37ec7fe1dd7e63c619`, its 4,083-byte ProGAN-trained linear head at
+SHA-256 `477100745713bcc957beb2b40859536859b6483fd6301b3b9293151b194c7847`, and the official
+932,768,134-byte OpenAI CLIP ViT-L/14 backbone at publisher SHA-256
+`b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836`. The 72 GB training
+corpus and 19 GB benchmark were intentionally not downloaded. Model bytes live on LaCie; only the
+small reproducibility receipt is committed.

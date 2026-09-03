@@ -3514,3 +3514,16 @@ was scored or selected using model output.
   It recovers 60/475 E46 misses, but OR-fusion reaches only 58.5% AI recall and raises REAL
   false-AI from 5.6% to 15.1%. All three pre-registered unlock checks fail. Stream SHA-256 is
   `e4bbcde8...c7cb27`; report SHA-256 is `bcf7239e...b465de4`.
+
+### E47-R2 — official UnivFD specialist acquisition and score lock
+
+- **Rationale:** UnivFD freezes CLIP ViT-L/14 and learns only a linear head from ProGAN, explicitly
+  targeting cross-generator asymmetry. It is therefore a materially different representation from
+  E43-S/DDA and the failed GenImage CNN.
+- **Artifacts:** official repository commit `030495a...c619`; MIT licence; linear-head SHA-256
+  `47710074...c7847`; OpenAI CLIP backbone SHA-256 `b8cca3fd...03836`. The 72 GB training set was
+  not acquired. A two-row smoke test produced finite hidden scores but opened no performance
+  metric.
+- **Frozen diagnostic:** original official center-crop/CLIP normalization and sigmoid head output;
+  exact consumed E46 identities; the unchanged R1 10%-REAL diagnostic cut and unlock rule. Scores
+  can select only whether this representation deserves new R3 data, never repair E46.
