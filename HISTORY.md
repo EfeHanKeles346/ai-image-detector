@@ -4294,3 +4294,7 @@ the independent final still contains zero model scores.
 E43-S then scored all 2,000 contracted TrueFake rows with 100% coverage. The immutable 298,721-byte
 generalist stream hashes to `43eb1562...b5f25c`. DDA and fused results remained unopened, so this
 checkpoint contains no partial interpretation of the final.
+
+Official DDA subsequently completed all 2,000 matching TrueFake rows. Its 298,587-byte stream
+hashes to `13947caf...878d0b`. Both costly arms are now complete and independently recoverable;
+the fusion report and every final metric are still unopened pending this commit.

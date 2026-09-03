@@ -3481,3 +3481,6 @@ was scored or selected using model output.
 - **Final generalist arm:** E43-S completed 2,000/2,000 TrueFake rows with full coverage. The
   298,721-byte stream SHA-256 is `43eb1562...b5f25c`. DDA and fused metrics remain unopened; this
   checkpoint records inference output only, not a partial final claim.
+- **Final specialist arm:** official DDA completed the same 2,000 rows with full coverage. Its
+  298,587-byte stream SHA-256 is `13947caf...878d0b`. Both final arms are immutable and complete;
+  fusion, metrics and gates remain unopened until this checkpoint is committed.
