@@ -504,6 +504,8 @@ it before paying for another architecture or training run.
       Score contract now frozen before model load at SHA-256 `b3fe31a3...5c98c`, binding all 1,708
       clean rows, both model weights, the old fusion, three allowed methods and all development
       gates. CAL is 1,024 rows; DEVELOPMENT is 684; score count is zero.
+      E43-S scoring is now complete at 1,708/1,708 rows; its resumable stream SHA-256 is
+      `8be0aefd...ce88d`. Official-DDA and all fused/calibrated results remain unopened.
 - [ ] Freeze the chosen artifact, threshold(s), selective band and ten E45-style gates before
       opening TrueFake labels/scores. Score the 2,000-row Facebook final exactly once and report
       source/generator metrics plus bootstrap intervals. E45 remains archived and prohibited;

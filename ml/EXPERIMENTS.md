@@ -3450,3 +3450,6 @@ was scored or selected using model output.
   SynthWildX manifest, E43-S, official DDA and E44 fusion hashes, CAL/DEVELOPMENT roles, three
   pre-registered candidate methods, three inexpensive quality proxies and the four development
   gates. Counts are CAL 1,024 /DEVELOPMENT 684; model scores remain zero. TrueFake is not read.
+- **Generalist arm:** E43-S scored all 1,708 rows with 100% coverage while also recording the three
+  frozen quality proxies. The 394,197-byte stream SHA-256 is `8be0aefd...ce88d`. The specialist,
+  fusion and candidate comparison remain unopened; no TrueFake row was read.

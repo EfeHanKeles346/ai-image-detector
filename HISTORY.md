@@ -4252,3 +4252,8 @@ artifacts, 1,024 CAL and 684 DEVELOPMENT roles, three allowed calibration candid
 development gates. The quality experiment may use only log minimum dimension, log bits-per-pixel
 and mean neighboring-pixel difference; it cannot introduce a hidden new model. TrueFake remains
 unread and all score streams are still empty.
+
+The E43-S arm then completed all 1,708 SynthWildX rows with full coverage. Its 394,197-byte
+resumable score-and-quality stream hashes to `8be0aefd...ce88d`. No DDA, fusion, calibration or
+TrueFake result existed at this checkpoint, preserving a clean recovery point before the heavier
+specialist run.
