@@ -1,4 +1,5 @@
 from experiments.e47_gan_recovery import analyze
+from experiments.e47_univfd_diagnostic import validate_prefix
 
 
 def _row(record_id, label, source, score):
@@ -40,3 +41,15 @@ def test_analysis_rejects_weak_gan_arm():
 
     assert result["unlock"]["passed"] is False
     assert result["unlock"]["mean_stylegan_recall_gte_0_50"] is False
+
+
+def test_univfd_resume_prefix_must_preserve_identity_and_score():
+    rows = [{"record_id": "a", "label": 0, "source": "camera"}]
+    validate_prefix([_row("a", 0, "camera", 0.2)], rows)
+
+    try:
+        validate_prefix([_row("wrong", 0, "camera", 0.2)], rows)
+    except ValueError as error:
+        assert "changed" in str(error)
+    else:
+        raise AssertionError("identity mismatch must fail closed")
