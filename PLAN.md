@@ -518,7 +518,7 @@ it before paying for another architecture or training run.
       93.81%, worst-generator recall 84.82%. The optional selective diagnostic has 96.49% coverage
       but 94.39% covered accuracy, just below the future final 95% gate; do not repair it from
       DEVELOPMENT.
-- [ ] Freeze the chosen artifact, threshold(s), selective band and ten E45-style gates before
+- [x] Freeze the chosen artifact, threshold(s), selective band and ten E45-style gates before
       opening TrueFake labels/scores. Score the 2,000-row Facebook final exactly once and report
       source/generator metrics plus bootstrap intervals. E45 remains archived and prohibited;
       passing TrueFake does not rewrite the E45 failure, and both are required in the final claim.
@@ -527,7 +527,12 @@ it before paying for another architecture or training run.
       all ten gates and 10,000 source-stratified bootstrap samples. Final score count is zero.
       Final generalist arm is complete at 2,000/2,000 rows; stream SHA-256 is
       `43eb1562...b5f25c`. Official DDA also completed 2,000/2,000 at SHA-256
-      `13947caf...878d0b`. The fused result and every final metric remain unopened.
+      `13947caf...878d0b`. The fused result then opened exactly once. E46 failed 5/10 gates:
+      AUC 0.81548, balanced accuracy 0.73450, REAL false-AI 5.60%, AI recall 52.50%, worst REAL
+      source false-AI 10.20%, and worst AI-source recall 1.60%. StyleGAN/2/3 recall is
+      1.60%/1.60%/3.20%, which isolates the principal blind spot. Coverage is 100%; the selective
+      policy covers 95.85% but is only 74.86% correct. This final is consumed forever: no threshold
+      repair, row removal, refit or retry is allowed.
 
 ### F3 — recording and stop rules
 
@@ -535,9 +540,11 @@ it before paying for another architecture or training run.
       in `ml/EXPERIMENTS.md`, and every decision/result in append-only `HISTORY.md`. Commit the
       source contract before transfer and each completed scientific gate afterward; push only
       verified checkpoints with green CI.
-- [ ] If B-Free URLs are too incomplete, the RR server cannot resume, or ITW-SM remains gated,
+- [x] If B-Free URLs are too incomplete, the RR server cannot resume, or ITW-SM remains gated,
       stop with the exact external blocker. Do not replace a difficult test with an easier dataset
       after seeing scores and do not manufacture a “pass” by lowering the gate.
+      E46 reached an independent final rather than an availability blocker; its failed result is
+      preserved. Any E47 improvement must use a new development source and a new untouched final.
 
 ## Current execution slice — R1c threshold repair and external benchmark (2026-08-27)
 

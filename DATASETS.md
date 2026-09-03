@@ -1371,3 +1371,11 @@ reserve. The final manifest therefore reaches all frozen quotas without replacem
 payloads remain in the external candidate pool; non-selected reserve files are never model-scored.
 The 1,442,089-byte `E46_UNTOUCHED_FINAL` manifest SHA-256 is
 `4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b`; score count is zero.
+
+The bound 2,000-row TrueFake Facebook final was consumed exactly once on 2026-09-03. All rows
+decoded and scored, so coverage is 100%; no member was removed, repaired or replaced after model
+access. The fused score stream is 510,939 bytes /SHA-256
+`6a51a9b11163fc8bb45889e38cc400a1b210cff7bcd6f36d6a760edc1fa68c97`; the external report is
+6,754 bytes /SHA-256 `4b66bfa94fd82ca885723a439d62330a719dd3cfa4f65bf9a020b523ea3666a7`.
+This manifest and all 3,500 decoded reserve candidates are now consumed diagnostic evidence and
+must never be reassigned to CAL, DEVELOPMENT or another independent final.

@@ -4298,3 +4298,13 @@ checkpoint contains no partial interpretation of the final.
 Official DDA subsequently completed all 2,000 matching TrueFake rows. Its 298,587-byte stream
 hashes to `13947caf...878d0b`. Both costly arms are now complete and independently recoverable;
 the fusion report and every final metric are still unopened pending this commit.
+
+E46 then opened its independent final exactly once, with every previously frozen row and decision
+rule intact. The result is a valid failure: 100% coverage, 0.8155 AUC, 0.7345 balanced accuracy,
+5.60% REAL false accusations and 52.50% AI recall; 5 of 10 gates pass. Diffusion performance ranges
+from 51.2% on SD3 to 100% on SD1.5, while StyleGAN/2/3 collapse to 1.6%/1.6%/3.2% recall. Thus the
+new cross-platform calibration fixed the earlier REAL-safety problem but exposed a different,
+severe GAN-family blind spot. The selective band does not rescue it (95.85% coverage, 74.86%
+covered accuracy). Evidence SHA-256 is `e7e14fdf...d7a7ed`; no threshold repair, sample removal,
+refit or retry will be performed on this consumed final. E47, if pursued, must obtain separate
+GAN-aware development evidence and a genuinely new final.

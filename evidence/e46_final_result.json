@@ -1,0 +1,285 @@
+{
+  "binary_metrics": {
+    "accuracy_counting_failures_wrong": 0.7345,
+    "ai_recall": 0.525,
+    "balanced_accuracy": 0.7344999999999999,
+    "brier_nontarget_real": 0.08234569944119306,
+    "brier_target_ai": 0.2941309718271766,
+    "confusion": {
+      "fn": 475,
+      "fp": 56,
+      "tn": 944,
+      "tp": 525
+    },
+    "counts": {
+      "ai_succeeded": 1000,
+      "failed": 0,
+      "real_succeeded": 1000,
+      "succeeded": 2000,
+      "total": 2000
+    },
+    "coverage": 1.0,
+    "eer": 0.278,
+    "per_group": [
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 0,
+          "fp": 5,
+          "tn": 495,
+          "tp": 0
+        },
+        "count": 500,
+        "label": 0,
+        "real_false_positive_rate": 0.01,
+        "source": "FFHQ"
+      },
+      {
+        "ai_recall": 0.664,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 42,
+          "fp": 0,
+          "tn": 0,
+          "tp": 83
+        },
+        "count": 125,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FLUX.1"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 0,
+          "fp": 51,
+          "tn": 449,
+          "tp": 0
+        },
+        "count": 500,
+        "label": 0,
+        "real_false_positive_rate": 0.102,
+        "source": "FORLAB"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 125
+        },
+        "count": 125,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StableDiffusion1.5"
+      },
+      {
+        "ai_recall": 0.968,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 4,
+          "fp": 0,
+          "tn": 0,
+          "tp": 121
+        },
+        "count": 125,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StableDiffusion2"
+      },
+      {
+        "ai_recall": 0.512,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 61,
+          "fp": 0,
+          "tn": 0,
+          "tp": 64
+        },
+        "count": 125,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StableDiffusion3"
+      },
+      {
+        "ai_recall": 0.992,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 0,
+          "tp": 124
+        },
+        "count": 125,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StableDiffusionXL"
+      },
+      {
+        "ai_recall": 0.016,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 123,
+          "fp": 0,
+          "tn": 0,
+          "tp": 2
+        },
+        "count": 125,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StyleGAN"
+      },
+      {
+        "ai_recall": 0.016,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 123,
+          "fp": 0,
+          "tn": 0,
+          "tp": 2
+        },
+        "count": 125,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StyleGAN2"
+      },
+      {
+        "ai_recall": 0.032,
+        "balanced_accuracy": null,
+        "condition": "Facebook",
+        "confusion": {
+          "fn": 121,
+          "fp": 0,
+          "tn": 0,
+          "tp": 4
+        },
+        "count": 125,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StyleGAN3"
+      }
+    ],
+    "real_false_positive_rate": 0.056,
+    "roc_auc": 0.815477,
+    "stored_threshold": 0.6688565012954346,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.582
+    }
+  },
+  "binary_rates": {
+    "ai_recall_by_source": {
+      "FLUX.1": 0.664,
+      "StableDiffusion1.5": 1.0,
+      "StableDiffusion2": 0.968,
+      "StableDiffusion3": 0.512,
+      "StableDiffusionXL": 0.992,
+      "StyleGAN": 0.016,
+      "StyleGAN2": 0.016,
+      "StyleGAN3": 0.032
+    },
+    "pooled_ai_recall": 0.525,
+    "pooled_real_false_ai": 0.056,
+    "real_false_ai_by_source": {
+      "FFHQ": 0.01,
+      "FORLAB": 0.102
+    },
+    "worst_ai_recall": 0.016,
+    "worst_real_false_ai": 0.102
+  },
+  "bootstrap_95pct": {
+    "ai_recall": [
+      0.508,
+      0.542
+    ],
+    "automatic_coverage": [
+      0.95,
+      0.967
+    ],
+    "balanced_accuracy": [
+      0.7235,
+      0.7455
+    ],
+    "covered_accuracy": [
+      0.7374470408673456,
+      0.7594339622641509
+    ],
+    "real_false_ai": [
+      0.042,
+      0.07
+    ],
+    "roc_auc": [
+      0.802113925,
+      0.8289920249999999
+    ],
+    "uncertain_rate": [
+      0.03300000000000003,
+      0.050000000000000044
+    ]
+  },
+  "boundary": "First and only E46 TrueFake result; no repair, row removal, refit or retry is permitted.",
+  "candidate": {
+    "selected_method": "fusion_global",
+    "selective_policy": {
+      "ai_if_score_gte": 0.6688565012954346,
+      "otherwise": "uncertain",
+      "real_if_score_lt": 0.5185430496088231
+    },
+    "sha256": "9fec91b8a28a842784562654ec49f74add63ce4c5d588d5170c75a4fd2bb84a1",
+    "threshold": 0.6688565012954346
+  },
+  "contract_sha256": "1cf28d2d8e2c37997246b8991f3647f7ef3857eb78e7425bf593cbb4107c4262",
+  "counts": {
+    "ai": 1000,
+    "real": 1000,
+    "rows": 2000
+  },
+  "gate": {
+    "checks": {
+      "automatic_coverage_gte_0_80": true,
+      "binary_auc_gte_0_90": false,
+      "binary_balanced_accuracy_gte_0_85": false,
+      "covered_accuracy_gte_0_95": false,
+      "pooled_ai_recall_gte_0_80": false,
+      "pooled_real_false_ai_lte_0_10": true,
+      "score_coverage_eq_1": true,
+      "uncertain_rate_lte_0_20": true,
+      "worst_source_ai_recall_gte_0_60": false,
+      "worst_source_real_false_ai_lte_0_20": true
+    },
+    "passed": false,
+    "passed_checks": 5,
+    "total_checks": 10
+  },
+  "manifest_sha256": "4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b",
+  "report_bytes": 6754,
+  "report_sha256": "4b66bfa94fd82ca885723a439d62330a719dd3cfa4f65bf9a020b523ea3666a7",
+  "role": "E46_UNTOUCHED_FINAL",
+  "schema_version": 1,
+  "score_stream": {
+    "bytes": 510939,
+    "rows": 2000,
+    "sha256": "6a51a9b11163fc8bb45889e38cc400a1b210cff7bcd6f36d6a760edc1fa68c97"
+  },
+  "selective": {
+    "automatic_coverage": 0.9585,
+    "automatic_rows": 1917,
+    "covered_accuracy": 0.748565466875326,
+    "uncertain_rate": 0.0415,
+    "uncertain_rows": 83
+  },
+  "state": "e46_independent_final_failed"
+}

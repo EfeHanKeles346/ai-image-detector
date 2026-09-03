@@ -3484,3 +3484,14 @@ was scored or selected using model output.
 - **Final specialist arm:** official DDA completed the same 2,000 rows with full coverage. Its
   298,587-byte stream SHA-256 is `13947caf...878d0b`. Both final arms are immutable and complete;
   fusion, metrics and gates remain unopened until this checkpoint is committed.
+- **E46 one-shot independent final:** after both inference streams were committed, the fixed global
+  fusion opened the 2,000 TrueFake Facebook labels once. Coverage is 100%. AUC is **0.815477**
+  (95% bootstrap CI 0.802114–0.828992), balanced accuracy **0.73450** (0.72350–0.74550), REAL
+  false-AI **5.60%** (4.20–7.00%), and AI recall **52.50%** (50.80–54.20%). Source behavior is
+  highly non-uniform: FFHQ/FORLAB false-AI is 1.0%/10.2%; AI recall is FLUX.1 66.4%, SD1.5 100%,
+  SD2 96.8%, SD3 51.2%, SDXL 99.2%, StyleGAN 1.6%, StyleGAN2 1.6%, StyleGAN3 3.2%.
+  The selective band covers 95.85% (95.0–96.7%) but covered accuracy is only 74.86%
+  (73.74–75.94%). The candidate passes 5/10 registered gates and therefore **fails** E46.
+  The isolated scientific diagnosis is a strong GAN-family domain blind spot rather than a REAL
+  safety collapse. Result evidence SHA-256 is `e7e14fdf...d7a7ed`; fused score stream SHA-256 is
+  `6a51a9b1...68c97`. No retry or post-final threshold tuning is permitted.
