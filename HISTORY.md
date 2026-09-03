@@ -4376,3 +4376,7 @@ All four inference identities were then frozen together under contract SHA
 `ee2a2958...95798`: E43-S, official DDA, the old fusion, UnivFD and capped UNINA. The contract binds
 the exact 2,400 rows and forbids role drift, backbone updates and DEVELOPMENT-informed fitting.
 No score existed when it was committed.
+
+E43-S then completed all 2,400 new CAL/DEVELOPMENT rows. Its 399,398-byte stream hashes to
+`073110f4...f30c03`. This checkpoint preserves raw inference only; no candidate metric or
+DEVELOPMENT result was opened.
