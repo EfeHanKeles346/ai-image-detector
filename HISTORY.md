@@ -4308,3 +4308,10 @@ severe GAN-family blind spot. The selective band does not rescue it (95.85% cove
 covered accuracy). Evidence SHA-256 is `e7e14fdf...d7a7ed`; no threshold repair, sample removal,
 refit or retry will be performed on this consumed final. E47, if pursued, must obtain separate
 GAN-aware development evidence and a genuinely new final.
+
+E47 was therefore opened as a narrow GAN-blind-spot recovery, not another threshold sweep. Its
+first step is deliberately cheap: ask whether the already-trained, hash-pinned GenImage ResNet-18
+contains the missing GAN signal on the now-consumed E46 rows. Those labels may diagnose
+complementarity but cannot train, calibrate, validate or prove the successor. A strict unlock rule
+was written before scoring; failure routes to an official frozen GAN specialist, while success
+still requires new source/identity-separated CAL, DEVELOPMENT and final evidence.

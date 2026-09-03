@@ -546,6 +546,37 @@ it before paying for another architecture or training run.
       E46 reached an independent final rather than an availability blocker; its failed result is
       preserved. Any E47 improvement must use a new development source and a new untouched final.
 
+## E47 — GAN-blind-spot recovery without sacrificing real-camera safety (started 2026-09-03)
+
+E46 is consumed and failed because the frozen detector retained diffusion signals but missed
+Facebook-transported StyleGAN/2/3. E47 treats that result as a diagnosis, never as reusable final
+evidence. Its objective is not to lower the threshold: add a complementary GAN-sensitive arm while
+keeping pooled REAL false-AI <=10%, worst REAL source <=20%, pooled AI recall >=80%, and worst AI
+source >=60% on a genuinely new final.
+
+- [x] **R0 — preserve E46 before repair.** Commit the immutable arm streams, one-shot report,
+      bootstrap intervals and failed 5/10 gate. Forbid row removal, refit, threshold repair and
+      repeat evaluation on TrueFake Facebook.
+- [ ] **R1 — cheapest complementary-arm diagnostic.** Score the already-trained, hash-pinned
+      GenImage ResNet-18 on the consumed E46 identities using its original deterministic 224 px
+      preprocessing. Report only diagnostic AUC/TPR at a pooled 10% REAL-FP cut, per-generator
+      recall, and how many frozen-fusion misses it recovers. This is architecture triage, not a new
+      E46 result. Unlock it only if mean StyleGAN-family recall is >=50%, every StyleGAN generation
+      is >=30%, and diagnostic OR-fusion REAL-FP is <=15%.
+- [ ] **R2 — external specialist only if R1 fails.** Acquire a hash-pinned official GAN detector
+      (prefer UnivFD's frozen CLIP linear head or UNINA's compression-trained GAN detector) under
+      its licence; do not download the 72 GB training corpus. First run the same consumed-data
+      diagnostic and reject any arm that merely increases REAL accusations.
+- [ ] **R3 — new CAL/DEVELOPMENT, identity-separated.** Build a compact source-balanced pool from
+      data that was never in E46 final: at least two independent camera-real sources, StyleGAN
+      generations, and the modern diffusion generators already protected by E46. Split by source,
+      parent identity and transport before scores. Fit only a small calibrated fusion/gate; keep
+      all backbones frozen. Require the E46-style REAL and AI gates on untouched DEVELOPMENT.
+- [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
+      including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
+      with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32
+      model; otherwise keep the current demo and archive the failure.
+
 ## Current execution slice — R1c threshold repair and external benchmark (2026-08-27)
 
 The immediate product defect is no longer ambiguous: E32/R1b ranks the existing modern-AI pool

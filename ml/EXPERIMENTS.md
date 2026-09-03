@@ -3495,3 +3495,17 @@ was scored or selected using model output.
   The isolated scientific diagnosis is a strong GAN-family domain blind spot rather than a REAL
   safety collapse. Result evidence SHA-256 is `e7e14fdf...d7a7ed`; fused score stream SHA-256 is
   `6a51a9b1...68c97`. No retry or post-final threshold tuning is permitted.
+
+### E47-R1 — pre-registered GAN recovery diagnostic
+
+- **Question:** does the project's untouched, hash-pinned GenImage ResNet-18 contain a complementary
+  GAN signal that E43-S + DDA missed after Facebook transport?
+- **Data boundary:** the consumed 2,000-row E46 TrueFake final may be scored only as an explicitly
+  post-final diagnostic. It cannot fit or validate an E47 threshold and can never become final
+  evidence again.
+- **Frozen arm:** `best_genimage.pt`, original deterministic resize-to-224 and ImageNet
+  normalization. Measure pooled and per-generator AUC/recall at a diagnostic pooled-REAL 10% cut,
+  plus OR-recovery against the frozen E46 fusion.
+- **Unlock rule:** proceed with this family only when mean StyleGAN/2/3 recall is >=50%, each is
+  >=30%, and OR-fusion pooled REAL false-AI is <=15%. Otherwise acquire one official frozen GAN
+  detector before constructing new CAL/DEVELOPMENT data.
