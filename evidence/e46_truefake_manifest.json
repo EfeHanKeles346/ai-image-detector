@@ -1,0 +1,38 @@
+{
+  "archive_sha256": "413cb7f9664cf5f4e37a2ae0bea5d1a999c47398ca1c267a2173e88c2cda0d63",
+  "audit_counts": {
+    "dhash_groups": 0,
+    "exact_groups": 0,
+    "excluded": 0
+  },
+  "counts": {
+    "audit_exclusions": 0,
+    "candidate_rows": 3500,
+    "decode_failures": 0,
+    "decoded_candidates": 3500,
+    "selected_by_label": {
+      "0": 1000,
+      "1": 1000
+    },
+    "selected_by_source": {
+      "FFHQ": 500,
+      "FLUX.1": 125,
+      "FORLAB": 500,
+      "StableDiffusion1.5": 125,
+      "StableDiffusion2": 125,
+      "StableDiffusion3": 125,
+      "StableDiffusionXL": 125,
+      "StyleGAN": 125,
+      "StyleGAN2": 125,
+      "StyleGAN3": 125
+    },
+    "selected_rows": 2000
+  },
+  "manifest_bytes": 1442089,
+  "manifest_sha256": "4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b",
+  "model_scores_created": 0,
+  "protected_manifest_count": 24,
+  "role": "E46_UNTOUCHED_FINAL",
+  "schema_version": 1,
+  "state": "e46_truefake_decontaminated_final_frozen_unscored"
+}

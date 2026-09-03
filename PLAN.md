@@ -479,7 +479,7 @@ it before paying for another architecture or training run.
       while 277 current X CDN URLs returned persistent 403/404 failures and were preserved as
       failures. Successful CAL/DEVELOPMENT counts are 1,034/689; REAL remains 418 and each AI
       generator retains 396–474 images. The external manifest SHA-256 is `fd8008a...a89f3f`.
-- [ ] Acquire the TrueFake Facebook archive with resume into the external LaCie store, record the
+- [x] Acquire the TrueFake Facebook archive with resume into the external LaCie store, record the
       exact byte count and SHA-256, then inventory it without extraction. Before any score, freeze
       a deterministic, class-balanced 2,000-row final manifest: 1,000 REAL balanced across the
       available real origins and 1,000 AI balanced as closely as possible across generator
@@ -491,6 +491,9 @@ it before paying for another architecture or training run.
       Binding now complete before extraction: all member facts hash to `b59e78de...8ba28b`; a
       3,500-row reserve and exact per-source quotas are fixed in contract SHA-256
       `1e77dfbd...cead3`. The contract still contains zero decoded final images and zero scores.
+      Extraction/audit also complete: all 3,500 reserve candidates decode, none overlaps 24
+      protected manifests, and the frozen 2,000-row final is exactly balanced. Manifest SHA-256 is
+      `4572339e...b225b`; model-score count remains zero.
       Score-blind manifest binding and protected-overlap audit remain before this item closes.
 - [ ] On SynthWildX CAL only, compare the unchanged official DDA arm, frozen E44 fusion, a global
       REAL-safe cut, and a small QuAD-inspired quality-conditioned calibration. Method choice may

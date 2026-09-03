@@ -1362,3 +1362,12 @@ rank: 750 candidates from each REAL origin and 250 from each AI generator. After
 checks, the first clean 500 per REAL origin and 125 per AI generator become final. The detailed
 1,106,013-byte selection contract SHA-256 is
 `1e77dfbdc69f82a8eb69c40ee93f87428b5f4627fd34928bb589913be37cead3`; scores remain zero.
+
+The reserve was subsequently streamed from the compressed TAR without unpacking the full corpus.
+All 3,500 candidates decoded successfully; no exact or dHash overlap was found against 24 protected
+manifests (including clean SynthWildX), and there were no exact or dHash duplicate groups inside the
+reserve. The final manifest therefore reaches all frozen quotas without replacement: 500 FFHQ,
+500 FORLAB and 125 from each of eight AI generators, exactly 1,000 REAL /1,000 AI. The selected
+payloads remain in the external candidate pool; non-selected reserve files are never model-scored.
+The 1,442,089-byte `E46_UNTOUCHED_FINAL` manifest SHA-256 is
+`4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b`; score count is zero.

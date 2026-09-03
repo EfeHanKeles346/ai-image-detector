@@ -3441,3 +3441,8 @@ was scored or selected using model output.
   `b59e78de...8ba28b`. Contract SHA-256 `1e77dfbd...cead3` fixes a 3,500-row score-blind reserve,
   the lowest-rank-clean rule, 500-image quotas for each REAL origin and 125-image quotas for each
   of eight AI generators. No final payload is decoded or scored at this checkpoint.
+- **Final manifest:** all 3,500 hash-ranked reserve members decoded; zero failures, protected
+  overlaps, exact duplicate groups or dHash duplicate groups were observed. The frozen final is
+  exactly 2,000 rows: 500 FFHQ +500 FORLAB REAL and 125 from each of eight AI generators. Detailed
+  manifest SHA-256 is `4572339e...b225b`; model-score rows remain zero. This is the last permitted
+  checkpoint before E46 candidate selection begins on SynthWildX only.

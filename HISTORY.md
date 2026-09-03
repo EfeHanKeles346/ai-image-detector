@@ -4238,3 +4238,10 @@ hash is `b59e78de...8ba28b`; a deterministic 3,500-member reserve contains enoug
 bad or contaminated samples while retaining exactly 500 FFHQ, 500 FORLAB and 125 from each of the
 eight AI generators. Detailed contract SHA-256 is `1e77dfbd...cead3`. This checkpoint contains no
 decoded final payload and no model score, so later extraction cannot steer the sample.
+
+The contracted TrueFake reserve was then streamed once. Every one of the 3,500 candidate images
+decoded, no candidate matched any of 24 protected manifests, and no internal exact/dHash duplicate
+group appeared. The lowest clean ranks therefore filled every quota exactly: 500 FFHQ, 500 FORLAB,
+and 125 from each of eight AI generators. The untouched final is now a balanced 2,000-row manifest
+at SHA-256 `4572339e...b225b`, still with zero model scores. Only these rows may be used in the
+future one-shot evaluation; the additional reserve payloads are not evaluation observations.
