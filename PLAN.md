@@ -494,8 +494,7 @@ it before paying for another architecture or training run.
       Extraction/audit also complete: all 3,500 reserve candidates decode, none overlaps 24
       protected manifests, and the frozen 2,000-row final is exactly balanced. Manifest SHA-256 is
       `4572339e...b225b`; model-score count remains zero.
-      Score-blind manifest binding and protected-overlap audit remain before this item closes.
-- [ ] On SynthWildX CAL only, compare the unchanged official DDA arm, frozen E44 fusion, a global
+- [x] On SynthWildX CAL only, compare the unchanged official DDA arm, frozen E44 fusion, a global
       REAL-safe cut, and a small QuAD-inspired quality-conditioned calibration. Method choice may
       inspect only CAL. DEVELOPMENT must retain REAL FP <= 20%, worst available REAL group FP <=
       25%, AI recall >= 80%, and worst AI-generator recall >= 60%; otherwise preserve the failure.
@@ -515,6 +514,10 @@ it before paying for another architecture or training run.
       candidate SHA-256 `9fec91b8...b84a1`. On OPERATING_CAL it has AUC 0.97362, BA 0.91795,
       REAL FP 10.0% and AI recall 93.59% (worst generator 84.07%). The quality Gaussian improved
       recall but had lower AUC and was correctly rejected by the frozen non-inferiority rule.
+      DEVELOPMENT passed 4/4 gates unchanged: AUC 0.97203, BA 0.91217, REAL FP 11.38%, AI recall
+      93.81%, worst-generator recall 84.82%. The optional selective diagnostic has 96.49% coverage
+      but 94.39% covered accuracy, just below the future final 95% gate; do not repair it from
+      DEVELOPMENT.
 - [ ] Freeze the chosen artifact, threshold(s), selective band and ten E45-style gates before
       opening TrueFake labels/scores. Score the 2,000-row Facebook final exactly once and report
       source/generator metrics plus bootstrap intervals. E45 remains archived and prohibited;

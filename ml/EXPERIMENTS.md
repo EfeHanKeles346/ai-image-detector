@@ -3468,3 +3468,9 @@ was scored or selected using model output.
   non-inferiority condition. Select `fusion_global`, threshold `0.6688565013`, candidate SHA-256
   `9fec91b8...b84a1`. CAL selective cuts are REAL `<0.5185430496`, AI `>=0.6688565013`, yielding
   97.09% coverage at exactly 95% covered accuracy. DEVELOPMENT rows read: zero; final scores: zero.
+- **One-shot DEVELOPMENT:** the unchanged `fusion_global` candidate passes all four registered
+  gates on 684 rows. AUC **0.97203**, balanced accuracy **0.91217**, REAL false-AI **11.38%**, AI
+  recall **93.81%**; DALL-E 3 /Firefly /Midjourney v5 recalls are 98.74% /84.82% /99.40%.
+  The score stream is 110,362 bytes /SHA-256 `e9443455...24c9b8`. Selective coverage is 96.49%,
+  but covered accuracy is 94.39%; preserve this near-miss and do not tune from DEVELOPMENT.
+  TrueFake scores created: zero.

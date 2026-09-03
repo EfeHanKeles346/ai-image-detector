@@ -4277,3 +4277,10 @@ threshold `0.6688565013`. The QuAD-inspired quality model pushed AI recall to 96
 lowered AUC; the frozen conservative rule therefore rejected the added complexity and kept global
 fusion. Candidate SHA-256 is `9fec91b8...b84a1`; its CAL-only selective band is REAL below
 `0.5185430496`, AI at or above `0.6688565013`. DEVELOPMENT and the final remained unread.
+
+The frozen candidate then passed all four SynthWildX DEVELOPMENT gates without refitting. Across
+684 unseen rows it achieved 0.9720 AUC, 0.9122 balanced accuracy, 11.38% REAL false alarms and
+93.81% AI recall; even the weakest generator, Firefly, retained 84.82% recall. This is the clearest
+valid improvement over E45's 34.13% REAL false alarms so far. The selective diagnostic covered
+96.49% but reached 94.39% covered accuracy, narrowly missing the future 95% claim; it remains
+unchanged. Score stream SHA-256 is `e9443455...24c9b8`, and TrueFake still has zero scores.

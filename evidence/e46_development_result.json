@@ -1,0 +1,47 @@
+{
+  "boundary": "Previously untouched SynthWildX DEVELOPMENT only; no threshold/model refit and no TrueFake read.",
+  "candidate_sha256": "9fec91b8a28a842784562654ec49f74add63ce4c5d588d5170c75a4fd2bb84a1",
+  "checks": {
+    "pooled_ai_recall_gte_0_80": true,
+    "pooled_real_false_ai_lte_0_20": true,
+    "worst_ai_generator_recall_gte_0_60": true,
+    "worst_real_group_false_ai_lte_0_25": true
+  },
+  "counts": {
+    "ai": 517,
+    "real": 167,
+    "rows": 684
+  },
+  "final_scores_created": 0,
+  "metrics": {
+    "ai_recall": 0.9381044487427466,
+    "ai_recall_by_generator": {
+      "dalle3": 0.9874213836477987,
+      "firefly": 0.8481675392670157,
+      "midjourney_v5": 0.9940119760479041
+    },
+    "balanced_accuracy": 0.912165996826463,
+    "real_false_ai": 0.11377245508982035,
+    "roc_auc": 0.9720288629703842,
+    "rows": 684,
+    "threshold": 0.6688565012954346,
+    "worst_generator_recall": 0.8481675392670157
+  },
+  "passed": true,
+  "report_sha256": "05aaf721295f835890726339eb6230dc9c59a91bdf751fe7f50ea4ee0690369c",
+  "schema_version": 1,
+  "score_stream": {
+    "bytes": 110362,
+    "sha256": "e9443455e2957e31e2e6d0e31fae7e2bc353646876fd65f5e2fbda723d24c9b8"
+  },
+  "selected_method": "fusion_global",
+  "selective": {
+    "automatic_coverage": 0.9649122807017544,
+    "automatic_rows": 660,
+    "covered_accuracy": 0.943939393939394,
+    "uncertain_rate": 0.03508771929824561,
+    "uncertain_rows": 24
+  },
+  "state": "e46_development_passed",
+  "threshold": 0.6688565012954346
+}
