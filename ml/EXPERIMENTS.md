@@ -3342,3 +3342,10 @@ was scored or selected using model output.
   region, establishing publisher-artifact corruption rather than transfer corruption. Preserve the
   failure, exclude that member before manifest/model access and report official coverage 99.99%.
   Zero image decode and zero model score still hold.
+- **Manifest result:** all 9,999 CRC-usable members decoded. Exclude 19 second copies from
+  same-label exact duplicate pairs and two protected-dHash AI overlaps; zero cross-label exact
+  duplicate exists. The frozen 9,978 rows contain 4,981 REAL /4,997 AI across all four publisher-
+  named platforms. Detailed manifest SHA-256 is `3e7c1d7e...d7e03`; official coverage is 99.78%.
+- **Boundary:** 141 within-E45 exact-dHash groups remain a disclosed similarity diagnostic, not an
+  automatic identity judgment. No protected exact/dHash overlap survives, and zero model score
+  exists. Commit this manifest before binding or loading E44-D.

@@ -420,10 +420,15 @@ it before paying for another architecture or training run.
       corrupt entry, `ITW-SM/1_fake/x_618.jpg`. Its local compressed range is byte-identical to a
       fresh HTTP range response, so redownloading cannot repair it. Preserve 9,999 usable rows and
       disclose 99.99% official-archive coverage; the bad member is excluded before any model load.
-- [ ] Decode/hash every member, reconcile any bundled metadata, audit exact and dHash overlap
+- [x] Decode/hash every member, reconcile any bundled metadata, audit exact and dHash overlap
       against all protected prior roles and remove an overlapping parent before scores only. Freeze
       the complete zero-score manifest and its exclusions. If source/platform metadata is absent,
       report pooled groups honestly rather than inventing platform labels.
+      Complete: 9,999 CRC-usable members decoded; 19 same-label exact duplicate copies and two
+      protected-dHash AI rows were excluded before inference. The immutable final contains 9,978
+      rows (4,981 REAL /4,997 AI) across publisher-derived Facebook, Instagram, LinkedIn and X
+      groups, with 99.78% official-row coverage. Manifest SHA-256 is `3e7c1d7e...d7e03`; score rows
+      remain zero.
 - [ ] Bind the unchanged E44 fusion artifact and E44-D cuts to that manifest in a second score
       contract. Score every retained member once, report binary and selective gates with 10,000-
       sample bootstrap intervals, and preserve pass or failure without threshold repair. The final

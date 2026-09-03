@@ -1239,6 +1239,19 @@ model access, not a model inference failure or post-score row removal. The inven
 explicitly `zip_crc_passed=false`; it is never rewritten as a clean 10,000-row archive. Images
 decoded and model scores created remain zero at this checkpoint.
 
+The next local-only audit decoded all 9,999 usable members and derived exact SHA-256, dHash,
+geometry, format, label and platform. Nineteen duplicate REAL byte pairs were found; one lexical
+record per pair was kept so repeated posts cannot inflate the result. Two AI rows
+(`facebook_46.jpg`, `instagram_427.jpg`) matched protected prior dHashes and were excluded before
+inference. There were no cross-label exact duplicates and no protected overlap survived.
+
+The frozen `E45_UNTOUCHED_FINAL` manifest therefore has 9,978 rows: 4,981 REAL and 4,997 AI.
+Platform cells are REAL/AI: Facebook 1,308/1,032, Instagram 1,206/2,178, LinkedIn 1,265/931 and X
+1,202/856. Its detailed 4,489,982-byte manifest SHA-256 is
+`3e7c1d7e815a252d454d36c78f2a6ad6381983edb9494c31951bdb683c6d7e03`; official-row coverage is
+99.78%. The 141 within-E45 exact-dHash groups are retained only as a disclosed similarity
+diagnostic because dHash equality alone is not byte identity. Model scores remain zero.
+
 ## E43 RR adaptation roles — planned before selection (2026-09-02)
 
 RRDataset's 50,858-row E42 score stream has already consumed its final status, so RR may now support

@@ -1,0 +1,38 @@
+{
+  "archive_sha256": "18f1806e1cef6bc9f7ed6e49b61379a6cb4bac63cb4f3ed4f9fffffdf177b6e3",
+  "audit_counts": {
+    "cross_label_exact_groups": 0,
+    "cross_record_dhash_diagnostic": 141,
+    "cross_record_exact_groups": 19,
+    "protected_exact_or_dhash_exclusions": 2
+  },
+  "boundary": "All retained images decoded and decontaminated before model access; no score exists.",
+  "counts": {
+    "crc_usable_rows": 9999,
+    "excluded_rows": 21,
+    "official_archive_coverage": 0.9978,
+    "official_rows": 10000,
+    "selected_by_label": {
+      "0": 4981,
+      "1": 4997
+    },
+    "selected_by_label_platform": {
+      "0:Facebook": 1308,
+      "0:Instagram": 1206,
+      "0:LinkedIn": 1265,
+      "0:X": 1202,
+      "1:Facebook": 1032,
+      "1:Instagram": 2178,
+      "1:LinkedIn": 931,
+      "1:X": 856
+    },
+    "selected_rows": 9978
+  },
+  "manifest_bytes": 4489982,
+  "manifest_sha256": "3e7c1d7e815a252d454d36c78f2a6ad6381983edb9494c31951bdb683c6d7e03",
+  "model_scores_created": 0,
+  "protected_manifest_count": 22,
+  "role": "UNTOUCHED_FINAL",
+  "schema_version": 1,
+  "state": "e45_mediaeval_decontaminated_manifest_frozen_unscored"
+}

@@ -4120,3 +4120,16 @@ coverage, excluding this single AI member before pixels or model access. The exc
 and preregistered by the integrity gate, not selected from a score. Acquisition and inventory
 evidence contain zero decoded images and zero model scores; next comes local decode/hash and
 protected-role overlap audit.
+
+That audit decoded all 9,999 usable members without another failure. It removed the second record
+from 19 exact duplicate REAL pairs and two AI records whose dHashes matched protected prior data.
+No exact duplicate crosses labels and no protected exact/dHash overlap remains. The resulting
+untouched final is 9,978 rows: 4,981 REAL and 4,997 AI, with Facebook, Instagram, LinkedIn and X
+preserved from the publisher filenames. The manifest covers 99.78% of the official 10,000 rows and
+has SHA-256 `3e7c1d7e...d7e03`.
+
+One hundred forty-one within-final dHash groups are reported but not automatically removed: exact
+dHash equality can describe visually similar small/simple images without proving byte identity.
+This rule was fixed before the audit. The tracked manifest evidence still records zero model scores;
+the candidate and success gates must be bound to this exact manifest in a separate committed
+contract before inference begins.
