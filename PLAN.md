@@ -602,6 +602,9 @@ source >=60% on a genuinely new final.
       dHash overlaps before filling the fixed 1,200/1,200 roles. Compare frozen E46 alone,
       E46+UnivFD, E46+UNINA and three-arm regularized logistic gates using CAL only. Prefer the MIT
       UnivFD path when it passes and is within two recall points of the nonprofit UNINA path.
+      Score-blind binding completed: 2,880 reserve candidates, 1,440 per role, outside all 3,500
+      E46 reserve identities. Contract is 919,423 bytes /SHA-256 `c031ef92...d0753`; target remains
+      2,400 and model-score count remains zero.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32

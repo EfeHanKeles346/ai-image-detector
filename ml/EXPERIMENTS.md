@@ -3568,3 +3568,6 @@ was scored or selected using model output.
   and threshold on CAL only; backbones never update. DEVELOPMENT gates remain pooled REAL FP <=10%,
   worst REAL <=20%, pooled AI recall >=80%, worst AI source >=60%, AUC >=0.90 and BA >=0.85.
   Prefer the MIT candidate when it passes and trails nonprofit UNINA by <=2 recall points.
+- **Selection lock:** 2,880 score-blind reserve members were hash-ranked outside every E46 reserve
+  identity, 1,440 per role. Contract SHA-256 `c031ef92...d0753`; target 2,400; decoded images and
+  model scores both zero. Next step is decode + protected exact/dHash audit only.

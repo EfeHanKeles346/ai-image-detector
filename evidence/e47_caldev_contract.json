@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "413cb7f9664cf5f4e37a2ae0bea5d1a999c47398ca1c267a2173e88c2cda0d63",
+  "by_role": {
+    "CAL": 1440,
+    "DEVELOPMENT": 1440
+  },
+  "candidate_rows": 2880,
+  "contract_bytes": 919423,
+  "contract_sha256": "c031ef92f5188536003ad94789195e4f17866c0006e37812e2e576b658d0753a",
+  "excluded_e46_reserve_members": 3500,
+  "model_scores_created": 0,
+  "namespace": "E47_TRUEFAKE_CALDEV_V1",
+  "schema_version": 1,
+  "state": "e47_caldev_selection_frozen_unscored",
+  "target_rows": 2400
+}

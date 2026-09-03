@@ -1421,3 +1421,9 @@ members is excluded before ranking. CAL quotas are FFHQ REAL 600 plus StyleGAN2/
 each. DEVELOPMENT quotas are FORLAB REAL 600 plus StyleGAN/StyleGAN3 AI 200 each and FLUX.1/SD3 AI
 100 each. A 20% deterministic reserve is decoded so corrupt/overlapping rows can be rejected
 without score-dependent replacement. These roles can develop E47 but can never become its final.
+
+The E47 CAL/DEVELOPMENT selection contract is now frozen before payload decoding. It binds 2,880
+reserve candidates (1,440 CAL, 1,440 DEVELOPMENT), all outside the complete E46 3,500-member
+reserve. The 919,423-byte contract SHA-256 is
+`c031ef92f5188536003ad94789195e4f17866c0006e37812e2e576b658d0753a`; target rows remain
+2,400 and model-score rows remain zero.

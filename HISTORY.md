@@ -4361,3 +4361,8 @@ diffusions for CAL, and source-held FORLAB/StyleGAN/StyleGAN3 plus FLUX/SD3 for 
 Twenty-percent reserve headroom permits score-blind audit failures. Every backbone stays frozen;
 only a regularized decision gate and CAL threshold may learn. The MIT UnivFD route wins ties close
 to nonprofit UNINA, and no DEVELOPMENT row may repair the chosen rule.
+
+The new-data contract then froze cleanly: 2,880 score-blind reserve members, balanced 1,440/1,440
+between CAL and DEVELOPMENT and disjoint from all 3,500 E46 reserve identities. Contract SHA is
+`c031ef92...d0753`; the intended post-audit population remains 2,400. No candidate image had been
+decoded and no model had been loaded at this checkpoint.
