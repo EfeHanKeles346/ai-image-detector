@@ -33,6 +33,9 @@ CONTRACT_EVIDENCE = ML_ROOT.parent / "evidence" / "e46_calibration_contract.json
 CANDIDATE = ROOT / "e46_candidate.joblib"
 CANDIDATE_REPORT = ROOT / "candidate_calibration_report.json"
 CANDIDATE_EVIDENCE = ML_ROOT.parent / "evidence" / "e46_candidate_calibration.json"
+DEVELOPMENT_SCORES = ROOT / "synthwildx_development_scores.jsonl"
+DEVELOPMENT_REPORT = ROOT / "synthwildx_development_report.json"
+DEVELOPMENT_EVIDENCE = ML_ROOT.parent / "evidence" / "e46_development_result.json"
 GENERALIST_SCORE_SHA256 = "8be0aefdd995ab16e409c070c897ee91ac102dd61ad281dd8da7114d1c0ce88d"
 SPECIALIST_SCORE_SHA256 = "a7fbd7e2075d9687a042995a5b30412460564bf6f931d8974b440527b2257eda"
 FUSION_SHA256 = "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100"
@@ -262,6 +265,25 @@ def _selective(rows: Sequence[Mapping[str, Any]], scores: np.ndarray, ai_cut: fl
             "cal_uncertainty": 0.0, "cal_constraint_passed": False}
 
 
+def selective_metrics(rows: Sequence[Mapping[str, Any]], scores: Sequence[float], policy: Mapping[str, Any]) -> dict[str, Any]:
+    values = np.asarray(scores, dtype=np.float64)
+    labels = np.asarray([int(row["label"]) for row in rows], dtype=np.int64)
+    real_cut = float(policy["real_if_score_lt"])
+    ai_cut = float(policy["ai_if_score_gte"])
+    decisions = np.full(len(rows), -1, dtype=np.int64)
+    decisions[values < real_cut] = 0
+    decisions[values >= ai_cut] = 1
+    automatic = decisions >= 0
+    coverage = float(automatic.mean())
+    return {
+        "automatic_coverage": coverage,
+        "uncertain_rate": 1.0 - coverage,
+        "covered_accuracy": float((decisions[automatic] == labels[automatic]).mean()) if automatic.any() else 0.0,
+        "automatic_rows": int(automatic.sum()),
+        "uncertain_rows": int((~automatic).sum()),
+    }
+
+
 def _joined_cal(contract: Mapping[str, Any]) -> list[dict[str, Any]]:
     manifest = {row["record_id"]: row for row in json.loads(MANIFEST.read_text())["rows"]}
     generalist = _jsonl(GENERALIST_SCORES)
@@ -377,11 +399,88 @@ def fit() -> dict[str, Any]:
     return report
 
 
+def _joined_development() -> list[dict[str, Any]]:
+    manifest = {row["record_id"]: row for row in json.loads(MANIFEST.read_text())["rows"]}
+    specialist = {row["record_id"]: row for row in _jsonl(SPECIALIST_SCORES)}
+    fusion = joblib.load(FUSION)
+    output = []
+    for row in _jsonl(GENERALIST_SCORES):
+        source = manifest[row["record_id"]]
+        if source["role"] != "DEVELOPMENT":
+            continue
+        peer = specialist[row["record_id"]]
+        features = np.asarray([_feature(float(row["score"]), float(peer["score"]))])
+        output.append({
+            "record_id": row["record_id"], "label": int(row["label"]), "source": source["typ"],
+            "quality": row["quality"], "generalist_score": float(row["score"]),
+            "specialist_score": float(peer["score"]),
+            "fusion_score": float(fusion["head"].predict_proba(features)[0, 1]),
+        })
+    if len(output) != 684 or any(manifest[row["record_id"]]["role"] != "DEVELOPMENT" for row in output):
+        raise ValueError("E46 DEVELOPMENT join changed")
+    return output
+
+
+def evaluate_development() -> dict[str, Any]:
+    if any(path.exists() for path in (DEVELOPMENT_SCORES, DEVELOPMENT_REPORT, DEVELOPMENT_EVIDENCE)):
+        raise FileExistsError("E46 DEVELOPMENT result already exists")
+    candidate_report = json.loads(CANDIDATE_REPORT.read_text())
+    if _digest(CANDIDATE) != candidate_report["candidate_sha256"]:
+        raise ValueError("E46 candidate changed")
+    artifact = joblib.load(CANDIDATE)
+    rows = _joined_development()
+    method = artifact["selected_method"]
+    if method == "dda_global":
+        scores = np.asarray([row["specialist_score"] for row in rows])
+    elif method == "fusion_global":
+        scores = np.asarray([row["fusion_score"] for row in rows])
+    elif method == "fusion_quality_gaussian":
+        scores = apply_quality_gaussian(artifact["quality_model"], rows)
+    else:
+        raise ValueError(f"unknown E46 selected method: {method}")
+    threshold = float(artifact["threshold"])
+    metrics = score_metrics(rows, scores, threshold)
+    checks = {
+        "pooled_real_false_ai_lte_0_20": metrics["real_false_ai"] <= 0.20,
+        "worst_real_group_false_ai_lte_0_25": metrics["real_false_ai"] <= 0.25,
+        "pooled_ai_recall_gte_0_80": metrics["ai_recall"] >= 0.80,
+        "worst_ai_generator_recall_gte_0_60": metrics["worst_generator_recall"] >= 0.60,
+    }
+    selective = selective_metrics(rows, scores, artifact["selective_policy"])
+    scored = [{
+        "record_id": row["record_id"], "label": row["label"], "source": row["source"],
+        "score": float(score), "predicted_ai": bool(score >= threshold), "status": "ok",
+    } for row, score in zip(rows, scores, strict=True)]
+    score_raw = b"".join((json.dumps(row, sort_keys=True) + "\n").encode() for row in scored)
+    temporary = DEVELOPMENT_SCORES.with_suffix(DEVELOPMENT_SCORES.suffix + ".part")
+    temporary.write_bytes(score_raw)
+    temporary.replace(DEVELOPMENT_SCORES)
+    report = {
+        "schema_version": 1,
+        "state": "e46_development_passed" if all(checks.values()) else "e46_development_failed",
+        "candidate_sha256": candidate_report["candidate_sha256"],
+        "selected_method": method,
+        "threshold": threshold,
+        "counts": {"rows": len(rows), "real": sum(row["label"] == 0 for row in rows),
+                   "ai": sum(row["label"] == 1 for row in rows)},
+        "metrics": metrics,
+        "selective": selective,
+        "checks": checks,
+        "passed": all(checks.values()),
+        "score_stream": {"bytes": len(score_raw), "sha256": hashlib.sha256(score_raw).hexdigest()},
+        "final_scores_created": 0,
+        "boundary": "Previously untouched SynthWildX DEVELOPMENT only; no threshold/model refit and no TrueFake read.",
+    }
+    raw = _write(DEVELOPMENT_REPORT, report)
+    _write(DEVELOPMENT_EVIDENCE, {**report, "report_sha256": hashlib.sha256(raw).hexdigest()})
+    return report
+
+
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("bind", "fit"))
+    parser.add_argument("command", choices=("bind", "fit", "evaluate-development"))
     args = parser.parse_args(argv)
-    result = bind() if args.command == "bind" else fit()
+    result = bind() if args.command == "bind" else fit() if args.command == "fit" else evaluate_development()
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
 

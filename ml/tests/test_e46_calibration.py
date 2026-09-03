@@ -5,6 +5,7 @@ from experiments.e46_calibration import (
     choose_method,
     fit_quality_gaussian,
     internal_roles,
+    selective_metrics,
 )
 
 
@@ -56,3 +57,14 @@ def test_choose_method_allows_material_noninferior_quality_gain():
         "fusion_quality_gaussian": _result(0.09, 0.87, 0.72, 0.93),
     }
     assert choose_method(results) == ("fusion_quality_gaussian", True)
+
+
+def test_selective_metrics_counts_uncertain_rows():
+    rows = [{"label": 0}, {"label": 0}, {"label": 1}, {"label": 1}]
+    found = selective_metrics(
+        rows, [0.1, 0.5, 0.7, 0.9],
+        {"real_if_score_lt": 0.4, "ai_if_score_gte": 0.8},
+    )
+    assert found["automatic_coverage"] == 0.5
+    assert found["covered_accuracy"] == 1.0
+    assert found["uncertain_rows"] == 2
