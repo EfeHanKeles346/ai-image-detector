@@ -4222,3 +4222,8 @@ final-data availability blocker within the 3–4 GB planning envelope. The archi
 from the model: the next committed code will first freeze a hash-ranked 3,500-candidate reserve,
 decode only enough to produce the balanced 2,000-row final, and reject prior-data overlaps before
 any score exists.
+
+The first SynthWildX identity-audit command failed closed before producing a manifest: acquisition
+had preserved exact hashes and geometry but had not yet calculated perceptual dHash. The audit was
+corrected to decode each already-validated file and derive dHash locally, with a regression test.
+No image, role or model score changed, and no partial scientific result was retained.

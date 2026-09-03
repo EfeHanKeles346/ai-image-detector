@@ -5,9 +5,11 @@ import pytest
 from experiments.e46_manifests import (
     TRUEFAKE_NAMESPACE,
     _identity_audit,
+    _path_dhash,
     _rank,
     parse_truefake_member,
 )
+from PIL import Image
 
 
 @pytest.mark.parametrize(
@@ -48,3 +50,11 @@ def test_identity_audit_excludes_protected_and_repeated_exact_bytes():
     assert audit["excluded_record_ids"] == ["b", "c"]
     assert audit["exclusion_reasons"]["b"] == ["same_label_exact_duplicate_of:a"]
     assert audit["exclusion_reasons"]["c"] == ["protected_dhash_overlap"]
+
+
+def test_path_dhash_decodes_image(tmp_path):
+    path = tmp_path / "sample.png"
+    Image.new("RGB", (32, 32), (20, 40, 80)).save(path)
+    value = _path_dhash(path)
+    assert isinstance(value, str)
+    assert len(value) == 16

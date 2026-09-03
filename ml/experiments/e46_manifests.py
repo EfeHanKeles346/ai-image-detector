@@ -94,6 +94,18 @@ def _all_protected() -> tuple[set[str], set[str], list[dict[str, Any]]]:
     return exact, dhashes, sources
 
 
+def _path_dhash(path: Path) -> str:
+    with Image.open(path) as opened:
+        opened.verify()
+    with Image.open(path) as opened:
+        width, height = opened.size
+        if width <= 0 or height <= 0 or width * height > MAX_PIXELS:
+            raise ValueError(f"unsafe image geometry: {path}")
+        rgb = opened.convert("RGB")
+        rgb.load()
+        return dhash_image(rgb)
+
+
 def _identity_audit(rows: Sequence[Mapping[str, Any]], prior_exact: set[str], prior_dhash: set[str]) -> dict[str, Any]:
     reasons: dict[str, set[str]] = defaultdict(set)
     exact_groups: dict[str, list[Mapping[str, Any]]] = defaultdict(list)
@@ -149,7 +161,8 @@ def audit_synthwildx() -> dict[str, Any]:
         path = Path(str(row["path"]))
         if not path.is_file() or _digest(path) != row["sha256"]:
             raise ValueError(f"SynthWildX payload changed: {path}")
-        candidates.append({**row, "record_id": f"e46:synthwildx:{row['filename']}"})
+        candidates.append({**row, "dhash": _path_dhash(path),
+                           "record_id": f"e46:synthwildx:{row['filename']}"})
     prior_exact, prior_dhash, protected = _all_protected()
     audit = _identity_audit(candidates, prior_exact, prior_dhash)
     excluded = set(audit["excluded_record_ids"])

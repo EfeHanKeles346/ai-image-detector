@@ -3429,3 +3429,7 @@ was scored or selected using model output.
   are present: 20,000 REAL evenly split FFHQ/FORLAB and 40,000 AI evenly split across eight
   publisher generators. This confirms all declared strata before sampling. No member was extracted
   and no detector loaded at this checkpoint; final selection remains hash-only.
+- **Audit interruption (no result):** the first SynthWildX identity-audit invocation stopped before
+  writing output because the acquisition rows intentionally contained SHA-256 but not dHash.
+  The audited-manifest stage now decodes each validated local image and computes dHash itself;
+  focused coverage was added. No row, role, score or source byte changed.
