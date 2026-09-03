@@ -1,0 +1,49 @@
+{
+  "arm_summary": {
+    "fusion_frozen": {
+      "ai_recall": 0.9539723834300581,
+      "auc": 0.9501977837977631,
+      "balanced_accuracy": 0.8063377275512065,
+      "real_false_ai": 0.3412969283276451
+    },
+    "generalist": {
+      "ai_recall": 0.6716029617770662,
+      "auc": 0.801083983053956,
+      "balanced_accuracy": 0.7296982887584388,
+      "real_false_ai": 0.21220638426018873
+    },
+    "specialist": {
+      "ai_recall": 0.8525115069041425,
+      "auc": 0.9400959989766196,
+      "balanced_accuracy": 0.8725516779652212,
+      "real_false_ai": 0.10740815097370006
+    }
+  },
+  "conclusion": "E45 failure is dominated by fusion/threshold calibration transfer. Ranking remains strong and a much higher consumed-data cut separates the classes, but E45 cannot supply that cut. E46 needs separate in-the-wild CAL plus a distinct untouched FINAL.",
+  "detailed_report_bytes": 16600,
+  "detailed_report_sha256": "2ba9234a317a0cb1af41c8855b5da3b3947dd83f6a06e23e4a33f504cf641164",
+  "forbidden": [
+    "repairing E45",
+    "deploying the post-hoc threshold",
+    "training or calibrating on E45",
+    "claiming a pass from this diagnostic"
+  ],
+  "input_score_sha256": {
+    "fused_scores.jsonl": "b84f8c406e14c2d3e01edf4d9e8660ec9aa2642802b786b4485fa8da3243c67e",
+    "generalist_scores.jsonl": "43ecaa3f436a58c05045e978c97253e559797716a7ecf8c68710616c3b6fc171",
+    "specialist_scores.jsonl": "889469866e3c5167d3430f088e038cb1688470ad6388ce55e41d451b67669bb7"
+  },
+  "input_state": "e45_independent_final_failed",
+  "posthoc_real_10pct_operating_point": {
+    "ai_recall": 0.8735241144686812,
+    "all_six_binary_checks_would_pass": true,
+    "balanced_accuracy": 0.8866717139297833,
+    "real_false_ai": 0.10018068660911464,
+    "status": "diagnostic_only_selected_on_consumed_final_forbidden_for_deployment",
+    "threshold": 0.7541002115324044,
+    "worst_platform_ai_recall": 0.723952738990333,
+    "worst_platform_real_false_ai": 0.12767584097859327
+  },
+  "schema_version": 1,
+  "state": "e46_consumed_e45_posthoc_diagnostic_complete"
+}

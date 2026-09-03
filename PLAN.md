@@ -447,10 +447,15 @@ it before paying for another architecture or training run.
 
 ### F2h — E46 recovery after the E45 social-real failure
 
-- [ ] Diagnose the already-consumed E45 arm scores without changing the result: compare E43-S,
+- [x] Diagnose the already-consumed E45 arm scores without changing the result: compare E43-S,
       official DDA and fused score distributions by platform/label; quantify disagreement and the
       REAL error clusters. This is hypothesis generation only—no threshold sweep may become a
       repaired E45 claim.
+      Complete: generalist AUC/BA/REAL-FP/AI-recall is 0.8011/0.7297/21.22%/67.16%; official DDA
+      is 0.9401/0.8726/10.74%/85.25%; frozen fusion is 0.9502/0.8063/34.13%/95.40%. A post-hoc
+      REAL-10% cut at `0.7541002115` would pass all six binary gates with BA 0.8867 and AI recall
+      87.35%, proving a calibration-transfer defect—but that cut is selected on consumed E45 and
+      is permanently forbidden for deployment.
 - [ ] Keep all 9,978 E45 rows prohibited from TRAIN/CAL/model selection. Build the next candidate
       using separate licensed, camera/social-transmission REAL data already local or newly sourced,
       plus existing modern-AI replay. Prefer a learned real-safety gate or source-invariant

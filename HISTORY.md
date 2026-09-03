@@ -4177,3 +4177,17 @@ next candidate must learn social-platform REAL safety from a separate licensed s
 retaining the current AI-recall gates, and it requires another untouched final before any success
 claim. This result is disappointing but scientifically valuable: the project now knows exactly
 which side fails and no longer relies on optimistic internal data.
+
+The consumed-only E46 arm diagnosis then separated representation from calibration. E43-S alone
+reaches only 0.80108 AUC /0.72970 balanced accuracy, with 21.22% REAL false-AI and 67.16% AI recall.
+The official DDA expert is much healthier at 0.94010 AUC /0.87255 balanced accuracy, 10.74% REAL
+false-AI and 85.25% AI recall. The frozen fusion improves ranking and AI recall but applies its old
+operating point far too aggressively on social-media scores.
+
+For proof only, the 90th percentile of consumed E45 REAL scores gives cut `0.7541002115`: balanced
+accuracy 0.88667, REAL false-AI 10.02%, AI recall 87.35%, worst-platform REAL false-AI 12.77% and
+worst AI recall 72.40%. All six binary gates would pass. That cut is permanently forbidden because
+it was learned from the final, but it changes the next engineering decision: do not spend first on
+a new backbone. Obtain a separate in-the-wild CAL population to learn transfer-safe calibration,
+lock a different untouched FINAL, and keep E45 only as archived diagnosis. Detailed diagnostic
+SHA-256 is `2ba9234a...41164`.

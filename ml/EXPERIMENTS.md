@@ -3378,3 +3378,20 @@ was scored or selected using model output.
 - **Decision:** preserve `e45_independent_final_failed`; E45 is consumed forever and cannot tune a
   threshold or train E46. The causal target for the next, separately sourced development cycle is
   social-platform REAL safety while retaining modern-AI recall—not another E44 threshold sweep.
+
+### E46 — consumed E45 arm diagnosis
+
+- **Generalist:** AUC 0.80108, balanced accuracy 0.72970, REAL false-AI 21.22%, AI recall 67.16%.
+- **Official DDA:** AUC 0.94010, balanced accuracy 0.87255, REAL false-AI 10.74%, AI recall 85.25%.
+  It is substantially safer than the fusion and only narrowly misses the pooled 10% REAL budget.
+- **Frozen fusion:** AUC 0.95020 and AI recall 95.40% improve, but its old cut raises REAL false-AI
+  to 34.13%. Of 1,700 fusion false alarms, 763 are generalist-only positives, 345 specialist-only,
+  140 both-positive and 452 fall below both arms' individual cuts; the learned fusion intercept and
+  continuous margins do not transfer to social-media scores.
+- **Forbidden post-hoc operating point:** the consumed-final REAL 90th percentile is
+  `0.7541002115`. At that cut all six binary gates would pass: balanced accuracy 0.88667, REAL
+  false-AI 10.02%, AI recall 87.35%, worst platform REAL false-AI 12.77% and worst AI recall
+  72.40%. This is diagnostic proof of calibratability, not a valid repaired model.
+- **Decision:** do not retrain a backbone first and do not deploy the post-hoc cut. E46 needs a
+  distinct, licensed in-the-wild CAL population to estimate transfer-safe cuts, plus another
+  untouched FINAL. Detailed diagnostic SHA-256 is `2ba9234a...41164`.
