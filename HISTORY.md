@@ -4328,3 +4328,10 @@ hash-pinned; the advertised 72 GB training corpus was deliberately skipped. The 
 two non-semantic compatibility shims for removed text-only dependencies, after which a two-image
 smoke test returned finite outputs. No performance score was inspected. The unchanged R1 unlock
 rule will decide whether this arm earns a new calibration/development population.
+
+UnivFD supplied the first convincing missing signal: 94.4%/74.4%/80.0% recall on
+StyleGAN/2/3 and 310 of E46's 475 AI misses recovered. A simple diagnostic OR would raise total AI
+recall from 52.5% to 83.5%. It nevertheless failed the pre-registered admission rule by the
+narrowest measurable margin—15.5% pooled REAL false-AI against a 15% ceiling. The rule was not
+relaxed after seeing the result. UnivFD remains a valuable near-success and reference arm, while
+E47 proceeds to the already-authorized UNINA compression-trained GAN specialist comparison.

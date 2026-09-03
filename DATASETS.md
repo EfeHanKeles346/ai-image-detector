@@ -1392,3 +1392,8 @@ SHA-256 `477100745713bcc957beb2b40859536859b6483fd6301b3b9293151b194c7847`, and 
 `b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836`. The 72 GB training
 corpus and 19 GB benchmark were intentionally not downloaded. Model bytes live on LaCie; only the
 small reproducibility receipt is committed.
+
+The UnivFD arm then scored the exact 2,000 consumed E46 identities with 100% coverage; no source
+image or role changed. Its 302,379-byte external diagnostic stream hashes to
+`faff25929505ad40b2d84fec8fe142cd609c50dc552cb1a8e1c03d6f4909104e`. These post-final scores
+are consumed architecture evidence only and cannot fit or validate E47.

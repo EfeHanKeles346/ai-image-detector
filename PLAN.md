@@ -574,6 +574,10 @@ source >=60% on a genuinely new final.
       `47710074...c7847`. The official 932,768,134-byte CLIP ViT-L/14 backbone hashes to the
       publisher-declared `b8cca3fd...03836`. A two-row hidden-score smoke test passes; no metric
       has been opened. Apply the R1 unlock rule unchanged before admitting this arm to R3.
+      UnivFD then showed the needed complementarity—StyleGAN/2/3 recall 94.4%/74.4%/80.0%,
+      recovering 310/475 E46 misses and lifting diagnostic OR recall to 83.5%. However, pooled REAL
+      false-AI is 15.5%, missing the frozen <=15% unlock by 0.5 points. Preserve this near-success
+      but do not relax the rule; compare the permitted UNINA compression-trained specialist next.
 - [ ] **R3 — new CAL/DEVELOPMENT, identity-separated.** Build a compact source-balanced pool from
       data that was never in E46 final: at least two independent camera-real sources, StyleGAN
       generations, and the modern diffusion generators already protected by E46. Split by source,

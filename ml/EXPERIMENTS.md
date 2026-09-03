@@ -3527,3 +3527,10 @@ was scored or selected using model output.
 - **Frozen diagnostic:** original official center-crop/CLIP normalization and sigmoid head output;
   exact consumed E46 identities; the unchanged R1 10%-REAL diagnostic cut and unlock rule. Scores
   can select only whether this representation deserves new R3 data, never repair E46.
+- **Result:** the representation is genuinely complementary but narrowly fails the full unlock.
+  At the diagnostic pooled-REAL 10% cut, StyleGAN/2/3 recall is **94.4%/74.4%/80.0%** and their
+  one-vs-REAL AUC is 0.977/0.936/0.952. Diffusion recall is intentionally weak (3.2–16.8%), making
+  this a specialist. It recovers 310/475 E46 misses; OR-fusion AI recall reaches **83.5%**, but
+  pooled REAL false-AI is **15.5%**, 0.5 points above the frozen 15% diagnostic ceiling. Therefore
+  2/3 checks pass and UnivFD is not directly admitted. Stream SHA-256 is `faff2592...9104e`;
+  report SHA-256 is `ca0c1d4c...782ce`. Next: evaluate the pre-authorized UNINA specialist.

@@ -1,0 +1,65 @@
+{
+  "boundary": "Post-final architecture triage only; cannot repair E46 or fit E47.",
+  "complementarity": {
+    "e46_ai_misses": 475,
+    "extra_real_false_ai": 99,
+    "miss_recovery_rate": 0.6526315789473685,
+    "misses_recovered": 310,
+    "or_fusion_ai_recall": 0.835,
+    "or_fusion_real_false_ai": 0.155
+  },
+  "counts": {
+    "ai": 1000,
+    "real": 1000,
+    "rows": 2000
+  },
+  "diagnostic_threshold": 0.017384262755513195,
+  "identities": {
+    "backbone_sha256": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+    "checkout_commit": "030495aea3300a8b54c0ec37ec7fe1dd7e63c619",
+    "e46_fused_scores_sha256": "6a51a9b11163fc8bb45889e38cc400a1b210cff7bcd6f36d6a760edc1fa68c97",
+    "e46_result_sha256": "e7e14fdfae15f20aba0b668acbc70ac34db68689adc905dcaa4594fa85d7a7ed",
+    "head_sha256": "477100745713bcc957beb2b40859536859b6483fd6301b3b9293151b194c7847",
+    "manifest_sha256": "4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b"
+  },
+  "legacy": {
+    "ai_recall": 0.354,
+    "ai_recall_by_source": {
+      "FLUX.1": 0.032,
+      "StableDiffusion1.5": 0.168,
+      "StableDiffusion2": 0.04,
+      "StableDiffusion3": 0.072,
+      "StableDiffusionXL": 0.032,
+      "StyleGAN": 0.944,
+      "StyleGAN2": 0.744,
+      "StyleGAN3": 0.8
+    },
+    "auc_by_ai_source_vs_all_real": {
+      "FLUX.1": 0.5182,
+      "StableDiffusion1.5": 0.6331039999999999,
+      "StableDiffusion2": 0.5091439999999999,
+      "StableDiffusion3": 0.57692,
+      "StableDiffusionXL": 0.4446,
+      "StyleGAN": 0.9772879999999999,
+      "StyleGAN2": 0.93572,
+      "StyleGAN3": 0.952232
+    },
+    "real_false_ai": 0.1,
+    "roc_auc": 0.693401
+  },
+  "next_action": "reject UnivFD and evaluate the pinned UNINA compression-trained GAN specialist",
+  "report_bytes": 2139,
+  "report_sha256": "ca0c1d4c1ebd3cd72f7c12591003a5a40e8a8d25710af8db3bda3de4c77782ce",
+  "schema_version": 1,
+  "score_stream": {
+    "bytes": 302379,
+    "sha256": "faff25929505ad40b2d84fec8fe142cd609c50dc552cb1a8e1c03d6f4909104e"
+  },
+  "state": "e47_univfd_diagnostic_complete",
+  "unlock": {
+    "each_stylegan_recall_gte_0_30": true,
+    "mean_stylegan_recall_gte_0_50": true,
+    "or_fusion_real_false_ai_lte_0_15": false,
+    "passed": false
+  }
+}
