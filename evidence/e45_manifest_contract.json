@@ -1,0 +1,41 @@
+{
+  "archive": {
+    "bytes": 3553693205,
+    "crc_excluded_members": [
+      "ITW-SM/1_fake/x_618.jpg"
+    ],
+    "crc_usable_rows": 9999,
+    "sha256": "18f1806e1cef6bc9f7ed6e49b61379a6cb4bac63cb4f3ed4f9fffffdf177b6e3"
+  },
+  "decode_limits": {
+    "max_member_bytes": 104857600,
+    "max_pixels": 50000000
+  },
+  "decontamination": {
+    "cross_label_exact": "exclude_all_records",
+    "protected_exact_or_dhash": "exclude_record",
+    "same_label_exact": "keep_lexical_first",
+    "within_e45_dhash": "diagnostic_only"
+  },
+  "identity": {
+    "labels": {
+      "0_real": 0,
+      "1_fake": 1
+    },
+    "platforms": [
+      "Facebook",
+      "Instagram",
+      "LinkedIn",
+      "X"
+    ]
+  },
+  "role": "E45_UNTOUCHED_FINAL",
+  "schema_version": 1,
+  "state": "e45_manifest_method_frozen_before_image_decode",
+  "stop_rules": [
+    "Every usable member must decode within the byte and pixel limits.",
+    "Every selected row must be free of protected exact SHA-256 and exact dHash overlap.",
+    "No detector or candidate may load before the zero-score manifest is frozen and committed.",
+    "Labels and platforms come only from the publisher path schema, never from model behavior."
+  ]
+}
