@@ -3360,3 +3360,8 @@ was scored or selected using model output.
   byte score stream SHA-256 is `88946986...69bb7`. The first 200 rows at batch 2 and the remainder
   at batch 8 used the same frozen model/transform; the resumable prefix prevented recomputation.
   Every payload hash matched, and the fused result remained unopened at this checkpoint.
+- **Reporting interruption:** immutable fusion produced 9,978 rows /2,142,780 bytes /SHA-256
+  `b84f8c40...3c67e`, then the metric helper rejected row 0 because it requires field `source`
+  while the E45 schema names the same publisher group `platform`. No metric/report was created.
+  Preserve that fused stream; resume only the reporter with the deterministic `source=platform`
+  alias after committing the fix. Do not rerun either model or rewrite fused scores.

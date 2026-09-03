@@ -4151,3 +4151,10 @@ manifest coverage. Its 1,338,964-byte stream SHA-256 is `88946986...69bb7`. The 
 preserved the first 200 batch-2 results when throughput was increased to the already-permitted
 batch 8; model weights, preprocessing, row order and scores were not changed. Both arms are now
 complete, but no fused metric had been opened at this checkpoint.
+
+The frozen fusion then created all 9,978 final score rows, but reporting stopped before its first
+metric because the shared evaluator requires a `source` key and E45 calls that identical grouping
+field `platform`. The existing 2,142,780-byte fused stream is preserved at SHA-256
+`b84f8c40...3c67e`; neither model will rerun and the stream will not be rewritten. The correction
+only aliases `source=platform` in memory for the metric helper and can resume reporting only after
+being committed. At this point no final report or pass/fail decision exists.

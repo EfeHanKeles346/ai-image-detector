@@ -461,7 +461,7 @@ def bootstrap_primary(
 
 
 def evaluate() -> dict[str, Any]:
-    if any(path.exists() for path in (FUSED_SCORES, REPORT, RESULT_EVIDENCE)):
+    if REPORT.exists() or RESULT_EVIDENCE.exists():
         raise FileExistsError("E45 final result already exists; no completed-run retry")
     contract, manifest_rows = _validate_contract()
     generalist = _load_jsonl(GENERALIST_SCORES)
@@ -483,7 +483,7 @@ def evaluate() -> dict[str, Any]:
         for row in manifest_rows
     ])
     values = artifact["head"].predict_proba(features)[:, 1]
-    fused = [
+    expected_fused = [
         {
             "record_id": row["record_id"],
             "label": int(row["label"]),
@@ -495,8 +495,23 @@ def evaluate() -> dict[str, Any]:
         }
         for row, score in zip(manifest_rows, values, strict=True)
     ]
-    score_bytes, score_sha256 = _write_jsonl(FUSED_SCORES, fused)
-    metrics = evaluate_binary_scores(fused, threshold=BINARY_THRESHOLD)
+    if FUSED_SCORES.exists():
+        fused = _load_jsonl(FUSED_SCORES)
+        if len(fused) != len(expected_fused):
+            raise ValueError("E45 preserved fused stream count changed")
+        for index, (found, expected) in enumerate(zip(fused, expected_fused, strict=True)):
+            if found != expected:
+                raise ValueError(f"E45 preserved fused stream changed at row {index}")
+        raw_scores = FUSED_SCORES.read_bytes()
+        score_bytes = len(raw_scores)
+        score_sha256 = hashlib.sha256(raw_scores).hexdigest()
+    else:
+        fused = expected_fused
+        score_bytes, score_sha256 = _write_jsonl(FUSED_SCORES, fused)
+    metric_rows = [
+        {**row, "source": row["platform"], "condition": "original"} for row in fused
+    ]
+    metrics = evaluate_binary_scores(metric_rows, threshold=BINARY_THRESHOLD)
     rates = binary_platform_rates(fused, BINARY_THRESHOLD)
     selective = selective_metrics(fused)
     intervals = bootstrap_primary(fused)
