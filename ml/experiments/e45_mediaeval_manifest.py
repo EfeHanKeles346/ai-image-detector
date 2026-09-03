@@ -34,8 +34,13 @@ PLATFORM_NAMES = {
     "linkedin": "LinkedIn",
     "x": "X",
 }
-NAME_RE = re.compile(r"^(Facebook|Instagram|Linkedin|X)_real_\d+\.jpg$", re.IGNORECASE)
-FAKE_RE = re.compile(r"^(facebook|instagram|linkedin|x)_\d+\.jpg$", re.IGNORECASE)
+IMAGE_SUFFIX_RE = r"(?:jpg|jpeg|png|webp)"
+NAME_RE = re.compile(
+    rf"^(Facebook|Instagram|Linkedin|X)_real_\d+\.{IMAGE_SUFFIX_RE}$", re.IGNORECASE
+)
+FAKE_RE = re.compile(
+    rf"^(facebook|instagram|linkedin|x)_\d+\.{IMAGE_SUFFIX_RE}$", re.IGNORECASE
+)
 
 
 def _json_bytes(value: Any) -> bytes:

@@ -18,6 +18,15 @@
     "within_e45_dhash": "diagnostic_only"
   },
   "identity": {
+    "declared_member_encodings": {
+      "0_real": {
+        "jpg": 4981,
+        "png": 19
+      },
+      "1_fake": {
+        "jpg": 5000
+      }
+    },
     "labels": {
       "0_real": 0,
       "1_fake": 1

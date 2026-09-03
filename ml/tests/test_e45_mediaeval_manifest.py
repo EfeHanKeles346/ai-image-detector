@@ -8,6 +8,7 @@ from experiments.e45_mediaeval_manifest import audit_rows, parse_member
     [
         ("ITW-SM/0_real/Facebook_real_12.jpg", (0, "Facebook")),
         ("ITW-SM/0_real/Linkedin_real_7.jpg", (0, "LinkedIn")),
+        ("ITW-SM/0_real/X_real_3147.png", (0, "X")),
         ("ITW-SM/1_fake/instagram_2.jpg", (1, "Instagram")),
         ("ITW-SM/1_fake/x_8.jpg", (1, "X")),
     ],
