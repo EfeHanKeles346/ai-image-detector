@@ -1,0 +1,37 @@
+{
+  "archive_sha256": "413cb7f9664cf5f4e37a2ae0bea5d1a999c47398ca1c267a2173e88c2cda0d63",
+  "counts": {
+    "by_role": {
+      "CAL": 1200,
+      "DEVELOPMENT": 1200
+    },
+    "by_role_label": {
+      "CAL:0": 600,
+      "CAL:1": 600,
+      "DEVELOPMENT:0": 600,
+      "DEVELOPMENT:1": 600
+    },
+    "by_role_source": {
+      "CAL:FFHQ": 600,
+      "CAL:StableDiffusion1.5": 200,
+      "CAL:StableDiffusionXL": 200,
+      "CAL:StyleGAN2": 200,
+      "DEVELOPMENT:FLUX.1": 100,
+      "DEVELOPMENT:FORLAB": 600,
+      "DEVELOPMENT:StableDiffusion3": 100,
+      "DEVELOPMENT:StyleGAN": 200,
+      "DEVELOPMENT:StyleGAN3": 200
+    },
+    "candidate_rows": 2880,
+    "decode_failures": 0,
+    "decoded": 2880,
+    "identity_exclusions": 1,
+    "selected_rows": 2400
+  },
+  "manifest_bytes": 1760652,
+  "manifest_sha256": "378b83fe56bcf4bbf61d5b626efa71899bea571abeeeca05c74774daa8585739",
+  "model_scores_created": 0,
+  "protected_manifest_count": 25,
+  "schema_version": 1,
+  "state": "e47_caldev_decontaminated_frozen_unscored"
+}

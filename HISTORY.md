@@ -4366,3 +4366,8 @@ The new-data contract then froze cleanly: 2,880 score-blind reserve members, bal
 between CAL and DEVELOPMENT and disjoint from all 3,500 E46 reserve identities. Contract SHA is
 `c031ef92...d0753`; the intended post-audit population remains 2,400. No candidate image had been
 decoded and no model had been loaded at this checkpoint.
+
+Extraction then validated every one of the 2,880 candidate payloads. A single SD1.5 reserve image
+matched a protected perceptual hash and was removed before model access; the 20% headroom absorbed
+it without changing any quota. The frozen clean population is exactly 1,200 CAL and 1,200
+DEVELOPMENT, each 600 REAL/600 AI, at manifest SHA `378b83fe...85739`. Scores remain zero.

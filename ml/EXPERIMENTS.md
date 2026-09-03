@@ -3571,3 +3571,6 @@ was scored or selected using model output.
 - **Selection lock:** 2,880 score-blind reserve members were hash-ranked outside every E46 reserve
   identity, 1,440 per role. Contract SHA-256 `c031ef92...d0753`; target 2,400; decoded images and
   model scores both zero. Next step is decode + protected exact/dHash audit only.
+- **Identity result:** all 2,880 candidates decoded; one SD1.5 reserve row was removed for a
+  protected dHash overlap. The selected manifest reaches 2,400 rows with exact 600/600 class
+  balance inside both CAL and DEVELOPMENT. Manifest SHA-256 `378b83fe...85739`; scores zero.

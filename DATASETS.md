@@ -1427,3 +1427,10 @@ reserve candidates (1,440 CAL, 1,440 DEVELOPMENT), all outside the complete E46 
 reserve. The 919,423-byte contract SHA-256 is
 `c031ef92f5188536003ad94789195e4f17866c0006e37812e2e576b658d0753a`; target rows remain
 2,400 and model-score rows remain zero.
+
+All 2,880 E47 candidates decoded successfully into a 745 MB external research pool. One SD1.5
+reserve row (`general/00099.jpg`) matched a protected dHash and was excluded before scoring. Every
+quota still filled: 1,200 CAL and 1,200 DEVELOPMENT, each exactly 600 REAL/600 AI across the frozen
+sources. The 1,760,652-byte unscored manifest SHA-256 is
+`378b83fe56bcf4bbf61d5b626efa71899bea571abeeeca05c74774daa8585739`; model-score count is zero.
+The 480 non-selected reserve payloads remain unscored and may not silently replace a later row.
