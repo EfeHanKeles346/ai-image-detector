@@ -488,6 +488,9 @@ it before paying for another architecture or training run.
       Transfer complete and still unscored: 4,207,525,545 bytes /SHA-256 `413cb7f9...cda0d63`.
       Independent `gzip -t` and TAR listing pass; the archive contains exactly 60,000 JPG files,
       including 10,000 FFHQ, 10,000 FORLAB and 5,000 from each of eight declared AI generators.
+      Binding now complete before extraction: all member facts hash to `b59e78de...8ba28b`; a
+      3,500-row reserve and exact per-source quotas are fixed in contract SHA-256
+      `1e77dfbd...cead3`. The contract still contains zero decoded final images and zero scores.
       Score-blind manifest binding and protected-overlap audit remain before this item closes.
 - [ ] On SynthWildX CAL only, compare the unchanged official DDA arm, frozen E44 fusion, a global
       REAL-safe cut, and a small QuAD-inspired quality-conditioned calibration. Method choice may

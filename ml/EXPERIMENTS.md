@@ -3433,3 +3433,11 @@ was scored or selected using model output.
   writing output because the acquisition rows intentionally contained SHA-256 but not dHash.
   The audited-manifest stage now decodes each validated local image and computes dHash itself;
   focused coverage was added. No row, role, score or source byte changed.
+- **Identity result:** 15/1,723 recovered SynthWildX rows were removed before scoring—two repeated
+  exact payload copies and thirteen protected exact/dHash overlaps. The remaining 1,708 rows are
+  CAL 1,024 /DEVELOPMENT 684 with 415 REAL and 396–472 rows per AI generator. Audited manifest
+  SHA-256 is `953490a9...da8d4`; model scores remain zero.
+- **Final selection lock:** the verified 60,000-member TrueFake inventory facts hash to
+  `b59e78de...8ba28b`. Contract SHA-256 `1e77dfbd...cead3` fixes a 3,500-row score-blind reserve,
+  the lowest-rank-clean rule, 500-image quotas for each REAL origin and 125-image quotas for each
+  of eight AI generators. No final payload is decoded or scored at this checkpoint.

@@ -1347,3 +1347,18 @@ pass. The archive contains exactly 60,000 JPG payloads: 10,000 FFHQ REAL, 10,000
 5,000 each from FLUX.1, Stable Diffusion 1.5/2/3/XL and StyleGAN 1/2/3. The archive remains
 unscored and only 3,500 score-blind reserve candidates will be decoded to obtain the frozen 2,000-
 row balanced final after contamination checks; the remaining 56,500 images need not be extracted.
+
+The completed SynthWildX identity audit compared every recovered payload with 23 protected prior
+manifests. Fifteen rows were excluded: two redundant same-label exact copies and thirteen protected
+exact/dHash overlaps (some rows carry both reasons). The clean unscored population is 1,708 rows:
+CAL 1,024 and DEVELOPMENT 684; type counts are REAL 415, DALL-E 3 396, Firefly 472 and Midjourney
+v5 425. Its 1,258,086-byte audited manifest SHA-256 is
+`953490a9c63669fac2305e6abcc4259f2f4066e8c58b7851efddedaa7e2da8d4`.
+
+TrueFake inventory and sample binding also completed without extracting a final image. All 60,000
+member facts hash to `b59e78de93d8d6b84f323fbca0329e2b7f60a73828a439fa7a893861198ba28b`.
+Contract namespace `E46_TRUEFAKE_FACEBOOK_FINAL_V1` selects a 3,500-row reserve by lowest SHA-256
+rank: 750 candidates from each REAL origin and 250 from each AI generator. After decode/overlap
+checks, the first clean 500 per REAL origin and 125 per AI generator become final. The detailed
+1,106,013-byte selection contract SHA-256 is
+`1e77dfbdc69f82a8eb69c40ee93f87428b5f4627fd34928bb589913be37cead3`; scores remain zero.

@@ -1,0 +1,40 @@
+{
+  "audit_counts": {
+    "dhash_groups": 4,
+    "exact_groups": 2,
+    "excluded": 15
+  },
+  "counts": {
+    "by_role": {
+      "CAL": 1024,
+      "DEVELOPMENT": 684
+    },
+    "by_type": {
+      "dalle3": 396,
+      "firefly": 472,
+      "midjourney_v5": 425,
+      "real": 415
+    },
+    "by_type_role": {
+      "dalle3:CAL": 237,
+      "dalle3:DEVELOPMENT": 159,
+      "firefly:CAL": 281,
+      "firefly:DEVELOPMENT": 191,
+      "midjourney_v5:CAL": 258,
+      "midjourney_v5:DEVELOPMENT": 167,
+      "real:CAL": 248,
+      "real:DEVELOPMENT": 167
+    },
+    "declared": 2000,
+    "downloaded": 1723,
+    "excluded": 15,
+    "selected": 1708
+  },
+  "manifest_bytes": 1258086,
+  "manifest_sha256": "953490a9c63669fac2305e6abcc4259f2f4066e8c58b7851efddedaa7e2da8d4",
+  "model_scores_created": 0,
+  "protected_manifest_count": 23,
+  "role": "E46_CAL_DEV",
+  "schema_version": 1,
+  "state": "e46_synthwildx_audited_unscored"
+}

@@ -1,0 +1,46 @@
+{
+  "archive_sha256": "413cb7f9664cf5f4e37a2ae0bea5d1a999c47398ca1c267a2173e88c2cda0d63",
+  "contract_bytes": 1106013,
+  "contract_sha256": "1e77dfbdc69f82a8eb69c40ee93f87428b5f4627fd34928bb589913be37cead3",
+  "gzip_integrity_passed": true,
+  "inventory": {
+    "by_source": {
+      "FFHQ": 10000,
+      "FLUX.1": 5000,
+      "FORLAB": 10000,
+      "StableDiffusion1.5": 5000,
+      "StableDiffusion2": 5000,
+      "StableDiffusion3": 5000,
+      "StableDiffusionXL": 5000,
+      "StyleGAN": 5000,
+      "StyleGAN2": 5000,
+      "StyleGAN3": 5000
+    },
+    "facts_sha256": "b59e78de93d8d6b84f323fbca0329e2b7f60a73828a439fa7a893861198ba28b",
+    "files": 60000
+  },
+  "model_scores_created": 0,
+  "role": "E46_UNTOUCHED_FINAL",
+  "schema_version": 1,
+  "selection": {
+    "candidate_pool_rows": 3500,
+    "namespace": "E46_TRUEFAKE_FACEBOOK_FINAL_V1",
+    "rule": "lowest SHA-256 ranks that decode and avoid protected/exact overlap",
+    "source_quotas": {
+      "FFHQ": 500,
+      "FLUX.1": 125,
+      "FORLAB": 500,
+      "StableDiffusion1.5": 125,
+      "StableDiffusion2": 125,
+      "StableDiffusion3": 125,
+      "StableDiffusionXL": 125,
+      "StyleGAN": 125,
+      "StyleGAN2": 125,
+      "StyleGAN3": 125
+    },
+    "target_ai": 1000,
+    "target_real": 1000,
+    "target_rows": 2000
+  },
+  "state": "e46_truefake_final_selection_frozen_unscored"
+}

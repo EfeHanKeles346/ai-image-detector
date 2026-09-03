@@ -4227,3 +4227,14 @@ The first SynthWildX identity-audit command failed closed before producing a man
 had preserved exact hashes and geometry but had not yet calculated perceptual dHash. The audit was
 corrected to decode each already-validated file and derive dHash locally, with a regression test.
 No image, role or model score changed, and no partial scientific result was retained.
+
+The repaired audit completed and removed 15 SynthWildX identities before model access: two were
+duplicate copies within the set and thirteen overlapped protected earlier manifests by exact hash
+or dHash. The clean pool is 1,708 rows, split 1,024 CAL /684 DEVELOPMENT, with 415 REAL images and
+396–472 samples from each AI generator. Its audited manifest SHA-256 is `953490a9...da8d4`.
+
+TrueFake's selection was then locked while still score-blind. The complete 60,000-file inventory
+hash is `b59e78de...8ba28b`; a deterministic 3,500-member reserve contains enough headroom to reject
+bad or contaminated samples while retaining exactly 500 FFHQ, 500 FORLAB and 125 from each of the
+eight AI generators. Detailed contract SHA-256 is `1e77dfbd...cead3`. This checkpoint contains no
+decoded final payload and no model score, so later extraction cannot steer the sample.
