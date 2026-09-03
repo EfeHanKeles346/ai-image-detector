@@ -3349,3 +3349,7 @@ was scored or selected using model output.
 - **Boundary:** 141 within-E45 exact-dHash groups remain a disclosed similarity diagnostic, not an
   automatic identity judgment. No protected exact/dHash overlap survives, and zero model score
   exists. Commit this manifest before binding or loading E44-D.
+- **Score lock:** detailed contract SHA-256 `4a5d4999...9ac83` binds the 9,978-row manifest,
+  unchanged E43-S /official-DDA /fusion artifact hashes, binary threshold `0.3477933653`, E44-D
+  selective cuts and all ten gates. Confidence intervals use 10,000 platform-and-label-stratified
+  row bootstraps at seed 45. Model score rows are still zero.

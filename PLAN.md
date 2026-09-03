@@ -434,6 +434,10 @@ it before paying for another architecture or training run.
       sample bootstrap intervals, and preserve pass or failure without threshold repair. The final
       dataset never enters training; a failure may define a future hypothesis only after E45 is
       marked consumed.
+      Score contract is now frozen before model load: detailed SHA-256 `4a5d4999...9ac83` binds
+      all 9,978 rows, E43-S `a3aec445...47390`, official DDA `b27a31d3...e3e`, fusion
+      `19fd7bbc...b100`, binary cut `0.3477933653`, the E44-D selective cuts and all ten gates.
+      Generalist, specialist and fused score rows remain zero.
 
 ### F3 — recording and stop rules
 

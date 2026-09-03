@@ -4133,3 +4133,9 @@ dHash equality can describe visually similar small/simple images without proving
 This rule was fixed before the audit. The tracked manifest evidence still records zero model scores;
 the candidate and success gates must be bound to this exact manifest in a separate committed
 contract before inference begins.
+
+The second lock then bound all 9,978 record identities to the unchanged E43-S generalist, official
+DDA specialist and E44 fusion hashes. Binary threshold `0.3477933653`, selective REAL/AI cuts,
+ten pass gates and a 10,000-repeat platform/label-stratified bootstrap are now immutable. Detailed
+contract SHA-256 is `4a5d4999...9ac83`. Generalist, specialist and fused score streams still contain
+zero rows at this checkpoint; inference may begin only after this code and contract reach GitHub.

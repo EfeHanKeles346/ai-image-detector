@@ -1,5 +1,6 @@
 {
   "candidate": {
+    "binary_threshold": 0.34779336534869326,
     "fusion_artifact_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
     "policy": {
       "ai_if_score_gte": 0.6938513176357805,
