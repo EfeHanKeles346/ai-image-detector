@@ -1414,3 +1414,10 @@ The capped UNINA restart completed all 2,000 consumed identities with 100% cover
 byte external stream SHA-256 is `1725169559c53bcf8e56a53bbc1cc697844cbef664d3a5cf9b872fc3ae6d99e6`.
 Like every E47-R1/R2 stream, it is post-final diagnostic evidence only and cannot train, calibrate,
 validate or prove a successor.
+
+E47-R3 pre-registers 2,400 new CAL/DEVELOPMENT identities from the still-unscored remainder of the
+existing TrueFake Facebook TAR; network bytes are zero. Every one of the old 3,500 E46 reserve
+members is excluded before ranking. CAL quotas are FFHQ REAL 600 plus StyleGAN2/SD1.5/SDXL AI 200
+each. DEVELOPMENT quotas are FORLAB REAL 600 plus StyleGAN/StyleGAN3 AI 200 each and FLUX.1/SD3 AI
+100 each. A 20% deterministic reserve is decoded so corrupt/overlapping rows can be rejected
+without score-dependent replacement. These roles can develop E47 but can never become its final.

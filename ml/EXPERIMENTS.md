@@ -3555,3 +3555,16 @@ was scored or selected using model output.
   Therefore neither specialist is directly admitted. Stream SHA-256 `17251695...6d99e6`; report
   SHA-256 `280b973a...ff7fa`. Scientific conclusion: use new CAL/DEVELOPMENT to learn when to trust
   the specialist, not another backbone or a post-final threshold.
+
+### E47-R3 — frozen CAL/DEVELOPMENT design before extraction
+
+- **Population:** 2,400 identities from TrueFake Facebook members outside the entire prior 3,500-
+  member reserve. Namespace `E47_TRUEFAKE_CALDEV_V1`; 20% reserve headroom; exact/dHash audit
+  before any detector loads.
+- **Source-held roles:** CAL = 600 FFHQ REAL +200 StyleGAN2 +200 SD1.5 +200 SDXL. DEVELOPMENT =
+  600 FORLAB REAL +200 StyleGAN +200 StyleGAN3 +100 FLUX.1 +100 SD3. This deliberately transfers
+  both pristine-real origin and GAN generation.
+- **Candidates:** frozen E46, regularized E46+UnivFD, E46+UNINA and all-three logistic gates. Fit
+  and threshold on CAL only; backbones never update. DEVELOPMENT gates remain pooled REAL FP <=10%,
+  worst REAL <=20%, pooled AI recall >=80%, worst AI source >=60%, AUC >=0.90 and BA >=0.85.
+  Prefer the MIT candidate when it passes and trails nonprofit UNINA by <=2 recall points.

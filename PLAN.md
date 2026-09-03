@@ -595,6 +595,13 @@ source >=60% on a genuinely new final.
       generations, and the modern diffusion generators already protected by E46. Split by source,
       parent identity and transport before scores. Fit only a small calibrated fusion/gate; keep
       all backbones frozen. Require the E46-style REAL and AI gates on untouched DEVELOPMENT.
+      Frozen pool design: exclude all 3,500 E46 reserve members, then hash-rank new archive members
+      under namespace `E47_TRUEFAKE_CALDEV_V1`. CAL contains 600 FFHQ REAL and 200 each from
+      StyleGAN2, SD1.5 and SDXL. DEVELOPMENT contains 600 FORLAB REAL, 200 each StyleGAN/StyleGAN3,
+      and 100 each FLUX.1/SD3. Extract 20% score-blind reserve headroom, decode and exclude exact/
+      dHash overlaps before filling the fixed 1,200/1,200 roles. Compare frozen E46 alone,
+      E46+UnivFD, E46+UNINA and three-arm regularized logistic gates using CAL only. Prefer the MIT
+      UnivFD path when it passes and is within two recall points of the nonprofit UNINA path.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32

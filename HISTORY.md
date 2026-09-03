@@ -4354,3 +4354,10 @@ to 90%. But a naive OR still raises REAL false accusations to 15.5%, so the unch
 gate rejects direct serving. UnivFD and UNINA independently prove that the missing GAN
 representation now exists; what E47 lacks is a decision layer trained on separate data to know
 when the specialist is trustworthy. No E46 score will be used to learn that decision.
+
+E47-R3 was bound around that conclusion before extracting another image. It will use 2,400 new,
+hash-ranked TrueFake members outside all 3,500 prior reserve identities: FFHQ/StyleGAN2 plus two
+diffusions for CAL, and source-held FORLAB/StyleGAN/StyleGAN3 plus FLUX/SD3 for DEVELOPMENT.
+Twenty-percent reserve headroom permits score-blind audit failures. Every backbone stays frozen;
+only a regularized decision gate and CAL threshold may learn. The MIT UnivFD route wins ties close
+to nonprofit UNINA, and no DEVELOPMENT row may repair the chosen rule.
