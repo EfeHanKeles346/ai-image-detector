@@ -1,0 +1,53 @@
+{
+  "calibration_target": {
+    "real_false_ai_max": 0.1
+  },
+  "candidate_methods": [
+    "dda_global",
+    "fusion_global",
+    "fusion_quality_gaussian"
+  ],
+  "contract_bytes": 1393,
+  "contract_sha256": "b3fe31a3041233cf29bc9d6708083e695e7f288fd7273bd4a6eb4d4b7d85c98c",
+  "counts": {
+    "CAL": 1024,
+    "DEVELOPMENT": 684,
+    "ai": 1293,
+    "real": 415,
+    "rows": 1708
+  },
+  "development_gates": {
+    "pooled_ai_recall_min": 0.8,
+    "pooled_real_false_ai_max": 0.2,
+    "worst_ai_generator_recall_min": 0.6,
+    "worst_real_group_false_ai_max": 0.25
+  },
+  "forbidden": [
+    "E45 use",
+    "TrueFake read or score",
+    "role change",
+    "unregistered candidate arm",
+    "backbone retraining",
+    "development-informed threshold refit"
+  ],
+  "identities": {
+    "fusion_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+    "generalist_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "manifest_sha256": "953490a9c63669fac2305e6abcc4259f2f4066e8c58b7851efddedaa7e2da8d4",
+    "specialist_checkpoint_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e"
+  },
+  "model_scores_created": 0,
+  "quality_proxies": [
+    "log_min_dimension",
+    "log_bits_per_pixel",
+    "mean_neighbor_difference"
+  ],
+  "role": "E46_CAL_DEV",
+  "schema_version": 1,
+  "score_arms": [
+    "E43-S generalist",
+    "official DDA",
+    "frozen E44 fusion"
+  ],
+  "state": "e46_development_score_contract_frozen_before_model_load"
+}

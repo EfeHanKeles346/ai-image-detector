@@ -501,6 +501,9 @@ it before paying for another architecture or training run.
       25%, AI recall >= 80%, and worst AI-generator recall >= 60%; otherwise preserve the failure.
       Keep a simpler global cut when the quality model does not materially improve both safety and
       AI retention. Do not retrain a backbone in this stage.
+      Score contract now frozen before model load at SHA-256 `b3fe31a3...5c98c`, binding all 1,708
+      clean rows, both model weights, the old fusion, three allowed methods and all development
+      gates. CAL is 1,024 rows; DEVELOPMENT is 684; score count is zero.
 - [ ] Freeze the chosen artifact, threshold(s), selective band and ten E45-style gates before
       opening TrueFake labels/scores. Score the 2,000-row Facebook final exactly once and report
       source/generator metrics plus bootstrap intervals. E45 remains archived and prohibited;

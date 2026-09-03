@@ -4245,3 +4245,10 @@ group appeared. The lowest clean ranks therefore filled every quota exactly: 500
 and 125 from each of eight AI generators. The untouched final is now a balanced 2,000-row manifest
 at SHA-256 `4572339e...b225b`, still with zero model scores. Only these rows may be used in the
 future one-shot evaluation; the additional reserve payloads are not evaluation observations.
+
+E46 development scoring was then bound before either model loaded. Contract SHA-256
+`b3fe31a3...5c98c` fixes 1,708 clean SynthWildX rows, the exact E43-S /official-DDA /E44-fusion
+artifacts, 1,024 CAL and 684 DEVELOPMENT roles, three allowed calibration candidates and four
+development gates. The quality experiment may use only log minimum dimension, log bits-per-pixel
+and mean neighboring-pixel difference; it cannot introduce a hidden new model. TrueFake remains
+unread and all score streams are still empty.

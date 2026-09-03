@@ -3446,3 +3446,7 @@ was scored or selected using model output.
   exactly 2,000 rows: 500 FFHQ +500 FORLAB REAL and 125 from each of eight AI generators. Detailed
   manifest SHA-256 is `4572339e...b225b`; model-score rows remain zero. This is the last permitted
   checkpoint before E46 candidate selection begins on SynthWildX only.
+- **Development score lock:** contract SHA-256 `b3fe31a3...5c98c` binds the 1,708-row clean
+  SynthWildX manifest, E43-S, official DDA and E44 fusion hashes, CAL/DEVELOPMENT roles, three
+  pre-registered candidate methods, three inexpensive quality proxies and the four development
+  gates. Counts are CAL 1,024 /DEVELOPMENT 684; model scores remain zero. TrueFake is not read.
