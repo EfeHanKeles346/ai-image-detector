@@ -557,12 +557,15 @@ source >=60% on a genuinely new final.
 - [x] **R0 — preserve E46 before repair.** Commit the immutable arm streams, one-shot report,
       bootstrap intervals and failed 5/10 gate. Forbid row removal, refit, threshold repair and
       repeat evaluation on TrueFake Facebook.
-- [ ] **R1 — cheapest complementary-arm diagnostic.** Score the already-trained, hash-pinned
+- [x] **R1 — cheapest complementary-arm diagnostic.** Score the already-trained, hash-pinned
       GenImage ResNet-18 on the consumed E46 identities using its original deterministic 224 px
       preprocessing. Report only diagnostic AUC/TPR at a pooled 10% REAL-FP cut, per-generator
       recall, and how many frozen-fusion misses it recovers. This is architecture triage, not a new
       E46 result. Unlock it only if mean StyleGAN-family recall is >=50%, every StyleGAN generation
       is >=30%, and diagnostic OR-fusion REAL-FP is <=15%.
+      The arm failed every unlock condition: StyleGAN/2/3 recall is 4%/8%/8%, pooled AI recall
+      23.6%, and OR-fusion reaches only 58.5% AI recall while REAL false-AI rises to 15.1%.
+      Reject the legacy arm; do not spend new training time on this representation.
 - [ ] **R2 — external specialist only if R1 fails.** Acquire a hash-pinned official GAN detector
       (prefer UnivFD's frozen CLIP linear head or UNINA's compression-trained GAN detector) under
       its licence; do not download the 72 GB training corpus. First run the same consumed-data

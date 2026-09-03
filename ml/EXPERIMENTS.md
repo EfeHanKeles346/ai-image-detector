@@ -3509,3 +3509,8 @@ was scored or selected using model output.
 - **Unlock rule:** proceed with this family only when mean StyleGAN/2/3 recall is >=50%, each is
   >=30%, and OR-fusion pooled REAL false-AI is <=15%. Otherwise acquire one official frozen GAN
   detector before constructing new CAL/DEVELOPMENT data.
+- **Result:** reject the legacy arm. At its post-hoc diagnostic pooled-REAL 10% cut, AUC is 0.6624
+  and AI recall 23.6%. StyleGAN/2/3 recall is only 4%/8%/8% (per-source AUC 0.528/0.561/0.658).
+  It recovers 60/475 E46 misses, but OR-fusion reaches only 58.5% AI recall and raises REAL
+  false-AI from 5.6% to 15.1%. All three pre-registered unlock checks fail. Stream SHA-256 is
+  `e4bbcde8...c7cb27`; report SHA-256 is `bcf7239e...b465de4`.

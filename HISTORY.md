@@ -4315,3 +4315,9 @@ contains the missing GAN signal on the now-consumed E46 rows. Those labels may d
 complementarity but cannot train, calibrate, validate or prove the successor. A strict unlock rule
 was written before scoring; failure routes to an official frozen GAN specialist, while success
 still requires new source/identity-separated CAL, DEVELOPMENT and final evidence.
+
+The cheap E47-R1 hypothesis failed cleanly. The old GenImage ResNet sees only 4%/8%/8% of
+Facebook-transported StyleGAN/2/3 at a diagnostic 10% REAL false-positive cut. OR-combining it with
+E46 recovers 60 of 475 misses but raises REAL false accusations to 15.1% and leaves AI recall at
+58.5%. Because all three frozen unlock conditions fail, the arm is retired from E47. The next
+permitted action is an official frozen GAN specialist, not another threshold adjustment.

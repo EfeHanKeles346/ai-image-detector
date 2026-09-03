@@ -1379,3 +1379,8 @@ access. The fused score stream is 510,939 bytes /SHA-256
 6,754 bytes /SHA-256 `4b66bfa94fd82ca885723a439d62330a719dd3cfa4f65bf9a020b523ea3666a7`.
 This manifest and all 3,500 decoded reserve candidates are now consumed diagnostic evidence and
 must never be reassigned to CAL, DEVELOPMENT or another independent final.
+
+E47-R1 reused the exact consumed 2,000-row final only for post-final architecture triage; it added
+no source image and changed no role. The legacy GenImage-ResNet diagnostic stream is 297,858 bytes
+/SHA-256 `e4bbcde82d810e95a220ec3265052c22356a1d77db08f24484c84ced06c7cb27` under the external
+E47 store. These scores are also consumed and cannot support a final claim.

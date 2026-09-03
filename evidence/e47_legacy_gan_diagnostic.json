@@ -1,0 +1,63 @@
+{
+  "boundary": "Post-final architecture triage only; cannot repair E46 or fit E47.",
+  "complementarity": {
+    "e46_ai_misses": 475,
+    "extra_real_false_ai": 95,
+    "miss_recovery_rate": 0.12631578947368421,
+    "misses_recovered": 60,
+    "or_fusion_ai_recall": 0.585,
+    "or_fusion_real_false_ai": 0.151
+  },
+  "counts": {
+    "ai": 1000,
+    "real": 1000,
+    "rows": 2000
+  },
+  "diagnostic_threshold": 0.9837820529937745,
+  "identities": {
+    "checkpoint_sha256": "997e5727eca25b96c2007645eb28667a4bf8d3a46e55c58917e4424aa6144315",
+    "e46_fused_scores_sha256": "6a51a9b11163fc8bb45889e38cc400a1b210cff7bcd6f36d6a760edc1fa68c97",
+    "e46_result_sha256": "e7e14fdfae15f20aba0b668acbc70ac34db68689adc905dcaa4594fa85d7a7ed",
+    "manifest_sha256": "4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b"
+  },
+  "legacy": {
+    "ai_recall": 0.236,
+    "ai_recall_by_source": {
+      "FLUX.1": 0.232,
+      "StableDiffusion1.5": 0.528,
+      "StableDiffusion2": 0.248,
+      "StableDiffusion3": 0.384,
+      "StableDiffusionXL": 0.296,
+      "StyleGAN": 0.04,
+      "StyleGAN2": 0.08,
+      "StyleGAN3": 0.08
+    },
+    "auc_by_ai_source_vs_all_real": {
+      "FLUX.1": 0.64776,
+      "StableDiffusion1.5": 0.8166079999999999,
+      "StableDiffusion2": 0.6468000000000002,
+      "StableDiffusion3": 0.753132,
+      "StableDiffusionXL": 0.688256,
+      "StyleGAN": 0.5275520000000001,
+      "StyleGAN2": 0.56076,
+      "StyleGAN3": 0.6583680000000001
+    },
+    "real_false_ai": 0.1,
+    "roc_auc": 0.6624045000000001
+  },
+  "next_action": "reject legacy arm and acquire an official frozen GAN specialist",
+  "report_bytes": 2000,
+  "report_sha256": "bcf7239e2ab0d6a2d85b0dcf4f3cf4c7ed367e138d50ce2cb23e8da44b465de4",
+  "schema_version": 1,
+  "score_stream": {
+    "bytes": 297858,
+    "sha256": "e4bbcde82d810e95a220ec3265052c22356a1d77db08f24484c84ced06c7cb27"
+  },
+  "state": "e47_legacy_gan_diagnostic_complete",
+  "unlock": {
+    "each_stylegan_recall_gte_0_30": false,
+    "mean_stylegan_recall_gte_0_50": false,
+    "or_fusion_real_false_ai_lte_0_15": false,
+    "passed": false
+  }
+}
