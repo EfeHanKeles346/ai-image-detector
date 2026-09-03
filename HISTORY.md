@@ -4335,3 +4335,9 @@ recall from 52.5% to 83.5%. It nevertheless failed the pre-registered admission 
 narrowest measurable margin—15.5% pooled REAL false-AI against a 15% ceiling. The rule was not
 relaxed after seeing the result. UnivFD remains a valuable near-success and reference arm, while
 E47 proceeds to the already-authorized UNINA compression-trained GAN specialist comparison.
+
+The comparison arm is now pinned: GRIP-UNINA's StyleGAN2-trained ResNet50-NoDown at repository
+commit `543943c...df88` and checkpoint SHA `65467594...d5a08`. Only 282.5 MB of weights were
+downloaded; no training/test corpus. The licence is nonprofit research only, an important product
+constraint even if accuracy is strong. A two-official-example smoke test verified finite logits and
+the documented fake direction without opening E46 metrics.

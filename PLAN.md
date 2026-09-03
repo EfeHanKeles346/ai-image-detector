@@ -578,6 +578,10 @@ source >=60% on a genuinely new final.
       recovering 310/475 E46 misses and lifting diagnostic OR recall to 83.5%. However, pooled REAL
       false-AI is 15.5%, missing the frozen <=15% unlock by 0.5 points. Preserve this near-success
       but do not relax the rule; compare the permitted UNINA compression-trained specialist next.
+      The official UNINA checkout is pinned at `543943c...df88`; its StyleGAN2-trained
+      ResNet50-NoDown is 282,549,121 bytes /SHA-256 `65467594...d5a08`. Licence is nonprofit-only,
+      so it can inform research and an opt-in arm but cannot become an unrestricted default.
+      Official-example direction/load smoke passes; performance metrics remain unopened.
 - [ ] **R3 — new CAL/DEVELOPMENT, identity-separated.** Build a compact source-balanced pool from
       data that was never in E46 final: at least two independent camera-real sources, StyleGAN
       generations, and the modern diffusion generators already protected by E46. Split by source,

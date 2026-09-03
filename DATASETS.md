@@ -1397,3 +1397,9 @@ The UnivFD arm then scored the exact 2,000 consumed E46 identities with 100% cov
 image or role changed. Its 302,379-byte external diagnostic stream hashes to
 `faff25929505ad40b2d84fec8fe142cd609c50dc552cb1a8e1c03d6f4909104e`. These post-final scores
 are consumed architecture evidence only and cannot fit or validate E47.
+
+E47-R2b acquired the official GRIP-UNINA StyleGAN2-trained ResNet50-NoDown weights only: 282,549,121
+bytes /SHA-256 `65467594eeb53945417c909390a3d872d55b6dbd819aa12cf01e4ced9c4d5a08`, repository commit
+`543943cdf281df7417751e794109431d0975df88`. No UNINA training or test image was downloaded. Its
+licence restricts use to informational/nonprofit purposes, so any future runtime must remain
+research-only/opt-in unless a different licence is obtained.

@@ -1,0 +1,26 @@
+{
+  "boundary": "Frozen nonprofit research inference artifact only; training datasets were not acquired.",
+  "license": {
+    "name": "GRIP informational/nonprofit-only",
+    "sha256": "cd00edf99fbfdbb173831bb0a4d5bfc40423c6e5041f62d7afdda220c4be8b27"
+  },
+  "repository": {
+    "commit": "543943cdf281df7417751e794109431d0975df88",
+    "readme_sha256": "416f4f2c84da61da3e4c17b4614a745d1762fa04d51143cc4105306f301deda6",
+    "url": "https://github.com/grip-unina/GANimageDetection"
+  },
+  "schema_version": 1,
+  "smoke_test": {
+    "finite_outputs": true,
+    "official_example_fake_minus_real_logit": 49.180124282836914,
+    "performance_metrics_opened": false,
+    "rows": 2
+  },
+  "state": "e47_unina_stylegan2_artifact_acquired_and_verified",
+  "weights": {
+    "bytes": 282549121,
+    "path": "/Volumes/LaCie/pixelproof-datasets/e47/models/gandetection_resnet50nodown_stylegan2.pth",
+    "sha256": "65467594eeb53945417c909390a3d872d55b6dbd819aa12cf01e4ced9c4d5a08",
+    "source": "https://www.grip.unina.it/download/prog/GANdetection/weights/gandetection_resnet50nodown_stylegan2.pth"
+  }
+}

@@ -3534,3 +3534,12 @@ was scored or selected using model output.
   pooled REAL false-AI is **15.5%**, 0.5 points above the frozen 15% diagnostic ceiling. Therefore
   2/3 checks pass and UnivFD is not directly admitted. Stream SHA-256 is `faff2592...9104e`;
   report SHA-256 is `ca0c1d4c...782ce`. Next: evaluate the pre-authorized UNINA specialist.
+
+### E47-R2b — UNINA StyleGAN2 ResNet50-NoDown score lock
+
+- **Artifact:** official repository commit `543943c...df88`; 282,549,121-byte StyleGAN2-trained
+  checkpoint SHA-256 `65467594...d5a08`; original native-resolution/ImageNet-normalized inference.
+  The informational/nonprofit-only licence forbids treating this as an unrestricted product arm.
+- **Pre-score state:** official real/fake examples produce finite logits in the documented
+  direction (fake minus real +49.18). No E46 performance metric was opened. Use the unchanged R1
+  diagnostic identities and unlock rule; reject it if REAL safety is not better than UnivFD.
