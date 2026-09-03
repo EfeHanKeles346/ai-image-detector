@@ -3365,3 +3365,16 @@ was scored or selected using model output.
   while the E45 schema names the same publisher group `platform`. No metric/report was created.
   Preserve that fused stream; resume only the reporter with the deterministic `source=platform`
   alias after committing the fix. Do not rerun either model or rewrite fused scores.
+- **One-shot final result:** reporting resumed from the byte-identical fused stream after the
+  committed schema alias. E45 failed 4/10 gates. AUC **0.95020**, TPR@FPR10 **0.87352** and AI
+  recall **95.40%** pass, but balanced accuracy is **0.80634** and REAL false-AI is **34.13%**.
+  Confusion is TN 3,281 /FP 1,700 /FN 230 /TP 4,767.
+- **Platform transfer:** REAL false-AI is Facebook **39.30%**, Instagram **32.50%**, LinkedIn
+  **32.25%**, X **32.11%**; all exceed the frozen worst-platform 20% budget. AI recall remains
+  strong on every platform: 98.16%, 97.98%, 90.01% and 91.36%, respectively.
+- **Selective result:** automatic coverage **80.54%** and uncertainty **19.46%** pass, but covered
+  accuracy is only **90.07%** versus 95%. Its 95% bootstrap interval is 89.43–90.71%; the binary
+  AUC interval is 94.62–95.41% and REAL false-AI interval 32.82–35.45%. This is not sampling noise.
+- **Decision:** preserve `e45_independent_final_failed`; E45 is consumed forever and cannot tune a
+  threshold or train E46. The causal target for the next, separately sourced development cycle is
+  social-platform REAL safety while retaining modern-AI recall—not another E44 threshold sweep.

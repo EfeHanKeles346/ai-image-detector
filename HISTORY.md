@@ -4158,3 +4158,22 @@ field `platform`. The existing 2,142,780-byte fused stream is preserved at SHA-2
 `b84f8c40...3c67e`; neither model will rerun and the stream will not be rewritten. The correction
 only aliases `source=platform` in memory for the metric helper and can resume reporting only after
 being committed. At this point no final report or pass/fail decision exists.
+
+Reporting then resumed from that exact fused stream and produced the first independent E45 verdict:
+**failed 4 of 10 gates**. Ranking still transfers—AUC is 0.95020, TPR@FPR10 is 0.87352—and the
+model catches 95.40% of AI images. But it falsely accuses 34.13% of real social-media images, so
+balanced accuracy falls to 0.80634. The false-AI rate is high on every platform: Facebook 39.30%,
+Instagram 32.50%, LinkedIn 32.25% and X 32.11%. This confirms the camera/social-real weakness that
+smaller local tests had warned about; it is not a single-device anomaly.
+
+The selective E44-D policy also misses its safety claim. It automatically decides 80.54% and sends
+19.46% to UNCERTAIN, satisfying both coverage limits, but accuracy among covered rows is only
+90.07% rather than 95%. Ten-thousand platform/label-stratified bootstraps put covered accuracy at
+89.43–90.71% and REAL false-AI at 32.82–35.45%, ruling out chance as an explanation. The score
+stream remains `b84f8c40...3c67e`; no threshold, row, model or label was changed.
+
+E45 is now consumed and permanently prohibited from training, calibration or model selection. The
+next candidate must learn social-platform REAL safety from a separate licensed source while
+retaining the current AI-recall gates, and it requires another untouched final before any success
+claim. This result is disappointing but scientifically valuable: the project now knows exactly
+which side fails and no longer relies on optimistic internal data.

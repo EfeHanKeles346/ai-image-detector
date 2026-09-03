@@ -1252,6 +1252,12 @@ Platform cells are REAL/AI: Facebook 1,308/1,032, Instagram 1,206/2,178, LinkedI
 99.78%. The 141 within-E45 exact-dHash groups are retained only as a disclosed similarity
 diagnostic because dHash equality alone is not byte identity. Model scores remain zero.
 
+E45 was subsequently scored exactly once and is now **consumed external FINAL**. All 9,978
+manifest rows received both model-arm and fused scores with 100% manifest coverage; official-row
+coverage remains 99.78%. The result failed and cannot be repaired by deleting rows, changing cuts,
+training on these images or rescoring a revised E44 candidate. MediaEval/ITW-SM is prohibited from
+all future TRAIN/CAL/model-selection roles; it may only support disclosed post-hoc diagnosis.
+
 ## E43 RR adaptation roles — planned before selection (2026-09-02)
 
 RRDataset's 50,858-row E42 score stream has already consumed its final status, so RR may now support

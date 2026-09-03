@@ -429,7 +429,7 @@ it before paying for another architecture or training run.
       rows (4,981 REAL /4,997 AI) across publisher-derived Facebook, Instagram, LinkedIn and X
       groups, with 99.78% official-row coverage. Manifest SHA-256 is `3e7c1d7e...d7e03`; score rows
       remain zero.
-- [ ] Bind the unchanged E44 fusion artifact and E44-D cuts to that manifest in a second score
+- [x] Bind the unchanged E44 fusion artifact and E44-D cuts to that manifest in a second score
       contract. Score every retained member once, report binary and selective gates with 10,000-
       sample bootstrap intervals, and preserve pass or failure without threshold repair. The final
       dataset never enters training; a failure may define a future hypothesis only after E45 is
@@ -439,7 +439,25 @@ it before paying for another architecture or training run.
       `19fd7bbc...b100`, binary cut `0.3477933653`, the E44-D selective cuts and all ten gates.
       The generalist arm has since completed 9,978/9,978 rows with SHA-256
       `43ecaa3f...fc171`; the official-DDA specialist also completed 9,978/9,978 with SHA-256
-      `88946986...69bb7`. Fused score rows remain zero.
+      `88946986...69bb7`.
+      **Completed once; failed 4/10 gates.** AUC is 0.95020 and AI recall 95.40%, but balanced
+      accuracy is 0.80634 and REAL false-AI is 34.13%; every platform exceeds the 20% REAL safety
+      cap, worst on Facebook at 39.30%. Selective coverage is 80.54% and uncertainty 19.46%, but
+      covered accuracy is only 90.07%. Preserve the failure; E45 is consumed and may not tune E44.
+
+### F2h — E46 recovery after the E45 social-real failure
+
+- [ ] Diagnose the already-consumed E45 arm scores without changing the result: compare E43-S,
+      official DDA and fused score distributions by platform/label; quantify disagreement and the
+      REAL error clusters. This is hypothesis generation only—no threshold sweep may become a
+      repaired E45 claim.
+- [ ] Keep all 9,978 E45 rows prohibited from TRAIN/CAL/model selection. Build the next candidate
+      using separate licensed, camera/social-transmission REAL data already local or newly sourced,
+      plus existing modern-AI replay. Prefer a learned real-safety gate or source-invariant
+      adaptation over another global threshold; retain AI recall regression gates.
+- [ ] Before any E46 fitting, reserve a new untouched source-separated final distinct from
+      MediaEval/ITW-SM, RR, DDA-COCO and every earlier role. If no such final is legally available,
+      E46 may be reported only as development progress, never as project success.
 
 ### F3 — recording and stop rules
 
