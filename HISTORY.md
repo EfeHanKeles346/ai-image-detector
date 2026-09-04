@@ -5036,3 +5036,9 @@ Zenodo record 17317613, DOI `10.5281/zenodo.17317613`, version `Version  1.1`, C
 174,438,734 bytes and MD5 `37da574c9e8d9c0fd3a7c9bedc5d72a6`. Resuming cannot alter the
 payload, unsafe ZIP paths/expansion fail closed, and the receipt explicitly marks this uniformly
 224x224 source as REAL hard negatives for TRAIN only with zero decoded image bodies or scores.
+
+After that method was committed, the SCIMD-17 archive completed at the exact 174,438,734 bytes and
+publisher MD5. SHA-256 is `ef1fe3e7...0201`; safe inventory reveals 17,620 images /172,781,180
+expanded bytes, refining the publisher's approximate 17,000 claim. Receipt `8b38fa82...b230`
+still reports zero decoded bodies and model scores. The source remains TRAIN-only and cannot repair
+or influence any calibration/development/final metric by role reassignment.

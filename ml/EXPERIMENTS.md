@@ -4020,6 +4020,10 @@ was scored or selected using model output.
   30 devices x40, Random/Similar 600/600 and make/model EXIF 1,200/1,200. The run reused 59 verified
   rows, fetched 1,141 and left no partial. Receipt `01cc5921...f33e` and ordered identity digest
   `c47d411f...1d12` bind the result. This is acquisition evidence: model-score count remains zero.
+- **SCIMD-17 TRAIN archive — COMPLETE, unopened/unscored:** the 174,438,734-byte Zenodo payload
+  reproduces MD5 and SHA-256 `ef1fe3e7...0201`. Its safe central directory contains 17,620 images /
+  172,781,180 expanded bytes. Receipt `8b38fa82...b230` records zero decoded bodies and scores.
+  Realization is restricted to score-blind 224x224 REAL hard negatives in TRAIN.
 
 ### Gated-source approval audit — route decision before any image access
 

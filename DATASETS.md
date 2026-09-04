@@ -1805,3 +1805,14 @@ row. HTTP Range reads fetched only the selected 4,098,207,862 compressed bytes i
 `01cc5921f716b4f713efa4955cf2c5c741e3dc18076d42c35ef841975fa2f33e`; compact evidence is
 `evidence/e51_scmi30_download.json`. These images are CAL-only, cannot fit representation weights,
 and created zero detector scores during acquisition.
+
+### E51 SCIMD-17 auxiliary TRAIN archive (2026-09-04)
+
+The exact Zenodo 17317613 `SCIMD-17.zip` is local: 174,438,734 bytes, publisher MD5
+`37da574c9e8d9c0fd3a7c9bedc5d72a6` and SHA-256
+`ef1fe3e77e21d44c4cb29f4b44ad69bc3b83bfd3038531605c5ee315a2cb0201`. A model-blind ZIP audit
+finds 17,638 members containing 17,620 images (17,618 `.jpg`, 2 `.jpeg`) and 172,781,180 expanded
+bytes. No image body was decoded during acquisition. Because all publisher images are uniform
+224x224 resizes, this CC-BY-4.0 source is restricted to auxiliary REAL hard negatives in TRAIN;
+it cannot calibrate, develop, finally evaluate, or support native-camera claims. External receipt
+SHA-256 is `8b38fa826a8f3f51705eff96236cbc5c13602fdba4c124d7bd5ce091ce20b230`.

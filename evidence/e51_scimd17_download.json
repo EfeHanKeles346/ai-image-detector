@@ -1,0 +1,31 @@
+{
+  "archive_bytes": 174438734,
+  "archive_md5": "37da574c9e8d9c0fd3a7c9bedc5d72a6",
+  "archive_name": "SCIMD-17.zip",
+  "archive_sha256": "ef1fe3e77e21d44c4cb29f4b44ad69bc3b83bfd3038531605c5ee315a2cb0201",
+  "doi": "10.5281/zenodo.17317613",
+  "free_bytes_after": 440344248320,
+  "free_bytes_before": 440519360512,
+  "image_bodies_decoded": 0,
+  "inventory": {
+    "expanded_bytes": 172781180,
+    "files": 17620,
+    "image_files": 17620,
+    "members": 17638,
+    "suffixes": {
+      ".jpeg": 2,
+      ".jpg": 17618
+    }
+  },
+  "license": "cc-by-4.0",
+  "model_scores_created": 0,
+  "receipt_bytes": 963,
+  "receipt_sha256": "8b38fa826a8f3f51705eff96236cbc5c13602fdba4c124d7bd5ce091ce20b230",
+  "restriction": "224x224 resized REAL hard negatives; never CAL, DEVELOPMENT or final",
+  "role": "TRAIN_REAL_HARD_NEGATIVE_ONLY",
+  "route_contract_sha256": "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d81140ec315e4",
+  "schema_version": 1,
+  "state": "e51_scimd17_train_archive_downloaded_unopened_unscored",
+  "version": "Version  1.1",
+  "zenodo_record": 17317613
+}
