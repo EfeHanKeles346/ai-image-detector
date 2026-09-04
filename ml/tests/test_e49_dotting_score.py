@@ -52,3 +52,11 @@ def test_dotting_completed_scores_must_be_finite():
     rows[0]["score"] = float("nan")
     with pytest.raises(ValueError, match="invalid completed score"):
         validate_rows(rows, require_scores=True)
+
+
+def test_dotting_completed_score_stream_does_not_need_payload_paths():
+    rows = _rows()
+    for row in rows:
+        row.pop("path")
+        row.pop("sha256")
+    validate_rows(rows, require_scores=True)

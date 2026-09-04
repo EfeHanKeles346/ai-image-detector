@@ -77,13 +77,15 @@ def validate_rows(rows: Sequence[Mapping[str, Any]], *, require_scores: bool) ->
         for row in selected:
             parent_id = str(row.get("parent_id", ""))
             if (not parent_id or parent_id in parents or int(row.get("label", -1)) != 1
-                    or not row.get("record_id") or not row.get("path") or not row.get("sha256")):
+                    or not row.get("record_id")):
                 raise ValueError(f"E49-D1 {condition} row identity changed")
             parents[parent_id] = str(row["source"])
             if require_scores:
                 score = float(row.get("score", np.nan))
                 if row.get("status") != "ok" or not np.isfinite(score) or not 0 <= score <= 1:
                     raise ValueError(f"E49-D1 invalid completed score for {row['record_id']}")
+            elif not row.get("path") or not row.get("sha256"):
+                raise ValueError(f"E49-D1 {condition} payload identity changed")
         parent_maps[condition] = parents
     if parent_maps[CONDITIONS[0]] != parent_maps[CONDITIONS[1]]:
         raise ValueError("E49-D1 transport pairs changed")
