@@ -1051,6 +1051,15 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       IMAGINE and SOCRatES remain blocked by unavailable official transport, unverifiable TLS/explicit
       terms, or signed agreement. Evidence `9ddab57a...c4883`; image downloads remain forbidden until
       an independent, explicitly licensed DEVELOPMENT publisher is bound. The audit is not complete.
+- [ ] **Bind the practical E51 data route before payload access.** Reuse only historical TRAIN-role
+      parents for the base fit and add SCIMD-17 solely as resized-real hard negatives. Freeze native
+      SCMI30 v2 to CAL at 40 parents/device—20 Random plus 20 Similar for each of 30 normalized device
+      ids, 1,200 parents total—without using it in TRAIN or DEVELOPMENT. Use all 2,640 hidden-label
+      IEEE SP Cup 2018 test camera images as independent REAL DEVELOPMENT: report its 1,320 unaltered
+      and 1,320 postprocessed cells separately because camera ids are hidden. Use approved Datapoint
+      as the independent current-generator AI DEVELOPMENT component, never TRAIN/CAL/E52 final.
+      IEEE payload access requires the user to accept the archived competition rules; until that
+      one-click gate is complete, bind metadata/contracts only and download zero image bytes.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

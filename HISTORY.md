@@ -4941,3 +4941,10 @@ resize hard-negative source, not evidence of native-camera generalization. RAISE
 ~350 GB and only three cameras, while Dresden, IMAGINE and SOCRatES fail current transport/terms
 requirements. With no independent DEVELOPMENT publisher yet, evidence `9ddab57a...c4883` freezes a
 zero-download decision instead of manufacturing progress from a scientifically weak split.
+
+Before any E51 payload, the practical role route was preregistered. Existing legitimate TRAIN roles
+plus SCIMD resized-real hard negatives may fit the candidates; 1,200 device-balanced SCMI30 native
+JPEGs are reserved for CAL only; the IEEE SP Cup's 2,640 hidden-camera test images become independent
+REAL DEVELOPMENT with unaltered/postprocessed cells; approved Datapoint becomes current-generator
+AI DEVELOPMENT. None may enter E52 final. The IEEE rules gate must be accepted by the user before its
+payload, so implementation may bind inventories but cannot silently bypass that agreement.
