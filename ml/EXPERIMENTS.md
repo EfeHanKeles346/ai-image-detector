@@ -3968,6 +3968,21 @@ was scored or selected using model output.
   is 77.60%/73.25%, covered accuracy 76.27%/71.01%, AUC 90.24%/86.89%. Report `10fc0649...5573`;
   retry zero. The failure is consumed and cannot select a new cut or train a repaired candidate.
 
+### E51 pre-registration — repair the representation, not the consumed final
+
+- **Failure-derived boundary:** E49's TPR at 10% FPR is only 72.30% original and 58.80% Q75, so no
+  threshold alone can meet simultaneous 10% REAL-FP and 80% AI-recall gates. Pairwise AND remains
+  32.80% REAL FP at 93.50% AI recall. JPEG/MPO FP is 39.90%/36.15%; log-resolution correlation is
+  just 0.056. These may motivate E51 but cannot choose a threshold, row or fitted parameter.
+- **Data first:** audit new licensed camera sources and freeze publisher/device/scene-disjoint TRAIN,
+  CAL and DEVELOPMENT before image transfer. E49 parents and unused reserves remain protected.
+- **Two bounded candidates:** (A) source-balanced frozen-DINO head with authentic original/Q75/JPEG/
+  resize hard negatives; (B) the same representation plus fixed residual/DCT statistics and source-
+  bias suppression. A real-only arm may abstain but cannot output certified REAL.
+- **Decision ladder:** select once on new grouped CAL; open fresh DEVELOPMENT once under both
+  transports and the existing ten gates; only a pass permits a new E52 final. Approved Datapoint
+  image bodies remain unopened for possible E52 AI evidence, not E51 tuning.
+
 ### Gated-source approval audit — route decision before any image access
 
 - Authenticated Datapoint access now succeeds at pinned revision `e1d8719a...c928`; authenticated

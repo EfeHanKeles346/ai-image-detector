@@ -4853,6 +4853,20 @@ cells; phones also exceed the target except Samsung/iPhone 14 originals at 19%. 
 used only for disclosed diagnosis—not threshold selection, training, row deletion or a retry.
 Report SHA-256 is `10fc0649...5573`; retry count is zero and Module-1 v1 remains unearned.
 
+E51 is planned before any successor data or fit. The failed final proves a cut-only repair cannot
+work: at 10% FPR the frozen ranking recalls just 72.30%/58.80% AI on original/Q75, and even requiring
+both paired scores to vote AI leaves 32.80% REAL false alarms. MPO is not the culprit (36.15% FP
+versus JPEG 39.90%), while high resolution has only weak overall score correlation despite a bad
+>20 MP pocket. The next experiment therefore targets authentic/compression representation.
+
+The preregistered path first audits new licensed, grouped camera sources; then compares only two
+practical candidates on new CAL: a source-balanced frozen-DINO head with real transport hard
+negatives, and a hybrid adding fixed residual/DCT statistics plus source-bias suppression. A
+real-only arm may abstain but never certify REAL. Fresh publisher/device DEVELOPMENT must pass both
+transports and the same ten gates before any E52 final. Datapoint's approved image bodies remain
+untouched as possible future final AI evidence. E49 and its unused reserves are permanently barred
+from successor fitting or selection, and Module 2 stays planning-only until Module 1 earns v1.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

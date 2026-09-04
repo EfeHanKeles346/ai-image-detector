@@ -1015,6 +1015,43 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       It archives per-condition formats and per-source original geometry before model access; twelve
       focused final/evaluation/component tests pass.
 
+#### E51 — authentic-safety successor after consumed E49-C (planned before new data/model work)
+
+E49-C is not repairable, but it narrows the problem. A threshold-only change is mathematically
+insufficient: at 10% FPR, the frozen ranking reaches only 72.30% AI TPR on originals and 58.80% on
+Q75, below the 80% gate. Requiring both existing paired scores to vote AI would still leave 32.80%
+REAL false-AI while recalling 93.50% AI. JPEG originals fail slightly more than MPO (39.90% versus
+36.15%), and log-resolution correlation is only 0.056 despite a 70.27% FP pocket above 20 MP.
+Therefore the successor needs a better authentic/compression representation, not a leaked E49 cut,
+format rule or resolution heuristic. These are diagnosis-only observations, never model selection.
+
+- [ ] **Freeze E49 protection and reproduce the failure diagnosis.** Bind final manifest/raw-score/
+      report hashes; report per-device, format, resolution-bin and paired-consensus behavior. Emit no
+      candidate threshold and forbid every E49 identity—including unused reserves—from later TRAIN,
+      CAL, DEVELOPMENT or successor-final roles.
+- [ ] **Audit new REAL sources before downloading images.** Compare official RAISE, Dresden/IMAGINE
+      camera collections and a current-phone source for licence, native-vs-publisher transport,
+      device/scene grouping, resolution and download size. Choose disjoint TRAIN/CAL and a separate
+      publisher/device DEVELOPMENT source. Require >=4,000 TRAIN, >=1,000 CAL and >=2,000 DEVELOPMENT
+      REAL parents where feasible, with fixed original/Q75 pairs. No E49 metric may rank individual
+      source rows. Relevant directions: [real-only one-class detection](https://arxiv.org/abs/2311.00962),
+      [B-Free content alignment](https://openaccess.thecvf.com/content/CVPR2025/html/Guillaro_A_Bias-Free_Training_Paradigm_for_More_General_AI-generated_Image_Detection_CVPR_2025_paper.html),
+      [AIDE hybrid visual/noise experts](https://openreview.net/pdf/67e6139d293501496907c5dc7468eb9a370685dd.pdf) and
+      [MAFL source/content-bias suppression](https://arxiv.org/abs/2604.12353).
+- [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
+      features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
+      hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,
+      inspired by AIDE, and adversarially/source-balances the head rather than fine-tuning a huge
+      backbone. A real-only distance arm may only turn a positive into UNCERTAIN, never certify REAL.
+- [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
+      require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
+      FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered
+      accuracy >=95% and uncertainty <=20%. Archive failure; no DEVELOPMENT-informed retuning.
+- [ ] **Only a DEVELOPMENT pass may bind E52.** Keep approved Datapoint image bodies unopened as a
+      possible current-AI final component and select an entirely new REAL publisher/device source.
+      E52 repeats the paired >=2,000-parent, 20-gate protocol once. Module 2 remains planning-only
+      until a successor earns Module-1 v1; its old masks/results stay protected but documented.
+
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 
 ### Stage A — finish and prove Module 1
