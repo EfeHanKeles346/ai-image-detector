@@ -784,6 +784,10 @@ it is not another development set and it cannot be used to repair E43-S.
       diverse target. Replace only that unbound category with Nikon Z 8, which yields 110/110 from
       25 uploaders. Reduce Commons headroom to 10% so the same 1,000-parent target respects the
       frozen 4 GiB stop. No E49 REAL image or detector score exists.
+      **Open-component V1 stop:** the complete 1,100-REAL +240-StyleGAN2 identity bind succeeded,
+      but its Commons reserve alone is 4,140,590,955 bytes, leaving no honest room for Datapoint
+      inside the total 4 GiB ceiling. Archive contract `c6f2cfb0...f794` as rejected before transfer;
+      do not download it. Pre-register a size-aware successor from the same cached metadata.
 - [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean

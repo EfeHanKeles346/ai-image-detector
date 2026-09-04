@@ -2848,6 +2848,14 @@ only stored IPN hashes and verifies the owner population through raw exact-file 
 detector import or score path and assigns no role. Eighteen focused iPhone/realization/identity
 tests pass.
 
+The resumable open-component binder then cached all ten eligible Commons metadata populations and
+froze 1,100 REAL plus 240 local StyleGAN2 reserve identities. Its budget check exposed a second
+pre-transfer problem: the selected Commons files alone total 4,140,590,955 bytes, so adding 800
+Datapoint images could not respect the global 4 GiB ceiling. No image or model was opened. Contract
+`c6f2cfb0...f794` is archived as a failed feasibility bind rather than overwritten. A model-blind
+scan of the same frozen metadata found that capping each original at 4 MiB still fills all ten
+110-row reserves and lowers Commons to roughly 2.52 GiB, motivating an explicit V2 contract.
+
 Production realization decoded all 3,996 iPhone parents as RGB with EXIF and found zero overlap
 with protected E30, passed peers, stored IPN or the exact 210-photo owner population. It still
 stopped, correctly, on one confirmed duplicate burst: byte-distinct `IMG_1290.JPG`/`IMG_1291.JPG`

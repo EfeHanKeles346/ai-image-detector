@@ -3749,6 +3749,12 @@ was scored or selected using model output.
   uploaders. Reduce Commons reserve to 10% so the same 1,000-parent target stays under the 4 GiB
   network stop. Licence metadata queries now omit unused large fields. Eleven focused E49
   acquisition/evaluation tests pass; REAL image and score counts remain zero.
+- **Open-component V1 — rejected before transfer:** all 1,100 Commons and 240 StyleGAN2 reserve
+  identities froze, but Commons alone totals 4,140,590,955 bytes. That makes the full E49 impossible
+  within the global 4 GiB stop once Datapoint is added. Preserve contract `c6f2cfb0...f794` as a
+  zero-image/zero-score failed feasibility bind. Cached metadata proves a <=4 MiB original-file cap
+  still fills every 110-row device reserve and reduces Commons to about 2.52 GiB; a separately
+  committed V2 may use that rule without reopening model output.
 - **Datapoint access checkpoint:** the user submitted the gated contact-sharing request. Both the
   dataset page and authenticated CLI user `efehankeles` were checked; the page reports that author
   review is pending and the metadata-only probe still returns `GatedRepoError`. No retry was

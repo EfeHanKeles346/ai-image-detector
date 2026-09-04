@@ -1,0 +1,29 @@
+{
+  "aigc": {
+    "repo": "TheKernel01/AIGC-Detection-Benchmark",
+    "reserve_rows": 240,
+    "revision": "c91d9024a5a77ef06e2ec681b53f9caf08675663",
+    "target_rows": 200
+  },
+  "commons": {
+    "max_per_uploader": 20,
+    "network_bytes": 4140590955,
+    "reserve_per_device": 110,
+    "reserve_rows": 1100,
+    "target_rows": 1000
+  },
+  "contract_bytes": 1309869,
+  "contract_sha256": "c6f2cfb054a52816581d523b3d3ef04311add28487a5cc9ed6d4150d6b27f794",
+  "missing_component": {
+    "repo": "datapointai/text-2-image-human-preferences-2m",
+    "revision": "e1d8719a2d521eac6c62ee84f329afc2c03ec928",
+    "state": "awaiting_author_review",
+    "target_rows": 800
+  },
+  "model_scores_created": 0,
+  "new_image_bytes_downloaded": 0,
+  "reserve_identity_sha256": "673e60767a129123602914e7abbc0cce9692bcdb6d0fd83381dc19edcdd53fbe",
+  "role": "FINAL_RESERVE_PENDING_DATAPOINT_COMPONENT",
+  "schema_version": 1,
+  "state": "e49_open_components_frozen_untransferred_unscored"
+}

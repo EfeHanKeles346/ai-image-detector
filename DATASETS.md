@@ -313,6 +313,14 @@ headroom is reduced from 20% to 10% to keep the unchanged 1,000-REAL target with
 stop. API responses now request only the two licence fields actually used. No REAL image was
 downloaded, decoded or scored during this metadata audit.
 
+The first complete open-component bind froze 1,100 Commons identities plus 240 local StyleGAN2
+coordinates, but correctly stopped before transfer: the Commons reserve alone totals 4,140,590,955
+bytes and would leave essentially no room for the still-missing 800 Datapoint images under the
+total 4 GiB ceiling. Contract SHA-256 `c6f2cfb0...f794` is retained as a rejected, zero-image,
+zero-score feasibility record. The cached eligible metadata shows that a predeclared 4 MiB maximum
+can still fill 110/110 rows in every device while reducing the Commons reserve to about 2.52 GiB;
+that rule must be frozen in a successor contract before any transfer.
+
 Every parent receives two paired conditions: `publisher_original` and deterministic `social_q75`
 (EXIF transpose, RGB, long side <=1080, JPEG q75, 4:2:0, metadata stripped). The conditions are
 reported separately and never counted as 4,000 independent samples. A source/label-stratified,
