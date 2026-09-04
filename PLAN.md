@@ -693,6 +693,8 @@ all four backbones/scores remain frozen.
       Six focused tests pass; model/development score counts remain zero/zero.
       **E43-S FIT+CAL arm:** 1,200/1,200 rows, 100% coverage; 258,603-byte stream
       SHA-256 `f2a1be3b...137cf7`. DEVELOPMENT rows scored: zero; no aggregate metric opened.
+      **DDA FIT+CAL arm:** 1,200/1,200 rows, 100% coverage; 257,443-byte stream
+      SHA-256 `7ebc7831...b4a23b`. DEVELOPMENT rows scored: zero; no aggregate metric opened.
 - [ ] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
       authentic-image percentile. Compare E46, E46+UnivFD, E46+UNINA and all-three using the
       maximum expert percentile. Because `max` is monotone, a low irrelevant-specialist score can

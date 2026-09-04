@@ -4493,3 +4493,7 @@ model or DEVELOPMENT score exists at this checkpoint.
 The frozen E43-S generalist then scored all 1,200 permitted E48 FIT+CAL rows with full coverage.
 Its 258,603-byte raw stream hashes to `f2a1be3b...137cf7`. No aggregate metric was opened and no
 DEVELOPMENT row was accessed; the checkpoint preserves inference only.
+
+Official DDA then scored the matching 1,200 FIT+CAL identities with full coverage. Its 257,443-
+byte stream hashes to `7ebc7831...b4a23b`. UnivFD/UNINA and every aggregate metric remain unopened;
+DEVELOPMENT score count is still zero.

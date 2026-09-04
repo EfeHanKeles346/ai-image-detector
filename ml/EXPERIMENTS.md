@@ -3652,6 +3652,8 @@ was scored or selected using model output.
   model and DEVELOPMENT score counts are zero.
 - **E43-S FIT+CAL arm:** 1,200/1,200 rows with full coverage; 258,603-byte stream SHA-256
   `f2a1be3b...137cf7`. Raw inference only; DEVELOPMENT rows and aggregate metrics remain zero.
+- **DDA FIT+CAL arm:** 1,200/1,200 rows with full coverage; 257,443-byte stream SHA-256
+  `7ebc7831...b4a23b`. Raw inference only; DEVELOPMENT rows and aggregate metrics remain zero.
 
 ### Module 1 completion and Module 2 re-entry contract
 
