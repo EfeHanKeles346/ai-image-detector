@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 from pathlib import Path
+import threading
 import time
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -35,6 +36,11 @@ EXPECTED_ROWS_SELECTED = 960
 ALLOWED_HEAD_CONTENT_TYPES = {"image/jpeg", "binary/octet-stream", "application/octet-stream"}
 PAGE_FETCH_WORKERS = 4
 HEAD_WORKERS = 12
+VIEWER_MIN_INTERVAL_SECONDS = 0.8
+VIEWER_429_COOLDOWN_SECONDS = 60.0
+
+_viewer_lock = threading.Lock()
+_viewer_next_request = 0.0
 
 ROOT = DATA_ROOT / "e49" / "openfake"
 HEAD_CACHE = ROOT / "asset_heads"
@@ -99,11 +105,17 @@ def extract_asset_urls(
 
 
 def _fetch_rows(offset: int, length: int, *, attempts: int) -> Mapping[str, Any]:
+    global _viewer_next_request
     params = {"dataset": REPO_ID, "config": CONFIG, "split": "test",
               "offset": offset, "length": length}
     last_status = "unknown"
     for attempt in range(attempts):
         try:
+            with _viewer_lock:
+                delay = _viewer_next_request - time.monotonic()
+                if delay > 0:
+                    time.sleep(delay)
+                _viewer_next_request = time.monotonic() + VIEWER_MIN_INTERVAL_SECONDS
             response = requests.get(
                 ROWS_ENDPOINT,
                 params=params,
@@ -111,6 +123,12 @@ def _fetch_rows(offset: int, length: int, *, attempts: int) -> Mapping[str, Any]
                 timeout=(10, 30),
             )
             last_status = str(response.status_code)
+            if response.status_code == 429:
+                with _viewer_lock:
+                    _viewer_next_request = max(
+                        _viewer_next_request,
+                        time.monotonic() + VIEWER_429_COOLDOWN_SECONDS,
+                    )
             response.raise_for_status()
             return response.json()
         except (requests.RequestException, json.JSONDecodeError):
