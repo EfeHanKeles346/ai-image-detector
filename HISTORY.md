@@ -4489,3 +4489,7 @@ E48 implementation resumed only after that order was committed. Score contract S
 capped-UNINA identities. The executable scorer can access only the 600 FIT and 600 CAL rows;
 DEVELOPMENT's 1,200 rows are rejected until a candidate is frozen. Six focused tests pass and no
 model or DEVELOPMENT score exists at this checkpoint.
+
+The frozen E43-S generalist then scored all 1,200 permitted E48 FIT+CAL rows with full coverage.
+Its 258,603-byte raw stream hashes to `f2a1be3b...137cf7`. No aggregate metric was opened and no
+DEVELOPMENT row was accessed; the checkpoint preserves inference only.

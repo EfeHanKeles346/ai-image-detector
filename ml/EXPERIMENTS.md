@@ -3650,6 +3650,8 @@ was scored or selected using model output.
   frozen E43-S/DDA/E44/UnivFD/capped-UNINA identities. Scoring is restricted to 600 FIT and
   600 CAL; all 1,200 DEVELOPMENT rows remain explicitly forbidden. Six focused tests pass;
   model and DEVELOPMENT score counts are zero.
+- **E43-S FIT+CAL arm:** 1,200/1,200 rows with full coverage; 258,603-byte stream SHA-256
+  `f2a1be3b...137cf7`. Raw inference only; DEVELOPMENT rows and aggregate metrics remain zero.
 
 ### Module 1 completion and Module 2 re-entry contract
 
