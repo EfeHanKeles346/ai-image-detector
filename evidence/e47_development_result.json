@@ -1,0 +1,147 @@
+{
+  "boundary": "One-shot frozen DEVELOPMENT; no refit, threshold repair or retry permitted.",
+  "candidate_sha256": "f659ee4fb0f66bde9fc82ceeb5b5596aca18a8ece2ee2ce5e693403f68710b0d",
+  "development_report_sha256": "afcacdd1fd27274ab6d2de6d5e62073f44ec4a7661f904afc97f63941498e290",
+  "gate": {
+    "checks": {
+      "balanced_accuracy_gte_0_85": true,
+      "coverage_eq_1": true,
+      "pooled_ai_recall_gte_0_80": true,
+      "pooled_real_false_ai_lte_0_10": true,
+      "roc_auc_gte_0_90": true,
+      "worst_ai_recall_gte_0_60": false,
+      "worst_real_false_ai_lte_0_20": true
+    },
+    "passed": false
+  },
+  "metrics": {
+    "accuracy_counting_failures_wrong": 0.8841666666666667,
+    "ai_recall": 0.8416666666666667,
+    "balanced_accuracy": 0.8841666666666667,
+    "brier_nontarget_real": 0.036708039332680846,
+    "brier_target_ai": 0.17013711502123174,
+    "confusion": {
+      "fn": 95,
+      "fp": 44,
+      "tn": 556,
+      "tp": 505
+    },
+    "counts": {
+      "ai_succeeded": 600,
+      "failed": 0,
+      "real_succeeded": 600,
+      "succeeded": 1200,
+      "total": 1200
+    },
+    "coverage": 1.0,
+    "eer": 0.10499999999999998,
+    "per_group": [
+      {
+        "ai_recall": 0.46,
+        "balanced_accuracy": null,
+        "condition": "original",
+        "confusion": {
+          "fn": 54,
+          "fp": 0,
+          "tn": 0,
+          "tp": 46
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "FLUX.1"
+      },
+      {
+        "ai_recall": null,
+        "balanced_accuracy": null,
+        "condition": "original",
+        "confusion": {
+          "fn": 0,
+          "fp": 44,
+          "tn": 556,
+          "tp": 0
+        },
+        "count": 600,
+        "label": 0,
+        "real_false_positive_rate": 0.07333333333333333,
+        "source": "FORLAB"
+      },
+      {
+        "ai_recall": 0.84,
+        "balanced_accuracy": null,
+        "condition": "original",
+        "confusion": {
+          "fn": 16,
+          "fp": 0,
+          "tn": 0,
+          "tp": 84
+        },
+        "count": 100,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StableDiffusion3"
+      },
+      {
+        "ai_recall": 1.0,
+        "balanced_accuracy": null,
+        "condition": "original",
+        "confusion": {
+          "fn": 0,
+          "fp": 0,
+          "tn": 0,
+          "tp": 200
+        },
+        "count": 200,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StyleGAN"
+      },
+      {
+        "ai_recall": 0.875,
+        "balanced_accuracy": null,
+        "condition": "original",
+        "confusion": {
+          "fn": 25,
+          "fp": 0,
+          "tn": 0,
+          "tp": 175
+        },
+        "count": 200,
+        "label": 1,
+        "real_false_positive_rate": null,
+        "source": "StyleGAN3"
+      }
+    ],
+    "real_false_positive_rate": 0.07333333333333333,
+    "roc_auc": 0.9549111111111112,
+    "stored_threshold": 0.33536607214356656,
+    "tpr_at_fpr": {
+      "fpr": 0.1,
+      "tpr": 0.8916666666666667
+    }
+  },
+  "rates": {
+    "ai_recall_by_source": {
+      "FLUX.1": 0.46,
+      "StableDiffusion3": 0.84,
+      "StyleGAN": 1.0,
+      "StyleGAN3": 0.875
+    },
+    "pooled_ai_recall": 0.8416666666666667,
+    "pooled_real_false_ai": 0.07333333333333333,
+    "real_false_ai_by_source": {
+      "FORLAB": 0.07333333333333333
+    },
+    "worst_ai_recall": 0.46,
+    "worst_real_false_ai": 0.07333333333333333
+  },
+  "rows": 1200,
+  "schema_version": 1,
+  "score_stream": {
+    "bytes": 203512,
+    "sha256": "97fbe4b7406826af92bfa5082234e81c24a432a0e4ddc826ebb9a211efb872cd"
+  },
+  "selected_method": "e46_univfd_unina",
+  "state": "e47_development_failed",
+  "threshold": 0.33536607214356656
+}

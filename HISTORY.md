@@ -4408,3 +4408,11 @@ and the all-three gate ranks first: 0.9897 AUC, 0.9367 balanced accuracy, 97.33%
 and 95% worst-source AI recall at 10% REAL false accusations. The selected threshold is
 `0.3353660721`; candidate SHA is `f659ee4f...0b0d`. This is strong calibration evidence, not yet
 a success claim: DEVELOPMENT remains completely unopened and may only be evaluated once.
+
+The frozen all-three candidate then faced DEVELOPMENT once. It transferred well overall—0.9549
+AUC, 0.8842 balanced accuracy, 7.33% REAL false accusations and 84.17% pooled AI recall—and the
+original GAN failure is repaired (StyleGAN 100%, StyleGAN3 87.5%). SD3 also reaches 84%. FLUX.1,
+however, falls to 46%, below the pre-registered 60% worst-source floor. Six of seven gates pass,
+so E47-R3 is archived as a valid near-miss rather than tuned into a success. The score stream SHA
+is `97fbe4b7...72cd`. This isolates the next architectural problem: the GAN-aware logistic gate
+must not be allowed to veto a diffusion signal; any repair requires new fit/test evidence.

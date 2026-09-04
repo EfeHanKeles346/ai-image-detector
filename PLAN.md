@@ -631,6 +631,12 @@ source >=60% on a genuinely new final.
       E46+UNINA passes, while E46+both ranks first and is selected at threshold
       `0.3353660721`: AUC 0.9897, BA 0.9367, pooled AI recall 97.33%, worst AI recall
       95.0%, REAL FP 10.0%. Candidate SHA-256 `f659ee4f...0b0d`; DEVELOPMENT unopened.
+      One-shot DEVELOPMENT is a valid near-miss: AUC 0.95491, BA 0.88417, REAL FP
+      7.33%, pooled AI recall 84.17%, StyleGAN/StyleGAN3/SD3 recall 100%/87.5%/84%,
+      but FLUX.1 recall is 46%. Six of seven gates pass; the frozen 60% worst-source
+      floor fails. Stream SHA-256 `97fbe4b7...72cd`. Archive E47-R3 without threshold
+      repair or retry. Next work must diagnose arm-level FLUX complementarity on this now-
+      consumed DEVELOPMENT only, then pre-register a non-veto successor on new data.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32
