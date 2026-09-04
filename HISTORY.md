@@ -4826,6 +4826,13 @@ JPEG, 213 Apple MPO and 202 PNG files, while all 2,000 social-Q75 children are J
 byte frozen final manifest hashes to `9744a9d2...5909`. Model scores and aggregate metrics are still
 zero; this is the last commit required before locking E43-S to the final identities.
 
+E43-S is now irreversibly bound to that manifest before inference. Contract SHA-256
+`fecd724c...61dd` seals the 4,000 observation identities (`3cf565a1...5242`), three component hashes,
+E43-S artifact `a3aec445...7390`, DINOv2-S weights `04d27f34...0081`, the 0.07940196245908739 binary
+cut, 0.011505939625203613 selective REAL cut and all twenty gates. Training, source/row removal,
+threshold change, score replacement and metrics-before-raw-lock are forbidden. At this commit score
+and metric counts are both zero.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

@@ -1,0 +1,50 @@
+{
+  "candidate": "exact frozen E43-S generalist only",
+  "contract_bytes": 1641,
+  "contract_sha256": "fecd724cb31e09cb601c5e6b79c493b8bc8ea5992ad28a211457a40a33ed61dd",
+  "counts": {
+    "checks": 20,
+    "conditions": 2,
+    "observations": 4000,
+    "parents": 2000
+  },
+  "forbidden": [
+    "training",
+    "threshold change",
+    "row/source removal",
+    "score-based replacement",
+    "second attempt",
+    "metrics before raw-score lock"
+  ],
+  "gates": {
+    "automatic_coverage_min": 0.8,
+    "binary_auc_min": 0.9,
+    "binary_balanced_accuracy_min": 0.85,
+    "covered_accuracy_min": 0.95,
+    "pooled_ai_recall_min": 0.8,
+    "pooled_real_false_ai_max": 0.1,
+    "score_coverage": 1.0,
+    "source_ai_recall_worst_min": 0.6,
+    "source_real_false_ai_worst_max": 0.2,
+    "uncertain_rate_max": 0.2
+  },
+  "identities": {
+    "component_manifest_sha256": {
+      "commons": "657be9bb6e2632f5b00f2f5a1f37b36640d186b53044cdb2cdf0697cb9208e7b",
+      "openfake": "38048803d01b6cb607c491d2391a7f0031e5c1010d7594bd44c767127e637442",
+      "stylegan2": "150ed35481bc0ae7653ff34eae879a227c1e359e4ab9ca772c681bbdef22ec99"
+    },
+    "dino_weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+    "generalist_artifact_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "manifest_sha256": "9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909",
+    "observation_identity_sha256": "3cf565a159684a51732d61403c0f7ef9b4c7c2977224b947fec31bee9c665242"
+  },
+  "metrics_opened": 0,
+  "schema_version": 1,
+  "scores_created": 0,
+  "state": "e49_c_candidate_locked_before_model_load",
+  "thresholds": {
+    "binary_ai": 0.07940196245908739,
+    "selective_real": 0.011505939625203613
+  }
+}

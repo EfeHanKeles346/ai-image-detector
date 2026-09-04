@@ -854,7 +854,7 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       display geometry. Exactly 2,000 parents share both conditions and all sixteen source quotas.
       Original formats are 1,585 JPEG/213 MPO/202 PNG; every Q75 child is JPEG. Manifest SHA-256
       `9744a9d2...5909`; model-score/metric counts remain zero.
-- [ ] **Freeze E43-S and the decision layer before scoring.** Candidate artifact SHA remains
+- [x] **Freeze E43-S and the decision layer before scoring.** Candidate artifact SHA remains
       `a3aec445...7390`; binary AI cut remains `0.07940196245908739`. Selective decisions are REAL
       below `0.011505939625203613`, AI at/above the binary cut and UNCERTAIN between them. These cuts
       were selected only from consumed E50 CAL/DEVELOPMENT and may not move in E49.
@@ -862,6 +862,9 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       commands enforce this order. The contract binds manifest/component/model/weight hashes and
       fixed gates; resumable inference writes only identity+raw score rows; metric opening requires
       the completed stream hash. Fourteen focused lock/score/evaluation tests pass before use.
+      **Lock complete:** contract SHA-256 `fecd724c...61dd` binds final manifest
+      `9744a9d2...5909`, observation identities `3cf565a1...5242`, E43-S artifact, DINO weights,
+      thresholds and all twenty checks. Score/metric counts are zero at this commit.
 - [ ] **Require the full ten gates independently on both conditions.** Coverage =100%; AUC >=0.90;
       balanced accuracy >=0.85; pooled REAL false-AI <=10%; worst REAL device/source false-AI <=20%;
       pooled AI recall >=80%; worst AI generator recall >=60%; selective automatic coverage >=80%;

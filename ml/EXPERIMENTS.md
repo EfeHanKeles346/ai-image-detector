@@ -3956,6 +3956,9 @@ was scored or selected using model output.
   load. `score` writes a resumable ordered raw stream and zero metrics. Only `open-metrics` may verify
   that stream and execute the frozen 10,000-bootstrap/20-gate evaluator. Fourteen focused tests pass;
   retries, source removal, threshold changes and metrics-before-score-lock are forbidden.
+- **Pre-score lock complete:** contract SHA-256 `fecd724c...61dd` binds final manifest
+  `9744a9d2...5909`, observation identity `3cf565a1...5242`, exact E43-S/DINO hashes, both fixed
+  cuts and all twenty gates. The contract is committed with zero score rows and zero opened metrics.
 
 ### Gated-source approval audit — route decision before any image access
 
