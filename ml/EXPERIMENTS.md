@@ -3988,6 +3988,14 @@ was scored or selected using model output.
   `3e5caa86...bd70f` reproduces 10%-FPR TPR 72.30%/58.80%, REAL paired-AND FP 32.80%, AI paired-AND
   recall 93.50%, JPEG/MPO FP 39.90%/36.15% and log-megapixel correlation 0.0563. It creates no new
   scores or candidate threshold; E51 source audit is the next permitted action.
+- **E51 REAL-source audit — PARTIAL, zero image payload:** all 9,940 SCMI30 v2 public entries were
+  enumerated and normalized to 9,937 native JPEGs across 30 devices (35,592,810,773 image bytes).
+  It is the primary device-disjoint TRAIN/CAL candidate because individual files can be frozen;
+  source terms remain research/education CC-BY-NC-ND. SCIMD-17 is open and tiny but uniformly
+  224x224, so it is auxiliary TRAIN only. RAISE is ~350 GB/three cameras; official Dresden is down;
+  IMAGINE lacks verified TLS/explicit terms; SOCRatES is agreement-gated. Evidence
+  `9ddab57a...c4883`; the audit deliberately authorizes no download until a different licensed
+  DEVELOPMENT publisher is found.
 
 ### Gated-source approval audit — route decision before any image access
 

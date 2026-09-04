@@ -1,0 +1,71 @@
+{
+  "routing": {
+    "auxiliary_resize_hard_negative_candidate": "scimd_17",
+    "development_source": null,
+    "download_authorized": false,
+    "primary_native_train_cal_candidate": "scmi30_iitrpr",
+    "reason": "No independent, explicit-licence DEVELOPMENT publisher passed this audit. Bind a fresh source before image transfer."
+  },
+  "schema_version": 1,
+  "sources": {
+    "dresden": {
+      "boundary": "Official image host is unavailable; do not substitute a third-party CC0 claim.",
+      "decision": "blocked"
+    },
+    "imagine": {
+      "boundary": "Python cannot verify the publisher TLS chain; obtain explicit terms and a verified transport before any payload.",
+      "decision": "blocked",
+      "explicit_license_found": false,
+      "page_claim_bytes": 26000000000,
+      "page_claim_cameras": 60,
+      "page_claim_images": 2816,
+      "verified_tls": false
+    },
+    "raise": {
+      "boundary": "Too large and too few cameras for E51's primary route; retain as later native spot-check.",
+      "cameras": 3,
+      "decision": "eligible_but_not_primary",
+      "declared_full_bytes": 350000000000,
+      "images": 8156,
+      "license": "non-commercial research and educational use",
+      "page_sha256": "171657e028b45b2b2b101b9529f927472b445a10fd914cc4fec89c8ccc15b86f",
+      "transport": "camera_native_raw"
+    },
+    "scimd_17": {
+      "archive_bytes": 174438734,
+      "archive_md5": "md5:37da574c9e8d9c0fd3a7c9bedc5d72a6",
+      "boundary": "Never use as native-camera CAL, DEVELOPMENT or final evidence.",
+      "decision": "eligible_auxiliary_train_only",
+      "device_models": 17,
+      "doi": "10.5281/zenodo.17317613",
+      "image_claim": 17000,
+      "license": "cc-by-4.0",
+      "record": 17317613,
+      "resolution": "224x224_uniform_resize"
+    },
+    "scmi30_iitrpr": {
+      "boundary": "Research/education, non-commercial and no-derivatives terms. Split by whole device; the same publisher may not supply E51 DEVELOPMENT.",
+      "branches": {
+        "Random": 5287,
+        "Similar": 4650
+      },
+      "bytes": 35592872377,
+      "decision": "eligible_native_train_cal_only",
+      "device_ids": 30,
+      "files": 9940,
+      "image_bytes": 35592810773,
+      "image_files": 9937,
+      "last_updated": "2024-02-08T14:04:13.733Z",
+      "license": "Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)",
+      "reference": "goyalpuneet/sci30iitrpr",
+      "version": 2
+    },
+    "socrates": {
+      "boundary": "Requires a signed licence agreement and emailed password.",
+      "decision": "blocked",
+      "images": 9700,
+      "smartphones": 103
+    }
+  },
+  "state": "metadata_only_no_image_payload"
+}

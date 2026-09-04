@@ -510,6 +510,28 @@ this is a preference benchmark with shared controlled prompts; OpenFake `core/te
 direct OOD detector final and is already identity/byte-frozen. Datapoint remains unscored,
 non-training post-final reserve rather than replacing E49-C after selection.
 
+#### E51 REAL-source audit — metadata only, no download authorization
+
+The public Kaggle v2 inventory for `goyalpuneet/sci30iitrpr` contains 9,940 files, of which exactly
+9,937 are JPEG images: 5,287 Random and 4,650 Similar, grouped under 30 normalized device ids. Image
+payloads total 35,592,810,773 bytes. Kaggle declares CC-BY-NC-ND-4.0 and the authors limit use to
+research/education. Because files are addressable individually, a device-disjoint TRAIN/CAL slice
+can be frozen without mirroring 35.6 GB; the same publisher is forbidden from E51 DEVELOPMENT.
+The complete 921,570-byte external metadata inventory hashes to `fe070411...72c1e`.
+
+Zenodo record `17317613` /DOI `10.5281/zenodo.17317613` exposes SCIMD-17 under CC-BY-4.0: a
+174,438,734-byte archive (`md5:37da574c9e8d9c0fd3a7c9bedc5d72a6`) claiming about 17,000 images
+from 17 phone models. Every image was uniformly resized to 224x224, so it is eligible only as an
+auxiliary resized-real TRAIN hard negative—not native-camera CAL, DEVELOPMENT or final evidence.
+
+RAISE is a legitimate non-commercial research source with 8,156 camera-native RAW images, but its
+three cameras and ~350 GB full transfer make it a poor primary route. The official Dresden image
+host is unavailable; a third-party mirror's CC0 label is not accepted as a replacement. IMAGINE
+claims 2,816 images/60 cameras/~26 GB but the Python client cannot verify its publisher TLS chain and
+the page exposes no explicit licence. SOCRatES requires a signed agreement and emailed password.
+Therefore no image payload is authorized by this partial audit. Compact evidence SHA-256 is
+`9ddab57a5d478102b9b3314f4258f548a98c743377150e302355dc206fdc4883`.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.

@@ -4932,3 +4932,12 @@ E49 manifest, raw score stream and final report by exact SHA-256 before joining 
 format and resolution findings in report `3e5caa86...bd70f`. The procedure performs no inference,
 creates no candidate threshold and cannot select any future source or row. The project can now audit
 new REAL sources without silently learning from the failed final identities.
+
+The following metadata-only E51 source audit resisted a tempting shortcut. SCMI30 is genuinely
+useful—9,937 high-resolution phone JPEGs across 30 normalized devices, selectable file by file—but
+it can safely supply only TRAIN/CAL if whole devices are separated. SCIMD-17's 17,000-image claim
+compresses to a 174 MB archive because every frame is already 224x224; it is therefore an auxiliary
+resize hard-negative source, not evidence of native-camera generalization. RAISE is valid but
+~350 GB and only three cameras, while Dresden, IMAGINE and SOCRatES fail current transport/terms
+requirements. With no independent DEVELOPMENT publisher yet, evidence `9ddab57a...c4883` freezes a
+zero-download decision instead of manufacturing progress from a scientifically weak split.

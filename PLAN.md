@@ -1043,6 +1043,14 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       [B-Free content alignment](https://openaccess.thecvf.com/content/CVPR2025/html/Guillaro_A_Bias-Free_Training_Paradigm_for_More_General_AI-generated_Image_Detection_CVPR_2025_paper.html),
       [AIDE hybrid visual/noise experts](https://openreview.net/pdf/67e6139d293501496907c5dc7468eb9a370685dd.pdf) and
       [MAFL source/content-bias suppression](https://arxiv.org/abs/2604.12353).
+      **Metadata-only checkpoint:** the complete public SCMI30 v2 inventory reproduces 9,937 native
+      JPEGs /30 device ids /35,592,810,773 image bytes and supports individual-file selection; it is
+      the leading device-disjoint TRAIN/CAL candidate under CC-BY-NC-ND research terms. Open
+      CC-BY-4.0 SCIMD-17 is only a 224x224 resize corpus and may enter auxiliary TRAIN hard negatives,
+      never native CAL/DEVELOPMENT. RAISE is valid native RAW but ~350 GB/three cameras; Dresden,
+      IMAGINE and SOCRatES remain blocked by unavailable official transport, unverifiable TLS/explicit
+      terms, or signed agreement. Evidence `9ddab57a...c4883`; image downloads remain forbidden until
+      an independent, explicitly licensed DEVELOPMENT publisher is bound. The audit is not complete.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,
