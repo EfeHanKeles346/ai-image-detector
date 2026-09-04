@@ -3755,6 +3755,11 @@ was scored or selected using model output.
   zero-image/zero-score failed feasibility bind. Cached metadata proves a <=4 MiB original-file cap
   still fills every 110-row device reserve and reduces Commons to about 2.52 GiB; a separately
   committed V2 may use that rule without reopening model output.
+- **Open-component V2 — locked:** the <=4 MiB filter is applied before the same deterministic rank
+  and uploader cap. It fills 1,100/1,100 Commons rows at 2,706,581,778 bytes, leaving
+  1,588,385,518 bytes for Datapoint, and freezes the same 240 local StyleGAN2 reserve coordinates.
+  Contract `1d4e184c...82aa`, identity `31c0e420...e171`; zero images/scores. Do not spend the
+  Commons transfer until Datapoint's exact bytes prove the full 4 GiB contract feasible.
 - **Datapoint access checkpoint:** the user submitted the gated contact-sharing request. Both the
   dataset page and authenticated CLI user `efehankeles` were checked; the page reports that author
   review is pending and the metadata-only probe still returns `GatedRepoError`. No retry was

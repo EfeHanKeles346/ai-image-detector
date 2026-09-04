@@ -321,6 +321,14 @@ zero-score feasibility record. The cached eligible metadata shows that a predecl
 can still fill 110/110 rows in every device while reducing the Commons reserve to about 2.52 GiB;
 that rule must be frozen in a successor contract before any transfer.
 
+The V2 successor is now frozen without overwriting V1. Its <=4 MiB rule binds all 1,100 Commons
+reserves at 2,706,581,778 bytes and leaves 1,588,385,518 bytes of the global ceiling for the 800
+Datapoint targets. It simultaneously binds the 240 already-local StyleGAN2 coordinates. Contract
+SHA-256 is `1d4e184c27cb87cf832045a23b6966f382673c3bcd8342a900c07130bd9182aa` and combined reserve-
+identity SHA-256 is `31c0e420b694b1774382c1ab299d6115008656ac7fc1e3c5b0de7deececde171`.
+No image transfer or detector score occurred; Commons download must still wait until Datapoint's
+exact selected byte total proves the complete E49 remains inside the global stop.
+
 Every parent receives two paired conditions: `publisher_original` and deterministic `social_q75`
 (EXIF transpose, RGB, long side <=1080, JPEG q75, 4:2:0, metadata stripped). The conditions are
 reported separately and never counted as 4,000 independent samples. A source/label-stratified,

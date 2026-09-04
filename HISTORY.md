@@ -2856,6 +2856,13 @@ Datapoint images could not respect the global 4 GiB ceiling. No image or model w
 scan of the same frozen metadata found that capping each original at 4 MiB still fills all ten
 110-row reserves and lowers Commons to roughly 2.52 GiB, motivating an explicit V2 contract.
 
+The size-aware V2 was implemented, regression-tested and committed before rebinding. It preserves
+all ten 100-photo targets and freezes 1,100 Commons reserves under 4 MiB each at exactly
+2,706,581,778 bytes, leaving 1,588,385,518 bytes for Datapoint under the original global stop. The
+same 240 local StyleGAN2 coordinates are bound. V2 contract `1d4e184c...82aa` and reserve identity
+`31c0e420...e171` remain untransferred and unscored. Commons transfer is deliberately deferred
+until the gated component exposes exact sizes; this avoids spending 2.71 GB on an impossible final.
+
 Production realization decoded all 3,996 iPhone parents as RGB with EXIF and found zero overlap
 with protected E30, passed peers, stored IPN or the exact 210-photo owner population. It still
 stopped, correctly, on one confirmed duplicate burst: byte-distinct `IMG_1290.JPG`/`IMG_1291.JPG`

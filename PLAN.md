@@ -788,6 +788,10 @@ it is not another development set and it cannot be used to repair E43-S.
       but its Commons reserve alone is 4,140,590,955 bytes, leaving no honest room for Datapoint
       inside the total 4 GiB ceiling. Archive contract `c6f2cfb0...f794` as rejected before transfer;
       do not download it. Pre-register a size-aware successor from the same cached metadata.
+      **Open-component V2 lock:** a predeclared 4 MiB original-file cap fills every device reserve
+      and reduces 1,100 Commons rows to 2,706,581,778 bytes, leaving 1,588,385,518 bytes of the
+      global ceiling for Datapoint. The 240 local StyleGAN2 coordinates are also frozen. Contract
+      SHA-256 `1d4e184c...82aa`, reserve identity `31c0e420...e171`; images/scores remain zero.
 - [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean
