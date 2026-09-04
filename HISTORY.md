@@ -4594,3 +4594,9 @@ including 1,997 eligible StyleGAN2 examples. The frozen rank can therefore suppl
 parents plus 40 reserves; the reserve identity digest is `15e5c131...cc731`. The new probe reads
 only `label` and `generator`, never the image column or a detector score. No E49 image was decoded
 and no network byte was spent.
+
+The Datapoint contact-sharing form was subsequently submitted by the user. The repository page now
+states that the request is awaiting review by its authors; the CLI is authenticated as the same
+`efehankeles` account, and a fresh probe still fails closed with `GatedRepoError`. This is an
+external approval wait rather than a login or implementation fault. E49 remains unscored and no
+Datapoint image byte has been downloaded.

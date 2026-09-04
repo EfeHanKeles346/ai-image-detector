@@ -3743,6 +3743,10 @@ was scored or selected using model output.
   generator code 14. The model-blind hash rank yields a 240-row reserve with identity SHA-256
   `15e5c131...cc731`. The reusable reader requested only `label` and `generator`; image reads,
   decoding, model loading and network transfer all remained zero. Ten focused E49 tests pass.
+- **Datapoint access checkpoint:** the user submitted the gated contact-sharing request. Both the
+  dataset page and authenticated CLI user `efehankeles` were checked; the page reports that author
+  review is pending and the metadata-only probe still returns `GatedRepoError`. No retry was
+  misreported as access and no final image byte was downloaded.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

@@ -763,8 +763,9 @@ it is not another development set and it cannot be used to repair E43-S.
       camera EXIF/category evidence and a per-uploader cap. AI = 800 Datapoint 2026 benchmark
       outputs, 160 each from GPT Image 2, Nano Banana 2, Seedream 5 Pro, FLUX 2 and Ideogram 4,
       plus 200 StyleGAN2 rows from the already-local Apache-2.0 AIGC Detection Benchmark. Datapoint
-      stays metadata-only until the user accepts its contact-sharing gate; no substitute source may
-      be chosen after a detector score is seen.
+      stays metadata-only until its authors approve the user's submitted contact-sharing request;
+      the request is currently awaiting review. No substitute source may be chosen after a detector
+      score is seen.
 - [ ] **Bind before download.** Pin repository revisions, Commons page/revision ids, prompt ids,
       generator/provider names, expected byte lengths, licences/terms, a deterministic hash rank,
       20% reserve where available and a 4 GiB network stop. Store payloads only under
