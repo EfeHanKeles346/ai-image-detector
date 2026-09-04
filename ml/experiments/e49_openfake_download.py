@@ -29,6 +29,8 @@ EXPECTED_ROWS = 960
 EXPECTED_BYTES = 241_736_938
 MAX_PIXELS = 50_000_000
 ALLOWED_DECODED_FORMATS = {"JPEG", "PNG", "WEBP"}
+RESOLVE_WORKERS = 2
+RESOLVE_BATCH_PAGES = 24
 
 ROOT = DATA_ROOT / "e49" / "openfake"
 PAYLOAD_ROOT = ROOT / "payloads"
@@ -191,15 +193,19 @@ def download() -> dict[str, Any]:
     already_present = len(completed)
 
     pages = sorted(by_page.items())
-    for page_number, (offset, wanted) in enumerate(pages, start=1):
-        items, _method = _resolve_wanted_assets(offset, wanted)
+    for start in range(0, len(pages), RESOLVE_BATCH_PAGES):
+        batch = pages[start:start + RESOLVE_BATCH_PAGES]
+        # Two cold Viewer calls is the already-measured public-service concurrency boundary.
+        with ThreadPoolExecutor(max_workers=RESOLVE_WORKERS) as pool:
+            resolved = list(pool.map(lambda entry: _resolve_wanted_assets(*entry)[0], batch))
+        items = [item for page_items in resolved for item in page_items]
         with ThreadPoolExecutor(max_workers=8) as pool:
             completed.extend(pool.map(_download, items))
-        if page_number % 24 == 0 or page_number == len(pages):
-            print(
-                f"E49-C download pages {page_number}/{len(pages)}, files {len(completed)}/{len(rows)}",
-                flush=True,
-            )
+        processed = start + len(batch)
+        print(
+            f"E49-C download pages {processed}/{len(pages)}, files {len(completed)}/{len(rows)}",
+            flush=True,
+        )
 
     completed.sort(key=lambda row: (str(row["model"]), int(row["row_index"])))
     counts = Counter(str(row["model"]) for row in completed)

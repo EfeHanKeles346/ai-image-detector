@@ -941,6 +941,10 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       roles plus Dotting and StyleGAN2 component manifests, applies the frozen rank order and creates
       deterministic 1080-long-side JPEG-Q75 children. It requires exactly 160 clean parents per
       family and refuses partial quotas; 21 focused E49 tests pass before production execution.
+      **Resume-performance amendment:** after 521 verified payloads, the single-page resolver was
+      measured as the bottleneck and stopped cleanly. Resume keeps every identity/byte rule and the
+      already-established maximum of two Viewer requests, but resolves them in 24-page batches
+      before the same eight body workers. No completed payload is fetched twice.
 - [ ] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
       AI and 200 local StyleGAN2 AI parents, each paired original/Q75. Commit one-shot E43-S score
       streams before opening metrics and require all existing 20 gates without threshold/source repair.

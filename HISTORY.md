@@ -4782,3 +4782,10 @@ listed the five never-consumed Datapoint families from E49-A. Its AI source quot
 exact OpenFake families frozen by E49-C plus unchanged StyleGAN2. Parent counts, all ten REAL device
 cells, thresholds and twenty gates are identical. A regression test binds the six labels; this is a
 pre-score contract alignment, not a source substitution after seeing performance.
+
+The resumed OpenFake transfer reached 521 atomically verified payloads, but sequential resolution of
+hundreds of sparse Viewer pages—not image bandwidth—was measured as its dominant delay. The process
+was stopped cleanly with no receipt and no partial file admitted. Its restart strategy now groups 24
+remaining pages while preserving the previously measured public limit of two concurrent Viewer
+requests, followed by the same eight exact-body workers. Frozen identities, expected bytes, decode
+rules and model boundary are unchanged; all 521 bodies will be revalidated rather than redownloaded.

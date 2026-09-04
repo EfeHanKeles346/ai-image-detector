@@ -3870,6 +3870,11 @@ was scored or selected using model output.
   8,770: `.jpg` Viewer path and generic MIME wrap valid 2,048-square PNG bytes. Keep the row and
   exact received bytes; admit only decoded JPEG/PNG/WebP and expose format counts per source. This
   occurred before decontamination/model access; 201 already-validated files remain resumable.
+- **Resume-performance amendment:** a later restart reached 521 verified bodies but showed that
+  sequential Viewer page resolution, not payload transfer, dominated elapsed time. It was stopped
+  between atomic files. Resume resolves only the remaining preselected pages in batches of 24 with
+  the same measured two-request ceiling, then uses the unchanged eight body workers. Identities,
+  expected bytes, validation and score boundary do not change; existing payloads are revalidated.
 - **Frozen realization method:** after the exact transfer receipt exists, re-open all 960 files and
   reproduce byte hash, decoded format, dimensions and full coverage. Compare original SHA-256 and
   dHash against every protected role, the scored Dotting diagnostic and the frozen StyleGAN2 final
