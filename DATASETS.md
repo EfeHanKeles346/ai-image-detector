@@ -305,6 +305,14 @@ generator code 14 (StyleGAN2). The deterministic 240-row reserve identity digest
 `15e5c1315d1411c1c106dc457166b2b097dd3753bcb357e35178f279a95cc731`. No image column or model
 score was read, and no network byte was required for this source.
 
+The first Commons feasibility scan occurred before any source contract or image transfer. Nine
+declared categories can fill an uploader-capped reserve, but Fujifilm X-T5 yields only 66 eligible
+rows after the contributor cap and cannot honestly supply its 100-row target. It is therefore
+replaced pre-binding by Nikon Z 8, which supplies 110 selected rows from 25 uploaders. Commons
+headroom is reduced from 20% to 10% to keep the unchanged 1,000-REAL target within the 4 GiB network
+stop. API responses now request only the two licence fields actually used. No REAL image was
+downloaded, decoded or scored during this metadata audit.
+
 Every parent receives two paired conditions: `publisher_original` and deterministic `social_q75`
 (EXIF transpose, RGB, long side <=1080, JPEG q75, 4:2:0, metadata stripped). The conditions are
 reported separately and never counted as 4,000 independent samples. A source/label-stratified,

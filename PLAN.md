@@ -768,7 +768,7 @@ it is not another development set and it cannot be used to repair E43-S.
       score is seen.
 - [ ] **Bind before download.** Pin repository revisions, Commons page/revision ids, prompt ids,
       generator/provider names, expected byte lengths, licences/terms, a deterministic hash rank,
-      20% reserve where available and a 4 GiB network stop. Store payloads only under
+      10% Commons reserve plus 20% AI reserve where available, and a 4 GiB network stop. Store payloads only under
       `/Volumes/LaCie/pixelproof-datasets/e49/`; never commit third-party images. Abort rather than
       silently replacing a source, device or generator after scoring starts.
       **Implementation checkpoint:** `e49_acquisition.py` now pins both Hugging Face revisions,
@@ -779,6 +779,11 @@ it is not another development set and it cannot be used to repair E43-S.
       **Local GAN checkpoint:** all 60 pinned AIGC shards reproduce 125,026 metadata rows and 1,997
       eligible StyleGAN2 rows. A deterministic 240-row reserve is now reproducible from only the
       `label`/`generator` columns; its identity digest is `15e5c131...cc731`. No image was decoded.
+      **Commons feasibility amendment before binding:** nine original device categories fill their
+      uploader-capped reserve, but Fujifilm X-T5 yields only 66/120 and cannot support a 100-row
+      diverse target. Replace only that unbound category with Nikon Z 8, which yields 110/110 from
+      25 uploaders. Reduce Commons headroom to 10% so the same 1,000-parent target respects the
+      frozen 4 GiB stop. No E49 REAL image or detector score exists.
 - [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean

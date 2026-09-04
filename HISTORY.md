@@ -4662,3 +4662,12 @@ HTTP 403 with `awaiting a review from the repo authors`. This creates no new blo
 official MediaEval copy was already consumed in E45; a later mirror approval cannot be reused as a
 second independent final. The Datapoint E49 source was checked in the same authenticated session
 and independently remains HTTP 403 /author-review pending. Neither probe downloaded an image.
+
+Work continued on the open E49 REAL component instead of waiting. A licence-only Commons metadata
+scan proved nine planned camera categories can fill an uploader-capped reserve, but Fujifilm X-T5
+cannot: its 793 files collapse to only 66 eligible rows after the contributor cap. Because no E49
+source contract, REAL image or detector score exists, the category was replaced transparently with
+Nikon Z 8 before binding; it supplies 110 rows across 25 uploaders. The target remains ten devices x
+100 photos. Commons headroom becomes 10% rather than 20% to preserve the 4 GiB network ceiling, and
+the API now requests only licence fields the audit consumes. Eleven focused acquisition/evaluation
+tests pass.

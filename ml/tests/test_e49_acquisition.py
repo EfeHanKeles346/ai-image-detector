@@ -6,12 +6,14 @@ import pytest
 
 from experiments.e49_acquisition import (
     AIGC_GENERATOR_CODE,
+    COMMONS_CATEGORIES,
     commons_rows,
     read_aigc_coordinates,
     select_aigc_coordinates,
     select_capped,
     validate_hf_identity,
 )
+from experiments.e49_evaluation import SOURCE_COUNTS
 
 
 def test_hf_identity_binds_revision_and_licence() -> None:
@@ -21,6 +23,11 @@ def test_hf_identity_binds_revision_and_licence() -> None:
     changed["sha"] = "def"
     with pytest.raises(ValueError, match="identity changed"):
         validate_hf_identity(changed, repo="owner/repo", revision="abc", license_id="cc-by-4.0")
+
+
+def test_commons_device_contract_matches_final_evaluator() -> None:
+    sources = {category.removeprefix("Category:Taken with ") for category in COMMONS_CATEGORIES}
+    assert sources == {source for source, count in SOURCE_COUNTS.items() if count == 100}
 
 
 def test_capped_selection_is_deterministic_and_limits_contributors() -> None:

@@ -46,7 +46,7 @@ AIGC_LOCAL_REF = DATA_ROOT / ".hf_cache" / "hub" / "datasets--TheKernel01--AIGC-
 
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 COMMONS_TARGET_PER_DEVICE = 100
-COMMONS_RESERVE_PER_DEVICE = 120
+COMMONS_RESERVE_PER_DEVICE = 110
 COMMONS_MAX_PER_UPLOADER = 20
 COMMONS_CATEGORIES = (
     "Category:Taken with iPhone 15 Pro",
@@ -58,7 +58,7 @@ COMMONS_CATEGORIES = (
     "Category:Taken with iPhone 13 Pro",
     "Category:Taken with Sony ILCE-7M4",
     "Category:Taken with Canon EOS R5",
-    "Category:Taken with Fujifilm X-T5",
+    "Category:Taken with Nikon Z 8",
 )
 ALLOWED_LICENSE_PREFIXES = ("CC BY", "CC0", "Public domain")
 MAX_COMMONS_FILE_BYTES = 8 * 1024**2
@@ -262,6 +262,8 @@ def fetch_commons_category(category: str, *, max_pages: int = 4) -> list[dict[st
             "generator": "categorymembers", "gcmtitle": category,
             "gcmtype": "file", "gcmlimit": 500, "prop": "imageinfo",
             "iiprop": "url|size|mime|sha1|timestamp|user|extmetadata",
+            "iiextmetadatafilter": "LicenseShortName|LicenseUrl",
+            "iiextmetadatalanguage": "en",
         }
         params.update(continuation)
         payload = _request_json(session, params)

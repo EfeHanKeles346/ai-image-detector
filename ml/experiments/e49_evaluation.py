@@ -27,7 +27,7 @@ SOURCE_COUNTS = {
     "iPhone 13 Pro": 100,
     "Sony ILCE-7M4": 100,
     "Canon EOS R5": 100,
-    "Fujifilm X-T5": 100,
+    "Nikon Z 8": 100,
     "GPT Image 2": 160,
     "Nano Banana 2": 160,
     "Seedream 5.0 Pro": 160,

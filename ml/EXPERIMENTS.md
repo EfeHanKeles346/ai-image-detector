@@ -3743,6 +3743,12 @@ was scored or selected using model output.
   generator code 14. The model-blind hash rank yields a 240-row reserve with identity SHA-256
   `15e5c131...cc731`. The reusable reader requested only `label` and `generator`; image reads,
   decoding, model loading and network transfer all remained zero. Ten focused E49 tests pass.
+- **Commons pre-bind feasibility amendment:** nine camera categories fill an uploader-capped
+  reserve, but Fujifilm X-T5 reaches only 66/120 because too few contributors dominate its 793
+  files. Before contract/image/model access, replace it with Nikon Z 8: 110/110 selected from 25
+  uploaders. Reduce Commons reserve to 10% so the same 1,000-parent target stays under the 4 GiB
+  network stop. Licence metadata queries now omit unused large fields. Eleven focused E49
+  acquisition/evaluation tests pass; REAL image and score counts remain zero.
 - **Datapoint access checkpoint:** the user submitted the gated contact-sharing request. Both the
   dataset page and authenticated CLI user `efehankeles` were checked; the page reports that author
   review is pending and the metadata-only probe still returns `GatedRepoError`. No retry was
