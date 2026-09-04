@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 
 from experiments.e49_openfake import REVISION
-from experiments.e49_openfake_assets import extract_asset_urls
+from experiments.e49_openfake_assets import ALLOWED_HEAD_CONTENT_TYPES, extract_asset_urls
 
 
 def _row(index: int) -> dict:
@@ -47,3 +47,9 @@ def test_asset_page_requires_frozen_metadata_and_keeps_url_ephemeral():
     changed = {**expected, "width": 512}
     with pytest.raises(ValueError, match="metadata changed"):
         extract_asset_urls(payload, offset=index, wanted={index: changed})
+
+
+def test_asset_head_allows_viewer_s3_generic_binary_type():
+    assert "image/jpeg" in ALLOWED_HEAD_CONTENT_TYPES
+    assert "binary/octet-stream" in ALLOWED_HEAD_CONTENT_TYPES
+    assert "text/html" not in ALLOWED_HEAD_CONTENT_TYPES

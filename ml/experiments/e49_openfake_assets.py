@@ -32,6 +32,7 @@ COMMONS_RESERVE_BYTES = 2_706_581_778
 MAX_NETWORK_BYTES = 4 * 1024**3
 MAX_ASSET_BYTES = 16 * 1024**2
 EXPECTED_ROWS_SELECTED = 960
+ALLOWED_HEAD_CONTENT_TYPES = {"image/jpeg", "binary/octet-stream", "application/octet-stream"}
 
 ROOT = DATA_ROOT / "e49" / "openfake"
 HEAD_CACHE = ROOT / "asset_heads"
@@ -145,7 +146,7 @@ def _head_asset(item: Mapping[str, Any]) -> dict[str, Any]:
             response.raise_for_status()
             content_length = int(response.headers.get("Content-Length", "-1"))
             content_type = str(response.headers.get("Content-Type", "")).split(";", 1)[0].lower()
-            if content_type != "image/jpeg" or not (0 < content_length <= MAX_ASSET_BYTES):
+            if content_type not in ALLOWED_HEAD_CONTENT_TYPES or not (0 < content_length <= MAX_ASSET_BYTES):
                 raise ValueError(f"invalid JPEG HEAD: {content_type} / {content_length}")
             payload = {
                 "schema_version": 1,
