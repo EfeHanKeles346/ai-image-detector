@@ -5,7 +5,8 @@ from pathlib import Path
 from PIL import Image
 import pytest
 
-from experiments.e51_transfer import ieee_destination, inspect_ieee_file
+from experiments.e51_data_route import DATAPOINT_SHARD_BYTES
+from experiments.e51_transfer import ieee_destination, inspect_ieee_file, validate_datapoint_remote
 
 
 def _row(size: int = 1) -> dict:
@@ -44,3 +45,14 @@ def test_ieee_inspection_rejects_byte_drift(tmp_path: Path):
     Image.new("RGB", (512, 512)).save(path, format="PNG")
     with pytest.raises(ValueError, match="byte length"):
         inspect_ieee_file(path, _row(path.stat().st_size + 1))
+
+
+def test_datapoint_remote_requires_every_exact_shard_byte():
+    files = {
+        f"data/images/images-{index:04d}.parquet": size
+        for index, size in DATAPOINT_SHARD_BYTES.items()
+    }
+    assert validate_datapoint_remote(files) == files
+    files[next(iter(files))] += 1
+    with pytest.raises(ValueError, match="inventory changed"):
+        validate_datapoint_remote(files)

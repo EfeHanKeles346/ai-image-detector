@@ -4981,3 +4981,9 @@ is a transport limit, not a dataset/model result; no receipt or score was produc
 file remains restart-verifiable. The next resume is globally paced to roughly 75 API requests per
 minute across two workers and backs off 60–300 seconds on 429, trading speed for deterministic
 completion without redownloading the verified 494.
+
+While that publisher quota cools down, the independent Datapoint acquisition method was prepared
+without transferring a shard. It permits only the seven already-contracted Parquets at pinned
+revision `e1d8719a...c928`, reproduces each remote byte count and full local SHA-256, and records that
+the image columns and all detectors remain unopened. Its exact transfer ceiling is 3,220,281,593
+bytes; the 920 paired reserves and later 800-parent target cannot change in this step.

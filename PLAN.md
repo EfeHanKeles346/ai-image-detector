@@ -1084,6 +1084,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       HTTP 429 before any receipt could be sealed. Those files remain restart-safe and unscored.
       The transfer now uses two workers behind one global 0.8-second request gate (~75 requests/min)
       and honors `Retry-After` or a bounded 60–300 second backoff before continuing.
+      **Datapoint transfer method:** while the Kaggle quota cools down, the next acquisition gate is
+      frozen without payload access. It verifies the manual-gated repository at exact revision,
+      requires all seven contracted shard byte counts (3,220,281,593 total), downloads only those
+      paths restart-safely, hashes the complete Parquets and explicitly leaves image columns unopened.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

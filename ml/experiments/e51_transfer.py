@@ -13,9 +13,11 @@ import threading
 import time
 from typing import Any, Iterable, Mapping
 
+from huggingface_hub import HfApi, hf_hub_download
 from kaggle.api.kaggle_api_extended import KaggleApi
 from PIL import Image
 
+from experiments.e51_data_route import DATAPOINT_REVISION, DATAPOINT_REPO, DATAPOINT_SHARD_BYTES
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 
 
@@ -36,6 +38,9 @@ PAYLOAD_ROOT = ROOT / "payloads" / "ieee_spcup_test"
 STAGING_ROOT = ROOT / "staging" / "ieee_spcup_test"
 RECEIPT = ROOT / "receipts" / "ieee_spcup_download_unscored.json"
 EVIDENCE = ML_ROOT.parent / "evidence" / "e51_ieee_download.json"
+DATAPOINT_PAYLOAD_ROOT = ROOT / "payloads" / "datapoint_repository"
+DATAPOINT_RECEIPT = ROOT / "receipts" / "datapoint_shards_download_unscored.json"
+DATAPOINT_EVIDENCE = ML_ROOT.parent / "evidence" / "e51_datapoint_download.json"
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -128,6 +133,41 @@ def _route_rows() -> list[dict[str, Any]]:
     ):
         raise ValueError("E51 IEEE route boundary changed")
     return rows
+
+
+def validate_datapoint_remote(files: Mapping[str, int]) -> dict[str, int]:
+    expected = {
+        f"data/images/images-{index:04d}.parquet": size
+        for index, size in DATAPOINT_SHARD_BYTES.items()
+    }
+    found = {name: files.get(name, -1) for name in expected}
+    if found != expected:
+        raise ValueError("Datapoint pinned shard inventory changed")
+    return expected
+
+
+def _datapoint_contract() -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    raw = CONTRACT.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != ROUTE_CONTRACT_SHA256:
+        raise ValueError("E51 route contract changed before Datapoint transfer")
+    payload = json.loads(raw)
+    role = payload.get("roles", {}).get("development_ai", {})
+    rows = role.get("rows") or []
+    expected_shards = [
+        f"data/images/images-{index:04d}.parquet" for index in sorted(DATAPOINT_SHARD_BYTES)
+    ]
+    if (
+        payload.get("state") != "e51_route_frozen_untransferred_unscored"
+        or payload.get("new_image_bytes_downloaded") != 0
+        or payload.get("model_scores_created") != 0
+        or role.get("repo") != DATAPOINT_REPO
+        or role.get("revision") != DATAPOINT_REVISION
+        or role.get("source_shards") != expected_shards
+        or role.get("source_shard_bytes") != sum(DATAPOINT_SHARD_BYTES.values())
+        or len(rows) != 920
+    ):
+        raise ValueError("E51 Datapoint route boundary changed")
+    return role, rows
 
 
 def _download_ieee(row: Mapping[str, Any]) -> dict[str, Any]:
@@ -248,12 +288,82 @@ def download_ieee() -> dict[str, Any]:
     return evidence
 
 
+def download_datapoint() -> dict[str, Any]:
+    """Fetch only the seven byte-bound Parquet shards; do not open their image columns."""
+    if DATAPOINT_RECEIPT.exists() or DATAPOINT_EVIDENCE.exists():
+        raise FileExistsError("E51 Datapoint receipt already exists; no silent replacement")
+    role, rows = _datapoint_contract()
+    info = HfApi().dataset_info(DATAPOINT_REPO, revision=DATAPOINT_REVISION, files_metadata=True)
+    if info.sha != DATAPOINT_REVISION or info.gated != "manual":
+        raise ValueError("Datapoint repository identity/access changed")
+    remote_files = {item.rfilename: int(item.size or -1) for item in info.siblings}
+    expected = validate_datapoint_remote(remote_files)
+    free_before = shutil.disk_usage(ROOT).free
+    expected_bytes = sum(expected.values())
+    if free_before < expected_bytes + 10 * 1024**3:
+        raise OSError("insufficient free space for Datapoint transfer plus 10 GiB reserve")
+    completed = []
+    for index, (name, size) in enumerate(expected.items(), start=1):
+        path = Path(hf_hub_download(
+            repo_id=DATAPOINT_REPO,
+            repo_type="dataset",
+            revision=DATAPOINT_REVISION,
+            filename=name,
+            local_dir=DATAPOINT_PAYLOAD_ROOT,
+        ))
+        if path.resolve() != (DATAPOINT_PAYLOAD_ROOT / PurePosixPath(name)).resolve():
+            raise ValueError("Datapoint downloader resolved an unexpected destination")
+        if not path.is_file() or path.stat().st_size != size:
+            raise ValueError(f"Datapoint shard byte length changed: {name}")
+        completed.append({
+            "remote_path": name,
+            "path": str(path),
+            "bytes": size,
+            "sha256": _digest(path),
+            "state": "downloaded_unopened_unscored",
+        })
+        print(f"E51 Datapoint shards {index}/{len(expected)}", flush=True)
+    if sum(row["bytes"] for row in completed) != expected_bytes:
+        raise ValueError("Datapoint completed bytes changed")
+    payload = {
+        "schema_version": 1,
+        "state": "e51_datapoint_shards_downloaded_unopened_unscored",
+        "role": "DEVELOPMENT_AI_RESERVE",
+        "route_contract_sha256": ROUTE_CONTRACT_SHA256,
+        "repo": DATAPOINT_REPO,
+        "revision": DATAPOINT_REVISION,
+        "shards": len(completed),
+        "bytes": expected_bytes,
+        "reserved_rows": len(rows),
+        "target_rows_after_realization": int(role["target_per_model_after_realization"]) * 5,
+        "free_bytes_before": free_before,
+        "free_bytes_after": shutil.disk_usage(ROOT).free,
+        "rows": completed,
+        "image_columns_opened": False,
+        "model_scores_created": 0,
+    }
+    raw = _write_atomic(DATAPOINT_RECEIPT, payload)
+    evidence = {key: payload[key] for key in (
+        "schema_version", "state", "role", "route_contract_sha256", "repo", "revision",
+        "shards", "bytes", "reserved_rows", "target_rows_after_realization", "free_bytes_before",
+        "free_bytes_after", "image_columns_opened", "model_scores_created",
+    )}
+    evidence.update({
+        "receipt_bytes": len(raw),
+        "receipt_sha256": hashlib.sha256(raw).hexdigest(),
+    })
+    _write_atomic(DATAPOINT_EVIDENCE, evidence)
+    return evidence
+
+
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("download-ieee",))
+    parser.add_argument("command", choices=("download-ieee", "download-datapoint"))
     args = parser.parse_args(argv)
     if args.command == "download-ieee":
         print(json.dumps(download_ieee(), indent=2, sort_keys=True))
+    else:
+        print(json.dumps(download_datapoint(), indent=2, sort_keys=True))
     return 0
 
 
