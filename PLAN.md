@@ -953,6 +953,9 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       50 MP safety default (6,144 x 11,008 =67,633,152 pixels), a dimension already bound before
       body access. Raise the decoder ceiling only to that exact frozen maximum; do not remove or
       replace the row. The HTTP 200 body was rejected before admission and no score exists.
+      **Transfer complete:** 960/960 exact files and all 241,736,938 contracted bytes validate;
+      every family supplies 192 reserves. Decoded formats are 958 JPEG and two PNG. Receipt
+      SHA-256 `4dfb942c...26c2`; signed URLs stored zero and detector-score count remains zero.
 - [ ] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
       AI and 200 local StyleGAN2 AI parents, each paired original/Q75. Commit one-shot E43-S score
       streams before opening metrics and require all existing 20 gates without threshold/source repair.

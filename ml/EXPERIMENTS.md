@@ -3880,6 +3880,10 @@ was scored or selected using model output.
   no-body contract, so the guard is raised only to its exact 67,633,152 pixels. The row remains in
   place; its rejected HTTP 200 attempt created no admitted file, score or metric. Future transfer
   failures now disclose their validation cause instead of only the HTTP status.
+- **Transfer result — COMPLETE:** all 960 bound files reproduce 241,736,938 expected bytes and the
+  exact 192-per-family inventory. Decode coverage is 100%: 958 JPEG and two PNG. Receipt SHA-256 is
+  `4dfb942c...26c2`; zero signed URLs are stored and no detector/model score has been created. The
+  files remain a reserve pending the separately committed decontamination/pairing gate.
 - **Frozen realization method:** after the exact transfer receipt exists, re-open all 960 files and
   reproduce byte hash, decoded format, dimensions and full coverage. Compare original SHA-256 and
   dHash against every protected role, the scored Dotting diagnostic and the frozen StyleGAN2 final

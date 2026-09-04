@@ -4797,6 +4797,13 @@ row above the inherited 50 MP default. The decoder limit is therefore raised onl
 frozen maximum; the identity is neither removed nor replaced. The rejected body was not admitted,
 and transfer errors now retain their actual validation cause. No detector or metric was opened.
 
+E49-C OpenFake transfer subsequently completed with exact coverage: 960/960 selected files,
+241,736,938/241,736,938 bytes and 192 reserves in each of the five modern generator cells. All files
+decode; 958 are JPEG and two are PNG despite Viewer `.jpg` naming. The external detailed receipt
+hashes to `4dfb942c...26c2`, while the compact committed evidence contains no signed asset URL.
+Detector/model-score count remains zero, so these bytes are still only an unscored reserve pending
+the already-committed identity and Q75 realization gate.
+
 The complete E49-C assembly gate was also implemented before component realization. It binds the
 future exact Commons and OpenFake manifests plus the already-frozen StyleGAN2 component, creates the
 200 missing StyleGAN2 Q75 children without score-dependent replacement, and fails on protected or

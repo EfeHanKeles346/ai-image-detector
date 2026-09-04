@@ -1,0 +1,27 @@
+{
+  "already_present_at_run_start": 912,
+  "asset_contract_sha256": "7b71449e0e7d9ea22973f021af2d4ec49cc395e3fffe6816ffc123274a571415",
+  "asset_urls_stored": 0,
+  "bytes": 241736938,
+  "counts": {
+    "flux.2-klein-9b": 192,
+    "gpt-image-2": 192,
+    "midjourney-7": 192,
+    "seedream-v5.0": 192,
+    "z-image-turbo": 192
+  },
+  "decoded_formats": {
+    "JPEG": 958,
+    "PNG": 2
+  },
+  "downloaded_this_run": 48,
+  "files": 960,
+  "model_scores_created": 0,
+  "receipt_bytes": 411483,
+  "receipt_sha256": "4dfb942c215bbe15e15aea81e9a6c6873670a0bb5019c1c64f9672fe34b326c2",
+  "repository": "ComplexDataLab/OpenFake",
+  "revision": "3fd1109dc3258874243fa31c5bda9ee24260163b",
+  "role": "FINAL_AI_COMPONENT_RESERVE_PENDING_DECONTAMINATION_AND_COMPLETE_E49",
+  "schema_version": 1,
+  "state": "e49_c_openfake_downloaded_decoded_unscored"
+}

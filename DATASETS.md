@@ -440,6 +440,15 @@ converted. Received bytes remain canonical; only decoded JPEG, PNG or WebP are a
 format/geometry distribution must be reported by source as a potential shortcut. The 201 previously
 validated payloads remain resumable and no detector was loaded.
 
+The exact transfer is now complete under
+`/Volumes/LaCie/pixelproof-datasets/e49/openfake/payloads`: 960/960 contracted payloads and
+241,736,938/241,736,938 network bytes, with 192 files per generator. Decode coverage is 100%; 958
+files are JPEG and two are PNG. The external 411,483-byte receipt SHA-256 is
+`4dfb942c215bbe15e15aea81e9a6c6873670a0bb5019c1c64f9672fe34b326c2`. macOS `._*` sidecars on
+the external volume are filesystem metadata and are excluded from dataset file/byte counts. No
+signed Viewer URL is retained, no row has a model score, and the reserve is not yet the final test
+manifest until protected-overlap checks and deterministic Q75 pairing pass.
+
 #### Gated-source approval checkpoint — metadata only
 
 Authenticated access is now open for Datapoint revision
