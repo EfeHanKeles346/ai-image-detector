@@ -4790,6 +4790,13 @@ EXIF orientations 5–8, and requires the display result to match the prebound A
 not rotate or rewrite the publisher original. A regression test covers this native-phone case; no
 identity or score changed.
 
+The paced Commons transfer then completed all 1,100 bound originals and exactly 2,706,581,778 bytes,
+with 110 rows for each of ten devices. Every Wikimedia SHA1, local SHA-256, JPEG-family decode and
+display geometry validates. The natural transport contains 861 plain JPEG plus 239 Apple MPO files;
+1,074/1,100 preserve both EXIF make and model. Detailed receipt SHA-256 is `2511f0ad...7e04`.
+Detector/model-score count remains zero, so this is still a reserve pending the already-committed
+device-evidence, decontamination and Q75 freeze.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

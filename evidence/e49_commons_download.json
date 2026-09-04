@@ -1,0 +1,25 @@
+{
+  "bytes": 2706581778,
+  "counts": {
+    "Canon EOS R5": 110,
+    "Google Pixel 7 Pro": 110,
+    "Google Pixel 8 Pro": 110,
+    "Nikon Z 8": 110,
+    "Samsung Galaxy S23 Ultra": 110,
+    "Sony ILCE-7M4": 110,
+    "iPhone 13 Pro": 110,
+    "iPhone 14 Pro": 110,
+    "iPhone 15 Pro": 110,
+    "iPhone 15 Pro Max": 110
+  },
+  "exif_make_present": 1074,
+  "exif_model_present": 1074,
+  "files": 1100,
+  "model_scores_created": 0,
+  "receipt_bytes": 1388245,
+  "receipt_sha256": "2511f0ad0ad3f22e72ab5bf04da69fed0e9efac2bb4768d5365cf734fb5a7e04",
+  "role": "FINAL_REAL_COMPONENT_RESERVE_PENDING_DECONTAMINATION_AND_COMPLETE_E49",
+  "schema_version": 1,
+  "source_contract_sha256": "1d4e184c27cb87cf832045a23b6966f382673c3bcd8342a900c07130bd9182aa",
+  "state": "e49_commons_downloaded_decoded_unscored"
+}

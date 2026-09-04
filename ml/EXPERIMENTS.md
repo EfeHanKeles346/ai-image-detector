@@ -3913,6 +3913,10 @@ was scored or selected using model output.
   the bound Wikimedia geometry is its correct 3,024 x 4,032 display orientation. Preserve original
   bytes, record encoded and display dimensions separately, and validate the frozen contract against
   the latter. Only orientations 5–8 swap axes; a regression test binds this behavior.
+- **Commons transfer result — COMPLETE:** all 1,100 originals reproduce 2,706,581,778 bytes and the
+  exact 110-per-device quotas. Decoded container counts are 861 JPEG and 239 Apple MPO; 1,074 files
+  preserve EXIF make and model. Receipt SHA-256 `2511f0ad...7e04`; payload/model-score coverage is
+  100%/0%. These remain a reserve pending device-evidence and protected-overlap realization.
 - **Commons realization method:** bind the completed transfer receipt; compare original SHA-256 and
   dHash against historical protected roles, the scored Dotting diagnostic and both frozen final-AI
   components. Within each prebound device rank, retain the first 100 parents whose original and

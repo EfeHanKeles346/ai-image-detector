@@ -813,6 +813,9 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       **EXIF geometry amendment:** Wikimedia reports display-oriented dimensions, while encoded
       iPhone pixels may be transposed under EXIF orientations 5–8. Record both geometries and require
       the EXIF-display dimensions to equal the frozen API contract; never rotate original bytes.
+      **Commons transfer complete:** 1,100/1,100 originals and all 2,706,581,778 contracted bytes
+      validate, exactly 110 per device. Format audit reports 861 JPEG +239 Apple MPO; 1,074 files
+      retain EXIF make/model. Receipt SHA-256 `2511f0ad...7e04`; detector scores remain zero.
       **Local GAN realization:** all 240 frozen coordinates decode with zero failure and zero
       protected/internal overlap; the first 200 clean rows are fixed at manifest SHA-256
       `150ed354...ec99`. All are publisher 256x256 PNG, so the format/geometry audit must flag the

@@ -329,6 +329,14 @@ identity SHA-256 is `31c0e420b694b1774382c1ab299d6115008656ac7fc1e3c5b0de7deecec
 No image transfer or detector score occurred; Commons download must still wait until Datapoint's
 exact selected byte total proves the complete E49 remains inside the global stop.
 
+After E49-C supplied an exact 241,736,938-byte AI component, the combined network expectation fit
+the unchanged ceiling and Commons transfer proceeded. All 1,100/1,100 bound originals and
+2,706,581,778/2,706,581,778 bytes now validate, exactly 110 per device. The received camera
+transport contains 861 JPEG and 239 Apple MPO files; 1,074 preserve EXIF make/model and orientation
+is retained without rewriting originals. External receipt SHA-256 is
+`2511f0ad0ad3f22e72ab5bf04da69fed0e9efac2bb4768d5365cf734fb5a7e04`. No detector score exists;
+these rows remain reserves until device-evidence and protected-overlap checks select 100 per device.
+
 The already-local StyleGAN2 reserve was then realized without network or detector access. All
 240/240 frozen Parquet coordinates reproduce label=AI/generator=14 and decode successfully; exact
 and dHash comparison with 15 protected-role manifests finds zero overlap. The first 200 clean rows
