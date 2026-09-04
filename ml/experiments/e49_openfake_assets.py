@@ -83,9 +83,13 @@ def _selected_rows() -> list[dict[str, Any]]:
 
 def extract_asset_urls(
     payload: Mapping[str, Any], *, offset: int, wanted: Mapping[int, Mapping[str, Any]],
+    requested_length: int = PAGE_SIZE,
 ) -> list[dict[str, Any]]:
     """Validate the page and return wanted signed URLs only to the in-memory caller."""
-    compact = {int(row["row_index"]): row for row in compact_page(payload, offset=offset)}
+    compact = {
+        int(row["row_index"]): row
+        for row in compact_page(payload, offset=offset, requested_length=requested_length)
+    }
     wrapped = {int(row["row_idx"]): row for row in payload.get("rows", [])}
     output = []
     for row_index, expected in sorted(wanted.items()):
@@ -149,7 +153,9 @@ def _resolve_wanted_assets(
         output = []
         for row_index, expected in sorted(wanted.items()):
             payload = _fetch_rows(row_index, 1, attempts=6)
-            output.extend(extract_asset_urls(payload, offset=row_index, wanted={row_index: expected}))
+            output.extend(extract_asset_urls(
+                payload, offset=row_index, wanted={row_index: expected}, requested_length=1,
+            ))
         return output, "selected_row_fallback"
 
 

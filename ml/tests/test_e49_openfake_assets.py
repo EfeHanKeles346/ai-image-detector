@@ -57,7 +57,7 @@ def test_asset_head_allows_viewer_s3_generic_binary_type():
 
 
 def test_asset_resolution_falls_back_to_only_the_selected_row(monkeypatch):
-    index = 91_397
+    index = 50_397
     expected = {
         "record_id": f"openfake:core:test:{index}",
         "row_index": index,
