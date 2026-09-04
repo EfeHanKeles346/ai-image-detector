@@ -827,7 +827,7 @@ unmatched random REAL photos to manufacture an easy binary result.
       overlap rules, and the reserve still supplies exactly 160 clean parents per model. Manifest
       SHA-256 `048572a4...ccc9` binds 800 publisher originals plus their 800 deterministic Q75
       children. Detector/model-score count remains zero.
-- [ ] Score only frozen E43-S with the existing E50 binary/selective cuts. Commit both raw streams
+- [x] Score only frozen E43-S with the existing E50 binary/selective cuts. Commit both raw streams
       before opening metrics; report pooled and per-model AI recall, automatic AI-decision rate and
       original-to-Q75 recall loss. Diagnostic gates are coverage=100%, pooled recall>=80%, worst
       model recall>=60% and each condition's worst-model result disclosed.
@@ -836,9 +836,13 @@ unmatched random REAL photos to manufacture an easy binary result.
       `0.07940196245908739` and selective REAL cut `0.011505939625203613`. Eighteen focused E49
       tests pass. **Raw-score lock:** all 1,600 observations scored with complete coverage; the
       unopened 326,693-byte stream hashes to `c97b02a4...fa90`. Aggregate metrics remain zero.
-- [ ] Archive pass or failure without retuning. A pass adds current-generator evidence only; a fail
+- [x] Archive pass or failure without retuning. A pass adds current-generator evidence only; a fail
       may pre-register a successor experiment, but neither outcome promotes Module 1 or consumes the
       publisher-separated E49 final. Dotting images remain forbidden from training in this branch.
+      **One-shot result — PASS 6/6:** original/Q75 pooled AI recall is 97.38%/95.88%; the weakest
+      model is GPT Image 2 at 91.25%/86.88%. Q75 costs only 1.50 recall points. All other generators
+      remain at least 96.25% after Q75. Threshold/retry counts are unchanged/zero; report SHA-256
+      `bb62ad92...d77b`. This strongly supports modern-generator transfer but leaves balanced E49 open.
 
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 

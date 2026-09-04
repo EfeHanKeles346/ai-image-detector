@@ -3784,6 +3784,11 @@ was scored or selected using model output.
   not carry manifest-only payload paths. The two schemas were separated and regression-tested;
   the complete stream resumed without rescoring, is 326,693 bytes /SHA-256 `c97b02a4...fa90`, and
   aggregate metrics remain unopened.
+- **One-shot diagnostic — PASS 6/6:** publisher-original pooled/worst-model recall is
+  97.38%/91.25%; social-Q75 is 95.88%/86.88%. GPT Image 2 is the weakest in both columns. Q75 loses
+  only 1.50 recall points; FLUX.2 Pro, Ideogram 4, Nano Banana 2 and Seedream 5.0 Lite each retain at
+  least 96.25%. There was no threshold change, row/source removal or retry. Report SHA-256
+  `bb62ad92...d77b`. This is strong modern-generator evidence, not a balanced-final promotion.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

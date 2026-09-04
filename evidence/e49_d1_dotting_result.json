@@ -1,0 +1,85 @@
+{
+  "boundary": "AI-only current-generator diagnostic; no AUC, BA, REAL-safety or Module-1 promotion claim.",
+  "candidate": {
+    "binary_threshold": 0.07940196245908739,
+    "name": "E43-S",
+    "selective_real_cut": 0.011505939625203613
+  },
+  "conditions": {
+    "publisher_original": {
+      "ai_recall_by_model": {
+        "FLUX.2 Pro": 1.0,
+        "GPT Image 2": 0.9125,
+        "Ideogram 4": 1.0,
+        "Nano Banana 2": 0.96875,
+        "Seedream 5.0 Lite": 0.9875
+      },
+      "gate": {
+        "checks": {
+          "pooled_ai_recall_gte_0_80": true,
+          "score_coverage_eq_1": true,
+          "worst_model_recall_gte_0_60": true
+        },
+        "passed": true,
+        "passed_checks": 3,
+        "total_checks": 3
+      },
+      "pooled_ai_recall": 0.97375,
+      "rows": 800,
+      "score_coverage": 1.0,
+      "selective_counts": {
+        "confident_ai": 779,
+        "confident_real_miss": 3,
+        "uncertain": 18
+      },
+      "worst_model_recall": 0.9125
+    },
+    "social_q75": {
+      "ai_recall_by_model": {
+        "FLUX.2 Pro": 0.99375,
+        "GPT Image 2": 0.86875,
+        "Ideogram 4": 1.0,
+        "Nano Banana 2": 0.9625,
+        "Seedream 5.0 Lite": 0.96875
+      },
+      "gate": {
+        "checks": {
+          "pooled_ai_recall_gte_0_80": true,
+          "score_coverage_eq_1": true,
+          "worst_model_recall_gte_0_60": true
+        },
+        "passed": true,
+        "passed_checks": 3,
+        "total_checks": 3
+      },
+      "pooled_ai_recall": 0.95875,
+      "rows": 800,
+      "score_coverage": 1.0,
+      "selective_counts": {
+        "confident_ai": 767,
+        "confident_real_miss": 7,
+        "uncertain": 26
+      },
+      "worst_model_recall": 0.86875
+    }
+  },
+  "contract_sha256": "d567965dbde6a51648eaa3ebbc5808be9ca36d2e9159f0c39bf072c614341cf9",
+  "gate": {
+    "passed": true,
+    "passed_checks": 6,
+    "total_checks": 6
+  },
+  "observations": 1600,
+  "paired_transport": {
+    "ai_recall_loss_original_to_q75": 0.015000000000000013,
+    "score_delta_q75_minus_original_mean": -0.047672215314814824,
+    "score_delta_q75_minus_original_median": -0.00862935185432434
+  },
+  "parents": 800,
+  "report_sha256": "bb62ad92681f0c34125566dec8334b30a6dea314e5c2b6ee77df52cc728ad77b",
+  "retry_count": 0,
+  "schema_version": 1,
+  "score_sha256": "c97b02a4538fee7861f0753a2385efe1931afa4ca7ceeddebc06a5a58e4dfa90",
+  "state": "e49_d1_ai_diagnostic_pass",
+  "threshold_changed": false
+}

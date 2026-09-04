@@ -4648,3 +4648,16 @@ smaller score schema; it wrote neither completion receipt nor metrics. A regress
 payload and score validation distinct, and the preserved prefix finalized without rescoring. The
 326,693-byte raw stream hashes to `c97b02a4...fa90`, covers every row and still has zero opened
 aggregate metrics.
+
+The single permitted E49-D1 metric opening passed all six preregistered checks. Publisher originals
+reach 97.38% pooled AI recall with 91.25% on the weakest model; social-Q75 reaches 95.88% pooled and
+86.88% worst-model recall. GPT Image 2 is the weakest in both transports, while the other four
+modern generators remain at least 96.25% after Q75. Compression costs just 1.50 recall points. No
+threshold, row, source or model changed and retry count is zero; report SHA-256 is
+`bb62ad92...d77b`. The result materially strengthens the modern-AI side of Module 1 but cannot say
+anything new about authentic-photo false alarms, so comprehensive balanced E49 remains open.
+
+The authenticated ITW-SM Hugging Face preflight was also repeated on 2026-09-04. It still returns
+HTTP 403 with `awaiting a review from the repo authors`. This creates no new blocker because the
+official MediaEval copy was already consumed in E45; a later mirror approval cannot be reused as a
+second independent final.

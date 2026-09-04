@@ -354,6 +354,12 @@ observations: publisher WebP plus deterministic long-side-1080 JPEG-Q75. Its ext
 1,552,366 bytes /SHA-256 `048572a41b47b65d3d09bd39bee45a40745a40c2e15c50444b41f8384fdccc9`.
 No detector score or training row exists at this checkpoint.
 
+The frozen diagnostic was subsequently consumed once by exact E43-S. It passed all six declared
+AI-only checks: pooled recall is 97.38% on publisher WebP and 95.88% after social-Q75; the worst
+model is GPT Image 2 at 91.25%/86.88%. The paired transform costs 1.50 recall points. These results
+confirm that the selected rows are useful current-generator stress evidence, but the dataset remains
+forbidden from training and cannot measure REAL false accusations, AUC or balanced accuracy.
+
 ### Current generators, AI-only — pair with care
 
 #### E32/C2a physical and licence inventory (2026-08-26)
