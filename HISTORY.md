@@ -5070,3 +5070,10 @@ direction), shared by two unrelated protected images. Exact SHA-256 differs, and
 distances are 31 and 36 versus the predeclared <=4 near-duplicate boundary. E51 therefore uses dHash
 as a cheap collision candidate and pHash as confirmation; exact, uncheckable or confirmed-near
 matches still fail. This repairs identity precision only and uses no model score or DEVELOPMENT row.
+
+A complete model-blind sweep then confirmed that this was the only true collision among 1,200
+SCMI30 CAL parents. Twenty-five other degenerate dHash candidates clear at pHash distance 22–36;
+`D04_black.jpg` alone matches at distance 0 and is explicitly publisher-labelled `no_content`.
+Because the original route lacked decode headroom, a bounded amendment freezes the first five
+previously unselected D04-Similar identities under the original namespace rank. Only these may be
+fetched, and the first clean row replaces the black frame without changing device/branch quotas.

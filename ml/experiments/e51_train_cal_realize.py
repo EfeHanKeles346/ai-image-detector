@@ -29,6 +29,7 @@ from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 CONTRACT_SHA256 = "48e078fe5a96a108c102a06aef436fe47a5e937a581656c1fd63df29816adbce"
 ROOT = DATA_ROOT / "e51"
 SCMI_RECEIPT = ROOT / "receipts" / "scmi30_cal_download_unscored.json"
+SCMI_AMENDMENT_RECEIPT = ROOT / "receipts" / "scmi30_cal_amendment_unscored.json"
 SCIMD_ROOT = ROOT / "realized" / "scimd17_train"
 CAL_Q75_ROOT = ROOT / "realized" / "cal_q75"
 TRAIN_MANIFEST = ROOT / "manifests" / "train_parents_unscored.json"
@@ -250,8 +251,17 @@ def _cal_parent_rows(contract: Mapping[str, Any]) -> list[dict[str, Any]]:
     scmi = json.loads(scmi_raw)
     if scmi.get("model_scores_created") != 0 or len(scmi.get("rows") or []) != 1200:
         raise ValueError("SCMI30 receipt boundary changed")
+    source_rows = list(scmi["rows"])
+    if SCMI_AMENDMENT_RECEIPT.is_file():
+        amendment = json.loads(SCMI_AMENDMENT_RECEIPT.read_text())
+        if amendment.get("model_scores_created") != 0 or not amendment.get("selected"):
+            raise ValueError("SCMI30 identity amendment boundary changed")
+        source_rows = [row for row in source_rows if row["identity"] != amendment["excluded_identity"]]
+        source_rows.append(amendment["selected"])
+    if len(source_rows) != 1200:
+        raise ValueError("SCMI30 amended CAL count changed")
     scmi_rows = []
-    for row in scmi["rows"]:
+    for row in source_rows:
         path = Path(str(row["path"]))
         raw = path.read_bytes()
         facts, _ = _decode(raw, str(row["identity"]))

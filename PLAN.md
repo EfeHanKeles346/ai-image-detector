@@ -1146,6 +1146,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       dHash is all-zero/all-one and collides with two unrelated protected images. Exact SHA differs;
       pHash distances are 31 and 36, far above the <=4 near-duplicate threshold. Treat exact dHash
       as a candidate filter and require pHash confirmation; uncheckable or <=4 matches still fail.
+      **Identity-audit amendment:** the full 1,200-row scan confirms exactly one near duplicate, the
+      publisher's `D04_black.jpg`; 25 other coarse dHash candidates clear at pHash distance 22–36.
+      Bind five unselected D04-Similar rows by the original namespace rank, download only these, and
+      let the first clean identity replace the black frame while preserving 30 x40 and 600/600.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered
