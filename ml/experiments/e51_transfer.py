@@ -186,9 +186,10 @@ def scmi30_destination(row: Mapping[str, Any]) -> Path:
     if (
         remote.is_absolute()
         or ".." in remote.parts
-        or len(remote.parts) != 4
+        or len(remote.parts) < 4
         or remote.parts[0] != "SCMI30-IITRPR"
         or remote.parts[1] not in {"Random", "Similar"}
+        or remote.parts[2] != str(row.get("device_folder", ""))
         or remote.suffix.lower() not in {".jpg", ".jpeg"}
     ):
         raise ValueError(f"unsafe SCMI30 path: {remote}")

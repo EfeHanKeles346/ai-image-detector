@@ -1104,6 +1104,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       35,592,872,377 expanded bytes. A score-blind range reader is bound before payload to fetch only
       the 1,200 selected CAL members (4,247,339,334 bytes), in archive order, then require byte count,
       ZIP CRC, safe JPEG decode, geometry, SHA-256 and the 30-device/branch quotas.
+      **Pre-payload path correction:** the first run stopped before transfer because Similar images
+      legitimately add scene subfolders below the bound device (`objects/`, etc.). The safe-path gate
+      now fixes root +branch +exact contracted device while allowing nested descendants; traversal,
+      suffix and device substitution remain rejected. Identities and byte quotas do not change.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

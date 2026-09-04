@@ -5011,3 +5011,9 @@ directory reproduces 9,940 members /35,592,872,377 expanded bytes, but the range
 only the 1,200 contracted CAL JPEGs /4,247,339,334 bytes. It reads selected members in archive order,
 checks ZIP CRC, decode, geometry, byte count and SHA-256, and refuses any deviation from 40 images per
 device with equal Random/Similar totals. No model is importable from this acquisition command.
+
+SCMI30's first execution stopped before payload because Similar paths legitimately include nested
+scene folders such as `objects/`; the initial safe-path predicate had assumed exactly four parts.
+The corrected pre-transfer gate still binds dataset root, branch and exact contracted device folder,
+rejects traversal or suffix changes, and permits only descendants beneath that device. No identity,
+quota or byte changed and zero SCMI30 images had been downloaded.

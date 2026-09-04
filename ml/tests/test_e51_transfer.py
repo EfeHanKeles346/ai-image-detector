@@ -90,6 +90,9 @@ def test_scmi30_destination_and_jpeg_inspection(tmp_path: Path):
         "expected_bytes": 0,
     }
     assert scmi30_destination(row).parts[-3:] == ("Random", "D01_Phone", "image.jpg")
+    nested = {**row, "branch": "Similar",
+              "remote_path": "SCMI30-IITRPR/Similar/D01_Phone/objects/image.jpg"}
+    assert scmi30_destination(nested).parts[-4:] == ("Similar", "D01_Phone", "objects", "image.jpg")
     path = tmp_path / "image.jpg"
     Image.new("RGB", (640, 480), "blue").save(path, format="JPEG")
     row["expected_bytes"] = path.stat().st_size
@@ -99,6 +102,6 @@ def test_scmi30_destination_and_jpeg_inspection(tmp_path: Path):
 
 
 def test_scmi30_destination_rejects_wrong_root():
-    row = {"remote_path": "Other/Random/D01_Phone/image.jpg"}
+    row = {"remote_path": "Other/Random/D01_Phone/image.jpg", "device_folder": "D01_Phone"}
     with pytest.raises(ValueError, match="unsafe SCMI30"):
         scmi30_destination(row)
