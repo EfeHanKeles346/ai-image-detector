@@ -4982,6 +4982,13 @@ file remains restart-verifiable. The next resume is globally paced to roughly 75
 minute across two workers and backs off 60–300 seconds on 429, trading speed for deterministic
 completion without redownloading the verified 494.
 
+A better official transport was then measured before further payload: Kaggle's single signed ZIP
+supports HTTP Range, and its central directory exactly reproduces the frozen 5,391-file /
+11,447,649,387-byte expanded inventory. The paced per-file API is superseded. A TLS-verified remote
+ZIP reader now fetches only compressed ranges for the selected `test/test/*` members, checks archive
+CRC and all existing admission gates, and never downloads the 2,750 excluded training images or
+stores the signed URL. The 520 rows admitted by the earlier route remain valid.
+
 While that publisher quota cools down, the independent Datapoint acquisition method was prepared
 without transferring a shard. It permits only the seven already-contracted Parquets at pinned
 revision `e1d8719a...c928`, reproduces each remote byte count and full local SHA-256, and records that

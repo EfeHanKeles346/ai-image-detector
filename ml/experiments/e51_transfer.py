@@ -4,17 +4,19 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import shutil
-import threading
-import time
+import ssl
 from typing import Any, Iterable, Mapping
+import zipfile
 
+import certifi
+import fsspec
 from huggingface_hub import HfApi, hf_hub_download
 from kaggle.api.kaggle_api_extended import KaggleApi
+from kagglesdk.competitions.types.competition_api_service import ApiDownloadDataFilesRequest
 from PIL import Image
 
 from experiments.e51_data_route import DATAPOINT_REVISION, DATAPOINT_REPO, DATAPOINT_SHARD_BYTES
@@ -25,12 +27,11 @@ ROUTE_CONTRACT_SHA256 = "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d811
 IEEE_REF = "sp-society-camera-model-identification"
 IEEE_FILES = 2_640
 IEEE_BYTES = 837_665_909
-IEEE_WORKERS = 2
-IEEE_REQUEST_INTERVAL_SECONDS = 0.8
+IEEE_ARCHIVE_FILES = 5_391
+IEEE_ARCHIVE_BYTES = 11_447_649_387
+IEEE_ARCHIVE_CONTAINER_BYTES = 11_333_585_079
+IEEE_RANGE_BLOCK_BYTES = 8 * 1024**2
 MAX_PIXELS = 100_000_000
-
-_REQUEST_LOCK = threading.Lock()
-_LAST_REQUEST_AT = 0.0
 
 ROOT = DATA_ROOT / "e51"
 CONTRACT = ROOT / "route" / "contract_untransferred.json"
@@ -62,16 +63,6 @@ def _digest(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
-
-
-def _pace_kaggle_request() -> None:
-    """Keep the process below Kaggle's observed per-account request boundary."""
-    global _LAST_REQUEST_AT
-    with _REQUEST_LOCK:
-        remaining = IEEE_REQUEST_INTERVAL_SECONDS - (time.monotonic() - _LAST_REQUEST_AT)
-        if remaining > 0:
-            time.sleep(remaining)
-        _LAST_REQUEST_AT = time.monotonic()
 
 
 def ieee_destination(row: Mapping[str, Any]) -> Path:
@@ -135,6 +126,35 @@ def _route_rows() -> list[dict[str, Any]]:
     return rows
 
 
+def validate_selected_archive_members(
+    members: Mapping[str, tuple[int, int]], rows: Iterable[Mapping[str, Any]],
+) -> dict[str, int]:
+    selected_compressed_bytes = 0
+    selected_files = 0
+    for row in rows:
+        name = str(row["remote_path"])
+        found = members.get(name)
+        if found is None or found[0] != int(row["expected_bytes"]):
+            raise ValueError(f"IEEE archive member changed: {name}")
+        selected_files += 1
+        selected_compressed_bytes += found[1]
+    return {
+        "selected_files": selected_files,
+        "selected_uncompressed_bytes": sum(int(row["expected_bytes"]) for row in rows),
+        "selected_compressed_bytes": selected_compressed_bytes,
+    }
+
+
+def _competition_archive_url() -> str:
+    api = KaggleApi()
+    api.authenticate()
+    with api.build_kaggle_client() as client:
+        request = ApiDownloadDataFilesRequest()
+        request.competition_name = IEEE_REF
+        response = client.competitions.competition_api_client.download_data_files(request)
+    return str(response.url)
+
+
 def validate_datapoint_remote(files: Mapping[str, int]) -> dict[str, int]:
     expected = {
         f"data/images/images-{index:04d}.parquet": size
@@ -170,46 +190,6 @@ def _datapoint_contract() -> tuple[dict[str, Any], list[dict[str, Any]]]:
     return role, rows
 
 
-def _download_ieee(row: Mapping[str, Any]) -> dict[str, Any]:
-    destination = ieee_destination(row)
-    if destination.exists():
-        return inspect_ieee_file(destination, row)
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    stage = STAGING_ROOT / destination.stem
-    stage.mkdir(parents=True, exist_ok=True)
-    downloaded = stage / destination.name
-    last_error: Exception | None = None
-    for attempt in range(6):
-        try:
-            if downloaded.exists() and downloaded.stat().st_size != int(row["expected_bytes"]):
-                downloaded.unlink()
-            api = KaggleApi()
-            api.authenticate()
-            _pace_kaggle_request()
-            api.competition_download_file(
-                IEEE_REF,
-                str(row["remote_path"]),
-                path=str(stage),
-                force=not downloaded.exists(),
-                quiet=True,
-            )
-            result = inspect_ieee_file(downloaded, row)
-            downloaded.replace(destination)
-            stage.rmdir()
-            return {**result, "path": str(destination)}
-        except Exception as error:  # Kaggle SDK exceptions vary by release.
-            last_error = error
-            if attempt < 5:
-                response = getattr(error, "response", None)
-                if getattr(response, "status_code", None) == 429:
-                    retry_after = str(response.headers.get("Retry-After", ""))
-                    delay = float(retry_after) if retry_after.replace(".", "", 1).isdigit() else 60.0 * 2**attempt
-                    time.sleep(min(max(delay, 60.0), 300.0))
-                else:
-                    time.sleep(min(2.0**attempt, 30.0))
-    raise RuntimeError(f"IEEE transfer failed at {row['identity']}: {last_error}")
-
-
 def _unexpected(expected: set[Path]) -> list[str]:
     if not PAYLOAD_ROOT.exists():
         return []
@@ -239,11 +219,42 @@ def download_ieee() -> dict[str, Any]:
         else:
             missing.append(row)
     already_present = len(completed)
-    with ThreadPoolExecutor(max_workers=IEEE_WORKERS) as pool:
-        for index, result in enumerate(pool.map(_download_ieee, missing), start=1):
-            completed.append(result)
-            if index % 100 == 0 or index == len(missing):
-                print(f"E51 IEEE files {len(completed)}/{len(rows)}", flush=True)
+    ssl_context = ssl.create_default_context(cafile=certifi.where())
+    url = _competition_archive_url()
+    STAGING_ROOT.mkdir(parents=True, exist_ok=True)
+    with fsspec.open(
+        url,
+        "rb",
+        block_size=IEEE_RANGE_BLOCK_BYTES,
+        cache_type="readahead",
+        ssl=ssl_context,
+    ) as remote_archive:
+        with zipfile.ZipFile(remote_archive) as archive:
+            infos = archive.infolist()
+            if len(infos) != IEEE_ARCHIVE_FILES or sum(info.file_size for info in infos) != IEEE_ARCHIVE_BYTES:
+                raise ValueError("IEEE official ZIP inventory changed")
+            members = {info.filename: (info.file_size, info.compress_size) for info in infos}
+            if len(members) != len(infos):
+                raise ValueError("IEEE official ZIP contains duplicate member names")
+            archive_summary = validate_selected_archive_members(members, rows)
+            if (
+                archive_summary["selected_files"] != IEEE_FILES
+                or archive_summary["selected_uncompressed_bytes"] != IEEE_BYTES
+            ):
+                raise ValueError("IEEE selected ZIP population changed")
+            for index, row in enumerate(missing, start=1):
+                destination = ieee_destination(row)
+                temporary = STAGING_ROOT / f"{destination.name}.part"
+                if temporary.exists():
+                    temporary.unlink()
+                with archive.open(str(row["remote_path"]), "r") as source, temporary.open("wb") as target:
+                    shutil.copyfileobj(source, target, length=1024 * 1024)
+                result = inspect_ieee_file(temporary, row)
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                temporary.replace(destination)
+                completed.append({**result, "path": str(destination)})
+                if index % 100 == 0 or index == len(missing):
+                    print(f"E51 IEEE files {len(completed)}/{len(rows)}", flush=True)
     completed.sort(key=lambda row: row["identity"])
     cells = Counter(row["transport_cell"] for row in completed)
     if (
@@ -265,6 +276,9 @@ def download_ieee() -> dict[str, Any]:
         "transport_cells": dict(sorted(cells.items())),
         "already_present_at_run_start": already_present,
         "downloaded_this_run": len(completed) - already_present,
+        "archive_transport": "official_zip_http_range_selected_members_only",
+        "archive_container_bytes": IEEE_ARCHIVE_CONTAINER_BYTES,
+        "selected_compressed_bytes": archive_summary["selected_compressed_bytes"],
         "free_bytes_before": free_before,
         "free_bytes_after": shutil.disk_usage(ROOT).free,
         "rows": completed,
@@ -275,6 +289,7 @@ def download_ieee() -> dict[str, Any]:
     evidence = {key: payload[key] for key in (
         "schema_version", "state", "role", "route_contract_sha256", "competition", "files",
         "bytes", "transport_cells", "already_present_at_run_start", "downloaded_this_run",
+        "archive_transport", "archive_container_bytes", "selected_compressed_bytes",
         "free_bytes_before", "free_bytes_after", "model_scores_created",
     )}
     evidence.update({

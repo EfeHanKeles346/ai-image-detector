@@ -6,7 +6,12 @@ from PIL import Image
 import pytest
 
 from experiments.e51_data_route import DATAPOINT_SHARD_BYTES
-from experiments.e51_transfer import ieee_destination, inspect_ieee_file, validate_datapoint_remote
+from experiments.e51_transfer import (
+    ieee_destination,
+    inspect_ieee_file,
+    validate_datapoint_remote,
+    validate_selected_archive_members,
+)
 
 
 def _row(size: int = 1) -> dict:
@@ -56,3 +61,20 @@ def test_datapoint_remote_requires_every_exact_shard_byte():
     files[next(iter(files))] += 1
     with pytest.raises(ValueError, match="inventory changed"):
         validate_datapoint_remote(files)
+
+
+def test_ieee_archive_members_require_bound_names_and_bytes():
+    rows = [_row(100), {**_row(200), "remote_path": "test/test/img_0000001_manip.tif"}]
+    members = {
+        rows[0]["remote_path"]: (100, 80),
+        rows[1]["remote_path"]: (200, 150),
+    }
+    found = validate_selected_archive_members(members, rows)
+    assert found == {
+        "selected_files": 2,
+        "selected_uncompressed_bytes": 300,
+        "selected_compressed_bytes": 230,
+    }
+    members[rows[1]["remote_path"]] = (201, 150)
+    with pytest.raises(ValueError, match="member changed"):
+        validate_selected_archive_members(members, rows)

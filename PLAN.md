@@ -1084,6 +1084,11 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       HTTP 429 before any receipt could be sealed. Those files remain restart-safe and unscored.
       The transfer now uses two workers behind one global 0.8-second request gate (~75 requests/min)
       and honors `Retry-After` or a bounded 60–300 second backoff before continuing.
+      **Transport optimization supersedes the paced endpoint:** Kaggle's official 11,333,585,079-
+      byte ZIP supports HTTP Range and its central directory reproduces 5,391 members /
+      11,447,649,387 expanded bytes. The downloader now reads only the bound `test/test/*` member
+      ranges, validates ZIP CRC plus the existing byte/decode/SHA gates and never transfers the
+      2,750 excluded training images. The 520 already admitted rows remain valid and restart-safe.
       **Datapoint transfer method:** while the Kaggle quota cools down, the next acquisition gate is
       frozen without payload access. It verifies the manual-gated repository at exact revision,
       requires all seven contracted shard byte counts (3,220,281,593 total), downloads only those
