@@ -339,6 +339,13 @@ Four successful rows omit declared width/height, so missing metadata geometry is
 and must be recovered from the decoded WebP rather than treated as corruption. Downloaded image
 bytes and detector scores remain zero at this checkpoint.
 
+Transfer subsequently completed for all 960 bound WebP files /23,936,830 bytes, exactly 192 per
+model. Every payload size and SHA-256 matches the pinned Hub inventory. The first validation pass
+stopped before receipt because LaCie/exFAT created macOS `._*` AppleDouble sidecars; the validator
+now ignores only those and `.cache` metadata while continuing to reject any unexpected image/file.
+No target row has been selected after model access, no image has been scored and the 160-per-model
+decode/decontamination freeze is still pending.
+
 ### Current generators, AI-only — pair with care
 
 #### E32/C2a physical and licence inventory (2026-08-26)

@@ -822,6 +822,8 @@ unmatched random REAL photos to manufacture an easy binary result.
 - [ ] Download only the 960 bound WebP files to LaCie with per-file byte/format checks, resume and a
       512 MiB stop. Decode, exact/dHash-audit protected roles and freeze the first 160 clean parents
       per model without detector access. Derive paired `social_q75` children exactly as E49.
+      **Transfer checkpoint:** 960/960 files and all 23,936,830 expected bytes are present with exact
+      per-file SHA-256; zero score exists. Decode/decontamination and target freeze remain pending.
 - [ ] Score only frozen E43-S with the existing E50 binary/selective cuts. Commit both raw streams
       before opening metrics; report pooled and per-model AI recall, automatic AI-decision rate and
       original-to-Q75 recall loss. Diagnostic gates are coverage=100%, pooled recall>=80%, worst

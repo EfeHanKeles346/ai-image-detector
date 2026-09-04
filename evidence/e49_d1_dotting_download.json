@@ -1,0 +1,20 @@
+{
+  "by_model": {
+    "FLUX.2 Pro": 192,
+    "GPT Image 2": 192,
+    "Ideogram 4": 192,
+    "Nano Banana 2": 192,
+    "Seedream 5.0 Lite": 192
+  },
+  "bytes": 23936830,
+  "contract_sha256": "170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36",
+  "files": 960,
+  "license": "cc-by-4.0",
+  "model_scores_created": 0,
+  "receipt_bytes": 505,
+  "receipt_sha256": "3495f10a94664d7f26e1c554b87c2721c3b14882ea925ab5672ffae719f6eb02",
+  "repo_id": "fge-auto/dotting-test",
+  "revision": "0bcc6877c7d23f4e615b5470f06b1c00e7db7311",
+  "schema_version": 1,
+  "state": "e49_d1_reserve_download_complete_unscored"
+}

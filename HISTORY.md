@@ -4620,3 +4620,10 @@ contract or image existed. The parser now keeps absent declared geometry as unkn
 recovery. The completed pre-transfer contract freezes 960 WebP files (192 per modern model) totaling
 23,936,830 bytes, with contract SHA-256 `170f70db...ed36` and reserve identity SHA-256
 `9637626d...f5a`. This is below five percent of the 512 MiB stop; image and score counts remain zero.
+
+All 960 E49-D1 files then transferred successfully to LaCie, totaling the exact 23,936,830 bytes
+bound in advance and 192 rows per model. Every actual WebP matches its expected size and SHA-256.
+The first completion check refused to write a receipt because exFAT exposed macOS `._*` AppleDouble
+sidecars as extra files. A regression-tested change now ignores only `.cache` and `._*` auxiliary
+metadata while still rejecting other extras; the rerun completed. No detector loaded these images,
+and decode/decontamination plus the 800-row target freeze remain the next checkpoint.

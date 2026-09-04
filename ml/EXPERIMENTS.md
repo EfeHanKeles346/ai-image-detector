@@ -3766,6 +3766,11 @@ was scored or selected using model output.
   fixed and regression-tested to preserve that value as unknown pending decode. The completed
   contract binds 960 WebP files /23,936,830 bytes, 192 per model, at SHA-256 `170f70db...ed36`;
   reserve identity SHA-256 is `9637626d...f5a`. Image bytes and scores are still zero.
+- **Transfer result:** all 960 contract paths downloaded, totaling exactly 23,936,830 bytes and 192
+  rows per model. Per-file LFS SHA-256 and size validation passes. The first post-transfer validator
+  correctly withheld its receipt on exFAT `._*` AppleDouble sidecars; after a tested auxiliary-file
+  exception, it rejects every other extra path and wrote the completed unscored receipt. Decode,
+  protected-role overlap audit, target selection and scores remain zero/pending.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 
