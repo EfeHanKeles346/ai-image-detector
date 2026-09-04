@@ -2989,6 +2989,9 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
   reported alongside, never alone.
 - ≥3 seeds on anything reported. Audit every dataset before use (`ml/tools/audit_datasets.py`).
 - Thresholds are chosen on calibration halves and measured on untouched halves — always.
+- CI reliability repair (2026-09-04): keep `npm audit --audit-level=critical` blocking,
+  but retry its registry endpoint up to three times so a transient npm 5xx does not masquerade
+  as a project/test failure. A repeated failure or real critical advisory still fails CI.
 
 ## Repo conventions after the 2026-08-18 tidy-up
 

@@ -21,7 +21,18 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - name: Audit production/build dependencies (known high vinext debt is documented)
-        run: npm audit --audit-level=critical
+        run: |
+          for attempt in 1 2 3; do
+            if npm audit --audit-level=critical; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "npm audit failed after three attempts"
+              exit 1
+            fi
+            echo "npm audit attempt $attempt failed; retrying the registry endpoint"
+            sleep $((attempt * 15))
+          done
 
   python:
     runs-on: ubuntu-latest

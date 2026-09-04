@@ -4429,3 +4429,8 @@ FLUX hits and falls to 46%. The representations are complementary; forcing low G
 scores to count against the diffusion expert is the mistake. E48 must learn safety from more than
 one REAL pipeline and combine experts without allowing an irrelevant specialist to veto positive
 evidence, using fresh CAL and DEVELOPMENT rather than recycling this diagnosis.
+
+GitHub CI later reported a red build for commit `1212628`, but the code was not the cause: Python
+tests and web lint/typecheck/tests all passed, while npm's audit API returned HTTP 503 after seven
+minutes. CI now retries that exact blocking audit up to three times. It still fails on a persistent
+registry outage or any real critical advisory; only transient service noise gains recovery.
