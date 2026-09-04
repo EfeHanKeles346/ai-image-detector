@@ -862,6 +862,27 @@ unmatched random REAL photos to manufacture an easy binary result.
       remain at least 96.25% after Q75. Threshold/retry counts are unchanged/zero; report SHA-256
       `bb62ad92...d77b`. This strongly supports modern-generator transfer but leaves balanced E49 open.
 
+#### E49-B — ungated OpenFake fallback qualification, before detector access
+
+E49-A remains frozen, but manual Datapoint approval must not be the only route to completion. This
+fallback is chosen from licence, source separation, date/family coverage and transfer feasibility—
+never E43-S scores. It becomes a final candidate only if every pre-score qualification below passes.
+
+- [ ] Pin ungated CC-BY-NC-4.0 `ComplexDataLab/OpenFake` revision
+      `3fd1109dc3258874243fa31c5bda9ee24260163b`, `core/test` and its exact 91,398 rows. Use only
+      official Hugging Face Dataset Viewer `/rows`, whose asset path must embed that exact revision;
+      never download a 5+ GB Parquet shard.
+- [ ] Scan metadata in deterministic 100-row pages, cached without prompts or expiring asset URLs,
+      until every exact model cell has 192 rows: GPT Image 2, Nano Banana Pro, Seedream v5.0,
+      FLUX.2 Klein 9B and Midjourney 7. Require label `fake` and non-video type; freeze 160 target
+      +32 reserve per model by namespace hash. No image or detector access during selection.
+- [ ] Resolve fresh asset URLs only after the 960 identities are committed. Bind HEAD byte totals,
+      dimensions and response type for the pinned revision; proceed only if OpenFake plus the
+      2,706,581,778-byte Commons reserve fits the unchanged 4 GiB global network stop.
+- [ ] If qualification passes, create a distinct E49-B final contract/evaluator with OpenFake's five
+      source labels plus the already-frozen StyleGAN2 and Commons components. Preserve E49's paired
+      transports and all 20 gates. E49-A is archived, not rewritten; Dotting remains diagnostic-only.
+
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 
 ### Stage A — finish and prove Module 1

@@ -365,6 +365,27 @@ final and never evidence of REAL-photo safety. The full repository, VLM labels a
 rows are not required. Attribution must credit Fırat Gelbal and Dotting Test; downstream users must
 also review the applicable upstream provider-output terms.
 
+#### E49-B ungated fallback candidate — metadata qualification only
+
+`ComplexDataLab/OpenFake` is an ungated CC-BY-NC-4.0 dataset. E49-B pins revision
+`3fd1109dc3258874243fa31c5bda9ee24260163b`, configuration `core`, split `test` and its 91,398 rows.
+The complete repository is about 3.44 TB and the 13 test Parquets are roughly 5 GB each, so neither
+is an acceptable acquisition unit. The official Hugging Face Dataset Viewer `/rows` API can expose
+individual revision-bound examples without transferring a whole shard.
+
+The candidate cells are the exact publisher model strings `gpt-image-2`, `nano-banana-pro`,
+`seedream-v5.0`, `flux.2-klein-9b` and `midjourney-7`. A deterministic metadata-prefix scan will
+freeze 160 target +32 reserve identities per model before image or detector access. Prompts and
+expiring Viewer URLs are deliberately excluded from the cache and contract. The dataset card notes
+a prompt-mapping defect for five older generators; E49-B does not consume prompts, and the defect
+does not affect image labels or model names according to the publisher.
+
+OpenFake is valuable here because it supplies a permissively accessible, publisher-separated pool
+of recent generator families while Datapoint remains under manual review. It is not yet downloaded,
+approved as final evidence or training data. Viewer-delivered assets must be described honestly as
+received JPEG transport rather than guaranteed original Parquet bytes, and the final byte sum must
+still fit the existing 4 GiB global network ceiling beside the frozen Commons reserve.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.

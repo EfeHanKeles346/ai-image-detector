@@ -4694,3 +4694,12 @@ Nikon Z 8 before binding; it supplies 110 rows across 25 uploaders. The target r
 100 photos. Commons headroom becomes 10% rather than 20% to preserve the 4 GiB network ceiling, and
 the API now requests only licence fields the audit consumes. Eleven focused acquisition/evaluation
 tests pass.
+
+An ungated route around the external Datapoint wait is now preregistered without opening a model
+score. E49-B pins `ComplexDataLab/OpenFake` revision `3fd1109d...0163b`, CC-BY-NC-4.0 and the exact
+91,398-row `core/test` split. It will inspect only deterministic 100-row Dataset Viewer metadata
+pages until five exact modern-generator cells each reach 192 eligible rows, then freeze 160 target
++32 reserve identities by namespace hash. Full 5+ GB Parquet shards, prompts and expiring URLs are
+excluded. Only after identities are immutable may fresh asset sizes be bound against the unchanged
+4 GiB ceiling. This is a separate E49-B candidate, not a rewrite of E49-A; Dotting remains a narrow
+diagnostic and no OpenFake image, score or training row exists at this checkpoint.

@@ -3812,6 +3812,27 @@ was scored or selected using model output.
   least 96.25%. There was no threshold change, row/source removal or retry. Report SHA-256
   `bb62ad92...d77b`. This is strong modern-generator evidence, not a balanced-final promotion.
 
+### E49-B pre-registration — ungated OpenFake fallback qualification
+
+- **Why now:** Datapoint author review is an external wait, not a scientific reason to leave the
+  balanced final dependent on one source. OpenFake is ungated and source-separated. It is selected
+  from licence, recency, family coverage and byte feasibility without reading any OpenFake detector
+  score; the successful Dotting diagnostic is not used to select or remove a model.
+- **Pinned source:** `ComplexDataLab/OpenFake`, CC-BY-NC-4.0, revision
+  `3fd1109dc3258874243fa31c5bda9ee24260163b`, `core/test`, 91,398 rows. Full Parquet shards are
+  forbidden; only official Dataset Viewer `/rows` pages and revision-bound individual assets may be
+  used.
+- **Blind qualification:** scan 100-row pages in increasing offset and stop at the first complete
+  page where each exact cell has 192 eligible fake, non-video rows: GPT Image 2, Nano Banana Pro,
+  Seedream v5.0, FLUX.2 Klein 9B and Midjourney 7. Cache only compact metadata, then rank identities
+  by a fixed namespace hash and freeze 160 target +32 reserve per cell.
+- **Feasibility gate:** after identities are immutable, resolve fresh Viewer assets and bind size,
+  dimensions and response type. OpenFake plus the exact 2,706,581,778-byte Commons reserve must fit
+  the unchanged 4 GiB network stop. Failure ends qualification before bulk transfer or scoring.
+- **Claim boundary:** E49-B is a distinct successor candidate, not a rewrite or retry of E49-A.
+  Viewer JPEGs are a declared received transport. Dotting remains AI-only diagnostic evidence;
+  OpenFake remains non-training final evidence if the complete six-family balanced contract freezes.
+
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 
 - E17/E18 hard-code non-overlapping 128 px tiles capped at 36, then discard any manipulated image
