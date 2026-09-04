@@ -214,12 +214,14 @@ def bind() -> dict[str, Any]:
     scanned: list[dict[str, Any]] = []
     counts: Counter[str] = Counter()
     stop_offset: int | None = None
+    prefetched_end: int = 0
     offsets = list(range(0, EXPECTED_ROWS, PAGE_SIZE))
     for batch_start in range(0, len(offsets), FETCH_WORKERS):
         batch = offsets[batch_start:batch_start + FETCH_WORKERS]
         with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as pool:
             futures = {offset: pool.submit(_fetch_page_isolated, offset) for offset in batch}
             pages = {offset: futures[offset].result() for offset in batch}
+        prefetched_end = min(batch[-1] + len(pages[batch[-1]]), EXPECTED_ROWS)
         for offset in batch:
             page = pages[offset]
             scanned.extend(page)
@@ -260,6 +262,7 @@ def bind() -> dict[str, Any]:
             "page_size": PAGE_SIZE,
             "prefix_start": 0,
             "prefix_end_exclusive": stop_offset,
+            "prefetched_end_exclusive": prefetched_end,
             "eligible_counts": {model: counts[model] for model in MODEL_KEYS},
             "stop_rule": "first_complete_100_row_page_with_192_eligible_rows_per_exact_model",
             "stored_fields": ["row_index", "label", "model", "type", "release_date", "width", "height"],
@@ -292,6 +295,7 @@ def bind() -> dict[str, Any]:
         "license": LICENSE,
         "expected_split_rows": EXPECTED_ROWS,
         "prefix_end_exclusive": stop_offset,
+        "prefetched_end_exclusive": prefetched_end,
         "eligible_counts": payload["scan"]["eligible_counts"],
         "selected_counts": payload["selection"]["selected_counts"],
         "reserve_identity_sha256": identity_sha256,
