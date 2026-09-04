@@ -49,6 +49,8 @@ def test_dotting_download_validation_checks_hash_and_unexpected_files(tmp_path):
     rows = [{"image_path": "images/a.webp", "bytes": 3,
              "sha256": hashlib.sha256(b"abc").hexdigest()}]
     validate_download(tmp_path, rows)
+    (path.parent / "._a.webp").write_bytes(b"apple-double")
+    validate_download(tmp_path, rows)
     (tmp_path / "extra.webp").write_bytes(b"extra")
     with pytest.raises(ValueError, match="unexpected"):
         validate_download(tmp_path, rows)

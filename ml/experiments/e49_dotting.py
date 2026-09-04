@@ -121,7 +121,9 @@ def validate_download(snapshot: Path, rows: Sequence[Mapping[str, Any]]) -> None
     actual = {
         path.relative_to(snapshot).as_posix()
         for path in snapshot.rglob("*")
-        if path.is_file() and ".cache" not in path.relative_to(snapshot).parts
+        if path.is_file()
+        and ".cache" not in path.relative_to(snapshot).parts
+        and not any(part.startswith("._") for part in path.relative_to(snapshot).parts)
     }
     if actual != set(expected):
         raise ValueError("E49-D1 snapshot contains missing or unexpected payloads")
