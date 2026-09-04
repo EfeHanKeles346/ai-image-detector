@@ -428,11 +428,17 @@ so new metadata/image/model-score bytes are all zero.
 
 The separate no-body asset bind also passed for all 960 identities. Official Viewer pages and
 selected-row fallback resolved fresh revision-bound paths; S3 reports either JPEG or generic binary
-transport, so actual JPEG format remains a mandatory decode check after transfer. HEAD metadata
+transport, so actual image format remains a mandatory decode check after transfer. HEAD metadata
 binds 241,736,938 OpenFake bytes. Added to the exact 2,706,581,778-byte Commons reserve, the final
 network expectation is 2,948,318,716 bytes with 1,346,648,580 bytes of 4 GiB headroom. Contract
 SHA-256 is `7b71449e0e7d9ea22973f021af2d4ec49cc395e3fffe6816ffc123274a571415`;
 no signed URL, image body or model score was stored.
+
+The first body-transfer pass then proved that a Viewer `.jpg` path is not a format guarantee:
+Seedream row 8,770 is a valid 2,048 x 2,048 RGBA PNG behind generic binary MIME. It is not removed or
+converted. Received bytes remain canonical; only decoded JPEG, PNG or WebP are admitted, and actual
+format/geometry distribution must be reported by source as a potential shortcut. The 201 previously
+validated payloads remain resumable and no detector was loaded.
 
 #### Gated-source approval checkpoint — metadata only
 

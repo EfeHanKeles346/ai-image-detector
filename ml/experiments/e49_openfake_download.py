@@ -28,6 +28,7 @@ ASSET_CONTRACT_SHA256 = "7b71449e0e7d9ea22973f021af2d4ec49cc395e3fffe6816ffc1232
 EXPECTED_ROWS = 960
 EXPECTED_BYTES = 241_736_938
 MAX_PIXELS = 50_000_000
+ALLOWED_DECODED_FORMATS = {"JPEG", "PNG", "WEBP"}
 
 ROOT = DATA_ROOT / "e49" / "openfake"
 PAYLOAD_ROOT = ROOT / "payloads"
@@ -100,7 +101,8 @@ def inspect_file(path: Path, expected: Mapping[str, Any]) -> dict[str, Any]:
         opened.verify()
     with Image.open(path) as opened:
         width, height = opened.size
-        if opened.format != "JPEG" or width * height > MAX_PIXELS:
+        decoded_format = str(opened.format or "UNKNOWN").upper()
+        if decoded_format not in ALLOWED_DECODED_FORMATS or width * height > MAX_PIXELS:
             raise ValueError(f"E49-C payload format/geometry unsafe: {path.name}")
         if (width, height) != (int(expected["width"]), int(expected["height"])):
             raise ValueError(f"E49-C payload dimensions changed: {path.name}")
@@ -111,7 +113,7 @@ def inspect_file(path: Path, expected: Mapping[str, Any]) -> dict[str, Any]:
         "path": str(path),
         "bytes": path.stat().st_size,
         "sha256": _digest(path),
-        "format": "JPEG",
+        "format": decoded_format,
         "width": width,
         "height": height,
         "status": "downloaded_unscored",
@@ -201,6 +203,7 @@ def download() -> dict[str, Any]:
 
     completed.sort(key=lambda row: (str(row["model"]), int(row["row_index"])))
     counts = Counter(str(row["model"]) for row in completed)
+    formats = Counter(str(row["format"]) for row in completed)
     total_bytes = sum(int(row["bytes"]) for row in completed)
     if (
         len(completed) != EXPECTED_ROWS
@@ -220,6 +223,7 @@ def download() -> dict[str, Any]:
         "files": len(completed),
         "bytes": total_bytes,
         "counts": dict(sorted(counts.items())),
+        "decoded_formats": dict(sorted(formats.items())),
         "already_present_at_run_start": already_present,
         "downloaded_this_run": len(completed) - already_present,
         "asset_urls_stored": 0,
@@ -230,7 +234,7 @@ def download() -> dict[str, Any]:
     raw = _write_atomic(RECEIPT, payload)
     evidence = {key: payload[key] for key in (
         "schema_version", "state", "role", "asset_contract_sha256", "repository", "revision",
-        "files", "bytes", "counts", "already_present_at_run_start", "downloaded_this_run",
+        "files", "bytes", "counts", "decoded_formats", "already_present_at_run_start", "downloaded_this_run",
         "asset_urls_stored", "model_scores_created",
     )}
     evidence.update({"receipt_bytes": len(raw), "receipt_sha256": hashlib.sha256(raw).hexdigest()})

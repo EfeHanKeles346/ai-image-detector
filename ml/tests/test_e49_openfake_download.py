@@ -24,3 +24,17 @@ def test_download_inspection_requires_exact_jpeg_geometry_and_bytes(tmp_path):
 
     with pytest.raises(ValueError, match="dimensions changed"):
         inspect_file(path, {**expected, "width": 31})
+
+
+def test_download_inspection_records_png_even_under_viewer_jpg_name(tmp_path):
+    path = tmp_path / "viewer-image.jpg"
+    Image.new("RGBA", (16, 12), (20, 30, 40, 255)).save(path, format="PNG")
+    expected = {
+        "record_id": "openfake:core:test:8770",
+        "row_index": 8770,
+        "model": "seedream-v5.0",
+        "content_length": path.stat().st_size,
+        "width": 16,
+        "height": 12,
+    }
+    assert inspect_file(path, expected)["format"] == "PNG"

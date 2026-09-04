@@ -923,8 +923,11 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       `7b71449e...1415`; signed URLs stored zero, image-body/model-score bytes zero.
 - [ ] Download only the bound OpenFake assets to LaCie with resume and exact receipt, decode and
       exact/dHash-audit every reserve against protected roles, then freeze the first 160 clean rows
-      per family. Received Viewer JPEG is the declared publisher transport; derive paired Q75 only
-      after the parent manifest freezes.
+      per family. Received Viewer bytes are the declared publisher transport; derive paired Q75 only
+      after the parent manifest freezes. **Decode amendment from first transfer, before scoring:**
+      row 8,770 has a `.jpg` Viewer path/generic MIME but valid PNG bytes. Preserve the body and
+      accept only decoded JPEG/PNG/WebP; report per-source format/geometry so this shortcut cannot
+      be hidden.
 - [ ] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
       AI and 200 local StyleGAN2 AI parents, each paired original/Q75. Commit one-shot E43-S score
       streams before opening metrics and require all existing 20 gates without threshold/source repair.

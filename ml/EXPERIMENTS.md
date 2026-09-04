@@ -3866,6 +3866,10 @@ was scored or selected using model output.
   4 GiB stop. Broken aggregate Viewer pages were resolved only through their selected single rows.
   Generic S3 binary MIME is recorded for later JPEG decode validation. Contract `7b71449e...1415`;
   signed URLs stored zero, image-body and detector-score counts zero.
+- **Transfer-format amendment:** the first strict JPEG-only run stopped at selected Seedream row
+  8,770: `.jpg` Viewer path and generic MIME wrap valid 2,048-square PNG bytes. Keep the row and
+  exact received bytes; admit only decoded JPEG/PNG/WebP and expose format counts per source. This
+  occurred before decontamination/model access; 201 already-validated files remain resumable.
 
 ### Gated-source approval audit — route decision before any image access
 

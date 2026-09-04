@@ -4746,3 +4746,9 @@ fetched only 1,737,709 metadata bytes (models, test responses and prompt referen
 image-Parquet/image-body/model-score bytes. Because E49-C was already identity/byte-frozen and
 OpenFake is a purpose-built OOD detection split, it remains the sole final route; Datapoint stays
 clean for possible post-final diagnosis rather than silently replacing the selected source.
+
+E49-C transfer began and preserved 201 validated files before its strict JPEG assumption stopped on
+selected Seedream row 8,770. The Viewer path ends in `.jpg` and S3 declares generic binary, but the
+7,460,595-byte body is a valid 2,048 x 2,048 RGBA PNG. The row was not removed and no detector was
+loaded. The transport contract now preserves received bytes while permitting only decoded JPEG,
+PNG or WebP and requires per-source format/geometry disclosure; resume will reuse the 201 files.
