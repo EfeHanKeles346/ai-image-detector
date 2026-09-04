@@ -4818,6 +4818,14 @@ device at 100 parents. Of the selected 1,000, 979 retain matching EXIF make/mode
 marked category-only because EXIF is absent. Together with their 1,000 deterministic Q75 children,
 the REAL component freezes at manifest SHA-256 `657be9bb...8e7b`. Scores remain zero.
 
+The complete score-blind final assembly then passed. Exact Commons, OpenFake and StyleGAN2 component
+hashes were joined; 200 StyleGAN2 Q75 children were created without protected/internal collision.
+All 4,000 observation file hashes and display geometries reproduce, both conditions share exactly
+2,000 parents, and every one of sixteen source quotas is exact. Publisher originals comprise 1,585
+JPEG, 213 Apple MPO and 202 PNG files, while all 2,000 social-Q75 children are JPEG. The 3,937,874-
+byte frozen final manifest hashes to `9744a9d2...5909`. Model scores and aggregate metrics are still
+zero; this is the last commit required before locking E43-S to the final identities.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

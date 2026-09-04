@@ -1,0 +1,146 @@
+{
+  "component_manifest_sha256": {
+    "commons": "657be9bb6e2632f5b00f2f5a1f37b36640d186b53044cdb2cdf0697cb9208e7b",
+    "openfake": "38048803d01b6cb607c491d2391a7f0031e5c1010d7594bd44c767127e637442",
+    "stylegan2": "150ed35481bc0ae7653ff34eae879a227c1e359e4ab9ca772c681bbdef22ec99"
+  },
+  "counts": {
+    "by_source": {
+      "Canon EOS R5": 100,
+      "FLUX.2 Klein 9B": 160,
+      "GPT Image 2": 160,
+      "Google Pixel 7 Pro": 100,
+      "Google Pixel 8 Pro": 100,
+      "Midjourney 7": 160,
+      "Nikon Z 8": 100,
+      "Samsung Galaxy S23 Ultra": 100,
+      "Seedream v5.0": 160,
+      "Sony ILCE-7M4": 100,
+      "StyleGAN2": 200,
+      "Z-Image Turbo": 160,
+      "iPhone 13 Pro": 100,
+      "iPhone 14 Pro": 100,
+      "iPhone 15 Pro": 100,
+      "iPhone 15 Pro Max": 100
+    },
+    "conditions": 2,
+    "observations": 4000,
+    "parents": 2000
+  },
+  "format_audit": {
+    "publisher_original": {
+      "JPEG": 1585,
+      "MPO": 213,
+      "PNG": 202
+    },
+    "social_q75": {
+      "JPEG": 2000
+    }
+  },
+  "manifest_bytes": 3937874,
+  "manifest_sha256": "9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909",
+  "metrics_opened": 0,
+  "model_scores_created": 0,
+  "protected_role_manifest_count": 17,
+  "publisher_original_geometry_by_source": {
+    "Canon EOS R5": {
+      "max_height": 7195,
+      "max_width": 7950,
+      "min_height": 1000,
+      "min_width": 1003
+    },
+    "FLUX.2 Klein 9B": {
+      "max_height": 2448,
+      "max_width": 1632,
+      "min_height": 1024,
+      "min_width": 720
+    },
+    "GPT Image 2": {
+      "max_height": 5056,
+      "max_width": 3584,
+      "min_height": 941,
+      "min_width": 941
+    },
+    "Google Pixel 7 Pro": {
+      "max_height": 4308,
+      "max_width": 4080,
+      "min_height": 1280,
+      "min_width": 2268
+    },
+    "Google Pixel 8 Pro": {
+      "max_height": 5672,
+      "max_width": 7534,
+      "min_height": 1192,
+      "min_width": 1607
+    },
+    "Midjourney 7": {
+      "max_height": 2048,
+      "max_width": 2048,
+      "min_height": 720,
+      "min_width": 816
+    },
+    "Nikon Z 8": {
+      "max_height": 7594,
+      "max_width": 8256,
+      "min_height": 1047,
+      "min_width": 1002
+    },
+    "Samsung Galaxy S23 Ultra": {
+      "max_height": 4679,
+      "max_width": 7076,
+      "min_height": 1440,
+      "min_width": 1536
+    },
+    "Seedream v5.0": {
+      "max_height": 11008,
+      "max_width": 6144,
+      "min_height": 1024,
+      "min_width": 848
+    },
+    "Sony ILCE-7M4": {
+      "max_height": 7008,
+      "max_width": 7008,
+      "min_height": 1044,
+      "min_width": 1333
+    },
+    "StyleGAN2": {
+      "max_height": 256,
+      "max_width": 256,
+      "min_height": 256,
+      "min_width": 256
+    },
+    "Z-Image Turbo": {
+      "max_height": 3840,
+      "max_width": 2688,
+      "min_height": 768,
+      "min_width": 768
+    },
+    "iPhone 13 Pro": {
+      "max_height": 4032,
+      "max_width": 4608,
+      "min_height": 1431,
+      "min_width": 1512
+    },
+    "iPhone 14 Pro": {
+      "max_height": 4032,
+      "max_width": 4032,
+      "min_height": 1359,
+      "min_width": 1443
+    },
+    "iPhone 15 Pro": {
+      "max_height": 8064,
+      "max_width": 6048,
+      "min_height": 1014,
+      "min_width": 1016
+    },
+    "iPhone 15 Pro Max": {
+      "max_height": 5712,
+      "max_width": 7662,
+      "min_height": 1200,
+      "min_width": 1431
+    }
+  },
+  "role": "MODULE_1_ONE_SHOT_COMPREHENSIVE_FINAL",
+  "schema_version": 1,
+  "state": "e49_c_comprehensive_final_frozen_unscored"
+}

@@ -846,10 +846,14 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       Nikon-D70 mismatch are excluded; every device still fills exactly 100. The 1,000 parents and
       1,000 Q75 children freeze at SHA-256 `657be9bb...8e7b`; 979 selected parents have matching EXIF
       device evidence and 21 are explicitly category-only. Model-score count remains zero.
-- [ ] **Create two paired conditions per parent.** `publisher_original` preserves received bytes.
+- [x] **Create two paired conditions per parent.** `publisher_original` preserves received bytes.
       `social_q75` applies EXIF transpose, RGB conversion, long-side cap 1080, JPEG quality 75,
       4:2:0 subsampling and metadata removal. The derived child inherits its parent id, label and
       source; 4,000 observations still count as N=2,000 parents. Bootstrap and split only by parent.
+      **Complete freeze:** all three component hashes bind and all 4,000 files reproduce SHA-256 and
+      display geometry. Exactly 2,000 parents share both conditions and all sixteen source quotas.
+      Original formats are 1,585 JPEG/213 MPO/202 PNG; every Q75 child is JPEG. Manifest SHA-256
+      `9744a9d2...5909`; model-score/metric counts remain zero.
 - [ ] **Freeze E43-S and the decision layer before scoring.** Candidate artifact SHA remains
       `a3aec445...7390`; binary AI cut remains `0.07940196245908739`. Selective decisions are REAL
       below `0.011505939625203613`, AI at/above the binary cut and UNCERTAIN between them. These cuts
@@ -985,7 +989,7 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       Seedream payload identities are excluded by both exact and dHash duplicate checks; the reserve
       still yields exactly 160 parents per family. The 800 parents plus 800 deterministic Q75
       children freeze at manifest SHA-256 `38048803...7442`; protected overlap and scores are zero.
-- [ ] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
+- [x] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
       AI and 200 local StyleGAN2 AI parents, each paired original/Q75. Commit one-shot E43-S score
       streams before opening metrics and require all existing 20 gates without threshold/source repair.
       **Evaluator source lock:** replace the obsolete unconsumed Datapoint source labels in the

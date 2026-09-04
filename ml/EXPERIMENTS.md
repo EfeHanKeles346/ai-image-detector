@@ -3946,6 +3946,11 @@ was scored or selected using model output.
   internal child collision. Reproduce all 4,000 file SHA-256 values and dimensions, validate exact
   pairing and sixteen source quotas, and archive source geometry plus condition-format counts. The
   resulting manifest alone may feed the later score lock; twelve focused tests pass before use.
+- **Final assembly result — PASS:** component hashes `657be9bb...8e7b`, `38048803...7442` and
+  `150ed354...ec99` combine into exactly 2,000 balanced parents and 4,000 paired observations with
+  all sixteen source quotas. All payload SHA-256 values and display geometries reproduce. Original
+  format counts are 1,585 JPEG/213 MPO/202 PNG; all 2,000 social children are JPEG. Frozen manifest
+  SHA-256 `9744a9d2...5909`; metrics and model scores remain unopened.
 - **One-shot execution method:** three commands create irreversible checkpoints. `bind-score` seals
   final-manifest/component, E43-S artifact, DINOv2-S weight, thresholds and gate hashes before model
   load. `score` writes a resumable ordered raw stream and zero metrics. Only `open-metrics` may verify

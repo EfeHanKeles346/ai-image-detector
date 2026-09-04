@@ -350,6 +350,14 @@ only/no-make-model records; none is silently described as sensor-native. Their o
 deterministic social-Q75 children form a 2,000-observation component. External manifest SHA-256 is
 `657be9bb6e2632f5b00f2f5a1f37b36640d186b53044cdb2cdf0697cb9208e7b`; model scores are zero.
 
+The three unscored component manifests now assemble into the complete E49-C final: 1,000 Commons
+REAL, 800 OpenFake modern-AI and 200 local StyleGAN2 parents. Every parent has its received original
+and deterministic social-Q75 child, so the test contains 4,000 observations but an effective
+N=2,000 parent units. All SHA-256 values, display geometries, paired identities and sixteen source
+quotas validate. Original formats are 1,585 JPEG, 213 MPO and 202 PNG; all Q75 children are JPEG.
+External manifest SHA-256 is `9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909`.
+The test remains unscored and immutable; it is never a training or threshold-selection source.
+
 The already-local StyleGAN2 reserve was then realized without network or detector access. All
 240/240 frozen Parquet coordinates reproduce label=AI/generator=14 and decode successfully; exact
 and dHash comparison with 15 protected-role manifests finds zero overlap. The first 200 clean rows
