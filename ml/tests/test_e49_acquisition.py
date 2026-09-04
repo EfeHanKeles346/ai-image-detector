@@ -6,7 +6,10 @@ import pytest
 
 from experiments.e49_acquisition import (
     AIGC_GENERATOR_CODE,
+    AIGC_RESERVE,
     COMMONS_CATEGORIES,
+    COMMONS_RESERVE_PER_DEVICE,
+    build_open_components_payload,
     commons_rows,
     read_aigc_coordinates,
     select_aigc_coordinates,
@@ -28,6 +31,22 @@ def test_hf_identity_binds_revision_and_licence() -> None:
 def test_commons_device_contract_matches_final_evaluator() -> None:
     sources = {category.removeprefix("Category:Taken with ") for category in COMMONS_CATEGORIES}
     assert sources == {source for source, count in SOURCE_COUNTS.items() if count == 100}
+
+
+def test_open_component_contract_binds_every_reserve_without_scores() -> None:
+    commons = {}
+    for category in COMMONS_CATEGORIES:
+        commons[category] = [
+            {"identity": f"{category}:{index}", "rank": f"{index:04d}",
+             "uploader": f"u{index}", "bytes": 1}
+            for index in range(COMMONS_RESERVE_PER_DEVICE)
+        ]
+    aigc = [{"identity": f"a:{index}", "rank": f"{index:04d}"} for index in range(AIGC_RESERVE)]
+    payload = build_open_components_payload(commons, aigc)
+    assert payload["commons"]["reserve_rows"] == 1_100
+    assert payload["commons"]["target_rows"] == 1_000
+    assert payload["aigc"]["reserve_rows"] == 240
+    assert payload["new_image_bytes_downloaded"] == payload["model_scores_created"] == 0
 
 
 def test_capped_selection_is_deterministic_and_limits_contributors() -> None:

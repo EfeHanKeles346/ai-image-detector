@@ -20,6 +20,9 @@ NAMESPACE = "E49_COMPREHENSIVE_FINAL_V1"
 ROOT = DATA_ROOT / "e49"
 CONTRACT = ROOT / "source_contract.json"
 EVIDENCE = ML_ROOT.parent / "evidence" / "e49_source_contract.json"
+OPEN_COMPONENTS_CONTRACT = ROOT / "open_components_contract.json"
+OPEN_COMPONENTS_EVIDENCE = ML_ROOT.parent / "evidence" / "e49_open_components_contract.json"
+COMMONS_METADATA_CACHE = ROOT / "commons_metadata"
 
 DATAPOINT_REPO = "datapointai/text-2-image-human-preferences-2m"
 DATAPOINT_REVISION = "e1d8719a2d521eac6c62ee84f329afc2c03ec928"
@@ -241,6 +244,109 @@ def probe_local_aigc(
     }
 
 
+def _commons_cache_path(category: str) -> Path:
+    slug = category.removeprefix("Category:Taken with ").lower().replace(" ", "-")
+    return COMMONS_METADATA_CACHE / f"{slug}.json"
+
+
+def cached_commons_category(category: str) -> list[dict[str, Any]]:
+    """Persist eligible API metadata so interrupted scans resume without moving identities."""
+    path = _commons_cache_path(category)
+    if path.is_file():
+        payload = json.loads(path.read_text())
+        if payload.get("state") != "e49_commons_eligible_metadata" or payload.get("category") != category:
+            raise ValueError(f"E49 Commons metadata cache changed: {category}")
+        rows = payload.get("rows", [])
+        if not isinstance(rows, list):
+            raise ValueError(f"E49 Commons metadata rows changed: {category}")
+        return rows
+    rows = fetch_commons_category(category)
+    _write_atomic(path, {"schema_version": 1, "state": "e49_commons_eligible_metadata",
+                         "category": category, "rows": rows, "model_scores_created": 0})
+    return rows
+
+
+def build_open_components_payload(
+    commons_by_category: Mapping[str, Sequence[Mapping[str, Any]]],
+    aigc_reserve: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    commons = []
+    for category in COMMONS_CATEGORIES:
+        if category not in commons_by_category:
+            raise ValueError(f"E49 Commons category missing: {category}")
+        commons.extend(select_capped(
+            commons_by_category[category], COMMONS_RESERVE_PER_DEVICE,
+            group_key="uploader", max_per_group=COMMONS_MAX_PER_UPLOADER,
+        ))
+    if len(commons) != len(COMMONS_CATEGORIES) * COMMONS_RESERVE_PER_DEVICE:
+        raise ValueError("E49 Commons reserve count changed")
+    if len(aigc_reserve) != AIGC_RESERVE:
+        raise ValueError("E49 local AIGC reserve count changed")
+    network_bytes = sum(int(row["bytes"]) for row in commons)
+    if network_bytes > MAX_NETWORK_BYTES:
+        raise ValueError(f"E49 open component network stop exceeded: {network_bytes}")
+    return {
+        "schema_version": 1,
+        "state": "e49_open_components_frozen_untransferred_unscored",
+        "namespace": NAMESPACE,
+        "role": "FINAL_RESERVE_PENDING_DATAPOINT_COMPONENT",
+        "commons": {
+            "target_rows": COMMONS_TARGET_PER_DEVICE * len(COMMONS_CATEGORIES),
+            "reserve_rows": len(commons), "reserve_per_device": COMMONS_RESERVE_PER_DEVICE,
+            "max_per_uploader": COMMONS_MAX_PER_UPLOADER,
+            "network_bytes": network_bytes, "rows": commons,
+        },
+        "aigc": {"repo": AIGC_REPO, "revision": AIGC_REVISION,
+                 "target_rows": AIGC_TARGET, "reserve_rows": len(aigc_reserve),
+                 "rows": list(aigc_reserve)},
+        "missing_component": {"repo": DATAPOINT_REPO, "revision": DATAPOINT_REVISION,
+                              "target_rows": DATAPOINT_TARGET_PER_MODEL * len(DATAPOINT_MODELS),
+                              "state": "awaiting_author_review"},
+        "forbidden": ["image transfer before this contract", "model access", "training",
+                      "score-dependent replacement", "claiming complete E49 before Datapoint"],
+        "new_image_bytes_downloaded": 0,
+        "model_scores_created": 0,
+    }
+
+
+def bind_open_components() -> dict[str, Any]:
+    """Freeze the ungated E49 components while Datapoint remains unavailable."""
+    if OPEN_COMPONENTS_CONTRACT.exists() or OPEN_COMPONENTS_EVIDENCE.exists():
+        raise FileExistsError("E49 open-components contract already exists")
+    commons_by_category = {category: cached_commons_category(category)
+                           for category in COMMONS_CATEGORIES}
+    files = sorted(path for path in (AIGC_LOCAL_ROOT / "data").glob("test-*.parquet")
+                   if not path.name.startswith("._"))
+    coordinates, total_rows = read_aigc_coordinates(files)
+    if (len(files) != AIGC_EXPECTED_SHARDS or total_rows != AIGC_EXPECTED_ROWS
+            or AIGC_LOCAL_REF.read_text().strip() != AIGC_REVISION):
+        raise ValueError("E49 local AIGC identity changed before open-component bind")
+    generator_rows = sum(label == 1 and generator == AIGC_GENERATOR_CODE
+                         for _, _, label, generator in coordinates)
+    if generator_rows != AIGC_EXPECTED_GENERATOR_ROWS:
+        raise ValueError("E49 local StyleGAN2 population changed")
+    payload = build_open_components_payload(commons_by_category, select_aigc_coordinates(coordinates))
+    raw = _write_atomic(OPEN_COMPONENTS_CONTRACT, payload)
+    commons_rows_selected = payload["commons"]["rows"]
+    aigc_rows_selected = payload["aigc"]["rows"]
+    identity_raw = json.dumps(
+        [{"identity": row["identity"], "rank": row["rank"]}
+         for row in commons_rows_selected + aigc_rows_selected],
+        sort_keys=True, separators=(",", ":"),
+    ).encode()
+    evidence = {
+        "schema_version": 1, "state": payload["state"], "role": payload["role"],
+        "commons": {key: value for key, value in payload["commons"].items() if key != "rows"},
+        "aigc": {key: value for key, value in payload["aigc"].items() if key != "rows"},
+        "missing_component": payload["missing_component"],
+        "contract_bytes": len(raw), "contract_sha256": hashlib.sha256(raw).hexdigest(),
+        "reserve_identity_sha256": hashlib.sha256(identity_raw).hexdigest(),
+        "new_image_bytes_downloaded": 0, "model_scores_created": 0,
+    }
+    _write_atomic(OPEN_COMPONENTS_EVIDENCE, evidence)
+    return evidence
+
+
 def _request_json(session: requests.Session, params: Mapping[str, Any]) -> dict[str, Any]:
     for attempt in range(6):
         response = session.get(COMMONS_API, params=params, timeout=(20, 120))
@@ -306,12 +412,14 @@ def probe() -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("probe", "probe-local-aigc"))
+    parser.add_argument("command", choices=("probe", "probe-local-aigc", "bind-open-components"))
     args = parser.parse_args()
     if args.command == "probe":
         result = probe()
-    else:
+    elif args.command == "probe-local-aigc":
         result = probe_local_aigc()
+    else:
+        result = bind_open_components()
     print(json.dumps(result, indent=2, sort_keys=True))
 
 
