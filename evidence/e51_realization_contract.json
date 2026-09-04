@@ -1,0 +1,13 @@
+{
+  "contract_bytes": 1276816,
+  "contract_sha256": "48e078fe5a96a108c102a06aef436fe47a5e937a581656c1fd63df29816adbce",
+  "internal_ai_cal_rows": 360,
+  "internal_ai_cal_sources": 18,
+  "model_scores_created": 0,
+  "namespace": "E51_REALIZATION_V1",
+  "new_image_bodies_decoded": 0,
+  "schema_version": 1,
+  "scimd17_reserve_rows": 2040,
+  "scimd17_target_rows": 1700,
+  "state": "e51_realization_frozen_before_new_image_decode_unscored"
+}

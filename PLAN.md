@@ -1129,6 +1129,11 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,
       inspired by AIDE, and adversarially/source-balances the head rather than fine-tuning a huge
       backbone. A real-only distance arm may only turn a positive into UNCERTAIN, never certify REAL.
+      **Pre-realization CAL repair:** the original route had independent REAL CAL but no AI CAL,
+      making balanced threshold selection impossible. Before any new body decode or score, reserve
+      20 rows from each of 18 sufficiently populated historical AI TRAIN sources (360 total), remove
+      them from candidate fitting and pair them with Q75. Datapoint remains DEVELOPMENT-only.
+      SCIMD-17 freezes 120 score-blind candidates/device for a 100-clean/device TRAIN target.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered

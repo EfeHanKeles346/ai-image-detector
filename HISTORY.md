@@ -5042,3 +5042,11 @@ publisher MD5. SHA-256 is `ef1fe3e7...0201`; safe inventory reveals 17,620 image
 expanded bytes, refining the publisher's approximate 17,000 claim. Receipt `8b38fa82...b230`
 still reports zero decoded bodies and model scores. The source remains TRAIN-only and cannot repair
 or influence any calibration/development/final metric by role reassignment.
+
+The pre-realization audit then found a protocol gap before it could contaminate a result: the E51
+route supplied new REAL calibration images but no AI calibration arm. Moving Datapoint would destroy
+its independent DEVELOPMENT role. E51 therefore pre-registers a fit-internal holdout instead: 20
+score-blind historical TRAIN rows from each of 18 AI sources (360 total) are removed from fitting
+and become paired AI-CAL. Separately, SCIMD-17 binds 120 archive candidates per device so identity
+audit can retain exactly 100/device (1,700) as TRAIN-only resize hard negatives. No new body or score
+was opened to make either choice.
