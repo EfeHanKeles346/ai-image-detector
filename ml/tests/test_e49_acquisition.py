@@ -49,6 +49,21 @@ def test_open_component_contract_binds_every_reserve_without_scores() -> None:
     assert payload["new_image_bytes_downloaded"] == payload["model_scores_created"] == 0
 
 
+def test_open_component_size_cap_is_applied_before_rank_selection() -> None:
+    commons = {}
+    for category in COMMONS_CATEGORIES:
+        commons[category] = [
+            {"identity": f"{category}:large", "rank": "0000", "uploader": "large", "bytes": 11},
+            *({"identity": f"{category}:{index}", "rank": f"{index + 1:04d}",
+               "uploader": f"u{index}", "bytes": 1}
+              for index in range(COMMONS_RESERVE_PER_DEVICE)),
+        ]
+    aigc = [{"identity": f"a:{index}", "rank": f"{index:04d}"} for index in range(AIGC_RESERVE)]
+    payload = build_open_components_payload(commons, aigc, commons_file_cap=10)
+    assert payload["commons"]["max_file_bytes"] == 10
+    assert all(row["bytes"] == 1 for row in payload["commons"]["rows"])
+
+
 def test_capped_selection_is_deterministic_and_limits_contributors() -> None:
     rows = [
         {"identity": str(index), "rank": f"{index:03d}", "uploader": f"u{index // 3}"}
