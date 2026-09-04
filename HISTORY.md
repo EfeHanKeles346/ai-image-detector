@@ -4497,3 +4497,7 @@ DEVELOPMENT row was accessed; the checkpoint preserves inference only.
 Official DDA then scored the matching 1,200 FIT+CAL identities with full coverage. Its 257,443-
 byte stream hashes to `7ebc7831...b4a23b`. UnivFD/UNINA and every aggregate metric remain unopened;
 DEVELOPMENT score count is still zero.
+
+MIT-licensed UnivFD then completed the same 1,200 FIT+CAL rows. Its 259,689-byte stream hashes to
+`e768d591...81d635`. The UNINA arm and all fitted percentile/threshold metrics remain unopened;
+DEVELOPMENT still has zero scores.

@@ -3654,6 +3654,8 @@ was scored or selected using model output.
   `f2a1be3b...137cf7`. Raw inference only; DEVELOPMENT rows and aggregate metrics remain zero.
 - **DDA FIT+CAL arm:** 1,200/1,200 rows with full coverage; 257,443-byte stream SHA-256
   `7ebc7831...b4a23b`. Raw inference only; DEVELOPMENT rows and aggregate metrics remain zero.
+- **UnivFD FIT+CAL arm:** 1,200/1,200 rows with full coverage; 259,689-byte stream SHA-256
+  `e768d591...81d635`. Raw inference only; DEVELOPMENT rows and aggregate metrics remain zero.
 
 ### Module 1 completion and Module 2 re-entry contract
 

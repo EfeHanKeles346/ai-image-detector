@@ -695,6 +695,8 @@ all four backbones/scores remain frozen.
       SHA-256 `f2a1be3b...137cf7`. DEVELOPMENT rows scored: zero; no aggregate metric opened.
       **DDA FIT+CAL arm:** 1,200/1,200 rows, 100% coverage; 257,443-byte stream
       SHA-256 `7ebc7831...b4a23b`. DEVELOPMENT rows scored: zero; no aggregate metric opened.
+      **UnivFD FIT+CAL arm:** 1,200/1,200 rows, 100% coverage; 259,689-byte stream
+      SHA-256 `e768d591...81d635`. DEVELOPMENT rows scored: zero; no aggregate metric opened.
 - [ ] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
       authentic-image percentile. Compare E46, E46+UnivFD, E46+UNINA and all-three using the
       maximum expert percentile. Because `max` is monotone, a low irrelevant-specialist score can
