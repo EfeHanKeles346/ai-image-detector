@@ -4797,3 +4797,11 @@ internal child collision. It then reproduces every one of 4,000 observation SHA-
 dimensions, enforces exact parent pairing and all sixteen source quotas, and records format/geometry
 shortcut evidence. Twelve focused final/component/evaluation tests pass; no final manifest, model
 score or metric is produced by this method-only checkpoint.
+
+The final scorer was then split into three committed checkpoints before it could see any final row.
+The first seals the complete manifest, component hashes, E43-S artifact, DINOv2-S weights, fixed
+thresholds and twenty gates. The second alone performs restart-safe ordered inference and records a
+raw-stream hash while exposing zero aggregate metrics. The third refuses to run until that stream is
+complete and then opens the preregistered metrics and 10,000 parent-level bootstraps exactly once.
+Fourteen focused final lock/score/evaluation tests pass; training, source removal, threshold repair
+and a second attempt are explicitly forbidden.

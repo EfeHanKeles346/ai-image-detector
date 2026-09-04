@@ -3902,6 +3902,11 @@ was scored or selected using model output.
   internal child collision. Reproduce all 4,000 file SHA-256 values and dimensions, validate exact
   pairing and sixteen source quotas, and archive source geometry plus condition-format counts. The
   resulting manifest alone may feed the later score lock; twelve focused tests pass before use.
+- **One-shot execution method:** three commands create irreversible checkpoints. `bind-score` seals
+  final-manifest/component, E43-S artifact, DINOv2-S weight, thresholds and gate hashes before model
+  load. `score` writes a resumable ordered raw stream and zero metrics. Only `open-metrics` may verify
+  that stream and execute the frozen 10,000-bootstrap/20-gate evaluator. Fourteen focused tests pass;
+  retries, source removal, threshold changes and metrics-before-score-lock are forbidden.
 
 ### Gated-source approval audit — route decision before any image access
 

@@ -829,6 +829,10 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       `a3aec445...7390`; binary AI cut remains `0.07940196245908739`. Selective decisions are REAL
       below `0.011505939625203613`, AI at/above the binary cut and UNCERTAIN between them. These cuts
       were selected only from consumed E50 CAL/DEVELOPMENT and may not move in E49.
+      **Execution implementation checkpoint:** separate `bind-score`, `score` and `open-metrics`
+      commands enforce this order. The contract binds manifest/component/model/weight hashes and
+      fixed gates; resumable inference writes only identity+raw score rows; metric opening requires
+      the completed stream hash. Fourteen focused lock/score/evaluation tests pass before use.
 - [ ] **Require the full ten gates independently on both conditions.** Coverage =100%; AUC >=0.90;
       balanced accuracy >=0.85; pooled REAL false-AI <=10%; worst REAL device/source false-AI <=20%;
       pooled AI recall >=80%; worst AI generator recall >=60%; selective automatic coverage >=80%;
