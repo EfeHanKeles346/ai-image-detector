@@ -1,0 +1,19 @@
+{
+  "by_role_label": {
+    "CAL:0": 360,
+    "CAL:1": 360,
+    "DEVELOPMENT:0": 720,
+    "DEVELOPMENT:1": 720,
+    "FIT:0": 360,
+    "FIT:1": 360
+  },
+  "candidate_rows": 2880,
+  "contract_bytes": 1565157,
+  "contract_sha256": "dbb6f4aa2188a3eb7b2414740ff5dd915014247ea6c764378a4770a715d30e6e",
+  "excluded_prior_truefake_candidates": 6380,
+  "model_scores_created": 0,
+  "namespace": "E48_MONOTONE_NONVETO_V1",
+  "schema_version": 1,
+  "state": "e48_selection_frozen_before_new_payload_access",
+  "target_rows": 2400
+}

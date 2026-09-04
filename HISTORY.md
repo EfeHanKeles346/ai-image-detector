@@ -4442,3 +4442,9 @@ the decision layer learns from unused VISION/CSAFE identities and must transfer 
 camera originals plus mostly held AI generators. The 2,400-row design uses existing LaCie data,
 downloads nothing, excludes all E46/E47 candidates and keeps the web model unchanged until a new
 publisher-separated final passes.
+
+The E48 selector then bound 2,880 score-blind reserve candidates for the 2,400-row target. FIT,
+CAL and DEVELOPMENT are class-balanced; camera rows are device-balanced, and all 6,380 prior
+E46/E47 TrueFake candidates plus the current model's E32 training identities are excluded before
+ranking. Contract SHA `dbb6f4aa...0e6e` fixes every identity and quota with 20% audit headroom.
+No new AI payload has been extracted and no model score exists at this checkpoint.

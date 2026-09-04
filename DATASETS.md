@@ -1453,3 +1453,10 @@ new hash-ranked AI members need streaming extraction. FODB's repeated 143-scene 
 an unseen-camera-and-scene claim, so DEVELOPMENT must report both row-level pooled FP and
 camera-pipeline worst FP and cap each scene's representation. This is successor development data,
 not a new independent final.
+
+The score-blind E48 selection is now bound. Namespace `E48_MONOTONE_NONVETO_V1` selected
+2,880 reserve candidates for the 2,400-row target: FIT 360/360 REAL/AI, CAL 360/360 and
+DEVELOPMENT 720/720. It excludes all 6,380 E46/E47 TrueFake reserve candidates before ranking
+and explicitly excludes current-candidate E32 training identities from camera candidates.
+The 1,565,157-byte contract SHA-256 is `dbb6f4aa...0e6e`; no new payload was extracted and
+no model score exists.

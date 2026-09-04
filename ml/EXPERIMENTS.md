@@ -3629,3 +3629,7 @@ was scored or selected using model output.
 - **Frozen selection/gates:** compare four nested monotone expert sets; threshold and select on
   CAL only. Coverage=1, AUC>=.90, BA>=.85, pooled/worst-device REAL FP<=.10/.20 and pooled/worst-
   source AI recall>=.80/.60. Freeze before one-shot DEVELOPMENT; no repair or serving update.
+- **Selection lock:** 2,880 score-blind candidates for a 2,400-row target, balanced by class
+  inside 720 FIT, 720 CAL and 1,440 DEVELOPMENT reserve rows. All 6,380 prior E46/E47
+  TrueFake candidates plus current E32 training identities are excluded. Contract SHA-256
+  `dbb6f4aa...0e6e`; decoded new AI payloads and model scores remain zero.

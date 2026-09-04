@@ -668,6 +668,11 @@ all four backbones/scores remain frozen.
       scene. FIT and CAL AI each use TrueFake FLUX.1 100, StyleGAN2 100, SD1.5 50 and SDXL 50.
       DEVELOPMENT AI uses fresh FLUX.1/SD3/StyleGAN/StyleGAN3 at 150 each. All rows must decode,
       pass exact/dHash protection and be selected by namespace hash before model access.
+      **Selection bound:** 2,880 score-blind candidates (720 FIT, 720 CAL, 1,440
+      DEVELOPMENT) for the 2,400-row target; every role is class-balanced. All 6,380 prior
+      E46/E47 TrueFake candidates and current-candidate E32 training identities are excluded.
+      Contract SHA-256 `dbb6f4aa...0e6e`; model scores zero. Next: payload verification,
+      extraction and protected exact/dHash audit only.
 - [ ] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
       authentic-image percentile. Compare E46, E46+UnivFD, E46+UNINA and all-three using the
       maximum expert percentile. Because `max` is monotone, a low irrelevant-specialist score can
