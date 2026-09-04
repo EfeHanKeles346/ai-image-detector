@@ -3901,6 +3901,10 @@ was scored or selected using model output.
   decode only exact-geometry JPEG, preserve original bytes, record SHA-256 and available EXIF
   make/model, and reject unexpected files. Receipt and compact evidence remain explicitly unscored;
   eighteen focused E49 tests pass before network execution.
+- **Rate-limit amendment:** the initial eight-worker execution stopped on Wikimedia's explicit 429
+  after only two complete originals; no partial body was admitted. Resume uses one request stream,
+  0.75-second pacing, a repository-linked research User-Agent and up to 60-second Retry-After/
+  exponential backoff. Completed files are revalidated, and original URLs/bytes remain unchanged.
 - **Commons realization method:** bind the completed transfer receipt; compare original SHA-256 and
   dHash against historical protected roles, the scored Dotting diagnostic and both frozen final-AI
   components. Within each prebound device rank, retain the first 100 parents whose original and

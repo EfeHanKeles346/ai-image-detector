@@ -4769,6 +4769,13 @@ local SHA-256 and any preserved EXIF make/model while retaining category, upload
 provenance. Unexpected files, partial quotas or aggregate byte drift stop the run. Eighteen focused
 E49 acquisition/download/evaluation tests pass; this checkpoint downloads and scores nothing.
 
+The first Commons execution showed that eight parallel original-file workers are too aggressive for
+Wikimedia: the service returned an explicit 429 after two complete files. The executor stopped and
+no partial body survived. Before resuming, transfer policy was reduced to one request stream with
+0.75-second pacing, a public-repository research User-Agent and bounded Retry-After/exponential
+backoff up to 60 seconds. The two exact files remain reusable; no thumbnail, source identity, byte
+contract or model boundary changes.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

@@ -26,6 +26,9 @@ CONTRACT_SHA256 = "1d4e184c27cb87cf832045a23b6966f382673c3bcd8342a900c07130bd918
 EXPECTED_FILES = 1_100
 EXPECTED_BYTES = 2_706_581_778
 MAX_PIXELS = 100_000_000
+DOWNLOAD_WORKERS = 1
+REQUEST_PACING_SECONDS = 0.75
+USER_AGENT = "PixelProof-E49/1.0 (https://github.com/EfeHanKeles346/ai-image-detector; research)"
 
 ROOT = DATA_ROOT / "e49" / "open_components_v2"
 PAYLOAD_ROOT = ROOT / "commons_reserve"
@@ -105,11 +108,17 @@ def _download(row: Mapping[str, Any]) -> dict[str, Any]:
     last_error: Exception | None = None
     for attempt in range(6):
         try:
+            time.sleep(REQUEST_PACING_SECONDS)
             with requests.get(
                 str(row["url"]), stream=True,
-                headers={"User-Agent": "PixelProof-Research/1.0 (E49 noncommercial benchmark)"},
+                headers={"User-Agent": USER_AGENT},
                 timeout=(20, 180),
             ) as response:
+                if response.status_code == 429:
+                    retry_after = response.headers.get("Retry-After", "")
+                    delay = int(retry_after) if retry_after.isdigit() else min(5 * 2 ** attempt, 60)
+                    time.sleep(min(max(delay, 5), 60))
+                    response.raise_for_status()
                 response.raise_for_status()
                 content_type = str(response.headers.get("Content-Type", "")).split(";", 1)[0].lower()
                 declared = int(response.headers.get("Content-Length", "-1"))
@@ -130,7 +139,7 @@ def _download(row: Mapping[str, Any]) -> dict[str, Any]:
             if temporary.exists():
                 temporary.unlink()
             if attempt < 5:
-                time.sleep(min(2 ** attempt, 20))
+                time.sleep(min(2 ** attempt, 30))
     raise RuntimeError(f"E49 Commons download failed at {row['identity']}: {last_error}")
 
 
@@ -177,7 +186,7 @@ def download() -> dict[str, Any]:
         else:
             missing.append(row)
     already_present = len(completed)
-    with ThreadPoolExecutor(max_workers=8) as pool:
+    with ThreadPoolExecutor(max_workers=DOWNLOAD_WORKERS) as pool:
         for index, result in enumerate(pool.map(_download, missing), start=1):
             completed.append(result)
             if index % 50 == 0 or index == len(missing):
