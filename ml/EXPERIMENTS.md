@@ -3583,3 +3583,6 @@ was scored or selected using model output.
   `8001c60b...d75f5`. UnivFD/UNINA and all fitted results remain unopened.
 - **UnivFD arm:** 2,400/2,400 rows, 100% coverage; 403,436-byte stream SHA-256
   `67b7b94c...e2829`. UNINA and all CAL/DEVELOPMENT results remain unopened.
+- **Capped UNINA arm:** 2,400/2,400 rows, 100% coverage; 398,998-byte stream SHA-256
+  `7efb36c0...5e16d`. All four frozen inference streams are complete. CAL/DEVELOPMENT
+  metrics and fitted results remain unopened pending a separately committed decision rule.

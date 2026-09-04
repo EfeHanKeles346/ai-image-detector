@@ -4387,3 +4387,9 @@ comparison and CAL fitting remain unopened.
 
 MIT-licensed UnivFD then scored all 2,400 rows. Its 403,436-byte stream hashes to
 `67b7b94c...e2829`. No class/source metric was read; capped UNINA and decision-gate fitting remain.
+
+Capped UNINA subsequently completed the same 2,400 identities with full coverage. Its
+398,998-byte stream hashes to `7efb36c0...5e16d`. E47-R3 now has all four frozen inference
+streams, but still has no opened CAL or DEVELOPMENT metric. The exact CAL-only fitting,
+threshold selection and candidate-selection policy must be written and committed before these
+scores can influence a decision.
