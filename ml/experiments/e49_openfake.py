@@ -26,7 +26,8 @@ CONFIG = "core"
 SPLIT = "test"
 EXPECTED_ROWS = 91_398
 PAGE_SIZE = 100
-FETCH_WORKERS = 8
+# Two cold Viewer pages at a time stays below the public service's observed 429 boundary.
+FETCH_WORKERS = 2
 TARGET_PER_MODEL = 160
 RESERVE_PER_MODEL = 192
 MODEL_KEYS = {
