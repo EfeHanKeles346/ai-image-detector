@@ -1,0 +1,18 @@
+{
+  "bytes": 3220281593,
+  "free_bytes_after": 445057859584,
+  "free_bytes_before": 448289177600,
+  "image_columns_opened": false,
+  "model_scores_created": 0,
+  "receipt_bytes": 2992,
+  "receipt_sha256": "18b8326a7972d19094b48ebc1e67d9ece8114ae36baeb258575f803f3a90bad1",
+  "repo": "datapointai/text-2-image-human-preferences-2m",
+  "reserved_rows": 920,
+  "revision": "e1d8719a2d521eac6c62ee84f329afc2c03ec928",
+  "role": "DEVELOPMENT_AI_RESERVE",
+  "route_contract_sha256": "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d81140ec315e4",
+  "schema_version": 1,
+  "shards": 7,
+  "state": "e51_datapoint_shards_downloaded_unopened_unscored",
+  "target_rows_after_realization": 800
+}

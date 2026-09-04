@@ -4011,6 +4011,10 @@ was scored or selected using model output.
   test members, never the 2,750 train rows. Final receipt `09188d49...3794` contains 2,640/2,640
   safely decoded 512x512 PNG bodies /837,665,909 bytes, equally split unaltered/postprocessed;
   identity SHA `fc3657dd...fb05` matches the pre-score contract. Model-score count is zero.
+- **Datapoint AI DEVELOPMENT transport — COMPLETE, unopened:** the exact seven pinned Parquets are
+  local at 3,220,281,593/3,220,281,593 bytes with a full-file SHA-256 receipt
+  `18b8326a...bad1`. The transfer retains all 920 paired reserves and the prebound 800-parent target;
+  it deliberately opens no image column, performs no decode/decontamination and creates no score.
 
 ### Gated-source approval audit — route decision before any image access
 

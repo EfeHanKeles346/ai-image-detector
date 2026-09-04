@@ -5000,3 +5000,8 @@ without transferring a shard. It permits only the seven already-contracted Parqu
 revision `e1d8719a...c928`, reproduces each remote byte count and full local SHA-256, and records that
 the image columns and all detectors remain unopened. Its exact transfer ceiling is 3,220,281,593
 bytes; the 920 paired reserves and later 800-parent target cannot change in this step.
+
+The Datapoint transport then completed all seven pinned shards at exactly 3,220,281,593 bytes.
+Receipt `18b8326a...bad1` binds their local full-file hashes and revision while preserving the 920
+paired reserves and 800-parent realization target. Image columns, detectors and metrics remain
+unopened; this is acquisition evidence, not a model result.

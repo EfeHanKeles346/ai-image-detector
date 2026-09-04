@@ -566,6 +566,12 @@ of which realization may keep 20/category/model =800 clean parents. Bound select
 DEVELOPMENT and cannot become E52 final. Every role still requires decode, exact/perceptual overlap
 and original/Q75 pairing checks before admission.
 
+All seven Datapoint source Parquets are now present on LaCie and reproduce exactly 3,220,281,593
+bytes. Detailed external receipt SHA-256 is
+`18b8326a7972d19094b48ebc1e67d9ece8114ae36baeb258575f803f3a90bad1`. This is a transport
+checkpoint only: the image columns were not opened, the 920 reserve rows were not decoded or
+selected down to 800, and detector-score count remains zero.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.

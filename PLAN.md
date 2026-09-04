@@ -1097,6 +1097,9 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       frozen without payload access. It verifies the manual-gated repository at exact revision,
       requires all seven contracted shard byte counts (3,220,281,593 total), downloads only those
       paths restart-safely, hashes the complete Parquets and explicitly leaves image columns unopened.
+      **Datapoint transfer complete:** all 7/7 pinned shards reproduce 3,220,281,593 bytes and full
+      local SHA-256 values. Receipt `18b8326a...bad1` retains 920 paired reserves /800-parent target;
+      image columns and model scores remain unopened/zero.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,
