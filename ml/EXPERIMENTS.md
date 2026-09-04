@@ -3877,6 +3877,11 @@ was scored or selected using model output.
   generate fixed 1080-long-side JPEG-Q75 children, reject protected/duplicate children, and require
   exactly 160 parents plus 160 children per family. No detector import, score or metric is allowed.
   Twenty-one focused E49 tests pass before this production step.
+- **Commons transfer method:** use only the 1,100 identities in open-components V2. A resumable
+  eight-worker transfer must reproduce all 2,706,581,778 expected bytes and every Wikimedia SHA1,
+  decode only exact-geometry JPEG, preserve original bytes, record SHA-256 and available EXIF
+  make/model, and reject unexpected files. Receipt and compact evidence remain explicitly unscored;
+  eighteen focused E49 tests pass before network execution.
 
 ### Gated-source approval audit — route decision before any image access
 

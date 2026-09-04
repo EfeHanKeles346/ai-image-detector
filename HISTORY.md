@@ -4761,3 +4761,10 @@ order. Fixed 1080-long-side JPEG-Q75 children receive their own protected/intern
 The command refuses anything except 160 clean parent-child pairs per modern family and records
 format/geometry disclosure. Twenty-one focused E49 tests pass; no OpenFake detector score or metric
 has been created by this checkpoint.
+
+The 2.7 GB Commons transfer path was also implemented before any REAL body was requested. It accepts
+only the 1,100 rows of the frozen V2 contract, resumes verified originals, and requires exact byte
+length, Wikimedia SHA1, JPEG decode and bound dimensions for every file. It additionally records a
+local SHA-256 and any preserved EXIF make/model while retaining category, uploader and licence
+provenance. Unexpected files, partial quotas or aggregate byte drift stop the run. Eighteen focused
+E49 acquisition/download/evaluation tests pass; this checkpoint downloads and scores nothing.

@@ -799,6 +799,10 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       and reduces 1,100 Commons rows to 2,706,581,778 bytes, leaving 1,588,385,518 bytes of the
       global ceiling for Datapoint. The 240 local StyleGAN2 coordinates are also frozen. Contract
       SHA-256 `1d4e184c...82aa`, reserve identity `31c0e420...e171`; images/scores remain zero.
+      **Commons transfer implementation:** the restart-safe downloader is committed before body
+      access. It binds the V2 contract, exact byte length and Wikimedia SHA1, requires decoded JPEG
+      and frozen geometry, records SHA-256 plus available EXIF make/model, and refuses unexpected
+      files or partial completion. Eighteen focused acquisition/download/final tests pass.
       **Local GAN realization:** all 240 frozen coordinates decode with zero failure and zero
       protected/internal overlap; the first 200 clean rows are fixed at manifest SHA-256
       `150ed354...ec99`. All are publisher 256x256 PNG, so the format/geometry audit must flag the
