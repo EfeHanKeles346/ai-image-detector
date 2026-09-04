@@ -4768,3 +4768,11 @@ length, Wikimedia SHA1, JPEG decode and bound dimensions for every file. It addi
 local SHA-256 and any preserved EXIF make/model while retaining category, uploader and licence
 provenance. Unexpected files, partial quotas or aggregate byte drift stop the run. Eighteen focused
 E49 acquisition/download/evaluation tests pass; this checkpoint downloads and scores nothing.
+
+The corresponding REAL realization gate was committed before the Commons transfer. It binds the
+future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
+also protects final independence from the scored Dotting diagnostic plus both final AI components.
+Within each immutable device rank it keeps the first 100 parents whose originals and fixed Q75
+children remain clean. The command refuses any result other than 1,000 REAL parents and their 1,000
+paired children, while retaining uploader, licence and EXIF-availability evidence. Twelve focused
+tests pass and no detector import, score or aggregate metric exists at this method checkpoint.

@@ -816,6 +816,11 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean
       quota by the predeclared hash order. Record all exclusions and 100% retained-manifest coverage.
+      **REAL implementation checkpoint:** the Commons realization is receipt-bound and requires 100
+      clean parents per frozen device after protected/internal SHA-256+dHash checks. It protects
+      against the final AI components and scored Dotting diagnostic, creates fixed Q75 children,
+      rejects child collisions and refuses anything except 1,000 parents/2,000 observations.
+      Twelve focused transfer/realization/evaluation tests pass before production execution.
 - [ ] **Create two paired conditions per parent.** `publisher_original` preserves received bytes.
       `social_q75` applies EXIF transpose, RGB conversion, long-side cap 1080, JPEG quality 75,
       4:2:0 subsampling and metadata removal. The derived child inherits its parent id, label and

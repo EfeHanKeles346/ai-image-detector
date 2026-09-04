@@ -3882,6 +3882,12 @@ was scored or selected using model output.
   decode only exact-geometry JPEG, preserve original bytes, record SHA-256 and available EXIF
   make/model, and reject unexpected files. Receipt and compact evidence remain explicitly unscored;
   eighteen focused E49 tests pass before network execution.
+- **Commons realization method:** bind the completed transfer receipt; compare original SHA-256 and
+  dHash against historical protected roles, the scored Dotting diagnostic and both frozen final-AI
+  components. Within each prebound device rank, retain the first 100 parents whose original and
+  deterministic Q75 child avoid protected/internal collision. The method requires exactly 1,000
+  REAL parents and 2,000 paired observations, preserving uploader/licence and EXIF availability.
+  Twelve focused E49 tests pass before production execution and no model import is present.
 
 ### Gated-source approval audit — route decision before any image access
 
