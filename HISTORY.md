@@ -4783,6 +4783,13 @@ authentic camera-pipeline evidence, not corruption. The received bytes are prese
 are now admitted as separately reported decoded formats, still requiring exact SHA1, dimensions and
 size. No row was substituted and no model score exists.
 
+The next iPhone original exposed the related EXIF geometry convention. Row 148,952,501 physically
+stores 4,032 x 3,024 pixels with orientation 6, while Wikimedia correctly binds the displayed image
+as 3,024 x 4,032. The validator now records both encoded and display geometry, swaps axes only for
+EXIF orientations 5–8, and requires the display result to match the prebound API dimensions. It does
+not rotate or rewrite the publisher original. A regression test covers this native-phone case; no
+identity or score changed.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

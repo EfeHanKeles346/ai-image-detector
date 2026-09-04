@@ -36,5 +36,17 @@ def test_commons_inspection_rejects_hash_and_geometry_drift(tmp_path):
     expected = _expected(path)
     with pytest.raises(ValueError, match="SHA1 changed"):
         inspect_file(path, {**expected, "commons_sha1": "0" * 40})
-    with pytest.raises(ValueError, match="dimensions changed"):
+    with pytest.raises(ValueError, match="display dimensions changed"):
         inspect_file(path, {**expected, "width": 31})
+
+
+def test_commons_inspection_matches_contract_after_exif_orientation(tmp_path):
+    path = tmp_path / "rotated.jpg"
+    exif = Image.Exif()
+    exif[274] = 6
+    Image.new("RGB", (32, 24), (20, 30, 40)).save(path, format="JPEG", exif=exif)
+    expected = {**_expected(path), "width": 24, "height": 32}
+    found = inspect_file(path, expected)
+    assert (found["encoded_width"], found["encoded_height"]) == (32, 24)
+    assert (found["width"], found["height"]) == (24, 32)
+    assert found["exif_orientation"] == 6

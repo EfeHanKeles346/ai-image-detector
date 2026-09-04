@@ -3909,6 +3909,10 @@ was scored or selected using model output.
   with an MPF multi-picture segment. Wikimedia MIME and `file` identify JPEG, while Pillow correctly
   reports `MPO`. Preserve its exact bytes and admit decoded JPEG/MPO as distinct reported formats;
   frozen dimensions, Wikimedia SHA1 and every other safety check remain mandatory.
+- **EXIF-geometry amendment:** row 148,952,501 stores 4,032 x 3,024 pixels with orientation 6, while
+  the bound Wikimedia geometry is its correct 3,024 x 4,032 display orientation. Preserve original
+  bytes, record encoded and display dimensions separately, and validate the frozen contract against
+  the latter. Only orientations 5–8 swap axes; a regression test binds this behavior.
 - **Commons realization method:** bind the completed transfer receipt; compare original SHA-256 and
   dHash against historical protected roles, the scored Dotting diagnostic and both frozen final-AI
   components. Within each prebound device rank, retain the first 100 parents whose original and

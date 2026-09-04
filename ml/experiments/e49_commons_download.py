@@ -76,17 +76,22 @@ def inspect_file(path: Path, expected: Mapping[str, Any]) -> dict[str, Any]:
         opened.verify()
     with Image.open(path) as opened:
         opened.load()
-        width, height = opened.size
+        encoded_width, encoded_height = opened.size
         decoded_format = str(opened.format or "UNKNOWN").upper()
         # Apple phone originals may be JPEG files with an MPF segment, which Pillow reports as MPO.
-        if decoded_format not in ALLOWED_DECODED_FORMATS or width <= 0 or height <= 0 or width * height > MAX_PIXELS:
+        if (decoded_format not in ALLOWED_DECODED_FORMATS or encoded_width <= 0 or encoded_height <= 0
+                or encoded_width * encoded_height > MAX_PIXELS):
             raise ValueError(f"E49 Commons payload format/geometry unsafe: {path.name}")
-        if (width, height) != (int(expected["width"]), int(expected["height"])):
-            raise ValueError(f"E49 Commons payload dimensions changed: {path.name}")
         exif = opened.getexif()
         make = str(exif.get(271, "")).strip()
         model = str(exif.get(272, "")).strip()
         orientation = int(exif.get(274, 1) or 1)
+        display_width, display_height = (
+            (encoded_height, encoded_width) if orientation in {5, 6, 7, 8}
+            else (encoded_width, encoded_height)
+        )
+        if (display_width, display_height) != (int(expected["width"]), int(expected["height"])):
+            raise ValueError(f"E49 Commons display dimensions changed: {path.name}")
     return {
         **{key: expected[key] for key in (
             "identity", "rank", "label", "source", "category", "pageid", "title",
@@ -94,7 +99,9 @@ def inspect_file(path: Path, expected: Mapping[str, Any]) -> dict[str, Any]:
         )},
         "path": str(path), "bytes": path.stat().st_size, "sha1": sha1,
         "sha256": _hash(path, "sha256"), "format": decoded_format,
-        "width": width, "height": height, "exif_make": make, "exif_model": model,
+        "width": display_width, "height": display_height,
+        "encoded_width": encoded_width, "encoded_height": encoded_height,
+        "exif_make": make, "exif_model": model,
         "exif_orientation": orientation, "status": "downloaded_decoded_unscored",
     }
 

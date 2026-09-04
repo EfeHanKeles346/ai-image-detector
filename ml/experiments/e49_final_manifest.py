@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 from experiments.e48_manifest import _protected_role_hashes
 from experiments.e49_commons_realize import MANIFEST as COMMONS_MANIFEST
@@ -111,7 +111,8 @@ def validate_payloads(rows: Sequence[Mapping[str, Any]]) -> None:
         if not path.is_file() or _digest(path) != row.get("sha256"):
             raise ValueError(f"E49 final payload changed: {row.get('record_id')}")
         with Image.open(path) as opened:
-            if (opened.width, opened.height) != (int(row["width"]), int(row["height"])):
+            display_size = ImageOps.exif_transpose(opened).size
+            if display_size != (int(row["width"]), int(row["height"])):
                 raise ValueError(f"E49 final geometry changed: {row.get('record_id')}")
 
 
