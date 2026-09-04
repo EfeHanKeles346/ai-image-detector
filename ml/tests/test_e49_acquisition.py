@@ -7,6 +7,7 @@ import pytest
 from experiments.e49_acquisition import (
     AIGC_GENERATOR_CODE,
     commons_rows,
+    read_aigc_coordinates,
     select_aigc_coordinates,
     select_capped,
     validate_hf_identity,
@@ -58,3 +59,29 @@ def test_aigc_coordinates_are_selected_without_image_payloads() -> None:
     selected = select_aigc_coordinates(rows, reserve=5)
     assert len(selected) == 5
     assert {row["generator_code"] for row in selected} == {AIGC_GENERATOR_CODE}
+
+
+def test_aigc_parquet_reader_requests_only_metadata_columns(tmp_path, monkeypatch) -> None:
+    class Column:
+        def __init__(self, values):
+            self.values = values
+
+        def to_pylist(self):
+            return self.values
+
+    class Table:
+        def column(self, name):
+            return Column({"label": [1, 0], "generator": [AIGC_GENERATOR_CODE, 0]}[name])
+
+    requested = []
+
+    def fake_read_table(path, *, columns):
+        requested.append((path, columns))
+        return Table()
+
+    import pyarrow.parquet as pq
+    monkeypatch.setattr(pq, "read_table", fake_read_table)
+    coordinates, total = read_aigc_coordinates([tmp_path / "one.parquet"])
+    assert requested == [(tmp_path / "one.parquet", ["label", "generator"])]
+    assert total == 2
+    assert coordinates[0] == ("one.parquet", 0, 1, AIGC_GENERATOR_CODE)

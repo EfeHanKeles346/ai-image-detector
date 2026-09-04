@@ -3738,6 +3738,11 @@ was scored or selected using model output.
   for original and social-Q75; counts score failures pessimistically; and bootstraps complete parents
   within label/source strata. No final row or aggregate metric exists yet. The acquisition,
   evaluation, shared benchmark and prior-final regression set passes 17/17 tests.
+- **Local StyleGAN2 reserve probe:** the on-disk AIGC release matches pinned revision
+  `c91d9024...5663`, contains the exact 60 shards/125,026 rows and exposes 1,997 AI rows with
+  generator code 14. The model-blind hash rank yields a 240-row reserve with identity SHA-256
+  `15e5c131...cc731`. The reusable reader requested only `label` and `generator`; image reads,
+  decoding, model loading and network transfer all remained zero. Ten focused E49 tests pass.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

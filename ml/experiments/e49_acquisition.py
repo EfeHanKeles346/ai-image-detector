@@ -38,6 +38,11 @@ AIGC_GENERATOR_CODE = 14
 AIGC_GENERATOR = "StyleGAN2"
 AIGC_TARGET = 200
 AIGC_RESERVE = 240
+AIGC_EXPECTED_SHARDS = 60
+AIGC_EXPECTED_ROWS = 125_026
+AIGC_EXPECTED_GENERATOR_ROWS = 1_997
+AIGC_LOCAL_ROOT = DATA_ROOT / "TheKernel01__AIGC-Detection-Benchmark"
+AIGC_LOCAL_REF = DATA_ROOT / ".hf_cache" / "hub" / "datasets--TheKernel01--AIGC-Detection-Benchmark" / "refs" / "main"
 
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 COMMONS_TARGET_PER_DEVICE = 100
@@ -179,6 +184,63 @@ def select_aigc_coordinates(
     return selected
 
 
+def read_aigc_coordinates(files: Sequence[Path]) -> tuple[list[tuple[str, int, int, int]], int]:
+    """Read only label/generator metadata from local Parquet shards."""
+    import pyarrow.parquet as pq
+
+    coordinates: list[tuple[str, int, int, int]] = []
+    total_rows = 0
+    for path in files:
+        table = pq.read_table(path, columns=["label", "generator"])
+        labels = table.column("label").to_pylist()
+        generators = table.column("generator").to_pylist()
+        if len(labels) != len(generators):
+            raise ValueError(f"E49 AIGC metadata columns changed: {path.name}")
+        coordinates.extend(
+            (path.name, row_index, int(label), int(generator))
+            for row_index, (label, generator) in enumerate(zip(labels, generators, strict=True))
+        )
+        total_rows += len(labels)
+    return coordinates, total_rows
+
+
+def probe_local_aigc(
+    root: Path = AIGC_LOCAL_ROOT, revision_ref: Path = AIGC_LOCAL_REF,
+) -> dict[str, Any]:
+    """Validate the pinned local source and freeze a model-blind StyleGAN2 reserve."""
+    files = sorted(path for path in (root / "data").glob("test-*.parquet")
+                   if not path.name.startswith("._"))
+    expected_names = [f"test-{index:05d}-of-00060.parquet" for index in range(AIGC_EXPECTED_SHARDS)]
+    if [path.name for path in files] != expected_names:
+        raise ValueError(f"E49 AIGC shard inventory changed: {len(files)}/{AIGC_EXPECTED_SHARDS}")
+    if revision_ref.read_text().strip() != AIGC_REVISION:
+        raise ValueError("E49 local AIGC revision changed")
+    coordinates, total_rows = read_aigc_coordinates(files)
+    generator_rows = sum(label == 1 and generator == AIGC_GENERATOR_CODE
+                         for _, _, label, generator in coordinates)
+    if total_rows != AIGC_EXPECTED_ROWS or generator_rows != AIGC_EXPECTED_GENERATOR_ROWS:
+        raise ValueError(
+            f"E49 local AIGC population changed: rows={total_rows}, StyleGAN2={generator_rows}"
+        )
+    reserve = select_aigc_coordinates(coordinates)
+    identity_raw = json.dumps(
+        [{"identity": row["identity"], "rank": row["rank"]} for row in reserve],
+        sort_keys=True, separators=(",", ":"),
+    ).encode()
+    return {
+        "schema_version": 1,
+        "state": "e49_local_aigc_metadata_validated_unscored",
+        "revision": AIGC_REVISION,
+        "shards": len(files),
+        "rows": total_rows,
+        "stylegan2_rows": generator_rows,
+        "reserve_rows": len(reserve),
+        "reserve_identity_sha256": hashlib.sha256(identity_raw).hexdigest(),
+        "image_column_read": False,
+        "model_loaded": False,
+    }
+
+
 def _request_json(session: requests.Session, params: Mapping[str, Any]) -> dict[str, Any]:
     for attempt in range(6):
         response = session.get(COMMONS_API, params=params, timeout=(20, 120))
@@ -242,10 +304,13 @@ def probe() -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("probe",))
+    parser.add_argument("command", choices=("probe", "probe-local-aigc"))
     args = parser.parse_args()
     if args.command == "probe":
-        print(json.dumps(probe(), indent=2, sort_keys=True))
+        result = probe()
+    else:
+        result = probe_local_aigc()
+    print(json.dumps(result, indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

@@ -4587,3 +4587,10 @@ pessimistically to class/source rates rather than disappearing. A regression tes
 that an explicit null error score was still being converted to a float; the implementation was
 corrected before any final data existed. The resulting 17-test acquisition/evaluation regression
 set passes, while E49 score and metric counts remain zero.
+
+The already-local AIGC benchmark was then verified rather than redownloaded. Its cache ref matches
+the pinned commit, all 60 Parquet shards are present, and a metadata-only scan counted 125,026 rows
+including 1,997 eligible StyleGAN2 examples. The frozen rank can therefore supply the required 200
+parents plus 40 reserves; the reserve identity digest is `15e5c131...cc731`. The new probe reads
+only `label` and `generator`, never the image column or a detector score. No E49 image was decoded
+and no network byte was spent.

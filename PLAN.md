@@ -775,6 +775,9 @@ it is not another development set and it cannot be used to repair E43-S.
       repeated uploaders and selects AIGC StyleGAN2 by Parquet row coordinates without reading image
       payloads. Four focused tests pass. Live probe reports the exact Datapoint revision but correctly
       refuses its gated payload (`GatedRepoError`); downloaded E49 image bytes remain zero.
+      **Local GAN checkpoint:** all 60 pinned AIGC shards reproduce 125,026 metadata rows and 1,997
+      eligible StyleGAN2 rows. A deterministic 240-row reserve is now reproducible from only the
+      `label`/`generator` columns; its identity digest is `15e5c131...cc731`. No image was decoded.
 - [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean

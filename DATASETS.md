@@ -299,6 +299,12 @@ AIGC archive and includes every newly transferred image byte.
 | `datapointai/text-2-image-human-preferences-2m` | revision `e1d8719a2d521eac6c62ee84f329afc2c03ec928`; metadata CC BY 4.0; image-output rights remain provider-specific | FINAL AI, 800: 160 each GPT Image 2 / Nano Banana 2 / Seedream 5 Pro / FLUX 2 / Ideogram 4 | August-2026 independent collection, fixed seed, 500 prompts in ten categories, current provider breadth and full-resolution output table | Contact-sharing gate must be accepted by the user first; evaluation/research only; no post-score source substitution |
 | `TheKernel01/AIGC-Detection-Benchmark` | revision `c91d9024a5a77ef06e2ec681b53f9caf08675663`; Apache-2.0; local 60-shard test release | FINAL AI, 200 StyleGAN2 (generator code 14) | Adds a GAN family from a source not used for E43-S training or E48/E50 selection; prevents “current diffusion only” success | Test-only; select bytes without reading scores; source-native format preserved; exact/dHash protected-role audit required |
 
+The local AIGC copy now reproduces that pinned Hub revision and all 60 shards. A metadata-only scan
+read exactly the `label` and `generator` columns: 125,026 total rows, of which 1,997 are label=AI and
+generator code 14 (StyleGAN2). The deterministic 240-row reserve identity digest is
+`15e5c1315d1411c1c106dc457166b2b097dd3753bcb357e35178f279a95cc731`. No image column or model
+score was read, and no network byte was required for this source.
+
 Every parent receives two paired conditions: `publisher_original` and deterministic `social_q75`
 (EXIF transpose, RGB, long side <=1080, JPEG q75, 4:2:0, metadata stripped). The conditions are
 reported separately and never counted as 4,000 independent samples. A source/label-stratified,
