@@ -403,6 +403,21 @@ downloading 67,649,942,401 bytes of source Parquets. The Hub card metadata says 
 README prose also mentions CC-BY-SA-4.0 plus non-commercial terms for proprietary subsets; this
 project keeps the stricter non-commercial boundary and must preserve attribution.
 
+#### E49-C capacity-repaired OpenFake successor — pre-identity-selection
+
+E49-C keeps the identical pinned OpenFake source and replaces only the underfilled Nano Banana Pro
+cell with exact model string `z-image-turbo`. This is a metadata-capacity repair, not score-driven
+source shopping: no OpenFake image or detector score exists. The already-validated continuous
+52,600-row Viewer prefix contains 270 GPT Image 2, 6,876 Z-Image Turbo, 222 Seedream v5.0, 4,624
+FLUX.2 Klein 9B and 2,045 Midjourney 7 eligible non-video fake rows, so all five preregistered
+192-row reserves are feasible without another metadata transfer.
+
+Selection will use the distinct `E49_C_OPENFAKE_V1` namespace and stop at the first complete
+100-row page where every cell has 192 rows. Only after all 960 identities are committed may fresh
+revision-bound Viewer asset URLs, byte sizes and geometry be accessed. This component remains
+non-training final evidence and must be paired with the frozen Commons REAL and local StyleGAN2
+components; it cannot independently establish balanced detection.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.

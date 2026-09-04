@@ -890,6 +890,28 @@ never E43-S scores. It becomes a final candidate only if every pre-score qualifi
       image bytes and detector scores remain zero. A successor may replace the underfilled cell only
       under a new preregistration. E49-A is unchanged and Dotting remains diagnostic-only.
 
+#### E49-C — capacity-repaired OpenFake successor, before identity selection
+
+E49-B failed only because Nano Banana Pro has 60 eligible images, not because of a detector score.
+E49-C is a new experiment and hash namespace. It replaces only that underfilled cell with
+`z-image-turbo`, which already has 6,876 eligible non-video rows in the independently cached first
+52,600 rows. Every other source, quota, filter and final gate remains unchanged.
+
+- [ ] Pin the same OpenFake revision/config/split/licence and reuse only the already-validated
+      continuous Viewer metadata prefix. Freeze 160 target +32 reserve rows each for GPT Image 2,
+      Z-Image Turbo, Seedream v5.0, FLUX.2 Klein 9B and Midjourney 7 under namespace
+      `E49_C_OPENFAKE_V1`, stopping at the first complete 100-row page where all cells reach 192.
+- [ ] Commit the 960 exact identities before resolving any asset. Then fetch fresh revision-bound
+      Viewer URLs only for those identities, bind response type/dimensions/exact byte lengths and
+      require OpenFake plus 2,706,581,778 Commons bytes to remain within 4 GiB.
+- [ ] Download only the bound OpenFake assets to LaCie with resume and exact receipt, decode and
+      exact/dHash-audit every reserve against protected roles, then freeze the first 160 clean rows
+      per family. Received Viewer JPEG is the declared publisher transport; derive paired Q75 only
+      after the parent manifest freezes.
+- [ ] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
+      AI and 200 local StyleGAN2 AI parents, each paired original/Q75. Commit one-shot E43-S score
+      streams before opening metrics and require all existing 20 gates without threshold/source repair.
+
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 
 ### Stage A — finish and prove Module 1

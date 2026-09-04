@@ -3843,6 +3843,21 @@ was scored or selected using model output.
   identities and stops with zero asset requests, image bytes, detector scores or metrics; no model
   may be silently substituted inside E49-B.
 
+### E49-C pre-registration — capacity-repaired OpenFake successor
+
+- **Only change:** replace E49-B's underfilled Nano Banana Pro cell (60/192) with exact
+  `z-image-turbo`. The choice is based only on source capacity: the validated first 52,600 rows
+  contain 6,876 eligible Z-Image rows. No OpenFake detector score has been created or inspected.
+- **Frozen cells:** GPT Image 2, Z-Image Turbo, Seedream v5.0, FLUX.2 Klein 9B and Midjourney 7;
+  160 target +32 reserve each, exact fake/non-video filter, first-complete-100-row-page stop and new
+  `E49_C_OPENFAKE_V1` hash namespace. Existing validated metadata may be reused without network.
+- **Order:** commit 960 identities; bind only their fresh Viewer asset URL/type/geometry/bytes and
+  global 4 GiB feasibility; transfer with exact receipt; decode/decontaminate; freeze 160 per family;
+  only then assemble the balanced six-AI-family +ten-REAL-device final.
+- **Immutable evaluation:** publisher/Viewer-received JPEG and deterministic social-Q75 remain paired
+  conditions. Exact E43-S/E50 thresholds and all 20 E49 gates remain fixed. No source replacement,
+  threshold repair, row removal or second metric opening is permitted after scoring begins.
+
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 
 - E17/E18 hard-code non-overlapping 128 px tiles capped at 36, then discard any manipulated image

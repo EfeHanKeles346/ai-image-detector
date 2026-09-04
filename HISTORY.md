@@ -4718,3 +4718,10 @@ transferred just 2,597,624 metadata bytes in 650 ranges, avoided all 67,649,942,
 bytes and cross-validated 52,600 Viewer rows. Zero identity, asset, image or model score was created.
 E49-B is archived without substitution; any replacement cell requires a separately preregistered
 successor.
+
+E49-C is now preregistered as that separate successor before identity selection. It replaces only
+Nano Banana Pro with `z-image-turbo`, based on population capacity rather than model performance:
+the already cross-validated continuous 52,600-row metadata prefix holds 6,876 eligible Z-Image rows,
+while all four retained cells also exceed 192. The new `E49_C_OPENFAKE_V1` namespace will freeze
+160+32 per cell at the first complete page. Asset URLs, image bytes and detector scores remain zero;
+all later byte, decontamination, pairing and 20-gate final rules remain unchanged.
