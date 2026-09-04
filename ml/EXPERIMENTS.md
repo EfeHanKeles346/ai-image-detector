@@ -3686,6 +3686,11 @@ was scored or selected using model output.
 - **E50 inference checkpoint:** exact E43-S scored 1,200/1,200 frozen DEVELOPMENT identities with
   full coverage and no failure or replacement. The 271,063-byte stream hashes to
   `07461b09...d5fd`; aggregate DEVELOPMENT metrics remain unopened pending a separate commit.
+- **E50 one-shot DEVELOPMENT — PASS:** all seven frozen gates pass without threshold change or
+  retry: coverage 1.0, AUC 0.9784, BA 0.9017, pooled/worst-camera REAL FP 0.0383/0.1818 and
+  pooled/worst-source AI recall 0.8417/0.6867. Per-source recall is FLUX.1 0.9867, SD3 0.9267,
+  StyleGAN 0.6867 and StyleGAN3 0.7667. The score stream remains `07461b09...d5fd`. This qualifies
+  E43-S for E49; it does not yet create Module-1 v1 or authorize a demo update.
 
 ### Module 1 completion and Module 2 re-entry contract
 

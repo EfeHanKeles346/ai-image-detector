@@ -4536,3 +4536,11 @@ The frozen E43-S candidate then scored all 1,200 E50 DEVELOPMENT rows with full 
 failure and no replacement. Its 271,063-byte raw stream hashes to `07461b09...d5fd`. Aggregate
 metrics are still unopened at this checkpoint, preserving a recoverable boundary between inference
 and the one-shot verdict.
+
+E50 passed all seven precommitted DEVELOPMENT gates on the first and only evaluation. Across 1,200
+new rows, AUC is 97.84%, balanced accuracy 90.17%, pooled authentic false accusation 3.83%, worst
+camera false accusation 18.18%, pooled AI recall 84.17% and worst-source recall 68.67%. FLUX.1 and
+SD3 transfer at 98.67% and 92.67%; the unseen GAN families reach 68.67% StyleGAN and 76.67%
+StyleGAN3. The threshold did not move and there was no retry. This is strong independent evidence,
+but Module 1 is deliberately not declared finished: E49's larger publisher/transport-separated
+final remains mandatory before Module-1 v1 or any demo replacement.

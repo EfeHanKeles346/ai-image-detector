@@ -735,11 +735,14 @@ evidence already vetoed inside E46. Treat this as model selection on CAL, not as
       threshold adjustment and second attempt. Contract SHA-256 `18ae708f...20f6` binds exact
       candidate, threshold, 1,200 identities and seven gates with score/metric counts at zero.
       Eight focused E48/E50 decision-boundary tests pass.
-- [ ] **One-shot E50 DEVELOPMENT:** score only E43-S on the untouched 600 FODB REAL +600 held-AI
+- [x] **One-shot E50 DEVELOPMENT — PASS:** score only E43-S on the untouched 600 FODB REAL +600 held-AI
       rows (FLUX.1, SD3, StyleGAN and StyleGAN3, 150 each). Apply the same seven gates once, with
       FODB camera pipeline as the worst-REAL unit. Archive pass or failure before any next step.
       **Inference checkpoint:** 1,200/1,200 rows scored with 100% coverage and no replacement;
       271,063-byte stream SHA-256 `07461b09...d5fd`. DEVELOPMENT metrics remain unopened.
+      The frozen threshold passed all seven gates on first use: AUC 97.84%, BA 90.17%, pooled
+      REAL FP 3.83%, worst camera FP 18.18%, pooled AI recall 84.17% and worst-source recall
+      68.67%. FLUX.1/SD3/StyleGAN/StyleGAN3 recall =98.67/92.67/68.67/76.67%. No retry or repair.
 - [ ] **E49 comprehensive independent final:** only an E50 DEVELOPMENT pass may bind the >=2,000
       row publisher-separated native + social/recompressed final already required below. A full
       ten-gate pass creates Module-1 v1 and may update the web demo; otherwise Module 1 stays open.
