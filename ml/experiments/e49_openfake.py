@@ -240,7 +240,32 @@ def bind() -> dict[str, Any]:
             break
     if stop_offset is None:
         missing = {model: counts[model] for model in MODEL_KEYS if counts[model] < RESERVE_PER_MODEL}
-        raise ValueError(f"E49-B OpenFake cannot fill preregistered cells: {missing}")
+        failure = {
+            "schema_version": 1,
+            "state": "e49_b_openfake_rejected_population_shortfall_unscored",
+            "role": "REJECTED_SOURCE_QUALIFICATION_ONLY",
+            "repository": REPO_ID,
+            "revision": REVISION,
+            "license": LICENSE,
+            "config": CONFIG,
+            "split": SPLIT,
+            "expected_split_rows": EXPECTED_ROWS,
+            "scanned_rows": len(scanned),
+            "eligible_counts": {model: counts[model] for model in MODEL_KEYS},
+            "required_per_model": RESERVE_PER_MODEL,
+            "missing_cells": missing,
+            "selected_rows": 0,
+            "image_assets_requested": 0,
+            "new_image_bytes_downloaded": 0,
+            "model_scores_created": 0,
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "boundary": (
+                "Preregistered source population failed before identity selection. No replacement "
+                "model, image access, detector access, metric or retry is permitted inside E49-B."
+            ),
+        }
+        _write_atomic(EVIDENCE, failure)
+        return failure
 
     selected = select_reserve(scanned)
     selected_counts = Counter(str(row["model"]) for row in selected)

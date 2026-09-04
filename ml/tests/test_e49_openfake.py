@@ -80,3 +80,17 @@ def test_selection_is_deterministic_and_source_stratified():
     assert len(first) == len(MODEL_KEYS) * 3
     assert {row["label"] for row in first} == {1}
     assert all(sum(row["model"] == model for row in first) == 3 for model in MODEL_KEYS)
+
+
+def test_selection_rejects_an_underfilled_cell_without_substitution():
+    rows = [{
+        "row_index": index,
+        "label": "fake",
+        "model": model,
+        "type": "image",
+        "release_date": "2026-01",
+        "width": 512,
+        "height": 512,
+    } for index, model in enumerate(MODEL_KEYS)]
+    with pytest.raises(ValueError, match="reserve unavailable"):
+        select_reserve(rows, reserve_per_model=2)
