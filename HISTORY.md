@@ -2863,6 +2863,14 @@ same 240 local StyleGAN2 coordinates are bound. V2 contract `1d4e184c...82aa` an
 `31c0e420...e171` remain untransferred and unscored. Commons transfer is deliberately deferred
 until the gated component exposes exact sizes; this avoids spending 2.71 GB on an impossible final.
 
+The free local work then continued with the frozen StyleGAN2 coordinates. A committed, tested
+realizer read only the required Parquet row groups, rechecked label=AI/generator=14, decoded all
+240 candidates and compared them against 15 protected-role manifests plus internal exact/dHash
+sets. There were zero decode failures and zero overlaps; the first 200 ranks froze at manifest
+`150ed354...ec99`, totaling 20,111,615 bytes. Every selected payload is 256x256 PNG, so the record
+now explicitly warns that format/geometry may be a shortcut and forbids treating this source alone
+as final evidence. No detector was loaded and no score was created.
+
 Production realization decoded all 3,996 iPhone parents as RGB with EXIF and found zero overlap
 with protected E30, passed peers, stored IPN or the exact 210-photo owner population. It still
 stopped, correctly, on one confirmed duplicate burst: byte-distinct `IMG_1290.JPG`/`IMG_1291.JPG`

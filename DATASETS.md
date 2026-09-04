@@ -329,6 +329,15 @@ identity SHA-256 is `31c0e420b694b1774382c1ab299d6115008656ac7fc1e3c5b0de7deecec
 No image transfer or detector score occurred; Commons download must still wait until Datapoint's
 exact selected byte total proves the complete E49 remains inside the global stop.
 
+The already-local StyleGAN2 reserve was then realized without network or detector access. All
+240/240 frozen Parquet coordinates reproduce label=AI/generator=14 and decode successfully; exact
+and dHash comparison with 15 protected-role manifests finds zero overlap. The first 200 clean rows
+are frozen in a 152,210-byte manifest at SHA-256
+`150ed35481bc0ae7653ff34eae879a227c1e359e4ab9ca772c681bbdef22ec99`; selected payloads total
+20,111,615 bytes. Every selected image is publisher-native 256x256 PNG. That homogeneous geometry
+is an explicit shortcut warning: StyleGAN2 contributes per-source GAN recall, never independent
+proof of balanced detection, and must remain accompanied by the five modern AI families.
+
 Every parent receives two paired conditions: `publisher_original` and deterministic `social_q75`
 (EXIF transpose, RGB, long side <=1080, JPEG q75, 4:2:0, metadata stripped). The conditions are
 reported separately and never counted as 4,000 independent samples. A source/label-stratified,

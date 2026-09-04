@@ -3760,6 +3760,11 @@ was scored or selected using model output.
   1,588,385,518 bytes for Datapoint, and freezes the same 240 local StyleGAN2 reserve coordinates.
   Contract `1d4e184c...82aa`, identity `31c0e420...e171`; zero images/scores. Do not spend the
   Commons transfer until Datapoint's exact bytes prove the full 4 GiB contract feasible.
+- **Local StyleGAN2 realization:** all 240 prebound Parquet coordinates reproduce label 1/generator
+  14 and decode with zero failure. Fifteen protected-role manifests plus internal exact/dHash checks
+  exclude zero rows; the first 200 ranks freeze at manifest `150ed354...ec99` /20,111,615 selected
+  bytes. All are 256x256 PNG, an explicit format/geometry shortcut warning. No detector score exists;
+  only per-source recall inside the complete six-family E49 may use this component.
 - **Datapoint access checkpoint:** the user submitted the gated contact-sharing request. Both the
   dataset page and authenticated CLI user `efehankeles` were checked; the page reports that author
   review is pending and the metadata-only probe still returns `GatedRepoError`. No retry was

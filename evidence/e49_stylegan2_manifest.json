@@ -1,0 +1,17 @@
+{
+  "counts": {
+    "decode_failures": 0,
+    "decoded": 240,
+    "identity_exclusions": 0,
+    "reserve": 240,
+    "selected": 200
+  },
+  "manifest_bytes": 152210,
+  "manifest_sha256": "150ed35481bc0ae7653ff34eae879a227c1e359e4ab9ca772c681bbdef22ec99",
+  "model_scores_created": 0,
+  "open_components_v2_sha256": "1d4e184c27cb87cf832045a23b6966f382673c3bcd8342a900c07130bd9182aa",
+  "protected_role_manifest_count": 15,
+  "role": "FINAL_AI_COMPONENT_PENDING_COMPLETE_E49",
+  "schema_version": 1,
+  "state": "e49_stylegan2_frozen_unscored"
+}

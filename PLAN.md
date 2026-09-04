@@ -792,6 +792,11 @@ it is not another development set and it cannot be used to repair E43-S.
       and reduces 1,100 Commons rows to 2,706,581,778 bytes, leaving 1,588,385,518 bytes of the
       global ceiling for Datapoint. The 240 local StyleGAN2 coordinates are also frozen. Contract
       SHA-256 `1d4e184c...82aa`, reserve identity `31c0e420...e171`; images/scores remain zero.
+      **Local GAN realization:** all 240 frozen coordinates decode with zero failure and zero
+      protected/internal overlap; the first 200 clean rows are fixed at manifest SHA-256
+      `150ed354...ec99`. All are publisher 256x256 PNG, so the format/geometry audit must flag the
+      shortcut risk and E49 may credit this source only alongside the other five AI families.
+      Selected bytes total 20,111,615; detector scores remain zero.
 - [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean
