@@ -4505,3 +4505,10 @@ DEVELOPMENT still has zero scores.
 Capped UNINA completed the fourth and last permitted E48 inference stream: 1,200/1,200 FIT+CAL
 rows, 257,330 bytes, SHA `e3d47527...4b3c01`. All four raw arms are now recoverable, while every
 aggregate metric and all 1,200 DEVELOPMENT rows remain unopened.
+
+Before opening those aggregate metrics, E48 froze decision contract `22154ab9...590e`. Only the
+300 authentic FIT rows may define each expert's empirical authentic-percentile map; four declared
+maximum-evidence combinations then compete on the 600-row CAL split under the already-recorded
+authentic-safety and AI-recall gates. FIT AI and DEVELOPMENT remain forbidden. Seven focused tests
+pass, and an all-candidates-fail result now leaves a durable failure report but no candidate
+artifact—so neither missing evidence nor a relaxed threshold can masquerade as progress.

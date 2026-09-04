@@ -1,0 +1,75 @@
+{
+  "calibration_metrics_opened": 0,
+  "candidates": {
+    "e46": [
+      "e46"
+    ],
+    "e46_unina": [
+      "e46",
+      "unina"
+    ],
+    "e46_univfd": [
+      "e46",
+      "univfd"
+    ],
+    "e46_univfd_unina": [
+      "e46",
+      "univfd",
+      "unina"
+    ]
+  },
+  "contract_bytes": 2151,
+  "contract_sha256": "22154ab9a0e3e4e4feb3928c5429a130c4b99ec087d98f2c41dab221bf14590e",
+  "development_scores_created": 0,
+  "e44_fusion_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+  "eligibility_and_development_gates": {
+    "balanced_accuracy_min": 0.85,
+    "coverage": 1.0,
+    "pooled_ai_recall_min": 0.8,
+    "pooled_real_false_ai_max": 0.1,
+    "roc_auc_min": 0.9,
+    "worst_ai_recall_min": 0.6,
+    "worst_camera_false_ai_max": 0.2
+  },
+  "fit": {
+    "direction": "higher detector score is more AI-like",
+    "per_arm_map": "sorted authentic scores; evidence=(left insertion rank+1)/(n+1)",
+    "rows": 300,
+    "rows_allowed": "FIT REAL only"
+  },
+  "forbidden": [
+    "FIT AI use",
+    "CAL fit",
+    "DEVELOPMENT access",
+    "signed/veto weight",
+    "post-CAL rule change",
+    "backbone update"
+  ],
+  "fusion": "maximum empirical authentic-percentile evidence; monotone in every arm",
+  "manifest_sha256": "1404a3ff5cfde4a343e1368b995ab1ec13135811c569134dfffaabf40c1b5b68",
+  "schema_version": 1,
+  "score_stream_sha256": {
+    "dda": "7ebc7831fe59bfcc91fe3bef6d2a0b3ed6504dc038785b63e9c0132a3cb4a23b",
+    "generalist": "f2a1be3bf428952a2f8ae166d6bc0f47ba13559607aebb109e4c5adfdd137cf7",
+    "unina": "e3d47527fffe98a7bec44cef8255339fe86db1cac9e71ad214ed51b6704b3c01",
+    "univfd": "e768d591839644c4570ae52bd195bc0b03b14bd22695e7b3bcce99769e81d635"
+  },
+  "selection": {
+    "licence_margin": 0.02,
+    "licence_rule": "prefer eligible e46_univfd if within 0.02 of an UNINA winner on both AI recall measures",
+    "ranking": [
+      "worst AI-source recall",
+      "pooled AI recall",
+      "ROC AUC",
+      "balanced accuracy"
+    ],
+    "tie_break": [
+      "e46",
+      "e46_univfd",
+      "e46_unina",
+      "e46_univfd_unina"
+    ]
+  },
+  "state": "e48_decision_contract_frozen_before_score_interpretation",
+  "threshold": "lowest CAL threshold with pooled REAL FP<=10% and worst camera-pipeline FP<=20%"
+}

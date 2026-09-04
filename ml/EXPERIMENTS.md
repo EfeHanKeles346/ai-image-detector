@@ -3659,6 +3659,12 @@ was scored or selected using model output.
 - **Capped-UNINA FIT+CAL arm:** 1,200/1,200 rows with full coverage; 257,330-byte stream
   SHA-256 `e3d47527...4b3c01`. All four FIT+CAL arms are complete; DEVELOPMENT rows and
   aggregate metrics remain zero.
+- **Decision contract:** SHA-256 `22154ab9...590e` was written before reading aggregate
+  performance. It permits only 300 FIT REAL rows to build each empirical map and 600 CAL rows to
+  choose among the four predeclared maximum-evidence candidates. It freezes the authentic-safety
+  threshold, seven gates, ranking and MIT-licence preference; FIT AI and DEVELOPMENT are forbidden.
+  Seven focused score/decision tests pass. If no candidate qualifies, measurements are archived
+  with no deployable artifact rather than being lost or relaxed post hoc.
 
 ### Module 1 completion and Module 2 re-entry contract
 

@@ -700,6 +700,11 @@ all four backbones/scores remain frozen.
       **Capped-UNINA FIT+CAL arm:** 1,200/1,200 rows, 100% coverage; 257,330-byte stream
       SHA-256 `e3d47527...4b3c01`. All four permitted arms are complete; DEVELOPMENT rows
       and aggregate metrics remain zero.
+      **Decision lock:** contract SHA-256 `22154ab9...590e` fixes the empirical-percentile
+      formula, four nested monotone candidates, authentic-safety threshold rule, seven CAL/DEV
+      gates, ranking and MIT-licence preference before any aggregate score is interpreted.
+      FIT AI and all DEVELOPMENT access remain forbidden. Seven focused score/decision tests pass;
+      a no-candidate outcome is persisted as a clean failure instead of producing an artifact.
 - [ ] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
       authentic-image percentile. Compare E46, E46+UnivFD, E46+UNINA and all-three using the
       maximum expert percentile. Because `max` is monotone, a low irrelevant-specialist score can
