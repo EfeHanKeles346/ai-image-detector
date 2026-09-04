@@ -4790,6 +4790,13 @@ remaining pages while preserving the previously measured public limit of two con
 requests, followed by the same eight exact-body workers. Frozen identities, expected bytes, decode
 rules and model boundary are unchanged; all 521 bodies will be revalidated rather than redownloaded.
 
+The faster resume reached 850 verified bodies and then correctly refused Seedream row 43,863 even
+though its HTTP headers exactly reproduced the asset contract. Diagnosis found one pre-score guard
+mismatch: its already-bound 6,144 x 11,008 geometry is 67,633,152 pixels, making it the only reserve
+row above the inherited 50 MP default. The decoder limit is therefore raised only to that exact
+frozen maximum; the identity is neither removed nor replaced. The rejected body was not admitted,
+and transfer errors now retain their actual validation cause. No detector or metric was opened.
+
 The complete E49-C assembly gate was also implemented before component realization. It binds the
 future exact Commons and OpenFake manifests plus the already-frozen StyleGAN2 component, creates the
 200 missing StyleGAN2 Q75 children without score-dependent replacement, and fails on protected or

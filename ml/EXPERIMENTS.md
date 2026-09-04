@@ -3875,6 +3875,11 @@ was scored or selected using model output.
   between atomic files. Resume resolves only the remaining preselected pages in batches of 24 with
   the same measured two-request ceiling, then uses the unchanged eight body workers. Identities,
   expected bytes, validation and score boundary do not change; existing payloads are revalidated.
+- **Frozen-geometry correction:** selected Seedream row 43,863 is 6,144 x 11,008, the sole reserve
+  member above the inherited 50 MP decoder guard. That geometry was already known and frozen by the
+  no-body contract, so the guard is raised only to its exact 67,633,152 pixels. The row remains in
+  place; its rejected HTTP 200 attempt created no admitted file, score or metric. Future transfer
+  failures now disclose their validation cause instead of only the HTTP status.
 - **Frozen realization method:** after the exact transfer receipt exists, re-open all 960 files and
   reproduce byte hash, decoded format, dimensions and full coverage. Compare original SHA-256 and
   dHash against every protected role, the scored Dotting diagnostic and the frozen StyleGAN2 final

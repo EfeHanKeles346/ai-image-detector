@@ -949,6 +949,10 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       measured as the bottleneck and stopped cleanly. Resume keeps every identity/byte rule and the
       already-established maximum of two Viewer requests, but resolves them in 24-page batches
       before the same eight body workers. No completed payload is fetched twice.
+      **Frozen-geometry correction:** row 43,863 is the sole reserve image above the inherited
+      50 MP safety default (6,144 x 11,008 =67,633,152 pixels), a dimension already bound before
+      body access. Raise the decoder ceiling only to that exact frozen maximum; do not remove or
+      replace the row. The HTTP 200 body was rejected before admission and no score exists.
 - [ ] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
       AI and 200 local StyleGAN2 AI parents, each paired original/Q75. Commit one-shot E43-S score
       streams before opening metrics and require all existing 20 gates without threshold/source repair.

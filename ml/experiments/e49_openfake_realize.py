@@ -28,7 +28,8 @@ from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 
 IDENTITY_CONTRACT_SHA256 = "0abae56af862c9b402ef5ef594a21181cbbb7f72ba7495a491b0389bfdfcd702"
 TARGET_PER_MODEL = 160
-MAX_PIXELS = 50_000_000
+# Exact largest geometry already frozen by the no-body asset contract (row 43,863).
+MAX_PIXELS = 67_633_152
 ALLOWED_FORMATS = {"JPEG", "PNG", "WEBP"}
 
 ROOT = DATA_ROOT / "e49" / "openfake"

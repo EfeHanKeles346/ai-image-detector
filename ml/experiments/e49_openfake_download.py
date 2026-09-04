@@ -27,7 +27,8 @@ from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 ASSET_CONTRACT_SHA256 = "7b71449e0e7d9ea22973f021af2d4ec49cc395e3fffe6816ffc123274a571415"
 EXPECTED_ROWS = 960
 EXPECTED_BYTES = 241_736_938
-MAX_PIXELS = 50_000_000
+# Exact largest geometry already frozen by the no-body asset contract (row 43,863).
+MAX_PIXELS = 67_633_152
 ALLOWED_DECODED_FORMATS = {"JPEG", "PNG", "WEBP"}
 RESOLVE_WORKERS = 2
 RESOLVE_BATCH_PAGES = 24
@@ -130,6 +131,7 @@ def _download(item: Mapping[str, Any]) -> dict[str, Any]:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(".jpg.part")
     last_status = "unknown"
+    last_error: Exception | None = None
     for attempt in range(6):
         try:
             with requests.get(
@@ -155,12 +157,15 @@ def _download(item: Mapping[str, Any]) -> dict[str, Any]:
                     raise ValueError("asset body length differs from response")
                 temporary.replace(path)
             return inspect_file(path, row)
-        except (requests.RequestException, OSError, ValueError):
+        except (requests.RequestException, OSError, ValueError) as error:
+            last_error = error
             if temporary.exists():
                 temporary.unlink()
             if attempt == 5:
                 break
-    raise RuntimeError(f"E49-C download failed at row {row['row_index']}, HTTP {last_status}")
+    raise RuntimeError(
+        f"E49-C download failed at row {row['row_index']}, HTTP {last_status}: {last_error}"
+    )
 
 
 def _unexpected_files(expected: set[Path]) -> list[str]:
