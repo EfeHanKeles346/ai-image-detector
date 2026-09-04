@@ -98,11 +98,11 @@ def extract_asset_urls(
     return output
 
 
-def _fetch_page(offset: int) -> Mapping[str, Any]:
+def _fetch_rows(offset: int, length: int, *, attempts: int) -> Mapping[str, Any]:
     params = {"dataset": REPO_ID, "config": CONFIG, "split": "test",
-              "offset": offset, "length": PAGE_SIZE}
+              "offset": offset, "length": length}
     last_status = "unknown"
-    for attempt in range(8):
+    for attempt in range(attempts):
         try:
             response = requests.get(
                 ROWS_ENDPOINT,
@@ -114,10 +114,25 @@ def _fetch_page(offset: int) -> Mapping[str, Any]:
             response.raise_for_status()
             return response.json()
         except (requests.RequestException, json.JSONDecodeError):
-            if attempt == 7:
+            if attempt == attempts - 1:
                 break
             time.sleep(min(2 ** attempt, 45))
-    raise RuntimeError(f"E49-C Viewer page {offset} failed with HTTP {last_status}")
+    raise RuntimeError(f"E49-C Viewer rows {offset}+{length} failed with HTTP {last_status}")
+
+
+def _resolve_wanted_assets(
+    offset: int, wanted: Mapping[int, Mapping[str, Any]],
+) -> tuple[list[dict[str, Any]], str]:
+    """Fall back to exact selected rows when one unrelated row breaks a 100-row page."""
+    try:
+        payload = _fetch_rows(offset, PAGE_SIZE, attempts=2)
+        return extract_asset_urls(payload, offset=offset, wanted=wanted), "page100"
+    except RuntimeError:
+        output = []
+        for row_index, expected in sorted(wanted.items()):
+            payload = _fetch_rows(row_index, 1, attempts=6)
+            output.extend(extract_asset_urls(payload, offset=row_index, wanted={row_index: expected}))
+        return output, "selected_row_fallback"
 
 
 def _head_asset(item: Mapping[str, Any]) -> dict[str, Any]:
@@ -191,13 +206,17 @@ def bind_assets() -> dict[str, Any]:
             offset: wanted for offset, wanted in batch
             if any(not (HEAD_CACHE / f"{index:06d}.json").is_file() for index in wanted)
         }
-        with ThreadPoolExecutor(max_workers=PAGE_FETCH_WORKERS) as pool:
-            futures = {offset: pool.submit(_fetch_page, offset) for offset in need_page}
-            payloads = {offset: future.result() for offset, future in futures.items()}
         items = []
+        with ThreadPoolExecutor(max_workers=PAGE_FETCH_WORKERS) as pool:
+            futures = {
+                offset: pool.submit(_resolve_wanted_assets, offset, wanted)
+                for offset, wanted in need_page.items()
+            }
+            resolved = {offset: future.result() for offset, future in futures.items()}
         for offset, wanted in batch:
-            if offset in payloads:
-                items.extend(extract_asset_urls(payloads[offset], offset=offset, wanted=wanted))
+            if offset in resolved:
+                current, _method = resolved[offset]
+                items.extend(current)
             else:
                 items.extend({"row": row, "url": ""} for row in wanted.values())
         with ThreadPoolExecutor(max_workers=HEAD_WORKERS) as pool:
@@ -230,6 +249,7 @@ def bind_assets() -> dict[str, Any]:
         "selected_rows": len(heads),
         "selected_counts": dict(sorted(counts.items())),
         "viewer_pages_requested": len(by_page),
+        "asset_resolution_methods": ["page100", "selected_row_fallback_on_page_failure"],
         "asset_head_requests": len(heads),
         "asset_urls_stored": 0,
         "openfake_expected_bytes": openfake_bytes,
@@ -246,7 +266,7 @@ def bind_assets() -> dict[str, Any]:
     evidence = {key: payload[key] for key in (
         "schema_version", "state", "role", "identity_contract_sha256", "repository", "revision",
         "selected_rows", "selected_counts", "viewer_pages_requested", "asset_head_requests",
-        "asset_urls_stored", "openfake_expected_bytes", "commons_expected_bytes",
+        "asset_resolution_methods", "asset_urls_stored", "openfake_expected_bytes", "commons_expected_bytes",
         "global_expected_network_bytes", "global_network_ceiling_bytes", "global_headroom_bytes",
         "new_image_bytes_downloaded", "model_scores_created",
     )}

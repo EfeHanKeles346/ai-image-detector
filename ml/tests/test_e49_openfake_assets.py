@@ -3,6 +3,7 @@ from __future__ import annotations
 import pytest
 
 from experiments.e49_openfake import REVISION
+from experiments import e49_openfake_assets as assets
 from experiments.e49_openfake_assets import ALLOWED_HEAD_CONTENT_TYPES, extract_asset_urls
 
 
@@ -53,3 +54,26 @@ def test_asset_head_allows_viewer_s3_generic_binary_type():
     assert "image/jpeg" in ALLOWED_HEAD_CONTENT_TYPES
     assert "binary/octet-stream" in ALLOWED_HEAD_CONTENT_TYPES
     assert "text/html" not in ALLOWED_HEAD_CONTENT_TYPES
+
+
+def test_asset_resolution_falls_back_to_only_the_selected_row(monkeypatch):
+    index = 91_397
+    expected = {
+        "record_id": f"openfake:core:test:{index}",
+        "row_index": index,
+        "model": "gpt-image-2",
+        "release_date": "2026-04",
+        "width": 1024,
+        "height": 768,
+    }
+
+    def fake_fetch(offset: int, length: int, *, attempts: int):
+        if length == 100:
+            raise RuntimeError("broken unrelated page row")
+        assert offset == index and length == 1 and attempts == 6
+        return {"num_rows_total": 91_398, "partial": False, "rows": [_row(index)]}
+
+    monkeypatch.setattr(assets, "_fetch_rows", fake_fetch)
+    found, method = assets._resolve_wanted_assets(index, {index: expected})
+    assert method == "selected_row_fallback"
+    assert found[0]["row"] == expected
