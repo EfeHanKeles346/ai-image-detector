@@ -373,6 +373,14 @@ The complete repository is about 3.44 TB and the 13 test Parquets are roughly 5 
 is an acceptable acquisition unit. The official Hugging Face Dataset Viewer `/rows` API can expose
 individual revision-bound examples without transferring a whole shard.
 
+The Viewer successfully cached the first 51,900 ordered rows, then repeated 429/502/503 responses
+made it unsuitable for a dependable full population audit. Before any detector access or complete
+population result, the transport rule was amended to permit exact-revision HTTP range projection of
+only `label`, `model`, `type` and `release_date` from the 13 source Parquets. This is not a shard
+download: every returned metadata byte is counted and neither the nested image payload nor prompt
+column may be requested. The original row order, five cells, quotas, hash namespace and first-
+complete-page stop rule remain unchanged.
+
 The candidate cells are the exact publisher model strings `gpt-image-2`, `nano-banana-pro`,
 `seedream-v5.0`, `flux.2-klein-9b` and `midjourney-7`. A deterministic metadata-prefix scan will
 freeze 160 target +32 reserve identities per model before image or detector access. Prompts and

@@ -871,7 +871,11 @@ never E43-S scores. It becomes a final candidate only if every pre-score qualifi
 - [ ] Pin ungated CC-BY-NC-4.0 `ComplexDataLab/OpenFake` revision
       `3fd1109dc3258874243fa31c5bda9ee24260163b`, `core/test` and its exact 91,398 rows. Use only
       official Hugging Face Dataset Viewer `/rows`, whose asset path must embed that exact revision;
-      never download a 5+ GB Parquet shard.
+      never download a 5+ GB Parquet shard. **Pre-result reliability amendment:** Viewer cached
+      51,900 ordered rows but repeated 429/502/503 responses prevented a dependable full count.
+      Exact-revision HTTP byte ranges may therefore project only `label`, `model`, `type` and
+      `release_date` from the 13 source Parquets. Range bytes must be counted; image/prompt columns,
+      row order, model cells, quotas, rank and stop rule may not change.
 - [ ] Scan metadata in deterministic 100-row pages, cached without prompts or expiring asset URLs,
       until every exact model cell has 192 rows: GPT Image 2, Nano Banana Pro, Seedream v5.0,
       FLUX.2 Klein 9B and Midjourney 7. Require label `fake` and non-video type; freeze 160 target

@@ -3822,6 +3822,10 @@ was scored or selected using model output.
   `3fd1109dc3258874243fa31c5bda9ee24260163b`, `core/test`, 91,398 rows. Full Parquet shards are
   forbidden; only official Dataset Viewer `/rows` pages and revision-bound individual assets may be
   used.
+- **Pre-result transport amendment:** `/rows` preserved 51,900 ordered rows but repeatedly failed
+  with public-service 429/502/503 responses. Exact pinned Parquet HTTP ranges may now project only
+  four scalar metadata columns, with transferred bytes instrumented. Image bytes and prompts remain
+  forbidden. This changes no row order, cell, quota, rank, stop rule or detector boundary.
 - **Blind qualification:** scan 100-row pages in increasing offset and stop at the first complete
   page where each exact cell has 192 eligible fake, non-video rows: GPT Image 2, Nano Banana Pro,
   Seedream v5.0, FLUX.2 Klein 9B and Midjourney 7. Cache only compact metadata, then rank identities

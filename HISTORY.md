@@ -4703,3 +4703,10 @@ pages until five exact modern-generator cells each reach 192 eligible rows, then
 excluded. Only after identities are immutable may fresh asset sizes be bound against the unchanged
 4 GiB ceiling. This is a separate E49-B candidate, not a rewrite of E49-A; Dotting remains a narrow
 diagnostic and no OpenFake image, score or training row exists at this checkpoint.
+
+The OpenFake Viewer metadata scan then cached 51,900 exact ordered rows before repeated HTTP
+429/502/503 failures made completion through that public service unreliable. No contract, image or
+score was created. Before knowing the complete model populations, the transport rule was amended:
+the same pinned Parquets may be read by measured HTTP byte ranges for only `label`, `model`, `type`
+and `release_date`. Full shards, image payloads and prompts remain forbidden, while row order, five
+cells, 192-row quotas, hash ranking and the first-complete-page stop rule stay frozen.
