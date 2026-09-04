@@ -3656,6 +3656,9 @@ was scored or selected using model output.
   `7ebc7831...b4a23b`. Raw inference only; DEVELOPMENT rows and aggregate metrics remain zero.
 - **UnivFD FIT+CAL arm:** 1,200/1,200 rows with full coverage; 259,689-byte stream SHA-256
   `e768d591...81d635`. Raw inference only; DEVELOPMENT rows and aggregate metrics remain zero.
+- **Capped-UNINA FIT+CAL arm:** 1,200/1,200 rows with full coverage; 257,330-byte stream
+  SHA-256 `e3d47527...4b3c01`. All four FIT+CAL arms are complete; DEVELOPMENT rows and
+  aggregate metrics remain zero.
 
 ### Module 1 completion and Module 2 re-entry contract
 

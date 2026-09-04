@@ -4501,3 +4501,7 @@ DEVELOPMENT score count is still zero.
 MIT-licensed UnivFD then completed the same 1,200 FIT+CAL rows. Its 259,689-byte stream hashes to
 `e768d591...81d635`. The UNINA arm and all fitted percentile/threshold metrics remain unopened;
 DEVELOPMENT still has zero scores.
+
+Capped UNINA completed the fourth and last permitted E48 inference stream: 1,200/1,200 FIT+CAL
+rows, 257,330 bytes, SHA `e3d47527...4b3c01`. All four raw arms are now recoverable, while every
+aggregate metric and all 1,200 DEVELOPMENT rows remain unopened.

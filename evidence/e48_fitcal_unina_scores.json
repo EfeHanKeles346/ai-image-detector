@@ -1,0 +1,12 @@
+{
+  "CAL": 600,
+  "DEVELOPMENT": 0,
+  "FIT": 600,
+  "bytes": 257330,
+  "coverage": 1.0,
+  "manifest_sha256": "1404a3ff5cfde4a343e1368b995ab1ec13135811c569134dfffaabf40c1b5b68",
+  "rows": 1200,
+  "schema_version": 1,
+  "sha256": "e3d47527fffe98a7bec44cef8255339fe86db1cac9e71ad214ed51b6704b3c01",
+  "state": "e48_fitcal_unina_scores_complete"
+}
