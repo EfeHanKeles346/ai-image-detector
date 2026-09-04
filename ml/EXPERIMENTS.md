@@ -3870,6 +3870,13 @@ was scored or selected using model output.
   8,770: `.jpg` Viewer path and generic MIME wrap valid 2,048-square PNG bytes. Keep the row and
   exact received bytes; admit only decoded JPEG/PNG/WebP and expose format counts per source. This
   occurred before decontamination/model access; 201 already-validated files remain resumable.
+- **Frozen realization method:** after the exact transfer receipt exists, re-open all 960 files and
+  reproduce byte hash, decoded format, dimensions and full coverage. Compare original SHA-256 and
+  dHash against every protected role, the scored Dotting diagnostic and the frozen StyleGAN2 final
+  component; also exclude within-reserve duplicates. Walk the already-bound rank order per family,
+  generate fixed 1080-long-side JPEG-Q75 children, reject protected/duplicate children, and require
+  exactly 160 parents plus 160 children per family. No detector import, score or metric is allowed.
+  Twenty-one focused E49 tests pass before this production step.
 
 ### Gated-source approval audit — route decision before any image access
 

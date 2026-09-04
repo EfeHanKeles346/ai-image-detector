@@ -4752,3 +4752,12 @@ selected Seedream row 8,770. The Viewer path ends in `.jpg` and S3 declares gene
 7,460,595-byte body is a valid 2,048 x 2,048 RGBA PNG. The row was not removed and no detector was
 loaded. The transport contract now preserves received bytes while permitting only decoded JPEG,
 PNG or WebP and requires per-source format/geometry disclosure; resume will reuse the 201 files.
+
+While the exact transfer resumed, the next model-blind gate was implemented and committed before
+production realization. It hard-binds the identity and download receipts, revalidates every payload
+hash/format/geometry, compares original SHA-256+dHash against all protected roles plus the scored
+Dotting diagnostic and selected StyleGAN2 final component, and applies only the preregistered rank
+order. Fixed 1080-long-side JPEG-Q75 children receive their own protected/internal collision check.
+The command refuses anything except 160 clean parent-child pairs per modern family and records
+format/geometry disclosure. Twenty-one focused E49 tests pass; no OpenFake detector score or metric
+has been created by this checkpoint.

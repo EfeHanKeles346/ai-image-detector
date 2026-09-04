@@ -927,7 +927,11 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       after the parent manifest freezes. **Decode amendment from first transfer, before scoring:**
       row 8,770 has a `.jpg` Viewer path/generic MIME but valid PNG bytes. Preserve the body and
       accept only decoded JPEG/PNG/WebP; report per-source format/geometry so this shortcut cannot
-      be hidden.
+      be hidden. **Pre-realization implementation checkpoint:** the receipt-bound realization now
+      validates all 960 payload hashes/formats/geometries, compares SHA-256+dHash against protected
+      roles plus Dotting and StyleGAN2 component manifests, applies the frozen rank order and creates
+      deterministic 1080-long-side JPEG-Q75 children. It requires exactly 160 clean parents per
+      family and refuses partial quotas; 21 focused E49 tests pass before production execution.
 - [ ] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
       AI and 200 local StyleGAN2 AI parents, each paired original/Q75. Commit one-shot E43-S score
       streams before opening metrics and require all existing 20 gates without threshold/source repair.
