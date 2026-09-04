@@ -33,6 +33,8 @@ MAX_NETWORK_BYTES = 4 * 1024**3
 MAX_ASSET_BYTES = 16 * 1024**2
 EXPECTED_ROWS_SELECTED = 960
 ALLOWED_HEAD_CONTENT_TYPES = {"image/jpeg", "binary/octet-stream", "application/octet-stream"}
+PAGE_FETCH_WORKERS = 4
+HEAD_WORKERS = 12
 
 ROOT = DATA_ROOT / "e49" / "openfake"
 HEAD_CACHE = ROOT / "asset_heads"
@@ -106,7 +108,7 @@ def _fetch_page(offset: int) -> Mapping[str, Any]:
                 ROWS_ENDPOINT,
                 params=params,
                 headers={"User-Agent": "PixelProof-E49C/1.0 asset-head-audit"},
-                timeout=(15, 90),
+                timeout=(10, 30),
             )
             last_status = str(response.status_code)
             response.raise_for_status()
@@ -182,18 +184,28 @@ def bind_assets() -> dict[str, Any]:
         by_page[(row_index // PAGE_SIZE) * PAGE_SIZE][row_index] = row
 
     heads: list[dict[str, Any]] = []
-    for page_number, (offset, wanted) in enumerate(sorted(by_page.items()), start=1):
-        missing = [index for index in wanted if not (HEAD_CACHE / f"{index:06d}.json").is_file()]
-        if missing:
-            items = extract_asset_urls(_fetch_page(offset), offset=offset, wanted=wanted)
-            with ThreadPoolExecutor(max_workers=6) as pool:
-                current = list(pool.map(_head_asset, items))
-        else:
-            current = [_head_asset({"row": row, "url": ""}) for row in wanted.values()]
-        heads.extend(current)
-        if page_number % 25 == 0 or page_number == len(by_page):
+    pages = sorted(by_page.items())
+    for batch_start in range(0, len(pages), PAGE_FETCH_WORKERS):
+        batch = pages[batch_start:batch_start + PAGE_FETCH_WORKERS]
+        need_page = {
+            offset: wanted for offset, wanted in batch
+            if any(not (HEAD_CACHE / f"{index:06d}.json").is_file() for index in wanted)
+        }
+        with ThreadPoolExecutor(max_workers=PAGE_FETCH_WORKERS) as pool:
+            futures = {offset: pool.submit(_fetch_page, offset) for offset in need_page}
+            payloads = {offset: future.result() for offset, future in futures.items()}
+        items = []
+        for offset, wanted in batch:
+            if offset in payloads:
+                items.extend(extract_asset_urls(payloads[offset], offset=offset, wanted=wanted))
+            else:
+                items.extend({"row": row, "url": ""} for row in wanted.values())
+        with ThreadPoolExecutor(max_workers=HEAD_WORKERS) as pool:
+            heads.extend(pool.map(_head_asset, items))
+        completed_pages = batch_start + len(batch)
+        if completed_pages % 24 == 0 or completed_pages == len(pages):
             print(
-                f"E49-C asset HEAD pages {page_number}/{len(by_page)}, rows {len(heads)}/{len(selected)}",
+                f"E49-C asset HEAD pages {completed_pages}/{len(by_page)}, rows {len(heads)}/{len(selected)}",
                 flush=True,
             )
 
