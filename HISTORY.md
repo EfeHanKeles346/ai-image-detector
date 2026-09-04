@@ -5063,3 +5063,10 @@ left-greater-than-right comparator yielded `46c6...3277`, while the later shared
 inverse `b919...cd88`. This is a hash-convention mismatch, not data corruption. The rerun preserves
 the pinned E42 hash for intentional AI-CAL reuse and expands protected checks to both complementary
 64-bit conventions. No detector, threshold or DEVELOPMENT data informed the correction.
+
+The next restart reached the new SCMI30 overlap gate and stopped before CAL/evidence on
+`D17_rnd_150.jpg`: its dHash is the degenerate all-zero value (all-one under the historical
+direction), shared by two unrelated protected images. Exact SHA-256 differs, and fixed 64-bit pHash
+distances are 31 and 36 versus the predeclared <=4 near-duplicate boundary. E51 therefore uses dHash
+as a cheap collision candidate and pHash as confirmation; exact, uncheckable or confirmed-near
+matches still fail. This repairs identity precision only and uses no model score or DEVELOPMENT row.

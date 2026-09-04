@@ -1142,6 +1142,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       stopped on the first historical AI parent: SHA-256, bytes and geometry matched, but E42 used
       the inverse left-to-right comparator from the current shared helper. Preserve the pinned E42
       value for reused AI-CAL and protect both 64-bit conventions for new-source overlap checks.
+      **Perceptual-collision confirmation:** the corrected run then stopped on an SCMI30 row whose
+      dHash is all-zero/all-one and collides with two unrelated protected images. Exact SHA differs;
+      pHash distances are 31 and 36, far above the <=4 near-duplicate threshold. Treat exact dHash
+      as a candidate filter and require pHash confirmation; uncheckable or <=4 matches still fail.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered

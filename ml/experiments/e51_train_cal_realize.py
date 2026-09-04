@@ -12,8 +12,10 @@ from typing import Any, Iterable, Mapping, Sequence
 import zipfile
 
 from PIL import Image, ImageOps
+import numpy as np
+from scipy.fft import dctn
 
-from experiments.e48_manifest import _protected_role_hashes
+from experiments.e48_manifest import PROTECTED_ROLE_PATHS, _protected_role_hashes
 from experiments.e51_realization import (
     CONTRACT,
     E42_MANIFEST,
@@ -104,6 +106,24 @@ def _q75(rgb: Image.Image) -> bytes:
     return output.getvalue()
 
 
+def _phash_image(image: Image.Image) -> int:
+    pixels = np.asarray(
+        image.convert("L").resize((32, 32), Image.Resampling.LANCZOS), dtype=np.float32
+    )
+    coefficients = dctn(pixels, norm="ortho")[:8, :8].ravel()
+    bits = coefficients[1:] > np.median(coefficients[1:])
+    value = 0
+    for bit in bits:
+        value = (value << 1) | int(bit)
+    return value
+
+
+def _phash_path(path: Path) -> int:
+    with Image.open(path) as opened:
+        opened.load()
+        return _phash_image(ImageOps.exif_transpose(opened).convert("RGB"))
+
+
 def select_clean_scimd(
     rows: Sequence[Mapping[str, Any]],
     protected_exact: set[str],
@@ -141,19 +161,31 @@ def select_clean_scimd(
     return selected, dict(sorted(reasons.items()))
 
 
-def _protected() -> tuple[set[str], set[str], list[dict[str, str]]]:
+def _protected() -> tuple[
+    set[str], set[str], list[dict[str, str]], dict[str, list[str]],
+]:
     exact, perceptual, sources = _protected_role_hashes()
-    for path in EXTRA_PROTECTED:
+    dhash_paths: dict[str, list[str]] = defaultdict(list)
+    for path in tuple(PROTECTED_ROLE_PATHS) + EXTRA_PROTECTED:
         if not path.is_file():
             continue
         raw = path.read_bytes()
         payload = json.loads(raw)
-        for row in payload.get("rows") or []:
+        rows = []
+        for key in ("rows", "records", "e35_rows"):
+            if isinstance(payload.get(key), list):
+                rows.extend(row for row in payload[key] if isinstance(row, Mapping))
+        for row in rows:
             if row.get("sha256"):
                 exact.add(str(row["sha256"]))
             if row.get("dhash"):
-                perceptual.add(str(row["dhash"]))
-        sources.append({"path": str(path), "sha256": hashlib.sha256(raw).hexdigest()})
+                value = str(row["dhash"])
+                perceptual.add(value)
+                image_path = Path(str(row.get("path", "")))
+                if image_path.is_file():
+                    dhash_paths[value].append(str(image_path))
+        if path in EXTRA_PROTECTED:
+            sources.append({"path": str(path), "sha256": hashlib.sha256(raw).hexdigest()})
     # Historical manifests use both left>right and right>left dHash conventions.
     # Their 64-bit values are complements; protecting both avoids a false non-overlap.
     complements = set()
@@ -164,7 +196,15 @@ def _protected() -> tuple[set[str], set[str], list[dict[str, str]]]:
             except ValueError:
                 continue
     perceptual.update(complements)
-    return exact, perceptual, sources
+    for value, paths in list(dhash_paths.items()):
+        try:
+            complement = f"{int(value, 16) ^ ((1 << 64) - 1):016x}"
+        except ValueError:
+            continue
+        dhash_paths[complement].extend(paths)
+    return exact, perceptual, sources, {
+        key: sorted(set(paths)) for key, paths in sorted(dhash_paths.items())
+    }
 
 
 def _realize_scimd(
@@ -273,7 +313,7 @@ def realize() -> dict[str, Any]:
     contract = json.loads(contract_raw)
     if contract.get("model_scores_created") != 0 or contract.get("new_image_bodies_decoded") != 0:
         raise ValueError("E51 realization contract is no longer pre-score")
-    protected_exact, protected_dhash, protected_sources = _protected()
+    protected_exact, protected_dhash, protected_sources, protected_dhash_paths = _protected()
     scimd, scimd_failures, scimd_reasons = _realize_scimd(
         contract["scimd17_train"]["rows"], protected_exact, protected_dhash
     )
@@ -309,9 +349,24 @@ def realize() -> dict[str, Any]:
     train_raw = _write_atomic(TRAIN_MANIFEST, train_payload)
     cal_parents = _cal_parent_rows(contract)
     new_real = [row for row in cal_parents if row["cal_origin"] == "new-independent-real"]
+    perceptual_collision_audit = []
     for row in new_real:
-        if row["sha256"] in protected_exact or row["dhash"] in protected_dhash:
-            raise ValueError(f"SCMI30 CAL overlaps protected evidence: {row['parent_id']}")
+        if row["sha256"] in protected_exact:
+            raise ValueError(f"SCMI30 CAL exact-overlaps protected evidence: {row['parent_id']}")
+        candidates = protected_dhash_paths.get(str(row["dhash"]), [])
+        if row["dhash"] in protected_dhash and not candidates:
+            raise ValueError(f"SCMI30 CAL dHash collision cannot be verified: {row['parent_id']}")
+        if candidates:
+            target_phash = _phash_path(Path(str(row["path"])))
+            distances = [(target_phash ^ _phash_path(Path(path))).bit_count() for path in candidates]
+            minimum = min(distances)
+            perceptual_collision_audit.append({
+                "parent_id": row["parent_id"], "dhash": row["dhash"],
+                "candidate_matches": len(candidates), "minimum_phash_distance": minimum,
+                "confirmed_near_duplicate": minimum <= 4,
+            })
+            if minimum <= 4:
+                raise ValueError(f"SCMI30 CAL perceptually overlaps protected evidence: {row['parent_id']}")
     cal_observations = _pair_cal(cal_parents)
     cal_payload = {
         "schema_version": 1,
@@ -326,6 +381,7 @@ def realize() -> dict[str, Any]:
             "q75": sum(row["condition"] == "q75" for row in cal_observations),
         },
         "source_counts": dict(sorted(Counter(str(row["source"]) for row in cal_parents).items())),
+        "perceptual_collision_audit": perceptual_collision_audit,
         "parents": cal_parents,
         "rows": cal_observations,
         "model_scores_created": 0,

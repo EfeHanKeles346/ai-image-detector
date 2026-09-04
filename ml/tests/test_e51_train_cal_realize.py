@@ -5,7 +5,7 @@ from collections import Counter
 from io import BytesIO
 from PIL import Image
 
-from experiments.e51_train_cal_realize import _decode, select_clean_scimd
+from experiments.e51_train_cal_realize import _decode, _phash_image, select_clean_scimd
 
 
 def _rows() -> list[dict]:
@@ -51,3 +51,12 @@ def test_decode_records_complementary_dhash_conventions():
     image.save(output, format="PNG")
     facts, _ = _decode(output.getvalue(), "synthetic")
     assert int(facts["dhash"], 16) ^ int(facts["legacy_dhash"], 16) == (1 << 64) - 1
+
+
+def test_phash_separates_flat_dhash_collision_candidates():
+    left = Image.new("RGB", (32, 32), "black")
+    right = Image.new("RGB", (32, 32), "black")
+    for index in range(32):
+        left.putpixel((index, index), (255, 255, 255))
+        right.putpixel((31 - index, index), (255, 255, 255))
+    assert (_phash_image(left) ^ _phash_image(right)).bit_count() > 4
