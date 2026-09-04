@@ -4660,4 +4660,5 @@ anything new about authentic-photo false alarms, so comprehensive balanced E49 r
 The authenticated ITW-SM Hugging Face preflight was also repeated on 2026-09-04. It still returns
 HTTP 403 with `awaiting a review from the repo authors`. This creates no new blocker because the
 official MediaEval copy was already consumed in E45; a later mirror approval cannot be reused as a
-second independent final.
+second independent final. The Datapoint E49 source was checked in the same authenticated session
+and independently remains HTTP 403 /author-review pending. Neither probe downloaded an image.
