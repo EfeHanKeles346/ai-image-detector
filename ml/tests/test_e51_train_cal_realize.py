@@ -2,7 +2,10 @@ from __future__ import annotations
 
 from collections import Counter
 
-from experiments.e51_train_cal_realize import select_clean_scimd
+from io import BytesIO
+from PIL import Image
+
+from experiments.e51_train_cal_realize import _decode, select_clean_scimd
 
 
 def _rows() -> list[dict]:
@@ -37,3 +40,14 @@ def test_clean_scimd_rejects_insufficient_device_headroom():
         assert "insufficient clean SCIMD-17" in str(error)
     else:
         raise AssertionError("depleted device should fail closed")
+
+
+def test_decode_records_complementary_dhash_conventions():
+    image = Image.new("RGB", (16, 16))
+    for x in range(16):
+        for y in range(16):
+            image.putpixel((x, y), (x * 15, y * 9, 0))
+    output = BytesIO()
+    image.save(output, format="PNG")
+    facts, _ = _decode(output.getvalue(), "synthetic")
+    assert int(facts["dhash"], 16) ^ int(facts["legacy_dhash"], 16) == (1 << 64) - 1

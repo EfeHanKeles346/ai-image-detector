@@ -77,10 +77,19 @@ def _decode(raw: bytes, identity: str) -> tuple[dict[str, Any], Image.Image]:
         if width * height > MAX_PIXELS:
             raise ValueError(f"unsafe E51 image geometry: {identity}")
         rgb = ImageOps.exif_transpose(opened).convert("RGB")
+        grey = rgb.convert("L").resize((9, 8), Image.Resampling.LANCZOS)
+        pixels = list(grey.get_flattened_data())
+        legacy_value = 0
+        for y in range(8):
+            for x in range(8):
+                legacy_value = (legacy_value << 1) | int(
+                    pixels[y * 9 + x] > pixels[y * 9 + x + 1]
+                )
         facts = {
             "bytes": len(raw),
             "sha256": hashlib.sha256(raw).hexdigest(),
             "dhash": dhash_image(rgb),
+            "legacy_dhash": f"{legacy_value:016x}",
             "format": decoded_format,
             "width": width,
             "height": height,
@@ -145,6 +154,16 @@ def _protected() -> tuple[set[str], set[str], list[dict[str, str]]]:
             if row.get("dhash"):
                 perceptual.add(str(row["dhash"]))
         sources.append({"path": str(path), "sha256": hashlib.sha256(raw).hexdigest()})
+    # Historical manifests use both left>right and right>left dHash conventions.
+    # Their 64-bit values are complements; protecting both avoids a false non-overlap.
+    complements = set()
+    for value in perceptual:
+        if len(value) == 16:
+            try:
+                complements.add(f"{int(value, 16) ^ ((1 << 64) - 1):016x}")
+            except ValueError:
+                continue
+    perceptual.update(complements)
     return exact, perceptual, sources
 
 
@@ -205,7 +224,7 @@ def _cal_parent_rows(contract: Mapping[str, Any]) -> list[dict[str, Any]]:
         path = Path(str(row["path"]))
         raw = path.read_bytes()
         facts, _ = _decode(raw, str(row["parent_id"]))
-        if facts["sha256"] != row["sha256"] or facts["dhash"] != row["dhash"]:
+        if facts["sha256"] != row["sha256"] or facts["legacy_dhash"] != row["dhash"]:
             raise ValueError(f"historical AI-CAL payload changed: {row['parent_id']}")
         ai_rows.append({**row, **facts, "role": "CAL", "condition": "original",
                         "cal_origin": "held-out-historical-train"})

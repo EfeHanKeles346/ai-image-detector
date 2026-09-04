@@ -5056,3 +5056,10 @@ SCMI30 and the explicitly held-out historical AI rows; Datapoint/IEEE DEVELOPMEN
 command. All SCIMD reserve bodies are byte/CRC/decode/224x224 checked and protected by exact+dHash
 before 100/device selection. TRAIN removes every AI-CAL parent, while CAL verifies 1,560 parents and
 creates deterministic original/Q75 pairs. The code and tests are committed before execution.
+
+That first execution failed closed before CAL or evidence on a historical AI-CAL dHash mismatch.
+The file SHA-256 (`425c8c99...45e0f`), bytes and 224x224 JPEG geometry reproduced exactly; E42's
+left-greater-than-right comparator yielded `46c6...3277`, while the later shared helper yielded its
+inverse `b919...cd88`. This is a hash-convention mismatch, not data corruption. The rerun preserves
+the pinned E42 hash for intentional AI-CAL reuse and expands protected checks to both complementary
+64-bit conventions. No detector, threshold or DEVELOPMENT data informed the correction.

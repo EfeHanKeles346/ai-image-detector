@@ -1138,6 +1138,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       identities and retain 100/device; rebuild TRAIN from historical TRAIN rows minus the 360
       AI-CAL holdouts. Verify all 1,200 SCMI30 and 360 AI-CAL parent bytes, then make deterministic
       original/Q75 pairs. DEVELOPMENT remains unopened until a CAL winner exists.
+      **Pre-score dHash compatibility correction:** the first realization wrote no CAL/evidence and
+      stopped on the first historical AI parent: SHA-256, bytes and geometry matched, but E42 used
+      the inverse left-to-right comparator from the current shared helper. Preserve the pinned E42
+      value for reused AI-CAL and protect both 64-bit conventions for new-source overlap checks.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered
