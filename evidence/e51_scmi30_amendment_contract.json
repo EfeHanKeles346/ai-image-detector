@@ -1,0 +1,10 @@
+{
+  "contract_bytes": 3376,
+  "contract_sha256": "39128c1b5f599673b4db5e300c910919c475e10f6c121899ec62bc499397e9f5",
+  "model_scores_created": 0,
+  "new_image_bytes_downloaded": 0,
+  "reserve_bytes": 7710716,
+  "reserve_rows": 5,
+  "schema_version": 1,
+  "state": "e51_scmi30_identity_amendment_frozen_untransferred_unscored"
+}
