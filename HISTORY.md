@@ -4797,6 +4797,13 @@ display geometry validates. The natural transport contains 861 plain JPEG plus 2
 Detector/model-score count remains zero, so this is still a reserve pending the already-committed
 device-evidence, decontamination and Q75 freeze.
 
+A score-blind EXIF audit then found one genuine metadata mismatch in the reserve: a file categorized
+as Nikon Z 8 reports `NIKON D70`. Before selecting any REAL parent, the realization rule now
+normalizes expected vendor/model spellings and valid Apple hardware aliases, requires agreement
+when EXIF exists, and records the 26 missing-EXIF rows explicitly as category-only evidence. The D70
+row will be excluded by fixed rank rather than silently relabelled. Thirteen focused tests pass;
+no realization manifest or detector score exists at this checkpoint.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

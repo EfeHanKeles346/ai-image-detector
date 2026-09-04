@@ -51,6 +51,38 @@ def _decode_q75(raw: bytes) -> dict[str, Any]:
         }
 
 
+def _normalized(value: Any) -> str:
+    return "".join(character for character in str(value).lower() if character.isalnum())
+
+
+def device_evidence(row: Mapping[str, Any]) -> str:
+    """Classify EXIF device evidence without rejecting category-only originals."""
+    source = str(row["source"])
+    make = _normalized(row.get("exif_make", ""))
+    model = _normalized(row.get("exif_model", ""))
+    if not make and not model:
+        return "category_only_missing_exif"
+    valid = {
+        "Canon EOS R5": model == "canoneosr5" and make.startswith("canon"),
+        "Google Pixel 7 Pro": model == "pixel7pro" and make == "google",
+        "Google Pixel 8 Pro": (
+            (model == "pixel8pro" and make == "google")
+            or (model == "google" and make.startswith("pixel8pro"))
+        ),
+        "Nikon Z 8": model in {"nikonz8", "z8"} and make.startswith("nikon"),
+        "Samsung Galaxy S23 Ultra": model in {"galaxys23ultra", "samsunggalaxys23ultra"}
+                                    and make.startswith("samsung"),
+        "Sony ILCE-7M4": model == "ilce7m4" and make == "sony",
+        "iPhone 13 Pro": make == "apple" and (model == "iphone13pro" or model.startswith("iphone142")),
+        "iPhone 14 Pro": make == "apple" and (model == "iphone14pro" or model.startswith("iphone152")),
+        "iPhone 15 Pro": make == "apple" and model == "iphone15pro",
+        "iPhone 15 Pro Max": make == "apple" and model == "iphone15promax",
+    }
+    if source not in valid:
+        raise ValueError(f"E49 Commons unexpected source: {source}")
+    return "exif_device_match" if valid[source] else "exif_device_mismatch"
+
+
 def audit_originals(
     rows: Sequence[Mapping[str, Any]], prior_exact: set[str], prior_dhash: set[str],
 ) -> dict[str, list[str]]:
@@ -61,6 +93,8 @@ def audit_originals(
     for row in sorted(rows, key=lambda item: (str(item["rank"]), str(item["identity"]))):
         identity = str(row["identity"])
         exact, perceptual = str(row["sha256"]), str(row["dhash"])
+        if device_evidence(row) == "exif_device_mismatch":
+            reasons[identity].append("exif_device_mismatch")
         if exact in prior_exact:
             reasons[identity].append("protected_exact_overlap")
         if perceptual in prior_dhash:
@@ -152,6 +186,7 @@ def freeze_manifest() -> dict[str, Any]:
             parent = {
                 "parent_id": parent_id, "label": 0, "source": source,
                 "rank": row["rank"], "pageid": int(row["pageid"]), "uploader": row["uploader"],
+                "device_evidence": device_evidence(row),
             }
             parents.append(parent)
             observations.extend([
@@ -179,6 +214,9 @@ def freeze_manifest() -> dict[str, Any]:
             "observations": len(observations), "by_source": dict(sorted(by_source.items())),
             "original_exif_make_present": sum(bool(row["exif_make"]) for row in rows),
             "original_exif_model_present": sum(bool(row["exif_model"]) for row in rows),
+            "selected_device_evidence": dict(sorted(Counter(
+                row["device_evidence"] for row in parents
+            ).items())),
         },
         "identity_exclusion_reasons": dict(sorted(reasons.items())),
         "protected_role_manifests": protected_sources,

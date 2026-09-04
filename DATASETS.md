@@ -337,6 +337,12 @@ is retained without rewriting originals. External receipt SHA-256 is
 `2511f0ad0ad3f22e72ab5bf04da69fed0e9efac2bb4768d5365cf734fb5a7e04`. No detector score exists;
 these rows remain reserves until device-evidence and protected-overlap checks select 100 per device.
 
+The pre-realization EXIF audit found one category mismatch: one Nikon Z 8 reserve reports Nikon D70.
+It is excluded rather than trusted or relabelled. Known make/model spellings and Apple hardware codes
+are normalized; 1,073 rows have matching EXIF device evidence and 26 rows with no make/model remain
+explicitly category-only candidates. Selection still follows the prebound rank and must fill 100
+clean rows per device before the component becomes final.
+
 The already-local StyleGAN2 reserve was then realized without network or detector access. All
 240/240 frozen Parquet coordinates reproduce label=AI/generator=14 and decode successfully; exact
 and dHash comparison with 15 protected-role manifests finds zero overlap. The first 200 clean rows

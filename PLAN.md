@@ -834,6 +834,10 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       against the final AI components and scored Dotting diagnostic, creates fixed Q75 children,
       rejects child collisions and refuses anything except 1,000 parents/2,000 observations.
       Twelve focused transfer/realization/evaluation tests pass before production execution.
+      **Device-evidence lock:** the completed receipt exposes one Nikon Z 8 category row whose EXIF
+      says Nikon D70. Before realization, require normalized make/model aliases where EXIF exists,
+      accept the 26 explicitly category-only rows as such, and exclude any mismatch by fixed rank.
+      Thirteen focused tests pass; no camera identity or score has yet been selected.
 - [ ] **Create two paired conditions per parent.** `publisher_original` preserves received bytes.
       `social_q75` applies EXIF transpose, RGB conversion, long-side cap 1080, JPEG quality 75,
       4:2:0 subsampling and metadata removal. The derived child inherits its parent id, label and
