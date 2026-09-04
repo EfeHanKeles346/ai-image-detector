@@ -1,0 +1,39 @@
+{
+  "candidate": "exact frozen E43-S generalist only",
+  "contract_bytes": 1128,
+  "contract_sha256": "d567965dbde6a51648eaa3ebbc5808be9ca36d2e9159f0c39bf072c614341cf9",
+  "counts": {
+    "conditions": 2,
+    "observations": 1600,
+    "parents": 800,
+    "per_model_per_condition": 160
+  },
+  "forbidden": [
+    "training",
+    "threshold change",
+    "row/source removal",
+    "score-based replacement",
+    "second attempt",
+    "AUC/BA/REAL-safety claim",
+    "Module-1 promotion"
+  ],
+  "gates": {
+    "pooled_ai_recall_min": 0.8,
+    "score_coverage": 1.0,
+    "worst_model_recall_min": 0.6
+  },
+  "identities": {
+    "dino_weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+    "generalist_artifact_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "manifest_sha256": "048572a41b47b65d3d09bd39bee45a40745a40c2e15c50444b41f8384fdccc9d",
+    "observation_identity_sha256": "e2a375c4906b43ef1ab1a69383a28f988b9a36ad3f795c9e3e0fd10a50c0a58e"
+  },
+  "metrics_opened": 0,
+  "schema_version": 1,
+  "scores_created": 0,
+  "state": "e49_d1_candidate_locked_before_model_load",
+  "thresholds": {
+    "binary_ai": 0.07940196245908739,
+    "selective_real": 0.011505939625203613
+  }
+}

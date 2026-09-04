@@ -831,6 +831,10 @@ unmatched random REAL photos to manufacture an easy binary result.
       before opening metrics; report pooled and per-model AI recall, automatic AI-decision rate and
       original-to-Q75 recall loss. Diagnostic gates are coverage=100%, pooled recall>=80%, worst
       model recall>=60% and each condition's worst-model result disclosed.
+      **Pre-score lock:** contract SHA-256 `d567965d...1cf9` binds the exact 1,600-row manifest,
+      E43-S artifact `a3aec445...7390`, DINOv2-S weights `04d27f34...0081`, binary threshold
+      `0.07940196245908739` and selective REAL cut `0.011505939625203613`. Eighteen focused E49
+      tests pass; scores and opened metrics remain zero.
 - [ ] Archive pass or failure without retuning. A pass adds current-generator evidence only; a fail
       may pre-register a successor experiment, but neither outcome promotes Module 1 or consumes the
       publisher-separated E49 final. Dotting images remain forbidden from training in this branch.

@@ -4635,3 +4635,9 @@ of GPT Image 2, Nano Banana 2, FLUX.2 Pro, Ideogram 4 and Seedream 5.0 Lite. Eac
 800 parents is paired with one deterministic social-Q75 child, yielding 1,600 unscored observations
 at manifest SHA-256 `048572a4...ccc9`. This remains AI-only diagnostic evidence, never training data
 or a substitute for E49's balanced REAL/AI final.
+
+The diagnostic scorer was then implemented and committed before model access. Its contract
+`d567965d...1cf9` locks the frozen E43-S artifact, DINOv2-S weights, both historical thresholds,
+all 1,600 observation identities and the six declared coverage/recall checks. It explicitly forbids
+training, row or source removal, threshold repair, retry and Module-1 promotion. Eighteen focused
+E49 tests pass; no score or aggregate metric has yet been produced.

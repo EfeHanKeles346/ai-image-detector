@@ -3775,6 +3775,10 @@ was scored or selected using model output.
   Model-blind reserve order still fills 160 clean parents for each of the five generators. The
   1,600 observations bind each parent to publisher WebP and deterministic social-Q75 JPEG; manifest
   SHA-256 `048572a4...ccc9`. Model scores remain zero and no row may enter training.
+- **Pre-score lock:** contract SHA-256 `d567965d...1cf9` binds manifest `048572a4...ccc9`, exact
+  E43-S artifact `a3aec445...7390`, DINOv2-S weights `04d27f34...0081`, thresholds and all six
+  AI-only checks. It forbids training, threshold/row/source changes, second attempts, balanced-final
+  claims and Module-1 promotion. Eighteen focused E49 tests pass; score/metric counts remain zero.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 
