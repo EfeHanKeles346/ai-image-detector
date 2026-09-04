@@ -3732,6 +3732,12 @@ was scored or selected using model output.
   StyleGAN2 Parquet coordinates that never touch the image column. Four tests pass. A live metadata
   probe reproduced both exact Hub revisions and returned `GatedRepoError` for Datapoint payload
   access, with zero E49 image bytes. This is a correct stop, not an incomplete benchmark result.
+- **Evaluation implementation checkpoint:** thresholds remain binary `0.07940196245908739` and
+  REAL `0.011505939625203613`. The evaluator rejects any condition not containing the exact same
+  2,000 parent ids, labels, sources and frozen 16-source quotas; executes the ten gates separately
+  for original and social-Q75; counts score failures pessimistically; and bootstraps complete parents
+  within label/source strata. No final row or aggregate metric exists yet. The acquisition,
+  evaluation, shared benchmark and prior-final regression set passes 17/17 tests.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

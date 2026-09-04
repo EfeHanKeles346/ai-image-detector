@@ -793,6 +793,11 @@ it is not another development set and it cannot be used to repair E43-S.
       covered accuracy >=95%; uncertainty <=20%. Report every source and 10,000 parent-level,
       label/source-stratified bootstrap intervals. Also report a model-blind format/geometry audit;
       a shortcut warning cannot be hidden by a passing pooled number.
+      **Implementation checkpoint:** `e49_evaluation.py` now fixes both thresholds and all 20 checks,
+      requires exact 2,000-parent pairing and all 16 source quotas in both transports, treats score
+      failures pessimistically, and implements deterministic source/label-stratified parent
+      bootstrap intervals. It has not opened a final metric because the frozen manifest does not yet
+      exist. Seventeen acquisition/evaluation/shared-metric regression tests pass together.
 - [ ] **Open metrics once.** Raw score streams are committed before evaluation. Any failure, missing
       source, coverage miss or gate miss keeps Module 1 open; no threshold repair, row removal,
       source removal or second E49 attempt is allowed. Only a 20/20 pass (ten gates x two conditions)

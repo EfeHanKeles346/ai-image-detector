@@ -4578,3 +4578,12 @@ head was also a pre-DINO handcrafted 128 px model, not E43-S. Module 2 will ther
 after E49—with a scene-disjoint manifest and corrected dense, image-level evaluator, then compare
 absolute crop evidence, noise energy and frozen-DINO dense tokens before a one-shot held-source
 final. Classic splices remain specificity controls; they will not dilute the AI-inpainting target.
+
+E49's measurement engine was then implemented while the gated source remained unopened. It binds
+the exact parent/source composition across publisher-original and deterministic social-Q75 children,
+keeps the E50-derived binary and selective cuts immutable, evaluates ten gates per transport and
+uses source/label-stratified parent bootstraps. Inference errors become UNCERTAIN and contribute
+pessimistically to class/source rates rather than disappearing. A regression test initially exposed
+that an explicit null error score was still being converted to a float; the implementation was
+corrected before any final data existed. The resulting 17-test acquisition/evaluation regression
+set passes, while E49 score and metric counts remain zero.
