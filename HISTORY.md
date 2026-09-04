@@ -4468,3 +4468,18 @@ One VISION and one FODB reserve row overlap protected dHashes and were removed b
 the precommitted 20% headroom filled all quotas without replacement by score. The immutable clean
 population is 600 FIT, 600 CAL and 1,200 DEVELOPMENT rows, each exactly half REAL and half AI, at
 manifest SHA `1404a3ff...5b68`. No model score or DEVELOPMENT metric exists yet.
+
+The project now has an explicit two-module completion order. Module 1 must first pass E48's fresh
+DEVELOPMENT and then a separate E49 comprehensive final with multiple real pipelines, at least five
+AI families, social recompression and confidence intervals. Only that all-gate result may create
+Module-1 v1 and replace the demo. Module 2 model work resumes afterward, scoped to AI local
+inpainting rather than every historical manipulation type.
+
+That re-entry preserves the value of the unsuccessful early localisation work. E17 found genuine
+CocoGlide signal but retained only 35/120 examples; raw IoU was confounded by mask size; classic
+splices asked the AI-texture detector the wrong question; ELA worked on its JPEG positive control
+but the compiled PNGs destroyed its input; and AI-filled regions showed a promising noise-energy
+drop from 0.0164 to 0.0088. Module 2 will fix those measurement errors, test dense DINO/noise
+features against exact masks and keep fully re-rendered edits out of localisation claims. Later
+Module 2 discoveries may motivate fresh Module 1 experiments, but can never silently tune the
+frozen Module-1 v1 artifact or its evidence.

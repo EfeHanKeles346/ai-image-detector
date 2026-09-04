@@ -3646,3 +3646,17 @@ was scored or selected using model output.
   one FODB reserve row are excluded for protected dHash overlap; headroom fills all quotas.
   The frozen 2,400-row manifest is exactly class-balanced inside 600 FIT, 600 CAL and 1,200
   DEVELOPMENT rows. Manifest SHA-256 `1404a3ff...5b68`; model scores remain zero.
+
+### Module 1 completion and Module 2 re-entry contract
+
+- Module 1 requires two remaining proofs: E48 one-shot DEVELOPMENT and an E49 >=2,000-row,
+  publisher-separated, multi-REAL/multi-generator final with native/social-recompressed columns,
+  source-stratified confidence intervals and all ten E46 gates. E48 alone cannot update serving.
+- Module 2 model work starts only after an E49 pass freezes Module-1 v1. Its v1 scope is AI local
+  inpainting/editing. E17's CocoGlide signal (0.648 tile AUC, 0.721 image AUC, +0.155 IoU margin)
+  is the baseline; classic splices remain negative/specificity controls.
+- Correct the old experiment before learning: disclose mask skips, use half-tile stride, replace
+  raw-IoU headlines with pixel AUC/AP, mask-stratified F1/IoU and random-baseline margin, and test
+  the measured noise-energy drop plus dense DINO tokens. Never localise fully re-rendered edits.
+- Cross-module observations can pre-register a fresh Module 1 successor experiment, but cannot
+  change the frozen Module-1 v1 threshold/artifact or reuse Module 2 validation rows to repair it.

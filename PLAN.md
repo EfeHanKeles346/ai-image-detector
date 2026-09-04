@@ -701,6 +701,54 @@ all four backbones/scores remain frozen.
       No retry, threshold repair or post-hoc candidate swap. A pass earns a new publisher-separated
       final contract; it does not itself update the web demo.
 
+## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
+
+### Stage A — finish and prove Module 1
+
+1. Complete E48 in strict order: bind frozen score identities; score only FIT+CAL; fit authentic-
+   percentile maps on FIT REAL; select one monotone expert set and threshold on CAL; commit the
+   candidate; only then score/open DEVELOPMENT once. A failure is archived and cannot be repaired
+   on those rows.
+2. A passing E48 does **not** finish Module 1. Bind E49 as the comprehensive final before model
+   access: publisher/collection-separated from every TRAIN/FIT/CAL/DEVELOPMENT source, >=2,000
+   balanced rows, at least two REAL pipelines/transports and at least five AI source families
+   spanning diffusion and GAN. Exact/dHash decontamination, generator/source reporting, native and
+   fixed social-recompression columns, 10,000 stratified bootstraps and the full E46 ten-gate
+   contract are mandatory. Score once; no retry or source removal.
+3. Only an E49 all-gate pass creates **Module-1 v1** and permits replacing the web-demo model.
+   Freeze its model hashes, preprocessing, threshold, uncertainty policy and benchmark report.
+   Until then the existing served result remains unchanged.
+
+### Stage B — resume Module 2 after Module-1 v1
+
+Module 2 v1 is explicitly **AI-assisted local editing/inpainting**, not universal Photoshop/splice
+detection. Preserve the useful E17/E18 lessons instead of repeating the failed branch:
+
+- E17's absolute tile signal is real but small: CocoGlide tile AUC 0.648, image AUC 0.721 and IoU
+  margin +0.155 over random. The old filter retained only 35/120 images; half-tile stride is the
+  first zero-download repair and must disclose every skipped mask.
+- Raw IoU is invalid as a headline because it rewards large masks. Report pixel ROC-AUC and AP,
+  mask-size-stratified F1/IoU, IoU-minus-random, image AUC and pristine false-localisation.
+- The eight classic-splice/copy-move sets are specificity controls, not positive training data.
+  ELA's controlled JPEG splice reached 0.719 but the PNG compilation erased its compression input;
+  close that branch for Module 2 v1 rather than calling the method generally broken.
+- Test the measured noise-energy clue (AI-filled region 0.0164→0.0088) and dense DINO patch tokens
+  beside the absolute tile score. Fully re-rendered ChatGPT-family edits must be labelled
+  AI-regenerated, never promised a local mask.
+- Train a small dense/localisation head with exact masks; do not alter Module-1 v1 weights. FIT/CAL/
+  DEVELOPMENT split by source image and generator; TGIF/TGIF2 or another publisher-separated,
+  mask-preserving set is the preferred untouched final.
+
+### Cross-module feedback without regressions
+
+After Module-1 v1, effort shifts roughly 70% to Module 2 and 30% to Module 1 maintenance. A Module 2
+finding may open a new Module 1 experiment only when recorded as a data, preprocessing,
+representation or decision-layer hypothesis and tested on fresh evidence. Module-1 v1 remains the
+served control until a successor repeats DEVELOPMENT plus an independent final; no Module 2 mask,
+threshold or failure may silently tune it. Shared code may include decoding, transport simulation,
+DINO feature extraction, audit/provenance and UI components, while artifacts, thresholds and claims
+remain separate.
+
 
 ## Current execution slice — R1c threshold repair and external benchmark (2026-08-27)
 
