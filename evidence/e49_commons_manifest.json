@@ -1,0 +1,34 @@
+{
+  "counts": {
+    "by_source": {
+      "Canon EOS R5": 100,
+      "Google Pixel 7 Pro": 100,
+      "Google Pixel 8 Pro": 100,
+      "Nikon Z 8": 100,
+      "Samsung Galaxy S23 Ultra": 100,
+      "Sony ILCE-7M4": 100,
+      "iPhone 13 Pro": 100,
+      "iPhone 14 Pro": 100,
+      "iPhone 15 Pro": 100,
+      "iPhone 15 Pro Max": 100
+    },
+    "candidates": 1100,
+    "identity_exclusions": 2,
+    "observations": 2000,
+    "original_exif_make_present": 1074,
+    "original_exif_model_present": 1074,
+    "parents": 1000,
+    "selected_device_evidence": {
+      "category_only_missing_exif": 21,
+      "exif_device_match": 979
+    }
+  },
+  "download_receipt_sha256": "2511f0ad0ad3f22e72ab5bf04da69fed0e9efac2bb4768d5365cf734fb5a7e04",
+  "manifest_bytes": 2685688,
+  "manifest_sha256": "657be9bb6e2632f5b00f2f5a1f37b36640d186b53044cdb2cdf0697cb9208e7b",
+  "model_scores_created": 0,
+  "protected_role_manifest_count": 17,
+  "role": "FINAL_REAL_COMPONENT_PENDING_COMPLETE_E49",
+  "schema_version": 1,
+  "state": "e49_commons_decontaminated_paired_frozen_unscored"
+}

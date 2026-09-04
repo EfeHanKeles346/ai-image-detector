@@ -4811,6 +4811,13 @@ display geometry, derive dHash from oriented RGB pixels, and only then run prote
 comparison. Fourteen focused tests pass. The source identities, rank, quotas and model-score count
 remain unchanged and no partial manifest exists.
 
+The corrected Commons realization then passed. All 1,100 files reproduced their receipt hashes and
+display geometry. Exactly two identities were excluded before selection: one prior protected dHash
+overlap and the already-disclosed Nikon-D70 metadata mismatch. The fixed reserve still filled every
+device at 100 parents. Of the selected 1,000, 979 retain matching EXIF make/model and 21 are clearly
+marked category-only because EXIF is absent. Together with their 1,000 deterministic Q75 children,
+the REAL component freezes at manifest SHA-256 `657be9bb...8e7b`. Scores remain zero.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

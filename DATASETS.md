@@ -343,6 +343,13 @@ are normalized; 1,073 rows have matching EXIF device evidence and 26 rows with n
 explicitly category-only candidates. Selection still follows the prebound rank and must fill 100
 clean rows per device before the component becomes final.
 
+The realization passed all 1,100 receipt rows. It excluded one protected dHash overlap and the one
+Nikon-D70 mismatch, then froze the first 100 clean rank-ordered parents in every device category.
+The selected 1,000 REAL parents contain 979 matching EXIF device records and 21 explicit category-
+only/no-make-model records; none is silently described as sensor-native. Their originals plus 1,000
+deterministic social-Q75 children form a 2,000-observation component. External manifest SHA-256 is
+`657be9bb6e2632f5b00f2f5a1f37b36640d186b53044cdb2cdf0697cb9208e7b`; model scores are zero.
+
 The already-local StyleGAN2 reserve was then realized without network or detector access. All
 240/240 frozen Parquet coordinates reproduce label=AI/generator=14 and decode successfully; exact
 and dHash comparison with 15 protected-role manifests finds zero overlap. The first 200 clean rows

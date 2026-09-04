@@ -3932,6 +3932,11 @@ was scored or selected using model output.
   not perceptual dHash. The first execution read a nonexistent field and stopped before manifest or
   child output. Realization now reproduces each SHA-256 and EXIF-display geometry, derives dHash from
   the oriented RGB image, then enters the unchanged overlap audit. Fourteen focused tests pass.
+- **Commons realization result — PASS:** all 1,100 reserves realize. Exactly two candidates are
+  excluded: one protected dHash overlap and the disclosed Nikon-D70 EXIF mismatch. Fixed headroom
+  still fills ten device cells at 100 each. The manifest binds 1,000 parents/2,000 paired rows at
+  SHA-256 `657be9bb...8e7b`; selected device evidence is 979 EXIF matches plus 21 explicit category-
+  only rows. No score or metric was created.
 - **Final evaluator source amendment:** the original E49-A validator still named five Datapoint
   families whose images were never consumed. Before E49-C realization or scoring, its exact AI
   quota labels are corrected to GPT Image 2, Z-Image Turbo, Seedream v5.0, FLUX.2 Klein 9B,

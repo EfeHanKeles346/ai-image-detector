@@ -825,7 +825,7 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       test responses and prompt reference metadata were fetched (1,737,709 bytes total); all 40
       image Parquets /image-body bytes remain untouched. This access does not reopen or replace the
       already-selected E49-C final route.
-- [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
+- [x] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean
       quota by the predeclared hash order. Record all exclusions and 100% retained-manifest coverage.
@@ -842,6 +842,10 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       dHash. The first production call stopped before output when the audit read dHash too early.
       Reproduce each file SHA/EXIF-display geometry and derive dHash inside realization before
       overlap checks. Fourteen focused tests pass; identities and score count remain unchanged.
+      **REAL freeze PASS:** all 1,100 candidates realize. One protected dHash overlap and the one
+      Nikon-D70 mismatch are excluded; every device still fills exactly 100. The 1,000 parents and
+      1,000 Q75 children freeze at SHA-256 `657be9bb...8e7b`; 979 selected parents have matching EXIF
+      device evidence and 21 are explicitly category-only. Model-score count remains zero.
 - [ ] **Create two paired conditions per parent.** `publisher_original` preserves received bytes.
       `social_q75` applies EXIF transpose, RGB conversion, long-side cap 1080, JPEG quality 75,
       4:2:0 subsampling and metadata removal. The derived child inherits its parent id, label and
