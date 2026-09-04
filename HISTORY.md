@@ -4531,3 +4531,8 @@ artifact, CAL-derived threshold `0.07940196245908739`, all seven gates and the i
 FODB camera originals plus 600 held AI images across FLUX.1, SD3, StyleGAN and StyleGAN3. No
 specialist, retraining, threshold repair, row replacement or second attempt is permitted. Eight
 focused boundary tests pass; DEVELOPMENT scores and metrics remain zero at this commit.
+
+The frozen E43-S candidate then scored all 1,200 E50 DEVELOPMENT rows with full coverage, no
+failure and no replacement. Its 271,063-byte raw stream hashes to `07461b09...d5fd`. Aggregate
+metrics are still unopened at this checkpoint, preserving a recoverable boundary between inference
+and the one-shot verdict.

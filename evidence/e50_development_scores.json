@@ -1,0 +1,10 @@
+{
+  "bytes": 271063,
+  "contract_sha256": "18ae708f6682f7ac7d1304da01dfc848592811ad1da5579801c96956706d20f6",
+  "coverage": 1.0,
+  "metrics_opened": 0,
+  "rows": 1200,
+  "schema_version": 1,
+  "sha256": "07461b092f2336cbbe3841953062c88a36ae4fa2d3b419f3147ded71370dd5fd",
+  "state": "e50_development_scores_complete_unopened"
+}
