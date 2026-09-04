@@ -11,8 +11,21 @@ from pathlib import Path
 import tarfile
 from typing import Any, Iterable, Mapping, Sequence
 
-from experiments.e46_manifests import TRUE_ARCHIVE, TRUE_CONTRACT, TRUEFAKE_SHA256, _digest, parse_truefake_member
-from experiments.e47_caldev_manifest import CONTRACT as E47_CONTRACT
+from experiments.e46_manifests import (
+    SYNTH_AUDITED,
+    TRUE_ARCHIVE,
+    TRUE_CONTRACT,
+    TRUE_MANIFEST,
+    TRUEFAKE_SHA256,
+    _decode,
+    _digest,
+    parse_truefake_member,
+)
+from experiments.e47_caldev_manifest import (
+    CONTRACT as E47_CONTRACT,
+    MANIFEST as E47_MANIFEST,
+    identity_exclusions,
+)
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 
 
@@ -20,6 +33,9 @@ ROOT = DATA_ROOT / "e48"
 NAMESPACE = "E48_MONOTONE_NONVETO_V1"
 CONTRACT = ROOT / "selection_contract.json"
 CONTRACT_EVIDENCE = ML_ROOT.parent / "evidence" / "e48_selection_contract.json"
+POOL = ROOT / "candidate_pool"
+MANIFEST = ROOT / "manifest_unscored.json"
+MANIFEST_EVIDENCE = ML_ROOT.parent / "evidence" / "e48_manifest.json"
 E32 = DATA_ROOT / "e32"
 E42_MANIFEST = DATA_ROOT / "e42" / "parent_manifest.json"
 C3_MANIFEST = E32 / "c3_role_manifest.json"
@@ -50,6 +66,22 @@ AI_QUOTAS = {
     ("DEVELOPMENT", "StyleGAN3"): 150,
 }
 RESERVE_FACTOR = 1.20
+PROTECTED_ROLE_PATHS = (
+    DATA_ROOT / "e33_rrdataset" / "r1c_cal_manifest.json",
+    DATA_ROOT / "e33_rrdataset" / "e42_rr_unscored_manifest.json",
+    DATA_ROOT / "e36" / "cal_manifest.json",
+    DATA_ROOT / "e36" / "final_manifest.json",
+    DATA_ROOT / "e39" / "final_manifest.json",
+    E42_MANIFEST,
+    DATA_ROOT / "e42_external" / "bfree_viral" / "unscored_manifest.json",
+    DATA_ROOT / "e43_dda_coco" / "unscored_manifest.json",
+    DATA_ROOT / "e44" / "fusion_contract.json",
+    DATA_ROOT / "e44" / "successor_contract.json",
+    DATA_ROOT / "e45_mediaeval_itwsm" / "unscored_manifest.json",
+    SYNTH_AUDITED,
+    TRUE_MANIFEST,
+    E47_MANIFEST,
+)
 
 
 def _write(path: Path, value: Any) -> bytes:
@@ -252,11 +284,133 @@ def bind() -> dict[str, Any]:
     return evidence
 
 
+def _row_collections(payload: Mapping[str, Any]) -> Iterable[Mapping[str, Any]]:
+    for key in ("rows", "records", "e35_rows"):
+        value = payload.get(key)
+        if isinstance(value, list):
+            yield from (row for row in value if isinstance(row, Mapping))
+
+
+def _protected_role_hashes() -> tuple[set[str], set[str], list[dict[str, str]]]:
+    exact: set[str] = set()
+    perceptual: set[str] = set()
+    sources = []
+    for path in PROTECTED_ROLE_PATHS:
+        if not path.is_file():
+            continue
+        raw = path.read_bytes()
+        for row in _row_collections(json.loads(raw)):
+            if row.get("sha256"):
+                exact.add(str(row["sha256"]))
+            if row.get("dhash"):
+                perceptual.add(str(row["dhash"]))
+        sources.append({"path": str(path), "sha256": hashlib.sha256(raw).hexdigest()})
+    if not exact or not perceptual:
+        raise ValueError("E48 protected role hashes unavailable")
+    return exact, perceptual, sources
+
+
+def extract() -> dict[str, Any]:
+    if MANIFEST.exists() or MANIFEST_EVIDENCE.exists():
+        raise FileExistsError("E48 manifest already exists")
+    contract_raw = CONTRACT.read_bytes()
+    receipt = json.loads(CONTRACT_EVIDENCE.read_text())
+    if hashlib.sha256(contract_raw).hexdigest() != receipt.get("contract_sha256"):
+        raise ValueError("E48 selection contract changed")
+    contract = json.loads(contract_raw)
+    candidate_rows = contract["candidate_rows"]
+    real_candidates = [row for row in candidate_rows if int(row["label"]) == 0]
+    ai_by_member = {str(row["member"]): row for row in candidate_rows if int(row["label"]) == 1}
+
+    decoded = []
+    failures = []
+    for row in real_candidates:
+        path = Path(str(row["path"]))
+        try:
+            if not path.is_file() or _digest(path) != row["sha256"]:
+                raise ValueError("camera payload hash changed")
+            decoded.append({**row, "record_id": f"e48:real:{row['identity']}",
+                            "condition": "camera-original"})
+        except (OSError, ValueError) as error:
+            failures.append({"identity": row["identity"], "error": f"{type(error).__name__}: {error}"})
+
+    if _digest(TRUE_ARCHIVE) != TRUEFAKE_SHA256:
+        raise ValueError("E48 TrueFake archive changed before extraction")
+    with tarfile.open(TRUE_ARCHIVE, "r|gz") as bundle:
+        for member in bundle:
+            row = ai_by_member.get(member.name)
+            if row is None:
+                continue
+            try:
+                stream = bundle.extractfile(member)
+                if stream is None:
+                    raise ValueError("TrueFake member payload unavailable")
+                raw = stream.read()
+                image = _decode(raw, member.name)
+                target = POOL / member.name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                temporary = target.with_suffix(target.suffix + ".part")
+                temporary.write_bytes(raw)
+                temporary.replace(target)
+                decoded.append({**row, **image, "record_id": f"e48:ai:{member.name}",
+                                "path": str(target), "condition": "Facebook"})
+            except (OSError, ValueError, tarfile.TarError) as error:
+                failures.append({"identity": member.name, "error": f"{type(error).__name__}: {error}"})
+    if len(decoded) + len(failures) != len(candidate_rows):
+        raise ValueError("E48 candidate decode coverage changed")
+
+    prior_exact, prior_dhash, protected = _protected_role_hashes()
+    reasons = identity_exclusions(decoded, prior_exact, prior_dhash)
+    excluded = set(reasons)
+    selected = []
+    for (role, source), quota in REAL_QUOTAS.items():
+        eligible = [row for row in decoded if row["role"] == role and row["source"] == source
+                    and row["record_id"] not in excluded]
+        selected.extend(balanced_select(eligible, quota,
+                                        max_per_scene=5 if source == "forchheim-fodb" else None))
+    for (role, source), quota in AI_QUOTAS.items():
+        eligible = sorted((row for row in decoded if row["role"] == role and row["source"] == source
+                           and row["record_id"] not in excluded), key=lambda row: (row["rank"], row["identity"]))
+        if len(eligible) < quota:
+            raise ValueError(f"insufficient clean E48 AI candidates for {(role, source)}")
+        selected.extend(eligible[:quota])
+    selected.sort(key=lambda row: (row["role"], row["label"], row["source"], row["rank"]))
+    expected = sum(REAL_QUOTAS.values()) + sum(AI_QUOTAS.values())
+    if len(selected) != expected or len({row["record_id"] for row in selected}) != expected:
+        raise ValueError("E48 selected identity count changed")
+
+    payload = {
+        "schema_version": 1, "state": "e48_decontaminated_frozen_unscored",
+        "selection_contract_sha256": receipt["contract_sha256"],
+        "counts": {
+            "candidates": len(candidate_rows), "decoded": len(decoded),
+            "decode_failures": len(failures), "identity_exclusions": len(excluded),
+            "selected": len(selected),
+            "by_role_label": {f"{role}:{label}": count for (role, label), count in sorted(
+                Counter((row["role"], row["label"]) for row in selected).items())},
+            "by_role_source": {f"{role}:{source}": count for (role, source), count in sorted(
+                Counter((row["role"], row["source"]) for row in selected).items())},
+        },
+        "decode_failures": failures, "identity_exclusion_reasons": reasons,
+        "protected_role_manifests": protected, "rows": selected,
+        "model_scores_created": 0,
+        "boundary": "All rows verified/decontaminated before model access; DEVELOPMENT remains unopened.",
+    }
+    raw = _write(MANIFEST, payload)
+    evidence = {
+        "schema_version": 1, "state": payload["state"], "counts": payload["counts"],
+        "protected_role_manifest_count": len(protected), "manifest_bytes": len(raw),
+        "manifest_sha256": hashlib.sha256(raw).hexdigest(), "model_scores_created": 0,
+    }
+    _write(MANIFEST_EVIDENCE, evidence)
+    return evidence
+
+
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("bind",))
-    parser.parse_args(argv)
-    print(json.dumps(bind(), indent=2, sort_keys=True))
+    parser.add_argument("command", choices=("bind", "extract"))
+    args = parser.parse_args(argv)
+    print(json.dumps(bind() if args.command == "bind" else extract(), indent=2, sort_keys=True))
     return 0
 
 

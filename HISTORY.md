@@ -4448,3 +4448,23 @@ CAL and DEVELOPMENT are class-balanced; camera rows are device-balanced, and all
 E46/E47 TrueFake candidates plus the current model's E32 training identities are excluded before
 ranking. Contract SHA `dbb6f4aa...0e6e` fixes every identity and quota with 20% audit headroom.
 No new AI payload has been extracted and no model score exists at this checkpoint.
+
+E48's first payload audit stopped safely before producing a manifest: the old R1b role ledger
+enumerates the whole 22,688-row C3 planning population, so treating it as consumed evidence masks
+every new camera candidate. That is broader than the current model's actual data boundary. E48
+therefore keeps its frozen candidate identities but protects the exact E42 training subset and all
+actual historical CAL/DEVELOPMENT/final manifests, not the superseded planning ledger. No score or
+performance metric was created by the failed audit.
+
+The next audit stop found no payload mutation: every checked camera file reproduced its exact
+SHA-256, but the current helper's EXIF-orientation path does not reproduce the older realization
+dHash. E48 now treats byte SHA as the payload-integrity authority and retains the original,
+already-decoded audit dHash for perceptual-overlap checks. Recomputing and silently replacing that
+pinned identity would be less reproducible. Candidate rows, roles and quotas remain unchanged;
+model scores are still zero.
+
+The corrected E48 audit then completed every one of its 2,880 candidates with no decode failure.
+One VISION and one FODB reserve row overlap protected dHashes and were removed before model access;
+the precommitted 20% headroom filled all quotas without replacement by score. The immutable clean
+population is 600 FIT, 600 CAL and 1,200 DEVELOPMENT rows, each exactly half REAL and half AI, at
+manifest SHA `1404a3ff...5b68`. No model score or DEVELOPMENT metric exists yet.

@@ -1,0 +1,42 @@
+{
+  "counts": {
+    "by_role_label": {
+      "CAL:0": 300,
+      "CAL:1": 300,
+      "DEVELOPMENT:0": 600,
+      "DEVELOPMENT:1": 600,
+      "FIT:0": 300,
+      "FIT:1": 300
+    },
+    "by_role_source": {
+      "CAL:FLUX.1": 100,
+      "CAL:StableDiffusion1.5": 50,
+      "CAL:StableDiffusionXL": 50,
+      "CAL:StyleGAN2": 100,
+      "CAL:csafe-mcsidb-s21": 150,
+      "CAL:vision-base-native": 150,
+      "DEVELOPMENT:FLUX.1": 150,
+      "DEVELOPMENT:StableDiffusion3": 150,
+      "DEVELOPMENT:StyleGAN": 150,
+      "DEVELOPMENT:StyleGAN3": 150,
+      "DEVELOPMENT:forchheim-fodb": 600,
+      "FIT:FLUX.1": 100,
+      "FIT:StableDiffusion1.5": 50,
+      "FIT:StableDiffusionXL": 50,
+      "FIT:StyleGAN2": 100,
+      "FIT:csafe-mcsidb-s21": 150,
+      "FIT:vision-base-native": 150
+    },
+    "candidates": 2880,
+    "decode_failures": 0,
+    "decoded": 2880,
+    "identity_exclusions": 2,
+    "selected": 2400
+  },
+  "manifest_bytes": 1971148,
+  "manifest_sha256": "1404a3ff5cfde4a343e1368b995ab1ec13135811c569134dfffaabf40c1b5b68",
+  "model_scores_created": 0,
+  "protected_role_manifest_count": 14,
+  "schema_version": 1,
+  "state": "e48_decontaminated_frozen_unscored"
+}

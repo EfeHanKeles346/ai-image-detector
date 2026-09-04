@@ -2,7 +2,7 @@ from collections import Counter
 
 import pytest
 
-from experiments.e48_manifest import _device_split, balanced_select
+from experiments.e48_manifest import _device_split, _row_collections, balanced_select
 
 
 def _rows(devices=3, scenes=20):
@@ -32,3 +32,9 @@ def test_device_split_is_deterministic_and_disjoint():
     assert first == _device_split("camera", list(reversed(devices)))
     assert set(first.values()) == {"FIT", "CAL"}
     assert Counter(first.values()) == {"FIT": 5, "CAL": 5}
+
+
+def test_protected_row_collections_ignore_unrelated_metadata():
+    payload = {"rows": [{"sha256": "a"}], "records": [{"dhash": "b"}],
+               "candidate_rows": [{"sha256": "must-not-be-read"}]}
+    assert list(_row_collections(payload)) == [{"sha256": "a"}, {"dhash": "b"}]

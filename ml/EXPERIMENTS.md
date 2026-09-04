@@ -3633,3 +3633,16 @@ was scored or selected using model output.
   inside 720 FIT, 720 CAL and 1,440 DEVELOPMENT reserve rows. All 6,380 prior E46/E47
   TrueFake candidates plus current E32 training identities are excluded. Contract SHA-256
   `dbb6f4aa...0e6e`; decoded new AI payloads and model scores remain zero.
+- **Pre-score audit amendment:** the first extraction stopped because the legacy R1b ledger
+  lists the entire 22,688-row candidate plan and masks every camera candidate, not just images
+  consumed by the current model. Remove only that planning ledger from protected-role hashing;
+  keep explicit E42 current-training IDs and all actual CAL/DEVELOPMENT/final manifests excluded.
+  Candidate identities/quotas are unchanged; model scores remain zero.
+- **Pinned-dHash compatibility:** camera SHA-256 values reproduce exactly, but a newer helper's
+  EXIF orientation path does not reproduce the historical realization dHash. Keep the previously
+  decoded/pinned audit dHash for overlap comparisons and verify current bytes by SHA-256. No row,
+  role, quota or score changes.
+- **Identity result:** 2,880/2,880 candidates verify/decode with zero failures. One VISION and
+  one FODB reserve row are excluded for protected dHash overlap; headroom fills all quotas.
+  The frozen 2,400-row manifest is exactly class-balanced inside 600 FIT, 600 CAL and 1,200
+  DEVELOPMENT rows. Manifest SHA-256 `1404a3ff...5b68`; model scores remain zero.

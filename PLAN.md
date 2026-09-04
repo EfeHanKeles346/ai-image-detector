@@ -660,7 +660,7 @@ E47 proved that the required signals already exist but a signed logistic comprom
 FLUX when GAN specialists are quiet. E48 changes only the decision geometry and evidence split;
 all four backbones/scores remain frozen.
 
-- [ ] **Fresh zero-download population:** 2,400 identities outside every E46 reserve and E47
+- [x] **Fresh zero-download population:** 2,400 identities outside every E46 reserve and E47
       candidate, and outside current-candidate training identities. FIT =300 REAL +300 AI;
       CAL =300 REAL +300 AI; DEVELOPMENT =600 REAL +600 AI. FIT/CAL REAL each use 150 unused
       VISION camera originals plus 150 unused CSAFE S21 originals, device-balanced. DEVELOPMENT
@@ -673,6 +673,20 @@ all four backbones/scores remain frozen.
       E46/E47 TrueFake candidates and current-candidate E32 training identities are excluded.
       Contract SHA-256 `dbb6f4aa...0e6e`; model scores zero. Next: payload verification,
       extraction and protected exact/dHash audit only.
+      Audit amendment before model access: the first extraction correctly hard-stopped because
+      legacy `r1b_role_manifest` enumerates the complete 22,688-row candidate plan, not the
+      current model's consumed training identities, and therefore masked every new camera row.
+      Exclude that planning ledger from E48's role-hash set while retaining the exact E42 current-
+      training exclusion plus every actual CAL/DEVELOPMENT/final manifest. Scores remain zero.
+      Second pre-score audit amendment: camera bytes reproduce their pinned SHA-256 exactly, but
+      the current helper's EXIF handling does not reproduce the older realization audit's dHash.
+      Do not replace/recompute the historical dHash. Verify byte SHA and reuse the already-decoded,
+      pinned audit dHash for overlap checks. Candidate identities/quotas and score count stay fixed.
+      **Manifest complete:** 2,880/2,880 candidates verified/decoded, zero decode failures and
+      two protected-dHash exclusions (one VISION, one FODB). The 20% headroom fills every quota:
+      600 FIT, 600 CAL and 1,200 DEVELOPMENT, each exactly class-balanced. Manifest SHA-256
+      `1404a3ff...5b68`; model scores remain zero. Next bind all frozen arm identities before
+      inference, then score FIT+CAL first and keep DEVELOPMENT unopened through selection.
 - [ ] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
       authentic-image percentile. Compare E46, E46+UnivFD, E46+UNINA and all-three using the
       maximum expert percentile. Because `max` is monotone, a low irrelevant-specialist score can

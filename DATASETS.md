@@ -1460,3 +1460,23 @@ DEVELOPMENT 720/720. It excludes all 6,380 E46/E47 TrueFake reserve candidates b
 and explicitly excludes current-candidate E32 training identities from camera candidates.
 The 1,565,157-byte contract SHA-256 is `dbb6f4aa...0e6e`; no new payload was extracted and
 no model score exists.
+
+The first identity-audit execution stopped before a manifest or model score: legacy
+`r1b_role_manifest.json` contains all 22,688 planned C3 roles and therefore marked every fresh
+camera candidate as protected even though the current model consumed only the E42-selected
+subset. E48 now excludes that broad planning ledger from overlap hashes while still excluding
+the exact E42 current-training record IDs and every actual historical CAL/DEVELOPMENT/final role.
+The frozen E48 candidate identities and quotas do not change.
+
+A second pre-score stop identified a hash-implementation mismatch rather than changed data:
+camera files reproduce their pinned SHA-256, while the current helper and the original audit treat
+EXIF orientation differently when deriving dHash. E48 therefore verifies immutable camera bytes
+with SHA-256 and reuses the already-decoded audit dHash for perceptual-overlap comparison. It does
+not silently replace the pinned dHash with a newly computed value. Identities and quotas remain
+unchanged; model scores remain zero.
+
+The corrected audit completed all 2,880 candidates with zero decode failures. One VISION and one
+FODB candidate were excluded for protected dHash overlap; deterministic headroom filled every
+quota without score-dependent replacement. The frozen manifest contains exactly 600 FIT, 600 CAL
+and 1,200 DEVELOPMENT rows, each 50/50 REAL/AI. Its 1,971,148-byte SHA-256 is
+`1404a3ff...5b68`; model scores remain zero.
