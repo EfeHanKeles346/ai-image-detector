@@ -3779,6 +3779,11 @@ was scored or selected using model output.
   E43-S artifact `a3aec445...7390`, DINOv2-S weights `04d27f34...0081`, thresholds and all six
   AI-only checks. It forbids training, threshold/row/source changes, second attempts, balanced-final
   claims and Module-1 promotion. Eighteen focused E49 tests pass; score/metric counts remain zero.
+- **Raw-score checkpoint:** E43-S produced 1,600/1,600 successful scores. A schema mismatch in the
+  final validator stopped after inference but before writing the receipt: completed score rows do
+  not carry manifest-only payload paths. The two schemas were separated and regression-tested;
+  the complete stream resumed without rescoring, is 326,693 bytes /SHA-256 `c97b02a4...fa90`, and
+  aggregate metrics remain unopened.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

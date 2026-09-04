@@ -4641,3 +4641,10 @@ The diagnostic scorer was then implemented and committed before model access. It
 all 1,600 observation identities and the six declared coverage/recall checks. It explicitly forbids
 training, row or source removal, threshold repair, retry and Module-1 promotion. Eighteen focused
 E49 tests pass; no score or aggregate metric has yet been produced.
+
+E43-S then scored all 1,600 frozen E49-D1 observations. The first finalization stopped safely after
+inference because the validator incorrectly demanded manifest-only file paths from the deliberately
+smaller score schema; it wrote neither completion receipt nor metrics. A regression test now keeps
+payload and score validation distinct, and the preserved prefix finalized without rescoring. The
+326,693-byte raw stream hashes to `c97b02a4...fa90`, covers every row and still has zero opened
+aggregate metrics.

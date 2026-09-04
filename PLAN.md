@@ -834,7 +834,8 @@ unmatched random REAL photos to manufacture an easy binary result.
       **Pre-score lock:** contract SHA-256 `d567965d...1cf9` binds the exact 1,600-row manifest,
       E43-S artifact `a3aec445...7390`, DINOv2-S weights `04d27f34...0081`, binary threshold
       `0.07940196245908739` and selective REAL cut `0.011505939625203613`. Eighteen focused E49
-      tests pass; scores and opened metrics remain zero.
+      tests pass. **Raw-score lock:** all 1,600 observations scored with complete coverage; the
+      unopened 326,693-byte stream hashes to `c97b02a4...fa90`. Aggregate metrics remain zero.
 - [ ] Archive pass or failure without retuning. A pass adds current-generator evidence only; a fail
       may pre-register a successor experiment, but neither outcome promotes Module 1 or consumes the
       publisher-separated E49 final. Dotting images remain forbidden from training in this branch.
