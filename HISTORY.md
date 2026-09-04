@@ -4948,3 +4948,12 @@ JPEGs are reserved for CAL only; the IEEE SP Cup's 2,640 hidden-camera test imag
 REAL DEVELOPMENT with unaltered/postprocessed cells; approved Datapoint becomes current-generator
 AI DEVELOPMENT. None may enter E52 final. The IEEE rules gate must be accepted by the user before its
 payload, so implementation may bind inventories but cannot silently bypass that agreement.
+
+That route is now machine-bound without downloading a single image. Contract `975e8164...15e4`
+freezes 1,200 balanced SCMI30 CAL parents, every one of the IEEE test split's 2,640 REAL camera
+images, and 920 Datapoint AI reserves from five current generators. The AI design was corrected
+before commit so all generators share exactly the same 23 prompts in each of eight categories;
+model comparisons therefore cannot inherit a content mismatch. Only 800 clean AI parents may be
+realized, at 20/category/model. The selected seven Datapoint shards total 3.22 GB, IEEE test totals
+0.84 GB and SCMI30 CAL totals 4.25 GB. The IEEE payload remains blocked by the user's unaccepted
+Kaggle competition rules; no legal gate was bypassed, no model was opened and no score exists.

@@ -1,0 +1,93 @@
+{
+  "cal": {
+    "branches": {
+      "Random": 600,
+      "Similar": 600
+    },
+    "devices": 30,
+    "expected_bytes": 4247339334,
+    "identity_sha256": "93181852ff5a89723059b189fdd2bcf31c836418208259738de5321e96135c1a",
+    "parents": 1200
+  },
+  "contract_bytes": 2418484,
+  "contract_sha256": "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d81140ec315e4",
+  "development_ai": {
+    "identity_sha256": "43103faccdbdf4afc71f57923bc7c99f3992cba20d79464291e6be25d7d20e22",
+    "models": 5,
+    "paired_prompt_count": 184,
+    "paired_prompt_identity_sha256": "e4dd219d4f6224fce32d7b93ea56eea1a6e9bc5b22d8cfd0be614ca4eb03def4",
+    "prompt_categories_by_model": {
+      "flux-2-max": {
+        "compositional_stress": 23,
+        "concept_game": 23,
+        "design_layout": 23,
+        "environment_arch": 23,
+        "illustration_editorial": 23,
+        "marketing_ad": 23,
+        "photoreal_people": 23,
+        "product_commerce": 23
+      },
+      "gemini-3.1-flash-image": {
+        "compositional_stress": 23,
+        "concept_game": 23,
+        "design_layout": 23,
+        "environment_arch": 23,
+        "illustration_editorial": 23,
+        "marketing_ad": 23,
+        "photoreal_people": 23,
+        "product_commerce": 23
+      },
+      "gpt-image-2-high": {
+        "compositional_stress": 23,
+        "concept_game": 23,
+        "design_layout": 23,
+        "environment_arch": 23,
+        "illustration_editorial": 23,
+        "marketing_ad": 23,
+        "photoreal_people": 23,
+        "product_commerce": 23
+      },
+      "ideogram-4.0-quality": {
+        "compositional_stress": 23,
+        "concept_game": 23,
+        "design_layout": 23,
+        "environment_arch": 23,
+        "illustration_editorial": 23,
+        "marketing_ad": 23,
+        "photoreal_people": 23,
+        "product_commerce": 23
+      },
+      "seedream-5.0-pro": {
+        "compositional_stress": 23,
+        "concept_game": 23,
+        "design_layout": 23,
+        "environment_arch": 23,
+        "illustration_editorial": 23,
+        "marketing_ad": 23,
+        "photoreal_people": 23,
+        "product_commerce": 23
+      }
+    },
+    "reserve_rows": 920,
+    "selected_payload_bytes": 654005247,
+    "source_shard_bytes": 3220281593,
+    "target_rows_after_realization": 800
+  },
+  "development_real": {
+    "access": "awaiting_user_competition_rules_acceptance",
+    "full_bytes": 11447649387,
+    "full_file_count": 5391,
+    "identity_sha256": "fc3657dd1f198b6df2533c824a58489e863dfef474c8cc7f8b003e0dad62fb05",
+    "test_bytes": 837665909,
+    "test_files": 2640,
+    "transport_cells": {
+      "postprocessed": 1320,
+      "unaltered": 1320
+    }
+  },
+  "model_scores_created": 0,
+  "new_image_bytes_downloaded": 0,
+  "schema_version": 1,
+  "state": "e51_route_frozen_untransferred_unscored",
+  "train_auxiliary_archive_bytes": 174438734
+}

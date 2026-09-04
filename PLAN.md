@@ -1034,7 +1034,7 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       `3e5caa86...bd70f`. It creates zero candidate thresholds and zero new model scores. The measured
       10%-FPR TPR remains 72.30%/58.80%; paired AND remains 32.80% REAL false-AI at 93.50% AI recall;
       JPEG/MPO and resolution findings reproduce. This closes diagnosis only, not model selection.
-- [ ] **Audit new REAL sources before downloading images.** Compare official RAISE, Dresden/IMAGINE
+- [x] **Audit new REAL sources before downloading images.** Compare official RAISE, Dresden/IMAGINE
       camera collections and a current-phone source for licence, native-vs-publisher transport,
       device/scene grouping, resolution and download size. Choose disjoint TRAIN/CAL and a separate
       publisher/device DEVELOPMENT source. Require >=4,000 TRAIN, >=1,000 CAL and >=2,000 DEVELOPMENT
@@ -1050,8 +1050,9 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       never native CAL/DEVELOPMENT. RAISE is valid native RAW but ~350 GB/three cameras; Dresden,
       IMAGINE and SOCRatES remain blocked by unavailable official transport, unverifiable TLS/explicit
       terms, or signed agreement. Evidence `9ddab57a...c4883`; image downloads remain forbidden until
-      an independent, explicitly licensed DEVELOPMENT publisher is bound. The audit is not complete.
-- [ ] **Bind the practical E51 data route before payload access.** Reuse only historical TRAIN-role
+      an independent, explicitly licensed DEVELOPMENT publisher is bound. The audit is completed by
+      the following IEEE/Datapoint route bind; this metadata-only checkpoint remains unchanged.
+- [x] **Bind the practical E51 data route before payload access.** Reuse only historical TRAIN-role
       parents for the base fit and add SCIMD-17 solely as resized-real hard negatives. Freeze native
       SCMI30 v2 to CAL at 40 parents/device—20 Random plus 20 Similar for each of 30 normalized device
       ids, 1,200 parents total—without using it in TRAIN or DEVELOPMENT. Use all 2,640 hidden-label
@@ -1060,6 +1061,15 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       as the independent current-generator AI DEVELOPMENT component, never TRAIN/CAL/E52 final.
       IEEE payload access requires the user to accept the archived competition rules; until that
       one-click gate is complete, bind metadata/contracts only and download zero image bytes.
+      **Bound, still zero-payload:** exact contract `975e8164...15e4` freezes 1,200 SCMI30 CAL
+      parents (30 devices x20 Random+x20 Similar; 4,247,339,334 expected bytes), every one of the
+      IEEE test split's 2,640 REAL DEVELOPMENT TIFFs (1,320 unaltered +1,320 postprocessed;
+      837,665,909 bytes), and a 920-row Datapoint reserve for five current generators. The AI
+      reserve uses the same 23 score-blind prompts in each of eight categories for every model;
+      realization must retain 20/category/model =800 parents. Seven exact Parquet shards total
+      3,220,281,593 transfer bytes while the selected payloads total 654,005,247 bytes. The IEEE
+      archive remains HTTP 403 until the user accepts Kaggle's competition rules. No image or model
+      score has been opened.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,
@@ -1069,8 +1079,8 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered
       accuracy >=95% and uncertainty <=20%. Archive failure; no DEVELOPMENT-informed retuning.
-- [ ] **Only a DEVELOPMENT pass may bind E52.** Keep approved Datapoint image bodies unopened as a
-      possible current-AI final component and select an entirely new REAL publisher/device source.
+- [ ] **Only a DEVELOPMENT pass may bind E52.** Datapoint is now irrevocably assigned to E51
+      DEVELOPMENT; select entirely new REAL and current-AI publishers for E52 final.
       E52 repeats the paired >=2,000-parent, 20-gate protocol once. Module 2 remains planning-only
       until a successor earns Module-1 v1; its old masks/results stay protected but documented.
 

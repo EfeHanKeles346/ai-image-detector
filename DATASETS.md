@@ -532,6 +532,33 @@ the page exposes no explicit licence. SOCRatES requires a signed agreement and e
 Therefore no image payload is authorized by this partial audit. Compact evidence SHA-256 is
 `9ddab57a5d478102b9b3314f4258f548a98c743377150e302355dc206fdc4883`.
 
+#### E51 frozen TRAIN/CAL/DEVELOPMENT route — identities only
+
+The role contract was frozen before an image transfer or detector score. Its 2,418,484-byte external
+JSON hashes to `975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d81140ec315e4`.
+Historical legitimate TRAIN parents remain the base; SCIMD-17 may add only its 224x224 resized REAL
+images as auxiliary hard negatives.
+
+SCMI30 supplies CAL only: exactly 20 Random and 20 Similar JPEGs from each of 30 normalized devices,
+for 1,200 parents /4,247,339,334 expected bytes. The frozen selection identity hash is
+`93181852...c1a`. No SCMI30 row may enter TRAIN, DEVELOPMENT or E52 final.
+
+The IEEE Signal Processing Cup 2018 camera-identification competition supplies REAL DEVELOPMENT.
+The complete public inventory is 5,391 files /11,447,649,387 bytes; only all 2,640 hidden-camera test
+TIFFs are selected, split evenly into 1,320 unaltered and 1,320 publisher-postprocessed rows
+(837,665,909 bytes). Its external 513,553-byte inventory hashes to `fdb4fdee...c41b`. Kaggle returns
+HTTP 403 for payload until the user accepts the competition rules; the project does not accept legal
+terms on the user's behalf and does not substitute training labels for the hidden test cameras.
+
+Datapoint supplies AI DEVELOPMENT only at pinned revision `e1d8719a...c928`: FLUX.2 Max, Nano
+Banana 2, GPT Image 2 high, Ideogram 4.0 quality and Seedream 5.0 Pro. Seven predeclared image
+Parquets total 3,220,281,593 bytes. To remove a model/content confound, the reserve freezes the exact
+same 23 prompt identities in each of eight categories for every generator: 184/model, 920 rows total,
+of which realization may keep 20/category/model =800 clean parents. Bound selected image bodies total
+654,005,247 bytes; reserve identity SHA-256 is `43103fac...e22`. This source is now consumed for E51
+DEVELOPMENT and cannot become E52 final. Every role still requires decode, exact/perceptual overlap
+and original/Q75 pairing checks before admission.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.

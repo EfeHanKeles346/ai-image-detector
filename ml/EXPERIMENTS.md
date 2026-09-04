@@ -3996,6 +3996,15 @@ was scored or selected using model output.
   IMAGINE lacks verified TLS/explicit terms; SOCRatES is agreement-gated. Evidence
   `9ddab57a...c4883`; the audit deliberately authorizes no download until a different licensed
   DEVELOPMENT publisher is found.
+- **E51 role route — FROZEN, zero image payload:** contract `975e8164...15e4` assigns historical
+  legitimate parents plus SCIMD-17 resize hard negatives to TRAIN, 1,200 device-balanced SCMI30
+  originals to CAL, all 2,640 IEEE SP Cup test TIFFs to REAL DEVELOPMENT and Datapoint to AI
+  DEVELOPMENT. The Datapoint reserve is paired by content: every one of five current generators has
+  the identical 23 score-blind prompts in each of eight categories (920 reserves, target 800 after
+  decode/decontamination). Seven exact source shards cost 3,220,281,593 transfer bytes rather than
+  the 34.9 GB repository. IEEE's test payload is 837,665,909 bytes but remains 403-gated until the
+  user accepts Kaggle competition rules. Counts, identities and bytes are bound; model scores and
+  image downloads remain zero. Datapoint can no longer serve E52 final.
 
 ### Gated-source approval audit — route decision before any image access
 
