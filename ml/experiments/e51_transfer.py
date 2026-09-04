@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import shutil
 import ssl
+import threading
 from typing import Any, Iterable, Mapping
 import zipfile
 
@@ -41,6 +43,10 @@ SCMI30_ARCHIVE_CONTAINER_BYTES = 34_429_117_013
 SCMI30_SELECTED_FILES = 1_200
 SCMI30_SELECTED_BYTES = 4_247_339_334
 SCMI30_RANGE_BLOCK_BYTES = 1024**2
+SCMI30_WORKERS = 4
+
+_SCMI30_PROGRESS_LOCK = threading.Lock()
+_SCMI30_PROGRESS = 0
 
 ROOT = DATA_ROOT / "e51"
 CONTRACT = ROOT / "route" / "contract_untransferred.json"
@@ -247,6 +253,37 @@ def _scmi30_contract() -> list[dict[str, Any]]:
     ):
         raise ValueError("E51 SCMI30 route boundary changed")
     return rows
+
+
+def _download_scmi30_chunk(url: str, rows: list[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    global _SCMI30_PROGRESS
+    results = []
+    ssl_context = ssl.create_default_context(cafile=certifi.where())
+    with fsspec.open(
+        url,
+        "rb",
+        block_size=SCMI30_RANGE_BLOCK_BYTES,
+        cache_type="readahead",
+        ssl=ssl_context,
+    ) as remote_archive:
+        with zipfile.ZipFile(remote_archive) as archive:
+            for row in rows:
+                destination = scmi30_destination(row)
+                stage_name = hashlib.sha256(str(row["identity"]).encode()).hexdigest()[:20] + ".part"
+                temporary = SCMI30_STAGING_ROOT / stage_name
+                if temporary.exists():
+                    temporary.unlink()
+                with archive.open(str(row["remote_path"]), "r") as source, temporary.open("wb") as target:
+                    shutil.copyfileobj(source, target, length=1024 * 1024)
+                result = inspect_scmi30_file(temporary, row)
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                temporary.replace(destination)
+                results.append({**result, "path": str(destination)})
+                with _SCMI30_PROGRESS_LOCK:
+                    _SCMI30_PROGRESS += 1
+                    if _SCMI30_PROGRESS % 50 == 0:
+                        print(f"E51 SCMI30 files {_SCMI30_PROGRESS}/{SCMI30_SELECTED_FILES}", flush=True)
+    return results
 
 
 def validate_datapoint_remote(files: Mapping[str, int]) -> dict[str, int]:
@@ -514,20 +551,16 @@ def download_scmi30() -> dict[str, Any]:
                 or archive_summary["selected_uncompressed_bytes"] != SCMI30_SELECTED_BYTES
             ):
                 raise ValueError("SCMI30 selected ZIP population changed")
-            missing.sort(key=lambda row: info_by_name[str(row["remote_path"])].header_offset)
-            for index, row in enumerate(missing, start=1):
-                destination = scmi30_destination(row)
-                temporary = SCMI30_STAGING_ROOT / f"{destination.name}.part"
-                if temporary.exists():
-                    temporary.unlink()
-                with archive.open(str(row["remote_path"]), "r") as source, temporary.open("wb") as target:
-                    shutil.copyfileobj(source, target, length=1024 * 1024)
-                result = inspect_scmi30_file(temporary, row)
-                destination.parent.mkdir(parents=True, exist_ok=True)
-                temporary.replace(destination)
-                completed.append({**result, "path": str(destination)})
-                if index % 50 == 0 or index == len(missing):
-                    print(f"E51 SCMI30 files {len(completed)}/{len(rows)}", flush=True)
+            offsets = {name: info.header_offset for name, info in info_by_name.items()}
+    missing.sort(key=lambda row: offsets[str(row["remote_path"])])
+    chunk_size = max(1, (len(missing) + SCMI30_WORKERS - 1) // SCMI30_WORKERS)
+    chunks = [missing[index:index + chunk_size] for index in range(0, len(missing), chunk_size)]
+    global _SCMI30_PROGRESS
+    _SCMI30_PROGRESS = already_present
+    with ThreadPoolExecutor(max_workers=min(SCMI30_WORKERS, len(chunks) or 1)) as pool:
+        for results in pool.map(lambda chunk: _download_scmi30_chunk(url, chunk), chunks):
+            completed.extend(results)
+    print(f"E51 SCMI30 files {len(completed)}/{len(rows)}", flush=True)
     completed.sort(key=lambda row: row["identity"])
     devices = Counter(row["device_id"] for row in completed)
     branches = Counter(row["branch"] for row in completed)
@@ -553,6 +586,7 @@ def download_scmi30() -> dict[str, Any]:
         "branches": dict(sorted(branches.items())),
         "already_present_at_run_start": already_present,
         "downloaded_this_run": len(completed) - already_present,
+        "range_workers": SCMI30_WORKERS,
         "archive_transport": "official_zip_http_range_selected_members_only",
         "archive_container_bytes": SCMI30_ARCHIVE_CONTAINER_BYTES,
         "selected_compressed_bytes": archive_summary["selected_compressed_bytes"],
@@ -565,7 +599,7 @@ def download_scmi30() -> dict[str, Any]:
     evidence = {key: payload[key] for key in (
         "schema_version", "state", "role", "route_contract_sha256", "dataset", "version",
         "files", "bytes", "devices", "per_device", "branches", "already_present_at_run_start",
-        "downloaded_this_run", "archive_transport", "archive_container_bytes",
+        "downloaded_this_run", "range_workers", "archive_transport", "archive_container_bytes",
         "selected_compressed_bytes", "free_bytes_before", "free_bytes_after", "model_scores_created",
     )}
     evidence.update({

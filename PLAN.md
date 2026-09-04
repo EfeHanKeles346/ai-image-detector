@@ -1108,6 +1108,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       legitimately add scene subfolders below the bound device (`objects/`, etc.). The safe-path gate
       now fixes root +branch +exact contracted device while allowing nested descendants; traversal,
       suffix and device substitution remain rejected. Identities and byte quotas do not change.
+      **Measured transport parallelism:** one Range reader admitted 59 exact rows /231 MB but would
+      take roughly an hour. It was stopped cleanly; the lone inadmissible partial was removed before restart. The same
+      frozen archive route now uses four independent readers over four contiguous archive-order
+      partitions, with collision-proof staging names and unchanged per-file CRC/decode/hash gates.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

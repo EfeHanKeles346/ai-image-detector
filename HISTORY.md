@@ -5017,3 +5017,9 @@ scene folders such as `objects/`; the initial safe-path predicate had assumed ex
 The corrected pre-transfer gate still binds dataset root, branch and exact contracted device folder,
 rejects traversal or suffix changes, and permits only descendants beneath that device. No identity,
 quota or byte changed and zero SCMI30 images had been downloaded.
+
+The valid single-reader transfer was then measured at 59 admitted images /231 MB in roughly three
+minutes, too slow for a 4.25 GB component. It was interrupted cleanly before a receipt; the 59 exact
+files remain restart-safe and the lone inadmissible `.part` was removed before restart. Four independent TLS-verified Range
+readers now process four contiguous archive-order partitions with hash-derived staging names. This
+changes transport throughput only; every identity, byte, CRC, decode and CAL quota remains fixed.
