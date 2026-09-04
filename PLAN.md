@@ -807,6 +807,27 @@ it is not another development set and it cannot be used to repair E43-S.
       source removal or second E49 attempt is allowed. Only a 20/20 pass (ten gates x two conditions)
       freezes Module-1 v1 and authorizes a separately reviewed demo update.
 
+#### E49-D1 — ungated current-generator diagnostic while Datapoint review is pending
+
+This is an AI-only stress test, not a replacement E49 final. Its Turkish text/sign content cannot
+measure authentic-photo false positives, AUC or balanced accuracy and must never be combined with
+unmatched random REAL photos to manufacture an easy binary result.
+
+- [ ] Pin ungated CC-BY-4.0 `fge-auto/dotting-test` revision
+      `0bcc6877c7d23f4e615b5470f06b1c00e7db7311`. Bind 160 target +32 reserve images for each of
+      GPT Image 2, Nano Banana 2, FLUX.2 Pro, Ideogram 4 and Seedream 5.0 Lite by deterministic
+      request-id hash before image transfer. Preserve attribution and provider-output caveats.
+- [ ] Download only the 960 bound WebP files to LaCie with per-file byte/format checks, resume and a
+      512 MiB stop. Decode, exact/dHash-audit protected roles and freeze the first 160 clean parents
+      per model without detector access. Derive paired `social_q75` children exactly as E49.
+- [ ] Score only frozen E43-S with the existing E50 binary/selective cuts. Commit both raw streams
+      before opening metrics; report pooled and per-model AI recall, automatic AI-decision rate and
+      original-to-Q75 recall loss. Diagnostic gates are coverage=100%, pooled recall>=80%, worst
+      model recall>=60% and each condition's worst-model result disclosed.
+- [ ] Archive pass or failure without retuning. A pass adds current-generator evidence only; a fail
+      may pre-register a successor experiment, but neither outcome promotes Module 1 or consumes the
+      publisher-separated E49 final. Dotting images remain forbidden from training in this branch.
+
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 
 ### Stage A — finish and prove Module 1

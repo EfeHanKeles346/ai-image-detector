@@ -3748,6 +3748,20 @@ was scored or selected using model output.
   review is pending and the metadata-only probe still returns `GatedRepoError`. No retry was
   misreported as access and no final image byte was downloaded.
 
+### E49-D1 pre-registration — open current-generator diagnostic, no image transferred
+
+- **Question:** while Datapoint is under manual review, does frozen E43-S retain AI evidence on five
+  2026 providers under original WebP and deterministic social-Q75 transport?
+- **Source/selection:** ungated CC-BY-4.0 Dotting Test revision `0bcc6877...7311`; model-blind hash
+  rank on successful rows; 160 target +32 reserve each for GPT Image 2, Nano Banana 2, FLUX.2 Pro,
+  Ideogram 4 and Seedream 5.0 Lite. Network stop 512 MiB.
+- **Candidate/metrics:** exact E43-S and E50 cuts only; pooled/per-model AI recall, automatic
+  AI-decision rate, paired transport loss and 100% coverage. Gate pooled recall >=80% and worst
+  model >=60% independently per condition. Commit score streams before first aggregate metric.
+- **Boundary:** Turkish glyph/sign content is a narrow AI-only stress distribution. It cannot report
+  AUC, balanced accuracy or authentic-photo safety, cannot promote Module 1 and cannot replace E49.
+  It remains non-training diagnostic evidence regardless of outcome.
+
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 
 - E17/E18 hard-code non-overlapping 128 px tiles capped at 36, then discard any manipulated image

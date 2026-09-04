@@ -4600,3 +4600,16 @@ states that the request is awaiting review by its authors; the CLI is authentica
 `efehankeles` account, and a fresh probe still fails closed with `GatedRepoError`. This is an
 external approval wait rather than a login or implementation fault. E49 remains unscored and no
 Datapoint image byte has been downloaded.
+
+ITW-SM access was rechecked as the other remembered gated request and still returns HTTP 403
+`GatedRepoError`. This does not block new work: the same official MediaEval/ITW-SM distribution was
+already acquired publicly and consumed by E45, so later Hugging Face approval could not create a
+second independent final. A new source audit rejected MLLMGenSet as a final substitute because its
+publisher/collection already supplied E30/E31 DEVELOPMENT, and rejected currently licence-unstated
+SafeIMG/NTIRE releases from a promotion claim.
+
+The immediate open diagnostic is therefore Dotting Test: CC BY 4.0, ungated, 384 MB total and 8,396
+successful images across 40 generators. It contains 210 rows each for the five selected 2026 models.
+Before image transfer, E49-D1 freezes an AI-only 960-row reserve and 512 MiB ceiling. Its narrow
+Turkish text/sign content is explicitly prevented from masquerading as a balanced final; it can
+measure current-model AI recall and recompression loss while Commons/Datapoint E49 remains clean.

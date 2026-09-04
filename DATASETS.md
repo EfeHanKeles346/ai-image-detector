@@ -317,6 +317,21 @@ has excellent 2026 coverage, but its current canonical licence reserves reuse of
 without written permission. Qwen Image Bench and every TrueFake/E30/E36/E45/E48/E50 source are
 already protected, consumed or publisher-overlapping and cannot be relabelled as fresh E49 proof.
 
+#### E49-D1 open-access diagnostic source — frozen intent before image transfer
+
+`fge-auto/dotting-test` is ungated and CC BY 4.0 at revision
+`0bcc6877c7d23f4e615b5470f06b1c00e7db7311`. Its 384 MB repository contains 8,396 successful
+generated outputs across 40 models; each of the five selected 2026 families has 210 available rows:
+GPT Image 2, Nano Banana 2, FLUX.2 Pro, Ideogram 4 and Seedream 5.0 Lite. E49-D1 will bind 192 per
+model (160 target +32 reserve), at most 960 WebP files /512 MiB.
+
+This dataset is useful because it provides immediate, attribution-clear coverage of the same modern
+families sought from Datapoint. It is deliberately narrow: all images test Turkish glyphs in signs
+or text-centric scenes. Therefore it is an AI-recall/transport diagnostic only, never a balanced
+final and never evidence of REAL-photo safety. The full repository, VLM labels and unrelated model
+rows are not required. Attribution must credit Fırat Gelbal and Dotting Test; downstream users must
+also review the applicable upstream provider-output terms.
+
 ### Current generators, AI-only — pair with care
 
 #### E32/C2a physical and licence inventory (2026-08-26)
