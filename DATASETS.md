@@ -1816,3 +1816,9 @@ bytes. No image body was decoded during acquisition. Because all publisher image
 224x224 resizes, this CC-BY-4.0 source is restricted to auxiliary REAL hard negatives in TRAIN;
 it cannot calibrate, develop, finally evaluate, or support native-camera claims. External receipt
 SHA-256 is `8b38fa826a8f3f51705eff96236cbc5c13602fdba4c124d7bd5ce091ce20b230`.
+
+SCMI30 CAL identity audit found one protected near-duplicate: the publisher-labelled no-content
+`D04_black.jpg`. A score-blind amendment downloaded five previously unselected D04-Similar reserves
+(7,710,716 bytes); all passed, and the original namespace's first clean row `D04_nat_45.jpg` replaces
+it. Receipt SHA-256 is `66e3d063ba530d146c93dc44c5cfdcf4f045ca88b8947798ba0bf90657e59722`.
+The CAL contract remains 1,200 parents, 30 devices x40 and Random/Similar 600/600.

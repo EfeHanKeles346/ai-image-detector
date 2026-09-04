@@ -1150,6 +1150,9 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       publisher's `D04_black.jpg`; 25 other coarse dHash candidates clear at pHash distance 22–36.
       Bind five unselected D04-Similar rows by the original namespace rank, download only these, and
       let the first clean identity replace the black frame while preserving 30 x40 and 600/600.
+      **Amendment complete:** all five bound reserves /7,710,716 bytes passed acquisition and identity
+      audit; the first ranked clean row `D04_nat_45.jpg` replaces the black frame. Receipt
+      `66e3d063...9722`; rejected reserves and model scores are zero.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered

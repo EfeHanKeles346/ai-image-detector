@@ -5077,3 +5077,8 @@ SCMI30 CAL parents. Twenty-five other degenerate dHash candidates clear at pHash
 Because the original route lacked decode headroom, a bounded amendment freezes the first five
 previously unselected D04-Similar identities under the original namespace rank. Only these may be
 fetched, and the first clean row replaces the black frame without changing device/branch quotas.
+
+The amendment then transferred exactly its five rows /7,710,716 bytes. All passed decode and
+protected identity checks, so original-rank head `D04_nat_45.jpg` replaces `D04_black.jpg`; no later
+reserve was consulted for performance. Receipt `66e3d063...9722` closes the correction with zero
+rejections and zero model scores while preserving all CAL quotas.

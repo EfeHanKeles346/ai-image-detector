@@ -1,0 +1,13 @@
+{
+  "amendment_contract_sha256": "39128c1b5f599673b4db5e300c910919c475e10f6c121899ec62bc499397e9f5",
+  "downloaded_bytes": 7710716,
+  "downloaded_rows": 5,
+  "excluded_identity": "kaggle:goyalpuneet/sci30iitrpr:v2:SCMI30-IITRPR/Similar/D04_Samsung_Galaxy_M04/no_content/D04_black.jpg",
+  "model_scores_created": 0,
+  "receipt_bytes": 1393,
+  "receipt_sha256": "66e3d063ba530d146c93dc44c5cfdcf4f045ca88b8947798ba0bf90657e59722",
+  "rejected": [],
+  "schema_version": 1,
+  "selected_identity": "kaggle:goyalpuneet/sci30iitrpr:v2:SCMI30-IITRPR/Similar/D04_Samsung_Galaxy_M04/natural/D04_nat_45.jpg",
+  "state": "e51_scmi30_identity_amended_unscored"
+}

@@ -4024,6 +4024,10 @@ was scored or selected using model output.
   reproduces MD5 and SHA-256 `ef1fe3e7...0201`. Its safe central directory contains 17,620 images /
   172,781,180 expanded bytes. Receipt `8b38fa82...b230` records zero decoded bodies and scores.
   Realization is restricted to score-blind 224x224 REAL hard negatives in TRAIN.
+- **SCMI30 identity amendment — COMPLETE, unscored:** a full exact+dHash+pHash audit rejected only
+  the no-content black D04 frame. Five same-device/branch reserves were bound before 7,710,716 bytes
+  transferred; all passed, and first-ranked `D04_nat_45.jpg` is the replacement. Receipt
+  `66e3d063...9722`; balance remains 30 x40 and 600/600, with zero model scores.
 
 ### Gated-source approval audit — route decision before any image access
 
