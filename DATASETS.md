@@ -286,6 +286,31 @@ LOCKED FINAL ownership. `evidence/e31_b5_development.json` records the failure a
 rejects that state before reading the Qwen manifest or loading a detector. No E30 row has moved into
 TRAIN/CALIBRATION and no new dataset was selected after seeing the result.
 
+### E49 comprehensive-final registry — frozen intent before payload transfer (2026-09-04)
+
+E49 is the last independent promotion test for Module 1. Its target is **2,000 unique parents**,
+exactly 1,000 REAL and 1,000 AI. No third-party image is committed to Git; payloads belong under
+`/Volumes/LaCie/pixelproof-datasets/e49/`. The 4 GiB network ceiling excludes the already-local
+AIGC archive and includes every newly transferred image byte.
+
+| Source | Pinned identity / licence | Frozen E49 role and quota | Why it is here | Boundary |
+|---|---|---:|---|---|
+| Wikimedia Commons camera-category originals | Commons API page/revision ids and per-file licence/attribution will be frozen by the binder | FINAL REAL, 1,000: 100 each across ten declared current phone/camera categories | Independent public publisher; original-upload transport, multiple devices and uploaders; directly stresses the false-AI failure on real photography | JPEG only; camera category and EXIF must agree; uploader capped; “original upload” is not claimed to be untouched sensor-native data |
+| `datapointai/text-2-image-human-preferences-2m` | revision `e1d8719a2d521eac6c62ee84f329afc2c03ec928`; metadata CC BY 4.0; image-output rights remain provider-specific | FINAL AI, 800: 160 each GPT Image 2 / Nano Banana 2 / Seedream 5 Pro / FLUX 2 / Ideogram 4 | August-2026 independent collection, fixed seed, 500 prompts in ten categories, current provider breadth and full-resolution output table | Contact-sharing gate must be accepted by the user first; evaluation/research only; no post-score source substitution |
+| `TheKernel01/AIGC-Detection-Benchmark` | revision `c91d9024a5a77ef06e2ec681b53f9caf08675663`; Apache-2.0; local 60-shard test release | FINAL AI, 200 StyleGAN2 (generator code 14) | Adds a GAN family from a source not used for E43-S training or E48/E50 selection; prevents “current diffusion only” success | Test-only; select bytes without reading scores; source-native format preserved; exact/dHash protected-role audit required |
+
+Every parent receives two paired conditions: `publisher_original` and deterministic `social_q75`
+(EXIF transpose, RGB, long side <=1080, JPEG q75, 4:2:0, metadata stripped). The conditions are
+reported separately and never counted as 4,000 independent samples. A source/label-stratified,
+parent-level 10,000-bootstrap contract protects confidence intervals from derived-copy inflation.
+
+Rejected alternatives are part of the registry, not forgotten research. SCIMD-17 is only 177 MB,
+Apache-2.0 and genuinely camera-captured, but the publisher resized all 17,000 images to 224 x 224;
+it does not answer the native/gallery-real question and would leak class through scale. ImageBench
+has excellent 2026 coverage, but its current canonical licence reserves reuse of generated images
+without written permission. Qwen Image Bench and every TrueFake/E30/E36/E45/E48/E50 source are
+already protected, consumed or publisher-overlapping and cannot be relabelled as fresh E49 proof.
+
 ### Current generators, AI-only — pair with care
 
 #### E32/C2a physical and licence inventory (2026-08-26)

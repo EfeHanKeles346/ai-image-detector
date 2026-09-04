@@ -3705,3 +3705,25 @@ was scored or selected using model output.
   the measured noise-energy drop plus dense DINO tokens. Never localise fully re-rendered edits.
 - Cross-module observations can pre-register a fresh Module 1 successor experiment, but cannot
   change the frozen Module-1 v1 threshold/artifact or reuse Module 2 validation rows to repair it.
+
+### E49-A — final-of-final pre-registration, before image bytes
+
+- **Question:** does exact E43-S preserve E50's balanced REAL safety and AI sensitivity on a
+  new-publisher, 2,000-parent population and after a fixed social-media transform?
+- **Parents:** 1,000 REAL Wikimedia Commons camera-category original uploads, balanced across ten
+  declared phone/camera groups; 800 current AI outputs from five Datapoint 2026 provider/model
+  cells; 200 StyleGAN2 outputs from the local AIGC Detection Benchmark. Every prior TRAIN/FIT/CAL/
+  DEVELOPMENT/final identity is protected by exact and perceptual decontamination.
+- **Candidate:** E43-S SHA `a3aec445...7390`; AI cut `0.07940196245908739`; selective REAL cut
+  `0.011505939625203613`; no refit, calibration, fusion or alternative candidate. The selective
+  cuts achieved 93.33% coverage /96.96% covered accuracy on consumed E50 CAL and 89.75% /95.36%
+  on consumed E50 DEVELOPMENT; those rows select the policy but never count as E49 evidence.
+- **Conditions:** received publisher bytes and deterministic RGB/JPEG q75 social child. Both share
+  parent/source labels and are bootstrapped as paired parents. The test passes only if the same ten
+  gates pass independently in both conditions: complete coverage, AUC .90, BA .85, pooled/worst
+  REAL FP .10/.20, pooled/worst AI recall .80/.60, selective coverage .80, covered accuracy .95
+  and uncertainty .20. Thus Module-1 v1 requires 20/20 checks, not a favourable pooled average.
+- **Order:** freeze metadata identities -> commit; transfer/decode/hash without model -> freeze
+  manifest -> commit; freeze score/evaluation contract -> commit; write raw scores -> commit; open
+  metrics once -> archive pass/failure. Datapoint payload access is currently blocked only by its
+  user contact-sharing gate; metadata research does not authorize the project to submit that form.

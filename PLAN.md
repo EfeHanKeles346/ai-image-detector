@@ -747,6 +747,52 @@ evidence already vetoed inside E46. Treat this as model selection on CAL, not as
       row publisher-separated native + social/recompressed final already required below. A full
       ten-gate pass creates Module-1 v1 and may update the web demo; otherwise Module 1 stays open.
 
+#### E49-A — comprehensive-final source and decision contract (frozen before image transfer)
+
+E50 passed, so the last Module-1 proof may now be built. This is one independent, one-shot test;
+it is not another development set and it cannot be used to repair E43-S.
+
+- [x] **Reject attractive but invalid shortcuts before bytes.** SCIMD-17 is Apache-2.0 and compact,
+      but every camera image was publisher-resized to 224 x 224; it cannot prove gallery-like
+      authentic-photo safety and would create a resolution shortcut. ImageBench publishes useful
+      2026 outputs, but its current site licence reserves redistribution/republication and therefore
+      is not admitted. Qwen Image Bench, TrueFake, ITW-SM, FODB, VISION, CSAFE, IPN, owner-gallery
+      and every earlier TRAIN/FIT/CAL/DEVELOPMENT source remain excluded or consumed.
+- [ ] **Freeze exactly 2,000 balanced parent identities.** REAL = 1,000 Wikimedia Commons original
+      uploads, 100 each from ten declared modern phone/camera categories, JPEG only, with matching
+      camera EXIF/category evidence and a per-uploader cap. AI = 800 Datapoint 2026 benchmark
+      outputs, 160 each from GPT Image 2, Nano Banana 2, Seedream 5 Pro, FLUX 2 and Ideogram 4,
+      plus 200 StyleGAN2 rows from the already-local Apache-2.0 AIGC Detection Benchmark. Datapoint
+      stays metadata-only until the user accepts its contact-sharing gate; no substitute source may
+      be chosen after a detector score is seen.
+- [ ] **Bind before download.** Pin repository revisions, Commons page/revision ids, prompt ids,
+      generator/provider names, expected byte lengths, licences/terms, a deterministic hash rank,
+      20% reserve where available and a 4 GiB network stop. Store payloads only under
+      `/Volumes/LaCie/pixelproof-datasets/e49/`; never commit third-party images. Abort rather than
+      silently replacing a source, device or generator after scoring starts.
+- [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
+      image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
+      every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean
+      quota by the predeclared hash order. Record all exclusions and 100% retained-manifest coverage.
+- [ ] **Create two paired conditions per parent.** `publisher_original` preserves received bytes.
+      `social_q75` applies EXIF transpose, RGB conversion, long-side cap 1080, JPEG quality 75,
+      4:2:0 subsampling and metadata removal. The derived child inherits its parent id, label and
+      source; 4,000 observations still count as N=2,000 parents. Bootstrap and split only by parent.
+- [ ] **Freeze E43-S and the decision layer before scoring.** Candidate artifact SHA remains
+      `a3aec445...7390`; binary AI cut remains `0.07940196245908739`. Selective decisions are REAL
+      below `0.011505939625203613`, AI at/above the binary cut and UNCERTAIN between them. These cuts
+      were selected only from consumed E50 CAL/DEVELOPMENT and may not move in E49.
+- [ ] **Require the full ten gates independently on both conditions.** Coverage =100%; AUC >=0.90;
+      balanced accuracy >=0.85; pooled REAL false-AI <=10%; worst REAL device/source false-AI <=20%;
+      pooled AI recall >=80%; worst AI generator recall >=60%; selective automatic coverage >=80%;
+      covered accuracy >=95%; uncertainty <=20%. Report every source and 10,000 parent-level,
+      label/source-stratified bootstrap intervals. Also report a model-blind format/geometry audit;
+      a shortcut warning cannot be hidden by a passing pooled number.
+- [ ] **Open metrics once.** Raw score streams are committed before evaluation. Any failure, missing
+      source, coverage miss or gate miss keeps Module 1 open; no threshold repair, row removal,
+      source removal or second E49 attempt is allowed. Only a 20/20 pass (ten gates x two conditions)
+      freezes Module-1 v1 and authorizes a separately reviewed demo update.
+
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 
 ### Stage A — finish and prove Module 1

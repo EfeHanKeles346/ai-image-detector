@@ -4544,3 +4544,19 @@ SD3 transfer at 98.67% and 92.67%; the unseen GAN families reach 68.67% StyleGAN
 StyleGAN3. The threshold did not move and there was no retry. This is strong independent evidence,
 but Module 1 is deliberately not declared finished: E49's larger publisher/transport-separated
 final remains mandatory before Module-1 v1 or any demo replacement.
+
+E49 planning then converted “a larger final” into an exact last proof. The target is 2,000 balanced
+parents, not thousands of loosely sourced files: 1,000 new Wikimedia Commons camera-category
+original uploads across ten device groups, 800 August-2026 Datapoint outputs across five current
+provider/model cells, and 200 StyleGAN2 images from an unused test-only AIGC source. Received bytes
+and a deterministic social JPEG child are separate paired columns; the same ten frozen binary and
+selective gates must pass in both, with 10,000 parent-level stratified bootstraps.
+
+Two tempting choices were rejected before an image transfer. SCIMD-17 is compact, licensed and
+genuinely photographed, but every file was publisher-resized to 224 x 224, so it would recreate the
+resolution shortcut instead of proving gallery-real safety. ImageBench covers the newest models
+beautifully, but its canonical site currently reserves generated-image reuse without written
+permission. Datapoint is both current and CC BY 4.0 at the metadata level, but requires the account
+holder to share contact details and accept provider-output terms; the access page was opened for
+the user and no form was submitted by the project. Until that gate clears, implementation may bind
+metadata and test fail-closed behavior but cannot download or inspect its image payloads.
