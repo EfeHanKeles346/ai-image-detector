@@ -654,6 +654,35 @@ source >=60% on a genuinely new final.
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32
       model; otherwise keep the current demo and archive the failure.
 
+### E48 — monotone non-veto successor (planned 2026-09-04)
+
+E47 proved that the required signals already exist but a signed logistic compromise suppresses
+FLUX when GAN specialists are quiet. E48 changes only the decision geometry and evidence split;
+all four backbones/scores remain frozen.
+
+- [ ] **Fresh zero-download population:** 2,400 identities outside every E46 reserve and E47
+      candidate, and outside current-candidate training identities. FIT =300 REAL +300 AI;
+      CAL =300 REAL +300 AI; DEVELOPMENT =600 REAL +600 AI. FIT/CAL REAL each use 150 unused
+      VISION camera originals plus 150 unused CSAFE S21 originals, device-balanced. DEVELOPMENT
+      REAL uses 600 unused FODB originals, device-balanced and capped at five cameras per shared
+      scene. FIT and CAL AI each use TrueFake FLUX.1 100, StyleGAN2 100, SD1.5 50 and SDXL 50.
+      DEVELOPMENT AI uses fresh FLUX.1/SD3/StyleGAN/StyleGAN3 at 150 each. All rows must decode,
+      pass exact/dHash protection and be selected by namespace hash before model access.
+- [ ] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
+      authentic-image percentile. Compare E46, E46+UnivFD, E46+UNINA and all-three using the
+      maximum expert percentile. Because `max` is monotone, a low irrelevant-specialist score can
+      never veto another arm's high AI evidence. No backbone or signed multivariate head is fit.
+- [ ] **CAL selection:** select one threshold and candidate only on CAL. Require coverage 100%,
+      AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst camera/device FP <=20%, pooled AI recall
+      >=80% and worst AI-source recall >=60%. Rank eligible candidates by worst AI recall, pooled
+      recall, AUC and BA; retain the two-point MIT preference when it does not weaken either recall
+      measure by more than two points.
+- [ ] **One-shot DEVELOPMENT:** freeze the empirical maps, candidate and threshold before opening
+      FODB/held-AI scores. Apply the same gates, with FODB camera pipeline as the worst-REAL unit.
+      No retry, threshold repair or post-hoc candidate swap. A pass earns a new publisher-separated
+      final contract; it does not itself update the web demo.
+
+
 ## Current execution slice — R1c threshold repair and external benchmark (2026-08-27)
 
 The immediate product defect is no longer ambiguous: E32/R1b ranks the existing modern-AI pool

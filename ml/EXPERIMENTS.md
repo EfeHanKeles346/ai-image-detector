@@ -3617,3 +3617,15 @@ was scored or selected using model output.
   GAN recall, yet vetoes 50/95 E46 FLUX hits, leaving 46%. It also rescues 149 StyleGAN and
   141 StyleGAN3 rows over E46. Therefore E48 needs diverse REAL/diffusion CAL and a non-veto
   router or conditional union; these consumed rows cannot select that successor.
+
+### E48 — monotone non-veto successor (pre-registered before selection)
+
+- **Hypothesis:** frozen E46 supplies diffusion evidence and UnivFD/UNINA supply GAN evidence;
+  mapping each to a FIT-REAL empirical percentile and taking their maximum preserves either signal
+  without a negative specialist veto.
+- **Fresh roles:** 600 FIT, 600 CAL and 1,200 DEVELOPMENT rows, balanced per role. FIT/CAL use
+  unused VISION+CSAFE REAL and fresh TrueFake FLUX/StyleGAN2/SD1.5/SDXL. DEVELOPMENT holds REAL
+  source to unused FODB and AI to fresh FLUX/SD3/StyleGAN/StyleGAN3 identities.
+- **Frozen selection/gates:** compare four nested monotone expert sets; threshold and select on
+  CAL only. Coverage=1, AUC>=.90, BA>=.85, pooled/worst-device REAL FP<=.10/.20 and pooled/worst-
+  source AI recall>=.80/.60. Freeze before one-shot DEVELOPMENT; no repair or serving update.

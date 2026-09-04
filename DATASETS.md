@@ -1434,3 +1434,22 @@ quota still filled: 1,200 CAL and 1,200 DEVELOPMENT, each exactly 600 REAL/600 A
 sources. The 1,760,652-byte unscored manifest SHA-256 is
 `378b83fe56bcf4bbf61d5b626efa71899bea571abeeeca05c74774daa8585739`; model-score count is zero.
 The 480 non-selected reserve payloads remain unscored and may not silently replace a later row.
+
+### E48 fresh decision-repair population — planned before selection (2026-09-04)
+
+E48 requires no network transfer. It reuses verified local source archives but selects only fresh
+identities outside all E46/E47 candidates and current-candidate training rows. The intended 2,400
+rows are balanced within FIT (600), CAL (600) and DEVELOPMENT (1,200).
+
+| role | REAL | AI | purpose |
+|---|---|---|---|
+| FIT | 150 unused VISION +150 unused CSAFE S21 camera originals | FLUX.1 100, StyleGAN2 100, SD1.5 50, SDXL 50 | fit authentic-score percentile maps only |
+| CAL | same quotas, disjoint identities/devices where possible | same quotas, disjoint identities | choose monotone expert set and threshold |
+| DEVELOPMENT | 600 unused FODB originals, device-balanced and <=5 cameras/shared scene | fresh FLUX.1, SD3, StyleGAN and StyleGAN3, 150 each | one-shot real-source and mostly generator-held transfer |
+
+VISION (CC BY-SA 4.0), CSAFE S21 (CC BY 4.0) and FODB (research/non-commercial restrictions)
+are already decoded on LaCie. TrueFake Facebook is CC BY 4.0 and remains compressed; only the
+new hash-ranked AI members need streaming extraction. FODB's repeated 143-scene design prevents
+an unseen-camera-and-scene claim, so DEVELOPMENT must report both row-level pooled FP and
+camera-pipeline worst FP and cap each scene's representation. This is successor development data,
+not a new independent final.

@@ -4434,3 +4434,11 @@ GitHub CI later reported a red build for commit `1212628`, but the code was not 
 tests and web lint/typecheck/tests all passed, while npm's audit API returned HTTP 503 after seven
 minutes. CI now retries that exact blocking audit up to three times. It still fails on a persistent
 registry outage or any real critical advisory; only transient service noise gains recovery.
+
+E48 is now planned around the E47 mechanism rather than another backbone. It will calibrate each
+frozen expert against fresh authentic camera photos and take the maximum AI-evidence percentile,
+so an irrelevant low specialist score cannot veto FLUX. FIT, CAL and DEVELOPMENT are separated;
+the decision layer learns from unused VISION/CSAFE identities and must transfer to unused FODB
+camera originals plus mostly held AI generators. The 2,400-row design uses existing LaCie data,
+downloads nothing, excludes all E46/E47 candidates and keeps the web model unchanged until a new
+publisher-separated final passes.
