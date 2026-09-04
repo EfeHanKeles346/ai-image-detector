@@ -3596,3 +3596,9 @@ was scored or selected using model output.
   binds all four score-stream hashes, exact features, C=0.1 head, seed 47, CAL threshold
   rule, candidate ranking/licence rule and DEVELOPMENT gates before score interpretation.
   Six focused tests pass; CAL/DEVELOPMENT metrics opened: zero/zero.
+- **CAL result and candidate freeze:** E46 alone fails at AUC 0.8735 /BA 0.8175 /73.5%
+  AI recall and 20.5% StyleGAN2 recall. E46+UnivFD improves to 85.67% pooled AI but
+  misses the frozen worst-source floor by one point (59% vs 60%). E46+UNINA passes;
+  E46+UnivFD+UNINA ranks first at threshold `0.3353660721`, AUC 0.98969, BA 0.93667,
+  10% REAL FP, 97.33% pooled AI recall and 95% worst AI-source recall. The 2,330-byte
+  candidate SHA-256 is `f659ee4f...0b0d`; DEVELOPMENT metrics remain unopened.

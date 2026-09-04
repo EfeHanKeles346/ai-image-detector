@@ -4400,3 +4400,11 @@ or both; fixes the REAL-safety threshold rule, all seven success gates, determin
 the two-point MIT-licence preference. DEVELOPMENT remains a one-shot transfer test and cannot fit,
 select, repair or retry the candidate. Six focused contract tests pass; both CAL and DEVELOPMENT
 metric counts are still zero.
+
+CAL then opened exactly once and justified the new decision layer. Frozen E46 still catches only
+73.5% of CAL AI and 20.5% of StyleGAN2 at the 10% REAL budget. UnivFD raises pooled AI recall to
+85.67% but lands at 59% on the hardest source, one point below the written floor. UNINA passes,
+and the all-three gate ranks first: 0.9897 AUC, 0.9367 balanced accuracy, 97.33% pooled AI recall
+and 95% worst-source AI recall at 10% REAL false accusations. The selected threshold is
+`0.3353660721`; candidate SHA is `f659ee4f...0b0d`. This is strong calibration evidence, not yet
+a success claim: DEVELOPMENT remains completely unopened and may only be evaluated once.

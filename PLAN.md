@@ -626,6 +626,11 @@ source >=60% on a genuinely new final.
       Freeze the selected head and threshold before opening DEVELOPMENT once.
       Decision contract frozen at SHA-256 `a4515caf...875a`; CAL and DEVELOPMENT metrics
       both remain unopened. Six focused contract tests pass.
+      CAL opened once: frozen E46 fails (AUC 0.8735, BA 0.8175, AI recall 73.5%,
+      StyleGAN2 20.5%). E46+UnivFD narrowly fails the 60% worst-AI floor at 59.0%.
+      E46+UNINA passes, while E46+both ranks first and is selected at threshold
+      `0.3353660721`: AUC 0.9897, BA 0.9367, pooled AI recall 97.33%, worst AI recall
+      95.0%, REAL FP 10.0%. Candidate SHA-256 `f659ee4f...0b0d`; DEVELOPMENT unopened.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32
