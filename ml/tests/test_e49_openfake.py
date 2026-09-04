@@ -4,6 +4,8 @@ import pytest
 
 from experiments.e49_openfake import (
     MODEL_KEYS,
+    MODEL_KEYS_C,
+    NAMESPACE_C,
     REVISION,
     compact_page,
     eligible,
@@ -105,3 +107,22 @@ def test_prefix_stop_is_checked_only_at_frozen_page_boundaries():
     stop, counts = first_complete_prefix(rows, page_size=5, reserve_per_model=2)
     assert stop == 10
     assert all(counts[model] == 2 for model in MODEL_KEYS)
+
+
+def test_successor_selection_uses_new_cells_and_namespace():
+    rows = []
+    for index, model in enumerate(MODEL_KEYS_C):
+        rows.append({
+            "row_index": index,
+            "label": "fake",
+            "model": model,
+            "type": "image",
+            "release_date": "2026-01",
+            "width": 512,
+            "height": 512,
+        })
+    selected = select_reserve(
+        rows, reserve_per_model=1, model_keys=MODEL_KEYS_C, namespace=NAMESPACE_C,
+    )
+    assert {row["model"] for row in selected} == set(MODEL_KEYS_C)
+    assert "nano-banana-pro" not in {row["model"] for row in selected}

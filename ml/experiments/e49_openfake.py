@@ -21,6 +21,7 @@ from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 
 
 NAMESPACE = "E49_B_OPENFAKE_V1"
+NAMESPACE_C = "E49_C_OPENFAKE_V1"
 REPO_ID = "ComplexDataLab/OpenFake"
 REVISION = "3fd1109dc3258874243fa31c5bda9ee24260163b"
 LICENSE = "cc-by-nc-4.0"
@@ -39,6 +40,13 @@ MODEL_KEYS = {
     "flux.2-klein-9b": "FLUX.2 Klein 9B",
     "midjourney-7": "Midjourney 7",
 }
+MODEL_KEYS_C = {
+    "gpt-image-2": "GPT Image 2",
+    "z-image-turbo": "Z-Image Turbo",
+    "seedream-v5.0": "Seedream v5.0",
+    "flux.2-klein-9b": "FLUX.2 Klein 9B",
+    "midjourney-7": "Midjourney 7",
+}
 ROWS_ENDPOINT = "https://datasets-server.huggingface.co/rows"
 RESOLVE_ENDPOINT = "https://huggingface.co/datasets"
 EXPECTED_SHARDS = 13
@@ -48,6 +56,8 @@ ROOT = DATA_ROOT / "e49" / "openfake"
 PAGE_CACHE = ROOT / "metadata_pages"
 CONTRACT = ROOT / "source_contract_unscored.json"
 EVIDENCE = ML_ROOT.parent / "evidence" / "e49_b_openfake_contract.json"
+CONTRACT_C = ROOT / "source_contract_e49c_unscored.json"
+EVIDENCE_C = ML_ROOT.parent / "evidence" / "e49_c_openfake_contract.json"
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -63,9 +73,9 @@ def _write_atomic(path: Path, value: Any) -> bytes:
     return raw
 
 
-def _rank(model: str, row_index: int) -> str:
+def _rank(model: str, row_index: int, *, namespace: str = NAMESPACE) -> str:
     identity = f"{REPO_ID}|{REVISION}|{CONFIG}|{SPLIT}|{model}|{row_index}"
-    return hashlib.sha256(f"{NAMESPACE}|{identity}".encode()).hexdigest()
+    return hashlib.sha256(f"{namespace}|{identity}".encode()).hexdigest()
 
 
 def validate_repository(info: Any) -> None:
@@ -114,11 +124,11 @@ def compact_page(
     return compact
 
 
-def eligible(row: Mapping[str, Any]) -> bool:
+def eligible(row: Mapping[str, Any], *, model_keys: Mapping[str, str] = MODEL_KEYS) -> bool:
     row_type = str(row.get("type", "")).strip().lower()
     return (
         row.get("label") == "fake"
-        and row.get("model") in MODEL_KEYS
+        and row.get("model") in model_keys
         and bool(row_type)
         and row_type != "video"
     )
@@ -126,19 +136,20 @@ def eligible(row: Mapping[str, Any]) -> bool:
 
 def select_reserve(
     rows: Sequence[Mapping[str, Any]], *, reserve_per_model: int = RESERVE_PER_MODEL,
+    model_keys: Mapping[str, str] = MODEL_KEYS, namespace: str = NAMESPACE,
 ) -> list[dict[str, Any]]:
     """Freeze exact rows by namespace hash after source-stratified metadata qualification."""
     output: list[dict[str, Any]] = []
-    for model, display_name in MODEL_KEYS.items():
+    for model, display_name in model_keys.items():
         candidates = []
         for source in rows:
-            if source.get("model") != model or not eligible(source):
+            if source.get("model") != model or not eligible(source, model_keys=model_keys):
                 continue
             row = dict(source)
             row_index = int(row["row_index"])
             row["record_id"] = f"openfake:{CONFIG}:{SPLIT}:{row_index}"
             row["parent_id"] = row["record_id"]
-            row["rank"] = _rank(model, row_index)
+            row["rank"] = _rank(model, row_index, namespace=namespace)
             row["source"] = display_name
             row["generator"] = display_name
             row["label"] = 1
@@ -154,15 +165,15 @@ def select_reserve(
 
 def first_complete_prefix(
     rows: Sequence[Mapping[str, Any]], *, page_size: int = PAGE_SIZE,
-    reserve_per_model: int = RESERVE_PER_MODEL,
+    reserve_per_model: int = RESERVE_PER_MODEL, model_keys: Mapping[str, str] = MODEL_KEYS,
 ) -> tuple[int | None, Counter[str]]:
     """Apply the frozen page-prefix stop rule to any equivalent metadata transport."""
     counts: Counter[str] = Counter()
     for index, row in enumerate(rows, start=1):
-        if eligible(row):
+        if eligible(row, model_keys=model_keys):
             counts[str(row["model"])] += 1
         if (index % page_size == 0 or index == len(rows)) and all(
-            counts[model] >= reserve_per_model for model in MODEL_KEYS
+            counts[model] >= reserve_per_model for model in model_keys
         ):
             return index, counts
     return None, counts
@@ -322,6 +333,16 @@ def _validate_viewer_prefix(projected: Sequence[Mapping[str, Any]]) -> int:
                     raise ValueError(f"E49-B Viewer/Parquet mismatch at row {cached_row['row_index']}")
         validated += len(cached)
     return validated
+
+
+def _continuous_viewer_metadata() -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for offset in range(0, EXPECTED_ROWS, PAGE_SIZE):
+        path = PAGE_CACHE / f"{offset:06d}.json"
+        if not path.is_file():
+            break
+        rows.extend(_cached_page(path, offset))
+    return rows
 
 
 def _cached_page(path: Path, offset: int) -> list[dict[str, Any]]:
@@ -628,11 +649,115 @@ def bind_projected() -> dict[str, Any]:
     return evidence
 
 
+def bind_successor() -> dict[str, Any]:
+    """Freeze E49-C identities from the pre-existing, cross-validated Viewer prefix."""
+    if CONTRACT_C.exists() or EVIDENCE_C.exists():
+        raise FileExistsError("E49-C OpenFake contract already exists")
+    info = HfApi().dataset_info(REPO_ID, revision=REVISION)
+    validate_repository(info)
+    if not EVIDENCE.is_file():
+        raise FileNotFoundError("E49-B rejection evidence is required before E49-C")
+    e49b_raw = EVIDENCE.read_bytes()
+    e49b = json.loads(e49b_raw)
+    if (
+        e49b.get("state") != "e49_b_openfake_rejected_population_shortfall_unscored"
+        or e49b.get("missing_cells") != {"nano-banana-pro": 60}
+        or e49b.get("selected_rows") != 0
+        or e49b.get("new_image_bytes_downloaded") != 0
+        or e49b.get("model_scores_created") != 0
+    ):
+        raise ValueError("E49-B rejection boundary changed")
+
+    rows = _continuous_viewer_metadata()
+    stop_offset, counts = first_complete_prefix(rows, model_keys=MODEL_KEYS_C)
+    if stop_offset is None:
+        raise ValueError(f"E49-C validated Viewer prefix cannot fill cells: {dict(counts)}")
+    selected = select_reserve(
+        rows[:stop_offset], model_keys=MODEL_KEYS_C, namespace=NAMESPACE_C,
+    )
+    selected_counts = Counter(str(row["model"]) for row in selected)
+    identity_sha256 = hashlib.sha256(
+        "\n".join(sorted(str(row["record_id"]) for row in selected)).encode()
+    ).hexdigest()
+    payload = {
+        "schema_version": 1,
+        "state": "e49_c_openfake_frozen_untransferred_unscored",
+        "role": "FINAL_AI_COMPONENT_CANDIDATE_PENDING_ASSET_BYTE_FEASIBILITY_AND_COMPLETE_E49",
+        "predecessor": {
+            "experiment": "E49-B",
+            "evidence_sha256": hashlib.sha256(e49b_raw).hexdigest(),
+            "repair": "replace_only_underfilled_nano_banana_pro_with_z_image_turbo",
+        },
+        "repository": REPO_ID,
+        "revision": REVISION,
+        "license": LICENSE,
+        "gated": False,
+        "config": CONFIG,
+        "split": SPLIT,
+        "expected_split_rows": EXPECTED_ROWS,
+        "viewer_endpoint": ROWS_ENDPOINT,
+        "scan": {
+            "page_size": PAGE_SIZE,
+            "available_continuous_cached_rows": len(rows),
+            "prefix_start": 0,
+            "prefix_end_exclusive": stop_offset,
+            "eligible_counts_at_stop": {model: counts[model] for model in MODEL_KEYS_C},
+            "stop_rule": "first_complete_100_row_page_with_192_eligible_rows_per_exact_model",
+            "stored_fields": ["row_index", "label", "model", "type", "release_date", "width", "height"],
+            "new_metadata_bytes_transferred": 0,
+        },
+        "selection": {
+            "namespace": NAMESPACE_C,
+            "target_per_model": TARGET_PER_MODEL,
+            "reserve_per_model": RESERVE_PER_MODEL,
+            "selected_counts": dict(sorted(selected_counts.items())),
+            "reserve_identity_sha256": identity_sha256,
+        },
+        "rows": selected,
+        "image_assets_requested": 0,
+        "new_image_bytes_downloaded": 0,
+        "model_scores_created": 0,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "boundary": (
+            "Identity-only successor freeze from previously validated metadata. No asset URL, "
+            "image byte, detector access or metric; fresh asset feasibility is the next gate."
+        ),
+    }
+    raw = _write_atomic(CONTRACT_C, payload)
+    evidence = {
+        "schema_version": 1,
+        "state": payload["state"],
+        "role": payload["role"],
+        "predecessor": payload["predecessor"],
+        "repository": REPO_ID,
+        "revision": REVISION,
+        "license": LICENSE,
+        "available_continuous_cached_rows": len(rows),
+        "prefix_end_exclusive": stop_offset,
+        "eligible_counts_at_stop": payload["scan"]["eligible_counts_at_stop"],
+        "selected_counts": payload["selection"]["selected_counts"],
+        "reserve_identity_sha256": identity_sha256,
+        "contract_bytes": len(raw),
+        "contract_sha256": hashlib.sha256(raw).hexdigest(),
+        "new_metadata_bytes_transferred": 0,
+        "image_assets_requested": 0,
+        "new_image_bytes_downloaded": 0,
+        "model_scores_created": 0,
+    }
+    _write_atomic(EVIDENCE_C, evidence)
+    return evidence
+
+
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("bind", "bind-projected"))
+    parser.add_argument("command", choices=("bind", "bind-projected", "bind-successor"))
     args = parser.parse_args(argv)
-    result = bind() if args.command == "bind" else bind_projected()
+    if args.command == "bind":
+        result = bind()
+    elif args.command == "bind-projected":
+        result = bind_projected()
+    else:
+        result = bind_successor()
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
 
