@@ -3982,6 +3982,12 @@ was scored or selected using model output.
 - **Decision ladder:** select once on new grouped CAL; open fresh DEVELOPMENT once under both
   transports and the existing ten gates; only a pass permits a new E52 final. Approved Datapoint
   image bodies remain unopened for possible E52 AI evidence, not E51 tuning.
+- **E49 diagnosis reproduction — COMPLETE:** a dedicated model-blind runner verifies the exact
+  consumed manifest `9744a9d2...5909`, raw stream `249f005c...10a8` and final report
+  `10fc0649...5573`, then joins all 4,000 observations/2,000 pairs without inference. Report
+  `3e5caa86...bd70f` reproduces 10%-FPR TPR 72.30%/58.80%, REAL paired-AND FP 32.80%, AI paired-AND
+  recall 93.50%, JPEG/MPO FP 39.90%/36.15% and log-megapixel correlation 0.0563. It creates no new
+  scores or candidate threshold; E51 source audit is the next permitted action.
 
 ### Gated-source approval audit — route decision before any image access
 

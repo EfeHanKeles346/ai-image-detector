@@ -1025,10 +1025,15 @@ REAL false-AI while recalling 93.50% AI. JPEG originals fail slightly more than 
 Therefore the successor needs a better authentic/compression representation, not a leaked E49 cut,
 format rule or resolution heuristic. These are diagnosis-only observations, never model selection.
 
-- [ ] **Freeze E49 protection and reproduce the failure diagnosis.** Bind final manifest/raw-score/
+- [x] **Freeze E49 protection and reproduce the failure diagnosis.** Bind final manifest/raw-score/
       report hashes; report per-device, format, resolution-bin and paired-consensus behavior. Emit no
       candidate threshold and forbid every E49 identity—including unused reserves—from later TRAIN,
       CAL, DEVELOPMENT or successor-final roles.
+      **Completed:** the immutable manifest/raw-score/final-report hashes reproduce, all 4,000 rows
+      and 2,000 parent pairs join exactly, and the machine-readable diagnosis is frozen at
+      `3e5caa86...bd70f`. It creates zero candidate thresholds and zero new model scores. The measured
+      10%-FPR TPR remains 72.30%/58.80%; paired AND remains 32.80% REAL false-AI at 93.50% AI recall;
+      JPEG/MPO and resolution findings reproduce. This closes diagnosis only, not model selection.
 - [ ] **Audit new REAL sources before downloading images.** Compare official RAISE, Dresden/IMAGINE
       camera collections and a current-phone source for licence, native-vs-publisher transport,
       device/scene grouping, resolution and download size. Choose disjoint TRAIN/CAL and a separate

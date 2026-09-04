@@ -4925,3 +4925,10 @@ raw-stream hash while exposing zero aggregate metrics. The third refuses to run 
 complete and then opens the preregistered metrics and 10,000 parent-level bootstraps exactly once.
 Fourteen focused final lock/score/evaluation tests pass; training, source removal, threshold repair
 and a second attempt are explicitly forbidden.
+
+E51's first preregistered checkpoint is now complete. The reproducible diagnosis binds the consumed
+E49 manifest, raw score stream and final report by exact SHA-256 before joining all 4,000 rows and
+2,000 original/Q75 pairs. It independently reproduces the cut-only impossibility, paired-consensus,
+format and resolution findings in report `3e5caa86...bd70f`. The procedure performs no inference,
+creates no candidate threshold and cannot select any future source or row. The project can now audit
+new REAL sources without silently learning from the failed final identities.

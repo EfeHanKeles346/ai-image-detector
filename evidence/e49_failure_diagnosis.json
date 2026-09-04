@@ -1,0 +1,93 @@
+{
+  "boundary": "Post-final diagnosis only; cannot select E51 data, threshold, model or feature.",
+  "candidate_thresholds_created": 0,
+  "counts": {
+    "format_rows": {
+      "JPEG": 787,
+      "MPO": 213
+    },
+    "parents": 2000,
+    "real_originals": 1000,
+    "rows": 4000
+  },
+  "new_model_scores_created": 0,
+  "paired_existing_cut": {
+    "0": {
+      "both_at_or_above_binary_cut": 0.328,
+      "either_at_or_above_binary_cut": 0.553,
+      "parents": 1000,
+      "q75_minus_original_score_mean": 0.08354601745175626,
+      "q75_minus_original_score_median": 0.012649585944018327
+    },
+    "1": {
+      "both_at_or_above_binary_cut": 0.935,
+      "either_at_or_above_binary_cut": 0.963,
+      "parents": 1000,
+      "q75_minus_original_score_mean": 0.02294632366074802,
+      "q75_minus_original_score_median": 7.078051567077637e-05
+    }
+  },
+  "real_original_format": {
+    "JPEG": {
+      "false_ai_rate": 0.39898348157560354,
+      "median_score": 0.03508660942316055,
+      "rows": 787
+    },
+    "MPO": {
+      "false_ai_rate": 0.3615023474178404,
+      "median_score": 0.027316605672240257,
+      "rows": 213
+    }
+  },
+  "real_original_log_megapixel_score_correlation": 0.05632419597741878,
+  "real_original_resolution_bins": [
+    {
+      "false_ai_rate": 0.3984375,
+      "median_score": 0.04844805598258972,
+      "megapixels_gte": 0,
+      "megapixels_lt": 4,
+      "rows": 128
+    },
+    {
+      "false_ai_rate": 0.49746192893401014,
+      "median_score": 0.075443796813488,
+      "megapixels_gte": 4,
+      "megapixels_lt": 8,
+      "rows": 197
+    },
+    {
+      "false_ai_rate": 0.3422459893048128,
+      "median_score": 0.02285917103290558,
+      "megapixels_gte": 8,
+      "megapixels_lt": 12,
+      "rows": 187
+    },
+    {
+      "false_ai_rate": 0.30434782608695654,
+      "median_score": 0.017067392356693745,
+      "megapixels_gte": 12,
+      "megapixels_lt": 20,
+      "rows": 414
+    },
+    {
+      "false_ai_rate": 0.7027027027027027,
+      "median_score": 0.23914223164319992,
+      "megapixels_gte": 20,
+      "megapixels_lt": 100,
+      "rows": 74
+    }
+  ],
+  "report_bytes": 2537,
+  "report_sha256": "3e5caa86f3d1801e3c0c47d35605902600e8e3afd52d43d4f2a38239776bd70f",
+  "schema_version": 1,
+  "source_hashes": {
+    "final_report": "10fc0649a68d31c57f815949e3c8d52f2d2bdfaeaadc9422c0ae83c32d525573",
+    "manifest": "9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909",
+    "scores": "249f005c83acbc65ac987c9fdeea91a9a3c7dfc4a388fdd4e20a436bc53610a8"
+  },
+  "state": "e49_consumed_failure_diagnosis_only",
+  "tpr_at_fpr_0_10": {
+    "publisher_original": 0.723,
+    "social_q75": 0.588
+  }
+}
