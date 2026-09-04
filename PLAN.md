@@ -637,6 +637,12 @@ source >=60% on a genuinely new final.
       floor fails. Stream SHA-256 `97fbe4b7...72cd`. Archive E47-R3 without threshold
       repair or retry. Next work must diagnose arm-level FLUX complementarity on this now-
       consumed DEVELOPMENT only, then pre-register a non-veto successor on new data.
+      Post-failure diagnostic boundary: on consumed DEVELOPMENT report frozen E46 and each
+      specialist's source behavior plus score correlation with the selected gate. Answer only
+      whether FLUX evidence existed and was vetoed. Do not select a threshold, candidate or
+      serving rule from these rows. If confirmed, E48 must pre-register a non-veto conditional-
+      OR/mixture rule on fresh CAL and prove it on fresh DEVELOPMENT; otherwise acquire broader
+      FLUX-like CAL evidence before changing architecture.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32

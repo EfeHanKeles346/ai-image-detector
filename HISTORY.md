@@ -4416,3 +4416,8 @@ however, falls to 46%, below the pre-registered 60% worst-source floor. Six of s
 so E47-R3 is archived as a valid near-miss rather than tuned into a success. The score stream SHA
 is `97fbe4b7...72cd`. This isolates the next architectural problem: the GAN-aware logistic gate
 must not be allowed to veto a diffusion signal; any repair requires new fit/test evidence.
+
+Before another metric is computed, the allowed post-failure diagnostic is limited to locating
+that FLUX failure across the already-frozen arms. It may distinguish missing representation from
+decision-layer veto, but cannot choose a new threshold or candidate and cannot repair E47. Any
+successor must be bound and tested on fresh evidence.

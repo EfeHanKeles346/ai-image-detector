@@ -3608,3 +3608,7 @@ was scored or selected using model output.
   46%, below the frozen 60% worst-source gate. Therefore E47-R3 fails despite solving the
   GAN blind spot. Score stream SHA-256 `97fbe4b7...72cd`; no refit, threshold repair or
   retry on this consumed DEVELOPMENT is permitted.
+- **Post-failure diagnostic queued:** inspect frozen E46, UnivFD and UNINA source-level
+  score behavior on the now-consumed DEVELOPMENT only to determine whether the selected
+  logistic gate vetoed an existing FLUX signal. This may inform E48's architecture but cannot
+  select a threshold/candidate, repair E47, update serving or support a success claim.
