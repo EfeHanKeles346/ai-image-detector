@@ -7,6 +7,7 @@ from experiments.e49_openfake import (
     REVISION,
     compact_page,
     eligible,
+    first_complete_prefix,
     select_reserve,
 )
 
@@ -94,3 +95,13 @@ def test_selection_rejects_an_underfilled_cell_without_substitution():
     } for index, model in enumerate(MODEL_KEYS)]
     with pytest.raises(ValueError, match="reserve unavailable"):
         select_reserve(rows, reserve_per_model=2)
+
+
+def test_prefix_stop_is_checked_only_at_frozen_page_boundaries():
+    rows = []
+    for repeat in range(2):
+        for model in MODEL_KEYS:
+            rows.append({"label": "fake", "model": model, "type": "image"})
+    stop, counts = first_complete_prefix(rows, page_size=5, reserve_per_model=2)
+    assert stop == 10
+    assert all(counts[model] == 2 for model in MODEL_KEYS)
