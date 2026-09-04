@@ -3884,6 +3884,11 @@ was scored or selected using model output.
   exact 192-per-family inventory. Decode coverage is 100%: 958 JPEG and two PNG. Receipt SHA-256 is
   `4dfb942c...26c2`; zero signed URLs are stored and no detector/model score has been created. The
   files remain a reserve pending the separately committed decontamination/pairing gate.
+- **Realization result — PASS:** all 960 reserves decode and zero intersects a protected historical
+  role. Twenty-six Seedream rows are duplicate payloads (both SHA-256 and dHash) and are excluded in
+  prebound rank order; 166 clean Seedream rows remain, so every family still fills exactly 160.
+  The frozen component contains 800 parents/1,600 paired observations, selected formats 798 JPEG +
+  two PNG, and manifest SHA-256 `38048803...7442`. Model-score count remains zero.
 - **Frozen realization method:** after the exact transfer receipt exists, re-open all 960 files and
   reproduce byte hash, decoded format, dimensions and full coverage. Compare original SHA-256 and
   dHash against every protected role, the scored Dotting diagnostic and the frozen StyleGAN2 final

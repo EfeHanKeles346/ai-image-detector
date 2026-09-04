@@ -4804,6 +4804,14 @@ hashes to `4dfb942c...26c2`, while the compact committed evidence contains no si
 Detector/model-score count remains zero, so these bytes are still only an unscored reserve pending
 the already-committed identity and Q75 realization gate.
 
+That model-blind gate then passed. All 960 OpenFake reserves decode without failure and none overlaps
+a protected historical role. It exposed 26 repeated Seedream payload identities, each identical by
+both SHA-256 and dHash; these were excluded rather than allowed to inflate the test. The fixed
+headroom still leaves 166 clean Seedream candidates and at least 160 in every other cell, so the
+prebound rank order freezes exactly 160 parents per modern generator. Their 800 originals and 800
+deterministic social-Q75 children form a 1,600-observation component at manifest SHA-256
+`38048803...7442`. Selected originals comprise 798 JPEG and two PNG; detector scores remain zero.
+
 The complete E49-C assembly gate was also implemented before component realization. It binds the
 future exact Commons and OpenFake manifests plus the already-frozen StyleGAN2 component, creates the
 200 missing StyleGAN2 Q75 children without score-dependent replacement, and fails on protected or

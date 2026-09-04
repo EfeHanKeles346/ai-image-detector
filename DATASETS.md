@@ -449,6 +449,14 @@ the external volume are filesystem metadata and are excluded from dataset file/b
 signed Viewer URL is retained, no row has a model score, and the reserve is not yet the final test
 manifest until protected-overlap checks and deterministic Q75 pairing pass.
 
+The independent realization decoded all 960 payloads with zero failure and found zero protected-role
+overlap. It excluded 26 exact+dHash duplicate Seedream identities before selection; the remaining
+headroom still fills all five 160-parent quotas. The final OpenFake component is 800 parents and
+1,600 paired observations (publisher original plus deterministic social-Q75), with selected-original
+formats 798 JPEG and two PNG. Its external 1,505,891-byte manifest SHA-256 is
+`38048803d01b6cb607c491d2391a7f0031e5c1010d7594bd44c767127e637442`. This remains unscored,
+non-training final evidence pending the matching REAL component and complete E49 assembly.
+
 #### Gated-source approval checkpoint — metadata only
 
 Authenticated access is now open for Datapoint revision

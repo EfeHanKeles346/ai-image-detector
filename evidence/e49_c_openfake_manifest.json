@@ -1,0 +1,62 @@
+{
+  "counts": {
+    "by_model": {
+      "flux.2-klein-9b": 160,
+      "gpt-image-2": 160,
+      "midjourney-7": 160,
+      "seedream-v5.0": 160,
+      "z-image-turbo": 160
+    },
+    "candidates": 960,
+    "decode_failures": 0,
+    "decoded": 960,
+    "identity_exclusions": 26,
+    "observations": 1600,
+    "parents": 800,
+    "selected_formats": {
+      "JPEG": 798,
+      "PNG": 2
+    }
+  },
+  "download_receipt_sha256": "4dfb942c215bbe15e15aea81e9a6c6873670a0bb5019c1c64f9672fe34b326c2",
+  "geometry_by_model": {
+    "flux.2-klein-9b": {
+      "max_height": 2448,
+      "max_width": 1632,
+      "min_height": 1024,
+      "min_width": 720
+    },
+    "gpt-image-2": {
+      "max_height": 5056,
+      "max_width": 3584,
+      "min_height": 941,
+      "min_width": 941
+    },
+    "midjourney-7": {
+      "max_height": 2048,
+      "max_width": 2048,
+      "min_height": 720,
+      "min_width": 816
+    },
+    "seedream-v5.0": {
+      "max_height": 11008,
+      "max_width": 6144,
+      "min_height": 1024,
+      "min_width": 848
+    },
+    "z-image-turbo": {
+      "max_height": 3840,
+      "max_width": 2688,
+      "min_height": 768,
+      "min_width": 768
+    }
+  },
+  "identity_contract_sha256": "0abae56af862c9b402ef5ef594a21181cbbb7f72ba7495a491b0389bfdfcd702",
+  "manifest_bytes": 1505891,
+  "manifest_sha256": "38048803d01b6cb607c491d2391a7f0031e5c1010d7594bd44c767127e637442",
+  "model_scores_created": 0,
+  "protected_role_manifest_count": 16,
+  "role": "FINAL_AI_COMPONENT_PENDING_COMPLETE_E49",
+  "schema_version": 1,
+  "state": "e49_c_openfake_decontaminated_paired_frozen_unscored"
+}
