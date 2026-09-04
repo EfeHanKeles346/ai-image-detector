@@ -4969,3 +4969,9 @@ IEEE downloader was frozen against route contract `975e8164...15e4`: only the 2,
 TIFFs can enter, interrupted files resume, unexpected paths fail closed, and each admitted payload
 must reproduce its byte count, decode safely and receive a SHA-256 receipt. No detector or metric is
 available in this acquisition path.
+
+The first bounded transfer then exposed a useful publisher quirk and failed closed: IEEE names the
+test files `.tif`, but all eight concurrently staged bodies were 512x512 RGB PNG payloads. Zero were
+admitted to the dataset root and no model opened them. The decode gate is corrected before resume to
+require the measured PNG signature and exact 512x512 geometry. Identities, expected bytes, role and
+selection remain frozen; only the false filename-suffix assumption changes.

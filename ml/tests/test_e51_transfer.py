@@ -31,16 +31,16 @@ def test_ieee_destination_rejects_unsafe_or_wrong_split():
 
 def test_ieee_inspection_verifies_tiff_and_bytes(tmp_path: Path):
     path = tmp_path / "image.tif"
-    Image.new("RGB", (16, 12), "red").save(path, format="TIFF")
+    Image.new("RGB", (512, 512), "red").save(path, format="PNG")
     row = _row(path.stat().st_size)
     found = inspect_ieee_file(path, row)
-    assert found["format"] == "TIFF"
-    assert (found["width"], found["height"]) == (16, 12)
+    assert found["format"] == "PNG"
+    assert (found["width"], found["height"]) == (512, 512)
     assert len(found["sha256"]) == 64
 
 
 def test_ieee_inspection_rejects_byte_drift(tmp_path: Path):
     path = tmp_path / "image.tif"
-    Image.new("RGB", (4, 4)).save(path, format="TIFF")
+    Image.new("RGB", (512, 512)).save(path, format="PNG")
     with pytest.raises(ValueError, match="byte length"):
         inspect_ieee_file(path, _row(path.stat().st_size + 1))

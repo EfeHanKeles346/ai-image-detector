@@ -1075,6 +1075,11 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       contract `975e8164...15e4`, rejects every non-test path, verifies all expected bytes, TIFF
       decode/geometry and SHA-256, preserves unaltered/postprocessed cells and emits zero scores.
       The method is committed before payload execution.
+      **Publisher-container correction before admission:** the first bounded transfer stopped on the
+      first row because the `.tif` path actually contains a 512x512 RGB PNG body. Eight concurrent
+      bodies reproduced the same signature and geometry; none entered the payload root or a model.
+      The gate now requires this exact publisher reality—PNG +512x512—instead of trusting the suffix,
+      while retaining the same identities, bytes and roles.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

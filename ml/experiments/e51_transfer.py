@@ -75,7 +75,8 @@ def inspect_ieee_file(path: Path, expected: Mapping[str, Any]) -> dict[str, Any]
     with Image.open(path) as image:
         width, height = image.size
         decoded_format = str(image.format or "UNKNOWN").upper()
-        if decoded_format not in {"TIFF", "TIF"} or min(width, height) <= 0:
+        # The publisher names these files .tif but the frozen competition bodies are PNG.
+        if decoded_format != "PNG" or (width, height) != (512, 512):
             raise ValueError(f"IEEE payload format/geometry changed: {path.name}")
         if width * height > MAX_PIXELS:
             raise ValueError(f"IEEE payload exceeds safe pixel limit: {path.name}")
