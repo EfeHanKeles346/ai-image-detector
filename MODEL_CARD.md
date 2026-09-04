@@ -4,9 +4,25 @@
 
 **Status:** runnable research model; not an authenticity authority
 
-**Last verified:** 2026-08-27
+**Last verified:** 2026-09-04
 
 ## Successor candidate decisions (2026-08-26)
+
+### E43-S comprehensive-final decision (2026-09-04)
+
+E43-S is a frozen DINOv2-S representation plus project-fitted binary head. It passed earlier
+development and a narrow modern-generator diagnostic, but it did **not** earn Module-1-v1 status in
+the one-shot E49-C comprehensive final. The final contained 2,000 independent parents: 1,000
+Wikimedia Commons camera originals across ten devices and 1,000 AI images across five current
+OpenFake families plus StyleGAN2; every parent also had a fixed social-Q75 child.
+
+E43-S scored all 4,000 observations once and passed 11/20 preregistered checks. AI recall transferred
+well (94.30% originals, 95.50% Q75; worst family above 91%), but authentic-camera safety failed:
+REAL false-AI was 39.10%/49.00%, worst-device false-AI 71%/84%, and balanced accuracy 77.60%/73.25%.
+Original/Q75 AUC was 90.24%/86.89%. This shows the candidate detects current AI strongly but its
+threshold and representation do not generalize safely to new camera pipelines, especially after
+recompression. E49-C is consumed and cannot tune this model. E43-S remains research-only and does
+not replace the canonical served contract. Evidence: `evidence/e49_final_result.json`.
 
 ### E32 runnable candidate decision (2026-08-26)
 

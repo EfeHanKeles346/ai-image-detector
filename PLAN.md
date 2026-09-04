@@ -746,6 +746,9 @@ evidence already vetoed inside E46. Treat this as model selection on CAL, not as
 - [ ] **E49 comprehensive independent final:** only an E50 DEVELOPMENT pass may bind the >=2,000
       row publisher-separated native + social/recompressed final already required below. A full
       ten-gate pass creates Module-1 v1 and may update the web demo; otherwise Module 1 stays open.
+      **Completed one-shot result — FAIL, Module 1 remains open:** 11/20 checks pass (original 6/10,
+      Q75 5/10). AI recall is strong at 94.30%/95.50%, but REAL false-AI is 39.10%/49.00%; worst
+      device is 71%/84%. Original AUC is 90.24%, Q75 AUC 86.89%. No retry or repair is allowed.
 
 #### E49-A — comprehensive-final source and decision contract (frozen before image transfer)
 
@@ -876,13 +879,17 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       failures pessimistically, and implements deterministic source/label-stratified parent
       bootstrap intervals. It has not opened a final metric because the frozen manifest does not yet
       exist. Seventeen acquisition/evaluation/shared-metric regression tests pass together.
-- [ ] **Open metrics once.** Raw score streams are committed before evaluation. Any failure, missing
+- [x] **Open metrics once.** Raw score streams are committed before evaluation. Any failure, missing
       source, coverage miss or gate miss keeps Module 1 open; no threshold repair, row removal,
       source removal or second E49 attempt is allowed. Only a 20/20 pass (ten gates x two conditions)
       freezes Module-1 v1 and authorizes a separately reviewed demo update.
       **Raw-score lock:** E43-S scored all 4,000 frozen observations with 100% coverage. The
       1,005,967-byte stream SHA-256 is `249f005c...10a8`; aggregate metrics remain unopened and
       this evidence is committed before the one allowed evaluation.
+      **One-shot result — FAIL 11/20:** publisher original passes 6/10 and social-Q75 5/10. Coverage
+      is 100%; AI recall 94.30%/95.50% and worst-family recall 91.88%/91.25% pass. REAL false-AI
+      39.10%/49.00%, worst-device false-AI 71%/84%, balanced accuracy 77.60%/73.25% and covered
+      accuracy 76.27%/71.01% fail. AUC is 90.24%/86.89%. Report SHA `10fc0649...5573`; retry zero.
 
 #### E49-D1 — ungated current-generator diagnostic while Datapoint review is pending
 

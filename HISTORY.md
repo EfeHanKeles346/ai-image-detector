@@ -4839,6 +4839,20 @@ contract `fecd724c...61dd`. Only identity, label, source, condition and score we
 accuracy, false-positive rate, recall or selective metric has yet been calculated. This raw-stream
 evidence is committed before the single allowed metric opening.
 
+The single permitted E49-C metric opening failed 11/20 gates and is now consumed. Publisher
+original passed 6/10: 100% coverage, AUC 90.24%, AI recall 94.30%, worst-family recall 91.88%,
+automatic coverage 85.95% and uncertainty 14.05% pass; balanced accuracy 77.60%, REAL false-AI
+39.10%, worst-device false-AI 71% and covered accuracy 76.27% fail. Social-Q75 passed 5/10: AI
+recall rises to 95.50% and worst family remains 91.25%, but AUC falls to 86.89%, REAL false-AI rises
+to 49%, worst-device reaches 84%, balanced accuracy is 73.25% and covered accuracy 71.01%.
+
+The scientific diagnosis is unambiguous: E43-S generalizes strongly to all six unseen/current AI
+families, including after recompression, but its low fixed cut does not generalize to these new
+high-resolution camera pipelines. Canon EOS R5, Sony ILCE-7M4 and Nikon Z 8 are the largest failure
+cells; phones also exceed the target except Samsung/iPhone 14 originals at 19%. This final may be
+used only for disclosed diagnosis—not threshold selection, training, row deletion or a retry.
+Report SHA-256 is `10fc0649...5573`; retry count is zero and Module-1 v1 remains unearned.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

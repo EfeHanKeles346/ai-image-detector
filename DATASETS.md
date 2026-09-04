@@ -358,6 +358,13 @@ quotas validate. Original formats are 1,585 JPEG, 213 MPO and 202 PNG; all Q75 c
 External manifest SHA-256 is `9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909`.
 The test remains unscored and immutable; it is never a training or threshold-selection source.
 
+E49-C has now been scored once and is a **consumed failed FINAL**. All 4,000 observations completed,
+but the frozen candidate passed only 11/20 gates because new-camera REAL false-AI was 39.10% on
+publisher originals and 49.00% after Q75. AI recall remained 94.30%/95.50%. These 2,000 parents,
+their children and all 100 downloaded Commons reserve identities are prohibited from future
+TRAIN/CAL/threshold selection and cannot be repackaged as a second independent final. Detailed
+result SHA-256 is `10fc0649a68d31c57f815949e3c8d52f2d2bdfaeaadc9422c0ae83c32d525573`.
+
 The already-local StyleGAN2 reserve was then realized without network or detector access. All
 240/240 frozen Parquet coordinates reproduce label=AI/generator=14 and decode successfully; exact
 and dHash comparison with 15 protected-role manifests finds zero overlap. The first 200 clean rows

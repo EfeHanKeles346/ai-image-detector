@@ -3962,6 +3962,11 @@ was scored or selected using model output.
 - **Raw-score lock complete:** E43-S produced 4,000/4,000 ordered scores with 100% coverage. The
   1,005,967-byte stream hashes to `249f005c...10a8` and remains outside Git; compact evidence binds
   it to score contract `fecd724c...61dd`. No aggregate metric has been opened at this checkpoint.
+- **One-shot E49-C result — FAIL 11/20:** publisher-original/social-Q75 pass 6/10 and 5/10 checks.
+  Coverage is 100%. AI recall is 94.30%/95.50% (worst family 91.88%/91.25%), confirming strong
+  modern-generator transfer. REAL false-AI is 39.10%/49.00% and worst-device false-AI 71%/84%; BA
+  is 77.60%/73.25%, covered accuracy 76.27%/71.01%, AUC 90.24%/86.89%. Report `10fc0649...5573`;
+  retry zero. The failure is consumed and cannot select a new cut or train a repaired candidate.
 
 ### Gated-source approval audit — route decision before any image access
 
