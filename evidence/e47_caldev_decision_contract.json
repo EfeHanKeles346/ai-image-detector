@@ -1,0 +1,71 @@
+{
+  "calibration_metrics_opened": 0,
+  "candidates": {
+    "e46": "frozen E44 generalist+DDA fusion; no refit",
+    "e46_unina": "E46 score + capped UNINA raw logit",
+    "e46_univfd": "E46 score + UnivFD probability",
+    "e46_univfd_unina": "E46 score + both GAN specialists"
+  },
+  "contract_bytes": 2385,
+  "contract_sha256": "a4515caf60502e3958d67c44a5f3837d6c653794a4d72b94860545734027875a",
+  "development_metrics_opened": 0,
+  "e44_fusion_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+  "eligibility_and_development_gates": {
+    "balanced_accuracy_min": 0.85,
+    "coverage": 1.0,
+    "pooled_ai_recall_min": 0.8,
+    "pooled_real_false_ai_max": 0.1,
+    "roc_auc_min": 0.9,
+    "worst_ai_recall_min": 0.6,
+    "worst_real_false_ai_max": 0.2
+  },
+  "forbidden": [
+    "DEVELOPMENT-informed fit",
+    "DEVELOPMENT-informed threshold",
+    "backbone update",
+    "candidate retry",
+    "post-DEVELOPMENT repair"
+  ],
+  "learned_heads": {
+    "C": 0.1,
+    "features": "StandardScaler over frozen input scores; probabilities use clamped logits; UNINA raw logit is clipped to [-100,100]",
+    "head": "LogisticRegression(lbfgs)",
+    "max_iter": 2000,
+    "sample_weight": "equal label/source mass within CAL",
+    "seed": 47
+  },
+  "manifest_sha256": "378b83fe56bcf4bbf61d5b626efa71899bea571abeeeca05c74774daa8585739",
+  "roles": {
+    "fit_and_select": "CAL",
+    "one_shot_gate": "DEVELOPMENT"
+  },
+  "schema_version": 1,
+  "score_stream_sha256": {
+    "dda": "8001c60b793afed8592ecd41547050eb975b95e58a90a7a067cdc5ab6f9d75f5",
+    "generalist": "073110f4b9cd3b4056db185798bcf6808e39ef5c467f44c4a348b9f0bcf30c03",
+    "unina": "7efb36c0dcc6bba15528d3fb58973c0d13eb09873481d05b487b6a2c6ed5e16d",
+    "univfd": "67b7b94c41a3ed9a732d7c82b412dd25c4f6879226517b82351ed50fc6ee2829"
+  },
+  "selection": {
+    "eligible_only": true,
+    "licence_margin": 0.02,
+    "licence_rule": "if the raw winner uses UNINA, choose e46_univfd when eligible and within 0.02 on both worst and pooled AI recall",
+    "ranking": [
+      "worst AI-source recall",
+      "pooled AI recall",
+      "ROC AUC",
+      "balanced accuracy"
+    ],
+    "tie_break": [
+      "e46",
+      "e46_univfd",
+      "e46_unina",
+      "e46_univfd_unina"
+    ]
+  },
+  "state": "e47_decision_contract_frozen_before_score_interpretation",
+  "threshold": {
+    "rule": "lowest CAL score cut satisfying pooled REAL FP <=10% and worst REAL-source FP <=20%",
+    "ties": "scores equal to threshold are AI"
+  }
+}

@@ -3586,3 +3586,13 @@ was scored or selected using model output.
 - **Capped UNINA arm:** 2,400/2,400 rows, 100% coverage; 398,998-byte stream SHA-256
   `7efb36c0...5e16d`. All four frozen inference streams are complete. CAL/DEVELOPMENT
   metrics and fitted results remain unopened pending a separately committed decision rule.
+- **Decision rule queued before metrics:** compare frozen E46, E46+UnivFD, E46+UNINA and
+  E46+both using C=0.1 standardized logistic gates with equal CAL label/source mass. Each
+  candidate receives the lowest CAL threshold satisfying pooled/worst REAL FP <=10%/20%
+  and must also pass AUC/BA >=0.90/0.85 plus pooled/worst AI recall >=80%/60%. Rank passes
+  by worst AI recall, pooled recall, AUC and BA; prefer MIT-only E46+UnivFD when it is within
+  two points of an UNINA-bearing winner on both AI-recall measures. DEVELOPMENT is one-shot.
+- **Decision contract lock:** the 2,385-byte contract SHA-256 is `a4515caf...875a`; it
+  binds all four score-stream hashes, exact features, C=0.1 head, seed 47, CAL threshold
+  rule, candidate ranking/licence rule and DEVELOPMENT gates before score interpretation.
+  Six focused tests pass; CAL/DEVELOPMENT metrics opened: zero/zero.

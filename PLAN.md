@@ -616,6 +616,16 @@ source >=60% on a genuinely new final.
       Capped UNINA completed 2,400/2,400 with stream SHA-256 `7efb36c0...5e16d`; no metric
       opened. All frozen score arms are complete. Next freeze the exact CAL-only fitting,
       threshold and candidate-selection rule before interpreting any score.
+      Decision rule to freeze: reconstruct frozen E46 from E43-S+DDA, compare it with
+      C=0.1 standardized logistic gates adding UnivFD, UNINA, or both. Fit with equal CAL
+      label/source mass. For every candidate choose the lowest CAL threshold holding pooled
+      REAL FP <=10% and worst-source FP <=20%; require AUC >=0.90, BA >=0.85, pooled AI
+      recall >=80% and worst AI-source recall >=60%. Rank eligible candidates by worst AI
+      recall, pooled AI recall, AUC and BA. If an UNINA-bearing winner is within two points
+      of eligible MIT-only E46+UnivFD on both AI-recall measures, select E46+UnivFD.
+      Freeze the selected head and threshold before opening DEVELOPMENT once.
+      Decision contract frozen at SHA-256 `a4515caf...875a`; CAL and DEVELOPMENT metrics
+      both remain unopened. Six focused contract tests pass.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32

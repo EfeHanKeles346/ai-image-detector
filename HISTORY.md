@@ -4393,3 +4393,10 @@ Capped UNINA subsequently completed the same 2,400 identities with full coverage
 streams, but still has no opened CAL or DEVELOPMENT metric. The exact CAL-only fitting,
 threshold selection and candidate-selection policy must be written and committed before these
 scores can influence a decision.
+
+That decision policy is now executable and frozen before any aggregate score was opened. Contract
+SHA `a4515caf...875a` compares frozen E46 with CAL-only C=0.1 logistic gates adding UnivFD, UNINA
+or both; fixes the REAL-safety threshold rule, all seven success gates, deterministic ranking and
+the two-point MIT-licence preference. DEVELOPMENT remains a one-shot transfer test and cannot fit,
+select, repair or retry the candidate. Six focused contract tests pass; both CAL and DEVELOPMENT
+metric counts are still zero.
