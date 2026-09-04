@@ -394,6 +394,15 @@ approved as final evidence or training data. Viewer-delivered assets must be des
 received JPEG transport rather than guaranteed original Parquet bytes, and the final byte sum must
 still fit the existing 4 GiB global network ceiling beside the frozen Commons reserve.
 
+E49-B source qualification is now closed as **rejected before selection**. Across all 91,398
+`core/test` rows, eligible non-video fake populations are: GPT Image 2 470, Nano Banana Pro 60,
+Seedream v5.0 372, FLUX.2 Klein 9B 8,093 and Midjourney 7 3,586. Nano cannot supply the frozen
+192-row reserve, so no identity, asset, image or score was selected. The measured projection used
+2,597,624 bytes across 650 exact ranges and cross-validated 52,600 cached Viewer rows, rather than
+downloading 67,649,942,401 bytes of source Parquets. The Hub card metadata says CC-BY-NC-4.0 while
+README prose also mentions CC-BY-SA-4.0 plus non-commercial terms for proprietary subsets; this
+project keeps the stricter non-commercial boundary and must preserve attribution.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.

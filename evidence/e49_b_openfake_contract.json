@@ -1,0 +1,163 @@
+{
+  "boundary": "Preregistered source population failed before identity selection. No replacement model, image access, detector access, metric or retry is permitted inside E49-B.",
+  "config": "core",
+  "created_at": "2026-09-04T11:53:27.335006+00:00",
+  "eligible_counts": {
+    "flux.2-klein-9b": 8093,
+    "gpt-image-2": 470,
+    "midjourney-7": 3586,
+    "nano-banana-pro": 60,
+    "seedream-v5.0": 372
+  },
+  "expected_split_rows": 91398,
+  "image_assets_requested": 0,
+  "license": "cc-by-nc-4.0",
+  "metadata_transport": {
+    "columns": [
+      "label",
+      "model",
+      "type",
+      "release_date"
+    ],
+    "image_column_requested": false,
+    "method": "exact_revision_http_range_projected_parquet_columns",
+    "prompt_column_requested": false,
+    "range_bytes_transferred": 2597624,
+    "range_requests": 650,
+    "shards": [
+      {
+        "lfs_sha256": "909572cd69c2fe88b26bac6057cdb0bd2d24d91265df7e6fc5ba3b09580d9ebf",
+        "path": "core/test-00000-of-00013.parquet",
+        "range_bytes_transferred": 202688,
+        "range_requests": 50,
+        "repository_bytes": 5139449013,
+        "row_end_exclusive": 7031,
+        "row_start": 0
+      },
+      {
+        "lfs_sha256": "2fdee6cc05bbd57b7e4b49c988498a24c36a641c46aeeb09b21c9bebf444d529",
+        "path": "core/test-00001-of-00013.parquet",
+        "range_bytes_transferred": 209360,
+        "range_requests": 50,
+        "repository_bytes": 5200603591,
+        "row_end_exclusive": 14062,
+        "row_start": 7031
+      },
+      {
+        "lfs_sha256": "297590343724115f85f44eaf48aa0fccdc39392f9334eab462fce842b9666448",
+        "path": "core/test-00002-of-00013.parquet",
+        "range_bytes_transferred": 187151,
+        "range_requests": 50,
+        "repository_bytes": 5130473940,
+        "row_end_exclusive": 21093,
+        "row_start": 14062
+      },
+      {
+        "lfs_sha256": "0d9f86a4d16762dd48afbff349d972dcd7b8e3f926e19853118240374f5c0e01",
+        "path": "core/test-00003-of-00013.parquet",
+        "range_bytes_transferred": 204794,
+        "range_requests": 50,
+        "repository_bytes": 5235264689,
+        "row_end_exclusive": 28124,
+        "row_start": 21093
+      },
+      {
+        "lfs_sha256": "dcbbd190011422610d717533df0a5c1f3f4b76e6f98e7c422944eb539d13bc43",
+        "path": "core/test-00004-of-00013.parquet",
+        "range_bytes_transferred": 202710,
+        "range_requests": 50,
+        "repository_bytes": 5223012683,
+        "row_end_exclusive": 35155,
+        "row_start": 28124
+      },
+      {
+        "lfs_sha256": "47845568b9db470b3c56a940df315cbd3c178b3e63aeec8459210c4d5ed848c2",
+        "path": "core/test-00005-of-00013.parquet",
+        "range_bytes_transferred": 202058,
+        "range_requests": 50,
+        "repository_bytes": 5287459785,
+        "row_end_exclusive": 42186,
+        "row_start": 35155
+      },
+      {
+        "lfs_sha256": "b54dc69efcdf397b8a9d7dd7f3020c419d26bd6d526b2997a55a6e0f24bd9636",
+        "path": "core/test-00006-of-00013.parquet",
+        "range_bytes_transferred": 192880,
+        "range_requests": 50,
+        "repository_bytes": 5250101490,
+        "row_end_exclusive": 49217,
+        "row_start": 42186
+      },
+      {
+        "lfs_sha256": "1087249aa67a0dd7758e91b70eeb192c87cb1284f371a36ff7c33d9e8075b4d8",
+        "path": "core/test-00007-of-00013.parquet",
+        "range_bytes_transferred": 204238,
+        "range_requests": 50,
+        "repository_bytes": 5292151199,
+        "row_end_exclusive": 56248,
+        "row_start": 49217
+      },
+      {
+        "lfs_sha256": "91e61902b36d806a401dc780cee8c1d426d0a598d367b795e24c57aa9343b1a6",
+        "path": "core/test-00008-of-00013.parquet",
+        "range_bytes_transferred": 201699,
+        "range_requests": 50,
+        "repository_bytes": 5152966243,
+        "row_end_exclusive": 63278,
+        "row_start": 56248
+      },
+      {
+        "lfs_sha256": "484d64701fd0f004c3e1b80d5052af7eddbaca6e274a57a5bf079c3a2929ac37",
+        "path": "core/test-00009-of-00013.parquet",
+        "range_bytes_transferred": 203394,
+        "range_requests": 50,
+        "repository_bytes": 5096573100,
+        "row_end_exclusive": 70308,
+        "row_start": 63278
+      },
+      {
+        "lfs_sha256": "81e5d34e6708b87fc31b67ce7add5b9bf12cfb3ed8e4e7b9987be3a8e722974f",
+        "path": "core/test-00010-of-00013.parquet",
+        "range_bytes_transferred": 192844,
+        "range_requests": 50,
+        "repository_bytes": 5129964604,
+        "row_end_exclusive": 77338,
+        "row_start": 70308
+      },
+      {
+        "lfs_sha256": "afbff01d5bfa062e2b940264c1a66e05ce076d2a283f348b0eaeb1fef3f48551",
+        "path": "core/test-00011-of-00013.parquet",
+        "range_bytes_transferred": 198689,
+        "range_requests": 50,
+        "repository_bytes": 5406085082,
+        "row_end_exclusive": 84368,
+        "row_start": 77338
+      },
+      {
+        "lfs_sha256": "33316d7cb87e01d8189ebf042504d699d502fdefc1343a0f00e6d693de264e18",
+        "path": "core/test-00012-of-00013.parquet",
+        "range_bytes_transferred": 195119,
+        "range_requests": 50,
+        "repository_bytes": 5105836982,
+        "row_end_exclusive": 91398,
+        "row_start": 84368
+      }
+    ],
+    "source_parquet_bytes_not_downloaded": 67649942401,
+    "viewer_prefix_rows_cross_validated": 52600
+  },
+  "missing_cells": {
+    "nano-banana-pro": 60
+  },
+  "model_scores_created": 0,
+  "new_image_bytes_downloaded": 0,
+  "repository": "ComplexDataLab/OpenFake",
+  "required_per_model": 192,
+  "revision": "3fd1109dc3258874243fa31c5bda9ee24260163b",
+  "role": "REJECTED_SOURCE_QUALIFICATION_ONLY",
+  "scanned_rows": 91398,
+  "schema_version": 1,
+  "selected_rows": 0,
+  "split": "test",
+  "state": "e49_b_openfake_rejected_population_shortfall_unscored"
+}

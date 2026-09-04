@@ -868,7 +868,7 @@ E49-A remains frozen, but manual Datapoint approval must not be the only route t
 fallback is chosen from licence, source separation, date/family coverage and transfer feasibility—
 never E43-S scores. It becomes a final candidate only if every pre-score qualification below passes.
 
-- [ ] Pin ungated CC-BY-NC-4.0 `ComplexDataLab/OpenFake` revision
+- [x] Pin ungated CC-BY-NC-4.0 `ComplexDataLab/OpenFake` revision
       `3fd1109dc3258874243fa31c5bda9ee24260163b`, `core/test` and its exact 91,398 rows. Use only
       official Hugging Face Dataset Viewer `/rows`, whose asset path must embed that exact revision;
       never download a 5+ GB Parquet shard. **Pre-result reliability amendment:** Viewer cached
@@ -876,16 +876,19 @@ never E43-S scores. It becomes a final candidate only if every pre-score qualifi
       Exact-revision HTTP byte ranges may therefore project only `label`, `model`, `type` and
       `release_date` from the 13 source Parquets. Range bytes must be counted; image/prompt columns,
       row order, model cells, quotas, rank and stop rule may not change.
-- [ ] Scan metadata in deterministic 100-row pages, cached without prompts or expiring asset URLs,
+- [x] Scan metadata in deterministic 100-row pages, cached without prompts or expiring asset URLs,
       until every exact model cell has 192 rows: GPT Image 2, Nano Banana Pro, Seedream v5.0,
       FLUX.2 Klein 9B and Midjourney 7. Require label `fake` and non-video type; freeze 160 target
       +32 reserve per model by namespace hash. No image or detector access during selection.
-- [ ] Resolve fresh asset URLs only after the 960 identities are committed. Bind HEAD byte totals,
-      dimensions and response type for the pinned revision; proceed only if OpenFake plus the
-      2,706,581,778-byte Commons reserve fits the unchanged 4 GiB global network stop.
-- [ ] If qualification passes, create a distinct E49-B final contract/evaluator with OpenFake's five
-      source labels plus the already-frozen StyleGAN2 and Commons components. Preserve E49's paired
-      transports and all 20 gates. E49-A is archived, not rewritten; Dotting remains diagnostic-only.
+      **Qualification result — FAIL before selection:** complete eligible populations are GPT Image 2
+      470, Nano Banana Pro 60, Seedream v5.0 372, FLUX.2 Klein 9B 8,093 and Midjourney 7 3,586.
+      Nano cannot supply the preregistered 192; selected rows remain zero.
+- [x] Stop before resolving any asset URL, byte total or image because the identity qualification
+      failed. Exact range projection transferred 2,597,624 metadata bytes in 650 requests and cross-
+      validated 52,600 Viewer rows while avoiding 67,649,942,401 source-Parquet bytes.
+- [x] Archive E49-B without substitution, model access or metric. No E49-B final contract exists;
+      image bytes and detector scores remain zero. A successor may replace the underfilled cell only
+      under a new preregistration. E49-A is unchanged and Dotting remains diagnostic-only.
 
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 

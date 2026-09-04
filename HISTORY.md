@@ -4710,3 +4710,11 @@ score was created. Before knowing the complete model populations, the transport 
 the same pinned Parquets may be read by measured HTTP byte ranges for only `label`, `model`, `type`
 and `release_date`. Full shards, image payloads and prompts remain forbidden, while row order, five
 cells, 192-row quotas, hash ranking and the first-complete-page stop rule stay frozen.
+
+The complete 91,398-row E49-B qualification then rejected the source plan before selection. GPT
+Image 2/Seedream v5.0/FLUX.2 Klein 9B/Midjourney 7 supply 470/372/8,093/3,586 eligible images, but
+Nano Banana Pro supplies only 60 against the frozen 192-row reserve. The exact-revision projection
+transferred just 2,597,624 metadata bytes in 650 ranges, avoided all 67,649,942,401 Parquet payload
+bytes and cross-validated 52,600 Viewer rows. Zero identity, asset, image or model score was created.
+E49-B is archived without substitution; any replacement cell requires a separately preregistered
+successor.

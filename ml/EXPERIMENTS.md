@@ -3836,6 +3836,12 @@ was scored or selected using model output.
 - **Claim boundary:** E49-B is a distinct successor candidate, not a rewrite or retry of E49-A.
   Viewer JPEGs are a declared received transport. Dotting remains AI-only diagnostic evidence;
   OpenFake remains non-training final evidence if the complete six-family balanced contract freezes.
+- **Qualification result — FAIL, source only:** all 91,398 rows were counted with 2,597,624 measured
+  metadata-range bytes /650 requests, and 52,600 Viewer-prefix rows matched the pinned Parquets.
+  Eligible populations are GPT Image 2 470, Nano Banana Pro 60, Seedream v5.0 372, FLUX.2 Klein 9B
+  8,093 and Midjourney 7 3,586. Nano misses the 192 reserve requirement. The experiment freezes zero
+  identities and stops with zero asset requests, image bytes, detector scores or metrics; no model
+  may be silently substituted inside E49-B.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 
