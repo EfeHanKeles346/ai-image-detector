@@ -687,6 +687,10 @@ all four backbones/scores remain frozen.
       600 FIT, 600 CAL and 1,200 DEVELOPMENT, each exactly class-balanced. Manifest SHA-256
       `1404a3ff...5b68`; model scores remain zero. Next bind all frozen arm identities before
       inference, then score FIT+CAL first and keep DEVELOPMENT unopened through selection.
+      **FIT+CAL score lock:** contract SHA-256 `ea7de06c...9516` binds the 2,400-row
+      manifest and exact E43-S, DDA, E44 fusion, UnivFD and capped-UNINA identities. Only
+      600 FIT +600 CAL may be scored; 1,200 DEVELOPMENT rows are explicitly forbidden.
+      Six focused tests pass; model/development score counts remain zero/zero.
 - [ ] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
       authentic-image percentile. Compare E46, E46+UnivFD, E46+UNINA and all-three using the
       maximum expert percentile. Because `max` is monotone, a low irrelevant-specialist score can

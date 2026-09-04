@@ -4483,3 +4483,9 @@ drop from 0.0164 to 0.0088. Module 2 will fix those measurement errors, test den
 features against exact masks and keep fully re-rendered edits out of localisation claims. Later
 Module 2 discoveries may motivate fresh Module 1 experiments, but can never silently tune the
 frozen Module-1 v1 artifact or its evidence.
+
+E48 implementation resumed only after that order was committed. Score contract SHA
+`ea7de06c...9516` binds the clean manifest plus exact E43-S, official DDA, E44 fusion, UnivFD and
+capped-UNINA identities. The executable scorer can access only the 600 FIT and 600 CAL rows;
+DEVELOPMENT's 1,200 rows are rejected until a candidate is frozen. Six focused tests pass and no
+model or DEVELOPMENT score exists at this checkpoint.

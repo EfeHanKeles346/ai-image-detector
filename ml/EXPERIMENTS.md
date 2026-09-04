@@ -3646,6 +3646,10 @@ was scored or selected using model output.
   one FODB reserve row are excluded for protected dHash overlap; headroom fills all quotas.
   The frozen 2,400-row manifest is exactly class-balanced inside 600 FIT, 600 CAL and 1,200
   DEVELOPMENT rows. Manifest SHA-256 `1404a3ff...5b68`; model scores remain zero.
+- **FIT+CAL score lock:** contract SHA-256 `ea7de06c...9516` binds the exact manifest and
+  frozen E43-S/DDA/E44/UnivFD/capped-UNINA identities. Scoring is restricted to 600 FIT and
+  600 CAL; all 1,200 DEVELOPMENT rows remain explicitly forbidden. Six focused tests pass;
+  model and DEVELOPMENT score counts are zero.
 
 ### Module 1 completion and Module 2 re-entry contract
 

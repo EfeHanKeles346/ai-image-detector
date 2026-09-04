@@ -1,0 +1,44 @@
+{
+  "arms": {
+    "dda": "official DDA preprocessing/probability",
+    "generalist": "unchanged E43-S clean transport",
+    "unina": "official StyleGAN2 ResNet50-NoDown after frozen 512px long-side cap",
+    "univfd": "official CLIP ViT-L/14 center crop + sigmoid head"
+  },
+  "contract_bytes": 1482,
+  "contract_sha256": "ea7de06ca1bef6d8aef88898f8efd08acd653311bb5d58efad27cb17173a9516",
+  "counts": {
+    "CAL": 600,
+    "DEVELOPMENT_unscored": 1200,
+    "FIT": 600,
+    "fitcal": 1200,
+    "manifest": 2400
+  },
+  "development_scores_created": 0,
+  "forbidden": [
+    "DEVELOPMENT scoring before candidate freeze",
+    "role change",
+    "backbone update",
+    "failed-row removal",
+    "score-dependent replacement"
+  ],
+  "identities": {
+    "dda_sha256": "b27a31d39374803ddeff02bfabb2be76e190b04300490cddfafb24f683f37e3e",
+    "fusion_sha256": "19fd7bbcfed6ea85b9aa0c620663880f9fed24fbdbb084b09057283ea38bb100",
+    "generalist_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "manifest_sha256": "1404a3ff5cfde4a343e1368b995ab1ec13135811c569134dfffaabf40c1b5b68",
+    "unina_sha256": "65467594eeb53945417c909390a3d872d55b6dbd819aa12cf01e4ced9c4d5a08",
+    "univfd_backbone_sha256": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+    "univfd_head_sha256": "477100745713bcc957beb2b40859536859b6483fd6301b3b9293151b194c7847"
+  },
+  "model_scores_created": 0,
+  "roles_forbidden": [
+    "DEVELOPMENT"
+  ],
+  "roles_scored": [
+    "FIT",
+    "CAL"
+  ],
+  "schema_version": 1,
+  "state": "e48_fitcal_score_contract_frozen_before_model_load"
+}
