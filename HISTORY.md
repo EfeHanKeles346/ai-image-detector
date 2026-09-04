@@ -5082,3 +5082,10 @@ The amendment then transferred exactly its five rows /7,710,716 bytes. All passe
 protected identity checks, so original-rank head `D04_nat_45.jpg` replaces `D04_black.jpg`; no later
 reserve was consulted for performance. Receipt `66e3d063...9722` closes the correction with zero
 rejections and zero model scores while preserving all CAL quotas.
+
+The fourth clean realization then closed both preregistered manifests. TRAIN contains 5,978 parents
+(4,035 REAL/1,943 AI): all 360 AI-CAL identities are absent, SCIMD contributes exactly 100 from each
+of 17 devices, no body failed decode and two conservative dHash collisions used the prebound
+headroom. CAL contains 1,200 SCMI30 REAL plus 360 source-balanced historical AI parents, represented
+as exactly 1,560 original and 1,560 deterministic Q75 observations. TRAIN hash
+`41444640...77ef`, CAL hash `60688291...2356`; detector scores and DEVELOPMENT access remain zero.

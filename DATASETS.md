@@ -1822,3 +1822,10 @@ SCMI30 CAL identity audit found one protected near-duplicate: the publisher-labe
 (7,710,716 bytes); all passed, and the original namespace's first clean row `D04_nat_45.jpg` replaces
 it. Receipt SHA-256 is `66e3d063ba530d146c93dc44c5cfdcf4f045ca88b8947798ba0bf90657e59722`.
 The CAL contract remains 1,200 parents, 30 devices x40 and Random/Similar 600/600.
+
+E51 TRAIN/CAL realization is now complete. The score-blind SCIMD reserve decoded without failure;
+two conservative protected-dHash collisions were skipped and headroom retained exactly 100 images
+from each of 17 devices (1,700). Combined TRAIN contains 5,978 parents: 4,035 REAL and 1,943 AI,
+after removing all 360 held-out AI-CAL parents. CAL contains 1,200 SCMI30 REAL and 360 AI parents
+from 18 historical TRAIN sources, expanded deterministically to 1,560 original +1,560 Q75 rows.
+TRAIN/CAL manifest SHA-256 values are `41444640...77ef` and `60688291...2356`; scores are zero.

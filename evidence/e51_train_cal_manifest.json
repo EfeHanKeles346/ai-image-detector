@@ -1,0 +1,26 @@
+{
+  "cal_counts": {
+    "AI_parents": 360,
+    "REAL_parents": 1200,
+    "observations": 3120,
+    "original": 1560,
+    "parents": 1560,
+    "q75": 1560
+  },
+  "cal_manifest_bytes": 5687683,
+  "cal_manifest_sha256": "606882913b0a2193422a8e838a142cff532bc1fe63088c6802eb3c9a43472356",
+  "model_scores_created": 0,
+  "realization_contract_sha256": "48e078fe5a96a108c102a06aef436fe47a5e937a581656c1fd63df29816adbce",
+  "schema_version": 1,
+  "state": "e51_train_cal_realized_unscored",
+  "train_counts": {
+    "AI": 1943,
+    "REAL": 4035,
+    "parents": 5978,
+    "scimd17_decode_failures": 0,
+    "scimd17_identity_exclusions": 2,
+    "scimd17_selected": 1700
+  },
+  "train_manifest_bytes": 4115475,
+  "train_manifest_sha256": "41444640273703fb96a9e3e269132ddc21e3056cbb8626e1aa93ea3a64cc77ef"
+}

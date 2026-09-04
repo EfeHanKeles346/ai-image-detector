@@ -1153,6 +1153,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       **Amendment complete:** all five bound reserves /7,710,716 bytes passed acquisition and identity
       audit; the first ranked clean row `D04_nat_45.jpg` replaces the black frame. Receipt
       `66e3d063...9722`; rejected reserves and model scores are zero.
+      **TRAIN/CAL realization complete:** TRAIN freezes at 5,978 parents (4,035 REAL/1,943 AI),
+      including 1,700 SCIMD hard negatives with zero decode failures and two conservative dHash
+      exclusions. CAL freezes 1,560 parents (1,200 REAL/360 AI) and exactly 3,120 original/Q75
+      observations. Manifest hashes are `41444640...77ef` and `60688291...2356`; scores remain zero.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered

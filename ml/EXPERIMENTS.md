@@ -4028,6 +4028,11 @@ was scored or selected using model output.
   the no-content black D04 frame. Five same-device/branch reserves were bound before 7,710,716 bytes
   transferred; all passed, and first-ranked `D04_nat_45.jpg` is the replacement. Receipt
   `66e3d063...9722`; balance remains 30 x40 and 600/600, with zero model scores.
+- **E51 TRAIN/CAL manifests — COMPLETE, unscored:** TRAIN has 5,978 parents (4,035 REAL/1,943 AI),
+  including 1,700 device-balanced SCIMD resize hard negatives; zero decode failures and two
+  conservative dHash exclusions. CAL has 1,200 independent SCMI30 REAL plus 360 held-out historical
+  AI parents, each original/Q75 paired for 3,120 observations. Hashes `41444640...77ef` and
+  `60688291...2356` bind the manifests. DEVELOPMENT remains unopened and model scores remain zero.
 
 ### Gated-source approval audit — route decision before any image access
 
