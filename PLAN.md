@@ -1070,6 +1070,11 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       3,220,281,593 transfer bytes while the selected payloads total 654,005,247 bytes. The IEEE
       archive remains HTTP 403 until the user accepts Kaggle's competition rules. No image or model
       score has been opened.
+      **Access + transfer-method checkpoint:** the user's rule acceptance now passes an official
+      81,853-byte metadata probe. Before the first image, a restart-safe six-worker transfer binds
+      contract `975e8164...15e4`, rejects every non-test path, verifies all expected bytes, TIFF
+      decode/geometry and SHA-256, preserves unaltered/postprocessed cells and emits zero scores.
+      The method is committed before payload execution.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

@@ -4962,3 +4962,10 @@ The two preceding GitHub failures were dependency drift, not scientific or web r
 E51 metadata audit imported Kaggle's official client, which existed in the workstation environment
 but not the declared CI experiment group. `kaggle>=2.2,<2.3` is now explicit in `pyproject.toml`;
 the complete local 471-test suite remains green before the replacement CI run.
+
+The user subsequently accepted the archived IEEE/Kaggle rules; the official 81,853-byte submission
+metadata probe now downloads instead of returning HTTP 403. Before any image transfer, the E51
+IEEE downloader was frozen against route contract `975e8164...15e4`: only the 2,640 selected test
+TIFFs can enter, interrupted files resume, unexpected paths fail closed, and each admitted payload
+must reproduce its byte count, decode safely and receive a SHA-256 receipt. No detector or metric is
+available in this acquisition path.
