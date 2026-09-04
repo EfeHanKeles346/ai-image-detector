@@ -807,6 +807,9 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       two complete files. Preserve those files, reduce to one request stream with 0.75 s pacing,
       identify the public research repository in User-Agent and honor bounded Retry-After/backoff.
       No thumbnail substitution or identity change is allowed.
+      **Native iPhone container amendment:** Wikimedia declares row 139,916,479 as JPEG and `file`
+      confirms JPEG, but its Apple MPF segment makes Pillow report `MPO`. Admit JPEG/MPO while
+      preserving exact original bytes and record the distinction; dimensions/SHA1 remain mandatory.
       **Local GAN realization:** all 240 frozen coordinates decode with zero failure and zero
       protected/internal overlap; the first 200 clean rows are fixed at manifest SHA-256
       `150ed354...ec99`. All are publisher 256x256 PNG, so the format/geometry audit must flag the

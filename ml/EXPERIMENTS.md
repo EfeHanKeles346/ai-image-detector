@@ -3905,6 +3905,10 @@ was scored or selected using model output.
   after only two complete originals; no partial body was admitted. Resume uses one request stream,
   0.75-second pacing, a repository-linked research User-Agent and up to 60-second Retry-After/
   exponential backoff. Completed files are revalidated, and original URLs/bytes remain unchanged.
+- **Native-container amendment:** Commons row 139,916,479 is a standards-valid Apple iPhone JPEG
+  with an MPF multi-picture segment. Wikimedia MIME and `file` identify JPEG, while Pillow correctly
+  reports `MPO`. Preserve its exact bytes and admit decoded JPEG/MPO as distinct reported formats;
+  frozen dimensions, Wikimedia SHA1 and every other safety check remain mandatory.
 - **Commons realization method:** bind the completed transfer receipt; compare original SHA-256 and
   dHash against historical protected roles, the scored Dotting diagnostic and both frozen final-AI
   components. Within each prebound device rank, retain the first 100 parents whose original and

@@ -26,6 +26,7 @@ CONTRACT_SHA256 = "1d4e184c27cb87cf832045a23b6966f382673c3bcd8342a900c07130bd918
 EXPECTED_FILES = 1_100
 EXPECTED_BYTES = 2_706_581_778
 MAX_PIXELS = 100_000_000
+ALLOWED_DECODED_FORMATS = {"JPEG", "MPO"}
 DOWNLOAD_WORKERS = 1
 REQUEST_PACING_SECONDS = 0.75
 USER_AGENT = "PixelProof-E49/1.0 (https://github.com/EfeHanKeles346/ai-image-detector; research)"
@@ -77,7 +78,8 @@ def inspect_file(path: Path, expected: Mapping[str, Any]) -> dict[str, Any]:
         opened.load()
         width, height = opened.size
         decoded_format = str(opened.format or "UNKNOWN").upper()
-        if decoded_format != "JPEG" or width <= 0 or height <= 0 or width * height > MAX_PIXELS:
+        # Apple phone originals may be JPEG files with an MPF segment, which Pillow reports as MPO.
+        if decoded_format not in ALLOWED_DECODED_FORMATS or width <= 0 or height <= 0 or width * height > MAX_PIXELS:
             raise ValueError(f"E49 Commons payload format/geometry unsafe: {path.name}")
         if (width, height) != (int(expected["width"]), int(expected["height"])):
             raise ValueError(f"E49 Commons payload dimensions changed: {path.name}")

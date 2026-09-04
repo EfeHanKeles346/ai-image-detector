@@ -4776,6 +4776,13 @@ no partial body survived. Before resuming, transfer policy was reduced to one re
 backoff up to 60 seconds. The two exact files remain reusable; no thumbnail, source identity, byte
 contract or model boundary changes.
 
+The paced retry then reached the first bound iPhone 15 Pro original without another 429, but the
+decoder exposed a native-container detail: Wikimedia and system inspection identify a valid JPEG,
+while Pillow reports `MPO` because the Apple capture retains an MPF multi-picture segment. This is
+authentic camera-pipeline evidence, not corruption. The received bytes are preserved and JPEG/MPO
+are now admitted as separately reported decoded formats, still requiring exact SHA1, dimensions and
+size. No row was substituted and no model score exists.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

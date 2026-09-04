@@ -5,7 +5,7 @@ import hashlib
 from PIL import Image
 import pytest
 
-from experiments.e49_commons_download import inspect_file
+from experiments.e49_commons_download import ALLOWED_DECODED_FORMATS, inspect_file
 
 
 def _expected(path):
@@ -27,6 +27,7 @@ def test_commons_inspection_binds_sha1_jpeg_and_geometry(tmp_path):
     assert found["format"] == "JPEG"
     assert found["sha1"] == hashlib.sha1(path.read_bytes()).hexdigest()
     assert len(found["sha256"]) == 64
+    assert ALLOWED_DECODED_FORMATS == {"JPEG", "MPO"}
 
 
 def test_commons_inspection_rejects_hash_and_geometry_drift(tmp_path):
