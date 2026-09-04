@@ -3861,6 +3861,11 @@ was scored or selected using model output.
   Midjourney eligible counts are 236/6,111/192/4,068/1,791. Exactly 192 per cell freeze under
   reserve identity `f9f7bf74...69ec`; contract `0abae56a...d702`. Cached metadata was reused, and
   asset requests, new image bytes and model scores remain zero.
+- **Asset-feasibility result — PASS:** 960/960 revision-bound HEADs total 241,736,938 OpenFake
+  bytes. Combined with frozen Commons, 2,948,318,716 bytes are expected, 1,346,648,580 below the
+  4 GiB stop. Broken aggregate Viewer pages were resolved only through their selected single rows.
+  Generic S3 binary MIME is recorded for later JPEG decode validation. Contract `7b71449e...1415`;
+  signed URLs stored zero, image-body and detector-score counts zero.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

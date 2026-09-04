@@ -426,6 +426,14 @@ The 415,653-byte external contract hashes to
 `f9f7bf74958ced020fcc2d38729640fc3bb7cb14dc64c691be0b827f592069ec`. It reused cached metadata,
 so new metadata/image/model-score bytes are all zero.
 
+The separate no-body asset bind also passed for all 960 identities. Official Viewer pages and
+selected-row fallback resolved fresh revision-bound paths; S3 reports either JPEG or generic binary
+transport, so actual JPEG format remains a mandatory decode check after transfer. HEAD metadata
+binds 241,736,938 OpenFake bytes. Added to the exact 2,706,581,778-byte Commons reserve, the final
+network expectation is 2,948,318,716 bytes with 1,346,648,580 bytes of 4 GiB headroom. Contract
+SHA-256 is `7b71449e0e7d9ea22973f021af2d4ec49cc395e3fffe6816ffc123274a571415`;
+no signed URL, image body or model score was stored.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.

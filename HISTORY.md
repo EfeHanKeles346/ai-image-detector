@@ -4731,3 +4731,9 @@ E49-C then froze successfully without new network access. The first qualifying 1
 236/6,111/192/4,068/1,791. Namespace hashing selected exactly 192 identities per source. Contract
 `0abae56a...d702` and reserve identity `f9f7bf74...69ec` bind the result; fresh asset requests,
 image bytes and detector scores remain zero pending the separate feasibility gate.
+
+The E49-C no-body feasibility gate then passed all 960 frozen identities. Fresh revision-bound
+Viewer resolution plus HEAD metadata binds 241,736,938 OpenFake bytes; with Commons, the exact
+expected network total is 2,948,318,716 bytes, leaving 1,346,648,580 bytes under 4 GiB. Aggregate
+Viewer failures were handled only by querying already-selected rows individually. Asset contract
+`7b71449e...1415` stores no signed URL, and image-body/model-score counts remain zero.

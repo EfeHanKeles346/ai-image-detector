@@ -1,0 +1,32 @@
+{
+  "asset_head_requests": 960,
+  "asset_resolution_methods": [
+    "page100",
+    "selected_row_fallback_on_page_failure"
+  ],
+  "asset_urls_stored": 0,
+  "commons_expected_bytes": 2706581778,
+  "contract_bytes": 473402,
+  "contract_sha256": "7b71449e0e7d9ea22973f021af2d4ec49cc395e3fffe6816ffc123274a571415",
+  "global_expected_network_bytes": 2948318716,
+  "global_headroom_bytes": 1346648580,
+  "global_network_ceiling_bytes": 4294967296,
+  "identity_contract_sha256": "0abae56af862c9b402ef5ef594a21181cbbb7f72ba7495a491b0389bfdfcd702",
+  "model_scores_created": 0,
+  "new_image_bytes_downloaded": 0,
+  "openfake_expected_bytes": 241736938,
+  "repository": "ComplexDataLab/OpenFake",
+  "revision": "3fd1109dc3258874243fa31c5bda9ee24260163b",
+  "role": "FINAL_AI_COMPONENT_CANDIDATE_PENDING_TRANSFER_AND_COMPLETE_E49",
+  "schema_version": 1,
+  "selected_counts": {
+    "flux.2-klein-9b": 192,
+    "gpt-image-2": 192,
+    "midjourney-7": 192,
+    "seedream-v5.0": 192,
+    "z-image-turbo": 192
+  },
+  "selected_rows": 960,
+  "state": "e49_c_openfake_assets_frozen_untransferred_unscored",
+  "viewer_pages_requested": 406
+}

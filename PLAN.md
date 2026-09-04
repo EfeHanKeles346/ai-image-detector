@@ -904,9 +904,12 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       **Identity freeze:** the stop is row 46,600. Cell populations there are GPT 236, Z-Image
       6,111, Seedream 192, FLUX 4,068 and Midjourney 1,791; exactly 192 each are frozen. Contract
       SHA-256 `0abae56a...d702`, reserve identity `f9f7bf74...69ec`; zero new network/image/score bytes.
-- [ ] Commit the 960 exact identities before resolving any asset. Then fetch fresh revision-bound
+- [x] Commit the 960 exact identities before resolving any asset. Then fetch fresh revision-bound
       Viewer URLs only for those identities, bind response type/dimensions/exact byte lengths and
       require OpenFake plus 2,706,581,778 Commons bytes to remain within 4 GiB.
+      **Feasibility PASS:** 960/960 HEADs bind 241,736,938 OpenFake bytes. Combined expectation is
+      2,948,318,716 bytes, leaving 1,346,648,580 bytes below the 4 GiB stop. Contract SHA-256
+      `7b71449e...1415`; signed URLs stored zero, image-body/model-score bytes zero.
 - [ ] Download only the bound OpenFake assets to LaCie with resume and exact receipt, decode and
       exact/dHash-audit every reserve against protected roles, then freeze the first 160 clean rows
       per family. Received Viewer JPEG is the declared publisher transport; derive paired Q75 only
