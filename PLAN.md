@@ -1116,6 +1116,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       **SCMI30 transfer complete:** 1,200/1,200 rows reproduce 4,247,339,334 bytes, 30 devices x40,
       Random/Similar 600/600 and make/model EXIF 1,200/1,200. Receipt `01cc5921...f33e` and ordered
       identity digest `c47d411f...1d12` bind the clean result; no partial or model score remains.
+      **SCIMD-17 method before payload:** the auxiliary TRAIN-only downloader now pins Zenodo record
+      17317613, DOI/version/CC-BY-4.0, exact 174,438,734 bytes and MD5. It supports restart-safe
+      transfer, validates archive paths/expansion and records that image bodies and model scores
+      remain unopened. Commit this gate before the first archive byte.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

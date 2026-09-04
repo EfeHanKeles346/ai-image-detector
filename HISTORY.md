@@ -5030,3 +5030,9 @@ staging partial. Every one of 30 devices contributes 40 rows, Random and Similar
 each, and all rows retain make/model EXIF. External receipt `01cc5921...f33e` and ordered identity
 digest `c47d411f...1d12` bind the result. No model was loaded, no score was made, and CAL remains
 separate from fitting and final evidence.
+
+Before the SCIMD-17 archive byte, its transfer gate was made executable and testable. It requires
+Zenodo record 17317613, DOI `10.5281/zenodo.17317613`, version `Version  1.1`, CC-BY-4.0, exactly
+174,438,734 bytes and MD5 `37da574c9e8d9c0fd3a7c9bedc5d72a6`. Resuming cannot alter the
+payload, unsafe ZIP paths/expansion fail closed, and the receipt explicitly marks this uniformly
+224x224 source as REAL hard negatives for TRAIN only with zero decoded image bodies or scores.
