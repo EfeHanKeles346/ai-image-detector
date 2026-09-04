@@ -3897,6 +3897,11 @@ was scored or selected using model output.
   families whose images were never consumed. Before E49-C realization or scoring, its exact AI
   quota labels are corrected to GPT Image 2, Z-Image Turbo, Seedream v5.0, FLUX.2 Klein 9B,
   Midjourney 7 and StyleGAN2. Counts, REAL devices, thresholds and all twenty gates do not change.
+- **Final assembly method:** require the exact unscored Commons, OpenFake and StyleGAN2 component
+  manifests. Create the 200 StyleGAN2 Q75 children without replacement, rejecting any protected or
+  internal child collision. Reproduce all 4,000 file SHA-256 values and dimensions, validate exact
+  pairing and sixteen source quotas, and archive source geometry plus condition-format counts. The
+  resulting manifest alone may feed the later score lock; twelve focused tests pass before use.
 
 ### Gated-source approval audit — route decision before any image access
 

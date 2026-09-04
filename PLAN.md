@@ -952,6 +952,11 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
       pre-score quota validator with the five exact E49-C OpenFake labels; all ten device quotas,
       StyleGAN2 quota, thresholds and 20 gates remain unchanged. This occurs before the final
       manifest and before any E49-C detector score.
+      **Assembly implementation checkpoint:** the final builder binds the three component manifests,
+      creates and collision-checks the 200 StyleGAN2 Q75 children, revalidates every observation's
+      SHA-256 and geometry, and invokes the exact 2,000-parent/4,000-observation source validator.
+      It archives per-condition formats and per-source original geometry before model access; twelve
+      focused final/evaluation/component tests pass.
 
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 

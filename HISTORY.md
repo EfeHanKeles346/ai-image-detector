@@ -4789,3 +4789,11 @@ was stopped cleanly with no receipt and no partial file admitted. Its restart st
 remaining pages while preserving the previously measured public limit of two concurrent Viewer
 requests, followed by the same eight exact-body workers. Frozen identities, expected bytes, decode
 rules and model boundary are unchanged; all 521 bodies will be revalidated rather than redownloaded.
+
+The complete E49-C assembly gate was also implemented before component realization. It binds the
+future exact Commons and OpenFake manifests plus the already-frozen StyleGAN2 component, creates the
+200 missing StyleGAN2 Q75 children without score-dependent replacement, and fails on protected or
+internal child collision. It then reproduces every one of 4,000 observation SHA-256 values and
+dimensions, enforces exact parent pairing and all sixteen source quotas, and records format/geometry
+shortcut evidence. Twelve focused final/component/evaluation tests pass; no final manifest, model
+score or metric is produced by this method-only checkpoint.
