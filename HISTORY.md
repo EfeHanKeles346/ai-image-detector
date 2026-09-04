@@ -4613,3 +4613,10 @@ successful images across 40 generators. It contains 210 rows each for the five s
 Before image transfer, E49-D1 freezes an AI-only 960-row reserve and 512 MiB ceiling. Its narrow
 Turkish text/sign content is explicitly prevented from masquerading as a balanced final; it can
 measure current-model AI recall and recompression loss while Commons/Datapoint E49 remains clean.
+
+E49-D1 acquisition code was committed before transfer and passed 13 focused E49 tests. Its first
+metadata-only bind stopped safely because a few successful publisher rows omit width/height; no
+contract or image existed. The parser now keeps absent declared geometry as unknown for decode-time
+recovery. The completed pre-transfer contract freezes 960 WebP files (192 per modern model) totaling
+23,936,830 bytes, with contract SHA-256 `170f70db...ed36` and reserve identity SHA-256
+`9637626d...f5a`. This is below five percent of the 512 MiB stop; image and score counts remain zero.

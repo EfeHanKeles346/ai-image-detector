@@ -332,6 +332,13 @@ final and never evidence of REAL-photo safety. The full repository, VLM labels a
 rows are not required. Attribution must credit Fırat Gelbal and Dotting Test; downstream users must
 also review the applicable upstream provider-output terms.
 
+The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
+192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
+reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.
+Four successful rows omit declared width/height, so missing metadata geometry is recorded as unknown
+and must be recovered from the decoded WebP rather than treated as corruption. Downloaded image
+bytes and detector scores remain zero at this checkpoint.
+
 ### Current generators, AI-only — pair with care
 
 #### E32/C2a physical and licence inventory (2026-08-26)

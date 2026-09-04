@@ -1,0 +1,39 @@
+{
+  "attribution": "Firat Gelbal and Dotting Test",
+  "contract_bytes": 540278,
+  "contract_sha256": "170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36",
+  "counts": {
+    "reserve": 960,
+    "reserve_per_model": 192,
+    "target": 800,
+    "target_per_model": 160
+  },
+  "forbidden": [
+    "REAL-photo claim",
+    "AUC/balanced-accuracy claim",
+    "Module-1 promotion",
+    "training",
+    "detector-based row replacement",
+    "threshold change"
+  ],
+  "image_bytes_downloaded": 0,
+  "license": "cc-by-4.0",
+  "model_scores_created": 0,
+  "models": {
+    "flux2pro": "FLUX.2 Pro",
+    "gptimage2": "GPT Image 2",
+    "ideogram4": "Ideogram 4",
+    "nanobanana2": "Nano Banana 2",
+    "seedream5lite": "Seedream 5.0 Lite"
+  },
+  "network": {
+    "expected_image_bytes": 23936830,
+    "stop_bytes": 536870912
+  },
+  "repo_id": "fge-auto/dotting-test",
+  "reserve_identity_sha256": "9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a",
+  "revision": "0bcc6877c7d23f4e615b5470f06b1c00e7db7311",
+  "role": "AI_ONLY_DIAGNOSTIC",
+  "schema_version": 1,
+  "state": "e49_d1_source_frozen_untransferred_unscored"
+}

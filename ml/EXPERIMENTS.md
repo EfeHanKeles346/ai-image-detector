@@ -3761,6 +3761,11 @@ was scored or selected using model output.
 - **Boundary:** Turkish glyph/sign content is a narrow AI-only stress distribution. It cannot report
   AUC, balanced accuracy or authentic-photo safety, cannot promote Module 1 and cannot replace E49.
   It remains non-training diagnostic evidence regardless of outcome.
+- **Bind result:** exact revision/licence/gate and all 8,400 metadata rows validated. The first bind
+  stopped before writing when some successful rows exposed null declared geometry; the parser was
+  fixed and regression-tested to preserve that value as unknown pending decode. The completed
+  contract binds 960 WebP files /23,936,830 bytes, 192 per model, at SHA-256 `170f70db...ed36`;
+  reserve identity SHA-256 is `9637626d...f5a`. Image bytes and scores are still zero.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

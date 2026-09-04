@@ -813,10 +813,12 @@ This is an AI-only stress test, not a replacement E49 final. Its Turkish text/si
 measure authentic-photo false positives, AUC or balanced accuracy and must never be combined with
 unmatched random REAL photos to manufacture an easy binary result.
 
-- [ ] Pin ungated CC-BY-4.0 `fge-auto/dotting-test` revision
+- [x] Pin ungated CC-BY-4.0 `fge-auto/dotting-test` revision
       `0bcc6877c7d23f4e615b5470f06b1c00e7db7311`. Bind 160 target +32 reserve images for each of
       GPT Image 2, Nano Banana 2, FLUX.2 Pro, Ideogram 4 and Seedream 5.0 Lite by deterministic
       request-id hash before image transfer. Preserve attribution and provider-output caveats.
+      **Bound result:** 960 exact files /23,936,830 bytes; contract SHA-256 `170f70db...ed36` and
+      reserve-identity SHA-256 `9637626d...f5a`. Image and model-score counts remain zero.
 - [ ] Download only the 960 bound WebP files to LaCie with per-file byte/format checks, resume and a
       512 MiB stop. Decode, exact/dHash-audit protected roles and freeze the first 160 clean parents
       per model without detector access. Derive paired `social_q75` children exactly as E49.
