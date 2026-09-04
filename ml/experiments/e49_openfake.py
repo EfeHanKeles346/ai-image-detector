@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -25,6 +26,7 @@ CONFIG = "core"
 SPLIT = "test"
 EXPECTED_ROWS = 91_398
 PAGE_SIZE = 100
+FETCH_WORKERS = 8
 TARGET_PER_MODEL = 160
 RESERVE_PER_MODEL = 192
 MODEL_KEYS = {
@@ -196,26 +198,42 @@ def _fetch_page(session: requests.Session, offset: int) -> list[dict[str, Any]]:
     raise RuntimeError(f"E49-B Viewer page failed at {offset}: {last_error}")
 
 
+def _fetch_page_isolated(offset: int) -> list[dict[str, Any]]:
+    """Use one Session per worker; requests.Session is not shared across threads."""
+    with requests.Session() as session:
+        session.headers.update({"User-Agent": "PixelProof-E49B/1.0 metadata-only research audit"})
+        return _fetch_page(session, offset)
+
+
 def bind() -> dict[str, Any]:
     if CONTRACT.exists() or EVIDENCE.exists():
         raise FileExistsError("E49-B OpenFake contract already exists")
     info = HfApi().dataset_info(REPO_ID, revision=REVISION)
     validate_repository(info)
 
-    session = requests.Session()
-    session.headers.update({"User-Agent": "PixelProof-E49B/1.0 metadata-only research audit"})
     scanned: list[dict[str, Any]] = []
     counts: Counter[str] = Counter()
     stop_offset: int | None = None
-    for offset in range(0, EXPECTED_ROWS, PAGE_SIZE):
-        page = _fetch_page(session, offset)
-        scanned.extend(page)
-        counts.update(str(row["model"]) for row in page if eligible(row))
-        if offset % 5_000 == 0:
-            summary = ", ".join(f"{key}={counts[key]}" for key in MODEL_KEYS)
-            print(f"E49-B metadata {min(offset + len(page), EXPECTED_ROWS)}/{EXPECTED_ROWS}: {summary}", flush=True)
-        if all(counts[model] >= RESERVE_PER_MODEL for model in MODEL_KEYS):
-            stop_offset = offset + len(page)
+    offsets = list(range(0, EXPECTED_ROWS, PAGE_SIZE))
+    for batch_start in range(0, len(offsets), FETCH_WORKERS):
+        batch = offsets[batch_start:batch_start + FETCH_WORKERS]
+        with ThreadPoolExecutor(max_workers=FETCH_WORKERS) as pool:
+            futures = {offset: pool.submit(_fetch_page_isolated, offset) for offset in batch}
+            pages = {offset: futures[offset].result() for offset in batch}
+        for offset in batch:
+            page = pages[offset]
+            scanned.extend(page)
+            counts.update(str(row["model"]) for row in page if eligible(row))
+            if offset % 5_000 == 0:
+                summary = ", ".join(f"{key}={counts[key]}" for key in MODEL_KEYS)
+                print(
+                    f"E49-B metadata {min(offset + len(page), EXPECTED_ROWS)}/{EXPECTED_ROWS}: {summary}",
+                    flush=True,
+                )
+            if all(counts[model] >= RESERVE_PER_MODEL for model in MODEL_KEYS):
+                stop_offset = offset + len(page)
+                break
+        if stop_offset is not None:
             break
     if stop_offset is None:
         missing = {model: counts[model] for model in MODEL_KEYS if counts[model] < RESERVE_PER_MODEL}
