@@ -2,9 +2,18 @@ from __future__ import annotations
 
 import hashlib
 
+from PIL import Image
+
 import pytest
 
-from experiments.e49_dotting import MODEL_KEYS, RESERVE_PER_MODEL, select_reserve, validate_download
+from experiments.e49_dotting import (
+    MODEL_KEYS,
+    RESERVE_PER_MODEL,
+    _decode_bytes,
+    select_reserve,
+    social_q75_bytes,
+    validate_download,
+)
 
 
 def _population():
@@ -54,3 +63,14 @@ def test_dotting_download_validation_checks_hash_and_unexpected_files(tmp_path):
     (tmp_path / "extra.webp").write_bytes(b"extra")
     with pytest.raises(ValueError, match="unexpected"):
         validate_download(tmp_path, rows)
+
+
+def test_social_q75_is_deterministic_jpeg_with_long_side_cap(tmp_path):
+    source = tmp_path / "source.webp"
+    Image.new("RGB", (1_500, 750), (10, 20, 30)).save(source, format="WEBP", lossless=True)
+    first = social_q75_bytes(source)
+    second = social_q75_bytes(source)
+    assert first == second
+    decoded = _decode_bytes(first, "test")
+    assert decoded["decoded_format"] == "JPEG"
+    assert (decoded["width"], decoded["height"]) == (1_080, 540)

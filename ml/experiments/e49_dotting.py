@@ -3,15 +3,19 @@
 from __future__ import annotations
 
 import argparse
-from collections import Counter
+from collections import Counter, defaultdict
 import hashlib
+from io import BytesIO
 import json
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
 from huggingface_hub import HfApi, hf_hub_download, snapshot_download
+from PIL import Image, ImageOps
 import pyarrow.parquet as pq
 
+from experiments.e48_manifest import MANIFEST as E48_MANIFEST, _protected_role_hashes
+from pixelproof.data_contract import dhash_image
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
 
 
@@ -36,8 +40,12 @@ ROOT = DATA_ROOT / "e49_d1_dotting"
 SNAPSHOT = ROOT / "repository"
 CONTRACT = ROOT / "source_contract.json"
 DOWNLOAD_RECEIPT = ROOT / "download_receipt.json"
+PAIRED_ROOT = ROOT / "paired" / "social_q75"
+MANIFEST = ROOT / "manifest_unscored.json"
 CONTRACT_EVIDENCE = ML_ROOT.parent / "evidence" / "e49_d1_dotting_contract.json"
 DOWNLOAD_EVIDENCE = ML_ROOT.parent / "evidence" / "e49_d1_dotting_download.json"
+MANIFEST_EVIDENCE = ML_ROOT.parent / "evidence" / "e49_d1_dotting_manifest.json"
+MAX_PIXELS = 50_000_000
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -127,6 +135,194 @@ def validate_download(snapshot: Path, rows: Sequence[Mapping[str, Any]]) -> None
     }
     if actual != set(expected):
         raise ValueError("E49-D1 snapshot contains missing or unexpected payloads")
+
+
+def _decode_bytes(raw: bytes, identity: str) -> dict[str, Any]:
+    with Image.open(BytesIO(raw)) as opened:
+        opened.verify()
+    with Image.open(BytesIO(raw)) as opened:
+        width, height = opened.size
+        if width <= 0 or height <= 0 or width * height > MAX_PIXELS:
+            raise ValueError(f"E49-D1 unsafe image geometry: {identity}")
+        opened.load()
+        rgb = ImageOps.exif_transpose(opened).convert("RGB")
+        return {
+            "decoded_format": str(opened.format or "UNKNOWN").upper(),
+            "width": width,
+            "height": height,
+            "mode": str(opened.mode),
+            "sha256": hashlib.sha256(raw).hexdigest(),
+            "dhash": dhash_image(rgb),
+        }
+
+
+def social_q75_bytes(path: Path) -> bytes:
+    with Image.open(path) as opened:
+        image = ImageOps.exif_transpose(opened).convert("RGB")
+        if max(image.size) > 1_080:
+            scale = 1_080 / max(image.size)
+            image = image.resize(
+                (max(1, round(image.width * scale)), max(1, round(image.height * scale))),
+                Image.Resampling.LANCZOS,
+            )
+        output = BytesIO()
+        image.save(output, format="JPEG", quality=75, subsampling=2, optimize=False)
+        return output.getvalue()
+
+
+def _all_protected_hashes() -> tuple[set[str], set[str], list[dict[str, str]]]:
+    exact, dhashes, sources = _protected_role_hashes()
+    if not E48_MANIFEST.is_file():
+        raise FileNotFoundError("E49-D1 protected E48 manifest missing")
+    raw = E48_MANIFEST.read_bytes()
+    payload = json.loads(raw)
+    for row in payload.get("rows", []):
+        if row.get("sha256"):
+            exact.add(str(row["sha256"]))
+        if row.get("dhash"):
+            dhashes.add(str(row["dhash"]))
+    sources.append({"path": str(E48_MANIFEST), "sha256": hashlib.sha256(raw).hexdigest()})
+    return exact, dhashes, sources
+
+
+def _audit_originals(
+    rows: Sequence[Mapping[str, Any]], prior_exact: set[str], prior_dhash: set[str],
+) -> tuple[list[dict[str, Any]], dict[str, list[str]], list[dict[str, str]]]:
+    decoded, reasons, failures = [], defaultdict(list), []
+    seen_exact: dict[str, str] = {}
+    seen_dhash: dict[str, str] = {}
+    for row in sorted(rows, key=lambda item: (str(item["rank"]), str(item["record_id"]))):
+        record_id = str(row["record_id"])
+        path = SNAPSHOT / str(row["image_path"])
+        try:
+            raw = path.read_bytes()
+            found = _decode_bytes(raw, record_id)
+            if found["decoded_format"] != "WEBP" or found["sha256"] != row["sha256"]:
+                raise ValueError("format or checksum differs from source contract")
+            item = {**row, **found, "path": str(path)}
+            decoded.append(item)
+            if found["sha256"] in prior_exact:
+                reasons[record_id].append("protected_exact_overlap")
+            if found["dhash"] in prior_dhash:
+                reasons[record_id].append("protected_dhash_overlap")
+            if found["sha256"] in seen_exact:
+                reasons[record_id].append(f"internal_exact_duplicate_of:{seen_exact[found['sha256']]}")
+            else:
+                seen_exact[found["sha256"]] = record_id
+            if found["dhash"] in seen_dhash:
+                reasons[record_id].append(f"internal_dhash_duplicate_of:{seen_dhash[found['dhash']]}")
+            else:
+                seen_dhash[found["dhash"]] = record_id
+        except (OSError, ValueError) as error:
+            failures.append({"record_id": record_id, "error": f"{type(error).__name__}: {error}"})
+            reasons[record_id].append("decode_failure")
+    return decoded, dict(sorted(reasons.items())), failures
+
+
+def freeze_manifest() -> dict[str, Any]:
+    if MANIFEST.exists() or MANIFEST_EVIDENCE.exists():
+        raise FileExistsError("E49-D1 manifest already exists")
+    contract, contract_rows = _validate_contract()
+    download_receipt = json.loads(DOWNLOAD_EVIDENCE.read_text())
+    if (
+        download_receipt.get("state") != "e49_d1_reserve_download_complete_unscored"
+        or download_receipt.get("contract_sha256") != hashlib.sha256(CONTRACT.read_bytes()).hexdigest()
+        or download_receipt.get("model_scores_created") != 0
+    ):
+        raise ValueError("E49-D1 download receipt changed")
+    validate_download(SNAPSHOT, contract_rows)
+    prior_exact, prior_dhash, protected_sources = _all_protected_hashes()
+    decoded, reasons, failures = _audit_originals(contract_rows, prior_exact, prior_dhash)
+
+    selected_parents = []
+    observations = []
+    child_exact: dict[str, str] = {}
+    child_dhash: dict[str, str] = {}
+    PAIRED_ROOT.mkdir(parents=True, exist_ok=True)
+    for model_key, source in MODEL_KEYS.items():
+        candidates = sorted(
+            (row for row in decoded if row["model_key"] == model_key),
+            key=lambda row: (row["rank"], row["record_id"]),
+        )
+        selected = 0
+        for row in candidates:
+            record_id = str(row["record_id"])
+            if record_id in reasons:
+                continue
+            child_raw = social_q75_bytes(Path(str(row["path"])))
+            child = _decode_bytes(child_raw, record_id + ":social_q75")
+            child_id = record_id + ":social_q75"
+            child_reasons = []
+            if child["sha256"] in prior_exact:
+                child_reasons.append("social_protected_exact_overlap")
+            if child["dhash"] in prior_dhash:
+                child_reasons.append("social_protected_dhash_overlap")
+            if child["sha256"] in child_exact:
+                child_reasons.append(f"social_internal_exact_duplicate_of:{child_exact[child['sha256']]}")
+            if child["dhash"] in child_dhash:
+                child_reasons.append(f"social_internal_dhash_duplicate_of:{child_dhash[child['dhash']]}")
+            if child_reasons:
+                reasons[record_id] = child_reasons
+                continue
+            child_exact[child["sha256"]] = child_id
+            child_dhash[child["dhash"]] = child_id
+            destination = PAIRED_ROOT / f"{row['request_id']}.jpg"
+            temporary = destination.with_suffix(".jpg.part")
+            temporary.write_bytes(child_raw)
+            temporary.replace(destination)
+            selected_parents.append({
+                "parent_id": record_id, "label": 1, "source": source,
+                "model_key": model_key, "request_id": row["request_id"],
+                "prompt_key": row["prompt_key"], "word_slug": row["word_slug"], "rank": row["rank"],
+            })
+            observations.extend([
+                {**row, "record_id": record_id + ":publisher_original", "parent_id": record_id,
+                 "condition": "publisher_original", "status": "unscored"},
+                {"record_id": child_id, "parent_id": record_id, "label": 1, "source": source,
+                 "model_key": model_key, "request_id": row["request_id"],
+                 "prompt_key": row["prompt_key"], "word_slug": row["word_slug"],
+                 "rank": row["rank"], "condition": "social_q75", "path": str(destination),
+                 "bytes": len(child_raw), **child, "status": "unscored"},
+            ])
+            selected += 1
+            if selected == TARGET_PER_MODEL:
+                break
+        if selected != TARGET_PER_MODEL:
+            raise ValueError(f"E49-D1 cannot fill clean target for {model_key}: {selected}/{TARGET_PER_MODEL}")
+
+    if len(selected_parents) != TARGET_PER_MODEL * len(MODEL_KEYS) or len(observations) != 1_600:
+        raise ValueError("E49-D1 frozen target count changed")
+    by_source = Counter(row["source"] for row in selected_parents)
+    if dict(by_source) != {source: TARGET_PER_MODEL for source in MODEL_KEYS.values()}:
+        raise ValueError("E49-D1 frozen target is not model-balanced")
+    payload = {
+        "schema_version": 1,
+        "state": "e49_d1_decontaminated_paired_frozen_unscored",
+        "role": "AI_ONLY_DIAGNOSTIC",
+        "source_contract_sha256": hashlib.sha256(CONTRACT.read_bytes()).hexdigest(),
+        "download_receipt_sha256": hashlib.sha256(DOWNLOAD_RECEIPT.read_bytes()).hexdigest(),
+        "counts": {
+            "candidates": len(contract_rows), "decoded": len(decoded), "decode_failures": len(failures),
+            "identity_exclusions": len(reasons), "parents": len(selected_parents),
+            "observations": len(observations), "by_source": dict(sorted(by_source.items())),
+        },
+        "decode_failures": failures,
+        "identity_exclusion_reasons": dict(sorted(reasons.items())),
+        "protected_role_manifests": protected_sources,
+        "parents": sorted(selected_parents, key=lambda row: (row["source"], row["rank"])),
+        "rows": sorted(observations, key=lambda row: (row["condition"], row["source"], row["rank"])),
+        "model_scores_created": 0,
+        "boundary": "AI-only diagnostic; target and Q75 children frozen before detector access.",
+    }
+    raw = _write_atomic(MANIFEST, payload)
+    evidence = {
+        "schema_version": 1, "state": payload["state"], "role": payload["role"],
+        "counts": payload["counts"], "source_contract_sha256": payload["source_contract_sha256"],
+        "protected_role_manifest_count": len(protected_sources), "manifest_bytes": len(raw),
+        "manifest_sha256": hashlib.sha256(raw).hexdigest(), "model_scores_created": 0,
+    }
+    _write_atomic(MANIFEST_EVIDENCE, evidence)
+    return evidence
 
 
 def _remote_inventory(info: Any) -> dict[str, dict[str, Any]]:
@@ -245,9 +441,10 @@ def download() -> dict[str, Any]:
 
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("bind", "download"))
+    parser.add_argument("command", choices=("bind", "download", "freeze-manifest"))
     args = parser.parse_args(argv)
-    result = bind() if args.command == "bind" else download()
+    actions = {"bind": bind, "download": download, "freeze-manifest": freeze_manifest}
+    result = actions[args.command]()
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
 
