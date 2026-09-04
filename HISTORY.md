@@ -4989,6 +4989,12 @@ ZIP reader now fetches only compressed ranges for the selected `test/test/*` mem
 CRC and all existing admission gates, and never downloads the 2,750 excluded training images or
 stores the signed URL. The 520 rows admitted by the earlier route remain valid.
 
+That range transfer completed the IEEE component: 2,640/2,640 bodies, exactly 837,665,909 expanded
+bytes and 836,795,134 compressed member bytes, with 1,320 unaltered and 1,320 postprocessed REAL
+rows. Every publisher body decodes as 512x512 RGB PNG despite its `.tif` path and now has a SHA-256
+receipt. Detailed receipt `09188d49...3794` reproduces contract identity `fc3657dd...fb05`; no
+training image, detector score or metric was opened.
+
 While that publisher quota cools down, the independent Datapoint acquisition method was prepared
 without transferring a shard. It permits only the seven already-contracted Parquets at pinned
 revision `e1d8719a...c928`, reproduces each remote byte count and full local SHA-256, and records that

@@ -4005,6 +4005,12 @@ was scored or selected using model output.
   the 34.9 GB repository. IEEE's test payload is 837,665,909 bytes but remains 403-gated until the
   user accepts Kaggle competition rules. Counts, identities and bytes are bound; model scores and
   image downloads remain zero. Datapoint can no longer serve E52 final.
+- **IEEE REAL DEVELOPMENT acquisition — COMPLETE, unscored:** after rule acceptance, the original
+  per-file route admitted 520 rows but hit Kaggle API throttling. A committed HTTP-Range reader then
+  verified the official 5,391-member ZIP central directory and fetched only the remaining bound
+  test members, never the 2,750 train rows. Final receipt `09188d49...3794` contains 2,640/2,640
+  safely decoded 512x512 PNG bodies /837,665,909 bytes, equally split unaltered/postprocessed;
+  identity SHA `fc3657dd...fb05` matches the pre-score contract. Model-score count is zero.
 
 ### Gated-source approval audit — route decision before any image access
 

@@ -1089,6 +1089,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       11,447,649,387 expanded bytes. The downloader now reads only the bound `test/test/*` member
       ranges, validates ZIP CRC plus the existing byte/decode/SHA gates and never transfers the
       2,750 excluded training images. The 520 already admitted rows remain valid and restart-safe.
+      **IEEE transfer complete:** 2,640/2,640 selected REAL DEVELOPMENT bodies reproduce exactly
+      837,665,909 bytes and identity hash `fc3657dd...fb05`, split 1,320 unaltered +1,320
+      postprocessed. The range reader transferred 836,795,134 compressed member bytes from the
+      official ZIP; receipt `09188d49...3794` records every decoded SHA-256. Model scores remain zero.
       **Datapoint transfer method:** while the Kaggle quota cools down, the next acquisition gate is
       frozen without payload access. It verifies the manual-gated repository at exact revision,
       requires all seven contracted shard byte counts (3,220,281,593 total), downloads only those

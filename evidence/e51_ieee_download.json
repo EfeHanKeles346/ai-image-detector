@@ -1,0 +1,24 @@
+{
+  "already_present_at_run_start": 520,
+  "archive_container_bytes": 11333585079,
+  "archive_transport": "official_zip_http_range_selected_members_only",
+  "bytes": 837665909,
+  "competition": "sp-society-camera-model-identification",
+  "downloaded_this_run": 2120,
+  "files": 2640,
+  "free_bytes_after": 448294944768,
+  "free_bytes_before": 449390444544,
+  "model_scores_created": 0,
+  "payload_identity_sha256": "fc3657dd1f198b6df2533c824a58489e863dfef474c8cc7f8b003e0dad62fb05",
+  "receipt_bytes": 1621751,
+  "receipt_sha256": "09188d4966a19f70a2f9ed34dab052f2d5a9b69f8819b6578fe5421e548b3794",
+  "role": "DEVELOPMENT_REAL",
+  "route_contract_sha256": "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d81140ec315e4",
+  "schema_version": 1,
+  "selected_compressed_bytes": 836795134,
+  "state": "e51_ieee_downloaded_decoded_unscored",
+  "transport_cells": {
+    "postprocessed": 1320,
+    "unaltered": 1320
+  }
+}

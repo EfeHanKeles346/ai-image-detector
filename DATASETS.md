@@ -550,6 +550,13 @@ TIFFs are selected, split evenly into 1,320 unaltered and 1,320 publisher-postpr
 HTTP 403 for payload until the user accepts the competition rules; the project does not accept legal
 terms on the user's behalf and does not substitute training labels for the hidden test cameras.
 
+The user accepted those rules and the transfer is complete. All 2,640 selected files decode as the
+publisher's 512x512 RGB PNG bodies despite their `.tif` names; 1,320 are unaltered and 1,320 are
+postprocessed. Exact expanded bytes are 837,665,909 and selected compressed ZIP ranges total
+836,795,134 bytes. The detailed external 1,621,751-byte receipt hashes to
+`09188d4966a19f70a2f9ed34dab052f2d5a9b69f8819b6578fe5421e548b3794`; payload identity hash
+`fc3657dd...fb05` reproduces the contract. No training image, signed URL or model score was retained.
+
 Datapoint supplies AI DEVELOPMENT only at pinned revision `e1d8719a...c928`: FLUX.2 Max, Nano
 Banana 2, GPT Image 2 high, Ideogram 4.0 quality and Seedream 5.0 Pro. Seven predeclared image
 Parquets total 3,220,281,593 bytes. To remove a model/content confound, the reserve freezes the exact
