@@ -16,7 +16,7 @@ dependencies = [
   "scipy>=1.18,<2",
   "torch>=2.13,<2.14",
   "torchvision>=0.28,<0.29",
-  "transformers>=5.15,<5.16",
+  "transformers>=5.16.1,<5.17",
   "uvicorn>=0.51,<0.52",
 ]
 
