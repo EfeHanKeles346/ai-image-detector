@@ -17,6 +17,7 @@ import fsspec
 from huggingface_hub import HfApi, hf_hub_download
 from kaggle.api.kaggle_api_extended import KaggleApi
 from kagglesdk.competitions.types.competition_api_service import ApiDownloadDataFilesRequest
+from kagglesdk.datasets.types.dataset_api_service import ApiDownloadDatasetRequest
 from PIL import Image
 
 from experiments.e51_data_route import DATAPOINT_REVISION, DATAPOINT_REPO, DATAPOINT_SHARD_BYTES
@@ -32,6 +33,14 @@ IEEE_ARCHIVE_BYTES = 11_447_649_387
 IEEE_ARCHIVE_CONTAINER_BYTES = 11_333_585_079
 IEEE_RANGE_BLOCK_BYTES = 8 * 1024**2
 MAX_PIXELS = 100_000_000
+SCMI30_REF = "goyalpuneet/sci30iitrpr"
+SCMI30_VERSION = 2
+SCMI30_FILES = 9_940
+SCMI30_ARCHIVE_BYTES = 35_592_872_377
+SCMI30_ARCHIVE_CONTAINER_BYTES = 34_429_117_013
+SCMI30_SELECTED_FILES = 1_200
+SCMI30_SELECTED_BYTES = 4_247_339_334
+SCMI30_RANGE_BLOCK_BYTES = 1024**2
 
 ROOT = DATA_ROOT / "e51"
 CONTRACT = ROOT / "route" / "contract_untransferred.json"
@@ -42,6 +51,10 @@ EVIDENCE = ML_ROOT.parent / "evidence" / "e51_ieee_download.json"
 DATAPOINT_PAYLOAD_ROOT = ROOT / "payloads" / "datapoint_repository"
 DATAPOINT_RECEIPT = ROOT / "receipts" / "datapoint_shards_download_unscored.json"
 DATAPOINT_EVIDENCE = ML_ROOT.parent / "evidence" / "e51_datapoint_download.json"
+SCMI30_PAYLOAD_ROOT = ROOT / "payloads" / "scmi30_cal"
+SCMI30_STAGING_ROOT = ROOT / "staging" / "scmi30_cal"
+SCMI30_RECEIPT = ROOT / "receipts" / "scmi30_cal_download_unscored.json"
+SCMI30_EVIDENCE = ML_ROOT.parent / "evidence" / "e51_scmi30_download.json"
 
 
 def _json_bytes(value: Any) -> bytes:
@@ -129,6 +142,7 @@ def _route_rows() -> list[dict[str, Any]]:
 def validate_selected_archive_members(
     members: Mapping[str, tuple[int, int]], rows: Iterable[Mapping[str, Any]],
 ) -> dict[str, int]:
+    rows = list(rows)
     selected_compressed_bytes = 0
     selected_files = 0
     for row in rows:
@@ -153,6 +167,85 @@ def _competition_archive_url() -> str:
         request.competition_name = IEEE_REF
         response = client.competitions.competition_api_client.download_data_files(request)
     return str(response.url)
+
+
+def _dataset_archive_url() -> str:
+    api = KaggleApi()
+    api.authenticate()
+    with api.build_kaggle_client() as client:
+        request = ApiDownloadDatasetRequest()
+        request.owner_slug = "goyalpuneet"
+        request.dataset_slug = "sci30iitrpr"
+        request.dataset_version_number = SCMI30_VERSION
+        response = client.datasets.dataset_api_client.download_dataset(request)
+    return str(response.request.url)
+
+
+def scmi30_destination(row: Mapping[str, Any]) -> Path:
+    remote = PurePosixPath(str(row["remote_path"]))
+    if (
+        remote.is_absolute()
+        or ".." in remote.parts
+        or len(remote.parts) != 4
+        or remote.parts[0] != "SCMI30-IITRPR"
+        or remote.parts[1] not in {"Random", "Similar"}
+        or remote.suffix.lower() not in {".jpg", ".jpeg"}
+    ):
+        raise ValueError(f"unsafe SCMI30 path: {remote}")
+    return SCMI30_PAYLOAD_ROOT.joinpath(*remote.parts[1:])
+
+
+def inspect_scmi30_file(path: Path, expected: Mapping[str, Any]) -> dict[str, Any]:
+    if not path.is_file() or path.stat().st_size != int(expected["expected_bytes"]):
+        raise ValueError(f"SCMI30 payload byte length changed: {path.name}")
+    with Image.open(path) as image:
+        image.verify()
+    with Image.open(path) as image:
+        image.load()
+        width, height = image.size
+        decoded_format = str(image.format or "UNKNOWN").upper()
+        if decoded_format not in {"JPEG", "MPO"} or min(width, height) <= 0:
+            raise ValueError(f"SCMI30 payload format/geometry changed: {path.name}")
+        if width * height > MAX_PIXELS:
+            raise ValueError(f"SCMI30 payload exceeds safe pixel limit: {path.name}")
+        exif = image.getexif()
+        make = str(exif.get(271, "")).strip()
+        model = str(exif.get(272, "")).strip()
+    return {
+        **{key: expected[key] for key in (
+            "identity", "rank", "label", "role", "source", "device_id", "device_folder",
+            "branch", "remote_path",
+        )},
+        "path": str(path),
+        "bytes": path.stat().st_size,
+        "sha256": _digest(path),
+        "format": decoded_format,
+        "width": width,
+        "height": height,
+        "exif_make": make,
+        "exif_model": model,
+        "state": "downloaded_decoded_unscored",
+    }
+
+
+def _scmi30_contract() -> list[dict[str, Any]]:
+    raw = CONTRACT.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != ROUTE_CONTRACT_SHA256:
+        raise ValueError("E51 route contract changed before SCMI30 transfer")
+    payload = json.loads(raw)
+    role = payload.get("roles", {}).get("cal", {})
+    rows = role.get("rows") or []
+    if (
+        payload.get("state") != "e51_route_frozen_untransferred_unscored"
+        or payload.get("new_image_bytes_downloaded") != 0
+        or payload.get("model_scores_created") != 0
+        or role.get("reference") != SCMI30_REF
+        or role.get("version") != SCMI30_VERSION
+        or len(rows) != SCMI30_SELECTED_FILES
+        or sum(int(row["expected_bytes"]) for row in rows) != SCMI30_SELECTED_BYTES
+    ):
+        raise ValueError("E51 SCMI30 route boundary changed")
+    return rows
 
 
 def validate_datapoint_remote(files: Mapping[str, int]) -> dict[str, int]:
@@ -371,14 +464,132 @@ def download_datapoint() -> dict[str, Any]:
     return evidence
 
 
+def download_scmi30() -> dict[str, Any]:
+    """Range-read only the 1,200 frozen CAL members from the official 34 GB ZIP."""
+    if SCMI30_RECEIPT.exists() or SCMI30_EVIDENCE.exists():
+        raise FileExistsError("E51 SCMI30 receipt already exists; no silent replacement")
+    rows = _scmi30_contract()
+    expected_paths = {scmi30_destination(row) for row in rows}
+    if SCMI30_PAYLOAD_ROOT.exists():
+        extras = sorted(
+            str(path) for path in SCMI30_PAYLOAD_ROOT.rglob("*")
+            if path.is_file() and not path.name.startswith("._") and path not in expected_paths
+        )
+        if extras:
+            raise ValueError(f"unexpected files in E51 SCMI30 payload root: {extras[:3]}")
+    free_before = shutil.disk_usage(ROOT).free
+    if free_before < SCMI30_SELECTED_BYTES + 10 * 1024**3:
+        raise OSError("insufficient free space for SCMI30 transfer plus 10 GiB reserve")
+    completed = []
+    missing = []
+    for row in rows:
+        destination = scmi30_destination(row)
+        if destination.is_file():
+            completed.append(inspect_scmi30_file(destination, row))
+        else:
+            missing.append(row)
+    already_present = len(completed)
+    ssl_context = ssl.create_default_context(cafile=certifi.where())
+    url = _dataset_archive_url()
+    SCMI30_STAGING_ROOT.mkdir(parents=True, exist_ok=True)
+    with fsspec.open(
+        url,
+        "rb",
+        block_size=SCMI30_RANGE_BLOCK_BYTES,
+        cache_type="readahead",
+        ssl=ssl_context,
+    ) as remote_archive:
+        with zipfile.ZipFile(remote_archive) as archive:
+            infos = archive.infolist()
+            if len(infos) != SCMI30_FILES or sum(info.file_size for info in infos) != SCMI30_ARCHIVE_BYTES:
+                raise ValueError("SCMI30 official ZIP inventory changed")
+            info_by_name = {info.filename: info for info in infos}
+            if len(info_by_name) != len(infos):
+                raise ValueError("SCMI30 official ZIP contains duplicate member names")
+            members = {name: (info.file_size, info.compress_size) for name, info in info_by_name.items()}
+            archive_summary = validate_selected_archive_members(members, rows)
+            if (
+                archive_summary["selected_files"] != SCMI30_SELECTED_FILES
+                or archive_summary["selected_uncompressed_bytes"] != SCMI30_SELECTED_BYTES
+            ):
+                raise ValueError("SCMI30 selected ZIP population changed")
+            missing.sort(key=lambda row: info_by_name[str(row["remote_path"])].header_offset)
+            for index, row in enumerate(missing, start=1):
+                destination = scmi30_destination(row)
+                temporary = SCMI30_STAGING_ROOT / f"{destination.name}.part"
+                if temporary.exists():
+                    temporary.unlink()
+                with archive.open(str(row["remote_path"]), "r") as source, temporary.open("wb") as target:
+                    shutil.copyfileobj(source, target, length=1024 * 1024)
+                result = inspect_scmi30_file(temporary, row)
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                temporary.replace(destination)
+                completed.append({**result, "path": str(destination)})
+                if index % 50 == 0 or index == len(missing):
+                    print(f"E51 SCMI30 files {len(completed)}/{len(rows)}", flush=True)
+    completed.sort(key=lambda row: row["identity"])
+    devices = Counter(row["device_id"] for row in completed)
+    branches = Counter(row["branch"] for row in completed)
+    if (
+        len(completed) != SCMI30_SELECTED_FILES
+        or len({row["identity"] for row in completed}) != SCMI30_SELECTED_FILES
+        or sum(int(row["bytes"]) for row in completed) != SCMI30_SELECTED_BYTES
+        or set(devices.values()) != {40}
+        or branches != {"Random": 600, "Similar": 600}
+    ):
+        raise ValueError("completed SCMI30 payload differs from frozen route")
+    payload = {
+        "schema_version": 1,
+        "state": "e51_scmi30_cal_downloaded_decoded_unscored",
+        "role": "CAL_REAL",
+        "route_contract_sha256": ROUTE_CONTRACT_SHA256,
+        "dataset": SCMI30_REF,
+        "version": SCMI30_VERSION,
+        "files": len(completed),
+        "bytes": SCMI30_SELECTED_BYTES,
+        "devices": len(devices),
+        "per_device": 40,
+        "branches": dict(sorted(branches.items())),
+        "already_present_at_run_start": already_present,
+        "downloaded_this_run": len(completed) - already_present,
+        "archive_transport": "official_zip_http_range_selected_members_only",
+        "archive_container_bytes": SCMI30_ARCHIVE_CONTAINER_BYTES,
+        "selected_compressed_bytes": archive_summary["selected_compressed_bytes"],
+        "free_bytes_before": free_before,
+        "free_bytes_after": shutil.disk_usage(ROOT).free,
+        "rows": completed,
+        "model_scores_created": 0,
+    }
+    raw = _write_atomic(SCMI30_RECEIPT, payload)
+    evidence = {key: payload[key] for key in (
+        "schema_version", "state", "role", "route_contract_sha256", "dataset", "version",
+        "files", "bytes", "devices", "per_device", "branches", "already_present_at_run_start",
+        "downloaded_this_run", "archive_transport", "archive_container_bytes",
+        "selected_compressed_bytes", "free_bytes_before", "free_bytes_after", "model_scores_created",
+    )}
+    evidence.update({
+        "receipt_bytes": len(raw),
+        "receipt_sha256": hashlib.sha256(raw).hexdigest(),
+        "payload_identity_sha256": hashlib.sha256(json.dumps(
+            [row["identity"] for row in completed], separators=(",", ":")
+        ).encode()).hexdigest(),
+        "exif_make_present": sum(bool(row["exif_make"]) for row in completed),
+        "exif_model_present": sum(bool(row["exif_model"]) for row in completed),
+    })
+    _write_atomic(SCMI30_EVIDENCE, evidence)
+    return evidence
+
+
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("download-ieee", "download-datapoint"))
+    parser.add_argument("command", choices=("download-ieee", "download-datapoint", "download-scmi30"))
     args = parser.parse_args(argv)
     if args.command == "download-ieee":
         print(json.dumps(download_ieee(), indent=2, sort_keys=True))
-    else:
+    elif args.command == "download-datapoint":
         print(json.dumps(download_datapoint(), indent=2, sort_keys=True))
+    else:
+        print(json.dumps(download_scmi30(), indent=2, sort_keys=True))
     return 0
 
 

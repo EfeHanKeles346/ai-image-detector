@@ -9,6 +9,8 @@ from experiments.e51_data_route import DATAPOINT_SHARD_BYTES
 from experiments.e51_transfer import (
     ieee_destination,
     inspect_ieee_file,
+    inspect_scmi30_file,
+    scmi30_destination,
     validate_datapoint_remote,
     validate_selected_archive_members,
 )
@@ -78,3 +80,25 @@ def test_ieee_archive_members_require_bound_names_and_bytes():
     members[rows[1]["remote_path"]] = (201, 150)
     with pytest.raises(ValueError, match="member changed"):
         validate_selected_archive_members(members, rows)
+
+
+def test_scmi30_destination_and_jpeg_inspection(tmp_path: Path):
+    row = {
+        "identity": "id", "rank": "rank", "label": 0, "role": "CAL",
+        "source": "SCMI30-IITRPR", "device_id": "D01", "device_folder": "D01_Phone",
+        "branch": "Random", "remote_path": "SCMI30-IITRPR/Random/D01_Phone/image.jpg",
+        "expected_bytes": 0,
+    }
+    assert scmi30_destination(row).parts[-3:] == ("Random", "D01_Phone", "image.jpg")
+    path = tmp_path / "image.jpg"
+    Image.new("RGB", (640, 480), "blue").save(path, format="JPEG")
+    row["expected_bytes"] = path.stat().st_size
+    found = inspect_scmi30_file(path, row)
+    assert found["format"] == "JPEG"
+    assert (found["width"], found["height"]) == (640, 480)
+
+
+def test_scmi30_destination_rejects_wrong_root():
+    row = {"remote_path": "Other/Random/D01_Phone/image.jpg"}
+    with pytest.raises(ValueError, match="unsafe SCMI30"):
+        scmi30_destination(row)

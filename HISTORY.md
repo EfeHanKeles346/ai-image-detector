@@ -5005,3 +5005,9 @@ The Datapoint transport then completed all seven pinned shards at exactly 3,220,
 Receipt `18b8326a...bad1` binds their local full-file hashes and revision while preserving the 920
 paired reserves and 800-parent realization target. Image columns, detectors and metrics remain
 unopened; this is acquisition evidence, not a model result.
+
+SCMI30's transfer path is likewise frozen before its first payload. The official v2 ZIP central
+directory reproduces 9,940 members /35,592,872,377 expanded bytes, but the range reader may fetch
+only the 1,200 contracted CAL JPEGs /4,247,339,334 bytes. It reads selected members in archive order,
+checks ZIP CRC, decode, geometry, byte count and SHA-256, and refuses any deviation from 40 images per
+device with equal Random/Similar totals. No model is importable from this acquisition command.

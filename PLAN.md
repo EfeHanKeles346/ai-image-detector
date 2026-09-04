@@ -1100,6 +1100,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       **Datapoint transfer complete:** all 7/7 pinned shards reproduce 3,220,281,593 bytes and full
       local SHA-256 values. Receipt `18b8326a...bad1` retains 920 paired reserves /800-parent target;
       image columns and model scores remain unopened/zero.
+      **SCMI30 CAL transfer method:** exact v2 bulk-ZIP metadata reproduces 9,940 members /
+      35,592,872,377 expanded bytes. A score-blind range reader is bound before payload to fetch only
+      the 1,200 selected CAL members (4,247,339,334 bytes), in archive order, then require byte count,
+      ZIP CRC, safe JPEG decode, geometry, SHA-256 and the 30-device/branch quotas.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,
