@@ -418,6 +418,14 @@ revision-bound Viewer asset URLs, byte sizes and geometry be accessed. This comp
 non-training final evidence and must be paired with the frozen Commons REAL and local StyleGAN2
 components; it cannot independently establish balanced detection.
 
+The E49-C identity contract is now frozen at the first qualifying page boundary, row 46,600. At
+that point the eligible populations are GPT Image 2 236, Z-Image Turbo 6,111, Seedream v5.0 192,
+FLUX.2 Klein 9B 4,068 and Midjourney 7 1,791. Hash ranking selected exactly 192 identities per cell.
+The 415,653-byte external contract hashes to
+`0abae56af862c9b402ef5ef594a21181cbbb7f72ba7495a491b0389bfdfcd702`; reserve identity SHA-256 is
+`f9f7bf74958ced020fcc2d38729640fc3bb7cb14dc64c691be0b827f592069ec`. It reused cached metadata,
+so new metadata/image/model-score bytes are all zero.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.

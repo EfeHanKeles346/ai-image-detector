@@ -3857,6 +3857,10 @@ was scored or selected using model output.
 - **Immutable evaluation:** publisher/Viewer-received JPEG and deterministic social-Q75 remain paired
   conditions. Exact E43-S/E50 thresholds and all 20 E49 gates remain fixed. No source replacement,
   threshold repair, row removal or second metric opening is permitted after scoring begins.
+- **Identity-freeze result:** first complete page is row 46,600, where GPT/Z-Image/Seedream/FLUX/
+  Midjourney eligible counts are 236/6,111/192/4,068/1,791. Exactly 192 per cell freeze under
+  reserve identity `f9f7bf74...69ec`; contract `0abae56a...d702`. Cached metadata was reused, and
+  asset requests, new image bytes and model scores remain zero.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

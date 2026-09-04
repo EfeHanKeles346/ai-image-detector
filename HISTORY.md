@@ -4725,3 +4725,9 @@ the already cross-validated continuous 52,600-row metadata prefix holds 6,876 el
 while all four retained cells also exceed 192. The new `E49_C_OPENFAKE_V1` namespace will freeze
 160+32 per cell at the first complete page. Asset URLs, image bytes and detector scores remain zero;
 all later byte, decontamination, pairing and 20-gate final rules remain unchanged.
+
+E49-C then froze successfully without new network access. The first qualifying 100-row boundary is
+46,600, with GPT Image 2/Z-Image Turbo/Seedream v5.0/FLUX.2 Klein 9B/Midjourney 7 populations of
+236/6,111/192/4,068/1,791. Namespace hashing selected exactly 192 identities per source. Contract
+`0abae56a...d702` and reserve identity `f9f7bf74...69ec` bind the result; fresh asset requests,
+image bytes and detector scores remain zero pending the separate feasibility gate.

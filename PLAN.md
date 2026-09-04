@@ -897,10 +897,13 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
 `z-image-turbo`, which already has 6,876 eligible non-video rows in the independently cached first
 52,600 rows. Every other source, quota, filter and final gate remains unchanged.
 
-- [ ] Pin the same OpenFake revision/config/split/licence and reuse only the already-validated
+- [x] Pin the same OpenFake revision/config/split/licence and reuse only the already-validated
       continuous Viewer metadata prefix. Freeze 160 target +32 reserve rows each for GPT Image 2,
       Z-Image Turbo, Seedream v5.0, FLUX.2 Klein 9B and Midjourney 7 under namespace
       `E49_C_OPENFAKE_V1`, stopping at the first complete 100-row page where all cells reach 192.
+      **Identity freeze:** the stop is row 46,600. Cell populations there are GPT 236, Z-Image
+      6,111, Seedream 192, FLUX 4,068 and Midjourney 1,791; exactly 192 each are frozen. Contract
+      SHA-256 `0abae56a...d702`, reserve identity `f9f7bf74...69ec`; zero new network/image/score bytes.
 - [ ] Commit the 960 exact identities before resolving any asset. Then fetch fresh revision-bound
       Viewer URLs only for those identities, bind response type/dimensions/exact byte lengths and
       require OpenFake plus 2,706,581,778 Commons bytes to remain within 4 GiB.

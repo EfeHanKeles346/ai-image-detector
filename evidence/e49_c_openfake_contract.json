@@ -1,0 +1,36 @@
+{
+  "available_continuous_cached_rows": 52600,
+  "contract_bytes": 415653,
+  "contract_sha256": "0abae56af862c9b402ef5ef594a21181cbbb7f72ba7495a491b0389bfdfcd702",
+  "eligible_counts_at_stop": {
+    "flux.2-klein-9b": 4068,
+    "gpt-image-2": 236,
+    "midjourney-7": 1791,
+    "seedream-v5.0": 192,
+    "z-image-turbo": 6111
+  },
+  "image_assets_requested": 0,
+  "license": "cc-by-nc-4.0",
+  "model_scores_created": 0,
+  "new_image_bytes_downloaded": 0,
+  "new_metadata_bytes_transferred": 0,
+  "predecessor": {
+    "evidence_sha256": "707d0f740ab2dc07d4c5667f57db7c775f77ec203c9cd21b9da5cd5cac416885",
+    "experiment": "E49-B",
+    "repair": "replace_only_underfilled_nano_banana_pro_with_z_image_turbo"
+  },
+  "prefix_end_exclusive": 46600,
+  "repository": "ComplexDataLab/OpenFake",
+  "reserve_identity_sha256": "f9f7bf74958ced020fcc2d38729640fc3bb7cb14dc64c691be0b827f592069ec",
+  "revision": "3fd1109dc3258874243fa31c5bda9ee24260163b",
+  "role": "FINAL_AI_COMPONENT_CANDIDATE_PENDING_ASSET_BYTE_FEASIBILITY_AND_COMPLETE_E49",
+  "schema_version": 1,
+  "selected_counts": {
+    "flux.2-klein-9b": 192,
+    "gpt-image-2": 192,
+    "midjourney-7": 192,
+    "seedream-v5.0": 192,
+    "z-image-turbo": 192
+  },
+  "state": "e49_c_openfake_frozen_untransferred_unscored"
+}
