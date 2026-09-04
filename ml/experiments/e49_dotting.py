@@ -97,8 +97,8 @@ def select_reserve(
             "image_path": image_path,
             "bytes": int(remote["bytes"]),
             "sha256": str(remote["sha256"]),
-            "width": int(row.get("width", 0)),
-            "height": int(row.get("height", 0)),
+            "width": int(row.get("width") or 0),
+            "height": int(row.get("height") or 0),
         }
         by_model[model_key].append(candidate)
 

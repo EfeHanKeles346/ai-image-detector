@@ -23,6 +23,8 @@ def _population():
 
 def test_dotting_reserve_is_deterministic_and_balanced():
     rows, remote = _population()
+    rows[0]["width"] = None
+    rows[0]["height"] = None
     first = select_reserve(rows, remote)
     second = select_reserve(list(reversed(rows)), remote)
     assert first == second
