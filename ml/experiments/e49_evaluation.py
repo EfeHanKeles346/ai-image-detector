@@ -29,10 +29,10 @@ SOURCE_COUNTS = {
     "Canon EOS R5": 100,
     "Nikon Z 8": 100,
     "GPT Image 2": 160,
-    "Nano Banana 2": 160,
-    "Seedream 5.0 Pro": 160,
-    "FLUX 2": 160,
-    "Ideogram 4.0": 160,
+    "Z-Image Turbo": 160,
+    "Seedream v5.0": 160,
+    "FLUX.2 Klein 9B": 160,
+    "Midjourney 7": 160,
     "StyleGAN2": 200,
 }
 

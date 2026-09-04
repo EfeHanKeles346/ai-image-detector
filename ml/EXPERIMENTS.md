@@ -3888,6 +3888,10 @@ was scored or selected using model output.
   deterministic Q75 child avoid protected/internal collision. The method requires exactly 1,000
   REAL parents and 2,000 paired observations, preserving uploader/licence and EXIF availability.
   Twelve focused E49 tests pass before production execution and no model import is present.
+- **Final evaluator source amendment:** the original E49-A validator still named five Datapoint
+  families whose images were never consumed. Before E49-C realization or scoring, its exact AI
+  quota labels are corrected to GPT Image 2, Z-Image Turbo, Seedream v5.0, FLUX.2 Klein 9B,
+  Midjourney 7 and StyleGAN2. Counts, REAL devices, thresholds and all twenty gates do not change.
 
 ### Gated-source approval audit — route decision before any image access
 

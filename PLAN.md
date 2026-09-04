@@ -944,6 +944,10 @@ E49-C is a new experiment and hash namespace. It replaces only that underfilled 
 - [ ] Assemble the complete balanced E49-C manifest: 1,000 native-camera REAL, 800 modern OpenFake
       AI and 200 local StyleGAN2 AI parents, each paired original/Q75. Commit one-shot E43-S score
       streams before opening metrics and require all existing 20 gates without threshold/source repair.
+      **Evaluator source lock:** replace the obsolete unconsumed Datapoint source labels in the
+      pre-score quota validator with the five exact E49-C OpenFake labels; all ten device quotas,
+      StyleGAN2 quota, thresholds and 20 gates remain unchanged. This occurs before the final
+      manifest and before any E49-C detector score.
 
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 

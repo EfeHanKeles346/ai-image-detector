@@ -4776,3 +4776,9 @@ Within each immutable device rank it keeps the first 100 parents whose originals
 children remain clean. The command refuses any result other than 1,000 REAL parents and their 1,000
 paired children, while retaining uploader, licence and EXIF-availability evidence. Twelve focused
 tests pass and no detector import, score or aggregate metric exists at this method checkpoint.
+
+One stale name-level boundary was corrected before a final manifest existed: E49's evaluator still
+listed the five never-consumed Datapoint families from E49-A. Its AI source quota now names the five
+exact OpenFake families frozen by E49-C plus unchanged StyleGAN2. Parent counts, all ten REAL device
+cells, thresholds and twenty gates are identical. A regression test binds the six labels; this is a
+pre-score contract alignment, not a source substitution after seeing performance.

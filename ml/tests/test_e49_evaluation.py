@@ -63,6 +63,13 @@ def test_paired_validator_binds_exact_parent_and_source_quotas():
         validate_paired_final(broken)
 
 
+def test_final_ai_sources_match_frozen_openfake_successor():
+    assert {source for source, count in SOURCE_COUNTS.items() if count != 100} == {
+        "GPT Image 2", "Z-Image Turbo", "Seedream v5.0", "FLUX.2 Klein 9B",
+        "Midjourney 7", "StyleGAN2",
+    }
+
+
 def test_bootstrap_is_seeded_parent_level_and_finite():
     first = bootstrap_primary(_small_rows(), samples=100, seed=7)
     second = bootstrap_primary(_small_rows(), samples=100, seed=7)
