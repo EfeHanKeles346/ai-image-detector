@@ -1109,9 +1109,13 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       now fixes root +branch +exact contracted device while allowing nested descendants; traversal,
       suffix and device substitution remain rejected. Identities and byte quotas do not change.
       **Measured transport parallelism:** one Range reader admitted 59 exact rows /231 MB but would
-      take roughly an hour. It was stopped cleanly; the lone inadmissible partial was removed before restart. The same
-      frozen archive route now uses four independent readers over four contiguous archive-order
-      partitions, with collision-proof staging names and unchanged per-file CRC/decode/hash gates.
+      take roughly an hour. It was stopped cleanly; the lone inadmissible partial was removed before
+      restart. The same frozen archive route now uses four independent readers over four contiguous
+      archive-order partitions, with collision-proof staging names and unchanged per-file
+      CRC/decode/hash gates.
+      **SCMI30 transfer complete:** 1,200/1,200 rows reproduce 4,247,339,334 bytes, 30 devices x40,
+      Random/Similar 600/600 and make/model EXIF 1,200/1,200. Receipt `01cc5921...f33e` and ordered
+      identity digest `c47d411f...1d12` bind the clean result; no partial or model score remains.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

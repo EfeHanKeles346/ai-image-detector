@@ -5023,3 +5023,10 @@ minutes, too slow for a 4.25 GB component. It was interrupted cleanly before a r
 files remain restart-safe and the lone inadmissible `.part` was removed before restart. Four independent TLS-verified Range
 readers now process four contiguous archive-order partitions with hash-derived staging names. This
 changes transport throughput only; every identity, byte, CRC, decode and CAL quota remains fixed.
+
+The four-reader restart completed the SCMI30 calibration component. It reused the 59 verified rows,
+downloaded the remaining 1,141 and closed at exactly 1,200 files /4,247,339,334 bytes with no
+staging partial. Every one of 30 devices contributes 40 rows, Random and Similar contribute 600
+each, and all rows retain make/model EXIF. External receipt `01cc5921...f33e` and ordered identity
+digest `c47d411f...1d12` bind the result. No model was loaded, no score was made, and CAL remains
+separate from fitting and final evidence.

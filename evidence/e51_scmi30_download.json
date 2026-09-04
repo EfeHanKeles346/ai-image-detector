@@ -1,0 +1,30 @@
+{
+  "already_present_at_run_start": 59,
+  "archive_container_bytes": 34429117013,
+  "archive_transport": "official_zip_http_range_selected_members_only",
+  "branches": {
+    "Random": 600,
+    "Similar": 600
+  },
+  "bytes": 4247339334,
+  "dataset": "goyalpuneet/sci30iitrpr",
+  "devices": 30,
+  "downloaded_this_run": 1141,
+  "exif_make_present": 1200,
+  "exif_model_present": 1200,
+  "files": 1200,
+  "free_bytes_after": 440520802304,
+  "free_bytes_before": 444814327808,
+  "model_scores_created": 0,
+  "payload_identity_sha256": "c47d411fb8c0b5a151712fac7112541be9e4c756425b6c8d972de12cef941d12",
+  "per_device": 40,
+  "range_workers": 4,
+  "receipt_bytes": 1111889,
+  "receipt_sha256": "01cc5921f716b4f713efa4955cf2c5c741e3dc18076d42c35ef841975fa2f33e",
+  "role": "CAL_REAL",
+  "route_contract_sha256": "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d81140ec315e4",
+  "schema_version": 1,
+  "selected_compressed_bytes": 4098207862,
+  "state": "e51_scmi30_cal_downloaded_decoded_unscored",
+  "version": 2
+}

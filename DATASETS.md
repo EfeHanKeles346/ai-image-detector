@@ -1794,3 +1794,14 @@ FODB candidate were excluded for protected dHash overlap; deterministic headroom
 quota without score-dependent replacement. The frozen manifest contains exactly 600 FIT, 600 CAL
 and 1,200 DEVELOPMENT rows, each 50/50 REAL/AI. Its 1,971,148-byte SHA-256 is
 `1404a3ff...5b68`; model scores remain zero.
+
+### E51 SCMI30-IITRPR CAL acquisition (2026-09-04)
+
+The pre-registered REAL calibration subset is fully local on LaCie: 1,200 native camera JPEG/MPO
+images totaling exactly 4,247,339,334 bytes. Selection is balanced across all 30 publisher devices
+(40 each) and Random/Similar branches (600 each); camera make and model EXIF is present for every
+row. HTTP Range reads fetched only the selected 4,098,207,862 compressed bytes instead of the
+34,429,117,013-byte official v2 container. The 1,111,889-byte external receipt SHA-256 is
+`01cc5921f716b4f713efa4955cf2c5c741e3dc18076d42c35ef841975fa2f33e`; compact evidence is
+`evidence/e51_scmi30_download.json`. These images are CAL-only, cannot fit representation weights,
+and created zero detector scores during acquisition.

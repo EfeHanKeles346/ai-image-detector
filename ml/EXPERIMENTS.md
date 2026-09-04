@@ -4015,6 +4015,11 @@ was scored or selected using model output.
   local at 3,220,281,593/3,220,281,593 bytes with a full-file SHA-256 receipt
   `18b8326a...bad1`. The transfer retains all 920 paired reserves and the prebound 800-parent target;
   it deliberately opens no image column, performs no decode/decontamination and creates no score.
+- **SCMI30 REAL CAL acquisition — COMPLETE, unscored:** four independent TLS-verified ZIP Range
+  readers admitted 1,200/1,200 bound bodies /4,247,339,334 bytes. Exact closure checks passed:
+  30 devices x40, Random/Similar 600/600 and make/model EXIF 1,200/1,200. The run reused 59 verified
+  rows, fetched 1,141 and left no partial. Receipt `01cc5921...f33e` and ordered identity digest
+  `c47d411f...1d12` bind the result. This is acquisition evidence: model-score count remains zero.
 
 ### Gated-source approval audit — route decision before any image access
 
