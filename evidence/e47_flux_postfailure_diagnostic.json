@@ -1,0 +1,14 @@
+{
+  "boundary": "Consumed DEVELOPMENT diagnostic only; no threshold/candidate/serving selection.",
+  "conclusion": "The frozen E46 diffusion signal exists, but the GAN-aware logistic gate vetoes it on FLUX while repairing REAL safety and GAN recall.",
+  "e46_cal_threshold": 0.3266418243862024,
+  "selected_cal_threshold": 0.33536607214356656,
+  "sources": {
+    "FLUX.1": {"count": 100, "e46_positive_rate": 0.95, "selected_positive_rate": 0.46, "e46_hits_vetoed_by_selected": 50, "selected_rescues_over_e46": 1},
+    "FORLAB": {"count": 600, "e46_positive_rate": 0.30666666666666664, "selected_positive_rate": 0.07333333333333333, "e46_hits_vetoed_by_selected": 159, "selected_rescues_over_e46": 19},
+    "StableDiffusion3": {"count": 100, "e46_positive_rate": 0.84, "selected_positive_rate": 0.84, "e46_hits_vetoed_by_selected": 7, "selected_rescues_over_e46": 7},
+    "StyleGAN": {"count": 200, "e46_positive_rate": 0.255, "selected_positive_rate": 1.0, "e46_hits_vetoed_by_selected": 0, "selected_rescues_over_e46": 149},
+    "StyleGAN3": {"count": 200, "e46_positive_rate": 0.17, "selected_positive_rate": 0.875, "e46_hits_vetoed_by_selected": 0, "selected_rescues_over_e46": 141}
+  },
+  "state": "e47_consumed_development_postfailure_diagnostic"
+}

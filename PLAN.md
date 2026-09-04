@@ -643,6 +643,12 @@ source >=60% on a genuinely new final.
       serving rule from these rows. If confirmed, E48 must pre-register a non-veto conditional-
       OR/mixture rule on fresh CAL and prove it on fresh DEVELOPMENT; otherwise acquire broader
       FLUX-like CAL evidence before changing architecture.
+      Diagnostic result: E46 sees 95/100 FLUX rows at its CAL-only cut, while the selected
+      gate sees 46/100 and vetoes 50 E46 hits. Conversely, the selected gate reduces FORLAB
+      false-AI from 30.67% to 7.33% and rescues 149 StyleGAN plus 141 StyleGAN3 rows over
+      E46. Representation complementarity is proven; a single logistic compromise is the
+      failure. E48 must use fresh, diverse REAL plus diffusion CAL and a non-veto expert
+      router/conditional union, then face a fresh source/transport-held DEVELOPMENT.
 - [ ] **R4 — new final, then serving.** Bind a new publisher-separated final before model load,
       including GAN, diffusion and two REAL pipelines plus social-media degradation. Score once
       with 10,000 source-stratified bootstraps. Only a full gate pass may replace the served E32

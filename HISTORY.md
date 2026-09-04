@@ -4421,3 +4421,11 @@ Before another metric is computed, the allowed post-failure diagnostic is limite
 that FLUX failure across the already-frozen arms. It may distinguish missing representation from
 decision-layer veto, but cannot choose a new threshold or candidate and cannot repair E47. Any
 successor must be bound and tested on fresh evidence.
+
+The bounded diagnostic found the missing mechanism. Frozen E46 already detects 95% of the held
+FLUX rows, but at that CAL-only cut falsely accuses 30.67% of FORLAB. The all-three gate repairs
+FORLAB to 7.33% and rescues 149 StyleGAN plus 141 StyleGAN3 examples, yet vetoes 50 of E46's 95
+FLUX hits and falls to 46%. The representations are complementary; forcing low GAN-specialist
+scores to count against the diffusion expert is the mistake. E48 must learn safety from more than
+one REAL pipeline and combine experts without allowing an irrelevant specialist to veto positive
+evidence, using fresh CAL and DEVELOPMENT rather than recycling this diagnosis.

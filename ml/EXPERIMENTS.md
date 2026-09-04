@@ -3612,3 +3612,8 @@ was scored or selected using model output.
   score behavior on the now-consumed DEVELOPMENT only to determine whether the selected
   logistic gate vetoed an existing FLUX signal. This may inform E48's architecture but cannot
   select a threshold/candidate, repair E47, update serving or support a success claim.
+- **Diagnostic result:** at the E46 CAL-only threshold, E46 detects 95% of held FLUX but
+  falsely flags 30.67% of held FORLAB. The selected gate cuts FORLAB FP to 7.33% and fixes
+  GAN recall, yet vetoes 50/95 E46 FLUX hits, leaving 46%. It also rescues 149 StyleGAN and
+  141 StyleGAN3 rows over E46. Therefore E48 needs diverse REAL/diffusion CAL and a non-veto
+  router or conditional union; these consumed rows cannot select that successor.
