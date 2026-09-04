@@ -4833,6 +4833,12 @@ cut, 0.011505939625203613 selective REAL cut and all twenty gates. Training, sou
 threshold change, score replacement and metrics-before-raw-lock are forbidden. At this commit score
 and metric counts are both zero.
 
+The one permitted E43-S inference completed every frozen observation with 100% coverage. Its
+ordered 4,000-row raw stream is 1,005,967 bytes /SHA-256 `249f005c...10a8` and remains bound to
+contract `fecd724c...61dd`. Only identity, label, source, condition and score were written; no AUC,
+accuracy, false-positive rate, recall or selective metric has yet been calculated. This raw-stream
+evidence is committed before the single allowed metric opening.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.

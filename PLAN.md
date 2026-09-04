@@ -880,6 +880,9 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       source, coverage miss or gate miss keeps Module 1 open; no threshold repair, row removal,
       source removal or second E49 attempt is allowed. Only a 20/20 pass (ten gates x two conditions)
       freezes Module-1 v1 and authorizes a separately reviewed demo update.
+      **Raw-score lock:** E43-S scored all 4,000 frozen observations with 100% coverage. The
+      1,005,967-byte stream SHA-256 is `249f005c...10a8`; aggregate metrics remain unopened and
+      this evidence is committed before the one allowed evaluation.
 
 #### E49-D1 — ungated current-generator diagnostic while Datapoint review is pending
 

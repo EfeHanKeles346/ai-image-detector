@@ -3959,6 +3959,9 @@ was scored or selected using model output.
 - **Pre-score lock complete:** contract SHA-256 `fecd724c...61dd` binds final manifest
   `9744a9d2...5909`, observation identity `3cf565a1...5242`, exact E43-S/DINO hashes, both fixed
   cuts and all twenty gates. The contract is committed with zero score rows and zero opened metrics.
+- **Raw-score lock complete:** E43-S produced 4,000/4,000 ordered scores with 100% coverage. The
+  1,005,967-byte stream hashes to `249f005c...10a8` and remains outside Git; compact evidence binds
+  it to score contract `fecd724c...61dd`. No aggregate metric has been opened at this checkpoint.
 
 ### Gated-source approval audit — route decision before any image access
 
