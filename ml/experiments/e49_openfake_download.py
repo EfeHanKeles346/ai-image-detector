@@ -14,10 +14,11 @@ from typing import Any, Iterable, Mapping, Sequence
 from PIL import Image
 import requests
 
-from experiments.e49_openfake import CONFIG, MODEL_KEYS_C, PAGE_SIZE, REPO_ID, REVISION
+from experiments.e49_openfake import CONFIG, CONTRACT_C, MODEL_KEYS_C, PAGE_SIZE, REPO_ID, REVISION
 from experiments.e49_openfake_assets import (
     ALLOWED_HEAD_CONTENT_TYPES,
     ASSET_CONTRACT,
+    IDENTITY_CONTRACT_SHA256,
     _resolve_wanted_assets,
 )
 from pixelproof.project_paths import DATA_ROOT, ML_ROOT
@@ -69,7 +70,20 @@ def _asset_rows() -> list[dict[str, Any]]:
         or payload.get("model_scores_created") != 0
     ):
         raise ValueError("E49-C OpenFake asset boundary changed")
-    return rows
+    identity_raw = CONTRACT_C.read_bytes()
+    if hashlib.sha256(identity_raw).hexdigest() != IDENTITY_CONTRACT_SHA256:
+        raise ValueError("E49-C OpenFake identity contract changed before transfer")
+    identities = {row["record_id"]: row for row in json.loads(identity_raw).get("rows", [])}
+    joined = []
+    for row in rows:
+        identity = identities.get(row["record_id"])
+        if identity is None:
+            raise ValueError("E49-C asset row missing from identity contract")
+        for key in ("row_index", "model", "width", "height"):
+            if row[key] != identity[key]:
+                raise ValueError(f"E49-C asset/identity mismatch: {row['record_id']} / {key}")
+        joined.append({**row, "release_date": identity["release_date"], "type": identity["type"]})
+    return joined
 
 
 def destination(row: Mapping[str, Any]) -> Path:
