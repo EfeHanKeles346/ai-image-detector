@@ -1,0 +1,25 @@
+{
+  "counts": {
+    "by_source": {
+      "FLUX.2 Pro": 160,
+      "GPT Image 2": 160,
+      "Ideogram 4": 160,
+      "Nano Banana 2": 160,
+      "Seedream 5.0 Lite": 160
+    },
+    "candidates": 960,
+    "decode_failures": 0,
+    "decoded": 960,
+    "identity_exclusions": 6,
+    "observations": 1600,
+    "parents": 800
+  },
+  "manifest_bytes": 1552366,
+  "manifest_sha256": "048572a41b47b65d3d09bd39bee45a40745a40c2e15c50444b41f8384fdccc9d",
+  "model_scores_created": 0,
+  "protected_role_manifest_count": 15,
+  "role": "AI_ONLY_DIAGNOSTIC",
+  "schema_version": 1,
+  "source_contract_sha256": "170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36",
+  "state": "e49_d1_decontaminated_paired_frozen_unscored"
+}

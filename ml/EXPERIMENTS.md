@@ -3769,8 +3769,12 @@ was scored or selected using model output.
 - **Transfer result:** all 960 contract paths downloaded, totaling exactly 23,936,830 bytes and 192
   rows per model. Per-file LFS SHA-256 and size validation passes. The first post-transfer validator
   correctly withheld its receipt on exFAT `._*` AppleDouble sidecars; after a tested auxiliary-file
-  exception, it rejects every other extra path and wrote the completed unscored receipt. Decode,
-  protected-role overlap audit, target selection and scores remain zero/pending.
+  exception, it rejects every other extra path and wrote the completed unscored receipt.
+- **Unscored manifest freeze:** 960/960 candidates decode; zero failure. Exact/dHash comparison to
+  15 protected-role manifests plus internal duplicate checks excludes six candidate identities.
+  Model-blind reserve order still fills 160 clean parents for each of the five generators. The
+  1,600 observations bind each parent to publisher WebP and deterministic social-Q75 JPEG; manifest
+  SHA-256 `048572a4...ccc9`. Model scores remain zero and no row may enter training.
 
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 

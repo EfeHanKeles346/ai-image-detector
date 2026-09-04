@@ -343,8 +343,16 @@ Transfer subsequently completed for all 960 bound WebP files /23,936,830 bytes, 
 model. Every payload size and SHA-256 matches the pinned Hub inventory. The first validation pass
 stopped before receipt because LaCie/exFAT created macOS `._*` AppleDouble sidecars; the validator
 now ignores only those and `.cache` metadata while continuing to reject any unexpected image/file.
-No target row has been selected after model access, no image has been scored and the 160-per-model
-decode/decontamination freeze is still pending.
+At that transfer checkpoint no target row had been selected, no image had been scored and the
+160-per-model decode/decontamination freeze was still pending.
+
+The score-blind freeze then decoded all 960 reserve files with zero failures and compared exact and
+perceptual hashes against 15 protected-role manifests. Six candidate identities were excluded by
+the predeclared overlap/duplicate rules; the 32-row headroom still filled every quota. The immutable
+diagnostic now contains 800 AI parents, exactly 160 per selected generator, and 1,600 paired
+observations: publisher WebP plus deterministic long-side-1080 JPEG-Q75. Its external manifest is
+1,552,366 bytes /SHA-256 `048572a41b47b65d3d09bd39bee45a40745a40c2e15c50444b41f8384fdccc9`.
+No detector score or training row exists at this checkpoint.
 
 ### Current generators, AI-only — pair with care
 

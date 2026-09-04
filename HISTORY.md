@@ -4627,3 +4627,11 @@ The first completion check refused to write a receipt because exFAT exposed macO
 sidecars as extra files. A regression-tested change now ignores only `.cache` and `._*` auxiliary
 metadata while still rejecting other extras; the rerun completed. No detector loaded these images,
 and decode/decontamination plus the 800-row target freeze remain the next checkpoint.
+
+The E49-D1 target is now frozen before any detector access. All 960 reserves decoded with zero
+failure; exact and perceptual comparison to 15 protected-role manifests plus internal duplicate
+checks excluded six identities. The reserve still produced precisely 160 clean parents from each
+of GPT Image 2, Nano Banana 2, FLUX.2 Pro, Ideogram 4 and Seedream 5.0 Lite. Each of the resulting
+800 parents is paired with one deterministic social-Q75 child, yielding 1,600 unscored observations
+at manifest SHA-256 `048572a4...ccc9`. This remains AI-only diagnostic evidence, never training data
+or a substitute for E49's balanced REAL/AI final.

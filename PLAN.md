@@ -819,11 +819,14 @@ unmatched random REAL photos to manufacture an easy binary result.
       request-id hash before image transfer. Preserve attribution and provider-output caveats.
       **Bound result:** 960 exact files /23,936,830 bytes; contract SHA-256 `170f70db...ed36` and
       reserve-identity SHA-256 `9637626d...f5a`. Image and model-score counts remain zero.
-- [ ] Download only the 960 bound WebP files to LaCie with per-file byte/format checks, resume and a
+- [x] Download only the 960 bound WebP files to LaCie with per-file byte/format checks, resume and a
       512 MiB stop. Decode, exact/dHash-audit protected roles and freeze the first 160 clean parents
       per model without detector access. Derive paired `social_q75` children exactly as E49.
       **Transfer checkpoint:** 960/960 files and all 23,936,830 expected bytes are present with exact
-      per-file SHA-256; zero score exists. Decode/decontamination and target freeze remain pending.
+      per-file SHA-256. **Freeze result:** all 960 decode, six identities are excluded by the frozen
+      overlap rules, and the reserve still supplies exactly 160 clean parents per model. Manifest
+      SHA-256 `048572a4...ccc9` binds 800 publisher originals plus their 800 deterministic Q75
+      children. Detector/model-score count remains zero.
 - [ ] Score only frozen E43-S with the existing E50 binary/selective cuts. Commit both raw streams
       before opening metrics; report pooled and per-model AI recall, automatic AI-decision rate and
       original-to-Q75 recall loss. Diagnostic gates are coverage=100%, pooled recall>=80%, worst
