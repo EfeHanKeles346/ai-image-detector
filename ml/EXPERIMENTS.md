@@ -3677,6 +3677,12 @@ was scored or selected using model output.
   proving the DDA fusion vetoes signal before the monotone successor sees it. E50 will therefore
   pre-register the single frozen generalist and its CAL threshold for one untouched DEVELOPMENT;
   this is a new experiment, not a retroactive E48 candidate.
+- **E50 DEVELOPMENT lock:** contract SHA-256 `18ae708f...20f6` binds exact E43-S artifact
+  `a3aec445...7390`, threshold `0.07940196245908739`, source manifest `1404a3ff...5b68` and
+  DEVELOPMENT identity digest `fc0428dc...3289`. It allows exactly 600 FODB REAL plus 600 AI
+  (150 each FLUX.1/SD3/StyleGAN/StyleGAN3), one inference/evaluation, and the seven E48 gates.
+  Specialist/fusion use, training, threshold repair, replacement and retry are forbidden. Scores
+  and opened DEVELOPMENT metrics are zero; eight focused E48/E50 tests pass.
 
 ### Module 1 completion and Module 2 re-entry contract
 

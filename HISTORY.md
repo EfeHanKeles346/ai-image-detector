@@ -4525,3 +4525,9 @@ recall and 76% on the hardest source. It catches FLUX.1/SD1.5/SDXL at 98%/98%/10
 DDA fusion cuts StyleGAN2 from 76% to 13%, so E48 could not recover the evidence because its base
 had already vetoed it. A new E50 checkpoint will lock that single existing generalist and threshold
 before one use of the still-clean DEVELOPMENT split; E49 remains mandatory before Module-1 v1.
+
+E50 is now physically locked before that use. Contract `18ae708f...20f6` fixes the exact E43-S
+artifact, CAL-derived threshold `0.07940196245908739`, all seven gates and the identities of 600
+FODB camera originals plus 600 held AI images across FLUX.1, SD3, StyleGAN and StyleGAN3. No
+specialist, retraining, threshold repair, row replacement or second attempt is permitted. Eight
+focused boundary tests pass; DEVELOPMENT scores and metrics remain zero at this commit.

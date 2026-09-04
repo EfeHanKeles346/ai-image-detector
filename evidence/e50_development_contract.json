@@ -1,0 +1,238 @@
+{
+  "calibration_receipt": {
+    "gate": {
+      "checks": {
+        "balanced_accuracy_gte_0_85": true,
+        "coverage_eq_1": true,
+        "pooled_ai_recall_gte_0_80": true,
+        "pooled_real_false_ai_lte_0_10": true,
+        "roc_auc_gte_0_90": true,
+        "worst_ai_recall_gte_0_60": true,
+        "worst_camera_false_ai_lte_0_20": true
+      },
+      "passed": true
+    },
+    "metrics": {
+      "accuracy_counting_failures_wrong": 0.9383333333333334,
+      "ai_recall": 0.91,
+      "balanced_accuracy": 0.9383333333333334,
+      "brier_nontarget_real": 0.0030797498199832476,
+      "brier_target_ai": 0.18067077297842934,
+      "confusion": {
+        "fn": 27,
+        "fp": 10,
+        "tn": 290,
+        "tp": 273
+      },
+      "counts": {
+        "ai_succeeded": 300,
+        "failed": 0,
+        "real_succeeded": 300,
+        "succeeded": 600,
+        "total": 600
+      },
+      "coverage": 1.0,
+      "eer": 0.05666666666666666,
+      "per_group": [
+        {
+          "ai_recall": 0.98,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 2,
+            "fp": 0,
+            "tn": 0,
+            "tp": 98
+          },
+          "count": 100,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "FLUX.1"
+        },
+        {
+          "ai_recall": 0.98,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 1,
+            "fp": 0,
+            "tn": 0,
+            "tp": 49
+          },
+          "count": 50,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "StableDiffusion1.5"
+        },
+        {
+          "ai_recall": 1.0,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 0,
+            "tn": 0,
+            "tp": 50
+          },
+          "count": 50,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "StableDiffusionXL"
+        },
+        {
+          "ai_recall": 0.76,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 24,
+            "fp": 0,
+            "tn": 0,
+            "tp": 76
+          },
+          "count": 100,
+          "label": 1,
+          "real_false_positive_rate": null,
+          "source": "StyleGAN2"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 3,
+            "tn": 147,
+            "tp": 0
+          },
+          "count": 150,
+          "label": 0,
+          "real_false_positive_rate": 0.02,
+          "source": "csafe-mcsidb-s21"
+        },
+        {
+          "ai_recall": null,
+          "balanced_accuracy": null,
+          "condition": "original",
+          "confusion": {
+            "fn": 0,
+            "fp": 7,
+            "tn": 143,
+            "tp": 0
+          },
+          "count": 150,
+          "label": 0,
+          "real_false_positive_rate": 0.04666666666666667,
+          "source": "vision-base-native"
+        }
+      ],
+      "real_false_positive_rate": 0.03333333333333333,
+      "roc_auc": 0.9884000000000001,
+      "stored_threshold": 0.07940196245908739,
+      "tpr_at_fpr": {
+        "fpr": 0.1,
+        "tpr": 0.9766666666666667
+      }
+    },
+    "rates": {
+      "ai_recall_by_source": {
+        "FLUX.1": 0.98,
+        "StableDiffusion1.5": 0.98,
+        "StableDiffusionXL": 1.0,
+        "StyleGAN2": 0.76
+      },
+      "pooled_ai_recall": 0.91,
+      "pooled_real_false_ai": 0.03333333333333333,
+      "real_false_ai_by_camera": {
+        "D02_Apple_iPhone4s": 0.1111111111111111,
+        "D06_Apple_iPhone6": 0.1111111111111111,
+        "D07_Lenovo_P70A": 0.1111111111111111,
+        "D11_Samsung_GalaxyS3": 0.0,
+        "D12_Sony_XperiaZ1Compact": 0.0,
+        "D16_Huawei_P9Lite": 0.0,
+        "D17_Microsoft_Lumia640LTE": 0.1111111111111111,
+        "D21_Wiko_Ridge4G": 0.0,
+        "D22_Samsung_GalaxyTrendPlus": 0.0,
+        "D24_Xiaomi_RedmiNote3": 0.0,
+        "D25_OnePlus_A3000": 0.1111111111111111,
+        "D26_Samsung_GalaxyS3Mini": 0.0,
+        "D28_Huawei_P8": 0.0,
+        "D29_Apple_iPhone5": 0.0,
+        "D32_OnePlus_A3003": 0.1111111111111111,
+        "D33_Huawei_Ascend": 0.1111111111111111,
+        "D34_Apple_iPhone5": 0.0,
+        "s21_10:front": 0.0,
+        "s21_10:telephoto": 0.0,
+        "s21_10:ultra": 0.2,
+        "s21_10:wide": 0.0,
+        "s21_1:front": 0.0,
+        "s21_1:telephoto": 0.0,
+        "s21_1:ultra": 0.0,
+        "s21_1:wide": 0.0,
+        "s21_2:front": 0.0,
+        "s21_2:telephoto": 0.16666666666666666,
+        "s21_2:ultra": 0.0,
+        "s21_2:wide": 0.125,
+        "s21_3:front": 0.0,
+        "s21_3:telephoto": 0.0,
+        "s21_3:ultra": 0.0,
+        "s21_3:wide": 0.0,
+        "s21_7:front": 0.0,
+        "s21_7:telephoto": 0.0,
+        "s21_7:ultra": 0.0,
+        "s21_7:wide": 0.0
+      },
+      "worst_ai_recall": 0.76,
+      "worst_camera_false_ai": 0.2
+    },
+    "rows": 600,
+    "threshold": 0.07940196245908739
+  },
+  "candidate": "exact frozen E43-S generalist only",
+  "contract_bytes": 6560,
+  "contract_sha256": "18ae708f6682f7ac7d1304da01dfc848592811ad1da5579801c96956706d20f6",
+  "counts": {
+    "AI": 600,
+    "DEVELOPMENT": 1200,
+    "REAL": 600
+  },
+  "development_metrics_opened": 0,
+  "development_scores_created": 0,
+  "forbidden": [
+    "FIT or CAL rescore",
+    "second candidate",
+    "specialist or fusion use",
+    "training",
+    "threshold change",
+    "row replacement",
+    "second DEVELOPMENT try"
+  ],
+  "gates": {
+    "balanced_accuracy_min": 0.85,
+    "coverage": 1.0,
+    "pooled_ai_recall_min": 0.8,
+    "pooled_real_false_ai_max": 0.1,
+    "roc_auc_min": 0.9,
+    "worst_ai_recall_min": 0.6,
+    "worst_camera_false_ai_max": 0.2
+  },
+  "identities": {
+    "development_identity_sha256": "fc0428dcad52a16072be1685be45fac9d578303001fadea9412d3fe5f99d3289",
+    "fitcal_generalist_scores_sha256": "f2a1be3bf428952a2f8ae166d6bc0f47ba13559607aebb109e4c5adfdd137cf7",
+    "generalist_artifact_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "source_manifest_sha256": "1404a3ff5cfde4a343e1368b995ab1ec13135811c569134dfffaabf40c1b5b68"
+  },
+  "schema_version": 1,
+  "sources": {
+    "AI": {
+      "FLUX.1": 150,
+      "StableDiffusion3": 150,
+      "StyleGAN": 150,
+      "StyleGAN3": 150
+    },
+    "REAL": {
+      "FODB": 600
+    }
+  },
+  "state": "e50_candidate_frozen_before_development_model_load",
+  "threshold": 0.07940196245908739
+}

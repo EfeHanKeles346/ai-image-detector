@@ -729,10 +729,12 @@ every declared CAL gate at threshold `0.07940196245908739`: AUC 98.84%, BA 93.83
 signed DDA fusion reduces that StyleGAN2 recall to 13%; the later percentile layer cannot restore
 evidence already vetoed inside E46. Treat this as model selection on CAL, not as an E48 repair.
 
-- [ ] **Bind E50 before DEVELOPMENT:** single candidate = exact frozen E43-S artifact and exact
+- [x] **Bind E50 before DEVELOPMENT:** single candidate = exact frozen E43-S artifact and exact
       1,200-row E48 generalist FIT+CAL score stream; threshold and all seven gates remain fixed.
       Bind the untouched 1,200-row DEVELOPMENT identities and forbid every other expert, training,
-      threshold adjustment and second attempt.
+      threshold adjustment and second attempt. Contract SHA-256 `18ae708f...20f6` binds exact
+      candidate, threshold, 1,200 identities and seven gates with score/metric counts at zero.
+      Eight focused E48/E50 decision-boundary tests pass.
 - [ ] **One-shot E50 DEVELOPMENT:** score only E43-S on the untouched 600 FODB REAL +600 held-AI
       rows (FLUX.1, SD3, StyleGAN and StyleGAN3, 150 each). Apply the same seven gates once, with
       FODB camera pipeline as the worst-REAL unit. Archive pass or failure before any next step.
