@@ -9,6 +9,7 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath
 import shutil
+import threading
 import time
 from typing import Any, Iterable, Mapping
 
@@ -22,8 +23,12 @@ ROUTE_CONTRACT_SHA256 = "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d811
 IEEE_REF = "sp-society-camera-model-identification"
 IEEE_FILES = 2_640
 IEEE_BYTES = 837_665_909
-IEEE_WORKERS = 6
+IEEE_WORKERS = 2
+IEEE_REQUEST_INTERVAL_SECONDS = 0.8
 MAX_PIXELS = 100_000_000
+
+_REQUEST_LOCK = threading.Lock()
+_LAST_REQUEST_AT = 0.0
 
 ROOT = DATA_ROOT / "e51"
 CONTRACT = ROOT / "route" / "contract_untransferred.json"
@@ -52,6 +57,16 @@ def _digest(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def _pace_kaggle_request() -> None:
+    """Keep the process below Kaggle's observed per-account request boundary."""
+    global _LAST_REQUEST_AT
+    with _REQUEST_LOCK:
+        remaining = IEEE_REQUEST_INTERVAL_SECONDS - (time.monotonic() - _LAST_REQUEST_AT)
+        if remaining > 0:
+            time.sleep(remaining)
+        _LAST_REQUEST_AT = time.monotonic()
 
 
 def ieee_destination(row: Mapping[str, Any]) -> Path:
@@ -130,6 +145,7 @@ def _download_ieee(row: Mapping[str, Any]) -> dict[str, Any]:
                 downloaded.unlink()
             api = KaggleApi()
             api.authenticate()
+            _pace_kaggle_request()
             api.competition_download_file(
                 IEEE_REF,
                 str(row["remote_path"]),
@@ -144,7 +160,13 @@ def _download_ieee(row: Mapping[str, Any]) -> dict[str, Any]:
         except Exception as error:  # Kaggle SDK exceptions vary by release.
             last_error = error
             if attempt < 5:
-                time.sleep(min(2.0**attempt, 30.0))
+                response = getattr(error, "response", None)
+                if getattr(response, "status_code", None) == 429:
+                    retry_after = str(response.headers.get("Retry-After", ""))
+                    delay = float(retry_after) if retry_after.replace(".", "", 1).isdigit() else 60.0 * 2**attempt
+                    time.sleep(min(max(delay, 60.0), 300.0))
+                else:
+                    time.sleep(min(2.0**attempt, 30.0))
     raise RuntimeError(f"IEEE transfer failed at {row['identity']}: {last_error}")
 
 

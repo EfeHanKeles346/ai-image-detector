@@ -1080,6 +1080,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       bodies reproduced the same signature and geometry; none entered the payload root or a model.
       The gate now requires this exact publisher reality—PNG +512x512—instead of trusting the suffix,
       while retaining the same identities, bytes and roles.
+      **Rate-limit correction:** the first valid resume admitted 494 exact rows, then Kaggle returned
+      HTTP 429 before any receipt could be sealed. Those files remain restart-safe and unscored.
+      The transfer now uses two workers behind one global 0.8-second request gate (~75 requests/min)
+      and honors `Retry-After` or a bounded 60–300 second backoff before continuing.
 - [ ] **Bind only two practical successor families before fitting.** E51-A reuses frozen DINOv2-S
       features but refits a source-balanced head with new camera originals plus Q75/JPEG/resize
       hard negatives. E51-B adds a compact fixed residual/DCT statistics branch to the same features,

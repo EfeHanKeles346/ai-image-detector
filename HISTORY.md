@@ -4975,3 +4975,9 @@ test files `.tif`, but all eight concurrently staged bodies were 512x512 RGB PNG
 admitted to the dataset root and no model opened them. The decode gate is corrected before resume to
 require the measured PNG signature and exact 512x512 geometry. Identities, expected bytes, role and
 selection remain frozen; only the false filename-suffix assumption changes.
+
+The corrected resume safely admitted 494 rows /about 240 MB before Kaggle enforced HTTP 429. This
+is a transport limit, not a dataset/model result; no receipt or score was produced and every admitted
+file remains restart-verifiable. The next resume is globally paced to roughly 75 API requests per
+minute across two workers and backs off 60–300 seconds on 429, trading speed for deterministic
+completion without redownloading the verified 494.
