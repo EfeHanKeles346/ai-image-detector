@@ -705,19 +705,40 @@ all four backbones/scores remain frozen.
       gates, ranking and MIT-licence preference before any aggregate score is interpreted.
       FIT AI and all DEVELOPMENT access remain forbidden. Seven focused score/decision tests pass;
       a no-candidate outcome is persisted as a clean failure instead of producing an artifact.
-- [ ] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
+- [x] **Monotone evidence fit:** use FIT REAL only to map each frozen arm score to its empirical
       authentic-image percentile. Compare E46, E46+UnivFD, E46+UNINA and all-three using the
       maximum expert percentile. Because `max` is monotone, a low irrelevant-specialist score can
       never veto another arm's high AI evidence. No backbone or signed multivariate head is fit.
-- [ ] **CAL selection:** select one threshold and candidate only on CAL. Require coverage 100%,
+      Completed exactly as bound with 300 FIT REAL rows; FIT AI usage remained zero.
+- [x] **CAL selection — failed cleanly:** select one threshold and candidate only on CAL. Require coverage 100%,
       AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst camera/device FP <=20%, pooled AI recall
       >=80% and worst AI-source recall >=60%. Rank eligible candidates by worst AI recall, pooled
       recall, AUC and BA; retain the two-point MIT preference when it does not weaken either recall
-      measure by more than two points.
-- [ ] **One-shot DEVELOPMENT:** freeze the empirical maps, candidate and threshold before opening
-      FODB/held-AI scores. Apply the same gates, with FODB camera pipeline as the worst-REAL unit.
-      No retry, threshold repair or post-hoc candidate swap. A pass earns a new publisher-separated
-      final contract; it does not itself update the web demo.
+      measure by more than two points. No candidate passed: best AUC was 95.42%, but E46's
+      StyleGAN2 recall was 11%; the best specialist combination reached only 19%. CAL report
+      SHA-256 `032944b8...75e`; no candidate artifact was created.
+- [x] **One-shot DEVELOPMENT — cancelled unopened:** no candidate qualified, so the 1,200-row
+      FODB/held-AI split was not scored. It remains clean evidence for a separately pre-registered
+      successor rather than being consumed to diagnose or repair E48.
+
+### E50 — frozen generalist transfer, then final (planned 2026-09-04)
+
+E48's permitted post-failure CAL diagnosis found that the frozen E43-S generalist alone passes
+every declared CAL gate at threshold `0.07940196245908739`: AUC 98.84%, BA 93.83%, pooled REAL FP
+3.33%, worst camera FP 20%, pooled AI recall 91%, and worst-source recall 76% (StyleGAN2). E46's
+signed DDA fusion reduces that StyleGAN2 recall to 13%; the later percentile layer cannot restore
+evidence already vetoed inside E46. Treat this as model selection on CAL, not as an E48 repair.
+
+- [ ] **Bind E50 before DEVELOPMENT:** single candidate = exact frozen E43-S artifact and exact
+      1,200-row E48 generalist FIT+CAL score stream; threshold and all seven gates remain fixed.
+      Bind the untouched 1,200-row DEVELOPMENT identities and forbid every other expert, training,
+      threshold adjustment and second attempt.
+- [ ] **One-shot E50 DEVELOPMENT:** score only E43-S on the untouched 600 FODB REAL +600 held-AI
+      rows (FLUX.1, SD3, StyleGAN and StyleGAN3, 150 each). Apply the same seven gates once, with
+      FODB camera pipeline as the worst-REAL unit. Archive pass or failure before any next step.
+- [ ] **E49 comprehensive independent final:** only an E50 DEVELOPMENT pass may bind the >=2,000
+      row publisher-separated native + social/recompressed final already required below. A full
+      ten-gate pass creates Module-1 v1 and may update the web demo; otherwise Module 1 stays open.
 
 ## Two-module completion contract — Module 1 proof before Module 2 (2026-09-04)
 

@@ -4512,3 +4512,16 @@ maximum-evidence combinations then compete on the 600-row CAL split under the al
 authentic-safety and AI-recall gates. FIT AI and DEVELOPMENT remain forbidden. Seven focused tests
 pass, and an all-candidates-fail result now leaves a durable failure report but no candidate
 artifact—so neither missing evidence nor a relaxed threshold can masquerade as progress.
+
+E48 then failed exactly as that contract required. Its best ranking quality remained strong
+(AUC 95.42%) and authentic safety held (2.33% pooled false accusation, 20% worst camera), but E46
+caught only 11% of StyleGAN2 and 63.67% of AI overall; adding either specialist raised the hardest
+GAN result only as far as 19%. No candidate passed, no deployable artifact was written and all
+1,200 DEVELOPMENT rows stayed unopened. The immutable CAL report hashes to `032944b8...75e`.
+
+The allowed diagnosis exposed a simpler and much more useful result: frozen E43-S alone passes
+every CAL gate—AUC 98.84%, balanced accuracy 93.83%, 3.33% pooled REAL false accusations, 91% AI
+recall and 76% on the hardest source. It catches FLUX.1/SD1.5/SDXL at 98%/98%/100%. E46's signed
+DDA fusion cuts StyleGAN2 from 76% to 13%, so E48 could not recover the evidence because its base
+had already vetoed it. A new E50 checkpoint will lock that single existing generalist and threshold
+before one use of the still-clean DEVELOPMENT split; E49 remains mandatory before Module-1 v1.

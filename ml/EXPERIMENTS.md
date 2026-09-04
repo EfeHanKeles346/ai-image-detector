@@ -3665,6 +3665,18 @@ was scored or selected using model output.
   threshold, seven gates, ranking and MIT-licence preference; FIT AI and DEVELOPMENT are forbidden.
   Seven focused score/decision tests pass. If no candidate qualifies, measurements are archived
   with no deployable artifact rather than being lost or relaxed post hoc.
+- **CAL result — clean failure:** all four monotone candidates failed. E46 was the strongest by
+  AUC (0.9542) and REAL safety (2.33% pooled FP; 20% worst camera), but BA was 0.8067, pooled AI
+  recall 0.6367 and StyleGAN2 recall only 0.11. The strongest specialist rescue reached just 0.19
+  StyleGAN2 recall. Report SHA-256 `032944b8...75e`; candidate artifact absent; DEVELOPMENT rows
+  scored = 0.
+- **Bounded failure diagnosis / E50 rationale:** exact E43-S raw scores—already one frozen E48
+  arm—pass all CAL gates alone at threshold `0.07940196245908739`: AUC 0.9884, BA 0.9383,
+  pooled/worst-camera REAL FP 0.0333/0.20, pooled/worst-source AI recall 0.91/0.76. Per-source
+  recall is FLUX.1 0.98, SD1.5 0.98, SDXL 1.00 and StyleGAN2 0.76. E46 reduces StyleGAN2 to 0.13,
+  proving the DDA fusion vetoes signal before the monotone successor sees it. E50 will therefore
+  pre-register the single frozen generalist and its CAL threshold for one untouched DEVELOPMENT;
+  this is a new experiment, not a retroactive E48 candidate.
 
 ### Module 1 completion and Module 2 re-entry contract
 
