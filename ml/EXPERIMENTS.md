@@ -3727,3 +3727,27 @@ was scored or selected using model output.
   manifest -> commit; freeze score/evaluation contract -> commit; write raw scores -> commit; open
   metrics once -> archive pass/failure. Datapoint payload access is currently blocked only by its
   user contact-sharing gate; metadata research does not authorize the project to submit that form.
+- **Acquisition implementation checkpoint:** the repository now has pure validators for pinned Hub
+  identity/licence, licensed Commons JPEG metadata, deterministic per-uploader-capped selection and
+  StyleGAN2 Parquet coordinates that never touch the image column. Four tests pass. A live metadata
+  probe reproduced both exact Hub revisions and returned `GatedRepoError` for Datapoint payload
+  access, with zero E49 image bytes. This is a correct stop, not an incomplete benchmark result.
+
+### Module 2 archive audit before re-entry — lessons carried forward, no model run
+
+- E17/E18 hard-code non-overlapping 128 px tiles capped at 36, then discard any manipulated image
+  lacking both a >=50%-mask tile and a <50%-mask tile. Only 35/120 CocoGlide examples survived in
+  the historical result, so the old number describes a selected mask geometry, not the full set.
+- Tile AUC pools correlated tiles as independent rows. IoU flags a quantity derived from whole-image
+  mask fraction but thresholds truth at tile coverage .5; its analytic random baseline uses pixel
+  fraction, so numerator and baseline are not the same sampling unit. Raw IoU is therefore not a
+  valid primary metric even though the positive margin remains a useful hypothesis.
+- The old image score is top-three tile mean from `feature_crop128.joblib`; it is not the later E43-S
+  DINOv2 representation. E43-S uses global plus two texture-crop intermediate embeddings, so Module
+  2 cannot honestly call the current whole-image artifact a localiser. The transferable idea is the
+  frozen DINOv2-S representation with dense patch tokens, not the existing logistic head itself.
+- The sound observations remain: CocoGlide's generated region carries absolute AI signal; classic
+  camera-to-camera splices ask a different relative-forensics question; ELA's JPEG positive control
+  works while uniform PNG conversion destroys it; manipulated-region noise energy was lower. The
+  next evaluator will preserve these hypotheses while correcting selection, unit-of-analysis and
+  threshold leakage before any new training.

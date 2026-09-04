@@ -770,6 +770,11 @@ it is not another development set and it cannot be used to repair E43-S.
       20% reserve where available and a 4 GiB network stop. Store payloads only under
       `/Volumes/LaCie/pixelproof-datasets/e49/`; never commit third-party images. Abort rather than
       silently replacing a source, device or generator after scoring starts.
+      **Implementation checkpoint:** `e49_acquisition.py` now pins both Hugging Face revisions,
+      validates licence/revision drift, filters Commons to licensed original JPEG metadata, caps
+      repeated uploaders and selects AIGC StyleGAN2 by Parquet row coordinates without reading image
+      payloads. Four focused tests pass. Live probe reports the exact Datapoint revision but correctly
+      refuses its gated payload (`GatedRepoError`); downloaded E49 image bytes remain zero.
 - [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean
@@ -824,6 +829,33 @@ detection. Preserve the useful E17/E18 lessons instead of repeating the failed b
 - The eight classic-splice/copy-move sets are specificity controls, not positive training data.
   ELA's controlled JPEG splice reached 0.719 but the PNG compilation erased its compression input;
   close that branch for Module 2 v1 rather than calling the method generally broken.
+
+#### Module 2 execution ladder — planning only until E49 passes
+
+- [ ] **M2-0 evidence audit and role split.** Inventory every CocoGlide image/mask/auth pointer,
+      disclose missing/invalid masks instead of silently skipping them, deduplicate by parent scene
+      and freeze TRAIN/CAL/FINAL by complete scene. Keep classic-splice sets and fully generated
+      images as named negative/specificity controls. No image may cross roles through its authentic
+      parent, mask derivative or alternate encoding.
+- [ ] **M2-1 repair the evaluator before fitting.** Replace E17's 36-tile cap and `coverage >=.5`
+      survival filter with deterministic half-tile stride and overlap-averaged pixel maps. Report
+      per-image then image-macro pixel ROC-AUC/AP; choose localisation threshold on CAL only; report
+      mask-size-stratified F1/IoU, IoU-minus-matched-random, image AUC and authentic false-localised
+      area. Bootstrap complete images/scenes, never correlated tiles.
+- [ ] **M2-2 zero-training baselines.** Re-run the old 128 px absolute detector, E43-S-compatible
+      local crop evidence and the measured residual/noise-energy signal through the repaired
+      evaluator. ELA remains a JPEG-only diagnostic control, not a universal branch. This establishes
+      what the learned model must beat without spending a validation set on architecture choice.
+- [ ] **M2-3 learned AI-edit localiser.** Freeze DINOv2-S and expose dense intermediate patch tokens
+      from the same representation family that made E43-S succeed. Compare only predeclared small
+      heads: linear/1x1 dense head, noise-energy fusion and a shallow upsampling decoder. Train on
+      mask-derived soft targets, source/scene-balanced sampling and scale/JPEG augmentation; select
+      on CAL and score source-held FINAL once.
+- [ ] **M2-4 join modules without corrupting either proof.** Module 1 answers fully generated vs
+      authentic/insufficient; Module 2 runs as a separate local-edit analysis and returns a heatmap
+      only when spatial evidence passes its own threshold. Module-2 findings may pre-register a new
+      Module-1 successor, but the frozen Module-1-v1 artifact/cuts and E49 rows never change. Require
+      both modules to retain independent model cards, hashes, gates and failure disclosures.
 - Test the measured noise-energy clue (AI-filled region 0.0164→0.0088) and dense DINO patch tokens
   beside the absolute tile score. Fully re-rendered ChatGPT-family edits must be labelled
   AI-regenerated, never promised a local mask.

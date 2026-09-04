@@ -4560,3 +4560,21 @@ permission. Datapoint is both current and CC BY 4.0 at the metadata level, but r
 holder to share contact details and accept provider-output terms; the access page was opened for
 the user and no form was submitted by the project. Until that gate clears, implementation may bind
 metadata and test fail-closed behavior but cannot download or inspect its image payloads.
+
+The first E49 implementation checkpoint now enforces that boundary in code. It validates both Hub
+revision/licence pairs, screens Commons metadata for licensed original JPEGs, prevents one uploader
+from dominating a camera cell and selects StyleGAN2 by Parquet coordinates without reading the
+image column. Four focused tests pass. The live probe reproduced both pinned revisions and returned
+the expected Datapoint `GatedRepoError`; no E49 image byte was created. This means the final cannot
+quietly run on the convenient two-thirds of its sources while calling itself comprehensive.
+
+The Module 2 archive was also reread before planning its return. Its brightest idea survives—the
+absolute AI detector sees genuine signal inside CocoGlide inpainting, and lower residual noise plus
+dense DINO patch tokens are promising complementary cues. Its failure is now more precisely stated:
+E17 capped each image at 36 non-overlapping tiles, silently discarded masks lacking both majority-
+inside and majority-outside tiles, pooled correlated tiles as samples and compared a tile-threshold
+IoU with a pixel-fraction random baseline. Only 35 of 120 CocoGlide candidates survived. The old
+head was also a pre-DINO handcrafted 128 px model, not E43-S. Module 2 will therefore begin—only
+after E49—with a scene-disjoint manifest and corrected dense, image-level evaluator, then compare
+absolute crop evidence, noise energy and frozen-DINO dense tokens before a one-shot held-source
+final. Classic splices remain specificity controls; they will not dilute the AI-inpainting target.
