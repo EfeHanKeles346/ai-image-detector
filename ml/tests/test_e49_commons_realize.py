@@ -1,6 +1,8 @@
 from __future__ import annotations
 
-from experiments.e49_commons_realize import audit_originals, device_evidence
+from PIL import Image
+
+from experiments.e49_commons_realize import audit_originals, device_evidence, realize_originals
 
 
 def test_commons_audit_is_order_independent_and_excludes_protected():
@@ -39,3 +41,15 @@ def test_device_evidence_accepts_aliases_and_rejects_wrong_camera():
                             "exif_model": "NIKON D70"}) == "exif_device_mismatch"
     assert device_evidence({"source": "Nikon Z 8", "exif_make": "",
                             "exif_model": ""}) == "category_only_missing_exif"
+
+
+def test_realize_originals_derives_dhash_after_receipt_validation(tmp_path):
+    import hashlib
+
+    path = tmp_path / "original.jpg"
+    Image.new("RGB", (32, 24), (20, 30, 40)).save(path, format="JPEG")
+    raw = path.read_bytes()
+    rows = [{"identity": "commons:1", "path": str(path),
+             "sha256": hashlib.sha256(raw).hexdigest(), "width": 32, "height": 24}]
+    found = realize_originals(rows)
+    assert len(found[0]["dhash"]) == 16

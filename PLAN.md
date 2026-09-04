@@ -838,6 +838,10 @@ balanced-final route; Datapoint stays unscored and image-free for possible post-
       says Nikon D70. Before realization, require normalized make/model aliases where EXIF exists,
       accept the 26 explicitly category-only rows as such, and exclude any mismatch by fixed rank.
       Thirteen focused tests pass; no camera identity or score has yet been selected.
+      **Realization wiring correction:** the transfer receipt intentionally has SHA-256 but no
+      dHash. The first production call stopped before output when the audit read dHash too early.
+      Reproduce each file SHA/EXIF-display geometry and derive dHash inside realization before
+      overlap checks. Fourteen focused tests pass; identities and score count remain unchanged.
 - [ ] **Create two paired conditions per parent.** `publisher_original` preserves received bytes.
       `social_q75` applies EXIF transpose, RGB conversion, long-side cap 1080, JPEG quality 75,
       4:2:0 subsampling and metadata removal. The derived child inherits its parent id, label and

@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 from experiments.e48_manifest import _protected_role_hashes
 from experiments.e49_acquisition import COMMONS_CATEGORIES, COMMONS_TARGET_PER_DEVICE
@@ -49,6 +49,30 @@ def _decode_q75(raw: bytes) -> dict[str, Any]:
             "dhash": dhash_image(opened.convert("RGB")), "format": str(opened.format).upper(),
             "width": opened.width, "height": opened.height, "mode": str(opened.mode),
         }
+
+
+def _digest(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def realize_originals(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    """Reproduce the receipt hash/geometry and derive dHash only at realization time."""
+    output = []
+    for row in rows:
+        path = Path(str(row["path"]))
+        if not path.is_file() or _digest(path) != row["sha256"]:
+            raise ValueError(f"E49 Commons receipt payload changed: {row['identity']}")
+        with Image.open(path) as opened:
+            rgb = ImageOps.exif_transpose(opened).convert("RGB")
+            if rgb.size != (int(row["width"]), int(row["height"])):
+                raise ValueError(f"E49 Commons realized geometry changed: {row['identity']}")
+            perceptual = dhash_image(rgb)
+        output.append({**row, "dhash": perceptual})
+    return output
 
 
 def _normalized(value: Any) -> str:
@@ -144,7 +168,8 @@ def _receipt_rows() -> tuple[list[dict[str, Any]], bytes]:
 def freeze_manifest() -> dict[str, Any]:
     if MANIFEST.exists() or EVIDENCE.exists():
         raise FileExistsError("E49 Commons manifest already exists")
-    rows, receipt_raw = _receipt_rows()
+    receipt_rows, receipt_raw = _receipt_rows()
+    rows = realize_originals(receipt_rows)
     prior_exact, prior_dhash, protected_sources = _protected()
     reasons = audit_originals(rows, prior_exact, prior_dhash)
     parents: list[dict[str, Any]] = []

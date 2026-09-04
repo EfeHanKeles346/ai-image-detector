@@ -3928,6 +3928,10 @@ was scored or selected using model output.
   retained only as explicit `category_only_missing_exif`. One Nikon Z 8 category file reports Nikon
   D70 and must be excluded in rank order. This filter is fixed before selection/model access;
   thirteen focused transfer/realization/evaluation tests pass.
+- **Realization wiring correction:** the download receipt correctly records cryptographic hashes but
+  not perceptual dHash. The first execution read a nonexistent field and stopped before manifest or
+  child output. Realization now reproduces each SHA-256 and EXIF-display geometry, derives dHash from
+  the oriented RGB image, then enters the unchanged overlap audit. Fourteen focused tests pass.
 - **Final evaluator source amendment:** the original E49-A validator still named five Datapoint
   families whose images were never consumed. Before E49-C realization or scoring, its exact AI
   quota labels are corrected to GPT Image 2, Z-Image Turbo, Seedream v5.0, FLUX.2 Klein 9B,

@@ -4804,6 +4804,13 @@ when EXIF exists, and records the 26 missing-EXIF rows explicitly as category-on
 row will be excluded by fixed rank rather than silently relabelled. Thirteen focused tests pass;
 no realization manifest or detector score exists at this checkpoint.
 
+The first Commons realization invocation stopped before selecting a row or writing a child because
+the transfer receipt intentionally contains SHA-256 but not dHash, while the audit read dHash before
+deriving it. The missing stage is now explicit: revalidate each receipt SHA-256, reproduce its EXIF-
+display geometry, derive dHash from oriented RGB pixels, and only then run protected/internal
+comparison. Fourteen focused tests pass. The source identities, rank, quotas and model-score count
+remain unchanged and no partial manifest exists.
+
 The corresponding REAL realization gate was committed before the Commons transfer. It binds the
 future exact receipt, checks received originals for protected/internal SHA-256+dHash overlap, and
 also protects final independence from the scored Dotting diagnostic plus both final AI components.
