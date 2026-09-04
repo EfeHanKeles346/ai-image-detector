@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "state": "e49_gated_sources_accessible_metadata_only",
+  "checked_at": "2026-09-04",
+  "authenticated_user": "efehankeles",
+  "datapoint": {
+    "repository": "datapointai/text-2-image-human-preferences-2m",
+    "revision": "e1d8719a2d521eac6c62ee84f329afc2c03ec928",
+    "gated": "manual",
+    "license": "cc-by-4.0_with_provider_image_terms",
+    "repository_files": 158,
+    "repository_bytes": 34856922710,
+    "dataset_images": 14952,
+    "dataset_models": 30,
+    "dataset_prompts": 500,
+    "metadata_files_downloaded": [
+      {
+        "path": "data/models/models.parquet",
+        "bytes": 4336,
+        "sha256": "e6ba2e149214a064da08a3f8ca61846821faf29d67e1b2ad73ca90d45dd2e10a"
+      },
+      {
+        "path": "data/responses/test.parquet",
+        "bytes": 1579770,
+        "sha256": "4b535493c7598631669151df87b366d4505661cd6fdaf403d48cb3b5824d4bbc"
+      },
+      {
+        "path": "data/prompts/prompts.parquet",
+        "bytes": 153603,
+        "sha256": "6c04ad8f58c59e8fff25b2980f643f90aa6273bc62ba9e3e1ffda52f2fe086d4"
+      }
+    ],
+    "metadata_bytes_downloaded": 1737709,
+    "image_parquets_downloaded": 0,
+    "image_body_bytes_downloaded": 0,
+    "model_scores_created": 0
+  },
+  "itw_sm": {
+    "repository": "dkarageo/itw-sm",
+    "revision": "3060094fb576669927134193de3f517d7e64af86",
+    "gated": "manual",
+    "license": "other_research_terms",
+    "repository_files": 10004,
+    "payload_files_downloaded": 0,
+    "model_scores_created": 0,
+    "scientific_role": "same_distribution_as_consumed_official_mediaeval_e45_not_independent_again"
+  },
+  "routing_decision": "continue_already_frozen_openfake_e49_c_as_sole_balanced_final",
+  "boundary": "Approval audit and reference metadata only; neither source is training data or a second final."
+}

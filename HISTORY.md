@@ -4737,3 +4737,12 @@ Viewer resolution plus HEAD metadata binds 241,736,938 OpenFake bytes; with Comm
 expected network total is 2,948,318,716 bytes, leaving 1,346,648,580 bytes under 4 GiB. Aggregate
 Viewer failures were handled only by querying already-selected rows individually. Asset contract
 `7b71449e...1415` stores no signed URL, and image-body/model-score counts remain zero.
+
+Both previously gated sources then became accessible. Hugging Face ITW-SM resolves at revision
+`3060094f...f86`, but it is the same scientific distribution already consumed from the official
+MediaEval E45 archive and cannot count twice. Datapoint resolves at the original pinned
+`e1d8719a...c928` revision and confirms 30 current models, 14,952 images and 500 prompts. The audit
+fetched only 1,737,709 metadata bytes (models, test responses and prompt references), with zero
+image-Parquet/image-body/model-score bytes. Because E49-C was already identity/byte-frozen and
+OpenFake is a purpose-built OOD detection split, it remains the sole final route; Datapoint stays
+clean for possible post-final diagnosis rather than silently replacing the selected source.

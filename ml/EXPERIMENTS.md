@@ -3867,6 +3867,18 @@ was scored or selected using model output.
   Generic S3 binary MIME is recorded for later JPEG decode validation. Contract `7b71449e...1415`;
   signed URLs stored zero, image-body and detector-score counts zero.
 
+### Gated-source approval audit — route decision before any image access
+
+- Authenticated Datapoint access now succeeds at pinned revision `e1d8719a...c928`; authenticated
+  ITW-SM succeeds at `3060094f...f86`. ITW-SM is already consumed through its official E45 copy and
+  is not independent a second time.
+- Datapoint metadata confirms 30 models/14,952 images/500 prompts and all five originally proposed
+  frontier families. Only 1,737,709 bytes of models, test-response and prompt reference Parquets
+  were fetched; image Parquets/image bodies and detector scores remain zero.
+- **Routing decision:** do not pivot the single final after E49-C identity and byte freeze. OpenFake
+  `core/test` is explicitly an OOD detection split, whereas Datapoint is a controlled shared-prompt
+  preference benchmark. Preserve Datapoint as unconsumed, non-training post-final evidence.
+
 ### Module 2 archive audit before re-entry — lessons carried forward, no model run
 
 - E17/E18 hard-code non-overlapping 128 px tiles capped at 36, then discard any manipulated image

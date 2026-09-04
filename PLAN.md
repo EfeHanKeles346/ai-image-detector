@@ -752,6 +752,13 @@ evidence already vetoed inside E46. Treat this as model selection on CAL, not as
 E50 passed, so the last Module-1 proof may now be built. This is one independent, one-shot test;
 it is not another development set and it cannot be used to repair E43-S.
 
+**Post-approval routing checkpoint:** authenticated access to both Datapoint revision
+`e1d8719a...c928` and Hugging Face ITW-SM is now open. ITW-SM is the same distribution already
+consumed through the official MediaEval E45 archive and cannot become independent again. Datapoint
+is a strong 2026 preference benchmark, but OpenFake `core/test` is purpose-built OOD detection data
+and E49-C identities/bytes were already frozen without scores. E49-C therefore remains the sole
+balanced-final route; Datapoint stays unscored and image-free for possible post-final diagnosis.
+
 - [x] **Reject attractive but invalid shortcuts before bytes.** SCIMD-17 is Apache-2.0 and compact,
       but every camera image was publisher-resized to 224 x 224; it cannot prove gallery-like
       authentic-photo safety and would create a resolution shortcut. ImageBench publishes useful
@@ -797,6 +804,10 @@ it is not another development set and it cannot be used to repair E43-S.
       `150ed354...ec99`. All are publisher 256x256 PNG, so the format/geometry audit must flag the
       shortcut risk and E49 may credit this source only alongside the other five AI families.
       Selected bytes total 20,111,615; detector scores remain zero.
+      **Datapoint approval audit:** access now succeeds at the same revision/licence. Only models,
+      test responses and prompt reference metadata were fetched (1,737,709 bytes total); all 40
+      image Parquets /image-body bytes remain untouched. This access does not reopen or replace the
+      already-selected E49-C final route.
 - [ ] **Realize and decontaminate without a model.** Decode every candidate; verify label/source,
       image MIME, dimensions and EXIF where promised; reject exact SHA-256 and dHash overlap against
       every protected role; cap repeated Commons uploader/prompt groups; then freeze the first clean

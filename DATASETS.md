@@ -434,6 +434,23 @@ network expectation is 2,948,318,716 bytes with 1,346,648,580 bytes of 4 GiB hea
 SHA-256 is `7b71449e0e7d9ea22973f021af2d4ec49cc395e3fffe6816ffc123274a571415`;
 no signed URL, image body or model score was stored.
 
+#### Gated-source approval checkpoint — metadata only
+
+Authenticated access is now open for Datapoint revision
+`e1d8719a2d521eac6c62ee84f329afc2c03ec928` (manual gate, CC-BY-4.0, provider image terms) and
+Hugging Face `dkarageo/itw-sm` revision `3060094fb576669927134193de3f517d7e64af86` (manual gate,
+research terms). ITW-SM is equivalent in scientific role to the official MediaEval archive already
+consumed in E45, so it cannot be reused as independent evidence.
+
+Datapoint exposes 30 models, 14,952 full-resolution generated images and 500 controlled prompts.
+Its full pinned inventory is 158 files /34,856,922,710 bytes. The audit downloaded only
+`models.parquet` (4,336 bytes), `responses/test.parquet` (1,579,770 bytes) and `prompts.parquet`
+(153,603 bytes): 1,737,709 metadata bytes total. No image Parquet or image body was transferred.
+The roster confirms GPT Image 2, Nano Banana 2, Seedream 5.0 Pro, FLUX.2 Max and Ideogram 4.0, but
+this is a preference benchmark with shared controlled prompts; OpenFake `core/test` is the more
+direct OOD detector final and is already identity/byte-frozen. Datapoint remains unscored,
+non-training post-final reserve rather than replacing E49-C after selection.
+
 The source contract is now frozen before transfer: 960 exact WebP paths total 23,936,830 bytes,
 192 per model. Contract SHA-256 is `170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36`;
 reserve-identity SHA-256 is `9637626d7ddae037a82c15f1582458beecee1904a27bf59038727dbde85bbf5a`.
