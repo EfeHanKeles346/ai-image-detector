@@ -4957,3 +4957,8 @@ model comparisons therefore cannot inherit a content mismatch. Only 800 clean AI
 realized, at 20/category/model. The selected seven Datapoint shards total 3.22 GB, IEEE test totals
 0.84 GB and SCMI30 CAL totals 4.25 GB. The IEEE payload remains blocked by the user's unaccepted
 Kaggle competition rules; no legal gate was bypassed, no model was opened and no score exists.
+
+The two preceding GitHub failures were dependency drift, not scientific or web regressions: the new
+E51 metadata audit imported Kaggle's official client, which existed in the workstation environment
+but not the declared CI experiment group. `kaggle>=2.2,<2.3` is now explicit in `pyproject.toml`;
+the complete local 471-test suite remains green before the replacement CI run.

@@ -3498,6 +3498,8 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
 - CI reliability repair (2026-09-04): keep `npm audit --audit-level=critical` blocking,
   but retry its registry endpoint up to three times so a transient npm 5xx does not masquerade
   as a project/test failure. A repeated failure or real critical advisory still fails CI.
+- E51 acquisition scripts import the official Kaggle client; keep `kaggle>=2.2,<2.3` in the
+  declared experiment dependency group so clean CI hosts collect the same tests as the workstation.
 
 ## Repo conventions after the 2026-08-18 tidy-up
 
