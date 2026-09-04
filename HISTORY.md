@@ -5050,3 +5050,9 @@ score-blind historical TRAIN rows from each of 18 AI sources (360 total) are rem
 and become paired AI-CAL. Separately, SCIMD-17 binds 120 archive candidates per device so identity
 audit can retain exactly 100/device (1,700) as TRAIN-only resize hard negatives. No new body or score
 was opened to make either choice.
+
+The subsequent realization implementation keeps that order enforceable. It can open only SCIMD-17,
+SCMI30 and the explicitly held-out historical AI rows; Datapoint/IEEE DEVELOPMENT is absent from the
+command. All SCIMD reserve bodies are byte/CRC/decode/224x224 checked and protected by exact+dHash
+before 100/device selection. TRAIN removes every AI-CAL parent, while CAL verifies 1,560 parents and
+creates deterministic original/Q75 pairs. The code and tests are committed before execution.

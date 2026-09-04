@@ -1134,6 +1134,10 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       20 rows from each of 18 sufficiently populated historical AI TRAIN sources (360 total), remove
       them from candidate fitting and pair them with Q75. Datapoint remains DEVELOPMENT-only.
       SCIMD-17 freezes 120 score-blind candidates/device for a 100-clean/device TRAIN target.
+      **TRAIN/CAL realization method:** audit all 2,040 SCIMD reserves against protected exact/dHash
+      identities and retain 100/device; rebuild TRAIN from historical TRAIN rows minus the 360
+      AI-CAL holdouts. Verify all 1,200 SCMI30 and 360 AI-CAL parent bytes, then make deterministic
+      original/Q75 pairs. DEVELOPMENT remains unopened until a CAL winner exists.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered
