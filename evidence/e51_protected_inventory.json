@@ -1,0 +1,154 @@
+{
+  "e49_protected_exact_keys": 15499,
+  "limitations": [
+    "Metadata identity/available encoded hashes only; no canonical protected-pixel audit yet",
+    "Unfetched reserves can be excluded by identity, not certified byte/perceptual disjoint",
+    "Only the listed E49 v2/asset reserves are enumerated; superseded reserve contracts still need review"
+  ],
+  "model_scores_created": 0,
+  "new_source_parents": 2900,
+  "overlaps": [],
+  "reserved_e49_components": {
+    "commons": 1100,
+    "openfake": 960,
+    "stylegan2": 240
+  },
+  "schema_version": 1,
+  "source_count": 22,
+  "sources": [
+    {
+      "exact_keys": 118665,
+      "identity_rows": 50858,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e33_rrdataset/e42_rr_unscored_manifest.json",
+      "sha256": "b2d815afab0bbafa339baf70eac19afbaf955e545041c550193340763ac30c98"
+    },
+    {
+      "exact_keys": 500,
+      "identity_rows": 500,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e33_rrdataset/r1c_cal_manifest.json",
+      "sha256": "5d575a08a214002b962a128f8684de9ef161f85ecaf06a53b8dbfb7fede8b521"
+    },
+    {
+      "exact_keys": 1642,
+      "identity_rows": 1071,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e36/cal_manifest.json",
+      "sha256": "4ed1b7341df39fed1f1fc19a20424f15362c0df224bcc77189045ba4a4af2e03"
+    },
+    {
+      "exact_keys": 1280,
+      "identity_rows": 640,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e36/final_manifest.json",
+      "sha256": "cad71ff5c631894805d1bb97c3b302732a23a069ce0b050faaf09e00314a66e6"
+    },
+    {
+      "exact_keys": 880,
+      "identity_rows": 440,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e39/final_manifest.json",
+      "sha256": "1076df20adc700a1893814e477891e9270e4f88502dbad2571e022f3a7127306"
+    },
+    {
+      "exact_keys": 13768,
+      "identity_rows": 6884,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e42/parent_manifest.json",
+      "sha256": "15124d93f195d618b00c9cf79bec6151ae26fd4397cd9f5529c41842c4e3e238"
+    },
+    {
+      "exact_keys": 1656,
+      "identity_rows": 811,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e42_external/bfree_viral/unscored_manifest.json",
+      "sha256": "338a2f2b2135a4bbfcb8ce0ceef7da5d8cbe2a5b1ffbe745c0e05a1248f37ca2"
+    },
+    {
+      "exact_keys": 74475,
+      "identity_rows": 34755,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e43_dda_coco/unscored_manifest.json",
+      "sha256": "e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db"
+    },
+    {
+      "exact_keys": 10606,
+      "identity_rows": 6570,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e44/fusion_contract.json",
+      "sha256": "25681b62d6a6d6718ec136a89e9de078b56a661e5efb969c16d6532559543fb4"
+    },
+    {
+      "exact_keys": 11179,
+      "identity_rows": 5100,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e44/successor_contract.json",
+      "sha256": "b3c399e91f9ac78fa50d085f03e6abe8ebd429b9b9b1d50aed2566dc8f7e1152"
+    },
+    {
+      "exact_keys": 19956,
+      "identity_rows": 9978,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e45_mediaeval_itwsm/unscored_manifest.json",
+      "sha256": "3e7c1d7e815a252d454d36c78f2a6ad6381983edb9494c31951bdb683c6d7e03"
+    },
+    {
+      "exact_keys": 3416,
+      "identity_rows": 1708,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e46/synthwildx/audited_manifest_unscored.json",
+      "sha256": "953490a9c63669fac2305e6abcc4259f2f4066e8c58b7851efddedaa7e2da8d4"
+    },
+    {
+      "exact_keys": 4000,
+      "identity_rows": 2000,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e46/truefake_facebook/final_manifest_unscored.json",
+      "sha256": "4572339ebe15821c6c86d50178ed31aa80f60cf98f1bd710d73e7265c15b225b"
+    },
+    {
+      "exact_keys": 4800,
+      "identity_rows": 2400,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e47/caldev_manifest_unscored.json",
+      "sha256": "378b83fe56bcf4bbf61d5b626efa71899bea571abeeeca05c74774daa8585739"
+    },
+    {
+      "exact_keys": 7200,
+      "identity_rows": 2400,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e48/manifest_unscored.json",
+      "sha256": "1404a3ff5cfde4a343e1368b995ab1ec13135811c569134dfffaabf40c1b5b68"
+    },
+    {
+      "exact_keys": 11199,
+      "identity_rows": 4000,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e49/final/manifest_unscored.json",
+      "sha256": "9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909"
+    },
+    {
+      "exact_keys": 1340,
+      "identity_rows": 1340,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e49/open_components_contract_v2.json",
+      "sha256": "1d4e184c27cb87cf832045a23b6966f382673c3bcd8342a900c07130bd9182aa"
+    },
+    {
+      "exact_keys": 6000,
+      "identity_rows": 3000,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e49/open_components_v2/commons_manifest_unscored.json",
+      "sha256": "657be9bb6e2632f5b00f2f5a1f37b36640d186b53044cdb2cdf0697cb9208e7b"
+    },
+    {
+      "exact_keys": 400,
+      "identity_rows": 200,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e49/open_components_v2/stylegan2_manifest_unscored.json",
+      "sha256": "150ed35481bc0ae7653ff34eae879a227c1e359e4ab9ca772c681bbdef22ec99"
+    },
+    {
+      "exact_keys": 960,
+      "identity_rows": 960,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e49/openfake/asset_contract_untransferred_unscored.json",
+      "sha256": "7b71449e0e7d9ea22973f021af2d4ec49cc395e3fffe6816ffc123274a571415"
+    },
+    {
+      "exact_keys": 3999,
+      "identity_rows": 2400,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e49/openfake/manifest_unscored.json",
+      "sha256": "38048803d01b6cb607c491d2391a7f0031e5c1010d7594bd44c767127e637442"
+    },
+    {
+      "exact_keys": 4000,
+      "identity_rows": 2400,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e49_d1_dotting/manifest_unscored.json",
+      "sha256": "048572a41b47b65d3d09bd39bee45a40745a40c2e15c50444b41f8384fdccc9d"
+    }
+  ],
+  "state": "protected_metadata_check_passed",
+  "training_authorized": false
+}

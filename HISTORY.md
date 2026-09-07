@@ -5089,3 +5089,37 @@ of 17 devices, no body failed decode and two conservative dHash collisions used 
 headroom. CAL contains 1,200 SCMI30 REAL plus 360 source-balanced historical AI parents, represented
 as exactly 1,560 original and 1,560 deterministic Q75 observations. TRAIN hash
 `41444640...77ef`, CAL hash `60688291...2356`; detector scores and DEVELOPMENT access remain zero.
+
+### 2026-09-07 — E51 remote pre-fit safety audit (no new model claim)
+
+The external LaCie disk was mounted successfully without a manual workstation action. No image
+payload was downloaded and the serving artifact was not changed. Before fitting, the implementation
+now checks frozen TRAIN/CAL hashes, all declared payload bytes, paired CAL labels/roles and decoded
+RGB identity. A single explicit LANCZOS dHash convention is recomputed; radius-4 candidates are
+confirmed using the existing radius-4 pHash63 screen. This is a duplicate-candidate check, not proof
+that every semantic scene/prompt is independent. Restart caches never waive input-byte verification.
+
+Two earlier claims need qualification without rewriting their archive entries. Inverse dHash keys
+are NOT generally equivalent: equal neighbours and different resampling break complementation.
+Also, `e49/dotting/manifest_unscored.json` was a stale path; the real protected manifest lives under
+`e49_d1_dotting`. The old reader silently skipped it. The path is repaired and all 20 required
+protected manifests must now exist or admission raises an error. Complement keys remain only a
+legacy candidate heuristic, not evidence of complete perceptual protection.
+
+The independent metadata inventory verifies 22 pinned manifests/contracts, including the v2 E49
+Commons/StyleGAN2 and OpenFake asset reserves (1,100/240/960 identities). It finds zero exact
+metadata-key overlaps under the declared historical-reuse policy. It does NOT claim a canonical
+pixel comparison against every protected image or coverage of all superseded reserve contracts;
+those remain explicit pre-fit work. Evidence: `evidence/e51_protected_inventory.json`.
+
+SCIMD has eight `chatgpt-*` filenames, two in selected TRAIN. The publisher's 2,388,083-byte metadata
+table reproduces MD5 `47279dd6c20ba1e9da8bef11623b9da2`; all eight carry INFINIX/X6851 camera fields.
+The two selected images were visually inspected and appear to be camera photographs of laptop
+screens. They were not relabelled based on filenames. Publisher metadata and appearance support,
+but do not prove, authenticity. Evidence: `evidence/e51_scimd_filename_review.json`.
+
+Code verification: **500 Python tests passed**, compilation and diff-whitespace checks passed.
+No threshold was selected, detector scores remain zero, and this checkpoint is not a model accuracy
+improvement. The first audit invocation exposed a missing `condition` on historical parent-only
+rows; it wrote no final report. The reader now explicitly treats those original files as original
+observations, with a regression test, and resumes byte-verified fingerprints.

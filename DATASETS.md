@@ -1829,3 +1829,21 @@ from each of 17 devices (1,700). Combined TRAIN contains 5,978 parents: 4,035 RE
 after removing all 360 held-out AI-CAL parents. CAL contains 1,200 SCMI30 REAL and 360 AI parents
 from 18 historical TRAIN sources, expanded deterministically to 1,560 original +1,560 Q75 rows.
 TRAIN/CAL manifest SHA-256 values are `41444640...77ef` and `60688291...2356`; scores are zero.
+
+### E51 provenance and admission correction — 2026-09-07
+
+The above frozen manifests remain intact; "realization complete" is not blanket permission to fit.
+The follow-up audit verifies TRAIN/CAL bytes and canonical decoded identity, and explicitly retains
+the outstanding protected-pixel/reserve checks in its readiness state. A stale Dotting protection
+path was corrected to `e49_d1_dotting/manifest_unscored.json`; missing required manifests now abort
+instead of silently reducing coverage. A metadata-only check of 22 pinned protected inputs finds
+no exact-key overlap; v2 Commons/StyleGAN2/OpenFake reserves are included, not just final selections.
+
+For SCIMD, filename screening found eight `chatgpt-*` files (two in selected TRAIN). We fetched only
+the publisher's 2,388,083-byte metadata table, not new image data:
+[official Zenodo record](https://zenodo.org/records/17317613), `merged_common17.csv`, verified
+MD5 `47279dd6c20ba1e9da8bef11623b9da2`, 17,620 metadata rows. All eight record an INFINIX X6851
+camera. Visual review of the two selected files shows apparent laptop-screen camera photographs;
+there is no basis for flipping labels from the names alone. Labels and source quotas are unchanged.
+This is targeted provenance support, not a dataset-wide proof of label purity. The compact receipt
+is `evidence/e51_scimd_filename_review.json`; image-transfer cost for this checkpoint is zero.

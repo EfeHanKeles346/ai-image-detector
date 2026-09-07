@@ -39,7 +39,7 @@ MAX_PIXELS = 100_000_000
 ALLOWED_FORMATS = {"JPEG", "MPO", "PNG", "WEBP", "TIFF", "BMP"}
 EXTRA_PROTECTED = (
     DATA_ROOT / "e48" / "manifest_unscored.json",
-    DATA_ROOT / "e49" / "dotting" / "manifest_unscored.json",
+    DATA_ROOT / "e49_d1_dotting" / "manifest_unscored.json",
     DATA_ROOT / "e49" / "open_components_v2" / "commons_manifest_unscored.json",
     DATA_ROOT / "e49" / "open_components_v2" / "stylegan2_manifest_unscored.json",
     DATA_ROOT / "e49" / "openfake" / "manifest_unscored.json",
@@ -165,11 +165,11 @@ def select_clean_scimd(
 def _protected() -> tuple[
     set[str], set[str], list[dict[str, str]], dict[str, list[str]],
 ]:
+    # A missing mount or renamed protected manifest must never weaken admission silently.
+    require_protected_paths(tuple(PROTECTED_ROLE_PATHS) + EXTRA_PROTECTED)
     exact, perceptual, sources = _protected_role_hashes()
     dhash_paths: dict[str, list[str]] = defaultdict(list)
     for path in tuple(PROTECTED_ROLE_PATHS) + EXTRA_PROTECTED:
-        if not path.is_file():
-            continue
         raw = path.read_bytes()
         payload = json.loads(raw)
         rows = []
@@ -187,8 +187,9 @@ def _protected() -> tuple[
                     dhash_paths[value].append(str(image_path))
         if path in EXTRA_PROTECTED:
             sources.append({"path": str(path), "sha256": hashlib.sha256(raw).hexdigest()})
-    # Historical manifests use both left>right and right>left dHash conventions.
-    # Their 64-bit values are complements; protecting both avoids a false non-overlap.
+    # Extra candidate keys only, NOT a conversion between dHash implementations.
+    # Ties and different resize filters break complement equivalence. E51 pre-fit admission
+    # must recompute a canonical convention from pixels; these keys cannot certify separation.
     complements = set()
     for value in perceptual:
         if len(value) == 16:
@@ -206,6 +207,12 @@ def _protected() -> tuple[
     return exact, perceptual, sources, {
         key: sorted(set(paths)) for key, paths in sorted(dhash_paths.items())
     }
+
+
+def require_protected_paths(paths: Sequence[Path]) -> None:
+    missing = [str(path) for path in paths if not path.is_file()]
+    if missing:
+        raise FileNotFoundError("required protected manifests unavailable: " + ", ".join(missing))
 
 
 def _realize_scimd(

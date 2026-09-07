@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-07",
+  "state": "publisher_metadata_and_two_selected_training_images_reviewed_without_detector",
+  "record_url": "https://zenodo.org/records/17317613",
+  "metadata_url": "https://zenodo.org/records/17317613/files/merged_common17.csv?download=1",
+  "metadata_bytes": 2388083,
+  "metadata_md5": "47279dd6c20ba1e9da8bef11623b9da2",
+  "publisher_md5_verified": true,
+  "metadata_rows": 17620,
+  "archive_chatgpt_named_images": 8,
+  "selected_train_chatgpt_named_images": 2,
+  "all_eight_metadata_make": "INFINIX",
+  "all_eight_metadata_model": "Infinix X6851",
+  "selected_manual_review": [
+    {
+      "member": "SCIMD-17/Infinix_Note40_Pro/chatgpt-1754324994777.jpg",
+      "sha256": "8230fb829987617762befe88cccbc7298309ca8bf8673f4764c61f72f6f81d16",
+      "publisher_capture_time": "2025:08:04 21:59:55",
+      "observation": "Appears to be a camera photograph of a laptop screen with test-result text."
+    },
+    {
+      "member": "SCIMD-17/Infinix_Note40_Pro/chatgpt-1754325490539.jpg",
+      "sha256": "1728f1f352981b0f654ef5e51c7200383d2877a222c7595912ae57cfccfc00a9",
+      "publisher_capture_time": "2025:08:04 22:08:10",
+      "observation": "Appears to be a camera photograph of a laptop screen and keyboard with code/problem text."
+    }
+  ],
+  "decision": "Retain publisher REAL labels; file names alone do not establish AI generation. No automatic relabelling or dataset-wide claim of label purity.",
+  "limitations": "Publisher EXIF metadata and visual appearance support provenance but are not cryptographic proof. Only the two selected images received manual visual review.",
+  "model_scores_created": 0,
+  "images_downloaded": 0,
+  "labels_changed": 0
+}

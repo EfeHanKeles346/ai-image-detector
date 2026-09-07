@@ -1157,6 +1157,15 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       including 1,700 SCIMD hard negatives with zero decode failures and two conservative dHash
       exclusions. CAL freezes 1,560 parents (1,200 REAL/360 AI) and exactly 3,120 original/Q75
       observations. Manifest hashes are `41444640...77ef` and `60688291...2356`; scores remain zero.
+      **2026-09-07 remote pre-fit safety checkpoint (before implementation):** verify every local
+      TRAIN/CAL byte hash and recompute one canonical perceptual convention from decoded pixels.
+      Check parent, encoded-byte and decoded-pixel overlap across roles; confirm near-dHash
+      candidates with the fixed pHash rule, without detector scores. Do not infer hash compatibility
+      by bitwise inversion: equal adjacent pixels and different resampling invalidate that shortcut.
+      Audit SCIMD filename/provenance anomalies against publisher metadata rather than relabelling
+      by filename. Preserve the frozen manifests, emit a separate fail-closed readiness receipt,
+      and keep training disabled on unresolved overlaps. Explicitly account for E49 unused reserves;
+      passing only a TRAIN/CAL check is not permission to skip protected-role admission.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered

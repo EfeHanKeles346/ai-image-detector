@@ -4,8 +4,11 @@ from collections import Counter
 
 from io import BytesIO
 from PIL import Image
+import pytest
 
-from experiments.e51_train_cal_realize import _decode, _phash_image, select_clean_scimd
+from experiments.e51_train_cal_realize import (
+    _decode, _phash_image, select_clean_scimd, require_protected_paths,
+)
 
 
 def _rows() -> list[dict]:
@@ -51,6 +54,21 @@ def test_decode_records_complementary_dhash_conventions():
     image.save(output, format="PNG")
     facts, _ = _decode(output.getvalue(), "synthetic")
     assert int(facts["dhash"], 16) ^ int(facts["legacy_dhash"], 16) == (1 << 64) - 1
+
+
+def test_flat_dhash_conventions_are_not_complements():
+    output = BytesIO()
+    Image.new("RGB", (32, 32), "black").save(output, format="PNG")
+    facts, _ = _decode(output.getvalue(), "flat")
+    assert facts["dhash"] == facts["legacy_dhash"] == "0000000000000000"
+
+
+def test_missing_protected_manifest_cannot_be_silently_skipped(tmp_path):
+    good = tmp_path / "present.json"
+    good.write_text("{}")
+    require_protected_paths([good])
+    with pytest.raises(FileNotFoundError, match="protected manifests unavailable"):
+        require_protected_paths([good, tmp_path / "missing.json"])
 
 
 def test_phash_separates_flat_dhash_collision_candidates():

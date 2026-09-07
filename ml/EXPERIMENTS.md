@@ -4064,3 +4064,27 @@ was scored or selected using model output.
   works while uniform PNG conversion destroys it; manipulated-region noise energy was lower. The
   next evaluator will preserve these hypotheses while correcting selection, unit-of-analysis and
   threshold leakage before any new training.
+
+### E51 pre-fit remote audit — 2026-09-07 (model-blind)
+
+- Frozen input manifests: TRAIN `41444640...77ef`, CAL `60688291...2356`; no edits or score-based
+  replacements. New commands: `experiments.e51_prefit_audit` and `experiments.e51_protected_inventory`.
+  Run with `PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets` and `PYTHONPATH=ml:ml/src` using
+  `ml/.venv/bin/python -m ...`; pre-fit audit supports `--workers 1..8` and resumable fingerprints.
+- Checks: byte SHA-256/size, parent role separation, paired original/Q75 label/source consistency,
+  decoded EXIF-oriented RGB digest, canonical dHash radius 4 with pHash63 radius 4 confirmation.
+  Both Q75 and original are compared; matched conditions are not counted as independent parents.
+  A perceptual match is a review candidate, not automatic proof of mislabeled data.
+- Method correction: opposite-comparison dHashes need not be complements on flat/tied pixels or
+  when resize filters differ. Preserve prior manifests but do not use inverse bits as an admission
+  proof. Correct stale Dotting path and fail when any required protected manifest is unavailable.
+- Protected metadata result: 22 pinned inputs, 15,499 E49 identity/available hash keys, 2,900 new
+  SCIMD/SCMI parents, zero overlaps under deliberate historical-TRAIN reuse. Includes the v2
+  1,100 Commons/240 StyleGAN2/960 OpenFake reserves. Canonical protected-image screening and
+  superseded reserve inventory remain pending; `training_authorized=false` is intentional.
+- SCIMD filename review: official metadata MD5 reproduced; all eight `chatgpt-*` names carry camera
+  metadata. The two selected files appear to be photos of laptop screens; retain publisher REAL
+  labels, with uncertainty about provenance explicitly documented. No detector was consulted.
+- Engineering verification: 500 Python tests pass, compilation passes; no serving artifact,
+  threshold, DEVELOPMENT result or final-test gate changes. First-run historical `condition` schema
+  mismatch was repaired with a regression test before audit resumption; no failed run wrote success.
