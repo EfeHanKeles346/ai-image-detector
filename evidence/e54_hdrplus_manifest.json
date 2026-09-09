@@ -1,0 +1,95 @@
+{
+  "balanced_final_admitted": false,
+  "code_sha256": "61139d40df1282c7f2e67d1be557037bc7fadfdb7bd19992551876d529f75e77",
+  "helper_sha256": "887d305c55d3a14241605e69573498610d1ea6cb2195ccd71ec1edb3d89f2151",
+  "image_bytes_expected": 423955391,
+  "image_transfer_cap": 805306368,
+  "limits": [
+    "Older Nexus/Pixel computational photographs, not new phones or untouched sensor JPEGs.",
+    "One burst is one parent; same-day/session names do not prove scene independence.",
+    "Reserve entire publisher; no TRAIN/CAL split or threshold tuning."
+  ],
+  "listing_pages": [
+    {
+      "bytes": 202113,
+      "sha256": "b625b2ecd20446f76e42f576b6027326d48fafea0212d5dbf11ace0a3ac6df53"
+    },
+    {
+      "bytes": 202105,
+      "sha256": "5028ade73de7063aa2389dd3b29d347dca429787baa6dcfb62dcda457470ea49"
+    },
+    {
+      "bytes": 202125,
+      "sha256": "0f0234346da2de345bddc7429e183162efad0d2a2f3dbe48f735b1fe22b43aa5"
+    },
+    {
+      "bytes": 202119,
+      "sha256": "9f5e857671d5200485d23e2e5342552a95b694093744412b719a20ce9cee0e01"
+    },
+    {
+      "bytes": 202124,
+      "sha256": "482027288d8fd860f0fe90b678f1d382673e48f863ac10bbee34bb65b5e7f82d"
+    },
+    {
+      "bytes": 202141,
+      "sha256": "68586c188129579bd4645d2763f7060136268c6b6b4a858432ac92c20c779135"
+    },
+    {
+      "bytes": 202125,
+      "sha256": "d6db37595abd08c57da6a1fb1b5ded930b6afd840024b00fe2cf6145cf6f9b32"
+    },
+    {
+      "bytes": 202127,
+      "sha256": "1073ee4033ca7ab2dc302ca7045daad828e98cf743466ffb5fa4660025e0ba67"
+    },
+    {
+      "bytes": 202138,
+      "sha256": "cb118c5587acb6d6ba2f222ccc0cd2bcc6402b33f34ebb6a3c530f841037eeb4"
+    },
+    {
+      "bytes": 202125,
+      "sha256": "a584b95ad0c756307652cf92eee06f1a2c2246ff375e3b69386db9864aeeeb56"
+    },
+    {
+      "bytes": 186135,
+      "sha256": "e697ff2e016c981908c2947731e58dc335290eac8e46cf6934ac44d77e7a3630"
+    }
+  ],
+  "manifest_sha256": "417dee80f915c983ebb6bc6bb195e9579f2fb712b28a8ca85449e46f04dfc176",
+  "model_scores_created": 0,
+  "parents": 100,
+  "source_final_jpegs": 3640,
+  "source_html_sha256": "6ff115b49305e6305f99033961b6ec1b3a5e12723cdc48f20cb3a3172aeed211",
+  "state": "HDRPLUS_reserve_frozen_before_images",
+  "synthetic_folders_excluded": [
+    "20171106/results_20171023/synthetic_boxes_day/final.jpg",
+    "20171106/results_20171023/synthetic_boxes_day_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_boxes_night/final.jpg",
+    "20171106/results_20171023/synthetic_boxes_night_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_bullseye_hawk_day/final.jpg",
+    "20171106/results_20171023/synthetic_bullseye_hawk_day_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_bullseye_hawk_night/final.jpg",
+    "20171106/results_20171023/synthetic_bullseye_hawk_night_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_lines_day/final.jpg",
+    "20171106/results_20171023/synthetic_lines_day_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_lines_night/final.jpg",
+    "20171106/results_20171023/synthetic_lines_night_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_points_hawk_day/final.jpg",
+    "20171106/results_20171023/synthetic_points_hawk_day_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_points_hawk_night/final.jpg",
+    "20171106/results_20171023/synthetic_points_hawk_night_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_ramp_day/final.jpg",
+    "20171106/results_20171023/synthetic_ramp_day_motion_blur/final.jpg",
+    "20171106/results_20171023/synthetic_ramp_night/final.jpg",
+    "20171106/results_20171023/synthetic_ramp_night_motion_blur/final.jpg"
+  ],
+  "terms": {
+    "attribution": "Hasinoff, Sharlet, Geiss, Adams, Barron, Kainz, Chen, Levoy. Burst photography for high dynamic range and low-light imaging on mobile cameras. ACM TOG / SIGGRAPH Asia 2016.",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "processing": "Publisher 2017-10-23 HDR+ camera-burst finishing, Q95 JPEG. No local change to acquired originals.",
+    "scope": "Local research evaluation only by project policy. No image redistribution or endorsement.",
+    "source_url": "https://www.hdrplusdata.org/dataset.html"
+  },
+  "training_allowed_by_project": false
+}
