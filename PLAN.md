@@ -14,22 +14,144 @@ original BA 92.85%, REAL FPR 1.67%, AI recall 87.38%; Q75 92.08% /1.97% /86.13%.
 Old E49 regression remains below gate (BA 80.80% /75.70%, with material AI recall loss).
 Hidden IEEE camera ids and 512px publisher processing leave native/worst-device proof unestablished.
 
-Next work, in order, without downloads:
+### E53 — offline improvement research, with an AI-preservation gate (planned 2026-09-09)
 
-1. Preserve A/B, all consumed score sets and current serving; do not retune on E49 or rerun fresh
-   DEV to select another candidate. Do not add the residual B branch: it showed no material gain.
-2. Before another fit, preregister a bounded successor experiment on admitted TRAIN only: compare
-   the current symmetric transports with one multiscale/compression-order augmentation variant.
-   Use held-out TRAIN camera/source groups (and AI source groups) for selection, require improved
-   REAL safety **without** losing AI recall at a common false-positive budget, and report worst
-   groups. Existing CAL/DEV/final roles stay protected; no score-picked hard examples from tests.
-   This is planned, not executed; no guarantee that more augmentation will fix the ranking gap.
-3. Audit the local inventory for genuinely unused, licensed native camera and modern-AI publishers
-   for E52. Bind candidate, identities, device/source quotas, original/Q75 and gates before any
-   final score. Do not relabel the now-consumed Datapoint/IEEE DEV as a fresh final. If independent
-   native data is not already local, stop at the acquisition plan under the no-download constraint.
-4. Keep Module 2 in its existing planning/protected state until Module 1 earns the full final gate.
-   Archive every method/result and distinguish CAL, consumed regression and new-source evidence.
+**Scope:** inspect existing assets, research primary publications and plan first. No new training,
+model scoring, serving change, image/weight/dependency download or GitHub push in this planning
+update. E52 remains the independent final gate; E53 is the successor research experiment, not a
+renaming of consumed tests. Success is better authentic-photo recognition without buying it by
+missing more AI. This is a measurable acceptance condition, not a promised outcome.
+
+#### What the evidence actually says
+
+- E49 paired original results: old E43 catches 94.3% AI but falsely accuses 39.1% REAL; E51-A
+  catches 77.5% AI and falsely accuses 15.9% REAL. Its higher balanced accuracy alone is inadequate.
+  AUC also falls, so moving the cutoff cannot repair the entire ranking problem.
+- E51's 92.85%/92.08% BA on IEEE/Datapoint is encouraging evidence on another population, not
+  an improvement measured against E43 on those same images. That DEV is now consumed.
+- E43 fitted 8,844 parents/19,648 views; E51 fitted 5,978 parents/17,934 TRAIN views. Both use
+  weighted standardization and C=0.01 logistic regression over frozen DINO features, but populations,
+  transports and calibration differ. We have not isolated which change caused the AI regression.
+- Class/source/parent balancing, intermediate DINO features, texture crops and Q75 already exist.
+  Do not advertise them as new optimizations. Residual B did not justify its complexity. Earlier
+  DDA/fusion experiments expose source-specific failures; blindly adding experts is not the default.
+
+#### Primary research and the limited lesson we can transfer
+
+- [B-Free, CVPR 2025](https://grip-unina.github.io/B-Free/): align REAL/AI content and processing
+  so a classifier cannot win through dataset shortcuts. Locally, audit geometry/codec/content
+  imbalance and use class-identical transforms. JPEG augmentation alone is **not** B-Free's
+  semantically matched diffusion reconstruction method. Do not recycle protected DDA test pairs
+  or start paid/local image generation to claim a reproduction.
+- [Community Forensics, CVPR 2025](https://jespark.net/projects/2024/community_forensics/):
+  generator diversity helps generalization. Preserve broad eligible AI families while adding REAL
+  cameras; count independent generator/prompt groups, not just files. Its full 4,803-model release
+  is not our locally available Small subset, and its FFHQ REAL half is not broad phone coverage.
+- [NTIRE 2026 report](https://arxiv.org/html/2604.11487v1): realistic degradation and unseen
+  generators matter. Test a small compression/resize-order variant on both labels and retain clean
+  images. The leading MICV recipe uses multiple DINOv3 models and 32 A100 GPUs; copying its scale
+  is not an offline laptop plan. Challenge AUC is not a guarantee about false accusations at our cut.
+- [Effort, ICML 2025](https://proceedings.mlr.press/v267/yan25b.html): preserve pretrained
+  information while adapting the detector. Consider restricted adaptation only after the cheap
+  head/data experiments. Ordinary LoRA is not Effort's orthogonal SVD decomposition, and published
+  success on other benchmarks does not establish a gain on our data.
+
+These are evidence-backed research directions, not a claim that one method is universally best.
+
+#### Phase 1 — establish what existing bytes are actually eligible
+
+- [x] Recheck local C3 manifest SHA and metadata availability. All 18,154 historical TRAIN locators
+  resolve: 9,073 REAL and 9,081 AI, nine sources. Loose files total 42,135,059,473 bytes, excluding
+  image cells in 35 checked Parquet shards. This is availability, **not** fresh pixel validation or
+  permission to reuse every row. See `evidence/e53_local_inventory_plan.json` and `DATASETS.md`.
+- [ ] Join C3 TRAIN, E51 TRAIN and later role/admission/reserve histories by original identity,
+  canonical pixels and duplicate groups. Later CAL/DEV/test/reserve protection overrides old TRAIN
+  eligibility; exclude the whole component. Preserve the original manifests. Verify source terms,
+  label convention (project 0=REAL, 1=AI), file hash, decoder and device/prompt provenance.
+- [ ] Prioritize native CSAFE/FODB/VISION plus already-admitted authentic training sources, alongside
+  eligible GPT/FLUX/Qwen/Nano Banana and diverse CF generators. The exact accepted counts must be
+  reported after the audit, not inferred from historical counts. Keep unlicensed/unattributed
+  `theminji` and `34data` repacks out; Module 2 manipulation data is not automatically fully-AI data.
+- [ ] Bound the first experiment to at most 16,000 admitted parents (at most 8,000 per class), using
+  deterministic group/source quotas, not model-score selection. Retain eligible old AI diversity
+  as well as native REAL diversity. Keep all original resolutions; create views only from TRAIN.
+  Hash the population, exclusions, source counts and limitations before feature extraction.
+
+#### Phase 2 — separate data effects from augmentation effects
+
+- [ ] Freeze common group-held-out TRAIN validation folds before fitting. Use three source-aware
+  outer folds with group-disjoint inner calibration where feasible. Keep all transforms, scenes,
+  shared prompts and duplicate components together; unknown camera/prompt provenance requires
+  holding out the whole publisher. FODB's crossed cameras/scenes cannot prove unseen-camera
+  transfer through scene splitting. If the group graph cannot support valid folds with both labels,
+  stop and revise the split before scores, rather than falling back to random image splitting.
+- [ ] Compare a bounded 2x2 design: E51-eligible baseline pool versus expanded eligible pool,
+  each with existing three views versus a fixed three-view transport variant. Use the same
+  frozen DINOv2-S feature architecture, weighted scaler/head, C=0.01 and outer validation rows.
+  Baseline means the currently eligible subset of that recipe, not unrestricted historical reuse.
+- [ ] Variant: retain clean input; derive two additional views with resize-then-JPEG and
+  JPEG-then-resize. Assign scale from {0.5, 0.75, 1.0} and JPEG quality from {75, 90} by a fixed
+  parent hash and class-identical probabilities, before unchanged model crop/cap logic. Preserve
+  parent total weight across views. Freeze implementation details, hash seed and minimum-size
+  policy before extraction. No aggressive erasing, blur, MixUp, or extra inference ensemble yet.
+- [ ] Refit every scaler/head inside each training fold from scratch. Frozen E43/E51 classifiers
+  have seen historical TRAIN rows and therefore cannot be honest out-of-fold comparators or
+  teachers on those rows. Use fold-refitted baseline recipes; no teacher-generated labels.
+  Cached pure frozen-backbone embeddings are reusable only with identical pinned input semantics.
+- [ ] Record pooled, macro and worst-source/device recall/FPR, AUC, TPR@FPR10, coverage, latency
+  and memory. Evaluate original/Q75 separately. New transforms receive separate stress columns,
+  not a silently changed final distribution. Deterministic head seed repeats are not independent
+  evidence; the held-out source groups provide the useful variation.
+
+#### Phase 3 — reject apparent improvements that lose AI
+
+- [ ] Choose each cutoff using inner CAL only under the existing REAL error budgets, then freeze
+  it. Compare fixed-cut predictions on identical held-out parents. Also report recall at a common
+  FPR=10% as a ranking diagnostic; do not transplant a held-out ROC-derived cut into the product.
+- [ ] To advance, require lower REAL false-AI and no negative AI recall point delta versus the
+  fold-refitted baseline in either original/Q75, pooled and each declared AI source with adequate
+  independent support. No-source-loss is additional to the existing absolute gates, not replaced
+  by the much weaker rule “AI recall is still above 80%”. Define support before scores; missing
+  generator identity or too-small groups remain unverified, not assumed passing.
+- [ ] For a statistical preservation claim on the tested population, require paired cluster-bootstrap
+  lower 95% bound for pooled AI recall delta >=0 in both transports, plus upper 95% bound for
+  REAL FPR delta <0 for an improvement claim. Resample scene/prompt components, preserving paired
+  predictions; use simultaneous coverage across the four primary comparisons (Bonferroni-adjusted
+  intervals). Per-group point guards are not per-group statistical guarantees. Wide intervals mean
+  inconclusive, not “no significant drop, therefore equivalent”. No hidden loss tolerance.
+- [ ] Select at most one eligible research candidate; ties favor fewer features/lower latency.
+  No passing candidate means retain current serving and archive the failure. Selection-fold
+  intervals are development evidence, not final confirmation after multiple-candidate selection.
+
+#### Phase 4 — conditional representation improvement, not model churn
+
+- [ ] Only if Phase 2 cannot improve the guarded frontier, preregister one small adaptation study
+  using already-local DINOv2-S weights: restrict updates to the last blocks/low-rank adapters,
+  preserve clean/AI replay, and compare against the frozen-backbone reference. First measure
+  MPS memory/throughput on TRAIN-only data. Freeze adapter layout, learning rate, regularization,
+  seeds, training budget and stopping rule before fitting; do not launch an open hyperparameter sweep.
+  Feature-preservation/transport consistency are hypotheses to isolate, not automatic improvements.
+- [ ] Keep high-capacity DINOv3 downloads, large ensembles, API-generated images and full B-Free
+  reproduction deferred. Do not rescore consumed tests to choose among successive adapters.
+
+#### Phase 5 — diagnostic regression, then genuinely independent E52
+
+- [ ] After candidate/CAL freeze, compare it with both frozen E43 and E51-A on existing test
+  populations for regression reporting. Preserve hashes, cuts and all rows. Known E49 AI loss
+  must not disappear into an aggregate average. These reruns are consumed diagnostics; they
+  cannot choose a new winner or tune a threshold. A failure blocks promotion.
+- [ ] Inventory truly unused local native-camera and modern-generator sources before any final
+  scoring. Protect shared scenes/prompts and later-role overlaps; hold out publishers where needed.
+  Unused rows from a familiar source are not new-source proof. Bind candidate, comparator artifacts,
+  independent-unit quotas, original/Q75, all existing absolute gates and the AI-preservation test
+  before scores. Compare actual frozen E43/E51-A and the candidate on the same final population;
+  require preservation against both references, not unrelated percentages from old datasets.
+- [ ] If sufficient independent licensed local data is absent, stop at a documented acquisition
+  specification, with zero downloads. Do not rename IEEE/Datapoint DEV or old CAL as E52.
+- [ ] Module 2 stays protected/planned until Module 1 satisfies the agreed final. Future Module 2
+  findings may motivate new TRAIN-only hypotheses, never leakage of its held-out masks/images.
+  Append methods, failed attempts and results to HISTORY/EXPERIMENTS; serving changes require the
+  full gate, not a successful training run or higher headline accuracy.
 
 ### Completed E51 execution checkpoints (retained method context)
 

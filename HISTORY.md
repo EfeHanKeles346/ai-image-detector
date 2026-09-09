@@ -5305,3 +5305,40 @@ test-informed weight/cut changes. Completed tests are not to be resumed merely b
 immutable raw checkpoint filenames retain `.partial.jsonl`; the final reports prove full coverage.
 532 tests, compilation and whitespace checks passed. Every current result is recorded and committed
 locally; no network download or GitHub push occurred. No model/test process is left running.
+
+### 2026-09-09 — E53 research plan: reduce authentic errors without trading away AI recall
+
+User requested current ML research and an existing-data-only improvement plan, then asked to
+resume after losing internet. Reviewed E43/E51 fitting code, E49 paired regression, E51 DEV,
+historical failed fusion/adaptation results and dataset eligibility records. Read primary B-Free
+(CVPR 2025), Community Forensics (CVPR 2025), Effort (ICML 2025) and NTIRE 2026 publications;
+source links and the limits of transferring their methods are recorded in PLAN. No dataset,
+weight, code or dependency download, new fitting/scoring, model promotion or push in this update.
+
+Critical distinction: E43 and E51 changed fit populations as well as views/calibration. E43 fitted
+8,844 parents/19,648 views versus E51's 5,978 parents/17,934 TRAIN views. The observed E49 AI
+recall loss is not explained by a controlled one-factor experiment. New-source E51 DEV success
+cannot erase the same-population E49 regression or establish improvement over an unmeasured
+comparator on that DEV. No new performance gain is claimed by this planning work.
+
+Rehashed the C3 manifest (`0b6656a2...91eb`), resolved all 18,154 historical TRAIN locators
+(9,073 REAL/9,081 AI), statted loose files and read 35 Parquet footers without opening image
+columns. Loose-image logical bytes total 42,135,059,473, excluding Parquet bodies. Compact audit:
+`evidence/e53_local_inventory_plan.json`. This proves availability only; latest role, licence,
+source, body-hash and duplicate checks must precede admission. Old TRAIN is not automatically
+eligible now and cannot become an independent final. DATASETS records exact source counts.
+
+PLAN now defines E53 as research, leaving E52 as the independent final: admit existing TRAIN;
+run a bounded data-pool x compression/resize-order study with fold-refitted comparators; reject
+REAL gains accompanied by AI recall loss; consider restricted DINO adaptation only if the cheap
+study fails; freeze before diagnostic regression and a genuinely independent final. Existing
+class/source balance, Q75 and intermediate/texture features are acknowledged as already present.
+All selection stays inside newly partitioned eligible TRAIN. Previously trained heads cannot be
+used as leakage-free out-of-fold baselines or teachers. Statistical uncertainty is not a licence
+to call an unproven no-loss result equivalent. If local independent final data is insufficient,
+stop at an acquisition specification without downloading. Module 2 protections remain unchanged.
+
+Planning validation passed: inventory JSON class/source totals, byte sum and manifest SHA match;
+HISTORY, EXPERIMENTS and DATASETS preserve their entire previous content as append-only prefixes;
+`git diff --check` is clean. This is a documentation/evidence-only change, so the model test suite
+was not rerun and no new numerical model result is implied.

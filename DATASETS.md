@@ -1900,3 +1900,37 @@ balanced accuracy is 92.85%/92.08%; REAL false-AI 1.67%/1.97%, AI recall 87.38%/
 Raw score SHA `088718f8...724be`. This population is now consumed DEVELOPMENT and remains forbidden
 from future TRAIN/CAL or a relabelled E52 final. IEEE native/worst-device proof is still unavailable;
 positive results here do not override the weaker consumed-E49 native/transport results. No download.
+
+### E53 planning inventory — existing bytes only (2026-09-09)
+
+Purpose: identify plausible balanced REAL/AI training expansion without downloading or contaminating
+tests. Rehashed `/Volumes/LaCie/pixelproof-datasets/e32/c3_role_manifest.json`:
+`0b6656a25762dbb097d18634d4193282e7c03d2e6bbe257f31471434f67b91eb`, 13,430,131 bytes.
+All historical TRAIN locators are physically resolvable, but **not yet E53-admitted**:
+
+| Source | Historical TRAIN parents | Reason to consider / boundary |
+|---|---:|---|
+| CSAFE S21 | 3,197 REAL | Native phone pipelines; preserve physical-device groups |
+| FODB | 3,078 REAL | Native camera/content diversity; scene splits do not hold out cameras |
+| VISION | 2,798 REAL | Additional devices; preserve device/source roles |
+| Community Forensics Small AI | 1,781 AI | 240 historical TRAIN generator identities, not 4,803 local generators |
+| FLUX.2 Klein 9B | 1,788 AI | Modern-family replay; shared prompts stay grouped |
+| GPT Image 1 | 1,782 AI | Preserve eligible commercial-family examples, not proof about newer GPT models |
+| Nano Banana | 1,782 AI | Preserve eligible family coverage; check prompt provenance |
+| Nano Banana Pro (ash) | 160 AI | Small family supplement, not enough alone to establish broad robustness |
+| Qwen Image 2512 | 1,788 AI | Additional family; shared prompts stay grouped |
+| **Total** | **18,154: 9,073 REAL +9,081 AI** | **Historical role counts, not approved new training or test counts** |
+
+Method: reuse the existing E32 source-path/Parquet mappings, stat loose files, and validate row
+indices against 35 local Parquet footers. No image column decoded, new score produced or remote
+body requested. Loose files sum to 42,135,059,473 logical bytes (~42.14 decimal GB), excluding
+Parquet image bodies; this is not the full disk size or the E53 training budget. Evidence:
+`evidence/e53_local_inventory_plan.json`. Existing source terms/receipts remain authoritative.
+
+Before reuse, intersect with all subsequent CAL/DEV/test/reserve and duplicate-component protection;
+verify body hashes, decoding, class orientation, source terms and group metadata. Later exclusion
+supersedes historical TRAIN eligibility. Keep the 4,534 C3 CAL parents separate. E51 DEV, E49,
+ITW-SM, DDA test pairs and Module 2 protected data cannot become convenient training negatives.
+`theminji` and unofficial `34data` provenance/licence restrictions from the later E32 audit still
+override the earlier E31 representation-only recommendations. CF's FFHQ REAL half is not a
+substitute for everyday native-camera photographs. No additional data was downloaded in this audit.

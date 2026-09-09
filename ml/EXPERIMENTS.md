@@ -4236,3 +4236,37 @@ Raw scores `088718f8...724be`, manifest `1b1882f3...ea224`, A `60d56c0b...b6b39`
 DEV is now consumed and forbidden from later TRAIN/CAL/E52. The E49 diagnostic failure remains
 valid; no serving promotion or universal-detector claim. Next research is pre-fit TRAIN-only
 source-held-out transport robustness, with AI recall guarded; no old/fresh test used for fitting.
+
+### E53 — TRAIN-only data/transport research protocol (2026-09-09, PLANNED, not run)
+
+Question: can authentic false accusations decrease without reducing AI detection, rather than
+merely raising balanced accuracy through an asymmetric tradeoff? E49 original E43→E51-A has
+REAL FPR 39.1%→15.9% but AI recall 94.3%→77.5%; AUC also decreases. E51's distinct DEV
+population is encouraging but does not isolate the cause or supply a paired E43 comparison.
+E43/E51 fit populations differ (8,844 versus 5,978 parents); the next experiment must separate
+data changes from transformations. There are no new trained candidates or test scores in E53.
+
+Primary references and detailed scope are in PLAN's E53 section: B-Free for shortcut control,
+Community Forensics for generator diversity, NTIRE 2026 for degradation robustness, Effort for
+preserving pretrained information during adaptation. None guarantees local improvement; plain
+JPEG augmentation is not B-Free, and LoRA is not Effort's orthogonal decomposition.
+
+Proposed bounded design: existing-eligible versus expanded-eligible TRAIN pools, each with the
+old three views versus clean + resize/JPEG order variants. Fixed DINOv2-S representation and
+C=0.01 weighted logistic head; at most 16,000 admitted parents. Before fitting, freeze complete
+role/duplicate/source admission, group-held-out outer folds, inner CAL, quotas, variant details,
+feature hashes and support requirements. Refit all heads/scalers inside folds. Do not reuse a
+historical classifier that already saw validation rows as an honest out-of-fold comparator.
+
+Advance only with lower REAL false-AI and nonnegative AI recall point deltas on both original/Q75
+and adequately supported declared AI sources, plus unchanged absolute gates. Report paired,
+scene/prompt-cluster uncertainty; the pooled statistical no-loss/improvement claim requires
+simultaneous bounds across both transports' AI and REAL deltas as specified in PLAN. Source
+point guards do not prove source-level equivalence. Development selection cannot certify final
+success. Retain current serving on failure/inconclusive results. Adapter research is conditional
+and must receive its own frozen hyperparameters before execution, not post-test model shopping.
+
+All old tests, E51 CAL and consumed IEEE/Datapoint DEV remain protected from fitting/selection.
+E52 requires a genuinely independent local population; no available population means no final
+claim and no download under the current constraint. Rechecking 18,154 historical TRAIN locators
+is recorded in `evidence/e53_local_inventory_plan.json`; it is not a fresh training admission.

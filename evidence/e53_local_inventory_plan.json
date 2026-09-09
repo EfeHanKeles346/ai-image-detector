@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "state": "planning_only_not_training_admission",
+  "scope": "Existing C3 TRAIN locator/stat and Parquet footer checks; no image payloads decoded or rescored",
+  "manifest_path": "/Volumes/LaCie/pixelproof-datasets/e32/c3_role_manifest.json",
+  "manifest_sha256": "0b6656a25762dbb097d18634d4193282e7c03d2e6bbe257f31471434f67b91eb",
+  "manifest_bytes": 13430131,
+  "historical_train_rows": 18154,
+  "historical_train_real": 9073,
+  "historical_train_ai": 9081,
+  "available_train_locators": 18154,
+  "missing_or_out_of_bounds_locators": 0,
+  "parquet_shards_footers_checked": 35,
+  "loose_file_bytes_excluding_parquet_payloads": 42135059473,
+  "sources": [
+    {"source": "communityforensics-ai-local", "label": "ai", "train_rows": 1781, "available_locators": 1781, "locator_kind": "parquet_row"},
+    {"source": "csafe-mcsidb-s21", "label": "real", "train_rows": 3197, "available_locators": 3197, "loose_file_bytes": 10548086013},
+    {"source": "flux2-klein-9b", "label": "ai", "train_rows": 1788, "available_locators": 1788, "loose_file_bytes": 2618870507},
+    {"source": "forchheim-fodb", "label": "real", "train_rows": 3078, "available_locators": 3078, "loose_file_bytes": 12184043803},
+    {"source": "gpt-image-1", "label": "ai", "train_rows": 1782, "available_locators": 1782, "loose_file_bytes": 3587757574},
+    {"source": "nano-banana-local", "label": "ai", "train_rows": 1782, "available_locators": 1782, "locator_kind": "parquet_row"},
+    {"source": "nano-banana-pro-ash-local", "label": "ai", "train_rows": 160, "available_locators": 160, "loose_file_bytes": 277220332},
+    {"source": "qwen-image-2512", "label": "ai", "train_rows": 1788, "available_locators": 1788, "loose_file_bytes": 4258821005},
+    {"source": "vision-base-native", "label": "real", "train_rows": 2798, "available_locators": 2798, "loose_file_bytes": 8660260239}
+  ],
+  "method": "Rehashed C3 JSON; filtered role=TRAIN; reused e32_r0_input.source_path/PARQUET_SOURCES; statted loose files; checked each Parquet row index against its local footer row count, without reading image columns.",
+  "limitations": [
+    "Availability does not prove original body hashes, decodability, label correctness, licence eligibility or current role admission.",
+    "Later CAL/DEV/test/reserve and duplicate-component exclusions must override historical TRAIN roles before any E53 fit.",
+    "FODB scene-disjoint roles are not camera-disjoint.",
+    "These are historical training candidates, not fresh final-test samples.",
+    "Byte sum excludes Parquet payloads and is not a current full-disk inventory."
+  ],
+  "image_or_weight_downloads": 0,
+  "new_model_scores": 0,
+  "new_training_runs": 0,
+  "serving_changed": false
+}
