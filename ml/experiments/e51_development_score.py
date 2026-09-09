@@ -34,8 +34,13 @@ def validate_rows(rows):
 
 def intervals(rows,scores,threshold):
     labels = np.asarray([r['label'] for r in rows])
-    real_strata = [np.asarray([i for i,r in enumerate(rows) if r['label']==0 and r['transport_cell']==cell])
-                   for cell in ('unaltered','postprocessed')]
+    real_strata = []
+    for cell in ('unaltered','postprocessed'):
+        clusters = {}
+        for i,r in enumerate(rows):
+            if r['label']==0 and r['transport_cell']==cell:
+                clusters.setdefault(r.get('scene_cluster',f'row:{i}'),[]).append(i)
+        real_strata.append(list(clusters.values()))
     ai_clusters = []
     for category in sorted({r['prompt_category'] for r in rows if r['label']==1}):
         ordinals = sorted({r['prompt_ordinal'] for r in rows if r['label']==1 and r['prompt_category']==category})
@@ -48,7 +53,7 @@ def intervals(rows,scores,threshold):
     values = []
     predicted = scores>=threshold
     for _ in range(2000):
-        real = np.concatenate([rng.choice(s,len(s),replace=True) for s in real_strata])
+        real = np.concatenate([np.concatenate([s[j] for j in rng.integers(0,len(s),len(s))]) for s in real_strata])
         ai = np.concatenate([b[rng.integers(0,len(b),len(b))].ravel() for b in ai_clusters])
         fp,tp = predicted[real].mean(),predicted[ai].mean()
         values.append([fp,tp,(1-fp+tp)/2])
@@ -139,7 +144,7 @@ def run(batch_size=16):
     report = {'state':'E51_fresh_DEVELOPMENT_complete_no_retuning','candidate':'A','contract':contract,
               'raw_score_sha256':dino._sha256_file(partial),'parents':3440,'observations':6880,
               'conditions':results,'observed_checks_passed':all(r['observed_group_checks_passed'] for r in results.values()),
-              'limits':manifest['limits']+['Bootstrap groups each AI prompt across its five generators; real scene dependence remains unknown.'],
+              'limits':manifest['limits']+['Bootstrap groups detected REAL scenes and each AI prompt across its five generators; additional real scene dependence remains unknown.'],
               'independent_final_passed':False,'serving_changed':False}
     _write_atomic(OUT/'result.json',report); _write_atomic(EVIDENCE,report)
     return report

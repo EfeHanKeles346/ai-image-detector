@@ -4198,3 +4198,12 @@ group is 30% original and 55% Q75; worst AI group recall 61.25%/63.125%. Both fa
 No selection/refit from these rows; A stays the CAL-selected research artifact, serving unchanged.
 Fresh DEV scoring is preregistered independently of these diagnostic metrics, using A only and
 the frozen CAL threshold; 2,000 bootstrap replicates keep the five-model shared AI prompt grouped.
+
+DEV score-blind admission stop: audit `975569d3...258e8`, 2 protected-match observations (one AI
+parent), 56 directed/transport internal matches (seven unordered parent pairs: five REAL, two AI).
+No exact byte/pixel matches, no protected REAL match, model_scores_created=0. Visual review of
+all ten IEEE images supports grouping four same-scene variant pairs; the grey pair is conservatively
+grouped without claiming confirmed scene identity. The new grouping amendment keeps every image
+and label, reduces detected REAL independence units 2,640→2,635, and makes interval resampling
+cluster-aware. It cannot waive protected overlap or alter original/Q75 populations or any cutoff.
+Before admission, repeat the canonical screen and require the preserved match multiset exactly.

@@ -5263,3 +5263,15 @@ Fresh DEV scorer is fixed before its first score: A only, same CAL cut and admit
 per-transport metrics, source errors, paired-prompt bootstrap (each shared AI prompt is one
 five-generator cluster). IEEE hidden device ids remain an unverified dimension even if observable
 group checks pass. The existing benchmark result is archived in `evidence/e51_e49_regression.json`.
+
+DEV admission v1 stopped safely with zero model scores. Canonical audit of 7,120 reserve
+observations against 122,782 protected bodies found one AI parent perceptually matching a protected
+body and seven internal unordered candidate pairs (five IEEE REAL, two AI). There are no exact
+encoded/pixel duplicates and no protected REAL match. Audit `975569d3...258e8` is preserved.
+All ten flagged IEEE bodies were visually inspected before scores: four pairs show the same scene
+with capture/processing differences, and a smooth grey pair is ambiguous. A score-blind grouping
+amendment now retains all 2,640 REAL images but conservatively groups those pairs into 2,635 detected
+scene clusters. This repairs statistical independence accounting, not the classifier or threshold.
+The original audit match sets must reproduce exactly; external REAL overlap still blocks admission.
+AI shared-prompt exclusions/reserves remain unchanged. DEV scoring intervals are amended to retain
+REAL scene clusters as well as five-generator AI prompt clusters; all metrics/cuts/rows remain fixed.

@@ -62,6 +62,14 @@ REAL FPR 39.10%→15.90%, AI recall 94.30%→77.50%; Q75 BA 73.25%→75.70%, REA
 Keep A as the CAL-selected research artifact and current serving unchanged; do not promote or
 choose B using this regression. Next remains the already-bound fresh DEV, not an E49 threshold sweep.
 
+DEV realization v1 stopped before scores on five internal IEEE near-duplicate pairs (no IEEE
+cross-role/protected match). Score-blind review inspected all ten bodies: four visibly same-scene
+variant pairs, one ambiguous smooth-grey pair. Preserve the failed audit `975569d3...258e8` and
+amend grouping, not model/labels/rows: retain all 2,640 IEEE images, conservatively use 2,635 detected
+scene clusters for uncertainty, reverify identical old match sets, retain the AI shared-prompt
+reserve policy and all 6,880 planned observations. Protected overlap still cannot be waived.
+No DEV score existed when this amendment was decided; candidate A and every cut/gate stay fixed.
+
 ## Current execution slice — E41 external proof, then E42 only if needed (2026-08-28)
 
 The goal is **success**, defined as a detector that survives independent, source-aware tests while
