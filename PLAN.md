@@ -5,6 +5,29 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Active checkpoint — E51 offline training and comparison (2026-09-09)
+
+The older E41–E50 sections below are historical execution context, not a request to repeat their
+consumed finals. Current order: finish canonical protected/reserve checks, bind admissible E51
+TRAIN/CAL, extract features, fit A/B, select on CAL, then evaluate without further tuning.
+
+- Before scores, conservatively exclude a whole E51 parent (including every paired child) when the
+  fixed protected-identity/perceptual checks flag it. No label changes, no score-dependent replacement,
+  no downloads. Preserve the original frozen manifests. Abort rather than continue if exclusions
+  exceed 5% of either role, any CAL device falls below 30 originals, or any AI CAL source below 15.
+- Freeze three equal-weight TRAIN views per parent: clean, its existing E42 deterministic transport,
+  and full-image Q75 before the unchanged E42 cap/crops. CAL uses its already-bound original/Q75
+  files. Reuse only hash-pinned frozen E42 DINO features whose exact parent/condition/label matches;
+  no previous classifier weights are reused. Cache new features in restartable, input-bound chunks.
+- Fit only fixed A/B heads (C=0.01), train-only weighted standardization, class/source/parent balance,
+  seeds 42/43/44. Report that deterministic lbfgs seed repetitions are not independent data trials.
+  Choose the smallest threshold satisfying both transports' 10% pooled/20% worst-device REAL FPR
+  limits. Select a REAL/uncertain band on CAL only, subject to 95% covered accuracy; unchanged AI
+  recall/AUC/coverage gates still decide whether either candidate is eligible. Prefer A if both pass.
+- Freeze artifacts before any old-test rerun. An E49 paired comparison is diagnostic/regression,
+  never a fresh final or a source of new thresholds. Keep the serving model unchanged; fresh
+  DEVELOPMENT/E52 policy remains as specified below. No image or model-weight download is allowed.
+
 ## Current execution slice — E41 external proof, then E42 only if needed (2026-08-28)
 
 The goal is **success**, defined as a detector that survives independent, source-aware tests while
@@ -1166,6 +1189,13 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       by filename. Preserve the frozen manifests, emit a separate fail-closed readiness receipt,
       and keep training disabled on unresolved overlaps. Explicitly account for E49 unused reserves;
       passing only a TRAIN/CAL check is not permission to skip protected-role admission.
+      **Reserve closure policy (before scores):** join metadata-only parent references to already
+      protected bodies, include full local Commons/OpenFake/Dotting/StyleGAN2 reserves, and include
+      superseded E49-v1 identities. An identity never downloaded is still forbidden, but cannot be
+      pixel-compared offline; report that limitation, rather than pretending its pixels were
+      checked or demanding a new download. All available reserve bodies must be checked. No
+      E51 input may share any reserved identity/known encoded hash; no unexplained body-bearing
+      reference may disappear from coverage. This is admission accounting, not a relaxed model gate.
       **2026-09-09 offline continuation:** the full 9,098-observation pre-fit check completed,
       with zero cross-role matched parent pairs (receipt `02180078...77a2`). Archive it without
       repeating or weakening the check. Next, resolve the protected populations from existing

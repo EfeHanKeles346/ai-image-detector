@@ -4121,3 +4121,20 @@ was scored or selected using model output.
 - Verification: 512 Python tests, compilation and whitespace checks pass. No E51 real-data feature
   extraction, fitting, threshold search, DEVELOPMENT rerun or demo promotion took place. The old
   comprehensive final remains consumed; any eventual rerun must be labelled diagnostic/regression.
+
+### E51 reserve closure and pre-fit method freeze — 2026-09-09
+
+- Reserve report `2c2cdb07...9ad36`: 9,800/9,800 references joined, 434 additional local bodies,
+  zero supplementary parent matches and identity overlaps. 419 never-downloaded superseded
+  Commons identities stay forbidden, with no claim of pixel coverage. No transfer was performed.
+- Before scores: exclude flagged whole parents at most 5% per TRAIN/CAL role, retain >=30 original
+  REALs/device across all 30 CAL devices and >=15 AI/source across all 18 groups. Preserve originals.
+- Fit fixed C=0.01 A/B using clean + fixed legacy transport + Q75 TRAIN views, balanced by class,
+  source and parent. Standardization sees TRAIN only; frozen backbone reuse is hash-bound.
+  CAL original/Q75 files are not recompressed. Source groups may be topics, not known generators.
+- Select the smallest common AI threshold satisfying pooled 10% /device 20% REAL FPR on both CAL
+  transports; choose the REAL band by >=95% covered accuracy and maximal minimum coverage.
+  All original AUC/BA/recall/worst-group/coverage gates remain mandatory; prefer A if both pass.
+- Repetitions: seeds 42/43/44 with deterministic lbfgs, reporting score differences, not claiming
+  independent stochastic replication. Checkpoint candidate artifacts/scores before any E49 access.
+- Verification: 523 tests pass. Main protected-query checks still pending; no E51 fit yet.

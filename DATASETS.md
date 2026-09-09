@@ -1868,3 +1868,12 @@ six existing RR test images exceeded its 100 MP safety cap. Those six exact SHA-
 general cap is disabled and no payload is downloaded. Their identities remain test-protected,
 not training candidates. The restarted comparison is still running; an available path or cached
 fingerprint alone is not reported as a completed separation result.
+
+E51 admission closure (2026-09-09): the completed protected-pixel report `2f070e7d...c1e54`
+verifies all 117,898 locations /117,888 distinct encoded bodies and all 9,098 TRAIN/CAL
+observations. Both new-source-versus-protected and all-E51-versus-E49 screens find zero matched
+parent pairs. Reserve report `2c2cdb07...9ad36` joins all 9,800 metadata references and adds
+434 byte-verified local reserve bodies, also with zero matches or reserved-identity hits.
+419 superseded never-downloaded Commons reserves remain identity-forbidden; their pixels are
+unavailable, not certified disjoint. These checks are duplicate screens, not proof of universal
+semantic independence or publisher-label correctness. No new data was downloaded.

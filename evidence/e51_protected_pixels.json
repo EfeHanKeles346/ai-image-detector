@@ -1,0 +1,28 @@
+{
+  "boundary": "Review candidates and remaining reserve identities before fitting; no label or model decision is inferred from perceptual matches.",
+  "canonical_version": "e51-prefit-rgb-lanczos-v1",
+  "image_bytes_downloaded": 0,
+  "large_protected_only_exceptions": {
+    "0546996836547dc4ccafc76ca1d0d351c749c8943212decfd215f669ef86a3c8": 178562880,
+    "71dde8f819a7bff749e66dd30761a28a5ae36ba3c4e67f3c63761d37c399cd46": 109721600,
+    "7c74e8fecf0336f43fdf130d3ba5815fd9b77b9402a9aae895a5a780fa52a36b": 109721600,
+    "884e6d8a3a76c64bb7f20dac03fe57ca6f9c990bc1aaa736b2a17c59c94db889": 134657146,
+    "9e8012f22251f348ff77dd68d39bbfef36ed63ef3e7c23fea5b25eb5bf95d001": 102960000,
+    "e76b5f0ba9c1f524433d674a124d38bb8d42fbfbe8b1e6d89186c773efc015ec": 102960000
+  },
+  "locator_manifest_sha256": "a51cb45736641fa4e93c1d2171f17c06bf939cd4257effd78c8f6498c711eb81",
+  "matched_parent_pairs": {
+    "all_e51_vs_e49": 0,
+    "new_sources_vs_protected": 0
+  },
+  "metadata_only_rows_not_closed": 9800,
+  "model_scores_created": 0,
+  "report_sha256": "2f070e7db188f03f79edcd436b2587fd59cabfceeea8f31d5e7dc603fa7c1e54",
+  "schema_version": 1,
+  "state": "protected_pixels_checked_review_required",
+  "training_authorized": false,
+  "unique_e49_bodies": 5599,
+  "unique_protected_bodies": 117888,
+  "verified_locations": 117898,
+  "verified_query_observations": 9098
+}

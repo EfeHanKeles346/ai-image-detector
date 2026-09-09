@@ -5182,3 +5182,25 @@ model, demo, thresholds and benchmark scores are unchanged. Protected/reserve ad
 open; after closure, fit and select on CAL, use fresh DEVELOPMENT once, and label any old-test rerun
 as regression/diagnostic evidence rather than a new independent final. Work is committed locally;
 no GitHub push is attempted while the user reports a disconnected/mobile connection.
+
+### 2026-09-09 — E51 reserve closure and fixed offline training method
+
+The reserve audit is complete: all 9,800 metadata-only references joined to known local bodies;
+434 supplementary bodies were byte-verified and canonically compared, with zero matched E51
+parent pairs and zero reserved-identity hits. Report SHA-256 `2c2cdb07...9ad36`. The 419 superseded
+Commons identities never downloaded remain forbidden; their unavailable pixels are explicitly
+not claimed as checked. Zero image bytes downloaded. The main 117,898-location protected audit
+has verified its body inventory and is completing the 9,098 query observations.
+
+Before model scores, PLAN now fixes conservative whole-parent exclusions (maximum 5% per role,
+with CAL device/source minimums), three symmetric TRAIN views, and exactly two C=0.01 logistic
+heads: frozen DINO global/texture A, or A plus 32 residual/DCT features B. Train-only weighted
+standardization and class/source/parent weighting are used. CAL alone sets the common
+original/Q75 REAL-safe threshold and selective band; the unchanged AI and coverage gates still
+must pass. Three deterministic lbfgs seed repetitions are not three independent scientific trials.
+
+Added admission, restartable hash-bound extraction, per-candidate fitting checkpoints, and
+tests for paired-parent removal, threshold ties, invalid scores, missing classes and prevention
+of double JPEG compression. **523 Python tests pass.** No candidate has been fitted at this
+checkpoint. Any later E49 rerun is regression-only, cannot select the winner, and cannot become
+another independent final. Serving remains unchanged; commits remain local under mobile data.

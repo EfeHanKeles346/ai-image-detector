@@ -1,0 +1,24 @@
+{
+  "additional_local_bodies": 434,
+  "image_bytes_downloaded": 0,
+  "input_sha256": {
+    "e49/open_components_contract.json": "c6f2cfb054a52816581d523b3d3ef04311add28487a5cc9ed6d4150d6b27f794",
+    "e49/open_components_contract_v2.json": "1d4e184c27cb87cf832045a23b6966f382673c3bcd8342a900c07130bd9182aa",
+    "e49/open_components_v2/commons_download_receipt_unscored.json": "2511f0ad0ad3f22e72ab5bf04da69fed0e9efac2bb4768d5365cf734fb5a7e04",
+    "e49/openfake/download_receipt_unscored.json": "4dfb942c215bbe15e15aea81e9a6c6873670a0bb5019c1c64f9672fe34b326c2",
+    "e49/openfake/source_contract_e49c_unscored.json": "0abae56af862c9b402ef5ef594a21181cbbb7f72ba7495a491b0389bfdfcd702",
+    "e49_d1_dotting/source_contract.json": "170f70db128becfe9986dffc6a3e150ec11b182d51ee496dc40ac530204eed36"
+  },
+  "joined_metadata_rows": 9800,
+  "limitation": "Superseded never-downloaded Commons reserves remain identity-forbidden; their unavailable pixels are not claimed as checked. Requires completed main protected-pixel audit and overlap review.",
+  "metadata_rows_total": 9800,
+  "model_scores_created": 0,
+  "report_sha256": "2c2cdb070b6f9815a2c119b4aadee0c69dbe0d1e239f55916c40b99dc089ad36",
+  "reserved_identity_overlap": [],
+  "schema_version": 1,
+  "state": "reserve_identity_and_local_pixel_audit_complete",
+  "supplementary_matched_parent_pairs": 0,
+  "training_authorized": false,
+  "unjoined_metadata_rows": [],
+  "unmaterialized_superseded_commons_count": 419
+}
