@@ -1,0 +1,13 @@
+{
+  "DINO_dimensions": 3072,
+  "admission_sha256": "c406edb6a1a1a3cc2feea0829fbada73b09a02c49c1f01e58259dd4a7eb7a39b",
+  "device": "mps",
+  "feature_binding": "f6c956164d004824ef9cca7b04b10b3df26e890ab2e71a824f70f10c7479f816",
+  "feature_sha256": "55f92db299aa6cf889ae1a6ab3425d6d9f315527b481a531feea77690c982d0a",
+  "model_scores_created": 0,
+  "residual_dimensions": 32,
+  "reused_old_DINO_views_this_run": 8916,
+  "schema_version": 1,
+  "state": "features_complete_before_fit",
+  "views": 21054
+}

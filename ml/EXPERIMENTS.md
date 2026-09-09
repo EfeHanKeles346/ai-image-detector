@@ -4150,3 +4150,8 @@ within max absolute score difference 5e-5. Report AUC/BA/FPR/recall/coverage, co
 plus 2,000 paired parent-bootstrap old/new deltas within fixed source strata per transport.
 No bootstrap threshold refits, no pooling paired images as independent parents, no candidate
 selection from E49. Code tests pass; feature extraction is underway and no E51 fit exists yet.
+
+Feature completion: 21,054x3,072 DINO and 21,054x32 residual matrices, archive
+`55f92db2...82d0a`, binding `f6c95616...9f816`. Reused 8,916 frozen E42 backbone views only;
+12,138 new DINO views computed on MPS. Model scores still zero at this checkpoint. The fixed
+six head fits (A/B x42/43/44) are now running with local dependencies and offline environment.

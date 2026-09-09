@@ -5217,3 +5217,9 @@ selection. It binds artifacts/CAL/manifest/prior-score hashes and reproduces the
 include per-source errors and paired source-stratified parent-bootstrap differences. The 2,000
 resamples describe this fixed test population, not unseen-publisher uncertainty. Regression is
 allowed even for a CAL-rejected candidate solely to explain failure; fresh DEV stays unopened.
+
+Feature extraction completed offline on MPS: 21,054 views, 3,072 DINO +32 residual dimensions;
+8,916 hash-pinned historical backbone views reused and 12,138 newly computed. Feature archive
+SHA-256 `55f92db2...82d0a`, admission `c406edb6...7a39b`. No classifier scores existed at the feature
+freeze. All 526 Python tests pass, including an actual synthetic-data fit and interrupted-result
+recovery that proves completed candidate checkpoints do not retrain. Fixed real-data fitting started.
