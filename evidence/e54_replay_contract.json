@@ -1,0 +1,28 @@
+{
+  "code_sha256": "7f8bddb891e531d86e880e80fe3d9de55286d73accdf5256810516b0d06c4bbb",
+  "contract_sha256": "075d767ecc1f4ddf19a55c838087076139907a6ee30a83de9b6f770aaa72ad27",
+  "independent_test_opened": false,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e53_adaptation_probe.py": "1a726f41236e754b5cd1fe496baac0a090458891936408ff967248fbac4f3b82",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e54_adapt.py": "f7625dc924b81bf52f91668f7cbd5d47b9afa3f65702dd5a49a31a7b2fbb982b",
+    "/Volumes/LaCie/pixelproof-datasets/e54/result.json": "ba31393c7a41a73a56f04b57f46499169f55e8e782f5e1d8c1f1314c4c74f28d",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/head_only_fold0.json": "309938ce726b92571b190ae9f766581268d9cd89866433bf6cd768f44627df30",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/head_only_fold0.pt": "ab2f05cc26ad2713dca29dbbfc9f063b6ed0f9ffa0d6580f53cac453142c7cd8",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/head_only_fold1.json": "b51c224efc15bf3ab4cd8d9ee22be9c7abd823b8dea3abe663be94bdaf6f0004",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/head_only_fold1.pt": "f106e67953e4ef93c52c88cad6524dbefbb68a6533e1ea34a944ee439e79a80b",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/head_only_fold2.json": "aefb9f7d3ff199d401ece83c7dac8426e189d04e34afbdc04474bd7e91c0001b",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/head_only_fold2.pt": "32fc911f377e3a512ff194dcdf72a66e824eabf8df4ae773cc4c443a0d2d2c43",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/last2_anchor_fold0.json": "b82f1f66173e089067bcceec5746f8d360ca9263a54a34a52d2a6350a47127dd",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/last2_anchor_fold0.pt": "8593829a25bc962e0d5e83a69851e7af01c0e7099995284a8401d97b59c74424",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/last2_anchor_fold1.json": "1b5178de85b96c2974e94830f2b53a5e43134989b518b301d4f151c1c624dbe8",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/last2_anchor_fold1.pt": "f5006bce12a06f8ad847a2e2585bc5ca6c7ffce31d5532e75f4ff669c28fe134",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/last2_anchor_fold2.json": "6f973089153b97facf77dbc06df6ec399176eee1e18913f9e540ff366f1aa47c",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training/last2_anchor_fold2.pt": "6f4a2719d05142f1c4eeab6d39a8a42982792ef7eb09a0bae8f7392ef0fdfe86",
+    "/Volumes/LaCie/pixelproof-datasets/e54/training_contract.json": "f706896fbcac0a70320fd5d1b4a1a2638264d73b4ac0c629eace48e0c10512b1"
+  },
+  "max_decision_changes": 0,
+  "score_tolerance": 5e-05,
+  "serving_changed": false,
+  "state": "E54_replay_frozen"
+}

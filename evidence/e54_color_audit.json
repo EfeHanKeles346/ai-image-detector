@@ -1,0 +1,385 @@
+{
+  "classifier_changed": false,
+  "contract_sha256": "9c1f2b8abd9f6ecda064545e331777869a2fe88991f9ef8c8189ed13b09aeb91",
+  "descriptors_sha256": "f165e4540d3c3284c65b3d57190278e77dd264a08190646c07e9ba8734d1e10d",
+  "final_reserves_opened": false,
+  "fixed_prediction_errors": {
+    "full_expanded3": {
+      "clean:0:near_monochrome": {
+        "errors": 169,
+        "parents": 230
+      },
+      "clean:0:other": {
+        "errors": 618,
+        "parents": 3805
+      },
+      "clean:1:near_monochrome": {
+        "errors": 21,
+        "parents": 34
+      },
+      "clean:1:other": {
+        "errors": 632,
+        "parents": 1909
+      },
+      "q75:0:near_monochrome": {
+        "errors": 170,
+        "parents": 230
+      },
+      "q75:0:other": {
+        "errors": 587,
+        "parents": 3805
+      },
+      "q75:1:near_monochrome": {
+        "errors": 20,
+        "parents": 34
+      },
+      "q75:1:other": {
+        "errors": 658,
+        "parents": 1909
+      }
+    },
+    "head_only": {
+      "clean:0:near_monochrome": {
+        "errors": 166,
+        "parents": 230
+      },
+      "clean:0:other": {
+        "errors": 620,
+        "parents": 3805
+      },
+      "clean:1:near_monochrome": {
+        "errors": 20,
+        "parents": 34
+      },
+      "clean:1:other": {
+        "errors": 628,
+        "parents": 1909
+      },
+      "q75:0:near_monochrome": {
+        "errors": 168,
+        "parents": 230
+      },
+      "q75:0:other": {
+        "errors": 584,
+        "parents": 3805
+      },
+      "q75:1:near_monochrome": {
+        "errors": 20,
+        "parents": 34
+      },
+      "q75:1:other": {
+        "errors": 658,
+        "parents": 1909
+      }
+    },
+    "last2_anchor": {
+      "clean:0:near_monochrome": {
+        "errors": 153,
+        "parents": 230
+      },
+      "clean:0:other": {
+        "errors": 553,
+        "parents": 3805
+      },
+      "clean:1:near_monochrome": {
+        "errors": 20,
+        "parents": 34
+      },
+      "clean:1:other": {
+        "errors": 587,
+        "parents": 1909
+      },
+      "q75:0:near_monochrome": {
+        "errors": 155,
+        "parents": 230
+      },
+      "q75:0:other": {
+        "errors": 525,
+        "parents": 3805
+      },
+      "q75:1:near_monochrome": {
+        "errors": 21,
+        "parents": 34
+      },
+      "q75:1:other": {
+        "errors": 624,
+        "parents": 1909
+      }
+    }
+  },
+  "fold_exposure": [
+    {
+      "fold": 0,
+      "groups": {
+        "CAL:0": {
+          "near_monochrome": 0,
+          "parents": 471
+        },
+        "CAL:1": {
+          "near_monochrome": 6,
+          "parents": 77
+        },
+        "EXCLUDED:1": {
+          "near_monochrome": 30,
+          "parents": 652
+        },
+        "FIT:0": {
+          "near_monochrome": 9,
+          "parents": 5314
+        },
+        "FIT:1": {
+          "near_monochrome": 74,
+          "parents": 2756
+        },
+        "VALIDATION:0": {
+          "near_monochrome": 229,
+          "parents": 1250
+        },
+        "VALIDATION:1": {
+          "near_monochrome": 10,
+          "parents": 1110
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "groups": {
+        "CAL:0": {
+          "near_monochrome": 1,
+          "parents": 320
+        },
+        "CAL:1": {
+          "near_monochrome": 6,
+          "parents": 138
+        },
+        "EXCLUDED:0": {
+          "near_monochrome": 8,
+          "parents": 1000
+        },
+        "EXCLUDED:1": {
+          "near_monochrome": 40,
+          "parents": 1000
+        },
+        "FIT:0": {
+          "near_monochrome": 229,
+          "parents": 4015
+        },
+        "FIT:1": {
+          "near_monochrome": 67,
+          "parents": 2977
+        },
+        "VALIDATION:0": {
+          "near_monochrome": 0,
+          "parents": 1700
+        },
+        "VALIDATION:1": {
+          "near_monochrome": 7,
+          "parents": 480
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "groups": {
+        "CAL:0": {
+          "near_monochrome": 0,
+          "parents": 1700
+        },
+        "CAL:1": {
+          "near_monochrome": 7,
+          "parents": 480
+        },
+        "EXCLUDED:0": {
+          "near_monochrome": 8,
+          "parents": 3000
+        },
+        "EXCLUDED:1": {
+          "near_monochrome": 86,
+          "parents": 2652
+        },
+        "FIT:0": {
+          "near_monochrome": 229,
+          "parents": 1250
+        },
+        "FIT:1": {
+          "near_monochrome": 10,
+          "parents": 1110
+        },
+        "VALIDATION:0": {
+          "near_monochrome": 1,
+          "parents": 1085
+        },
+        "VALIDATION:1": {
+          "near_monochrome": 17,
+          "parents": 353
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Error-selected motivation and reused TRAIN validation: exploratory association only.",
+    "Global crop monochrome indicator is not a source truth label or an authenticity rule.",
+    "Correlation with error cannot isolate colour from source/content/processing confounds."
+  ],
+  "new_model_scores": 0,
+  "result_sha256": "ba31393c7a41a73a56f04b57f46499169f55e8e782f5e1d8c1f1314c4c74f28d",
+  "source_counts": {
+    "0:SCIMD-17:base": {
+      "near_monochrome": 0,
+      "parents": 1700
+    },
+    "0:e32:csafe-mcsidb-iphone14:base": {
+      "near_monochrome": 0,
+      "parents": 160
+    },
+    "0:e32:csafe-mcsidb-s21:base": {
+      "near_monochrome": 1,
+      "parents": 160
+    },
+    "0:e32:csafe-mcsidb-s21:native_added": {
+      "near_monochrome": 8,
+      "parents": 1000
+    },
+    "0:e32:forchheim-fodb:base": {
+      "near_monochrome": 0,
+      "parents": 154
+    },
+    "0:e32:forchheim-fodb:native_added": {
+      "near_monochrome": 0,
+      "parents": 1000
+    },
+    "0:e32:vision-base-native:base": {
+      "near_monochrome": 0,
+      "parents": 140
+    },
+    "0:e32:vision-base-native:native_added": {
+      "near_monochrome": 0,
+      "parents": 1000
+    },
+    "0:e36:device_001:base": {
+      "near_monochrome": 0,
+      "parents": 100
+    },
+    "0:e36:device_002:base": {
+      "near_monochrome": 0,
+      "parents": 100
+    },
+    "0:e36:device_003:base": {
+      "near_monochrome": 0,
+      "parents": 100
+    },
+    "0:e36:device_005:base": {
+      "near_monochrome": 0,
+      "parents": 100
+    },
+    "0:e36:device_009:base": {
+      "near_monochrome": 0,
+      "parents": 71
+    },
+    "0:rr:rrdataset_real_pool:base": {
+      "near_monochrome": 229,
+      "parents": 1250
+    },
+    "1:e32:communityforensics-ai-local:base": {
+      "near_monochrome": 2,
+      "parents": 69
+    },
+    "1:e32:communityforensics-ai-local:native_added": {
+      "near_monochrome": 8,
+      "parents": 500
+    },
+    "1:e32:flux2-klein-9b:base": {
+      "near_monochrome": 6,
+      "parents": 69
+    },
+    "1:e32:flux2-klein-9b:native_added": {
+      "near_monochrome": 38,
+      "parents": 500
+    },
+    "1:e32:gpt-image-1:base": {
+      "near_monochrome": 3,
+      "parents": 69
+    },
+    "1:e32:gpt-image-1:native_added": {
+      "near_monochrome": 8,
+      "parents": 500
+    },
+    "1:e32:nano-banana-local:base": {
+      "near_monochrome": 5,
+      "parents": 69
+    },
+    "1:e32:nano-banana-local:native_added": {
+      "near_monochrome": 26,
+      "parents": 500
+    },
+    "1:e32:nano-banana-pro-ash-local:base": {
+      "near_monochrome": 1,
+      "parents": 8
+    },
+    "1:e32:nano-banana-pro-ash-local:native_added": {
+      "near_monochrome": 4,
+      "parents": 152
+    },
+    "1:e32:qwen-image-2512:base": {
+      "near_monochrome": 0,
+      "parents": 69
+    },
+    "1:e32:qwen-image-2512:native_added": {
+      "near_monochrome": 2,
+      "parents": 500
+    },
+    "1:e36:FLUX.2_max:base": {
+      "near_monochrome": 1,
+      "parents": 80
+    },
+    "1:e36:GLM-Image:base": {
+      "near_monochrome": 0,
+      "parents": 80
+    },
+    "1:e36:Qwen-Image-2.0-pro:base": {
+      "near_monochrome": 1,
+      "parents": 80
+    },
+    "1:e36:Seedream-5.0:base": {
+      "near_monochrome": 0,
+      "parents": 80
+    },
+    "1:e36:gpt-image-2:base": {
+      "near_monochrome": 2,
+      "parents": 80
+    },
+    "1:e36:nano-banana-2.0:base": {
+      "near_monochrome": 3,
+      "parents": 80
+    },
+    "1:rr:culture_and_religion:base": {
+      "near_monochrome": 0,
+      "parents": 105
+    },
+    "1:rr:everyday_life:base": {
+      "near_monochrome": 10,
+      "parents": 459
+    },
+    "1:rr:labor_and_production:base": {
+      "near_monochrome": 0,
+      "parents": 114
+    },
+    "1:rr:medical_and_public_health:base": {
+      "near_monochrome": 0,
+      "parents": 102
+    },
+    "1:rr:natural_disasters_and_accidents:base": {
+      "near_monochrome": 0,
+      "parents": 113
+    },
+    "1:rr:political_and_social_events:base": {
+      "near_monochrome": 0,
+      "parents": 93
+    },
+    "1:rr:war_and_conflict:base": {
+      "near_monochrome": 0,
+      "parents": 124
+    }
+  },
+  "state": "E54_exploratory_colour_coverage_complete"
+}

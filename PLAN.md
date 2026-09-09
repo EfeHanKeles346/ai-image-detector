@@ -5,7 +5,54 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E54 home study running (2026-09-09)
+## Current outcome and next actions — E54 measured; E55 colour ablation next (2026-09-09)
+
+E54 finishes all six fixed fits. Against the identical native fold baseline, last-two-block
+adaptation changes clean AI recall 66.39% -> 68.76%, REAL false-AI 19.50% -> 17.50%, balanced
+accuracy 73.44% -> 75.63%; Q75: AI 65.11% -> 66.80%, REAL false-AI 18.76% -> 16.85%, BA
+73.17% -> 74.98%. These are the same consumed TRAIN source-held-out parents, not a replacement
+measurement of full E43's 94.3% and not E52. Relative acceptance fails: several supported AI
+sources regress, and adjusted Q75 AI-preservation uncertainty includes loss. Absolute fold gates
+also fail. Saved-artifact replay is underway; no deployment or final-reserve opening is authorized.
+
+### E55 — class-symmetric grayscale coverage, fixed exploratory ablation
+
+E54 exploratory audit: 230/4,035 held-out REAL global crops are near-monochrome, with 229 in RR.
+The native baseline wrongly flags 169/230 clean versus 618/3,805 other REAL crops; restricted
+adaptation still flags 153/230 versus 553/3,805. Colour and source are confounded: this is a
+coverage hypothesis, not proof that grayscale causes errors. Never use colour as an authenticity
+rule, filter hard rows, or change labels.
+
+Preregister before extraction/fitting: same 11,630 admitted TRAIN parents, same E54 source-fold
+roles, all three existing FIT transports retained. Frozen pretrained DINOv2-S only, identical
+3-crop/4-block/3,072-feature layout. Convert each exact uint8 crop with Pillow RGB -> L -> RGB;
+extract a derivative feature for every existing view. This is class-identical processing, not new
+independent data. No CAL/VALIDATION derivative is used for fitting; their original clean/Q75
+features and the existing CAL threshold algorithm are unchanged.
+
+Two fixed arms, three folds each: (1) duplicate-view control, and (2) grayscale-view augmentation.
+Allocate 80% of each existing parent/source/class-balanced loss mass to original three views and
+20% to either exact duplicate views or grayscale counterparts. Fix total loss mass to the same
+base-FIT three-view count used by E53 native expansion, including in the weighted StandardScaler.
+Use C=.01, lbfgs, max_iter=1000, seed=53 and convergence warnings as errors, exactly the native
+linear recipe; no hyperparameter sweep or post-score tuning. Verify duplicate-control prediction
+parity against the archived native baseline (<=5e-5, zero decisions changed), and reconstruct all
+six saved heads before interpreting results. Preserve all AI rows and report per-source losses.
+
+Compare with both original reference recipes and native baseline using the existing paired
+publisher-bootstrap/AI-preservation guard and absolute gates; include duplicate-control comparison.
+Passing is only eligibility for separately frozen full-data/CAL plus new DEV, never direct serving
+or a final certificate. Failure preserves the current model. This exploratory follow-up is informed
+by consumed TRAIN validation and cannot be called an independent replication. Grayscale augmentation
+is an established transform ([official Torchvision documentation](https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.RandomGrayscale.html));
+that documentation provides no evidence it improves this detector. The deterministic 80/20 mixture
+is our preregistered ablation, not a claim to reproduce a paper or Torchvision's random implementation.
+
+Remote continuation: public data downloads are authorized, but skip manual sign-in/approval and
+paid services. Do not download a familiar benchmark as a supposedly new training publisher:
+Qwen-Image-Bench is already split among consumed adaptation and protected test roles in DATASETS.
+MNW and HDR+ remain entirely unscored and protected. New TRAIN acquisition still requires a
+licence/provenance/overlap-and-role contract; more bytes alone do not demonstrate improvement.
 
 **Home execution authorized (2026-09-09):** the user returned, confirmed the disk is attached and
 permitted dataset downloads. Resume with E54 below; public downloads still require a concrete
