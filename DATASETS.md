@@ -1847,3 +1847,17 @@ camera. Visual review of the two selected files shows apparent laptop-screen cam
 there is no basis for flipping labels from the names alone. Labels and source quotas are unchanged.
 This is targeted provenance support, not a dataset-wide proof of label purity. The compact receipt
 is `evidence/e51_scimd_filename_review.json`; image-transfer cost for this checkpoint is zero.
+
+### E51 offline recovery — 2026-09-09 (zero image downloads)
+
+The completed 9,098-observation TRAIN/CAL check found zero cross-role matched parent pairs; its
+compact receipt is `evidence/e51_prefit_identity.json`. A separate local locator inventory now
+resolves 117,898 protected body locations: 73,165 ordinary files and 44,733 members inside existing
+DDA/COCO/ITW-SM ZIP archives. This represents 50,577,346,337 image bytes already on disk, **not a
+50 GB download**. Every merged locator has an expected SHA-256; none of the body-bearing records
+has an unresolved path. Relative paths are resolved against each source manifest's directory.
+
+`evidence/e51_offline_bodies.json` records locator hash `a51cb457...eb81`. It preserves 9,800
+metadata-only parent/reserve references separately; they still need identity joins and cannot be
+silently treated as image-level audit coverage. This inventory does not decode or score images;
+canonical protected-pixel checking and superseded-reserve coverage remain pending before training.

@@ -1166,6 +1166,23 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       by filename. Preserve the frozen manifests, emit a separate fail-closed readiness receipt,
       and keep training disabled on unresolved overlaps. Explicitly account for E49 unused reserves;
       passing only a TRAIN/CAL check is not permission to skip protected-role admission.
+      **2026-09-09 offline continuation:** the full 9,098-observation pre-fit check completed,
+      with zero cross-role matched parent pairs (receipt `02180078...77a2`). Archive it without
+      repeating or weakening the check. Next, resolve the protected populations from existing
+      local files and ZIP members: historical relative paths are relative to their manifest
+      directories, not the process working directory. Freeze a body-locator inventory, retain
+      missing/ambiguous coverage explicitly, and never download a replacement on mobile data.
+      Only after protected-pixel/reserve admission closes may E51-A/B fit and CAL selection run.
+      Model generation is deferred: any future generated-image collection must record provenance,
+      prompts and generator version, with TRAIN/test separation fixed before images are scored.
+      **Offline locator checkpoint complete:** 117,898 distinct local body locations resolve
+      (73,165 files +44,733 ZIP members), totaling 50,577,346,337 existing image bytes to verify;
+      zero unresolved body locations and zero downloads. Every resolved location has a prior
+      SHA-256 after merging identical-location references. The 9,800 metadata-only rows are
+      retained separately (including duplicate parent references/reserves), not silently counted
+      as pixel-audited or assumed to be 9,800 missing images. Locator hash `a51cb457...eb81`.
+      Next: join metadata-only identities, review superseded reserves, then canonical protected-
+      body comparison. Training and the served model remain unchanged until admission closes.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered

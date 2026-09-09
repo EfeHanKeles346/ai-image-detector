@@ -1,0 +1,39 @@
+{
+  "all_payload_bytes_verified": true,
+  "cal_parents": 1560,
+  "cross_role_matched_parent_pairs": 0,
+  "input_manifest_sha256": {
+    "CAL": "606882913b0a2193422a8e838a142cff532bc1fe63088c6802eb3c9a43472356",
+    "TRAIN": "41444640273703fb96a9e3e269132ddc21e3056cbb8626e1aa93ea3a64cc77ef"
+  },
+  "label_counts": {
+    "CAL_observations": {
+      "0": 2400,
+      "1": 720
+    },
+    "TRAIN": {
+      "0": 4035,
+      "1": 1943
+    }
+  },
+  "limits": [
+    "dHash radius 4 plus pHash63 radius 4 is a candidate screen, not proof of no semantic duplicates",
+    "No prompt/session grouping is inferred from absent metadata",
+    "This report does not certify publisher labels or model performance"
+  ],
+  "match_examples": [],
+  "model_scores_created": 0,
+  "pending_admission": [
+    "Review/remove any confirmed cross-role overlap by a score-blind manifest amendment",
+    "Complete protected-role and unused E49 reserve identity/perceptual audit",
+    "Bind training feature/candidate contract before fit"
+  ],
+  "report_path": "/Volumes/LaCie/pixelproof-datasets/e51/audit/prefit_identity_v1.json",
+  "report_sha256": "021800783a7d0ed4159856e5fa72c944609dc585d5aea28620d3c0a825d577a2",
+  "schema_version": 1,
+  "state": "local_cross_role_identity_check_passed",
+  "train_parents": 5978,
+  "training_authorized": false,
+  "verified_observations": 9098,
+  "version": "e51-prefit-rgb-lanczos-v1"
+}

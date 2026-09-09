@@ -5123,3 +5123,32 @@ No threshold was selected, detector scores remain zero, and this checkpoint is n
 improvement. The first audit invocation exposed a missing `condition` on historical parent-only
 rows; it wrote no final report. The reader now explicitly treats those original files as original
 observations, with a regression test, and resumes byte-verified fingerprints.
+
+### 2026-09-09 — offline recovery and protected-body resolution
+
+The interrupted pre-fit run had actually completed: all 9,098 TRAIN/CAL observations were verified,
+with **zero cross-role matched parent pairs** under the canonical byte/pixel/dHash+pHash screen.
+Report SHA-256 `021800783a7d0ed4159856e5fa72c944609dc585d5aea28620d3c0a825d577a2` is now archived
+in `evidence/e51_prefit_identity.json`. This passes only that identity check, not a model benchmark.
+No training process or download was running when the connection dropped again.
+
+The next offline step resolves protected source bodies without extracting or downloading them.
+Historical E33/E36/E39 paths are relative to their manifest directory, not the working directory;
+DDA/COCO and ITW-SM members are read from their already-local bound ZIP routes. The locator checks
+manifest hashes, file/member sizes, traversal, ZIP member type/encryption and conflicting SHA-256
+expectations. It finds **117,898 local body locations** (73,165 files /44,733 ZIP members), zero
+unresolved body locations and 50,577,346,337 existing image bytes to verify. These are disk-read
+bytes, not network bytes. All merged locations have a prior content SHA-256. Locator manifest hash
+`a51cb45736641fa4e93c1d2171f17c06bf939cd4257effd78c8f6498c711eb81`.
+
+The 9,800 metadata-only references are retained explicitly; many are parent/reserve references,
+not missing image bodies. Identity joining, superseded-reserve coverage and canonical protected-
+pixel comparison remain pending. Do not infer training permission from successful path resolution.
+No new detector score, threshold, training artifact or demo change was produced. All **504 Python
+tests pass**. No new image data or dependencies were downloaded; after the latest connection loss,
+only local work was performed. GitHub publication is deferred while offline.
+
+The user's generated-image idea is recorded but not executed: an image-generation tool can create
+a separate synthetic pool, but requires network transfer and must retain prompt/model/date/role
+provenance. It is neither necessary to spawn a separate agent nor valid to mix generated training
+examples into the final test. Existing data remains the priority under the mobile-data constraint.

@@ -4088,3 +4088,18 @@ was scored or selected using model output.
 - Engineering verification: 500 Python tests pass, compilation passes; no serving artifact,
   threshold, DEVELOPMENT result or final-test gate changes. First-run historical `condition` schema
   mismatch was repaired with a regression test before audit resumption; no failed run wrote success.
+
+### E51 offline locator checkpoint — 2026-09-09
+
+- Recovered completed pre-fit evidence: 9,098 verified observations, 5,978 TRAIN parents and 1,560
+  CAL parents, zero matched cross-role parent pairs. Full report SHA-256 `02180078...77a2`.
+- New local-only command: with `PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets` and
+  `PYTHONPATH=ml:ml/src`, run `ml/.venv/bin/python -m experiments.e51_offline_bodies`. It validates
+  the frozen protected inventory and manifests, resolves relative file paths against each manifest,
+  checks already-local ZIP members without extracting them and freezes locators without scores.
+- Result: 117,898 distinct body locations; 73,165 file /44,733 ZIP; 50,577,346,337 bytes already local;
+  zero unresolved body rows; zero bodies lacking a SHA-256 after identical-location merges.
+  The 9,800 metadata-only references remain explicitly unjoined. Locator hash `a51cb457...eb81`.
+- No image download, model training, score or threshold change. `training_authorized=false` until
+  protected canonical-pixel and remaining reserve admission close. Passing path resolution does
+  not certify pixel-level separation. All 504 Python tests passed; no new dependencies installed.
