@@ -4212,3 +4212,27 @@ DEV admitted unscored: manifest `1b1882f3...ea224`, grouping amendment `10792cb7
 all previous audit match multisets reproduced. Exact 3,440 image parents /6,880 paired rows;
 REAL independence accounting 2,635 detected scene groups, AI 160 shared five-model prompts.
 Candidate A remains `60d56c0b...b6b39`, CAL report `247fac1f...16b29`, same cutoff; 532 tests pass.
+
+### E51 one-shot fresh DEVELOPMENT — 2026-09-09 (completed)
+
+| Condition | AUC | Balanced accuracy | REAL false-AI | AI recall | Total accuracy | Coverage |
+|---|---:|---:|---:|---:|---:|---:|
+| original | 0.993367 | 0.928542 | 44/2640 = 0.016667 | 699/800 = 0.873750 | 0.957849 | 1.0 |
+| Q75 | 0.989087 | 0.920777 | 52/2640 = 0.019697 | 689/800 = 0.861250 | 0.952616 | 1.0 |
+
+Frozen A cut/REAL cut 0.3316505551338196; no refit, rejection-band change, candidate substitution
+or row removal after scores. Worst AI generator recall: Ideogram 0.78125/0.79375. Worst observable
+REAL transport-cell false-AI: 0.017424/0.022727. The hidden worst-camera metric is **unobservable**,
+not assumed equal to the transport-cell result. Point-estimate observable gates pass.
+
+2,000 scene/prompt-cluster bootstrap intervals: original BA [0.912801,0.943839], REAL FPR
+[0.011747,0.021986], AI recall [0.842500,0.902531]; Q75 BA [0.904528,0.937357], REAL FPR
+[0.014756,0.025019], AI recall [0.828719,0.893750]. These cover this publisher population and
+detected clusters, not future generator/device distribution shift. REAL and AI counts differ,
+so headline balanced accuracy is preferable to the larger aggregate accuracy.
+
+Raw scores `088718f8...724be`, manifest `1b1882f3...ea224`, A `60d56c0b...b6b39`;
+`evidence/e51_development_result.json` records all source rates, gates, hashes and limitations.
+DEV is now consumed and forbidden from later TRAIN/CAL/E52. The E49 diagnostic failure remains
+valid; no serving promotion or universal-detector claim. Next research is pre-fit TRAIN-only
+source-held-out transport robustness, with AI recall guarded; no old/fresh test used for fitting.

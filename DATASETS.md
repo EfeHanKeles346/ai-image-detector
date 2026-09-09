@@ -1894,3 +1894,9 @@ score-blind visual review; real detected scene groups=2,635. Failed first admiss
 `975569d3...258e8` and grouping amendment `10792cb7...a495a` are retained. Camera ids are hidden
 and IEEE images are 512px publisher-processed, not native-camera proof. No images downloaded in
 this work, no test image enters TRAIN/CAL, and the new DEV cannot also serve as E52 final.
+
+DEV usage completion: all 6,880 observations were evaluated once with frozen E51-A. Original/Q75
+balanced accuracy is 92.85%/92.08%; REAL false-AI 1.67%/1.97%, AI recall 87.38%/86.13%.
+Raw score SHA `088718f8...724be`. This population is now consumed DEVELOPMENT and remains forbidden
+from future TRAIN/CAL or a relabelled E52 final. IEEE native/worst-device proof is still unavailable;
+positive results here do not override the weaker consumed-E49 native/transport results. No download.

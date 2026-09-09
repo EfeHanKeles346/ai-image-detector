@@ -5282,3 +5282,26 @@ DEV admission completed after all original matches reproduced exactly. Manifest
 `10792cb7...a495a`, selected A `60d56c0b...b6b39`, zero scores at freeze. Source quotas remain
 1,320 unaltered +1,320 postprocessed REAL, and 160 each FLUX.2 max, Nano Banana 2, GPT Image 2
 high, Ideogram v4.0q, Seedream 5.0 Pro. All 532 Python tests pass. One-shot A scoring may now run.
+
+### 2026-09-09 — E51 fresh DEVELOPMENT completed; observable checks pass, universal proof does not
+
+The frozen A (`60d56c0b...b6b39`) scored all 6,880 observations once at the unchanged CAL cut
+0.3316505551338196. Raw score SHA `088718f8...724be`; report `evidence/e51_development_result.json`.
+Original: AUC 0.993367, balanced accuracy 92.85%, REAL false-AI 44/2,640=1.67%, AI recall
+699/800=87.38%, total/covered accuracy 95.78%. Q75: AUC 0.989087, BA 92.08%, REAL
+false-AI 52/2,640=1.97%, AI recall 689/800=86.13%, total/covered accuracy 95.26%. Coverage
+100%, no abstentions. Lowest generator recall is Ideogram 78.13% original/79.38% Q75.
+Paired-scene/prompt-cluster 95% BA intervals are 91.28–94.38% original and 90.45–93.74% Q75.
+All observable predeclared checks pass. Camera ids are hidden, IEEE bodies are publisher 512px,
+and further scene dependence may remain; worst-device and native-resolution guarantees are not
+established. This is a newly measured DEV success, not IEEE endorsement or an E52 final pass.
+
+Interpretation jointly with E49: authentic safety and balanced accuracy improved on the old
+benchmark, but AI recall and AUC fell there. The new-source DEV is strong, yet it cannot erase
+known native/transport failures. A stays a research candidate; current serving/artifacts remain
+unchanged. PLAN now makes the next work explicit: TRAIN-only source-held-out augmentation research
+with an AI-recall guard, then genuinely unused native/modern-source E52 preflight. No download or
+test-informed weight/cut changes. Completed tests are not to be resumed merely because their
+immutable raw checkpoint filenames retain `.partial.jsonl`; the final reports prove full coverage.
+532 tests, compilation and whitespace checks passed. Every current result is recorded and committed
+locally; no network download or GitHub push occurred. No model/test process is left running.

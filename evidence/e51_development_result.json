@@ -1,0 +1,162 @@
+{
+  "candidate": "A",
+  "conditions": {
+    "original": {
+      "ai_recall": 0.87375,
+      "auc": 0.9933674242424243,
+      "automatic_coverage": 1.0,
+      "balanced_accuracy": 0.9285416666666666,
+      "cluster_bootstrap_95pct_intervals": {
+        "ai_recall": [
+          0.8425,
+          0.9025312499999998
+        ],
+        "balanced_accuracy": [
+          0.9128012976567339,
+          0.9438394291771023
+        ],
+        "real_false_ai": [
+          0.011746873815839333,
+          0.021986353297952996
+        ]
+      },
+      "covered_accuracy": 0.9578488372093024,
+      "false_ai_count": 44,
+      "missed_ai_count": 101,
+      "observed_group_checks_passed": true,
+      "real_false_ai": 0.016666666666666666,
+      "score_coverage": 1.0,
+      "source_rates": {
+        "FLUX.2 [max]": {
+          "ai_prediction_rate": 0.88125,
+          "label": 1,
+          "rows": 160
+        },
+        "Fal Ideogram v4.0q": {
+          "ai_prediction_rate": 0.78125,
+          "label": 1,
+          "rows": 160
+        },
+        "GPT Image 2 (high)": {
+          "ai_prediction_rate": 0.90625,
+          "label": 1,
+          "rows": 160
+        },
+        "IEEE:postprocessed": {
+          "ai_prediction_rate": 0.017424242424242425,
+          "label": 0,
+          "rows": 1320
+        },
+        "IEEE:unaltered": {
+          "ai_prediction_rate": 0.015909090909090907,
+          "label": 0,
+          "rows": 1320
+        },
+        "Nano Banana 2": {
+          "ai_prediction_rate": 0.93125,
+          "label": 1,
+          "rows": 160
+        },
+        "Seedream 5.0 Pro": {
+          "ai_prediction_rate": 0.86875,
+          "label": 1,
+          "rows": 160
+        }
+      },
+      "uncertainty": 0.0,
+      "worst_ai_source": 0.78125,
+      "worst_real_source": 0.017424242424242425
+    },
+    "q75": {
+      "ai_recall": 0.86125,
+      "auc": 0.9890866477272727,
+      "automatic_coverage": 1.0,
+      "balanced_accuracy": 0.9207765151515152,
+      "cluster_bootstrap_95pct_intervals": {
+        "ai_recall": [
+          0.82871875,
+          0.89375
+        ],
+        "balanced_accuracy": [
+          0.904528183337261,
+          0.9373572552859588
+        ],
+        "real_false_ai": [
+          0.01475581961428098,
+          0.025018953752843062
+        ]
+      },
+      "covered_accuracy": 0.9526162790697674,
+      "false_ai_count": 52,
+      "missed_ai_count": 111,
+      "observed_group_checks_passed": true,
+      "real_false_ai": 0.019696969696969695,
+      "score_coverage": 1.0,
+      "source_rates": {
+        "FLUX.2 [max]": {
+          "ai_prediction_rate": 0.86875,
+          "label": 1,
+          "rows": 160
+        },
+        "Fal Ideogram v4.0q": {
+          "ai_prediction_rate": 0.79375,
+          "label": 1,
+          "rows": 160
+        },
+        "GPT Image 2 (high)": {
+          "ai_prediction_rate": 0.8625,
+          "label": 1,
+          "rows": 160
+        },
+        "IEEE:postprocessed": {
+          "ai_prediction_rate": 0.022727272727272728,
+          "label": 0,
+          "rows": 1320
+        },
+        "IEEE:unaltered": {
+          "ai_prediction_rate": 0.016666666666666666,
+          "label": 0,
+          "rows": 1320
+        },
+        "Nano Banana 2": {
+          "ai_prediction_rate": 0.9125,
+          "label": 1,
+          "rows": 160
+        },
+        "Seedream 5.0 Pro": {
+          "ai_prediction_rate": 0.86875,
+          "label": 1,
+          "rows": 160
+        }
+      },
+      "uncertainty": 0.0,
+      "worst_ai_source": 0.79375,
+      "worst_real_source": 0.022727272727272728
+    }
+  },
+  "contract": {
+    "cal_result_sha256": "247fac1f91c1e7f2acf718dbbb520773889f515d63de31192f6c71f671916b29",
+    "candidate_sha256": "60d56c0bdf72812e8393e41db82534fc3c63681f5adb84d5dd2a4841247b6b39",
+    "code_sha256": "b5c02736267c66753527c71cfdca219ea05c7b9fb583b9a541b4faded3543a59",
+    "manifest_sha256": "1b1882f3e759327017f398c95e3a4e30a9c30a8670bffa40b80608f3844ea224",
+    "policy": "One A evaluation; no fitting, threshold selection or candidate substitution.",
+    "preprocessing_sha256": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "real_cut": 0.3316505551338196,
+    "scores_created": 0,
+    "threshold": 0.3316505551338196
+  },
+  "independent_final_passed": false,
+  "limits": [
+    "IEEE 512px publisher images; hidden devices, no worst-device or native-resolution proof.",
+    "All 2,640 IEEE images retained, but five pairs share scene clusters; unknown further scene dependence may remain.",
+    "800 AI images share 160 prompts across five generators; interval resampling must keep prompt clusters together.",
+    "Observed DEV pass does not establish a fresh E52 final pass. No fitting or threshold change.",
+    "Bootstrap groups detected REAL scenes and each AI prompt across its five generators; additional real scene dependence remains unknown."
+  ],
+  "observations": 6880,
+  "observed_checks_passed": true,
+  "parents": 3440,
+  "raw_score_sha256": "088718f8cad014739c89ada5f6d2aabb6b12f6e7d734e3a311b06069afd724be",
+  "serving_changed": false,
+  "state": "E51_fresh_DEVELOPMENT_complete_no_retuning"
+}

@@ -5,21 +5,47 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active checkpoint — E51 offline training and comparison (2026-09-09)
+## Current outcome and next actions — E51 completed offline (2026-09-09)
+
+**Authoritative status:** A/B training, CAL selection, consumed-E49 regression and one-shot fresh
+IEEE/Datapoint DEV are complete. No background training/test remains. A is the CAL-selected research
+candidate, not a served replacement or final-certified model. Fresh DEV passes observable checks:
+original BA 92.85%, REAL FPR 1.67%, AI recall 87.38%; Q75 92.08% /1.97% /86.13%.
+Old E49 regression remains below gate (BA 80.80% /75.70%, with material AI recall loss).
+Hidden IEEE camera ids and 512px publisher processing leave native/worst-device proof unestablished.
+
+Next work, in order, without downloads:
+
+1. Preserve A/B, all consumed score sets and current serving; do not retune on E49 or rerun fresh
+   DEV to select another candidate. Do not add the residual B branch: it showed no material gain.
+2. Before another fit, preregister a bounded successor experiment on admitted TRAIN only: compare
+   the current symmetric transports with one multiscale/compression-order augmentation variant.
+   Use held-out TRAIN camera/source groups (and AI source groups) for selection, require improved
+   REAL safety **without** losing AI recall at a common false-positive budget, and report worst
+   groups. Existing CAL/DEV/final roles stay protected; no score-picked hard examples from tests.
+   This is planned, not executed; no guarantee that more augmentation will fix the ranking gap.
+3. Audit the local inventory for genuinely unused, licensed native camera and modern-AI publishers
+   for E52. Bind candidate, identities, device/source quotas, original/Q75 and gates before any
+   final score. Do not relabel the now-consumed Datapoint/IEEE DEV as a fresh final. If independent
+   native data is not already local, stop at the acquisition plan under the no-download constraint.
+4. Keep Module 2 in its existing planning/protected state until Module 1 earns the full final gate.
+   Archive every method/result and distinguish CAL, consumed regression and new-source evidence.
+
+### Completed E51 execution checkpoints (retained method context)
 
 The older E41–E50 sections below are historical execution context, not a request to repeat their
-consumed finals. Current order: finish canonical protected/reserve checks, bind admissible E51
-TRAIN/CAL, extract features, fit A/B, select on CAL, then evaluate without further tuning.
+consumed finals. The completed order was: canonical protected/reserve checks, admissible E51
+TRAIN/CAL, features, fixed A/B fitting, CAL selection, then evaluation without further tuning.
 
 Admission complete: protected `2f070e7d...c1e54` and reserve `2c2cdb07...9ad36` checks have
 zero matched pairs/identity hits. Frozen admission `c406edb6...7a39b` retains all 5,978 TRAIN
-and 1,560 CAL parents, with zero exclusions. Next: 21,054 TRAIN/CAL views and fixed A/B fitting.
+and 1,560 CAL parents, with zero exclusions. The 21,054-view feature and fixed A/B stages completed.
 
 TRAIN/CAL complete: features `55f92db2...82d0a`; both fixed candidates pass CAL, so the
 predeclared simpler **A** wins, artifact `60d56c0b...b6b39`, AI/REAL cut 0.3316505551338196.
 CAL original BA 97.00%, REAL FPR 2.67%, AI recall 96.67%; Q75 97.56% /1.83% /96.94%.
-This is CAL evidence only. Next: frozen old-test regression and score-blind fresh DEV realization,
-then exactly one evaluation of A on admitted IEEE/Datapoint DEVELOPMENT; no threshold retuning.
+This is CAL evidence only. Frozen old-test regression, score-blind fresh DEV realization and
+exactly one evaluation of A on admitted IEEE/Datapoint DEVELOPMENT subsequently completed.
 
 - Before scores, conservatively exclude a whole E51 parent (including every paired child) when the
   fixed protected-identity/perceptual checks flag it. No label changes, no score-dependent replacement,
@@ -60,7 +86,7 @@ REAL FPR 39.10%→15.90%, AI recall 94.30%→77.50%; Q75 BA 73.25%→75.70%, REA
 49.00%→30.70%, AI recall 95.50%→82.10%. AUC fell 0.902425→0.884358 and
 0.868850→0.843796. This is a real-safety/AI-recall tradeoff, not stronger universal separation.
 Keep A as the CAL-selected research artifact and current serving unchanged; do not promote or
-choose B using this regression. Next remains the already-bound fresh DEV, not an E49 threshold sweep.
+choose B using this regression. Fresh DEV subsequently completed; no E49 threshold sweep was run.
 
 DEV realization v1 stopped before scores on five internal IEEE near-duplicate pairs (no IEEE
 cross-role/protected match). Score-blind review inspected all ten bodies: four visibly same-scene
