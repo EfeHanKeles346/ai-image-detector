@@ -50,6 +50,15 @@ decision changes; fail closed otherwise. The report's relative `research_guard_p
 not sufficient for advancement: all existing absolute fold gates must also pass. Freeze a separate
 acceptance receipt that combines these checks before any full-data fit, new DEV or E52 opening.
 
+Exploratory error audit (not a new model): four identity-ordered false positives in the first
+RR fold include monochrome and visibly heavily processed photographs. This selected error sample
+does not establish prevalence or causality. Quantify near-monochrome global model-input crops
+(mean RGB channel range <=2/255), overall/source/class and FIT-versus-validation exposure, across
+the already-bound E54 cache. Join completed fixed predictions only after all folds finish. No
+image relabelling, row removal, threshold change, classifier colour shortcut or final-reserve access.
+If the measured coverage supports it, a future separately frozen class-symmetric colour-processing
+ablation can be considered; do not automatically start one from four illustrative errors.
+
 Public test-reserve acquisition in parallel: Microsoft–Northwestern–WITNESS (MNW), pinned Git
 revision `c93abf43e8157558a0e60aab7df4278b2c539253`, six text-to-image folders (GPTimage2,
 Midjourney v8, Imagen4, Firefly v4, MAI image2, Flux 2 pro), 50 hash-ranked images each. Fetch
