@@ -4337,3 +4337,97 @@ once. Keep outer validation assignments exactly unchanged, whole-component separ
 CAL parents/class and >=100 FIT parents/class. Repeat the same twelve arms including native
 expansion. This is a more efficient TRAIN model-selection protocol, not an independent replication
 or an excuse to discard v1 failures. No v2 result is claimed at this checkpoint.
+
+### E53 closure — native replay, coverage-v2 and offline preparation (2026-09-09)
+
+Native original-based features completed for 5,652 parents/16,956 views, SHA `82ab703a...82c1c5`.
+The v1 native additions retain the existing folds and normalize total FIT sample-weight mass to
+the original three-view baseline. Existing CAL/validation receive no new images. Results:
+
+| Additional v1 arm | Clean REAL FPR | Clean AI recall | Clean BA | Q75 REAL FPR | Q75 AI recall | Q75 BA |
+|---|---:|---:|---:|---:|---:|---:|
+| Full, native-expanded 3 views | 23.74% | 77.61% | 76.93% | 22.97% | 75.76% | 76.39% |
+| Mean, native-expanded 3 views | 16.78% | 72.52% | 77.87% | 16.70% | 71.23% | 77.26% |
+
+Both fail the combined guard. Full native expansion preserves/increases supported-source AI
+point recall versus both references, but worsens REAL false accusations. Mean expansion still
+loses individual AI sources. Evidence: `evidence/e53_source_held_out_expanded_controls_result.json`.
+No candidate is promoted by its higher balanced accuracy.
+
+Coverage-v2 contract `354b3ec4...00a0c8` keeps all original outer-validation assignments and
+requires every one of the eleven components to appear in FIT at least once across folds. It
+repeats the same twelve arms, not a new C search. All 36 fits complete; together with v1 this
+is 72 fold fits. The same consumed TRAIN validation is reused, so v2 is not independent evidence
+of a v1-to-v2 model improvement. Compare arms inside the following v2 table:
+
+| V2 arm | Clean REAL FPR | Clean AI recall | Clean BA | Q75 REAL FPR | Q75 AI recall | Q75 BA |
+|---|---:|---:|---:|---:|---:|---:|
+| Full, old 2 views | 12.66% | 43.75% | 65.54% | 11.43% | 43.08% | 65.83% |
+| Full, E51 3 views | 12.76% | 43.18% | 65.21% | 12.09% | 45.45% | 66.68% |
+| Full, order/scale 3 views | 11.90% | 39.99% | 64.05% | 11.05% | 41.17% | 65.06% |
+| Full, native-expanded 3 views | 19.50% | 66.39% | 73.44% | 18.76% | 65.11% | 73.17% |
+| Mean, old 2 views | 11.43% | 55.64% | 72.11% | 10.53% | 54.25% | 71.86% |
+| Mean, E51 3 views | 10.93% | 52.86% | 70.96% | 10.48% | 53.17% | 71.34% |
+| Mean, order/scale 3 views | 11.55% | 51.47% | 69.96% | 11.18% | 53.11% | 70.97% |
+| Mean, native-expanded 3 views | 15.17% | 65.52% | 75.17% | 15.07% | 64.95% | 74.94% |
+| Full, C=0.001 | 12.71% | 42.67% | 64.98% | 12.54% | 46.22% | 66.84% |
+| Mean, C=0.001 | 13.73% | 59.91% | 73.09% | 12.89% | 59.34% | 73.23% |
+| Full, row-L2 | 12.22% | 42.15% | 64.97% | 11.70% | 44.11% | 66.20% |
+| Mean, row-L2 | 12.27% | 48.02% | 67.88% | 12.24% | 49.05% | 68.40% |
+
+**V2 survivors: zero.** Mean/E51 and mean/old2 pass pooled REAL improvement and AI preservation
+interval checks versus full/E51 but fail supported AI-source no-loss. This is exactly why pooled
+improvement alone is insufficient. V1/V2 bootstrap intervals condition on eleven observed publisher
+components and fitted heads; per-pair multiplicity correction is not simultaneous certification
+of a winner selected from all configurations. Evidence: `evidence/e53_coverage_result.json`.
+
+Frozen-prediction diagnostics (`e53_diagnostics.json`) report macro/worst-source rates, individual
+rescues/new errors and per-fold AUC/TPR@FPR<=10%, without new model inference or threshold changes.
+For the v1 RR-only held-out fold, full/E51→full/native clean AUC rises 53.29%→69.32%. Native's
+CAL-selected cut catches 77.39% AI but falsely accuses 55.76% REAL. Its evaluation-label-derived
+TPR at <=10% FPR is only 36.49%, ruling out a simple threshold rescue on those observations.
+By contrast, v1 fold 1 native/full reaches 96.36% AUC and 89.17% recall at <=10% FPR. These are
+different held-out sources, not contradictory results or proof of universal performance.
+
+Mean/E51 versus full/E51 on the v2 clean E32 FLUX subset loses twelve previously detected images
+and rescues none (69 parents); CF loses nine with none rescued (69 parents). Nano Banana Pro has
+only eight held-out parents and remains under-supported, not silently passing. The diagnostics
+retain all sources/configurations, not only these illustrative weaknesses. ROC-derived cuts are
+optimistic diagnostics, never transferred to production. Differently fitted raw scores are never
+pooled into a headline AUC.
+
+Input-association audit (`e53_shortcut_audit.json`): E51 TRAIN exact-224 fractions are 57.35% REAL
+(2,314/4,035) versus 18.17% AI (353/1,943); all added native inputs have short side >=512. The
+combined inventory is 32.89% versus 7.68% exact-224. Crop-dispersion median L2 norms are
+10.70 REAL/23.56 AI before additions versus 27.15/27.13 combined. Only one original REAL has
+near-zero dispersion; exact-224 must NOT be equated with zero dispersion, because global and
+local preprocessing differ. Native REAL is nonsquare, while 2,152/2,652 native AI are square.
+These associations motivate class-identical processing and bounded adaptation, not a geometry-
+based authenticity rule or a claim that dataset dimensions alone caused the failed gate.
+
+Engineering: full TRAIN numerical check (`e53_crop_dedup_full.json`) reduces 35,868 crops to
+30,103 unique crops across 11,956 views, with exactly zero feature/score error and zero decision
+flips. Its scope is all current TRAIN original/Q75, not future uploads; the prior small benchmark
+is the only timing comparison. Serving remains unchanged. Fast class/source/parent weights remain
+bitwise-identical to the old implementation and are used in the new controls/v2 fits.
+
+Resource-only preparation (`e53_adaptation_probe.json`), frozen before steps: eight hash-ranked
+TRAIN parents, four per class; 24 clean crops; existing DINOv2-S last two blocks plus a copied
+E51 binary head, AdamW LR=1e-5/weight decay=.01, one warmup plus three timed steps. This is not
+an accuracy study or an eligible fold model. Differentiable mean/population-std and converted
+head errors are 2.38e-7/6.71e-8 before steps. All gradients finite; 3,553,537 trainable parameters,
+frozen backbone hash unchanged. Median MPS step 0.20565s; sampled driver allocation 1.222GB,
+not true peak and excluding decoding/evaluation. No candidate weights, CAL/test scores or training
+accuracy are saved. A real successor must start from its own pretrained backbone/FIT-only head.
+
+Decision: retain current serving/full research artifacts. Native expansion with order/scale views
+was not completed and must not be described as a full 2x2. Next is a separately preregistered
+restricted-adaptation study using eligible existing data; download only after explicit permission
+and an independent-source/byte-budget contract. No consumed validation/test is relabelled E52,
+and Module 2 held-out data remains protected. No image/weight/dependency download in this slice.
+
+Serialization closure: `e53_artifact_replay.py` verifies all 72 saved head hashes and reproduces
+all 286,944 archived validation predictions from pinned cached features. Maximum score error=0;
+decision flips=0 (`evidence/e53_artifact_replay.json`). No new external test or model-selection
+evidence. Final suite: 574 Python tests passed; compilation and `pip check` passed. The user
+requested an office-to-home pause before any successor study, leaving no active training/download.

@@ -1,0 +1,522 @@
+{
+  "code_sha256": "d287c49e680161e3706a7d430ff4165fe1ee68589f379b8cb4e59bbb3b584f82",
+  "decision_flips": 0,
+  "feature_sha256": "55f92db299aa6cf889ae1a6ab3425d6d9f315527b481a531feea77690c982d0a",
+  "heads": 72,
+  "independent_test_opened": false,
+  "limit": "Serialization/numerical replay only; not new accuracy evidence or another final.",
+  "max_score_error": 0.0,
+  "prediction_observations": 286944,
+  "results": [
+    {
+      "artifact_sha256": "e1bf0a23d809411a7a903b42480e98f05b36552a14253da1b1a2957d665d4a3c",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_C001_fold0.json"
+    },
+    {
+      "artifact_sha256": "e4f487e562c130850d0a52cf5b9531b29179f6882af9de72b5b4b3319c220dd2",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_C001_fold1.json"
+    },
+    {
+      "artifact_sha256": "784b09fa76e32c2524ab01986d77028774e40f6ed43f2a663f9369eae335ffb7",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_C001_fold2.json"
+    },
+    {
+      "artifact_sha256": "81692725102648ee9c8bcd745b7f0af33603f1b304ff2a46df5262a1844e4340",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_L2_fold0.json"
+    },
+    {
+      "artifact_sha256": "5c397221624225232c127cfe526970b188613022176b2047495600044a8f10ee",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_L2_fold1.json"
+    },
+    {
+      "artifact_sha256": "8a95d1fc387e6fddd7ff6c14eacb01b2da49ca379c34d5be01af6b1458cc0602",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_L2_fold2.json"
+    },
+    {
+      "artifact_sha256": "09c075631b5aabdba71233b05851a013519d0ba147b1949bb2ae2343a7d6c3c2",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_e51_3_fold0.json"
+    },
+    {
+      "artifact_sha256": "5b0d5de5807873b7dfa4ce73c85404710a534484fb517ea240886cd5724fc08b",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_e51_3_fold1.json"
+    },
+    {
+      "artifact_sha256": "39859677cdb45f7be2cc480dc7898fe72aa9be1c5d429f1e3d8d148c2006a80f",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_e51_3_fold2.json"
+    },
+    {
+      "artifact_sha256": "50077e620b4e618a217824d65cc64dd1bf1cbd4efdfa92ffff46169258bbb50e",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_expanded3_fold0.json"
+    },
+    {
+      "artifact_sha256": "f564cd59354b8108083fe3fdb81c486c713b3081296862109c2a72b08eee0c4e",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_expanded3_fold1.json"
+    },
+    {
+      "artifact_sha256": "9d28c96b0a675d748f74710d0332c178cde4a10ebab519a2ccde718ea6608e0f",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_expanded3_fold2.json"
+    },
+    {
+      "artifact_sha256": "0dedd769179c83c4f57c55768c92e6ad6a4bdbabaf733ed0d98c99b1cc149152",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_old2_fold0.json"
+    },
+    {
+      "artifact_sha256": "86cabb785bbb799364ab35b01f7a3cccb4a2f1fb831459685879c712624693ab",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_old2_fold1.json"
+    },
+    {
+      "artifact_sha256": "7b6327c19a559c00d25d4ca8bfebf5d5b14f8f4a20eef98295e6df237cbd37fd",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_old2_fold2.json"
+    },
+    {
+      "artifact_sha256": "09bba5d75da9a7607c0ac49d7c28cb8c1dc2428cf8486fd56fef45c8150377bc",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_order3_fold0.json"
+    },
+    {
+      "artifact_sha256": "322ca7c4c1353d81bad63d4d97fb8db48321f5af16f36c80c9e2b32839e4b8c0",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_order3_fold1.json"
+    },
+    {
+      "artifact_sha256": "975a1799bd977fd3f85339e7662d453377ad02bf5880bda9a0a0ddecc7e3396c",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/full_order3_fold2.json"
+    },
+    {
+      "artifact_sha256": "30dc3711a79573c76ba0f5e767cc3f53e35e35a4a47535bbb53cd6854553c57e",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_C001_fold0.json"
+    },
+    {
+      "artifact_sha256": "fcdac6b330a1587d4d31d4d51a1b3c0de287b246e67e08a869fa40577288d284",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_C001_fold1.json"
+    },
+    {
+      "artifact_sha256": "fc1c6acdf9b3d005e6acded663750eb2d59456cae47dd029fad5baaa42e49479",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_C001_fold2.json"
+    },
+    {
+      "artifact_sha256": "a9ff4434ed7c45e69b18ab352cfa7df9b3be9480a3a02c282cb23fef79c444af",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_L2_fold0.json"
+    },
+    {
+      "artifact_sha256": "8bb07cd4da8d89e06c840b2734f59fd52803973919ca950e3e1d674a932e69f0",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_L2_fold1.json"
+    },
+    {
+      "artifact_sha256": "f7fc36a63520ea5bbeb7772461c1a118dc606ee3b8d4bd14299ea110eafbe49d",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_L2_fold2.json"
+    },
+    {
+      "artifact_sha256": "7058e52946abf2c97a2004a0d29aa99e3a5f373659c279fdee90cc5d39e5a595",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_e51_3_fold0.json"
+    },
+    {
+      "artifact_sha256": "1bd1fe8a52fbdbee63746777e73f09bc40a5f424bbc8119e9b75f5187cc51495",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_e51_3_fold1.json"
+    },
+    {
+      "artifact_sha256": "5c2ac81757c520f18b904323530ae1967fc151a470459a7d4f0d001353557329",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_e51_3_fold2.json"
+    },
+    {
+      "artifact_sha256": "1e81b95e5c3b863c4f30b327508c3e90ec95378726794f042be64d595ca2a437",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_expanded3_fold0.json"
+    },
+    {
+      "artifact_sha256": "5b8a8736dc9ac1c87632b0aad5a26648ab80e1b40413f2de3a434760ee8ceec8",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_expanded3_fold1.json"
+    },
+    {
+      "artifact_sha256": "0fd38cfdec9a5f05587646c333b91bc71a82030c4bc2805992ec0fe96dc35cfc",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_expanded3_fold2.json"
+    },
+    {
+      "artifact_sha256": "0855c4dec906179d65fea767e624821a4b7d097fd9ffa7fe66950cc96f812cd1",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_old2_fold0.json"
+    },
+    {
+      "artifact_sha256": "6f940b4234d444e9fcac49a18b6206308f28de8cd02ae0d9eb392e57260a6a48",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_old2_fold1.json"
+    },
+    {
+      "artifact_sha256": "955a5491eaba7819a0bbdd29d4c2be63e7dabdbf95de683cf7b9337edd4e823b",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_old2_fold2.json"
+    },
+    {
+      "artifact_sha256": "fd439bf048152adf79239496e55d81d04b97e7462644f4abcfb1ee6d8eef0585",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_order3_fold0.json"
+    },
+    {
+      "artifact_sha256": "5efbba2bc860e3a4d9d5b4c76cfce047bc28673a128730f313eb69935d886a30",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_order3_fold1.json"
+    },
+    {
+      "artifact_sha256": "5db2108753bdfc9b0564e96aca08b9a8e45ef4d03d2da6890e1bb74d37da3167",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/results/mean_order3_fold2.json"
+    },
+    {
+      "artifact_sha256": "7ca210613a81cd5912230bfa84bb45f9e8d1bf5e720c582a22cdc41d502fda5e",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_C001_fold0.json"
+    },
+    {
+      "artifact_sha256": "9ae3731f79fef16766c7a54181d58a9cab1d77afc69f92aa1228a24e502e555e",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_C001_fold1.json"
+    },
+    {
+      "artifact_sha256": "006463725228feb29f217f0bc0734af2392827afec9d6611e505f06262afd039",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_C001_fold2.json"
+    },
+    {
+      "artifact_sha256": "e1dbc80a7bc76ca19ce45eeeb1ad2e70a1eb06ce76024364584bb3ae1b064134",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_L2_fold0.json"
+    },
+    {
+      "artifact_sha256": "6e54dbe8cd8b76877aadc5401806df4744b4333ccda9cef6a812fd6cf17a4b15",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_L2_fold1.json"
+    },
+    {
+      "artifact_sha256": "a340bed28e26ee055a0d490d3a0d574946f38e2b1cc8af4a69a661d1ecae7a13",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_L2_fold2.json"
+    },
+    {
+      "artifact_sha256": "029e59cf70f0c62583458d24e210ad4c2eb59eec05227e8cad61b6342b6be58c",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_e51_3_fold0.json"
+    },
+    {
+      "artifact_sha256": "043301373ce18d468752344583b629fe4863ecbc27b7717b576f30e69319d55c",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_e51_3_fold1.json"
+    },
+    {
+      "artifact_sha256": "f1f7768cfdc6a76356b08ca28c6dcde6dae64051afbcff4439eafe4ce2680695",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_e51_3_fold2.json"
+    },
+    {
+      "artifact_sha256": "ad1790ef09375e4136fdecb96083bc3fda948b5c96badc3973c68b4d38c3b432",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold0.json"
+    },
+    {
+      "artifact_sha256": "4782edf01c84777d2272f3e7c91fd87d1ef1c8635d96022b8247afda0a25a231",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold1.json"
+    },
+    {
+      "artifact_sha256": "c769e3791375eee14dba2b26887ae3fba888ce5a7f6bf5bbe43bc517883ba202",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold2.json"
+    },
+    {
+      "artifact_sha256": "c5ff2942310d900d377e19dcecf05bc2100c1fdf2e9031397253c168852c1e61",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_old2_fold0.json"
+    },
+    {
+      "artifact_sha256": "e00ac8735717494f6e7a1acde358baaa2634b6c840beb2210bb23149217934d8",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_old2_fold1.json"
+    },
+    {
+      "artifact_sha256": "60baa243435b0347ed4d06b323a3d555beffb7f7ee9b1b9949bcf6894bcaf8e3",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_old2_fold2.json"
+    },
+    {
+      "artifact_sha256": "9c451808dbe5d2167c69e52087ba3ed1e345d4c4cfa4fa118b1ddc379d2fa596",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_order3_fold0.json"
+    },
+    {
+      "artifact_sha256": "726941c67b69b9010ec0c784c78c8493e68ce4088eb2a475e2224e36550681d2",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_order3_fold1.json"
+    },
+    {
+      "artifact_sha256": "73b04f55f009463db5606ba20bfd79d6e953edbe26b6d5ccc4583e813e328a3d",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_order3_fold2.json"
+    },
+    {
+      "artifact_sha256": "ddd9b31c4cb5ed8d8dc886f804b6f3efe3c8ae6e15f3a8031e6513875019c09d",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_C001_fold0.json"
+    },
+    {
+      "artifact_sha256": "f276c08b319fa62cfb8342915d1b785f03765b07f9a30d24b24618497c62b818",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_C001_fold1.json"
+    },
+    {
+      "artifact_sha256": "490b0a911d0852bf442374c0e96ec177c50bd7a007a650ca8b9d0b4f01be7273",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_C001_fold2.json"
+    },
+    {
+      "artifact_sha256": "2f68231e03c2f07cf512c0742de90f2c964c51940ef709a05708cff936f5d203",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_L2_fold0.json"
+    },
+    {
+      "artifact_sha256": "f67f6dc57a64410fdfbd0acb8ba0834930b57caa23ccdf51fbeac22cf04cb4d5",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_L2_fold1.json"
+    },
+    {
+      "artifact_sha256": "25401bf442a5639af17266dc64bf85ab69c4f2d713f280ca64831a5b4a69ecec",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_L2_fold2.json"
+    },
+    {
+      "artifact_sha256": "7e6086fe0a47ef3574317e590e346af0dbeee81214fe6c384e856bae2ebc882d",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_e51_3_fold0.json"
+    },
+    {
+      "artifact_sha256": "9a81350376df10c13048acca832e6869bbc03f309ca899c64c3774e27c789239",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_e51_3_fold1.json"
+    },
+    {
+      "artifact_sha256": "9d8bd86b31a857af82658d6996f35c60fd5358743ec760c10de612932174a4da",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_e51_3_fold2.json"
+    },
+    {
+      "artifact_sha256": "44fb3a1e14351ea856efd15422e3fd391d70c224d00f5dfa07c22d51a2a110a1",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_expanded3_fold0.json"
+    },
+    {
+      "artifact_sha256": "5b737a3f3b39652c6022a17b939036c2db6b92d71a02aeaac9fb8eef65a88e49",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_expanded3_fold1.json"
+    },
+    {
+      "artifact_sha256": "23ec539322a7d64e04b38b17284c7081111c66a9f10ee0403f804f41a11e7e38",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_expanded3_fold2.json"
+    },
+    {
+      "artifact_sha256": "53b899c3866b2f1e5098bad82878bbc2da407108662e312470c481485687ef7f",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_old2_fold0.json"
+    },
+    {
+      "artifact_sha256": "8b9a03de54acbeaf2366c4f38536e9d50a5e2ef61165eb66ae31a79805c47a4f",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_old2_fold1.json"
+    },
+    {
+      "artifact_sha256": "7a62f7d91279204114a246bbc8f9da7eed8e048c5f105589284b9674951c9215",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_old2_fold2.json"
+    },
+    {
+      "artifact_sha256": "3e643c90e39f55df2253429d09269fcdf9853a53dbf07d3587ff8e71502f40af",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4720,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_order3_fold0.json"
+    },
+    {
+      "artifact_sha256": "9ef9d4f653e00d2bf8629cf1f07439708322fce38e806f28b42893265d82e994",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 4360,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_order3_fold1.json"
+    },
+    {
+      "artifact_sha256": "09f8e61a0c9965d30fcea241d54abde846b380e8b859441ba35b0beef0787d59",
+      "decision_flips": 0,
+      "max_score_error": 0.0,
+      "observations": 2876,
+      "result": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/mean_order3_fold2.json"
+    }
+  ],
+  "serving_changed": false,
+  "state": "all_72_fold_artifacts_replayed",
+  "summary_bindings": {
+    "e53_coverage_result.json": "e083bcb16b0c746fe02db1400edfdabb7dbcd7e835fab558bd77bd22ea390077",
+    "e53_source_held_out_expanded_controls_result.json": "92266a9435d37231129270468e15089ec3828c7c038bf4f8a0623e056124791a"
+  }
+}

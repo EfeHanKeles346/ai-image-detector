@@ -1,0 +1,18 @@
+{
+  "accuracy_gain_claimed": false,
+  "contract_sha256": "ec1f2f21db4e4f446452eedda4e3cba6088a0b6d886cbff90030b5e713cb389f",
+  "decision_flips": 0,
+  "input_crops": 35868,
+  "limits": [
+    "All current TRAIN original/Q75 views, not all future uploads or a new final.",
+    "Reference features are hash-pinned historical E51 outputs; no new baseline inference timing is claimed."
+  ],
+  "max_feature_error": 0.0,
+  "max_score_error": 0.0,
+  "numerical_guard_passed": true,
+  "parents": 5978,
+  "serving_changed": false,
+  "state": "all_TRAIN_crop_dedup_parity_complete",
+  "unique_crops": 30103,
+  "views": 11956
+}

@@ -45,10 +45,31 @@ PYTHONPATH=src .venv/bin/python experiments/e20_tile_model_shootout.py --help
 | `e38_fixed_adaptation.py` | fixed pre-FINAL candidate | Uniformly emphasizes every consumed modern adaptation row and freezes one development-selected DINO head |
 | `e38_final.py` | one-shot untouched FINAL | Hash-binds the E38 candidate/threshold and scores the family/device-disjoint native/clean parents exactly once |
 
-The current served decision contract is E26's OR rule, implemented in `pixelproof/verdict.py`:
-CF-ViT is default; B-Free is optional and licence-gated. E27 is retained to reproduce the
-rejection, not as a deployment recipe. Exact results and the append-only correction are in
-`../EXPERIMENTS.md`.
+The canonical project model is the hash-verified E20 tile ResNet-18. Runtime profiles may also
+load E26's comparison OR rule and the separately opted-in, non-voting R1b research card; these
+must not be confused with the E43/E51 research experiments. See `../SERVING.md` for the actual
+API/runtime contract. E27 is retained to reproduce its rejection, not as a deployment recipe.
+
+### E53 offline research — completed office slice (2026-09-09)
+
+| Scripts | Result/boundary |
+|---|---|
+| `e53_offline.py`, `e53_report.py` | Immutable six-arm core and expanded reports; TRAIN-only folds, no promotion |
+| `e53_native_inventory.py`, `e53_latest_reserves.py`, `e53_expansion.py` | Original-body/reserve admission and 5,652 native TRAIN additions; no download |
+| `e53_head_controls.py`, `e53_coverage.py` | Twelve configurations in each of two protocols, 72 fold fits; no guard survivor |
+| `e53_diagnostics.py`, `e53_shortcut_audit.py` | Bound-prediction source/ROC diagnostics and input associations; no threshold tuning |
+| `e53_weight_benchmark.py` | Bitwise-identical linear-time training weight helper |
+| `e53_crop_dedup.py`, `e53_crop_dedup_full.py` | Optional exact-crop prototype, numerical parity on all current TRAIN clean/Q75 views |
+| `e53_adaptation_probe.py` | Last-two-block autograd/resource feasibility only; no adapted candidate saved |
+| `e53_artifact_replay.py` | All 72 saved heads reproduce 286,944 archived predictions exactly; not a new final |
+
+Run E53 modules from the repository root with `PYTHONPATH=ml:ml/src`, the existing `ml/.venv`,
+`HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1`, and the correct `PIXELPROOF_DATA_ROOT`. Completed
+freeze/extract/report phases deliberately refuse overwriting immutable receipts. Inspect existing
+`evidence/e53_*.json` and disk outputs before any resume. Do not edit hash-pinned implementations
+and then expect old contracts to validate; use a separately documented successor protocol.
+No E53 job is a deployment command. Native order/scale expansion and an actual backbone-adaptation
+study remain next-step work, not completed training. Exact methods/failures live in `../EXPERIMENTS.md`.
 
 Feature extraction caches under `artifacts/` are not committed. Runtime artifacts must pass
 `pixelproof-artifacts check`; see `../ARTIFACTS.md`.

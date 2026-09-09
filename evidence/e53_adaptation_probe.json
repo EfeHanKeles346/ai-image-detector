@@ -1,0 +1,46 @@
+{
+  "candidate_saved": false,
+  "contract_sha256": "864e7e651cb5e1cd1efcfc873fbd7830082342afbafc959821bc591b032b0dea",
+  "crops_per_step": 24,
+  "device": "mps",
+  "finite_gradients_all_steps": true,
+  "frozen_parameter_sha256": "012f4aeca6d25a52d6c95760381d79250f2910fcf5f0df72fa7aa3b935826aba",
+  "frozen_parameters_unchanged": true,
+  "limits": [
+    "Eight-parent repeated batch only, not full-data training or validation.",
+    "Memory sampled after steps is not true allocator peak.",
+    "Feature extraction/decoding and evaluation cost are excluded from step timing."
+  ],
+  "median_step_seconds": 0.20564816694241017,
+  "parents": 8,
+  "pre_step_feature_error": 2.384185791015625e-07,
+  "pre_step_score_error": 6.705522537231445e-08,
+  "quality_improvement_claimed": false,
+  "sampled_mps_memory": [
+    {
+      "current_bytes": 278297344,
+      "driver_bytes": 1222492160
+    },
+    {
+      "current_bytes": 277966336,
+      "driver_bytes": 1222492160
+    },
+    {
+      "current_bytes": 277868544,
+      "driver_bytes": 1222492160
+    },
+    {
+      "current_bytes": 277966336,
+      "driver_bytes": 1222492160
+    }
+  ],
+  "serving_changed": false,
+  "state": "resource_probe_complete",
+  "timed_step_seconds": [
+    0.20564816694241017,
+    0.20718666596803814,
+    0.2055133330868557
+  ],
+  "total_backbone_parameters": 21628800,
+  "trainable_parameters": 3553537
+}

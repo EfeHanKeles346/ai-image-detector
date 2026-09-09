@@ -4,9 +4,29 @@
 
 **Status:** runnable research model; not an authenticity authority
 
-**Last verified:** 2026-09-04
+**Last verified:** 2026-09-09 (runtime artifact integrity; no new E20 accuracy evaluation)
 
 ## Successor candidate decisions (2026-08-26)
+
+### E51/E53 offline successor decisions (2026-09-09)
+
+Neither replaces the served contract. E51-A improves authentic-photo safety on consumed E49 but
+loses AI recall: original/Q75 AI 77.50%/82.10%, REAL false-AI 15.90%/30.70%. On a different,
+newly evaluated IEEE/Datapoint DEV population, BA is 92.85%/92.08%, REAL false-AI 1.67%/1.97%,
+AI recall 87.38%/86.13%. That DEV is now consumed; hidden device ids and publisher resizing limit
+native-camera claims. Results from these different populations must not be combined into one score.
+
+E53 compares twelve fixed configurations in two protocols on the same 5,978 TRAIN-derived
+source-held-out parents (72 fold fits), including 5,652 audited original-based replay additions.
+None satisfies both REAL improvement and no-AI-loss guards. Native replay improves AI detection
+but increases REAL errors in a difficult held-out publisher; simpler features lose particular AI
+sources. These small refitted fold models are not new measurements of the full E43/E51/served
+model. No E52 independent-final pass, universal-detector claim or serving promotion follows.
+
+Engineering checks establish exact score parity for crop dedup on 11,956 TRAIN views and exact
+fast-training-weight equivalence. A last-two-block resource probe confirms local MPS feasibility
+but saves no adapted model and supplies no accuracy evidence. See `evidence/e53_coverage_result.json`,
+`evidence/e53_source_held_out_expanded_controls_result.json` and `PLAN.md` for the next gated study.
 
 ### E43-S comprehensive-final decision (2026-09-04)
 

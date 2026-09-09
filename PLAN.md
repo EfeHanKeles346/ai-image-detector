@@ -5,16 +5,79 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E51 completed offline (2026-09-09)
+## Current outcome and next actions — E53 office slice completed offline (2026-09-09)
 
-**Authoritative status:** A/B training, CAL selection, consumed-E49 regression and one-shot fresh
-IEEE/Datapoint DEV are complete. No background training/test remains. A is the CAL-selected research
-candidate, not a served replacement or final-certified model. Fresh DEV passes observable checks:
-original BA 92.85%, REAL FPR 1.67%, AI recall 87.38%; Q75 92.08% /1.97% /86.13%.
-Old E49 regression remains below gate (BA 80.80% /75.70%, with material AI recall loss).
-Hidden IEEE camera ids and 512px publisher processing leave native/worst-device proof unestablished.
+**User-requested pause:** office work is closed; wait for the user to return before starting
+another study. No training/download is left running. All 72 saved fold heads reproduce their
+286,944 archived predictions with zero score difference or decision flips. Python: 574 tests
+passed; compilation and dependency consistency passed. Download permission remains closed.
 
-### E53 — offline improvement research, with an AI-preservation gate (planned 2026-09-09)
+**Authoritative decision:** no replacement model is accepted. Twelve fixed configurations were
+evaluated in each of two declared TRAIN source-held-out protocols: 72 separately fitted fold heads.
+Both protocols reject every candidate under the combined REAL-improvement/AI-preservation guard.
+They reuse the same 5,978 outer-validation parents; they are not two independent finals and their
+scores must not be compared with the old full-model 94.3% AI result as a before/after decline.
+The served E20/optional R1b and full E43/E51 research artifacts remain unchanged. E52 is not passed.
+
+Completed locally: 20,826 original-body audit, full reserve closure, 5,652 additional original-based
+TRAIN parents /16,956 cached views, all 72 fold heads, source-transition/ROC/geometry diagnostics,
+11,956-view exact-crop parity, fast-weight equivalence, and an eight-parent last-two-block training
+resource probe. Zero new image/weight/dependency downloads; no API spending or GitHub push.
+
+The strongest useful direction is **native input coverage plus restricted representation adaptation**,
+not an arbitrary threshold shift or larger ensemble. Native replay improves AI recall but raises
+REAL errors in the RR held-out publisher. Mean-only features reduce some REAL errors but lose
+specific AI families. RR separation remains weak even at an evaluation-derived common FPR,
+so calibration alone cannot fix the tested ranking. None of these observations certifies a winner.
+
+Engineering gains are safe but limited: fast weights are bitwise-identical and ~34.75x faster for
+that tiny preparation step; crop dedup has zero score/decision differences on all current TRAIN
+clean/Q75 views, with ~10.84% less elapsed time in the separate small benchmark. Dedup remains
+an opt-in research prototype, not a silent serving change. Restricted DINO adaptation is feasible
+on MPS, but its four-step resource probe saved no candidate and establishes no accuracy gain.
+
+### Next execution order — home handoff, no automatic download
+
+1. **First use existing bytes.** Preserve the current artifacts and all failed results. Freeze a
+   separate small adaptation study before training: local DINOv2-S, same 3-crop/4-block input and
+   full 3,072-feature layout, last two blocks plus binary head only. Reinitialize from pinned
+   pretrained weights and a head fitted only on that fold's FIT rows; do not reuse the resource
+   probe's E51 head or weights as a cross-fold teacher. Compare with the frozen-backbone recipe
+   on exactly the same source-held-out rows. The probe suggests batch 8 parents/24 crops is feasible;
+   it does not settle full-epoch throughput or memory peak. Freeze LR groups, two-epoch ceiling,
+   weighting, sampler, seed and fixed final-epoch rule in the next contract, before fitting.
+2. **Remove processing shortcuts without losing AI diversity.** E51 TRAIN is 57.35% exact-224 REAL
+   versus 18.17% AI; added native data reduces but does not erase this imbalance. Preserve all
+   eligible AI replay. Use class-identical TRAIN processing, preserve originals, and group every
+   source/scene/prompt derivative. Test matched processing/feature-preservation as a separately
+   declared ablation, not several changes sold as a causal result. Never classify from resolution,
+   file size or crop dispersion. Do not simply remove all texture features after pooled gains.
+3. **Apply the same AI-preservation gate.** Check both transports and individual supported AI
+   sources against both refitted references. Preserve the original no-loss requirement; do not
+   substitute an 80% floor or retune on E49/IEEE/Datapoint. Only a passing TRAIN-selection candidate
+   can be frozen for diagnostic regression; that regression still cannot tune it or certify E52.
+4. **Download only after explicit home-network permission and a concrete coverage gap.** No bulk
+   repetition of the already-audited 16,275 local candidates. Specify missing licensed native REAL
+   publishers/devices and independently documented modern-AI prompt/generator families. Assign
+   TRAIN/CAL/DEV/FINAL roles by independent groups before bytes, verify licence/provenance and
+   existing-body overlap, then use a small byte-capped resumable pilot before any larger transfer.
+   The transfer cap and exact source manifest must be frozen before the first request. API generation
+   requires a separate spending budget; it is not included in permission to download public data.
+5. **Keep E52 genuinely independent.** Existing consumed E49, IEEE/Datapoint DEV and these E53
+   validation rows cannot be relabelled final. Unused rows from the same publisher are not unseen-
+   source proof. If local independent coverage is insufficient, remain at the acquisition boundary
+   until permission. Module 2 stays protected/planned until the Module 1 final gate is satisfied.
+
+Office scope closure: native expansion used the existing three-view recipe, not a completed
+native-expansion x order/scale 2x2. That extra native extraction and a real adaptation training
+study are deferred, not silently marked done. No claim to have exhausted all ML methods or found
+the global optimum. The completed bounded studies eliminate several unsupported shortcuts.
+
+Earlier E51 evidence remains unchanged: IEEE/Datapoint DEV BA 92.85%/92.08%, REAL FPR
+1.67%/1.97%, AI recall 87.38%/86.13%; consumed E49 BA 80.80%/75.70% with material AI loss.
+Hidden IEEE device ids and 512px publisher processing still limit native/worst-device proof.
+
+### E53 — original research plan and execution preregistrations (retained method context)
 
 #### Authorized office execution slice — 2026-09-09, before new E53 scores
 
@@ -90,8 +153,18 @@ repeat the same twelve declared arms, with no new hyperparameter search. Preserv
 compare arms within v2, not v2 scores against v1 as an independent performance gain. This is a
 data-use efficiency study on consumed TRAIN validation, not a replacement final or relaxed gate.
 
-**Scope:** inspect existing assets, research primary publications and plan first. No new training,
-model scoring, serving change, image/weight/dependency download or GitHub push in this planning
+Final office preparation: after all twelve arms in both protocols, audit every frozen prediction
+for source-wise gains/losses and per-fold ROC operating points without choosing new cuts. A bounded
+resource-only probe may use eight hash-ranked existing TRAIN parents (four/class): copy the local
+DINOv2-S and E51 head into memory, verify the differentiable mean/std implementation, unfreeze only
+the last two blocks plus head, and run one warmup plus three timed AdamW steps at fixed LR=1e-5.
+Check finite gradients, frozen-parameter identity and MPS memory. Do not save adapted weights,
+report training accuracy, open CAL/test or infer quality from this feasibility probe. A real
+adaptation study still needs its own fit/CAL contract, budget and independent acceptance decision.
+
+**Original planning-only scope, superseded by the authorized office slice above:** inspect existing
+assets, research primary publications and plan first. No new training,
+model scoring, serving change, image/weight/dependency download or GitHub push in that planning
 update. E52 remains the independent final gate; E53 is the successor research experiment, not a
 renaming of consumed tests. Success is better authentic-photo recognition without buying it by
 missing more AI. This is a measurable acceptance condition, not a promised outcome.

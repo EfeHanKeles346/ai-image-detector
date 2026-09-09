@@ -5416,3 +5416,63 @@ Offline runtime registry check also passes for all six required artifacts (E20, 
 two statistical heads, CF-ViT), and `pip check` finds no broken requirements. Serving code confirms
 canonical E20 plus optional R1b research presentation; E43/E51/E53 research metrics must not be
 described as the current web demo's measurements. No runtime/model selection change was made.
+
+### 2026-09-09 — E53 native replay and coverage-v2 completed; no promotion
+
+Native feature extraction completed: 5,652 added TRAIN parents/16,956 three-view observations,
+SHA `82ab703a...82c1c5`. Six native-expanded fold fits complete the twelve v1 configurations;
+the separately frozen coverage-v2 repeats the same twelve configurations in 36 further fits.
+Total E53 classifier fits: 72, not 72 independent tests. All eleven source components appear in
+FIT at least once in v2. Fold 2 legitimately adds zero native rows because those publishers are
+held out, not because extraction failed. Every old v1 result remains preserved.
+
+No configuration passes the combined AI-preservation/REAL-improvement research guard in either
+protocol. In v1, native full features raise AI recall from 50.13%/51.67% to 77.61%/75.76%, but
+REAL false-AI rises from 15.64%/15.17% to 23.74%/22.97%. V2 repeats the same qualitative conflict.
+Mean-only alternatives help pooled metrics but lose specific AI sources; a higher average does
+not meet the user's no-AI-loss requirement. These are difficult source-held-out TRAIN fits,
+NOT a decrease of the unchanged served/full E43 model from 94.3% AI recall.
+
+Frozen-prediction diagnostics identify both calibration transfer and representation limitations.
+For the v1 RR-publisher held-out fold, native-full clean AUC improves 53.29%→69.32%, yet AI recall
+at an evaluation-derived FPR<=10% is only 36.49%. Its CAL-selected cut catches 77.39% AI while
+accusing 55.76% REAL. This cannot be repaired by claiming 77.39% recall in isolation. Diagnostic
+ROC cuts are not deployed or used for refitting. Source transitions retain both rescues and losses.
+
+TRAIN input audit: 2,314/4,035 REAL (57.35%) versus 353/1,943 AI (18.17%) are exact 224x224
+publisher/legacy inputs. Added native parents are all >=512 on the short side; the combined
+candidate inventory still has 32.89%/7.68% exact-224 REAL/AI. Median crop-dispersion norms change
+from 10.70 REAL/23.56 AI to 27.15/27.13 in the combined pool. These are source/processing
+associations, not proof of causality, a trustworthy authenticity heuristic, or per-fold FIT counts.
+
+Full exact-crop verification passed on 5,978 TRAIN parents/11,956 clean-Q75 views: 35,868 input
+crops become 30,103 unique crops, feature error=0, score error=0, decision flips=0. The full check
+is equivalence, not a timing benchmark or accuracy gain; the separate small timing result remains
+the only speed estimate. Serving and frozen research extraction implementations remain untouched.
+
+Last-two-block preparation succeeded on MPS using eight deterministic TRAIN parents/24 crops,
+one warmup and three timed AdamW steps. 3,553,537 parameters are trainable; frozen backbone
+parameters retain their hash, all gradients are finite, differentiable aggregation error is
+2.38e-7 and converted-head score error 6.71e-8. Median step time is 0.20565s; sampled driver
+allocation is 1.222 GB, not an allocator peak. No adapted candidate is saved, no CAL/test is
+scored, and no quality improvement is inferred from a four-step repeated-batch resource probe.
+The next real study must initialize its own FIT-only head, not reuse this E51 probe head.
+
+Evidence: `e53_source_held_out_expanded_controls_result.json`, `e53_coverage_result.json`,
+`e53_diagnostics.json`, `e53_shortcut_audit.json`, `e53_crop_dedup_full.json`,
+`e53_adaptation_probe.json` under `evidence/`. PLAN now gives the home handoff: existing native
+bytes first, fixed restricted adaptation next, no new download until explicit permission and a
+source/budget contract, and no relabelling consumed tests as E52. Full native order/scale expansion
+and real adaptation training are explicitly deferred. Module 2 protection and serving remain intact.
+
+Final serialization replay reloads all 72 saved fold heads from hash-verified artifacts and reproduces
+286,944 already-consumed prediction observations exactly (max score difference=0, decision flips=0).
+Receipt: `evidence/e53_artifact_replay.json`. This is reproducibility, not another accuracy test.
+Final local verification: 574 Python tests pass, compilation passes, `pip check` finds no broken
+requirements. One pre-existing Starlette/httpx deprecation warning remains; no dependency is changed
+or downloaded. Existing web/serving code remains unchanged; no new web build is claimed.
+
+User then requested pausing while travelling home. No training or download is left running; all
+completed methods/results are saved and the next study is deliberately not started. Local E53
+working artifacts/caches occupy about 2.2 GiB on the existing disk, not network download volume.
+Resume only after the user returns; any new dataset/weight download still needs explicit permission.

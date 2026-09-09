@@ -1956,3 +1956,23 @@ CF remains non-commercial/per-model-terms restricted. No image or resulting mode
 These are extra TRAIN replay candidates, not independent final publishers. Added rows enter only
 their matching publisher's FIT fold; existing CAL/validation receive no new images. Native features
 are being extracted from originals rather than recycling old 224px export features. No download.
+
+Completion: all 5,652 selected original bodies produced 16,956 clean/assigned-transport/Q75 feature
+views, feature SHA `82ab703a641aebb4b08cc1175e08b272732d0a91e6825b19bdc394941482c1c5`.
+The two native arms were fitted under both the original and coverage-balanced source protocols;
+added rows remain FIT-only, and fold 2 adds none because all matching publishers are held out.
+All eleven source components train at least once across v2; this does not turn them into new
+independent publishers. All images stay on the existing disk; no new image body was downloaded.
+
+Input-geometry audit (`evidence/e53_shortcut_audit.json`) finds 2,314/4,035 REAL and 353/1,943 AI
+in the original E51 TRAIN pool are exact 224x224 (57.35% versus 18.17%). Every selected native
+addition has short side >=512; combined inventory exact-224 fractions are 32.89% REAL/7.68% AI.
+Native additions are 0/3,000 square REAL versus 2,152/2,652 square AI, another processing/content
+association to control rather than exploit. These known source associations are not proof that
+every error is caused by resolution or that downloaded data alone will solve generalization.
+
+Reuse the verified local original-based inputs before requesting more of the same sources. Future
+downloads require explicit permission, source licence/provenance and missing-coverage specification,
+group-disjoint role assignment, protected-overlap screening, byte cap and resumable receipts.
+No acquisition is authorized by this documentation entry. Existing consumed DEV/final and Module 2
+held-out data remain protected. No public redistribution of CF-restricted images or derived weights.
