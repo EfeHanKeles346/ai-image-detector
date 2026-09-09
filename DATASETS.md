@@ -1976,3 +1976,31 @@ downloads require explicit permission, source licence/provenance and missing-cov
 group-disjoint role assignment, protected-overlap screening, byte cap and resumable receipts.
 No acquisition is authorized by this documentation entry. Existing consumed DEV/final and Module 2
 held-out data remain protected. No public redistribution of CF-restricted images or derived weights.
+
+### Home source review and MNW test-reserve plan — 2026-09-09
+
+[Microsoft–Northwestern–WITNESS](https://github.com/microsoft/MNW) is an official, non-commercial,
+evaluation-only collection; it explicitly prohibits training. Its current image folders include
+recent text-to-image generators. Pin revision `c93abf43e8157558a0e60aab7df4278b2c539253` and select
+50 metadata-hash-ranked images each from OpenAI_GPTimage2, Midjourney_v8, Google_Imagen4,
+Adobe_Firefly_v4, MAI_image2, Flux_2_pro: 300 AI parents planned, <=768 MiB image budget.
+Only complete per-folder Git trees are authoritative; the initial recursive root listing is truncated.
+Resolve and hash-check LFS pointers to freeze actual image hashes/sizes before any image download.
+
+Purpose: new-publisher current-AI evaluation reserve, never model training or threshold tuning.
+Exclude explicit editing/inpainting/adversarial folders from the fully-generated Module 1 label.
+The entire publisher stays protected; filename UUIDs do not establish independent prompts.
+Acquisition/decode/overlap validation is not scoring or final admission. An AI-only reserve cannot
+measure REAL safety or constitute the balanced E52 final. User has authorized public downloads;
+no paid API spend or redistribution is included. Actual received counts/bytes will be appended.
+
+Other reviewed options: the official CERTH AIGenImages2026 release overlaps the already-consumed
+E39 collection despite a changed Hugging Face account, so it is not a new independent test source.
+[RealHD](https://github.com/Hanzhe-yu/RealHD) currently says coming soon, not a usable published
+download. [SOCRatES](https://socrates.eurecom.fr/) still requires a signed agreement/password; no
+signature or access bypass is attempted. [MIT-Adobe FiveK](https://data.csail.mit.edu/graphics/fivek/)
+offers research-only original DNGs and documented SLR provenance; it is a possible REAL supplement,
+but not a modern-phone substitute. Its research licences must accompany any selected files and
+RAW development would require a separately fixed decoder/input contract. No FiveK images downloaded
+at this planning checkpoint. These source limitations prevent claiming that more downloads alone
+will solve the representation problem.

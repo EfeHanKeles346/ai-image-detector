@@ -38,6 +38,17 @@ No winner means preserve serving and diagnose, not silently relax the AI require
 passing candidate may proceed to separately frozen full-data/CAL fitting and diagnostic regression,
 then a genuinely independent E52 population. A successful training process is not a final pass.
 
+Public test-reserve acquisition in parallel: Microsoft–Northwestern–WITNESS (MNW), pinned Git
+revision `c93abf43e8157558a0e60aab7df4278b2c539253`, six text-to-image folders (GPTimage2,
+Midjourney v8, Imagen4, Firefly v4, MAI image2, Flux 2 pro), 50 hash-ranked images each. Fetch
+complete per-folder metadata, not the truncated recursive repository listing; verify Git LFS
+pointer/blob hashes and freeze exact image SHA/size before transfer. Maximum 768 MiB image
+transfer and 12 MiB per selected image; fail rather than silently replace an oversized selection.
+Non-commercial evaluation only: no TRAIN, threshold calibration, edits/inpainting, or Module 2
+mixing. The whole publisher is reserved; unknown shared prompts are not claimed independent.
+After byte/decode/protected-overlap checks, keep it unscored until a candidate and evaluation
+protocol are frozen. This AI-only reserve is not a balanced E52 final or an official pass certificate.
+
 **Authoritative decision:** no replacement model is accepted. Twelve fixed configurations were
 evaluated in each of two declared TRAIN source-held-out protocols: 72 separately fitted fold heads.
 Both protocols reject every candidate under the combined REAL-improvement/AI-preservation guard.
