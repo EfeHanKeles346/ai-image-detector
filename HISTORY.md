@@ -5637,3 +5637,9 @@ All 17 preserved chunks verify against their archived hashes (816 views); frozen
 all bound repository helpers also match. AC remains attached. Resume the unchanged extraction,
 then six fixed fits and reporting under the guarded runner with the 08:00 local deadline. This
 entry records readiness/resume authorization, not successful fitting or improved model quality.
+
+Guarded runner actually starts at 01:41:42 local; extraction log is
+`ml/work/e55_resume/20260910T014142+0300_extract.log`. The first new progress marker reaches
+1,008/34,890 views, beyond the preserved 816, confirming resumed feature computation rather
+than merely a queued command. No fitting or quality result yet. Single supervised child only;
+night heartbeat remains active and the wrapper enforces the 08:00 deadline and power/disk checks.
