@@ -5541,3 +5541,35 @@ Total new image bodies this home slice: 653,835,579 bytes (653.84 MB, 623.55 MiB
 No full dataset archives, RAW inputs, model weights, dependencies or paid API images downloaded.
 Metadata traffic is additional. Original bodies live on LaCie; only code/method/evidence receipts
 are committed locally. FiveK was investigated but no FiveK image or RAW decoder was acquired.
+
+### 2026-09-09 — E54 completed: measurable paired gains, no accepted replacement
+
+All six prescribed fits complete: three continued-head controls and three last-two-block adapted
+heads, each exactly two epochs. Adaptation took 2,363.42/2,028.13/741.14 seconds per fold including
+post-fit scoring. Frozen parameters and pre-fit feature/head parity checks passed. Pooled consumed
+TRAIN OOF results, clean / Q75 respectively:
+
+- Native logistic baseline: AI 66.39/65.11%, REAL false-AI 19.50/18.76%, BA 73.44/73.17%.
+- Continued-head control: AI 66.65/65.11%, REAL false-AI 19.48/18.64%, BA 73.58/73.23%.
+- Restricted adaptation: AI 68.76/66.80%, REAL false-AI 17.50/16.85%, BA 75.63/74.98%.
+
+This is useful representation progress, but not accepted: supported AI sources still lose some
+examples, adjusted Q75 AI-preservation intervals include loss, and absolute gates fail in every
+fold. Against original non-native recipes REAL FPR also remains higher. No reference is quietly
+dropped to manufacture a win. These fold scores are not comparable with the full E43 E49 94.3%
+headline as a before/after decline. Source transitions and all failures are preserved in
+`evidence/e54_result.json` and `evidence/e54_diagnostics.json`; saved-model replay runs separately.
+No full-data candidate, serving update, external DEV rescore or independent-final opening occurs.
+
+Exploratory input audit finds 230/4,035 near-monochrome REAL global crops, 229 from RR. Baseline
+clean false positives: 169/230 monochrome versus 618/3,805 other crops; adaptation 153/230 versus
+553/3,805. This correlation mixes source/content/colour and does not prove a cause. It motivates
+E55, preregistered before extraction/fitting: identical frozen-DINO native linear recipe, 80/20
+original-versus-grayscale FIT loss mass for both classes, versus an exact-duplicate control at the
+same mass. Original CAL/validation and all AI replay stay intact; same no-loss and absolute gates.
+New derivatives are not new independent images. The four added transformation/weight tests pass.
+
+User broadened public-download permission while working remotely and asked to avoid manual login
+or approval. Accessible sources can be used after role/licence checks, but no paid API spend is
+inferred. Qwen-Image-Bench is not new data: its historical adaptation/protected-test roles prevent
+blindly adding a fresh mirror to training. Both newly acquired publishers remain protected reserves.

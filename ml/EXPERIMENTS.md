@@ -4466,3 +4466,44 @@ No quality result yet at this registration point. Successful preparation/trainin
 authorize serving promotion, a full-data model, or opening independent E52. MNW acquisition is
 evaluation-only, separately frozen and unscored; no part of it is an E54 training input. Existing
 E43/E51/served models and Module 2 protected data remain intact.
+
+## 2026-09-09 — E54 results and E55 registered follow-up
+
+E54 completes all six fixed fits. Last-two-block final steps by fold: 6,054/5,244/1,770; elapsed
+including scoring 2,363.42/2,028.13/741.14s. Every final checkpoint retains its frozen-parameter
+hash; pre-fit feature error <=4.77e-7 and score error <=5.97e-7. No validation-selected epoch.
+
+| Same 5,978 TRAIN OOF parents | Clean AI recall | Clean REAL FPR | Clean BA | Q75 AI recall | Q75 REAL FPR | Q75 BA |
+|---|---:|---:|---:|---:|---:|---:|
+| Native linear baseline | 66.39% | 19.50% | 73.44% | 65.11% | 18.76% | 73.17% |
+| Continued-head control | 66.65% | 19.48% | 73.58% | 65.11% | 18.64% | 73.23% |
+| Last-two-block + cosine anchor | 68.76% | 17.50% | 75.63% | 66.80% | 16.85% | 74.98% |
+
+Against continued-head control, adjusted paired publisher bootstrap deltas are: REAL clean
+[-3.93,-1.17] percentage points, REAL Q75 [-3.59,-1.08], AI clean [+0.136,+4.324], AI Q75
+[-0.136,+3.743]. Thus aggregate REAL improvement is supported under this conditional analysis,
+but Q75 AI preservation is not established. Supported-source losses remain (including GPT Image 1,
+FLUX Klein Q75 and some RR topics), and all absolute fold acceptance checks fail. Comparisons
+against the two non-native reference recipes also fail REAL-improvement requirements. Neither
+arm advances. This is not the full-model E49 benchmark, three independent random seeds, a new
+final, or a universal generalization claim. Full source transitions and per-fold ranking diagnostics
+remain in `evidence/e54_diagnostics.json`; evaluation-derived TPR@FPR10 cannot be deployed as a cut.
+
+Colour audit (exploratory, `evidence/e54_color_audit.json`): near-monochrome means mean per-pixel
+max-minus-min RGB <=2 on the exact clean global crop. REAL 230/4,035, AI 34/1,943 in the base
+OOF population; 229 of those REAL rows are RR and fold-0 FIT contains very few monochrome REAL
+examples. Native baseline clean errors 169/230 versus 618/3,805 other REAL; adaptation 153/230
+versus 553/3,805. This is source-confounded association, not relabelling or a colour-based detector.
+
+E55 preregistered before derivative extraction and fitting: all 11,630 admitted E54 TRAIN parents,
+same roles and all three input views, frozen pretrained DINOv2-S, full 3,072 features. Pillow
+RGB->L->RGB per exact crop. Two arms x three folds: duplicate-view control and grayscale derivative;
+80% original /20% derivative loss mass for every class/source/parent. Total mass fixed to the
+base FIT three-view count as in E53 native expansion. Weighted StandardScaler and C=.01 lbfgs
+head, max_iter=1000, seed=53; convergence warnings are errors. No stochastic resampling, AI row
+removal, CAL/validation grayscale substitution, hyperparameter sweep or label changes. CAL chooses
+cuts exactly as before; only unchanged original/Q75 outer-validation views are detector-scored.
+Require control parity <=5e-5 and zero decision changes versus native reference, exact artifact
+replay, relative no-loss guard and absolute fold gates. Only a passing result may authorize a
+separate full-data/CAL+DEV stage, not direct serving or E52. All new derivatives remain TRAIN
+material, not another independent source or downloaded data. E55 receipt: `evidence/e55_contract.json`.
