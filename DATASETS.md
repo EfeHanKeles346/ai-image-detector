@@ -2032,3 +2032,19 @@ new decoder dependency. Retain licence/attribution locally; no image redistribut
 publisher is a reserved evaluation source by project policy. Burst/session/day groups do not prove
 independent scenes; device coverage and protected overlap still need verification. This is a
 complementary REAL stress reserve, not an official AI-detector pass threshold or balanced final.
+
+Completed HDR+ transfer: 100 parents /423,955,391 bytes; manifest SHA
+`417dee80f915c983ebb6bc6bb195e9579f2fb712b28a8ca85449e46f04dfc176`. Originals and attribution
+are in LaCie `e52/hdrplus_reserve_v1/`; no local pixel modification to originals. GCS generation
+and publisher MD5 match; SHA256/canonical RGB fingerprints are recorded after verified decoding.
+Selected images are full-resolution (roughly 8–13 MP), not gallery thumbnails. EXIF labels include
+Nexus/Pixel names and aliases (`bullhead`, `angler`, `sailfish`, `marlin`); do not count nine strings
+as nine independent device models or physical devices. Eighty-one session/day proxies remain
+only approximate grouping metadata. Zero cross-protected/internal heuristic matches against
+150,783 historical/native/reserve observations including MNW. All 100 stay unscored and excluded
+from future TRAIN/CAL; final E52 admission still requires broader coverage and a frozen candidate.
+
+MNW+HDR+ new image payload total is 653,835,579 bytes /400 parents; metadata is additional.
+Neither source was used to optimize E54. See `evidence/e54_hdrplus_{manifest,download,overlap}.json`
+and the accompanying overlap contract. The reproduced canonical reference snapshot is bound to
+the prior MNW audit, not an unversioned mutable cache of convenient negatives.

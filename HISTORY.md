@@ -5514,3 +5514,30 @@ not evidence of model quality, and not a balanced E52 final admission. Whole pub
 protected, including unknown prompt relations. MNW terms prohibit training and threshold tuning.
 Receipts: `evidence/e54_mnw_reserve_{manifest,download}.json`, `evidence/e54_mnw_overlap*.json`.
 Future TRAIN admission must include this new reserve, not only the older frozen inventories.
+
+### 2026-09-09 — E54 cache complete and restricted training started; REAL reserve closed
+
+Completed 11,630-parent /34,890-view crop/teacher preparation from existing local originals.
+Teacher SHA `101c539958f72913273a0a7e91f9ee7f7b2c025d73fee956177d7fcf8c9b62d8`; receipt
+`evidence/e54_crop_cache.json`. Every crop archive is hash-bound to the corrected data contract.
+Head-only controls finish all three folds; last-two-block adaptation now executes the same fixed
+two epochs. FIT parents per fold: 8,070/6,992/2,360; fixed steps per arm: 6,054/5,244/1,770.
+No adaptive early stopping, serving replacement or independent final opening. Training-input
+parity checks pass before updates. End-to-end CPU AdamW checkpoint continuation also reproduces
+uninterrupted parameters bit-for-bit in its added unit test; this is not a claim of all-device bitwise
+determinism. Full suite before that extra test: 586 passed, one existing Starlette warning.
+
+Official Google HDR+ camera-only reserve: 100/100 full-resolution final JPEGs, 423,955,391 verified
+bytes (423.96 MB), GCS object generation/MD5 verified and local SHA256 recorded. Excluded all
+20 explicit synthetic folders before selection. Historical Nexus/Pixel HDR finishing, not modern
+2026 captures or generative content; preserve CC-BY-SA-4.0 attribution. Camera EXIF includes code
+names and product-name aliases: nine strings must not be claimed as nine distinct camera models.
+There are 81 capture-session/day proxies, not 81 proven independent scenes. Against the exactly
+reproduced 150,483-body reference snapshot plus all 300 MNW images, zero cross/internal matches
+under the declared identity heuristic. All 100 remain unscored reserve candidates, not balanced
+E52 admission. Receipt `evidence/e54_hdrplus_overlap.json` retains geometry and raw device labels.
+
+Total new image bodies this home slice: 653,835,579 bytes (653.84 MB, 623.55 MiB), 400 parents.
+No full dataset archives, RAW inputs, model weights, dependencies or paid API images downloaded.
+Metadata traffic is additional. Original bodies live on LaCie; only code/method/evidence receipts
+are committed locally. FiveK was investigated but no FiveK image or RAW decoder was acquired.

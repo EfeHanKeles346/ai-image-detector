@@ -1,0 +1,15 @@
+{
+  "code_sha256": "39646142b0a7214ce2dc775d8be5cf634732a3e0aa3913428dadb6c2bfa2ba80",
+  "contract_sha256": "497864802605ce1900e706ed23feae12d7ea52b30ca5c65b8192dfa465ebf208",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e51_prefit_audit.py": "a056910bb3ad93ca5c8a4488ec4ca9aaba727635e280eff8a85f7f9f6cc00bda",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e54_mnw_audit.py": "999e7fbe09927a2b4322bb175873f5857c90eb070cf0ee7703464a0fa3e9993a",
+    "/Volumes/LaCie/pixelproof-datasets/e52/hdrplus_reserve_v1/download.json": "95cdc842844443497af26995fb8430cf39540fa33e093b91a63be6fce768ff18",
+    "/Volumes/LaCie/pixelproof-datasets/e52/hdrplus_reserve_v1/manifest.json": "417dee80f915c983ebb6bc6bb195e9579f2fb712b28a8ca85449e46f04dfc176",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/download.json": "a63d7655cea11d18457dbb45bb4419063526e16e90f6d941a2796af3dd17ea4c",
+    "/Volumes/LaCie/pixelproof-datasets/e52/protected_reference_v1.json": "7fc7f52e8c38e621b71877b394cccac312af333b183492bcf52154381e3ab988"
+  },
+  "model_scores_created": 0,
+  "policy": "Withhold all cross-protected and both internal-match endpoints. No replacements or scoring.",
+  "state": "HDRPLUS_blind_audit_frozen"
+}

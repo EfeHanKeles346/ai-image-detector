@@ -1,0 +1,41 @@
+{
+  "balanced_final_admitted": false,
+  "contract_sha256": "497864802605ce1900e706ed23feae12d7ea52b30ca5c65b8192dfa465ebf208",
+  "cross_match_observations": 0,
+  "eligible_camera_models": {
+    "Nexus 5": 9,
+    "Nexus 5X": 1,
+    "Nexus 6": 48,
+    "Nexus 6P": 10,
+    "Pixel XL": 9,
+    "angler": 9,
+    "bullhead": 3,
+    "marlin": 3,
+    "sailfish": 8
+  },
+  "eligible_capture_session_proxies": 81,
+  "eligible_geometries": {
+    "3024x4032": 4,
+    "3036x4048": 4,
+    "3120x4208": 6,
+    "3264x2448": 2,
+    "3280x2464": 9,
+    "4032x3024": 19,
+    "4048x3036": 14,
+    "4208x3120": 42
+  },
+  "internal_pair_observations": 0,
+  "limits": [
+    "All HDR+ publisher derivatives stay reserved; heuristic screening is not exhaustive semantic deduplication.",
+    "Capture-session/day proxy does not guarantee independent scenes; unknown camera ids cannot be invented.",
+    "Small older-phone, one-publisher reserve does not prove modern-device or final E52 coverage.",
+    "Unavailable historical metadata-only bodies cannot receive pixel comparisons."
+  ],
+  "model_scores_created": 0,
+  "query_parents": 100,
+  "reference_observations": 150783,
+  "report_sha256": "32305bb86ab6798fe1058024738d30bf13d5bfae9727d05d6b69dfdc8131c7b1",
+  "state": "HDRPLUS_blind_screen_complete_unscored_reserve",
+  "training_allowed_by_project": false,
+  "withheld_parents": []
+}

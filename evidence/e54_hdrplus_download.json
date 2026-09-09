@@ -1,0 +1,11 @@
+{
+  "charged_image_transfer_bytes": 423955391,
+  "manifest_sha256": "417dee80f915c983ebb6bc6bb195e9579f2fb712b28a8ca85449e46f04dfc176",
+  "model_scores_created": 0,
+  "overlap_audit_pending": true,
+  "parents": 100,
+  "report_sha256": "95cdc842844443497af26995fb8430cf39540fa33e093b91a63be6fce768ff18",
+  "state": "HDRPLUS_downloaded_unscored_not_final_admitted",
+  "training_allowed_by_project": false,
+  "verified_image_bytes": 423955391
+}
