@@ -5573,3 +5573,10 @@ User broadened public-download permission while working remotely and asked to av
 or approval. Accessible sources can be used after role/licence checks, but no paid API spend is
 inferred. Qwen-Image-Bench is not new data: its historical adaptation/protected-test roles prevent
 blindly adding a fresh mirror to training. Both newly acquired publishers remain protected reserves.
+
+E54 serialization closure completed: all six saved models reproduce all 23,912 archived OOF
+prediction observations bit-for-bit (maximum score error 0, decision changes 0), with frozen
+backbone hashes unchanged. `evidence/e54_acceptance.json` explicitly rejects both arms despite
+successful replay because relative preservation and absolute gates fail. This is repeatability,
+not additional accuracy evidence. E55 extraction is running on existing local inputs. Full Python
+suite at this checkpoint: 598 passed, one pre-existing Starlette/httpx warning; no dependency update.

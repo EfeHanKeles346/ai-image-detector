@@ -1,0 +1,28 @@
+{
+  "arms": {
+    "head_only": {
+      "checks": {
+        "all_absolute_fold_gates": false,
+        "relative_ai_preservation_and_real_improvement": false,
+        "three_artifacts_replayed": true
+      },
+      "eligible_for_next_research_stage": false
+    },
+    "last2_anchor": {
+      "checks": {
+        "all_absolute_fold_gates": false,
+        "relative_ai_preservation_and_real_improvement": false,
+        "three_artifacts_replayed": true
+      },
+      "eligible_for_next_research_stage": false
+    }
+  },
+  "code_sha256": "d6a31b9af0500319e8fcd94c2491213b304803a43a4b8bbb757958a1508152da",
+  "eligible": [],
+  "independent_final_passed": false,
+  "replay_sha256": "bcbdcdaa3b4032f6a806cd2007cf9c3b1feb19b0cd9456a5b3f252ad852cb5fe",
+  "result_sha256": "ba31393c7a41a73a56f04b57f46499169f55e8e782f5e1d8c1f1314c4c74f28d",
+  "scope": "Passing only authorizes separately frozen full-data/CAL and diagnostic research; never direct serving promotion or E52 success.",
+  "serving_changed": false,
+  "state": "E54_advancement_decided"
+}

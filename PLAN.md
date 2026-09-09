@@ -13,7 +13,8 @@ accuracy 73.44% -> 75.63%; Q75: AI 65.11% -> 66.80%, REAL false-AI 18.76% -> 16.
 73.17% -> 74.98%. These are the same consumed TRAIN source-held-out parents, not a replacement
 measurement of full E43's 94.3% and not E52. Relative acceptance fails: several supported AI
 sources regress, and adjusted Q75 AI-preservation uncertainty includes loss. Absolute fold gates
-also fail. Saved-artifact replay is underway; no deployment or final-reserve opening is authorized.
+also fail. Saved-artifact replay passes all 23,912 observations exactly, with zero changed decisions;
+the separate acceptance receipt rejects both arms. No deployment or final-reserve opening is authorized.
 
 ### E55 — class-symmetric grayscale coverage, fixed exploratory ablation
 
