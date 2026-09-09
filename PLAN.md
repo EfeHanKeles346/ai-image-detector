@@ -16,6 +16,28 @@ Hidden IEEE camera ids and 512px publisher processing leave native/worst-device 
 
 ### E53 — offline improvement research, with an AI-preservation gate (planned 2026-09-09)
 
+#### Authorized office execution slice — 2026-09-09, before new E53 scores
+
+The user approved an approximately 90-minute offline preparation/optimization session. Preserve
+serving and do not download. Start with a bounded six-arm diagnostic on the **already admitted E51
+TRAIN population**, not expanded C3 before admission: full 3072 versus mean-only 1536 features,
+crossed with old two views, E51 three views, and the preregistered clean plus two order/scale views.
+This separates crop-dispersion features and transport effects with cached features where possible.
+Use three whole-publisher/source-component outer folds and disjoint inner CAL; refit every head
+and scaler. No historical fitted classifier is an out-of-fold comparator. Freeze population,
+folds, C=0.01, view recipes, all six arms and code before scores. Report all arms, including failures.
+The mean-only ablation tests whether crop dispersion is a brittle processing cue; it is not a
+claim that texture features are bad. No test-driven feature selection or model promotion.
+
+Historical reuse clarification: E51 already admitted explicitly consumed historical replay, e.g.
+`e36_cal_consumed`. This diagnostic inherits that documented TRAIN role; it is not fresh evidence
+on the original E36 CAL. E51 CAL, all later DEV/final/reserves and every other currently protected
+role remain excluded. Recheck canonical overlap with E51 CAL and its now-consumed DEV, bind the
+previous full admission audits, and group internal near-duplicates. Unknown shared prompts are
+held together by source; RR topics are one publisher, not seven independent AI generators.
+Further C3 expansion still requires original-image/protected-role audit before fitting. Pending
+work or a failed/inconclusive research guard must be reported as such at the office handoff.
+
 **Scope:** inspect existing assets, research primary publications and plan first. No new training,
 model scoring, serving change, image/weight/dependency download or GitHub push in this planning
 update. E52 remains the independent final gate; E53 is the successor research experiment, not a

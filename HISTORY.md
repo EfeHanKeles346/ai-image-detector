@@ -5342,3 +5342,15 @@ Planning validation passed: inventory JSON class/source totals, byte sum and man
 HISTORY, EXPERIMENTS and DATASETS preserve their entire previous content as append-only prefixes;
 `git diff --check` is clean. This is a documentation/evidence-only change, so the model test suite
 was not rerun and no new numerical model result is implied.
+
+### 2026-09-09 — office execution authorized, six TRAIN-only arms preregistered
+
+User approved approximately 90 minutes of offline optimization/preparation, with downloads deferred
+until their explicit home-network approval. E53 starts with the existing admitted E51 TRAIN pool,
+not unadmitted C3 expansion. Six fixed arms cross full/mean-only DINO aggregation with old two-view,
+E51 three-view and clean plus compression/resize-order views. C=0.01, three source-component outer
+folds, disjoint inner CAL and refitted scalers/heads; all results must be retained. RR topics are
+grouped as one publisher, shared-prompt AI batches stay together, and no old fitted head is used
+as an honest out-of-fold baseline. Historical explicitly consumed E51 replay keeps that recorded
+TRAIN role; this does not make it fresh E36 evidence. E51 CAL/DEV remain protected. PLAN records
+this bounded first slice before any E53 model scores; current serving and external tests stay unchanged.
