@@ -5,14 +5,14 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E53 office slice completed offline (2026-09-09)
+## Current outcome and next actions — E54 home study running (2026-09-09)
 
 **Home execution authorized (2026-09-09):** the user returned, confirmed the disk is attached and
 permitted dataset downloads. Resume with E54 below; public downloads still require a concrete
 source/role/byte-cap manifest, and paid APIs are not authorized. Previous office verification:
 72 saved heads reproduce 286,944 predictions exactly; 574 Python tests passed. Serving is unchanged.
 
-### E54 — bounded representation adaptation, before any E54 training
+### E54 — bounded representation adaptation (preregistered, execution underway)
 
 Use the admitted E53 base+native population and coverage-v2 folds unchanged. Cache the identical
 three clean/assigned-transport/Q75 crop views and their pinned frozen-DINO teacher features on
@@ -37,6 +37,18 @@ recipes and the native baseline before advancing. Report the head-only comparato
 No winner means preserve serving and diagnose, not silently relax the AI requirement. Only a
 passing candidate may proceed to separately frozen full-data/CAL fitting and diagnostic regression,
 then a genuinely independent E52 population. A successful training process is not a final pass.
+
+Execution checkpoint: all 11,630 original-based parents/34,890 crop views are cached and bound;
+all three head-only controls complete, restricted-backbone folds running serially. MNW 300 AI
+and HDR+ 100 REAL bodies total 653,835,579 verified bytes; both blind overlap screens complete,
+zero detector scores. No further bulk acquisition is needed while this hypothesis is tested.
+
+Post-fit integrity/acceptance: separately verify saved checkpoint hashes and exact epoch/offset,
+reconstruct the model and replay every archived outer-validation prediction. This is serialization
+verification on already consumed rows, not another test. Require max score error <=5e-5 and zero
+decision changes; fail closed otherwise. The report's relative `research_guard_passed` field is
+not sufficient for advancement: all existing absolute fold gates must also pass. Freeze a separate
+acceptance receipt that combines these checks before any full-data fit, new DEV or E52 opening.
 
 Public test-reserve acquisition in parallel: Microsoft–Northwestern–WITNESS (MNW), pinned Git
 revision `c93abf43e8157558a0e60aab7df4278b2c539253`, six text-to-image folders (GPTimage2,
