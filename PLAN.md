@@ -1183,6 +1183,26 @@ format rule or resolution heuristic. These are diagnosis-only observations, neve
       as pixel-audited or assumed to be 9,800 missing images. Locator hash `a51cb457...eb81`.
       Next: join metadata-only identities, review superseded reserves, then canonical protected-
       body comparison. Training and the served model remain unchanged until admission closes.
+      **Protected-pixel execution (2026-09-09, before code/run):** read the frozen 117,898 local
+      locations, verify expected size/SHA-256 (and ZIP CRC), and compute canonical RGB/dHash/pHash63.
+      Use bounded worker batches and a local SQLite fingerprint cache so interruptions do not
+      require recomputing every fingerprint; cached fingerprints never waive current byte checks.
+      Compare new SCIMD/SCMI TRAIN/CAL against all protected bodies, and every E51 TRAIN/CAL row
+      against E49 bodies. Preserve overlap candidates and missing coverage without relabelling or
+      threshold selection. Metadata-only/superseded reserves remain a separate admission gate.
+      **Protected-only size exception, before restart:** the run stopped after 64,000 locations
+      because six hash-pinned historical RR test images exceed 100 MP (maximum 178,562,880 pixels).
+      Permit only those six exact SHA-256/geometry pairs, process them serially without resizing,
+      and keep the default 100 MP limit for every other image and all E51 TRAIN/CAL inputs.
+      Preserve Pillow's independent bomb checks and the complete decoded RGB fingerprint.
+      **Fixed E51-B implementation specification (before feature code):** use the same three
+      224x224 global/texture crops as E51-A; add eight normalized DCT energy bands and eight
+      residual/gradient statistics per crop, aggregated by crop mean/std (32 values). No filename,
+      EXIF field or format/resolution scalar is a classifier input. Compare A versus A+32 only at
+      fixed C=0.01 with parent/source/class-balanced training weights, train-fitted standardization
+      and unchanged CAL gates. Source/pipeline shortcuts may still survive pixel preprocessing;
+      this feature branch is a hypothesis, not an assumed improvement. Unit tests may use generated
+      numerical arrays; no real-data feature extraction/fit until protected admission closes.
 - [ ] **Select on new grouped CAL, then open fresh DEVELOPMENT once.** Group by device/scene/parent;
       require both original and Q75 to meet AUC >=0.90, BA >=0.85, pooled REAL FP <=10%, worst-device
       FP <=20%, AI recall >=80%, worst-generator recall >=60%, automatic coverage >=80%, covered

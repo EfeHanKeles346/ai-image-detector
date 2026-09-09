@@ -34,10 +34,10 @@ EVIDENCE = ML_ROOT.parent / "evidence/e51_prefit_identity.json"
 CACHE = ROOT / "audit/fingerprints_v1"
 
 
-def fingerprint(raw: bytes) -> dict[str, Any]:
+def fingerprint(raw: bytes, *, max_pixels: int = 100_000_000) -> dict[str, Any]:
     """Use a single explicit convention; ties are zero, not inverse-complemented."""
     with Image.open(BytesIO(raw)) as image:
-        if image.width * image.height > 100_000_000:
+        if image.width * image.height > max_pixels:
             raise ValueError("image exceeds pre-decode pixel budget")
         image.verify()
     with Image.open(BytesIO(raw)) as image:

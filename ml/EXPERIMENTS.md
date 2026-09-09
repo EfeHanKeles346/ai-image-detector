@@ -4103,3 +4103,21 @@ was scored or selected using model output.
 - No image download, model training, score or threshold change. `training_authorized=false` until
   protected canonical-pixel and remaining reserve admission close. Passing path resolution does
   not certify pixel-level separation. All 504 Python tests passed; no new dependencies installed.
+
+### E51 executable protected-pixel audit + B feature hypothesis — 2026-09-09
+
+- Added `experiments.e51_protected_pixels --workers 4`, using the existing LaCie data root and
+  `HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1`. It verifies all current bytes, uses full RGB/dHash/pHash63,
+  batches work, caches fingerprints in `ml/work/e51/canonical_fingerprints.sqlite3`, and writes
+  recoverable progress on the external disk. No score is computed. Completion is not yet claimed.
+- First attempt: 64,000 locations verified, 63,996 unique cache entries, then failed closed on the
+  100 MP cap. Six frozen RR protected images are larger (maximum 178,562,880 pixels). Before restart,
+  bind their six SHA-256/pixel-count pairs and serialize only their full-resolution decoding.
+  All other images retain the default cap; no global Pillow bomb setting is changed. Resume started.
+- E51-B feature specification is now implemented and unit-tested: 8 normalized radial DCT energy
+  bins +8 residual/gradient statistics per 224x224 crop; mean/std over the exact three E42 crops
+  produce 32 extra values. A=3,072 versus B=3,104 dimensions; no architecture/hyperparameter sweep.
+  The branch is an unmeasured hypothesis, not a claimed detector gain or proven shortcut immunity.
+- Verification: 512 Python tests, compilation and whitespace checks pass. No E51 real-data feature
+  extraction, fitting, threshold search, DEVELOPMENT rerun or demo promotion took place. The old
+  comprehensive final remains consumed; any eventual rerun must be labelled diagnostic/regression.

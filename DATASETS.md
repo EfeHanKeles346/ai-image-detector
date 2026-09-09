@@ -1861,3 +1861,10 @@ has an unresolved path. Relative paths are resolved against each source manifest
 metadata-only parent/reserve references separately; they still need identity joins and cannot be
 silently treated as image-level audit coverage. This inventory does not decode or score images;
 canonical protected-pixel checking and superseded-reserve coverage remain pending before training.
+
+Protected-pixel execution update (2026-09-09): the offline reader reached 64,000 locations before
+six existing RR test images exceeded its 100 MP safety cap. Those six exact SHA-256 identities
+(largest 178,562,880 pixels) now have a protected-only, serialized full-resolution exception; no
+general cap is disabled and no payload is downloaded. Their identities remain test-protected,
+not training candidates. The restarted comparison is still running; an available path or cached
+fingerprint alone is not reported as a completed separation result.

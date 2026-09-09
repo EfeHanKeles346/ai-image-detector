@@ -5152,3 +5152,33 @@ The user's generated-image idea is recorded but not executed: an image-generatio
 a separate synthetic pool, but requires network transfer and must retain prompt/model/date/role
 provenance. It is neither necessary to spawn a separate agent nor valid to mix generated training
 examples into the final test. Existing data remains the priority under the mobile-data constraint.
+
+### 2026-09-09 — protected-pixel runner and fixed E51-B feature implementation
+
+Implemented and started the actual offline protected-image comparison, not another download.
+`ml/experiments/e51_protected_pixels.py` binds locator hash `a51cb457...eb81`, checks current
+file/member bytes and SHA-256 (plus ZIP CRC), and computes the same full-resolution canonical
+fingerprints. Bounded worker batches and a local SQLite cache avoid repeating fingerprint
+computation after interruption; resumes still verify current bytes. Progress is stored under
+`e51/audit/protected_pixels_progress.json` on LaCie. It checks new SCIMD/SCMI against all protected
+bodies and every E51 TRAIN/CAL observation against E49. No network or detector is used.
+
+The first run reached 64,000 locations, caching 63,996 distinct fingerprints, then stopped safely:
+six historically protected RR images exceed the default 100 MP decode cap. This was not an internet
+failure. Their prior manifest hashes/geometry bind 102.96–178.56 MP. An explicit six-SHA allowlist
+now processes only those images serially, at full resolution, preserving Pillow bomb checks and
+the ordinary 100 MP default. No blanket size limit was removed and no training example was admitted
+by this exception. The corrected run is in progress; no completed protected-pixel result is claimed.
+
+The predeclared E51-B hypothesis now has tested feature code in `ml/experiments/e51_features.py`:
+eight normalized DCT bands plus eight residual/gradient statistics per shared E42 crop, aggregated
+across three crops by mean/std into 32 features. E51-A stays at 3,072 DINO features; E51-B would use
+3,104. No filenames, EXIF fields or explicit format/resolution scalars enter this branch, but
+pixel-level source shortcuts can still exist. Fixed C=0.01 and source/parent/class-balanced fitting
+remain planned; this code has not yet extracted real-data features or trained a new head.
+
+Verification: **512 Python tests passed**, compilation and diff-whitespace checks passed. Existing
+model, demo, thresholds and benchmark scores are unchanged. Protected/reserve admission remains
+open; after closure, fit and select on CAL, use fresh DEVELOPMENT once, and label any old-test rerun
+as regression/diagnostic evidence rather than a new independent final. Work is committed locally;
+no GitHub push is attempted while the user reports a disconnected/mobile connection.
