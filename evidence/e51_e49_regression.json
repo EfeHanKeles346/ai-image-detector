@@ -1,0 +1,869 @@
+{
+  "candidates": {
+    "A": {
+      "publisher_original": {
+        "interval_scope": "2,000 paired parent bootstraps within fixed source strata; not uncertainty over new publishers.",
+        "new": {
+          "ai_recall": 0.775,
+          "auc": 0.884358,
+          "automatic_coverage": 1.0,
+          "balanced_accuracy": 0.808,
+          "covered_accuracy": 0.808,
+          "false_ai_count": 159,
+          "missed_ai_count": 225,
+          "passed": false,
+          "real_false_ai": 0.159,
+          "sources": {
+            "Canon EOS R5": {
+              "ai_prediction_rate": 0.17,
+              "label": 0,
+              "rows": 100
+            },
+            "FLUX.2 Klein 9B": {
+              "ai_prediction_rate": 0.63125,
+              "label": 1,
+              "rows": 160
+            },
+            "GPT Image 2": {
+              "ai_prediction_rate": 0.88125,
+              "label": 1,
+              "rows": 160
+            },
+            "Google Pixel 7 Pro": {
+              "ai_prediction_rate": 0.11,
+              "label": 0,
+              "rows": 100
+            },
+            "Google Pixel 8 Pro": {
+              "ai_prediction_rate": 0.06,
+              "label": 0,
+              "rows": 100
+            },
+            "Midjourney 7": {
+              "ai_prediction_rate": 0.78125,
+              "label": 1,
+              "rows": 160
+            },
+            "Nikon Z 8": {
+              "ai_prediction_rate": 0.3,
+              "label": 0,
+              "rows": 100
+            },
+            "Samsung Galaxy S23 Ultra": {
+              "ai_prediction_rate": 0.1,
+              "label": 0,
+              "rows": 100
+            },
+            "Seedream v5.0": {
+              "ai_prediction_rate": 0.6125,
+              "label": 1,
+              "rows": 160
+            },
+            "Sony ILCE-7M4": {
+              "ai_prediction_rate": 0.25,
+              "label": 0,
+              "rows": 100
+            },
+            "StyleGAN2": {
+              "ai_prediction_rate": 0.905,
+              "label": 1,
+              "rows": 200
+            },
+            "Z-Image Turbo": {
+              "ai_prediction_rate": 0.80625,
+              "label": 1,
+              "rows": 160
+            },
+            "iPhone 13 Pro": {
+              "ai_prediction_rate": 0.13,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 14 Pro": {
+              "ai_prediction_rate": 0.09,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro": {
+              "ai_prediction_rate": 0.29,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro Max": {
+              "ai_prediction_rate": 0.09,
+              "label": 0,
+              "rows": 100
+            }
+          },
+          "uncertainty": 0.0,
+          "worst_ai_source": 0.6125,
+          "worst_real_source": 0.3
+        },
+        "old": {
+          "ai_recall": 0.943,
+          "auc": 0.902425,
+          "automatic_coverage": 0.8595,
+          "balanced_accuracy": 0.776,
+          "covered_accuracy": 0.7626527050610821,
+          "false_ai_count": 391,
+          "missed_ai_count": 57,
+          "passed": false,
+          "real_false_ai": 0.391,
+          "sources": {
+            "Canon EOS R5": {
+              "ai_prediction_rate": 0.71,
+              "label": 0,
+              "rows": 100
+            },
+            "FLUX.2 Klein 9B": {
+              "ai_prediction_rate": 0.925,
+              "label": 1,
+              "rows": 160
+            },
+            "GPT Image 2": {
+              "ai_prediction_rate": 0.95,
+              "label": 1,
+              "rows": 160
+            },
+            "Google Pixel 7 Pro": {
+              "ai_prediction_rate": 0.24,
+              "label": 0,
+              "rows": 100
+            },
+            "Google Pixel 8 Pro": {
+              "ai_prediction_rate": 0.28,
+              "label": 0,
+              "rows": 100
+            },
+            "Midjourney 7": {
+              "ai_prediction_rate": 0.925,
+              "label": 1,
+              "rows": 160
+            },
+            "Nikon Z 8": {
+              "ai_prediction_rate": 0.6,
+              "label": 0,
+              "rows": 100
+            },
+            "Samsung Galaxy S23 Ultra": {
+              "ai_prediction_rate": 0.19,
+              "label": 0,
+              "rows": 100
+            },
+            "Seedream v5.0": {
+              "ai_prediction_rate": 0.91875,
+              "label": 1,
+              "rows": 160
+            },
+            "Sony ILCE-7M4": {
+              "ai_prediction_rate": 0.66,
+              "label": 0,
+              "rows": 100
+            },
+            "StyleGAN2": {
+              "ai_prediction_rate": 0.955,
+              "label": 1,
+              "rows": 200
+            },
+            "Z-Image Turbo": {
+              "ai_prediction_rate": 0.98125,
+              "label": 1,
+              "rows": 160
+            },
+            "iPhone 13 Pro": {
+              "ai_prediction_rate": 0.36,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 14 Pro": {
+              "ai_prediction_rate": 0.19,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro": {
+              "ai_prediction_rate": 0.39,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro Max": {
+              "ai_prediction_rate": 0.29,
+              "label": 0,
+              "rows": 100
+            }
+          },
+          "uncertainty": 0.1405,
+          "worst_ai_source": 0.91875,
+          "worst_real_source": 0.71
+        },
+        "paired_delta_95pct_intervals": {
+          "ai_recall": [
+            -0.19099999999999995,
+            -0.1459999999999999
+          ],
+          "balanced_accuracy": [
+            0.015000000000000041,
+            0.04850000000000004
+          ],
+          "real_false_ai": [
+            -0.257,
+            -0.207
+          ]
+        }
+      },
+      "social_q75": {
+        "interval_scope": "2,000 paired parent bootstraps within fixed source strata; not uncertainty over new publishers.",
+        "new": {
+          "ai_recall": 0.821,
+          "auc": 0.8437955,
+          "automatic_coverage": 1.0,
+          "balanced_accuracy": 0.7569999999999999,
+          "covered_accuracy": 0.757,
+          "false_ai_count": 307,
+          "missed_ai_count": 179,
+          "passed": false,
+          "real_false_ai": 0.307,
+          "sources": {
+            "Canon EOS R5": {
+              "ai_prediction_rate": 0.55,
+              "label": 0,
+              "rows": 100
+            },
+            "FLUX.2 Klein 9B": {
+              "ai_prediction_rate": 0.63125,
+              "label": 1,
+              "rows": 160
+            },
+            "GPT Image 2": {
+              "ai_prediction_rate": 0.9,
+              "label": 1,
+              "rows": 160
+            },
+            "Google Pixel 7 Pro": {
+              "ai_prediction_rate": 0.22,
+              "label": 0,
+              "rows": 100
+            },
+            "Google Pixel 8 Pro": {
+              "ai_prediction_rate": 0.16,
+              "label": 0,
+              "rows": 100
+            },
+            "Midjourney 7": {
+              "ai_prediction_rate": 0.76875,
+              "label": 1,
+              "rows": 160
+            },
+            "Nikon Z 8": {
+              "ai_prediction_rate": 0.44,
+              "label": 0,
+              "rows": 100
+            },
+            "Samsung Galaxy S23 Ultra": {
+              "ai_prediction_rate": 0.21,
+              "label": 0,
+              "rows": 100
+            },
+            "Seedream v5.0": {
+              "ai_prediction_rate": 0.91875,
+              "label": 1,
+              "rows": 160
+            },
+            "Sony ILCE-7M4": {
+              "ai_prediction_rate": 0.45,
+              "label": 0,
+              "rows": 100
+            },
+            "StyleGAN2": {
+              "ai_prediction_rate": 0.865,
+              "label": 1,
+              "rows": 200
+            },
+            "Z-Image Turbo": {
+              "ai_prediction_rate": 0.83125,
+              "label": 1,
+              "rows": 160
+            },
+            "iPhone 13 Pro": {
+              "ai_prediction_rate": 0.29,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 14 Pro": {
+              "ai_prediction_rate": 0.24,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro": {
+              "ai_prediction_rate": 0.3,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro Max": {
+              "ai_prediction_rate": 0.21,
+              "label": 0,
+              "rows": 100
+            }
+          },
+          "uncertainty": 0.0,
+          "worst_ai_source": 0.63125,
+          "worst_real_source": 0.55
+        },
+        "old": {
+          "ai_recall": 0.955,
+          "auc": 0.8688500000000001,
+          "automatic_coverage": 0.864,
+          "balanced_accuracy": 0.7324999999999999,
+          "covered_accuracy": 0.7100694444444444,
+          "false_ai_count": 490,
+          "missed_ai_count": 45,
+          "passed": false,
+          "real_false_ai": 0.49,
+          "sources": {
+            "Canon EOS R5": {
+              "ai_prediction_rate": 0.84,
+              "label": 0,
+              "rows": 100
+            },
+            "FLUX.2 Klein 9B": {
+              "ai_prediction_rate": 0.925,
+              "label": 1,
+              "rows": 160
+            },
+            "GPT Image 2": {
+              "ai_prediction_rate": 0.9625,
+              "label": 1,
+              "rows": 160
+            },
+            "Google Pixel 7 Pro": {
+              "ai_prediction_rate": 0.38,
+              "label": 0,
+              "rows": 100
+            },
+            "Google Pixel 8 Pro": {
+              "ai_prediction_rate": 0.41,
+              "label": 0,
+              "rows": 100
+            },
+            "Midjourney 7": {
+              "ai_prediction_rate": 0.9125,
+              "label": 1,
+              "rows": 160
+            },
+            "Nikon Z 8": {
+              "ai_prediction_rate": 0.66,
+              "label": 0,
+              "rows": 100
+            },
+            "Samsung Galaxy S23 Ultra": {
+              "ai_prediction_rate": 0.28,
+              "label": 0,
+              "rows": 100
+            },
+            "Seedream v5.0": {
+              "ai_prediction_rate": 0.9875,
+              "label": 1,
+              "rows": 160
+            },
+            "Sony ILCE-7M4": {
+              "ai_prediction_rate": 0.69,
+              "label": 0,
+              "rows": 100
+            },
+            "StyleGAN2": {
+              "ai_prediction_rate": 0.96,
+              "label": 1,
+              "rows": 200
+            },
+            "Z-Image Turbo": {
+              "ai_prediction_rate": 0.98125,
+              "label": 1,
+              "rows": 160
+            },
+            "iPhone 13 Pro": {
+              "ai_prediction_rate": 0.5,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 14 Pro": {
+              "ai_prediction_rate": 0.36,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro": {
+              "ai_prediction_rate": 0.46,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro Max": {
+              "ai_prediction_rate": 0.32,
+              "label": 0,
+              "rows": 100
+            }
+          },
+          "uncertainty": 0.136,
+          "worst_ai_source": 0.9125,
+          "worst_real_source": 0.84
+        },
+        "paired_delta_95pct_intervals": {
+          "ai_recall": [
+            -0.15402500000000002,
+            -0.11299999999999999
+          ],
+          "balanced_accuracy": [
+            0.008500000000000034,
+            0.04099999999999998
+          ],
+          "real_false_ai": [
+            -0.21000000000000002,
+            -0.15600000000000003
+          ]
+        }
+      }
+    },
+    "B": {
+      "publisher_original": {
+        "interval_scope": "2,000 paired parent bootstraps within fixed source strata; not uncertainty over new publishers.",
+        "new": {
+          "ai_recall": 0.787,
+          "auc": 0.884528,
+          "automatic_coverage": 1.0,
+          "balanced_accuracy": 0.8075,
+          "covered_accuracy": 0.8075,
+          "false_ai_count": 172,
+          "missed_ai_count": 213,
+          "passed": false,
+          "real_false_ai": 0.172,
+          "sources": {
+            "Canon EOS R5": {
+              "ai_prediction_rate": 0.19,
+              "label": 0,
+              "rows": 100
+            },
+            "FLUX.2 Klein 9B": {
+              "ai_prediction_rate": 0.65,
+              "label": 1,
+              "rows": 160
+            },
+            "GPT Image 2": {
+              "ai_prediction_rate": 0.89375,
+              "label": 1,
+              "rows": 160
+            },
+            "Google Pixel 7 Pro": {
+              "ai_prediction_rate": 0.12,
+              "label": 0,
+              "rows": 100
+            },
+            "Google Pixel 8 Pro": {
+              "ai_prediction_rate": 0.06,
+              "label": 0,
+              "rows": 100
+            },
+            "Midjourney 7": {
+              "ai_prediction_rate": 0.78125,
+              "label": 1,
+              "rows": 160
+            },
+            "Nikon Z 8": {
+              "ai_prediction_rate": 0.33,
+              "label": 0,
+              "rows": 100
+            },
+            "Samsung Galaxy S23 Ultra": {
+              "ai_prediction_rate": 0.11,
+              "label": 0,
+              "rows": 100
+            },
+            "Seedream v5.0": {
+              "ai_prediction_rate": 0.63125,
+              "label": 1,
+              "rows": 160
+            },
+            "Sony ILCE-7M4": {
+              "ai_prediction_rate": 0.27,
+              "label": 0,
+              "rows": 100
+            },
+            "StyleGAN2": {
+              "ai_prediction_rate": 0.925,
+              "label": 1,
+              "rows": 200
+            },
+            "Z-Image Turbo": {
+              "ai_prediction_rate": 0.80625,
+              "label": 1,
+              "rows": 160
+            },
+            "iPhone 13 Pro": {
+              "ai_prediction_rate": 0.13,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 14 Pro": {
+              "ai_prediction_rate": 0.1,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro": {
+              "ai_prediction_rate": 0.31,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro Max": {
+              "ai_prediction_rate": 0.1,
+              "label": 0,
+              "rows": 100
+            }
+          },
+          "uncertainty": 0.0,
+          "worst_ai_source": 0.63125,
+          "worst_real_source": 0.33
+        },
+        "old": {
+          "ai_recall": 0.943,
+          "auc": 0.902425,
+          "automatic_coverage": 0.8595,
+          "balanced_accuracy": 0.776,
+          "covered_accuracy": 0.7626527050610821,
+          "false_ai_count": 391,
+          "missed_ai_count": 57,
+          "passed": false,
+          "real_false_ai": 0.391,
+          "sources": {
+            "Canon EOS R5": {
+              "ai_prediction_rate": 0.71,
+              "label": 0,
+              "rows": 100
+            },
+            "FLUX.2 Klein 9B": {
+              "ai_prediction_rate": 0.925,
+              "label": 1,
+              "rows": 160
+            },
+            "GPT Image 2": {
+              "ai_prediction_rate": 0.95,
+              "label": 1,
+              "rows": 160
+            },
+            "Google Pixel 7 Pro": {
+              "ai_prediction_rate": 0.24,
+              "label": 0,
+              "rows": 100
+            },
+            "Google Pixel 8 Pro": {
+              "ai_prediction_rate": 0.28,
+              "label": 0,
+              "rows": 100
+            },
+            "Midjourney 7": {
+              "ai_prediction_rate": 0.925,
+              "label": 1,
+              "rows": 160
+            },
+            "Nikon Z 8": {
+              "ai_prediction_rate": 0.6,
+              "label": 0,
+              "rows": 100
+            },
+            "Samsung Galaxy S23 Ultra": {
+              "ai_prediction_rate": 0.19,
+              "label": 0,
+              "rows": 100
+            },
+            "Seedream v5.0": {
+              "ai_prediction_rate": 0.91875,
+              "label": 1,
+              "rows": 160
+            },
+            "Sony ILCE-7M4": {
+              "ai_prediction_rate": 0.66,
+              "label": 0,
+              "rows": 100
+            },
+            "StyleGAN2": {
+              "ai_prediction_rate": 0.955,
+              "label": 1,
+              "rows": 200
+            },
+            "Z-Image Turbo": {
+              "ai_prediction_rate": 0.98125,
+              "label": 1,
+              "rows": 160
+            },
+            "iPhone 13 Pro": {
+              "ai_prediction_rate": 0.36,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 14 Pro": {
+              "ai_prediction_rate": 0.19,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro": {
+              "ai_prediction_rate": 0.39,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro Max": {
+              "ai_prediction_rate": 0.29,
+              "label": 0,
+              "rows": 100
+            }
+          },
+          "uncertainty": 0.1405,
+          "worst_ai_source": 0.91875,
+          "worst_real_source": 0.71
+        },
+        "paired_delta_95pct_intervals": {
+          "ai_recall": [
+            -0.17799999999999994,
+            -0.1349999999999999
+          ],
+          "balanced_accuracy": [
+            0.015000000000000041,
+            0.047000000000000056
+          ],
+          "real_false_ai": [
+            -0.24402500000000002,
+            -0.19399999999999998
+          ]
+        }
+      },
+      "social_q75": {
+        "interval_scope": "2,000 paired parent bootstraps within fixed source strata; not uncertainty over new publishers.",
+        "new": {
+          "ai_recall": 0.83,
+          "auc": 0.8441609999999999,
+          "automatic_coverage": 1.0,
+          "balanced_accuracy": 0.7585,
+          "covered_accuracy": 0.7585,
+          "false_ai_count": 313,
+          "missed_ai_count": 170,
+          "passed": false,
+          "real_false_ai": 0.313,
+          "sources": {
+            "Canon EOS R5": {
+              "ai_prediction_rate": 0.55,
+              "label": 0,
+              "rows": 100
+            },
+            "FLUX.2 Klein 9B": {
+              "ai_prediction_rate": 0.65,
+              "label": 1,
+              "rows": 160
+            },
+            "GPT Image 2": {
+              "ai_prediction_rate": 0.91875,
+              "label": 1,
+              "rows": 160
+            },
+            "Google Pixel 7 Pro": {
+              "ai_prediction_rate": 0.22,
+              "label": 0,
+              "rows": 100
+            },
+            "Google Pixel 8 Pro": {
+              "ai_prediction_rate": 0.18,
+              "label": 0,
+              "rows": 100
+            },
+            "Midjourney 7": {
+              "ai_prediction_rate": 0.775,
+              "label": 1,
+              "rows": 160
+            },
+            "Nikon Z 8": {
+              "ai_prediction_rate": 0.46,
+              "label": 0,
+              "rows": 100
+            },
+            "Samsung Galaxy S23 Ultra": {
+              "ai_prediction_rate": 0.21,
+              "label": 0,
+              "rows": 100
+            },
+            "Seedream v5.0": {
+              "ai_prediction_rate": 0.91875,
+              "label": 1,
+              "rows": 160
+            },
+            "Sony ILCE-7M4": {
+              "ai_prediction_rate": 0.45,
+              "label": 0,
+              "rows": 100
+            },
+            "StyleGAN2": {
+              "ai_prediction_rate": 0.87,
+              "label": 1,
+              "rows": 200
+            },
+            "Z-Image Turbo": {
+              "ai_prediction_rate": 0.8375,
+              "label": 1,
+              "rows": 160
+            },
+            "iPhone 13 Pro": {
+              "ai_prediction_rate": 0.29,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 14 Pro": {
+              "ai_prediction_rate": 0.24,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro": {
+              "ai_prediction_rate": 0.32,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro Max": {
+              "ai_prediction_rate": 0.21,
+              "label": 0,
+              "rows": 100
+            }
+          },
+          "uncertainty": 0.0,
+          "worst_ai_source": 0.65,
+          "worst_real_source": 0.55
+        },
+        "old": {
+          "ai_recall": 0.955,
+          "auc": 0.8688500000000001,
+          "automatic_coverage": 0.864,
+          "balanced_accuracy": 0.7324999999999999,
+          "covered_accuracy": 0.7100694444444444,
+          "false_ai_count": 490,
+          "missed_ai_count": 45,
+          "passed": false,
+          "real_false_ai": 0.49,
+          "sources": {
+            "Canon EOS R5": {
+              "ai_prediction_rate": 0.84,
+              "label": 0,
+              "rows": 100
+            },
+            "FLUX.2 Klein 9B": {
+              "ai_prediction_rate": 0.925,
+              "label": 1,
+              "rows": 160
+            },
+            "GPT Image 2": {
+              "ai_prediction_rate": 0.9625,
+              "label": 1,
+              "rows": 160
+            },
+            "Google Pixel 7 Pro": {
+              "ai_prediction_rate": 0.38,
+              "label": 0,
+              "rows": 100
+            },
+            "Google Pixel 8 Pro": {
+              "ai_prediction_rate": 0.41,
+              "label": 0,
+              "rows": 100
+            },
+            "Midjourney 7": {
+              "ai_prediction_rate": 0.9125,
+              "label": 1,
+              "rows": 160
+            },
+            "Nikon Z 8": {
+              "ai_prediction_rate": 0.66,
+              "label": 0,
+              "rows": 100
+            },
+            "Samsung Galaxy S23 Ultra": {
+              "ai_prediction_rate": 0.28,
+              "label": 0,
+              "rows": 100
+            },
+            "Seedream v5.0": {
+              "ai_prediction_rate": 0.9875,
+              "label": 1,
+              "rows": 160
+            },
+            "Sony ILCE-7M4": {
+              "ai_prediction_rate": 0.69,
+              "label": 0,
+              "rows": 100
+            },
+            "StyleGAN2": {
+              "ai_prediction_rate": 0.96,
+              "label": 1,
+              "rows": 200
+            },
+            "Z-Image Turbo": {
+              "ai_prediction_rate": 0.98125,
+              "label": 1,
+              "rows": 160
+            },
+            "iPhone 13 Pro": {
+              "ai_prediction_rate": 0.5,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 14 Pro": {
+              "ai_prediction_rate": 0.36,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro": {
+              "ai_prediction_rate": 0.46,
+              "label": 0,
+              "rows": 100
+            },
+            "iPhone 15 Pro Max": {
+              "ai_prediction_rate": 0.32,
+              "label": 0,
+              "rows": 100
+            }
+          },
+          "uncertainty": 0.136,
+          "worst_ai_source": 0.9125,
+          "worst_real_source": 0.84
+        },
+        "paired_delta_95pct_intervals": {
+          "ai_recall": [
+            -0.1449999999999999,
+            -0.10499999999999998
+          ],
+          "balanced_accuracy": [
+            0.010487499999999983,
+            0.04200000000000001
+          ],
+          "real_false_ai": [
+            -0.20400000000000001,
+            -0.14999999999999997
+          ]
+        }
+      }
+    }
+  },
+  "contract": {
+    "CAL_selected": "A",
+    "cal_sha256": "247fac1f91c1e7f2acf718dbbb520773889f515d63de31192f6c71f671916b29",
+    "candidates": {
+      "A": "60d56c0bdf72812e8393e41db82534fc3c63681f5adb84d5dd2a4841247b6b39",
+      "B": "b1ac18f333fddfd035dfd977c52420ba76f42d04610362e63dcd0d0d66a838e2"
+    },
+    "code_sha256": "789dbfff884a872c9fc102cdd8f6657a55b5cc30fa6c4565daf24b893b98a5e4",
+    "development_access": false,
+    "feature_sha256": "b5bd0d7a712364cb8ca96f5d1a691c3970822da1f52e9a8c3c55151a686ab2d1",
+    "manifest_sha256": "9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909",
+    "network_transfer": false,
+    "old_artifact_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "old_scores_sha256": "249f005c83acbc65ac987c9fdeea91a9a3c7dfc4a388fdd4e20a436bc53610a8",
+    "pipeline_sha256": "8a841eb82b04a2a296b9b19127a9e1365e4486402dc5178a32fbead67cab2db1",
+    "purpose": "consumed E49 paired regression only; forbidden for selection or refitting"
+  },
+  "observations": 4000,
+  "old_reproduction_max_score_difference": 0.0,
+  "parents": 2000,
+  "schema_version": 1,
+  "score_sha256": "2764281d98701b226f398526ba2a3a88d13eff8c355342456a037adc988ef320",
+  "serving_changed": false,
+  "state": "consumed_E49_regression_complete_not_independent_final",
+  "winner_selection_from_this_report": false
+}

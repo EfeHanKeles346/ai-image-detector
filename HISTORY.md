@@ -5246,3 +5246,20 @@ the entire shared five-model prompt group, with the first 20 remaining ranked pr
 selected. Quota exhaustion stops without scores. The resulting target is 3,440 parents/6,880
 observations. Hidden IEEE device ids and 512px publisher preprocessing are explicit limitations;
 paired prompt sets must not be counted as 800 independent AI prompts. No download is requested.
+
+### 2026-09-09 — measured E51 versus consumed E49: authentic safety improves, AI recall drops
+
+All 4,000 E49 observations were rescored with frozen A/B and their CAL thresholds; the old E43
+scores reproduced **exactly** (maximum difference 0.0). A original REAL false-AI falls 391→159
+of 1,000, but missed AI rises 57→225 of 1,000. Balanced accuracy increases 77.60%→80.80%,
+while AUC falls 0.902425→0.884358. Q75: REAL false-AI 490→307, missed AI 45→179,
+BA 73.25%→75.70%, AUC 0.868850→0.843796. All original gates still fail. This is not a
+universal representation improvement or deployable success. Source-stratified paired 95% bootstrap
+BA-delta intervals are +1.50 to +4.85 pp original and +0.85 to +4.10 pp Q75; they do not cover
+new-publisher uncertainty. B remains unselected: BA 80.75%/75.85%, FPR 17.2%/31.3%,
+AI recall 78.7%/83.0%. No test-informed cut, winner switch or serving promotion occurred.
+
+Fresh DEV scorer is fixed before its first score: A only, same CAL cut and admitted identities,
+per-transport metrics, source errors, paired-prompt bootstrap (each shared AI prompt is one
+five-generator cluster). IEEE hidden device ids remain an unverified dimension even if observable
+group checks pass. The existing benchmark result is archived in `evidence/e51_e49_regression.json`.

@@ -50,6 +50,17 @@ then exactly one evaluation of A on admitted IEEE/Datapoint DEVELOPMENT; no thre
   per category (eight categories) for 800 AI; depleted quotas abort, with no score-driven replacement.
   IEEE camera ids are hidden and files are publisher 512px images: two transport groups cannot
   establish worst-device performance or native-resolution transfer. Keep this limitation explicit.
+- DEV scoring: lock the selected A artifact, CAL cut and admitted 6,880-row manifest before its
+  first score. Report each original/Q75 column with exact counts, per-source rates and 2,000
+  bootstrap intervals grouping all five AI images sharing a prompt. No second candidate or refit.
+  Even a pass of observable transport-group checks is not proof of the hidden worst-device check.
+
+Old-test regression completed (consumed E49, not new final): A original BA 77.60%→80.80%,
+REAL FPR 39.10%→15.90%, AI recall 94.30%→77.50%; Q75 BA 73.25%→75.70%, REAL FPR
+49.00%→30.70%, AI recall 95.50%→82.10%. AUC fell 0.902425→0.884358 and
+0.868850→0.843796. This is a real-safety/AI-recall tradeoff, not stronger universal separation.
+Keep A as the CAL-selected research artifact and current serving unchanged; do not promote or
+choose B using this regression. Next remains the already-bound fresh DEV, not an E49 threshold sweep.
 
 ## Current execution slice — E41 external proof, then E42 only if needed (2026-08-28)
 

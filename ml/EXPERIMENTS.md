@@ -4179,3 +4179,22 @@ match aborts; an AI match excludes its whole shared prompt group, with fixed ran
 No source quota relaxation, label correction, score-dependent substitution or new transfer.
 Worst-real transport group is only a proxy: IEEE hides camera ids and supplies 512px publisher
 images, so neither worst-device generalization nor full-resolution performance can be established.
+
+### E51 consumed-E49 diagnostic regression — 2026-09-09
+
+| Candidate | Condition | AUC | BA | REAL FPR | AI recall | False AI /1,000 REAL | Misses /1,000 AI |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Old E43 | original | 0.902425 | 0.7760 | 0.391 | 0.943 | 391 | 57 |
+| E51 A | original | 0.884358 | 0.8080 | 0.159 | 0.775 | 159 | 225 |
+| E51 B | original | 0.884528 | 0.8075 | 0.172 | 0.787 | 172 | 213 |
+| Old E43 | Q75 | 0.868850 | 0.7325 | 0.490 | 0.955 | 490 | 45 |
+| E51 A | Q75 | 0.843796 | 0.7570 | 0.307 | 0.821 | 307 | 179 |
+| E51 B | Q75 | 0.844161 | 0.7585 | 0.313 | 0.830 | 313 | 170 |
+
+Old score reproduction max difference=0.0. A fixed source-stratified paired bootstrap BA delta
+95% CI: [+0.0150,+0.0485] original, [+0.0085,+0.0410] Q75. Original AI recall delta is
+[-0.191,-0.146]; the loss is material, not hidden behind the BA improvement. A's worst REAL
+group is 30% original and 55% Q75; worst AI group recall 61.25%/63.125%. Both fail the gate.
+No selection/refit from these rows; A stays the CAL-selected research artifact, serving unchanged.
+Fresh DEV scoring is preregistered independently of these diagnostic metrics, using A only and
+the frozen CAL threshold; 2,000 bootstrap replicates keep the five-model shared AI prompt grouped.
