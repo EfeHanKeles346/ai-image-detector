@@ -5476,3 +5476,15 @@ User then requested pausing while travelling home. No training or download is le
 completed methods/results are saved and the next study is deliberately not started. Local E53
 working artifacts/caches occupy about 2.2 GiB on the existing disk, not network download volume.
 Resume only after the user returns; any new dataset/weight download still needs explicit permission.
+
+### 2026-09-09 — home continuation authorized; E54 preregistered
+
+User returned, confirmed the external disk, and authorized dataset downloads while asking for
+continued development. No paid image-generation/API spend is inferred. Existing bytes come first.
+E54 compares continued head-only training with last-two-DINO-block adaptation plus cosine feature
+preservation, both warm-started from the appropriate FIT-only E53 native fold head. Same admitted
+rows/folds, two complete epochs, fixed seed/LRs/weighting/clipping and final-epoch selection are
+recorded in PLAN before execution. No validation-driven early stopping or old-test threshold tuning.
+Original E43/E51/served models and Module 2 protected data remain untouched. New public acquisition
+requires a separately bounded, licensed, group-role manifest; general permission is not bulk-download
+or final-data reuse permission.

@@ -7,10 +7,36 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — E53 office slice completed offline (2026-09-09)
 
-**User-requested pause:** office work is closed; wait for the user to return before starting
-another study. No training/download is left running. All 72 saved fold heads reproduce their
-286,944 archived predictions with zero score difference or decision flips. Python: 574 tests
-passed; compilation and dependency consistency passed. Download permission remains closed.
+**Home execution authorized (2026-09-09):** the user returned, confirmed the disk is attached and
+permitted dataset downloads. Resume with E54 below; public downloads still require a concrete
+source/role/byte-cap manifest, and paid APIs are not authorized. Previous office verification:
+72 saved heads reproduce 286,944 predictions exactly; 574 Python tests passed. Serving is unchanged.
+
+### E54 — bounded representation adaptation, before any E54 training
+
+Use the admitted E53 base+native population and coverage-v2 folds unchanged. Cache the identical
+three clean/assigned-transport/Q75 crop views and their pinned frozen-DINO teacher features on
+the external disk; no new final rows. Native rows enter matching-source FIT only. Compare two
+fixed arms: continued **head-only** AdamW control versus **last-two-blocks + head** with a fixed
+0.1 cosine feature-preservation loss to the pretrained DINO features. Both initialize from that
+fold's hash-pinned E53 full/native head (never the full-data E51 probe head). This controls for
+continued head optimization; it is not a claim that AdamW duplicates the original logistic penalty.
+
+Fixed seed 54, two complete epochs, deterministic shuffled visitation of all FIT views, batch 8
+views/24 crops, per-parent/source/class weights, no sampler dropping old AI. AdamW: backbone
+LR=1e-6, head LR=1e-5, weight decay=.01, global gradient-norm clip=1.0; no schedule or early stopping
+selected from validation. Backbone remains in evaluation mode to disable stochastic dropout while
+retaining gradients for the last two blocks. Final epoch only; periodically save resumable model,
+optimizer and exact next-batch index. First verify frozen-head parity and finite gradients. Any
+data-integrity/numerical failure halts that run; it does not license unrecorded parameter changes.
+
+Choose each final cut on the existing disjoint inner CAL only. Evaluate all folds/arms on the
+same consumed TRAIN outer validation, original/Q75 separately. Report all failures and source
+losses; require the existing REAL-improvement/AI-preservation guard against both original reference
+recipes and the native baseline before advancing. Report the head-only comparator additionally.
+No winner means preserve serving and diagnose, not silently relax the AI requirement. Only a
+passing candidate may proceed to separately frozen full-data/CAL fitting and diagnostic regression,
+then a genuinely independent E52 population. A successful training process is not a final pass.
 
 **Authoritative decision:** no replacement model is accepted. Twelve fixed configurations were
 evaluated in each of two declared TRAIN source-held-out protocols: 72 separately fitted fold heads.
