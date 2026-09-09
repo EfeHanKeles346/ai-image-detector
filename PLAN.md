@@ -5,7 +5,25 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — disk returned; E55 resuming (2026-09-10)
+## Current outcome and next actions — E55 rejected; numerical/error audit (2026-09-10)
+
+E55 completes 34,890 derivative views and all six fits. Grayscale augmentation has clean/Q75 AI
+recall 67.78/66.03%, but REAL FPR 20.12/19.45%, worse than native baseline 19.50/18.76%; all
+acceptance gates reject it. Exact saved-head replay passes. Duplicate-control score parity fails
+(max errors .00118/.00768/.00238 by fold; two decisions differ in fold 1). Do not relax tolerance
+or rewrite this completed contract; grayscale is not an accepted fix and the controlled causal
+comparison is qualified by this numerical discrepancy. No independent reserve opened.
+
+Next bounded diagnostic, before any successor fit: reconstruct the native baseline FIT arrays and
+compare with the E55 teacher/order/labels/sources/parent weights exactly. Inspect saved scaler,
+coefficient, iteration and objective/gradient differences. Test one fixed numerical hypothesis:
+unduplicated versus 80/20 duplicated mathematically identical FIT loss, with float64 inputs and
+tol=1e-8, max_iter=1000, C=.01, two CPU threads, for each existing fold. Compare predictions on FIT
+only; no CAL/validation retuning or accuracy-based parameter choice. Do not save these diagnostic
+heads as candidates or change old artifacts. Freeze diagnostic code/input hashes before executing.
+Separately join already recorded E55 predictions with colour descriptors to report errors rescued
+and introduced by source/colour; zero new external model scores. Use this evidence to choose the
+next coverage/representation hypothesis rather than repeat grayscale variations.
 
 **Continuous follow-up requested, 01:53 local:** user explicitly asks for ongoing background
 research/development/testing. Update the existing thread heartbeat (no duplicate automation) to

@@ -1,0 +1,1535 @@
+{
+  "arms": {
+    "duplicate_control": {
+      "checks": {
+        "all_absolute_fold_gates": false,
+        "all_artifacts_replayed": true,
+        "all_relative_guards": false,
+        "duplicate_control_parity": false
+      },
+      "comparisons": {
+        "full_e51_3": {
+          "ai_recall_delta": [
+            0.2316006176016469,
+            0.1960885229027277
+          ],
+          "checks": {
+            "ai_preservation_interval_both": true,
+            "ai_recall_no_point_loss_both": true,
+            "real_fpr_lower_both": false,
+            "real_improvement_interval_both": false,
+            "supported_ai_sources_no_point_loss": true
+          },
+          "intervals": {
+            "ai_recall_clean": [
+              0.19308700834326578,
+              0.26136363636363635
+            ],
+            "ai_recall_q75": [
+              0.16150178784266986,
+              0.22443181818181818
+            ],
+            "real_fpr_clean": [
+              0.033577533577533576,
+              0.1360441767068273
+            ],
+            "real_fpr_q75": [
+              0.031746031746031744,
+              0.13654618473895583
+            ]
+          },
+          "passed": false,
+          "real_fpr_delta": [
+            0.0674101610904585,
+            0.06666666666666665
+          ],
+          "support_limitation": "50 image parents is a screening floor, not verified independent prompts or proof for small sources.",
+          "supported_ai_source_deltas": {
+            "e32:communityforensics-ai-local": [
+              0.0,
+              0.0
+            ],
+            "e32:flux2-klein-9b": [
+              0.0,
+              0.0
+            ],
+            "e32:gpt-image-1": [
+              0.0,
+              0.0
+            ],
+            "e32:nano-banana-local": [
+              0.0,
+              0.0
+            ],
+            "e32:qwen-image-2512": [
+              0.0,
+              0.0
+            ],
+            "e36:FLUX.2_max": [
+              0.2125,
+              0.17500000000000002
+            ],
+            "e36:GLM-Image": [
+              0.21250000000000002,
+              0.1875
+            ],
+            "e36:Qwen-Image-2.0-pro": [
+              0.24999999999999994,
+              0.22499999999999998
+            ],
+            "e36:Seedream-5.0": [
+              0.275,
+              0.25
+            ],
+            "e36:gpt-image-2": [
+              0.3625,
+              0.3
+            ],
+            "e36:nano-banana-2.0": [
+              0.2625,
+              0.23749999999999993
+            ],
+            "rr:culture_and_religion": [
+              0.44761904761904764,
+              0.3428571428571429
+            ],
+            "rr:everyday_life": [
+              0.3115468409586057,
+              0.2570806100217865
+            ],
+            "rr:labor_and_production": [
+              0.22807017543859642,
+              0.20175438596491235
+            ],
+            "rr:medical_and_public_health": [
+              0.06862745098039214,
+              0.07843137254901966
+            ],
+            "rr:natural_disasters_and_accidents": [
+              0.3539823008849558,
+              0.27433628318584075
+            ],
+            "rr:political_and_social_events": [
+              0.3548387096774194,
+              0.33333333333333337
+            ],
+            "rr:war_and_conflict": [
+              0.22580645161290314,
+              0.19354838709677413
+            ]
+          },
+          "unsupported_ai_sources": [
+            "e32:nano-banana-pro-ash-local"
+          ]
+        },
+        "full_expanded3": {
+          "ai_recall_delta": [
+            -0.0005146680391148184,
+            -0.0005146680391148184
+          ],
+          "checks": {
+            "ai_preservation_interval_both": false,
+            "ai_recall_no_point_loss_both": false,
+            "real_fpr_lower_both": false,
+            "real_improvement_interval_both": false,
+            "supported_ai_sources_no_point_loss": false
+          },
+          "intervals": {
+            "ai_recall_clean": [
+              -0.0012626262626262627,
+              0.0
+            ],
+            "ai_recall_q75": [
+              -0.0012626262626262627,
+              0.0
+            ],
+            "real_fpr_clean": [
+              0.0,
+              0.0
+            ],
+            "real_fpr_q75": [
+              0.0,
+              0.0
+            ]
+          },
+          "passed": false,
+          "real_fpr_delta": [
+            0.0,
+            0.0
+          ],
+          "support_limitation": "50 image parents is a screening floor, not verified independent prompts or proof for small sources.",
+          "supported_ai_source_deltas": {
+            "e32:communityforensics-ai-local": [
+              0.0,
+              0.0
+            ],
+            "e32:flux2-klein-9b": [
+              0.0,
+              0.0
+            ],
+            "e32:gpt-image-1": [
+              0.0,
+              0.0
+            ],
+            "e32:nano-banana-local": [
+              0.0,
+              0.0
+            ],
+            "e32:qwen-image-2512": [
+              0.0,
+              0.0
+            ],
+            "e36:FLUX.2_max": [
+              0.0,
+              0.0
+            ],
+            "e36:GLM-Image": [
+              0.0,
+              0.0
+            ],
+            "e36:Qwen-Image-2.0-pro": [
+              -0.012500000000000067,
+              -0.012500000000000067
+            ],
+            "e36:Seedream-5.0": [
+              0.0,
+              0.0
+            ],
+            "e36:gpt-image-2": [
+              0.0,
+              0.0
+            ],
+            "e36:nano-banana-2.0": [
+              0.0,
+              0.0
+            ],
+            "rr:culture_and_religion": [
+              0.0,
+              0.0
+            ],
+            "rr:everyday_life": [
+              0.0,
+              0.0
+            ],
+            "rr:labor_and_production": [
+              0.0,
+              0.0
+            ],
+            "rr:medical_and_public_health": [
+              0.0,
+              0.0
+            ],
+            "rr:natural_disasters_and_accidents": [
+              0.0,
+              0.0
+            ],
+            "rr:political_and_social_events": [
+              0.0,
+              0.0
+            ],
+            "rr:war_and_conflict": [
+              0.0,
+              0.0
+            ]
+          },
+          "unsupported_ai_sources": [
+            "e32:nano-banana-pro-ash-local"
+          ]
+        },
+        "full_old2": {
+          "ai_recall_delta": [
+            0.2259392691713844,
+            0.2197632527020072
+          ],
+          "checks": {
+            "ai_preservation_interval_both": true,
+            "ai_recall_no_point_loss_both": true,
+            "real_fpr_lower_both": false,
+            "real_improvement_interval_both": false,
+            "supported_ai_sources_no_point_loss": false
+          },
+          "intervals": {
+            "ai_recall_clean": [
+              0.18531889290012032,
+              0.25483630952380953
+            ],
+            "ai_recall_q75": [
+              0.18176400476758045,
+              0.24925595238095238
+            ],
+            "real_fpr_clean": [
+              0.03650793650793651,
+              0.1320281124497992
+            ],
+            "real_fpr_q75": [
+              0.03711843711843712,
+              0.1460843373493976
+            ]
+          },
+          "passed": false,
+          "real_fpr_delta": [
+            0.0684014869888476,
+            0.07335811648079305
+          ],
+          "support_limitation": "50 image parents is a screening floor, not verified independent prompts or proof for small sources.",
+          "supported_ai_source_deltas": {
+            "e32:communityforensics-ai-local": [
+              -0.08695652173913038,
+              0.01449275362318836
+            ],
+            "e32:flux2-klein-9b": [
+              -0.02898550724637683,
+              0.01449275362318847
+            ],
+            "e32:gpt-image-1": [
+              -0.02898550724637683,
+              0.0
+            ],
+            "e32:nano-banana-local": [
+              -0.02898550724637683,
+              0.0
+            ],
+            "e32:qwen-image-2512": [
+              -0.05797101449275366,
+              -0.01449275362318836
+            ],
+            "e36:FLUX.2_max": [
+              0.19999999999999998,
+              0.18750000000000003
+            ],
+            "e36:GLM-Image": [
+              0.20000000000000007,
+              0.21250000000000002
+            ],
+            "e36:Qwen-Image-2.0-pro": [
+              0.19999999999999996,
+              0.22499999999999998
+            ],
+            "e36:Seedream-5.0": [
+              0.3,
+              0.325
+            ],
+            "e36:gpt-image-2": [
+              0.3125,
+              0.3
+            ],
+            "e36:nano-banana-2.0": [
+              0.25,
+              0.26249999999999996
+            ],
+            "rr:culture_and_religion": [
+              0.44761904761904764,
+              0.39047619047619053
+            ],
+            "rr:everyday_life": [
+              0.3159041394335512,
+              0.27015250544662306
+            ],
+            "rr:labor_and_production": [
+              0.24561403508771928,
+              0.23684210526315796
+            ],
+            "rr:medical_and_public_health": [
+              0.0980392156862745,
+              0.0980392156862745
+            ],
+            "rr:natural_disasters_and_accidents": [
+              0.39823008849557523,
+              0.3097345132743363
+            ],
+            "rr:political_and_social_events": [
+              0.3548387096774194,
+              0.3978494623655914
+            ],
+            "rr:war_and_conflict": [
+              0.24193548387096775,
+              0.25
+            ]
+          },
+          "unsupported_ai_sources": [
+            "e32:nano-banana-pro-ash-local"
+          ]
+        }
+      },
+      "conditions": {
+        "clean": {
+          "ai_recall": 0.6634071024189397,
+          "balanced_accuracy": 0.7341818659554427,
+          "mean_fold_auc": 0.8287206214381473,
+          "real_false_ai": 0.19504337050805454
+        },
+        "q75": {
+          "ai_recall": 0.6505404014410705,
+          "balanced_accuracy": 0.7314659875854671,
+          "mean_fold_auc": 0.8233238788796533,
+          "real_false_ai": 0.1876084262701363
+        }
+      },
+      "eligible_for_next_research_stage": false,
+      "folds": [
+        {
+          "actual_weight_mass": 9210.000000000002,
+          "arm": "duplicate_control",
+          "artifact_replay": {
+            "decision_changes": 0,
+            "max_score_error": 0.0,
+            "passed": true
+          },
+          "artifact_sha256": "e7e99c74ad9abe63e11f42416680bb41ee9d582ae11a8a51810ae8caadbbff5b",
+          "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+          "control_parity": {
+            "decision_changes": 0,
+            "max_score_error": 0.0011791884899139404,
+            "passed": false
+          },
+          "fit_parents": 8070,
+          "fold": 0,
+          "original_total_weight_mass": 9210,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.7306306306306306,
+              "auc": 0.6713830630630631,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.6053153153153152,
+              "covered_accuracy": 0.5978813559322034,
+              "passed": false,
+              "real_false_ai": 0.52,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4923747276688453,
+              "worst_real_source": 0.52
+            },
+            "q75": {
+              "ai_recall": 0.6936936936936937,
+              "auc": 0.6430349549549549,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.5916468468468469,
+              "covered_accuracy": 0.5855932203389831,
+              "passed": false,
+              "real_false_ai": 0.5104,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.43790849673202614,
+              "worst_real_source": 0.5104
+            }
+          },
+          "seconds": 3.3485003750538453,
+          "serving_changed": false,
+          "state": "E55_fold_complete",
+          "threshold": 0.9871829152107239
+        },
+        {
+          "actual_weight_mass": 10020.0,
+          "arm": "duplicate_control",
+          "artifact_replay": {
+            "decision_changes": 0,
+            "max_score_error": 0.0,
+            "passed": true
+          },
+          "artifact_sha256": "ff8f7e22658661453b8e29445e1247ccb85f3f2cb01dc53f4a437200cc32d75d",
+          "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+          "control_parity": {
+            "decision_changes": 2,
+            "max_score_error": 0.0076792240142822266,
+            "passed": false
+          },
+          "fit_parents": 6992,
+          "fold": 1,
+          "original_total_weight_mass": 10020,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.5354166666666667,
+              "auc": 0.9226703431372548,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7547671568627451,
+              "covered_accuracy": 0.8775229357798165,
+              "passed": false,
+              "real_false_ai": 0.02588235294117647,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.3625,
+              "worst_real_source": 0.02588235294117647
+            },
+            "q75": {
+              "ai_recall": 0.56875,
+              "auc": 0.9333713235294118,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7720220588235294,
+              "covered_accuracy": 0.8857798165137615,
+              "passed": false,
+              "real_false_ai": 0.024705882352941175,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4,
+              "worst_real_source": 0.024705882352941175
+            }
+          },
+          "seconds": 2.152141832979396,
+          "serving_changed": false,
+          "state": "E55_fold_complete",
+          "threshold": 0.8470811247825623
+        },
+        {
+          "actual_weight_mass": 7080.0,
+          "arm": "duplicate_control",
+          "artifact_replay": {
+            "decision_changes": 0,
+            "max_score_error": 0.0,
+            "passed": true
+          },
+          "artifact_sha256": "f1d07432f7e6305a6cc39056282d41da79f9910808dbad7b59530c9af6bdd954",
+          "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+          "control_parity": {
+            "decision_changes": 0,
+            "max_score_error": 0.002376556396484375,
+            "passed": false
+          },
+          "fit_parents": 2360,
+          "fold": 2,
+          "original_total_weight_mass": 7080,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.6260623229461756,
+              "auc": 0.8921084581141238,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7701740186159449,
+              "covered_accuracy": 0.8435326842837274,
+              "passed": false,
+              "real_false_ai": 0.08571428571428572,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.42028985507246375,
+              "worst_real_source": 0.1875
+            },
+            "q75": {
+              "ai_recall": 0.6260623229461756,
+              "auc": 0.8935653581545933,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7775472905053459,
+              "covered_accuracy": 0.8546592489568846,
+              "passed": false,
+              "real_false_ai": 0.07096774193548387,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4492753623188406,
+              "worst_real_source": 0.15625
+            }
+          },
+          "seconds": 0.6998711669584736,
+          "serving_changed": false,
+          "state": "E55_fold_complete",
+          "threshold": 0.9677766561508179
+        }
+      ]
+    },
+    "full_e51_3": {
+      "conditions": {
+        "clean": {
+          "ai_recall": 0.43180648481729283,
+          "balanced_accuracy": 0.6520866376998484,
+          "mean_fold_auc": 0.7507852015248719,
+          "real_false_ai": 0.12763320941759604
+        },
+        "q75": {
+          "ai_recall": 0.4544518785383428,
+          "balanced_accuracy": 0.6667550594674365,
+          "mean_fold_auc": 0.7625253469367754,
+          "real_false_ai": 0.12094175960346965
+        }
+      },
+      "folds": [
+        {
+          "arm": "full_e51_3",
+          "artifact_sha256": "029e59cf70f0c62583458d24e210ad4c2eb59eec05227e8cad61b6342b6be58c",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 0,
+          "new_native_fit_parents": 0,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.43873873873873875,
+              "auc": 0.5479445045045045,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.5677693693693694,
+              "covered_accuracy": 0.5754237288135593,
+              "passed": false,
+              "real_false_ai": 0.3032,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.18082788671023964,
+              "worst_real_source": 0.3032
+            },
+            "q75": {
+              "ai_recall": 0.44954954954954957,
+              "auc": 0.5501971171171172,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.5783747747747748,
+              "covered_accuracy": 0.5860169491525423,
+              "passed": false,
+              "real_false_ai": 0.2928,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.18082788671023964,
+              "worst_real_source": 0.2928
+            }
+          },
+          "seconds": 0.8857674170285463,
+          "threshold": 0.9999800324440002
+        },
+        {
+          "arm": "full_e51_3",
+          "artifact_sha256": "043301373ce18d468752344583b629fe4863ecbc27b7717b576f30e69319d55c",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 1,
+          "new_native_fit_parents": 0,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.27291666666666664,
+              "auc": 0.8123235294117648,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.6238112745098039,
+              "covered_accuracy": 0.8201834862385321,
+              "passed": false,
+              "real_false_ai": 0.025294117647058825,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.15,
+              "worst_real_source": 0.025294117647058825
+            },
+            "q75": {
+              "ai_recall": 0.33958333333333335,
+              "auc": 0.8438161764705883,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.6565563725490196,
+              "covered_accuracy": 0.8339449541284404,
+              "passed": false,
+              "real_false_ai": 0.026470588235294117,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.1875,
+              "worst_real_source": 0.026470588235294117
+            }
+          },
+          "seconds": 0.7093794998945668,
+          "threshold": 0.7187632322311401
+        },
+        {
+          "arm": "full_e51_3",
+          "artifact_sha256": "f1f7768cfdc6a76356b08ca28c6dcde6dae64051afbcff4439eafe4ce2680695",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 2,
+          "new_native_fit_parents": 0,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.6260623229461756,
+              "auc": 0.8920875706583465,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7701740186159449,
+              "covered_accuracy": 0.8435326842837274,
+              "passed": false,
+              "real_false_ai": 0.08571428571428572,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.42028985507246375,
+              "worst_real_source": 0.1875
+            },
+            "q75": {
+              "ai_recall": 0.6260623229461756,
+              "auc": 0.8935627472226211,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7775472905053459,
+              "covered_accuracy": 0.8546592489568846,
+              "passed": false,
+              "real_false_ai": 0.07096774193548387,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4492753623188406,
+              "worst_real_source": 0.15625
+            }
+          },
+          "seconds": 0.4874245000537485,
+          "threshold": 0.9676278233528137
+        }
+      ]
+    },
+    "full_expanded3": {
+      "conditions": {
+        "clean": {
+          "ai_recall": 0.6639217704580546,
+          "balanced_accuracy": 0.734439199975,
+          "mean_fold_auc": 0.8287514601364246,
+          "real_false_ai": 0.19504337050805454
+        },
+        "q75": {
+          "ai_recall": 0.6510550694801853,
+          "balanced_accuracy": 0.7317233216050245,
+          "mean_fold_auc": 0.8233517746880562,
+          "real_false_ai": 0.1876084262701363
+        }
+      },
+      "folds": [
+        {
+          "arm": "full_expanded3",
+          "artifact_sha256": "ad1790ef09375e4136fdecb96083bc3fda948b5c96badc3973c68b4d38c3b432",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 0,
+          "new_native_fit_parents": 5000,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.7306306306306306,
+              "auc": 0.6713383783783784,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.6053153153153152,
+              "covered_accuracy": 0.5978813559322034,
+              "passed": false,
+              "real_false_ai": 0.52,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4923747276688453,
+              "worst_real_source": 0.52
+            },
+            "q75": {
+              "ai_recall": 0.6936936936936937,
+              "auc": 0.6429913513513513,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.5916468468468469,
+              "covered_accuracy": 0.5855932203389831,
+              "passed": false,
+              "real_false_ai": 0.5104,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.43790849673202614,
+              "worst_real_source": 0.5104
+            }
+          },
+          "seconds": 1.489679625025019,
+          "threshold": 0.9871880412101746
+        },
+        {
+          "arm": "full_expanded3",
+          "artifact_sha256": "4782edf01c84777d2272f3e7c91fd87d1ef1c8635d96022b8247afda0a25a231",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 1,
+          "new_native_fit_parents": 3652,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.5375,
+              "auc": 0.9228284313725491,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7558088235294118,
+              "covered_accuracy": 0.8779816513761468,
+              "passed": false,
+              "real_false_ai": 0.02588235294117647,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.3625,
+              "worst_real_source": 0.02588235294117647
+            },
+            "q75": {
+              "ai_recall": 0.5708333333333333,
+              "auc": 0.933501225490196,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7730637254901961,
+              "covered_accuracy": 0.8862385321100917,
+              "passed": false,
+              "real_false_ai": 0.024705882352941175,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4,
+              "worst_real_source": 0.024705882352941175
+            }
+          },
+          "seconds": 1.2451855409890413,
+          "threshold": 0.845550537109375
+        },
+        {
+          "arm": "full_expanded3",
+          "artifact_sha256": "c769e3791375eee14dba2b26887ae3fba888ce5a7f6bf5bbe43bc517883ba202",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 2,
+          "new_native_fit_parents": 0,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.6260623229461756,
+              "auc": 0.8920875706583465,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7701740186159449,
+              "covered_accuracy": 0.8435326842837274,
+              "passed": false,
+              "real_false_ai": 0.08571428571428572,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.42028985507246375,
+              "worst_real_source": 0.1875
+            },
+            "q75": {
+              "ai_recall": 0.6260623229461756,
+              "auc": 0.8935627472226211,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7775472905053459,
+              "covered_accuracy": 0.8546592489568846,
+              "passed": false,
+              "real_false_ai": 0.07096774193548387,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4492753623188406,
+              "worst_real_source": 0.15625
+            }
+          },
+          "seconds": 0.4095181250013411,
+          "threshold": 0.9676278233528137
+        }
+      ]
+    },
+    "full_old2": {
+      "conditions": {
+        "clean": {
+          "ai_recall": 0.43746783324755534,
+          "balanced_accuracy": 0.6554129748641742,
+          "mean_fold_auc": 0.7536719207070787,
+          "real_false_ai": 0.12664188351920694
+        },
+        "q75": {
+          "ai_recall": 0.4307771487390633,
+          "balanced_accuracy": 0.65826341947486,
+          "mean_fold_auc": 0.7583546865307972,
+          "real_false_ai": 0.11425030978934325
+        }
+      },
+      "folds": [
+        {
+          "arm": "full_old2",
+          "artifact_sha256": "c5ff2942310d900d377e19dcecf05bc2100c1fdf2e9031397253c168852c1e61",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 0,
+          "new_native_fit_parents": 0,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.4261261261261261,
+              "auc": 0.5463448648648649,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.5690630630630631,
+              "covered_accuracy": 0.5775423728813559,
+              "passed": false,
+              "real_false_ai": 0.288,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.17647058823529413,
+              "worst_real_source": 0.288
+            },
+            "q75": {
+              "ai_recall": 0.4189189189189189,
+              "auc": 0.542865945945946,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.5722594594594594,
+              "covered_accuracy": 0.5813559322033899,
+              "passed": false,
+              "real_false_ai": 0.2744,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.16775599128540306,
+              "worst_real_source": 0.2744
+            }
+          },
+          "seconds": 0.3739893330493942,
+          "threshold": 0.9999735951423645
+        },
+        {
+          "arm": "full_old2",
+          "artifact_sha256": "e00ac8735717494f6e7a1acde358baaa2634b6c840beb2210bb23149217934d8",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 1,
+          "new_native_fit_parents": 0,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.2916666666666667,
+              "auc": 0.8267242647058823,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.6337745098039216,
+              "covered_accuracy": 0.8252293577981651,
+              "passed": false,
+              "real_false_ai": 0.02411764705882353,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.1375,
+              "worst_real_source": 0.02411764705882353
+            },
+            "q75": {
+              "ai_recall": 0.31666666666666665,
+              "auc": 0.8405465686274509,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.6465686274509803,
+              "covered_accuracy": 0.8311926605504587,
+              "passed": false,
+              "real_false_ai": 0.023529411764705882,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.1875,
+              "worst_real_source": 0.023529411764705882
+            }
+          },
+          "seconds": 0.4533968340838328,
+          "threshold": 0.7025231719017029
+        },
+        {
+          "arm": "full_old2",
+          "artifact_sha256": "60baa243435b0347ed4d06b323a3d555beffb7f7ee9b1b9949bcf6894bcaf8e3",
+          "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+          "fold": 2,
+          "new_native_fit_parents": 0,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.6713881019830028,
+              "auc": 0.8879466325504889,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7850028067518701,
+              "covered_accuracy": 0.8428372739916551,
+              "passed": false,
+              "real_false_ai": 0.10138248847926268,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4492753623188406,
+              "worst_real_source": 0.20625
+            },
+            "q75": {
+              "ai_recall": 0.623229461756374,
+              "auc": 0.8916515450189945,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7756700304173575,
+              "covered_accuracy": 0.8532684283727399,
+              "passed": false,
+              "real_false_ai": 0.07188940092165899,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4492753623188406,
+              "worst_real_source": 0.15
+            }
+          },
+          "seconds": 0.3542089998954907,
+          "threshold": 0.9392186999320984
+        }
+      ]
+    },
+    "grayscale_20": {
+      "checks": {
+        "all_absolute_fold_gates": false,
+        "all_artifacts_replayed": true,
+        "all_relative_guards": false,
+        "duplicate_control_parity": false
+      },
+      "comparisons": {
+        "full_e51_3": {
+          "ai_recall_delta": [
+            0.2460113226968605,
+            0.20586721564590837
+          ],
+          "checks": {
+            "ai_preservation_interval_both": true,
+            "ai_recall_no_point_loss_both": true,
+            "real_fpr_lower_both": false,
+            "real_improvement_interval_both": false,
+            "supported_ai_sources_no_point_loss": false
+          },
+          "intervals": {
+            "ai_recall_clean": [
+              0.20336943441636582,
+              0.27662721893491127
+            ],
+            "ai_recall_q75": [
+              0.17148014440433212,
+              0.2265246853823814
+            ],
+            "real_fpr_clean": [
+              0.03839590443686007,
+              0.14909638554216867
+            ],
+            "real_fpr_q75": [
+              0.036874236874236875,
+              0.1465863453815261
+            ]
+          },
+          "passed": false,
+          "real_fpr_delta": [
+            0.07360594795539033,
+            0.07360594795539033
+          ],
+          "support_limitation": "50 image parents is a screening floor, not verified independent prompts or proof for small sources.",
+          "supported_ai_source_deltas": {
+            "e32:communityforensics-ai-local": [
+              -0.02898550724637683,
+              -0.01449275362318836
+            ],
+            "e32:flux2-klein-9b": [
+              -0.01449275362318836,
+              -0.043478260869565244
+            ],
+            "e32:gpt-image-1": [
+              -0.028985507246376774,
+              -0.014492753623188415
+            ],
+            "e32:nano-banana-local": [
+              0.05797101449275366,
+              0.08695652173913038
+            ],
+            "e32:qwen-image-2512": [
+              -0.04347826086956519,
+              -0.01449275362318847
+            ],
+            "e36:FLUX.2_max": [
+              0.225,
+              0.1625
+            ],
+            "e36:GLM-Image": [
+              0.21250000000000002,
+              0.16249999999999998
+            ],
+            "e36:Qwen-Image-2.0-pro": [
+              0.24999999999999994,
+              0.19999999999999996
+            ],
+            "e36:Seedream-5.0": [
+              0.2875,
+              0.21250000000000002
+            ],
+            "e36:gpt-image-2": [
+              0.3875,
+              0.2875
+            ],
+            "e36:nano-banana-2.0": [
+              0.2625,
+              0.23749999999999993
+            ],
+            "rr:culture_and_religion": [
+              0.4857142857142857,
+              0.3714285714285715
+            ],
+            "rr:everyday_life": [
+              0.34204793028322444,
+              0.28540305010893247
+            ],
+            "rr:labor_and_production": [
+              0.22807017543859642,
+              0.22807017543859653
+            ],
+            "rr:medical_and_public_health": [
+              0.06862745098039214,
+              0.07843137254901966
+            ],
+            "rr:natural_disasters_and_accidents": [
+              0.39823008849557523,
+              0.3451327433628319
+            ],
+            "rr:political_and_social_events": [
+              0.3870967741935484,
+              0.34408602150537637
+            ],
+            "rr:war_and_conflict": [
+              0.25806451612903225,
+              0.19354838709677413
+            ]
+          },
+          "unsupported_ai_sources": [
+            "e32:nano-banana-pro-ash-local"
+          ]
+        },
+        "full_expanded3": {
+          "ai_recall_delta": [
+            0.013896037056098764,
+            0.009264024704065843
+          ],
+          "checks": {
+            "ai_preservation_interval_both": false,
+            "ai_recall_no_point_loss_both": true,
+            "real_fpr_lower_both": false,
+            "real_improvement_interval_both": false,
+            "supported_ai_sources_no_point_loss": false
+          },
+          "intervals": {
+            "ai_recall_clean": [
+              0.00842358604091456,
+              0.021636240703177823
+            ],
+            "ai_recall_q75": [
+              -0.003538570417551309,
+              0.029749830966869506
+            ],
+            "real_fpr_clean": [
+              0.0007092198581560284,
+              0.012836970474967908
+            ],
+            "real_fpr_q75": [
+              0.004982415005861665,
+              0.011328976034858388
+            ]
+          },
+          "passed": false,
+          "real_fpr_delta": [
+            0.006195786864931829,
+            0.0069392812887236754
+          ],
+          "support_limitation": "50 image parents is a screening floor, not verified independent prompts or proof for small sources.",
+          "supported_ai_source_deltas": {
+            "e32:communityforensics-ai-local": [
+              -0.02898550724637683,
+              -0.01449275362318836
+            ],
+            "e32:flux2-klein-9b": [
+              -0.01449275362318836,
+              -0.043478260869565244
+            ],
+            "e32:gpt-image-1": [
+              -0.028985507246376774,
+              -0.014492753623188415
+            ],
+            "e32:nano-banana-local": [
+              0.05797101449275366,
+              0.08695652173913038
+            ],
+            "e32:qwen-image-2512": [
+              -0.04347826086956519,
+              -0.01449275362318847
+            ],
+            "e36:FLUX.2_max": [
+              0.012500000000000011,
+              -0.012500000000000011
+            ],
+            "e36:GLM-Image": [
+              0.0,
+              -0.025000000000000022
+            ],
+            "e36:Qwen-Image-2.0-pro": [
+              -0.012500000000000067,
+              -0.03750000000000009
+            ],
+            "e36:Seedream-5.0": [
+              0.012500000000000011,
+              -0.03749999999999998
+            ],
+            "e36:gpt-image-2": [
+              0.025000000000000022,
+              -0.012500000000000011
+            ],
+            "e36:nano-banana-2.0": [
+              0.0,
+              0.0
+            ],
+            "rr:culture_and_religion": [
+              0.03809523809523807,
+              0.02857142857142858
+            ],
+            "rr:everyday_life": [
+              0.030501089324618758,
+              0.02832244008714596
+            ],
+            "rr:labor_and_production": [
+              0.0,
+              0.02631578947368418
+            ],
+            "rr:medical_and_public_health": [
+              0.0,
+              0.0
+            ],
+            "rr:natural_disasters_and_accidents": [
+              0.04424778761061943,
+              0.07079646017699115
+            ],
+            "rr:political_and_social_events": [
+              0.032258064516129004,
+              0.010752688172043001
+            ],
+            "rr:war_and_conflict": [
+              0.032258064516129115,
+              0.0
+            ]
+          },
+          "unsupported_ai_sources": [
+            "e32:nano-banana-pro-ash-local"
+          ]
+        },
+        "full_old2": {
+          "ai_recall_delta": [
+            0.240349974266598,
+            0.22954194544518786
+          ],
+          "checks": {
+            "ai_preservation_interval_both": true,
+            "ai_recall_no_point_loss_both": true,
+            "real_fpr_lower_both": false,
+            "real_improvement_interval_both": false,
+            "supported_ai_sources_no_point_loss": false
+          },
+          "intervals": {
+            "ai_recall_clean": [
+              0.19374247894103488,
+              0.2703402366863905
+            ],
+            "ai_recall_q75": [
+              0.19193742478941034,
+              0.25169409486931266
+            ],
+            "real_fpr_clean": [
+              0.04126984126984127,
+              0.14508032128514056
+            ],
+            "real_fpr_q75": [
+              0.04224664224664225,
+              0.15612449799196787
+            ]
+          },
+          "passed": false,
+          "real_fpr_delta": [
+            0.07459727385377943,
+            0.08029739776951672
+          ],
+          "support_limitation": "50 image parents is a screening floor, not verified independent prompts or proof for small sources.",
+          "supported_ai_source_deltas": {
+            "e32:communityforensics-ai-local": [
+              -0.1159420289855072,
+              0.0
+            ],
+            "e32:flux2-klein-9b": [
+              -0.04347826086956519,
+              -0.028985507246376774
+            ],
+            "e32:gpt-image-1": [
+              -0.0579710144927536,
+              -0.014492753623188415
+            ],
+            "e32:nano-banana-local": [
+              0.02898550724637683,
+              0.08695652173913038
+            ],
+            "e32:qwen-image-2512": [
+              -0.10144927536231885,
+              -0.02898550724637683
+            ],
+            "e36:FLUX.2_max": [
+              0.2125,
+              0.17500000000000002
+            ],
+            "e36:GLM-Image": [
+              0.20000000000000007,
+              0.1875
+            ],
+            "e36:Qwen-Image-2.0-pro": [
+              0.19999999999999996,
+              0.19999999999999996
+            ],
+            "e36:Seedream-5.0": [
+              0.3125,
+              0.28750000000000003
+            ],
+            "e36:gpt-image-2": [
+              0.3375,
+              0.2875
+            ],
+            "e36:nano-banana-2.0": [
+              0.25,
+              0.26249999999999996
+            ],
+            "rr:culture_and_religion": [
+              0.4857142857142857,
+              0.4190476190476191
+            ],
+            "rr:everyday_life": [
+              0.3464052287581699,
+              0.2984749455337691
+            ],
+            "rr:labor_and_production": [
+              0.24561403508771928,
+              0.26315789473684215
+            ],
+            "rr:medical_and_public_health": [
+              0.0980392156862745,
+              0.0980392156862745
+            ],
+            "rr:natural_disasters_and_accidents": [
+              0.44247787610619466,
+              0.38053097345132747
+            ],
+            "rr:political_and_social_events": [
+              0.3870967741935484,
+              0.4086021505376344
+            ],
+            "rr:war_and_conflict": [
+              0.27419354838709686,
+              0.25
+            ]
+          },
+          "unsupported_ai_sources": [
+            "e32:nano-banana-pro-ash-local"
+          ]
+        }
+      },
+      "conditions": {
+        "clean": {
+          "ai_recall": 0.6778178075141533,
+          "balanced_accuracy": 0.7382893250705835,
+          "mean_fold_auc": 0.835269044872709,
+          "real_false_ai": 0.20123915737298637
+        },
+        "q75": {
+          "ai_recall": 0.6603190941842512,
+          "balanced_accuracy": 0.7328856933126956,
+          "mean_fold_auc": 0.8313047071675831,
+          "real_false_ai": 0.19454770755885997
+        }
+      },
+      "control_comparison": {
+        "ai_recall_delta": [
+          0.014410705095213583,
+          0.009778692743180661
+        ],
+        "checks": {
+          "ai_preservation_interval_both": false,
+          "ai_recall_no_point_loss_both": true,
+          "real_fpr_lower_both": false,
+          "real_improvement_interval_both": false,
+          "supported_ai_sources_no_point_loss": false
+        },
+        "intervals": {
+          "ai_recall_clean": [
+            0.00842358604091456,
+            0.021850899742930592
+          ],
+          "ai_recall_q75": [
+            -0.0024769992922859165,
+            0.029749830966869506
+          ],
+          "real_fpr_clean": [
+            0.0007092198581560284,
+            0.012836970474967908
+          ],
+          "real_fpr_q75": [
+            0.004982415005861665,
+            0.011328976034858388
+          ]
+        },
+        "passed": false,
+        "real_fpr_delta": [
+          0.006195786864931829,
+          0.0069392812887236754
+        ],
+        "support_limitation": "50 image parents is a screening floor, not verified independent prompts or proof for small sources.",
+        "supported_ai_source_deltas": {
+          "e32:communityforensics-ai-local": [
+            -0.02898550724637683,
+            -0.01449275362318836
+          ],
+          "e32:flux2-klein-9b": [
+            -0.01449275362318836,
+            -0.043478260869565244
+          ],
+          "e32:gpt-image-1": [
+            -0.028985507246376774,
+            -0.014492753623188415
+          ],
+          "e32:nano-banana-local": [
+            0.05797101449275366,
+            0.08695652173913038
+          ],
+          "e32:qwen-image-2512": [
+            -0.04347826086956519,
+            -0.01449275362318847
+          ],
+          "e36:FLUX.2_max": [
+            0.012500000000000011,
+            -0.012500000000000011
+          ],
+          "e36:GLM-Image": [
+            0.0,
+            -0.025000000000000022
+          ],
+          "e36:Qwen-Image-2.0-pro": [
+            0.0,
+            -0.025000000000000022
+          ],
+          "e36:Seedream-5.0": [
+            0.012500000000000011,
+            -0.03749999999999998
+          ],
+          "e36:gpt-image-2": [
+            0.025000000000000022,
+            -0.012500000000000011
+          ],
+          "e36:nano-banana-2.0": [
+            0.0,
+            0.0
+          ],
+          "rr:culture_and_religion": [
+            0.03809523809523807,
+            0.02857142857142858
+          ],
+          "rr:everyday_life": [
+            0.030501089324618758,
+            0.02832244008714596
+          ],
+          "rr:labor_and_production": [
+            0.0,
+            0.02631578947368418
+          ],
+          "rr:medical_and_public_health": [
+            0.0,
+            0.0
+          ],
+          "rr:natural_disasters_and_accidents": [
+            0.04424778761061943,
+            0.07079646017699115
+          ],
+          "rr:political_and_social_events": [
+            0.032258064516129004,
+            0.010752688172043001
+          ],
+          "rr:war_and_conflict": [
+            0.032258064516129115,
+            0.0
+          ]
+        },
+        "unsupported_ai_sources": [
+          "e32:nano-banana-pro-ash-local"
+        ]
+      },
+      "eligible_for_next_research_stage": false,
+      "folds": [
+        {
+          "actual_weight_mass": 9210.000000000002,
+          "arm": "grayscale_20",
+          "artifact_replay": {
+            "decision_changes": 0,
+            "max_score_error": 0.0,
+            "passed": true
+          },
+          "artifact_sha256": "05d86687137e52aece9e120ef93444063fd7ee17b4f63be569cf40346ec5ae2a",
+          "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+          "control_parity": null,
+          "fit_parents": 8070,
+          "fold": 0,
+          "original_total_weight_mass": 9210,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.7576576576576577,
+              "auc": 0.6835834234234235,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.6036288288288288,
+              "covered_accuracy": 0.5944915254237289,
+              "passed": false,
+              "real_false_ai": 0.5504,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.5228758169934641,
+              "worst_real_source": 0.5504
+            },
+            "q75": {
+              "ai_recall": 0.7189189189189189,
+              "auc": 0.6553596396396396,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.5898594594594595,
+              "covered_accuracy": 0.5822033898305085,
+              "passed": false,
+              "real_false_ai": 0.5392,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.4662309368191721,
+              "worst_real_source": 0.5392
+            }
+          },
+          "seconds": 2.346189833013341,
+          "serving_changed": false,
+          "state": "E55_fold_complete",
+          "threshold": 0.9813328385353088
+        },
+        {
+          "actual_weight_mass": 10020.0,
+          "arm": "grayscale_20",
+          "artifact_replay": {
+            "decision_changes": 0,
+            "max_score_error": 0.0,
+            "passed": true
+          },
+          "artifact_sha256": "2dd098da04979ae9ffab1bd6d571a145aaef2411378500449b2d288fb68afc00",
+          "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+          "control_parity": null,
+          "fit_parents": 6992,
+          "fold": 1,
+          "original_total_weight_mass": 10020,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.54375,
+              "auc": 0.927373774509804,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7586397058823529,
+              "covered_accuracy": 0.8788990825688073,
+              "passed": false,
+              "real_false_ai": 0.026470588235294117,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.375,
+              "worst_real_source": 0.026470588235294117
+            },
+            "q75": {
+              "ai_recall": 0.55,
+              "auc": 0.9358848039215686,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7620588235294118,
+              "covered_accuracy": 0.8807339449541285,
+              "passed": false,
+              "real_false_ai": 0.02588235294117647,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.3875,
+              "worst_real_source": 0.02588235294117647
+            }
+          },
+          "seconds": 2.3239746670005843,
+          "serving_changed": false,
+          "state": "E55_fold_complete",
+          "threshold": 0.8382872343063354
+        },
+        {
+          "actual_weight_mass": 7080.0,
+          "arm": "grayscale_20",
+          "artifact_replay": {
+            "decision_changes": 0,
+            "max_score_error": 0.0,
+            "passed": true
+          },
+          "artifact_sha256": "e83d1ab67aa18044f86397aa23a2b6a4619b24d70514e75f745c03dcd7941ea6",
+          "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+          "control_parity": null,
+          "fit_parents": 2360,
+          "fold": 2,
+          "original_total_weight_mass": 7080,
+          "rates": {
+            "clean": {
+              "ai_recall": 0.6090651558073654,
+              "auc": 0.8948499366848996,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7681270479497657,
+              "covered_accuracy": 0.849095966620306,
+              "passed": false,
+              "real_false_ai": 0.0728110599078341,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.391304347826087,
+              "worst_real_source": 0.15
+            },
+            "q75": {
+              "ai_recall": 0.6260623229461756,
+              "auc": 0.9026696779415413,
+              "automatic_coverage": 1.0,
+              "balanced_accuracy": 0.7821555854362214,
+              "covered_accuracy": 0.8616133518776078,
+              "passed": false,
+              "real_false_ai": 0.06175115207373272,
+              "uncertainty": 0.0,
+              "worst_ai_source": 0.43478260869565216,
+              "worst_real_source": 0.13125
+            }
+          },
+          "seconds": 0.7457423340529203,
+          "serving_changed": false,
+          "state": "E55_fold_complete",
+          "threshold": 0.9702470302581787
+        }
+      ]
+    }
+  },
+  "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+  "eligible": [],
+  "independent_final_passed": false,
+  "limits": [
+    "Exploratory follow-up on reused TRAIN validation; not a new final.",
+    "Changed FIT colour processing is class-identical; source/content confounds still exist.",
+    "No hyperparameter search or threshold tuning on outer validation.",
+    "Passing only permits separately frozen full-data/CAL and DEV research, not direct serving."
+  ],
+  "result_bindings": {
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_e51_3_fold0.json": "baaafe79ff2bdf81425a283d501da3cb3789d44b8d77da476584cd4fe261520a",
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_e51_3_fold1.json": "2744d1598c7c51b2680a86842c08db9a79e39e2135ee94c217c759036a91b103",
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_e51_3_fold2.json": "1c8d9ac59fd6f5887ef0d134bd7553378f8491b18187ae34365fdcf724709e79",
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold0.json": "68eac19a085743a2db36810e0b591f7b9808ff82abbe8a6fa6e36dbeae2d2335",
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold1.json": "e8a6d17c958df335d0d714541211906a3c84d911f70ae9f5bd037d151c24e647",
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold2.json": "6ca57cb0ebeafd39c6fb7f0877b4d39d7777c45eb9f88f5a6054cb6c776db3a2",
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_old2_fold0.json": "4966b5484b150174e7366ec1c17aa37c735acb99a62dce5f23a9a4140f406027",
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_old2_fold1.json": "ea66564b995835b0d1f14199a8a72628ef667559538641cedcb9d5b2c4b479a6",
+    "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_old2_fold2.json": "322e8b6e561775e0eac7f1b7e57c77dc4872b0e24f09dc3b0a677c92894009f5",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold0.json": "2592e46cfef7e49f6add4edf836b3eb2892b8edfa9da6fa02070e9bc164dbbbb",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold1.json": "a57e4e193049c8d24be2522ba80d21926760cd0b7b4b7beb0f17979759b518b5",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold2.json": "25185fb2f5499e0de149762c9bb11f962c4f882c4c94855649639e55f4bd7ba4",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold0.json": "d1a407c53dcb457df7c8196ae08c7038e38fde8873a2adcafdc869a7e98ba7a8",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold1.json": "6a406b51b464276a8dac464f2a3a42c936ad064600ed88473a82af4d66ba50e7",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold2.json": "a88faa709712e55ffe47e41c2c8d3a6899d95280f9e7452eb236df0d7fb9e8c2"
+  },
+  "serving_changed": false,
+  "state": "E55_fixed_colour_ablation_complete"
+}

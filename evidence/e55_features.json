@@ -1,0 +1,11 @@
+{
+  "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+  "feature_sha256": "161213c4e6818ac967787a3da0a24a6d3a84eb51822a843a0597305e28b85ee8",
+  "new_independent_parents": 0,
+  "parents": 11630,
+  "pretrained_parity_error": 0.0,
+  "receipt_sha256": "a292d04c215ed8939c2c165357b538fcc65746b2b71589e1a55ca2f32ccf6d1d",
+  "source_download_bytes": 0,
+  "state": "E55_grayscale_features_complete",
+  "views": 34890
+}
