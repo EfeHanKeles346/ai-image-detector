@@ -4431,3 +4431,38 @@ all 286,944 archived validation predictions from pinned cached features. Maximum
 decision flips=0 (`evidence/e53_artifact_replay.json`). No new external test or model-selection
 evidence. Final suite: 574 Python tests passed; compilation and `pip check` passed. The user
 requested an office-to-home pause before any successor study, leaving no active training/download.
+
+## 2026-09-09 — E54: fixed restricted adaptation versus continued-head control (preregistered)
+
+Home-network continuation/download permission received. No paid API budget inferred. This study
+uses E53 coverage-v2 source folds and the same 5,978 base parents plus 5,652 FIT-only native
+additions (11,630 inventory parents: 7,035 REAL/4,595 AI). Native additions enter only a fold
+where their publisher is FIT. No external CAL/DEV/final rows are introduced into optimization.
+
+Two arms, three folds each, seed 54, two complete epochs: (1) continued head-only AdamW control;
+(2) last two DINOv2-S blocks plus head, with 0.1 cosine preservation to the frozen pretrained
+3072-D features. Each starts from the hash-pinned FIT-only native fold head, not the E51 full-data
+head used in the earlier resource probe. Class/source/parent weights have mean one; deterministic
+shuffling visits every FIT view rather than discarding AI replay. Batch=8 views/24 crops, head
+LR=1e-5, backbone LR=1e-6, weight decay=.01, clip=1.0. Fixed final epoch only, no validation-based
+stopping. The head control isolates continued optimization, not equality to logistic-regression L2.
+
+Original/assigned-transport/Q75 preprocessing is cached identically to the frozen feature recipe.
+Check feature/head parity on hash-chosen FIT examples from every FIT source before updates;
+fail above 5e-5. Verify that frozen parameters retain their hash. Save model/optimizer/next-batch
+position every 200 steps and at epoch boundaries. CAL and VALIDATION are opened only after the
+fixed final epoch; choose the threshold solely on inner CAL, then report source-held-out TRAIN
+validation. Compare both arms with the two old refitted recipes AND native-replay baseline using
+the same REAL-improvement/AI-preservation guard and conditional publisher intervals. Separately
+compare adaptation versus head-only. Three folds are not three independent seeds or final tests.
+
+Data contract v2 SHA `26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e`;
+training/data receipts in `evidence/e54_*contract*.json`. The first data implementation repeatedly
+decompressed an entire NPZ member inside the parent loop; preparation was stopped before a cache
+or E54 fit/score existed. Preserve its original contract, fix one-time array loading and bind v2.
+This was an engineering correction before outcome inspection, not a change in scientific inputs.
+
+No quality result yet at this registration point. Successful preparation/training alone will not
+authorize serving promotion, a full-data model, or opening independent E52. MNW acquisition is
+evaluation-only, separately frozen and unscored; no part of it is an E54 training input. Existing
+E43/E51/served models and Module 2 protected data remain intact.

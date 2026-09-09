@@ -49,6 +49,14 @@ mixing. The whole publisher is reserved; unknown shared prompts are not claimed 
 After byte/decode/protected-overlap checks, keep it unscored until a candidate and evaluation
 protocol are frozen. This AI-only reserve is not a balanced E52 final or an official pass certificate.
 
+MNW model-blind admission screen: freeze the completed download report and both canonical
+fingerprint databases, current E54 TRAIN contract, previous reserve closure and latest 920-parent
+AI reserve identities. Verify that all current TRAIN originals are covered. Compare byte/RGB
+identity plus the established radius-4 dHash/pHash heuristic; withhold every cross-protected match
+and both endpoints of internal pairs without detector scores or replacement sampling. Unknown
+prompt relations remain a whole-publisher limitation. Record the new reserve manifest/report in
+every future training admission inventory; this screen does not certify semantic non-overlap.
+
 **Authoritative decision:** no replacement model is accepted. Twelve fixed configurations were
 evaluated in each of two declared TRAIN source-held-out protocols: 72 separately fitted fold heads.
 Both protocols reject every candidate under the combined REAL-improvement/AI-preservation guard.
