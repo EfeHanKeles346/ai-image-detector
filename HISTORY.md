@@ -5275,3 +5275,10 @@ scene clusters. This repairs statistical independence accounting, not the classi
 The original audit match sets must reproduce exactly; external REAL overlap still blocks admission.
 AI shared-prompt exclusions/reserves remain unchanged. DEV scoring intervals are amended to retain
 REAL scene clusters as well as five-generator AI prompt clusters; all metrics/cuts/rows remain fixed.
+
+DEV admission completed after all original matches reproduced exactly. Manifest
+`1b1882f3...ea224` binds 6,880 observations /3,440 image parents: 2,640 IEEE REAL
+(2,635 detected scene groups) and 800 AI (160 shared prompts x5 generators). Grouping amendment
+`10792cb7...a495a`, selected A `60d56c0b...b6b39`, zero scores at freeze. Source quotas remain
+1,320 unaltered +1,320 postprocessed REAL, and 160 each FLUX.2 max, Nano Banana 2, GPT Image 2
+high, Ideogram v4.0q, Seedream 5.0 Pro. All 532 Python tests pass. One-shot A scoring may now run.

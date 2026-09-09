@@ -1877,3 +1877,20 @@ parent pairs. Reserve report `2c2cdb07...9ad36` joins all 9,800 metadata referen
 419 superseded never-downloaded Commons reserves remain identity-forbidden; their pixels are
 unavailable, not certified disjoint. These checks are duplicate screens, not proof of universal
 semantic independence or publisher-label correctness. No new data was downloaded.
+
+### E51 fresh DEVELOPMENT realized locally — 2026-09-09
+
+Opened only the image bodies of the seven previously downloaded Datapoint Parquets after
+E51-A passed CAL. Verified all 920 reserved publisher hashes/byte counts; created original/Q75
+pairs locally. The score-blind shared-prompt reserve policy selects 800 AI: 160 each FLUX.2 max,
+Nano Banana 2, GPT Image 2 high, Ideogram v4.0q and Seedream 5.0 Pro, with the same 160 prompts
+across models. Paired with all 2,640 already-local IEEE test REAL images, the admitted manifest
+is 3,440 image parents /6,880 observations, SHA `1b1882f3...ea224`.
+
+Canonical screening against 122,782 protected bodies found no protected REAL overlap, one AI
+perceptual candidate, and seven internal pair candidates. AI exclusions remove whole shared prompt
+groups before selecting fixed ranked reserves. Five IEEE REAL pairs are retained but grouped after
+score-blind visual review; real detected scene groups=2,635. Failed first admission audit
+`975569d3...258e8` and grouping amendment `10792cb7...a495a` are retained. Camera ids are hidden
+and IEEE images are 512px publisher-processed, not native-camera proof. No images downloaded in
+this work, no test image enters TRAIN/CAL, and the new DEV cannot also serve as E52 final.

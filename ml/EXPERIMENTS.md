@@ -4207,3 +4207,8 @@ grouped without claiming confirmed scene identity. The new grouping amendment ke
 and label, reduces detected REAL independence units 2,640→2,635, and makes interval resampling
 cluster-aware. It cannot waive protected overlap or alter original/Q75 populations or any cutoff.
 Before admission, repeat the canonical screen and require the preserved match multiset exactly.
+
+DEV admitted unscored: manifest `1b1882f3...ea224`, grouping amendment `10792cb7...a495a`,
+all previous audit match multisets reproduced. Exact 3,440 image parents /6,880 paired rows;
+REAL independence accounting 2,635 detected scene groups, AI 160 shared five-model prompts.
+Candidate A remains `60d56c0b...b6b39`, CAL report `247fac1f...16b29`, same cutoff; 532 tests pass.

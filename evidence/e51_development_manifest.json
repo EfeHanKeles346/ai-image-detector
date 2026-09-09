@@ -1,0 +1,28 @@
+{
+  "ai_prompt_groups": 160,
+  "cal_result_sha256": "247fac1f91c1e7f2acf718dbbb520773889f515d63de31192f6c71f671916b29",
+  "candidate_sha256": "60d56c0bdf72812e8393e41db82534fc3c63681f5adb84d5dd2a4841247b6b39",
+  "grouping_amendment_sha256": "10792cb72d9cc90f79aa06640eddc1315ee0ecbf97944fe93a675940342a495a",
+  "identity_audit_sha256": "975569d361f43f17ce3e2788d8fc4c7b6889d7e5504d47c81f38d85a0ec258e8",
+  "limits": [
+    "IEEE 512px publisher images; hidden devices, no worst-device or native-resolution proof.",
+    "All 2,640 IEEE images retained, but five pairs share scene clusters; unknown further scene dependence may remain.",
+    "800 AI images share 160 prompts across five generators; interval resampling must keep prompt clusters together.",
+    "Observed DEV pass does not establish a fresh E52 final pass. No fitting or threshold change."
+  ],
+  "manifest_sha256": "1b1882f3e759327017f398c95e3a4e30a9c30a8670bffa40b80608f3844ea224",
+  "model_scores_created": 0,
+  "observations": 6880,
+  "parents": 3440,
+  "real_detected_scene_groups": 2635,
+  "source_counts_original": {
+    "FLUX.2 [max]": 160,
+    "Fal Ideogram v4.0q": 160,
+    "GPT Image 2 (high)": 160,
+    "IEEE:postprocessed": 1320,
+    "IEEE:unaltered": 1320,
+    "Nano Banana 2": 160,
+    "Seedream 5.0 Pro": 160
+  },
+  "state": "E51_DEVELOPMENT_frozen_unscored"
+}
