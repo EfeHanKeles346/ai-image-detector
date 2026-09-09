@@ -5627,3 +5627,13 @@ path returns `not_started` for the absent volume without creating `/Volumes/LaCi
 local work/log directory. No data/model/dependency download, no model quality measurement, and
 no new training child is left running. Overnight continuation is scheduled; physical disk access
 remains required. Only this turn's verified code/docs are committed locally, without GitHub push.
+
+### 2026-09-10 01:41 local — disk reconnected; original E55 checkpoint verified
+
+After the user reconnects LaCie, USB sees the external Rugged device. macOS independently starts
+`fsck_exfat` before mount; this agent waits without interrupting it or issuing repair/forced-mount
+commands. After approximately 90 seconds the physical volume mounts and guarded preflight passes.
+All 17 preserved chunks verify against their archived hashes (816 views); frozen E55 script and
+all bound repository helpers also match. AC remains attached. Resume the unchanged extraction,
+then six fixed fits and reporting under the guarded runner with the 08:00 local deadline. This
+entry records readiness/resume authorization, not successful fitting or improved model quality.

@@ -5,7 +5,15 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — overnight continuation; LaCie absent (2026-09-10)
+## Current outcome and next actions — disk returned; E55 resuming (2026-09-10)
+
+**01:41 local:** user reconnects LaCie. USB identifies the external Rugged disk; macOS runs its
+own `fsck_exfat` check before mounting. Let that OS-initiated check finish without interruption,
+forced mount or repair commands. The volume then mounts normally and guarded preflight passes
+all power/storage checks. All 17 archived E55 chunk hashes (816 views) verify, as do the frozen
+experiment and bound repository-helper hashes. Resume via the existing guarded command below;
+do not refreeze the scientific contract or count previous cached rows as new independent data.
+The older missing-disk notes describe the earlier pause, not the current state.
 
 **00:29 local continuation check:** user authorizes overnight work and public downloads. AC Power
 is confirmed, battery 1% and charging. `/Volumes/LaCie` is absent; `diskutil list physical` finds
