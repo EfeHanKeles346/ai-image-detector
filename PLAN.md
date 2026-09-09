@@ -42,6 +42,14 @@ then exactly one evaluation of A on admitted IEEE/Datapoint DEVELOPMENT; no thre
   Reproduce the old E43 raw scores within max absolute error 0.00005 as a preprocessing guard.
   Report per-source errors and paired 2,000-replicate, source-stratified parent-bootstrap deltas;
   never use these diagnostics to select or refit either candidate. A CAL failure keeps fresh DEV closed.
+- Fresh DEV realization is fixed before opening Datapoint image columns: verify all seven local
+  shard hashes, decode exactly the 920 reserved AI bodies, preserve all 2,640 IEEE files and pair
+  original/Q75. Compare both transports against canonical protected bodies, E51 TRAIN/CAL and local
+  reserves, plus cross-parent internal duplicate screens. Any IEEE match aborts admission; an AI
+  match removes its entire shared five-model prompt group. Take the first 20 valid ranked prompts
+  per category (eight categories) for 800 AI; depleted quotas abort, with no score-driven replacement.
+  IEEE camera ids are hidden and files are publisher 512px images: two transport groups cannot
+  establish worst-device performance or native-resolution transfer. Keep this limitation explicit.
 
 ## Current execution slice — E41 external proof, then E42 only if needed (2026-08-28)
 

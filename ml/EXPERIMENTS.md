@@ -4170,3 +4170,12 @@ A cut/REAL cut 0.3316505551338196; B 0.3200901746749878. Artifacts `60d56c0b...b
 `b1ac18f3...838e2`; all three seeds give identical scores. CAL labels selected cuts, so this is
 not independent validation. No DEV/E49 model score existed before this result freeze; no serving
 promotion. Next: fixed diagnostic E49 comparison and one-shot admitted fresh DEVELOPMENT of A.
+
+DEV realization preregistration: all 2,640 IEEE REAL plus 800 selected Datapoint AI (five models
+x160 prompts, shared 20/category across eight categories), original/Q75, 6,880 observations.
+Decode the 920-row score-blind reserve from the seven previously downloaded hash-bound Parquets.
+Protected/E51/internal cross-parent radius-4 dHash+pHash screens apply to both transports. An IEEE
+match aborts; an AI match excludes its whole shared prompt group, with fixed ranked reserves only.
+No source quota relaxation, label correction, score-dependent substitution or new transfer.
+Worst-real transport group is only a proxy: IEEE hides camera ids and supplies 512px publisher
+images, so neither worst-device generalization nor full-resolution performance can be established.

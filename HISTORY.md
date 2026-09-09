@@ -5237,3 +5237,12 @@ not justify extra complexity: original BA 96.92%, Q75 97.44%. Seeds reproduce ex
 score difference zero), as expected from deterministic lbfgs. All artifacts and CAL scores are
 hash-bound in `evidence/e51_cal_result.json`. Serving is unchanged; fresh DEV and E49 regression
 have not yet been scored at this checkpoint.
+
+Fresh DEV realization method is now frozen before Datapoint image-column access. It reads only
+the seven already-local pinned Parquets, decodes the exact 920 reserved bodies and pairs these
+plus all 2,640 IEEE files with Q75. Canonical screens cover protected history, E51 TRAIN/CAL,
+reserves and internal cross-parent matches. Any IEEE match stops admission; any AI match removes
+the entire shared five-model prompt group, with the first 20 remaining ranked prompts/category
+selected. Quota exhaustion stops without scores. The resulting target is 3,440 parents/6,880
+observations. Hidden IEEE device ids and 512px publisher preprocessing are explicit limitations;
+paired prompt sets must not be counted as 800 independent AI prompts. No download is requested.
