@@ -5,7 +5,24 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E54 closed; E55 paused at 3% battery (2026-09-09)
+## Current outcome and next actions — overnight continuation; LaCie absent (2026-09-10)
+
+**00:29 local continuation check:** user authorizes overnight work and public downloads. AC Power
+is confirmed, battery 1% and charging. `/Volumes/LaCie` is absent; `diskutil list physical` finds
+only the internal physical disk, and USB inventory finds no LaCie/Rugged/Seagate device. Do not
+invent a replacement mount directory or mirror hundreds of GB onto the internal drive. User has
+been notified that the external disk must reconnect. No E55 extraction/fit is resumed yet.
+
+Thread heartbeat `gece-model-geli-tirme-takibi` checks every 30 minutes through 2026-09-10 08:00
+Europe/Istanbul. Avoid repeated unchanged notifications, duplicate jobs and manual-gated/paid
+services. Before any heavy work verify AC, the actual mounted external disk and available space.
+An unchanged-code E55 resume wrapper is the next engineering step: validate the archived pause
+chunk hashes, obtain a single-run lock, select only unfinished stages, and stop its own child if
+power/disk safety fails. It must not alter the frozen colour experiment or scientific gates. Test
+these checks with synthetic fixtures without requiring or fabricating external data. Resume the
+existing contract on disk return, then assess all gates before planning the next experiment.
+
+The operational notes below are retained as the checkpoint context, not a claim of active training.
 
 **Operational pause, 21:18 local:** `pmset -g batt` reports Battery Power, 3%, approximately eight
 minutes remaining. Stop only this turn's E55 extractor and temporary throughput diagnostic;
