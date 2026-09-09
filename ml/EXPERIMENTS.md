@@ -4518,3 +4518,13 @@ derivative views, verified contract/order/shape/finiteness and hashes; no partia
 an E55 quality result, early stopping on validation, or hyperparameter change. Resume the same
 feature extraction and six prescribed fits only after charging is verified. The paired temporary
 throughput diagnostic was also interrupted and must not be reported as a completed speed comparison.
+
+2026-09-10 operational follow-up: AC restored but LaCie is absent from mount, physical-disk and
+USB inventories. E55 scientific code/contract, inputs and hyperparameters remain unchanged; no
+new fit or inference result. A separate guarded resume wrapper and eleven fixture cases verify
+power/storage checks, checkpoint hashes, unfinished-stage selection and scoped process cleanup.
+Real preflight correctly blocks the missing volume. Overnight heartbeat may resume the original
+study only after the disk returns; these engineering tests are not evidence of detector quality.
+
+Verification: full Python suite 609 passed (one existing warning); real guarded `run` refuses
+missing storage without creating substitute mount/work directories. No new E55 model score.

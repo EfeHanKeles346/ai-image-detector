@@ -22,6 +22,14 @@ power/disk safety fails. It must not alter the frozen colour experiment or scien
 these checks with synthetic fixtures without requiring or fabricating external data. Resume the
 existing contract on disk return, then assess all gates before planning the next experiment.
 
+Resume command (after AC and disk verification):
+`PYTHONPATH=ml:ml/src ml/.venv/bin/python -m experiments.e55_resume run --until 2026-09-10T08:00:00+03:00`.
+The wrapper fixes the external/offline/thread environment for its children; logs go to ignored
+`ml/work/e55_resume/`. Eleven operational unit cases pass: charging/fail-closed power parsing,
+unfinished-stage selection, orphaned feature-finalization rejection, preserved chunk hashes/path
+safety, and stopping only its owned live child. A real preflight correctly refuses the absent disk.
+This verifies engineering behaviour with fixtures, not actual E55 resume or model improvement.
+
 The operational notes below are retained as the checkpoint context, not a claim of active training.
 
 **Operational pause, 21:18 local:** `pmset -g batt` reports Battery Power, 3%, approximately eight

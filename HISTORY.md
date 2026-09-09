@@ -5596,3 +5596,34 @@ then run `fit` and `report`, after AC power is connected and verified. Receipt
 and reproducible but quality-rejected; E55 is operationally paused, not quality-rejected. All
 400 newly downloaded reserve bodies remain unscored and protected. No paid API spend or GitHub
 push occurred. This turn leaves no active ML training/download; user notified about charging.
+
+### 2026-09-10 — overnight continuation authorized; power restored, external disk absent
+
+User asks to work through the morning and permits public downloads. At 00:29 local, AC Power is
+confirmed (battery 1%, charging), but `/Volumes/LaCie` is absent, physical disk inventory lists
+only the internal drive, and USB inventory has no LaCie/Rugged/Seagate device. User notified;
+no mount placeholder, destructive repair, internal bulk mirror or replacement dataset created.
+No E55 fit or resumed extraction is claimed. Existing 816-view checkpoint remains the known
+external state, not reverified local availability. Later battery check: AC/8% and charging.
+
+Using the official OpenAI Docs workflow, configured thread heartbeat `gece-model-geli-tirme-takibi`
+every 30 minutes through 10 September 08:00 Europe/Istanbul. Continue only on actual AC/external
+data availability, skip unchanged notifications and duplicate jobs, retain training/test separation,
+and keep new public acquisition licensed and role-bound. No manual-gated or paid services inferred.
+
+New operational wrapper `ml/experiments/e55_resume.py` surrounds the unchanged frozen E55 script.
+It checks real mounted external storage, charging and 10 GiB free; verifies paused contract/chunk
+hashes; takes a single-run lock; rejects concurrent direct E55 jobs and orphaned final-feature
+artifacts; sets the exact external/offline environment; runs only pending extraction/fit/report.
+Every 30 seconds it checks power/storage/deadline and stops only its own child process group on
+failure. SIGTERM triggers child cleanup. Logs stay under ignored `ml/work/e55_resume/`. No serving,
+label, image, threshold, model-weight or frozen-experiment-code changes. Eleven operational unit
+cases pass, and real preflight returns missing-disk refusal as expected. This is engineering
+readiness, not completion of a model experiment. The frozen E55 scientific gates remain unchanged.
+
+Final local verification for this engineering slice: 609 Python tests passed in 11.29 seconds,
+one pre-existing Starlette/httpx deprecation warning, and `git diff --check` passed. The real `run`
+path returns `not_started` for the absent volume without creating `/Volumes/LaCie` or even its
+local work/log directory. No data/model/dependency download, no model quality measurement, and
+no new training child is left running. Overnight continuation is scheduled; physical disk access
+remains required. Only this turn's verified code/docs are committed locally, without GitHub push.
