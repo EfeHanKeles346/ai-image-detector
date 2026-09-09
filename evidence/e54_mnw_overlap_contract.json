@@ -1,0 +1,22 @@
+{
+  "balanced_final_admitted": false,
+  "canonical_version": "e51-prefit-rgb-lanczos-v1",
+  "code_sha256": "999e7fbe09927a2b4322bb175873f5857c90eb070cf0ee7703464a0fa3e9993a",
+  "contract_sha256": "38d200d71a1518b50b29aabc63130598dd4143413ec2ae0835d27f3e2a00717a",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e51_prefit_audit.py": "a056910bb3ad93ca5c8a4488ec4ca9aaba727635e280eff8a85f7f9f6cc00bda",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e51_train_cal_realize.py": "cf6d28368120d8001095dd1963319f4ed7d827c5a2eab5092fbf6e835bd22c08",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/work/e51/canonical_fingerprints.sqlite3": "2633a881a8e423390d42450a9e47a58f54301843378b984980c910baf4b65540",
+    "/Volumes/LaCie/pixelproof-datasets/e51/audit/reserve_closure_v1.json": "2c2cdb070b6f9815a2c119b4aadee0c69dbe0d1e239f55916c40b99dc089ad36",
+    "/Volumes/LaCie/pixelproof-datasets/e51/development/manifest_unscored.json": "1b1882f3e759327017f398c95e3a4e30a9c30a8670bffa40b80608f3844ea224",
+    "/Volumes/LaCie/pixelproof-datasets/e51/route/contract_untransferred.json": "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d81140ec315e4",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/download.json": "a63d7655cea11d18457dbb45bb4419063526e16e90f6d941a2796af3dd17ea4c",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/manifest.json": "51b2c5e3f18315912cf89a5c99da759da65eb72f76e5e909d40a69a41a31a4b7",
+    "/Volumes/LaCie/pixelproof-datasets/e53/native_fingerprints.sqlite3": "0e0614294e7356a465537cd641cac00bc4ff64aa6ace8f55ab9a2a24c6aa16e5",
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+  },
+  "model_scores_created": 0,
+  "policy": "Withhold cross-protected matches and both internal-pair endpoints. No replacement or score-based filtering.",
+  "state": "MNW_overlap_screen_frozen_before_matching",
+  "training_allowed": false
+}

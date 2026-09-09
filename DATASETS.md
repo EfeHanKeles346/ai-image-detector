@@ -2004,3 +2004,13 @@ but not a modern-phone substitute. Its research licences must accompany any sele
 RAW development would require a separately fixed decoder/input contract. No FiveK images downloaded
 at this planning checkpoint. These source limitations prevent claiming that more downloads alone
 will solve the representation problem.
+
+MNW acquisition completed: 300/300 selected parents, 50 per declared family; 229,880,188 verified
+image bytes (229.88 MB /219.23 MiB). Exact identities derive from publisher Git-LFS SHA256/size,
+manifest SHA `51b2c5e3f18315912cf89a5c99da759da65eb72f76e5e909d40a69a41a31a4b7`.
+Original bodies and source terms reside in `e52/mnw_reserve_v1/` on LaCie, not in Git. Immutable
+download/overlap reports are retained alongside them; compact receipts are in `evidence/`.
+Screened against 150,483 unique protected/current-TRAIN reference bodies: zero byte/RGB or
+radius-4 dHash+pHash cross/internal matches, 300 retained, zero detector scores. Heuristic screening
+cannot certify every shared prompt/scene; unknown publisher prompt structure remains protected.
+This adds evaluation coverage for recent generators, not training material or REAL-class evidence.

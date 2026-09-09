@@ -1,0 +1,31 @@
+{
+  "balanced_final_admitted": false,
+  "contract_sha256": "38d200d71a1518b50b29aabc63130598dd4143413ec2ae0835d27f3e2a00717a",
+  "cross_match_observations": 0,
+  "current_train_parents_covered": 11630,
+  "eligible_by_family": {
+    "Adobe_Firefly_v4": 50,
+    "Flux_2_pro": 50,
+    "Google_Imagen4": 50,
+    "MAI_image2": 50,
+    "Midjourney_v8": 50,
+    "OpenAI_GPTimage2": 50
+  },
+  "internal_pair_observations": 0,
+  "latest_ai_reserve_parents_covered": 920,
+  "limits": [
+    "Exact RGB/byte plus radius-4 dHash/pHash screening is not exhaustive semantic deduplication.",
+    "Unknown shared prompts: reserve entire publisher, not 300 independent prompt groups.",
+    "Unavailable historical metadata-only bodies cannot receive pixel comparisons.",
+    "AI-only reserve cannot measure REAL safety or pass balanced E52.",
+    "Future TRAIN admission must protect this manifest and overlap report as well as old registries."
+  ],
+  "model_scores_created": 0,
+  "query_parents": 300,
+  "reference_facts_sha256": "4a24eac8e5c7337b3826708f205e46295d1351558f225b0bed3be93cec4c30c5",
+  "reference_unique_bodies": 150483,
+  "report_sha256": "712025cc3124f455b17db9bc3ac63805d554eec58d4c4c1ac48d2773f2d9d057",
+  "state": "MNW_identity_screen_complete_still_unscored_reserve",
+  "training_allowed": false,
+  "withheld_parents": []
+}

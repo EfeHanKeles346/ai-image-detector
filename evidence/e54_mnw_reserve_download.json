@@ -1,0 +1,11 @@
+{
+  "charged_image_transfer_bytes": 229880188,
+  "manifest_sha256": "51b2c5e3f18315912cf89a5c99da759da65eb72f76e5e909d40a69a41a31a4b7",
+  "model_scores_created": 0,
+  "parents": 300,
+  "protected_overlap_audit_pending": true,
+  "report_sha256": "a63d7655cea11d18457dbb45bb4419063526e16e90f6d941a2796af3dd17ea4c",
+  "state": "MNW_reserve_downloaded_not_final_admitted",
+  "training_allowed": false,
+  "verified_image_bytes": 229880188
+}

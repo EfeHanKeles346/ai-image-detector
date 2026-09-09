@@ -5495,3 +5495,22 @@ interrupted before producing a teacher/crop cache. Load each archive member once
 exact array values/order and all roles. Original data contract `b96447f0...bbd99` remains archived;
 the corrected code is bound to a separate `data_contract_v2.json` and evidence receipt, not a
 silent rewrite of the first contract. No model metric or scientific parameter changed.
+
+### 2026-09-09 — E54 independent current-AI reserve acquired, not scored
+
+Official Microsoft–Northwestern–WITNESS revision `c93abf43e8157558a0e60aab7df4278b2c539253`:
+300 selected fully-generated AI images, exactly 50 each Firefly v4, Flux 2 pro, Imagen4,
+MAI image2, Midjourney v8, GPTimage2. Frozen LFS image identities/sizes were committed before
+image transfer. Completed 229,880,188 verified image bytes (229.88 MB /219.23 MiB), below the
+768 MiB cap; conservative charged-request bytes also equal 229,880,188 in this successful run.
+Metadata freeze used 416,467 bytes; earlier exploratory listings are additional metadata traffic,
+including a discarded/truncated ~14.5 MB recursive Git listing. No dataset weights or paid API.
+
+Model-blind audit compares against 150,483 unique canonical historical/native/development/reserve
+bodies, covering all 11,630 current TRAIN originals and all 920 latest AI reserve parents.
+Zero cross-protected or internal matches under byte/RGB and the established dHash/pHash heuristic.
+All 300 remain unscored reserve candidates. This is not exhaustive semantic/prompt deduplication,
+not evidence of model quality, and not a balanced E52 final admission. Whole publisher stays
+protected, including unknown prompt relations. MNW terms prohibit training and threshold tuning.
+Receipts: `evidence/e54_mnw_reserve_{manifest,download}.json`, `evidence/e54_mnw_overlap*.json`.
+Future TRAIN admission must include this new reserve, not only the older frozen inventories.
