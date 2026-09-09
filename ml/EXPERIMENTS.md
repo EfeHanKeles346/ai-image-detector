@@ -4143,3 +4143,10 @@ Admission completion addendum: protected report `2f070e7d...c1e54` verifies 117,
 and 9,098 queries with zero matches. Admission `c406edb6...7a39b` excludes zero parents, retaining
 5,978 TRAIN and 1,560 CAL /3,120 paired observations. This authorizes the already-frozen feature
 and fit protocol, not a model-quality claim.
+
+Pre-fit regression contract: both A/B at frozen CAL thresholds, all 4,000 consumed E49 original/Q75
+observations with identical identity/label checks. Baseline hash `249f005c...610a8` must reproduce
+within max absolute score difference 5e-5. Report AUC/BA/FPR/recall/coverage, counts and source rates,
+plus 2,000 paired parent-bootstrap old/new deltas within fixed source strata per transport.
+No bootstrap threshold refits, no pooling paired images as independent parents, no candidate
+selection from E49. Code tests pass; feature extraction is underway and no E51 fit exists yet.

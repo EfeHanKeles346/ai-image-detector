@@ -31,6 +31,11 @@ and 1,560 CAL parents, with zero exclusions. Next: 21,054 TRAIN/CAL views and fi
 - Freeze artifacts before any old-test rerun. An E49 paired comparison is diagnostic/regression,
   never a fresh final or a source of new thresholds. Keep the serving model unchanged; fresh
   DEVELOPMENT/E52 policy remains as specified below. No image or model-weight download is allowed.
+- Regression implementation is fixed before fitting: evaluate both predeclared A/B artifacts,
+  regardless of CAL eligibility, at their frozen CAL cuts on all 4,000 consumed E49 observations.
+  Reproduce the old E43 raw scores within max absolute error 0.00005 as a preprocessing guard.
+  Report per-source errors and paired 2,000-replicate, source-stratified parent-bootstrap deltas;
+  never use these diagnostics to select or refit either candidate. A CAL failure keeps fresh DEV closed.
 
 ## Current execution slice — E41 external proof, then E42 only if needed (2026-08-28)
 

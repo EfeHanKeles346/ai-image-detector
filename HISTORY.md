@@ -5209,3 +5209,11 @@ Admission subsequently completed: protected report `2f070e7d...c1e54` has zero m
 comparisons after all 9,098 query observations. `evidence/e51_admission.json` binds admission
 `c406edb6...7a39b`, retaining 5,978 TRAIN /1,560 CAL parents with no exclusions. Every CAL device
 still has 40 originals, every AI source 20. The fixed 21,054-view feature extraction may now run.
+
+The user-requested old/new comparison is implemented before fitting in `e51_regression.py`:
+both fixed A/B candidates, all original 4,000 E49 observations, no threshold refit or winner
+selection. It binds artifacts/CAL/manifest/prior-score hashes and reproduces the old E43 scores
+(maximum allowed absolute numerical difference 0.00005) before accepting a comparison. Reports
+include per-source errors and paired source-stratified parent-bootstrap differences. The 2,000
+resamples describe this fixed test population, not unseen-publisher uncertainty. Regression is
+allowed even for a CAL-rejected candidate solely to explain failure; fresh DEV stays unopened.
