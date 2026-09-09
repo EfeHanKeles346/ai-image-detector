@@ -90,3 +90,42 @@ def test_existing_cal_q75_is_not_compressed_twice(tmp_path):
     assert np.array_equal(original[0],q75[0])
     assert np.array_equal(original[1],q75[1])
     with pytest.raises(ValueError): prepare({**row,'condition':'original','sha256':'wrong'})
+
+
+def test_fixed_fit_freezes_and_resumes_completed_candidates(tmp_path,monkeypatch):
+    import json
+    from experiments import e51_pipeline as module
+    from experiments.e42_features import _save_npz
+
+    root = tmp_path/'e51'; features = root/'features.npz'
+    feature_evidence = tmp_path/'features.json'
+    result_path, result_evidence = root/'result.json',tmp_path/'result.json'
+    for name,value in [('ROOT',root),('FEATURES',features),('FEATURE_EVIDENCE',feature_evidence),
+                       ('RESULT',result_path),('RESULT_EVIDENCE',result_evidence)]:
+        monkeypatch.setattr(module,name,value)
+    monkeypatch.setattr(module,'admission',lambda: ({},'admission'))
+    labels = np.tile([0,0,0,1,1,1],4)
+    rng = np.random.default_rng(2)
+    base = rng.normal(size=(24,3072)).astype(np.float32)+labels[:,None]*4
+    data = {'dino':base,'residual':rng.normal(size=(24,32)).astype(np.float32),
+            'labels':labels,'roles':np.array(['TRAIN']*12+['CAL']*12),
+            'parents':np.array([f'p{i}' for i in range(24)]),
+            'ids':np.array([f'v{i}' for i in range(24)]),
+            'sources':np.where(labels==0,'camera','generator'),
+            'groups':np.where(labels==0,'camera','generator'),
+            'conditions':np.array(['clean']*12+['original']*6+['q75']*6)}
+    _save_npz(features,data)
+    feature_evidence.write_text(json.dumps({'admission_sha256':'admission',
+        'feature_sha256':hashlib.sha256(features.read_bytes()).hexdigest(),'feature_binding':'bound'}))
+    first = module.fit()
+    assert set(first['candidates'])=={'A','B'}
+    assert first['development_scores_created']==first['old_test_scores_created']==0
+    assert (root/'training/e51_A.joblib').is_file()
+    assert (root/'training/e51_B.joblib').is_file()
+    with pytest.raises(FileExistsError): module.fit()
+    # Simulate interruption after candidate checkpoints but before the final result freeze.
+    result_path.unlink(); result_evidence.unlink()
+    def forbidden_refit(*args,**kwargs):
+        raise AssertionError('completed candidates must not train again')
+    monkeypatch.setattr(module,'make_pipeline',forbidden_refit)
+    assert module.fit()==first
