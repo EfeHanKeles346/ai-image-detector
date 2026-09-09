@@ -1,0 +1,37 @@
+{
+  "code_sha256": "a3424cb29d912f30f3ee6106f3ddd86f6746d761eade47ea13ed2194df0bf793",
+  "contract_sha256": "c0f3ab3e0b809d055dfa03042b171fed3c703ebf69f9e633bbbad9a7493d7c51",
+  "diagnostic_fit": {
+    "C": 0.01,
+    "dtype": "float64",
+    "max_iter": 1000,
+    "seed": 53,
+    "tol": 1e-08
+  },
+  "diagnostic_roles": "FIT only; no new CAL/validation predictions, no saved candidate",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e53_coverage.py": "66149ae1381d1a5894d72a2f5bc925982e663cdda6482e277447b0d6d1809b1c",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e55_color.py": "2d5b944cdfe70cc20a9e344e8d533a83124eb89c70c0789a24ad754539fade4d",
+    "/Volumes/LaCie/pixelproof-datasets/e53/features/native_expansion.npz": "82ab703a641aebb4b08cc1175e08b272732d0a91e6825b19bdc394941482c1c5",
+    "/Volumes/LaCie/pixelproof-datasets/e54/color_descriptors.json": "f165e4540d3c3284c65b3d57190278e77dd264a08190646c07e9ba8734d1e10d",
+    "/Volumes/LaCie/pixelproof-datasets/e54/color_result.json": "ebab962a1ad1c0680fcf6440ff30dca7801f3ae0ca623f4b05d9c3fa7dce128a",
+    "/Volumes/LaCie/pixelproof-datasets/e55/contract.json": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+    "/Volumes/LaCie/pixelproof-datasets/e55/features.json": "a292d04c215ed8939c2c165357b538fcc65746b2b71589e1a55ca2f32ccf6d1d",
+    "/Volumes/LaCie/pixelproof-datasets/e55/result.json": "1c263ca7f48d86e6773b6f87c5f60d75d42411f86965c3e62346896db2575f3d",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold0.joblib": "e7e99c74ad9abe63e11f42416680bb41ee9d582ae11a8a51810ae8caadbbff5b",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold0.json": "2592e46cfef7e49f6add4edf836b3eb2892b8edfa9da6fa02070e9bc164dbbbb",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold1.joblib": "ff8f7e22658661453b8e29445e1247ccb85f3f2cb01dc53f4a437200cc32d75d",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold1.json": "a57e4e193049c8d24be2522ba80d21926760cd0b7b4b7beb0f17979759b518b5",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold2.joblib": "f1d07432f7e6305a6cc39056282d41da79f9910808dbad7b59530c9af6bdd954",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/duplicate_control_fold2.json": "25185fb2f5499e0de149762c9bb11f962c4f882c4c94855649639e55f4bd7ba4",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold0.joblib": "05d86687137e52aece9e120ef93444063fd7ee17b4f63be569cf40346ec5ae2a",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold0.json": "d1a407c53dcb457df7c8196ae08c7038e38fde8873a2adcafdc869a7e98ba7a8",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold1.joblib": "2dd098da04979ae9ffab1bd6d571a145aaef2411378500449b2d288fb68afc00",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold1.json": "6a406b51b464276a8dac464f2a3a42c936ad064600ed88473a82af4d66ba50e7",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold2.joblib": "e83d1ab67aa18044f86397aa23a2b6a4619b24d70514e75f745c03dcd7941ea6",
+    "/Volumes/LaCie/pixelproof-datasets/e55/training/grayscale_20_fold2.json": "a88faa709712e55ffe47e41c2c8d3a6899d95280f9e7452eb236df0d7fb9e8c2"
+  },
+  "new_external_test_scores": 0,
+  "old_results_remain_rejected": true,
+  "state": "E55_diagnostic_frozen"
+}
