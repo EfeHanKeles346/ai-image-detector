@@ -1,0 +1,117 @@
+{
+  "state": "E55_paused_low_battery",
+  "contract_sha256": "a9624ba44450801cae06f0f83b625399f97c0ad5d9941afb93d475ec541f817e",
+  "battery_percent_observed": 3,
+  "power_source": "Battery Power",
+  "completed_views": 816,
+  "planned_views": 34890,
+  "chunks": [
+    {
+      "file": "000000.npz",
+      "sha256": "054ab3501643bf228b9199678501c28b8ba9b2751be111868bc6c7708998fbe9",
+      "views": 48,
+      "bytes": 497971
+    },
+    {
+      "file": "000048.npz",
+      "sha256": "8c6bd68a940788d6992c73fdde4ce9df2afbfc0dec798de3f75b21190b7a8b10",
+      "views": 48,
+      "bytes": 532046
+    },
+    {
+      "file": "000096.npz",
+      "sha256": "2863c1c16e90317cdcf04424bfefae281c1bcd13117f50e4e108984c204cb6a0",
+      "views": 48,
+      "bytes": 531749
+    },
+    {
+      "file": "000144.npz",
+      "sha256": "6819495374f36e8af9f60ba03f511415e62b5cc82eb7af17bb55635cf025c79c",
+      "views": 48,
+      "bytes": 520604
+    },
+    {
+      "file": "000192.npz",
+      "sha256": "65cee141cf9a23790340e5d6c0f2e221ac9bff60ddc7b0674562d450e6044e32",
+      "views": 48,
+      "bytes": 486378
+    },
+    {
+      "file": "000240.npz",
+      "sha256": "e8831b7d34bc5eefb8ce6b07534eb3bf390ea09e5489066faa15711508b36b9f",
+      "views": 48,
+      "bytes": 531985
+    },
+    {
+      "file": "000288.npz",
+      "sha256": "d02a4847bf0e9ff268805f819b0f96567b7615a1d8db6ed0a9229e6bf9a35d66",
+      "views": 48,
+      "bytes": 497908
+    },
+    {
+      "file": "000336.npz",
+      "sha256": "9de36d4d2244d5ea38ec6e452ba8d35e35ebeaa5e826c74a85f40b9f1a2e600c",
+      "views": 48,
+      "bytes": 554515
+    },
+    {
+      "file": "000384.npz",
+      "sha256": "609aa9ddcf483fdb65ce4924ae418831bba5d30a4a03cefd1bd3f98f6b9f550c",
+      "views": 48,
+      "bytes": 543406
+    },
+    {
+      "file": "000432.npz",
+      "sha256": "9477f8067a883ef5e95167e4218e280069c176c6bf2e82beb15b63c2f3b172fd",
+      "views": 48,
+      "bytes": 554928
+    },
+    {
+      "file": "000480.npz",
+      "sha256": "ae4e160653e49b991bce7db0e5033cf4a9f2b389547743eaa0f83e9a41f86f03",
+      "views": 48,
+      "bytes": 531879
+    },
+    {
+      "file": "000528.npz",
+      "sha256": "871fc4ef9980cc5634f73f1dc987de7614c0d17246dd6bcdbb2a83e64e2f1059",
+      "views": 48,
+      "bytes": 554626
+    },
+    {
+      "file": "000576.npz",
+      "sha256": "c16a6882561e902673d1c2b836885b9c25c711d69c542c0f1659f5b1c512339d",
+      "views": 48,
+      "bytes": 531997
+    },
+    {
+      "file": "000624.npz",
+      "sha256": "8211f33afb1d48b40e4c698dd951d5db2beb06d81006c319c25669bf6c3b44ba",
+      "views": 48,
+      "bytes": 486614
+    },
+    {
+      "file": "000672.npz",
+      "sha256": "12e66b5c254f936177dceec9c70f0a7d53872a3586784ee974deb9f298f2e14e",
+      "views": 48,
+      "bytes": 531961
+    },
+    {
+      "file": "000720.npz",
+      "sha256": "9fd64252628ef28a813fa76d1b62221a48c7d0631dbca3297a6e2fdc24c4ff1e",
+      "views": 48,
+      "bytes": 520554
+    },
+    {
+      "file": "000768.npz",
+      "sha256": "8954d94a586491580f23cf4a09b5fe04f930f5a57859f1a0931cfac74c010c2b",
+      "views": 48,
+      "bytes": 532126
+    }
+  ],
+  "partial_files": [],
+  "fits_started": 0,
+  "serving_changed": false,
+  "independent_final_opened": false,
+  "resume_requires": "AC power connected; resume extract, fit and report under unchanged contract; do not re-freeze."
+}

@@ -4507,3 +4507,14 @@ Require control parity <=5e-5 and zero decision changes versus native reference,
 replay, relative no-loss guard and absolute fold gates. Only a passing result may authorize a
 separate full-data/CAL+DEV stage, not direct serving or E52. All new derivatives remain TRAIN
 material, not another independent source or downloaded data. E55 receipt: `evidence/e55_contract.json`.
+
+E54 post-fit integrity closure: all 23,912 predictions from six reconstructed checkpoints reproduce
+exactly, zero decision flips. Separate acceptance rejects both arms for relative and absolute gate
+failures despite successful replay. Full local Python suite now 598 passed, one existing warning.
+
+E55 operational interruption before any fit: at 21:18 local the machine reports 3% remaining on
+battery, not AC. Stop extraction to protect work. Seventeen complete chunks retain 816/34,890
+derivative views, verified contract/order/shape/finiteness and hashes; no partial file. This is not
+an E55 quality result, early stopping on validation, or hyperparameter change. Resume the same
+feature extraction and six prescribed fits only after charging is verified. The paired temporary
+throughput diagnostic was also interrupted and must not be reported as a completed speed comparison.

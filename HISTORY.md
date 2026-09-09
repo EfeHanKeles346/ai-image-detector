@@ -5580,3 +5580,19 @@ backbone hashes unchanged. `evidence/e54_acceptance.json` explicitly rejects bot
 successful replay because relative preservation and absolute gates fail. This is repeatability,
 not additional accuracy evidence. E55 extraction is running on existing local inputs. Full Python
 suite at this checkpoint: 598 passed, one pre-existing Starlette/httpx warning; no dependency update.
+
+### 2026-09-09 21:18 local — remote run paused safely at 3% battery
+
+While investigating slow E55 extraction, `pmset -g batt` reports Battery Power, 3%, eight to nine
+minutes remaining. No AC connection is available remotely. Stop only this turn's extractor and
+temporary timing diagnostic, both exit 143; preserve all existing demo processes and data.
+The timing diagnostic returned finite features but was interrupted before completing comparisons;
+it establishes no speedup or proven cause. No E55 fit or quality measurement has started.
+
+Preserved 17 complete hash/shape/binding-verified chunks: 816/34,890 grayscale views, 8,941,247
+bytes, no partial files. E55 `extract` can resume those exact chunks under its unchanged contract,
+then run `fit` and `report`, after AC power is connected and verified. Receipt
+`evidence/e55_pause_checkpoint.json` binds every preserved chunk. E54 is fully complete, archived
+and reproducible but quality-rejected; E55 is operationally paused, not quality-rejected. All
+400 newly downloaded reserve bodies remain unscored and protected. No paid API spend or GitHub
+push occurred. This turn leaves no active ML training/download; user notified about charging.

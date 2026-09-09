@@ -5,7 +5,18 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E54 measured; E55 colour ablation next (2026-09-09)
+## Current outcome and next actions — E54 closed; E55 paused at 3% battery (2026-09-09)
+
+**Operational pause, 21:18 local:** `pmset -g batt` reports Battery Power, 3%, approximately eight
+minutes remaining. Stop only this turn's E55 extractor and temporary throughput diagnostic;
+both exit 143. No training/download is left running by this turn, and the existing web demo is
+untouched. Seventeen verified derivative chunks preserve 816/34,890 views (8,941,247 bytes),
+no partial files and no E55 fit yet. Full inventory: `evidence/e55_pause_checkpoint.json`.
+User must connect AC power; remote access cannot do that. Do not automatically resume heavy work
+on the remaining battery. Once charging is verified, resume `experiments.e55_color extract`,
+then `fit`, then `report` with the same frozen contract; do not re-freeze or discard completed
+chunks. Keep `PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets`, `PYTHONPATH=ml:ml/src`,
+offline HF/Transformers flags and OMP/OPENBLAS threads=2. This is not a scientific rejection of E55.
 
 E54 finishes all six fixed fits. Against the identical native fold baseline, last-two-block
 adaptation changes clean AI recall 66.39% -> 68.76%, REAL false-AI 19.50% -> 17.50%, balanced
