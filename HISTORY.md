@@ -5643,3 +5643,16 @@ Guarded runner actually starts at 01:41:42 local; extraction log is
 1,008/34,890 views, beyond the preserved 816, confirming resumed feature computation rather
 than merely a queued command. No fitting or quality result yet. Single supervised child only;
 night heartbeat remains active and the wrapper enforces the 08:00 deadline and power/disk checks.
+
+### 2026-09-10 — continuous background research/test loop requested
+
+User explicitly asks for ongoing background improvement, testing, error analysis and research.
+Update the existing heartbeat instead of creating a duplicate: 30-minute recurring follow-up,
+now without the original morning expiry. The current E55 child retains its original 08:00 runtime
+safety limit; future jobs require their own bounded run/deadline and AC/storage checks. At this
+check extraction has passed 25,968/34,890 views and no fit result is claimed. Follow-up proceeds
+from measured evidence, not repeated arbitrary tuning; existing AI-preservation, absolute gates,
+unopened reserves, source licences and append-only experiment records stay intact. Stop when
+requested or the documented objective is genuinely independently established. Only meaningful
+updates or needed user action should notify the user. Local computer/app availability remains
+required for scheduled local work, per official OpenAI scheduled-task documentation.

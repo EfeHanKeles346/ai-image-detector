@@ -7,6 +7,16 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — disk returned; E55 resuming (2026-09-10)
 
+**Continuous follow-up requested, 01:53 local:** user explicitly asks for ongoing background
+research/development/testing. Update the existing thread heartbeat (no duplicate automation) to
+30-minute recurring continuation without the former morning expiry. Each cycle uses measured
+results -> source-level errors -> primary-source research -> preregistered bounded experiment ->
+verification; no repetitive busywork or unsupported success claims. The already-running E55
+process keeps its original 08:00 safety deadline; do not modify or duplicate it. Later individual
+jobs need their own explicit bounded runtime and power/storage checks. Stop the follow-up when
+the user requests it or the documented objective has genuinely been independently established.
+Keep notifications limited to meaningful changes/results or necessary user actions.
+
 **01:41 local:** user reconnects LaCie. USB identifies the external Rugged disk; macOS runs its
 own `fsck_exfat` check before mounting. Let that OS-initiated check finish without interruption,
 forced mount or repair commands. The volume then mounts normally and guarded preflight passes
