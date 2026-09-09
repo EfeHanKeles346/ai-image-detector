@@ -4138,3 +4138,8 @@ was scored or selected using model output.
 - Repetitions: seeds 42/43/44 with deterministic lbfgs, reporting score differences, not claiming
   independent stochastic replication. Checkpoint candidate artifacts/scores before any E49 access.
 - Verification: 523 tests pass. Main protected-query checks still pending; no E51 fit yet.
+
+Admission completion addendum: protected report `2f070e7d...c1e54` verifies 117,898 locations
+and 9,098 queries with zero matches. Admission `c406edb6...7a39b` excludes zero parents, retaining
+5,978 TRAIN and 1,560 CAL /3,120 paired observations. This authorizes the already-frozen feature
+and fit protocol, not a model-quality claim.

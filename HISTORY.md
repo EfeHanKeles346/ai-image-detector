@@ -5204,3 +5204,8 @@ tests for paired-parent removal, threshold ties, invalid scores, missing classes
 of double JPEG compression. **523 Python tests pass.** No candidate has been fitted at this
 checkpoint. Any later E49 rerun is regression-only, cannot select the winner, and cannot become
 another independent final. Serving remains unchanged; commits remain local under mobile data.
+
+Admission subsequently completed: protected report `2f070e7d...c1e54` has zero matches in both
+comparisons after all 9,098 query observations. `evidence/e51_admission.json` binds admission
+`c406edb6...7a39b`, retaining 5,978 TRAIN /1,560 CAL parents with no exclusions. Every CAL device
+still has 40 originals, every AI source 20. The fixed 21,054-view feature extraction may now run.

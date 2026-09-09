@@ -11,6 +11,10 @@ The older E41–E50 sections below are historical execution context, not a reque
 consumed finals. Current order: finish canonical protected/reserve checks, bind admissible E51
 TRAIN/CAL, extract features, fit A/B, select on CAL, then evaluate without further tuning.
 
+Admission complete: protected `2f070e7d...c1e54` and reserve `2c2cdb07...9ad36` checks have
+zero matched pairs/identity hits. Frozen admission `c406edb6...7a39b` retains all 5,978 TRAIN
+and 1,560 CAL parents, with zero exclusions. Next: 21,054 TRAIN/CAL views and fixed A/B fitting.
+
 - Before scores, conservatively exclude a whole E51 parent (including every paired child) when the
   fixed protected-identity/perceptual checks flag it. No label changes, no score-dependent replacement,
   no downloads. Preserve the original frozen manifests. Abort rather than continue if exclusions
