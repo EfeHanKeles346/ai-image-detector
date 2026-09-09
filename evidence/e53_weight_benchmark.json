@@ -1,0 +1,30 @@
+{
+  "bitwise_equal": true,
+  "contract_sha256": "95e9ea2283ab34e077c9a4acca5ab0dda2e43d8de4f4a177bc884c3760fb1d1c",
+  "implementation_sha256": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e",
+  "limits": [
+    "Only sample-weight construction, not whole training runtime or accuracy.",
+    "Old frozen experiment code and current production are unchanged."
+  ],
+  "max_error": 0.0,
+  "median_speedup": 34.750577484263374,
+  "parents": 5978,
+  "require_bitwise_equal_weights": true,
+  "seconds": {
+    "legacy": [
+      0.3067992909345776,
+      0.31790262507274747,
+      0.31838100007735193
+    ],
+    "linear": [
+      0.008522166986949742,
+      0.009148124954663217,
+      0.00968787504825741
+    ]
+  },
+  "state": "training_weight_equivalence_benchmark_complete",
+  "timed_passes": 3,
+  "training_or_serving_changed": false,
+  "views": 17934,
+  "weights_sha256": "0ebb98a96bc5dc4d7acbcce1a7c5b168115069725d3f044d9d8665f906f06147"
+}

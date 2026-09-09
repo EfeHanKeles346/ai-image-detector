@@ -1,0 +1,33 @@
+{
+  "all_parameters_fixed": true,
+  "arms": {
+    "full_C001": [
+      3072,
+      0.001,
+      false
+    ],
+    "full_L2": [
+      3072,
+      0.01,
+      true
+    ],
+    "mean_C001": [
+      1536,
+      0.001,
+      false
+    ],
+    "mean_L2": [
+      1536,
+      0.01,
+      true
+    ]
+  },
+  "base_contract_sha256": "95e9ea2283ab34e077c9a4acca5ab0dda2e43d8de4f4a177bc884c3760fb1d1c",
+  "code_sha256": "fbd69abc2cb2be120c418bee7ded91e395d04841dbf980ec3c3f4cfa5fbc1063",
+  "contract_sha256": "093294a0bd6a12c3d1eb0bfd444fbdff93dfa12222ccef8b6833581162fd6132",
+  "model_scores_created": 0,
+  "sample_weight_mass": "same historical three-view mass; fast helper is bitwise-equivalent",
+  "scope": "same TRAIN, same folds/CAL/validation, no external scores",
+  "serving_changed": false,
+  "weight_code_sha256": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e"
+}

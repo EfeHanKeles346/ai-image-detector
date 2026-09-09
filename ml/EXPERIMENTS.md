@@ -4309,3 +4309,31 @@ original-based views, full/mean-only C=0.01, total weights normalized to the old
 mass. This isolates native data addition more cleanly than changing both pool and calibration.
 Original audit and complete E51 reserve closure precede the frozen expansion contract. Features
 are extracting at this checkpoint; no extra-arm score or external final pass is asserted.
+
+Four precommitted head controls completed on the same v1 folds, three views and weight mass:
+
+| Arm | Clean REAL FPR | Clean AI recall | Clean BA | Q75 REAL FPR | Q75 AI recall | Q75 BA |
+|---|---:|---:|---:|---:|---:|---:|
+| Full, C=0.001 | 13.63% | 50.23% | 68.30% | 13.41% | 52.19% | 69.39% |
+| Mean, C=0.001 | 13.36% | 63.00% | 74.82% | 12.34% | 61.19% | 74.43% |
+| Full, row-L2 | 15.46% | 49.92% | 67.23% | 14.99% | 51.06% | 68.03% |
+| Mean, row-L2 | 15.02% | 56.46% | 70.72% | 15.09% | 56.05% | 70.48% |
+
+No preservation-guard survivor. `evidence/e53_head_controls_contract.json` precedes the scores;
+`evidence/e53_source_held_out_controls_result.json` retains every comparison. Multiple-candidate
+TRAIN selection is explicit. Stronger regularization is helpful descriptively in the mean arm;
+row-L2 and additional order/scale transforms are not automatically improvements.
+
+Weight-construction optimization is measured independently of quality: all 17,934 TRAIN view
+weights are bitwise identical; 0.31790→0.00915 seconds median, ~34.75x for this preparation step.
+No claim of a 35x full training speedup. New control fits use this verified helper without changing
+their objective. Exact crop-dedup parity is extended prospectively to all 11,956 TRAIN clean/Q75
+views, with fixed feature/score tolerances and zero permitted decision flips.
+
+Coverage-v2 protocol, before its scores: metadata reveals two components (E36 REAL, E32 paired
+FLUX/Qwen) never train in v1. Jointly choose the three inner CAL component sets with minimum
+sum class-wise squared deviation from 20%, subject to every component appearing in FIT at least
+once. Keep outer validation assignments exactly unchanged, whole-component separation, >=30
+CAL parents/class and >=100 FIT parents/class. Repeat the same twelve arms including native
+expansion. This is a more efficient TRAIN model-selection protocol, not an independent replication
+or an excuse to discard v1 failures. No v2 result is claimed at this checkpoint.

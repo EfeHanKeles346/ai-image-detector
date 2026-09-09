@@ -56,12 +56,15 @@ def preservation_guard(labels,sources,candidate,baseline,intervals,min_source_pa
             'support_limitation':'50 image parents is a screening floor, not verified independent prompts or proof for small sources.'}
 
 
-def report(include_expansion=False):
+def report(include_expansion=False,include_controls=False):
     value,binding=contract();known={r['parent_id']:r for r in value['rows']};parents=sorted(known)
-    arm_names=list(ARMS);expansion_sha=None
+    arm_names=list(ARMS);expansion_sha=None;expansion_arms=[];control_arms=[];control_sha=None
     if include_expansion:
         from experiments.e53_expansion import ARMS as EXTRA_ARMS, load, CONTRACT
-        load();expansion_sha=digest(CONTRACT);arm_names.extend(EXTRA_ARMS)
+        load();expansion_sha=digest(CONTRACT);expansion_arms=list(EXTRA_ARMS);arm_names.extend(expansion_arms)
+    if include_controls:
+        from experiments.e53_head_controls import ARMS as CONTROLS, CONTRACT as CONTROL_CONTRACT
+        control_sha=digest(CONTROL_CONTRACT);control_arms=list(CONTROLS);arm_names.extend(control_arms)
     labels=np.asarray([known[p]['label'] for p in parents]);sources=np.asarray([known[p]['source'] for p in parents])
     components=np.asarray([value['components'][p] for p in parents]);arms={};predictions={};bindings={}
     for arm in arm_names:
@@ -71,7 +74,8 @@ def report(include_expansion=False):
             if not path.exists():raise ValueError(f'all six arms required, missing {path.name}')
             result=json.loads(path.read_text());bindings[str(path)]=digest(path)
             if result['contract_sha256']!=binding:raise ValueError('result contract mismatch')
-            if arm not in ARMS and result.get('expansion_contract_sha256')!=expansion_sha:raise ValueError('expansion result mismatch')
+            if arm in expansion_arms and result.get('expansion_contract_sha256')!=expansion_sha:raise ValueError('expansion result mismatch')
+            if arm in control_arms and result.get('head_controls_contract_sha256')!=control_sha:raise ValueError('head control result mismatch')
             for row in result['observations']:
                 p=row['parent_id'];key=(p,row['condition'])
                 if key in maps or value['folds'][fold]['roles'].get(p)!='VALIDATION':raise ValueError('OOF leakage or duplicate observation')
@@ -113,13 +117,15 @@ def report(include_expansion=False):
                           'Old2 versus three-view arms also change mean-one total loss mass; augmentation is not the only causal change.',
                           'Native expansion, when present, holds total weight mass fixed to the original three-view FIT population.',
                           'AI preservation versus frozen deployed/E43/E51 models still needs identical independent final rows.']}
-    suffix='_expanded' if include_expansion else ''
+    suffix=('_expanded' if include_expansion else '')+('_controls' if include_controls else '')
     result['expansion_contract_sha256']=expansion_sha
+    if include_controls:result['head_controls_contract_sha256']=control_sha
     fixed_write(ROOT/f'summary{suffix}.json',result);fixed_write(EVIDENCE/f'e53_source_held_out{suffix}_result.json',result)
     return {k:v for k,v in result.items() if k not in {'arms','result_bindings'}}
 
 
 if __name__=='__main__':
     import argparse
-    parser=argparse.ArgumentParser();parser.add_argument('--include-expansion',action='store_true');args=parser.parse_args()
-    print(json.dumps(report(args.include_expansion),indent=2))
+    parser=argparse.ArgumentParser();parser.add_argument('--include-expansion',action='store_true')
+    parser.add_argument('--include-controls',action='store_true');args=parser.parse_args()
+    print(json.dumps(report(args.include_expansion,args.include_controls),indent=2))

@@ -65,6 +65,31 @@ old-two-view versus three-view ablation inherits historical mean-one weights, so
 mass changes with view count; report this confound instead of attributing every difference solely
 to augmentation. It does not affect the honesty of its held-out predictions, but limits causality.
 
+Engineering preparation: replace repeated whole-array parent masks with counter-based weight
+construction in a new reusable helper. Benchmark all E51 TRAIN metadata with unequal source/parent
+counts; require bitwise-identical weights and reject conflicting parent labels/sources. Keep
+frozen historical/E53 fit implementations unchanged. This optimizes preparation cost, not accuracy.
+
+Extend crop-dedup numerical verification to all 5,978 admitted TRAIN parents in clean/Q75
+(11,956 views), against hash-pinned E51 cached features and the same research head/cut. Fixed
+5e-5 feature/score tolerances and zero allowed decision flips; preserve failures and resumable
+chunks. This is numerical regression, not a new accuracy test or permission to change serving.
+
+Last bounded head controls, before their scores: four additional arms on unchanged E51 three-view
+TRAIN, the same folds/CAL/validation and sample-weight mass. Cross full/mean features with either
+stronger regularization C=0.001 or row-L2 normalization at C=0.01; no extra C sweep. Use the
+bitwise-verified fast weight helper. Report all four even on failure, with the same AI-preservation
+guard; these are TRAIN-selection hypotheses, not independent confirmation of a selected winner.
+
+Metadata-only split coverage refinement, preserved as a separate v2 protocol: initial folds leave
+E36 REAL and E32 shared FLUX/Qwen components in CAL/validation only, never FIT. Keep every outer
+validation assignment unchanged, but jointly choose inner CAL components so each source component
+appears in FIT at least once across the three folds. Minimize the same class-wise 20% CAL target
+subject to both-class minimums and whole-component separation. Freeze this rule before v2 scores;
+repeat the same twelve declared arms, with no new hyperparameter search. Preserve v1 results and
+compare arms within v2, not v2 scores against v1 as an independent performance gain. This is a
+data-use efficiency study on consumed TRAIN validation, not a replacement final or relaxed gate.
+
 **Scope:** inspect existing assets, research primary publications and plan first. No new training,
 model scoring, serving change, image/weight/dependency download or GitHub push in this planning
 update. E52 remains the independent final gate; E53 is the successor research experiment, not a

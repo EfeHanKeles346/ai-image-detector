@@ -1,0 +1,91 @@
+{
+  "arms": {
+    "full_C001": [
+      3072,
+      0.001,
+      false,
+      "e51_3"
+    ],
+    "full_L2": [
+      3072,
+      0.01,
+      true,
+      "e51_3"
+    ],
+    "full_e51_3": [
+      3072,
+      0.01,
+      false,
+      "e51_3"
+    ],
+    "full_expanded3": [
+      3072,
+      0.01,
+      false,
+      "expanded3"
+    ],
+    "full_old2": [
+      3072,
+      0.01,
+      false,
+      "old2"
+    ],
+    "full_order3": [
+      3072,
+      0.01,
+      false,
+      "order3"
+    ],
+    "mean_C001": [
+      1536,
+      0.001,
+      false,
+      "e51_3"
+    ],
+    "mean_L2": [
+      1536,
+      0.01,
+      true,
+      "e51_3"
+    ],
+    "mean_e51_3": [
+      1536,
+      0.01,
+      false,
+      "e51_3"
+    ],
+    "mean_expanded3": [
+      1536,
+      0.01,
+      false,
+      "expanded3"
+    ],
+    "mean_old2": [
+      1536,
+      0.01,
+      false,
+      "old2"
+    ],
+    "mean_order3": [
+      1536,
+      0.01,
+      false,
+      "order3"
+    ]
+  },
+  "base_contract_sha256": "95e9ea2283ab34e077c9a4acca5ab0dda2e43d8de4f4a177bc884c3760fb1d1c",
+  "code_sha256": "66149ae1381d1a5894d72a2f5bc925982e663cdda6482e277447b0d6d1809b1c",
+  "contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+  "each_component_trained_at_least_once": true,
+  "expansion_contract_sha256": "595d7894933f739f1594035b04c8293b027ac7c2f7681893a3c65f1ed9a91aab",
+  "helper_sha256": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e53_head_controls.py": "fbd69abc2cb2be120c418bee7ded91e395d04841dbf980ec3c3f4cfa5fbc1063",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e53_report.py": "515528b3f2e5e9b1f2eeace9b531d1cd88a5e83e1f9eaa9267c0c8ecf1b8e123",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e"
+  },
+  "model_scores_created": 0,
+  "new_hyperparameters": false,
+  "outer_validation_changed": false,
+  "serving_changed": false,
+  "state": "coverage_v2_frozen_before_scores"
+}

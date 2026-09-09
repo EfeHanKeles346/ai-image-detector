@@ -5389,3 +5389,30 @@ inherit existing publisher-fold assignments and enter FIT only; CAL/validation i
 unchanged. Total sample-weight mass is fixed to the corresponding E51 FIT mass to control effective
 regularization. Original-based features are now extracting; no expansion result is claimed yet.
 548 Python tests passed at this checkpoint. No image/weight download, GitHub push or serving change.
+
+Further bounded controls preserve all prior results: full/mean features with C=0.001 and with
+row-L2 normalization at C=0.01, unchanged E51 three-view population and folds. All four completed;
+none passes the full preservation guard. The highest pooled BA among these controls is mean/C=0.001
+(74.82% clean /74.43% Q75, AI recall 63.00%/61.19%, REAL false-AI 13.36%/12.34%). These are
+the same difficult TRAIN source-held-out trials, not the current full-model benchmark score.
+Evidence: `evidence/e53_source_held_out_controls_result.json`.
+
+New reusable `pixelproof.training_weights.balanced_parent_weights` replaces quadratic repeated
+parent masks with counters. On all 17,934 E51 TRAIN view records, output weights are bitwise
+identical (SHA `0ebb98a9...06147`), while median construction time falls 0.31790s→0.00915s,
+34.75x for this step only. It additionally rejects contradictory parent label/source identities.
+The helper is used in the new head controls; historical frozen fit code is not edited.
+
+Metadata inspection of the original three-fold protocol shows E36 REAL and E32 FLUX/Qwen
+components never appear in FIT (only CAL/validation). This is a conservative but inefficient
+data-use choice, not test contamination. A separately frozen coverage-v2 protocol jointly chooses
+inner CAL groups while preserving every original outer validation assignment, both-class minimums
+and component separation, requiring every component to train at least once. It repeats the same
+twelve already-declared arms, not a new hyperparameter sweep. Original results remain preserved;
+v2 reuses consumed TRAIN validation and cannot serve as independent confirmation. Its contract
+is frozen before any v2 model score. Native features and full-TRAIN numerical parity are ongoing.
+
+Offline runtime registry check also passes for all six required artifacts (E20, legacy CNN/ResNet,
+two statistical heads, CF-ViT), and `pip check` finds no broken requirements. Serving code confirms
+canonical E20 plus optional R1b research presentation; E43/E51/E53 research metrics must not be
+described as the current web demo's measurements. No runtime/model selection change was made.
