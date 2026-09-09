@@ -5,7 +5,22 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E55 rejected; numerical/error audit (2026-09-10)
+## Current outcome and next actions — E55 rejected; audit complete (2026-09-10)
+
+Numerical audit now completes: exact FIT features, labels, sources and parent order match in all
+three folds; collapsed weights differ by at most 2.23e-16. Fixed float64/tol=1e-8 duplicate fits
+agree on FIT scores within 2.24e-6. This supports numerical sensitivity of the old float32/default
+tolerance comparison, not a label reversal or a quality improvement. Precision and tolerance were
+changed jointly; no old contract/result is replaced. No diagnostic candidate was saved.
+
+Grayscale reduces monochrome REAL errors (clean 169->152, Q75 170->159) but increases other REAL
+errors (618->660, 587->626). Reject the global augmentation; do not sweep grayscale percentages.
+Next: audit admitted TRAIN coverage by publisher, content and processing style, and identify an
+independent licensed REAL training source before acquisition. Existing MNW/HDR+ reserves and
+consumed CAL/DEV/final publishers remain protected. Use source/content-matched training research
+to motivate one bounded successor, with numerically stable paired controls, fixed AI replay and
+the unchanged no-loss gates. Freeze its own contract before fitting; no successor fit is started
+by this diagnostic. New downloads require a size, licence, split and overlap plan first.
 
 E55 completes 34,890 derivative views and all six fits. Grayscale augmentation has clean/Q75 AI
 recall 67.78/66.03%, but REAL FPR 20.12/19.45%, worse than native baseline 19.50/18.76%; all
@@ -14,7 +29,7 @@ acceptance gates reject it. Exact saved-head replay passes. Duplicate-control sc
 or rewrite this completed contract; grayscale is not an accepted fix and the controlled causal
 comparison is qualified by this numerical discrepancy. No independent reserve opened.
 
-Next bounded diagnostic, before any successor fit: reconstruct the native baseline FIT arrays and
+Completed preregistered diagnostic, before any successor fit: reconstruct the native baseline FIT arrays and
 compare with the E55 teacher/order/labels/sources/parent weights exactly. Inspect saved scaler,
 coefficient, iteration and objective/gradient differences. Test one fixed numerical hypothesis:
 unduplicated versus 80/20 duplicated mathematically identical FIT loss, with float64 inputs and
@@ -49,8 +64,8 @@ only the internal physical disk, and USB inventory finds no LaCie/Rugged/Seagate
 invent a replacement mount directory or mirror hundreds of GB onto the internal drive. User has
 been notified that the external disk must reconnect. No E55 extraction/fit is resumed yet.
 
-Thread heartbeat `gece-model-geli-tirme-takibi` checks every 30 minutes through 2026-09-10 08:00
-Europe/Istanbul. Avoid repeated unchanged notifications, duplicate jobs and manual-gated/paid
+Thread heartbeat `gece-model-geli-tirme-takibi` now checks every 30 minutes without the former
+08:00 expiry, following the later continuous-work request. Avoid repeated unchanged notifications, duplicate jobs and manual-gated/paid
 services. Before any heavy work verify AC, the actual mounted external disk and available space.
 An unchanged-code E55 resume wrapper is the next engineering step: validate the archived pause
 chunk hashes, obtain a single-run lock, select only unfinished stages, and stop its own child if

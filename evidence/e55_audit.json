@@ -1,0 +1,275 @@
+{
+  "archived_error_groups": {
+    "duplicate_control": {
+      "clean:0:monochrome": {
+        "errors": 169,
+        "parents": 230
+      },
+      "clean:0:other": {
+        "errors": 618,
+        "parents": 3805
+      },
+      "clean:1:monochrome": {
+        "errors": 21,
+        "parents": 34
+      },
+      "clean:1:other": {
+        "errors": 633,
+        "parents": 1909
+      },
+      "q75:0:monochrome": {
+        "errors": 170,
+        "parents": 230
+      },
+      "q75:0:other": {
+        "errors": 587,
+        "parents": 3805
+      },
+      "q75:1:monochrome": {
+        "errors": 20,
+        "parents": 34
+      },
+      "q75:1:other": {
+        "errors": 659,
+        "parents": 1909
+      }
+    },
+    "full_expanded3": {
+      "clean:0:monochrome": {
+        "errors": 169,
+        "parents": 230
+      },
+      "clean:0:other": {
+        "errors": 618,
+        "parents": 3805
+      },
+      "clean:1:monochrome": {
+        "errors": 21,
+        "parents": 34
+      },
+      "clean:1:other": {
+        "errors": 632,
+        "parents": 1909
+      },
+      "q75:0:monochrome": {
+        "errors": 170,
+        "parents": 230
+      },
+      "q75:0:other": {
+        "errors": 587,
+        "parents": 3805
+      },
+      "q75:1:monochrome": {
+        "errors": 20,
+        "parents": 34
+      },
+      "q75:1:other": {
+        "errors": 658,
+        "parents": 1909
+      }
+    },
+    "grayscale_20": {
+      "clean:0:monochrome": {
+        "errors": 152,
+        "parents": 230
+      },
+      "clean:0:other": {
+        "errors": 660,
+        "parents": 3805
+      },
+      "clean:1:monochrome": {
+        "errors": 16,
+        "parents": 34
+      },
+      "clean:1:other": {
+        "errors": 610,
+        "parents": 1909
+      },
+      "q75:0:monochrome": {
+        "errors": 159,
+        "parents": 230
+      },
+      "q75:0:other": {
+        "errors": 626,
+        "parents": 3805
+      },
+      "q75:1:monochrome": {
+        "errors": 15,
+        "parents": 34
+      },
+      "q75:1:other": {
+        "errors": 645,
+        "parents": 1909
+      }
+    }
+  },
+  "candidate_saved": false,
+  "contract_sha256": "c0f3ab3e0b809d055dfa03042b171fed3c703ebf69f9e633bbbad9a7493d7c51",
+  "folds": [
+    {
+      "fixed_float64_diagnostic": {
+        "FIT_score_max_abs_difference": 1.3580810169777635e-06,
+        "duplicate64": {
+          "FIT_max_gradient": 8.99732927064586e-09,
+          "FIT_objective": 0.022022188604533192,
+          "iterations": [
+            119
+          ]
+        },
+        "original64": {
+          "FIT_max_gradient": 9.646694303230233e-09,
+          "FIT_objective": 0.02202218860457709,
+          "iterations": [
+            118
+          ]
+        }
+      },
+      "fold": 0,
+      "input_equality": {
+        "features_bitwise_equal": true,
+        "labels_equal": true,
+        "parents_equal": true,
+        "sources_equal": true
+      },
+      "saved_fit_diagnostics": {
+        "duplicate": {
+          "coefficient_dtype": "float32",
+          "iterations": [
+            47
+          ],
+          "max_gradient_on_float64_FIT": 7.824207187425445e-05,
+          "objective_on_float64_FIT": 0.022030990338386625,
+          "tol": 0.0001
+        },
+        "native": {
+          "coefficient_dtype": "float32",
+          "iterations": [
+            47
+          ],
+          "max_gradient_on_float64_FIT": 7.892460624510725e-05,
+          "objective_on_float64_FIT": 0.022031041057646365,
+          "tol": 0.0001
+        }
+      },
+      "saved_parameter_differences": {
+        "coef_max_abs": 4.8031099140644073e-05,
+        "scaler_mean_max_abs": 2.4959992683815102e-08,
+        "scaler_scale_max_abs": 1.9070650836283676e-08
+      },
+      "weight_collapsed_max_abs_error": 2.220446049250313e-16
+    },
+    {
+      "fixed_float64_diagnostic": {
+        "FIT_score_max_abs_difference": 2.2341583789664554e-06,
+        "duplicate64": {
+          "FIT_max_gradient": 1.0691170106331971e-08,
+          "FIT_objective": 0.056020013421047274,
+          "iterations": [
+            186
+          ]
+        },
+        "original64": {
+          "FIT_max_gradient": 3.001611583938746e-08,
+          "FIT_objective": 0.056020013421117024,
+          "iterations": [
+            167
+          ]
+        }
+      },
+      "fold": 1,
+      "input_equality": {
+        "features_bitwise_equal": true,
+        "labels_equal": true,
+        "parents_equal": true,
+        "sources_equal": true
+      },
+      "saved_fit_diagnostics": {
+        "duplicate": {
+          "coefficient_dtype": "float32",
+          "iterations": [
+            73
+          ],
+          "max_gradient_on_float64_FIT": 6.515670610008229e-05,
+          "objective_on_float64_FIT": 0.056022922982152744,
+          "tol": 0.0001
+        },
+        "native": {
+          "coefficient_dtype": "float32",
+          "iterations": [
+            73
+          ],
+          "max_gradient_on_float64_FIT": 8.467642339569405e-05,
+          "objective_on_float64_FIT": 0.056024139623590236,
+          "tol": 0.0001
+        }
+      },
+      "saved_parameter_differences": {
+        "coef_max_abs": 0.0007158070802688599,
+        "scaler_mean_max_abs": 2.667171927761558e-08,
+        "scaler_scale_max_abs": 1.0833767216666956e-08
+      },
+      "weight_collapsed_max_abs_error": 2.220446049250313e-16
+    },
+    {
+      "fixed_float64_diagnostic": {
+        "FIT_score_max_abs_difference": 6.982313325298861e-07,
+        "duplicate64": {
+          "FIT_max_gradient": 7.911203340972735e-09,
+          "FIT_objective": 0.05055399958774522,
+          "iterations": [
+            159
+          ]
+        },
+        "original64": {
+          "FIT_max_gradient": 1.1674144742915282e-08,
+          "FIT_objective": 0.05055399958773328,
+          "iterations": [
+            157
+          ]
+        }
+      },
+      "fold": 2,
+      "input_equality": {
+        "features_bitwise_equal": true,
+        "labels_equal": true,
+        "parents_equal": true,
+        "sources_equal": true
+      },
+      "saved_fit_diagnostics": {
+        "duplicate": {
+          "coefficient_dtype": "float32",
+          "iterations": [
+            61
+          ],
+          "max_gradient_on_float64_FIT": 9.996493763203551e-05,
+          "objective_on_float64_FIT": 0.05055545972996199,
+          "tol": 0.0001
+        },
+        "native": {
+          "coefficient_dtype": "float32",
+          "iterations": [
+            62
+          ],
+          "max_gradient_on_float64_FIT": 9.492104180146808e-05,
+          "objective_on_float64_FIT": 0.05055543188156886,
+          "tol": 0.0001
+        }
+      },
+      "saved_parameter_differences": {
+        "coef_max_abs": 8.098967373371124e-05,
+        "scaler_mean_max_abs": 1.5258033503329216e-08,
+        "scaler_scale_max_abs": 6.403737096150053e-09
+      },
+      "weight_collapsed_max_abs_error": 2.220446049250313e-16
+    }
+  ],
+  "limitations": [
+    "FIT-only numerical equivalence is not a quality improvement or a validation result.",
+    "Float64 and tighter tolerance changed together; their individual contribution is not isolated.",
+    "Colour error strata remain confounded with source/content; no causal interpretation."
+  ],
+  "new_external_scores": 0,
+  "old_E55_rejection_unchanged": true,
+  "serving_changed": false,
+  "state": "E55_numerical_and_colour_audit_complete"
+}

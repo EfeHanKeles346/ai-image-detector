@@ -5656,3 +5656,31 @@ unopened reserves, source licences and append-only experiment records stay intac
 requested or the documented objective is genuinely independently established. Only meaningful
 updates or needed user action should notify the user. Local computer/app availability remains
 required for scheduled local work, per official OpenAI scheduled-task documentation.
+
+### 2026-09-10 — E55 completed and rejected; numerical diagnosis completed
+
+All 34,890 grayscale derivative views and six prescribed fits finish after the guarded resume.
+No new image download. Clean/Q75 AI recall: native 66.39/65.11%, grayscale 67.78/66.03%; REAL
+false-AI rates: native 19.50/18.76%, grayscale 20.12/19.45%. These are the same consumed source-held-out
+TRAIN folds, not a deterioration from the historical full-model 94% benchmark. All acceptance
+gates reject both arms; saved-head replay is exact. Duplicate control also fails its frozen parity
+requirement (maximum score differences .00118/.00768/.00238; two fold-1 decisions change). Serving
+is unchanged and the 400 new reserve images remain unscored. Results archived in evidence/e55_result.json.
+
+Preregistered FIT-only audit separately freezes code/inputs in commit aed70a6 before execution.
+Exact native/E55 FIT features, labels, source and parent order match all folds; collapsed duplicate
+weights match within 2.23e-16. Float64/tol=1e-8 fixed refits reduce original-versus-duplicate FIT
+score differences to 1.36e-6/2.24e-6/6.99e-7. This supports numerical optimization sensitivity;
+it does not establish separate effects of precision and tolerance, improve validation quality,
+or retroactively pass the old study. No new diagnostic candidate or external score is produced.
+
+Archived colour groups show the tradeoff: grayscale clean monochrome REAL errors 169->152, but
+other REAL errors 618->660; Q75 170->159 and 587->626. These are net counts, not counts of paired
+rescues, and source/content confounding remains. Global grayscale is not an accepted solution.
+Next work targets training-source/content/processing coverage with stable controls, not repeated
+colour tuning or opening protected final reserves. Full receipt: evidence/e55_audit.json.
+
+Verification: 611 Python tests pass in 12.32s, one existing Starlette/httpx deprecation warning;
+the diagnostic run exits 0 and leaves no training child or saved candidate. Local commits only,
+no GitHub push. The existing 30-minute heartbeat remains ACTIVE; chat-turn completion does not
+mean a continuously running agent, and follow-up depends on app/machine/storage availability.

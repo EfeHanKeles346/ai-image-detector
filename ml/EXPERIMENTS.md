@@ -4528,3 +4528,43 @@ study only after the disk returns; these engineering tests are not evidence of d
 
 Verification: full Python suite 609 passed (one existing warning); real guarded `run` refuses
 missing storage without creating substitute mount/work directories. No new E55 model score.
+
+## 2026-09-10 — E55 result and frozen FIT-only numerical audit
+
+Completed 34,890 derivative views (11,630 parents), six fits, exact saved-head replay for each.
+Feature SHA `161213c4e6818ac967787a3da0a24a6d3a84eb51822a843a0597305e28b85ee8`.
+
+| Same consumed TRAIN OOF population | Clean AI recall | Clean REAL FPR | Q75 AI recall | Q75 REAL FPR |
+|---|---:|---:|---:|---:|
+| Native baseline | 66.39% | 19.50% | 65.11% | 18.76% |
+| Duplicate control | 66.34% | 19.50% | 65.05% | 18.76% |
+| Grayscale 20% | 67.78% | 20.12% | 66.03% | 19.45% |
+
+Both arms fail acceptance. Grayscale pooled REAL FPR worsens and supported AI source losses remain.
+Duplicate-control parity also fails: fold max score errors .001179/.007679/.002377; fold 1 changes
+one Qwen Image 2 Pro AI decision in each transport. No tolerance relaxation or promotion. This is
+not an independent final or directly comparable to historical full-model E49 recall. Results,
+source comparisons and gate details: evidence/e55_result.json. No new evaluation reserve opened.
+
+Post-result audit registered in PLAN before fitting, code/input hashes frozen and committed aed70a6.
+FIT features, labels, sources and parents are bitwise/order equal in all folds. Maximum collapsed
+80/20 weight error 2.22e-16. Saved native/duplicate heads have float32 coefficients, tol=1e-4 and
+objective gradients approximately 6.5e-5 to 1.0e-4 when evaluated in float64. Exact same mathematical
+FIT objective is tested using two fixed float64/tol=1e-8 fits per fold, C=.01/max_iter=1000/seed=53,
+two CPU threads. Maximum FIT score differences: 1.3581e-6, 2.2342e-6, 6.9823e-7; iterations
+118/119, 167/186, 157/159. All complete without convergence warning. The observed gradient may
+exceed tol when another optimizer stopping criterion fires; absence of warning is not proof of
+zero gradient. See sklearn's [LogisticRegression API](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html).
+
+This supports numerical sensitivity, not reversed labels/input corruption. Precision and tolerance
+changed together, so no individual attribution. FIT agreement is not held-out quality evidence.
+No CAL/validation prediction, saved candidate, threshold change or external inference in this audit.
+Old E55 rejection is unchanged. Contract and results: evidence/e55_audit_contract.json and
+evidence/e55_audit.json. Two unit tests cover objective/gradient duplicate identity, finite-difference
+gradient and invalid weights.
+
+Archived errors: grayscale versus native monochrome REAL clean 152/230 versus 169/230, Q75 159/230
+versus 170/230; other REAL clean 660/3805 versus 618/3805, Q75 626/3805 versus 587/3805. AI
+monochrome misses 16/34 versus 21/34 clean and 15/34 versus 20/34 Q75. These net subgroup counts
+remain source/content-confounded, not a causal colour diagnosis. Reject global grayscale and plan
+coverage/content-matched follow-up rather than reusing this validation to sweep mixture ratios.
