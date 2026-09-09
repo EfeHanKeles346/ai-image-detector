@@ -1,0 +1,11 @@
+{
+  "code_sha256": "e4038c2f3a63b6e6ee4f28960f6bd2c26af3266a74b6a460428ce6fae07096f8",
+  "contract_sha256": "9c1f2b8abd9f6ecda064545e331777869a2fe88991f9ef8c8189ed13b09aeb91",
+  "criterion": "Mean max-minus-min RGB channel value <=2 on the clean global 224 crop.",
+  "data_contract_sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+  "final_reserves_opened": false,
+  "index_sha256": "886b33d2d86b4ec31ecdce68d80e332b02b300fdf2ee0be17b8e6b5de88c6015",
+  "motivation": "Four identity-ordered RR false positives inspected after fold-0 completion; exploratory, not causal.",
+  "new_model_scores": 0,
+  "state": "E54_exploratory_colour_audit_frozen"
+}
