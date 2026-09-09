@@ -5354,3 +5354,38 @@ grouped as one publisher, shared-prompt AI batches stay together, and no old fit
 as an honest out-of-fold baseline. Historical explicitly consumed E51 replay keeps that recorded
 TRAIN role; this does not make it fresh E36 evidence. E51 CAL/DEV remain protected. PLAN records
 this bounded first slice before any E53 model scores; current serving and external tests stay unchanged.
+
+E53 contract `95e9ea22...1d1c` froze 5,978 TRAIN parents, 11 conservative publisher components,
+three outer folds, disjoint inner CAL and six arms. All TRAIN bytes were rehashed; canonical
+screens against E51 CAL/consumed DEV find zero matches. One internal RR REAL near-duplicate pair
+stays within its publisher component. The 11,956 new order/scale views completed, feature SHA
+`71e6d1d2...5b6f7`. All 18 fold heads were trained/evaluated without opening a new external test.
+
+The six-arm source-held-out result is archived in `evidence/e53_source_held_out_result.json`.
+No arm passes the AI-preservation research guard. Mean-only features improve pooled AI recall
+and REAL errors versus full aggregation, but regress on individual AI sources and do not establish
+both REAL improvements statistically. These TRAIN-derived, deliberately source-held-out results
+are not a fall of the unchanged served model from its old benchmark score. Comparators are newly
+fitted fold heads with different training subsets, not the deployed/E43/E51 full fitted model.
+Old two-view versus three-view fits also change total mean-one weight mass, a disclosed confound.
+
+Exact duplicate-crop prototype: 60 predetermined TRAIN parents, 120 clean/Q75 views, 360 input
+crops versus 316 unique crops. Three warmed timing passes show median 2.0802s→1.8546s
+(1.1216x throughput, ~10.84% elapsed-time reduction); maximum feature/score difference 0.0,
+zero decision flips across four passes. Small-sample engineering evidence only, not accuracy gain
+or production-wide equivalence. Prototype remains separate from serving and frozen E53 extractors.
+
+Native-source audit completed: 20,826 original bodies verified (16,292 candidate TRAIN +4,534
+protected C3 CAL), 134,196 canonical protected references. Fifteen protected match observations
+plus internal propagation exclude 17 parents, leaving 16,275 candidates; 83 internal pairs are
+recorded. Audit does not itself authorize training. Supplementary E51 reserve check covers the
+120 unselected AI parents/240 original-Q75 bodies beyond the already-protected 800 selected AI;
+zero matches against all 16,275 native candidates. All 920 E51 AI reserve parents are accounted for.
+
+The predeclared native-expansion contract then selects 5,652 parents: 3,000 REAL and 2,652 AI,
+excluding every detected internal-pair endpoint, preserving source/group diversity and original
+C3 research terms. Full and mean-only three-view heads are the only two extra arms. Added rows
+inherit existing publisher-fold assignments and enter FIT only; CAL/validation images stay exactly
+unchanged. Total sample-weight mass is fixed to the corresponding E51 FIT mass to control effective
+regularization. Original-based features are now extracting; no expansion result is claimed yet.
+548 Python tests passed at this checkpoint. No image/weight download, GitHub push or serving change.

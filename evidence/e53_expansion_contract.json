@@ -1,0 +1,31 @@
+{
+  "C": 0.01,
+  "arms": {
+    "full_expanded3": 3072,
+    "mean_expanded3": 1536
+  },
+  "base_contract_sha256": "95e9ea2283ab34e077c9a4acca5ab0dda2e43d8de4f4a177bc884c3760fb1d1c",
+  "code_sha256": "41b9128a339a45ccc0a02d0ab1245af59e132bf36c0e2e61e84c694478367746",
+  "contract_sha256": "595d7894933f739f1594035b04c8293b027ac7c2f7681893a3c65f1ed9a91aab",
+  "latest_reserve_report_sha256": "40d3d6ae29e988ef542ee85760442781620a1196b4335ba3dcaa7f0287ba7e29",
+  "licence_boundary": "Existing C3 research terms; CF non-commercial plus per-model terms. No redistribution of images or models.",
+  "model_scores_created": 0,
+  "native_audit_sha256": "a84405deb86a069a0d6277221dc331b33ef2cd1d5df8bc4e6124b6797ac26d55",
+  "new_parents": 5652,
+  "policy": "Add only matching-source FIT rows; unchanged E53 CAL/VALIDATION. Not final proof.",
+  "sample_weight_mass": "Match the original E51 three-view FIT observation count in each fold, even after adding native rows.",
+  "schema_version": 1,
+  "serving_changed": false,
+  "source_counts": {
+    "communityforensics-ai-local": 500,
+    "csafe-mcsidb-s21": 1000,
+    "flux2-klein-9b": 500,
+    "forchheim-fodb": 1000,
+    "gpt-image-1": 500,
+    "nano-banana-local": 500,
+    "nano-banana-pro-ash-local": 152,
+    "qwen-image-2512": 500,
+    "vision-base-native": 1000
+  },
+  "state": "native_expansion_frozen_before_features_and_scores"
+}

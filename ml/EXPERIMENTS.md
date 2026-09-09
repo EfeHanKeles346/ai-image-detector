@@ -4270,3 +4270,42 @@ All old tests, E51 CAL and consumed IEEE/Datapoint DEV remain protected from fit
 E52 requires a genuinely independent local population; no available population means no final
 claim and no download under the current constraint. Rechecking 18,154 historical TRAIN locators
 is recorded in `evidence/e53_local_inventory_plan.json`; it is not a fresh training admission.
+
+### E53 office slice — six-arm result and native-expansion precommit (2026-09-09)
+
+Contract `95e9ea22...1d1c`; 5,978 admitted TRAIN parents /11 source components /3 outer folds.
+RR topics share one publisher; E36 AI prompt batches and E32 FLUX/Qwen shared prompts remain
+grouped. All scalers/heads are refit on FIT only; each fold has independent inner CAL. External
+tests and serving remain unchanged. The following are **TRAIN-derived outer-fold** metrics with
+fold-specific cuts, not the performance of a full-data model on E49/IEEE/Datapoint:
+
+| Arm | Clean REAL FPR | Clean AI recall | Clean BA | Q75 REAL FPR | Q75 AI recall | Q75 BA |
+|---|---:|---:|---:|---:|---:|---:|
+| Full, old 2 views | 15.54% | 51.31% | 67.89% | 14.28% | 51.06% | 68.39% |
+| Full, E51 3 views | 15.64% | 50.13% | 67.25% | 15.17% | 51.67% | 68.25% |
+| Full, order/scale 3 views | 15.39% | 45.96% | 65.28% | 15.17% | 47.40% | 66.12% |
+| Mean only, old 2 views | 12.39% | 61.40% | 74.50% | 11.52% | 58.72% | 73.60% |
+| Mean only, E51 3 views | 12.81% | 59.44% | 73.32% | 12.52% | 58.52% | 73.00% |
+| Mean only, order/scale 3 views | 12.94% | 58.36% | 72.71% | 13.31% | 58.88% | 72.78% |
+
+All six fail the full research preservation guard. Mean-only variants improve pooled behavior but
+lose individual AI sources. No winner is promoted. Conditional paired publisher bootstrap uses
+20,000 draws and Bonferroni-adjusted intervals for four primary deltas per comparator; only 11
+observed components and multiple-candidate selection limit inference. No pooled raw-score AUC is
+reported across differently calibrated heads. Source counts and per-fold AUCs remain in evidence.
+Existing two/three-view mean-one weighting changes total loss mass, so this is not a pure
+augmentation-only causal comparison. `evidence/e53_source_held_out_result.json` preserves all arms.
+
+Additional engineering check `evidence/e53_crop_dedup_benchmark.json`: stable exact crop dedup
+on 60 fixed TRAIN parents/120 views cuts 360 crops to 316; max feature/score error=0, decision
+flips=0, median elapsed 2.0802→1.8546 seconds across three warmed passes. This is roughly 10.84%
+less elapsed time (1.1216x throughput), not 12.16% less elapsed time or a detection accuracy gain.
+Native audit was running in the background; timings are local workload/device-specific.
+
+Native expansion is fixed before its scores: 1,000 REAL each CSAFE S21/FODB/VISION, 500 AI each
+CF/FLUX.2 Klein/GPT Image 1/Nano Banana/Qwen Image 2512, and all 152 eligible Nano Banana Pro.
+Only matched-publisher FIT rows are added; original E53 CAL/validation are untouched. Three
+original-based views, full/mean-only C=0.01, total weights normalized to the old three-view FIT
+mass. This isolates native data addition more cleanly than changing both pool and calibration.
+Original audit and complete E51 reserve closure precede the frozen expansion contract. Features
+are extracting at this checkpoint; no extra-arm score or external final pass is asserted.

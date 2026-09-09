@@ -1,0 +1,34 @@
+{
+  "candidate_parents_before_pixels": 16292,
+  "canonical_protected_references": 134196,
+  "contract_sha256": "78ae5c3dc0800561dca2635a1fb2460b0619de400baaeff98f59b7e79d79dbac",
+  "excluded_parents": 17,
+  "image_bytes_downloaded": 0,
+  "internal_pair_count": 83,
+  "limitations": [
+    "Heuristic duplicate screen is not complete semantic independence.",
+    "Source licence, grouping, selection quotas and new feature contract still required.",
+    "Historical TRAIN sources are not fresh independent final publishers.",
+    "Original bodies were checked; existing 224px features are not native-resolution features."
+  ],
+  "model_scores_created": 0,
+  "original_bodies_verified": 20826,
+  "protected_c3_cal_parents": 4534,
+  "protected_match_rows": 15,
+  "remaining_candidates": 16275,
+  "report_sha256": "a84405deb86a069a0d6277221dc331b33ef2cd1d5df8bc4e6124b6797ac26d55",
+  "schema_version": 1,
+  "source_counts": {
+    "communityforensics-ai-local": 1692,
+    "csafe-mcsidb-s21": 2797,
+    "flux2-klein-9b": 1696,
+    "forchheim-fodb": 2437,
+    "gpt-image-1": 1692,
+    "nano-banana-local": 1693,
+    "nano-banana-pro-ash-local": 152,
+    "qwen-image-2512": 1699,
+    "vision-base-native": 2417
+  },
+  "state": "native_inventory_audited_not_training_admitted",
+  "training_authorized": false
+}

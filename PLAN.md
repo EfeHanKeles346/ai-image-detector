@@ -38,6 +38,33 @@ held together by source; RR topics are one publisher, not seven independent AI g
 Further C3 expansion still requires original-image/protected-role audit before fitting. Pending
 work or a failed/inconclusive research guard must be reported as such at the office handoff.
 
+Additional safe engineering experiment: benchmark exact duplicate-crop elimination on two fixed,
+hash-ranked TRAIN parents/source, clean/Q75, one warmup and three alternating timed passes. Restore
+the original crop order before feature aggregation. Require max feature/score difference <=0.00005
+and zero decision flips on that sample; report the limited scope. Keep this optimization opt-in
+and out of serving/frozen E53 extraction until broader equivalence is established. No accuracy
+improvement is inferred from faster inference.
+
+Conditional native-replay expansion (freeze before its first feature/model score): once the
+original-body inventory completes, take at most 1,000 eligible parents per REAL source and 500
+per AI source from C3 TRAIN, preserving source/group diversity and excluding all detected internal
+duplicate pairs as well as protected matches. This adds at most 6,000 parents to E51's 5,978.
+Use existing per-source research licences; CF remains non-commercial/per-model-terms restricted.
+Extract full original-based clean/old-transport/Q75 features, not the old 224px export. Fit exactly
+two additional arms (full and mean-only, C=0.01), retaining all eligible E51 AI replay. Each new
+source inherits the matching publisher's already-frozen fold role; **only new FIT rows** are added.
+Existing inner CAL and outer validation parents, pixels, features and cuts-selection method remain
+unchanged, so this isolates adding native training data. Refuse unknown/cross-component source
+assignments or failed native audit; do not change folds to make expansion possible. Compare on the
+same TRAIN-derived outer validation rows with both fixed reference recipes. No promotion or E52
+claim follows from this study. If the office time budget ends, leave a resumable preparation checkpoint.
+
+Regularization control: expansion sample weights must sum to the original E51 three-view FIT
+observation count per fold, keeping effective C comparable while adding parents. The initial
+old-two-view versus three-view ablation inherits historical mean-one weights, so its total loss
+mass changes with view count; report this confound instead of attributing every difference solely
+to augmentation. It does not affect the honesty of its held-out predictions, but limits causality.
+
 **Scope:** inspect existing assets, research primary publications and plan first. No new training,
 model scoring, serving change, image/weight/dependency download or GitHub push in this planning
 update. E52 remains the independent final gate; E53 is the successor research experiment, not a

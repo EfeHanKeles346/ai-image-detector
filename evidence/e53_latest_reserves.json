@@ -1,0 +1,14 @@
+{
+  "already_protected_selected_parents": 800,
+  "code_sha256": "3f0a1cfb8785d71114abcef491b92142e568b351fd01de09ee32ffd922aead5a",
+  "image_bytes_downloaded": 0,
+  "matched_parent_ids": [],
+  "model_scores_created": 0,
+  "original_reserve_parents": 920,
+  "query_parents": 16275,
+  "report_sha256": "40d3d6ae29e988ef542ee85760442781620a1196b4335ba3dcaa7f0287ba7e29",
+  "route_sha256": "975e8164477c7234292ba87449007f0ee4c8b65eb582f25a8b0d81140ec315e4",
+  "state": "latest_E51_unselected_reserves_closed",
+  "supplementary_observations": 240,
+  "supplementary_parents": 120
+}

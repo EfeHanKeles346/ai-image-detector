@@ -1934,3 +1934,25 @@ ITW-SM, DDA test pairs and Module 2 protected data cannot become convenient trai
 `theminji` and unofficial `34data` provenance/licence restrictions from the later E32 audit still
 override the earlier E31 representation-only recommendations. CF's FFHQ REAL half is not a
 substitute for everyday native-camera photographs. No additional data was downloaded in this audit.
+
+### E53 original-body audit and bounded native replay — 2026-09-09
+
+The subsequent audit opens original image bodies, not only locators: 16,292 conservatively
+unprotected historical TRAIN candidates +4,534 C3 CAL originals =20,826 verified bodies.
+Against 134,196 canonical protected references, 15 match observations and internal propagation
+exclude 17 parents; 16,275 remain. All 83 internal near-duplicate pairs are retained in the audit.
+This is heuristic duplicate screening, not a guarantee of every semantic relationship. Evidence:
+`evidence/e53_native_inventory.json`, detailed report SHA `a84405de...26d55`.
+
+A separate closure fingerprints the 120 unselected E51 AI reserve parents and their Q75 versions,
+in addition to the 800 selected AI already protected. Zero matches against the native candidate
+pool; all 920 reserve parents are accounted for (`evidence/e53_latest_reserves.json`).
+
+The bounded expansion removes both endpoints of every detected internal pair and chooses 5,652
+parents under existing research licences: 3,000 REAL (1,000 each CSAFE S21, FODB, VISION) and
+2,652 AI (500 each CF, FLUX.2 Klein, GPT Image 1, Nano Banana, Qwen Image 2512; 152 NBP).
+Deterministic round-robin selection across recorded source groups preserves diversity. Historical
+CF remains non-commercial/per-model-terms restricted. No image or resulting model redistribution.
+These are extra TRAIN replay candidates, not independent final publishers. Added rows enter only
+their matching publisher's FIT fold; existing CAL/validation receive no new images. Native features
+are being extracted from originals rather than recycling old 224px export features. No download.

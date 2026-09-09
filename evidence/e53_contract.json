@@ -1,0 +1,82 @@
+{
+  "C": 0.01,
+  "admission_sha256": "c406edb6a1a1a3cc2feea0829fbada73b09a02c49c1f01e58259dd4a7eb7a39b",
+  "arms": {
+    "full_e51_3": [
+      "full",
+      "e51_3"
+    ],
+    "full_old2": [
+      "full",
+      "old2"
+    ],
+    "full_order3": [
+      "full",
+      "order3"
+    ],
+    "mean_e51_3": [
+      "mean",
+      "e51_3"
+    ],
+    "mean_old2": [
+      "mean",
+      "old2"
+    ],
+    "mean_order3": [
+      "mean",
+      "order3"
+    ]
+  },
+  "code_sha256": "2d13bf94bda492bd7b224b0138a050e9a38de95f1dbc887a077fc26272c09397",
+  "contract_sha256": "95e9ea2283ab34e077c9a4acca5ab0dda2e43d8de4f4a177bc884c3760fb1d1c",
+  "dependencies_sha256": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e43_train.py": "a341a595b097023f11ba948fa9862045da31538d2bbd3a1b5b0844c8712cb21b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e51_pipeline.py": "8a841eb82b04a2a296b9b19127a9e1365e4486402dc5178a32fbead67cab2db1"
+  },
+  "dev_manifest_sha256": "1b1882f3e759327017f398c95e3a4e30a9c30a8670bffa40b80608f3844ea224",
+  "features_sha256": "55f92db299aa6cf889ae1a6ab3425d6d9f315527b481a531feea77690c982d0a",
+  "fold_counts": [
+    {
+      "CAL:0": 471,
+      "CAL:1": 138,
+      "FIT:0": 2314,
+      "FIT:1": 695,
+      "VALIDATION:0": 1250,
+      "VALIDATION:1": 1110
+    },
+    {
+      "CAL:0": 471,
+      "CAL:1": 138,
+      "FIT:0": 1864,
+      "FIT:1": 1325,
+      "VALIDATION:0": 1700,
+      "VALIDATION:1": 480
+    },
+    {
+      "CAL:0": 1700,
+      "CAL:1": 480,
+      "FIT:0": 1250,
+      "FIT:1": 1110,
+      "VALIDATION:0": 1085,
+      "VALIDATION:1": 353
+    }
+  ],
+  "internal_pair_count": 1,
+  "label_mapping": {
+    "AI": 1,
+    "REAL": 0
+  },
+  "limits": [
+    "Inherited E51 consumed replay is TRAIN, not fresh historical-CAL evidence.",
+    "Publisher grouping is conservative; unknown semantic dependence can remain.",
+    "No genuinely independent final or universal no-loss guarantee."
+  ],
+  "model_scores_created": 0,
+  "policy": "TRAIN-only research, no serving promotion; all arms reported",
+  "protected_cross_role_matches": 0,
+  "schema_version": 1,
+  "seed": 53,
+  "state": "E53_frozen_before_scores",
+  "train_parents": 5978
+}

@@ -1,0 +1,29 @@
+{
+  "accuracy_gain_claimed": false,
+  "contract_sha256": "c461c126974774418d9ec58ba23c6d931a30e8654ef5d1e86ba9d173f03b7ff0",
+  "decision_flips_across_four_passes": 0,
+  "dedup_seconds": [
+    1.8612037921557203,
+    1.8513920840341598,
+    1.8546011639991775
+  ],
+  "input_crops": 360,
+  "limits": [
+    "Small fixed TRAIN sample; device/runtime-specific speed, not whole-population decision equivalence.",
+    "Current production and frozen E53 extraction code were not changed."
+  ],
+  "max_feature_error": 0.0,
+  "max_score_error": 0.0,
+  "median_speedup": 1.1216166939398429,
+  "numerical_guard_passed": true,
+  "parents": 60,
+  "plain_seconds": [
+    2.0813971661264077,
+    2.0782529988791794,
+    2.080151626141742
+  ],
+  "serving_changed": false,
+  "state": "exact_crop_dedup_benchmark_complete",
+  "unique_crops_per_pass": 316,
+  "views": 120
+}

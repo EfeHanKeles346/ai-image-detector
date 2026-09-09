@@ -1,0 +1,8 @@
+{
+  "contract_sha256": "95e9ea2283ab34e077c9a4acca5ab0dda2e43d8de4f4a177bc884c3760fb1d1c",
+  "feature_sha256": "71e6d1d27fc8c015ce60eae5458a307eda6ece9851e07c407d4ba5ad8a35b6f7",
+  "parents": 5978,
+  "state": "E53_order_features_complete",
+  "views": 11956,
+  "weight_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081"
+}
