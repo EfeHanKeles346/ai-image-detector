@@ -57,6 +57,18 @@ and both endpoints of internal pairs without detector scores or replacement samp
 prompt relations remain a whole-publisher limitation. Record the new reserve manifest/report in
 every future training admission inventory; this screen does not certify semantic non-overlap.
 
+Second bounded reserve: official Google HDR+ `20171106/results_20171023/` full-resolution final
+JPEGs, not gallery thumbnails or RAW bursts. CC-BY-SA 4.0, camera-derived computational photographs
+from older Nexus/Pixel devices, not generative images or a modern-phone universal sample. Exclude
+all `synthetic_*` folders explicitly (20 present in the official listing); validate dated capture
+names. Hash-rank 100 distinct burst parents from the complete public object listing before image
+access; freeze GCS generation, MD5, bytes and source terms. Cap 768 MiB cumulative requested image
+bytes/12 MiB per image; no full 765 GiB archive or RAW decoder dependency. Whole publisher stays
+evaluation-only by project policy, never TRAIN/CAL or score-driven filtering. Session/day ids are
+grouping proxies, not proven independent scenes. Verify decoding, device metadata availability and
+all protected-overlap before any final consideration. A small one-publisher REAL reserve plus MNW
+is still not the complete multi-source E52 final. Keep future TRAIN admission aware of both reserves.
+
 **Authoritative decision:** no replacement model is accepted. Twelve fixed configurations were
 evaluated in each of two declared TRAIN source-held-out protocols: 72 separately fitted fold heads.
 Both protocols reject every candidate under the combined REAL-improvement/AI-preservation guard.

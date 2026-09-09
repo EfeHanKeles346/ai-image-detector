@@ -2014,3 +2014,21 @@ Screened against 150,483 unique protected/current-TRAIN reference bodies: zero b
 radius-4 dHash+pHash cross/internal matches, 300 retained, zero detector scores. Heuristic screening
 cannot certify every shared prompt/scene; unknown publisher prompt structure remains protected.
 This adds evaluation coverage for recent generators, not training material or REAL-class evidence.
+
+### Google HDR+ REAL reserve preregistration — 2026-09-09
+
+Official source: [HDR+ Burst Photography Dataset](https://www.hdrplusdata.org/dataset.html),
+Hasinoff et al., SIGGRAPH Asia 2016. [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Public Google Cloud bucket `hdrplusdata` permits anonymous downloads. Use only full-resolution
+`20171106/results_20171023/<burst>/final.jpg` (publisher Q95 finishing pipeline), one per burst.
+These are camera-derived HDR computational photographs, not generative-AI samples; retain this
+processing distinction in evaluation. The source covers older Nexus/Pixel phones, not 2026 phones.
+
+Source audit found 20 explicit `synthetic_*` result folders among 3,640 final JPEGs. Exclude them
+before selection; a reputable publisher name does not justify blindly labelling every file REAL.
+Plan 100 metadata-hash-ranked photographic burst parents, <=768 MiB image transfer and <=12 MiB
+per image, with pinned object generations/MD5/sizes before bytes. No 765 GiB full data, DNGs or
+new decoder dependency. Retain licence/attribution locally; no image redistribution. Whole HDR+
+publisher is a reserved evaluation source by project policy. Burst/session/day groups do not prove
+independent scenes; device coverage and protected overlap still need verification. This is a
+complementary REAL stress reserve, not an official AI-detector pass threshold or balanced final.
