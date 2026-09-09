@@ -1,0 +1,46 @@
+{
+  "arms": [
+    "head_only",
+    "last2_anchor"
+  ],
+  "backbone_lr": 1e-06,
+  "batch_views": 8,
+  "checkpoint_every_steps": 200,
+  "code_sha256": "f7625dc924b81bf52f91668f7cbd5d47b9afa3f65702dd5a49a31a7b2fbb982b",
+  "contract_sha256": "f706896fbcac0a70320fd5d1b4a1a2638264d73b4ac0c629eace48e0c10512b1",
+  "cosine_anchor_weight": 0.1,
+  "data_contract_sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+  "epochs": 2,
+  "final_epoch_only": true,
+  "gradient_clip": 1.0,
+  "head_lr": 1e-05,
+  "helper_sha256": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e51_pipeline.py": "8a841eb82b04a2a296b9b19127a9e1365e4486402dc5178a32fbead67cab2db1",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e53_adaptation_probe.py": "1a726f41236e754b5cd1fe496baac0a090458891936408ff967248fbac4f3b82",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e"
+  },
+  "independent_final_opened": false,
+  "initializers": {
+    "0": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold0.joblib",
+      "result_sha256": "68eac19a085743a2db36810e0b591f7b9808ff82abbe8a6fa6e36dbeae2d2335",
+      "sha256": "ad1790ef09375e4136fdecb96083bc3fda948b5c96badc3973c68b4d38c3b432"
+    },
+    "1": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold1.joblib",
+      "result_sha256": "e8a6d17c958df335d0d714541211906a3c84d911f70ae9f5bd037d151c24e647",
+      "sha256": "4782edf01c84777d2272f3e7c91fd87d1ef1c8635d96022b8247afda0a25a231"
+    },
+    "2": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e53/coverage_v2/full_expanded3_fold2.joblib",
+      "result_sha256": "6ca57cb0ebeafd39c6fb7f0877b4d39d7777c45eb9f88f5a6054cb6c776db3a2",
+      "sha256": "c769e3791375eee14dba2b26887ae3fba888ce5a7f6bf5bbe43bc517883ba202"
+    }
+  },
+  "policy": "Same source-held-out TRAIN folds; no validation-driven stopping or hyperparameter changes.",
+  "seed": 54,
+  "serving_changed": false,
+  "state": "E54_training_frozen_before_steps",
+  "weight_decay": 0.01
+}

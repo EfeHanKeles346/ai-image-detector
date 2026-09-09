@@ -5488,3 +5488,10 @@ recorded in PLAN before execution. No validation-driven early stopping or old-te
 Original E43/E51/served models and Module 2 protected data remain untouched. New public acquisition
 requires a separately bounded, licensed, group-role manifest; general permission is not bulk-download
 or final-data reuse permission.
+
+E54 data-preparation implementation correction before any E54 fit/score: NPZ member access inside
+the parent loop repeatedly decompressed the full teacher array. The CPU-bound preparation was
+interrupted before producing a teacher/crop cache. Load each archive member once, preserving
+exact array values/order and all roles. Original data contract `b96447f0...bbd99` remains archived;
+the corrected code is bound to a separate `data_contract_v2.json` and evidence receipt, not a
+silent rewrite of the first contract. No model metric or scientific parameter changed.

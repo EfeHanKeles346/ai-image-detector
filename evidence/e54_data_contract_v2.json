@@ -1,0 +1,17 @@
+{
+  "base_features_sha256": "55f92db299aa6cf889ae1a6ab3425d6d9f315527b481a531feea77690c982d0a",
+  "code_sha256": "b4722d1678f339fa9f0cd7a4286b0af08be33587617ae66645b968ebb8315548",
+  "contract_sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+  "coverage_contract_sha256": "354b3ec468cff32361bffab965b3b26cb08ac46285001422d1c786d97e00a0c8",
+  "native_contract_sha256": "595d7894933f739f1594035b04c8293b027ac7c2f7681893a3c65f1ed9a91aab",
+  "native_features_sha256": "82ab703a641aebb4b08cc1175e08b272732d0a91e6825b19bdc394941482c1c5",
+  "parents": 11630,
+  "policy": "Admitted E53 TRAIN only; native rows FIT-only; no protected external CAL/test.",
+  "source_downloads": 0,
+  "state": "E54_data_frozen",
+  "views": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ]
+}
