@@ -1,0 +1,8 @@
+{
+  "contract_sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+  "index_sha256": "886b33d2d86b4ec31ecdce68d80e332b02b300fdf2ee0be17b8e6b5de88c6015",
+  "parents": 11630,
+  "source_downloads": 0,
+  "state": "E54_crop_cache_complete",
+  "teacher_sha256": "101c539958f72913273a0a7e91f9ee7f7b2c025d73fee956177d7fcf8c9b62d8"
+}

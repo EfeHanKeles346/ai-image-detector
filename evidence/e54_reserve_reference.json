@@ -1,0 +1,9 @@
+{
+  "code_sha256": "f5227bf7d7c7c8d4d6f7aabfc5946b20c0cde63323941bcd5dcf900ec006edb0",
+  "facts_sha256": "4a24eac8e5c7337b3826708f205e46295d1351558f225b0bed3be93cec4c30c5",
+  "mnw_overlap_contract_sha256": "38d200d71a1518b50b29aabc63130598dd4143413ec2ae0835d27f3e2a00717a",
+  "model_scores_created": 0,
+  "snapshot_sha256": "7fc7f52e8c38e621b71877b394cccac312af333b183492bcf52154381e3ab988",
+  "state": "canonical_reference_reproduced_exactly",
+  "unique_bodies": 150483
+}
