@@ -1,0 +1,24 @@
+{
+  "balanced_final_admitted": false,
+  "code_sha256": "887d305c55d3a14241605e69573498610d1ea6cb2195ccd71ec1edb3d89f2151",
+  "image_bytes_expected": 229880188,
+  "image_transfer_cap": 805306368,
+  "manifest_sha256": "51b2c5e3f18315912cf89a5c99da759da65eb72f76e5e909d40a69a41a31a4b7",
+  "metadata_bytes_this_freeze": 416467,
+  "model_scores_created": 0,
+  "noncommercial_evaluation_only": true,
+  "parents": 300,
+  "revision": "c93abf43e8157558a0e60aab7df4278b2c539253",
+  "source_terms_sha256": "319ec4fe6c32be8b42ed26fdbba217e31bd7109001b2d9ab268a13adc002f078",
+  "state": "MNW_exact_reserve_frozen_before_images",
+  "threshold_calibration_allowed": false,
+  "training_allowed": false,
+  "trees": {
+    "Adobe_Firefly_v4": "508d04f9c2eb6c9408e36ada63385f24f6fe7967",
+    "Flux_2_pro": "1c1b05d60d33b3994075c7cdd23dce2eb45158de",
+    "Google_Imagen4": "aef7b6c6969279533f8bb2aa86d499cafad5e84c",
+    "MAI_image2": "c3ece93bf41edde04c2364e0706e5effc3756508",
+    "Midjourney_v8": "bb71d7d7bda5067193bdd770a0f466b1587ed839",
+    "OpenAI_GPTimage2": "bca8a9c2786f3d9d6317e09cc3f01dfa6fb4e1ef"
+  }
+}
