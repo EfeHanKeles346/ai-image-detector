@@ -5223,3 +5223,17 @@ Feature extraction completed offline on MPS: 21,054 views, 3,072 DINO +32 residu
 SHA-256 `55f92db2...82d0a`, admission `c406edb6...7a39b`. No classifier scores existed at the feature
 freeze. All 526 Python tests pass, including an actual synthetic-data fit and interrupted-result
 recovery that proves completed candidate checkpoints do not retrain. Fixed real-data fitting started.
+
+### 2026-09-09 — E51 A/B trained; A selected on CAL only
+
+All six fixed head fits completed. Both A and B pass the unchanged CAL gate, so A wins by the
+predeclared simplicity rule (not by an E49 result). A artifact `60d56c0b...b6b39`, threshold and
+REAL cut both 0.3316505551338196. CAL original: AUC 0.997699, BA 97.00%, REAL false-AI 2.67%,
+AI recall 96.67%, worst-device FP 20%, worst-AI-source recall 90%. Q75: AUC 0.998319,
+BA 97.56%, REAL FP 1.83%, AI recall 96.94%, worst-device FP 15%, worst-AI-source recall 90%.
+Automatic coverage is 100%; accuracy 97.18%/97.88%. This is a CAL-selected operating point,
+not independent final evidence or a calibrated probability. B's additional residual branch does
+not justify extra complexity: original BA 96.92%, Q75 97.44%. Seeds reproduce exactly (max
+score difference zero), as expected from deterministic lbfgs. All artifacts and CAL scores are
+hash-bound in `evidence/e51_cal_result.json`. Serving is unchanged; fresh DEV and E49 regression
+have not yet been scored at this checkpoint.

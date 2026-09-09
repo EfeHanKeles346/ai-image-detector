@@ -15,6 +15,12 @@ Admission complete: protected `2f070e7d...c1e54` and reserve `2c2cdb07...9ad36` 
 zero matched pairs/identity hits. Frozen admission `c406edb6...7a39b` retains all 5,978 TRAIN
 and 1,560 CAL parents, with zero exclusions. Next: 21,054 TRAIN/CAL views and fixed A/B fitting.
 
+TRAIN/CAL complete: features `55f92db2...82d0a`; both fixed candidates pass CAL, so the
+predeclared simpler **A** wins, artifact `60d56c0b...b6b39`, AI/REAL cut 0.3316505551338196.
+CAL original BA 97.00%, REAL FPR 2.67%, AI recall 96.67%; Q75 97.56% /1.83% /96.94%.
+This is CAL evidence only. Next: frozen old-test regression and score-blind fresh DEV realization,
+then exactly one evaluation of A on admitted IEEE/Datapoint DEVELOPMENT; no threshold retuning.
+
 - Before scores, conservatively exclude a whole E51 parent (including every paired child) when the
   fixed protected-identity/perceptual checks flag it. No label changes, no score-dependent replacement,
   no downloads. Preserve the original frozen manifests. Abort rather than continue if exclusions

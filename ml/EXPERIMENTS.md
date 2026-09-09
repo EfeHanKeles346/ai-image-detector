@@ -4155,3 +4155,18 @@ Feature completion: 21,054x3,072 DINO and 21,054x32 residual matrices, archive
 `55f92db2...82d0a`, binding `f6c95616...9f816`. Reused 8,916 frozen E42 backbone views only;
 12,138 new DINO views computed on MPS. Model scores still zero at this checkpoint. The fixed
 six head fits (A/B x42/43/44) are now running with local dependencies and offline environment.
+
+### E51 TRAIN/CAL result — 2026-09-09
+
+| Candidate | Condition | AUC | BA | REAL FPR | AI recall | Worst REAL FPR | Worst AI source recall |
+|---|---|---:|---:|---:|---:|---:|---:|
+| A | original | 0.997699 | 0.970000 | 0.026667 | 0.966667 | 0.200 | 0.900 |
+| A | Q75 | 0.998319 | 0.975556 | 0.018333 | 0.969444 | 0.150 | 0.900 |
+| B | original | 0.997623 | 0.969167 | 0.028333 | 0.966667 | 0.200 | 0.900 |
+| B | Q75 | 0.998236 | 0.974444 | 0.023333 | 0.972222 | 0.175 | 0.900 |
+
+Both pass all CAL gates with coverage 1.0; A is selected by the predeclared simplicity rule.
+A cut/REAL cut 0.3316505551338196; B 0.3200901746749878. Artifacts `60d56c0b...b6b39` and
+`b1ac18f3...838e2`; all three seeds give identical scores. CAL labels selected cuts, so this is
+not independent validation. No DEV/E49 model score existed before this result freeze; no serving
+promotion. Next: fixed diagnostic E49 comparison and one-shot admitted fresh DEVELOPMENT of A.

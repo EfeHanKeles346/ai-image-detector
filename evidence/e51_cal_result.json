@@ -1,0 +1,83 @@
+{
+  "admission_sha256": "c406edb6a1a1a3cc2feea0829fbada73b09a02c49c1f01e58259dd4a7eb7a39b",
+  "candidates": {
+    "A": {
+      "artifact_sha256": "60d56c0bdf72812e8393e41db82534fc3c63681f5adb84d5dd2a4841247b6b39",
+      "conditions": {
+        "original": {
+          "ai_recall": 0.9666666666666667,
+          "auc": 0.9976990740740741,
+          "automatic_coverage": 1.0,
+          "balanced_accuracy": 0.97,
+          "covered_accuracy": 0.9717948717948718,
+          "passed": true,
+          "real_false_ai": 0.02666666666666667,
+          "uncertainty": 0.0,
+          "worst_ai_source": 0.9,
+          "worst_real_source": 0.2
+        },
+        "q75": {
+          "ai_recall": 0.9694444444444444,
+          "auc": 0.9983194444444444,
+          "automatic_coverage": 1.0,
+          "balanced_accuracy": 0.9755555555555555,
+          "covered_accuracy": 0.9788461538461538,
+          "passed": true,
+          "real_false_ai": 0.018333333333333333,
+          "uncertainty": 0.0,
+          "worst_ai_source": 0.9,
+          "worst_real_source": 0.15
+        }
+      },
+      "feature_sha256": "55f92db299aa6cf889ae1a6ab3425d6d9f315527b481a531feea77690c982d0a",
+      "passed": true,
+      "real_cut": 0.3316505551338196,
+      "score_sha256": "ca181790af1dd79cbea667be56b57b57ea64779510e6108a3906c08d09d41952",
+      "seed_max_score_difference": 0.0,
+      "threshold": 0.3316505551338196
+    },
+    "B": {
+      "artifact_sha256": "b1ac18f333fddfd035dfd977c52420ba76f42d04610362e63dcd0d0d66a838e2",
+      "conditions": {
+        "original": {
+          "ai_recall": 0.9666666666666667,
+          "auc": 0.9976226851851853,
+          "automatic_coverage": 1.0,
+          "balanced_accuracy": 0.9691666666666667,
+          "covered_accuracy": 0.9705128205128205,
+          "passed": true,
+          "real_false_ai": 0.028333333333333332,
+          "uncertainty": 0.0,
+          "worst_ai_source": 0.9,
+          "worst_real_source": 0.2
+        },
+        "q75": {
+          "ai_recall": 0.9722222222222222,
+          "auc": 0.9982361111111111,
+          "automatic_coverage": 1.0,
+          "balanced_accuracy": 0.9744444444444444,
+          "covered_accuracy": 0.9756410256410256,
+          "passed": true,
+          "real_false_ai": 0.023333333333333334,
+          "uncertainty": 0.0,
+          "worst_ai_source": 0.9,
+          "worst_real_source": 0.175
+        }
+      },
+      "feature_sha256": "55f92db299aa6cf889ae1a6ab3425d6d9f315527b481a531feea77690c982d0a",
+      "passed": true,
+      "real_cut": 0.3200901746749878,
+      "score_sha256": "2ba87d3b9180f9f7feaa8764c194adbacf53c725917ecee277e9b15be026b2e6",
+      "seed_max_score_difference": 0.0,
+      "threshold": 0.3200901746749878
+    }
+  },
+  "development_scores_created": 0,
+  "feature_sha256": "55f92db299aa6cf889ae1a6ab3425d6d9f315527b481a531feea77690c982d0a",
+  "old_test_scores_created": 0,
+  "schema_version": 1,
+  "seed_note": "Deterministic lbfgs repetitions, not independent data trials.",
+  "selected": "A",
+  "serving_changed": false,
+  "state": "E51_CAL_complete"
+}
