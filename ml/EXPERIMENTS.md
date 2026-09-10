@@ -4760,3 +4760,10 @@ head stops for explicit audit rather than overwrite. Six fixtures cover fixed re
 dimensions/order, weight mass, control score/truth/decision parity, incomplete features, pending
 nine-fit completeness and lock exclusion. Full suite646passed before the final added lock case;
 focused six-test suite passes afterward. Real-data model contract and fits remain pending.
+
+E59 operational continuation07:53: first feature invocation reaches its frozen60min deadline,
+preserving4,465 parent chunks (173,197,992B, no pending partials). Old guard/worker absent;
+power/real external storage checked. Resume unchanged code/contract in another bounded run,
+revalidating every cached parent before reuse. Log e59_features_20260910T075334.log. No
+scientific amendment, resampling, re-inference of verified completed chunks, fits or accuracy
+measurement; completion receipts still pending. The filesystem count alone is not an audit pass.

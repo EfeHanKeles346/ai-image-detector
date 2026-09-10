@@ -5875,3 +5875,17 @@ confirm it cannot overlap a held extraction lock. Full suite646passed (12.88s, o
 warning), plus separately passed new lock-exclusion fixture in the six-test E59 focused suite.
 This is tested implementation, not a claim that the pending nine real-data fits have passed.
 No feature protocol edits, final-reserve inference, serving change or GitHub push.
+
+### 2026-09-10 — E59 bounded extraction resumed at07:53
+
+Original06:22 invocation exits1 at its registered60min deadline with TimeoutError; the guard
+cleans up its worker. This is an expected bounded interruption, not changed data or an accuracy
+failure. No old process remains. Exact filesystem inventory:4,465 parent NPZs,00000..04464,
+173,197,992B, no pending `.part` files (AppleDouble ignored). This counts persisted chunks,
+not an assertion of completed full-feature validation. Frozen resume rechecks each binding,
+content hash/shape/aggregation before reuse. AC and real LaCie/~379GiB free verified.
+
+Same unchanged contract/command restarts07:53 for<=60min, guard10657/worker10663; log
+ml/work/e59_features_20260910T075334.log. No duplicate extraction, fit, tests repeated for
+activity, new data/weights, dependency changes, final exposure or serving change. Training
+remains blocked until the complete11,630-parent feature archive and both receipts exist.

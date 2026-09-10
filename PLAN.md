@@ -7,6 +7,15 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — E57 complete, rejected (2026-09-10)
 
+**07:53 resume checkpoint:** first E59 extraction stopped at its registered60min deadline
+(TimeoutError, not a quality failure); no old worker remains. Inventory contains4,465 complete
+parent chunks,173,197,992B, no `.part` file. AC/actual LaCie/~379GiB free verified. Start the
+same frozen guarded command for another<=60min; new log
+`ml/work/e59_features_20260910T075334.log`, observed guard10657/worker10663. It revalidates
+every retained chunk before reusing it, then continues from the next parent. This inventory
+count is not a completed feature receipt or fitted-model result. No new tests/code/weights/
+source downloads needed for unchanged science. Do not duplicate the active resume.
+
 **06:54 implementation checkpoint, before any E59 fit:** extraction still active (at least
 2,300 completed parents); do not spawn another extractor or fit alongside it. Prepare the
 registered nine-fit implementation and fixtures while the worker continues. Freeze its actual
