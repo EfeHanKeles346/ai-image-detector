@@ -1,0 +1,53 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "ai_parents": 4595,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "cpu_threads": 2,
+  "downloads": 0,
+  "evaluation_reads_allowed": false,
+  "expected_e60_misses_by_condition": {
+    "assigned_transport": 1,
+    "clean": 1,
+    "q75": 3
+  },
+  "fit_allowed": false,
+  "inputs": {
+    "candidate": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e60/correction.npz",
+      "sha256": "582d6c4f020ce309c8e44a88383ef9d69c559773d6332694bd203e1132415bc5"
+    },
+    "correction_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e60_correction.py",
+      "sha256": "3c809418dcc4d365afafb4bf7f99e2625b0e3a8acc5c90ffb6d9a2366d2a71c9"
+    },
+    "features": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/teacher.npz",
+      "sha256": "101c539958f72913273a0a7e91f9ee7f7b2c025d73fee956177d7fcf8c9b62d8"
+    },
+    "gate_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/retention_gate.py",
+      "sha256": "1dcbb2351d0e4a2788a041ccbcddfb598d1c3e73ff524626917f9f31f95fcf0e"
+    },
+    "manifest": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json",
+      "sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+    },
+    "reference": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+      "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390"
+    },
+    "runner_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e61_replay_gate.py",
+      "sha256": "f503baaabafe5bf0161488517bd97199433c47f6d11045aae5133550aeeb3fbc"
+    }
+  },
+  "parents": 11630,
+  "promotion_allowed": false,
+  "scope": "Known-result engineering verification, NOT a blind experiment or model optimization.",
+  "state": "E61_TRAIN_gate_engineering_preregistered",
+  "test": "E43 against itself must pass. Already-frozen E60 replay must reproduce its recorded TRAIN transition counts and fail on any newly missed AI view."
+}

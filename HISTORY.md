@@ -6016,3 +6016,55 @@ REAL false-positive reduction without sacrificing AI recall. No new data may be 
 now; record suitable future acquisitions in PLAN for home, with evaluation/optimization later.
 Revisit image-structure/forensics notes and distinguish historical heuristics from validated
 current evidence. Prepare the completed E60 checkpoint for commit/push before the next study.
+
+
+## 2026-09-10 — GitHub synchronization, primary-source review and E61 registration
+
+User explicitly requested pushing progress to GitHub, researching REAL false accusations,
+retaining AI detection and deferring dataset downloads until home. `git push origin main`
+succeeded through `2da9fe81ee97df1b7725bcfd1bb659fa26dbe24f`; `git ls-remote` matched local
+HEAD and worktree was clean. This also synchronized previously unpushed history. Server
+reported two required checks expected and allowed the push; no CI success is inferred.
+
+Revisited the image notes/references and existing experiment history against B-Free,
+CNNDetection, SFLD, GEM and Neyman–Pearson primary sources. Corrected current interpretation
+in dated addenda without erasing historical notes. WIFD, RawNIND and conditional SIDD are
+now a home-download queue in PLAN; RealHD remains unavailable in its official repository.
+No image/data/model/package download performed. No protected corpus role changed.
+
+Implemented strict TRAIN AI replay validation in `pixelproof/retention_gate.py`: reject any
+new miss among previously caught AI views; report condition/source transitions and distinct
+parent losses; reject incomplete/malformed scores, duplicate parents and non-TRAIN roles.
+A pass is explicitly not model promotion. E61 runner binds admitted cached features, manifest,
+E43, frozen E60 and code hashes before one known-result engineering replay. No fitting,
+threshold changes, E49 reads or new quality claim. Documentation/contract written before
+execution; unit and replay results follow as a separate entry.
+
+
+## 2026-09-10 — E61 engineering outcome
+
+Frozen contract SHA `0fd0c9ff216d7a915d5208fbab3f06d45df91cd18af389a8d387b057e040ba6a`.
+One cached TRAIN replay completed: E43 self-comparison passes; unchanged E60 fails with
+1 clean,1 assigned-transport and3 Q75 newly missed AI views, affecting5 distinct parents.
+This reproduces known E60 TRAIN behavior; it is not independent model-quality evidence.
+All11,630 admitted parents/34,890 views were checked, including4,595 AI parents. Zero fits,
+zero evaluation rows read, zero data downloads; reference/candidate hashes and serving
+unchanged. Evidence: `evidence/e61_replay_contract.json` and `evidence/e61_replay_gate.json`.
+
+Focused verification:37 tests passed in1.39s (retention gate, E61 tamper/write-once/network
+checks, E60, E49 evaluation and parent weighting). The new gate catches equal-pooled-recall
+source swaps, exact-threshold losses, incomplete views, duplicate parents, invalid scores,
+vacuous controls and protected roles. It is available to future experiment runners; historical
+frozen runs and the serving path were deliberately not retrofitted. Any future candidate
+must explicitly run it before independent evaluation; a pass cannot authorize promotion.
+
+
+### GitHub CI observation for pushed E60 checkpoint
+
+[Run34468501197](https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34468501197)
+completed: Python job (full tests, compilation, dependency consistency and audit) passed;
+web lint, typecheck and tests passed. Web npm audit failed on the existing pinned Next.js
+critical advisories GHSA-p293-qw3h-jr36 and GHSA-2xp9-vwfh-vxw4. Audit also lists moderate/high
+transitive debt. This is not an ML regression; do not disable the critical check or silently
+run force upgrades. Added a separate dependency-maintenance item to PLAN. No web package,
+lockfile or serving modification was made as part of the no-download ML research checkpoint.

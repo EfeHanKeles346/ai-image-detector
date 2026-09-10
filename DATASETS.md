@@ -2171,3 +2171,14 @@ fresh DEV in that pool. No global claim about every unindexed file on disk is ma
 E51 DEV remains consumed; E49 is consumed regression-only, never tuning/final evidence. E52,
 MNW/HDR+ and Module2 roles remain protected. Audit summary: `evidence/e60_audit.json`; detailed
 teacher membership, missing-parent reasons and input hashes reside in LaCie `e60/audit.json`.
+
+
+## 2026-09-10 — Metadata-only home acquisition queue
+
+User disallows downloads now and requests new sources be recorded for home. PLAN's dated
+home queue lists WIFD first, RawNIND second, SIDD conditionally, and RealHD watch-only.
+Official source links, intended diagnostic roles and uncertainties live there. None was
+acquired or admitted. Source/scene/parent splits and licenses must be frozen before scoring;
+RAW/JPEG, burst/exposure and noisy/clean pairs inherit their common scene lineage. Do not
+mistake file count for independent scene/publisher count or REAL-only evidence for a balanced
+AI-retention test. Existing protected publisher and E52/Module2 boundaries remain intact.

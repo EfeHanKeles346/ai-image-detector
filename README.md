@@ -9,6 +9,10 @@ observed AI recall on consumed E49, but reduces REAL false alarms by only0.1/0.2
 points and fails acceptance. E43 remains the research reference; served E20/CF-ViT/optional
 R1b are unchanged. E59 remains parked. See [current plan](PLAN.md), [model card](MODEL_CARD.md)
 and [experiment log](ml/EXPERIMENTS.md) for exact results and evaluation limitations.
+E61 now verifies a strict TRAIN replay guard: reject any newly missed previously caught AI
+view, even if other rescues preserve pooled recall. The guard rejected frozen E60's five
+TRAIN parent losses; this is software verification, not a newly improved model. Primary-source
+review and home-download candidates are recorded in the image reference notes and PLAN.
 
 ## Current scientific contract (2026-08-26)
 

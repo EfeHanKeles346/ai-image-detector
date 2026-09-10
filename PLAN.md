@@ -20,7 +20,46 @@ The user also requests GitHub synchronization: commit and push completed, review
 evidence and Markdown checkpoints to the configured origin, verify the remote result, and
 report any failure. Keep raw datasets/model weights outside git; never force-push over remote work.
 
-## Current priority — champion-first offline improvement; execution authorized (2026-09-10)
+## Current follow-up — literature, strict replay guard and home data queue (2026-09-10)
+
+- GitHub synchronization completed through `2da9fe8`; remote `main` verified. Continue
+  pushing reviewed checkpoints. The server accepted the push while noting that two required
+  status checks were still expected; push success is not a CI-pass claim.
+- E61 is a **TRAIN-only engineering guard**, not another fit: reject an experimental candidate
+  if any AI view caught by frozen E43 crosses below the unchanged AI cut. Another generator's
+  rescue cannot offset that miss. Require complete bound parent-by-condition replay. Passing
+  this necessary condition never permits promotion or proves unseen-generator retention.
+- E61 completed: input/code hashes frozen in `evidence/e61_replay_contract.json` before
+  replay. Unchanged E43 passes; frozen E60 is rejected on its known TRAIN losses
+  (1/1/3 clean/transport/Q75, five distinct parents). No fitting, threshold selection,
+  E49 reads, protected-data use or downloads. Do not rerun this write-once verification.
+- GitHub CI for `2da9fe8`: Python job and web lint/typecheck/tests passed; web dependency
+  audit failed on critical Next.js advisories. This is a separate dependency-maintenance
+  item: verify supported patched version, update exact pin/lock together and run web checks
+  before any deployment. Do not weaken the audit threshold or claim all CI passed.
+- Next optimization waits for a valid development protocol/population. Investigate matched
+  processing across classes and replay-constrained optimization, using TRAIN only; preregister
+  one recipe before fitting. Do not tune E60 again against consumed E49 or treat a penalty
+  coefficient as an AI-retention guarantee. E59 remains parked.
+
+### Eve geçince indirilecek — metadata researched, NO image download now
+
+| Priority / source | Intended question and role | Availability and admission conditions |
+| --- | --- | --- |
+| 1 — [WIFD](https://github.com/CSCRC-SCREED/WIFD) | REAL camera/exposure/ISO diagnostic; reserve the entire publisher for diagnostic DEV, no TRAIN until roles are deliberately revised before scoring | Official README: >6,000 images, 14 physical cameras, MIT for data/code. Includes non-Bayer Sigma Foveon. Burst/ISO/exposure copies are scene-dependent; group by underlying scene across cameras. Exclude flat reference frames from general-photo metrics. Byte budget and usable independent scenes unverified. |
+| 2 — [RawNIND](https://github.com/trougnouf/rawnind_jddc), [official data DOI](https://dataverse.uclouvain.be/dataset.xhtml?persistentId=doi:10.14428/DVN/DEQCIM) | REAL clean/noisy RAW pairs to diagnose denoising/development sensitivity; reserve publisher for diagnostics | Linked by authors. Bayer/X-Trans paths and paired clean/noisy workflow documented. Verify dataset/per-image license, byte budget, cameras, original splits and cross-corpus duplicates before download/admission; code/weights licenses do not establish data rights. |
+| 3 — [SIDD](https://abdokamel.github.io/sidd/) | Conditional fallback for smartphone noise/ISO diagnostics; evaluate need after priorities 1–2 | Official site states MIT for dataset/code. Small has160 pairs, Medium320 pairs across160 scene instances of only10 underlying scenes. Processed ground truth is not a pristine camera JPEG. Older phones, no modern-phone coverage claim. Group underlying scenes across devices/settings, verify space/overlap; prefer Small if sufficient, not Full. |
+| Watch only — [RealHD](https://github.com/Hanzhe-yu/RealHD) | Later mixed-generation/edit benchmark if actually released | Official repository still says “Comming soon!” on 2026-09-10. No verified downloadable corpus/license; not acquisition-ready. |
+
+These are candidates **to download at home**, not accepted TRAIN or fresh final data. Reserve
+publisher/scene/parent roles before scoring, retain RAW/JPEG derivation lineage, audit exact and
+near duplicates against all protected pools, and cap downloads after checking metadata size.
+REAL-only diagnostic evidence cannot establish balanced detection quality or AI non-regression.
+Need a separately eligible AI population and supported independent source counts before a new
+balanced DEV/final; this gap remains explicit. MNW/HDR+/E52/COCO/ITWSM/Module2 stay protected;
+do not expand FiveK or download B-Free training data that collide with protected COCO.
+
+## Earlier authorized office plan — E60 completed (2026-09-10)
 
 The user now explicitly requests optimal continuation towards the existing goals with NO data
 downloads. Execute the champion-first audit and one bounded correction study below. E59 feature

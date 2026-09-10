@@ -224,3 +224,13 @@ cd ml
 Scientific provenance: `ml/EXPERIMENTS.md` E20 and its three-seed addendum; raw local result
 `ml/artifacts/e20/results_3seed.json`. Engineering provenance: `PLAN.md` M0–M6, append-only
 `HISTORY.md`, artifact manifest, and `PRESENTATION_EVIDENCE.md`.
+
+
+### E61 engineering safeguard (2026-09-10)
+
+The strict TRAIN replay gate now rejects any newly missed AI view that frozen E43
+previously caught. It rejects E60 on5 known TRAIN parent losses; E49 pooled recall
+remaining unchanged does not override that diagnosis. No new model was trained or
+promoted. Passing the software gate is necessary for future candidate development,
+not independent evidence of REAL false-positive reduction or unseen-AI preservation.
+See `evidence/e61_replay_gate.json` and the dated image-reference literature review.

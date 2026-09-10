@@ -1,5 +1,10 @@
 # Image Structure — Working Notes for Feature-Based Detection
 
+**2026-09-10 reading note**
+
+See the dated addendum at the end for the current interpretation of camera traces,
+preprocessing and false positives. The original learning notes remain historical context.
+
 > **Purpose.** Answers to the design questions raised on 2026-07-27, when we decided to test a
 > resolution-independent, feature-based detector (extract a fixed-length vector of statistics from
 > every image, then classify with classical ML). Companion to `IMAGE_FORENSICS_REFERENCE.md`,
@@ -190,3 +195,21 @@ is resized, no pixel is skipped.
   features? Ablate by group.
 - Does a one-class model trained on real photographs only (Phase 5) hold up better on unseen
   generators than the supervised classifier? Same features, different learning setup.
+
+
+
+## 2026-09-10 — Applying these notes to REAL false positives
+
+The physical pipeline remains useful, but the earlier descriptions of universal Bayer/CFA
+and universally visible real-photo noise are simplifying assumptions, not decision rules.
+See the sourced corrections and five-method review in
+[IMAGE_FORENSICS_REFERENCE.md](IMAGE_FORENSICS_REFERENCE.md#2026-09-10--false-positive-literature-review-and-corrected-interpretation).
+Preserve camera originals; training transformations must be deliberate, class-matched and
+recorded. Fixed-dimensional statistics are not automatically invariant to resizing.
+
+For this project the next useful evidence is matched REAL processing pairs (ISO, noise
+reduction, RAW development) plus eligible AI replay at unchanged E43 cuts. Neither EXIF,
+a clean image nor missing high-frequency noise can safely veto the detector by itself.
+E60's known TRAIN AI losses justify the E61 strict replay gate; this is an engineering
+safeguard, not evidence that image quality or generalization improved. New datasets are
+queued in PLAN for home, with roles and duplicate/scene audits required before scoring.

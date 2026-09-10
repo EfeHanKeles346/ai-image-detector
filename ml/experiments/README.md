@@ -88,3 +88,13 @@ pixelproof-train-stay-positive --help
 
 Its default output is `artifacts/e28/stay_positive_seed2024.pt`. It never overwrites or registers
 the served E20 checkpoint; evaluation remains a separate, gated phase.
+
+
+### E61 strict TRAIN replay check (2026-09-10)
+
+`e61_replay_gate.py freeze` binds inputs/code, then `run` verifies the reusable
+`pixelproof.retention_gate` against E43 self-replay and the known frozen E60 TRAIN result.
+This is an engineering test, not a fit or E49 evaluation. Commands use the existing venv:
+`PYTHONPATH=ml:ml/src ml/.venv/bin/python -m experiments.e61_replay_gate freeze` (then `run`),
+with the external DATA_ROOT environment configured. CLI disables network connections before
+third-party imports; evidence is write-once. Read PLAN and EXPERIMENTS before execution.

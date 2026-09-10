@@ -121,3 +121,13 @@ It depends on unchanged `e43/e43_small_predev.joblib` with SHA
 detector, registry replacement or serving promotion. Exact zero-init and saved-vector replay
 pass on TRAIN. Frozen recipe/results live in `evidence/e60_correction_contract.json` and
 `evidence/e60_fit.json`; any consumed E49 regression remains separate from independent final proof.
+
+
+### E61 replay guard — engineering evidence only (2026-09-10)
+
+`evidence/e61_replay_contract.json` binds the admitted E54 TRAIN manifest/features,
+frozen E43/E60 artifacts and new guard/runner code. `evidence/e61_replay_gate.json`
+records the successful software check: unchanged E43 passes, E60 is rejected for5
+newly missed AI parents across its3 TRAIN conditions. No model artifact produced;
+no E49 read, new training or serving promotion.37 focused tests pass. Never interpret
+this evidence as improved detection quality or a guarantee on unseen generators.

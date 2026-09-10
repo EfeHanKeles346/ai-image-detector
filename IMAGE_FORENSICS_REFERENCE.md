@@ -1,5 +1,10 @@
 # Image Generation, Editing & Forensics — Technical Reference
 
+**2026-09-10 reading note**
+
+The dated addendum at the end corrects overgeneralized camera/noise assumptions in the
+historical reference below. It takes precedence for current experiment design.
+
 > **Purpose.** Context document for AI coding assistants (e.g. Claude Code) working on the
 > PixelProof / ai-image-detector project. It explains (1) how real photographs are formed,
 > (2) how generative models create images, (3) how AI and human editing actually work,
@@ -322,3 +327,56 @@ plus the specific tool name (e.g. `gpt-image-1 mask behavior`, `FLUX.1-Fill inpa
 Also remember the project-specific ground rules: single-image inference (no original to diff
 against), evaluate under compression, never train on the OOD evaluation sets, and keep the
 spliced-vs-FR distinction explicit in every dataset and every metric table.
+
+
+
+## 2026-09-10 — False-positive literature review and corrected interpretation
+
+Read against the project's complete 19-file Markdown inventory, E21–E27, E43/E49 and
+E51–E60 evidence. Sources below were accessed on 2026-09-10; proposed mechanisms are
+not claims that our detector has improved. Only webpages/paper text were researched;
+no source images, datasets, model weights or dependencies were acquired.
+
+1. **Content/processing shortcuts.** [B-Free, CVPR 2025](https://arxiv.org/abs/2412.17671)
+   aligns real and synthetic content using self-conditioned synthesis and augmentation.
+   Its results support careful dataset construction, not a universal real-photo certificate.
+   We already evaluated B-Free (E21b/E23/E26): local source failures and licence/COCO
+   protection still matter. Do not pretend this is an untested ready-made replacement.
+2. **Preprocessing is part of the experiment.** [CNNDetection, CVPR 2020](https://peterwang512.github.io/CNNDetection/)
+   studies augmentation and generalization; JPEG/blur can be deliberately applied during
+   training. Preserve untouched evidence originals, but distinguish that custody requirement
+   from class-matched training transformations. Evaluate the actual serving resize/crop path.
+3. **Content bias also motivates representation changes.** [SFLD, WACV 2025](https://openaccess.thecvf.com/content/WACV2025/papers/Gye_Reducing_the_Content_Bias_for_AI-Generated_Image_Detection_WACV_2025_paper.pdf)
+   uses shuffled patches to reduce semantic bias. This is a future hypothesis, not a reason
+   to automatically resume E59/CLIP or assume shuffled pixels preserve every forensic cue.
+4. **Remembering old AI is a constraint question.** [GEM, NeurIPS 2017, section 3](https://papers.neurips.cc/paper/2017/file/f87522788a2be2d171666752f97ddebb-Paper.pdf)
+   projects updates using memory-loss gradient constraints to reduce forgetting. Its local
+   approximation and task-average losses do not guarantee every image's classification,
+   or performance on unseen generators. Our immediate implementation is a strict post-fit
+   TRAIN replay rejection gate, **not a GEM implementation**. A constrained optimizer remains
+   a preregistered future study after valid development data are identified.
+5. **Two error types require explicit priorities.** [Tong et al., JMLR 2020](https://jmlr.org/papers/v21/18-577.html)
+   studies Neyman–Pearson classification and sample-size requirements for error control.
+   Population guarantees depend on their statistical assumptions and calibration sample;
+   a threshold or nominal confidence level does not guarantee retention under source shift.
+   Our fixed E43 cut and independent source-aware evaluation requirements remain in force.
+
+Corrections to the historical physical intuition above:
+
+- Cameras are not universally Bayer sensors. [WIFD's camera inventory](https://github.com/CSCRC-SCREED/WIFD)
+  includes a Foveon device; [RawNIND's author documentation](https://github.com/trougnouf/rawnind_jddc/blob/main/src/rawnind/README.md)
+  distinguishes Bayer and X-Trans. Missing one CFA pattern is not evidence of synthesis.
+- Real-photo processing can strongly change measurable noise. [RawNIND](https://arxiv.org/abs/2501.08924)
+  explicitly studies paired raw denoising, demosaicing and compression. Our inference is
+  that weak noise/CFA evidence alone must not force an AI verdict; camera-trace evidence
+  alone also cannot certify authenticity. This motivates controlled paired diagnostics.
+- A fixed-length feature vector is not proof of resolution-invariant distributions.
+  Keep original dimensions and processing lineage; test invariance rather than naming it.
+- Low AI score or an empty localization map is insufficient evidence, not proof of a real
+  photograph. Module 2 is parked; tile heatmaps have not established pixel-mask accuracy.
+
+Current action: E61 rejects any candidate that loses an E43-caught TRAIN AI view, even if
+another generator's rescue keeps pooled recall constant. It cannot detect every unseen-data
+regression. Future work must reduce real-photo errors **and** pass fresh paired, per-source
+AI retention checks; abstention and threshold changes cannot substitute for that evidence.
+Acquisition candidates and limitations are in PLAN's home-download queue, not admitted data.

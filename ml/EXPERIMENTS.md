@@ -4858,3 +4858,42 @@ sources, not guarantees about unseen generators. Original/Q75 AUC.902425->.90208
 gates still fail. Training and E49 results differ: the one/three TRAIN AI losses remain reported.
 Keep E43 as reference and do not promote E60 or retune its coefficients/bound/cuts using this
 report. No fresh independent DEV/final opened. Detailed results: `evidence/e60_regression.json`.
+
+
+## E61 — Strict TRAIN replay retention gate (registered 2026-09-10)
+
+**Engineering validation, not a new learned model or independent experiment.** Literature
+review and interpretation: IMAGE_FORENSICS_REFERENCE 2026-09-10 addendum. GEM motivates
+explicit preservation constraints but is not implemented here; average loss penalties do
+not certify per-image recall. E60 already reported TRAIN losses 1/1/3 on clean/transport/Q75.
+
+Freeze input/code hashes before executing `experiments.e61_replay_gate freeze` then `run`.
+Use only the existing 11,630 admitted TRAIN parents ×3 conditions, all4,595 AI parents;
+original E43 head/scaler and E60 weights remain unchanged. Fixed AI cut
+0.07940196245908739. No optimizer, new features, evaluation/held-out reads, thresholds,
+source downloads or serving changes. CPU two threads; existing feature cache only.
+
+Acceptance test for the **software**: E43 against itself passes; frozen E60 must reproduce
+known losses and be rejected. Zero newly missed AI views is mandatory for a future candidate
+at this preliminary guard; AI rescues cannot cancel misses. Report each source/condition
+and parent/view counts separately. Invalid/nonfinite/missing or protected inputs fail closed.
+Passing is necessary only and never sets promotion_allowed=true; later independent REAL
+improvement and pooled/per-source AI non-regression requirements remain unchanged.
+
+
+## 2026-09-10 — E61 engineering outcome
+
+Frozen contract SHA `0fd0c9ff216d7a915d5208fbab3f06d45df91cd18af389a8d387b057e040ba6a`.
+One cached TRAIN replay completed: E43 self-comparison passes; unchanged E60 fails with
+1 clean,1 assigned-transport and3 Q75 newly missed AI views, affecting5 distinct parents.
+This reproduces known E60 TRAIN behavior; it is not independent model-quality evidence.
+All11,630 admitted parents/34,890 views were checked, including4,595 AI parents. Zero fits,
+zero evaluation rows read, zero data downloads; reference/candidate hashes and serving
+unchanged. Evidence: `evidence/e61_replay_contract.json` and `evidence/e61_replay_gate.json`.
+
+Focused verification:37 tests passed in1.39s (retention gate, E61 tamper/write-once/network
+checks, E60, E49 evaluation and parent weighting). The new gate catches equal-pooled-recall
+source swaps, exact-threshold losses, incomplete views, duplicate parents, invalid scores,
+vacuous controls and protected roles. It is available to future experiment runners; historical
+frozen runs and the serving path were deliberately not retrofitted. Any future candidate
+must explicitly run it before independent evaluation; a pass cannot authorize promotion.
