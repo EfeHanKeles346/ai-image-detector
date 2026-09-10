@@ -7,6 +7,16 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — E57 complete, rejected (2026-09-10)
 
+**09:23 operational continuation:** second feature invocation reached its registered60min
+deadline, no old worker remains. Resume the unchanged extractor after AC/real-disk checks.
+To avoid an idle gap if this invocation completes, a separate bounded operational waiter may
+watch the exact observed feature GUARD PID (not duplicate or interfere with it). After that
+guard exits, require full archive and both completion receipts, then hand off to the existing
+exclusive freeze/fit/report runner using only the remaining time within a60min total budget.
+Reject PID reuse or incomplete receipts; no retry loop or scientific-code change. A separate
+waiter lock prevents duplicate queued continuations. Training remains forbidden while the
+feature lock is held. This extends operational sequencing only; all experiment gates unchanged.
+
 **07:53 resume checkpoint:** first E59 extraction stopped at its registered60min deadline
 (TimeoutError, not a quality failure); no old worker remains. Inventory contains4,465 complete
 parent chunks,173,197,992B, no `.part` file. AC/actual LaCie/~379GiB free verified. Start the
