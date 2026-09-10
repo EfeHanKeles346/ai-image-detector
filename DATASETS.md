@@ -2130,3 +2130,16 @@ or daylight rendering. V2 records live on LaCie under `e57/v2/`, with raw/PNG ca
 under `e57/`. Actual valid/excluded counts, lost strata, body bytes and protected-overlap results
 must come from completed v2 receipts, not the planned 201 count. No admission or accuracy claim
 at this in-progress checkpoint; as-shot metadata coverage is a stated limitation.
+
+E57 v2 completion: all 201 selected original bodies total 1,999,000,262 B; two pilot reuses
+24,508,438 B, so new originals across the whole E57 acquisition total 1,974,491,824 B.
+199 supported RAWs yield 3,022,249,526 B local PNG derivatives (not network download).
+Excluded `a1854-kme_290.dng` and `a2638-LS_060107_0717.dng` retain RAW/hash/reason; lost
+strata animals/sun and unknown/sun each one, without replacement. All 18 strata still present.
+Completed receipt `evidence/e57_v2_download.json`, data contract
+`72781bf8672ab7b9debf3c92c4f20f383745fe63ec825420b4b3393c734e817b`.
+Protected screen 150,883 observations gives zero cross/internal matches; admission manifest
+SHA `2733bfe3c5397cbb26aa2faceb0cf44018bba2688079aae7642b0514561f3fb0` admits 199 FIT-only
+parents, never CAL/test. Six-fit study modestly reduces pooled REAL errors but loses supported
+AI sources and fails acceptance. No automatic enlargement; retain licensed originals and
+provenance for research. No final-reserve images scored or training-role changes.

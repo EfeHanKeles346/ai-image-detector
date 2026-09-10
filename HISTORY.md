@@ -5772,3 +5772,31 @@ reports unchanged gates. Combined follow-up <=60 minutes, AC/real-disk/free-spac
 single-job lock and owned-child cleanup. No duplicate download, final-reserve score, serving
 change or accuracy gain claimed. All 633 Python tests pass (12.63s, one existing warning).
 Archive completion receipts/results next; an active job is not a completed experiment. No push.
+
+### 2026-09-10 — E57 completes with modest aggregate benefit but fails preservation
+
+Guarded acquisition/audit/freeze/features/six-fit/report sequence completes at 05:08 local; no
+duplicate workers or owned training/download processes remain at 05:38 check. Real LaCie and
+AC verified. Official originals 1,999,000,262 B, of which 24,508,438 B reuse two pilot bodies;
+new original bodies across E57 v1/v2 total 1,974,491,824 B. Local derived PNGs 3,022,249,526 B,
+not downloaded images. Two missing-WB parents excluded; 199 admitted FIT-only, zero matches
+against 150,883 protected observations or internal pairs under the frozen heuristic. Both lost
+cells retain eleven of twelve selected rows (animals/sun and unknown/sun); no replacement.
+
+Model contract 87cf485974e8c53b5e93d15c0afb64767f3dc5961ca291aa67ab917b71aeb222 freezes
+before 597-view feature extraction; pretrained parity exactly zero. All six saved heads replay
+with zero score error/decision changes; all existing AI view weights preserved. Stable native
+versus FiveK supplement on 5,978 source-held-out research parents: clean AI 66.2378->66.4436%,
+REAL FPR 19.5291->18.3147%; Q75 AI 64.9511->65.8775%, FPR 18.7361->18.2404%.
+
+This is not success: Seedream/GPT Image 2/Qwen Image 2 and other AI strata lose detections,
+worst supported-source loss versus stable native 7.5 percentage points. AI-preservation intervals
+include loss; all absolute fold gates and full relative acceptance fail. Candidate is rejected,
+not served; no final reserve opened and no comparison to full-model historical 94% headline.
+All result/input receipts archived locally in commit 78c959a. Do not enlarge/sweep FiveK.
+
+Next E58 preregistered existing-score diagnosis separates error transitions from optimistic ROC
+limits; no new inference, fit or exportable threshold. Code 3c46ada plus separately frozen input
+hashes. Primary UnivFD/B-Free research reviewed; E47 already used official UnivFD, while B-Free
+paired generation is not reproduced by this unpaired REAL supplement. No public-source licence
+or held-out publisher restrictions changed. No GitHub push.

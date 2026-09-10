@@ -4643,3 +4643,39 @@ only, all old acceptance gates plus paired stable-control comparison. Source cod
 before execution; model contract freezes admitted manifest and input hashes before features/fits.
 633 unit/regression tests pass; actual acquisition and subsequent model experiment are still
 pending completion at this checkpoint. Final reserves remain closed; serving unchanged.
+
+## 2026-09-10 — E57 completed: reject REAL-only source supplement
+
+199 admitted FiveK originals, 597 fixed views, pretrained parity max error 0; all six fits
+finish and saved artifacts replay exactly. Two unsupported as-shot-WB originals excluded
+pre-score without replacement. No overlap found against 150,883 references (heuristic, not
+semantic guarantee). Model contract SHA
+`87cf485974e8c53b5e93d15c0afb64767f3dc5961ca291aa67ab917b71aeb222`.
+
+| Same 5,978 source-held-out research parents | Clean AI recall | Clean REAL FPR | Q75 AI recall | Q75 REAL FPR |
+|---|---:|---:|---:|---:|
+| Stable native64 control | 66.2378% | 19.5291% | 64.9511% | 18.7361% |
+| Native64 +199 FiveK FIT parents | 66.4436% | 18.3147% | 65.8775% | 18.2404% |
+
+Versus stable control, 20k paired publisher-bootstrap adjusted intervals in percentage points:
+REAL clean [-2.2892,-0.8091], Q75 [-0.7028,-0.4239]; AI clean [-1.0732,+1.3237], Q75
+[-0.9785,+2.4341]. Aggregate REAL improvement is supported conditional on these fitted folds,
+but AI preservation is not. Seedream-5 clean/Q75 recall loses 5/7.5 points; GPT Image 2 loses
+5/6.25; Qwen Image 2 Pro loses 2.5/6.25. Other complete source deltas and historical-reference
+comparisons are retained in `evidence/e57_result.json`. Small-source limits are not waived.
+
+Fold 0 RR remains a representation/transfer concern: supplement AUC clean/Q75 .7045/.6744,
+REAL FPR 49.28/49.84%, AI recall 74.41/72.07%. Fold 1 AUC .9137/.9275 but recall
+50.42/53.33%; fold 2 AUC .8965/.8991, recall 63.17/63.46%. Different CAL cuts and source
+composition forbid pooling raw-score AUC or equating these results with E49 full-model scores.
+Every absolute fold gate fails; neither arm is eligible. No deployment, independent final,
+three-seed claim, new cut, post-hoc weight sweep or automatic acquisition enlargement.
+
+E58 score-only diagnosis preregistered in PLAN and frozen after E57 rejection: paired
+source/fold/transport error transitions and optimistic threshold envelopes at fixed FPR10 and
+AI80/95. These consumed-label diagnostics cannot produce deployable cuts or certify success.
+UnivFD's pretrained representation motivation remains relevant, but E47 already tested its
+official CLIP detector; this is not an untried discovery. B-Free's paired real/fake generation
+is materially different from our unpaired FiveK addition; protected COCO is still inadmissible.
+Sources: [UnivFD paper](https://openaccess.thecvf.com/content/CVPR2023/html/Ojha_Towards_Universal_Fake_Image_Detectors_That_Generalize_Across_Generative_Models_CVPR_2023_paper.html),
+[B-Free authors](https://grip-unina.github.io/B-Free/).

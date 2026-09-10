@@ -37,6 +37,35 @@ training-data hypothesis based on the limiting cells; no automatic parameter swe
 
 ### Prior E57 registration and execution record
 
+**E58 completed 05:xx:** the supplement's optimistic AI recall at REAL FPR10 is clean/Q75
+37.30/34.59% (fold0), 75.83/80.00% (fold1), 66.29/68.27% (fold2). Even label-oracle
+thresholds cannot reach AI95/FPR10 in any of six cells. Fold1's clean ranking also worsens
+against native (78.96 ->75.83% at FPR10); this is not solely a changed CAL cut. No cuts saved.
+
+### E59 next distinct hypothesis: complementary pretrained representation, no new data
+
+Do not repeat E47's frozen ProGAN detector or retune FiveK. Assess the already licensed/cached
+CLIP ViT-L/14 image encoder as additional features learned from the existing E54 TRAIN pool,
+with no E57 supplement. E47 demonstrated different error patterns but did not fit this encoder
+on these source-held-out folds. This is a new representation hypothesis, not guaranteed recovery.
+
+First preregister a resource/parity-only probe: four REAL and four AI parents from fold-0 FIT,
+deterministic SHA256 rank `E59_RESOURCE|`+parent ID per class. Use their existing three views
+and three RGB224 crops; CLIP's official normalization on unchanged cached pixels. Verify pinned
+CLIP backbone, upstream checkout/code/licence and crop hashes. Frozen eval/no gradients, batch
+three crops, one warmup then all 24 views twice, finite 768-D embeddings and replay tolerance
+1e-5. Report runtime and sampled memory (not peak), no head scores, fit, accuracy or saved
+candidate; <=15 minutes, AC/external disk checks and no download. Raw 768-D crop features are
+used for the parity probe; any normalization/aggregation for a later classifier needs its own
+contract. Do not infer future throughput from this tiny sample as a guarantee.
+
+Only after this engineering check, freeze complete feature and training plans: existing 11,630
+parents/34,890 views, unchanged folds/AI replay/CAL/gates, fixed DINO-only baseline versus
+CLIP-only and DINO+CLIP features, three folds each. No expansion, grid search, test-selected
+mixture weights, learning from protected publishers or final inference. Define exact aggregation,
+feature scaling/loss mass and code/input hashes before full extraction or any fit; benchmark
+determines resource feasibility, not accuracy-based hyperparameters. E59 is not yet a fitted study.
+
 E56's 12 DNGs complete: 122,074,000 original bytes +166,400,845 derived PNG bytes. All fixed
 decodes repeat with exact RGB equality; external reference screen (150,883 observations including
 MNW/HDR+) finds zero byte/canonical/near-hash matches and zero internal pairs. This is a passed

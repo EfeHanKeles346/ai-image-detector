@@ -1,0 +1,758 @@
+{
+  "candidate_saved": false,
+  "contract_sha256": "8884cb20bf52d594e06d940387029d42584d9159aaafd82b8fd98da49a40146a",
+  "fits": 0,
+  "folds": [
+    {
+      "fold": 0,
+      "oracle_envelopes": {
+        "clean": {
+          "native64": {
+            "ai_parents": 1110,
+            "max_ai_recall_at_real_fpr_10pct": 0.3009009009009009,
+            "min_real_fpr_at_ai_recall_80pct": 0.6336,
+            "min_real_fpr_at_ai_recall_95pct": 0.9008,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1250
+          },
+          "native64_fivek": {
+            "ai_parents": 1110,
+            "max_ai_recall_at_real_fpr_10pct": 0.372972972972973,
+            "min_real_fpr_at_ai_recall_80pct": 0.5872,
+            "min_real_fpr_at_ai_recall_95pct": 0.8808,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1250
+          }
+        },
+        "q75": {
+          "native64": {
+            "ai_parents": 1110,
+            "max_ai_recall_at_real_fpr_10pct": 0.27207207207207207,
+            "min_real_fpr_at_ai_recall_80pct": 0.696,
+            "min_real_fpr_at_ai_recall_95pct": 0.936,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1250
+          },
+          "native64_fivek": {
+            "ai_parents": 1110,
+            "max_ai_recall_at_real_fpr_10pct": 0.34594594594594597,
+            "min_real_fpr_at_ai_recall_80pct": 0.6576,
+            "min_real_fpr_at_ai_recall_95pct": 0.9192,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1250
+          }
+        }
+      },
+      "source_error_transitions": [
+        {
+          "baseline_errors": 17,
+          "candidate_errors": 12,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 2,
+          "parents": 105,
+          "rescued_errors": 7,
+          "source": "rr:culture_and_religion"
+        },
+        {
+          "baseline_errors": 21,
+          "candidate_errors": 17,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 4,
+          "parents": 105,
+          "rescued_errors": 8,
+          "source": "rr:culture_and_religion"
+        },
+        {
+          "baseline_errors": 233,
+          "candidate_errors": 234,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 22,
+          "parents": 459,
+          "rescued_errors": 21,
+          "source": "rr:everyday_life"
+        },
+        {
+          "baseline_errors": 259,
+          "candidate_errors": 250,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 15,
+          "parents": 459,
+          "rescued_errors": 24,
+          "source": "rr:everyday_life"
+        },
+        {
+          "baseline_errors": 1,
+          "candidate_errors": 0,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 114,
+          "rescued_errors": 1,
+          "source": "rr:labor_and_production"
+        },
+        {
+          "baseline_errors": 3,
+          "candidate_errors": 0,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 114,
+          "rescued_errors": 3,
+          "source": "rr:labor_and_production"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 1,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 1,
+          "parents": 102,
+          "rescued_errors": 0,
+          "source": "rr:medical_and_public_health"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 102,
+          "rescued_errors": 0,
+          "source": "rr:medical_and_public_health"
+        },
+        {
+          "baseline_errors": 31,
+          "candidate_errors": 21,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 113,
+          "rescued_errors": 10,
+          "source": "rr:natural_disasters_and_accidents"
+        },
+        {
+          "baseline_errors": 38,
+          "candidate_errors": 26,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 113,
+          "rescued_errors": 12,
+          "source": "rr:natural_disasters_and_accidents"
+        },
+        {
+          "baseline_errors": 9,
+          "candidate_errors": 9,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 1,
+          "parents": 93,
+          "rescued_errors": 1,
+          "source": "rr:political_and_social_events"
+        },
+        {
+          "baseline_errors": 10,
+          "candidate_errors": 7,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 93,
+          "rescued_errors": 3,
+          "source": "rr:political_and_social_events"
+        },
+        {
+          "baseline_errors": 651,
+          "candidate_errors": 616,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 52,
+          "parents": 1250,
+          "rescued_errors": 87,
+          "source": "rr:rrdataset_real_pool"
+        },
+        {
+          "baseline_errors": 637,
+          "candidate_errors": 623,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 51,
+          "parents": 1250,
+          "rescued_errors": 65,
+          "source": "rr:rrdataset_real_pool"
+        },
+        {
+          "baseline_errors": 9,
+          "candidate_errors": 7,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 124,
+          "rescued_errors": 2,
+          "source": "rr:war_and_conflict"
+        },
+        {
+          "baseline_errors": 10,
+          "candidate_errors": 10,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 124,
+          "rescued_errors": 0,
+          "source": "rr:war_and_conflict"
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "oracle_envelopes": {
+        "clean": {
+          "native64": {
+            "ai_parents": 480,
+            "max_ai_recall_at_real_fpr_10pct": 0.7895833333333333,
+            "min_real_fpr_at_ai_recall_80pct": 0.11294117647058824,
+            "min_real_fpr_at_ai_recall_95pct": 0.3164705882352941,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1700
+          },
+          "native64_fivek": {
+            "ai_parents": 480,
+            "max_ai_recall_at_real_fpr_10pct": 0.7583333333333333,
+            "min_real_fpr_at_ai_recall_80pct": 0.13823529411764707,
+            "min_real_fpr_at_ai_recall_95pct": 0.36764705882352944,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1700
+          }
+        },
+        "q75": {
+          "native64": {
+            "ai_parents": 480,
+            "max_ai_recall_at_real_fpr_10pct": 0.8291666666666667,
+            "min_real_fpr_at_ai_recall_80pct": 0.08764705882352941,
+            "min_real_fpr_at_ai_recall_95pct": 0.3135294117647059,
+            "oracle_80recall_10fpr_feasible": true,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1700
+          },
+          "native64_fivek": {
+            "ai_parents": 480,
+            "max_ai_recall_at_real_fpr_10pct": 0.8,
+            "min_real_fpr_at_ai_recall_80pct": 0.09941176470588235,
+            "min_real_fpr_at_ai_recall_95pct": 0.3388235294117647,
+            "oracle_80recall_10fpr_feasible": true,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1700
+          }
+        }
+      },
+      "source_error_transitions": [
+        {
+          "baseline_errors": 44,
+          "candidate_errors": 36,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 1,
+          "parents": 1700,
+          "rescued_errors": 9,
+          "source": "SCIMD-17"
+        },
+        {
+          "baseline_errors": 42,
+          "candidate_errors": 36,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 1,
+          "parents": 1700,
+          "rescued_errors": 7,
+          "source": "SCIMD-17"
+        },
+        {
+          "baseline_errors": 52,
+          "candidate_errors": 53,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 2,
+          "parents": 80,
+          "rescued_errors": 1,
+          "source": "e36:FLUX.2_max"
+        },
+        {
+          "baseline_errors": 48,
+          "candidate_errors": 47,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 1,
+          "parents": 80,
+          "rescued_errors": 2,
+          "source": "e36:FLUX.2_max"
+        },
+        {
+          "baseline_errors": 23,
+          "candidate_errors": 24,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 2,
+          "parents": 80,
+          "rescued_errors": 1,
+          "source": "e36:GLM-Image"
+        },
+        {
+          "baseline_errors": 23,
+          "candidate_errors": 24,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 2,
+          "parents": 80,
+          "rescued_errors": 1,
+          "source": "e36:GLM-Image"
+        },
+        {
+          "baseline_errors": 40,
+          "candidate_errors": 42,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 4,
+          "parents": 80,
+          "rescued_errors": 2,
+          "source": "e36:Qwen-Image-2.0-pro"
+        },
+        {
+          "baseline_errors": 36,
+          "candidate_errors": 41,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 6,
+          "parents": 80,
+          "rescued_errors": 1,
+          "source": "e36:Qwen-Image-2.0-pro"
+        },
+        {
+          "baseline_errors": 45,
+          "candidate_errors": 49,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 4,
+          "parents": 80,
+          "rescued_errors": 0,
+          "source": "e36:Seedream-5.0"
+        },
+        {
+          "baseline_errors": 30,
+          "candidate_errors": 36,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 6,
+          "parents": 80,
+          "rescued_errors": 0,
+          "source": "e36:Seedream-5.0"
+        },
+        {
+          "baseline_errors": 35,
+          "candidate_errors": 39,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 5,
+          "parents": 80,
+          "rescued_errors": 1,
+          "source": "e36:gpt-image-2"
+        },
+        {
+          "baseline_errors": 42,
+          "candidate_errors": 47,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 5,
+          "parents": 80,
+          "rescued_errors": 0,
+          "source": "e36:gpt-image-2"
+        },
+        {
+          "baseline_errors": 30,
+          "candidate_errors": 31,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 2,
+          "parents": 80,
+          "rescued_errors": 1,
+          "source": "e36:nano-banana-2.0"
+        },
+        {
+          "baseline_errors": 29,
+          "candidate_errors": 29,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 2,
+          "parents": 80,
+          "rescued_errors": 2,
+          "source": "e36:nano-banana-2.0"
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "oracle_envelopes": {
+        "clean": {
+          "native64": {
+            "ai_parents": 353,
+            "max_ai_recall_at_real_fpr_10pct": 0.660056657223796,
+            "min_real_fpr_at_ai_recall_80pct": 0.20368663594470046,
+            "min_real_fpr_at_ai_recall_95pct": 0.4470046082949309,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1085
+          },
+          "native64_fivek": {
+            "ai_parents": 353,
+            "max_ai_recall_at_real_fpr_10pct": 0.6628895184135978,
+            "min_real_fpr_at_ai_recall_80pct": 0.17419354838709677,
+            "min_real_fpr_at_ai_recall_95pct": 0.46175115207373274,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1085
+          }
+        },
+        "q75": {
+          "native64": {
+            "ai_parents": 353,
+            "max_ai_recall_at_real_fpr_10pct": 0.6883852691218131,
+            "min_real_fpr_at_ai_recall_80pct": 0.19723502304147467,
+            "min_real_fpr_at_ai_recall_95pct": 0.44516129032258067,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1085
+          },
+          "native64_fivek": {
+            "ai_parents": 353,
+            "max_ai_recall_at_real_fpr_10pct": 0.6827195467422096,
+            "min_real_fpr_at_ai_recall_80pct": 0.19078341013824884,
+            "min_real_fpr_at_ai_recall_95pct": 0.43317972350230416,
+            "oracle_80recall_10fpr_feasible": false,
+            "oracle_95recall_10fpr_feasible": false,
+            "real_parents": 1085
+          }
+        }
+      },
+      "source_error_transitions": [
+        {
+          "baseline_errors": 17,
+          "candidate_errors": 17,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 69,
+          "rescued_errors": 0,
+          "source": "e32:communityforensics-ai-local"
+        },
+        {
+          "baseline_errors": 14,
+          "candidate_errors": 15,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 2,
+          "parents": 69,
+          "rescued_errors": 1,
+          "source": "e32:communityforensics-ai-local"
+        },
+        {
+          "baseline_errors": 30,
+          "candidate_errors": 27,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 160,
+          "rescued_errors": 3,
+          "source": "e32:csafe-mcsidb-iphone14"
+        },
+        {
+          "baseline_errors": 25,
+          "candidate_errors": 26,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 1,
+          "parents": 160,
+          "rescued_errors": 0,
+          "source": "e32:csafe-mcsidb-iphone14"
+        },
+        {
+          "baseline_errors": 27,
+          "candidate_errors": 24,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 160,
+          "rescued_errors": 3,
+          "source": "e32:csafe-mcsidb-s21"
+        },
+        {
+          "baseline_errors": 18,
+          "candidate_errors": 17,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 160,
+          "rescued_errors": 1,
+          "source": "e32:csafe-mcsidb-s21"
+        },
+        {
+          "baseline_errors": 31,
+          "candidate_errors": 31,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 69,
+          "rescued_errors": 0,
+          "source": "e32:flux2-klein-9b"
+        },
+        {
+          "baseline_errors": 32,
+          "candidate_errors": 32,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 1,
+          "parents": 69,
+          "rescued_errors": 1,
+          "source": "e32:flux2-klein-9b"
+        },
+        {
+          "baseline_errors": 18,
+          "candidate_errors": 20,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 3,
+          "parents": 154,
+          "rescued_errors": 1,
+          "source": "e32:forchheim-fodb"
+        },
+        {
+          "baseline_errors": 19,
+          "candidate_errors": 19,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 2,
+          "parents": 154,
+          "rescued_errors": 2,
+          "source": "e32:forchheim-fodb"
+        },
+        {
+          "baseline_errors": 39,
+          "candidate_errors": 40,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 1,
+          "parents": 69,
+          "rescued_errors": 0,
+          "source": "e32:gpt-image-1"
+        },
+        {
+          "baseline_errors": 38,
+          "candidate_errors": 37,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 69,
+          "rescued_errors": 1,
+          "source": "e32:gpt-image-1"
+        },
+        {
+          "baseline_errors": 26,
+          "candidate_errors": 26,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 69,
+          "rescued_errors": 0,
+          "source": "e32:nano-banana-local"
+        },
+        {
+          "baseline_errors": 24,
+          "candidate_errors": 23,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 69,
+          "rescued_errors": 1,
+          "source": "e32:nano-banana-local"
+        },
+        {
+          "baseline_errors": 2,
+          "candidate_errors": 2,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 8,
+          "rescued_errors": 0,
+          "source": "e32:nano-banana-pro-ash-local"
+        },
+        {
+          "baseline_errors": 2,
+          "candidate_errors": 2,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 8,
+          "rescued_errors": 0,
+          "source": "e32:nano-banana-pro-ash-local"
+        },
+        {
+          "baseline_errors": 16,
+          "candidate_errors": 14,
+          "condition": "clean",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 69,
+          "rescued_errors": 2,
+          "source": "e32:qwen-image-2512"
+        },
+        {
+          "baseline_errors": 22,
+          "candidate_errors": 20,
+          "condition": "q75",
+          "label": 1,
+          "new_errors": 0,
+          "parents": 69,
+          "rescued_errors": 2,
+          "source": "e32:qwen-image-2512"
+        },
+        {
+          "baseline_errors": 18,
+          "candidate_errors": 16,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 140,
+          "rescued_errors": 2,
+          "source": "e32:vision-base-native"
+        },
+        {
+          "baseline_errors": 15,
+          "candidate_errors": 15,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 1,
+          "parents": 140,
+          "rescued_errors": 1,
+          "source": "e32:vision-base-native"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 100,
+          "rescued_errors": 0,
+          "source": "e36:device_001"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 100,
+          "rescued_errors": 0,
+          "source": "e36:device_001"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 100,
+          "rescued_errors": 0,
+          "source": "e36:device_002"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 100,
+          "rescued_errors": 0,
+          "source": "e36:device_002"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 100,
+          "rescued_errors": 0,
+          "source": "e36:device_003"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 100,
+          "rescued_errors": 0,
+          "source": "e36:device_003"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 100,
+          "rescued_errors": 0,
+          "source": "e36:device_005"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 100,
+          "rescued_errors": 0,
+          "source": "e36:device_005"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "clean",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 71,
+          "rescued_errors": 0,
+          "source": "e36:device_009"
+        },
+        {
+          "baseline_errors": 0,
+          "candidate_errors": 0,
+          "condition": "q75",
+          "label": 0,
+          "new_errors": 0,
+          "parents": 71,
+          "rescued_errors": 0,
+          "source": "e36:device_009"
+        }
+      ]
+    }
+  ],
+  "independent_reserves_opened": false,
+  "limitations": [
+    "Optimistic label-oracle envelopes on consumed research folds, not measured deployable thresholds.",
+    "Failure rules out a scalar monotone threshold on these frozen scores, not every future model.",
+    "No saved oracle cuts, interpolation across tied scores, new final scores or CAL adjustment.",
+    "Per-source error changes are paired descriptions, not causal evidence or independent final proof."
+  ],
+  "new_inference": 0,
+  "serving_changed": false,
+  "state": "E58_existing_score_diagnosis_complete"
+}
