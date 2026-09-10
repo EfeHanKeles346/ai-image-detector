@@ -79,6 +79,35 @@ feature selection, no FiveK enlargement, no weakening of existing source-wise AI
 
 ### Prior E56/E57 registration and execution record (historical checkpoints)
 
+**E59 full feature registration, 06:18 follow-up (before extraction):** keep all existing
+11,630 E54 parents/34,890 ordered views. Offline pinned CLIP ViT-L/14, official image
+normalization on exactly the cached three RGB224 crops per view, frozen float32 eval, batch
+three crops. Save raw 768-D crop embeddings and fixed concatenated three-crop mean and
+population standard deviation (1,536-D/view); no per-vector L2 normalization, feature selection,
+colour/resize change or fitted preprocessing. This mirrors the DINO crop-statistics structure,
+not an assertion that it is optimal. Hash-bound parent chunks resume without resampling;
+verify content digests, finiteness, shape and aggregation equality. Retain completed chunks on
+deadline or power loss. Full cache on actual LaCie under e59 only; no source/weight downloads.
+Feature validation uses no classifier or performance labels. Exact same-batch replay required
+within1e-5 at each worker start on the first bound parent. Parent chunks can commit only after
+power/storage/deadline checks. Guard each invocation<=60min, one shared lock, 2s monitoring,
+stop owned process group. No endless unmonitored process. Immutable completion receipt binds
+all chunks, final feature archive, parent order, upstream inputs and frozen code. Interrupted
+finalization may reuse a complete archive only after exact reconstruction matches its binding,
+parents and arrays; never overwrite incompatible completed evidence.
+
+Training recipe locked before future scores: DINO3072-only, CLIP1536-only and concatenated
+DINO+CLIP4608, each on the unchanged three source-held-out folds. Fit weighted StandardScaler
+only on FIT, float64 logistic regression C=.01/tol1e-8/max_iter1000/seed53/lbfgs/twoCPUthreads;
+convergence warnings fail. Retain every AI view and unchanged class/source/parent weights with
+original base FIT total loss mass (not native-expanded count). Existing inner CAL clean/Q75
+selects the cut; validation clean/Q75 unchanged. No FiveK. Compare all nine fits against existing
+required historical references, stable E57 native control and within-E59 DINO control, with
+all unchanged absolute, exact-replay and paired AI-preservation/REAL-improvement gates. CLIP
+alone and combined are separately reported; neither may replace serving without further gates.
+The actual training implementation/artifact and input hashes must freeze separately after
+feature completion but before fitting. Full feature acquisition does not authorize a final test.
+
 E56's 12 DNGs complete: 122,074,000 original bytes +166,400,845 derived PNG bytes. All fixed
 decodes repeat with exact RGB equality; external reference screen (150,883 observations including
 MNW/HDR+) finds zero byte/canonical/near-hash matches and zero internal pairs. This is a passed
