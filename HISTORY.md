@@ -5800,3 +5800,33 @@ limits; no new inference, fit or exportable threshold. Code 3c46ada plus separat
 hashes. Primary UnivFD/B-Free research reviewed; E47 already used official UnivFD, while B-Free
 paired generation is not reproduced by this unpaired REAL supplement. No public-source licence
 or held-out publisher restrictions changed. No GitHub push.
+
+### 2026-09-10 — E58 confirms threshold-only repair is insufficient
+
+Frozen score diagnosis 36c7a25 completes with no new images, inference, fitting or saved cuts.
+E57 supplement rescues 105 REAL clean errors but introduces 56 (net49); Q75 rescues76,
+introduces56 (net20). AI clean rescues50, loses46 (net4); Q75 rescues62, loses44 (net18).
+Aggregate benefit therefore conceals real per-image and modern-generator losses.
+
+Optimistic label-oracle AI recall at FPR10, supplement clean/Q75: fold0 37.30/34.59%, fold1
+75.83/80.00%, fold2 66.29/68.27%. AI95/FPR10 is infeasible in every cell even with consumed
+validation labels choosing the best possible scalar cut. No cut is exported. This rules out
+threshold-only repair on these frozen score streams, not future representation improvements.
+Fold1 clean also loses ranking: native 78.96% vs supplement75.83% at FPR10. Full paired
+transitions and tie-aware envelopes are archived in evidence/e58_score_diagnosis.json.
+
+E59 next distinct representation hypothesis registered in PLAN: cached CLIP image features,
+not the previously tested E47 ProGAN head, trained later on the existing E54 pool alongside
+DINO. First resource-only probe uses eight deterministic fold0 FIT parents, no candidate or
+quality scores, no download; code 0948bdc, pinned-input contract 93b99f7. Full extraction and
+nine fixed source-fold fits require their own later contract. Current full suite638 passed
+(11.93s, one existing warning). Existing upstream tracked source is unchanged; only Python
+bytecode caches appear untracked in the external checkout. Serving and closed reserves intact.
+
+E59 resource probe completes successfully under its guard: eight FIT parents/24views,72crops
+per pass; MPS elapsed7.9457/7.8218s, embedding replay error0. Sampled driver allocation
+2,194,358,272B, not peak. No downloaded bytes, detector scores, fit or saved candidate. Guard
+exits0 with no owned workers left. Archive evidence/e59_clip_probe.json; this is engineering
+feasibility only. Full-scale extraction likely needs hours and resumable <=60-minute guarded
+chunks; no full E59 feature run or quality experiment has started. Next scheduled continuation
+must freeze full feature/training contracts first; no manual user action is needed for preparation.

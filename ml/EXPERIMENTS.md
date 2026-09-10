@@ -4679,3 +4679,40 @@ official CLIP detector; this is not an untried discovery. B-Free's paired real/f
 is materially different from our unpaired FiveK addition; protected COCO is still inadmissible.
 Sources: [UnivFD paper](https://openaccess.thecvf.com/content/CVPR2023/html/Ojha_Towards_Universal_Fake_Image_Detectors_That_Generalize_Across_Generative_Models_CVPR_2023_paper.html),
 [B-Free authors](https://grip-unina.github.io/B-Free/).
+
+## 2026-09-10 — E58 existing-score diagnosis completed; E59 engineering probe registered
+
+Code 3c46ada, diagnostic contract36c7a25 bind all six E57 artifacts/score streams. No new
+model scores, cuts, fits or test exposures. Four fixtures cover tie atomicity, permutation,
+perfect/reversed rankings, invalid input and paired truth identity. Consumed-label envelopes
+are optimistic diagnostics, not validation-selected deployable operating points.
+
+Supplement rescues/new errors: REAL clean105/56, Q75 76/56; AI clean50/46, Q75 62/44.
+Seedream Q75 loses six/80 detections and rescues none; GPT Image2 Q75 loses five/80 and
+rescues none. Full source/fold/condition transitions retained, not only favourable examples.
+
+| Frozen scores, optimistic AI recall at REAL FPR<=10% | Native clean | Supplement clean | Native Q75 | Supplement Q75 |
+|---|---:|---:|---:|---:|
+| Fold0 (RR) | 30.0901% | 37.2973% | 27.2072% | 34.5946% |
+| Fold1 | 78.9583% | 75.8333% | 82.9167% | 80.0000% |
+| Fold2 | 66.0057% | 66.2890% | 68.8385% | 68.2720% |
+
+No AI95/FPR10 feasible cell; only fold1 Q75 reaches the weaker AI80/FPR10 diagnostic pair.
+The supplement needs REAL FPR58.72/65.76% to reach AI80 in fold0 clean/Q75. This is evidence
+against scalar threshold repair on these heads; it is not a proof against every architecture.
+The weaker target is diagnostic only and never replaces AI preservation or the full gate set.
+
+E59 preregistered resource-only probe: existing SHA-pinned CLIP ViT-L/14, official image
+normalization on E54 cached RGB224, eight deterministic FIT-only parents (four/class),24views,
+72crops twice after one warmup. Frozen eval, no head/gradients, 768-D finite embeddings,
+replay<=1e-5; <=15min guarded AC/LaCie execution. Record runtime/sampled-not-peak memory,
+not accuracy or full-scale guarantees. Selection fixture passes; full suite638 passed. Only
+after this check freeze a complete existing-data CLIP-only/DINO+CLIP/control experiment.
+
+E59 resource result: contract SHA
+`8ad483b0c57be06a948c3afa8a3b544f5d25b9a528e6ad1cbac1c5f84f7ad68a`;
+two MPS passes7.9457/7.8218s for24views each; raw768-D embedding replay max error0.
+Sampled driver allocation2,194,358,272B, not measured peak. No classifier output, accuracy,
+fit, new data/weights or saved candidate. Existing upstream tracked code unchanged. The small
+sample supports implementing resumable full-scale extraction, not a quality claim or reliable
+full-run time estimate. Entire protected CAL/DEV/final/Module2/reserves remain unchanged.

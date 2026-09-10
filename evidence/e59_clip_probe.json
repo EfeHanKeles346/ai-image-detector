@@ -1,0 +1,25 @@
+{
+  "accuracy_measured": false,
+  "candidate_saved": false,
+  "contract_sha256": "8ad483b0c57be06a948c3afa8a3b544f5d25b9a528e6ad1cbac1c5f84f7ad68a",
+  "crops_per_pass": 72,
+  "detector_scores": 0,
+  "device": "mps",
+  "downloads": 0,
+  "embedding_replay_max_error": 0.0,
+  "fits": 0,
+  "limitations": [
+    "Eight FIT parents only, not quality or full-dataset throughput proof.",
+    "Sampled driver allocation is not peak memory; includes cached model allocations.",
+    "No trained UnivFD head used; 768-D embeddings remain unsaved probe intermediates."
+  ],
+  "parents": 8,
+  "passes": 2,
+  "sampled_driver_bytes": 2194358272,
+  "seconds_per_pass": [
+    7.945731707965024,
+    7.821768875000998
+  ],
+  "state": "E59_cached_CLIP_resource_probe_complete",
+  "views": 24
+}

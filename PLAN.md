@@ -35,9 +35,7 @@ content/processing coverage, not repeating our unpaired FiveK addition or admitt
 COCO training data. After the diagnosis, choose one separately preregistered representation/
 training-data hypothesis based on the limiting cells; no automatic parameter sweep.
 
-### Prior E57 registration and execution record
-
-**E58 completed 05:xx:** the supplement's optimistic AI recall at REAL FPR10 is clean/Q75
+**E58 completed in the 05:38 follow-up:** the supplement's optimistic AI recall at REAL FPR10 is clean/Q75
 37.30/34.59% (fold0), 75.83/80.00% (fold1), 66.29/68.27% (fold2). Even label-oracle
 thresholds cannot reach AI95/FPR10 in any of six cells. Fold1's clean ranking also worsens
 against native (78.96 ->75.83% at FPR10); this is not solely a changed CAL cut. No cuts saved.
@@ -65,6 +63,21 @@ CLIP-only and DINO+CLIP features, three folds each. No expansion, grid search, t
 mixture weights, learning from protected publishers or final inference. Define exact aggregation,
 feature scaling/loss mass and code/input hashes before full extraction or any fit; benchmark
 determines resource feasibility, not accuracy-based hyperparameters. E59 is not yet a fitted study.
+
+**Resource check completed:** MPS, 24 views/72 crops per pass; 7.9457 and7.8218 seconds,
+exact embedding replay error0; sampled driver allocation2,194,358,272B (not peak).
+No downloads, detector scores, saved head or fit. Evidence/e59_clip_probe.json; full suite638
+passes. No worker remains active after this bounded probe. Next scheduled continuation should
+start with E59 full feature/training contract preparation, NOT repeat completed E55-E58/probe.
+
+Full extraction will plausibly take hours (small-sample extrapolation only); implement resumable,
+parent-bound external chunks and <=60-minute guarded batches before starting. Preserve completed
+chunks on timeout; power/disk loss stops only owned workers. Freeze exact CLIP normalization,
+three-crop aggregation, offline weights, whole parent/fold joins and all helper hashes before any
+full feature run. The later nine fits must be a separately frozen contract with no score-guided
+feature selection, no FiveK enlargement, no weakening of existing source-wise AI preservation.
+
+### Prior E56/E57 registration and execution record (historical checkpoints)
 
 E56's 12 DNGs complete: 122,074,000 original bytes +166,400,845 derived PNG bytes. All fixed
 decodes repeat with exact RGB equality; external reference screen (150,883 observations including
