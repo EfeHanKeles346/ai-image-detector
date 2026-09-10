@@ -4767,3 +4767,11 @@ power/real external storage checked. Resume unchanged code/contract in another b
 revalidating every cached parent before reuse. Log e59_features_20260910T075334.log. No
 scientific amendment, resampling, re-inference of verified completed chunks, fits or accuracy
 measurement; completion receipts still pending. The filesystem count alone is not an audit pass.
+
+09:24 continuation: second bounded run preserves8,308 chunks/342,619,493B, no partial file,
+then exits at deadline. Resume same feature contract after AC/real-disk/absence-of-old-workers
+checks. Operational-only waiter (plan80f8bff/code530513e) binds the observed guard PID,
+requires completed archive+both receipts, and replaces itself with the existing training guard
+using only remaining minutes of a60min combined budget. No feature/scientific code amendment,
+new fit, score or test exposure. Full suite649passed; training remains conditional on complete
+features, and any failed/incomplete handoff requires inspection at the next scheduled check.

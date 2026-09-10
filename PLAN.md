@@ -7,6 +7,14 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — E57 complete, rejected (2026-09-10)
 
+**Current active invocation09:24:** persisted8,308 parent chunks (342,619,493B, no partials)
+after the second planned deadline. Original processes exited; unchanged extractor resumed
+with guard40155/worker40165 and log `ml/work/e59_features_20260910T092449.log`.
+Bounded waiter41371 watches ONLY guard40155 (`experiments.e59_followup`, <=60min combined
+wait/training). Do not start another extractor/waiter/trainer while these are active. It will
+handoff to existing training guard only with all completion receipts and remaining time;
+otherwise stop, leaving the next scheduled check to inspect/resume. No model score yet.
+
 **09:23 operational continuation:** second feature invocation reached its registered60min
 deadline, no old worker remains. Resume the unchanged extractor after AC/real-disk checks.
 To avoid an idle gap if this invocation completes, a separate bounded operational waiter may

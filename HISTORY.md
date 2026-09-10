@@ -5889,3 +5889,24 @@ Same unchanged contract/command restarts07:53 for<=60min, guard10657/worker10663
 ml/work/e59_features_20260910T075334.log. No duplicate extraction, fit, tests repeated for
 activity, new data/weights, dependency changes, final exposure or serving change. Training
 remains blocked until the complete11,630-parent feature archive and both receipts exist.
+
+### 2026-09-10 — E59 third bounded feature run and completion handoff
+
+09:23 check: second invocation ends at its registered60min deadline (TimeoutError), no old
+worker survives. Exact inventory8,308 completed parent chunks,00000..08307,342,619,493B,
+no `.part` files. AC/real LaCie/~378GiB free verified. Unchanged feature command resumes09:24,
+guard40155/worker40165, log ml/work/e59_features_20260910T092449.log. It revalidates retained
+chunks; early log confirms zero replay error and reuse, not duplicated inference of the pool.
+
+Operational plan80f8bff and code530513e add a separate bounded exact-guard-PID waiter.
+Observed waiter41371 starts after verifying the actual feature guard. Once that guard exits,
+full archive and both receipts must validate before exec handoff to the existing exclusive
+training runner. Waiting plus training fits within the original60min waiter budget. PID reuse,
+incomplete receipts or less than one remaining minute stop the handoff. A separate waiter lock
+prevents duplicate queued continuations; replacing its own process avoids an orphan supervisor.
+No training has started at this checkpoint. If another bounded resume is needed, inspect state
+first; never rerun completed science or weaken the budget to force a result.
+
+Full649-test suite passes (13.42s, one existing Starlette/httpx warning); two new fixtures cover
+PID identity/exit and remaining-budget accounting. Frozen feature/model science unchanged.
+No new source/weight download, ML dependency change, final scoring, serving update or push.
