@@ -1,0 +1,18 @@
+{
+  "contract_sha256": "ca8a293f3b03fc9336eefc74e32b289dc1639d6c0cd436d3a6417f5f62aaa308",
+  "cross_matches": [],
+  "download_sha256": "27b4a80050422b54dcd45f3f0db98916df2e03f5e444cdcb9ab0210c801fd076",
+  "internal_pairs": [],
+  "limitations": [
+    "Heuristic screen is not exhaustive semantic/scene deduplication.",
+    "One fixed RAW rendition can miss similarity to other edits.",
+    "Passing a 12-parent pilot proves neither detector quality nor camera coverage."
+  ],
+  "model_scores": 0,
+  "parents": 12,
+  "raw_exact_matches": [],
+  "reference_observations": 150883,
+  "screen_pass": true,
+  "state": "FiveK_pilot_blind_screen_complete",
+  "training_admitted": false
+}

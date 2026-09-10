@@ -4594,3 +4594,31 @@ categories, three lighting groups. V1 stops on filename-vs-stem licence schema m
 v2 exact-stem reconciliation admits all metadata, never image TRAIN eligibility. Both failures and
 correction hashes preserved. Two parser and four licence-reconciliation fixture cases pass. A
 12-parent decoder/overlap pilot is planned separately, not started and not detector evaluation.
+
+## 2026-09-10 — E56 RAW pilot outcome and E57 preregistration
+
+E56 pilot contract committed c9e484a before image GET, SHA
+`ca8a293f3b03fc9336eefc74e32b289dc1639d6c0cd436d3a6417f5f62aaa308`. Twelve parents, exactly two per
+publisher subject category, deterministic hash rank including unknown. Actual raw 122,074,000 B;
+derived PNG 166,400,845 B. Isolated rawpy 0.27.1/LibRaw 0.22.1/NumPy 2.5.1/Pillow 12.3.0;
+fixed full-resolution AHD, camera WB, sRGB primaries, gamma(2.4,12.92), no auto-bright, bright=1,
+clip highlights, 8-bit. See [rawpy parameters](https://letmaik.github.io/rawpy/api/rawpy.Params.html).
+This is a local RAW rendition, not native-camera JPEG or FiveK expert output. All twelve replay
+to exact RGB array equality, no new image fetch. Some highlight clipping persists; no post-hoc
+per-photo adjustments or exclusions. Shape/pixel hash validation passes.
+
+Frozen protected snapshot plus MNW/HDR+ gives 150,883 reference observations: zero cross matches
+under exact/raw/pixel and existing dHash<=4 +pHash<=4 screening; zero internal pairs. No inference
+on references, no model scores, no TRAIN admission. A one-rendering heuristic cannot guarantee
+all differently edited/cropped versions are found. No authenticity accuracy is measured here.
+Evidence `evidence/e56_fivek_pilot_{contract,download,audit}.json`. Six fixture cases plus real
+acquisition/decode/replay checks; full suite 626 passed, one pre-existing warning.
+
+E57 next hypothesis registered in PLAN before new image selection: 201 candidates from min(12,N)
+per each of 18 subject x lighting cells, score-blind filename hash. Subject/light are publisher
+annotations, not ideal coverage guarantees; retain small cells as 4/5, not artificial replication.
+New source FIT-only, unchanged three outer folds and inner CAL. Two fixed float64 heads per fold
+(native control and plus FiveK), C=.01/tol=1e-8/max_iter=1000/seed53; preserve all AI rows and total
+loss mass. Compare all unchanged gates and historical references with exact replay; no validation
+sweep, new reserve score or promotion. Freeze acquisition, feature and training contracts before
+their respective stages. This source supplement is not a reproduction of B-Free paired alignment.

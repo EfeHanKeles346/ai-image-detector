@@ -5717,3 +5717,36 @@ Verification for this slice: 620 Python tests pass in 12.14s, one existing Starl
 git diff --check passes. All acquisition/audit commands completed, no training or download child
 left running. Own verified changes and receipts committed locally; no GitHub push. The scheduled
 follow-up remains responsible for the next bounded pilot, not an unstarted background training job.
+
+### 2026-09-10 — E56 12-parent RAW pilot completed; E57 supplement preregistered
+
+AC/real LaCie/386 GiB free verified; no overlapping jobs. Isolated `ml/work/e56_decoder` installs
+only binary rawpy 0.27.1, NumPy 2.5.1 and Pillow 12.3.0, LibRaw runtime 0.22.1. pip check passes;
+the ML environment still has no rawpy and unchanged NumPy/Pillow. Installer report hashes and
+decoder/helper code are pinned. Official rawpy parameter documentation informed explicit colour,
+gamma, WB and brightness choices, not outcome-based adjustments.
+
+Commit c9e484a freezes 12 subjects-balanced identities, HEAD sizes/ETags/dates, 32 MiB/file and
+384 MiB total ceiling before image GET. Actual originals total 122,074,000 bytes; fixed local
+8-bit RGB PNGs total 166,400,845 bytes. As-shot WB/full-resolution AHD/sRGB primaries/gamma
+(2.4,12.92), no auto-bright, bright=1, highlight clip. Preserve all original DNG/licence bytes.
+Second offline decode of all twelve exactly reproduces saved RGB arrays and unchanged receipt;
+zero extra image transfer. No screenshot/thumbnail substitution, image selection by detector score,
+source-variable brightness tuning or change to frozen experiment code.
+
+Protected screening includes 150,883 observations (snapshot +MNW +HDR+): zero raw SHA, decoded
+exact/pixel/near-hash cross matches and zero internal pairs. This is heuristic, not complete scene
+or edited-variant deduplication. Two visual sanity checks show coherent photographs, but no label
+reclassification or exclusion. Two outputs have >20% white clipped pixels, consistent with visible
+bright sky in one inspected image; record as a rendition limitation, not a quality claim or filter.
+An ad-hoc file listing initially hit macOS `._` AppleDouble metadata; ignoring those sidecars fixes
+the inspection. Frozen pipeline uses exact named files and was unaffected.
+
+All 626 Python tests pass (12.50s, one existing Starlette/httpx warning), six new pilot fixtures;
+actual download/isolated decode/replay/overlap phases all exit 0. No fit, model score, serving change,
+final-reserve inference or TRAIN admission. Evidence: e56_fivek_pilot_contract/download/audit JSONs.
+
+Next E57 is preregistered: up to 201 subject x light-stratified FiveK parents, <=4 GiB original
+budget, protected screening, fixed decoder and existing AI replay. Six source-held-out fits compare
+stable float64 native control with the new REAL supplement under unchanged gates. Acquisition and
+training each require their own frozen contract; neither has started. No success promised.

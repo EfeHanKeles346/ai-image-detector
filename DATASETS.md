@@ -2098,3 +2098,18 @@ Pillow 12.3.0; binary wheel installation is separate from frozen ML dependencies
 sRGB primaries/gamma(2.4,12.92), full resolution, auto-bright off, brightness 1, highlight clipping,
 8-bit PNG. This is a fixed local rendition, not native camera JPEG or an expert's Lightroom output.
 All originals and derived pixels remain one parent and quarantined; no training or score yet.
+
+Pilot completion: all 12 official DNGs verified against pinned HTTP identity/size, local SHA-bound,
+122,074,000 B received; 166,400,845 B local PNG derivatives (not additional downloaded photographs).
+All 12 decodes reproduce identical RGB on replay. Licences retained beside originals. Protected
+overlap checks against 150,883 observations including MNW/HDR+ find zero matches/internal pairs;
+heuristic limitations remain. Quarantine/zero detector scores unchanged. Receipt
+`evidence/e56_fivek_pilot_download.json`; overlap `evidence/e56_fivek_pilot_audit.json`.
+
+E57 proposed acquisition, not yet selected/downloaded: min(12,N) per subject x light cell from
+frozen official index, expected 201 parents/18 cells, deterministic new salt `FIVEK_E57_TRAIN_V1|`.
+<=48 MiB each, <=4 GiB total original bodies, on external storage with bounded supervised runs.
+Reuse exact verified pilot bodies where selected; same fixed decoder. Exclude protected/internal
+matches without replacement, retain whole publisher as FIT-only research after admission. No new
+final source, modern-device claim, paid API, or licence expansion. Purpose is testing REAL content/
+lighting coverage while preserving existing AI replay, not assuming more data guarantees success.

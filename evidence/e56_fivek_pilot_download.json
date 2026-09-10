@@ -1,0 +1,10 @@
+{
+  "contract_sha256": "ca8a293f3b03fc9336eefc74e32b289dc1639d6c0cd436d3a6417f5f62aaa308",
+  "model_scores": 0,
+  "original_bytes": 122074000,
+  "parents": 12,
+  "png_bytes": 166400845,
+  "report_sha256": "27b4a80050422b54dcd45f3f0db98916df2e03f5e444cdcb9ab0210c801fd076",
+  "state": "FiveK_pilot_decoded_quarantine",
+  "training_admitted": false
+}

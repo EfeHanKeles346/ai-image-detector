@@ -5,7 +5,47 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E55 rejected; audit complete (2026-09-10)
+## Current outcome and next actions — E56 pilot complete; E57 registered (2026-09-10)
+
+E56's 12 DNGs complete: 122,074,000 original bytes +166,400,845 derived PNG bytes. All fixed
+decodes repeat with exact RGB equality; external reference screen (150,883 observations including
+MNW/HDR+) finds zero byte/canonical/near-hash matches and zero internal pairs. This is a passed
+engineering pilot, not detector accuracy or exhaustive deduplication; no model fitted or served.
+Current historical E55 rejection remains intact. Do not repeat completed E55/E56 jobs.
+
+### E57 next bounded acquisition and training hypothesis (before new selection/scores)
+
+Hypothesis: a small, independent REAL source with explicit content/light coverage may reduce
+held-out REAL errors without losing modern AI recall. This is a falsifiable supplement trial,
+not paired-AI alignment or proof that all previous errors came from data.
+
+1. From the pinned 5,000-row FiveK metadata, take min(12, cell size) from each subject x lighting
+   cell, hash-ranked using `FIVEK_E57_TRAIN_V1|` + exact filename. Expected 201 parents over all
+   18 cells; two cells have only four/five parents. Do not upsample those as independent examples.
+   Freeze selected identities and HEAD validators before image GET. <=48 MiB/parent, <=4 GiB total
+   original payload; real external disk, AC, >=20 GiB free, <=60-minute acquisition runs. If selected
+   resource violates cap/identity, report it without replacing a difficult or large row silently.
+   Reuse any exact pilot originals/PNGs only with their verified recipe and hashes; never redownload
+   completed verified bytes. Copy both research licences/attribution with the source.
+2. Preserve isolated E56 decoder/recipe and all frozen ML dependencies. Canonical and near-duplicate
+   screen against the pinned complete protected reference plus 400 reserve bodies; exclude both
+   endpoints of any internal pair and every cross-protected match, without replacement. Group all
+   renditions under one parent and entire FiveK publisher as FIT-only research, never CAL/validation
+   or final. Archive exclusions and actual count before feature extraction/training admission.
+3. Freeze DINOv2-S/3072-dimensional clean, assigned-transport and Q75 feature extraction exactly as
+   E54's admitted input recipe. One original parent stays one parent. No random augment/grey sweep.
+4. Register a distinct E57 training contract: three old source-held-out folds, two arms each —
+   stable float64 native baseline and identical baseline plus admitted FiveK FIT parents. Fixed
+   C=.01, lbfgs tol=1e-8/max_iter=1000, seed=53, two CPU threads; convergence warnings fail closed.
+   Keep all existing AI replay rows/views and class/source/parent balancing, 50/50 class mass and
+   original base FIT view-count total mass. No validation-guided fit/threshold sweep. Existing
+   inner CAL alone selects each cut, outer validation is unchanged; freeze code/inputs first.
+5. Require saved-artifact replay and all unchanged absolute/AI-preservation/REAL-improvement gates,
+   against both stable baseline and historical required references. Report all six fits, all source
+   losses and paired intervals, not just pooled gains. No external reserve or serving change until
+   prior gates pass. A failed supplement ends this hypothesis; no automatic enlargement or retuning.
+
+No E57 image selection, acquisition or training has started at this registration checkpoint.
 
 **03:48 pilot implementation registration:** use seed string `FIVEK_E56_PILOT_V1|` plus exact
 filename SHA-256 ranking, two per all six declared subjects. HEAD-pin size/ETag/Last-Modified
