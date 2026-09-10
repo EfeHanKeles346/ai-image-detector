@@ -7,6 +7,17 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — E55 rejected; audit complete (2026-09-10)
 
+**03:08 follow-up, before execution:** add a descriptive metadata-only coverage audit of the
+11,630 admitted E54 parents. Bind existing data/colour receipts and immutable code hash; count
+class support per publisher, geometry/colour strata per fold/role and available scene/device
+metadata. Mark absent content annotations unknown, never infer topics from filenames or invent
+matched REAL/AI pairs. Verify exact parent joins and no publisher crosses FIT/CAL/VALIDATION.
+No image reads, feature inference, model fit, new test scores or threshold tuning. Compare these
+coverage facts with primary B-Free documentation; its COCO origin overlaps a protected publisher
+in this project, so its training release is not automatically admissible. Evaluate FiveK as a
+research-only REAL candidate, but require fixed colour decoding, byte cap and overlap checks
+before any image transfer. No existing frozen helpers are edited.
+
 Numerical audit now completes: exact FIT features, labels, sources and parent order match in all
 three folds; collapsed weights differ by at most 2.23e-16. Fixed float64/tol=1e-8 duplicate fits
 agree on FIT scores within 2.24e-6. This supports numerical sensitivity of the old float32/default
