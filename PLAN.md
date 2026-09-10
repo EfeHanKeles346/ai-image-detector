@@ -18,6 +18,18 @@ in this project, so its training release is not automatically admissible. Evalua
 research-only REAL candidate, but require fixed colour decoding, byte cap and overlap checks
 before any image transfer. No existing frozen helpers are edited.
 
+Coverage result: 10/11 frozen publisher groups have only one class (9,270/11,630 parents,
+79.71%). Fold 0 has 9/5,314 monochrome REAL in FIT versus 229/1,250 in held-out RR. Missing
+topic annotations prevent claiming content matching; old E40 already tried embedding-cluster
+weights, so do not repeat that as a new method. B-Free's paired COCO training is scientifically
+relevant but not admitted under current whole-publisher protection. FiveK offers explicit subject,
+lighting and human tonal-edit metadata, not modern phones or paired AI. Next bounded acquisition:
+archive only the official FiveK index, both research licences and both filename licence lists,
+at most 12 MiB total /8 MiB per response on LaCie; zero image bodies. Parse candidate metadata,
+validate all 5,000 identities and unique licence assignments before selecting any pilot. Missing
+or ambiguous metadata blocks image acquisition, not a reason to guess. Future image pilot must
+be separately frozen (byte cap, deterministic strata, decoder, overlap, TRAIN-only designation).
+
 Numerical audit now completes: exact FIT features, labels, sources and parent order match in all
 three folds; collapsed weights differ by at most 2.23e-16. Fixed float64/tol=1e-8 duplicate fits
 agree on FIT scores within 2.24e-6. This supports numerical sensitivity of the old float32/default

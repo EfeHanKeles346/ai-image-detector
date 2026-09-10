@@ -2048,3 +2048,30 @@ MNW+HDR+ new image payload total is 653,835,579 bytes /400 parents; metadata is 
 Neither source was used to optimize E54. See `evidence/e54_hdrplus_{manifest,download,overlap}.json`
 and the accompanying overlap contract. The reproduced canonical reference snapshot is bound to
 the prior MNW audit, not an unversioned mutable cache of convenient negatives.
+
+### E56 coverage review and FiveK metadata-only acquisition plan — 2026-09-10
+
+Admitted inventory remains 11,630 TRAIN parents. Ten of eleven frozen publisher components contain
+only one class (9,270 parents); fold-0 FIT has 9/5,314 monochrome REAL versus 229/1,250 held-out
+RR REAL. Topic fields are absent in this normalized manifest; this does not mean the photos have
+no topics or that original source metadata cannot be recovered. No source label becomes a detector.
+Receipt: `evidence/e56_coverage_audit.json`. No new image body or model score for this audit.
+
+[B-Free's official training release](https://github.com/grip-unina/B-Free/tree/main/training_data)
+offers paired COCO/SD2.1 data, but the COCO publisher is already protected by DDA/Module 2 roles;
+do not silently admit that release. Its background-restored variants also mix real/edited regions,
+so they cannot automatically receive fully-generated Module 1 labels. Source/content matching is
+a useful research principle, not permission to recycle our tests. E40 already tried content-cluster
+weighting, so a repeat is not a novel fix.
+
+FiveK source review: official MIT-Adobe 2011 SLR photographs with subject/light/location/time
+annotations and human tonal adjustments. It may add processing/content diversity, but is not
+modern-phone evidence or a matched-AI dataset. Archive only its official index, two research
+licences and two filename-assignment lists (12 MiB total cap; 8 MiB/response) under actual LaCie
+`e56/fivek_metadata/`. Retain notices and citation; research-only, non-commercial, no endorsement.
+Exact licence assignment and complete 5,000-parent metadata are required. Zero images or model
+weights planned in this acquisition. Before any separate image pilot, freeze parent selection,
+byte cap, RAW/ProPhoto-to-sRGB processing, canonical overlap screening and TRAIN-only role.
+Sources: [FiveK](https://data.csail.mit.edu/graphics/fivek/),
+[Adobe licence](https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobe.txt),
+[Adobe/MIT licence](https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobeMIT.txt).

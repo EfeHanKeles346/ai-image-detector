@@ -1,0 +1,18 @@
+{
+  "code_sha256": "5652b494955e5a963c5606737dcb140a168eeb23f5eee92a771b4fa474219aa4",
+  "contract_sha256": "1aa4a1b352e797dd2824d8e223216a933c75aa7c207001c27b44aeef4562d835",
+  "expected_parents": 5000,
+  "image_downloads": 0,
+  "model_scores": 0,
+  "per_response_cap": 8388608,
+  "role": "source review; no parent admitted to TRAIN/CAL/test yet",
+  "state": "FiveK_metadata_only_frozen",
+  "total_cap": 12582912,
+  "urls": [
+    "https://data.csail.mit.edu/graphics/fivek/",
+    "https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobe.txt",
+    "https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobeMIT.txt",
+    "https://data.csail.mit.edu/graphics/fivek/legal/filesAdobe.txt",
+    "https://data.csail.mit.edu/graphics/fivek/legal/filesAdobeMIT.txt"
+  ]
+}
