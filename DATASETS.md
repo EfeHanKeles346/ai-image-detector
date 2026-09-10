@@ -2151,3 +2151,23 @@ views and three crops per parent, raw768-D CLIP vectors plus fixed1536-D mean/st
 Upstream parent/source/role boundaries unchanged; no E57 FiveK addition or protected reserve
 reuse. Contract evidence/e59_feature_contract.json binds source crop/teacher and encoder hashes.
 Full extraction starts06:22 and remains in progress at this checkpoint; no new download bytes.
+
+### E60 offline champion exposure/admission audit — 2026-09-10
+
+E59 was subsequently paused; its 9,599 completed parent chunks remain preserved. E60 uses
+only the already admitted E54 pool: 11,630 parents, 7,035 REAL and 4,595 AI, with 34,890 cached
+views. No source, model-weight or dependency downloads. All admitted AI parents enter the one
+registered correction; E57 FiveK and protected evaluation reserves are not added.
+
+Reconstructed E43 FIT contains 8,844 parents/19,648 views, including 3,803 AI. Of these, 4,278
+parents match current TRAIN with identical encoded-body hashes; 1,860 old AI are absent from
+current admission, including 360 now-protected E51 CAL. Missing historical rows are not restored.
+E54 fold validation contains 2,360/480/1,438 teacher-seen parents and is not clean validation
+for warm-started E43. The unused audited native pool has 10,508 parents after prior duplicate
+endpoint exclusion; only 2,385 AI (GPT Image1/Nano Banana) are outside current recorded groups,
+with no corresponding unseen REAL group. This does not establish a balanced group-disjoint
+fresh DEV in that pool. No global claim about every unindexed file on disk is made.
+
+E51 DEV remains consumed; E49 is consumed regression-only, never tuning/final evidence. E52,
+MNW/HDR+ and Module2 roles remain protected. Audit summary: `evidence/e60_audit.json`; detailed
+teacher membership, missing-parent reasons and input hashes reside in LaCie `e60/audit.json`.

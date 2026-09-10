@@ -1,5 +1,9 @@
 # Archived experiment scripts — frozen evidence
 
+`e60_audit_v1.py` is separately archived on 2026-09-10: an aborted pre-score engineering
+audit whose strict uppercase TRAIN check rejected inherited lowercase train metadata. It is
+preserved for the original contract hash, not a completed model experiment or executable restart.
+
 **Frozen 2026-08-18.** Each script here produced a finished, written-up result in
 [`../../EXPERIMENTS.md`](../../EXPERIMENTS.md) and will not be run again. They are kept so
 every number in the log and the internship report stays reproducible in principle, but they

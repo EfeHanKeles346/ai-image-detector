@@ -4783,3 +4783,78 @@ artifact SHA matches E49 binding. This remains a proposal requiring exact teache
 TRAIN-CAL-DEV protection audit and pre-fit hyperparameters. Warm-starting E43 does not permit
 calling overlapping source-fold validation unseen; retention losses do not prove no AI loss.
 No new download or experiment executed; scheduled continuation paused until user restarts.
+
+### 2026-09-10 — E49-C gate-count erratum during documentation review
+
+The earlier phrase **"FAIL 11/20"** means the overall experiment failed, but incorrectly
+suggests 11 failed checks. The saved `evidence/e49_final_result.json` has **11 passed / 20
+total, therefore 9 failed**: publisher-original passes 6/10 and social-Q75 passes 5/10.
+The overall FAIL, consumed evaluation status, scores and promotion restrictions are unchanged.
+This is a documentation correction from existing evidence, not a new metric opening or experiment.
+
+## E60 — Frozen E43 preservation: offline reference and role audit (registered 2026-09-10)
+
+User authorizes the champion-first plan with zero downloads. Stage 1 reconstructs the exact
+E43 FIT parent/source membership from pinned feature metadata, compares admitted E51/E54
+populations, checks modern protections and records possible local comparison populations.
+No detector fitting or new validation scoring is authorized by this audit registration itself.
+Freeze the resulting eligible data, one correction recipe and acceptance rules before any fit.
+Keep E43 and all historical contracts unchanged; do not resume E59 or open final reserves.
+
+Audit v1 stops before model scores on a case-sensitive TRAIN check. E54 contains 4,278 admitted
+lowercase `train` rows plus 7,352 uppercase `TRAIN` rows; all labels are integer 0/1. Audit v2
+normalizes role case, preserves population and all exclusions, and keeps the original v1 code
+and contract. This is an engineering correction before experiment fitting, not a relaxed split.
+
+Before audit-v2 freeze, inherited acquisition imports attempted Kaggle OAuth introspection
+(no dataset download; request timed out). Remove the import side effect from the E60 path,
+verify admission JSON/hash bindings directly, and deny network connections for new execution.
+
+**Audit-v2 completed after interruption:** E43 FIT8,844 parents (5,041 REAL/3,803 AI),19,648
+views. Current11,630-parent TRAIN retains4,278 teacher parents with identical encoded bodies;
+7,035 REAL/4,595 AI.1,860 teacher AI are absent, including360 now-protected CAL. E54 validation
+overlaps teacher FIT by2,360/480/1,438 parents. Of10,508 unused audited native parents,2,385
+outside current recorded groups are AI-only; no balanced fresh group-disjoint DEV in this pool.
+Evidence/e60_audit.json. Missing old rows are not restored without admission.
+
+**Single correction registration, before fit:** original E43 backbone/scaler/head and two cuts
+frozen. X=scaler_E43(features)/sqrt(3072), CPU float64 after original scaler transform;
+delta=2*tanh(X*w/2), no intercept, w=0.200 full-batch Adam steps, lr.02, betas.9/.999, eps1e-8,
+final step; L2 .01. All34,890 cached TRAIN views, including every4,595 admitted AI parent.
+Supervised BCE uses logits relative to fixed AI cut; class/source/parent weights, teacher-false-
+AI REAL views2x, re-normalize each class to.5. Retention penalty10/2 times weighted squared
+negative delta on teacher-correct AI. True labels remain supervision; penalty is not a guarantee
+on unseen AI. No sweep, validation early stop, threshold change or downloads; <=20min/two CPU threads.
+
+Require exact zero-initialization E43 scores and saved-correction replay. After candidate hash
+freeze, one consumed E49 regression uses unchanged4,000 observations/cuts, <=15min inference,
+batch16, network connections denied. Baseline replay<=5e-5 and zero decisions changed. Freeze
+raw scores before metrics. Existing20 absolute/selective gates plus REAL-FP reduction, pooled/
+source AI no-loss and four familywise paired source-cluster intervals (20,000 resamples, seed60,
+quantiles.00625/.99375). Consumed diagnosis only; no winner selection or fresh final/serving
+claim. Archive failure; no automatic second fit or retuning on the report.
+
+**FIT complete:**200 steps,9.12s, full11,630-parent/34,890-view pool and all4,595 AI parents.
+Candidate SHA582d6c4f020ce309c8e44a88383ef9d69c559773d6332694bd203e1132415bc5; original E43
+unchanged. Exact zero-init and saved-head replay errors0. Max observed TRAIN delta.171559;
+the analytic global bound remains2. TRAIN clean/Q75 REAL FP15.0675->14.8543% /13.8024->13.5039%;
+AI recall98.1066->98.0849% /97.3885->97.3232% (one/three new misses, zero AI rescues).
+Assigned-transport TRAIN also has one new AI miss. No validation quality claim from these rows.
+Final weights are frozen; no further optimizer steps or tuning based on E49.20 focused tests pass.
+
+**Consumed E49 regression complete — insufficient improvement, no promotion.** All4,000 views
+scored in183s, exact frozen E43 replay (max error0; zero binary/selective decision changes).
+Full raw score receipt is locked before metrics (`evidence/e60_regression_scores.json`).
+
+| Condition | E43 AI recall | E60 AI recall | E43 REAL FPR | E60 REAL FPR | REAL rescued/new errors | AI rescued/new errors |
+|---|---:|---:|---:|---:|---:|---:|
+| Publisher original |94.3%|94.3%|39.1%|39.0%|1/0|0/0|
+| Social Q75 |95.5%|95.5%|49.0%|48.8%|2/0|0/0|
+
+All supported AI sources preserve observed recall. REAL source-cluster familywise improvement
+intervals[-.004,0]/[-.008,0] include zero; AI intervals[0,0] are conditional on these consumed
+sources, not guarantees about unseen generators. Original/Q75 AUC.902425->.902086 /
+.868850->.868826; the change does not establish a better ranking. Existing20 absolute/selective
+gates still fail. Training and E49 results differ: the one/three TRAIN AI losses remain reported.
+Keep E43 as reference and do not promote E60 or retune its coefficients/bound/cuts using this
+report. No fresh independent DEV/final opened. Detailed results: `evidence/e60_regression.json`.

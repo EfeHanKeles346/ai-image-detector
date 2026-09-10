@@ -5,11 +5,27 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current priority — champion-first offline improvement; execution paused by user (2026-09-10)
+## Documentation working rule — reaffirmed by user (2026-09-10)
 
-The user's latest instruction supersedes all automatic resume commands below: plan now, apply
-after arrival at the office, NO new downloads. E59 feature extraction and queued training were
-gracefully stopped; scheduled heartbeat is PAUSED. Do not resume them without a new user start.
+After every development change, experiment and planning decision, update the relevant Markdown
+documents in the same work step before reporting completion. Keep current next actions here;
+append decisions, implementation/verification results and limitations to `HISTORY.md`; append
+experiment protocols, measured outcomes and failures to `ml/EXPERIMENTS.md`. Update `DATASETS.md`,
+`MODEL_CARD.md`, serving/artifact documentation and README when their facts change. Preserve
+historical entries and distinguish proposals, completed engineering checks and measured quality.
+The preceding request was a full-document/project review; the subsequent user instruction now
+authorizes continuing the champion-first plan without data downloads.
+
+The user also requests GitHub synchronization: commit and push completed, reviewed code,
+evidence and Markdown checkpoints to the configured origin, verify the remote result, and
+report any failure. Keep raw datasets/model weights outside git; never force-push over remote work.
+
+## Current priority — champion-first offline improvement; execution authorized (2026-09-10)
+
+The user now explicitly requests optimal continuation towards the existing goals with NO data
+downloads. Execute the champion-first audit and one bounded correction study below. E59 feature
+extraction and queued training remain parked; scheduled heartbeat remains PAUSED. This restart
+does not resume the superseded E59 route or authorize new source, weight or package downloads.
 Keep completed research/cache/history, do not delete or promote it. The lower source-fold
 scores are not a degraded overwrite of the good full model; nonetheless, experiment expansion
 displaced the user's priority and must stop being the default development route.
@@ -61,6 +77,52 @@ the single correction experiment -> bounded fit -> paired report. Reuse cached D
 zero source/weight/package/image-API downloads. E59/CLIP is parked as a later optional route,
 not an automatic dependency or the default starting point. The user's restart authorizes this
 plan, not the old queued E59 continuation. Keep planned versus measured results separate.
+
+### E60 completed checkpoint — correction insufficient; retain E43 (2026-09-10)
+
+The one registered fit and4,000-view consumed E49 comparison are COMPLETE. Do not repeat
+freeze/fit/score/report. Baseline reproduction error0; no binary/selective decision drift.
+E60 preserves observed E49 AI recall94.3/95.5% with zero new AI misses, but REAL FPR only
+changes39.1->39.0% /49.0->48.8% (one/two rescued REAL observations). Source-cluster improvement
+intervals include0; absolute/selective gates still fail. This is not an accepted improvement,
+fresh final or serving promotion. Keep E43 unchanged and archive the correction as research.
+
+Before any subsequent fit, define one new TRAIN-only hypothesis and a valid local evaluation
+population. The audited cached/native pool lacks balanced unseen recorded groups; do not
+recycle E49 to select a stronger correction, change the bound/L2/retention after its scores,
+or open MNW/HDR+/E52/Module2 as convenient DEV. Other already-local populations require a
+score-blind provenance/role/group audit before eligibility can be claimed. If none qualify,
+state the independent-evaluation limitation; no new downloads, automatic E59 restart or
+claim of v1 completion. All E60 processes are finished; scheduled heartbeat remains PAUSED.
+
+The following is the executed E60 recipe, retained here only as checkpoint context; full
+protocol/outcomes are in HISTORY and EXPERIMENTS.
+
+Audit v2 reproduces E43's8,844 parents/19,648 views. Current E54 TRAIN has7,035 REAL and
+4,595 AI; use every admitted AI parent.4,278 parents/encoded bodies match E43, while360 old
+AI parents are now protected E51 CAL and4,206 other old parents lack current admission.
+Do not restore those rows. E54 validation folds contain2,360/480/1,438 E43-seen parents.
+The10,508 unused audited native parents supply no unseen recorded REAL group; only2,385
+AI remain outside current recorded groups. No fresh balanced group-disjoint cached DEV in
+this audited pool. Keep E51 consumed DEV and E52/MNW/HDR+/Module2 protected.
+
+Freeze e60_run.py/e60_correction.py, then one CPU-float64 fit on all34,890 existing TRAIN
+views. Frozen E43 backbone/scaler/head; correction2*tanh(X*w/2), no intercept, w=0; X is
+E43-scaled features divided by sqrt(3072). Class/source/parent-balanced operating-cut BCE;
+false-positive REAL views2x, renormalized within class. Correct-AI negative-margin penalty10;
+L2 .01. Full-batch Adam200 steps, lr.02, betas.9/.999, eps1e-8, final step, two CPU threads,
+<=20min. Fixed AI/REAL cuts.07940196245908739/.011505939625203613. Exact zero and saved replay.
+
+After candidate hash freeze, one consumed E49 regression:4,000 views, batch16, <=15min
+inference, network connects denied, battery floor30%. E43 must reproduce old scores within
+5e-5 with zero binary/selective decision changes. Lock raw scores before metrics; report paired
+source-wise rescued/new errors,20 absolute/selective gates and AI no-loss guards with20,000
+source-cluster paired resamples (seed60, four familywise intervals). This is engineering and
+consumed regression evidence, not fresh final or serving promotion. If it fails, retain E43.
+
+Candidate SHA582d6c4f...415bc5; zero-init and saved-vector replay error0, unchanged E43.
+TRAIN clean/Q75 already had one/three new AI misses, despite no such misses on consumed E49;
+this distinction further prevents claiming universal AI retention from a penalty or one test.
 
 ### Historical E57–E59 execution checkpoints (not active instructions)
 

@@ -110,3 +110,14 @@ and pinned CF weights. The external gate then failed at 40.0% worst-device IPN F
 owner-gallery FP. Both heads remain ignored research evidence and must not enter the canonical
 registry or an official decision. The selected CF head may be loaded from the external data root
 by the local demo only as a hash-verified, non-voting `r1b_research` payload.
+
+### E60 offline correction — research only (2026-09-10)
+
+External `e60/correction.npz` stores a3,072-element additive-logit vector, bound to its frozen
+contract and original E43 SHA. Candidate SHA-256:
+`582d6c4f020ce309c8e44a88383ef9d69c559773d6332694bd203e1132415bc5`.
+It depends on unchanged `e43/e43_small_predev.joblib` with SHA
+`a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390`; it is not a standalone
+detector, registry replacement or serving promotion. Exact zero-init and saved-vector replay
+pass on TRAIN. Frozen recipe/results live in `evidence/e60_correction_contract.json` and
+`evidence/e60_fit.json`; any consumed E49 regression remains separate from independent final proof.

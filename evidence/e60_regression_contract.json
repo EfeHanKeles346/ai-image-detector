@@ -1,0 +1,21 @@
+{
+  "batch_views": 16,
+  "candidate_sha256": "582d6c4f020ce309c8e44a88383ef9d69c559773d6332694bd203e1132415bc5",
+  "code_sha256": "c11a8850a298c327214e85c9e45aa88dc64c42a8c91121614d6c862e9f85b413",
+  "contract_sha256": "e15e471dfe412e1372df8488f1cdab0e2d2e919b0c7a507f82b97d7b0713504e",
+  "correction_contract_sha256": "516deb5b4a9a2e29dc9233729246bafc72c9601a78e3c16b780eb248177f21a7",
+  "fit_result_sha256": "21112de2e87bab3d693de97168e509627ad0d2a57ee6b3209e88fd1365d23620",
+  "manifest": "/Volumes/LaCie/pixelproof-datasets/e49/final/manifest_unscored.json",
+  "manifest_sha256": "9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909",
+  "max_seconds": 900,
+  "observations": 4000,
+  "old_scores": "/Volumes/LaCie/pixelproof-datasets/e49/final/generalist_scores.jsonl",
+  "old_scores_sha256": "249f005c83acbc65ac987c9fdeea91a9a3c7dfc4a388fdd4e20a436bc53610a8",
+  "parents": 2000,
+  "purpose": "Single consumed regression diagnosis; no selection, refit, threshold change, final or serving promotion.",
+  "reference_binary_and_selective_decision_changes": 0,
+  "reference_max_score_error": 5e-05,
+  "report_intervals": "20,000 paired source-cluster resamples stratified by label; Bonferroni 4 primary deltas, quantiles .00625/.99375, seed60. Conditional on these 16 sources; not new-publisher certification.",
+  "source_downloads": 0,
+  "state": "E60_consumed_E49_regression_frozen_before_scoring"
+}

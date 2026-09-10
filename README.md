@@ -4,6 +4,12 @@ PixelProof is a research system that looks for evidence consistent with AI gener
 official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
 It never certifies that an image is real.
 
+**Research checkpoint (2026-09-10):** the offline E60 correction to frozen E43-S preserves
+observed AI recall on consumed E49, but reduces REAL false alarms by only0.1/0.2 percentage
+points and fails acceptance. E43 remains the research reference; served E20/CF-ViT/optional
+R1b are unchanged. E59 remains parked. See [current plan](PLAN.md), [model card](MODEL_CARD.md)
+and [experiment log](ml/EXPERIMENTS.md) for exact results and evaluation limitations.
+
 ## Current scientific contract (2026-08-26)
 
 The primary API, CLI and web-demo path is now the project-owned E20 ResNet-18 checkpoint

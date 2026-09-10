@@ -1,0 +1,668 @@
+{
+  "all_admitted_ai_parents_used": 4595,
+  "candidate_sha256": "582d6c4f020ce309c8e44a88383ef9d69c559773d6332694bd203e1132415bc5",
+  "contract_sha256": "516deb5b4a9a2e29dc9233729246bafc72c9601a78e3c16b780eb248177f21a7",
+  "independent_quality_claim": false,
+  "max_absolute_correction": 0.17155932110504113,
+  "parents": 11630,
+  "reference_sha256_after_fit": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "saved_replay_max_score_error": 0.0,
+  "seconds": 9.116817957954481,
+  "serving_changed": false,
+  "source_downloads": 0,
+  "state": "E60_bounded_TRAIN_engineering_fit_complete",
+  "training_comparisons": {
+    "assigned_transport": {
+      "ai_new_errors": 1,
+      "ai_rescued": 0,
+      "by_source": {
+        "0:SCIMD-17": {
+          "new_ai_minus_old": -0.008235294117647063,
+          "new_ai_rate": 0.13470588235294118,
+          "old_ai_rate": 0.14294117647058824,
+          "parents_or_views": 1700
+        },
+        "0:e32:csafe-mcsidb-iphone14": {
+          "new_ai_minus_old": -0.012500000000000011,
+          "new_ai_rate": 0.0875,
+          "old_ai_rate": 0.1,
+          "parents_or_views": 160
+        },
+        "0:e32:csafe-mcsidb-s21": {
+          "new_ai_minus_old": -0.0008620689655172362,
+          "new_ai_rate": 0.039655172413793106,
+          "old_ai_rate": 0.04051724137931034,
+          "parents_or_views": 1160
+        },
+        "0:e32:forchheim-fodb": {
+          "new_ai_minus_old": -0.0017331022530329282,
+          "new_ai_rate": 0.05199306759098787,
+          "old_ai_rate": 0.053726169844020795,
+          "parents_or_views": 1154
+        },
+        "0:e32:vision-base-native": {
+          "new_ai_minus_old": -0.0017543859649122723,
+          "new_ai_rate": 0.06754385964912281,
+          "old_ai_rate": 0.06929824561403508,
+          "parents_or_views": 1140
+        },
+        "0:e36:device_001": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.01,
+          "old_ai_rate": 0.01,
+          "parents_or_views": 100
+        },
+        "0:e36:device_002": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.01,
+          "old_ai_rate": 0.01,
+          "parents_or_views": 100
+        },
+        "0:e36:device_003": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.04,
+          "old_ai_rate": 0.04,
+          "parents_or_views": 100
+        },
+        "0:e36:device_005": {
+          "new_ai_minus_old": -0.01,
+          "new_ai_rate": 0.01,
+          "old_ai_rate": 0.02,
+          "parents_or_views": 100
+        },
+        "0:e36:device_009": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.07042253521126761,
+          "old_ai_rate": 0.07042253521126761,
+          "parents_or_views": 71
+        },
+        "0:rr:rrdataset_real_pool": {
+          "new_ai_minus_old": -0.0040000000000000036,
+          "new_ai_rate": 0.536,
+          "old_ai_rate": 0.54,
+          "parents_or_views": 1250
+        },
+        "1:e32:communityforensics-ai-local": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.984182776801406,
+          "old_ai_rate": 0.984182776801406,
+          "parents_or_views": 569
+        },
+        "1:e32:flux2-klein-9b": {
+          "new_ai_minus_old": -0.0017574692442882123,
+          "new_ai_rate": 0.9402460456942003,
+          "old_ai_rate": 0.9420035149384886,
+          "parents_or_views": 569
+        },
+        "1:e32:gpt-image-1": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9209138840070299,
+          "old_ai_rate": 0.9209138840070299,
+          "parents_or_views": 569
+        },
+        "1:e32:nano-banana-local": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9876977152899824,
+          "old_ai_rate": 0.9876977152899824,
+          "parents_or_views": 569
+        },
+        "1:e32:nano-banana-pro-ash-local": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.99375,
+          "old_ai_rate": 0.99375,
+          "parents_or_views": 160
+        },
+        "1:e32:qwen-image-2512": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9964850615114236,
+          "old_ai_rate": 0.9964850615114236,
+          "parents_or_views": 569
+        },
+        "1:e36:FLUX.2_max": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:GLM-Image": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:Qwen-Image-2.0-pro": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:Seedream-5.0": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:gpt-image-2": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:nano-banana-2.0": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:rr:culture_and_religion": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 105
+        },
+        "1:rr:everyday_life": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9847494553376906,
+          "old_ai_rate": 0.9847494553376906,
+          "parents_or_views": 459
+        },
+        "1:rr:labor_and_production": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 114
+        },
+        "1:rr:medical_and_public_health": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 102
+        },
+        "1:rr:natural_disasters_and_accidents": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 113
+        },
+        "1:rr:political_and_social_events": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 93
+        },
+        "1:rr:war_and_conflict": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 124
+        }
+      },
+      "new": {
+        "ai_recall": 0.9771490750816104,
+        "auc": 0.9857981350823992,
+        "balanced_accuracy": 0.9098254259558727,
+        "covered_accuracy": 0.8918658442559754,
+        "real_false_ai": 0.15749822316986495,
+        "uncertain_rate": 0.10782459157351677
+      },
+      "old": {
+        "ai_recall": 0.977366702937976,
+        "auc": 0.9856237079796109,
+        "balanced_accuracy": 0.9080152633382133,
+        "covered_accuracy": 0.8889640510243525,
+        "real_false_ai": 0.1613361762615494,
+        "uncertain_rate": 0.11023215821152192
+      },
+      "real_new_errors": 1,
+      "real_rescued": 28
+    },
+    "clean": {
+      "ai_new_errors": 1,
+      "ai_rescued": 0,
+      "by_source": {
+        "0:SCIMD-17": {
+          "new_ai_minus_old": -0.006470588235294117,
+          "new_ai_rate": 0.12764705882352942,
+          "old_ai_rate": 0.13411764705882354,
+          "parents_or_views": 1700
+        },
+        "0:e32:csafe-mcsidb-iphone14": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.08125,
+          "old_ai_rate": 0.08125,
+          "parents_or_views": 160
+        },
+        "0:e32:csafe-mcsidb-s21": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.04051724137931034,
+          "old_ai_rate": 0.04051724137931034,
+          "parents_or_views": 1160
+        },
+        "0:e32:forchheim-fodb": {
+          "new_ai_minus_old": -0.000866551126516471,
+          "new_ai_rate": 0.05632582322357019,
+          "old_ai_rate": 0.05719237435008666,
+          "parents_or_views": 1154
+        },
+        "0:e32:vision-base-native": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.05,
+          "old_ai_rate": 0.05,
+          "parents_or_views": 1140
+        },
+        "0:e36:device_001": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.02,
+          "old_ai_rate": 0.02,
+          "parents_or_views": 100
+        },
+        "0:e36:device_002": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.0,
+          "old_ai_rate": 0.0,
+          "parents_or_views": 100
+        },
+        "0:e36:device_003": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.03,
+          "old_ai_rate": 0.03,
+          "parents_or_views": 100
+        },
+        "0:e36:device_005": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.01,
+          "old_ai_rate": 0.01,
+          "parents_or_views": 100
+        },
+        "0:e36:device_009": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.028169014084507043,
+          "old_ai_rate": 0.028169014084507043,
+          "parents_or_views": 71
+        },
+        "0:rr:rrdataset_real_pool": {
+          "new_ai_minus_old": -0.0024000000000000687,
+          "new_ai_rate": 0.5104,
+          "old_ai_rate": 0.5128,
+          "parents_or_views": 1250
+        },
+        "1:e32:communityforensics-ai-local": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9859402460456942,
+          "old_ai_rate": 0.9859402460456942,
+          "parents_or_views": 569
+        },
+        "1:e32:flux2-klein-9b": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9507908611599297,
+          "old_ai_rate": 0.9507908611599297,
+          "parents_or_views": 569
+        },
+        "1:e32:gpt-image-1": {
+          "new_ai_minus_old": -0.0017574692442882123,
+          "new_ai_rate": 0.9261862917398945,
+          "old_ai_rate": 0.9279437609841827,
+          "parents_or_views": 569
+        },
+        "1:e32:nano-banana-local": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9982425307557118,
+          "old_ai_rate": 0.9982425307557118,
+          "parents_or_views": 569
+        },
+        "1:e32:nano-banana-pro-ash-local": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.99375,
+          "old_ai_rate": 0.99375,
+          "parents_or_views": 160
+        },
+        "1:e32:qwen-image-2512": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9947275922671354,
+          "old_ai_rate": 0.9947275922671354,
+          "parents_or_views": 569
+        },
+        "1:e36:FLUX.2_max": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:GLM-Image": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:Qwen-Image-2.0-pro": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:Seedream-5.0": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:gpt-image-2": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:nano-banana-2.0": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:rr:culture_and_religion": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 105
+        },
+        "1:rr:everyday_life": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9891067538126361,
+          "old_ai_rate": 0.9891067538126361,
+          "parents_or_views": 459
+        },
+        "1:rr:labor_and_production": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 114
+        },
+        "1:rr:medical_and_public_health": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 102
+        },
+        "1:rr:natural_disasters_and_accidents": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 113
+        },
+        "1:rr:political_and_social_events": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 93
+        },
+        "1:rr:war_and_conflict": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 124
+        }
+      },
+      "new": {
+        "ai_recall": 0.9808487486398259,
+        "auc": 0.9880691366732326,
+        "balanced_accuracy": 0.916152874675279,
+        "covered_accuracy": 0.8975295587811208,
+        "real_false_ai": 0.14854299928926795,
+        "uncertain_rate": 0.1055030094582975
+      },
+      "old": {
+        "ai_recall": 0.9810663764961916,
+        "auc": 0.9879057997746385,
+        "balanced_accuracy": 0.9151955905224384,
+        "covered_accuracy": 0.8959976909755628,
+        "real_false_ai": 0.15067519545131486,
+        "uncertain_rate": 0.10627687016337059
+      },
+      "real_new_errors": 0,
+      "real_rescued": 15
+    },
+    "q75": {
+      "ai_new_errors": 3,
+      "ai_rescued": 0,
+      "by_source": {
+        "0:SCIMD-17": {
+          "new_ai_minus_old": -0.007058823529411756,
+          "new_ai_rate": 0.12588235294117647,
+          "old_ai_rate": 0.13294117647058823,
+          "parents_or_views": 1700
+        },
+        "0:e32:csafe-mcsidb-iphone14": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.06875,
+          "old_ai_rate": 0.06875,
+          "parents_or_views": 160
+        },
+        "0:e32:csafe-mcsidb-s21": {
+          "new_ai_minus_old": -0.0017241379310344827,
+          "new_ai_rate": 0.03017241379310345,
+          "old_ai_rate": 0.03189655172413793,
+          "parents_or_views": 1160
+        },
+        "0:e32:forchheim-fodb": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.05025996533795494,
+          "old_ai_rate": 0.05025996533795494,
+          "parents_or_views": 1154
+        },
+        "0:e32:vision-base-native": {
+          "new_ai_minus_old": -0.0035087719298245584,
+          "new_ai_rate": 0.03859649122807018,
+          "old_ai_rate": 0.042105263157894736,
+          "parents_or_views": 1140
+        },
+        "0:e36:device_001": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.01,
+          "old_ai_rate": 0.01,
+          "parents_or_views": 100
+        },
+        "0:e36:device_002": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.0,
+          "old_ai_rate": 0.0,
+          "parents_or_views": 100
+        },
+        "0:e36:device_003": {
+          "new_ai_minus_old": -0.01,
+          "new_ai_rate": 0.01,
+          "old_ai_rate": 0.02,
+          "parents_or_views": 100
+        },
+        "0:e36:device_005": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.0,
+          "old_ai_rate": 0.0,
+          "parents_or_views": 100
+        },
+        "0:e36:device_009": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.014084507042253521,
+          "old_ai_rate": 0.014084507042253521,
+          "parents_or_views": 71
+        },
+        "0:rr:rrdataset_real_pool": {
+          "new_ai_minus_old": -0.0015999999999999903,
+          "new_ai_rate": 0.468,
+          "old_ai_rate": 0.4696,
+          "parents_or_views": 1250
+        },
+        "1:e32:communityforensics-ai-local": {
+          "new_ai_minus_old": -0.0017574692442882123,
+          "new_ai_rate": 0.9789103690685413,
+          "old_ai_rate": 0.9806678383128296,
+          "parents_or_views": 569
+        },
+        "1:e32:flux2-klein-9b": {
+          "new_ai_minus_old": -0.0017574692442882123,
+          "new_ai_rate": 0.9314586994727593,
+          "old_ai_rate": 0.9332161687170475,
+          "parents_or_views": 569
+        },
+        "1:e32:gpt-image-1": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9173989455184535,
+          "old_ai_rate": 0.9173989455184535,
+          "parents_or_views": 569
+        },
+        "1:e32:nano-banana-local": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9894551845342706,
+          "old_ai_rate": 0.9894551845342706,
+          "parents_or_views": 569
+        },
+        "1:e32:nano-banana-pro-ash-local": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.99375,
+          "old_ai_rate": 0.99375,
+          "parents_or_views": 160
+        },
+        "1:e32:qwen-image-2512": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9929701230228472,
+          "old_ai_rate": 0.9929701230228472,
+          "parents_or_views": 569
+        },
+        "1:e36:FLUX.2_max": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:GLM-Image": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:Qwen-Image-2.0-pro": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:Seedream-5.0": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:gpt-image-2": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:e36:nano-banana-2.0": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 80
+        },
+        "1:rr:culture_and_religion": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 105
+        },
+        "1:rr:everyday_life": {
+          "new_ai_minus_old": -0.002178649237472685,
+          "new_ai_rate": 0.9694989106753813,
+          "old_ai_rate": 0.971677559912854,
+          "parents_or_views": 459
+        },
+        "1:rr:labor_and_production": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 114
+        },
+        "1:rr:medical_and_public_health": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 102
+        },
+        "1:rr:natural_disasters_and_accidents": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 113
+        },
+        "1:rr:political_and_social_events": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 93
+        },
+        "1:rr:war_and_conflict": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 1.0,
+          "old_ai_rate": 1.0,
+          "parents_or_views": 124
+        }
+      },
+      "new": {
+        "ai_recall": 0.9732317736670294,
+        "auc": 0.9848535342872146,
+        "balanced_accuracy": 0.9190963417020293,
+        "covered_accuracy": 0.9056838876641427,
+        "real_false_ai": 0.13503909026297087,
+        "uncertain_rate": 0.10292347377472055
+      },
+      "old": {
+        "ai_recall": 0.9738846572361263,
+        "auc": 0.9846566947633975,
+        "balanced_accuracy": 0.9179302461731449,
+        "covered_accuracy": 0.9036156133115949,
+        "real_false_ai": 0.13802416488983654,
+        "uncertain_rate": 0.10343938091143594
+      },
+      "real_new_errors": 0,
+      "real_rescued": 21
+    }
+  },
+  "training_trace": [
+    {
+      "step": 1,
+      "training_objective_before_step": 0.20100397509731277
+    },
+    {
+      "step": 25,
+      "training_objective_before_step": 0.20897444094798404
+    },
+    {
+      "step": 50,
+      "training_objective_before_step": 0.20003694291678248
+    },
+    {
+      "step": 75,
+      "training_objective_before_step": 0.19959520520385649
+    },
+    {
+      "step": 100,
+      "training_objective_before_step": 0.19955866810571982
+    },
+    {
+      "step": 125,
+      "training_objective_before_step": 0.19955459632799133
+    },
+    {
+      "step": 150,
+      "training_objective_before_step": 0.19955433074557927
+    },
+    {
+      "step": 175,
+      "training_objective_before_step": 0.19955430803860352
+    },
+    {
+      "step": 200,
+      "training_objective_before_step": 0.1995543065448032
+    }
+  ],
+  "views": 34890,
+  "zero_initialization_max_score_error": 0.0
+}

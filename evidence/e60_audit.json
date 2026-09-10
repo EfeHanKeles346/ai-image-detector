@@ -1,0 +1,165 @@
+{
+  "admitted_ai_replay_parents": 4595,
+  "admitted_real_parents": 7035,
+  "contract_sha256": "eca3688fb457ba458e9e3f9723c0b102b71d31364dcc0c32f42763de3d248f3b",
+  "e54_validation_teacher_seen_counts": [
+    2360,
+    480,
+    1438
+  ],
+  "evaluation": {
+    "fresh_balanced_group_disjoint_cached_dev": false,
+    "permitted_next": "One bounded TRAIN engineering correction. Consumed E49 can only be a preregistered regression diagnosis after candidate freeze.",
+    "reason": "E54 source folds consumed and overlap teacher FIT; E51 DEV consumed; unused native recorded groups supply no REAL; E52/MNW/HDR+/Module2 protected."
+  },
+  "image_inference": 0,
+  "limitations": [
+    "Admission is inherited from bound audits, not a new exhaustive semantic duplicate screen.",
+    "All eligible replay means every AI parent in the admitted 11,630-parent pool; remaining unadmitted native candidates and historical protected parents are not silently included.",
+    "No independent quality or serving-promotion claim is available from this audit."
+  ],
+  "populations": {
+    "E51": {
+      "labels": {
+        "0": 4035,
+        "1": 1943
+      },
+      "parents": 5978,
+      "teacher_missing_by_label": {
+        "0": 2706,
+        "1": 1860
+      },
+      "teacher_missing_by_reason": {
+        "outside_current_admission_do_not_restore_historical_roles": 4206,
+        "protected_E51_CAL": 360
+      },
+      "teacher_shared": 4278,
+      "teacher_shared_ai": 1943
+    },
+    "E54": {
+      "labels": {
+        "0": 7035,
+        "1": 4595
+      },
+      "parents": 11630,
+      "teacher_missing_by_label": {
+        "0": 2706,
+        "1": 1860
+      },
+      "teacher_missing_by_reason": {
+        "outside_current_admission_do_not_restore_historical_roles": 4206,
+        "protected_E51_CAL": 360
+      },
+      "teacher_shared": 4278,
+      "teacher_shared_ai": 1943
+    }
+  },
+  "reference_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "report_sha256": "f2866b54d695bdfa9cd77c71b5b26bd5164843aa8b53382f401f72eacfda8abe",
+  "shared_encoded_body_parity": 4278,
+  "source_downloads": 0,
+  "state": "E60_exposure_audit_complete_no_fit",
+  "teacher_fit_parents": 8844,
+  "teacher_fit_views": 19648,
+  "teacher_labels": {
+    "0": 5041,
+    "1": 3803
+  },
+  "teacher_source_counts": {
+    "culture_and_religion": 140,
+    "e32:communityforensics-ai-local": 89,
+    "e32:csafe-mcsidb-iphone14": 160,
+    "e32:csafe-mcsidb-s21": 160,
+    "e32:flux2-klein-9b": 89,
+    "e32:forchheim-fodb": 154,
+    "e32:gpt-image-1": 89,
+    "e32:nano-banana-local": 89,
+    "e32:nano-banana-pro-ash-local": 8,
+    "e32:qwen-image-2512": 89,
+    "e32:vision-base-native": 140,
+    "e36:FLUX.2-pro": 40,
+    "e36:FLUX.2_max": 100,
+    "e36:GLM-Image": 100,
+    "e36:GPT-Image-1.5": 40,
+    "e36:HunyuanImage-3.0": 40,
+    "e36:Imagen-4.0-Ultra": 40,
+    "e36:Qwen-Image-2.0-pro": 100,
+    "e36:Seedream-4.5": 40,
+    "e36:Seedream-5.0": 100,
+    "e36:device_001": 100,
+    "e36:device_002": 100,
+    "e36:device_003": 100,
+    "e36:device_004": 100,
+    "e36:device_005": 100,
+    "e36:device_006": 100,
+    "e36:device_007": 100,
+    "e36:device_008": 100,
+    "e36:device_009": 71,
+    "e36:gpt-image-2": 100,
+    "e36:nano-banana-2.0": 100,
+    "e36:nano-banana-pro": 40,
+    "e39:Adobe Firefly Image 5": 40,
+    "e39:D14_Apple_iPhone13mini": 40,
+    "e39:D27_DOOGEE_S96Pro": 40,
+    "e39:D34_Google_Pixel5": 40,
+    "e39:D43_OnePlus_8T": 40,
+    "e39:Gemini 3 Pro Image": 40,
+    "e39:HiDream I1 Dev": 40,
+    "e39:Ideogram 3": 40,
+    "e39:Midjourney v7": 40,
+    "e39:Reve Image 1.0": 40,
+    "e39:Z Image Turbo": 40,
+    "everyday_life": 140,
+    "ipn:huawei-p20-lite": 80,
+    "ipn:huawei-y9-2019": 80,
+    "ipn:iphone-se-2020-1": 80,
+    "ipn:iphone-se-2020-2": 80,
+    "ipn:iphone-xr": 80,
+    "ipn:lg-l65": 80,
+    "ipn:motorola-g-play": 80,
+    "ipn:motorola-g20": 80,
+    "ipn:motorola-g4-plus": 80,
+    "ipn:samsung-galaxy-a01": 80,
+    "ipn:samsung-galaxy-note9": 80,
+    "ipn:sony-xperia-m4": 80,
+    "labor_and_production": 140,
+    "medical_and_public_health": 140,
+    "natural_disasters_and_accidents": 140,
+    "owner_gallery": 206,
+    "political_and_social_events": 140,
+    "rr:culture_and_religion": 125,
+    "rr:everyday_life": 479,
+    "rr:labor_and_production": 134,
+    "rr:medical_and_public_health": 122,
+    "rr:natural_disasters_and_accidents": 133,
+    "rr:political_and_social_events": 113,
+    "rr:rrdataset_real_pool": 1250,
+    "rr:war_and_conflict": 144,
+    "rrdataset_real_pool": 980,
+    "war_and_conflict": 140
+  },
+  "training_authorized_by_this_report": false,
+  "unused_native_audit": {
+    "balanced_group_disjoint_development_available": false,
+    "limitation": "Unused parents are not a fresh publisher test. No new role admission; single-image groups do not establish unknown prompt independence.",
+    "unused_parents": 10508,
+    "unused_recorded_group_labels": {
+      "ai": 2385
+    },
+    "unused_recorded_group_parents": 2385,
+    "unused_recorded_group_sources": {
+      "gpt-image-1": 1192,
+      "nano-banana-local": 1193
+    },
+    "unused_sources": {
+      "communityforensics-ai-local": 1192,
+      "csafe-mcsidb-s21": 1797,
+      "flux2-klein-9b": 1168,
+      "forchheim-fodb": 1368,
+      "gpt-image-1": 1192,
+      "nano-banana-local": 1193,
+      "qwen-image-2512": 1197,
+      "vision-base-native": 1401
+    }
+  }
+}

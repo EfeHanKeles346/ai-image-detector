@@ -5935,3 +5935,84 @@ new architecture/weight/data download or fit is authorized in this turn. E43's p
 invalidates naive reuse as a clean OOF comparator on rows it trained on; fresh eligible local
 development must be checked before quality claims. Cannot recycle final/Module2/reserves or
 guarantee AI retention through a penalty alone. Historical E59 work is parked, not erased.
+
+### 2026-09-10 — Full documentation review and current-state handoff
+
+Read all 19 project-owned Markdown files in full (dependency documentation excluded), then
+inspected frontend request/result contracts, serving/model/input code, E43 feature/head code,
+E51/E59 implementation paths and saved evaluation evidence. User reaffirms that every development,
+experiment and planning change must update the relevant Markdown in the same work step; recorded
+this standing rule in PLAN. This review does not authorize resuming the paused experiments.
+
+Read-only checks confirm the E43-S artifact remains 87,916B with SHA
+`a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390`.
+The existing localhost:8799 health endpoint reports ready/MPS/demo, canonical E20 ready,
+CF-ViT as the only loaded verdict arm, R1b research ready and no load errors. This is runtime
+availability, not fresh inference or accuracy validation; E43 is not the served model.
+No E59 worker/trainer is running; saved heartbeat status is PAUSED. External E59 inventory
+contains 9,599 payload NPZ chunks totaling 399,641,982B, plus 9,599 macOS AppleDouble sidecars
+totaling 39,317,504B. Sidecars are not additional parents. No partial files, complete feature
+archive, feature completion receipt or model contract exists. Inventory is not chunk-content
+revalidation. No training, extraction, new image scoring, downloads or test suite was run.
+
+Documentation erratum: the earlier E49-C wording "failed 11/20 gates" reverses the passed
+count. `evidence/e49_final_result.json` records 11 passed and 9 failed checks (original 6/10
+passed; Q75 5/10 passed). The overall FAIL decision and all underlying scores remain unchanged.
+Append the same correction to the scientific log; preserve the original historical wording.
+`evidence/e51_e49_regression.json` confirms E51-A's REAL-FP reduction also loses AI recall
+on the same consumed E49 parents; it does not establish a champion-preserving improvement.
+
+### 2026-09-10 — User authorizes offline champion-first execution
+
+User requests optimal continuation towards the goals without data downloads. PLAN is active
+for the frozen E43 audit and one bounded correction experiment; E59 and the scheduled heartbeat
+remain parked. No source, weight or package downloads. Begin E60 with pinned teacher exposure,
+local admission and evaluation-role audits before fitting or selecting any correction recipe.
+
+E60 audit implementation has three passing role/exposure fixtures. Initial v1 stopped before
+scores or fitting because it required uppercase TRAIN, while 4,278 inherited admitted rows
+use lowercase train. Metadata inspection confirms identical TRAIN meaning and integer 0/1
+labels; normalize case only, with no membership or role reassignment. Preserve v1 code in
+`ml/experiments/archive/e60_audit_v1.py` and its contract/evidence; register audit v2 separately.
+
+Before v2 could freeze, an inherited `e54_data` import reached Kaggle's import-time OAuth
+introspection and timed out. No data download or training occurred; stopped the other owned
+audit invocation. Removed that import chain in favour of explicit pinned admission JSON/hash
+checks. v2 is still pre-freeze. New execution will deny network connects at process startup.
+
+After the user's connectivity interruption, no E60/E59 worker remained. Audit-v2 contract
+had completed; resumed analysis without repeating freeze. Audit completes with zero inference
+or downloads:8,844 E43 FIT parents/19,648 views;4,278 shared current TRAIN identities and encoded
+bodies. Current pool7,035 REAL/4,595 AI. Missing old AI include360 protected CAL; other old
+unadmitted rows stay excluded. The inspected unused-native pool has no balanced unseen-recorded-
+group DEV. Six audit/correction fixtures pass, including finite-difference gradient, exact
+saturated zero-output parity and correction bound. Register one fixed CPU correction and
+a later consumed E49 diagnosis in PLAN/EXPERIMENTS; no quality result yet.
+
+E60 fixed200-step CPU fit completes in9.12s on all11,630 parents/34,890 views. Candidate
+SHA582d6c4f020ce309c8e44a88383ef9d69c559773d6332694bd203e1132415bc5; E43 SHA unchanged.
+Zero-init and saved-artifact replay errors are exactly0. Largest TRAIN logit correction is.17156.
+TRAIN clean/Q75 REAL FP falls15.0675->14.8543% /13.8024->13.5039%, while AI recall loses
+one/three images. These are fitting diagnostics, not held-out quality. Keep all losses visible.
+Twenty focused E60, fixed-evaluation and training-weight tests pass. Proceed only to the
+preregistered frozen-candidate E49 consumed regression; no refit or cut selection.
+
+E60 consumed E49 scoring completes all4,000 views in183s with exact E43 score reproduction
+(maximum error0 and zero binary/selective decision changes); raw scores frozen before metrics.
+Original/Q75 AI recall remains94.3/95.5%, zero new AI misses/rescues across all six generators.
+REAL FPR39.1->39.0% /49.0->48.8%: one/two rescued REAL observations, zero new REAL errors.
+The four familywise source-cluster delta intervals are REAL[-.004,0]/[-.008,0] and AI[0,0]/[0,0].
+REAL improvement is not established; the20 absolute/selective checks still fail overall.
+E60 is insufficient, not a promoted successor. Research candidate and complete evidence are
+retained; E43 artifact and serving code/registry unchanged. No protected final reserves opened,
+no source/weight/package downloads, no automatic E59 or heartbeat restart.20 focused tests pass;
+documentation changes pass git diff --check. PLAN records the next evaluation eligibility
+requirement and forbids retuning on this consumed regression. User's v1 quality goal is not achieved.
+
+### 2026-09-10 — GitHub synchronization and literature-guided continuation requested
+
+User explicitly requests GitHub pushes, renewed primary-source web research and continued
+REAL false-positive reduction without sacrificing AI recall. No new data may be downloaded
+now; record suitable future acquisitions in PLAN for home, with evaluation/optimization later.
+Revisit image-structure/forensics notes and distinguish historical heuristics from validated
+current evidence. Prepare the completed E60 checkpoint for commit/push before the next study.

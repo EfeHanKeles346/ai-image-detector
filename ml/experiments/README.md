@@ -4,6 +4,12 @@ These scripts are the reproducible protocol surface. E7–E18 are frozen under `
 remain runnable because later decisions reuse their receipts, cached scores and source-wise splits.
 Runnable means reproducible research, not served or scientifically accepted.
 
+E60's current offline path is `e60_audit.py` (teacher exposure/admission audit),
+`e60_correction.py` (bounded additive logit mechanism) and `e60_run.py` (single frozen fit and
+consumed E49 diagnosis). Run stages only in PLAN order; immutable completed stages are not
+rerun. `e60_run` denies network connections before importing model dependencies. No acquisition
+helper is needed. E43 remains frozen and serving promotion is explicitly disabled.
+
 Run from `ml/` with the declared environment and portable dataset roots:
 
 ```bash

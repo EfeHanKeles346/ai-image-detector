@@ -8,6 +8,18 @@
 
 ## Successor candidate decisions (2026-08-26)
 
+### E60 offline champion-preserving correction (2026-09-10)
+
+E43-S remains the frozen research reference, separate from served E20. One zero-initialized
+bounded logit correction was fitted on all11,630 admitted local TRAIN parents without downloads.
+On the same consumed E49 population, AI recall stays94.3%/95.5% (original/Q75), while REAL
+false-AI only falls39.1->39.0% /49.0->48.8%. No new E49 AI errors, but the REAL improvement
+intervals include zero and absolute/selective acceptance gates still fail. E60 is insufficient
+and is not promoted. Small TRAIN AI losses and the absence of a fresh balanced group-disjoint
+development population prevent a universal retention or final-quality claim. Reference and
+saved-head replay checks are exact; these are engineering checks, not accuracy certification.
+See `evidence/e60_regression.json`, `ml/EXPERIMENTS.md` E60 and current `PLAN.md`.
+
 ### E51/E53 offline successor decisions (2026-09-09)
 
 Neither replaces the served contract. E51-A improves authentic-photo safety on consumed E49 but
