@@ -20,6 +20,49 @@ The user also requests GitHub synchronization: commit and push completed, review
 evidence and Markdown checkpoints to the configured origin, verify the remote result, and
 report any failure. Keep raw datasets/model weights outside git; never force-push over remote work.
 
+## Current checkpoint — E62–E64 complete; goal remains unmet (2026-09-10)
+
+Three preregistered recipes completed. E62/E63 reduce consumed E49 REAL FPR to35.8% original
+and46.8/46.7% Q75, but AI recall falls to93.8% original and95.1/95.3% Q75. Both fail AI retention
+and still pass only11/20 benchmark gates. Reject both; preserve E43 and live serving.
+E64 preserves all caught TRAIN AI and rescues223/174 clean/Q75 REAL observations, but TRAIN
+FPR11.90/11.33% exceeds its preregistered10% ceiling. No E64 test scoring is permitted.
+
+- Do not repeat E62/E63 evaluations, relax E64's failed pre-test ceiling, overwrite artifacts,
+  or conduct a rank/L2/threshold sweep on E49. These three recipes are finished; none is v1.
+- Next meaningful improvement requires a distinct representation/processing hypothesis plus
+  valid development data. E60's local audit has not established such a balanced fresh pool.
+  Keep the no-download condition; the home queue below is still only planned acquisition.
+- Future optimization should preserve correct REAL decisions rather than unnecessarily freeze
+  their confidence. Keep explicit AI constraints and the strict replay gate, but also require
+  independent AI retention: TRAIN success alone failed to predict external preservation here.
+- E43 remains immutable at its existing cuts. The unchanged official20 gates and stronger
+  E43 AI-retention requirement remain the goal. E59/CLIP and heartbeat stay paused.
+- 49 focused tests passed. Update GitHub with this completed checkpoint; existing separate
+  Next.js audit debt is not evidence of an ML failure and must not be hidden.
+
+## Executed E62 registration (2026-09-10)
+
+User explicitly requests continuing toward the fixed test targets after E61. Proceed with one
+new TRAIN-only mechanism; this supersedes waiting for home before any further engineering fit.
+It does not authorize test-label training, score-based threshold selection, new downloads or
+calling a consumed benchmark an independent final. Keep AI recall at the E43 reference level.
+
+E62 replaces the soft-retention bounded correction with a convex constrained correction:
+TRAIN-only PCA64 on E43-scaled cached features (seed62, randomized3 power iterations),
+variance-normalized coordinates plus intercept; additive linear logit. Freeze code/input hashes
+before fit. Class/source/parent-balanced BCE at fixed AI cut, hard REAL views2x within class,
+L2.01. Every E43-caught admitted TRAIN AI must remain above the same cut; correct REAL
+corrections cannot be positive. Zero start, SLSQP200 iterations, final solution only, CPU2
+threads,20min budget,30% battery floor, no sweep. E43 artifacts/cuts remain immutable.
+
+Require solver success, numerical feasibility and E61 zero newly missed AI views, zero new
+REAL false alarms and lower REAL FPR on all3 TRAIN conditions. This is TRAIN feasibility,
+not a quality claim. Only if it passes, freeze one consumed E49 paired comparison separately.
+That report may establish whether this fixed candidate passes the existing benchmark gates;
+it cannot establish a fresh final or choose another rank/loss/cut after scores are observed.
+If TRAIN fails, stop this candidate before opening E49. E59 and home-data acquisition stay parked.
+
 ## Current follow-up — literature, strict replay guard and home data queue (2026-09-10)
 
 - GitHub synchronization completed through `2da9fe8`; remote `main` verified. Continue
@@ -37,7 +80,8 @@ report any failure. Keep raw datasets/model weights outside git; never force-pus
   audit failed on critical Next.js advisories. This is a separate dependency-maintenance
   item: verify supported patched version, update exact pin/lock together and run web checks
   before any deployment. Do not weaken the audit threshold or claim all CI passed.
-- Next optimization waits for a valid development protocol/population. Investigate matched
+- Independent promotion still waits for a valid development/final protocol/population;
+  the newly authorized E62 TRAIN feasibility step is specified above. Investigate matched
   processing across classes and replay-constrained optimization, using TRAIN only; preregister
   one recipe before fitting. Do not tune E60 again against consumed E49 or treat a penalty
   coefficient as an AI-retention guarantee. E59 remains parked.
@@ -4662,3 +4706,47 @@ resnet18` confirmed in the CLI, 48 GB free disk. No item should hit a missing de
   extraction). Nothing in the live path imports them.
 - `ml/artifacts/archive/` (not committed) holds superseded artifacts, including the
   poisoned `*.BOZUK_etiket.bak` evidence files. Nothing is deleted.
+
+
+### E63 preregistration before opening E62 benchmark metrics (2026-09-10)
+
+E62 TRAIN residual REAL FPR remains13.69/12.51%, with RR real47.52/43.84%; TRAIN evidence
+alone motivates a second, nonlinear hypothesis. E62 benchmark metrics remain unopened;
+no E62 benchmark metrics have been used to select this recipe. This is an explicitly bounded
+second candidate, not a threshold/rank/loss sweep. Keep E62/E63 comparisons separate.
+
+Use the same admitted TRAIN population, frozen E43, PCA64(seed62,power3), balancing, fixed cuts,
+linear decision-preservation constraints, SLSQP200/ftol1e-9/L2.01/CPU2/20min,zero initialization
+and strict E61 guard. Replace the linear PCA correction features with64 Gaussian RBF features:
+weighted KMeans64 on reference-false-positive TRAIN REAL views in whitened PCA space,
+seed63,n_init3,max_iter100; sample weights are class/source/parent weights restricted to those
+views. Sigma is the median positive distance of those TRAIN views to their assigned center.
+RBF=exp(-distance_squared/(2*sigma_squared)); center and standardize each basis column on all
+TRAIN views, append intercept. This permits curved corrections with the same65 coefficient
+count; no raw test scores, sources or identities enter fitting or representation choice.
+
+Apply all original TRAIN acceptance guards before any separately frozen benchmark comparison.
+If TRAIN fails, archive and do not score E49. If it passes, one immutable consumed E49 comparison
+uses unchanged20 gates and reference AI retention; no subsequent recipe selection from scores.
+No source/model/package downloads, fresh-final claim or serving promotion. RBFs are learned
+features, not a hand-written metadata/camera veto. Passing finite TRAIN constraints cannot
+promise preservation on unseen images.
+
+
+### E64 preregistration — isolate an unnecessarily strong TRAIN constraint (2026-09-10)
+
+Inspection of the TRAIN optimization (E63 test metrics still unopened) identifies an avoidable
+restriction: E62/E63 force every correctly classified REAL logit to never increase. The actual
+user requirement concerns classifications/FPR, not unchanged confidence. E64 isolates this
+mathematical distinction with exactly E62's PCA64/seed62/weights/L2/optimizer/cuts and AI
+constraints. Change only correct-REAL upper bound from0 to
+max(logit(AI_cut)-reference_logit-1e-7,0): preserve the REAL decision while allowing motion
+inside its original safe margin. AI constraints and E61 zero-new-AI-miss rule remain unchanged.
+No changes to E62/E63 code or outcomes; new code/input hashes frozen before a single fit.
+
+Strengthen pre-test feasibility: solver success/violation<=1e-8/exact replay, zero newly missed
+AI, zero new REAL false alarms, and REAL TRAIN FPR <=10% in ALL3 conditions. If this TRAIN-only
+necessary screen fails, do NOT open E49 for E64. If it passes, permit one separate preregistered
+consumed comparison with the original20 gates and E43 AI-retention criteria; no parameter
+selection from prior benchmark errors or individual test identities. No downloads, role changes,
+fresh-final claim or deployment. This is an isolated constraint ablation, not a bound/L2 sweep.

@@ -4,15 +4,12 @@ PixelProof is a research system that looks for evidence consistent with AI gener
 official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
 It never certifies that an image is real.
 
-**Research checkpoint (2026-09-10):** the offline E60 correction to frozen E43-S preserves
-observed AI recall on consumed E49, but reduces REAL false alarms by only0.1/0.2 percentage
-points and fails acceptance. E43 remains the research reference; served E20/CF-ViT/optional
-R1b are unchanged. E59 remains parked. See [current plan](PLAN.md), [model card](MODEL_CARD.md)
-and [experiment log](ml/EXPERIMENTS.md) for exact results and evaluation limitations.
-E61 now verifies a strict TRAIN replay guard: reject any newly missed previously caught AI
-view, even if other rescues preserve pooled recall. The guard rejected frozen E60's five
-TRAIN parent losses; this is software verification, not a newly improved model. Primary-source
-review and home-download candidates are recorded in the image reference notes and PLAN.
+**Research checkpoint (2026-09-10):** E62/E63 reduced REAL false alarms on consumed E49,
+but lost some AI recall and failed acceptance (11/20 gates). E64 improved TRAIN REAL errors
+with zero AI replay losses but failed its10% TRAIN ceiling, so was not evaluated on E49.
+E43 remains unchanged; served E20/CF-ViT/optional R1b are unchanged. No new data downloads;
+E59 remains parked.49 focused tests passed. See [current plan](PLAN.md),
+[model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
 
 ## Current scientific contract (2026-08-26)
 

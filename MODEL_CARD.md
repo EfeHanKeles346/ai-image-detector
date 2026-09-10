@@ -234,3 +234,18 @@ remaining unchanged does not override that diagnosis. No new model was trained o
 promoted. Passing the software gate is necessary for future candidate development,
 not independent evidence of REAL false-positive reduction or unseen-AI preservation.
 See `evidence/e61_replay_gate.json` and the dated image-reference literature review.
+
+
+### E62–E64 constrained corrections (2026-09-10): rejected, no promotion
+
+E62 PCA64 and E63 RBF64 retained all previously caught admitted TRAIN AI views. On the
+same consumed E49 benchmark, both lower REAL FPR39.1->35.8%; Q7549.0->46.8/46.7%.
+However AI recall94.3->93.8% and95.5->95.1/95.3%, including supported-generator losses.
+Both retain only11/20 absolute/selective gates and fail the extra E43-retention guards.
+Finite TRAIN preservation therefore did not establish external AI preservation.
+
+E64 permits correct REAL confidence to move inside its original decision margin. TRAIN
+REAL FPR11.8977/11.3291%, zero newly missed AI, but all3 TRAIN conditions fail its<=10%
+pre-test requirement; no E49 scoring. No candidate is accepted. Original E43 hash/cuts
+and serving are unchanged; no independent final or new model-quality claim.49 focused
+tests pass. Full preregistration, hashes, paired counts and intervals are in EXPERIMENTS.

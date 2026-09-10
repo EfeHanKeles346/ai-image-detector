@@ -1,0 +1,1014 @@
+{
+  "candidate_e49_diagnostics": {
+    "boundary": "One-shot E49 result; thresholds, rows and sources cannot be repaired after opening.",
+    "candidate": {
+      "binary_threshold": 0.07940196245908739,
+      "selective_policy": {
+        "ai_if_score_gte": 0.07940196245908739,
+        "otherwise": "uncertain",
+        "real_if_score_lt": 0.011505939625203613
+      }
+    },
+    "conditions": {
+      "publisher_original": {
+        "binary_metrics": {
+          "accuracy_counting_failures_wrong": 0.79,
+          "ai_recall": 0.938,
+          "balanced_accuracy": 0.79,
+          "brier_nontarget_real": 0.09398715131119591,
+          "brier_target_ai": 0.17046311414157372,
+          "confusion": {
+            "fn": 62,
+            "fp": 358,
+            "tn": 642,
+            "tp": 938
+          },
+          "counts": {
+            "ai_succeeded": 1000,
+            "failed": 0,
+            "real_succeeded": 1000,
+            "succeeded": 2000,
+            "total": 2000
+          },
+          "coverage": 1.0,
+          "eer": 0.17300000000000001,
+          "per_group": [
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 69,
+                "tn": 31,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.69,
+              "source": "Canon EOS R5"
+            },
+            {
+              "ai_recall": 0.91875,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 13,
+                "fp": 0,
+                "tn": 0,
+                "tp": 147
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "FLUX.2 Klein 9B"
+            },
+            {
+              "ai_recall": 0.94375,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 9,
+                "fp": 0,
+                "tn": 0,
+                "tp": 151
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "GPT Image 2"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 22,
+                "tn": 78,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.22,
+              "source": "Google Pixel 7 Pro"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 26,
+                "tn": 74,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.26,
+              "source": "Google Pixel 8 Pro"
+            },
+            {
+              "ai_recall": 0.91875,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 13,
+                "fp": 0,
+                "tn": 0,
+                "tp": 147
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "Midjourney 7"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 55,
+                "tn": 45,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.55,
+              "source": "Nikon Z 8"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 14,
+                "tn": 86,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.14,
+              "source": "Samsung Galaxy S23 Ultra"
+            },
+            {
+              "ai_recall": 0.90625,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 15,
+                "fp": 0,
+                "tn": 0,
+                "tp": 145
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "Seedream v5.0"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 63,
+                "tn": 37,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.63,
+              "source": "Sony ILCE-7M4"
+            },
+            {
+              "ai_recall": 0.955,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 9,
+                "fp": 0,
+                "tn": 0,
+                "tp": 191
+              },
+              "count": 200,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "StyleGAN2"
+            },
+            {
+              "ai_recall": 0.98125,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 3,
+                "fp": 0,
+                "tn": 0,
+                "tp": 157
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "Z-Image Turbo"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 28,
+                "tn": 72,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.28,
+              "source": "iPhone 13 Pro"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 16,
+                "tn": 84,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.16,
+              "source": "iPhone 14 Pro"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 38,
+                "tn": 62,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.38,
+              "source": "iPhone 15 Pro"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "publisher_original",
+              "confusion": {
+                "fn": 0,
+                "fp": 27,
+                "tn": 73,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.27,
+              "source": "iPhone 15 Pro Max"
+            }
+          ],
+          "real_false_positive_rate": 0.358,
+          "roc_auc": 0.90451,
+          "stored_threshold": 0.07940196245908739,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 0.721
+          }
+        },
+        "binary_rates": {
+          "ai_recall_by_source": {
+            "FLUX.2 Klein 9B": 0.91875,
+            "GPT Image 2": 0.94375,
+            "Midjourney 7": 0.91875,
+            "Seedream v5.0": 0.90625,
+            "StyleGAN2": 0.955,
+            "Z-Image Turbo": 0.98125
+          },
+          "pooled_ai_recall": 0.938,
+          "pooled_real_false_ai": 0.358,
+          "real_false_ai_by_source": {
+            "Canon EOS R5": 0.69,
+            "Google Pixel 7 Pro": 0.22,
+            "Google Pixel 8 Pro": 0.26,
+            "Nikon Z 8": 0.55,
+            "Samsung Galaxy S23 Ultra": 0.14,
+            "Sony ILCE-7M4": 0.63,
+            "iPhone 13 Pro": 0.28,
+            "iPhone 14 Pro": 0.16,
+            "iPhone 15 Pro": 0.38,
+            "iPhone 15 Pro Max": 0.27
+          },
+          "score_failures_by_source": {},
+          "worst_ai_recall": 0.90625,
+          "worst_real_false_ai": 0.69
+        },
+        "bootstrap_95pct": {
+          "ai_recall": [
+            0.923,
+            0.952
+          ],
+          "automatic_coverage": [
+            0.8405,
+            0.87
+          ],
+          "balanced_accuracy": [
+            0.7745,
+            0.8049999999999999
+          ],
+          "covered_accuracy": [
+            0.7637612354775477,
+            0.7948421118985285
+          ],
+          "real_false_ai": [
+            0.331,
+            0.385
+          ],
+          "roc_auc": [
+            0.8917468749999999,
+            0.91625225
+          ],
+          "uncertain_rate": [
+            0.13,
+            0.15949999999999998
+          ]
+        },
+        "gate": {
+          "checks": {
+            "automatic_coverage_gte_0_80": true,
+            "binary_auc_gte_0_90": true,
+            "binary_balanced_accuracy_gte_0_85": false,
+            "covered_accuracy_gte_0_95": false,
+            "pooled_ai_recall_gte_0_80": true,
+            "pooled_real_false_ai_lte_0_10": false,
+            "score_coverage_eq_1": true,
+            "uncertain_rate_lte_0_20": true,
+            "worst_source_ai_recall_gte_0_60": true,
+            "worst_source_real_false_ai_lte_0_20": false
+          },
+          "passed": false,
+          "passed_checks": 6,
+          "total_checks": 10
+        },
+        "selective": {
+          "automatic_coverage": 0.8555,
+          "automatic_rows": 1711,
+          "covered_accuracy": 0.7796610169491526,
+          "uncertain_rate": 0.1445,
+          "uncertain_rows": 289
+        }
+      },
+      "social_q75": {
+        "binary_metrics": {
+          "accuracy_counting_failures_wrong": 0.743,
+          "ai_recall": 0.953,
+          "balanced_accuracy": 0.743,
+          "brier_nontarget_real": 0.16008733147874465,
+          "brier_target_ai": 0.15383298823091882,
+          "confusion": {
+            "fn": 47,
+            "fp": 467,
+            "tn": 533,
+            "tp": 953
+          },
+          "counts": {
+            "ai_succeeded": 1000,
+            "failed": 0,
+            "real_succeeded": 1000,
+            "succeeded": 2000,
+            "total": 2000
+          },
+          "coverage": 1.0,
+          "eer": 0.21699999999999997,
+          "per_group": [
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 83,
+                "tn": 17,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.83,
+              "source": "Canon EOS R5"
+            },
+            {
+              "ai_recall": 0.91875,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 13,
+                "fp": 0,
+                "tn": 0,
+                "tp": 147
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "FLUX.2 Klein 9B"
+            },
+            {
+              "ai_recall": 0.9625,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 6,
+                "fp": 0,
+                "tn": 0,
+                "tp": 154
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "GPT Image 2"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 35,
+                "tn": 65,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.35,
+              "source": "Google Pixel 7 Pro"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 39,
+                "tn": 61,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.39,
+              "source": "Google Pixel 8 Pro"
+            },
+            {
+              "ai_recall": 0.9125,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 14,
+                "fp": 0,
+                "tn": 0,
+                "tp": 146
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "Midjourney 7"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 63,
+                "tn": 37,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.63,
+              "source": "Nikon Z 8"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 27,
+                "tn": 73,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.27,
+              "source": "Samsung Galaxy S23 Ultra"
+            },
+            {
+              "ai_recall": 0.9875,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 2,
+                "fp": 0,
+                "tn": 0,
+                "tp": 158
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "Seedream v5.0"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 69,
+                "tn": 31,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.69,
+              "source": "Sony ILCE-7M4"
+            },
+            {
+              "ai_recall": 0.96,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 8,
+                "fp": 0,
+                "tn": 0,
+                "tp": 192
+              },
+              "count": 200,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "StyleGAN2"
+            },
+            {
+              "ai_recall": 0.975,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 4,
+                "fp": 0,
+                "tn": 0,
+                "tp": 156
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "Z-Image Turbo"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 48,
+                "tn": 52,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.48,
+              "source": "iPhone 13 Pro"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 33,
+                "tn": 67,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.33,
+              "source": "iPhone 14 Pro"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 42,
+                "tn": 58,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.42,
+              "source": "iPhone 15 Pro"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "social_q75",
+              "confusion": {
+                "fn": 0,
+                "fp": 28,
+                "tn": 72,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.28,
+              "source": "iPhone 15 Pro Max"
+            }
+          ],
+          "real_false_positive_rate": 0.467,
+          "roc_auc": 0.870604,
+          "stored_threshold": 0.07940196245908739,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 0.599
+          }
+        },
+        "binary_rates": {
+          "ai_recall_by_source": {
+            "FLUX.2 Klein 9B": 0.91875,
+            "GPT Image 2": 0.9625,
+            "Midjourney 7": 0.9125,
+            "Seedream v5.0": 0.9875,
+            "StyleGAN2": 0.96,
+            "Z-Image Turbo": 0.975
+          },
+          "pooled_ai_recall": 0.953,
+          "pooled_real_false_ai": 0.467,
+          "real_false_ai_by_source": {
+            "Canon EOS R5": 0.83,
+            "Google Pixel 7 Pro": 0.35,
+            "Google Pixel 8 Pro": 0.39,
+            "Nikon Z 8": 0.63,
+            "Samsung Galaxy S23 Ultra": 0.27,
+            "Sony ILCE-7M4": 0.69,
+            "iPhone 13 Pro": 0.48,
+            "iPhone 14 Pro": 0.33,
+            "iPhone 15 Pro": 0.42,
+            "iPhone 15 Pro Max": 0.28
+          },
+          "score_failures_by_source": {},
+          "worst_ai_recall": 0.9125,
+          "worst_real_false_ai": 0.83
+        },
+        "bootstrap_95pct": {
+          "ai_recall": [
+            0.939,
+            0.965
+          ],
+          "automatic_coverage": [
+            0.844,
+            0.873
+          ],
+          "balanced_accuracy": [
+            0.7274875000000001,
+            0.7585
+          ],
+          "covered_accuracy": [
+            0.7056127630734251,
+            0.7364387909813521
+          ],
+          "real_false_ai": [
+            0.439,
+            0.495
+          ],
+          "roc_auc": [
+            0.8559115,
+            0.884548475
+          ],
+          "uncertain_rate": [
+            0.127,
+            0.15600000000000003
+          ]
+        },
+        "gate": {
+          "checks": {
+            "automatic_coverage_gte_0_80": true,
+            "binary_auc_gte_0_90": false,
+            "binary_balanced_accuracy_gte_0_85": false,
+            "covered_accuracy_gte_0_95": false,
+            "pooled_ai_recall_gte_0_80": true,
+            "pooled_real_false_ai_lte_0_10": false,
+            "score_coverage_eq_1": true,
+            "uncertain_rate_lte_0_20": true,
+            "worst_source_ai_recall_gte_0_60": true,
+            "worst_source_real_false_ai_lte_0_20": false
+          },
+          "passed": false,
+          "passed_checks": 5,
+          "total_checks": 10
+        },
+        "selective": {
+          "automatic_coverage": 0.8585,
+          "automatic_rows": 1717,
+          "covered_accuracy": 0.7210250436808386,
+          "uncertain_rate": 0.1415,
+          "uncertain_rows": 283
+        }
+      }
+    },
+    "gate": {
+      "passed": false,
+      "passed_checks": 11,
+      "total_checks": 20
+    },
+    "observation_count": 4000,
+    "parent_count": 2000,
+    "schema_version": 1,
+    "state": "e49_comprehensive_final_failed"
+  },
+  "candidate_sha256": "0d29e7a07e9d1c8d3c89adb5c87a27e251f24641967a3e5f26608f27240841dc",
+  "checks": {
+    "absolute_selective_20_checks": false,
+    "ai_preservation_intervals_both": false,
+    "ai_recall_no_point_loss_both": false,
+    "real_fpr_lower_both": true,
+    "real_improvement_intervals_both": true,
+    "supported_ai_sources_no_point_loss": false
+  },
+  "comparisons": {
+    "publisher_original": {
+      "ai_new_errors": 5,
+      "ai_rescued": 0,
+      "by_source": {
+        "0:Canon EOS R5": {
+          "new_ai_minus_old": -0.020000000000000018,
+          "new_ai_rate": 0.69,
+          "old_ai_rate": 0.71,
+          "parents_or_views": 100
+        },
+        "0:Google Pixel 7 Pro": {
+          "new_ai_minus_old": -0.01999999999999999,
+          "new_ai_rate": 0.22,
+          "old_ai_rate": 0.24,
+          "parents_or_views": 100
+        },
+        "0:Google Pixel 8 Pro": {
+          "new_ai_minus_old": -0.020000000000000018,
+          "new_ai_rate": 0.26,
+          "old_ai_rate": 0.28,
+          "parents_or_views": 100
+        },
+        "0:Nikon Z 8": {
+          "new_ai_minus_old": -0.04999999999999993,
+          "new_ai_rate": 0.55,
+          "old_ai_rate": 0.6,
+          "parents_or_views": 100
+        },
+        "0:Samsung Galaxy S23 Ultra": {
+          "new_ai_minus_old": -0.04999999999999999,
+          "new_ai_rate": 0.14,
+          "old_ai_rate": 0.19,
+          "parents_or_views": 100
+        },
+        "0:Sony ILCE-7M4": {
+          "new_ai_minus_old": -0.030000000000000027,
+          "new_ai_rate": 0.63,
+          "old_ai_rate": 0.66,
+          "parents_or_views": 100
+        },
+        "0:iPhone 13 Pro": {
+          "new_ai_minus_old": -0.07999999999999996,
+          "new_ai_rate": 0.28,
+          "old_ai_rate": 0.36,
+          "parents_or_views": 100
+        },
+        "0:iPhone 14 Pro": {
+          "new_ai_minus_old": -0.03,
+          "new_ai_rate": 0.16,
+          "old_ai_rate": 0.19,
+          "parents_or_views": 100
+        },
+        "0:iPhone 15 Pro": {
+          "new_ai_minus_old": -0.010000000000000009,
+          "new_ai_rate": 0.38,
+          "old_ai_rate": 0.39,
+          "parents_or_views": 100
+        },
+        "0:iPhone 15 Pro Max": {
+          "new_ai_minus_old": -0.019999999999999962,
+          "new_ai_rate": 0.27,
+          "old_ai_rate": 0.29,
+          "parents_or_views": 100
+        },
+        "1:FLUX.2 Klein 9B": {
+          "new_ai_minus_old": -0.006250000000000089,
+          "new_ai_rate": 0.91875,
+          "old_ai_rate": 0.925,
+          "parents_or_views": 160
+        },
+        "1:GPT Image 2": {
+          "new_ai_minus_old": -0.006249999999999978,
+          "new_ai_rate": 0.94375,
+          "old_ai_rate": 0.95,
+          "parents_or_views": 160
+        },
+        "1:Midjourney 7": {
+          "new_ai_minus_old": -0.006250000000000089,
+          "new_ai_rate": 0.91875,
+          "old_ai_rate": 0.925,
+          "parents_or_views": 160
+        },
+        "1:Seedream v5.0": {
+          "new_ai_minus_old": -0.012499999999999956,
+          "new_ai_rate": 0.90625,
+          "old_ai_rate": 0.91875,
+          "parents_or_views": 160
+        },
+        "1:StyleGAN2": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.955,
+          "old_ai_rate": 0.955,
+          "parents_or_views": 200
+        },
+        "1:Z-Image Turbo": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.98125,
+          "old_ai_rate": 0.98125,
+          "parents_or_views": 160
+        }
+      },
+      "new": {
+        "ai_recall": 0.938,
+        "auc": 0.90451,
+        "balanced_accuracy": 0.79,
+        "covered_accuracy": 0.7796610169491526,
+        "real_false_ai": 0.358,
+        "uncertain_rate": 0.1445
+      },
+      "old": {
+        "ai_recall": 0.943,
+        "auc": 0.902425,
+        "balanced_accuracy": 0.776,
+        "covered_accuracy": 0.7626527050610821,
+        "real_false_ai": 0.391,
+        "uncertain_rate": 0.1405
+      },
+      "real_new_errors": 0,
+      "real_rescued": 33
+    },
+    "social_q75": {
+      "ai_new_errors": 2,
+      "ai_rescued": 0,
+      "by_source": {
+        "0:Canon EOS R5": {
+          "new_ai_minus_old": -0.010000000000000009,
+          "new_ai_rate": 0.83,
+          "old_ai_rate": 0.84,
+          "parents_or_views": 100
+        },
+        "0:Google Pixel 7 Pro": {
+          "new_ai_minus_old": -0.030000000000000027,
+          "new_ai_rate": 0.35,
+          "old_ai_rate": 0.38,
+          "parents_or_views": 100
+        },
+        "0:Google Pixel 8 Pro": {
+          "new_ai_minus_old": -0.019999999999999962,
+          "new_ai_rate": 0.39,
+          "old_ai_rate": 0.41,
+          "parents_or_views": 100
+        },
+        "0:Nikon Z 8": {
+          "new_ai_minus_old": -0.030000000000000027,
+          "new_ai_rate": 0.63,
+          "old_ai_rate": 0.66,
+          "parents_or_views": 100
+        },
+        "0:Samsung Galaxy S23 Ultra": {
+          "new_ai_minus_old": -0.010000000000000009,
+          "new_ai_rate": 0.27,
+          "old_ai_rate": 0.28,
+          "parents_or_views": 100
+        },
+        "0:Sony ILCE-7M4": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.69,
+          "old_ai_rate": 0.69,
+          "parents_or_views": 100
+        },
+        "0:iPhone 13 Pro": {
+          "new_ai_minus_old": -0.020000000000000018,
+          "new_ai_rate": 0.48,
+          "old_ai_rate": 0.5,
+          "parents_or_views": 100
+        },
+        "0:iPhone 14 Pro": {
+          "new_ai_minus_old": -0.02999999999999997,
+          "new_ai_rate": 0.33,
+          "old_ai_rate": 0.36,
+          "parents_or_views": 100
+        },
+        "0:iPhone 15 Pro": {
+          "new_ai_minus_old": -0.040000000000000036,
+          "new_ai_rate": 0.42,
+          "old_ai_rate": 0.46,
+          "parents_or_views": 100
+        },
+        "0:iPhone 15 Pro Max": {
+          "new_ai_minus_old": -0.03999999999999998,
+          "new_ai_rate": 0.28,
+          "old_ai_rate": 0.32,
+          "parents_or_views": 100
+        },
+        "1:FLUX.2 Klein 9B": {
+          "new_ai_minus_old": -0.006250000000000089,
+          "new_ai_rate": 0.91875,
+          "old_ai_rate": 0.925,
+          "parents_or_views": 160
+        },
+        "1:GPT Image 2": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9625,
+          "old_ai_rate": 0.9625,
+          "parents_or_views": 160
+        },
+        "1:Midjourney 7": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9125,
+          "old_ai_rate": 0.9125,
+          "parents_or_views": 160
+        },
+        "1:Seedream v5.0": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.9875,
+          "old_ai_rate": 0.9875,
+          "parents_or_views": 160
+        },
+        "1:StyleGAN2": {
+          "new_ai_minus_old": 0.0,
+          "new_ai_rate": 0.96,
+          "old_ai_rate": 0.96,
+          "parents_or_views": 200
+        },
+        "1:Z-Image Turbo": {
+          "new_ai_minus_old": -0.006249999999999978,
+          "new_ai_rate": 0.975,
+          "old_ai_rate": 0.98125,
+          "parents_or_views": 160
+        }
+      },
+      "new": {
+        "ai_recall": 0.953,
+        "auc": 0.870604,
+        "balanced_accuracy": 0.7429999999999999,
+        "covered_accuracy": 0.7210250436808386,
+        "real_false_ai": 0.467,
+        "uncertain_rate": 0.1415
+      },
+      "old": {
+        "ai_recall": 0.955,
+        "auc": 0.8688500000000001,
+        "balanced_accuracy": 0.7324999999999999,
+        "covered_accuracy": 0.7100694444444444,
+        "real_false_ai": 0.49,
+        "uncertain_rate": 0.136
+      },
+      "real_new_errors": 0,
+      "real_rescued": 23
+    }
+  },
+  "contract_sha256": "6f2435f5710376d6fd3da72d77f86a6b34230625c337356e8507185f132ae3b3",
+  "independent_final_passed": false,
+  "limitations": [
+    "Consumed E49 diagnostic, never a new validation/final or tuning set.",
+    "Intervals condition on observed camera/generator sources; unknown prompt dependence remains.",
+    "Candidate remains research-only even if these diagnostic checks pass."
+  ],
+  "preservation_and_absolute_checks_passed": false,
+  "raw_scores_sha256": "85f560f90e3ebff9a9d13760d160848d75b66aa80966b9371d9323181d9fe391",
+  "reference_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "serving_changed": false,
+  "source_cluster_paired_intervals": {
+    "ai_clean": [
+      -0.009375,
+      -0.000925925925925926
+    ],
+    "ai_q75": [
+      -0.005208333333333333,
+      0.0
+    ],
+    "real_clean": [
+      -0.05,
+      -0.02
+    ],
+    "real_q75": [
+      -0.033,
+      -0.013
+    ]
+  },
+  "state": "E63_consumed_E49_regression_complete_not_fresh_final",
+  "winner_selection_allowed": false
+}

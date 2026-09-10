@@ -1,0 +1,12 @@
+{
+  "contract_sha256": "2607097c1993d74dc4c9cc42fdd1458943b3ef8b3eb1e28b39cc9496f885ee3f",
+  "metrics_opened": false,
+  "reference_decision_changes": {
+    "0.011505939625203613": 0,
+    "0.07940196245908739": 0
+  },
+  "reference_max_score_error": 0.0,
+  "rows": 4000,
+  "sha256": "85de41657351ba131c65f85641824e0ae99cae4149bf9d17f641ad429fd00e73",
+  "source_downloads": 0
+}

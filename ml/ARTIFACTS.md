@@ -131,3 +131,15 @@ records the successful software check: unchanged E43 passes, E60 is rejected for
 newly missed AI parents across its3 TRAIN conditions. No model artifact produced;
 no E49 read, new training or serving promotion.37 focused tests pass. Never interpret
 this evidence as improved detection quality or a guarantee on unseen generators.
+
+
+### E62–E64 correction artifacts (2026-09-10; research only)
+
+All arrays remain under `/Volumes/LaCie/pixelproof-datasets/e62`, `e63`, `e64`.
+E62/E64 NPZ stores TRAIN PCA mean/components/scales and65 additive-logit coefficients;
+E63 adds64 RBF centers, bandwidth and kernel normalization. Every artifact binds its
+fit contract and original E43 hash. Zero initialization and saved score replay are exact.
+E62/E63 each have locked4000-view consumed E49 scores and failed reports. E64 has only
+TRAIN evidence and must not be evaluated after failing its preregistered TRAIN ceiling.
+No serving artifact/registry changed. Versioned compact evidence is in `evidence/e6[234]*`;
+see EXPERIMENTS for identities, counts and limitations. Do not overwrite or promote.

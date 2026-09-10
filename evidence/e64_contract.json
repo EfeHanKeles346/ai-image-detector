@@ -1,0 +1,61 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "ai_parents": 4595,
+  "comparison": "If TRAIN guard passes, permit one separately preregistered consumed E49 benchmark comparison of this immutable candidate. No test-based parameter selection. E49 is already consumed, cannot supply independent final/generalization evidence.",
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "constraints": "All reference-caught TRAIN AI stay at/above the fixed AI logit cut with min(existing_margin,1e-7) retained. Correct TRAIN REAL correction <=max(logit(cut)-reference_logit-1e-7,0).",
+  "contract_sha256": "f883fb815cd454e15ab7199f76b731c3f2a1c3cccae3afb0535d8f122bb12aee",
+  "correction": "Unbounded linear additive logit in the frozen TRAIN-fitted basis. Zero initial weights.",
+  "cpu_threads": 2,
+  "fit_guard": "Solver success, violation<=1e-8, exact saved replay; E61 zero new AI misses; zero new REAL false alarms; REAL FPR <=10 percent in all3 TRAIN conditions.",
+  "fresh_independent_dev_available": false,
+  "inputs": {
+    "features": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/teacher.npz",
+      "sha256": "101c539958f72913273a0a7e91f9ee7f7b2c025d73fee956177d7fcf8c9b62d8"
+    },
+    "gate_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/retention_gate.py",
+      "sha256": "1dcbb2351d0e4a2788a041ccbcddfb598d1c3e73ff524626917f9f31f95fcf0e"
+    },
+    "helper_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e61_replay_gate.py",
+      "sha256": "f503baaabafe5bf0161488517bd97199433c47f6d11045aae5133550aeeb3fbc"
+    },
+    "manifest": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json",
+      "sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+    },
+    "model_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py",
+      "sha256": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95"
+    },
+    "reference": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+      "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390"
+    },
+    "runner_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_run.py",
+      "sha256": "5caf51554c3dc885c1df31f1fee43718f52a1a1e5ac2a4d5081738d63a7a4623"
+    },
+    "weights_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py",
+      "sha256": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e"
+    }
+  },
+  "max_seconds": 1200,
+  "new_role_admission": false,
+  "objective": "Class/source/parent-balanced operating-cut BCE; reference false-positive REAL views weighted2x then REAL/AI each renormalized to mass.5; L2.01 including intercept.",
+  "optimizer": "CPU float64 SLSQP, maxiter200 ftol1e-9, final solution only; no sweep.",
+  "parents": 11630,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "reference_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "representation": "Frozen E43 scaler; TRAIN-only PCA64 randomized seed62 iterated_power3. Project explicitly after fit; divide by sqrt(explained_variance), append intercept.",
+  "source_downloads": 0,
+  "state": "E64_constrained_TRAIN_fit_registered"
+}

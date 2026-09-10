@@ -1,0 +1,28 @@
+{
+  "batch_views": 16,
+  "candidate_sha256": "7d56af6c721fda86284839b6f6d247f2f723f741ded88f14a8bd32ba95c9b557",
+  "comparison": "All20 frozen E49 gates plus E43 pooled/source AI recall no-loss and paired source-cluster intervals; no parameter selection.",
+  "contract_sha256": "a4bbd3ab7dbe7cfbfb91300a2b049024df16b40130ebf0d465aac99ea242454c",
+  "downloads": 0,
+  "fit_sha256": "f3049515de26b41cc8355636998b2b10db39b8603ed2ba77de985b36cb2e19ac",
+  "fresh_final_claim_allowed": false,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e49_evaluation.py": "3a59864715cf56b3e262ea6ed444c1ca94f38dd66017952a2435ba600a726265",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e60_run.py": "c11a8850a298c327214e85c9e45aa88dc64c42a8c91121614d6c862e9f85b413",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e62_regression.py": "00015a86a0238c77b07bbe822b5ac0fb160e6c560f9028d59741d53d7edf9032",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/benchmark_metrics.py": "ba460ab8a083d3de0eebb6236ed6770498f7ad274b2378946ad7349b1e92b3c7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/e32_candidate.py": "e14ff1044462e49560a98fc3e8697e60738d6b41b0e3e49442dfd025c7832b6a"
+  },
+  "intervals": "20000 paired source-cluster resamples stratified by label; seed62; Bonferroni4 intervals quantiles .00625/.99375.",
+  "manifest": "/Volumes/LaCie/pixelproof-datasets/e49/final/manifest_unscored.json",
+  "manifest_sha256": "9744a9d2385ef2f105b7a132bfee76a7099d280ac9d075d81220f572429c5909",
+  "max_seconds": 900,
+  "old_scores": "/Volumes/LaCie/pixelproof-datasets/e49/final/generalist_scores.jsonl",
+  "old_scores_sha256": "249f005c83acbc65ac987c9fdeea91a9a3c7dfc4a388fdd4e20a436bc53610a8",
+  "promotion_allowed": false,
+  "reference_binary_selective_decision_changes": 0,
+  "reference_max_score_error": 5e-05,
+  "regression_contract_sha256": "2607097c1993d74dc4c9cc42fdd1458943b3ef8b3eb1e28b39cc9496f885ee3f",
+  "state": "E62_consumed_E49_comparison_registered"
+}

@@ -98,3 +98,21 @@ This is an engineering test, not a fit or E49 evaluation. Commands use the exist
 `PYTHONPATH=ml:ml/src ml/.venv/bin/python -m experiments.e61_replay_gate freeze` (then `run`),
 with the external DATA_ROOT environment configured. CLI disables network connections before
 third-party imports; evidence is write-once. Read PLAN and EXPERIMENTS before execution.
+
+
+### E62 constrained correction (2026-09-10)
+
+`e62_run.py freeze` then `fit` runs one registered TRAIN-only constrained logit correction
+using cached features. `e62_constrained.py` contains the objective, linear preservation
+constraints and saved projection. Read PLAN/EXPERIMENTS before use. Network denied at CLI
+startup; outputs are write-once under the external e62 directory and compact git evidence.
+
+
+### E62–E64 completed outcomes (2026-09-10)
+
+E62 and E63 `freeze/fit` and separate `*_regression freeze/score/report` are finished;
+both failed external AI retention. E64 `freeze/fit` is finished and failed its10% TRAIN
+ceiling, so no regression runner/contract exists. Do not rerun or overwrite. All CLIs
+block network connects before third-party imports and use immutable bound inputs.
+49 focused tests pass; source code, registration and evidence remain for reproduction
+review, not a new evaluation opportunity. Frozen historical scripts remain unchanged.
