@@ -1,0 +1,65 @@
+{
+  "batch_crops": 3,
+  "code_sha256": "2486e5ebc5d8c0009cb2a48b3ddce85c73a0cded78d0e122338dd73110919df9",
+  "crops": 72,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/e47_univfd_acquisition.json": "85b627f75d05b61c274abfd53378958ac67af9f2438e0ffd16039fd3df817720",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e54_adapt.py": "f7625dc924b81bf52f91668f7cbd5d47b9afa3f65702dd5a49a31a7b2fbb982b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e54_data.py": "b4722d1678f339fa9f0cd7a4286b0af08be33587617ae66645b968ebb8315548",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/LICENSE": "923dbc0fe040cc826122491e98b20d6f401e510d50c8b666de908e59ebf2f2b2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/models/clip/__init__.py": "d7930eb290ebed432116795c91473200d098451a94c0aedd4ae0f934f97955e8",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/models/clip/clip.py": "c3f1c09abe0a0d9c429e0d47f2b8d4a4ec09dbd11eec3d7dd9846babd717e43b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/models/clip/model.py": "c071d011e92226f1ca0a6f7c5098d8d7d08eadc7d6db125a81b52fc234b1ec59",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/models/clip/simple_tokenizer.py": "d1b09f10ed3d1e2c343619cb98cbfacb92363dd8607526a43aa7fe2d60d15bad",
+    "/Volumes/LaCie/pixelproof-datasets/e47/models/ViT-L-14.pt": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+    "/Volumes/LaCie/pixelproof-datasets/e54/crop_index.json": "886b33d2d86b4ec31ecdce68d80e332b02b300fdf2ee0be17b8e6b5de88c6015",
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+  },
+  "parents": [
+    {
+      "index": 701,
+      "label": 0,
+      "parent_id": "zenodo:17317613:SCIMD-17/Oneplus_Nord_C3lite/IMG20250804104438.jpg"
+    },
+    {
+      "index": 373,
+      "label": 0,
+      "parent_id": "zenodo:17317613:SCIMD-17/Motog64_5G/IMG_20250723_191200259.jpg"
+    },
+    {
+      "index": 1510,
+      "label": 0,
+      "parent_id": "zenodo:17317613:SCIMD-17/Xiaomi_M2101K6P/IMG_20250717_143552.jpg"
+    },
+    {
+      "index": 1797,
+      "label": 0,
+      "parent_id": "e32:a74926eeb88c1be082ef0db7add566d26f52765562eabf4b07ecf54cfd35a03a"
+    },
+    {
+      "index": 6296,
+      "label": 1,
+      "parent_id": "e32:731decdedcef6c342b33a73760d833aa9dec69015caf8edf0b799570a1f6857d"
+    },
+    {
+      "index": 9133,
+      "label": 1,
+      "parent_id": "e32:f0bf8da64a4a23815569534884acb979ca5df5030f605623137842b88a389e1e"
+    },
+    {
+      "index": 4434,
+      "label": 1,
+      "parent_id": "e36:FLUX.2_max:qwen-bench:160"
+    },
+    {
+      "index": 7696,
+      "label": 1,
+      "parent_id": "e32:a8aa5390dc9daef565c2535473907f565c66782c68bc02889382daefebb235aa"
+    }
+  ],
+  "policy": "Unmodified cached RGB224, official CLIP normalization, raw 768-D image embeddings; no head.",
+  "replays": 2,
+  "state": "E59_resource_probe_frozen",
+  "tolerance": 1e-05,
+  "views": 24
+}
