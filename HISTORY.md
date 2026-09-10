@@ -5854,3 +5854,24 @@ all generated feature chunks reside on real external storage under e59. Runtime 
 to need multiple bounded invocations, not guaranteed by the tiny probe. No completed full cache,
 new fitted detector, quality score, final-reserve opening or serving change at this checkpoint.
 Next follow-up must inspect active process/log before attempting a resume; never duplicate it.
+
+### 2026-09-10 — E59 downstream comparison implemented while extraction continues
+
+06:54 follow-up verifies active original guard87100/worker87108, AC/LaCie and ~380GiB free;
+at least2,300 parents complete, progressing beyond2,700 during this slice. No second extractor,
+training process or weight/data download started. Registered control parity6e1a648 before fits:
+E59 DINO must reproduce paired E57 native scores/cut within5e-5 and zero decision flips.
+
+Implemented the already registered DINO3072/CLIP1536/combined4608 nine-fit experiment with
+fixed FIT-only scaler/float64 head, unchanged CAL/OOF and AI view weights. Completion receipts
+are mandatory before model-contract freeze; no model contract or real-data fit exists yet.
+Historical reference JSONs must match E57's archived bindings and all saved-head hashes.
+Atomic head writes, explicit orphan refusal, exact replay, source-wise preservation checks and
+AI weight hashes across all three arms prevent silently changing the comparison. Full report
+includes every fixed arm and fold; a control mismatch blocks candidate eligibility.
+
+Prepared a <=60min freeze/fit/report guard using the SAME lock as feature extraction; tests
+confirm it cannot overlap a held extraction lock. Full suite646passed (12.88s, one existing
+warning), plus separately passed new lock-exclusion fixture in the six-test E59 focused suite.
+This is tested implementation, not a claim that the pending nine real-data fits have passed.
+No feature protocol edits, final-reserve inference, serving change or GitHub push.

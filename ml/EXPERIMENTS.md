@@ -4739,3 +4739,24 @@ Operational guard starts06:22, <=60min, one lock,2s AC/disk monitoring and owned
 External chunks support verified resume; interrupted completed archive may only be reused after
 exact reconstruction matches. Code314593a, three new fixture cases; full suite641passed.
 No classifier scores or new independent test exposure. Full feature completion remains pending.
+
+## 2026-09-10 — E59 training implementation prepared before feature completion
+
+While the original feature worker progresses past2,700 parents, implement only the registered
+nine fits (three representations x three source folds). PLAN6e1a648 adds an explicit stable
+DINO control parity gate against paired E57 native64 scores and CAL cuts: <=5e-5, no verdict
+changes; a mismatch blocks interpretation/promotion, never retunes the tolerance. No fits yet.
+
+Feature completion requires archive plus both bound receipts; only afterward can actual model
+input/code/reference hashes freeze. Every arm uses identical AI rows and loss weights, verified
+by per-fold weight SHA and comparison with prior AI row counts. Fixed weighted StandardScaler
+on FIT only, float64 C=.01/tol1e-8/max1000/seed53; same CAL clean/Q75 cuts, OOF and all
+historical references. All nine saved heads need exact artifact replay; source-wise/paired and
+absolute gates plus control parity determine research eligibility, never automatic deployment.
+
+Operational runner shares the feature lock, requires completed inputs and executes freeze ->
+fit -> report with2s power/storage checks, <=60min and owned-child cleanup. Unreceipted saved
+head stops for explicit audit rather than overwrite. Six fixtures cover fixed representation
+dimensions/order, weight mass, control score/truth/decision parity, incomplete features, pending
+nine-fit completeness and lock exclusion. Full suite646passed before the final added lock case;
+focused six-test suite passes afterward. Real-data model contract and fits remain pending.

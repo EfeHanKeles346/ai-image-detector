@@ -19,6 +19,16 @@ without its receipt stops for explicit audit. A <=60-minute locked guard handles
 after complete features, never opens final reserves or modifies serving. This prepares the
 next stage; it does not mean training has already started.
 
+The downstream implementation is now prepared in `experiments.e59_model` and
+`experiments.e59_train_run`. Do not start it while extraction is active/incomplete. Once full
+feature archive and both receipts exist and feature worker has exited, run
+`PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets PYTHONPATH=ml:ml/src
+ml/.venv/bin/python -m experiments.e59_train_run --minutes 60`.
+It freezes actual completed-feature/code/reference hashes before fitting, then fits all nine
+fixed heads and reports under the shared exclusive lock. Archive contract/results in git at
+next checkpoint; source/pre-plan are committed before execution. Do not rerun completed stages
+or declare a winner without inspecting every gate and independent-evaluation prerequisites.
+
 **Active work 06:22 local:** E59 full CLIP feature extraction started under60min guard;
 feature contract224382c10f2831a9a522bb668e952c30b3a1be890fa2219044f99e7679605954,
 local commit f533877. Log ml/work/e59_features_20260910T062252.log; inspect actual process
