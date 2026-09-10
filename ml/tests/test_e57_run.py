@@ -25,7 +25,7 @@ def test_wait_requires_complete_receipts_not_just_exited_process(tmp_path,monkey
     monkeypatch.setattr(e57_run,'safe',lambda deadline:None)
     monkeypatch.setattr(e57_run.subprocess,'run',lambda *args,**kwargs:SimpleNamespace(returncode=1,stdout=''))
     with pytest.raises(RuntimeError,match='without completed receipt'):e57_run.wait_acquisition(123,1)
-    (tmp_path/'download.json').touch();(tmp_path/'e57_download.json').touch()
+    (tmp_path/'download.json').touch();(tmp_path/'e57_v2_download.json').touch()
     e57_run.wait_acquisition(123,1)
 
 

@@ -1,0 +1,36 @@
+{
+  "code_sha256": "71b89043526fab8ce77c8581d35aec977d713935ca94e92f69e58caa0cf10999",
+  "contract_sha256": "72781bf8672ab7b9debf3c92c4f20f383745fe63ec825420b4b3393c734e817b",
+  "decoder_changed": false,
+  "exclusion": "All predicate failures quarantined without replacement; all other failures stop.",
+  "image_bytes_expected": 1999000262,
+  "model_scores": 0,
+  "original_code_sha256": "5261e7d48b6d1dad0a927a07e900746fc5fc0098f0227230ceb59211175d63c4",
+  "original_contract_sha256": "08cdb32fa84a6aa75be940616b564d6d7f8830f7e438a690636c91264593f892",
+  "predicate": "Four finite as-shot WB values, first three strictly positive; unchanged decoder requirement.",
+  "prior_failure": {
+    "camera_whitebalance": [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "completed_v1_parents": 61,
+    "new_model_scores": 0,
+    "parent": "a1854-kme_290.dng"
+  },
+  "probe_sha256": "1377b80ba697a5e75bbf5f92befbf39788faa4b2dde5a10e7f06c5649750019a",
+  "runtime": {
+    "libraw": [
+      0,
+      22,
+      1
+    ],
+    "numpy": "2.5.1",
+    "pillow": "12.3.0",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "rawpy": "0.27.1"
+  },
+  "selected_parents": 201,
+  "state": "E57_v2_metadata_eligibility_frozen_before_further_download_or_scores"
+}

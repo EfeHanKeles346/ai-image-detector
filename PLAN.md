@@ -57,6 +57,22 @@ ml/work. This automation does not relax admission, frozen gates or authorize ser
 input hashes are written before any new feature/fitting step; archive the resulting receipts at
 the next checkpoint. If the bounded run ends unfinished, resume only pending stages after checks.
 
+**E57 v1 acquisition stopped before model scores:** 61 parents decoded; selected
+`a1854-kme_290.dng` (DCS460D) reports camera WB [0,1,0,0], with a valid Bayer RGB sensor. This
+is missing as-shot metadata, not a flipped label or proof of a monochrome image. The queued
+follow-up correctly refuses missing completion receipts. Preserve v1 code/contract/partial data.
+
+Preregister v2 engineering admission amendment before continuing: retain exactly the same 201
+identities, byte caps, fixed decoder, licences and folds. Before decoding each original, inspect
+as-shot WB model-blind in the isolated environment. Require four finite coefficients with the
+first RGB three positive, as the unchanged E56 decoder requires. Every failure of this one
+predicate is quarantined/excluded without replacement; archive its RAW hash and metadata. Do not
+invent daylight/auto-WB, silently change pixels, remove by detector score or reinterpret labels.
+All other download/decode failures still stop. Reuse verified v1 originals and completed RGBs,
+and keep v2 receipts/manifest/results separate. Report lost subject/light/camera coverage and
+remaining N before any fit. This restricts the experiment to supported as-shot RAWs; it does not
+solve missing-metadata photographs or establish universality. New model contract must bind v2.
+
 **03:48 pilot implementation registration:** use seed string `FIVEK_E56_PILOT_V1|` plus exact
 filename SHA-256 ranking, two per all six declared subjects. HEAD-pin size/ETag/Last-Modified
 before image GET and fail on oversize/identity change. At most 30 minutes per acquisition run;

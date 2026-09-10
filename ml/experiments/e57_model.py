@@ -23,7 +23,7 @@ from experiments.e53_adaptation_probe import differentiable_aggregate
 from experiments.e54_data import load as old_data, CONTRACT as OLD_DATA, TEACHER, crop_views
 from experiments.e54_adapt import CropCache
 from experiments.e54_replay import compare_scores
-from experiments.e57_data import ROOT, MANIFEST, CONTRACT as DATA_CONTRACT, load as data_config, safe
+from experiments.e57_data_v2 import ROOT, MANIFEST, CONTRACT as DATA_CONTRACT, load as data_config, safe
 from pixelproof.training_weights import balanced_parent_weights
 
 CONTRACT=ROOT/'model_contract.json'
@@ -46,7 +46,7 @@ def freeze():
     os.environ['HF_HUB_OFFLINE']='1';os.environ['TRANSFORMERS_OFFLINE']='1'
     model,_,_,weight_sha=dino._load_small();del model
     paths=[MANIFEST,DATA_CONTRACT,OLD_DATA,TEACHER,Path(dino.__file__),
-           Path(__file__).with_name('e57_data.py'),Path(__file__).with_name('e54_data.py'),
+           Path(__file__).with_name('e57_data.py'),Path(__file__).with_name('e57_data_v2.py'),Path(__file__).with_name('e57_raw_probe.py'),Path(__file__).with_name('e54_data.py'),
            Path(__file__).with_name('e54_adapt.py'),Path(__file__).with_name('e53_adaptation_probe.py'),
            Path(__file__).with_name('e51_pipeline.py'),Path(__file__).with_name('e53_report.py'),
            Path(__file__).with_name('e54_replay.py'),EVIDENCE.parent/'ml/src/pixelproof/training_weights.py']

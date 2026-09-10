@@ -8,12 +8,12 @@ import subprocess
 import sys
 import time
 
-from experiments.e57_data import ROOT, MANIFEST, EVIDENCE, safe
+from experiments.e57_data_v2 import ROOT, MANIFEST, EVIDENCE, safe
 
 
 def pending():
     steps=[]
-    if not MANIFEST.exists(): steps.append(('e57_data','audit'))
+    if not MANIFEST.exists(): steps.append(('e57_data_v2','audit'))
     if not (ROOT/'model_contract.json').exists(): steps.append(('e57_model','freeze'))
     feature=(ROOT/'fivek_features.npz').exists();receipt=(ROOT/'features.json').exists()
     if feature!=receipt: raise ValueError('orphaned feature finalization; requires explicit audit')
@@ -30,10 +30,10 @@ def wait_acquisition(pid,deadline):
         safe(deadline)
         state=subprocess.run(['ps','-p',str(pid),'-o','command='],capture_output=True,text=True,timeout=10)
         if state.returncode:break
-        if '-m experiments.e57_data download' not in state.stdout:
+        if '-m experiments.e57_data_v2 download' not in state.stdout:
             raise RuntimeError('acquisition PID now identifies a different process')
         time.sleep(5)
-    if not (ROOT/'download.json').exists() or not (EVIDENCE/'e57_download.json').exists():
+    if not (ROOT/'download.json').exists() or not (EVIDENCE/'e57_v2_download.json').exists():
         raise RuntimeError('acquisition ended without completed receipt; no next stage started')
 
 
@@ -41,7 +41,7 @@ def run(minutes,acquisition_pid=None):
     if not 1<=minutes<=60: raise ValueError('runtime must be 1-60 minutes')
     deadline=time.monotonic()+minutes*60;safe(deadline)
     repo=Path(__file__).resolve().parents[2];work=repo/'ml/work';stamp=time.strftime('%Y%m%dT%H%M%S')
-    env=dict(os.environ,PIXELPROOF_DATA_ROOT=str(ROOT.parent),PYTHONPATH='ml:ml/src',
+    env=dict(os.environ,PIXELPROOF_DATA_ROOT=str(ROOT.parent.parent),PYTHONPATH='ml:ml/src',
              HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',OMP_NUM_THREADS='2',OPENBLAS_NUM_THREADS='2')
     with (work/'e57_followup.lock').open('a') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
