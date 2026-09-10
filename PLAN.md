@@ -7,6 +7,18 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — E57 complete, rejected (2026-09-10)
 
+**06:54 implementation checkpoint, before any E59 fit:** extraction still active (at least
+2,300 completed parents); do not spawn another extractor or fit alongside it. Prepare the
+registered nine-fit implementation and fixtures while the worker continues. Freeze its actual
+feature/teacher/reference/code hashes only once both full feature receipts exist. Retain all
+source/fold losses. Additionally verify within-E59 DINO control versus E57 native64 on exactly
+paired validation rows (max score/cut difference<=5e-5, zero verdict changes); a mismatch blocks
+interpretation/promotion, not permission to adjust tolerance after seeing results. Fit outputs
+are atomic and resumed only with matching contract/artifact hashes; an orphan completed head
+without its receipt stops for explicit audit. A <=60-minute locked guard handles freeze/fit/report
+after complete features, never opens final reserves or modifies serving. This prepares the
+next stage; it does not mean training has already started.
+
 **Active work 06:22 local:** E59 full CLIP feature extraction started under60min guard;
 feature contract224382c10f2831a9a522bb668e952c30b3a1be890fa2219044f99e7679605954,
 local commit f533877. Log ml/work/e59_features_20260910T062252.log; inspect actual process
