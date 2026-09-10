@@ -2143,3 +2143,11 @@ SHA `2733bfe3c5397cbb26aa2faceb0cf44018bba2688079aae7642b0514561f3fb0` admits 19
 parents, never CAL/test. Six-fit study modestly reduces pooled REAL errors but loses supported
 AI sources and fails acceptance. No automatic enlargement; retain licensed originals and
 provenance for research. No final-reserve images scored or training-role changes.
+
+E59 acquires no new source images, weights or dependencies. It reuses the admitted E54
+11,630-parent pool and already archived/licensed CLIP backbone from E47. Additional files
+under LaCie `e59/` are local derived embedding caches, not new photographs: three existing
+views and three crops per parent, raw768-D CLIP vectors plus fixed1536-D mean/std aggregates.
+Upstream parent/source/role boundaries unchanged; no E57 FiveK addition or protected reserve
+reuse. Contract evidence/e59_feature_contract.json binds source crop/teacher and encoder hashes.
+Full extraction starts06:22 and remains in progress at this checkpoint; no new download bytes.

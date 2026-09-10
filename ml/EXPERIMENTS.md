@@ -4716,3 +4716,26 @@ Sampled driver allocation2,194,358,272B, not measured peak. No classifier output
 fit, new data/weights or saved candidate. Existing upstream tracked code unchanged. The small
 sample supports implementing resumable full-scale extraction, not a quality claim or reliable
 full-run time estimate. Entire protected CAL/DEV/final/Module2/reserves remain unchanged.
+
+## 2026-09-10 — E59 full feature/pre-fit protocol registered and extraction started
+
+Existing E54-only inventory11,630 parents/34,890views, no new FiveK, external CAL/test or
+Module2 data. One parent keeps existing clean/assigned-transport/Q75 and three RGB224 crops.
+Frozen cached CLIP ViT-L/14, official image normalization, float32 eval, three-crop batch;
+aggregate raw768-D vectors as mean+population-std1536, no L2 or score-selected transform.
+Save raw crop vectors and aggregate chunks with parent/binding/content hashes. Frozen contract
+224382c10f2831a9a522bb668e952c30b3a1be890fa2219044f99e7679605954 (f533877) precedes
+full extraction. Same-batch restart parity<=1e-5; first actual worker reports exact replay0.
+
+Planned nine fits: DINO3072-only, CLIP1536-only, concatenated4608, three unchanged source folds.
+Weighted FIT-only StandardScaler then float64 logistic regression C=.01/tol1e-8/max1000,
+seed53/lbfgs/twoCPUthreads, convergence warnings fail. All AI replay and original base FIT
+view-count total weight mass retained; same CAL-only cuts and clean/Q75 held-out observations.
+Compare complete historical references, stable E57 native and within-E59 DINO control with
+all original absolute/paired/source-wise AI-preservation gates. No best-mixture/feature sweep.
+Separate actual training code/feature/artifact contract required before fitting. No fit yet.
+
+Operational guard starts06:22, <=60min, one lock,2s AC/disk monitoring and owned-group cleanup.
+External chunks support verified resume; interrupted completed archive may only be reused after
+exact reconstruction matches. Code314593a, three new fixture cases; full suite641passed.
+No classifier scores or new independent test exposure. Full feature completion remains pending.

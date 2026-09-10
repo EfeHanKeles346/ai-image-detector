@@ -7,6 +7,16 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — E57 complete, rejected (2026-09-10)
 
+**Active work 06:22 local:** E59 full CLIP feature extraction started under60min guard;
+feature contract224382c10f2831a9a522bb668e952c30b3a1be890fa2219044f99e7679605954,
+local commit f533877. Log ml/work/e59_features_20260910T062252.log; inspect actual process
+before any next invocation. Start command: `PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets
+PYTHONPATH=ml:ml/src ml/.venv/bin/python -m experiments.e59_features run --minutes 60`.
+Do not run it while its guard/worker is active. After bounded stop inspect log/power/mount;
+the same command validates and reuses completed chunks. After full completion, do NOT repeat
+extraction: implement/freeze the separately registered nine-fit training comparison. No new
+source or weight download, fitted detector, full feature completion or quality gain claimed yet.
+
 E57 completes 199 admitted FiveK parents/597 views and six fixed fits; two unsupported WB
 originals excluded without replacement. Stable native -> supplement clean REAL FPR
 19.5291 ->18.3147%, AI recall 66.2378 ->66.4436%; Q75 FPR 18.7361 ->18.2404%, AI

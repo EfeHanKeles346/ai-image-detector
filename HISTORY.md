@@ -5830,3 +5830,27 @@ exits0 with no owned workers left. Archive evidence/e59_clip_probe.json; this is
 feasibility only. Full-scale extraction likely needs hours and resumable <=60-minute guarded
 chunks; no full E59 feature run or quality experiment has started. Next scheduled continuation
 must freeze full feature/training contracts first; no manual user action is needed for preparation.
+
+### 2026-09-10 — E59 full cached-CLIP extraction begins, no new acquisition
+
+06:18 follow-up verifies clean main, no duplicate workers, AC and real LaCie (~381GiB free).
+Preregister fd3120a fixes all 11,630 existing E54 TRAIN parents/34,890 ordered views, no FiveK.
+Official frozen CLIP ViT-L/14 normalization on existing RGB224 crops; raw768-D three-crop
+mean/population-std concatenation gives1536 features per view, no L2 or fitted preprocessing.
+Three planned representations are DINO3072, CLIP1536, concatenated4608 under unchanged folds,
+AI views/weights, original FIT mass, CAL and all gates. Training must freeze separately later.
+
+Implementation314593a adds parent-bound atomic chunks, internal SHA/shape/finite/aggregation
+checks, exact archive reconstruction for interrupted finalization, and a locked60min guard
+checking power/storage every2s. Preserve completed chunks on interruption; never overwrite an
+incompatible completed archive. Three new fixtures cover statistics, corruption/identity and
+interrupted finalization. Full suite641 passes (12.07s, one existing Starlette/httpx warning).
+
+Commit f533877 freezes feature contract
+224382c10f2831a9a522bb668e952c30b3a1be890fa2219044f99e7679605954 before full inference.
+06:22 local guarded run starts (observed guard87100, worker87108), log
+ml/work/e59_features_20260910T062252.log. No data/weight download or ML dependency change;
+all generated feature chunks reside on real external storage under e59. Runtime is expected
+to need multiple bounded invocations, not guaranteed by the tiny probe. No completed full cache,
+new fitted detector, quality score, final-reserve opening or serving change at this checkpoint.
+Next follow-up must inspect active process/log before attempting a resume; never duplicate it.
