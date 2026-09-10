@@ -2113,3 +2113,9 @@ Reuse exact verified pilot bodies where selected; same fixed decoder. Exclude pr
 matches without replacement, retain whole publisher as FIT-only research after admission. No new
 final source, modern-device claim, paid API, or licence expansion. Purpose is testing REAL content/
 lighting coverage while preserving existing AI replay, not assuming more data guarantees success.
+
+E57 selection frozen before image GET: 201 parents, 18 subject/light cells, HEAD-pinned total
+1,999,000,262 original bytes (~2.00 GB); all selected files satisfy the 48 MiB cap. Receipt
+`evidence/e57_data_contract.json`. Exact pilot body reuse is verified against the same HTTP identity,
+decoder recipe and SHA. No image substitution for resource failure and no detector score. A separate
+completed acquisition/audit receipt will establish actual new bytes and eligible count.
