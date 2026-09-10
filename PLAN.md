@@ -5,7 +5,37 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E56 pilot complete; E57 registered (2026-09-10)
+## Current outcome and next actions — E57 complete, rejected (2026-09-10)
+
+E57 completes 199 admitted FiveK parents/597 views and six fixed fits; two unsupported WB
+originals excluded without replacement. Stable native -> supplement clean REAL FPR
+19.5291 ->18.3147%, AI recall 66.2378 ->66.4436%; Q75 FPR 18.7361 ->18.2404%, AI
+64.9511 ->65.8775%. Paired REAL improvement intervals exclude zero, but modern AI sources
+lose up to 7.5 percentage points; AI preservation intervals include loss. All absolute gates
+fail; exact saved-head replay passes. No winner, serving change or new final-reserve inference.
+Do not enlarge FiveK or sweep its weights following this failed hypothesis.
+
+### E58 next bounded diagnosis — existing scores only, before any new fit
+
+First freeze E57 results/artifact hashes, then inspect native64 versus native64_fivek using
+their existing source-held-out observations. Report rescued/new errors by source, fold and
+clean/Q75. Separate observed CAL-selected operating-point loss from ranking limitations:
+compute an explicitly optimistic, validation-label oracle ROC envelope for each arm/fold/
+transport, with maximum recall at FPR<=10% and minimum FPR at recall>=80% and >=95%.
+These are descriptive impossibility checks on already-consumed development folds, NOT
+new deployable thresholds. Do not export threshold values, save a candidate, adjust CAL,
+infer any new image, pool incomparable fold scores, or open independent reserves. Ties
+must be indivisible; compare original observations exactly and retain all subgroup losses.
+Register code/input hashes before executing the diagnostic, with fixtures for ties and
+perfect/reversed rankings. Report all six fold/transport cells, not only favourable ones.
+
+Primary UnivFD research motivates examining pretrained representations; E47 already tested
+its official CLIP head, so do not claim this is a new untried detector. B-Free motivates paired
+content/processing coverage, not repeating our unpaired FiveK addition or admitting protected
+COCO training data. After the diagnosis, choose one separately preregistered representation/
+training-data hypothesis based on the limiting cells; no automatic parameter sweep.
+
+### Prior E57 registration and execution record
 
 E56's 12 DNGs complete: 122,074,000 original bytes +166,400,845 derived PNG bytes. All fixed
 decodes repeat with exact RGB equality; external reference screen (150,883 observations including

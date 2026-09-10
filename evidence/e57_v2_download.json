@@ -1,0 +1,17 @@
+{
+  "contract_sha256": "72781bf8672ab7b9debf3c92c4f20f383745fe63ec825420b4b3393c734e817b",
+  "lost_strata": {
+    "animal(s)|sun or sky": 1,
+    "unknown|sun or sky": 1
+  },
+  "metadata_rejected_parents": 2,
+  "model_scores": 0,
+  "new_original_bytes": 1974491824,
+  "original_bytes": 1999000262,
+  "pilot_reused_parents": 2,
+  "png_bytes": 3022249526,
+  "report_sha256": "879f3d76255bb7b26b9e2d560a1f5d15096e0ac3fc6172662c0ec8d504635010",
+  "state": "E57_v2_acquired_quarantine",
+  "training_admitted": false,
+  "valid_parents": 199
+}

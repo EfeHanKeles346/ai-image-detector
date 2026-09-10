@@ -1,0 +1,26 @@
+{
+  "contract_sha256": "72781bf8672ab7b9debf3c92c4f20f383745fe63ec825420b4b3393c734e817b",
+  "cross_count": 0,
+  "download_sha256": "879f3d76255bb7b26b9e2d560a1f5d15096e0ac3fc6172662c0ec8d504635010",
+  "excluded_overlap_parents": [],
+  "internal_count": 0,
+  "limits": [
+    "Supported-as-shot-WB subset; no claim for missing metadata or modern phones.",
+    "Heuristic overlap is not exhaustive semantic deduplication."
+  ],
+  "manifest_sha256": "2733bfe3c5397cbb26aa2faceb0cf44018bba2688079aae7642b0514561f3fb0",
+  "metadata_exclusions": [
+    {
+      "parent_id": "FiveK:a1854-kme_290.dng",
+      "reason": "missing_valid_as_shot_WB"
+    },
+    {
+      "parent_id": "FiveK:a2638-LS_060107_0717.dng",
+      "reason": "missing_valid_as_shot_WB"
+    }
+  ],
+  "model_scores": 0,
+  "parents": 199,
+  "reference_observations": 150883,
+  "state": "E57_v2_supplement_admitted_for_FIT"
+}

@@ -1,0 +1,10 @@
+{
+  "contract_sha256": "87cf485974e8c53b5e93d15c0afb64767f3dc5961ca291aa67ab917b71aeb222",
+  "feature_sha256": "5c9671153aa3d72dc8c74abe883334ca80fde386b64640fb750a66b25e8b7c4f",
+  "new_model_scores": 0,
+  "parents": 199,
+  "pretrained_parity_error": 0.0,
+  "receipt_sha256": "bc7dd7c04aa7b5dbd690c1c086cdfac442c0d5e9c189aede966a6e8797e62dbb",
+  "state": "E57_features_complete",
+  "views": 597
+}
