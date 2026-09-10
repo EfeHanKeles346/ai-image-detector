@@ -4622,3 +4622,24 @@ New source FIT-only, unchanged three outer folds and inner CAL. Two fixed float6
 loss mass. Compare all unchanged gates and historical references with exact replay; no validation
 sweep, new reserve score or promotion. Freeze acquisition, feature and training contracts before
 their respective stages. This source supplement is not a reproduction of B-Free paired alignment.
+
+## 2026-09-10 — E57 pre-score RAW eligibility amendment
+
+Frozen v1 acquisition rejects the 62nd selected DNG after 61 completed decodes. DCS460D
+`a1854-kme_290.dng` has camera WB [0,1,0,0], Bayer RGB, rather than valid as-shot RGB gains.
+No detector features/fits/scores or threshold choices precede this amendment. The operational
+guard stops without completed acquisition receipts. Preserve failed v1; do not adjust its decoder.
+
+Separate preregistered v2 (f840136) keeps selection, decoder, HTTP identity, caps and licences;
+model-blind metadata preflight requires four finite WB values and positive first three, exactly
+the existing decoder predicate. Exclude every unsupported case without replacement; preserve
+RAW/hash/reason and report lost content/light coverage before admission. Do not substitute
+daylight/auto-WB or remove images according to detector errors. This is an eligibility restriction
+with potential camera-coverage bias, not improved accuracy or full camera support.
+
+Six-fit protocol remains unchanged: float64 native control versus new REAL supplement,
+three existing source folds, all existing AI views and their loss weights retained, original CAL
+only, all old acceptance gates plus paired stable-control comparison. Source code is committed
+before execution; model contract freezes admitted manifest and input hashes before features/fits.
+633 unit/regression tests pass; actual acquisition and subsequent model experiment are still
+pending completion at this checkpoint. Final reserves remain closed; serving unchanged.

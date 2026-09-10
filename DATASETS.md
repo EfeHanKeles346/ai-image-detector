@@ -2119,3 +2119,14 @@ E57 selection frozen before image GET: 201 parents, 18 subject/light cells, HEAD
 `evidence/e57_data_contract.json`. Exact pilot body reuse is verified against the same HTTP identity,
 decoder recipe and SHA. No image substitution for resource failure and no detector score. A separate
 completed acquisition/audit receipt will establish actual new bytes and eligible count.
+
+E57 v1 stops after 61 decoded parents because `a1854-kme_290.dng` (DCS460D) lacks valid
+as-shot WB ([0,1,0,0]). Preserve this original and failed-v1 evidence. Preregistered v2 f840136
+keeps the same 201 identities, caps, licences and decoder, but applies the decoder's existing
+metadata predicate before admission: four finite coefficients, first RGB three positive.
+Unsupported cases remain quarantined, with RAW hash and rejection reason, no replacement.
+Other errors still stop. Reuse verified original bodies and completed PNGs; no silent auto-WB
+or daylight rendering. V2 records live on LaCie under `e57/v2/`, with raw/PNG cache retained
+under `e57/`. Actual valid/excluded counts, lost strata, body bytes and protected-overlap results
+must come from completed v2 receipts, not the planned 201 count. No admission or accuracy claim
+at this in-progress checkpoint; as-shot metadata coverage is a stated limitation.

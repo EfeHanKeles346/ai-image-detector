@@ -5750,3 +5750,25 @@ Next E57 is preregistered: up to 201 subject x light-stratified FiveK parents, <
 budget, protected screening, fixed decoder and existing AI replay. Six source-held-out fits compare
 stable float64 native control with the new REAL supplement under unchanged gates. Acquisition and
 training each require their own frozen contract; neither has started. No success promised.
+
+### 2026-09-10 — E57 missing-WB amendment and guarded continuation
+
+Commit 9ed4541 freezes 201 original identities and 1,999,000,262 HEAD-pinned bytes before GET;
+5bc35ec commits the paired six-fit implementation before any new model score. Acquisition v1
+stops after 61 decoded parents: `a1854-kme_290.dng`, DCS460D Bayer RGB, reports as-shot WB
+[0,1,0,0]. The unchanged E56 decoder correctly rejects missing positive RGB coefficients.
+This is not evidence of inverted labels. The waiting continuation refuses missing completion
+receipts and starts no fitting. Preserve original code, contract and partials.
+
+Before model scoring, PLAN registers v2 amendment f840136: inspect WB model-blind, exclude
+unsupported as-shot metadata without replacement, retain original/hash/reason, otherwise use
+the unchanged decoder. No daylight/auto-WB fallback or score-based selection. Other failures
+still stop. Separate v2 receipts bind the old selection and verified cached originals/PNGs;
+report lost strata and counts. This restricts supported RAW inputs, not a universality claim.
+
+At this checkpoint v2 acquisition is active. A guarded continuation waits for that exact PID,
+then audits overlap, freezes the model contract, extracts features, fits six fixed arms and
+reports unchanged gates. Combined follow-up <=60 minutes, AC/real-disk/free-space checks,
+single-job lock and owned-child cleanup. No duplicate download, final-reserve score, serving
+change or accuracy gain claimed. All 633 Python tests pass (12.63s, one existing warning).
+Archive completion receipts/results next; an active job is not a completed experiment. No push.
