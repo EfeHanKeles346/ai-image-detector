@@ -1,0 +1,75 @@
+{
+  "contract_sha256": "ab2697be5b4306b3c0c87e3afa167a9afa51725995489ac8a2b88f07185783f4",
+  "downloads": [
+    {
+      "bytes": 4629128,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/index.html",
+      "sha256": "cc11c048a6c29459628cd0989ba28324857988eac10894773b8a20dbb9fd3127",
+      "url": "https://data.csail.mit.edu/graphics/fivek/"
+    },
+    {
+      "bytes": 1841,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/LicenseAdobe.txt",
+      "sha256": "8121ecfcf743d850d6b6dbd0744cfb517c4cec189387aa010bf378077de84fcf",
+      "url": "https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobe.txt"
+    },
+    {
+      "bytes": 1994,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/LicenseAdobeMIT.txt",
+      "sha256": "69f73c481140c40d3a02a15a739da76073de35646108a70bb1dfffadb182af3d",
+      "url": "https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobeMIT.txt"
+    },
+    {
+      "bytes": 45282,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/filesAdobe.txt",
+      "sha256": "9f4f262b25522d93f97a5b40f48f42de357ae0b14ef7098a576c912c546e8383",
+      "url": "https://data.csail.mit.edu/graphics/fivek/legal/filesAdobe.txt"
+    },
+    {
+      "bytes": 46936,
+      "path": "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/filesAdobeMIT.txt",
+      "sha256": "c4cc6ef8cc9e519466ac130b977cd4292ffe9405f94d04227d0e2aee38aa5475",
+      "url": "https://data.csail.mit.edu/graphics/fivek/legal/filesAdobeMIT.txt"
+    }
+  ],
+  "image_bytes": 0,
+  "licence_counts": {
+    "LicenseAdobe.txt": 2690,
+    "LicenseAdobeMIT.txt": 2310
+  },
+  "manifest_sha256": "ace6999013bf359db1d7d6b8b22361b9cfc2b9bb97aaf55c71e5f5b7ced10487",
+  "parents": 5000,
+  "restrictions": [
+    "Research only, non-commercial; retain notices and cite the original dataset.",
+    "Old SLR source, not modern phones; no matched AI.",
+    "Metadata completion does not admit images to TRAIN or establish duplicate-free data."
+  ],
+  "state": "FiveK_metadata_complete_v2",
+  "strata": {
+    "light": {
+      "artificial": 765,
+      "mixed": 831,
+      "sun or sky": 3404
+    },
+    "location": {
+      "indoors": 1055,
+      "outdoors": 3593,
+      "unknown": 352
+    },
+    "subject": {
+      "abstract": 35,
+      "animal(s)": 300,
+      "man-made object": 1869,
+      "nature": 1089,
+      "person(s)": 1341,
+      "unknown": 366
+    },
+    "time": {
+      "dawn or dusk": 210,
+      "day": 3294,
+      "night": 129,
+      "unknown": 1367
+    }
+  },
+  "total_metadata_bytes": 4725181
+}

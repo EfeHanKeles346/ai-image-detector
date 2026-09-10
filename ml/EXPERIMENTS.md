@@ -4568,3 +4568,29 @@ versus 170/230; other REAL clean 660/3805 versus 618/3805, Q75 626/3805 versus 5
 monochrome misses 16/34 versus 21/34 clean and 15/34 versus 20/34 Q75. These net subgroup counts
 remain source/content-confounded, not a causal colour diagnosis. Reject global grayscale and plan
 coverage/content-matched follow-up rather than reusing this validation to sweep mixture ratios.
+
+## 2026-09-10 — E56 source/processing coverage audit (no model experiment)
+
+Preregistered metadata audit, code commit c815439; input hashes and outputs in
+`evidence/e56_coverage_audit.json`. Admitted parents 11,630 (7,035 REAL/4,595 AI), eleven existing
+publisher components. Ten single-class components contain 9,270 parents (79.71%); RR is the only
+mixed component under the existing grouping. No publisher crosses active fold roles. Whole-pool
+monochrome REAL 238, AI 120; exact224 REAL 2,314, AI 353. These are descriptive counts, not quality.
+
+Fold-0 REAL: FIT 9/5,314 monochrome (0.169%), VALIDATION 229/1,250 (18.32%); CAL 0/471. Fold 2
+FIT has only RR publisher for both classes. Topic metadata field is absent, scene field present
+only for 1,000 REAL parents; missing normalized metadata is unknown, not a guessed scene/category.
+Three fixture tests cover counts/missingness, exact metadata joins and publisher-role leakage.
+
+Inference: coverage/processing mismatch remains plausible after E55's aggregate REAL regression,
+but not established as the unique cause. E40 already used FIT-only DINO cluster weights, so a repeat
+without a changed hypothesis would be weak. [B-Free](https://github.com/grip-unina/B-Free) motivates
+content-matched training; do not equate simple grayscale or clustering with its paired generation.
+Its COCO release remains inadmissible under current project publisher protection.
+
+FiveK source preparation is metadata-only: five official resources, 4,725,181 bytes, no images,
+weights, new inference or fitting. Source index parses 5,000 original identities, six subject
+categories, three lighting groups. V1 stops on filename-vs-stem licence schema mismatch; separate
+v2 exact-stem reconciliation admits all metadata, never image TRAIN eligibility. Both failures and
+correction hashes preserved. Two parser and four licence-reconciliation fixture cases pass. A
+12-parent decoder/overlap pilot is planned separately, not started and not detector evaluation.

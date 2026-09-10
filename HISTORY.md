@@ -5684,3 +5684,36 @@ Verification: 611 Python tests pass in 12.32s, one existing Starlette/httpx depr
 the diagnostic run exits 0 and leaves no training child or saved candidate. Local commits only,
 no GitHub push. The existing 30-minute heartbeat remains ACTIVE; chat-turn completion does not
 mean a continuously running agent, and follow-up depends on app/machine/storage availability.
+
+### 2026-09-10 — E56 metadata coverage diagnosis and candidate source preparation
+
+Heartbeat finds E55 complete, no duplicate job; AC attached and actual external LaCie has ~386 GiB
+free. Metadata-only admitted-TRAIN audit is preregistered and committed c815439 before execution.
+Ten of eleven frozen publisher components contain only one class: 9,270/11,630 parents (79.71%).
+Fold-0 REAL FIT has 9/5,314 monochrome images versus 229/1,250 held-out RR. Source/class association
+is a plausible shortcut risk, not proof of model causation. Topic fields are absent in normalized
+rows; scene metadata present for 1,000 REAL, not a complete semantic inventory. All colour joins and
+publisher role boundaries validate. No image read or new model score. See evidence/e56_coverage_audit.json.
+
+Primary B-Free documentation supports paired content/processing as a research direction. Its COCO
+training release is not admitted because current project protection includes COCO/DDA/Module 2;
+background-restored edits also require a distinct label policy. Checked old E40: content-cluster
+weighting already existed, so do not present another blind cluster sweep as novel work.
+
+FiveK provides a possible licensed research REAL supplement with annotated subject/light and human
+tonal processing, but is old SLR data, not modern phone proof or paired AI. Metadata-only contract
+66ad22f caps 12 MiB; five official text resources total 4,725,181 bytes on external storage, zero
+image bodies. First parser fails closed because official licence files use stems without `.dng`.
+Preserve frozen v1 source/contract. Separate preregistered amendment 17fc506 pins all acquired bytes
+and joins exact DNG filename stems offline; all 5,000 identities have one licence, 2,690 Adobe and
+2,310 Adobe+MIT. Full metadata manifest SHA ace6999013bf359db1d7d6b8b22361b9cfc2b9bb97aaf55c71e5f5b7ced10487.
+No fuzzy match, licence waiver, image substitution or training. Receipts: evidence/e56_fivek_*.
+
+Next registered package is a 12-original-DNG, <=384 MiB decoder/overlap pilot before any larger
+TRAIN supplement. Isolate decoder dependencies from frozen ML; no image pilot has started yet.
+Keep AI replay/gates, serving, Module 2 and independent reserves unchanged. No accuracy gain claimed.
+
+Verification for this slice: 620 Python tests pass in 12.14s, one existing Starlette/httpx warning;
+git diff --check passes. All acquisition/audit commands completed, no training or download child
+left running. Own verified changes and receipts committed locally; no GitHub push. The scheduled
+follow-up remains responsible for the next bounded pilot, not an unstarted background training job.

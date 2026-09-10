@@ -2075,3 +2075,17 @@ byte cap, RAW/ProPhoto-to-sRGB processing, canonical overlap screening and TRAIN
 Sources: [FiveK](https://data.csail.mit.edu/graphics/fivek/),
 [Adobe licence](https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobe.txt),
 [Adobe/MIT licence](https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobeMIT.txt).
+
+Acquisition outcome: 4,725,181 archived metadata bytes; zero image bytes. Index 4,629,128 B,
+licences 1,841/1,994 B, filename lists 45,282/46,936 B. V1 exact-basename join correctly rejects
+extensionless official lists; v2 exact-stem amendment (no refetch) validates a unique complete
+licence assignment for all 5,000 rows: 2,690 Adobe /2,310 Adobe+MIT. Subjects: nature 1,089,
+people 1,341, man-made objects 1,869, animals 300, unknown 366, abstract 35; lighting: sun/sky
+3,404, mixed 831, artificial 765. These are publisher annotations, not independently verified truth.
+Manifest SHA `ace6999013bf359db1d7d6b8b22361b9cfc2b9bb97aaf55c71e5f5b7ced10487`; compact receipts
+`evidence/e56_fivek_metadata.json` and `evidence/e56_fivek_review_contract_v2.json`.
+
+Planned next, not downloaded: 12 original DNGs (two hash-ranked per subject, including unknown),
+<=32 MiB each/384 MiB total. Quarantine for fixed, isolated RAW decoding and full protected-overlap
+screening; no TRAIN admission or model scoring until checks pass. Retain original bodies/licences,
+do not manufacture modern-camera claims or label human tonal edits as AI-generated.

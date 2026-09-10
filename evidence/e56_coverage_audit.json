@@ -1,0 +1,557 @@
+{
+  "candidate_saved": false,
+  "code_sha256": "71b685677a28043b0c8e7be00b64e66b1b93746fdcb702642acda26c63175673",
+  "coverage": {
+    "classes": {
+      "0": {
+        "ai": 0,
+        "device_metadata_present": 4700,
+        "exact224": 2314,
+        "monochrome": 238,
+        "parents": 7035,
+        "real": 7035,
+        "scene_metadata_present": 1000,
+        "short_side_ge512": 4652,
+        "square": 2608,
+        "topic_metadata_present": 0
+      },
+      "1": {
+        "ai": 4595,
+        "device_metadata_present": 0,
+        "exact224": 353,
+        "monochrome": 120,
+        "parents": 4595,
+        "real": 0,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 3966,
+        "square": 3992,
+        "topic_metadata_present": 0
+      }
+    },
+    "field_presence": {
+      "audit_role": 5978,
+      "bytes": 5978,
+      "condition": 1700,
+      "decoded_format": 9930,
+      "device": 4700,
+      "dhash": 5978,
+      "expected_bytes": 1700,
+      "expected_crc32": 1700,
+      "format": 1700,
+      "height": 11630,
+      "identity": 1700,
+      "label": 11630,
+      "legacy_dhash": 1700,
+      "member": 1700,
+      "mode": 1700,
+      "model_name": 500,
+      "native": 11630,
+      "parent_group": 5652,
+      "parent_id": 11630,
+      "path": 5978,
+      "provenance": 4278,
+      "rank": 1700,
+      "record_id": 5652,
+      "restriction": 1700,
+      "role": 11630,
+      "role_group": 5652,
+      "scene_group": 1000,
+      "sha256": 11630,
+      "source": 11630,
+      "source_id": 5652,
+      "source_key": 5652,
+      "width": 11630
+    },
+    "fold_exposure": [
+      {
+        "fit_publishers_by_class": {
+          "0": [
+            "SCIMD-17",
+            "csafe_publisher",
+            "e32:forchheim-fodb",
+            "e32:vision-base-native"
+          ],
+          "1": [
+            "e32:communityforensics-ai-local",
+            "e32:gpt-image-1",
+            "e32_flux_qwen_shared_prompts",
+            "e36_ai_shared_prompt_batch"
+          ]
+        },
+        "fold": 0,
+        "strata": {
+          "CAL:label0": {
+            "ai": 0,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 0,
+            "parents": 471,
+            "real": 471,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 471,
+            "square": 0,
+            "topic_metadata_present": 0
+          },
+          "CAL:label1": {
+            "ai": 77,
+            "device_metadata_present": 0,
+            "exact224": 77,
+            "monochrome": 6,
+            "parents": 77,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 0,
+            "square": 77,
+            "topic_metadata_present": 0
+          },
+          "EXCLUDED:label1": {
+            "ai": 652,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 30,
+            "parents": 652,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 652,
+            "square": 652,
+            "topic_metadata_present": 0
+          },
+          "FIT:label0": {
+            "ai": 0,
+            "device_metadata_present": 4700,
+            "exact224": 2314,
+            "monochrome": 9,
+            "parents": 5314,
+            "real": 5314,
+            "scene_metadata_present": 1000,
+            "short_side_ge512": 3000,
+            "square": 2314,
+            "topic_metadata_present": 0
+          },
+          "FIT:label1": {
+            "ai": 2756,
+            "device_metadata_present": 0,
+            "exact224": 276,
+            "monochrome": 74,
+            "parents": 2756,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 2480,
+            "square": 2256,
+            "topic_metadata_present": 0
+          },
+          "VALIDATION:label0": {
+            "ai": 0,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 229,
+            "parents": 1250,
+            "real": 1250,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 1181,
+            "square": 294,
+            "topic_metadata_present": 0
+          },
+          "VALIDATION:label1": {
+            "ai": 1110,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 10,
+            "parents": 1110,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 834,
+            "square": 1007,
+            "topic_metadata_present": 0
+          }
+        }
+      },
+      {
+        "fit_publishers_by_class": {
+          "0": [
+            "e32:forchheim-fodb",
+            "e32:vision-base-native",
+            "e36_real_publisher",
+            "rr_publisher_all_topics"
+          ],
+          "1": [
+            "e32:communityforensics-ai-local",
+            "e32:gpt-image-1",
+            "e32_nano_family",
+            "rr_publisher_all_topics"
+          ]
+        },
+        "fold": 1,
+        "strata": {
+          "CAL:label0": {
+            "ai": 0,
+            "device_metadata_present": 0,
+            "exact224": 320,
+            "monochrome": 1,
+            "parents": 320,
+            "real": 320,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 0,
+            "square": 320,
+            "topic_metadata_present": 0
+          },
+          "CAL:label1": {
+            "ai": 138,
+            "device_metadata_present": 0,
+            "exact224": 138,
+            "monochrome": 6,
+            "parents": 138,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 0,
+            "square": 138,
+            "topic_metadata_present": 0
+          },
+          "EXCLUDED:label0": {
+            "ai": 0,
+            "device_metadata_present": 1000,
+            "exact224": 0,
+            "monochrome": 8,
+            "parents": 1000,
+            "real": 1000,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 1000,
+            "square": 0,
+            "topic_metadata_present": 0
+          },
+          "EXCLUDED:label1": {
+            "ai": 1000,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 40,
+            "parents": 1000,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 1000,
+            "square": 1000,
+            "topic_metadata_present": 0
+          },
+          "FIT:label0": {
+            "ai": 0,
+            "device_metadata_present": 2000,
+            "exact224": 294,
+            "monochrome": 229,
+            "parents": 4015,
+            "real": 4015,
+            "scene_metadata_present": 1000,
+            "short_side_ge512": 3652,
+            "square": 588,
+            "topic_metadata_present": 0
+          },
+          "FIT:label1": {
+            "ai": 2977,
+            "device_metadata_present": 0,
+            "exact224": 215,
+            "monochrome": 67,
+            "parents": 2977,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 2486,
+            "square": 2374,
+            "topic_metadata_present": 0
+          },
+          "VALIDATION:label0": {
+            "ai": 0,
+            "device_metadata_present": 1700,
+            "exact224": 1700,
+            "monochrome": 0,
+            "parents": 1700,
+            "real": 1700,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 0,
+            "square": 1700,
+            "topic_metadata_present": 0
+          },
+          "VALIDATION:label1": {
+            "ai": 480,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 7,
+            "parents": 480,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 480,
+            "square": 480,
+            "topic_metadata_present": 0
+          }
+        }
+      },
+      {
+        "fit_publishers_by_class": {
+          "0": [
+            "rr_publisher_all_topics"
+          ],
+          "1": [
+            "rr_publisher_all_topics"
+          ]
+        },
+        "fold": 2,
+        "strata": {
+          "CAL:label0": {
+            "ai": 0,
+            "device_metadata_present": 1700,
+            "exact224": 1700,
+            "monochrome": 0,
+            "parents": 1700,
+            "real": 1700,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 0,
+            "square": 1700,
+            "topic_metadata_present": 0
+          },
+          "CAL:label1": {
+            "ai": 480,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 7,
+            "parents": 480,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 480,
+            "square": 480,
+            "topic_metadata_present": 0
+          },
+          "EXCLUDED:label0": {
+            "ai": 0,
+            "device_metadata_present": 3000,
+            "exact224": 0,
+            "monochrome": 8,
+            "parents": 3000,
+            "real": 3000,
+            "scene_metadata_present": 1000,
+            "short_side_ge512": 3000,
+            "square": 0,
+            "topic_metadata_present": 0
+          },
+          "EXCLUDED:label1": {
+            "ai": 2652,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 86,
+            "parents": 2652,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 2652,
+            "square": 2152,
+            "topic_metadata_present": 0
+          },
+          "FIT:label0": {
+            "ai": 0,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 229,
+            "parents": 1250,
+            "real": 1250,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 1181,
+            "square": 294,
+            "topic_metadata_present": 0
+          },
+          "FIT:label1": {
+            "ai": 1110,
+            "device_metadata_present": 0,
+            "exact224": 0,
+            "monochrome": 10,
+            "parents": 1110,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 834,
+            "square": 1007,
+            "topic_metadata_present": 0
+          },
+          "VALIDATION:label0": {
+            "ai": 0,
+            "device_metadata_present": 0,
+            "exact224": 614,
+            "monochrome": 1,
+            "parents": 1085,
+            "real": 1085,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 471,
+            "square": 614,
+            "topic_metadata_present": 0
+          },
+          "VALIDATION:label1": {
+            "ai": 353,
+            "device_metadata_present": 0,
+            "exact224": 353,
+            "monochrome": 17,
+            "parents": 353,
+            "real": 0,
+            "scene_metadata_present": 0,
+            "short_side_ge512": 0,
+            "square": 353,
+            "topic_metadata_present": 0
+          }
+        }
+      }
+    ],
+    "parents_in_single_class_publishers": 9270,
+    "publisher_groups": {
+      "SCIMD-17": {
+        "ai": 0,
+        "device_metadata_present": 1700,
+        "exact224": 1700,
+        "monochrome": 0,
+        "parents": 1700,
+        "real": 1700,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 0,
+        "square": 1700,
+        "topic_metadata_present": 0
+      },
+      "csafe_publisher": {
+        "ai": 0,
+        "device_metadata_present": 1000,
+        "exact224": 320,
+        "monochrome": 9,
+        "parents": 1320,
+        "real": 1320,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 1000,
+        "square": 320,
+        "topic_metadata_present": 0
+      },
+      "e32:communityforensics-ai-local": {
+        "ai": 569,
+        "device_metadata_present": 0,
+        "exact224": 69,
+        "monochrome": 10,
+        "parents": 569,
+        "real": 0,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 500,
+        "square": 569,
+        "topic_metadata_present": 0
+      },
+      "e32:forchheim-fodb": {
+        "ai": 0,
+        "device_metadata_present": 1000,
+        "exact224": 154,
+        "monochrome": 0,
+        "parents": 1154,
+        "real": 1154,
+        "scene_metadata_present": 1000,
+        "short_side_ge512": 1000,
+        "square": 154,
+        "topic_metadata_present": 0
+      },
+      "e32:gpt-image-1": {
+        "ai": 569,
+        "device_metadata_present": 0,
+        "exact224": 69,
+        "monochrome": 11,
+        "parents": 569,
+        "real": 0,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 500,
+        "square": 69,
+        "topic_metadata_present": 0
+      },
+      "e32:vision-base-native": {
+        "ai": 0,
+        "device_metadata_present": 1000,
+        "exact224": 140,
+        "monochrome": 0,
+        "parents": 1140,
+        "real": 1140,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 1000,
+        "square": 140,
+        "topic_metadata_present": 0
+      },
+      "e32_flux_qwen_shared_prompts": {
+        "ai": 1138,
+        "device_metadata_present": 0,
+        "exact224": 138,
+        "monochrome": 46,
+        "parents": 1138,
+        "real": 0,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 1000,
+        "square": 1138,
+        "topic_metadata_present": 0
+      },
+      "e32_nano_family": {
+        "ai": 729,
+        "device_metadata_present": 0,
+        "exact224": 77,
+        "monochrome": 36,
+        "parents": 729,
+        "real": 0,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 652,
+        "square": 729,
+        "topic_metadata_present": 0
+      },
+      "e36_ai_shared_prompt_batch": {
+        "ai": 480,
+        "device_metadata_present": 0,
+        "exact224": 0,
+        "monochrome": 7,
+        "parents": 480,
+        "real": 0,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 480,
+        "square": 480,
+        "topic_metadata_present": 0
+      },
+      "e36_real_publisher": {
+        "ai": 0,
+        "device_metadata_present": 0,
+        "exact224": 0,
+        "monochrome": 0,
+        "parents": 471,
+        "real": 471,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 471,
+        "square": 0,
+        "topic_metadata_present": 0
+      },
+      "rr_publisher_all_topics": {
+        "ai": 1110,
+        "device_metadata_present": 0,
+        "exact224": 0,
+        "monochrome": 239,
+        "parents": 2360,
+        "real": 1250,
+        "scene_metadata_present": 0,
+        "short_side_ge512": 2015,
+        "square": 1301,
+        "topic_metadata_present": 0
+      }
+    },
+    "single_class_publishers": [
+      "SCIMD-17",
+      "csafe_publisher",
+      "e32:communityforensics-ai-local",
+      "e32:forchheim-fodb",
+      "e32:gpt-image-1",
+      "e32:vision-base-native",
+      "e32_flux_qwen_shared_prompts",
+      "e32_nano_family",
+      "e36_ai_shared_prompt_batch",
+      "e36_real_publisher"
+    ]
+  },
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/e54_color_audit.json": "ebab962a1ad1c0680fcf6440ff30dca7801f3ae0ca623f4b05d9c3fa7dce128a",
+    "/Volumes/LaCie/pixelproof-datasets/e54/color_descriptors.json": "f165e4540d3c3284c65b3d57190278e77dd264a08190646c07e9ba8734d1e10d",
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+  },
+  "limitations": [
+    "Descriptive admitted TRAIN inventory, not causal or independent test evidence.",
+    "Absent fields mean unknown; field presence does not validate metadata accuracy.",
+    "Publisher grouping follows the existing frozen protocol, not semantic identity.",
+    "Source-class association alone does not prove the model exploits it.",
+    "Dimensions and monochrome flags are descriptors, never label rules."
+  ],
+  "new_images_read": 0,
+  "new_model_scores": 0,
+  "state": "E56_metadata_coverage_audit_complete"
+}

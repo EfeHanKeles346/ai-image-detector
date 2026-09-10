@@ -1,0 +1,17 @@
+{
+  "code_sha256": "6a0d86f5b10ee57c416e72b4a6680d462b5159a3225aab3dc036f824d5dc3933",
+  "image_downloads": 0,
+  "input_sha256": {
+    "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/LicenseAdobe.txt": "8121ecfcf743d850d6b6dbd0744cfb517c4cec189387aa010bf378077de84fcf",
+    "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/LicenseAdobeMIT.txt": "69f73c481140c40d3a02a15a739da76073de35646108a70bb1dfffadb182af3d",
+    "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/filesAdobe.txt": "9f4f262b25522d93f97a5b40f48f42de357ae0b14ef7098a576c912c546e8383",
+    "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/filesAdobeMIT.txt": "c4cc6ef8cc9e519466ac130b977cd4292ffe9405f94d04227d0e2aee38aa5475",
+    "/Volumes/LaCie/pixelproof-datasets/e56/fivek_metadata/index.html": "cc11c048a6c29459628cd0989ba28324857988eac10894773b8a20dbb9fd3127"
+  },
+  "method": "Exact validated DNG filename stem, unique complete disjoint licence union; no fuzzy matching.",
+  "new_network_bytes": 0,
+  "original_code_sha256": "5652b494955e5a963c5606737dcb140a168eeb23f5eee92a771b4fa474219aa4",
+  "original_contract_sha256": "1aa4a1b352e797dd2824d8e223216a933c75aa7c207001c27b44aeef4562d835",
+  "state": "FiveK_offline_schema_amendment_v2",
+  "v1_failure": "Official licence lists use extensionless filenames; exact basename join rejected a0001-jmac_DSC1459.dng."
+}

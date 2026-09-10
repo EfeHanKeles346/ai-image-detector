@@ -37,6 +37,26 @@ URLs only. Pin all five downloaded byte hashes, retain the failed-v1 reason, rej
 cross-licence stems and require a complete 5,000-row union. No fuzzy/numeric-id match, image
 download, metadata refetch or model score. This is a parser schema correction, not a licence waiver.
 
+**Metadata review complete:** 4,725,181 archived bytes, zero image bytes; all 5,000 parents have
+one licence (2,690 Adobe /2,310 Adobe+MIT). Six subject categories and three lighting categories
+are available, including explicit unknowns. V1 schema failure is preserved; v2 reconciles exact
+filename stems offline. No fitted candidate or accuracy improvement is claimed.
+
+Next bounded work package: freeze 12 original-DNG pilot parents, two per declared subject category,
+deterministically hash-ranked from the pinned manifest (including `unknown`, no score selection).
+Maximum 32 MiB per image /384 MiB image payload, on LaCie only; reject oversize/changed resources
+without silent substitution. Pin observed HTTP identity/size and receipt hashes; upstream lacks a
+per-file cryptographic digest, so distinguish local integrity from publisher authentication.
+Use a separate, version-pinned RAW decoder environment, never alter the frozen ML environment.
+Record LibRaw/rawpy versions and a fixed camera-WB, sRGB, explicit gamma/brightness/bit-depth recipe;
+verify dimensions/finite decoding and preserve DNGs, licences and lossless derived RGB hashes.
+Do not treat expert TIFF16 ProPhoto bytes as sRGB. Check byte/canonical/near-duplicate overlap against
+the entire protected reference including MNW/HDR+ before TRAIN admission; pilot images remain
+quarantined until that passes. No held-out scoring. If the decoder, licence or source check fails,
+archive the failure and stop this pilot. Only then preregister a bounded content/light-stratified
+REAL supplement against the same baseline with unchanged AI replay, stable float64 controls and
+all original gates. New REAL alone is not paired-data alignment or a guaranteed fix.
+
 Numerical audit now completes: exact FIT features, labels, sources and parent order match in all
 three folds; collapsed weights differ by at most 2.23e-16. Fixed float64/tol=1e-8 duplicate fits
 agree on FIT scores within 2.24e-6. This supports numerical sensitivity of the old float32/default
