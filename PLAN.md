@@ -5,7 +5,64 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Current outcome and next actions — E57 complete, rejected (2026-09-10)
+## Current priority — champion-first offline improvement; execution paused by user (2026-09-10)
+
+The user's latest instruction supersedes all automatic resume commands below: plan now, apply
+after arrival at the office, NO new downloads. E59 feature extraction and queued training were
+gracefully stopped; scheduled heartbeat is PAUSED. Do not resume them without a new user start.
+Keep completed research/cache/history, do not delete or promote it. The lower source-fold
+scores are not a degraded overwrite of the good full model; nonetheless, experiment expansion
+displaced the user's priority and must stop being the default development route.
+
+### Offline office plan — improve the actual strong reference, not a weaker replacement
+
+1. **Pin the reference and the evaluation question.** E43-S is the historical high-recall
+   research model: `/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib`, verified
+   SHA `a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390` matches E49's
+   frozen score contract. Preserve head/scaler/backbone/crops/cuts; do not overwrite. E49
+   original/Q75 recall94.3/95.5%, REAL FPR39.1/49.0% are paired historical diagnostics, NOT
+   final success. Separately identify the web serving profile (canonical E20/optional E26/R1b
+   in current code); do not confuse a research champion with what the UI actually serves.
+2. **Audit existing local material before any fitting.** Recover E43's exact FIT parent/source
+   membership and preprocessing, compare the prior E51/E54 data reductions and loss mass, and
+   identify eligible REAL hard negatives and complete AI replay already on disk. Check label
+   direction, RGB/EXIF/resize/compression and inference parity. This is not another acquisition
+   or broad architecture search. Do not assume all 8,844 old E43 parents are reusable: preserve
+   modern protection/overlap rules and explicitly report conflicts. No protected/test data can
+   be promoted to TRAIN to reconstruct the old training recipe.
+3. **Audit a valid development comparison for a warm-started champion.** E43 already saw some
+   E54 fold validation parents; its frozen head must NOT be treated as an unseen-fold comparator
+   or teacher in a purported clean OOF experiment on those rows. Identify a genuinely held-out,
+   local development population outside the teacher's FIT and every prohibited role. Existing
+   consumed E49 scores can explain failures and later supply one preregistered regression check,
+   not choose weights/cuts or certify a fresh final. E51 consumed DEV, MNW/HDR+, E52 and Module2
+   boundaries remain intact. If no permitted fresh development population exists offline, report
+   that limitation: engineering/TRAIN checks may proceed, but no independent quality claim.
+4. **One bounded champion-preserving candidate, after steps1–3.** Keep E43 backbone, existing
+   scaler and original head frozen. Proposed first mechanism is a small zero-initialized additive
+   logit correction using existing DINO features, rather than a randomly rebuilt detector. At
+   initialization it must reproduce E43 scores/decisions exactly. Fit ONLY admitted TRAIN hard
+   REAL examples together with all eligible AI replay; use true labels, plus an explicitly frozen
+   penalty against changing the reference's correct AI margins. Teacher outputs are a retention
+   aid, not ground truth. Do not merely raise a threshold, apply a blanket real veto, or assume
+   distillation guarantees unseen-AI preservation. Freeze exact loss coefficients, correction
+   bound, optimizer/steps, runtime and split/input hashes BEFORE training, after the eligibility
+   audit. No hyperparameter/architecture sweep. This is a proposed mechanism, not a fitted winner.
+5. **Compare champion versus candidate on identical lawful held-out rows.** Fixed operating
+   rules, original andQ75, paired rescued/new errors by REAL source and AI generator. Preserve
+   pooled and supported-generator AI recall with the existing uncertainty/no-loss guards while
+   reducing REAL false accusations; report inconclusive/regression as such. No blanket %66 vs
+   %94 cross-protocol comparison. One frozen candidate, not endless retuning on observed tests.
+   If it fails, retain E43 and explain the failure before another experiment. Independent final
+   and serving promotion require all existing prior gates and an eligible new final population.
+
+Execution order in the office: reproduce/reference audit -> lawful data/role audit -> register
+the single correction experiment -> bounded fit -> paired report. Reuse cached DINO features;
+zero source/weight/package/image-API downloads. E59/CLIP is parked as a later optional route,
+not an automatic dependency or the default starting point. The user's restart authorizes this
+plan, not the old queued E59 continuation. Keep planned versus measured results separate.
+
+### Historical E57–E59 execution checkpoints (not active instructions)
 
 **Current active invocation09:24:** persisted8,308 parent chunks (342,619,493B, no partials)
 after the second planned deadline. Original processes exited; unchanged extractor resumed

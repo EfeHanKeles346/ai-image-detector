@@ -5910,3 +5910,28 @@ first; never rerun completed science or weaken the budget to force a result.
 Full649-test suite passes (13.42s, one existing Starlette/httpx warning); two new fixtures cover
 PID identity/exit and remaining-budget accounting. Frozen feature/model science unchanged.
 No new source/weight download, ML dependency change, final scoring, serving update or push.
+
+### 2026-09-10 — User redirects to the strong model; pause and offline office plan
+
+User rejects continued weaker-replacement exploration and requests planning now, application
+in the office with no downloads. Stop queued followup41371 first (exit143), then feature
+guard40155 (exit130 via its SIGTERM cleanup), which stops owned worker40165. Process inventory
+confirms no E59 worker/trainer remains. Preserve9,599 completed parent chunks/399,641,982B,
+00000..09598, no `.part`; no full feature receipt or E59 trained model exists. No files deleted.
+Existing thread heartbeat gece-model-geli-tirme-takibi changed toPAUSED through the app tool;
+saved status verified. No automatic resume while awaiting the user's office restart.
+
+Read-only E43-S artifact check matches the original E49-bound SHA exactly:
+a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390. The good full research
+model was never replaced by these source-fold candidates. E49 recall94.3/95.5% remains
+historical alongside REAL FPR39.1/49.0%; not a final pass or necessarily the current web profile.
+Initial macOS shasum invocation failed from the environment's C.UTF-8 locale; LC_ALL=C retry
+verifies the bytes without modifying anything. No artifact/dependency/serving changes.
+
+PLAN now prioritizes exact strong-model reproduction and lawful local data/split audit, then
+one separately registered zero-initialized correction to the frozen E43 head using existing
+DINO features, REAL errors and complete eligible AI replay with retention constraints. No
+new architecture/weight/data download or fit is authorized in this turn. E43's prior exposure
+invalidates naive reuse as a clean OOF comparator on rows it trained on; fresh eligible local
+development must be checked before quality claims. Cannot recycle final/Module2/reserves or
+guarantee AI retention through a penalty alone. Historical E59 work is parked, not erased.
