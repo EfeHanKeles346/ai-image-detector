@@ -47,6 +47,16 @@ not paired-AI alignment or proof that all previous errors came from data.
 
 No E57 image selection, acquisition or training has started at this registration checkpoint.
 
+**04:32 operational continuation:** acquisition is now active for the frozen 201-parent/1,999,000,262
+byte selection. Scientific model implementation is committed before extraction/fitting. A separate
+operational guard may wait for the exact existing acquisition PID to exit successfully with both
+receipts, then run audit -> model-contract freeze -> feature extraction -> six fits -> report.
+No duplicate download; refuse PID reuse or missing receipt, stop owned children on power/storage
+loss, and cap the combined wait/follow-up invocation at 60 minutes. Each stage logs under ignored
+ml/work. This automation does not relax admission, frozen gates or authorize serving. Freeze-stage
+input hashes are written before any new feature/fitting step; archive the resulting receipts at
+the next checkpoint. If the bounded run ends unfinished, resume only pending stages after checks.
+
 **03:48 pilot implementation registration:** use seed string `FIVEK_E56_PILOT_V1|` plus exact
 filename SHA-256 ranking, two per all six declared subjects. HEAD-pin size/ETag/Last-Modified
 before image GET and fail on oversize/identity change. At most 30 minutes per acquisition run;
