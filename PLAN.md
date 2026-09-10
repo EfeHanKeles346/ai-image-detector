@@ -30,6 +30,13 @@ validate all 5,000 identities and unique licence assignments before selecting an
 or ambiguous metadata blocks image acquisition, not a reason to guess. Future image pilot must
 be separately frozen (byte cap, deterministic strata, decoder, overlap, TRAIN-only designation).
 
+FiveK metadata v1 downloads all five text resources but correctly stops before admission: official
+licence lists name extensionless stems, while the index names `.dng` originals. Preserve v1 code
+and contract; add a separate offline v2 reconciliation using exact stem equality for validated DNG
+URLs only. Pin all five downloaded byte hashes, retain the failed-v1 reason, reject duplicate or
+cross-licence stems and require a complete 5,000-row union. No fuzzy/numeric-id match, image
+download, metadata refetch or model score. This is a parser schema correction, not a licence waiver.
+
 Numerical audit now completes: exact FIT features, labels, sources and parent order match in all
 three folds; collapsed weights differ by at most 2.23e-16. Fixed float64/tol=1e-8 duplicate fits
 agree on FIT scores within 2.24e-6. This supports numerical sensitivity of the old float32/default
