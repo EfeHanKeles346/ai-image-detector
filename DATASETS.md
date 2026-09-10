@@ -2089,3 +2089,12 @@ Planned next, not downloaded: 12 original DNGs (two hash-ranked per subject, inc
 <=32 MiB each/384 MiB total. Quarantine for fixed, isolated RAW decoding and full protected-overlap
 screening; no TRAIN admission or model scoring until checks pass. Retain original bodies/licences,
 do not manufacture modern-camera claims or label human tonal edits as AI-generated.
+
+Pilot frozen before image GET: 12 subject-stratified parents, official HEAD sizes total
+122,074,000 bytes (~122.1 MB), each within 32 MiB. Preserve observed ETag/Last-Modified and locally
+computed SHA-256; upstream provides no per-file cryptographic digest. Contract:
+`evidence/e56_fivek_pilot_contract.json`. Isolated decoder rawpy 0.27.1 /LibRaw 0.22.1, NumPy 2.5.1,
+Pillow 12.3.0; binary wheel installation is separate from frozen ML dependencies. AHD, camera WB,
+sRGB primaries/gamma(2.4,12.92), full resolution, auto-bright off, brightness 1, highlight clipping,
+8-bit PNG. This is a fixed local rendition, not native camera JPEG or an expert's Lightroom output.
+All originals and derived pixels remain one parent and quarantined; no training or score yet.

@@ -7,6 +7,17 @@ only what is *next*, so there is exactly one place to look and one place to upda
 
 ## Current outcome and next actions — E55 rejected; audit complete (2026-09-10)
 
+**03:48 pilot implementation registration:** use seed string `FIVEK_E56_PILOT_V1|` plus exact
+filename SHA-256 ranking, two per all six declared subjects. HEAD-pin size/ETag/Last-Modified
+before image GET and fail on oversize/identity change. At most 30 minutes per acquisition run;
+check AC/mount/free space before files and periodically while streaming. Isolated decoder under
+ignored `ml/work/e56_decoder`, rawpy=0.27.1, numpy=2.5.1, Pillow=12.3.0, binary wheels only; archive
+installer report hashes and runtime LibRaw version. Fixed AHD, full resolution, camera WB, auto-WB
+off, sRGB primaries, gamma=(2.4,12.92), auto-bright off, brightness=1, highlight clip, 8-bit RGB,
+no added denoise/sharpening. Keep original orientation handling and record dimensions. No expert
+TIFF, screenshot, automatic brightness tuning or image replacement. Standalone decoder must not
+import or alter ML training dependencies. All raw/decoded bodies stay quarantined on LaCie.
+
 **03:08 follow-up, before execution:** add a descriptive metadata-only coverage audit of the
 11,630 admitted E54 parents. Bind existing data/colour receipts and immutable code hash; count
 class support per publisher, geometry/colour strata per fold/role and available scene/device
