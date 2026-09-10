@@ -77,8 +77,6 @@ three-crop aggregation, offline weights, whole parent/fold joins and all helper 
 full feature run. The later nine fits must be a separately frozen contract with no score-guided
 feature selection, no FiveK enlargement, no weakening of existing source-wise AI preservation.
 
-### Prior E56/E57 registration and execution record (historical checkpoints)
-
 **E59 full feature registration, 06:18 follow-up (before extraction):** keep all existing
 11,630 E54 parents/34,890 ordered views. Offline pinned CLIP ViT-L/14, official image
 normalization on exactly the cached three RGB224 crops per view, frozen float32 eval, batch
@@ -107,6 +105,8 @@ all unchanged absolute, exact-replay and paired AI-preservation/REAL-improvement
 alone and combined are separately reported; neither may replace serving without further gates.
 The actual training implementation/artifact and input hashes must freeze separately after
 feature completion but before fitting. Full feature acquisition does not authorize a final test.
+
+### Prior E56/E57 registration and execution record (historical checkpoints)
 
 E56's 12 DNGs complete: 122,074,000 original bytes +166,400,845 derived PNG bytes. All fixed
 decodes repeat with exact RGB equality; external reference screen (150,883 observations including
