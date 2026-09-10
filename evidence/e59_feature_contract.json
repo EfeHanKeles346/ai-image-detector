@@ -1,0 +1,59 @@
+{
+  "aggregation": "raw 768-D crop mean concatenated with population std, float32; no L2 normalization",
+  "batch_crops": 3,
+  "code_sha256": "eade46a074c3b7df57d005dd188766f9cd0b6d5ae4ab3748c7b8379145986ddd",
+  "contract_sha256": "224382c10f2831a9a522bb668e952c30b3a1be890fa2219044f99e7679605954",
+  "crop_preprocessing": "Official CLIP transform applied to existing E54 RGB224 crop bytes",
+  "download_bytes": 0,
+  "encoder": "CLIP ViT-L/14 cached pretrained image encoder, frozen float32 eval",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/e59_clip_probe.json": "1a9a384466e8df30be767cb5359460c1f2db31626fcd0e8010a3c373342b1d84",
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/e59_clip_probe_contract.json": "8ad483b0c57be06a948c3afa8a3b544f5d25b9a528e6ad1cbac1c5f84f7ad68a",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e47_univfd_diagnostic.py": "5c46ca98b6a1f02b168ee47149ef19c1a0001d1fa22672722ab76f600b786a8b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e54_adapt.py": "f7625dc924b81bf52f91668f7cbd5d47b9afa3f65702dd5a49a31a7b2fbb982b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e54_data.py": "b4722d1678f339fa9f0cd7a4286b0af08be33587617ae66645b968ebb8315548",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e56_fivek_pilot.py": "63a685382e412399c1b40c5ea12a9e15849b5199c296a12df4ae94922b4dbe9a",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e57_data.py": "5261e7d48b6d1dad0a927a07e900746fc5fc0098f0227230ceb59211175d63c4",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/LICENSE": "923dbc0fe040cc826122491e98b20d6f401e510d50c8b666de908e59ebf2f2b2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/models/clip/__init__.py": "d7930eb290ebed432116795c91473200d098451a94c0aedd4ae0f934f97955e8",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/models/clip/clip.py": "c3f1c09abe0a0d9c429e0d47f2b8d4a4ec09dbd11eec3d7dd9846babd717e43b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/models/clip/model.py": "c071d011e92226f1ca0a6f7c5098d8d7d08eadc7d6db125a81b52fc234b1ec59",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/external/UniversalFakeDetect/models/clip/simple_tokenizer.py": "d1b09f10ed3d1e2c343619cb98cbfacb92363dd8607526a43aa7fe2d60d15bad",
+    "/Volumes/LaCie/pixelproof-datasets/e47/models/ViT-L-14.pt": "b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836",
+    "/Volumes/LaCie/pixelproof-datasets/e54/crop_index.json": "886b33d2d86b4ec31ecdce68d80e332b02b300fdf2ee0be17b8e6b5de88c6015",
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+    "/Volumes/LaCie/pixelproof-datasets/e54/teacher.npz": "101c539958f72913273a0a7e91f9ee7f7b2c025d73fee956177d7fcf8c9b62d8"
+  },
+  "parent_order_sha256": "1a00202d64eab9ea33637ca361bde03c3dd14d8318855360204d8fac81c2e1f8",
+  "parents": 11630,
+  "raw_shape_per_parent": [
+    3,
+    3,
+    768
+  ],
+  "replay_tolerance": 1e-05,
+  "shape_per_parent": [
+    3,
+    1536
+  ],
+  "state": "E59_full_features_frozen_before_extraction",
+  "training": {
+    "C": 0.01,
+    "arms": [
+      "dino3072",
+      "clip1536",
+      "dino_clip4608"
+    ],
+    "cpu_threads": 2,
+    "fit_dtype": "float64",
+    "folds": 3,
+    "max_iter": 1000,
+    "restriction": "Separate implementation/input contract must freeze before any fit",
+    "roles_and_loss_mass": "unchanged E54 roles and original base FIT view mass; no FiveK",
+    "scaler": "weighted StandardScaler fitted on FIT only",
+    "seed": 53,
+    "tol": 1e-08
+  },
+  "views": 34890
+}
