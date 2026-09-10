@@ -1,0 +1,33 @@
+{
+  "code_sha256": "972d349becd94a3b7bd634617e09f074ba1459a2e764a9decf56e16149c62c41",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/e57_result.json": "87b7c6569ab2f13ac527cc973cb08612f9a015b5831bbaec7631b56a66161562",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold0.joblib": "2d55ad4da7e85113b135df29d1589cedb6c69018f7ecb028cffe95fb1e747b27",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold0.json": "b4791dbc79bb14363202a35138c2d313eeddf121be7e1628f556d715c2fc554a",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold1.joblib": "6d4907da86b3af876fb707d28dbdf199235731f25084696260c214a20908e80f",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold1.json": "0d3daf500167ced4b95d36280a438dfb03ea8141b2bc9079b4411143534cd0be",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold2.joblib": "f852469350c83fa22c2660ba30efd7a4b096f47f5664d8a68a30a9fa6a1ef915",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold2.json": "219d056897774a1dafd359bd0b45ff679ddffef5ff7cd4ce207cfc2e386ddf90",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold0.joblib": "0f808c20758e29f929d4cd0e4d9c5fe0433a0fc16d7afcb577badd639a2b73c5",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold0.json": "a4fa8d7c634d9513c2b19e0c6b06a2cf15f5f859c2df97caa07a9e8c2715a031",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold1.joblib": "5b429a8a875708896b5b8d7a4898b9daa1cca33b93880e16ce8a72a78731ee57",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold1.json": "d2c86dee2154efeea7e2b71b8ffb54f4a93d805891afb9dc6dd51c1093e2a9e2",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold2.joblib": "e87caba4cfd447fa1bc17d33b423ff1bfc6a6e7c5aa4baa6337abac582955119",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold2.json": "eb597d5533ef85165a1637af42f44f965fa2a4c710200c9c209bf27e58b07061"
+  },
+  "paths": {
+    "native64:0": "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold0.json",
+    "native64:1": "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold1.json",
+    "native64:2": "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fold2.json",
+    "native64_fivek:0": "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold0.json",
+    "native64_fivek:1": "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold1.json",
+    "native64_fivek:2": "/Volumes/LaCie/pixelproof-datasets/e57/v2/training/native64_fivek_fold2.json"
+  },
+  "policy": "Existing scores only; label-oracle diagnostic, not deployable cuts.",
+  "real_fpr_budget": 0.1,
+  "recall_targets": [
+    0.8,
+    0.95
+  ],
+  "state": "E58_score_diagnosis_frozen"
+}
