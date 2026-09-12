@@ -1,0 +1,21 @@
+{
+  "admitted": 160,
+  "balanced_development_admitted": false,
+  "contract_sha256": "ca557c37e60c067f9e275725fc1963a863c3dc27ad9dd96267a59e5264206da2",
+  "cross_match_observations": 0,
+  "independent_final_admitted": false,
+  "internal_match_pairs": 0,
+  "limitations": "Two previously seen generator families; unknown prompt dependencies, single-file groups not proof of independence. Whole remaining2385 eligible pool reserved from future TRAIN. Balanced DEV remains pending SIDD admission; never a fresh publisher/final claim.",
+  "model_scores_created": 0,
+  "quarantined_parents": [],
+  "reference_records": 151005,
+  "report_sha256": "914c5eb4a4db7bea693965cca3e1e0f076dd34986cae71ae47be0ebb1cba51b7",
+  "selected": 160,
+  "self_snapshot_entries_exempted": 160,
+  "source_counts": {
+    "gpt-image-1": 80,
+    "nano-banana-local": 80
+  },
+  "state": "E66_local_AI_DEV_audit_complete",
+  "training_allowed": false
+}

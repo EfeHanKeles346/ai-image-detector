@@ -1,0 +1,34 @@
+{
+  "cameras": {
+    "G4": 16,
+    "GP": 33,
+    "IP": 54,
+    "N6": 22,
+    "S6": 35
+  },
+  "contract_sha256": "ccf4f7f93b9e9905b0bf7d9a191dfad458bb5b82f097630eb37216795f015330",
+  "independent_final_allowed": false,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_audit.py": "71df44c7eb40333c80dde13dad79b1dac0336e51aab5b1bd467642e8975262c2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e66_acquisition.py": "56f6319cce18a68f710bdaf61c47e9da4d5569111db11edf285c71d92adc085d",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e66_sidd_dev.py": "249d4dd32ab8a96a80993b025f9423249179d30429db17a77dcaf88a31ff945e",
+    "/Volumes/LaCie/pixelproof-datasets/e52/hdrplus_reserve_v1/download.json": "95cdc842844443497af26995fb8430cf39540fa33e093b91a63be6fce768ff18",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/download.json": "a63d7655cea11d18457dbb45bb4419063526e16e90f6d941a2796af3dd17ea4c",
+    "/Volumes/LaCie/pixelproof-datasets/e52/protected_reference_v1.json": "7fc7f52e8c38e621b71877b394cccac312af333b183492bcf52154381e3ab988",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/download.json": "879f3d76255bb7b26b9e2d560a1f5d15096e0ac3fc6172662c0ec8d504635010",
+    "/Volumes/LaCie/pixelproof-datasets/e65/audit.json": "db8b3134886b62dc31d4d39be5b7eb8015550260fa0359bd92af8e18a8316caa",
+    "/Volumes/LaCie/pixelproof-datasets/e66/acquisition_contract.json": "9942d5ca27c621a55bf6e887e1bc9203e347162ff9938b5fcb759aa963c3d510",
+    "/Volumes/LaCie/pixelproof-datasets/e66/ai_admission.json": "914c5eb4a4db7bea693965cca3e1e0f076dd34986cae71ae47be0ebb1cba51b7",
+    "/Volumes/LaCie/pixelproof-datasets/e66/ai_contract.json": "ca557c37e60c067f9e275725fc1963a863c3dc27ad9dd96267a59e5264206da2",
+    "/Volumes/LaCie/pixelproof-datasets/e66/sidd_zip_directory.json": "e56b5550d91a0cdc1ad8ee2e848d9a811d7aa2bb82a7dc96f6d433ed014e538e"
+  },
+  "limitations": "Only10 real scenes across5 older phones; camera and scene dependence must be reported. SIDD renderings and two previously seen AI families support a limited DEV rejection screen, not modern-source final/generalization proof. AI prompt dependencies unknown.",
+  "max_pixels": 100000000,
+  "model_scoring_allowed": false,
+  "policy": "Full publisher archive checksum receipt required; verify archive SHA256 and exact complete ZIP directory against pre-pixel metadata. Materialize only160 NOISY PNG members to flat owned paths; streaming size/CRC checked. GT remains unextracted companion evidence. Canonical body/RGB or dHash<=4+pHash<=4 cross-reference matches quarantine entire underlying SIDD scene. Internal same-scene matches retained as dependent; cross-scene matches quarantine both scenes. No replacements or score-based exclusions. Final DEV manifest requires160 SIDD observations+160 admitted AI with no shared body/id or known TRAIN role.",
+  "scenes": 10,
+  "selected_instances": 160,
+  "state": "E66_SIDD_grouped_DEV_audit_registered",
+  "training_allowed": false
+}

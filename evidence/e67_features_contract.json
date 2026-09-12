@@ -1,0 +1,95 @@
+{
+  "batch_parents": 8,
+  "candidate_fit_allowed": false,
+  "chunk_parents": 128,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "contract_sha256": "51ea9318a9142970f259004e18f2fa0386232403e984543ba07961a68c702237",
+  "cpu_threads": 2,
+  "crop_shape": [
+    3,
+    3,
+    224,
+    224,
+    3
+  ],
+  "decision_changes_allowed": 0,
+  "dev_or_final_reads": false,
+  "feature": "Frozen DINOv2S blocks2/5/8/11 CLS, mean/std over3 crops; store blurred3072D. Candidate may use original features and original-minus-blurred response, TRAIN only.",
+  "inputs": {
+    "crop_index": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/crop_index.json",
+      "sha256": "886b33d2d86b4ec31ecdce68d80e332b02b300fdf2ee0be17b8e6b5de88c6015"
+    },
+    "feature_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py",
+      "sha256": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7"
+    },
+    "features": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/teacher.npz",
+      "sha256": "101c539958f72913273a0a7e91f9ee7f7b2c025d73fee956177d7fcf8c9b62d8"
+    },
+    "helpers": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py",
+      "sha256": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421"
+    },
+    "manifest": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json",
+      "sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+    },
+    "preprocess_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/e32_candidate.py",
+      "sha256": "e14ff1044462e49560a98fc3e8697e60738d6b41b0e3e49442dfd025c7832b6a"
+    },
+    "reference": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+      "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390"
+    },
+    "runner": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e67_features.py",
+      "sha256": "a1944343b2c7549cc2153162aaa6526c635e5dd4a594e7db356e2faea8491a57"
+    }
+  },
+  "known_train_reference_only": true,
+  "max_seconds": 14400,
+  "parents": 11630,
+  "parity_parents": [
+    "zenodo:17317613:SCIMD-17/Redmi14C_5G/IMG_20250724_151000.jpg",
+    "e32:f87ae88f2d56a27a8b88098c9672fefcbb0939d07e739836b4e8839b4085b96d",
+    "e32:6dbd9f977025e72d6d880b5e9dae70db4af2c07666e142a9183a8b8c169d201d",
+    "e32:b290f81f1e5fe8950084b2af06b152b75b6884e0b7675cefe5e9d65c81b87484",
+    "e32:59ce0483ec64920d3b9efb1e1e1aa02177aed6ea7d0c5c1f6b36fb3db72489e7",
+    "e32:1415a13f90666e3174b0a57fc6586a7dc4a1d016d0c80eaafcffefa89a75f4a8",
+    "e32:1156da3418df8549a08ebd437cd71b4ca24681e2211fbc94fb539eeeebda6493",
+    "e32:cddaae9b077e496295947c9825f39d28a13f6b3b9a33b6d7ab68b950cfabc0d7",
+    "e32:a3e5c28b342ebc67056ba77b99e29d3df8deade5db9fe7d41dd25b67e4fc70f7",
+    "e32:08d629c34eeaa56d18fc1a74eabe627b3452f2a25899822bc3f1c6f6c57b7ec7",
+    "e32:fdf573a135991c71c2446f4e749928efde882c4d8f06783cf888e4b48c33099b",
+    "e36:FLUX.2_max:qwen-bench:112",
+    "e36:GLM-Image:qwen-bench:162",
+    "e36:Qwen-Image-2.0-pro:qwen-bench:192",
+    "e36:Seedream-5.0:qwen-bench:128",
+    "e36:device_001:device_001:device_001/camera_001/view_000/img_00060.jpg",
+    "e36:device_002:device_002:device_002/camera_001/view_000/img_00001.jpg",
+    "e36:device_003:device_003:device_003/camera_001/view_000/img_00079.jpg",
+    "e36:device_005:device_005:device_005/view_000/img_00007.jpg",
+    "e36:device_009:device_009:device_009/view_000/img_00060.jpg",
+    "e36:gpt-image-2:qwen-bench:188",
+    "e36:nano-banana-2.0:qwen-bench:152",
+    "rr:bd2e58211d853b595bac6eafff7045dc418125724b9acf77e757e1f60b36883c",
+    "rr:3f38e7603bd605c1581a3974055282fb10fa33a0f9ae149ebdab898c36bc183e",
+    "rr:ffeed12630ec8ec58d16799987137ba357eef5a328e973ac4754dd2fbd66eff2",
+    "rr:d77400e76e490b31546ea37bf01abc38ab452e039d6080808506b3c590c0be68",
+    "rr:8766674c9223f5f2a5034b81f82fb6ee81f3b056c95fc70e5f8f6c199bc9cbd9",
+    "rr:162c6327ee556d8853fe9319f09ba70621d2c3c6dfe09c84382a9a9ee305b6ff",
+    "rr:0647bbeda2762206f171d8cce20aac6850b1fe0772b3f8925a3696d359cccbd0",
+    "rr:b5545d0bfc8c966f23d39ec07193535bde3ebb28c0957da37e7c5d40958a4d43"
+  ],
+  "policy": "Verify every cached crop identity/binding even on resume. Freeze feature chunks with hash receipts; no classifier fitting or DEV/E49 scoring. E54 q75 means JPEG75 at source resolution before2048 cap; do not misname it the1080px E49/SIDD transport.",
+  "reference_max_score_error": 5e-05,
+  "state": "E67_fixed_crop_blur_TRAIN_features_registered",
+  "transform": "Pillow GaussianBlur radius0.8 on each already-selected uint8 RGB224 crop, all labels and all3 cached E54 conditions identically. No crop reselection."
+}

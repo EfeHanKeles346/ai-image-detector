@@ -1,0 +1,31 @@
+{
+  "balanced_final_admitted": false,
+  "contract_sha256": "9942d5ca27c621a55bf6e887e1bc9203e347162ff9938b5fcb759aa963c3d510",
+  "expected_pairs": 160,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e66_acquisition.py": "56f6319cce18a68f710bdaf61c47e9da4d5569111db11edf285c71d92adc085d",
+    "/Volumes/LaCie/pixelproof-datasets/e66/sidd_download.html": "37636316b00c7c16e338eb32e73bd0312376b4d103909f51d1ae4c1425102942",
+    "/Volumes/LaCie/pixelproof-datasets/e66/sidd_headers.json": "cd87725e1e4d3f7d58cf0cf2751867ff12736f574e83b9ea5f32c4751ed0048d",
+    "/Volumes/LaCie/pixelproof-datasets/e66/sidd_site.html": "dc10bb430bb850394b46dccfb076ff04b943738cdf93345dde418c1662cdb2dd"
+  },
+  "limits": "Only10 underlying scenes and5 older phones; no modern-camera/fresh-final coverage claim. Codalab mirror HEAD returned403; official direct mirror supports ranges. HTTP transport checksums are publisher-integrity checks, not an independent authenticated signature.",
+  "max_seconds": 7200,
+  "model_scoring_allowed": false,
+  "policy": "Download complete published Small sRGB archive only, verify size+MD5+SHA1 and record SHA256. No archive member execution. ZIP path/size/decode/group/protected-overlap audit required before separate DEV admission. Prefer noisy camera-derived sRGB for DEV; GT remains processed companion evidence, not an additional independent photo. Official benchmark untouched.",
+  "publisher_license": "MIT",
+  "role": "QUARANTINED_DEVELOPMENT_CANDIDATE",
+  "row": {
+    "body_sha1": "5a4aa6aa7abcf7b0b56c88ad578fea9a4ff77935",
+    "bytes": 6615978508,
+    "checksum": "796971867583bf14677dcae510e52538",
+    "checksum_type": "md5",
+    "path": "/Volumes/LaCie/pixelproof-datasets/e66/SIDD_Small_sRGB_Only.zip",
+    "url": "http://130.63.97.225/share/SIDD_Small_sRGB_Only.zip"
+  },
+  "state": "E66_SIDD_Small_acquisition_registered",
+  "training_allowed": false,
+  "underlying_scenes_at_most": 10,
+  "whole_publisher_train_excluded": true,
+  "workers": 1
+}

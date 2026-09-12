@@ -6333,3 +6333,114 @@ No new candidate or AI recall measurement; target remains unmet, E43 and serving
 Whole publishers and feature cache remain consumed diagnostic-only, never TRAIN/fresh final.
 697 Python tests pass (11 new); compile/pip/diff checks pass. Source/code/hash details and
 next valid TRAIN/DEV acquisition requirements are in `evidence/e65_diagnostic.md`.
+
+
+## 2026-09-13 overnight continuation — E66 acquisition preregistration
+
+User requests continuous active-session experiments/development and commit/push checkpoints,
+explicitly no30-minute monitor or scheduled heartbeat. No automation created; E59 remains
+paused. Work proceeds while the live session can execute; interruption/network/app limits
+cannot be guaranteed away. AC power confirmed51%. E65 commit2c6524e is present on origin/main.
+Its GitHub Python job passed; web lint/typecheck/tests passed, existing critical Next.js audit
+failed again (run34722064922), independently of ML. No audit threshold weakened.
+
+Next E66: acquire only official SIDD Small sRGB archive,6,615,978,508B, published
+MD5 796971867583bf14677dcae510e52538 and SHA1 5a4aa6aa7abcf7b0b56c88ad578fea9a4ff77935.
+MIT stated on official SIDD page. One stream,2h ceiling,30GiB reserve; resume verified ranges;
+no executables or official benchmark. Codalab mirror HEAD403, direct official mirror supports
+ranges. Keep full publisher out of TRAIN/final; no model scoring before decode/group/overlap
+admission.160 noisy/GT pairs are at most10 underlying scenes,5 older phones; processed GT
+is not an additional independent photo. Prefer160 noisy sRGB for a grouped DEV candidate.
+
+E60's2,385 unused recorded-group AI candidates remain under audit: GPT Image1 (current source
+card CC-BY4.0) and Nano Banana (MIT). Their groups mostly identify individual files, not known
+prompts. Plan a hash-ranked80 per family paired with160 noisy SIDD observations only after
+provenance, old-role/teacher/current-TRAIN and newer-reserve overlap checks. This may support
+a limited balanced DEV screen, never unseen-publisher/independent-prompt or final claims.
+Model recipe/feature contract is a subsequent step; no candidate fitted yet.
+
+
+## E67 feature hypothesis registered before extraction (2026-09-13)
+
+E65 motivates a processing-response branch, not a noise-based REAL veto. Use admitted E54
+TRAIN only (11,630 parents,3 conditions,all4,595 AI replay parents). Preserve fixed3x224 crops
+and apply Pillow GaussianBlur0.8 to each crop, identically across labels and conditions;
+no crop reselection. Frozen DINOv2S blocks2/5/8/11,3-crop mean/std3072D response. This new
+input can distinguish processing sensitivity from the original semantic representation.
+It does not establish noise causality or guarantee improvement.
+
+Before full extraction, hash-select one parent per source for original-crop E43 replay parity:
+score error<=5e-5 and0 binary/selective changes. Freeze code, original TRAIN data/features,
+crop index and model bindings first. Verify every crop body even on resume.8 parents per GPU
+batch,128-parent immutable chunk receipts,CPU2 threads,4h ceiling,power30% floor unless AC.
+No E49/DEV reads, no classifier fit at this stage; SIDD acquisition proceeds independently.
+E54 q75 is full-source JPEG75 before2048 cap, NOT E49's1080px social transport. Future DEV
+must apply and name the intended serving conditions explicitly.3 crop-transform/identity
+tests pass. Candidate fit protocol will separately bind original+response representation,
+AI constraints and evaluation rules after the new DEV admission is resolved.
+
+
+E67 pre-extraction correction: freeze rejected the existing manifest's historical role casing
+(7,352 TRAIN +4,278 train), before writing any E67 contract or running model inference.
+Normalize case consistently with E60-E64 admission checks; no role reassignment, no frozen
+file modified. All11,630 rows remain admitted training, original manifest hash unchanged.
+
+
+E66 local AI admission protocol frozen before materialization/scoring:80 per GPT Image1/Nano
+Banana, seedE66, chosen only from the2,385 E60-unused recorded groups after all E53 old-role
+and duplicate exclusions. Explicitly reject E43 FIT/current TRAIN identity/body overlap.
+The150,483-body snapshot includes the native candidates themselves: remove only selected
+exact self-body entries after those eligibility checks, preserve every other hash/pixel and
+all newer MNW/HDR+/FiveK/E65 references. Current TRAIN has100% body coverage in that snapshot.
+Any confirmed cross-reference or internal overlap quarantines selected endpoints, with no
+replacement draws. Reserve the entire2,385 unused pool from future TRAIN. Local materialization
+and source-checksum verification only; no new AI downloads or inference. Unknown prompt
+independence and previously seen families prohibit a fresh-final claim. Balanced DEV remains
+pending SIDD. Native selection and archive range-resume tests pass; E67's30-source original
+crop replay passed with exact0 score error and0 decision changes; blur extraction is running.
+
+
+### E66 AI audit complete; SIDD group audit registered (2026-09-13)
+
+160 selected local AI originals materialized and verified;160 admitted,0 cross-reference or
+internal matches. Report SHA914c5eb4a4db7bea693965cca3e1e0f076dd34986cae71ae47be0ebb1cba51b7.
+151,005 references after160 exact candidate self-body snapshot exemptions plus later protected
+sources. No AI image downloaded or scored. All2,385 unused candidates now reserved from TRAIN.
+
+SIDD remote ZIP directory required68,753 metadata bytes (no image members extracted),484
+entries:320 PNGs,160 scene-instance directories,2 text metadata files and container directories.
+160 noisy observations span10 underlying scenes; camera countsIP54,S635,GP33,N622,G416.
+This directory is bound before full archive decode. Archive selection unchanged: complete
+Small sRGB only, official benchmark untouched. Await whole-archive published checksum/SHA256
+receipt, then exact directory validation and160 NOISY PNG decodes; GT stays unextracted.
+Cross-reference overlaps or cross-scene internal matches quarantine complete underlying scenes,
+including other cameras/settings; same-scene internal similarity stays explicitly dependent.
+Only complete160 REAL+160 AI, no shared id/body/cross-label match, can freeze limited DEV.
+No replacement draws or model-score-based exclusions.10 new E66/E67 pipeline tests pass.
+
+
+## E67 candidate recipe fixed in code before any DEV score (2026-09-13)
+
+Retain the E64 original TRAIN PCA64 basis (seed62) and add a second64-dimensional basis of
+standardized original-minus-blurred crop features (seed67); whiten both, append intercept,
+129 additive-logit coefficients. Existing E43 backbone/scaler/head remain frozen. This tests
+additional processing-response information and capacity jointly, not a clean attribution
+of effect solely to blur. No PCA rank/seed/regularization sweep is planned.
+
+Use unchanged E64 operating-cut BCE, class/source/parent weighting, hard REAL2x, L2.01 and
+SLSQP200/ftol1e-9; preserve correct REAL decision margins and every caught TRAIN AI. Zero-init
+and serialized replay must be exact. E67 guard retains E64's10% REAL TRAIN FPR ceiling in ALL3
+conditions plus0 new AI misses/0 new REAL errors, successful solver and violation<=1e-8.
+Only after E66's complete unscored DEV manifest and blur features are frozen may the separate
+fit contract be created and one fit run. DEV labels/scores do not enter PCA/scalers/optimizer.
+If TRAIN passes, register one original/1080pxQ75 E66 DEV comparison with all20 absolute/selective
+gates and per-image/source AI retention. Only a DEV-passing candidate may receive a separately
+registered consumed E49 regression. Neither E66 nor E49 certifies independent final success.
+Three new projection/zero-init/serialized-replay tests plus existing decision-constraint tests
+pass. Fit has NOT been run; acquisition and TRAIN blur features are still in progress.
+
+
+Overnight engineering checkpoint:710 Python tests passed in13.92s (13 new E66/E67 tests),
+with the existing Starlette/httpx warning. Compile and whitespace checks pass. Native AI
+admission is complete; SIDD download and E67 TRAIN feature extraction are still in progress.
+Commit/push this reviewed protocol/code checkpoint without claiming a fitted or improved model.

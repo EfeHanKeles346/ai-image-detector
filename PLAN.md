@@ -20,6 +20,16 @@ The user also requests GitHub synchronization: commit and push completed, review
 evidence and Markdown checkpoints to the configured origin, verify the remote result, and
 report any failure. Keep raw datasets/model weights outside git; never force-push over remote work.
 
+## Active overnight execution (2026-09-13)
+
+User explicitly requests continuous active-session work, data acquisition when needed,
+experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
+Do not create30-minute polling/heartbeat automation. No promise of execution after an app or
+session interruption. E66 SIDD Small6.62GB acquisition is preregistered; prepare the grouped
+REAL+AI DEV admission concurrently, then freeze a new TRAIN-only model recipe before scoring.
+Whole E65 WIFD/RawNIND publishers stay diagnostic-only; E59 stays paused. Keep existing AI
+retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
+
 ## Current authorization — data acquisition allowed (2026-09-13)
 
 The user explicitly authorizes continuing analysis/development and downloading needed data.
@@ -4815,3 +4825,44 @@ had been acquired at that point. E43/E59/serving and existing protected datasets
 Download, score-blind audit and166-view frozen diagnostic are complete; see current checkpoint
 at the top and `evidence/e65_diagnostic.md`. All697 Python tests passed. Commit/push code,
 compact evidence and MD updates; raw data/derived images/features stay outside git.
+
+
+## E67 feature hypothesis registered before extraction (2026-09-13)
+
+E65 motivates a processing-response branch, not a noise-based REAL veto. Use admitted E54
+TRAIN only (11,630 parents,3 conditions,all4,595 AI replay parents). Preserve fixed3x224 crops
+and apply Pillow GaussianBlur0.8 to each crop, identically across labels and conditions;
+no crop reselection. Frozen DINOv2S blocks2/5/8/11,3-crop mean/std3072D response. This new
+input can distinguish processing sensitivity from the original semantic representation.
+It does not establish noise causality or guarantee improvement.
+
+Before full extraction, hash-select one parent per source for original-crop E43 replay parity:
+score error<=5e-5 and0 binary/selective changes. Freeze code, original TRAIN data/features,
+crop index and model bindings first. Verify every crop body even on resume.8 parents per GPU
+batch,128-parent immutable chunk receipts,CPU2 threads,4h ceiling,power30% floor unless AC.
+No E49/DEV reads, no classifier fit at this stage; SIDD acquisition proceeds independently.
+E54 q75 is full-source JPEG75 before2048 cap, NOT E49's1080px social transport. Future DEV
+must apply and name the intended serving conditions explicitly.3 crop-transform/identity
+tests pass. Candidate fit protocol will separately bind original+response representation,
+AI constraints and evaluation rules after the new DEV admission is resolved.
+
+
+## E67 candidate recipe fixed in code before any DEV score (2026-09-13)
+
+Retain the E64 original TRAIN PCA64 basis (seed62) and add a second64-dimensional basis of
+standardized original-minus-blurred crop features (seed67); whiten both, append intercept,
+129 additive-logit coefficients. Existing E43 backbone/scaler/head remain frozen. This tests
+additional processing-response information and capacity jointly, not a clean attribution
+of effect solely to blur. No PCA rank/seed/regularization sweep is planned.
+
+Use unchanged E64 operating-cut BCE, class/source/parent weighting, hard REAL2x, L2.01 and
+SLSQP200/ftol1e-9; preserve correct REAL decision margins and every caught TRAIN AI. Zero-init
+and serialized replay must be exact. E67 guard retains E64's10% REAL TRAIN FPR ceiling in ALL3
+conditions plus0 new AI misses/0 new REAL errors, successful solver and violation<=1e-8.
+Only after E66's complete unscored DEV manifest and blur features are frozen may the separate
+fit contract be created and one fit run. DEV labels/scores do not enter PCA/scalers/optimizer.
+If TRAIN passes, register one original/1080pxQ75 E66 DEV comparison with all20 absolute/selective
+gates and per-image/source AI retention. Only a DEV-passing candidate may receive a separately
+registered consumed E49 regression. Neither E66 nor E49 certifies independent final success.
+Three new projection/zero-init/serialized-replay tests plus existing decision-constraint tests
+pass. Fit has NOT been run; acquisition and TRAIN blur features are still in progress.

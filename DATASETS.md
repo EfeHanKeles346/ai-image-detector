@@ -2259,3 +2259,61 @@ No new candidate or AI recall measurement; target remains unmet, E43 and serving
 Whole publishers and feature cache remain consumed diagnostic-only, never TRAIN/fresh final.
 697 Python tests pass (11 new); compile/pip/diff checks pass. Source/code/hash details and
 next valid TRAIN/DEV acquisition requirements are in `evidence/e65_diagnostic.md`.
+
+
+## 2026-09-13 overnight continuation — E66 acquisition preregistration
+
+User requests continuous active-session experiments/development and commit/push checkpoints,
+explicitly no30-minute monitor or scheduled heartbeat. No automation created; E59 remains
+paused. Work proceeds while the live session can execute; interruption/network/app limits
+cannot be guaranteed away. AC power confirmed51%. E65 commit2c6524e is present on origin/main.
+Its GitHub Python job passed; web lint/typecheck/tests passed, existing critical Next.js audit
+failed again (run34722064922), independently of ML. No audit threshold weakened.
+
+Next E66: acquire only official SIDD Small sRGB archive,6,615,978,508B, published
+MD5 796971867583bf14677dcae510e52538 and SHA1 5a4aa6aa7abcf7b0b56c88ad578fea9a4ff77935.
+MIT stated on official SIDD page. One stream,2h ceiling,30GiB reserve; resume verified ranges;
+no executables or official benchmark. Codalab mirror HEAD403, direct official mirror supports
+ranges. Keep full publisher out of TRAIN/final; no model scoring before decode/group/overlap
+admission.160 noisy/GT pairs are at most10 underlying scenes,5 older phones; processed GT
+is not an additional independent photo. Prefer160 noisy sRGB for a grouped DEV candidate.
+
+E60's2,385 unused recorded-group AI candidates remain under audit: GPT Image1 (current source
+card CC-BY4.0) and Nano Banana (MIT). Their groups mostly identify individual files, not known
+prompts. Plan a hash-ranked80 per family paired with160 noisy SIDD observations only after
+provenance, old-role/teacher/current-TRAIN and newer-reserve overlap checks. This may support
+a limited balanced DEV screen, never unseen-publisher/independent-prompt or final claims.
+Model recipe/feature contract is a subsequent step; no candidate fitted yet.
+
+
+E66 local AI admission protocol frozen before materialization/scoring:80 per GPT Image1/Nano
+Banana, seedE66, chosen only from the2,385 E60-unused recorded groups after all E53 old-role
+and duplicate exclusions. Explicitly reject E43 FIT/current TRAIN identity/body overlap.
+The150,483-body snapshot includes the native candidates themselves: remove only selected
+exact self-body entries after those eligibility checks, preserve every other hash/pixel and
+all newer MNW/HDR+/FiveK/E65 references. Current TRAIN has100% body coverage in that snapshot.
+Any confirmed cross-reference or internal overlap quarantines selected endpoints, with no
+replacement draws. Reserve the entire2,385 unused pool from future TRAIN. Local materialization
+and source-checksum verification only; no new AI downloads or inference. Unknown prompt
+independence and previously seen families prohibit a fresh-final claim. Balanced DEV remains
+pending SIDD. Native selection and archive range-resume tests pass; E67's30-source original
+crop replay passed with exact0 score error and0 decision changes; blur extraction is running.
+
+
+### E66 AI audit complete; SIDD group audit registered (2026-09-13)
+
+160 selected local AI originals materialized and verified;160 admitted,0 cross-reference or
+internal matches. Report SHA914c5eb4a4db7bea693965cca3e1e0f076dd34986cae71ae47be0ebb1cba51b7.
+151,005 references after160 exact candidate self-body snapshot exemptions plus later protected
+sources. No AI image downloaded or scored. All2,385 unused candidates now reserved from TRAIN.
+
+SIDD remote ZIP directory required68,753 metadata bytes (no image members extracted),484
+entries:320 PNGs,160 scene-instance directories,2 text metadata files and container directories.
+160 noisy observations span10 underlying scenes; camera countsIP54,S635,GP33,N622,G416.
+This directory is bound before full archive decode. Archive selection unchanged: complete
+Small sRGB only, official benchmark untouched. Await whole-archive published checksum/SHA256
+receipt, then exact directory validation and160 NOISY PNG decodes; GT stays unextracted.
+Cross-reference overlaps or cross-scene internal matches quarantine complete underlying scenes,
+including other cameras/settings; same-scene internal similarity stays explicitly dependent.
+Only complete160 REAL+160 AI, no shared id/body/cross-label match, can freeze limited DEV.
+No replacement draws or model-score-based exclusions.10 new E66/E67 pipeline tests pass.
