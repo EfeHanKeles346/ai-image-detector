@@ -436,3 +436,12 @@ additive in AI images. Public author-linked Boon_or_Bane data may offer a later 
 audit, pending archive size, dataset licence, exact generator provenance and overlap checks.
 Article CC BY-NC-ND terms do not automatically establish the image dataset licence.
 [Author dataset link](https://www.unibw.de/digfor/team/personenseiten/samantha-klier-m-sc).
+
+
+### Worst-group objective after E67 TRAIN diagnosis (2026-09-13)
+
+[Sagawa et al., ICLR 2020](https://arxiv.org/abs/1911.08731) optimize worst-group risk
+and emphasize regularization for generalization. E68 uses this motivation for a convex
+frozen-feature, class-balanced source/condition minimax objective. It does not import
+their neural training code or claim their results; group membership is TRAIN metadata.
+All acceptance thresholds and finite AI replay guards remain unchanged.

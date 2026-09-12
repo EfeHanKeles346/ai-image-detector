@@ -5313,3 +5313,44 @@ to remove RR, relabel errors, tune a source-specific threshold or infer external
 Original PCA64 explains 59.63% and response PCA64 40.31% of their respective TRAIN variance.
 Next: examine source-weighted objective/constraint diagnostics before choosing a distinct
 new hypothesis. No PCA-rank/L2/threshold sweep; preserve all failed E67 artifacts.
+
+
+## E68 source/condition minimax hypothesis (registered before fit, 2026-09-13)
+
+E67 TRAIN-only diagnostic confirms RR's remaining mean operating-cut BCE is 1.0598
+assigned transport, 1.0191 clean and 0.9459 q75, versus the next REAL group's 0.2133.
+Yet RR receives only 6.30% of total E67 loss mass across its three conditions. The
+worst AI group is GPT Image 1 q75 at BCE 0.2008. These are existing-candidate TRAIN
+measurements; the diagnostic fits no candidate and reads no DEV/test rows. Its additive
+branch means exclude the shared intercept and are not causal ablations.
+
+E68 tests a distinct training objective motivated by this concentration: minimize one
+half the worst REAL group BCE plus one half the worst AI group BCE, plus unchanged
+L2 0.01 on the correction coefficients. Groups are ALL pre-existing label/source/condition
+combinations, equally weighted parents within each group. No RR-only gate or weighting
+parameter search; no source identity is needed at inference. Remove E67's hard-REAL
+2x weighting because E68 explicitly optimizes worst-group mean loss. This changes the
+objective, not the acceptance criteria. Group-DRO motivation: Sagawa et al., ICLR 2020
+(https://arxiv.org/abs/1911.08731); our convex frozen-feature epigraph solver is not a
+reproduction of that neural-network training pipeline or a generalization guarantee.
+
+Reuse the exact E67 TRAIN-fitted original/response bases (64+64 and intercept), discard
+E67's learned correction weights and initialize all 129 coefficients to zero (exact E43).
+Add two scalar epigraph bounds, one per class; each group's BCE must lie below its class
+bound. Keep E64's per-image caught-AI/correct-REAL linear decision constraints, including
+its margin convention, without change. CPU float64 SLSQP, 200 iterations, ftol 1e-9,
+final iterate only, two CPU threads, 30-minute ceiling. No PCA-rank/L2/threshold sweep.
+
+Before fit, test analytic gradients, worst-group epigraph constraints and synthetic hard
+AI/REAL retention; bind code, original TRAIN inputs, E67 basis artifact and unscored E66
+identity. Accept TRAIN only on successful solver, all constraint violations <=1e-8,
+exact serialization, zero new AI misses/REAL errors and <=10% REAL FPR in all three
+conditions. Only then separately freeze one E66 DEV comparison at unchanged E43 cuts,
+all 20 numeric gates plus per-image/source AI retention and non-increased REAL FPR.
+Only a DEV pass permits separately registered consumed E49 regression. No independent
+final or deployment claim. E67 remains failed and immutable.
+
+
+E68 pre-fit verification: all 719 Python tests passed in 12.22 seconds, with the
+existing Starlette/httpx warning. No DEV/test scores read. Starting the one frozen
+source/condition minimax fit; unchanged TRAIN guard determines subsequent access.

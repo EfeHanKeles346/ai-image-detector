@@ -262,3 +262,25 @@ No new candidate or AI recall measurement; target remains unmet, E43 and serving
 Whole publishers and feature cache remain consumed diagnostic-only, never TRAIN/fresh final.
 697 Python tests pass (11 new); compile/pip/diff checks pass. Source/code/hash details and
 next valid TRAIN/DEV acquisition requirements are in `evidence/e65_diagnostic.md`.
+
+
+## E67 completed: TRAIN guard failed, no DEV/test scoring (2026-09-13)
+
+The one constrained original-plus-blur-response fit converged in 49 iterations / 36.53s;
+maximum constraint violation 6.66e-16. Exact serialized replay passed. Zero newly missed
+AI views across all 4,595 AI parents and three conditions; zero new REAL errors. REAL
+false AI fell from 1,060 to 721 / 7,035 clean (15.07% -> 10.25%), 1,135 to 797 assigned
+transport (16.13% -> 11.33%), and 971 to 667 TRAIN q75 (13.80% -> 9.48%). The unchanged
+10% ceiling fails in the first two conditions. E67 is rejected at TRAIN; do not run its
+DEV scorer, read E49 for it, alter its frozen recipe or promote its candidate. E66 remains
+unscored. Original E43 and serving remain unchanged; target not achieved.
+
+TRAIN source diagnosis from the locked fit report: RR real pool contributes 510 / 721
+remaining clean errors, 537 / 797 assigned-transport errors, and 468 / 667 q75 errors.
+Its own FPR remains 40.80% / 42.96% / 37.44%, versus SCIMD-17 7.06% / 8.06% / 7.06%;
+other sources are much lower. RR has 1,250 / 7,035 REAL parents yet contributes roughly
+67-71% of remaining errors. This is a TRAIN-only concentration finding, not a licence
+to remove RR, relabel errors, tune a source-specific threshold or infer external recall.
+Original PCA64 explains 59.63% and response PCA64 40.31% of their respective TRAIN variance.
+Next: examine source-weighted objective/constraint diagnostics before choosing a distinct
+new hypothesis. No PCA-rank/L2/threshold sweep; preserve all failed E67 artifacts.
