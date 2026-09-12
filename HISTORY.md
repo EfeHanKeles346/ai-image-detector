@@ -6444,3 +6444,39 @@ Overnight engineering checkpoint:710 Python tests passed in13.92s (13 new E66/E6
 with the existing Starlette/httpx warning. Compile and whitespace checks pass. Native AI
 admission is complete; SIDD download and E67 TRAIN feature extraction are still in progress.
 Commit/push this reviewed protocol/code checkpoint without claiming a fitted or improved model.
+
+
+### E67 TRAIN feature extraction complete (2026-09-13)
+
+11,630x3x3,072 fixed-crop blur features frozen in1,091.53s,91 checked chunks. Feature SHA
+f48474422616c0b3776d6749c0b03796493f8b349a97ce355749011e1b715b4b; contract SHA
+51ea9318a9142970f259004e18f2fa0386232403e984543ba07961a68c702237. Thirty source-selected
+original-crop parity parents reproduce E43 scores exactly (0 maximum error,0 decisions).
+No DEV/final image/score read and no candidate fitted. External arrays remain TRAIN only.
+Protocol/code checkpoint f325b7c is pushed and remote main verified; work continues.
+
+E67 DEV runner prepared and four tests pass: blur transform parity, exact pair/source/role
+coverage, rejection of offsetting AI loss despite equal pooled recall, and hard denial of
+DEV contract creation after a failed TRAIN guard. It reuses original20 numeric gate logic
+without invoking E49's population validator or bootstrapping dependent SIDD views. Additional
+criteria:0 newly missed AI in each transport/source and non-increased pooled REAL FPR both
+conditions. Report all10 SIDD scene groups descriptively. No score-based selection or new
+threshold; failed TRAIN candidates remain unscored on DEV. The runner has NOT been executed.
+
+
+During the continuing download, reviewed primary perturbation-response papers and DEnD's
+example inference code. Found batch-context dependence and evaluated-label threshold search
+in that example, which do not meet PixelProof's fixed single-image decision protocol. Details
+and primary links appended to IMAGE_FORENSICS_REFERENCE.md. E67's fixed recipe is unchanged;
+no third-party code/weights executed or downloaded. Four E67 DEV guard tests passed.
+
+
+Full Python verification after the E67 DEV runner: 714 tests passed in 12.65 seconds,
+with one existing Starlette/httpx deprecation warning. No model-quality claim follows
+from software tests. SIDD archive final integrity verification is still in progress.
+
+
+Remote CI for f325b7c (run 34723716630) completed: Python succeeded; web failed at
+"Audit production/build dependencies (known high vinext debt is documented)". This is
+not an all-green CI claim; the existing dependency-security maintenance remains open.
+Local 714-test suite passed. Power check: AC attached, 80%.

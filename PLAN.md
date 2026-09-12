@@ -42,6 +42,17 @@ candidates, not automatically admitted TRAIN or a balanced independent final. E5
 Power initially13%; user explicitly requested starting while connecting power. AC/charging
 subsequently confirmed (31% on the latest check); bounded E65 acquisition/audit completed.
 
+## Current checkpoint — E66 admission / E67 fit preparation (2026-09-13)
+
+E67 TRAIN blur features are complete: 11,630 parents across three conditions, exact original
+score parity on the 30-source check. All 714 Python tests pass. The 129-coefficient recipe and
+unchanged E64 constraints are fixed; no fit or DEV scoring yet. E66 native AI admission is
+complete (160 observations); the SIDD archive has downloaded and is undergoing final checksum
+verification. Next: finish SIDD scene/overlap admission, freeze the fit contract, run the one
+TRAIN fit. Only a passing TRAIN guard permits the prepared, separately frozen DEV comparison.
+A failed guard requires diagnosis and a justified new protocol; do not relax its thresholds.
+Code/protocol checkpoint f325b7c is pushed and its remote identity was verified.
+
 ## Current checkpoint — E65 diagnostic complete (2026-09-13)
 
 83 source files acquired (1.01GB), all decoded,0 matches under the fixed151,082-record screen;

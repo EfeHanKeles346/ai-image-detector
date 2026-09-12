@@ -1,0 +1,19 @@
+{
+  "backbone_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+  "candidate_created": false,
+  "chunks": 91,
+  "contract_sha256": "51ea9318a9142970f259004e18f2fa0386232403e984543ba07961a68c702237",
+  "dev_or_final_rows_read": 0,
+  "feature_sha256": "f48474422616c0b3776d6749c0b03796493f8b349a97ce355749011e1b715b4b",
+  "reference_decision_changes": 0,
+  "reference_max_score_error": 0.0,
+  "reference_parity_parents": 30,
+  "report_sha256": "f321b2371da7f690c69bb7fe5858ad15943b56985338c192a1b0ed8d041642f1",
+  "seconds": 1091.5274891669396,
+  "shape": [
+    11630,
+    3,
+    3072
+  ],
+  "state": "E67_TRAIN_blur_features_complete"
+}

@@ -5246,3 +5246,26 @@ gates and per-image/source AI retention. Only a DEV-passing candidate may receiv
 registered consumed E49 regression. Neither E66 nor E49 certifies independent final success.
 Three new projection/zero-init/serialized-replay tests plus existing decision-constraint tests
 pass. Fit has NOT been run; acquisition and TRAIN blur features are still in progress.
+
+
+### E67 TRAIN feature extraction complete (2026-09-13)
+
+11,630x3x3,072 fixed-crop blur features frozen in1,091.53s,91 checked chunks. Feature SHA
+f48474422616c0b3776d6749c0b03796493f8b349a97ce355749011e1b715b4b; contract SHA
+51ea9318a9142970f259004e18f2fa0386232403e984543ba07961a68c702237. Thirty source-selected
+original-crop parity parents reproduce E43 scores exactly (0 maximum error,0 decisions).
+No DEV/final image/score read and no candidate fitted. External arrays remain TRAIN only.
+Protocol/code checkpoint f325b7c is pushed and remote main verified; work continues.
+
+E67 DEV runner prepared and four tests pass: blur transform parity, exact pair/source/role
+coverage, rejection of offsetting AI loss despite equal pooled recall, and hard denial of
+DEV contract creation after a failed TRAIN guard. It reuses original20 numeric gate logic
+without invoking E49's population validator or bootstrapping dependent SIDD views. Additional
+criteria:0 newly missed AI in each transport/source and non-increased pooled REAL FPR both
+conditions. Report all10 SIDD scene groups descriptively. No score-based selection or new
+threshold; failed TRAIN candidates remain unscored on DEV. The runner has NOT been executed.
+
+
+Full Python verification after the E67 DEV runner: 714 tests passed in 12.65 seconds,
+with one existing Starlette/httpx deprecation warning. No model-quality claim follows
+from software tests. SIDD archive final integrity verification is still in progress.

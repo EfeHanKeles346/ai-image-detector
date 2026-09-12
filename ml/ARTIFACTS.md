@@ -154,3 +154,12 @@ External `e65/` contains83 publisher-verified originals,16 fixed RAW-development
 `4ed6222a5e40afd84e88f2cdeb86059728ad84e763908a0656afefc6b757680b`.
 Every view remains DIAGNOSTIC_DEV_ONLY; features cannot silently enter TRAIN/final.
 Compact evidence and human-readable findings are versioned in `evidence/e65_*`.
+
+
+### E67 TRAIN processing-response features (2026-09-13)
+
+`/Volumes/LaCie/pixelproof-datasets/e67/blur_features.npz`:11,630x3x3,072 TRAIN-only frozen
+DINOv2S features of GaussianBlur0.8 applied to fixed E54 crops. SHA
+f48474422616c0b3776d6749c0b03796493f8b349a97ce355749011e1b715b4b. Feature contract and
+91 chunk receipts bind original crop identities. No classifier artifact yet; do not confuse
+feature extraction with accepted quality. E43/serving unchanged.

@@ -395,3 +395,29 @@ scores fall in5/8 scenes and rise in3/8; paired brightness can also change subst
 This supports investigating processing sensitivity, not a universal noise-based REAL veto,
 CFA-family ranking, or proof that denoising alone causes errors. No candidate was trained,
 AI retention was not measured and no threshold/serving change followed these diagnostics.
+
+
+## 2026-09-13 — Perturbation-response literature checked during E66 download
+
+After E67's blur feature recipe was fixed and extraction completed, related primary sources
+were checked; these are context for interpretation/future experiments, not retroactive
+justification for changing E67's parameters.
+
+[Tsai et al., arXiv2411.19117v1](https://arxiv.org/abs/2411.19117) study foundation-model
+perturbation sensitivity and report that the useful perturbation depends on the image domain:
+Gaussian noise versus blur can behave differently for general objects and faces. Their
+Contrastive Blur/MINDER proposals address perturbation-type bias. E67 is our supervised,
+replay-constrained feature-response experiment, not an implementation or reproduction of MINDER.
+
+[DINO-Detect, arXiv2511.12511v2](https://arxiv.org/abs/2511.12511) describes a frozen DINOv3
+teacher guiding a student through feature/logit distillation on motion-blurred inputs. This
+supports investigating processing consistency; it does not establish per-image AI retention
+under our sources. No DINOv3 weights/code or additional datasets were downloaded for this paper.
+
+The [DEnD authors' released code](https://github.com/dav-joy-thon/DEnD-Detection/blob/main/detect.py)
+was inspected read-only. Its score compares feature relationships to other members of a batch;
+the example collects separate real/fake batches and includes a best-threshold search over the
+scored labels. Inference: those example metrics cannot be imported as a fixed, single-image
+serving result under our contract. Any adapted study would need a fixed TRAIN reference bank
+and untouched calibration/evaluation, with no test-label threshold or class-homogeneous test
+context. No repository code was executed, model downloaded, or threshold adopted.
