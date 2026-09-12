@@ -1,0 +1,10 @@
+{
+  "balanced_final_admitted": false,
+  "bytes": 1009998251,
+  "contract_sha256": "a64d29706b53a0664e769e0d83fe00f6b2954339f577580e39b7f6b08a5d4e66",
+  "files": 83,
+  "model_scores_created": 0,
+  "receipt_sha256": "0aab1b2fb544e415b9018084ab13af2cd0bd17761ee3a163b68cdf601c750fd1",
+  "state": "E65_payloads_verified_unscored",
+  "training_allowed": false
+}

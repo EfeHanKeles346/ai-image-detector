@@ -1,0 +1,11 @@
+{
+  "backbone_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+  "contract_sha256": "33be2b5c223c2440f1c8a41e9773a8e0ad74affb37b235acb97891aa83ba8097",
+  "feature_sha256": "25768622659036089fe7ab45e6a95af3aacdcabbabdba5bf3abf594d84ada170",
+  "metrics_opened": false,
+  "reference_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "scores_sha256": "4ed6222a5e40afd84e88f2cdeb86059728ad84e763908a0656afefc6b757680b",
+  "seconds": 146.3261331670219,
+  "state": "E65_scores_locked_before_metrics",
+  "views": 166
+}

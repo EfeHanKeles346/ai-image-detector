@@ -20,6 +20,33 @@ The user also requests GitHub synchronization: commit and push completed, review
 evidence and Markdown checkpoints to the configured origin, verify the remote result, and
 report any failure. Keep raw datasets/model weights outside git; never force-push over remote work.
 
+## Current authorization — data acquisition allowed (2026-09-13)
+
+The user explicitly authorizes continuing analysis/development and downloading needed data.
+This supersedes the previous no-download restriction in historical sections below. Preserve
+AI retention, immutable E43/experiment evidence, protected roles and commit/push checkpoints.
+First audit source metadata/license/size and scene independence before acquiring pixels.
+Use existing external volume; no automatic full-corpus download. WIFD/RawNIND/SIDD remain
+candidates, not automatically admitted TRAIN or a balanced independent final. E59 stays parked.
+
+Power initially13%; user explicitly requested starting while connecting power. AC/charging
+subsequently confirmed (31% on the latest check); bounded E65 acquisition/audit completed.
+
+## Current checkpoint — E65 diagnostic complete (2026-09-13)
+
+83 source files acquired (1.01GB), all decoded,0 matches under the fixed151,082-record screen;
+166 frozen E43 scores. WIFD false AI16.42% original/19.40% Q75; RawNIND18.75%/31.25%.
+No candidate produced, no AI-retention measurement; target still unmet. Preserve E43.
+See `evidence/e65_diagnostic.md` for descriptive counts, paired examples and confounders.
+
+Next: freeze a licensed, scene/source-grouped balanced DEV population before a new fit.
+Audit SIDD's small paired scene structure and the previously identified unused local AI
+records for role/provenance/overlap first; their availability is not admission. Never reuse
+whole WIFD/RawNIND publishers as TRAIN/fresh final after this diagnostic. The representation
+hypothesis is processing robustness using label-matched transforms, not camera/ISO lookup.
+Retain per-image AI replay constraints plus separate source-aware AI evaluation. No E49
+threshold/rank sweep, relaxed E64 guard, or automatic E59 restart.
+
 ## Current checkpoint — E62–E64 complete; goal remains unmet (2026-09-10)
 
 Three preregistered recipes completed. E62/E63 reduce consumed E49 REAL FPR to35.8% original
@@ -32,7 +59,7 @@ FPR11.90/11.33% exceeds its preregistered10% ceiling. No E64 test scoring is per
   or conduct a rank/L2/threshold sweep on E49. These three recipes are finished; none is v1.
 - Next meaningful improvement requires a distinct representation/processing hypothesis plus
   valid development data. E60's local audit has not established such a balanced fresh pool.
-  Keep the no-download condition; the home queue below is still only planned acquisition.
+  The previous no-download condition is superseded; bounded E65 pilot is now acquired.
 - Future optimization should preserve correct REAL decisions rather than unnecessarily freeze
   their confidence. Keep explicit AI constraints and the strict replay gate, but also require
   independent AI retention: TRAIN success alone failed to predict external preservation here.
@@ -4750,3 +4777,41 @@ necessary screen fails, do NOT open E49 for E64. If it passes, permit one separa
 consumed comparison with the original20 gates and E43 AI-retention criteria; no parameter
 selection from prior benchmark errors or individual test identities. No downloads, role changes,
 fresh-final claim or deployment. This is an isolated constraint ablation, not a bound/L2 sweep.
+
+
+### E65 current acquisition
+
+User now authorizes needed data downloads and explicitly requested starting while connecting
+power; subsequent pmset confirmed AC/charging. WIFD full tree is101,432,609,110B/6,944 blobs,
+not a sensible automatic full download. Its1,838 SDR JPEGs cover10 cameras (not all14 cameras
+in the entire corpus). Select at most4 distinct exposure/aperture setting tuples at each
+camera's min/max recorded ISO; hash-rank with fixedE65 seed, omit reference/burst/AEB files.
+SDR scene independence is unknown; do not equate files or cameras with independent scenes.
+Pinned revision3f577edf0b14c686aa08e8d0d8ae07a83ba44f26; MIT README/license blobs verified.
+
+RawNIND official Dataverse metadata v1.0:2,845 files/120,172,531,162B, dataset-level CC-BY-SA-4.0.
+Its permissions.txt contains per-scene exceptions, including research-only entries: therefore
+select ONLY explicitly CC0 scenes with author attribution, excluding official test reserves
+from both dataset.yaml and test_reserve.yaml. Four hash-ranked scenes per Bayer/X-Trans,
+one clean RAW and one highest available ISO<=6400 RAW per scene, preserving filename SHA1.
+No RAW/scene selection uses pixels/model scores. Known-field hashes and unrestricted flags
+are required. This pilot is REAL-only DIAGNOSTIC_DEV, whole publishers reserved, never TRAIN
+or balanced final; future separate decoding/overlap and scoring contracts required.
+
+Freeze all metadata/code and selected file identities before pixels. Total payload ceiling2GiB,
+two download workers,40min cap, external volume with10GiB reserve. Verify Git blob SHA1 for WIFD,
+MD5 plus filename SHA1 for RawNIND, then record SHA256. Resume partial HTTP ranges; if the
+server ignores Range, truncate/restart rather than append. No existing payload/receipt overwrite.
+No source code, executable or full repository clone is downloaded. Originals stay outside git.
+
+Metadata recovery: initial gh recursive-tree response was incomplete; curl retry obtained the
+complete non-truncated tree. System Python lacked trusted CA setup; requests in the existing
+venv succeeded with normal TLS verification (no certificate checking disabled). No image bytes
+had been acquired at that point. E43/E59/serving and existing protected datasets remain unchanged.
+
+
+### E65 completed action — frozen diagnostic (2026-09-13)
+
+Download, score-blind audit and166-view frozen diagnostic are complete; see current checkpoint
+at the top and `evidence/e65_diagnostic.md`. All697 Python tests passed. Commit/push code,
+compact evidence and MD updates; raw data/derived images/features stay outside git.

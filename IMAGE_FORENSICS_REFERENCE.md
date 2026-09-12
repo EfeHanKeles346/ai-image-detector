@@ -380,3 +380,18 @@ another generator's rescue keeps pooled recall constant. It cannot detect every 
 regression. Future work must reduce real-photo errors **and** pass fresh paired, per-source
 AI retention checks; abstention and threshold changes cannot substitute for that evidence.
 Acquisition candidates and limitations are in PLAN's home-download queue, not admitted data.
+
+
+## 2026-09-13 — E65 acquired pilot tests the processing/noise hypothesis
+
+The user superseded the earlier no-download restriction. Source metadata/licences were
+verified from the official WIFD repository and RawNIND Dataverse record;83 selected source
+files downloaded, checksummed and overlap-audited. See `evidence/e65_diagnostic.md` for
+primary links and selection limits. This consumes whole publishers as diagnostic DEV only.
+
+E43 has11/67 WIFD and3/16 RawNIND false AI decisions on originals;13/67 and5/16 after the
+combined1080px/JPEG75 transport. It creates and rescues individual errors. High-ISO RAW
+scores fall in5/8 scenes and rise in3/8; paired brightness can also change substantially.
+This supports investigating processing sensitivity, not a universal noise-based REAL veto,
+CFA-family ranking, or proof that denoising alone causes errors. No candidate was trained,
+AI retention was not measured and no threshold/serving change followed these diagnostics.

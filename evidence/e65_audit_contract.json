@@ -1,0 +1,32 @@
+{
+  "contract_sha256": "70b698ce09633c31a923ed7d195d67d123e1dfc06702183566c9a7403058abf9",
+  "decoder_versions": {
+    "libraw": [
+      0,
+      22,
+      1
+    ],
+    "numpy": "2.5.1",
+    "pillow": "12.3.0",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "rawpy": "0.27.1"
+  },
+  "fingerprint_version": "e51-prefit-rgb-lanczos-v1",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e56_raw_decode.py": "f3edceed9d27a9ff9429ff3010a5d13b55cfc6149e9aed6e5bdacd6298289cd9",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_audit.py": "71df44c7eb40333c80dde13dad79b1dac0336e51aab5b1bd467642e8975262c2",
+    "/Volumes/LaCie/pixelproof-datasets/e52/hdrplus_reserve_v1/download.json": "95cdc842844443497af26995fb8430cf39540fa33e093b91a63be6fce768ff18",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/download.json": "a63d7655cea11d18457dbb45bb4419063526e16e90f6d941a2796af3dd17ea4c",
+    "/Volumes/LaCie/pixelproof-datasets/e52/protected_reference_v1.json": "7fc7f52e8c38e621b71877b394cccac312af333b183492bcf52154381e3ab988",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/download.json": "879f3d76255bb7b26b9e2d560a1f5d15096e0ac3fc6172662c0ec8d504635010",
+    "/Volumes/LaCie/pixelproof-datasets/e65/download.json": "0aab1b2fb544e415b9018084ab13af2cd0bd17761ee3a163b68cdf601c750fd1"
+  },
+  "limits": "Snapshot coverage is bounded, perceptual screen is not exhaustive; WIFD scene identities unknown. X-Trans processing may be selected internally by LibRaw; no universal Bayer claim.",
+  "max_pixels": 100000000,
+  "model_scoring_allowed": false,
+  "policy": "Quarantine decode failures and any exact RGB/body or dHash<=4 AND pHash63<=4 cross-reference matches. Propagate RawNIND failures to both scene members. Internal similarity is reported with linked scene identities, not independent evidence; keep internally similar observations for descriptive repeated-view diagnostics only. No score-based or brightness exclusions; no replacement draws.",
+  "raw_timeout_seconds": 120,
+  "state": "E65_score_blind_decode_overlap_registered",
+  "training_allowed": false
+}

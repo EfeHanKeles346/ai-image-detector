@@ -1,0 +1,788 @@
+{
+  "ai_recall_measured": false,
+  "candidate_created": false,
+  "contract_sha256": "33be2b5c223c2440f1c8a41e9773a8e0ad74affb37b235acb97891aa83ba8097",
+  "groups": {
+    "RawNIND|Bayer|high_iso_raw|original": {
+      "automatic_real": 2,
+      "false_ai": 1,
+      "median_score": 0.028110099025070667,
+      "real_fpr": 0.25,
+      "uncertain": 1,
+      "views": 4
+    },
+    "RawNIND|Bayer|high_iso_raw|social_q75": {
+      "automatic_real": 1,
+      "false_ai": 1,
+      "median_score": 0.04188676457852125,
+      "real_fpr": 0.25,
+      "uncertain": 2,
+      "views": 4
+    },
+    "RawNIND|Bayer|low_iso_raw|original": {
+      "automatic_real": 2,
+      "false_ai": 2,
+      "median_score": 0.25604020711034536,
+      "real_fpr": 0.5,
+      "uncertain": 0,
+      "views": 4
+    },
+    "RawNIND|Bayer|low_iso_raw|social_q75": {
+      "automatic_real": 1,
+      "false_ai": 3,
+      "median_score": 0.12405338883399963,
+      "real_fpr": 0.75,
+      "uncertain": 0,
+      "views": 4
+    },
+    "RawNIND|Bayer|original": {
+      "automatic_real": 4,
+      "false_ai": 3,
+      "median_score": 0.028443063609302044,
+      "real_fpr": 0.375,
+      "uncertain": 1,
+      "views": 8
+    },
+    "RawNIND|Bayer|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 4,
+      "median_score": 0.0842253565788269,
+      "real_fpr": 0.5,
+      "uncertain": 2,
+      "views": 8
+    },
+    "RawNIND|X-Trans|high_iso_raw|original": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.00538838398642838,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "RawNIND|X-Trans|high_iso_raw|social_q75": {
+      "automatic_real": 1,
+      "false_ai": 0,
+      "median_score": 0.02701078075915575,
+      "real_fpr": 0.0,
+      "uncertain": 3,
+      "views": 4
+    },
+    "RawNIND|X-Trans|low_iso_raw|original": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.005876879789866507,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "RawNIND|X-Trans|low_iso_raw|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 1,
+      "median_score": 0.02596176613587886,
+      "real_fpr": 0.25,
+      "uncertain": 1,
+      "views": 4
+    },
+    "RawNIND|X-Trans|original": {
+      "automatic_real": 6,
+      "false_ai": 0,
+      "median_score": 0.00538838398642838,
+      "real_fpr": 0.0,
+      "uncertain": 2,
+      "views": 8
+    },
+    "RawNIND|X-Trans|social_q75": {
+      "automatic_real": 3,
+      "false_ai": 1,
+      "median_score": 0.02701078075915575,
+      "real_fpr": 0.125,
+      "uncertain": 4,
+      "views": 8
+    },
+    "RawNIND|original": {
+      "automatic_real": 10,
+      "false_ai": 3,
+      "median_score": 0.009616414550691843,
+      "real_fpr": 0.1875,
+      "uncertain": 3,
+      "views": 16
+    },
+    "RawNIND|social_q75": {
+      "automatic_real": 5,
+      "false_ai": 5,
+      "median_score": 0.04229302331805229,
+      "real_fpr": 0.3125,
+      "uncertain": 6,
+      "views": 16
+    },
+    "WIFD|canon_eos_6d_mark_ii|100|original": {
+      "automatic_real": 0,
+      "false_ai": 2,
+      "median_score": 0.1174551323056221,
+      "real_fpr": 0.5,
+      "uncertain": 2,
+      "views": 4
+    },
+    "WIFD|canon_eos_6d_mark_ii|100|social_q75": {
+      "automatic_real": 0,
+      "false_ai": 3,
+      "median_score": 0.1612490452826023,
+      "real_fpr": 0.75,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|canon_eos_6d_mark_ii|6400|original": {
+      "automatic_real": 0,
+      "false_ai": 0,
+      "median_score": 0.03255649283528328,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 1
+    },
+    "WIFD|canon_eos_6d_mark_ii|6400|social_q75": {
+      "automatic_real": 0,
+      "false_ai": 1,
+      "median_score": 0.0813518613576889,
+      "real_fpr": 1.0,
+      "uncertain": 0,
+      "views": 1
+    },
+    "WIFD|canon_eos_6d_mark_ii|original": {
+      "automatic_real": 0,
+      "false_ai": 2,
+      "median_score": 0.06575864553451538,
+      "real_fpr": 0.4,
+      "uncertain": 3,
+      "views": 5
+    },
+    "WIFD|canon_eos_6d_mark_ii|social_q75": {
+      "automatic_real": 0,
+      "false_ai": 4,
+      "median_score": 0.08615174144506454,
+      "real_fpr": 0.8,
+      "uncertain": 1,
+      "views": 5
+    },
+    "WIFD|canon_eos_6d|100|original": {
+      "automatic_real": 1,
+      "false_ai": 2,
+      "median_score": 0.20906478725373745,
+      "real_fpr": 0.5,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|canon_eos_6d|100|social_q75": {
+      "automatic_real": 1,
+      "false_ai": 1,
+      "median_score": 0.03054848127067089,
+      "real_fpr": 0.25,
+      "uncertain": 2,
+      "views": 4
+    },
+    "WIFD|canon_eos_6d|6400|original": {
+      "automatic_real": 2,
+      "false_ai": 0,
+      "median_score": 0.015063358936458826,
+      "real_fpr": 0.0,
+      "uncertain": 2,
+      "views": 4
+    },
+    "WIFD|canon_eos_6d|6400|social_q75": {
+      "automatic_real": 1,
+      "false_ai": 2,
+      "median_score": 0.1303476318717003,
+      "real_fpr": 0.5,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|canon_eos_6d|original": {
+      "automatic_real": 3,
+      "false_ai": 2,
+      "median_score": 0.01742719952017069,
+      "real_fpr": 0.25,
+      "uncertain": 3,
+      "views": 8
+    },
+    "WIFD|canon_eos_6d|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 3,
+      "median_score": 0.03136344067752361,
+      "real_fpr": 0.375,
+      "uncertain": 3,
+      "views": 8
+    },
+    "WIFD|canon_eos_m6|100|original": {
+      "automatic_real": 4,
+      "false_ai": 0,
+      "median_score": 0.0004884375084657222,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|canon_eos_m6|100|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 1,
+      "median_score": 0.018087859149090946,
+      "real_fpr": 0.25,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|canon_eos_m6|2500|original": {
+      "automatic_real": 2,
+      "false_ai": 1,
+      "median_score": 0.004395471885800362,
+      "real_fpr": 0.3333333333333333,
+      "uncertain": 0,
+      "views": 3
+    },
+    "WIFD|canon_eos_m6|2500|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 0,
+      "median_score": 0.009103992022573948,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 3
+    },
+    "WIFD|canon_eos_m6|original": {
+      "automatic_real": 6,
+      "false_ai": 1,
+      "median_score": 0.0038037498015910387,
+      "real_fpr": 0.14285714285714285,
+      "uncertain": 0,
+      "views": 7
+    },
+    "WIFD|canon_eos_m6|social_q75": {
+      "automatic_real": 4,
+      "false_ai": 1,
+      "median_score": 0.009103992022573948,
+      "real_fpr": 0.14285714285714285,
+      "uncertain": 2,
+      "views": 7
+    },
+    "WIFD|fujifilm_x_a10_1|1600|original": {
+      "automatic_real": 4,
+      "false_ai": 0,
+      "median_score": 0.00011486057337606326,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|fujifilm_x_a10_1|1600|social_q75": {
+      "automatic_real": 3,
+      "false_ai": 1,
+      "median_score": 0.0004444276273716241,
+      "real_fpr": 0.25,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|fujifilm_x_a10_1|200|original": {
+      "automatic_real": 4,
+      "false_ai": 0,
+      "median_score": 0.0002274153448524885,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|fujifilm_x_a10_1|200|social_q75": {
+      "automatic_real": 4,
+      "false_ai": 0,
+      "median_score": 0.0005474100689752959,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|fujifilm_x_a10_1|original": {
+      "automatic_real": 8,
+      "false_ai": 0,
+      "median_score": 0.00011859551159432158,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 8
+    },
+    "WIFD|fujifilm_x_a10_1|social_q75": {
+      "automatic_real": 7,
+      "false_ai": 1,
+      "median_score": 0.0004444276273716241,
+      "real_fpr": 0.125,
+      "uncertain": 0,
+      "views": 8
+    },
+    "WIFD|fujifilm_x_a10_2|200|original": {
+      "automatic_real": 3,
+      "false_ai": 1,
+      "median_score": 0.0031991346913855523,
+      "real_fpr": 0.25,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|fujifilm_x_a10_2|200|social_q75": {
+      "automatic_real": 3,
+      "false_ai": 1,
+      "median_score": 0.002868103823857382,
+      "real_fpr": 0.25,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|fujifilm_x_a10_2|800|original": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.0012645339011214674,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|fujifilm_x_a10_2|800|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 0,
+      "median_score": 0.009694625332485884,
+      "real_fpr": 0.0,
+      "uncertain": 2,
+      "views": 4
+    },
+    "WIFD|fujifilm_x_a10_2|original": {
+      "automatic_real": 6,
+      "false_ai": 1,
+      "median_score": 0.0012645339011214674,
+      "real_fpr": 0.125,
+      "uncertain": 1,
+      "views": 8
+    },
+    "WIFD|fujifilm_x_a10_2|social_q75": {
+      "automatic_real": 5,
+      "false_ai": 1,
+      "median_score": 0.003503336978610605,
+      "real_fpr": 0.125,
+      "uncertain": 2,
+      "views": 8
+    },
+    "WIFD|nikon_d7200|100|original": {
+      "automatic_real": 2,
+      "false_ai": 2,
+      "median_score": 0.08602973271626979,
+      "real_fpr": 0.5,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|nikon_d7200|100|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 2,
+      "median_score": 0.07739021722227335,
+      "real_fpr": 0.5,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|nikon_d7200|12800|original": {
+      "automatic_real": 2,
+      "false_ai": 0,
+      "median_score": 8.436681127932388e-05,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 2
+    },
+    "WIFD|nikon_d7200|12800|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 0,
+      "median_score": 0.0009467305844736984,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 2
+    },
+    "WIFD|nikon_d7200|original": {
+      "automatic_real": 4,
+      "false_ai": 2,
+      "median_score": 0.0007875762821640819,
+      "real_fpr": 0.3333333333333333,
+      "uncertain": 0,
+      "views": 6
+    },
+    "WIFD|nikon_d7200|social_q75": {
+      "automatic_real": 4,
+      "false_ai": 2,
+      "median_score": 0.00295917852781713,
+      "real_fpr": 0.3333333333333333,
+      "uncertain": 0,
+      "views": 6
+    },
+    "WIFD|olympus_e_m10_mark_ii|1600|original": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.0007760300795780495,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|olympus_e_m10_mark_ii|1600|social_q75": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.0006130010588094592,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|olympus_e_m10_mark_ii|200|original": {
+      "automatic_real": 2,
+      "false_ai": 2,
+      "median_score": 0.07492394244764,
+      "real_fpr": 0.5,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|olympus_e_m10_mark_ii|200|social_q75": {
+      "automatic_real": 1,
+      "false_ai": 1,
+      "median_score": 0.04769453592598438,
+      "real_fpr": 0.25,
+      "uncertain": 2,
+      "views": 4
+    },
+    "WIFD|olympus_e_m10_mark_ii|original": {
+      "automatic_real": 5,
+      "false_ai": 2,
+      "median_score": 0.0018642045324668288,
+      "real_fpr": 0.25,
+      "uncertain": 1,
+      "views": 8
+    },
+    "WIFD|olympus_e_m10_mark_ii|social_q75": {
+      "automatic_real": 4,
+      "false_ai": 1,
+      "median_score": 0.0160197606892325,
+      "real_fpr": 0.125,
+      "uncertain": 3,
+      "views": 8
+    },
+    "WIFD|original": {
+      "automatic_real": 43,
+      "false_ai": 11,
+      "median_score": 0.0029338188469409943,
+      "real_fpr": 0.16417910447761194,
+      "uncertain": 13,
+      "views": 67
+    },
+    "WIFD|sigma_sd_quattro|100|original": {
+      "automatic_real": 4,
+      "false_ai": 0,
+      "median_score": 0.0010534157045185566,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|sigma_sd_quattro|100|social_q75": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.003513989271596074,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|sigma_sd_quattro|original": {
+      "automatic_real": 4,
+      "false_ai": 0,
+      "median_score": 0.0010534157045185566,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|sigma_sd_quattro|social_q75": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.003513989271596074,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|social_q75": {
+      "automatic_real": 38,
+      "false_ai": 13,
+      "median_score": 0.005551222246140242,
+      "real_fpr": 0.19402985074626866,
+      "uncertain": 16,
+      "views": 67
+    },
+    "WIFD|sony_rx100_1|125|original": {
+      "automatic_real": 2,
+      "false_ai": 0,
+      "median_score": 0.01018017646856606,
+      "real_fpr": 0.0,
+      "uncertain": 2,
+      "views": 4
+    },
+    "WIFD|sony_rx100_1|125|social_q75": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.0039027825696393847,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|sony_rx100_1|6400|original": {
+      "automatic_real": 0,
+      "false_ai": 0,
+      "median_score": 0.015296734869480133,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 1
+    },
+    "WIFD|sony_rx100_1|6400|social_q75": {
+      "automatic_real": 0,
+      "false_ai": 0,
+      "median_score": 0.03081815503537655,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 1
+    },
+    "WIFD|sony_rx100_1|original": {
+      "automatic_real": 2,
+      "false_ai": 0,
+      "median_score": 0.01342325285077095,
+      "real_fpr": 0.0,
+      "uncertain": 3,
+      "views": 5
+    },
+    "WIFD|sony_rx100_1|social_q75": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.005742125678807497,
+      "real_fpr": 0.0,
+      "uncertain": 2,
+      "views": 5
+    },
+    "WIFD|sony_rx100_2|100|original": {
+      "automatic_real": 2,
+      "false_ai": 1,
+      "median_score": 0.007617652663611807,
+      "real_fpr": 0.25,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|sony_rx100_2|100|social_q75": {
+      "automatic_real": 2,
+      "false_ai": 0,
+      "median_score": 0.011383785556972725,
+      "real_fpr": 0.0,
+      "uncertain": 2,
+      "views": 4
+    },
+    "WIFD|sony_rx100_2|6400|original": {
+      "automatic_real": 3,
+      "false_ai": 0,
+      "median_score": 0.0026797639147844166,
+      "real_fpr": 0.0,
+      "uncertain": 1,
+      "views": 4
+    },
+    "WIFD|sony_rx100_2|6400|social_q75": {
+      "automatic_real": 4,
+      "false_ai": 0,
+      "median_score": 0.0017966408340726048,
+      "real_fpr": 0.0,
+      "uncertain": 0,
+      "views": 4
+    },
+    "WIFD|sony_rx100_2|original": {
+      "automatic_real": 5,
+      "false_ai": 1,
+      "median_score": 0.0026797639147844166,
+      "real_fpr": 0.125,
+      "uncertain": 2,
+      "views": 8
+    },
+    "WIFD|sony_rx100_2|social_q75": {
+      "automatic_real": 6,
+      "false_ai": 0,
+      "median_score": 0.0017966408340726048,
+      "real_fpr": 0.0,
+      "uncertain": 2,
+      "views": 8
+    }
+  },
+  "independent_final_passed": false,
+  "limitations": [
+    "REAL-only diagnostic cannot establish AI retention or target success.",
+    "WIFD scenes unknown, internal near-duplicates/repeated views are dependent.",
+    "Eight selected RAW scenes at most; different CFA/cameras/scenes/brightness and RAW development confound causal interpretations of ISO/noise. File counts are not independent scene counts.",
+    "Scores are AI signals, not calibrated authenticity probabilities; no confidence intervals on repeated views."
+  ],
+  "raw_scene_pairs": [
+    {
+      "cfa": "Bayer",
+      "high_false_ai": false,
+      "high_minus_low": 0.004303037654608488,
+      "high_score": 0.010695891454815865,
+      "low_false_ai": false,
+      "low_score": 0.0063928538002073765,
+      "scene": "RawNIND:7D-5",
+      "transport": "original"
+    },
+    {
+      "cfa": "Bayer",
+      "high_false_ai": false,
+      "high_minus_low": -0.10199599899351597,
+      "high_score": 0.030716797336935997,
+      "low_false_ai": true,
+      "low_score": 0.13271279633045197,
+      "scene": "RawNIND:7D-5",
+      "transport": "social_q75"
+    },
+    {
+      "cfa": "Bayer",
+      "high_false_ai": false,
+      "high_minus_low": -0.7674888297915459,
+      "high_score": 0.04552430659532547,
+      "low_false_ai": true,
+      "low_score": 0.8130131363868713,
+      "scene": "RawNIND:7D-6",
+      "transport": "original"
+    },
+    {
+      "cfa": "Bayer",
+      "high_false_ai": true,
+      "high_minus_low": -0.6260145604610443,
+      "high_score": 0.25542470812797546,
+      "low_false_ai": true,
+      "low_score": 0.8814392685890198,
+      "scene": "RawNIND:7D-6",
+      "transport": "social_q75"
+    },
+    {
+      "cfa": "Bayer",
+      "high_false_ai": true,
+      "high_minus_low": -0.40336333215236664,
+      "high_score": 0.09735526144504547,
+      "low_false_ai": true,
+      "low_score": 0.5007185935974121,
+      "scene": "RawNIND:D60-3",
+      "transport": "original"
+    },
+    {
+      "cfa": "Bayer",
+      "high_false_ai": false,
+      "high_minus_low": -0.062337249517440796,
+      "high_score": 0.053056731820106506,
+      "low_false_ai": true,
+      "low_score": 0.1153939813375473,
+      "scene": "RawNIND:D60-3",
+      "transport": "social_q75"
+    },
+    {
+      "cfa": "Bayer",
+      "high_false_ai": false,
+      "high_minus_low": -0.01092548540327698,
+      "high_score": 0.00043633522000163794,
+      "low_false_ai": false,
+      "low_score": 0.011361820623278618,
+      "scene": "RawNIND:Elplint",
+      "transport": "original"
+    },
+    {
+      "cfa": "Bayer",
+      "high_false_ai": false,
+      "high_minus_low": 0.0002540058339945972,
+      "high_score": 0.0006317559164017439,
+      "low_false_ai": false,
+      "low_score": 0.0003777500824071467,
+      "scene": "RawNIND:Elplint",
+      "transport": "social_q75"
+    },
+    {
+      "cfa": "X-Trans",
+      "high_false_ai": false,
+      "high_minus_low": 0.01278172223828733,
+      "high_score": 0.015998544171452522,
+      "low_false_ai": false,
+      "low_score": 0.0032168219331651926,
+      "scene": "RawNIND:MuseeL-shell",
+      "transport": "original"
+    },
+    {
+      "cfa": "X-Trans",
+      "high_false_ai": false,
+      "high_minus_low": -0.10545177757740021,
+      "high_score": 0.04162153601646423,
+      "low_false_ai": true,
+      "low_score": 0.14707331359386444,
+      "scene": "RawNIND:MuseeL-shell",
+      "transport": "social_q75"
+    },
+    {
+      "cfa": "X-Trans",
+      "high_false_ai": false,
+      "high_minus_low": -0.006378900725394487,
+      "high_score": 0.005357085261493921,
+      "low_false_ai": false,
+      "low_score": 0.011735985986888409,
+      "scene": "RawNIND:butterflywall",
+      "transport": "original"
+    },
+    {
+      "cfa": "X-Trans",
+      "high_false_ai": false,
+      "high_minus_low": -0.005541417747735977,
+      "high_score": 0.04296451061964035,
+      "low_false_ai": false,
+      "low_score": 0.04850592836737633,
+      "scene": "RawNIND:butterflywall",
+      "transport": "social_q75"
+    },
+    {
+      "cfa": "X-Trans",
+      "high_false_ai": false,
+      "high_minus_low": -0.006043365690857172,
+      "high_score": 0.0024935719557106495,
+      "low_false_ai": false,
+      "low_score": 0.008536937646567822,
+      "scene": "RawNIND:gnome",
+      "transport": "original"
+    },
+    {
+      "cfa": "X-Trans",
+      "high_false_ai": false,
+      "high_minus_low": 0.008982421597465873,
+      "high_score": 0.012400025501847267,
+      "low_false_ai": false,
+      "low_score": 0.0034176039043813944,
+      "scene": "RawNIND:gnome",
+      "transport": "social_q75"
+    },
+    {
+      "cfa": "X-Trans",
+      "high_false_ai": false,
+      "high_minus_low": 0.005298890442645643,
+      "high_score": 0.005419682711362839,
+      "low_false_ai": false,
+      "low_score": 0.00012079226871719584,
+      "scene": "RawNIND:semicircle",
+      "transport": "original"
+    },
+    {
+      "cfa": "X-Trans",
+      "high_false_ai": false,
+      "high_minus_low": 0.0005793764721602201,
+      "high_score": 0.0013368043582886457,
+      "low_false_ai": false,
+      "low_score": 0.0007574278861284256,
+      "scene": "RawNIND:semicircle",
+      "transport": "social_q75"
+    }
+  ],
+  "reference_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "scores_sha256": "4ed6222a5e40afd84e88f2cdeb86059728ad84e763908a0656afefc6b757680b",
+  "serving_changed": false,
+  "state": "E65_REAL_diagnostic_complete_no_candidate",
+  "training_allowed": false,
+  "transport_pairs": {
+    "RawNIND": {
+      "median_q75_minus_original_score": 0.014963679714128375,
+      "pairs": 16,
+      "q75_new_false_ai": 3,
+      "q75_rescued_real": 1
+    },
+    "WIFD": {
+      "median_q75_minus_original_score": 0.00031671448959968984,
+      "pairs": 67,
+      "q75_new_false_ai": 8,
+      "q75_rescued_real": 6
+    }
+  },
+  "views": 166
+}

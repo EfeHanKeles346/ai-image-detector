@@ -6229,3 +6229,107 @@ rule out these recipes as accepted candidates, not all possible DINO corrections
 needs a new representation/data hypothesis with a valid development population, not another
 rank/loss sweep against E49. The home metadata-only queue remains pending; do not claim that
 those untested REAL-only datasets will necessarily solve the detection problem.
+
+
+## 2026-09-13 — Resume with data-download authorization
+
+The user explicitly authorizes continuing analysis/development and downloading needed data.
+This supersedes the previous no-download restriction in historical sections below. Preserve
+AI retention, immutable E43/experiment evidence, protected roles and commit/push checkpoints.
+First audit source metadata/license/size and scene independence before acquiring pixels.
+Use existing external volume; no automatic full-corpus download. WIFD/RawNIND/SIDD remain
+candidates, not automatically admitted TRAIN or a balanced independent final. E59 stays parked.
+
+Power preflight reports13% battery, below the existing30% bounded-work floor. Asked the user
+to connect power. Metadata research and small code/documentation work can proceed; long
+image downloads/extraction/training wait for verified AC power or sufficient battery.
+
+
+
+## E65 — score-blind camera/noise pilot registered (2026-09-13)
+
+User now authorizes needed data downloads and explicitly requested starting while connecting
+power; subsequent pmset confirmed AC/charging. WIFD full tree is101,432,609,110B/6,944 blobs,
+not a sensible automatic full download. Its1,838 SDR JPEGs cover10 cameras (not all14 cameras
+in the entire corpus). Select at most4 distinct exposure/aperture setting tuples at each
+camera's min/max recorded ISO; hash-rank with fixedE65 seed, omit reference/burst/AEB files.
+SDR scene independence is unknown; do not equate files or cameras with independent scenes.
+Pinned revision3f577edf0b14c686aa08e8d0d8ae07a83ba44f26; MIT README/license blobs verified.
+
+RawNIND official Dataverse metadata v1.0:2,845 files/120,172,531,162B, dataset-level CC-BY-SA-4.0.
+Its permissions.txt contains per-scene exceptions, including research-only entries: therefore
+select ONLY explicitly CC0 scenes with author attribution, excluding official test reserves
+from both dataset.yaml and test_reserve.yaml. Four hash-ranked scenes per Bayer/X-Trans,
+one clean RAW and one highest available ISO<=6400 RAW per scene, preserving filename SHA1.
+No RAW/scene selection uses pixels/model scores. Known-field hashes and unrestricted flags
+are required. This pilot is REAL-only DIAGNOSTIC_DEV, whole publishers reserved, never TRAIN
+or balanced final; future separate decoding/overlap and scoring contracts required.
+
+Freeze all metadata/code and selected file identities before pixels. Total payload ceiling2GiB,
+two download workers,40min cap, external volume with10GiB reserve. Verify Git blob SHA1 for WIFD,
+MD5 plus filename SHA1 for RawNIND, then record SHA256. Resume partial HTTP ranges; if the
+server ignores Range, truncate/restart rather than append. No existing payload/receipt overwrite.
+No source code, executable or full repository clone is downloaded. Originals stay outside git.
+
+Metadata recovery: initial gh recursive-tree response was incomplete; curl retry obtained the
+complete non-truncated tree. System Python lacked trusted CA setup; requests in the existing
+venv succeeded with normal TLS verification (no certificate checking disabled). No image bytes
+had been acquired at that point. E43/E59/serving and existing protected datasets remain unchanged.
+
+
+E65 pre-payload schema correction: initial manifest freeze stopped before writing a contract
+because RawNIND includes three nonnumeric ISO names (`ISOHi 3200`/`ISOUnknown`). Unknown or
+extended ISO names are now excluded before numeric selection, without guessing effective ISO;
+regression fixture added. No image or model score was acquired and no frozen contract altered.
+
+
+### E65 payload complete / score-blind audit plan (2026-09-13)
+
+83 files (67 WIFD JPEG,16 RawNIND RAW),1,009,998,251B downloaded and publisher-checksum
+verified. Receipt SHA `0aab1b2fb544e415b9018084ab13af2cd0bd17761ee3a163b68cdf601c750fd1`.
+User said start while connecting power; AC/charging subsequently confirmed. No model scores.
+Next: fixed isolated E56 RAW decoder, pinned runtime, canonical E51 fingerprints against
+150,483 protected reference bodies plus300 MNW,100 HDR+ and199 FiveK records. Failures and
+cross-reference exact/confirmed perceptual matches quarantine; RawNIND quarantine propagates
+across its scene pair. Internal similar observations remain linked descriptive repetitions,
+never independent scene evidence. No score/brightness exclusions or replacement draws.
+Whole WIFD/RawNIND publishers remain diagnostic-only; no TRAIN or final admission.
+
+
+### E65 decode/identity audit complete; diagnostic preregistration (2026-09-13)
+
+All83 originals decoded successfully, including16 RAWs with frozen E56/LibRaw0.22.1 runtime.
+151,082 reference records screened;0 cross-reference matches under fixed exact/pHash+dHash
+criteria. Eight internal matched pairs are recorded, not discarded or counted independent.
+83 diagnostic observations remain, RawNIND8 scenes. Audit SHA
+`db8b3134886b62dc31d4d39be5b7eb8015550260fa0359bd92af8e18a8316caa`.
+Initial audit CLI omitted PIXELPROOF_DATA_ROOT and failed before opening any payload/contract;
+correct external-root environment succeeded. No frozen code/manifest changed.
+
+Separate diagnostic protocol, before any E65 model score: unchanged E43-S head and backbone,
+AI cut0.07940196245908739 and REAL cut0.011505939625203613; all83 admitted observations in
+original and E49-convention1080px/JPEG75 views (166 views). Global+2texture crops, four frozen
+DINO blocks and mean/std aggregation. Network disabled, batch8,20min cap, no training.
+Lock full scores/features before descriptive source/camera/CFA/capture/ISO and paired RAW
+scene/transport reports. No threshold search, E49 read, AI-retention claim or promotion.
+11 focused E65 tests passed: source eligibility, checksums/resume, identity screening, pair
+quarantine, transport orientation and complete metric pairing/boundary conventions.
+
+
+E65 engineering verification: all697 Python tests passed in12.96s, including11 new E65
+tests. One existing Starlette/httpx deprecation warning. E65 compile check, pip check and
+git whitespace check passed. No dependency change. Remote main was synchronized before
+checkpoint work (0 ahead/0 behind); previously documented web npm-audit debt is separate.
+
+
+### E65 diagnostic complete (2026-09-13)
+
+All166 original/Q75 views scored with frozen E43 in146.33s; scores locked before metrics.
+WIFD REAL false AI11/67 (16.42%) original and13/67 (19.40%) Q75; RawNIND3/16 (18.75%) and
+5/16 (31.25%). Transport creates8 WIFD and3 RawNIND errors, rescues6 and1. High-ISO scores
+fall in5/8 and rise in3/8 RAW scenes; brightness/development/scene differences prohibit a
+noise-causality claim.7D-6 soil/seedling pair visually inspected after score lock; no exclusions.
+No new candidate or AI recall measurement; target remains unmet, E43 and serving unchanged.
+Whole publishers and feature cache remain consumed diagnostic-only, never TRAIN/fresh final.
+697 Python tests pass (11 new); compile/pip/diff checks pass. Source/code/hash details and
+next valid TRAIN/DEV acquisition requirements are in `evidence/e65_diagnostic.md`.

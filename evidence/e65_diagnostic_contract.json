@@ -1,0 +1,29 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "batch_views": 8,
+  "conditions": [
+    "original",
+    "social_q75"
+  ],
+  "contract_sha256": "33be2b5c223c2440f1c8a41e9773a8e0ad74affb37b235acb97891aa83ba8097",
+  "e49_read_allowed": false,
+  "independent_final_claim_allowed": false,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_audit.py": "71df44c7eb40333c80dde13dad79b1dac0336e51aab5b1bd467642e8975262c2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_diagnostic.py": "850fff8ee461018918398a732b51f2b63daf46928e9826404dbf46c4689f0896",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/e32_candidate.py": "e14ff1044462e49560a98fc3e8697e60738d6b41b0e3e49442dfd025c7832b6a",
+    "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+    "/Volumes/LaCie/pixelproof-datasets/e65/audit.json": "db8b3134886b62dc31d4d39be5b7eb8015550260fa0359bd92af8e18a8316caa"
+  },
+  "max_seconds": 1200,
+  "new_threshold_allowed": false,
+  "observations": 83,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "report": "All admitted views; per source/camera/CFA/capture condition and WIFD camera+ISO counts. RawNIND linked low/high scene differences and transport transitions, descriptive only; no independent-view intervals, no noise-causality or AI-retention claim.",
+  "state": "E65_frozen_E43_REAL_diagnostic_registered",
+  "training_allowed": false,
+  "views": 166
+}

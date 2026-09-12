@@ -1,0 +1,21 @@
+{
+  "balanced_final_admitted": false,
+  "contract_sha256": "70b698ce09633c31a923ed7d195d67d123e1dfc06702183566c9a7403058abf9",
+  "cross_match_pairs": 0,
+  "decode_failures": [],
+  "decoded": 83,
+  "diagnostic_observations": 83,
+  "internal_match_pairs": 8,
+  "limitations": "Snapshot coverage is bounded, perceptual screen is not exhaustive; WIFD scene identities unknown. X-Trans processing may be selected internally by LibRaw; no universal Bayer claim.",
+  "model_scores_created": 0,
+  "quarantined_parents": [],
+  "rawnind_scene_groups": 8,
+  "reference_records": 151082,
+  "report_sha256": "db8b3134886b62dc31d4d39be5b7eb8015550260fa0359bd92af8e18a8316caa",
+  "source_counts": {
+    "RawNIND": 16,
+    "WIFD": 67
+  },
+  "state": "E65_decoded_audited_unscored",
+  "training_allowed": false
+}

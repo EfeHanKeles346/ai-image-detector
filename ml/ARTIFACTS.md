@@ -143,3 +143,14 @@ E62/E63 each have locked4000-view consumed E49 scores and failed reports. E64 ha
 TRAIN evidence and must not be evaluated after failing its preregistered TRAIN ceiling.
 No serving artifact/registry changed. Versioned compact evidence is in `evidence/e6[234]*`;
 see EXPERIMENTS for identities, counts and limitations. Do not overwrite or promote.
+
+
+### E65 diagnostic artifacts (2026-09-13)
+
+External `e65/` contains83 publisher-verified originals,16 fixed RAW-development PNGs,
+83 Q75 derivatives, frozen acquisition/audit/diagnostic contracts, complete reports and
+166x3072 diagnostic features. No new classifier. Feature archive SHA
+`25768622659036089fe7ab45e6a95af3aacdcabbabdba5bf3abf594d84ada170`; full score SHA
+`4ed6222a5e40afd84e88f2cdeb86059728ad84e763908a0656afefc6b757680b`.
+Every view remains DIAGNOSTIC_DEV_ONLY; features cannot silently enter TRAIN/final.
+Compact evidence and human-readable findings are versioned in `evidence/e65_*`.

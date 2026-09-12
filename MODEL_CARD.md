@@ -249,3 +249,16 @@ REAL FPR11.8977/11.3291%, zero newly missed AI, but all3 TRAIN conditions fail i
 pre-test requirement; no E49 scoring. No candidate is accepted. Original E43 hash/cuts
 and serving are unchanged; no independent final or new model-quality claim.49 focused
 tests pass. Full preregistration, hashes, paired counts and intervals are in EXPERIMENTS.
+
+
+### E65 diagnostic complete (2026-09-13)
+
+All166 original/Q75 views scored with frozen E43 in146.33s; scores locked before metrics.
+WIFD REAL false AI11/67 (16.42%) original and13/67 (19.40%) Q75; RawNIND3/16 (18.75%) and
+5/16 (31.25%). Transport creates8 WIFD and3 RawNIND errors, rescues6 and1. High-ISO scores
+fall in5/8 and rise in3/8 RAW scenes; brightness/development/scene differences prohibit a
+noise-causality claim.7D-6 soil/seedling pair visually inspected after score lock; no exclusions.
+No new candidate or AI recall measurement; target remains unmet, E43 and serving unchanged.
+Whole publishers and feature cache remain consumed diagnostic-only, never TRAIN/fresh final.
+697 Python tests pass (11 new); compile/pip/diff checks pass. Source/code/hash details and
+next valid TRAIN/DEV acquisition requirements are in `evidence/e65_diagnostic.md`.
