@@ -454,3 +454,12 @@ All acceptance thresholds and finite AI replay guards remain unchanged.
 per scale. E69 chooses one fixed 28-pixel permutation with our existing DINOv2S encoder
 and constrained correction head. The hypothesis is complementary texture information;
 this different backbone and reduced-view protocol cannot inherit published performance.
+
+
+### E70 bilinear feature map (2026-09-13)
+
+[Pham and Pagh, KDD 2013](https://www.rasmuspagh.net/papers/tensorsketch.pdf) provide
+CountSketch/FFT-based explicit feature maps for tensor-product kernels. E70 uses the
+two-input bilinear construction on our frozen original and blur-response coordinates.
+This is an efficient interaction representation, not evidence of improved AI detection.
+The map is tested against directly hashed outer products; no third-party code is run.

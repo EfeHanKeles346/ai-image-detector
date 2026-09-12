@@ -49,7 +49,8 @@ E69 fixed shuffle yields 10.52% clean / 11.77% assigned transport / 10.14% TRAIN
 No E66 or E49 scoring for failed candidates. E66 remains frozen and unscored. Next
 investigate interactions between original content and processing response, with a new
 preregistered feature map and unchanged acceptance gates; no transform/weight/threshold
-sweep. E43/serving remain unchanged. 730 software tests passed; target still unmet.
+sweep. E43/serving remain unchanged. 735 software tests passed. E70 interaction-map fit is prepared and registering below;
+target still unmet.
 
 ## Current checkpoint — E65 diagnostic complete (2026-09-13)
 
@@ -4961,3 +4962,37 @@ Keep as an unadmitted acquisition lead pending explicit dataset licence, exact m
 prompt/source/processing provenance and full protected overlap checks. Do not infer an
 image licence from the paper's CC BY-NC-ND licence. This lead contributes no E69 data and
 does not resolve modern REAL scene coverage; it is not a ready TRAIN/DEV/final pool.
+
+
+## E70 original/blur interaction hypothesis (registered before fit, 2026-09-13)
+
+E67, E68 and E69 failed fixed TRAIN acceptance. Test a distinct nonlinear feature map
+using the already frozen E67 original64 and blur-response64 coordinates: bilinear
+interactions let the correction depend jointly on image representation and processing
+sensitivity. This hypothesis is not established by the preceding failures. The larger
+parameter count is a joint capacity change, not a clean attribution solely to interactions.
+E63 already tested RBF features of the original representation and failed external AI
+retention; E70 is not a repeat of that original-only kernel or a kernel-width sweep.
+
+Use two independent CountSketch hash/sign arrays from NumPy default_rng(seed70), each
+64->128, and the real inverse FFT of their FFT product to sketch all original-by-response
+products into 128 coordinates. This is an explicit bilinear TensorSketch; verify exact
+agreement with direct hashed outer products on fixtures. Method reference: Pham/Pagh,
+KDD 2013, https://www.rasmuspagh.net/papers/tensorsketch.pdf . Standardize sketch coordinates
+using all and only admitted TRAIN views. Keep the original 128 E67 coordinates, append
+128 standardized interactions and one intercept: 257 trainable correction coefficients.
+No new pixels, backbone, PCA fit, patch transform, or hash/dimension/seed search.
+
+Discard E67's correction weights; zero-init all 257 (exact E43). Fit one final-iterate
+CPU float64 SLSQP200/ftol1e-9 recipe, two threads, 30-minute ceiling. Use unchanged E67
+class/source/parent-balanced operating-cut BCE with hard REAL2x and L2.01 on all correction
+coefficients. Retain exact E64 caught-AI/correct-REAL linear decision constraints and
+margin conventions. No L2, weight, threshold or post-fit scale sweep. Require solver
+success, violation<=1e-8, exact serialized replay, zero newly missed TRAIN AI/REAL errors
+and REAL FPR<=10% in ALL three conditions before any E66 DEV access.
+
+Bind every source feature/basis/code hash, the failed E69 report and unscored E66 identity
+before fitting. Only a passing TRAIN candidate permits a separately registered E66 DEV
+comparison at unchanged cuts, all20 numeric gates plus per-image/source AI retention and
+non-increased REAL FPR. Only then may a consumed E49 regression be separately registered.
+No independent final or serving promotion; E67/E68/E69 remain failed and immutable.

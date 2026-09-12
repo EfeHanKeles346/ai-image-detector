@@ -1,0 +1,110 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "ai_parents": 4595,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "constraints": "Unchanged E64 per-image caught-AI and correct-REAL decision margins; violation<=1e-8.",
+  "contract_sha256": "fe936149f2659133d910c8a66e0953d5e1f19c5dcbe97b5037a60e7d553cbcda",
+  "cpu_threads": 2,
+  "dev_labels_used_in_fitting": false,
+  "dev_manifest": "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json",
+  "dev_manifest_sha256": "bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301",
+  "downloads": 0,
+  "e49_read_allowed": false,
+  "evaluation": "Only if TRAIN guard passes: separately freeze one E66 DEV original/1080pxQ75 comparison with same E43 cuts, all20 absolute/selective gates and per-image/per-source AI retention. Only if DEV passes may a separate one-shot consumed E49 regression be preregistered; E49 never chooses another recipe. No independent final/promotion from E66/E49.",
+  "independent_final_allowed": false,
+  "inputs": {
+    "basis_artifact": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/correction.npz",
+      "sha256": "d0491ceb962915f096bdfe6cb0555402b16e78085b2a9f2e141c6d10d98f9a1b"
+    },
+    "blur": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/blur_features.npz",
+      "sha256": "f48474422616c0b3776d6749c0b03796493f8b349a97ce355749011e1b715b4b"
+    },
+    "constraint_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py",
+      "sha256": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95"
+    },
+    "feature_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e67_features.py",
+      "sha256": "a1944343b2c7549cc2153162aaa6526c635e5dd4a594e7db356e2faea8491a57"
+    },
+    "feature_contract": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/features_contract.json",
+      "sha256": "51ea9318a9142970f259004e18f2fa0386232403e984543ba07961a68c702237"
+    },
+    "features": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/teacher.npz",
+      "sha256": "101c539958f72913273a0a7e91f9ee7f7b2c025d73fee956177d7fcf8c9b62d8"
+    },
+    "features_report": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/features.json",
+      "sha256": "f321b2371da7f690c69bb7fe5858ad15943b56985338c192a1b0ed8d041642f1"
+    },
+    "gate_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/retention_gate.py",
+      "sha256": "1dcbb2351d0e4a2788a041ccbcddfb598d1c3e73ff524626917f9f31f95fcf0e"
+    },
+    "helper_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py",
+      "sha256": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421"
+    },
+    "later_failed_report": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e69/fit.json",
+      "sha256": "f4a41331cc49612b43f6876c7aeda28dd5a1ec37b092676c093fd95edea768e7"
+    },
+    "manifest": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json",
+      "sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+    },
+    "model_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e70_model.py",
+      "sha256": "954255525ac9127ce58d96a5b36cded407bc5b3bbf35942d7d3aff16c561b975"
+    },
+    "prior_fit_contract": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/fit_contract.json",
+      "sha256": "419b0a16fbea3b6481205596e01a0386a697cb905e2e26b14db2b37807594f62"
+    },
+    "prior_fit_report": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/fit.json",
+      "sha256": "0f9220724b8654e864f81b57c18a0a339a7fbc86ab47e8f4ee87db612dbacb88"
+    },
+    "prior_model_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e67_model.py",
+      "sha256": "d82007a855dd8f2461a05d80e15543075b0630403e7fa0bc5442e4d5bcb5bdad"
+    },
+    "prior_runner_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e67_fit.py",
+      "sha256": "f2b63b5375f6e2a1431f37d4368305bedf9c8848450b888eeac09bfd43f82a7e"
+    },
+    "reference": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+      "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390"
+    },
+    "runner_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e70_fit.py",
+      "sha256": "b33d4f0227ac550252d7e53d23a2d53ec159ef6ff2646a55ec4eb3c11f3ab109"
+    },
+    "train_diagnostic": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/training_diagnostic.json",
+      "sha256": "8c10eab89a5e65ae2c6f265948ae1a39161603e9b8c5154b64f5907e97ce011a"
+    },
+    "weights_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py",
+      "sha256": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e"
+    }
+  },
+  "max_seconds": 1800,
+  "objective": "Exactly E67 class/source/parent-balanced operating-cut BCE, hard REAL2x, class mass0.5 each and L2.01 on all coefficients, including intercept.",
+  "optimizer": "CPU float64 SLSQP200,ftol1e-9; final iterate only; no dimension/hash/seed/L2/threshold sweep.",
+  "parents": 11630,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "representation": "Exact E67 original64 + blur-response64 coordinates, plus128 bilinear TensorSketch coordinates standardized on TRAIN only, plus intercept:257 coefficients. Two independent64-to128 CountSketch hash/sign arrays, NumPy default_rng(seed70), FFT circular convolution. Discard old learned weights, initialize all257 to zero.",
+  "state": "E70_TRAIN_bilinear_original_response_registered",
+  "train_guard": "Solver success,violation<=1e-8,exact serialized replay,E61 zero newly missed AI, zero new REAL errors and REAL TRAIN FPR<=10% in ALL3 conditions."
+}
