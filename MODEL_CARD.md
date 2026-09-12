@@ -303,3 +303,20 @@ representation could work. Do not retune group weights, regularization or thresh
 Next examine a different content/texture representation, keeping the unscored DEV and
 all failed recipes intact. E68 preregistration checkpoint cf36565 is pushed; local and
 remote main identity verified. All 719 Python tests passed before the fit.
+
+
+## E69 complete: fixed patch shuffle rejected at TRAIN (2026-09-13)
+
+Feature extraction finished in 871.99 seconds; the single candidate fit in 38.50 seconds.
+Solver converged, exact serialized replay passed, zero newly missed TRAIN AI views and
+zero new REAL errors. REAL FPR: 740 / 7,035 clean (10.52%), 828 assigned transport (11.77%),
+713 TRAIN q75 (10.14%). All three fail the unchanged <=10% TRAIN ceiling. E69 is rejected;
+no E66 DEV or E49 scores may be created for it. E66 remains entirely unscored.
+
+The fixed shuffled-texture branch does not improve pooled threshold errors versus E67's
+blur-response branch. This rejects this bounded DINO adaptation, not the published SFLD
+CLIP ensemble. Do not sweep patch sizes/permutations/ranks or modify frozen artifacts.
+Three distinct frozen-feature recipes have now failed under the same finite decision
+constraints. Next investigate whether content and processing response need interactions,
+rather than another transform/weighting sweep. Any new candidate remains TRAIN-only
+until it passes the same guard. E43 and serving are unchanged; target not achieved.

@@ -1,0 +1,19 @@
+{
+  "backbone_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+  "candidate_created": false,
+  "chunks": 91,
+  "contract_sha256": "abb66f00bacf05bfd290d3318ec4cf273b2ad8ea6d39341212ba976ecb2b4dc0",
+  "dev_or_final_rows_read": 0,
+  "feature_sha256": "fb1028dc15e7c4ef7b85c54253edf9e3a9e04a184a60c4da07e8aa9cbc7a1819",
+  "reference_decision_changes": 0,
+  "reference_max_score_error": 0.0,
+  "reference_parity_parents": 30,
+  "report_sha256": "71a649d1c5ba971a8930013b464e12fe5eeb1ebee61ccf92073a94697b13877f",
+  "seconds": 871.9916356670437,
+  "shape": [
+    11630,
+    3,
+    3072
+  ],
+  "state": "E69_TRAIN_shuffle_features_complete"
+}

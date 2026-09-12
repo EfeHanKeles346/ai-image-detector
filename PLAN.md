@@ -42,15 +42,14 @@ candidates, not automatically admitted TRAIN or a balanced independent final. E5
 Power initially13%; user explicitly requested starting while connecting power. AC/charging
 subsequently confirmed (31% on the latest check); bounded E65 acquisition/audit completed.
 
-## Current checkpoint — E67/E68 TRAIN-stopped; representation diagnosis (2026-09-13)
+## Current checkpoint — E67/E68/E69 TRAIN-stopped (2026-09-13)
 
-E67 blur response failed two TRAIN ceilings; E68 group minimax failed all three despite
-improved worst-group loss. Both preserve all caught TRAIN AI and correct REAL decisions.
-No E66 DEV or E49 scoring for either. E66 remains frozen and unscored. Next assess a
-content/texture representation that adds information, without rank/L2/group-weight or
-threshold sweeps. Preserve all failed artifacts and E43. Latest pushed checkpoint cf36565;
-730 software tests passed. E69 fixed patch-shuffle extraction is running;
-its candidate recipe is fixed below before features or scores. Target still unmet; no serving change.
+All three frozen recipes preserve caught TRAIN AI but fail the fixed REAL ceiling.
+E69 fixed shuffle yields 10.52% clean / 11.77% assigned transport / 10.14% TRAIN q75.
+No E66 or E49 scoring for failed candidates. E66 remains frozen and unscored. Next
+investigate interactions between original content and processing response, with a new
+preregistered feature map and unchanged acceptance gates; no transform/weight/threshold
+sweep. E43/serving remain unchanged. 730 software tests passed; target still unmet.
 
 ## Current checkpoint — E65 diagnostic complete (2026-09-13)
 

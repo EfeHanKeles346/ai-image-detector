@@ -1,0 +1,973 @@
+{
+  "basis": {
+    "base_variance_explained": 0.5962638303175036,
+    "texture_variance_explained": 0.6068904189777741
+  },
+  "candidate_sha256": "7f41b84ec80ee8c54839565804227c17644aca1bf9dd5e004a5deb518e63670d",
+  "contract_sha256": "11e78b846a854fbe81f4a595e5a3fe2b8295b76da45b94755b0c4b664620c1e4",
+  "dev_features_or_scores_read": 0,
+  "dev_scoring_permitted": false,
+  "e49_rows_read": 0,
+  "independent_final_passed": false,
+  "promotion_allowed": false,
+  "reference_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "seconds": 38.50174604204949,
+  "solver": {
+    "iterations": 53,
+    "max_constraint_violation": 9.43689570931383e-16,
+    "message": "Optimization terminated successfully",
+    "objective": 0.15781442117792624,
+    "success": true,
+    "trace": [
+      0.1903221379575064,
+      0.1786320735005434,
+      0.1724261823727612,
+      0.16859867685267435,
+      0.16492294605387406,
+      0.16318713902216844,
+      0.16162432223429232,
+      0.1608908644801889,
+      0.1602287630873374,
+      0.15929395340038258,
+      0.15883304850944036,
+      0.15859962304094877,
+      0.15834384021245934,
+      0.15826110939870594,
+      0.1581201249714249,
+      0.15807630058164313,
+      0.1580140379478801,
+      0.15793938565159962,
+      0.1578922049155544,
+      0.15787955227310366,
+      0.1578650322728516,
+      0.15784768459248358,
+      0.15784357063724297,
+      0.15783918376774494,
+      0.15783006150342327,
+      0.1578254355423554,
+      0.157823127048869,
+      0.15781953553917671,
+      0.15781728728847996,
+      0.15781701399857592,
+      0.15781624877453232,
+      0.157815770741458,
+      0.15781497543225714,
+      0.1578148766746865,
+      0.15781472887075815,
+      0.1578146825647127,
+      0.15781465511481313,
+      0.157814618804169,
+      0.15781456487865586,
+      0.15781451836837607,
+      0.15781449515564877,
+      0.15781448375132187,
+      0.15781447068474103,
+      0.1578144529542505,
+      0.15781443907396728,
+      0.15781443406225784,
+      0.1578144328271521,
+      0.1578144317535439,
+      0.15781442935863782,
+      0.15781442579752358,
+      0.15781442249462246,
+      0.15781442117792624,
+      0.15781442117792624
+    ]
+  },
+  "state": "E69_TRAIN_guard_failed",
+  "train_gate": {
+    "ai_parents": 4595,
+    "comparisons": {
+      "assigned_transport": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4503,
+          "new_ai_rate": 0.9799782372143634,
+          "non_ai_to_ai": 12,
+          "old_ai_count": 4491,
+          "old_ai_rate": 0.977366702937976,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 111,
+            "new_ai_count": 132,
+            "new_ai_rate": 0.07764705882352942,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 243,
+            "old_ai_rate": 0.14294117647058824,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 9,
+            "new_ai_count": 7,
+            "new_ai_rate": 0.04375,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 16,
+            "old_ai_rate": 0.1,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 19,
+            "new_ai_count": 28,
+            "new_ai_rate": 0.02413793103448276,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 47,
+            "old_ai_rate": 0.04051724137931034,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 20,
+            "new_ai_count": 42,
+            "new_ai_rate": 0.036395147313691506,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 62,
+            "old_ai_rate": 0.053726169844020795,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 31,
+            "new_ai_count": 48,
+            "new_ai_rate": 0.042105263157894736,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 79,
+            "old_ai_rate": 0.06929824561403508,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 2,
+            "new_ai_count": 2,
+            "new_ai_rate": 0.02,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 4,
+            "old_ai_rate": 0.04,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 5,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 5,
+            "old_ai_rate": 0.07042253521126761,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 108,
+            "new_ai_count": 567,
+            "new_ai_rate": 0.4536,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 675,
+            "old_ai_rate": 0.54,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 560,
+            "new_ai_rate": 0.984182776801406,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 560,
+            "old_ai_rate": 0.984182776801406,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 540,
+            "new_ai_rate": 0.9490333919156415,
+            "non_ai_to_ai": 4,
+            "old_ai_count": 536,
+            "old_ai_rate": 0.9420035149384886,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 531,
+            "new_ai_rate": 0.9332161687170475,
+            "non_ai_to_ai": 7,
+            "old_ai_count": 524,
+            "old_ai_rate": 0.9209138840070299,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 563,
+            "new_ai_rate": 0.9894551845342706,
+            "non_ai_to_ai": 1,
+            "old_ai_count": 562,
+            "old_ai_rate": 0.9876977152899824,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 159,
+            "new_ai_rate": 0.99375,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 567,
+            "new_ai_rate": 0.9964850615114236,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 567,
+            "old_ai_rate": 0.9964850615114236,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 452,
+            "new_ai_rate": 0.9847494553376906,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 452,
+            "old_ai_rate": 0.9847494553376906,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 307,
+          "new_ai_count": 828,
+          "new_ai_rate": 0.11769722814498934,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 1135,
+          "old_ai_rate": 0.1613361762615494,
+          "parents": 7035
+        }
+      },
+      "clean": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4512,
+          "new_ai_rate": 0.981936887921654,
+          "non_ai_to_ai": 4,
+          "old_ai_count": 4508,
+          "old_ai_rate": 0.9810663764961916,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 102,
+            "new_ai_count": 126,
+            "new_ai_rate": 0.07411764705882352,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 228,
+            "old_ai_rate": 0.13411764705882354,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 9,
+            "new_ai_count": 4,
+            "new_ai_rate": 0.025,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 13,
+            "old_ai_rate": 0.08125,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 15,
+            "new_ai_count": 32,
+            "new_ai_rate": 0.027586206896551724,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 47,
+            "old_ai_rate": 0.04051724137931034,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 24,
+            "new_ai_count": 42,
+            "new_ai_rate": 0.036395147313691506,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 66,
+            "old_ai_rate": 0.05719237435008666,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 32,
+            "new_ai_count": 25,
+            "new_ai_rate": 0.021929824561403508,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 57,
+            "old_ai_rate": 0.05,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 3,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 3,
+            "old_ai_rate": 0.03,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.014084507042253521,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.028169014084507043,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 132,
+            "new_ai_count": 509,
+            "new_ai_rate": 0.4072,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 641,
+            "old_ai_rate": 0.5128,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 561,
+            "new_ai_rate": 0.9859402460456942,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 561,
+            "old_ai_rate": 0.9859402460456942,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 541,
+            "new_ai_rate": 0.9507908611599297,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 541,
+            "old_ai_rate": 0.9507908611599297,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 532,
+            "new_ai_rate": 0.9349736379613357,
+            "non_ai_to_ai": 4,
+            "old_ai_count": 528,
+            "old_ai_rate": 0.9279437609841827,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 568,
+            "new_ai_rate": 0.9982425307557118,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 568,
+            "old_ai_rate": 0.9982425307557118,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 159,
+            "new_ai_rate": 0.99375,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 566,
+            "new_ai_rate": 0.9947275922671354,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 566,
+            "old_ai_rate": 0.9947275922671354,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 454,
+            "new_ai_rate": 0.9891067538126361,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 454,
+            "old_ai_rate": 0.9891067538126361,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 320,
+          "new_ai_count": 740,
+          "new_ai_rate": 0.10518834399431415,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 1060,
+          "old_ai_rate": 0.15067519545131486,
+          "parents": 7035
+        }
+      },
+      "q75": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4483,
+          "new_ai_rate": 0.9756256800870512,
+          "non_ai_to_ai": 8,
+          "old_ai_count": 4475,
+          "old_ai_rate": 0.9738846572361263,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 101,
+            "new_ai_count": 125,
+            "new_ai_rate": 0.07352941176470588,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 226,
+            "old_ai_rate": 0.13294117647058823,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 7,
+            "new_ai_count": 4,
+            "new_ai_rate": 0.025,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 11,
+            "old_ai_rate": 0.06875,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 9,
+            "new_ai_count": 28,
+            "new_ai_rate": 0.02413793103448276,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 37,
+            "old_ai_rate": 0.03189655172413793,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 26,
+            "new_ai_count": 32,
+            "new_ai_rate": 0.02772963604852686,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 58,
+            "old_ai_rate": 0.05025996533795494,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 23,
+            "new_ai_count": 25,
+            "new_ai_rate": 0.021929824561403508,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 48,
+            "old_ai_rate": 0.042105263157894736,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.014084507042253521,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 90,
+            "new_ai_count": 497,
+            "new_ai_rate": 0.3976,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 587,
+            "old_ai_rate": 0.4696,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 558,
+            "new_ai_rate": 0.9806678383128296,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 558,
+            "old_ai_rate": 0.9806678383128296,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 533,
+            "new_ai_rate": 0.9367311072056239,
+            "non_ai_to_ai": 2,
+            "old_ai_count": 531,
+            "old_ai_rate": 0.9332161687170475,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 526,
+            "new_ai_rate": 0.9244288224956063,
+            "non_ai_to_ai": 4,
+            "old_ai_count": 522,
+            "old_ai_rate": 0.9173989455184535,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 563,
+            "new_ai_rate": 0.9894551845342706,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 563,
+            "old_ai_rate": 0.9894551845342706,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 159,
+            "new_ai_rate": 0.99375,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 565,
+            "new_ai_rate": 0.9929701230228472,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 565,
+            "old_ai_rate": 0.9929701230228472,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 448,
+            "new_ai_rate": 0.9760348583877996,
+            "non_ai_to_ai": 2,
+            "old_ai_count": 446,
+            "old_ai_rate": 0.971677559912854,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 258,
+          "new_ai_count": 713,
+          "new_ai_rate": 0.1013503909026297,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 971,
+          "old_ai_rate": 0.13802416488983654,
+          "parents": 7035
+        }
+      }
+    },
+    "independent_quality_claim": false,
+    "misses_by_condition": {
+      "assigned_transport": 0,
+      "clean": 0,
+      "q75": 0
+    },
+    "new_ai_miss_parents": 0,
+    "new_ai_miss_views": 0,
+    "parents": 11630,
+    "passes_train_retention": true,
+    "promotion_allowed": false,
+    "scope": "Necessary TRAIN replay condition only; no unseen-data guarantee. New AI rescues cannot cancel previously caught AI losses.",
+    "state": "pass_train_retention",
+    "views": 34890
+  }
+}

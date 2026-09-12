@@ -182,3 +182,17 @@ failed TRAIN guard; no DEV or E49 scores may be created for this candidate.
 E68 rejected TRAIN candidate: external `e68/correction.npz`, SHA f1dd50fdee88cb00de543308a8fef08d72e1e9e06121b580d7f93170f5278d6b.
 The bound original/blur bases are unchanged from E67; only correction weights were fit.
 `evidence/e68_fit.json` records failure. No DEV/test scoring or promotion allowed.
+
+
+### E69 TRAIN patch-shuffle features complete (2026-09-13)
+
+All 11,630 parents x three conditions x 3,072 features completed in 871.99s
+across 91 checked chunks. Original parity: zero maximum score error and zero
+decision changes on 30 source-selected parents. Feature SHA fb1028dc15e7c4ef7b85c54253edf9e3a9e04a184a60c4da07e8aa9cbc7a1819;
+contract SHA abb66f00bacf05bfd290d3318ec4cf273b2ad8ea6d39341212ba976ecb2b4dc0. No DEV/final rows read and no candidate yet.
+Proceed to bind and run the already fixed 129-coefficient E69 recipe.
+
+
+E69 rejected TRAIN candidate SHA 7f41b84ec80ee8c54839565804227c17644aca1bf9dd5e004a5deb518e63670d (`e69/correction.npz`, external).
+Its original/texture PCA bases and 129 coefficients are frozen with the fit contract.
+No E69 DEV or E49 scores exist; the candidate must not be promoted or re-evaluated.

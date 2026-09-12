@@ -5434,3 +5434,29 @@ whitespace checks pass. No E69 fit/DEV contract or candidate has been created ye
 Review of prior E54/E55/E58 records confirms backbone adaptation, grayscale augmentation
 and scalar threshold repair have already failed their respective gates; do not present
 those as untried or restart E59's parked CLIP experiment automatically.
+
+
+### E69 TRAIN patch-shuffle features complete (2026-09-13)
+
+All 11,630 parents x three conditions x 3,072 features completed in 871.99s
+across 91 checked chunks. Original parity: zero maximum score error and zero
+decision changes on 30 source-selected parents. Feature SHA fb1028dc15e7c4ef7b85c54253edf9e3a9e04a184a60c4da07e8aa9cbc7a1819;
+contract SHA abb66f00bacf05bfd290d3318ec4cf273b2ad8ea6d39341212ba976ecb2b4dc0. No DEV/final rows read and no candidate yet.
+Proceed to bind and run the already fixed 129-coefficient E69 recipe.
+
+
+## E69 complete: fixed patch shuffle rejected at TRAIN (2026-09-13)
+
+Feature extraction finished in 871.99 seconds; the single candidate fit in 38.50 seconds.
+Solver converged, exact serialized replay passed, zero newly missed TRAIN AI views and
+zero new REAL errors. REAL FPR: 740 / 7,035 clean (10.52%), 828 assigned transport (11.77%),
+713 TRAIN q75 (10.14%). All three fail the unchanged <=10% TRAIN ceiling. E69 is rejected;
+no E66 DEV or E49 scores may be created for it. E66 remains entirely unscored.
+
+The fixed shuffled-texture branch does not improve pooled threshold errors versus E67's
+blur-response branch. This rejects this bounded DINO adaptation, not the published SFLD
+CLIP ensemble. Do not sweep patch sizes/permutations/ranks or modify frozen artifacts.
+Three distinct frozen-feature recipes have now failed under the same finite decision
+constraints. Next investigate whether content and processing response need interactions,
+rather than another transform/weighting sweep. Any new candidate remains TRAIN-only
+until it passes the same guard. E43 and serving are unchanged; target not achieved.
