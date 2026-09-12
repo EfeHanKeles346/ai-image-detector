@@ -5416,3 +5416,21 @@ No full extraction, new fit or DEV score has run at this checkpoint.
 E69 extraction preregistration verified after 722 Python tests passed in 11.87 seconds
 (existing Starlette/httpx warning only). Starting the complete TRAIN-only shuffled-crop
 feature pass; the original-model parity check runs before transformed extraction.
+
+
+E69 original-crop parity passed on all 30 source-selected parents with maximum score
+error exactly zero and zero binary/selective changes. Full shuffled extraction continues.
+Its prepared candidate code uses standardized shuffled features directly for the second
+PCA64 branch (not original-minus-shuffled), retains 129 coefficients and the fixed E67
+objective. Four model tests pass, including independent branch inputs, exact zero-init
+and serialized replay. No candidate fit contract has yet been created.
+
+
+E69 fit and conditional DEV runners are prepared before extraction completes. Four
+additional DEV tests pass: transform parity with TRAIN, exact two-condition coverage,
+source/role integrity, and rejection of a failed TRAIN candidate or offsetting AI losses.
+All 730 Python tests passed in 14.21 seconds with the existing warning; compile and
+whitespace checks pass. No E69 fit/DEV contract or candidate has been created yet.
+Review of prior E54/E55/E58 records confirms backbone adaptation, grayscale augmentation
+and scalar threshold repair have already failed their respective gates; do not present
+those as untried or restart E59's parked CLIP experiment automatically.

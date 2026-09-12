@@ -2337,3 +2337,21 @@ the frozen 320-observation development manifest, SHA bf4c3586126edf91588cc72b375
 No model scores exist for this population. This limited DEV is not independent final data.
 Starting the already preregistered E67 fit: freeze exact artifact/code/DEV identity bindings,
 then one constrained TRAIN fit with the unchanged 10% REAL ceiling and per-image AI guard.
+
+
+### Additional data lead: Boon_or_Bane (metadata only, 2026-09-13)
+
+The author-linked public Nextcloud share opens without authentication in the browser:
+https://cloud.digfor.code.unibw-muenchen.de/s/BEEzsMnZLFCXw9S . Its root shows only two
+folders, ChatGPT5 (145 MB) and FireflyImage4 (139 MB), rounded total 284 MB. No licence
+file is visible at the root. ChatGPT5 has folders named 1024_1024, 1024_1536 and
+1536_1024; the first contains fingerprint/test subfolders. These names are not verified
+pixel dimensions or generator identities. They differ from the paper's GPT size table,
+so exact published-file provenance needs clarification before use. No image download
+was triggered and no image was opened/scored. A legacy read-only DAV request returned
+401; the ordinary public browser listing succeeded, without login or access changes.
+
+Keep as an unadmitted acquisition lead pending explicit dataset licence, exact manifest,
+prompt/source/processing provenance and full protected overlap checks. Do not infer an
+image licence from the paper's CC BY-NC-ND licence. This lead contributes no E69 data and
+does not resolve modern REAL scene coverage; it is not a ready TRAIN/DEV/final pool.

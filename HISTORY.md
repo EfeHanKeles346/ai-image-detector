@@ -6639,3 +6639,39 @@ No full extraction, new fit or DEV score has run at this checkpoint.
 E69 extraction preregistration verified after 722 Python tests passed in 11.87 seconds
 (existing Starlette/httpx warning only). Starting the complete TRAIN-only shuffled-crop
 feature pass; the original-model parity check runs before transformed extraction.
+
+
+### Additional data lead: Boon_or_Bane (metadata only, 2026-09-13)
+
+The author-linked public Nextcloud share opens without authentication in the browser:
+https://cloud.digfor.code.unibw-muenchen.de/s/BEEzsMnZLFCXw9S . Its root shows only two
+folders, ChatGPT5 (145 MB) and FireflyImage4 (139 MB), rounded total 284 MB. No licence
+file is visible at the root. ChatGPT5 has folders named 1024_1024, 1024_1536 and
+1536_1024; the first contains fingerprint/test subfolders. These names are not verified
+pixel dimensions or generator identities. They differ from the paper's GPT size table,
+so exact published-file provenance needs clarification before use. No image download
+was triggered and no image was opened/scored. A legacy read-only DAV request returned
+401; the ordinary public browser listing succeeded, without login or access changes.
+
+Keep as an unadmitted acquisition lead pending explicit dataset licence, exact manifest,
+prompt/source/processing provenance and full protected overlap checks. Do not infer an
+image licence from the paper's CC BY-NC-ND licence. This lead contributes no E69 data and
+does not resolve modern REAL scene coverage; it is not a ready TRAIN/DEV/final pool.
+
+
+E69 original-crop parity passed on all 30 source-selected parents with maximum score
+error exactly zero and zero binary/selective changes. Full shuffled extraction continues.
+Its prepared candidate code uses standardized shuffled features directly for the second
+PCA64 branch (not original-minus-shuffled), retains 129 coefficients and the fixed E67
+objective. Four model tests pass, including independent branch inputs, exact zero-init
+and serialized replay. No candidate fit contract has yet been created.
+
+
+E69 fit and conditional DEV runners are prepared before extraction completes. Four
+additional DEV tests pass: transform parity with TRAIN, exact two-condition coverage,
+source/role integrity, and rejection of a failed TRAIN candidate or offsetting AI losses.
+All 730 Python tests passed in 14.21 seconds with the existing warning; compile and
+whitespace checks pass. No E69 fit/DEV contract or candidate has been created yet.
+Review of prior E54/E55/E58 records confirms backbone adaptation, grayscale augmentation
+and scalar threshold repair have already failed their respective gates; do not present
+those as untried or restart E59's parked CLIP experiment automatically.

@@ -49,7 +49,7 @@ improved worst-group loss. Both preserve all caught TRAIN AI and correct REAL de
 No E66 DEV or E49 scoring for either. E66 remains frozen and unscored. Next assess a
 content/texture representation that adds information, without rank/L2/group-weight or
 threshold sweeps. Preserve all failed artifacts and E43. Latest pushed checkpoint cf36565;
-722 software tests passed. E69 fixed patch-shuffle extraction is registered and starting;
+730 software tests passed. E69 fixed patch-shuffle extraction is running;
 its candidate recipe is fixed below before features or scores. Target still unmet; no serving change.
 
 ## Current checkpoint — E65 diagnostic complete (2026-09-13)
@@ -4944,3 +4944,21 @@ conditions, zero new caught-AI misses/REAL errors and successful feasible solver
 No patch-size/permutation/rank/L2/threshold sweep. E66 stays unscored until a passing
 TRAIN candidate receives a separately frozen 20-gate DEV comparison. No promotion or
 independent final claim; all E67/E68 failures remain immutable.
+
+
+### Additional data lead: Boon_or_Bane (metadata only, 2026-09-13)
+
+The author-linked public Nextcloud share opens without authentication in the browser:
+https://cloud.digfor.code.unibw-muenchen.de/s/BEEzsMnZLFCXw9S . Its root shows only two
+folders, ChatGPT5 (145 MB) and FireflyImage4 (139 MB), rounded total 284 MB. No licence
+file is visible at the root. ChatGPT5 has folders named 1024_1024, 1024_1536 and
+1536_1024; the first contains fingerprint/test subfolders. These names are not verified
+pixel dimensions or generator identities. They differ from the paper's GPT size table,
+so exact published-file provenance needs clarification before use. No image download
+was triggered and no image was opened/scored. A legacy read-only DAV request returned
+401; the ordinary public browser listing succeeded, without login or access changes.
+
+Keep as an unadmitted acquisition lead pending explicit dataset licence, exact manifest,
+prompt/source/processing provenance and full protected overlap checks. Do not infer an
+image licence from the paper's CC BY-NC-ND licence. This lead contributes no E69 data and
+does not resolve modern REAL scene coverage; it is not a ready TRAIN/DEV/final pool.
