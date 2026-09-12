@@ -42,15 +42,15 @@ candidates, not automatically admitted TRAIN or a balanced independent final. E5
 Power initially13%; user explicitly requested starting while connecting power. AC/charging
 subsequently confirmed (31% on the latest check); bounded E65 acquisition/audit completed.
 
-## Current checkpoint — E67/E68/E69 TRAIN-stopped (2026-09-13)
+## Current checkpoint — E70 TRAIN passed; first E66 DEV next (2026-09-13)
 
-All three frozen recipes preserve caught TRAIN AI but fail the fixed REAL ceiling.
-E69 fixed shuffle yields 10.52% clean / 11.77% assigned transport / 10.14% TRAIN q75.
-No E66 or E49 scoring for failed candidates. E66 remains frozen and unscored. Next
-investigate interactions between original content and processing response, with a new
-preregistered feature map and unchanged acceptance gates; no transform/weight/threshold
-sweep. E43/serving remain unchanged. 735 software tests passed. E70 interaction-map fit is prepared and registering below;
-target still unmet.
+E70 bilinear original/response map passes all unchanged TRAIN feasibility guards:
+REAL FPR 8.07% clean / 8.74% assigned transport / 7.29% TRAIN q75, zero new AI misses
+or REAL errors, successful feasible solver and exact saved replay. Freeze the one E66
+640-view DEV comparison before scoring. Require all20 numeric gates, zero new AI misses
+per source/condition and non-increased REAL FPR; only a pass permits separately registered
+consumed E49 regression. No target/final success or serving change. E67/E68/E69 remain
+rejected and E59 parked. 739 Python tests pass; latest pushed protocol checkpoint 1f3bc59.
 
 ## Current checkpoint — E65 diagnostic complete (2026-09-13)
 

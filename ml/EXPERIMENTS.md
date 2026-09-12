@@ -5502,3 +5502,29 @@ weights, serialized replay/batch partition stability, and invalid input rejectio
 735 Python tests passed in 12.29 seconds (existing warning), compile/diff checks pass.
 The prior E69 result checkpoint 486f826 has identical verified local/remote identity.
 Now freeze the E70 fit contract and run its single preregistered TRAIN fit.
+
+
+## E70 TRAIN guard passed; register first E66 DEV comparison (2026-09-13)
+
+The single bilinear-map fit completed in 88.82 seconds, successful feasible solver and
+exact saved replay. REAL errors are 568 / 7,035 clean (8.07%), 615 assigned transport
+(8.74%), 513 TRAIN q75 (7.29%). All three meet the unchanged <=10% ceiling. Zero newly
+missed TRAIN AI views and zero new REAL errors; no protected AI is traded away. This
+passes TRAIN feasibility only, not external recall or the target benchmark.
+
+Now separately freeze the first E66 comparison: all 320 admitted observations in publisher
+original and 1080px/JPEG75 views, unchanged E43 cuts, original+fixed GaussianBlur0.8 crops
+with the frozen E70 interaction map. All 640 scores are locked before metrics. Same 20
+numeric gates, zero newly missed E43-caught AI per source/condition, non-increased pooled
+REAL FPR both conditions. Report all ten dependent SIDD scenes descriptively; no independent
+view confidence intervals or final claim. No threshold/map/weight adaptation after scores.
+Only a passing DEV screen permits separately registered consumed E49 regression.
+E59 remains parked; the old feature/training plan is not needed for this accepted TRAIN
+candidate. No serving change and no DEV score yet at this registration entry.
+
+
+E70 DEV runner verification: four new tests pass (TRAIN/DEV blur identity, complete
+paired/source/role coverage, no offsetting AI loss, failed-TRAIN access denial). Full
+Python suite: 739 passed in 11.88 seconds with the existing warning. Whitespace checks
+pass. Checkpoint 1f3bc59 is pushed and remote identity verified. Freeze the separate
+DEV contract now; no E66 model score exists yet.

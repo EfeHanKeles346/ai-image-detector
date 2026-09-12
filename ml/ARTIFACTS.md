@@ -196,3 +196,8 @@ Proceed to bind and run the already fixed 129-coefficient E69 recipe.
 E69 rejected TRAIN candidate SHA 7f41b84ec80ee8c54839565804227c17644aca1bf9dd5e004a5deb518e63670d (`e69/correction.npz`, external).
 Its original/texture PCA bases and 129 coefficients are frozen with the fit contract.
 No E69 DEV or E49 scores exist; the candidate must not be promoted or re-evaluated.
+
+
+E70 TRAIN-passing research candidate: external `e70/correction.npz`, SHA 2a82d30c86b975a0293d2ab0af99345240d99905fffbd9c403530d0a18db0fd2.
+Original/blur bases, fixed bilinear hash/sign arrays, TRAIN sketch normalization and 257
+coefficients are bound to the fit contract. TRAIN pass only; no deployment eligibility.

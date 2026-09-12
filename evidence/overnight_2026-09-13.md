@@ -1,7 +1,7 @@
 # 13 September overnight research checkpoint
 
 The target is still unmet. E43 and serving are unchanged. No new candidate has received
-E66 DEV or E49 regression scores during this overnight session. E69 also completed and failed its TRAIN ceiling; its recipe was fixed before fitting.
+E66 DEV or E49 regression scores during this overnight session. E70 passed TRAIN feasibility; its first E66 DEV comparison is being registered.
 
 ## Comparable TRAIN results
 
@@ -17,8 +17,9 @@ retain every previously caught AI and introduce no REAL error before DEV access.
 | E67 original + blur response | 10.25% | 11.33% | 9.48% | 0 | Failed two ceilings |
 | E68 source/condition minimax | 10.82% | 11.61% | 10.22% | 0 | Failed all three ceilings |
 | E69 fixed patch shuffle | 10.52% | 11.77% | 10.14% | 0 | Failed all three ceilings |
+| E70 bilinear original/blur map | 8.07% | 8.74% | 7.29% | 0 | TRAIN passed; DEV pending |
 
-The four correction candidates introduced zero errors on previously correct TRAIN REAL
+The five correction candidates introduced zero errors on previously correct TRAIN REAL
 observations. Fixed-cut AI preservation on TRAIN does not establish external AI preservation.
 TRAIN q75 applies JPEG75 at source resolution before a 2048-pixel cap; it is different from
 the intended DEV/E49 1080-pixel/JPEG75 transport.
@@ -49,7 +50,7 @@ CLIP ensemble and cannot inherit that paper's performance.
 
 ## Verification and synchronization
 
-730 Python tests pass, including new transform identity, objective gradient, hard-decision
+735 Python tests pass, including new transform identity, objective gradient, hard-decision
 retention, serialization and failed-TRAIN-to-DEV access checks. These are engineering results,
 not detector-quality improvements. The existing Starlette/httpx warning remains.
 
