@@ -445,3 +445,12 @@ and emphasize regularization for generalization. E68 uses this motivation for a 
 frozen-feature, class-balanced source/condition minimax objective. It does not import
 their neural training code or claim their results; group membership is TRAIN metadata.
 All acceptance thresholds and finite AI replay guards remain unchanged.
+
+
+### SFLD implementation scope checked for E69 (2026-09-13)
+
+[Authors’ paper, method section](https://arxiv.org/html/2502.17105v1) uses CLIP ViT-L/14,
+28/56/224-pixel patch scales, independently trained heads and ten shuffled test views
+per scale. E69 chooses one fixed 28-pixel permutation with our existing DINOv2S encoder
+and constrained correction head. The hypothesis is complementary texture information;
+this different backbone and reduced-view protocol cannot inherit published performance.

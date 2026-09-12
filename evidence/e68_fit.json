@@ -1,0 +1,1594 @@
+{
+  "candidate_sha256": "f1dd50fdee88cb00de543308a8fef08d72e1e9e06121b580d7f93170f5278d6b",
+  "contract_sha256": "fa4d2e69e41a67c40399695b6315c53f90302f2fa7c3cfc7fca14dfd34b30a02",
+  "dev_features_or_scores_read": 0,
+  "dev_scoring_permitted": false,
+  "e49_rows_read": 0,
+  "independent_final_passed": false,
+  "promotion_allowed": false,
+  "reference_sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390",
+  "seconds": 43.75206541700754,
+  "solver": {
+    "class_bounds": [
+      0.9819078457681206,
+      0.1720513124942822
+    ],
+    "epigraph_violation": 1.4119649893729047e-10,
+    "groups": [
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.25561218373680017,
+        "initial_mean_cut_bce": 0.3415698138463015,
+        "label": 0,
+        "source": "SCIMD-17"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.23640407067087427,
+        "initial_mean_cut_bce": 0.34709522093940215,
+        "label": 0,
+        "source": "SCIMD-17"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.23551143652532236,
+        "initial_mean_cut_bce": 0.3457295191477958,
+        "label": 0,
+        "source": "SCIMD-17"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.17723715101440116,
+        "initial_mean_cut_bce": 0.21368870823401903,
+        "label": 0,
+        "source": "e32:csafe-mcsidb-iphone14"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.12125510010127818,
+        "initial_mean_cut_bce": 0.18505152638802438,
+        "label": 0,
+        "source": "e32:csafe-mcsidb-iphone14"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.11794593838332959,
+        "initial_mean_cut_bce": 0.1565571314968982,
+        "label": 0,
+        "source": "e32:csafe-mcsidb-iphone14"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.08407466675747971,
+        "initial_mean_cut_bce": 0.09631988510038486,
+        "label": 0,
+        "source": "e32:csafe-mcsidb-s21"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.08662725874741317,
+        "initial_mean_cut_bce": 0.09958991455468097,
+        "label": 0,
+        "source": "e32:csafe-mcsidb-s21"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.07359596724761674,
+        "initial_mean_cut_bce": 0.07898715907624748,
+        "label": 0,
+        "source": "e32:csafe-mcsidb-s21"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.10250428696942326,
+        "initial_mean_cut_bce": 0.13440732944627437,
+        "label": 0,
+        "source": "e32:forchheim-fodb"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.1035968793541661,
+        "initial_mean_cut_bce": 0.13744575292869776,
+        "label": 0,
+        "source": "e32:forchheim-fodb"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.09765456130449574,
+        "initial_mean_cut_bce": 0.11630772809560763,
+        "label": 0,
+        "source": "e32:forchheim-fodb"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.11785726725046712,
+        "initial_mean_cut_bce": 0.1496159746120578,
+        "label": 0,
+        "source": "e32:vision-base-native"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.08658615555502602,
+        "initial_mean_cut_bce": 0.11577421837588983,
+        "label": 0,
+        "source": "e32:vision-base-native"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.07858201422157314,
+        "initial_mean_cut_bce": 0.09314160272432939,
+        "label": 0,
+        "source": "e32:vision-base-native"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.05570016253680936,
+        "initial_mean_cut_bce": 0.0724974874250097,
+        "label": 0,
+        "source": "e36:device_001"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.058823009734024906,
+        "initial_mean_cut_bce": 0.0713140333795841,
+        "label": 0,
+        "source": "e36:device_001"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.04585732899606814,
+        "initial_mean_cut_bce": 0.04930854528433033,
+        "label": 0,
+        "source": "e36:device_001"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.03699987341624458,
+        "initial_mean_cut_bce": 0.05154184623662729,
+        "label": 0,
+        "source": "e36:device_002"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.028951644745610985,
+        "initial_mean_cut_bce": 0.03530079506346092,
+        "label": 0,
+        "source": "e36:device_002"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.021782672826298796,
+        "initial_mean_cut_bce": 0.025995667297649946,
+        "label": 0,
+        "source": "e36:device_002"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.08433342181882827,
+        "initial_mean_cut_bce": 0.1146403520292115,
+        "label": 0,
+        "source": "e36:device_003"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.06676594233274565,
+        "initial_mean_cut_bce": 0.0985624819287685,
+        "label": 0,
+        "source": "e36:device_003"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.05632518289201809,
+        "initial_mean_cut_bce": 0.07832632507412715,
+        "label": 0,
+        "source": "e36:device_003"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.051530726483198425,
+        "initial_mean_cut_bce": 0.0801366247176627,
+        "label": 0,
+        "source": "e36:device_005"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.03881778727281221,
+        "initial_mean_cut_bce": 0.057507484495625906,
+        "label": 0,
+        "source": "e36:device_005"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.026164323117763642,
+        "initial_mean_cut_bce": 0.03371252520648657,
+        "label": 0,
+        "source": "e36:device_005"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.07250906694643013,
+        "initial_mean_cut_bce": 0.18700625097491946,
+        "label": 0,
+        "source": "e36:device_009"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.091348092688024,
+        "initial_mean_cut_bce": 0.14901670387293756,
+        "label": 0,
+        "source": "e36:device_009"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.07400373240773485,
+        "initial_mean_cut_bce": 0.10821321105715201,
+        "label": 0,
+        "source": "e36:device_009"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.9819078459093171,
+        "initial_mean_cut_bce": 1.40448711765855,
+        "label": 0,
+        "source": "rr:rrdataset_real_pool"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.9819078459060033,
+        "initial_mean_cut_bce": 1.351063086989042,
+        "label": 0,
+        "source": "rr:rrdataset_real_pool"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.9201795372846773,
+        "initial_mean_cut_bce": 1.2262265380689836,
+        "label": 0,
+        "source": "rr:rrdataset_real_pool"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.054803106709962926,
+        "initial_mean_cut_bce": 0.039389529435243084,
+        "label": 1,
+        "source": "e32:communityforensics-ai-local"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.045319111607350054,
+        "initial_mean_cut_bce": 0.032393925837085086,
+        "label": 1,
+        "source": "e32:communityforensics-ai-local"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.06710560215862824,
+        "initial_mean_cut_bce": 0.054915443623936036,
+        "label": 1,
+        "source": "e32:communityforensics-ai-local"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.1250374676661103,
+        "initial_mean_cut_bce": 0.10826764050264345,
+        "label": 1,
+        "source": "e32:flux2-klein-9b"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.11853562694091305,
+        "initial_mean_cut_bce": 0.11146192374390058,
+        "label": 1,
+        "source": "e32:flux2-klein-9b"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.1720513125419943,
+        "initial_mean_cut_bce": 0.1671218175032842,
+        "label": 1,
+        "source": "e32:flux2-klein-9b"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.1585388373041257,
+        "initial_mean_cut_bce": 0.17710112115874527,
+        "label": 1,
+        "source": "e32:gpt-image-1"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.14973607758393093,
+        "initial_mean_cut_bce": 0.18786151907567503,
+        "label": 1,
+        "source": "e32:gpt-image-1"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.17205131256292103,
+        "initial_mean_cut_bce": 0.22305526631243355,
+        "label": 1,
+        "source": "e32:gpt-image-1"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.030141572981251256,
+        "initial_mean_cut_bce": 0.023236346709739824,
+        "label": 1,
+        "source": "e32:nano-banana-local"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.010477022824618726,
+        "initial_mean_cut_bce": 0.007125579725433251,
+        "label": 1,
+        "source": "e32:nano-banana-local"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.032530500619902106,
+        "initial_mean_cut_bce": 0.028424584466379625,
+        "label": 1,
+        "source": "e32:nano-banana-local"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.04655580648987631,
+        "initial_mean_cut_bce": 0.02874501260421616,
+        "label": 1,
+        "source": "e32:nano-banana-pro-ash-local"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.02005507924327266,
+        "initial_mean_cut_bce": 0.012665399872184104,
+        "label": 1,
+        "source": "e32:nano-banana-pro-ash-local"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.04575619076108886,
+        "initial_mean_cut_bce": 0.03111475713302675,
+        "label": 1,
+        "source": "e32:nano-banana-pro-ash-local"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.021296574730551028,
+        "initial_mean_cut_bce": 0.014210239461373996,
+        "label": 1,
+        "source": "e32:qwen-image-2512"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.010312502274167613,
+        "initial_mean_cut_bce": 0.010179584058660839,
+        "label": 1,
+        "source": "e32:qwen-image-2512"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.022378679773107785,
+        "initial_mean_cut_bce": 0.018319388585531244,
+        "label": 1,
+        "source": "e32:qwen-image-2512"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.019865502884406604,
+        "initial_mean_cut_bce": 0.007067080755845901,
+        "label": 1,
+        "source": "e36:FLUX.2_max"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.007167903444661089,
+        "initial_mean_cut_bce": 0.0038956449860028997,
+        "label": 1,
+        "source": "e36:FLUX.2_max"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.012257230484588455,
+        "initial_mean_cut_bce": 0.005522800688005409,
+        "label": 1,
+        "source": "e36:FLUX.2_max"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.005757363046670419,
+        "initial_mean_cut_bce": 0.0030609356427544867,
+        "label": 1,
+        "source": "e36:GLM-Image"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.002279309652503586,
+        "initial_mean_cut_bce": 0.0013749749967725822,
+        "label": 1,
+        "source": "e36:GLM-Image"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.003939897631897241,
+        "initial_mean_cut_bce": 0.002387166589444329,
+        "label": 1,
+        "source": "e36:GLM-Image"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.007687275048546152,
+        "initial_mean_cut_bce": 0.003829380666362659,
+        "label": 1,
+        "source": "e36:Qwen-Image-2.0-pro"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.005293611639999046,
+        "initial_mean_cut_bce": 0.0024978547884915935,
+        "label": 1,
+        "source": "e36:Qwen-Image-2.0-pro"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.011077464772771448,
+        "initial_mean_cut_bce": 0.007628285923696895,
+        "label": 1,
+        "source": "e36:Qwen-Image-2.0-pro"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0026731655618612354,
+        "initial_mean_cut_bce": 0.001592382394429548,
+        "label": 1,
+        "source": "e36:Seedream-5.0"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0016934969790914135,
+        "initial_mean_cut_bce": 0.0012992256879144626,
+        "label": 1,
+        "source": "e36:Seedream-5.0"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.0035344950552945844,
+        "initial_mean_cut_bce": 0.002145723102972674,
+        "label": 1,
+        "source": "e36:Seedream-5.0"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.015249087893450915,
+        "initial_mean_cut_bce": 0.005036222630796678,
+        "label": 1,
+        "source": "e36:gpt-image-2"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.007675724616636551,
+        "initial_mean_cut_bce": 0.0028401203135063223,
+        "label": 1,
+        "source": "e36:gpt-image-2"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.025059002692125895,
+        "initial_mean_cut_bce": 0.01227302322575106,
+        "label": 1,
+        "source": "e36:gpt-image-2"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.004532741703141697,
+        "initial_mean_cut_bce": 0.0023652584216917625,
+        "label": 1,
+        "source": "e36:nano-banana-2.0"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0025478600901085785,
+        "initial_mean_cut_bce": 0.0019652044837489445,
+        "label": 1,
+        "source": "e36:nano-banana-2.0"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.005366708931118786,
+        "initial_mean_cut_bce": 0.0038032431035029293,
+        "label": 1,
+        "source": "e36:nano-banana-2.0"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.005337788189088363,
+        "initial_mean_cut_bce": 0.0009005379069515611,
+        "label": 1,
+        "source": "rr:culture_and_religion"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0021139106274506957,
+        "initial_mean_cut_bce": 0.00036836727863778443,
+        "label": 1,
+        "source": "rr:culture_and_religion"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.003345585196697711,
+        "initial_mean_cut_bce": 0.0008273852683410034,
+        "label": 1,
+        "source": "rr:culture_and_religion"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0864659278918371,
+        "initial_mean_cut_bce": 0.05748280945235976,
+        "label": 1,
+        "source": "rr:everyday_life"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.052794796949361567,
+        "initial_mean_cut_bce": 0.031054316305624285,
+        "label": 1,
+        "source": "rr:everyday_life"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.0864476654634976,
+        "initial_mean_cut_bce": 0.06049462075776897,
+        "label": 1,
+        "source": "rr:everyday_life"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0017926454913985313,
+        "initial_mean_cut_bce": 0.00016558266861835402,
+        "label": 1,
+        "source": "rr:labor_and_production"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.00033715897464907114,
+        "initial_mean_cut_bce": 6.955377734518039e-05,
+        "label": 1,
+        "source": "rr:labor_and_production"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.00031442394526878846,
+        "initial_mean_cut_bce": 9.13611570078992e-05,
+        "label": 1,
+        "source": "rr:labor_and_production"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.00043226090492492933,
+        "initial_mean_cut_bce": 0.00011216075318245053,
+        "label": 1,
+        "source": "rr:medical_and_public_health"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0005640495833508937,
+        "initial_mean_cut_bce": 0.00014670156839944153,
+        "label": 1,
+        "source": "rr:medical_and_public_health"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.0004953737587136424,
+        "initial_mean_cut_bce": 0.000202805505228815,
+        "label": 1,
+        "source": "rr:medical_and_public_health"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.004713624029081243,
+        "initial_mean_cut_bce": 0.001067831215062585,
+        "label": 1,
+        "source": "rr:natural_disasters_and_accidents"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0024041767029825316,
+        "initial_mean_cut_bce": 0.0005754803137935093,
+        "label": 1,
+        "source": "rr:natural_disasters_and_accidents"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.006459389679870701,
+        "initial_mean_cut_bce": 0.0018937762699499222,
+        "label": 1,
+        "source": "rr:natural_disasters_and_accidents"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.012866411636795885,
+        "initial_mean_cut_bce": 0.003950088093329017,
+        "label": 1,
+        "source": "rr:political_and_social_events"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0042451036623996075,
+        "initial_mean_cut_bce": 0.0007964297943988973,
+        "label": 1,
+        "source": "rr:political_and_social_events"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.00983573352768117,
+        "initial_mean_cut_bce": 0.0037284421875578098,
+        "label": 1,
+        "source": "rr:political_and_social_events"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0054156549725861555,
+        "initial_mean_cut_bce": 0.0008250591237330818,
+        "label": 1,
+        "source": "rr:war_and_conflict"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.008035255016118903,
+        "initial_mean_cut_bce": 0.0005544412386583211,
+        "label": 1,
+        "source": "rr:war_and_conflict"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.011184786622020942,
+        "initial_mean_cut_bce": 0.0033356254289757113,
+        "label": 1,
+        "source": "rr:war_and_conflict"
+      }
+    ],
+    "iterations": 40,
+    "linear_constraint_violation": 4.884981308350689e-15,
+    "max_constraint_violation": 1.4119649893729047e-10,
+    "message": "Optimization terminated successfully",
+    "objective": 0.5833290597661582,
+    "success": true,
+    "trace": [
+      0.6925654638857538,
+      0.6276700327899878,
+      0.6044758792898879,
+      0.5982783596682605,
+      0.5922283166566779,
+      0.5896014024818405,
+      0.5875339896924623,
+      0.5852447318235064,
+      0.5848089688753065,
+      0.5841717765036389,
+      0.5838489835956018,
+      0.5836755548910414,
+      0.5835678802170413,
+      0.5834861253752243,
+      0.5834216303768988,
+      0.5834135198119695,
+      0.5833925241871287,
+      0.5833760282057053,
+      0.5833676811246811,
+      0.5833545018642962,
+      0.5833541592228962,
+      0.5833436930036162,
+      0.5833398265430961,
+      0.5833365951908108,
+      0.5833274935749045,
+      0.5833296067020561,
+      0.5833294891867706,
+      0.5833292835394961,
+      0.58332918819799,
+      0.5833291700276768,
+      0.5833291520778692,
+      0.5833290987478925,
+      0.5833290583074441,
+      0.5833290740145594,
+      0.5833290620742807,
+      0.5833290608438475,
+      0.5833290622043765,
+      0.5833290609207945,
+      0.5833290597340954,
+      0.5833290597661582
+    ]
+  },
+  "state": "E68_TRAIN_guard_failed",
+  "train_gate": {
+    "ai_parents": 4595,
+    "comparisons": {
+      "assigned_transport": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4504,
+          "new_ai_rate": 0.9801958650707291,
+          "non_ai_to_ai": 13,
+          "old_ai_count": 4491,
+          "old_ai_rate": 0.977366702937976,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 75,
+            "new_ai_count": 168,
+            "new_ai_rate": 0.0988235294117647,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 243,
+            "old_ai_rate": 0.14294117647058824,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 5,
+            "new_ai_count": 11,
+            "new_ai_rate": 0.06875,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 16,
+            "old_ai_rate": 0.1,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 15,
+            "new_ai_count": 32,
+            "new_ai_rate": 0.027586206896551724,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 47,
+            "old_ai_rate": 0.04051724137931034,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 23,
+            "new_ai_count": 39,
+            "new_ai_rate": 0.033795493934142114,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 62,
+            "old_ai_rate": 0.053726169844020795,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 23,
+            "new_ai_count": 56,
+            "new_ai_rate": 0.04912280701754386,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 79,
+            "old_ai_rate": 0.06929824561403508,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 2,
+            "new_ai_count": 2,
+            "new_ai_rate": 0.02,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 4,
+            "old_ai_rate": 0.04,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 2,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 5,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 5,
+            "old_ai_rate": 0.07042253521126761,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 167,
+            "new_ai_count": 508,
+            "new_ai_rate": 0.4064,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 675,
+            "old_ai_rate": 0.54,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 560,
+            "new_ai_rate": 0.984182776801406,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 560,
+            "old_ai_rate": 0.984182776801406,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 538,
+            "new_ai_rate": 0.945518453427065,
+            "non_ai_to_ai": 2,
+            "old_ai_count": 536,
+            "old_ai_rate": 0.9420035149384886,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 532,
+            "new_ai_rate": 0.9349736379613357,
+            "non_ai_to_ai": 8,
+            "old_ai_count": 524,
+            "old_ai_rate": 0.9209138840070299,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 565,
+            "new_ai_rate": 0.9929701230228472,
+            "non_ai_to_ai": 3,
+            "old_ai_count": 562,
+            "old_ai_rate": 0.9876977152899824,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 159,
+            "new_ai_rate": 0.99375,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 567,
+            "new_ai_rate": 0.9964850615114236,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 567,
+            "old_ai_rate": 0.9964850615114236,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 452,
+            "new_ai_rate": 0.9847494553376906,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 452,
+            "old_ai_rate": 0.9847494553376906,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 318,
+          "new_ai_count": 817,
+          "new_ai_rate": 0.11613361762615494,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 1135,
+          "old_ai_rate": 0.1613361762615494,
+          "parents": 7035
+        }
+      },
+      "clean": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4522,
+          "new_ai_rate": 0.9841131664853101,
+          "non_ai_to_ai": 14,
+          "old_ai_count": 4508,
+          "old_ai_rate": 0.9810663764961916,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 79,
+            "new_ai_count": 149,
+            "new_ai_rate": 0.08764705882352941,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 228,
+            "old_ai_rate": 0.13411764705882354,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 4,
+            "new_ai_count": 9,
+            "new_ai_rate": 0.05625,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 13,
+            "old_ai_rate": 0.08125,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 9,
+            "new_ai_count": 38,
+            "new_ai_rate": 0.032758620689655175,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 47,
+            "old_ai_rate": 0.04051724137931034,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 27,
+            "new_ai_count": 39,
+            "new_ai_rate": 0.033795493934142114,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 66,
+            "old_ai_rate": 0.05719237435008666,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 24,
+            "new_ai_count": 33,
+            "new_ai_rate": 0.02894736842105263,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 57,
+            "old_ai_rate": 0.05,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 2,
+            "new_ai_rate": 0.02,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 3,
+            "old_ai_rate": 0.03,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.014084507042253521,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.028169014084507043,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 152,
+            "new_ai_count": 489,
+            "new_ai_rate": 0.3912,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 641,
+            "old_ai_rate": 0.5128,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 561,
+            "new_ai_rate": 0.9859402460456942,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 561,
+            "old_ai_rate": 0.9859402460456942,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 545,
+            "new_ai_rate": 0.9578207381370826,
+            "non_ai_to_ai": 4,
+            "old_ai_count": 541,
+            "old_ai_rate": 0.9507908611599297,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 536,
+            "new_ai_rate": 0.9420035149384886,
+            "non_ai_to_ai": 8,
+            "old_ai_count": 528,
+            "old_ai_rate": 0.9279437609841827,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 568,
+            "new_ai_rate": 0.9982425307557118,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 568,
+            "old_ai_rate": 0.9982425307557118,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 159,
+            "new_ai_rate": 0.99375,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 567,
+            "new_ai_rate": 0.9964850615114236,
+            "non_ai_to_ai": 1,
+            "old_ai_count": 566,
+            "old_ai_rate": 0.9947275922671354,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 455,
+            "new_ai_rate": 0.9912854030501089,
+            "non_ai_to_ai": 1,
+            "old_ai_count": 454,
+            "old_ai_rate": 0.9891067538126361,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 299,
+          "new_ai_count": 761,
+          "new_ai_rate": 0.10817341862117981,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 1060,
+          "old_ai_rate": 0.15067519545131486,
+          "parents": 7035
+        }
+      },
+      "q75": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4492,
+          "new_ai_rate": 0.9775843307943417,
+          "non_ai_to_ai": 17,
+          "old_ai_count": 4475,
+          "old_ai_rate": 0.9738846572361263,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 78,
+            "new_ai_count": 148,
+            "new_ai_rate": 0.08705882352941176,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 226,
+            "old_ai_rate": 0.13294117647058823,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 4,
+            "new_ai_count": 7,
+            "new_ai_rate": 0.04375,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 11,
+            "old_ai_rate": 0.06875,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 8,
+            "new_ai_count": 29,
+            "new_ai_rate": 0.025,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 37,
+            "old_ai_rate": 0.03189655172413793,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 15,
+            "new_ai_count": 43,
+            "new_ai_rate": 0.03726169844020797,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 58,
+            "old_ai_rate": 0.05025996533795494,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 17,
+            "new_ai_count": 31,
+            "new_ai_rate": 0.027192982456140352,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 48,
+            "old_ai_rate": 0.042105263157894736,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.01,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.014084507042253521,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.014084507042253521,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 129,
+            "new_ai_count": 458,
+            "new_ai_rate": 0.3664,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 587,
+            "old_ai_rate": 0.4696,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 558,
+            "new_ai_rate": 0.9806678383128296,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 558,
+            "old_ai_rate": 0.9806678383128296,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 534,
+            "new_ai_rate": 0.9384885764499121,
+            "non_ai_to_ai": 3,
+            "old_ai_count": 531,
+            "old_ai_rate": 0.9332161687170475,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 533,
+            "new_ai_rate": 0.9367311072056239,
+            "non_ai_to_ai": 11,
+            "old_ai_count": 522,
+            "old_ai_rate": 0.9173989455184535,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 564,
+            "new_ai_rate": 0.9912126537785588,
+            "non_ai_to_ai": 1,
+            "old_ai_count": 563,
+            "old_ai_rate": 0.9894551845342706,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 159,
+            "new_ai_rate": 0.99375,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 565,
+            "new_ai_rate": 0.9929701230228472,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 565,
+            "old_ai_rate": 0.9929701230228472,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 448,
+            "new_ai_rate": 0.9760348583877996,
+            "non_ai_to_ai": 2,
+            "old_ai_count": 446,
+            "old_ai_rate": 0.971677559912854,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 252,
+          "new_ai_count": 719,
+          "new_ai_rate": 0.10220326936744847,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 971,
+          "old_ai_rate": 0.13802416488983654,
+          "parents": 7035
+        }
+      }
+    },
+    "independent_quality_claim": false,
+    "misses_by_condition": {
+      "assigned_transport": 0,
+      "clean": 0,
+      "q75": 0
+    },
+    "new_ai_miss_parents": 0,
+    "new_ai_miss_views": 0,
+    "parents": 11630,
+    "passes_train_retention": true,
+    "promotion_allowed": false,
+    "scope": "Necessary TRAIN replay condition only; no unseen-data guarantee. New AI rescues cannot cancel previously caught AI losses.",
+    "state": "pass_train_retention",
+    "views": 34890
+  }
+}

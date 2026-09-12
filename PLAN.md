@@ -42,16 +42,15 @@ candidates, not automatically admitted TRAIN or a balanced independent final. E5
 Power initially13%; user explicitly requested starting while connecting power. AC/charging
 subsequently confirmed (31% on the latest check); bounded E65 acquisition/audit completed.
 
-## Current checkpoint — E67 TRAIN-stopped; diagnose before next recipe (2026-09-13)
+## Current checkpoint — E67/E68 TRAIN-stopped; representation diagnosis (2026-09-13)
 
-E67 converged with zero newly missed TRAIN AI and no new REAL errors, but REAL FPR
-10.25% clean / 11.33% assigned transport / 9.48% TRAIN q75 fails its unchanged ceiling.
-No E67 DEV or E49 scoring. E66 remains frozen and unscored. Most remaining TRAIN REAL
-errors are in the RR pool (67-71% of errors, 1,250 of 7,035 REAL parents). Diagnose the
-source-weighted objective/constraint structure and choose a distinct justified hypothesis;
-no rank/L2/threshold sweep or RR exclusion. Preserve E43 and all failed artifacts.
-719 software tests passed. E68 minimax objective is implemented and its fit contract
-is being frozen for one TRAIN run; E67 remains rejected. Latest pushed checkpoint 9ef5deb.
+E67 blur response failed two TRAIN ceilings; E68 group minimax failed all three despite
+improved worst-group loss. Both preserve all caught TRAIN AI and correct REAL decisions.
+No E66 DEV or E49 scoring for either. E66 remains frozen and unscored. Next assess a
+content/texture representation that adds information, without rank/L2/group-weight or
+threshold sweeps. Preserve all failed artifacts and E43. Latest pushed checkpoint cf36565;
+722 software tests passed. E69 fixed patch-shuffle extraction is registered and starting;
+its candidate recipe is fixed below before features or scores. Target still unmet; no serving change.
 
 ## Current checkpoint — E65 diagnostic complete (2026-09-13)
 
@@ -4913,3 +4912,35 @@ conditions. Only then separately freeze one E66 DEV comparison at unchanged E43 
 all 20 numeric gates plus per-image/source AI retention and non-increased REAL FPR.
 Only a DEV pass permits separately registered consumed E49 regression. No independent
 final or deployment claim. E67 remains failed and immutable.
+
+
+## E69 fixed patch-shuffle representation (registered before extraction, 2026-09-13)
+
+E67/E68 show the original-plus-blur representation still fails the fixed TRAIN error
+ceiling, even after a different source-risk objective. This motivates testing texture
+information under disrupted global layout, not further tuning the failed objectives.
+The existing SFLD reference explicitly uses 28/56/224-pixel patch scales with CLIP and
+ten shuffled test views per scale (https://arxiv.org/html/2502.17105v1). E69 is a bounded
+DINOv2S adaptation, not a reproduction or an assumed improvement: one fixed 28-pixel
+patch permutation (NumPy default_rng seed69) applied to each cached 224-pixel crop.
+28 is also aligned to DINO's 14-pixel token grid. Preserve all RGB pixels and all three
+fixed crops/conditions; apply the identical permutation to both labels and every crop.
+No random test-time views, input-name/metadata dependence, crop reselection or rescaling.
+Synthetic patch boundaries are a limitation, despite being identical across labels.
+
+Extract on the complete admitted E54 TRAIN population only: 11,630 parents, three
+conditions, 3,072-D frozen DINO features. Same restartable 128-parent chunks, eight-parent
+batches, two CPU threads, four-hour cap, AC/battery and disk checks. Recheck a hash-selected
+parent from each of 30 sources for exact original-crop replay (score tolerance5e-5 and
+zero binary/selective changes). No DEV/test reads or classifier fitting at extraction.
+
+Fix the subsequent candidate recipe now: original E67 PCA64 plus TRAIN-standardized
+shuffled-feature PCA64 (seed69, randomized power3), both whitened, one intercept, 129
+coefficients. Replace the blur-response branch with shuffled features; retain E67's
+class/source/parent-balanced BCE, hard REAL2x, L2.01, SLSQP200/ftol1e-9 and original
+per-image E64 constraints. Start all correction weights at zero, preserve the E43 head
+and thresholds, require exact serialization. Same <=10% REAL FPR in ALL three TRAIN
+conditions, zero new caught-AI misses/REAL errors and successful feasible solver.
+No patch-size/permutation/rank/L2/threshold sweep. E66 stays unscored until a passing
+TRAIN candidate receives a separately frozen 20-gate DEV comparison. No promotion or
+independent final claim; all E67/E68 failures remain immutable.

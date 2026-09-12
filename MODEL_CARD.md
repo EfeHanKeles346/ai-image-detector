@@ -284,3 +284,22 @@ to remove RR, relabel errors, tune a source-specific threshold or infer external
 Original PCA64 explains 59.63% and response PCA64 40.31% of their respective TRAIN variance.
 Next: examine source-weighted objective/constraint diagnostics before choosing a distinct
 new hypothesis. No PCA-rank/L2/threshold sweep; preserve all failed E67 artifacts.
+
+
+## E68 completed: minimax loss improved; TRAIN acceptance failed (2026-09-13)
+
+One fit converged in 40 iterations / 43.75 seconds. Maximum total constraint violation
+1.41e-10; zero newly missed TRAIN AI views and zero new REAL errors, exact saved replay.
+Remaining REAL errors: clean 761 / 7,035 (10.82%), assigned transport 817 / 7,035 (11.61%),
+q75 719 / 7,035 (10.22%). All three exceed the unchanged 10% ceiling; E68 is TRAIN-stopped
+and must not score E66 or E49. E66 remains unscored. No accepted model or serving change.
+
+Worst REAL group BCE fell from 1.4045 at E43 and 1.0598 at E67 to 0.9819; worst AI BCE
+fell to 0.1721. RR error counts improved versus E67 (489/508/458 versus 510/537/468),
+but other-source rescues decreased, especially SCIMD (149/168/148 errors versus 120/137/120).
+The minimax surrogate therefore improved while pooled threshold error worsened. This
+rejects this objective recipe; it does not establish that no objective or nonlinear
+representation could work. Do not retune group weights, regularization or thresholds.
+Next examine a different content/texture representation, keeping the unscored DEV and
+all failed recipes intact. E68 preregistration checkpoint cf36565 is pushed; local and
+remote main identity verified. All 719 Python tests passed before the fit.

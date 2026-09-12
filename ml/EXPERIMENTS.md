@@ -5354,3 +5354,65 @@ final or deployment claim. E67 remains failed and immutable.
 E68 pre-fit verification: all 719 Python tests passed in 12.22 seconds, with the
 existing Starlette/httpx warning. No DEV/test scores read. Starting the one frozen
 source/condition minimax fit; unchanged TRAIN guard determines subsequent access.
+
+
+## E68 completed: minimax loss improved; TRAIN acceptance failed (2026-09-13)
+
+One fit converged in 40 iterations / 43.75 seconds. Maximum total constraint violation
+1.41e-10; zero newly missed TRAIN AI views and zero new REAL errors, exact saved replay.
+Remaining REAL errors: clean 761 / 7,035 (10.82%), assigned transport 817 / 7,035 (11.61%),
+q75 719 / 7,035 (10.22%). All three exceed the unchanged 10% ceiling; E68 is TRAIN-stopped
+and must not score E66 or E49. E66 remains unscored. No accepted model or serving change.
+
+Worst REAL group BCE fell from 1.4045 at E43 and 1.0598 at E67 to 0.9819; worst AI BCE
+fell to 0.1721. RR error counts improved versus E67 (489/508/458 versus 510/537/468),
+but other-source rescues decreased, especially SCIMD (149/168/148 errors versus 120/137/120).
+The minimax surrogate therefore improved while pooled threshold error worsened. This
+rejects this objective recipe; it does not establish that no objective or nonlinear
+representation could work. Do not retune group weights, regularization or thresholds.
+Next examine a different content/texture representation, keeping the unscored DEV and
+all failed recipes intact. E68 preregistration checkpoint cf36565 is pushed; local and
+remote main identity verified. All 719 Python tests passed before the fit.
+
+
+## E69 fixed patch-shuffle representation (registered before extraction, 2026-09-13)
+
+E67/E68 show the original-plus-blur representation still fails the fixed TRAIN error
+ceiling, even after a different source-risk objective. This motivates testing texture
+information under disrupted global layout, not further tuning the failed objectives.
+The existing SFLD reference explicitly uses 28/56/224-pixel patch scales with CLIP and
+ten shuffled test views per scale (https://arxiv.org/html/2502.17105v1). E69 is a bounded
+DINOv2S adaptation, not a reproduction or an assumed improvement: one fixed 28-pixel
+patch permutation (NumPy default_rng seed69) applied to each cached 224-pixel crop.
+28 is also aligned to DINO's 14-pixel token grid. Preserve all RGB pixels and all three
+fixed crops/conditions; apply the identical permutation to both labels and every crop.
+No random test-time views, input-name/metadata dependence, crop reselection or rescaling.
+Synthetic patch boundaries are a limitation, despite being identical across labels.
+
+Extract on the complete admitted E54 TRAIN population only: 11,630 parents, three
+conditions, 3,072-D frozen DINO features. Same restartable 128-parent chunks, eight-parent
+batches, two CPU threads, four-hour cap, AC/battery and disk checks. Recheck a hash-selected
+parent from each of 30 sources for exact original-crop replay (score tolerance5e-5 and
+zero binary/selective changes). No DEV/test reads or classifier fitting at extraction.
+
+Fix the subsequent candidate recipe now: original E67 PCA64 plus TRAIN-standardized
+shuffled-feature PCA64 (seed69, randomized power3), both whitened, one intercept, 129
+coefficients. Replace the blur-response branch with shuffled features; retain E67's
+class/source/parent-balanced BCE, hard REAL2x, L2.01, SLSQP200/ftol1e-9 and original
+per-image E64 constraints. Start all correction weights at zero, preserve the E43 head
+and thresholds, require exact serialization. Same <=10% REAL FPR in ALL three TRAIN
+conditions, zero new caught-AI misses/REAL errors and successful feasible solver.
+No patch-size/permutation/rank/L2/threshold sweep. E66 stays unscored until a passing
+TRAIN candidate receives a separately frozen 20-gate DEV comparison. No promotion or
+independent final claim; all E67/E68 failures remain immutable.
+
+
+E69 extraction implementation prepared. Three transform tests pass: whole-patch RGB
+identity, deterministic invertibility with no pixel loss or input mutation, and invalid
+shape/dtype rejection. The 28-pixel permutation is class/condition/crop independent.
+No full extraction, new fit or DEV score has run at this checkpoint.
+
+
+E69 extraction preregistration verified after 722 Python tests passed in 11.87 seconds
+(existing Starlette/httpx warning only). Starting the complete TRAIN-only shuffled-crop
+feature pass; the original-model parity check runs before transformed extraction.

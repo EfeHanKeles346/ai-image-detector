@@ -177,3 +177,8 @@ receipts bind acquisition, scene/overlap audit and the limited DEV population.
 E67 rejected TRAIN candidate: external `e67/correction.npz`, SHA d0491ceb962915f096bdfe6cb0555402b16e78085b2a9f2e141c6d10d98f9a1b.
 Bound to its frozen fit contract and E43 reference. `evidence/e67_fit.json` records the
 failed TRAIN guard; no DEV or E49 scores may be created for this candidate.
+
+
+E68 rejected TRAIN candidate: external `e68/correction.npz`, SHA f1dd50fdee88cb00de543308a8fef08d72e1e9e06121b580d7f93170f5278d6b.
+The bound original/blur bases are unchanged from E67; only correction weights were fit.
+`evidence/e68_fit.json` records failure. No DEV/test scoring or promotion allowed.
