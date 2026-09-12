@@ -42,15 +42,15 @@ candidates, not automatically admitted TRAIN or a balanced independent final. E5
 Power initially13%; user explicitly requested starting while connecting power. AC/charging
 subsequently confirmed (31% on the latest check); bounded E65 acquisition/audit completed.
 
-## Current checkpoint — E70 TRAIN passed; first E66 DEV next (2026-09-13)
+## Current checkpoint — E70 failed separate DEV; complementary representation next (2026-09-13)
 
-E70 bilinear original/response map passes all unchanged TRAIN feasibility guards:
-REAL FPR 8.07% clean / 8.74% assigned transport / 7.29% TRAIN q75, zero new AI misses
-or REAL errors, successful feasible solver and exact saved replay. Freeze the one E66
-640-view DEV comparison before scoring. Require all20 numeric gates, zero new AI misses
-per source/condition and non-increased REAL FPR; only a pass permits separately registered
-consumed E49 regression. No target/final success or serving change. E67/E68/E69 remain
-rejected and E59 parked. 739 Python tests pass; latest pushed protocol checkpoint 1f3bc59.
+E70 passed TRAIN but failed the first E66 DEV screen: original REAL FPR 46.88% versus
+42.50% reference, Q75 30.63% versus42.50%; AI recall fell in both conditions, including
+four newly missed original and three newly missed Q75 AI views. Only12/20 numeric gates.
+No E49 regression or promotion. E66 is now consumed DEVELOPMENT, excluded from TRAIN/final.
+Preserve all failed candidates and scores. Assess a complementary pretrained representation
+and the role/resource conditions of eligible cached work; do not sweep the failed maps.
+739 tests passed. E43/serving unchanged; target remains unmet.
 
 ## Current checkpoint — E65 diagnostic complete (2026-09-13)
 

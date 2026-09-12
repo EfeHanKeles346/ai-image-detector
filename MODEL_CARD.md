@@ -339,3 +339,25 @@ view confidence intervals or final claim. No threshold/map/weight adaptation aft
 Only a passing DEV screen permits separately registered consumed E49 regression.
 E59 remains parked; the old feature/training plan is not needed for this accepted TRAIN
 candidate. No serving change and no DEV score yet at this registration entry.
+
+
+## E70 rejected on first E66 DEV comparison (2026-09-13)
+
+All 640 scores locked in 274.49 seconds before metrics; unchanged candidate and cuts.
+Original REAL FPR worsens from 68/160 (42.50%) to 75/160 (46.88%): eight rescues and
+15 new errors. Social-Q75 REAL FPR improves from 68/160 to 49/160 (30.63%): 19 rescues,
+zero new errors. AI recall declines from 156/160 (97.50%) to 153/160 (95.63%) original,
+and from 154/160 (96.25%) to 152/160 (95.00%) social Q75. Paired AI losses are four
+original and three Q75 views, partially offset by one rescue in each condition; both
+GPT Image 1 and Nano Banana lose previously caught examples. Do not mask losses by net
+counts. Original AUC .96668 -> .95379; Q75 .94430 -> .95031. Both reference and candidate
+pass only 12/20 numeric gates on this limited DEV. E70 fails all additional original
+checks and Q75 AI retention, so no E49 regression is permitted and no promotion occurs.
+
+The TRAIN pass does not generalize to the new SIDD rendering domain or every new AI
+observation. Its ten scene groups and unknown AI prompt relationships remain explicit
+limitations. Preserve E70 candidate, full scores and failed report. E66 is now consumed
+DEVELOPMENT, never TRAIN or a fresh final; its admission snapshot stays immutable. No
+post-score threshold, interaction-map or source-specific route adjustment is allowed.
+Next assess a complementary pretrained representation with the same E43-preserving
+TRAIN/DEV rules, reusing eligible cached work where possible. Target remains unmet.

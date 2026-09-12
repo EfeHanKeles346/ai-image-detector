@@ -201,3 +201,8 @@ No E69 DEV or E49 scores exist; the candidate must not be promoted or re-evaluat
 E70 TRAIN-passing research candidate: external `e70/correction.npz`, SHA 2a82d30c86b975a0293d2ab0af99345240d99905fffbd9c403530d0a18db0fd2.
 Original/blur bases, fixed bilinear hash/sign arrays, TRAIN sketch normalization and 257
 coefficients are bound to the fit contract. TRAIN pass only; no deployment eligibility.
+
+
+E70 is rejected after its first limited DEV evaluation. Full external scores SHA 9cf625b6f2123c5a6bd421f37d6415030cc386ccdc7cd8b809a6dba36b879521;
+compact report `evidence/e70_development.json`. Preserve all artifacts; no E49 or serving
+promotion. E66 has now been scored; its old unscored-admission flag is historical only.

@@ -1,7 +1,6 @@
 # 13 September overnight research checkpoint
 
-The target is still unmet. E43 and serving are unchanged. No new candidate has received
-E66 DEV or E49 regression scores during this overnight session. E70 passed TRAIN feasibility; its first E66 DEV comparison is being registered.
+The target is still unmet. E43 and serving are unchanged. E70 passed TRAIN but failed its first E66 DEV comparison. No E49 regression was opened.
 
 ## Comparable TRAIN results
 
@@ -17,7 +16,7 @@ retain every previously caught AI and introduce no REAL error before DEV access.
 | E67 original + blur response | 10.25% | 11.33% | 9.48% | 0 | Failed two ceilings |
 | E68 source/condition minimax | 10.82% | 11.61% | 10.22% | 0 | Failed all three ceilings |
 | E69 fixed patch shuffle | 10.52% | 11.77% | 10.14% | 0 | Failed all three ceilings |
-| E70 bilinear original/blur map | 8.07% | 8.74% | 7.29% | 0 | TRAIN passed; DEV pending |
+| E70 bilinear original/blur map | 8.07% | 8.74% | 7.29% | 0 | TRAIN passed; DEV failed |
 
 The five correction candidates introduced zero errors on previously correct TRAIN REAL
 observations. Fixed-cut AI preservation on TRAIN does not establish external AI preservation.
@@ -50,7 +49,7 @@ CLIP ensemble and cannot inherit that paper's performance.
 
 ## Verification and synchronization
 
-735 Python tests pass, including new transform identity, objective gradient, hard-decision
+739 Python tests pass, including new transform identity, objective gradient, hard-decision
 retention, serialization and failed-TRAIN-to-DEV access checks. These are engineering results,
 not detector-quality improvements. The existing Starlette/httpx warning remains.
 
@@ -62,3 +61,15 @@ claim an all-green CI run. No 30-minute monitor or heartbeat automation was crea
 Detailed immutable results: [E67 fit](e67_fit.json), [E67 TRAIN diagnosis](e67_training_diagnostic.json),
 [E68 fit](e68_fit.json), [E66 admission](e66_development.json). The living next actions remain in
 [PLAN](../PLAN.md), with append-only history in [EXPERIMENTS](../ml/EXPERIMENTS.md).
+
+
+## First separate DEV result: E70 rejected
+
+| E66 condition | E43 REAL false AI | E70 REAL false AI | E43 AI recall | E70 AI recall | Newly missed AI |
+|---|---:|---:|---:|---:|---:|
+| Publisher original | 42.50% | 46.88% | 97.50% | 95.63% | 4 |
+| Social Q75 | 42.50% | 30.63% | 96.25% | 95.00% | 3 |
+
+Each row has 160 REAL and 160 AI observations. Both models pass12/20 numeric gates;
+E70 fails the separate AI-retention requirement. No E49 regression is allowed. E66 is
+now consumed DEVELOPMENT; its initial unscored admission is a historical record.

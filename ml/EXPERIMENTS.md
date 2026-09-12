@@ -5528,3 +5528,35 @@ paired/source/role coverage, no offsetting AI loss, failed-TRAIN access denial).
 Python suite: 739 passed in 11.88 seconds with the existing warning. Whitespace checks
 pass. Checkpoint 1f3bc59 is pushed and remote identity verified. Freeze the separate
 DEV contract now; no E66 model score exists yet.
+
+
+### First E66 DEV score stream locked (2026-09-13)
+
+E70 completed all 640 paired DEV scores in 274.49 seconds. Full score SHA
+9cf625b6f2123c5a6bd421f37d6415030cc386ccdc7cd8b809a6dba36b879521. Scores are now locked before the first metric report. E66's
+admission manifest is an immutable historical unscored snapshot; the population has
+NOW been exposed to model scoring and must be treated as consumed DEVELOPMENT in
+future plans. Never infer current freshness from its original model_scores_created=0
+field. No fitting, data exclusion, threshold change or E49 access took place in this step.
+
+
+## E70 rejected on first E66 DEV comparison (2026-09-13)
+
+All 640 scores locked in 274.49 seconds before metrics; unchanged candidate and cuts.
+Original REAL FPR worsens from 68/160 (42.50%) to 75/160 (46.88%): eight rescues and
+15 new errors. Social-Q75 REAL FPR improves from 68/160 to 49/160 (30.63%): 19 rescues,
+zero new errors. AI recall declines from 156/160 (97.50%) to 153/160 (95.63%) original,
+and from 154/160 (96.25%) to 152/160 (95.00%) social Q75. Paired AI losses are four
+original and three Q75 views, partially offset by one rescue in each condition; both
+GPT Image 1 and Nano Banana lose previously caught examples. Do not mask losses by net
+counts. Original AUC .96668 -> .95379; Q75 .94430 -> .95031. Both reference and candidate
+pass only 12/20 numeric gates on this limited DEV. E70 fails all additional original
+checks and Q75 AI retention, so no E49 regression is permitted and no promotion occurs.
+
+The TRAIN pass does not generalize to the new SIDD rendering domain or every new AI
+observation. Its ten scene groups and unknown AI prompt relationships remain explicit
+limitations. Preserve E70 candidate, full scores and failed report. E66 is now consumed
+DEVELOPMENT, never TRAIN or a fresh final; its admission snapshot stays immutable. No
+post-score threshold, interaction-map or source-specific route adjustment is allowed.
+Next assess a complementary pretrained representation with the same E43-preserving
+TRAIN/DEV rules, reusing eligible cached work where possible. Target remains unmet.
