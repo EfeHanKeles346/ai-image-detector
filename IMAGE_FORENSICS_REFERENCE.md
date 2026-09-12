@@ -421,3 +421,18 @@ scored labels. Inference: those example metrics cannot be imported as a fixed, s
 serving result under our contract. Any adapted study would need a fixed TRAIN reference bank
 and untouched calibration/evaluation, with no test-label threshold or class-homogeneous test
 context. No repository code was executed, model downloaded, or threshold adopted.
+
+
+### Camera-fingerprint interference (reviewed 2026-09-13)
+
+[Klier and Baier, DFRWS EU 2026](https://dfrws.org/wp-content/uploads/2026/03/Boon-or-Bane-Source-Camera-Identificati_2026_Forensic-Science-International.pdf)
+find smartphone/AI noise-pattern interference under source-camera PCE matching. Their
+512-pixel center-crop experiment removes the reported AI-to-camera false matches, but
+the study is small and generator fingerprint matches depend on generation resolution.
+These are camera-attribution results, not PixelProof binary-detector guarantees. The
+paper does not support a universal noise-based REAL veto or a crop change to frozen E67.
+The authors acknowledge older devices and narrow diversity; noise need not be exclusively
+additive in AI images. Public author-linked Boon_or_Bane data may offer a later source
+audit, pending archive size, dataset licence, exact generator provenance and overlap checks.
+Article CC BY-NC-ND terms do not automatically establish the image dataset licence.
+[Author dataset link](https://www.unibw.de/digfor/team/personenseiten/samantha-klier-m-sc).

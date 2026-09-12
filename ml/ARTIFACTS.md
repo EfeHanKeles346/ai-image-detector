@@ -163,3 +163,17 @@ DINOv2S features of GaussianBlur0.8 applied to fixed E54 crops. SHA
 f48474422616c0b3776d6749c0b03796493f8b349a97ce355749011e1b715b4b. Feature contract and
 91 chunk receipts bind original crop identities. No classifier artifact yet; do not confuse
 feature extraction with accepted quality. E43/serving unchanged.
+
+
+### E66 acquisition and limited DEV bindings (2026-09-13)
+
+Verified 6.62 GB SIDD archive and 160 decoded NOISY images remain under the external `e66/`
+directory, alongside 160 source-verified local AI originals. The frozen development manifest
+SHA is bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301. Zero model scores
+at admission; whole SIDD publisher excluded from TRAIN/final. Compact `evidence/e66_*`
+receipts bind acquisition, scene/overlap audit and the limited DEV population.
+
+
+E67 rejected TRAIN candidate: external `e67/correction.npz`, SHA d0491ceb962915f096bdfe6cb0555402b16e78085b2a9f2e141c6d10d98f9a1b.
+Bound to its frozen fit contract and E43 reference. `evidence/e67_fit.json` records the
+failed TRAIN guard; no DEV or E49 scores may be created for this candidate.

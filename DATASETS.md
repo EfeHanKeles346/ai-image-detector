@@ -2317,3 +2317,23 @@ Cross-reference overlaps or cross-scene internal matches quarantine complete und
 including other cameras/settings; same-scene internal similarity stays explicitly dependent.
 Only complete160 REAL+160 AI, no shared id/body/cross-label match, can freeze limited DEV.
 No replacement draws or model-score-based exclusions.10 new E66/E67 pipeline tests pass.
+
+
+### E66 archive verified (2026-09-13)
+
+SIDD Small sRGB archive acquisition is complete: 6,615,978,508 bytes, published MD5 and
+SHA1 matched; SHA256 855c375ae20312386cd961e7fdbbeaeb33efdecf0f6f115c01e09f45ec471fdf.
+The frozen scene/decode/overlap audit is running. No SIDD model score or DEV admission yet.
+Archive and image payloads remain on the external dataset volume, outside git.
+
+
+### E66 limited DEV admitted; E67 fit can start (2026-09-13)
+
+All 160 SIDD NOISY images decoded. Against 151,165 protected/reference records: zero
+cross-reference matches, zero cross-scene or cross-label matches, no quarantine. The
+223 internal matched pairs all stay within their known scene and are explicitly dependent.
+Ten underlying REAL scenes across five cameras plus the 160 audited AI observations form
+the frozen 320-observation development manifest, SHA bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301.
+No model scores exist for this population. This limited DEV is not independent final data.
+Starting the already preregistered E67 fit: freeze exact artifact/code/DEV identity bindings,
+then one constrained TRAIN fit with the unchanged 10% REAL ceiling and per-image AI guard.

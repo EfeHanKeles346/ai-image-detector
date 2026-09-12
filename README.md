@@ -8,7 +8,9 @@ It never certifies that an image is real.
 and measured frozen E43 on166 original/Q75 views. REAL false alarms: WIFD16.42%/19.40%,
 RawNIND18.75%/31.25%. This is a small REAL-only diagnostic, not an improved model or AI-retention
 proof. E62/E63 remain rejected; E64 remains TRAIN-stopped. E43 and serving are unchanged;
-E59 stays paused.697 Python tests pass. See [E65 findings](evidence/e65_diagnostic.md),
+E59 stays paused. E67 reduced TRAIN errors with zero new AI misses, but failed its REAL ceiling; no DEV scoring.
+E66 admitted a limited unscored DEV population: 160 SIDD observations plus 160 local AI images. All 714 Python tests pass; the existing web dependency audit remains failing.
+See [E65 findings](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
 
 ## Current scientific contract (2026-08-26)

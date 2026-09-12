@@ -1,0 +1,15 @@
+{
+  "ai_audit_sha256": "914c5eb4a4db7bea693965cca3e1e0f076dd34986cae71ae47be0ebb1cba51b7",
+  "class_counts": {
+    "0": 160,
+    "1": 160
+  },
+  "independent_final_admitted": false,
+  "limitations": "Only10 real scenes across5 older phones; camera and scene dependence must be reported. SIDD renderings and two previously seen AI families support a limited DEV rejection screen, not modern-source final/generalization proof. AI prompt dependencies unknown.",
+  "manifest_sha256": "bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301",
+  "model_scores_created": 0,
+  "parents_or_observations": 320,
+  "sidd_audit_sha256": "2d4191c4ebf43309d46bc3450d56ae080a352cb266c28e115f4bcbd9f5c06d46",
+  "state": "E66_limited_balanced_DEV_frozen_unscored",
+  "training_allowed": false
+}

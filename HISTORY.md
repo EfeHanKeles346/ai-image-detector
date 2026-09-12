@@ -6480,3 +6480,52 @@ Remote CI for f325b7c (run 34723716630) completed: Python succeeded; web failed 
 "Audit production/build dependencies (known high vinext debt is documented)". This is
 not an all-green CI claim; the existing dependency-security maintenance remains open.
 Local 714-test suite passed. Power check: AC attached, 80%.
+
+
+### E66 SIDD acquisition complete (2026-09-13)
+
+All 6,615,978,508 archive bytes verified against published MD5 and SHA1. Recorded SHA256:
+855c375ae20312386cd961e7fdbbeaeb33efdecf0f6f115c01e09f45ec471fdf. No members decoded or
+scored at acquisition completion. Starting the already frozen 160-NOISY-image scene and
+protected-overlap audit; acquisition alone does not admit DEV. Raw archive stays external.
+E67 feature/DEV-runner checkpoint 61f96f85f6039a6e88ee18e05ac37967e4544af7 is pushed,
+with identical local HEAD and remote main verified. No fitted candidate yet.
+
+
+Reviewed the DFRWS 2026 camera-fingerprint interference paper while E66 audit runs.
+Recorded its distinct attribution task and limitations in IMAGE_FORENSICS_REFERENCE.md.
+Its public dataset is only a metadata-audit lead, not downloaded/admitted or added to E67.
+
+
+### E66 limited DEV admitted; E67 fit can start (2026-09-13)
+
+All 160 SIDD NOISY images decoded. Against 151,165 protected/reference records: zero
+cross-reference matches, zero cross-scene or cross-label matches, no quarantine. The
+223 internal matched pairs all stay within their known scene and are explicitly dependent.
+Ten underlying REAL scenes across five cameras plus the 160 audited AI observations form
+the frozen 320-observation development manifest, SHA bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301.
+No model scores exist for this population. This limited DEV is not independent final data.
+Starting the already preregistered E67 fit: freeze exact artifact/code/DEV identity bindings,
+then one constrained TRAIN fit with the unchanged 10% REAL ceiling and per-image AI guard.
+
+
+## E67 completed: TRAIN guard failed, no DEV/test scoring (2026-09-13)
+
+The one constrained original-plus-blur-response fit converged in 49 iterations / 36.53s;
+maximum constraint violation 6.66e-16. Exact serialized replay passed. Zero newly missed
+AI views across all 4,595 AI parents and three conditions; zero new REAL errors. REAL
+false AI fell from 1,060 to 721 / 7,035 clean (15.07% -> 10.25%), 1,135 to 797 assigned
+transport (16.13% -> 11.33%), and 971 to 667 TRAIN q75 (13.80% -> 9.48%). The unchanged
+10% ceiling fails in the first two conditions. E67 is rejected at TRAIN; do not run its
+DEV scorer, read E49 for it, alter its frozen recipe or promote its candidate. E66 remains
+unscored. Original E43 and serving remain unchanged; target not achieved.
+
+TRAIN source diagnosis from the locked fit report: RR real pool contributes 510 / 721
+remaining clean errors, 537 / 797 assigned-transport errors, and 468 / 667 q75 errors.
+Its own FPR remains 40.80% / 42.96% / 37.44%, versus SCIMD-17 7.06% / 8.06% / 7.06%;
+other sources are much lower. RR has 1,250 / 7,035 REAL parents yet contributes roughly
+67-71% of remaining errors. This is a TRAIN-only concentration finding, not a licence
+to remove RR, relabel errors, tune a source-specific threshold or infer external recall.
+Original PCA64 explains 59.63% and response PCA64 40.31% of their respective TRAIN variance.
+Next: examine source-weighted objective/constraint diagnostics before choosing a distinct
+new hypothesis. No PCA-rank/L2/threshold sweep; preserve all failed E67 artifacts.

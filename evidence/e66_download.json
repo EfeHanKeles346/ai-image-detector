@@ -1,0 +1,11 @@
+{
+  "archive_bytes": 6615978508,
+  "archive_sha256": "855c375ae20312386cd961e7fdbbeaeb33efdecf0f6f115c01e09f45ec471fdf",
+  "balanced_final_admitted": false,
+  "contract_sha256": "9942d5ca27c621a55bf6e887e1bc9203e347162ff9938b5fcb759aa963c3d510",
+  "decoded_images": 0,
+  "model_scores_created": 0,
+  "receipt_sha256": "4bbb78bc68543dacd41da974519a713f06209fe052addd319e6dadd45ff7bfe8",
+  "state": "E66_SIDD_archive_verified_quarantine",
+  "training_allowed": false
+}
