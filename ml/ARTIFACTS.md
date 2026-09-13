@@ -321,3 +321,14 @@ External `e83/correction.npz` SHA256 `d4c7d644de0e59cda8dda0899e30860d56991530ab
 All TRAIN/runtime guards pass; old-REAL FPR0.071–0.114%, AI recall99.739–99.848%.
 Supervised resubstitution, not external accuracy. Consumed E66 DEV registered separately;
 no DEV result, E49 access, independent final pass, serving change or promotion yet.
+
+
+### E83 consumed DEV rejection (2026-09-13)
+
+Candidate retained externally, not promoted. E66 original/Q75 REAL FPR0%/13.75%,
+AI98.75%/99.375%,17/20 numeric gates. One original AI newly missed despite aggregate
+gain; Q75 pooled/source REAL and selective-accuracy gates fail. No E49/serving change.
+External `e83/dev_features.npz` SHA256
+`1201dad5a71f8077c32f3169bac661bf46784a23099e2ffd93279143e1e685be`,640 ordered
+DEVELOPMENT views, DINO3072/CLIP1536/DEAR1640; never eligible for TRAIN. Exact runtime
+score replay verified by read-only component diagnostic.

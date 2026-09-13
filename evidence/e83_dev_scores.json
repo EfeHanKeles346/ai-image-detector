@@ -1,0 +1,10 @@
+{
+  "contract_sha256": "08a2451de42642d8163738e5a96d16153a3c3f480025d4a13b316c80f9c90c9b",
+  "features_sha256": "1201dad5a71f8077c32f3169bac661bf46784a23099e2ffd93279143e1e685be",
+  "metrics_opened": false,
+  "prior_reference_max_error": 0.0,
+  "reference_decision_changes": 0,
+  "scores_sha256": "1c37ff3781ab8055bf2da636a927813ac2c2a3e6e6c4be5ec87bb67c1a2f15c2",
+  "seconds": 575.9819853330264,
+  "views": 640
+}

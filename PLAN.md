@@ -44,22 +44,18 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E83 TRAIN/runtime passed; consumed DEV registered (2026-09-13)
+## Current checkpoint — E83 DEV rejected; E84 transport extension planned (2026-09-13)
 
-The goal remains unmet. E80/E81 preserve all E43 TRAIN AI logits and new-miss count0.
-E81 old-REAL FPR8.54%/8.54%/8.33% passes10%, but RR32.24%/33.52%/31.84% fails20%
-and covered accuracy stays below95%.8/10 numeric gates pass in each old/expanded condition.
-E81 slightly loses E80's assigned-transport rescues, while preserving the fixed E43 reference.
-Both candidates rejected; runtime/DEV/E49 not run. No hyperparameter or cutoff sweep.
+E83 passes all TRAIN/runtime gates. Consumed DEV REAL FPR improves42.5% to0% original
+and42.5% to13.75% social Q75; AI recall98.75%/99.375%.17/20 numeric gates pass, but
+one newly missed original AI and three Q75 numeric failures reject the candidate.
+Read-only component replay is exact; learned REAL correction weakens/reverses under Q75.
+E84 will add the exact social1080px-then-JPEG75 view to every existing TRAIN parent,
+keeping all old conditions and AI protection. No DEV/final admission or cutoff change.
 
-E79 complete:12,141x3x1640 forensic features,34 source replays exact. First attempt hit9000s;
-resume completed80 missing parents in412.623s. Total loops exceed9412.623s plus setup.
-E82 completed its supervised nonlinear representation in the exact E80 multimodal coordinates.
-E83 passed its one constrained fit and full runtime screen. One consumed E66 comparison is frozen. Prior RBF/bilinear/REAL-only
-AE attempts are already recorded; this must not be presented as the first nonlinear study.
-
-819 Python tests pass. RR upstream lineage unresolved; no new COCO admission or independent
-final claim. E43/serving unchanged. No30-minute automation; MD/git checkpoints continue.
+820 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
+RR upstream lineage unresolved; MIDD/DEAR research restrictions persist. E49 unopened,
+E43/serving unchanged. No30-minute automation; active experiments and MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
 
@@ -5639,3 +5635,42 @@ can freeze it. It verifies all640 cached DEVELOPMENT identities/roles and batch8
 score replay before grouping the eight additive logit components by source/condition and
 paired transition. No block-removal ablation, image selection, fit or cutoff choice.
 Role/order/hash rejection test passes. Neither tool has yet read unfinished DEV results.
+
+
+### E83 consumed DEV rejected despite substantial REAL improvement (2026-09-13)
+
+All640 views completed in575.982s. Frozen E43 reference scores and both cuts replayed
+exactly. Original: REAL FPR42.5% to0% (68 rescues), AI97.5% to98.75%, AUC0.999765625,
+10/10 numeric gates. However one previously caught GPT image is newly missed; three
+previous misses are rescued, so pooled gain cannot satisfy the zero-new-loss condition.
+Q75: REAL FPR42.5% to13.75% (46 rescues,22 remaining false alarms), AI96.25% to99.375%,
+zero newly missed AI; AUC0.988828125.7/10 numeric gates: pooled REAL13.75%>10%, worst
+SIDD:GP24.2424%>20%, covered accuracy92.4342%<95%. Overall rejected. No E49 or promotion.
+SIDD remains consumed DEVELOPMENT;160 observations represent only10 dependent scenes.
+
+Read-only component diagnosis reproduced all locked scores exactly from cached features.
+The supervised component contributes roughly-5.6 to-6.2 logits to original REAL rescues.
+For remaining Q75 REAL errors its group means range+0.375 to+3.960. The one newly missed
+original AI has total shift-2.854, supervised component-1.370; several old blocks also
+contribute negatively. Correlated-basis contributions are descriptive, not causal ablations.
+Complete receipts: e83_dev_scores.json, e83_development.json, e83_component_diagnostic.json.
+Updated PNG/SVG compares matched TRAIN and consumed DEV populations; visually checked.
+820 Python tests pass. GitHub Python job passes; existing web dependency audit still fails.
+
+### Next bounded direction: E84 social-transport TRAIN feature extension
+
+The measured transport gap and known pipeline mismatch motivate one data-view change.
+Retain all12,141 admitted TRAIN parents and all three old conditions. Add exactly one
+1080px-long-side-then-JPEG75 condition to every parent, both labels, with the same E65
+social transport and E83 crop/encoder operations. TRAIN's old Q75 encodes before2048 cap;
+it is not that condition. No SIDD/other DEV/final image admission, new data download,
+threshold adjustment or failure-specific image selection. Audit/bind complete TRAIN identities,
+freeze code/weights/resource budget and resumable chunks before extraction. Verify encoding
+and numerical parity on fixed source representatives; report failure rather than alter recipe.
+
+Only complete E84 features will justify separately registering a supervised representation
+with the same E82 architecture/optimizer/initialization and all four TRAIN conditions, then
+one constrained head. Preserve every old and new AI-view E43 confidence, correct-REAL
+protection, all absolute gates and runtime replay. Additional transport coverage is a
+hypothesis; it is not guaranteed to recover the original AI miss or generalize beyond E66.
+No representation/head has yet been frozen or fitted for this extension.

@@ -41,7 +41,7 @@ def main():
         labels=['Temiz','Atanmış aktarım','TRAIN Q75'] if k<2 else ['Orijinal','Sosyal Q75']
         for j in range(n):
             bars=ax.bar(x+(j-(n-1)/2)*width,v[:,j],width,color=palette[j if n==3 else j*2],label=labels[j],zorder=3)
-            if k!=1:ax.bar_label(bars,labels=[f'{a:.2f}' if k==0 and a<1 else f'{a:.1f}' for a in v[:,j]],padding=3,fontsize=9)
+            if k!=1:ax.bar_label(bars,labels=[f'{a:.2f}' if k==0 and a<1 else f'{a:.1f}' for a in v[:,j]],padding=3,fontsize=8 if k==0 else 9,rotation=90 if k==0 else 0)
         ax.set_xticks(x,['E43',*[f'E{i}' for i in IDS]] if k<2 else ['E43','E70','E71','E83'])
         ax.set_title(title,loc='left',fontweight='bold',pad=18);ax.set_ylabel('%')
         ax.grid(axis='y',color='#e2e8f0',zorder=0);ax.set_axisbelow(True);ax.set_facecolor('white')
@@ -51,7 +51,7 @@ def main():
             ax.set_ylim(0,max(20,float(v.max())+10))
         else:ax.set_ylim(0,112)
     for idx,counts in enumerate(dev_miss):
-        axes[1,1].text(idx,8,f'Yeni kayıp: {counts[0]}/{counts[1]}',ha='center',fontsize=8,color='#9f2937')
+        axes[1,1].text(idx,8,f'Yeni kayıp: {counts[0]}/{counts[1]}',ha='center',fontsize=8,color='#9f2937',bbox={'facecolor':'white','edgecolor':'none','alpha':.9,'pad':2})
     passed=reports['e83_development.json']['passes_limited_dev_screen']
     fig.suptitle('E83: eğitim geçti • geliştirme '+('geçti' if passed else 'geçmedi'),x=.075,ha='left',fontsize=22,fontweight='bold',y=.97)
     fig.text(.075,.925,'Aynı karar eşikleri. AI koruması yeni kayıp sayısıyla da denetlenir; toplam oran tek başına yeterli değil.',fontsize=11,color='#475569')

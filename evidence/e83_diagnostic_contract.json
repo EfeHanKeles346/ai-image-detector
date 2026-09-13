@@ -1,0 +1,56 @@
+{
+  "analysis": "Reproduce all locked E83 scores from complete saved encoder features in original batches8. Require zero decision changes at both cuts before summaries. Report additive logit contributions for every source/condition and paired error transition bin, mean and fixed min/25/50/75/max quantiles. Do not remove blocks, fit parameters, choose thresholds, select examples or claim causal attribution.",
+  "batch_size": 8,
+  "blocks": {
+    "bilinear": [
+      128,
+      256
+    ],
+    "clip": [
+      64,
+      128
+    ],
+    "dear_head": [
+      384,
+      385
+    ],
+    "dear_pca": [
+      320,
+      384
+    ],
+    "intercept": [
+      449,
+      450
+    ],
+    "original": [
+      0,
+      64
+    ],
+    "real_residual": [
+      256,
+      320
+    ],
+    "supervised": [
+      385,
+      449
+    ]
+  },
+  "contract_sha256": "5ee05b4c6f3c12ee618c01bfb33fcd00fdb12515c85b1760dfa72cb2bfd258e7",
+  "e49_read_allowed": false,
+  "fit_allowed": false,
+  "image_reads": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_diagnostic.py": "005bd56853b9ecf7961c4a25548516fad11b5567c9ffe2158b5b0924e7bd5065",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_model.py": "8f1ab27c4636f23cbb705572781d19ba2c65757ac115620f21ad47897ca5357e",
+    "/Volumes/LaCie/pixelproof-datasets/e83/correction.npz": "d4c7d644de0e59cda8dda0899e30860d56991530ab759f5525ea9c708b0dbd1a",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_contract.json": "08a2451de42642d8163738e5a96d16153a3c3f480025d4a13b316c80f9c90c9b",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_features.npz": "1201dad5a71f8077c32f3169bac661bf46784a23099e2ffd93279143e1e685be",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_report.json": "5755f4c97d03cf706cacbd580933a9b58f7aaf2ed4de0fea58e9cccbd76f29a0",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_scores.json": "1c37ff3781ab8055bf2da636a927813ac2c2a3e6e6c4be5ec87bb67c1a2f15c2"
+  },
+  "limits": "Consumed E66 observations, dependent SIDD scenes. Coordinate contributions depend on the fitted basis and correlations; they are descriptive, not a counterfactual ablation or a generalization estimate.",
+  "promotion_allowed": false,
+  "score_replay_max_error": 1e-12,
+  "state": "E83_read_only_failed_DEV_component_diagnostic_registered",
+  "views": 640
+}

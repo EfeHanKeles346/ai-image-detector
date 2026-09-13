@@ -6340,3 +6340,42 @@ can freeze it. It verifies all640 cached DEVELOPMENT identities/roles and batch8
 score replay before grouping the eight additive logit components by source/condition and
 paired transition. No block-removal ablation, image selection, fit or cutoff choice.
 Role/order/hash rejection test passes. Neither tool has yet read unfinished DEV results.
+
+
+### E83 consumed DEV rejected despite substantial REAL improvement (2026-09-13)
+
+All640 views completed in575.982s. Frozen E43 reference scores and both cuts replayed
+exactly. Original: REAL FPR42.5% to0% (68 rescues), AI97.5% to98.75%, AUC0.999765625,
+10/10 numeric gates. However one previously caught GPT image is newly missed; three
+previous misses are rescued, so pooled gain cannot satisfy the zero-new-loss condition.
+Q75: REAL FPR42.5% to13.75% (46 rescues,22 remaining false alarms), AI96.25% to99.375%,
+zero newly missed AI; AUC0.988828125.7/10 numeric gates: pooled REAL13.75%>10%, worst
+SIDD:GP24.2424%>20%, covered accuracy92.4342%<95%. Overall rejected. No E49 or promotion.
+SIDD remains consumed DEVELOPMENT;160 observations represent only10 dependent scenes.
+
+Read-only component diagnosis reproduced all locked scores exactly from cached features.
+The supervised component contributes roughly-5.6 to-6.2 logits to original REAL rescues.
+For remaining Q75 REAL errors its group means range+0.375 to+3.960. The one newly missed
+original AI has total shift-2.854, supervised component-1.370; several old blocks also
+contribute negatively. Correlated-basis contributions are descriptive, not causal ablations.
+Complete receipts: e83_dev_scores.json, e83_development.json, e83_component_diagnostic.json.
+Updated PNG/SVG compares matched TRAIN and consumed DEV populations; visually checked.
+820 Python tests pass. GitHub Python job passes; existing web dependency audit still fails.
+
+### Next bounded direction: E84 social-transport TRAIN feature extension
+
+The measured transport gap and known pipeline mismatch motivate one data-view change.
+Retain all12,141 admitted TRAIN parents and all three old conditions. Add exactly one
+1080px-long-side-then-JPEG75 condition to every parent, both labels, with the same E65
+social transport and E83 crop/encoder operations. TRAIN's old Q75 encodes before2048 cap;
+it is not that condition. No SIDD/other DEV/final image admission, new data download,
+threshold adjustment or failure-specific image selection. Audit/bind complete TRAIN identities,
+freeze code/weights/resource budget and resumable chunks before extraction. Verify encoding
+and numerical parity on fixed source representatives; report failure rather than alter recipe.
+
+Only complete E84 features will justify separately registering a supervised representation
+with the same E82 architecture/optimizer/initialization and all four TRAIN conditions, then
+one constrained head. Preserve every old and new AI-view E43 confidence, correct-REAL
+protection, all absolute gates and runtime replay. Additional transport coverage is a
+hypothesis; it is not guaranteed to recover the original AI miss or generalize beyond E66.
+No representation/head has yet been frozen or fitted for this extension.
