@@ -1,0 +1,95 @@
+{
+  "archives": [
+    {
+      "camera": "Sony",
+      "catalog_path": "/Volumes/LaCie/pixelproof-datasets/source_research/sid_metadata/Sony_archive.json",
+      "catalog_sha256": "4aa44f6b796100bb27e897912c9715af861028951757b58cf5ec8a2f0907e114",
+      "code_sha256": "08c504ef6e218be83630835565a46032949b471b6afe2d98bcb81798ce1a3dba",
+      "entries": 2934,
+      "identity": {
+        "bytes": 26926662016,
+        "etag": "\"cc7e43a13a5eaf30d36530649d244f7a\"",
+        "last_modified": "Mon, 15 Sep 2025 18:57:04 GMT"
+      },
+      "image_members_opened": 0,
+      "metadata_sha256": "a7414bb9b72d6ea4be22f754a9884f5e0ebf8c1f4c38ab44f5b485cc062b7286",
+      "range_bytes": 248933,
+      "role": "UNASSIGNED_NOT_ADMITTED",
+      "split_coverage": {
+        "test": {
+          "long_compressed_bytes": 762293648,
+          "long_files": 50,
+          "long_raw_bytes": 1262009856,
+          "missing_listed_members": [],
+          "short_files": 598,
+          "short_raw_bytes": 14763235840
+        },
+        "train": {
+          "long_compressed_bytes": 2533425149,
+          "long_files": 161,
+          "long_raw_bytes": 4076141568,
+          "missing_listed_members": [],
+          "short_files": 1865,
+          "short_raw_bytes": 46062221312
+        },
+        "val": {
+          "long_compressed_bytes": 327191366,
+          "long_files": 20,
+          "long_raw_bytes": 508345344,
+          "missing_listed_members": [],
+          "short_files": 234,
+          "short_raw_bytes": 5785619456
+        }
+      },
+      "url": "https://storage.googleapis.com/isl-datasets/SID/Sony2025.zip"
+    },
+    {
+      "camera": "Fuji",
+      "catalog_path": "/Volumes/LaCie/pixelproof-datasets/source_research/sid_metadata/Fuji_archive.json",
+      "catalog_sha256": "ca718af8848195a0226dd15501c2a52738fbd2bbdfbfca45cc37c96c29dbd601",
+      "code_sha256": "08c504ef6e218be83630835565a46032949b471b6afe2d98bcb81798ce1a3dba",
+      "entries": 2596,
+      "identity": {
+        "bytes": 55409370853,
+        "etag": "\"bd88eaec38f14576843f4b44062f7e7f\"",
+        "last_modified": "Mon, 15 Sep 2025 18:56:57 GMT"
+      },
+      "image_members_opened": 0,
+      "metadata_sha256": "a7414bb9b72d6ea4be22f754a9884f5e0ebf8c1f4c38ab44f5b485cc062b7286",
+      "range_bytes": 223350,
+      "role": "UNASSIGNED_NOT_ADMITTED",
+      "split_coverage": {
+        "test": {
+          "long_compressed_bytes": 1553975675,
+          "long_files": 41,
+          "long_raw_bytes": 2071066624,
+          "missing_listed_members": [],
+          "short_files": 524,
+          "short_raw_bytes": 26134138368
+        },
+        "train": {
+          "long_compressed_bytes": 5007113383,
+          "long_files": 135,
+          "long_raw_bytes": 6815595008,
+          "missing_listed_members": [],
+          "short_files": 1655,
+          "short_raw_bytes": 82533570048
+        },
+        "val": {
+          "long_compressed_bytes": 643490952,
+          "long_files": 17,
+          "long_raw_bytes": 858437632,
+          "missing_listed_members": [],
+          "short_files": 218,
+          "short_raw_bytes": 10872573952
+        }
+      },
+      "url": "https://storage.googleapis.com/isl-datasets/SID/Fuji2025.zip"
+    }
+  ],
+  "data_admission": false,
+  "image_members_opened": 0,
+  "limits": "No RAW decode, scene independence, overlap or model-quality audit. Counts are source metadata, not a training selection or claim of data rights.",
+  "model_scores": 0,
+  "state": "SID_remote_directories_only_complete"
+}

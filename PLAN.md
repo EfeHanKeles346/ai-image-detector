@@ -5769,3 +5769,31 @@ and also reports paired changes against E83. No new image inference or cache rol
 832 Python tests pass. Checks include four-view parent/class weights, old decision-flip
 rejection, gate parity, immutable predecessor reports and stopping before DEV cache access
 when TRAIN fails. E84B feature extraction continues under its frozen contract.
+
+
+### SID metadata and archive inventories complete (2026-09-13)
+
+Pinned six split lists and README/license total373,748 bytes; after a local stdlib TLS
+certificate-store failure, the same HTTPS requests succeeded with certifi verification.
+5,094 listed short captures map to424 camera/filename scene groups and424 unique long
+RAW references. Sony TRAIN/VAL/TEST groups161/20/50; Fuji135/17/41. All listed members
+exist in the official archives. Remote ZIP directories required472,283 bytes total;
+no image member was opened. These filename groups are not verified independent scenes.
+
+Sony archive26,926,662,016B; Fuji55,409,370,853B. Their official TRAIN long references
+alone require2,533,425,149+5,007,113,383 compressed bytes (296 originals); no full archive
+is necessary if exact206/ETag range verification remains available. Inventory receipts:
+`evidence/sid_metadata_inventory.json`, `evidence/sid_archive_inventory.json`.
+Both cameras' pinned author training code renders original long RAW through RAWpy with
+camera white balance, full size, no automatic brightness and16-bit output. Network outputs
+are separate and must not be labeled authentic captures. No RAW decoder is currently in
+our experiment environment. No pixels, role admission, model scores or change to E84B.
+
+Next bounded preparation: select64 original long-exposure TRAIN references per camera
+by a fixed filename hash, one per published scene; freeze exact members/source/terms
+and a4GiB compressed/5GiB raw budget before downloading. Acquisition stays quarantined
+for possible future research TRAIN, with the whole SID publisher reserved from fresh
+DEV/final. Existing E85/E86 data and recipe remain unchanged. Decode/protected-overlap
+and scene checks must be separately registered before any TRAIN admission. Selection
+uses no image content or detector score; no refill after duplicate/quality quarantine.
+This adds a documented non-JPEG capture route, not a promised improvement.

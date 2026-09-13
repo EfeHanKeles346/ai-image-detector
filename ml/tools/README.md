@@ -118,3 +118,7 @@ These are descriptive checkpoints, not independent final evidence.
 `train_transport_coverage.py` inventories dimensions and declared formats in the two
 hash-bound E84B TRAIN manifests. It writes `evidence/e84b_transport_coverage.json` once;
 it does not open images, calculate model scores or choose parameters.
+
+`sid_metadata_inventory.py` pins and counts the six official SID split lists;
+`sid_archive_inventory.py` verifies their member coverage using bounded206 ZIP directory
+reads. Neither opens an image member, scores an image or assigns a training role.
