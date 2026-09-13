@@ -7930,3 +7930,40 @@ No E88 freeze/audit or use in E85/E86 yet; E84B extraction continues unchanged.
 
 Full verification after E88 preparation:839 Python tests pass in18.18s; only the
 existing Starlette/httpx deprecation warning. E88 is still not frozen or executed.
+
+
+### Compression/size confounds: primary-method review (2026-09-13)
+
+[Fake or JPEG?](https://arxiv.org/html/2403.17608v2), sections3–4, tests GenImage detectors
+on compression and size changes, including real FFHQ PNG images. It reduces class-related
+compression mismatch by selecting JPEG96 REAL images and encoding AI at96, then controls
+size/content distributions. The authors explicitly note that random JPEG augmentation
+alone does not equalize compression history: previously compressed REAL receives another
+encoding. Their reported cross-generator gains belong to those datasets/detectors and
+protocols, not this project. Existing historical experiments already used an unbiased-tiny-
+GenImage subset; this is a primary explanation of a known issue, not a newly discovered
+training corpus. No new GenImage download or reproduction is planned here.
+
+Our E84B metadata inventory is consistent with a possible confound but cannot prove it.
+In fact E83's consumed SIDD REAL FPR rises0% original to13.75% socialQ75, whereas the
+paper's particular real-image JPEG experiment improves REAL recognition. Different data,
+preprocessing and model matter; do not transplant its error direction or numerical gains.
+E84B adds exact social transport coverage without claiming to erase historical bias.
+E87/E88 prepares documented RAW-derived REAL coverage independently, while keeping the
+current E85/E86 comparison fixed. No threshold, score-based selection or extra fit follows
+from this literature read alone. SFLD is already reviewed/tested in bounded E69 form;
+DEAR is already included, so neither is presented as a new unused detector.
+
+
+### E87 complete; E88 fixed RAW audit registered (2026-09-13)
+
+All128 RAW originals completed,64 per camera.4,851,194,880B verified bodies;
+3,376,363,519B transferred through pinned206 ranges. No decoder/model scoring yet.
+Download receipt SHA256`60c5563122a1ae7aaa76a13a0a6ac4c316a8a0d9daa03f7e455d1fa62e0dedff`.
+The original acquisition contract remains`748dc0b3e18c93d9e09441fcc8f8f7a64ca02aef5484512b93e1dcfad1e4d5b2`.
+
+E88 audit contract now frozen: `f4bab7531e2859e7a33540f59f5994a18526f75ee7ddbedd62476e70c771c32a`. Same existing isolated RAW
+renderer/runtime verified against E65. Complete original-body and rendered-image overlap
+screen, transitive internal grouping, no score/brightness filtering, no refill. One-hour
+stage with120s per RAW subprocess; all128 accounted for. No TRAIN admission until audit
+receipt/manifest completes. E84B extraction and the prepared E85/E86 sequence stay fixed.

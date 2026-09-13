@@ -600,3 +600,26 @@ read/downloaded, protected scores opened, or data-role reassignment performed in
 These are mechanism leads while the frozen E83 comparison runs, not a selected successor
 experiment or proof of the cause of any as-yet unmeasured E83 DEV error. No new model fit,
 new data, DEV role change or E49 read in this review.
+
+
+### Compression/size confounds: primary-method review (2026-09-13)
+
+[Fake or JPEG?](https://arxiv.org/html/2403.17608v2), sections3–4, tests GenImage detectors
+on compression and size changes, including real FFHQ PNG images. It reduces class-related
+compression mismatch by selecting JPEG96 REAL images and encoding AI at96, then controls
+size/content distributions. The authors explicitly note that random JPEG augmentation
+alone does not equalize compression history: previously compressed REAL receives another
+encoding. Their reported cross-generator gains belong to those datasets/detectors and
+protocols, not this project. Existing historical experiments already used an unbiased-tiny-
+GenImage subset; this is a primary explanation of a known issue, not a newly discovered
+training corpus. No new GenImage download or reproduction is planned here.
+
+Our E84B metadata inventory is consistent with a possible confound but cannot prove it.
+In fact E83's consumed SIDD REAL FPR rises0% original to13.75% socialQ75, whereas the
+paper's particular real-image JPEG experiment improves REAL recognition. Different data,
+preprocessing and model matter; do not transplant its error direction or numerical gains.
+E84B adds exact social transport coverage without claiming to erase historical bias.
+E87/E88 prepares documented RAW-derived REAL coverage independently, while keeping the
+current E85/E86 comparison fixed. No threshold, score-based selection or extra fit follows
+from this literature read alone. SFLD is already reviewed/tested in bounded E69 form;
+DEAR is already included, so neither is presented as a new unused detector.

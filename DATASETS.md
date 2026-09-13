@@ -2574,3 +2574,17 @@ from fresh DEV/final. Research source/license limitations remain as recorded. RA
 may themselves use camera compression; future lossless RGB refers to our output encoding,
 not a claim of pristine/unprocessed sensor data. Active E84B and prepared E85/E86 are
 unchanged. Separately register fixed rendering and protected overlap/scene audit next.
+
+
+### E87 complete; E88 fixed RAW audit registered (2026-09-13)
+
+All128 RAW originals completed,64 per camera.4,851,194,880B verified bodies;
+3,376,363,519B transferred through pinned206 ranges. No decoder/model scoring yet.
+Download receipt SHA256`60c5563122a1ae7aaa76a13a0a6ac4c316a8a0d9daa03f7e455d1fa62e0dedff`.
+The original acquisition contract remains`748dc0b3e18c93d9e09441fcc8f8f7a64ca02aef5484512b93e1dcfad1e4d5b2`.
+
+E88 audit contract now frozen: `f4bab7531e2859e7a33540f59f5994a18526f75ee7ddbedd62476e70c771c32a`. Same existing isolated RAW
+renderer/runtime verified against E65. Complete original-body and rendered-image overlap
+screen, transitive internal grouping, no score/brightness filtering, no refill. One-hour
+stage with120s per RAW subprocess; all128 accounted for. No TRAIN admission until audit
+receipt/manifest completes. E84B extraction and the prepared E85/E86 sequence stay fixed.

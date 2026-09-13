@@ -1,0 +1,54 @@
+{
+  "contract_sha256": "f4bab7531e2859e7a33540f59f5994a18526f75ee7ddbedd62476e70c771c32a",
+  "decoder_versions": {
+    "libraw": [
+      0,
+      22,
+      1
+    ],
+    "numpy": "2.5.1",
+    "pillow": "12.3.0",
+    "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "rawpy": "0.27.1"
+  },
+  "fingerprint_version": "e51-prefit-rgb-lanczos-v1",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e56_raw_decode.py": "f3edceed9d27a9ff9429ff3010a5d13b55cfc6149e9aed6e5bdacd6298289cd9",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_audit.py": "71df44c7eb40333c80dde13dad79b1dac0336e51aab5b1bd467642e8975262c2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e72_audit.py": "1e88acaa0c71eef34bb383cf8919d7af42b1e55396008e1a032a34e1730625d3",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e87_acquisition.py": "01f2eba53598cff81ecd6de3cbf77bb7b88ea62ec3ae315d5b6b6138b4373ec2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e88_audit.py": "9e3e1f1816618786ae1f875d1a11574082d234bf18a7d9701e10cceeec45fd74",
+    "/Volumes/LaCie/pixelproof-datasets/e52/hdrplus_reserve_v1/download.json": "95cdc842844443497af26995fb8430cf39540fa33e093b91a63be6fce768ff18",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/download.json": "a63d7655cea11d18457dbb45bb4419063526e16e90f6d941a2796af3dd17ea4c",
+    "/Volumes/LaCie/pixelproof-datasets/e52/protected_reference_v1.json": "7fc7f52e8c38e621b71877b394cccac312af333b183492bcf52154381e3ab988",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/download.json": "879f3d76255bb7b26b9e2d560a1f5d15096e0ac3fc6172662c0ec8d504635010",
+    "/Volumes/LaCie/pixelproof-datasets/e65/audit.json": "db8b3134886b62dc31d4d39be5b7eb8015550260fa0359bd92af8e18a8316caa",
+    "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json": "bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301",
+    "/Volumes/LaCie/pixelproof-datasets/e72/audit.json": "23021f21e0ff5fcb72c972c8293a0c18188ddf18cdf8fdfb33ec3046ac5d8e04",
+    "/Volumes/LaCie/pixelproof-datasets/e72/audit_contract.json": "d458de0a558fb07eb4386888acabe593b6d665011dcb9bff15ee6abb6f7247dd",
+    "/Volumes/LaCie/pixelproof-datasets/e87/download.json": "60c5563122a1ae7aaa76a13a0a6ac4c316a8a0d9daa03f7e455d1fa62e0dedff"
+  },
+  "license": "Official pinned SID README states MIT; LICENSE refers to software/documentation. Keep source/citation and explicit scope limitation. Research acquisition only, no redistribution/serving.",
+  "limits": "Incomplete scene detection; filename identities and perceptual screening cannot prove independent scenes or distinguish all shared scenes across cameras. Older two-camera low-light coverage only. Whole SID publisher research TRAIN only, including unselected/upstream validation/test; never fresh DEV/final. Existing E84B/E85/E86 inputs stay unchanged. No guarantee of performance or AI retention.",
+  "max_pixels": 100000000,
+  "max_seconds": 3600,
+  "metadata": "Only existing decoder numeric RGB/white-balance summaries and published camera/filename scene identities. No GPS/serial extraction, source metadata upload or detector scores.",
+  "model_scoring_allowed": false,
+  "policy": "Verify each original RAW length/SHA before decoding. Reject decode failure/below224px and any original-RAW body, rendered body/RGB or dHash<=4 AND pHash63<=4 protected match. Include complete E72-protected snapshot/AI reserves, consumed E66 and all511 MIDD admitted parents. Internal perceptual components propagate rejection transitively; keep one SHA256(E88|parent_id) representative per survivor. No score/brightness filter, quota refill or role reassignment of protected data.",
+  "promotion_allowed": false,
+  "raw_timeout_seconds": 120,
+  "reference_files": [
+    "/Volumes/LaCie/pixelproof-datasets/e52/protected_reference_v1.json",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/download.json",
+    "/Volumes/LaCie/pixelproof-datasets/e52/hdrplus_reserve_v1/download.json",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/download.json",
+    "/Volumes/LaCie/pixelproof-datasets/e65/audit.json",
+    "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json",
+    "/Volumes/LaCie/pixelproof-datasets/e72/audit.json"
+  ],
+  "rendering": "Reuse frozen e56_raw_decode.py and its existing isolated environment exactly: full-size as-shot white balance, AHD request (LibRaw may handle X-Trans internally), sRGB8, gamma2.4/12.92, no auto brightness/auto WB, bright1, clip highlights, no median/FBDD noise reduction, PNG6. No embedded JPEG preview, learned denoising or per-image brightness adjustment. This is our existing RAW rendering convention, not reproduction of SID authors16-bit/default-gamma references.",
+  "role_after_audit": "TRAIN",
+  "selected": 128,
+  "state": "E88_SID_fixed_RAW_render_and_TRAIN_audit_registered"
+}
