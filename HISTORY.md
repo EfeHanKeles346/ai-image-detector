@@ -8244,3 +8244,15 @@ and showed three decimals for REAL rates. The first draft is preserved externall
 `report_qa/e86_attempt1`; the corrected plot is visually verified. No scores/thresholds
 changed. The initial ad-hoc text summary used a wrong dictionary key and exited before
 printing rates; corrected to the actual report schema, with no experiment mutation.
+
+
+### E89 startup failure and unchanged-contract restart (2026-09-13)
+
+Initial extraction stopped during DINO model initialization: the hub attempted an
+online metadata check and the existing socket guard rejected it. Offline environment
+flags were assigned after heavy imports, so library constants had initialized earlier.
+Zero SID feature chunks/output/report exist. Preserve the frozen E89 implementation,
+weights and recipe. Restart with HF_HUB_OFFLINE=1, TRANSFORMERS_OFFLINE=1 and both
+OMP/OPENBLAS thread limits2 set in the process environment before Python imports.
+This implements the already registered offline runtime; it changes no transform,
+encoder, sample, tolerance or scientific condition. Receipt `e89_attempt1_startup.json`.

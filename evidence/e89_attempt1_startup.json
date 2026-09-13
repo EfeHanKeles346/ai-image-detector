@@ -1,0 +1,12 @@
+{
+  "state": "E89_model_setup_failed_before_SID_features",
+  "error": "RuntimeError: E89 feature extraction offline",
+  "stage": "DINO timm pretrained model setup; huggingface_hub attempted network metadata check",
+  "cause": "Offline environment flags assigned after heavy module imports; hub constants were already initialized",
+  "scientific_code_changed": false,
+  "feature_chunks": 0,
+  "image_feature_outputs": 0,
+  "remedy": "Set HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 in process environment before Python imports; retain original frozen contract",
+  "network_connection": "blocked by existing socket guard",
+  "contract_sha256": "020a3a475b5fda3b50047b2b4f2bbaa38e4b9d5d36eef3b9749317ec90aab469"
+}
