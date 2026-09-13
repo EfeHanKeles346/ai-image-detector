@@ -463,3 +463,23 @@ CountSketch/FFT-based explicit feature maps for tensor-product kernels. E70 uses
 two-input bilinear construction on our frozen original and blur-response coordinates.
 This is an efficient interaction representation, not evidence of improved AI detection.
 The map is tested against directly hashed outer products; no third-party code is run.
+
+### 2026-09-13 research refresh during E71 (no downloaded model execution)
+
+- [PiD, ICML2025](https://proceedings.mlr.press/v267/fu25i.html) separates per-pixel
+  color-space quantization residuals and trains a detector on them. This is different from
+  our Gaussian blur response; its GenImage result does not establish modern-phone REAL FPR.
+- [MPFT, January2026 preprint](https://arxiv.org/html/2601.03586v1) masks texture-rich
+  patches while fine-tuning CLIP, aiming to reduce generator-specific features. It changes
+  encoder training; E71's frozen CLIP feature completion is not a reproduction. Native
+  crops and dataset-dependent mask ratios in the paper require a new explicit contract;
+  do not attach published accuracy to our fixed-crop/PCA protocol.
+- [QuAD, CVPRW2026](https://grip-unina.github.io/QuAD/) was already considered in E46.
+  Full QuAD uses retrieved near-duplicates and quality-conditioned score distributions;
+  single-image residual correction is a different inference setting. E46's quality candidate
+  lost its conservative CAL comparison on AUC. No automatic repeat or threshold adjustment.
+
+E70's local margin diagnostic, not the papers, supplies direct project evidence:109 TRAIN
+condition views lie within1e-6 of the AI cut after correction; some consumed-DEV AI losses
+had appreciable prior margins. Decision retention alone leaves limited boundary slack.
+This is descriptive, not a guarantee that stronger constraints will fix unseen REAL/AI errors.

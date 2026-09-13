@@ -5072,3 +5072,9 @@ E71 extraction. SIDL next read is metadata-only for exact grouping/provenance in
 SIDL metadata inspection complete, image acquisition remains pending release reconciliation:
 1605 RAW records/253 scene ids differ from the website300 scenes/1588 pairs. Do not infer
 full coverage or roles; identify full archive/split mapping first. No image downloaded.
+
+Research queue update: PiD pixelwise quantization residuals and MPFT texture-masked CLIP
+fine-tuning are distinct future representations, not implemented E71 variants. QuAD is an
+E46 prior. MIDD's official share is accessible with20 ZIPs/331.3GB; inspect dataset-specific
+terms, original/patch packaging and scene identities before choosing a bounded sensor subset.
+Do not download the whole release by default. Active E71 recipe and gates remain unchanged.

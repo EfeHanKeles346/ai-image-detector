@@ -2414,3 +2414,16 @@ All records report Linear Raw and NoiseReductionApplied≈0.95. These are1605 RA
 records, not1588 verified pairs. Reconcile release completeness/splits and RGB derivation
 before selecting images. Compact receipt: `evidence/sidl_metadata_lead.json`; raw metadata
 stays on LaCie, no personal/location fields copied into the repository. Image downloads0.
+
+### 2026-09-13 — MIDD availability lead, no image acquisition
+
+The [official CVPR2024 implementation](https://github.com/rflepp/SplitterNet-Efficient-Mobile-Denoising-Models-CVPR2024)
+links to an accessible [MIDD public share](https://download.ai-benchmark.com/s/Gq3n2cS7QkH7ZMz).
+Its browser inventory reports20 sensor ZIP files, total331.3GB (rounded display sizes).
+Visible examples include ISOCELL_3P9.zip5.4GB, ISOCELL_3J1.zip5.8GB,
+ISOCELL_3T2.zip8GB, Sony_IMX258.zip9.3GB. No file was downloaded, decoded or scored.
+The code repository declares academic/research CC BY-NC-SA4.0; dataset-specific terms,
+full-resolution versus patch packaging, noisy/ground-truth identity and scene/device
+mapping must be checked in the release before any admission. Do not treat hundreds of
+thousands of denoising pairs/patches as independent camera scenes or use denoised targets
+as native ISP photos. Bulk331GB acquisition is not justified for the active E71 experiment.

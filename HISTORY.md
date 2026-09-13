@@ -6929,3 +6929,8 @@ SIDL metadata-only fetch succeeded without credentials:8,874,397 bytes /SHA649e4
 cameras iPhone12Pro, Linear Raw, noise reduction≈0.95. This is an unresolved release/coverage
 mismatch, not grounds to infer1588 complete pairs or admit a partial TRAIN set. Compact
 non-personal receipt added; images/scoring0. E70 diagnostic push0f960bd verified at origin.
+
+Research refresh recorded in IMAGE_FORENSICS_REFERENCE: PiD residuals and MPFT masked CLIP
+fine-tuning are possible distinct future mechanisms, neither implemented nor claimed reproduced.
+MIDD official share is accessible (20 sensor ZIPs, UI331.3GB); dataset terms and native/patch
+scene packaging unresolved, no image bytes downloaded. Public research tab closed.

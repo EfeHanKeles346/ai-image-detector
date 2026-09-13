@@ -5639,3 +5639,7 @@ Margin diagnostic code verification:754 Python tests passed in14.82s, compile/di
 
 SIDL data lead metadata audit only:1605 DNG records/253 filename scenes, all iPhone12Pro;
 release count/split reconciliation pending. This changes no model/data role, no images scored.
+
+Literature/data refresh during E71: PiD and MPFT recorded as distinct unimplemented methods;
+QuAD already E46. MIDD release availability found, packaging/terms not admitted; no image
+acquisition or model inference from these sources. Existing E71 extraction continues unchanged.
