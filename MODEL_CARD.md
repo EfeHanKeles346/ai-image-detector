@@ -394,3 +394,12 @@ AI logits preserved; old-REAL FPR8.80%/9.79%/8.61% passes10%, but RR35.44–40.4
 and covered accuracy<95% fail full TRAIN screening. Runtime/DEV/E49 not run; not serving
 or an independent-quality pass. E81 tests the prepared worst-REAL objective next under
 unchanged full-AI and acceptance guards. Receipt: `evidence/e80_fit.json`.
+
+
+### E81 research rejection (2026-09-13)
+
+`/Volumes/LaCie/pixelproof-datasets/e81/correction.npz`, SHA256
+`66d6cab0785946ec029307f710eec1bb16ab9de6c0986ba72c32e000190d87ec`. Same E80 map, one worst-REAL objective fit. Old-REAL
+FPR8.54%/8.54%/8.33% passes pooled10%, but RR31.84–33.52% and covered accuracy<95%
+fail full TRAIN. Zero new E43 AI misses; some E80-only assigned rescues are lost. No
+runtime/DEV/E49 or serving/promotion. Result: `evidence/e81_fit.json`.

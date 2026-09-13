@@ -44,22 +44,22 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E80 failed source/selective TRAIN gates; E81 registered (2026-09-13)
+## Current checkpoint — E81 failed; supervised nonlinear features next (2026-09-13)
 
-The goal remains unmet. E80 preserved all13,785 AI TRAIN logits and zero new AI/REAL
-errors. Old-REAL FPR8.80%/9.79%/8.61% passes10%, yet RR remains35.44%/40.48%/34.96%
-and covered accuracy remains below95%. Both old/expanded TRAIN pass8/10 numeric checks
-per condition. No runtime/DEV/E49 permitted; E80 stays rejected.
+The goal remains unmet. E80/E81 preserve all E43 TRAIN AI logits and new-miss count0.
+E81 old-REAL FPR8.54%/8.54%/8.33% passes10%, but RR32.24%/33.52%/31.84% fails20%
+and covered accuracy stays below95%.8/10 numeric gates pass in each old/expanded condition.
+E81 slightly loses E80's assigned-transport rescues, while preserving the fixed E43 reference.
+Both candidates rejected; runtime/DEV/E49 not run. No hyperparameter or cutoff sweep.
 
-E79 complete:12,141x3x1640 forensic features,34 source replays exact,2.29GB peak driver
-memory. First attempt hit9000s; same-contract resume created80 missing parents in412.623s.
-Total measured loops exceed9412.623s, plus setup/validation; no2.5h completion claim.
-The registered single E81 fit reuses the exact E80 map and optimizes worst REAL source/condition BCE,
-with the same .5 REAL coefficient/L2.01 and full-AI confidence/correct-REAL constraints.
-All population/source/selective/runtime acceptance checks remain. No parameter/cut sweep.
+E79 complete:12,141x3x1640 forensic features,34 source replays exact. First attempt hit9000s;
+resume completed80 missing parents in412.623s. Total loops exceed9412.623s plus setup.
+Next prepare a supervised nonlinear representation in the exact E80 multimodal coordinates,
+then one separately registered E81-objective constrained head. Prior RBF/bilinear/REAL-only
+AE attempts are already recorded; this must not be presented as the first nonlinear study.
 
-811 Python tests pass. Legacy RR upstream-site mapping is unresolved; no new COCO
-admission or independent-final claim. E43/serving unchanged. No30-minute automation.
+811 Python tests pass. RR upstream lineage unresolved; no new COCO admission or independent
+final claim. E43/serving unchanged. No30-minute automation; MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
 
@@ -5508,3 +5508,26 @@ E81 single-fit contract is now frozen: `21dc8c72c4f9085a8cf08d2dbda7fa7e8e19e47d
 passed (existing Starlette/httpx deprecation). No E81 candidate or quality result yet. Run
 once from zero correction; no basis refit. Exact output namespaces and prior-report
 immutability are tested. All E80 acceptance/runtime gates retained.
+
+
+### E81 failed full TRAIN screen; nonlinear representation next (2026-09-13)
+
+One fixed-map worst-REAL fit completed in330.585s/50 iterations. Solver success; maximum
+constraint violation4.393e-10, minimum AI shift -5.329e-15, zero new AI/REAL errors, exact
+serialized replay. Old-REAL FPR8.5430%/8.5430%/8.3298%; expanded8.0042%/8.0705%/7.8187%.
+New MIDD.5871%/1.5656%/.7828%. Every population budget passes, but RR32.24%/33.52%/31.84%
+still fails20%, and expanded covered accuracy94.5844%/94.5498%/94.6857% fails95%.8/10
+numeric gates per old/expanded condition. No runtime/DEV/E49 permitted. Candidate SHA256
+`66d6cab0785946ec029307f710eec1bb16ab9de6c0986ba72c32e000190d87ec`; immutable report evidence/e81_fit.json.
+
+Relative to E80, TRAIN AI recall rises on clean/Q75 but falls slightly on assigned transport
+(99.0424% to98.9336%); E81 still loses zero E43-caught AI and exceeds the E43 reference.
+E80 is a rejected candidate, not a newly adopted reference; retain both results and do not
+hide that difference. The target and reference definition are unchanged.
+
+The source objective lowers RR errors but does not meet the gates. This does not prove
+linear-map infeasibility or justify a loss/rank/threshold sweep. Prior E63 already tested
+Gaussian RBFs in DINO-only PCA64; E70/E74 tested bilinear maps; E77 learned a REAL-only
+reconstruction residual. Next investigate a supervised nonlinear feature learner on the
+complete frozen E80 multimodal coordinates, followed by the same constrained E81 head.
+This differs from those prior mechanisms and needs its own representation/fit contracts.

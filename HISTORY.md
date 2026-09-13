@@ -7541,3 +7541,26 @@ E81 single-fit contract is now frozen: `21dc8c72c4f9085a8cf08d2dbda7fa7e8e19e47d
 passed (existing Starlette/httpx deprecation). No E81 candidate or quality result yet. Run
 once from zero correction; no basis refit. Exact output namespaces and prior-report
 immutability are tested. All E80 acceptance/runtime gates retained.
+
+
+### E81 failed full TRAIN screen; nonlinear representation next (2026-09-13)
+
+One fixed-map worst-REAL fit completed in330.585s/50 iterations. Solver success; maximum
+constraint violation4.393e-10, minimum AI shift -5.329e-15, zero new AI/REAL errors, exact
+serialized replay. Old-REAL FPR8.5430%/8.5430%/8.3298%; expanded8.0042%/8.0705%/7.8187%.
+New MIDD.5871%/1.5656%/.7828%. Every population budget passes, but RR32.24%/33.52%/31.84%
+still fails20%, and expanded covered accuracy94.5844%/94.5498%/94.6857% fails95%.8/10
+numeric gates per old/expanded condition. No runtime/DEV/E49 permitted. Candidate SHA256
+`66d6cab0785946ec029307f710eec1bb16ab9de6c0986ba72c32e000190d87ec`; immutable report evidence/e81_fit.json.
+
+Relative to E80, TRAIN AI recall rises on clean/Q75 but falls slightly on assigned transport
+(99.0424% to98.9336%); E81 still loses zero E43-caught AI and exceeds the E43 reference.
+E80 is a rejected candidate, not a newly adopted reference; retain both results and do not
+hide that difference. The target and reference definition are unchanged.
+
+The source objective lowers RR errors but does not meet the gates. This does not prove
+linear-map infeasibility or justify a loss/rank/threshold sweep. Prior E63 already tested
+Gaussian RBFs in DINO-only PCA64; E70/E74 tested bilinear maps; E77 learned a REAL-only
+reconstruction residual. Next investigate a supervised nonlinear feature learner on the
+complete frozen E80 multimodal coordinates, followed by the same constrained E81 head.
+This differs from those prior mechanisms and needs its own representation/fit contracts.

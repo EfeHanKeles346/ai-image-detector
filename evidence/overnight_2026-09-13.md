@@ -3,7 +3,7 @@
 The target remains unmet. E43 and serving are unchanged. E70/E71 passed TRAIN but failed
 separate consumed E66 development screens. E73/E74/E76/E77 failed TRAIN. No overnight
 candidate has opened E49 or qualified for promotion. E79 completed frozen DEAR-r
-features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 is registered for one fit.
+features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 also failed source/selective TRAIN guards.
 
 [E77 sonrası sonuç grafiği](overnight_progress_2026-09-13.png) · [Vektör sürümü](overnight_progress_2026-09-13.svg)
 
@@ -185,3 +185,14 @@ No CI rule or30-minute monitor/heartbeat automation was created or changed.
 
 [Current plan](../PLAN.md), [append-only experiments](../ml/EXPERIMENTS.md),
 [model card](../MODEL_CARD.md). All existing AI-preservation and final targets remain.
+
+
+## E81 measured follow-up
+
+E81 reuses the exact E80 map and changes the REAL-risk objective. Solver succeeds in50
+iterations/330.585s, zero new E43 AI misses/REAL errors. Old-REAL FPR8.5430%/8.5430%/8.3298%;
+RR32.24%/33.52%/31.84%; expanded covered accuracy94.5844%/94.5498%/94.6857%. The same
+two gates fail in all6 TRAIN cells. E80's assigned AI recall99.0424% becomes98.9336%;
+E43 reference retention still passes. No runtime/DEV/E49. [E81 receipt](e81_fit.json).
+Next hypothesis: supervised nonlinear features on the existing frozen multimodal map;
+separate registration required, no old-candidate or threshold retuning.
