@@ -25,9 +25,9 @@ report any failure. Keep raw datasets/model weights outside git; never force-pus
 User explicitly requests continuous active-session work, data acquisition when needed,
 experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
 Do not create30-minute polling/heartbeat automation. No promise of execution after an app or
-session interruption. E66 SIDD Small6.62GB acquisition is preregistered; prepare the grouped
-REAL+AI DEV admission concurrently, then freeze a new TRAIN-only model recipe before scoring.
-Whole E65 WIFD/RawNIND publishers stay diagnostic-only; E59 stays paused. Keep existing AI
+session interruption. E66 SIDD Small6.62GB acquisition and grouped REAL+AI admission are complete;
+E70 consumed that limited DEV and failed. E71 is now completing admitted TRAIN CLIP features.
+Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
 ## Current authorization — data acquisition allowed (2026-09-13)
@@ -36,13 +36,29 @@ The user explicitly authorizes continuing analysis/development and downloading n
 This supersedes the previous no-download restriction in historical sections below. Preserve
 AI retention, immutable E43/experiment evidence, protected roles and commit/push checkpoints.
 First audit source metadata/license/size and scene independence before acquiring pixels.
-Use existing external volume; no automatic full-corpus download. WIFD/RawNIND/SIDD remain
-candidates, not automatically admitted TRAIN or a balanced independent final. E59 stays parked.
+Use existing external volume; no automatic full-corpus download. WIFD/RawNIND are diagnostic-only;
+SIDD is consumed DEVELOPMENT. None is TRAIN or an independent final. Old E59 fits stay parked;
+the separately registered E71 may read its verified TRAIN cache without modifying old outputs.
 
-Power initially13%; user explicitly requested starting while connecting power. AC/charging
-subsequently confirmed (31% on the latest check); bounded E65 acquisition/audit completed.
+Power initially13%; user explicitly requested starting while connecting power. AC is confirmed;
+latest check80%, attached and not charging under system battery management. Long stages require
+AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E70 failed separate DEV; complementary representation next (2026-09-13)
+## Current checkpoint — E71 CLIP feature completion active (2026-09-13)
+
+All9,599 eligible E59 numeric chunks and their crop bodies passed validation; historical CLIP
+replay on30 source representatives is exactly equal. Complete the remaining2,031 TRAIN parents
+under E71. The fixed next model uses E67 original64 plus TRAIN CLIP64 coordinates with unchanged
+objective and AI/REAL decision constraints. Code is tested; feature completion is not yet claimed.
+Only a complete verified archive permits fit-contract freeze and one fit. Only all3 TRAIN REAL
+FPR<=10% plus zero new AI/REAL errors permits the separate consumed-E66 comparison.
+
+E70 margin diagnosis is complete:109 TRAIN condition views sit near the protection boundary;
+existing DEV losses include substantial reference margins. This is a possible next-mechanism
+clue, not a change to E71 or proof of external retention.754 Python tests pass. E49/serving stay
+unchanged. New SIDL/MIDD metadata leads are not admitted images. No heartbeat is configured.
+
+## Previous checkpoint — E70 failed separate DEV (2026-09-13)
 
 E70 passed TRAIN but failed the first E66 DEV screen: original REAL FPR 46.88% versus
 42.50% reference, Q75 30.63% versus42.50%; AI recall fell in both conditions, including
@@ -52,7 +68,7 @@ Preserve all failed candidates and scores. Assess a complementary pretrained rep
 and the role/resource conditions of eligible cached work; do not sweep the failed maps.
 739 tests passed. E43/serving unchanged; target remains unmet.
 
-## Current checkpoint — E65 diagnostic complete (2026-09-13)
+## Previous checkpoint — E65 diagnostic complete (2026-09-13)
 
 83 source files acquired (1.01GB), all decoded,0 matches under the fixed151,082-record screen;
 166 frozen E43 scores. WIFD false AI16.42% original/19.40% Q75; RawNIND18.75%/31.25%.
@@ -67,7 +83,7 @@ hypothesis is processing robustness using label-matched transforms, not camera/I
 Retain per-image AI replay constraints plus separate source-aware AI evaluation. No E49
 threshold/rank sweep, relaxed E64 guard, or automatic E59 restart.
 
-## Current checkpoint — E62–E64 complete; goal remains unmet (2026-09-10)
+## Previous checkpoint — E62–E64 complete; goal remains unmet (2026-09-10)
 
 Three preregistered recipes completed. E62/E63 reduce consumed E49 REAL FPR to35.8% original
 and46.8/46.7% Q75, but AI recall falls to93.8% original and95.1/95.3% Q75. Both fail AI retention

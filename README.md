@@ -4,13 +4,14 @@ PixelProof is a research system that looks for evidence consistent with AI gener
 official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
 It never certifies that an image is real.
 
-**Research checkpoint (2026-09-13):** E65 acquired and audited83 camera/RAW files (1.01GB)
-and measured frozen E43 on166 original/Q75 views. REAL false alarms: WIFD16.42%/19.40%,
-RawNIND18.75%/31.25%. This is a small REAL-only diagnostic, not an improved model or AI-retention
-proof. E62/E63 remain rejected; E64 remains TRAIN-stopped. E43 and serving are unchanged;
-E59 stays paused. E67/E68/E69 reduced TRAIN errors with zero new AI misses, but failed their REAL ceilings; no DEV scoring.
-E66 now has a consumed limited DEV population: 160 SIDD observations plus 160 local AI images. E70 passed TRAIN but failed separate DEV with AI losses; no E49 regression. All 739 Python tests pass; the existing web dependency audit remains failing.
-See [E65 findings](evidence/e65_diagnostic.md),
+**Research checkpoint (2026-09-13):** The target remains unmet. E70 passed training guards but
+failed the separate SIDD/local-AI development comparison: REAL false alarms46.88% original /
+30.63% Q75, with newly missed AI in both conditions. It is rejected; E43 and serving are unchanged.
+E71 is completing verified local CLIP TRAIN features for a new constrained correction; no E71
+model result exists yet. E64/E67/E68/E69 stopped at their failed training guards. Old E59 fits
+remain paused; E71 reads its verified cache under a separate contract.754 Python tests pass;
+the existing web dependency audit remains failing.
+See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
 
 ## Current scientific contract (2026-08-26)

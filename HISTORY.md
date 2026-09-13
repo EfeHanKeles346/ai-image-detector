@@ -6934,3 +6934,8 @@ Research refresh recorded in IMAGE_FORENSICS_REFERENCE: PiD residuals and MPFT m
 fine-tuning are possible distinct future mechanisms, neither implemented nor claimed reproduced.
 MIDD official share is accessible (20 sensor ZIPs, UI331.3GB); dataset terms and native/patch
 scene packaging unresolved, no image bytes downloaded. Public research tab closed.
+
+Documentation navigation checkpoint: README and PLAN opening status now identify active E71
+feature completion and rejected E70, mark older checkpoints as previous, and replace outdated
+SIDD acquisition/power/candidate-role wording with completed consumed-DEV roles and AC80% status.
+Historical experiment entries remain preserved. No scientific code or serving change.

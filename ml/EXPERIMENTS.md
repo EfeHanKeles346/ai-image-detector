@@ -5643,3 +5643,6 @@ release count/split reconciliation pending. This changes no model/data role, no 
 Literature/data refresh during E71: PiD and MPFT recorded as distinct unimplemented methods;
 QuAD already E46. MIDD release availability found, packaging/terms not admitted; no image
 acquisition or model inference from these sources. Existing E71 extraction continues unchanged.
+
+Current-status documentation refreshed for E71 feature completion; historical E70 and older
+results remain unchanged. This is a documentation update, not a new experiment outcome.
