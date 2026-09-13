@@ -4,14 +4,17 @@ PixelProof is a research system that looks for evidence consistent with AI gener
 official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
 It never certifies that an image is real.
 
-**Research checkpoint (2026-09-13):** The target remains unmet. E70 passed training guards but
-failed the separate SIDD/local-AI development comparison: REAL false alarms46.88% original /
-30.63% Q75, with newly missed AI in both conditions. It is rejected; E43 and serving are unchanged.
-E71 also failed consumed DEV: REAL FPR34.38%/38.13%, with2/1 newly missed AI views
-despite unchanged aggregate recall. E72 downloaded512 camera TRAIN originals (3.82GB);511 passed the protected-overlap/duplicate audit. E73/E74 preserved
-all TRAIN AI logits but failed REAL error targets; E75 features are complete; E76 reduced new-camera errors but failed old-REAL guards. E77 improved old-REAL errors to10.96%/12.38%/10.39% but failed its TRAIN guards; DEAR-r numerical parity passes; E79 is extracting its TRAIN features; E80 head is prepared with64 DEAR PCs plus its fixed mean-crop head response; not yet fitted. E64/E67/E68/E69 stopped at their failed training guards. Old E59 fits
-remain paused; E71 reads its verified cache under a separate contract.803 Python tests pass;
-the existing web dependency audit remains failing.
+**Research checkpoint (2026-09-13):** The target remains unmet. E70/E71 passed TRAIN
+but failed the consumed SIDD/local-AI development screen, including newly missed AI.
+E72 admitted511 audited camera TRAIN originals. E76/E77 preserve all TRAIN AI logits;
+E77's old-REAL FPR10.96%/12.38%/10.39% still fails TRAIN guards. Its source/slack audits
+identify concentrated RR errors and increased confidence on some remaining mistakes.
+
+DEAR-r numerical parity passes; E79 is extracting all12,141 TRAIN parents. E80's386-coordinate
+correction is prepared, not fitted. A worst-REAL objective helper (E81) is tested for conditional
+use after E80 results, with the same full-AI protection. No E49 access or serving change.
+Old E59 fits remain paused; E71 reused only verified cache under a separate contract.
+808 Python tests pass; the existing web dependency audit remains failing.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
 

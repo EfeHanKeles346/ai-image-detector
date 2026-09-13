@@ -148,12 +148,18 @@ also replay every view at batch8 with zero changes at both cuts and unchanged AI
 The six-image TRAIN visual diagnostic found a non-AI example only7.31e-9 below the AI cut;
 this adds a reproducibility guard, with no label or threshold adjustment.
 
+E81's conditional optimizer helper is prepared from the E77 slack diagnosis: minimize
+worst REAL source/condition BCE while all AI logits remain non-decreasing and correct-REAL
+decisions remain protected. Same REAL coefficient .5, L2.01 and SLSQP settings; no AI BCE
+reward. Synthetic gradient and conflicting-class tests pass. No TRAIN fit/contract yet;
+consider only after E80 results, retaining every E80 acceptance gate and frozen map.
+
 The optional E80 consumed-E66 implementation is prepared but not frozen/executed. It
 refuses failed TRAIN, preserves prior E43 pixels/scores/two-cut decisions, and requires
 all20 numeric DEV gates plus zero newly missed AI per source/condition. E66 remains
 consumed and dependent, never fresh final. E49 remains closed until that separate pass.
 
-805 Python tests pass (engineering evidence, not detection quality). The existing
+808 Python tests pass (engineering evidence, not detection quality). The existing
 Starlette/httpx deprecation remains. Completed CI34732736214 passed Python, web lint,
 type checks and tests; the existing web dependency audit failed. Raw images/features/
 weights stay external; code, compact evidence and MD checkpoints are committed/pushed.

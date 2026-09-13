@@ -7418,3 +7418,29 @@ infeasibility, require weaker AI constraints or justify changing labels/cuts. E8
 forensic representation remains the next measured test. No new fit, image, DEV/final or
 E79 feature read. Immutable receipts: evidence/e77_slack_contract.json and
  evidence/e77_slack_diagnostic.json; reproduction: e77_constraint_diagnostic.py.
+
+
+### E81 objective helper prepared conditionally, no TRAIN fit (2026-09-13)
+
+E77's frozen slack audit found increased logits on359/435/335 already-wrong REAL views,
+with RR dominating remaining errors. Prepare a conditional objective alternative while
+E79 runs: minimize worst REAL source/condition cut-centered BCE with parent-balanced
+within-group means. Keep the prior REAL coefficient .5 and L2.01; remove only the AI BCE
+reward. All13,785 AI TRAIN logits must still not decrease, including previously missed AI;
+correct-REAL decision guards stay unchanged. This focuses the loss on the user's REAL
+error objective while AI protection remains a hard constraint. It is a local constrained
+worst-group adaptation, not a reproduced literature result or a guarantee of generalization.
+Unlike E68's two class epigraphs and decision-only guards, this has one REAL epigraph and
+the stronger E73 full-AI-confidence bounds. SLSQP200/ftol1e-9/zero correction unchanged.
+
+Only the generic optimizer and synthetic gradient/conflicting-class tests are prepared.
+No E81 TRAIN representation, contract, scores or fit yet. Finish E80 first; consider the
+new objective only if actual E80 results still show the relevant REAL/source failure.
+If used, register one fit in the unchanged complete E80 map, no rank/seed/L2/cut sweep,
+and retain every E80 population,10-metric,selective and runtime gate. No DEV/final access
+unless the complete preceding gates pass. Prior failed candidates remain frozen.
+
+E81 preparation validation: three synthetic tests pass (finite-difference derivatives,
+worst-REAL improvement under all-AI guards, and refusal to sacrifice even missed AI in
+conflicting features). Full suite808 passed, existing Starlette/httpx warning. No production
+TRAIN fit/score was created. Current overview updated; earlier checkpoints remain historical.

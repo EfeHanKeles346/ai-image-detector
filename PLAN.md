@@ -60,7 +60,8 @@ projects2h7m and remains a failed2h resource probe. E79 explicitly allocates2.5h
 user overnight authorization before image scoring, retains6GiB/numeric limits, and is extracting
 all12,141 TRAIN parents. Classifier head not executed; no protected pixels. E80 now preserves
 the fixed official DEAR mean-crop head response alongside64 PCs:386 coefficients, not yet
-frozen/fitted. All acceptance gates unchanged.805 Python tests pass.
+frozen/fitted. All acceptance gates unchanged.808 Python tests pass. E81 objective helper is conditionally
+prepared; no TRAIN fit before E80 results.
 MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
@@ -5387,3 +5388,29 @@ release recipe; inspect code/weight terms and local cost before any download/exe
 Current CLS caches are insufficient. Post-hoc calibration paper requires target-domain
 assumptions and offers no unchanged-AI guarantee; no test calibration planned. Primary
 links and exact limitations are in IMAGE_FORENSICS_REFERENCE.md. E79/E80 unchanged.
+
+
+### E81 objective helper prepared conditionally, no TRAIN fit (2026-09-13)
+
+E77's frozen slack audit found increased logits on359/435/335 already-wrong REAL views,
+with RR dominating remaining errors. Prepare a conditional objective alternative while
+E79 runs: minimize worst REAL source/condition cut-centered BCE with parent-balanced
+within-group means. Keep the prior REAL coefficient .5 and L2.01; remove only the AI BCE
+reward. All13,785 AI TRAIN logits must still not decrease, including previously missed AI;
+correct-REAL decision guards stay unchanged. This focuses the loss on the user's REAL
+error objective while AI protection remains a hard constraint. It is a local constrained
+worst-group adaptation, not a reproduced literature result or a guarantee of generalization.
+Unlike E68's two class epigraphs and decision-only guards, this has one REAL epigraph and
+the stronger E73 full-AI-confidence bounds. SLSQP200/ftol1e-9/zero correction unchanged.
+
+Only the generic optimizer and synthetic gradient/conflicting-class tests are prepared.
+No E81 TRAIN representation, contract, scores or fit yet. Finish E80 first; consider the
+new objective only if actual E80 results still show the relevant REAL/source failure.
+If used, register one fit in the unchanged complete E80 map, no rank/seed/L2/cut sweep,
+and retain every E80 population,10-metric,selective and runtime gate. No DEV/final access
+unless the complete preceding gates pass. Prior failed candidates remain frozen.
+
+E81 preparation validation: three synthetic tests pass (finite-difference derivatives,
+worst-REAL improvement under all-AI guards, and refusal to sacrifice even missed AI in
+conflicting features). Full suite808 passed, existing Starlette/httpx warning. No production
+TRAIN fit/score was created. Current overview updated; earlier checkpoints remain historical.
