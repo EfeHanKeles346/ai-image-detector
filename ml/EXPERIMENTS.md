@@ -6449,3 +6449,22 @@ E85 preparation now verifies original E83 artifact hash and condition metadata; 
 condition gate helper matches old three-condition results exactly and rejects an old-
 condition failure even if the new condition passes. Focused tests pass. No E85/E86 fit
 or representation freeze yet; complete E84B features are required.
+
+
+### E85/E86 complete preparation while E84B runs (2026-09-13)
+
+E85 representation and E86 single-fit/consumed-DEV code are prepared, with no new
+representation/head contract or model scores. Same E82 seed82/architecture/optimizer/
+100epochs on four TRAIN conditions; E86 starts zero450 coefficients and keeps E81's
+worst-REAL objective. All18,380 AI views retain E43 logits; correct-REAL guards apply
+to all four conditions.80 numeric TRAIN checks cover old/expanded populations independently,
+plus separate MIDD budgets and full48,564-view runtime replay. Old-condition failures
+cannot be averaged away by the new condition.
+
+Only full TRAIN/runtime success may freeze E86 consumed E66 scoring. It verifies and
+reuses the exact complete E83 DEVELOPMENT feature cache, replays E43 scores and both
+cuts, locks scores before metrics, checks all20 numeric gates and zero new E43 AI losses,
+and also reports paired changes against E83. No new image inference or cache role change.
+832 Python tests pass. Checks include four-view parent/class weights, old decision-flip
+rejection, gate parity, immutable predecessor reports and stopping before DEV cache access
+when TRAIN fails. E84B feature extraction continues under its frozen contract.

@@ -105,3 +105,12 @@ export PIXELPROOF_DATA_ROOT=/path/to/pixelproof-datasets
 
 `watchdog.sh` uses `ml/.venv/bin/python` by default. `PIXELPROOF_PYTHON` can select another
 interpreter without editing the script.
+
+
+## Frozen aggregate progress plots
+
+`plot_overnight_progress.py` renders the historical E77 checkpoint.
+`plot_e83_checkpoint.py` renders the later E83 TRAIN/consumed-DEV comparison, including
+newly missed AI counts. Both read committed aggregate receipts only, never dataset images
+or final scores. Each writes PNG/SVG and input/output hash provenance under `evidence/`.
+These are descriptive checkpoints, not independent final evidence.

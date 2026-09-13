@@ -116,3 +116,23 @@ ceiling, so no regression runner/contract exists. Do not rerun or overwrite. All
 block network connects before third-party imports and use immutable bound inputs.
 49 focused tests pass; source code, registration and evidence remain for reproduction
 review, not a new evaluation opportunity. Frozen historical scripts remain unchanged.
+
+
+### E80–E86 current overnight continuation (2026-09-13)
+
+| Modules | State and boundary |
+|---|---|
+| `e80_fit`, `e81_fit` | Frozen TRAIN rejections; same multimodal map, different declared objectives |
+| `e82_representation`, `e83_fit` | Supervised64 features and constrained head; full TRAIN/runtime pass |
+| `e83_development`, `e83_diagnostic` | Consumed DEV rejected despite REAL improvement; exact read-only component replay |
+| `e84_features` | Probe stopped on native source-key schema; original code/64 chunks retained |
+| `e84_sources` | All12,141 original TRAIN bodies verified,1,000 Parquet bodies materialized locally |
+| `e84b_features` | Same encoder/transform with verified paths; probe passed, full social-view extraction active |
+| `e85_data`, `e85_representation` | Prepared four-condition pairing and same fixed supervised recipe; not frozen/fitted |
+| `e86_gates`, `e86_model`, `e86_fit`, `e86_development` | Prepared80-check TRAIN screen and consumed cached DEV; no fit or DEV contract yet |
+
+Use the repo-root module form with the external environment:
+`PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets PYTHONPATH=ml/src:ml ml/.venv/bin/python -m experiments.<module> <stage>`.
+Inspect existing receipts and active processes first. Do not rerun completed `freeze`,
+fit or DEV stages. E84B `extract` may resume missing fixed windows only when the existing
+execution is no longer active. No E49 access, serving change or promotion in this chain.
