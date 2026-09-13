@@ -5,6 +5,8 @@ separate consumed E66 development screens. E73/E74/E76/E77 failed TRAIN. No over
 candidate has opened E49 or qualified for promotion. E79 is extracting frozen DEAR-r
 features for all12,141 admitted TRAIN parents; E80 is prepared and waits for completion.
 
+[E77 sonrası sonuç grafiği](overnight_progress_2026-09-13.png) · [Vektör sürümü](overnight_progress_2026-09-13.svg)
+
 ## Comparable TRAIN results
 
 These rows share7,035 REAL/4,595 AI parents, three conditions and the frozen E43 AI cut.

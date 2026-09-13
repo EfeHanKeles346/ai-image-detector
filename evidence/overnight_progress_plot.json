@@ -1,0 +1,109 @@
+{
+  "state": "aggregate_evidence_plot",
+  "inputs": {
+    "evidence/e64_fit.json": "8274e6c863e2db25f6949d01f729f7e5ce56d9d24369fa284c89e3e87f9deabe",
+    "evidence/e67_fit.json": "0f9220724b8654e864f81b57c18a0a339a7fbc86ab47e8f4ee87db612dbacb88",
+    "evidence/e68_fit.json": "8e1cc7db285ebf32b0f0161c0f820a1e8d75ad85d3f9997546e6f63c259416cb",
+    "evidence/e69_fit.json": "f4a41331cc49612b43f6876c7aeda28dd5a1ec37b092676c093fd95edea768e7",
+    "evidence/e70_fit.json": "dbe72662801780e1781e7ebc3a517729d6298cfe7bba6ea9dd5f930fcabd4485",
+    "evidence/e71_fit.json": "a1310442e68a47d21120bcea3d7d711a1e54750e699170838f557f3d46644808",
+    "evidence/e73_fit.json": "612de02dd347c3a552d8544f53c4bdf7e88d08d1cd87502458a4b3d711fa0cf0",
+    "evidence/e74_fit.json": "f0b81c09aa0a219e3df99c81700ffedaa85321b2d969c6f6486d627fa594455e",
+    "evidence/e76_fit.json": "212ce601e951ff8e66b3400066ae1190ee155dc80ad58cf646582cb4b1a86752",
+    "evidence/e77_fit.json": "b39e9ada73c78e45d6cb8ea3b7a81492beb2c50a009a2acb09987276f7400c1d",
+    "evidence/e70_development.json": "1fe93fc1d18675fa65c6218cd57d126e66fc3aa596835cf961664121ae91a018",
+    "evidence/e71_development.json": "53bcf8a154b0809d7f0d55b50881ab8c83709ce0f09344b85888209bfe91551a"
+  },
+  "script_sha256": "c62f20d4ec40a520199f9f561029eaed7309a527cbfa37bda058397c0b6db7f7",
+  "outputs": {
+    "evidence/overnight_progress_2026-09-13.png": "53f335b4fd79e4e8135bda49995bd92aaff44b49cdd7452b5617db288ecb55c7",
+    "evidence/overnight_progress_2026-09-13.svg": "2fc852f93afb8ec242f5bc052920b4ce908855425e97916526c0e4c2af9aca0a"
+  },
+  "new_model_scores": 0,
+  "e49_read": false,
+  "train_real_rates_percent": [
+    [
+      15.067519545131486,
+      16.13361762615494,
+      13.802416488983654
+    ],
+    [
+      11.897654584221748,
+      13.432835820895523,
+      11.32906894100924
+    ],
+    [
+      10.248756218905472,
+      11.32906894100924,
+      9.481165600568586
+    ],
+    [
+      10.817341862117981,
+      11.613361762615494,
+      10.220326936744847
+    ],
+    [
+      10.518834399431414,
+      11.769722814498934,
+      10.135039090262971
+    ],
+    [
+      8.073916133617626,
+      8.742004264392325,
+      7.292110874200426
+    ],
+    [
+      6.993603411513859,
+      7.761194029850746,
+      6.823027718550106
+    ],
+    [
+      14.57000710732054,
+      15.835110163468372,
+      13.347547974413645
+    ],
+    [
+      13.290689410092396,
+      14.356787491115849,
+      12.139303482587065
+    ],
+    [
+      13.276474769012085,
+      14.371002132196162,
+      12.253020611229566
+    ],
+    [
+      10.959488272921108,
+      12.380952380952381,
+      10.3909026297086
+    ]
+  ],
+  "dev_real_rates_percent": [
+    [
+      42.5,
+      42.5
+    ],
+    [
+      46.875,
+      30.625000000000004
+    ],
+    [
+      34.375,
+      38.125
+    ]
+  ],
+  "dev_new_ai_misses": [
+    [
+      0,
+      0
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      2,
+      1
+    ]
+  ]
+}

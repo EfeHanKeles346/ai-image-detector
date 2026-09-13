@@ -7360,3 +7360,14 @@ research-uncertain, not a confident REAL decision. Before E80 freezes, add runti
 after a provisional TRAIN pass: all views in batch8, max score error<=1e-6, zero decision
 changes at both cuts and all-AI minimum correction shift>=-1e-8. New test ensures tiny
 numeric error cannot hide a cut crossing. No cut or candidate recipe changed.
+
+
+### Aggregate overnight figure prepared and visually verified (2026-09-13)
+
+Rendered PNG/SVG directly from committed fit/development receipts. Upper panel fixes
+the7,035 old REAL population even for expanded E76/E77 fits; lower panels show consumed
+E66 REAL errors and newly missed AI separately. Marks TRAIN-passing but DEV-failed E70/E71.
+No new score or image read. Figure footer states E79 active/E80 unmeasured at this checkpoint.
+Source/output hashes and plotted values: `evidence/overnight_progress_plot.json`; reproducible
+renderer: `ml/tools/plot_overnight_progress.py`. Visual inspection confirmed legible labels
+and no clipped chart content. This plot is descriptive; no independent-quality claim.
