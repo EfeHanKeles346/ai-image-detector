@@ -142,3 +142,6 @@ quarantine with source/CRC/SHA/range bounds. No decode, admission or model scori
 
 E88: prepared `e88_audit freeze|audit` reuses the existing isolated RAW renderer,
 protects original/derived identities and resolves SID duplicate components before admission.
+
+E86 consumed regression: prepared `e86_regression freeze|score|report`; every E49
+access requires the complete TRAIN/runtime and E66 DEV pass. Not frozen/executed yet.

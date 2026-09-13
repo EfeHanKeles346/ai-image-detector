@@ -59,7 +59,7 @@ class-associated; this is a coverage limitation, not a demonstrated cause. Prese
 running E84B recipe and prepared E85/E86 sequence. SID/PolyU/RENOIR are future source
 leads only; inspect scene grouping and original-capture provenance before any acquisition.
 
-839 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
+844 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
 RR upstream lineage unresolved; MIDD/DEAR research restrictions persist. E49 unopened,
 E43/serving unchanged. No30-minute automation; active experiments and MD/git checkpoints continue.
 
@@ -5856,3 +5856,33 @@ renderer/runtime verified against E65. Complete original-body and rendered-image
 screen, transitive internal grouping, no score/brightness filtering, no refill. One-hour
 stage with120s per RAW subprocess; all128 accounted for. No TRAIN admission until audit
 receipt/manifest completes. E84B extraction and the prepared E85/E86 sequence stay fixed.
+
+
+### Conditional E86 consumed-regression implementation prepared (2026-09-13)
+
+`e86_regression.py` now prepares freeze/score/report stages, but none has run. It first
+validates immutable E86 TRAIN/runtime and consumed E66 DEV passes before any E49 manifest,
+score or image access. A failed/new-AI-loss DEV state is blocked by focused tests.
+Only after passing does it bind the existing4,000-view E49 manifest and E43 baseline.
+It reuses exact E84/E83 encoders, E43 crops on already-realized original/Q75 images,
+and frozen E86 runtime batches8; no second social transform or model refitting.
+
+Immutable per-window chunks retain complete DINO/CLIP/DEAR arrays, image/order/role/
+contract bindings and float64 score byte hashes. Resume requires original image SHA,
+finite feature/hash checks and exact model/reference replay. E43 tolerance5e-5 still
+requires zero changes at both cuts. Fixed two-hour/6GiB resource ceiling, no downloads.
+All scores lock before metrics. All20 fixed numeric gates, lower REAL FPR, pooled/source
+AI no-loss plus zero newly missed E43 AI per source/condition remain mandatory. Same
+E63 paired source-cluster interval construction,20,000 draws/label, seed86 fixed,
+Bonferroni4 bounds. This remains consumed regression, never independent final/promotion.
+
+Five focused tests pass: two pre-access DEV failures, tiny cut crossing, float64 hash
+integrity below float32 precision and paired interval direction. No E49 data was read;
+only implementation mechanics used synthetic values. E85/E86 remain unfitted while
+E84B extraction continues. E88 RAW audit continues without any decoder failure so far.
+
+Two fixed E87 hash-order examples (first per camera) were viewed solely for rendering QA:
+Sony00108 and Fuji00120. Both open as recognizable scenes; no claim of authenticity
+from appearance, no brightness selection, settings change, filtering or scores. Their
+actual rendered sizes4256x2848 and6032x4032 differ from commonly quoted cropped SID
+sizes; the pinned full-size LibRaw output is the audited input, not an inferred crop.
