@@ -2387,3 +2387,21 @@ DEVELOPMENT, never TRAIN or a fresh final; its admission snapshot stays immutabl
 post-score threshold, interaction-map or source-specific route adjustment is allowed.
 Next assess a complementary pretrained representation with the same E43-preserving
 TRAIN/DEV rules, reusing eligible cached work where possible. Target remains unmet.
+
+### 2026-09-13 — SIDL research lead, not admitted or downloaded
+
+[SIDL official page](https://sidl-benchmark.github.io/) and
+[AAAI paper](https://ojs.aaai.org/index.php/AAAI/article/view/32257) describe physical lens
+contamination pairs on iPhone12Pro. Research/education use is permitted; commercial use or
+redistribution requires author permission. This can support optical-degradation research,
+not broad camera coverage or an independent final by itself.
+
+The official [full-resolution TRAIN folder](https://drive.google.com/drive/folders/1chLRpBtGzTkAX_7v-ycPgL_X1-mezv2r)
+shows `train_full.tar`, rounded25.15GB, and six alternative split pieces.
+[RAW folder](https://drive.google.com/drive/folders/1FTbgb43Eq_CTYTb_gTowQ8bPnPh6qftg) and
+[metadata](https://drive.google.com/file/d/1o_O3ua5zhOv6vrsF6KwI9O19E5axUXED/view) are linked
+by the authors. Browser metadata preview confirms sample4032x3024 linear ProRAW records,
+iOS17.5.1 and applied denoising. No image was downloaded/scored, no complete metadata
+inventory is claimed. Exact archive bytes/hash, RGB derivation, complete scene mapping and
+protected-overlap audit remain prerequisites. Keep paired conditions within whole scenes;
+never mix the author's validation/test scenes into TRAIN. No source role assigned yet.

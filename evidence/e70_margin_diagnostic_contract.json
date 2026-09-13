@@ -1,0 +1,34 @@
+{
+  "contract_sha256": "d526bba8860410980f8c22917af86f3448d15e418e3805c7a55c9dffeae0d9ac",
+  "fit_contract_sha256": "fe936149f2659133d910c8a66e0953d5e1f19c5dcbe97b5037a60e7d553cbcda",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e70_margin_diagnostic.py": "aafa698986bd694891f3769e20135aec21ce25a556e30280c4ae3620539eb0cc",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_features.py": "7c6b6da630425a8879ccb16f7ee8c32538e6e64405335487ee58e0a33d7a6831",
+    "/Volumes/LaCie/pixelproof-datasets/e70/correction.npz": "2a82d30c86b975a0293d2ab0af99345240d99905fffbd9c403530d0a18db0fd2",
+    "/Volumes/LaCie/pixelproof-datasets/e70/dev_report.json": "1fe93fc1d18675fa65c6218cd57d126e66fc3aa596835cf961664121ae91a018",
+    "/Volumes/LaCie/pixelproof-datasets/e70/dev_scores.json": "9cf625b6f2123c5a6bd421f37d6415030cc386ccdc7cd8b809a6dba36b879521",
+    "/Volumes/LaCie/pixelproof-datasets/e70/fit.json": "dbe72662801780e1781e7ebc3a517729d6298cfe7bba6ea9dd5f930fcabd4485",
+    "/Volumes/LaCie/pixelproof-datasets/e70/fit_contract.json": "fe936149f2659133d910c8a66e0953d5e1f19c5dcbe97b5037a60e7d553cbcda"
+  },
+  "limitations": "Descriptive post-fit analysis; TRAIN margins cannot certify unseen AI retention. Dependent DEV observations and small counts preclude causal/generalization claims.",
+  "max_seconds": 600,
+  "near_boundary_logit_distances": [
+    1e-06,
+    0.01,
+    0.1,
+    0.5
+  ],
+  "quantiles": [
+    0,
+    0.01,
+    0.05,
+    0.25,
+    0.5,
+    0.75,
+    0.95,
+    0.99,
+    1
+  ],
+  "scope": "Describe all previously caught AI margins by TRAIN condition/source and consumed E66 DEV condition/source. Report every existing DEV new AI miss score/margin. No new candidate, fit, threshold selection, image extraction, E49 access or E71 score access.",
+  "state": "E70_fixed_margin_diagnostic_registered"
+}

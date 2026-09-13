@@ -73,3 +73,10 @@ Detailed immutable results: [E67 fit](e67_fit.json), [E67 TRAIN diagnosis](e67_t
 Each row has 160 REAL and 160 AI observations. Both models pass12/20 numeric gates;
 E70 fails the separate AI-retention requirement. No E49 regression is allowed. E66 is
 now consumed DEVELOPMENT; its initial unscored admission is a historical record.
+
+E70 follow-up diagnosis:24/40/45 TRAIN AI views have logit margin<=1e-6 after correction,
+with no TRAIN AI losses. Several existing DEV misses had appreciable reference margins,
+so numeric roundoff does not explain all failures. Full fixed diagnostic:
+`e70_margin_diagnostic.json`. E71 is actively completing cached CLIP TRAIN features;
+all9,599 old chunks verified and30-source historical encoder replay exactly equal.
+E71 feature/model/conditional DEV code pushed at1977647; no E71 fit result yet.

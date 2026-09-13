@@ -6885,3 +6885,41 @@ The749-test suite passed in14.33s before these3 additional DEV tests.
 E71 preregistration/code checkpoint validation:752 Python tests passed in13.11s,
 including all13 new E71 feature/model/DEV tests. Compile and diff checks passed.
 Feature extraction remains active; model and DEV contracts are not yet frozen.
+
+### 2026-09-13 — E70 margin diagnostic plan during E71 extraction
+
+E70 meets training decision retention but fails consumed E66 AI retention. Before inspecting
+per-image margins, register a descriptive diagnostic of the fixed E70 artifact: all previously
+caught TRAIN AI by source/condition, logit-margin quantiles0/1/5/25/50/75/95/99/100%, counts
+within1e-6/.01/.1/.5 of the fixed AI cut, and the already-locked consumed DEV margin groups
+and all existing new AI misses. No candidate fitting, new image inference, E49 or E71 scores.
+This asks whether decision-only constraints leave training AI close to the boundary; it cannot
+certify a causal explanation or unseen-image retention. New diagnostic code/tests prepared.
+
+Literature refresh: QuAD is already represented in E46 (quality-conditioned Gaussian lost the
+conservative CAL selection on AUC), so it is not a new untried fix. Its full method aggregates
+retrieved near-duplicates, distinct from single-image inference. ForensiCam and SOCRatES retain
+previous access/terms restrictions. New SIDL lead is research-only paired iPhone12Pro ProRAW,
+300 scenes,1588 contaminated/clean pairs; full-resolution/RAW links and derivation provenance
+still need inspection before admission. No SIDL or other new image has been downloaded.
+
+E70 margin diagnostic completed: previously caught TRAIN AI4508/4491/4475 by clean/
+assigned-transport/Q75; zero new TRAIN misses, but24/40/45 views now lie within1e-6 logit
+units of the decision cut (minimum about1e-7). Lower1% margins moved0.88384→0.37102,
+0.83336→0.05094,0.50470→0.00605; mean shifts-0.78165/-0.95040/-0.83261.
+These109 are condition views, not necessarily109 unique parents. Existing consumed DEV
+misses remain4/3, with old margins0.0255–1.5608 original and0.1355–1.1134 Q75. Therefore
+floating-point equality alone cannot explain the failures; some substantial corrections cross
+formerly comfortable margins. This motivates investigating preservation of confidence/margins,
+but does not prove it will reduce REAL false positives or protect unseen AI. E71 stays frozen.
+No new fit, image inference, E49 or E71 score access occurred;2 focused diagnostic tests passed.
+
+SIDL official Drive folders and metadata preview are accessible. The full training archive is
+listed as25.15GB (rounded UI size), with six alternative split pieces. Visible metadata examples
+confirm iPhone12Pro/iOS17.5.1,4032x3024 linear ProRAW and applied noise reduction; do not describe
+these as untouched Bayer RAW or native camera JPEG. Metadata was inspected, no image downloaded
+or scored; exact archive hash/size, RGB rendering provenance and grouped inventory remain pending.
+Research tabs closed. Personal/location fields from publisher metadata are not copied to docs.
+
+E70 margin diagnostic verification:754 Python tests passed in14.82s; diff/compile clean.
+The diagnostic and locked outputs are ready for commit; active E71 extraction unchanged.

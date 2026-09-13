@@ -5054,3 +5054,17 @@ conditional DEV parity/denial tests added next. No heartbeat or scheduled checki
 
 E71 prepared-code verification complete:752 Python tests passed, compile/diff clean.
 Commit/push this preregistration checkpoint while the verified feature job continues.
+
+During E71 feature completion, run one separately hashed E70 post-fit margin diagnostic:
+fixed TRAIN margins plus existing consumed DEV scores, no new candidate or image inference.
+Use preset quantiles and boundary distances; no tuning from the result. QuAD is already an
+E46 prior, not a new candidate. Inspect SIDL as a research-only iPhone12Pro optical-degradation
+lead; no download/admission until full-res provenance, access and group split are verified.
+
+E70 fixed-margin diagnosis completed:109 condition views at the near-active1e-7 protection
+margin; existing DEV losses include substantial-margin AI. Confidence/margin preservation
+is a justified future mechanism to examine after E71's fixed result, not a threshold fix or
+permission to relax REAL gates. Record any new objective/constraint as a separate experiment.
+
+Margin diagnostic checkpoint:754 tests passed; commit/push completed evidence and continue
+E71 extraction. SIDL next read is metadata-only for exact grouping/provenance inventory.

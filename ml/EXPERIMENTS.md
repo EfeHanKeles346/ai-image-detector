@@ -5620,3 +5620,19 @@ TRAIN/DEV CLIP aggregation and failed-TRAIN denial are tested. No DEV scoring ye
 
 E71 code checkpoint validation complete:752 Python tests passed in13.11s, including13
 new E71 tests; compile/diff checks passed. No candidate score exists at this checkpoint.
+
+E70 post-fit margin diagnostic registered in plan while E71 features run: fixed TRAIN and
+already-consumed DEV score margins only, quantiles0/1/5/25/50/75/95/99/100%, near-boundary
+counts1e-6/.01/.1/.5. Keep every previously caught AI, disclose existing new DEV misses;
+no new fit/view/threshold search or E49/E71 score access. TRAIN margin erosion, if observed,
+is descriptive and does not alone explain generalization.
+
+E70 margin diagnostic complete:24/40/45 previously caught TRAIN AI views sit within1e-6
+logit units of the fixed cut; zero training misses. Lower1% margins before→after are
+0.88384→0.37102 clean,0.83336→0.05094 assigned transport,0.50470→0.00605 Q75.
+The109 boundary views are not109 independent parents. Existing consumed DEV misses4/3
+include original E43 margins up to1.5608/1.1134, so this is not merely float rounding.
+Potential next mechanism: protect confidence away from the boundary, subject to unchanged
+REAL/AI gates; not implemented or selected here, no causal guarantee. E71 unchanged.
+
+Margin diagnostic code verification:754 Python tests passed in14.82s, compile/diff clean.
