@@ -5729,3 +5729,14 @@ EXIF capture-second links form transitive components. Propagate protected matche
 whole component; keep one deterministic representative, no replacement. Scene independence
 remains unverified. Three focused transitivity/time-link tests passed; full suite765passed.
 Audit freeze waits for complete acquisition receipt. E71 DEV failure evidence is now checkpointed.
+
+
+E73 confidence-preservation code prepared and4 focused tests passed: caught and missed AI
+both constrained; a feasible toy fit reduces REAL errors while keeping AI logits; protected
+REAL handling and exact copied-basis/zero-weight reset verified. Freeze and run one fixed fit.
+E72 first download execution hit a transient Hynix connection timeout after verified members;
+ISOCELL/Sony128 each completed while the worker pool settled. Resume the identical frozen
+selection/code using existing CRC/SHA receipts; no quota or sensor substitution.
+
+E73 contract frozen; one full-confidence TRAIN fit active. Full suite769passed/12.32s,
+with the same existing deprecation warning. No MIDD or DEV data enters this fit.
