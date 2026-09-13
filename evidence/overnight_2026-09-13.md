@@ -352,3 +352,23 @@ DEV/final. Existing E85/E86 data and recipe remain unchanged. Decode/protected-o
 and scene checks must be separately registered before any TRAIN admission. Selection
 uses no image content or detector score; no refill after duplicate/quality quarantine.
 This adds a documented non-JPEG capture route, not a promised improvement.
+
+
+### E87 bounded SID RAW acquisition frozen (2026-09-13)
+
+Contract SHA256 `748dc0b3e18c93d9e09441fcc8f8f7a64ca02aef5484512b93e1dcfad1e4d5b2` selects64 Sony and64 Fuji original long-exposure
+references from the publisher's TRAIN scene lists by SHA256(E87|filename).128 RAW bodies
+require4,851,194,880 bytes; exact member ranges plus directory allowance3,384,272,676 bytes.
+One worker, AC,30GiB free reserve,90min per execution, HTTP206/If-Match, ZIP CRC/length/SHA,
+verified completed-member resume, no full-archive fallback. Five focused tests pass for
+order/repeated-burst invariance, test-split rejection, repeated-scene rejection and source URL.
+
+Role remains QUARANTINE_FOR_POSSIBLE_RESEARCH_TRAIN. No decode or classifier scoring in
+acquisition; no refill and no automatic TRAIN admission. Entire SID publisher is reserved
+from fresh DEV/final. Research source/license limitations remain as recorded. RAW originals
+may themselves use camera compression; future lossless RGB refers to our output encoding,
+not a claim of pristine/unprocessed sensor data. Active E84B and prepared E85/E86 are
+unchanged. Separately register fixed rendering and protected overlap/scene audit next.
+
+E87 implementation verification: full Python suite837 passed in18.00s; one existing
+Starlette/httpx deprecation warning. No experiment runtime dependency was changed.

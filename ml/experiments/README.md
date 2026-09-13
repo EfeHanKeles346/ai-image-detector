@@ -136,3 +136,6 @@ Use the repo-root module form with the external environment:
 Inspect existing receipts and active processes first. Do not rerun completed `freeze`,
 fit or DEV stages. E84B `extract` may resume missing fixed windows only when the existing
 execution is no longer active. No E49 access, serving change or promotion in this chain.
+
+E87: `e87_acquisition freeze|download` acquires128 fixed SID long-RAW originals into
+quarantine with source/CRC/SHA/range bounds. No decode, admission or model scoring.

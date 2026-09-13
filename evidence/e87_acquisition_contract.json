@@ -1,0 +1,35 @@
+{
+  "camera_counts": {
+    "Fuji": 64,
+    "Sony": 64
+  },
+  "contract_sha256": "748dc0b3e18c93d9e09441fcc8f8f7a64ca02aef5484512b93e1dcfad1e4d5b2",
+  "e49_reads": 0,
+  "image_scores_used_in_selection": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/sid_archive_inventory.json": "7b58ea528f33c33e370ab43d4718a653070dab8b08c3fe1285a8b30753769b66",
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/sid_metadata_inventory.json": "a7414bb9b72d6ea4be22f754a9884f5e0ebf8c1f4c38ab44f5b485cc062b7286",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e72_acquisition.py": "cfb96e3f0100ff5ab453fdd6afd1d8d72931db90813bd9ae1a39aa8fe6f30cd1",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e87_acquisition.py": "01f2eba53598cff81ecd6de3cbf77bb7b88ea62ec3ae315d5b6b6138b4373ec2",
+    "/Volumes/LaCie/pixelproof-datasets/source_research/sid_metadata/Fuji_archive.json": "ca718af8848195a0226dd15501c2a52738fbd2bbdfbfca45cc37c96c29dbd601",
+    "/Volumes/LaCie/pixelproof-datasets/source_research/sid_metadata/Fuji_train_list.txt": "e2d7ebb92d78204b6c389bb683a272341a4c284102344c1a52bc364c77d97ab8",
+    "/Volumes/LaCie/pixelproof-datasets/source_research/sid_metadata/LICENSE.md": "9b3c09ce0f8db2348293d8b70c2f45d3c9a0afe6ea8b0180cfa1cd6cebc9b506",
+    "/Volumes/LaCie/pixelproof-datasets/source_research/sid_metadata/README.md": "ee1261320e9870c7bd5ac4939b8ae66b891b2e2b049f9cea13bdc18202b23d5d",
+    "/Volumes/LaCie/pixelproof-datasets/source_research/sid_metadata/Sony_archive.json": "4aa44f6b796100bb27e897912c9715af861028951757b58cf5ec8a2f0907e114",
+    "/Volumes/LaCie/pixelproof-datasets/source_research/sid_metadata/Sony_train_list.txt": "96647f5eae580bc026c12d889276d7e8ca4fdbd32a024b5f7ae9ef83fe0ace65"
+  },
+  "license": "Official pinned SID README states MIT; LICENSE refers to software/documentation. Keep source/citation and explicit scope limitation. Research acquisition only, no redistribution/serving.",
+  "limits": "RAW originals still have camera processing and may embed JPEG previews. A future decoded RGB must come from RAW sensor data with documented rendering, never embedded preview or model output. Filename groups do not establish scene independence across cameras or source transfer.",
+  "max_seconds": 5400,
+  "model_scoring_allowed": false,
+  "next": "Separately freeze deterministic original-RAW rendering and complete protected-overlap/scene audit before TRAIN admission. Whole SID publisher reserved from fresh DEV/final including unselected and upstream val/test members. Existing E84B/E85/E86 remain unchanged.",
+  "range_budget_bytes": 3384272676,
+  "raw_bytes": 4851194880,
+  "resource": "One download worker, exact206/If-Match and ZIP CRC/length/SHA. AC,30GiB free reserve, 90min per execution. Reuse verified completed members; no full archive fallback.",
+  "role": "QUARANTINE_FOR_POSSIBLE_RESEARCH_TRAIN",
+  "selected": 128,
+  "selection": "64 per camera by SHA256(E87|filename), one published TRAIN long reference per filename scene. No image content/scores, short bursts, official validation/test or network outputs. No refill.",
+  "state": "E87_SID_original_RAW_acquisition_registered",
+  "training_allowed": false
+}
