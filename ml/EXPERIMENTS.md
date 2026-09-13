@@ -6379,3 +6379,16 @@ one constrained head. Preserve every old and new AI-view E43 confidence, correct
 protection, all absolute gates and runtime replay. Additional transport coverage is a
 hypothesis; it is not guaranteed to recover the original AI miss or generalize beyond E66.
 No representation/head has yet been frozen or fitted for this extension.
+
+
+### E84 transport extraction frozen before probe (2026-09-13)
+
+Contract `41604833e4b2d809d8906949c973227e26bc29ca0696627b8190d51b79161dad`. All12,141 original TRAIN parents, one exact social1080/JPEG75 view
+each, preserving original three-condition caches. Fixed eight-parent windows; last five
+views padded to eight during encoding then padding removed. DINO/CLIP/DEAR frozen.
+No new-view classifier scores. Before full run:34-source old-clean parity,16 hash-selected
+windows/128 parents for measured cost, one repeated-window parity,6GiB MPS budget.
+Full encoding estimate must fit10,800s; AC/20GiB reserve and immutable restartable chunks.
+Interrupted probe may replay the same128 views for cost measurement; existing chunks
+require exact body/features and are never overwritten. Full run only fills missing chunks.
+Three transport/order/role/corruption tests and all823 Python tests pass. Probe not yet run.
