@@ -2447,3 +2447,19 @@ all four embedded LICENSE.txt bodies match CC BY-NC-SA4.0. Total directory/licen
 range transfer874,873B; image members read0. Separate official test and denoised paths
 are excluded from any proposed TRAIN acquisition. Next: bounded score-blind original
 selection, per-member integrity/resume and scene/overlap audit before TRAIN admission.
+
+
+### E72 bounded MIDD research TRAIN acquisition plan (2026-09-13)
+
+Freeze128 SHA256(E72|filename)-ranked publisher-original TRAIN JPEGs per preselected
+Hynix_SL846/ISOCELL_3P9/Sony_IMX258/OmniVision_OV32A sensor:512 members,
+3,821,581,226 uncompressed original bytes. No reserve/refill, official test or denoised
+partners. Selection uses only filenames/metadata; no detector scores or content filtering.
+Two workers,90min execution budget, AC and20GiB free reserve. Pinned archive ETags,
+If-Match exact206 ranges, member ZIP CRC/length and SHA256 receipts, verified member resume.
+Bulk fallback rejected before reading its body. Code's8 focused tests passed, including
+wrong range/ETag, truncation, excess transfer, entry identity and test/denoised/path exclusion.
+All images initially QUARANTINE; separately freeze canonical decode/overlap audit including
+E52/later reserves/E65 and consumed E66 before TRAIN admission. Unknown filename scene links
+are not independence; whole MIDD publisher excluded from DEV/fresh final. Research license
+CC BY-NC-SA4.0, no automatic serving eligibility. E71 recipe/population stays frozen.

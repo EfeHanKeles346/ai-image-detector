@@ -1,0 +1,33 @@
+{
+  "contract_sha256": "4bec68d845e228e3330be9446920a522b7253f3a605d51e8bbff51d9eb1fd0f1",
+  "image_scores_used_in_selection": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/midd_catalog_lead.json": "f44ae571b032298b55d548c34a6b38b42aee25e3ff5637c6f6f716d495a7e887",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e72_acquisition.py": "cfb96e3f0100ff5ab453fdd6afd1d8d72931db90813bd9ae1a39aa8fe6f30cd1",
+    "/Volumes/LaCie/pixelproof-datasets/research/midd/Hynix_SL846_catalog_v1.json": "d790ffbdb47fbdd15f92f3a398f3b3fe2536138667ac84c66e27f71dca60aea9",
+    "/Volumes/LaCie/pixelproof-datasets/research/midd/ISOCELL_3P9_catalog_v1.json": "513350a6217a9163704c6ed2e9bfcad502b98187dc5f7fa90b1bf03039bca3a9",
+    "/Volumes/LaCie/pixelproof-datasets/research/midd/OmniVision_OV32A_catalog_v1.json": "675658b14fe4ed78bfcf689492bb5262b24c3c241e794867c5a0c2e04baf6844",
+    "/Volumes/LaCie/pixelproof-datasets/research/midd/Sony_IMX258_catalog_v1.json": "b676757964d96bf0e32eba41cc10c5c6bac0cc253fe30e00118d3388a58bf0af"
+  },
+  "license": "CC BY-NC-SA4.0 research only; no automatic serving promotion.",
+  "license_sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+  "limits": "Filename numbers are not verified scenes; sensor labels are not independent camera instances. Whole MIDD publisher reserved from DEV/fresh final, including unselected/official-test/denoised members. E71 TRAIN population unchanged; original means publisher original, not RAW.",
+  "max_seconds": 5400,
+  "max_workers": 2,
+  "model_scoring_allowed": false,
+  "next": "Separately freeze canonical decode/protected-overlap and connected-component audit. Include complete prior reserves plus E65 and consumed E66. No quota refill after quarantine.",
+  "resource": "Two download workers, exact HTTP206 ranges with If-Match, CRC/length and body SHA. 20GiB storage reserve, AC,90min per execution; verified completed member resume.",
+  "role": "QUARANTINE_FOR_POSSIBLE_RESEARCH_TRAIN",
+  "selected": 512,
+  "selected_original_bytes": 3821581226,
+  "selection": "128 per each of four preselected sensor vendors by SHA256(E72|filename). Original official TRAIN JPG only, no image score/content selection or replacement.",
+  "sensor_counts": {
+    "Hynix_SL846": 128,
+    "ISOCELL_3P9": 128,
+    "OmniVision_OV32A": 128,
+    "Sony_IMX258": 128
+  },
+  "state": "E72_MIDD_original_TRAIN_acquisition_registered",
+  "training_allowed": false
+}
