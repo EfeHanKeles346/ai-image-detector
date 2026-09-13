@@ -8146,3 +8146,24 @@ DEVELOPMENT aggregate rates and newly missed E43 AI counts. It requires complete
 No figure has been rendered and no E86 result exists yet. Python compilation passes;
 visual verification is deferred until the real E86 comparison is complete. Existing
 E83 historical graphics are preserved. This reporting utility changes no experiment.
+
+
+### E84B complete; E85 four-condition representation registered (2026-09-13)
+
+All12,141 existing TRAIN parents now have the exact social1080->JPEG75 view. Complete
+DINO/CLIP/DEAR shapes12141x3072/1536/1640,1518 immutable chunks. This execution created
+12,013 parents and reused128 probe parents;7296.694s, peak MPS5,520,441,344B within
+budget. No new-view classifier score, DEV/final image read or download. Archive SHA256
+`8f2a6a9c381bbfc3400ccb408680ae17da9e0bc9af50a290bc531c4ead9a2f21`; full receipt SHA256
+`79d098324cc3cb60b0db33dd3d02e02b9890cde6aaf7f024b15f5bcdee97485b`. Original3-condition caches are unchanged.
+
+E85 contract SHA256`5af47a4051c2ddc2babe1b36a26f878e6d42121181e688b9529960b7ef5352c9` freezes the previously
+prepared architecture/seed82/AdamW recipe for48,564 TRAIN views (30,184REAL/18,380AI),
+100 fixed epochs, same385->256->64->1 network, final-only export. No warm start or sweep.
+Only its input/latent scalers are refitted on the four TRAIN conditions. The complete
+E84B archive hash/receipt and predecessor artifacts were verified at registration.
+Old-three score replay and saved/runtime latent checks run during training. No E85
+training result exists at this checkpoint. Next execute the frozen representation,
+then separately freeze E86's450-weight constrained head only after successful export.
+All80 absolute TRAIN metric checks and AI/runtime guards precede any consumed E66 read.
+SID's separately audited128 parents remain outside this experiment. E49/serving unchanged.

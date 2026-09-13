@@ -1,0 +1,28 @@
+{
+  "contract_sha256": "6ca86aad24fdb89c91d711e35c24846e500cb044bdb76020488489ed1474de0c",
+  "created_parents_this_run": 12013,
+  "dev_final_image_reads": 0,
+  "downloads": 0,
+  "feature_sha256": "8f2a6a9c381bbfc3400ccb408680ae17da9e0bc9af50a290bc531c4ead9a2f21",
+  "mps_driver_peak_bytes": 5520441344,
+  "new_view_classifier_scores": 0,
+  "parents": 12141,
+  "report_sha256": "79d098324cc3cb60b0db33dd3d02e02b9890cde6aaf7f024b15f5bcdee97485b",
+  "seconds_this_run": 7296.694137041923,
+  "shapes": {
+    "clip": [
+      12141,
+      1536
+    ],
+    "dear": [
+      12141,
+      1640
+    ],
+    "dino": [
+      12141,
+      3072
+    ]
+  },
+  "source_index_sha256": "d722b16400d11afec05813a69273d4409ab40f4dcaf41e162406ac664795b0e8",
+  "state": "E84B_social_TRAIN_features_complete"
+}

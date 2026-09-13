@@ -9,9 +9,9 @@ TRAIN/runtime guards but fails consumed development: REAL false-AI0% original /1
 socialQ75, AI recall98.75%/99.375%,17/20 numeric gates and one newly missed original AI.
 The aggregate AI gain does not satisfy the zero-new-loss requirement.
 
-E84B passed parity/resource checks and is extracting exact social transport features for
-all12,141 existing TRAIN parents. The four-condition E85/E86 learner and constrained fit
-are prepared; no fit yet. Separately,128 original SID RAW captures passed the protected-
+E84B completed exact social transport features for all12,141 existing TRAIN parents.
+The fixed four-condition E85 representation is registered for48,564 TRAIN views;
+its constrained E86 head follows only after complete verified features. Separately,128 original SID RAW captures passed the protected-
 overlap audit for possible future research TRAIN. They are not in the current E85/E86 data.
 E49 remains unopened in this overnight chain; serving/reference models stay unchanged.
 Old E59 fits remain paused.849 Python tests pass; the existing web dependency audit fails.
