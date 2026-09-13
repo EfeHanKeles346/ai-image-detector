@@ -18,7 +18,9 @@ code is prepared and tested, but has not been frozen or trained; these images we
 used in E85/E86.
 E49 remains unopened in this overnight chain; serving/reference models stay unchanged.
 Old E59 fits remain paused.856 Python tests pass. The 2026-09-13 dependency repair
-reduces npm audit from11 alerts to0; local build, lint, types and all6 web tests pass.
+reduces npm audit from11 alerts to0; build, lint, types and all6 web tests pass.
+[GitHub CI34749560334](https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334)
+passes both web and Python jobs on commit bca8a1e, including both dependency audits.
 See the [development and CI report](rapor/GELISTIRME_RAPORU_2026-09-13.md) for verification status.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).

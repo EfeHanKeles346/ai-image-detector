@@ -2,8 +2,11 @@
 
 GitHub hatasının kaynağı web bağımlılıklarındaki güvenlik açıklarıydı. Yerel onarım ve
 kontroller tamamlandı ve `57aaf61` onarım commit’i GitHub main dalına gönderildi.
-Bu kayıt anında [uzak CI çalıştırması](https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749429187)
-sırada bekliyor; uzaktaki sonuç henüz başarılı olarak doğrulanmadı.
+**GitHub doğrulaması tamamlandı:** `bca8a1e` commit’i için
+[CI çalıştırması başarılı](https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334).
+Web işi 28 saniyede, Python işi 2 dakika 54 saniyede geçti.
+Bu sonuç, aşağıdaki kod ve kilit dosyası değişikliklerini kapsıyor; sonraki kayıt
+commit’i yalnızca bu doğrulamayı belgeliyor.
 Araştırmada gerçek fotoğrafların yanlış AI işaretlenmesi belirgin azaldı, ancak kabul
 hedefi henüz sağlanmadı. E86 adayını bu nedenle yayına almadım.
 
@@ -38,7 +41,9 @@ geçişi kapsıyor, kapsamlı tarayıcı etkileşim testi yapılmadı.
 
 Yerelde derleme, lint, TypeScript ve **6/6 web testi** geçti. Temiz `npm ci` kurulumu da 0 açıkla tamamlandı. Onarım sonrasında tam Python
 paketi tekrar çalıştırıldı: **856 test geçti** (17,01 saniye; mevcut bir Starlette
-kullanımdan kaldırma uyarısı). GitHub Linux/Node22/Python3.13 üzerinde ayrıca doğrulanacak.
+kullanımdan kaldırma uyarısı). **GitHub Linux/Node22/Python3.13 kontrolleri de geçti:** web derlemesi/testleri,
+Python testleri, compileall, pip check, npm audit ve kilitli servis bağımlılıkları için
+pip-audit başarılı. Eski başarısız çalıştırmalar tarihsel kayıt olarak durur.
 [Onarım kanıtı](../evidence/ci_dependency_repair_2026-09-13.json).
 
 ## Model geliştirmesinde ulaşılan sonuç

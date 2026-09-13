@@ -76,9 +76,218 @@
     "npm_ci": "pass; 0 vulnerabilities"
   },
   "remote_verification": {
-    "status": "queued",
-    "run": "https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749429187",
-    "head": "57aaf61b7837344beef8b31025d64c21f56f8728"
+    "conclusion": "success",
+    "headSha": "bca8a1e0283c41e562228fa83be9b32547ab7f14",
+    "jobs": [
+      {
+        "completedAt": "2026-09-13T09:29:19Z",
+        "conclusion": "success",
+        "databaseId": 103703459552,
+        "name": "web",
+        "startedAt": "2026-09-13T09:28:51Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-13T09:28:52Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-13T09:28:51Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:28:53Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-09-13T09:28:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:28:54Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 3,
+            "startedAt": "2026-09-13T09:28:53Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:06Z",
+            "conclusion": "success",
+            "name": "Run npm ci",
+            "number": 4,
+            "startedAt": "2026-09-13T09:28:54Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:08Z",
+            "conclusion": "success",
+            "name": "Run npm run lint",
+            "number": 5,
+            "startedAt": "2026-09-13T09:29:06Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:10Z",
+            "conclusion": "success",
+            "name": "Run npm run typecheck",
+            "number": 6,
+            "startedAt": "2026-09-13T09:29:08Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:15Z",
+            "conclusion": "success",
+            "name": "Run npm test",
+            "number": 7,
+            "startedAt": "2026-09-13T09:29:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:15Z",
+            "conclusion": "success",
+            "name": "Audit production/build dependencies",
+            "number": 8,
+            "startedAt": "2026-09-13T09:29:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:17Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 15,
+            "startedAt": "2026-09-13T09:29:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:17Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 16,
+            "startedAt": "2026-09-13T09:29:17Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:17Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 17,
+            "startedAt": "2026-09-13T09:29:17Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334/job/103703459552"
+      },
+      {
+        "completedAt": "2026-09-13T09:31:41Z",
+        "conclusion": "success",
+        "databaseId": 103703459977,
+        "name": "python",
+        "startedAt": "2026-09-13T09:28:47Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-09-13T09:28:48Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-09-13T09:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:28:50Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-09-13T09:28:48Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:29:34Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "startedAt": "2026-09-13T09:28:50Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:30:43Z",
+            "conclusion": "success",
+            "name": "Run python -m pip install -r ml/requirements-serving.lock",
+            "number": 4,
+            "startedAt": "2026-09-13T09:29:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:30:59Z",
+            "conclusion": "success",
+            "name": "Run python -m pip install -e \"ml[experiments,test]\" pip-audit==2.10.1",
+            "number": 5,
+            "startedAt": "2026-09-13T09:30:43Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:31:29Z",
+            "conclusion": "success",
+            "name": "Run pytest -q ml/tests",
+            "number": 6,
+            "startedAt": "2026-09-13T09:30:59Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:31:29Z",
+            "conclusion": "success",
+            "name": "Run python -m compileall -q ml/src ml/experiments ml/tools",
+            "number": 7,
+            "startedAt": "2026-09-13T09:31:29Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:31:30Z",
+            "conclusion": "success",
+            "name": "Run python -m pip check",
+            "number": 8,
+            "startedAt": "2026-09-13T09:31:29Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:31:38Z",
+            "conclusion": "success",
+            "name": "Run python -m pip_audit -r ml/requirements-serving.lock",
+            "number": 9,
+            "startedAt": "2026-09-13T09:31:30Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:31:38Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 17,
+            "startedAt": "2026-09-13T09:31:38Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:31:39Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 18,
+            "startedAt": "2026-09-13T09:31:38Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-09-13T09:31:39Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 19,
+            "startedAt": "2026-09-13T09:31:39Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334/job/103703459977"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334"
   },
   "scientific_changes": "none; E91/E92 prepared but not frozen or fitted"
 }

@@ -44,7 +44,7 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check100%, charged and attached to AC. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E89 complete; E91/E92 prepared; GitHub repair under verification (2026-09-13)
+## Current checkpoint — E89 complete; E91/E92 prepared; GitHub repair verified and report complete (2026-09-13)
 
 E86 passes all80 TRAIN metric checks and runtime/AI-retention guards. Consumed E66
 REAL FPR0.625% original/10.625% social-Q75, AI99.375% in both;17/20 numeric checks.
@@ -53,7 +53,8 @@ covered-accuracy guards fail. Preserve the rejected candidate; E49 stays unopene
 
 E89 features are complete for all128 previously selected/audited SID TRAIN parents
 under all4 conditions. E91/E92 implementation and856 tests pass, but no new recipe
-is frozen or fitted. Current user priority is GitHub CI repair and a report. Later
+is frozen or fitted. GitHub CI repair is verified on run34749560334 (web and Python success), and the
+Turkish report is complete. No additional ML experiment was started. Later
 continuation can separately freeze one data-coverage extension
 with the same E85 architecture/seed/optimizer and E86 constrained-head objective.
 Keep all previous populations/conditions/AI protections and add SID pooled/camera
@@ -6113,3 +6114,15 @@ cancels superseded runs. Remote verification is pending push at this checkpoint.
 E91/E92 remain prepared, not frozen/fitted; no new DEV/final scoring or model promotion.
 Last complete ML suite:856 passed. See rapor/GELISTIRME_RAPORU_2026-09-13.md and
 evidence/ci_dependency_repair_2026-09-13.json for the repair/report record.
+
+
+### 2026-09-13 — Remote CI success verified
+
+Commit bca8a1e0283c41e562228fa83be9b32547ab7f14 passes GitHub Actions CI34749560334:
+https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334
+Web28s: clean npm ci, lint, typecheck, build/tests and npm audit all pass.
+Python2m54s: installs, pytest, compileall, pip check and serving-lock pip-audit all pass.
+Machine-readable run/job/step evidence is recorded in
+evidence/ci_dependency_repair_2026-09-13.json; Turkish report and current README/PLAN
+now distinguish verified CI from the unmet ML target. This final checkpoint changes
+only documentation/evidence; no frozen recipe, candidate, threshold or dataset changed.

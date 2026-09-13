@@ -8314,3 +8314,15 @@ All report-local links resolve and E83/E86 rates match recorded JSON receipts.
 GitHub CI run34749429187 has been created but remains queued at this checkpoint;
 local passing checks are not presented as remote success. The Turkish development
 report is in rapor/GELISTIRME_RAPORU_2026-09-13.md. No further ML run was started.
+
+
+### 2026-09-13 — Remote CI success verified
+
+Commit bca8a1e0283c41e562228fa83be9b32547ab7f14 passes GitHub Actions CI34749560334:
+https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334
+Web28s: clean npm ci, lint, typecheck, build/tests and npm audit all pass.
+Python2m54s: installs, pytest, compileall, pip check and serving-lock pip-audit all pass.
+Machine-readable run/job/step evidence is recorded in
+evidence/ci_dependency_repair_2026-09-13.json; Turkish report and current README/PLAN
+now distinguish verified CI from the unmet ML target. This final checkpoint changes
+only documentation/evidence; no frozen recipe, candidate, threshold or dataset changed.
