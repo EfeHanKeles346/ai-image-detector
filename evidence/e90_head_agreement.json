@@ -1,0 +1,456 @@
+{
+  "contract_sha256": "dd075be24a426cbc0c782f70a51a7d9503138763395e9e2dd11f0c2213cf3d37",
+  "decision_changes_by_cut": {
+    "0.011505939625203613": 0,
+    "0.07940196245908739": 0
+  },
+  "diagnostic_logits": 640,
+  "e49_reads": 0,
+  "groups": {
+    "publisher_original": {
+      "SIDD:G4": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -26.890317801601917,
+              -19.854613181375335,
+              -6.0233224491355895
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 8,
+            "views": 8
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -23.236180580208323,
+              -19.314559194955688,
+              -10.775421662868405
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 8,
+            "views": 8
+          }
+        },
+        "views": 16
+      },
+      "SIDD:GP": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -26.369571491516172,
+              -18.006881278460888,
+              -5.9766203338912165
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 14,
+            "views": 14
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -27.98695856570973,
+              -20.318818977642827,
+              -7.111556991970308
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 19,
+            "views": 19
+          }
+        },
+        "views": 33
+      },
+      "SIDD:IP": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -29.28024766465343,
+              -21.70913196595241,
+              -11.614939442699548
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 35,
+            "views": 35
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -26.831826566063306,
+              -18.219421526418085,
+              -7.717425760882115
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 19,
+            "views": 19
+          }
+        },
+        "views": 54
+      },
+      "SIDD:N6": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -32.367786647157736,
+              -22.022017733521576,
+              -16.544459688646597
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 14,
+            "views": 14
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -29.34039062988784,
+              -18.327723215017365,
+              -5.945149135404544
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 8,
+            "views": 8
+          }
+        },
+        "views": 22
+      },
+      "SIDD:S6": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -26.224525000388304,
+              -21.339712494189257,
+              -16.08344248094323
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 21,
+            "views": 21
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -21.881565116811032,
+              -15.548646859776365,
+              -3.278551739974868
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 14,
+            "views": 14
+          }
+        },
+        "views": 35
+      },
+      "gpt-image-1": {
+        "label": 1,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              5.984100729902789,
+              5.984100729902789,
+              5.984100729902789
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 1
+          },
+          "old_ai_0_new_ai_1": {
+            "logit_min_median_max": [
+              22.336508270775383,
+              24.754545378006664,
+              27.356574540003603
+            ],
+            "native_BCE_AI_sign_count": 3,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 3
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -2.5942740776011624,
+              -2.5942740776011624,
+              -2.5942740776011624
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 1,
+            "views": 1
+          },
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              2.474018286067552,
+              22.342249553423876,
+              36.869816509829036
+            ],
+            "native_BCE_AI_sign_count": 75,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 75
+          }
+        },
+        "views": 80
+      },
+      "nano-banana-local": {
+        "label": 1,
+        "transitions": {
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              17.44148867674855,
+              36.11039823822658,
+              54.71225208807917
+            ],
+            "native_BCE_AI_sign_count": 80,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 80
+          }
+        },
+        "views": 80
+      }
+    },
+    "social_q75": {
+      "SIDD:G4": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -16.69355321674504,
+              -14.009227228395712,
+              -8.151654788852538
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 6,
+            "views": 6
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -20.058939463012084,
+              -2.6190852522962196,
+              1.6035440145643336
+            ],
+            "native_BCE_AI_sign_count": 3,
+            "native_BCE_REAL_sign_count": 4,
+            "views": 7
+          },
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              7.718290748976484,
+              12.955924794199095,
+              18.58592713738104
+            ],
+            "native_BCE_AI_sign_count": 3,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 3
+          }
+        },
+        "views": 16
+      },
+      "SIDD:GP": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -21.92970480937113,
+              -10.52502959308459,
+              0.7397212240360469
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 15,
+            "views": 16
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -20.381556635244944,
+              -15.245046850576733,
+              3.2511116621715055
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 8,
+            "views": 9
+          },
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              -0.7609518962320625,
+              10.314767299914683,
+              22.261073005336982
+            ],
+            "native_BCE_AI_sign_count": 6,
+            "native_BCE_REAL_sign_count": 2,
+            "views": 8
+          }
+        },
+        "views": 33
+      },
+      "SIDD:IP": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -27.34195534350975,
+              -15.106392943287041,
+              4.221127014213598
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 32,
+            "views": 33
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -17.670595779730842,
+              -5.012640242162162,
+              1.2746857258273327
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 14,
+            "views": 15
+          },
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              -8.9283506444389,
+              2.6976410624087324,
+              13.631699148948279
+            ],
+            "native_BCE_AI_sign_count": 5,
+            "native_BCE_REAL_sign_count": 1,
+            "views": 6
+          }
+        },
+        "views": 54
+      },
+      "SIDD:N6": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -25.9844474320945,
+              -17.867275539845277,
+              5.723134298233282
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 13,
+            "views": 14
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -23.53348974278721,
+              -16.31216473545829,
+              0.5984768267701523
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 6,
+            "views": 7
+          },
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              5.71981523059575,
+              5.71981523059575,
+              5.71981523059575
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 1
+          }
+        },
+        "views": 22
+      },
+      "SIDD:S6": {
+        "label": 0,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -24.52185379791308,
+              -17.444036289380506,
+              0.40642970123872557
+            ],
+            "native_BCE_AI_sign_count": 1,
+            "native_BCE_REAL_sign_count": 22,
+            "views": 23
+          },
+          "old_ai_1_new_ai_0": {
+            "logit_min_median_max": [
+              -22.563468227198015,
+              -14.359423370526812,
+              -5.875247783935006
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 8,
+            "views": 8
+          },
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              -2.0224580791361113,
+              7.405189502696725,
+              15.944938794253869
+            ],
+            "native_BCE_AI_sign_count": 3,
+            "native_BCE_REAL_sign_count": 1,
+            "views": 4
+          }
+        },
+        "views": 35
+      },
+      "gpt-image-1": {
+        "label": 1,
+        "transitions": {
+          "old_ai_0_new_ai_0": {
+            "logit_min_median_max": [
+              -9.697018799129347,
+              -9.697018799129347,
+              -9.697018799129347
+            ],
+            "native_BCE_AI_sign_count": 0,
+            "native_BCE_REAL_sign_count": 1,
+            "views": 1
+          },
+          "old_ai_0_new_ai_1": {
+            "logit_min_median_max": [
+              3.675204153669918,
+              18.350713298465443,
+              22.250009266459948
+            ],
+            "native_BCE_AI_sign_count": 3,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 3
+          },
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              -2.6591632443044784,
+              22.621554508998777,
+              36.38914909778266
+            ],
+            "native_BCE_AI_sign_count": 75,
+            "native_BCE_REAL_sign_count": 1,
+            "views": 76
+          }
+        },
+        "views": 80
+      },
+      "nano-banana-local": {
+        "label": 1,
+        "transitions": {
+          "old_ai_0_new_ai_1": {
+            "logit_min_median_max": [
+              23.324707864089223,
+              24.71968807034773,
+              26.11466827660623
+            ],
+            "native_BCE_AI_sign_count": 2,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 2
+          },
+          "old_ai_1_new_ai_1": {
+            "logit_min_median_max": [
+              9.880604917140047,
+              32.49560810085322,
+              45.82255893215222
+            ],
+            "native_BCE_AI_sign_count": 78,
+            "native_BCE_REAL_sign_count": 0,
+            "views": 78
+          }
+        },
+        "views": 80
+      }
+    }
+  },
+  "image_reads": 0,
+  "limits": "Consumed E66, dependent REAL scenes and unknown AI prompt dependence. Agreement/disagreement does not identify a causal mechanism or establish generalization. These are new diagnostic logits from an existing trained head, not a new fitted/detection candidate or calibrated probability.",
+  "new_detector_candidates": 0,
+  "new_fits": 0,
+  "score_replay_max_error": 0.0,
+  "seconds": 9.308068957994692,
+  "state": "E90_existing_scalar_head_agreement_complete"
+}

@@ -151,3 +151,6 @@ TRAIN cache only after E84B/E85/E86; no new-cohort classifier scores or automati
 
 E90: registered `e90_head_diagnostic freeze|run` reads the existing E82 scalar-head
 sign within unchanged E83 consumed-DEV transition bins; no new fit or detection candidate.
+
+E90 complete: exact640-view E83 replay; the original newly missed AI also has a
+negative E82 scalar logit. A sign-agreement fallback is not pursued; details in the receipt.

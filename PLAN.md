@@ -5947,3 +5947,22 @@ all E83 scores unchanged. This can distinguish raw-head disagreement from agreem
 known errors, without claiming which representation caused the error. Any subsequent
 model change must be separately justified, frozen and pass TRAIN/DEV guards. Do not
 change the currently fixed E84B/E85/E86 transport experiment based on this diagnostic.
+
+
+### E90 scalar-head agreement diagnosis complete (2026-09-13)
+
+All640 E83 scores replay exactly (max error0, both-cut changes0);9.308s CPU diagnostic.
+The sole newly missed original GPT AI has existing E82 scalar-head logit-2.59427408:
+the native BCE sign also calls it REAL. All68 original REAL rescues have negative scalar
+logits. Of46 Q75 REAL rescues, six have positive scalar logits (G4 three, GP/IP/N6 one
+apiece). Therefore a simple proposed disagreement fallback that restores E43 whenever
+this scalar head says AI would not recover that original AI loss and would undo six
+Q75 REAL rescues. This is a logical implication of the measured sign/transition bins,
+not an executed candidate, fitted threshold or causal proof. Do not implement/sweep that
+fallback from these observations. No new detector candidate or E49 access occurred.
+
+Receipt `evidence/e90_head_agreement.json`; unchanged E83 score hashes and all source/
+condition bins preserved. The failure is not merely a disagreement with the raw BCE
+head; a representation/data-coverage change remains the current hypothesis. E84B's
+exact transport extension and the fixed E85/E86 learner/head sequence remain unchanged.
+Separately audited SID data stays available for later justified coverage work.
