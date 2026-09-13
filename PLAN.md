@@ -44,16 +44,16 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E83 DEV rejected; E84 transport extension registered (2026-09-13)
+## Current checkpoint — E83 DEV rejected; E84B source repair complete; transport probe registered (2026-09-13)
 
 E83 passes all TRAIN/runtime gates. Consumed DEV REAL FPR improves42.5% to0% original
 and42.5% to13.75% social Q75; AI recall98.75%/99.375%.17/20 numeric gates pass, but
 one newly missed original AI and three Q75 numeric failures reject the candidate.
 Read-only component replay is exact; learned REAL correction weakens/reverses under Q75.
-E84 is registered to add the exact social1080px-then-JPEG75 view to every existing TRAIN parent,
+E84B is registered to add the exact social1080px-then-JPEG75 view to every existing TRAIN parent,
 keeping all old conditions and AI protection. No DEV/final admission or cutoff change.
 
-823 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
+827 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
 RR upstream lineage unresolved; MIDD/DEAR research restrictions persist. E49 unopened,
 E43/serving unchanged. No30-minute automation; active experiments and MD/git checkpoints continue.
 
@@ -5687,3 +5687,43 @@ Full encoding estimate must fit10,800s; AC/20GiB reserve and immutable restartab
 Interrupted probe may replay the same128 views for cost measurement; existing chunks
 require exact body/features and are never overwritten. Full run only fills missing chunks.
 Three transport/order/role/corruption tests and all823 Python tests pass. Probe not yet run.
+
+
+### E84 probe interrupted by native source schema; source repair registered (2026-09-13)
+
+E84 completed8 probe windows/64 parents, then raised KeyError:path on a native TRAIN
+source-key row. Original contract/code/chunks are preserved; full extraction is denied.
+This is an engineering input error, not a detector quality result. Receipt
+`evidence/e84_probe_attempt1.json` verifies all64 chunks. Do not omit affected rows.
+
+5,652 admitted native rows have no direct path:4,652 use the existing E32 loose-file
+resolver;1,000 are selected Parquet cells (500 CommunityForensics,500 Nano). Source
+contract `6750838f3a3fe0fa8e0f12d76874d18b2277235035bffa40874672ba0c32c23f` freezes all12,141 original-body checks and only the selected TRAIN
+Parquet materialization. Row-group I/O can include other encoded cells; only admitted
+indices are converted to byte payloads, with no unselected label extraction/image decode.
+No standardized224JPEG fallback. Original SHA must match every parent.
+
+E84B is prepared as a source-resolution-only revision, reusing the exact E84 encoder,
+transport, parity and chunk functions. Same population, hash-selected probe windows,
+numeric/memory/time guards. It will bind the complete verified source index and require
+exact replay of the64 previously encoded views. No B contract or encoding yet.
+825 Python tests pass, including selected-cell extraction and original-body/role rejection.
+
+
+### E84 original bodies verified; E84B frozen (2026-09-13)
+
+All12,141 TRAIN source bodies verified in518.833s. Materialized1,000 selected native
+Parquet payloads (976,266,728 bytes) locally; no download/image decode/model inference.
+Source index SHA256 `d722b16400d11afec05813a69273d4409ab40f4dcaf41e162406ac664795b0e8`.
+E84B contract `6ca86aad24fdb89c91d711e35c24846e500cb044bdb76020488489ed1474de0c` preserves original E84 probe windows and all scientific/resource
+settings. It reuses frozen E84 operations and requires exact replay of the64 old probe
+views. A pre-freeze code review caught the renamed hash prefix changing probe windows;
+corrected to read the original frozen plan directly, with a regression test. No B feature
+or score had been computed. E84B probe follows; full extraction remains conditional.
+
+E85 four-condition data/representation code is prepared, not frozen/fitted. Old three
+feature tensors must remain exact when appending social Q75. Same E82 architecture,
+seed82, optimizer and100epochs; input/latent scalers learn only the complete four-view
+TRAIN data. Before learning, old E80 population replay and old E83 decisions under the
+new input layout must pass. Source/order/class-mass and tiny decision-flip tests pass.
+827 full Python tests passed before two additional focused E85 tests (both passed).

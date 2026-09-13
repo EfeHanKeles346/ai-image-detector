@@ -1,0 +1,34 @@
+{
+  "contract_sha256": "6750838f3a3fe0fa8e0f12d76874d18b2277235035bffa40874672ba0c32c23f",
+  "downloads": 0,
+  "e49_read_allowed": false,
+  "image_decodes": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e32_r0_input.py": "ad36cd8fbf20dceb6250428f20ce1c29606b3db2a42a1fc8244b3a7aa62ac2be",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e84_sources.py": "d454cf849274e24c0bd3fafc583568678a7de4322d6458e7cbfdc50495006d37",
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+    "/Volumes/LaCie/pixelproof-datasets/e72/training_manifest.json": "a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e",
+    "/Volumes/LaCie/pixelproof-datasets/e84/features_contract.json": "41604833e4b2d809d8906949c973227e26bc29ca0696627b8190d51b79161dad"
+  },
+  "limits": "Parquet row-group I/O can physically include unselected encoded cells; only admitted TRAIN indices are converted to Python payloads. No unselected labels/pixels decoded, scored or admitted. No standardized224JPEG fallback and no missing-row omission. No change to source/image identity.",
+  "max_seconds": 1800,
+  "method": "Existing explicit paths, legacy e32 source_path for native loose files, selected source_key row and image column for native Parquet. Exact original body SHA required for every parent. Materialize only1000 admitted TRAIN Parquet bodies to hash-named external files; retain all other paths.",
+  "missing_direct_paths": 5652,
+  "model_scores": 0,
+  "parents": 12141,
+  "parquet_parents": 1000,
+  "resume": "Existing materialized bodies must match declared SHA; source index written only after all12141 verify.",
+  "source_counts": {
+    "communityforensics-ai-local": 500,
+    "csafe-mcsidb-s21": 1000,
+    "flux2-klein-9b": 500,
+    "forchheim-fodb": 1000,
+    "gpt-image-1": 500,
+    "nano-banana-local": 500,
+    "nano-banana-pro-ash-local": 152,
+    "qwen-image-2512": 500,
+    "vision-base-native": 1000
+  },
+  "state": "E84_complete_TRAIN_source_resolution_registered",
+  "training_fit_allowed": false
+}

@@ -1,0 +1,22 @@
+{
+  "chunks": {
+    "/Volumes/LaCie/pixelproof-datasets/e84/chunks/00038.npz": "cec3d080f062a236f58b0623f2e084ea99a1c677836621b34b943cb09c572c48",
+    "/Volumes/LaCie/pixelproof-datasets/e84/chunks/00106.npz": "5dbf49fd4f0f505ac4b676068cef467accc1073c94a7930f3d74decbc0af2d1e",
+    "/Volumes/LaCie/pixelproof-datasets/e84/chunks/00151.npz": "69a6dc92df1d1ce97f0742f8ed7d5b74abefde6d93cc6c0c523328cbb4311e05",
+    "/Volumes/LaCie/pixelproof-datasets/e84/chunks/00161.npz": "3aff23acf342186adad7d5ee0a1767b837f757dfe0b3137eb9758bf607db3962",
+    "/Volumes/LaCie/pixelproof-datasets/e84/chunks/00196.npz": "bf22f73938caa081a57d266ce8f976753af73a644e1f97c34a5f636c3ff55228",
+    "/Volumes/LaCie/pixelproof-datasets/e84/chunks/00205.npz": "54dae5bb805bf8ab01fd54f986345a4ef4cab534325bab5ef811651f96afbf9f",
+    "/Volumes/LaCie/pixelproof-datasets/e84/chunks/00476.npz": "3ff615199a96fea0d9e413edeb05ce77890b6e566430f4053d94cd236d087fff",
+    "/Volumes/LaCie/pixelproof-datasets/e84/chunks/00601.npz": "83a7e97028df75da61c841c880d69ee78b8e1de7ad794caf96473b3bffa1df6e"
+  },
+  "contract_sha256": "41604833e4b2d809d8906949c973227e26bc29ca0696627b8190d51b79161dad",
+  "dev_final_image_reads": 0,
+  "exception": "KeyError: path in create_chunk for a native source-key TRAIN row",
+  "full_extraction_permitted": false,
+  "last_logged_encoding_seconds_rounded": 33,
+  "model_scores_on_new_views": 0,
+  "next": "Resolve all original TRAIN source bodies, then register E84B engineering revision with unchanged population/transforms/encoders/guards. Preserve E84 contract and chunks.",
+  "state": "E84_probe_aborted_source_schema_error",
+  "verified_completed_parents": 64,
+  "verified_completed_windows": 8
+}

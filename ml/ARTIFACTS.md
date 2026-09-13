@@ -332,3 +332,12 @@ External `e83/dev_features.npz` SHA256
 `1201dad5a71f8077c32f3169bac661bf46784a23099e2ffd93279143e1e685be`,640 ordered
 DEVELOPMENT views, DINO3072/CLIP1536/DEAR1640; never eligible for TRAIN. Exact runtime
 score replay verified by read-only component diagnostic.
+
+
+### E84 source resolution (2026-09-13)
+
+External `e84_sources/source_index.json` binds all12,141 original TRAIN bodies to explicit
+paths.1,000 raw Parquet payloads are local hash-named `.bin` files (976,266,728 bytes),
+not resized derivatives. Full exact SHA verification; no new dataset admission or download.
+E84's64 partial probe features remain preserved under their original contract. E84B is
+a separately frozen source-resolution repair with identical image/encoder/acceptance rules.

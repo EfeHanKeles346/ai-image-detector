@@ -1,0 +1,12 @@
+{
+  "bytes_created_this_run": 976266728,
+  "contract_sha256": "6750838f3a3fe0fa8e0f12d76874d18b2277235035bffa40874672ba0c32c23f",
+  "downloads": 0,
+  "image_decodes": 0,
+  "index_sha256": "d722b16400d11afec05813a69273d4409ab40f4dcaf41e162406ac664795b0e8",
+  "model_scores": 0,
+  "parents": 12141,
+  "parquet_parents": 1000,
+  "seconds_this_run": 518.8325203340501,
+  "state": "E84_TRAIN_sources_complete"
+}
