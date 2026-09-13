@@ -384,3 +384,13 @@ No DEV/E49 or promotion. Artifact SHA`dd6fd99607f674cafa3a4f9982002ce2c688d564eb
 E77 is rejected at TRAIN: old-REAL FPR10.96%/12.38%/10.39%, all above10%. No AI
 confidence loss beyond solver tolerance, no newly missed AI or newly wrong REAL.
 No DEV/E49 or promotion. Receipt `evidence/e77_fit.json`; failed candidate retained externally.
+
+
+### E80 research rejection (2026-09-13)
+
+External candidate `/Volumes/LaCie/pixelproof-datasets/e80/correction.npz`, SHA256
+`136be4ca5ef6aeac683f604a4e3820870df3436802e6fb924846e09ee9f58d22`. One386-coefficient fit on frozen E79 features. All TRAIN
+AI logits preserved; old-REAL FPR8.80%/9.79%/8.61% passes10%, but RR35.44–40.48%
+and covered accuracy<95% fail full TRAIN screening. Runtime/DEV/E49 not run; not serving
+or an independent-quality pass. E81 tests the prepared worst-REAL objective next under
+unchanged full-AI and acceptance guards. Receipt: `evidence/e80_fit.json`.

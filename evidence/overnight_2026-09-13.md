@@ -3,7 +3,7 @@
 The target remains unmet. E43 and serving are unchanged. E70/E71 passed TRAIN but failed
 separate consumed E66 development screens. E73/E74/E76/E77 failed TRAIN. No overnight
 candidate has opened E49 or qualified for promotion. E79 completed frozen DEAR-r
-features for all12,141 admitted TRAIN parents; E80 is registered for its single fit.
+features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 is next.
 
 [E77 sonrası sonuç grafiği](overnight_progress_2026-09-13.png) · [Vektör sürümü](overnight_progress_2026-09-13.svg)
 
@@ -141,7 +141,16 @@ legacy REAL names have no per-file site mapping. Exact-body audits cannot establ
 derivative independence; no specific new overlapping file was found. This limitation is
 recorded in E80 before fit. No new COCO admission or unseen-COCO/fresh-final claim follows.
 
-## Registered E80 model and verification
+## E80 result and next objective
+
+E80 completed52 iterations/248.664s with zero new AI misses/REAL errors and exact saved
+replay. Old-REAL FPR8.7989%/9.7939%/8.6141%; expanded8.2428%/9.2102%/8.0705%.
+All population budgets pass. RR35.44%/40.48%/34.96% and expanded covered accuracy
+94.4376%/93.7688%/94.5167% fail the source20% and accuracy95% targets.8/10 numeric
+checks pass in each old/expanded condition; no runtime or DEV/E49 under the frozen gate.
+[Full TRAIN result](e80_fit.json). This justifies the prepared E81 objective below.
+
+## Frozen E80 model and verification
 
 E80 adds all-TRAIN DEAR PCA64 (StandardScaler, seed80, randomized power3, whiten) to the
 exact E77 original/CLIP/bilinear/REAL-residual320 coordinates, plus one standardized fixed
@@ -160,8 +169,8 @@ this adds a reproducibility guard, with no label or threshold adjustment.
 E81's conditional optimizer helper is prepared from the E77 slack diagnosis: minimize
 worst REAL source/condition BCE while all AI logits remain non-decreasing and correct-REAL
 decisions remain protected. Same REAL coefficient .5, L2.01 and SLSQP settings; no AI BCE
-reward. Synthetic gradient and conflicting-class tests pass. No TRAIN fit/contract yet;
-consider only after E80 results, retaining every E80 acceptance gate and frozen map.
+reward. Synthetic gradient and conflicting-class tests pass. E80 now confirms the source-failure trigger. Proceed to one separately registered TRAIN fit,
+retaining every E80 acceptance gate and frozen map.
 
 The optional E80 consumed-E66 implementation is prepared but not frozen/executed. It
 refuses failed TRAIN, preserves prior E43 pixels/scores/two-cut decisions, and requires

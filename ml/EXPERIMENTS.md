@@ -6188,3 +6188,25 @@ mean-crop head scalar1 + intercept1, zero correction start; unchanged E64 object
 full-AI confidence constraints. All E80 population/source/selective/runtime guards apply.
 No candidate or detector-quality result yet. E81 remains a conditional prepared objective,
 not a TRAIN fit. No E49 access, deployment or independent-final claim permitted.
+
+
+### E80 failed full TRAIN screen; E81 objective now justified (2026-09-13)
+
+The one386-coefficient fit completed in248.664s/52 iterations, solver success. Minimum
+AI shift -8.88e-16, zero new AI misses/REAL errors, exact saved-model replay. Old-REAL
+FPR8.7989%/9.7939%/8.6141%; expanded8.2428%/9.2102%/8.0705%; new MIDD
+.5871%/1.1742%/.5871%. All population10% and new-sensor20% guards pass.
+However, both old/expanded TRAIN fail worst REAL source and covered accuracy in all3
+conditions (8/10 numeric checks per cell). RR FPR35.44%/40.48%/34.96% still exceeds20%;
+expanded covered accuracy94.4376%/93.7688%/94.5167% falls below95%. Full TRAIN fails.
+Runtime batch replay skipped by its predefined guard; no DEV/E49 scoring. Candidate
+SHA256:136be4ca5ef6aeac683f604a4e3820870df3436802e6fb924846e09ee9f58d22. Full immutable report: evidence/e80_fit.json.
+This is a TRAIN improvement, not an external-quality pass or promoted model.
+
+E80 confirms the conditional E81 trigger: pooled REAL passes while the dominant source
+fails. Register one E81 worst-REAL source/condition objective using the exact complete E80
+map, discard E80 correction weights and start386 at zero. Keep .5 REAL loss coefficient,
+L2.01, SLSQP200/ftol1e-9, all13,785 AI logit non-decrease constraints and correct-REAL
+guards. Remove only the AI BCE reward; preserve every E80 acceptance and runtime check.
+No rank/seed/weight/cut sweep, data change or new image extraction. No DEV/final until
+complete prior gates pass. This tests an objective change after measured source failure.

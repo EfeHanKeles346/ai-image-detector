@@ -283,3 +283,13 @@ no classifier head execution. Companion immutable chunks and full external recei
 on LaCie. Committed compact receipt `evidence/e79_features.json`; attempt1 deadline receipt
 records total cost above2.5h. DEAR/MIDD research restrictions and RR lineage limits persist.
 E80 fit contract frozen, no candidate yet. Raw features/weights are not redistributed.
+
+
+### E80 research rejection (2026-09-13)
+
+External candidate `/Volumes/LaCie/pixelproof-datasets/e80/correction.npz`, SHA256
+`136be4ca5ef6aeac683f604a4e3820870df3436802e6fb924846e09ee9f58d22`. One386-coefficient fit on frozen E79 features. All TRAIN
+AI logits preserved; old-REAL FPR8.80%/9.79%/8.61% passes10%, but RR35.44–40.48%
+and covered accuracy<95% fail full TRAIN screening. Runtime/DEV/E49 not run; not serving
+or an independent-quality pass. E81 tests the prepared worst-REAL objective next under
+unchanged full-AI and acceptance guards. Receipt: `evidence/e80_fit.json`.

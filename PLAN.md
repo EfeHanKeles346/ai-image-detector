@@ -44,22 +44,22 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E79 complete; E80 fit registered (2026-09-13)
+## Current checkpoint — E80 failed source/selective TRAIN gates; E81 next (2026-09-13)
 
-The goal remains unmet. E70/E71 passed TRAIN but failed consumed E66 with newly missed
-AI. E77 preserved all TRAIN AI logits yet failed old-REAL FPR at10.96%/12.38%/10.39%.
-Its audits identify RR concentration and increased logits on some remaining REAL mistakes.
+The goal remains unmet. E80 preserved all13,785 AI TRAIN logits and zero new AI/REAL
+errors. Old-REAL FPR8.80%/9.79%/8.61% passes10%, yet RR remains35.44%/40.48%/34.96%
+and covered accuracy remains below95%. Both old/expanded TRAIN pass8/10 numeric checks
+per condition. No runtime/DEV/E49 permitted; E80 stays rejected.
 
 E79 complete:12,141x3x1640 forensic features,34 source replays exact,2.29GB peak driver
 memory. First attempt hit9000s; same-contract resume created80 missing parents in412.623s.
 Total measured loops exceed9412.623s, plus setup/validation; no2.5h completion claim.
-E80's386-coefficient fit is frozen (5a1165b2895d…), ready for one execution.
-Keep all-AI confidence/correct-REAL guards and all population/source/selective/runtime gates.
-Only a complete TRAIN pass permits one separately frozen consumed-E66 comparison.
+Next one E81 fit reuses the exact E80 map and optimizes worst REAL source/condition BCE,
+with the same .5 REAL coefficient/L2.01 and full-AI confidence/correct-REAL constraints.
+All population/source/selective/runtime acceptance checks remain. No parameter/cut sweep.
 
-E81's worst-REAL objective is prepared conditionally, pending E80 results.808 Python tests
-pass. Legacy RR upstream-site mapping is unresolved; no new COCO admission or independent
-final claim. No E49 access, serving change or30-minute automation. MD/git checkpoints continue.
+808 Python tests pass. Legacy RR upstream-site mapping is unresolved; no new COCO
+admission or independent-final claim. E43/serving unchanged. No30-minute automation.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
 
@@ -5465,3 +5465,25 @@ mean-crop head scalar1 + intercept1, zero correction start; unchanged E64 object
 full-AI confidence constraints. All E80 population/source/selective/runtime guards apply.
 No candidate or detector-quality result yet. E81 remains a conditional prepared objective,
 not a TRAIN fit. No E49 access, deployment or independent-final claim permitted.
+
+
+### E80 failed full TRAIN screen; E81 objective now justified (2026-09-13)
+
+The one386-coefficient fit completed in248.664s/52 iterations, solver success. Minimum
+AI shift -8.88e-16, zero new AI misses/REAL errors, exact saved-model replay. Old-REAL
+FPR8.7989%/9.7939%/8.6141%; expanded8.2428%/9.2102%/8.0705%; new MIDD
+.5871%/1.1742%/.5871%. All population10% and new-sensor20% guards pass.
+However, both old/expanded TRAIN fail worst REAL source and covered accuracy in all3
+conditions (8/10 numeric checks per cell). RR FPR35.44%/40.48%/34.96% still exceeds20%;
+expanded covered accuracy94.4376%/93.7688%/94.5167% falls below95%. Full TRAIN fails.
+Runtime batch replay skipped by its predefined guard; no DEV/E49 scoring. Candidate
+SHA256:136be4ca5ef6aeac683f604a4e3820870df3436802e6fb924846e09ee9f58d22. Full immutable report: evidence/e80_fit.json.
+This is a TRAIN improvement, not an external-quality pass or promoted model.
+
+E80 confirms the conditional E81 trigger: pooled REAL passes while the dominant source
+fails. Register one E81 worst-REAL source/condition objective using the exact complete E80
+map, discard E80 correction weights and start386 at zero. Keep .5 REAL loss coefficient,
+L2.01, SLSQP200/ftol1e-9, all13,785 AI logit non-decrease constraints and correct-REAL
+guards. Remove only the AI BCE reward; preserve every E80 acceptance and runtime check.
+No rank/seed/weight/cut sweep, data change or new image extraction. No DEV/final until
+complete prior gates pass. This tests an objective change after measured source failure.
