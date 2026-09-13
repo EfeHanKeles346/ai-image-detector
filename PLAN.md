@@ -5258,3 +5258,9 @@ No new MIDD model score, E76 contract or fit yet.
 
 E76 prepared implementation verification complete:779 Python tests passed/14.92s.
 Commit its fixed protocol/code before E75 feature completion; do not freeze inputs or fit early.
+
+Research follow-up after the fixed E76 result: a REAL-only feature reconstruction branch
+could learn a nonlinear manifold from existing CLIP features; exact architecture/training
+must be separately registered. DEAR is a native-resolution forensic-expert alternative;
+inspect its released weight terms and resource requirements before any acquisition/scoring.
+MAFL/ACEF are heavier training approaches, not automatic next runs. No new fit selected yet.

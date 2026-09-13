@@ -2491,3 +2491,9 @@ DEV/final; no detector scores yet. Audit SHA`23021f21e0ff5fcb72c972c8293a0c18188
 TRAIN manifest SHA`a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e`.
 E75 feature contract may now freeze for all511 admitted representatives. Existing E54 TRAIN
 remains immutable; a future expanded fit would have12,141 parents /7,546 REAL /4,595 AI.
+
+DEAR lead (2026-09-13): metadata/code/terms only, no new images or weights. Model revision
+5b57350b0ee75553109b3844f3c8a9341fc7e707 offers94,372,114B c/r checkpoints under
+CC BY-NC4.0 plus stated SD1.5 use restrictions; NOTICE records unresolved explicit licensing
+for some upstream AlignedForensics sources. This is a possible research expert, not an
+admitted dataset/model or serving replacement. Complete pinned receipt in evidence.

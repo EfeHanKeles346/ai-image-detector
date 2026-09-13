@@ -483,3 +483,41 @@ E70's local margin diagnostic, not the papers, supplies direct project evidence:
 condition views lie within1e-6 of the AI cut after correction; some consumed-DEV AI losses
 had appreciable prior margins. Decision retention alone leaves limited boundary slack.
 This is descriptive, not a guarantee that stronger constraints will fix unseen REAL/AI errors.
+
+### 2026-09-13 mechanism review during E75 extraction
+
+- [Attribution Consistency, CVPR Findings2026](https://arxiv.org/html/2603.00717v2)
+  trains a feature encoder–decoder on one class, using L1 reconstruction and the absolute
+  feature residual for a separate binary classifier. Its encoder is frozen CLIP ViT-L/14;
+  attribution and classification updates alternate. Authors specify Adam2e-4/batch256.
+  This suggests testing a learned REAL feature manifold, beyond the failed fixed PCA/bilinear
+  maps. It does not guarantee camera FPR or per-image AI retention. No author implementation
+  was identified in the inspected HTML; any local architecture/epoch choice must be labelled
+  a preregistered adaptation, not a reproduction or a threshold-free single-class final detector.
+- [MAFL, April2026 preprint](https://arxiv.org/html/2604.12353v1) was already a PLAN lead.
+  It adversarially suppresses generator/content-specific features. The specified recipe uses
+  an A6000, batch256, AdamW2e-4,100epochs with early stopping,5-epoch bias pretraining and
+  three bias updates per feature update. This is a new encoder-training objective, not our
+  confidence-constrained linear correction; its aggregate benchmark scores are not our gates.
+- [ACEF, August2026 revision](https://arxiv.org/html/2605.14486v2) uses separate DINO/LoRA
+  experts for aligned VAE and SRGAN artifacts, then freezes them for layer-wise fusion.
+  The paper's8-V100 setup and two10,000-iteration experts plus5,000 fusion iterations are
+  substantially heavier than this local cached-feature experiment. No author code/weights
+  link was found in the inspected HTML. Do not confuse E74's frozen bilinear features with
+  trained artifact-specific experts or inherit reported performance.
+- [DEAR, ICML2026 paper](https://arxiv.org/abs/2606.10309v2) and
+  [official code](https://github.com/anti-fake/dear) identify channels by activation alignment
+  with inpainted regions, prune both extremes, then refine the head. Native-resolution inference
+  preserves low-level traces. Its primary problem is lost fake sensitivity after processing;
+  it is not evidence that our camera false alarms are solved. This is a distinct pretrained
+  forensic expert lead, with public released checkpoints. Before use, pin source/model revisions,
+  separately review weight terms and verify original inference/resource behavior. No downloaded
+  weights or external image scores yet; do not sweep c/r variants on consumed DEV.
+
+DEAR metadata follow-up: source revision`5e0dc665eee24b632c03be09a27a05319abc9e7f`,
+model revision`5b57350b0ee75553109b3844f3c8a9341fc7e707`. Code is MIT with Apache-2.0
+ResNet; model weights separately use CC BY-NC4.0 plus stated SD1.5 use restrictions.
+The model NOTICE also identifies AlignedForensics inputs without explicit source licence;
+record this lineage limitation. Each DEAR c/r checkpoint is94,372,114B. Only pinned source,
+LICENSE/NOTICE/model metadata were read, no weights downloaded or upstream code executed.
+Receipt: `evidence/dear_metadata_lead.json`. Do not infer permissive model rights from code.

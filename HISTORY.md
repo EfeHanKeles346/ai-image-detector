@@ -7133,3 +7133,14 @@ No new MIDD model score, E76 contract or fit yet.
 
 E76 prepared implementation verification complete:779 Python tests passed/14.92s.
 Commit its fixed protocol/code before E75 feature completion; do not freeze inputs or fit early.
+
+During E75 extraction, checked primary2026 papers on single-class feature reconstruction,
+MAFL adversarial bias suppression (already in PLAN), ACEF paired-artifact experts and DEAR
+channel pruning. Record methods/resources and distinguish paper reproduction from possible
+local adaptations. No change to the fixed E76 data-effect experiment. Latest inspected CI
+34730124772: Python success; web fails only the existing dependency audit, unchanged rules.
+
+DEAR source/model metadata pinned and Git blob bodies verified. Code and weight licences
+are distinct; checkpoint terms are non-commercial with stated SD1.5 restrictions and
+upstream lineage limitations. No model payload/image or third-party execution. E75 remains
+active and E76's prepared code has been pushed at6fb0890 (origin verified).

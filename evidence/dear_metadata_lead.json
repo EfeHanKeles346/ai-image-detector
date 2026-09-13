@@ -1,0 +1,68 @@
+{
+  "code_license": "MIT with Apache2.0 ResNet component",
+  "code_revision": "5e0dc665eee24b632c03be09a27a05319abc9e7f",
+  "code_tree_sha256": "27fb15b9a574534a8c5df51ebb593f6f4fbcdf9ba8d8e65e4012fd2d8a9ad9cd",
+  "files": [
+    {
+      "bytes": 1374,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/code/LICENSE",
+      "sha256": "136d7cd1802c0143ecd4be950bfbadf3198685eff3586d0de2f6496792fdf0a1",
+      "url": "https://raw.githubusercontent.com/anti-fake/dear/5e0dc665eee24b632c03be09a27a05319abc9e7f/LICENSE"
+    },
+    {
+      "bytes": 9790,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/code/README.md",
+      "sha256": "23e68f256d7deeeb10df46cc3922ee0ba2bf3d19a99f6d570dfa989957e83959",
+      "url": "https://raw.githubusercontent.com/anti-fake/dear/5e0dc665eee24b632c03be09a27a05319abc9e7f/README.md"
+    },
+    {
+      "bytes": 2013,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/code/configs/rajan_mask_gated.yaml",
+      "sha256": "4a5342938d7c78a9d77ce4d4439eec6cd3c2443c5203631a486bb68c1f21facd",
+      "url": "https://raw.githubusercontent.com/anti-fake/dear/5e0dc665eee24b632c03be09a27a05319abc9e7f/configs/rajan_mask_gated.yaml"
+    },
+    {
+      "bytes": 2229,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/code/dear/detector/rajan_mask_gated_detector.py",
+      "sha256": "ef5d52dbc0a647753d342b6c19d6f876de700b183db08960a4536804bdf78bd8",
+      "url": "https://raw.githubusercontent.com/anti-fake/dear/5e0dc665eee24b632c03be09a27a05319abc9e7f/dear/detector/rajan_mask_gated_detector.py"
+    },
+    {
+      "bytes": 6816,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/code/dear/nn_classifier/resnet.py",
+      "sha256": "dfa3616d0a38ec1da3b88c731f700b6494d811028a8c7c018b51c63557bdec53",
+      "url": "https://raw.githubusercontent.com/anti-fake/dear/5e0dc665eee24b632c03be09a27a05319abc9e7f/dear/nn_classifier/resnet.py"
+    },
+    {
+      "bytes": 3363,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/code/scripts/inference.py",
+      "sha256": "47387af4f11621bee90df77ec5448cb70ede60735eb4bfb0579dd328c3969ab7",
+      "url": "https://raw.githubusercontent.com/anti-fake/dear/5e0dc665eee24b632c03be09a27a05319abc9e7f/scripts/inference.py"
+    },
+    {
+      "bytes": 1388,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/weights/LICENSE",
+      "sha256": "87fc3de9022859e06308558200b0006e2e2a440d8791e1fa9b55a3d8fd5e3ca3",
+      "url": "https://huggingface.co/k-aisi-anti-deepfake/dear-checkpoints/resolve/5b57350b0ee75553109b3844f3c8a9341fc7e707/LICENSE"
+    },
+    {
+      "bytes": 2049,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/weights/NOTICE",
+      "sha256": "01fe0e7c91f87a9178e5082f8255a798559caa94e6b1f1b0b45f393f7b6b875a",
+      "url": "https://huggingface.co/k-aisi-anti-deepfake/dear-checkpoints/resolve/5b57350b0ee75553109b3844f3c8a9341fc7e707/NOTICE"
+    },
+    {
+      "bytes": 3342,
+      "path": "/Volumes/LaCie/pixelproof-datasets/research/dear/weights/README.md",
+      "sha256": "9620d4b3c102c1dd895d7eca19740813972cc17b6e941c314434f8c448e095a8",
+      "url": "https://huggingface.co/k-aisi-anti-deepfake/dear-checkpoints/resolve/5b57350b0ee75553109b3844f3c8a9341fc7e707/README.md"
+    }
+  ],
+  "image_scores": 0,
+  "metadata_sha256": "257b0e6d8cdd241cceb7207bfb190506a29d0b65f4cdccb4c9430465ef702343",
+  "model_license": "cc-by-nc-4.0",
+  "model_revision": "5b57350b0ee75553109b3844f3c8a9341fc7e707",
+  "model_weights_downloaded": false,
+  "state": "DEAR_source_and_terms_metadata_only",
+  "third_party_code_executed": false
+}
