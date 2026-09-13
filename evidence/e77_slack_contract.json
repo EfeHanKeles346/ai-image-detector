@@ -1,0 +1,20 @@
+{
+  "analysis": "Describe AI correction shifts and correct-REAL constraint slack by source/condition. Near-active means slack<=1e-7, purely descriptive; no margin or constraint change. Describe remaining REAL false-AI margin/shift quantiles and source counts.",
+  "contract_sha256": "94d63c4440a37047e124e264b35cd8aba55ebb3d3673767b4d4723366fcf89f0",
+  "dev_final_pixels_or_scores": 0,
+  "e79_features_read": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e76_fit.py": "4c552ca70b79dd5a116cbead116e1d97f84c53f70c2c86f2ce43e812d1f5205b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e77_constraint_diagnostic.py": "976743bbb34a0aa972689786e62345c7881bc962d21ee3d73b1b9cf7dfe0cccf",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e77_model.py": "98d102d73a3eb2eb15ffb4b1c84761dfb5a9e4ac1e3c6463418e7cbb8943d5b0",
+    "/Volumes/LaCie/pixelproof-datasets/e77/correction.npz": "f4be42e1cb0a7582b38f363cb66bfa043a5741dfae875651e6d1d587558f4b5d",
+    "/Volumes/LaCie/pixelproof-datasets/e77/fit.json": "b39e9ada73c78e45d6cb8ea3b7a81492beb2c50a009a2acb09987276f7400c1d",
+    "/Volumes/LaCie/pixelproof-datasets/e77/fit_contract.json": "e09d02c76473f49b49be29c3cae6bc22eb4753a2ae83b7e2608a068d9d750640"
+  },
+  "limits": "Near-active constraints need not have nonzero KKT multipliers. This cannot establish causality, prove infeasibility or predict external retention. Views within parents are dependent.",
+  "new_fit": false,
+  "population": "All frozen12141 TRAIN parents, all3 conditions; replay frozen REAL slice metrics exactly first.",
+  "state": "E77_TRAIN_slack_diagnostic_registered",
+  "threshold_changed": false
+}

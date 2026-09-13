@@ -126,6 +126,12 @@ scores, images, bootstrap or final validator were read/run.
   scenes; release coverage unresolved, no images admitted. Other primary sources and
   limitations: [forensic references](../IMAGE_FORENSICS_REFERENCE.md).
 
+The frozen E77 slack audit also finds359/435/335 remaining REAL false-AI views whose
+logits increased, while60/73/84 AI constraints are within1e-7 of their boundary. RR median
+remaining error margins exceed2 logits. This is descriptive, not proof of constraint
+causality or infeasibility; no candidate, label, threshold or DEV/final change followed.
+See [slack receipt](e77_slack_diagnostic.json).
+
 ## Next fixed model and verification
 
 E80 adds all-TRAIN DEAR PCA64 (StandardScaler, seed80, randomized power3, whiten) to the

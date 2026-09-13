@@ -7391,3 +7391,30 @@ mean-channel selection, checkpoint digest rejection, serialized prediction and e
 reuse. The first null-space test had a scalar/array shape mismatch in its assertion; corrected
 the expected scalar without changing implementation or model inputs. Full Python suite:
 805 passed with the existing Starlette/httpx deprecation. E79 remains active and resumable.
+
+
+### E77 constraint-slack diagnostic planned while E79 runs (2026-09-13)
+
+Replay the frozen failed E77 on all12,141 TRAIN parents/all3 conditions and require exact
+published REAL population metrics. Describe all-AI logit shifts and protected-REAL slack
+by source/condition, near-active at fixed1e-7, plus remaining REAL false-AI margins and
+positive/negative shifts. This is no fit, sweep, new candidate or threshold change; no
+E79/DEV/final features or image files. Near-active counts alone are not KKT multipliers
+or proof that constraints cause errors or that the target is infeasible. Views are dependent.
+Register code/input hashes before execution and save the immutable aggregate report.
+
+
+### E77 frozen constraint-slack diagnostic completed (2026-09-13)
+
+Exact published TRAIN population replay passed. In clean/assigned/Q75,60/73/84 AI views
+have correction shift<=1e-7;19/35/23 protected REAL views have slack<=1e-7. These are
+near-active counts, not multiplier-based causal attribution. Remaining REAL false-AI counts
+are777/879/736;359/435/335 of these have a positive correction>1e-7 despite no newly
+misclassified REAL images. The correction rescued321/282/258 baseline REAL errors.
+RR remains dominant:548/602/508 errors,295/339/273 with increased logit; median remaining
+margin above AI cut is2.210/2.119/2.131 logits. Thus the observed residual error includes
+substantial incorrect confidence, not only numerical cut ties. This does not prove map
+infeasibility, require weaker AI constraints or justify changing labels/cuts. E80's distinct
+forensic representation remains the next measured test. No new fit, image, DEV/final or
+E79 feature read. Immutable receipts: evidence/e77_slack_contract.json and
+ evidence/e77_slack_diagnostic.json; reproduction: e77_constraint_diagnostic.py.

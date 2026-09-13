@@ -533,3 +533,27 @@ The source's permissive load is unsuitable for the local experiment: require exp
 `weights_only=True` and strict complete state validation. Any local torchvision-based
 equivalent must pass source-reference parity on synthetic tensors before actual images.
 Source: [official DEAR](https://github.com/anti-fake/dear/tree/5e0dc665eee24b632c03be09a27a05319abc9e7f).
+
+
+### 2026-09-13 additional review during E79 (leads, no candidate changes)
+
+- [LoRC, August2026 preprint](https://arxiv.org/html/2608.20882v1) projects patch tokens
+  orthogonally to a CLS semantic anchor, then learns low-rank attention and a covariance
+  separation loss. Implementation specifies DINOv3 ViT-H+/16, LoRA16, attention rank32,
+  batch64 with4 accumulation steps and DDA reconstruction training. Method text calls
+  the backbone frozen whereas implementation mentions LoRA; clarify this before claiming
+  reproduction. No author model/code release link was identified in inspected HTML.
+  Our cached mean/std CLS features cannot reconstruct its patch-token geometry. Future
+  evaluation requires separate resource, source, weight-terms and code audits; do not
+  substitute its aggregate accuracy for our REAL FPR/AI retention gates.
+- [Post-hoc AIGI calibration, February2026 preprint](https://arxiv.org/html/2602.01973v1)
+  estimates an additive logit correction from target-domain samples. Its scalar argument
+  assumes approximately stable REAL distribution and systematic fake-class shift. Our
+  camera/processing REAL shift and locked test protocol require separate evidence. A
+  global additive correction preserves ranking/AUC and supplies no per-image retention
+  guarantee (our inference). Do not tune on E49/E66 or replace representation work with
+  an unregistered scalar adjustment. Existing PLAN already separates calibration from
+  discrimination and records failed calibration transfer.
+
+Only primary paper text read. No source images/model weights downloaded for these leads;
+E79/E80 recipes unchanged by this review. E80 remains unmeasured.
