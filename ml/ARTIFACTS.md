@@ -382,3 +382,22 @@ training result exists at this checkpoint. Next execute the frozen representatio
 then separately freeze E86's450-weight constrained head only after successful export.
 All80 absolute TRAIN metric checks and AI/runtime guards precede any consumed E66 read.
 SID's separately audited128 parents remain outside this experiment. E49/serving unchanged.
+
+
+### E85 complete; E86 constrained head registered (2026-09-13)
+
+E85 completed100 fixed epochs in75.342871s. Weighted BCE0.6953957208 to
+6.20674856e-9; this near-memorization TRAIN loss is not evidence of generalization.
+All48,564 views exported as12141x4x64. Saved latent/coordinate replay is exact; fixed-input
+batch8 error0. Original-three predecessor score replay error3.33066907e-16, zero changes
+at both fixed cuts. No DEV/final rows, new image inference or download.
+Map SHA256`12c3a8c24de8f6fc3be4b9572937c84810689d450d50b95db082f504be483e07`;
+feature SHA256`6a32d56aa0c860050947e1b3c12d257992741f44e2ccbff04ec6e4d32fc91c21`.
+
+E86 contract SHA256`d9c6410739b8b7dbce2159293f1745ef82743c2a7e15f7e5bcc2385540255e9f` now binds the complete E85
+export and unchanged E81 worst-REAL objective. One zero-initialized450-coefficient fit,
+all18,380 AI-view logit guards, correct-REAL constraints and all80 numeric TRAIN checks.
+Full48,564-view runtime batch8 replay follows only if provisional TRAIN guards pass.
+No E86 fit result yet; no coefficient, margin, regularization or cut sweep. A separate
+consumed E66 cache comparison is permitted only after the complete TRAIN/runtime pass.
+Current reference/serving and all protected data roles remain unchanged.

@@ -44,22 +44,22 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check100%, charged and attached to AC. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E84B complete; E85 registered; E83 DEV remains rejected (2026-09-13)
+## Current checkpoint — E85 complete; E86 registered; E83 DEV remains rejected (2026-09-13)
 
 E83 passes all TRAIN/runtime gates. Consumed DEV REAL FPR improves42.5% to0% original
 and42.5% to13.75% social Q75; AI recall98.75%/99.375%.17/20 numeric gates pass, but
 one newly missed original AI and three Q75 numeric failures reject the candidate.
 Read-only component replay is exact; learned REAL correction weakens/reverses under Q75.
 E84B completed the exact social1080px-then-JPEG75 view for every existing TRAIN parent
-in7296.694s. E85 is registered for the fixed four-condition representation; E86 follows
-only after its verified export, keeping all old conditions and AI protection. No DEV/final admission or cutoff change.
+in7296.694s. E85 completed100 epochs in75.343s with exact feature replay. Execute
+the registered E86 constrained head next, keeping all old conditions and AI protection. No DEV/final admission or cutoff change.
 E87/E88 separately acquired and audited128 SID RAW originals for future research TRAIN;
 zero matches/failures against151,996 references. They are not part of E85/E86.
 
 Metadata-only transport inventory is complete: the1080 cap potentially resizes4455/7546
 REAL parents (59.04%) and1046/4595 AI parents (22.76%). Recorded formats are strongly
 class-associated; this is a coverage limitation, not a demonstrated cause. Preserve the
-completed E84B archive and registered E85/prepared E86 sequence. SID acquisition/audit is complete
+completed E84B/E85 artifacts and registered E86 sequence. SID acquisition/audit is complete
 for a separate future TRAIN extension; PolyU/RENOIR remain unacquired leads. A read-only
 consistency-mechanism review is recorded in `IMAGE_FORENSICS_REFERENCE.md`; it does not
 change the fixed next experiment or select an additional objective before its result.
@@ -5990,3 +5990,22 @@ training result exists at this checkpoint. Next execute the frozen representatio
 then separately freeze E86's450-weight constrained head only after successful export.
 All80 absolute TRAIN metric checks and AI/runtime guards precede any consumed E66 read.
 SID's separately audited128 parents remain outside this experiment. E49/serving unchanged.
+
+
+### E85 complete; E86 constrained head registered (2026-09-13)
+
+E85 completed100 fixed epochs in75.342871s. Weighted BCE0.6953957208 to
+6.20674856e-9; this near-memorization TRAIN loss is not evidence of generalization.
+All48,564 views exported as12141x4x64. Saved latent/coordinate replay is exact; fixed-input
+batch8 error0. Original-three predecessor score replay error3.33066907e-16, zero changes
+at both fixed cuts. No DEV/final rows, new image inference or download.
+Map SHA256`12c3a8c24de8f6fc3be4b9572937c84810689d450d50b95db082f504be483e07`;
+feature SHA256`6a32d56aa0c860050947e1b3c12d257992741f44e2ccbff04ec6e4d32fc91c21`.
+
+E86 contract SHA256`d9c6410739b8b7dbce2159293f1745ef82743c2a7e15f7e5bcc2385540255e9f` now binds the complete E85
+export and unchanged E81 worst-REAL objective. One zero-initialized450-coefficient fit,
+all18,380 AI-view logit guards, correct-REAL constraints and all80 numeric TRAIN checks.
+Full48,564-view runtime batch8 replay follows only if provisional TRAIN guards pass.
+No E86 fit result yet; no coefficient, margin, regularization or cut sweep. A separate
+consumed E66 cache comparison is permitted only after the complete TRAIN/runtime pass.
+Current reference/serving and all protected data roles remain unchanged.

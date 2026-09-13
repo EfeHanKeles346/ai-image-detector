@@ -1,0 +1,82 @@
+{
+  "TRAIN_views": 48564,
+  "ai_views": 18380,
+  "artifact_sha256": "12c3a8c24de8f6fc3be4b9572937c84810689d450d50b95db082f504be483e07",
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "5af47a4051c2ddc2babe1b36a26f878e6d42121181e688b9529960b7ef5352c9",
+  "detector_quality_claim": false,
+  "dev_final_rows_read": 0,
+  "downloads": 0,
+  "epochs": 100,
+  "feature_sha256": "6a32d56aa0c860050947e1b3c12d257992741f44e2ccbff04ec6e4d32fc91c21",
+  "feature_shape": [
+    12141,
+    4,
+    64
+  ],
+  "final_weighted_BCE": 6.206748559620285e-09,
+  "fixed_input_batch8_max_error": 0.0,
+  "initial_weighted_BCE": 0.6953957207895525,
+  "input_map_old_three_replay": {
+    "decision_changes_by_cut": {
+      "0.011505939625203613": 0,
+      "0.07940196245908739": 0
+    },
+    "max_score_error": 3.3306690738754696e-16,
+    "passed": true
+  },
+  "loss_trace": [
+    {
+      "epoch": 10,
+      "weighted_BCE": 0.0007104275146218215
+    },
+    {
+      "epoch": 20,
+      "weighted_BCE": 8.299892505945798e-05
+    },
+    {
+      "epoch": 30,
+      "weighted_BCE": 2.0003656383278627e-05
+    },
+    {
+      "epoch": 40,
+      "weighted_BCE": 5.853892681274166e-06
+    },
+    {
+      "epoch": 50,
+      "weighted_BCE": 1.8495755386610567e-06
+    },
+    {
+      "epoch": 60,
+      "weighted_BCE": 6.04517760689428e-07
+    },
+    {
+      "epoch": 70,
+      "weighted_BCE": 2.012236954957367e-07
+    },
+    {
+      "epoch": 80,
+      "weighted_BCE": 6.659694218730901e-08
+    },
+    {
+      "epoch": 90,
+      "weighted_BCE": 2.1506658104026077e-08
+    },
+    {
+      "epoch": 100,
+      "weighted_BCE": 6.206748559620285e-09
+    }
+  ],
+  "new_image_inference": 0,
+  "real_views": 30184,
+  "seconds": 75.34287083393428,
+  "serialized_coordinates_exact": true,
+  "serialized_latent_exact": true,
+  "state": "E85_supervised_TRAIN_representation_complete",
+  "weights_sha256": "267aaeb564fef7e0b1a0666f5cd3bb6843ef99c643251291fe368f2841038474"
+}
