@@ -7478,3 +7478,23 @@ must not be reported as within2.5h. Receipt: evidence/e79_attempt1_deadline.json
 The first metadata-count assertion included exFAT AppleDouble sidecars and wrote no receipt;
 strict five-digit NPZ-name counting fixes the audit. The extractor's numeric paths already
 exclude those sidecars; its code/contract/pixels are unchanged.
+
+
+### E79 complete; E80 one fit registered (2026-09-13)
+
+All12,141 TRAIN parents/all3 conditions are complete: shape12141x3x1640,34 source
+representative replays exactly equal (max error0), MPS driver peak2,290,827,264 bytes.
+First attempt stopped at9000s with12,061 chunks; same-contract resume validated all old
+chunks and created exactly80 missing parents in412.623s. Extraction-loop cost
+is at least9412.623s across both attempts, plus setup/validation and the
+interruption interval; the final receipt's seconds field is resume-only. Full extraction
+did not fit the initial2.5h allocation. Numeric/memory checks pass; resource failure remains
+recorded. No upstream classifier head execution, new image download or DEV/final access.
+Feature SHA256:b357ad637640c3c34e04ece4fa7eb949906fb07d97f3e6fe751bb92ccff39a02; compact receipt: evidence/e79_features.json.
+
+E80's single386-coefficient fit is now registered against complete verified features:
+contract SHA256:5a1165b2895d2a31c0a655eee1a73cfb36d3e6b057d293d0487906a9f041b1a9. Exact E77 map320 + DEAR PCs64 + fixed official
+mean-crop head scalar1 + intercept1, zero correction start; unchanged E64 objective and
+full-AI confidence constraints. All E80 population/source/selective/runtime guards apply.
+No candidate or detector-quality result yet. E81 remains a conditional prepared objective,
+not a TRAIN fit. No E49 access, deployment or independent-final claim permitted.

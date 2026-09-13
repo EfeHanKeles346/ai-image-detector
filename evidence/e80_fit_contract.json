@@ -1,0 +1,53 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "ai_parents": 4595,
+  "ai_views": 13785,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "constraints": "Unchanged E73 non-decreasing logits for all13,785 AI TRAIN views; E64 correct-REAL decision guard applies to old and new REAL views. No margin/weight/cut sweep.",
+  "contract_sha256": "5a1165b2895d2a31c0a655eee1a73cfb36d3e6b057d293d0487906a9f041b1a9",
+  "dev_consumed_by": [
+    "E70",
+    "E71"
+  ],
+  "dev_features_or_scores_in_fit": 0,
+  "dev_fresh_or_independent": false,
+  "downloads": 0,
+  "e49_read_allowed": false,
+  "evaluation": "Only complete TRAIN pass permits one separately registered consumed E66 screen with all20 numeric gates and zero new AI misses per source/condition; no E49 until that screen passes.",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e49_evaluation.py": "3a59864715cf56b3e262ea6ed444c1ca94f38dd66017952a2435ba600a726265",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e73_fit.py": "8e6c9f628d177e7c4d67062f10426bbb6a8bc1ece25d4fc137712be6febb51ba",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e76_fit.py": "4c552ca70b79dd5a116cbead116e1d97f84c53f70c2c86f2ce43e812d1f5205b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e77_model.py": "98d102d73a3eb2eb15ffb4b1c84761dfb5a9e4ac1e3c6463418e7cbb8943d5b0",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e78_acquisition.py": "18fd6c0b44049a5333b3063b805f0e2754e76baaf36f32a086d1ea246a44ea3d",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e80_fit.py": "9d2abb1b59367ca95f51c4eb53425632665b80b29d6ee4751d5ccd609d37f003",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e80_model.py": "f6cb667c71416304f6a2cc6ab6bdb181caa7cdc5f14755b7e66e6c1a83414784",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/benchmark_metrics.py": "ba460ab8a083d3de0eebb6236ed6770498f7ad274b2378946ad7349b1e92b3c7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e",
+    "/Volumes/LaCie/pixelproof-datasets/e77/correction.npz": "f4be42e1cb0a7582b38f363cb66bfa043a5741dfae875651e6d1d587558f4b5d",
+    "/Volumes/LaCie/pixelproof-datasets/e77/fit.json": "b39e9ada73c78e45d6cb8ea3b7a81492beb2c50a009a2acb09987276f7400c1d",
+    "/Volumes/LaCie/pixelproof-datasets/e77/train_operating_point.json": "85d3393bf7c80fc0da0bbc1638256380f2f70186adff2a841df0ed8913a2215a",
+    "/Volumes/LaCie/pixelproof-datasets/e78/dear_r.pth": "430fde11debe1850ab24af43945b4d68f2bb3ee52a837d84cf525eb603ccde97",
+    "/Volumes/LaCie/pixelproof-datasets/e79/dear_features.npz": "b357ad637640c3c34e04ece4fa7eb949906fb07d97f3e6fe751bb92ccff39a02",
+    "/Volumes/LaCie/pixelproof-datasets/e79/features.json": "230420eb8c553bd2c4bd4452ea8c3ba99babf553e892e8eb288e38ce78899c25",
+    "/Volumes/LaCie/pixelproof-datasets/e79/features_contract.json": "de860e1253a40d9a61a8177402c4882e30e141d5c27801d65e4cf54210c68bec"
+  },
+  "limits": "Research-only MIDD license; unknown scene independence. Whole publisher TRAIN only. Legacy RR has no per-file upstream-site mapping; its paper names mixed news/COCO/CC3M/Unsplash origins. Exact-body audits do not establish upstream-publisher or derivative independence. No new COCO data admitted and no unseen-COCO evaluation claim. TRAIN score protection is not external confidence/recall evidence.",
+  "max_seconds": 1800,
+  "new_parents": 511,
+  "objective": "Unchanged E64 cut-centered BCE, class/source/parent balance, hard REAL2x, class mass.5, L2.01.",
+  "old_parents": 11630,
+  "optimizer": "SLSQP200,ftol1e-9,CPUfloat64/two threads,zero start,final iterate only.",
+  "parents": 12141,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "real_parents": 7546,
+  "representation": "Exact E77 original64/CLIP64/bilinear128/REAL residual64 plus DEAR64. DEAR all-TRAIN StandardScaler/PCA64 randomized seed80 power3, whiten. Also preserve the official DEAR-r gated fc response on the mean820 crop features (std820 weights zero), computed in float64 and standardized on all TRAIN without labels. This mean-crop scalar is a local adaptation, not native full-image official inference. No old-map refit; discard previous correction weights, zero386 coefficients.",
+  "state": "E80_DEAR_forensic_TRAIN_fit_registered",
+  "train_guard": "Solver success/violation<=1e-8, minimum AI shift>=-1e-8, exact saved replay, zero new AI/REAL errors. All3 conditions: <=10% REAL FPR in old/expanded/new-MIDD slices, <=20% worst MIDD sensor. Additionally all10 fixed numeric metric gates on both old and expanded TRAIN in every condition. This strengthens screening after E77 showed pooled Q75 can pass while source/selective accuracy fails. A provisional TRAIN pass must also replay all views in runtime batch8: score error<=1e-6, zero decision changes at both cuts and minimum AI correction shift>=-1e-8."
+}

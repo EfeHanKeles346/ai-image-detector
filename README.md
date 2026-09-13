@@ -10,8 +10,8 @@ E72 admitted511 audited camera TRAIN originals. E76/E77 preserve all TRAIN AI lo
 E77's old-REAL FPR10.96%/12.38%/10.39% still fails TRAIN guards. Its source/slack audits
 identify concentrated RR errors and increased confidence on some remaining mistakes.
 
-DEAR-r numerical parity passes; E79 is extracting all12,141 TRAIN parents. E80's386-coordinate
-correction is prepared, not fitted. A worst-REAL objective helper (E81) is tested for conditional
+DEAR-r features are complete for all12,141 TRAIN parents with exact source replays. E80's
+386-coordinate correction is registered for one fit; no result yet. A worst-REAL objective helper (E81) is tested for conditional
 use after E80 results, with the same full-AI protection. No E49 access or serving change.
 Old E59 fits remain paused; E71 reused only verified cache under a separate contract.
 808 Python tests pass; the existing web dependency audit remains failing.

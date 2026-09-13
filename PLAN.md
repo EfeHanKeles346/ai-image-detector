@@ -44,25 +44,22 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E77 failed; E79 forensic TRAIN features active (2026-09-13)
+## Current checkpoint — E79 complete; E80 fit registered (2026-09-13)
 
-E71 consumed DEV REAL FPR34.375%/38.125% improves on42.5% but fails the10% target.
-Aggregate AI recall unchanged conceals2/1 newly missed AI views;12/20 numeric gates.
-No E49 regression or promotion. E72 downloaded512 score-blind MIDD TRAIN originals,
-3.82GB;511 admitted after151,485-reference audit with zero cross matches and one internal duplicate.
-E73 linear and E74 bilinear full-AI-confidence fits failed all TRAIN REAL10% guards;
-no DEV/E49 permitted. E75 old-encoder parity is exact and511 new TRAIN features are complete. E76 kept the E74 map/AI constraints and added only audited MIDD data. New-camera FPR is
-3.91%/3.72%/2.94%, but old-REAL FPR13.28%/14.37%/12.25% fails all10% guards. No DEV.
-E77 REAL-only reconstruction residual improved old-REAL FPR to10.96%/12.38%/10.39%
-but failed all three10% guards; no new AI misses or REAL errors. No DEV/E49. Next E78:
-DEAR-r94.37MB checkpoint verified; author/CPU/MPS numeric parity passes. Batch9
-projects2h7m and remains a failed2h resource probe. E79 explicitly allocates2.5h under
-user overnight authorization before image scoring, retains6GiB/numeric limits, and is extracting
-all12,141 TRAIN parents. Classifier head not executed; no protected pixels. E80 now preserves
-the fixed official DEAR mean-crop head response alongside64 PCs:386 coefficients, not yet
-frozen/fitted. All acceptance gates unchanged.808 Python tests pass. E81 objective helper is conditionally
-prepared; no TRAIN fit before E80 results.
-MD/git checkpoints continue.
+The goal remains unmet. E70/E71 passed TRAIN but failed consumed E66 with newly missed
+AI. E77 preserved all TRAIN AI logits yet failed old-REAL FPR at10.96%/12.38%/10.39%.
+Its audits identify RR concentration and increased logits on some remaining REAL mistakes.
+
+E79 complete:12,141x3x1640 forensic features,34 source replays exact,2.29GB peak driver
+memory. First attempt hit9000s; same-contract resume created80 missing parents in412.623s.
+Total measured loops exceed9412.623s, plus setup/validation; no2.5h completion claim.
+E80's386-coefficient fit is frozen (5a1165b2895d…), ready for one execution.
+Keep all-AI confidence/correct-REAL guards and all population/source/selective/runtime gates.
+Only a complete TRAIN pass permits one separately frozen consumed-E66 comparison.
+
+E81's worst-REAL objective is prepared conditionally, pending E80 results.808 Python tests
+pass. Legacy RR upstream-site mapping is unresolved; no new COCO admission or independent
+final claim. No E49 access, serving change or30-minute automation. MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
 
@@ -5448,3 +5445,23 @@ must not be reported as within2.5h. Receipt: evidence/e79_attempt1_deadline.json
 The first metadata-count assertion included exFAT AppleDouble sidecars and wrote no receipt;
 strict five-digit NPZ-name counting fixes the audit. The extractor's numeric paths already
 exclude those sidecars; its code/contract/pixels are unchanged.
+
+
+### E79 complete; E80 one fit registered (2026-09-13)
+
+All12,141 TRAIN parents/all3 conditions are complete: shape12141x3x1640,34 source
+representative replays exactly equal (max error0), MPS driver peak2,290,827,264 bytes.
+First attempt stopped at9000s with12,061 chunks; same-contract resume validated all old
+chunks and created exactly80 missing parents in412.623s. Extraction-loop cost
+is at least9412.623s across both attempts, plus setup/validation and the
+interruption interval; the final receipt's seconds field is resume-only. Full extraction
+did not fit the initial2.5h allocation. Numeric/memory checks pass; resource failure remains
+recorded. No upstream classifier head execution, new image download or DEV/final access.
+Feature SHA256:b357ad637640c3c34e04ece4fa7eb949906fb07d97f3e6fe751bb92ccff39a02; compact receipt: evidence/e79_features.json.
+
+E80's single386-coefficient fit is now registered against complete verified features:
+contract SHA256:5a1165b2895d2a31c0a655eee1a73cfb36d3e6b057d293d0487906a9f041b1a9. Exact E77 map320 + DEAR PCs64 + fixed official
+mean-crop head scalar1 + intercept1, zero correction start; unchanged E64 objective and
+full-AI confidence constraints. All E80 population/source/selective/runtime guards apply.
+No candidate or detector-quality result yet. E81 remains a conditional prepared objective,
+not a TRAIN fit. No E49 access, deployment or independent-final claim permitted.

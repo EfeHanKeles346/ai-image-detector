@@ -273,3 +273,13 @@ E78 official DEAR-r research weights are verified externally at `e78/dear_r.pth`
 (94,372,114 bytes; SHA256430fde11…ccde97). Acquisition receipt is committed;
 weights are not redistributed or served. Synthetic parity remains a prerequisite to
 image-feature extraction.
+
+
+### E79 complete external forensic features (2026-09-13)
+
+`/Volumes/LaCie/pixelproof-datasets/e79/dear_features.npz`:12141x3x1640 TRAIN features,
+SHA256 `b357ad637640c3c34e04ece4fa7eb949906fb07d97f3e6fe751bb92ccff39a02`. Source/parent/role binding and34 exact source replays;
+no classifier head execution. Companion immutable chunks and full external receipt remain
+on LaCie. Committed compact receipt `evidence/e79_features.json`; attempt1 deadline receipt
+records total cost above2.5h. DEAR/MIDD research restrictions and RR lineage limits persist.
+E80 fit contract frozen, no candidate yet. Raw features/weights are not redistributed.

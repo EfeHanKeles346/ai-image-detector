@@ -1,0 +1,21 @@
+{
+  "classifier_scores": 0,
+  "contract_sha256": "de860e1253a40d9a61a8177402c4882e30e141d5c27801d65e4cf54210c68bec",
+  "created_this_run": 80,
+  "dev_or_final_rows_read": 0,
+  "downloads": 0,
+  "feature_sha256": "b357ad637640c3c34e04ece4fa7eb949906fb07d97f3e6fe751bb92ccff39a02",
+  "mps_driver_peak_bytes": 2290827264,
+  "parity_parents": 34,
+  "promotion_allowed": false,
+  "report_sha256": "230420eb8c553bd2c4bd4452ea8c3ba99babf553e892e8eb288e38ce78899c25",
+  "same_device_max_error": 0.0,
+  "seconds": 412.6228395419894,
+  "shape": [
+    12141,
+    3,
+    1640
+  ],
+  "state": "E79_DEAR_r_TRAIN_features_complete",
+  "upstream_head_executed": false
+}
