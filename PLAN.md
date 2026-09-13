@@ -44,7 +44,7 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E77 failed; E79 forensic TRAIN features prepared (2026-09-13)
+## Current checkpoint — E77 failed; E79 forensic TRAIN features active (2026-09-13)
 
 E71 consumed DEV REAL FPR34.375%/38.125% improves on42.5% but fails the10% target.
 Aggregate AI recall unchanged conceals2/1 newly missed AI views;12/20 numeric gates.
@@ -57,8 +57,8 @@ E77 REAL-only reconstruction residual improved old-REAL FPR to10.96%/12.38%/10.3
 but failed all three10% guards; no new AI misses or REAL errors. No DEV/E49. Next E78:
 DEAR-r94.37MB checkpoint verified; author/CPU/MPS numeric parity passes. Batch9
 projects2h7m and remains a failed2h resource probe. E79 explicitly allocates2.5h under
-user overnight authorization before image scoring, retains6GiB/numeric limits, and prepares
-all12,141 TRAIN parents. Classifier head not executed; no protected pixels.796 Python tests pass.
+user overnight authorization before image scoring, retains6GiB/numeric limits, and is extracting
+all12,141 TRAIN parents. Classifier head not executed; no protected pixels.800 Python tests pass.
 MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
@@ -5316,3 +5316,12 @@ Same E73 full-AI-logit and E64 correct-REAL constraints, same BCE/source-parent 
 hard REAL2x/L2.01/SLSQP200. All E76 old/expanded/new-MIDD/sensor guards retained. Separate
 representation and fit contracts, exactly one trained AE and one fit, no capacity/epoch/seed
 sweep. Full TRAIN guards alone permit one separately frozen consumed DEV comparison.
+
+
+### E80 prepared, waits for complete E79 (2026-09-13)
+
+One385-coefficient E77+DEAR64 correction, zero start; same objective/AI constraints.
+Add all10 fixed numeric metric guards on old and expanded TRAIN in every condition
+to existing E76 gates. E77 diagnostic showed a pooled Q75 pass can hide40%+ RR error
+and sub95% covered accuracy. No DEV until all TRAIN guards; no E49 until separate
+consumed DEV passes. E79 extraction remains active; no partial-feature fit.

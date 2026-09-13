@@ -129,3 +129,10 @@ E78 DEAR-r weights verified94.37MB; author CPU feature parity exact, CPU/MPS err
 estimate (about2h7m); batch9 uses3.36GB. E79 explicitly budgets2.5h before any image
 features, retaining6GiB/numeric limits. This revises a cost budget, not detector gates.
 Next: frozen TRAIN-only DEAR mean/std features, all12,141 parents, head unexecuted.
+
+
+E77 full TRAIN diagnostic confirms covered accuracy92–93% and worst RR REAL40–48%
+remain failures despite acceptable uncertainty. E80 preparation adds DEAR64 to exact E77
+coordinates and requires all10 numeric metric checks on old/expanded TRAIN, all3 conditions,
+as well as unchanged AI-confidence and E76 population guards. E79 extraction is active;
+E80 cannot freeze/fit on partial features.800 Python tests pass.

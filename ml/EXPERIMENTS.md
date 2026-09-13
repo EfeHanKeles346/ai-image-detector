@@ -5975,3 +5975,37 @@ executed. Immutable per-parent chunks support resuming without excluding any fai
 One source representative per source will be replayed under the same batch layout.
 Three tests verify view/crop ordering and population statistics, chunk body/parent/source
 binding, and feature-only encoding without classifier execution. No DEV/E49 access.
+
+
+### E79 active; E77 frozen TRAIN operating-point diagnostic planned (2026-09-13)
+
+E79 all-parent feature contract is frozen and extraction active, observed MPS driver2.29GB.
+While it runs, audit the already failed E77 candidate at both unchanged cuts on TRAIN only.
+Apply the pure generic E49 metric function to old/expanded TRAIN, including selective
+coverage/accuracy and worst-source errors; do not read E49 scores/pixels or run its final
+validator/bootstrap. Verify FPR replay matches the frozen fit receipt before reporting.
+No fit, threshold selection or image reading. Existing source transition counts show RR
+remaining false positives548/602/508 of1250 across the three conditions; no row is removed.
+
+
+### E77 full TRAIN diagnostic complete; E80 head prepared (2026-09-13)
+
+Frozen E77 candidate replay exactly matches its FPR receipt. Old TRAIN passes7/10 fixed
+numeric checks per condition; expanded TRAIN7/7/8. Automatic coverage92.3–93.2% and
+uncertainty6.8–7.7% are adequate, but covered accuracy92.05–93.30% fails95%; RR
+source false AI43.84%/48.16%/40.64% fails20%. No new fit/cut, protected data or image
+file read. Pure generic metric reuse is not an E49 measurement. Compact evidence:
+`evidence/e77_train_operating_point.json`.
+
+Prepared E80, not yet frozen/fitted: exact E77 original64/CLIP64/bilinear128/REAL-residual64
+plus new DEAR64 (all-TRAIN StandardScaler, randomized PCA seed80/power3, whiten).
+385 zero-initialized coefficients; no previous correction-weight leakage. Unchanged
+E64 objective and E73 all-AI logit constraints, all E76 population guards. Additionally
+require all10 fixed numeric checks on both old and expanded TRAIN for all3 conditions
+before DEV. This strengthens screening to expose source/covered-accuracy failures before
+spending any DEV data. No rank/seed/cut/weight sweep. Freeze only after complete E79 receipt.
+
+Four new tests pass: exact old-coordinate/teacher replay, orthonormal new basis, serialized
+and batch score parity, hidden small-source failures and excessive uncertainty rejected.
+An initial test wrongly required exact unit variance from approximate randomized SVD;
+corrected to its orthonormal-basis property, without changing the model or recipe.
