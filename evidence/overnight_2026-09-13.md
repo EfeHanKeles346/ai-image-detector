@@ -531,3 +531,29 @@ condition bins preserved. The failure is not merely a disagreement with the raw 
 head; a representation/data-coverage change remains the current hypothesis. E84B's
 exact transport extension and the fixed E85/E86 learner/head sequence remain unchanged.
 Separately audited SID data stays available for later justified coverage work.
+
+
+### Read-only source/visual review of E83's sole newly missed AI (2026-09-13)
+
+The complete set of newly missed E43 AI in E83 contains one original view, GPTIMG_431.png.
+Source/E66 body SHA matches`32e1ccf2c9cb523c119f01afd3b7461b3db241a27d837be729b8d22e70a07d93`.
+Existing E43 score0.08128665 is just above fixed AI cut0.07940196; E83 lowers it to
+0.00507187. The source image is a close portrait with skin texture, sheen and haze/grain-
+like detail. Appearance does not prove authenticity, edit type or a labeling mistake.
+No relabeling, exclusion, TRAIN admission, model fit or new score was performed.
+
+The [publisher card](https://huggingface.co/datasets/a3xrfgb/gpt-image-mega-4k) describes
+curated GPT-IMAGE1 images captioned by Qwen3-VL. The neighboring.txt is descriptive
+caption text; it must not be treated as a verified original generation prompt. No edit
+mask, input photograph or generation log appears in the reviewed records. Full-generation
+versus editing provenance remains unresolved. Keep the existing publisher-provided AI
+label and unknown prompt-dependence limitation. Do not infer population-wide bias from
+this single case. Receipt `evidence/e83_known_ai_miss_review.json` records both image and
+caption hashes; no image or full caption is copied into git. Current E84B/E85/E86 unchanged.
+
+
+Existing paired E83 scores for that same GPTIMG_431 parent show transport sensitivity:
+original E43/E83=0.08128665/0.00507187, socialQ75=0.31710792/0.81932999. The Q75
+version is already detected by both; the loss is on the original. These are previously
+locked scores, not a new transform or inference. This supports examining transport
+stability but does not prove that E84B augmentation will fix the original error.

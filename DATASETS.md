@@ -2608,3 +2608,22 @@ future coverage extension; active E84B and E85/E86 still use their original12,14
 Next prepare a bounded, no-new-score four-condition encoder cache for the128 SID parents,
 reusing exact existing transforms/encoders. Do not compete with active E84B for GPU memory;
 finish the existing feature/model comparison before launching a second extraction/fit.
+
+
+### Read-only source/visual review of E83's sole newly missed AI (2026-09-13)
+
+The complete set of newly missed E43 AI in E83 contains one original view, GPTIMG_431.png.
+Source/E66 body SHA matches`32e1ccf2c9cb523c119f01afd3b7461b3db241a27d837be729b8d22e70a07d93`.
+Existing E43 score0.08128665 is just above fixed AI cut0.07940196; E83 lowers it to
+0.00507187. The source image is a close portrait with skin texture, sheen and haze/grain-
+like detail. Appearance does not prove authenticity, edit type or a labeling mistake.
+No relabeling, exclusion, TRAIN admission, model fit or new score was performed.
+
+The [publisher card](https://huggingface.co/datasets/a3xrfgb/gpt-image-mega-4k) describes
+curated GPT-IMAGE1 images captioned by Qwen3-VL. The neighboring.txt is descriptive
+caption text; it must not be treated as a verified original generation prompt. No edit
+mask, input photograph or generation log appears in the reviewed records. Full-generation
+versus editing provenance remains unresolved. Keep the existing publisher-provided AI
+label and unknown prompt-dependence limitation. Do not infer population-wide bias from
+this single case. Receipt `evidence/e83_known_ai_miss_review.json` records both image and
+caption hashes; no image or full caption is copied into git. Current E84B/E85/E86 unchanged.

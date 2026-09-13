@@ -1,0 +1,18 @@
+{
+  "TRAIN_admission": false,
+  "caption_interpretation": "Adjacent text describes the image; publisher identifies captions, not original generation prompts. No edit mask, generation log or original input is available in reviewed records.",
+  "caption_sha256": "f5c9c0e42cac8ac306a61484c150f3721b8f028e0a57127c50b5b6089a54bc62",
+  "e49_reads": 0,
+  "existing_E83_score": 0.005071870509693735,
+  "existing_reference_score": 0.08128664642572403,
+  "label_changes": 0,
+  "new_fits": 0,
+  "new_scores": 0,
+  "publisher_claim": "Curated GPT-IMAGE1 images captioned with Qwen3-VL; labels remain publisher provenance.",
+  "selection": "The entire set of newly missed E43 AI in E83 consumed DEV contains this one original view. No additional error-based sampling or candidate scoring.",
+  "source_card_url": "https://huggingface.co/datasets/a3xrfgb/gpt-image-mega-4k",
+  "source_key": "GPTIMG_431.png",
+  "source_sha256": "32e1ccf2c9cb523c119f01afd3b7461b3db241a27d837be729b8d22e70a07d93",
+  "state": "E83_known_new_AI_miss_source_and_visual_review",
+  "visual_observation": "Tightly framed portrait with visible skin texture, sheen, haze and grain-like texture. Appearance cannot prove authenticity, editing mode or a label error."
+}
