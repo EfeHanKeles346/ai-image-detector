@@ -1,0 +1,16 @@
+{
+  "state": "E79_attempt1_stopped_at_bounded_deadline",
+  "recorded_at": "2026-09-13T04:38:47.546625+00:00",
+  "exit_code": 1,
+  "deadline_seconds": 9000,
+  "completed_chunk_files": 12061,
+  "remaining_parents": 80,
+  "last_logged_parents": 12050,
+  "last_logged_seconds": 8983,
+  "contract_sha256": "de860e1253a40d9a61a8177402c4882e30e141d5c27801d65e4cf54210c68bec",
+  "cause": "TimeoutError from shared E72 resource_check helper, called by E79; no numeric/image failure reported.",
+  "resume": "Same immutable contract/code/population; validate existing chunks and compute only missing parents.",
+  "resource_interpretation": "First full extraction attempt exceeded 9000 seconds; total cost includes first attempt plus resumed execution.",
+  "receipt_note": "First metadata-count assertion included exFAT AppleDouble sidecars; no receipt written. Corrected to strict five-digit NPZ names. Extractor already uses explicit numeric paths and is unaffected.",
+  "excluded_metadata_sidecars": 12061
+}

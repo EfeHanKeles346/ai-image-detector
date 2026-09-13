@@ -7465,3 +7465,16 @@ is permitted. E80's pre-fit limits now record this explicitly; representation, o
 AI guards and acceptance thresholds unchanged. Future clean benchmark claims need audited
 upstream membership or a demonstrably independent source. No authors contacted, new images
 read/downloaded, protected scores opened, or data-role reassignment performed in this review.
+
+
+### E79 first attempt hit9000s; same-contract resume (2026-09-13)
+
+The first bounded extraction stopped at its9000s deadline with12061 immutable chunks
+and80 remaining parents. Last progress was12,050 at8983s. No image or numeric
+failure was reported. Frozen E79 validation passed. Resume the identical recipe/population,
+validating every existing chunk and computing only missing parents. No partial-feature fit,
+budget rewrite, source/label/threshold change. Final total cost includes both attempts and
+must not be reported as within2.5h. Receipt: evidence/e79_attempt1_deadline.json.
+The first metadata-count assertion included exFAT AppleDouble sidecars and wrote no receipt;
+strict five-digit NPZ-name counting fixes the audit. The extractor's numeric paths already
+exclude those sidecars; its code/contract/pixels are unchanged.

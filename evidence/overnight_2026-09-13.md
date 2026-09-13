@@ -116,12 +116,15 @@ scores, images, bootstrap or final validator were read/run.
   were scored in these synthetic probes. Weight terms are CC BY-NC4.0 plus NOTICE
   restrictions; upstream AlignedForensics lacks explicit licensing. No weight redistribution
   or serving. [Acquisition](e78_acquisition.json), [batch probe](e78_batch_probe.json).
-- **E79 active:**frozen DEAR-r820 active channels on all9 E54/E75 crops per TRAIN parent;
+- **E79 active, resumed:**frozen DEAR-r820 active channels on all9 E54/E75 crops per TRAIN parent;
   mean/std1640 per condition. No classifier head execution, no image download. Immutable
   chunks bind parent/source/contract/arrays and support exact-population resume. Both E78
   probes failed the initial2h throughput budget (~2h7m); E79 explicitly allocates2.5h under
   overnight authorization before image features, retaining numeric and6GiB memory limits.
   This is a resource revision, not a changed quality gate or retroactive E78 pass.
+  First extraction attempt later hit9000s at12,061 completed parents;80 remained. The
+  same-contract resume validates old chunks before creating only missing ones. Total cost
+  includes both attempts; no claim that full extraction completed within2.5h.
 - **Leads only:**SIDL metadata has1605 RAW records/253 scene IDs versus advertised300
   scenes; release coverage unresolved, no images admitted. Other primary sources and
   limitations: [forensic references](../IMAGE_FORENSICS_REFERENCE.md).
