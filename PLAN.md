@@ -4996,3 +4996,61 @@ before fitting. Only a passing TRAIN candidate permits a separately registered E
 comparison at unchanged cuts, all20 numeric gates plus per-image/source AI retention and
 non-increased REAL FPR. Only then may a consumed E49 regression be separately registered.
 No independent final or serving promotion; E67/E68/E69 remain failed and immutable.
+
+
+## E71 complementary CLIP representation and cached-feature reuse (2026-09-13)
+
+E70's TRAIN-to-DEV failure motivates a different pretrained representation rather than
+a sweep of DINO transforms or thresholds. The current active-session overnight request
+authorizes continued experiments and needed acquisition. Reuse eligible unfinished work
+through a new E71 contract; E59's original nine fits, queued handoff and automation remain
+paused. Do not modify E59's frozen contract/code/chunks or issue its training commands.
+This updates the next-work decision after the observed E70 failure, not a silent automatic
+restart of the office-paused experiment.
+
+Inventory: exactly 9,599 numeric E59 parent chunks, 399,641,982 bytes; 2,031 parents missing
+from the same 11,630 admitted E54 TRAIN population. Files prefixed `._` are macOS sidecars,
+not extra examples (an initial broad glob counted them; numeric-name audit corrected this
+before any contract). No completed E59 feature archive or receipt exists. No experiment
+worker remains active. Cached CLIP ViT-L/14 weights are already local and hash-pinned; no
+weight/image download is needed. CLIP itself and its official detector were investigated
+previously; the new hypothesis is a constrained complement to E43 using our TRAIN features.
+
+E71 feature stage: verify all legacy bound inputs, every cached chunk's parent/binding,
+raw/aggregate array hashes and exact aggregation, plus the associated cached crop body.
+Freeze a hashed external inventory and new runner/CLIP code identities before new extraction.
+Use a safe standalone adapter, avoiding historical acquisition-module import side effects.
+Re-encode one cached parent per represented source; require raw-vector agreement<=1e-5
+with historical chunks. Only then compute the 2,031 missing parents into owned E71 chunks,
+with identical official CLIP preprocessing, frozen float32 eval, three-crop batches and
+three conditions. Retain raw768 crop vectors and mean/std1536 aggregates, no L2 normalization.
+Bind all 11,630 parents in original order; no subsampling, missing-AI omission or DEV input.
+Use two CPU threads, AC and20GiB reserve, bounded15min inventory /60min extraction, immutable
+chunk receipts and verified resume. Old E59 outputs remain untouched; no automatic model fit.
+
+Fix the E71 candidate before features complete: retain E67's original TRAIN PCA64 basis,
+add TRAIN-standardized CLIP1536 PCA64 (seed71, randomized power3), whiten both, one intercept,
+129 correction coefficients initialized to zero (exact E43). Same E67 class/source/parent
+BCE with hard REAL2x, class mass.5 each, L2.01, SLSQP200/ftol1e-9, two CPU threads/30min;
+same E64 per-image caught-AI/correct-REAL margins, solver feasibility and exact serialization.
+Require <=10% REAL FPR ALL3 TRAIN conditions and zero new AI misses/REAL errors. No rank,
+seed, mixture, weight, L2 or threshold sweep; no warm-started source-fold independence claim.
+
+Only a TRAIN-passing candidate may receive one separately registered E66 comparison. E66
+is now CONSUMED DEVELOPMENT, not unscored/fresh: bind E70's exposure report and score stream,
+keep it excluded from TRAIN/final and preserve its initial admission snapshot. Retain all20
+numeric DEV gates, zero new E43-caught AI per source/condition and non-increased REAL FPR.
+No E49 regression until that screen passes; no independent final or serving promotion.
+
+E71 execution update: inventory/feature contract frozen after all9,599 chunks and their
+source crop bodies verified. Active step is30-source historical encoder parity, then
+completion of2,031 missing TRAIN parents. Fit code is prepared; freeze/run only after
+complete verified archive. Conditional DEV code binds previous E70 exposure and requires
+historical reference pixel/score/decision parity; no automatic DEV after failed TRAIN.
+
+E71 source parity passed30/30 with exact raw equality. Continue missing-parent extraction;
+feature completion receipt still required before fitting. The full suite reached749passed;
+conditional DEV parity/denial tests added next. No heartbeat or scheduled checking task.
+
+E71 prepared-code verification complete:752 Python tests passed, compile/diff clean.
+Commit/push this preregistration checkpoint while the verified feature job continues.

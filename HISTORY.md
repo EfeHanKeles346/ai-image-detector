@@ -6812,3 +6812,76 @@ DEVELOPMENT, never TRAIN or a fresh final; its admission snapshot stays immutabl
 post-score threshold, interaction-map or source-specific route adjustment is allowed.
 Next assess a complementary pretrained representation with the same E43-preserving
 TRAIN/DEV rules, reusing eligible cached work where possible. Target remains unmet.
+
+
+## E71 complementary CLIP representation and cached-feature reuse (2026-09-13)
+
+E70's TRAIN-to-DEV failure motivates a different pretrained representation rather than
+a sweep of DINO transforms or thresholds. The current active-session overnight request
+authorizes continued experiments and needed acquisition. Reuse eligible unfinished work
+through a new E71 contract; E59's original nine fits, queued handoff and automation remain
+paused. Do not modify E59's frozen contract/code/chunks or issue its training commands.
+This updates the next-work decision after the observed E70 failure, not a silent automatic
+restart of the office-paused experiment.
+
+Inventory: exactly 9,599 numeric E59 parent chunks, 399,641,982 bytes; 2,031 parents missing
+from the same 11,630 admitted E54 TRAIN population. Files prefixed `._` are macOS sidecars,
+not extra examples (an initial broad glob counted them; numeric-name audit corrected this
+before any contract). No completed E59 feature archive or receipt exists. No experiment
+worker remains active. Cached CLIP ViT-L/14 weights are already local and hash-pinned; no
+weight/image download is needed. CLIP itself and its official detector were investigated
+previously; the new hypothesis is a constrained complement to E43 using our TRAIN features.
+
+E71 feature stage: verify all legacy bound inputs, every cached chunk's parent/binding,
+raw/aggregate array hashes and exact aggregation, plus the associated cached crop body.
+Freeze a hashed external inventory and new runner/CLIP code identities before new extraction.
+Use a safe standalone adapter, avoiding historical acquisition-module import side effects.
+Re-encode one cached parent per represented source; require raw-vector agreement<=1e-5
+with historical chunks. Only then compute the 2,031 missing parents into owned E71 chunks,
+with identical official CLIP preprocessing, frozen float32 eval, three-crop batches and
+three conditions. Retain raw768 crop vectors and mean/std1536 aggregates, no L2 normalization.
+Bind all 11,630 parents in original order; no subsampling, missing-AI omission or DEV input.
+Use two CPU threads, AC and20GiB reserve, bounded15min inventory /60min extraction, immutable
+chunk receipts and verified resume. Old E59 outputs remain untouched; no automatic model fit.
+
+Fix the E71 candidate before features complete: retain E67's original TRAIN PCA64 basis,
+add TRAIN-standardized CLIP1536 PCA64 (seed71, randomized power3), whiten both, one intercept,
+129 correction coefficients initialized to zero (exact E43). Same E67 class/source/parent
+BCE with hard REAL2x, class mass.5 each, L2.01, SLSQP200/ftol1e-9, two CPU threads/30min;
+same E64 per-image caught-AI/correct-REAL margins, solver feasibility and exact serialization.
+Require <=10% REAL FPR ALL3 TRAIN conditions and zero new AI misses/REAL errors. No rank,
+seed, mixture, weight, L2 or threshold sweep; no warm-started source-fold independence claim.
+
+Only a TRAIN-passing candidate may receive one separately registered E66 comparison. E66
+is now CONSUMED DEVELOPMENT, not unscored/fresh: bind E70's exposure report and score stream,
+keep it excluded from TRAIN/final and preserve its initial admission snapshot. Retain all20
+numeric DEV gates, zero new E43-caught AI per source/condition and non-increased REAL FPR.
+No E49 regression until that screen passes; no independent final or serving promotion.
+
+### 2026-09-13 — E71 cache contract frozen; completion started
+
+All9,599 historical numeric CLIP chunks passed parent/binding, raw/aggregate digest,
+exact mean/std and original crop-body checks. The immutable E71 inventory binds those
+read-only E59 inputs; 2,031 remaining TRAIN parents will be written only under E71.
+The extraction contract requires re-encoding30 cached source representatives before
+completion, <=1e-5 raw-vector error, AC/20GiB reserve and60min stage limit. No E59
+fit/handoff/automation resumed. Feature extraction has started; no result claimed yet.
+
+Safe feature adapter tests6/6; full Python suite745passed in12.71s. The new original64+
+CLIP64 correction has4 additional focused tests passing: exact original-basis preservation,
+zero-init E43, independent branches, serialization and batch replay. An initial1e-14
+probability batch tolerance exposed unchanged float32 reference rounding (5.96e-8);
+use1e-7 probability tolerance with identical decisions, while correction coordinates still
+require1e-14 and same-batch serialization remains exact. Candidate fit and conditional
+consumed-DEV runners are prepared but neither frozen nor executed. E70 remains rejected;
+E49/serving unchanged. Remote main verified at84ffd1eccf17d41be84b939e7c7963f35e2ff3bc.
+
+E71 historical CLIP replay passed on all30 source representatives with maximum raw-vector
+error exactly0.0; missing-parent completion is active. Conditional DEV runner now separately
+tests failed-TRAIN denial, exact TRAIN/DEV CLIP mean/std parity and prior reference replay
+at both AI/REAL cuts (even sub-tolerance score drift must not change either decision).
+The749-test suite passed in14.33s before these3 additional DEV tests.
+
+E71 preregistration/code checkpoint validation:752 Python tests passed in13.11s,
+including all13 new E71 feature/model/DEV tests. Compile and diff checks passed.
+Feature extraction remains active; model and DEV contracts are not yet frozen.
