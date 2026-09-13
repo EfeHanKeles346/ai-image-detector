@@ -5636,3 +5636,6 @@ Potential next mechanism: protect confidence away from the boundary, subject to 
 REAL/AI gates; not implemented or selected here, no causal guarantee. E71 unchanged.
 
 Margin diagnostic code verification:754 Python tests passed in14.82s, compile/diff clean.
+
+SIDL data lead metadata audit only:1605 DNG records/253 filename scenes, all iPhone12Pro;
+release count/split reconciliation pending. This changes no model/data role, no images scored.

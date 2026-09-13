@@ -6923,3 +6923,9 @@ Research tabs closed. Personal/location fields from publisher metadata are not c
 
 E70 margin diagnostic verification:754 Python tests passed in14.82s; diff/compile clean.
 The diagnostic and locked outputs are ready for commit; active E71 extraction unchanged.
+
+SIDL metadata-only fetch succeeded without credentials:8,874,397 bytes /SHA649e408b…baf2527,
+1605 unique DNG records but only253 filename scene groups versus website300. All recorded
+cameras iPhone12Pro, Linear Raw, noise reduction≈0.95. This is an unresolved release/coverage
+mismatch, not grounds to infer1588 complete pairs or admit a partial TRAIN set. Compact
+non-personal receipt added; images/scoring0. E70 diagnostic push0f960bd verified at origin.

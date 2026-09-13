@@ -2405,3 +2405,12 @@ iOS17.5.1 and applied denoising. No image was downloaded/scored, no complete met
 inventory is claimed. Exact archive bytes/hash, RGB derivation, complete scene mapping and
 protected-overlap audit remain prerequisites. Keep paired conditions within whole scenes;
 never mix the author's validation/test scenes into TRAIN. No source role assigned yet.
+
+Metadata-only acquisition completed:8,874,397 bytes, SHA-256
+`649e408b82d139b1ff3b5aeeeb9ad7e73f4ec92fdb6d0abece35b8256baf2527`,
+1605 unique DNG filenames, all iPhone12Pro/4032x3024/iOS17.5.1. Filename grouping yields253
+scenes, not the webpage's300: D/F/S/O/W each253, C252, plus88 mixed-suffix records.
+All records report Linear Raw and NoiseReductionApplied≈0.95. These are1605 RAW metadata
+records, not1588 verified pairs. Reconcile release completeness/splits and RGB derivation
+before selecting images. Compact receipt: `evidence/sidl_metadata_lead.json`; raw metadata
+stays on LaCie, no personal/location fields copied into the repository. Image downloads0.

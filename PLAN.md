@@ -5068,3 +5068,7 @@ permission to relax REAL gates. Record any new objective/constraint as a separat
 
 Margin diagnostic checkpoint:754 tests passed; commit/push completed evidence and continue
 E71 extraction. SIDL next read is metadata-only for exact grouping/provenance inventory.
+
+SIDL metadata inspection complete, image acquisition remains pending release reconciliation:
+1605 RAW records/253 scene ids differ from the website300 scenes/1588 pairs. Do not infer
+full coverage or roles; identify full archive/split mapping first. No image downloaded.

@@ -1,0 +1,51 @@
+{
+  "camera_models": {
+    "iPhone 12 Pro": 1605
+  },
+  "dimensions": {
+    "(4032, 3024)": 1605
+  },
+  "filename_scene_groups": 253,
+  "image_downloads": 0,
+  "limitation": "Only metadata,253 filename scene groups rather than webpage300 scenes;1605 RAW records are not1588 verified pairs. Need complete release/split reconciliation and rendering provenance before admission. No location/person fields copied.",
+  "metadata_bytes": 8874397,
+  "metadata_path": "/Volumes/LaCie/pixelproof-datasets/research/sidl/metadata.json",
+  "metadata_sha256": "649e408b82d139b1ff3b5aeeeb9ad7e73f4ec92fdb6d0abece35b8256baf2527",
+  "model_scores": 0,
+  "noise_reduction_applied": {
+    "0.9499999881": 1605
+  },
+  "photometric_interpretation": {
+    "Linear Raw": 1605
+  },
+  "records": 1605,
+  "role_assigned": false,
+  "scene_size_counts": {
+    "5": 1,
+    "6": 218,
+    "7": 3,
+    "8": 15,
+    "9": 9,
+    "10": 7
+  },
+  "software": {
+    "17.5.1": 1605
+  },
+  "source_url": "https://drive.google.com/file/d/1o_O3ua5zhOv6vrsF6KwI9O19E5axUXED/view",
+  "state": "SIDL_metadata_only_unadmitted",
+  "suffix_counts": {
+    "C": 252,
+    "D": 253,
+    "DS": 16,
+    "DW": 16,
+    "F": 253,
+    "FD": 13,
+    "FS": 14,
+    "FW": 15,
+    "O": 253,
+    "S": 253,
+    "SW": 14,
+    "W": 253
+  },
+  "unique_filenames": 1605
+}
