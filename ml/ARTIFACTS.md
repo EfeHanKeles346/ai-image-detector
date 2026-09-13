@@ -252,3 +252,8 @@ rows read0, downloads0. Feature SHA`99de60c680acefea301fb43c468d71b43912b025411d
 contract SHA`d6bea64e830b758cd8f44a06a4b147b43fda647d40049778d8280dda16624e3e`.
 Full arrays/511 immutable source-bound chunks stay external under e75. Proceed to freeze
 and run the already prepared single E76 data-expansion fit, preserving all AI and every gate.
+
+
+E76 camera-expanded candidate rejected at TRAIN. Old REAL FPR13.28%/14.37%/12.25%;
+expanded12.64%/13.65%/11.62%, new-MIDD3.91%/3.72%/2.94%. No new AI/REAL errors.
+No DEV/E49 or promotion. Artifact SHA`dd6fd99607f674cafa3a4f9982002ce2c688d564ebd4b94bcd57e4ac3106a117`.

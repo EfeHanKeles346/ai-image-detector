@@ -4,7 +4,7 @@ The target remains unmet. E43 and serving are unchanged. E70 and E71 passed TRAI
 failed separate consumed E66 development comparisons. E73/E74 stopped at failed TRAIN
 guards. No overnight candidate has opened an E49 regression or qualified for promotion.
 E72 admitted511 new camera TRAIN observations; E75 completed their features, and E76
-is running its one registered data-expansion fit.
+failed its one registered data-expansion fit.
 
 ## Comparable TRAIN results
 
@@ -94,7 +94,7 @@ E76 adds all511 audited MIDD observations to unchanged E54 TRAIN:12,141 parents,
 resets257 correction weights, and retains E73 full-AI-confidence constraints. No parameter
 sweep. In each condition, old/expanded/new-MIDD REAL FPR must each be<=10%, with worst
 MIDD sensor<=20%; solver, complete AI replay and serialization guards also apply.
-E75 features are complete; freeze and run the one prepared E76 fit. No DEV after a failed TRAIN gate.
+E75 features are complete; E76 failed its single fit. No DEV after a failed TRAIN gate.
 
 779 Python tests pass. These verify engineering behavior, not detection quality. The
 existing Starlette/httpx deprecation remains. Code, compact evidence and relevant MD
@@ -104,3 +104,10 @@ No CI rules were changed; no30-minute monitor or heartbeat automation was create
 
 [Current plan](../PLAN.md), [append-only experiment history](../ml/EXPERIMENTS.md),
 [model card](../MODEL_CARD.md). E49's target and all AI-preservation requirements remain.
+
+
+E76 result: old REAL FPR13.28%/14.37%/12.25%, expanded12.64%/13.65%/11.62% fail;
+new-MIDD3.91%/3.72%/2.94% passes with all sensor gates. No new AI/REAL errors;
+11/28/19 additional TRAIN AI detections. Data addition alone did not solve old hard REAL.
+No DEV/E49 allowed. Next E77 prepares a separately registered REAL-only CLIP feature
+reconstruction residual branch, preserving all E76 population and AI-confidence guards.

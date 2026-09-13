@@ -7163,3 +7163,42 @@ and run the already prepared single E76 data-expansion fit, preserving all AI an
 E76 expanded TRAIN fit contract frozen for12,141 parents. The single fixed-map fit
 is active; old and new REAL slices have separate gates. No thermal/performance warning
 recorded, AC80%. E75 completion evidence checkpointed; no detector improvement claimed yet.
+
+
+### E76 isolated camera-data expansion failed TRAIN (2026-09-13)
+
+One126.62s/39-iteration fit; solver success/violation8.33e-16. All13,785 AI logits preserved;
+zero new AI misses/REAL errors. Newly caught AI11/28/19 views across the three conditions.
+Old REAL FPR13.2765%/14.3710%/12.2530%; expanded12.6425%/13.6496%/11.6221%: all fail10%.
+New MIDD REAL FPR3.9139%/3.7182%/2.9354% passes, versus reference7.4364%/5.0881%/4.5010%;
+all new sensor gates pass. Adding cameras did not solve old difficult REAL examples under
+this fixed map/constraint. No DEV/E49 permission. Candidate SHA`dd6fd99607f674cafa3a4f9982002ce2c688d564ebd4b94bcd57e4ac3106a117`.
+
+### E77 REAL-only feature manifold adaptation planned (2026-09-13)
+
+Motivated by E76 data-only failure and the primary Attribution Consistency paper, learn
+an additional nonlinear REAL feature residual instead of sweeping existing maps. This is
+our explicit adaptation, not paper reproduction (paper architecture/epochs not fully specified).
+Use all12,141 TRAIN parents, old and MIDD; retain all4,595 AI for downstream correction.
+REAL-only CLIP1536 StandardScaler weighted by source/parent, followed by a1536-256-64-256-1536
+ReLU autoencoder (linear output), initialized with seed77. Minimize weighted per-feature L1
+on all22,638 REAL views, Adam2e-4/no weight decay, batch256,100 fixed epochs, no early stop,
+no DEV selection. Freeze a deterministic per-epoch order; bounded AC execution and bound
+optimizer/model checkpoints for resume. Opposite-class examples never enter autoencoder
+normalization or loss. No pixel/backbone training or downloads.
+Afterward freeze the autoencoder; absolute standardized-feature residual1536 -> unweighted
+TRAIN StandardScaler/PCA64(seed77,randomized power3), whiten. Append these64 coordinates to
+exact E74 original64/CLIP64/bilinear128 map, yielding321 zero-initialized correction weights.
+Same E73 full-AI-logit and E64 correct-REAL constraints, same BCE/source-parent balancing/
+hard REAL2x/L2.01/SLSQP200. All E76 old/expanded/new-MIDD/sensor guards retained. Separate
+representation and fit contracts, exactly one trained AE and one fit, no capacity/epoch/seed
+sweep. Full TRAIN guards alone permit one separately frozen consumed DEV comparison.
+
+
+### E77 representation engineering verification (2026-09-13)
+
+Implemented the fixed REAL-only weighted CLIP autoencoder plan below. Five focused tests
+verify AI exclusion from normalization, equal REAL-source weight mass, deterministic complete
+epoch permutations, exact serialized residual replay with bounded batch variation, checkpoint
+contract/weight/epoch binding, and exact CPU Adam continuation. Checkpoints include optimizer
+state every10 epochs; no checkpoint selection. Data remain TRAIN-only; no detector result yet.

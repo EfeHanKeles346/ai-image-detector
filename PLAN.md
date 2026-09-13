@@ -26,7 +26,7 @@ User explicitly requests continuous active-session work, data acquisition when n
 experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
 Do not create30-minute polling/heartbeat automation. No promise of execution after an app or
 session interruption. E66 SIDD Small6.62GB acquisition and grouped REAL+AI admission are complete;
-E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 features are complete; E76 expanded fit is active.
+E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 features are complete; E76 failed TRAIN; E77 REAL-only representation is next.
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
@@ -44,15 +44,17 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E75 complete; E76 expanded TRAIN fit active (2026-09-13)
+## Current checkpoint — E76 failed; E77 representation prepared (2026-09-13)
 
 E71 consumed DEV REAL FPR34.375%/38.125% improves on42.5% but fails the10% target.
 Aggregate AI recall unchanged conceals2/1 newly missed AI views;12/20 numeric gates.
 No E49 regression or promotion. E72 downloaded512 score-blind MIDD TRAIN originals,
 3.82GB;511 admitted after151,485-reference audit with zero cross matches and one internal duplicate.
 E73 linear and E74 bilinear full-AI-confidence fits failed all TRAIN REAL10% guards;
-no DEV/E49 permitted. E75 old-encoder parity is exact and511 new TRAIN features are complete. E76 keeps the E74 map/AI constraints and adds only audited MIDD data; code and
-population-specific guards are fixed/tested, fit contract frozen and one fit active.779 tests pass.
+no DEV/E49 permitted. E75 old-encoder parity is exact and511 new TRAIN features are complete. E76 kept the E74 map/AI constraints and added only audited MIDD data. New-camera FPR is
+3.91%/3.72%/2.94%, but old-REAL FPR13.28%/14.37%/12.25% fails all10% guards. No DEV.
+E77 adds a fixed REAL-only CLIP reconstruction residual, then one separately registered
+321-coefficient constrained fit if representation checks pass.784 Python tests pass.
 MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
@@ -5280,3 +5282,33 @@ and run the already prepared single E76 data-expansion fit, preserving all AI an
 E76 expanded TRAIN fit contract frozen for12,141 parents. The single fixed-map fit
 is active; old and new REAL slices have separate gates. No thermal/performance warning
 recorded, AC80%. E75 completion evidence checkpointed; no detector improvement claimed yet.
+
+
+### E76 isolated camera-data expansion failed TRAIN (2026-09-13)
+
+One126.62s/39-iteration fit; solver success/violation8.33e-16. All13,785 AI logits preserved;
+zero new AI misses/REAL errors. Newly caught AI11/28/19 views across the three conditions.
+Old REAL FPR13.2765%/14.3710%/12.2530%; expanded12.6425%/13.6496%/11.6221%: all fail10%.
+New MIDD REAL FPR3.9139%/3.7182%/2.9354% passes, versus reference7.4364%/5.0881%/4.5010%;
+all new sensor gates pass. Adding cameras did not solve old difficult REAL examples under
+this fixed map/constraint. No DEV/E49 permission. Candidate SHA`dd6fd99607f674cafa3a4f9982002ce2c688d564ebd4b94bcd57e4ac3106a117`.
+
+### E77 REAL-only feature manifold adaptation planned (2026-09-13)
+
+Motivated by E76 data-only failure and the primary Attribution Consistency paper, learn
+an additional nonlinear REAL feature residual instead of sweeping existing maps. This is
+our explicit adaptation, not paper reproduction (paper architecture/epochs not fully specified).
+Use all12,141 TRAIN parents, old and MIDD; retain all4,595 AI for downstream correction.
+REAL-only CLIP1536 StandardScaler weighted by source/parent, followed by a1536-256-64-256-1536
+ReLU autoencoder (linear output), initialized with seed77. Minimize weighted per-feature L1
+on all22,638 REAL views, Adam2e-4/no weight decay, batch256,100 fixed epochs, no early stop,
+no DEV selection. Freeze a deterministic per-epoch order; bounded AC execution and bound
+optimizer/model checkpoints for resume. Opposite-class examples never enter autoencoder
+normalization or loss. No pixel/backbone training or downloads.
+Afterward freeze the autoencoder; absolute standardized-feature residual1536 -> unweighted
+TRAIN StandardScaler/PCA64(seed77,randomized power3), whiten. Append these64 coordinates to
+exact E74 original64/CLIP64/bilinear128 map, yielding321 zero-initialized correction weights.
+Same E73 full-AI-logit and E64 correct-REAL constraints, same BCE/source-parent balancing/
+hard REAL2x/L2.01/SLSQP200. All E76 old/expanded/new-MIDD/sensor guards retained. Separate
+representation and fit contracts, exactly one trained AE and one fit, no capacity/epoch/seed
+sweep. Full TRAIN guards alone permit one separately frozen consumed DEV comparison.

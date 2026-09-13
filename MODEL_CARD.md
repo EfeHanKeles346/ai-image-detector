@@ -374,3 +374,8 @@ zero new AI/REAL errors, no DEV/E49 allowed. Artifact SHA`147551945c7fdb9843cd93
 
 E74 rejected at TRAIN: REAL FPR13.29%/14.36%/12.14%, no new AI/REAL errors.
 No DEV/E49 scoring or promotion; candidate SHA`cadf88f4fc3e3030495bc9cbdc0c74a6d2ffb205091fcebaac063dbf731eb05a`.
+
+
+E76 camera-expanded candidate rejected at TRAIN. Old REAL FPR13.28%/14.37%/12.25%;
+expanded12.64%/13.65%/11.62%, new-MIDD3.91%/3.72%/2.94%. No new AI/REAL errors.
+No DEV/E49 or promotion. Artifact SHA`dd6fd99607f674cafa3a4f9982002ce2c688d564ebd4b94bcd57e4ac3106a117`.

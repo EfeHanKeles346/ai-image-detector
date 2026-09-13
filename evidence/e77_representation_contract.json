@@ -1,0 +1,51 @@
+{
+  "activation": "ReLU after first3 linear layers, final linear output.",
+  "adaptation": "Architecture/epochs/scaling/PCA/teacher-constrained downstream head are our fixed adaptation.",
+  "ai_parents": 4595,
+  "architecture": [
+    1536,
+    256,
+    64,
+    256,
+    1536
+  ],
+  "batch_size": 256,
+  "candidate_fit_allowed": false,
+  "classifier_scores": 0,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "contract_sha256": "d7bca1951fd9373f66e719ce96679d1a03aaaa2555267041ffac69ef78f485ec",
+  "cpu_threads": 2,
+  "dev_or_final_rows_read": 0,
+  "downloads": 0,
+  "downstream": "Only after complete representation: separately freeze one321-coefficient correction combining exact E74 original64/CLIP64/interaction128 plus residual64. All E76 guards retained.",
+  "epochs": 100,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_features.py": "7c6b6da630425a8879ccb16f7ee8c32538e6e64405335487ee58e0a33d7a6831",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e77_representation.py": "261b440c9d6b1bc9e39cb39358cd51071488213afac3aef9578c7f6e42586ace",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e",
+    "/Volumes/LaCie/pixelproof-datasets/e76/fit.json": "212ce601e951ff8e66b3400066ae1190ee155dc80ad58cf646582cb4b1a86752",
+    "/Volumes/LaCie/pixelproof-datasets/e76/fit_contract.json": "ce4483071bcb5f9e5944d9976d495f212588f8b4b6c8ed993de2c86af1c64f35"
+  },
+  "learning_rate": 0.0002,
+  "loss": "Per-feature L1 reconstruction, source/parent weights fixed globally to mean1 over REAL views; batch mean without within-batch weight renormalization. All3 views per REAL parent.",
+  "max_seconds": 3600,
+  "normalization": "REAL-only source/parent-weighted StandardScaler. No AI in scaler or AE loss.",
+  "optimizer": "Adam lr2e-4,betas(.9,.999),eps1e-8,weight_decay0,foreachFalse. CPUseed77 initialization, MPSfloat32 if available else CPU. Fixed100 epochs/batch256, final epoch only, no early stop.",
+  "order": "NumPy default_rng(SeedSequence([77,zero_based_epoch])).permutation(22638); every view once per epoch.",
+  "paper": "https://arxiv.org/html/2603.00717v2",
+  "parents": 12141,
+  "promotion_allowed": false,
+  "real_parents": 7546,
+  "real_views": 22638,
+  "representation_guard": "Finite state/features; final full weighted REAL L1 < initial; serialized CPU residual and coordinates replay exactly in the same batch layout. Not a detector-quality gate.",
+  "reproduction": false,
+  "residual": "Freeze AE, compute abs(standardized_CLIP-AE(standardized_CLIP)) in CPUfloat32 batch256. Unweighted all-TRAIN StandardScaler then PCA64(seed77,randomized power3), whiten.",
+  "resume": "Atomic model+optimizer checkpoint every10 completed epochs, bound to contract and REAL weights; resume same deterministic epoch order. No altered seed/epochs or selective checkpoint choice.",
+  "state": "E77_REAL_only_CLIP_manifold_registered",
+  "torch_version": "2.13.0"
+}
