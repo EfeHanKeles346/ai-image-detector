@@ -7899,3 +7899,34 @@ unchanged. Separately register fixed rendering and protected overlap/scene audit
 
 E87 implementation verification: full Python suite837 passed in18.00s; one existing
 Starlette/httpx deprecation warning. No experiment runtime dependency was changed.
+
+
+### E87 download active; E88 RAW audit prepared, not frozen (2026-09-13)
+
+E87 fixed128-member download is active; Sony64 complete, Fuji in progress at this
+checkpoint. CRC/source SHA/range checks run on every member; still no RAW decode/model
+score. E88 implementation now requires the complete E87 receipt before freezing.
+
+E88 will reuse `e56_raw_decode.py` with the existing `ml/work/e56_decoder` runtime,
+exactly matching E65's frozen versions: Python3.13.5, RAWpy0.27.1/LibRaw0.22.1,
+NumPy2.5.1, Pillow12.3.0. Existing full-size/as-shot-WB/sRGB8/gamma2.4,12.92/PNG6
+recipe, no auto brightness or learned enhancement. This differs from the SID paper's
+16-bit/default-gamma rendering and is explicitly a local existing convention.
+A redundant2,058,253B official RAWpy wheel was downloaded/verified and installed only
+under external `source_research/rawpy0271`; SHA
+`878b16434cebe66f2a575dae27ebca673be2b4b537e1f593072218bb820a79db`.
+That copy has not decoded any images and will not be used; experiment/site packages
+were unchanged. The already available isolated runtime supplies the required decoder.
+
+Prepared E88 checks original RAW identity, canonical rendered body/RGB/perceptual matches,
+and original RAW hashes retained by protected derivative references. It includes all
+E72-protected snapshots/AI reserves/consumed E66 plus511 admitted MIDD fingerprints.
+Cross-camera internal matches form transitive components; any protected overlap excludes
+the whole component, then one fixed-hash representative survives. No brightness or
+model-score selection/refill. Filename groups are not verified independent scenes;
+no GPS/serial extraction or full EXIF dump. Two focused tests cover original-RAW overlap
+through a differently rendered reference and cross-camera transitive rejection.
+No E88 freeze/audit or use in E85/E86 yet; E84B extraction continues unchanged.
+
+Full verification after E88 preparation:839 Python tests pass in18.18s; only the
+existing Starlette/httpx deprecation warning. E88 is still not frozen or executed.

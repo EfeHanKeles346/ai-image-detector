@@ -139,3 +139,6 @@ execution is no longer active. No E49 access, serving change or promotion in thi
 
 E87: `e87_acquisition freeze|download` acquires128 fixed SID long-RAW originals into
 quarantine with source/CRC/SHA/range bounds. No decode, admission or model scoring.
+
+E88: prepared `e88_audit freeze|audit` reuses the existing isolated RAW renderer,
+protects original/derived identities and resolves SID duplicate components before admission.
