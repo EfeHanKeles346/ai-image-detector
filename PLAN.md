@@ -53,6 +53,12 @@ Read-only component replay is exact; learned REAL correction weakens/reverses un
 E84B is extracting the exact social1080px-then-JPEG75 view to every existing TRAIN parent,
 keeping all old conditions and AI protection. No DEV/final admission or cutoff change.
 
+Metadata-only transport inventory is complete: the1080 cap potentially resizes4455/7546
+REAL parents (59.04%) and1046/4595 AI parents (22.76%). Recorded formats are strongly
+class-associated; this is a coverage limitation, not a demonstrated cause. Preserve the
+running E84B recipe and prepared E85/E86 sequence. SID/PolyU/RENOIR are future source
+leads only; inspect scene grouping and original-capture provenance before any acquisition.
+
 832 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
 RR upstream lineage unresolved; MIDD/DEAR research restrictions persist. E49 unopened,
 E43/serving unchanged. No30-minute automation; active experiments and MD/git checkpoints continue.

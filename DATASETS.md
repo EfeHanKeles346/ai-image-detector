@@ -2497,3 +2497,35 @@ DEAR lead (2026-09-13): metadata/code/terms only, no new images or weights. Mode
 CC BY-NC4.0 plus stated SD1.5 use restrictions; NOTICE records unresolved explicit licensing
 for some upstream AlignedForensics sources. This is a possible research expert, not an
 admitted dataset/model or serving replacement. Complete pinned receipt in evidence.
+
+
+### Future authentic-capture source leads, no pixel acquisition (2026-09-13)
+
+The metadata-only E84B inventory records REAL7,034 JPEG/1 PNG/511 unspecified and
+AI786 JPEG/3,809 PNG. This association motivates examining lossless/RAW capture coverage;
+it does not establish a shortcut or alter the active E84B/E85/E86 protocol.
+
+- [SID official repository](https://github.com/cchen156/Learning-to-See-in-the-Dark)
+  publishes short/long RAW pairs and scene/burst identifiers. Sony/Fuji archives are
+  advertised25/52GB; RAWpy-rendered16-bit reference RGB alternatives12/22GB. Multiple
+  short exposures share a long reference, so image count is not independent scene count.
+  README states MIT; [license](https://raw.githubusercontent.com/cchen156/Learning-to-See-in-the-Dark/master/LICENSE.md)
+  uses software/documentation wording. Record that scope rather than inventing separate
+  image terms. Original captures or explicitly documented RAWpy references could supply
+  REAL; network-enhanced outputs must not. The September2025 storage-cost note asks
+  users to retain one local copy and avoid repeated download per experiment. Source tree
+  revision0448b58d8c57459b1550ddf68c160d9212046a25 has six split lists (~367KB).
+  Next: metadata-only scene/pair inventory; no images acquired or role admission yet.
+- [PolyU original release](https://github.com/csjunxu/PolyU-Real-World-Noisy-Images-Dataset)
+  lists40 scenes/five cameras and100 crops. Original noisy and averaged reference files
+  are JPEG, so this is not direct lossless coverage. Its
+  [license](https://raw.githubusercontent.com/csjunxu/PolyU-Real-World-Noisy-Images-Dataset/master/License.txt)
+  restricts use/redistribution to noncommercial purposes and also refers to software.
+  Prefer original captures; averages/crops are dependent derivatives. Not acquired.
+- [RENOIR author page](https://ani.stat.fsu.edu/~abarbu/Renoir.html) is a lead for CanonT3i,
+  CanonS90 and XiaomiMi3 capture groups. Search exposes raw/aligned archives but two
+  direct reads timed out. Exact current inventory, rights and rendering provenance remain
+  unresolved; no download or admission. Do not rely on mirror terms or claim full review.
+
+Whole SIDD remains consumed DEVELOPMENT; WIFD/RawNIND remain diagnostic-only. No source
+above has been added to TRAIN, DEV or final. No author contact or external messages.

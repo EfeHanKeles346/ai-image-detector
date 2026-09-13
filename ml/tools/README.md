@@ -114,3 +114,7 @@ interpreter without editing the script.
 newly missed AI counts. Both read committed aggregate receipts only, never dataset images
 or final scores. Each writes PNG/SVG and input/output hash provenance under `evidence/`.
 These are descriptive checkpoints, not independent final evidence.
+
+`train_transport_coverage.py` inventories dimensions and declared formats in the two
+hash-bound E84B TRAIN manifests. It writes `evidence/e84b_transport_coverage.json` once;
+it does not open images, calculate model scores or choose parameters.

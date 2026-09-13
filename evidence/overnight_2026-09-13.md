@@ -305,3 +305,22 @@ E85 preparation now verifies original E83 artifact hash and condition metadata; 
 condition gate helper matches old three-condition results exactly and rejects an old-
 condition failure even if the new condition passes. Focused tests pass. No E85/E86 fit
 or representation freeze yet; complete E84B features are required.
+
+
+### E84B metadata-only transport coverage (2026-09-13)
+
+The hash-bound original TRAIN manifests contain12,141 parents, all with dimensions.
+REAL:3,091 at most1080px long side,426 at1081–2048,4,029 above2048.
+AI:3,549 /1,045 /1 respectively. The social1080 cap potentially affects59.04% of REAL
+and22.76% of AI parents. Identical policies do not imply equal transformation exposure.
+Declared REAL formats:7,034 JPEG,1 PNG,511 unknown (MIDD metadata); AI:786 JPEG,3,809 PNG.
+Do not substitute filename extensions for unknown manifest fields. This class/format
+association is a descriptive coverage limitation, not a causal explanation or score result.
+For6,640 inputs at most1080, the new view is expected to duplicate old source-JPEG75
+under unchanged helpers; no complete pixel-equality test was performed or claimed.
+
+Tool `ml/tools/train_transport_coverage.py` executed once; receipt
+`evidence/e84b_transport_coverage.json` pins both manifests and tool SHA. Zero image reads,
+model scores, parameter choices or E49 reads. No change to active frozen E84B extraction;
+E85/E86 remain prepared, not frozen or fitted. Latest GitHub242dfd7 Python checks pass;
+web lint/typecheck/tests pass, existing vinext dependency audit remains failed.

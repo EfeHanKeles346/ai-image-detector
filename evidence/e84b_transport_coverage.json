@@ -1,0 +1,367 @@
+{
+  "by_label": {
+    "0": {
+      "declared_formats": {
+        "JPEG": 7034,
+        "PNG": 1,
+        "unknown": 511
+      },
+      "dimensions": {
+        "1081_to2048": 426,
+        "above2048": 4029,
+        "at_most1080": 3091
+      },
+      "parents": 7546
+    },
+    "1": {
+      "declared_formats": {
+        "JPEG": 786,
+        "PNG": 3809
+      },
+      "dimensions": {
+        "1081_to2048": 1045,
+        "above2048": 1,
+        "at_most1080": 3549
+      },
+      "parents": 4595
+    }
+  },
+  "by_source": {
+    "0:MIDD:Hynix_SL846": {
+      "declared_formats": {
+        "unknown": 127
+      },
+      "dimensions": {
+        "above2048": 127
+      },
+      "parents": 127
+    },
+    "0:MIDD:ISOCELL_3P9": {
+      "declared_formats": {
+        "unknown": 128
+      },
+      "dimensions": {
+        "above2048": 128
+      },
+      "parents": 128
+    },
+    "0:MIDD:OmniVision_OV32A": {
+      "declared_formats": {
+        "unknown": 128
+      },
+      "dimensions": {
+        "above2048": 128
+      },
+      "parents": 128
+    },
+    "0:MIDD:Sony_IMX258": {
+      "declared_formats": {
+        "unknown": 128
+      },
+      "dimensions": {
+        "above2048": 128
+      },
+      "parents": 128
+    },
+    "0:SCIMD-17": {
+      "declared_formats": {
+        "JPEG": 1700
+      },
+      "dimensions": {
+        "at_most1080": 1700
+      },
+      "parents": 1700
+    },
+    "0:e32:csafe-mcsidb-iphone14": {
+      "declared_formats": {
+        "JPEG": 160
+      },
+      "dimensions": {
+        "at_most1080": 160
+      },
+      "parents": 160
+    },
+    "0:e32:csafe-mcsidb-s21": {
+      "declared_formats": {
+        "JPEG": 1160
+      },
+      "dimensions": {
+        "above2048": 1000,
+        "at_most1080": 160
+      },
+      "parents": 1160
+    },
+    "0:e32:forchheim-fodb": {
+      "declared_formats": {
+        "JPEG": 1154
+      },
+      "dimensions": {
+        "1081_to2048": 66,
+        "above2048": 934,
+        "at_most1080": 154
+      },
+      "parents": 1154
+    },
+    "0:e32:vision-base-native": {
+      "declared_formats": {
+        "JPEG": 1140
+      },
+      "dimensions": {
+        "above2048": 1000,
+        "at_most1080": 140
+      },
+      "parents": 1140
+    },
+    "0:e36:device_001": {
+      "declared_formats": {
+        "JPEG": 100
+      },
+      "dimensions": {
+        "above2048": 100
+      },
+      "parents": 100
+    },
+    "0:e36:device_002": {
+      "declared_formats": {
+        "JPEG": 100
+      },
+      "dimensions": {
+        "above2048": 100
+      },
+      "parents": 100
+    },
+    "0:e36:device_003": {
+      "declared_formats": {
+        "JPEG": 100
+      },
+      "dimensions": {
+        "1081_to2048": 1,
+        "above2048": 99
+      },
+      "parents": 100
+    },
+    "0:e36:device_005": {
+      "declared_formats": {
+        "JPEG": 100
+      },
+      "dimensions": {
+        "above2048": 100
+      },
+      "parents": 100
+    },
+    "0:e36:device_009": {
+      "declared_formats": {
+        "JPEG": 71
+      },
+      "dimensions": {
+        "above2048": 71
+      },
+      "parents": 71
+    },
+    "0:rr:rrdataset_real_pool": {
+      "declared_formats": {
+        "JPEG": 1249,
+        "PNG": 1
+      },
+      "dimensions": {
+        "1081_to2048": 359,
+        "above2048": 114,
+        "at_most1080": 777
+      },
+      "parents": 1250
+    },
+    "1:e32:communityforensics-ai-local": {
+      "declared_formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "dimensions": {
+        "at_most1080": 569
+      },
+      "parents": 569
+    },
+    "1:e32:flux2-klein-9b": {
+      "declared_formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "dimensions": {
+        "at_most1080": 569
+      },
+      "parents": 569
+    },
+    "1:e32:gpt-image-1": {
+      "declared_formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "dimensions": {
+        "1081_to2048": 500,
+        "at_most1080": 69
+      },
+      "parents": 569
+    },
+    "1:e32:nano-banana-local": {
+      "declared_formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "dimensions": {
+        "at_most1080": 569
+      },
+      "parents": 569
+    },
+    "1:e32:nano-banana-pro-ash-local": {
+      "declared_formats": {
+        "JPEG": 8,
+        "PNG": 152
+      },
+      "dimensions": {
+        "at_most1080": 160
+      },
+      "parents": 160
+    },
+    "1:e32:qwen-image-2512": {
+      "declared_formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "dimensions": {
+        "1081_to2048": 500,
+        "at_most1080": 69
+      },
+      "parents": 569
+    },
+    "1:e36:FLUX.2_max": {
+      "declared_formats": {
+        "JPEG": 80
+      },
+      "dimensions": {
+        "at_most1080": 80
+      },
+      "parents": 80
+    },
+    "1:e36:GLM-Image": {
+      "declared_formats": {
+        "JPEG": 80
+      },
+      "dimensions": {
+        "at_most1080": 80
+      },
+      "parents": 80
+    },
+    "1:e36:Qwen-Image-2.0-pro": {
+      "declared_formats": {
+        "PNG": 80
+      },
+      "dimensions": {
+        "at_most1080": 80
+      },
+      "parents": 80
+    },
+    "1:e36:Seedream-5.0": {
+      "declared_formats": {
+        "JPEG": 80
+      },
+      "dimensions": {
+        "at_most1080": 80
+      },
+      "parents": 80
+    },
+    "1:e36:gpt-image-2": {
+      "declared_formats": {
+        "PNG": 80
+      },
+      "dimensions": {
+        "at_most1080": 80
+      },
+      "parents": 80
+    },
+    "1:e36:nano-banana-2.0": {
+      "declared_formats": {
+        "JPEG": 80
+      },
+      "dimensions": {
+        "at_most1080": 80
+      },
+      "parents": 80
+    },
+    "1:rr:culture_and_religion": {
+      "declared_formats": {
+        "PNG": 105
+      },
+      "dimensions": {
+        "at_most1080": 105
+      },
+      "parents": 105
+    },
+    "1:rr:everyday_life": {
+      "declared_formats": {
+        "JPEG": 113,
+        "PNG": 346
+      },
+      "dimensions": {
+        "1081_to2048": 45,
+        "above2048": 1,
+        "at_most1080": 413
+      },
+      "parents": 459
+    },
+    "1:rr:labor_and_production": {
+      "declared_formats": {
+        "PNG": 114
+      },
+      "dimensions": {
+        "at_most1080": 114
+      },
+      "parents": 114
+    },
+    "1:rr:medical_and_public_health": {
+      "declared_formats": {
+        "PNG": 102
+      },
+      "dimensions": {
+        "at_most1080": 102
+      },
+      "parents": 102
+    },
+    "1:rr:natural_disasters_and_accidents": {
+      "declared_formats": {
+        "PNG": 113
+      },
+      "dimensions": {
+        "at_most1080": 113
+      },
+      "parents": 113
+    },
+    "1:rr:political_and_social_events": {
+      "declared_formats": {
+        "PNG": 93
+      },
+      "dimensions": {
+        "at_most1080": 93
+      },
+      "parents": 93
+    },
+    "1:rr:war_and_conflict": {
+      "declared_formats": {
+        "PNG": 124
+      },
+      "dimensions": {
+        "at_most1080": 124
+      },
+      "parents": 124
+    }
+  },
+  "code_sha256": "2da006c1a8aba7bb374fd6aaac595a898c5e15e39d7a559e15060e9b63c6ac1b",
+  "e49_reads": 0,
+  "image_reads": 0,
+  "inputs": {
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+    "/Volumes/LaCie/pixelproof-datasets/e72/training_manifest.json": "a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e"
+  },
+  "interpretation": "Recorded dimensions only; long-side size is unchanged by EXIF rotation. The1080 cap is inactive for at-most1080 inputs, so their new social policy is expected to duplicate the existing source-JPEG75 view. No all-parent pixel equality test is claimed. Counts above1080 describe potential resize exposure, not causal effect, performance or independent source coverage.",
+  "model_scores": 0,
+  "parameter_choices": 0,
+  "state": "E84B_TRAIN_transport_metadata_coverage"
+}
