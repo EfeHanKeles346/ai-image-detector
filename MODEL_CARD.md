@@ -366,3 +366,7 @@ TRAIN/DEV rules, reusing eligible cached work where possible. Target remains unm
 E71 rejected after consumed DEV: REAL FPR34.375% original /38.125%Q75, only12/20 gates.
 Aggregate AI recall unchanged but2/1 newly missed AI views; no E49/serving promotion.
 Full frozen scores SHA`971b6e130b51f8ef741e4a194782e4b9c02e6ba18b68582db82f8eea07be8db0`; compact `evidence/e71_development.json`.
+
+
+E73 full-confidence candidate rejected at TRAIN: REAL FPR14.57%/15.84%/13.35%,
+zero new AI/REAL errors, no DEV/E49 allowed. Artifact SHA`147551945c7fdb9843cd93c4262a8b07381f15f738b897412fb9cfd2354f88b9`.

@@ -1,0 +1,49 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "ai_parents": 4595,
+  "ai_views": 13785,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "constraints": "Every TRAIN AI logit >= its E43 baseline logit (ALL13,785 views, including missed AI). Unchanged E64 correct-REAL decision protection with min(existing margin,1e-7).",
+  "contract_sha256": "bcf86e91a2889aff77b71c9444d2dfe7a8cbe96cd734f0fa1531b72bc709e987",
+  "dev_consumed_by": [
+    "E70",
+    "E71"
+  ],
+  "dev_features_or_scores_in_fit": 0,
+  "dev_fresh_or_independent": false,
+  "downloads": 0,
+  "e49_read_allowed": false,
+  "evaluation": "Only TRAIN pass permits one separately registered CONSUMED E66 comparison with all20 numeric gates, zero newly missed AI per source/condition and non-increased REAL FPR. No E49 until that screen passes. TRAIN constraints do not prove external confidence retention.",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e70_model.py": "954255525ac9127ce58d96a5b36cded407bc5b3bbf35942d7d3aff16c561b975",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_model.py": "da453a0591d6d5adc3dbb82b82e4acfebc381ee6ac404a6e68252888f6ecfcd9",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e73_fit.py": "8e6c9f628d177e7c4d67062f10426bbb6a8bc1ece25d4fc137712be6febb51ba",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e74_fit.py": "804bd0d06ee758c8f10d4ef642b909755dced179f31e23ef6eb8b096609f6703",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e74_model.py": "f591f3acaaed04e261d61cac5c8b0da1c02dac340cd8cb491f8c2c958f1734dc",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e",
+    "/Volumes/LaCie/pixelproof-datasets/e71/correction.npz": "f3e15446623b533c7519def877f855cc13d5e8a0175f43eb6c2daa36e855ef5b",
+    "/Volumes/LaCie/pixelproof-datasets/e71/dev_report.json": "53bcf8a154b0809d7f0d55b50881ab8c83709ce0f09344b85888209bfe91551a",
+    "/Volumes/LaCie/pixelproof-datasets/e71/dev_scores.json": "971b6e130b51f8ef741e4a194782e4b9c02e6ba18b68582db82f8eea07be8db0",
+    "/Volumes/LaCie/pixelproof-datasets/e71/fit.json": "a1310442e68a47d21120bcea3d7d711a1e54750e699170838f557f3d46644808",
+    "/Volumes/LaCie/pixelproof-datasets/e71/fit_contract.json": "72c381457d619fd9331023d5cd91bc9f9fcc696aae9d30662cff72aa9954d088",
+    "/Volumes/LaCie/pixelproof-datasets/e73/fit.json": "612de02dd347c3a552d8544f53c4bdf7e88d08d1cd87502458a4b3d711fa0cf0",
+    "/Volumes/LaCie/pixelproof-datasets/e73/fit_contract.json": "cb7183723ec0c614581924ccf5dd71aee96c090d7ced691f2ab120bb2e8c0cd6"
+  },
+  "max_seconds": 1800,
+  "objective": "Unchanged E64 cut-centered BCE, class/source/parent balancing, hard REAL2x, class mass.5, L2.01.",
+  "optimizer": "SLSQP200,ftol1e-9,CPUfloat64/two threads,zero start,final iterate only; no penalty/margin sweep.",
+  "parents": 11630,
+  "previous_dev_score_body_hashed_only": true,
+  "previous_fit_contract_sha256": "72c381457d619fd9331023d5cd91bc9f9fcc696aae9d30662cff72aa9954d088",
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "representation": "Exact E71 original64 and CLIP64 TRAIN coordinates plus128D bilinear TensorSketch (exact tested E70 construction,seed70), TRAIN StandardScaler on interactions. Zero257 coefficients; discard E71 weights. No basis refit or E72 data.",
+  "state": "E74_bilinear_full_AI_confidence_TRAIN_fit_registered",
+  "train_guard": "Solver success,violation<=1e-8,minimum AI logit shift>=-1e-8,exact serialized replay, zero new AI misses/REAL errors and REAL FPR<=10% in ALL3 TRAIN conditions."
+}

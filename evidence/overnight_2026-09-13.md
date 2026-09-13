@@ -122,3 +122,22 @@ SLSQP200/ftol1e-9, fixed cuts and all3 REAL FPR<=10% guards. No fractional margi
 sweep. One fit on unchanged E54 TRAIN; MIDD is a separate acquisition. Only complete TRAIN
 pass permits a separately registered consumed DEV comparison. No external AI-retention claim
 from TRAIN constraints; E70/E71 failures motivate testing confidence erosion explicitly.
+
+
+### E73 confidence constraint: TRAIN failed (2026-09-13)
+
+Single27.70s fit,23 SLSQP iterations, solver success, max violation5.13e-16; all13,785 AI
+view logits preserved within numerical tolerance (minimum shift-4.72e-16), zero new AI/REAL
+classification errors. REAL FPR14.5700%/15.8351%/13.3475%, versus reference15.0675%/16.1336%/
+13.8024%: all3 fail10%. Candidate SHA`147551945c7fdb9843cd93c4262a8b07381f15f738b897412fb9cfd2354f88b9`. No DEV/E49 scores permitted.
+This shows the fixed linear correction under the stronger constraint achieved little REAL
+improvement; it does not prove global infeasibility or external retention. Do not loosen
+confidence protection or sweep its fraction. Preserve the failed fit.
+
+Next E74 isolates representational capacity: exact E71 original64/CLIP64 coordinates plus
+one128D bilinear TensorSketch (same tested E70 hash/sign construction, seed70), TRAIN-standardized,
+257 zero-initialized coefficients. E73 full-AI-logit constraints, E64 objective/L2.01/REAL guards,
+SLSQP200/ftol1e-9 and fixed cuts unchanged; same E54 population, no MIDD yet. One fixed fit,
+no sketch-size/seed/rank sweep. E70 tested original/blur interactions with weaker constraints;
+this is original/CLIP interaction under full-confidence protection, not a rerun of E70.
+Only all TRAIN guards permit a separately registered consumed E66 comparison.
