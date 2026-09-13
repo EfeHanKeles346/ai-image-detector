@@ -1,188 +1,106 @@
 # 13 September overnight research checkpoint
 
-The target is still unmet. E43 and serving are unchanged. E70 passed TRAIN but failed its first E66 DEV comparison. No E49 regression was opened.
+The target remains unmet. E43 and serving are unchanged. E70 and E71 passed TRAIN but
+failed separate consumed E66 development comparisons. E73/E74 stopped at failed TRAIN
+guards. No overnight candidate has opened an E49 regression or qualified for promotion.
+E72 admitted511 new camera TRAIN observations; E75 is extracting their features, and E76
+is prepared to test the isolated effect of adding them.
 
 ## Comparable TRAIN results
 
-All rows below use the same admitted E54 population: 7,035 REAL and 4,595 AI parents,
-three conditions, with the unchanged E43 AI cut. These are resubstitution diagnostics,
-not unseen-data accuracy. Each candidate must pass all three REAL ceilings of 10%,
-retain every previously caught AI and introduce no REAL error before DEV access.
+These rows share7,035 REAL/4,595 AI parents, three conditions and the frozen E43 AI cut.
+They are resubstitution results, not unseen-image accuracy. All candidates must retain
+previously caught AI, introduce no errors on previously correct REAL, and achieve REAL
+FPR<=10% in every TRAIN condition before a separate DEV registration.
 
-| Candidate | Clean REAL false AI | Assigned transport REAL false AI | TRAIN q75 REAL false AI | Newly missed AI views | Decision |
+| Candidate | Clean REAL false AI | Assigned transport | TRAIN Q75 | New AI misses | Outcome |
 |---|---:|---:|---:|---:|---|
 | E43 reference | 15.07% | 16.13% | 13.80% | — | Retained reference |
-| E64 original PCA correction | 11.90% | 13.43% | 11.33% | 0 | Failed all three ceilings |
-| E67 original + blur response | 10.25% | 11.33% | 9.48% | 0 | Failed two ceilings |
-| E68 source/condition minimax | 10.82% | 11.61% | 10.22% | 0 | Failed all three ceilings |
-| E69 fixed patch shuffle | 10.52% | 11.77% | 10.14% | 0 | Failed all three ceilings |
-| E70 bilinear original/blur map | 8.07% | 8.74% | 7.29% | 0 | TRAIN passed; DEV failed |
+| E64 original PCA correction | 11.90% | 13.43% | 11.33% | 0 | TRAIN failed |
+| E67 original + blur response | 10.25% | 11.33% | 9.48% | 0 | TRAIN failed |
+| E68 source/condition minimax | 10.82% | 11.61% | 10.22% | 0 | TRAIN failed |
+| E69 fixed patch shuffle | 10.52% | 11.77% | 10.14% | 0 | TRAIN failed |
+| E70 original/blur bilinear map | 8.07% | 8.74% | 7.29% | 0 | TRAIN passed; DEV failed |
+| E71 original/CLIP linear map | 6.99% | 7.76% | 6.82% | 0 | TRAIN passed; DEV failed |
+| E73 E71 map + full AI confidence | 14.57% | 15.84% | 13.35% | 0 | TRAIN failed |
+| E74 original/CLIP bilinear + confidence | 13.29% | 14.36% | 12.14% | 0 | TRAIN failed |
 
-The five correction candidates introduced zero errors on previously correct TRAIN REAL
-observations. Fixed-cut AI preservation on TRAIN does not establish external AI preservation.
-TRAIN q75 applies JPEG75 at source resolution before a 2048-pixel cap; it is different from
-the intended DEV/E49 1080-pixel/JPEG75 transport.
+All candidates introduced zero errors on previously correct TRAIN REAL. E73/E74 additionally
+preserved all13,785 AI-view reference logits, including initially missed AI, within1e-8
+numerical tolerance. This substantially restricted REAL improvement in these fixed maps.
+It does not prove global infeasibility or external AI retention.
 
-E67's remaining errors concentrate in the RR REAL pool: 67–71% of remaining errors come
-from 1,250 of 7,035 REAL parents. E68 reduced worst-group BCE and rescued more RR images,
-but rescued fewer images elsewhere; its pooled error increased versus E67. The minimax
-objective change was therefore rejected. No source was removed or relabelled.
+TRAIN Q75 encodes JPEG75 at source resolution before the2048-pixel cap. DEV/E49 social
+Q75 caps at1080 before encoding. These are distinct conditions.
 
-E69 tests one fixed 28-pixel patch permutation of the existing crops, intended to expose
-complementary texture information. It retains 129 correction coefficients, the E67 objective,
-all decision guards and the same acceptance ceilings. It is not a reproduction of SFLD's
-CLIP ensemble and cannot inherit that paper's performance.
+## Separate consumed DEVELOPMENT results
 
-## Acquisition and development separation
+Each condition contains160 REAL and160 AI observations. SIDD REAL comprises only ten
+dependent scenes from five phones; AI comes from two previously seen generator families,
+with unknown prompt dependencies. E70 consumed this set first; E71 is a subsequent consumed
+comparison. Neither provides fresh or independent final evidence.
 
-- E65: 83 WIFD/RawNIND source files, 1.01 GB, audited and diagnostically scored in 166 views.
-  WIFD false AI 16.42% original / 19.40% Q75; RawNIND 18.75% / 31.25%. These are dependent,
-  small REAL-only diagnostics; there is no AI-retention result. Whole publishers stay reserved.
-- E66: SIDD Small sRGB archive, 6,615,978,508 bytes, published MD5/SHA1 matched. All 160 NOISY
-  observations decoded and audited against 151,165 references, with no protected/cross-scene/
-  cross-label match. All 223 internal matches are within the known scene groups.
-- E66 limited DEV: 160 SIDD observations from ten scenes/five older cameras plus 160 local
-  GPT Image 1/Nano Banana observations, frozen before any model score. This is a rejection
-  screen with scene/prompt limitations, not an independent final.
-- Boon_or_Bane: public metadata lead only, approximately 284 MB. Image licence and exact
-  provenance remain unresolved; no image download or model score and no role admission.
+| Candidate/condition | REAL false AI | AI recall | Newly missed AI vs E43 | Numeric gates |
+|---|---:|---:|---:|---:|
+| E43 original | 42.50% | 97.50% | — | 6/10 |
+| E70 original | 46.88% | 95.63% | 4 | 6/10 |
+| E71 original | 34.38% | 97.50% | 2 | 6/10 |
+| E43 social Q75 | 42.50% | 96.25% | — | 6/10 |
+| E70 social Q75 | 30.63% | 95.00% | 3 | 6/10 |
+| E71 social Q75 | 38.13% | 96.25% | 1 | 6/10 |
 
-## Verification and synchronization
+E71's equal aggregate recall conceals lost detections: two original GPT images were lost
+while two others were rescued; Q75 lost one GPT while rescuing one Nano Banana. The
+per-image/source retention guard correctly rejects this trade. Both candidates also fail
+the absolute REAL targets. [E70 evidence](e70_development.json),
+[E71 evidence](e71_development.json). E73/E74 have no DEV scores.
 
-739 Python tests pass, including new transform identity, objective gradient, hard-decision
-retention, serialization and failed-TRAIN-to-DEV access checks. These are engineering results,
-not detector-quality improvements. The existing Starlette/httpx warning remains.
+E70's [fixed margin diagnosis](e70_margin_diagnostic.json) found109 TRAIN condition views
+near the decision-protection boundary. Several existing DEV losses had substantial old
+margins, so numerical rounding alone cannot explain them. E73/E74 test stronger confidence
+protection without changing thresholds; their failures are preserved.
 
-Completed code, compact evidence and MD checkpoints were committed and pushed. Latest
-prepared-code checkpoint: `7537a39`. Raw image archives, feature arrays and candidate weights
-stay on the external volume. GitHub's existing web dependency audit is still failing; do not
-claim an all-green CI run. No 30-minute monitor or heartbeat automation was created.
+## Data and feature work
 
-Detailed immutable results: [E67 fit](e67_fit.json), [E67 TRAIN diagnosis](e67_training_diagnostic.json),
-[E68 fit](e68_fit.json), [E66 admission](e66_development.json). The living next actions remain in
-[PLAN](../PLAN.md), with append-only history in [EXPERIMENTS](../ml/EXPERIMENTS.md).
+- **E65 diagnostic only:**83 WIFD/RawNIND files,1.01GB,166 E43 views. WIFD REAL FPR16.42%/
+  19.40%; RawNIND18.75%/31.25%. Dependent REAL-only diagnostics, no AI-retention result.
+  Entire publishers stay out of TRAIN/fresh final. [Diagnostic](e65_diagnostic.md).
+- **E66 consumed DEV:**SIDD Small6,615,978,508B matched published MD5/SHA1.160 NOISY images
+  and160 admitted local AI formed the limited screen above. Its initial zero-score admission
+  record is historical; all2,385 unused eligible AI candidates remain reserved from TRAIN.
+- **E71 features complete:**11,630 x3 x1536 CLIP features,9,599 validated old chunks plus
+  2,031 new chunks,1538.79s. Thirty historical raw-vector replays matched exactly. Old E59
+  outputs/fits untouched; new code uses a separately frozen read-only cache contract.
+- **E72 research TRAIN:**512 score-blind MIDD publisher-original JPEGs,128 each from four
+  sensor packages,3,821,581,226B. Exact-range acquisition pinned archive ETags/member CRCs
+  and SHA receipts; a connection timeout was recovered without changing the selection.
+  All decoded;151,485 protected references yielded zero cross matches. One internal pair
+  was deduplicated, admitting511 observations. EXIF identity/timestamps absent: sensor
+  provenance is publisher metadata, scene independence unverified. Whole MIDD publisher
+  is TRAIN only, including unselected/test/denoised members. CC BY-NC-SA4.0 research terms.
+  [Admission](e72_audit.json), [download](e72_download.json).
+- **E75 features active:**all511 admitted MIDD observations, frozen DINO3072/CLIP1536 in the
+  same three TRAIN conditions. Old30-source replay passed with exactly zero E43-score and
+  CLIP-feature error; no decision changes. New MIDD classifier scores remain unopened.
+- **Leads only:**SIDL metadata has1605 RAW records/253 scene ids versus advertised300 scenes;
+  release coverage remains unresolved, no images admitted. DEAR source/model metadata and
+  distinct research weight terms were pinned, no weights/images scored. Other primary
+  literature and limitations are in [forensic references](../IMAGE_FORENSICS_REFERENCE.md).
 
+## Next fixed experiment and verification
 
-## First separate DEV result: E70 rejected
+E76 adds all511 audited MIDD observations to unchanged E54 TRAIN:12,141 parents,
+7,546 REAL/4,595 AI. It keeps E74's exact bases, interactions and old-TRAIN scaling,
+resets257 correction weights, and retains E73 full-AI-confidence constraints. No parameter
+sweep. In each condition, old/expanded/new-MIDD REAL FPR must each be<=10%, with worst
+MIDD sensor<=20%; solver, complete AI replay and serialization guards also apply.
+Only complete E75 features permit fit registration. No DEV after a failed TRAIN gate.
 
-| E66 condition | E43 REAL false AI | E70 REAL false AI | E43 AI recall | E70 AI recall | Newly missed AI |
-|---|---:|---:|---:|---:|---:|
-| Publisher original | 42.50% | 46.88% | 97.50% | 95.63% | 4 |
-| Social Q75 | 42.50% | 30.63% | 96.25% | 95.00% | 3 |
+779 Python tests pass. These verify engineering behavior, not detection quality. The
+existing Starlette/httpx deprecation remains. Code, compact evidence and relevant MD
+checkpoints are committed/pushed; raw images/features/weights stay external. Latest checked
+completed CI34730124772 passed Python and failed the existing web dependency audit.
+No CI rules were changed; no30-minute monitor or heartbeat automation was created.
 
-Each row has 160 REAL and 160 AI observations. Both models pass12/20 numeric gates;
-E70 fails the separate AI-retention requirement. No E49 regression is allowed. E66 is
-now consumed DEVELOPMENT; its initial unscored admission is a historical record.
-
-E70 follow-up diagnosis:24/40/45 TRAIN AI views have logit margin<=1e-6 after correction,
-with no TRAIN AI losses. Several existing DEV misses had appreciable reference margins,
-so numeric roundoff does not explain all failures. Full fixed diagnostic:
-`e70_margin_diagnostic.json`. E71 is actively completing cached CLIP TRAIN features;
-all9,599 old chunks verified and30-source historical encoder replay exactly equal.
-E71 feature/model/conditional DEV code pushed at1977647; no E71 fit result yet.
-
-
-E71 CLIP TRAIN extraction completed:11,630 parents x3 conditions x1536 features;
-9,599 verified legacy chunks plus2,031 new E71 chunks,1538.79s. Thirty source-selected
-raw encoder replays matched exactly (max error0). Feature SHA
-`dc0c4ab80d3be56495a6c5f19ee2c5a4c63a7f0e9eacf97856d7f529fb5a0603`;
-contract SHA`9ffd471967c6b85cdb618ed6714e21844420d4c4b30bd093e295e5ff7ccf26d5`.
-No DEV/final feature rows read, classifier scores0, downloads0, E59 outputs unchanged.
-Fit contract is now frozen and the single preregistered fit is running. No quality result
-or DEV permission is implied by feature completion. Full arrays remain external under e71.
-
-
-### E71 single frozen TRAIN fit passed (2026-09-13)
-
-28.22s, solver success, zero newly missed AI views and zero new REAL errors across all3
-TRAIN conditions. REAL false AI: clean492/7035=6.9936%, assigned transport546/7035=7.7612%,
-Q75 480/7035=6.8230%, versus E43 15.0675%/16.1336%/13.8024%. All3 <=10% gates passed.
-Candidate SHA`f3e15446623b533c7519def877f855cc13d5e8a0175f43eb6c2daa36e855ef5b`, contract SHA`72c381457d619fd9331023d5cd91bc9f9fcc696aae9d30662cff72aa9954d088`.
-This is constrained TRAIN feasibility, not external retention. Proceed to the separately
-registered one640-view consumed E66 comparison, with all20 numeric gates and zero newly
-missed AI per condition/source. E70 already consumed this set; never call it fresh/final.
-No E49 access or promotion from this TRAIN result. Fixed recipe, no parameter sweep.
-
-
-### E71 rejected on consumed E66 DEVELOPMENT (2026-09-13)
-
-640 scores locked in412.36s; historical E43 pixel/score/decision replay is exact (max score
-error0). Original REAL false AI68/160=42.50% ->55/160=34.375%; social Q75 68/160 ->61/160=38.125%.
-Original AI156/160=97.50% and Q75 154/160=96.25% remain equal in aggregate, but original loses
-2 previously caught GPT images while rescuing2; Q75 loses1 GPT while rescuing1 Nano Banana.
-Thus aggregate recall masks per-image regression. Both conditions fail zero-new-AI-miss and
-absolute gates (12/20 total). No E49 regression, no serving promotion. Candidate rejected.
-Scores SHA`971b6e130b51f8ef741e4a194782e4b9c02e6ba18b68582db82f8eea07be8db0`. E66 remains consumed DEV; target unmet.
-
-Next isolated mechanism E73: retain the exact frozen E71 original64/CLIP64 coordinates,
-discard E71 weights, and replace caught-AI decision-only protection with non-decreasing
-reference logits for ALL13,785 AI TRAIN views, including currently missed AI. Keep E64
-correct-REAL decision constraints, objective/class-source-parent weights, L2.01, zero start,
-SLSQP200/ftol1e-9, fixed cuts and all3 REAL FPR<=10% guards. No fractional margin/penalty/rank
-sweep. One fit on unchanged E54 TRAIN; MIDD is a separate acquisition. Only complete TRAIN
-pass permits a separately registered consumed DEV comparison. No external AI-retention claim
-from TRAIN constraints; E70/E71 failures motivate testing confidence erosion explicitly.
-
-
-### E73 confidence constraint: TRAIN failed (2026-09-13)
-
-Single27.70s fit,23 SLSQP iterations, solver success, max violation5.13e-16; all13,785 AI
-view logits preserved within numerical tolerance (minimum shift-4.72e-16), zero new AI/REAL
-classification errors. REAL FPR14.5700%/15.8351%/13.3475%, versus reference15.0675%/16.1336%/
-13.8024%: all3 fail10%. Candidate SHA`147551945c7fdb9843cd93c4262a8b07381f15f738b897412fb9cfd2354f88b9`. No DEV/E49 scores permitted.
-This shows the fixed linear correction under the stronger constraint achieved little REAL
-improvement; it does not prove global infeasibility or external retention. Do not loosen
-confidence protection or sweep its fraction. Preserve the failed fit.
-
-Next E74 isolates representational capacity: exact E71 original64/CLIP64 coordinates plus
-one128D bilinear TensorSketch (same tested E70 hash/sign construction, seed70), TRAIN-standardized,
-257 zero-initialized coefficients. E73 full-AI-logit constraints, E64 objective/L2.01/REAL guards,
-SLSQP200/ftol1e-9 and fixed cuts unchanged; same E54 population, no MIDD yet. One fixed fit,
-no sketch-size/seed/rank sweep. E70 tested original/blur interactions with weaker constraints;
-this is original/CLIP interaction under full-confidence protection, not a rerun of E70.
-Only all TRAIN guards permit a separately registered consumed E66 comparison.
-
-
-### E74 nonlinear confidence-preserving fit failed TRAIN (2026-09-13)
-
-One104.39s/31-iteration fit, solver success, max violation9.44e-16, all13,785 AI logits
-preserved within tolerance; zero new AI/REAL decisions. REAL FPR13.2907%/14.3568%/12.1393%
-improves on E73 but fails all3 <=10% guards. Candidate SHA`cadf88f4fc3e3030495bc9cbdc0c74a6d2ffb205091fcebaac063dbf731eb05a`.
-No DEV/E49 access. Do not sweep sketch rank/seed or weaken confidence constraints.
-
-E72 acquisition completed512 originals/3,821,581,226B with pinned ETags, CRCs and body SHAs.
-Second execution resumed after Hynix connection timeout; its1,781,971,093 range bytes are
-only that execution's transfer, not total across both attempts. All four sensors128 each;
-no test or denoised image extracted. Receipt SHA`1b7e28056104d4b8ef2a913448a09b6026f01c67b141c3f1a5a12dae76cb12a2`.
-Still quarantine, no classifier scores. Freeze and run the prepared protected-role/component audit.
-
-Next E75 prepares features only for admitted MIDD TRAIN representatives. Copy exact E54
-source-resolution JPEG75-before2048-cap and existing global+2texture224 crops; frozen DINOv2S
-3072D and CLIPViT-L/141536D, same3 conditions. First replay the30 E67-registered old TRAIN
-source representatives against old DINO reference scores and E71 CLIP features, requiring
-reference error<=5e-5, no decision changes at either cut, CLIP error<=1e-5. No new MIDD
-classifier scores, no DEV/final pixels, no old-feature modifications or automatic model fit.
-Feature contract waits for complete audited admission; separately decide the next fit.
-
-
-### E72 score-blind MIDD TRAIN admission complete (2026-09-13)
-
-All512 originals decoded;151,485 protected references, zero cross-reference matches,
-zero decode failures. One internal perceptual pair formed a component; retain one hash-ranked
-representative,511 admitted (Hynix127, other3 sensors128). No refill. Native publisher
-JPEG dimensions:256 at3264x2448,128 at2320x1744,128 at4208x3120. EXIF make/model and capture
-timestamps absent in all512, so sensor provenance comes from publisher packaging and scene
-independence remains unverified. Whole MIDD publisher is research TRAIN only, never fresh
-DEV/final; no detector scores yet. Audit SHA`23021f21e0ff5fcb72c972c8293a0c18188ddf18cdf8fdfb33ec3046ac5d8e04`;
-TRAIN manifest SHA`a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e`.
-E75 feature contract may now freeze for all511 admitted representatives. Existing E54 TRAIN
-remains immutable; a future expanded fit would have12,141 parents /7,546 REAL /4,595 AI.
-
-
-E75 historical encoder parity passed30/30 TRAIN source representatives in all3 conditions:
-E43 maximum score error0, CLIP maximum feature error0, both decision cuts unchanged.
-New511-parent feature extraction active. E76 prepared fit code passed3 focused tests:
-new-camera failures cannot hide in large old populations, poor individual sensors cannot
-hide in pooled camera results, and full AI/unique-body/role expansion checks fail closed.
-Read-only metadata join verified12,141 unique bodies/parents, all4,595 old AI retained.
-No new MIDD model score, E76 contract or fit yet.
+[Current plan](../PLAN.md), [append-only experiment history](../ml/EXPERIMENTS.md),
+[model card](../MODEL_CARD.md). E49's target and all AI-preservation requirements remain.

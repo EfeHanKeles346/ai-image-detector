@@ -26,7 +26,7 @@ User explicitly requests continuous active-session work, data acquisition when n
 experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
 Do not create30-minute polling/heartbeat automation. No promise of execution after an app or
 session interruption. E66 SIDD Small6.62GB acquisition and grouped REAL+AI admission are complete;
-E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 bounded MIDD acquisition is active.
+E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 feature extraction is active.
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
@@ -44,15 +44,17 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E72 admitted511 TRAIN; E75 features next (2026-09-13)
+## Current checkpoint — E75 features active; E76 data-effect fit prepared (2026-09-13)
 
 E71 consumed DEV REAL FPR34.375%/38.125% improves on42.5% but fails the10% target.
 Aggregate AI recall unchanged conceals2/1 newly missed AI views;12/20 numeric gates.
 No E49 regression or promotion. E72 downloaded512 score-blind MIDD TRAIN originals,
 3.82GB;511 admitted after151,485-reference audit with zero cross matches and one internal duplicate.
 E73 linear and E74 bilinear full-AI-confidence fits failed all TRAIN REAL10% guards;
-no DEV/E49 permitted. Prepare E75 feature extension only for admitted new TRAIN rows,
-with old-encoder parity before encoding. No next model recipe frozen yet. MD/git checkpoints continue.
+no DEV/E49 permitted. E75 old-encoder parity is exact and511 new TRAIN features are being
+extracted. E76 keeps the E74 map/AI constraints and adds only audited MIDD data; code and
+population-specific guards are fixed/tested, fit contract waits for features.779 tests pass.
+MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
 

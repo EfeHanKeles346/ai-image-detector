@@ -7144,3 +7144,7 @@ DEAR source/model metadata pinned and Git blob bodies verified. Code and weight 
 are distinct; checkpoint terms are non-commercial with stated SD1.5 restrictions and
 upstream lineage limitations. No model payload/image or third-party execution. E75 remains
 active and E76's prepared code has been pushed at6fb0890 (origin verified).
+
+Consolidated the living overnight report into current TRAIN/DEV tables, data roles and E76
+next actions; removed contradictory intermediate running-state prose from that overview.
+All historical stages remain in append-only HISTORY/EXPERIMENTS and frozen JSON receipts.
