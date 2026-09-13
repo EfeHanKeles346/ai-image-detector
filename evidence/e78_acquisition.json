@@ -1,0 +1,12 @@
+{
+  "bytes": 94372114,
+  "contract_sha256": "9b9de3d745480e65e724e5bbd02a72b568704bf0fb942a033c653917532b7b4a",
+  "downloaded_bytes": 94372114,
+  "image_bytes": 0,
+  "image_scores": 0,
+  "promotion_allowed": false,
+  "seconds": 13.956779874977656,
+  "state": "E78_DEAR_r_weights_verified_unexecuted",
+  "third_party_code_executed": false,
+  "weight_sha256": "430fde11debe1850ab24af43945b4d68f2bb3ee52a837d84cf525eb603ccde97"
+}

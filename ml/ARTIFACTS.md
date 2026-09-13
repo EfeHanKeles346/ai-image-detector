@@ -262,3 +262,8 @@ No DEV/E49 or promotion. Artifact SHA`dd6fd99607f674cafa3a4f9982002ce2c688d564eb
 E77 REAL-only AE/PCA artifact and TRAIN features are complete under the frozen representation
 contract; compact receipt: `evidence/e77_representation.json`. Both serialized outputs replay
 exactly. They are research features, not a validated detector or serving artifact.
+
+
+E77 is rejected at TRAIN: old-REAL FPR10.96%/12.38%/10.39%, all above10%. No AI
+confidence loss beyond solver tolerance, no newly missed AI or newly wrong REAL.
+No DEV/E49 or promotion. Receipt `evidence/e77_fit.json`; failed candidate retained externally.

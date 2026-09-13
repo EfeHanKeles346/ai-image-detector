@@ -116,3 +116,9 @@ reconstruction residual branch, preserving all E76 population and AI-confidence 
 E77 representation completed100 epochs in40.96s, weighted REAL L1 .79261→.54066.
 No AI in AE loss; exact serialized feature replay. This is not detector quality.
 Next: one321-coefficient full-AI-confidence fit with all E76 population gates.
+
+
+E77 head FAILED: old REAL10.96%/12.38%/10.39%, expanded10.30%/11.65%/9.75%,
+new MIDD1.17%/1.57%/.98%. Zero new AI/REAL errors, but all old-REAL10% gates fail.
+No DEV/E49. Next E78: one pinned DEAR-r94.37MB research checkpoint acquisition;
+synthetic parity/resource checks are separate from image scoring.

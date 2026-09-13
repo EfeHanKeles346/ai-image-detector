@@ -1,0 +1,37 @@
+{
+  "checkpoint": {
+    "bytes": 94372114,
+    "path": "/Volumes/LaCie/pixelproof-datasets/e78/dear_r.pth",
+    "sha256": "430fde11debe1850ab24af43945b4d68f2bb3ee52a837d84cf525eb603ccde97",
+    "url": "https://huggingface.co/k-aisi-anti-deepfake/dear-checkpoints/resolve/5b57350b0ee75553109b3844f3c8a9341fc7e707/dear_r/model_best.pth"
+  },
+  "contract_sha256": "9b9de3d745480e65e724e5bbd02a72b568704bf0fb942a033c653917532b7b4a",
+  "image_bytes": 0,
+  "image_scores": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e72_acquisition.py": "cfb96e3f0100ff5ab453fdd6afd1d8d72931db90813bd9ae1a39aa8fe6f30cd1",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e78_acquisition.py": "18fd6c0b44049a5333b3063b805f0e2754e76baaf36f32a086d1ea246a44ea3d",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/LICENSE": "136d7cd1802c0143ecd4be950bfbadf3198685eff3586d0de2f6496792fdf0a1",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/README.md": "23e68f256d7deeeb10df46cc3922ee0ba2bf3d19a99f6d570dfa989957e83959",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/configs/rajan_mask_gated.yaml": "4a5342938d7c78a9d77ce4d4439eec6cd3c2443c5203631a486bb68c1f21facd",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/dear/detector/corvi_detector.py": "de6e57f8108ec10ece24784a56d91020e06d96f6d2f5d940646452159c3d92f0",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/dear/detector/corvi_mask_gated_detector.py": "1709c66d292d5d826c0547f42aaf615109e055192d1b678b2e5150b3b1c6065c",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/dear/detector/rajan_mask_gated_detector.py": "ef5d52dbc0a647753d342b6c19d6f876de700b183db08960a4536804bdf78bd8",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/dear/nn_classifier/resnet.py": "dfa3616d0a38ec1da3b88c731f700b6494d811028a8c7c018b51c63557bdec53",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/scripts/inference.py": "47387af4f11621bee90df77ec5448cb70ede60735eb4bfb0579dd328c3969ab7",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code_tree.json": "27fb15b9a574534a8c5df51ebb593f6f4fbcdf9ba8d8e65e4012fd2d8a9ad9cd",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/inference_dependency_metadata.json": "d4bd3ff55b20215da0559f9ed4a495aaf8b57cf76ad3510b3deffdf95974dcfe",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/model_metadata.json": "257b0e6d8cdd241cceb7207bfb190506a29d0b65f4cdccb4c9430465ef702343",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/weights/LICENSE": "87fc3de9022859e06308558200b0006e2e2a440d8791e1fa9b55a3d8fd5e3ca3",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/weights/NOTICE": "01fe0e7c91f87a9178e5082f8255a798559caa94e6b1f1b0b45f393f7b6b875a",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/weights/README.md": "9620d4b3c102c1dd895d7eca19740813972cc17b6e941c314434f8c448e095a8"
+  },
+  "license": "Weights CC-BY-NC4.0 plus NOTICE SD1.5 OpenRAIL use restrictions; upstream AlignedForensics has no explicit license. Local research only; no serving or redistribution of weights.",
+  "max_seconds": 900,
+  "next": "Only separately registered synthetic inference/parity/resource checks after strict weights_only load. Any image-feature extraction or classifier fit needs a separate contract.",
+  "promotion_allowed": false,
+  "rationale": "Fixed aligned-pair pretrained forensic alternative to semantic DINO/CLIP features. DEAR-r selected from author training design before any local DEAR scores; no c/r local sweep.",
+  "state": "E78_DEAR_r_single_checkpoint_acquisition_registered",
+  "third_party_execution_allowed": false,
+  "transfer_limits": "Author postprocessing robustness is not proof of low phone REAL FPR or modern AI retention."
+}

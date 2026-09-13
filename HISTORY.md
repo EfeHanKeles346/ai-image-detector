@@ -7219,3 +7219,21 @@ objective and all E76 population gates. Three new model tests verify exact prese
 old coordinates, no old correction-weight leakage, serialized/batched predictions and
 invalid alignment rejection. All10 focused E77/E76/E73 model/guard tests pass. No DEV or E49
 read, no detector-quality claim from reconstruction loss.
+
+
+### E77 constrained reconstruction residual: TRAIN FAILED (2026-09-13)
+
+One fixed fit completed in176.22s/42 iterations; solver success, max violation9.99e-16,
+minimum AI shift-9.99e-16. All13,785 AI views protected; zero newly missed AI and
+zero newly wrong REAL views. Old-REAL FPR10.9595%/12.3810%/10.3909% fails all three
+10% guards. Expanded FPR10.2968%/11.6486%/9.7535%; new MIDD1.1742%/1.5656%/.9785%.
+The pooled Q75 pass cannot hide the old-REAL failure. This improves E76 but is rejected;
+no DEV/E49 read or promotion. Candidate SHA256 `f4be42e1cb0a7582b38f363cb66bfa043a5741dfae875651e6d1d587558f4b5d`.
+No AE epoch/rank/architecture sweep or threshold repair follows this result.
+
+Next preparation: E78 acquires only the pinned94,372,114-byte official DEAR-r checkpoint
+for research. Its aligned-pair forensic backbone offers a different signal from the frozen
+semantic DINO/CLIP coordinates. Selection precedes all local DEAR image scores; no c/r sweep.
+Code/weight terms and inference source are reviewed. Strict exact size/SHA, bounded streaming
+and no third-party execution in acquisition. Three downloader tests pass; synthetic
+inference/parity/resource registration must precede any execution. No new image download.

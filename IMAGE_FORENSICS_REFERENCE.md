@@ -521,3 +521,15 @@ The model NOTICE also identifies AlignedForensics inputs without explicit source
 record this lineage limitation. Each DEAR c/r checkpoint is94,372,114B. Only pinned source,
 LICENSE/NOTICE/model metadata were read, no weights downloaded or upstream code executed.
 Receipt: `evidence/dear_metadata_lead.json`. Do not infer permissive model rights from code.
+
+
+### DEAR inference dependency review (2026-09-13)
+
+Pinned official GatedResNet source confirms a stride0=1 ResNet50, fixed binary2048-channel
+gate applied before spatial pooling, then one linear logit. Rajan inherits that inference.
+No local image scoring yet. Dependency Git blobs verified against the previously pinned
+code tree; metadata stored externally in `research/dear/inference_dependency_metadata.json`.
+The source's permissive load is unsuitable for the local experiment: require explicit
+`weights_only=True` and strict complete state validation. Any local torchvision-based
+equivalent must pass source-reference parity on synthetic tensors before actual images.
+Source: [official DEAR](https://github.com/anti-fake/dear/tree/5e0dc665eee24b632c03be09a27a05319abc9e7f).

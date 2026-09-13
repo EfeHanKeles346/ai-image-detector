@@ -379,3 +379,8 @@ No DEV/E49 scoring or promotion; candidate SHA`cadf88f4fc3e3030495bc9cbdc0c74a6d
 E76 camera-expanded candidate rejected at TRAIN. Old REAL FPR13.28%/14.37%/12.25%;
 expanded12.64%/13.65%/11.62%, new-MIDD3.91%/3.72%/2.94%. No new AI/REAL errors.
 No DEV/E49 or promotion. Artifact SHA`dd6fd99607f674cafa3a4f9982002ce2c688d564ebd4b94bcd57e4ac3106a117`.
+
+
+E77 is rejected at TRAIN: old-REAL FPR10.96%/12.38%/10.39%, all above10%. No AI
+confidence loss beyond solver tolerance, no newly missed AI or newly wrong REAL.
+No DEV/E49 or promotion. Receipt `evidence/e77_fit.json`; failed candidate retained externally.
