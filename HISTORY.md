@@ -7319,3 +7319,17 @@ Four new tests pass: exact old-coordinate/teacher replay, orthonormal new basis,
 and batch score parity, hidden small-source failures and excessive uncertainty rejected.
 An initial test wrongly required exact unit variance from approximate randomized SVD;
 corrected to its orthonormal-basis property, without changing the model or recipe.
+
+
+### E80 optional consumed DEV implementation prepared; E79 still active (2026-09-13)
+
+Prepared a gated E80 DEV implementation without freezing or reading its pixels. It
+requires the complete TRAIN pass, reuses tested E71 pair/reference/transition helpers,
+and adds padded fixed-batch9 DEAR feature inference with padding removed before
+three-crop aggregation. Two focused tests pass: padding cannot add/change observations,
+and failed TRAIN refuses DEV registration. All20 numeric and per-source AI-retention
+gates remain; this cannot make consumed E66 fresh.
+
+Consolidated the living overnight overview to remove obsolete current-state claims
+while retaining append-only history here. Completed GitHub CI34732736214 has successful
+Python, web lint/type/tests and the same existing failed web dependency audit.

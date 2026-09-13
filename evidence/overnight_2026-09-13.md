@@ -1,10 +1,9 @@
 # 13 September overnight research checkpoint
 
-The target remains unmet. E43 and serving are unchanged. E70 and E71 passed TRAIN but
-failed separate consumed E66 development comparisons. E73/E74 stopped at failed TRAIN
-guards. No overnight candidate has opened an E49 regression or qualified for promotion.
-E72 admitted511 new camera TRAIN observations; E75 completed their features, and E76
-failed its one registered data-expansion fit.
+The target remains unmet. E43 and serving are unchanged. E70/E71 passed TRAIN but failed
+separate consumed E66 development screens. E73/E74/E76/E77 failed TRAIN. No overnight
+candidate has opened E49 or qualified for promotion. E79 is extracting frozen DEAR-r
+features for all12,141 admitted TRAIN parents; E80 is prepared and waits for completion.
 
 ## Comparable TRAIN results
 
@@ -60,79 +59,90 @@ near the decision-protection boundary. Several existing DEV losses had substanti
 margins, so numerical rounding alone cannot explain them. E73/E74 test stronger confidence
 protection without changing thresholds; their failures are preserved.
 
-## Data and feature work
+## Expanded TRAIN experiments
+
+E76/E77 train on the same12,141 parents (7,546 REAL/4,595 AI), including511 audited
+MIDD camera observations. All13,785 AI-view reference logits are protected within1e-8;
+no previously correct REAL may become wrong. Old/new/expanded REAL slices remain separate.
+
+| Candidate and REAL population | Clean FPR | Assigned transport | TRAIN Q75 | Result |
+|---|---:|---:|---:|---|
+| E76 old REAL | 13.28% | 14.37% | 12.25% | Failed all10% guards |
+| E76 expanded REAL | 12.64% | 13.65% | 11.62% | Failed all10% guards |
+| E76 new MIDD | 3.91% | 3.72% | 2.94% | Passed slice/sensor guards |
+| E77 old REAL | 10.96% | 12.38% | 10.39% | Failed all10% guards |
+| E77 expanded REAL | 10.30% | 11.65% | 9.75% | Only pooled Q75 passed |
+| E77 new MIDD | 1.17% | 1.57% | 0.98% | Passed slice/sensor guards |
+
+Both introduced zero new AI misses/REAL errors. E76 isolates data addition to the exact
+E74 map; new cameras were easier and did not solve old hard REAL. E77 adds REAL-only
+CLIP reconstruction residuals: fixed100-epoch AE, L1 .79261→.54066, serialized features
+exact. Reconstruction loss is not detector quality. No DEV/E49 after either failed fit.
+[E76 result](e76_fit.json), [E77 result](e77_fit.json).
+
+E77's [full TRAIN operating-point audit](e77_train_operating_point.json) finds expanded
+covered accuracy92.05–93.30% below95%, and RR REAL FPR43.84%/48.16%/40.64% above20%.
+Coverage92.3–93.2% and uncertainty6.8–7.7% pass. A pooled Q75 pass thus hides source and
+covered-accuracy failures. This reused the generic metric function on TRAIN only; no E49
+scores, images, bootstrap or final validator were read/run.
+
+## Data and representation work
 
 - **E65 diagnostic only:**83 WIFD/RawNIND files,1.01GB,166 E43 views. WIFD REAL FPR16.42%/
   19.40%; RawNIND18.75%/31.25%. Dependent REAL-only diagnostics, no AI-retention result.
   Entire publishers stay out of TRAIN/fresh final. [Diagnostic](e65_diagnostic.md).
-- **E66 consumed DEV:**SIDD Small6,615,978,508B matched published MD5/SHA1.160 NOISY images
-  and160 admitted local AI formed the limited screen above. Its initial zero-score admission
-  record is historical; all2,385 unused eligible AI candidates remain reserved from TRAIN.
-- **E71 features complete:**11,630 x3 x1536 CLIP features,9,599 validated old chunks plus
-  2,031 new chunks,1538.79s. Thirty historical raw-vector replays matched exactly. Old E59
-  outputs/fits untouched; new code uses a separately frozen read-only cache contract.
-- **E72 research TRAIN:**512 score-blind MIDD publisher-original JPEGs,128 each from four
-  sensor packages,3,821,581,226B. Exact-range acquisition pinned archive ETags/member CRCs
-  and SHA receipts; a connection timeout was recovered without changing the selection.
-  All decoded;151,485 protected references yielded zero cross matches. One internal pair
-  was deduplicated, admitting511 observations. EXIF identity/timestamps absent: sensor
-  provenance is publisher metadata, scene independence unverified. Whole MIDD publisher
-  is TRAIN only, including unselected/test/denoised members. CC BY-NC-SA4.0 research terms.
-  [Admission](e72_audit.json), [download](e72_download.json).
-- **E75 features complete (778.72s):**all511 admitted MIDD observations, frozen DINO3072/CLIP1536 in the
-  same three TRAIN conditions. Old30-source replay passed with exactly zero E43-score and
-  CLIP-feature error; no decision changes. New MIDD classifier scores remain unopened.
-- **Leads only:**SIDL metadata has1605 RAW records/253 scene ids versus advertised300 scenes;
-  release coverage remains unresolved, no images admitted. DEAR source/model metadata and
-  distinct research weight terms were pinned, no weights/images scored. Other primary
-  literature and limitations are in [forensic references](../IMAGE_FORENSICS_REFERENCE.md).
+- **E66 consumed DEV:**SIDD Small6,615,978,508B matched publisher MD5/SHA1.160 NOISY images
+  and160 admitted local AI formed the limited screen. Its zero-score admission record is
+  historical; all2,385 unused eligible AI candidates remain reserved from TRAIN.
+- **E71 CLIP features:**11,630 x3 x1536;9,599 validated old chunks plus2,031 new chunks,
+  1538.79s. Thirty historical raw-vector replays exact. Old E59 fits/outputs untouched.
+- **E72 research TRAIN:**512 score-blind MIDD publisher-original JPEGs from four sensor
+  packages,3,821,581,226B. Pinned range/ETag/CRC/SHA acquisition resumed after a timeout.
+  All decoded;151,485 protected references yielded zero cross matches; one internal
+  duplicate removed,511 admitted. No EXIF camera/time fields; scene independence unknown.
+  Whole MIDD publisher is TRAIN only, including unselected/test/denoised members.
+  CC BY-NC-SA4.0 research terms. [Admission](e72_audit.json), [download](e72_download.json).
+- **E75 MIDD features:**all511 x3 DINO3072/CLIP1536,778.72s. Old30-source E43/CLIP replay
+  exact. New MIDD classifier scores were unopened before the E76 fit, then consumed by
+  E76/E77 TRAIN fits; do not mistake initial admission receipts for present freshness.
+- **E77 REAL-only representation:**22,638 REAL views, zero AI in AE normalization/loss;
+  fixed weighted L1 architecture1536→256→64→256→1536. All-TRAIN residual PCA64, one
+ 321-coefficient fit. [Representation](e77_representation.json).
+- **E78 DEAR-r:**one94,372,114-byte pinned research checkpoint, verified SHA256. Strict
+  weights-only complete state load; reviewed author CPU features exact, logits within
+ 5.96e-8. CPU/MPS differences<1.4e-6; batch3/batch9 MPS outputs exact. No local images
+  were scored in these synthetic probes. Weight terms are CC BY-NC4.0 plus NOTICE
+  restrictions; upstream AlignedForensics lacks explicit licensing. No weight redistribution
+  or serving. [Acquisition](e78_acquisition.json), [batch probe](e78_batch_probe.json).
+- **E79 active:**frozen DEAR-r820 active channels on all9 E54/E75 crops per TRAIN parent;
+  mean/std1640 per condition. No classifier head execution, no image download. Immutable
+  chunks bind parent/source/contract/arrays and support exact-population resume. Both E78
+  probes failed the initial2h throughput budget (~2h7m); E79 explicitly allocates2.5h under
+  overnight authorization before image features, retaining numeric and6GiB memory limits.
+  This is a resource revision, not a changed quality gate or retroactive E78 pass.
+- **Leads only:**SIDL metadata has1605 RAW records/253 scene IDs versus advertised300
+  scenes; release coverage unresolved, no images admitted. Other primary sources and
+  limitations: [forensic references](../IMAGE_FORENSICS_REFERENCE.md).
 
-## Next fixed experiment and verification
+## Next fixed model and verification
 
-E76 adds all511 audited MIDD observations to unchanged E54 TRAIN:12,141 parents,
-7,546 REAL/4,595 AI. It keeps E74's exact bases, interactions and old-TRAIN scaling,
-resets257 correction weights, and retains E73 full-AI-confidence constraints. No parameter
-sweep. In each condition, old/expanded/new-MIDD REAL FPR must each be<=10%, with worst
-MIDD sensor<=20%; solver, complete AI replay and serialization guards also apply.
-E75 features are complete; E76 failed its single fit. No DEV after a failed TRAIN gate.
+E80 adds all-TRAIN DEAR PCA64 (StandardScaler, seed80, randomized power3, whiten) to the
+exact E77 original/CLIP/bilinear/REAL-residual320 coordinates;385 zero-start coefficients.
+Keep the E64 objective, E73 full-AI-confidence constraints and all E76 population guards.
+Additionally require all10 numeric metric checks on old and expanded TRAIN in each of
+three conditions. The strengthened screen addresses the E77 audit above. No parameter,
+seed, rank or cut sweep; no fit from partial E79 features.
 
-779 Python tests pass. These verify engineering behavior, not detection quality. The
-existing Starlette/httpx deprecation remains. Code, compact evidence and relevant MD
-checkpoints are committed/pushed; raw images/features/weights stay external. Latest checked
-completed CI34730124772 passed Python and failed the existing web dependency audit.
-No CI rules were changed; no30-minute monitor or heartbeat automation was created.
+The optional E80 consumed-E66 implementation is prepared but not frozen/executed. It
+refuses failed TRAIN, preserves prior E43 pixels/scores/two-cut decisions, and requires
+all20 numeric DEV gates plus zero newly missed AI per source/condition. E66 remains
+consumed and dependent, never fresh final. E49 remains closed until that separate pass.
 
-[Current plan](../PLAN.md), [append-only experiment history](../ml/EXPERIMENTS.md),
-[model card](../MODEL_CARD.md). E49's target and all AI-preservation requirements remain.
+802 Python tests pass (engineering evidence, not detection quality). The existing
+Starlette/httpx deprecation remains. Completed CI34732736214 passed Python, web lint,
+type checks and tests; the existing web dependency audit failed. Raw images/features/
+weights stay external; code, compact evidence and MD checkpoints are committed/pushed.
+No CI rule or30-minute monitor/heartbeat automation was created or changed.
 
-
-E76 result: old REAL FPR13.28%/14.37%/12.25%, expanded12.64%/13.65%/11.62% fail;
-new-MIDD3.91%/3.72%/2.94% passes with all sensor gates. No new AI/REAL errors;
-11/28/19 additional TRAIN AI detections. Data addition alone did not solve old hard REAL.
-No DEV/E49 allowed. Next E77 prepares a separately registered REAL-only CLIP feature
-reconstruction residual branch, preserving all E76 population and AI-confidence guards.
-
-
-E77 representation completed100 epochs in40.96s, weighted REAL L1 .79261→.54066.
-No AI in AE loss; exact serialized feature replay. This is not detector quality.
-Next: one321-coefficient full-AI-confidence fit with all E76 population gates.
-
-
-E77 head FAILED: old REAL10.96%/12.38%/10.39%, expanded10.30%/11.65%/9.75%,
-new MIDD1.17%/1.57%/.98%. Zero new AI/REAL errors, but all old-REAL10% gates fail.
-No DEV/E49. Next E78: one pinned DEAR-r94.37MB research checkpoint acquisition;
-synthetic parity/resource checks are separate from image scoring.
-
-
-E78 DEAR-r weights verified94.37MB; author CPU feature parity exact, CPU/MPS errors
-<1.4e-6, batch3/batch9 MPS outputs exact. Both probes FAIL only their2h throughput
-estimate (about2h7m); batch9 uses3.36GB. E79 explicitly budgets2.5h before any image
-features, retaining6GiB/numeric limits. This revises a cost budget, not detector gates.
-Next: frozen TRAIN-only DEAR mean/std features, all12,141 parents, head unexecuted.
-
-
-E77 full TRAIN diagnostic confirms covered accuracy92–93% and worst RR REAL40–48%
-remain failures despite acceptable uncertainty. E80 preparation adds DEAR64 to exact E77
-coordinates and requires all10 numeric metric checks on old/expanded TRAIN, all3 conditions,
-as well as unchanged AI-confidence and E76 population guards. E79 extraction is active;
-E80 cannot freeze/fit on partial features.800 Python tests pass.
+[Current plan](../PLAN.md), [append-only experiments](../ml/EXPERIMENTS.md),
+[model card](../MODEL_CARD.md). All existing AI-preservation and final targets remain.
