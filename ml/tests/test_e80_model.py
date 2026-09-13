@@ -21,12 +21,12 @@ def fixture():
         'residual_center':np.zeros(9),'residual_scale':np.ones(9),'residual_mean':np.zeros(9),
         'residual_components':rng.normal(size=(64,9)),'residual_scales':np.ones(64)}
     previous=m.base.assemble(previous,rep);previous['weights'][:]=10
-    return x,clip,dear,head,previous,m.fit_map(previous,dear)
+    return x,clip,dear,head,previous,m.fit_map(previous,dear,rng.normal(size=80),.3)
 
 
 def test_exact_old_map_and_zero_teacher_replay_without_old_weights():
     x,clip,dear,head,previous,a=fixture()
-    assert len(a['weights'])==385 and not a['weights'].any()
+    assert len(a['weights'])==386 and not a['weights'].any()
     assert np.array_equal(m.predict(head,x,clip,dear,a),head.predict_proba(x)[:,1])
     z=m.project(head,x,clip,dear,a)
     assert np.array_equal(z[:,:320],m.base.project(head,x,clip,previous)[:,:-1])
@@ -35,6 +35,35 @@ def test_exact_old_map_and_zero_teacher_replay_without_old_weights():
     np.testing.assert_allclose(a['dear_components']@a['dear_components'].T,np.eye(64),atol=1e-12)
     assert previous['weights'].sum()==3210
     for k in m.BASE_KEYS:assert not np.shares_memory(a[k],previous[k])
+
+
+def test_official_head_information_survives_discarded_pca_direction():
+    x,clip,dear,head,previous,a=fixture()
+    # A held-out input perturbation in the PCA null space has no PC coordinates.
+    _,_,vh=np.linalg.svd(a['dear_components'],full_matrices=True)
+    delta=vh[-1]*a['dear_scale']
+    a=m.fit_map(previous,dear,delta,.3)
+    before=m.project(head,x,clip,dear,a)
+    changed=dear.astype(np.float64)+delta
+    after=m.project(head,x,clip,changed,a)
+    np.testing.assert_allclose(before[:,320:384],after[:,320:384],atol=1e-12)
+    np.testing.assert_allclose(after[:,384]-before[:,384],float((delta@delta/a['dear_head_scale']).item()),atol=1e-12)
+    assert np.all(after[:,384]>before[:,384])
+    np.testing.assert_allclose(before[:,384],StandardScaler().fit_transform((dear@delta+.3)[:,None])[:,0],atol=1e-12)
+
+
+def test_checkpoint_head_uses_active_mean_channels_only(monkeypatch,tmp_path):
+    from experiments import e65_acquisition,e78_acquisition
+    monkeypatch.setattr(e65_acquisition,'digest',lambda path:e78_acquisition.SHA)
+    gate=torch.zeros(2048);gate[::2]=1;gate[1640:]=0
+    weight=torch.arange(2048,dtype=torch.float32)[None,:]
+    monkeypatch.setattr(torch,'load',lambda *args,**kwargs:{'model':{'gate.gate':gate,
+        'backbone.fc.weight':weight,'backbone.fc.bias':torch.tensor([.25])}})
+    direction,bias=m.checkpoint_direction(tmp_path/'head.pth')
+    np.testing.assert_array_equal(direction[:820],weight[0,gate.bool()].numpy())
+    assert not direction[820:].any() and bias==.25
+    monkeypatch.setattr(e65_acquisition,'digest',lambda path:'changed')
+    with pytest.raises(ValueError,match='checksum'):m.checkpoint_direction(tmp_path/'head.pth')
 
 
 def test_serialized_forensic_map_batch_parity_and_alignment(tmp_path):

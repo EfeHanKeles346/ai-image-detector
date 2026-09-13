@@ -7371,3 +7371,23 @@ No new score or image read. Figure footer states E79 active/E80 unmeasured at th
 Source/output hashes and plotted values: `evidence/overnight_progress_plot.json`; reproducible
 renderer: `ml/tools/plot_overnight_progress.py`. Visual inspection confirmed legible labels
 and no clipped chart content. This plot is descriptive; no independent-quality claim.
+
+
+### E80 pre-fit revision: preserve the official DEAR head direction (2026-09-13)
+
+Before any E80 contract, candidate, fit or DEAR image classifier score exists, code review
+identified that unsupervised PCA64 can discard the pretrained DEAR-r decision direction.
+Add one fixed scalar alongside those64 PCs: official gated fc weights applied to the820
+mean crop features plus official bias, with zero weights on820 std features. Compute in
+float64 and standardize on all TRAIN without labels. This is a local mean-crop linear
+response, not native full-image official inference. Pin the verified E78 checkpoint directly.
+The final map now has386 zero-start coefficients (E77 coordinates320 + PCs64 + scalar1 +
+intercept1). Earlier385-coefficient preparation remains historical; it was never frozen/fitted.
+E79 extraction and all objectives, constraints, cuts, absolute/source/selective/runtime gates
+are unchanged. No score/seed/rank/weight sweep; no partial-feature fit or DEV/final read.
+
+Tests verify preservation of a decision direction outside the PCA subspace, correct active
+mean-channel selection, checkpoint digest rejection, serialized prediction and exact old-map
+reuse. The first null-space test had a scalar/array shape mismatch in its assertion; corrected
+the expected scalar without changing implementation or model inputs. Full Python suite:
+805 passed with the existing Starlette/httpx deprecation. E79 remains active and resumable.

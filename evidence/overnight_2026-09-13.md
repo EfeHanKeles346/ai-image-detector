@@ -129,7 +129,11 @@ scores, images, bootstrap or final validator were read/run.
 ## Next fixed model and verification
 
 E80 adds all-TRAIN DEAR PCA64 (StandardScaler, seed80, randomized power3, whiten) to the
-exact E77 original/CLIP/bilinear/REAL-residual320 coordinates;385 zero-start coefficients.
+exact E77 original/CLIP/bilinear/REAL-residual320 coordinates, plus one standardized fixed
+official DEAR-r head response on the mean crop features;386 zero-start coefficients. This
+pre-fit code-review revision preserves information PCA can discard. The earlier385-coefficient
+preparation was never frozen/fitted; no DEAR image classifier scores informed the change.
+The mean-crop linear response is a local adaptation, not official native full-image inference.
 Keep the E64 objective, E73 full-AI-confidence constraints and all E76 population guards.
 Additionally require all10 numeric metric checks on old and expanded TRAIN in each of
 three conditions. The strengthened screen addresses the E77 audit above. No parameter,
@@ -143,7 +147,7 @@ refuses failed TRAIN, preserves prior E43 pixels/scores/two-cut decisions, and r
 all20 numeric DEV gates plus zero newly missed AI per source/condition. E66 remains
 consumed and dependent, never fresh final. E49 remains closed until that separate pass.
 
-803 Python tests pass (engineering evidence, not detection quality). The existing
+805 Python tests pass (engineering evidence, not detection quality). The existing
 Starlette/httpx deprecation remains. Completed CI34732736214 passed Python, web lint,
 type checks and tests; the existing web dependency audit failed. Raw images/features/
 weights stay external; code, compact evidence and MD checkpoints are committed/pushed.

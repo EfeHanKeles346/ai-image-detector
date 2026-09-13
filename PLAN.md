@@ -58,7 +58,9 @@ but failed all three10% guards; no new AI misses or REAL errors. No DEV/E49. Nex
 DEAR-r94.37MB checkpoint verified; author/CPU/MPS numeric parity passes. Batch9
 projects2h7m and remains a failed2h resource probe. E79 explicitly allocates2.5h under
 user overnight authorization before image scoring, retains6GiB/numeric limits, and is extracting
-all12,141 TRAIN parents. Classifier head not executed; no protected pixels.803 Python tests pass.
+all12,141 TRAIN parents. Classifier head not executed; no protected pixels. E80 now preserves
+the fixed official DEAR mean-crop head response alongside64 PCs:386 coefficients, not yet
+frozen/fitted. All acceptance gates unchanged.805 Python tests pass.
 MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
@@ -5331,3 +5333,23 @@ E80 runtime addition before fit freeze: provisional TRAIN pass must replay all v
 batch8 with zero changes at both cuts, max score error<=1e-6 and all-AI shift>=-1e-8.
 E77 TRAIN visual diagnostic found a non-AI view only7.31e-9 below the AI cut; this is
 a numerical reproducibility guard, not a threshold adjustment or new label decision.
+
+
+### E80 pre-fit revision: preserve the official DEAR head direction (2026-09-13)
+
+Before any E80 contract, candidate, fit or DEAR image classifier score exists, code review
+identified that unsupervised PCA64 can discard the pretrained DEAR-r decision direction.
+Add one fixed scalar alongside those64 PCs: official gated fc weights applied to the820
+mean crop features plus official bias, with zero weights on820 std features. Compute in
+float64 and standardize on all TRAIN without labels. This is a local mean-crop linear
+response, not native full-image official inference. Pin the verified E78 checkpoint directly.
+The final map now has386 zero-start coefficients (E77 coordinates320 + PCs64 + scalar1 +
+intercept1). Earlier385-coefficient preparation remains historical; it was never frozen/fitted.
+E79 extraction and all objectives, constraints, cuts, absolute/source/selective/runtime gates
+are unchanged. No score/seed/rank/weight sweep; no partial-feature fit or DEV/final read.
+
+Tests verify preservation of a decision direction outside the PCA subspace, correct active
+mean-channel selection, checkpoint digest rejection, serialized prediction and exact old-map
+reuse. The first null-space test had a scalar/array shape mismatch in its assertion; corrected
+the expected scalar without changing implementation or model inputs. Full Python suite:
+805 passed with the existing Starlette/httpx deprecation. E79 remains active and resumable.

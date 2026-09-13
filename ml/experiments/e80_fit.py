@@ -60,7 +60,8 @@ def freeze():
         Path(__file__),Path(model.__file__),Path(__file__).with_name('e77_model.py'),
         Path(__file__).with_name('e76_fit.py'),Path(__file__).with_name('e73_fit.py'),
         Path(__file__).with_name('e64_constrained.py'),Path(__file__).with_name('e49_evaluation.py'),
-        ML_ROOT/'src/pixelproof/benchmark_metrics.py',ML_ROOT/'src/pixelproof/training_weights.py']
+        ML_ROOT/'src/pixelproof/benchmark_metrics.py',ML_ROOT/'src/pixelproof/training_weights.py',
+        DATA_ROOT/'e78/dear_r.pth',Path(__file__).with_name('e78_acquisition.py')]
     features=read(paths[1]);failed=read(DATA_ROOT/'e77/fit.json')
     if digest(paths[1])!=read(EVIDENCE/'e79_features.json')['report_sha256'] or \
             features['state']!='E79_DEAR_r_TRAIN_features_complete' or features['shape']!=[12141,3,1640] or \
@@ -75,7 +76,10 @@ def freeze():
     c={'state':'E80_DEAR_forensic_TRAIN_fit_registered','inputs':{str(p):digest(p) for p in paths},
        'representation':'Exact E77 original64/CLIP64/bilinear128/REAL residual64 plus DEAR64. '
                         'DEAR all-TRAIN StandardScaler/PCA64 randomized seed80 power3, whiten. '
-                        'No old-map refit; discard previous correction weights, zero385 coefficients.',
+                        'Also preserve the official DEAR-r gated fc response on the mean820 crop features '
+                        '(std820 weights zero), computed in float64 and standardized on all TRAIN without labels. '
+                        'This mean-crop scalar is a local adaptation, not native full-image official inference. '
+                        'No old-map refit; discard previous correction weights, zero386 coefficients.',
        'objective':'Unchanged E64 cut-centered BCE, class/source/parent balance, hard REAL2x, class mass.5, L2.01.',
        'constraints':'Unchanged E73 non-decreasing logits for all13,785 AI TRAIN views; E64 correct-REAL '
                      'decision guard applies to old and new REAL views. No margin/weight/cut sweep.',
@@ -124,7 +128,8 @@ def fit():
             raise ValueError('forensic TRAIN alignment differs')
         dear=cached['features'].reshape(-1,1640)
     with np.load(DATA_ROOT/'e77/correction.npz',allow_pickle=False) as previous_arrays,threadpool_limits(limits=2):
-        arrays=model.fit_map(previous_arrays,dear)
+        direction,bias=model.checkpoint_direction(DATA_ROOT/'e78/dear_r.pth')
+        arrays=model.fit_map(previous_arrays,dear,direction,bias)
     head=joblib.load(p['reference'])['head'];labels=np.repeat([r['label'] for r in rows],3)
     if int(np.sum(labels==1))!=c['ai_views']:raise ValueError('incomplete original AI replay')
     with threadpool_limits(limits=2):
