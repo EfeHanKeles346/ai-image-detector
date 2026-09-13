@@ -1,0 +1,16 @@
+{
+  "state": "RR_upstream_lineage_metadata_review",
+  "date": "2026-09-13",
+  "sources": [
+    "https://arxiv.org/html/2509.09172v1",
+    "https://github.com/ChunXiaostudy/RRDataset"
+  ],
+  "legacy_rr_train_real_rows": 1250,
+  "per_file_upstream_mapping_found": false,
+  "specific_new_overlap_identified": false,
+  "new_image_reads": 0,
+  "new_image_downloads": 0,
+  "candidate_or_role_changes": false,
+  "independence_claim_allowed": false,
+  "interpretation": "Paper-wide mixture is not a local per-file provenance mapping; prior exact-body audits cannot exclude upstream derivatives."
+}

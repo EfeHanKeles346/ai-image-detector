@@ -97,6 +97,9 @@ def freeze():
        'dev_consumed_by':['E70','E71'],'dev_fresh_or_independent':False,'dev_features_or_scores_in_fit':0,
        'e49_read_allowed':False,'promotion_allowed':False,'downloads':0,
        'limits':'Research-only MIDD license; unknown scene independence. Whole publisher TRAIN only. '
+                'Legacy RR has no per-file upstream-site mapping; its paper names mixed news/COCO/CC3M/Unsplash '
+                'origins. Exact-body audits do not establish upstream-publisher or derivative independence. '
+                'No new COCO data admitted and no unseen-COCO evaluation claim. '
                 'TRAIN score protection is not external confidence/recall evidence.'}
     write_once(CONTRACT,c);write_once(EVIDENCE/'e80_fit_contract.json',c|{'contract_sha256':digest(CONTRACT)})
     return {'state':c['state'],'parents':len(rows)}

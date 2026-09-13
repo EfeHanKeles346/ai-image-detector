@@ -132,6 +132,11 @@ remaining error margins exceed2 logits. This is descriptive, not proof of constr
 causality or infeasibility; no candidate, label, threshold or DEV/final change followed.
 See [slack receipt](e77_slack_diagnostic.json).
 
+The RR source paper names mixed upstream news/COCO/CC3M/Unsplash sources, while our
+legacy REAL names have no per-file site mapping. Exact-body audits cannot establish upstream
+derivative independence; no specific new overlapping file was found. This limitation is
+recorded in E80 before fit. No new COCO admission or unseen-COCO/fresh-final claim follows.
+
 ## Next fixed model and verification
 
 E80 adds all-TRAIN DEAR PCA64 (StandardScaler, seed80, randomized power3, whiten) to the

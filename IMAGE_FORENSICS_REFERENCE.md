@@ -557,3 +557,24 @@ Source: [official DEAR](https://github.com/anti-fake/dear/tree/5e0dc665eee24b632
 
 Only primary paper text read. No source images/model weights downloaded for these leads;
 E79/E80 recipes unchanged by this review. E80 remains unmeasured.
+
+
+### RR upstream-source clarification during E79 (2026-09-13)
+
+[RRDataset's primary paper, sections3.2.1–3.2.2](https://arxiv.org/html/2509.09172v1)
+names news photography sources and COCO/CC3M-val/Unsplash for its broader REAL collection,
+with multiple generators and some Chameleon AI samples. This is broader-corpus provenance,
+not an established per-file mapping for our1,250 legacy RR TRAIN REAL rows. The
+[inspected official repository README](https://github.com/ChunXiaostudy/RRDataset)
+describes directory structure but supplies no such per-file mapping. The existing E33
+filename audit already established pooled real_* names without camera/site identities.
+
+Record a limitation of treating the outer RR publisher label as full lineage: exact-body
+matches alone cannot rule out upstream COCO derivatives or establish upstream independence.
+No specific new overlapping image has been identified; do not invent a match, relabel/drop
+files by appearance, or rewrite frozen candidates. Existing legacy TRAIN research continues
+with this limitation; no new COCO dataset is admitted and no unseen-COCO/fresh-final claim
+is permitted. E80's pre-fit limits now record this explicitly; representation, objective,
+AI guards and acceptance thresholds unchanged. Future clean benchmark claims need audited
+upstream membership or a demonstrably independent source. No authors contacted, new images
+read/downloaded, protected scores opened, or data-role reassignment performed in this review.
