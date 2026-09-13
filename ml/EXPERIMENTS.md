@@ -5646,3 +5646,38 @@ acquisition or model inference from these sources. Existing E71 extraction conti
 
 Current-status documentation refreshed for E71 feature completion; historical E70 and older
 results remain unchanged. This is a documentation update, not a new experiment outcome.
+
+MIDD bounded expansion metadata plan is separate from E71: four vendor/sensor packages,
+TRAIN-original members only after per-archive license/identity and scene/overlap audit.
+ISOCELL_3P9 directory/license inspected successfully; image members0. No new candidate fit.
+
+
+E71 CLIP TRAIN extraction completed:11,630 parents x3 conditions x1536 features;
+9,599 verified legacy chunks plus2,031 new E71 chunks,1538.79s. Thirty source-selected
+raw encoder replays matched exactly (max error0). Feature SHA
+`dc0c4ab80d3be56495a6c5f19ee2c5a4c63a7f0e9eacf97856d7f529fb5a0603`;
+contract SHA`9ffd471967c6b85cdb618ed6714e21844420d4c4b30bd093e295e5ff7ccf26d5`.
+No DEV/final feature rows read, classifier scores0, downloads0, E59 outputs unchanged.
+Fit contract is now frozen and the single preregistered fit is running. No quality result
+or DEV permission is implied by feature completion. Full arrays remain external under e71.
+
+
+### E71 single frozen TRAIN fit passed (2026-09-13)
+
+28.22s, solver success, zero newly missed AI views and zero new REAL errors across all3
+TRAIN conditions. REAL false AI: clean492/7035=6.9936%, assigned transport546/7035=7.7612%,
+Q75 480/7035=6.8230%, versus E43 15.0675%/16.1336%/13.8024%. All3 <=10% gates passed.
+Candidate SHA`f3e15446623b533c7519def877f855cc13d5e8a0175f43eb6c2daa36e855ef5b`, contract SHA`72c381457d619fd9331023d5cd91bc9f9fcc696aae9d30662cff72aa9954d088`.
+This is constrained TRAIN feasibility, not external retention. Proceed to the separately
+registered one640-view consumed E66 comparison, with all20 numeric gates and zero newly
+missed AI per condition/source. E70 already consumed this set; never call it fresh/final.
+No E49 access or promotion from this TRAIN result. Fixed recipe, no parameter sweep.
+
+
+MIDD four-vendor metadata verification completed: Hynix_SL846868, ISOCELL_3P9842,
+Sony_IMX258485 and OmniVision_OV32A763 official TRAIN originals (2,958 total).
+Exact archive identities and directory digests are in `evidence/midd_catalog_lead.json`;
+all four embedded LICENSE.txt bodies match CC BY-NC-SA4.0. Total directory/license
+range transfer874,873B; image members read0. Separate official test and denoised paths
+are excluded from any proposed TRAIN acquisition. Next: bounded score-blind original
+selection, per-member integrity/resume and scene/overlap audit before TRAIN admission.

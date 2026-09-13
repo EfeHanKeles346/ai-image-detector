@@ -206,3 +206,25 @@ coefficients are bound to the fit contract. TRAIN pass only; no deployment eligi
 E70 is rejected after its first limited DEV evaluation. Full external scores SHA 9cf625b6f2123c5a6bd421f37d6415030cc386ccdc7cd8b809a6dba36b879521;
 compact report `evidence/e70_development.json`. Preserve all artifacts; no E49 or serving
 promotion. E66 has now been scored; its old unscored-admission flag is historical only.
+
+
+E71 CLIP TRAIN extraction completed:11,630 parents x3 conditions x1536 features;
+9,599 verified legacy chunks plus2,031 new E71 chunks,1538.79s. Thirty source-selected
+raw encoder replays matched exactly (max error0). Feature SHA
+`dc0c4ab80d3be56495a6c5f19ee2c5a4c63a7f0e9eacf97856d7f529fb5a0603`;
+contract SHA`9ffd471967c6b85cdb618ed6714e21844420d4c4b30bd093e295e5ff7ccf26d5`.
+No DEV/final feature rows read, classifier scores0, downloads0, E59 outputs unchanged.
+Fit contract is now frozen and the single preregistered fit is running. No quality result
+or DEV permission is implied by feature completion. Full arrays remain external under e71.
+
+
+### E71 single frozen TRAIN fit passed (2026-09-13)
+
+28.22s, solver success, zero newly missed AI views and zero new REAL errors across all3
+TRAIN conditions. REAL false AI: clean492/7035=6.9936%, assigned transport546/7035=7.7612%,
+Q75 480/7035=6.8230%, versus E43 15.0675%/16.1336%/13.8024%. All3 <=10% gates passed.
+Candidate SHA`f3e15446623b533c7519def877f855cc13d5e8a0175f43eb6c2daa36e855ef5b`, contract SHA`72c381457d619fd9331023d5cd91bc9f9fcc696aae9d30662cff72aa9954d088`.
+This is constrained TRAIN feasibility, not external retention. Proceed to the separately
+registered one640-view consumed E66 comparison, with all20 numeric gates and zero newly
+missed AI per condition/source. E70 already consumed this set; never call it fresh/final.
+No E49 access or promotion from this TRAIN result. Fixed recipe, no parameter sweep.

@@ -26,7 +26,7 @@ User explicitly requests continuous active-session work, data acquisition when n
 experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
 Do not create30-minute polling/heartbeat automation. No promise of execution after an app or
 session interruption. E66 SIDD Small6.62GB acquisition and grouped REAL+AI admission are complete;
-E70 consumed that limited DEV and failed. E71 is now completing admitted TRAIN CLIP features.
+E70 consumed that limited DEV and failed. E71 has completed admitted TRAIN CLIP features; its one frozen fit passed TRAIN.
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
@@ -44,19 +44,19 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E71 CLIP feature completion active (2026-09-13)
+## Current checkpoint — E71 TRAIN passed, consumed DEV next (2026-09-13)
 
 All9,599 eligible E59 numeric chunks and their crop bodies passed validation; historical CLIP
-replay on30 source representatives is exactly equal. Complete the remaining2,031 TRAIN parents
-under E71. The fixed next model uses E67 original64 plus TRAIN CLIP64 coordinates with unchanged
-objective and AI/REAL decision constraints. Code is tested; feature completion is not yet claimed.
-Only a complete verified archive permits fit-contract freeze and one fit. Only all3 TRAIN REAL
-FPR<=10% plus zero new AI/REAL errors permits the separate consumed-E66 comparison.
+replay on30 source representatives is exactly equal. All2,031 remaining TRAIN parents are now
+complete under E71, with a verified11,630 x3 x1536 archive. The fixed next model uses E67 original64 plus TRAIN CLIP64 coordinates with unchanged
+objective and AI/REAL decision constraints. Code is tested; the feature receipt and fit contract are frozen.
+The single fit passed: REAL FPR6.99%/7.76%/6.82%, no new AI misses/REAL errors.
+Freeze and run one separate consumed-E66 comparison; all20 numeric and retention gates remain.
 
 E70 margin diagnosis is complete:109 TRAIN condition views sit near the protection boundary;
 existing DEV losses include substantial reference margins. This is a possible next-mechanism
 clue, not a change to E71 or proof of external retention.754 Python tests pass. E49/serving stay
-unchanged. New SIDL/MIDD metadata leads are not admitted images. No heartbeat is configured.
+unchanged. New SIDL/MIDD metadata leads are not admitted images. No new heartbeat was created.
 
 ## Previous checkpoint — E70 failed separate DEV (2026-09-13)
 
@@ -5094,3 +5094,20 @@ fine-tuning are distinct future representations, not implemented E71 variants. Q
 E46 prior. MIDD's official share is accessible with20 ZIPs/331.3GB; inspect dataset-specific
 terms, original/patch packaging and scene identities before choosing a bounded sensor subset.
 Do not download the whole release by default. Active E71 recipe and gates remain unchanged.
+
+Next data preparation, separate from E71: inspect four sensor packages across vendors
+(Hynix_SL846, ISOCELL_3P9, Sony_IMX258, OmniVision_OV32A), chosen for vendor coverage and
+smallest visible package per vendor, not detector scores. Verify per-package license, original
+TRAIN inventory and exact archive identity. Then preregister a bounded hash-ranked reserve
+for possible research-only TRAIN expansion; whole MIDD publisher excluded from fresh final.
+No denoised partners or official test members for training. No image acquisition until this
+metadata check and a separate bounded acquisition contract; E71 population stays unchanged.
+
+
+MIDD four-vendor metadata verification completed: Hynix_SL846868, ISOCELL_3P9842,
+Sony_IMX258485 and OmniVision_OV32A763 official TRAIN originals (2,958 total).
+Exact archive identities and directory digests are in `evidence/midd_catalog_lead.json`;
+all four embedded LICENSE.txt bodies match CC BY-NC-SA4.0. Total directory/license
+range transfer874,873B; image members read0. Separate official test and denoised paths
+are excluded from any proposed TRAIN acquisition. Next: bounded score-blind original
+selection, per-member integrity/resume and scene/overlap audit before TRAIN admission.

@@ -1,0 +1,98 @@
+{
+  "admitted_role": null,
+  "image_members_read": 0,
+  "license": "CC BY-NC-SA 4.0; research only",
+  "model_scores": 0,
+  "selection": "Vendor coverage; smallest visible package per vendor, no detector scores",
+  "sensors": [
+    {
+      "catalog_path": "/Volumes/LaCie/pixelproof-datasets/research/midd/Hynix_SL846_catalog_v1.json",
+      "catalog_sha256": "d790ffbdb47fbdd15f92f3a398f3b3fe2536138667ac84c66e27f71dca60aea9",
+      "entry_counts": {
+        "": 1,
+        "test_set/denoised": 92,
+        "test_set/original": 92,
+        "training_set/denoised": 868,
+        "training_set/original": 868
+      },
+      "identity": {
+        "bytes": 14666765563,
+        "etag": "\"9ee6c1e11d598da2dedf35fe90caac1e\"",
+        "last_modified": "Mon, 25 Aug 2025 15:50:27 GMT"
+      },
+      "image_members_read": 0,
+      "license_sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+      "original_train_bytes": 7439355432,
+      "range_bytes": 259531,
+      "sensor": "Hynix_SL846",
+      "url": "https://download.ai-benchmark.com/public.php/dav/files/Gq3n2cS7QkH7ZMz/Hynix_SL846.zip"
+    },
+    {
+      "catalog_path": "/Volumes/LaCie/pixelproof-datasets/research/midd/ISOCELL_3P9_catalog_v1.json",
+      "catalog_sha256": "513350a6217a9163704c6ed2e9bfcad502b98187dc5f7fa90b1bf03039bca3a9",
+      "entry_counts": {
+        "": 1,
+        "test_set/denoised": 79,
+        "test_set/original": 79,
+        "training_set/denoised": 842,
+        "training_set/original": 842
+      },
+      "identity": {
+        "bytes": 5774265212,
+        "etag": "\"4173e7cad09c6a62571845663336995b\"",
+        "last_modified": "Mon, 25 Aug 2025 15:55:55 GMT"
+      },
+      "image_members_read": 0,
+      "license_sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+      "original_train_bytes": 2801890872,
+      "range_bytes": 238707,
+      "sensor": "ISOCELL_3P9",
+      "url": "https://download.ai-benchmark.com/public.php/dav/files/Gq3n2cS7QkH7ZMz/ISOCELL_3P9.zip"
+    },
+    {
+      "catalog_path": "/Volumes/LaCie/pixelproof-datasets/research/midd/Sony_IMX258_catalog_v1.json",
+      "catalog_sha256": "b676757964d96bf0e32eba41cc10c5c6bac0cc253fe30e00118d3388a58bf0af",
+      "entry_counts": {
+        "": 1,
+        "test_set/denoised": 28,
+        "test_set/original": 28,
+        "training_set/denoised": 485,
+        "training_set/original": 485
+      },
+      "identity": {
+        "bytes": 10002402618,
+        "etag": "\"ab795e2ecf929d89ee1e20ad1d33c0b3\"",
+        "last_modified": "Mon, 25 Aug 2025 16:00:23 GMT"
+      },
+      "image_members_read": 0,
+      "license_sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+      "original_train_bytes": 5351324554,
+      "range_bytes": 139417,
+      "sensor": "Sony_IMX258",
+      "url": "https://download.ai-benchmark.com/public.php/dav/files/Gq3n2cS7QkH7ZMz/Sony_IMX258.zip"
+    },
+    {
+      "catalog_path": "/Volumes/LaCie/pixelproof-datasets/research/midd/OmniVision_OV32A_catalog_v1.json",
+      "catalog_sha256": "675658b14fe4ed78bfcf689492bb5262b24c3c241e794867c5a0c2e04baf6844",
+      "entry_counts": {
+        "": 1,
+        "test_set/denoised": 86,
+        "test_set/original": 86,
+        "training_set/denoised": 763,
+        "training_set/original": 763
+      },
+      "identity": {
+        "bytes": 11475566156,
+        "etag": "\"0cfc1e2ca26ac0f66667226f9bcd131d\"",
+        "last_modified": "Mon, 25 Aug 2025 15:57:40 GMT"
+      },
+      "image_members_read": 0,
+      "license_sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+      "original_train_bytes": 5642607362,
+      "range_bytes": 237218,
+      "sensor": "OmniVision_OV32A",
+      "url": "https://download.ai-benchmark.com/public.php/dav/files/Gq3n2cS7QkH7ZMz/OmniVision_OV32A.zip"
+    }
+  ],
+  "state": "MIDD_four_vendor_metadata_only"
+}

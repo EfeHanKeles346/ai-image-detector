@@ -1,0 +1,21 @@
+{
+  "cached_parents": 9599,
+  "classifier_scores": 0,
+  "contract_sha256": "9ffd471967c6b85cdb618ed6714e21844420d4c4b30bd093e295e5ff7ccf26d5",
+  "created_this_run": 2031,
+  "dev_or_final_rows_read": 0,
+  "downloads": 0,
+  "feature_sha256": "dc0c4ab80d3be56495a6c5f19ee2c5a4c63a7f0e9eacf97856d7f529fb5a0603",
+  "legacy_outputs_modified": false,
+  "legacy_raw_max_error": 0.0,
+  "new_parent_chunks": 2031,
+  "parity_parents": 30,
+  "report_sha256": "c238badd7ef03b1d2ea6b4b978fe5b568354c6325d37b67a33c08561555df6b4",
+  "seconds": 1538.7867195419967,
+  "shape": [
+    11630,
+    3,
+    1536
+  ],
+  "state": "E71_TRAIN_CLIP_features_complete"
+}

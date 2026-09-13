@@ -1,0 +1,42 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "batch_views": 8,
+  "comparison": "All20 original E49 numeric gates applied to E66 DEV population via evaluate_condition; do not call E49 final validator or bootstrap. Additionally zero newly missed E43-caught AI in each transport/source and non-increased pooled REAL FPR in both transports.",
+  "conditions": [
+    "publisher_original",
+    "social_q75"
+  ],
+  "contract_sha256": "2f83b08d05fc73c82620915471a4c70a36070105bd1f8976aba4c95be68771d4",
+  "dev_status": "CONSUMED DEVELOPMENT: E70 scores and report already exposed. Not fresh validation.",
+  "e49_read_allowed": false,
+  "features": "Unchanged E43 global+2texture crops for each image/transport, alongside exact official CLIP preprocessing on the same RGB224 crops; batch3 CLIP crops, frozen float32 ViT-L/14 mean/std1536. E71 original64/CLIP64 map and fixed correction weights.",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e49_evaluation.py": "3a59864715cf56b3e262ea6ed444c1ca94f38dd66017952a2435ba600a726265",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_diagnostic.py": "850fff8ee461018918398a732b51f2b63daf46928e9826404dbf46c4689f0896",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_development.py": "4df3fef2fd5d52f722a45e16dd07507ca1d2226b95036909f55518686f1f9c02",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_features.py": "7c6b6da630425a8879ccb16f7ee8c32538e6e64405335487ee58e0a33d7a6831",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_model.py": "da453a0591d6d5adc3dbb82b82e4acfebc381ee6ac404a6e68252888f6ecfcd9",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/benchmark_metrics.py": "ba460ab8a083d3de0eebb6236ed6770498f7ad274b2378946ad7349b1e92b3c7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/e32_candidate.py": "e14ff1044462e49560a98fc3e8697e60738d6b41b0e3e49442dfd025c7832b6a",
+    "/Volumes/LaCie/pixelproof-datasets/e70/dev_report.json": "1fe93fc1d18675fa65c6218cd57d126e66fc3aa596835cf961664121ae91a018",
+    "/Volumes/LaCie/pixelproof-datasets/e70/dev_scores.json": "9cf625b6f2123c5a6bd421f37d6415030cc386ccdc7cd8b809a6dba36b879521",
+    "/Volumes/LaCie/pixelproof-datasets/e71/correction.npz": "f3e15446623b533c7519def877f855cc13d5e8a0175f43eb6c2daa36e855ef5b",
+    "/Volumes/LaCie/pixelproof-datasets/e71/fit.json": "a1310442e68a47d21120bcea3d7d711a1e54750e699170838f557f3d46644808",
+    "/Volumes/LaCie/pixelproof-datasets/e71/fit_contract.json": "72c381457d619fd9331023d5cd91bc9f9fcc696aae9d30662cff72aa9954d088"
+  },
+  "limits": "160 REAL observations are only10 dependent SIDD scenes across5 cameras; AI160 from2 previously seen families with unknown prompt linkage. Descriptive source/scene counts only; no independent view intervals or final/promotion claim. Scores locked before metrics; no sweep.",
+  "manifest": "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json",
+  "manifest_sha256": "bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301",
+  "max_seconds": 2400,
+  "prior_reference_max_error": 1e-06,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "reference": {
+    "path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+    "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390"
+  },
+  "state": "E71_single_consumed_E66_DEV_comparison_registered",
+  "training_allowed": false,
+  "views": 640
+}

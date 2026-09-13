@@ -1,0 +1,107 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "ai_parents": 4595,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "constraints": "Exactly E64: every caught TRAIN AI and every correct TRAIN REAL retains its decision with min(existing_margin,1e-7) safety margin. Zero-initialization exactly E43.",
+  "contract_sha256": "72c381457d619fd9331023d5cd91bc9f9fcc696aae9d30662cff72aa9954d088",
+  "cpu_threads": 2,
+  "dev_consumed_by": [
+    "E70"
+  ],
+  "dev_fresh_or_independent": false,
+  "dev_labels_used_in_fitting": false,
+  "dev_manifest": "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json",
+  "dev_manifest_sha256": "bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301",
+  "dev_metadata_only_checked": true,
+  "downloads": 0,
+  "e49_read_allowed": false,
+  "evaluation": "Only if TRAIN guard passes: separately freeze one CONSUMED E66 DEV original/1080pxQ75 comparison with same E43 cuts, all20 absolute/selective gates and per-image/per-source AI retention. Only if DEV passes may a separate one-shot consumed E49 regression be preregistered; E49 never chooses another recipe. No independent final/promotion from E66/E49.",
+  "independent_final_allowed": false,
+  "inputs": {
+    "basis_artifact": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/correction.npz",
+      "sha256": "d0491ceb962915f096bdfe6cb0555402b16e78085b2a9f2e141c6d10d98f9a1b"
+    },
+    "basis_contract": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/fit_contract.json",
+      "sha256": "419b0a16fbea3b6481205596e01a0386a697cb905e2e26b14db2b37807594f62"
+    },
+    "basis_report": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e67/fit.json",
+      "sha256": "0f9220724b8654e864f81b57c18a0a339a7fbc86ab47e8f4ee87db612dbacb88"
+    },
+    "clip": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e71/clip_features.npz",
+      "sha256": "dc0c4ab80d3be56495a6c5f19ee2c5a4c63a7f0e9eacf97856d7f529fb5a0603"
+    },
+    "constraint_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py",
+      "sha256": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95"
+    },
+    "feature_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_features.py",
+      "sha256": "7c6b6da630425a8879ccb16f7ee8c32538e6e64405335487ee58e0a33d7a6831"
+    },
+    "feature_contract": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e71/features_contract.json",
+      "sha256": "9ffd471967c6b85cdb618ed6714e21844420d4c4b30bd093e295e5ff7ccf26d5"
+    },
+    "features": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/teacher.npz",
+      "sha256": "101c539958f72913273a0a7e91f9ee7f7b2c025d73fee956177d7fcf8c9b62d8"
+    },
+    "features_report": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e71/features.json",
+      "sha256": "c238badd7ef03b1d2ea6b4b978fe5b568354c6325d37b67a33c08561555df6b4"
+    },
+    "gate_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/retention_gate.py",
+      "sha256": "1dcbb2351d0e4a2788a041ccbcddfb598d1c3e73ff524626917f9f31f95fcf0e"
+    },
+    "helper_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py",
+      "sha256": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421"
+    },
+    "manifest": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json",
+      "sha256": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+    },
+    "model_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_model.py",
+      "sha256": "da453a0591d6d5adc3dbb82b82e4acfebc381ee6ac404a6e68252888f6ecfcd9"
+    },
+    "previous_dev_report": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e70/dev_report.json",
+      "sha256": "1fe93fc1d18675fa65c6218cd57d126e66fc3aa596835cf961664121ae91a018"
+    },
+    "previous_dev_scores": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e70/dev_scores.json",
+      "sha256": "9cf625b6f2123c5a6bd421f37d6415030cc386ccdc7cd8b809a6dba36b879521"
+    },
+    "reference": {
+      "path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+      "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390"
+    },
+    "runner_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_fit.py",
+      "sha256": "a32b12f70dfbbfdd7fe5ae14bba9044b0de03d848988dc626d135745ed970e32"
+    },
+    "weights_code": {
+      "path": "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py",
+      "sha256": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e"
+    }
+  },
+  "max_seconds": 1800,
+  "objective": "Exactly E64 class/source/parent-balanced operating-cut BCE, hard REAL views2x, class mass.5 each, L2.01 including intercept. Frozen E43 logit + learned linear correction.",
+  "optimizer": "CPU float64 SLSQP200,ftol1e-9,final iterate only; no rank/L2/seed/threshold sweep.",
+  "parents": 11630,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "representation": "Reuse exact E67 original TRAIN PCA64 coordinates; TRAIN StandardScaler on CLIP1536 followed by PCA64(seed71,power3). Whiten both; intercept129 coefficients. Discard old response/weights. Zero-initialization exactly E43.",
+  "state": "E71_original_plus_CLIP_TRAIN_fit_registered",
+  "train_guard": "Solver success,violation<=1e-8,exact serialized replay,E61 zero newly missed AI, zero new REAL errors and REAL TRAIN FPR<=10% in ALL3 conditions."
+}

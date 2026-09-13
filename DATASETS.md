@@ -2427,3 +2427,23 @@ full-resolution versus patch packaging, noisy/ground-truth identity and scene/de
 mapping must be checked in the release before any admission. Do not treat hundreds of
 thousands of denoising pairs/patches as independent camera scenes or use denoised targets
 as native ISP photos. Bulk331GB acquisition is not justified for the active E71 experiment.
+
+MIDD ISOCELL_3P9 metadata probe: direct public endpoint advertises5,774,265,212 bytes and
+ETag4173e7cad09c6a62571845663336995b. Exact HTTP ranges read232,439 ZIP-directory bytes,
+revealing842 training/original JPEGs plus842 denoised partners,79 test/original PNGs and79
+partners. No image member was read. The archive's own LICENSE.txt is CC BY-NC-SA4.0,
+20,850 bytes /SHAe66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd;
+license-only range pass238,707 bytes including repeated directory metadata. Native dimensions,
+scene grouping and originals' processing remain unverified until admitted pixel audit.
+Catalog SHA608a0822d29ab42736849a74392cb36f832d0b50650746759d7634ba4a2fb3df,
+external `research/midd/ISOCELL_3P9_directory.json`. Sparse member acquisition is technically
+available, making a bounded TRAIN-only source expansion feasible without331GB bulk transfer.
+
+
+MIDD four-vendor metadata verification completed: Hynix_SL846868, ISOCELL_3P9842,
+Sony_IMX258485 and OmniVision_OV32A763 official TRAIN originals (2,958 total).
+Exact archive identities and directory digests are in `evidence/midd_catalog_lead.json`;
+all four embedded LICENSE.txt bodies match CC BY-NC-SA4.0. Total directory/license
+range transfer874,873B; image members read0. Separate official test and denoised paths
+are excluded from any proposed TRAIN acquisition. Next: bounded score-blind original
+selection, per-member integrity/resume and scene/overlap audit before TRAIN admission.
