@@ -228,3 +228,8 @@ This is constrained TRAIN feasibility, not external retention. Proceed to the se
 registered one640-view consumed E66 comparison, with all20 numeric gates and zero newly
 missed AI per condition/source. E70 already consumed this set; never call it fresh/final.
 No E49 access or promotion from this TRAIN result. Fixed recipe, no parameter sweep.
+
+
+E71 rejected after consumed DEV: REAL FPR34.375% original /38.125%Q75, only12/20 gates.
+Aggregate AI recall unchanged but2/1 newly missed AI views; no E49/serving promotion.
+Full frozen scores SHA`971b6e130b51f8ef741e4a194782e4b9c02e6ba18b68582db82f8eea07be8db0`; compact `evidence/e71_development.json`.

@@ -2463,3 +2463,12 @@ All images initially QUARANTINE; separately freeze canonical decode/overlap audi
 E52/later reserves/E65 and consumed E66 before TRAIN admission. Unknown filename scene links
 are not independence; whole MIDD publisher excluded from DEV/fresh final. Research license
 CC BY-NC-SA4.0, no automatic serving eligibility. E71 recipe/population stays frozen.
+
+
+E72 admission code prepared: canonical whole-body/RGB plus dHash/pHash overlap against
+all frozen references and explicit320-row consumed E66; verify all2,385 reserved AI bodies
+and current TRAIN are covered by protected snapshot. Internal similarity and exact same-sensor
+EXIF capture-second links form transitive components. Propagate protected matches through the
+whole component; keep one deterministic representative, no replacement. Scene independence
+remains unverified. Three focused transitivity/time-link tests passed; full suite765passed.
+Audit freeze waits for complete acquisition receipt. E71 DEV failure evidence is now checkpointed.

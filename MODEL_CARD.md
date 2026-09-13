@@ -361,3 +361,8 @@ DEVELOPMENT, never TRAIN or a fresh final; its admission snapshot stays immutabl
 post-score threshold, interaction-map or source-specific route adjustment is allowed.
 Next assess a complementary pretrained representation with the same E43-preserving
 TRAIN/DEV rules, reusing eligible cached work where possible. Target remains unmet.
+
+
+E71 rejected after consumed DEV: REAL FPR34.375% original /38.125%Q75, only12/20 gates.
+Aggregate AI recall unchanged but2/1 newly missed AI views; no E49/serving promotion.
+Full frozen scores SHA`971b6e130b51f8ef741e4a194782e4b9c02e6ba18b68582db82f8eea07be8db0`; compact `evidence/e71_development.json`.

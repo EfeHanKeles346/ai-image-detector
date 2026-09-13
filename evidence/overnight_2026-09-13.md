@@ -102,3 +102,23 @@ This is constrained TRAIN feasibility, not external retention. Proceed to the se
 registered one640-view consumed E66 comparison, with all20 numeric gates and zero newly
 missed AI per condition/source. E70 already consumed this set; never call it fresh/final.
 No E49 access or promotion from this TRAIN result. Fixed recipe, no parameter sweep.
+
+
+### E71 rejected on consumed E66 DEVELOPMENT (2026-09-13)
+
+640 scores locked in412.36s; historical E43 pixel/score/decision replay is exact (max score
+error0). Original REAL false AI68/160=42.50% ->55/160=34.375%; social Q75 68/160 ->61/160=38.125%.
+Original AI156/160=97.50% and Q75 154/160=96.25% remain equal in aggregate, but original loses
+2 previously caught GPT images while rescuing2; Q75 loses1 GPT while rescuing1 Nano Banana.
+Thus aggregate recall masks per-image regression. Both conditions fail zero-new-AI-miss and
+absolute gates (12/20 total). No E49 regression, no serving promotion. Candidate rejected.
+Scores SHA`971b6e130b51f8ef741e4a194782e4b9c02e6ba18b68582db82f8eea07be8db0`. E66 remains consumed DEV; target unmet.
+
+Next isolated mechanism E73: retain the exact frozen E71 original64/CLIP64 coordinates,
+discard E71 weights, and replace caught-AI decision-only protection with non-decreasing
+reference logits for ALL13,785 AI TRAIN views, including currently missed AI. Keep E64
+correct-REAL decision constraints, objective/class-source-parent weights, L2.01, zero start,
+SLSQP200/ftol1e-9, fixed cuts and all3 REAL FPR<=10% guards. No fractional margin/penalty/rank
+sweep. One fit on unchanged E54 TRAIN; MIDD is a separate acquisition. Only complete TRAIN
+pass permits a separately registered consumed DEV comparison. No external AI-retention claim
+from TRAIN constraints; E70/E71 failures motivate testing confidence erosion explicitly.

@@ -7,8 +7,9 @@ It never certifies that an image is real.
 **Research checkpoint (2026-09-13):** The target remains unmet. E70 passed training guards but
 failed the separate SIDD/local-AI development comparison: REAL false alarms46.88% original /
 30.63% Q75, with newly missed AI in both conditions. It is rejected; E43 and serving are unchanged.
-E71 passed its frozen TRAIN fit (REAL FPR6.99%/7.76%/6.82%, zero new AI/REAL errors);
-its separate consumed development comparison is next. E64/E67/E68/E69 stopped at their failed training guards. Old E59 fits
+E71 also failed consumed DEV: REAL FPR34.38%/38.13%, with2/1 newly missed AI views
+despite unchanged aggregate recall. E72 bounded camera TRAIN acquisition is active; E73
+will test full AI confidence preservation on the fixed E71 coordinates. E64/E67/E68/E69 stopped at their failed training guards. Old E59 fits
 remain paused; E71 reads its verified cache under a separate contract.754 Python tests pass;
 the existing web dependency audit remains failing.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
