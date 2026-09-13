@@ -429,3 +429,24 @@ score replay verified by read-only component diagnostic.
 128 SID original RAW captures passed the fixed decode/protected-overlap audit; no model
 has been fitted on them and no detector scores were created. Existing E84B/E85/E86
 populations and serving remain unchanged. This is source preparation, not a quality gain.
+
+
+### E86 TRAIN/runtime passed; consumed E66 comparison registered (2026-09-13)
+
+One49-iteration fit completed in235.522530s. All80 numeric TRAIN checks, old/expanded/
+MIDD population guards and per-source AI/REAL retention passed in all4 conditions.
+Old REAL FPR0.12793%/0.11372%/0.07107%/0.08529%; expanded REAL0.11927%/0.10602%/
+0.06626%/0.09276%, in clean/assigned/source-Q75/social-Q75 order. MIDD has0 errors
+in old3 conditions and1/511 social-Q75 error (Sony1/128). AI recall99.93471%/99.82590%/
+99.80413%/99.80413%. These are TRAIN outcomes, not independent performance estimates.
+
+All18,380 AI logits protected; solver max violation2.43646775e-10, minimum AI shift
+5.66213743e-15. Full48,564 runtime batch8 score replay error5.95048665e-7, zero changes
+at both cuts, minimum runtime AI shift4.88498131e-15. Candidate SHA256
+`c5747880d46d78da4bcec9061cc30564aad2b0ce14d98cd8619398214ec51380`. No E49 read or serving change.
+
+Consumed E66 contract SHA256`88b017e94b7225f6225aef772e15542661434124863ac3049aa5f9a6b36ff27c` is now registered.
+Use exact prior640-view encoder cache and fixed E86 runtime batch8, lock all scores
+before metrics. Require all20 numeric gates and zero newly missed E43 AI per source/
+condition, report paired E83 changes too. No new encoder/images/download/fit. This set
+is previously consumed DEVELOPMENT, not a new final. No E86 DEV result at registration.

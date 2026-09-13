@@ -11,7 +11,8 @@ The aggregate AI gain does not satisfy the zero-new-loss requirement.
 
 E84B completed exact social transport features for all12,141 existing TRAIN parents.
 E85 completed its fixed100-epoch representation on48,564 TRAIN views with exact
-feature replay. The constrained E86 head is registered; no new detector result yet. Separately,128 original SID RAW captures passed the protected-
+feature replay. E86 passes all80 TRAIN metric checks and runtime/AI-retention guards;
+its separate consumed-development comparison is registered, with no result yet. Separately,128 original SID RAW captures passed the protected-
 overlap audit for possible future research TRAIN. They are not in the current E85/E86 data.
 E49 remains unopened in this overnight chain; serving/reference models stay unchanged.
 Old E59 fits remain paused.849 Python tests pass; the existing web dependency audit fails.
