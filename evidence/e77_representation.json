@@ -1,0 +1,67 @@
+{
+  "PCA_explained_variance": 0.18035151331147176,
+  "ai_views_in_AE_loss": 0,
+  "artifact_sha256": "21de374098fb71b5b691eb1010d35aed33cbfc6d7192416ec738719a53a33c2b",
+  "classifier_scores": 0,
+  "contract_sha256": "d7bca1951fd9373f66e719ce96679d1a03aaaa2555267041ffac69ef78f485ec",
+  "detector_quality_claim": false,
+  "dev_or_final_rows_read": 0,
+  "downloads": 0,
+  "epochs": 100,
+  "feature_sha256": "aef74e52d4d0f14f49d94905e86ee20ffb472f0e0da75341813633aa351a40dc",
+  "feature_shape": [
+    12141,
+    3,
+    64
+  ],
+  "final_weighted_REAL_L1": 0.5406564246935204,
+  "initial_weighted_REAL_L1": 0.7926105176068119,
+  "loss_trace": [
+    {
+      "epoch": 10,
+      "weighted_REAL_L1": 0.6062324490898099
+    },
+    {
+      "epoch": 20,
+      "weighted_REAL_L1": 0.5825542384569842
+    },
+    {
+      "epoch": 30,
+      "weighted_REAL_L1": 0.5724700552297256
+    },
+    {
+      "epoch": 40,
+      "weighted_REAL_L1": 0.5658173957512629
+    },
+    {
+      "epoch": 50,
+      "weighted_REAL_L1": 0.5607141597035685
+    },
+    {
+      "epoch": 60,
+      "weighted_REAL_L1": 0.5559701010451867
+    },
+    {
+      "epoch": 70,
+      "weighted_REAL_L1": 0.5516880846600701
+    },
+    {
+      "epoch": 80,
+      "weighted_REAL_L1": 0.5479104547326203
+    },
+    {
+      "epoch": 90,
+      "weighted_REAL_L1": 0.5439772726800903
+    },
+    {
+      "epoch": 100,
+      "weighted_REAL_L1": 0.5406564246935204
+    }
+  ],
+  "real_views": 22638,
+  "seconds": 40.96449154103175,
+  "serialized_coordinates_exact": true,
+  "serialized_residual_exact": true,
+  "state": "E77_REAL_manifold_representation_complete",
+  "weights_sha256": "5939b3c769ebe17ebef630271e13ce25d879d183237f14888e2f8d7efdfaf60f"
+}

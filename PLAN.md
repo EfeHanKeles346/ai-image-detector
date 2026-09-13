@@ -26,7 +26,7 @@ User explicitly requests continuous active-session work, data acquisition when n
 experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
 Do not create30-minute polling/heartbeat automation. No promise of execution after an app or
 session interruption. E66 SIDD Small6.62GB acquisition and grouped REAL+AI admission are complete;
-E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 features are complete; E76 failed TRAIN; E77 REAL-only representation is next.
+E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 features are complete; E76 failed TRAIN; E77 REAL-only representation is complete; constrained head is next.
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
@@ -44,7 +44,7 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E76 failed; E77 representation prepared (2026-09-13)
+## Current checkpoint — E76 failed; E77 representation complete; head prepared (2026-09-13)
 
 E71 consumed DEV REAL FPR34.375%/38.125% improves on42.5% but fails the10% target.
 Aggregate AI recall unchanged conceals2/1 newly missed AI views;12/20 numeric gates.
@@ -53,8 +53,8 @@ No E49 regression or promotion. E72 downloaded512 score-blind MIDD TRAIN origina
 E73 linear and E74 bilinear full-AI-confidence fits failed all TRAIN REAL10% guards;
 no DEV/E49 permitted. E75 old-encoder parity is exact and511 new TRAIN features are complete. E76 kept the E74 map/AI constraints and added only audited MIDD data. New-camera FPR is
 3.91%/3.72%/2.94%, but old-REAL FPR13.28%/14.37%/12.25% fails all10% guards. No DEV.
-E77 adds a fixed REAL-only CLIP reconstruction residual, then one separately registered
-321-coefficient constrained fit if representation checks pass.784 Python tests pass.
+E77 adds a fixed REAL-only CLIP reconstruction residual, representation checks passed; proceed with one separately registered
+321-coefficient constrained fit.787 Python tests pass.
 MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)

@@ -257,3 +257,8 @@ and run the already prepared single E76 data-expansion fit, preserving all AI an
 E76 camera-expanded candidate rejected at TRAIN. Old REAL FPR13.28%/14.37%/12.25%;
 expanded12.64%/13.65%/11.62%, new-MIDD3.91%/3.72%/2.94%. No new AI/REAL errors.
 No DEV/E49 or promotion. Artifact SHA`dd6fd99607f674cafa3a4f9982002ce2c688d564ebd4b94bcd57e4ac3106a117`.
+
+
+E77 REAL-only AE/PCA artifact and TRAIN features are complete under the frozen representation
+contract; compact receipt: `evidence/e77_representation.json`. Both serialized outputs replay
+exactly. They are research features, not a validated detector or serving artifact.

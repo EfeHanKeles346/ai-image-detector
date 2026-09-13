@@ -5892,3 +5892,20 @@ verify AI exclusion from normalization, equal REAL-source weight mass, determini
 epoch permutations, exact serialized residual replay with bounded batch variation, checkpoint
 contract/weight/epoch binding, and exact CPU Adam continuation. Checkpoints include optimizer
 state every10 epochs; no checkpoint selection. Data remain TRAIN-only; no detector result yet.
+
+
+### E77 REAL-only representation complete; constrained head prepared (2026-09-13)
+
+The fixed100-epoch AE finished in40.96s on MPS. Weighted REAL L1 fell
+0.79261052→0.54065642; no AI views entered its normalization/loss. The frozen
+all-TRAIN residual PCA64 explains18.035% variance; this is descriptive, not a rank-selection
+criterion. Exact serialized residual and coordinate replay passed. Manifold SHA256
+`21de374098fb71b5b691eb1010d35aed33cbfc6d7192416ec738719a53a33c2b`;
+features `[12141,3,64]` SHA256
+`aef74e52d4d0f14f49d94905e86ee20ffb472f0e0da75341813633aa351a40dc`.
+
+Prepared the single321-coefficient fit with unchanged full-AI-logit and correct-REAL guards,
+objective and all E76 population gates. Three new model tests verify exact preservation of
+old coordinates, no old correction-weight leakage, serialized/batched predictions and
+invalid alignment rejection. All10 focused E77/E76/E73 model/guard tests pass. No DEV or E49
+read, no detector-quality claim from reconstruction loss.
