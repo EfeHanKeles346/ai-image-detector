@@ -58,8 +58,10 @@ zero matches/failures against151,996 references. They are not part of E85/E86.
 Metadata-only transport inventory is complete: the1080 cap potentially resizes4455/7546
 REAL parents (59.04%) and1046/4595 AI parents (22.76%). Recorded formats are strongly
 class-associated; this is a coverage limitation, not a demonstrated cause. Preserve the
-running E84B recipe and prepared E85/E86 sequence. SID/PolyU/RENOIR are future source
-leads only; inspect scene grouping and original-capture provenance before any acquisition.
+running E84B recipe and prepared E85/E86 sequence. SID acquisition/audit is complete
+for a separate future TRAIN extension; PolyU/RENOIR remain unacquired leads. A read-only
+consistency-mechanism review is recorded in `IMAGE_FORENSICS_REFERENCE.md`; it does not
+change the fixed next experiment or select an additional objective before its result.
 
 849 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
 RR upstream lineage unresolved; MIDD/DEAR research restrictions persist. E49 unopened,

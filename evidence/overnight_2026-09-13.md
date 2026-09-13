@@ -557,3 +557,15 @@ original E43/E83=0.08128665/0.00507187, socialQ75=0.31710792/0.81932999. The Q75
 version is already detected by both; the loss is on the original. These are previously
 locked scores, not a new transform or inference. This supports examining transport
 stability but does not prove that E84B augmentation will fix the original error.
+
+
+### Read-only consistency-mechanism review during E84B extraction (2026-09-13)
+
+Added a primary-source and mathematical review to `IMAGE_FORENSICS_REFERENCE.md` under
+"Paired prediction consistency". A synthetic fixed-feature gradient check returned
+exactly0 parameter-gradient difference; no real images or candidate were used. The
+review separates an unverified implementation ambiguity from a possible future local
+objective. E84B continues unchanged; E85/E86 remain the next fixed experiment. No new
+loss, threshold, feature rank, seed or dataset mixture is selected from this review.
+Any later consistency experiment must have its own complete preregistration and keep
+all existing quality/retention/runtime guards. This is a research note, not a result.

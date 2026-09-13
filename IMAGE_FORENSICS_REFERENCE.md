@@ -661,3 +661,29 @@ versus editing provenance remains unresolved. Keep the existing publisher-provid
 label and unknown prompt-dependence limitation. Do not infer population-wide bias from
 this single case. Receipt `evidence/e83_known_ai_miss_review.json` records both image and
 caption hashes; no image or full caption is copied into git. Current E84B/E85/E86 unchanged.
+
+
+### Paired prediction consistency: source review, not a registered model (2026-09-13)
+
+[DCPT v2](https://arxiv.org/html/2604.10102v2), reviewed after v1, proposes
+clean/degraded prediction consistency with a detached clean target. Its cosine term is
+written on frozen backbone outputs (equations1,4), while its feature-only ablation
+reports gains. As written, that term has no gradient to the trainable head. This is an
+implementation ambiguity; no author code resolving it was found in the reviewed paper
+or targeted search. Do not treat the ablation as a verified local mechanism or promise
+AI retention. A trainable latent-space penalty would be a different implementation.
+
+Local synthetic CPUfloat64 check: seed90,8x6 fixed random feature pairs,6->4->2 ReLU
+head, alternating binary labels. Adding0.5 times fixed-feature cosine distance to dual
+cross-entropy changes every head gradient by exactly0; the cosine scalar does not
+require gradients. No real images, detector fit or performance measurement involved.
+
+The official [AugMix implementation](https://github.com/google-research/augmix) provides
+a separate established mechanism: Jensen-Shannon consistency among clean and two
+augmented predictions. Its published task is general image classification. Our cached
+four-condition pairing could support a separately specified prediction-consistency
+experiment without re-encoding images, but neither AugMix's image mixing nor its
+performance is reproduced by that adaptation. Do not mix different parent labels or
+assume augmentations preserve every forensic signal. Source review alone does not
+justify changing E85/E86; finish their fixed comparison first. Any later objective
+must preserve the existing absolute, AI-retention and runtime gates.
