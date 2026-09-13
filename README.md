@@ -8,9 +8,9 @@ It never certifies that an image is real.
 failed the separate SIDD/local-AI development comparison: REAL false alarms46.88% original /
 30.63% Q75, with newly missed AI in both conditions. It is rejected; E43 and serving are unchanged.
 E71 also failed consumed DEV: REAL FPR34.38%/38.13%, with2/1 newly missed AI views
-despite unchanged aggregate recall. E72 bounded camera TRAIN acquisition is active; E73
-will test full AI confidence preservation on the fixed E71 coordinates. E64/E67/E68/E69 stopped at their failed training guards. Old E59 fits
-remain paused; E71 reads its verified cache under a separate contract.754 Python tests pass;
+despite unchanged aggregate recall. E72 downloaded512 camera TRAIN originals (3.82GB);511 passed the protected-overlap/duplicate audit. E73/E74 preserved
+all TRAIN AI logits but failed REAL error targets; E75 feature extension is being prepared. E64/E67/E68/E69 stopped at their failed training guards. Old E59 fits
+remain paused; E71 reads its verified cache under a separate contract.776 Python tests pass;
 the existing web dependency audit remains failing.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).

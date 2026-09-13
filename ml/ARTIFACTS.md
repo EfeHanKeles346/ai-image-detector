@@ -237,3 +237,7 @@ Full frozen scores SHA`971b6e130b51f8ef741e4a194782e4b9c02e6ba18b68582db82f8eea0
 
 E73 full-confidence candidate rejected at TRAIN: REAL FPR14.57%/15.84%/13.35%,
 zero new AI/REAL errors, no DEV/E49 allowed. Artifact SHA`147551945c7fdb9843cd93c4262a8b07381f15f738b897412fb9cfd2354f88b9`.
+
+
+E74 rejected at TRAIN: REAL FPR13.29%/14.36%/12.14%, no new AI/REAL errors.
+No DEV/E49 scoring or promotion; candidate SHA`cadf88f4fc3e3030495bc9cbdc0c74a6d2ffb205091fcebaac063dbf731eb05a`.

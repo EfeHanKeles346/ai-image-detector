@@ -141,3 +141,39 @@ SLSQP200/ftol1e-9 and fixed cuts unchanged; same E54 population, no MIDD yet. On
 no sketch-size/seed/rank sweep. E70 tested original/blur interactions with weaker constraints;
 this is original/CLIP interaction under full-confidence protection, not a rerun of E70.
 Only all TRAIN guards permit a separately registered consumed E66 comparison.
+
+
+### E74 nonlinear confidence-preserving fit failed TRAIN (2026-09-13)
+
+One104.39s/31-iteration fit, solver success, max violation9.44e-16, all13,785 AI logits
+preserved within tolerance; zero new AI/REAL decisions. REAL FPR13.2907%/14.3568%/12.1393%
+improves on E73 but fails all3 <=10% guards. Candidate SHA`cadf88f4fc3e3030495bc9cbdc0c74a6d2ffb205091fcebaac063dbf731eb05a`.
+No DEV/E49 access. Do not sweep sketch rank/seed or weaken confidence constraints.
+
+E72 acquisition completed512 originals/3,821,581,226B with pinned ETags, CRCs and body SHAs.
+Second execution resumed after Hynix connection timeout; its1,781,971,093 range bytes are
+only that execution's transfer, not total across both attempts. All four sensors128 each;
+no test or denoised image extracted. Receipt SHA`1b7e28056104d4b8ef2a913448a09b6026f01c67b141c3f1a5a12dae76cb12a2`.
+Still quarantine, no classifier scores. Freeze and run the prepared protected-role/component audit.
+
+Next E75 prepares features only for admitted MIDD TRAIN representatives. Copy exact E54
+source-resolution JPEG75-before2048-cap and existing global+2texture224 crops; frozen DINOv2S
+3072D and CLIPViT-L/141536D, same3 conditions. First replay the30 E67-registered old TRAIN
+source representatives against old DINO reference scores and E71 CLIP features, requiring
+reference error<=5e-5, no decision changes at either cut, CLIP error<=1e-5. No new MIDD
+classifier scores, no DEV/final pixels, no old-feature modifications or automatic model fit.
+Feature contract waits for complete audited admission; separately decide the next fit.
+
+
+### E72 score-blind MIDD TRAIN admission complete (2026-09-13)
+
+All512 originals decoded;151,485 protected references, zero cross-reference matches,
+zero decode failures. One internal perceptual pair formed a component; retain one hash-ranked
+representative,511 admitted (Hynix127, other3 sensors128). No refill. Native publisher
+JPEG dimensions:256 at3264x2448,128 at2320x1744,128 at4208x3120. EXIF make/model and capture
+timestamps absent in all512, so sensor provenance comes from publisher packaging and scene
+independence remains unverified. Whole MIDD publisher is research TRAIN only, never fresh
+DEV/final; no detector scores yet. Audit SHA`23021f21e0ff5fcb72c972c8293a0c18188ddf18cdf8fdfb33ec3046ac5d8e04`;
+TRAIN manifest SHA`a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e`.
+E75 feature contract may now freeze for all511 admitted representatives. Existing E54 TRAIN
+remains immutable; a future expanded fit would have12,141 parents /7,546 REAL /4,595 AI.

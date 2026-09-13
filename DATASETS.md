@@ -2472,3 +2472,22 @@ EXIF capture-second links form transitive components. Propagate protected matche
 whole component; keep one deterministic representative, no replacement. Scene independence
 remains unverified. Three focused transitivity/time-link tests passed; full suite765passed.
 Audit freeze waits for complete acquisition receipt. E71 DEV failure evidence is now checkpointed.
+
+
+E72 bounded MIDD acquisition complete:512 publisher original TRAIN JPEGs,128 per four
+sensors,3,821,581,226B. All archive/member identities verified; no official test/denoised
+members acquired. Quarantine pending canonical protected-role/component audit; no scores.
+
+
+### E72 score-blind MIDD TRAIN admission complete (2026-09-13)
+
+All512 originals decoded;151,485 protected references, zero cross-reference matches,
+zero decode failures. One internal perceptual pair formed a component; retain one hash-ranked
+representative,511 admitted (Hynix127, other3 sensors128). No refill. Native publisher
+JPEG dimensions:256 at3264x2448,128 at2320x1744,128 at4208x3120. EXIF make/model and capture
+timestamps absent in all512, so sensor provenance comes from publisher packaging and scene
+independence remains unverified. Whole MIDD publisher is research TRAIN only, never fresh
+DEV/final; no detector scores yet. Audit SHA`23021f21e0ff5fcb72c972c8293a0c18188ddf18cdf8fdfb33ec3046ac5d8e04`;
+TRAIN manifest SHA`a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e`.
+E75 feature contract may now freeze for all511 admitted representatives. Existing E54 TRAIN
+remains immutable; a future expanded fit would have12,141 parents /7,546 REAL /4,595 AI.

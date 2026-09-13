@@ -1,0 +1,10 @@
+{
+  "bytes": 3821581226,
+  "contract_sha256": "4bec68d845e228e3330be9446920a522b7253f3a605d51e8bbff51d9eb1fd0f1",
+  "images": 512,
+  "model_scores": 0,
+  "range_bytes_this_execution": 1781971093,
+  "receipt_sha256": "1b7e28056104d4b8ef2a913448a09b6026f01c67b141c3f1a5a12dae76cb12a2",
+  "state": "E72_MIDD_download_complete_quarantine",
+  "training_allowed": false
+}

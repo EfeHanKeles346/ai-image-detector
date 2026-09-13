@@ -1,0 +1,33 @@
+{
+  "admitted": 511,
+  "contract_sha256": "d458de0a558fb07eb4386888acabe593b6d665011dcb9bff15ee6abb6f7247dd",
+  "cross_match_observations": 0,
+  "decode_failures": [],
+  "dimensions": {
+    "2320x1744": 128,
+    "3264x2448": 256,
+    "4208x3120": 128
+  },
+  "duplicate_members_removed": 1,
+  "exif_make_model": {
+    "|": 512
+  },
+  "independent_final_admitted": false,
+  "internal_match_pairs": 1,
+  "limitations": "Perceptual matches and second-level capture links are incomplete scene detection. No claim of512 independent scenes/cameras. Whole MIDD publisher reserved exclusively for research TRAIN, including unselected official-test/denoised images; not DEV/final. Publisher originals are JPEG renderings, not necessarily unprocessed sensor data.",
+  "manifest_sha256": "a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e",
+  "model_scores": 0,
+  "quarantined": 0,
+  "reference_records": 151485,
+  "report_sha256": "23021f21e0ff5fcb72c972c8293a0c18188ddf18cdf8fdfb33ec3046ac5d8e04",
+  "selected": 512,
+  "sensor_counts": {
+    "Hynix_SL846": 127,
+    "ISOCELL_3P9": 128,
+    "OmniVision_OV32A": 128,
+    "Sony_IMX258": 128
+  },
+  "state": "E72_MIDD_TRAIN_audit_complete",
+  "timestamp_records": 0,
+  "training_allowed": true
+}

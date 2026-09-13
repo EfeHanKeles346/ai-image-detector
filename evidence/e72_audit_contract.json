@@ -1,0 +1,40 @@
+{
+  "contract_sha256": "d458de0a558fb07eb4386888acabe593b6d665011dcb9bff15ee6abb6f7247dd",
+  "dev_status": "E66 consumed DEVELOPMENT; all320 explicit references.",
+  "fingerprint_version": "e51-prefit-rgb-lanczos-v1",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_audit.py": "71df44c7eb40333c80dde13dad79b1dac0336e51aab5b1bd467642e8975262c2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e72_audit.py": "1e88acaa0c71eef34bb383cf8919d7af42b1e55396008e1a032a34e1730625d3",
+    "/Volumes/LaCie/pixelproof-datasets/e32/c3_role_manifest.json": "0b6656a25762dbb097d18634d4193282e7c03d2e6bbe257f31471434f67b91eb",
+    "/Volumes/LaCie/pixelproof-datasets/e52/hdrplus_reserve_v1/download.json": "95cdc842844443497af26995fb8430cf39540fa33e093b91a63be6fce768ff18",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/download.json": "a63d7655cea11d18457dbb45bb4419063526e16e90f6d941a2796af3dd17ea4c",
+    "/Volumes/LaCie/pixelproof-datasets/e52/protected_reference_v1.json": "7fc7f52e8c38e621b71877b394cccac312af333b183492bcf52154381e3ab988",
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/download.json": "879f3d76255bb7b26b9e2d560a1f5d15096e0ac3fc6172662c0ec8d504635010",
+    "/Volumes/LaCie/pixelproof-datasets/e65/audit.json": "db8b3134886b62dc31d4d39be5b7eb8015550260fa0359bd92af8e18a8316caa",
+    "/Volumes/LaCie/pixelproof-datasets/e66/ai_contract.json": "ca557c37e60c067f9e275725fc1963a863c3dc27ad9dd96267a59e5264206da2",
+    "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json": "bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301",
+    "/Volumes/LaCie/pixelproof-datasets/e72/download.json": "1b7e28056104d4b8ef2a913448a09b6026f01c67b141c3f1a5a12dae76cb12a2"
+  },
+  "license": "CC BY-NC-SA4.0 research only; no automatic serving or redistribution.",
+  "limits": "Perceptual matches and second-level capture links are incomplete scene detection. No claim of512 independent scenes/cameras. Whole MIDD publisher reserved exclusively for research TRAIN, including unselected official-test/denoised images; not DEV/final. Publisher originals are JPEG renderings, not necessarily unprocessed sensor data.",
+  "max_pixels": 100000000,
+  "max_seconds": 3600,
+  "metadata": "Read only make/model/software/ISO and DateTimeOriginal for grouping; no GPS or serial output.",
+  "model_scoring_allowed": false,
+  "pillow_version": "12.3.0",
+  "policy": "Verify every original SHA/length. Quarantine failed decodes, below224px and all body/RGB or dHash<=4 AND pHash63<=4 protected matches. No self exemptions. Build internal transitive components from same canonical matches plus exact nonempty sensor+EXIF DateTimeOriginal second. Propagate protected overlap to entire component; keep one SHA256(E72|parent_id) representative per surviving component. No model score filtering or quota refill.",
+  "promotion_allowed": false,
+  "reference_files": [
+    "/Volumes/LaCie/pixelproof-datasets/e52/protected_reference_v1.json",
+    "/Volumes/LaCie/pixelproof-datasets/e52/mnw_reserve_v1/download.json",
+    "/Volumes/LaCie/pixelproof-datasets/e52/hdrplus_reserve_v1/download.json",
+    "/Volumes/LaCie/pixelproof-datasets/e57/v2/download.json",
+    "/Volumes/LaCie/pixelproof-datasets/e65/audit.json",
+    "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json"
+  ],
+  "reserved_AI_snapshot_coverage": 2385,
+  "role_after_audit": "TRAIN",
+  "state": "E72_MIDD_score_blind_TRAIN_audit_registered"
+}
