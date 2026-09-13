@@ -313,3 +313,11 @@ External `e82/supervised_map.npz` SHA256
 100 fixed epochs, exact saved features and fixed-input batch8 replay. TRAIN-only learned
 features, not a detector acceptance result. Receipt `evidence/e82_representation.json`.
 E83 fit contract is frozen; raw features/weights remain external and are not redistributed.
+
+
+### E83 TRAIN pass only (2026-09-13)
+
+External `e83/correction.npz` SHA256 `d4c7d644de0e59cda8dda0899e30860d56991530ab759f5525ea9c708b0dbd1a`.
+All TRAIN/runtime guards pass; old-REAL FPR0.071–0.114%, AI recall99.739–99.848%.
+Supervised resubstitution, not external accuracy. Consumed E66 DEV registered separately;
+no DEV result, E49 access, independent final pass, serving change or promotion yet.

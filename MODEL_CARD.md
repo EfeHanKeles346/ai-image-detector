@@ -403,3 +403,11 @@ unchanged full-AI and acceptance guards. Receipt: `evidence/e80_fit.json`.
 FPR8.54%/8.54%/8.33% passes pooled10%, but RR31.84–33.52% and covered accuracy<95%
 fail full TRAIN. Zero new E43 AI misses; some E80-only assigned rescues are lost. No
 runtime/DEV/E49 or serving/promotion. Result: `evidence/e81_fit.json`.
+
+
+### E83 TRAIN pass only (2026-09-13)
+
+External `e83/correction.npz` SHA256 `d4c7d644de0e59cda8dda0899e30860d56991530ab759f5525ea9c708b0dbd1a`.
+All TRAIN/runtime guards pass; old-REAL FPR0.071–0.114%, AI recall99.739–99.848%.
+Supervised resubstitution, not external accuracy. Consumed E66 DEV registered separately;
+no DEV result, E49 access, independent final pass, serving change or promotion yet.

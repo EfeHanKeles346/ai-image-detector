@@ -1,0 +1,4976 @@
+{
+  "candidate_sha256": "d4c7d644de0e59cda8dda0899e30860d56991530ab759f5525ea9c708b0dbd1a",
+  "contract_sha256": "4d21e5357416ceb5d6f768a40204e9b2d86fc59adeda249f4b6a6f4fc726ae24",
+  "dev_features_or_scores_in_fit": 0,
+  "dev_scoring_permitted": true,
+  "e49_rows_read": 0,
+  "full_TRAIN_metric_gates": {
+    "assigned_transport": {
+      "expanded_TRAIN": {
+        "binary_metrics": {
+          "accuracy_counting_failures_wrong": 0.9986821513878593,
+          "ai_recall": 0.9982589771490751,
+          "balanced_accuracy": 0.9985994064118023,
+          "brier_nontarget_real": 0.00011441965817417536,
+          "brier_target_ai": 0.008699719138416193,
+          "confusion": {
+            "fn": 8,
+            "fp": 8,
+            "tn": 7538,
+            "tp": 4587
+          },
+          "counts": {
+            "ai_succeeded": 4595,
+            "failed": 0,
+            "real_succeeded": 7546,
+            "succeeded": 12141,
+            "total": 12141
+          },
+          "coverage": 1.0,
+          "eer": 0.0014905604710406003,
+          "per_group": [
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 127,
+                "tp": 0
+              },
+              "count": 127,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:Hynix_SL846"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:ISOCELL_3P9"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:OmniVision_OV32A"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:Sony_IMX258"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 7,
+                "tn": 1693,
+                "tp": 0
+              },
+              "count": 1700,
+              "label": 0,
+              "real_false_positive_rate": 0.00411764705882353,
+              "source": "SCIMD-17"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:communityforensics-ai-local"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 160,
+                "tp": 0
+              },
+              "count": 160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-iphone14"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1160,
+                "tp": 0
+              },
+              "count": 1160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-s21"
+            },
+            {
+              "ai_recall": 0.9947275922671354,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 3,
+                "fp": 0,
+                "tn": 0,
+                "tp": 566
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:flux2-klein-9b"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1154,
+                "tp": 0
+              },
+              "count": 1154,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:forchheim-fodb"
+            },
+            {
+              "ai_recall": 0.9912126537785588,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 5,
+                "fp": 0,
+                "tn": 0,
+                "tp": 564
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:gpt-image-1"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 160
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-pro-ash-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:qwen-image-2512"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1140,
+                "tp": 0
+              },
+              "count": 1140,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:vision-base-native"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:FLUX.2_max"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:GLM-Image"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Qwen-Image-2.0-pro"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Seedream-5.0"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_001"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_002"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_003"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_005"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 71,
+                "tp": 0
+              },
+              "count": 71,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_009"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:gpt-image-2"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:nano-banana-2.0"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 105
+              },
+              "count": 105,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:culture_and_religion"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 459
+              },
+              "count": 459,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:everyday_life"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 114
+              },
+              "count": 114,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:labor_and_production"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 102
+              },
+              "count": 102,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:medical_and_public_health"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 113
+              },
+              "count": 113,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 93
+              },
+              "count": 93,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 1,
+                "tn": 1249,
+                "tp": 0
+              },
+              "count": 1250,
+              "label": 0,
+              "real_false_positive_rate": 0.0008,
+              "source": "rr:rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 124
+              },
+              "count": 124,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.0010601643254704478,
+          "roc_auc": 0.9999878006118152,
+          "stored_threshold": 0.07940196245908739,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 1.0
+          }
+        },
+        "binary_rates": {
+          "ai_recall_by_source": {
+            "e32:communityforensics-ai-local": 1.0,
+            "e32:flux2-klein-9b": 0.9947275922671354,
+            "e32:gpt-image-1": 0.9912126537785588,
+            "e32:nano-banana-local": 1.0,
+            "e32:nano-banana-pro-ash-local": 1.0,
+            "e32:qwen-image-2512": 1.0,
+            "e36:FLUX.2_max": 1.0,
+            "e36:GLM-Image": 1.0,
+            "e36:Qwen-Image-2.0-pro": 1.0,
+            "e36:Seedream-5.0": 1.0,
+            "e36:gpt-image-2": 1.0,
+            "e36:nano-banana-2.0": 1.0,
+            "rr:culture_and_religion": 1.0,
+            "rr:everyday_life": 1.0,
+            "rr:labor_and_production": 1.0,
+            "rr:medical_and_public_health": 1.0,
+            "rr:natural_disasters_and_accidents": 1.0,
+            "rr:political_and_social_events": 1.0,
+            "rr:war_and_conflict": 1.0
+          },
+          "pooled_ai_recall": 0.9982589771490751,
+          "pooled_real_false_ai": 0.0010601643254704478,
+          "real_false_ai_by_source": {
+            "MIDD:Hynix_SL846": 0.0,
+            "MIDD:ISOCELL_3P9": 0.0,
+            "MIDD:OmniVision_OV32A": 0.0,
+            "MIDD:Sony_IMX258": 0.0,
+            "SCIMD-17": 0.00411764705882353,
+            "e32:csafe-mcsidb-iphone14": 0.0,
+            "e32:csafe-mcsidb-s21": 0.0,
+            "e32:forchheim-fodb": 0.0,
+            "e32:vision-base-native": 0.0,
+            "e36:device_001": 0.0,
+            "e36:device_002": 0.0,
+            "e36:device_003": 0.0,
+            "e36:device_005": 0.0,
+            "e36:device_009": 0.0,
+            "rr:rrdataset_real_pool": 0.0008
+          },
+          "score_failures_by_source": {},
+          "worst_ai_recall": 0.9912126537785588,
+          "worst_real_false_ai": 0.00411764705882353
+        },
+        "gate": {
+          "checks": {
+            "automatic_coverage_gte_0_80": true,
+            "binary_auc_gte_0_90": true,
+            "binary_balanced_accuracy_gte_0_85": true,
+            "covered_accuracy_gte_0_95": true,
+            "pooled_ai_recall_gte_0_80": true,
+            "pooled_real_false_ai_lte_0_10": true,
+            "score_coverage_eq_1": true,
+            "uncertain_rate_lte_0_20": true,
+            "worst_source_ai_recall_gte_0_60": true,
+            "worst_source_real_false_ai_lte_0_20": true
+          },
+          "passed": true,
+          "passed_checks": 10,
+          "total_checks": 10
+        },
+        "selective": {
+          "automatic_coverage": 0.996787744007907,
+          "automatic_rows": 12102,
+          "covered_accuracy": 0.9991736902991241,
+          "uncertain_rate": 0.0032122559920929085,
+          "uncertain_rows": 39
+        }
+      },
+      "old_TRAIN": {
+        "binary_metrics": {
+          "accuracy_counting_failures_wrong": 0.9986242476354257,
+          "ai_recall": 0.9982589771490751,
+          "balanced_accuracy": 0.998560902931325,
+          "brier_nontarget_real": 0.0001220810022146897,
+          "brier_target_ai": 0.008699719138416193,
+          "confusion": {
+            "fn": 8,
+            "fp": 8,
+            "tn": 7027,
+            "tp": 4587
+          },
+          "counts": {
+            "ai_succeeded": 4595,
+            "failed": 0,
+            "real_succeeded": 7035,
+            "succeeded": 11630,
+            "total": 11630
+          },
+          "coverage": 1.0,
+          "eer": 0.0014724295512953036,
+          "per_group": [
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 7,
+                "tn": 1693,
+                "tp": 0
+              },
+              "count": 1700,
+              "label": 0,
+              "real_false_positive_rate": 0.00411764705882353,
+              "source": "SCIMD-17"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:communityforensics-ai-local"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 160,
+                "tp": 0
+              },
+              "count": 160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-iphone14"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1160,
+                "tp": 0
+              },
+              "count": 1160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-s21"
+            },
+            {
+              "ai_recall": 0.9947275922671354,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 3,
+                "fp": 0,
+                "tn": 0,
+                "tp": 566
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:flux2-klein-9b"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1154,
+                "tp": 0
+              },
+              "count": 1154,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:forchheim-fodb"
+            },
+            {
+              "ai_recall": 0.9912126537785588,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 5,
+                "fp": 0,
+                "tn": 0,
+                "tp": 564
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:gpt-image-1"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 160
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-pro-ash-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:qwen-image-2512"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1140,
+                "tp": 0
+              },
+              "count": 1140,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:vision-base-native"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:FLUX.2_max"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:GLM-Image"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Qwen-Image-2.0-pro"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Seedream-5.0"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_001"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_002"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_003"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_005"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 71,
+                "tp": 0
+              },
+              "count": 71,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_009"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:gpt-image-2"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:nano-banana-2.0"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 105
+              },
+              "count": 105,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:culture_and_religion"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 459
+              },
+              "count": 459,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:everyday_life"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 114
+              },
+              "count": 114,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:labor_and_production"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 102
+              },
+              "count": 102,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:medical_and_public_health"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 113
+              },
+              "count": 113,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 93
+              },
+              "count": 93,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 1,
+                "tn": 1249,
+                "tp": 0
+              },
+              "count": 1250,
+              "label": 0,
+              "real_false_positive_rate": 0.0008,
+              "source": "rr:rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 124
+              },
+              "count": 124,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.0011371712864250178,
+          "roc_auc": 0.9999873475773626,
+          "stored_threshold": 0.07940196245908739,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 1.0
+          }
+        },
+        "binary_rates": {
+          "ai_recall_by_source": {
+            "e32:communityforensics-ai-local": 1.0,
+            "e32:flux2-klein-9b": 0.9947275922671354,
+            "e32:gpt-image-1": 0.9912126537785588,
+            "e32:nano-banana-local": 1.0,
+            "e32:nano-banana-pro-ash-local": 1.0,
+            "e32:qwen-image-2512": 1.0,
+            "e36:FLUX.2_max": 1.0,
+            "e36:GLM-Image": 1.0,
+            "e36:Qwen-Image-2.0-pro": 1.0,
+            "e36:Seedream-5.0": 1.0,
+            "e36:gpt-image-2": 1.0,
+            "e36:nano-banana-2.0": 1.0,
+            "rr:culture_and_religion": 1.0,
+            "rr:everyday_life": 1.0,
+            "rr:labor_and_production": 1.0,
+            "rr:medical_and_public_health": 1.0,
+            "rr:natural_disasters_and_accidents": 1.0,
+            "rr:political_and_social_events": 1.0,
+            "rr:war_and_conflict": 1.0
+          },
+          "pooled_ai_recall": 0.9982589771490751,
+          "pooled_real_false_ai": 0.0011371712864250178,
+          "real_false_ai_by_source": {
+            "SCIMD-17": 0.00411764705882353,
+            "e32:csafe-mcsidb-iphone14": 0.0,
+            "e32:csafe-mcsidb-s21": 0.0,
+            "e32:forchheim-fodb": 0.0,
+            "e32:vision-base-native": 0.0,
+            "e36:device_001": 0.0,
+            "e36:device_002": 0.0,
+            "e36:device_003": 0.0,
+            "e36:device_005": 0.0,
+            "e36:device_009": 0.0,
+            "rr:rrdataset_real_pool": 0.0008
+          },
+          "score_failures_by_source": {},
+          "worst_ai_recall": 0.9912126537785588,
+          "worst_real_false_ai": 0.00411764705882353
+        },
+        "gate": {
+          "checks": {
+            "automatic_coverage_gte_0_80": true,
+            "binary_auc_gte_0_90": true,
+            "binary_balanced_accuracy_gte_0_85": true,
+            "covered_accuracy_gte_0_95": true,
+            "pooled_ai_recall_gte_0_80": true,
+            "pooled_real_false_ai_lte_0_10": true,
+            "score_coverage_eq_1": true,
+            "uncertain_rate_lte_0_20": true,
+            "worst_source_ai_recall_gte_0_60": true,
+            "worst_source_real_false_ai_lte_0_20": true
+          },
+          "passed": true,
+          "passed_checks": 10,
+          "total_checks": 10
+        },
+        "selective": {
+          "automatic_coverage": 0.9969045571797076,
+          "automatic_rows": 11594,
+          "covered_accuracy": 0.9991374849059859,
+          "uncertain_rate": 0.0030954428202923474,
+          "uncertain_rows": 36
+        }
+      }
+    },
+    "clean": {
+      "expanded_TRAIN": {
+        "binary_metrics": {
+          "accuracy_counting_failures_wrong": 0.9987645169261181,
+          "ai_recall": 0.9984766050054407,
+          "balanced_accuracy": 0.9987082203399851,
+          "brier_nontarget_real": 0.0001669988453557568,
+          "brier_target_ai": 0.005434685453545122,
+          "confusion": {
+            "fn": 7,
+            "fp": 8,
+            "tn": 7538,
+            "tp": 4588
+          },
+          "counts": {
+            "ai_succeeded": 4595,
+            "failed": 0,
+            "real_succeeded": 7546,
+            "succeeded": 12141,
+            "total": 12141
+          },
+          "coverage": 1.0,
+          "eer": 0.0011404120739911512,
+          "per_group": [
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 127,
+                "tp": 0
+              },
+              "count": 127,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:Hynix_SL846"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:ISOCELL_3P9"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:OmniVision_OV32A"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:Sony_IMX258"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 5,
+                "tn": 1695,
+                "tp": 0
+              },
+              "count": 1700,
+              "label": 0,
+              "real_false_positive_rate": 0.0029411764705882353,
+              "source": "SCIMD-17"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:communityforensics-ai-local"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 160,
+                "tp": 0
+              },
+              "count": 160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-iphone14"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1160,
+                "tp": 0
+              },
+              "count": 1160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-s21"
+            },
+            {
+              "ai_recall": 0.9964850615114236,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 2,
+                "fp": 0,
+                "tn": 0,
+                "tp": 567
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:flux2-klein-9b"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1154,
+                "tp": 0
+              },
+              "count": 1154,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:forchheim-fodb"
+            },
+            {
+              "ai_recall": 0.9912126537785588,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 5,
+                "fp": 0,
+                "tn": 0,
+                "tp": 564
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:gpt-image-1"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 160
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-pro-ash-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:qwen-image-2512"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1140,
+                "tp": 0
+              },
+              "count": 1140,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:vision-base-native"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:FLUX.2_max"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:GLM-Image"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Qwen-Image-2.0-pro"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Seedream-5.0"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_001"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_002"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_003"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_005"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 71,
+                "tp": 0
+              },
+              "count": 71,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_009"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:gpt-image-2"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:nano-banana-2.0"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 105
+              },
+              "count": 105,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:culture_and_religion"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 459
+              },
+              "count": 459,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:everyday_life"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 114
+              },
+              "count": 114,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:labor_and_production"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 102
+              },
+              "count": 102,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:medical_and_public_health"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 113
+              },
+              "count": 113,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 93
+              },
+              "count": 93,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 3,
+                "tn": 1247,
+                "tp": 0
+              },
+              "count": 1250,
+              "label": 0,
+              "real_false_positive_rate": 0.0024,
+              "source": "rr:rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 124
+              },
+              "count": 124,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.0010601643254704478,
+          "roc_auc": 0.9999918670745435,
+          "stored_threshold": 0.07940196245908739,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 1.0
+          }
+        },
+        "binary_rates": {
+          "ai_recall_by_source": {
+            "e32:communityforensics-ai-local": 1.0,
+            "e32:flux2-klein-9b": 0.9964850615114236,
+            "e32:gpt-image-1": 0.9912126537785588,
+            "e32:nano-banana-local": 1.0,
+            "e32:nano-banana-pro-ash-local": 1.0,
+            "e32:qwen-image-2512": 1.0,
+            "e36:FLUX.2_max": 1.0,
+            "e36:GLM-Image": 1.0,
+            "e36:Qwen-Image-2.0-pro": 1.0,
+            "e36:Seedream-5.0": 1.0,
+            "e36:gpt-image-2": 1.0,
+            "e36:nano-banana-2.0": 1.0,
+            "rr:culture_and_religion": 1.0,
+            "rr:everyday_life": 1.0,
+            "rr:labor_and_production": 1.0,
+            "rr:medical_and_public_health": 1.0,
+            "rr:natural_disasters_and_accidents": 1.0,
+            "rr:political_and_social_events": 1.0,
+            "rr:war_and_conflict": 1.0
+          },
+          "pooled_ai_recall": 0.9984766050054407,
+          "pooled_real_false_ai": 0.0010601643254704478,
+          "real_false_ai_by_source": {
+            "MIDD:Hynix_SL846": 0.0,
+            "MIDD:ISOCELL_3P9": 0.0,
+            "MIDD:OmniVision_OV32A": 0.0,
+            "MIDD:Sony_IMX258": 0.0,
+            "SCIMD-17": 0.0029411764705882353,
+            "e32:csafe-mcsidb-iphone14": 0.0,
+            "e32:csafe-mcsidb-s21": 0.0,
+            "e32:forchheim-fodb": 0.0,
+            "e32:vision-base-native": 0.0,
+            "e36:device_001": 0.0,
+            "e36:device_002": 0.0,
+            "e36:device_003": 0.0,
+            "e36:device_005": 0.0,
+            "e36:device_009": 0.0,
+            "rr:rrdataset_real_pool": 0.0024
+          },
+          "score_failures_by_source": {},
+          "worst_ai_recall": 0.9912126537785588,
+          "worst_real_false_ai": 0.0029411764705882353
+        },
+        "gate": {
+          "checks": {
+            "automatic_coverage_gte_0_80": true,
+            "binary_auc_gte_0_90": true,
+            "binary_balanced_accuracy_gte_0_85": true,
+            "covered_accuracy_gte_0_95": true,
+            "pooled_ai_recall_gte_0_80": true,
+            "pooled_real_false_ai_lte_0_10": true,
+            "score_coverage_eq_1": true,
+            "uncertain_rate_lte_0_20": true,
+            "worst_source_ai_recall_gte_0_60": true,
+            "worst_source_real_false_ai_lte_0_20": true
+          },
+          "passed": true,
+          "passed_checks": 10,
+          "total_checks": 10
+        },
+        "selective": {
+          "automatic_coverage": 0.9967053784696484,
+          "automatic_rows": 12101,
+          "covered_accuracy": 0.9992562598132386,
+          "uncertain_rate": 0.0032946215303517007,
+          "uncertain_rows": 40
+        }
+      },
+      "old_TRAIN": {
+        "binary_metrics": {
+          "accuracy_counting_failures_wrong": 0.9987102321582115,
+          "ai_recall": 0.9984766050054407,
+          "balanced_accuracy": 0.9986697168595078,
+          "brier_nontarget_real": 0.00017907270806955696,
+          "brier_target_ai": 0.005434685453545122,
+          "confusion": {
+            "fn": 7,
+            "fp": 8,
+            "tn": 7027,
+            "tp": 4588
+          },
+          "counts": {
+            "ai_succeeded": 4595,
+            "failed": 0,
+            "real_succeeded": 7035,
+            "succeeded": 11630,
+            "total": 11630
+          },
+          "coverage": 1.0,
+          "eer": 0.0012925424177108909,
+          "per_group": [
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 5,
+                "tn": 1695,
+                "tp": 0
+              },
+              "count": 1700,
+              "label": 0,
+              "real_false_positive_rate": 0.0029411764705882353,
+              "source": "SCIMD-17"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:communityforensics-ai-local"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 160,
+                "tp": 0
+              },
+              "count": 160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-iphone14"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1160,
+                "tp": 0
+              },
+              "count": 1160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-s21"
+            },
+            {
+              "ai_recall": 0.9964850615114236,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 2,
+                "fp": 0,
+                "tn": 0,
+                "tp": 567
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:flux2-klein-9b"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1154,
+                "tp": 0
+              },
+              "count": 1154,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:forchheim-fodb"
+            },
+            {
+              "ai_recall": 0.9912126537785588,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 5,
+                "fp": 0,
+                "tn": 0,
+                "tp": 564
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:gpt-image-1"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 160
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-pro-ash-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:qwen-image-2512"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1140,
+                "tp": 0
+              },
+              "count": 1140,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:vision-base-native"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:FLUX.2_max"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:GLM-Image"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Qwen-Image-2.0-pro"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Seedream-5.0"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_001"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_002"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_003"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_005"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 71,
+                "tp": 0
+              },
+              "count": 71,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_009"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:gpt-image-2"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:nano-banana-2.0"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 105
+              },
+              "count": 105,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:culture_and_religion"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 459
+              },
+              "count": 459,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:everyday_life"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 114
+              },
+              "count": 114,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:labor_and_production"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 102
+              },
+              "count": 102,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:medical_and_public_health"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 113
+              },
+              "count": 113,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 93
+              },
+              "count": 93,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 3,
+                "tn": 1247,
+                "tp": 0
+              },
+              "count": 1250,
+              "label": 0,
+              "real_false_positive_rate": 0.0024,
+              "source": "rr:rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 124
+              },
+              "count": 124,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.0011371712864250178,
+          "roc_auc": 0.9999913381947716,
+          "stored_threshold": 0.07940196245908739,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 1.0
+          }
+        },
+        "binary_rates": {
+          "ai_recall_by_source": {
+            "e32:communityforensics-ai-local": 1.0,
+            "e32:flux2-klein-9b": 0.9964850615114236,
+            "e32:gpt-image-1": 0.9912126537785588,
+            "e32:nano-banana-local": 1.0,
+            "e32:nano-banana-pro-ash-local": 1.0,
+            "e32:qwen-image-2512": 1.0,
+            "e36:FLUX.2_max": 1.0,
+            "e36:GLM-Image": 1.0,
+            "e36:Qwen-Image-2.0-pro": 1.0,
+            "e36:Seedream-5.0": 1.0,
+            "e36:gpt-image-2": 1.0,
+            "e36:nano-banana-2.0": 1.0,
+            "rr:culture_and_religion": 1.0,
+            "rr:everyday_life": 1.0,
+            "rr:labor_and_production": 1.0,
+            "rr:medical_and_public_health": 1.0,
+            "rr:natural_disasters_and_accidents": 1.0,
+            "rr:political_and_social_events": 1.0,
+            "rr:war_and_conflict": 1.0
+          },
+          "pooled_ai_recall": 0.9984766050054407,
+          "pooled_real_false_ai": 0.0011371712864250178,
+          "real_false_ai_by_source": {
+            "SCIMD-17": 0.0029411764705882353,
+            "e32:csafe-mcsidb-iphone14": 0.0,
+            "e32:csafe-mcsidb-s21": 0.0,
+            "e32:forchheim-fodb": 0.0,
+            "e32:vision-base-native": 0.0,
+            "e36:device_001": 0.0,
+            "e36:device_002": 0.0,
+            "e36:device_003": 0.0,
+            "e36:device_005": 0.0,
+            "e36:device_009": 0.0,
+            "rr:rrdataset_real_pool": 0.0024
+          },
+          "score_failures_by_source": {},
+          "worst_ai_recall": 0.9912126537785588,
+          "worst_real_false_ai": 0.0029411764705882353
+        },
+        "gate": {
+          "checks": {
+            "automatic_coverage_gte_0_80": true,
+            "binary_auc_gte_0_90": true,
+            "binary_balanced_accuracy_gte_0_85": true,
+            "covered_accuracy_gte_0_95": true,
+            "pooled_ai_recall_gte_0_80": true,
+            "pooled_real_false_ai_lte_0_10": true,
+            "score_coverage_eq_1": true,
+            "uncertain_rate_lte_0_20": true,
+            "worst_source_ai_recall_gte_0_60": true,
+            "worst_source_real_false_ai_lte_0_20": true
+          },
+          "passed": true,
+          "passed_checks": 10,
+          "total_checks": 10
+        },
+        "selective": {
+          "automatic_coverage": 0.9966466036113499,
+          "automatic_rows": 11591,
+          "covered_accuracy": 0.9992235355016823,
+          "uncertain_rate": 0.003353396388650043,
+          "uncertain_rows": 39
+        }
+      }
+    },
+    "q75": {
+      "expanded_TRAIN": {
+        "binary_metrics": {
+          "accuracy_counting_failures_wrong": 0.9985997858496005,
+          "ai_recall": 0.9973884657236126,
+          "balanced_accuracy": 0.9983629315100968,
+          "brier_nontarget_real": 0.00014177332326737173,
+          "brier_target_ai": 0.009037106615814248,
+          "confusion": {
+            "fn": 12,
+            "fp": 5,
+            "tn": 7541,
+            "tp": 4583
+          },
+          "counts": {
+            "ai_succeeded": 4595,
+            "failed": 0,
+            "real_succeeded": 7546,
+            "succeeded": 12141,
+            "total": 12141
+          },
+          "coverage": 1.0,
+          "eer": 0.0014905604710406003,
+          "per_group": [
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 127,
+                "tp": 0
+              },
+              "count": 127,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:Hynix_SL846"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:ISOCELL_3P9"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:OmniVision_OV32A"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 128,
+                "tp": 0
+              },
+              "count": 128,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "MIDD:Sony_IMX258"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 5,
+                "tn": 1695,
+                "tp": 0
+              },
+              "count": 1700,
+              "label": 0,
+              "real_false_positive_rate": 0.0029411764705882353,
+              "source": "SCIMD-17"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:communityforensics-ai-local"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 160,
+                "tp": 0
+              },
+              "count": 160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-iphone14"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1160,
+                "tp": 0
+              },
+              "count": 1160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-s21"
+            },
+            {
+              "ai_recall": 0.9894551845342706,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 6,
+                "fp": 0,
+                "tn": 0,
+                "tp": 563
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:flux2-klein-9b"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1154,
+                "tp": 0
+              },
+              "count": 1154,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:forchheim-fodb"
+            },
+            {
+              "ai_recall": 0.9894551845342706,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 6,
+                "fp": 0,
+                "tn": 0,
+                "tp": 563
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:gpt-image-1"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 160
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-pro-ash-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:qwen-image-2512"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1140,
+                "tp": 0
+              },
+              "count": 1140,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:vision-base-native"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:FLUX.2_max"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:GLM-Image"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Qwen-Image-2.0-pro"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Seedream-5.0"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_001"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_002"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_003"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_005"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 71,
+                "tp": 0
+              },
+              "count": 71,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_009"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:gpt-image-2"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:nano-banana-2.0"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 105
+              },
+              "count": 105,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:culture_and_religion"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 459
+              },
+              "count": 459,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:everyday_life"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 114
+              },
+              "count": 114,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:labor_and_production"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 102
+              },
+              "count": 102,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:medical_and_public_health"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 113
+              },
+              "count": 113,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 93
+              },
+              "count": 93,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1250,
+                "tp": 0
+              },
+              "count": 1250,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "rr:rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 124
+              },
+              "count": 124,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.0006626027034190299,
+          "roc_auc": 0.9999897905829376,
+          "stored_threshold": 0.07940196245908739,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 1.0
+          }
+        },
+        "binary_rates": {
+          "ai_recall_by_source": {
+            "e32:communityforensics-ai-local": 1.0,
+            "e32:flux2-klein-9b": 0.9894551845342706,
+            "e32:gpt-image-1": 0.9894551845342706,
+            "e32:nano-banana-local": 1.0,
+            "e32:nano-banana-pro-ash-local": 1.0,
+            "e32:qwen-image-2512": 1.0,
+            "e36:FLUX.2_max": 1.0,
+            "e36:GLM-Image": 1.0,
+            "e36:Qwen-Image-2.0-pro": 1.0,
+            "e36:Seedream-5.0": 1.0,
+            "e36:gpt-image-2": 1.0,
+            "e36:nano-banana-2.0": 1.0,
+            "rr:culture_and_religion": 1.0,
+            "rr:everyday_life": 1.0,
+            "rr:labor_and_production": 1.0,
+            "rr:medical_and_public_health": 1.0,
+            "rr:natural_disasters_and_accidents": 1.0,
+            "rr:political_and_social_events": 1.0,
+            "rr:war_and_conflict": 1.0
+          },
+          "pooled_ai_recall": 0.9973884657236126,
+          "pooled_real_false_ai": 0.0006626027034190299,
+          "real_false_ai_by_source": {
+            "MIDD:Hynix_SL846": 0.0,
+            "MIDD:ISOCELL_3P9": 0.0,
+            "MIDD:OmniVision_OV32A": 0.0,
+            "MIDD:Sony_IMX258": 0.0,
+            "SCIMD-17": 0.0029411764705882353,
+            "e32:csafe-mcsidb-iphone14": 0.0,
+            "e32:csafe-mcsidb-s21": 0.0,
+            "e32:forchheim-fodb": 0.0,
+            "e32:vision-base-native": 0.0,
+            "e36:device_001": 0.0,
+            "e36:device_002": 0.0,
+            "e36:device_003": 0.0,
+            "e36:device_005": 0.0,
+            "e36:device_009": 0.0,
+            "rr:rrdataset_real_pool": 0.0
+          },
+          "score_failures_by_source": {},
+          "worst_ai_recall": 0.9894551845342706,
+          "worst_real_false_ai": 0.0029411764705882353
+        },
+        "gate": {
+          "checks": {
+            "automatic_coverage_gte_0_80": true,
+            "binary_auc_gte_0_90": true,
+            "binary_balanced_accuracy_gte_0_85": true,
+            "covered_accuracy_gte_0_95": true,
+            "pooled_ai_recall_gte_0_80": true,
+            "pooled_real_false_ai_lte_0_10": true,
+            "score_coverage_eq_1": true,
+            "uncertain_rate_lte_0_20": true,
+            "worst_source_ai_recall_gte_0_60": true,
+            "worst_source_real_false_ai_lte_0_20": true
+          },
+          "passed": true,
+          "passed_checks": 10,
+          "total_checks": 10
+        },
+        "selective": {
+          "automatic_coverage": 0.9968701095461658,
+          "automatic_rows": 12103,
+          "covered_accuracy": 0.9995042551433528,
+          "uncertain_rate": 0.003129890453834116,
+          "uncertain_rows": 38
+        }
+      },
+      "old_TRAIN": {
+        "binary_metrics": {
+          "accuracy_counting_failures_wrong": 0.9985382631126397,
+          "ai_recall": 0.9973884657236126,
+          "balanced_accuracy": 0.9983388668347986,
+          "brier_nontarget_real": 0.00015204749380835802,
+          "brier_target_ai": 0.009037106615814248,
+          "confusion": {
+            "fn": 12,
+            "fp": 5,
+            "tn": 7030,
+            "tp": 4583
+          },
+          "counts": {
+            "ai_succeeded": 4595,
+            "failed": 0,
+            "real_succeeded": 7035,
+            "succeeded": 11630,
+            "total": 11630
+          },
+          "coverage": 1.0,
+          "eer": 0.0015435027566968673,
+          "per_group": [
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 5,
+                "tn": 1695,
+                "tp": 0
+              },
+              "count": 1700,
+              "label": 0,
+              "real_false_positive_rate": 0.0029411764705882353,
+              "source": "SCIMD-17"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:communityforensics-ai-local"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 160,
+                "tp": 0
+              },
+              "count": 160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-iphone14"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1160,
+                "tp": 0
+              },
+              "count": 1160,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:csafe-mcsidb-s21"
+            },
+            {
+              "ai_recall": 0.9894551845342706,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 6,
+                "fp": 0,
+                "tn": 0,
+                "tp": 563
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:flux2-klein-9b"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1154,
+                "tp": 0
+              },
+              "count": 1154,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:forchheim-fodb"
+            },
+            {
+              "ai_recall": 0.9894551845342706,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 6,
+                "fp": 0,
+                "tn": 0,
+                "tp": 563
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:gpt-image-1"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 160
+              },
+              "count": 160,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:nano-banana-pro-ash-local"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 569
+              },
+              "count": 569,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e32:qwen-image-2512"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1140,
+                "tp": 0
+              },
+              "count": 1140,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e32:vision-base-native"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:FLUX.2_max"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:GLM-Image"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Qwen-Image-2.0-pro"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:Seedream-5.0"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_001"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_002"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_003"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 100,
+                "tp": 0
+              },
+              "count": 100,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_005"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 71,
+                "tp": 0
+              },
+              "count": 71,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "e36:device_009"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:gpt-image-2"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 80
+              },
+              "count": 80,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "e36:nano-banana-2.0"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 105
+              },
+              "count": 105,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:culture_and_religion"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 459
+              },
+              "count": 459,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:everyday_life"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 114
+              },
+              "count": 114,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:labor_and_production"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 102
+              },
+              "count": 102,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:medical_and_public_health"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 113
+              },
+              "count": 113,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:natural_disasters_and_accidents"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 93
+              },
+              "count": 93,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:political_and_social_events"
+            },
+            {
+              "ai_recall": null,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 1250,
+                "tp": 0
+              },
+              "count": 1250,
+              "label": 0,
+              "real_false_positive_rate": 0.0,
+              "source": "rr:rrdataset_real_pool"
+            },
+            {
+              "ai_recall": 1.0,
+              "balanced_accuracy": null,
+              "condition": "original",
+              "confusion": {
+                "fn": 0,
+                "fp": 0,
+                "tn": 0,
+                "tp": 124
+              },
+              "count": 124,
+              "label": 1,
+              "real_false_positive_rate": null,
+              "source": "rr:war_and_conflict"
+            }
+          ],
+          "real_false_positive_rate": 0.0007107320540156361,
+          "roc_auc": 0.9999890799384085,
+          "stored_threshold": 0.07940196245908739,
+          "tpr_at_fpr": {
+            "fpr": 0.1,
+            "tpr": 1.0
+          }
+        },
+        "binary_rates": {
+          "ai_recall_by_source": {
+            "e32:communityforensics-ai-local": 1.0,
+            "e32:flux2-klein-9b": 0.9894551845342706,
+            "e32:gpt-image-1": 0.9894551845342706,
+            "e32:nano-banana-local": 1.0,
+            "e32:nano-banana-pro-ash-local": 1.0,
+            "e32:qwen-image-2512": 1.0,
+            "e36:FLUX.2_max": 1.0,
+            "e36:GLM-Image": 1.0,
+            "e36:Qwen-Image-2.0-pro": 1.0,
+            "e36:Seedream-5.0": 1.0,
+            "e36:gpt-image-2": 1.0,
+            "e36:nano-banana-2.0": 1.0,
+            "rr:culture_and_religion": 1.0,
+            "rr:everyday_life": 1.0,
+            "rr:labor_and_production": 1.0,
+            "rr:medical_and_public_health": 1.0,
+            "rr:natural_disasters_and_accidents": 1.0,
+            "rr:political_and_social_events": 1.0,
+            "rr:war_and_conflict": 1.0
+          },
+          "pooled_ai_recall": 0.9973884657236126,
+          "pooled_real_false_ai": 0.0007107320540156361,
+          "real_false_ai_by_source": {
+            "SCIMD-17": 0.0029411764705882353,
+            "e32:csafe-mcsidb-iphone14": 0.0,
+            "e32:csafe-mcsidb-s21": 0.0,
+            "e32:forchheim-fodb": 0.0,
+            "e32:vision-base-native": 0.0,
+            "e36:device_001": 0.0,
+            "e36:device_002": 0.0,
+            "e36:device_003": 0.0,
+            "e36:device_005": 0.0,
+            "e36:device_009": 0.0,
+            "rr:rrdataset_real_pool": 0.0
+          },
+          "score_failures_by_source": {},
+          "worst_ai_recall": 0.9894551845342706,
+          "worst_real_false_ai": 0.0029411764705882353
+        },
+        "gate": {
+          "checks": {
+            "automatic_coverage_gte_0_80": true,
+            "binary_auc_gte_0_90": true,
+            "binary_balanced_accuracy_gte_0_85": true,
+            "covered_accuracy_gte_0_95": true,
+            "pooled_ai_recall_gte_0_80": true,
+            "pooled_real_false_ai_lte_0_10": true,
+            "score_coverage_eq_1": true,
+            "uncertain_rate_lte_0_20": true,
+            "worst_source_ai_recall_gte_0_60": true,
+            "worst_source_real_false_ai_lte_0_20": true
+          },
+          "passed": true,
+          "passed_checks": 10,
+          "total_checks": 10
+        },
+        "selective": {
+          "automatic_coverage": 0.9967325881341359,
+          "automatic_rows": 11592,
+          "covered_accuracy": 0.9994824016563147,
+          "uncertain_rate": 0.0032674118658641443,
+          "uncertain_rows": 38
+        }
+      }
+    }
+  },
+  "independent_final_passed": false,
+  "promotion_allowed": false,
+  "real_population_gates": {
+    "assigned_transport": {
+      "checks": {
+        "expanded_real": true,
+        "new_midd_real": true,
+        "old_real": true,
+        "worst_new_sensor_lte_20": true
+      },
+      "passed": true,
+      "rates": {
+        "expanded_real": 0.0010601643254704478,
+        "new_midd_by_sensor": {
+          "MIDD:Hynix_SL846": 0.0,
+          "MIDD:ISOCELL_3P9": 0.0,
+          "MIDD:OmniVision_OV32A": 0.0,
+          "MIDD:Sony_IMX258": 0.0
+        },
+        "new_midd_real": 0.0,
+        "old_real": 0.0011371712864250178
+      }
+    },
+    "clean": {
+      "checks": {
+        "expanded_real": true,
+        "new_midd_real": true,
+        "old_real": true,
+        "worst_new_sensor_lte_20": true
+      },
+      "passed": true,
+      "rates": {
+        "expanded_real": 0.0010601643254704478,
+        "new_midd_by_sensor": {
+          "MIDD:Hynix_SL846": 0.0,
+          "MIDD:ISOCELL_3P9": 0.0,
+          "MIDD:OmniVision_OV32A": 0.0,
+          "MIDD:Sony_IMX258": 0.0
+        },
+        "new_midd_real": 0.0,
+        "old_real": 0.0011371712864250178
+      }
+    },
+    "q75": {
+      "checks": {
+        "expanded_real": true,
+        "new_midd_real": true,
+        "old_real": true,
+        "worst_new_sensor_lte_20": true
+      },
+      "passed": true,
+      "rates": {
+        "expanded_real": 0.0006626027034190299,
+        "new_midd_by_sensor": {
+          "MIDD:Hynix_SL846": 0.0,
+          "MIDD:ISOCELL_3P9": 0.0,
+          "MIDD:OmniVision_OV32A": 0.0,
+          "MIDD:Sony_IMX258": 0.0
+        },
+        "new_midd_real": 0.0,
+        "old_real": 0.0007107320540156361
+      }
+    }
+  },
+  "reference_real_slices": {
+    "assigned_transport": {
+      "checks": {
+        "expanded_real": false,
+        "new_midd_real": true,
+        "old_real": false,
+        "worst_new_sensor_lte_20": true
+      },
+      "passed": false,
+      "rates": {
+        "expanded_real": 0.15385634773389875,
+        "new_midd_by_sensor": {
+          "MIDD:Hynix_SL846": 0.031496062992125984,
+          "MIDD:ISOCELL_3P9": 0.0234375,
+          "MIDD:OmniVision_OV32A": 0.0859375,
+          "MIDD:Sony_IMX258": 0.0625
+        },
+        "new_midd_real": 0.050880626223091974,
+        "old_real": 0.1613361762615494
+      }
+    },
+    "clean": {
+      "checks": {
+        "expanded_real": false,
+        "new_midd_real": true,
+        "old_real": false,
+        "worst_new_sensor_lte_20": true
+      },
+      "passed": false,
+      "rates": {
+        "expanded_real": 0.14550755367081897,
+        "new_midd_by_sensor": {
+          "MIDD:Hynix_SL846": 0.07086614173228346,
+          "MIDD:ISOCELL_3P9": 0.0390625,
+          "MIDD:OmniVision_OV32A": 0.1015625,
+          "MIDD:Sony_IMX258": 0.0859375
+        },
+        "new_midd_real": 0.07436399217221135,
+        "old_real": 0.15067519545131486
+      }
+    },
+    "q75": {
+      "checks": {
+        "expanded_real": false,
+        "new_midd_real": true,
+        "old_real": false,
+        "worst_new_sensor_lte_20": true
+      },
+      "passed": false,
+      "rates": {
+        "expanded_real": 0.13172541743970315,
+        "new_midd_by_sensor": {
+          "MIDD:Hynix_SL846": 0.031496062992125984,
+          "MIDD:ISOCELL_3P9": 0.0234375,
+          "MIDD:OmniVision_OV32A": 0.0625,
+          "MIDD:Sony_IMX258": 0.0625
+        },
+        "new_midd_real": 0.04500978473581213,
+        "old_real": 0.13802416488983654
+      }
+    }
+  },
+  "runtime_batch_replay": {
+    "batch_size": 8,
+    "decision_changes_by_cut": {
+      "0.011505939625203613": 0,
+      "0.07940196245908739": 0
+    },
+    "executed": true,
+    "max_score_error": 5.670555492942597e-07,
+    "minimum_ai_logit_shift": -8.881784197001252e-16,
+    "passed": true
+  },
+  "seconds": 138.58595345797949,
+  "solver": {
+    "all_ai_views_protected": 13785,
+    "epigraph_violation": 1.376116998130783e-10,
+    "groups": [
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0004660680725757862,
+        "initial_mean_cut_bce": 0.12176354571462791,
+        "source": "MIDD:Hynix_SL846"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.00016512620071098524,
+        "initial_mean_cut_bce": 0.14034738640908084,
+        "source": "MIDD:Hynix_SL846"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 9.33407724014386e-05,
+        "initial_mean_cut_bce": 0.10089772738549252,
+        "source": "MIDD:Hynix_SL846"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.00013565494508268965,
+        "initial_mean_cut_bce": 0.07906138894201153,
+        "source": "MIDD:ISOCELL_3P9"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0001835466591691349,
+        "initial_mean_cut_bce": 0.12611637067035075,
+        "source": "MIDD:ISOCELL_3P9"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.0001375554424084558,
+        "initial_mean_cut_bce": 0.07158941938051125,
+        "source": "MIDD:ISOCELL_3P9"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.007761670807493152,
+        "initial_mean_cut_bce": 0.22304495280608,
+        "source": "MIDD:OmniVision_OV32A"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0023126031813905414,
+        "initial_mean_cut_bce": 0.2637445725460853,
+        "source": "MIDD:OmniVision_OV32A"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.0016569566146570885,
+        "initial_mean_cut_bce": 0.212511468016464,
+        "source": "MIDD:OmniVision_OV32A"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0008473440498841986,
+        "initial_mean_cut_bce": 0.19940957748890648,
+        "source": "MIDD:Sony_IMX258"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0007587164124684652,
+        "initial_mean_cut_bce": 0.23629501162627678,
+        "source": "MIDD:Sony_IMX258"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.00037040017738545876,
+        "initial_mean_cut_bce": 0.17889137161820912,
+        "source": "MIDD:Sony_IMX258"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.008816490368923457,
+        "initial_mean_cut_bce": 0.3415698138463015,
+        "source": "SCIMD-17"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.010051570362503447,
+        "initial_mean_cut_bce": 0.34709522093940215,
+        "source": "SCIMD-17"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.00952674905176935,
+        "initial_mean_cut_bce": 0.3457295191477958,
+        "source": "SCIMD-17"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.001084596751158565,
+        "initial_mean_cut_bce": 0.21368870823401903,
+        "source": "e32:csafe-mcsidb-iphone14"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0008684556895717609,
+        "initial_mean_cut_bce": 0.18505152638802438,
+        "source": "e32:csafe-mcsidb-iphone14"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.0011918604420871571,
+        "initial_mean_cut_bce": 0.1565571314968982,
+        "source": "e32:csafe-mcsidb-iphone14"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0008585055897639003,
+        "initial_mean_cut_bce": 0.09631988510038486,
+        "source": "e32:csafe-mcsidb-s21"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0010693421739034824,
+        "initial_mean_cut_bce": 0.09958991455468097,
+        "source": "e32:csafe-mcsidb-s21"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.0004903035790525224,
+        "initial_mean_cut_bce": 0.07898715907624748,
+        "source": "e32:csafe-mcsidb-s21"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0013043415973190181,
+        "initial_mean_cut_bce": 0.13440732944627437,
+        "source": "e32:forchheim-fodb"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.002015075407001996,
+        "initial_mean_cut_bce": 0.13744575292869776,
+        "source": "e32:forchheim-fodb"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.001243508020317094,
+        "initial_mean_cut_bce": 0.11630772809560763,
+        "source": "e32:forchheim-fodb"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.0010799833911104516,
+        "initial_mean_cut_bce": 0.1496159746120578,
+        "source": "e32:vision-base-native"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.00041570184071973535,
+        "initial_mean_cut_bce": 0.11577421837588983,
+        "source": "e32:vision-base-native"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.0003331102067795248,
+        "initial_mean_cut_bce": 0.09314160272432939,
+        "source": "e32:vision-base-native"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 9.957337391771113e-05,
+        "initial_mean_cut_bce": 0.0724974874250097,
+        "source": "e36:device_001"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.00014545320108832926,
+        "initial_mean_cut_bce": 0.0713140333795841,
+        "source": "e36:device_001"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 7.076861187150638e-05,
+        "initial_mean_cut_bce": 0.04930854528433033,
+        "source": "e36:device_001"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.00016360137091246533,
+        "initial_mean_cut_bce": 0.05154184623662729,
+        "source": "e36:device_002"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 9.13222424726576e-05,
+        "initial_mean_cut_bce": 0.03530079506346092,
+        "source": "e36:device_002"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 4.441954000114777e-05,
+        "initial_mean_cut_bce": 0.025995667297649946,
+        "source": "e36:device_002"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.00017072043743997787,
+        "initial_mean_cut_bce": 0.1146403520292115,
+        "source": "e36:device_003"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.0007275157556160037,
+        "initial_mean_cut_bce": 0.0985624819287685,
+        "source": "e36:device_003"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.00018384544675698706,
+        "initial_mean_cut_bce": 0.07832632507412715,
+        "source": "e36:device_003"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.00012726661125101254,
+        "initial_mean_cut_bce": 0.0801366247176627,
+        "source": "e36:device_005"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 4.5305331020288255e-05,
+        "initial_mean_cut_bce": 0.057507484495625906,
+        "source": "e36:device_005"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 2.7615161846458604e-05,
+        "initial_mean_cut_bce": 0.03371252520648657,
+        "source": "e36:device_005"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 9.118416740530238e-05,
+        "initial_mean_cut_bce": 0.18700625097491946,
+        "source": "e36:device_009"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 7.438392250859444e-05,
+        "initial_mean_cut_bce": 0.14901670387293756,
+        "source": "e36:device_009"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 6.382337774132464e-05,
+        "initial_mean_cut_bce": 0.10821321105715201,
+        "source": "e36:device_009"
+      },
+      {
+        "condition": "assigned_transport",
+        "final_mean_cut_bce": 0.010051570441447555,
+        "initial_mean_cut_bce": 1.40448711765855,
+        "source": "rr:rrdataset_real_pool"
+      },
+      {
+        "condition": "clean",
+        "final_mean_cut_bce": 0.010051570454011099,
+        "initial_mean_cut_bce": 1.351063086989042,
+        "source": "rr:rrdataset_real_pool"
+      },
+      {
+        "condition": "q75",
+        "final_mean_cut_bce": 0.008574536582916771,
+        "initial_mean_cut_bce": 1.2262265380689836,
+        "source": "rr:rrdataset_real_pool"
+      }
+    ],
+    "iterations": 53,
+    "linear_constraint_violation": 0.0,
+    "max_constraint_violation": 1.376116998130783e-10,
+    "message": "Optimization terminated successfully",
+    "minimum_ai_logit_shift": 2.7755575615628914e-16,
+    "objective": 0.02277889218502433,
+    "success": true,
+    "trace": [
+      0.4825904978810758,
+      -0.006325188385712899,
+      0.01816149470790667,
+      0.037259088083929914,
+      0.023382464851800462,
+      0.024595302758003805,
+      0.02446389231002701,
+      0.024497742015499133,
+      0.024411379555211853,
+      0.02409295698541906,
+      0.02360419867948277,
+      0.022667425856893554,
+      0.023037345027023377,
+      0.023027026848333323,
+      0.023001140010463775,
+      0.022934515590997958,
+      0.022896388738212196,
+      0.02280576695956852,
+      0.022826393429500286,
+      0.022810001420228838,
+      0.022807421612681525,
+      0.022798949348174675,
+      0.022795053075386408,
+      0.022790215332600214,
+      0.022784960418165967,
+      0.02278440681282015,
+      0.0227833522205351,
+      0.02278250580511729,
+      0.02278161364536455,
+      0.022781355819275997,
+      0.022781009103297577,
+      0.022780476349424802,
+      0.02277997090535796,
+      0.022779495152615004,
+      0.022779433048820626,
+      0.022779314288892655,
+      0.02277917775850953,
+      0.022779112449846466,
+      0.022779049010905685,
+      0.022779029805155566,
+      0.02277900159950339,
+      0.022778997153888692,
+      0.022778960257584073,
+      0.022778931859967905,
+      0.022778910351142996,
+      0.02277890989003683,
+      0.022778909985111378,
+      0.02277890798597023,
+      0.02277890335064649,
+      0.022778897189437028,
+      0.02277889290783957,
+      0.022778892217003927,
+      0.02277889218502433
+    ],
+    "worst_real_bound": 0.010051570316399399
+  },
+  "state": "E83_TRAIN_guard_passed",
+  "train_gate": {
+    "ai_parents": 4595,
+    "comparisons": {
+      "assigned_transport": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4587,
+          "new_ai_rate": 0.9982589771490751,
+          "non_ai_to_ai": 96,
+          "old_ai_count": 4491,
+          "old_ai_rate": 0.977366702937976,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:MIDD:Hynix_SL846": {
+            "ai_to_non_ai": 4,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 4,
+            "old_ai_rate": 0.031496062992125984,
+            "parents": 127
+          },
+          "0:MIDD:ISOCELL_3P9": {
+            "ai_to_non_ai": 3,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 3,
+            "old_ai_rate": 0.0234375,
+            "parents": 128
+          },
+          "0:MIDD:OmniVision_OV32A": {
+            "ai_to_non_ai": 11,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 11,
+            "old_ai_rate": 0.0859375,
+            "parents": 128
+          },
+          "0:MIDD:Sony_IMX258": {
+            "ai_to_non_ai": 8,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 8,
+            "old_ai_rate": 0.0625,
+            "parents": 128
+          },
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 236,
+            "new_ai_count": 7,
+            "new_ai_rate": 0.00411764705882353,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 243,
+            "old_ai_rate": 0.14294117647058824,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 16,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 16,
+            "old_ai_rate": 0.1,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 47,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 47,
+            "old_ai_rate": 0.04051724137931034,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 62,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 62,
+            "old_ai_rate": 0.053726169844020795,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 79,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 79,
+            "old_ai_rate": 0.06929824561403508,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 4,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 4,
+            "old_ai_rate": 0.04,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 2,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 5,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 5,
+            "old_ai_rate": 0.07042253521126761,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 674,
+            "new_ai_count": 1,
+            "new_ai_rate": 0.0008,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 675,
+            "old_ai_rate": 0.54,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 9,
+            "old_ai_count": 560,
+            "old_ai_rate": 0.984182776801406,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 566,
+            "new_ai_rate": 0.9947275922671354,
+            "non_ai_to_ai": 30,
+            "old_ai_count": 536,
+            "old_ai_rate": 0.9420035149384886,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 564,
+            "new_ai_rate": 0.9912126537785588,
+            "non_ai_to_ai": 40,
+            "old_ai_count": 524,
+            "old_ai_rate": 0.9209138840070299,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 7,
+            "old_ai_count": 562,
+            "old_ai_rate": 0.9876977152899824,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 160,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 1,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 2,
+            "old_ai_count": 567,
+            "old_ai_rate": 0.9964850615114236,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 459,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 7,
+            "old_ai_count": 452,
+            "old_ai_rate": 0.9847494553376906,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 1153,
+          "new_ai_count": 8,
+          "new_ai_rate": 0.0010601643254704478,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 1161,
+          "old_ai_rate": 0.15385634773389875,
+          "parents": 7546
+        }
+      },
+      "clean": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4588,
+          "new_ai_rate": 0.9984766050054407,
+          "non_ai_to_ai": 80,
+          "old_ai_count": 4508,
+          "old_ai_rate": 0.9810663764961916,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:MIDD:Hynix_SL846": {
+            "ai_to_non_ai": 9,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 9,
+            "old_ai_rate": 0.07086614173228346,
+            "parents": 127
+          },
+          "0:MIDD:ISOCELL_3P9": {
+            "ai_to_non_ai": 5,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 5,
+            "old_ai_rate": 0.0390625,
+            "parents": 128
+          },
+          "0:MIDD:OmniVision_OV32A": {
+            "ai_to_non_ai": 13,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 13,
+            "old_ai_rate": 0.1015625,
+            "parents": 128
+          },
+          "0:MIDD:Sony_IMX258": {
+            "ai_to_non_ai": 11,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 11,
+            "old_ai_rate": 0.0859375,
+            "parents": 128
+          },
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 223,
+            "new_ai_count": 5,
+            "new_ai_rate": 0.0029411764705882353,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 228,
+            "old_ai_rate": 0.13411764705882354,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 13,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 13,
+            "old_ai_rate": 0.08125,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 47,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 47,
+            "old_ai_rate": 0.04051724137931034,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 66,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 66,
+            "old_ai_rate": 0.05719237435008666,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 57,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 57,
+            "old_ai_rate": 0.05,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 2,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 3,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 3,
+            "old_ai_rate": 0.03,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 2,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.028169014084507043,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 638,
+            "new_ai_count": 3,
+            "new_ai_rate": 0.0024,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 641,
+            "old_ai_rate": 0.5128,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 8,
+            "old_ai_count": 561,
+            "old_ai_rate": 0.9859402460456942,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 567,
+            "new_ai_rate": 0.9964850615114236,
+            "non_ai_to_ai": 26,
+            "old_ai_count": 541,
+            "old_ai_rate": 0.9507908611599297,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 564,
+            "new_ai_rate": 0.9912126537785588,
+            "non_ai_to_ai": 36,
+            "old_ai_count": 528,
+            "old_ai_rate": 0.9279437609841827,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 1,
+            "old_ai_count": 568,
+            "old_ai_rate": 0.9982425307557118,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 160,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 1,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 3,
+            "old_ai_count": 566,
+            "old_ai_rate": 0.9947275922671354,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 459,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 5,
+            "old_ai_count": 454,
+            "old_ai_rate": 0.9891067538126361,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 1090,
+          "new_ai_count": 8,
+          "new_ai_rate": 0.0010601643254704478,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 1098,
+          "old_ai_rate": 0.14550755367081897,
+          "parents": 7546
+        }
+      },
+      "q75": {
+        "ai": {
+          "ai_to_non_ai": 0,
+          "new_ai_count": 4583,
+          "new_ai_rate": 0.9973884657236126,
+          "non_ai_to_ai": 108,
+          "old_ai_count": 4475,
+          "old_ai_rate": 0.9738846572361263,
+          "parents": 4595
+        },
+        "by_source": {
+          "0:MIDD:Hynix_SL846": {
+            "ai_to_non_ai": 4,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 4,
+            "old_ai_rate": 0.031496062992125984,
+            "parents": 127
+          },
+          "0:MIDD:ISOCELL_3P9": {
+            "ai_to_non_ai": 3,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 3,
+            "old_ai_rate": 0.0234375,
+            "parents": 128
+          },
+          "0:MIDD:OmniVision_OV32A": {
+            "ai_to_non_ai": 8,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 8,
+            "old_ai_rate": 0.0625,
+            "parents": 128
+          },
+          "0:MIDD:Sony_IMX258": {
+            "ai_to_non_ai": 8,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 8,
+            "old_ai_rate": 0.0625,
+            "parents": 128
+          },
+          "0:SCIMD-17": {
+            "ai_to_non_ai": 221,
+            "new_ai_count": 5,
+            "new_ai_rate": 0.0029411764705882353,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 226,
+            "old_ai_rate": 0.13294117647058823,
+            "parents": 1700
+          },
+          "0:e32:csafe-mcsidb-iphone14": {
+            "ai_to_non_ai": 11,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 11,
+            "old_ai_rate": 0.06875,
+            "parents": 160
+          },
+          "0:e32:csafe-mcsidb-s21": {
+            "ai_to_non_ai": 37,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 37,
+            "old_ai_rate": 0.03189655172413793,
+            "parents": 1160
+          },
+          "0:e32:forchheim-fodb": {
+            "ai_to_non_ai": 58,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 58,
+            "old_ai_rate": 0.05025996533795494,
+            "parents": 1154
+          },
+          "0:e32:vision-base-native": {
+            "ai_to_non_ai": 48,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 48,
+            "old_ai_rate": 0.042105263157894736,
+            "parents": 1140
+          },
+          "0:e36:device_001": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.01,
+            "parents": 100
+          },
+          "0:e36:device_002": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_003": {
+            "ai_to_non_ai": 2,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 2,
+            "old_ai_rate": 0.02,
+            "parents": 100
+          },
+          "0:e36:device_005": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 0,
+            "old_ai_rate": 0.0,
+            "parents": 100
+          },
+          "0:e36:device_009": {
+            "ai_to_non_ai": 1,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 1,
+            "old_ai_rate": 0.014084507042253521,
+            "parents": 71
+          },
+          "0:rr:rrdataset_real_pool": {
+            "ai_to_non_ai": 587,
+            "new_ai_count": 0,
+            "new_ai_rate": 0.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 587,
+            "old_ai_rate": 0.4696,
+            "parents": 1250
+          },
+          "1:e32:communityforensics-ai-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 11,
+            "old_ai_count": 558,
+            "old_ai_rate": 0.9806678383128296,
+            "parents": 569
+          },
+          "1:e32:flux2-klein-9b": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 563,
+            "new_ai_rate": 0.9894551845342706,
+            "non_ai_to_ai": 32,
+            "old_ai_count": 531,
+            "old_ai_rate": 0.9332161687170475,
+            "parents": 569
+          },
+          "1:e32:gpt-image-1": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 563,
+            "new_ai_rate": 0.9894551845342706,
+            "non_ai_to_ai": 41,
+            "old_ai_count": 522,
+            "old_ai_rate": 0.9173989455184535,
+            "parents": 569
+          },
+          "1:e32:nano-banana-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 6,
+            "old_ai_count": 563,
+            "old_ai_rate": 0.9894551845342706,
+            "parents": 569
+          },
+          "1:e32:nano-banana-pro-ash-local": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 160,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 1,
+            "old_ai_count": 159,
+            "old_ai_rate": 0.99375,
+            "parents": 160
+          },
+          "1:e32:qwen-image-2512": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 569,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 4,
+            "old_ai_count": 565,
+            "old_ai_rate": 0.9929701230228472,
+            "parents": 569
+          },
+          "1:e36:FLUX.2_max": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:GLM-Image": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Qwen-Image-2.0-pro": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:Seedream-5.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:gpt-image-2": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:e36:nano-banana-2.0": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 80,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 80,
+            "old_ai_rate": 1.0,
+            "parents": 80
+          },
+          "1:rr:culture_and_religion": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 105,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 105,
+            "old_ai_rate": 1.0,
+            "parents": 105
+          },
+          "1:rr:everyday_life": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 459,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 13,
+            "old_ai_count": 446,
+            "old_ai_rate": 0.971677559912854,
+            "parents": 459
+          },
+          "1:rr:labor_and_production": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 114,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 114,
+            "old_ai_rate": 1.0,
+            "parents": 114
+          },
+          "1:rr:medical_and_public_health": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 102,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 102,
+            "old_ai_rate": 1.0,
+            "parents": 102
+          },
+          "1:rr:natural_disasters_and_accidents": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 113,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 113,
+            "old_ai_rate": 1.0,
+            "parents": 113
+          },
+          "1:rr:political_and_social_events": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 93,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 93,
+            "old_ai_rate": 1.0,
+            "parents": 93
+          },
+          "1:rr:war_and_conflict": {
+            "ai_to_non_ai": 0,
+            "new_ai_count": 124,
+            "new_ai_rate": 1.0,
+            "non_ai_to_ai": 0,
+            "old_ai_count": 124,
+            "old_ai_rate": 1.0,
+            "parents": 124
+          }
+        },
+        "real": {
+          "ai_to_non_ai": 989,
+          "new_ai_count": 5,
+          "new_ai_rate": 0.0006626027034190299,
+          "non_ai_to_ai": 0,
+          "old_ai_count": 994,
+          "old_ai_rate": 0.13172541743970315,
+          "parents": 7546
+        }
+      }
+    },
+    "independent_quality_claim": false,
+    "misses_by_condition": {
+      "assigned_transport": 0,
+      "clean": 0,
+      "q75": 0
+    },
+    "new_ai_miss_parents": 0,
+    "new_ai_miss_views": 0,
+    "parents": 12141,
+    "passes_train_retention": true,
+    "promotion_allowed": false,
+    "scope": "Necessary TRAIN replay condition only; no unseen-data guarantee. New AI rescues cannot cancel previously caught AI losses.",
+    "state": "pass_train_retention",
+    "views": 36423
+  }
+}

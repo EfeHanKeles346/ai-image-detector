@@ -44,7 +44,7 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E82 complete; E83 constrained fit registered (2026-09-13)
+## Current checkpoint — E83 TRAIN/runtime passed; consumed DEV registered (2026-09-13)
 
 The goal remains unmet. E80/E81 preserve all E43 TRAIN AI logits and new-miss count0.
 E81 old-REAL FPR8.54%/8.54%/8.33% passes10%, but RR32.24%/33.52%/31.84% fails20%
@@ -55,10 +55,10 @@ Both candidates rejected; runtime/DEV/E49 not run. No hyperparameter or cutoff s
 E79 complete:12,141x3x1640 forensic features,34 source replays exact. First attempt hit9000s;
 resume completed80 missing parents in412.623s. Total loops exceed9412.623s plus setup.
 E82 completed its supervised nonlinear representation in the exact E80 multimodal coordinates.
-E83 is frozen for one constrained head fit using the unchanged E81 objective. Prior RBF/bilinear/REAL-only
+E83 passed its one constrained fit and full runtime screen. One consumed E66 comparison is frozen. Prior RBF/bilinear/REAL-only
 AE attempts are already recorded; this must not be presented as the first nonlinear study.
 
-817 Python tests pass. RR upstream lineage unresolved; no new COCO admission or independent
+819 Python tests pass. RR upstream lineage unresolved; no new COCO admission or independent
 final claim. E43/serving unchanged. No30-minute automation; MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
@@ -5588,3 +5588,21 @@ logit protection, correct-REAL protection, all60 TRAIN metric checks and full ba
 runtime replay remain unchanged. No rank, seed, weight, margin or cutoff sweep. Only a
 complete TRAIN/runtime pass permits a separately frozen consumed E66 DEV comparison.
 817 Python tests pass; one existing Starlette/httpx deprecation. E49 remains unopened.
+
+
+### E83 full TRAIN/runtime pass; consumed DEV registered (2026-09-13)
+
+One53-iteration fit completed in138.586s including replay. All60 fixed TRAIN numeric
+gates, population/sensor budgets and zero-new-AI/REAL guards pass. Old-REAL FPR
+0.113717%/0.113717%/0.071073%; expanded0.106016%/0.106016%/0.066260%; new MIDD0%.
+AI recall99.847661%/99.825898%/99.738847%. All13,785 AI logits protected; minimum
+fit shift2.78e-16. Runtime batch8 on all36,423 views: max score error5.67056e-7, zero
+decision changes at both cuts, minimum AI shift-8.88e-16, pass. Solver violation1.38e-10.
+These are resubstitution results after supervised E82 learning, not unseen-image accuracy.
+
+Candidate SHA256 `d4c7d644de0e59cda8dda0899e30860d56991530ab759f5525ea9c708b0dbd1a`. No E49 reads or serving change.
+One consumed E66 development comparison is now frozen: `08a2451de42642d8163738e5a96d16153a3c3f480025d4a13b316c80f9c90c9b`. Same640 image/transport
+views, all20 fixed numeric gates, zero new E43-caught AI losses per source/condition and
+non-increased REAL FPR; no training or cut adjustment. E70/E71 already consumed this set.
+DINO/CLIP/DEAR features will be saved externally with image/order/contract/DEVELOPMENT
+bindings to avoid repeated expensive extraction; never eligible for TRAIN. 819 tests pass.

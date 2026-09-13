@@ -13,7 +13,7 @@ identify concentrated RR errors and increased confidence on some remaining mista
 DEAR-r features are complete for all12,141 TRAIN parents with exact source replays. E80's
 386-coordinate fit preserves TRAIN AI and passes pooled REAL10% but fails worst-source
 and covered-accuracy targets. E81 further lowers RR errors to31.84–33.52% while preserving E43 TRAIN AI, but still
-fails source/accuracy targets. E82 supervised nonlinear features are complete; E83 is registered under the same final guards. No E49 access or serving change.
+fails source/accuracy targets. E83 passes full TRAIN/runtime guards with old-REAL FPR0.07–0.11%; its separate consumed DEV comparison is registered. No E49 access or serving change.
 Old E59 fits remain paused; E71 reused only verified cache under a separate contract.
 815 Python tests pass; the existing web dependency audit remains failing.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
