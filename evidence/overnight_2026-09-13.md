@@ -3,7 +3,7 @@
 The target remains unmet. E43 and serving are unchanged. E70/E71 passed TRAIN but failed
 separate consumed E66 development screens. E73/E74/E76/E77 failed TRAIN. No overnight
 candidate has opened E49 or qualified for promotion. E79 completed frozen DEAR-r
-features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 also failed source/selective TRAIN guards.
+features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 also failed source/selective TRAIN guards. E82 is registered to learn supervised nonlinear features.
 
 [E77 sonrası sonuç grafiği](overnight_progress_2026-09-13.png) · [Vektör sürümü](overnight_progress_2026-09-13.svg)
 
@@ -75,11 +75,17 @@ no previously correct REAL may become wrong. Old/new/expanded REAL slices remain
 | E77 old REAL | 10.96% | 12.38% | 10.39% | Failed all10% guards |
 | E77 expanded REAL | 10.30% | 11.65% | 9.75% | Only pooled Q75 passed |
 | E77 new MIDD | 1.17% | 1.57% | 0.98% | Passed slice/sensor guards |
+| E80 old REAL | 8.80% | 9.79% | 8.61% | Pooled pass; full TRAIN failed |
+| E80 expanded REAL | 8.24% | 9.21% | 8.07% | Pooled pass; source/selective failed |
+| E80 new MIDD | 0.59% | 1.17% | 0.59% | Passed slice/sensor guards |
+| E81 old REAL | 8.54% | 8.54% | 8.33% | Pooled pass; full TRAIN failed |
+| E81 expanded REAL | 8.00% | 8.07% | 7.82% | Pooled pass; source/selective failed |
+| E81 new MIDD | 0.59% | 1.57% | 0.78% | Passed slice/sensor guards |
 
-Both introduced zero new AI misses/REAL errors. E76 isolates data addition to the exact
+All four introduced zero new E43 AI misses/REAL errors. E76 isolates data addition to the exact
 E74 map; new cameras were easier and did not solve old hard REAL. E77 adds REAL-only
 CLIP reconstruction residuals: fixed100-epoch AE, L1 .79261→.54066, serialized features
-exact. Reconstruction loss is not detector quality. No DEV/E49 after either failed fit.
+exact. Reconstruction loss is not detector quality. No DEV/E49 after any failed fit.
 [E76 result](e76_fit.json), [E77 result](e77_fit.json).
 
 E77's [full TRAIN operating-point audit](e77_train_operating_point.json) finds expanded
@@ -177,7 +183,7 @@ refuses failed TRAIN, preserves prior E43 pixels/scores/two-cut decisions, and r
 all20 numeric DEV gates plus zero newly missed AI per source/condition. E66 remains
 consumed and dependent, never fresh final. E49 remains closed until that separate pass.
 
-811 Python tests pass (engineering evidence, not detection quality). The existing
+815 Python tests pass (engineering evidence, not detection quality). The existing
 Starlette/httpx deprecation remains. Completed CI34732736214 passed Python, web lint,
 type checks and tests; the existing web dependency audit failed. Raw images/features/
 weights stay external; code, compact evidence and MD checkpoints are committed/pushed.
@@ -196,3 +202,14 @@ two gates fail in all6 TRAIN cells. E80's assigned AI recall99.0424% becomes98.9
 E43 reference retention still passes. No runtime/DEV/E49. [E81 receipt](e81_fit.json).
 Next hypothesis: supervised nonlinear features on the existing frozen multimodal map;
 separate registration required, no old-candidate or threshold retuning.
+
+
+## Registered E82 representation
+
+One385→256→64→1 ReLU MLP learns binary TRAIN features from exact E80 coordinates.
+Class/source/parent balance, baseline hard REAL2x, class mass.5; AdamW2e-4/decay1e-4,
+100 epochs/batch256/seed82. No dropout or early stopping. Freeze64 latent features with
+CPUfloat64 inference and all-TRAIN scaling; require saved/batch parity and complete roles.
+815 Python tests pass. This is representation learning only; E83 would separately fit450
+constrained coefficients with the unchanged E81 objective and all acceptance/runtime guards.
+No DEV/final pixels or scores, data download, source-role change or quality claim.

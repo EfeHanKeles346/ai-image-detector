@@ -7564,3 +7564,44 @@ Gaussian RBFs in DINO-only PCA64; E70/E74 tested bilinear maps; E77 learned a RE
 reconstruction residual. Next investigate a supervised nonlinear feature learner on the
 complete frozen E80 multimodal coordinates, followed by the same constrained E81 head.
 This differs from those prior mechanisms and needs its own representation/fit contracts.
+
+
+### E82 supervised nonlinear representation planned (2026-09-13)
+
+E81's measured RR31.84–33.52% and covered-accuracy failure motivate a learned class-
+discriminative feature map. Prior E63 RBFs, E70/E74 bilinear maps and E77 REAL-only AE are
+not this experiment. Use all12,141 admitted TRAIN parents/36,423 views in the exact frozen
+E80 coordinates, excluding intercept (385 inputs). No new image inference/download, no
+E66/E49 or other protected features. StandardScaler fits all TRAIN inputs without labels.
+
+Train one385→256→64→1 ReLU MLP with binary REAL/AI labels, CPU seed82 initialization,
+AdamW2e-4/betas(.9,.999)/eps1e-8/weight_decay1e-4/foreachFalse, MPSfloat32 if available.
+Fixed100 epochs/batch256, NumPy SeedSequence[82,epoch] permutations, no dropout, early
+stopping, architecture/seed/epoch/weight sweep. Use existing class/source/parent-balanced
+weights, E43 baseline-false REAL2x then class mass.5, global mean weight1; never renormalize
+within mini-batches. Classifier logits are used for TRAIN BCE only; they are not a deployed
+detector or an AI-retention claim. This is a local engineering hypothesis, not a paper reproduction.
+
+Save complete model/optimizer checkpoints every10 epochs, validate binding/weights/trace
+on same-recipe resume. Require final weighted TRAIN BCE improvement and finite weights.
+Freeze the64 latent ReLU features; their full affine span already contains the learned
+classifier logit, so do not append a redundant scalar. Evaluate saved float32 weights in
+CPUfloat64 with float64 input normalization; fit latent StandardScaler on all TRAIN. This
+inference precision is specified before training and checked for exact saved replay plus
+all-view batch8 feature error<=1e-10; it does not fix or claim parity for the older AE stage.
+No PCA/rank selection. Output12141x3x64 with parent/role/contract/input-map bindings.
+Budget3600s per execution with AC/mount/free-space checks; no intermediate detector selection.
+
+Only complete verified E82 features permit a separate E83 fit: exact E80 coordinates385
+plus new64 plus intercept =450 zero-start coefficients, same E81 worst-REAL objective,
+all13,785 AI logit and correct-REAL guards, all E80 population/numeric/selective/runtime
+checks. No new data/cut and no DEV/final before preceding gates pass. A supervised feature
+learner can overfit TRAIN; only subsequent external screening can assess transfer.
+
+
+E82 representation contract frozen before learning: `64a1d4fd2c8efaad5792d731345cc3795454d1374e1625f68292087bed5a0fa1`. Four
+new tests cover global class/hard-REAL weighting, latent affine-span/logit preservation,
+CPUfloat64 saved/batch replay, fixed epoch order/checkpoint binding, and exact next-step
+AdamW checkpoint restoration. Full suite815 passed, existing Starlette/httpx deprecation.
+Input-map replay must match frozen E80 population metrics before training. No E82 trained
+artifact/quality result yet; prepare/run only this registered100-epoch representation.
