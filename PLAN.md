@@ -26,7 +26,7 @@ User explicitly requests continuous active-session work, data acquisition when n
 experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
 Do not create30-minute polling/heartbeat automation. No promise of execution after an app or
 session interruption. E66 SIDD Small6.62GB acquisition and grouped REAL+AI admission are complete;
-E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 feature extraction is active.
+E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 features are complete; E76 expanded fit is active.
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
@@ -44,16 +44,15 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E75 features active; E76 data-effect fit prepared (2026-09-13)
+## Current checkpoint — E75 complete; E76 expanded TRAIN fit active (2026-09-13)
 
 E71 consumed DEV REAL FPR34.375%/38.125% improves on42.5% but fails the10% target.
 Aggregate AI recall unchanged conceals2/1 newly missed AI views;12/20 numeric gates.
 No E49 regression or promotion. E72 downloaded512 score-blind MIDD TRAIN originals,
 3.82GB;511 admitted after151,485-reference audit with zero cross matches and one internal duplicate.
 E73 linear and E74 bilinear full-AI-confidence fits failed all TRAIN REAL10% guards;
-no DEV/E49 permitted. E75 old-encoder parity is exact and511 new TRAIN features are being
-extracted. E76 keeps the E74 map/AI constraints and adds only audited MIDD data; code and
-population-specific guards are fixed/tested, fit contract waits for features.779 tests pass.
+no DEV/E49 permitted. E75 old-encoder parity is exact and511 new TRAIN features are complete. E76 keeps the E74 map/AI constraints and adds only audited MIDD data; code and
+population-specific guards are fixed/tested, fit contract frozen and one fit active.779 tests pass.
 MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
@@ -5266,3 +5265,18 @@ could learn a nonlinear manifold from existing CLIP features; exact architecture
 must be separately registered. DEAR is a native-resolution forensic-expert alternative;
 inspect its released weight terms and resource requirements before any acquisition/scoring.
 MAFL/ACEF are heavier training approaches, not automatic next runs. No new fit selected yet.
+
+
+### E75 MIDD TRAIN features complete (2026-09-13)
+
+All511 admitted parents x3 conditions completed: DINO3072 and CLIP1536,778.72s.
+Thirty historical source-parent replays in all3 conditions had exactly zero E43 score
+and CLIP feature error, zero decisions changed. New MIDD classifier scores0, DEV/final
+rows read0, downloads0. Feature SHA`99de60c680acefea301fb43c468d71b43912b025411da57067a1218e07ae28cb`;
+contract SHA`d6bea64e830b758cd8f44a06a4b147b43fda647d40049778d8280dda16624e3e`.
+Full arrays/511 immutable source-bound chunks stay external under e75. Proceed to freeze
+and run the already prepared single E76 data-expansion fit, preserving all AI and every gate.
+
+E76 expanded TRAIN fit contract frozen for12,141 parents. The single fixed-map fit
+is active; old and new REAL slices have separate gates. No thermal/performance warning
+recorded, AC80%. E75 completion evidence checkpointed; no detector improvement claimed yet.

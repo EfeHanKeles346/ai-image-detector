@@ -1,0 +1,48 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "ai_parents": 4595,
+  "ai_views": 13785,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "constraints": "Unchanged E73 non-decreasing logits for all13,785 AI TRAIN views; E64 correct-REAL decision guard applies to old and new REAL views. No margin/weight/cut sweep.",
+  "contract_sha256": "ce4483071bcb5f9e5944d9976d495f212588f8b4b6c8ed993de2c86af1c64f35",
+  "dev_consumed_by": [
+    "E70",
+    "E71"
+  ],
+  "dev_features_or_scores_in_fit": 0,
+  "dev_fresh_or_independent": false,
+  "downloads": 0,
+  "e49_read_allowed": false,
+  "evaluation": "Only complete TRAIN pass permits one separately registered consumed E66 screen with all20 numeric gates and zero new AI misses per source/condition; no E49 until that screen passes.",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_acquisition.py": "ce4eeb814de773599d2026666b733a0cea08afa1fd24689171f7824ea3f72421",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e73_fit.py": "8e6c9f628d177e7c4d67062f10426bbb6a8bc1ece25d4fc137712be6febb51ba",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e74_model.py": "f591f3acaaed04e261d61cac5c8b0da1c02dac340cd8cb491f8c2c958f1734dc",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e76_fit.py": "4c552ca70b79dd5a116cbead116e1d97f84c53f70c2c86f2ce43e812d1f5205b",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/training_weights.py": "edaa0f99ea12eab27473c931e1bfb152785025af4a730f70170adcfead9d384e",
+    "/Volumes/LaCie/pixelproof-datasets/e72/training_manifest.json": "a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e",
+    "/Volumes/LaCie/pixelproof-datasets/e74/correction.npz": "cadf88f4fc3e3030495bc9cbdc0c74a6d2ffb205091fcebaac063dbf731eb05a",
+    "/Volumes/LaCie/pixelproof-datasets/e74/fit.json": "f0b81c09aa0a219e3df99c81700ffedaa85321b2d969c6f6486d627fa594455e",
+    "/Volumes/LaCie/pixelproof-datasets/e75/features.json": "ded11825b0fc6f150a60dec277de8e7cd8bc4a47ee65b6d294e05600d502654f",
+    "/Volumes/LaCie/pixelproof-datasets/e75/features_contract.json": "d6bea64e830b758cd8f44a06a4b147b43fda647d40049778d8280dda16624e3e",
+    "/Volumes/LaCie/pixelproof-datasets/e75/midd_features.npz": "99de60c680acefea301fb43c468d71b43912b025411da57067a1218e07ae28cb"
+  },
+  "limits": "Research-only MIDD license; unknown scene independence. Whole publisher TRAIN only. TRAIN score protection is not external confidence/recall evidence.",
+  "max_seconds": 1800,
+  "new_parents": 511,
+  "objective": "Unchanged E64 cut-centered BCE, class/source/parent balance, hard REAL2x, class mass.5, L2.01.",
+  "old_parents": 11630,
+  "optimizer": "SLSQP200,ftol1e-9,CPUfloat64/two threads,zero start,final iterate only.",
+  "parents": 12141,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "real_parents": 7546,
+  "representation": "Exact E74 original64/CLIP64/bilinear128 coordinates and old-TRAIN scales, no refit; discard correction weights, zero257 coefficients. Only new input is511 audited MIDD TRAIN parents.",
+  "state": "E76_fixed_map_MIDD_expanded_TRAIN_fit_registered",
+  "train_guard": "Solver success/violation<=1e-8, minimum AI shift>=-1e-8, exact saved replay, zero new AI/REAL errors. All3 conditions: <=10% REAL FPR in old/expanded/new-MIDD slices, <=20% worst MIDD sensor."
+}

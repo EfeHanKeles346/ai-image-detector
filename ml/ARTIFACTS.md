@@ -241,3 +241,14 @@ zero new AI/REAL errors, no DEV/E49 allowed. Artifact SHA`147551945c7fdb9843cd93
 
 E74 rejected at TRAIN: REAL FPR13.29%/14.36%/12.14%, no new AI/REAL errors.
 No DEV/E49 scoring or promotion; candidate SHA`cadf88f4fc3e3030495bc9cbdc0c74a6d2ffb205091fcebaac063dbf731eb05a`.
+
+
+### E75 MIDD TRAIN features complete (2026-09-13)
+
+All511 admitted parents x3 conditions completed: DINO3072 and CLIP1536,778.72s.
+Thirty historical source-parent replays in all3 conditions had exactly zero E43 score
+and CLIP feature error, zero decisions changed. New MIDD classifier scores0, DEV/final
+rows read0, downloads0. Feature SHA`99de60c680acefea301fb43c468d71b43912b025411da57067a1218e07ae28cb`;
+contract SHA`d6bea64e830b758cd8f44a06a4b147b43fda647d40049778d8280dda16624e3e`.
+Full arrays/511 immutable source-bound chunks stay external under e75. Proceed to freeze
+and run the already prepared single E76 data-expansion fit, preserving all AI and every gate.

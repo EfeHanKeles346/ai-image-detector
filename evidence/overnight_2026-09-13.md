@@ -3,8 +3,8 @@
 The target remains unmet. E43 and serving are unchanged. E70 and E71 passed TRAIN but
 failed separate consumed E66 development comparisons. E73/E74 stopped at failed TRAIN
 guards. No overnight candidate has opened an E49 regression or qualified for promotion.
-E72 admitted511 new camera TRAIN observations; E75 is extracting their features, and E76
-is prepared to test the isolated effect of adding them.
+E72 admitted511 new camera TRAIN observations; E75 completed their features, and E76
+is running its one registered data-expansion fit.
 
 ## Comparable TRAIN results
 
@@ -79,7 +79,7 @@ protection without changing thresholds; their failures are preserved.
   provenance is publisher metadata, scene independence unverified. Whole MIDD publisher
   is TRAIN only, including unselected/test/denoised members. CC BY-NC-SA4.0 research terms.
   [Admission](e72_audit.json), [download](e72_download.json).
-- **E75 features active:**all511 admitted MIDD observations, frozen DINO3072/CLIP1536 in the
+- **E75 features complete (778.72s):**all511 admitted MIDD observations, frozen DINO3072/CLIP1536 in the
   same three TRAIN conditions. Old30-source replay passed with exactly zero E43-score and
   CLIP-feature error; no decision changes. New MIDD classifier scores remain unopened.
 - **Leads only:**SIDL metadata has1605 RAW records/253 scene ids versus advertised300 scenes;
@@ -94,7 +94,7 @@ E76 adds all511 audited MIDD observations to unchanged E54 TRAIN:12,141 parents,
 resets257 correction weights, and retains E73 full-AI-confidence constraints. No parameter
 sweep. In each condition, old/expanded/new-MIDD REAL FPR must each be<=10%, with worst
 MIDD sensor<=20%; solver, complete AI replay and serialization guards also apply.
-Only complete E75 features permit fit registration. No DEV after a failed TRAIN gate.
+E75 features are complete; freeze and run the one prepared E76 fit. No DEV after a failed TRAIN gate.
 
 779 Python tests pass. These verify engineering behavior, not detection quality. The
 existing Starlette/httpx deprecation remains. Code, compact evidence and relevant MD

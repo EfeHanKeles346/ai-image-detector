@@ -1,0 +1,26 @@
+{
+  "backbone_sha256": "04d27f3400d059fc0cfd7d17dd1909a75bf3ea8fb3eeb48b97cb99e57ee20081",
+  "clip_max_feature_error": 0.0,
+  "clip_shape": [
+    511,
+    3,
+    1536
+  ],
+  "contract_sha256": "d6bea64e830b758cd8f44a06a4b147b43fda647d40049778d8280dda16624e3e",
+  "dev_or_final_rows_read": 0,
+  "dino_shape": [
+    511,
+    3,
+    3072
+  ],
+  "downloads": 0,
+  "feature_sha256": "99de60c680acefea301fb43c468d71b43912b025411da57067a1218e07ae28cb",
+  "new_MIDD_classifier_scores": 0,
+  "parents": 511,
+  "parity_parents": 30,
+  "reference_decision_changes": 0,
+  "reference_max_score_error": 0.0,
+  "report_sha256": "ded11825b0fc6f150a60dec277de8e7cd8bc4a47ee65b6d294e05600d502654f",
+  "seconds": 778.718865999952,
+  "state": "E75_MIDD_TRAIN_DINO_CLIP_features_complete"
+}
