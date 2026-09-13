@@ -52,6 +52,8 @@ one newly missed original AI and three Q75 numeric failures reject the candidate
 Read-only component replay is exact; learned REAL correction weakens/reverses under Q75.
 E84B is extracting the exact social1080px-then-JPEG75 view to every existing TRAIN parent,
 keeping all old conditions and AI protection. No DEV/final admission or cutoff change.
+E87/E88 separately acquired and audited128 SID RAW originals for future research TRAIN;
+zero matches/failures against151,996 references. They are not part of E85/E86.
 
 Metadata-only transport inventory is complete: the1080 cap potentially resizes4455/7546
 REAL parents (59.04%) and1046/4595 AI parents (22.76%). Recorded formats are strongly
@@ -5886,3 +5888,23 @@ Sony00108 and Fuji00120. Both open as recognizable scenes; no claim of authentic
 from appearance, no brightness selection, settings change, filtering or scores. Their
 actual rendered sizes4256x2848 and6032x4032 differ from commonly quoted cropped SID
 sizes; the pinned full-size LibRaw output is the audited input, not an inferred crop.
+
+
+### E88 SID audit complete:128 additional research TRAIN originals (2026-09-13)
+
+All128 RAW originals decoded,64 per camera, in860.226s including overlap checks.
+Against151,996 protected/reference records: zero original-RAW hash matches, zero rendered
+body/RGB/perceptual cross-matches, zero internal similar pairs, zero failures/quarantine.
+All128 admitted to a separate research TRAIN manifest; no quota refill. Full-size output
+64x4256x2848 Sony and64x6032x4032 Fuji. No detector score, independent-final admission,
+model fitting or serving change. Filename groups are not proven independent scenes;
+whole SID publisher stays exclusively research TRAIN, with recorded source/rights limits.
+
+Audit SHA256`49c2e9fa930d0c85eff5d1b871351aa62f73c6ba79317bf19a7aa3384bdef6af`;
+manifest SHA256`73545e7a9404e3c4f83ee2f6affd46c6ae2e2bf75ee37db0e8fd56dab11c5d83`.
+External `e88/training_manifest.json` keeps original RAW identities and derived PNG hashes.
+Receipt `evidence/e88_audit.json`. This dataset is available for a separately registered
+future coverage extension; active E84B and E85/E86 still use their original12,141 parents.
+Next prepare a bounded, no-new-score four-condition encoder cache for the128 SID parents,
+reusing exact existing transforms/encoders. Do not compete with active E84B for GPU memory;
+finish the existing feature/model comparison before launching a second extraction/fit.

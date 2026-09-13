@@ -422,3 +422,10 @@ External `e83/dev_features.npz` SHA256
 `1201dad5a71f8077c32f3169bac661bf46784a23099e2ffd93279143e1e685be`,640 ordered
 DEVELOPMENT views, DINO3072/CLIP1536/DEAR1640; never eligible for TRAIN. Exact runtime
 score replay verified by read-only component diagnostic.
+
+
+### E88 prospective TRAIN coverage only (2026-09-13)
+
+128 SID original RAW captures passed the fixed decode/protected-overlap audit; no model
+has been fitted on them and no detector scores were created. Existing E84B/E85/E86
+populations and serving remain unchanged. This is source preparation, not a quality gain.

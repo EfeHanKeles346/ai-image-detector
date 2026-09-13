@@ -4,18 +4,17 @@ PixelProof is a research system that looks for evidence consistent with AI gener
 official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
 It never certifies that an image is real.
 
-**Research checkpoint (2026-09-13):** The target remains unmet. E70/E71 passed TRAIN
-but failed the consumed SIDD/local-AI development screen, including newly missed AI.
-E72 admitted511 audited camera TRAIN originals. E76/E77 preserve all TRAIN AI logits;
-E77's old-REAL FPR10.96%/12.38%/10.39% still fails TRAIN guards. Its source/slack audits
-identify concentrated RR errors and increased confidence on some remaining mistakes.
+**Research checkpoint (2026-09-13):** The target remains unmet. Latest E83 passes all
+TRAIN/runtime guards but fails consumed development: REAL false-AI0% original /13.75%
+socialQ75, AI recall98.75%/99.375%,17/20 numeric gates and one newly missed original AI.
+The aggregate AI gain does not satisfy the zero-new-loss requirement.
 
-DEAR-r features are complete for all12,141 TRAIN parents with exact source replays. E80's
-386-coordinate fit preserves TRAIN AI and passes pooled REAL10% but fails worst-source
-and covered-accuracy targets. E81 further lowers RR errors to31.84–33.52% while preserving E43 TRAIN AI, but still
-fails source/accuracy targets. E83 cuts consumed DEV REAL FPR to0%/13.75%, but one new AI miss and Q75 gates reject it. E84B passed parity/resource checks and is extracting matched TRAIN transport features. No E49 access or serving change.
-Old E59 fits remain paused; E71 reused only verified cache under a separate contract.
-815 Python tests pass; the existing web dependency audit remains failing.
+E84B passed parity/resource checks and is extracting exact social transport features for
+all12,141 existing TRAIN parents. The four-condition E85/E86 learner and constrained fit
+are prepared; no fit yet. Separately,128 original SID RAW captures passed the protected-
+overlap audit for possible future research TRAIN. They are not in the current E85/E86 data.
+E49 remains unopened in this overnight chain; serving/reference models stay unchanged.
+Old E59 fits remain paused.844 Python tests pass; the existing web dependency audit fails.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
 

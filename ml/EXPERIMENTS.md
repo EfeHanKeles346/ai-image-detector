@@ -6613,3 +6613,23 @@ sizes; the pinned full-size LibRaw output is the audited input, not an inferred 
 
 Full verification after conditional E86 regression preparation:844 Python tests pass
 in20.28s; one existing Starlette/httpx warning. No E86 regression stage executed.
+
+
+### E88 SID audit complete:128 additional research TRAIN originals (2026-09-13)
+
+All128 RAW originals decoded,64 per camera, in860.226s including overlap checks.
+Against151,996 protected/reference records: zero original-RAW hash matches, zero rendered
+body/RGB/perceptual cross-matches, zero internal similar pairs, zero failures/quarantine.
+All128 admitted to a separate research TRAIN manifest; no quota refill. Full-size output
+64x4256x2848 Sony and64x6032x4032 Fuji. No detector score, independent-final admission,
+model fitting or serving change. Filename groups are not proven independent scenes;
+whole SID publisher stays exclusively research TRAIN, with recorded source/rights limits.
+
+Audit SHA256`49c2e9fa930d0c85eff5d1b871351aa62f73c6ba79317bf19a7aa3384bdef6af`;
+manifest SHA256`73545e7a9404e3c4f83ee2f6affd46c6ae2e2bf75ee37db0e8fd56dab11c5d83`.
+External `e88/training_manifest.json` keeps original RAW identities and derived PNG hashes.
+Receipt `evidence/e88_audit.json`. This dataset is available for a separately registered
+future coverage extension; active E84B and E85/E86 still use their original12,141 parents.
+Next prepare a bounded, no-new-score four-condition encoder cache for the128 SID parents,
+reusing exact existing transforms/encoders. Do not compete with active E84B for GPU memory;
+finish the existing feature/model comparison before launching a second extraction/fit.

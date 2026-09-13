@@ -1,0 +1,28 @@
+{
+  "admitted": 128,
+  "camera_counts": {
+    "Fuji": 64,
+    "Sony": 64
+  },
+  "contract_sha256": "f4bab7531e2859e7a33540f59f5994a18526f75ee7ddbedd62476e70c771c32a",
+  "cross_match_observations": 0,
+  "decode_failures": [],
+  "dimensions": {
+    "4256x2848": 64,
+    "6032x4032": 64
+  },
+  "duplicate_members_removed": 0,
+  "independent_final_admitted": false,
+  "internal_match_pairs": 0,
+  "limits": "Incomplete scene detection; filename identities and perceptual screening cannot prove independent scenes or distinguish all shared scenes across cameras. Older two-camera low-light coverage only. Whole SID publisher research TRAIN only, including unselected/upstream validation/test; never fresh DEV/final. Existing E84B/E85/E86 inputs stay unchanged. No guarantee of performance or AI retention.",
+  "manifest_sha256": "73545e7a9404e3c4f83ee2f6affd46c6ae2e2bf75ee37db0e8fd56dab11c5d83",
+  "model_scores": 0,
+  "quarantined": 0,
+  "raw_cross_match_observations": 0,
+  "reference_records": 151996,
+  "report_sha256": "49c2e9fa930d0c85eff5d1b871351aa62f73c6ba79317bf19a7aa3384bdef6af",
+  "seconds": 860.2262108339928,
+  "selected": 128,
+  "state": "E88_SID_RAW_TRAIN_audit_complete",
+  "training_allowed": true
+}
