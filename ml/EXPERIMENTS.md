@@ -6329,3 +6329,14 @@ views, all20 fixed numeric gates, zero new E43-caught AI losses per source/condi
 non-increased REAL FPR; no training or cut adjustment. E70/E71 already consumed this set.
 DINO/CLIP/DEAR features will be saved externally with image/order/contract/DEVELOPMENT
 bindings to avoid repeated expensive extraction; never eligible for TRAIN. 819 tests pass.
+
+
+### E83 analysis tools prepared while DEV runs (2026-09-13)
+
+Prepared a separate aggregate-only E83 progress plot, preserving the historical E77
+snapshot. It will render only after the complete DEV report exists. Also prepared a
+conditional read-only component diagnostic: only a completed rejected E83 DEV report
+can freeze it. It verifies all640 cached DEVELOPMENT identities/roles and batch8 locked
+score replay before grouping the eight additive logit components by source/condition and
+paired transition. No block-removal ablation, image selection, fit or cutoff choice.
+Role/order/hash rejection test passes. Neither tool has yet read unfinished DEV results.

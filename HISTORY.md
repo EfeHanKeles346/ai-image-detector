@@ -7639,3 +7639,36 @@ views, all20 fixed numeric gates, zero new E43-caught AI losses per source/condi
 non-increased REAL FPR; no training or cut adjustment. E70/E71 already consumed this set.
 DINO/CLIP/DEAR features will be saved externally with image/order/contract/DEVELOPMENT
 bindings to avoid repeated expensive extraction; never eligible for TRAIN. 819 tests pass.
+
+
+### E83 evaluation-time generalization literature review (2026-09-13)
+
+- [Supervised contrastive few-shot detection](https://arxiv.org/html/2511.16541v1) uses
+  an embedding learner followed by k-NN with150 support examples per generator. This is
+  target-generator adaptation, so its reported gains do not justify admitting E66/E49
+  labels into our model. No support-set download or test-derived retrieval classifier.
+- [FAIR](https://arxiv.org/html/2607.22087v1) supplies scene-composition features during
+  learning, then removes the auxiliary classifier columns at export. It requires a new
+  structural-feature extraction/training contract; existing CLS mean/std features cannot
+  be called that prior. No implementation or reproduction claim, no training-rank sweep.
+- [MAFL](https://arxiv.org/html/2604.12353v1) alternates bias-network and authenticity
+  optimization with entropy, alignment and label-reversal losses. The inspected text
+  does not establish that simply training a cached-feature adapter reproduces its full
+  recipe. Our source tags are partly class-confounded and RR categories are not verified
+  generator identities; a naive global source adversary could erase the target label.
+  The existing PLAN warning about label-confounded domain losses remains applicable.
+
+These are mechanism leads while the frozen E83 comparison runs, not a selected successor
+experiment or proof of the cause of any as-yet unmeasured E83 DEV error. No new model fit,
+new data, DEV role change or E49 read in this review.
+
+
+### E83 analysis tools prepared while DEV runs (2026-09-13)
+
+Prepared a separate aggregate-only E83 progress plot, preserving the historical E77
+snapshot. It will render only after the complete DEV report exists. Also prepared a
+conditional read-only component diagnostic: only a completed rejected E83 DEV report
+can freeze it. It verifies all640 cached DEVELOPMENT identities/roles and batch8 locked
+score replay before grouping the eight additive logit components by source/condition and
+paired transition. No block-removal ablation, image selection, fit or cutoff choice.
+Role/order/hash rejection test passes. Neither tool has yet read unfinished DEV results.

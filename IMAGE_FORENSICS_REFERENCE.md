@@ -578,3 +578,25 @@ is permitted. E80's pre-fit limits now record this explicitly; representation, o
 AI guards and acceptance thresholds unchanged. Future clean benchmark claims need audited
 upstream membership or a demonstrably independent source. No authors contacted, new images
 read/downloaded, protected scores opened, or data-role reassignment performed in this review.
+
+
+### E83 evaluation-time generalization literature review (2026-09-13)
+
+- [Supervised contrastive few-shot detection](https://arxiv.org/html/2511.16541v1) uses
+  an embedding learner followed by k-NN with150 support examples per generator. This is
+  target-generator adaptation, so its reported gains do not justify admitting E66/E49
+  labels into our model. No support-set download or test-derived retrieval classifier.
+- [FAIR](https://arxiv.org/html/2607.22087v1) supplies scene-composition features during
+  learning, then removes the auxiliary classifier columns at export. It requires a new
+  structural-feature extraction/training contract; existing CLS mean/std features cannot
+  be called that prior. No implementation or reproduction claim, no training-rank sweep.
+- [MAFL](https://arxiv.org/html/2604.12353v1) alternates bias-network and authenticity
+  optimization with entropy, alignment and label-reversal losses. The inspected text
+  does not establish that simply training a cached-feature adapter reproduces its full
+  recipe. Our source tags are partly class-confounded and RR categories are not verified
+  generator identities; a naive global source adversary could erase the target label.
+  The existing PLAN warning about label-confounded domain losses remains applicable.
+
+These are mechanism leads while the frozen E83 comparison runs, not a selected successor
+experiment or proof of the cause of any as-yet unmeasured E83 DEV error. No new model fit,
+new data, DEV role change or E49 read in this review.
