@@ -58,7 +58,7 @@ but failed all three10% guards; no new AI misses or REAL errors. No DEV/E49. Nex
 DEAR-r94.37MB checkpoint verified; author/CPU/MPS numeric parity passes. Batch9
 projects2h7m and remains a failed2h resource probe. E79 explicitly allocates2.5h under
 user overnight authorization before image scoring, retains6GiB/numeric limits, and is extracting
-all12,141 TRAIN parents. Classifier head not executed; no protected pixels.802 Python tests pass.
+all12,141 TRAIN parents. Classifier head not executed; no protected pixels.803 Python tests pass.
 MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
@@ -5325,3 +5325,9 @@ Add all10 fixed numeric metric guards on old and expanded TRAIN in every conditi
 to existing E76 gates. E77 diagnostic showed a pooled Q75 pass can hide40%+ RR error
 and sub95% covered accuracy. No DEV until all TRAIN guards; no E49 until separate
 consumed DEV passes. E79 extraction remains active; no partial-feature fit.
+
+
+E80 runtime addition before fit freeze: provisional TRAIN pass must replay all views in
+batch8 with zero changes at both cuts, max score error<=1e-6 and all-AI shift>=-1e-8.
+E77 TRAIN visual diagnostic found a non-AI view only7.31e-9 below the AI cut; this is
+a numerical reproducibility guard, not a threshold adjustment or new label decision.

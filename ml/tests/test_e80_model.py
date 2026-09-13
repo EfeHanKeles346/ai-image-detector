@@ -71,3 +71,15 @@ def test_low_false_ai_does_not_hide_excessive_uncertainty():
             assert checks['pooled_real_false_ai_lte_0_10']
             assert not checks['automatic_coverage_gte_0_80'] and not checks['uncertain_rate_lte_0_20']
     with pytest.raises(ValueError,match='pairing'):full_training_gates(rows,scores[:-1],200)
+
+
+def test_tiny_numeric_error_cannot_hide_runtime_decision_flip():
+    from experiments.e80_fit import runtime_checks
+    labels=np.array([0,1]);shifts=np.zeros(2)
+    for cut in [m.AI_CUT,m.REAL_CUT]:
+        expected=np.array([cut-1e-10,.9]);actual=np.array([cut+1e-10,.9])
+        result=runtime_checks(expected,actual,shifts,labels)
+        assert result['max_score_error']<1e-6 and not result['passed']
+    expected=np.array([0.,.9])
+    assert runtime_checks(expected,expected,shifts,labels)['passed']
+    assert not runtime_checks(expected,expected,np.array([0.,-2e-8]),labels)['passed']

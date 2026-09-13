@@ -7333,3 +7333,30 @@ gates remain; this cannot make consumed E66 fresh.
 Consolidated the living overnight overview to remove obsolete current-state claims
 while retaining append-only history here. Completed GitHub CI34732736214 has successful
 Python, web lint/type/tests and the same existing failed web dependency audit.
+
+
+### E77 TRAIN-only visual diagnostic selection planned (2026-09-13)
+
+While E79 computes, inspect three E77 clean false-AI and three correct REAL examples
+from the RR TRAIN pool only. Within each bin choose the first three by
+SHA256(`E77_visual|parent_id`), not visual appeal or closeness to a desired narrative.
+Replay the full frozen E77 TRAIN feature matrix and verify its published FPR slices
+before selecting. Record selection first, then view original source images. No labels
+change, no exclusion, no DEV/final pixels and no new fit or threshold. Visual appearance
+cannot establish provenance or prove an image authentic.
+
+
+### E77 six-image visual review; E80 runtime parity guard prepared (2026-09-13)
+
+Viewed the six previously locked RR TRAIN examples: the false-AI bin has two posed color
+portraits and one crowded stage event; the non-AI bin has a monochrome close-up, an
+outdoor portrait on grass, and a low-resolution indoor portrait with a bird. Both bins
+contain portraits. This small outcome-conditioned sample cannot establish cause, prevalence
+or provenance and supports no portrait/monochrome exclusion rule. Labels/data unchanged;
+no person identities used. Selection/review receipts and reproducible selection code saved.
+
+Last non-AI example scores .07940195514935858, only7.31e-9 below AI cut; it is still
+research-uncertain, not a confident REAL decision. Before E80 freezes, add runtime checks
+after a provisional TRAIN pass: all views in batch8, max score error<=1e-6, zero decision
+changes at both cuts and all-AI minimum correction shift>=-1e-8. New test ensures tiny
+numeric error cannot hide a cut crossing. No cut or candidate recipe changed.

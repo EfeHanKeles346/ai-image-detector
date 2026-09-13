@@ -131,14 +131,17 @@ exact E77 original/CLIP/bilinear/REAL-residual320 coordinates;385 zero-start coe
 Keep the E64 objective, E73 full-AI-confidence constraints and all E76 population guards.
 Additionally require all10 numeric metric checks on old and expanded TRAIN in each of
 three conditions. The strengthened screen addresses the E77 audit above. No parameter,
-seed, rank or cut sweep; no fit from partial E79 features.
+seed, rank or cut sweep; no fit from partial E79 features. A provisional TRAIN pass must
+also replay every view at batch8 with zero changes at both cuts and unchanged AI confidence.
+The six-image TRAIN visual diagnostic found a non-AI example only7.31e-9 below the AI cut;
+this adds a reproducibility guard, with no label or threshold adjustment.
 
 The optional E80 consumed-E66 implementation is prepared but not frozen/executed. It
 refuses failed TRAIN, preserves prior E43 pixels/scores/two-cut decisions, and requires
 all20 numeric DEV gates plus zero newly missed AI per source/condition. E66 remains
 consumed and dependent, never fresh final. E49 remains closed until that separate pass.
 
-802 Python tests pass (engineering evidence, not detection quality). The existing
+803 Python tests pass (engineering evidence, not detection quality). The existing
 Starlette/httpx deprecation remains. Completed CI34732736214 passed Python, web lint,
 type checks and tests; the existing web dependency audit failed. Raw images/features/
 weights stay external; code, compact evidence and MD checkpoints are committed/pushed.

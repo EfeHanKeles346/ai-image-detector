@@ -14,6 +14,7 @@ if __name__=='__main__':
 import joblib
 import torch
 import numpy as np
+from scipy.special import expit
 from threadpoolctl import threadpool_limits
 from experiments import e80_model as model
 from experiments.e73_fit import fit_confidence
@@ -28,6 +29,17 @@ from pixelproof.retention_gate import check_train_retention
 ROOT=DATA_ROOT/'e80';EVIDENCE=ML_ROOT.parent/'evidence'
 CONTRACT=ROOT/'fit_contract.json';CANDIDATE=ROOT/'correction.npz';REPORT=ROOT/'fit.json'
 CONDITIONS=['clean','assigned_transport','q75']
+
+
+def runtime_checks(expected,actual,shifts,labels):
+    if expected.shape!=actual.shape or shifts.shape!=expected.shape or labels.shape!=expected.shape or \
+            not np.isfinite(expected).all() or not np.isfinite(actual).all() or not np.isfinite(shifts).all() or \
+            not np.any(labels==1):raise ValueError('complete finite runtime replay required')
+    error=float(np.max(np.abs(expected-actual)))
+    decisions={str(cut):int(np.sum((expected>=cut)!=(actual>=cut))) for cut in [model.REAL_CUT,model.AI_CUT]}
+    minimum=float(shifts[labels==1].min())
+    return {'max_score_error':error,'decision_changes_by_cut':decisions,'minimum_ai_logit_shift':minimum,
+            'passed':error<=1e-6 and not any(decisions.values()) and minimum>=-1e-8}
 
 
 def full_training_gates(rows,scores,old_count):
@@ -73,7 +85,9 @@ def freeze():
        'train_guard':'Solver success/violation<=1e-8, minimum AI shift>=-1e-8, exact saved replay, zero new AI/REAL '
                      'errors. All3 conditions: <=10% REAL FPR in old/expanded/new-MIDD slices, <=20% worst MIDD sensor. '
                      'Additionally all10 fixed numeric metric gates on both old and expanded TRAIN in every condition. '
-                     'This strengthens screening after E77 showed pooled Q75 can pass while source/selective accuracy fails.',
+                     'This strengthens screening after E77 showed pooled Q75 can pass while source/selective accuracy fails. '
+                     'A provisional TRAIN pass must also replay all views in runtime batch8: score error<=1e-6, '
+                     'zero decision changes at both cuts and minimum AI correction shift>=-1e-8.',
        'evaluation':'Only complete TRAIN pass permits one separately registered consumed E66 screen with all20 '
                     'numeric gates and zero new AI misses per source/condition; no E49 until that screen passes.',
        'dev_consumed_by':['E70','E71'],'dev_fresh_or_independent':False,'dev_features_or_scores_in_fit':0,
@@ -134,8 +148,19 @@ def fit():
     absolute=full_training_gates(rows,candidate.reshape(-1,3),c['old_parents'])
     passed=all(v['gate']['passed'] for group in absolute.values() for v in group.values()) and solver['success'] and solver['max_constraint_violation']<=1e-8 and solver['minimum_ai_logit_shift']>=-1e-8 and \
         gate['passes_train_retention'] and all(gate['comparisons'][k]['real']['non_ai_to_ai']==0 and slices[k]['passed'] for k in CONDITIONS)
+    runtime={'executed':False,'reason':'provisional TRAIN guards failed'}
+    if passed:
+        actual=[];shifts=[]
+        with threadpool_limits(limits=2):
+            for offset in range(0,len(labels),8):
+                resource_check(deadline);end=offset+8
+                correction=model.project(head,original[offset:end],clip[offset:end],dear[offset:end],arrays)@arrays['weights']
+                actual.append(expit(head.decision_function(original[offset:end])+correction));shifts.append(correction)
+        runtime={'executed':True,'batch_size':8}|runtime_checks(candidate,np.concatenate(actual),np.concatenate(shifts),labels)
+        passed=runtime['passed']
     result={'state':'E80_TRAIN_guard_passed' if passed else 'E80_TRAIN_guard_failed','dev_scoring_permitted':bool(passed),
         'solver':solver,'train_gate':gate,'real_population_gates':slices,'full_TRAIN_metric_gates':absolute,
+        'runtime_batch_replay':runtime,
         'reference_real_slices':real_slice_gates(rows,baseline.reshape(-1,3),c['old_parents']),
         'candidate_sha256':digest(CANDIDATE),'contract_sha256':digest(CONTRACT),'seconds':time.monotonic()-start,
         'dev_features_or_scores_in_fit':0,'e49_rows_read':0,'promotion_allowed':False,'independent_final_passed':False}

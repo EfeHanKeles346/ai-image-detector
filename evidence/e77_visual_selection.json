@@ -1,0 +1,72 @@
+{
+  "candidate_sha256": "f4be42e1cb0a7582b38f363cb66bfa043a5741dfae875651e6d1d587558f4b5d",
+  "dev_or_final_rows": 0,
+  "images_viewed_at_selection": 0,
+  "labels_changed": false,
+  "new_fit": false,
+  "rows": [
+    {
+      "E77_clean_score": 0.08530879377380893,
+      "false_ai": true,
+      "label": 0,
+      "parent_id": "rr:cbebb8ff5ca07bbbf2f06fb3e744681927734aed509b3ff7d7d3cec4495b112c",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e42/rr_train/real/real_006420.jpg",
+      "role": "train",
+      "sha256": "cbebb8ff5ca07bbbf2f06fb3e744681927734aed509b3ff7d7d3cec4495b112c",
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "E77_clean_score": 0.2019138971658538,
+      "false_ai": true,
+      "label": 0,
+      "parent_id": "rr:4a4b8852d23bf22a596d09b5b150c21f5c9d7ceb704265c1553f847c6080aa74",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e42/rr_train/real/real_002667.jpg",
+      "role": "train",
+      "sha256": "4a4b8852d23bf22a596d09b5b150c21f5c9d7ceb704265c1553f847c6080aa74",
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "E77_clean_score": 0.10116378608230586,
+      "false_ai": true,
+      "label": 0,
+      "parent_id": "rr:7cc79df7cbcaa4f28959336b65595b939aa1d49d85750d6864ee375298787c66",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e42/rr_train/real/real_006315.jpg",
+      "role": "train",
+      "sha256": "7cc79df7cbcaa4f28959336b65595b939aa1d49d85750d6864ee375298787c66",
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "E77_clean_score": 0.0015034348000255429,
+      "false_ai": false,
+      "label": 0,
+      "parent_id": "rr:0647bbeda2762206f171d8cce20aac6850b1fe0772b3f8925a3696d359cccbd0",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e42/rr_train/real/real_005685.jpg",
+      "role": "train",
+      "sha256": "0647bbeda2762206f171d8cce20aac6850b1fe0772b3f8925a3696d359cccbd0",
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "E77_clean_score": 5.8586323939348766e-05,
+      "false_ai": false,
+      "label": 0,
+      "parent_id": "rr:f2ec80a80e7caa451ff6a4a978b1e341f29481b14e771cf5338f23561e76d6c9",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e42/rr_train/real/real_004256.jpg",
+      "role": "train",
+      "sha256": "f2ec80a80e7caa451ff6a4a978b1e341f29481b14e771cf5338f23561e76d6c9",
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "E77_clean_score": 0.07940195514935858,
+      "false_ai": false,
+      "label": 0,
+      "parent_id": "rr:aaf48acae97492d582a2efd2a0f781216ed6f092bfb555e3d3581b1b6896b916",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e42/rr_train/real/real_009170.jpg",
+      "role": "train",
+      "sha256": "aaf48acae97492d582a2efd2a0f781216ed6f092bfb555e3d3581b1b6896b916",
+      "source": "rr:rrdataset_real_pool"
+    }
+  ],
+  "selection": "3 false-AI and3 correct REAL, SHA256 E77_visual|parent_id within bins",
+  "state": "E77_RR_TRAIN_visual_selection_locked",
+  "training_exclusions": 0
+}
