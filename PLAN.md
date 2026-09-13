@@ -26,7 +26,7 @@ User explicitly requests continuous active-session work, data acquisition when n
 experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
 Do not create30-minute polling/heartbeat automation. No promise of execution after an app or
 session interruption. E66 SIDD Small6.62GB acquisition and grouped REAL+AI admission are complete;
-E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 features are complete; E76 failed TRAIN; E77 constrained head failed TRAIN; E78 DEAR-r acquisition is next.
+E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed DEV; E72 admitted511 MIDD TRAIN rows; E75 features are complete; E76 failed TRAIN; E77 constrained head failed TRAIN; E78 DEAR-r weights verified; both synthetic numeric probes passed but the2h resource guard failed; E79 explicitly budgets2.5h for TRAIN features.
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
@@ -44,7 +44,7 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E77 failed; E78 forensic-model acquisition next (2026-09-13)
+## Current checkpoint — E77 failed; E79 forensic TRAIN features prepared (2026-09-13)
 
 E71 consumed DEV REAL FPR34.375%/38.125% improves on42.5% but fails the10% target.
 Aggregate AI recall unchanged conceals2/1 newly missed AI views;12/20 numeric gates.
@@ -55,8 +55,10 @@ no DEV/E49 permitted. E75 old-encoder parity is exact and511 new TRAIN features 
 3.91%/3.72%/2.94%, but old-REAL FPR13.28%/14.37%/12.25% fails all10% guards. No DEV.
 E77 REAL-only reconstruction residual improved old-REAL FPR to10.96%/12.38%/10.39%
 but failed all three10% guards; no new AI misses or REAL errors. No DEV/E49. Next E78:
-acquire one pinned DEAR-r94.37MB checkpoint, then separately register synthetic parity/resource
-checks before extracting any image features.790 Python tests pass.
+DEAR-r94.37MB checkpoint verified; author/CPU/MPS numeric parity passes. Batch9
+projects2h7m and remains a failed2h resource probe. E79 explicitly allocates2.5h under
+user overnight authorization before image scoring, retains6GiB/numeric limits, and prepares
+all12,141 TRAIN parents. Classifier head not executed; no protected pixels.796 Python tests pass.
 MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)

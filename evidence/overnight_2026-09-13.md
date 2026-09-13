@@ -122,3 +122,10 @@ E77 head FAILED: old REAL10.96%/12.38%/10.39%, expanded10.30%/11.65%/9.75%,
 new MIDD1.17%/1.57%/.98%. Zero new AI/REAL errors, but all old-REAL10% gates fail.
 No DEV/E49. Next E78: one pinned DEAR-r94.37MB research checkpoint acquisition;
 synthetic parity/resource checks are separate from image scoring.
+
+
+E78 DEAR-r weights verified94.37MB; author CPU feature parity exact, CPU/MPS errors
+<1.4e-6, batch3/batch9 MPS outputs exact. Both probes FAIL only their2h throughput
+estimate (about2h7m); batch9 uses3.36GB. E79 explicitly budgets2.5h before any image
+features, retaining6GiB/numeric limits. This revises a cost budget, not detector gates.
+Next: frozen TRAIN-only DEAR mean/std features, all12,141 parents, head unexecuted.

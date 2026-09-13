@@ -1,0 +1,27 @@
+{
+  "adaptation_limits": "Future E54 global+2texture crops would be our crop adaptation, not official full-native image inference. Synthetic parity validates implementation, not detector performance.",
+  "candidate": "Installed torchvision ResNet50 stride0=1 equivalent, exact gate, pooled Linear head.",
+  "classifier_fit": false,
+  "contract_sha256": "3e7bdf5de75b96aaac82a6f3395056d0dc4df89007669df36d90b95115db6bb0",
+  "cpu_parity": "All pooled2048 channels maxabs<=1e-4; logit maxabs<=1e-5; zero sign decisions changed.",
+  "image_rows_read": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e72_acquisition.py": "cfb96e3f0100ff5ab453fdd6afd1d8d72931db90813bd9ae1a39aa8fe6f30cd1",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e78_model.py": "c65ce4302afe0ade487d1c6977df4a0814d1458e6289e0312b6d0198bad85291",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e78_probe.py": "d78704be5384594ba27c5ff285bf0d21601a7ebc9e5ae6ba36a5431a19cd069b",
+    "/Volumes/LaCie/pixelproof-datasets/e78/acquisition.json": "ac797112776e6e64bc5564d5adf16440fbb16ff425545ffa286f10167534795a",
+    "/Volumes/LaCie/pixelproof-datasets/e78/dear_r.pth": "430fde11debe1850ab24af43945b4d68f2bb3ee52a837d84cf525eb603ccde97",
+    "/Volumes/LaCie/pixelproof-datasets/research/dear/code/dear/nn_classifier/resnet.py": "dfa3616d0a38ec1da3b88c731f700b6494d811028a8c7c018b51c63557bdec53"
+  },
+  "max_seconds": 600,
+  "mps_parity": "CPU vs MPS on3x224x224 only: pooled feature maxabs<=5e-4, logit<=1e-4, zero sign changes.",
+  "promotion_allowed": false,
+  "reference": "Reviewed hash-pinned author ResNet50(stride0=1).change_output(1), strict weights_only state, author binary gate applied before spatial pooling, original ChannelLinear head.",
+  "resource_gate": "Parity passes, finite outputs, gate820/2048, projected extraction<=7200s, MPS driver allocation<=6GiB (or CPU), AC+20GiB reserve, max600s execution.",
+  "runtime": "After2 warmups,10 fixed batch3x224 forwards on MPS or CPU, synchronize each. Report seconds/crop and projected12141parent*9crop extraction; no image scores.",
+  "seed": 78,
+  "state": "E78_synthetic_parity_resource_registered",
+  "synthetic": "NumPy default_rng78 uint8 uniform RGB:1x96x96,1x113x157,3x224x224,1x383x511.",
+  "torch_version": "2.13.0",
+  "torchvision_version": "0.28.0"
+}

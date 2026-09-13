@@ -1,0 +1,17 @@
+{
+  "change": "Only inference batch3->batch9. Same frozen model/uint8 normalization/float32/gate and nine crops per parent.",
+  "contract_sha256": "8795c4130d077ff7323a59f1185acf489f814bf33365bd3e11a17871a8686303",
+  "image_rows_read": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e78_batch_probe.py": "f1a52d3240fff63c2c8a0b2da77b0630e4fa175f75308946c6a8997f43a568e3",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e78_model.py": "c65ce4302afe0ade487d1c6977df4a0814d1458e6289e0312b6d0198bad85291",
+    "/Volumes/LaCie/pixelproof-datasets/e78/probe.json": "2b1a35d9f2b2a5869f96b5d10232901be099c49afbe926ef0a5efffaba75b06f",
+    "/Volumes/LaCie/pixelproof-datasets/e78/probe_contract.json": "3e7bdf5de75b96aaac82a6f3395056d0dc4df89007669df36d90b95115db6bb0"
+  },
+  "max_seconds": 600,
+  "parity": "Feature maxabs<=5e-4, logit<=1e-4, zero sign changes. Batch3 same-device features/logits same tolerances.",
+  "promotion_allowed": false,
+  "runtime": "Two warmups and10 synchronized batch9 encode calls, including normalization/device copy/output copy. Projected12141*9crop time<=7200s; MPS driver<=6GiB. No changed acceptance limits.",
+  "state": "E78_batch9_throughput_repair_registered",
+  "synthetic": "default_rng78 uint8 uniform9x224x224 RGB. CPU batch3 vs MPS batch9 (CPU fallback)."
+}

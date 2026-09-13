@@ -1,0 +1,24 @@
+{
+  "contract_sha256": "8795c4130d077ff7323a59f1185acf489f814bf33365bd3e11a17871a8686303",
+  "device": "mps",
+  "feature_extraction_registration_permitted": false,
+  "image_rows_read": 0,
+  "mps_driver_bytes": 3364569088,
+  "parity": {
+    "cpu": {
+      "decision_changes": 0,
+      "feature_max_abs": 3.5762786865234375e-07,
+      "logit_max_abs": 1.3113021850585938e-06
+    },
+    "same_device_batch3": {
+      "decision_changes": 0,
+      "feature_max_abs": 0.0,
+      "logit_max_abs": 0.0
+    }
+  },
+  "projected_extraction_seconds": 7631.24047364766,
+  "promotion_allowed": false,
+  "seconds": 13.48374579101801,
+  "seconds_per_crop": 0.06983902546603026,
+  "state": "E78_batch9_probe_failed"
+}

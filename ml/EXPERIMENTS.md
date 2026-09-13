@@ -5927,3 +5927,51 @@ semantic DINO/CLIP coordinates. Selection precedes all local DEAR image scores; 
 Code/weight terms and inference source are reviewed. Strict exact size/SHA, bounded streaming
 and no third-party execution in acquisition. Three downloader tests pass; synthetic
 inference/parity/resource registration must precede any execution. No new image download.
+
+
+### E78 acquisition complete; synthetic inference probe prepared (2026-09-13)
+
+Official DEAR-r94,372,114 bytes downloaded in13.96s; pinned SHA256
+`430fde11debe1850ab24af43945b4d68f2bb3ee52a837d84cf525eb603ccde97` matches.
+No image bytes or scores, no third-party execution during acquisition. Local strict
+torchvision equivalent uses stride0=1 and fixed820/2048 binary channel gate; weights-only
+load requires every state entry. Three focused tests pass: exact official normalization,
+missing tensors/invalid gates refused and digest failure before deserialization.
+
+Next fixed synthetic probe compares reviewed author ResNet source and local implementation
+on96/113x157/224/383x511 synthetic RGB, plus CPU/MPS parity at224. Numerical and
+resource gates are registered before execution; projected full extraction must be<=7200s
+and MPS driver memory<=6GiB. No real image or detector performance is measured here.
+
+
+### E78 synthetic parity passed; batch3 throughput guard FAILED (2026-09-13)
+
+All author CPU feature outputs equal exactly; max logit difference5.96e-8. MPS
+feature/logit max differences2.98e-7/7.75e-7, zero sign changes. Driver allocation1.22GB.
+However .06970s/crop projects7,615.60s for full TRAIN, exceeding the predeclared7,200s
+limit. No image extraction permitted by that probe. Preserve failure receipt.
+
+Engineering-only follow-up: one batch9 synthetic probe, same nine crops/parent, normalization,
+float32, model/gate and numeric/resource limits. Compare CPU/same-device batch3 vs batch9
+first, then time full encode including transfers. This is a throughput repair, not a detector
+recipe or quality threshold change. No image scores used to choose batch size.
+
+
+### E78 batch9 unchanged numerics, no speed gain; E79 explicit resource revision (2026-09-13)
+
+Batch9 vs MPS batch3 features/logits are exactly equal; CPU differences3.58e-7/1.31e-6,
+zero sign changes. Driver allocation3.36GB. .06984s/crop projects7,631.24s; the original
+7,200s throughput guard still FAILS. Both failed resource probes remain immutable.
+
+User explicitly authorized sustained overnight work. Before any DEAR image feature/scoring,
+E79 allocates9,000s wall time, retaining all numeric and6GiB memory gates. This is a recorded
+resource-budget revision based only on synthetic throughput, not a changed quality threshold
+or an E78 pass. No additional batch/precision/model sweep.
+
+E79 prepares all12,141 admitted TRAIN parents, all3 conditions and global+2texture224 crops,
+fixed DEAR-r820 active channels and per-condition mean/std1640. Existing verified E54
+crops and exact E75 MIDD pixels/transports; no new image bytes. The classifier head is not
+executed. Immutable per-parent chunks support resuming without excluding any failures.
+One source representative per source will be replayed under the same batch layout.
+Three tests verify view/crop ordering and population statistics, chunk body/parent/source
+binding, and feature-only encoding without classifier execution. No DEV/E49 access.

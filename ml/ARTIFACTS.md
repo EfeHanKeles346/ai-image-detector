@@ -267,3 +267,9 @@ exactly. They are research features, not a validated detector or serving artifac
 E77 is rejected at TRAIN: old-REAL FPR10.96%/12.38%/10.39%, all above10%. No AI
 confidence loss beyond solver tolerance, no newly missed AI or newly wrong REAL.
 No DEV/E49 or promotion. Receipt `evidence/e77_fit.json`; failed candidate retained externally.
+
+
+E78 official DEAR-r research weights are verified externally at `e78/dear_r.pth`
+(94,372,114 bytes; SHA256430fde11…ccde97). Acquisition receipt is committed;
+weights are not redistributed or served. Synthetic parity remains a prerequisite to
+image-feature extraction.
