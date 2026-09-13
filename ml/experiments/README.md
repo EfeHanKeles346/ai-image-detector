@@ -148,3 +148,6 @@ access requires the complete TRAIN/runtime and E66 DEV pass. Not frozen/executed
 
 E89: prepared `e89_features freeze|extract` creates the separate SID four-condition
 TRAIN cache only after E84B/E85/E86; no new-cohort classifier scores or automatic fit.
+
+E90: registered `e90_head_diagnostic freeze|run` reads the existing E82 scalar-head
+sign within unchanged E83 consumed-DEV transition bins; no new fit or detection candidate.

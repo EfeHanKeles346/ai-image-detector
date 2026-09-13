@@ -496,3 +496,19 @@ No E89 image/encoder operation has run on the new cohort; tests use synthetic pi
 Full verification after E89 preparation:847 Python tests pass in18.45s; one existing
 Starlette/httpx warning. E89 remains unfrozen/unexecuted. External reserve347GiB;
 macOS reports no recorded thermal/performance warning. Only E84B extraction is active.
+
+
+### E90 diagnostic registered before scalar-head reads (2026-09-13)
+
+Contract SHA256`dd075be24a426cbc0c782f70a51a7d9503138763395e9e2dd11f0c2213cf3d37` binds all640 consumed DEV views, exact E83
+replay and frozen existing E82 scalar-head sign0. No diagnostic run yet. Initial focused
+and full suites exposed a test fixture exporting float64 network weights, whereas the
+frozen inference validator correctly requires saved float32 weights. Fixed only the test:
+export original float32 state before converting the independent reference network to
+float64. Diagnostic implementation/contract unchanged; two focused tests now pass.
+The registration command had already completed while the first test result was pending;
+no scalar-head data was read and no diagnostic execution started before the repair.
+A complete post-repair suite must pass before execution. Existing E84B/E85/E86 unchanged.
+
+E90 post-repair full verification:849 Python tests pass in17.80s with the existing
+Starlette/httpx warning. Diagnostic may now run under its unchanged frozen contract.

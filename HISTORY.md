@@ -8046,3 +8046,36 @@ No E89 image/encoder operation has run on the new cohort; tests use synthetic pi
 Full verification after E89 preparation:847 Python tests pass in18.45s; one existing
 Starlette/httpx warning. E89 remains unfrozen/unexecuted. External reserve347GiB;
 macOS reports no recorded thermal/performance warning. Only E84B extraction is active.
+
+
+### Planned E90 read-only E82-head/E83-decision agreement diagnostic (2026-09-13)
+
+The E82 supervised network retains its trained scalar BCE head, although E83 uses the64
+latent features and an independently constrained correction head. Inspect their agreement
+on all640 already-consumed E83 DEV views, using complete saved encoder caches and exact
+E83 runtime replay. Fixed native BCE sign boundary0, no threshold choice, new training,
+new detector candidate, score repair, image reads or E49 access. This is a new diagnostic
+read of the existing trained scalar head, not a fresh validation or causal attribution.
+
+Before reading these logits, register/hash one E90 diagnostic: report their fixed sign and
+min/median/max within every existing source/condition/E43-to-E83 transition bin. Preserve
+all E83 scores unchanged. This can distinguish raw-head disagreement from agreement on
+known errors, without claiming which representation caused the error. Any subsequent
+model change must be separately justified, frozen and pass TRAIN/DEV guards. Do not
+change the currently fixed E84B/E85/E86 transport experiment based on this diagnostic.
+
+
+### E90 diagnostic registered before scalar-head reads (2026-09-13)
+
+Contract SHA256`dd075be24a426cbc0c782f70a51a7d9503138763395e9e2dd11f0c2213cf3d37` binds all640 consumed DEV views, exact E83
+replay and frozen existing E82 scalar-head sign0. No diagnostic run yet. Initial focused
+and full suites exposed a test fixture exporting float64 network weights, whereas the
+frozen inference validator correctly requires saved float32 weights. Fixed only the test:
+export original float32 state before converting the independent reference network to
+float64. Diagnostic implementation/contract unchanged; two focused tests now pass.
+The registration command had already completed while the first test result was pending;
+no scalar-head data was read and no diagnostic execution started before the repair.
+A complete post-repair suite must pass before execution. Existing E84B/E85/E86 unchanged.
+
+E90 post-repair full verification:849 Python tests pass in17.80s with the existing
+Starlette/httpx warning. Diagnostic may now run under its unchanged frozen contract.

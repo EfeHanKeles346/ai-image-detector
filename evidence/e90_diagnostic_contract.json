@@ -1,0 +1,27 @@
+{
+  "analysis": "Exact E83 runtime score replay and zero two-cut changes on all640 consumed DEV caches. Compute saved E82 final scalar head in CPUfloat64 on the exact385 input coordinates. Use native BCE sign0, not a selected threshold. Report sign counts and fixed min/median/max per every source/condition and existing E43-to-E83 transition bin. Keep E83 detector scores unchanged.",
+  "batch_size": 8,
+  "contract_sha256": "dd075be24a426cbc0c782f70a51a7d9503138763395e9e2dd11f0c2213cf3d37",
+  "e49_reads": 0,
+  "image_reads": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e82_representation.py": "2c9b9769ca9cd4003e25538778510df4e80b9ceee3bd23f1e428cbd17c3f81c2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_diagnostic.py": "005bd56853b9ecf7961c4a25548516fad11b5567c9ffe2158b5b0924e7bd5065",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_model.py": "8f1ab27c4636f23cbb705572781d19ba2c65757ac115620f21ad47897ca5357e",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e90_head_diagnostic.py": "957130ba121f00d5e288520ba18eab61b8ddd1cb923278ad6fd24eeaf08776a6",
+    "/Volumes/LaCie/pixelproof-datasets/e83/correction.npz": "d4c7d644de0e59cda8dda0899e30860d56991530ab759f5525ea9c708b0dbd1a",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_contract.json": "08a2451de42642d8163738e5a96d16153a3c3f480025d4a13b316c80f9c90c9b",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_features.npz": "1201dad5a71f8077c32f3169bac661bf46784a23099e2ffd93279143e1e685be",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_report.json": "5755f4c97d03cf706cacbd580933a9b58f7aaf2ed4de0fea58e9cccbd76f29a0",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_scores.json": "1c37ff3781ab8055bf2da636a927813ac2c2a3e6e6c4be5ec87bb67c1a2f15c2"
+  },
+  "limits": "Consumed E66, dependent REAL scenes and unknown AI prompt dependence. Agreement/disagreement does not identify a causal mechanism or establish generalization. These are new diagnostic logits from an existing trained head, not a new fitted/detection candidate or calibrated probability.",
+  "max_seconds": 600,
+  "new_detector_candidates": 0,
+  "new_fits": 0,
+  "promotion_allowed": false,
+  "score_replay_max_error": 1e-12,
+  "state": "E90_read_only_E82_scalar_head_agreement_registered",
+  "threshold_selection_allowed": false,
+  "views": 640
+}

@@ -61,7 +61,7 @@ class-associated; this is a coverage limitation, not a demonstrated cause. Prese
 running E84B recipe and prepared E85/E86 sequence. SID/PolyU/RENOIR are future source
 leads only; inspect scene grouping and original-capture provenance before any acquisition.
 
-847 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
+849 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
 RR upstream lineage unresolved; MIDD/DEAR research restrictions persist. E49 unopened,
 E43/serving unchanged. No30-minute automation; active experiments and MD/git checkpoints continue.
 
@@ -5930,3 +5930,20 @@ coverage work, not a model change or a promise to fit on SID regardless of resul
 Three focused tests verify byte-identical old3 crops with a distinct social resized view,
 pre-GPU rejection while E84B is incomplete, and exclusion of DEVELOPMENT feature roles.
 No E89 image/encoder operation has run on the new cohort; tests use synthetic pixels.
+
+
+### Planned E90 read-only E82-head/E83-decision agreement diagnostic (2026-09-13)
+
+The E82 supervised network retains its trained scalar BCE head, although E83 uses the64
+latent features and an independently constrained correction head. Inspect their agreement
+on all640 already-consumed E83 DEV views, using complete saved encoder caches and exact
+E83 runtime replay. Fixed native BCE sign boundary0, no threshold choice, new training,
+new detector candidate, score repair, image reads or E49 access. This is a new diagnostic
+read of the existing trained scalar head, not a fresh validation or causal attribution.
+
+Before reading these logits, register/hash one E90 diagnostic: report their fixed sign and
+min/median/max within every existing source/condition/E43-to-E83 transition bin. Preserve
+all E83 scores unchanged. This can distinguish raw-head disagreement from agreement on
+known errors, without claiming which representation caused the error. Any subsequent
+model change must be separately justified, frozen and pass TRAIN/DEV guards. Do not
+change the currently fixed E84B/E85/E86 transport experiment based on this diagnostic.

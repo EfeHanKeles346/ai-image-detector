@@ -14,7 +14,7 @@ all12,141 existing TRAIN parents. The four-condition E85/E86 learner and constra
 are prepared; no fit yet. Separately,128 original SID RAW captures passed the protected-
 overlap audit for possible future research TRAIN. They are not in the current E85/E86 data.
 E49 remains unopened in this overnight chain; serving/reference models stay unchanged.
-Old E59 fits remain paused.847 Python tests pass; the existing web dependency audit fails.
+Old E59 fits remain paused.849 Python tests pass; the existing web dependency audit fails.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
 
