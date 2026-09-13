@@ -3,7 +3,7 @@
 The target remains unmet. E43 and serving are unchanged. E70/E71 passed TRAIN but failed
 separate consumed E66 development screens. E73/E74/E76/E77 failed TRAIN. No overnight
 candidate has opened E49 or qualified for promotion. E79 completed frozen DEAR-r
-features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 is next.
+features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 is registered for one fit.
 
 [E77 sonrası sonuç grafiği](overnight_progress_2026-09-13.png) · [Vektör sürümü](overnight_progress_2026-09-13.svg)
 
@@ -169,7 +169,7 @@ this adds a reproducibility guard, with no label or threshold adjustment.
 E81's conditional optimizer helper is prepared from the E77 slack diagnosis: minimize
 worst REAL source/condition BCE while all AI logits remain non-decreasing and correct-REAL
 decisions remain protected. Same REAL coefficient .5, L2.01 and SLSQP settings; no AI BCE
-reward. Synthetic gradient and conflicting-class tests pass. E80 now confirms the source-failure trigger. Proceed to one separately registered TRAIN fit,
+reward. Synthetic gradient and conflicting-class tests pass. E80 now confirms the source-failure trigger. The single TRAIN fit is now separately registered,
 retaining every E80 acceptance gate and frozen map.
 
 The optional E80 consumed-E66 implementation is prepared but not frozen/executed. It
@@ -177,7 +177,7 @@ refuses failed TRAIN, preserves prior E43 pixels/scores/two-cut decisions, and r
 all20 numeric DEV gates plus zero newly missed AI per source/condition. E66 remains
 consumed and dependent, never fresh final. E49 remains closed until that separate pass.
 
-808 Python tests pass (engineering evidence, not detection quality). The existing
+811 Python tests pass (engineering evidence, not detection quality). The existing
 Starlette/httpx deprecation remains. Completed CI34732736214 passed Python, web lint,
 type checks and tests; the existing web dependency audit failed. Raw images/features/
 weights stay external; code, compact evidence and MD checkpoints are committed/pushed.

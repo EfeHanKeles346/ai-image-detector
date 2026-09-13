@@ -7520,3 +7520,24 @@ L2.01, SLSQP200/ftol1e-9, all13,785 AI logit non-decrease constraints and correc
 guards. Remove only the AI BCE reward; preserve every E80 acceptance and runtime check.
 No rank/seed/weight/cut sweep, data change or new image extraction. No DEV/final until
 complete prior gates pass. This tests an objective change after measured source failure.
+
+
+### E81 implementation precision before fit freeze (2026-09-13)
+
+The objective uses equal-parent mean BCE within each REAL source/condition and minimizes
+the worst of those groups. This replaces E80's source-averaged, hard-REAL2x weighted loss;
+there is no hard-REAL multiplier in the new group means. The earlier shorthand "remove
+only the AI BCE reward" described the AI-side change, not an otherwise identical loss.
+Keep .5 REAL coefficient and L2.01, and all full-AI/correct-REAL constraints. This is one
+registered objective design, not a single-factor causal ablation or a weight sweep.
+
+Code review caught a copied E80 evidence-output path before any E81 freeze or TRAIN fit.
+Corrected it to E81 and added a test that preserves the existing predecessor report and
+refuses a second write. No old candidate/report was modified. E81 also tests exact map
+copy with discarded prior correction/artifact bindings and rejects an inapplicable predecessor.
+
+
+E81 single-fit contract is now frozen: `21dc8c72c4f9085a8cf08d2dbda7fa7e8e19e47d8c5b133a67f01037b4c1fe57`. Full Python suite811
+passed (existing Starlette/httpx deprecation). No E81 candidate or quality result yet. Run
+once from zero correction; no basis refit. Exact output namespaces and prior-report
+immutability are tested. All E80 acceptance/runtime gates retained.
