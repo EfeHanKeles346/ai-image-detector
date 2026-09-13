@@ -6749,3 +6749,13 @@ objective. E84B continues unchanged; E85/E86 remain the next fixed experiment. N
 loss, threshold, feature rank, seed or dataset mixture is selected from this review.
 Any later consistency experiment must have its own complete preregistration and keep
 all existing quality/retention/runtime guards. This is a research note, not a result.
+
+
+### E86 aggregate visualization prepared (2026-09-13)
+
+Prepared `ml/tools/plot_e86_checkpoint.py` to compare immutable E43/E83/E86 consumed
+DEVELOPMENT aggregate rates and newly missed E43 AI counts. It requires complete
+320-view condition reports and writes PNG/SVG plus hashes without image/model reads.
+No figure has been rendered and no E86 result exists yet. Python compilation passes;
+visual verification is deferred until the real E86 comparison is complete. Existing
+E83 historical graphics are preserved. This reporting utility changes no experiment.
