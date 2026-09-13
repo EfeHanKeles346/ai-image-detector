@@ -44,7 +44,7 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check100%, charged and attached to AC. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E89 complete; E91/E92 prepared; GitHub repair/report requested (2026-09-13)
+## Current checkpoint — E89 complete; E91/E92 prepared; GitHub repair under verification (2026-09-13)
 
 E86 passes all80 TRAIN metric checks and runtime/AI-retention guards. Consumed E66
 REAL FPR0.625% original/10.625% social-Q75, AI99.375% in both;17/20 numeric checks.
@@ -62,8 +62,7 @@ The read-only consistency review remains a future lead, not an implemented chang
 
 E84B completed12141 social views in7296.694s; E85 completed100 epochs in75.343s;
 E86 fit/runtime235.523s and cached DEV scoring6.632s. Corrected aggregate plot is
-visually verified.849 Python tests passed before reporting-only plot preparation;
-no ML implementation changed since that suite. E79 cost remains over9412s across
+visually verified. The later E91/E92 preparation is covered by856 passing Python tests. E79 cost remains over9412s across
 attempts. RR upstream lineage and research-use limits persist. Serving unchanged;
 active work and MD/git checkpoints continue without30-minute automation.
 
@@ -6092,3 +6091,24 @@ DEV before failed TRAIN. Review caught copied predecessor receipt names before a
 registration/run and corrected them; no frozen artifact was altered. User now requests
 GitHub failures fixed and a report. No ML job remains active; E91/E92 stay prepared
 until a later continuation, rather than launching another experiment during this repair.
+
+
+## 2026-09-13 — GitHub CI security repair; no new ML run
+
+Failed GitHub run34748481696 passed Python and web functional checks but failed npm audit:
+11 alerts (1critical,8high,2moderate). Update Next.js16.3.2→16.3.5,
+vinext0.0.50→1.0.0-beta.9, plugin-rsc0.5.34, Cloudflare Vite plugin1.54.8,
+Wrangler4.131.1, workers-types5.20260911.1 and eslint-config-next16.3.5.
+Resolve the workers-types peer requirement normally; no force/legacy-peer bypass.
+Refresh compatible transitives with npm audit fix; audit now reports0 vulnerabilities.
+
+The new vinext output moves hashed assets from /assets to /_next/static. Initial
+post-migration test correctly failed its obsolete path assertion. Update that contract
+and additionally verify rendered JS/CSS files exist in the build. All6 web tests,
+Sites build, lint and typecheck now pass locally. CI security threshold is strengthened
+from critical to high, with existing registry retries preserved. Per-ref concurrency
+cancels superseded runs. Remote verification is pending push at this checkpoint.
+
+E91/E92 remain prepared, not frozen/fitted; no new DEV/final scoring or model promotion.
+Last complete ML suite:856 passed. See rapor/GELISTIRME_RAPORU_2026-09-13.md and
+evidence/ci_dependency_repair_2026-09-13.json for the repair/report record.

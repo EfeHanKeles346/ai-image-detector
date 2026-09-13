@@ -11,12 +11,14 @@ REAL false-AI is0.625% original /10.625% socialQ75; AI recall99.375% in both con
 Against E83, five social REAL errors and one original AI miss are rescued, while one
 original REAL rescue is lost. No threshold or gate was relaxed.
 
-E84B transport features and E85's fixed100-epoch representation are complete. The
-next separately registered E89 stage extracts four-condition features for128 original
-SID RAW captures selected and overlap-audited before the E86 result. A later expanded-
-data fit requires a separate frozen recipe; these images were not used in E85/E86.
+E84B transport features and E85's fixed100-epoch representation are complete. E89 also completed all four-condition features for128 original
+SID RAW captures selected and overlap-audited before the E86 result. E91/E92 expansion
+code is prepared and tested, but has not been frozen or trained; these images were not
+used in E85/E86.
 E49 remains unopened in this overnight chain; serving/reference models stay unchanged.
-Old E59 fits remain paused.849 Python tests pass; the existing web dependency audit fails.
+Old E59 fits remain paused.856 Python tests pass. The 2026-09-13 dependency repair
+reduces npm audit from11 alerts to0; local build, lint, types and all6 web tests pass.
+See the [development and CI report](rapor/GELISTIRME_RAPORU_2026-09-13.md) for verification status.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
 
@@ -285,9 +287,11 @@ PYTHONPATH=ml/src ml/.venv/bin/python -m pixelproof.artifact_registry check
 ml/.venv/bin/pip check
 ```
 
-Known dependency debt: `npm audit` currently reports two high entries in one development/build
-chain, `vinext@0.0.50 -> image-size@2.0.2`. npm's offered remediation is the breaking
-`vinext@1.0.0-beta.8` line; CI fails on critical advisories while this migration remains explicit.
+Dependency security checkpoint (2026-09-13): Next.js16.3.5, vinext1.0.0-beta.9 and
+compatible Cloudflare/RSC tooling remove the previously reported11 npm audit alerts.
+CI now fails on high or critical advisories. The hosting test verifies the new
+`/_next/static/*` immutable-cache rule and that rendered JS/CSS assets exist.
+The vinext dependency remains a prerelease; build and SSR tests cover this migration.
 
 This repository currently grants no open-source licence. See [`LICENSE.md`](LICENSE.md) for the
 project and external-model boundaries.

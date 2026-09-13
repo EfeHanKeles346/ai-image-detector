@@ -7,6 +7,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   web:
     runs-on: ubuntu-latest
@@ -20,10 +24,10 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
-      - name: Audit production/build dependencies (known high vinext debt is documented)
+      - name: Audit production/build dependencies
         run: |
           for attempt in 1 2 3; do
-            if npm audit --audit-level=critical; then
+            if npm audit --audit-level=high; then
               exit 0
             fi
             if [ "$attempt" -eq 3 ]; then

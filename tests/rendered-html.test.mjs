@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(pathname = "/") {
@@ -55,7 +55,15 @@ test("packages the Sites hosting contract without stale starter assets", async (
   ]);
 
   assert.deepEqual(JSON.parse(packagedConfig), JSON.parse(sourceConfig));
-  assert.match(headers, /\/assets\/\*/);
-  assert.match(headers, /immutable/);
+  assert.match(
+    headers,
+    /^\/_next\/static\/\*\r?\n\s+Cache-Control: public, max-age=31536000, immutable$/m,
+  );
+  const html = await (await render()).text();
+  const assets = [...html.matchAll(/(?:src|href)="(\/_next\/static\/[^"?]+\.(?:js|css))"/g)]
+    .map((match) => match[1]);
+  assert.ok(assets.some((path) => path.endsWith(".js")), "rendered script assets exist");
+  assert.ok(assets.some((path) => path.endsWith(".css")), "rendered stylesheet assets exist");
+  await Promise.all(assets.map((path) => access(new URL(`../dist/client${path}`, import.meta.url))));
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
