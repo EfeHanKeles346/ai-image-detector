@@ -44,15 +44,17 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check100%, charged and attached to AC. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E86 DEV rejected; E89 SID features registered (2026-09-13)
+## Current checkpoint — E89 complete; E91/E92 prepared; GitHub repair/report requested (2026-09-13)
 
 E86 passes all80 TRAIN metric checks and runtime/AI-retention guards. Consumed E66
 REAL FPR0.625% original/10.625% social-Q75, AI99.375% in both;17/20 numeric checks.
 The same newly missed GPT original persists; Q75 pooled REAL, worst REAL source and
 covered-accuracy guards fail. Preserve the rejected candidate; E49 stays unopened.
 
-Next run registered E89 features for all128 previously selected/audited SID TRAIN
-parents under all4 conditions. Then separately freeze one data-coverage extension
+E89 features are complete for all128 previously selected/audited SID TRAIN parents
+under all4 conditions. E91/E92 implementation and856 tests pass, but no new recipe
+is frozen or fitted. Current user priority is GitHub CI repair and a report. Later
+continuation can separately freeze one data-coverage extension
 with the same E85 architecture/seed/optimizer and E86 constrained-head objective.
 Keep all previous populations/conditions/AI protections and add SID pooled/camera
 checks. No simultaneous new objective, threshold, rank, seed or margin sweep.
@@ -6064,3 +6066,29 @@ and showed three decimals for REAL rates. The first draft is preserved externall
 `report_qa/e86_attempt1`; the corrected plot is visually verified. No scores/thresholds
 changed. The initial ad-hoc text summary used a wrong dictionary key and exited before
 printing rates; corrected to the actual report schema, with no experiment mutation.
+
+
+### E89 complete; E91/E92 prepared; user steers to GitHub repair/report (2026-09-13)
+
+With offline flags set before imports, E89 completes128 SID parents/512 views in
+565.928863s,64 chunks.34-source old-clean parity and first new-batch repeat are exact0;
+peak MPS5,520,441,344B. No new SID classifier scores, DEV/final image reads or fitting.
+Archive SHA2563422cb43781810ac97342801a559b84d647c5eeeb84612d433cb41b8222570e0;
+report SHA2566d77447d44457d4ee2cc31e5416a51a02e9b074663d46e308e1c5807dec2669b.
+
+Prepared E91/E92 (not frozen or executed): append all128 audited SID REAL parents to
+12,141 previous TRAIN parents, preserve all4 condition arrays.49,076 views,30,696REAL
+and18,380AI; same E85 weighting/network/seed/order/optimizer100 epochs, no warm start.
+Exact old E86 metric replay and bounded input-layout score replay precede learning.
+Same450-column E92 constrained head; retain all earlier population guards and add SID
+pooled/camera guards plus all10 numeric gates on legacy/previous/expanded populations
+in4 conditions (120 checks). Separate consumed DEV keeps the E83 encoder cache and
+reports paired E86 transitions. No consistency-loss, rank, margin or threshold change.
+
+Seven focused tests pass; full suite856 tests pass in15.79s with the existing
+Starlette/httpx warning. Tests cover duplicate/role admission rejection, old feature
+preservation, population/condition masking, immutable separate receipts and stopping
+DEV before failed TRAIN. Review caught copied predecessor receipt names before any
+registration/run and corrected them; no frozen artifact was altered. User now requests
+GitHub failures fixed and a report. No ML job remains active; E91/E92 stay prepared
+until a later continuation, rather than launching another experiment during this repair.

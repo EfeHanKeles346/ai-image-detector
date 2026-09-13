@@ -689,3 +689,29 @@ weights and recipe. Restart with HF_HUB_OFFLINE=1, TRANSFORMERS_OFFLINE=1 and bo
 OMP/OPENBLAS thread limits2 set in the process environment before Python imports.
 This implements the already registered offline runtime; it changes no transform,
 encoder, sample, tolerance or scientific condition. Receipt `e89_attempt1_startup.json`.
+
+
+### E89 complete; E91/E92 prepared; user steers to GitHub repair/report (2026-09-13)
+
+With offline flags set before imports, E89 completes128 SID parents/512 views in
+565.928863s,64 chunks.34-source old-clean parity and first new-batch repeat are exact0;
+peak MPS5,520,441,344B. No new SID classifier scores, DEV/final image reads or fitting.
+Archive SHA2563422cb43781810ac97342801a559b84d647c5eeeb84612d433cb41b8222570e0;
+report SHA2566d77447d44457d4ee2cc31e5416a51a02e9b074663d46e308e1c5807dec2669b.
+
+Prepared E91/E92 (not frozen or executed): append all128 audited SID REAL parents to
+12,141 previous TRAIN parents, preserve all4 condition arrays.49,076 views,30,696REAL
+and18,380AI; same E85 weighting/network/seed/order/optimizer100 epochs, no warm start.
+Exact old E86 metric replay and bounded input-layout score replay precede learning.
+Same450-column E92 constrained head; retain all earlier population guards and add SID
+pooled/camera guards plus all10 numeric gates on legacy/previous/expanded populations
+in4 conditions (120 checks). Separate consumed DEV keeps the E83 encoder cache and
+reports paired E86 transitions. No consistency-loss, rank, margin or threshold change.
+
+Seven focused tests pass; full suite856 tests pass in15.79s with the existing
+Starlette/httpx warning. Tests cover duplicate/role admission rejection, old feature
+preservation, population/condition masking, immutable separate receipts and stopping
+DEV before failed TRAIN. Review caught copied predecessor receipt names before any
+registration/run and corrected them; no frozen artifact was altered. User now requests
+GitHub failures fixed and a report. No ML job remains active; E91/E92 stay prepared
+until a later continuation, rather than launching another experiment during this repair.

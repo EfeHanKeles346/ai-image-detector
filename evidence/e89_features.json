@@ -1,0 +1,52 @@
+{
+  "chunks": 64,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "020a3a475b5fda3b50047b2b4f2bbaa38e4b9d5d36eef3b9749317ec90aab469",
+  "created_parents_this_execution": 128,
+  "dev_final_image_reads": 0,
+  "feature_sha256": "3422cb43781810ac97342801a559b84d647c5eeeb84612d433cb41b8222570e0",
+  "first_batch_repeat_max_error": 0.0,
+  "fit_allowed": false,
+  "mps_driver_peak_bytes": 5520441344,
+  "new_image_classifier_scores": 0,
+  "parents": 128,
+  "parity": {
+    "decision_changes_by_cut": {
+      "0.011505939625203613": 0,
+      "0.07940196245908739": 0
+    },
+    "feature_max_errors": {
+      "clip": 0.0,
+      "dear": 0.0
+    },
+    "parents": 34,
+    "passed": true,
+    "reference_max_score_error": 0.0
+  },
+  "report_sha256": "6d77447d44457d4ee2cc31e5416a51a02e9b074663d46e308e1c5807dec2669b",
+  "seconds": 565.9288625420304,
+  "shapes": {
+    "clip": [
+      128,
+      4,
+      1536
+    ],
+    "dear": [
+      128,
+      4,
+      1640
+    ],
+    "dino": [
+      128,
+      4,
+      3072
+    ]
+  },
+  "state": "E89_SID_four_condition_TRAIN_features_complete",
+  "views": 512
+}
