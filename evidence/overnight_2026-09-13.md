@@ -177,3 +177,12 @@ DEV/final; no detector scores yet. Audit SHA`23021f21e0ff5fcb72c972c8293a0c18188
 TRAIN manifest SHA`a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e`.
 E75 feature contract may now freeze for all511 admitted representatives. Existing E54 TRAIN
 remains immutable; a future expanded fit would have12,141 parents /7,546 REAL /4,595 AI.
+
+
+E75 historical encoder parity passed30/30 TRAIN source representatives in all3 conditions:
+E43 maximum score error0, CLIP maximum feature error0, both decision cuts unchanged.
+New511-parent feature extraction active. E76 prepared fit code passed3 focused tests:
+new-camera failures cannot hide in large old populations, poor individual sensors cannot
+hide in pooled camera results, and full AI/unique-body/role expansion checks fail closed.
+Read-only metadata join verified12,141 unique bodies/parents, all4,595 old AI retained.
+No new MIDD model score, E76 contract or fit yet.

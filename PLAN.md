@@ -5231,3 +5231,30 @@ remains immutable; a future expanded fit would have12,141 parents /7,546 REAL /4
 E75 feature contract frozen for511 audited MIDD TRAIN images; old-source DINO/CLIP
 parity and extraction now active. Full Python suite776passed/13.33s. E72 complete
 acquisition/admission and E74 failed-fit evidence are being committed together.
+
+
+### E76 isolated MIDD TRAIN expansion planned before new image scores (2026-09-13)
+
+After complete E75 features, one fit expands unchanged E54 TRAIN with all511 admitted MIDD
+representatives (12,141 parents;7,546 REAL/4,595 AI). Keep the exact E74 original64/CLIP64/
+128-interaction map and its old-TRAIN scaling, discard correction weights; no map refit.
+This isolates data contribution from capacity changes. Same E73 full-AI-logit constraints,
+E64 correct-REAL guards/BCE/class-source-parent weighting/hard REAL2x/L2.01 and SLSQP200.
+Zero257 coefficients, same cuts, no mixture/penalty/rank/sensor weighting sweep.
+All old AI retained. Require solver/serialization/decision guards, old-TRAIN and expanded
+pooled REAL FPR<=10% in all3 conditions. Also require new-MIDD pooled REAL FPR<=10% and
+worst admitted MIDD sensor<=20% in each condition, preventing old/new population dilution.
+No DEV/E49 after any failure; TRAIN pass permits a separately frozen consumed DEV screen.
+No confidence/decision protection relaxation. Features currently active; no fit contract yet.
+
+
+E75 historical encoder parity passed30/30 TRAIN source representatives in all3 conditions:
+E43 maximum score error0, CLIP maximum feature error0, both decision cuts unchanged.
+New511-parent feature extraction active. E76 prepared fit code passed3 focused tests:
+new-camera failures cannot hide in large old populations, poor individual sensors cannot
+hide in pooled camera results, and full AI/unique-body/role expansion checks fail closed.
+Read-only metadata join verified12,141 unique bodies/parents, all4,595 old AI retained.
+No new MIDD model score, E76 contract or fit yet.
+
+E76 prepared implementation verification complete:779 Python tests passed/14.92s.
+Commit its fixed protocol/code before E75 feature completion; do not freeze inputs or fit early.
