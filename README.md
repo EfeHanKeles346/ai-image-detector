@@ -4,16 +4,17 @@ PixelProof is a research system that looks for evidence consistent with AI gener
 official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
 It never certifies that an image is real.
 
-**Research checkpoint (2026-09-13):** The target remains unmet. Latest E83 passes all
-TRAIN/runtime guards but fails consumed development: REAL false-AI0% original /13.75%
-socialQ75, AI recall98.75%/99.375%,17/20 numeric gates and one newly missed original AI.
-The aggregate AI gain does not satisfy the zero-new-loss requirement.
+**Research checkpoint (2026-09-13):** The target remains unmet. E86 passes all80
+TRAIN metric checks and full runtime/AI-retention guards, but fails consumed development.
+REAL false-AI is0.625% original /10.625% socialQ75; AI recall99.375% in both conditions.
+17/20 numeric gates pass; the same one original AI newly missed by E83 remains missed.
+Against E83, five social REAL errors and one original AI miss are rescued, while one
+original REAL rescue is lost. No threshold or gate was relaxed.
 
-E84B completed exact social transport features for all12,141 existing TRAIN parents.
-E85 completed its fixed100-epoch representation on48,564 TRAIN views with exact
-feature replay. E86 passes all80 TRAIN metric checks and runtime/AI-retention guards;
-its separate consumed-development comparison is registered, with no result yet. Separately,128 original SID RAW captures passed the protected-
-overlap audit for possible future research TRAIN. They are not in the current E85/E86 data.
+E84B transport features and E85's fixed100-epoch representation are complete. The
+next separately registered E89 stage extracts four-condition features for128 original
+SID RAW captures selected and overlap-audited before the E86 result. A later expanded-
+data fit requires a separate frozen recipe; these images were not used in E85/E86.
 E49 remains unopened in this overnight chain; serving/reference models stay unchanged.
 Old E59 fits remain paused.849 Python tests pass; the existing web dependency audit fails.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),

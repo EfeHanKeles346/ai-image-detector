@@ -450,3 +450,40 @@ Use exact prior640-view encoder cache and fixed E86 runtime batch8, lock all sco
 before metrics. Require all20 numeric gates and zero newly missed E43 AI per source/
 condition, report paired E83 changes too. No new encoder/images/download/fit. This set
 is previously consumed DEVELOPMENT, not a new final. No E86 DEV result at registration.
+
+
+### E86 consumed DEV rejected; E89 SID features registered (2026-09-13)
+
+All640 cached DEV views scored in6.631617s; E43 reference replay exact0/cut changes0.
+Original REAL FPR42.5% reference ->0.625% (1/160), AI97.5% ->99.375% (159/160).
+All10 original numeric gates pass, but the same GPTIMG_431 original is newly missed
+relative to E43: E43/E83/E86=0.0812866464/0.0050718705/0.0082836705. Four other
+original AI rescues cannot mask this loss. Versus E83: one additional AI rescued, no
+new AI loss, but one N6 REAL rescue lost. Original AUC0.999765625, BA0.99375.
+
+Social-Q75 REAL FPR42.5% ->10.625% (17/160), versus E83's13.75% (22/160). Five
+additional E83 REAL errors corrected (GP1/IP3/S6 1), no E83 REAL/AI regression in this
+condition. AI99.375% unchanged from E83, no new E43 AI miss. Social AUC0.99203125,
+BA0.94375, automatic coverage96.875%, covered accuracy94.19355%, worst REAL source
+GP7/33=21.21212%. Same3 numeric failures remain: pooled REAL<=10%, worst REAL<=20%,
+covered accuracy>=95%. Overall17/20 plus failed original AI guard -> REJECT. No E49
+regression/promotion. This is consumed development, never a fresh independent final.
+
+The transport-only data-view extension helped five Q75 REAL cases but did not resolve
+all quality/retention failures. Preserve E86 and its locked scores. The next distinct
+coverage hypothesis uses all128 SID REAL captures already selected/audited before this
+E86 result, without selecting examples by score. E89 contract SHA256
+`020a3a475b5fda3b50047b2b4f2bbaa38e4b9d5d36eef3b9749317ec90aab469` freezes512 four-condition encoder views, same exact
+DINO/CLIP/DEAR operations, source/RAW hashes,34-source parity and30min/6GiB budget.
+It does not fit a model or score SID with a classifier. Run this bounded extraction
+then separately register one expanded-data learner/head retaining the old recipe and
+all existing AI/REAL/transport checks, plus explicit new-SID camera/population checks.
+Do not simultaneously add a new consistency loss or sweep settings. Camera/scene and
+publisher-lineage limitations persist; this is a coverage hypothesis, not a promised fix.
+
+`ml/tools/plot_e86_checkpoint.py` rendered frozen aggregate PNG/SVG and hash receipt.
+Visual review found a target-label overlap in the first draft; moved only the annotation
+and showed three decimals for REAL rates. The first draft is preserved externally in
+`report_qa/e86_attempt1`; the corrected plot is visually verified. No scores/thresholds
+changed. The initial ad-hoc text summary used a wrong dictionary key and exited before
+printing rates; corrected to the actual report schema, with no experiment mutation.

@@ -44,30 +44,26 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check100%, charged and attached to AC. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E86 TRAIN passed; consumed DEV registered (2026-09-13)
+## Current checkpoint — E86 DEV rejected; E89 SID features registered (2026-09-13)
 
-E83 passes all TRAIN/runtime gates. Consumed DEV REAL FPR improves42.5% to0% original
-and42.5% to13.75% social Q75; AI recall98.75%/99.375%.17/20 numeric gates pass, but
-one newly missed original AI and three Q75 numeric failures reject the candidate.
-Read-only component replay is exact; learned REAL correction weakens/reverses under Q75.
-E84B completed the exact social1080px-then-JPEG75 view for every existing TRAIN parent
-in7296.694s. E85 completed100 epochs in75.343s. E86 passes all80 TRAIN metric
-checks plus full runtime/AI-retention guards. Execute its registered consumed E66
-comparison next; all20 numeric gates and zero new E43 AI misses remain mandatory. No DEV/final admission or cutoff change.
-E87/E88 separately acquired and audited128 SID RAW originals for future research TRAIN;
-zero matches/failures against151,996 references. They are not part of E85/E86.
+E86 passes all80 TRAIN metric checks and runtime/AI-retention guards. Consumed E66
+REAL FPR0.625% original/10.625% social-Q75, AI99.375% in both;17/20 numeric checks.
+The same newly missed GPT original persists; Q75 pooled REAL, worst REAL source and
+covered-accuracy guards fail. Preserve the rejected candidate; E49 stays unopened.
 
-Metadata-only transport inventory is complete: the1080 cap potentially resizes4455/7546
-REAL parents (59.04%) and1046/4595 AI parents (22.76%). Recorded formats are strongly
-class-associated; this is a coverage limitation, not a demonstrated cause. Preserve the
-completed E84B/E85 artifacts and registered E86 sequence. SID acquisition/audit is complete
-for a separate future TRAIN extension; PolyU/RENOIR remain unacquired leads. A read-only
-consistency-mechanism review is recorded in `IMAGE_FORENSICS_REFERENCE.md`; it does not
-change the fixed next experiment or select an additional objective before its result.
+Next run registered E89 features for all128 previously selected/audited SID TRAIN
+parents under all4 conditions. Then separately freeze one data-coverage extension
+with the same E85 architecture/seed/optimizer and E86 constrained-head objective.
+Keep all previous populations/conditions/AI protections and add SID pooled/camera
+checks. No simultaneous new objective, threshold, rank, seed or margin sweep.
+The read-only consistency review remains a future lead, not an implemented change.
 
-849 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
-RR upstream lineage unresolved; MIDD/DEAR research restrictions persist. E49 unopened,
-E43/serving unchanged. No30-minute automation; active experiments and MD/git checkpoints continue.
+E84B completed12141 social views in7296.694s; E85 completed100 epochs in75.343s;
+E86 fit/runtime235.523s and cached DEV scoring6.632s. Corrected aggregate plot is
+visually verified.849 Python tests passed before reporting-only plot preparation;
+no ML implementation changed since that suite. E79 cost remains over9412s across
+attempts. RR upstream lineage and research-use limits persist. Serving unchanged;
+active work and MD/git checkpoints continue without30-minute automation.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
 
@@ -6031,3 +6027,40 @@ Use exact prior640-view encoder cache and fixed E86 runtime batch8, lock all sco
 before metrics. Require all20 numeric gates and zero newly missed E43 AI per source/
 condition, report paired E83 changes too. No new encoder/images/download/fit. This set
 is previously consumed DEVELOPMENT, not a new final. No E86 DEV result at registration.
+
+
+### E86 consumed DEV rejected; E89 SID features registered (2026-09-13)
+
+All640 cached DEV views scored in6.631617s; E43 reference replay exact0/cut changes0.
+Original REAL FPR42.5% reference ->0.625% (1/160), AI97.5% ->99.375% (159/160).
+All10 original numeric gates pass, but the same GPTIMG_431 original is newly missed
+relative to E43: E43/E83/E86=0.0812866464/0.0050718705/0.0082836705. Four other
+original AI rescues cannot mask this loss. Versus E83: one additional AI rescued, no
+new AI loss, but one N6 REAL rescue lost. Original AUC0.999765625, BA0.99375.
+
+Social-Q75 REAL FPR42.5% ->10.625% (17/160), versus E83's13.75% (22/160). Five
+additional E83 REAL errors corrected (GP1/IP3/S6 1), no E83 REAL/AI regression in this
+condition. AI99.375% unchanged from E83, no new E43 AI miss. Social AUC0.99203125,
+BA0.94375, automatic coverage96.875%, covered accuracy94.19355%, worst REAL source
+GP7/33=21.21212%. Same3 numeric failures remain: pooled REAL<=10%, worst REAL<=20%,
+covered accuracy>=95%. Overall17/20 plus failed original AI guard -> REJECT. No E49
+regression/promotion. This is consumed development, never a fresh independent final.
+
+The transport-only data-view extension helped five Q75 REAL cases but did not resolve
+all quality/retention failures. Preserve E86 and its locked scores. The next distinct
+coverage hypothesis uses all128 SID REAL captures already selected/audited before this
+E86 result, without selecting examples by score. E89 contract SHA256
+`020a3a475b5fda3b50047b2b4f2bbaa38e4b9d5d36eef3b9749317ec90aab469` freezes512 four-condition encoder views, same exact
+DINO/CLIP/DEAR operations, source/RAW hashes,34-source parity and30min/6GiB budget.
+It does not fit a model or score SID with a classifier. Run this bounded extraction
+then separately register one expanded-data learner/head retaining the old recipe and
+all existing AI/REAL/transport checks, plus explicit new-SID camera/population checks.
+Do not simultaneously add a new consistency loss or sweep settings. Camera/scene and
+publisher-lineage limitations persist; this is a coverage hypothesis, not a promised fix.
+
+`ml/tools/plot_e86_checkpoint.py` rendered frozen aggregate PNG/SVG and hash receipt.
+Visual review found a target-label overlap in the first draft; moved only the annotation
+and showed three decimals for REAL rates. The first draft is preserved externally in
+`report_qa/e86_attempt1`; the corrected plot is visually verified. No scores/thresholds
+changed. The initial ad-hoc text summary used a wrong dictionary key and exited before
+printing rates; corrected to the actual report schema, with no experiment mutation.

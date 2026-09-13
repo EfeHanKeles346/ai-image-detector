@@ -41,7 +41,7 @@ def main():
         for j, label in enumerate(['Orijinal', 'Sosyal Q75']):
             bars = ax.bar(np.arange(3) + (j - .5) * .32, values[:, j], .32,
                           label=label, color=palette[j], zorder=3)
-            ax.bar_label(bars, labels=[f'{v:.2f}' for v in values[:, j]], padding=4, fontsize=10)
+            ax.bar_label(bars, labels=[f'{v:.3f}' if i == 0 else f'{v:.2f}' for v in values[:, j]], padding=4, fontsize=10)
         ax.set_xticks(np.arange(3), ['E43 referans', 'E83', 'E86'])
         ax.set_ylabel('%'); ax.set_facecolor('white')
         ax.set_axisbelow(True); ax.grid(axis='y', color='#e2e8f0')
@@ -51,7 +51,7 @@ def main():
         ax.set_ylim(0, max(55, float(values.max()) + 12) if i == 0 else 112)
         if i == 0:
             ax.axhline(10, color='#b43a3a', linestyle='--', linewidth=1.2)
-            ax.text(2.45, 11, 'Hedef ≤%10', ha='right', color='#9f2937', fontsize=9)
+            ax.text(2.45, 16, 'Hedef ≤%10', ha='right', color='#9f2937', fontsize=9)
         else:
             for k, pair in enumerate(misses):
                 ax.text(k, 8, f'Yeni AI kaybı\n{pair[0]} / {pair[1]}', ha='center',

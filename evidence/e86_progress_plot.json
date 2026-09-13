@@ -1,0 +1,61 @@
+{
+  "state": "E86_consumed_DEV_aggregate_plot",
+  "inputs": {
+    "evidence/e83_development.json": "5755f4c97d03cf706cacbd580933a9b58f7aaf2ed4de0fea58e9cccbd76f29a0",
+    "evidence/e86_development.json": "770b168a9845adce9254fc3616ed7753561761e2f764d6ac6ce0e89c47670bb3"
+  },
+  "script_sha256": "a4230608392ded4ae331e8541c5122af8e5e9c4b14d6847f47ca8a3723c258ee",
+  "outputs": {
+    "evidence/e86_progress_2026-09-13.png": "20aba282c889beea4f757d7f6114495a8386f697a4d09e4c8489295df95178f8",
+    "evidence/e86_progress_2026-09-13.svg": "f8934ad377be63b3c5f3fd4f7ad4a49d9d9142fa510009a04fcc399c28dd77d2"
+  },
+  "real_FPR_percent": [
+    [
+      42.5,
+      42.5
+    ],
+    [
+      0.0,
+      13.750000000000002
+    ],
+    [
+      0.625,
+      10.625
+    ]
+  ],
+  "ai_recall_percent": [
+    [
+      97.5,
+      96.25
+    ],
+    [
+      98.75,
+      99.375
+    ],
+    [
+      99.375,
+      99.375
+    ]
+  ],
+  "new_ai_misses_vs_E43": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "conditions": [
+    "publisher_original",
+    "social_q75"
+  ],
+  "new_model_scores": 0,
+  "image_reads": 0,
+  "independent_final": false
+}
