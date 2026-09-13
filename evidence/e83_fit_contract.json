@@ -1,0 +1,51 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "ai_parents": 4595,
+  "ai_views": 13785,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "constraints": "Unchanged E73 non-decreasing logits for all13,785 AI TRAIN views; E64 correct-REAL decision guard applies to old and new REAL views. No margin/weight/cut sweep.",
+  "contract_sha256": "4d21e5357416ceb5d6f768a40204e9b2d86fc59adeda249f4b6a6f4fc726ae24",
+  "dev_consumed_by": [
+    "E70",
+    "E71"
+  ],
+  "dev_features_or_scores_in_fit": 0,
+  "dev_fresh_or_independent": false,
+  "downloads": 0,
+  "e49_read_allowed": false,
+  "evaluation": "Only complete TRAIN pass permits one separately registered consumed E66 screen with all20 numeric gates and zero new AI misses per source/condition; no E49 until that screen passes.",
+  "hypothesis": "Supervised nonlinear coordinates may separate hard REAL from protected AI beyond prior fixed features. One representation change with unchanged E81 objective; no rank/seed/weight/margin/cut sweep.",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e80_fit.py": "9d2abb1b59367ca95f51c4eb53425632665b80b29d6ee4751d5ccd609d37f003",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e81_real_minimax.py": "03a7f5ce9356e09eac8e26b7fe11d507dd59eb04d91d0bce30f78de50a391aba",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e82_representation.py": "2c9b9769ca9cd4003e25538778510df4e80b9ceee3bd23f1e428cbd17c3f81c2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_fit.py": "45a1a57e177eadbf63a7d673c193197dc98075269918b6d44019686bf1390b87",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_model.py": "8f1ab27c4636f23cbb705572781d19ba2c65757ac115620f21ad47897ca5357e",
+    "/Volumes/LaCie/pixelproof-datasets/e80/correction.npz": "136be4ca5ef6aeac683f604a4e3820870df3436802e6fb924846e09ee9f58d22",
+    "/Volumes/LaCie/pixelproof-datasets/e81/fit.json": "b95394d2e9b00406ca50667e6671b35e1d78fb439edd20b8a8e65f71b0da7c48",
+    "/Volumes/LaCie/pixelproof-datasets/e81/fit_contract.json": "21dc8c72c4f9085a8cf08d2dbda7fa7e8e19e47d8c5b133a67f01037b4c1fe57",
+    "/Volumes/LaCie/pixelproof-datasets/e82/representation.json": "6b3154f983ef9f6909260a832a318e828469863ef6f2d8708db02645847eca67",
+    "/Volumes/LaCie/pixelproof-datasets/e82/representation_contract.json": "64a1d4fd2c8efaad5792d731345cc3795454d1374e1625f68292087bed5a0fa1",
+    "/Volumes/LaCie/pixelproof-datasets/e82/supervised_features.npz": "8fce6601b077d6c38d12d25f3af610120e78a174d782336dd59463214953297e",
+    "/Volumes/LaCie/pixelproof-datasets/e82/supervised_map.npz": "4f93ce5fde3465ad0b67d42775fb3760b38f185f4830cfea7727e5e0a9380898"
+  },
+  "limits": "Research-only MIDD license; unknown scene independence. Whole publisher TRAIN only. Legacy RR has no per-file upstream-site mapping; its paper names mixed news/COCO/CC3M/Unsplash origins. Exact-body audits do not establish upstream-publisher or derivative independence. No new COCO data admitted and no unseen-COCO evaluation claim. TRAIN score protection is not external confidence/recall evidence.",
+  "max_seconds": 1800,
+  "new_parents": 511,
+  "objective": "Minimize .5 times worst REAL source/condition mean cut-centered BCE plus .5*L2.01*norm(w)^2. Within each REAL source/condition give equal parent mass and split duplicate views within parent. No AI BCE reward and no hard-REAL multiplier. All REAL sources enter the epigraph; no selected RR-only fit.",
+  "old_parents": 11630,
+  "optimizer": "SLSQP200,ftol1e-9,CPUfloat64/two threads,zero start,final iterate only.",
+  "parents": 12141,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "real_parents": 7546,
+  "replay": "Require every cached E82 latent coordinate exactly reproduced in the combined map before optimization. Keep same E80 all-view runtime batch8 score/two-cut/all-AI-confidence guards after provisional TRAIN pass.",
+  "representation": "Exact E80 multimodal385 coordinates plus complete frozen E82 latent64 and intercept1. No encoder, PCA, AE, scaler, MLP or direction refit; zero450 correction weights.",
+  "state": "E83_supervised_feature_TRAIN_fit_registered",
+  "train_guard": "Solver success/violation<=1e-8, minimum AI shift>=-1e-8, exact saved replay, zero new AI/REAL errors. All3 conditions: <=10% REAL FPR in old/expanded/new-MIDD slices, <=20% worst MIDD sensor. Additionally all10 fixed numeric metric gates on both old and expanded TRAIN in every condition. This strengthens screening after E77 showed pooled Q75 can pass while source/selective accuracy fails. A provisional TRAIN pass must also replay all views in runtime batch8: score error<=1e-6, zero decision changes at both cuts and minimum AI correction shift>=-1e-8.",
+  "trigger": "E80/E81 source and covered-accuracy TRAIN failures. E82 learned a class-discriminative nonlinear map on TRAIN only; low representation loss is not an external detector result."
+}

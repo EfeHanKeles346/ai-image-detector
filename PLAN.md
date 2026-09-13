@@ -44,7 +44,7 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E81 failed; E82 nonlinear representation registered (2026-09-13)
+## Current checkpoint — E82 complete; E83 constrained fit registered (2026-09-13)
 
 The goal remains unmet. E80/E81 preserve all E43 TRAIN AI logits and new-miss count0.
 E81 old-REAL FPR8.54%/8.54%/8.33% passes10%, but RR32.24%/33.52%/31.84% fails20%
@@ -54,11 +54,11 @@ Both candidates rejected; runtime/DEV/E49 not run. No hyperparameter or cutoff s
 
 E79 complete:12,141x3x1640 forensic features,34 source replays exact. First attempt hit9000s;
 resume completed80 missing parents in412.623s. Total loops exceed9412.623s plus setup.
-E82 registers a supervised nonlinear representation in the exact E80 multimodal coordinates,
-then one separately registered E81-objective constrained head. Prior RBF/bilinear/REAL-only
+E82 completed its supervised nonlinear representation in the exact E80 multimodal coordinates.
+E83 is frozen for one constrained head fit using the unchanged E81 objective. Prior RBF/bilinear/REAL-only
 AE attempts are already recorded; this must not be presented as the first nonlinear study.
 
-815 Python tests pass. RR upstream lineage unresolved; no new COCO admission or independent
+817 Python tests pass. RR upstream lineage unresolved; no new COCO admission or independent
 final claim. E43/serving unchanged. No30-minute automation; MD/git checkpoints continue.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
@@ -5572,3 +5572,19 @@ CPUfloat64 saved/batch replay, fixed epoch order/checkpoint binding, and exact n
 AdamW checkpoint restoration. Full suite815 passed, existing Starlette/httpx deprecation.
 Input-map replay must match frozen E80 population metrics before training. No E82 trained
 artifact/quality result yet; prepare/run only this registered100-epoch representation.
+
+
+### E82 complete; E83 single constrained fit registered (2026-09-13)
+
+E82 completed100 fixed epochs in54.910s on36,423 TRAIN views. Weighted BCE fell
+from0.6951443 to9.598565e-8. This is training fit, not generalization evidence; the very
+low loss may reflect overfitting. No DEV/final rows or new image inference were used.
+Saved64-coordinate features reproduce exactly, including fixed-input batch8 (max error0).
+This new layer check does not certify the older E77 float32 autoencoder stage.
+
+E83 is frozen before its one fit: `4d21e5357416ceb5d6f768a40204e9b2d86fc59adeda249f4b6a6f4fc726ae24`. Exact E80 coordinates385 plus frozen E82
+latent64 and intercept produce450 zero-start weights. E81 worst-REAL objective, all-AI
+logit protection, correct-REAL protection, all60 TRAIN metric checks and full batch8
+runtime replay remain unchanged. No rank, seed, weight, margin or cutoff sweep. Only a
+complete TRAIN/runtime pass permits a separately frozen consumed E66 DEV comparison.
+817 Python tests pass; one existing Starlette/httpx deprecation. E49 remains unopened.

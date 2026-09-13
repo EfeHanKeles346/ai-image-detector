@@ -3,7 +3,7 @@
 The target remains unmet. E43 and serving are unchanged. E70/E71 passed TRAIN but failed
 separate consumed E66 development screens. E73/E74/E76/E77 failed TRAIN. No overnight
 candidate has opened E49 or qualified for promotion. E79 completed frozen DEAR-r
-features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 also failed source/selective TRAIN guards. E82 is registered to learn supervised nonlinear features.
+features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 also failed source/selective TRAIN guards. E82 completed supervised nonlinear features; E83 is frozen for one constrained fit.
 
 [E77 sonrası sonuç grafiği](overnight_progress_2026-09-13.png) · [Vektör sürümü](overnight_progress_2026-09-13.svg)
 
@@ -213,3 +213,19 @@ CPUfloat64 inference and all-TRAIN scaling; require saved/batch parity and compl
 815 Python tests pass. This is representation learning only; E83 would separately fit450
 constrained coefficients with the unchanged E81 objective and all acceptance/runtime guards.
 No DEV/final pixels or scores, data download, source-role change or quality claim.
+
+
+### E82 complete; E83 single constrained fit registered (2026-09-13)
+
+E82 completed100 fixed epochs in54.910s on36,423 TRAIN views. Weighted BCE fell
+from0.6951443 to9.598565e-8. This is training fit, not generalization evidence; the very
+low loss may reflect overfitting. No DEV/final rows or new image inference were used.
+Saved64-coordinate features reproduce exactly, including fixed-input batch8 (max error0).
+This new layer check does not certify the older E77 float32 autoencoder stage.
+
+E83 is frozen before its one fit: `4d21e5357416ceb5d6f768a40204e9b2d86fc59adeda249f4b6a6f4fc726ae24`. Exact E80 coordinates385 plus frozen E82
+latent64 and intercept produce450 zero-start weights. E81 worst-REAL objective, all-AI
+logit protection, correct-REAL protection, all60 TRAIN metric checks and full batch8
+runtime replay remain unchanged. No rank, seed, weight, margin or cutoff sweep. Only a
+complete TRAIN/runtime pass permits a separately frozen consumed E66 DEV comparison.
+817 Python tests pass; one existing Starlette/httpx deprecation. E49 remains unopened.

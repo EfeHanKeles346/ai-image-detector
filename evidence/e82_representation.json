@@ -1,0 +1,68 @@
+{
+  "TRAIN_views": 36423,
+  "ai_views": 13785,
+  "artifact_sha256": "4f93ce5fde3465ad0b67d42775fb3760b38f185f4830cfea7727e5e0a9380898",
+  "contract_sha256": "64a1d4fd2c8efaad5792d731345cc3795454d1374e1625f68292087bed5a0fa1",
+  "detector_quality_claim": false,
+  "dev_final_rows_read": 0,
+  "downloads": 0,
+  "epochs": 100,
+  "feature_sha256": "8fce6601b077d6c38d12d25f3af610120e78a174d782336dd59463214953297e",
+  "feature_shape": [
+    12141,
+    3,
+    64
+  ],
+  "final_weighted_BCE": 9.598565338561311e-08,
+  "fixed_input_batch8_max_error": 0.0,
+  "initial_weighted_BCE": 0.6951442876967188,
+  "loss_trace": [
+    {
+      "epoch": 10,
+      "weighted_BCE": 0.001393763041126049
+    },
+    {
+      "epoch": 20,
+      "weighted_BCE": 0.0001692132149179218
+    },
+    {
+      "epoch": 30,
+      "weighted_BCE": 4.73723569313447e-05
+    },
+    {
+      "epoch": 40,
+      "weighted_BCE": 1.6860880021818144e-05
+    },
+    {
+      "epoch": 50,
+      "weighted_BCE": 6.6385952667742235e-06
+    },
+    {
+      "epoch": 60,
+      "weighted_BCE": 2.7464782837752986e-06
+    },
+    {
+      "epoch": 70,
+      "weighted_BCE": 1.170770072622939e-06
+    },
+    {
+      "epoch": 80,
+      "weighted_BCE": 5.059974330261518e-07
+    },
+    {
+      "epoch": 90,
+      "weighted_BCE": 2.2072685515506705e-07
+    },
+    {
+      "epoch": 100,
+      "weighted_BCE": 9.598565338561311e-08
+    }
+  ],
+  "new_image_inference": 0,
+  "real_views": 22638,
+  "seconds": 54.909948291955516,
+  "serialized_coordinates_exact": true,
+  "serialized_latent_exact": true,
+  "state": "E82_supervised_TRAIN_representation_complete",
+  "weights_sha256": "30d27d718f191fbc132a755f0720dbaf4cf1b28d3a0e822c05a48db21eb631e9"
+}

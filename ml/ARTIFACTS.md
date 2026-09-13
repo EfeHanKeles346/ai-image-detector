@@ -302,3 +302,14 @@ unchanged full-AI and acceptance guards. Receipt: `evidence/e80_fit.json`.
 FPR8.54%/8.54%/8.33% passes pooled10%, but RR31.84–33.52% and covered accuracy<95%
 fail full TRAIN. Zero new E43 AI misses; some E80-only assigned rescues are lost. No
 runtime/DEV/E49 or serving/promotion. Result: `evidence/e81_fit.json`.
+
+
+### E82 complete TRAIN representation (2026-09-13)
+
+External `e82/supervised_map.npz` SHA256
+`4f93ce5fde3465ad0b67d42775fb3760b38f185f4830cfea7727e5e0a9380898`;
+`e82/supervised_features.npz` (12141x3x64) SHA256
+`8fce6601b077d6c38d12d25f3af610120e78a174d782336dd59463214953297e`.
+100 fixed epochs, exact saved features and fixed-input batch8 replay. TRAIN-only learned
+features, not a detector acceptance result. Receipt `evidence/e82_representation.json`.
+E83 fit contract is frozen; raw features/weights remain external and are not redistributed.

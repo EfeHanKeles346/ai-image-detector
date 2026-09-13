@@ -6295,3 +6295,19 @@ CPUfloat64 saved/batch replay, fixed epoch order/checkpoint binding, and exact n
 AdamW checkpoint restoration. Full suite815 passed, existing Starlette/httpx deprecation.
 Input-map replay must match frozen E80 population metrics before training. No E82 trained
 artifact/quality result yet; prepare/run only this registered100-epoch representation.
+
+
+### E82 complete; E83 single constrained fit registered (2026-09-13)
+
+E82 completed100 fixed epochs in54.910s on36,423 TRAIN views. Weighted BCE fell
+from0.6951443 to9.598565e-8. This is training fit, not generalization evidence; the very
+low loss may reflect overfitting. No DEV/final rows or new image inference were used.
+Saved64-coordinate features reproduce exactly, including fixed-input batch8 (max error0).
+This new layer check does not certify the older E77 float32 autoencoder stage.
+
+E83 is frozen before its one fit: `4d21e5357416ceb5d6f768a40204e9b2d86fc59adeda249f4b6a6f4fc726ae24`. Exact E80 coordinates385 plus frozen E82
+latent64 and intercept produce450 zero-start weights. E81 worst-REAL objective, all-AI
+logit protection, correct-REAL protection, all60 TRAIN metric checks and full batch8
+runtime replay remain unchanged. No rank, seed, weight, margin or cutoff sweep. Only a
+complete TRAIN/runtime pass permits a separately frozen consumed E66 DEV comparison.
+817 Python tests pass; one existing Starlette/httpx deprecation. E49 remains unopened.
