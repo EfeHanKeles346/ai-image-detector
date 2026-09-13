@@ -470,3 +470,29 @@ future coverage extension; active E84B and E85/E86 still use their original12,14
 Next prepare a bounded, no-new-score four-condition encoder cache for the128 SID parents,
 reusing exact existing transforms/encoders. Do not compete with active E84B for GPU memory;
 finish the existing feature/model comparison before launching a second extraction/fit.
+
+
+### E89 new-cohort feature cache prepared, not frozen or started (2026-09-13)
+
+Prepared all128 audited SID parents x4 existing conditions,512 views. Reuse exact E75
+clean/assigned/source-Q75 and E84 social1080->JPEG75 helpers, plus identical frozen
+DINO/CLIP/DEAR encoders. Two parents per8-view batch, float32 features; verify original
+RAW and decoded PNG identities. Same34-source old-clean E43/CLIP/DEAR parity and first
+new-batch repeat<=1e-5. No classifier score for SID, no fitting or E49 image access.
+Immutable resumable2-parent chunks bind ordered parents/roles/conditions/source/RAW/
+derived-crop/feature hashes. Complete archive would be128x4x3072/1536/1640.
+
+A30min/6GiB ceiling is planned from the existing probe cost. The extraction entry point
+rejects incomplete E84B and requires the fixed E85/E86 fit plus any permitted E66
+comparison to finish first. Operational priority also remains with any permitted E49
+regression; do not launch competing GPU stages. E89 freeze is deliberately deferred
+until the existing comparison is complete. This is preparation for possible subsequent
+coverage work, not a model change or a promise to fit on SID regardless of results.
+
+Three focused tests verify byte-identical old3 crops with a distinct social resized view,
+pre-GPU rejection while E84B is incomplete, and exclusion of DEVELOPMENT feature roles.
+No E89 image/encoder operation has run on the new cohort; tests use synthetic pixels.
+
+Full verification after E89 preparation:847 Python tests pass in18.45s; one existing
+Starlette/httpx warning. E89 remains unfrozen/unexecuted. External reserve347GiB;
+macOS reports no recorded thermal/performance warning. Only E84B extraction is active.

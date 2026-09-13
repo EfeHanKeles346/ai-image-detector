@@ -145,3 +145,6 @@ protects original/derived identities and resolves SID duplicate components befor
 
 E86 consumed regression: prepared `e86_regression freeze|score|report`; every E49
 access requires the complete TRAIN/runtime and E66 DEV pass. Not frozen/executed yet.
+
+E89: prepared `e89_features freeze|extract` creates the separate SID four-condition
+TRAIN cache only after E84B/E85/E86; no new-cohort classifier scores or automatic fit.
