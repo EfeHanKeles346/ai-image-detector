@@ -68,9 +68,17 @@
     },
     "last_ml_suite": {
       "pass": 856,
-      "note": "before web-only repair"
-    }
+      "fail": 0,
+      "warnings": 1,
+      "seconds": 17.01,
+      "note": "rerun after web repair"
+    },
+    "npm_ci": "pass; 0 vulnerabilities"
   },
-  "remote_verification": "pending push",
+  "remote_verification": {
+    "status": "queued",
+    "run": "https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749429187",
+    "head": "57aaf61b7837344beef8b31025d64c21f56f8728"
+  },
   "scientific_changes": "none; E91/E92 prepared but not frozen or fitted"
 }

@@ -736,3 +736,14 @@ cancels superseded runs. Remote verification is pending push at this checkpoint.
 E91/E92 remain prepared, not frozen/fitted; no new DEV/final scoring or model promotion.
 Last complete ML suite:856 passed. See rapor/GELISTIRME_RAPORU_2026-09-13.md and
 evidence/ci_dependency_repair_2026-09-13.json for the repair/report record.
+
+
+### 2026-09-13 — Post-repair verification and report
+
+Repair commit57aaf61 and preparation804a07f are pushed to origin/main. Clean npm ci
+installs491 packages and reports0 vulnerabilities. The complete Python suite was
+rerun after repair:856 passed in17.01s, one existing Starlette/httpx deprecation warning.
+All report-local links resolve and E83/E86 rates match recorded JSON receipts.
+GitHub CI run34749429187 has been created but remains queued at this checkpoint;
+local passing checks are not presented as remote success. The Turkish development
+report is in rapor/GELISTIRME_RAPORU_2026-09-13.md. No further ML run was started.

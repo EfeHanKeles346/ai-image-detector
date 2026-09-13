@@ -62,7 +62,8 @@ The read-only consistency review remains a future lead, not an implemented chang
 
 E84B completed12141 social views in7296.694s; E85 completed100 epochs in75.343s;
 E86 fit/runtime235.523s and cached DEV scoring6.632s. Corrected aggregate plot is
-visually verified. The later E91/E92 preparation is covered by856 passing Python tests. E79 cost remains over9412s across
+visually verified. The later E91/E92 preparation is covered by856 passing Python tests.
+E79 cost remains over9412s across
 attempts. RR upstream lineage and research-use limits persist. Serving unchanged;
 active work and MD/git checkpoints continue without30-minute automation.
 

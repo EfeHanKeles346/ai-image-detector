@@ -11,7 +11,8 @@ REAL false-AI is0.625% original /10.625% socialQ75; AI recall99.375% in both con
 Against E83, five social REAL errors and one original AI miss are rescued, while one
 original REAL rescue is lost. No threshold or gate was relaxed.
 
-E84B transport features and E85's fixed100-epoch representation are complete. E89 also completed all four-condition features for128 original
+E84B transport features and E85's fixed100-epoch representation are complete.
+E89 also completed all four-condition features for128 original
 SID RAW captures selected and overlap-audited before the E86 result. E91/E92 expansion
 code is prepared and tested, but has not been frozen or trained; these images were not
 used in E85/E86.

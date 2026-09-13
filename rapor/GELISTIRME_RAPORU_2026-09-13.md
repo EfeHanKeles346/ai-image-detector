@@ -1,7 +1,9 @@
 # PixelProof geliştirme ve GitHub onarım raporu — 13 Eylül 2026
 
 GitHub hatasının kaynağı web bağımlılıklarındaki güvenlik açıklarıydı. Yerel onarım ve
-kontroller tamamlandı; bu kayıt anında GitHub üzerindeki yeni çalıştırma henüz bekleniyor.
+kontroller tamamlandı ve `57aaf61` onarım commit’i GitHub main dalına gönderildi.
+Bu kayıt anında [uzak CI çalıştırması](https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749429187)
+sırada bekliyor; uzaktaki sonuç henüz başarılı olarak doğrulanmadı.
 Araştırmada gerçek fotoğrafların yanlış AI işaretlenmesi belirgin azaldı, ancak kabul
 hedefi henüz sağlanmadı. E86 adayını bu nedenle yayına almadım.
 
@@ -34,9 +36,9 @@ uyarlandı; ayrıca HTML'in çağırdığı JS ve CSS dosyalarının derlemede b
 ediliyor. Test kapatılmadı. vinext hâlâ beta sürümü; derleme ve SSR kontrolleri bu
 geçişi kapsıyor, kapsamlı tarayıcı etkileşim testi yapılmadı.
 
-Yerelde derleme, lint, TypeScript ve **6/6 web testi** geçti. Web onarımından önceki
-son tam Python paketi **856 testte başarılıydı**. GitHub Linux/Node22/Python3.13
-üzerinde temiz kurulumla ayrıca doğrulanacak.
+Yerelde derleme, lint, TypeScript ve **6/6 web testi** geçti. Temiz `npm ci` kurulumu da 0 açıkla tamamlandı. Onarım sonrasında tam Python
+paketi tekrar çalıştırıldı: **856 test geçti** (17,01 saniye; mevcut bir Starlette
+kullanımdan kaldırma uyarısı). GitHub Linux/Node22/Python3.13 üzerinde ayrıca doğrulanacak.
 [Onarım kanıtı](../evidence/ci_dependency_repair_2026-09-13.json).
 
 ## Model geliştirmesinde ulaşılan sonuç
