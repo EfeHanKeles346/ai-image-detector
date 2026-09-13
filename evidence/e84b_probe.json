@@ -1,0 +1,30 @@
+{
+  "contract_sha256": "6ca86aad24fdb89c91d711e35c24846e500cb044bdb76020488489ed1474de0c",
+  "dev_final_image_reads": 0,
+  "full_extraction_permitted": true,
+  "mps_driver_peak_bytes": 5518344192,
+  "new_view_classifier_scores": 0,
+  "parity": {
+    "decision_changes_by_cut": {
+      "0.011505939625203613": 0,
+      "0.07940196245908739": 0
+    },
+    "feature_max_errors": {
+      "clip": 0.0,
+      "dear": 0.0
+    },
+    "parents": 34,
+    "passed": true,
+    "reference_max_score_error": 0.0
+  },
+  "parity_seconds": 31.94594429200515,
+  "predecessor_windows_replayed_exactly": 8,
+  "probe_encoding_seconds": 72.78099158534314,
+  "probe_parents": 128,
+  "projected_encoding_seconds": 6903.390772169149,
+  "repeat_max_feature_error": 0.0,
+  "resumed_probe_windows": 0,
+  "setup_seconds": 16.34860537503846,
+  "state": "E84B_probe_passed",
+  "total_seconds": 125.90703620796558
+}

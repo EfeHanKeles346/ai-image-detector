@@ -44,13 +44,13 @@ Power initially13%; user explicitly requested starting while connecting power. A
 latest check80%, attached and not charging under system battery management. Long stages require
 AC and storage reserve; no persistent power-setting change or scheduled watcher.
 
-## Current checkpoint — E83 DEV rejected; E84B source repair complete; transport probe registered (2026-09-13)
+## Current checkpoint — E83 DEV rejected; E84B probe passed; full transport extraction active (2026-09-13)
 
 E83 passes all TRAIN/runtime gates. Consumed DEV REAL FPR improves42.5% to0% original
 and42.5% to13.75% social Q75; AI recall98.75%/99.375%.17/20 numeric gates pass, but
 one newly missed original AI and three Q75 numeric failures reject the candidate.
 Read-only component replay is exact; learned REAL correction weakens/reverses under Q75.
-E84B is registered to add the exact social1080px-then-JPEG75 view to every existing TRAIN parent,
+E84B is extracting the exact social1080px-then-JPEG75 view to every existing TRAIN parent,
 keeping all old conditions and AI protection. No DEV/final admission or cutoff change.
 
 827 Python tests pass. E79 feature completion cost remains over9412s across two attempts.
@@ -5727,3 +5727,20 @@ seed82, optimizer and100epochs; input/latent scalers learn only the complete fou
 TRAIN data. Before learning, old E80 population replay and old E83 decisions under the
 new input layout must pass. Source/order/class-mass and tiny decision-flip tests pass.
 827 full Python tests passed before two additional focused E85 tests (both passed).
+
+
+### E84B probe passed; full transport extraction starts (2026-09-13)
+
+E84B completed the same128-parent probe.34-source old-clean reference score/cut replay
+and CLIP/DEAR features are exact; repeated new window exact; all8 predecessor windows
+(64 views) reproduced exactly. Source schema repair changed no measured encoder output.
+Encoding/source-read/chunk-write time72.781s projects6,903.391s (~1h55m) for12,141
+parents, within10,800s budget. Setup16.349s and parity31.946s are separate; total probe
+125.907s. MPS driver peak5,518,344,192B, below6GiB. Full extraction is permitted and
+will preserve probe chunks, fill missing fixed windows and verify complete coverage.
+Receipt `evidence/e84b_probe.json`. No new-view classifier scores or DEV/final image reads.
+
+E85 preparation now verifies original E83 artifact hash and condition metadata; E86 four-
+condition gate helper matches old three-condition results exactly and rejects an old-
+condition failure even if the new condition passes. Focused tests pass. No E85/E86 fit
+or representation freeze yet; complete E84B features are required.

@@ -3,7 +3,7 @@
 The target remains unmet. E43 and serving are unchanged. E70/E71 passed TRAIN but failed
 separate consumed E66 development screens. E73/E74/E76/E77 failed TRAIN. No overnight
 candidate has opened E49 or qualified for promotion. E79 completed frozen DEAR-r
-features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 also failed source/selective TRAIN guards. E83 passed TRAIN/runtime but failed consumed E66 DEV: REAL FPR0%/13.75%, AI98.75%/99.375%, one new original AI miss. E84 transport extension is planned.
+features for all12,141 admitted TRAIN parents; E80 failed source/selective TRAIN guards; E81 also failed source/selective TRAIN guards. E83 passed TRAIN/runtime but failed consumed E66 DEV: REAL FPR0%/13.75%, AI98.75%/99.375%, one new original AI miss. E84B passed parity/resource checks; full TRAIN transport feature extraction is active.
 
 [E83 sonuç grafiği](e83_progress_2026-09-13.png) · [E83 vektör sürümü](e83_progress_2026-09-13.svg)
 
@@ -288,3 +288,20 @@ one constrained head. Preserve every old and new AI-view E43 confidence, correct
 protection, all absolute gates and runtime replay. Additional transport coverage is a
 hypothesis; it is not guaranteed to recover the original AI miss or generalize beyond E66.
 No representation/head has yet been frozen or fitted for this extension.
+
+
+### E84B probe passed; full transport extraction starts (2026-09-13)
+
+E84B completed the same128-parent probe.34-source old-clean reference score/cut replay
+and CLIP/DEAR features are exact; repeated new window exact; all8 predecessor windows
+(64 views) reproduced exactly. Source schema repair changed no measured encoder output.
+Encoding/source-read/chunk-write time72.781s projects6,903.391s (~1h55m) for12,141
+parents, within10,800s budget. Setup16.349s and parity31.946s are separate; total probe
+125.907s. MPS driver peak5,518,344,192B, below6GiB. Full extraction is permitted and
+will preserve probe chunks, fill missing fixed windows and verify complete coverage.
+Receipt `evidence/e84b_probe.json`. No new-view classifier scores or DEV/final image reads.
+
+E85 preparation now verifies original E83 artifact hash and condition metadata; E86 four-
+condition gate helper matches old three-condition results exactly and rejects an old-
+condition failure even if the new condition passes. Focused tests pass. No E85/E86 fit
+or representation freeze yet; complete E84B features are required.

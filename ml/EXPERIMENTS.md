@@ -6432,3 +6432,20 @@ seed82, optimizer and100epochs; input/latent scalers learn only the complete fou
 TRAIN data. Before learning, old E80 population replay and old E83 decisions under the
 new input layout must pass. Source/order/class-mass and tiny decision-flip tests pass.
 827 full Python tests passed before two additional focused E85 tests (both passed).
+
+
+### E84B probe passed; full transport extraction starts (2026-09-13)
+
+E84B completed the same128-parent probe.34-source old-clean reference score/cut replay
+and CLIP/DEAR features are exact; repeated new window exact; all8 predecessor windows
+(64 views) reproduced exactly. Source schema repair changed no measured encoder output.
+Encoding/source-read/chunk-write time72.781s projects6,903.391s (~1h55m) for12,141
+parents, within10,800s budget. Setup16.349s and parity31.946s are separate; total probe
+125.907s. MPS driver peak5,518,344,192B, below6GiB. Full extraction is permitted and
+will preserve probe chunks, fill missing fixed windows and verify complete coverage.
+Receipt `evidence/e84b_probe.json`. No new-view classifier scores or DEV/final image reads.
+
+E85 preparation now verifies original E83 artifact hash and condition metadata; E86 four-
+condition gate helper matches old three-condition results exactly and rejects an old-
+condition failure even if the new condition passes. Focused tests pass. No E85/E86 fit
+or representation freeze yet; complete E84B features are required.

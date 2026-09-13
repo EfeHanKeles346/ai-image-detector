@@ -48,10 +48,13 @@ def freeze():
     ROOT.mkdir(exist_ok=True);validate_previous()
     features=read(DATA_ROOT/'e84b/features.json');receipt=read(EVIDENCE/'e84b_features.json')
     if digest(DATA_ROOT/'e84b/features.json')!=receipt['report_sha256'] or features['parents']!=12141 or \
+            features['state']!='E84B_social_TRAIN_features_complete' or \
             features['shapes']!={'dino':[12141,3072],'clip':[12141,1536],'dear':[12141,1640]} or \
             features['new_view_classifier_scores'] or features['dev_final_image_reads'] or \
             digest(DATA_ROOT/'e84b/social_features.npz')!=features['feature_sha256']:
         raise ValueError('complete verified E84B transport features required')
+    if digest(DATA_ROOT/'e83/correction.npz')!=read(DATA_ROOT/'e83/fit.json')['candidate_sha256']:
+        raise ValueError('frozen E83 candidate changed')
     paths=[Path(__file__),Path(__file__).with_name('e85_data.py'),Path(__file__).with_name('e82_representation.py'),
         DATA_ROOT/'e82/representation_contract.json',DATA_ROOT/'e84b/features_contract.json',
         DATA_ROOT/'e84b/features.json',DATA_ROOT/'e84b/social_features.npz',DATA_ROOT/'e83/correction.npz',
@@ -183,7 +186,7 @@ def train():
         parents=np.array([r['parent_id'] for r in rows]);features=z.reshape(len(rows),4,64)
         if FEATURES.exists():
             with np.load(FEATURES,allow_pickle=False) as old:
-                if str(old['binding'])!=binding or set(old['roles'])!={'TRAIN'} or not np.array_equal(old['parents'],parents) or not np.array_equal(old['features'],features):
+                if str(old['binding'])!=binding or set(old['roles'])!={'TRAIN'} or list(old['conditions'])!=CONDITIONS or not np.array_equal(old['parents'],parents) or not np.array_equal(old['features'],features):
                     raise ValueError('existing supervised features differ')
         else:save_npz(FEATURES,features=features,parents=parents,roles=np.array(['TRAIN']*len(rows)),binding=np.array(binding),conditions=np.array(CONDITIONS))
     result={'state':'E85_supervised_TRAIN_representation_complete','contract_sha256':binding,
