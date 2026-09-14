@@ -1,0 +1,13 @@
+{
+  "body_bytes": 374620852,
+  "classifier_scores": 0,
+  "contract_sha256": "c8c66ed19f9b93d5a0acc7aefab98f5bc5deccf794df99fda911e3ea4148f303",
+  "images": 512,
+  "limits": "COCO-derived multi-turn edits; no automatic TRAIN/CAL/final admission or independent-publisher claim. ZIP CRC and local SHA verified; whole-archive publisher SHA is metadata only for range subsets.",
+  "masks": 512,
+  "range_bytes_this_execution": 387608597,
+  "receipt_sha256": "bac31ec72a2d33cb5954f9161561fb3b41aa3c9ef741aa8073d68f1b38bb1980",
+  "seconds": 1449.9226091250312,
+  "state": "E105_download_complete_quarantine",
+  "training_allowed": false
+}

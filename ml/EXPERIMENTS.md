@@ -8042,3 +8042,123 @@ requires inventory. This is not a new full-frame model or a trained second revie
 E103/E104 engineering verification: full Python suite925 passed in16.89s; one existing
 Starlette/httpx deprecation warning. No web/serving change. E103 code commit1269a66
 passed both GitHub jobs (34864358329). Final evidence/documentation commit follows.
+
+
+### Remote dual-model research programme registered — 2026-09-14
+
+The current instruction authorizes research/acquisition/implementation for both modules
+without manual computer interaction. This supersedes the historical Model2-waits-for-E49
+execution order, while retaining all scientific data/retention gates. PLAN.md now contains
+the primary-source comparison, present gaps, prospective finite-sample proof targets,
+Model2 evaluation repair, and P0–P7 implementation ladder. Broader targets are aspirational
+project criteria, not an industry certification or an amendment to frozen20-check contracts.
+E105 selects512 author DiffSeg30k TRAIN pairs by fixed identity hash before images/scores;
+E106 audits existing raw TRAIN caches; E107 evaluates only120 historically exposed CocoGlide
+parents after evaluator repair. No new model selection on protected final data.
+
+## 2026-09-14 — E106/E107/E108: evidence repair before model expansion
+
+E106 verified **all 11,630 legacy TRAIN parents / 34,890 views**, including each raw
+CLIP chunk body, internal array digests and exact saved mean/std aggregation (489,358,434
+bytes). Crop-role coordinates are finite throughout. The full E103 population still
+requires **15,210 raw views** (legacy social views and all four views of appended cohorts)
+before the proposed full-population representation comparison. No classifier was fitted,
+no DEV/final image was read, and this inventory is not an accuracy improvement.
+Receipt: `evidence/e106_context_inventory.json`.
+
+E107 preregistered the historical first120 CocoGlide edits and their exact metadata-linked
+authentic parents. The old crop128 checkpoint is SHA256
+`fd504af03f223557d42f2fce6bbd5e2e93493a34adba15a884828a439446f11f`.
+Replaced the old truth-dependent example filter and percentile threshold with full native
+128px tiles, stride64, final-edge coverage, overlap mean, and fixed diagnostic threshold0.5.
+All **120/120 pairs** completed (2,160 tiles, 11.58seconds). No mask-area oracle, image
+resizing or tile cap; tiny masks retained. This is a consumed single-generator diagnostic.
+
+Image-macro pixel AUC **0.57238** (parent bootstrap95% [0.53656,0.61085]), AP **0.36330**,
+IoU **0.19963**. Center-only baseline AUC **0.72208**; crop128 IoU difference versus center
+**-0.01076** (95% [-0.05921,0.03702]), versus always-positive **-0.07432** (95%
+[-0.10291,-0.04814]), versus seeded random tiles **-0.00091**. Authentic controls have
+mean **27.40%** flagged area; **65.83%** exceed5% flagged area. Image detection AUC at fixed
+p95 aggregation is **0.61521**. These fail the proposed Model2 requirements; the old tile
+map must not be presented as validated localization. The center baseline result exposes
+spatial bias in this benchmark and motivates semantic/random-mask controls. These numbers
+are not directly comparable to E17's filtered35-image tile metrics. No web model changed.
+Full strata and all baseline comparisons: `evidence/e107_model2_replay.json`.
+
+E108 adds exact one-sided binomial limits and an evidence-assumption gate. Consumed,
+dependent or incomplete observations cannot certify an error-rate target. The E103
+0/160 original REAL errors would have a **1.855%** one-sided95% upper limit even under an
+unjustified iid assumption; it does not establish FPR<=1%. Its160 REAL photos represent
+only10 scenes. A separate scene-any-error endpoint with0/10 has a **25.89%** conditional
+iid upper limit; this is explicitly not a photo FPR. Social12/160 has an11.868% conditional
+upper limit. All are descriptive because these data were consumed and independence is
+unestablished. Zero errors require299 fresh iid units for one1% claim at95%, or597 for
+20 prespecified simultaneous one-sided claims using Bonferroni. The old20 gates mean
+2 conditions x10 engineering criteria, not20 independent test datasets. Receipt:
+`evidence/e108_evidence_limits.json`. E92 remains the serving model.
+
+### E110 preregistration — missing raw-context feasibility
+
+Before full extraction, freeze one SHA-first TRAIN parent per cohort/label/source,
+legacy social view and each appended cohort's four conditions. Reuse the pinned local
+CLIP encoder, exact historical batch3/preprocess, compare reconstructed aggregates to
+existing SHA-bound caches at max absolute error1e-5, and retain raw ordered crop vectors.
+No subset head fitting, classifier scores, DEV/gallery/final inputs or downloads during
+encoding. Bound runtime20minutes and GPU allocation6GiB; stop the known demo API for
+memory and restore the same E92 after the probe. Estimate full extraction cost, then
+register a full-population run separately. Protocol/code: `e110_context_probe.py`.
+
+### E105/E109 — completed acquisition, unexpected task mixture
+
+Downloaded the full preregistered512 DiffSeg30k TRAIN image/mask pairs. E109 native
+schema audit:512 decoded,201 partial/224 full-positive/87 empty masks, zero internal
+body/RGB duplicate groups. No mask>127 conversion or refill. A single arbitrary pair
+was inspected before the full audit and found empty; this is disclosed in its receipt.
+The dataset combines cases that cannot share one within-image localization metric.
+Keep quarantine; missing authentic ancestry blocks independent role assignment and
+empty masks do not imply authentic photos. Details and rationale are in DATASETS.md.
+
+### E110 source-path failure and E110B engineering revision
+
+The frozen E110 run reproduced two selected legacy-social CLIP aggregates exactly, then
+stopped before the third image with KeyError(path). Some native legacy records use a
+source_key rather than a materialized path. No raw cache/report/model fit was completed.
+Preserve E110 code/contract; E110B resolves the same parent identities through the already
+verified E84 source index, preserving the same40 parents/70 conditions, selection salt,
+encoder, tolerance and no-classifier policy. Bind the source index/receipt/code and assert
+that the selected parent order is identical before encoding. No error-driven refill or
+changed metric. This is an engineering failure, not negative representation evidence.
+
+### E110B completed — raw crop-role extraction is feasible
+
+The same40 selected TRAIN parents /70 missing views completed in36.10seconds including
+encoder load. All historical CLIP mean/std aggregates reproduced **exactly (max error0)**
+across the four cohorts. Peak MPS allocation2,194,358,272bytes (~2.04GiB).
+Raw cache SHA256 `79043f2a4b6144b88acf968069483fbf247a56fd9a8de16077e89c7a7d074094`.
+The rough15210-view estimate is7,843seconds (~2.18hours), source-dependent and including
+amortized loading. This verifies an implementation path; it does not measure improved
+classification or authorize fitting on a subset. Full ordered extraction, cache admission
+and a separately preregistered context-feature head remain next. Restored E92 demo API
+after the GPU probe. Receipt: `evidence/e110b_context_probe.json`.
+
+### E111 preregistration — Model2 overlap before role assignment
+
+Audit all512 CocoGlide edits and512 linked authentic originals plus all512 E105 images
+against the9 frozen reference files used/extended by E100. Canonical body/RGB or joint
+dHash<=4 and pHash63<=4 overlap, also internal cross-parent comparisons. No classifiers
+or masks for selection, no protected image decoding, and no automatic role admission.
+A match-free derivative cannot establish original COCO/prompt/generator independence.
+
+### E111 completed — 45 CocoGlide parent groups require overlap quarantine
+
+All1,536 selected images decoded; compared with152,380 existing reference fingerprints.
+Found252 joint perceptual match observations affecting **45 CocoGlide parent groups**:
+14 among the historical first120 and31 among the other392. These were joint dHash/pHash
+matches, **not exact body/RGB duplicates**; conservatively flag each complete parent and
+its derivatives pending review. No DiffSeg30k image matched this snapshot and no internal
+cross-parent matches were detected by the frozen criterion. Neither negative result
+proves unseen COCO/prompt ancestry. Local authentic pointers use numeric compiled names,
+so original COCO identifiers are not recovered by filename alone. No training roles
+assigned; no fresh evaluation claim. Runtime14.82seconds. Receipt:
+`evidence/e111_model2_lineage.json`. These findings reinforce that E107 is consumed
+research diagnosis and its bootstrap intervals are not independent deployment evidence.

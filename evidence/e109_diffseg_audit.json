@@ -1,0 +1,37 @@
+{
+  "classifier_scores": 0,
+  "code_sha256": "a37b68d5bc895a22568820ec4761901e35066528c1da680b016bb6c0ea046414",
+  "decoded_pairs": 512,
+  "download_sha256": "bac31ec72a2d33cb5954f9161561fb3b41aa3c9ef741aa8073d68f1b38bb1980",
+  "duplicate_decoded_RGB_groups": 0,
+  "duplicate_image_body_groups": 0,
+  "limits": "Native labels use >0, never >127. Empty masks retained and quarantined, not relabelled as authentic. Image bodies are edited derivatives; original COCO ancestry/prompt and cross-role near duplicates unresolved. No CAL/final or universal evidence.",
+  "mask_area_bins": {
+    "0.01_0.05": 7,
+    "0.05_0.2": 50,
+    "0.2_0.5": 80,
+    "0.5_1": 288,
+    "0_0.01": 0
+  },
+  "mask_ids_pair_counts": {
+    "0": 288,
+    "1": 117,
+    "2": 100,
+    "3": 126,
+    "4": 84,
+    "5": 88,
+    "6": 131,
+    "7": 120,
+    "8": 118
+  },
+  "nondegenerate_pairs": 201,
+  "preregistration_note": "Schema audit after one arbitrary downloaded pair was inspected and found to have an empty mask. Entire fixed512 population retained; no score-based selection/refill.",
+  "problems": {
+    "empty_edit_mask_origin_unresolved": 87,
+    "full_image_edit_mask": 224
+  },
+  "requested_pairs": 512,
+  "rows_sha256": "538f6ebb6f2c6f3e4e6c94a7b1ec6bb30750ba0b2de0963fa7a275082374dfe4",
+  "state": "E109_DiffSeg30k_quarantine_schema_audit_complete",
+  "training_allowed": false
+}

@@ -1,0 +1,11 @@
+{
+  "state": "E110_source_path_engineering_failure",
+  "code_sha256": "74b9f7bc5177ff33f12071ede870d29e95396d6104ab86d6c334caba29d50004",
+  "contract_sha256": "21e0d906a7f7ad03fb15026e0fa6689e3a6e65bc49d69ba67e3c0a9174d5ebeb",
+  "completed_probe_parents_before_failure": 2,
+  "aggregate_max_abs_error_before_failure": 0.0,
+  "error": "KeyError: path; third selected legacy record uses source_key",
+  "classifier_calls": 0,
+  "raw_cache_completed": false,
+  "next": "E110B resolves the identical selected parents with verified E84 source index."
+}

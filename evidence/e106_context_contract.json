@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "contract_sha256": "2c13be9e84957c8c402e3ce67b3c1ed6700d61666ea2909f074a74c4b8f2d5dd",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e104_context_audit.py": "b829f138ce0aa6d13dcc9470b5a92182cb6eee061273d4f1a66ac8649965b242",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e106_context_inventory.py": "cbcc60d9f5a1f4f23530590babb7ba64d8aaca4f4c56fd115b254d2047c508e1",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_features.py": "7c6b6da630425a8879ccb16f7ee8c32538e6e64405335487ee58e0a33d7a6831",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/e32_candidate.py": "e14ff1044462e49560a98fc3e8697e60738d6b41b0e3e49442dfd025c7832b6a",
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+    "/Volumes/LaCie/pixelproof-datasets/e71/features.json": "c238badd7ef03b1d2ea6b4b978fe5b568354c6325d37b67a33c08561555df6b4",
+    "/Volumes/LaCie/pixelproof-datasets/e71/features_contract.json": "9ffd471967c6b85cdb618ed6714e21844420d4c4b30bd093e295e5ff7ccf26d5",
+    "/Volumes/LaCie/pixelproof-datasets/e71/legacy_inventory.json": "09608d4198148a41579f55c7415b44049285c65307d8c5df56f5a0207e97d9f1"
+  },
+  "missing_views_in_full_E103_population": 15210,
+  "parents": 11630,
+  "purpose": "Body and array hash verification, exact aggregate replay, finite crop-role coordinates. No classifier, image decode or feature fitting.",
+  "selection": "Every E54 TRAIN parent in frozen order; no score-based selection.",
+  "state": "E106_full_legacy_TRAIN_raw_inventory_registered"
+}

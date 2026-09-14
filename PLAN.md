@@ -19,6 +19,153 @@ versus completed files/bytes, integrity, local storage, failures and next admiss
 Historical entries remain historical. No raw data, private gallery information or model
 weights in Git; small code/evidence commits and pushes remain authorized, never forced.
 
+## Research and execution programme for both models
+
+This programme supersedes the historical rule that Model 2 work must wait for an E49
+pass. The current instruction authorizes research, automatic acquisition and implementation
+for both models. It does not waive data-role, retention or evidence controls. The deliverable
+remains a reproducible student research system; no commercial or universal certification is
+claimed. Keep all four English records current. No paid API generation, account creation,
+external messaging or interactive login is needed for the steps selected here.
+
+### Scope and present evidence
+
+Model 1 identifies evidence of full-image AI generation. Model 2 localizes AI-assisted local
+edits. A fully regenerated image can carry synthetic traces outside a nominal editing mask;
+a conventional paste from another camera is not necessarily AI generation. These cases need
+separate labels and tests. Neither a low Model 1 score nor an empty Model 2 heatmap certifies
+that a photograph is authentic. Combining the modules must not silently change either model's
+fixed decision rule. A percentage is currently a raw model score, not a calibrated probability.
+
+E92 is the running local demo. E102 reduced consumed social-Q75 REAL errors from 14/160 to
+12/160 while retaining 159/160 AI, but both E102 and E103 miss an original AI caught by E43.
+E103's near-perfect TRAIN results did not improve binary consumed-DEV results. The original
+160 REAL observations represent just 10 dependent SIDD scenes, and the AI sample covers two
+seen families. The owner gallery is also consumed development: it cannot be used to train a
+fix and then to prove that fix independently. The 20 historical numeric checks are 10 metrics
+in two conditions, not 20 independent datasets or complete acceptance.
+
+E104 established a representation property: mean/std pooling erases which of three crop
+vectors came from center-context versus texture. The named global crop is itself a resized
+center crop. This motivates a complementary feature experiment but does not prove why any
+particular image is misclassified. Existing CAL populations are historically consumed, with
+incomplete upstream independence in some sources. Exact hashes and source names alone do
+not establish scene, prompt, photographer or generator-family independence.
+
+Model 2 has only a historical diagnostic signal: E17 used at most 36 tiles, dropped masks
+without a tile at least half edited, and selected a threshold from the true mask fraction.
+That last operation is an oracle. Its reported IoU cannot serve as a deployable accuracy
+claim. The inventory contains 512 CocoGlide image/mask pairs, with the first 120 potentially
+exposed. Authentic decoding, cross-role near duplicates and ancestry require further audit.
+
+### What current research supports
+
+| Work and status | Mechanism and reported difficulty | Adaptation and boundary here |
+| --- | --- | --- |
+| [UniversalFakeDetect, CVPR2023, official code](https://github.com/WisconsinAIVision/UniversalFakeDetect) | A pretrained CLIP representation provides a useful transferable detector baseline. | Already available locally; retain it as a frozen comparator. Its name does not establish success on all future generators or local edits. |
+| [Community Forensics, CVPR2025](https://jespark.net/projects/2024/community_forensics/) | Large generator diversity is a central training resource. | Local Small data has 300 generator identities, not the full release's breadth. Retain model-family labels and match REAL content/encoding; the local native-resolution shortcut was previously measured. |
+| [B-Free, CVPR2025](https://github.com/grip-unina/B-Free) | Semantically paired real/reconstructed images reduce content bias; large native crops and processing augmentation support robustness. | Apply identical processing to both classes and consider context plus native-detail features. Its COCO training release overlaps protected project ancestry, so it is not an automatic new TRAIN source. |
+| [DEAR, ICML2026](https://github.com/dahyedahye/dear) | Inpainted masks diagnose channel responses; bilateral feature pruning/refinement targets fragile processing cues. | DEAR-r is already a frozen feature expert here. Do not claim our pooled crops reproduce its native inference or that imported weights eliminate dataset bias. Mask-based diagnostics are possible only on eligible TRAIN. |
+| [GAPL, CVPR2026](https://openaccess.thecvf.com/content/CVPR2026/papers/Qin_Scaling_Up_AI-Generated_Image_Detection_with_Generator-Aware_Prototypes_CVPR_2026_paper.pdf) | More generator data can eventually create conflicting embeddings; prototypes and two-stage LoRA address representation limitations. | Preserve generator grouping; prototype or low-rank adaptation is a later isolated experiment if the cheaper crop-role extension fails. Do not add data volume without checking the bottleneck. |
+| [NTIRE2026 robust detection report](https://arxiv.org/html/2604.11487v1) | The challenge combines 42 generators and 36 distortions; strong systems use matched corruptions and complementary high-resolution/robustness experts. Some reported systems require multi-GPU or very large memory resources. | Reproduce the evaluation ideas and bounded augmentation design on this 18GB Mac. Do not promise equivalent training scale or compare our consumed accuracy with their ranking metric. |
+| [Out-of-box benchmark, February2026 preprint](https://arxiv.org/abs/2602.07814) | Detector rankings vary substantially across datasets; its evaluation finds no universally winning detector. | Use a common locked benchmark and exact pretrained artifacts for comparisons. This study is evidence of evaluation dependence, not proof that every detector must always fail. |
+| [TruFor, CVPR2023, official code](https://github.com/grip-unina/TruFor) | RGB semantics and Noiseprint++ traces are fused for localization and reliability estimation. | Start with a small dense/token or residual baseline plus authentic controls. A visually plausible heatmap is insufficient; residual maps must beat simple spatial baselines. |
+| [TGIF2, Journal on Information Security2026](https://arxiv.org/html/2603.28613v1) | Spliced and fully regenerated edits behave differently. Random-mask tests expose object-boundary bias; fine-tuning gains can remain generator-specific. | Separate SP/FR and semantic/random masks, include authentic controls and hold out source parents and generator families. Super-resolution requires its own stress column. |
+| [DiffSeg30k, November2025 preprint](https://arxiv.org/abs/2511.19111) | Eight editing models, sequential edits and pixel labels support localization; processing robustness remains difficult. | Acquire a bounded author-hosted TRAIN image/mask subset for provenance/schema audit. Multi-class values 1–8 are edited pixels; a binary >127 mask conversion would be wrong. COCO ancestry prevents an automatic independent-final claim. |
+
+These are primary research references, not a ranking of commercial APIs. Marketing claims
+without a public paired benchmark, versioned artifact and protocol are not evidence of
+universal performance. The practical path is to reuse verified encoders, preserve data
+lineage, test a single mechanism at a time, and spend fresh evaluation only after selection.
+
+### How broader reliability will be demonstrated
+
+The following are project research targets, not an industry standard and not replacements
+for historical contracts. Acceptance needs both non-regression and new independent evidence.
+
+1. Freeze the candidate, preprocessing, input admission, decision/abstention rules and all
+   evaluated conditions before opening a new test. Publish artifact and manifest hashes.
+   TRAIN fits weights and feature transforms; grouped CAL selects thresholds/calibration;
+   consumed DEV remains diagnostic; an unexposed benchmark is used once. If its result
+   motivates a change it becomes consumed and cannot prove the successor independently.
+2. Define a coverage matrix before sampling: at least five genuinely held-out AI families,
+   including modern diffusion/flow and another architecture where available; multiple
+   independent REAL acquisition sources; camera/scene/photographer groups, low-light/HDR,
+   portrait/landscape, screenshots/documents as explicit scope controls. Versions within one
+   family are not independent families. Unresolved upstream membership must be disclosed.
+3. Evaluate native originals, the frozen social-Q75 transform, and additional fixed JPEG,
+   resize, blur/noise and compound-processing stresses applied identically to both classes.
+   Keep processing descendants in their original parent group. Hold out some processing
+   combinations for final stress rather than tuning all transforms on final failures.
+4. Preserve all E43/E92 and accepted-predecessor AI detections and previously correct REAL
+   decisions on the existing paired regression. No improved pooled count may offset a new
+   lost AI. Report source transitions, failure/abstention coverage and both unconditional
+   and accepted-case errors. Do not lower the guard to make the known DEV miss disappear.
+5. Broader target: one-sided 95% upper REAL false-alert rate <=1% on declared clean groups,
+   <=5% on declared stress groups; lower AI recall >=95% pooled and >=90% per held-out
+   family. Count meaningful independent groups and adjust for multiple predeclared claims.
+   These ambitious targets may fail and cannot be inferred from current point estimates.
+   A scene-level 'any false alert' bound is a different, conservative endpoint from a
+   per-photo rate; label it accordingly. Unknown group independence denies certification.
+6. Use [exact binomial limits](https://itl.nist.gov/div898/software/dataplot/refman2/auxillar/exacbici.htm)
+   only for justified independent Bernoulli units. With zero failures, 299 independent
+   trials are needed for a single 95% upper bound <=1%; ten scenes cannot establish it.
+   Use parent/scene-cluster bootstrap for paired continuous/model comparisons, never tiles
+   or repeated encodings as independent samples. Predeclare multiplicity and sample size.
+7. Calibration is a separate fitted component: reliability bins, Brier/log loss, ECE and
+   prevalence sensitivity on grouped CAL and a distinct evaluation. A monotone calibration
+   cannot repair ranking errors. [Research on risk control under covariate shift](https://proceedings.mlr.press/v266/almeida25a.html)
+   needs additional assumptions/weighting; ordinary conformal or calibration guarantees
+   do not automatically survive unknown shifts. Keep raw-score UI until validated.
+8. Include reproducibility and operational evidence: hashes, dependency lock, deterministic
+   transform tests, CPU/MPS batch parity, native input limits, corrupt-file behavior,
+   latency/memory and end-to-end coverage. A research model may pass statistical tests but
+   still fail licensing, latency or product-scope requirements. Record those separately.
+
+For Model 2, require full spatial coverage and image-macro pixel AUC/AP, fixed-threshold
+F1/IoU by mask area, authentic false-localized area and image detection. Pixel labels are
+not independent sample units. Compare center, constant and deterministic random spatial
+baselines under the same fixed area/rule; no truth-area-selected prediction threshold.
+Prospective MVP targets: macro pixel AUC >=.75 and AP above prevalence in each supported
+source/generator stratum; fixed-threshold macro IoU improvement >=.10 over the strongest
+predeclared simple baseline, supported by parent bootstrap; authentic flagged-area mean
+<=1% and no more than5% of authentic parents exceeding5% flagged area. These are proposed
+project gates requiring a separately frozen protocol, not achieved results. Report tiny
+masks and FR cases even when they fail; never silently exclude them from the headline.
+
+### Implementation sequence and exit conditions
+
+| Stage | Action | Completion evidence and fail behavior |
+| --- | --- | --- |
+| P0 | Implement finite-sample proof checks and audit today's evidence. | Test exact bounds, multiplicity and consumed/group-unknown rejection. Report current evidence as insufficient; do not open protected images. |
+| P1 / E105 | Acquire 512 hash-selected DiffSeg30k TRAIN images and corresponding masks from a pinned author revision. | Size/CRC/SHA and immutable receipts, native mask schema/geometry audit, explicit quarantine. No full 21GB archive or validation pixels required. |
+| P2 / E106 | Audit complete old raw CLIP TRAIN inventory for the context extension. | Verify every parent/binding/aggregate and source; save complete availability report. No partial-population fit. Register missing-view cost probe separately. |
+| P3 / E107 | Repair Model 2 evaluator and replay the already exposed first120 CocoGlide parents plus authentic counterparts. | Complete half-stride128/64 edge coverage, all masks retained, no oracle threshold, fixed baselines and image-level resampling. Diagnostic only; no TRAIN/CAL role change. |
+| P4 | Decode and fingerprint all Model2 candidate parents and bind masks/derivatives to whole ancestry groups. | Check protected Model1/Model2 exact/RGB/perceptual references; retain unresolved COCO parent lineage in quarantine. New publisher alone is not independence. |
+| P5 | Complete context raw features and register one complementary Model1 representation/head. | Exact old-feature replay, both labels/four conditions, fixed optimizer and runtime gates, then staged consumed comparison. No new DEV score until preceding gates pass. |
+| P6 | Train one small dense Model2 head only on admitted parent-grouped TRAIN, with CAL-frozen threshold. | DINO/noise baseline first; registered augmentation, fixed budget, no architecture sweep on final masks. Keep module outputs separate. |
+| P7 | Admit a genuinely unexposed source/generator benchmark and evaluate a locked qualified candidate once. | Full coverage matrix, paired baselines, uncertainty bounds and failure disclosures. If any prerequisite fails, record incomplete proof instead of 'universal'. |
+
+Run network transfers with bounded workers, immutable selections, resumable receipts, timeouts
+and disk reserve. Never require a browser login or a phone confirmation while unattended.
+Use only public authorized endpoints; stop access-denied sources and record alternatives.
+Keep fitting offline and avoid concurrent GPU encoder jobs. No always-on automation is created.
+Completed bounded stages are reported honestly; a long-term research programme is not marked
+complete merely because a plan, a download or a synthetic test passes.
+
+### Acquisition decisions
+
+TGIF2 is highly relevant but the official public-share DAV endpoints returned401 during this
+session, including the documented public-share request form. No image bytes were acquired and
+no access controls were bypassed. Keep it as a future source pending a working public download.
+DiffSeg30k is an author-linked, publicly downloadable alternative with masks and multiple edit
+generators. Its Apache-2.0 dataset card does not erase underlying COCO or model-specific terms;
+keep research-only quarantine until ancestry/rights/role checks finish. NTIRE TRAIN is public,
+but its inspected metadata lacks an explicit dataset licence and its labels do not expose all
+needed parent/generator provenance; research its terms rather than treating it as fresh final.
+DATASETS.md records exact revisions, selected counts, transferred bytes and all later outcomes.
+
+
 ## Current E98–E102 checkpoint — data admitted, candidate not accepted (2026-09-14)
 
 E98 role/lineage audit completed without TRAIN/CAL overlap in the mapped identities.
@@ -6504,3 +6651,47 @@ errors and full batch8 runtime replay<=1e-6/zero cut crossings. If training fail
 the failed result and do not score DEV/gallery. If it passes, separately register one
 consumed E66/gallery paired comparison with E92 and E43 retention; no automatic promotion.
 No existing CAL, DEV, gallery, E49 or final data in fitting. No calibrated probabilities.
+
+### Execution checkpoint — E106/E107/E108 (2026-09-14)
+
+- P0 implemented: exact finite-sample planner and consumed/dependent-evidence rejection
+  (`e108_evidence_limits.py`). Current observations do not support universal proof.
+- P2 complete: all34,890 legacy raw CLIP views verified;15,210 further raw views remain
+  before full-population context/texture representation fitting. Do not drop these cohorts.
+- P3 complete and failed as a model: all120 historically exposed CocoGlide pairs evaluated
+  without oracle filtering/thresholds. Crop128 pixel AUC0.572 versus center0.722; authentic
+  flagged area27.4%. Keep it as a failed baseline, not a deployable Model2 mask head.
+- Next Model2 steps: finish E105 acquisition, audit native mask IDs including empty masks
+  (E109), establish authentic-parent/generator ancestry, then register spatial-feature
+  training and grouped calibration. A 0-mask downloaded edit is not automatically REAL.
+- No changes to serving E92, existing cutoffs, protected final sets or gallery roles.
+
+### Acquisition and representation checkpoint — E109/E110B
+
+P1 completed512 DiffSeg30k image/mask pairs; E109 decoded all and found201 partial,
+224 full-positive and87 empty masks. Retain quarantine and task strata. P4 now includes
+E111 full Model2 body/perceptual comparison to existing role fingerprints before any
+training roles are assigned.
+
+P5 feasibility passed: E110B reproduced all70 selected missing-view CLIP aggregates
+exactly across40 source/cohort representatives. The future full15210-view extraction
+is approximately2.18hours by this small pilot, with observed2.04GiB MPS allocation.
+Use verified E84 source materialization for legacy source_key records. Full extraction
+must retain every TRAIN cohort/condition and durable bound chunks; then a separately
+registered paired context-feature fit is required. No new classifier was fitted here,
+no model improvement inferred from feature parity, and E92 remains served.
+
+### E111 outcome and next gating work
+
+P4 perceptual audit completed1,536 images against152,380 reference records:45 CocoGlide
+parent groups have conservative near-match flags (14 exposed120,31 remaining392; no
+exact body/RGB matches). Quarantine whole flagged groups. No matching DiffSeg derivative
+is not proof of independent original ancestry. Original COCO mapping and mask-scope
+interpretation remain unresolved, so Model2 training/CAL assignment remains pending.
+
+Next execution order: (1) register/run the full15,210 missing Model1 raw-feature views
+using the passing E110B operations and durable chunks; (2) paired context-feature fit
+with all old AI/REAL retention gates; (3) recover author original-parent mappings for
+Model2 and resolve near-match groups before supervised localization training; (4) only
+qualified candidates can spend new source/generator-held-out evidence. None of these
+remaining stages is marked completed by the audits in this session.

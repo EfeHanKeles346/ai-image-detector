@@ -1,0 +1,24 @@
+{
+  "baselines": [
+    "center",
+    "constant_zero",
+    "constant_one",
+    "seeded_random_tiles"
+  ],
+  "contract_sha256": "c5d6d188a786486a42e75111cd507d25c975c6618e42e6ef29b74025bc8d66fe",
+  "failure_policy": "Retain failures in denominator and report reasons; any failed pair invalidates full-coverage success. No refills.",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/artifacts/feature_crop128.joblib": "fd504af03f223557d42f2fce6bbd5e2e93493a34adba15a884828a439446f11f",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e107_model2_replay.py": "47dfb69c89a51972f024867f7816e5312bf3321a7d1f7d293e60e45f1e108176",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/features.py": "224150ed74643d1fbd94f5afee3803ddf95bc5c56dd581b24448ed79da0e5945",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/work/model2_local_inventory_2026-09-14.json": "06d4aa5e719c5b1e69cdd71786aa0347bc59e73c8caf9ac4bfa2a137060cf92a"
+  },
+  "limits": "Historically consumed single-generator diagnostic, not independent generalization. Auth identities exact only, shared source ancestry unresolved. No training, threshold tuning, promotion or user-image analysis.",
+  "mapping": "128px native tiles, stride64, include final edges, overlap mean; no tile cap/texture filter/resizing.",
+  "metrics": "Per-image pixel AUC/AP/IoU, image-macro means and area strata. Image detection uses fixed p95 of dense map; authentic flagged area at .5. Paired parent bootstrap 1000 seed107 of mean metrics and IoU differences to all four baselines.",
+  "selected_pairs": 120,
+  "selection": "All first120 sorted historical CocoGlide edits, each with its metadata-linked authentic control; no mask-coverage filter.",
+  "state": "E107_non_oracle_Model2_replay_registered",
+  "threshold": 0.5,
+  "threshold_status": "Fixed diagnostic default, not calibrated; no truth-dependent threshold."
+}

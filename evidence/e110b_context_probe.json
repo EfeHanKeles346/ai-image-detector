@@ -1,0 +1,378 @@
+{
+  "all_aggregate_parity_passed": true,
+  "by_source": [
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "5f0aec34ab31b0190e500b2c4b991e141fe1bfbff8473304b9dd36a3cd1b4ab0",
+      "raw_sha256": "e43d51c0d3c219a9f8c8ff76fa331dbe101b8a153facaea8a377312ffa175307",
+      "source": "SCIMD-17",
+      "transport_sha256": "d9403340d8aa302b49d0ff4d08e77c879d0bc9b2d9f92f8fec0f433d993c08af",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "d21f4cead3b293bb18ce71688e0221eaa9346b3215dd174140b5db0e66b0a3e9",
+      "raw_sha256": "f35b8a9660a6a55e22f37dd59a181428c427692c36edb7997800163dafaa1192",
+      "source": "e32:csafe-mcsidb-iphone14",
+      "transport_sha256": "66669b1c3a343a68cce1621c5daed8493f05e684fdd2206775febcde1cb82502",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "03397f17a68fa313884b402904897bdee67bf1fcce1e5a8904822c5359e55fe8",
+      "raw_sha256": "6edea4f4d1a8361fb022357ed1f33e4f3fa0c25acdb98cfa803133518b051f29",
+      "source": "e32:csafe-mcsidb-s21",
+      "transport_sha256": "33e97fa4d904d2063735a57bb072489e7feca3c26c94115efeabe2a5782841f9",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "b83b463eb019e84f7582a87598fb0778884589ba4f0229ac73cfc418306e4890",
+      "raw_sha256": "9189b09e265bf607a2b381ececc22d019cc631400b83aff250172a53bd6727cf",
+      "source": "e32:forchheim-fodb",
+      "transport_sha256": "9371b3af08dd7ddcf9f44f323d76ea9ed7f4633f27b70ce43fe898912e136935",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "e0a68a43d6cc5201e1caf2a7e43cfee8edb8dd352eea25eb6e652d94700df42b",
+      "raw_sha256": "3cd14b91a9eacd2c514ef20acf403b3a1137f2d866d21b79d7367c82b7537406",
+      "source": "e32:vision-base-native",
+      "transport_sha256": "375106d2fb20a7cb5919a74df1554903f017b36caa4032a1e9880641073d0410",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "0a90c63f424d86b48631c449fed9e906611abbd337dddfd569ec98bfe8d0c233",
+      "raw_sha256": "993c9b099bb9d4b829b17acfcef495e0eb0fab5d160750e0a9dfca1afc49555a",
+      "source": "e36:device_001",
+      "transport_sha256": "87f8edf79b0a836225da1a472109a32a654d1e77ea65385a9e187f6ff3e379b8",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "8888ff3fb0e41f53600919ac9db03a4deb3d6f9408d1ec503be4ef56163d452d",
+      "raw_sha256": "a47be13df4d58900327b6be8dee09dc8fd0a0c9ba98691291538a6ac617812fd",
+      "source": "e36:device_002",
+      "transport_sha256": "0637c4647ecc0009684c4f43b65244375aa47479a61dbf05bcd5f9298e3bb774",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "4dfe596c7f22029dbbb57c01ba9cfb1983f6859ae3c4822190a42b572ea01e37",
+      "raw_sha256": "c00b3b1054b791ff6604e2777359f9dbacf09f9e2163e0ebc99ae03645bee1ad",
+      "source": "e36:device_003",
+      "transport_sha256": "0cf31ccbec4efec5afa4119ae3579243f3cd5b06277e415d10efce75ea687369",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "20391b6bbce4c8bc036d86de9d9ea9f3bdf4068de7437c517e780f48afd1b143",
+      "raw_sha256": "9520eb5f6af30cce7475f8976db6953cda4adf7eb8c9c4200085e5cc2c7d80b5",
+      "source": "e36:device_005",
+      "transport_sha256": "477d4cbf6c93df0d0db79eba321a93d2751e38b0ab8fac5acf9e2b34579919c2",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "ff665cdeb59744a5093045bc4f3d77da6b9d01fb69884c6f63fb28be7fbc65e5",
+      "raw_sha256": "e070d9e53365012f47dc715fa40222071ff2f6c5491af1fe55b407d8ff4a7c03",
+      "source": "e36:device_009",
+      "transport_sha256": "688610ea1ee19eca3984ff5f3feff719cce38e343f5567685027f99ea1b56274",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "c2bf780b872b1b6b1ef52de26a4b3923a853d5897d4893ac4ea4a5c4221fc100",
+      "raw_sha256": "e329a562615cba04b893ec513e371f87c142d2636929af26865ad9f68e5c60d0",
+      "source": "rr:rrdataset_real_pool",
+      "transport_sha256": "9bf7668fedaa9070f6e781ccbea55085c61fdbee64dafdc098784ba55d7937b0",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "4eaa437ac58970c059ca7a6928a0d8115f69e61a94f7146a08dd56bdb5210c0a",
+      "raw_sha256": "c18b50c57d42f8d7902db996fdc13a482038f0b4f9e926f5a3ada7a7b2130e7e",
+      "source": "e32:communityforensics-ai-local",
+      "transport_sha256": "c5309b339634bfcf25b3aef3085424b9f44482dc4732e199d999e9191d455db2",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "e46da5a82aef6da10ec6e66df2e2c7a04324f9d710753923c7546406a433fd95",
+      "raw_sha256": "265403821975a7d9eef42d8f3c7cc43ff99c913a4aade8a8d33f2ba6126378a7",
+      "source": "e32:flux2-klein-9b",
+      "transport_sha256": "045e0830461055d2bee5632b319704cdc92efc594a4a60f8e0baae0320aed76c",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "1b7e3a3c463bd0eef0891745c1955147e9de369c34e3ce71cffb4df5188e8687",
+      "raw_sha256": "e4615ba6c6ff0a842cce7127304a6f716f815be9cd06f1ad8e7bfd9439727b14",
+      "source": "e32:gpt-image-1",
+      "transport_sha256": "b19ff7728b664bffe2fa83d0173a3ca27656d8631dd906dd2e3e3463e0637cf3",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "6a739fa8636bc6f11fe3a0b6dc2203f0d33cfc73dca07c96bfc3118d824d9c66",
+      "raw_sha256": "2faddfa4c2fb57fe4a7013cb10bb62c60cb6583d5597bfa55c4693b5273cee3a",
+      "source": "e32:nano-banana-local",
+      "transport_sha256": "7b152c3e518dd74daa3273b327ee7a19ed70e56be0beef87e8278491d319ba52",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "bcc4f9883ec9e1e064a4a9fd166d4b078fa41e320dcb2d7e25eb693e12d3af23",
+      "raw_sha256": "ead1492cf8a901603ce37e8eeac312c2f6e446a892aca1b2001e83759f774d63",
+      "source": "e32:nano-banana-pro-ash-local",
+      "transport_sha256": "226e87405ac3e769ea42b3b9a9c7690d4ea7813c89d6f720c49ecf87c4bf58f2",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "619b38c92d01efd8493aac89229f6cb60d464372c4234ca2e2a605501d6391fc",
+      "raw_sha256": "39971e1c9070e7221ae2f77e4a33738f0d4b1b29f270d56382f0355797d56977",
+      "source": "e32:qwen-image-2512",
+      "transport_sha256": "6484ac81e318d18f816483f4419065c95159a64f1888524c87670899bcac9aff",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "4d7074fe534971916f3cd994b1ea3cd49f935b1ba019b3e8520c0aee021620c5",
+      "raw_sha256": "fd68d95619ae73f7e1a18e37e16434dbc283b7ff488692c3e04cec2f43bdb785",
+      "source": "e36:FLUX.2_max",
+      "transport_sha256": "e53a01068df153989ea84901e5237c50ee2f79ecf27ab2a95e79fb76a2b54106",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "9375949548368cac518cfc75b30778a428baee02876d25dbe6f738bcf6c7d040",
+      "raw_sha256": "c296268a03823c466773ab68a2b6ea9f055cc2f445962c46156215a06e193ab5",
+      "source": "e36:GLM-Image",
+      "transport_sha256": "a820335c767a3e66bcb3c7938d7e6a8134eb126a353fcbcd225141cd90710f5a",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "512f0bb3a28e94ba1c17bdf54c7651a3d9cb888832a773e9a8bced07c0c0b9f2",
+      "raw_sha256": "d91ba3221895fae20f6c7d40bb99024b00cbd3ce44422997c38821ea7a7fb156",
+      "source": "e36:Qwen-Image-2.0-pro",
+      "transport_sha256": "bda6bb742180b38e68b0cbe6dabc19a5d176324b64af762f65aabc1014b1fb22",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "9ec3263817b8466f20a4d8cfb901d954898174d4d954651663924a73b19543bd",
+      "raw_sha256": "caad0273afe6d5bf5ef78115aa53256bd2ad40ddecf3a85ffabcb1df7928ec31",
+      "source": "e36:Seedream-5.0",
+      "transport_sha256": "25c95d1e48d752ebc9c9ad7839460446ece695da0004e30e6fcab30e1d093132",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "d372f61e294377cd689b097dabe732b7ac39da5fa8429d6324b603b7c174707b",
+      "raw_sha256": "6d79de932a076c42c57632ed9c501cf9841b01e407056bf1430a4f97d283c1d4",
+      "source": "e36:gpt-image-2",
+      "transport_sha256": "19dcef78193532e3b067b50403e93d05e7695d06ed769460e0c950629da2be59",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "1380f79204f8cade4bbf3d5af98e972b9e00ade652da0a53d21586f2bc8fdaab",
+      "raw_sha256": "0ac0bee41e1ce3887b0c0bb96568fd5cbbc9f61caef713b15c656a45a419fe7f",
+      "source": "e36:nano-banana-2.0",
+      "transport_sha256": "88f3eefc109c4c2285467dd2e583fcf6d982f5f7e950c8d21aca7a310d9e169b",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "8947691338dd0d3626cfa95cfc2e8c492c6005313d71b4158351d300d971d714",
+      "raw_sha256": "b361a2e5446e54f25c868b003cc638abcc139dfadfc7511f1e63ba9b1fb537f3",
+      "source": "rr:culture_and_religion",
+      "transport_sha256": "b6d7c033f28b527a5c9cd297cdfd23404556e024447d9810289e7a5b9a76d4bf",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "9860ffa076afd0d507cdb94638e9d7b9962f364bd4eed9ca15c4a1ed9c2d6ad8",
+      "raw_sha256": "9e6707cf381f332db75595fea9447acd3f3c6aafe67904cda14d55fc380cecff",
+      "source": "rr:everyday_life",
+      "transport_sha256": "39375468eb1db11dcd418d3a5fc0cca5e67c740306d7c8c428d441cb14f88884",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "ffac8e09fa0cf3f6ee1d5007a5c2013924b5932441fd3a3467e1073915515ddb",
+      "raw_sha256": "1516e1984673b932e75748f0c19aa445d9ce10857fcdd8d08e1dec6438d65e36",
+      "source": "rr:labor_and_production",
+      "transport_sha256": "fb6ca291c266d43afb4e54b573291b28d0f44fe078636088c5f0e0ead5c78017",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "9250c30e74812b825994a852f343469e2853a95771f884b6e1d176fcee32bfd7",
+      "raw_sha256": "40330b98e73c61a742e6d499b4333d89d0ca0f4f1b86ca84b073c6126eb16d48",
+      "source": "rr:medical_and_public_health",
+      "transport_sha256": "b4808e861d20075c0f64b039689d4e72c4e14e9f710e4a991fdbef01376b99b5",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "19aa4186636aeb5c87568f4ee4f4def38568f9b5880371ba4ae06b38e7a1af0e",
+      "raw_sha256": "1c78c6fbef100a584a8b51c84293624348390713e68a36714ef799d31697f6d4",
+      "source": "rr:natural_disasters_and_accidents",
+      "transport_sha256": "43bdceabad1888e5673bc2e053e103e053861be5f18eb6800639f31f0fea5203",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "f6e65ad35075c173e29c8cacbdd1abd5e14ab07bf90431ac660a8d4bc572122d",
+      "raw_sha256": "d47822d48d1e888f170bb3fa0541af63faab55cfad8d8e87a5df6e17e4da1a63",
+      "source": "rr:political_and_social_events",
+      "transport_sha256": "9294b9faf2abd1af7c95a11fb6e7fe953b5be4158c930734b791caf026765614",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 0,
+      "crops_sha256": "0de969ac2d585392534400fbb0067014361e9e862cd3397df9eb8b82375a7179",
+      "raw_sha256": "12b42c57d04ae67f9bdf980bf81aab737cfba74f44e108e77c88d6c9452aadb9",
+      "source": "rr:war_and_conflict",
+      "transport_sha256": "8e8b61a023b6c4a33c739d0acb7d3ef4baf59d6f011d4ab7ceb2a3b9ebdf0bdc",
+      "views": 1
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 1,
+      "crops_sha256": "6ec6664eaaa837c45617b3e45c4b1e3dd187022db6bf0cd6f5be2a1002303a2a",
+      "raw_sha256": "5c06e67606594b0aee902a1e0ff38b519595bacb8fb0ef1292bffc3359fe8e39",
+      "source": "MIDD:Hynix_SL846",
+      "transport_sha256": "49f07fab5bc2d1f55ae90b51f190200d84ac3cefc07db4c9fd4b5b22af6ad1f4",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 1,
+      "crops_sha256": "685e5e7dd3bd16b2b2d8beb96c020daa95d8a479983d19558451a94f34b29520",
+      "raw_sha256": "449b265b2f3b8ecf8b38418aea58ee14b0795be2d85f1822c4694fc13db8d988",
+      "source": "MIDD:ISOCELL_3P9",
+      "transport_sha256": "60f1c2ad958d38ae18976d10f8c198fb33dc822106b880ac989b5ee29a453703",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 1,
+      "crops_sha256": "53840607e04f6e2da703f67559de4c3bb34de2f46f5c4aeee5d0dcb261dad7e7",
+      "raw_sha256": "a2b5bda4fc6d5a626cd5dbac7e1923811b350250066d892d1a541d35a858faeb",
+      "source": "MIDD:OmniVision_OV32A",
+      "transport_sha256": "438e7993f500933e62d49b349cc3bd05a3c3ef213f59e95d429320f64bddaf78",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 1,
+      "crops_sha256": "d378dec025a8c1d4caf8a90d0f4fdd583525bebf5aff03b484ea2b4cbfe5e0b4",
+      "raw_sha256": "84e9863c67c33272b9be936e870421fcf1e739b6450893a28af21ed6d08532aa",
+      "source": "MIDD:Sony_IMX258",
+      "transport_sha256": "7b6d6ad8f770e70e06c5cdb3685ceddce43565a8c087aa351defcf0bc4447add",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 2,
+      "crops_sha256": "4710fc383466cbbaf0fbc5db085f76f583f3e754e7c897ede6d9763070197d61",
+      "raw_sha256": "238cda92f529a4fd04623eb8dec84eeaf81289e3da4ae301a8dbb1b5c6e73be1",
+      "source": "SID:Fuji",
+      "transport_sha256": "dc33eae4b0b5c8ac44cf91d3c9599628e0cb236c85ce13cbd9eace83ed2592d1",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 2,
+      "crops_sha256": "74f956cfa2d26af60d95228096671a598e5eb66c00133ea66bb7fa6e7d943e59",
+      "raw_sha256": "8611631bf3e9bc7d3b0fd0e7b9a5ad71756faea8a924d99446c97ab960a8519a",
+      "source": "SID:Sony",
+      "transport_sha256": "11d68c07cbcb3b8522245676e35f9a9473737fe8f5c072f18dd1957f9283cd08",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 3,
+      "crops_sha256": "4c2218fd1c56f566d327bb7cf73d18482f4f161ef5bdc88264408d89b1ff0501",
+      "raw_sha256": "fc2489521b15191c59f23f4d68d06e4a01190be8ea3f8e5c0eb8c51c8782fb4d",
+      "source": "MIDD:ISOCELL_GN1",
+      "transport_sha256": "3d0223952f63de9fc3030e0e7d0943253ec7d181bd2ffc886287697363690988",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 3,
+      "crops_sha256": "6cff7232bee601c795229ab90b932ae33779a93e920d6e05df2c3232059aadd2",
+      "raw_sha256": "f69af026bb513988b0ff8ea4d8105c11e33cd2a93ff304ff1395374e130c48ff",
+      "source": "MIDD:ISOCELL_HM3",
+      "transport_sha256": "2bc1e00d78be5f1f5a72d07a54eb3fef9cf9419d0a81a57e23bd656fc7c240af",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 3,
+      "crops_sha256": "751a85bb5b754331a33f292fc0081c75fecb194ab36e88ffc1e99a9b9fce06e5",
+      "raw_sha256": "e79fc7ea2a28f130842a51e9f3db66bcbe71bdc3f78783bda2798f731fcd9525",
+      "source": "MIDD:OmniVision_OV64B",
+      "transport_sha256": "a43662d3550eb2a8f75f652188527f413dc74b576dd2025f9ff6704321c5d80b",
+      "views": 4
+    },
+    {
+      "aggregate_max_abs_error": 0.0,
+      "cohort": 3,
+      "crops_sha256": "0e7f3c71186f0b303c007e9ab98e317e112428c468ee86843f026c5636596e54",
+      "raw_sha256": "c5ba8fff1fa05a82a87835ac5c9764defa09f9f17b4bbaec7febc7c73f03d383",
+      "source": "MIDD:Sony_IMX766",
+      "transport_sha256": "62c555b6ebe6b2a33a45ae4bfc3c91965bc1066466ee0a93d7df027f4842cf46",
+      "views": 4
+    }
+  ],
+  "contract_sha256": "a285ec9a978b2a7c3192108e0f31085ec9391b388336a3952dbc4f1a8bebffab",
+  "dev_final_reads": 0,
+  "fit_allowed": false,
+  "limitations": "Stratified feasibility subset, not a fitted model. Cost estimate is approximate and source-dependent; full population and old+new representations still required.",
+  "max_aggregate_error": 0.0,
+  "model_scores": 0,
+  "mps_peak_bytes": 2194358272,
+  "parents": 40,
+  "raw_cache_sha256": "79043f2a4b6144b88acf968069483fbf247a56fd9a8de16077e89c7a7d074094",
+  "rough_full_missing_view_seconds_including_amortized_load": 7843.367435276525,
+  "seconds_including_load": 36.09702304203529,
+  "state": "E110B_missing_raw_TRAIN_probe_complete",
+  "views": 70
+}

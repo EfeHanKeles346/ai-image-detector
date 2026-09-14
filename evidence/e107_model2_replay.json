@@ -1,0 +1,353 @@
+{
+  "contract_sha256": "c5d6d188a786486a42e75111cd507d25c975c6618e42e6ef29b74025bc8d66fe",
+  "failed_indices": [],
+  "independent_final_passed": false,
+  "limits": "Historically consumed single-generator diagnostic, not independent generalization. Auth identities exact only, shared source ancestry unresolved. No training, threshold tuning, promotion or user-image analysis.",
+  "results": {
+    "area_strata": {
+      "0.01_0.05": {
+        "image_macro": {
+          "center": {
+            "ap": 0.2336789273569801,
+            "auc": 0.79244903947158,
+            "iou_at_fixed_half": 0.0907201470276594,
+            "prevalence": 0.03273162841796875
+          },
+          "constant_one": {
+            "ap": 0.03273162841796875,
+            "auc": 0.5,
+            "iou_at_fixed_half": 0.03273162841796875,
+            "prevalence": 0.03273162841796875
+          },
+          "constant_zero": {
+            "ap": 0.03273162841796875,
+            "auc": 0.5,
+            "iou_at_fixed_half": 0.0,
+            "prevalence": 0.03273162841796875
+          },
+          "crop128": {
+            "ap": 0.06257328781674334,
+            "auc": 0.554606956959934,
+            "iou_at_fixed_half": 0.024342012129366083,
+            "prevalence": 0.03273162841796875
+          },
+          "seeded_random_tiles": {
+            "ap": 0.04406150809235039,
+            "auc": 0.4557400450754604,
+            "iou_at_fixed_half": 0.023453609230025586,
+            "prevalence": 0.03273162841796875
+          }
+        },
+        "parents": 10
+      },
+      "0.05_0.2": {
+        "image_macro": {
+          "center": {
+            "ap": 0.24936669627549266,
+            "auc": 0.6830101653520098,
+            "iou_at_fixed_half": 0.16441594569858012,
+            "prevalence": 0.11019758744673296
+          },
+          "constant_one": {
+            "ap": 0.11019758744673296,
+            "auc": 0.5,
+            "iou_at_fixed_half": 0.11019758744673296,
+            "prevalence": 0.11019758744673296
+          },
+          "constant_zero": {
+            "ap": 0.11019758744673296,
+            "auc": 0.5,
+            "iou_at_fixed_half": 0.0,
+            "prevalence": 0.11019758744673296
+          },
+          "crop128": {
+            "ap": 0.1742470892359425,
+            "auc": 0.5121074733959536,
+            "iou_at_fixed_half": 0.05840364220779304,
+            "prevalence": 0.11019758744673296
+          },
+          "seeded_random_tiles": {
+            "ap": 0.1559533644300272,
+            "auc": 0.49639120583908014,
+            "iou_at_fixed_half": 0.08842669320914413,
+            "prevalence": 0.11019758744673296
+          }
+        },
+        "parents": 55
+      },
+      "0.2_0.5": {
+        "image_macro": {
+          "center": {
+            "ap": 0.578699138172684,
+            "auc": 0.7299591910200436,
+            "iou_at_fixed_half": 0.2974679411539932,
+            "prevalence": 0.32400410970052085
+          },
+          "constant_one": {
+            "ap": 0.32400410970052085,
+            "auc": 0.5,
+            "iou_at_fixed_half": 0.32400410970052085,
+            "prevalence": 0.32400410970052085
+          },
+          "constant_zero": {
+            "ap": 0.32400410970052085,
+            "auc": 0.5,
+            "iou_at_fixed_half": 0.0,
+            "prevalence": 0.32400410970052085
+          },
+          "crop128": {
+            "ap": 0.43183713655825073,
+            "auc": 0.5994956931637968,
+            "iou_at_fixed_half": 0.2058786776714813,
+            "prevalence": 0.32400410970052085
+          },
+          "seeded_random_tiles": {
+            "ap": 0.364660573791943,
+            "auc": 0.5003368324638682,
+            "iou_at_fixed_half": 0.2778798839256921,
+            "prevalence": 0.32400410970052085
+          }
+        },
+        "parents": 30
+      },
+      "0.5_1": {
+        "image_macro": {
+          "center": {
+            "ap": 0.8438180499674172,
+            "auc": 0.7704378054175866,
+            "iou_at_fixed_half": 0.25493042677310246,
+            "prevalence": 0.670635986328125
+          },
+          "constant_one": {
+            "ap": 0.670635986328125,
+            "auc": 0.5,
+            "iou_at_fixed_half": 0.670635986328125,
+            "prevalence": 0.670635986328125
+          },
+          "constant_zero": {
+            "ap": 0.670635986328125,
+            "auc": 0.5,
+            "iou_at_fixed_half": 0.0,
+            "prevalence": 0.670635986328125
+          },
+          "crop128": {
+            "ap": 0.8172741082557644,
+            "auc": 0.6795444926113366,
+            "iou_at_fixed_half": 0.5729472265072528,
+            "prevalence": 0.670635986328125
+          },
+          "seeded_random_tiles": {
+            "ap": 0.6917546348424816,
+            "auc": 0.5115135679798929,
+            "iou_at_fixed_half": 0.42519795001032756,
+            "prevalence": 0.670635986328125
+          }
+        },
+        "parents": 25
+      },
+      "0_0.01": {
+        "image_macro": null,
+        "parents": 0
+      }
+    },
+    "attempted": 120,
+    "authentic_flagged_area": {
+      "mean": 0.27395833333333336,
+      "parent_bootstrap_95pct": [
+        0.21822916666666667,
+        0.33022135416666665
+      ]
+    },
+    "authentic_fraction_over_5pct_flagged": 0.6583333333333333,
+    "completed": 120,
+    "full_coverage": true,
+    "image_detection_auc_fixed_p95": 0.6152083333333334,
+    "image_macro": {
+      "center": {
+        "ap": {
+          "mean": 0.45423652469239867,
+          "parent_bootstrap_95pct": [
+            0.4013816566366382,
+            0.5126664408100318
+          ]
+        },
+        "auc": {
+          "mean": 0.7220814196259776,
+          "parent_bootstrap_95pct": [
+            0.6921877599633091,
+            0.7512222128249468
+          ]
+        },
+        "iou_at_fixed_half": {
+          "mean": 0.21039481156371548,
+          "parent_bootstrap_95pct": [
+            0.18689082027905102,
+            0.2379605821691926
+          ]
+        },
+        "prevalence": {
+          "mean": 0.27395172119140626,
+          "parent_bootstrap_95pct": [
+            0.2342871634165446,
+            0.3179259967803955
+          ]
+        }
+      },
+      "constant_one": {
+        "ap": {
+          "mean": 0.27395172119140626,
+          "parent_bootstrap_95pct": [
+            0.2342871634165446,
+            0.3179259967803955
+          ]
+        },
+        "auc": {
+          "mean": 0.5,
+          "parent_bootstrap_95pct": [
+            0.5,
+            0.5
+          ]
+        },
+        "iou_at_fixed_half": {
+          "mean": 0.27395172119140626,
+          "parent_bootstrap_95pct": [
+            0.2342871634165446,
+            0.3179259967803955
+          ]
+        },
+        "prevalence": {
+          "mean": 0.27395172119140626,
+          "parent_bootstrap_95pct": [
+            0.2342871634165446,
+            0.3179259967803955
+          ]
+        }
+      },
+      "constant_zero": {
+        "ap": {
+          "mean": 0.27395172119140626,
+          "parent_bootstrap_95pct": [
+            0.2342871634165446,
+            0.3179259967803955
+          ]
+        },
+        "auc": {
+          "mean": 0.5,
+          "parent_bootstrap_95pct": [
+            0.5,
+            0.5
+          ]
+        },
+        "iou_at_fixed_half": {
+          "mean": 0.0,
+          "parent_bootstrap_95pct": [
+            0.0,
+            0.0
+          ]
+        },
+        "prevalence": {
+          "mean": 0.27395172119140626,
+          "parent_bootstrap_95pct": [
+            0.2342871634165446,
+            0.3179259967803955
+          ]
+        }
+      },
+      "crop128": {
+        "ap": {
+          "mean": 0.36330241324404916,
+          "parent_bootstrap_95pct": [
+            0.31366942191150454,
+            0.4169650038184923
+          ]
+        },
+        "auc": {
+          "mean": 0.5723788643047842,
+          "parent_bootstrap_95pct": [
+            0.5365615841197163,
+            0.6108505983159958
+          ]
+        },
+        "iou_at_fixed_half": {
+          "mean": 0.19963051196290033,
+          "parent_bootstrap_95pct": [
+            0.15407502514985585,
+            0.24900834807610703
+          ]
+        },
+        "prevalence": {
+          "mean": 0.27395172119140626,
+          "parent_bootstrap_95pct": [
+            0.2342871634165446,
+            0.3179259967803955
+          ]
+        }
+      },
+      "seeded_random_tiles": {
+        "ap": {
+          "mean": 0.3104311100782944,
+          "parent_bootstrap_95pct": [
+            0.2691688718647471,
+            0.35448320860939275
+          ]
+        },
+        "auc": {
+          "mean": 0.4971405078776449,
+          "parent_bootstrap_95pct": [
+            0.4674623037218363,
+            0.5282526968419817
+          ]
+        },
+        "iou_at_fixed_half": {
+          "mean": 0.20053624572360113,
+          "parent_bootstrap_95pct": [
+            0.1689725079452304,
+            0.23297528125935646
+          ]
+        },
+        "prevalence": {
+          "mean": 0.27395172119140626,
+          "parent_bootstrap_95pct": [
+            0.2342871634165446,
+            0.3179259967803955
+          ]
+        }
+      }
+    },
+    "paired_iou_improvement": {
+      "center": {
+        "mean": -0.010764299600815182,
+        "parent_bootstrap_95pct": [
+          -0.059212658711704,
+          0.03701923215182945
+        ]
+      },
+      "constant_one": {
+        "mean": -0.07432120922850595,
+        "parent_bootstrap_95pct": [
+          -0.10291166218425826,
+          -0.04814255755968444
+        ]
+      },
+      "constant_zero": {
+        "mean": 0.19963051196290033,
+        "parent_bootstrap_95pct": [
+          0.15407502514985585,
+          0.24900834807610703
+        ]
+      },
+      "seeded_random_tiles": {
+        "mean": -0.0009057337607008183,
+        "parent_bootstrap_95pct": [
+          -0.03895695734358332,
+          0.03676438835631016
+        ]
+      }
+    },
+    "total_native_tiles": 2160
+  },
+  "rows_sha256": "c2828575f90adfa7512379b4fa1c13521a764e760ec624304e91f2686a10c90f",
+  "seconds": 11.575591000029817,
+  "serving_changed": false,
+  "state": "E107_exposed_Model2_replay_complete"
+}

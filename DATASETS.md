@@ -2815,3 +2815,81 @@ no source photos changed roles and no gallery/DEV/final images were read. The pr
 next raw-feature cache extension uses existing original images, pending complete inventory
 and a separately registered extraction cost/parity probe. Feature vectors are not new
 source photographs and must not be counted as additional downloaded data.
+
+
+### E105 acquisition registration — DiffSeg30k, 2026-09-14
+
+Purpose: expand Model2's mask/provenance audit beyond the old GLIDE-only collection,
+covering multi-turn local diffusion edits and masks encoded with generator labels1–8.
+Primary paper: https://arxiv.org/abs/2511.19111; author-linked release:
+https://huggingface.co/datasets/Chaos2629/Diffseg30k . Pinned revision
+`8049819755ff430dcf4701636b14e6f1df6c4542`, dataset-card licence Apache-2.0.
+Underlying COCO image and generator-specific terms/ancestry remain separate; initial role
+QUARANTINE_MODEL2_RESEARCH, not TRAIN/CAL/final and never automatic Model1 REAL negatives.
+
+Select512 hash-first image identities from official train.zip with their corresponding
+masks; no validation images, model-score filtering or refill. Official archive size
+21,563,023,972B, publisher LFS SHA256
+9ef27f4c1c35ef21bce150435312de18fa35cf00df6d622271219455a4ee3d02.
+Only exact selected ranges will be fetched, not the whole archive. ZIP central-directory
+metadata:57,998 members /6,644,552 transferred bytes, no image member read at inventory.
+Store at `/Volumes/LaCie/pixelproof-datasets/e105`; image/mask originals never enter Git.
+Record exact selected body bytes and receipts when frozen/completed. Admission requires
+mask values/geometry, grouping and cross-module protected-overlap checks. Public samples
+are not independent merely because their hosting publisher is new.
+
+Unselected leads: TGIF2 official FLUX public-share DAV returned401 through documented
+access, no image downloaded; stopped without bypass or interactive login. NTIRE2026 TRAIN
+metadata inspected at revision700b6d08a3268b1e7a191306dec7321dd953b12f; no explicit licence
+found in inspected card metadata, so no image acquisition or role assignment. Its test
+labels are not publicly supplied in the inspected official instructions. PLAN.md contains
+primary references and the evidence implications of both leads.
+
+E105 exact selection frozen:512 images +512 corresponding masks;374,620,852 source-body
+bytes requested (about375MB). Contract SHA256 `c8c66ed19f9b93d5a0acc7aefab98f5bc5deccf794df99fda911e3ea4148f303`.
+Two bounded workers started; no complete download or model admission claimed yet.
+
+### E105 completion / E109 schema outcome — 2026-09-14
+
+Author-hosted DiffSeg30k acquisition completed automatically without login or manual
+computer interaction: **512 images +512 masks**, **374,620,852 source-body bytes**;
+387,608,597 range-transfer bytes in the execution plus6,644,552 earlier catalog bytes.
+Elapsed1,449.92seconds. Repository `Chaos2629/Diffseg30k`, pinned revision
+`8049819755ff430dcf4701636b14e6f1df6c4542`; native files under
+`/Volumes/LaCie/pixelproof-datasets/e105/files`. ZIP member CRC and individual SHA256
+verified; the21.56GB whole archive was not downloaded and its publisher SHA was not
+recomputed. Public receipt: `evidence/e105_download.json`.
+
+Why: the author's multi-turn, eight-editor image/mask corpus can expose generator and
+editing-scope gaps in Model2 that single-generator CocoGlide cannot. Requested TRAIN
+subset chosen by fixed filename hash, without inspecting scores; no validation images.
+Author card Apache-2.0, with underlying COCO/model rights and ancestry still unresolved.
+
+E109 decoded all512 pairs at native geometry and checked the documented uint8 IDs0–8.
+Edited pixels are mask>0, not mask>127. **201 partial masks,224 full-image positive masks,
+87 empty masks**; no duplicate image bodies or decoded RGB arrays inside this subset.
+All eight positive model IDs appear; a pair may contain several IDs. Among partial masks,
+7 cover1–5%,50 cover5–20%,80 cover20–50%,64 cover50–100%; none cover<=1%.
+These are materially different localization cases. Full-positive masks cannot supply
+within-image positive-versus-background AUC; empty masks cannot be automatically labelled
+as authentic photographs. Keep every file and report these strata, not a refilled or
+silently filtered subset. No data corruption was inferred merely from a degenerate mask.
+
+**Role remains QUARANTINE_MODEL2_RESEARCH**, zero training/validation/classifier use.
+Next: establish original COCO/prompt ancestry and the interpretation of empty/full masks,
+audit cross-role overlap, then assign eligible whole-parent research roles. This download
+is not fresh independent proof and not a new pool of authentic Model1 negatives. Audit:
+`evidence/e109_diffseg_audit.json`; detailed local rows remain outside Git.
+
+### E111 cross-role audit — 2026-09-14
+
+Compared1,536 candidate Model2 images (512 CocoGlide edits,512 authentic pointers,
+512 DiffSeg30k derivatives) against152,380 frozen existing reference fingerprints.
+All decoded. **45 CocoGlide parent groups** produced252 joint perceptual matches
+(dHash<=4 and pHash63<=4); none were exact body/RGB matches. Conservatively quarantine
+those parents and all derivatives:14 in the previously exposed120,31 in the other392.
+No DiffSeg image matched the snapshot, and no internal cross-parent matches were found.
+These negative findings do not prove ancestry independence; numeric compiled authentic
+names do not identify original COCO samples. Keep the entire new acquisition in research
+quarantine until ancestry and empty/full-mask interpretation are resolved. No classifier
+training or independent test admission occurred. `evidence/e111_model2_lineage.json`.

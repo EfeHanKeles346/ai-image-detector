@@ -1,0 +1,7 @@
+{
+  "contract_sha256": "3eb62c0a69de0d948f607d8046794d8a9d9749e36d0199abd5ec620ee0cc7055",
+  "limits": "No model inference, masks not used for selection. Match-free does not establish COCO/prompt or generator independence; no automatic TRAIN/CAL/final admission.",
+  "matching": "Canonical native fingerprint: exact body/RGB or dHash<=4 AND pHash63<=4. Propagate edit/auth matches to CocoGlide parent; internal cross-parent matches recorded.",
+  "selection": "All512 CocoGlide edits plus their512 original pointers and all512 fixed DiffSeg30k images; no scores or refills.",
+  "state": "E111_Model2_lineage_audit_registered"
+}

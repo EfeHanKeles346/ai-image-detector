@@ -1,0 +1,66 @@
+{
+  "code_sha256": "47676d891187b38a3debb38760085e4d0d2be501aed7bafed82a364e7e4d924c",
+  "historical_twenty_numeric_gates": "Two conditions times ten engineering criteria; not twenty independent datasets or statistical certificates.",
+  "method": "One-sided exact Clopper-Pearson; illustrative single-claim alpha=.05. No claim of iid sampling for these data.",
+  "new_pixels_or_scores_read": 0,
+  "next": "Prospectively register independent parent/scene sampling, all claims and failure accounting before collecting new final evidence.",
+  "results": {
+    "publisher_original": {
+      "AI_fresh_independence_established": false,
+      "AI_recall_conditional_iid_lower": 0.9706954801830361,
+      "photo_FPR": {
+        "blockers": [
+          "dependence_not_resolved",
+          "previously_consumed",
+          "upper_error_limit_above_target"
+        ],
+        "conditional_iid_limits_only": {
+          "lower": 0.0,
+          "upper": 0.018549134077503755
+        },
+        "proof_supported": false
+      },
+      "scene_any_error_endpoint": {
+        "conditional_iid_limits_only": {
+          "lower": 0.0,
+          "upper": 0.2588655508930522
+        },
+        "events": 0,
+        "scenes": 10,
+        "warning": "Scene-any-error risk differs from photo FPR; scenes are consumed and independence is not established."
+      }
+    },
+    "social_q75": {
+      "AI_fresh_independence_established": false,
+      "AI_recall_conditional_iid_lower": 0.9706954801830361,
+      "photo_FPR": {
+        "blockers": [
+          "dependence_not_resolved",
+          "previously_consumed",
+          "upper_error_limit_above_target"
+        ],
+        "conditional_iid_limits_only": {
+          "lower": 0.043843873865725545,
+          "upper": 0.1186844724685474
+        },
+        "proof_supported": false
+      },
+      "scene_any_error_endpoint": {
+        "conditional_iid_limits_only": {
+          "lower": 0.03677143788746509,
+          "upper": 0.5069013010632024
+        },
+        "events": 2,
+        "scenes": 10,
+        "warning": "Scene-any-error risk differs from photo FPR; scenes are consumed and independence is not established."
+      }
+    }
+  },
+  "source_sha256": "086efba24ee72ed23c3fb50478114d0704685f29cb0ac609ce1e803560781378",
+  "state": "E108_consumed_evidence_limits_audited",
+  "universal_proof_supported": false,
+  "zero_error_required_independent_fresh_units": {
+    "one_claim_FPR_1pct": 299,
+    "twenty_claims_FPR_1pct_Bonferroni": 597
+  }
+}

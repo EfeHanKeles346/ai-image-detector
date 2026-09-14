@@ -1,0 +1,25 @@
+{
+  "body_bytes": 374620852,
+  "classifier_scores": 0,
+  "contract_sha256": "c8c66ed19f9b93d5a0acc7aefab98f5bc5deccf794df99fda911e3ea4148f303",
+  "identity": {
+    "bytes": 21563023972,
+    "etag": "\"4c690bce4060af044695692d9d9b1cb0585f8c86c6c8d5b586314a942e5fcb0b\"",
+    "last_modified": null
+  },
+  "images": 512,
+  "license": "Author dataset card Apache-2.0; upstream image/model rights and ancestry still require audit.",
+  "limits": "COCO-derived multi-turn edits; no automatic TRAIN/CAL/final admission or independent-publisher claim. ZIP CRC and local SHA verified; whole-archive publisher SHA is metadata only for range subsets.",
+  "masks": 512,
+  "max_seconds": 7200,
+  "publisher_archive_sha256": "9ef27f4c1c35ef21bce150435312de18fa35cf00df6d622271219455a4ee3d02",
+  "repo": "Chaos2629/Diffseg30k",
+  "revision": "8049819755ff430dcf4701636b14e6f1df6c4542",
+  "role": "QUARANTINE_MODEL2_RESEARCH",
+  "selection": "512 SHA256(E105|official TRAIN image filename)-first images and corresponding masks; no refill.",
+  "state": "E105_DiffSeg30k_TRAIN_subset_registered",
+  "training_allowed": false,
+  "url": "https://huggingface.co/datasets/Chaos2629/Diffseg30k/resolve/8049819755ff430dcf4701636b14e6f1df6c4542/train.zip",
+  "validation_image_reads": 0,
+  "workers": 2
+}

@@ -9194,3 +9194,55 @@ requires inventory. This is not a new full-frame model or a trained second revie
 E103/E104 engineering verification: full Python suite925 passed in16.89s; one existing
 Starlette/httpx deprecation warning. No web/serving change. E103 code commit1269a66
 passed both GitHub jobs (34864358329). Final evidence/documentation commit follows.
+
+
+### Remote dual-model research programme registered — 2026-09-14
+
+The current instruction authorizes research/acquisition/implementation for both modules
+without manual computer interaction. This supersedes the historical Model2-waits-for-E49
+execution order, while retaining all scientific data/retention gates. PLAN.md now contains
+the primary-source comparison, present gaps, prospective finite-sample proof targets,
+Model2 evaluation repair, and P0–P7 implementation ladder. Broader targets are aspirational
+project criteria, not an industry certification or an amendment to frozen20-check contracts.
+E105 selects512 author DiffSeg30k TRAIN pairs by fixed identity hash before images/scores;
+E106 audits existing raw TRAIN caches; E107 evaluates only120 historically exposed CocoGlide
+parents after evaluator repair. No new model selection on protected final data.
+
+## 2026-09-14 — Modern-source programme and repaired evidence
+
+The user's remote instruction authorizes automatic public acquisition and concurrent
+progress on both scientific workstreams. Added the comprehensive cited research and
+P0–P7 programme to PLAN.md, including recent NTIRE2026, B-Free, DEAR, GAPL, TGIF2,
+DiffSeg30k, TruFor and exact finite-sample evidence limits. This supersedes the older
+execution order that postponed Model2 until an E49 run; protected data gates remain.
+
+Implemented E106 complete raw-cache verification, E107 non-oracle full-coverage Model2
+baseline replay, and E108 fail-closed proof accounting. E106 passed integrity checks;
+E107 showed the historical crop model is inadequate for localization, especially on
+authentic controls and against center/constant baselines. E108 explains why the existing
+20 numeric gates do not prove universal reliability. None promoted a checkpoint.
+DiffSeg30k acquisition E105 remains a separate quarantine process; source and byte records
+belong in DATASETS.md. Detailed numbers and failure interpretation are in ml/EXPERIMENTS.md.
+
+E110 orchestration note: the first run command reached the contract read before the
+registration process had finished and stopped with FileNotFoundError. It did not read
+selected pixels, load the encoder or write results. Waited for the successful40-parent /
+70-view registration and restarted the identical frozen run; no protocol mutation.
+
+E105 completed512 public image/mask pairs automatically (~375MB). E109 found201 partial,
+224 full and87 empty masks; all remain quarantined. DATASETS.md records transfer sizes,
+integrity, why chosen, mask interpretation and remaining provenance work. E110 uncovered
+the known legacy source_key/path distinction after two exact aggregate replays; retained
+its frozen protocol and introduced E110B using verified E84 source materialization.
+
+E110B succeeded:40 TRAIN representatives /70 views, exact aggregate parity,36.10seconds,
+2.04GiB MPS. Raw crop-role cache retained; approximate full missing-view cost2.18hours.
+Restored the local E92 API after the probe. Registered E111 Model2 cross-role overlap
+audit on1536 images using existing fingerprints, with all candidate data still quarantined.
+Python suite938 passed (one existing Starlette/httpx warning); compileall and pip check pass.
+
+E111 completed all1,536 decodes against152,380 reference records. Conservative joint
+perceptual matches flag45 CocoGlide parent groups, including14 previously measured in
+E107; no exact body/RGB matches. DiffSeg did not match this snapshot, but source ancestry
+remains unresolved. Kept Model2 training admission pending. Final implementation checkpoint:
+938 Python tests pass; compileall/pip check pass; E92 health ready with unchanged artifact.

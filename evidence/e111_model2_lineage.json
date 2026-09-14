@@ -1,0 +1,19 @@
+{
+  "contract_sha256": "3eb62c0a69de0d948f607d8046794d8a9d9749e36d0199abd5ec620ee0cc7055",
+  "cross_match_observations": 252,
+  "decode_failures": 0,
+  "decoded": 1536,
+  "internal_cross_parent_match_observations": 0,
+  "limits": "No model inference, masks not used for selection. Match-free does not establish COCO/prompt or generator independence; no automatic TRAIN/CAL/final admission.",
+  "model_scores": 0,
+  "next": "Resolve original COCO/prompt ancestry and transitive parent groups before assigning research roles. Keep all matched parent derivatives out of new independent evaluation.",
+  "overlap_affected_candidate_groups": {
+    "CocoGlide": 45
+  },
+  "reference_records": 152380,
+  "report_sha256": "a431e15c0a0fee2f4fb283df3db2f05b51c0461368e3ad756faa8da1b8324932",
+  "seconds": 14.81781904201489,
+  "selected_images": 1536,
+  "state": "E111_Model2_lineage_audit_complete",
+  "training_allowed": false
+}
