@@ -1,0 +1,18 @@
+{
+  "contract_sha256": "61df96b75fe6892a3e67d26ae0c0affdd4446a2bad7084f692e50c169ecacfcc",
+  "controls": "Retain exact previous512 masks and zero AI targets. Construct resized authentic input and GaussianBlur6 same-mask classical edit with identical hard compositing and lossless PNG encoding.",
+  "detector_scores": 0,
+  "downloads": 0,
+  "geometry": "EXIF-oriented RGB; native center square side min(width,height), then LANCZOS512. No aspect distortion. Exact same16 source parents and order as E119/E122, no refill.",
+  "gpu_operations": 0,
+  "limits": "Input preparation changes field of view and resampling together, not an isolated denoising effect. No explanation of safety-filter decisions or proof of semantic quality. All16 attempts required in later generation.",
+  "max_seconds": 900,
+  "next": "Only complete verified preparation permits a separate E129 fixed fp16+SDPA replay, preserving original parameters/seeds/checker and full16/16 engineering gate.",
+  "parents": 16,
+  "promotion_allowed": false,
+  "proxy": "Mean of vertical/horizontal absolute RGB neighbour differences on normalized512 images, recorded for old native crop and new context. Texture proxy, not a noise estimator, quality gate, selection criterion or detector score.",
+  "roles": "TRAIN_RESEARCH_PILOT descendants of unchanged TRAIN originals. Resized derivatives, not native sensor evidence or new independent parents.",
+  "source_contract_sha256": "80721e3928d94f618ce4525e50f7f3b51de04bdd15ec31f0c36217120ea85e80",
+  "state": "E128_same_parent_context_preparation_registered",
+  "training_admission": false
+}

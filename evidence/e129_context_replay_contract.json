@@ -1,0 +1,31 @@
+{
+  "acceptance": "Complete16/16 original E122 engineering gate: finite tensors, nonblank outputs, enabled safety checker negative, >=95% intended-mask pixels changed, exact composite background. No output replacements, rerolls or threshold relaxation.",
+  "branch": "fp16_sdpa",
+  "change": "Replace E122 native512 source crops with E128 resized center-square context inputs for all16 unchanged original parents. No parent, seed, mask, prompt, weight, checker or generation-parameter change.",
+  "contract_sha256": "15524ea7f66a1e52fd7a539b53f2b218968cf8899d383623aba4b18025a7116a",
+  "detector_scores": 0,
+  "downloads": 0,
+  "generation": {
+    "attention": "SDPA",
+    "attention_slicing": false,
+    "batch_size": 1,
+    "device": "mps",
+    "dtype": "float16",
+    "guidance_scale": 7.5,
+    "prompt": "a natural photograph, consistent lighting and texture",
+    "repository": "stable-diffusion-v1-5/stable-diffusion-inpainting",
+    "revision": "8a4288a76071f7280aedbdb3253bdb9e9d5d84bb",
+    "safety_checker": true,
+    "scheduler": "pinned repository scheduler configuration",
+    "seed_base": 119000,
+    "steps": 30,
+    "strength": 1.0
+  },
+  "limits": "TRAIN research engineering, one old generator and correlated MIDD parents. Resampling and scene context change together. A pass is not semantic-quality, localization-accuracy or independent-OOD evidence; a new spatial-learning contract remains necessary.",
+  "max_seconds": 2400,
+  "mps_limit_bytes": 10737418240,
+  "parents": 16,
+  "promotion_allowed": false,
+  "state": "E129_same_parent_context_generation_registered",
+  "training_admission": false
+}

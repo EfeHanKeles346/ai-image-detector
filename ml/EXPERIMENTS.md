@@ -8317,3 +8317,11 @@ Mean mask-crossing RGB gradient is 0.030659 in authentic inputs, 0.042073 in cla
 Decision: retain classical-edit negatives and require boundary-versus-interior localization evaluation in a future spatial-head protocol. Keep raw outputs diagnostic, and preserve exact mask/provenance/encoding matching. The failed E122 16/16 gate remains failed; no output is newly admitted to training and no safety filter is disabled. No detector score, GPU operation, download or serving change. Aggregate receipt: `evidence/e127_pixel_audit.json`; per-case measurements stay local.
 
 After E127, all 998 Python tests passed. E124 checkpoint: 4,050/12,525 parents extracted, pilot replay error 0; E125 not yet completed and E126 still waiting. No new Model1 accuracy result exists at this checkpoint.
+
+### E128/E129 proposed input-preparation ablation — 2026-09-15
+
+Use the exact16 original E119 TRAIN research parents, without selecting replacement survivors. Change native512 crop to full-short-side center-square resized512; retain masks/seeds/SDPA/prompt/steps/checker and all16/16 quality checks. E128 prepares matched authentic/classical inputs; E129 will be registered separately after preparation. The hypothesis changes both scene context and resampling, is motivated by the native-crop diagnostic and the generator's512px aesthetic-image training, and makes no assertion about safety-filter correctness. No generated output, detector improvement or corpus admission is claimed yet.
+
+E128 completed16/16 preparations in5.25seconds. Source center squares cover69.23–75.29% of full source area; authentic/classic/mask/zero-target provenance is bound. Mean texture proxy0.038142→0.032809 is an input-description result, not detection improvement. E129 is now separately frozen; full16 generation awaits the Model1 GPU lifecycle. Twelve focused geometry/ancestry/outcome tests plus four dependency tests passed. Preserve E12211/16 result unchanged and compare all16 paired attempts.
+
+E128/E129 implementation verification:1,014 Python tests passed; no detector accuracy is implied. E129 remains in `waiting_for_Model1_GPU_release`.

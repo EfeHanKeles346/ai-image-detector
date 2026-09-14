@@ -1,0 +1,17 @@
+{
+  "all_masks_seeds_roles_preserved": true,
+  "contract_sha256": "61df96b75fe6892a3e67d26ae0c0affdd4446a2bad7084f692e50c169ecacfcc",
+  "generation_started": false,
+  "limits": "Input preparation changes field of view and resampling together, not an isolated denoising effect. No explanation of safety-filter decisions or proof of semantic quality. All16 attempts required in later generation.",
+  "mean_old_native_crop_proxy": 0.03814243742945237,
+  "mean_resized_context_proxy": 0.032808759027298136,
+  "parents": 16,
+  "prepared_sha256": "d2114aee3c1c2fa579bb1db25cf456beaf571119b6d080405f41d773ce785dcb",
+  "seconds": 5.249751791940071,
+  "source_area_fraction_range": [
+    0.6923076923076923,
+    0.7529411764705882
+  ],
+  "state": "E128_same_parent_context_inputs_complete",
+  "training_admission": false
+}
