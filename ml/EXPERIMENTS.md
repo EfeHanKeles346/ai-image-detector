@@ -8295,3 +8295,9 @@ E122 confirms why the two-case numerical probe was insufficient for full-pilot a
 ### E124/E125 unattended execution — 2026-09-14T20:33:54+00:00
 
 Started the fixed full E124 extraction; temporarily stopped the verified E92 API for GPU memory. Durable chunks and stage logs are local. This is feature extraction, not a completed model improvement.
+
+### E126 prepared, not yet registered — 2026-09-15
+
+Hypothesis: the fixed full-frame representation may transfer differently from its equal-capacity center control; no result is assumed. Code is ready for both E125 branches subject to complete TRAIN/runtime permission. The consumed 640-view comparison preserves all E114 gates, separately replays old center and duplicate full-frame features, locks branch scores before metrics, and keeps E43/E92/E103 individual AI retention. Known limitations: repeated DEV selection, 10 correlated SIDD scenes and limited seen AI families. E124 feature extraction is still active; E125 has not produced candidates and E126 has not read/scored DEV.
+
+E126 implementation verification: 991 Python tests passed; compile/whitespace checks passed. Started the one-shot dependent runner, currently waiting for E124/E125. This is operational readiness, not an evaluated detection result.

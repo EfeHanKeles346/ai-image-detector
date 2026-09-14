@@ -9354,3 +9354,9 @@ E122 completed all16 fixed replays in487.83s, with11 passing and5 safety-filter 
 Started the fixed full E124 extraction; temporarily stopped the verified E92 API for GPU memory. Durable chunks and stage logs are local. This is feature extraction, not a completed model improvement.
 
 Final implementation checks:969 Python tests passed with one existing Starlette/httpx warning; compileall,pip check and whitespace checks passed. Started the single E124/E125 extraction/paired-training process on AC power, stopping only verified E92 PID34526 for memory. E124 child34683 is active; no full-cache or new fit result exists yet. The runner writes actual completion/failure outcomes and restores E92.
+
+### E126 implementation — 2026-09-15
+
+Added the separately gated E125 full-frame/center consumed-DEV comparison and a finite dependency runner. Preserved original transport pixels, inherited per-image retention checks, candidate/source/cache hashes and lock-before-metrics. The runner waits for the current E124/E125 lifecycle, verifies the E92 artifact SHA before stopping/restoring the API, and stops on upstream failure. No new model score, download or serving promotion has occurred. Added targeted checks for premature DEV access, inconsistent TRAIN permission, feature/cache identity, center/full-frame parity, double social compression and lifecycle dependencies.
+
+E126 validation: all 991 Python tests passed (one existing Starlette/httpx deprecation warning); compile and whitespace checks passed. The finite dependent job is now running in `waiting_for_E124_E125`, with no GPU allocated and no DEV registration yet. E124 continues uninterrupted.

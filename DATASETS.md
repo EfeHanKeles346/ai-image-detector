@@ -2983,3 +2983,7 @@ E120 numerical diagnosis used only existing parents0/1. The fp16+sliced failure 
 Original E119 remains failed; this is a separately registered correction. No detector performance or independent evidence is claimed.
 
 E122 completes16 numerical replays:11 valid engineering outputs,5 safety-filter rejections, no nonfinite tensor events. No new downloads and no training admission. For the11 valid raw outputs only, mean out-of-mask changed pixel fraction is99.94%; raw diffusion outputs cannot be treated as locally masked truth. Only explicit composites preserve background exactly. E123/E124 reuse existing complete TRAIN originals for new full-frame features, not new images or changed dataset roles.
+
+### E126 data-use plan — 2026-09-15
+
+No new download. Reuse the existing SHA-bound 640 consumed-development views only after complete passing E125 TRAIN guards. Add full-frame CLIP features without reassigning roles, fitting on DEV, reapplying social compression, or opening gallery/final data. E114 raw features serve only as an identity/numerical replay reference. Model2 E122 remains quarantined after its failed 16/16 gate; a planned read-only pixel audit will not admit its 11 accepted generations to TRAIN.
