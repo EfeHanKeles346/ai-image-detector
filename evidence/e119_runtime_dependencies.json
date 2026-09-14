@@ -1,0 +1,32 @@
+{
+  "state": "E119_isolated_dependency_completion_before_generation",
+  "contract_sha256": "80721e3928d94f618ce4525e50f7f3b51de04bdd15ec31f0c36217120ea85e80",
+  "wheels": [
+    {
+      "name": "diffusers",
+      "version": "0.40.0",
+      "wheel": "diffusers-0.40.0-py3-none-any.whl",
+      "sha256": "5b5da7c3ddb62152fa4afc577f02e050af688c797375c34fb2d01006da3f3541",
+      "bytes": 5911654
+    },
+    {
+      "name": "importlib-metadata",
+      "version": "9.0.1",
+      "wheel": "importlib_metadata-9.0.1-py3-none-any.whl",
+      "sha256": "bba5600596a7e21f3eef53281cf28d6a5195634d2f2b78ff9501a3272c6eaab0",
+      "bytes": 27920
+    },
+    {
+      "name": "zipp",
+      "version": "4.1.0",
+      "wheel": "zipp-4.1.0-py3-none-any.whl",
+      "sha256": "25ad4e16390cd314347dd8f1de67a2ac538ae658ed4ab9db16029c07c188e97f",
+      "bytes": 10238
+    }
+  ],
+  "additional_dependency_bytes": 38158,
+  "frozen_inputs_unchanged": true,
+  "isolated_pip_check": "passed",
+  "generated_images": 0,
+  "reason": "Isolated pip check found missing importlib-metadata after Diffusers class import succeeded. Added pinned importlib-metadata and zipp only in the ignored isolated target before generation; detector environment unchanged."
+}

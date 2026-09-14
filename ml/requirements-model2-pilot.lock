@@ -1,0 +1,6 @@
+# Isolated Model2 pilot additions only; keep the serving/experiment environment unchanged.
+# Install with --no-deps --require-hashes --target ml/work/model2-runtime/site-packages.
+# Base dependencies/versions are retained by the E119 contract.
+diffusers==0.40.0 --hash=sha256:5b5da7c3ddb62152fa4afc577f02e050af688c797375c34fb2d01006da3f3541
+importlib-metadata==9.0.1 --hash=sha256:bba5600596a7e21f3eef53281cf28d6a5195634d2f2b78ff9501a3272c6eaab0
+zipp==4.1.0 --hash=sha256:25ad4e16390cd314347dd8f1de67a2ac538ae658ed4ab9db16029c07c188e97f
