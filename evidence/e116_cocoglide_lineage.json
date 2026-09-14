@@ -1,0 +1,18 @@
+{
+  "COCO_split": "val2017",
+  "E111_quarantined_parent_groups_retained": 45,
+  "contract_sha256": "5553cee3fbd84a172f6bc78535a6d1b76a9ffc38474c337c9b6d470b1e53db84",
+  "image_license_counts": {
+    "Attribution License": 131,
+    "Attribution-NonCommercial License": 113,
+    "Attribution-NonCommercial-ShareAlike License": 201,
+    "Attribution-ShareAlike License": 67
+  },
+  "lineage_sha256": "e39cf41e5024812ed7907ed00a976347d29d2833fab55cdb0a9e7717217fe42c",
+  "matched_triples": 512,
+  "model_scores": 0,
+  "next": "Use recovered COCO IDs to audit original ancestry across protected manifests, then separately register whole-parent research roles. These are512 same-source originals, not newly independent images.",
+  "state": "E116_exact_author_lineage_recovered",
+  "training_allowed": false,
+  "unique_original_COCO_parents": 512
+}

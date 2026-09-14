@@ -2902,3 +2902,52 @@ legacy/MIDD/SID/additional-MIDD cohorts. Extract15,210 missing raw CLIP views an
 Raw vectors, context features and candidate weights stay under the ignored external
 E112/E113 work directories. No gallery, CAL, DEV or final images are used for these fits.
 DiffSeg30k/Model2 candidates retain their existing quarantine status.
+
+### E115/E116 author CocoGlide provenance recovery — 2026-09-14
+
+E115 inspected the ZIP linked by the [official TruFor repository](https://github.com/grip-unina/TruFor).
+Only167,412 range bytes were transferred; zero image members. The123,161,479-byte
+archive is bound to ETag `"7574b87-60269d48b6230"` and Last-Modified2023-08-08.
+It contains1,536 PNGs, `table.csv`, `README.txt`, and `licenses.json`. The table provides
+512 real/edit/mask triples and prompts with COCO val2017 IDs. License metadata covers
+512 unique originals:201 CC BY-NC-SA,131 CC BY,113 CC BY-NC,67 CC BY-SA. These labels
+must be preserved with each source image, not replaced by the software licence.
+
+E116 is registered to acquire this complete~123MB author package for **provenance only**.
+Why download: verify exact canonical authentic/edited/mask pixels against the already
+compiled512 triples and recover original COCO IDs/prompt/licence mappings. This repairs
+lost lineage; it is not512 new independent training examples. Join only unique exact
+three-component pixel identities, never filenames or table order. Keep E111's45 near-match
+parent quarantines and no automatic TRAIN/CAL/final admission. Archive body will be bound
+by local full SHA and CRC plus author headers; no publisher full SHA is advertised.
+Local storage: `/Volumes/LaCie/pixelproof-datasets/e116`. Download outcome recorded below
+when verified; E115 receipt is `evidence/e115_cocoglide_metadata.json`.
+
+DiffSeg30k follow-up: the [author paper](https://arxiv.org/html/2511.19111v1) explicitly
+includes both real COCO bases and generated bases from COCO prompts. This reinforces the
+need to retain separate base/scope labels; do not reinterpret every full/empty mask as
+corruption or an authentic negative. Original-parent linkage is still unresolved there.
+
+### E116 completion and E117 original-parent overlap — 2026-09-14
+
+Author package download completed:123,161,479bytes in14.98seconds; local full SHA256
+`fc848643ad0a81010ba2a6ab8c055762782f54e4fb9e407210dbfe1c3b538af9`.
+All ZIP member CRCs/sizes and catalog identities verified. E116 recovered **512/512
+unique exact authentic/edit/mask pixel triples**, joining compilation records to author
+COCO val2017 IDs, prompts and per-original licence metadata. The earlier45 near-match
+quarantines were retained. No ordering/filename guess was used to link the compilations.
+Receipts: `evidence/e116_cocoglide_download.json`, `evidence/e116_cocoglide_lineage.json`.
+
+E117 compared these recovered originals with the already protected, SHA-bound DDA-COCO
+manifest:34,755 records representing4,965 COCO val2017 parents. **506/512 CocoGlide
+parents overlap exactly by original COCO ID**, including all120 previously measured
+pairs; each has7 protected original/derived records. **461 additional parent groups**
+were missed by the earlier perceptual-only test because different generated derivatives
+need not resemble each other. The6 unmatched originals are not certified independent
+of all other data and do not justify a six-image training/validation claim.
+
+Keep506 original groups and every descendant out of new Model2 TRAIN/CAL admission
+under the current protected-parent policy. The corpus remains consumed diagnostic
+material. This is a lineage overlap finding, not a claim that the historical crop model
+was necessarily trained on those exact images. No Model2 fitting or protected pixel
+reads occurred in E117. Receipt: `evidence/e117_coco_ancestry.json`.

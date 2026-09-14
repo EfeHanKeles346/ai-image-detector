@@ -6729,3 +6729,42 @@ on any failed command, retains evidence and restores the same E92 API in its fin
 `caffeinate -is` holds the machine awake during this one run. This is not a recurring
 monitor or30-minute automation. Do not start a second encoder/fit on the same machine.
 Model2 ancestry quarantine and protected final/gallery roles remain unchanged.
+
+## E114 implementation while E112 finishes — 2026-09-14
+
+Prepare one consumed-DEV comparison for every E113 branch whose complete TRAIN/runtime
+guards pass. Registration must reject both-failed or incomplete paired reports before
+reading DEV metadata. Re-encode only the640 ordered CLIP crop vectors after the GPU is
+free, verify all reconstructed aggregates against E83, and reuse its frozen DINO/DEAR
+features. Apply frozen E113 PCA/heads, lock all branch scores before metrics, and require
+all20 numerical gates plus individual E43/E92/E103 AI retention and E92/E103 correct-REAL
+retention. Equal pooled counts cannot hide swapped mistakes. No final/gallery access or
+training on DEV. The implementation is ready; registration/execution awaits E113 results.
+
+Model2 provenance follow-up: inspect the author-linked CocoGlide ZIP's directory and
+small text metadata for original COCO identity mappings (E115). No image members are
+needed for this inventory. Keep current overlap/ancestry quarantine regardless of a
+successful metadata download until actual parent mappings are established.
+
+### Model2 revised next step after E116/E117
+
+Original lineage recovered for all512 CocoGlide triples. **506 share protected DDA-COCO
+parents**, including all120 exposed examples. Exclude those full ancestry groups from
+new training/calibration; the6 nonmatches are insufficient and not broadly certified.
+Do not proceed with a convenient random CocoGlide split. E111 perceptual disjointness
+alone was insufficient; make explicit original/prompt identities an admission requirement.
+
+Next acquisition/design options must expose original identities: an author corpus with
+eligible non-overlapping original parents, or a separately registered local inpainting
+pilot using already admitted TRAIN-only originals, preserving their roles and all mask/
+generator/transport descendants in one group. Any local generation requires its own
+pinned generator, model licence, compute probe, deterministic masks and paired controls;
+no paid generation or test-parent reuse is implied. Source-held-out evaluation must come
+from distinct, unconsumed parents/generator families. DiffSeg stays quarantined until
+its original/base-image mapping is established.
+
+E114 one-shot dependent process is now waiting for the running E112/E113 process to
+finish. It registers DEV only after complete passing TRAIN guards; both-failed reports
+produce an explicit skip. After registration, it temporarily stops only the verified
+local E92 API, runs the paired640-view consumed screen, records all outcomes and restores
+E92. No recurring scheduler, new candidate promotion or independent-final access.

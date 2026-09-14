@@ -1,0 +1,43 @@
+{
+  "catalog_entries": 1542,
+  "catalog_sha256": "214626ec43e4af4caf1489525a39960ac90601b1484d5f06fb308aa9ab9281c2",
+  "code_sha256": "4d8b719b6d4b16fa4984da4bd6c065c6468f62546cc70d097bde0ff6d5a67b3a",
+  "extensions": {
+    ".csv": 1,
+    ".json": 1,
+    ".png": 1536,
+    ".txt": 1
+  },
+  "identity": {
+    "bytes": 123161479,
+    "etag": "\"7574b87-60269d48b6230\"",
+    "last_modified": "Tue, 08 Aug 2023 14:03:40 GMT"
+  },
+  "image_members_downloaded": 0,
+  "limits": "Publisher ETag/length/Last-Modified and ZIP-member CRC only, not whole-archive SHA verification. Metadata presence alone does not admit TRAIN or independent evaluation.",
+  "purpose": "Search author package for original COCO identity/prompt/parent mappings lost in compilation. Catalog/text inspection only; no new model scores or full ZIP download.",
+  "range_bytes": 167412,
+  "state": "E115_author_CocoGlide_metadata_inspected",
+  "text_metadata_members": [
+    {
+      "bytes": 52921,
+      "name": "table.csv",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e115/metadata_000.txt",
+      "sha256": "4af891e491e913cee7fdb16094cc9e301749b3cc96df8750edbdfdcd0ce25439"
+    },
+    {
+      "bytes": 540,
+      "name": "README.txt",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e115/metadata_001.txt",
+      "sha256": "718b85758b824f21b422cb7f1288738db63d7f744f947344aa18516d4819d6d1"
+    },
+    {
+      "bytes": 16159,
+      "name": "licenses.json",
+      "path": "/Volumes/LaCie/pixelproof-datasets/e115/metadata_002.txt",
+      "sha256": "14bc4bb97cba183a274fc4d920c515933c37e1335fe0907242ae3acfec29e9de"
+    }
+  ],
+  "training_allowed": false,
+  "url": "https://www.grip.unina.it/download/prog/TruFor/CocoGlide.zip"
+}

@@ -1,0 +1,21 @@
+{
+  "author_parents": 512,
+  "code_sha256": "ae9eae593d3416d07630dfdec5701a1c7a5aa6db61d755c2fc54662571518fa7",
+  "derivatives_per_matching_parent": {
+    "7": 506
+  },
+  "image_pixels_read": 0,
+  "limits": "Exact original COCO IDs recovered by author real/edit/mask pixel triples. Different generated descendants can share the protected original even without perceptual similarity. This audit targets pinned DDA-COCO ancestry only; no negative comprehensive-independence claim.",
+  "lineage_sha256": "e39cf41e5024812ed7907ed00a976347d29d2833fab55cdb0a9e7717217fe42c",
+  "matched_first120": 120,
+  "matched_original_parents": 506,
+  "model_scores": 0,
+  "newly_flagged_beyond_perceptual_audit": 461,
+  "next": "Exclude every matched original and all descendants from new Model2 TRAIN/CAL admission under current protected-parent policy. Retain only consumed research diagnostics. Seek eligible non-overlapping originals with explicit ancestry; do not weaken the rule to reuse this convenient corpus.",
+  "protected_derivative_records": 34755,
+  "protected_manifest_sha256": "e663d679f86ba69a545659203e11528d8998c9a362198a19f5f269a1ef97a3db",
+  "protected_unique_COCO_parents": 4965,
+  "rows_sha256": "a801d54f5ce61a03cb71db635829777e7370801c8c328a200eeb6a5148b839fd",
+  "state": "E117_original_COCO_ancestry_overlap_audited",
+  "training_allowed": false
+}

@@ -1,0 +1,26 @@
+{
+  "contract_sha256": "5553cee3fbd84a172f6bc78535a6d1b76a9ffc38474c337c9b6d470b1e53db84",
+  "identity": {
+    "bytes": 123161479,
+    "etag": "\"7574b87-60269d48b6230\"",
+    "last_modified": "Tue, 08 Aug 2023 14:03:40 GMT"
+  },
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e115_cocoglide_metadata.py": "4d8b719b6d4b16fa4984da4bd6c065c6468f62546cc70d097bde0ff6d5a67b3a",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e116_cocoglide_lineage.py": "ee3c109c01d2b9c361d288dcae3fb1918d9a1880426923befe9901a455558d1e",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e65_audit.py": "71df44c7eb40333c80dde13dad79b1dac0336e51aab5b1bd467642e8975262c2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/work/model2_local_inventory_2026-09-14.json": "06d4aa5e719c5b1e69cdd71786aa0347bc59e73c8caf9ac4bfa2a137060cf92a",
+    "/Volumes/LaCie/pixelproof-datasets/e111/audit.json": "a431e15c0a0fee2f4fb283df3db2f05b51c0461368e3ad756faa8da1b8324932",
+    "/Volumes/LaCie/pixelproof-datasets/e115/catalog.json": "214626ec43e4af4caf1489525a39960ac90601b1484d5f06fb308aa9ab9281c2"
+  },
+  "limits": "Public author ETag/size/Last-Modified, TLS, ZIP CRC and local full SHA; no publisher full SHA advertised. Matching author ancestry is not automatic TRAIN/CAL/final admission. Keep E111 overlap quarantine.",
+  "max_seconds_download": 900,
+  "model_scores": 0,
+  "purpose": "Recover original COCO val2017 IDs, prompts and image-specific licences from author table.csv/licenses.json; these were absent from compilation metadata.",
+  "requested_archive_bytes": 123161479,
+  "role": "PROVENANCE_AUDIT_ONLY",
+  "selection": "Entire author512-pair package, no prediction-based selection. Validate real/edit/mask triples by canonical exact pixel digests against existing compiled512 pairs; never join by row number or basename.",
+  "state": "E116_author_lineage_recovery_registered",
+  "training_allowed": false,
+  "url": "https://www.grip.unina.it/download/prog/TruFor/CocoGlide.zip"
+}

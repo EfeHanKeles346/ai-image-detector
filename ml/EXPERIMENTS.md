@@ -8195,3 +8195,35 @@ English records. Code checks confirm deterministic saved representation/batch re
 no use of evaluation statistics, corrupt/role-swapped resume rejection and stopping on
 child failure. API E92 is temporarily stopped for computation and restored in the runner's
 finalizer. Training results will appear as later dated entries, not be fabricated here.
+
+## 2026-09-14 — E114 implementation, no DEV execution yet
+
+Added the paired consumed-DEV gate, exact predecessor/transport identity checks, CLIP
+raw/aggregate parity and all-source individual retention comparisons. Six focused tests
+pass, including rejection of failed/incomplete/nonfinite TRAIN permissions and equal-count
+swapped AI/REAL errors. Registration must occur after E113 completes; code preparation
+does not access DEV pixels or fit scores. E112 continued with zero aggregate error at
+10,300 parents. Its eventual result remains recorded by the existing unattended runner.
+
+### E115–E117: recovered Model2 ancestry reveals hidden cross-role overlap
+
+E115 found the author table/prompts/licences with167,412 metadata bytes, no images.
+E116 then acquired the123MB original package and joined all512 local triples by exact
+canonical authentic/edit/mask pixels. This recovered true COCO val2017 identities rather
+than assuming compilation row numbers correspond to original filenames. All512 original
+licences and prompts are now retained locally; licence counts are in DATASETS.md.
+
+E117 metadata-only comparison against the frozen DDA-COCO protected manifest finds
+506 matching COCO originals, including every historical first120 pair. The protected
+manifest has7 records per matching parent (original plus generated variants). This adds
+461 flags beyond E111's45 perceptual matches. Therefore E107 remains a consumed diagnostic
+and CocoGlide is unsuitable for newly admitted Model2 TRAIN/CAL under the current role
+policy. Do not describe this as demonstrated historical weight contamination; exact
+parent overlap does not by itself establish what the crop model's weights saw.
+
+An initial E117 parser accepted generated member paths but rejected the protected REAL
+members (`val2017/<id>.jpg`). Before any report was written it was extended to both exact
+published layouts; parent/member numeric IDs must still agree, and non-val2017 paths
+are rejected. No threshold, cohort selection or protected image content changed.
+
+Implementation checkpoint:955 Python tests pass with one existing Starlette/httpx warning; pip check and whitespace checks pass. E112 remains active, at11,800/12,525 parents with zero aggregate error. This checkpoint does not report a completed fit or DEV pass. E114 awaits the complete paired TRAIN reports.

@@ -1,0 +1,10 @@
+{
+  "archive_bytes": 123161479,
+  "archive_sha256": "fc848643ad0a81010ba2a6ab8c055762782f54e4fb9e407210dbfe1c3b538af9",
+  "contract_sha256": "5553cee3fbd84a172f6bc78535a6d1b76a9ffc38474c337c9b6d470b1e53db84",
+  "model_scores": 0,
+  "purpose": "Recover original COCO val2017 IDs, prompts and image-specific licences from author table.csv/licenses.json; these were absent from compilation metadata.",
+  "seconds": 14.97985579201486,
+  "state": "E116_author_archive_downloaded",
+  "training_allowed": false
+}
