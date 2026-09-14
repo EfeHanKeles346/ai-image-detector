@@ -6695,3 +6695,37 @@ with all old AI/REAL retention gates; (3) recover author original-parent mapping
 Model2 and resolve near-match groups before supervised localization training; (4) only
 qualified candidates can spend new source/generator-held-out evidence. None of these
 remaining stages is marked completed by the audits in this session.
+
+## E112 implementation — full Model1 context features (2026-09-14)
+
+The user now explicitly requests execution. Register the full12,525-parent population:
+all15,210 missing raw CLIP views, preserving the34,890 old raw views, yielding50,100
+ordered TRAIN views. Use the passing E110B source resolution, transforms, batch3 encoder
+and1e-5 aggregate-parity ceiling. Verify every parent on creation and resume; durable
+per-parent chunks prevent loss of completed work. Fixed4-hour execution limit,6GiB MPS
+ceiling, AC power and20GiB disk reserve. No data download, classifier scores or protected
+image reads. Stop only the known E92 API while GPU extraction runs, then restore it.
+
+After complete cache admission, fit a paired128-coordinate PCA extension: ordered
+center/local-difference versus the same-dimensional pooled mean/std control, both on
+all50,100 TRAIN views. Keep the frozen E103 base, identical optimizer/data/constraints,
+and every AI-logit and correct-REAL retention guard. No subset fit or DEV-driven sweep.
+Register that fit separately before execution; a failed TRAIN gate denies DEV scoring.
+
+### E113 paired-fit implementation and unattended handoff
+
+Implemented the fixed two-branch comparison after E112 completion:128 whitened PCA
+coordinates from either pooled mean/std or ordered center/local-difference vectors,
+appended to the frozen E103450-dimensional map. Both use the full50,100 TRAIN views,
+seed113/power3, identical578 zero delta weights, joint worst-group BCE and the E103
+all-AI/correct-REAL constraints. Preserve every previous numerical/population gate,
+new-sensor gates, saved artifact parity and complete batch8 inference parity. A passing
+TRAIN branch only permits separately registered consumed DEV; no automatic promotion.
+
+A single local `run_e112_e113.py` process executes E112, registers E113 only after the
+complete verified cache, and fits both branches. It writes English stage/results entries
+to HISTORY.md and ml/EXPERIMENTS.md; detailed logs/chunks remain outside Git. It stops
+on any failed command, retains evidence and restores the same E92 API in its finalizer.
+`caffeinate -is` holds the machine awake during this one run. This is not a recurring
+monitor or30-minute automation. Do not start a second encoder/fit on the same machine.
+Model2 ancestry quarantine and protected final/gallery roles remain unchanged.

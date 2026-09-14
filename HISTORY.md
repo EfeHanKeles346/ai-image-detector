@@ -9246,3 +9246,27 @@ perceptual matches flag45 CocoGlide parent groups, including14 previously measur
 E107; no exact body/RGB matches. DiffSeg did not match this snapshot, but source ancestry
 remains unresolved. Kept Model2 training admission pending. Final implementation checkpoint:
 938 Python tests pass; compileall/pip check pass; E92 health ready with unchanged artifact.
+
+## 2026-09-14 — Application started: E112 full context feature cache
+
+Implemented complete resumable extraction after the passing E110B feasibility probe.
+Retain every TRAIN cohort and condition; raw center/local vectors and context coordinates
+are saved outside Git. Resume tests reject changed source/parent/role/body and aggregate
+mismatches. The current user authorizes proceeding with implementation; no new data or
+manual computer interaction is required for this stage.
+
+### E112/E113 unattended execution — 2026-09-14T17:39:24+00:00
+
+Started the fixed full E112 extraction; temporarily stopped the verified E92 API for GPU memory. Durable chunks and stage logs are local. This is feature extraction, not a completed model improvement.
+
+E112 extraction is now running in a single caffeinate-protected local process. The
+verified E92 API PID142 was stopped for memory. E113 paired training code is implemented
+and queued after successful extraction/contract registration, with identical retention
+gates for both branches. The runner records stage outcomes and restores E92 even when a
+child stage fails. No recurring automation, new dataset or Model2 role reassignment.
+
+Implementation verification:943 Python tests passed with one pre-existing Starlette/httpx
+warning; compileall, pip check and whitespace checks passed. The active E112 extraction
+had completed1,700 parents with zero aggregate difference at this checkpoint. This is
+progress evidence only; neither paired classifier has completed training yet. The
+unattended runner will append actual stage outcomes, and E113 appends its final plan state.

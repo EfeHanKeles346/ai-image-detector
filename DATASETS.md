@@ -2893,3 +2893,12 @@ These negative findings do not prove ancestry independence; numeric compiled aut
 names do not identify original COCO samples. Keep the entire new acquisition in research
 quarantine until ancestry and empty/full-mask interpretation are resolved. No classifier
 training or independent test admission occurred. `evidence/e111_model2_lineage.json`.
+
+### E112/E113 existing-data usage — 2026-09-14
+
+No new download. Reuse the complete12,525 previously admitted TRAIN parents across
+legacy/MIDD/SID/additional-MIDD cohorts. Extract15,210 missing raw CLIP views and preserve
+34,890 old views; the50,100 views are transformations, not50,100 independent photographs.
+Raw vectors, context features and candidate weights stay under the ignored external
+E112/E113 work directories. No gallery, CAL, DEV or final images are used for these fits.
+DiffSeg30k/Model2 candidates retain their existing quarantine status.

@@ -8162,3 +8162,36 @@ so original COCO identifiers are not recovered by filename alone. No training ro
 assigned; no fresh evaluation claim. Runtime14.82seconds. Receipt:
 `evidence/e111_model2_lineage.json`. These findings reinforce that E107 is consumed
 research diagnosis and its bootstrap intervals are not independent deployment evidence.
+
+## 2026-09-14 — E112 preregistration: complete crop-role feature extraction
+
+Implement full15,210 missing CLIP raw views for12,525 admitted TRAIN parents; concatenate
+with immutable34,890 legacy views to preserve all50,100 conditions/parents. Exact E110B
+operations and source-key materialization; verify source bodies, historical aggregates,
+parent/role bindings and every resumed chunk. Per-parent atomic NPZ plus immutable receipt,
+source/body/array hashes; no refill or score-driven selection. Four-hour execution bound,
+6GiB MPS ceiling and existing AC/disk guards. No classifier fit or independent performance
+claim. The subsequent paired context/control fit remains separately registered.
+
+### E112/E113 unattended execution — 2026-09-14T17:39:24+00:00
+
+Started the fixed full E112 extraction; temporarily stopped the verified E92 API for GPU memory. Durable chunks and stage logs are local. This is feature extraction, not a completed model improvement.
+
+### E113 implementation — fixed paired comparison queued after E112
+
+One all-TRAIN StandardScaler/PCA128 per branch (std floor1e-6, variance floor1e-12,
+randomized seed113 power3); no held-out fitting statistics. Compare1536-dimensional
+pooled mean/std inputs with1536-dimensional center/center-minus-local-mean inputs using
+the same latent capacity. Retain frozen E103450 coordinates and logits, fit578 delta
+coefficients from zero. Reuse E103 joint worst-group loss, L2.01, SLSQP200/ftol1e-9,
+CPU2, all-AI nonnegative logit shifts and correct-REAL decision constraints. One-hour
+budget per branch, no sweep. Run all historical/expanded gates and complete batch8 replay;
+retain both successes and failures. The executable registers actual feature/artifact
+hashes only after E112 passes; it cannot fit an incomplete cache. No DEV scores or
+new performance results exist at this implementation checkpoint.
+
+The unattended runner logs each stage and appends completion/failure summaries to the
+English records. Code checks confirm deterministic saved representation/batch replay,
+no use of evaluation statistics, corrupt/role-swapped resume rejection and stopping on
+child failure. API E92 is temporarily stopped for computation and restored in the runner's
+finalizer. Training results will appear as later dated entries, not be fabricated here.
