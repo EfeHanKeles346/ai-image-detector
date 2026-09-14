@@ -1,0 +1,16 @@
+{
+  "branch": "fp16_sdpa",
+  "contract_sha256": "353836702bcf414116aa3f2669de92a90081ba1f930b1cd85858afe3c8746789",
+  "detector_scores": 0,
+  "limits": "Engineering correction of numerical failure, not improved detector performance or a semantic-quality audit. Only after16/16 pass may a separate TRAIN-only spatial learning experiment be registered. All original research-only licences and ancestry roles remain.",
+  "mean_valid_raw_background_changed_fraction": 0.9994174467463207,
+  "parents": 16,
+  "passed": false,
+  "passed_parents": 11,
+  "peak_mps_bytes": 6788562944,
+  "promotion_allowed": false,
+  "report_sha256": "cb0c713de246cb20e8d4822948aa5dd34303d845d85deefdffeb6fb9c54cd373",
+  "seconds": 487.82744045800064,
+  "state": "E122_complete16_numerical_replay_finished",
+  "training_allowed": false
+}

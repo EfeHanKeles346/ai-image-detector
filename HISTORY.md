@@ -9340,3 +9340,17 @@ E120 completed the fixed precision comparison: fp16+sliced reproduces a UNet non
 Implemented E123 full-frame feasibility with two focused tests for opposite-border retention, exact old center transport pixels and legacy-case TRAIN role handling. It awaits GPU release after E122. E120 completed267.83seconds; fp16+SDPA passed both cases with peak6.32GiB, float32+sliced also passed with peak7.32GiB. These are numerical fixes, not detector results.
 
 Verification checkpoint:968 Python tests pass with one existing Starlette/httpx warning; compileall, pip check and whitespace checks pass. E122 full replay is active; E123 is frozen and waits for GPU release. Completed E112/E113/E114/E119/E120/E121B evidence is retained, including failures.
+
+### E122 complete numerical replay result
+
+{"branch": "fp16_sdpa", "contract_sha256": "353836702bcf414116aa3f2669de92a90081ba1f930b1cd85858afe3c8746789", "detector_scores": 0, "limits": "Engineering correction of numerical failure, not improved detector performance or a semantic-quality audit. Only after16/16 pass may a separate TRAIN-only spatial learning experiment be registered. All original research-only licences and ancestry roles remain.", "mean_valid_raw_background_changed_fraction": 0.9994174467463207, "parents": 16, "passed": false, "passed_parents": 11, "peak_mps_bytes": 6788562944, "promotion_allowed": false, "report_sha256": "cb0c713de246cb20e8d4822948aa5dd34303d845d85deefdffeb6fb9c54cd373", "seconds": 487.82744045800064, "state": "E122_complete16_numerical_replay_finished", "training_allowed": false}
+
+Original E119 remains failed; this is a separately registered correction. No detector performance or independent evidence is claimed.
+
+E122 completed all16 fixed replays in487.83s, with11 passing and5 safety-filter rejections; no nonfinite tensor failures. The numerical correction is supported, but the full generation-pilot gate remains failed and no data are admitted. E123 completed160 TRAIN feature views in75.76s with exact parity and restored E92. Prepared E124 full extraction and E125 equal-capacity paired training, guarded by complete-cache admission. CI for b5f59c8 passed both jobs (34892754622).
+
+### E124/E125 unattended execution — 2026-09-14T20:33:54+00:00
+
+Started the fixed full E124 extraction; temporarily stopped the verified E92 API for GPU memory. Durable chunks and stage logs are local. This is feature extraction, not a completed model improvement.
+
+Final implementation checks:969 Python tests passed with one existing Starlette/httpx warning; compileall,pip check and whitespace checks passed. Started the single E124/E125 extraction/paired-training process on AC power, stopping only verified E92 PID34526 for memory. E124 child34683 is active; no full-cache or new fit result exists yet. The runner writes actual completion/failure outcomes and restores E92.

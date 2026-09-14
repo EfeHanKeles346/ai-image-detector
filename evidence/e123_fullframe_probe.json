@@ -1,0 +1,978 @@
+{
+  "contract_sha256": "8e7dc3efad98b6e43a6c6096daba328b4173d0473ceddb40c3a0ccde3addc055",
+  "features_sha256": "846edc4ad1c9021afdafe671db5cbf13f2952bd16da5a16cb4eb14c44ab5a4b8",
+  "fit_allowed": false,
+  "limits": "Source aspect ratios are class-confounded; full-frame warp can create new biases. This feasibility test cannot establish benefit or explain the known missed DEV example.",
+  "loop_seconds": 71.62206141697243,
+  "max_center_vector_error": 0.0,
+  "max_repeat_error": 0.0,
+  "model_scores": 0,
+  "next": "Only a successful probe permits separately registering full-population extraction and paired full-frame versus center-only capacity controls. Keep E103 base and all AI/correct-REAL retention guards. No final/gallery access.",
+  "parents": 40,
+  "peak_mps_bytes": 2194358272,
+  "seconds": 75.76224124990404,
+  "source_view_distances": [
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 5.086462020874023,
+      "label": 0,
+      "source": "MIDD:Hynix_SL846"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 6.7257184982299805,
+      "label": 0,
+      "source": "MIDD:Hynix_SL846"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 5.90500545501709,
+      "label": 0,
+      "source": "MIDD:Hynix_SL846"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 5.648104667663574,
+      "label": 0,
+      "source": "MIDD:Hynix_SL846"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 6.057152271270752,
+      "label": 0,
+      "source": "MIDD:ISOCELL_3P9"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.563409805297852,
+      "label": 0,
+      "source": "MIDD:ISOCELL_3P9"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.079352378845215,
+      "label": 0,
+      "source": "MIDD:ISOCELL_3P9"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 5.440822124481201,
+      "label": 0,
+      "source": "MIDD:ISOCELL_3P9"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.939397811889648,
+      "label": 0,
+      "source": "MIDD:ISOCELL_GN1"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 4.90392541885376,
+      "label": 0,
+      "source": "MIDD:ISOCELL_GN1"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 5.291589260101318,
+      "label": 0,
+      "source": "MIDD:ISOCELL_GN1"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 5.841607093811035,
+      "label": 0,
+      "source": "MIDD:ISOCELL_GN1"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 6.219288349151611,
+      "label": 0,
+      "source": "MIDD:ISOCELL_HM3"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.93839168548584,
+      "label": 0,
+      "source": "MIDD:ISOCELL_HM3"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 7.209640979766846,
+      "label": 0,
+      "source": "MIDD:ISOCELL_HM3"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 6.117917060852051,
+      "label": 0,
+      "source": "MIDD:ISOCELL_HM3"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 9.134967803955078,
+      "label": 0,
+      "source": "MIDD:OmniVision_OV32A"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.721317768096924,
+      "label": 0,
+      "source": "MIDD:OmniVision_OV32A"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 7.860037326812744,
+      "label": 0,
+      "source": "MIDD:OmniVision_OV32A"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 6.05649995803833,
+      "label": 0,
+      "source": "MIDD:OmniVision_OV32A"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 7.456928253173828,
+      "label": 0,
+      "source": "MIDD:OmniVision_OV64B"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 7.884110927581787,
+      "label": 0,
+      "source": "MIDD:OmniVision_OV64B"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 7.6931939125061035,
+      "label": 0,
+      "source": "MIDD:OmniVision_OV64B"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 7.952293872833252,
+      "label": 0,
+      "source": "MIDD:OmniVision_OV64B"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 5.500093936920166,
+      "label": 0,
+      "source": "MIDD:Sony_IMX258"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.480154991149902,
+      "label": 0,
+      "source": "MIDD:Sony_IMX258"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 5.641397476196289,
+      "label": 0,
+      "source": "MIDD:Sony_IMX258"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 4.474393367767334,
+      "label": 0,
+      "source": "MIDD:Sony_IMX258"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 6.564536094665527,
+      "label": 0,
+      "source": "MIDD:Sony_IMX766"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 6.993264198303223,
+      "label": 0,
+      "source": "MIDD:Sony_IMX766"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.958317756652832,
+      "label": 0,
+      "source": "MIDD:Sony_IMX766"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 7.214302062988281,
+      "label": 0,
+      "source": "MIDD:Sony_IMX766"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 9.502616882324219,
+      "label": 0,
+      "source": "SCIMD-17"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.170242786407471,
+      "label": 0,
+      "source": "SCIMD-17"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 9.387665748596191,
+      "label": 0,
+      "source": "SCIMD-17"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 9.387665748596191,
+      "label": 0,
+      "source": "SCIMD-17"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 7.687591552734375,
+      "label": 0,
+      "source": "SID:Fuji"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 7.832675933837891,
+      "label": 0,
+      "source": "SID:Fuji"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 8.8346529006958,
+      "label": 0,
+      "source": "SID:Fuji"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 8.889595985412598,
+      "label": 0,
+      "source": "SID:Fuji"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 5.528717517852783,
+      "label": 0,
+      "source": "SID:Sony"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.9948015213012695,
+      "label": 0,
+      "source": "SID:Sony"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.372649192810059,
+      "label": 0,
+      "source": "SID:Sony"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 6.931002616882324,
+      "label": 0,
+      "source": "SID:Sony"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 7.877180576324463,
+      "label": 0,
+      "source": "e32:csafe-mcsidb-iphone14"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 12.501049041748047,
+      "label": 0,
+      "source": "e32:csafe-mcsidb-iphone14"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 11.74678897857666,
+      "label": 0,
+      "source": "e32:csafe-mcsidb-iphone14"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 11.74678897857666,
+      "label": 0,
+      "source": "e32:csafe-mcsidb-iphone14"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 5.1755499839782715,
+      "label": 0,
+      "source": "e32:csafe-mcsidb-s21"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.080044746398926,
+      "label": 0,
+      "source": "e32:csafe-mcsidb-s21"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.958255767822266,
+      "label": 0,
+      "source": "e32:csafe-mcsidb-s21"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 4.854683876037598,
+      "label": 0,
+      "source": "e32:csafe-mcsidb-s21"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 8.128035545349121,
+      "label": 0,
+      "source": "e32:forchheim-fodb"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 10.928181648254395,
+      "label": 0,
+      "source": "e32:forchheim-fodb"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 8.075676918029785,
+      "label": 0,
+      "source": "e32:forchheim-fodb"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 8.075676918029785,
+      "label": 0,
+      "source": "e32:forchheim-fodb"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 7.41984748840332,
+      "label": 0,
+      "source": "e32:vision-base-native"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 8.19036865234375,
+      "label": 0,
+      "source": "e32:vision-base-native"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 7.494795799255371,
+      "label": 0,
+      "source": "e32:vision-base-native"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 7.690398693084717,
+      "label": 0,
+      "source": "e32:vision-base-native"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 6.787873268127441,
+      "label": 0,
+      "source": "e36:device_001"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 7.002360820770264,
+      "label": 0,
+      "source": "e36:device_001"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.740602016448975,
+      "label": 0,
+      "source": "e36:device_001"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 6.26471471786499,
+      "label": 0,
+      "source": "e36:device_001"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 7.166797161102295,
+      "label": 0,
+      "source": "e36:device_002"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 6.458929538726807,
+      "label": 0,
+      "source": "e36:device_002"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 7.66340970993042,
+      "label": 0,
+      "source": "e36:device_002"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 7.156092166900635,
+      "label": 0,
+      "source": "e36:device_002"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 5.582173824310303,
+      "label": 0,
+      "source": "e36:device_003"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.2082390785217285,
+      "label": 0,
+      "source": "e36:device_003"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 5.512913703918457,
+      "label": 0,
+      "source": "e36:device_003"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 5.356381893157959,
+      "label": 0,
+      "source": "e36:device_003"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 9.303295135498047,
+      "label": 0,
+      "source": "e36:device_005"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 9.44253921508789,
+      "label": 0,
+      "source": "e36:device_005"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 9.34448528289795,
+      "label": 0,
+      "source": "e36:device_005"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 9.860462188720703,
+      "label": 0,
+      "source": "e36:device_005"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 7.05051326751709,
+      "label": 0,
+      "source": "e36:device_009"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 6.725839614868164,
+      "label": 0,
+      "source": "e36:device_009"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.326200485229492,
+      "label": 0,
+      "source": "e36:device_009"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 6.515727519989014,
+      "label": 0,
+      "source": "e36:device_009"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 6.624350547790527,
+      "label": 0,
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.575787544250488,
+      "label": 0,
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.61716890335083,
+      "label": 0,
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 6.61716890335083,
+      "label": 0,
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.612450122833252,
+      "label": 1,
+      "source": "e32:communityforensics-ai-local"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 4.1050262451171875,
+      "label": 1,
+      "source": "e32:communityforensics-ai-local"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 4.521536827087402,
+      "label": 1,
+      "source": "e32:communityforensics-ai-local"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 4.521536827087402,
+      "label": 1,
+      "source": "e32:communityforensics-ai-local"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 5.152474880218506,
+      "label": 1,
+      "source": "e32:flux2-klein-9b"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 4.873501777648926,
+      "label": 1,
+      "source": "e32:flux2-klein-9b"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 8.468623161315918,
+      "label": 1,
+      "source": "e32:flux2-klein-9b"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 8.468623161315918,
+      "label": 1,
+      "source": "e32:flux2-klein-9b"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 5.393862247467041,
+      "label": 1,
+      "source": "e32:gpt-image-1"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.815667629241943,
+      "label": 1,
+      "source": "e32:gpt-image-1"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 5.825550079345703,
+      "label": 1,
+      "source": "e32:gpt-image-1"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 5.501663684844971,
+      "label": 1,
+      "source": "e32:gpt-image-1"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.293589115142822,
+      "label": 1,
+      "source": "e32:nano-banana-local"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 3.7722859382629395,
+      "label": 1,
+      "source": "e32:nano-banana-local"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 4.563778400421143,
+      "label": 1,
+      "source": "e32:nano-banana-local"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 4.563778400421143,
+      "label": 1,
+      "source": "e32:nano-banana-local"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 3.5150656700134277,
+      "label": 1,
+      "source": "e32:nano-banana-pro-ash-local"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 3.7498364448547363,
+      "label": 1,
+      "source": "e32:nano-banana-pro-ash-local"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 3.7279982566833496,
+      "label": 1,
+      "source": "e32:nano-banana-pro-ash-local"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 3.7279982566833496,
+      "label": 1,
+      "source": "e32:nano-banana-pro-ash-local"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 3.5771074295043945,
+      "label": 1,
+      "source": "e32:qwen-image-2512"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 3.473208427429199,
+      "label": 1,
+      "source": "e32:qwen-image-2512"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 3.7625555992126465,
+      "label": 1,
+      "source": "e32:qwen-image-2512"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 3.539534330368042,
+      "label": 1,
+      "source": "e32:qwen-image-2512"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 5.094135284423828,
+      "label": 1,
+      "source": "e36:FLUX.2_max"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 4.217276573181152,
+      "label": 1,
+      "source": "e36:FLUX.2_max"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 3.786933660507202,
+      "label": 1,
+      "source": "e36:FLUX.2_max"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 3.786933660507202,
+      "label": 1,
+      "source": "e36:FLUX.2_max"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.290347099304199,
+      "label": 1,
+      "source": "e36:GLM-Image"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.122298240661621,
+      "label": 1,
+      "source": "e36:GLM-Image"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 5.06511116027832,
+      "label": 1,
+      "source": "e36:GLM-Image"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 5.06511116027832,
+      "label": 1,
+      "source": "e36:GLM-Image"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.904240131378174,
+      "label": 1,
+      "source": "e36:Qwen-Image-2.0-pro"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 4.2590413093566895,
+      "label": 1,
+      "source": "e36:Qwen-Image-2.0-pro"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 4.803699493408203,
+      "label": 1,
+      "source": "e36:Qwen-Image-2.0-pro"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 4.803699493408203,
+      "label": 1,
+      "source": "e36:Qwen-Image-2.0-pro"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 3.6078343391418457,
+      "label": 1,
+      "source": "e36:Seedream-5.0"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 3.394522190093994,
+      "label": 1,
+      "source": "e36:Seedream-5.0"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 3.5405819416046143,
+      "label": 1,
+      "source": "e36:Seedream-5.0"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 3.5405819416046143,
+      "label": 1,
+      "source": "e36:Seedream-5.0"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.438570499420166,
+      "label": 1,
+      "source": "e36:gpt-image-2"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 4.250885963439941,
+      "label": 1,
+      "source": "e36:gpt-image-2"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 4.355578899383545,
+      "label": 1,
+      "source": "e36:gpt-image-2"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 4.355578899383545,
+      "label": 1,
+      "source": "e36:gpt-image-2"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.635757923126221,
+      "label": 1,
+      "source": "e36:nano-banana-2.0"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 4.8439202308654785,
+      "label": 1,
+      "source": "e36:nano-banana-2.0"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 5.569610595703125,
+      "label": 1,
+      "source": "e36:nano-banana-2.0"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 5.569610595703125,
+      "label": 1,
+      "source": "e36:nano-banana-2.0"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 2.7645463943481445,
+      "label": 1,
+      "source": "rr:culture_and_religion"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 2.3593738079071045,
+      "label": 1,
+      "source": "rr:culture_and_religion"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 3.382066011428833,
+      "label": 1,
+      "source": "rr:culture_and_religion"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 3.382066011428833,
+      "label": 1,
+      "source": "rr:culture_and_religion"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 3.421041250228882,
+      "label": 1,
+      "source": "rr:everyday_life"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 3.4374594688415527,
+      "label": 1,
+      "source": "rr:everyday_life"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 3.4747815132141113,
+      "label": 1,
+      "source": "rr:everyday_life"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 3.4747815132141113,
+      "label": 1,
+      "source": "rr:everyday_life"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.3356709480285645,
+      "label": 1,
+      "source": "rr:labor_and_production"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 5.0030012130737305,
+      "label": 1,
+      "source": "rr:labor_and_production"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.460933208465576,
+      "label": 1,
+      "source": "rr:labor_and_production"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 6.460933208465576,
+      "label": 1,
+      "source": "rr:labor_and_production"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 4.063273906707764,
+      "label": 1,
+      "source": "rr:medical_and_public_health"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 6.263552665710449,
+      "label": 1,
+      "source": "rr:medical_and_public_health"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 4.621060371398926,
+      "label": 1,
+      "source": "rr:medical_and_public_health"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 4.621060371398926,
+      "label": 1,
+      "source": "rr:medical_and_public_health"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 6.835503578186035,
+      "label": 1,
+      "source": "rr:natural_disasters_and_accidents"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 9.00601577758789,
+      "label": 1,
+      "source": "rr:natural_disasters_and_accidents"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 8.02778434753418,
+      "label": 1,
+      "source": "rr:natural_disasters_and_accidents"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 8.02778434753418,
+      "label": 1,
+      "source": "rr:natural_disasters_and_accidents"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 3.918919324874878,
+      "label": 1,
+      "source": "rr:political_and_social_events"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 3.7007765769958496,
+      "label": 1,
+      "source": "rr:political_and_social_events"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 4.275463104248047,
+      "label": 1,
+      "source": "rr:political_and_social_events"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 4.275463104248047,
+      "label": 1,
+      "source": "rr:political_and_social_events"
+    },
+    {
+      "condition": "clean",
+      "full_minus_center_l2": 3.2570295333862305,
+      "label": 1,
+      "source": "rr:war_and_conflict"
+    },
+    {
+      "condition": "assigned_transport",
+      "full_minus_center_l2": 3.501871109008789,
+      "label": 1,
+      "source": "rr:war_and_conflict"
+    },
+    {
+      "condition": "q75",
+      "full_minus_center_l2": 6.518494606018066,
+      "label": 1,
+      "source": "rr:war_and_conflict"
+    },
+    {
+      "condition": "social_q75",
+      "full_minus_center_l2": 6.518494606018066,
+      "label": 1,
+      "source": "rr:war_and_conflict"
+    }
+  ],
+  "state": "E123_fullframe_feasibility_passed",
+  "views": 160
+}
