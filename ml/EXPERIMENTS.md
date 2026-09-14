@@ -7106,3 +7106,65 @@ all prior receipts/cache identities and freezes contract SHA256f29fa1c917e07028c
 One640-view consumed DEVELOPMENT scoring pass is now permitted, runtime batches8
 from existing features, no image inference/download. Scores must be locked before
 metrics; all20 fixed gates plus source/condition AI retention and E86 paired changes.
+
+
+### 2026-09-14 — E92 DEV scores locked; engineering suite858 passes
+
+All640 cached views scored in6.674s; reference max score error0, decision
+changes0, image reads0. Scores SHA2568de19298e0e62d982a6bae04ef7e922bcb12748cd68056b510ab832d49bb77ae. No metrics used before
+locking. The full local test suite passes858 tests in16.46s with one existing
+Starlette/httpx deprecation warning. No installation or dependency download.
+Open the fixed report once; do not alter the locked candidate or scores.
+
+
+### 2026-09-14 — E92 achieves20/20 DEV numeric gates; reference AI guard still fails
+
+E92 is the strongest latest numeric result on the same consumed640-view E66 DEV.
+Both original and social-Q75 now pass10/10 numeric gates,20/20 combined. This is not
+100% classification accuracy, an independent final, or a full acceptance pass.
+
+| Measure | E43 reference | E86 | E92 |
+|---|---:|---:|---:|
+| Original REAL false AI | 42.500% (68/160) | 0.625% (1/160) | 0% (0/160) |
+| Social-Q75 REAL false AI | 42.500% (68/160) | 10.625% (17/160) | 8.750% (14/160) |
+| Original AI recall | 97.500% (156/160) | 99.375% (159/160) | 99.375% (159/160) |
+| Social-Q75 AI recall | 96.250% (154/160) | 99.375% (159/160) | 99.375% (159/160) |
+| Numeric gates | — | 17/20 | 20/20 |
+| New original AI misses vs E43 | — | 1 | 1 |
+| New social AI misses vs E43 | — | 0 | 0 |
+
+E92 rescues1 original REAL (N6) and3 social REAL (GP/IP/N6 one each) relative to E86.
+No newly missed E86-caught AI or newly wrong E86-rescued REAL in either condition.
+All prior E86 paired AI/REAL successes are preserved at the fixed AI decision cut.
+Original binary balanced accuracy/accuracy99.6875%, AUC0.9998046875.
+Social binary balanced accuracy/accuracy95.3125%, AUC0.9941796875.
+Original automatic coverage98.75%, covered accuracy99.6835%, uncertain1.25%.
+Social automatic coverage98.4375%, covered accuracy95.2381%, uncertain1.5625%.
+The previously failing social gates now pass: pooled REAL8.75%<=10%, worst REAL
+source18.75%<=20% (G4,3/16; GP is6/33=18.1818%), covered accuracy95.2381%>=95%.
+
+The separate AI guard remains failed for the same original GPTIMG_431 parent
+(e32:e77611a7fff7f7093b154b244e8c8359e00e93246043745e1056626b7259623b).
+E43/E86/E92 scores0.08128664642572403/0.008283670495089164/0.00857941528582679;
+fixed AI cut0.07940196245908739. This identity is reported diagnostically, not admitted
+into TRAIN or used for a sample-specific rule. Do not change its label, threshold,
+source or test membership. E43's original4 other AI misses are rescued, but those
+gains cannot offset this one new miss. E92 therefore fails the complete DEV acceptance
+contract; no E49/regression registration, serving change or promotion is permitted.
+Candidate SHA2563a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35.
+Evidence: evidence/e92_development.json, evidence/e92_dev_scores.json,
+evidence/e92_fit.json, evidence/e91_representation.json and frozen contracts.
+
+Scientific interpretation: the one fixed-recipe, already-audited128-parent SID coverage
+extension improved this consumed DEV checkpoint. It does not prove the causal source
+of improvement or unseen generalization. Only10 dependent REAL scenes and previously
+seen AI families remain. Preserve E86/E92 immutable results and report both the new
+20/20 milestone and the unmet AI guard together.
+
+Next pre-experiment work is an offline TRAIN-only group/transport stability diagnosis
+using existing cached DINO/CLIP/DEAR features. Verify which recorded groups are actually
+disjoint before any cross-fitting; do not claim unidentified scenes/prompts independent.
+Audit weak-reference AI stability across the four conditions without selecting or
+training on the known DEV miss. Register a bounded protocol before any new model fit;
+keep all E92 paired gains and the stricter E43 retention requirement visible. No
+threshold/rank/seed sweep or sample-specific fallback; no further data download.

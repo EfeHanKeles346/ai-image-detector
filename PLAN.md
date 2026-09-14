@@ -42,33 +42,44 @@ Begin registration/local validation now; the existing shared resource guard stil
 requires observed AC before training. Do not alter frozen ancestor code to bypass it.
 No scheduled polling or background automation is requested.
 
-## Current checkpoint — E89 complete; E91/E92 prepared; offline E91/E92 continuation (2026-09-14)
+## Current checkpoint — E92 numeric20/20; AI retention still fails (2026-09-14)
 
-E86 passes all80 TRAIN metric checks and runtime/AI-retention guards. Consumed E66
-REAL FPR0.625% original/10.625% social-Q75, AI99.375% in both;17/20 numeric checks.
-The same newly missed GPT original persists; Q75 pooled REAL, worst REAL source and
-covered-accuracy guards fail. Preserve the rejected candidate; E49 stays unopened.
+E92 completes the offline SID coverage experiment. On consumed E66 DEV, original
+REAL FPR0% (0/160), social-Q75 REAL FPR8.75% (14/160); AI recall99.375% (159/160)
+in both. All20 numeric gates pass, up from E86's17/20. Relative to E86,1 original and3
+social REAL errors are rescued, with no new AI or REAL decision regressions.
 
-E89 features are complete for all128 previously selected/audited SID TRAIN parents
-under all4 conditions. E91/E92 implementation and856 tests pass. E91 completed its fixed100-epoch representation on49,076 cached TRAIN views.
-All replay/serialization checks pass, with no downloads or DEV/final reads.
-E92 passes all120 TRAIN checks plus population/AI/REAL/runtime guards.
-The consumed DEV comparison is now separately frozen after fixing a pre-freeze
-parent/view pairing bug (9 focused tests pass). Score640 cached views once and lock
-scores before metrics. All20 numeric criteria and E43 AI retention apply; E49 stays closed. GitHub CI repair is verified on run34749560334 (web and Python success), and the
-standalone Turkish report is being consolidated into these three English records.
-The current offline continuation executes one separately registered data-coverage extension
-with the same E85 architecture/seed/optimizer and E86 constrained-head objective.
-Keep all previous populations/conditions/AI protections and add SID pooled/camera
-checks. No simultaneous new objective, threshold, rank, seed or margin sweep.
-The read-only consistency review remains a future lead, not an implemented change.
+Full acceptance is still **failed**: the same one E43-caught GPT original is missed.
+No E49 access, serving change or promotion. Original accuracy99.6875%, social95.3125%
+are descriptive results on consumed DEV, not independent-final estimates. The20/20
+count is acceptance-criterion coverage, not100% image accuracy. Preserve all old
+scores/contracts and the fixed cuts. Detailed results live in HISTORY/EXPERIMENTS.
 
-E84B completed12141 social views in7296.694s; E85 completed100 epochs in75.343s;
-E86 fit/runtime235.523s and cached DEV scoring6.632s. Corrected aggregate plot is
-visually verified. The later E91/E92 preparation is covered by856 passing Python tests.
-E79 cost remains over9412s across
-attempts. RR upstream lineage and research-use limits persist. Serving unchanged;
-active work and MD/git checkpoints continue without30-minute automation.
+E91 completed100 epochs on49,076 existing TRAIN views in77.851s. E92 fit/runtime
+217.573s, all120 TRAIN metric checks and AI/REAL/population guards pass. Cached DEV
+scoring6.674s. No downloads, new encoder inference or training on DEV. A pre-freeze
+DEV parent/view pairing bug was corrected and tested before any new scoring; the full
+local suite passes858 tests (16.46s, one existing warning). E91/E92 candidate recipes
+and predecessor artifacts stayed unchanged through the evaluation repair.
+
+## Next bounded offline work — diagnose retention before choosing another fit
+
+1. Use existing TRAIN-only four-view features and manifests. Inventory actual recorded
+   source/scene/parent grouping and duplicate/protected roles before any group holdout;
+   unidentified groups must remain an explicit limitation.
+2. Register a bounded group/transport stability diagnosis of low-reference-margin AI
+   across all four TRAIN conditions. Reuse caches, do not select the known DEV miss,
+   and do not mix consumed DEV/final/diagnostic publishers into training.
+3. Use that TRAIN diagnosis to justify one subsequent representation/retention change;
+   freeze it before execution. Do not simultaneously sweep thresholds, seeds, margins,
+   ranks, losses or regularization. Keep E92 paired successes and E43 AI guards visible.
+4. Evaluate only after all TRAIN/runtime protections pass. E49 remains gated behind
+   full DEV acceptance, including the separate zero-new-E43-AI-miss requirement.
+
+No new fit is registered beyond completed E92 at this checkpoint. Mobile-data policy
+remains no dataset/model/package downloads. Commit/push only small code, JSON evidence
+and the three English living records. The standalone Turkish report was removed;
+its substantive findings are consolidated in HISTORY and ml/EXPERIMENTS.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
 
