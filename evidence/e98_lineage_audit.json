@@ -1,0 +1,23 @@
+{
+  "code_sha256": "59a112fd86a212afad192f4a83a1dba398a14b673ccb996d533b050600dd1c5e",
+  "e32_train_rows": 6619,
+  "inputs": {
+    "e32/r1b_role_manifest.json": "16deb276ef7b1c74fdddb4fdbc450b07e67e8beb693b1bdeded546c1e434750f",
+    "e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e"
+  },
+  "limits": "Original record-id/body lineage resolves transforms missed by byte-only mapping. This does not make historical CAL fresh or prove semantic scene independence.",
+  "mapped_rows": 6619,
+  "model_scores": 0,
+  "original_roles": {
+    "TRAIN": 6619
+  },
+  "pixel_reads": 0,
+  "role_changes": 0,
+  "shared_CAL_groups": {
+    "parent_group": 0,
+    "role_group": 0,
+    "scene_group": 0
+  },
+  "state": "E98_original_lineage_supplement_complete",
+  "unmapped_rows": 0
+}

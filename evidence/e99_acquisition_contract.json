@@ -1,0 +1,54 @@
+{
+  "body_bytes": 3323883735,
+  "contract_sha256": "0f67891068521533355ec39a90e3d4b396c14bb77b42fff9fc29a77745703729",
+  "image_scores_used_in_selection": 0,
+  "license": "CC BY-NC-SA4.0 academic/research; archive LICENSE bytes pinned",
+  "license_sha256": "e66c269d4819aaab34b49ef5220c4ddab6756f21bb5180761a4eb8561f2b7bbd",
+  "limits": "MIDD already belongs to research TRAIN. New sensors are not independent publishers. Original means publisher original noisy capture, not unprocessed RAW. No denoised/test data. Pixel/protected/scene audit and separate experiment required before TRAIN admission.",
+  "max_seconds": 5400,
+  "model_scores": 0,
+  "role": "QUARANTINE_FOR_POSSIBLE_RESEARCH_TRAIN",
+  "selected": 256,
+  "selection": "64 per registered new sensor, SHA256(E99|filename), official TRAIN/original JPG only; no refill.",
+  "sensors": {
+    "ISOCELL_GN1": {
+      "body_bytes": 913893564,
+      "identity": {
+        "bytes": 21661904344,
+        "etag": "\"282767062c80f1d17d00e5365e928f3c\"",
+        "last_modified": "Mon, 25 Aug 2025 15:58:27 GMT"
+      },
+      "selected": 64
+    },
+    "ISOCELL_HM3": {
+      "body_bytes": 729865949,
+      "identity": {
+        "bytes": 19242794655,
+        "etag": "\"c235ee4888222baa7b47475557f25e01\"",
+        "last_modified": "Mon, 25 Aug 2025 15:58:19 GMT"
+      },
+      "selected": 64
+    },
+    "OmniVision_OV64B": {
+      "body_bytes": 974869735,
+      "identity": {
+        "bytes": 27181871080,
+        "etag": "\"d972eb992ca538d5b60ea40a26d3f100\"",
+        "last_modified": "Mon, 25 Aug 2025 15:58:32 GMT"
+      },
+      "selected": 64
+    },
+    "Sony_IMX766": {
+      "body_bytes": 705254487,
+      "identity": {
+        "bytes": 20864102442,
+        "etag": "\"992822ff2e34e61fd533d04d6cc86ffe\"",
+        "last_modified": "Mon, 25 Aug 2025 16:06:40 GMT"
+      },
+      "selected": 64
+    }
+  },
+  "state": "E99_MIDD_extra_sensors_registered",
+  "training_allowed": false,
+  "workers": 2
+}

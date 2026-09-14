@@ -1,0 +1,81 @@
+{
+  "cal_manifests": [
+    {
+      "cal_classes": {
+        "ai": 2263,
+        "real": 2271
+      },
+      "cal_rows": 4534,
+      "e92_train_rows_mapped_by_sha": 5652,
+      "exact_train_cal_overlap": 0,
+      "fresh_calibration": false,
+      "group_overlap": {
+        "parent_group": {
+          "cal_groups": 4534,
+          "shared_groups": 0,
+          "train_groups": 5652
+        },
+        "role_group": {
+          "cal_groups": 1250,
+          "shared_groups": 0,
+          "train_groups": 2434
+        },
+        "scene_group": {
+          "cal_groups": 29,
+          "shared_groups": 0,
+          "train_groups": 114
+        }
+      },
+      "history": "Previously consumed E32 model-selection CAL; not a new independent test.",
+      "manifest": "e32/c3_role_manifest.json"
+    },
+    {
+      "cal_classes": {
+        "ai": 2263,
+        "real": 3070
+      },
+      "cal_rows": 5333,
+      "e92_train_rows_mapped_by_sha": 5652,
+      "exact_train_cal_overlap": 0,
+      "fresh_calibration": false,
+      "group_overlap": {
+        "parent_group": {
+          "cal_groups": 5333,
+          "shared_groups": 0,
+          "train_groups": 5652
+        },
+        "role_group": {
+          "cal_groups": 1252,
+          "shared_groups": 0,
+          "train_groups": 2434
+        },
+        "scene_group": {
+          "cal_groups": 29,
+          "shared_groups": 0,
+          "train_groups": 114
+        }
+      },
+      "history": "Previously consumed E32 model-selection CAL; not a new independent test.",
+      "manifest": "e32/r1b_role_manifest.json"
+    }
+  ],
+  "calibration_fit_allowed": false,
+  "code_sha256": "0379983a9699ec9d5d5fb5e04c303d0939c39fb708246c521f15cc3472916178",
+  "e92_train_parents": 12269,
+  "inputs": {
+    "e32/c3_role_manifest.json": "0b6656a25762dbb097d18634d4193282e7c03d2e6bbe257f31471434f67b91eb",
+    "e32/r1b_role_manifest.json": "16deb276ef7b1c74fdddb4fdbc450b07e67e8beb693b1bdeded546c1e434750f",
+    "e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+    "e72/training_manifest.json": "a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e",
+    "e88/training_manifest.json": "73545e7a9404e3c4f83ee2f6affd46c6ae2e2bf75ee37db0e8fd56dab11c5d83"
+  },
+  "limitations": "Mapped source-scoped groups and byte identities only; no new semantic independence proof, no inference of missing identifiers. Older CAL remains protected from TRAIN; the two CAL manifests overlap and their counts must not be added.",
+  "model_scores": 0,
+  "pixel_reads": 0,
+  "role_changes": 0,
+  "state": "E98_metadata_role_audit_complete",
+  "train_classes": {
+    "0": 7674,
+    "1": 4595
+  }
+}

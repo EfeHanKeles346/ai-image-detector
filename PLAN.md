@@ -5,26 +5,45 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Documentation and mobile-data working rule — user update (2026-09-14)
+## Documentation and acquisition rule — home-network update (2026-09-14)
 
-Use only these three English Markdown records for ongoing work: `PLAN.md` for current
-next actions, `HISTORY.md` for append-only engineering/decision history, and
-`ml/EXPERIMENTS.md` for append-only scientific protocols/results. Update the relevant
-records after each development, experiment and plan. Existing other documents are
-historical references; do not create another standalone progress report. The user
-requested removing `rapor/GELISTIRME_RAPORU_2026-09-13.md`; its substantive findings
-are preserved in the English HISTORY/EXPERIMENTS consolidation below. Repair its
-README link as a removal cleanup, not as a fourth ongoing reporting channel.
+The user is now at home and explicitly permits dataset downloads. This supersedes the
+mobile-data acquisition prohibition below. Use downloads that fill identified coverage
+or evaluation gaps; verify provenance, licence, identities and disk reserve before
+admission. Keep experimental fitting offline and model/environment versions pinned.
 
-Mobile data is active: no dataset, model-weight or package downloads, no environment
-upgrades or bulk remote checks. Use the mounted disk and verified feature caches.
-Dataset volume is not TRAIN eligibility: retain all protected DEV/final/diagnostic
-roles. Existing authorization for small code/evidence git commits and pushes remains;
-never push raw images, caches or weights, and never force-push.
+Ongoing English records: PLAN.md for next actions, HISTORY.md for engineering decisions,
+ml/EXPERIMENTS.md for protocols/results, and, at the user's explicit request, DATASETS.md
+for acquisitions. Record source/revision, reason, intended role, date, licence, requested
+versus completed files/bytes, integrity, local storage, failures and next admission step.
+Historical entries remain historical. No raw data, private gallery information or model
+weights in Git; small code/evidence commits and pushes remain authorized, never forced.
 
+## E98 preparation — role audit and targeted data acquisition (2026-09-14)
 
+Before fitting a complementary reviewer, audit actual E92 TRAIN identities against old
+CAL manifests and identify whether a separately grouped eligible CAL pool exists. A
+past CAL name is not proof that examples remain untouched. No protected FINAL pixels
+or model scores are needed for this audit. New acquisitions remain quarantined until
+provenance, decoding, parent/group and protected-overlap checks pass. Record all source
+research and actual transfers in DATASETS.md. No download is itself model improvement.
 
+## Next controlled model cycle after E100 admission
 
+Use every E100-admitted parent, without score-based resampling. First freeze E101 encoder
+extraction: identical E89 four conditions, DINO/CLIP/DEAR weights and crop operations,
+34-source prior parity, two-parent chunks,6GiB MPS limit,90-minute stage, first-batch
+repeat check, original-body and saved-feature identities. This is a new TRAIN cache,
+not classifier evaluation or permission to change the demo. No parallel GPU extraction.
+
+Then register an E102 TRAIN-only correction experiment using the frozen E92 feature map
+and all12,269 old parents plus the full new cohort. Preserve E92 AI logits and each
+previously correct REAL decision in all four conditions; keep previous numeric/source
+bounds and explicit new-sensor pooled/worst bounds. Freeze objective/optimizer before
+fitting; no DEV-based tuning. Only a TRAIN-passing candidate may receive the already
+consumed E66/gallery regression, and any lost AI/new REAL error rejects it. Full E43
+AI-retention deficit remains a required unresolved acceptance condition, not a waived
+error. A fit on new REAL examples alone cannot establish broader AI generalization.
 
 ## E97 — honest score display completed; learned reviewer remains planned (2026-09-14)
 
@@ -6386,3 +6405,37 @@ Machine-readable run/job/step evidence is recorded in
 evidence/ci_dependency_repair_2026-09-13.json; Turkish report and current README/PLAN
 now distinguish verified CI from the unmet ML target. This final checkpoint changes
 only documentation/evidence; no frozen recipe, candidate, threshold or dataset changed.
+
+
+### E99 MIDD coverage acquisition registration — 2026-09-14, before pixels
+
+Preselect four previously unused sensor packages from the official MIDD listing:
+ISOCELL_GN1, ISOCELL_HM3, OmniVision_OV64B and Sony_IMX766. These extend camera-pipeline
+coverage beyond the four E72 sensors; they do not make a new independent publisher.
+Inspect central directories and source terms first. Select64 publisher TRAIN/original
+JPEGs per sensor by SHA256(E99|filename), no score/content-based choice or refill.
+Exclude denoised partners and all upstream test rows. Cap selected bodies at4GiB,
+32MiB per file,64MiB aggregate directory/header allowance,30GiB free disk reserve,
+AC power and two workers. Require exact206/ETag ranges, ZIP length/CRC and stored SHA256;
+no whole-archive fallback. Preserve every completed file/receipt for verified resume.
+Initial role is QUARANTINE_FOR_POSSIBLE_RESEARCH_TRAIN, never automatic TRAIN/CAL/final.
+Whole MIDD collection retains prior research-TRAIN-only designation. Full native decode,
+protected reference/gallery/DEV overlap and connected scene-group checks are a separate
+registered admission step; no model may score selected images before that check.
+
+
+### E100 admission protocol — registered while E99 transfers, before image audit
+
+Require complete256-file E99 receipt and source-code/hash validation before decoding.
+Reuse fixed E65 canonical RGB/dHash/pHash fingerprint convention, native image decode,
+100MP cap and224px floor. Preserve original JPEG bytes. Compare against the exact E88
+protected reference closure plus128 admitted SID originals. All206 unique owner-gallery
+body hashes must be present in that closure; all existing reserves/consumed E66 remain
+protected. No protected pixels or classifier scores are read. Reject protected byte/RGB
+matches or dHash<=4 AND pHash63<=4 matches; internal perceptual and same-sensor/capture-
+second links form transitive groups. Reuse frozen E72 resolve rule/seed, propagate rejection
+and keep one deterministic representative per surviving component, no refill. Mark scene
+independence unverified. Pinned Pillow/NumPy runtime, one CPU decode worker, AC and30GiB
+reserve. Downloaded256 is never treated as256 independent scenes or admitted examples.
+Output separate E100 audit and TRAIN manifest only if checks complete; no E92 training,
+CAL reassignment, AI-retention claim or demo promotion in the admission operation.

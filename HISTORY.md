@@ -8909,3 +8909,40 @@ for our E92 model. PLAN registers an eligible TRAIN/grouped-CAL audit and comple
 reviewer hypothesis, with calibration, risk/coverage and per-source AI/REAL retention
 checks. No universal/no-error detector claim and no guarantee that calibration solves
 OOD. Gallery-derived thresholds or a calibrated probability are not delivered here.
+
+
+## 2026-09-14 — Home-network authorization and acquisition ledger reactivated
+
+User lifts the mobile-data restriction and explicitly requests DATASETS.md logging for
+every acquisition and its rationale. Ongoing docs now include that inventory alongside
+PLAN/HISTORY/EXPERIMENTS. E98 begins with a metadata-only role audit of existing E92
+TRAIN and old CAL manifests, plus targeted source/licence research. No model fitting,
+new scoring, protected-final opening or new image-download success is claimed here.
+
+
+E99 source inventory and selection completed:256 original TRAIN JPEGs across four new
+MIDD sensors,3,323,883,735B. Contract0f67891068521533355ec39a90e3d4b396c14bb77b42fff9fc29a77745703729.
+Two selection tests pass for order invariance, split exclusions, duplicate/path/capacity
+rejection and no-refill overflow handling. Transfer now starts; no completion/admission
+or detector-quality claim. Full acquisition record is in DATASETS.md as requested.
+
+
+### E98 completed; E99 transferring; E100 admission prepared (2026-09-14)
+
+Metadata-only E98 confirms12,269 E92 TRAIN parents (7,674REAL/4,595AI). The old C3 CAL
+has4,534 rows and R1b CAL5,333; they overlap and must not be summed. Byte-only mapping
+finds0 TRAIN/CAL collisions but resolves only5,652 inputs. A separate original-ID/body
+lineage supplement resolves all6,619 E32-derived TRAIN parents, all to original TRAIN,
+with0 shared source-scoped role/parent/available-scene groups against R1b CAL. No role
+was changed; earlier CAL remains previously consumed model-selection data, not fresh
+validation or new TRAIN. Missing scene metadata is not proof of independence.
+Receipts: evidence/e98_role_audit.json and evidence/e98_lineage_audit.json.
+
+E99 download is active with per-image CRC/length/SHA receipts. Added a DATASETS.md status
+updater that counts exact contract-selected receipt paths and current sizes, not arbitrary
+files. An initial ad-hoc filesystem glob encountered an AppleDouble metadata sidecar;
+no data was changed. The updater excludes such sidecars/partial files by construction
+and keeps incomplete transfer distinct from final completion. Original hashing occurs
+in the downloader and will be repeated at admission.911 Python tests pass in18.05s
+with the existing Starlette/httpx warning. E100 native admission code is prepared;
+no image audit, new inference, candidate fit or model promotion has run yet.

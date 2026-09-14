@@ -10,6 +10,34 @@ because every tile arrives at 128×128 regardless of where it came from.
 
 ---
 
+## Current acquisition policy — 2026-09-14 home-network update
+
+Dataset downloads are authorized again. This record is explicitly reactivated by the
+user alongside PLAN/HISTORY/EXPERIMENTS. Every acquisition must identify what and why,
+source/revision/licence, intended role, planned/completed counts and bytes, integrity,
+local location, failures and next step. Quarantined downloads are not admitted TRAIN,
+CAL or independent tests. Never publish personal gallery pixels or individual metadata.
+Older sections retain their original dates/status; later receipts supersede them.
+
+### E98 source research and role audit — in progress
+
+Purpose: prepare a complementary reviewer without reusing consumed calibration as new
+evidence. Current E92 TRAIN contains12,269 parents (7,674 REAL/4,595 AI), including
+previously reassigned E36/RR lineage. Inspect old manifests and overlap/role history
+before selecting another fit or a new CAL pool. No new model score is part of this audit.
+
+Sources investigated before pixel acquisition:
+
+| Source | Why considered | Current decision / limitation |
+|---|---|---|
+| [SIDL, AAAI2025](https://sidl-benchmark.github.io/) | iPhone12 Pro clean/dirty-lens capture pairs across lighting; potential REAL processing robustness | Official research/education-only terms; no redistribution. Prior metadata receipt already records1605 RAW entries/253 scenes versus the webpage300 scenes; release/split reconciliation remains unresolved. No new pixels downloaded. A single camera cannot establish broad generalization. |
+| [CSAFE MCSIDB](https://iastate.figshare.com/articles/dataset/CSAFE_Multi-camera_Smartphone_Image_Database/26932084) | Additional camera pipelines with explicit capture provenance | Existing S21/iPhone14 are already used; New archive metadata fetched (6,622B); iPhone12 download HEAD returned403 and institutional endpoint a WAF challenge. No image transfer. Same collection cannot establish independent-source transfer. |
+| [LAION-Mobile](https://huggingface.co/datasets/laionmobile/laion-mobile) | Large smartphone metadata collection | Metadata-only card; CC BY4 applies to metadata, underlying image rights differ. EXIF alone cannot certify REAL. No bulk pixel acquisition selected. |
+| [GenSyn10](https://arxiv.org/abs/2607.16283) | Recent FLUX.2/Hunyuan/Qwen families |32x32 images are below current224-pixel input floor; not selected for this native-photo detector. |
+
+No new dataset body is claimed downloaded at this registration point. Research pages
+and manifests are metadata, not image counts. The raw-score UI remains uncalibrated.
+
 ## Storage
 
 | Location | Contents |
@@ -2627,3 +2655,73 @@ versus editing provenance remains unresolved. Keep the existing publisher-provid
 label and unknown prompt-dependence limitation. Do not infer population-wide bias from
 this single case. Receipt `evidence/e83_known_ai_miss_review.json` records both image and
 caption hashes; no image or full caption is copied into git. Current E84B/E85/E86 unchanged.
+
+
+### E99 — four additional MIDD sensors, acquisition selected before pixels (2026-09-14)
+
+Why: enlarge REAL capture-pipeline coverage with original mobile photographs from four
+sensors not present in E72's four-sensor acquisition. Use [official MIDD release](https://download.ai-benchmark.com/s/Gq3n2cS7QkH7ZMz),
+linked by the [CVPR2024 authors](https://github.com/rflepp/SplitterNet-Efficient-Mobile-Denoising-Models-CVPR2024).
+Research terms: CC BY-NC-SA4.0; preserve attribution, no production/weight redistribution
+claim. This is the same publisher already used in TRAIN, so never fresh source-OOD evidence.
+
+| Sensor package | Full archive bytes (metadata only) | Requested image subset | Status |
+|---|---:|---:|---|
+| ISOCELL_GN1 |21,661,904,344|64 original TRAIN JPEGs|Directory validation pending|
+| ISOCELL_HM3 |19,242,794,655|64 original TRAIN JPEGs|Directory validation pending|
+| OmniVision_OV64B |27,181,871,080|64 original TRAIN JPEGs|Directory validation pending|
+| Sony_IMX766 |20,864,102,442|64 original TRAIN JPEGs|Directory validation pending|
+
+Full archives will not be downloaded. Hash-ranked selection, at most4GiB image bodies,
+no test/denoised partners, no quota refill. Exact bytes/ETags/member CRCs are frozen before
+image transfer. Root: `$PIXELPROOF_DATA_ROOT/e99`; all images stay outside Git. Initial
+role QUARANTINE_FOR_POSSIBLE_RESEARCH_TRAIN; protected-overlap/group/decode admission
+and a new experiment contract are required before fitting. Completed image count is0
+at this registration. New download and failure receipts will be appended below.
+
+
+### E99 transfer started — exact selection frozen (2026-09-14)
+
+All four central directories and archive LICENSE.txt files verified before image bytes.
+Contract SHA256 `0f67891068521533355ec39a90e3d4b396c14bb77b42fff9fc29a77745703729`. Requested256 files /3,323,883,735B
+(3.324 decimal GB). Two exact-range workers; no full archive download. Sensor body totals:
+GN1 913,893,564B; HM3 729,865,949B; OV64B 974,869,735B; IMX766 705,254,487B.
+The four archive identities include exact size, ETag and Last-Modified in
+`evidence/e99_acquisition_contract.json`; complete selected member names/CRC/offsets stay
+under `$PIXELPROOF_DATA_ROOT/e99/acquisition_contract.json`. Stage status: TRANSFERRING,
+not admitted or scored. Each verified body receives a persistent SHA256 receipt; failed
+runs retain verified members for resume. Completion totals will supersede this entry.
+
+CSAFE additional-package probes returned403; institutional endpoint returned a WAF
+challenge. No bypass or image transfer attempted after that response. SIDL remains
+pending the already-documented253-versus300 scene-release reconciliation; no new SIDL
+metadata or image acquisition is claimed. E98 current metadata transfer: CSAFE article
+6,622B plus official MIDD DAV listing and ZIP directories/licence text, not photos.
+
+
+<!-- E99-LIVE-START -->
+### E99 current download snapshot
+
+Updated UTC: 2026-09-14T14:55:39+00:00. **INCOMPLETE — transfer/checks not finished**.
+
+| Sensor | Requested files | Verified files | Verified body bytes |
+|---|---:|---:|---:|
+|ISOCELL_GN1|64|64|913,893,564|
+|ISOCELL_HM3|64|64|729,865,949|
+|OmniVision_OV64B|64|53|825,703,172|
+|Sony_IMX766|64|52|586,679,288|
+
+Total: 233/256 files; 3,056,141,973 verified body bytes.
+Counts use exact selected receipt paths; AppleDouble sidecars/partial files do not count.
+This snapshot verifies receipt binding and current file size; original CRC/SHA checks are
+performed by the acquisition worker and are rechecked during admission. Image bodies stay
+under `$PIXELPROOF_DATA_ROOT/e99/images`. No new model score or quality claim.
+<!-- E99-LIVE-END -->
+
+
+E98 role audit completion: all6,619 E32-derived E92 TRAIN records map to original TRAIN
+by record identity/body; no mapped CAL record or shared available source-scoped group.
+R1b CAL5,333 remains historically consumed, and C3 CAL4,534 is an overlapping earlier
+manifest. No images were downloaded for this role audit. Do not sum both CAL counts
+or call either a newly independent test. No role admission or model fit follows solely
+from an exact-identity pass. Receipts are evidence/e98_{role,lineage}_audit.json.
