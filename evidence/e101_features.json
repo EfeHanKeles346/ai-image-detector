@@ -1,0 +1,52 @@
+{
+  "chunks": 128,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "0a4dd9a88cb40810412647df6123aec01827ef6cd0635036577f74dd92020e9d",
+  "created_parents_this_execution": 256,
+  "dev_final_image_reads": 0,
+  "feature_sha256": "a834e0517f9663b2f3856f17272e107f87148709095ccf300affe3a3a04e25f1",
+  "first_batch_repeat_max_error": 0.0,
+  "fit_allowed": false,
+  "mps_driver_peak_bytes": 5520441344,
+  "new_image_classifier_scores": 0,
+  "parents": 256,
+  "parity": {
+    "decision_changes_by_cut": {
+      "0.011505939625203613": 0,
+      "0.07940196245908739": 0
+    },
+    "feature_max_errors": {
+      "clip": 0.0,
+      "dear": 0.0
+    },
+    "parents": 34,
+    "passed": true,
+    "reference_max_score_error": 0.0
+  },
+  "report_sha256": "30407400ad7bf6c1415b99116fdbc6757238c2a2cc36ee4fb8a357e4f271d982",
+  "seconds": 867.6616614169907,
+  "shapes": {
+    "clip": [
+      256,
+      4,
+      1536
+    ],
+    "dear": [
+      256,
+      4,
+      1640
+    ],
+    "dino": [
+      256,
+      4,
+      3072
+    ]
+  },
+  "state": "E101_MIDD_extension_four_condition_TRAIN_features_complete",
+  "views": 1024
+}

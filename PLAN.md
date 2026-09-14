@@ -19,41 +19,49 @@ versus completed files/bytes, integrity, local storage, failures and next admiss
 Historical entries remain historical. No raw data, private gallery information or model
 weights in Git; small code/evidence commits and pushes remain authorized, never forced.
 
-## Current E98–E102 checkpoint — acquisition complete, features running (2026-09-14)
+## Current E98–E102 checkpoint — data admitted, candidate not accepted (2026-09-14)
 
 E98 role/lineage audit completed without TRAIN/CAL overlap in the mapped identities.
-E99 downloaded256 originals/3,323,883,735B from four additional MIDD sensors. E100 decoded
-and admitted all256 research TRAIN parents after152,124-reference protection checks,
-including the full206-unique owner gallery; no overlaps, failures or removals. See
-DATASETS.md for source, rationale, licence, exact totals and receipt hashes.
-E101 four-condition frozen-encoder extraction is running; E102 constrained correction
-and its conditional consumed-DEV runner are prepared but not yet frozen/fitted. The
-local E92 API was paused for GPU memory and must be restored when extraction finishes.
-No new model is promoted. Acquisition/admission success does not establish accuracy.
+E99 downloaded 256 originals / 3,323,883,735 bytes from four additional MIDD sensors.
+E100 admitted all 256 research TRAIN parents after 152,124-reference checks, including
+all 206 unique owner-gallery identities; no detected overlaps, failures or removals.
+E101 completed all 1,024 frozen training views with exact prior parity. DATASETS.md
+records source, rationale, licence, exact totals, storage and admission receipts.
 
-Before fitting a complementary reviewer, audit actual E92 TRAIN identities against old
-CAL manifests and identify whether a separately grouped eligible CAL pool exists. A
-past CAL name is not proof that examples remain untouched. No protected FINAL pixels
-or model scores are needed for this audit. New acquisitions remain quarantined until
-provenance, decoding, parent/group and protected-overlap checks pass. Record all source
-research and actual transfers in DATASETS.md. No download is itself model improvement.
+E102 completed one registered correction fit on 12,525 TRAIN parents / 50,100 views,
+passing its TRAIN and runtime gates. In consumed E66 DEV it passes all 20 numeric gates:
+original REAL false alerts stay 0/160, social-Q75 false alerts improve 14/160 to 12/160,
+and AI recall stays 159/160 in both conditions, with no lost E92-caught AI. However,
+one E43-caught original AI remains missed, so the full DEV screen FAILS. No gallery,
+E49 or independent-final scoring follows this failure. No candidate promotion.
+The local E92 API has been restored and remains the demo model.
 
-## Next controlled model cycle after E100 admission
+Both E92 and E102 already classify all 256 new MIDD TRAIN photos below the AI threshold
+in all four conditions. This acquisition expands sensor coverage but does not itself
+establish an improvement on the owner's gallery or an unseen publisher/generator.
 
-Use every E100-admitted parent, without score-based resampling. First freeze E101 encoder
-extraction: identical E89 four conditions, DINO/CLIP/DEAR weights and crop operations,
-34-source prior parity, two-parent chunks,6GiB MPS limit,90-minute stage, first-batch
-repeat check, original-body and saved-feature identities. This is a new TRAIN cache,
-not classifier evaluation or permission to change the demo. No parallel GPU extraction.
+## Next controlled model cycle after the E102 result
 
-Then register an E102 TRAIN-only correction experiment using the frozen E92 feature map
-and all12,269 old parents plus the full new cohort. Preserve E92 AI logits and each
-previously correct REAL decision in all four conditions; keep previous numeric/source
-bounds and explicit new-sensor pooled/worst bounds. Freeze objective/optimizer before
-fitting; no DEV-based tuning. Only a TRAIN-passing candidate may receive the already
-consumed E66/gallery regression, and any lost AI/new REAL error rejects it. Full E43
-AI-retention deficit remains a required unresolved acceptance condition, not a waived
-error. A fit on new REAL examples alone cannot establish broader AI generalization.
+Preserve E102 as a failed full-acceptance candidate and keep its locked evidence. Do not
+relax the E43 retention condition, tune on the missed DEV item, adjust raw percentages,
+or open later evaluation stages to find a favourable result. The two social-Q75 rescues
+are useful consumed-DEV evidence, not an independent estimate of generalization.
+
+The next design question is whether a complementary global-context/processing-stability
+reviewer can distinguish acquisition/transport artifacts from generation evidence. First
+inventory eligible TRAIN features and source/scene/parent groups; register one hypothesis,
+matched processing on both labels, objective and AI-retention constraints before fitting.
+Keep gallery, consumed DEV and protected reserves out of TRAIN and calibration. Check
+TRAIN processing failures before acquiring more of a sensor source already handled by
+E92. More MIDD volume alone is not established as a solution to the observed errors.
+
+E98 mapped all 6,619 E32-derived TRAIN rows to original TRAIN and found no mapped role
+overlap. Existing R1b/C3 CAL populations remain historically consumed and overlapping;
+the audit does not make them fresh validation. Any probability calibration needs a
+separately justified, grouped population and explicit evaluation protocol. Until then
+retain raw-score language and guarded uncertain results. New source acquisitions need
+provenance/licence and role registration, protected-overlap admission, and DATASETS.md
+receipts. No subsequent fit or new acquisition is registered by this planning note.
 
 ## E97 — honest score display completed; learned reviewer remains planned (2026-09-14)
 

@@ -2761,3 +2761,33 @@ was performed for admission. Camera model EXIF was absent from all256 records, s
 identity relies on publisher packaging. Do not report256 verified physical devices or
 independent scenes. The E101 derived crops are separate training views; originals remain
 unchanged. New training features/model fits will be logged in EXPERIMENTS/HISTORY.
+
+
+E101 derived-feature availability: all256 admitted originals now have four fixed training
+views (1024 total), with DINO/CLIP/DEAR caches complete. This adds no source photos and
+must not inflate the downloaded count. Feature receipt: evidence/e101_features.json.
+The unchanged original3,323,883,735B remain the acquisition total.
+
+
+E102 use/outcome annotation: all256 newly admitted parents were used with the12,269
+previous TRAIN parents in one registered frozen-map correction. On this TRAIN source,
+both pre-fit E92 and fitted E102 give0 false AI indications in each of4 conditions.
+This is a neutral data-coverage observation, not256 newly corrected gallery errors,
+independent validation or proof of a universal detector. Full fit and later regression
+results belong to EXPERIMENTS/HISTORY; original file counts and acquisition rationale
+above remain unchanged.
+
+
+### E102 downstream evaluation outcome — 2026-09-14
+
+The full 256-image E99/E100 acquisition was used in the registered correction fit;
+no further source photos were downloaded for E101 features or E102 evaluation.
+Consumed DEV social-Q75 REAL false alerts changed from 14/160 to 12/160; original
+REAL false alerts stayed 0/160 and AI detection stayed 159/160 in both conditions.
+The candidate passes 20 numeric gates but fails mandatory retention of all E43-caught
+original AI (one unresolved miss). It was not promoted or tested on the owner gallery.
+This does not isolate a causal benefit of these 256 photos: E92 already made zero
+false AI calls on them, and the correction was fitted on the combined TRAIN population.
+Source, licence, 256 originals / 3,323,883,735 stored bytes and research-TRAIN role remain
+as recorded above. More downloads are allowed, but another acquisition must address an
+identified gap and receive its own requested/completed ledger and admission checks.

@@ -7838,3 +7838,84 @@ frozen E92 representation coordinates and zero delta initialization; all origina
 views protected relative to E92, old gate replay required before optimization. The
 prepared consumed-DEV runner additionally requires zero lost E43/E92 AI and zero new
 E92 REAL errors per source/condition. No current candidate fit/DEV score exists yet.
+
+
+Final prepared-code checks:916 Python tests pass in19.81s, one existing warning.
+Remote GitHub Actions34860324077 also passes for55afb6a4ce507e88c3c067db4ef45203756a5719.
+E101 extraction continues with numeric/source parity intact; E102 still unexecuted.
+
+
+### E101 complete — four-condition TRAIN cache, no quality claim
+
+All256 new parents/1024 views encoded in867.662s. All34 fixed old-source checks have
+exact0 score/CLIP/DEAR difference and0 threshold changes; first new-batch feature repeat
+error0. Peak MPS driver memory5,520,441,344B. Saved shapes256x4x3072 DINO,
+256x4x1536 CLIP and256x4x1640 DEAR. Cache SHA256
+`a834e0517f9663b2f3856f17272e107f87148709095ccf300affe3a3a04e25f1`; contract
+`0a4dd9a88cb40810412647df6123aec01827ef6cd0635036577f74dd92020e9d`. All128 parent chunks and
+source/role/condition hashes verified. No new-image classifier score, CAL/DEV/final
+read or fit. Source originals unchanged. Local E92 API restart initiated after extraction;
+E102 fit registration now validates the completed cache and baseline before any fitting.
+
+
+E102 fit frozen and started; contractSHA2565d5b0075f8b46a3fd7b7e5d93e06ebfa72ad4f230c843029b51f6394fb024185.
+Complete12,525 TRAIN parents/50,100 views, including all256 new MIDD originals; no
+CAL/DEV/gallery rows in fitting. Baseline E92 map is fixed; only one constrained450D
+correction is fitted with the registered objective. Existing E92 API is again READY
+on127.0.0.1:8800 with the same candidate SHA and raw-score UI. No demo promotion.
+
+
+### E102 TRAIN correction complete — 2026-09-14
+
+The registered frozen-map correction passes all TRAIN/source/numeric/retention and full
+batch8 runtime guards in221.595s. All18,380 AI TRAIN view logits are protected relative
+to E92 and no reference-correct REAL binary decision is lost. Candidate SHA256
+`73ad43fbd74f1d1f94ca45f49c1ff662cfea89ed301af123057e7260277bd7de`. This only permits the conditional
+consumed E66 comparison, not serving or an independent performance claim.
+
+Important negative/neutral finding: E92 already had0/256 false AI indications in each
+of the four newly acquired MIDD conditions, and E102 remains0/256. These new captures
+expand audited pipeline coverage but did not expose the owner's gallery failure mode.
+Do not call the zero new-source rate an improvement caused by this fit, or treat this
+TRAIN-designated, already-used publisher as independent source-OOD evidence. More MIDD
+volume alone is not established as a way to solve the gallery errors. Existing untouched
+checks remain protected until the staged acceptance conditions are met.
+
+
+E102 consumed-E66 comparison registered only after the completed TRAIN/runtime pass.
+Contract SHA25612a92512c39614a9c4588739ef677f7c15819d8ef1f7b656dbe497872be8ba93;640 fixed cached views,
+no image acquisition or encoder run. Same20 numeric gates, zero newly missed E43/E92
+AI and zero new E92 REAL errors per source/condition. Lock all scores before metrics.
+No gallery or E49 opening unless this comparison passes. This remains consumed DEV.
+
+
+### E102 consumed DEV complete — numeric pass, full acceptance failure (2026-09-14)
+
+One frozen candidate, no sweep. The locked 640-view comparison uses the previously
+consumed E66/E83 cache; no new image read or independent evaluation. Reference replay
+error is 0, and scoring took 6.386s. Public evidence: evidence/e102_development.json;
+score-lock receipt: evidence/e102_dev_scores.json.
+
+| Condition | E92 REAL false AI | E102 REAL false AI | E92 AI caught | E102 AI caught |
+| --- | --- | --- | --- | --- |
+| Publisher original | 0/160 | 0/160 | 159/160 | 159/160 |
+| Social Q75 | 14/160 (8.75%) | 12/160 (7.50%) | 159/160 | 159/160 |
+
+All 20 numeric gates pass. Both conditions retain every E92-caught AI and introduce
+zero new E92 REAL false alerts. Social Q75 rescues two REAL observations, one SIDD:GP
+and one SIDD:IP. Nevertheless, the original condition still misses one AI caught by
+E43, so `passes_limited_dev_screen=false`, `consumed_regression_may_be_registered=false`
+and `independent_final_passed=false`. This is the unresolved reference-retention deficit,
+not an additional lost E92 detection. The candidate is preserved but not promoted.
+
+Binary decisions and scientific selective metrics are not the demo guard's displayed
+outcomes. Original selective uncertain rows fall 4 to 1; social rows remain 5. No claim
+about fewer owner-gallery abstentions follows: E102 gallery/E49 scoring was not opened
+because the staged DEV condition failed. The local E92 API remains ready and unchanged.
+The 160 REAL observations comprise only 10 dependent SIDD scenes across five cameras;
+AI observations come from two previously seen families. No universal, independent-OOD,
+calibration or deployment-readiness claim follows from these results.
+
+Next plan: investigate eligible TRAIN global-context and matched processing features
+before registering another fit; retain the failed candidate and every retention rule.
+The four new sensor sources remain TRAIN only. Download/admission totals are unchanged.

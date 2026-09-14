@@ -1,0 +1,43 @@
+{
+  "acceptance": "All old E92 population/numeric gates, expanded numeric gates, new pooled<=10% and worst sensor<=20%, combined REAL<=10%, solver<=1e-8, no lost AI/new REAL errors, full batch8 runtime<=1e-6 and zero two-cut changes.",
+  "ai_cut": 0.07940196245908739,
+  "ai_views": 18380,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "5d5b0075f8b46a3fd7b7e5d93e06ebfa72ad4f230c843029b51f6394fb024185",
+  "dev_final_rows_read": 0,
+  "downloads": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e101_features.py": "6f31fea1cc4cde988937f11d79baf99fccab7513e32ce68f0b355edf07c4173d",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e102_fit.py": "5522318a17abb7496a3148240017e62090784ec31cf07a7e2db60e1367604ecb",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e73_fit.py": "8e6c9f628d177e7c4d67062f10426bbb6a8bc1ece25d4fc137712be6febb51ba",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e80_fit.py": "9d2abb1b59367ca95f51c4eb53425632665b80b29d6ee4751d5ccd609d37f003",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e81_real_minimax.py": "03a7f5ce9356e09eac8e26b7fe11d507dd59eb04d91d0bce30f78de50a391aba",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_model.py": "8f1ab27c4636f23cbb705572781d19ba2c65757ac115620f21ad47897ca5357e",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e91_data.py": "38b780cb54d01f9fc4c5a077bd6a31462d7de246a0b4d408c02111619c8f1e9d",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e92_gates.py": "8f1c83c62b838babd17b7445342dc1cfa9e6ee6a8c2942cdb560fa4fd6a38e85",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/retention_gate.py": "1dcbb2351d0e4a2788a041ccbcddfb598d1c3e73ff524626917f9f31f95fcf0e",
+    "/Volumes/LaCie/pixelproof-datasets/e100/training_manifest.json": "c5abc769d1b430bba52e8e5ae8c7ae90fdeb1cbbc56c7a40d4bc01f458ee496e",
+    "/Volumes/LaCie/pixelproof-datasets/e101/features.json": "30407400ad7bf6c1415b99116fdbc6757238c2a2cc36ee4fb8a357e4f271d982",
+    "/Volumes/LaCie/pixelproof-datasets/e101/features_contract.json": "0a4dd9a88cb40810412647df6123aec01827ef6cd0635036577f74dd92020e9d",
+    "/Volumes/LaCie/pixelproof-datasets/e101/midd_features.npz": "a834e0517f9663b2f3856f17272e107f87148709095ccf300affe3a3a04e25f1",
+    "/Volumes/LaCie/pixelproof-datasets/e92/correction.npz": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+    "/Volumes/LaCie/pixelproof-datasets/e92/fit.json": "352542408326ac7c7fa0ff49a39f5549c73a4cd11049426e4973a08cfa3d01a0"
+  },
+  "limits": "TRAIN-only data-coverage fit; no calibration or independent-source validation. No learning from consumed E66/gallery or score-based row selection. A passing fit only permits separate consumed regression; the E43 DEV retention deficit cannot be waived.",
+  "max_seconds": 3600,
+  "new_parents": 256,
+  "objective": "Frozen E92 map,450 zero-initialized delta weights, E81 worst-REAL epigraph loss, all E92 AI logits nondecreasing, correct REAL binary decisions protected; no sweep.",
+  "old_parents": 12269,
+  "optimizer": "SLSQP,maxiter200,ftol1e-9,L2=.01; CPU2 threads",
+  "parents": 12525,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "state": "E102_frozen_map_MIDD_correction_registered",
+  "views": 50100
+}
