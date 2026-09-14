@@ -5,20 +5,22 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Documentation working rule — reaffirmed by user (2026-09-10)
+## Documentation and mobile-data working rule — user update (2026-09-14)
 
-After every development change, experiment and planning decision, update the relevant Markdown
-documents in the same work step before reporting completion. Keep current next actions here;
-append decisions, implementation/verification results and limitations to `HISTORY.md`; append
-experiment protocols, measured outcomes and failures to `ml/EXPERIMENTS.md`. Update `DATASETS.md`,
-`MODEL_CARD.md`, serving/artifact documentation and README when their facts change. Preserve
-historical entries and distinguish proposals, completed engineering checks and measured quality.
-The preceding request was a full-document/project review; the subsequent user instruction now
-authorizes continuing the champion-first plan without data downloads.
+Use only these three English Markdown records for ongoing work: `PLAN.md` for current
+next actions, `HISTORY.md` for append-only engineering/decision history, and
+`ml/EXPERIMENTS.md` for append-only scientific protocols/results. Update the relevant
+records after each development, experiment and plan. Existing other documents are
+historical references; do not create another standalone progress report. The user
+requested removing `rapor/GELISTIRME_RAPORU_2026-09-13.md`; its substantive findings
+are preserved in the English HISTORY/EXPERIMENTS consolidation below. Repair its
+README link as a removal cleanup, not as a fourth ongoing reporting channel.
 
-The user also requests GitHub synchronization: commit and push completed, reviewed code,
-evidence and Markdown checkpoints to the configured origin, verify the remote result, and
-report any failure. Keep raw datasets/model weights outside git; never force-push over remote work.
+Mobile data is active: no dataset, model-weight or package downloads, no environment
+upgrades or bulk remote checks. Use the mounted disk and verified feature caches.
+Dataset volume is not TRAIN eligibility: retain all protected DEV/final/diagnostic
+roles. Existing authorization for small code/evidence git commits and pushes remains;
+never push raw images, caches or weights, and never force-push.
 
 ## Active overnight execution (2026-09-13)
 
@@ -30,21 +32,17 @@ E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed D
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
-## Current authorization — data acquisition allowed (2026-09-13)
+## Current authorization — offline cached-data development (2026-09-14)
 
-The user explicitly authorizes continuing analysis/development and downloading needed data.
-This supersedes the previous no-download restriction in historical sections below. Preserve
-AI retention, immutable E43/experiment evidence, protected roles and commit/push checkpoints.
-First audit source metadata/license/size and scene independence before acquiring pixels.
-Use existing external volume; no automatic full-corpus download. WIFD/RawNIND are diagnostic-only;
-SIDD is consumed DEVELOPMENT. None is TRAIN or an independent final. Old E59 fits stay parked;
-the separately registered E71 may read its verified TRAIN cache without modifying old outputs.
+The latest no-download request supersedes the 2026-09-13 acquisition authorization.
+Continue one predeclared E91/E92 coverage extension using already completed E89 SID
+features. The external volume is mounted with about347GiB free. Battery was100% on
+battery power at entry; the user says they are connecting power and requests starting.
+Begin registration/local validation now; the existing shared resource guard still
+requires observed AC before training. Do not alter frozen ancestor code to bypass it.
+No scheduled polling or background automation is requested.
 
-Power initially13%; user explicitly requested starting while connecting power. AC is confirmed;
-latest check100%, charged and attached to AC. Long stages require
-AC and storage reserve; no persistent power-setting change or scheduled watcher.
-
-## Current checkpoint — E89 complete; E91/E92 prepared; GitHub repair verified and report complete (2026-09-13)
+## Current checkpoint — E89 complete; E91/E92 prepared; offline E91/E92 continuation (2026-09-14)
 
 E86 passes all80 TRAIN metric checks and runtime/AI-retention guards. Consumed E66
 REAL FPR0.625% original/10.625% social-Q75, AI99.375% in both;17/20 numeric checks.
@@ -52,10 +50,11 @@ The same newly missed GPT original persists; Q75 pooled REAL, worst REAL source 
 covered-accuracy guards fail. Preserve the rejected candidate; E49 stays unopened.
 
 E89 features are complete for all128 previously selected/audited SID TRAIN parents
-under all4 conditions. E91/E92 implementation and856 tests pass, but no new recipe
-is frozen or fitted. GitHub CI repair is verified on run34749560334 (web and Python success), and the
-Turkish report is complete. No additional ML experiment was started. Later
-continuation can separately freeze one data-coverage extension
+under all4 conditions. E91/E92 implementation and856 tests pass. E91 is now registered
+for49,076 cached TRAIN views and is starting its fixed100-epoch fit on verified AC.
+E92 remains unregistered until E91 completes. GitHub CI repair is verified on run34749560334 (web and Python success), and the
+standalone Turkish report is being consolidated into these three English records.
+The current offline continuation executes one separately registered data-coverage extension
 with the same E85 architecture/seed/optimizer and E86 constrained-head objective.
 Keep all previous populations/conditions/AI protections and add SID pooled/camera
 checks. No simultaneous new objective, threshold, rank, seed or margin sweep.

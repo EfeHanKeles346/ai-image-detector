@@ -6939,3 +6939,110 @@ Machine-readable run/job/step evidence is recorded in
 evidence/ci_dependency_repair_2026-09-13.json; Turkish report and current README/PLAN
 now distinguish verified CI from the unmet ML target. This final checkpoint changes
 only documentation/evidence; no frozen recipe, candidate, threshold or dataset changed.
+
+
+## 2026-09-14 — English report consolidation and offline continuation
+
+User policy: ongoing Markdown updates belong only in PLAN.md, HISTORY.md and
+ml/EXPERIMENTS.md, in English. Remove the standalone Turkish report
+rapor/GELISTIRME_RAPORU_2026-09-13.md after preserving its findings here. Other legacy
+Markdown files remain historical references; no new separate report is created.
+Mobile data: no dataset/weight/package downloads or environment upgrades. Use existing
+verified disk caches, with outbound sockets denied in the experiment processes.
+
+### Latest completed detector result: E86, limited consumed DEVELOPMENT
+
+This is the latest overall improvement over E83, not a winner on every measure and
+not an independent final success. There are160 REAL and160 AI parents, two conditions
+and640 views. REAL consists of only10 dependent SIDD scenes across5 cameras; AI comes
+from2 previously seen families with unknown prompt linkage. Consumed DEV features and
+labels remain excluded from TRAIN. 17/20 means17 acceptance criteria passed, not85%
+image accuracy and not17 independent test datasets. Original passes10/10 numerical
+criteria; social-Q75 passes7/10. E86's TRAIN screen passed80/80, a different evaluation.
+
+| Consumed DEV measure | E43 reference | E83 | E86 |
+|---|---:|---:|---:|
+| Original REAL false AI | 42.500% (68/160) | 0% | 0.625% (1/160) |
+| Social-Q75 REAL false AI | 42.500% (68/160) | 13.750% (22/160) | 10.625% (17/160) |
+| Original AI recall | 97.500% (156/160) | 98.750% (158/160) | 99.375% (159/160) |
+| Social-Q75 AI recall | 96.250% (154/160) | 99.375% (159/160) | 99.375% (159/160) |
+| Original newly missed E43-caught AI | — | 1 | 1 |
+| Numeric gates passed | — | 17/20 | 17/20 |
+
+Relative to E43, E86 reduces original REAL errors by67/68 (98.53%) and social REAL
+errors by51/68 (75%). Relative to E83, it rescues5 social REAL errors and1 original AI
+miss, while losing1 original REAL rescue. Aggregate AI recall increases, but one
+E43-caught GPT original remains missed. Separate per-source/condition AI retention
+fails in the original condition; gains elsewhere do not offset that failure.
+
+Remaining three numerical failures are all social-Q75:
+- Pooled REAL FPR10.625% (17/160), requirement<=10% (at most16/160).
+- Worst REAL source GP21.2121% (7/33), requirement<=20% (at most6/33).
+- Covered-decision accuracy94.1935%, requirement>=95%.
+These are close observed gaps, not proof that a single change will fix all three or
+generalize. Together with the separate original AI loss, they reject E86. Keep fixed
+AI cut0.07940196245908739 and REAL cut0.011505939625203613. No threshold, gate, label
+or test membership changes to manufacture a pass. E20 serving and E43 reference stay
+unchanged. E49 was not opened in this overnight chain; no independent-final claim.
+
+### Completed cached-data lineage and costs
+
+Earlier linear/multimodal candidates were rejected on TRAIN gates or DEV REAL/AI
+retention failures. DEAR and the fixed supervised representation led to E83; near-zero
+training loss was not treated as generalization. E79 feature work exceeded9412s across
+attempts; do not relabel it as meeting its original single-run resource target.
+
+E84B adds the matching social transform (1080 cap, then JPEG75) for all12,141 TRAIN
+parents. This differs from source-resolution JPEG75. Native/source parity was checked;
+no224px fallback. Four-view dataset:48,564 views. Feature extraction7296.694s.
+E85 uses the fixed385→256→64→1 network, seed82, batch256, AdamW2e-4, weight decay1e-4,
+100 epochs from scratch; training75.343s. No hyperparameter sweep or warm start.
+E86 fits the450-column constrained head with the same worst-REAL objective and
+per-view AI protection. Fit/runtime235.523s; all80 TRAIN checks and runtime replay pass.
+Separate cached DEV scoring6.632s yields the rejected result above.
+
+E87 selects64 Sony and64 Fuji SID long-exposure RAWs score-blind from official TRAIN,
+before E86 results. Transfer3,376,363,519 compressed bytes; decoded archive members
+4,851,194,880 RAW bytes. Whole large archives were not downloaded. E88 decodes all128
+with the pinned camera-WB/sRGB8/no-autobright recipe in860.226s; no failed decodes,
+internal duplicates or matches against151,996 protected references. Filename/camera
+groups are not proven independent scenes; whole SID publisher remains research TRAIN.
+E89 completes all128x4 DINO/CLIP/DEAR feature views in565.929s,64 chunks. First launch
+failed before feature work because offline flags were set too late; same frozen recipe
+succeeded with process-level offline flags. Old34-source parity and first-batch repeat
+are exact0. Peak MPS allocation5,520,441,344 bytes. No SID classifier scoring, no new
+DEV/final reads. All raw data and weights stay on the external volume.
+
+### Next offline experiment, pre-result decision
+
+E91/E92 code and focused role/replay tests already exist. Append all128 admitted SID
+REAL parents to12,141 previous TRAIN parents:12,269 parents (7,674 REAL/4,595 AI),
+49,076 views (30,696 REAL/18,380 AI), all4 conditions. Preserve every old feature row.
+E91 keeps E85 architecture/seed/order/optimizer/100 epochs; refit only the TRAIN
+input/latent scalers, then verify old E86 metrics and numerical replay. E92 keeps the
+same zero450-weight constrained head objective. Protect all18,380 AI views, previous
+populations and MIDD sensor checks; add SID pooled/camera checks and120 numerical
+TRAIN checks across legacy/previous/expanded populations and4 conditions. Full49,076
+runtime batch8 replay must pass before separately freezing any consumed DEV scoring.
+Report E43 retention and paired E86 transitions. No E49 access on failed DEV.
+
+This tests coverage from data already on disk, without a simultaneous consistency-loss,
+rank, seed, margin, threshold or regularization sweep. Consistency research is only a
+future lead; no new loss is claimed implemented. RR upstream REAL lineage is unresolved;
+MIDD/DEAR research/noncommercial limits persist. WIFD/RawNIND remain diagnostic-only,
+SIDD consumed DEV and other protected/final pools are not recycled into training.
+Large disk volume alone does not establish usable independent training coverage.
+
+Evidence: evidence/e86_fit.json, evidence/e86_development.json,
+evidence/e86_progress_2026-09-13.png, evidence/e87_download.json,
+evidence/e89_features.json and their immutable contracts. This consolidation does not
+alter historical experiment scores, candidates or earlier receipts.
+
+
+### 2026-09-14 — E91 registered offline before training
+
+Verified all frozen ancestor/feature hashes and registered E91 for49,076 TRAIN views.
+Contract SHA256 5660da2ba072eab7f5ce55a9713b33735aa29c6d353ef502934647b536635477.
+No dataset/model/package download. AC power is now observed at100%; external disk
+has347GiB free. Start the one fixed100-epoch cached-feature fit; no new feature
+extraction, test-set access or recipe change. E92 is still unregistered pending E91.

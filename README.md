@@ -21,7 +21,7 @@ Old E59 fits remain paused.856 Python tests pass. The 2026-09-13 dependency repa
 reduces npm audit from11 alerts to0; build, lint, types and all6 web tests pass.
 [GitHub CI34749560334](https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334)
 passes both web and Python jobs on commit bca8a1e, including both dependency audits.
-See the [development and CI report](rapor/GELISTIRME_RAPORU_2026-09-13.md) for verification status.
+See [HISTORY.md](HISTORY.md) and [ml/EXPERIMENTS.md](ml/EXPERIMENTS.md) for consolidated verification and experiment records.
 See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
 [current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
 
