@@ -19,6 +19,27 @@ versus completed files/bytes, integrity, local storage, failures and next admiss
 Historical entries remain historical. No raw data, private gallery information or model
 weights in Git; small code/evidence commits and pushes remain authorized, never forced.
 
+## Current execution checkpoint — 2026-09-15
+
+This overview is current; the dated sections below preserve how the plan evolved.
+The active overnight work window ends at09:58:48 Europe/Istanbul. No recurring schedule
+is configured. E92 remains the serving reference; its local API is temporarily stopped
+while the registered heavy pipeline uses shared memory and is restored between stages.
+
+| Work item | Current state | What it establishes |
+| --- | --- | --- |
+| E124 full-frame TRAIN features | Complete:12525 parents /50100 views;160 pilot replays, maximum error0 | Feature completeness and reproducibility, not detection improvement |
+| E125 center/full-frame correction heads | Running both preregistered branches | Only complete TRAIN/runtime guards can authorize E126 |
+| E126 consumed-development comparison | Waiting for E125 and E92 restoration |640 consumed views plus inherited per-image retention; no fresh proof or automatic promotion |
+| E129 Model2 input-context generation replay | Frozen; waiting for Model1 resource release | Same16 parents/seeds/masks;16/16 engineering gate, not detector accuracy |
+| E130 patch-drift localization diagnostic | Implemented; freeze after E129 results | Mask-blind maps, authentic/classical controls, explicit rejected-generation accounting; no training admission |
+| E131 internal publisher-group transfer | Frozen; execute after heavy stages | New FIT-only heads across10 declared groups; generator-family independence explicitly unsupported |
+
+Latest code validation:1070 full Python tests at E131 implementation, plus targeted
+subsequent runner/scope checks. Completed pushes have passed GitHub CI; CI is software
+validation and does not change any scientific gate. The canonical experiment/engineering
+logs and DATASETS.md retain exact contracts, limitations and acquisition receipts.
+
 ## Research and execution programme for both models
 
 This programme supersedes the historical rule that Model 2 work must wait for an E49
@@ -6910,3 +6931,7 @@ Before any E131 contract or fit, rechecked the existing E79 provenance note and 
 E131 remains useful as a publisher-group internal transfer diagnostic with explicitly incomplete upstream ancestry. Its contract and report now state `generator_family_holdout_supported:false` and retain the corpus-level limitation. Do not describe its grouped folds as unseen-generator proof, a fresh source benchmark or a qualified deployment candidate. This correction precedes registration/scoring; no result or threshold was selected. A true generator-held-out experiment requires file-level generator/prompt lineage or independently acquired clean families.
 
 E131 is now separately frozen before fitting at contract SHA256 `6db23ea917a7428d015e0453efe99b16bbcbe3fa2822e6b540e8c31b645ea421`. Exact12525-parent/10-declared-component/three-fold allocation is retained; generator-family independence is explicitly unsupported. Execution waits for resource release after E129/E130. No E131 scores yet.
+
+### E130 pre-registration baseline completion — 2026-09-15
+
+Before E130 freeze or any real-image localization score, added matched Haar pixel-response RMS, radial-center and constant ranking controls. Keep the identical448px input/32x32 grid and reflect3x3 median for the pixel-response control, then compare on exactly the same accepted parents/masks. Pixel RMS receives no transferred classification threshold. These controls test whether a drift map only reflects image texture or a location prior. All authentic/classical negatives and fixed drift-cut diagnostics remain; nothing is selected from scores. Twenty targeted numerical/encoder tests passed. The prior synthetic CPU smoke remains a technical check only. E131's already frozen inputs are unchanged.

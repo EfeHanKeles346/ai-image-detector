@@ -71,7 +71,7 @@ def freeze():
         'boundary_width_pixels':8, 'conditions':CONDITIONS,
         'population':'All16 authentic and classical controls. Composite scoring only for existing E129 accepted generations, with every rejected attempt retained in counts. No refill or training admission.',
         'guards':'Finite384-D patch grids; repeated original in batch[original,perturbed,original] parity<=1e-5; exact local composite mask/background provenance before metrics. All maps locked before masks enter metrics.',
-        'metrics':'Per-parent regional flags and full/interior-background ranking; negatives always AI-negative. Paired original/edited spatial-ranking contrast diagnostic; no pooled-pixel independent intervals. Original and JPEG75 separately.',
+        'metrics':'Per-parent regional flags and full/interior-background ranking; negatives always AI-negative. Paired original/edited spatial-ranking contrast plus matched Haar pixel-RMS, radial-center and constant ranking baselines; no pooled-pixel independent intervals. Original and JPEG75 separately. Pixel-RMS has no transferred classification threshold.',
         'cache':'Retain original patch tokens for each scored view locally, with image/role/condition and code hashes; no automatic later training authorization.',
         'max_seconds':2400, 'mps_limit_bytes':6*1024**3, 'downloads':0, 'training_admission':False,
         'promotion_allowed':False, 'limits':'Small correlated TRAIN research, one old editor, simple masks, conditional accepted-generation subset. This is an adapted edit-response baseline, not an exact TRAIL reproduction, calibrated AI probability, semantic annotation or independent detector evidence.'}
@@ -98,7 +98,8 @@ def decode(path):
 def encoded_maps(model, torch, image, device, mean, std):
     value=np.asarray(image.resize((448,448),Image.Resampling.LANCZOS))
     plain=value.astype(np.float32)/255.
-    tensor=torch.from_numpy(np.stack([plain,patch_drift.haar_attenuate(value),plain])).to(device).permute(0,3,1,2)
+    perturbed=patch_drift.haar_attenuate(value)
+    tensor=torch.from_numpy(np.stack([plain,perturbed,plain])).to(device).permute(0,3,1,2)
     with torch.inference_mode():
         block=model.forward_intermediates((tensor-mean)/std,indices=[10],norm=True,
             return_prefix_tokens=False,intermediates_only=True)[0]
@@ -107,7 +108,8 @@ def encoded_maps(model, torch, image, device, mean, std):
     error=float(np.abs(token[0]-token[2]).max())
     if error>1e-5: raise ValueError('Repeated original patch tokens differ')
     grid=patch_drift.median3(patch_drift.half_cosine_drift(token[0],token[1]))
-    return grid,token[0].copy(),error
+    pixel=patch_drift.median3(patch_drift.pixel_response(value,perturbed))
+    return grid,token[0].copy(),error,pixel
 
 
 def audit():
@@ -126,7 +128,7 @@ def audit():
     mean=torch.tensor(config['mean'],device=device).view(1,3,1,1)
     std=torch.tensor(config['std'],device=device).view(1,3,1,1)
     rows,cases=population(read(DATA_ROOT/'e128/prepared.json'),read(DATA_ROOT/'e129/report.json'))
-    maps={}; tokens={}; identities=[]; parity=0.; peak=0
+    maps={}; pixel_maps={}; tokens={}; identities=[]; parity=0.; peak=0
     for row,case in zip(rows,cases,strict=True):
         paths={'authentic':Path(row['files']['original']['path']), 'classical_edit':Path(row['files']['classic']['path'])}
         if case['passed']: paths['ai_composite']=DATA_ROOT/'e129/fp16_sdpa'/f"{row['index']:03d}"/'composite.png'
@@ -136,15 +138,15 @@ def audit():
                 resource_check(deadline)
                 image=source if condition=='original' else social_view(source)
                 key=f"{row['index']:03d}_{variant}_{condition}"
-                grid,token,error=encoded_maps(model,torch,image,device,mean,std)
-                maps[key]=grid; tokens[key]=token; parity=max(parity,error)
+                grid,token,error,pixel=encoded_maps(model,torch,image,device,mean,std)
+                maps[key]=grid; pixel_maps[key]=pixel; tokens[key]=token; parity=max(parity,error)
                 identities.append({'key':key,'index':row['index'],'parent_id':row['parent_id'],'role':row['role'],
                     'condition':condition,'variant':variant,'source_body_sha256':digest(path)})
                 if device.type=='mps':
                     peak=max(peak,torch.mps.driver_allocated_memory())
                     if peak>c['mps_limit_bytes']: raise MemoryError('Patch-drift MPS budget exceeded')
         print(json.dumps({'E130_scored_parent':row['index']+1,'parents':16,'seconds':round(time.monotonic()-start)}),flush=True)
-    save_npz(ROOT/'scores.npz',**maps,contract_sha256=digest(CONTRACT))
+    save_npz(ROOT/'scores.npz',**maps,**{'pixel__'+key:value for key,value in pixel_maps.items()},contract_sha256=digest(CONTRACT))
     save_npz(ROOT/'tokens.npz',**tokens,contract_sha256=digest(CONTRACT))
     write_once(ROOT/'scoring.json',{'contract_sha256':digest(CONTRACT),'identities':identities,
         'scores_sha256':digest(ROOT/'scores.npz'),'tokens_sha256':digest(ROOT/'tokens.npz')})
@@ -169,6 +171,12 @@ def audit():
             # The authentic mask here denotes an aligned location, never an AI label.
             metrics['aligned_region_auc_diagnostic']={name:float(roc_auc_score(mask.ravel(),dense(name).ravel()))
                 for name in metrics['maps']}
+            metrics['pixel_response_aligned_auc_diagnostic']={name:float(roc_auc_score(mask.ravel(),
+                patch_drift.expand_grid(pixel_maps[f"{row['index']:03d}_{name}_{condition}"],(512,512)).ravel())) for name in metrics['maps']}
+            yy,xx=np.mgrid[:512,:512]
+            center=np.clip(1-np.sqrt(((xx+.5-256)/256)**2+((yy+.5-256)/256)**2),0,1)
+            metrics['radial_center_auc']=float(roc_auc_score(mask.ravel(),center.ravel()))
+            metrics['constant_auc']=.5
             results.append({'index':row['index'],'condition':condition,'metrics':metrics})
     write_once(ROOT/'measurements.json',{'contract_sha256':digest(CONTRACT),'results':results})
     summary={}
@@ -189,6 +197,12 @@ def audit():
             'AI_minus_authentic_auc':float(np.mean([r['ai_composite']-r['authentic'] for r in paired])) if paired else None,
             'AI_minus_classical_edit_auc':float(np.mean([r['ai_composite']-r['classical_edit'] for r in paired])) if paired else None,
             'interpretation':'Within-image aligned-region ranking differences, not REAL-versus-AI classification accuracy.'}
+        accepted=[r for r in group if r['composite_available']]
+        summary[condition]['accepted_parent_ranking_baselines']={'parents':len(accepted),
+            'pixel_response_auc':float(np.mean([r['pixel_response_aligned_auc_diagnostic']['ai_composite'] for r in accepted])) if accepted else None,
+            'radial_center_auc':float(np.mean([r['radial_center_auc'] for r in accepted])) if accepted else None,
+            'constant_auc':.5 if accepted else None,
+            'interpretation':'Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.'}
     result={'state':'E130_patch_drift_audit_complete','contract_sha256':digest(CONTRACT),'summary':summary,
         'parents':16,'accepted_composites':sum(x['passed'] for x in cases),'excluded_generations':sum(not x['passed'] for x in cases),
         'max_duplicate_token_error':parity,'peak_mps_bytes':peak,'seconds':time.monotonic()-start,

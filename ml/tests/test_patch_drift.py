@@ -50,3 +50,11 @@ def test_bad_expansion_and_scores_rejected():
     with pytest.raises(ValueError): expand_grid(np.zeros((3, 3)), (4, 4))
     with pytest.raises(ValueError): median3(np.full((3, 3), float('nan')))
     with pytest.raises(ValueError): expand_grid(np.full((3, 3), 1.1), (6, 6))
+
+
+def test_pixel_response_control_is_exact_rms_without_ai_label():
+    from pixelproof.patch_drift import pixel_response
+    image=np.zeros((28,28,3),np.uint8);perturbed=np.zeros((28,28,3),np.float32)
+    perturbed[:14,:14]=.2
+    np.testing.assert_allclose(pixel_response(image,perturbed),[[.2,0],[0,0]],atol=1e-7)
+    with pytest.raises(ValueError):pixel_response(image,perturbed[:27])

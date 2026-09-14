@@ -56,3 +56,15 @@ def expand_grid(value, shape):
     if value.dtype.kind != 'f' or not np.isfinite(value).all() or np.any((value < 0) | (value > 1)):
         raise ValueError('Finite bounded grid required')
     return np.repeat(np.repeat(value, shape[0]//value.shape[0], axis=0), shape[1]//value.shape[1], axis=1)
+
+
+def pixel_response(image, perturbed, patch_size=14):
+    """Haar pixel-change RMS control on the same grid, not an AI score."""
+    image = np.asarray(image); perturbed = np.asarray(perturbed)
+    if image.ndim != 3 or image.shape[-1] != 3 or image.dtype != np.uint8 or image.shape != perturbed.shape or \
+            type(patch_size) is not int or patch_size < 1 or min(image.shape[:2]) < patch_size or any(x % patch_size for x in image.shape[:2]) or \
+            perturbed.dtype.kind != 'f' or not np.isfinite(perturbed).all() or np.any((perturbed < 0) | (perturbed > 1)):
+        raise ValueError('Matched RGB geometry and finite perturbed pixels on an integer patch grid required')
+    h, w, _ = image.shape
+    error = np.square(image.astype(np.float32)/255. - perturbed).mean(axis=2)
+    return np.sqrt(error.reshape(h//patch_size, patch_size, w//patch_size, patch_size).mean(axis=(1, 3))).astype(np.float32)

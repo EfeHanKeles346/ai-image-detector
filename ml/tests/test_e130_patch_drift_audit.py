@@ -42,8 +42,9 @@ def test_encoder_uses_whole_image_triplet_and_spatial_tokens_without_mask():
             assert kwargs=={'indices':[10],'norm':True,'return_prefix_tokens':False,'intermediates_only':True}
             torch.testing.assert_close(value[0],value[2])
             return [torch.ones((3,384,32,32))]
-    grid,tokens,error=encoded_maps(Model(),torch,Image.new('RGB',(512,512),(100,120,140)),
+    grid,tokens,error,pixel=encoded_maps(Model(),torch,Image.new('RGB',(512,512),(100,120,140)),
                                   torch.device('cpu'),torch.zeros((1,3,1,1)),torch.ones((1,3,1,1)))
     assert grid.shape==(32,32) and tokens.shape==(32,32,384)
     assert error==0
     np.testing.assert_allclose(grid,0,atol=1e-6)
+    np.testing.assert_allclose(pixel,0,atol=1e-6)
