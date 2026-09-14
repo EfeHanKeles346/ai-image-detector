@@ -1,0 +1,472 @@
+{
+  "TRAIN_parents": 30,
+  "TRAIN_views": 90,
+  "by_source": [
+    {
+      "center_minus_local_l2": [
+        8.213446462510385,
+        11.000631155723894,
+        8.353950863337658
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        14.807001184429756,
+        19.83166984721459,
+        15.060299095235294
+      ],
+      "source": "SCIMD-17"
+    },
+    {
+      "center_minus_local_l2": [
+        8.279438561430299,
+        13.456944270969368,
+        9.132123046674284
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        14.925970132645373,
+        24.259851290020716,
+        16.46316894931528
+      ],
+      "source": "e32:csafe-mcsidb-iphone14"
+    },
+    {
+      "center_minus_local_l2": [
+        14.772271937018765,
+        14.060425973699878,
+        14.875642139903855
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        26.521253717834146,
+        26.09195655279441,
+        26.279249136296464
+      ],
+      "source": "e36:device_001"
+    },
+    {
+      "center_minus_local_l2": [
+        14.27868436070558,
+        12.308431970330897,
+        13.92039129833063
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        21.986413560871455,
+        15.174592357587942,
+        21.75829726921084
+      ],
+      "source": "e36:device_002"
+    },
+    {
+      "center_minus_local_l2": [
+        19.136890016868506,
+        18.42399325675306,
+        19.216642671217826
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        34.833503913121575,
+        34.07347309202088,
+        35.21519420176206
+      ],
+      "source": "e36:device_003"
+    },
+    {
+      "center_minus_local_l2": [
+        16.375999386605546,
+        15.771280023658312,
+        15.69009154673395
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        35.61882436229889,
+        28.169991784240192,
+        34.17561198110981
+      ],
+      "source": "e36:device_005"
+    },
+    {
+      "center_minus_local_l2": [
+        12.269823873448892,
+        12.609706028533115,
+        12.475885873668009
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        22.31102564471165,
+        23.727474961991355,
+        22.81914202200442
+      ],
+      "source": "e36:device_009"
+    },
+    {
+      "center_minus_local_l2": [
+        13.693601129519347,
+        14.48745575301952,
+        13.628822597816693
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        30.234382748440126,
+        31.129592430816086,
+        29.63310759785288
+      ],
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "center_minus_local_l2": [
+        11.779033754354042,
+        11.549073552167732,
+        12.357428745089774
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        18.882534985549846,
+        20.602824666326295,
+        20.670659554395893
+      ],
+      "source": "e36:FLUX.2_max"
+    },
+    {
+      "center_minus_local_l2": [
+        14.567870347227998,
+        14.666787861680621,
+        14.852351013788242
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        27.72014575683448,
+        27.36344440825736,
+        28.25982967206472
+      ],
+      "source": "e36:GLM-Image"
+    },
+    {
+      "center_minus_local_l2": [
+        10.397972999489278,
+        9.448556585655288,
+        9.953985434214873
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        22.92119528486485,
+        20.37195892869433,
+        22.59183553632553
+      ],
+      "source": "e36:Qwen-Image-2.0-pro"
+    },
+    {
+      "center_minus_local_l2": [
+        13.546170013257585,
+        13.005440531452432,
+        12.896433472031484
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        20.84707615732589,
+        22.943430470995313,
+        20.818640690398354
+      ],
+      "source": "e36:Seedream-5.0"
+    },
+    {
+      "center_minus_local_l2": [
+        11.646600885982421,
+        13.006778704799876,
+        9.902987615610305
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        23.651476105674952,
+        26.4875159182337,
+        21.472705797033832
+      ],
+      "source": "e36:gpt-image-2"
+    },
+    {
+      "center_minus_local_l2": [
+        15.27055498968826,
+        15.410353762427718,
+        14.926838993307776
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        27.010711713255727,
+        27.990771786474987,
+        27.14401653623917
+      ],
+      "source": "e36:nano-banana-2.0"
+    },
+    {
+      "center_minus_local_l2": [
+        10.173610773696934,
+        8.899491616718356,
+        9.748498153732355
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        20.781236962662643,
+        17.731265674503863,
+        20.18984070662891
+      ],
+      "source": "rr:culture_and_religion"
+    },
+    {
+      "center_minus_local_l2": [
+        7.669191183066978,
+        5.919457569277579,
+        6.118988185879001
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        14.428140143602874,
+        12.988840877929096,
+        11.000205520689315
+      ],
+      "source": "rr:everyday_life"
+    },
+    {
+      "center_minus_local_l2": [
+        10.457947705171486,
+        11.325195865051255,
+        10.603153454867307
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        21.064975202367688,
+        21.76852574648902,
+        22.96946281904674
+      ],
+      "source": "rr:labor_and_production"
+    },
+    {
+      "center_minus_local_l2": [
+        10.66503705584308,
+        8.310077049399284,
+        9.32468823121522
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        19.06553075166765,
+        15.547602205181184,
+        16.68252883368254
+      ],
+      "source": "rr:medical_and_public_health"
+    },
+    {
+      "center_minus_local_l2": [
+        11.373482699749184,
+        11.058910146847607,
+        10.894436160372686
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        23.513821376817543,
+        22.660049388409007,
+        21.784734578076282
+      ],
+      "source": "rr:natural_disasters_and_accidents"
+    },
+    {
+      "center_minus_local_l2": [
+        13.810358799800216,
+        9.721413535126716,
+        17.696968140587977
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        26.35388783747197,
+        18.425671769557802,
+        34.733678198318295
+      ],
+      "source": "rr:political_and_social_events"
+    },
+    {
+      "center_minus_local_l2": [
+        12.356322017755096,
+        13.657411726511524,
+        12.909664930637234
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        22.44697730289929,
+        24.493753559063098,
+        23.53968162695075
+      ],
+      "source": "rr:war_and_conflict"
+    },
+    {
+      "center_minus_local_l2": [
+        15.17162622209476,
+        15.378122203835197,
+        13.6746065327503
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        29.374552085258333,
+        28.76875635176418,
+        24.97141912469412
+      ],
+      "source": "e32:communityforensics-ai-local"
+    },
+    {
+      "center_minus_local_l2": [
+        14.712403888516942,
+        15.749059792639462,
+        14.458643909645224
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        29.26537106115857,
+        29.849889052381833,
+        28.658934176522305
+      ],
+      "source": "e32:csafe-mcsidb-s21"
+    },
+    {
+      "center_minus_local_l2": [
+        15.241423904980193,
+        15.260313232426162,
+        14.48999247453247
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        24.653482919793465,
+        24.936593568094843,
+        23.807437143554704
+      ],
+      "source": "e32:flux2-klein-9b"
+    },
+    {
+      "center_minus_local_l2": [
+        13.467876409710613,
+        14.005930480761302,
+        13.51174467520257
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        30.349783505165497,
+        31.76230770453384,
+        29.987570164533448
+      ],
+      "source": "e32:forchheim-fodb"
+    },
+    {
+      "center_minus_local_l2": [
+        11.489727887462363,
+        12.222088955627624,
+        11.956831849254282
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        20.537961075645878,
+        22.24620780427173,
+        22.110561957315205
+      ],
+      "source": "e32:gpt-image-1"
+    },
+    {
+      "center_minus_local_l2": [
+        9.633434366675418,
+        10.24395654528668,
+        9.570598161446846
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        18.243041402310897,
+        19.670504959323292,
+        18.748377886793023
+      ],
+      "source": "e32:nano-banana-local"
+    },
+    {
+      "center_minus_local_l2": [
+        12.609912643130606,
+        12.019528531404704,
+        13.171780462576846
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        31.066619148606698,
+        32.01971558662995,
+        20.583088111747777
+      ],
+      "source": "e32:nano-banana-pro-ash-local"
+    },
+    {
+      "center_minus_local_l2": [
+        13.714678352562544,
+        12.286509143379604,
+        10.737275556679966
+      ],
+      "label": 1,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        22.80196606236198,
+        21.516609225683535,
+        17.801876307062937
+      ],
+      "source": "e32:qwen-image-2512"
+    },
+    {
+      "center_minus_local_l2": [
+        12.119627887697009,
+        12.57283354432917,
+        12.82886275227758
+      ],
+      "label": 0,
+      "pooled_swap_max_abs_error": 0.0,
+      "role_coordinate_swap_l2": [
+        23.46816120155368,
+        23.236399997074415,
+        24.14334026319027
+      ],
+      "source": "e32:vision-base-native"
+    }
+  ],
+  "center_minus_local_l2_quantiles": {
+    "max": 19.216642671217826,
+    "median": 12.60980933583186,
+    "min": 5.919457569277579
+  },
+  "classifier_scores": 0,
+  "contract_sha256": "ef9b38d42dbb14c7a62b1ae7c806a603d0dbde03a1c42c244b040a538d1405a7",
+  "dev_final_rows_read": 0,
+  "downloads": 0,
+  "fit_allowed": false,
+  "limitations": "A lossy representation property, not a demonstrated cause of any error or a trained reviewer. Historical global crop is resized-center JPEG90, not an uncropped full frame. Only legacy TRAIN raw cache is audited; social/new-cohort raw coverage is not established.",
+  "max_pooled_swap_float32_roundoff": 0.0,
+  "min_role_coordinate_swap_l2": 11.000205520689315,
+  "new_image_reads": 0,
+  "saved_raw_aggregate_exact": true,
+  "state": "E104_score_blind_crop_role_audit_complete"
+}

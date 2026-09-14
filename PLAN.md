@@ -40,20 +40,32 @@ Both E92 and E102 already classify all 256 new MIDD TRAIN photos below the AI th
 in all four conditions. This acquisition expands sensor coverage but does not itself
 establish an improvement on the owner's gallery or an unseen publisher/generator.
 
-## Active E103 — joint REAL/AI worst-group correction (2026-09-14)
+## E103/E104 completed — next: complete crop-role features (2026-09-14)
 
-Code review found that E102's objective rewards lower REAL risk but has no AI loss term;
-its TRAIN report still has 1/4/2/3 AI misses across the four conditions. Before extracting
-new features, run one registered joint worst-class/source/condition objective from E102,
-with unchanged data and representation. Keep all-AI confidence and correct-REAL guards,
-all numeric/source gates, fixed L2/optimizer/cuts and full runtime replay. This tests a
-TRAIN-observed limitation without fitting the known DEV miss. No parameter sweep.
+E103 passes TRAIN/runtime: zero missed AI in all four TRAIN conditions; REAL errors
+2/0/0/0 (clean/assigned/Q75/social). On consumed DEV the binary result is unchanged
+from E102: REAL errors 0/160 and 12/160; AI caught 159/160 in each condition. All 20
+numeric gates pass but the E43 retention deficit persists. No gallery/E49 scoring,
+no promotion. E92 remains served. Do not claim TRAIN perfection as external accuracy.
 
-Protocol and research limitations are in the E103 registration in EXPERIMENTS/HISTORY.
-The conditional DEV runner must retain every E43 and E102 detection and every correct
-E102 REAL decision. A failed stage denies later gallery/E49 evaluation. E92 remains
-served until a separately justified acceptance process; no background promotion.
-No new source photos are needed for this experiment. Freeze and validate before fitting.
+E104 audited 30 hash-selected TRAIN parents / 90 existing views: exact saved-feature
+replay, zero pooled change on center/local swap, nonzero separate role-coordinate
+change in every view. The helper preserves resized-center context and its signed
+contrast to local texture; it is not fitted or used by the demo. Historical "global"
+is a center crop, not a complete-frame input. No causal error claim follows.
+
+Next inventory all eligible raw CLIP chunks before extraction. The old E71 lineage
+records 11,630 parents x 3 conditions = 34,890 raw views; E104 checked only 30 parents.
+If the full old inventory verifies, complete the remaining 15,210 views to retain the
+same 12,525-parent/four-condition population: 11,630 old social views plus all four
+views of 511 first-MIDD, 128 SID and 256 new-MIDD parents. Do not drop sources, labels
+or conditions simply because pooled caches are easier to access. Register exact crop/
+encoder parity, source hashes, resumable chunks and a bounded cost probe before new
+extraction. Only complete audited features permit one new TRAIN representation fit.
+This crop-role feature is separate from any future uncropped-frame transform, which
+would need its own protocol. Keep all AI/REAL retention and consumed-DEV/final rules.
+E104 was audit-only; no extraction or new fit is currently running. No downloads needed
+for this next cache extension if original bodies and existing raw chunks verify.
 
 ## Next controlled model cycle after the E102 result
 

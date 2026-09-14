@@ -1,0 +1,27 @@
+{
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75"
+  ],
+  "contract_sha256": "ef9b38d42dbb14c7a62b1ae7c806a603d0dbde03a1c42c244b040a538d1405a7",
+  "dev_final_rows_read": 0,
+  "downloads": 0,
+  "fit_allowed": false,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e104_context_audit.py": "b829f138ce0aa6d13dcc9470b5a92182cb6eee061273d4f1a66ac8649965b242",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e42_features.py": "cf0e079955293b4faff543a5f35318e88a619af6f698d2d0b6c8a84f05ff8fd7",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_features.py": "7c6b6da630425a8879ccb16f7ee8c32538e6e64405335487ee58e0a33d7a6831",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/e32_candidate.py": "e14ff1044462e49560a98fc3e8697e60738d6b41b0e3e49442dfd025c7832b6a",
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+    "/Volumes/LaCie/pixelproof-datasets/e71/features.json": "c238badd7ef03b1d2ea6b4b978fe5b568354c6325d37b67a33c08561555df6b4",
+    "/Volumes/LaCie/pixelproof-datasets/e71/features_contract.json": "9ffd471967c6b85cdb618ed6714e21844420d4c4b30bd093e295e5ff7ccf26d5",
+    "/Volumes/LaCie/pixelproof-datasets/e71/legacy_inventory.json": "09608d4198148a41579f55c7415b44049285c65307d8c5df56f5a0207e97d9f1"
+  },
+  "limits": "A lossy representation property, not a demonstrated cause of any error or a trained reviewer. Historical global crop is resized-center JPEG90, not an uncropped full frame. Only legacy TRAIN raw cache is audited; social/new-cohort raw coverage is not established.",
+  "metrics": "Exact raw->saved mean/std replay; center/local swap pooled roundoff and signed role coordinate change. Descriptive center-minus-local L2 only; no classifier score or error selection.",
+  "new_image_reads": 0,
+  "selected_parents": 30,
+  "selection": "One SHA256(E104|parent_id)-first TRAIN parent per label/source; all three old conditions.",
+  "state": "E104_score_blind_crop_role_audit_registered"
+}

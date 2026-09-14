@@ -1,0 +1,20 @@
+{
+  "contract_sha256": "ffefc0e08626a37bc45d5d9dad67f2bd01d4741b2be027fa78a34a8ed762f569",
+  "features_sha256": "1201dad5a71f8077c32f3169bac661bf46784a23099e2ffd93279143e1e685be",
+  "image_reads": 0,
+  "metrics_opened": false,
+  "previously_consumed_by": [
+    "E70",
+    "E71",
+    "E83",
+    "E86",
+    "E92",
+    "E102"
+  ],
+  "prior_reference_max_error": 0.0,
+  "reference_decision_changes": 0,
+  "scores_sha256": "454681279e146ca7cd55cce33c4aeb7ab1a3eea9114cc94258edb2b8a82d3900",
+  "seconds": 6.480944416951388,
+  "state": "E103_DEV_scores_locked_before_metrics",
+  "views": 640
+}

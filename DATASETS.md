@@ -2800,3 +2800,18 @@ No dataset download or new source admission. Reuse the identical E102 TRAIN popu
 Roles, licences and original-byte counts remain unchanged. E103 tests a joint REAL/AI
 objective; derivatives are not new downloaded photographs. Existing DEV/gallery/CAL
 records stay excluded from fitting. E103 results will be logged after the frozen run.
+
+
+E103 completion: no new photographs or bytes downloaded. All 256 added MIDD originals
+remain TRAIN-only. The joint objective clears missed AI on TRAIN but leaves consumed
+DEV binary results unchanged from E102 and fails the same E43 retention requirement.
+E104 is a score-blind audit of previously downloaded legacy TRAIN raw CLIP feature chunks;
+no new source acquisition, licence change, image decoding or role reassignment.
+
+
+E104 completed using 30 previously stored TRAIN parent chunks / 90 views only. Exact
+raw/aggregate identity checks passed. Download count and bytes remain zero for E103–E104;
+no source photos changed roles and no gallery/DEV/final images were read. The proposed
+next raw-feature cache extension uses existing original images, pending complete inventory
+and a separately registered extraction cost/parity probe. Feature vectors are not new
+source photographs and must not be counted as additional downloaded data.

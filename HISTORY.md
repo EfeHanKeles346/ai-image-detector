@@ -9109,3 +9109,88 @@ E103 contract frozen before fitting: SHA256 `10f308eadc24602a2a7bf317e4ac432d013
 All 921 Python tests pass in 18.28s with the existing Starlette/httpx warning.
 One E103 fit started on AC power, two CPU threads, offline; no new image features or
 downloads. Previous commit65e33c2 passed both GitHub Actions jobs (run34862651261).
+
+
+### E103 TRAIN/runtime completed — 2026-09-14
+
+One fit passed all TRAIN and full batch8 runtime gates in 195.537s; candidate SHA256 `c78bbeae1ecd9328a0955c27eb378d221d1b3243a9f7c3f9bbd94c6edaa4d174`.
+No newly misclassified E102 REAL observations or lost AI; all 18,380 AI logit constraints
+remain satisfied within the fixed tolerance. New MIDD sensor false AI stays 0/256 in
+all four conditions. TRAIN confusion (FP/FN) by condition:
+- assigned_transport: 0 REAL false AI / 7,930 REAL; 0 missed AI / 4,595 AI.
+- clean: 2 REAL false AI / 7,930 REAL; 0 missed AI / 4,595 AI.
+- q75: 0 REAL false AI / 7,930 REAL; 0 missed AI / 4,595 AI.
+- social_q75: 0 REAL false AI / 7,930 REAL; 0 missed AI / 4,595 AI.
+
+These are fitting-population results, not external accuracy. Register one consumed DEV
+comparison next, without modifying the trained candidate or any acceptance gate.
+921 local Python tests and both GitHub jobs pass for1269a66 (run34864358329).
+
+
+E103 consumed DEV comparison frozen after TRAIN/runtime pass, contract SHA256 `ffefc0e08626a37bc45d5d9dad67f2bd01d4741b2be027fa78a34a8ed762f569`.
+Score all 640 existing cached views once and lock them before metrics. No encoder/image
+read, no fresh-final claim and no threshold/weight changes. Later stages remain gated.
+
+
+### E103 consumed DEV complete — TRAIN improvement did not change binary DEV outcomes
+
+The locked 640-view consumed comparison has exact E43 score replay. E103 retains all
+E102-caught AI and all previously correct E102 REAL decisions. Original REAL false AI
+is 0/160, social Q75 is 12/160, and AI caught is 159/160 in each condition: identical
+binary outcomes to E102. All 20 numeric gates pass, but one E43-caught original AI is
+still missed, so the full DEV screen FAILS. No gallery/E49 or final scoring, no promotion.
+Candidate SHA256 `c78bbeae1ecd9328a0955c27eb378d221d1b3243a9f7c3f9bbd94c6edaa4d174` is preserved.
+
+Original scientific selective uncertain rows increase from 1 to 2; covered accuracy
+rises to 100% only on the 318 covered observations. This is NOT 100% overall accuracy,
+a restored binary AI detection, or a measurement of the demo's guarded display. The
+social selective result is unchanged. No claim of fewer gallery abstentions. Despite
+zero missed TRAIN AI and improved TRAIN risks, this fit establishes no binary DEV gain.
+Do not repeat objective/threshold sweeps against the same consumed item. E92 stays served.
+
+### E104 planned — score-blind crop-role/cache audit
+
+Code inspection finds that the three crop vectors (resized-center context plus two
+texture crops) are pooled by mean/std. This is symmetric in crop order and cannot
+retain which vector came from context. Further, the historical name "global" refers
+to a short-side resize followed by a center crop/JPEG90; it is not a complete frame.
+These are implementation properties, not established causes of the known model errors.
+
+Before expensive encoder extraction, audit one SHA256(E104|parent_id)-first TRAIN parent
+per label/source from the complete legacy 11,630-parent E71 cache, all three existing
+conditions. Selection ignores scores. Verify bound chunk/raw/aggregate hashes; record
+center/local-swap pooling roundoff and the change in separate center plus signed
+center-minus-local coordinates. No head, image, DEV/gallery/final access or fit.
+Synthetic tests verify pooling's information loss, local-slot invariance, center-crop
+blindness to distant frame edges, score-blind TRAIN selection and invalid-input rejection.
+
+This prepares a separate crop-role feature helper; it is not yet a trained reviewer.
+The old three-condition CLIP raw cache can be audited without new downloads or encoders.
+Complete social/new-cohort raw coverage is not established. Any future context model
+must keep the same eligible population and both labels/conditions, register its recipe,
+and pass retention/independent evaluation; a new feature is not an accuracy guarantee.
+
+
+### E104 completed — recoverable crop-role signal, no classifier claim (2026-09-14)
+
+All 30 hash-selected TRAIN label/source representatives / 90 existing views pass exact
+raw-to-saved aggregate replay. Swapping center-context and one local crop changes none
+of the pooled float32 features (maximum difference 0), while separate crop-role
+coordinates change on every selected view (minimum L2 11.0002). Center-minus-local L2
+ranges 5.9195–19.2166, median 12.6098, in unnormalized CLIP coordinates; these are feature
+differences, not accuracy, confidence or significance statistics. Receipt:
+evidence/e104_context_audit.json, contract SHA256
+ef9b38d42dbb14c7a62b1ae7c806a603d0dbde03a1c42c244b040a538d1405a7.
+
+The new context_coordinates helper retains resized-center features and their signed
+contrast to the mean of the two local crops. Historical encoders/aggregates and all
+models stay untouched. This supplies a concrete next representation hypothesis rather
+than another objective sweep, but cannot establish the cause of the DEV/gallery errors.
+No image, encoder, detector, new fit or protected-data operation occurred in E104.
+Only 30 parent chunks were inspected; complete current-cohort raw availability still
+requires inventory. This is not a new full-frame model or a trained second reviewer.
+
+
+E103/E104 engineering verification: full Python suite925 passed in16.89s; one existing
+Starlette/httpx deprecation warning. No web/serving change. E103 code commit1269a66
+passed both GitHub jobs (34864358329). Final evidence/documentation commit follows.
