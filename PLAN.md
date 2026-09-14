@@ -6768,3 +6768,15 @@ finish. It registers DEV only after complete passing TRAIN guards; both-failed r
 produce an explicit skip. After registration, it temporarily stops only the verified
 local E92 API, runs the paired640-view consumed screen, records all outcomes and restores
 E92. No recurring scheduler, new candidate promotion or independent-final access.
+
+## Model2 traceable inpainting pilot — E118/E119 design
+
+After E117 excludes506 protected CocoGlide ancestries, use existing admitted MIDD TRAIN originals for a small local engineering pilot. E118 acquires the pinned public SD1.5-inpainting mirror (revision8a4288a76071f7280aedbdb3253bdb9e9d5d84bb), four fp16 safetensors and required configuration/tokenizer files, retaining its safety checker. It does not modify the active Model1 environment or use the GPU. Register E119 separately before generation:16 score-blind native originals, two per eight admitted sensors; exact parent/scene/source/licence lineage; deterministic off-center masks; authentic and traditional-edit controls; matched geometry/encoding; record raw generator outputs and context-preserving composites separately. Never relabel globally VAE-changed background as untouched. All descendants remain TRAIN research material, not CAL/DEV/final. Freeze parameters before pixels and keep failed generations without score-selected replacements. Run the GPU probe only after the active Model1 pipeline finishes.
+
+The generator is an old community mirror, not an official current Runway release or evidence of modern-editor coverage. The [model card](https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-inpainting) documents512px masked inpainting and lossy autoencoding. [Diffusers MPS guidance](https://huggingface.co/docs/diffusers/optimization/mps) motivates batch1 and attention slicing on this Mac. Pin software separately; do not upgrade the running detector environment. A successful preparation/probe requires a later spatial-head experiment and separately sourced, parent/generator-held-out validation.
+
+### E118/E119 execution checkpoint
+
+E118 assets completed with exact publisher identities. E119 contract `80721e3928d94f618ce4525e50f7f3b51de04bdd15ec31f0c36217120ea85e80` and16-parent inputs are frozen. Register fixed30-step/batch1/MPS-fp16 generation, original scheduler, guidance7.5, strength1, fixed generic prompt and per-parent seeds119000–119015. Preserve safety checker, raw output, composited output and mask/control provenance. Bound one run to2400seconds and8GiB MPS. No repeated generation after failures without review.
+
+The single dependent `run_e119_after_model1.py` process waits for both current Model1 workflows to finish and restore E92. A scientific both-TRAIN-failed skip permits the independent engineering pilot; an execution failure or API-restoration failure stops it. It temporarily stops only a verified E92 process and restores it in the finalizer. This is a finite dependent job, not a recurring scheduler. A passing engineering probe still needs registered spatial learning and independent source/editor evaluation; it does not make Model2 deployable.

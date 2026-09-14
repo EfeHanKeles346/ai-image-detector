@@ -1,0 +1,43 @@
+{
+  "acceptance": "All16 attempted, unchanged source/contract/runtime, finite nonblank512 RGB output, safety check negative, >=95% masked pixels changed, composite background exactly original. No detector scores; generator feasibility is not semantic quality or detector performance.",
+  "all_descendants_role": "TRAIN_RESEARCH_PILOT",
+  "contract_sha256": "80721e3928d94f618ce4525e50f7f3b51de04bdd15ec31f0c36217120ea85e80",
+  "controls": "Unmodified authentic input plus GaussianBlur(radius6) inside the same mask, composed by the identical hard mask. Both are AI-negative; they are not equivalent to an unedited authenticity label. This isolates some compositing/mask shortcuts.",
+  "downloads_during_generation": 0,
+  "generation": {
+    "attention_slicing": true,
+    "batch_size": 1,
+    "device": "mps",
+    "dtype": "float16",
+    "guidance_scale": 7.5,
+    "prompt": "a natural photograph, consistent lighting and texture",
+    "repository": "stable-diffusion-v1-5/stable-diffusion-inpainting",
+    "revision": "8a4288a76071f7280aedbdb3253bdb9e9d5d84bb",
+    "safety_checker": true,
+    "scheduler": "pinned repository scheduler configuration",
+    "seed_base": 119000,
+    "steps": 30,
+    "strength": 1.0
+  },
+  "image_geometry": "EXIF transpose to RGB then exact native center512 crop, no resize. All authentic/classic/AI paired outputs use this same geometry and lossless PNG encoding.",
+  "licence": "MIDD CC BY-NC-SA4.0 research originals; preserve attribution and share-alike terms for derivatives. Generator CreativeML OpenRAIL-M retained by E118. No image/weight publication.",
+  "limits": "16 already-used TRAIN parents, one old editor, correlated sensor scenes and fixed prompt. This is an engineering pilot. No calibration, independent evaluation, universal claim or automatic training/serving admission.",
+  "mask": "Alternating rectangle/ellipse; deterministic parent-seeded position and160..240 side lengths with16px margins. Store intended mask separately from zero AI targets of authentic/classic controls.",
+  "max_seconds": 2400,
+  "mps_limit_bytes": 8589934592,
+  "parent_role": "TRAIN",
+  "parents": 16,
+  "raw_output": "Retain full raw inpainting output and measure out-of-mask pixel drift. Only the separately labelled hard composite has guaranteed unchanged background. Do not treat raw output as localized ground truth.",
+  "selection": "First two distinct existing scene_group IDs per eight admitted MIDD sensors, ranked by SHA256(E119|parent_id). No images/scores used; no replacements for generation/quality failure. Groups are not proven independent scenes.",
+  "source_manifest_sha256": "428f24f690ae6278dc33eebeea807466266ed0b0feb10641348ef6d592af028a",
+  "state": "E119_TRACEABLE_TRAIN_PILOT_registered",
+  "versions": {
+    "Pillow": "12.3.0",
+    "diffusers": "0.40.0",
+    "numpy": "2.5.1",
+    "safetensors": "0.8.0",
+    "torch": "2.13.0",
+    "transformers": "5.15.0"
+  },
+  "wheel_sha256": "5b5da7c3ddb62152fa4afc577f02e050af688c797375c34fb2d01006da3f3541"
+}

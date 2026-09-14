@@ -1,0 +1,123 @@
+{
+  "contract_sha256": "b07af76fb6961c63482c7163e703676808b8c83d6c617fee4895ad1c5318890c",
+  "expected_asset_bytes": 2742261613,
+  "files": [
+    {
+      "blobId": "65e886af144b9d8bb5bbb4ca040d2b013fd45f12",
+      "rfilename": "README.md",
+      "size": 15107
+    },
+    {
+      "blobId": "1dda6689b6bed16a8b69f3df22fdc06983de68da",
+      "rfilename": "model_index.json",
+      "size": 548
+    },
+    {
+      "blobId": "5294955ff7801083f720b34b55d0f1f51313c5c5",
+      "rfilename": "feature_extractor/preprocessor_config.json",
+      "size": 342
+    },
+    {
+      "blobId": "9cfcfb854009626cec64993a947316d42eb255ea",
+      "rfilename": "safety_checker/config.json",
+      "size": 4777
+    },
+    {
+      "blobId": "d802a3abeacaea6d76e2c6c62b20a6b59372597c",
+      "lfs": {
+        "pointerSize": 134,
+        "sha256": "08902f19b1cfebd7c989f152fc0507bef6898c706a91d666509383122324b511",
+        "size": 608018440
+      },
+      "rfilename": "safety_checker/model.fp16.safetensors",
+      "size": 608018440
+    },
+    {
+      "blobId": "3a6a9a51b8ea8eb2b0c55e2811e608f2eca3ffd2",
+      "rfilename": "scheduler/scheduler_config.json",
+      "size": 313
+    },
+    {
+      "blobId": "4d3e873ab5086ad989f407abd50fdce66db8d657",
+      "rfilename": "text_encoder/config.json",
+      "size": 617
+    },
+    {
+      "blobId": "1ee9520565624366f70ff4ff21b8e79cc70cfb22",
+      "lfs": {
+        "pointerSize": 134,
+        "sha256": "77795e2023adcf39bc29a884661950380bd093cf0750a966d473d1718dc9ef4e",
+        "size": 246144864
+      },
+      "rfilename": "text_encoder/model.fp16.safetensors",
+      "size": 246144864
+    },
+    {
+      "blobId": "76e821f1b6f0a9709293c3b6b51ed90980b3166b",
+      "rfilename": "tokenizer/merges.txt",
+      "size": 524619
+    },
+    {
+      "blobId": "2c2130b544c0c5a72d5d00da071ba130a9800fb2",
+      "rfilename": "tokenizer/special_tokens_map.json",
+      "size": 472
+    },
+    {
+      "blobId": "5ba7bf706515bc60487ad0e1816b4929b82542d6",
+      "rfilename": "tokenizer/tokenizer_config.json",
+      "size": 806
+    },
+    {
+      "blobId": "469be27c5c010538f845f518c4f5e8574c78f7c8",
+      "rfilename": "tokenizer/vocab.json",
+      "size": 1059962
+    },
+    {
+      "blobId": "432f2ef043de459ffb66e7e49d22131fc596a5d5",
+      "rfilename": "unet/config.json",
+      "size": 748
+    },
+    {
+      "blobId": "2049bec0e66d389318e2d419997b394fe6a20e5c",
+      "lfs": {
+        "pointerSize": 135,
+        "sha256": "24b788b4a777748377cc20364eea4ae113c8c42f4468c16bc8c02fdae5492af9",
+        "size": 1719154104
+      },
+      "rfilename": "unet/diffusion_pytorch_model.fp16.safetensors",
+      "size": 1719154104
+    },
+    {
+      "blobId": "25c63fb3a9303446a3c9bae3a90afc818641984f",
+      "rfilename": "vae/config.json",
+      "size": 552
+    },
+    {
+      "blobId": "6dc048fdbcb71764cbd7af4ec6eb2a0e8a7bfbb2",
+      "lfs": {
+        "pointerSize": 134,
+        "sha256": "4fbcf0ebe55a0984f5a5e00d8c4521d52359af7229bb4d81890039d2aa16dd7c",
+        "size": 167335342
+      },
+      "rfilename": "vae/diffusion_pytorch_model.fp16.safetensors",
+      "size": 167335342
+    }
+  ],
+  "generation_allowed_by_this_contract": false,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e118_inpaint_assets.py": "ed1c2d8a565afb15151884e668ae5532bca4a8d4a9d25497038bfcf3b05986ea",
+    "/Volumes/LaCie/pixelproof-datasets/e118/CreativeML-OpenRAIL-M.txt": "be351ebe7ac01bcdbb018639aadcfd38f136b7dc3f2a3d4d3a24db51d1b210ef"
+  },
+  "licence": "CreativeML OpenRAIL-M; pinned author licence retained locally. Underlying image terms remain separate.",
+  "licence_bytes": 14385,
+  "licence_url": "https://huggingface.co/spaces/CompVis/stable-diffusion-license/resolve/14d42d09bffd871b1666a084fc954a50cff72ac0/license.txt",
+  "limits": "Asset acquisition only, no generation or detector training. Single old generator cannot establish modern/editor-held-out generalization. Generator pretraining overlaps are not fully auditable; no independent test claim.",
+  "max_seconds": 1800,
+  "model_scores": 0,
+  "promotion_allowed": false,
+  "provenance": "Community mirror of the deprecated Runway repository, explicitly unaffiliated with Runway; not a new 2026 generator. Pin all four safetensors LFS SHA256 values and small Git blobs. Do not load pickle or remote code.",
+  "purpose": "Create a reproducible 512px local inpainting feasibility pilot from already admitted TRAIN-only originals, after active Model1 work. Recover every original/mask/prompt/seed relationship ourselves because compiled Model2 ancestry is inadequate.",
+  "repository": "stable-diffusion-v1-5/stable-diffusion-inpainting",
+  "revision": "8a4288a76071f7280aedbdb3253bdb9e9d5d84bb",
+  "state": "E118_public_inpainting_assets_registered"
+}

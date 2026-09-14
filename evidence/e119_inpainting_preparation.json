@@ -1,0 +1,22 @@
+{
+  "contract_sha256": "80721e3928d94f618ce4525e50f7f3b51de04bdd15ec31f0c36217120ea85e80",
+  "detector_scores": 0,
+  "generated_images": 0,
+  "mask_fraction_range": [
+    0.1009674072265625,
+    0.16994476318359375
+  ],
+  "parents": 16,
+  "prepared_sha256": "2721b06c3e2ab866caee8fa87fc5b2ff36b756422afe0399c6a19d5bc26d5695",
+  "source_counts": {
+    "MIDD:Hynix_SL846": 2,
+    "MIDD:ISOCELL_3P9": 2,
+    "MIDD:ISOCELL_GN1": 2,
+    "MIDD:ISOCELL_HM3": 2,
+    "MIDD:OmniVision_OV32A": 2,
+    "MIDD:OmniVision_OV64B": 2,
+    "MIDD:Sony_IMX258": 2,
+    "MIDD:Sony_IMX766": 2
+  },
+  "state": "E119_paired_inputs_prepared"
+}

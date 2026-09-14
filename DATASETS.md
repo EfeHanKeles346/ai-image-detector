@@ -2951,3 +2951,15 @@ under the current protected-parent policy. The corpus remains consumed diagnosti
 material. This is a lineage overlap finding, not a claim that the historical crop model
 was necessarily trained on those exact images. No Model2 fitting or protected pixel
 reads occurred in E117. Receipt: `evidence/e117_coco_ancestry.json`.
+
+## E118 — generator assets for traceable Model2 research pairs (2026-09-14)
+
+Why: recovered CocoGlide original identities overlap protected parents, while DiffSeg base ancestry is unresolved. A local inpainting pilot can preserve known TRAIN-only parent and mask provenance. Acquire only16 required files from the public `stable-diffusion-v1-5/stable-diffusion-inpainting` mirror at revision `8a4288a76071f7280aedbdb3253bdb9e9d5d84bb` (under3GiB, exact bytes in the contract). Download four fp16 safetensors with publisher LFS SHA256 checks, required tokenizer/configs with Git blob checks, and retain the safety checker. No pickle or remote repository code is loaded. Resumable downloads validate final full hashes.
+
+This [community mirror](https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-inpainting) explicitly disclaims affiliation with Runway. Retain the [CreativeML OpenRAIL-M licence](https://huggingface.co/spaces/CompVis/stable-diffusion-license) at licence-space revision14d42d09bffd871b1666a084fc954a50cff72ac0,14385bytes. Model assets are for a local research pilot; original MIDD image terms remain CC BY-NC-SA4.0. Record all derived assets outside Git. No generator or input-image upload, paid API, automatic publication or new evaluation-role admission. Asset download is not generated data or a detector improvement; actual byte totals follow the receipt.
+
+### E118 acquisition / E119 preparation outcome
+
+Downloaded and verified all16 model files:2,742,261,613bytes transferred in344.59seconds, plus14,385bytes of the pinned licence text and5,911,654bytes for the isolated Diffusers0.40.0 wheel (SHA256 `5b5da7c3ddb62152fa4afc577f02e050af688c797375c34fb2d01006da3f3541`). The wheel matches PyPI metadata; it is installed only under ignored `ml/work/model2-runtime/site-packages`, leaving the active detector environment untouched. E118 contract `b07af76fb6961c63482c7163e703676808b8c83d6c617fee4895ad1c5318890c`; public asset receipt `evidence/e118_inpaint_assets.json`.
+
+E119 prepared16 existing native MIDD TRAIN originals, two per eight sensors, without downloading original images or using detector scores. Source manifest, parent/scene identities, source-body hashes, exact512px crop, deterministic mask, same-mask GaussianBlur6 control and zero AI targets are retained locally. Mask fractions10.10–16.99%; all variants remain research TRAIN descendants. Preparation SHA256 `2721b06c3e2ab866caee8fa87fc5b2ff36b756422afe0399c6a19d5bc26d5695`. Generation is registered but pending Model1 GPU release; no generated pairs are claimed yet.

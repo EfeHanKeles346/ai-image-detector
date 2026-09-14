@@ -8227,3 +8227,9 @@ published layouts; parent/member numeric IDs must still agree, and non-val2017 p
 are rejected. No threshold, cohort selection or protected image content changed.
 
 Implementation checkpoint:955 Python tests pass with one existing Starlette/httpx warning; pip check and whitespace checks pass. E112 remains active, at11,800/12,525 parents with zero aggregate error. This checkpoint does not report a completed fit or DEV pass. E114 awaits the complete paired TRAIN reports.
+
+## E118/E119 preparatory hypothesis
+
+CocoGlide exact ancestry overlap motivates a traceable TRAIN-only generation pilot, not reusing protected COCO parents. SD1.5 inpainting is selected for a bounded512px Mac feasibility probe, not novelty or universal coverage. Pin weights, original roles, masks and generation configuration; compare authentic/traditional-edit controls with generated composites and preserve raw output for out-of-mask drift measurement. No detector result exists at this preparation stage. Keep current Model1 dependencies immutable during E112/E113/E114.
+
+E118 asset acquisition completed in344.59s; all four safetensors match publisher SHA256 and small files match Git blobs. E119 preparation completed16/16 groups with10.10–16.99% mask coverage, preserving original TRAIN roles and source hashes. Tests cover exact unchanged composite background, identical masking of AI/non-AI edits, deterministic selection, rejection of evaluation-role originals, corrupted asset bodies and dependency/API failure gates. Full suite962 passed; no detector/generator scores at this preparation checkpoint. Fixed generation is queued after Model1 completion; no claim of model improvement from data preparation.
