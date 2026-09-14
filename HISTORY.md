@@ -8458,3 +8458,23 @@ Contract SHA256 5660da2ba072eab7f5ce55a9713b33735aa29c6d353ef502934647b536635477
 No dataset/model/package download. AC power is now observed at100%; external disk
 has347GiB free. Start the one fixed100-epoch cached-feature fit; no new feature
 extraction, test-set access or recipe change. E92 is still unregistered pending E91.
+
+
+### 2026-09-14 — E91 complete offline; register E92 next
+
+E91 completed100 fixed epochs on49,076 TRAIN views in77.851s.
+Weighted TRAIN BCE 0.695792679099→5.34038716076e-09.
+Previous E86 four-view input replay: {'decision_changes_by_cut': {'0.011505939625203613': 0, '0.07940196245908739': 0}, 'max_score_error': 0.0, 'passed': True}.
+Saved latent/coordinates exact; fixed-input batch8 error0.
+Feature shape12269x4x64, artifact SHA256340cf7e305a18a2acf8abf587066d1af669d0bf8d1e7b822b59a84a29e593ac0.
+Downloads0, new image inference0, DEV/final rows read0. Training loss is not a quality
+or generalization result. Proceed to separately freeze the unchanged-objective E92
+constrained head; require all120 TRAIN metrics, population/retention/runtime checks.
+
+
+### 2026-09-14 — E92 frozen before fit
+
+E92 registered for12,269 parents/49,076 views, all18,380 AI views protected.
+Contract SHA25637a630a00a4693d1c5fa581dffcc8a8c17569784ca8fb196c43b66d197f7f972. No input/scaler/network refit in this stage,
+zero450 head, unchanged E86 minimax objective/optimizer/thresholds. Offline fit starts
+from verified E91. A TRAIN or runtime failure forbids DEV scoring.

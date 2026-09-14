@@ -1,0 +1,82 @@
+{
+  "TRAIN_views": 49076,
+  "ai_views": 18380,
+  "artifact_sha256": "340cf7e305a18a2acf8abf587066d1af669d0bf8d1e7b822b59a84a29e593ac0",
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "5660da2ba072eab7f5ce55a9713b33735aa29c6d353ef502934647b536635477",
+  "detector_quality_claim": false,
+  "dev_final_rows_read": 0,
+  "downloads": 0,
+  "epochs": 100,
+  "feature_sha256": "3ea5dc14bfe490edfeedec12b31818337877799c05bc9e4f8003e7fd7e22608e",
+  "feature_shape": [
+    12269,
+    4,
+    64
+  ],
+  "final_weighted_BCE": 5.340387160755018e-09,
+  "fixed_input_batch8_max_error": 0.0,
+  "initial_weighted_BCE": 0.6957926790991568,
+  "loss_trace": [
+    {
+      "epoch": 10,
+      "weighted_BCE": 0.0007124702940901724
+    },
+    {
+      "epoch": 20,
+      "weighted_BCE": 7.894196243145905e-05
+    },
+    {
+      "epoch": 30,
+      "weighted_BCE": 1.8672954841183737e-05
+    },
+    {
+      "epoch": 40,
+      "weighted_BCE": 5.381062580479436e-06
+    },
+    {
+      "epoch": 50,
+      "weighted_BCE": 1.6737896717466357e-06
+    },
+    {
+      "epoch": 60,
+      "weighted_BCE": 5.406903063599108e-07
+    },
+    {
+      "epoch": 70,
+      "weighted_BCE": 1.7791241430514934e-07
+    },
+    {
+      "epoch": 80,
+      "weighted_BCE": 5.7952852144604494e-08
+    },
+    {
+      "epoch": 90,
+      "weighted_BCE": 1.858240009379654e-08
+    },
+    {
+      "epoch": 100,
+      "weighted_BCE": 5.340387160755018e-09
+    }
+  ],
+  "new_image_inference": 0,
+  "previous_four_view_input_replay": {
+    "decision_changes_by_cut": {
+      "0.011505939625203613": 0,
+      "0.07940196245908739": 0
+    },
+    "max_score_error": 0.0,
+    "passed": true
+  },
+  "real_views": 30696,
+  "seconds": 77.85059258306865,
+  "serialized_coordinates_exact": true,
+  "serialized_latent_exact": true,
+  "state": "E91_supervised_TRAIN_representation_complete",
+  "weights_sha256": "19f8fe44286a476486443b799dda704484924cf9b09fcc87cf447ddeaf5ceaa4"
+}

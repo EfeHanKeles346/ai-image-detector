@@ -50,9 +50,10 @@ The same newly missed GPT original persists; Q75 pooled REAL, worst REAL source 
 covered-accuracy guards fail. Preserve the rejected candidate; E49 stays unopened.
 
 E89 features are complete for all128 previously selected/audited SID TRAIN parents
-under all4 conditions. E91/E92 implementation and856 tests pass. E91 is now registered
-for49,076 cached TRAIN views and is starting its fixed100-epoch fit on verified AC.
-E92 remains unregistered until E91 completes. GitHub CI repair is verified on run34749560334 (web and Python success), and the
+under all4 conditions. E91/E92 implementation and856 tests pass. E91 completed its fixed100-epoch representation on49,076 cached TRAIN views.
+All replay/serialization checks pass, with no downloads or DEV/final reads.
+E92 is separately registered and its constrained fit is starting;120 TRAIN gates
+and runtime/AI guards remain mandatory. GitHub CI repair is verified on run34749560334 (web and Python success), and the
 standalone Turkish report is being consolidated into these three English records.
 The current offline continuation executes one separately registered data-coverage extension
 with the same E85 architecture/seed/optimizer and E86 constrained-head objective.
