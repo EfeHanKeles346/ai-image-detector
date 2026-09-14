@@ -1,0 +1,11 @@
+{
+  "body_bytes": 3323883735,
+  "contract_sha256": "0f67891068521533355ec39a90e3d4b396c14bb77b42fff9fc29a77745703729",
+  "images": 256,
+  "limits": "MIDD already belongs to research TRAIN. New sensors are not independent publishers. Original means publisher original noisy capture, not unprocessed RAW. No denoised/test data. Pixel/protected/scene audit and separate experiment required before TRAIN admission.",
+  "model_scores": 0,
+  "range_bytes_this_execution": 3310702089,
+  "receipt_sha256": "6dab93cf4bddac6f670f927e8d53ff217efd9ba4c5bf80f6a1f9261f8f5bfacc",
+  "state": "E99_download_complete_quarantine",
+  "training_allowed": false
+}

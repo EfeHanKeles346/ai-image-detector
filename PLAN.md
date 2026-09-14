@@ -19,7 +19,17 @@ versus completed files/bytes, integrity, local storage, failures and next admiss
 Historical entries remain historical. No raw data, private gallery information or model
 weights in Git; small code/evidence commits and pushes remain authorized, never forced.
 
-## E98 preparation — role audit and targeted data acquisition (2026-09-14)
+## Current E98–E102 checkpoint — acquisition complete, features running (2026-09-14)
+
+E98 role/lineage audit completed without TRAIN/CAL overlap in the mapped identities.
+E99 downloaded256 originals/3,323,883,735B from four additional MIDD sensors. E100 decoded
+and admitted all256 research TRAIN parents after152,124-reference protection checks,
+including the full206-unique owner gallery; no overlaps, failures or removals. See
+DATASETS.md for source, rationale, licence, exact totals and receipt hashes.
+E101 four-condition frozen-encoder extraction is running; E102 constrained correction
+and its conditional consumed-DEV runner are prepared but not yet frozen/fitted. The
+local E92 API was paused for GPU memory and must be restored when extraction finishes.
+No new model is promoted. Acquisition/admission success does not establish accuracy.
 
 Before fitting a complementary reviewer, audit actual E92 TRAIN identities against old
 CAL manifests and identify whether a separately grouped eligible CAL pool exists. A
@@ -6439,3 +6449,23 @@ independence unverified. Pinned Pillow/NumPy runtime, one CPU decode worker, AC 
 reserve. Downloaded256 is never treated as256 independent scenes or admitted examples.
 Output separate E100 audit and TRAIN manifest only if checks complete; no E92 training,
 CAL reassignment, AI-retention claim or demo promotion in the admission operation.
+
+
+### E102 correction protocol — registered before new TRAIN scores or fit
+
+One data-coverage correction on the frozen E92 representation, not a new confidence
+calibrator. Append the complete256-parent E100 cohort after its E101 cache; retain all
+12,269 old TRAIN parents and4 conditions (50,100 views;18,380 AI views). No representation
+refit or source/score filtering. Initialize450 delta weights to zero; baseline logits are
+E92 logits. Reuse E81 worst-REAL-source epigraph loss and all-AI nonnegative logit-shift
+constraints, preserving every reference-correct REAL binary decision. SameL2=.01,
+SLSQP200 iterations/ftol1e-9, no hyperparameter sweep; CPU2 threads,1-hour fit budget.
+
+Replay all frozen E92 TRAIN numeric reports before optimization. Preserve every previous
+source/population and numeric gate; additionally require new-sensor pooled REAL FPR<=10%,
+worst new sensor<=20%, combined REAL<=10% in each condition, all10 numeric gates on the
+expanded population, solver success/constraint error<=1e-8, no lost E92-caught AI/new REAL
+errors and full batch8 runtime replay<=1e-6/zero cut crossings. If training fails, lock
+the failed result and do not score DEV/gallery. If it passes, separately register one
+consumed E66/gallery paired comparison with E92 and E43 retention; no automatic promotion.
+No existing CAL, DEV, gallery, E49 or final data in fitting. No calibrated probabilities.

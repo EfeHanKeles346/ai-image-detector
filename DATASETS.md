@@ -2702,16 +2702,16 @@ metadata or image acquisition is claimed. E98 current metadata transfer: CSAFE a
 <!-- E99-LIVE-START -->
 ### E99 current download snapshot
 
-Updated UTC: 2026-09-14T14:55:39+00:00. **INCOMPLETE — transfer/checks not finished**.
+Updated UTC: 2026-09-14T14:56:37+00:00. **COMPLETE — quarantined, admission separate**.
 
 | Sensor | Requested files | Verified files | Verified body bytes |
 |---|---:|---:|---:|
 |ISOCELL_GN1|64|64|913,893,564|
 |ISOCELL_HM3|64|64|729,865,949|
-|OmniVision_OV64B|64|53|825,703,172|
-|Sony_IMX766|64|52|586,679,288|
+|OmniVision_OV64B|64|64|974,869,735|
+|Sony_IMX766|64|64|705,254,487|
 
-Total: 233/256 files; 3,056,141,973 verified body bytes.
+Total: 256/256 files; 3,323,883,735 verified body bytes.
 Counts use exact selected receipt paths; AppleDouble sidecars/partial files do not count.
 This snapshot verifies receipt binding and current file size; original CRC/SHA checks are
 performed by the acquisition worker and are rechecked during admission. Image bodies stay
@@ -2725,3 +2725,39 @@ R1b CAL5,333 remains historically consumed, and C3 CAL4,534 is an overlapping ea
 manifest. No images were downloaded for this role audit. Do not sum both CAL counts
 or call either a newly independent test. No role admission or model fit follows solely
 from an exact-identity pass. Receipts are evidence/e98_{role,lineage}_audit.json.
+
+
+### E99 download complete — 2026-09-14
+
+All256/256 original MIDD JPEGs verified,64 per registered sensor. Stored source bodies
+3,323,883,735B; exact compressed ZIP ranges received3,310,702,089B in the completed run.
+No whole archives or denoised/test partners downloaded. All archive size/ETag checks,
+member CRC/length checks and stored SHA256 receipts passed. Receipt SHA256
+`6dab93cf4bddac6f670f927e8d53ff217efd9ba4c5bf80f6a1f9261f8f5bfacc`;
+public summary `evidence/e99_download.json`. These256 files are still quarantined at
+this transfer checkpoint, not256 admitted training examples or correct predictions.
+E100 next repeats body hashing, native decoding and protected/scene-group checks.
+
+
+### E100 native admission complete — 2026-09-14
+
+All256 downloaded originals decoded successfully and retained native resolution. Against
+152,124 protected/reference records, including every206 unique owner-gallery image:
+zero byte/RGB/declared perceptual overlaps, zero internal perceptual links and zero
+quarantined/removed images. All256 admitted to separate research TRAIN,64 per sensor;
+137.118s. These heuristic checks do not establish256 independent scenes. No classifier
+scores, new fit, calibration change or independent-final evaluation. Audit SHA256
+0a403cb8c9acf755622f625c42e0a91a67b187ec77e63c999bbebbeabc9c031c;
+TRAIN manifest SHA256c5abc769d1b430bba52e8e5ae8c7ae90fdeb1cbbc56c7a40d4bc01f458ee496e.
+Public receipt: evidence/e100_audit.json. Local bodies remain under e99/images;
+admission records under e100/training_manifest.json. Training availability is not a
+model-quality improvement. The earlier quarantined snapshot describes acquisition only;
+this later admission receipt supersedes that role status for all256 originals.
+
+
+E100 decoded image geometry:64 each at4080x3072,4000x3000,4576x3168 and4096x3072
+(after the fixed orientation convention). All are full-photo dimensions; no resizing
+was performed for admission. Camera model EXIF was absent from all256 records, so sensor
+identity relies on publisher packaging. Do not report256 verified physical devices or
+independent scenes. The E101 derived crops are separate training views; originals remain
+unchanged. New training features/model fits will be logged in EXPERIMENTS/HISTORY.

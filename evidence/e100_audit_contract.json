@@ -1,0 +1,14 @@
+{
+  "contract_sha256": "e8100d900a48b7632c16b8f64c7d147336dd317c0bec2845865daa7172e1a2b7",
+  "gallery_unique_covered": 206,
+  "license": "CC BY-NC-SA4.0 academic/research only",
+  "limits": "Perceptual/time grouping is not proof of independent scenes. MIDD remains research TRAIN only; originals are publisher JPEGs, not RAW. No CAL/test/serving promotion.",
+  "max_pixels": 100000000,
+  "max_seconds": 3600,
+  "model_scores": 0,
+  "numpy_version": "2.5.1",
+  "pillow_version": "12.3.0",
+  "policy": "Native E65 fingerprint;224px floor; body/RGB or dHash<=4 AND pHash63<=4 protected overlap exclusion. Internal transitive perceptual and sensor/capture-second groups, frozen E72 deterministic representative selection. No score/brightness filter or refill.",
+  "reference_records": 152124,
+  "state": "E100_native_admission_registered"
+}

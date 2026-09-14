@@ -1,0 +1,24 @@
+{
+  "admitted": 256,
+  "contract_sha256": "e8100d900a48b7632c16b8f64c7d147336dd317c0bec2845865daa7172e1a2b7",
+  "cross_match_observations": 0,
+  "decode_failures": 0,
+  "decoded": 256,
+  "duplicate_members_removed": 0,
+  "internal_match_pairs": 0,
+  "limits": "Perceptual/time grouping is not proof of independent scenes. MIDD remains research TRAIN only; originals are publisher JPEGs, not RAW. No CAL/test/serving promotion.",
+  "manifest_sha256": "c5abc769d1b430bba52e8e5ae8c7ae90fdeb1cbbc56c7a40d4bc01f458ee496e",
+  "model_scores": 0,
+  "quarantined": 0,
+  "reference_records": 152124,
+  "report_sha256": "0a403cb8c9acf755622f625c42e0a91a67b187ec77e63c999bbebbeabc9c031c",
+  "seconds": 137.11775595799554,
+  "selected": 256,
+  "sensor_counts": {
+    "ISOCELL_GN1": 64,
+    "ISOCELL_HM3": 64,
+    "OmniVision_OV64B": 64,
+    "Sony_IMX766": 64
+  },
+  "state": "E100_native_TRAIN_audit_complete"
+}

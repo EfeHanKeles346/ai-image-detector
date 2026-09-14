@@ -7763,3 +7763,78 @@ and keeps incomplete transfer distinct from final completion. Original hashing o
 in the downloader and will be repeated at admission.911 Python tests pass in18.05s
 with the existing Starlette/httpx warning. E100 native admission code is prepared;
 no image audit, new inference, candidate fit or model promotion has run yet.
+
+
+### E99 download complete — 2026-09-14
+
+All256/256 original MIDD JPEGs verified,64 per registered sensor. Stored source bodies
+3,323,883,735B; exact compressed ZIP ranges received3,310,702,089B in the completed run.
+No whole archives or denoised/test partners downloaded. All archive size/ETag checks,
+member CRC/length checks and stored SHA256 receipts passed. Receipt SHA256
+`6dab93cf4bddac6f670f927e8d53ff217efd9ba4c5bf80f6a1f9261f8f5bfacc`;
+public summary `evidence/e99_download.json`. These256 files are still quarantined at
+this transfer checkpoint, not256 admitted training examples or correct predictions.
+E100 next repeats body hashing, native decoding and protected/scene-group checks.
+
+
+### E100 native admission complete — 2026-09-14
+
+All256 downloaded originals decoded successfully and retained native resolution. Against
+152,124 protected/reference records, including every206 unique owner-gallery image:
+zero byte/RGB/declared perceptual overlaps, zero internal perceptual links and zero
+quarantined/removed images. All256 admitted to separate research TRAIN,64 per sensor;
+137.118s. These heuristic checks do not establish256 independent scenes. No classifier
+scores, new fit, calibration change or independent-final evaluation. Audit SHA256
+0a403cb8c9acf755622f625c42e0a91a67b187ec77e63c999bbebbeabc9c031c;
+TRAIN manifest SHA256c5abc769d1b430bba52e8e5ae8c7ae90fdeb1cbbc56c7a40d4bc01f458ee496e.
+Public receipt: evidence/e100_audit.json. Local bodies remain under e99/images;
+admission records under e100/training_manifest.json. Training availability is not a
+model-quality improvement. The earlier quarantined snapshot describes acquisition only;
+this later admission receipt supersedes that role status for all256 originals.
+
+
+### E101 four-condition cache registration, before new features
+
+Use all256 E100-admitted original JPEGs. Reuse exact E89 four-view crops and frozen
+DINO3072/CLIP1536/DEAR1640 encoders; no global-crop change or new classifier score.
+Two-parent immutable chunks;34-source old-clean parity and first-batch repeat<=1e-5;
+90min/6GiB process memory guard. Verify native source hashes and all saved feature/role/
+parent/condition bindings. Existing E92 source/map/cuts and demo policy remain unchanged.
+This stage prepares1024 TRAIN views; only a later separately frozen E102 experiment may
+fit a correction. It is the data-coverage experiment, not yet the learned-reviewer or
+calibrated-probability proposal. Prior E92 losses and all preservation gates remain.
+
+
+E101 frozen and started:256 parents/1024 TRAIN views, contract SHA2560a4dd9a88cb40810412647df6123aec01827ef6cd0635036577f74dd92020e9d.
+Two targeted tests pass for exact E89 transform parity and rejection of CAL/changed-
+original chunk identities. The local E92 API is temporarily stopped to avoid concurrent
+GPU memory use; frontend remains available and the same API must be restored after the
+encoder stage. No E92 weights/cuts/policy changed. Feature completion is not yet claimed.
+
+
+### E102 correction protocol — registered before new TRAIN scores or fit
+
+One data-coverage correction on the frozen E92 representation, not a new confidence
+calibrator. Append the complete256-parent E100 cohort after its E101 cache; retain all
+12,269 old TRAIN parents and4 conditions (50,100 views;18,380 AI views). No representation
+refit or source/score filtering. Initialize450 delta weights to zero; baseline logits are
+E92 logits. Reuse E81 worst-REAL-source epigraph loss and all-AI nonnegative logit-shift
+constraints, preserving every reference-correct REAL binary decision. SameL2=.01,
+SLSQP200 iterations/ftol1e-9, no hyperparameter sweep; CPU2 threads,1-hour fit budget.
+
+Replay all frozen E92 TRAIN numeric reports before optimization. Preserve every previous
+source/population and numeric gate; additionally require new-sensor pooled REAL FPR<=10%,
+worst new sensor<=20%, combined REAL<=10% in each condition, all10 numeric gates on the
+expanded population, solver success/constraint error<=1e-8, no lost E92-caught AI/new REAL
+errors and full batch8 runtime replay<=1e-6/zero cut crossings. If training fails, lock
+the failed result and do not score DEV/gallery. If it passes, separately register one
+consumed E66/gallery paired comparison with E92 and E43 retention; no automatic promotion.
+No existing CAL, DEV, gallery, E49 or final data in fitting. No calibrated probabilities.
+
+
+E101/E102 engineering checkpoint:915 Python tests pass in19.26s (existing warning only).
+Additional conditional-DEV test confirms failed TRAIN denies cache access. E102 uses
+frozen E92 representation coordinates and zero delta initialization; all original AI
+views protected relative to E92, old gate replay required before optimization. The
+prepared consumed-DEV runner additionally requires zero lost E43/E92 AI and zero new
+E92 REAL errors per source/condition. No current candidate fit/DEV score exists yet.
