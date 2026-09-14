@@ -1,0 +1,16 @@
+{
+  "branch": "fp16_sdpa",
+  "contract_sha256": "8b5e1efb01339e92d7450d7ae5e04fc9a24c8bc580c3bc362a33cdae81bf082d",
+  "detector_scores": 0,
+  "downloads": 0,
+  "gpu_operations": 0,
+  "interpretation": "Pixel-change fraction is not semantic drift. Boundary gradients are a shortcut-risk diagnostic, not proof that a detector learned seams. Intended masks are not semantic annotations. Correlated TRAIN parents, single old generator, simple shapes and hard composites cannot establish generalization.",
+  "max_seconds": 300,
+  "metrics": "Normalize channels to0..1. Inside/outside MAE, outside RMSE and95th percentile absolute channel error, changed-pixel fractions. For every four-neighbour edge crossing the intended mask, mean absolute RGB gradient, its signed difference and absolute change from authentic. Compare raw/composite/traditional controls on the same11 accepted parent masks; also summarize all16 traditional controls.",
+  "next": "Retain failed E122 gate and quarantine. A future independently registered recipe needs paired non-AI edit controls, matched compositing/encoding and interior/boundary evaluation before spatial training; no safety-filter bypass.",
+  "parents": 16,
+  "population": "Account for all16 attempts. Check original/mask/classic/zero-target invariants for all16. Quantify raw/composite quality only for cases passing the unchanged preexisting E122 checks; report excluded attempts explicitly. No refilling or selection by pixel results.",
+  "promotion_allowed": false,
+  "state": "E127_readonly_pixel_audit_registered",
+  "training_admission": false
+}

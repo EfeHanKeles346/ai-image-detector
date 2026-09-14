@@ -8301,3 +8301,19 @@ Started the fixed full E124 extraction; temporarily stopped the verified E92 API
 Hypothesis: the fixed full-frame representation may transfer differently from its equal-capacity center control; no result is assumed. Code is ready for both E125 branches subject to complete TRAIN/runtime permission. The consumed 640-view comparison preserves all E114 gates, separately replays old center and duplicate full-frame features, locks branch scores before metrics, and keeps E43/E92/E103 individual AI retention. Known limitations: repeated DEV selection, 10 correlated SIDD scenes and limited seen AI families. E124 feature extraction is still active; E125 has not produced candidates and E126 has not read/scored DEV.
 
 E126 implementation verification: 991 Python tests passed; compile/whitespace checks passed. Started the one-shot dependent runner, currently waiting for E124/E125. This is operational readiness, not an evaluated detection result.
+
+### E127 pixel audit design — 2026-09-15
+
+Prespecify pixel-error magnitudes and mask-boundary gradients to interpret the E122 background-change statistic and investigate compositing shortcut risks. Selection is fixed by the previous E122 acceptance receipts, not by these new measurements. All 16 originals/classical controls remain counted; rejected black safety placeholders will not enter generated-content metrics. Seven synthetic tests validate exact boundary counts, unchanged backgrounds, one-level changes and invalid-mask rejection. No pixels have been measured by E127 yet; freeze the input/metric contract before execution.
+
+### E127 completed — pixel magnitude and compositing controls (2026-09-15)
+
+Frozen contract `8b5e1efb01339e92d7450d7ae5e04fc9a24c8bc580c3bc362a33cdae81bf082d`; all 16 attempts accounted for, 11 accepted pairs measured and 5 safety-filter/blank placeholders explicitly excluded from generated-content metrics. CPU-only audit finished in 1.73s. All 16 classical controls preserve background exactly and have zero AI targets; all 11 accepted composites reproduce the exact registered hard-mask operation.
+
+On the matched 11-parent subset, raw generator outside-mask MAE is 0.038381 in [0,1] (about 9.79/255 channel levels), with per-parent MAE range 0.015261–0.115276. Outside changed-pixel fraction remains 99.9417%, exactly replaying E122. These measure different properties: many changed pixels do not by themselves imply large or semantic changes, while the measured magnitude still prevents labelling raw background untouched. Composite outside MAE is exactly 0.
+
+Mean mask-crossing RGB gradient is 0.030659 in authentic inputs, 0.042073 in classical controls, 0.028218 in raw generator outputs and 0.044219 in hard composites. Composite gradient exceeds the corresponding classical control in only 5/11 pairs. Classical controls therefore also expose the boundary shortcut; these small correlated-sample summaries do not establish separability, semantic quality or actual learned detector bias. Statistics are equal-parent summaries, not independent population estimates.
+
+Decision: retain classical-edit negatives and require boundary-versus-interior localization evaluation in a future spatial-head protocol. Keep raw outputs diagnostic, and preserve exact mask/provenance/encoding matching. The failed E122 16/16 gate remains failed; no output is newly admitted to training and no safety filter is disabled. No detector score, GPU operation, download or serving change. Aggregate receipt: `evidence/e127_pixel_audit.json`; per-case measurements stay local.
+
+After E127, all 998 Python tests passed. E124 checkpoint: 4,050/12,525 parents extracted, pilot replay error 0; E125 not yet completed and E126 still waiting. No new Model1 accuracy result exists at this checkpoint.

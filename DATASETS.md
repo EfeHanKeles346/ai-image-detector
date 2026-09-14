@@ -2987,3 +2987,13 @@ E122 completes16 numerical replays:11 valid engineering outputs,5 safety-filter 
 ### E126 data-use plan — 2026-09-15
 
 No new download. Reuse the existing SHA-bound 640 consumed-development views only after complete passing E125 TRAIN guards. Add full-frame CLIP features without reassigning roles, fitting on DEV, reapplying social compression, or opening gallery/final data. E114 raw features serve only as an identity/numerical replay reference. Model2 E122 remains quarantined after its failed 16/16 gate; a planned read-only pixel audit will not admit its 11 accepted generations to TRAIN.
+
+### E127 completed — pixel magnitude and compositing controls (2026-09-15)
+
+Frozen contract `8b5e1efb01339e92d7450d7ae5e04fc9a24c8bc580c3bc362a33cdae81bf082d`; all 16 attempts accounted for, 11 accepted pairs measured and 5 safety-filter/blank placeholders explicitly excluded from generated-content metrics. CPU-only audit finished in 1.73s. All 16 classical controls preserve background exactly and have zero AI targets; all 11 accepted composites reproduce the exact registered hard-mask operation.
+
+On the matched 11-parent subset, raw generator outside-mask MAE is 0.038381 in [0,1] (about 9.79/255 channel levels), with per-parent MAE range 0.015261–0.115276. Outside changed-pixel fraction remains 99.9417%, exactly replaying E122. These measure different properties: many changed pixels do not by themselves imply large or semantic changes, while the measured magnitude still prevents labelling raw background untouched. Composite outside MAE is exactly 0.
+
+Mean mask-crossing RGB gradient is 0.030659 in authentic inputs, 0.042073 in classical controls, 0.028218 in raw generator outputs and 0.044219 in hard composites. Composite gradient exceeds the corresponding classical control in only 5/11 pairs. Classical controls therefore also expose the boundary shortcut; these small correlated-sample summaries do not establish separability, semantic quality or actual learned detector bias. Statistics are equal-parent summaries, not independent population estimates.
+
+Decision: retain classical-edit negatives and require boundary-versus-interior localization evaluation in a future spatial-head protocol. Keep raw outputs diagnostic, and preserve exact mask/provenance/encoding matching. The failed E122 16/16 gate remains failed; no output is newly admitted to training and no safety filter is disabled. No detector score, GPU operation, download or serving change. Aggregate receipt: `evidence/e127_pixel_audit.json`; per-case measurements stay local.

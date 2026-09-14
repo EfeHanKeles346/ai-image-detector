@@ -1,0 +1,298 @@
+{
+  "accepted_output_pairs": 11,
+  "all_accepted_composites_exact": true,
+  "all_classic_controls": {
+    "boundary_edges": {
+      "max": 858.0,
+      "mean": 774.25,
+      "median": 785.0,
+      "min": 668.0
+    },
+    "boundary_gradient": {
+      "max": 0.11718350383631713,
+      "mean": 0.0505727216414012,
+      "median": 0.04507224452590135,
+      "min": 0.0048490159564757
+    },
+    "boundary_gradient_absolute_change": {
+      "max": 0.07817195606765043,
+      "mean": 0.034883578049593106,
+      "median": 0.03347363971508306,
+      "min": 0.0027494796801402137
+    },
+    "boundary_gradient_delta": {
+      "max": 0.029777488095884704,
+      "mean": 0.011566973728398735,
+      "median": 0.011854417019934834,
+      "min": -0.011766323691192647
+    },
+    "boundary_gradient_original": {
+      "max": 0.1133080955154339,
+      "mean": 0.03900574791300246,
+      "median": 0.027312113089616154,
+      "min": 0.005057143900390696
+    },
+    "inside_changed_pixel_fraction": {
+      "max": 1.0,
+      "mean": 0.9979033035416185,
+      "median": 0.9998397317583364,
+      "min": 0.9789332417839643
+    },
+    "inside_mae": {
+      "max": 0.1183017895083075,
+      "mean": 0.05166056052989533,
+      "median": 0.044262021661800266,
+      "min": 0.00487067937668914
+    },
+    "outside_changed_pixel_fraction": {
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    },
+    "outside_channel_abs_error_p95": {
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    },
+    "outside_mae": {
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    },
+    "outside_rmse": {
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0
+    }
+  },
+  "all_control_backgrounds_exact": true,
+  "all_negative_targets_zero": true,
+  "composite_boundary_greater_than_classic_pairs": 5,
+  "contract_sha256": "8b5e1efb01339e92d7450d7ae5e04fc9a24c8bc580c3bc362a33cdae81bf082d",
+  "detector_scores": 0,
+  "downloads": 0,
+  "excluded_attempts": 5,
+  "failed_checks_counts": {
+    "nonblank_output": 5,
+    "safety_check_negative": 5
+  },
+  "gpu_operations": 0,
+  "limits": "Pixel-change fraction is not semantic drift. Boundary gradients are a shortcut-risk diagnostic, not proof that a detector learned seams. Intended masks are not semantic annotations. Correlated TRAIN parents, single old generator, simple shapes and hard composites cannot establish generalization.",
+  "matched_accepted_subset": {
+    "classic": {
+      "boundary_edges": {
+        "max": 852.0,
+        "mean": 771.0909090909091,
+        "median": 808.0,
+        "min": 668.0
+      },
+      "boundary_gradient": {
+        "max": 0.10154177182424125,
+        "mean": 0.042073356914318245,
+        "median": 0.04261437908496731,
+        "min": 0.0048490159564757
+      },
+      "boundary_gradient_absolute_change": {
+        "max": 0.0754303371513622,
+        "mean": 0.030368584504458986,
+        "median": 0.03339345629448614,
+        "min": 0.0027494796801402137
+      },
+      "boundary_gradient_delta": {
+        "max": 0.029777488095884704,
+        "mean": 0.01141389256721324,
+        "median": 0.019394753335124002,
+        "min": -0.011766323691192647
+      },
+      "boundary_gradient_original": {
+        "max": 0.1133080955154339,
+        "mean": 0.030659464347105002,
+        "median": 0.022719144154837077,
+        "min": 0.005057143900390696
+      },
+      "inside_changed_pixel_fraction": {
+        "max": 1.0,
+        "mean": 0.9969881236582109,
+        "median": 0.9993989662219017,
+        "min": 0.9789332417839643
+      },
+      "inside_mae": {
+        "max": 0.1032324248961897,
+        "mean": 0.04383863235833156,
+        "median": 0.043853327339166116,
+        "min": 0.00487067937668914
+      },
+      "outside_changed_pixel_fraction": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "outside_channel_abs_error_p95": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "outside_mae": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "outside_rmse": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      }
+    },
+    "composite": {
+      "boundary_edges": {
+        "max": 852.0,
+        "mean": 771.0909090909091,
+        "median": 808.0,
+        "min": 668.0
+      },
+      "boundary_gradient": {
+        "max": 0.1288228822882288,
+        "mean": 0.04421915312004207,
+        "median": 0.043187680611314755,
+        "min": 0.011346624310804396
+      },
+      "boundary_gradient_absolute_change": {
+        "max": 0.09238982721801592,
+        "mean": 0.030566893320996703,
+        "median": 0.02850410193751091,
+        "min": 0.0071804140650673694
+      },
+      "boundary_gradient_delta": {
+        "max": 0.024936179457932754,
+        "mean": 0.013559688772937069,
+        "median": 0.014889426090070733,
+        "min": 0.004266924876946664
+      },
+      "boundary_gradient_original": {
+        "max": 0.1133080955154339,
+        "mean": 0.030659464347105002,
+        "median": 0.022719144154837077,
+        "min": 0.005057143900390696
+      },
+      "inside_changed_pixel_fraction": {
+        "max": 1.0,
+        "mean": 0.9996719551151589,
+        "median": 0.9999294532627866,
+        "min": 0.998458673174491
+      },
+      "inside_mae": {
+        "max": 0.1472171827204507,
+        "mean": 0.07680978868826963,
+        "median": 0.07700155458226147,
+        "min": 0.01255956165639898
+      },
+      "outside_changed_pixel_fraction": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "outside_channel_abs_error_p95": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "outside_mae": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      },
+      "outside_rmse": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0
+      }
+    },
+    "raw": {
+      "boundary_edges": {
+        "max": 852.0,
+        "mean": 771.0909090909091,
+        "median": 808.0,
+        "min": 668.0
+      },
+      "boundary_gradient": {
+        "max": 0.09282501779589723,
+        "mean": 0.02821778623967937,
+        "median": 0.022393138046178925,
+        "min": 0.004918391937780699
+      },
+      "boundary_gradient_absolute_change": {
+        "max": 0.09379893871740114,
+        "mean": 0.02561994755436396,
+        "median": 0.0194179366661919,
+        "min": 0.0037937707671523006
+      },
+      "boundary_gradient_delta": {
+        "max": 0.004947542452757305,
+        "mean": -0.002441678107425633,
+        "median": -0.00032600610865815246,
+        "min": -0.02048307771953666
+      },
+      "boundary_gradient_original": {
+        "max": 0.1133080955154339,
+        "mean": 0.030659464347105002,
+        "median": 0.022719144154837077,
+        "min": 0.005057143900390696
+      },
+      "inside_changed_pixel_fraction": {
+        "max": 1.0,
+        "mean": 0.9996719551151589,
+        "median": 0.9999294532627866,
+        "min": 0.998458673174491
+      },
+      "inside_mae": {
+        "max": 0.1472171827204507,
+        "mean": 0.07680978868826963,
+        "median": 0.07700155458226147,
+        "min": 0.01255956165639898
+      },
+      "outside_changed_pixel_fraction": {
+        "max": 1.0,
+        "mean": 0.9994174467463207,
+        "median": 0.9996635144819871,
+        "min": 0.9982616480445713
+      },
+      "outside_channel_abs_error_p95": {
+        "max": 0.30196078431372547,
+        "mean": 0.10053475935828877,
+        "median": 0.07058823529411765,
+        "min": 0.03921568627450983
+      },
+      "outside_mae": {
+        "max": 0.11527595573565227,
+        "mean": 0.038380957000578114,
+        "median": 0.027977761166286624,
+        "min": 0.015260963412264454
+      },
+      "outside_rmse": {
+        "max": 0.1500112011602775,
+        "mean": 0.05101757513662697,
+        "median": 0.03792562275140087,
+        "min": 0.020428227847436694
+      }
+    }
+  },
+  "measurements_sha256": "b0e829bb2f8abced62efa3bd8d2b25dbb788a70fda7a1dbf8eaf9556969cb8e4",
+  "next": "Retain failed E122 gate and quarantine. A future independently registered recipe needs paired non-AI edit controls, matched compositing/encoding and interior/boundary evaluation before spatial training; no safety-filter bypass.",
+  "parents_accounted": 16,
+  "promotion_allowed": false,
+  "seconds": 1.7258109169779345,
+  "state": "E127_pixel_audit_complete",
+  "training_admission": false
+}
