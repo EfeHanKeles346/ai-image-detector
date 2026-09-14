@@ -1,0 +1,41 @@
+{
+  "passes_paired_regression": false,
+  "views": 732,
+  "new_real_false_ai": 9,
+  "newly_missed_ai": 1,
+  "by_source_condition": {
+    "0:owner_gallery:publisher_original": {
+      "views": 206,
+      "reference_ai": 15,
+      "candidate_ai": 9
+    },
+    "0:owner_gallery:social_q75": {
+      "views": 206,
+      "reference_ai": 28,
+      "candidate_ai": 18
+    },
+    "1:gpt-image-1:publisher_original": {
+      "views": 80,
+      "reference_ai": 76,
+      "candidate_ai": 79
+    },
+    "1:gpt-image-1:social_q75": {
+      "views": 80,
+      "reference_ai": 76,
+      "candidate_ai": 79
+    },
+    "1:nano-banana-local:publisher_original": {
+      "views": 80,
+      "reference_ai": 80,
+      "candidate_ai": 80
+    },
+    "1:nano-banana-local:social_q75": {
+      "views": 80,
+      "reference_ai": 78,
+      "candidate_ai": 80
+    }
+  },
+  "promotion_allowed": false,
+  "limits": "Consumed-development regression only. Passing does not repair the E92 acceptance failure, prove OOD reliability or authorize promotion. No thresholds/weights may be fit on these rows.",
+  "scope": "Posthoc paired diagnosis of old E43 versus current E92, not a retroactive change to E92 gates."
+}

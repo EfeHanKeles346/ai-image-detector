@@ -42,7 +42,7 @@ def test_invalid_and_tiny_inputs_never_run_inference():
     with TestClient(create_app(Never)) as client:
         for raw, expected in [(b'garbage', 415), (b'', 422), (photo((223, 224)), 200),
                               (photo(mode='RGBA', color=(0, 0, 0, 0)), 415),
-                              (photo((5000, 4000)), 413)]:
+                              (photo((8000, 5000)), 413)]:
             r = client.post('/analyze', content=raw, headers={'content-type': 'image/png'})
             assert r.status_code == expected
             if expected == 200:

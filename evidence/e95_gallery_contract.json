@@ -1,0 +1,21 @@
+{
+  "code_sha256": "23382fda18c31ed3f6581ab773556a4063795ae70c5ef9ec628287ebd9d2b919",
+  "conditions": [
+    "original",
+    "social_q75"
+  ],
+  "contract_sha256": "4753e1877ac8b89a9ec9440ee396eae5807b9198dce7040aa94e99f72dcb85a0",
+  "downloads_allowed": false,
+  "e49_read_allowed": false,
+  "file_count": 210,
+  "identity_sha256": "390e3c210ee61d70252d7e4714b8640463f44d57760942d25a1bdf7eab5aac09",
+  "label": 0,
+  "max_seconds": 1800,
+  "policy": "Keep E92 cuts/weights unchanged; all210 files and206 unique byte parents. Separate UI admission and raw native predictions. No fit/threshold selection on gallery. No fresh-final claim. Save individual results privately, only aggregate receipts to Git.",
+  "reserved_stills_excluded": 1,
+  "role": "CONSUMED_DEVELOPMENT",
+  "state": "E95_owner_gallery_registered_before_scores",
+  "training_allowed": false,
+  "unique_parents": 206,
+  "unsupported_nonimages": 1
+}

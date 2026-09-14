@@ -32,3 +32,8 @@ test('an unstable original AI alert stays visible with its review warning', () =
   assert.equal(result.outcome, 'ai_signal');
   assert.equal(result.review_required, true);
 });
+
+test('24MP phone responses are admitted while responses above32MP are rejected', () => {
+  assert.equal(parseDemoAnalysis({...response, width: 5712, height: 4284}).width, 5712);
+  assert.throws(() => parseDemoAnalysis({...response, width: 8001, height: 4000}));
+});

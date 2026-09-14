@@ -150,7 +150,8 @@ export default function Home() {
           <div className="panel">
             <div className="panel-title">
               <h2>Görsel</h2>
-              <p>JPG, PNG veya WEBP · en fazla 12 MB · 16 megapiksel</p>
+              <p>JPG, PNG veya WEBP · en fazla 12 MB · 32 megapiksel</p>
+              <p>Fotoğraf türündeki görseller için kullanın. Belge ve uygulama ekranları için uygun değil.</p>
             </div>
 
             {!preview ? (

@@ -32,7 +32,7 @@ export function parseDemoAnalysis(value: unknown): DemoAnalysis {
       (r.reason === 'inconsistent_or_borderline' && r.guard_outcome !== 'uncertain') ||
       (r.reason === 'image_too_small' && r.guard_outcome !== 'not_run') ||
       !Number.isInteger(r.width) || !Number.isInteger(r.height) ||
-      Number(r.width) <= 0 || Number(r.height) <= 0 || Number(r.width) * Number(r.height) > 16_000_000) {
+      Number(r.width) <= 0 || Number(r.height) <= 0 || Number(r.width) * Number(r.height) > 32_000_000) {
     throw new AnalysisResponseError('Bu yanıt güncel modelle doğrulanamadı. Lütfen yeniden deneyin.');
   }
   return r as DemoAnalysis;

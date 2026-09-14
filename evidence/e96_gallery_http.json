@@ -1,0 +1,51 @@
+{
+  "cases": [
+    {
+      "height": 4284,
+      "outcome": "no_clear_signal",
+      "review_required": false,
+      "seconds": 2.4904558330308646,
+      "width": 5712
+    },
+    {
+      "height": 5712,
+      "outcome": "ai_signal",
+      "review_required": false,
+      "seconds": 1.6284531250130385,
+      "width": 4284
+    },
+    {
+      "height": 5712,
+      "outcome": "uncertain",
+      "review_required": true,
+      "seconds": 1.548802375094965,
+      "width": 4284
+    },
+    {
+      "height": 1536,
+      "outcome": "ai_signal",
+      "review_required": false,
+      "seconds": 1.1726804170757532,
+      "width": 1024
+    },
+    {
+      "height": 1536,
+      "outcome": "ai_signal",
+      "review_required": true,
+      "seconds": 1.152514083078131,
+      "width": 1024
+    },
+    {
+      "height": 1536,
+      "outcome": "uncertain",
+      "review_required": true,
+      "seconds": 1.1040874170139432,
+      "width": 1024
+    }
+  ],
+  "consumed_AI_cases": 3,
+  "limits": "Targeted integration parity, not independent accuracy/AI retention proof. No private filenames or pixels exported.",
+  "newly_missed_AI": 0,
+  "private_gallery_cases": 3,
+  "state": "E96_HTTP_replay_passed"
+}

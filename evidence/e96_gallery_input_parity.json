@@ -1,0 +1,15 @@
+{
+  "files": 210,
+  "input_code_sha256": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/demo_image_input.py": "222265a334e4a77a6ebe63de50798051e38a78adacdf92039a5c8c4055ab6405",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/internship_serve.py": "411d2292c25e814e716c4d0fee7991632408e7ccf0c4516797b680d9257d1140",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/tools/e96_gallery_input_validation.py": "fe4d89493546bef171c75238c8416350589659ea1411c1992eab275e331f55e8"
+  },
+  "limits": "Admission only; no model scores, fitting, raw image output or threshold changes. Three new24MP HTTP cases selected by file SHA before scoring.",
+  "native_rgb_pixel_changes": 0,
+  "new_accepted": 210,
+  "newly_accepted": 73,
+  "old_accepted": 137,
+  "selection_sha256": "e7fe8f632a39825d80480da2ba60aec94309a2b5f550f9a928e6ca38f3271c45",
+  "state": "E96_decoder_parity_passed"
+}

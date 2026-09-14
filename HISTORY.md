@@ -8775,3 +8775,90 @@ Use the actual Local URL printed by vinext and explicitly allow that origin if i
 port is occupied. The commands are separate foreground terminals. Do not launch the
 frozen E93 prototype as the current demo. Git synchronization is verified at final handoff;
 local check success is not an assertion that the latest remote CI completed.
+
+
+## E95 registration — consumed owner gallery with current E92 (2026-09-14)
+
+User requests inspecting the project gallery and justified development from its
+failures. The gallery was previously moved to PixelProof Workspace/Samples. Freeze
+the known210 REAL stills/206 unique byte parents using historical identity390e3c21…ac09;
+exclude the separately protected reserve and MOV. Score fixed E92 original+Q75 once,
+no gallery TRAIN/CAL or threshold tuning. Report every file, exact duplicates, camera/
+format groups, UI eligibility and alert-preserving display; no independent-final or
+AI-retention claim from this REAL-only sample. Full results remain private in ignored
+ml/work/e95_owner_gallery; Git receives aggregate evidence only. No downloads or E49.
+Decide a justified follow-up after locked diagnostic results; preserve E92 artifacts.
+
+
+## E96 registration — support native24MP gallery inputs without changing E92 (2026-09-14)
+
+Score-blind file-header audit found73/210 gallery images are5712x4284 (24.47MP),
+rejected by the demo's16MP cap. All210 files fit12MiB. Add a general32MP local-photo
+input profile, keeping12MiB, one concurrent request, dimension/aspect limits and all
+format/animation/alpha/timeouts. Decode without resizing/recompression; frozen E92
+features/cuts stay unchanged. This is input coverage work, not a gallery-trained model.
+Before accepting: verify decode pixel parity for all210 images, old-policy rejection
+versus new-policy admission,32MP overflow rejection, native HTTP replay of three newly
+admitted24MP images plus the existing AI outcomes, and full tests. Keep E95's frozen
+16MP admission report intact; report E96 separately. No filename/camera-based REAL veto.
+
+
+## E95/E96 completed — private gallery analysis and native24MP demo support (2026-09-14)
+
+The user's project gallery is the historically relocated PixelProof Workspace/Samples
+owner gallery. Verified the same210 declared-REAL stills/206 unique byte parents
+(identity390e3c21…ac09); one protected reserve still and one MOV were excluded. Scored
+all206 unique parents twice with frozen E92, retaining210-file counts and duplicates.
+No downloads, fitting, threshold selection, source-specific exceptions or E49 access.
+Individual image paths/scores and review details stay under ignored ml/work/e95_owner_gallery;
+only aggregate evidence/code/these three records are committed.
+
+Results on all210 files:9 original false AI indications (4.29%),18 Q75 (8.57%). The
+current original-submission display yields165 no-clear-signal,36 uncertain,9 AI;3 of
+those9 AI indications carry an inconsistency warning. These165 are NOT certified REAL,
+and the36 abstentions must not be counted as successful classifications. On206 unique
+byte parents:9/18 false indications and161/36/9 display counts. Camera bursts/scenes are
+still correlated. The old E43 yields15/28 false indications on the same images/views.
+
+Paired comparison exposes the hidden tradeoff: E92 rescues13 old original false
+indications but creates7 new ones; social rescues12 and creates2. Hence lower pooled
+FPR does not mean every photo improved. The old16MP API-accepted137-file subset even
+has7 E92 false indications versus5 E43, despite pooled15→9 improvement. Keep these
+failures visible, not removed from the denominator.
+
+Limited direct visual inspection of high-scoring errors found an application-screen
+capture, a water-texture scene and a night street photograph. Do not reproduce its
+private text, faces, locations or filenames in Git. This is qualitative posthoc review,
+not proof that noise reduction/sharpening/texture selection causes the errors. Screenshot
+scope and scene/transport differences are distinct hypotheses. The screenshot remains
+in the declared gallery counts; no posthoc removal improves the reported result.
+
+Concrete development:
+-73 gallery files are5712x4284 (24.47MP). Replaced only the current local demo's16MP
+ admission profile with32MP. All210 now pass instead of137. Kept12MiB, one inference
+ slot, dimension/aspect bounds, unsupported-format/alpha/animation checks and timeouts.
+ No downsampling or recompression is applied in decoding. All210 decoded RGB arrays
+ exactly match the native E95 inputs; old accepted images also match the old decoder.
+- Updated frontend response geometry validation and visible limits. Added plain input
+ scope explaining that documents/application screens are not the intended photo input.
+ This copy does not suppress an AI alert or claim automatic screenshot detection.
+- Added a paired consumed-development regression checker. Frozen private baseline:
+ 206 owner REAL+160 E66 AI parents, two conditions=732 views. It rejects missing,
+ duplicate/relabelled/rehashed rows, nonfinite scores, any newly wrong REAL or lost AI;
+ net rescues cannot cancel a new error. CLI comparison exits2 on failure. Reference
+ replay passes; an explicitly synthetic corrupt-score probe fails. E43→E92 posthoc
+ replay correctly fails with9 new REAL-error views and1 lost AI view. This diagnoses
+ current limitations, not a retroactive waiver or rewrite of original acceptance.
+
+The active API was restarted on127.0.0.1:8800 with the new32MP decoder. Six targeted
+HTTP cases pass: three SHA-selected newly eligible24MP originals plus three existing
+AI outcomes, including the unstable alert. All match their frozen expected results.
+The three gallery results deliberately include no-clear, uncertain and false AI;
+admitting the image is not correcting its prediction. Targeted timings1.10–2.49s
+are not production percentiles. The preview remains http://localhost:3002/.
+
+898 Python tests pass (19.94s, one existing warning); web lint/typecheck/build and11
+Node contract/SSR tests pass. New24MP support is tested for native pixel equality,
+unchanged small-image decoding and rejection above32MP. Gallery images remain private.
+Further ML work is registered as a TRAIN-only processing/context hypothesis in PLAN;
+this task does not claim the nine original model errors have been fixed.

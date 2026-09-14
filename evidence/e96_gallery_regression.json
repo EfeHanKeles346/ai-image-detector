@@ -1,0 +1,50 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "baseline_sha256": "eb488d1b039ca345e0fbc57ea66024b726d9895a41a0227ecd2d5a0928175dc5",
+  "note": "Private gallery view identity uses original file SHA plus condition and frozen social transform; no gallery bytes/names exported. Future comparisons require all732 rows. No fitting/threshold selection on this replay.",
+  "self_replay": {
+    "by_source_condition": {
+      "0:owner_gallery:publisher_original": {
+        "candidate_ai": 9,
+        "reference_ai": 9,
+        "views": 206
+      },
+      "0:owner_gallery:social_q75": {
+        "candidate_ai": 18,
+        "reference_ai": 18,
+        "views": 206
+      },
+      "1:gpt-image-1:publisher_original": {
+        "candidate_ai": 79,
+        "reference_ai": 79,
+        "views": 80
+      },
+      "1:gpt-image-1:social_q75": {
+        "candidate_ai": 79,
+        "reference_ai": 79,
+        "views": 80
+      },
+      "1:nano-banana-local:publisher_original": {
+        "candidate_ai": 80,
+        "reference_ai": 80,
+        "views": 80
+      },
+      "1:nano-banana-local:social_q75": {
+        "candidate_ai": 80,
+        "reference_ai": 80,
+        "views": 80
+      }
+    },
+    "limits": "Consumed-development regression only. Passing does not repair the E92 acceptance failure, prove OOD reliability or authorize promotion. No thresholds/weights may be fit on these rows.",
+    "new_real_false_ai": 0,
+    "newly_missed_ai": 0,
+    "passes_paired_regression": true,
+    "promotion_allowed": false,
+    "views": 732
+  },
+  "source_score_sha256": [
+    "82223943ff259365c1aa9dc2d6679cc491dfc6ad0f4086e618b7d8c5dbee2b1a",
+    "8de19298e0e62d982a6bae04ef7e922bcb12748cd68056b510ab832d49bb77ae"
+  ],
+  "state": "consumed_regression_baseline_frozen"
+}

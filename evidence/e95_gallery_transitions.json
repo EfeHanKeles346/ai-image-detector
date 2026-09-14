@@ -1,0 +1,16 @@
+{
+  "state": "posthoc_paired_diagnostic",
+  "unique_parents": 206,
+  "transitions": {
+    "original_score": {
+      "new_false_ai": 7,
+      "rescued_false_ai": 13
+    },
+    "social_q75_score": {
+      "new_false_ai": 2,
+      "rescued_false_ai": 12
+    }
+  },
+  "scores_sha256": "82223943ff259365c1aa9dc2d6679cc491dfc6ad0f4086e618b7d8c5dbee2b1a",
+  "note": "Aggregate improvement may hide new per-parent errors; no image-specific fix or threshold sweep."
+}

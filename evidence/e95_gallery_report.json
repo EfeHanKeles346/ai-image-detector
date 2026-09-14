@@ -1,0 +1,156 @@
+{
+  "all_files": {
+    "display": {
+      "ai_signal": 9,
+      "no_clear_signal": 165,
+      "uncertain": 36
+    },
+    "e43_original_false_ai": 15,
+    "e43_q75_false_ai": 28,
+    "eligibility": {
+      "accepted": 137,
+      "input_policy_413": 73
+    },
+    "files": 210,
+    "original_false_ai": 9,
+    "positive_with_warning": 3,
+    "q75_false_ai": 18
+  },
+  "api_accepted": {
+    "display": {
+      "ai_signal": 7,
+      "no_clear_signal": 111,
+      "uncertain": 19
+    },
+    "e43_original_false_ai": 5,
+    "e43_q75_false_ai": 15,
+    "eligibility": {
+      "accepted": 137
+    },
+    "files": 137,
+    "original_false_ai": 7,
+    "positive_with_warning": 3,
+    "q75_false_ai": 10
+  },
+  "camera_groups": {
+    "iPhone 15 Pro": {
+      "display": {
+        "ai_signal": 8,
+        "no_clear_signal": 157,
+        "uncertain": 34
+      },
+      "e43_original_false_ai": 13,
+      "e43_q75_false_ai": 25,
+      "eligibility": {
+        "accepted": 131,
+        "input_policy_413": 68
+      },
+      "files": 199,
+      "original_false_ai": 8,
+      "positive_with_warning": 3,
+      "q75_false_ai": 16
+    },
+    "iPhone 16e": {
+      "display": {
+        "no_clear_signal": 3,
+        "uncertain": 1
+      },
+      "e43_original_false_ai": 0,
+      "e43_q75_false_ai": 1,
+      "eligibility": {
+        "input_policy_413": 4
+      },
+      "files": 4,
+      "original_false_ai": 0,
+      "positive_with_warning": 0,
+      "q75_false_ai": 1
+    },
+    "unknown": {
+      "display": {
+        "ai_signal": 1,
+        "no_clear_signal": 1,
+        "uncertain": 1
+      },
+      "e43_original_false_ai": 2,
+      "e43_q75_false_ai": 2,
+      "eligibility": {
+        "accepted": 3
+      },
+      "files": 3,
+      "original_false_ai": 1,
+      "positive_with_warning": 0,
+      "q75_false_ai": 1
+    }
+  },
+  "contract_sha256": "4753e1877ac8b89a9ec9440ee396eae5807b9198dce7040aa94e99f72dcb85a0",
+  "formats": {
+    "JPEG": {
+      "display": {
+        "ai_signal": 1,
+        "no_clear_signal": 17,
+        "uncertain": 3
+      },
+      "e43_original_false_ai": 2,
+      "e43_q75_false_ai": 2,
+      "eligibility": {
+        "accepted": 21
+      },
+      "files": 21,
+      "original_false_ai": 1,
+      "positive_with_warning": 1,
+      "q75_false_ai": 2
+    },
+    "MPO": {
+      "display": {
+        "ai_signal": 7,
+        "no_clear_signal": 144,
+        "uncertain": 32
+      },
+      "e43_original_false_ai": 11,
+      "e43_q75_false_ai": 24,
+      "eligibility": {
+        "accepted": 111,
+        "input_policy_413": 72
+      },
+      "files": 183,
+      "original_false_ai": 7,
+      "positive_with_warning": 2,
+      "q75_false_ai": 15
+    },
+    "PNG": {
+      "display": {
+        "ai_signal": 1,
+        "uncertain": 1
+      },
+      "e43_original_false_ai": 2,
+      "e43_q75_false_ai": 2,
+      "eligibility": {
+        "accepted": 2
+      },
+      "files": 2,
+      "original_false_ai": 1,
+      "positive_with_warning": 0,
+      "q75_false_ai": 1
+    }
+  },
+  "limits": "Owner-declared REAL, historically consumed DEVELOPMENT. Duplicate files reported separately; bursts/scenes are not independent. No AI-recall estimate, label/source-specific exception, fit, threshold tuning or E49 access. Private images/filenames/per-image scores stay in ignored work directory.",
+  "scores_sha256": "82223943ff259365c1aa9dc2d6679cc491dfc6ad0f4086e618b7d8c5dbee2b1a",
+  "state": "E95_consumed_owner_gallery_complete",
+  "unique_byte_parents": {
+    "display": {
+      "ai_signal": 9,
+      "no_clear_signal": 161,
+      "uncertain": 36
+    },
+    "e43_original_false_ai": 15,
+    "e43_q75_false_ai": 28,
+    "eligibility": {
+      "accepted": 134,
+      "input_policy_413": 72
+    },
+    "files": 206,
+    "original_false_ai": 9,
+    "positive_with_warning": 3,
+    "q75_false_ai": 18
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "state": "CLI_probe_passed",
+  "checks": [
+    {
+      "exit_code": 0,
+      "passes": true,
+      "new_real_false_ai": 0
+    },
+    {
+      "exit_code": 2,
+      "passes": false,
+      "new_real_false_ai": 1
+    }
+  ],
+  "note": "Second input is an explicitly synthetic single-score corruption, not a model candidate or measured result."
+}

@@ -21,8 +21,8 @@ from pydantic import BaseModel
 from starlette.concurrency import run_in_threadpool
 
 from pixelproof.e92_demo import CANDIDATE_SHA, GUARD_ID, MODEL_ID
-from pixelproof.image_input import DEFAULT_LIMITS, ImagePolicyError
-from pixelproof.research_serve import decode_demo
+from pixelproof.image_input import ImagePolicyError
+from pixelproof.demo_image_input import PHOTO_LIMITS, decode_photo
 from pixelproof.demo_policy import DemoEngine
 
 logger = logging.getLogger(__name__)
@@ -85,7 +85,7 @@ def create_app(engine_factory=DemoEngine, *, inference_timeout=90.0, upload_time
                     raise HTTPException(400, 'Dosya boyutu doğrulanamadı.') from None
                 if length < 0:
                     raise HTTPException(400, 'Dosya boyutu doğrulanamadı.')
-                if length > DEFAULT_LIMITS.max_upload_bytes:
+                if length > PHOTO_LIMITS.max_upload_bytes:
                     raise HTTPException(413, 'Dosya 12 MB sınırını aşıyor.')
             if request.headers.get('content-type', '').split(';')[0].lower() not in \
                     ('image/jpeg', 'image/png', 'image/webp', 'application/octet-stream'):
@@ -94,7 +94,7 @@ def create_app(engine_factory=DemoEngine, *, inference_timeout=90.0, upload_time
             async def read_bounded():
                 body = bytearray()
                 async for chunk in request.stream():
-                    if len(body) + len(chunk) > DEFAULT_LIMITS.max_upload_bytes:
+                    if len(body) + len(chunk) > PHOTO_LIMITS.max_upload_bytes:
                         raise HTTPException(413, 'Dosya 12 MB sınırını aşıyor.')
                     body.extend(chunk)
                 return bytes(body)
@@ -104,7 +104,7 @@ def create_app(engine_factory=DemoEngine, *, inference_timeout=90.0, upload_time
             except TimeoutError:
                 raise HTTPException(408, 'Dosya aktarımı zamanında tamamlanamadı.') from None
             try:
-                image = await run_in_threadpool(decode_demo, raw)
+                image = await run_in_threadpool(decode_photo, raw)
             except ImagePolicyError as exc:
                 raise HTTPException(exc.status_code, exc.detail) from None
             del raw

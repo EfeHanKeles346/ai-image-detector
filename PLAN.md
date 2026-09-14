@@ -22,6 +22,72 @@ Dataset volume is not TRAIN eligibility: retain all protected DEV/final/diagnost
 roles. Existing authorization for small code/evidence git commits and pushes remains;
 never push raw images, caches or weights, and never force-push.
 
+
+
+
+
+## Current gallery checkpoint — E95/E96 completed (2026-09-14)
+
+The owner gallery remains consumed DEVELOPMENT, excluded from TRAIN/CAL. E92 measured
+9 original and18 Q75 false AI indications among210 files (206 unique parents); display
+165 no-clear/36 uncertain/9 AI,3 positive warnings. E43 previously15/28, but E92 creates
+7 new original/2 new social errors while rescuing13/12. Do not call pooled improvement
+universal progress or claim the model is now error-free. A screenshot, water scene and
+night street example were reviewed qualitatively; processing causes remain hypotheses.
+No private image/text/filename is published. Detailed results stay in ignored work.
+
+**Current local API admission is32MP, superseding the earlier16MP profile below.** All
+210 gallery stills now fit; previously73 24.47MP images were blocked. Keep12MiB, one
+request slot and all other bounds. Native RGB equality210/210 and HTTP6/6 pass. E92
+weights/cuts and original-alert display policy stay unchanged; this fixes admission,
+not the nine wrong classifications. The existing preview remains localhost:3002.
+
+### Next model improvement, based on these findings
+
+1. Freeze E95 errors and keep the gallery as consumed regression only. Do not change a
+   cut, add filename/camera/screenshot exceptions, or train on these nine failures.
+2. Register a distinct TRAIN-only context/processing experiment: use eligible existing
+   real and AI parents with matched transforms to test whether highest-texture crops
+   over-weight repetitive backgrounds compared with image context. Compare a declared
+   uniform-coverage/global-context representation only after crop/source/scene roles,
+   input identities and resource budget are frozen. This hypothesis is motivated by
+   visual review, not yet proven. No new model fit started during the gallery audit.
+3. Fit every representation/scaler/head inside TRAIN and select only on separately
+   grouped CAL; do not choose crop counts/weights/thresholds on gallery outcomes. Keep
+   strict E92/E43 AI retention, previous real-source guards, fixed cuts and original/Q75
+   reporting. Screenshots/document images need an explicit separate specificity set,
+   not posthoc deletion from the existing gallery's denominator.
+4. Use the newly implemented732-view paired regression guard before accepting a future
+   change:206 owner REAL+160 E66 AI, two conditions. Any newly wrong previously correct
+   REAL or lost AI must reject it. Baseline self-check and synthetic failure probes
+   passed. This is necessary consumed-DEV protection, not independent validation;
+   candidate artifact and input contracts must be verified before comparing scores.
+5. Require a separately audited unexposed source/generator evaluation for broader trust.
+   Current gallery shows camera/scene concentration and no AI positives; volume does
+   not prove OOD generalization. Keep data acquisition disabled on mobile connection.
+
+## E96 registration — support native24MP gallery inputs without changing E92 (2026-09-14)
+
+Score-blind file-header audit found73/210 gallery images are5712x4284 (24.47MP),
+rejected by the demo's16MP cap. All210 files fit12MiB. Add a general32MP local-photo
+input profile, keeping12MiB, one concurrent request, dimension/aspect limits and all
+format/animation/alpha/timeouts. Decode without resizing/recompression; frozen E92
+features/cuts stay unchanged. This is input coverage work, not a gallery-trained model.
+Before accepting: verify decode pixel parity for all210 images, old-policy rejection
+versus new-policy admission,32MP overflow rejection, native HTTP replay of three newly
+admitted24MP images plus the existing AI outcomes, and full tests. Keep E95's frozen
+16MP admission report intact; report E96 separately. No filename/camera-based REAL veto.
+## E95 registration — consumed owner gallery with current E92 (2026-09-14)
+
+User requests inspecting the project gallery and justified development from its
+failures. The gallery was previously moved to PixelProof Workspace/Samples. Freeze
+the known210 REAL stills/206 unique byte parents using historical identity390e3c21…ac09;
+exclude the separately protected reserve and MOV. Score fixed E92 original+Q75 once,
+no gallery TRAIN/CAL or threshold tuning. Report every file, exact duplicates, camera/
+format groups, UI eligibility and alert-preserving display; no independent-final or
+AI-retention claim from this REAL-only sample. Full results remain private in ignored
+ml/work/e95_owner_gallery; Git receives aggregate evidence only. No downloads or E49.
+Decide a justified follow-up after locked diagnostic results; preserve E92 artifacts.
 ## Historical overnight execution (2026-09-13; acquisition superseded on2026-09-14)
 
 User explicitly requests continuous active-session work, data acquisition when needed,

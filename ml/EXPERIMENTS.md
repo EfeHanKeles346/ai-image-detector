@@ -7547,3 +7547,101 @@ CAL-only thresholds, image-macro pixel AUC/AP, mask-area strata, random/centre b
 and authentic false-localisation. Then one registered frozen-DINO dense linear head if
 eligible groups and a baseline signal justify fitting. No E92 heatmap proxy, classic-
 splice promise, new generation/download or fresh-final claim. PLAN contains the ladder.
+
+
+## E95 registration — consumed owner gallery with current E92 (2026-09-14)
+
+User requests inspecting the project gallery and justified development from its
+failures. The gallery was previously moved to PixelProof Workspace/Samples. Freeze
+the known210 REAL stills/206 unique byte parents using historical identity390e3c21…ac09;
+exclude the separately protected reserve and MOV. Score fixed E92 original+Q75 once,
+no gallery TRAIN/CAL or threshold tuning. Report every file, exact duplicates, camera/
+format groups, UI eligibility and alert-preserving display; no independent-final or
+AI-retention claim from this REAL-only sample. Full results remain private in ignored
+ml/work/e95_owner_gallery; Git receives aggregate evidence only. No downloads or E49.
+Decide a justified follow-up after locked diagnostic results; preserve E92 artifacts.
+
+
+## E96 registration — support native24MP gallery inputs without changing E92 (2026-09-14)
+
+Score-blind file-header audit found73/210 gallery images are5712x4284 (24.47MP),
+rejected by the demo's16MP cap. All210 files fit12MiB. Add a general32MP local-photo
+input profile, keeping12MiB, one concurrent request, dimension/aspect limits and all
+format/animation/alpha/timeouts. Decode without resizing/recompression; frozen E92
+features/cuts stay unchanged. This is input coverage work, not a gallery-trained model.
+Before accepting: verify decode pixel parity for all210 images, old-policy rejection
+versus new-policy admission,32MP overflow rejection, native HTTP replay of three newly
+admitted24MP images plus the existing AI outcomes, and full tests. Keep E95's frozen
+16MP admission report intact; report E96 separately. No filename/camera-based REAL veto.
+
+
+## E95 result — current E92 on the consumed owner gallery (2026-09-14)
+
+Contract SHA4753e1877ac8b89a9ec9440ee396eae5807b9198dce7040aa94e99f72dcb85a0;
+private locked score SHA82223943ff259365c1aa9dc2d6679cc491dfc6ad0f4086e618b7d8c5dbee2b1a.
+210 files,206 unique byte parents,412 native predictions; fixed original and social-Q75
+views. Historical REAL labels and gallery identity retained; reserved still/MOV excluded.
+No refit, cutoff change, downloads, E49 or fresh-final claim. Outgoing sockets denied.
+
+| Population / measure | Original | Social Q75 |
+|---|---:|---:|
+| E92 false AI, all210 files |9/210 (4.29%)|18/210 (8.57%)|
+| E92 false AI,206 unique byte parents |9/206 (4.37%)|18/206 (8.74%)|
+| E43 false AI, all210 files |15/210 (7.14%)|28/210 (13.33%)|
+| E92 new errors relative to E43, unique parents |7|2|
+| E92 rescued E43 errors, unique parents |13|12|
+
+Original-submission display:165 no-clear-signal/36 uncertain/9 AI indications;3 AI
+indications are warned as inconsistent. Deduplicated display161/36/9. No-clear is not
+an authenticity certificate; do not turn201 non-positive or165 no-clear outcomes into
+an accuracy claim. The original-to-Q75 perturbation produces12 new false indications
+and removes3, leaving18. The gallery is dominated by one phone and correlated scenes:
+203 files from iPhone15Pro,4 iPhone16e,3 without camera metadata. These are grouping
+metadata, not truth evidence or a permissible automatic REAL veto. Unique camera counts
+are199/4/3. Two PNG application-screen inputs are not a natural-photo population.
+
+The prior16MP API profile admitted137 files and rejected73 high-resolution originals.
+Its admitted subset has7 E92 original false indications versus5 E43: the pooled source
+improvement must not hide this reversal. E95 preserves that historical admission policy;
+the changed E96 policy is evaluated separately. All rows, including screenshots and
+rejected large inputs, remain in their original diagnostic denominator.
+
+Posthoc visual review of three high-scoring examples found an application screenshot,
+water ripples and a textured night street scene. This motivates distinct scope/context/
+processing hypotheses, not causal attribution or sample-specific correction. No private
+image, screenshot text or identifying filename is included in aggregate evidence.
+
+## E96 result — input coverage repair and future paired regression protection (2026-09-14)
+
+The header audit identified73 5712x4284 phone files (24.47MP), all below12MiB. A general
+32MP local-demo decoder now admits210/210 versus137/210; this is +73 accepted inputs,
+not73 newly correct predictions. Native RGB pixel equality is exact on all210 images,
+including agreement with the old decoder wherever previously admitted. No resize,
+JPEG save or E92 encoder/head/cut change. One request slot and all other input bounds
+remain. Unit checks reject images above32MP and unsupported animation/transparency.
+
+After source-hash registration and pixel parity, three new24MP HTTP examples were
+chosen by file SHA, not scores. Along with three old AI outcome/warning representatives,
+all six returned the exact frozen expected display. There is a false AI among the new
+photo cases, explicitly retained as an inference-parity success and classification
+failure. No generic AI-recall improvement is inferred from three selected examples.
+No E92 alert policy changed; input handling cannot certify an unseen-source model.
+
+New `development_regression.compare_development` and `tools/gallery_regression.py`
+freeze a private732-view baseline:206 unique owner REAL+160 consumed E66 AI, two
+conditions. Both classes, full paired identities, labels/sources/body hashes and finite
+scores are required. Any new false REAL indication or lost reference-caught AI fails,
+even if overall counts are unchanged. Failed CLI comparisons exit2. Reference replay
+passes; synthetic single-REAL-score corruption fails. Applying this diagnostic to old
+E43 versus E92 reveals9 newly wrong REAL views and1 lost AI view, correctly failing.
+This is a consumed-DEV guard, never a TRAIN population, independent final or permission
+to fit thresholds against the gallery. Future candidate artifact/scoring contracts must
+be independently verified before these numeric reports are compared.
+
+Raw E95 scores and the732-view baseline remain private in ignored ml/work; Git has
+only hashes/aggregate reports. The local demo's scope now says photograph-like images,
+not documents/application screens, following the observed screenshot failure; this
+is a scope disclosure, not an automatic screenshot classifier. The nine original false
+indications remain unresolved ML errors. Proposed next hypothesis and preservation gates
+are recorded in PLAN. Validation:898 Python tests,11 web tests, lint/typecheck/build,
+210 decode parity checks and6 targeted real HTTP checks pass.
