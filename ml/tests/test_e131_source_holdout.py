@@ -22,7 +22,8 @@ def test_small_end_to_end_fit_excludes_every_heldout_group_and_locks_before_metr
     rows=[{'parent_id':str(i),'source':'s'+str(i),'role':'TRAIN','label':i%2} for i in range(12)]
     assignment={str(i):i//4 for i in range(12)}
     c={'rows':rows,'outer_fold':assignment,'components':{str(i):str(i) for i in range(12)},
-       'max_seconds':100,'components_count':12,'fold_counts':[{'0':2,'1':2}]*3,'limits':'synthetic test'}
+       'max_seconds':100,'components_count':12,'fold_counts':[{'0':2,'1':2}]*3,'limits':'synthetic test',
+       'corpus_level_overlap_limit':'synthetic test; not a family-independent benchmark'}
     run=tmp_path/'run';run.mkdir();ev=tmp_path/'evidence';ev.mkdir();ml=tmp_path/'ml';ml.mkdir()
     contract=run/'contract.json';contract.write_text(json.dumps(c))
     monkeypatch.setattr(m,'ROOT',run);monkeypatch.setattr(m,'EVIDENCE',ev);monkeypatch.setattr(m,'ML_ROOT',ml)

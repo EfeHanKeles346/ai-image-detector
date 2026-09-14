@@ -9408,3 +9408,15 @@ Implemented conservative source/prompt/family component closure and FIT-only tra
 Added `ml/tools/run_registered_research.py` for an immediate, single already-frozen E130 or E131 stage. It does not schedule or wait for future work. It refuses incomplete E124/E125/E126/E129 resource lifecycles, checks the frozen contract and exact E92 artifact before stopping only the verified8800 listener, uses one resource lock, records the result and restores the base E92 environment with exact health identity. One targeted lifecycle test covers completed, scientific-skip, running and restoration-failure states.
 
 A CPU-only smoke test loaded the existing SHA-verified DINOv2-S weights at448px and scored one synthetic constant RGB image through the actual E130 adapter. Patch grid32x32, token shape32x32x384, duplicate-token error0, maximum half-cosine numerical drift2.682209e-7,0.88seconds including setup. Zero real images and zero downloads. This checks technical tensor/weight compatibility only; it is not a localization result. The main E124 GPU extraction remained separate. E131 implementation commit7961b14 passed1070 Python tests and GitHub CI34905706666.
+
+### E124/E125 unattended execution — 2026-09-14T22:51:28+00:00
+
+E124 completed 12525 parents / 50100 TRAIN views; maximum full-frame pilot replay error 0.0. Registering the prespecified paired E125 fit; no DEV/final opened.
+
+### E131 pre-registration scope clarification — 2026-09-15
+
+Before any E131 contract or fit, rechecked the existing E79 provenance note and [RR's primary paper, sections3.2.1–3.2.2](https://arxiv.org/html/2509.09172v1). RR explicitly includes FLUX, DALL-E and SD-family generations, COCO/CC3M-derived prompts and Chameleon material at corpus level. The local admitted rows lack the file-level mapping needed to assign those origins. CommunityForensics is also a mixed-generator corpus. Therefore the10 declared row/publisher/prompt components **do not establish generator-family independence**. Conservatively connecting every possible mixed-corpus relation could collapse the apparent AI-bearing groups; their count is not a certificate of unseen families.
+
+E131 remains useful as a publisher-group internal transfer diagnostic with explicitly incomplete upstream ancestry. Its contract and report now state `generator_family_holdout_supported:false` and retain the corpus-level limitation. Do not describe its grouped folds as unseen-generator proof, a fresh source benchmark or a qualified deployment candidate. This correction precedes registration/scoring; no result or threshold was selected. A true generator-held-out experiment requires file-level generator/prompt lineage or independently acquired clean families.
+
+E131 is now separately frozen before fitting at contract SHA256 `6db23ea917a7428d015e0453efe99b16bbcbe3fa2822e6b540e8c31b645ea421`. Exact12525-parent/10-declared-component/three-fold allocation is retained; generator-family independence is explicitly unsupported. Execution waits for resource release after E129/E130. No E131 scores yet.

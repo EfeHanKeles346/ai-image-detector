@@ -1,0 +1,43 @@
+{
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "components_count": 10,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "6db23ea917a7428d015e0453efe99b16bbcbe3fa2822e6b540e8c31b645ea421",
+  "corpus_level_overlap_limit": "RR paper sections3.2.1-3.2.2 explicitly name FLUX, DALL-E and SD families, COCO/CC3M prompts and Chameleon. Local RR rows do not map each file to those origins. CommunityForensics also mixes generators. The10 components preserve declared row/prompt links but do not isolate all corpus-level possible families; this is publisher-group transfer only, not unseen-generator evidence.",
+  "corpus_reference": "https://arxiv.org/html/2509.09172v1",
+  "downloads": 0,
+  "external_dev_or_gallery_reads": 0,
+  "fold_counts": [
+    {
+      "0": 2467,
+      "1": 2916
+    },
+    {
+      "0": 2875,
+      "1": 1110
+    },
+    {
+      "0": 2588,
+      "1": 569
+    }
+  ],
+  "generator_family_holdout_supported": false,
+  "grouping": "Preserve E53 known connected components; whole RR topics/classes, shared E36 AI prompt batch, E32 FLUX/Qwen prompts, Nano family, CSAFE, all MIDD sensors and all SID cameras; join declared FLUX/Qwen/OpenAI/Gemini family bridges and known body/pixel/scene identities. Never split a connected component to balance folds.",
+  "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence.",
+  "max_seconds": 7200,
+  "metrics": "Lock all six fold/branch predictions before held-out metrics. Fixed.5 diagnostic cut, per-condition pooled and per-fold AUC/AP/confusion; component macro/worst REAL FPR and AI recall; paired rescued/new errors. No calibration, inherited20-gate or promotion claim.",
+  "new_pixels_read": 0,
+  "objective": "Zero-start convex weighted BCE plus .5*.01*weight_norm_squared, intercept unpenalized. Unit total weight, half/class then equal component/parent/view. L-BFGS-B500,ftol1e-12,gtol1e-7; final gradient<=1e-5 and success required. No search or early held-out selection.",
+  "parents": 12525,
+  "promotion_allowed": false,
+  "representation": "Refit every standardizer/PCA only on outer-FIT rows, all4 conditions. Shared DINO3072/pooledCLIP1536/DEAR1640 each64 PCs; center768 versus fullframe768 each128 PCs. Whiten, seed131,power3;320 coordinates plus intercept. No supervised E43/E92/E103 projections or correction coefficients.",
+  "state": "E131_internal_source_holdout_registered"
+}

@@ -51,6 +51,9 @@ def freeze():
        'objective':'Zero-start convex weighted BCE plus .5*.01*weight_norm_squared, intercept unpenalized. Unit total weight, half/class then equal component/parent/view. L-BFGS-B500,ftol1e-12,gtol1e-7; final gradient<=1e-5 and success required. No search or early held-out selection.',
        'metrics':'Lock all six fold/branch predictions before held-out metrics. Fixed.5 diagnostic cut, per-condition pooled and per-fold AUC/AP/confusion; component macro/worst REAL FPR and AI recall; paired rescued/new errors. No calibration, inherited20-gate or promotion claim.',
        'limits':'Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence.',
+       'generator_family_holdout_supported':False,
+       'corpus_level_overlap_limit':'RR paper sections3.2.1-3.2.2 explicitly name FLUX, DALL-E and SD families, COCO/CC3M prompts and Chameleon. Local RR rows do not map each file to those origins. CommunityForensics also mixes generators. The10 components preserve declared row/prompt links but do not isolate all corpus-level possible families; this is publisher-group transfer only, not unseen-generator evidence.',
+       'corpus_reference':'https://arxiv.org/html/2509.09172v1',
        'downloads':0,'new_pixels_read':0,'external_dev_or_gallery_reads':0,'promotion_allowed':False}
     ROOT.mkdir(exist_ok=True);write_once(CONTRACT,c)
     write_once(EVIDENCE/'e131_source_holdout_contract.json',{k:v for k,v in c.items() if k not in ('inputs','rows','components','outer_fold')}|{'contract_sha256':digest(CONTRACT)})
@@ -156,7 +159,8 @@ def fit():
         comparison[condition]={str(label):{'rescued_errors':int((before&~after&(labels==label)).sum()),'new_errors':int((~before&after&(labels==label)).sum())} for label in (0,1)}
     result={'state':'E131_paired_internal_source_holdout_complete','contract_sha256':digest(CONTRACT),'parents':n,'source_components':c['components_count'],
         'fold_counts':c['fold_counts'],'reports':reports,'paired_changes_fullframe_vs_center':comparison,'seconds':time.monotonic()-start,
-        'locked_scores_sha256':digest(ROOT/'locked_scores.json'),'promotion_allowed':False,'new_pixels_read':0,'downloads':0,'limits':c['limits']}
+        'locked_scores_sha256':digest(ROOT/'locked_scores.json'),'promotion_allowed':False,'new_pixels_read':0,'downloads':0,'limits':c['limits'],
+        'generator_family_holdout_supported':False,'corpus_level_overlap_limit':c['corpus_level_overlap_limit']}
     write_once(ROOT/'report.json',result);write_once(EVIDENCE/'e131_source_holdout.json',result)
     note='\n### E131 internal source-holdout result\n\n'+json.dumps({k:v for k,v in result.items() if k!='reports'},sort_keys=True)+'\n\nFull component/condition metrics: evidence/e131_source_holdout.json. This is consumed TRAIN analysis using separately fitted fold heads, not an independent final or serving candidate.\n'
     for path in (ML_ROOT.parent/'PLAN.md',ML_ROOT.parent/'HISTORY.md',ML_ROOT/'EXPERIMENTS.md',ML_ROOT.parent/'DATASETS.md'):

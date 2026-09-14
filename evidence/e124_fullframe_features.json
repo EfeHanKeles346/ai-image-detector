@@ -1,0 +1,18 @@
+{
+  "chunks_sha256": "c59e91734918736e2596363de28c9e496caac08f7d0f08814c61ee3a76c95d61",
+  "contract_sha256": "878b80c29d063545184a56fda0798dfa644175d852e12b369b366e09f115a786",
+  "created_parents": 12525,
+  "downloads": 0,
+  "feature_sha256": "e4e1ba93866cd506df44b63bccf88fdc2569dfce85e5f01d8745327937c8ef2c",
+  "fit_allowed": false,
+  "max_pilot_error": 0.0,
+  "model_scores": 0,
+  "next": "Separately register a full-frame versus center-only PCA128 correction comparison on all50100 TRAIN views using frozen E103 base and unchanged all-AI/correct-REAL guards. No DEV before complete passing TRAIN.",
+  "parents": 12525,
+  "peak_mps_bytes": 2194358272,
+  "pilot_views_replayed": 160,
+  "resumed_parents": 0,
+  "seconds": 8241.97917162499,
+  "state": "E124_fullframe_TRAIN_cache_complete",
+  "views": 50100
+}
