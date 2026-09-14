@@ -22,7 +22,7 @@ Dataset volume is not TRAIN eligibility: retain all protected DEV/final/diagnost
 roles. Existing authorization for small code/evidence git commits and pushes remains;
 never push raw images, caches or weights, and never force-push.
 
-## Active overnight execution (2026-09-13)
+## Historical overnight execution (2026-09-13; acquisition superseded on2026-09-14)
 
 User explicitly requests continuous active-session work, data acquisition when needed,
 experiment -> diagnosis -> justified development -> experiment, with MD and git checkpoints.
@@ -52,8 +52,10 @@ covered-accuracy guards fail. Preserve the rejected candidate; E49 stays unopene
 E89 features are complete for all128 previously selected/audited SID TRAIN parents
 under all4 conditions. E91/E92 implementation and856 tests pass. E91 completed its fixed100-epoch representation on49,076 cached TRAIN views.
 All replay/serialization checks pass, with no downloads or DEV/final reads.
-E92 is separately registered and its constrained fit is starting;120 TRAIN gates
-and runtime/AI guards remain mandatory. GitHub CI repair is verified on run34749560334 (web and Python success), and the
+E92 passes all120 TRAIN checks plus population/AI/REAL/runtime guards.
+The consumed DEV comparison is now separately frozen after fixing a pre-freeze
+parent/view pairing bug (9 focused tests pass). Score640 cached views once and lock
+scores before metrics. All20 numeric criteria and E43 AI retention apply; E49 stays closed. GitHub CI repair is verified on run34749560334 (web and Python success), and the
 standalone Turkish report is being consolidated into these three English records.
 The current offline continuation executes one separately registered data-coverage extension
 with the same E85 architecture/seed/optimizer and E86 constrained-head objective.

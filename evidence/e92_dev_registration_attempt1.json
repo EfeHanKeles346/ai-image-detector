@@ -1,0 +1,9 @@
+{
+  "state": "E92_DEV_registration_attempt1_failed_before_contract_or_new_scores",
+  "error": "ValueError: DEV coverage differs",
+  "cause": "640 scored views were passed where validate_pairs requires320 unique parent manifest rows",
+  "old_code_sha256": "544345dce16f76f5fb672d6447e54f006a461fa2d79bfe9a98e46f38fa328e1e",
+  "training_or_candidate_changed": false,
+  "new_dev_scores": 0,
+  "resolution": "Before freezing DEV, validate each scored view list against the parent manifest and require exact predecessor/cache image identity and ordering."
+}

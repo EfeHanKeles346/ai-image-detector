@@ -28,6 +28,13 @@ CONTRACT=ROOT/'dev_contract.json';SCORES=ROOT/'dev_scores.json';REPORT=ROOT/'dev
 PREVIOUS_SCORES=DATA_ROOT/'e86/dev_scores.json';PREVIOUS_REPORT=DATA_ROOT/'e86/dev_report.json'
 
 
+def validate_predecessor(rows, cached, manifest):
+    validate_pairs(rows,manifest);validate_pairs(cached,manifest)
+    fields=('parent_id','condition','sha256','role','source','label')
+    if any(any(a[k]!=b[k] for k in fields) for a,b in zip(rows,cached,strict=True)):
+        raise ValueError('E86 predecessor and E83 cache identities/order differ')
+
+
 def freeze():
     validate_fit();fit=read(FIT_REPORT)
     if digest(FIT_REPORT)!=digest(EVIDENCE/'e92_fit.json') or not fit['dev_scoring_permitted']:
@@ -40,7 +47,7 @@ def freeze():
     previous=read(PREVIOUS_REPORT)
     if digest(PREVIOUS_REPORT)!=digest(EVIDENCE/'e86_development.json') or digest(PREVIOUS_SCORES)!=previous['scores_sha256']:
         raise ValueError('immutable E86 predecessor report/scores required')
-    validate_pairs(read(PREVIOUS_SCORES)['rows'],old_scores['rows'])
+    validate_predecessor(read(PREVIOUS_SCORES)['rows'],old_scores['rows'],read(cache['manifest'])['rows'])
     paths=[Path(__file__),Path(model.__file__),PREVIOUS_REPORT,PREVIOUS_SCORES,FIT_CONTRACT,FIT_REPORT,CANDIDATE,FEATURES,CACHE_CONTRACT,CACHE_SCORES,
         DATA_ROOT/'e83/dev_report.json',Path(__file__).with_name('e83_model.py'),Path(__file__).with_name('e83_diagnostic.py'),
         Path(__file__).with_name('e83_development.py'),Path(__file__).with_name('e71_development.py'),

@@ -1,0 +1,48 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "batch_views": 8,
+  "comparison": "All20 original numeric gates, zero newly missed E43-caught AI in every source/condition, non-increased pooled REAL FPR in both conditions. Also report all paired source transitions against rejected E86 so losing its rescues cannot be hidden. Scores locked before metrics.",
+  "conditions": [
+    "publisher_original",
+    "social_q75"
+  ],
+  "contract_sha256": "f29fa1c917e07028cf879231c23d193bec14834d2aa2d49e8b448ec9a6019e90",
+  "dev_status": "CONSUMED DEVELOPMENT already used by E70/E71/E83/E86. Neither fresh nor independent final.",
+  "downloads": 0,
+  "e49_read_allowed": false,
+  "features": "Exact complete E83 DEVELOPMENT DINO3072/CLIP1536/DEAR1640 arrays, ordered original/Q75 image identities. Verify roles, source-body hashes and contract binding; no new encoder/image operations. Frozen E92 map in runtime batch8. Replay every E43 reference score<=1e-6 and both cuts unchanged.",
+  "image_reads": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e49_evaluation.py": "3a59864715cf56b3e262ea6ed444c1ca94f38dd66017952a2435ba600a726265",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e71_development.py": "4df3fef2fd5d52f722a45e16dd07507ca1d2226b95036909f55518686f1f9c02",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_development.py": "5d2b1687c0e080e36c8bc9f886c3331ec6264b6c19eaaab3b1cc3b494ef13262",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_diagnostic.py": "005bd56853b9ecf7961c4a25548516fad11b5567c9ffe2158b5b0924e7bd5065",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_model.py": "8f1ab27c4636f23cbb705572781d19ba2c65757ac115620f21ad47897ca5357e",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e92_development.py": "3dbde72bbfdf349b211596ba1831d583c69befb502435900ad9c19f6e3c07504",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e92_model.py": "745f9cb09abe4ed8083df78e5e4b667b39302e9d5d7f58a8b2c5f8bbb814cb88",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/benchmark_metrics.py": "ba460ab8a083d3de0eebb6236ed6770498f7ad274b2378946ad7349b1e92b3c7",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_contract.json": "08a2451de42642d8163738e5a96d16153a3c3f480025d4a13b316c80f9c90c9b",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_features.npz": "1201dad5a71f8077c32f3169bac661bf46784a23099e2ffd93279143e1e685be",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_report.json": "5755f4c97d03cf706cacbd580933a9b58f7aaf2ed4de0fea58e9cccbd76f29a0",
+    "/Volumes/LaCie/pixelproof-datasets/e83/dev_scores.json": "1c37ff3781ab8055bf2da636a927813ac2c2a3e6e6c4be5ec87bb67c1a2f15c2",
+    "/Volumes/LaCie/pixelproof-datasets/e86/dev_report.json": "770b168a9845adce9254fc3616ed7753561761e2f764d6ac6ce0e89c47670bb3",
+    "/Volumes/LaCie/pixelproof-datasets/e86/dev_scores.json": "6fe92f94c7e29d555f4fa11223eb5c43e4e3367cac0889fb1a72e0678e2485d6",
+    "/Volumes/LaCie/pixelproof-datasets/e92/correction.npz": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+    "/Volumes/LaCie/pixelproof-datasets/e92/fit.json": "352542408326ac7c7fa0ff49a39f5549c73a4cd11049426e4973a08cfa3d01a0",
+    "/Volumes/LaCie/pixelproof-datasets/e92/fit_contract.json": "37a630a00a4693d1c5fa581dffcc8a8c17569784ca8fb196c43b66d197f7f972"
+  },
+  "limits": "160 REAL observations are only10 dependent SIDD scenes across5 cameras; AI160 from2 previously seen families with unknown prompt linkage. Descriptive source/scene counts only; no independent view intervals or final/promotion claim. Scores locked before metrics; no sweep. E83/E86 DEV labels/features remain excluded from TRAIN; cached comparison does not reset consumption.",
+  "manifest": "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json",
+  "manifest_sha256": "bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301",
+  "max_seconds": 600,
+  "prior_reference_max_error": 1e-06,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "reference": {
+    "path": "/Volumes/LaCie/pixelproof-datasets/e43/e43_small_predev.joblib",
+    "sha256": "a3aec445926bcc8707b3775f01d2cdd9491ba8495ad8a8ec306840556ca47390"
+  },
+  "state": "E92_single_consumed_E66_cache_comparison_registered",
+  "training_allowed": false,
+  "views": 640
+}

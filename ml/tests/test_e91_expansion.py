@@ -87,3 +87,42 @@ def test_failed_train_prevents_all_development_cache_access(monkeypatch):
     monkeypatch.setattr(dev, 'validate_cache', lambda: pytest.fail('DEV cache opened after failed TRAIN'))
     with pytest.raises(ValueError, match='TRAIN/runtime'):
         dev.freeze()
+
+
+def test_successful_train_freezes_dev_with_parent_manifest(monkeypatch, tmp_path):
+    manifest = [{'parent_id': 'real', 'source': 'SIDD:test', 'label': 0},
+                {'parent_id': 'ai', 'source': 'AI:test', 'label': 1}]
+    rows = [r | {'condition': c, 'sha256': r['parent_id'] + c, 'role': 'DEVELOPMENT'}
+            for r in manifest for c in dev.CONDITIONS]
+    manifest_path = tmp_path / 'manifest.json'
+    cache = {'manifest': manifest_path, 'manifest_sha256': 'same', 'reference': {}, 'limits': ''}
+    values = {
+        dev.FIT_REPORT: {'dev_scoring_permitted': True, 'candidate_sha256': 'same'},
+        dev.CACHE_SCORES: {'rows': rows, 'features_sha256': 'same'},
+        dev.PREVIOUS_SCORES: {'rows': rows},
+        dev.PREVIOUS_REPORT: {'scores_sha256': 'same'},
+        dev.DATA_ROOT / 'e83/dev_report.json': {'scores_sha256': 'same'},
+        manifest_path: {'rows': manifest},
+    }
+    writes = {}
+    monkeypatch.setattr(dev, 'validate_fit', lambda: None)
+    monkeypatch.setattr(dev, 'validate_cache', lambda: cache)
+    monkeypatch.setattr(dev, 'digest', lambda path: 'same')
+    monkeypatch.setattr(dev, 'read', lambda path: values[path])
+    monkeypatch.setattr(dev, 'write_once', lambda path, value: writes.setdefault(path, value))
+    result = dev.freeze()
+    assert result['state'] == 'E92_single_consumed_E66_cache_comparison_registered'
+    assert writes[dev.CONTRACT]['manifest'] == manifest_path
+
+
+def test_dev_predecessor_cannot_reorder_or_substitute_cached_images():
+    manifest = [{'parent_id': 'real', 'source': 'SIDD:test', 'label': 0}]
+    rows = [manifest[0] | {'condition': c, 'sha256': c, 'role': 'DEVELOPMENT'}
+            for c in dev.CONDITIONS]
+    dev.validate_predecessor(rows, rows, manifest)
+    with pytest.raises(ValueError, match='identities/order'):
+        dev.validate_predecessor(rows[::-1], rows, manifest)
+    with pytest.raises(ValueError, match='identities/order'):
+        dev.validate_predecessor([rows[0] | {'sha256': 'substituted'}, rows[1]], rows, manifest)
+    with pytest.raises(ValueError, match='duplicate'):
+        dev.validate_predecessor([rows[0], rows[0]], rows, manifest)

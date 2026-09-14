@@ -8478,3 +8478,43 @@ E92 registered for12,269 parents/49,076 views, all18,380 AI views protected.
 Contract SHA25637a630a00a4693d1c5fa581dffcc8a8c17569784ca8fb196c43b66d197f7f972. No input/scaler/network refit in this stage,
 zero450 head, unchanged E86 minimax objective/optimizer/thresholds. Offline fit starts
 from verified E91. A TRAIN or runtime failure forbids DEV scoring.
+
+
+### 2026-09-14 — E92 TRAIN/runtime pass; DEV registration permitted
+
+Fit and full runtime checks completed in217.573s. All120 numeric TRAIN
+checks pass across legacy/previous/expanded populations and4 conditions; all previous
+and new SID population guards and AI/REAL retention pass.
+Expanded TRAIN rates (fractions):
+assigned_transport: REAL FPR0.00130310138129, AI recall0.998258977149
+clean: REAL FPR0.00143341151942, AI recall0.999129488575
+q75: REAL FPR0.000651550690644, AI recall0.998258977149
+social_q75: REAL FPR0.00104248110503, AI recall0.998041349293
+Runtime batch8 all49,076 views: {'batch_size': 8, 'decision_changes_by_cut': {'0.011505939625203613': 0, '0.07940196245908739': 0}, 'executed': True, 'max_score_error': 5.677039128237915e-07, 'minimum_ai_logit_shift': 1.9984014443252818e-15, 'passed': True}.
+Candidate SHA2563a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35. No DEV/final feature use in fit, no downloads.
+This is TRAIN success only. Register one separate consumed-E66 comparison now, using
+unchanged E83 encoder caches and fixed cuts; keep all20 numeric criteria plus per-source
+E43 AI retention, and report paired E86 changes. Do not read E49.
+
+
+### 2026-09-14 — E92 DEV registration bug stopped before scoring; repaired pre-freeze
+
+First DEV freeze attempt failed with ValueError: DEV coverage differs. The prepared
+code passed640 E83 scored views as the manifest argument to validate_pairs, which
+expects320 unique parent rows. No DEV contract or new score was written; E91/E92
+TRAIN recipes, trained candidate and all predecessor artifacts remain unchanged.
+Fix only the as-yet-unfrozen E92 DEV code: validate E86 and E83 view lists against the
+actual parent manifest, then verify exact ordered parent/condition/SHA/role/source/label
+identity. Add a successful-freeze integration test and rejection of reordered,
+substituted or duplicate views. The failed-TRAIN cache-access guard is retained.
+See evidence/e92_dev_registration_attempt1.json. Retry the same evaluation only after
+tests pass; no threshold, dataset membership or model change.
+
+
+### 2026-09-14 — E92 DEV contract frozen after pairing repair
+
+Nine focused expansion/DEV tests pass in1.69s. Successful DEV registration validates
+all prior receipts/cache identities and freezes contract SHA256f29fa1c917e07028cf879231c23d193bec14834d2aa2d49e8b448ec9a6019e90.
+One640-view consumed DEVELOPMENT scoring pass is now permitted, runtime batches8
+from existing features, no image inference/download. Scores must be locked before
+metrics; all20 fixed gates plus source/condition AI retention and E86 paired changes.
