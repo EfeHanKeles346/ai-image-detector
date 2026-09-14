@@ -1,0 +1,15 @@
+{
+  "contract_sha256": "80721e3928d94f618ce4525e50f7f3b51de04bdd15ec31f0c36217120ea85e80",
+  "detector_scores": 0,
+  "limits": "16 already-used TRAIN parents, one old editor, correlated sensor scenes and fixed prompt. This is an engineering pilot. No calibration, independent evaluation, universal claim or automatic training/serving admission.",
+  "mean_raw_background_changed_fraction": 0.9998254416167689,
+  "parents": 16,
+  "passed": false,
+  "passed_parents": 1,
+  "peak_mps_bytes": 4143857664,
+  "promotion_allowed": false,
+  "result_sha256": "bba363a9c710dd094c09e9717a648b4a5b3024acd7d4c3002a482e227ef61abf",
+  "seconds": 273.0622565409867,
+  "state": "E119_inpainting_engineering_pilot_complete",
+  "training_admission": false
+}

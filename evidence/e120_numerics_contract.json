@@ -1,0 +1,22 @@
+{
+  "branches": [
+    "fp16_sliced",
+    "fp16_sdpa",
+    "fp32_sliced"
+  ],
+  "changes": "Three fixed branches: reproduce fp16+sliced; change only attention to SDPA at fp16; change only full-pipeline compute precision to float32 with sliced attention. Same fp16 source weights cast to float32, not new weights. Fresh pipeline per branch, parent0 then1, safety checker always retained.",
+  "choice_rule": "If both fixed fp16_sdpa cases pass, use that implementation for a separately registered complete16-parent replay; otherwise require both fp32_sliced cases to pass. If neither passes, stop and diagnose. Two cases are not complete-pilot acceptance.",
+  "contract_sha256": "a7dfb88578f451eb46b507e9f19957694a84fa4b4f3d8d821c189ec2edb7083a",
+  "detector_scores": 0,
+  "downloads": 0,
+  "instrumentation": "Check finite text encoder outputs, VAE posterior parameters/decode, UNet outputs, every denoising latent and decoded image before safety evaluation. Stop each invalid case at its first nonfinite boundary; never treat NaN-generated black images as semantic safety findings.",
+  "limits": "An upstream SDXL+offload+slicing issue is a mechanism lead, not proof for this SD1.5/no-offload run. No safety-filter bypass, detector training, test access or serving change.",
+  "max_seconds": 1800,
+  "mps_limit_bytes": 10737418240,
+  "parents": [
+    0,
+    1
+  ],
+  "selection": "Original first successful and first failed E119 parents, unchanged original/mask/prompt/seeds119000/119001. Diagnostic only; no replacement or image-quality optimization.",
+  "state": "E120_fixed_numerical_probe_registered"
+}

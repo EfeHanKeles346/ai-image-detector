@@ -1,0 +1,19 @@
+{
+  "chunks_sha256": "12238976f478d24ebccca09eb51c31b54b2c8af4c24ba6a3cbe0df0e5ca57940",
+  "contract_sha256": "428f24f690ae6278dc33eebeea807466266ed0b0feb10641348ef6d592af028a",
+  "created_parent_chunks": 12525,
+  "dev_final_reads": 0,
+  "downloads": 0,
+  "feature_sha256": "475b16a66057172c6ba3948f73791919235d3c04f4211e1fd792740e014ee0d4",
+  "fit_allowed": false,
+  "max_aggregate_error": 0.0,
+  "missing_views_completed": 15210,
+  "model_scores": 0,
+  "mps_peak_bytes": 2194374656,
+  "next": "A separate frozen complete-population paired context/pooled representation fit is required.",
+  "parents": 12525,
+  "resumed_parent_chunks": 0,
+  "seconds_this_execution": 6795.670054459013,
+  "state": "E112_complete_context_features_ready",
+  "views": 50100
+}

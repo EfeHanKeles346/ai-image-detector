@@ -1,0 +1,17 @@
+{
+  "E103_replay_max_error": 0.0,
+  "E43_replay_max_error": 0.0,
+  "branches": [
+    "pooled_control",
+    "ordered_context"
+  ],
+  "contract_sha256": "0fa1b3edf45d4bfd0d3cfc951845ab093a7f29d68f7e974086d6b83d2ce3f6e9",
+  "max_aggregate_error": 0.0,
+  "metrics_opened": false,
+  "mps_peak_bytes": 2194358272,
+  "raw_sha256": "b74836aa5262493f10ae294eb696f96b0cc50bfe754839f33aa3b615d5459167",
+  "scores_sha256": "eb447f65564655dd5bd8c1461a56e6749cf26098ecc219cf29286877befd2ad8",
+  "seconds": 267.4943768749945,
+  "state": "E114_all_passing_branch_scores_locked",
+  "training_allowed": false
+}

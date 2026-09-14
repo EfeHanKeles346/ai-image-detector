@@ -1,0 +1,53 @@
+{
+  "acceptance": "Solver success and violation<=1e-8; all old population/numeric gates plus new sensor/expanded gates, zero lost AI and zero new REAL errors. Saved artifact replay exact; complete batch8 runtime score error<=1e-6, no changes at either cut. Only a TRAIN pass permits a separately registered consumed DEV screen.",
+  "ai_cut": 0.07940196245908739,
+  "branches": [
+    "pooled_control",
+    "ordered_context"
+  ],
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "e70fc94a04a8057f7aaaaeddaec7902ff94793c16086051f1876f7981b5a4096",
+  "dev_final_reads": 0,
+  "downloads": 0,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e101_features.py": "6f31fea1cc4cde988937f11d79baf99fccab7513e32ce68f0b355edf07c4173d",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e103_fit.py": "264a8dab70ca2be5f78f09fae31d6c2d99b1d741d26cae30dfce4c1048579fe1",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e103_joint_minimax.py": "cc0f66a125075d419d8d93a1c02acc449ca60fe88c2051be4168df22c47c44d6",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e112_context_features.py": "951f1b1b93a2f00499abc192a80df0c324826abd0013457c422863ed861789ae",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e113_context_fit.py": "b3bad15166e88badb7461bb4847651064fb8d1ddd22ca3944f01070011f6cf11",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e64_constrained.py": "5198597f28109e425d5e7d5a4a1b891a7edc8d484dbc9105a643886c26c29d95",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e68_minimax.py": "9372bc1c6fd3b859669aa1fa25794cb433ccdc52a7756db3b7e6a728c0d5648a",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e73_fit.py": "8e6c9f628d177e7c4d67062f10426bbb6a8bc1ece25d4fc137712be6febb51ba",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e80_fit.py": "9d2abb1b59367ca95f51c4eb53425632665b80b29d6ee4751d5ccd609d37f003",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e83_model.py": "8f1ab27c4636f23cbb705572781d19ba2c65757ac115620f21ad47897ca5357e",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e91_data.py": "38b780cb54d01f9fc4c5a077bd6a31462d7de246a0b4d408c02111619c8f1e9d",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e92_gates.py": "8f1c83c62b838babd17b7445342dc1cfa9e6ee6a8c2942cdb560fa4fd6a38e85",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/retention_gate.py": "1dcbb2351d0e4a2788a041ccbcddfb598d1c3e73ff524626917f9f31f95fcf0e",
+    "/Volumes/LaCie/pixelproof-datasets/e100/training_manifest.json": "c5abc769d1b430bba52e8e5ae8c7ae90fdeb1cbbc56c7a40d4bc01f458ee496e",
+    "/Volumes/LaCie/pixelproof-datasets/e101/features.json": "30407400ad7bf6c1415b99116fdbc6757238c2a2cc36ee4fb8a357e4f271d982",
+    "/Volumes/LaCie/pixelproof-datasets/e101/features_contract.json": "0a4dd9a88cb40810412647df6123aec01827ef6cd0635036577f74dd92020e9d",
+    "/Volumes/LaCie/pixelproof-datasets/e101/midd_features.npz": "a834e0517f9663b2f3856f17272e107f87148709095ccf300affe3a3a04e25f1",
+    "/Volumes/LaCie/pixelproof-datasets/e102/correction.npz": "73ad43fbd74f1d1f94ca45f49c1ff662cfea89ed301af123057e7260277bd7de",
+    "/Volumes/LaCie/pixelproof-datasets/e102/fit.json": "2756fd8e5f7b7facddfca800b36f459b6f0c788bcdcd7f56fc57115999209907",
+    "/Volumes/LaCie/pixelproof-datasets/e103/correction.npz": "c78bbeae1ecd9328a0955c27eb378d221d1b3243a9f7c3f9bbd94c6edaa4d174",
+    "/Volumes/LaCie/pixelproof-datasets/e103/fit.json": "426f8c786f5b9104b29cd20a59ae7a7dcf36e12c156eb8610092cd0e19f500c5",
+    "/Volumes/LaCie/pixelproof-datasets/e103/fit_contract.json": "10f308eadc24602a2a7bf317e4ac432d013cc0edd8a16da77f73ab4a76f757db",
+    "/Volumes/LaCie/pixelproof-datasets/e112/contract.json": "428f24f690ae6278dc33eebeea807466266ed0b0feb10641348ef6d592af028a",
+    "/Volumes/LaCie/pixelproof-datasets/e112/features.npz": "475b16a66057172c6ba3948f73791919235d3c04f4211e1fd792740e014ee0d4",
+    "/Volumes/LaCie/pixelproof-datasets/e112/report.json": "11a1e7f7f908d60ba9a27c62346e3f4f229a3d5cd68518bd9a2499bb68bcbdb9"
+  },
+  "limits": "TRAIN-only paired ablation; both PCA and head fitted only on complete TRAIN. No calibration, user-gallery learning or independent evidence. Retain rejected branch artifacts and report both, including failure.",
+  "max_seconds_per_branch": 3600,
+  "objective": "Identical E103 joint worst-class/source/condition BCE, L2.01, SLSQP200 ftol1e-9, CPU2. All E103 AI logits nondecreasing; every correct REAL binary decision protected. Two fixed branches, no sweep or DEV selection.",
+  "parents": 12525,
+  "promotion_allowed": false,
+  "real_cut": 0.011505939625203613,
+  "representation": "All-TRAIN per-coordinate center/std (floor1e-6), randomized PCA128 seed113 power3, whiten by TRAIN explained variance (floor1e-12). Same transform capacity for pooled mean/std1536 and ordered center plus center-minus-two-local-mean1536. Frozen E103450 coordinates appended with128 new coordinates; zero578 delta weights.",
+  "state": "E113_paired_complete_TRAIN_context_fit_registered",
+  "views": 50100
+}

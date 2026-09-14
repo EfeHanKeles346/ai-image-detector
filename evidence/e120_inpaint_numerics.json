@@ -1,0 +1,162 @@
+{
+  "branch_passes": {
+    "fp16_sdpa": true,
+    "fp16_sliced": false,
+    "fp32_sliced": true
+  },
+  "contract_sha256": "a7dfb88578f451eb46b507e9f19957694a84fa4b4f3d8d821c189ec2edb7083a",
+  "detector_scores": 0,
+  "limits": "An upstream SDXL+offload+slicing issue is a mechanism lead, not proof for this SD1.5/no-offload run. No safety-filter bypass, detector training, test access or serving change.",
+  "next_complete_replay_branch": "fp16_sdpa",
+  "peak_mps_by_branch": {
+    "fp16_sdpa": 6788562944,
+    "fp16_sliced": 4143874048,
+    "fp32_sliced": 7860109312
+  },
+  "results": {
+    "fp16_sdpa": [
+      {
+        "branch": "fp16_sdpa",
+        "checks": {
+          "background_exact": true,
+          "masked_pixels_changed": true,
+          "nonblank_output": true,
+          "safety_check_negative": true
+        },
+        "composite_sha256": "f933be36fdf271330e3bb48781e04a3715617c1b7871afe139d542763b254d16",
+        "finite_boundary_counts": {
+          "before_safety": 1,
+          "denoising_latents": 30,
+          "text_encoder": 4,
+          "unet": 30,
+          "vae_decode": 1,
+          "vae_encode": 1
+        },
+        "index": 0,
+        "passed": true,
+        "raw_background_changed_fraction": 0.9998420693187638,
+        "raw_sha256": "219b31de0b15dd4a1e8ae7c2b2a25c4ef41e013ef4ea010adcc5b317907050ac",
+        "seconds": 31.734042625059374,
+        "seed": 119000
+      },
+      {
+        "branch": "fp16_sdpa",
+        "checks": {
+          "background_exact": true,
+          "masked_pixels_changed": true,
+          "nonblank_output": true,
+          "safety_check_negative": true
+        },
+        "composite_sha256": "97015adf9c215c926ba0306ce8f9574cd30991b3e5d9ff9601b68878ed829099",
+        "finite_boundary_counts": {
+          "before_safety": 1,
+          "denoising_latents": 30,
+          "text_encoder": 4,
+          "unet": 30,
+          "vae_decode": 1,
+          "vae_encode": 1
+        },
+        "index": 1,
+        "passed": true,
+        "raw_background_changed_fraction": 0.9987316127133098,
+        "raw_sha256": "f4248a5ecd9754dcb57f1474c6b86a84d1a131d5ea343f335b1e0a69a76f8a96",
+        "seconds": 30.649457083898596,
+        "seed": 119001
+      }
+    ],
+    "fp16_sliced": [
+      {
+        "branch": "fp16_sliced",
+        "checks": {
+          "background_exact": true,
+          "masked_pixels_changed": true,
+          "nonblank_output": true,
+          "safety_check_negative": true
+        },
+        "composite_sha256": "da1434c683f343bf26f5c4110d1e0a7c32a1b95d7ec401d33d7f7f0488722e82",
+        "finite_boundary_counts": {
+          "before_safety": 1,
+          "denoising_latents": 30,
+          "text_encoder": 4,
+          "unet": 30,
+          "vae_decode": 1,
+          "vae_encode": 1
+        },
+        "index": 0,
+        "passed": true,
+        "raw_background_changed_fraction": 0.9998463377155541,
+        "raw_sha256": "f28a8401b6d9ab05e9caeb0b0e66088bd1ae5e080adfd1efebea4be712d463d0",
+        "seconds": 18.92328125005588,
+        "seed": 119000
+      },
+      {
+        "branch": "fp16_sliced",
+        "finite_boundary_counts": {
+          "text_encoder": 4,
+          "unet": 1,
+          "vae_encode": 1
+        },
+        "first_nonfinite_stage": "unet",
+        "index": 1,
+        "passed": false,
+        "rendered_images": 0,
+        "safety_classification_performed": false,
+        "seconds": 1.0191235840320587,
+        "seed": 119001
+      }
+    ],
+    "fp32_sliced": [
+      {
+        "branch": "fp32_sliced",
+        "checks": {
+          "background_exact": true,
+          "masked_pixels_changed": true,
+          "nonblank_output": true,
+          "safety_check_negative": true
+        },
+        "composite_sha256": "7588e2392cb843cd1405ed4b62a3535285735f34dccdd52c48cd00b9a8b1dbc7",
+        "finite_boundary_counts": {
+          "before_safety": 1,
+          "denoising_latents": 30,
+          "text_encoder": 4,
+          "unet": 30,
+          "vae_decode": 1,
+          "vae_encode": 1
+        },
+        "index": 0,
+        "passed": true,
+        "raw_background_changed_fraction": 0.9998548745091344,
+        "raw_sha256": "9856e2f6d79b596ea6ce1b3e3a1db89ac46cb608c9a50e7b3a0a80762c750cea",
+        "seconds": 28.08796212496236,
+        "seed": 119000
+      },
+      {
+        "branch": "fp32_sliced",
+        "checks": {
+          "background_exact": true,
+          "masked_pixels_changed": true,
+          "nonblank_output": true,
+          "safety_check_negative": true
+        },
+        "composite_sha256": "fdcfeffafcec5c863c0eb19c97a4aaf52e606c59b1922bd7fdc3ecd9e1cc7bbf",
+        "finite_boundary_counts": {
+          "before_safety": 1,
+          "denoising_latents": 30,
+          "text_encoder": 4,
+          "unet": 30,
+          "vae_decode": 1,
+          "vae_encode": 1
+        },
+        "index": 1,
+        "passed": true,
+        "raw_background_changed_fraction": 0.998709967879066,
+        "raw_sha256": "63a4b13a77e4e231606b514db2b0f4db61470ea2ec09d83957b0c9265acc56f4",
+        "seconds": 25.23321350000333,
+        "seed": 119001
+      }
+    ]
+  },
+  "seconds": 267.8275792079512,
+  "state": "E120_fixed_numerical_probe_complete",
+  "training_allowed": false
+}

@@ -8235,3 +8235,51 @@ CocoGlide exact ancestry overlap motivates a traceable TRAIN-only generation pil
 E118 asset acquisition completed in344.59s; all four safetensors match publisher SHA256 and small files match Git blobs. E119 preparation completed16/16 groups with10.10–16.99% mask coverage, preserving original TRAIN roles and source hashes. Tests cover exact unchanged composite background, identical masking of AI/non-AI edits, deterministic selection, rejection of evaluation-role originals, corrupted asset bodies and dependency/API failure gates. Full suite962 passed; no detector/generator scores at this preparation checkpoint. Fixed generation is queued after Model1 completion; no claim of model improvement from data preparation.
 
 E119 environment completion before generation: isolated pip check detected missing importlib-metadata even though class import succeeded. Added only importlib-metadata9.0.1 and zipp4.1.0 (38158wheel bytes), checked publisher hashes, recorded an isolated hash-locked dependency file and supplemental receipt. Isolated pip check now passes; all frozen E119 inputs remain unchanged. All16 classic controls preserve every out-of-mask pixel exactly;97.89–100% of their masked pixels change;3/16 masks cover the image center. No detector/generator inference performed. CI for6b399ac passed both jobs (34886187832).
+
+### E112/E113 unattended execution — 2026-09-14T19:32:52+00:00
+
+E112 completed 12525 parents / 50100 TRAIN views; maximum aggregate error 0.0. Registering the prespecified paired E113 fit; no DEV/final opened.
+
+### E112/E113 unattended execution — 2026-09-14T19:40:03+00:00
+
+E113 paired TRAIN fits completed. {"ordered_context": {"AI_caught_by_condition": {"assigned_transport": 4595, "clean": 4595, "q75": 4595, "social_q75": 4595}, "dev_scoring_permitted": true, "false_REAL_alerts_by_condition": {"assigned_transport": 0, "clean": 0, "q75": 0, "social_q75": 0}, "solver_success": true}, "pooled_control": {"AI_caught_by_condition": {"assigned_transport": 4595, "clean": 4595, "q75": 4595, "social_q75": 4595}, "dev_scoring_permitted": true, "false_REAL_alerts_by_condition": {"assigned_transport": 0, "clean": 0, "q75": 0, "social_q75": 0}, "solver_success": true}} These are TRAIN guards only; serving/promotion and independent evaluation remain unchanged. Full reports are in evidence/e113_context_fit.json.
+
+### E112/E113 unattended execution — 2026-09-14T19:40:23+00:00
+
+Pipeline final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E112/E113 unattended execution — 2026-09-14T19:41:02+00:00
+
+Started separately registered E114 consumed-DEV scoring for pooled_control, ordered_context. Frozen640-view comparison; no training or final/gallery access.
+
+### E114 automatic consumed-DEV result
+
+{"ordered_context": {"by_condition": {"publisher_original": {"AI_caught": 159, "REAL_false_alerts": 0, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": false, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}, "social_q75": {"AI_caught": 159, "REAL_false_alerts": 12, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": true, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}}, "passes_consumed_DEV_screen": false}, "pooled_control": {"by_condition": {"publisher_original": {"AI_caught": 159, "REAL_false_alerts": 0, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": false, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}, "social_q75": {"AI_caught": 159, "REAL_false_alerts": 12, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": true, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}}, "passes_consumed_DEV_screen": false}}
+
+Full report: evidence/e114_context_development.json. This is consumed development; no independent proof or serving change. Only passing branches may proceed to a separately registered gallery regression. Failed branches require a new hypothesis, not relaxed gates.
+
+### E112/E113 unattended execution — 2026-09-14T19:46:07+00:00
+
+E114 finalizer E92 restoration ready=True.
+
+### E119 one-shot execution — 2026-09-14T19:46:11+00:00
+
+Starting registered16-parent E119 local inpainting engineering probe after Model1 completion. No detector fitting or evaluation data. E92 is temporarily stopped for GPU memory.
+
+### E119 automatic engineering pilot result
+
+{"contract_sha256": "80721e3928d94f618ce4525e50f7f3b51de04bdd15ec31f0c36217120ea85e80", "detector_scores": 0, "limits": "16 already-used TRAIN parents, one old editor, correlated sensor scenes and fixed prompt. This is an engineering pilot. No calibration, independent evaluation, universal claim or automatic training/serving admission.", "mean_raw_background_changed_fraction": 0.9998254416167689, "parents": 16, "passed": false, "passed_parents": 1, "peak_mps_bytes": 4143857664, "promotion_allowed": false, "result_sha256": "bba363a9c710dd094c09e9717a648b4a5b3024acd7d4c3002a482e227ef61abf", "seconds": 273.0622565409867, "state": "E119_inpainting_engineering_pilot_complete", "training_admission": false}
+
+This measures generation feasibility only. Spatial-head training requires a new protocol; no independent detector evidence or serving change.
+
+### E119 one-shot execution — 2026-09-14T19:51:35+00:00
+
+E119 pipeline final state: {"E92_restored_after_pilot": true, "failure": null, "state": "complete"}
+
+## E114 rejection and E119 numerical failure review
+
+Complete E113 training became error-free in all four views, yet both fixed branches reproduce the E103 DEV binary counts and fail the original E43-AI retention check. Thus this context extension is not a validated improvement, despite20/20 numeric DEV gates. E119 has15 nonblank/safety failures; only parent0 passes. Invalid-value cast warnings precede the black outputs, so semantic safety conclusions are unsupported for those15. E120 is an instrumented fixed two-parent /three-branch numerical probe; finite tensor checks must fail before rendering/safety evaluation. Registered full correction remains conditional on measured probe results.
+
+E120 completed the fixed precision comparison: fp16+sliced reproduces a UNet nonfinite failure on parent1 before rendering/safety; fp16+SDPA and float32+sliced both pass parents0/1. Follow the prespecified preference: E122 registers complete16-parent fp16+SDPA replay, unchanged weights/images/masks/seeds/prompt and all acceptance checks. Keep finite boundary guards and safety checker; no downloads or detector fitting. E121 initially stopped on4278 lowercase legacy train roles; preserved frozen code/contract and ran E121B with the existing upstream case-insensitive TRAIN rule. E121B reproduces all DEV guards: neither branch changes any of640 AI-cut decisions; each changes two REAL-cut decisions. All12525 TRAIN dimensions are present. The center window spans~28.04–76.56% of source area; this describes only the center branch, not union-of-crops coverage or proof of the missed example cause.
+
+E121B source-level audit confirms all12525 dimensions, reproduces E114 guards exactly and finds zero binary AI-cut changes between each E113 extension and E103. Registered E123 to probe uncropped available-frame features without fitting. All160 source/condition cases must preserve old center pixels and CLIP<=1e-5 and repeat full-frame vectors<=1e-5. Same JPEG90 preprocessing on old/new semantic views; geometric warp distortion and source-aspect confounding remain explicit limitations.

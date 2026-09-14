@@ -9292,3 +9292,51 @@ Committed/pushed E114 and E115–E117 lineage work as1c53185. Began E118 pinned 
 E118 completed2,742,261,613 verified model-asset bytes. Isolated Diffusers0.40.0 import passed without upgrading the detector environment. E119 froze and prepared16 TRAIN-only original/mask/classic-control groups; generation awaits both Model1 workflows. Added a single dependent pilot runner with execution/API failure guards.962 Python tests pass (one existing Starlette/httpx warning); compileall, pip check and whitespace checks pass. GitHub CI for1c53185 passed both web and Python jobs (run34884911449). At this checkpoint E112 had12,178/12,525 complete parent receipts; no paired classifier result yet.
 
 E119 environment completion before generation: isolated pip check detected missing importlib-metadata even though class import succeeded. Added only importlib-metadata9.0.1 and zipp4.1.0 (38158wheel bytes), checked publisher hashes, recorded an isolated hash-locked dependency file and supplemental receipt. Isolated pip check now passes; all frozen E119 inputs remain unchanged. All16 classic controls preserve every out-of-mask pixel exactly;97.89–100% of their masked pixels change;3/16 masks cover the image center. No detector/generator inference performed. CI for6b399ac passed both jobs (34886187832).
+
+### E112/E113 unattended execution — 2026-09-14T19:32:52+00:00
+
+E112 completed 12525 parents / 50100 TRAIN views; maximum aggregate error 0.0. Registering the prespecified paired E113 fit; no DEV/final opened.
+
+### E112/E113 unattended execution — 2026-09-14T19:40:03+00:00
+
+E113 paired TRAIN fits completed. {"ordered_context": {"AI_caught_by_condition": {"assigned_transport": 4595, "clean": 4595, "q75": 4595, "social_q75": 4595}, "dev_scoring_permitted": true, "false_REAL_alerts_by_condition": {"assigned_transport": 0, "clean": 0, "q75": 0, "social_q75": 0}, "solver_success": true}, "pooled_control": {"AI_caught_by_condition": {"assigned_transport": 4595, "clean": 4595, "q75": 4595, "social_q75": 4595}, "dev_scoring_permitted": true, "false_REAL_alerts_by_condition": {"assigned_transport": 0, "clean": 0, "q75": 0, "social_q75": 0}, "solver_success": true}} These are TRAIN guards only; serving/promotion and independent evaluation remain unchanged. Full reports are in evidence/e113_context_fit.json.
+
+### E112/E113 unattended execution — 2026-09-14T19:40:23+00:00
+
+Pipeline final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E112/E113 unattended execution — 2026-09-14T19:41:02+00:00
+
+Started separately registered E114 consumed-DEV scoring for pooled_control, ordered_context. Frozen640-view comparison; no training or final/gallery access.
+
+### E114 automatic consumed-DEV result
+
+{"ordered_context": {"by_condition": {"publisher_original": {"AI_caught": 159, "REAL_false_alerts": 0, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": false, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}, "social_q75": {"AI_caught": 159, "REAL_false_alerts": 12, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": true, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}}, "passes_consumed_DEV_screen": false}, "pooled_control": {"by_condition": {"publisher_original": {"AI_caught": 159, "REAL_false_alerts": 0, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": false, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}, "social_q75": {"AI_caught": 159, "REAL_false_alerts": 12, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": true, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}}, "passes_consumed_DEV_screen": false}}
+
+Full report: evidence/e114_context_development.json. This is consumed development; no independent proof or serving change. Only passing branches may proceed to a separately registered gallery regression. Failed branches require a new hypothesis, not relaxed gates.
+
+### E112/E113 unattended execution — 2026-09-14T19:46:07+00:00
+
+E114 finalizer E92 restoration ready=True.
+
+### E119 one-shot execution — 2026-09-14T19:46:11+00:00
+
+Starting registered16-parent E119 local inpainting engineering probe after Model1 completion. No detector fitting or evaluation data. E92 is temporarily stopped for GPU memory.
+
+### E119 automatic engineering pilot result
+
+{"contract_sha256": "80721e3928d94f618ce4525e50f7f3b51de04bdd15ec31f0c36217120ea85e80", "detector_scores": 0, "limits": "16 already-used TRAIN parents, one old editor, correlated sensor scenes and fixed prompt. This is an engineering pilot. No calibration, independent evaluation, universal claim or automatic training/serving admission.", "mean_raw_background_changed_fraction": 0.9998254416167689, "parents": 16, "passed": false, "passed_parents": 1, "peak_mps_bytes": 4143857664, "promotion_allowed": false, "result_sha256": "bba363a9c710dd094c09e9717a648b4a5b3024acd7d4c3002a482e227ef61abf", "seconds": 273.0622565409867, "state": "E119_inpainting_engineering_pilot_complete", "training_admission": false}
+
+This measures generation feasibility only. Spatial-head training requires a new protocol; no independent detector evidence or serving change.
+
+### E119 one-shot execution — 2026-09-14T19:51:35+00:00
+
+E119 pipeline final state: {"E92_restored_after_pilot": true, "failure": null, "state": "complete"}
+
+Continuation confirmed all three unattended pipelines completed and restored E92. Both E113 branches fitted successfully but E114 rejected both on the unchanged original E43-AI retention requirement. E119 failed15/16 generation quality checks, with nonfinite image warnings and black outputs. Preserved every failed artifact and prepared separately registered E120 numerical localization/precision comparison. No old experiment code, gate, serving model or data role changed.
+
+E120 completed the fixed precision comparison: fp16+sliced reproduces a UNet nonfinite failure on parent1 before rendering/safety; fp16+SDPA and float32+sliced both pass parents0/1. Follow the prespecified preference: E122 registers complete16-parent fp16+SDPA replay, unchanged weights/images/masks/seeds/prompt and all acceptance checks. Keep finite boundary guards and safety checker; no downloads or detector fitting. E121 initially stopped on4278 lowercase legacy train roles; preserved frozen code/contract and ran E121B with the existing upstream case-insensitive TRAIN rule. E121B reproduces all DEV guards: neither branch changes any of640 AI-cut decisions; each changes two REAL-cut decisions. All12525 TRAIN dimensions are present. The center window spans~28.04–76.56% of source area; this describes only the center branch, not union-of-crops coverage or proof of the missed example cause.
+
+Implemented E123 full-frame feasibility with two focused tests for opposite-border retention, exact old center transport pixels and legacy-case TRAIN role handling. It awaits GPU release after E122. E120 completed267.83seconds; fp16+SDPA passed both cases with peak6.32GiB, float32+sliced also passed with peak7.32GiB. These are numerical fixes, not detector results.
+
+Verification checkpoint:968 Python tests pass with one existing Starlette/httpx warning; compileall, pip check and whitespace checks pass. E122 full replay is active; E123 is frozen and waits for GPU release. Completed E112/E113/E114/E119/E120/E121B evidence is retained, including failures.

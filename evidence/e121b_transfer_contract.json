@@ -1,0 +1,22 @@
+{
+  "contract_sha256": "3024f3d1ac6a9574cf186f3f1aca0327124fe28bfd2546c06a35491e26275c64",
+  "downloads": 0,
+  "engineering_revision": "E121 stopped before report because4278 legacy TRAIN rows use lowercase train. E121B applies the same case-insensitive TRAIN validation as upstream E112; no role reassignment.",
+  "geometry": "Historical center branch only:224px square after short-side256 resize. Estimate retained source area by metadata aspect ratio; report unknown sizes explicitly. This is NOT the union of center and two texture crops, and not proof of the missed AI cause.",
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e114_context_development.py": "999f8a8e53e24f7d11cdad725adf7183beedb5ac15dada41f0b99f1f5114f6b2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e121b_context_transfer_audit.py": "86d1d05d0dff453cce7198d8b9748a76b21bc6df90abed2b2121649a273ac1ee",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/experiments/e92_model.py": "745f9cb09abe4ed8083df78e5e4b667b39302e9d5d7f58a8b2c5f8bbb814cb88",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/e32_candidate.py": "e14ff1044462e49560a98fc3e8697e60738d6b41b0e3e49442dfd025c7832b6a",
+    "/Volumes/LaCie/pixelproof-datasets/e112/contract.json": "428f24f690ae6278dc33eebeea807466266ed0b0feb10641348ef6d592af028a",
+    "/Volumes/LaCie/pixelproof-datasets/e113/report.json": "b52554e9c50ec149fab9af54de809fb208f4b1ec8b611adca7e5562d6b01a0f2",
+    "/Volumes/LaCie/pixelproof-datasets/e114/report.json": "300b760f281cae0884433f171cccf69859dd4f72ba9a45ecb8021e8ab8070745",
+    "/Volumes/LaCie/pixelproof-datasets/e114/scores.json": "eb447f65564655dd5bd8c1461a56e6749cf26098ecc219cf29286877befd2ad8"
+  },
+  "limits": "Posthoc descriptive diagnostic of consumed development. TRAIN separability does not establish OOD transfer. Counts can remain constant despite score changes; compare individual decisions and complete guard outputs.",
+  "model_inference": 0,
+  "predecessor_contract_sha256": "db72638a06b05d42bc2fae60a8cd93e4d358a896c547862fc0b3c40cbac8bf72",
+  "scope": "All locked640 consumed DEV scores for both branches; all12525 TRAIN metadata rows. Aggregate by complete source/class/condition, no image/prompt identity export. No new scoring, threshold proposals, counterfactual head removal or fitting.",
+  "state": "E121B_posthoc_readonly_transfer_audit_registered",
+  "training_allowed": false
+}

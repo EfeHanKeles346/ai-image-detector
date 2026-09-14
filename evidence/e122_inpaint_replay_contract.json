@@ -1,0 +1,33 @@
+{
+  "branch": "fp16_sdpa",
+  "change": "Apply the prespecified passing numerical branch to ALL16 original E119 parents. Keep source weights,512px geometry,masks,prompt,30 steps,guidance7.5,strength1 and safety checker. Retain finite tensor guards and every original acceptance check. No selection/refill or parameter sweep.",
+  "contract_sha256": "353836702bcf414116aa3f2669de92a90081ba1f930b1cd85858afe3c8746789",
+  "detector_scores": 0,
+  "downloads": 0,
+  "labels": "Composites carry intended AI region masks; original/classic controls carry zero AI masks. Raw generator images are diagnostic outputs, not localized-ground-truth training pairs.",
+  "limits": "Engineering correction of numerical failure, not improved detector performance or a semantic-quality audit. Only after16/16 pass may a separate TRAIN-only spatial learning experiment be registered. All original research-only licences and ancestry roles remain.",
+  "max_seconds": 2400,
+  "mps_limit_bytes": 10737418240,
+  "parents": 16,
+  "promotion_allowed": false,
+  "seeds": [
+    119000,
+    119001,
+    119002,
+    119003,
+    119004,
+    119005,
+    119006,
+    119007,
+    119008,
+    119009,
+    119010,
+    119011,
+    119012,
+    119013,
+    119014,
+    119015
+  ],
+  "state": "E122_complete_numerical_replay_registered",
+  "training_allowed": false
+}
