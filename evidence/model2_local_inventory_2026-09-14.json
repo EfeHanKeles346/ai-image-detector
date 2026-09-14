@@ -1,0 +1,25 @@
+{
+  "auth_files": 512,
+  "auth_resolution": "Exact metadata path or its documented added .png encoding; reject missing/ambiguous/outside-root mappings.",
+  "classifier_calls": 0,
+  "code_sha256": "b8508460f73310b3235e5fe946f21fc3a3fa9ce1af1a3f6d813c695700dbc844",
+  "complete_nondegenerate_pairs": 512,
+  "downloads": 0,
+  "images": 512,
+  "inventory_sha256": "06d4aa5e719c5b1e69cdd71786aa0347bc59e73c8caf9ac4bfa2a137060cf92a",
+  "limits": "Exact parent hashes only; near duplicates/semantic scenes/generator provenance still require audit. Source historically consumed by E17/E18. Unselected files are not an independent unseen-source final. No localisation performance measured.",
+  "mask_area_bins": {
+    "0_to_1_percent": 0,
+    "1_to_5_percent": 93,
+    "20_to_50_percent": 142,
+    "50_to_100_percent": 84,
+    "5_to_20_percent": 193
+  },
+  "mask_fraction_median": 0.15973663330078125,
+  "multiple_edits_same_exact_parent": 0,
+  "old_first120_exposure_possible": 120,
+  "problems": {},
+  "state": "existing_CocoGlide_inventory_complete",
+  "training_roles_assigned": false,
+  "unique_exact_auth_parents": 512
+}

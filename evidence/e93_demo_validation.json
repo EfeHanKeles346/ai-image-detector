@@ -1,0 +1,3623 @@
+{
+  "consumed_e66": {
+    "guarded_real_scenes": {
+      "SIDD:scene:001": {
+        "no_clear_signal": 7,
+        "uncertain": 21
+      },
+      "SIDD:scene:002": {
+        "no_clear_signal": 4,
+        "uncertain": 11
+      },
+      "SIDD:scene:003": {
+        "no_clear_signal": 13,
+        "uncertain": 2
+      },
+      "SIDD:scene:004": {
+        "no_clear_signal": 2,
+        "uncertain": 13
+      },
+      "SIDD:scene:005": {
+        "no_clear_signal": 13,
+        "uncertain": 6
+      },
+      "SIDD:scene:006": {
+        "no_clear_signal": 7,
+        "uncertain": 12
+      },
+      "SIDD:scene:007": {
+        "no_clear_signal": 5,
+        "uncertain": 15
+      },
+      "SIDD:scene:008": {
+        "no_clear_signal": 14,
+        "uncertain": 6
+      },
+      "SIDD:scene:009": {
+        "no_clear_signal": 5,
+        "uncertain": 1
+      },
+      "SIDD:scene:010": {
+        "no_clear_signal": 1,
+        "uncertain": 2
+      }
+    },
+    "guarded_rows": [
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0001",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0002",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0003",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0004",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0005",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0006",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0007",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0008",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0010",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0011",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0012",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0013",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0014",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0015",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0016",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0017",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0018",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0019",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0020",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0022",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0023",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0025",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0027",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0028",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0029",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0030",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0032",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0033",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:001",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0034",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0035",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0036",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0038",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0039",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0040",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0042",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0043",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0044",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0045",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0047",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0048",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0050",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0051",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0052",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:002",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0054",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0055",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0057",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0059",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0060",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0062",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0063",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0064",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0065",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0066",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0068",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0069",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0070",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0072",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0073",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:003",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0075",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0076",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0077",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0078",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0080",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0081",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0083",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0084",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0086",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0087",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0088",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0089",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0090",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0091",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0092",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:004",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0094",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0096",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0097",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0098",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0099",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0101",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0102",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0104",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0105",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0106",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0107",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0108",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0110",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0111",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0113",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0114",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0115",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0116",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0117",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:005",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0118",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0120",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0121",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0122",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0123",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0125",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0126",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0127",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0129",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0130",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0132",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0133",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0134",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0135",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0136",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0137",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0138",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0139",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0140",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:006",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0142",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0144",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0145",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0146",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0147",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0149",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0150",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0151",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0152",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0154",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0155",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0156",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0157",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0159",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0160",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0161",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0163",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0164",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0165",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0166",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:007",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0167",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0168",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0169",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0170",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:N6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0172",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0173",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:G4"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0175",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0177",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0178",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0179",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:S6"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0180",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0181",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0182",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0184",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0185",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0186",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0188",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0189",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0190",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0191",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:008",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0192",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:009",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0193",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:009",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0194",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:009",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0195",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:009",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0196",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:009",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0197",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:009",
+        "source": "SIDD:IP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0198",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:010",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "SIDD:0199",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "SIDD:scene:010",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "SIDD:0200",
+        "reason": "limited_negative_evidence",
+        "scene_group": "SIDD:scene:010",
+        "source": "SIDD:GP"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:000bfbd9c1f1bf5bc0caac0a328bdaa11715593e53897c374b5a88e7bca256a3",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:062ae2e4fc0ba6dbc9fba2c2e9b81d786d43716faf4c0c2102a1821d178c7fa7",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:069edd884b04966fd8936b12cfbd66f68900353e411d437b2901ba4e89fe1558",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:071414fd3fe79b2d231286a69a81ce796c78d9333774758a6e401d4edf952cfc",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:07bdd8f0f7f1699fe938865b1585616b18815903b4b9945e19e3bd9adc309644",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:0869801c44d763cf47d4d4136a6a1d8880808dd23e1b4673e88bbbc2a5a08778",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:0bc7b922f80f36a6aca80485cc12c9662d0ed11c0b6953ee4d7a5cc8e3a6c002",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:0c9d159e1d35ce827848b04c7df5dd5f8d10a68e7f21d979eff2bed889793001",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:0d38ee3a9fbaa34634b8a1a2c2372ae028f79127f08a31d1a1e55a0bb006cbd7",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:0dfc529addf9eafef68c8ff0a70238c704bb9974b10c2baaece3dd198a3c81ea",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "uncertain",
+        "parent_id": "e32:0e69a254de642138ee6aef6f6947b863acba3a0838bab1efbe2b6b811bf7fb5b",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:0fa965b1a29dc3fbb4c8ef49da059efc331a066ee0262f01b138f82af19bd644",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:114f5cae224b6c132a44445490f6640200ed7b10e28d2c605fb06296dd85ea99",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:1155003e643ad43e945d0e1b9de1336d621a367ddd6c6d0b9d603202d28c7209",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:155f6912d6eab7914135c1020616549e95a729260e0331f0063e618d45052f7e",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:15e679a441f95fdd444834b1a15339340bd812974ef4d2e08081459873fe899e",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:17f2e33f31417d987fdc2264a5a01699bc4ea428ad3ac9211b73a77f80211901",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:1d684e482fab324eaf0aafb19ce785962a491995e3a7b8e5a3e93a0b40937e8e",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:2382393dae39adbee2c850f775116ad024dd45bef20461e63e5c58eb701b90f9",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:263a4558464db38db1ee56e7fb979fc89ab623f1e605b685c90352056138a5bd",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:28503e8233e94e736ee622eb5ca5446a4d9434c44fcf864cbcce9f0f5143aaad",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:29141db69e0e1cb84a7be715df8479e02fa062aed9cfe88b6426591cb2889041",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:2b74ea530e7dfb12c882cd7f385549ab3668b2c13d649746cf54e16988a49d26",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:2cac4b189a059e2671e25365a4fdd63eedfd205ce33cf2b71601f38f405c172f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:2f2cf905b9cbb43239de2a4680e7456d93508978873ec1864703b04fbc34d8e1",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:31588de4a2d22cf2cb982f1c4971cec201a95d8dc4d2e5771052359fc2cf877b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:332f0d9b97053ad64fffd5fcef16cf9057a2d215aaf4f9fab70bb993963c895b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:36c2b775eb434732d848ea5d00d9dd89b0bc8c939ab65c46ff74be2cbdf5daea",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:36c608b8ecd81cb8c8194fa6325e819a65753e42cee3c2b20622e8adf9ec42e0",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:3845072eb77eabb5f2732050a564f083e290cd003b073c746c7f586bb9765b78",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:3a47b818586b70e9f3791d04255ed0b0840db56e828e594680cdd05952f93704",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:3ab352c6af3858ea718fd03c7ffaa4cd0a056a91dda3edc0ee96c880189190c2",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:3ac35e1e1e78b862a81503b82e90cbca38d30185a01aba9c3df623a7c531e63e",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:3cfaf5c8e39ff8d0c83f371f7d0591891ed40d205062d5be99528d626ccdcc71",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:3e38c73fdc43b361e3f2fa04a6357403e3a5920da4695acb91f5855a7e548509",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:3e757bcf0199b3b255c53bded8051953f4fd44de1a71ec6fc10b36838dbe03b4",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:4034c3b5fdb3732dfc917edb1b484d52cf172943009c3ac10b3d398a1862cf37",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:420ac7cde0ac3b89496c8f14293ae530859bb4aa4b08dc9be0afaee8ea8b2fbb",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:43f34a86abaa9e026c157f9f3abd1f6f6c6809484f8fc9a84fe7be90b7acd431",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:444df649c0d35cfd5eff71a00530ebf5747d4949f1b7d8b9158e0c6a87efaaad",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:46e0cacf86870382bafce1444dfca5834f32352ba4a531c1ad6b9659d793bf49",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:4745b97e22af10517897d609a99a4f5dc1f59b9188456294d0e14f2535349f24",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:475da88e288d59543a1872a26cff7193589d7247991a29179db86354e48ccdb1",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:477a48fb2a1aae6045f9830e364c758968c3a9f221f9abd2abdfcda9c6b8cf1f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:50b28b50a9dea6d8b64aaddc49cd0c7ebe5aca3fb3a26aa1e210c0a77cd5a0ee",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:511ae166548e1811c44bc6b92a3c71e013e8f74fa6745ef6c7c1e8cd397da90f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:5193bb41cacdd55e2f4da7b56b4655732f1e0b83c43f4084648997dc35a04bb3",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:521b61004b4440e23e1a54c174df8ba0c572bbdea4c0e6ccad71b9789473ac84",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:553ea6574012135b6ef79156ce29dfaabbd6ab5dd23694ba98afbddfe24f47b7",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:560cac69be1f56e4f71cf29560207be35aa4457d95f5c90c54578e67a278bc1e",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:5673b829e69db1e4e5884a17963b12bbd8faf6b329f7b41721e82c966a187db6",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:595318a6be366182217d4cff67d2f04e1db70a8ebf1b8b2a21bfcd56300dc673",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:5f10012dda15146e63ab5715047ca452291b3e07e4b0d425e97184b56785b17e",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:5f471e77d82f923952219a5d20c9037ec232b6d617e015ace9694c5f265da2d8",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:5f5e450fbf0256fccd9908ee0b9b36fa2a1f05157beff9c5838b6118b67ea51c",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:60570a9772cdbcbbabc16e67758a0745ac4bde3f22388cdbe30726fc77b41a5d",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:609be7f4cc75fac52844bb990d8be37ef33cc6e95514a5756929e563e17db243",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:61263d7cb8f19c58a03951cc0764dde367930b0d263816399351309cbeffc2d6",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:65c66eeeb082d4a664d0432fd664b53867aef59bdaf18293e953de59644c1d0a",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:6641402dd1288987a374d5395a763a2b9473a0127f4a20a6fe35f0afda4825c2",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:675f4dc84358d36ab96ef698a31f86e5077fae512695e464cfbc5ff97a00461b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:680065eeedc4fae79e271616b857ff68b795992cdb05a8f56a93e0a028855c52",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:6824550048ff477fae693ab51c110cc888bbb7135856a5b705102ca6677a4961",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:6af808c8b91cdf5bafa6b86b6c6f36e5035aac4835ef66be93d58361e16b954b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:6ca2b90cb5996545b9e5811584e454d6aa4bded9235356ffcedbba805b555ff2",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:704d38260de6166724825b39fb6a894e9c72200b0304f5e1ed75bd49f9dc0ab7",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:70ed057d891839762e3b9de175fd97486ce51b71614107bd229f65caded7141b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:715f710641ae692dc571577898eea8e91c202494b1f807ea9a67e07a4baaa7ee",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:71e0945e84437e1c7dce4bb83538ef627df0c8bf5b769817bc05804b512f535e",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7557722b8ffbbfbe47f70553b35b98e3c5d7e250d38c97ef8e985495c042b175",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:75f46e3bcbeb75929c21643709c49ee50fcb3a6809093aa5dfb64e6839be499a",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:761d4b192fc9208911a7c5191a0337efc81f94ef64b9f5134760c276b7f2a3d5",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7737baf1020efa01cce2d1b1a4501dd82004421c5c344fcd95d01d849c472efa",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:783fa069985c5524f666c7b42a142aecd1d933695be3e25fc006b6997dddd50c",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7b2aca7a48ee7c78a149dd91c44363798cfd47b46d96f94baf7046720bb24289",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7bb6f5fc57921a60bbc6453532843f6f9afa7d34eae99313994961ca7819fa61",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7bf89e148daa91d4f48e3c30ce3784dcc429a5ca6fc4ad0c3ed90012e6422f89",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7c3c2016eb0b9e927d1e88327da60fb24a5db9f67a73bdd2dd50db9c0c8d67ae",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7c54256783821450f835e5d998f4ff1fee61f1e5e8e5b4b00a499da5ae9c63c3",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7f134fe10dabb6f6b707be2b704362c4f6adbd6359dd298294dc59e85eb153ca",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7f7894daaf249ecd53c3aea274edbffc6fa79456f178519a6237b83ebdc0586f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:7f8fef73f58aca72d385a8ec2801e2bf9ef7b184e6a670fb7b8a0cbb2d4ef607",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:8095128db8fd192b2988128c6d0f951c2b124337d7b6560a80b0c11052fcb679",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:81579c868cfb39282189393062dccb96e4df55e3eab2eaab4f72f42610d67433",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:864c8ca7375a9c0d544f1631c9a887949111defaafd7a3602ee1eb1b0be33752",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:86df2b3a6ef76186bdd1251b7c10a69f6a5d413e296f3083f6d18bbc290ef4f5",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:8a0d05e5698ad29a53c0a51606fbfbcf8ad5774f7a990862a86720197ab1ec49",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:8acf2b2c9af06901a4596f2d5a46cca98f76abbbe08c8c442c4d1d3c247b6797",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:8d7c3a9cd8b28ad9f1764c331d17d36b21446d9bafe21f4962e6cb4d6d05f7ff",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:8e2c4cfdc9cc2850ba468b0876a87d76c286df0c89e5bb1d8e4429878c58355e",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:8e415795b48d526d41b3edb78ced55d9f49e3a0e63b76fdd378b79a06da76f97",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:8e84b9b6d54db9c34f05febf6682ec4fe62b5ec8214d619048c091e89bf97805",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:9325fe9a9cd82f87c15e971171cf3dd8226df016975205fae15e762d60869eec",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:932d7da990973f2794171ebd16f1a93953377072757fa399058ed18836d355dc",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:936ccb3f45e169d579e141a704368898bdb63cb7f0d0c127328eb5174a9ab417",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:94e010923b4cf035584b40019982ed17ab94901bdcca69d2a03a6902a49f309c",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:958e9798ff190fcfbc26f2177861f8268dd2150989d6aa07c85b44260bf346b3",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:95dfc6d4c22531c2922332f78bf7bd056fc4d5f956fe9e13380e5e6464b40d47",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:9623afde05da0ec0143849d88a62f18720922912badbcb1aed89bb9957d5c57f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:979b79bd897c85f5eaec9b91ff12bb8c560074b774ed16deaf84a253ca38e4d7",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:9ab4c2f94c2b43513bdb07a3bb98dd1b894182e2bb05eb7db89a32e38383000d",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:9c828bdc83fdbcc756d2746b8870e0a839ff57ecc3f5d65d766980ef9ede742f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:a022eb674a06db07978fb2eba397fd480a40a365efd4080c6cfb87c054a7c223",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:a157d4a89fac819e12d62fe8c79e580fa342b9c9aad55e18931757c31ad1c128",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:a1bff9e8f40b17489974f528a68162ea8a549d655e6a03bba6ffe9ac4f481d35",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:a271027dcbfbf766d87b2f23b87fb931f82d125e4af733c042f9e1044163e416",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:a99a7273db44f23925c7c52682bdef6801fbc781c6e82bb2acaa591201d1a1a5",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:aa81b61b446792bd6c4dce65025643ab51898539e2e55d592ff9fdc7c0dd8cb8",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:ac58590ca590d91139e54a4d46ca436b5f7859478f043c01521c18c1895120a0",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b1af835e81d631038f055788784b2012d51003d6e192fe6cbe7f61c8a2b2adcf",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b2b3ed361dc85daf9c8af36f6fe4b730c9cdba337f9ce02541153136f43ca5f1",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b2c756d35a3877a99df7e8e5ff72092c5a86965fb8629f0f9a545693fab3e58a",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b5183600deb323338165465205d44f71d55a7cedb912055fe44272d0aca86caa",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b6b911a0a4464bfae9c9f92e1a1f4875b66681a6edcb14ac72a837e087223d96",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b744f775f826d130b8e98f27f241ec68ce4bd13faecf99422a5847e3e3e6775c",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b80125d187b175ceaa3e8143d28457d2639995712f7afaea523a53be16e2b55b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b8b61fc9d3f86d3a13a14d0bc1acf4e44f073e317b3a751ebca60fc84f1c8700",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:b998fa72525d5b5daeb49cfe7ad2dfb4e4a4665b29fb51838415c9de9f5af6ff",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:bd937fd110310ec41c67164958633f39aa74505fa73761d22ade8958375fb4cd",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:bffd7054755f521db8fc7aa5fd332f5ddbf80ef3971e97f5d96c67c2e97afbd7",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c09f25a1010bb7845b0041c7a1608060e3e623c83e7f7c991a38dc51ccd29e73",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c1ebf7879cf8cbc87696b0f2daffd9b53807e5782e6450c3212749d9dd23953a",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c2de40b43e06a0242e1520944a0e66f67cc4892c3a919f393c4c77b89ae88f19",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c2e120340ad96d42b53c7cc6955780b318f8df9c29efa0e1d45abaf1b41bc3c1",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c31b2062510b31f5f9d010f9b2c9dc15ab89b347fe1cf18c4198e50ffe13611f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c3c5cc31be634db10a8d66876345d6b85e48a51d258d3c07e272e8b938cccfb6",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c4a19f8c3343e8c7450a8b60cfd6da4327b270a24c74aaa3fa8d1faa00f9fa0a",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c5bfea0752baf4bca45d01e4287bc38c2bd377f483a449326f9714ecc2b425bc",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c669eb6184c7b4e89c0eb877d0b8b7b3923462e5de98b6ca6a3bb9f75390e9b8",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c7b0b8620e2ae9de1789dc9c8c75d3b4798635ad4bd185c5eb928338040b35a0",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:c8fe437eb6d7243a7e71d3e64080ed133345fad815200a43bb263bcd82ba25bf",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:cac6a8b3e9e9c7db39559f323c3cfe84e678c7657ed53bfc64b446b9f23ec76f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:cb55f4a35a6e5ded7aa9aef19858cbc90337164629f119c8ba9a64a3db902881",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:cbc0455fe0dca91bdd835272942e02f25897177baaa654cd958e30f4449ccc0a",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:ce56decd02f722e6d5682654088fd54d4c0420e183b71539d804a2499841b330",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:cf23b4d084b9ca133b7f9eaab163e3757c2707130b3a465a517555916ab78975",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:d05f7985f63f522f7f8e209948e397cef79a27c263662286ee176592bcf6d94b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:d106062714d8f98a70f58857a0a7e81af676339644c51f453ee774ded42db3a0",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:d192c25f797b4b1da96d8dd7ee70371dae7860e548b84d809e891c48bc6a3c6a",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:d697ce655246060e7e18972567374a732f9345c58e4779568430948a13ca3e0a",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:da3a16c72591886a7a34b46201f0785043e1f01907c914cb5c13d96391f8d7b2",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:dbc8c8d5c8c7cbcdc1d9e9be129e3b1a3ca3f3e2a168450c3f68a505b8c7106d",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:dc048e9921c77eaf8bc6bd3bc4eadc022512a741de99eeb181ff9ab5575b011b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:ddad29c450ea2ee37f559347766429993e2dae707ffe68815677087dcbfe1384",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:deb36a21c3c923d4afa527b64c48fe5e1019e0de22662dde06b5d31d7b144b02",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:e1a015ce144d128e07475cf474772dbf8bcc4dc266b2b71e906a09dd7ce3487f",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:e46abd8205e1fb3a9e2071e779236010cae3d98ac104bdf850cbf7b8d21f602b",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:e5128a5230041ce00752f61b951ef156130a35bcf5f0cf0960a92c0066d1fbb9",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:e70be1d33db7fa0e808d77359b4189acf26c208c4e59bff4b641a1432f0de3de",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "uncertain",
+        "parent_id": "e32:e77611a7fff7f7093b154b244e8c8359e00e93246043745e1056626b7259623b",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:e8141e2ff44cc24c9778fe847e687de79b4c8628f533a5c7bbc8669f0cbd3ef0",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:e8776ce7ac414b5714af8fcd816deca4eca2ea7676c29191c9654c124f59d8dd",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:ee05a853843666139c4da8d45735444cd5c37e7cdde94f249648b828a79f1cf6",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:ef39f46a384c8321d2391031e513f5d800da5da501d718c6f99a8cc7dc94a152",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:f0187f17b8e2a6dd9e2b0bc545b640d2525b57cd49b9f2a5dc788cd799b06f96",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:f1f0dd9d1a0c02e2d58db77fdcb1a5989bf0a514e3fee285c195948f8fd34a53",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:f4b17dc9f2f12b14f9e4bc54851ad2b8a06281345505527568a99ac3250b24c9",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:f8f88c2b8055706b1b3e3b61a40f9c9d446a9a2d912be92485575550df412527",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:fa932516f22e1464928c8b2096bc9ba9a46c426eabf1847bcfca14511cc6c638",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "gpt-image-1"
+      },
+      {
+        "label": 1,
+        "outcome": "ai_signal",
+        "parent_id": "e32:fd68980ea2cbf0f0380fa64a5fc2021401898361e6c10655443bb2ecc8f101c7",
+        "reason": "stable_signal",
+        "scene_group": null,
+        "source": "nano-banana-local"
+      }
+    ],
+    "outcomes_by_label": {
+      "0": {
+        "no_clear_signal": 71,
+        "uncertain": 89
+      },
+      "1": {
+        "ai_signal": 158,
+        "uncertain": 2
+      }
+    },
+    "parents": 320,
+    "sources": {
+      "SIDD:G4": {
+        "guarded_outcomes": {
+          "no_clear_signal": 4,
+          "uncertain": 12
+        },
+        "label": 0,
+        "parents": 16,
+        "raw_conditions": {
+          "publisher_original": {
+            "e43_ai": 8,
+            "e92_ai": 0,
+            "n": 16
+          },
+          "social_q75": {
+            "e43_ai": 10,
+            "e92_ai": 3,
+            "n": 16
+          }
+        }
+      },
+      "SIDD:GP": {
+        "guarded_outcomes": {
+          "no_clear_signal": 9,
+          "uncertain": 24
+        },
+        "label": 0,
+        "parents": 33,
+        "raw_conditions": {
+          "publisher_original": {
+            "e43_ai": 19,
+            "e92_ai": 0,
+            "n": 33
+          },
+          "social_q75": {
+            "e43_ai": 17,
+            "e92_ai": 6,
+            "n": 33
+          }
+        }
+      },
+      "SIDD:IP": {
+        "guarded_outcomes": {
+          "no_clear_signal": 28,
+          "uncertain": 26
+        },
+        "label": 0,
+        "parents": 54,
+        "raw_conditions": {
+          "publisher_original": {
+            "e43_ai": 19,
+            "e92_ai": 0,
+            "n": 54
+          },
+          "social_q75": {
+            "e43_ai": 21,
+            "e92_ai": 2,
+            "n": 54
+          }
+        }
+      },
+      "SIDD:N6": {
+        "guarded_outcomes": {
+          "no_clear_signal": 11,
+          "uncertain": 11
+        },
+        "label": 0,
+        "parents": 22,
+        "raw_conditions": {
+          "publisher_original": {
+            "e43_ai": 8,
+            "e92_ai": 0,
+            "n": 22
+          },
+          "social_q75": {
+            "e43_ai": 8,
+            "e92_ai": 0,
+            "n": 22
+          }
+        }
+      },
+      "SIDD:S6": {
+        "guarded_outcomes": {
+          "no_clear_signal": 19,
+          "uncertain": 16
+        },
+        "label": 0,
+        "parents": 35,
+        "raw_conditions": {
+          "publisher_original": {
+            "e43_ai": 14,
+            "e92_ai": 0,
+            "n": 35
+          },
+          "social_q75": {
+            "e43_ai": 12,
+            "e92_ai": 3,
+            "n": 35
+          }
+        }
+      },
+      "gpt-image-1": {
+        "guarded_outcomes": {
+          "ai_signal": 78,
+          "uncertain": 2
+        },
+        "label": 1,
+        "parents": 80,
+        "raw_conditions": {
+          "publisher_original": {
+            "e43_ai": 76,
+            "e92_ai": 79,
+            "n": 80
+          },
+          "social_q75": {
+            "e43_ai": 76,
+            "e92_ai": 79,
+            "n": 80
+          }
+        }
+      },
+      "nano-banana-local": {
+        "guarded_outcomes": {
+          "ai_signal": 80
+        },
+        "label": 1,
+        "parents": 80,
+        "raw_conditions": {
+          "publisher_original": {
+            "e43_ai": 80,
+            "e92_ai": 80,
+            "n": 80
+          },
+          "social_q75": {
+            "e43_ai": 78,
+            "e92_ai": 80,
+            "n": 80
+          }
+        }
+      }
+    }
+  },
+  "contract_sha256": "a8f46c5106d30f1057f4474bb70e2d3c2919626656ce1dbdc039d2de8d5d8216",
+  "e65_real_diagnostic": {
+    "guarded_real_scenes": {
+      "RawNIND:7D-5": {
+        "no_clear_signal": 1,
+        "uncertain": 1
+      },
+      "RawNIND:7D-6": {
+        "uncertain": 2
+      },
+      "RawNIND:D60-3": {
+        "uncertain": 2
+      },
+      "RawNIND:Elplint": {
+        "no_clear_signal": 2
+      },
+      "RawNIND:MuseeL-shell": {
+        "no_clear_signal": 1,
+        "uncertain": 1
+      },
+      "RawNIND:butterflywall": {
+        "no_clear_signal": 2
+      },
+      "RawNIND:gnome": {
+        "no_clear_signal": 2
+      },
+      "RawNIND:semicircle": {
+        "no_clear_signal": 2
+      },
+      "WIFD:unknown_sdr_scenes_no_independence_claim": {
+        "ai_signal": 1,
+        "no_clear_signal": 48,
+        "uncertain": 18
+      }
+    },
+    "guarded_rows": [
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:008406495b19b64062084d24c07709608dfc2ed82995c12e3f3f1d38818b1d38",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "RawNIND:D60-3",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:01b4970f6f52cfcd3e99ab164411aafe33685c5602c6bd9eb65d18d4713169db",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:01d7066faa84fb1ddcf857d65906911e1a9a1a223de43ee16a8771b82fd64d4c",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:04c636010de8b7edb39b36ca4caed0f5808f11c6da418ccc66487193bbe1cec2",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:075d6a25f1e9c94de2bb0e8e420ecb74ac90d89bc50c547ad95fd1ec5cb46ec5",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:0d1f197714c3613bdc89cface6c771ea11d1b5075e677a575d84d58e168e4659",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:12bad15baeece0ce52b98ab662864f7b5879c5735efc1e4fc6cc77fbd936fae7",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:1563cbe1fcd743c984b929a8dca502b66bd45b26d38d9044ac76371d17abd189",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:169c0baa095a68c89b83531aa6b0077edacf2749a07d93f754b63e3ea2e97ab9",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:16f30f04c4acb850401363211d369c9a04841df92c2177ddf1baaad6dda6c1e8",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:18a053c6d6d573540e1ea1017693120f08cbffc2741afec5b6fc3c1637169be6",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:1ce9bafa08ecfedce6e7fa00877529c156bba8d6729e184838c3d375ed189eaa",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:1fa79a50b4e87c34d7469718d02eae89dff2cc7b0437160967779b0c29c49702",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "RawNIND:7D-6",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:24de160d6238e6ee9bd7319fcc80b6817c1734068dcb3d22ef59063e560b3ee4",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:252459731812744ad3afcea3d657e9b4ddd1f93ed51cc18486f0a4419fc8910d",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "RawNIND:MuseeL-shell",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:27dfa43ab33d675e5c34371a0c4301a6628ed636f5b4bd882e4100c073c246d1",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:291ee2d52061cda66d4ce7f83e94376a943a9fc29ece3e08131991e26e5acb31",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:3417bbabb6c7a2cc45238a0ff869b86ca3d9926e24961297c04005a4640a5549",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:34d9b7d8a41b09fc2781f28492f4782315e5e63731dba0b3b890faa409b93bf6",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:39084a47e2446dca6edf6381e5807c9d7840ae2a8e80a34602a00541a035b207",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:3ea0e2ad351cafb813d49814ca048c6a7198ca410cd4d2130bcb1ebb01232d0d",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:3f415dad390dddf98bfae92aeebca2d9959f0ed6b047f262975497b442c017ae",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:416be4b87a353090fa79ff56ba8e97b3c7a05b0cbbecd1cd219d46fc958f868e",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:Elplint",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:4b2610d1f22ee76facc27f132a346180afab3b020b054482bf09788313872241",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:4b6ad5aa5c7aa9ce68ca857f197517f39c9c15a839d5354fe7f82dfdd817e9af",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:4d42e797ef4ec21742edd037398873398e00566f5dcc5add57f654756de15b7f",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:5103824a71cbe6e87cd3a3d7ce54d40580555b1316ea34dcda10bc7fde5fb4aa",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:5785142070511262e8523273cb0e1fcc73fd4c95d35cfd726731f111e84da765",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:586c122ded99f3e82408327a4b4e11feb970fe1bf7a1409204bd225fc2d93d9c",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:590b5e7a298ef013e5462591728813b88f02b1eccb9b01c11ad8c6fdde8cdf8b",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:5c980f653a1af531d275ee8c29b5b9700f5bab4af884ac8700bf593399a5be68",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:gnome",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:684538ad792aebeddfa7009a34256bff4cb8826335d462376587f79fc34788ea",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "ai_signal",
+        "parent_id": "e65:72f5ec09632200eea8687214eb0b85bf660f115832bb8862b05445310bd3f71b",
+        "reason": "stable_signal",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:7496510b6cb4c032e5eef918df66b116f734da8e45b97beb65b6a53c21afb26b",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:7511d425cfd1ccb17cb43dcec90faafe3d4a89fab8247191dacdb8043b8f3495",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:75ddb8c1a06dc31e366fa7d7ad9ca73bb3aaa8a265cffc9f5ecc7c58ecd967cb",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "RawNIND:7D-5",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:85e7b5973488083ba19e84107130d3b0de5fca72fc1d04696383c06eb3d235d1",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:879fad6db0e7c3184ea0427dbccc248c8fe8a7c60ef8929f91ddbf2804f58e1c",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:8975ab83dc437255d130763e15a126eb88bca3003b0e50c56a5781e911ae9bda",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:8a1b5101a30079644593ca736c65c59d62a28d139d40e30ca53cc78c40d353af",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:8e67cf29ea2dea64c432c589a189b5a8ae181618a28c0de4771026503f0adc1b",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:8efdb10b1728cae169d071db2b53347acd17b7845b11f8091d5df170d0431f4a",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:98f3227534da2223dfa3a12ee070c851d057d5cb3f4d72b6b1e3a246ce15367e",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:butterflywall",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:9ef29f3dee8ce13932076e16d62d7966bba067ed63db3484dd130053f2f0d648",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "RawNIND:7D-6",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:9fa1117719aee5debd928c90753e3351d62939cf489f15558e70ce5ee115153b",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:9ff6dbd5c25f0015e2b93140ae5e3ae29170d8fb694898548868416dfc59d0ee",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:a04a67f5361c6d513ea1e93e9e78355b1af9b59994cec58a4e43d7ba7ef89cd0",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:a1a349ec39498e82a1529852fee5c7649fb95598eb4096525d575c8f1444ec12",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:a82d31c4a55653a8e7bcb8a0656a9423662adae20d386517f54fe753bdccd2d6",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:aa91b9a8bb9a37c025225f18210ee54580f4f13159a25e2ce910b6ffcac62882",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:gnome",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:ab0f1ee92125c523938c417ba6e9898d865ce3d7d218a9fbe39c6d8201b72091",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:ab389f619680b5c844d8b3e06721a6cbbd7db36164ba5bfd4ed5a31003b25258",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:ac2e79d827df0eb64cf55d7f5554ccefb07282e3604695d17f22bb58ca5efddc",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:b4338da7f0201446c2e2e2c544ac73812089b821b3a07be1eef9ca9cdbb5aac5",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:semicircle",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:bd5d34f4fdd1b70002887d63889df3f2514bc703649b5269bfbbfc7259c8ed34",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:bdceb55f0ae3315e96ef47b0183d69316035115ac5bb231262f2f8e87814d0b0",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:bf2381145417139cb4154147787c196ca4047bd9c264aa2c4e5b19f03c767d5b",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:c46410c11db5f325868e4f4dfa5c6e167fde6eed6cce47fc8fbdafbe50d40ef6",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:7D-5",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:c4b025fe4cb713a7d1eb227231ecb159e50101aad2a703398850caa9962809cb",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:c5646a0ab7f23dda4523c8a69ae275384e02aff27fd11ee4548eeca63bb7699d",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:c61da2cefd58a24dd9ea1503442d01f2b455f4227482027e3ac4f24c582087cc",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:c723e21bec358501e9ebba2dc45e6733bc9a32e6e5bfb4d2247fe7d02cffa223",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:c89a04a2eef6d060b69f09dca8c7159abbcc1f5c7f8f9b144536d4fb6c71dda3",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:ca0ebc99d6d24c58eecd8be1152fcb16f12ee9e0c585674ed1545014a8c8dbae",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:cf3738067170a02608a747a70d023e0389cf75bf0c3fd2068fc27b3bfb1ecdbe",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:d01daa2ceec23b0b521cd1a76a5e378523a1ce0aa32e11eaf66d82064fc23888",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:d3f0582f2d01f0577474dc021f3ec8a16ae15acd607bd0ae7c8fdf82e9c559b1",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:d4512dbb3a055eba43aa3b17e9b0b9c9c780c2252b34074d4ae0ff4c4cf9f62b",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:d5702b7749f910e1127f0e2235ad212ab227ec605fcca1040efcc23d98642a8d",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:d851fd1b30882a24029f469f9f3ded9633dff001f5d464f8748b2164e5279da8",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:d8b147d1c741829ced62ffcf9631ed3da7740a2c927873d5d794cf6b93e42e31",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:semicircle",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:de5b3336aa44e78efb9fbdb8c0ba0131cfadc974bfc86eb5c37526548bbda00d",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:df293b6ccf8504b9d4510e28c47a42f6ec5f4aa6c3171693beca4d6e9dbe77b0",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:e0ebca28b9ece9246e40bb885cc0d28651f5bc0aca7c150ae8c52987ecf23589",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "uncertain",
+        "parent_id": "e65:e37dd36b94c0a125ded8fa63ea4a1640ab4499688fe5b63467126c78f0d93c03",
+        "reason": "inconsistent_or_borderline",
+        "scene_group": "RawNIND:D60-3",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:e53c6c13721b1497afd648eca92ca0698a44208650b7e60bab3faaf7e1db5e15",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:MuseeL-shell",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:e672c958ac2bd31c51f4e273049e6d1f5ce80cb12470ea2e9110cb8d4df80481",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:butterflywall",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:e7f81d8819b9477e08c766d0a1231547175f5e5d6b322519a14a82b53718a175",
+        "reason": "limited_negative_evidence",
+        "scene_group": "RawNIND:Elplint",
+        "source": "RawNIND"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:ec910482bf1d1c6a0163d2842dafc0fadb9e2b691c2538c16447d348b170e81e",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:fcc8d3d8ee8d258616fe420faaa41a1631994c0f3cd9ac0d6b39e3a3ec63a486",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:fd42d55537cc7920f2ce2f9be84baf89318c7139ebc83552b468b1e1d4ea0f32",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:fecc0606c2f31e59fd0b15a169daa71039faca035764e5c402740448c7f07b02",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      },
+      {
+        "label": 0,
+        "outcome": "no_clear_signal",
+        "parent_id": "e65:ffe8b6636eb8b0025485bde7a146323c2e0b37955890f3902edd19739ba0c5a6",
+        "reason": "limited_negative_evidence",
+        "scene_group": "WIFD:unknown_sdr_scenes_no_independence_claim",
+        "source": "WIFD"
+      }
+    ],
+    "outcomes_by_label": {
+      "0": {
+        "ai_signal": 1,
+        "no_clear_signal": 58,
+        "uncertain": 24
+      },
+      "1": {}
+    },
+    "parents": 83,
+    "sources": {
+      "RawNIND": {
+        "guarded_outcomes": {
+          "no_clear_signal": 10,
+          "uncertain": 6
+        },
+        "label": 0,
+        "parents": 16,
+        "raw_conditions": {
+          "original": {
+            "e43_ai": 3,
+            "e92_ai": 0,
+            "n": 16
+          },
+          "social_q75": {
+            "e43_ai": 5,
+            "e92_ai": 0,
+            "n": 16
+          }
+        }
+      },
+      "WIFD": {
+        "guarded_outcomes": {
+          "ai_signal": 1,
+          "no_clear_signal": 48,
+          "uncertain": 18
+        },
+        "label": 0,
+        "parents": 67,
+        "raw_conditions": {
+          "original": {
+            "e43_ai": 11,
+            "e92_ai": 2,
+            "n": 67
+          },
+          "social_q75": {
+            "e43_ai": 13,
+            "e92_ai": 1,
+            "n": 67
+          }
+        }
+      }
+    }
+  },
+  "e92_acceptance_changed": false,
+  "independent_final": false,
+  "limits": "Guard evaluated for ORIGINAL submissions plus their Q75 view. Re-uploading an already compressed image causes another Q75 pass and is not covered by this cached replay. Native scientific populations include images too large for the API; these counts are not API acceptance or production accuracy. E65 has no AI; unseen-generator retention remains unknown. Stability is not OOD detection.",
+  "native_parity": {
+    "contract_sha256": "a8f46c5106d30f1057f4474bb70e2d3c2919626656ce1dbdc039d2de8d5d8216",
+    "device": "mps",
+    "latency_scope": "14 native views, first pair cold; includes crops/all encoders/heads, excludes HTTP/upload. Not production p95.",
+    "load_seconds": 17.58941195893567,
+    "pair_latency_seconds": [
+      1.8875369590241462,
+      1.3518798749428242,
+      1.2904449589550495,
+      1.2846040000440553,
+      1.3314352079760283,
+      1.1357263330137357,
+      1.1336580410134047
+    ],
+    "results": [
+      {
+        "condition": "publisher_original",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0173"
+      },
+      {
+        "condition": "social_q75",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0173"
+      },
+      {
+        "condition": "publisher_original",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0084"
+      },
+      {
+        "condition": "social_q75",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0084"
+      },
+      {
+        "condition": "publisher_original",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0166"
+      },
+      {
+        "condition": "social_q75",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0166"
+      },
+      {
+        "condition": "publisher_original",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0054"
+      },
+      {
+        "condition": "social_q75",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0054"
+      },
+      {
+        "condition": "publisher_original",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0175"
+      },
+      {
+        "condition": "social_q75",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "SIDD:0175"
+      },
+      {
+        "condition": "publisher_original",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "e32:6641402dd1288987a374d5395a763a2b9473a0127f4a20a6fe35f0afda4825c2"
+      },
+      {
+        "condition": "social_q75",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "e32:6641402dd1288987a374d5395a763a2b9473a0127f4a20a6fe35f0afda4825c2"
+      },
+      {
+        "condition": "publisher_original",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "e32:65c66eeeb082d4a664d0432fd664b53867aef59bdaf18293e953de59644c1d0a"
+      },
+      {
+        "condition": "social_q75",
+        "cut_changes": false,
+        "max_error": 0.0,
+        "parent_id": "e32:65c66eeeb082d4a664d0432fd664b53867aef59bdaf18293e953de59644c1d0a"
+      }
+    ],
+    "state": "passed",
+    "views": 14
+  },
+  "new_fit": false,
+  "scores_sha256": "83d387d181e2f1d77ed1d174a8310b2ded3205da637054577191d6312c66d95e",
+  "state": "E93_complete"
+}

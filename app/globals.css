@@ -296,3 +296,14 @@ aside strong { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Plain-language E92 research result; colour is always accompanied by text. */
+.demo-verdict { padding: 24px; border: 1px solid #d8e0dd; border-radius: 18px; text-align: left; background: #f5f8f7; }
+.demo-verdict h3 { margin: 12px 0; font-size: 1.65rem; line-height: 1.25; }
+.demo-verdict p { line-height: 1.7; }
+.demo-ai_signal { background: #fff6ed; border-color: #edc8a5; }
+.demo-uncertain { background: #f5f3fc; border-color: #d9d1ea; }
+.demo-next { padding-top: 14px; border-top: 1px solid #d8e0dd; }
+.privacy-note { margin-top: 12px; }
+.privacy-note summary, .technical-details summary { cursor: pointer; }
+.privacy-note p { max-width: 78ch; line-height: 1.7; }

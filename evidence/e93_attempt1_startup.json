@@ -1,0 +1,6 @@
+{
+  "state": "initialization_failed_before_any_image_score",
+  "reason": "Manual local DINO state loading omitted the official timm checkpoint filter that resamples positional embeddings to224px. Strict loading rejected1370 vs257 tokens.",
+  "fix": "Apply the same installed timm checkpoint_filter_fn used by the frozen pretrained loader, keeping local-only explicit weight loading. Re-register before parity; no E65 scores or decisions existed.",
+  "image_scores": 0
+}

@@ -271,12 +271,13 @@ export function analysisErrorMessage(error: unknown): string {
     if (error.status === 429) return "Çok fazla istek gönderildi. Biraz bekleyip yeniden deneyin.";
     if (error.status === 503) return "Model servisi henüz hazır değil. Biraz sonra yeniden deneyin.";
     if (error.status === 404) {
-      return "Analiz uç noktası bulunamadı. Dağıtımda API adresi yapılandırılmamış olabilir.";
+      return "İnceleme servisi bulunamadı. Bu yerel demoyu proje bilgisayarında açın.";
     }
-    if (error.status >= 500) return "Model çıkarımı başarısız oldu. Servis kayıtlarını kontrol edin.";
+    if (error.status === 408 || error.status === 504) return "İnceleme zamanında tamamlanamadı. Biraz bekleyip yeniden deneyin.";
+    if (error.status >= 500) return "İnceleme tamamlanamadı. Lütfen biraz sonra yeniden deneyin.";
     return error.detail || `Analiz isteği reddedildi (HTTP ${error.status}).`;
   }
-  return "Analiz servisine ulaşılamadı. Ağ bağlantısını ve servis adresini kontrol edin.";
+  return "Analiz servisine ulaşılamadı. Yerel inceleme servisinin açık olduğundan emin olun.";
 }
 
 export type RequestTicket = { id: number; signal: AbortSignal };

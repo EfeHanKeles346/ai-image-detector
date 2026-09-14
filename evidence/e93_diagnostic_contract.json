@@ -1,0 +1,36 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "diagnostic_parents": 83,
+  "diagnostic_views": 166,
+  "e49_read_allowed": false,
+  "fit_allowed": false,
+  "guard_id": "e92-stability-v1",
+  "independent_final": false,
+  "inputs": {
+    "/Users/efehankeles/Desktop/ai-image-detector/evidence/e93_runtime_manifest.json": "6bf3e29c8c4bada93d975513f31e8acf8b615d6076b52a53239ccbe06d48a553",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/e92_demo.py": "085135af9ce4ace039d3d6baee55a2d09ea4ab7da4e6f71998bd6c0394c7b875",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/src/pixelproof/research_serve.py": "d3b4f1f61c8b1298f2a0792e208c9a03f8b18db6f196fd70e2af40b7db549af2",
+    "/Users/efehankeles/Desktop/ai-image-detector/ml/tools/e93_demo_validation.py": "08c4f6fd7792e37386240bc0a96f07677f3b886ba6feeed451b5159ee2277365",
+    "/Volumes/LaCie/pixelproof-datasets/e65/audit.json": "db8b3134886b62dc31d4d39be5b7eb8015550260fa0359bd92af8e18a8316caa",
+    "/Volumes/LaCie/pixelproof-datasets/e65/diagnostic_scores.json": "4ed6222a5e40afd84e88f2cdeb86059728ad84e763908a0656afefc6b757680b",
+    "/Volumes/LaCie/pixelproof-datasets/e92/dev_scores.json": "8de19298e0e62d982a6bae04ef7e922bcb12748cd68056b510ab832d49bb77ae"
+  },
+  "max_seconds": 3600,
+  "new_acquisition_allowed": false,
+  "no_cut_changes": true,
+  "parity_parents": [
+    "SIDD:0173",
+    "SIDD:0084",
+    "SIDD:0166",
+    "SIDD:0054",
+    "SIDD:0175",
+    "e32:6641402dd1288987a374d5395a763a2b9473a0127f4a20a6fe35f0afda4825c2",
+    "e32:65c66eeeb082d4a664d0432fd664b53867aef59bdaf18293e953de59644c1d0a"
+  ],
+  "parity_tolerance": 1e-05,
+  "population": "All admitted E65 REAL-only DIAGNOSTIC_DEV_ONLY parents. E66 consumed paired guard replay. Native scores below API upload/geometry restrictions are reported separately from demo acceptance.",
+  "real_cut": 0.011505939625203613,
+  "rule": "Both E92 >= AI cut: ai_signal; both E92 < REAL cut and both E43 < AI cut: no_clear_signal; else uncertain.",
+  "schema_version": 1,
+  "state": "E93_registered_before_native_scores"
+}

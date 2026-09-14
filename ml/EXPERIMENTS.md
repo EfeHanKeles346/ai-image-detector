@@ -7389,3 +7389,161 @@ robustness with class-matched transforms and explicit mixed-edit scope. Then aud
 portable runtime, accurate model naming, image privacy/retention, operational limits
 and commercial rights. No conclusion from this review authorizes deployment or changes
 serving, protected roles, thresholds, labels or the remaining AI guard.
+
+
+## E93 registration — guarded E92 internship demo and offline source-shift diagnostic (2026-09-14)
+
+The user explicitly requests a local internship demo and reliability work, with no
+new downloads. Frozen E92 remains numeric20/20 with a failed E43 AI-retention guard;
+this separate engineering wrapper neither changes weights/cuts nor promotes E92.
+The exact prospective sequence and `e92-stability-v1` rule are registered at the top
+of PLAN.md. E66 is consumed development; E65 is previously exposed REAL-only
+WIFD/RawNIND diagnostic data. Neither can establish independent-final performance.
+Freeze runtime/guard code, deterministic source representatives and file identities
+before new encoder scoring. Report all input failures, every admitted parent, AI
+coverage costs and scene/source errors; no threshold search or new fit follows.
+
+Research motivation (primary text sources, no data/weights acquired):
+- [Fake or JPEG? (2024)](https://arxiv.org/abs/2403.17608) demonstrates JPEG/size
+  shortcuts. Applying the same later JPEG does not erase previous encoding history;
+  matched processing, source-held evaluation and TRAIN-only controls remain necessary.
+- [B-Free (CVPR2025)](https://openaccess.thecvf.com/content/CVPR2025/papers/Guillaro_A_Bias-Free_Training_Paradigm_for_More_General_AI-generated_Image_Detection_CVPR_2025_paper.pdf)
+  motivates content/format alignment. No B-Free retraining or acquisition is proposed.
+- [ReSIDe preprint (May2026)](https://arxiv.org/abs/2605.08574) shows that ordinary
+  logit confidence can fail under image covariate shift. Its learned confidence
+  method is NOT implemented here; our fixed disagreement/stability abstention is a
+  separately measured heuristic, not a reproduction or guarantee.
+- [Cross-dataset detector benchmark preprint (Feb2026)](https://arxiv.org/abs/2602.07814)
+  reports unstable rankings across sources. Our inference: a limited DEV success
+  cannot substitute for untouched source/generator evaluation.
+
+
+### E93 initial startup failure and pre-score repair (2026-09-14)
+
+The explicit local-only DINO loader initially omitted timm's official checkpoint
+filter; strict state loading rejected positional-embedding1370/257 shape mismatch.
+No image prediction, parity result or E65 score existed. Preserve attempt1 contract
+and startup receipt; apply the same installed checkpoint_filter_fn used by the frozen
+pretrained path, then re-register the adapter before any image scoring. This is a
+loading repair, not model selection. Frozen E92 and all experiment helpers are unchanged.
+
+
+## E93 result — exact native E92 parity and existing REAL source-shift diagnostic (2026-09-14)
+
+Frozen contract SHA a8f46c5106d30f1057f4474bb70e2d3c2919626656ce1dbdc039d2de8d5d8216.
+Locked166-view diagnostic score SHA83d387d181e2f1d77ed1d174a8310b2ded3205da637054577191d6312c66d95e.
+No change to E92 weights/cuts, no fitting, no downloads, no E49 access. All83 admitted
+E65 parents retained (67 WIFD,16 RawNIND); two fixed transports per parent. Outgoing
+socket connections denied in the diagnostic process. Scores locked before reporting.
+Initial loader failure and repair remain separately recorded above.
+
+### Native pipeline parity
+
+Before E65 inference, the SHA-sorted first parent per E66 source was fixed:7 parents,
+14 original/Q75 views. In-memory social processing matched historical decoded pixels.
+Every E92 and E43 score matched cached values exactly (max error0; allowed1e-5); no AI
+or REAL cut crossing. This confirms native DINO3072/CLIP1536/DEAR1640 inference plus
+frozen E92 mapping on this MPS environment, not new model generalization. CLIP3 and
+DEAR9 microbatches/crop conventions remain unchanged. Seven paired image runs took
+1.13–1.89s after17.59s weight initialization; cached E92's old6.67s/640-view score time
+must still not be quoted as native-image serving latency.
+
+### Raw E92 source transfer (all native inputs, before UI restrictions)
+
+| REAL source | Parents | E43 original false AI | E92 original false AI | E43 Q75 false AI | E92 Q75 false AI |
+|---|---:|---:|---:|---:|---:|
+| WIFD | 67 | 11 (16.42%) | 2 (2.99%) | 13 (19.40%) | 1 (1.49%) |
+| RawNIND | 16 | 3 (18.75%) | 0 | 5 (31.25%) | 0 |
+| Pooled descriptive | 83 | 14 (16.87%) | 2 (2.41%) | 18 (21.69%) | 1 (1.20%) |
+
+These sources are outside admitted E92 TRAIN but were previously consumed as E65
+project diagnostics. WIFD scene linkage is unknown; RawNIND includes paired dependent
+captures. Do not infer83 independent scenes or publish naive independent-view CIs.
+There are no AI observations here, so no AI-recall/accuracy/AUC gate pass is claimed.
+No fresh unseen-generator benchmark was validated. Preserve the new errors as future
+diagnostic evidence; do not retune a cut or create source-specific exceptions.
+
+### Strict E93 stability experiment and rejection as the default display
+
+The preregistered rule required both E92 original/Q75 scores above the AI cut to show
+AI; both below REAL plus no E43 AI indication to show no-clear; otherwise abstain.
+On consumed E66: AI158 indications/2 uncertain (versus raw original159/160); REAL0 AI,
+71 no-clear/89 uncertain. Total non-abstaining229/320=71.5625%, below the historical
+80% target. Apparent error-free non-abstaining outputs do not establish perfect model
+accuracy; the guard withheld difficult cases and used already-consumed development.
+On E65:1 AI/58 no-clear/24 uncertain among83 REAL, showing that two consistent model
+views can still be wrong. Stability does not establish authenticity or detect all OOD.
+
+This strict positive suppression is rejected as the default user-facing decision
+because it hides a correct raw E92 AI indication. Its rule, prototype API, inputs and
+results are preserved unchanged; no score, threshold or E92 acceptance waiver follows.
+The known GPT original missed by E92 becomes uncertain through reference disagreement,
+not correctly detected AI; the original E43 AI-retention failure therefore remains.
+
+## E94 — original-alert-preserving presentation, not another classifier fit (2026-09-14)
+
+To satisfy the user's existing AI-retention instruction, the demo displays every raw
+original E92 AI indication. The frozen E93 guard supplies a separate review flag:
+when an original positive is unstable, show both the AI indication and a prominent
+inconsistency warning. For original negatives, retain the guard's no-clear/uncertain
+output. No image/source lookup, fitted confidence, new cut, recipe search or new score.
+`demo_policy.display_result` has the invariant:
+
+`display outcome == ai_signal` if and only if `original E92 score >= unchanged AI_CUT`.
+
+This is not a claim that an alternative OOD classifier passed testing. It is a product
+presentation constraint verified on all403 already-locked parent pairs plus boundary
+and randomized unit tests. No original alert was added or removed; false alerts are
+retained too. E94 does not overwrite E93 and does not claim FPR reduction from its flag.
+
+- E66 AI159 indications/1 uncertain; one positive has a review warning. REAL71 no-clear,
+  89 uncertain,0 indications. Non-abstention230/320=71.875%, below80%. The raw model's
+ 20/20 numeric result and failed E43 AI guard remain separate from this display policy.
+- E65 REAL2 indications (one warned),58 no-clear,23 uncertain. A stable false positive
+  remains. Source-shift reliability is improved operationally by honest bounds and
+  uncertainty handling; generalization of the frozen classifier was measured, not newly
+  optimized in this task.
+- API input eligibility was measured separately: all160 original SIDD PNGs exceed12MiB;
+  E66's160 AI originals pass. E65 accepts23 originals, rejects24 above12MiB and36 for
+  geometry limits. The accepted23 yield1 AI indication/17 no-clear/5 uncertain. These
+  selected subsets cannot inherit whole-benchmark accuracy or balanced class coverage.
+  No silent resize, format conversion, omitted denominator or relabeling fixes this gap.
+- Six targeted real HTTP cases match the locked expected policy responses, including
+  E92 identity, browser-origin CORS and unstable-positive warnings. Times1.11–2.56s
+  on this machine are integration observations, not production latency percentiles.
+  Selection intentionally covers known outcome combinations and is not a new test set.
+
+Current serving entrypoint: pixelproof.internship_serve:app. E93's research_serve.py
+stays a frozen prototype. Input/error tests cover bad bytes, streamed oversized bodies,
+geometry, transparency/animation, missing weights, failure cleanup, slot retention
+past response timeout, explicit origins and schema rejection. No external API/model
+calls, permanent upload storage or upload-based training are performed.
+
+## Model 2 local evidence audit and evaluator critique (2026-09-14)
+
+No classifier, extraction or training. Existing CocoGlide:512 edited images,512 valid
+binary/nondegenerate same-geometry masks,512 linked authentic files with unique exact
+file hashes. Metadata names an original `.png`; the compilation physically stores
+`.png.png`. The initial audit's512 missing-link report was an auditor normalization
+error, not missing images. Preserve attempt1 and the corrected exact-resolution audit;
+never fuzzy-match ambiguous paths or rewrite source files.
+
+Area bins:93 masks1–5%,193 masks5–20%,142 masks20–50%,84 masks50–100%; median15.974%.
+No sub1% edited masks exist in this local subset, so tiny-edit sensitivity remains
+unmeasured. Authentic decoding, near duplicates and scene/prompt/role separation are
+still pending. E17/E18's first120 potential exposures and consumed CocoGlide source
+status remain explicit; the remaining392 files do not establish an untouched final.
+
+Review of e17_module2_first_measurement.py reveals two evaluation limitations:
+1. The truth-dependent coverage filter retained only35/120 images, suppressing difficult
+   small/poorly covered masks. A stride64 dense evaluator must retain/describe all rows.
+2. `np.percentile(scores, 100 * (1 - mask_frac))` uses the true mask's area to choose each
+   image threshold. Its IoU and random-area comparison measure oracle-assisted ranking,
+   not a deployable threshold policy. Never present that IoU as Model2 product accuracy.
+
+Retain tileAUC0.648/imageAUC0.721 and IoU margin+0.155 only with these sampling/oracle
+caveats. Next plan: grouped pointer/provenance/decontamination audit, repaired coverage,
+CAL-only thresholds, image-macro pixel AUC/AP, mask-area strata, random/centre baselines
+and authentic false-localisation. Then one registered frozen-DINO dense linear head if
+eligible groups and a baseline signal justify fitting. No E92 heatmap proxy, classic-
+splice promise, new generation/download or fresh-final claim. PLAN contains the ladder.

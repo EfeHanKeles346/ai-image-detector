@@ -8651,3 +8651,127 @@ before another DEV-driven fit. Do not target the known missed sample or remove i
 label/guard. No deployment or new ML experiment was executed. Only the three English
 living Markdown records were updated; small primary text pages were researched with
 no image/model/package acquisition.
+
+
+## Local internship scope and E93 implementation registration (2026-09-14)
+
+The user clarified that this is an internship project for a professor, with no
+immediate formal report/presentation. Authorized work: connect E92 to a plain-language
+local demo with error protection; revisit the Model 2 local AI-edit plan; research
+and apply Model 1 reliability checks using existing data. Mobile-data restrictions
+remain. This explicitly supersedes the prior review-only/no-serving pause for local
+research use, without waiving E92 acceptance or authorizing public deployment.
+Registered a fixed two-view abstention rule and deterministic native parity followed
+by the existing E65 REAL-only source diagnostic; see PLAN and EXPERIMENTS. Existing
+E20/E32 legacy code and all frozen ML evidence remain separate from the new demo.
+
+
+### E93 initial startup failure and pre-score repair (2026-09-14)
+
+The explicit local-only DINO loader initially omitted timm's official checkpoint
+filter; strict state loading rejected positional-embedding1370/257 shape mismatch.
+No image prediction, parity result or E65 score existed. Preserve attempt1 contract
+and startup receipt; apply the same installed checkpoint_filter_fn used by the frozen
+pretrained path, then re-register the adapter before any image scoring. This is a
+loading repair, not model selection. Frozen E92 and all experiment helpers are unchanged.
+
+
+## E93/E94 — E92 local internship demo, offline transfer check and Model 2 plan (2026-09-14)
+
+Implemented the user's three requests within the local internship scope. No dataset,
+weight or package downloads, no new fit, no public hosting and no E49 scoring. Only
+PLAN, HISTORY and ml/EXPERIMENTS carry new Markdown progress. Existing artifacts and
+frozen experiment sources are unchanged.
+
+### What now runs
+
+The web demo uses E92 through `pixelproof.internship_serve:app` on127.0.0.1:8800.
+The preview started at http://localhost:3002/ because3000/3001 were occupied. A local
+HTTP GET returned200; preview opening was queued by the app. Legacy8799/E20/E32
+service was not terminated. The runtime adapter verifies local E43/E92/CLIP/DEAR
+artifacts and its frozen helper manifest; explicit DINO cache loading uses timm's
+same positional-embedding filter. All encoders operate offline. This remains a
+repository-backed research adapter, not a portable/public weight distribution.
+
+The main interface has no score/probability bar, false-positive jargon or misleading
+"REAL" certificate. It says AI traces found, no clear trace found, or unable to decide.
+It explains local temporary memory processing, no upload archive/training, and the
+absence of a local-edit heatmap. A new response schema checks E92's exact artifact and
+presentation-policy identity before displaying anything. Errors and replaced files
+clear old results; a100s client timeout cancels the request. Backend safeguards bound
+streamed uploads to12MiB, geometry to16MP and one concurrent request; animations,
+transparent and unsupported colour inputs are rejected, under224px inputs abstain.
+30s upload/90s inference response timeouts have explicit messages. A timed-out GPU
+worker retains its slot until it actually finishes, preventing overlapping inference.
+Missing/changed assets and invalid predictions fail without silently using an old model.
+
+### The protection tradeoff was measured, not hidden
+
+E93's frozen strict two-view AND rule reduced E66 AI indications from159 to158/160.
+That conflicts with the user's original-alert retention requirement, so it is NOT the
+active demo decision rule. Preserve its prototype `research_serve.py` and results as
+experimental evidence. The separate current `e92-preserve-alerts-v1` policy keeps every
+original E92 AI indication visible, attaching a prominent warning when the E93 check
+is uncertain. Only negative evidence can be replaced by abstention. It does not reduce
+raw false alerts: E65 still has2/83 original false indications, one with a warning.
+A low score is never a probability of authenticity. All403 locked parent pairs replay
+with zero added/lost original AI alerts. This is presentation/error protection, not
+new learning, a revised E92 score or a claim that OOD is solved.
+
+E92 native parity is exact on14 deterministic source-representative views; real HTTP
+integration passes six outcome-selected cases (including unstable positive, uncertain
+AI, uncertain REAL, no-clear REAL and false positive). Native pair inference1.13–1.89s,
+weight startup17.59s; six local HTTP cases1.11–2.56s. These are small MPS engineering
+samples, not production p50/p95. Raw scientific inputs and API admission differ:
+all160 SIDD original PNGs exceed12MiB; only23/83 E65 originals pass input limits.
+No rejected file was silently converted or removed from scientific counts.
+
+### Offline source-shift evidence
+
+E92 on83 previously admitted E65 REAL parents:2 false AI originals,1 false AI Q75;
+E43 previously14 originals/18 Q75. WIFD contributes2/67 and1/67; RawNIND0/16 in both.
+The entire fixed population was scored; nothing was fit or selected using its labels.
+However these publishers were already exposed as diagnostics and E65 has no AI images.
+This supports narrower REAL-transfer evidence, not fresh-final accuracy or retention
+on unseen generators. E92's20/20 numeric DEV milestone and failed E43 AI guard remain.
+The current UI preserves159/160 original E66 AI alerts; one receives an extra warning.
+It abstains on89/160 E66 REAL observations, a visible coverage cost, not hidden success.
+
+### Model 2 evidence and concrete next work
+
+Read E17/E18 and the old two-module plan. Existing CocoGlide provides512 edited images,
+512 binary/nondegenerate geometry-matched masks and512 linked authentic files. Initial
+audit falsely reported missing links because it omitted the compilation's documented
+extra `.png`; attempt1 evidence is retained and a precise, ambiguity-rejecting resolver
+corrects this without renaming data. Authentic exact hashes are unique; semantic/near
+parent duplicates remain unaudited. Mask median area15.974%;93 masks cover only1–5%.
+
+A key limitation in E17 is its per-image percentile threshold using true mask area:
+its IoU was an oracle ranking diagnostic, not a deployable localiser. The >=50% tile
+coverage filter also dropped85/120 candidate images. Next: group/provenance audit,
+complete-coverage64px stride evaluator, CAL-only threshold, pixel AUC/AP and area-
+stratified image-level metrics against random/centre/authentic controls. Only then a
+frozen DINO dense-token linear head, using eligible grouped TRAIN masks. Do not promise
+localisation for classic splicing or fully re-rendered AI edits. No Model2 training or
+heatmap release occurred. Detailed prospective ladder is at the top of PLAN.
+
+### Validation and checkpoints
+
+- 887 Python tests passed in16.92s (one existing Starlette/httpx deprecation warning).
+- Web lint/typecheck and Sites build passed;10 Node contract/SSR/asset tests passed.
+- Native parity14/14, original-alert display replay403/403, real HTTP6/6 passed.
+- No browser visual QA was requested or claimed. No package/environment upgrade.
+- Evidence: e93_runtime_manifest, e93_native_parity, e93_demo_validation,
+  e94_display_audit, e94_http_smoke and model2_local_inventory_2026-09-14 JSON receipts.
+
+Local start (the existing environment and disk are required):
+
+```sh
+PIXELPROOF_DATA_ROOT=/Volumes/LaCie/pixelproof-datasets PYTHONPATH=ml:ml/src HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PIXELPROOF_CORS_ORIGINS=http://localhost:3002,http://127.0.0.1:3002 ml/.venv/bin/python -m uvicorn pixelproof.internship_serve:app --host 127.0.0.1 --port 8800
+NEXT_PUBLIC_PIXELPROOF_API_URL=http://127.0.0.1:8800 npm run dev -- --port 3002
+```
+
+Use the actual Local URL printed by vinext and explicitly allow that origin if its
+port is occupied. The commands are separate foreground terminals. Do not launch the
+frozen E93 prototype as the current demo. Git synchronization is verified at final handoff;
+local check success is not an assertion that the latest remote CI completed.

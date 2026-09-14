@@ -5,22 +5,19 @@ import {
   AnalysisHttpError,
   AnalysisResponseError,
   LatestRequestGate,
-  analysisEndpoint,
   analysisErrorMessage,
-  parseAnalysis,
   resolveApiOrigin,
-  type Analysis,
 } from "./analysis-contract";
-import { R1bResearch, TechnicalDetails } from "./result-panels";
+import { demoFileError, OUTCOME_COPY, parseDemoAnalysis, type DemoAnalysis } from "./demo-contract";
 
 type Preview = { name: string; url: string; size: string; file: File };
 
 const API_ORIGIN = resolveApiOrigin(
-  process.env.NEXT_PUBLIC_PIXELPROOF_API_URL,
+  process.env.NEXT_PUBLIC_PIXELPROOF_API_URL ?? (process.env.NODE_ENV === "development" ? "http://127.0.0.1:8800" : undefined),
   process.env.NODE_ENV === "development",
 );
 
-const PROJECT_METHOD = "project_model";
+const REQUEST_TIMEOUT_MS = 100_000;
 
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -29,7 +26,7 @@ export default function Home() {
   const [preview, setPreview] = useState<Preview | null>(null);
   const [dragging, setDragging] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [analysis, setAnalysis] = useState<Analysis | null>(null);
+  const [analysis, setAnalysis] = useState<DemoAnalysis | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => () => {
@@ -49,11 +46,15 @@ export default function Home() {
 
   function choose(file?: File) {
     if (!file) return;
-    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
-      setError("Bu dosya desteklenmiyor. JPG, PNG veya WEBP seçin.");
+    cancelAnalysis();
+    setAnalysis(null);
+    const fileError = demoFileError(file);
+    if (fileError) {
+      releasePreview();
+      setPreview(null);
+      setError(fileError);
       return;
     }
-    cancelAnalysis();
     releasePreview();
     setAnalysis(null);
     setError(null);
@@ -83,13 +84,19 @@ export default function Home() {
     const ticket = requestGateRef.current.begin();
     setLoading(true);
     setError(null);
+    setAnalysis(null);
+    const timer = window.setTimeout(() => {
+      if (requestGateRef.current.isCurrent(ticket.id)) {
+        requestGateRef.current.cancel();
+        setLoading(false);
+        setError("İnceleme çok uzun sürdü. Biraz bekleyip yeniden deneyin.");
+      }
+    }, REQUEST_TIMEOUT_MS);
     try {
-      const body = new FormData();
-      body.append("image", selectedPreview.file);
-      body.append("method", PROJECT_METHOD);
-      const response = await fetch(analysisEndpoint(API_ORIGIN), {
+      const response = await fetch(`${API_ORIGIN}/analyze`, {
         method: "POST",
-        body,
+        headers: { "Content-Type": selectedPreview.file.type },
+        body: selectedPreview.file,
         signal: ticket.signal,
       });
       let payload: unknown;
@@ -106,12 +113,13 @@ export default function Home() {
             : undefined;
         throw new AnalysisHttpError(response.status, detail);
       }
-      const parsed = parseAnalysis(payload);
+      const parsed = parseDemoAnalysis(payload);
       if (requestGateRef.current.isCurrent(ticket.id)) setAnalysis(parsed);
     } catch (caught) {
       if (ticket.signal.aborted || !requestGateRef.current.isCurrent(ticket.id)) return;
       setError(analysisErrorMessage(caught));
     } finally {
+      window.clearTimeout(timer);
       if (requestGateRef.current.isCurrent(ticket.id)) setLoading(false);
     }
   }
@@ -127,14 +135,14 @@ export default function Home() {
 
       <div className="container">
         <section className="intro">
-          <span className="intro-kicker">Yeni modelimiz · E32 R1b</span>
-          <h1>Yeni modelimiz bu görsel için ne diyor?</h1>
+          <span className="intro-kicker">Staj projesi · E92</span>
+          <h1>Bu görselde yapay zekâ izleri var mı?</h1>
           <p>
-            Fotoğrafını yükle; modelin doğrudan cevabını ve AI sinyal barını gör. Ayrıntılı teknik
-            ölçümler yalnız istersen açılır.
+            Bir fotoğraf seçin. Modelimiz görüntüyü incelesin; bulduğu işaretleri ve karar
+            veremediği durumları sade bir dille anlatsın.
           </p>
           <div className="intro-pills" aria-label="Demo özellikleri">
-            <span>Dosya cihazında kalır</span><span>Tek seferde analiz</span><span>Sınırlar açıkça görünür</span>
+            <span>Güncel model</span><span>Ek tutarlılık kontrolü</span><span>Karar veremeyebilir</span>
           </div>
         </section>
 
@@ -142,7 +150,7 @@ export default function Home() {
           <div className="panel">
             <div className="panel-title">
               <h2>Görsel</h2>
-              <p>JPG, PNG veya WEBP · en fazla 12 MB</p>
+              <p>JPG, PNG veya WEBP · en fazla 12 MB · 16 megapiksel</p>
             </div>
 
             {!preview ? (
@@ -182,31 +190,50 @@ export default function Home() {
 
           <div className="panel result-panel">
             <div className="panel-title">
-              <h2>Yeni modelin sonucu</h2>
-              <p>E32 R1b · doğrudan model cevabı</p>
+              <h2>İnceleme sonucu</h2>
+              <p>E92 · ek kontrol ile</p>
             </div>
 
             {!analysis ? (
               <div className="result empty-result" aria-live="polite" aria-busy={loading}>
                 <div className="result-icon" aria-hidden="true">◎</div>
-                <h3>{preview ? "Analize hazır" : "Önce bir görsel yükleyin"}</h3>
+                <h3>{loading ? "Fotoğraf inceleniyor" : preview ? "Analize hazır" : "Önce bir görsel yükleyin"}</h3>
                 <p>
-                  {preview
-                    ? "Tek düğmeyle E32 R1b modelinin cevabını görebilirsin."
-                    : "JPG, PNG veya WEBP seç; yeni modelimizin cevabı burada görünsün."}
+                  {loading ? "Görüntü ve sıkıştırılmış bir kopyası karşılaştırılıyor. Bu işlem biraz sürebilir." : preview
+                    ? "Hazır olduğunuzda incelemeyi başlatın."
+                    : "Seçtiğiniz fotoğrafın sonucu burada görünecek."}
                 </p>
                 {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" disabled={!preview || loading} onClick={() => analyze()}>
-                  {loading ? "Modeller inceliyor…" : "Görseli analiz et"}
+                  {loading ? "İnceleniyor…" : "Görseli analiz et"}
                 </button>
               </div>
             ) : (
               <div className="result result-stack" aria-live="polite" aria-busy={loading}>
-                <R1bResearch candidate={analysis.r1b_research} />
-                <TechnicalDetails analysis={analysis} />
+                <section className={`demo-verdict demo-${analysis.outcome}`}>
+                  <span className="section-kicker">İnceleme tamamlandı</span>
+                  <h3>{OUTCOME_COPY[analysis.outcome].title}</h3>
+                  <p>{analysis.reason === "image_too_small"
+                    ? "Fotoğraf yeterli ayrıntı taşımıyor. Her iki kenarı da en az 224 piksel olan asıl dosyayı deneyin."
+                    : OUTCOME_COPY[analysis.outcome].text}</p>
+                  {analysis.outcome === "ai_signal" && analysis.review_required &&
+                    <p className="review-warning"><strong>Ek kontrolde sonuç değişti.</strong> Modelin ilk
+                      işaretini gösteriyoruz, ancak bu fotoğraf için sonuç tutarlı değil. Asıl dosyayı
+                      ve kaynağını kontrol etmeden bir yargıya varmayın.</p>}
+                  <p className="demo-next">{OUTCOME_COPY[analysis.outcome].next}</p>
+                </section>
+                <details className="technical-details">
+                  <summary>Bu sonuç ne anlama geliyor?</summary>
+                  <p>Bu staj projesi, görselin bütünündeki üretim izlerini araştırıyor.
+                    Küçük bir bölgenin değiştirilip değiştirilmediğini veya nerede değiştirildiğini henüz göstermez.</p>
+                  <p>Ek kontrol, sıkıştırma sonrası sonucu yeniden inceler. İlk incelemede AI
+                    işareti bulunduysa gösterilir; sonuç değişirse ayrıca uyarı eklenir. Belirsiz negatif
+                    sonuçlarda karar verilmez. İki kontrolde de aynı hatanın yapılması mümkündür. Bu araç bir gerçeklik sertifikası değildir.</p>
+                  <p>Model sürümü: {analysis.model_id}. Görsel boyutu: {analysis.width} × {analysis.height}.</p>
+                </details>
                 {error && <p className="error-text" role="alert">{error}</p>}
                 <button type="button" onClick={() => analyze()} disabled={loading}>
-                  {loading ? "Modeller inceliyor…" : "Yeniden analiz et"}
+                  {loading ? "İnceleniyor…" : "Yeniden analiz et"}
                 </button>
               </div>
             )}
@@ -214,9 +241,13 @@ export default function Home() {
         </section>
 
         <aside>
-          <strong>Kısa not:</strong> Ana kart yalnız yeni E32 R1b modelimizin cevabıdır. Skor bir
-          olasılık veya gerçeklik sertifikası değildir; model gerçek fotoğraflarda yanlış alarm
-          verebildiği için sonucu deneysel kanıt olarak yorumla.
+          <strong>Nasıl kullanmalı?</strong> Bu bir öğrenci projesi; model yanılabilir.
+          Bir fotoğrafı ya da kişiyi yalnız bu sonuca dayanarak değerlendirmeyin.
+          <details className="privacy-note"><summary>Fotoğrafıma ne oluyor?</summary>
+            <p>İncelemeyi başlattığınızda dosya analiz servisine gönderilir. Bu yerel kurulumda
+              servis bu bilgisayarda çalışır. Görseller arşivlenmez, eğitime eklenmez ve başka
+              bir yapay zekâ servisine gönderilmez; geçici olarak bellekte işlenir.</p>
+          </details>
         </aside>
       </div>
     </main>

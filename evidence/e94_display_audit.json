@@ -1,0 +1,70 @@
+{
+  "api_sha256": "be1fb0fcff31747d4c15d3c7274b943115780e417d981df261e5e2cf472e7554",
+  "code_sha256": "97977fa53ea07310ccc7f181a7ed00c1f6e600b8a3272abbdf836548aad83774",
+  "display_policy": "e92-preserve-alerts-v1",
+  "e93_scores_sha256": "83d387d181e2f1d77ed1d174a8310b2ded3205da637054577191d6312c66d95e",
+  "limits": "A presentation requirement, not a new classifier or OOD detector. All original E92 alerts retained including its false alerts. Inconsistent positive alerts receive an explicit warning. Negatives may abstain. API eligibility is decoded separately; do not claim native-benchmark counts as API coverage. No new fit, scores, thresholds or independent final.",
+  "populations": {
+    "consumed_e66": {
+      "accepted_outcomes_by_label": {
+        "0": {},
+        "1": {
+          "ai_signal": 159,
+          "uncertain": 1
+        }
+      },
+      "added_raw_ai_alerts": 0,
+      "api_input_eligibility": {
+        "accepted": 160,
+        "over_12_MB": 160
+      },
+      "lost_raw_ai_alerts": 0,
+      "outcomes_by_label": {
+        "0": {
+          "no_clear_signal": 71,
+          "uncertain": 89
+        },
+        "1": {
+          "ai_signal": 159,
+          "uncertain": 1
+        }
+      },
+      "parents": 320,
+      "positive_review_warnings_by_label": {
+        "0": 0,
+        "1": 1
+      }
+    },
+    "e65_real_diagnostic": {
+      "accepted_outcomes_by_label": {
+        "0": {
+          "ai_signal": 1,
+          "no_clear_signal": 17,
+          "uncertain": 5
+        },
+        "1": {}
+      },
+      "added_raw_ai_alerts": 0,
+      "api_input_eligibility": {
+        "accepted": 23,
+        "input_policy_413": 36,
+        "over_12_MB": 24
+      },
+      "lost_raw_ai_alerts": 0,
+      "outcomes_by_label": {
+        "0": {
+          "ai_signal": 2,
+          "no_clear_signal": 58,
+          "uncertain": 23
+        },
+        "1": {}
+      },
+      "parents": 83,
+      "positive_review_warnings_by_label": {
+        "0": 1,
+        "1": 0
+      }
+    }
+  },
+  "state": "display_policy_replay_complete"
+}

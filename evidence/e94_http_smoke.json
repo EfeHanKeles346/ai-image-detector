@@ -1,0 +1,136 @@
+{
+  "api_code_sha256": "be1fb0fcff31747d4c15d3c7274b943115780e417d981df261e5e2cf472e7554",
+  "cases": [
+    {
+      "http_seconds": 2.560335624963045,
+      "label": 0,
+      "parent_id": "e65:72f5ec09632200eea8687214eb0b85bf660f115832bb8862b05445310bd3f71b",
+      "response": {
+        "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+        "display_policy": "e92-preserve-alerts-v1",
+        "guard_id": "e92-stability-v1",
+        "guard_outcome": "ai_signal",
+        "height": 3264,
+        "model_id": "E92",
+        "outcome": "ai_signal",
+        "reason": "stable_signal",
+        "research_only": true,
+        "review_required": false,
+        "schema_version": 2,
+        "width": 4896
+      },
+      "sha256": "0a7774c86933275c6954bcd80c5aa1ad47b66ebdf6e4bcd7fdeacc4239606d21"
+    },
+    {
+      "http_seconds": 1.4684381249826401,
+      "label": 0,
+      "parent_id": "e65:01d7066faa84fb1ddcf857d65906911e1a9a1a223de43ee16a8771b82fd64d4c",
+      "response": {
+        "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+        "display_policy": "e92-preserve-alerts-v1",
+        "guard_id": "e92-stability-v1",
+        "guard_outcome": "no_clear_signal",
+        "height": 3264,
+        "model_id": "E92",
+        "outcome": "no_clear_signal",
+        "reason": "limited_negative_evidence",
+        "research_only": true,
+        "review_required": false,
+        "schema_version": 2,
+        "width": 4896
+      },
+      "sha256": "0321aa9936d958a8f0d4a969d6d12629e98bc13f1cf0faae7b732cdac7d8d989"
+    },
+    {
+      "http_seconds": 1.4993186249630526,
+      "label": 0,
+      "parent_id": "e65:85e7b5973488083ba19e84107130d3b0de5fca72fc1d04696383c06eb3d235d1",
+      "response": {
+        "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+        "display_policy": "e92-preserve-alerts-v1",
+        "guard_id": "e92-stability-v1",
+        "guard_outcome": "uncertain",
+        "height": 3456,
+        "model_id": "E92",
+        "outcome": "uncertain",
+        "reason": "inconsistent_or_borderline",
+        "research_only": true,
+        "review_required": true,
+        "schema_version": 2,
+        "width": 4608
+      },
+      "sha256": "269050c0912c7e330440d3c2f3a52b101db7dc8f1dee00caf1b88b8c9728549e"
+    },
+    {
+      "http_seconds": 1.109610625077039,
+      "label": 1,
+      "parent_id": "e32:6641402dd1288987a374d5395a763a2b9473a0127f4a20a6fe35f0afda4825c2",
+      "response": {
+        "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+        "display_policy": "e92-preserve-alerts-v1",
+        "guard_id": "e92-stability-v1",
+        "guard_outcome": "ai_signal",
+        "height": 1536,
+        "model_id": "E92",
+        "outcome": "ai_signal",
+        "reason": "stable_signal",
+        "research_only": true,
+        "review_required": false,
+        "schema_version": 2,
+        "width": 1024
+      },
+      "sha256": "00c1ca938dc64be4ad184626567d23e0aa86bc15b85fc3f0c7b7604f27506037"
+    },
+    {
+      "http_seconds": 1.129696665913798,
+      "label": 1,
+      "parent_id": "e32:0e69a254de642138ee6aef6f6947b863acba3a0838bab1efbe2b6b811bf7fb5b",
+      "response": {
+        "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+        "display_policy": "e92-preserve-alerts-v1",
+        "guard_id": "e92-stability-v1",
+        "guard_outcome": "uncertain",
+        "height": 1536,
+        "model_id": "E92",
+        "outcome": "ai_signal",
+        "reason": "inconsistent_or_borderline",
+        "research_only": true,
+        "review_required": true,
+        "schema_version": 2,
+        "width": 1024
+      },
+      "sha256": "ec82842e87354518f50da2aaddaa91c05d90864cc3c581e799560370464c29bc"
+    },
+    {
+      "http_seconds": 1.122606832999736,
+      "label": 1,
+      "parent_id": "e32:e77611a7fff7f7093b154b244e8c8359e00e93246043745e1056626b7259623b",
+      "response": {
+        "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+        "display_policy": "e92-preserve-alerts-v1",
+        "guard_id": "e92-stability-v1",
+        "guard_outcome": "uncertain",
+        "height": 1536,
+        "model_id": "E92",
+        "outcome": "uncertain",
+        "reason": "inconsistent_or_borderline",
+        "research_only": true,
+        "review_required": true,
+        "schema_version": 2,
+        "width": 1024
+      },
+      "sha256": "32e1ccf2c9cb523c119f01afd3b7461b3db241a27d837be729b8d22e70a07d93"
+    }
+  ],
+  "health": {
+    "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+    "display_policy": "e92-preserve-alerts-v1",
+    "downloads_allowed": false,
+    "guard_id": "e92-stability-v1",
+    "model_id": "E92",
+    "research_only": true,
+    "status": "ready"
+  },
+  "limits": "Outcome-selected engineering replay on consumed originals. Includes local HTTP, decode, paired native inference. No broad latency/accuracy claim; no new model selection.",
+  "state": "local_HTTP_integration_passed"
+}

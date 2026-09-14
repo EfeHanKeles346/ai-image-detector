@@ -32,13 +32,125 @@ E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed D
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
-## Current authorization — critical review after offline E92 (2026-09-14)
+## Current authorization — local internship demo and reliability work (2026-09-14)
 
-E91/E92 offline training/evaluation is complete. The user's current request is to
-preserve the milestone and critically assess validity, bias, data freshness and MVP
-readiness. Do not start a new fit or deploy during this review. No dataset, model or
-package downloads; existing small text-source research and git synchronization remain
-within scope. E92's remaining AI guard and all protected dataset roles stay unchanged.
+The user now authorizes connecting E92 to the local student demo, simplifying its
+language, adding error protection, investigating/applying offline OOD reliability
+checks, and revisiting the Model 2 plan. This supersedes the previous review-only
+pause and the historical prohibition on changing the demo before E49 passes.
+Research-demo integration is NOT Module-1 v1 promotion: E92's full acceptance still
+fails its AI-retention guard. No public hosting, new training, downloads or changed
+thresholds are part of this implementation. Existing frozen evidence stays immutable.
+
+### Completed implementation — E93 evidence and alert-preserving demo
+
+- Local web now uses E92 via `pixelproof.internship_serve:app` on127.0.0.1:8800.
+  Current preview is http://localhost:3002/ (3000/3001 were already occupied).
+  Set NEXT_PUBLIC_PIXELPROOF_API_URL=http://127.0.0.1:8800 and explicitly allow the
+  preview origin in PIXELPROOF_CORS_ORIGINS. No public hosting was performed.
+- E93 native parity passed14/14 source-representative views with exact score equality
+  and zero cut changes. Its166 E65 scores are frozen. Raw E92 false alerts:2/83
+  original and1/83 Q75; old E43:14/83 and18/83. This is exposed REAL-only source-shift
+  evidence, not fresh final validation or a measurement of unseen-generator recall.
+- **Do not use E93's strict positive suppression as the default UI policy.** The
+  two-view AND rule preserves only158/160 E66 AI indications versus159/160 original
+  E92. Its frozen results remain available; no E93 threshold or score was changed.
+- Current `e92-preserve-alerts-v1` displays every original E92 AI indication and adds
+  a visible review warning if its fixed E93 check disagrees. Negative outputs can
+  abstain; no output certifies REAL. Pure replay on403 locked parents confirms zero
+  added/lost original alerts. This preserves false alerts too: it is an honest
+  presentation/error-handling improvement, not a learned OOD solution or lower FPR.
+- Original E66 presentation:159 AI indications/1 uncertain among160 AI;71 no-clear
+  and89 uncertain among160 REAL. One AI indication has an extra warning. The wrapper
+  does not pass the old80% non-abstention target (230/320=71.875%); E92's raw20/20
+  and its failed E43 AI-retention guard remain the correct historical claim.
+- The12MiB/16MP API input policy is intentionally separate from native ML tests:
+  all160 original SIDD PNGs exceed12MiB; E65 accepts23/83 originals, rejecting24 for
+  size and36 for other geometry limits. Do not advertise320/83 scientific populations
+  as end-to-end API coverage. Do not silently shrink test files to improve coverage.
+- Six outcome-selected real HTTP cases pass, including unstable AI warning and
+  uncertainty. No performance claim is based on this targeted integration selection.
+  No uploads archived or used for training; offline encoders and loopback-only API.
+
+### Model 2 next steps — existing data, AI local edits only
+
+1. **Partial M2-0 complete:** audited512 local CocoGlide edited images,512 masks and
+   512 authentic pointers. All512 nondegenerate binary masks match image geometry;
+   exact authentic hashes are unique. The compilation appends another `.png` to
+   original filenames; the new audit resolves only that documented mapping and
+   rejects missing/ambiguous/out-of-root pointers. No extraction/download/inference.
+   Remaining M2-0: decode authentic parents, audit pixel/perceptual near duplicates
+   against all protected Module1/Module2 roles, verify semantic-scene/prompt ancestry
+   and provenance/rights. Do not assign TRAIN/CAL until that grouped audit is frozen.
+2. Preserve E17/E18's first120 possible exposures as historical diagnostic rows.
+   The other392 files are not an unseen-source final: all are the same old CocoGlide
+   collection. Reserve whole parent/scene groups prospectively; require a different
+   audited publisher/generator before claiming broad localisation generalization.
+   TGIF/TGIF2 remains a future acquisition lead, not downloaded on mobile data.
+3. Repair evaluation first: include all eligible masks; disclose every rejection;
+   half128px-tile stride=64px with edge coverage and overlap-averaged maps. No36-tile
+   cap or truth-dependent >=50% mask-coverage survival filter. No per-image threshold
+   chosen from the true mask area. E17's percentile(mask_fraction) IoU is an oracle
+   diagnostic, not deployable localisation performance. Use CAL-only fixed thresholds.
+4. Run fixed, zero-training baselines first (existing128px detector, local DINO/noise
+   features) with pixel AUC/AP, image-macro metrics, area-stratified F1/IoU and authentic
+   false-localised area. Compare random-area and centre baselines, resampling whole
+   parent/scene groups. Never report pooled tiles as independent observations.
+5. Only if the repaired baseline establishes signal, register one frozen DINOv2-S
+   dense-token/linear-head baseline using existing eligible TRAIN masks; fit any
+   normalization inside TRAIN, select on grouped CAL, then evaluate once. A shallow
+   decoder/noise fusion is a later distinct hypothesis, not an architecture sweep on
+   exposed examples. Keep E92 weights/cuts untouched. No training was started here.
+6. Product scope: answer where an AI-assisted local edit may occur. Classic splices
+   are specificity controls; fully re-rendered images have no reliable local-mask
+   promise. Do not display E92's texture crops as an edited-region heatmap. No Model2
+   demo integration until measured localisation exceeds its declared baselines and
+   authentic-image controls at a CAL-frozen threshold.
+
+### Model 1 next steps after this checkpoint
+
+The original goals remain unmet in the broad sense: no clean independent final, two
+seen E66 AI families, scene dependence and one E43-caught AI miss. E65 transfer is
+encouraging but cannot prove unseen-generator retention. The next meaningful model
+work is a registered source/scene/generator-held evaluation and matched-processing
+TRAIN-only controls, not a cut adjustment to the new WIFD errors. Audit available disk
+manifests for unexposed groups first; inventory volume alone does not grant TRAIN/final
+eligibility. Every scaler/PCA/supervised map must be fit inside each TRAIN fold. Record
+per-group recall/FPR, coverage and compression-chain failures. Current API bounds,
+multi-user memory/latency and already-compressed submissions need separate prospective
+coverage/stress tests before wider use. No new weights are justified by this small
+REAL-only diagnostic alone.
+
+### Executed E93 registration — preserve as the original protocol
+
+1. Add a separate offline E92 runtime/API with verified local weights, exact frozen
+   preprocessing, no old-model fallback, bounded uploads/inference concurrency, clear
+   failures and no REAL certification. Keep the legacy endpoint as historical code.
+2. Freeze guard `e92-stability-v1` before new diagnostic scoring: compare the submitted
+   image with exact E49-style long-side1080/JPEG75 processing. Emit AI indication only
+   if BOTH E92 scores reach the old AI cut; emit no-clear-signal only if BOTH are below
+   the old REAL cut AND neither E43 reference reaches its AI cut. All other cases
+   abstain. Reference disagreement can only abstain, never create an AI accusation.
+   Reject unsupported animated/high-bit-depth inputs; under224px inputs abstain before
+   inference. No fitted confidence, calibrated probability or OOD guarantee is claimed.
+3. Replay this guard on all320 consumed E66 parent pairs, reporting AI indications,
+   abstentions, no-clear outputs, source/scene false indications and raw E92 rates.
+   Register deterministic native-image parity representatives before inference (first
+   SHA-sorted parent per source, both views; tolerance1e-5, no cut changes). This is an
+   engineering replay, not new validation. Keep raw and guarded metrics separate.
+4. Once parity passes, evaluate all83 previously admitted E65 WIFD/RawNIND diagnostic
+   parents and both transports using frozen E92. Bind existing manifest/file hashes
+   and new runtime/guard code before scoring; lock scores before reporting. These
+   publishers remain DIAGNOSTIC_DEV_ONLY, never TRAIN/fresh final. This checks REAL
+   source shift only; E66's paired AI replay is limited to its two seen families.
+   No follow-up threshold/recipe sweep after scores. No E49 access. Max1h on AC power.
+5. Update the ordinary-user demo to consume only the new versioned E92 response; show
+   plain indications/uncertainty, no percentage bar, no fake localisation heatmap.
+   Explain upload destination and temporary processing accurately. Verify real API
+   inference plus unit/API contracts and the existing web build checks.
+6. Audit existing Model 2 image/mask pointers and preserve its inpainting-only scope.
+   Plan mask coverage repair and scene-grouped evaluation before any training; record
+   exposure/holdout limitations. E92 integration does not certify a localisation model.
 
 ## Current checkpoint — E92 numeric20/20; AI retention still fails (2026-09-14)
 
@@ -48,7 +160,7 @@ in both. All20 numeric gates pass, up from E86's17/20. Relative to E86,1 origina
 social REAL errors are rescued, with no new AI or REAL decision regressions.
 
 Full acceptance is still **failed**: the same one E43-caught GPT original is missed.
-No E49 access, serving change or promotion. Original accuracy99.6875%, social95.3125%
+At this frozen checkpoint: no E49 access, serving change or promotion. Original accuracy99.6875%, social95.3125%
 are descriptive results on consumed DEV, not independent-final estimates. The20/20
 count is acceptance-criterion coverage, not100% image accuracy. Preserve all old
 scores/contracts and the fixed cuts. Detailed results live in HISTORY/EXPERIMENTS.
@@ -73,12 +185,12 @@ failing95%. Detailed critique and evidence are in HISTORY and ml/EXPERIMENTS.
 SIDD's10 scenes/older RAW-rendered phones and two seen AI families limit freshness and
 representativeness. Repeated E66 use creates adaptive-selection risk even without
 training on DEV. E49 is historically consumed and cannot be relabeled fresh. DEAR
-weight/data restrictions block assuming commercial clearance. E92 is not the current
-E20/E32 web runtime and lacks native-image end-to-end serving validation. A student
+weight/data restrictions block assuming commercial clearance. At the time of this audit, E92 was not the current E20/E32 web runtime and
+lacked native-image end-to-end serving validation; E93/E94 now cover the local adapter. A student
 research presentation is supportable with explicit limitations; public/paid general
-purpose deployment is not yet validated or cleared. No deployment is authorized here.
+purpose deployment is not yet validated or cleared. The review authorized no deployment; the later local-only internship request above supersedes that pause.
 
-## Next priorities — evaluate trust before another model iteration
+## Earlier audit priorities — retained context for the follow-up above
 
 1. Freeze E92 as the reviewed checkpoint. Keep20/20 numerical success and the failed
    E43 AI guard together. No sample-specific GPTIMG_431 fix, post-hoc threshold change
@@ -109,7 +221,7 @@ purpose deployment is not yet validated or cleared. No deployment is authorized 
    p50/p95 latency/memory/concurrency checks, bounded input handling and a concrete
    image retention/privacy policy. Review before any user-facing release.
 
-No additional fit or serving change is registered by this critique. Update only these
+The critique registered no fit or serving change; see the newer local-demo authorization above. Update only these
 three English Markdown records after each plan/development/experiment; keep old results
 append-only. Reproducible audit: ml/tools/audit_e92_readiness.py and
 evidence/e92_readiness_audit_2026-09-14.json. The separate Turkish report stays removed.

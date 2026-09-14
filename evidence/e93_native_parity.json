@@ -1,0 +1,103 @@
+{
+  "contract_sha256": "a8f46c5106d30f1057f4474bb70e2d3c2919626656ce1dbdc039d2de8d5d8216",
+  "device": "mps",
+  "latency_scope": "14 native views, first pair cold; includes crops/all encoders/heads, excludes HTTP/upload. Not production p95.",
+  "load_seconds": 17.58941195893567,
+  "pair_latency_seconds": [
+    1.8875369590241462,
+    1.3518798749428242,
+    1.2904449589550495,
+    1.2846040000440553,
+    1.3314352079760283,
+    1.1357263330137357,
+    1.1336580410134047
+  ],
+  "results": [
+    {
+      "condition": "publisher_original",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0173"
+    },
+    {
+      "condition": "social_q75",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0173"
+    },
+    {
+      "condition": "publisher_original",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0084"
+    },
+    {
+      "condition": "social_q75",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0084"
+    },
+    {
+      "condition": "publisher_original",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0166"
+    },
+    {
+      "condition": "social_q75",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0166"
+    },
+    {
+      "condition": "publisher_original",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0054"
+    },
+    {
+      "condition": "social_q75",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0054"
+    },
+    {
+      "condition": "publisher_original",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0175"
+    },
+    {
+      "condition": "social_q75",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "SIDD:0175"
+    },
+    {
+      "condition": "publisher_original",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "e32:6641402dd1288987a374d5395a763a2b9473a0127f4a20a6fe35f0afda4825c2"
+    },
+    {
+      "condition": "social_q75",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "e32:6641402dd1288987a374d5395a763a2b9473a0127f4a20a6fe35f0afda4825c2"
+    },
+    {
+      "condition": "publisher_original",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "e32:65c66eeeb082d4a664d0432fd664b53867aef59bdaf18293e953de59644c1d0a"
+    },
+    {
+      "condition": "social_q75",
+      "cut_changes": false,
+      "max_error": 0.0,
+      "parent_id": "e32:65c66eeeb082d4a664d0432fd664b53867aef59bdaf18293e953de59644c1d0a"
+    }
+  ],
+  "state": "passed",
+  "views": 14
+}
