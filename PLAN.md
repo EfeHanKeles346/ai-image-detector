@@ -32,15 +32,13 @@ E70 consumed that limited DEV and failed. E71 passed TRAIN but failed consumed D
 Whole E65 WIFD/RawNIND publishers stay diagnostic-only; old E59 fits stay paused. Keep existing AI
 retention/absolute gates. Do not use later test errors to choose thresholds or recipe sweeps.
 
-## Current authorization — offline cached-data development (2026-09-14)
+## Current authorization — critical review after offline E92 (2026-09-14)
 
-The latest no-download request supersedes the 2026-09-13 acquisition authorization.
-Continue one predeclared E91/E92 coverage extension using already completed E89 SID
-features. The external volume is mounted with about347GiB free. Battery was100% on
-battery power at entry; the user says they are connecting power and requests starting.
-Begin registration/local validation now; the existing shared resource guard still
-requires observed AC before training. Do not alter frozen ancestor code to bypass it.
-No scheduled polling or background automation is requested.
+E91/E92 offline training/evaluation is complete. The user's current request is to
+preserve the milestone and critically assess validity, bias, data freshness and MVP
+readiness. Do not start a new fit or deploy during this review. No dataset, model or
+package downloads; existing small text-source research and git synchronization remain
+within scope. E92's remaining AI guard and all protected dataset roles stay unchanged.
 
 ## Current checkpoint — E92 numeric20/20; AI retention still fails (2026-09-14)
 
@@ -62,24 +60,59 @@ DEV parent/view pairing bug was corrected and tested before any new scoring; the
 local suite passes858 tests (16.46s, one existing warning). E91/E92 candidate recipes
 and predecessor artifacts stayed unchanged through the evaluation repair.
 
-## Next bounded offline work — diagnose retention before choosing another fit
+## Audit conclusion — numeric milestone, not market validation (2026-09-14)
 
-1. Use existing TRAIN-only four-view features and manifests. Inventory actual recorded
-   source/scene/parent grouping and duplicate/protected roles before any group holdout;
-   unidentified groups must remain an explicit limitation.
-2. Register a bounded group/transport stability diagnosis of low-reference-margin AI
-   across all four TRAIN conditions. Reuse caches, do not select the known DEV miss,
-   and do not mix consumed DEV/final/diagnostic publishers into training.
-3. Use that TRAIN diagnosis to justify one subsequent representation/retention change;
-   freeze it before execution. Do not simultaneously sweep thresholds, seeds, margins,
-   ranks, losses or regularization. Keep E92 paired successes and E43 AI guards visible.
-4. Evaluate only after all TRAIN/runtime protections pass. E49 remains gated behind
-   full DEV acceptance, including the separate zero-new-E43-AI-miss requirement.
+The read-only audit independently verifies the counts, selective metrics and AUC, and
+finds no observed parent-ID/file-SHA TRAIN/DEV overlap. It does not prove unknown
+prompt/scene/pretraining separation. All gate constants match2026-09-04;20/20 includes
+correlated/complementary criteria on paired conditions, not20 independent tests.
+Social worst-scene FPR is40% (6/15) and36.84% (7/19) in another scene, while the
+registered worst-camera gate passes. Covered accuracy is one extra error away from
+failing95%. Detailed critique and evidence are in HISTORY and ml/EXPERIMENTS.
 
-No new fit is registered beyond completed E92 at this checkpoint. Mobile-data policy
-remains no dataset/model/package downloads. Commit/push only small code, JSON evidence
-and the three English living records. The standalone Turkish report was removed;
-its substantive findings are consolidated in HISTORY and ml/EXPERIMENTS.
+SIDD's10 scenes/older RAW-rendered phones and two seen AI families limit freshness and
+representativeness. Repeated E66 use creates adaptive-selection risk even without
+training on DEV. E49 is historically consumed and cannot be relabeled fresh. DEAR
+weight/data restrictions block assuming commercial clearance. E92 is not the current
+E20/E32 web runtime and lacks native-image end-to-end serving validation. A student
+research presentation is supportable with explicit limitations; public/paid general
+purpose deployment is not yet validated or cleared. No deployment is authorized here.
+
+## Next priorities — evaluate trust before another model iteration
+
+1. Freeze E92 as the reviewed checkpoint. Keep20/20 numerical success and the failed
+   E43 AI guard together. No sample-specific GPTIMG_431 fix, post-hoc threshold change
+   or retrospective waiver. Any revised product criterion must be prospective and
+   cannot rewrite E92's acceptance result.
+2. Define the intended user/input population and binary versus mixed-edit scope,
+   false-accusation cost, prevalence and abstention policy. Do not call raw scores
+   calibrated p(AI), certify REAL, or attribute E92 results to the E32 interface.
+3. Inventory existing disk data for truly unexposed publisher/scene/prompt groups and
+   legal use. Mark unknown provenance honestly. Reserve and hash a representative
+   holdout before fitting/model selection; if none qualifies, record the gap and
+   postpone independent-final claims. Unused files from consumed sources are not
+   automatically a fresh benchmark. No new downloads on mobile data.
+4. Register TRAIN-only source/scene/transport stability and matched-processing controls.
+   Fit every learned scaler/projection inside its training fold; audit class-correlated
+   format/size/noise/content cues. Keep held-out groups out of representation fitting.
+   Use equal-budget comparisons before attributing gains solely to SID data coverage.
+5. Plan prospective evaluations with realistic phone processing, compression chains,
+   unseen generators and explicit edited-image cases. Report per-source AND scene
+   failures, cluster-aware uncertainty, specificity/precision at realistic prevalence,
+   calibration and coverage. Treat10 current REAL scenes as a limited diagnostic,
+   not enough evidence for broad deployment confidence. Retain previous gates as history.
+6. Compare E92 with simpler eligible baselines on the same locked evaluation and assess
+   accuracy/latency/rights tradeoffs. Obtain suitable component/data permissions or
+   replace restricted components and re-evaluate; free access is not automatic clearance.
+7. Only after evidence/rights scope supports a research prototype, prepare a separate
+   portable E92 inference bundle with native-image parity, correct model identity,
+   p50/p95 latency/memory/concurrency checks, bounded input handling and a concrete
+   image retention/privacy policy. Review before any user-facing release.
+
+No additional fit or serving change is registered by this critique. Update only these
+three English Markdown records after each plan/development/experiment; keep old results
+append-only. Reproducible audit: ml/tools/audit_e92_readiness.py and
+evidence/e92_readiness_audit_2026-09-14.json. The separate Turkish report stays removed.
 
 ## Previous checkpoint — E71 TRAIN passed before failed DEV (2026-09-13)
 

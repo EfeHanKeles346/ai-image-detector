@@ -8580,3 +8580,74 @@ Audit weak-reference AI stability across the four conditions without selecting o
 training on the known DEV miss. Register a bounded protocol before any new model fit;
 keep all E92 paired gains and the stricter E43 retention requirement visible. No
 threshold/rank/seed sweep or sample-specific fallback; no further data download.
+
+
+## 2026-09-14 — E92 milestone preserved; end-to-end critical review completed
+
+The user asks whether the20 conditions, data freshness, bias controls and performance
+justify a student MVP or market entry. The success stays recorded: E92 passes20/20
+numeric checks on consumed E66 DEV and improves E86 without losing its correct AI or
+REAL decisions. The separate E43-relative original AI retention guard still fails.
+This audit does not retroactively modify that result or promote the model.
+
+Added `ml/tools/audit_e92_readiness.py`, an offline read-only audit of existing JSON
+scores/manifests and artifact hashes. It loads no image, deserializes no model and
+performs no inference/training/download. It reproduces the frozen report and separately
+checks confusion counts, balanced accuracy, selective metrics and pairwise-rank AUC by
+direct formulas. Evidence: `evidence/e92_readiness_audit_2026-09-14.json` (12,308 bytes).
+The10 gate constants and two cuts match the original E49 evaluation commit b173d5b,
+2026-09-04; they were not relaxed to make E92 pass. The rules originate in E45/E46
+project acceptance budgets, not an external certification or market cost assessment.
+Two criteria are complements, several others correlated, and the two conditions are
+paired;20/20 is not20 independent tests or100% classification accuracy.
+
+Key findings, with full rationale and primary-source links in ml/EXPERIMENTS.md:
+- No observed TRAIN/DEV parent-ID or file-SHA intersections across12,269 TRAIN/320 DEV
+  parents. Canonical pixel hashes cover only639 TRAIN rows in the current metadata
+  audit. Earlier perceptual screening helps but cannot establish unknown scene/prompt
+  or pretrained-corpus independence. No affirmative direct identity leak was found.
+- E66 was adaptively reused from E70 through E92. Keeping its rows out of fitting
+  prevents one leakage route, but does not remove model-selection/holdout overfitting.
+- E92's social REAL errors concentrate: scene0026/15=40%, scene0067/19=36.8421%;13/14
+  errors occur in these two scenes. Worst-camera18.75% passes while worst-scene40%
+  was not in the original criteria. This is diagnostic, not a new retroactive gate.
+- Social covered accuracy300/315=95.2381% would become94.9206% with one additional
+  error at fixed coverage. Both conditions contain one AI below the internal REAL cut.
+  Neither zero original REAL errors nor20/20 means zero errors or certified authenticity.
+- SIDD is a2018,10-scene denoising dataset with RAW-derived non-tone-mapped sRGB from
+  five older phones. SID is also2018 low-light research data. Some TRAIN AI labels
+  are2026-era, but DEV tests only GPT Image1 and nano-banana-local. Acquisition date
+  is not capture date or current-generator coverage. Demographic fairness is unmeasured.
+- JPEG/PNG, dimensions, processing and semantic/source shortcuts remain plausible.
+  Explicitly supersede the early HISTORY assertion that fixed tiles make biased data
+  "perfectly safe". Tiling cannot erase all compression/processing/content traces.
+- Conditional algebra, not market evidence: if social TPR/FPR transferred to10% AI
+  prevalence, AI-positive precision would be55.79%; at1% AI,10.29%. The balanced DEV
+  result cannot establish trustworthiness in a mostly-real gallery.
+- E92 combines pretrained DINO/CLIP/DEAR with project-trained adaptation. DEAR weights
+  have CC BY-NC plus further restrictions; MIDD and other data have research limits.
+  Publicly accessible code/weights do not clear commercial use or all upstream rights.
+- The web still presents E32 R1b and serve.py retains E20/older research models.
+  E92 cached score timing excludes encoders and image decoding. No native-image E92
+  serving parity, load/latency qualification or accurate E92 UI integration is complete.
+
+Historical continuity: early CIFAKE/GenImage and native-tile phases exposed format,
+resolution and source-transfer limits; localization metrics also needed correction.
+Later E20/E32/E43 research and stronger versioned runtime/test contracts improved
+reproducibility without proving generalization. E49 was consumed historically by E43
+and failed11/20; its later reuse cannot count as a fresh independent final. E70–E92
+are a documented rejection/adaptation chain, not92 independent successful trials.
+The856-test suite missed the E92 happy-path manifest bug; the repaired858-test suite
+is useful engineering evidence, not ML market validation. Archive claims remain intact
+with these explicit dated corrections; no frozen research code was changed by this audit.
+
+Verdict: E92 is a credible student research milestone that can be presented with the
+population, limits and remaining guard failure. A live E92 research prototype needs
+separate runtime and licence-compliant scope. It is not presently a validated paid or
+public general-purpose authenticity detector. Market demand/competitive advantage are
+unmeasured. Prioritize a prospectively locked representative evaluation, TRAIN-only
+shortcut/group diagnostics, calibrated product risk and lawful/runtime integration
+before another DEV-driven fit. Do not target the known missed sample or remove its
+label/guard. No deployment or new ML experiment was executed. Only the three English
+living Markdown records were updated; small primary text pages were researched with
+no image/model/package acquisition.

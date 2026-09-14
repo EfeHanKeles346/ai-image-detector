@@ -1,0 +1,412 @@
+{
+  "acceptance_complete": false,
+  "conditions": {
+    "publisher_original": {
+      "ai_below_real_cut": 1,
+      "binary_metrics": {
+        "balanced_accuracy": 0.996875,
+        "confusion": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 160,
+          "tp": 159
+        },
+        "roc_auc": 0.9998046875
+      },
+      "covered_accuracy_one_more_error_same_coverage": 0.9936708860759493,
+      "gate": {
+        "checks": {
+          "automatic_coverage_gte_0_80": true,
+          "binary_auc_gte_0_90": true,
+          "binary_balanced_accuracy_gte_0_85": true,
+          "covered_accuracy_gte_0_95": true,
+          "pooled_ai_recall_gte_0_80": true,
+          "pooled_real_false_ai_lte_0_10": true,
+          "score_coverage_eq_1": true,
+          "uncertain_rate_lte_0_20": true,
+          "worst_source_ai_recall_gte_0_60": true,
+          "worst_source_real_false_ai_lte_0_20": true
+        },
+        "passed": true,
+        "passed_checks": 10,
+        "total_checks": 10
+      },
+      "independent_count_and_pairwise_rank_check": {
+        "auc": 0.9998046875,
+        "automatic_coverage": 0.9875,
+        "balanced_accuracy": 0.996875,
+        "confusion": {
+          "fn": 1,
+          "fp": 0,
+          "tn": 160,
+          "tp": 159
+        },
+        "covered_accuracy": 0.9968354430379747,
+        "uncertain_rate": 0.0125
+      },
+      "metric_replay_exact": true,
+      "prevalence_scenarios_not_deployment_estimates": [
+        {
+          "assumed_ai_prevalence": 0.01,
+          "implied_ai_positive_precision_if_rates_transfer": 1.0
+        },
+        {
+          "assumed_ai_prevalence": 0.1,
+          "implied_ai_positive_precision_if_rates_transfer": 1.0
+        },
+        {
+          "assumed_ai_prevalence": 0.5,
+          "implied_ai_positive_precision_if_rates_transfer": 1.0
+        }
+      ],
+      "rates": {
+        "ai_recall_by_source": {
+          "gpt-image-1": 0.9875,
+          "nano-banana-local": 1.0
+        },
+        "pooled_ai_recall": 0.99375,
+        "pooled_real_false_ai": 0.0,
+        "real_false_ai_by_source": {
+          "SIDD:G4": 0.0,
+          "SIDD:GP": 0.0,
+          "SIDD:IP": 0.0,
+          "SIDD:N6": 0.0,
+          "SIDD:S6": 0.0
+        },
+        "score_failures_by_source": {},
+        "worst_ai_recall": 0.9875,
+        "worst_real_false_ai": 0.0
+      },
+      "scene_macro_real_fpr_descriptive_only": 0.0,
+      "scenes": [
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 28,
+          "scene": "SIDD:scene:001"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 15,
+          "scene": "SIDD:scene:002"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 15,
+          "scene": "SIDD:scene:003"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 15,
+          "scene": "SIDD:scene:004"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 19,
+          "scene": "SIDD:scene:005"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 19,
+          "scene": "SIDD:scene:006"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 20,
+          "scene": "SIDD:scene:007"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 20,
+          "scene": "SIDD:scene:008"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 6,
+          "scene": "SIDD:scene:009"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 3,
+          "scene": "SIDD:scene:010"
+        }
+      ],
+      "selective": {
+        "automatic_coverage": 0.9875,
+        "automatic_rows": 316,
+        "covered_accuracy": 0.9968354430379747,
+        "uncertain_rate": 0.0125,
+        "uncertain_rows": 4
+      },
+      "worst_scene_real_fpr_descriptive_only": 0.0
+    },
+    "social_q75": {
+      "ai_below_real_cut": 1,
+      "binary_metrics": {
+        "balanced_accuracy": 0.953125,
+        "confusion": {
+          "fn": 1,
+          "fp": 14,
+          "tn": 146,
+          "tp": 159
+        },
+        "roc_auc": 0.9941796875
+      },
+      "covered_accuracy_one_more_error_same_coverage": 0.9492063492063492,
+      "gate": {
+        "checks": {
+          "automatic_coverage_gte_0_80": true,
+          "binary_auc_gte_0_90": true,
+          "binary_balanced_accuracy_gte_0_85": true,
+          "covered_accuracy_gte_0_95": true,
+          "pooled_ai_recall_gte_0_80": true,
+          "pooled_real_false_ai_lte_0_10": true,
+          "score_coverage_eq_1": true,
+          "uncertain_rate_lte_0_20": true,
+          "worst_source_ai_recall_gte_0_60": true,
+          "worst_source_real_false_ai_lte_0_20": true
+        },
+        "passed": true,
+        "passed_checks": 10,
+        "total_checks": 10
+      },
+      "independent_count_and_pairwise_rank_check": {
+        "auc": 0.9941796875,
+        "automatic_coverage": 0.984375,
+        "balanced_accuracy": 0.953125,
+        "confusion": {
+          "fn": 1,
+          "fp": 14,
+          "tn": 146,
+          "tp": 159
+        },
+        "covered_accuracy": 0.9523809523809523,
+        "uncertain_rate": 0.015625
+      },
+      "metric_replay_exact": true,
+      "prevalence_scenarios_not_deployment_estimates": [
+        {
+          "assumed_ai_prevalence": 0.01,
+          "implied_ai_positive_precision_if_rates_transfer": 0.10291262135922331
+        },
+        {
+          "assumed_ai_prevalence": 0.1,
+          "implied_ai_positive_precision_if_rates_transfer": 0.5578947368421052
+        },
+        {
+          "assumed_ai_prevalence": 0.5,
+          "implied_ai_positive_precision_if_rates_transfer": 0.9190751445086704
+        }
+      ],
+      "rates": {
+        "ai_recall_by_source": {
+          "gpt-image-1": 0.9875,
+          "nano-banana-local": 1.0
+        },
+        "pooled_ai_recall": 0.99375,
+        "pooled_real_false_ai": 0.0875,
+        "real_false_ai_by_source": {
+          "SIDD:G4": 0.1875,
+          "SIDD:GP": 0.18181818181818182,
+          "SIDD:IP": 0.037037037037037035,
+          "SIDD:N6": 0.0,
+          "SIDD:S6": 0.08571428571428572
+        },
+        "score_failures_by_source": {},
+        "worst_ai_recall": 0.9875,
+        "worst_real_false_ai": 0.1875
+      },
+      "scene_macro_real_fpr_descriptive_only": 0.08041353383458646,
+      "scenes": [
+        {
+          "false_ai": 1,
+          "false_ai_rate": 0.03571428571428571,
+          "parents": 28,
+          "scene": "SIDD:scene:001"
+        },
+        {
+          "false_ai": 6,
+          "false_ai_rate": 0.4,
+          "parents": 15,
+          "scene": "SIDD:scene:002"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 15,
+          "scene": "SIDD:scene:003"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 15,
+          "scene": "SIDD:scene:004"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 19,
+          "scene": "SIDD:scene:005"
+        },
+        {
+          "false_ai": 7,
+          "false_ai_rate": 0.3684210526315789,
+          "parents": 19,
+          "scene": "SIDD:scene:006"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 20,
+          "scene": "SIDD:scene:007"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 20,
+          "scene": "SIDD:scene:008"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 6,
+          "scene": "SIDD:scene:009"
+        },
+        {
+          "false_ai": 0,
+          "false_ai_rate": 0.0,
+          "parents": 3,
+          "scene": "SIDD:scene:010"
+        }
+      ],
+      "selective": {
+        "automatic_coverage": 0.984375,
+        "automatic_rows": 315,
+        "covered_accuracy": 0.9523809523809523,
+        "uncertain_rate": 0.015625,
+        "uncertain_rows": 5
+      },
+      "worst_scene_real_fpr_descriptive_only": 0.4
+    }
+  },
+  "dev_parent_count": 320,
+  "dev_real_scene_count": 10,
+  "dev_source_counts": {
+    "SIDD:G4": 16,
+    "SIDD:GP": 33,
+    "SIDD:IP": 54,
+    "SIDD:N6": 22,
+    "SIDD:S6": 35,
+    "gpt-image-1": 80,
+    "nano-banana-local": 80
+  },
+  "dev_view_count": 640,
+  "downloads": 0,
+  "gates": {
+    "automatic_coverage_min": 0.8,
+    "binary_auc_min": 0.9,
+    "binary_balanced_accuracy_min": 0.85,
+    "covered_accuracy_min": 0.95,
+    "pooled_ai_recall_min": 0.8,
+    "pooled_real_false_ai_max": 0.1,
+    "score_coverage": 1.0,
+    "source_ai_recall_worst_min": 0.6,
+    "source_real_false_ai_worst_max": 0.2,
+    "uncertain_rate_max": 0.2
+  },
+  "gates_unchanged_since": "b173d5b (2026-09-04)",
+  "image_reads": 0,
+  "limitations": [
+    "Zero observed exact intersections does not prove semantic, prompt or pretrained-corpus separation.",
+    "Canonical pixel hashes are unavailable for some legacy TRAIN rows; no new perceptual audit is claimed.",
+    "Scene metrics reuse locked consumed DEV scores: descriptive sensitivity only, no new model selection or confidence guarantee.",
+    "Prevalence scenarios assume unchanged TPR/FPR and are algebraic illustrations, not market measurements.",
+    "No independent E92 final or end-to-end serving benchmark was performed."
+  ],
+  "model_inference": 0,
+  "observed_identity_intersections": {
+    "original_sha256": {
+      "dev_parents_available": 0,
+      "matches": 0,
+      "train_available": 128
+    },
+    "parent_id": {
+      "dev_parents_available": 320,
+      "matches": 0,
+      "train_available": 12269
+    },
+    "pixel_sha256": {
+      "dev_parents_available": 320,
+      "matches": 0,
+      "train_available": 639
+    },
+    "sha256": {
+      "dev_parents_available": 320,
+      "matches": 0,
+      "train_available": 12269
+    }
+  },
+  "source_sha256": {
+    "/Volumes/LaCie/pixelproof-datasets/e54/data_contract_v2.json": "26a169921797043d0978b1fae8acf97146ac4a72538f5c54a8ddd955aaf8679e",
+    "/Volumes/LaCie/pixelproof-datasets/e66/development_manifest.json": "bf4c3586126edf91588cc72b375504fa089c3d235abdce7f660686a82c2a6301",
+    "/Volumes/LaCie/pixelproof-datasets/e72/training_manifest.json": "a258b4362e45016762ce1d557cb2ac87f82fe29f78d598559caf216b551e0d8e",
+    "/Volumes/LaCie/pixelproof-datasets/e88/training_manifest.json": "73545e7a9404e3c4f83ee2f6affd46c6ae2e2bf75ee37db0e8fd56dab11c5d83",
+    "/Volumes/LaCie/pixelproof-datasets/e92/dev_scores.json": "8de19298e0e62d982a6bae04ef7e922bcb12748cd68056b510ab832d49bb77ae",
+    "evidence/e92_development.json": "ae3541587a7d2febc60dd29dc41ebe1ee001562a2ffccf5f5436732202d23d37",
+    "ml/tools/audit_e92_readiness.py": "8cd3590162c77342d470c85898ecebb9942970978107b22ca45add1856591b30"
+  },
+  "state": "E92_locked_evidence_readiness_audit_complete",
+  "train_label_counts": {
+    "0": 7674,
+    "1": 4595
+  },
+  "train_parents": 12269,
+  "train_source_counts": {
+    "MIDD:Hynix_SL846": 127,
+    "MIDD:ISOCELL_3P9": 128,
+    "MIDD:OmniVision_OV32A": 128,
+    "MIDD:Sony_IMX258": 128,
+    "SCIMD-17": 1700,
+    "SID:Fuji": 64,
+    "SID:Sony": 64,
+    "e32:communityforensics-ai-local": 569,
+    "e32:csafe-mcsidb-iphone14": 160,
+    "e32:csafe-mcsidb-s21": 1160,
+    "e32:flux2-klein-9b": 569,
+    "e32:forchheim-fodb": 1154,
+    "e32:gpt-image-1": 569,
+    "e32:nano-banana-local": 569,
+    "e32:nano-banana-pro-ash-local": 160,
+    "e32:qwen-image-2512": 569,
+    "e32:vision-base-native": 1140,
+    "e36:FLUX.2_max": 80,
+    "e36:GLM-Image": 80,
+    "e36:Qwen-Image-2.0-pro": 80,
+    "e36:Seedream-5.0": 80,
+    "e36:device_001": 100,
+    "e36:device_002": 100,
+    "e36:device_003": 100,
+    "e36:device_005": 100,
+    "e36:device_009": 71,
+    "e36:gpt-image-2": 80,
+    "e36:nano-banana-2.0": 80,
+    "rr:culture_and_religion": 105,
+    "rr:everyday_life": 459,
+    "rr:labor_and_production": 114,
+    "rr:medical_and_public_health": 102,
+    "rr:natural_disasters_and_accidents": 113,
+    "rr:political_and_social_events": 93,
+    "rr:rrdataset_real_pool": 1250,
+    "rr:war_and_conflict": 124
+  },
+  "training_runs": 0
+}

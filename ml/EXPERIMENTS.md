@@ -7168,3 +7168,224 @@ Audit weak-reference AI stability across the four conditions without selecting o
 training on the known DEV miss. Register a bounded protocol before any new model fit;
 keep all E92 paired gains and the stricter E43 retention requirement visible. No
 threshold/rank/seed sweep or sample-specific fallback; no further data download.
+
+
+## 2026-09-14 — Critical audit of E92 evidence, bias and MVP readiness
+
+### Scope and preserved conclusion
+
+User requests an end-to-end critique, not another fit or a deployment. Preserve E92's
+20/20 numeric milestone together with its failed separate reference-AI guard. This
+review does not relabel a failure, change thresholds, refit a candidate or open final
+images. Mobile-data restriction remains: no dataset, checkpoint or package downloads.
+Only small primary-source text pages were consulted for methods/data/licensing.
+
+Reproducible local audit: `ml/tools/audit_e92_readiness.py` reads locked score JSON,
+existing manifests and hashes; outgoing sockets are denied. Receipt:
+`evidence/e92_readiness_audit_2026-09-14.json`. Model inference, image reads and training
+runs are all0. The audit reproduces the recorded metrics exactly, then independently
+checks confusion counts, balanced accuracy, selective coverage/accuracy and pairwise
+Mann–Whitney AUC, without relying on the benchmark helper for those formulas.
+The candidate and score hashes match the frozen E92 report; TRAIN/DEV roles remain.
+
+### What the20 conditions are, and where they came from
+
+They are10 project acceptance criteria applied to original and social-Q75 views of
+the same parents, not20 independent datasets or a100%-accuracy certificate. Git
+history verifies GATES and both cuts are unchanged since b173d5b,2026-09-04, before
+E92. The criteria appear in the earlier E45/E46 protocols and are inherited by E49
+and the subsequent DEV screens. They are project engineering budgets; the records
+do not establish an external certification standard or a market-specific cost study
+justifying10% pooled REAL false positives or20% worst-source false positives.
+The fixed AI/REAL cuts derive from the earlier E50 CAL selective-policy work, not
+from E92's DEV results. Reusing them prevents post-result threshold manipulation;
+it does not make E92 scores calibrated probabilities.
+
+| Criterion, per condition | Requirement | E92 original | E92 social-Q75 |
+|---|---:|---:|---:|
+| Valid score coverage | 100% | 100% | 100% |
+| ROC-AUC | >=0.90 | 0.9998047 | 0.9941797 |
+| Balanced accuracy | >=85% | 99.6875% | 95.3125% |
+| Pooled REAL false AI | <=10% | 0% | 8.75% |
+| Worst REAL source/camera false AI | <=20% | 0% | 18.75% |
+| Pooled AI recall | >=80% | 99.375% | 99.375% |
+| Worst AI source recall | >=60% | 98.75% | 98.75% |
+| Automatic decision coverage | >=80% | 98.75% | 98.4375% |
+| Accuracy among automatic decisions | >=95% | 99.6835% | 95.2381% |
+| Uncertain fraction | <=20% | 1.25% | 1.5625% |
+
+Coverage and uncertainty are exact complements, so those two criteria count the same
+constraint twice. Balanced accuracy is determined by REAL specificity and AI recall.
+AUC and the thresholded measures share observations and are correlated. Conditions
+are paired transformations, not independent samples. Passing20 criteria is useful
+accountability but its count overstates independent evidential breadth if presented
+without these relationships. The same applies to120 TRAIN checks: three nested
+populations and four correlated views do not create120 independent experiments.
+
+The separate zero-new-E43-AI-miss check was fixed before this result. It still fails
+on the original GPTIMG_431 parent. E92 preserves all E86 decisions that were previously
+correct and improves four REAL decisions, but that does not repair the E43-relative
+failure. This stringent per-image retention requirement is an engineering choice, not
+a universal definition of a better detector. A future product may use a prospectively
+specified cost/non-inferiority criterion, but changing it after seeing this miss cannot
+retroactively pass E92 or support a zero-AI-loss claim. Do not chase a one-image rule.
+
+### Strong evidence and limits of leakage checks
+
+The current12,269 TRAIN parents and320 DEV parents have zero observed parent-ID and
+file-SHA intersections, including hashes from the640 scored views. All TRAIN rows
+have TRAIN roles and all DEV parents DEVELOPMENT roles. Prior admissions independently
+recorded exact/perceptual screening: E66 AI160 admitted,0 cross-role matches against
+151,005 references; SIDD160 admitted,0 cross-role/cross-scene matches,223 same-scene
+internal match pairs retained transparently as dependent; SID128 admitted,0 matches
+against151,996 references. Retention, serialized model replay, fixed batch8 numerical
+checks, score-before-metrics locking and failure receipts are real engineering strengths.
+
+However, zero intersections is not proof of universal non-contamination. In this fresh
+metadata-only audit, canonical pixel hashes exist for only639/12,269 TRAIN parents;
+original-RAW hashes have no counterpart in DEV. No new image-level perceptual audit
+was performed. Different encodings, semantically repeated scenes, shared prompts and
+unknown source ancestry can evade exact identity checks. The large pretrained DINO,
+CLIP and DEAR training corpora have not been shown fully disjoint from every evaluation
+image. DEAR's card explicitly includes LSUN/COCO and aligned LDM/SD1.5 material;
+unresolved RR upstream lineage prevents claiming arbitrary COCO data as unseen.
+No affirmative direct TRAIN/DEV identity leak was found, but independence is unproven.
+
+### Adaptation and bias risks
+
+E66 has been reused by E70, E71, E83, E86 and E92. Labels/features were not added to
+TRAIN, but failed results influenced subsequent representation, transport and data
+coverage decisions. Freezing each individual run helps reproducibility; it does not
+undo selection/adaptive overfitting across the overall research loop. E66 is consumed
+DEVELOPMENT, suitable for diagnostics and rejection, not an independent final.
+[Adaptive holdout reuse research](https://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html)
+explains why the distinction matters even without a gradient on test rows.
+
+Dataset/source bias is plausible and not ruled out. E84B metadata recorded REAL7,034
+JPEG/1 PNG/511 unspecified versus AI786 JPEG/3,809 PNG. Resizing affected classes
+unequally. Fixed crops and shared JPEG augmentation do not erase previous compression,
+texture, camera processing, semantics or resampling history. The old HISTORY statement
+that fixed tiles make a biased dataset "perfectly safe" is too strong and is explicitly
+superseded by this audit; a crop can retain these shortcuts. Neither removing EXIF nor
+hiding a filename proves pixel-level dataset bias is gone.
+[Fake or JPEG?](https://arxiv.org/abs/2403.17608) documents this failure mode in generated-image detection.
+The model consumes visual features, not a known-source filename shortcut; source labels
+still shape sampling/loss weights, and source fingerprints may be present in pixels.
+
+The terminal E92 head minimizes worst REAL source loss subject to TRAIN AI constraints.
+This is a deliberate tradeoff, not a proof of AI retention outside TRAIN. E91's final
+TRAIN BCE~5.34e-9 after100 epochs means near-perfect TRAIN separation; it is neither
+a generalization guarantee nor, by itself, proof of harmful memorization. A single
+seed does not establish stability. Adding128 SID parents also changes the shuffle
+trajectory, normalization and number of optimizer steps (190 to192 batches/epoch),
+so this one result cannot isolate SID content as the sole causal explanation.
+
+### Data freshness and sample dependence
+
+Training is not exclusively old: the current manifest contains GPT Image2, Nano
+Banana2.0, FLUX.2 Max, Qwen Image2.0 Pro, GLM-Image and Seedream5.0 source labels,
+alongside older families. Such labels do not prove exhaustive coverage of current
+provider versions. The E92 DEV AI population contains only80 GPT Image1 and80
+nano-banana-local examples from already seen families; unknown prompts and ambiguous
+full-generation versus editing provenance remain. It does not validate all current
+models, unseen generators or local inpainting/localization.
+
+REAL DEV is160 SIDD instances from10 dependent scenes and5 older phones (Pixel,
+iPhone7, GalaxyS6 Edge, Nexus6, LG G4). SIDD is a2018 denoising benchmark; its provided
+sRGB images are gamma-corrected RAW renderings without tone mapping, not necessarily
+consumer phone JPEG processing. SID is also a2018 low-light RAW research source with
+two cameras. Downloading these in2026 does not make the captures current. Modern HDR,
+HEIC, denoise/sharpen, screenshots, repeated platform recompression, scans, illustrations,
+AI-upscaled photos and mixed edited images need separately defined coverage.
+[Official SIDD description](https://abdokamel.github.io/sidd/) and
+[official SID description](https://cchen156.github.io/SID.html) support those dataset boundaries.
+
+49,076 TRAIN views are12,269 parents under4 conditions, not49,076 independent images.
+Similarly640 DEV views are320 parents, with REAL effective scene diversity far smaller
+than160. Naive per-image binomial/bootstrap intervals would be too optimistic for a
+population claim. There are no valid independent deployment confidence intervals in
+the E92 evidence. Demographic fairness was not measured; no bias-free claim is supported.
+
+### New diagnostic: concentration and fragility hidden by20/20
+
+Reaggregating the unchanged locked scores by recorded REAL scene reveals:
+- Social-Q75 scene002:6/15 false AI,40%.
+- Social-Q75 scene006:7/19 false AI,36.8421%.
+- Scene001:1/28; other seven scenes0.
+Thus13/14 social REAL errors concentrate in two scenes. Worst-camera18.75% passes,
+while worst-scene40% was never a registered criterion. This is a diagnostic finding,
+not a post-hoc alteration of E92's20 numeric gates or evidence of the visual cause.
+
+Social covered accuracy is300/315=95.2381%, just over95%. At unchanged coverage, one
+additional error makes299/315=94.9206%, a failure. One additional error in G4 turns
+3/16 into4/16=25%, failing the worst-camera20% budget. Margins are small; the result
+should not be described as robustly clearing every requirement. Original0/160 REAL
+errors is a finite dependent sample observation, not proof of zero population risk.
+In each condition the one missed AI score is below REAL_CUT, so it is an automatically
+wrong negative in the internal selective policy, not merely an abstention. A user-facing
+"proven real" claim would be particularly misleading.
+
+### Why market performance cannot be read from balanced accuracy
+
+DEV is50% AI. If the observed social sensitivity99.375% and FPR8.75% transferred
+unchanged to a population with10% AI, Bayes' rule gives AI-positive precision55.7895%;
+at1% AI,10.2913%. These are algebraic scenarios, not measured user-population results.
+They show why high recall and balanced-test accuracy do not establish trustworthy
+accusations in a mostly-real photo gallery. Original observed FPR0 mathematically
+produces100% precision in that formula, but that finite dependent sample rate must
+not be treated as a zero deployment error guarantee. No calibrated p(AI) or error-cost
+study supports marketing raw E92 scores as authenticity probabilities.
+
+### Product and licensing verdict
+
+There is a trained research candidate, not a drop-in standalone production model.
+E92 combines pretrained DINOv2/CLIP/DEAR features, the earlier E43 head, learned
+projections and E91 supervised features, then a450-column constrained correction.
+Our contribution is the learned adaptation, protocol, data work and integration design;
+it is not all encoders trained from scratch. The small correction.npz is not the whole
+runtime. Cached640-view scoring6.674s excludes decoding and all encoder extraction.
+No E92 native-image end-to-end serving parity, latency percentiles, concurrency, memory
+budget or deployment device qualification has been established. The web still labels
+E32 R1b; serve.py uses the E20/older research flow. E92 performance cannot be attributed
+to that interface.858 software tests do not establish ML generalization; the pairing
+bug that survived the earlier856 tests also shows test count alone is insufficient.
+
+DEAR weights are explicitly CC BY-NC4.0 plus OpenRAIL use restrictions; the locally
+pinned NOTICE also discloses upstream sources without explicit licences. MIDD carries
+CC BY-NC-SA4.0, and other source restrictions persist. MIT/code availability does not
+override weight/data terms. A free website is not automatically non-commercial if its
+purpose is commercial advantage. No commercial clearance for this complete chain has
+been established. Confirm rights or replace restricted components and revalidate.
+[DEAR model card](https://huggingface.co/k-aisi-anti-deepfake/dear-checkpoints) and
+[CC BY-NC4.0 terms](https://creativecommons.org/licenses/by-nc/4.0/) are primary references.
+
+A student research presentation can honestly show E92, exact population/limits, the
+20/20 numeric milestone and the remaining AI failure. An E92 live research prototype
+would require a separate scoped, non-commercial runtime plan and licence compliance;
+it is not deployed by this review. A public or paid general-purpose detector is not
+ready today. Demand, willingness to pay and a defensible advantage over alternatives
+have not been measured. The suitable near-term positioning is an experimental visual
+AI-evidence assistant, not an authenticity certificate or automated accusation system.
+
+### Decision after critique
+
+Do not start another DEV-driven sweep or fix only GPTIMG_431. Preserve E92 as a research
+checkpoint and prioritize an evaluation/rights/runtime plan over chasing the headline.
+Use the existing disk to inventory genuinely unexposed source/scene/prompt groups;
+unused files from consumed publishers are not automatically fresh final data. Reserve
+and lock a target-use benchmark before any further model choice; if no qualifying local
+pool exists, document that limitation and postpone a generalization claim until access
+conditions permit suitable acquisition. E49 was already consumed historically (E43
+11/20, REAL FPR39.1% original/49% social) and is not a fresh final merely because E92
+has not run on it. Those E43 numbers are not E92 measurements.
+
+Before a new fit: define target use, acceptable false accusations/AI misses, realistic
+prevalence and abstention costs; retain old contracts and prospectively specify any new
+criteria. Use TRAIN-only source/scene/transport diagnostics and matched-processing
+controls to test shortcuts; fit preprocessing/scalers inside each training fold.
+Evaluate a compact baseline and E92 on the same legally usable locked populations.
+Require representative, cluster-aware uncertainty and worst-group reporting. Probe
+robustness with class-matched transforms and explicit mixed-edit scope. Then audit
+portable runtime, accurate model naming, image privacy/retention, operational limits
+and commercial rights. No conclusion from this review authorizes deployment or changes
+serving, protected roles, thresholds, labels or the remaining AI guard.
