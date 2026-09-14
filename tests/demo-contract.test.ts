@@ -1,9 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { E92_SHA, demoFileError, parseDemoAnalysis, OUTCOME_COPY } from '../app/demo-contract.ts';
+import { E92_SHA, demoFileError, parseDemoAnalysis, OUTCOME_COPY, AI_CUT, scorePercent, uncertaintyExplanation } from '../app/demo-contract.ts';
 
-const response = {schema_version: 2, model_id: 'E92', guard_id: 'e92-stability-v1', artifact_sha256: E92_SHA,
-  research_only: true, display_policy: 'e92-preserve-alerts-v1', guard_outcome: 'uncertain', review_required: true, outcome: 'uncertain', reason: 'inconsistent_or_borderline', width: 1024, height: 768};
+const response = {schema_version: 3, model_id: 'E92', guard_id: 'e92-stability-v1', artifact_sha256: E92_SHA,
+  research_only: true, display_policy: 'e92-preserve-alerts-v1', guard_outcome: 'uncertain', review_required: true, outcome: 'uncertain', reason: 'inconsistent_or_borderline', width: 1024, height: 768,
+  model_score: {kind: 'raw_e92_score', calibrated: false, original: .02, social_q75: .03, ai_cut: AI_CUT}};
 
 test('only the exact E92 response and a consistent outcome reach the page', () => {
   assert.deepEqual(parseDemoAnalysis(response), response);
@@ -21,14 +22,14 @@ test('file checks reject oversized, empty and unsupported uploads', () => {
   assert.match(demoFileError({type: 'image/gif', size: 200})!, /desteklenmiyor/);
 });
 
-test('negative copy never certifies authenticity and no percentage is rendered', () => {
+test('negative copy never certifies authenticity or claims a probability', () => {
   assert.match(OUTCOME_COPY.no_clear_signal.text, /gerçek olduğunu kanıtlamaz/);
   assert.match(OUTCOME_COPY.ai_signal.text, /kesin kanıt değil/);
   assert.doesNotMatch(JSON.stringify(OUTCOME_COPY), /%|olasılık|FPR|recall/);
 });
 
 test('an unstable original AI alert stays visible with its review warning', () => {
-  const result = parseDemoAnalysis({...response, outcome: 'ai_signal'});
+  const result = parseDemoAnalysis({...response, outcome: 'ai_signal', model_score: {...response.model_score, original: AI_CUT}});
   assert.equal(result.outcome, 'ai_signal');
   assert.equal(result.review_required, true);
 });
@@ -36,4 +37,33 @@ test('an unstable original AI alert stays visible with its review warning', () =
 test('24MP phone responses are admitted while responses above32MP are rejected', () => {
   assert.equal(parseDemoAnalysis({...response, width: 5712, height: 4284}).width, 5712);
   assert.throws(() => parseDemoAnalysis({...response, width: 8001, height: 4000}));
+});
+
+
+test('raw score presentation rejects uncalibrated claims, missing scores and decision conflicts', () => {
+  for (const model_score of [null, undefined, {...response.model_score, calibrated: true},
+    {...response.model_score, ai_cut: .5}, {...response.model_score, original: .9},
+    {...response.model_score, original: NaN}, {...response.model_score, original: Infinity},
+    {...response.model_score, original: -1}, {...response.model_score, original: 1.01},
+    {...response.model_score, original: '0.02'}]) {
+    assert.throws(() => parseDemoAnalysis({...response, model_score}));
+  }
+  assert.throws(() => parseDemoAnalysis({...response, schema_version: 2}));
+  const small = {...response, reason: 'image_too_small', guard_outcome: 'not_run', model_score: null};
+  assert.equal(parseDemoAnalysis(small).model_score, null);
+  assert.throws(() => parseDemoAnalysis({...small, model_score: response.model_score}));
+  assert.equal(scorePercent(.125), '%12,50');
+  assert.equal(scorePercent(AI_CUT), '%7,94');
+  assert.equal(scorePercent(0), '%0,00');
+  assert.equal(scorePercent(1), '%100,00');
+  for (const score of [NaN, Infinity, -1, 1.01]) assert.throws(() => scorePercent(score));
+});
+
+
+test('uncertainty explains transformed crossing, reference veto and borderline separately', () => {
+  const result = parseDemoAnalysis(response);
+  assert.match(uncertaintyExplanation(result)!, /yeterince düşük değil/);
+  assert.match(uncertaintyExplanation({...result, model_score: {...result.model_score!, original: 0, social_q75: 0}})!, /önceki model/);
+  assert.match(uncertaintyExplanation({...result, model_score: {...result.model_score!, social_q75: AI_CUT}})!, /kopyası verdi/);
+  assert.equal(uncertaintyExplanation({...result, model_score: null}), null);
 });

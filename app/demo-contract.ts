@@ -1,8 +1,24 @@
 import { AnalysisResponseError } from './analysis-contract.ts';
 
 export const E92_SHA = '3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35';
+export const AI_CUT = 0.07940196245908739;
+const REAL_CUT = 0.011505939625203613;
+export type ModelScore = {
+  kind: 'raw_e92_score';
+  calibrated: false;
+  original: number;
+  social_q75: number;
+  ai_cut: typeof AI_CUT;
+};
+
+export function scorePercent(score: number): string {
+  if (!Number.isFinite(score) || score < 0 || score > 1) throw new AnalysisResponseError();
+  return new Intl.NumberFormat('tr-TR', {style: 'percent', minimumFractionDigits: 2,
+    maximumFractionDigits: 2}).format(score);
+}
+
 export type DemoAnalysis = {
-  schema_version: 2;
+  schema_version: 3;
   model_id: 'E92';
   guard_id: 'e92-stability-v1';
   artifact_sha256: string;
@@ -14,7 +30,16 @@ export type DemoAnalysis = {
   reason: 'stable_signal' | 'limited_negative_evidence' | 'inconsistent_or_borderline' | 'image_too_small';
   width: number;
   height: number;
+  model_score: ModelScore | null;
 };
+
+export function uncertaintyExplanation(analysis: DemoAnalysis): string | null {
+  const s = analysis.model_score;
+  if (!s || analysis.outcome !== 'uncertain') return null;
+  if (s.social_q75 >= AI_CUT) return 'Asıl fotoğraf AI uyarısı vermedi; sıkıştırılmış kopyası verdi. Bu yüzden kesin bir sonuç söyleyemiyoruz.';
+  if (Math.max(s.original, s.social_q75) < REAL_CUT) return 'Bu modelin iki puanı da düşük, ancak karşılaştırdığımız önceki model uyarı verdi. Bu görüş ayrılığı nedeniyle karar veremiyoruz.';
+  return 'AI uyarı sınırı aşılmadı, ancak puanlar belirgin iz yok demek için yeterince düşük değil. Bu yüzden sonuç belirsiz.';
+}
 
 export function parseDemoAnalysis(value: unknown): DemoAnalysis {
   if (!value || typeof value !== 'object') throw new AnalysisResponseError();
@@ -22,7 +47,15 @@ export function parseDemoAnalysis(value: unknown): DemoAnalysis {
   const reasonMatches = (r.outcome === 'ai_signal' && ['stable_signal', 'inconsistent_or_borderline'].includes(String(r.reason))) ||
     (r.outcome === 'no_clear_signal' && r.reason === 'limited_negative_evidence') ||
     (r.outcome === 'uncertain' && ['inconsistent_or_borderline', 'image_too_small'].includes(String(r.reason)));
-  if (r.schema_version !== 2 || r.model_id !== 'E92' || r.guard_id !== 'e92-stability-v1' ||
+  const s = r.model_score as Record<string, unknown> | null | undefined;
+  const bounded = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n) && n >= 0 && n <= 1;
+  const scoreMatches = r.reason === 'image_too_small' ? s === null :
+    s != null && s.kind === 'raw_e92_score' && s.calibrated === false && s.ai_cut === AI_CUT &&
+    bounded(s.original) && bounded(s.social_q75) &&
+    (r.outcome === 'ai_signal') === (s.original >= AI_CUT) &&
+    (r.guard_outcome === 'ai_signal') === (Math.min(s.original, s.social_q75) >= AI_CUT) &&
+    (r.guard_outcome !== 'no_clear_signal' || Math.max(s.original, s.social_q75) < REAL_CUT);
+  if (r.schema_version !== 3 || !scoreMatches || r.model_id !== 'E92' || r.guard_id !== 'e92-stability-v1' ||
       r.artifact_sha256 !== E92_SHA || r.research_only !== true || !reasonMatches ||
       r.display_policy !== 'e92-preserve-alerts-v1' ||
       !['ai_signal', 'no_clear_signal', 'uncertain', 'not_run'].includes(String(r.guard_outcome)) ||

@@ -7645,3 +7645,50 @@ is a scope disclosure, not an automatic screenshot classifier. The nine original
 indications remain unresolved ML errors. Proposed next hypothesis and preservation gates
 are recorded in PLAN. Validation:898 Python tests,11 web tests, lint/typecheck/build,
 210 decode parity checks and6 targeted real HTTP checks pass.
+
+
+## 2026-09-14 — E97: explain uncertain decisions and expose honest raw percentages
+
+The user proposed an extra reviewer and arbitrary±5 score movement, and explicitly
+requested percentages in the local UI. This supersedes the earlier no-percentage UI
+preference, not the prohibition on unsupported probability claims. No threshold, model
+weight, calibration, averaging or label rule changed. Frozen demo_policy/e92_demo and
+their historical evidence remain intact. New demo_scores wraps the exact same paired
+inference and alert policy; internship_serve now uses schema3 and bounded measured
+original/social-Q75 scores with calibrated=false. Missing/nonfinite/conflicting scores
+fail closed. Unscored tiny images return null, never a fabricated zero percentage.
+
+The result card shows raw scores×100 to two decimals with the actual AI-alert cutoff
+7.9401962459% (displayed7.94%), explains that50% is not the boundary and decisions use
+unrounded scores. These are neither p(AI) nor correctness confidence. It explains the
+three observed uncertain branches in plain Turkish. No arbitrary±5 adjustment, forced
+binary claim, hidden AI alert, or real-authenticity certification was introduced.
+
+Locked E95 diagnostic:210 owner-declared REAL files still yield165 no-clear,36 uncertain,
+9 AI alerts. The36 split into12 original-negative/social-positive crossings,17 E92-both-
+low/E43-veto cases and7 remaining E92 borderline cases. Categories explain the existing
+policy, not causal texture/JPEG mechanisms. The prior E66 missed AI with an E43 warning
+is why reference disagreement cannot safely be removed simply to make answers definite.
+
+Presentation replay covers530 pairs (210 gallery+320 E66) with0 decision changes and
+exact raw-score preservation. Seven targeted real HTTP scored cases cover five gallery
+branches and stable/unstable AI; every score equals its locked value. One tiny input
+returns no score. All8 real payloads pass the frontend parser. The gallery AI case is
+an existing false indication, explicitly not a detection success. Reports:
+evidence/e97_score_presentation.json and evidence/e97_score_http.json. Private paths,
+filenames, individual gallery scores, image bytes and live payloads stay in ignored work.
+
+Validation:909 Python tests pass in18.37s (one existing Starlette/httpx warning),13 Node
+contract/SSR tests pass, lint/typecheck and Sites build pass. Local E92 API restarted
+on8800; existing localhost:3002 preview remains. No dataset/weight/package download,
+final-set read, model fit or model promotion. Current9 original gallery errors and36
+abstentions are unchanged. Remote CI is not claimed verified by these local checks.
+
+Research reviewed: Guo et al., ICML2017, https://proceedings.mlr.press/v70/guo17a.html,
+separates neural scores from calibrated confidence. ReSIDe, May2026 preprint,
+https://arxiv.org/abs/2605.08574, studies learned confidence from intermediate features
+for selective synthetic-image detection under shifts; it does not establish success
+for our E92 model. PLAN registers an eligible TRAIN/grouped-CAL audit and complementary
+reviewer hypothesis, with calibration, risk/coverage and per-source AI/REAL retention
+checks. No universal/no-error detector claim and no guarantee that calibration solves
+OOD. Gallery-derived thresholds or a calibrated probability are not delivered here.

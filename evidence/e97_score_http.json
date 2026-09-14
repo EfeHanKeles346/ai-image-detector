@@ -1,0 +1,59 @@
+{
+  "experiment": "E97",
+  "state": "HTTP_score_and_decision_parity_passed",
+  "cases": [
+    {
+      "case": "ai_signal",
+      "outcome": "ai_signal",
+      "review_required": false,
+      "max_score_error": 0,
+      "seconds": 2.3389705839799717
+    },
+    {
+      "case": "no_clear_signal",
+      "outcome": "no_clear_signal",
+      "review_required": false,
+      "max_score_error": 0,
+      "seconds": 1.378272750065662
+    },
+    {
+      "case": "social_AI_crossing",
+      "outcome": "uncertain",
+      "review_required": true,
+      "max_score_error": 0,
+      "seconds": 1.6120396670885384
+    },
+    {
+      "case": "reference_only_veto",
+      "outcome": "uncertain",
+      "review_required": true,
+      "max_score_error": 0,
+      "seconds": 1.617587500018999
+    },
+    {
+      "case": "borderline_E92",
+      "outcome": "uncertain",
+      "review_required": true,
+      "max_score_error": 0,
+      "seconds": 1.5757681659888476
+    },
+    {
+      "case": "AI_stable",
+      "outcome": "ai_signal",
+      "review_required": false,
+      "max_score_error": 0,
+      "seconds": 1.148689082940109
+    },
+    {
+      "case": "AI_warning",
+      "outcome": "ai_signal",
+      "review_required": true,
+      "max_score_error": 0,
+      "seconds": 1.1955997499171644
+    }
+  ],
+  "tiny_input_score": null,
+  "checks_passed": 8,
+  "limits": "Targeted integration only. Gallery files are owner-declared REAL; the AI indication among them is an existing model error, not a correct detection. No independent accuracy or calibration claim.",
+  "frontend_contract_live_payloads_passed": 8
+}

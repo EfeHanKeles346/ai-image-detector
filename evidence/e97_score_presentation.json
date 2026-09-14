@@ -1,0 +1,32 @@
+{
+  "experiment": "E97",
+  "scope": "consumed DEV presentation replay, not model improvement",
+  "gallery_scores_sha256": "82223943ff259365c1aa9dc2d6679cc491dfc6ad0f4086e618b7d8c5dbee2b1a",
+  "e66_scores_sha256": "8de19298e0e62d982a6bae04ef7e922bcb12748cd68056b510ab832d49bb77ae",
+  "paired_displays_checked": 530,
+  "changed_decisions": 0,
+  "raw_score_parity": "exact",
+  "gallery_files": 210,
+  "gallery_outcomes": {
+    "uncertain": 36,
+    "no_clear_signal": 165,
+    "ai_signal": 9
+  },
+  "gallery_uncertainty_partition": {
+    "social_AI_crossing": 12,
+    "reference_only_veto": 17,
+    "borderline_E92": 7
+  },
+  "partition_note": "Mutually exclusive existing guard conditions; not proven image-processing causes.",
+  "calibrated_probability_available": false,
+  "new_fit": false,
+  "promotion": false,
+  "pixel_reads": 0,
+  "source_sha256": {
+    "ml/tools/e97_score_presentation_audit.py": "45b2f99454cdb13d7382324f936c7b601c9f66ba0ca0078705361f78445c459e",
+    "ml/src/pixelproof/demo_scores.py": "bb580635dd80b4de32c960f7493626f30edf2a9d76ef988cb696f90a512c1f9f",
+    "ml/src/pixelproof/internship_serve.py": "6369f8eb6108aa28b95f68a77793543288ac77876c97614ebabc971196d2d06c",
+    "app/demo-contract.ts": "8b118a15f3bbe0958fd4557333e3e14a5e08d11b9cbc373aa2c91e783bbf436b",
+    "app/page.tsx": "025430a0af3b893e6baaeb50f97b8094874f5aa453c4132859c610cdfd8f1b93"
+  }
+}

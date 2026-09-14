@@ -17,19 +17,27 @@ from typing import Literal
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, model_validator
 from starlette.concurrency import run_in_threadpool
 
-from pixelproof.e92_demo import CANDIDATE_SHA, GUARD_ID, MODEL_ID
+from pixelproof.e92_demo import AI_CUT, REAL_CUT, CANDIDATE_SHA, GUARD_ID, MODEL_ID
 from pixelproof.image_input import ImagePolicyError
 from pixelproof.demo_image_input import PHOTO_LIMITS, decode_photo
-from pixelproof.demo_policy import DemoEngine
+from pixelproof.demo_scores import ScoredDemoEngine
 
 logger = logging.getLogger(__name__)
 
 
+class ModelScore(BaseModel):
+    kind: Literal['raw_e92_score']
+    calibrated: Literal[False]
+    original: float = Field(ge=0, le=1, allow_inf_nan=False)
+    social_q75: float = Field(ge=0, le=1, allow_inf_nan=False)
+    ai_cut: Literal[AI_CUT]
+
+
 class DemoResult(BaseModel):
-    schema_version: Literal[2] = 2
+    schema_version: Literal[3] = 3
     model_id: Literal['E92'] = MODEL_ID
     guard_id: Literal['e92-stability-v1'] = GUARD_ID
     artifact_sha256: Literal[CANDIDATE_SHA] = CANDIDATE_SHA
@@ -41,9 +49,27 @@ class DemoResult(BaseModel):
     review_required: bool
     width: int
     height: int
+    model_score: ModelScore | None = None
+
+    @model_validator(mode='after')
+    def score_matches_decision(self):
+        if self.reason == 'image_too_small':
+            if self.model_score is not None or self.guard_outcome != 'not_run':
+                raise ValueError('Unscored image must have no score')
+            return self
+        s = self.model_score
+        if s is None:
+            raise ValueError('Inferred result requires measured scores')
+        if (self.outcome == 'ai_signal') != (s.original >= AI_CUT):
+            raise ValueError('Original AI alert must be preserved')
+        if (self.guard_outcome == 'ai_signal') != (min(s.original, s.social_q75) >= AI_CUT):
+            raise ValueError('Stable AI requires both measured views')
+        if self.guard_outcome == 'no_clear_signal' and max(s.original, s.social_q75) >= REAL_CUT:
+            raise ValueError('Low-signal guard requires both low scores')
+        return self
 
 
-def create_app(engine_factory=DemoEngine, *, inference_timeout=90.0, upload_timeout=30.0):
+def create_app(engine_factory=ScoredDemoEngine, *, inference_timeout=90.0, upload_timeout=30.0):
     slot = threading.BoundedSemaphore(1)
     state = {'engine': None}
 

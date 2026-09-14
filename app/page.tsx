@@ -8,7 +8,7 @@ import {
   analysisErrorMessage,
   resolveApiOrigin,
 } from "./analysis-contract";
-import { demoFileError, OUTCOME_COPY, parseDemoAnalysis, type DemoAnalysis } from "./demo-contract";
+import { demoFileError, OUTCOME_COPY, parseDemoAnalysis, scorePercent, uncertaintyExplanation, type DemoAnalysis } from "./demo-contract";
 
 type Preview = { name: string; url: string; size: string; file: File };
 
@@ -223,6 +223,20 @@ export default function Home() {
                       ve kaynağını kontrol etmeden bir yargıya varmayın.</p>}
                   <p className="demo-next">{OUTCOME_COPY[analysis.outcome].next}</p>
                 </section>
+                {analysis.model_score && <section className="score-panel" aria-label="Model puanları">
+                  <h4>Model puanı</h4>
+                  <p>Bu yüzdeler, fotoğrafın AI olma ihtimali veya sonucun doğruluk oranı değildir.
+                    Modelin bulduğu üretim izlerini puanlamasını gösterir.</p>
+                  <dl className="score-values">
+                    <div><dt>Asıl fotoğraf</dt><dd>{scorePercent(analysis.model_score.original)}</dd></div>
+                    <div><dt>Sıkıştırılmış kopya</dt><dd>{scorePercent(analysis.model_score.social_q75)}</dd></div>
+                  </dl>
+                  {uncertaintyExplanation(analysis) && <p><strong>Neden belirsiz?</strong> {uncertaintyExplanation(analysis)}</p>}
+                  <p>Bu modelde ilk AI uyarısı {scorePercent(analysis.model_score.ai_cut)} eşiğinde başlar.
+                    Sınır %50 değildir. Puanlar iki ondalığa yuvarlanır; karar yuvarlanmamış puanla verilir.</p>
+                  <p>İki puan birbirinden farklıysa görüntünün işlenmesi sonucu etkiliyor olabilir.
+                    Puanlar ortalanmaz; aynı çıkmaları da sonucun doğru olduğunu kanıtlamaz.</p>
+                </section>}
                 <details className="technical-details">
                   <summary>Bu sonuç ne anlama geliyor?</summary>
                   <p>Bu staj projesi, görselin bütünündeki üretim izlerini araştırıyor.

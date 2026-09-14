@@ -26,6 +26,42 @@ never push raw images, caches or weights, and never force-push.
 
 
 
+## E97 — honest score display completed; learned reviewer remains planned (2026-09-14)
+
+User requests percentages and a complementary check for uncertain gallery photos.
+Expose the unchanged E92 original and social-Q75 raw scores multiplied by100, explicitly
+not calibrated AI probabilities or correctness confidence. Show the existing7.940196%
+AI-alert threshold; do not remap it to50%, average views, add arbitrary±5 points, or
+force abstentions into binary claims. Small/rejected/unavailable inputs get no score.
+Retain all original alerts, guard warnings, weights and cuts. Keep frozen E93/E95
+helpers intact; add a presentation wrapper and versioned API/frontend validation.
+
+Completed read-only diagnosis:36 uncertain gallery files partition into12 social AI
+crossings,17 reference-only vetoes and7 borderline E92 pairs. These are guard branches,
+not proven causal image features. All530 paired displays (210 gallery+320 E66 parents)
+retain exact outcomes and raw scores. Seven actual scored HTTP cases have exact score
+parity; an eighth tiny input returns null. All8 payloads pass the frontend contract.
+909 Python tests,13 Node tests, lint/typecheck and build pass. No fitting, threshold
+sweep, gallery CAL/TRAIN use, new download or final-set access. Existing9 original
+false AI gallery indications and36 uncertain decisions remain unresolved.
+
+The next research step is a role/overlap audit of existing TRAIN and CAL caches before
+registering one complementary reviewer. Candidate evidence is full-image context plus
+agreement/processing stability, with the hypothesis fixed before evaluating errors.
+Group camera/scene/parent/generator so derivatives never cross roles; do not assume an
+existing cache is eligible. E95, E66 and consumed E65 remain regression/diagnostics only.
+If no uncontaminated CAL population is available, retain raw-score language and defer
+probability fitting. Evaluate fewer abstentions at a fixed error budget, accepted-case
+errors, REAL false alerts and AI retention per source; reducing abstentions alone is
+not success. Measure probability calibration (reliability bins, Brier score/log loss)
+separately and report its source/prevalence scope. A subsequent learned reviewer
+requires audited TRAIN-only complementary features and separately grouped CAL; calibration and fewer abstentions must be evaluated separately
+from classification accuracy. Preserve the732-view regression guard, source groups,
+original/Q75 views and a genuinely unexposed evaluation before broader claims. Ordinary
+score calibration cannot guarantee OOD correctness. Research: Guo et al. (ICML2017,
+https://proceedings.mlr.press/v70/guo17a.html) and ReSIDe (May2026 preprint,
+https://arxiv.org/abs/2605.08574). No reviewer has yet been trained or validated here.
+
 ## Current gallery checkpoint — E95/E96 completed (2026-09-14)
 
 The owner gallery remains consumed DEVELOPMENT, excluded from TRAIN/CAL. E92 measured
