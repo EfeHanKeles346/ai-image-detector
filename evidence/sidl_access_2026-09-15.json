@@ -1,0 +1,25 @@
+{
+  "state": "SIDL_public_access_checked_no_image_download",
+  "checked_utc_date": "2026-09-14",
+  "local_date": "2026-09-15",
+  "source": "https://sidl-benchmark.github.io/",
+  "folder_url": "https://drive.google.com/drive/folders/1chLRpBtGzTkAX_7v-ycPgL_X1-mezv2r",
+  "file_id": "1vk3UXejPRWkCqDDXTUL_JF6Q9OTGzMGu",
+  "listed_name": "train_full.tar",
+  "listed_bytes": 27003873280,
+  "response": "HTTP 200 text/html, Google Drive - Quota exceeded; not an archive response",
+  "image_archive_bytes_downloaded": 0,
+  "tls_verification": true,
+  "admission": false,
+  "receipts": {
+    "train_folder_2026-09-15.html": {
+      "bytes": 362334,
+      "sha256": "7932087d788a1f5792c9337df6324a2853f8b2364415ed33e32126c3940ee142"
+    },
+    "train_download_page_2026-09-15.html": {
+      "bytes": 2009,
+      "sha256": "ab1ec83fba3a0aa03a6b7642fb94c75580267e1714c346006c6712474a9d3ee6"
+    }
+  },
+  "decision": "Respect provider quota; no retry through split files or alternate mirrors. Existing scene-count/provenance reconciliation remains required."
+}
