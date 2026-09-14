@@ -40,6 +40,21 @@ Both E92 and E102 already classify all 256 new MIDD TRAIN photos below the AI th
 in all four conditions. This acquisition expands sensor coverage but does not itself
 establish an improvement on the owner's gallery or an unseen publisher/generator.
 
+## Active E103 — joint REAL/AI worst-group correction (2026-09-14)
+
+Code review found that E102's objective rewards lower REAL risk but has no AI loss term;
+its TRAIN report still has 1/4/2/3 AI misses across the four conditions. Before extracting
+new features, run one registered joint worst-class/source/condition objective from E102,
+with unchanged data and representation. Keep all-AI confidence and correct-REAL guards,
+all numeric/source gates, fixed L2/optimizer/cuts and full runtime replay. This tests a
+TRAIN-observed limitation without fitting the known DEV miss. No parameter sweep.
+
+Protocol and research limitations are in the E103 registration in EXPERIMENTS/HISTORY.
+The conditional DEV runner must retain every E43 and E102 detection and every correct
+E102 REAL decision. A failed stage denies later gallery/E49 evaluation. E92 remains
+served until a separately justified acceptance process; no background promotion.
+No new source photos are needed for this experiment. Freeze and validate before fitting.
+
 ## Next controlled model cycle after the E102 result
 
 Preserve E102 as a failed full-acceptance candidate and keep its locked evidence. Do not

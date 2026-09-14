@@ -2791,3 +2791,12 @@ false AI calls on them, and the correction was fitted on the combined TRAIN popu
 Source, licence, 256 originals / 3,323,883,735 stored bytes and research-TRAIN role remain
 as recorded above. More downloads are allowed, but another acquisition must address an
 identified gap and receive its own requested/completed ledger and admission checks.
+
+
+### E103 planned reuse — 2026-09-14
+
+No dataset download or new source admission. Reuse the identical E102 TRAIN population:
+12,269 prior parents plus all 256 E99/E100 MIDD originals, four fixed views per parent.
+Roles, licences and original-byte counts remain unchanged. E103 tests a joint REAL/AI
+objective; derivatives are not new downloaded photographs. Existing DEV/gallery/CAL
+records stay excluded from fitting. E103 results will be logged after the frozen run.

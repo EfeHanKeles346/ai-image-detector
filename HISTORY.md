@@ -9071,3 +9071,41 @@ calibration or deployment-readiness claim follows from these results.
 Next plan: investigate eligible TRAIN global-context and matched processing features
 before registering another fit; retain the failed candidate and every retention rule.
 The four new sensor sources remain TRAIN only. Download/admission totals are unchanged.
+
+
+### E103 planned — joint worst-group objective on identical E102 TRAIN (2026-09-14)
+
+Before another feature acquisition, code/receipt review identifies a narrower test:
+E102's E81 loss directly optimizes only REAL risk; AI has nondecreasing-logit constraints
+but no loss incentive. E102's complete TRAIN report retains 1/4/2/3 missed AI views in
+clean/assigned/Q75/social-Q75, involving GPT-Image and Flux TRAIN sources. This diagnosis
+uses existing aggregate TRAIN evidence, not the identity or features of the DEV miss.
+
+Register one 450-dimensional zero-initialized delta from the frozen E102 candidate,
+using exactly the same 12,525 TRAIN parents / 50,100 views, all four conditions and the
+same representation. Objective: .5 times worst REAL source/condition cut-BCE + .5 times
+worst AI source/condition cut-BCE + .5*.01 times squared delta norm. Parent-balanced
+means inside each group. Use E68 group risks with the stronger E73 all-AI-confidence
+constraints; E68's earlier decision-only constraints are NOT reused. Every E102 AI
+logit stays nondecreasing and every correct E102 REAL binary decision stays protected.
+SLSQP, 200 iterations, ftol 1e-9, CPU float64/two threads, final iterate only; no sweep.
+All previous source/numeric/new-sensor gates and full batch8 parity remain required.
+
+This is a local constrained objective experiment, not a reproduction or a universal
+method. [Sagawa et al., ICLR2020](https://arxiv.org/abs/1911.08731) motivate measuring
+predefined worst groups and warn that training group performance alone can generalize
+poorly. Keep L2 fixed; no DEV-driven regularization search. The prior global-context
+reviewer remains a later hypothesis, not an implemented feature of this experiment.
+
+Only a full TRAIN/runtime pass permits one separately frozen consumed E66 comparison.
+Require zero lost E43/E102 AI and zero new E102 REAL errors per source/condition, plus
+all 20 numeric gates. E102 already preserves E92 detections and correct REAL decisions;
+validate that predecessor relation. No gallery/E49 access after a DEV failure. No direct
+promotion, calibration, private-gallery training, protected-final read or new download.
+Freeze code and artifact identities before fitting; preserve the outcome even on failure.
+
+
+E103 contract frozen before fitting: SHA256 `10f308eadc24602a2a7bf317e4ac432d013cc0edd8a16da77f73ab4a76f757db`.
+All 921 Python tests pass in 18.28s with the existing Starlette/httpx warning.
+One E103 fit started on AC power, two CPU threads, offline; no new image features or
+downloads. Previous commit65e33c2 passed both GitHub Actions jobs (run34862651261).
