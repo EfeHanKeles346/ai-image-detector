@@ -8337,3 +8337,7 @@ Synthetic verification includes a perfect localizer, a seam-only detector that m
 ### E130 implementation checkpoint — 2026-09-15
 
 Implemented a pending mask-blind patch-drift diagnostic for the complete E129 population; see PLAN.md for fixed settings, primary references and limitations. Thirty-nine targeted tests passed across numerical primitives, boundary-aware metrics, complete-attempt identity/role guards and mocked encoder geometry. A rejected generation retains authentic/classical controls without fabricated positive metrics. E130 registration waits for actual E129 results; no new detector result or training admission. Prior metrics/source-access commit80ebce0 passed all1033 Python tests and GitHub CI34904064735.
+
+### E131 implementation/metadata checkpoint — 2026-09-15
+
+Implemented conservative source/prompt/family component closure and FIT-only transforms/fresh convex heads for a pending internal source-holdout diagnostic. Forty class/source names collapse to10 declared components, only3 AI-bearing. Exact grouped folds and method are recorded in PLAN.md. No actual new head fit, held-out scores or role reassignment yet. E130 remains implemented but unfrozen, waiting for E129 outputs. E130 implementation commit64d63f9 passed1053 Python tests and GitHub CI34904736843.

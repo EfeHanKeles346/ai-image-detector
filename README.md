@@ -1,33 +1,27 @@
 # PixelProof — AI image evidence demo
 
-PixelProof is a research system that looks for evidence consistent with AI generation. Its
-official decision is deliberately asymmetric: **`AI detected`** or **`insufficient evidence`**.
-It never certifies that an image is real.
+PixelProof is a student research system that looks for evidence of AI generation and
+investigates local AI edits. It does not certify that a photograph is authentic.
 
-**Research checkpoint (2026-09-13):** The target remains unmet. E86 passes all80
-TRAIN metric checks and full runtime/AI-retention guards, but fails consumed development.
-REAL false-AI is0.625% original /10.625% socialQ75; AI recall99.375% in both conditions.
-17/20 numeric gates pass; the same one original AI newly missed by E83 remains missed.
-Against E83, five social REAL errors and one original AI miss are rescued, while one
-original REAL rescue is lost. No threshold or gate was relaxed.
+The current local web demo uses **E92**, through
+`pixelproof.internship_serve:app` on port8800. Its interface distinguishes an AI signal,
+no clear signal and uncertainty, while retaining original-image alerts and separate
+review warnings. Displayed percentages are raw model scores, not calibrated probabilities.
+Model2 remains experimental and is not a deployed localization service.
 
-E84B transport features and E85's fixed100-epoch representation are complete.
-E89 also completed all four-condition features for128 original
-SID RAW captures selected and overlap-audited before the E86 result. E91/E92 expansion
-code is prepared and tested, but has not been frozen or trained; these images were not
-used in E85/E86.
-E49 remains unopened in this overnight chain; serving/reference models stay unchanged.
-Old E59 fits remain paused.856 Python tests pass. The 2026-09-13 dependency repair
-reduces npm audit from11 alerts to0; build, lint, types and all6 web tests pass.
-[GitHub CI34749560334](https://github.com/EfeHanKeles346/ai-image-detector/actions/runs/34749560334)
-passes both web and Python jobs on commit bca8a1e, including both dependency audits.
-See [HISTORY.md](HISTORY.md) and [ml/EXPERIMENTS.md](ml/EXPERIMENTS.md) for consolidated verification and experiment records.
-See [overnight findings](evidence/overnight_2026-09-13.md), [E65 diagnostic](evidence/e65_diagnostic.md),
-[current plan](PLAN.md), [model card](MODEL_CARD.md) and [experiment log](ml/EXPERIMENTS.md).
+The live plan and current model evidence are maintained in [PLAN.md](PLAN.md).
+Engineering history is in [HISTORY.md](HISTORY.md), scientific protocols/results in
+[ml/EXPERIMENTS.md](ml/EXPERIMENTS.md), and acquisition/provenance records in
+[DATASETS.md](DATASETS.md). These are the authoritative ongoing records.
 
-## Current scientific contract (2026-08-26)
+The sections below preserve the earlier E20–E32 architecture, commands and results as
+legacy developer reference. They do not identify the current E92 demo entrypoint or
+establish its acceptance. Experimental models, failed candidates and current serving
+must be distinguished using the living records above.
 
-The primary API, CLI and web-demo path is now the project-owned E20 ResNet-18 checkpoint
+## Historical E20–E32 scientific contract
+
+At that stage, the primary API, CLI and web-demo path used the project-owned E20 ResNet-18 checkpoint
 (`e20-tile-resnet18-seed2024`). It scores native 128 px tiles, aggregates the three highest
 texture-qualified tile scores and compares the result with its stored calibration threshold.
 Every load verifies the checkpoint's SHA-256 and inference schema. This is an experimental AI
@@ -35,7 +29,7 @@ signal, not an authenticity verdict: an under-threshold result is reported as un
 as proof that an image is real. On E20's three-seed evaluation, worst-source authentic false
 positives were **86.2% +/- 3.1**.
 
-The web UI now answers the demo's immediate question with the optional E32 R1b research model as
+The earlier web UI answered the demo's immediate question with the optional E32 R1b research model as
 the single primary card. It shows the raw 0–100 AI signal, the frozen decision threshold and the
 exact distance above or below that threshold; the number is not a calibrated probability. E26 and
 E20 remain available under the collapsed **Technical details** control and do not blend with R1b.
