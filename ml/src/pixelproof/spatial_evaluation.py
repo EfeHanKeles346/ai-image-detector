@@ -58,13 +58,17 @@ def evaluate_triplet(authentic, classical_edit, ai_composite, intended_mask, *, 
     partition = regions(intended_mask, boundary_width)
     mask = np.asarray(intended_mask)
     score_maps = {name: _score(value, mask.shape) for name, value in
-                  [('authentic', authentic), ('classical_edit', classical_edit), ('ai_composite', ai_composite)]}
+                  [('authentic', authentic), ('classical_edit', classical_edit)]}
+    # A rejected generation has no usable AI map. Retain both matched negatives
+    # without inventing an all-zero positive prediction or dropping its parent.
+    if ai_composite is not None:
+        score_maps['ai_composite'] = _score(ai_composite, mask.shape)
     selected = partition['interior'] | partition['background']
     result = {'threshold': float(threshold), 'boundary_width_pixels': int(boundary_width),
               'distance': 'Chebyshev, in-image boundary only',
               'region_pixels': {name: int(region.sum()) for name, region in partition.items()},
               'interior_and_background_available': bool(partition['interior'].any() and partition['background'].any()),
-              'maps': {}}
+              'composite_available': ai_composite is not None, 'maps': {}}
     for name, score in score_maps.items():
         predicted = score >= threshold
         truth = mask if name == 'ai_composite' else np.zeros(mask.shape, dtype=bool)

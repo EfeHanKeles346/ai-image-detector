@@ -1,0 +1,32 @@
+{
+  "revision": "0fce0f1de2ac0d219baf91592ee2bca95ec0a219",
+  "files": {
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/VishalJ99/trail-image-edit-localization/0fce0f1de2ac0d219baf91592ee2bca95ec0a219/LICENSE",
+      "bytes": 1070,
+      "sha256": "05c0436a2390998a6eb5133626cfea701ea33edaba2d2d26b91ee569d356403a"
+    },
+    "configs/models.json": {
+      "url": "https://raw.githubusercontent.com/VishalJ99/trail-image-edit-localization/0fce0f1de2ac0d219baf91592ee2bca95ec0a219/configs/models.json",
+      "bytes": 4997,
+      "sha256": "26602d5c40ec9236e11b941a0c8715c1b98dc4cb76d08a6b759218a0d22e53eb"
+    },
+    "src/trail/core.py": {
+      "url": "https://raw.githubusercontent.com/VishalJ99/trail-image-edit-localization/0fce0f1de2ac0d219baf91592ee2bca95ec0a219/src/trail/core.py",
+      "bytes": 7755,
+      "sha256": "4c21d9bef25ed280f2ccb50129c7fcb2c09373fa070f30e91ad38e31bcb7ff92"
+    },
+    "src/trail/models.py": {
+      "url": "https://raw.githubusercontent.com/VishalJ99/trail-image-edit-localization/0fce0f1de2ac0d219baf91592ee2bca95ec0a219/src/trail/models.py",
+      "bytes": 9665,
+      "sha256": "b8b3a97203654812c6f5333fd378873c7191b4e1eddadb122f0b19f39ff27858"
+    },
+    "results/model_family/selected_layers_all16.csv": {
+      "url": "https://raw.githubusercontent.com/VishalJ99/trail-image-edit-localization/0fce0f1de2ac0d219baf91592ee2bca95ec0a219/results/model_family/selected_layers_all16.csv",
+      "bytes": 3906,
+      "sha256": "d93452fb67459e3ae38b11d094ffd55f52ba959b622f1340c29c6069130c64e6"
+    }
+  },
+  "executed_external_code": false,
+  "images_or_weights_downloaded": 0
+}

@@ -89,3 +89,10 @@ def test_invalid_threshold(threshold):
     z = np.zeros((20, 20))
     with pytest.raises(ValueError):
         evaluate_triplet(z, z, z, mask(), threshold=threshold, boundary_width=2)
+
+
+def test_rejected_generation_keeps_negative_controls_without_fabricating_ai_metrics():
+    z = np.zeros((20, 20))
+    result = evaluate(z, z, None)
+    assert not result['composite_available']
+    assert set(result['maps']) == {'authentic', 'classical_edit'}
