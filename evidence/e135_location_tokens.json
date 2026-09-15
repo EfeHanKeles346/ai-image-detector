@@ -1,0 +1,11 @@
+{
+  "contract_sha256": "0e240bbe58c5672b5a1568be315d509c4c49196cb68f0d7d594aa5b65e24c98c",
+  "downloads": 0,
+  "max_authentic_error": 0.0,
+  "peak_mps_bytes": 1219198976,
+  "seconds": 27.1236343330238,
+  "state": "E135_two_placement_tokens_complete",
+  "token_sha256": "a684dcc96b6540fdfc842e106a3418515bc92e1778bcbcdf5d92feb9d737416b",
+  "unique_parents": 16,
+  "views": 192
+}

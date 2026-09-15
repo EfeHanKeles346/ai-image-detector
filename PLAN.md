@@ -35,7 +35,7 @@ E92 remains the serving reference and is restored between registered heavy stage
 | E129 Model2 input-context generation replay | Complete:16/16 generation checks pass, up from11/16 | Five rescued attempts, no new failures; engineering success, not detector accuracy |
 | E130 patch-drift localization diagnostic | Complete: AI specificity unsupported | Worse than radial-center ranking; excessive authentic/classical false-flag area; no deployment |
 | E133 frozen-head location challenge | Complete:16/16 generations, frozen-head AUC0.566/0.562 | Original-placement AUC0.742/0.734; authentic replay exact; no promotion |
-| E135 two-placement learning | Frozen; token cache running | Same source folds, original plus corner masks;192 views but only16 parents |
+| E135 two-placement learning | Complete; rejected as replacement | Corner AUC improves to0.638/0.633, original AUC falls; authentic false area rises to25.74%/26.61% |
 | E134 source-score audit | Complete:88 descriptive summaries | RR REAL shift is broad; processing loses177 net E32/E36 AI detections in diagnostic head |
 | E132 paired patch learning | Complete:8 source components | Composite AUC0.742/0.734, below center0.798; authentic flagged area17%; not deployable |
 | E131 internal publisher-group transfer | Complete: substantial publisher-transfer failures | Full-frame clean AUC0.92284, REAL FPR15.01%; RR REAL FPR80.80%; not deployed-E92 evaluation |
@@ -7022,3 +7022,15 @@ Apply a bounded development response to E133: train the same E132384-D frozen-to
 Cache only the missing E133 classical/composite patch tokens with the exact E130 adapter; replay unchanged authentic tokens<=1e-5. Reuse the original E130 tokens and authentic entries; duplicate bookkeeping across the two placements does not create independent authentic observations. Only the E129/E13316/16 accepted hard composites enter this scoped TRAIN research. No role changes outside E135, new editor or image download.
 
 Fit eight new fold heads, each excluding all data from its original held-out sensor component. Lock all192 view maps (16 parents x2 placements x3 variants x2 processing conditions) before held-out metrics. Report original/corner separately, authentic/classical false-flag area, full/interior-background AUC and IoU; retain paired E132/E133 frozen-head comparisons and new/rescued parent-level outcomes where applicable. This is an adaptive internal development comparison after seeing E133, not fresh independent validation, and no model is promoted from its outcome.
+
+### E135 result and disposition — 2026-09-15
+
+Completed192 token views in27.12seconds with exact authentic replay (maximum error0) and1,219,198,976 peak MPS bytes. All eight fold heads completed in48.98seconds. Post-run receipt review confirms each fold excluded its expected parent/source component, all16 parent IDs are accounted for exactly once per fold's FIT/held union, saved-head maximum score error0, and identical authentic maps across placement bookkeeping. All192 maps were locked before evaluation. Downloads0; E92 is restored exactly.
+
+The corner original/JPEG75 mean composite AUC improves0.56581->0.63803 /0.56185->0.63252. Per-parent corner AUC improves for13/16 original and12/16 JPEG75 cases. Corner IoU improves0.10166->0.18620 /0.09462->0.17332. However, original-placement AUC drops0.74224->0.69902 /0.73422->0.69018, with13/16 parents worsening in each condition. Original-placement IoU also falls0.22250->0.19590 /0.20271->0.18386.
+
+Authentic falsely flagged area rises17.11%->25.74% original and17.46%->26.61% JPEG75. Classical-negative flagged area also rises:24.74%/27.01% for original placement and25.48%/27.34% for corners. Thus the candidate trades corner improvement for original-placement loss and substantially more false alarms. It is not a successful non-regressing replacement and is rejected for serving. Raw-cut comparisons are descriptive; no matched-coverage calibration claim is made.
+
+Next investigate two mechanisms separately: richer location-independent low-level/residual features with exactly matched classical and authentic controls; and a nested source-separated calibration diagnostic to determine whether score offsets can be corrected without destroying localization. The present experiment does not prove that either will work or that the encoder alone caused the failure. Keep the current folds, previous failures and per-placement reports; any new experiment must freeze its features, fitting population and evaluation before scoring. More independent parents and a second editor remain necessary for transfer evidence; repeated tuning on this small pilot cannot supply it. Do not promote E135 or alter the demo's score/decision policy.
+
+Implementation commit123d626 passed GitHub CI34976937916 (Python and web). The full local1116-test suite and compilation checks passed before execution. These software checks establish implementation health, not detector reliability.

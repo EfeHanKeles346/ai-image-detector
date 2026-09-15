@@ -1,0 +1,111 @@
+{
+  "contract_sha256": "0e240bbe58c5672b5a1568be315d509c4c49196cb68f0d7d594aa5b65e24c98c",
+  "downloads": 0,
+  "folds": 8,
+  "limits": "Adaptive internal development after observing E133; sixteen previously inspected MIDD parents, one SD1.5 editor, two masks per parent. Source exclusion prevents declared parent/scene leakage, not unknown ancestry or adaptive validation bias. More views are not more independent parents. Raw scores uncalibrated; no deployment or universal/editor-transfer proof.",
+  "locked_scores_sha256": "6872c17f604ed874c1a0d4d0c97a17db30d81926784f012ed1bb786e49d27962",
+  "measurements_sha256": "2434046ea207c1ca450d80e6f6e1f647b01ee7ce08e200dce2803de85c41de11",
+  "placement_records": 32,
+  "promotion_allowed": false,
+  "seconds": 48.97825333289802,
+  "state": "E135_two_placement_internal_learning_complete",
+  "summary": {
+    "corner": {
+      "jpeg75": {
+        "ai_composite": {
+          "mean_auc_change": 0.07067495358935735,
+          "mean_flagged_area": 0.28759765625,
+          "mean_flagged_area_change": 0.104248046875,
+          "mean_interior_background_auc": 0.6476919664012324,
+          "mean_iou": 0.17331742888558427,
+          "mean_pixel_auc": 0.6325243090893882,
+          "parents_higher_auc": 12,
+          "parents_lower_auc": 4
+        },
+        "authentic": {
+          "mean_flagged_area": 0.26605224609375,
+          "mean_flagged_area_change": 0.09149169921875,
+          "mean_iou": 0.0
+        },
+        "classical_edit": {
+          "mean_flagged_area": 0.2734375,
+          "mean_flagged_area_change": 0.102294921875,
+          "mean_iou": 0.0
+        },
+        "unique_parents": 16
+      },
+      "original": {
+        "ai_composite": {
+          "mean_auc_change": 0.07221693225085765,
+          "mean_flagged_area": 0.28076171875,
+          "mean_flagged_area_change": 0.098388671875,
+          "mean_interior_background_auc": 0.6538335879592014,
+          "mean_iou": 0.18619654171877348,
+          "mean_pixel_auc": 0.6380293117111575,
+          "parents_higher_auc": 13,
+          "parents_lower_auc": 3
+        },
+        "authentic": {
+          "mean_flagged_area": 0.2574462890625,
+          "mean_flagged_area_change": 0.0863037109375,
+          "mean_iou": 0.0
+        },
+        "classical_edit": {
+          "mean_flagged_area": 0.25482177734375,
+          "mean_flagged_area_change": 0.0870361328125,
+          "mean_iou": 0.0
+        },
+        "unique_parents": 16
+      }
+    },
+    "original": {
+      "jpeg75": {
+        "ai_composite": {
+          "mean_auc_change": -0.0440433199883205,
+          "mean_flagged_area": 0.29193115234375,
+          "mean_flagged_area_change": 0.09918212890625,
+          "mean_interior_background_auc": 0.7017308809755072,
+          "mean_iou": 0.18385901662410248,
+          "mean_pixel_auc": 0.690180131305647,
+          "parents_higher_auc": 3,
+          "parents_lower_auc": 13
+        },
+        "authentic": {
+          "mean_flagged_area": 0.26605224609375,
+          "mean_flagged_area_change": 0.09149169921875,
+          "mean_iou": 0.0
+        },
+        "classical_edit": {
+          "mean_flagged_area": 0.2701416015625,
+          "mean_flagged_area_change": 0.09906005859375,
+          "mean_iou": 0.0
+        },
+        "unique_parents": 16
+      },
+      "original": {
+        "ai_composite": {
+          "mean_auc_change": -0.04322624339088158,
+          "mean_flagged_area": 0.28692626953125,
+          "mean_flagged_area_change": 0.09588623046875,
+          "mean_interior_background_auc": 0.7096534175195824,
+          "mean_iou": 0.19590418623135836,
+          "mean_pixel_auc": 0.6990169593408145,
+          "parents_higher_auc": 3,
+          "parents_lower_auc": 13
+        },
+        "authentic": {
+          "mean_flagged_area": 0.2574462890625,
+          "mean_flagged_area_change": 0.0863037109375,
+          "mean_iou": 0.0
+        },
+        "classical_edit": {
+          "mean_flagged_area": 0.24737548828125,
+          "mean_flagged_area_change": 0.0872802734375,
+          "mean_iou": 0.0
+        },
+        "unique_parents": 16
+      }
+    }
+  },
+  "unique_parents": 16
+}

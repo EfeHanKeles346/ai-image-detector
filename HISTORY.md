@@ -9648,3 +9648,35 @@ The prior implementation push430d385 passed GitHub CI34975306116, including1112 
 ### E135_CACHE registered-stage execution — 2026-09-15T13:43:55+00:00
 
 Starting the registered cache stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E135 cache complete
+
+{"contract_sha256": "0e240bbe58c5672b5a1568be315d509c4c49196cb68f0d7d594aa5b65e24c98c", "downloads": 0, "max_authentic_error": 0.0, "peak_mps_bytes": 1219198976, "seconds": 27.1236343330238, "state": "E135_two_placement_tokens_complete", "token_sha256": "a684dcc96b6540fdfc842e106a3418515bc92e1778bcbcdf5d92feb9d737416b", "unique_parents": 16, "views": 192}
+
+### E135_CACHE registered-stage execution — 2026-09-15T13:44:42+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E135_FIT registered-stage execution — 2026-09-15T13:45:14+00:00
+
+Starting the registered fit stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E135 learning result
+
+{"contract_sha256": "0e240bbe58c5672b5a1568be315d509c4c49196cb68f0d7d594aa5b65e24c98c", "downloads": 0, "folds": 8, "limits": "Adaptive internal development after observing E133; sixteen previously inspected MIDD parents, one SD1.5 editor, two masks per parent. Source exclusion prevents declared parent/scene leakage, not unknown ancestry or adaptive validation bias. More views are not more independent parents. Raw scores uncalibrated; no deployment or universal/editor-transfer proof.", "locked_scores_sha256": "6872c17f604ed874c1a0d4d0c97a17db30d81926784f012ed1bb786e49d27962", "measurements_sha256": "2434046ea207c1ca450d80e6f6e1f647b01ee7ce08e200dce2803de85c41de11", "placement_records": 32, "promotion_allowed": false, "seconds": 48.97825333289802, "state": "E135_two_placement_internal_learning_complete", "summary": {"corner": {"jpeg75": {"ai_composite": {"mean_auc_change": 0.07067495358935735, "mean_flagged_area": 0.28759765625, "mean_flagged_area_change": 0.104248046875, "mean_interior_background_auc": 0.6476919664012324, "mean_iou": 0.17331742888558427, "mean_pixel_auc": 0.6325243090893882, "parents_higher_auc": 12, "parents_lower_auc": 4}, "authentic": {"mean_flagged_area": 0.26605224609375, "mean_flagged_area_change": 0.09149169921875, "mean_iou": 0.0}, "classical_edit": {"mean_flagged_area": 0.2734375, "mean_flagged_area_change": 0.102294921875, "mean_iou": 0.0}, "unique_parents": 16}, "original": {"ai_composite": {"mean_auc_change": 0.07221693225085765, "mean_flagged_area": 0.28076171875, "mean_flagged_area_change": 0.098388671875, "mean_interior_background_auc": 0.6538335879592014, "mean_iou": 0.18619654171877348, "mean_pixel_auc": 0.6380293117111575, "parents_higher_auc": 13, "parents_lower_auc": 3}, "authentic": {"mean_flagged_area": 0.2574462890625, "mean_flagged_area_change": 0.0863037109375, "mean_iou": 0.0}, "classical_edit": {"mean_flagged_area": 0.25482177734375, "mean_flagged_area_change": 0.0870361328125, "mean_iou": 0.0}, "unique_parents": 16}}, "original": {"jpeg75": {"ai_composite": {"mean_auc_change": -0.0440433199883205, "mean_flagged_area": 0.29193115234375, "mean_flagged_area_change": 0.09918212890625, "mean_interior_background_auc": 0.7017308809755072, "mean_iou": 0.18385901662410248, "mean_pixel_auc": 0.690180131305647, "parents_higher_auc": 3, "parents_lower_auc": 13}, "authentic": {"mean_flagged_area": 0.26605224609375, "mean_flagged_area_change": 0.09149169921875, "mean_iou": 0.0}, "classical_edit": {"mean_flagged_area": 0.2701416015625, "mean_flagged_area_change": 0.09906005859375, "mean_iou": 0.0}, "unique_parents": 16}, "original": {"ai_composite": {"mean_auc_change": -0.04322624339088158, "mean_flagged_area": 0.28692626953125, "mean_flagged_area_change": 0.09588623046875, "mean_interior_background_auc": 0.7096534175195824, "mean_iou": 0.19590418623135836, "mean_pixel_auc": 0.6990169593408145, "parents_higher_auc": 3, "parents_lower_auc": 13}, "authentic": {"mean_flagged_area": 0.2574462890625, "mean_flagged_area_change": 0.0863037109375, "mean_iou": 0.0}, "classical_edit": {"mean_flagged_area": 0.24737548828125, "mean_flagged_area_change": 0.0872802734375, "mean_iou": 0.0}, "unique_parents": 16}}}, "unique_parents": 16}
+
+### E135_FIT registered-stage execution — 2026-09-15T13:46:15+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E135 result and disposition — 2026-09-15
+
+Completed192 token views in27.12seconds with exact authentic replay (maximum error0) and1,219,198,976 peak MPS bytes. All eight fold heads completed in48.98seconds. Post-run receipt review confirms each fold excluded its expected parent/source component, all16 parent IDs are accounted for exactly once per fold's FIT/held union, saved-head maximum score error0, and identical authentic maps across placement bookkeeping. All192 maps were locked before evaluation. Downloads0; E92 is restored exactly.
+
+The corner original/JPEG75 mean composite AUC improves0.56581->0.63803 /0.56185->0.63252. Per-parent corner AUC improves for13/16 original and12/16 JPEG75 cases. Corner IoU improves0.10166->0.18620 /0.09462->0.17332. However, original-placement AUC drops0.74224->0.69902 /0.73422->0.69018, with13/16 parents worsening in each condition. Original-placement IoU also falls0.22250->0.19590 /0.20271->0.18386.
+
+Authentic falsely flagged area rises17.11%->25.74% original and17.46%->26.61% JPEG75. Classical-negative flagged area also rises:24.74%/27.01% for original placement and25.48%/27.34% for corners. Thus the candidate trades corner improvement for original-placement loss and substantially more false alarms. It is not a successful non-regressing replacement and is rejected for serving. Raw-cut comparisons are descriptive; no matched-coverage calibration claim is made.
+
+Next investigate two mechanisms separately: richer location-independent low-level/residual features with exactly matched classical and authentic controls; and a nested source-separated calibration diagnostic to determine whether score offsets can be corrected without destroying localization. The present experiment does not prove that either will work or that the encoder alone caused the failure. Keep the current folds, previous failures and per-placement reports; any new experiment must freeze its features, fitting population and evaluation before scoring. More independent parents and a second editor remain necessary for transfer evidence; repeated tuning on this small pilot cannot supply it. Do not promote E135 or alter the demo's score/decision policy.
+
+Implementation commit123d626 passed GitHub CI34976937916 (Python and web). The full local1116-test suite and compilation checks passed before execution. These software checks establish implementation health, not detector reliability.
