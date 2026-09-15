@@ -8489,3 +8489,45 @@ Authentic flagged area at the E1320.5 diagnostic cut is17.11%/17.46%, and classi
 Next Model2 mechanism test: pre-register masks with matched area but varied location/shape independent of image content, including off-center edits; keep authentic and same-mask classical controls. Hold complete source/known-ancestry groups out and compare frozen E132 fold heads before any retraining. Record generator/checker failures without replacements, and separate interior from boundary success. Do not infer causal center bias merely from the present baseline gap. A second editor and independent source population are required later for editor/source transfer evidence. The present16-set SD1.5/MIDD pilot cannot provide that proof by further threshold tuning.
 
 Next Model1 investigation: use the locked E131 training-source predictions to characterize publisher/content/processing differences and per-source score shifts before choosing another representation or grouped calibration experiment. The excluded RR error rate is a diagnostic, not permission to tune on consumed DEV or protected reserves. Any calibration experiment needs a nested source split, retaining outer held-out sources untouched by normalization, fitting and cutoff selection. Preserve individual AI non-regression as well as REAL errors; do not accept a higher aggregate AUC as a replacement for those safeguards.
+
+## E133 — frozen-head mask-location challenge (planned 2026-09-15)
+
+Test E132's location sensitivity without retraining or choosing another cutoff. Reuse the exact16 E128 authentic inputs and E132 source-excluding fold heads. Translate each original binary mask's tight bounding box, unchanged in shape and pixel area, to a fixed corner with16px image margin. Corner assignment is index modulo4 (top-left, top-right, bottom-left, bottom-right), four parents per corner, fixed independently of pixels and scores. This isolates the mask-position intervention more narrowly than simultaneously varying shape; varied shapes/editors remain later work. Each parent receives one new placement, not a fully crossed parent-by-corner experiment.
+
+Keep source images, seeds119000+i, prompt, SD1.5 weights,30 steps,7.5 guidance, fp16+SDPA and enabled safety checker exactly as E129. Generate one attempt per parent, retaining all failures and no rerolls/refills. Rebuild matching GaussianBlur6 classical negatives using the new mask and retain authentic negatives. Locally synthesized descendants are TRAIN research only; no download, new independent source, global training admission or deployment.
+
+Freeze preparation, generation, head binding and scoring before any new generation or score. Score all16 authentic/classical controls and only accepted composites; explicitly count rejected attempts. Encode with the exact E130 DINO adapter and require authentic-token replay<=1e-5 and frozen-head authentic-score replay<=1e-6 against the previous cache. The head for each image must still exclude its original source/known-ancestry component. Preserve the0.5 diagnostic cut. Lock every map before new-mask metrics.
+
+Report all-negative false-flag area; composite full and interior/background AUC/IoU; aligned AI-authentic/classical contrast; radial-center and constant ranking baselines on the same accepted new masks; paired old/new composite metrics on exactly the accepted parents; and every failure. A position intervention also changes edited semantic content and diffusion output, so any score difference is not pure causal proof of positional bias. Sixteen previously inspected parents, one old editor and unknown upstream ancestry cannot establish independent generalization.
+
+### E133 registration and preflight — 2026-09-15
+
+E133 is frozen before preparation/generation/scoring at SHA256 `74c627b17a69a65095b372b368aaf1ed17199532ff9e443d0949bbdee38bc037`. Targeted28 tests and the complete1104-test Python suite passed. Tests cover exact shape/area-preserving translation for all16 assignments, no clipping/nonbinary admission, consistent failed/successful attempt accounting, exact classical-control background and authentic identity, accepted-parent-only paired summaries, and predecessor resource restoration.
+
+The first freeze invocation used the base environment and failed on the deliberately isolated diffusers dependency before writing a contract; the premature preparation attempt consequently failed on the absent contract before writing images. Re-running freeze with the existing pinned model2-runtime PYTHONPATH succeeded. No dependency installation, parameter change, generation attempt or contract rewrite occurred. All subsequent generation uses that isolated runtime; E92 restoration uses the base environment.
+
+### E133 preparation complete
+
+{"contract_sha256": "74c627b17a69a65095b372b368aaf1ed17199532ff9e443d0949bbdee38bc037", "downloads": 0, "parents": 16, "prepared_sha256": "37f6855fb56972980d35bf1753aaf3c0e86755a9bb9608459b3119ca53cde3c0", "training_admission": false}
+
+## E134 — locked Model1 source-score audit (planned 2026-09-15)
+
+While E133 generates images, run only a lightweight, separately registered audit of already locked E131 predictions. No raw features, new image pixels, encoder, fit, cutoff selection, calibration or GPU allocation. Bind E131's contract, report, locked-score receipt and complete12525-parent/four-condition/two-branch score arrays. Retain TRAIN/INTERNAL_HELD_OUT roles and the existing source components/folds.
+
+For every declared component and class, report fixed score quantiles0/10/25/50/75/90/100%, mean and the fraction above the existing0.5 diagnostic cutoff. Compare each processing condition with clean on matched parents, reporting score shifts and new/rescued decisions. Include the complete roster, not only RR. These raw-score distributions characterize source-dependent offsets and processing sensitivity; they are not calibrated probabilities or causal evidence about which visual feature creates errors. Scores were previously inspected in E131; this is a retrospective descriptive diagnostic, not a new predictive test or independent validation.
+
+### E133_GENERATION registered-stage execution — 2026-09-15T13:26:28+00:00
+
+Starting the registered generate stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E134 locked source-score audit complete
+
+All88 component/class/condition/branch summaries are retained in evidence/e134_source_scores.json. No fits, new pixels, threshold changes or serving change. Retrospective consumed TRAIN/INTERNAL_HELD_OUT analysis, not a new predictive test or deployed-E92 evaluation. Different folds use different heads. Unknown generator/prompt/scene ancestry remains; no calibration, threshold selection or causal feature explanation.
+
+### E134 source-score findings — 2026-09-15
+
+Frozen retrospective audit SHA256 `685a172b1171345dd24ab2ab7abd195268728c1eb8004eb704681b5b7367655b`; all88 component/class/condition/branch summaries are retained. Eight targeted distribution/paired-direction/invalid-input tests passed. No raw features or images, GPU, fitting, calibration or cutoff search were used.
+
+In E131's full-frame head excluding RR, the1250 clean RR REAL scores have median0.81744, lower quartile0.56913 and upper quartile0.93320;1010 exceed the fixed0.5 cut. This is a broad distribution shift, not merely a handful of outliers. RR AI median is0.99184, with1038/1110 above0.5. Social-Q75 shifts the RR REAL median to0.85479 and produces67 new errors versus18 rescues, for49 net extra false alerts. These are raw scores of a source-excluding diagnostic head, not E92 deployed rates or calibrated probabilities.
+
+For the separate E32/E36 AI component, clean-to-social-Q75 causes298 new misses versus121 rescues (177 net losses); recall drops73.11% to67.04%. This preserves the distinction between source offsets and processing sensitivity. The component uses a different fold head from RR; cross-component score differences cannot by themselves establish a single-model calibration solution or causal feature failure. Retain nested source-separated calibration as a future controlled experiment rather than choosing a cutoff from these observed distributions.

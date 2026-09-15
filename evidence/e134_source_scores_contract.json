@@ -1,0 +1,26 @@
+{
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "contract_sha256": "685a172b1171345dd24ab2ab7abd195268728c1eb8004eb704681b5b7367655b",
+  "cut": 0.5,
+  "downloads": 0,
+  "gpu_operations": 0,
+  "limits": "Retrospective consumed TRAIN/INTERNAL_HELD_OUT analysis, not a new predictive test or deployed-E92 evaluation. Different folds use different heads. Unknown generator/prompt/scene ancestry remains; no calibration, threshold selection or causal feature explanation.",
+  "new_fits": 0,
+  "new_pixels_read": 0,
+  "parents": 12525,
+  "promotion_allowed": false,
+  "quantiles": [
+    0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    0.9,
+    1
+  ],
+  "scope": "All declared source-component/classes and four matched processing conditions from E131. Raw score quantiles, mean, fixed-cut alert fraction and paired clean-to-processed transitions.",
+  "state": "E134_locked_source_score_audit_registered"
+}

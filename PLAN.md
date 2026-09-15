@@ -34,11 +34,13 @@ E92 remains the serving reference and is restored between registered heavy stage
 | E126 consumed-development comparison | Complete: both branches rejected |20 numeric gates pass, but the inherited E43 individual-AI retention guard fails; no gallery progression |
 | E129 Model2 input-context generation replay | Complete:16/16 generation checks pass, up from11/16 | Five rescued attempts, no new failures; engineering success, not detector accuracy |
 | E130 patch-drift localization diagnostic | Complete: AI specificity unsupported | Worse than radial-center ranking; excessive authentic/classical false-flag area; no deployment |
+| E133 frozen-head location challenge | Registered; generation running | Same16 parents/heads, masks translated to four corners; no fitting or promotion |
+| E134 source-score audit | Complete:88 descriptive summaries | RR REAL shift is broad; processing loses177 net E32/E36 AI detections in diagnostic head |
 | E132 paired patch learning | Complete:8 source components | Composite AUC0.742/0.734, below center0.798; authentic flagged area17%; not deployable |
 | E131 internal publisher-group transfer | Complete: substantial publisher-transfer failures | Full-frame clean AUC0.92284, REAL FPR15.01%; RR REAL FPR80.80%; not deployed-E92 evaluation |
 
-Latest code validation:1079 full Python tests passed after E132 implementation, plus
-Python compilation checks. Completed pushes have passed GitHub CI; CI is software
+Latest code validation:1104 full Python tests passed after E133 implementation, plus
+eight targeted E134 score-audit tests. Python compilation is checked before commits. Completed pushes have passed GitHub CI; CI is software
 validation and does not change any scientific gate. The canonical experiment/engineering
 logs and DATASETS.md retain exact contracts, limitations and acquisition receipts.
 
@@ -6987,3 +6989,19 @@ Authentic flagged area at the E1320.5 diagnostic cut is17.11%/17.46%, and classi
 Next Model2 mechanism test: pre-register masks with matched area but varied location/shape independent of image content, including off-center edits; keep authentic and same-mask classical controls. Hold complete source/known-ancestry groups out and compare frozen E132 fold heads before any retraining. Record generator/checker failures without replacements, and separate interior from boundary success. Do not infer causal center bias merely from the present baseline gap. A second editor and independent source population are required later for editor/source transfer evidence. The present16-set SD1.5/MIDD pilot cannot provide that proof by further threshold tuning.
 
 Next Model1 investigation: use the locked E131 training-source predictions to characterize publisher/content/processing differences and per-source score shifts before choosing another representation or grouped calibration experiment. The excluded RR error rate is a diagnostic, not permission to tune on consumed DEV or protected reserves. Any calibration experiment needs a nested source split, retaining outer held-out sources untouched by normalization, fitting and cutoff selection. Preserve individual AI non-regression as well as REAL errors; do not accept a higher aggregate AUC as a replacement for those safeguards.
+
+## E133 — frozen-head mask-location challenge (planned 2026-09-15)
+
+Test E132's location sensitivity without retraining or choosing another cutoff. Reuse the exact16 E128 authentic inputs and E132 source-excluding fold heads. Translate each original binary mask's tight bounding box, unchanged in shape and pixel area, to a fixed corner with16px image margin. Corner assignment is index modulo4 (top-left, top-right, bottom-left, bottom-right), four parents per corner, fixed independently of pixels and scores. This isolates the mask-position intervention more narrowly than simultaneously varying shape; varied shapes/editors remain later work. Each parent receives one new placement, not a fully crossed parent-by-corner experiment.
+
+Keep source images, seeds119000+i, prompt, SD1.5 weights,30 steps,7.5 guidance, fp16+SDPA and enabled safety checker exactly as E129. Generate one attempt per parent, retaining all failures and no rerolls/refills. Rebuild matching GaussianBlur6 classical negatives using the new mask and retain authentic negatives. Locally synthesized descendants are TRAIN research only; no download, new independent source, global training admission or deployment.
+
+Freeze preparation, generation, head binding and scoring before any new generation or score. Score all16 authentic/classical controls and only accepted composites; explicitly count rejected attempts. Encode with the exact E130 DINO adapter and require authentic-token replay<=1e-5 and frozen-head authentic-score replay<=1e-6 against the previous cache. The head for each image must still exclude its original source/known-ancestry component. Preserve the0.5 diagnostic cut. Lock every map before new-mask metrics.
+
+Report all-negative false-flag area; composite full and interior/background AUC/IoU; aligned AI-authentic/classical contrast; radial-center and constant ranking baselines on the same accepted new masks; paired old/new composite metrics on exactly the accepted parents; and every failure. A position intervention also changes edited semantic content and diffusion output, so any score difference is not pure causal proof of positional bias. Sixteen previously inspected parents, one old editor and unknown upstream ancestry cannot establish independent generalization.
+
+## E134 — locked Model1 source-score audit (planned 2026-09-15)
+
+While E133 generates images, run only a lightweight, separately registered audit of already locked E131 predictions. No raw features, new image pixels, encoder, fit, cutoff selection, calibration or GPU allocation. Bind E131's contract, report, locked-score receipt and complete12525-parent/four-condition/two-branch score arrays. Retain TRAIN/INTERNAL_HELD_OUT roles and the existing source components/folds.
+
+For every declared component and class, report fixed score quantiles0/10/25/50/75/90/100%, mean and the fraction above the existing0.5 diagnostic cutoff. Compare each processing condition with clean on matched parents, reporting score shifts and new/rescued decisions. Include the complete roster, not only RR. These raw-score distributions characterize source-dependent offsets and processing sensitivity; they are not calibrated probabilities or causal evidence about which visual feature creates errors. Scores were previously inspected in E131; this is a retrospective descriptive diagnostic, not a new predictive test or independent validation.

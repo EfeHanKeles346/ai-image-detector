@@ -18,7 +18,18 @@ from run_e126_after_training import ready_e92
 
 OPERATIONS={'e130':('experiments.e130_patch_drift_audit','audit'),
             'e131':('experiments.e131_source_holdout','fit'),
-            'e132':('experiments.e132_patch_learning','fit')}
+            'e132':('experiments.e132_patch_learning','fit'),
+            'e133_generation':('experiments.e133_mask_location','generate'),
+            'e133_localization':('experiments.e133_mask_location','score')}
+
+
+def location_ready(root, operation):
+    stages=['e130_pipeline','e131_pipeline','e132_pipeline']
+    if operation=='e133_localization':stages.append('e133_generation_pipeline')
+    for stage in stages:
+        result=json.loads((root/stage/'status.json').read_text())
+        if result.get('state')!='complete' or result.get('E92_restored') is not True:
+            raise RuntimeError('Location challenge requires completed predecessor lifecycles and exact E92 restoration')
 
 
 def patch_learning_ready(root):
@@ -54,6 +65,7 @@ def main(operation):
         upstream_ready(*(json.loads((root/name/'status.json').read_text()) for name in
             ('e124_pipeline','e126_pipeline','e129_pipeline')))
         if operation=='e132':patch_learning_ready(root)
+        if operation.startswith('e133_'):location_ready(root, operation)
         module,stage=OPERATIONS[operation]
         importlib.import_module(module).validate()  # Validate frozen evidence before touching the API.
         stopped=False;failure=None;restored=None

@@ -1,0 +1,372 @@
+{
+  "accounting": "All16 authentic/classical negatives; only previously accepted generated composites. Retain every failed attempt, no reroll/refill. Lock all maps before new-mask metrics. All16-pass generation is reported, not a requirement to hide failed-parent negatives.",
+  "contract_sha256": "74c627b17a69a65095b372b368aaf1ed17199532ff9e443d0949bbdee38bc037",
+  "downloads": 0,
+  "folds": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    5,
+    5,
+    6,
+    6,
+    7,
+    7
+  ],
+  "generation": {
+    "attention": "SDPA",
+    "attention_slicing": false,
+    "batch_size": 1,
+    "device": "mps",
+    "dtype": "float16",
+    "guidance_scale": 7.5,
+    "prompt": "a natural photograph, consistent lighting and texture",
+    "repository": "stable-diffusion-v1-5/stable-diffusion-inpainting",
+    "revision": "8a4288a76071f7280aedbdb3253bdb9e9d5d84bb",
+    "safety_checker": true,
+    "scheduler": "pinned repository scheduler configuration",
+    "seed_base": 119000,
+    "steps": 30,
+    "strength": 1.0
+  },
+  "generation_seconds": 2400,
+  "geometry": [
+    {
+      "corner": "top_left",
+      "mask_pixels": 27864,
+      "new_bbox": [
+        16,
+        16,
+        178,
+        188
+      ],
+      "old_bbox": [
+        252,
+        165,
+        414,
+        337
+      ],
+      "shift": [
+        -236,
+        -149
+      ]
+    },
+    {
+      "corner": "top_right",
+      "mask_pixels": 31142,
+      "new_bbox": [
+        257,
+        16,
+        496,
+        182
+      ],
+      "old_bbox": [
+        175,
+        311,
+        414,
+        477
+      ],
+      "shift": [
+        82,
+        -295
+      ]
+    },
+    {
+      "corner": "bottom_left",
+      "mask_pixels": 32560,
+      "new_bbox": [
+        16,
+        311,
+        192,
+        496
+      ],
+      "old_bbox": [
+        58,
+        196,
+        234,
+        381
+      ],
+      "shift": [
+        -42,
+        115
+      ]
+    },
+    {
+      "corner": "bottom_right",
+      "mask_pixels": 33676,
+      "new_bbox": [
+        301,
+        276,
+        496,
+        496
+      ],
+      "old_bbox": [
+        249,
+        55,
+        444,
+        275
+      ],
+      "shift": [
+        52,
+        221
+      ]
+    },
+    {
+      "corner": "top_left",
+      "mask_pixels": 33276,
+      "new_bbox": [
+        16,
+        16,
+        204,
+        193
+      ],
+      "old_bbox": [
+        49,
+        113,
+        237,
+        290
+      ],
+      "shift": [
+        -33,
+        -97
+      ]
+    },
+    {
+      "corner": "top_right",
+      "mask_pixels": 33308,
+      "new_bbox": [
+        304,
+        16,
+        496,
+        237
+      ],
+      "old_bbox": [
+        92,
+        184,
+        284,
+        405
+      ],
+      "shift": [
+        212,
+        -168
+      ]
+    },
+    {
+      "corner": "bottom_left",
+      "mask_pixels": 28350,
+      "new_bbox": [
+        16,
+        321,
+        178,
+        496
+      ],
+      "old_bbox": [
+        174,
+        266,
+        336,
+        441
+      ],
+      "shift": [
+        -158,
+        55
+      ]
+    },
+    {
+      "corner": "bottom_right",
+      "mask_pixels": 26468,
+      "new_bbox": [
+        324,
+        300,
+        496,
+        496
+      ],
+      "old_bbox": [
+        65,
+        156,
+        237,
+        352
+      ],
+      "shift": [
+        259,
+        144
+      ]
+    },
+    {
+      "corner": "top_left",
+      "mask_pixels": 37515,
+      "new_bbox": [
+        16,
+        16,
+        221,
+        199
+      ],
+      "old_bbox": [
+        274,
+        72,
+        479,
+        255
+      ],
+      "shift": [
+        -258,
+        -56
+      ]
+    },
+    {
+      "corner": "top_right",
+      "mask_pixels": 32028,
+      "new_bbox": [
+        294,
+        16,
+        496,
+        218
+      ],
+      "old_bbox": [
+        55,
+        52,
+        257,
+        254
+      ],
+      "shift": [
+        239,
+        -36
+      ]
+    },
+    {
+      "corner": "bottom_left",
+      "mask_pixels": 44550,
+      "new_bbox": [
+        16,
+        298,
+        241,
+        496
+      ],
+      "old_bbox": [
+        115,
+        104,
+        340,
+        302
+      ],
+      "shift": [
+        -99,
+        194
+      ]
+    },
+    {
+      "corner": "bottom_right",
+      "mask_pixels": 35934,
+      "new_bbox": [
+        297,
+        266,
+        496,
+        496
+      ],
+      "old_bbox": [
+        231,
+        237,
+        430,
+        467
+      ],
+      "shift": [
+        66,
+        29
+      ]
+    },
+    {
+      "corner": "top_left",
+      "mask_pixels": 39330,
+      "new_bbox": [
+        16,
+        16,
+        206,
+        223
+      ],
+      "old_bbox": [
+        206,
+        38,
+        396,
+        245
+      ],
+      "shift": [
+        -190,
+        -22
+      ]
+    },
+    {
+      "corner": "top_right",
+      "mask_pixels": 26764,
+      "new_bbox": [
+        328,
+        16,
+        496,
+        219
+      ],
+      "old_bbox": [
+        316,
+        239,
+        484,
+        442
+      ],
+      "shift": [
+        12,
+        -223
+      ]
+    },
+    {
+      "corner": "bottom_left",
+      "mask_pixels": 32041,
+      "new_bbox": [
+        16,
+        317,
+        195,
+        496
+      ],
+      "old_bbox": [
+        133,
+        273,
+        312,
+        452
+      ],
+      "shift": [
+        -117,
+        44
+      ]
+    },
+    {
+      "corner": "bottom_right",
+      "mask_pixels": 35497,
+      "new_bbox": [
+        295,
+        271,
+        496,
+        496
+      ],
+      "old_bbox": [
+        24,
+        152,
+        225,
+        377
+      ],
+      "shift": [
+        271,
+        119
+      ]
+    }
+  ],
+  "intervention": "Translate unchanged tight binary masks to index%4 corners with16px margin. Preserve exact area/shape, image bodies, seeds, prompt and generation parameters. Four parents per corner, one placement per parent.",
+  "limits": "Consumed sixteen-parent MIDD research with one old editor and known source-excluding heads. New placement changes edited semantic content and diffusion output; not pure causal position attribution or a fully crossed corner experiment. Intended masks are not semantic-change annotations. No fresh-source/editor proof, calibration or serving promotion.",
+  "metrics": "Per-parent full/interior-background AUC, IoU and flagged area; AI-authentic/classical aligned contrast; same-mask radial and constant rankings; paired E132 original-placement metrics restricted to accepted parents. No pixel-IID intervals.",
+  "mps_limit_bytes": 10737418240,
+  "parents": 16,
+  "promotion_allowed": false,
+  "score_seconds": 900,
+  "scoring": "Use the existing E132 source-excluding head per parent and exact E130 encoder. No fitting, threshold changes or position/mask inference input. Original/JPEG75; authentic-token parity<=1e-5 and authentic-score parity<=1e-6. Fixed0.5 diagnostic cut.",
+  "state": "E133_frozen_head_location_challenge_registered",
+  "training_admission": false
+}
