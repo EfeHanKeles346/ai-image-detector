@@ -1,0 +1,13 @@
+{
+  "contract_sha256": "74c627b17a69a65095b372b368aaf1ed17199532ff9e443d0949bbdee38bc037",
+  "downloads": 0,
+  "full16_engineering_gate_passed": true,
+  "generation_sha256": "c9f75a64948f0364a4e0990cb33d3344997b4c1d6fcba38754ae2dd0c0efd369",
+  "parents": 16,
+  "passed": 16,
+  "peak_mps_bytes": 6788562944,
+  "promotion_allowed": false,
+  "seconds": 555.461868665996,
+  "state": "E133_location_generation_complete",
+  "training_admission": false
+}

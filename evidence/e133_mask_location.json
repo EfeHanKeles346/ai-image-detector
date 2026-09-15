@@ -1,0 +1,85 @@
+{
+  "accepted_composites": 16,
+  "contract_sha256": "74c627b17a69a65095b372b368aaf1ed17199532ff9e443d0949bbdee38bc037",
+  "downloads": 0,
+  "limits": "Consumed sixteen-parent MIDD research with one old editor and known source-excluding heads. New placement changes edited semantic content and diffusion output; not pure causal position attribution or a fully crossed corner experiment. Intended masks are not semantic-change annotations. No fresh-source/editor proof, calibration or serving promotion.",
+  "locked_scores_sha256": "db0cb8362cfd34ee32ab6e81efe31eaf27ae81c257cf48ce4b5c1e736192b79e",
+  "max_authentic_score_error": 0.0,
+  "max_authentic_token_error": 0.0,
+  "measurements_sha256": "6edfdcd3c03b92b7c71dc5d3c708c22da2dc12b4fa7f75819670d534167bca91",
+  "parents": 16,
+  "peak_mps_bytes": 1219198976,
+  "promotion_allowed": false,
+  "rejected_attempts": 0,
+  "seconds": 18.19654425000772,
+  "state": "E133_frozen_head_location_challenge_complete",
+  "summary": {
+    "jpeg75": {
+      "accepted_parents": 16,
+      "ai_composite": {
+        "mean_flagged_area": 0.183349609375,
+        "mean_interior_background_auc": 0.5696380503109616,
+        "mean_iou": 0.09461821008149006,
+        "mean_pixel_auc": 0.5618493555000308,
+        "parents": 16
+      },
+      "all_parents": 16,
+      "authentic": {
+        "mean_flagged_area": 0.174560546875,
+        "mean_interior_background_auc": null,
+        "mean_iou": 0.0,
+        "mean_pixel_auc": null,
+        "parents": 16
+      },
+      "classical_edit": {
+        "mean_flagged_area": 0.171142578125,
+        "mean_interior_background_auc": null,
+        "mean_iou": 0.0,
+        "mean_pixel_auc": null,
+        "parents": 16
+      },
+      "matched_accepted_comparison": {
+        "AI_minus_authentic_aligned_auc": 0.08085072641406385,
+        "AI_minus_classical_aligned_auc": 0.16855089642605717,
+        "constant_auc": 0.5,
+        "new_radial_center_auc": 0.4421728665547357,
+        "old_E132_mean_pixel_auc": 0.7342234512939676,
+        "parents": 16
+      }
+    },
+    "original": {
+      "accepted_parents": 16,
+      "ai_composite": {
+        "mean_flagged_area": 0.182373046875,
+        "mean_interior_background_auc": 0.5746209190475555,
+        "mean_iou": 0.10165574918839779,
+        "mean_pixel_auc": 0.5658123794602998,
+        "parents": 16
+      },
+      "all_parents": 16,
+      "authentic": {
+        "mean_flagged_area": 0.171142578125,
+        "mean_interior_background_auc": null,
+        "mean_iou": 0.0,
+        "mean_pixel_auc": null,
+        "parents": 16
+      },
+      "classical_edit": {
+        "mean_flagged_area": 0.16778564453125,
+        "mean_interior_background_auc": null,
+        "mean_iou": 0.0,
+        "mean_pixel_auc": null,
+        "parents": 16
+      },
+      "matched_accepted_comparison": {
+        "AI_minus_authentic_aligned_auc": 0.09192518625126159,
+        "AI_minus_classical_aligned_auc": 0.1851799676281684,
+        "constant_auc": 0.5,
+        "new_radial_center_auc": 0.4421728665547357,
+        "old_E132_mean_pixel_auc": 0.7422432027316962,
+        "parents": 16
+      }
+    }
+  },
+  "training_admission": false
+}

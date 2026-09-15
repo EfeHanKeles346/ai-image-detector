@@ -20,7 +20,18 @@ OPERATIONS={'e130':('experiments.e130_patch_drift_audit','audit'),
             'e131':('experiments.e131_source_holdout','fit'),
             'e132':('experiments.e132_patch_learning','fit'),
             'e133_generation':('experiments.e133_mask_location','generate'),
-            'e133_localization':('experiments.e133_mask_location','score')}
+            'e133_localization':('experiments.e133_mask_location','score'),
+            'e135_cache':('experiments.e135_location_learning','cache'),
+            'e135_fit':('experiments.e135_location_learning','fit')}
+
+
+def location_learning_ready(root,operation):
+    stages=['e132_pipeline','e133_generation_pipeline','e133_localization_pipeline']
+    if operation=='e135_fit':stages.append('e135_cache_pipeline')
+    for stage in stages:
+        result=json.loads((root/stage/'status.json').read_text())
+        if result.get('state')!='complete' or result.get('E92_restored') is not True:
+            raise RuntimeError('Location learning requires completed preceding stages and exact E92 restoration')
 
 
 def location_ready(root, operation):
@@ -66,6 +77,7 @@ def main(operation):
             ('e124_pipeline','e126_pipeline','e129_pipeline')))
         if operation=='e132':patch_learning_ready(root)
         if operation.startswith('e133_'):location_ready(root, operation)
+        if operation.startswith('e135_'):location_learning_ready(root, operation)
         module,stage=OPERATIONS[operation]
         importlib.import_module(module).validate()  # Validate frozen evidence before touching the API.
         stopped=False;failure=None;restored=None

@@ -34,13 +34,14 @@ E92 remains the serving reference and is restored between registered heavy stage
 | E126 consumed-development comparison | Complete: both branches rejected |20 numeric gates pass, but the inherited E43 individual-AI retention guard fails; no gallery progression |
 | E129 Model2 input-context generation replay | Complete:16/16 generation checks pass, up from11/16 | Five rescued attempts, no new failures; engineering success, not detector accuracy |
 | E130 patch-drift localization diagnostic | Complete: AI specificity unsupported | Worse than radial-center ranking; excessive authentic/classical false-flag area; no deployment |
-| E133 frozen-head location challenge | Registered; generation running | Same16 parents/heads, masks translated to four corners; no fitting or promotion |
+| E133 frozen-head location challenge | Complete:16/16 generations, frozen-head AUC0.566/0.562 | Original-placement AUC0.742/0.734; authentic replay exact; no promotion |
+| E135 two-placement learning | Frozen; token cache running | Same source folds, original plus corner masks;192 views but only16 parents |
 | E134 source-score audit | Complete:88 descriptive summaries | RR REAL shift is broad; processing loses177 net E32/E36 AI detections in diagnostic head |
 | E132 paired patch learning | Complete:8 source components | Composite AUC0.742/0.734, below center0.798; authentic flagged area17%; not deployable |
 | E131 internal publisher-group transfer | Complete: substantial publisher-transfer failures | Full-frame clean AUC0.92284, REAL FPR15.01%; RR REAL FPR80.80%; not deployed-E92 evaluation |
 
-Latest code validation:1104 full Python tests passed after E133 implementation, plus
-eight targeted E134 score-audit tests. Python compilation is checked before commits. Completed pushes have passed GitHub CI; CI is software
+Latest code validation:1116 full Python tests passed after E135 implementation.
+Python compilation is checked before commits. Completed pushes have passed GitHub CI; CI is software
 validation and does not change any scientific gate. The canonical experiment/engineering
 logs and DATASETS.md retain exact contracts, limitations and acquisition receipts.
 
@@ -7005,3 +7006,19 @@ Report all-negative false-flag area; composite full and interior/background AUC/
 While E133 generates images, run only a lightweight, separately registered audit of already locked E131 predictions. No raw features, new image pixels, encoder, fit, cutoff selection, calibration or GPU allocation. Bind E131's contract, report, locked-score receipt and complete12525-parent/four-condition/two-branch score arrays. Retain TRAIN/INTERNAL_HELD_OUT roles and the existing source components/folds.
 
 For every declared component and class, report fixed score quantiles0/10/25/50/75/90/100%, mean and the fraction above the existing0.5 diagnostic cutoff. Compare each processing condition with clean on matched parents, reporting score shifts and new/rescued decisions. Include the complete roster, not only RR. These raw-score distributions characterize source-dependent offsets and processing sensitivity; they are not calibrated probabilities or causal evidence about which visual feature creates errors. Scores were previously inspected in E131; this is a retrospective descriptive diagnostic, not a new predictive test or independent validation.
+
+### E133 completed location challenge — 2026-09-15
+
+All16 generation attempts passed the unchanged engineering checks,555.46seconds and6,788,562,944 peak MPS bytes. No rejected/repeated/replaced attempt. Prepared32 PNG payloads occupy7,413,473 bytes (16 masks,16 classical controls);32 raw/composite generation PNG payloads occupy15,646,384 bytes. Authentic inputs are reused. macOS AppleDouble sidecars are excluded from image counts. Downloads remain0; these are local research derivatives, not new independent parents.
+
+Frozen E132 heads on the new locations produce original/JPEG75 composite mean pixel AUC0.56581/0.56185, down from0.74224/0.73422 on the exact matched16 original placements. IoU is0.10166/0.09462, down from0.22250/0.20271. The new radial-center baseline is0.44217; fixed heads beat that weak corner ranking but only modestly exceed the constant0.5 baseline. AI-minus-classical aligned AUC contrast remains positive0.18518/0.16855. Thus some edit-related discrimination persists while absolute localization degrades substantially.
+
+Authentic token and score replay errors are both exactly0. Authentic flagged area is unchanged17.11%/17.46%. The measurement does not identify pure causal positional bias because moving the mask also changes edited semantic content and the generated output. It does expose failure under the registered location/content intervention. All maps were locked before mask metrics; scorer took18.20seconds with1,219,198,976 peak MPS bytes. E92 restored exactly. No serving promotion.
+
+## E135 — learn from both registered mask placements (planned 2026-09-15)
+
+Apply a bounded development response to E133: train the same E132384-D frozen-token logistic head with both the original and corner placements, equal weight per parent/placement/condition. Preserve exact E132 source/known-ancestry folds; all variants/placements of a source component stay together. Use both authentic and same-mask classical negatives, the fixed8px pure-patch exclusion, weighted FIT-only normalization, zero-start BCE+0.005||w||², solver guards and0.5 cut. No hyperparameter or threshold search.
+
+Cache only the missing E133 classical/composite patch tokens with the exact E130 adapter; replay unchanged authentic tokens<=1e-5. Reuse the original E130 tokens and authentic entries; duplicate bookkeeping across the two placements does not create independent authentic observations. Only the E129/E13316/16 accepted hard composites enter this scoped TRAIN research. No role changes outside E135, new editor or image download.
+
+Fit eight new fold heads, each excluding all data from its original held-out sensor component. Lock all192 view maps (16 parents x2 placements x3 variants x2 processing conditions) before held-out metrics. Report original/corner separately, authentic/classical false-flag area, full/interior-background AUC and IoU; retain paired E132/E133 frozen-head comparisons and new/rescued parent-level outcomes where applicable. This is an adaptive internal development comparison after seeing E133, not fresh independent validation, and no model is promoted from its outcome.

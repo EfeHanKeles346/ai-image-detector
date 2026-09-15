@@ -9602,3 +9602,49 @@ Frozen retrospective audit SHA256 `685a172b1171345dd24ab2ab7abd195268728c1eb8004
 In E131's full-frame head excluding RR, the1250 clean RR REAL scores have median0.81744, lower quartile0.56913 and upper quartile0.93320;1010 exceed the fixed0.5 cut. This is a broad distribution shift, not merely a handful of outliers. RR AI median is0.99184, with1038/1110 above0.5. Social-Q75 shifts the RR REAL median to0.85479 and produces67 new errors versus18 rescues, for49 net extra false alerts. These are raw scores of a source-excluding diagnostic head, not E92 deployed rates or calibrated probabilities.
 
 For the separate E32/E36 AI component, clean-to-social-Q75 causes298 new misses versus121 rescues (177 net losses); recall drops73.11% to67.04%. This preserves the distinction between source offsets and processing sensitivity. The component uses a different fold head from RR; cross-component score differences cannot by themselves establish a single-model calibration solution or causal feature failure. Retain nested source-separated calibration as a future controlled experiment rather than choosing a cutoff from these observed distributions.
+
+### E133 generation complete
+
+{"contract_sha256": "74c627b17a69a65095b372b368aaf1ed17199532ff9e443d0949bbdee38bc037", "downloads": 0, "full16_engineering_gate_passed": true, "generation_sha256": "c9f75a64948f0364a4e0990cb33d3344997b4c1d6fcba38754ae2dd0c0efd369", "parents": 16, "passed": 16, "peak_mps_bytes": 6788562944, "promotion_allowed": false, "seconds": 555.461868665996, "state": "E133_location_generation_complete", "training_admission": false}
+
+### E133_GENERATION registered-stage execution — 2026-09-15T13:36:04+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E133_LOCALIZATION registered-stage execution — 2026-09-15T13:36:40+00:00
+
+Starting the registered score stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E133 frozen-head location result
+
+{"accepted_composites": 16, "contract_sha256": "74c627b17a69a65095b372b368aaf1ed17199532ff9e443d0949bbdee38bc037", "downloads": 0, "limits": "Consumed sixteen-parent MIDD research with one old editor and known source-excluding heads. New placement changes edited semantic content and diffusion output; not pure causal position attribution or a fully crossed corner experiment. Intended masks are not semantic-change annotations. No fresh-source/editor proof, calibration or serving promotion.", "locked_scores_sha256": "db0cb8362cfd34ee32ab6e81efe31eaf27ae81c257cf48ce4b5c1e736192b79e", "max_authentic_score_error": 0.0, "max_authentic_token_error": 0.0, "measurements_sha256": "6edfdcd3c03b92b7c71dc5d3c708c22da2dc12b4fa7f75819670d534167bca91", "parents": 16, "peak_mps_bytes": 1219198976, "promotion_allowed": false, "rejected_attempts": 0, "seconds": 18.19654425000772, "state": "E133_frozen_head_location_challenge_complete", "summary": {"jpeg75": {"accepted_parents": 16, "ai_composite": {"mean_flagged_area": 0.183349609375, "mean_interior_background_auc": 0.5696380503109616, "mean_iou": 0.09461821008149006, "mean_pixel_auc": 0.5618493555000308, "parents": 16}, "all_parents": 16, "authentic": {"mean_flagged_area": 0.174560546875, "mean_interior_background_auc": null, "mean_iou": 0.0, "mean_pixel_auc": null, "parents": 16}, "classical_edit": {"mean_flagged_area": 0.171142578125, "mean_interior_background_auc": null, "mean_iou": 0.0, "mean_pixel_auc": null, "parents": 16}, "matched_accepted_comparison": {"AI_minus_authentic_aligned_auc": 0.08085072641406385, "AI_minus_classical_aligned_auc": 0.16855089642605717, "constant_auc": 0.5, "new_radial_center_auc": 0.4421728665547357, "old_E132_mean_pixel_auc": 0.7342234512939676, "parents": 16}}, "original": {"accepted_parents": 16, "ai_composite": {"mean_flagged_area": 0.182373046875, "mean_interior_background_auc": 0.5746209190475555, "mean_iou": 0.10165574918839779, "mean_pixel_auc": 0.5658123794602998, "parents": 16}, "all_parents": 16, "authentic": {"mean_flagged_area": 0.171142578125, "mean_interior_background_auc": null, "mean_iou": 0.0, "mean_pixel_auc": null, "parents": 16}, "classical_edit": {"mean_flagged_area": 0.16778564453125, "mean_interior_background_auc": null, "mean_iou": 0.0, "mean_pixel_auc": null, "parents": 16}, "matched_accepted_comparison": {"AI_minus_authentic_aligned_auc": 0.09192518625126159, "AI_minus_classical_aligned_auc": 0.1851799676281684, "constant_auc": 0.5, "new_radial_center_auc": 0.4421728665547357, "old_E132_mean_pixel_auc": 0.7422432027316962, "parents": 16}}}, "training_admission": false}
+
+### E133_LOCALIZATION registered-stage execution — 2026-09-15T13:37:08+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E133 completed location challenge — 2026-09-15
+
+All16 generation attempts passed the unchanged engineering checks,555.46seconds and6,788,562,944 peak MPS bytes. No rejected/repeated/replaced attempt. Prepared32 PNG payloads occupy7,413,473 bytes (16 masks,16 classical controls);32 raw/composite generation PNG payloads occupy15,646,384 bytes. Authentic inputs are reused. macOS AppleDouble sidecars are excluded from image counts. Downloads remain0; these are local research derivatives, not new independent parents.
+
+Frozen E132 heads on the new locations produce original/JPEG75 composite mean pixel AUC0.56581/0.56185, down from0.74224/0.73422 on the exact matched16 original placements. IoU is0.10166/0.09462, down from0.22250/0.20271. The new radial-center baseline is0.44217; fixed heads beat that weak corner ranking but only modestly exceed the constant0.5 baseline. AI-minus-classical aligned AUC contrast remains positive0.18518/0.16855. Thus some edit-related discrimination persists while absolute localization degrades substantially.
+
+Authentic token and score replay errors are both exactly0. Authentic flagged area is unchanged17.11%/17.46%. The measurement does not identify pure causal positional bias because moving the mask also changes edited semantic content and the generated output. It does expose failure under the registered location/content intervention. All maps were locked before mask metrics; scorer took18.20seconds with1,219,198,976 peak MPS bytes. E92 restored exactly. No serving promotion.
+
+## E135 — learn from both registered mask placements (planned 2026-09-15)
+
+Apply a bounded development response to E133: train the same E132384-D frozen-token logistic head with both the original and corner placements, equal weight per parent/placement/condition. Preserve exact E132 source/known-ancestry folds; all variants/placements of a source component stay together. Use both authentic and same-mask classical negatives, the fixed8px pure-patch exclusion, weighted FIT-only normalization, zero-start BCE+0.005||w||², solver guards and0.5 cut. No hyperparameter or threshold search.
+
+Cache only the missing E133 classical/composite patch tokens with the exact E130 adapter; replay unchanged authentic tokens<=1e-5. Reuse the original E130 tokens and authentic entries; duplicate bookkeeping across the two placements does not create independent authentic observations. Only the E129/E13316/16 accepted hard composites enter this scoped TRAIN research. No role changes outside E135, new editor or image download.
+
+Fit eight new fold heads, each excluding all data from its original held-out sensor component. Lock all192 view maps (16 parents x2 placements x3 variants x2 processing conditions) before held-out metrics. Report original/corner separately, authentic/classical false-flag area, full/interior-background AUC and IoU; retain paired E132/E133 frozen-head comparisons and new/rescued parent-level outcomes where applicable. This is an adaptive internal development comparison after seeing E133, not fresh independent validation, and no model is promoted from its outcome.
+
+### E135 registration and validation — 2026-09-15
+
+Before new feature extraction or fitting, E135 froze at contract SHA256 `0e240bbe58c5672b5a1568be315d509c4c49196cb68f0d7d594aa5b65e24c98c`:16 unique parents,32 placement records, the same8 source-excluding folds,192 view maps. New controls explicitly verify identical authentic ancestry across placements, unchanged authentic training-weight mass, separate matched comparisons per placement and cache/resource restoration before fitting. Eleven targeted tests and all1116 Python tests passed. The single warning is the existing upstream Starlette/httpx deprecation. No frozen E132/E133 implementation was modified.
+
+The prior implementation push430d385 passed GitHub CI34975306116, including1112 Python tests and web checks. E135 token caching is now running; results remain unknown at registration. Subsequent metrics will remain adaptive internal development evidence, not independent confirmation.
+
+### E135_CACHE registered-stage execution — 2026-09-15T13:43:55+00:00
+
+Starting the registered cache stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
