@@ -1,0 +1,21 @@
+{
+  "comparison": {
+    "context_passed": 16,
+    "full16_engineering_gate_passed": true,
+    "new_failed_attempts": 0,
+    "previous_passed": 11,
+    "rescued_attempts": 5
+  },
+  "contract_sha256": "15524ea7f66a1e52fd7a539b53f2b218968cf8899d383623aba4b18025a7116a",
+  "detector_scores": 0,
+  "downloads": 0,
+  "limits": "TRAIN research engineering, one old generator and correlated MIDD parents. Resampling and scene context change together. A pass is not semantic-quality, localization-accuracy or independent-OOD evidence; a new spatial-learning contract remains necessary.",
+  "parents": 16,
+  "peak_mps_bytes": 6788562944,
+  "promotion_allowed": false,
+  "report_sha256": "b07aaf1b361c6603ebcee78d3e6054198ab6d6d4f3022deaac94128f1106e76e",
+  "seconds": 458.7882085829042,
+  "spatial_protocol_may_be_registered": true,
+  "state": "E129_context_generation_complete",
+  "training_admission": false
+}

@@ -1,4 +1,4 @@
-"""Run one already registered E130/E131 stage now, with exact E92 restoration.
+"""Run one already registered research stage now, with exact E92 restoration.
 
 This command does not schedule or wait for future work. Upstream lifecycles must
 already be complete; the caller reviews outcomes between runs.
@@ -17,7 +17,15 @@ import run_e124_e125 as lifecycle
 from run_e126_after_training import ready_e92
 
 OPERATIONS={'e130':('experiments.e130_patch_drift_audit','audit'),
-            'e131':('experiments.e131_source_holdout','fit')}
+            'e131':('experiments.e131_source_holdout','fit'),
+            'e132':('experiments.e132_patch_learning','fit')}
+
+
+def patch_learning_ready(root):
+    for name in ('e130_pipeline', 'e131_pipeline'):
+        result=json.loads((root/name/'status.json').read_text())
+        if result.get('state')!='complete' or result.get('E92_restored') is not True:
+            raise RuntimeError('E132 requires completed E130/E131 lifecycles with E92 restored')
 
 
 def upstream_ready(first,second,third):
@@ -45,6 +53,7 @@ def main(operation):
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         upstream_ready(*(json.loads((root/name/'status.json').read_text()) for name in
             ('e124_pipeline','e126_pipeline','e129_pipeline')))
+        if operation=='e132':patch_learning_ready(root)
         module,stage=OPERATIONS[operation]
         importlib.import_module(module).validate()  # Validate frozen evidence before touching the API.
         stopped=False;failure=None;restored=None

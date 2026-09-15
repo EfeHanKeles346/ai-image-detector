@@ -1,0 +1,18 @@
+{
+  "E103_replay_max_error": 0.0,
+  "E43_replay_max_error": 0.0,
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "contract_sha256": "97136ae9bf38be245cada966a5ab0963c38d131cca3f193ee1e943d7c46d736c",
+  "max_center_error": 0.0,
+  "max_repeat_error": 0.0,
+  "metrics_opened": false,
+  "mps_peak_bytes": 2194358272,
+  "raw_sha256": "1d03b78052188d751bfd0f49a0d39265dac7caa0cdf5b11457f6879ec2226936",
+  "scores_sha256": "6c4802cfb8c700963157ceef0daf0dfe9291f951ab966c5f5fdc0aa6219bcb0f",
+  "seconds": 274.2701911670156,
+  "state": "E126_all_passing_branch_scores_locked",
+  "training_allowed": false
+}

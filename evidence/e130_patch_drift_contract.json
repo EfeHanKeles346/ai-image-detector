@@ -1,0 +1,25 @@
+{
+  "accepted_generations": 16,
+  "boundary_width_pixels": 8,
+  "cache": "Retain original patch tokens for each scored view locally, with image/role/condition and code hashes; no automatic later training authorization.",
+  "conditions": [
+    "original",
+    "jpeg75"
+  ],
+  "contract_sha256": "b9eb9ed0e1f1240e5f846cf7deec635b6db57fff48529f6d03e1d6f3a51aea78",
+  "downloads": 0,
+  "geometry": "All512px square inputs resized448 LANCZOS. Existing frozen timm DINOv2-S/14, block11 one-based (index10), final LayerNorm, CLS excluded. 32x32 patch maps repeated16x to original512 geometry.",
+  "guards": "Finite384-D patch grids; repeated original in batch[original,perturbed,original] parity<=1e-5; exact local composite mask/background provenance before metrics. All maps locked before masks enter metrics.",
+  "limits": "Small correlated TRAIN research, one old editor, simple masks, conditional accepted-generation subset. This is an adapted edit-response baseline, not an exact TRAIL reproduction, calibrated AI probability, semantic annotation or independent detector evidence.",
+  "max_seconds": 2400,
+  "method": "Global two-level Haar attenuation alpha.2, one-minus-cosine divided by2, reflect3x3 median. Both labels/controls and original/JPEG75 conditions identical. No per-image normalization, threshold search or oracle mask use.",
+  "metrics": "Per-parent regional flags and full/interior-background ranking; negatives always AI-negative. Paired original/edited spatial-ranking contrast plus matched Haar pixel-RMS, radial-center and constant ranking baselines; no pooled-pixel independent intervals. Original and JPEG75 separately. Pixel-RMS has no transferred classification threshold.",
+  "mps_limit_bytes": 6442450944,
+  "parents": 16,
+  "population": "All16 authentic and classical controls. Composite scoring only for existing E129 accepted generations, with every rejected attempt retained in counts. No refill or training admission.",
+  "promotion_allowed": false,
+  "state": "E130_mask_blind_patch_drift_audit_registered",
+  "threshold": 0.0012990082577457578,
+  "threshold_status": "Half of external TRAIL DINOv3-7B CocoGlide cut; NOT calibrated or assumed transferable to our smaller DINOv2 model. Fixed diagnostic only.",
+  "training_admission": false
+}

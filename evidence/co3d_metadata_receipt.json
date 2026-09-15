@@ -1,0 +1,22 @@
+{
+  "revision": "eb51d7583c56ff23dc918d9deafee50f4d8178c3",
+  "files": {
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/co3d/eb51d7583c56ff23dc918d9deafee50f4d8178c3/LICENSE",
+      "bytes": 19332,
+      "sha256": "1d8ca66080a2701508a70be4ddad4be28c509bcc3397a682fb8edf767fdd7a00"
+    },
+    "README.md": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/co3d/eb51d7583c56ff23dc918d9deafee50f4d8178c3/README.md",
+      "bytes": 11584,
+      "sha256": "af720c43534f541cb1bd8208cc4933cc4f0446fbf89548064a421167f4b1a6f8"
+    },
+    "co3d/links.json": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/co3d/eb51d7583c56ff23dc918d9deafee50f4d8178c3/co3d/links.json",
+      "bytes": 34630,
+      "sha256": "3ed4997dc39ac01a20eb97eef03bc15fe49cd9895b8e1b0cad8aa4f7de9ccf97"
+    }
+  },
+  "images_downloaded": 0,
+  "admission": false
+}

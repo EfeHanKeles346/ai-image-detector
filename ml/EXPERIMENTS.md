@@ -8363,3 +8363,129 @@ E131 is now separately frozen before fitting at contract SHA256 `6db23ea917a7428
 ### E130 pre-registration baseline completion — 2026-09-15
 
 Before E130 freeze or any real-image localization score, added matched Haar pixel-response RMS, radial-center and constant ranking controls. Keep the identical448px input/32x32 grid and reflect3x3 median for the pixel-response control, then compare on exactly the same accepted parents/masks. Pixel RMS receives no transferred classification threshold. These controls test whether a drift map only reflects image texture or a location prior. All authentic/classical negatives and fixed drift-cut diagnostics remain; nothing is selected from scores. Twenty targeted numerical/encoder tests passed. The prior synthetic CPU smoke remains a technical check only. E131's already frozen inputs are unchanged.
+
+### E124/E125 unattended execution — 2026-09-14T22:59:13+00:00
+
+E125 paired TRAIN fits completed. {"center_control": {"AI_caught_by_condition": {"assigned_transport": 4595, "clean": 4595, "q75": 4595, "social_q75": 4595}, "dev_scoring_permitted": true, "false_REAL_alerts_by_condition": {"assigned_transport": 0, "clean": 0, "q75": 0, "social_q75": 0}, "solver_success": true}, "full_frame": {"AI_caught_by_condition": {"assigned_transport": 4595, "clean": 4595, "q75": 4595, "social_q75": 4595}, "dev_scoring_permitted": true, "false_REAL_alerts_by_condition": {"assigned_transport": 0, "clean": 0, "q75": 0, "social_q75": 0}, "solver_success": true}} These are TRAIN guards only; serving/promotion and independent evaluation remain unchanged. Full reports are in evidence/e125_fullframe_fit.json.
+
+### E124/E125 unattended execution — 2026-09-14T22:59:31+00:00
+
+Pipeline final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E126 dependent execution — 2026-09-14T23:00:11+00:00
+
+Started separately registered E126 consumed-DEV scoring for center_control, full_frame. Frozen640-view comparison; no training or final/gallery access.
+
+### E125 paired TRAIN completion — 2026-09-15
+
+Both center_control and full_frame pass complete TRAIN, source/sensor, retention and runtime guards. Each catches4595/4595 AI and falsely flags0/7930 REAL in every one of four conditions. Center/full runs took211.60/206.25seconds. Saved batch8 maximum score errors2.383225e-7/2.383701e-7 stay below the frozen1e-6 tolerance, with zero decision changes at either cutoff. Candidate SHA256 values are04b56392e57a320c0a1aae2bc4ab939a1459c042159f2aa2b93a51ceaecf69bf andb8d7d38950e47aca3c05ba7d51dd71bc1a4aa50fa5225bcd32d25b17bb0412aa respectively.
+
+E92 was restored successfully. E126 has started its separately gated640-view consumed-development procedure. No DEV outcome or serving promotion is implied yet. Full result: evidence/e125_context_fit.json. E131 was frozen before this completion and remains pending resource release.
+
+### E126 automatic consumed-DEV result
+
+{"center_control": {"by_condition": {"publisher_original": {"AI_caught": 159, "REAL_false_alerts": 0, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": false, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}, "social_q75": {"AI_caught": 159, "REAL_false_alerts": 12, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": true, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}}, "passes_consumed_DEV_screen": false}, "full_frame": {"by_condition": {"publisher_original": {"AI_caught": 159, "REAL_false_alerts": 0, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": false, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}, "social_q75": {"AI_caught": 159, "REAL_false_alerts": 12, "checks": {"twenty_numeric_gates_condition_passed": true, "zero_lost_E103_AI": true, "zero_lost_E43_AI": true, "zero_lost_E92_AI": true, "zero_new_E103_REAL_errors": true, "zero_new_E92_REAL_errors": true}}}, "passes_consumed_DEV_screen": false}}
+
+Full report: evidence/e126_fullframe_development.json. This is consumed development; no independent proof or serving change. Only passing branches may proceed to a separately registered gallery regression. Failed branches require a new hypothesis, not relaxed gates.
+
+### E126 dependent execution — 2026-09-14T23:05:34+00:00
+
+E126 finalizer E92 restoration ready=True.
+
+### E129 one-shot execution — 2026-09-14T23:05:42+00:00
+
+Starting registered same16-parent E129 resized-context inpainting ablation after Model1 completion. No detector fitting or evaluation data. E92 is temporarily stopped for GPU memory.
+
+### E129 fixed input-context replay completed
+
+{"comparison": {"context_passed": 16, "full16_engineering_gate_passed": true, "new_failed_attempts": 0, "previous_passed": 11, "rescued_attempts": 5}, "contract_sha256": "15524ea7f66a1e52fd7a539b53f2b218968cf8899d383623aba4b18025a7116a", "detector_scores": 0, "downloads": 0, "limits": "TRAIN research engineering, one old generator and correlated MIDD parents. Resampling and scene context change together. A pass is not semantic-quality, localization-accuracy or independent-OOD evidence; a new spatial-learning contract remains necessary.", "parents": 16, "peak_mps_bytes": 6788562944, "promotion_allowed": false, "report_sha256": "b07aaf1b361c6603ebcee78d3e6054198ab6d6d4f3022deaac94128f1106e76e", "seconds": 458.7882085829042, "spatial_protocol_may_be_registered": true, "state": "E129_context_generation_complete", "training_admission": false}
+
+This is paired generation engineering, not detector accuracy. Preserve E122 and all failures; no automatic training/serving admission.
+
+### E129 one-shot execution — 2026-09-14T23:14:08+00:00
+
+E129 pipeline final state: {"E92_restored_after_pilot": true, "failure": null, "state": "complete"}
+
+### E130 registered-stage execution — 2026-09-15T10:43:08+00:00
+
+Starting the registered audit stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E130 patch-drift diagnostic completed
+
+{"accepted_composites": 16, "contract_sha256": "b9eb9ed0e1f1240e5f846cf7deec635b6db57fff48529f6d03e1d6f3a51aea78", "excluded_generations": 0, "limits": "Small correlated TRAIN research, one old editor, simple masks, conditional accepted-generation subset. This is an adapted edit-response baseline, not an exact TRAIL reproduction, calibrated AI probability, semantic annotation or independent detector evidence.", "max_duplicate_token_error": 0.0, "measurements_sha256": "c235cb22f5000405974063b951bb1c7a93f87d435acb3d455332d19bb1776bb0", "parents": 16, "peak_mps_bytes": 1219198976, "promotion_allowed": false, "scoring_sha256": "0b54f326768b00ce90029c2d87ef088acdd4a42825bf9d9edf796049c95616df", "seconds": 25.685287708998658, "state": "E130_patch_drift_audit_complete", "summary": {"jpeg75": {"accepted_parent_ranking_baselines": {"constant_auc": 0.5, "interpretation": "Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.", "parents": 16, "pixel_response_auc": 0.5291163098010457, "radial_center_auc": 0.7975643577862963}, "accepted_parent_spatial_contrast": {"AI_minus_authentic_auc": 0.12430492180855968, "AI_minus_classical_edit_auc": -0.18437926993454085, "interpretation": "Within-image aligned-region ranking differences, not REAL-versus-AI classification accuracy.", "parents": 16}, "ai_composite": {"metrics": {"background_flagged_fraction": {"available_parents": 16, "mean": 0.459066698329999}, "flagged_area_fraction": {"available_parents": 16, "mean": 0.50054931640625}, "interior_background_auc": {"available_parents": 16, "mean": 0.7056244594884324}, "interior_flagged_fraction": {"available_parents": 16, "mean": 0.7439364244365543}, "pixel_auc": {"available_parents": 16, "mean": 0.6973202554169273}}, "parents": 16}, "authentic": {"metrics": {"background_flagged_fraction": {"available_parents": 16, "mean": 0.4412181806683595}, "flagged_area_fraction": {"available_parents": 16, "mean": 0.45697021484375}, "interior_background_auc": {"available_parents": 0, "mean": null}, "interior_flagged_fraction": {"available_parents": 16, "mean": 0.5513152973102817}, "pixel_auc": {"available_parents": 0, "mean": null}}, "parents": 16}, "classical_edit": {"metrics": {"background_flagged_fraction": {"available_parents": 16, "mean": 0.48944667454250673}, "flagged_area_fraction": {"available_parents": 16, "mean": 0.5535888671875}, "interior_background_auc": {"available_parents": 0, "mean": null}, "interior_flagged_fraction": {"available_parents": 16, "mean": 0.925899659695963}, "pixel_auc": {"available_parents": 0, "mean": null}}, "parents": 16}}, "original": {"accepted_parent_ranking_baselines": {"constant_auc": 0.5, "interpretation": "Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.", "parents": 16, "pixel_response_auc": 0.47224683746742646, "radial_center_auc": 0.7975643577862963}, "accepted_parent_spatial_contrast": {"AI_minus_authentic_auc": 0.1468308237980383, "AI_minus_classical_edit_auc": -0.20524348577118698, "interpretation": "Within-image aligned-region ranking differences, not REAL-versus-AI classification accuracy.", "parents": 16}, "ai_composite": {"metrics": {"background_flagged_fraction": {"available_parents": 16, "mean": 0.5346556152692453}, "flagged_area_fraction": {"available_parents": 16, "mean": 0.57806396484375}, "interior_background_auc": {"available_parents": 16, "mean": 0.7321641102415646}, "interior_flagged_fraction": {"available_parents": 16, "mean": 0.8157760800408127}, "pixel_auc": {"available_parents": 16, "mean": 0.7259450807081305}}, "parents": 16}, "authentic": {"metrics": {"background_flagged_fraction": {"available_parents": 16, "mean": 0.5161144963519939}, "flagged_area_fraction": {"available_parents": 16, "mean": 0.53826904296875}, "interior_background_auc": {"available_parents": 0, "mean": null}, "interior_flagged_fraction": {"available_parents": 16, "mean": 0.6631707335390167}, "pixel_auc": {"available_parents": 0, "mean": null}}, "parents": 16}, "classical_edit": {"metrics": {"background_flagged_fraction": {"available_parents": 16, "mean": 0.6090485126157333}, "flagged_area_fraction": {"available_parents": 16, "mean": 0.66693115234375}, "interior_background_auc": {"available_parents": 0, "mean": null}, "interior_flagged_fraction": {"available_parents": 16, "mean": 0.991369405449905}, "pixel_auc": {"available_parents": 0, "mean": null}}, "parents": 16}}}, "training_admission": false}
+
+No trained localizer, calibrated probability, independent proof or training admission is claimed.
+
+### Continuation checkpoint and next diagnostic — 2026-09-15
+
+Reviewed the completed E126/E129 receipts after the user requested continuation. E126's center and full-frame branches both retain the same binary consumed-DEV counts: original REAL false alarms0/160 and AI159/160; social-Q75 REAL false alarms12/160 and AI159/160. Both pass the20 numeric checks but fail the original-image E43 individual-AI retention guard. Neither branch proceeds to gallery regression or serving. E129 improves the fixed generation population from11/16 to16/16, rescuing five attempts with no new failures,458.79seconds and6,788,562,944 peak MPS bytes. This is input/generation engineering, not detector accuracy or semantic-quality certification.
+
+E130 is now frozen against the complete16-case E129 receipt and running its prespecified mask-blind localization/control audit. E131 remains frozen and will run after E130 releases shared memory. The prior automatic E125 journal's filename evidence/e125_fullframe_fit.json was incorrect; the actual report is evidence/e125_context_fit.json. Preserve that original journal and this correction.
+
+The previous overnight window has elapsed. Process completion timestamps establish execution, not nine hours of continuous agent reasoning. Continue from existing evidence rather than restart experiments.
+
+### E130 registered-stage execution — 2026-09-15T10:43:53+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E131 registered-stage execution — 2026-09-15T10:44:14+00:00
+
+Starting the registered fit stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E131 internal source-holdout result
+
+{"contract_sha256": "6db23ea917a7428d015e0453efe99b16bbcbe3fa2822e6b540e8c31b645ea421", "corpus_level_overlap_limit": "RR paper sections3.2.1-3.2.2 explicitly name FLUX, DALL-E and SD families, COCO/CC3M prompts and Chameleon. Local RR rows do not map each file to those origins. CommunityForensics also mixes generators. The10 components preserve declared row/prompt links but do not isolate all corpus-level possible families; this is publisher-group transfer only, not unseen-generator evidence.", "downloads": 0, "fold_counts": [{"0": 2467, "1": 2916}, {"0": 2875, "1": 1110}, {"0": 2588, "1": 569}], "generator_family_holdout_supported": false, "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence.", "locked_scores_sha256": "e3dbcbc1fa28d26e58e48805c1d97eb6575b60462b7d3894b8ec2a9d86b45121", "new_pixels_read": 0, "paired_changes_fullframe_vs_center": {"assigned_transport": {"0": {"new_errors": 84, "rescued_errors": 78}, "1": {"new_errors": 67, "rescued_errors": 152}}, "clean": {"0": {"new_errors": 79, "rescued_errors": 58}, "1": {"new_errors": 55, "rescued_errors": 116}}, "q75": {"0": {"new_errors": 77, "rescued_errors": 46}, "1": {"new_errors": 71, "rescued_errors": 162}}, "social_q75": {"0": {"new_errors": 81, "rescued_errors": 66}, "1": {"new_errors": 68, "rescued_errors": 152}}}, "parents": 12525, "promotion_allowed": false, "seconds": 42.25651224993635, "source_components": 10, "state": "E131_paired_internal_source_holdout_complete"}
+
+Full component/condition metrics: evidence/e131_source_holdout.json. This is consumed TRAIN analysis using separately fitted fold heads, not an independent final or serving candidate.
+
+## E132 — paired patch learning with source exclusion (planned 2026-09-15)
+
+E130 completed in25.69seconds with zero duplicate-token error. Original/JPEG75 mean composite pixel AUC is0.72595/0.69732, below the same-mask radial-center baseline0.79756. The transferred diagnostic cut falsely flags53.83%/45.70% of authentic area and66.69%/55.36% of classical-edit area. AI-versus-classical aligned-region AUC contrasts are negative (-0.20524/-0.18438). Thus this drift map cannot be presented as an AI-specific detector. No threshold sweep or deployment follows.
+
+Next implement a separately registered E132 internal learning diagnostic using the existing E130 original patch-token caches (384 dimensions,32x32). Admit only the fixed16 E129 hard composites and their16 authentic/16 same-mask Gaussian-blur controls to this scoped TRAIN research experiment; global dataset roles remain unchanged. Their16/16 engineering gate passes. A contact-sheet inspection of all16 pairs found scene-preserving local reconstructions and some visible object/detail changes, not a semantic-mask annotation or a guarantee of realistic edits. Keep all16; do not cherry-pick attractive outputs.
+
+Use leave-one-declared-sensor-group-out folds, joining any known scene/source-body ancestry across sensors first. Fit normalization and a zero-initialized regularized logistic patch head solely on the remaining parents. No position, true-mask, difference-to-original or drift map enters inference. Train on fully interior AI patches as positives and equal-mass authentic, classical-edit and composite-background negatives; discard composite boundary patches using the fixed8px band. Both original and JPEG75 views of a parent stay together. Fix BCE+0.005||w||², zero-start L-BFGS and0.5 diagnostic cut before fitting, without held-out tuning. Reuse the tested finite/convergence guards.
+
+Save all fold heads and lock every held-out map before metrics. Report authentic/classical false-flag area, full and interior/background localization, per-parent paired contrast and the same E130/radial/constant baselines, including every parent and condition. This compares internal held-out sensors within one small, already inspected MIDD research population and one SD1.5 editor; it cannot demonstrate unseen-editor, new-dataset or universal performance. Scores are uncalibrated. No final full-data head, web heatmap or deployment is authorized by this diagnostic's outcome.
+
+### E131 registered-stage execution — 2026-09-15T10:45:18+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E131 source-transfer interpretation — 2026-09-15
+
+E131 completed all six fresh-head fits in42.26seconds. On clean held-out publisher groups, center/full-frame AUC is0.91815/0.92284, AI recall80.04%/81.37%, and REAL FPR14.74%/15.01% at the preregistered0.5 diagnostic cut. Social-Q75 AUC is0.89184/0.89889, AI recall75.91%/77.74%, and REAL FPR16.20%/16.39%. The full-frame input slightly improves aggregate AI recall but also creates new REAL and AI errors; it is not a dominance or promotion result.
+
+The largest clean REAL failure is the excluded RR group:997/1250 (79.76%) false alarms for center and1010/1250 (80.80%) for full-frame. The declared E32/E36 AI component's recall is70.85%/73.11% clean and64.09%/67.04% social-Q75. MIDD has0/767 REAL flags in both clean branches. These are separately refitted simple heads using different fold models, not measured deployed-E92 rates. The large group variation supports investigating source/content/processing shortcuts and calibration transfer. It does not identify a causal shortcut, prove bad labels, or establish unseen-generator independence. No threshold tuning, reserve opening, gallery scoring or serving change follows.
+
+E132 implements the previously described negative-control patch-learning test. Targeted checks cover transitive source/scene/body grouping, boundary-cell exclusion, exact class/parent/condition/negative-variant weight mass, FIT-only normalization and a real small end-to-end logistic fit. The end-to-end check ensures every held-out map is locked before metrics and refuses rerunning a started experiment. Runtime restoration now supports E132 only after E130/E131 complete with exact E92 restored.
+
+### E132 registered-stage execution — 2026-09-15T10:51:22+00:00
+
+Starting the registered fit stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E132 internal patch-learning result
+
+{"contract_sha256": "c5f07c1e38b8b932c3e63b1ff16ce3ffbb9d529d5013a348d4a8af85dd7a4363", "downloads": 0, "folds": 8, "limits": "Sixteen inspected MIDD parents, one SD1.5 editor, hard composites, simple masks and two views. Global token context may carry synthetic cues into background. Intended generation masks are not semantic-change annotations. Unknown scene ancestry and encoder pretraining remain. Fold heads are not one deployable model; raw scores are not calibrated probabilities.", "locked_scores_sha256": "65329652dca7ee42648170b86788f02769bd6d0ef793d8d38398b113684182aa", "measurements_sha256": "18bdb2a002574c21c5da148d5d38d4a0d9a54403ed063b75a9ad11f1e3955f46", "parents": 16, "promotion_allowed": false, "seconds": 25.856737582944334, "state": "E132_internal_patch_learning_complete", "summary": {"jpeg75": {"AI_minus_authentic_aligned_auc": 0.07112007203130111, "AI_minus_classical_aligned_auc": 0.13904100934913213, "ai_composite": {"mean_flagged_area": 0.1927490234375, "mean_interior_background_auc": 0.7491296090659942, "mean_iou": 0.20270705884133267, "mean_pixel_auc": 0.7342234512939676}, "authentic": {"mean_flagged_area": 0.174560546875, "mean_interior_background_auc": null, "mean_iou": 0.0, "mean_pixel_auc": null}, "classical_edit": {"mean_flagged_area": 0.17108154296875, "mean_interior_background_auc": null, "mean_iou": 0.0, "mean_pixel_auc": null}, "reference_rankings": {"E130_drift_mean_pixel_auc": 0.6973202554169273, "constant_auc": 0.5, "interpretation": "Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.", "parents": 16, "pixel_response_auc": 0.5291163098010457, "radial_center_auc": 0.7975643577862963}}, "original": {"AI_minus_authentic_aligned_auc": 0.07381122188737699, "AI_minus_classical_aligned_auc": 0.17412843479263335, "ai_composite": {"mean_flagged_area": 0.1910400390625, "mean_interior_background_auc": 0.7570250862785984, "mean_iou": 0.22249568870308084, "mean_pixel_auc": 0.7422432027316962}, "authentic": {"mean_flagged_area": 0.171142578125, "mean_interior_background_auc": null, "mean_iou": 0.0, "mean_pixel_auc": null}, "classical_edit": {"mean_flagged_area": 0.16009521484375, "mean_interior_background_auc": null, "mean_iou": 0.0, "mean_pixel_auc": null}, "reference_rankings": {"E130_drift_mean_pixel_auc": 0.7259450807081305, "constant_auc": 0.5, "interpretation": "Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.", "parents": 16, "pixel_response_auc": 0.47224683746742646, "radial_center_auc": 0.7975643577862963}}}}
+
+No serving change, calibrated probability or independent generalization claim.
+
+### E132 registration and validation — 2026-09-15
+
+Frozen E132 before fitting at contract SHA256 `c5f07c1e38b8b932c3e63b1ff16ce3ffbb9d529d5013a348d4a8af85dd7a4363`:16 parents,8 declared sensor/known-ancestry components. The common16-set mask audit found usable pure interior and background patches for every parent. Runtime dependency versions, source helpers and complete inherited evidence are bound. Only this scoped patch-learning experiment admits the paired research examples; no global role or independent-final claim changes.
+
+All1079 Python tests passed (one upstream Starlette/httpx deprecation warning); compileall succeeded. The small end-to-end test performs actual convex fitting and confirms held-out source exclusion, locked predictions before metrics, and fail-closed reruns. E132 is executing with exact E92 restoration in its finalizer; no new data download is required.
+
+### E132 registered-stage execution — 2026-09-15T10:52:08+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+### E132 interpretation and next steps — 2026-09-15
+
+All eight sensor/known-ancestry fold heads completed in25.86seconds; every source pair was scored only by a head that excluded its component. Original/JPEG75 mean composite pixel AUC is0.74224/0.73422 (E130:0.72595/0.69732), interior/background AUC0.75703/0.74913, and IoU0.22250/0.20271. AI-minus-classical aligned-region AUC contrast is now positive0.17413/0.13904 (E130 negative). This supports a limited learned distinction between these synthetic composites and Gaussian blur in this pilot.
+
+Authentic flagged area at the E1320.5 diagnostic cut is17.11%/17.46%, and classical-edit flagged area16.01%/17.11%. Both remain far too large to present as a reliable AI heatmap. These cut-specific false-area rates cannot be compared as matched-operating-point improvement over E130: its external drift cut and positive coverage differ. The threshold-free composite ranking remains below the radial-center baseline0.79756 in both conditions. The pilot has not defeated a location prior or demonstrated robust localization. No full-data final head, gallery score, web change or deployment follows; exact E92 is restored.
+
+Next Model2 mechanism test: pre-register masks with matched area but varied location/shape independent of image content, including off-center edits; keep authentic and same-mask classical controls. Hold complete source/known-ancestry groups out and compare frozen E132 fold heads before any retraining. Record generator/checker failures without replacements, and separate interior from boundary success. Do not infer causal center bias merely from the present baseline gap. A second editor and independent source population are required later for editor/source transfer evidence. The present16-set SD1.5/MIDD pilot cannot provide that proof by further threshold tuning.
+
+Next Model1 investigation: use the locked E131 training-source predictions to characterize publisher/content/processing differences and per-source score shifts before choosing another representation or grouped calibration experiment. The excluded RR error rate is a diagnostic, not permission to tune on consumed DEV or protected reserves. Any calibration experiment needs a nested source split, retaining outer held-out sources untouched by normalization, fitting and cutoff selection. Preserve individual AI non-regression as well as REAL errors; do not accept a higher aggregate AUC as a replacement for those safeguards.

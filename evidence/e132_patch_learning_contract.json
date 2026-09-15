@@ -1,0 +1,46 @@
+{
+  "conditions": [
+    "original",
+    "jpeg75"
+  ],
+  "contract_sha256": "c5f07c1e38b8b932c3e63b1ff16ce3ffbb9d529d5013a348d4a8af85dd7a4363",
+  "diagnostic_cut": 0.5,
+  "downloads": 0,
+  "fold_count": 8,
+  "folds": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    5,
+    5,
+    6,
+    6,
+    7,
+    7
+  ],
+  "limits": "Sixteen inspected MIDD parents, one SD1.5 editor, hard composites, simple masks and two views. Global token context may carry synthetic cues into background. Intended generation masks are not semantic-change annotations. Unknown scene ancestry and encoder pretraining remain. Fold heads are not one deployable model; raw scores are not calibrated probabilities.",
+  "max_seconds": 3600,
+  "metrics": "Lock all OOF maps before metrics. Mean per-parent full/interior-background AUC, IoU and negative flagged area at.5. Paired AI-authentic/classical aligned AUC contrasts and fixed E130/radial/constant comparisons. No independent pixel intervals or tuning.",
+  "objective": "Unit weight: half AI interior, one sixth each composite background/authentic/classical; equal parent and condition within each. Zero-start BCE + .005||w||^2; fixed tested L-BFGS-B500/ftol1e-12/gtol1e-7, final gradient<=1e-5.",
+  "parents": 16,
+  "promotion_allowed": false,
+  "representation": "Frozen E130 original384-D tokens; no positional coordinates, drift, masks or reference image enter inference. FIT-only weighted mean/std; no PCA.",
+  "runtime_versions": {
+    "Pillow": "12.3.0",
+    "numpy": "2.5.1",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0",
+    "threadpoolctl": "3.6.0"
+  },
+  "scope_admission": "Only these16 paired sets may be used in E132 TRAIN research. Global roles unchanged; no final full-data head.",
+  "split": "Leave one declared sensor component out, joining known scene/body ancestry. Both conditions and all variants stay with parent. Already consumed research population, not fresh validation.",
+  "state": "E132_paired_patch_learning_registered",
+  "targets": "Pure16px cells wholly inside fixed8px-eroded mask positive; pure exterior background negative. Other composite cells excluded from fitting; all cells scored. Authentic and classical controls all AI-negative."
+}

@@ -1,0 +1,197 @@
+{
+  "accepted_composites": 16,
+  "contract_sha256": "b9eb9ed0e1f1240e5f846cf7deec635b6db57fff48529f6d03e1d6f3a51aea78",
+  "excluded_generations": 0,
+  "limits": "Small correlated TRAIN research, one old editor, simple masks, conditional accepted-generation subset. This is an adapted edit-response baseline, not an exact TRAIL reproduction, calibrated AI probability, semantic annotation or independent detector evidence.",
+  "max_duplicate_token_error": 0.0,
+  "measurements_sha256": "c235cb22f5000405974063b951bb1c7a93f87d435acb3d455332d19bb1776bb0",
+  "parents": 16,
+  "peak_mps_bytes": 1219198976,
+  "promotion_allowed": false,
+  "scoring_sha256": "0b54f326768b00ce90029c2d87ef088acdd4a42825bf9d9edf796049c95616df",
+  "seconds": 25.685287708998658,
+  "state": "E130_patch_drift_audit_complete",
+  "summary": {
+    "jpeg75": {
+      "accepted_parent_ranking_baselines": {
+        "constant_auc": 0.5,
+        "interpretation": "Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.",
+        "parents": 16,
+        "pixel_response_auc": 0.5291163098010457,
+        "radial_center_auc": 0.7975643577862963
+      },
+      "accepted_parent_spatial_contrast": {
+        "AI_minus_authentic_auc": 0.12430492180855968,
+        "AI_minus_classical_edit_auc": -0.18437926993454085,
+        "interpretation": "Within-image aligned-region ranking differences, not REAL-versus-AI classification accuracy.",
+        "parents": 16
+      },
+      "ai_composite": {
+        "metrics": {
+          "background_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.459066698329999
+          },
+          "flagged_area_fraction": {
+            "available_parents": 16,
+            "mean": 0.50054931640625
+          },
+          "interior_background_auc": {
+            "available_parents": 16,
+            "mean": 0.7056244594884324
+          },
+          "interior_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.7439364244365543
+          },
+          "pixel_auc": {
+            "available_parents": 16,
+            "mean": 0.6973202554169273
+          }
+        },
+        "parents": 16
+      },
+      "authentic": {
+        "metrics": {
+          "background_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.4412181806683595
+          },
+          "flagged_area_fraction": {
+            "available_parents": 16,
+            "mean": 0.45697021484375
+          },
+          "interior_background_auc": {
+            "available_parents": 0,
+            "mean": null
+          },
+          "interior_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.5513152973102817
+          },
+          "pixel_auc": {
+            "available_parents": 0,
+            "mean": null
+          }
+        },
+        "parents": 16
+      },
+      "classical_edit": {
+        "metrics": {
+          "background_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.48944667454250673
+          },
+          "flagged_area_fraction": {
+            "available_parents": 16,
+            "mean": 0.5535888671875
+          },
+          "interior_background_auc": {
+            "available_parents": 0,
+            "mean": null
+          },
+          "interior_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.925899659695963
+          },
+          "pixel_auc": {
+            "available_parents": 0,
+            "mean": null
+          }
+        },
+        "parents": 16
+      }
+    },
+    "original": {
+      "accepted_parent_ranking_baselines": {
+        "constant_auc": 0.5,
+        "interpretation": "Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.",
+        "parents": 16,
+        "pixel_response_auc": 0.47224683746742646,
+        "radial_center_auc": 0.7975643577862963
+      },
+      "accepted_parent_spatial_contrast": {
+        "AI_minus_authentic_auc": 0.1468308237980383,
+        "AI_minus_classical_edit_auc": -0.20524348577118698,
+        "interpretation": "Within-image aligned-region ranking differences, not REAL-versus-AI classification accuracy.",
+        "parents": 16
+      },
+      "ai_composite": {
+        "metrics": {
+          "background_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.5346556152692453
+          },
+          "flagged_area_fraction": {
+            "available_parents": 16,
+            "mean": 0.57806396484375
+          },
+          "interior_background_auc": {
+            "available_parents": 16,
+            "mean": 0.7321641102415646
+          },
+          "interior_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.8157760800408127
+          },
+          "pixel_auc": {
+            "available_parents": 16,
+            "mean": 0.7259450807081305
+          }
+        },
+        "parents": 16
+      },
+      "authentic": {
+        "metrics": {
+          "background_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.5161144963519939
+          },
+          "flagged_area_fraction": {
+            "available_parents": 16,
+            "mean": 0.53826904296875
+          },
+          "interior_background_auc": {
+            "available_parents": 0,
+            "mean": null
+          },
+          "interior_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.6631707335390167
+          },
+          "pixel_auc": {
+            "available_parents": 0,
+            "mean": null
+          }
+        },
+        "parents": 16
+      },
+      "classical_edit": {
+        "metrics": {
+          "background_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.6090485126157333
+          },
+          "flagged_area_fraction": {
+            "available_parents": 16,
+            "mean": 0.66693115234375
+          },
+          "interior_background_auc": {
+            "available_parents": 0,
+            "mean": null
+          },
+          "interior_flagged_fraction": {
+            "available_parents": 16,
+            "mean": 0.991369405449905
+          },
+          "pixel_auc": {
+            "available_parents": 0,
+            "mean": null
+          }
+        },
+        "parents": 16
+      }
+    }
+  },
+  "training_admission": false
+}

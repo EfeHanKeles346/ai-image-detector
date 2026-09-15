@@ -1,0 +1,74 @@
+{
+  "contract_sha256": "c5f07c1e38b8b932c3e63b1ff16ce3ffbb9d529d5013a348d4a8af85dd7a4363",
+  "downloads": 0,
+  "folds": 8,
+  "limits": "Sixteen inspected MIDD parents, one SD1.5 editor, hard composites, simple masks and two views. Global token context may carry synthetic cues into background. Intended generation masks are not semantic-change annotations. Unknown scene ancestry and encoder pretraining remain. Fold heads are not one deployable model; raw scores are not calibrated probabilities.",
+  "locked_scores_sha256": "65329652dca7ee42648170b86788f02769bd6d0ef793d8d38398b113684182aa",
+  "measurements_sha256": "18bdb2a002574c21c5da148d5d38d4a0d9a54403ed063b75a9ad11f1e3955f46",
+  "parents": 16,
+  "promotion_allowed": false,
+  "seconds": 25.856737582944334,
+  "state": "E132_internal_patch_learning_complete",
+  "summary": {
+    "jpeg75": {
+      "AI_minus_authentic_aligned_auc": 0.07112007203130111,
+      "AI_minus_classical_aligned_auc": 0.13904100934913213,
+      "ai_composite": {
+        "mean_flagged_area": 0.1927490234375,
+        "mean_interior_background_auc": 0.7491296090659942,
+        "mean_iou": 0.20270705884133267,
+        "mean_pixel_auc": 0.7342234512939676
+      },
+      "authentic": {
+        "mean_flagged_area": 0.174560546875,
+        "mean_interior_background_auc": null,
+        "mean_iou": 0.0,
+        "mean_pixel_auc": null
+      },
+      "classical_edit": {
+        "mean_flagged_area": 0.17108154296875,
+        "mean_interior_background_auc": null,
+        "mean_iou": 0.0,
+        "mean_pixel_auc": null
+      },
+      "reference_rankings": {
+        "E130_drift_mean_pixel_auc": 0.6973202554169273,
+        "constant_auc": 0.5,
+        "interpretation": "Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.",
+        "parents": 16,
+        "pixel_response_auc": 0.5291163098010457,
+        "radial_center_auc": 0.7975643577862963
+      }
+    },
+    "original": {
+      "AI_minus_authentic_aligned_auc": 0.07381122188737699,
+      "AI_minus_classical_aligned_auc": 0.17412843479263335,
+      "ai_composite": {
+        "mean_flagged_area": 0.1910400390625,
+        "mean_interior_background_auc": 0.7570250862785984,
+        "mean_iou": 0.22249568870308084,
+        "mean_pixel_auc": 0.7422432027316962
+      },
+      "authentic": {
+        "mean_flagged_area": 0.171142578125,
+        "mean_interior_background_auc": null,
+        "mean_iou": 0.0,
+        "mean_pixel_auc": null
+      },
+      "classical_edit": {
+        "mean_flagged_area": 0.16009521484375,
+        "mean_interior_background_auc": null,
+        "mean_iou": 0.0,
+        "mean_pixel_auc": null
+      },
+      "reference_rankings": {
+        "E130_drift_mean_pixel_auc": 0.7259450807081305,
+        "constant_auc": 0.5,
+        "interpretation": "Same accepted parents/masks. Pixel-change and location controls are rankings, not calibrated AI detectors.",
+        "parents": 16,
+        "pixel_response_auc": 0.47224683746742646,
+        "radial_center_auc": 0.7975643577862963
+      }
+    }
+  }
+}
