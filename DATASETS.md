@@ -3137,3 +3137,16 @@ Authentic falsely flagged area rises17.11%->25.74% original and17.46%->26.61% JP
 Next investigate two mechanisms separately: richer location-independent low-level/residual features with exactly matched classical and authentic controls; and a nested source-separated calibration diagnostic to determine whether score offsets can be corrected without destroying localization. The present experiment does not prove that either will work or that the encoder alone caused the failure. Keep the current folds, previous failures and per-placement reports; any new experiment must freeze its features, fitting population and evaluation before scoring. More independent parents and a second editor remain necessary for transfer evidence; repeated tuning on this small pilot cannot supply it. Do not promote E135 or alter the demo's score/decision policy.
 
 Implementation commit123d626 passed GitHub CI34976937916 (Python and web). The full local1116-test suite and compilation checks passed before execution. These software checks establish implementation health, not detector reliability.
+
+### E136 Model1 consistency result
+
+{"contract_sha256": "a94d48cbfe540464698b7c555feca35468ce14a6de12aaa2fc262c20ff6cf77d", "downloads": 0, "four_view_score_stability": {"center_control": {"0": {"baseline_mean_four_view_score_range": 0.07215121479782, "candidate_mean_four_view_score_range": 0.058017973338941625}, "1": {"baseline_mean_four_view_score_range": 0.14756244758067666, "candidate_mean_four_view_score_range": 0.11504566218030453}}, "full_frame": {"0": {"baseline_mean_four_view_score_range": 0.07063796249434952, "candidate_mean_four_view_score_range": 0.057147595881528526}, "1": {"baseline_mean_four_view_score_range": 0.14259441615715251, "candidate_mean_four_view_score_range": 0.10958736853573167}}}, "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E134, not an E92 serving-model evaluation. Consistency can reduce useful discrimination or create new errors; no automatic candidate promotion.", "locked_scores_sha256": "06cb526a3ee7f2c5dfe7f99da6feb8072117095998e441a77972078b3c1201a7", "new_pixels_read": 0, "parents": 12525, "passes_internal_individual_nonregression": {"center_control": false, "full_frame": false}, "promotion_allowed": false, "seconds": 31.591304500005208, "state": "E136_Model1_consistency_complete"}
+
+Full source/condition and individual-transition results: evidence/e136_transport_consistency.json. E92 remains unchanged.
+
+E136 acquisition closeout: zero downloads and zero new image reads. Reused only the
+existing12525-parent TRAIN feature cache and FIT-only E131 maps on the external data
+volume; generated heads/predictions remain local research artifacts. No data roles,
+rights or admission decisions changed. Next acquisition work prioritizes file-level
+provenance and independent Model1 evaluation coverage; Model2 acquisition is secondary
+and no new download has been initiated by this priority update.

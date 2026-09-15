@@ -1,0 +1,26 @@
+{
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "change": "Only add0.5*0.1 times weighted within-parent four-view logit variance to E131 BCE+.005||w||\u00b2. Equal parent-view weights, FIT-only covariance; intercept unpenalized. Fixed pilot coefficient, no search.",
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "a94d48cbfe540464698b7c555feca35468ce14a6de12aaa2fc262c20ff6cf77d",
+  "downloads": 0,
+  "evaluation": "Lock all six held-out score populations before metrics; fixed0.5 cutoff, per-condition/fold/component AUC/AI recall/REAL FPR, worst groups, paired new/rescued errors and four-view score ranges. Zero new AI misses and zero new REAL false alerts reported separately from aggregate gains.",
+  "external_DEV_or_gallery_reads": 0,
+  "fitting": "Reuse exact E131 FIT-only maps and source folds; zero-start heads, same L-BFGS500/ftol1e-12/gtol1e-7 and gradient<=1e-5. Both geometries preserved; six candidate fits. Old held-out score replay<=1e-10 before comparison.",
+  "folds": 3,
+  "generator_family_holdout_supported": false,
+  "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E134, not an E92 serving-model evaluation. Consistency can reduce useful discrimination or create new errors; no automatic candidate promotion.",
+  "max_seconds": 3600,
+  "new_pixels_read": 0,
+  "parents": 12525,
+  "promotion_allowed": false,
+  "state": "E136_Model1_paired_consistency_registered"
+}

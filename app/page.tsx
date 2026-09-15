@@ -135,15 +135,17 @@ export default function Home() {
 
       <div className="container">
         <section className="intro">
-          <span className="intro-kicker">Staj projesi · E92</span>
+          <span className="intro-kicker">Staj projesi · Model 1 · E92</span>
           <h1>Bu görselde yapay zekâ izleri var mı?</h1>
           <p>
             Bir fotoğraf seçin. Modelimiz görüntüyü incelesin; bulduğu işaretleri ve karar
             veremediği durumları sade bir dille anlatsın.
           </p>
-          <div className="intro-pills" aria-label="Demo özellikleri">
-            <span>Güncel model</span><span>Ek tutarlılık kontrolü</span><span>Karar veremeyebilir</span>
+          <div className="intro-pills" aria-label="Modellerin durumu">
+            <span>Model 1 · Etkin</span><span>Model 2 · Test aşamasında</span><span>Ek tutarlılık kontrolü</span>
           </div>
+          <p>Model 1, görselin bütünündeki AI üretim izlerini inceler. Küçük bölgelerdeki
+            düzenlemeleri araştıran Model 2 henüz test aşamasındadır ve bu analize katılmaz.</p>
         </section>
 
         <section className="grid">

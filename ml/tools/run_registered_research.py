@@ -22,7 +22,15 @@ OPERATIONS={'e130':('experiments.e130_patch_drift_audit','audit'),
             'e133_generation':('experiments.e133_mask_location','generate'),
             'e133_localization':('experiments.e133_mask_location','score'),
             'e135_cache':('experiments.e135_location_learning','cache'),
-            'e135_fit':('experiments.e135_location_learning','fit')}
+            'e135_fit':('experiments.e135_location_learning','fit'),
+            'e136':('experiments.e136_transport_consistency','fit')}
+
+
+def model1_consistency_ready(root):
+    for stage in ('e131_pipeline','e135_fit_pipeline'):
+        result=json.loads((root/stage/'status.json').read_text())
+        if result.get('state')!='complete' or result.get('E92_restored') is not True:
+            raise RuntimeError('Model1 consistency requires prior shared-memory work complete and E92 restored')
 
 
 def location_learning_ready(root,operation):
@@ -78,6 +86,7 @@ def main(operation):
         if operation=='e132':patch_learning_ready(root)
         if operation.startswith('e133_'):location_ready(root, operation)
         if operation.startswith('e135_'):location_learning_ready(root, operation)
+        if operation=='e136':model1_consistency_ready(root)
         module,stage=OPERATIONS[operation]
         importlib.import_module(module).validate()  # Validate frozen evidence before touching the API.
         stopped=False;failure=None;restored=None

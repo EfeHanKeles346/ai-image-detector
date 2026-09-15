@@ -8609,3 +8609,70 @@ Authentic falsely flagged area rises17.11%->25.74% original and17.46%->26.61% JP
 Next investigate two mechanisms separately: richer location-independent low-level/residual features with exactly matched classical and authentic controls; and a nested source-separated calibration diagnostic to determine whether score offsets can be corrected without destroying localization. The present experiment does not prove that either will work or that the encoder alone caused the failure. Keep the current folds, previous failures and per-placement reports; any new experiment must freeze its features, fitting population and evaluation before scoring. More independent parents and a second editor remain necessary for transfer evidence; repeated tuning on this small pilot cannot supply it. Do not promote E135 or alter the demo's score/decision policy.
 
 Implementation commit123d626 passed GitHub CI34976937916 (Python and web). The full local1116-test suite and compilation checks passed before execution. These software checks establish implementation health, not detector reliability.
+
+### User priority update — 2026-09-15
+
+The user requests primary focus on Model1 and broader generalization, while Model2 is presented as testing-stage work. Updated the active plan accordingly. E92 remains serving; no Model2 jobs are scheduled or running and no additional Model2 experiments will start by default. Preserve all earlier protocols/results and keep Model2 separate from the Model1 decision. Universal detection remains an unproven research objective; fresh family/source evidence and AI-retention guards remain necessary.
+
+## E136 — Model1 paired-processing consistency (planned 2026-09-15)
+
+E134 found substantial clean-to-social-Q75 losses in the declared E32/E36 AI component. Isolate one training change: add a quadratic within-parent logit-variance penalty to the exact E131 fresh-head objective. Existing four processing views remain together, and both center-control/full-frame geometries remain separately reported. Use the frozen E131 FIT-only normalization/PCA maps; verify all old held-out predictions before comparing new heads. Do not alter the encoders, data population, source folds, BCE/class-component weights, L2 coefficient, cutoff or existing serving model.
+
+The penalty is0.5*0.1*sum_i w_i*(z_i-mean_parent(z))², where the original E131 weights are equal across a parent's four views. Its coefficient0.1 is a fixed first-pilot choice, not a searched optimum. Precompute the FIT-only weighted within-parent feature covariance, then fit a zero-start convex head with the existing500-iteration/finite-gradient guards. Intercept has no variance penalty. No labels, features or weights from the held-out source fold enter this covariance or head fitting. Six candidate fits (three folds x two geometries), one run, no threshold search.
+
+Lock all candidate held-out scores before computing metrics. Report source/condition REAL FPR, AI recall, AUC, worst-group rates, per-image new/rescued errors versus E131 and changes in within-parent score range. Explicitly check zero new AI misses and zero new REAL false alarms in every condition; aggregate improvements cannot replace those checks. No E92/full-TRAIN candidate, consumed-DEV/gallery step or deployment follows automatically. This is adaptive internal TRAIN analysis; three AI-bearing components with unresolved corpus-level family overlap do not provide fresh unseen-generator evidence.
+
+Research context: [Sagawa et al., ICLR2020](https://arxiv.org/abs/1911.08731) show that low worst-group TRAIN loss alone does not establish group generalization and study regularization. The indexed official abstract of [Li et al., CVPR2026](https://openaccess.thecvf.com/content/CVPR2026/html/Li_Detecting_Compressed_AI-Generated_Images_via_Phase_Spectrum_Robustness_CVPR_2026_paper.html) includes consistency learning for compressed AI images. Direct page fetching returned403; only the indexed abstract was used. E136 is our simple convex paired-logit experiment, not a reproduction of its phase-spectrum architecture or difficulty-aware loss. No paper-reported improvement is transferred to our model.
+
+### E136 registered-stage execution — 2026-09-15T16:36:58+00:00
+
+Starting the registered fit stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E136 Model1 consistency result
+
+{"contract_sha256": "a94d48cbfe540464698b7c555feca35468ce14a6de12aaa2fc262c20ff6cf77d", "downloads": 0, "four_view_score_stability": {"center_control": {"0": {"baseline_mean_four_view_score_range": 0.07215121479782, "candidate_mean_four_view_score_range": 0.058017973338941625}, "1": {"baseline_mean_four_view_score_range": 0.14756244758067666, "candidate_mean_four_view_score_range": 0.11504566218030453}}, "full_frame": {"0": {"baseline_mean_four_view_score_range": 0.07063796249434952, "candidate_mean_four_view_score_range": 0.057147595881528526}, "1": {"baseline_mean_four_view_score_range": 0.14259441615715251, "candidate_mean_four_view_score_range": 0.10958736853573167}}}, "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E134, not an E92 serving-model evaluation. Consistency can reduce useful discrimination or create new errors; no automatic candidate promotion.", "locked_scores_sha256": "06cb526a3ee7f2c5dfe7f99da6feb8072117095998e441a77972078b3c1201a7", "new_pixels_read": 0, "parents": 12525, "passes_internal_individual_nonregression": {"center_control": false, "full_frame": false}, "promotion_allowed": false, "seconds": 31.591304500005208, "state": "E136_Model1_consistency_complete"}
+
+Full source/condition and individual-transition results: evidence/e136_transport_consistency.json. E92 remains unchanged.
+
+### E136 registered-stage execution — 2026-09-15T16:37:51+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+## E136 interpretation and Model1-first handoff — 2026-09-15
+
+The six fits completed in31.59seconds on12525 existing TRAIN parents (7930 REAL,
+4595 AI), with four processing views per parent. All old-head and saved-candidate
+score replays were exact; both center and full-frame branches fail the registered
+individual non-regression screen. No coefficient search, rerun, new acquisition,
+consumed-DEV/gallery access or E92 replacement followed.
+
+Full-frame pooled internal results (different source-excluding heads per fold):
+
+| Condition | E131 AI recall → E136 | E131 REAL FPR → E136 | New/rescued AI misses | New/rescued REAL alerts |
+| --- | --- | --- | --- | --- |
+| Clean |81.37% →83.44% |15.01% →15.27% |54 /149 |61 /40 |
+| Social-Q75 |77.74% →79.56% |16.39% →16.07% |30 /114 |17 /43 |
+
+Social AUC rises0.898886 to0.904752, but clean AUC falls0.922836 to0.921709.
+Mean four-view score range falls0.070638 to0.057148 for REAL and0.142594 to0.109587
+for AI. These are raw score ranges, not probability confidence intervals. The largest
+full-frame REAL component error remains81.20% clean and83.60% social (RR), compared
+with80.80%/84.72% previously. Processing consistency therefore improves stability and
+some aggregate internal rates without resolving source transfer or preserving each
+previously correct image. This is a useful mechanism result, not a production upgrade.
+Unknown mixed-corpus generator ancestry, only three AI-bearing components and adaptive
+reuse of these folds prevent an independent or universal-generalization claim.
+
+The active priority in PLAN now gives Model1 the development/compute budget. Next is a
+separately registered expert-ablation diagnostic, then provenance-qualified independent
+coverage; no implicit E137 fit or download has been started. Model2 remains research/test
+only; no further Model2 job is queued by default. The existing local demo explicitly
+labels Model1 active and Model2 test-stage and explains that local-edit research does
+not contribute to the displayed Model1 decision. The E92 artifact and decision policy
+are unchanged and API health confirms the exact reference artifact is ready.
+
+Validation:1122 Python tests and13 web tests passed; web lint/typecheck and the prescribed
+Sites build helper passed. Only the existing upstream Starlette/httpx deprecation warning
+was reported by Python tests. This is software verification, not detection accuracy.
+Sites building/hosting guidance was reviewed for the existing manifest; the documented
+local internship-demo scope is retained, with no external Sites registration/publication.
