@@ -1,0 +1,33 @@
+{
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "change": "Drop exactly one of DINO64, pooledCLIP64, DEAR64, context128; refit remaining coordinates from zero. Fixed four omissions, both geometries, three E131 source folds. No combinations, search or E136 consistency penalty.",
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "63c2993345b5d4181988da87212ce7c2fadf26bf9062567f8a26be4173089545",
+  "downloads": 0,
+  "evaluation": "Replay E131 held-out scores/cuts within1e-10, lock all24 fit outputs before metrics. Fixed0.5 cut, source/fold/condition metrics and individual new/rescued errors versus E131. Context-omitted branches must replay each other within1e-10. Report every omission; no winner selection or automatic promotion.",
+  "external_DEV_or_gallery_reads": 0,
+  "fits": 24,
+  "fitting": "Exact frozen E131 FIT-only PCA/whitening maps, class/component/parent/view weights, BCE+.005||w||^2, zero-start L-BFGS500/ftol1e-12/gtol1e-7 and final gradient<=1e-5. Dimensionality changes by design; no retuned regularization.",
+  "folds": 3,
+  "generator_family_holdout_supported": false,
+  "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E134, not an E92 serving-model evaluation. Consistency can reduce useful discrimination or create new errors; no automatic candidate promotion. Adaptive repeated-fold expert-ablation diagnostic. Refit differences measure conditional utility of an expert plus changed capacity, not causal dataset bias, standalone expert quality or independent selection evidence.",
+  "max_seconds": 3600,
+  "new_pixels_read": 0,
+  "omitted_experts": [
+    "dino",
+    "clip",
+    "dear",
+    "context"
+  ],
+  "parents": 12525,
+  "promotion_allowed": false,
+  "state": "E137_Model1_expert_ablation_registered"
+}

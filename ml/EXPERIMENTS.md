@@ -8676,3 +8676,152 @@ Sites build helper passed. Only the existing upstream Starlette/httpx deprecatio
 was reported by Python tests. This is software verification, not detection accuracy.
 Sites building/hosting guidance was reviewed for the existing manifest; the documented
 local internship-demo scope is retained, with no external Sites registration/publication.
+
+## E137 plan — Model1 expert ablation (2026-09-16, before registration/scoring)
+
+Follow the Model1-first priority and E136 failure with one fixed leave-one-expert-out
+refit experiment. Reuse all12525 TRAIN parents, four views, both center/full-frame
+geometries and all three E131 publisher-group outer folds. Drop DINO, pooled CLIP,
+DEAR or context separately;24 fits in total. No combinations, weight search, threshold
+search, E136 penalty or adaptive selection among omissions. E131 is the comparator.
+Reuse its exact FIT-only PCA/whitening maps; each remaining linear head starts at zero
+with unchanged BCE+.005||w||^2 and class/component/parent/view weights. The omission
+changes dimensionality (256 coordinates, or192 without context); this is deliberate,
+and does not isolate an architecture-independent causal effect of an expert.
+
+Replay frozen baseline predictions, save each candidate and require exact-cut/1e-10
+numeric parity. Omitting context leaves identical inputs across the geometry branches;
+require their resulting predictions to agree within1e-10. Lock all24 fit outputs before
+any held-out metrics. Report all eight branch/omission combinations, source/fold/condition
+rates, AUC and individual new/rescued REAL/AI errors at the unchanged0.5 diagnostic cut.
+Any new error fails the corresponding individual screen, even if aggregate rates improve.
+
+This is adaptive, consumed TRAIN diagnosis using separate fold heads. It cannot certify
+unseen-generator transfer, calibrated probabilities, causes of dataset bias or a deployable
+E92 replacement. Only three components contain AI and mixed-corpus ancestry is unresolved.
+No consumed DEV, owner gallery or unopened reserve is accessed. No Model2 work, downloads
+or new image reads; feature artifacts remain on the external data volume. Use the existing
+AC-power/resource guard and restore exact E92 after this bounded offline stage.
+
+### E137 registered-stage execution — 2026-09-15T21:49:54+00:00
+
+Starting the registered fit stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E137 Model1 expert-ablation result
+
+{"context_omitted_geometry_max_error": 0.0, "contract_sha256": "63c2993345b5d4181988da87212ce7c2fadf26bf9062567f8a26be4173089545", "downloads": 0, "fits": 24, "generator_family_holdout_supported": false, "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E134, not an E92 serving-model evaluation. Consistency can reduce useful discrimination or create new errors; no automatic candidate promotion. Adaptive repeated-fold expert-ablation diagnostic. Refit differences measure conditional utility of an expert plus changed capacity, not causal dataset bias, standalone expert quality or independent selection evidence.", "locked_scores_sha256": "3ed493830780064a951ca737d27c50b0bdc11e4591e54c1b6b44677479e911b1", "new_pixels_read": 0, "parents": 12525, "passes_internal_individual_nonregression": {"center_control_without_clip": false, "center_control_without_context": false, "center_control_without_dear": false, "center_control_without_dino": false, "full_frame_without_clip": false, "full_frame_without_context": false, "full_frame_without_dear": false, "full_frame_without_dino": false}, "promotion_allowed": false, "seconds": 39.361219875048846, "state": "E137_Model1_expert_ablation_complete"}
+
+All eight branch/omission reports: evidence/e137_expert_ablation.json. No serving change.
+
+### E137 registered-stage execution — 2026-09-15T21:50:55+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+## E137 interpretation — 2026-09-16
+
+All24 registered refits completed in39.36seconds. All baseline and artifact replays are exact; both context-omitted geometries give identical scores. All eight branch/omission screens fail individual non-regression. E92 was restored, no deployment, DEV/gallery access, reserve use, data download or Model2 job.
+
+Full-frame adaptive internal comparisons (AI denominator4595; REAL denominator7930):
+
+| Representation | Clean AI caught | Clean REAL alerts | Social AI caught | Social REAL alerts |
+| --- | --- | --- | --- | --- |
+| All experts (E131) |3739 |1190 |3572 |1300 |
+| Without dino |3755 |1153 |3554 |1343 |
+| Without clip |3722 |1161 |3608 |1273 |
+| Without dear |4023 |1332 |3942 |1392 |
+| Without context |3602 |1189 |3467 |1319 |
+
+No omission solves the broad RR REAL shift: full-frame clean RR FPR remains75.04%–86.16%
+across omissions. Removing DINO reduces clean REAL errors but increases social errors;
+removing DEAR increases aggregate AI recall while adding REAL alarms. Omitting context
+loses137 clean and105 social AI detections on net relative to full-frame E131. These are
+conditional refit effects with changed dimensions, not proof of a defective encoder or
+causal dataset bias. No expert is discarded from E92 or selected for production.
+
+Next bounded mechanism: preserve all experts and compare a fixed smooth worst-source/class
+training objective with E131's equal source/class mean. Train weights may depend only on
+FIT-group loss; held-out sources never set weights or cutoffs. A separately registered
+E138 pilot will retain both geometries, all folds, maps, cutoffs and paired non-regression
+checks, with no temperature/penalty search. This targets training imbalance in difficulty;
+it cannot manufacture missing generator ancestry or guarantee unseen-source robustness.
+Validation:1127 Python tests passed, compilation passed, one existing upstream warning.
+
+## E138 plan — fixed source/class entropic training risk (2026-09-16, before registration/scoring)
+
+E137 did not identify a safe expert removal. Retain all four E131 experts and isolate
+the training objective. For each outer FIT partition, compute mean BCE for each
+source-component/class intersection using uniform parent/view weights. Minimize
+0.5*tau*sum_class(log(mean_group(exp(group_mean_BCE/tau)))) +0.005*||w||^2,
+with tau=0.1 chosen as one fixed pilot before scores, not claimed optimal. The gradient
+allocates exactly half the mass to each class and a softmax share to its harder FIT groups.
+No source-specific serving threshold, label use during inference or E136 consistency term.
+
+Use exact E131 FIT-only maps, three folds, both geometries and six zero-start320-coordinate
+heads. Keep the prior L-BFGS limits/tolerances and all four conditions. Lock all predictions
+before pooled/per-fold/per-component metrics and paired AI/REAL transition checks at0.5.
+Retain both baseline and candidate FIT group-loss/weight diagnostics. No temperature/L2
+sweep, adaptive winner selection, final full-TRAIN head or E92 replacement follows.
+
+Research basis: [Sagawa et al., ICLR2020](https://arxiv.org/abs/1911.08731) and the
+[authors' repository](https://github.com/kohpangwei/group_DRO), accessed2026-09-16. Their
+work cautions that reducing worst-group training loss alone can still generalize poorly,
+and studies the role of regularization. E138 is our smooth entropic convex adaptation;
+it does not reproduce their neural training algorithm or borrow their measured gains.
+Fixed L2 is retained to isolate one mechanism, not advertised as sufficient regularization.
+
+This remains adaptive internal diagnosis after E131/E134/E136/E137 on previously exposed
+TRAIN folds; source-group exclusion does not establish unknown generator independence.
+No gallery/DEV/reserve reads, new pixels, dataset/package/weight downloads or Model2 work.
+Run only on AC power with external disk reserve, and restore exact E92 at completion.
+
+### E138 registered-stage execution — 2026-09-15T21:55:43+00:00
+
+Starting the registered fit stage now. Exact E92 is temporarily stopped for shared memory. No recurring task or automatic promotion.
+
+### E138 Model1 source-risk result
+
+{"contract_sha256": "a98371486c6423918dfbaf68dc7cbd9e14df3380a3fcf350addb7f023a70edd6", "downloads": 0, "four_view_score_stability": {"center_control": {"0": {"baseline_mean_four_view_score_range": 0.07215121479782, "candidate_mean_four_view_score_range": 0.07523635573952739}, "1": {"baseline_mean_four_view_score_range": 0.14756244758067666, "candidate_mean_four_view_score_range": 0.15987321354486975}}, "full_frame": {"0": {"baseline_mean_four_view_score_range": 0.07063796249434952, "candidate_mean_four_view_score_range": 0.07306581163107048}, "1": {"baseline_mean_four_view_score_range": 0.14259441615715251, "candidate_mean_four_view_score_range": 0.15570828479970486}}}, "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E137, not an E92 serving-model evaluation. Entropic source risk is a fixed convex adaptation, not a reproduction of neural group DRO or a guarantee for unseen groups. No automatic promotion.", "locked_scores_sha256": "1603c1a77424c61a47bb34e9e749e5d0bb7846387c4748d6768300ca09d83336", "new_pixels_read": 0, "parents": 12525, "passes_internal_individual_nonregression": {"center_control": false, "full_frame": false}, "promotion_allowed": false, "seconds": 31.994000499951653, "state": "E138_Model1_source_risk_complete"}
+
+Full source/condition and individual-transition results: evidence/e138_source_risk.json. E92 remains unchanged.
+
+### E138 registered-stage execution — 2026-09-15T21:56:35+00:00
+
+Stage final state: {"E92_restored": true, "failure": null, "state": "complete"}
+
+## E138 interpretation and Model1 continuation checkpoint — 2026-09-16
+
+All six fixed source-risk fits completed in31.99seconds. Baseline and saved-head score
+replays are exact; both geometries fail individual non-regression. The optimization
+converged and FIT entropic risk decreased in all six fits, yet transfer got worse in
+both clean and social conditions for both geometries. This separates a successful
+implementation/optimization from an unsuccessful generalization mechanism.
+
+Full-frame internal comparison with E131 (different models across held-out folds):
+
+| Condition | AI recall E131 → E138 | REAL FPR E131 → E138 | New/rescued AI misses | New/rescued REAL alerts |
+| --- | --- | --- | --- | --- |
+| Clean |81.37% →79.26% |15.01% →15.62% |109 /12 |53 /4 |
+| Social-Q75 |77.74% →74.73% |16.39% →17.06% |148 /10 |59 /6 |
+
+Clean/social AUC falls0.922836/0.898886 to0.911235/0.883008. The worst REAL component
+(RR) remains81.60%/85.28% false alerts. The center branch also loses109 clean and157
+social AI detections on net and adds46/44 REAL alarms. This particular tau0.1 fixed-L2
+pilot is rejected; do not generalize this to all group-DRO methods or claim its training
+risk improvement is an OOD improvement. Predeclared locked FIT diagnostics are also
+exported to evidence/e138_fit_diagnostics.json for inspection without local artifacts.
+
+Across this continuation: E13724 ablation fits and E1386 source-risk fits completed,
+all outcomes retained. No new image data, feature extraction, consumed DEV/gallery or
+protected reserve use, Model2 job, candidate promotion or UI score change. Exact E92
+API restoration succeeded after each stage. The current bottleneck remains unsolved
+source transfer with incomplete upstream ancestry. Before another adaptive coefficient
+or expert sweep, prioritize lineage auditing and independent evaluation coverage: resolve
+per-file generator/prompt/scene metadata from release manifests, conservatively join
+unknown overlaps, and distinguish development acquisitions from an unopened confirmation
+reserve before admission/scoring. Existing observed groups cannot serve as fresh evidence.
+
+Validation:1134 Python tests passed in21.68seconds; compilation and diff checks passed.
+One existing upstream Starlette/httpx deprecation warning remains. Web source is unchanged
+in this continuation; the prior13 web tests are historical validation, not newly rerun
+local tests. GitHub CI will validate the exact committed revision. E137/E138 are research
+results, not improved serving-E92 scores or evidence of universal detection.

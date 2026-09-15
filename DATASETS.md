@@ -3150,3 +3150,40 @@ volume; generated heads/predictions remain local research artifacts. No data rol
 rights or admission decisions changed. Next acquisition work prioritizes file-level
 provenance and independent Model1 evaluation coverage; Model2 acquisition is secondary
 and no new download has been initiated by this priority update.
+
+## E137 acquisition plan — 2026-09-16
+
+No acquisition: reuse the existing12525-parent TRAIN feature cache and source-excluding
+E131 maps on /Volumes/LaCie/pixelproof-datasets. Four processing views per parent are
+repeated measurements, not50100 independent images. Purpose: isolate expert dependence
+before spending data or compute on another representation. No new pixels, roles, licences,
+external uploads or reserve admissions; new head/score artifacts remain local research.
+
+### E137 Model1 expert-ablation result
+
+{"context_omitted_geometry_max_error": 0.0, "contract_sha256": "63c2993345b5d4181988da87212ce7c2fadf26bf9062567f8a26be4173089545", "downloads": 0, "fits": 24, "generator_family_holdout_supported": false, "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E134, not an E92 serving-model evaluation. Consistency can reduce useful discrimination or create new errors; no automatic candidate promotion. Adaptive repeated-fold expert-ablation diagnostic. Refit differences measure conditional utility of an expert plus changed capacity, not causal dataset bias, standalone expert quality or independent selection evidence.", "locked_scores_sha256": "3ed493830780064a951ca737d27c50b0bdc11e4591e54c1b6b44677479e911b1", "new_pixels_read": 0, "parents": 12525, "passes_internal_individual_nonregression": {"center_control_without_clip": false, "center_control_without_context": false, "center_control_without_dear": false, "center_control_without_dino": false, "full_frame_without_clip": false, "full_frame_without_context": false, "full_frame_without_dear": false, "full_frame_without_dino": false}, "promotion_allowed": false, "seconds": 39.361219875048846, "state": "E137_Model1_expert_ablation_complete"}
+
+All eight branch/omission reports: evidence/e137_expert_ablation.json. No serving change.
+
+## E138 acquisition plan — 2026-09-16
+
+Zero new acquisition or image decoding. Reuse the same12525-parent TRAIN feature cache
+and source/class components to test loss weighting; no new independent observations are
+created. Literature webpages were read for method context, with no source-code/package,
+weights or image dataset downloaded. Roles and external-volume storage stay unchanged.
+
+### E138 Model1 source-risk result
+
+{"contract_sha256": "a98371486c6423918dfbaf68dc7cbd9e14df3380a3fcf350addb7f023a70edd6", "downloads": 0, "four_view_score_stability": {"center_control": {"0": {"baseline_mean_four_view_score_range": 0.07215121479782, "candidate_mean_four_view_score_range": 0.07523635573952739}, "1": {"baseline_mean_four_view_score_range": 0.14756244758067666, "candidate_mean_four_view_score_range": 0.15987321354486975}}, "full_frame": {"0": {"baseline_mean_four_view_score_range": 0.07063796249434952, "candidate_mean_four_view_score_range": 0.07306581163107048}, "1": {"baseline_mean_four_view_score_range": 0.14259441615715251, "candidate_mean_four_view_score_range": 0.15570828479970486}}}, "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E137, not an E92 serving-model evaluation. Entropic source risk is a fixed convex adaptation, not a reproduction of neural group DRO or a guarantee for unseen groups. No automatic promotion.", "locked_scores_sha256": "1603c1a77424c61a47bb34e9e749e5d0bb7846387c4748d6768300ca09d83336", "new_pixels_read": 0, "parents": 12525, "passes_internal_individual_nonregression": {"center_control": false, "full_frame": false}, "promotion_allowed": false, "seconds": 31.994000499951653, "state": "E138_Model1_source_risk_complete"}
+
+Full source/condition and individual-transition results: evidence/e138_source_risk.json. E92 remains unchanged.
+
+## E137/E138 acquisition closeout — 2026-09-16
+
+Completed24 ablation fits and6 source-risk fits using only existing TRAIN features.
+Downloads:0; new image reads:0; new independent parents:0; data-role changes:0. No Model2
+acquisition/generation occurred. New heads, full parent-level predictions, contracts and
+logs remain under external-volume e137/e138 and pipeline directories. Small source-level
+summaries and contracts are retained in evidence/; no raw images, weights, private gallery
+or parent-level scores are committed. Next: provenance/coverage audit before a new dataset
+admission; no acquisition is currently running and no new dataset is declared qualified.

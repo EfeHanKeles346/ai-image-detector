@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 import pytest
 
@@ -22,3 +23,16 @@ def test_every_upstream_lifecycle_must_release_resources(monkeypatch,tmp_path):
                   ({'state':'complete','E92_restored':False},second,third),
                   (first,second,{'state':'complete','E92_restored_after_pilot':False})]:
         with pytest.raises(RuntimeError):m.upstream_ready(a,b,c)
+
+
+@pytest.mark.parametrize('stage_name,method',[('e136_pipeline','model1_ablation_ready'),
+                                           ('e137_pipeline','model1_source_risk_ready')])
+def test_model1_waits_for_preceding_resources(monkeypatch,tmp_path,stage_name,method):
+    m=load(monkeypatch,tmp_path)
+    stage=tmp_path/stage_name;stage.mkdir();status=stage/'status.json'
+    for value in ({'state':'running','E92_restored':True},
+                  {'state':'complete','E92_restored':False},{}):
+        status.write_text(json.dumps(value))
+        with pytest.raises(RuntimeError):getattr(m,method)(tmp_path)
+    status.write_text(json.dumps({'state':'complete','E92_restored':True}))
+    getattr(m,method)(tmp_path)

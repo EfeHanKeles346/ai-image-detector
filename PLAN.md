@@ -45,22 +45,37 @@ misses and17 previously correct REAL images became false alerts. Clean REAL FPR 
 Both geometries fail individual non-regression; preserve E92 and do not select a new
 coefficient from these exposed results. More stable scores alone are insufficient.
 
-Next Model1 sequence:
-1. Diagnose representation dependence using a separately registered, fixed expert-ablation
-   design on eligible TRAIN only, retaining all source folds and per-image transitions.
-   Determine whether a feature expert contributes source-specific false alerts before
-   committing to expensive backbone adaptation. Treat these repeatedly inspected folds
-   as adaptive diagnostics, never as a fresh benchmark.
-2. Resolve file-level generator/prompt/scene provenance for new evaluation coverage and
-   separate development sources from an unopened confirmation reserve before acquisition
-   admission or scoring. Record acquisition purpose and rights in DATASETS.md. More
-   mixed-source images alone cannot establish unseen-generator generalization.
-3. Only after a complete candidate is fixed, apply existing AI-retention/REAL-error gates
-   and evaluate genuinely withheld sources and processing, with source-level uncertainty.
-   Any calibrated UI percentage needs separate source-disjoint calibration evidence;
-   current raw scores remain explicitly uncalibrated.
+Next Model1 sequence, updated after E137/E138:
+1. E137 expert removal and E138 source-risk fitting are complete and rejected as safe
+   replacements. Preserve these negative results. Do not use the repeatedly inspected
+   folds for another unregistered coefficient/omission sweep or claim independent progress.
+2. Prioritize per-file generator/prompt/scene provenance from release manifests and audit
+   candidate coverage before more training. Conservatively join unknown upstream overlap;
+   separate development acquisition from an unopened confirmation reserve before admission
+   or scoring, documenting purpose and rights in DATASETS.md. No E139 run or acquisition
+   has been started at this checkpoint.
+3. Design the next representation/training intervention around the verified coverage gap.
+   Once a complete candidate is fixed, apply AI-retention/REAL-error gates and genuinely
+   withheld-source/processing evaluation with source-level uncertainty. Any UI probability
+   calibration requires separate source-disjoint evidence; current scores are uncalibrated.
 
-## Current execution checkpoint — 2026-09-15
+### E137 execution — 2026-09-16
+
+E137 is complete: all24 fits replay exactly and all eight individual screens fail.
+No single expert omission resolves source transfer; no serving change. The registered design was: four omissions ×
+two geometries × three source folds =24 fresh fits. Preserve the E131 FIT-only maps,
+weights and objective; no E136 consistency term or cutoff change. Lock all scores before
+metrics and check identical predictions when context is omitted from both geometries.
+All results are adaptive internal research; E92 remains serving and Model2 stays secondary.
+
+### E138 execution — 2026-09-16
+
+Complete: all six fits reduced FIT entropic risk, but both geometries lost clean/social
+AI recall and increased REAL false alerts. Full-frame social recall77.74% →74.73%, REAL
+FPR16.39% →17.06%; all individual screens fail. Exact E92 restored. No coefficient sweep,
+serving change or new Model2 work. See EXPERIMENTS for complete interpretation and limits.
+
+## Current execution checkpoint — 2026-09-16
 
 This overview is current; the dated sections below preserve how the plan evolved.
 The previously requested overnight window ended at09:58:48 Europe/Istanbul. Work resumed
@@ -80,10 +95,13 @@ E92 remains the serving reference and is restored between registered heavy stage
 | E134 source-score audit | Complete:88 descriptive summaries | RR REAL shift is broad; processing loses177 net E32/E36 AI detections in diagnostic head |
 | E132 paired patch learning | Complete:8 source components | Composite AUC0.742/0.734, below center0.798; authentic flagged area17%; not deployable |
 | E131 internal publisher-group transfer | Complete: substantial publisher-transfer failures | Full-frame clean AUC0.92284, REAL FPR15.01%; RR REAL FPR80.80%; not deployed-E92 evaluation |
+| E137 Model1 expert ablation | Complete; all eight configurations fail individual non-regression | No single omission fixes transfer; removing context loses AI recall; E92 retained |
+| E138 Model1 source-risk fit | Complete; both geometries rejected | Lower training risk but worse held-out clean/social AI and REAL rates; E92 retained |
 | E136 Model1 processing consistency | Complete; both geometries fail individual non-regression | Reduced score variation and net social errors, but new AI misses/REAL alerts; E92 retained |
 
-Latest code validation:1122 full Python tests and13 web tests passed after E136 implementation;
-web lint, typecheck and the Sites build helper passed. Model1 is labelled active and Model2
+Latest local code validation:1134 Python tests passed after E138; compilation and diff
+checks passed. Web source was unchanged this turn; prior13 web tests, lint/typecheck and
+Sites build helper passed in the preceding E136 turn. Model1 is labelled active and Model2
 test-stage in the existing local demo; Model2 does not participate in its decision.
 Python compilation is checked before commits. Completed pushes have passed GitHub CI; CI is software
 validation and does not change any scientific gate. The canonical experiment/engineering

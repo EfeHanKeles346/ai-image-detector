@@ -1,0 +1,26 @@
+{
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "change": "Replace equal source/class mean BCE with0.5*tau*sum_class log(mean_group exp(group_mean_BCE/tau)); tau=.1 fixed. Group is source component intersected with class; uniform parents/views within group. Retain .005||w||\u00b2, unpenalized intercept, all experts; no consistency penalty or coefficient search.",
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "a98371486c6423918dfbaf68dc7cbd9e14df3380a3fcf350addb7f023a70edd6",
+  "downloads": 0,
+  "evaluation": "Lock all six held-out score populations before metrics; fixed0.5 cutoff, per-condition/fold/component AUC/AI recall/REAL FPR, worst groups, paired new/rescued errors and four-view score ranges. Zero new AI misses and zero new REAL false alerts reported separately from aggregate gains.",
+  "external_DEV_or_gallery_reads": 0,
+  "fitting": "Reuse exact E131 FIT-only maps and source folds; zero-start heads, same L-BFGS500/ftol1e-12/gtol1e-7 and gradient<=1e-5. Both geometries, six fits, E131 comparator. Dynamic group weights derive only from FIT loss and retain half mass per class. Old held-out score replay<=1e-10.",
+  "folds": 3,
+  "generator_family_holdout_supported": false,
+  "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive development after E137, not an E92 serving-model evaluation. Entropic source risk is a fixed convex adaptation, not a reproduction of neural group DRO or a guarantee for unseen groups. No automatic promotion.",
+  "max_seconds": 3600,
+  "new_pixels_read": 0,
+  "parents": 12525,
+  "promotion_allowed": false,
+  "state": "E138_Model1_source_risk_registered"
+}

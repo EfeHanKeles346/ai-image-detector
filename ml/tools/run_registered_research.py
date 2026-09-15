@@ -23,7 +23,21 @@ OPERATIONS={'e130':('experiments.e130_patch_drift_audit','audit'),
             'e133_localization':('experiments.e133_mask_location','score'),
             'e135_cache':('experiments.e135_location_learning','cache'),
             'e135_fit':('experiments.e135_location_learning','fit'),
-            'e136':('experiments.e136_transport_consistency','fit')}
+            'e136':('experiments.e136_transport_consistency','fit'),
+            'e137':('experiments.e137_expert_ablation','fit'),
+            'e138':('experiments.e138_source_risk','fit')}
+
+
+def model1_source_risk_ready(root):
+    result=json.loads((root/'e137_pipeline/status.json').read_text())
+    if result.get('state')!='complete' or result.get('E92_restored') is not True:
+        raise RuntimeError('Model1 source-risk fit requires E137 complete and exact E92 restored')
+
+
+def model1_ablation_ready(root):
+    result=json.loads((root/'e136_pipeline/status.json').read_text())
+    if result.get('state')!='complete' or result.get('E92_restored') is not True:
+        raise RuntimeError('Model1 ablation requires E136 complete and exact E92 restored')
 
 
 def model1_consistency_ready(root):
@@ -87,6 +101,8 @@ def main(operation):
         if operation.startswith('e133_'):location_ready(root, operation)
         if operation.startswith('e135_'):location_learning_ready(root, operation)
         if operation=='e136':model1_consistency_ready(root)
+        if operation=='e137':model1_ablation_ready(root)
+        if operation=='e138':model1_source_risk_ready(root)
         module,stage=OPERATIONS[operation]
         importlib.import_module(module).validate()  # Validate frozen evidence before touching the API.
         stopped=False;failure=None;restored=None
