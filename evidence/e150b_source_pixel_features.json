@@ -1,0 +1,30 @@
+{
+  "chunks": 196,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "c0a6ed8ebf0beec3e8b4fb2ba31a7653ef2b244c7504c2cc569bd60055fea2f3",
+  "created_this_execution": 12525,
+  "downloads": 0,
+  "exact_probe_and_serialization_replay": true,
+  "feature_shape": [
+    12525,
+    4,
+    2,
+    300
+  ],
+  "features_sha256": "f9f868312c522b28cc89541691e9fc071cfe5162c4fe969689ce02497da4a82a",
+  "fits": 0,
+  "limits": "Consumed TRAIN engineering/representation work, not an E92 improvement or independent unseen-family evidence. Only three AI-bearing components and unknown upstream/pretraining overlap. No gallery/DEV/protected-reserve scoring or ancestor substitution.",
+  "model_scores": 0,
+  "parents": 12525,
+  "peak_RSS_MiB": 796.953125,
+  "promotion_allowed": false,
+  "report_sha256": "c64d66e992fcbcc324e83d81b8843c6f8537e7c8734bbd6cb21527317bc65ad3",
+  "resumed_this_execution": 0,
+  "seconds_this_execution": 2368.5958551669028,
+  "state": "E150B_full_source_pixel_features_complete"
+}

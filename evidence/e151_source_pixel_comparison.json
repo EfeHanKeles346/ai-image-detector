@@ -1,0 +1,5477 @@
+{
+  "contract_sha256": "ff2895ca64b90b8a1b3d548a7219a0b5c2100124ca419c060c6132e8023be98e",
+  "downloads": 0,
+  "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive mechanism chosen after E147/E148. All folds are consumed development data. Source-pixel plus paired down/up-control is tested as one bundle, not separate attribution. Processing-history strata are observational and source/class confounded. Unknown corpus ancestry remains; this is not E92 accuracy or independent unseen-family evidence.",
+  "locked_scores_sha256": "a026ad9e170952ff380b668d9f7127ee913c081775aa1ed3adb337599d9e7506",
+  "new_pixels_read": 0,
+  "parents": 12525,
+  "passes_internal_individual_nonregression": {
+    "center_control": false,
+    "full_frame": false
+  },
+  "promotion_allowed": false,
+  "reports": {
+    "center_control": {
+      "assigned_transport": {
+        "AI_component_worst_recall": 0.6810699588477366,
+        "REAL_component_worst_FPR": 0.8128,
+        "baseline": {
+          "AI_recall": 0.790424374319913,
+          "REAL_FPR": 0.15775535939470367,
+          "ap": 0.8300899363557218,
+          "auc": 0.903334124624194,
+          "fn": 963,
+          "fp": 1251,
+          "parents": 12525,
+          "tn": 6679,
+          "tp": 3632
+        },
+        "components": [
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 767,
+              "tn": 767,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 767,
+            "sources": [
+              "MIDD:Hynix_SL846",
+              "MIDD:ISOCELL_3P9",
+              "MIDD:ISOCELL_GN1",
+              "MIDD:ISOCELL_HM3",
+              "MIDD:OmniVision_OV32A",
+              "MIDD:OmniVision_OV64B",
+              "MIDD:Sony_IMX258",
+              "MIDD:Sony_IMX766"
+            ],
+            "tn": 767,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.03125,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03125,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 4,
+              "parents": 128,
+              "tn": 124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 4,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "sources": [
+              "SID:Fuji",
+              "SID:Sony"
+            ],
+            "tn": 124,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.6810699588477366,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.700960219478738,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 872,
+              "fp": 0,
+              "parents": 2916,
+              "tn": 0,
+              "tp": 2044
+            },
+            "fn": 930,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 104,
+                "rescued_errors": 46
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 2916,
+            "sources": [
+              "e32:flux2-klein-9b",
+              "e32:gpt-image-1",
+              "e32:nano-banana-local",
+              "e32:nano-banana-pro-ash-local",
+              "e32:qwen-image-2512",
+              "e36:FLUX.2_max",
+              "e36:GLM-Image",
+              "e36:Qwen-Image-2.0-pro",
+              "e36:Seedream-5.0",
+              "e36:gpt-image-2",
+              "e36:nano-banana-2.0"
+            ],
+            "tn": 0,
+            "tp": 1986
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.02772963604852686,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.025996533795493933,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 30,
+              "parents": 1154,
+              "tn": 1124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 32,
+            "paired": {
+              "0": {
+                "new_errors": 8,
+                "rescued_errors": 6
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1154,
+            "sources": [
+              "e32:forchheim-fodb"
+            ],
+            "tn": 1122,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9859402460456942,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.9876977152899824,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 7,
+              "fp": 0,
+              "parents": 569,
+              "tn": 0,
+              "tp": 562
+            },
+            "fn": 8,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 3,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 569,
+            "sources": [
+              "e32:communityforensics-ai-local"
+            ],
+            "tn": 0,
+            "tp": 561
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.030303030303030304,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.029545454545454545,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 39,
+              "parents": 1320,
+              "tn": 1281,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 40,
+            "paired": {
+              "0": {
+                "new_errors": 8,
+                "rescued_errors": 7
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1320,
+            "sources": [
+              "e32:csafe-mcsidb-iphone14",
+              "e32:csafe-mcsidb-s21"
+            ],
+            "tn": 1280,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.007894736842105263,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0061403508771929825,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 7,
+              "parents": 1140,
+              "tn": 1133,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 9,
+            "paired": {
+              "0": {
+                "new_errors": 2,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1140,
+            "sources": [
+              "e32:vision-base-native"
+            ],
+            "tn": 1131,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.14437367303609341,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.14861995753715498,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 70,
+              "parents": 471,
+              "tn": 401,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 68,
+            "paired": {
+              "0": {
+                "new_errors": 5,
+                "rescued_errors": 7
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 471,
+            "sources": [
+              "e36:device_001",
+              "e36:device_002",
+              "e36:device_003",
+              "e36:device_005",
+              "e36:device_009"
+            ],
+            "tn": 403,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.927027027027027,
+            "REAL_FPR": 0.8128,
+            "ap": 0.8034828879597112,
+            "auc": 0.7854414414414415,
+            "baseline": {
+              "AI_recall": 0.9243243243243243,
+              "REAL_FPR": 0.8024,
+              "ap": 0.8055251879468079,
+              "auc": 0.7895394594594595,
+              "fn": 84,
+              "fp": 1003,
+              "parents": 2360,
+              "tn": 247,
+              "tp": 1026
+            },
+            "fn": 81,
+            "fp": 1016,
+            "paired": {
+              "0": {
+                "new_errors": 22,
+                "rescued_errors": 9
+              },
+              "1": {
+                "new_errors": 1,
+                "rescued_errors": 4
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 2360,
+            "sources": [
+              "rr:culture_and_religion",
+              "rr:everyday_life",
+              "rr:labor_and_production",
+              "rr:medical_and_public_health",
+              "rr:natural_disasters_and_accidents",
+              "rr:political_and_social_events",
+              "rr:rrdataset_real_pool",
+              "rr:war_and_conflict"
+            ],
+            "tn": 234,
+            "tp": 1029
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.05235294117647059,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.05764705882352941,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 98,
+              "parents": 1700,
+              "tn": 1602,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 89,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 21
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "sources": [
+              "SCIMD-17"
+            ],
+            "tn": 1611,
+            "tp": 0
+          }
+        ],
+        "folds": [
+          {
+            "AI_recall": 0.6810699588477366,
+            "REAL_FPR": 0.03607620591811917,
+            "ap": 0.9487579093536131,
+            "auc": 0.9359639143414609,
+            "baseline": {
+              "AI_recall": 0.700960219478738,
+              "REAL_FPR": 0.039724361572760436,
+              "ap": 0.9537460169931273,
+              "auc": 0.9425952059642703,
+              "fn": 872,
+              "fp": 98,
+              "parents": 5383,
+              "tn": 2369,
+              "tp": 2044
+            },
+            "fn": 930,
+            "fp": 89,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 21
+              },
+              "1": {
+                "new_errors": 104,
+                "rescued_errors": 46
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 5383,
+            "tn": 2378,
+            "tp": 1986
+          },
+          {
+            "AI_recall": 0.927027027027027,
+            "REAL_FPR": 0.38817391304347826,
+            "ap": 0.7957260629850252,
+            "auc": 0.8953939678809243,
+            "baseline": {
+              "AI_recall": 0.9243243243243243,
+              "REAL_FPR": 0.38365217391304346,
+              "ap": 0.7980784389092581,
+              "auc": 0.8974887583235409,
+              "fn": 84,
+              "fp": 1103,
+              "parents": 3985,
+              "tn": 1772,
+              "tp": 1026
+            },
+            "fn": 81,
+            "fp": 1116,
+            "paired": {
+              "0": {
+                "new_errors": 35,
+                "rescued_errors": 22
+              },
+              "1": {
+                "new_errors": 1,
+                "rescued_errors": 4
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3985,
+            "tn": 1759,
+            "tp": 1029
+          },
+          {
+            "AI_recall": 0.9859402460456942,
+            "REAL_FPR": 0.020479134466769706,
+            "ap": 0.994057088898253,
+            "auc": 0.9984815683036211,
+            "baseline": {
+              "AI_recall": 0.9876977152899824,
+              "REAL_FPR": 0.019319938176197836,
+              "ap": 0.9949275862944865,
+              "auc": 0.9986920843259277,
+              "fn": 7,
+              "fp": 50,
+              "parents": 3157,
+              "tn": 2538,
+              "tp": 562
+            },
+            "fn": 8,
+            "fp": 53,
+            "paired": {
+              "0": {
+                "new_errors": 10,
+                "rescued_errors": 7
+              },
+              "1": {
+                "new_errors": 3,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3157,
+            "tn": 2535,
+            "tp": 561
+          }
+        ],
+        "paired": {
+          "0": {
+            "new_errors": 57,
+            "rescued_errors": 50
+          },
+          "1": {
+            "new_errors": 108,
+            "rescued_errors": 52
+          },
+          "zero_new_AI_misses": false,
+          "zero_new_REAL_false_alerts": false
+        },
+        "pooled_different_fold_models": {
+          "AI_recall": 0.7782372143634385,
+          "REAL_FPR": 0.15863808322824716,
+          "ap": 0.8226923459575312,
+          "auc": 0.897269387883919,
+          "fn": 1019,
+          "fp": 1258,
+          "parents": 12525,
+          "tn": 6672,
+          "tp": 3576
+        },
+        "processing_history": {
+          "admitted_source_body_upstream_history_unverified": {
+            "AI_recall": 0.7621404997642621,
+            "REAL_FPR": 0.20626822157434402,
+            "ap": 0.8220477378253078,
+            "auc": 0.8738929598915743,
+            "baseline": {
+              "AI_recall": 0.7755775577557755,
+              "REAL_FPR": 0.20280612244897958,
+              "ap": 0.8288119606872121,
+              "auc": 0.8803263096509568,
+              "fn": 952,
+              "fp": 1113,
+              "parents": 9730,
+              "tn": 4375,
+              "tp": 3290
+            },
+            "fn": 1009,
+            "fp": 1132,
+            "paired": {
+              "0": {
+                "new_errors": 40,
+                "rescued_errors": 21
+              },
+              "1": {
+                "new_errors": 106,
+                "rescued_errors": 49
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 9730,
+            "tn": 4356,
+            "tp": 3233
+          },
+          "local_224_jpeg90_replay": {
+            "AI_recall": 0.9716713881019831,
+            "REAL_FPR": 0.05374592833876222,
+            "ap": 0.9824096095542217,
+            "auc": 0.9906340257079846,
+            "baseline": {
+              "AI_recall": 0.9688385269121813,
+              "REAL_FPR": 0.05863192182410423,
+              "ap": 0.9828223267944793,
+              "auc": 0.9907632115602883,
+              "fn": 11,
+              "fp": 36,
+              "parents": 967,
+              "tn": 578,
+              "tp": 342
+            },
+            "fn": 10,
+            "fp": 33,
+            "paired": {
+              "0": {
+                "new_errors": 5,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 2,
+                "rescued_errors": 3
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 967,
+            "tn": 581,
+            "tp": 343
+          },
+          "local_full_resolution_RAW_render": {
+            "AI_recall": null,
+            "REAL_FPR": 0.03125,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03125,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 4,
+              "parents": 128,
+              "tn": 124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 4,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "tn": 124,
+            "tp": 0
+          },
+          "publisher_224_resize": {
+            "AI_recall": null,
+            "REAL_FPR": 0.05235294117647059,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.05764705882352941,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 98,
+              "parents": 1700,
+              "tn": 1602,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 89,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 21
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "tn": 1611,
+            "tp": 0
+          }
+        }
+      },
+      "clean": {
+        "AI_component_worst_recall": 0.7146776406035665,
+        "REAL_component_worst_FPR": 0.7896,
+        "baseline": {
+          "AI_recall": 0.8004352557127312,
+          "REAL_FPR": 0.14741488020176544,
+          "ap": 0.8672974199171615,
+          "auc": 0.9181491478071866,
+          "fn": 917,
+          "fp": 1169,
+          "parents": 12525,
+          "tn": 6761,
+          "tp": 3678
+        },
+        "components": [
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.001303780964797914,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 767,
+              "tn": 767,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 1,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 767,
+            "sources": [
+              "MIDD:Hynix_SL846",
+              "MIDD:ISOCELL_3P9",
+              "MIDD:ISOCELL_GN1",
+              "MIDD:ISOCELL_HM3",
+              "MIDD:OmniVision_OV32A",
+              "MIDD:OmniVision_OV64B",
+              "MIDD:Sony_IMX258",
+              "MIDD:Sony_IMX766"
+            ],
+            "tn": 766,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.015625,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0234375,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 3,
+              "parents": 128,
+              "tn": 125,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 2,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "sources": [
+              "SID:Fuji",
+              "SID:Sony"
+            ],
+            "tn": 126,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.7146776406035665,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.7085048010973937,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 850,
+              "fp": 0,
+              "parents": 2916,
+              "tn": 0,
+              "tp": 2066
+            },
+            "fn": 832,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 64,
+                "rescued_errors": 82
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 2916,
+            "sources": [
+              "e32:flux2-klein-9b",
+              "e32:gpt-image-1",
+              "e32:nano-banana-local",
+              "e32:nano-banana-pro-ash-local",
+              "e32:qwen-image-2512",
+              "e36:FLUX.2_max",
+              "e36:GLM-Image",
+              "e36:Qwen-Image-2.0-pro",
+              "e36:Seedream-5.0",
+              "e36:gpt-image-2",
+              "e36:nano-banana-2.0"
+            ],
+            "tn": 0,
+            "tp": 2084
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.018197573656845753,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.018197573656845753,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 21,
+              "parents": 1154,
+              "tn": 1133,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 21,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 3
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1154,
+            "sources": [
+              "e32:forchheim-fodb"
+            ],
+            "tn": 1133,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9929701230228472,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.9947275922671354,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 3,
+              "fp": 0,
+              "parents": 569,
+              "tn": 0,
+              "tp": 566
+            },
+            "fn": 4,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 569,
+            "sources": [
+              "e32:communityforensics-ai-local"
+            ],
+            "tn": 0,
+            "tp": 565
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.02803030303030303,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.021212121212121213,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 28,
+              "parents": 1320,
+              "tn": 1292,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 37,
+            "paired": {
+              "0": {
+                "new_errors": 11,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1320,
+            "sources": [
+              "e32:csafe-mcsidb-iphone14",
+              "e32:csafe-mcsidb-s21"
+            ],
+            "tn": 1283,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0043859649122807015,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.005263157894736842,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 6,
+              "parents": 1140,
+              "tn": 1134,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 5,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 1140,
+            "sources": [
+              "e32:vision-base-native"
+            ],
+            "tn": 1135,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.09554140127388536,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.11040339702760085,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 52,
+              "parents": 471,
+              "tn": 419,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 45,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 10
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 471,
+            "sources": [
+              "e36:device_001",
+              "e36:device_002",
+              "e36:device_003",
+              "e36:device_005",
+              "e36:device_009"
+            ],
+            "tn": 426,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9351351351351351,
+            "REAL_FPR": 0.7896,
+            "ap": 0.8661269285798824,
+            "auc": 0.8363632432432433,
+            "baseline": {
+              "AI_recall": 0.9423423423423424,
+              "REAL_FPR": 0.7976,
+              "ap": 0.8714302016507258,
+              "auc": 0.8421427027027026,
+              "fn": 64,
+              "fp": 997,
+              "parents": 2360,
+              "tn": 253,
+              "tp": 1046
+            },
+            "fn": 72,
+            "fp": 987,
+            "paired": {
+              "0": {
+                "new_errors": 17,
+                "rescued_errors": 27
+              },
+              "1": {
+                "new_errors": 10,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 2360,
+            "sources": [
+              "rr:culture_and_religion",
+              "rr:everyday_life",
+              "rr:labor_and_production",
+              "rr:medical_and_public_health",
+              "rr:natural_disasters_and_accidents",
+              "rr:political_and_social_events",
+              "rr:rrdataset_real_pool",
+              "rr:war_and_conflict"
+            ],
+            "tn": 263,
+            "tp": 1038
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.03529411764705882,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.036470588235294116,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 62,
+              "parents": 1700,
+              "tn": 1638,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 60,
+            "paired": {
+              "0": {
+                "new_errors": 8,
+                "rescued_errors": 10
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "sources": [
+              "SCIMD-17"
+            ],
+            "tn": 1640,
+            "tp": 0
+          }
+        ],
+        "folds": [
+          {
+            "AI_recall": 0.7146776406035665,
+            "REAL_FPR": 0.024726388325901905,
+            "ap": 0.9611880779169409,
+            "auc": 0.9498147842328057,
+            "baseline": {
+              "AI_recall": 0.7085048010973937,
+              "REAL_FPR": 0.02513173895419538,
+              "ap": 0.9634714599154828,
+              "auc": 0.9535039475813245,
+              "fn": 850,
+              "fp": 62,
+              "parents": 5383,
+              "tn": 2405,
+              "tp": 2066
+            },
+            "fn": 832,
+            "fp": 61,
+            "paired": {
+              "0": {
+                "new_errors": 9,
+                "rescued_errors": 10
+              },
+              "1": {
+                "new_errors": 64,
+                "rescued_errors": 82
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 5383,
+            "tn": 2406,
+            "tp": 2084
+          },
+          {
+            "AI_recall": 0.9351351351351351,
+            "REAL_FPR": 0.3662608695652174,
+            "ap": 0.8621711596173242,
+            "auc": 0.9226086956521738,
+            "baseline": {
+              "AI_recall": 0.9423423423423424,
+              "REAL_FPR": 0.37217391304347824,
+              "ap": 0.8676907422002732,
+              "auc": 0.9255313748531139,
+              "fn": 64,
+              "fp": 1070,
+              "parents": 3985,
+              "tn": 1805,
+              "tp": 1046
+            },
+            "fn": 72,
+            "fp": 1053,
+            "paired": {
+              "0": {
+                "new_errors": 23,
+                "rescued_errors": 40
+              },
+              "1": {
+                "new_errors": 10,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3985,
+            "tn": 1822,
+            "tp": 1038
+          },
+          {
+            "AI_recall": 0.9929701230228472,
+            "REAL_FPR": 0.017001545595054096,
+            "ap": 0.9986418174003033,
+            "auc": 0.9996604580285379,
+            "baseline": {
+              "AI_recall": 0.9947275922671354,
+              "REAL_FPR": 0.0142967542503864,
+              "ap": 0.9990314069874908,
+              "auc": 0.9997670742075769,
+              "fn": 3,
+              "fp": 37,
+              "parents": 3157,
+              "tn": 2551,
+              "tp": 566
+            },
+            "fn": 4,
+            "fp": 44,
+            "paired": {
+              "0": {
+                "new_errors": 11,
+                "rescued_errors": 4
+              },
+              "1": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3157,
+            "tn": 2544,
+            "tp": 565
+          }
+        ],
+        "paired": {
+          "0": {
+            "new_errors": 43,
+            "rescued_errors": 54
+          },
+          "1": {
+            "new_errors": 75,
+            "rescued_errors": 84
+          },
+          "zero_new_AI_misses": false,
+          "zero_new_REAL_false_alerts": false
+        },
+        "pooled_different_fold_models": {
+          "AI_recall": 0.8023939064200217,
+          "REAL_FPR": 0.14602774274905422,
+          "ap": 0.870334848178131,
+          "auc": 0.918232988046934,
+          "fn": 908,
+          "fp": 1158,
+          "parents": 12525,
+          "tn": 6772,
+          "tp": 3687
+        },
+        "processing_history": {
+          "admitted_source_body_upstream_history_unverified": {
+            "AI_recall": 0.7942008486562943,
+            "REAL_FPR": 0.19333090379008747,
+            "ap": 0.8754208659721233,
+            "auc": 0.9023473958182989,
+            "baseline": {
+              "AI_recall": 0.7909005186232909,
+              "REAL_FPR": 0.1951530612244898,
+              "ap": 0.871410551204022,
+              "auc": 0.9010472723136538,
+              "fn": 887,
+              "fp": 1071,
+              "parents": 9730,
+              "tn": 4417,
+              "tp": 3355
+            },
+            "fn": 873,
+            "fp": 1061,
+            "paired": {
+              "0": {
+                "new_errors": 30,
+                "rescued_errors": 40
+              },
+              "1": {
+                "new_errors": 69,
+                "rescued_errors": 83
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 9730,
+            "tn": 4427,
+            "tp": 3369
+          },
+          "local_224_jpeg90_replay": {
+            "AI_recall": 0.9008498583569405,
+            "REAL_FPR": 0.057003257328990226,
+            "ap": 0.9635004680977008,
+            "auc": 0.9775124341382841,
+            "baseline": {
+              "AI_recall": 0.9150141643059491,
+              "REAL_FPR": 0.05374592833876222,
+              "ap": 0.964643096347484,
+              "auc": 0.9773278829207076,
+              "fn": 30,
+              "fp": 33,
+              "parents": 967,
+              "tn": 581,
+              "tp": 323
+            },
+            "fn": 35,
+            "fp": 35,
+            "paired": {
+              "0": {
+                "new_errors": 5,
+                "rescued_errors": 3
+              },
+              "1": {
+                "new_errors": 6,
+                "rescued_errors": 1
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 967,
+            "tn": 579,
+            "tp": 318
+          },
+          "local_full_resolution_RAW_render": {
+            "AI_recall": null,
+            "REAL_FPR": 0.015625,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0234375,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 3,
+              "parents": 128,
+              "tn": 125,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 2,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "tn": 126,
+            "tp": 0
+          },
+          "publisher_224_resize": {
+            "AI_recall": null,
+            "REAL_FPR": 0.03529411764705882,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.036470588235294116,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 62,
+              "parents": 1700,
+              "tn": 1638,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 60,
+            "paired": {
+              "0": {
+                "new_errors": 8,
+                "rescued_errors": 10
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "tn": 1640,
+            "tp": 0
+          }
+        }
+      },
+      "q75": {
+        "AI_component_worst_recall": 0.6131687242798354,
+        "REAL_component_worst_FPR": 0.8216,
+        "baseline": {
+          "AI_recall": 0.7573449401523396,
+          "REAL_FPR": 0.14867591424968474,
+          "ap": 0.8325893122302055,
+          "auc": 0.9041956071007603,
+          "fn": 1115,
+          "fp": 1179,
+          "parents": 12525,
+          "tn": 6751,
+          "tp": 3480
+        },
+        "components": [
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.002607561929595828,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.001303780964797914,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 1,
+              "parents": 767,
+              "tn": 766,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 2,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 767,
+            "sources": [
+              "MIDD:Hynix_SL846",
+              "MIDD:ISOCELL_3P9",
+              "MIDD:ISOCELL_GN1",
+              "MIDD:ISOCELL_HM3",
+              "MIDD:OmniVision_OV32A",
+              "MIDD:OmniVision_OV64B",
+              "MIDD:Sony_IMX258",
+              "MIDD:Sony_IMX766"
+            ],
+            "tn": 765,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 128,
+              "tn": 128,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "sources": [
+              "SID:Fuji",
+              "SID:Sony"
+            ],
+            "tn": 128,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.6131687242798354,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.6378600823045267,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 1056,
+              "fp": 0,
+              "parents": 2916,
+              "tn": 0,
+              "tp": 1860
+            },
+            "fn": 1128,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 127,
+                "rescued_errors": 55
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 2916,
+            "sources": [
+              "e32:flux2-klein-9b",
+              "e32:gpt-image-1",
+              "e32:nano-banana-local",
+              "e32:nano-banana-pro-ash-local",
+              "e32:qwen-image-2512",
+              "e36:FLUX.2_max",
+              "e36:GLM-Image",
+              "e36:Qwen-Image-2.0-pro",
+              "e36:Seedream-5.0",
+              "e36:gpt-image-2",
+              "e36:nano-banana-2.0"
+            ],
+            "tn": 0,
+            "tp": 1788
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.016464471403812825,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.01733102253032929,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 20,
+              "parents": 1154,
+              "tn": 1134,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 19,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1154,
+            "sources": [
+              "e32:forchheim-fodb"
+            ],
+            "tn": 1135,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9929701230228472,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.9929701230228472,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 4,
+              "fp": 0,
+              "parents": 569,
+              "tn": 0,
+              "tp": 565
+            },
+            "fn": 4,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 569,
+            "sources": [
+              "e32:communityforensics-ai-local"
+            ],
+            "tn": 0,
+            "tp": 565
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.016666666666666666,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.015151515151515152,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 20,
+              "parents": 1320,
+              "tn": 1300,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 22,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1320,
+            "sources": [
+              "e32:csafe-mcsidb-iphone14",
+              "e32:csafe-mcsidb-s21"
+            ],
+            "tn": 1298,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0008771929824561404,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0008771929824561404,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 1,
+              "parents": 1140,
+              "tn": 1139,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 1,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 1140,
+            "sources": [
+              "e32:vision-base-native"
+            ],
+            "tn": 1139,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.07430997876857749,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.09341825902335456,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 44,
+              "parents": 471,
+              "tn": 427,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 35,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 9
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 471,
+            "sources": [
+              "e36:device_001",
+              "e36:device_002",
+              "e36:device_003",
+              "e36:device_005",
+              "e36:device_009"
+            ],
+            "tn": 436,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9495495495495495,
+            "REAL_FPR": 0.8216,
+            "ap": 0.8412959116294496,
+            "auc": 0.8220072072072072,
+            "baseline": {
+              "AI_recall": 0.9504504504504504,
+              "REAL_FPR": 0.828,
+              "ap": 0.8438293086865404,
+              "auc": 0.8247041441441441,
+              "fn": 55,
+              "fp": 1035,
+              "parents": 2360,
+              "tn": 215,
+              "tp": 1055
+            },
+            "fn": 56,
+            "fp": 1027,
+            "paired": {
+              "0": {
+                "new_errors": 9,
+                "rescued_errors": 17
+              },
+              "1": {
+                "new_errors": 4,
+                "rescued_errors": 3
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 2360,
+            "sources": [
+              "rr:culture_and_religion",
+              "rr:everyday_life",
+              "rr:labor_and_production",
+              "rr:medical_and_public_health",
+              "rr:natural_disasters_and_accidents",
+              "rr:political_and_social_events",
+              "rr:rrdataset_real_pool",
+              "rr:war_and_conflict"
+            ],
+            "tn": 223,
+            "tp": 1054
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.03823529411764706,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03411764705882353,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 58,
+              "parents": 1700,
+              "tn": 1642,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 65,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "sources": [
+              "SCIMD-17"
+            ],
+            "tn": 1635,
+            "tp": 0
+          }
+        ],
+        "folds": [
+          {
+            "AI_recall": 0.6131687242798354,
+            "REAL_FPR": 0.027158492095662748,
+            "ap": 0.9468903862891955,
+            "auc": 0.9349021625928651,
+            "baseline": {
+              "AI_recall": 0.6378600823045267,
+              "REAL_FPR": 0.023915687069314958,
+              "ap": 0.9538764986741445,
+              "auc": 0.9436258196673457,
+              "fn": 1056,
+              "fp": 59,
+              "parents": 5383,
+              "tn": 2408,
+              "tp": 1860
+            },
+            "fn": 1128,
+            "fp": 67,
+            "paired": {
+              "0": {
+                "new_errors": 13,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 127,
+                "rescued_errors": 55
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 5383,
+            "tn": 2400,
+            "tp": 1788
+          },
+          {
+            "AI_recall": 0.9495495495495495,
+            "REAL_FPR": 0.376,
+            "ap": 0.8385197912641184,
+            "auc": 0.9183075597336466,
+            "baseline": {
+              "AI_recall": 0.9504504504504504,
+              "REAL_FPR": 0.3822608695652174,
+              "ap": 0.8409993441490377,
+              "auc": 0.9194929886408147,
+              "fn": 55,
+              "fp": 1099,
+              "parents": 3985,
+              "tn": 1776,
+              "tp": 1055
+            },
+            "fn": 56,
+            "fp": 1081,
+            "paired": {
+              "0": {
+                "new_errors": 10,
+                "rescued_errors": 28
+              },
+              "1": {
+                "new_errors": 4,
+                "rescued_errors": 3
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3985,
+            "tn": 1794,
+            "tp": 1054
+          },
+          {
+            "AI_recall": 0.9929701230228472,
+            "REAL_FPR": 0.008887171561051005,
+            "ap": 0.9978882674059093,
+            "auc": 0.999416666893028,
+            "baseline": {
+              "AI_recall": 0.9929701230228472,
+              "REAL_FPR": 0.00811437403400309,
+              "ap": 0.9978807359749456,
+              "auc": 0.9993996897944548,
+              "fn": 4,
+              "fp": 21,
+              "parents": 3157,
+              "tn": 2567,
+              "tp": 565
+            },
+            "fn": 4,
+            "fp": 23,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3157,
+            "tn": 2565,
+            "tp": 565
+          }
+        ],
+        "paired": {
+          "0": {
+            "new_errors": 26,
+            "rescued_errors": 34
+          },
+          "1": {
+            "new_errors": 131,
+            "rescued_errors": 58
+          },
+          "zero_new_AI_misses": false,
+          "zero_new_REAL_false_alerts": false
+        },
+        "pooled_different_fold_models": {
+          "AI_recall": 0.7414581066376497,
+          "REAL_FPR": 0.1476670870113493,
+          "ap": 0.8290360453528512,
+          "auc": 0.9006570001111467,
+          "fn": 1188,
+          "fp": 1171,
+          "parents": 12525,
+          "tn": 6759,
+          "tp": 3407
+        },
+        "processing_history": {
+          "admitted_source_body_upstream_history_unverified": {
+            "AI_recall": 0.7244224422442245,
+            "REAL_FPR": 0.19697521865889212,
+            "ap": 0.830902462646053,
+            "auc": 0.878604280669633,
+            "baseline": {
+              "AI_recall": 0.7411598302687411,
+              "REAL_FPR": 0.19989067055393586,
+              "ap": 0.8331136932216198,
+              "auc": 0.8808336099644951,
+              "fn": 1098,
+              "fp": 1097,
+              "parents": 9730,
+              "tn": 4391,
+              "tp": 3144
+            },
+            "fn": 1169,
+            "fp": 1081,
+            "paired": {
+              "0": {
+                "new_errors": 11,
+                "rescued_errors": 27
+              },
+              "1": {
+                "new_errors": 129,
+                "rescued_errors": 58
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 9730,
+            "tn": 4407,
+            "tp": 3073
+          },
+          "local_224_jpeg90_replay": {
+            "AI_recall": 0.9461756373937678,
+            "REAL_FPR": 0.04071661237785016,
+            "ap": 0.9815321200105445,
+            "auc": 0.9899973240073452,
+            "baseline": {
+              "AI_recall": 0.9518413597733711,
+              "REAL_FPR": 0.03908794788273615,
+              "ap": 0.9814995454645172,
+              "auc": 0.9899650275442693,
+              "fn": 17,
+              "fp": 24,
+              "parents": 967,
+              "tn": 590,
+              "tp": 336
+            },
+            "fn": 19,
+            "fp": 25,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 2,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 967,
+            "tn": 589,
+            "tp": 334
+          },
+          "local_full_resolution_RAW_render": {
+            "AI_recall": null,
+            "REAL_FPR": 0.0,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 128,
+              "tn": 128,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "tn": 128,
+            "tp": 0
+          },
+          "publisher_224_resize": {
+            "AI_recall": null,
+            "REAL_FPR": 0.03823529411764706,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03411764705882353,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 58,
+              "parents": 1700,
+              "tn": 1642,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 65,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "tn": 1635,
+            "tp": 0
+          }
+        }
+      },
+      "social_q75": {
+        "AI_component_worst_recall": 0.6183127572016461,
+        "REAL_component_worst_FPR": 0.8392,
+        "baseline": {
+          "AI_recall": 0.7590859630032644,
+          "REAL_FPR": 0.16204287515762925,
+          "ap": 0.8157829274315891,
+          "auc": 0.8918441696728859,
+          "fn": 1107,
+          "fp": 1285,
+          "parents": 12525,
+          "tn": 6645,
+          "tp": 3488
+        },
+        "components": [
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.001303780964797914,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 767,
+              "tn": 767,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 1,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 767,
+            "sources": [
+              "MIDD:Hynix_SL846",
+              "MIDD:ISOCELL_3P9",
+              "MIDD:ISOCELL_GN1",
+              "MIDD:ISOCELL_HM3",
+              "MIDD:OmniVision_OV32A",
+              "MIDD:OmniVision_OV64B",
+              "MIDD:Sony_IMX258",
+              "MIDD:Sony_IMX766"
+            ],
+            "tn": 766,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0390625,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0390625,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 5,
+              "parents": 128,
+              "tn": 123,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 5,
+            "paired": {
+              "0": {
+                "new_errors": 2,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 128,
+            "sources": [
+              "SID:Fuji",
+              "SID:Sony"
+            ],
+            "tn": 123,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.6183127572016461,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.6409465020576132,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 1047,
+              "fp": 0,
+              "parents": 2916,
+              "tn": 0,
+              "tp": 1869
+            },
+            "fn": 1113,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 113,
+                "rescued_errors": 47
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 2916,
+            "sources": [
+              "e32:flux2-klein-9b",
+              "e32:gpt-image-1",
+              "e32:nano-banana-local",
+              "e32:nano-banana-pro-ash-local",
+              "e32:qwen-image-2512",
+              "e36:FLUX.2_max",
+              "e36:GLM-Image",
+              "e36:Qwen-Image-2.0-pro",
+              "e36:Seedream-5.0",
+              "e36:gpt-image-2",
+              "e36:nano-banana-2.0"
+            ],
+            "tn": 0,
+            "tp": 1803
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.030329289428076257,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03552859618717504,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 41,
+              "parents": 1154,
+              "tn": 1113,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 35,
+            "paired": {
+              "0": {
+                "new_errors": 2,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1154,
+            "sources": [
+              "e32:forchheim-fodb"
+            ],
+            "tn": 1119,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9929701230228472,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.9929701230228472,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 4,
+              "fp": 0,
+              "parents": 569,
+              "tn": 0,
+              "tp": 565
+            },
+            "fn": 4,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 569,
+            "sources": [
+              "e32:communityforensics-ai-local"
+            ],
+            "tn": 0,
+            "tp": 565
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.03106060606060606,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.02878787878787879,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 38,
+              "parents": 1320,
+              "tn": 1282,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 41,
+            "paired": {
+              "0": {
+                "new_errors": 6,
+                "rescued_errors": 3
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1320,
+            "sources": [
+              "e32:csafe-mcsidb-iphone14",
+              "e32:csafe-mcsidb-s21"
+            ],
+            "tn": 1279,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0043859649122807015,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0035087719298245615,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 4,
+              "parents": 1140,
+              "tn": 1136,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 5,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1140,
+            "sources": [
+              "e32:vision-base-native"
+            ],
+            "tn": 1135,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.18046709129511676,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.18046709129511676,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 85,
+              "parents": 471,
+              "tn": 386,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 85,
+            "paired": {
+              "0": {
+                "new_errors": 4,
+                "rescued_errors": 4
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 471,
+            "sources": [
+              "e36:device_001",
+              "e36:device_002",
+              "e36:device_003",
+              "e36:device_005",
+              "e36:device_009"
+            ],
+            "tn": 386,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9495495495495495,
+            "REAL_FPR": 0.8392,
+            "ap": 0.82473437921863,
+            "auc": 0.8072569369369369,
+            "baseline": {
+              "AI_recall": 0.9495495495495495,
+              "REAL_FPR": 0.8432,
+              "ap": 0.829083708801995,
+              "auc": 0.8116554954954955,
+              "fn": 56,
+              "fp": 1054,
+              "parents": 2360,
+              "tn": 196,
+              "tp": 1054
+            },
+            "fn": 56,
+            "fp": 1049,
+            "paired": {
+              "0": {
+                "new_errors": 8,
+                "rescued_errors": 13
+              },
+              "1": {
+                "new_errors": 4,
+                "rescued_errors": 4
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 2360,
+            "sources": [
+              "rr:culture_and_religion",
+              "rr:everyday_life",
+              "rr:labor_and_production",
+              "rr:medical_and_public_health",
+              "rr:natural_disasters_and_accidents",
+              "rr:political_and_social_events",
+              "rr:rrdataset_real_pool",
+              "rr:war_and_conflict"
+            ],
+            "tn": 201,
+            "tp": 1054
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.03823529411764706,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03411764705882353,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 58,
+              "parents": 1700,
+              "tn": 1642,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 65,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "sources": [
+              "SCIMD-17"
+            ],
+            "tn": 1635,
+            "tp": 0
+          }
+        ],
+        "folds": [
+          {
+            "AI_recall": 0.6183127572016461,
+            "REAL_FPR": 0.026753141467369273,
+            "ap": 0.9465597591000098,
+            "auc": 0.9336146600142456,
+            "baseline": {
+              "AI_recall": 0.6409465020576132,
+              "REAL_FPR": 0.023510336441021483,
+              "ap": 0.9538655545599601,
+              "auc": 0.9427084984066775,
+              "fn": 1047,
+              "fp": 58,
+              "parents": 5383,
+              "tn": 2409,
+              "tp": 1869
+            },
+            "fn": 1113,
+            "fp": 66,
+            "paired": {
+              "0": {
+                "new_errors": 13,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 113,
+                "rescued_errors": 47
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 5383,
+            "tn": 2401,
+            "tp": 1803
+          },
+          {
+            "AI_recall": 0.9495495495495495,
+            "REAL_FPR": 0.4066086956521739,
+            "ap": 0.8177614237832526,
+            "auc": 0.906925812769291,
+            "baseline": {
+              "AI_recall": 0.9495495495495495,
+              "REAL_FPR": 0.41043478260869565,
+              "ap": 0.8218150489255659,
+              "auc": 0.909024990207599,
+              "fn": 56,
+              "fp": 1180,
+              "parents": 3985,
+              "tn": 1695,
+              "tp": 1054
+            },
+            "fn": 56,
+            "fp": 1169,
+            "paired": {
+              "0": {
+                "new_errors": 14,
+                "rescued_errors": 25
+              },
+              "1": {
+                "new_errors": 4,
+                "rescued_errors": 4
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3985,
+            "tn": 1706,
+            "tp": 1054
+          },
+          {
+            "AI_recall": 0.9929701230228472,
+            "REAL_FPR": 0.01970633693972179,
+            "ap": 0.9962388854251717,
+            "auc": 0.9988571017240583,
+            "baseline": {
+              "AI_recall": 0.9929701230228472,
+              "REAL_FPR": 0.018160741885625966,
+              "ap": 0.9962023850165016,
+              "auc": 0.9988353710378847,
+              "fn": 4,
+              "fp": 47,
+              "parents": 3157,
+              "tn": 2541,
+              "tp": 565
+            },
+            "fn": 4,
+            "fp": 51,
+            "paired": {
+              "0": {
+                "new_errors": 9,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3157,
+            "tn": 2537,
+            "tp": 565
+          }
+        ],
+        "paired": {
+          "0": {
+            "new_errors": 36,
+            "rescued_errors": 35
+          },
+          "1": {
+            "new_errors": 117,
+            "rescued_errors": 51
+          },
+          "zero_new_AI_misses": false,
+          "zero_new_REAL_false_alerts": false
+        },
+        "pooled_different_fold_models": {
+          "AI_recall": 0.7447225244831338,
+          "REAL_FPR": 0.16216897856242118,
+          "ap": 0.8100732031065655,
+          "auc": 0.8863939777734173,
+          "fn": 1173,
+          "fp": 1286,
+          "parents": 12525,
+          "tn": 6644,
+          "tp": 3422
+        },
+        "processing_history": {
+          "admitted_source_body_upstream_history_unverified": {
+            "AI_recall": 0.727958510136728,
+            "REAL_FPR": 0.21701895043731778,
+            "ap": 0.8094287890573056,
+            "auc": 0.8577989111385108,
+            "baseline": {
+              "AI_recall": 0.7430457331447431,
+              "REAL_FPR": 0.21829446064139943,
+              "ap": 0.8142734079747875,
+              "auc": 0.8628632802888786,
+              "fn": 1090,
+              "fp": 1198,
+              "parents": 9730,
+              "tn": 4290,
+              "tp": 3152
+            },
+            "fn": 1154,
+            "fp": 1191,
+            "paired": {
+              "0": {
+                "new_errors": 19,
+                "rescued_errors": 26
+              },
+              "1": {
+                "new_errors": 115,
+                "rescued_errors": 51
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 9730,
+            "tn": 4297,
+            "tp": 3088
+          },
+          "local_224_jpeg90_replay": {
+            "AI_recall": 0.9461756373937678,
+            "REAL_FPR": 0.04071661237785016,
+            "ap": 0.9815321200105445,
+            "auc": 0.9899973240073452,
+            "baseline": {
+              "AI_recall": 0.9518413597733711,
+              "REAL_FPR": 0.03908794788273615,
+              "ap": 0.9814995454645172,
+              "auc": 0.9899650275442693,
+              "fn": 17,
+              "fp": 24,
+              "parents": 967,
+              "tn": 590,
+              "tp": 336
+            },
+            "fn": 19,
+            "fp": 25,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 2,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 967,
+            "tn": 589,
+            "tp": 334
+          },
+          "local_full_resolution_RAW_render": {
+            "AI_recall": null,
+            "REAL_FPR": 0.0390625,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0390625,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 5,
+              "parents": 128,
+              "tn": 123,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 5,
+            "paired": {
+              "0": {
+                "new_errors": 2,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 128,
+            "tn": 123,
+            "tp": 0
+          },
+          "publisher_224_resize": {
+            "AI_recall": null,
+            "REAL_FPR": 0.03823529411764706,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03411764705882353,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 58,
+              "parents": 1700,
+              "tn": 1642,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 65,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "tn": 1635,
+            "tp": 0
+          }
+        }
+      }
+    },
+    "full_frame": {
+      "assigned_transport": {
+        "AI_component_worst_recall": 0.710562414266118,
+        "REAL_component_worst_FPR": 0.8168,
+        "baseline": {
+          "AI_recall": 0.8089227421109902,
+          "REAL_FPR": 0.15851197982345525,
+          "ap": 0.8409538784653959,
+          "auc": 0.9098573069307474,
+          "fn": 878,
+          "fp": 1257,
+          "parents": 12525,
+          "tn": 6673,
+          "tp": 3717
+        },
+        "components": [
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 767,
+              "tn": 767,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 767,
+            "sources": [
+              "MIDD:Hynix_SL846",
+              "MIDD:ISOCELL_3P9",
+              "MIDD:ISOCELL_GN1",
+              "MIDD:ISOCELL_HM3",
+              "MIDD:OmniVision_OV32A",
+              "MIDD:OmniVision_OV64B",
+              "MIDD:Sony_IMX258",
+              "MIDD:Sony_IMX766"
+            ],
+            "tn": 767,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0234375,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0234375,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 3,
+              "parents": 128,
+              "tn": 125,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 3,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "sources": [
+              "SID:Fuji",
+              "SID:Sony"
+            ],
+            "tn": 125,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.710562414266118,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.7294238683127572,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 789,
+              "fp": 0,
+              "parents": 2916,
+              "tn": 0,
+              "tp": 2127
+            },
+            "fn": 844,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 107,
+                "rescued_errors": 52
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 2916,
+            "sources": [
+              "e32:flux2-klein-9b",
+              "e32:gpt-image-1",
+              "e32:nano-banana-local",
+              "e32:nano-banana-pro-ash-local",
+              "e32:qwen-image-2512",
+              "e36:FLUX.2_max",
+              "e36:GLM-Image",
+              "e36:Qwen-Image-2.0-pro",
+              "e36:Seedream-5.0",
+              "e36:gpt-image-2",
+              "e36:nano-banana-2.0"
+            ],
+            "tn": 0,
+            "tp": 2072
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.029462738301559793,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.025996533795493933,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 30,
+              "parents": 1154,
+              "tn": 1124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 34,
+            "paired": {
+              "0": {
+                "new_errors": 6,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1154,
+            "sources": [
+              "e32:forchheim-fodb"
+            ],
+            "tn": 1120,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9894551845342706,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.9876977152899824,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 7,
+              "fp": 0,
+              "parents": 569,
+              "tn": 0,
+              "tp": 562
+            },
+            "fn": 6,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 1,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 569,
+            "sources": [
+              "e32:communityforensics-ai-local"
+            ],
+            "tn": 0,
+            "tp": 563
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.03409090909090909,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03257575757575758,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 43,
+              "parents": 1320,
+              "tn": 1277,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 45,
+            "paired": {
+              "0": {
+                "new_errors": 9,
+                "rescued_errors": 7
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1320,
+            "sources": [
+              "e32:csafe-mcsidb-iphone14",
+              "e32:csafe-mcsidb-s21"
+            ],
+            "tn": 1275,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.007017543859649123,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0043859649122807015,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 5,
+              "parents": 1140,
+              "tn": 1135,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 8,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1140,
+            "sources": [
+              "e32:vision-base-native"
+            ],
+            "tn": 1132,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.1592356687898089,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.15286624203821655,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 72,
+              "parents": 471,
+              "tn": 399,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 75,
+            "paired": {
+              "0": {
+                "new_errors": 7,
+                "rescued_errors": 4
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 471,
+            "sources": [
+              "e36:device_001",
+              "e36:device_002",
+              "e36:device_003",
+              "e36:device_005",
+              "e36:device_009"
+            ],
+            "tn": 396,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9252252252252252,
+            "REAL_FPR": 0.8168,
+            "ap": 0.8171231139245768,
+            "auc": 0.7944,
+            "baseline": {
+              "AI_recall": 0.9261261261261261,
+              "REAL_FPR": 0.8104,
+              "ap": 0.8185276174882788,
+              "auc": 0.7982306306306305,
+              "fn": 82,
+              "fp": 1013,
+              "parents": 2360,
+              "tn": 237,
+              "tp": 1028
+            },
+            "fn": 83,
+            "fp": 1021,
+            "paired": {
+              "0": {
+                "new_errors": 21,
+                "rescued_errors": 13
+              },
+              "1": {
+                "new_errors": 3,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 2360,
+            "sources": [
+              "rr:culture_and_religion",
+              "rr:everyday_life",
+              "rr:labor_and_production",
+              "rr:medical_and_public_health",
+              "rr:natural_disasters_and_accidents",
+              "rr:political_and_social_events",
+              "rr:rrdataset_real_pool",
+              "rr:war_and_conflict"
+            ],
+            "tn": 229,
+            "tp": 1027
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.057058823529411766,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.05352941176470588,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 91,
+              "parents": 1700,
+              "tn": 1609,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 97,
+            "paired": {
+              "0": {
+                "new_errors": 15,
+                "rescued_errors": 9
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "sources": [
+              "SCIMD-17"
+            ],
+            "tn": 1603,
+            "tp": 0
+          }
+        ],
+        "folds": [
+          {
+            "AI_recall": 0.710562414266118,
+            "REAL_FPR": 0.039319010944466964,
+            "ap": 0.9564471560960572,
+            "auc": 0.9469979031862561,
+            "baseline": {
+              "AI_recall": 0.7294238683127572,
+              "REAL_FPR": 0.03688690717470612,
+              "ap": 0.9606100972474128,
+              "auc": 0.9523801977599511,
+              "fn": 789,
+              "fp": 91,
+              "parents": 5383,
+              "tn": 2376,
+              "tp": 2127
+            },
+            "fn": 844,
+            "fp": 97,
+            "paired": {
+              "0": {
+                "new_errors": 15,
+                "rescued_errors": 9
+              },
+              "1": {
+                "new_errors": 107,
+                "rescued_errors": 52
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 5383,
+            "tn": 2370,
+            "tp": 2072
+          },
+          {
+            "AI_recall": 0.9252252252252252,
+            "REAL_FPR": 0.39304347826086955,
+            "ap": 0.8087793335644696,
+            "auc": 0.8986472385428909,
+            "baseline": {
+              "AI_recall": 0.9261261261261261,
+              "REAL_FPR": 0.38782608695652177,
+              "ap": 0.8104872158698433,
+              "auc": 0.9006799843321582,
+              "fn": 82,
+              "fp": 1115,
+              "parents": 3985,
+              "tn": 1760,
+              "tp": 1028
+            },
+            "fn": 83,
+            "fp": 1130,
+            "paired": {
+              "0": {
+                "new_errors": 34,
+                "rescued_errors": 19
+              },
+              "1": {
+                "new_errors": 3,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3985,
+            "tn": 1745,
+            "tp": 1027
+          },
+          {
+            "AI_recall": 0.9894551845342706,
+            "REAL_FPR": 0.021638330757341576,
+            "ap": 0.9943659095665681,
+            "auc": 0.998572565551973,
+            "baseline": {
+              "AI_recall": 0.9876977152899824,
+              "REAL_FPR": 0.01970633693972179,
+              "ap": 0.9951536914881459,
+              "auc": 0.9987837606582225,
+              "fn": 7,
+              "fp": 51,
+              "parents": 3157,
+              "tn": 2537,
+              "tp": 562
+            },
+            "fn": 6,
+            "fp": 56,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 7
+              },
+              "1": {
+                "new_errors": 1,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3157,
+            "tn": 2532,
+            "tp": 563
+          }
+        ],
+        "paired": {
+          "0": {
+            "new_errors": 61,
+            "rescued_errors": 35
+          },
+          "1": {
+            "new_errors": 111,
+            "rescued_errors": 56
+          },
+          "zero_new_AI_misses": false,
+          "zero_new_REAL_false_alerts": false
+        },
+        "pooled_different_fold_models": {
+          "AI_recall": 0.7969532100108814,
+          "REAL_FPR": 0.1617906683480454,
+          "ap": 0.834156719765715,
+          "auc": 0.9043705875814905,
+          "fn": 933,
+          "fp": 1283,
+          "parents": 12525,
+          "tn": 6647,
+          "tp": 3662
+        },
+        "processing_history": {
+          "admitted_source_body_upstream_history_unverified": {
+            "AI_recall": 0.7824139556812825,
+            "REAL_FPR": 0.20809037900874636,
+            "ap": 0.8321986584885812,
+            "auc": 0.8809205082315813,
+            "baseline": {
+              "AI_recall": 0.7953795379537953,
+              "REAL_FPR": 0.20444606413994168,
+              "ap": 0.8386207465311681,
+              "auc": 0.8869468149959521,
+              "fn": 868,
+              "fp": 1122,
+              "parents": 9730,
+              "tn": 4366,
+              "tp": 3374
+            },
+            "fn": 923,
+            "fp": 1142,
+            "paired": {
+              "0": {
+                "new_errors": 41,
+                "rescued_errors": 21
+              },
+              "1": {
+                "new_errors": 109,
+                "rescued_errors": 54
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 9730,
+            "tn": 4346,
+            "tp": 3319
+          },
+          "local_224_jpeg90_replay": {
+            "AI_recall": 0.9716713881019831,
+            "REAL_FPR": 0.06677524429967427,
+            "ap": 0.9809613080417076,
+            "auc": 0.9901080547378911,
+            "baseline": {
+              "AI_recall": 0.9716713881019831,
+              "REAL_FPR": 0.06677524429967427,
+              "ap": 0.9812802929282957,
+              "auc": 0.9905002260752416,
+              "fn": 10,
+              "fp": 41,
+              "parents": 967,
+              "tn": 573,
+              "tp": 343
+            },
+            "fn": 10,
+            "fp": 41,
+            "paired": {
+              "0": {
+                "new_errors": 5,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 2,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 967,
+            "tn": 573,
+            "tp": 343
+          },
+          "local_full_resolution_RAW_render": {
+            "AI_recall": null,
+            "REAL_FPR": 0.0234375,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0234375,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 3,
+              "parents": 128,
+              "tn": 125,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 3,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "tn": 125,
+            "tp": 0
+          },
+          "publisher_224_resize": {
+            "AI_recall": null,
+            "REAL_FPR": 0.057058823529411766,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.05352941176470588,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 91,
+              "parents": 1700,
+              "tn": 1609,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 97,
+            "paired": {
+              "0": {
+                "new_errors": 15,
+                "rescued_errors": 9
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "tn": 1603,
+            "tp": 0
+          }
+        }
+      },
+      "clean": {
+        "AI_component_worst_recall": 0.7379972565157751,
+        "REAL_component_worst_FPR": 0.7968,
+        "baseline": {
+          "AI_recall": 0.8137105549510337,
+          "REAL_FPR": 0.15006305170239598,
+          "ap": 0.874351481557515,
+          "auc": 0.922836050479783,
+          "fn": 856,
+          "fp": 1190,
+          "parents": 12525,
+          "tn": 6740,
+          "tp": 3739
+        },
+        "components": [
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 767,
+              "tn": 767,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 767,
+            "sources": [
+              "MIDD:Hynix_SL846",
+              "MIDD:ISOCELL_3P9",
+              "MIDD:ISOCELL_GN1",
+              "MIDD:ISOCELL_HM3",
+              "MIDD:OmniVision_OV32A",
+              "MIDD:OmniVision_OV64B",
+              "MIDD:Sony_IMX258",
+              "MIDD:Sony_IMX766"
+            ],
+            "tn": 767,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0390625,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03125,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 4,
+              "parents": 128,
+              "tn": 124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 5,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 128,
+            "sources": [
+              "SID:Fuji",
+              "SID:Sony"
+            ],
+            "tn": 123,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.7379972565157751,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.7311385459533608,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 784,
+              "fp": 0,
+              "parents": 2916,
+              "tn": 0,
+              "tp": 2132
+            },
+            "fn": 764,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 67,
+                "rescued_errors": 87
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 2916,
+            "sources": [
+              "e32:flux2-klein-9b",
+              "e32:gpt-image-1",
+              "e32:nano-banana-local",
+              "e32:nano-banana-pro-ash-local",
+              "e32:qwen-image-2512",
+              "e36:FLUX.2_max",
+              "e36:GLM-Image",
+              "e36:Qwen-Image-2.0-pro",
+              "e36:Seedream-5.0",
+              "e36:gpt-image-2",
+              "e36:nano-banana-2.0"
+            ],
+            "tn": 0,
+            "tp": 2152
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.014731369150779897,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.014731369150779897,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 17,
+              "parents": 1154,
+              "tn": 1137,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 17,
+            "paired": {
+              "0": {
+                "new_errors": 2,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1154,
+            "sources": [
+              "e32:forchheim-fodb"
+            ],
+            "tn": 1137,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9982425307557118,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 1.0,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 569,
+              "tn": 0,
+              "tp": 569
+            },
+            "fn": 1,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 569,
+            "sources": [
+              "e32:communityforensics-ai-local"
+            ],
+            "tn": 0,
+            "tp": 568
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.02727272727272727,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.023484848484848483,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 31,
+              "parents": 1320,
+              "tn": 1289,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 36,
+            "paired": {
+              "0": {
+                "new_errors": 6,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1320,
+            "sources": [
+              "e32:csafe-mcsidb-iphone14",
+              "e32:csafe-mcsidb-s21"
+            ],
+            "tn": 1284,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.002631578947368421,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.002631578947368421,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 3,
+              "parents": 1140,
+              "tn": 1137,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 3,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 1140,
+            "sources": [
+              "e32:vision-base-native"
+            ],
+            "tn": 1137,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.09978768577494693,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.11040339702760085,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 52,
+              "parents": 471,
+              "tn": 419,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 47,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 471,
+            "sources": [
+              "e36:device_001",
+              "e36:device_002",
+              "e36:device_003",
+              "e36:device_005",
+              "e36:device_009"
+            ],
+            "tn": 424,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9279279279279279,
+            "REAL_FPR": 0.7968,
+            "ap": 0.8705337816727257,
+            "auc": 0.8365924324324324,
+            "baseline": {
+              "AI_recall": 0.9351351351351351,
+              "REAL_FPR": 0.808,
+              "ap": 0.8751304655870518,
+              "auc": 0.8414025225225226,
+              "fn": 72,
+              "fp": 1010,
+              "parents": 2360,
+              "tn": 240,
+              "tp": 1038
+            },
+            "fn": 80,
+            "fp": 996,
+            "paired": {
+              "0": {
+                "new_errors": 14,
+                "rescued_errors": 28
+              },
+              "1": {
+                "new_errors": 11,
+                "rescued_errors": 3
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 2360,
+            "sources": [
+              "rr:culture_and_religion",
+              "rr:everyday_life",
+              "rr:labor_and_production",
+              "rr:medical_and_public_health",
+              "rr:natural_disasters_and_accidents",
+              "rr:political_and_social_events",
+              "rr:rrdataset_real_pool",
+              "rr:war_and_conflict"
+            ],
+            "tn": 254,
+            "tp": 1030
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.045294117647058825,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.04294117647058823,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 73,
+              "parents": 1700,
+              "tn": 1627,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 77,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "sources": [
+              "SCIMD-17"
+            ],
+            "tn": 1623,
+            "tp": 0
+          }
+        ],
+        "folds": [
+          {
+            "AI_recall": 0.7379972565157751,
+            "REAL_FPR": 0.031211998378597488,
+            "ap": 0.9636428866784919,
+            "auc": 0.9536739557495011,
+            "baseline": {
+              "AI_recall": 0.7311385459533608,
+              "REAL_FPR": 0.02959059586542359,
+              "ap": 0.9659923988402701,
+              "auc": 0.957393701107013,
+              "fn": 784,
+              "fp": 73,
+              "parents": 5383,
+              "tn": 2394,
+              "tp": 2132
+            },
+            "fn": 764,
+            "fp": 77,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 67,
+                "rescued_errors": 87
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 5383,
+            "tn": 2390,
+            "tp": 2152
+          },
+          {
+            "AI_recall": 0.9279279279279279,
+            "REAL_FPR": 0.36869565217391304,
+            "ap": 0.8662209261761188,
+            "auc": 0.9220070505287897,
+            "baseline": {
+              "AI_recall": 0.9351351351351351,
+              "REAL_FPR": 0.37530434782608696,
+              "ap": 0.8710670932131533,
+              "auc": 0.9245856639247944,
+              "fn": 72,
+              "fp": 1079,
+              "parents": 3985,
+              "tn": 1796,
+              "tp": 1038
+            },
+            "fn": 80,
+            "fp": 1060,
+            "paired": {
+              "0": {
+                "new_errors": 19,
+                "rescued_errors": 38
+              },
+              "1": {
+                "new_errors": 11,
+                "rescued_errors": 3
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3985,
+            "tn": 1815,
+            "tp": 1030
+          },
+          {
+            "AI_recall": 0.9982425307557118,
+            "REAL_FPR": 0.017001545595054096,
+            "ap": 0.9993626936728348,
+            "auc": 0.9998560342041001,
+            "baseline": {
+              "AI_recall": 1.0,
+              "REAL_FPR": 0.014683153013910355,
+              "ap": 0.9995225890028516,
+              "auc": 0.9998933838209608,
+              "fn": 0,
+              "fp": 38,
+              "parents": 3157,
+              "tn": 2550,
+              "tp": 569
+            },
+            "fn": 1,
+            "fp": 44,
+            "paired": {
+              "0": {
+                "new_errors": 7,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3157,
+            "tn": 2544,
+            "tp": 568
+          }
+        ],
+        "paired": {
+          "0": {
+            "new_errors": 38,
+            "rescued_errors": 47
+          },
+          "1": {
+            "new_errors": 79,
+            "rescued_errors": 90
+          },
+          "zero_new_AI_misses": false,
+          "zero_new_REAL_false_alerts": false
+        },
+        "pooled_different_fold_models": {
+          "AI_recall": 0.8161044613710555,
+          "REAL_FPR": 0.1489281210592686,
+          "ap": 0.8773545752352483,
+          "auc": 0.9227128012108121,
+          "fn": 845,
+          "fp": 1181,
+          "parents": 12525,
+          "tn": 6749,
+          "tp": 3750
+        },
+        "processing_history": {
+          "admitted_source_body_upstream_history_unverified": {
+            "AI_recall": 0.8062234794908062,
+            "REAL_FPR": 0.19369533527696792,
+            "ap": 0.8818781678890988,
+            "auc": 0.9074038182660416,
+            "baseline": {
+              "AI_recall": 0.8045733144743046,
+              "REAL_FPR": 0.19624635568513119,
+              "ap": 0.8778746358143893,
+              "auc": 0.9062721648570522,
+              "fn": 829,
+              "fp": 1077,
+              "parents": 9730,
+              "tn": 4411,
+              "tp": 3413
+            },
+            "fn": 822,
+            "fp": 1063,
+            "paired": {
+              "0": {
+                "new_errors": 23,
+                "rescued_errors": 37
+              },
+              "1": {
+                "new_errors": 77,
+                "rescued_errors": 84
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 9730,
+            "tn": 4425,
+            "tp": 3420
+          },
+          "local_224_jpeg90_replay": {
+            "AI_recall": 0.9348441926345609,
+            "REAL_FPR": 0.05863192182410423,
+            "ap": 0.9685746602475813,
+            "auc": 0.9803083850845706,
+            "baseline": {
+              "AI_recall": 0.9235127478753541,
+              "REAL_FPR": 0.05863192182410423,
+              "ap": 0.9682699248019521,
+              "auc": 0.9794086978988843,
+              "fn": 27,
+              "fp": 36,
+              "parents": 967,
+              "tn": 578,
+              "tp": 326
+            },
+            "fn": 23,
+            "fp": 36,
+            "paired": {
+              "0": {
+                "new_errors": 2,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 2,
+                "rescued_errors": 6
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 967,
+            "tn": 578,
+            "tp": 330
+          },
+          "local_full_resolution_RAW_render": {
+            "AI_recall": null,
+            "REAL_FPR": 0.0390625,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03125,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 4,
+              "parents": 128,
+              "tn": 124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 5,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 128,
+            "tn": 123,
+            "tp": 0
+          },
+          "publisher_224_resize": {
+            "AI_recall": null,
+            "REAL_FPR": 0.045294117647058825,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.04294117647058823,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 73,
+              "parents": 1700,
+              "tn": 1627,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 77,
+            "paired": {
+              "0": {
+                "new_errors": 12,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "tn": 1623,
+            "tp": 0
+          }
+        }
+      },
+      "q75": {
+        "AI_component_worst_recall": 0.651920438957476,
+        "REAL_component_worst_FPR": 0.8336,
+        "baseline": {
+          "AI_recall": 0.7771490750816105,
+          "REAL_FPR": 0.15258511979823455,
+          "ap": 0.8414278020895812,
+          "auc": 0.9090292507756252,
+          "fn": 1024,
+          "fp": 1210,
+          "parents": 12525,
+          "tn": 6720,
+          "tp": 3571
+        },
+        "components": [
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.001303780964797914,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 767,
+              "tn": 767,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 1,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 767,
+            "sources": [
+              "MIDD:Hynix_SL846",
+              "MIDD:ISOCELL_3P9",
+              "MIDD:ISOCELL_GN1",
+              "MIDD:ISOCELL_HM3",
+              "MIDD:OmniVision_OV32A",
+              "MIDD:OmniVision_OV64B",
+              "MIDD:Sony_IMX258",
+              "MIDD:Sony_IMX766"
+            ],
+            "tn": 766,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0078125,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 1,
+              "parents": 128,
+              "tn": 127,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "sources": [
+              "SID:Fuji",
+              "SID:Sony"
+            ],
+            "tn": 128,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.651920438957476,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.6697530864197531,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 963,
+              "fp": 0,
+              "parents": 2916,
+              "tn": 0,
+              "tp": 1953
+            },
+            "fn": 1015,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 109,
+                "rescued_errors": 57
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 2916,
+            "sources": [
+              "e32:flux2-klein-9b",
+              "e32:gpt-image-1",
+              "e32:nano-banana-local",
+              "e32:nano-banana-pro-ash-local",
+              "e32:qwen-image-2512",
+              "e36:FLUX.2_max",
+              "e36:GLM-Image",
+              "e36:Qwen-Image-2.0-pro",
+              "e36:Seedream-5.0",
+              "e36:gpt-image-2",
+              "e36:nano-banana-2.0"
+            ],
+            "tn": 0,
+            "tp": 1901
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.01559792027729636,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.01386481802426343,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 16,
+              "parents": 1154,
+              "tn": 1138,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 18,
+            "paired": {
+              "0": {
+                "new_errors": 3,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1154,
+            "sources": [
+              "e32:forchheim-fodb"
+            ],
+            "tn": 1136,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9947275922671354,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.9929701230228472,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 4,
+              "fp": 0,
+              "parents": 569,
+              "tn": 0,
+              "tp": 565
+            },
+            "fn": 3,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 569,
+            "sources": [
+              "e32:communityforensics-ai-local"
+            ],
+            "tn": 0,
+            "tp": 566
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.020454545454545454,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.01818181818181818,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 24,
+              "parents": 1320,
+              "tn": 1296,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 27,
+            "paired": {
+              "0": {
+                "new_errors": 6,
+                "rescued_errors": 3
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1320,
+            "sources": [
+              "e32:csafe-mcsidb-iphone14",
+              "e32:csafe-mcsidb-s21"
+            ],
+            "tn": 1293,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.002631578947368421,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.002631578947368421,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 3,
+              "parents": 1140,
+              "tn": 1137,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 3,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 1140,
+            "sources": [
+              "e32:vision-base-native"
+            ],
+            "tn": 1137,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.08917197452229299,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.09554140127388536,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 45,
+              "parents": 471,
+              "tn": 426,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 42,
+            "paired": {
+              "0": {
+                "new_errors": 2,
+                "rescued_errors": 5
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 471,
+            "sources": [
+              "e36:device_001",
+              "e36:device_002",
+              "e36:device_003",
+              "e36:device_005",
+              "e36:device_009"
+            ],
+            "tn": 429,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9459459459459459,
+            "REAL_FPR": 0.8336,
+            "ap": 0.8515774195023105,
+            "auc": 0.8278702702702703,
+            "baseline": {
+              "AI_recall": 0.9486486486486486,
+              "REAL_FPR": 0.8376,
+              "ap": 0.8528089701017337,
+              "auc": 0.8295920720720722,
+              "fn": 57,
+              "fp": 1047,
+              "parents": 2360,
+              "tn": 203,
+              "tp": 1053
+            },
+            "fn": 60,
+            "fp": 1042,
+            "paired": {
+              "0": {
+                "new_errors": 10,
+                "rescued_errors": 15
+              },
+              "1": {
+                "new_errors": 5,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 2360,
+            "sources": [
+              "rr:culture_and_religion",
+              "rr:everyday_life",
+              "rr:labor_and_production",
+              "rr:medical_and_public_health",
+              "rr:natural_disasters_and_accidents",
+              "rr:political_and_social_events",
+              "rr:rrdataset_real_pool",
+              "rr:war_and_conflict"
+            ],
+            "tn": 208,
+            "tp": 1050
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.04470588235294118,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.04352941176470588,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 74,
+              "parents": 1700,
+              "tn": 1626,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 76,
+            "paired": {
+              "0": {
+                "new_errors": 10,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "sources": [
+              "SCIMD-17"
+            ],
+            "tn": 1624,
+            "tp": 0
+          }
+        ],
+        "folds": [
+          {
+            "AI_recall": 0.651920438957476,
+            "REAL_FPR": 0.031211998378597488,
+            "ap": 0.9499266580728606,
+            "auc": 0.9395370050649366,
+            "baseline": {
+              "AI_recall": 0.6697530864197531,
+              "REAL_FPR": 0.029995946493717066,
+              "ap": 0.9565415421605815,
+              "auc": 0.9476957290278312,
+              "fn": 963,
+              "fp": 74,
+              "parents": 5383,
+              "tn": 2393,
+              "tp": 1953
+            },
+            "fn": 1015,
+            "fp": 77,
+            "paired": {
+              "0": {
+                "new_errors": 11,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 109,
+                "rescued_errors": 57
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 5383,
+            "tn": 2390,
+            "tp": 1901
+          },
+          {
+            "AI_recall": 0.9459459459459459,
+            "REAL_FPR": 0.38330434782608697,
+            "ap": 0.8484191354338799,
+            "auc": 0.9205320799059928,
+            "baseline": {
+              "AI_recall": 0.9486486486486486,
+              "REAL_FPR": 0.3853913043478261,
+              "ap": 0.8495287068772206,
+              "auc": 0.9212753623188406,
+              "fn": 57,
+              "fp": 1108,
+              "parents": 3985,
+              "tn": 1767,
+              "tp": 1053
+            },
+            "fn": 60,
+            "fp": 1102,
+            "paired": {
+              "0": {
+                "new_errors": 15,
+                "rescued_errors": 21
+              },
+              "1": {
+                "new_errors": 5,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3985,
+            "tn": 1773,
+            "tp": 1050
+          },
+          {
+            "AI_recall": 0.9947275922671354,
+            "REAL_FPR": 0.011591962905718702,
+            "ap": 0.9987679307942922,
+            "auc": 0.9997059566527138,
+            "baseline": {
+              "AI_recall": 0.9929701230228472,
+              "REAL_FPR": 0.010819165378670788,
+              "ap": 0.9988400534457387,
+              "auc": 0.9997195383315722,
+              "fn": 4,
+              "fp": 28,
+              "parents": 3157,
+              "tn": 2560,
+              "tp": 565
+            },
+            "fn": 3,
+            "fp": 30,
+            "paired": {
+              "0": {
+                "new_errors": 6,
+                "rescued_errors": 4
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3157,
+            "tn": 2558,
+            "tp": 566
+          }
+        ],
+        "paired": {
+          "0": {
+            "new_errors": 32,
+            "rescued_errors": 33
+          },
+          "1": {
+            "new_errors": 114,
+            "rescued_errors": 60
+          },
+          "zero_new_AI_misses": false,
+          "zero_new_REAL_false_alerts": false
+        },
+        "pooled_different_fold_models": {
+          "AI_recall": 0.7653971708378673,
+          "REAL_FPR": 0.15245901639344261,
+          "ap": 0.8381496911584883,
+          "auc": 0.9056441908044685,
+          "fn": 1078,
+          "fp": 1209,
+          "parents": 12525,
+          "tn": 6721,
+          "tp": 3517
+        },
+        "processing_history": {
+          "admitted_source_body_upstream_history_unverified": {
+            "AI_recall": 0.7503536067892503,
+            "REAL_FPR": 0.2002551020408163,
+            "ap": 0.8389378950166726,
+            "auc": 0.8842792143125182,
+            "baseline": {
+              "AI_recall": 0.7626119754832626,
+              "REAL_FPR": 0.20098396501457727,
+              "ap": 0.841012405717503,
+              "auc": 0.8864878821805546,
+              "fn": 1007,
+              "fp": 1103,
+              "parents": 9730,
+              "tn": 4385,
+              "tp": 3235
+            },
+            "fn": 1059,
+            "fp": 1099,
+            "paired": {
+              "0": {
+                "new_errors": 17,
+                "rescued_errors": 21
+              },
+              "1": {
+                "new_errors": 111,
+                "rescued_errors": 59
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 9730,
+            "tn": 4389,
+            "tp": 3183
+          },
+          "local_224_jpeg90_replay": {
+            "AI_recall": 0.9461756373937678,
+            "REAL_FPR": 0.05537459283387622,
+            "ap": 0.9827719725287055,
+            "auc": 0.9913353203347759,
+            "baseline": {
+              "AI_recall": 0.9518413597733711,
+              "REAL_FPR": 0.05211726384364821,
+              "ap": 0.98207888434989,
+              "auc": 0.990915466314789,
+              "fn": 17,
+              "fp": 32,
+              "parents": 967,
+              "tn": 582,
+              "tp": 336
+            },
+            "fn": 19,
+            "fp": 34,
+            "paired": {
+              "0": {
+                "new_errors": 5,
+                "rescued_errors": 3
+              },
+              "1": {
+                "new_errors": 3,
+                "rescued_errors": 1
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 967,
+            "tn": 580,
+            "tp": 334
+          },
+          "local_full_resolution_RAW_render": {
+            "AI_recall": null,
+            "REAL_FPR": 0.0,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0078125,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 1,
+              "parents": 128,
+              "tn": 127,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 128,
+            "tn": 128,
+            "tp": 0
+          },
+          "publisher_224_resize": {
+            "AI_recall": null,
+            "REAL_FPR": 0.04470588235294118,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.04352941176470588,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 74,
+              "parents": 1700,
+              "tn": 1626,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 76,
+            "paired": {
+              "0": {
+                "new_errors": 10,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "tn": 1624,
+            "tp": 0
+          }
+        }
+      },
+      "social_q75": {
+        "AI_component_worst_recall": 0.654320987654321,
+        "REAL_component_worst_FPR": 0.8448,
+        "baseline": {
+          "AI_recall": 0.777366702937976,
+          "REAL_FPR": 0.16393442622950818,
+          "ap": 0.8276736859508979,
+          "auc": 0.8988856520671216,
+          "fn": 1023,
+          "fp": 1300,
+          "parents": 12525,
+          "tn": 6630,
+          "tp": 3572
+        },
+        "components": [
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.001303780964797914,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 0,
+              "parents": 767,
+              "tn": 767,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 1,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 767,
+            "sources": [
+              "MIDD:Hynix_SL846",
+              "MIDD:ISOCELL_3P9",
+              "MIDD:ISOCELL_GN1",
+              "MIDD:ISOCELL_HM3",
+              "MIDD:OmniVision_OV32A",
+              "MIDD:OmniVision_OV64B",
+              "MIDD:Sony_IMX258",
+              "MIDD:Sony_IMX766"
+            ],
+            "tn": 766,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.03125,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03125,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 4,
+              "parents": 128,
+              "tn": 124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 4,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 128,
+            "sources": [
+              "SID:Fuji",
+              "SID:Sony"
+            ],
+            "tn": 124,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.654320987654321,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.6704389574759945,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 961,
+              "fp": 0,
+              "parents": 2916,
+              "tn": 0,
+              "tp": 1955
+            },
+            "fn": 1008,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 97,
+                "rescued_errors": 50
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 2916,
+            "sources": [
+              "e32:flux2-klein-9b",
+              "e32:gpt-image-1",
+              "e32:nano-banana-local",
+              "e32:nano-banana-pro-ash-local",
+              "e32:qwen-image-2512",
+              "e36:FLUX.2_max",
+              "e36:GLM-Image",
+              "e36:Qwen-Image-2.0-pro",
+              "e36:Seedream-5.0",
+              "e36:gpt-image-2",
+              "e36:nano-banana-2.0"
+            ],
+            "tn": 0,
+            "tp": 1908
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.02859618717504333,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.025996533795493933,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 30,
+              "parents": 1154,
+              "tn": 1124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 33,
+            "paired": {
+              "0": {
+                "new_errors": 5,
+                "rescued_errors": 2
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1154,
+            "sources": [
+              "e32:forchheim-fodb"
+            ],
+            "tn": 1121,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9947275922671354,
+            "REAL_FPR": null,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": 0.9929701230228472,
+              "REAL_FPR": null,
+              "ap": null,
+              "auc": null,
+              "fn": 4,
+              "fp": 0,
+              "parents": 569,
+              "tn": 0,
+              "tp": 565
+            },
+            "fn": 3,
+            "fp": 0,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 569,
+            "sources": [
+              "e32:communityforensics-ai-local"
+            ],
+            "tn": 0,
+            "tp": 566
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.03484848484848485,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03257575757575758,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 43,
+              "parents": 1320,
+              "tn": 1277,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 46,
+            "paired": {
+              "0": {
+                "new_errors": 7,
+                "rescued_errors": 4
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1320,
+            "sources": [
+              "e32:csafe-mcsidb-iphone14",
+              "e32:csafe-mcsidb-s21"
+            ],
+            "tn": 1274,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.0035087719298245615,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.0043859649122807015,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 5,
+              "parents": 1140,
+              "tn": 1135,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 4,
+            "paired": {
+              "0": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": true
+            },
+            "parents": 1140,
+            "sources": [
+              "e32:vision-base-native"
+            ],
+            "tn": 1136,
+            "tp": 0
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.18259023354564755,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.18046709129511676,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 85,
+              "parents": 471,
+              "tn": 386,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 86,
+            "paired": {
+              "0": {
+                "new_errors": 4,
+                "rescued_errors": 3
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 471,
+            "sources": [
+              "e36:device_001",
+              "e36:device_002",
+              "e36:device_003",
+              "e36:device_005",
+              "e36:device_009"
+            ],
+            "tn": 385,
+            "tp": 0
+          },
+          {
+            "AI_recall": 0.9459459459459459,
+            "REAL_FPR": 0.8448,
+            "ap": 0.8390266755098126,
+            "auc": 0.8163747747747747,
+            "baseline": {
+              "AI_recall": 0.9477477477477477,
+              "REAL_FPR": 0.8472,
+              "ap": 0.8416199643220493,
+              "auc": 0.8196446846846848,
+              "fn": 58,
+              "fp": 1059,
+              "parents": 2360,
+              "tn": 191,
+              "tp": 1052
+            },
+            "fn": 60,
+            "fp": 1056,
+            "paired": {
+              "0": {
+                "new_errors": 13,
+                "rescued_errors": 16
+              },
+              "1": {
+                "new_errors": 4,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 2360,
+            "sources": [
+              "rr:culture_and_religion",
+              "rr:everyday_life",
+              "rr:labor_and_production",
+              "rr:medical_and_public_health",
+              "rr:natural_disasters_and_accidents",
+              "rr:political_and_social_events",
+              "rr:rrdataset_real_pool",
+              "rr:war_and_conflict"
+            ],
+            "tn": 194,
+            "tp": 1050
+          },
+          {
+            "AI_recall": null,
+            "REAL_FPR": 0.04470588235294118,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.04352941176470588,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 74,
+              "parents": 1700,
+              "tn": 1626,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 76,
+            "paired": {
+              "0": {
+                "new_errors": 10,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "sources": [
+              "SCIMD-17"
+            ],
+            "tn": 1624,
+            "tp": 0
+          }
+        ],
+        "folds": [
+          {
+            "AI_recall": 0.654320987654321,
+            "REAL_FPR": 0.031211998378597488,
+            "ap": 0.9503440221350032,
+            "auc": 0.9397307837946489,
+            "baseline": {
+              "AI_recall": 0.6704389574759945,
+              "REAL_FPR": 0.029995946493717066,
+              "ap": 0.9569847662703703,
+              "auc": 0.9478550334928602,
+              "fn": 961,
+              "fp": 74,
+              "parents": 5383,
+              "tn": 2393,
+              "tp": 1955
+            },
+            "fn": 1008,
+            "fp": 77,
+            "paired": {
+              "0": {
+                "new_errors": 11,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 97,
+                "rescued_errors": 50
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 5383,
+            "tn": 2390,
+            "tp": 1908
+          },
+          {
+            "AI_recall": 0.9459459459459459,
+            "REAL_FPR": 0.40869565217391307,
+            "ap": 0.8317084372918596,
+            "auc": 0.9106958088523306,
+            "baseline": {
+              "AI_recall": 0.9477477477477477,
+              "REAL_FPR": 0.4083478260869565,
+              "ap": 0.8339831509139731,
+              "auc": 0.9123738347042695,
+              "fn": 58,
+              "fp": 1174,
+              "parents": 3985,
+              "tn": 1701,
+              "tp": 1052
+            },
+            "fn": 60,
+            "fp": 1175,
+            "paired": {
+              "0": {
+                "new_errors": 22,
+                "rescued_errors": 21
+              },
+              "1": {
+                "new_errors": 4,
+                "rescued_errors": 2
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3985,
+            "tn": 1700,
+            "tp": 1050
+          },
+          {
+            "AI_recall": 0.9947275922671354,
+            "REAL_FPR": 0.020865533230293665,
+            "ap": 0.9978498939058722,
+            "auc": 0.9994689563566331,
+            "baseline": {
+              "AI_recall": 0.9929701230228472,
+              "REAL_FPR": 0.02009273570324575,
+              "ap": 0.9979209282475862,
+              "auc": 0.9994784635318341,
+              "fn": 4,
+              "fp": 52,
+              "parents": 3157,
+              "tn": 2536,
+              "tp": 565
+            },
+            "fn": 3,
+            "fp": 54,
+            "paired": {
+              "0": {
+                "new_errors": 8,
+                "rescued_errors": 6
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 1
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 3157,
+            "tn": 2534,
+            "tp": 566
+          }
+        ],
+        "paired": {
+          "0": {
+            "new_errors": 41,
+            "rescued_errors": 35
+          },
+          "1": {
+            "new_errors": 101,
+            "rescued_errors": 53
+          },
+          "zero_new_AI_misses": false,
+          "zero_new_REAL_false_alerts": false
+        },
+        "pooled_different_fold_models": {
+          "AI_recall": 0.7669205658324265,
+          "REAL_FPR": 0.16469104665825976,
+          "ap": 0.8225552282658704,
+          "auc": 0.8938984064865725,
+          "fn": 1071,
+          "fp": 1306,
+          "parents": 12525,
+          "tn": 6624,
+          "tp": 3524
+        },
+        "processing_history": {
+          "admitted_source_body_upstream_history_unverified": {
+            "AI_recall": 0.752003771805752,
+            "REAL_FPR": 0.21720116618075802,
+            "ap": 0.8208880264407771,
+            "auc": 0.8668581950864807,
+            "baseline": {
+              "AI_recall": 0.7628477133427628,
+              "REAL_FPR": 0.21683673469387754,
+              "ap": 0.8252674829015502,
+              "auc": 0.8715038374412202,
+              "fn": 1006,
+              "fp": 1190,
+              "parents": 9730,
+              "tn": 4298,
+              "tp": 3236
+            },
+            "fn": 1052,
+            "fp": 1192,
+            "paired": {
+              "0": {
+                "new_errors": 25,
+                "rescued_errors": 23
+              },
+              "1": {
+                "new_errors": 98,
+                "rescued_errors": 52
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 9730,
+            "tn": 4296,
+            "tp": 3190
+          },
+          "local_224_jpeg90_replay": {
+            "AI_recall": 0.9461756373937678,
+            "REAL_FPR": 0.05537459283387622,
+            "ap": 0.9827719725287055,
+            "auc": 0.9913353203347759,
+            "baseline": {
+              "AI_recall": 0.9518413597733711,
+              "REAL_FPR": 0.05211726384364821,
+              "ap": 0.98207888434989,
+              "auc": 0.990915466314789,
+              "fn": 17,
+              "fp": 32,
+              "parents": 967,
+              "tn": 582,
+              "tp": 336
+            },
+            "fn": 19,
+            "fp": 34,
+            "paired": {
+              "0": {
+                "new_errors": 5,
+                "rescued_errors": 3
+              },
+              "1": {
+                "new_errors": 3,
+                "rescued_errors": 1
+              },
+              "zero_new_AI_misses": false,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 967,
+            "tn": 580,
+            "tp": 334
+          },
+          "local_full_resolution_RAW_render": {
+            "AI_recall": null,
+            "REAL_FPR": 0.03125,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.03125,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 4,
+              "parents": 128,
+              "tn": 124,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 4,
+            "paired": {
+              "0": {
+                "new_errors": 1,
+                "rescued_errors": 1
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 128,
+            "tn": 124,
+            "tp": 0
+          },
+          "publisher_224_resize": {
+            "AI_recall": null,
+            "REAL_FPR": 0.04470588235294118,
+            "ap": null,
+            "auc": null,
+            "baseline": {
+              "AI_recall": null,
+              "REAL_FPR": 0.04352941176470588,
+              "ap": null,
+              "auc": null,
+              "fn": 0,
+              "fp": 74,
+              "parents": 1700,
+              "tn": 1626,
+              "tp": 0
+            },
+            "fn": 0,
+            "fp": 76,
+            "paired": {
+              "0": {
+                "new_errors": 10,
+                "rescued_errors": 8
+              },
+              "1": {
+                "new_errors": 0,
+                "rescued_errors": 0
+              },
+              "zero_new_AI_misses": true,
+              "zero_new_REAL_false_alerts": false
+            },
+            "parents": 1700,
+            "tn": 1624,
+            "tp": 0
+          }
+        }
+      }
+    }
+  },
+  "seconds": 36.27705995796714,
+  "state": "E151_source_pixel_comparison_complete"
+}

@@ -3505,3 +3505,31 @@ The fixed53-parent/four-view probe passed exact replay and resource gates; full1
 extraction is separately frozen and started. Reuse only admitted TRAIN bodies; write private
 features and immutable chunk receipts on LaCie. E151 will use these numeric features and
 existing semantic caches, not reread photographs. Downloads remain zero.
+
+
+### E150B complete reuse — 2026-09-16
+
+All12525 existing TRAIN bodies (7930 REAL/4595 AI) completed the registered four-condition
+source-pixel extraction. No exclusions/replacements/acquisition or label/role changes.
+Private196 numeric chunks and combined12525x4x2x300 float32 archive remain on LaCie.
+The53 probe parents replay exactly; no patch image exports. Public aggregate receipt:
+evidence/e150b_source_pixel_features.json. E151 reuses this cache and frozen semantic
+features for consumed internal source-fold research, not independent new evidence.
+
+
+### E151 completed cache reuse / E152 planned reuse — 2026-09-16
+
+E151 used the full E150B numeric cache and existing E131 semantic caches/maps only; six
+fresh heads, zero photograph reads or downloads. Global roles stay TRAIN with internal
+source-fold held-out predictions. Both branches were rejected. Proposed E152 reuses only
+these already-consumed caches, maps, coefficients and locked predictions for algebraic
+error diagnosis. No new acquisition, labels/roles, source substitution or protected data.
+
+
+### E152 completed diagnosis / E153 proposed reuse — 2026-09-16
+
+E152 reread only frozen numeric feature caches, maps, heads and locked predictions for
+all12525 admitted TRAIN parents. It created private12525x4x5 logit-decomposition arrays
+per branch and public aggregates; no new fit, pixel read, download or role change. E153
+may reuse the same frozen artifacts to separate source/control-difference contributions
+after its own registration. Error subsets remain post-hoc consumed-data diagnostics.

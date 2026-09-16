@@ -1,0 +1,39 @@
+{
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "checks": "Replay both locked score archives at1e-10/identical0.5 decisions, require logit decomposition and paired clean-to-each-transport differences within1e-10. Serialize/replay and lock every parent/view/branch decomposition before summaries.",
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "0f393ed714ec85a16f3f6a68a5b06cbb77572a77da391724fb61c67b1e52211e",
+  "cpu_threads": 2,
+  "definition": "E151 minus E131 held-out logit = x*(new_semantic_coefficients-old_coefficients) + z*new_residual_coefficients + (new_intercept-old_intercept). x is frozen E131320-dimensional semantic map, z is frozen E15164-dimensional residual map. No fit, ablation candidate, threshold or feature change.",
+  "downloads": 0,
+  "fields": [
+    "old_logit",
+    "new_logit",
+    "semantic_coefficient_change",
+    "added_residual",
+    "intercept_change"
+  ],
+  "fits": 0,
+  "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive mechanism chosen after E147/E148. All folds are consumed development data. Source-pixel plus paired down/up-control is tested as one bundle, not separate attribution. Processing-history strata are observational and source/class confounded. Unknown corpus ancestry remains; this is not E92 accuracy or independent unseen-family evidence. Post-hoc algebraic diagnosis on consumed folds. Contributions depend on these fixed centered/whitened coordinates and fitted coefficients; neither dominant-term counts nor zeroing a block establish physical causality, authenticity or a deployable improvement. Repeated views are not independent parents.",
+  "max_seconds": 1800,
+  "new_pixels_read": 0,
+  "parents": 12525,
+  "promotion_allowed": false,
+  "state": "E152_no_refit_logit_decomposition_registered",
+  "summaries": "All four conditions by class and every source component/class; signed mean/q05/median/q95 of three logit-change terms; harmful sign and unique largest harmful term counts, ties explicit. Report all parents and clearly post-hoc new/rescued errors. Pair transport-minus-clean changes of the three terms for all parents/class and require zero paired intercept shift. No selected candidate.",
+  "versions": {
+    "numpy": "2.5.1",
+    "pillow": "12.3.0",
+    "python": "3.13.5",
+    "scipy": "1.18.0",
+    "sklearn": "1.9.0"
+  }
+}

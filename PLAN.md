@@ -5,14 +5,30 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
-## Active checkpoint — E150B (2026-09-16)
+## Active checkpoint — E152 complete; E153 paired-control audit next (2026-09-16)
 
-E150 hit its1536MiB memory guard and is closed as a failed engineering probe. E150B
-removes redundant image copies while preserving exact pixels/features (11 parity tests).
-The same53-parent probe passed:24.70s/861.97MiB, exact replay; full extraction is
-separately registered and running. Complete it, then freeze/run one preregistered six-head
-E131 comparison with the new FIT-only64-PC residual branch. No hyperparameter/cut sweep,
-new downloads or E92 promotion. This checkpoint supersedes the E150 execution step below.
+E150 failed its1536MiB memory guard; pixel-identical E150B fixed redundant copies and
+completed12525 TRAIN parents/four conditions in2368.60s at796.95MiB. Exact replay, no
+exclusions/downloads. E151 completed six fixed heads with exact saved-model replay; both
+geometries failed. Clean gains were small; all three transports lost AI recall and every
+condition introduced new AI misses/REAL alerts. E92 serving remains unchanged.
+
+E152 no-refit decomposition completed in23.51s with exact old/new score replay and
+<1e-14 algebraic reconstruction error. The added residual term is the largest harmful
+change in94/131 center Q75 new AI misses and85/114 full Q75 misses. Its paired Q75-minus-
+clean mean shift is-0.20363/-0.20729 logits for all AI; semantic-coefficient changes partly
+offset it. This diagnoses a transport-sensitive contribution in these fixed models; it
+is not physical provenance causality or proof a source-only detector would be better.
+
+Next bounded Model1 work (E153): freeze a no-refit back-projection of the residual PCA/head
+into source300, control-minus-source300 and fitted centering constant. Exactly reconstruct
+E152 residual terms and all paired clean-to-transport differences. Lock derived arrays,
+then report all conditions/classes/source components with post-hoc error subsets labelled.
+Determine whether source histograms or the artificial down/up-control term dominates
+harmful drift before any new learning. No source-only candidate, gain/cut/rank/patch sweep,
+new downloads or gallery/DEV/protected scoring. Any later training needs its own mechanism,
+preregistration and unchanged AI/REAL acceptance gates. This supersedes earlier proposals.
+Model2 stays experimental; universal reliability remains unproven.1245 local tests passed.
 
 ## Current audit priority — 2026-09-16
 

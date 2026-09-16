@@ -9944,3 +9944,147 @@ Starlette/httpx deprecation warning); compileall and pip check passed. Eleven E1
 cover held-out isolation, exact source/control-difference ordering and rejection of wrong
 roles/parents/conditions/bindings/nonfinite or unnormalized histograms. The E151 contract
 also pins Python/NumPy/Pillow/SciPy/scikit-learn versions before any fit.
+
+
+Commit bc30232 was pushed to origin/main. GitHub Actions run35089862484 passed both
+web and Python jobs, including tests and dependency audits. Local E92 API remained ready
+(schema4, pinned manifest, E92-primary/reference-advisory policy); frontend returned200.
+Full E150B pixel extraction remains in progress; this validation is not an accuracy result.
+
+
+## E150B full extraction complete / E151 freeze — 2026-09-16
+
+All12525 admitted TRAIN parents completed all four conditions:50100 views, two300-coordinate
+histograms each. No exclusions, replacements or downloads. The196 immutable chunks and
+complete feature archive replay exactly, including every selected E149/E150B probe parent.
+Elapsed2368.60s (39.48min); peak796.95MiB. All original resource limits passed. This is
+successful feature engineering, not a model-quality result. Private arrays remain on LaCie.
+Full contract SHA c0a6ed8ebf0beec3e8b4fb2ba31a7653ef2b244c7504c2cc569bd60055fea2f3;
+features SHA f9f868312c522b28cc89541691e9fc071cfe5162c4fe969689ce02497da4a82a.
+
+Freeze the implemented E151 recipe against this completed archive and E131 comparator
+before any new fit. Run the six fixed heads, then lock all held-out scores before metrics.
+No new pixel reads, parameter/cut search, gallery/DEV/protected access or serving promotion.
+
+
+## E151 completed — source-pixel residual addition rejected (2026-09-16)
+
+Completed all six registered heads in36.28s. Every E131 baseline and saved E151 map/head
+replay had exactly zero error; maximum solver gradient1.86e-7 passed the1e-5 guard.
+All scores were locked before metrics. Both geometries fail individual nonregression in
+every condition; neither is admitted to serving. E92 weights/cuts/advisory policy remain
+unchanged. These are consumed TRAIN source-fold comparator models, not E92 measurements.
+
+| Branch | Condition | AI recall: E131 → E151 | REAL FPR: E131 → E151 | New/rescued AI misses | New/rescued REAL alerts |
+|---|---|---:|---:|---:|---:|
+| center_control | clean | 80.04% → 80.24% | 14.74% → 14.60% | 75/84 | 43/54 |
+| center_control | assigned_transport | 79.04% → 77.82% | 15.78% → 15.86% | 108/52 | 57/50 |
+| center_control | q75 | 75.73% → 74.15% | 14.87% → 14.77% | 131/58 | 26/34 |
+| center_control | social_q75 | 75.91% → 74.47% | 16.20% → 16.22% | 117/51 | 36/35 |
+| full_frame | clean | 81.37% → 81.61% | 15.01% → 14.89% | 79/90 | 38/47 |
+| full_frame | assigned_transport | 80.89% → 79.70% | 15.85% → 16.18% | 111/56 | 61/35 |
+| full_frame | q75 | 77.71% → 76.54% | 15.26% → 15.25% | 114/60 | 32/33 |
+| full_frame | social_q75 | 77.74% → 76.69% | 16.39% → 16.47% | 101/53 | 41/35 |
+
+Clean aggregate gains are small and hide changed mistakes: center clean adds75 AI misses
+and43 REAL alerts while rescuing84 and54. All three transported conditions lose AI recall
+in both geometries. This is not merely failure of the strict zero-new-error gate: pooled
+AI recall also regresses on every transport. Do not select only clean gains or tune cuts.
+
+The predeclared subgroup reports locate most Q75 regression in the connected E32/E36 AI
+component: center127 of131 new misses (55 rescued), full109 of114 (57 rescued). Center
+social has113 of117 new misses there (47 rescued). This component includes2916 AI parents
+with known family/prompt bridges; it is not an independently unseen-generator sample.
+Center clean CSAFE phone photos gain11 new false alerts and rescue2, despite the pooled
+REAL FPR falling slightly. RR REAL remains the worst source component: center FPR78.96%
+clean and83.92% social; the new feature does not solve the existing domain failure.
+
+Interpretation: the fixed source-pixel/control bundle does not supply transport-robust
+complementary evidence under this recipe. This does not prove that all residual features
+are useless or that compression alone caused the new errors. The head was refit, so
+changes to semantic coefficients may contribute as well as the new residual term.
+Processing-history groups are observational/source-class confounded and most upstream
+processing remains unknown. No universal reliability, calibrated probability, untouched
+final-test or deployable single-head claim follows from these consumed fold results.
+
+Next E152: register a no-refit logit decomposition using only the locked E131/E151 maps,
+heads and existing caches. Separate changed semantic coefficients, added residual term
+and intercept; exactly reconstruct every held-out logit/decision and paired clean-to-
+transport changes. Report every condition/class/component, plus clearly marked post-hoc
+new/rescued-error summaries. Lock derived arrays before summaries. This is a mechanism
+audit, not a new candidate, counterfactual real-image experiment or parameter search.
+No PCA/cut/patch sweep, new downloads, reserve opening or promotion. Any subsequent
+learning change needs a separate mechanism and preregistration informed by that audit.
+
+Contract SHA256 ff2895ca64b90b8a1b3d548a7219a0b5c2100124ca419c060c6132e8023be98e.
+Aggregate receipt: evidence/e151_source_pixel_comparison.json. Numeric features, models
+and per-parent predictions remain private on LaCie. No photographs were reread for E151.
+
+
+## E152 registered — frozen-model logit decomposition (2026-09-16)
+
+Implement the planned no-refit audit with fixed E131320 semantic coordinates and E15164
+residual coordinates. Decompose every held-out E151-minus-E131 logit into changed semantic
+coefficients, added residual term and intercept. Reproduce both locked score archives
+within1e-10 and identical0.5 decisions; require algebraic and paired clean/transport
+identities within1e-10 and zero paired intercept shift. Lock all derived arrays before
+summary statistics. CPU2, AC/20GiB reserve,1800seconds; no pixel reads, downloads or fits.
+
+Report all condition/class/component groups and explicitly post-hoc new/rescued-error
+subsets. Define harmful contributions as negative for AI, positive for REAL; identify the
+unique largest harmful term with1e-12 absolute tie handling. Means and q05/median/q95 are
+descriptive logits, not confidence probabilities. Decomposition depends on the frozen
+centered coordinates; it is not an image-level causal intervention or a new candidate.
+No block-zeroing candidate, threshold change, sweep or promotion follows from this audit.
+
+
+## E152 complete — residual term dominates many new errors (2026-09-16)
+
+Completed the no-refit audit in23.51s. Old and new scores replay exactly; maximum logit
+reconstruction error7.33e-15 and paired-transport reconstruction8.27e-15. Every individual
+logit sign matches its locked0.5 decision. All new/rescued cohort counts match E151 and
+all parent/component/term totals reconcile. Private/public report and input/artifact
+bindings passed. No training, new photographs, downloads or candidate was produced.
+
+The table counts the new errors whose unique largest harmful logit-change term is the
+added residual block. Error cohorts are post-hoc; these fractions are NOT detection rates.
+
+| Branch | Condition | Residual-largest new AI misses | Residual-largest new REAL alerts |
+|---|---|---:|---:|
+| center_control | clean | 53/75 | 40/43 |
+| center_control | assigned_transport | 85/108 | 53/57 |
+| center_control | q75 | 94/131 | 25/26 |
+| center_control | social_q75 | 83/117 | 32/36 |
+| full_frame | clean | 55/79 | 36/38 |
+| full_frame | assigned_transport | 83/111 | 54/61 |
+| full_frame | q75 | 85/114 | 27/32 |
+| full_frame | social_q75 | 67/101 | 36/41 |
+
+For all AI parents, mean paired Q75-minus-clean change in the added residual term is
+-0.20363 logit (center) / -0.20729 (full). The changed semantic-coefficient term shifts
++0.07881 / +0.07743 and thus partly offsets that shift; paired intercept change is exactly
+zero. Assigned/social means have the same direction. This is an algebraic comparison of
+fixed trained models, not physical causal proof that compression destroyed an AI trace.
+
+In the connected E32/E36 AI component, the residual term is largest harmful in90/127
+center Q75 new misses and80/109 full Q75 new misses. Center new-miss cohort mean terms:
+residual-0.42912, semantic-coefficient change-0.09424, intercept-0.05578 logits. The same
+component also has55 rescued center Q75 errors with mean residual+0.71748. Across ALL
+AI Q75 parents the residual mean is slightly positive (+0.01633 for center), so do not
+claim every AI image receives a negative contribution or that dropping the block would
+automatically improve a newly trained model. These contributions depend on the fixed
+centering/whitening basis. E151 remains rejected; E92 remains unchanged.
+
+Next E153, before any new learning: preregister a no-refit back-projection of the frozen
+residual PCA/head to its600 input coordinates. Split the residual term into source300,
+control-minus-source300 and the fitted centering constant. Require exact reconstruction
+of E152 residual terms and all paired transport changes; lock arrays before all-condition/
+class/component summaries. This asks whether source histograms or the artificial down/up
+control dominates the observed drift. It does not fit a source-only candidate, choose a
+gain/cut/rank or claim independent accuracy. Retain the same consumed data/ancestry limits.
+
+Validation:1245 Python tests passed in29.87s; compileall and pip check passed (one existing
+Starlette/httpx warning). E152 targeted tests cover both class signs, changed/new/rescued
+cohorts, ties, paired intercept cancellation and invalid shape/label/nonfinite inputs.
+Contract SHA256 0f393ed714ec85a16f3f6a68a5b06cbb77572a77da391724fb61c67b1e52211e.
+Aggregate receipt: evidence/e152_logit_decomposition.json; per-parent arrays stay private.
