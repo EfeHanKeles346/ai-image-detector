@@ -9896,3 +9896,110 @@ One existing upstream Starlette/httpx deprecation warning remains. Web source is
 in this continuation; the prior13 web tests are historical validation, not newly rerun
 local tests. GitHub CI will validate the exact committed revision. E137/E138 are research
 results, not improved serving-E92 scores or evidence of universal detection.
+
+## Mobile-data status review — 2026-09-16
+
+User reports mobile data and connected external storage while approaching internship
+completion. Rechecked current records and exact ready E92 API identity; no experiment,
+scoring, download or serving change. Updated PLAN to supersede home-network acquisition
+permission. Suggested next local work: provenance/duplicate audit of existing manifests,
+define genuinely separate evaluation coverage where available, and verify reproducible
+demo operation. Model1 is the working prototype, not proven universal; Model2 remains
+experimental because authentic false localization and position sensitivity persist.
+
+## E139 plan — offline provenance and reserve-status audit (2026-09-16)
+
+Audit only the frozen active E131 TRAIN contract and four already-public E54 MNW/HDR+
+manifest/overlap summaries. Record field population by source/class, exact stored body
+and pixel identities in separate namespaces, declared scene links and component/fold
+crossings. Missing fields do not erase upstream provenance; field presence does not
+certify it. Do not decode/rehash images, load features/weights, score or refit any model,
+read individual protected reserve records or turn TRAIN into a fresh test. Historical
+reserve summaries remain historical; their screening scope cannot automatically certify
+later-added training sources. This audit creates no new independent evidence.
+
+Mobile-data constraint remains active: no dataset, weight, package or website download.
+Independently check local demo launch/error handling with engineering-only inputs; do
+not measure detector accuracy or use the owner's gallery. Preserve exact E92 and Model2
+experimental status. Record software checks separately from scientific results.
+
+### E139 metadata audit result
+
+{"AI_bearing_components": 3, "components_crossing_folds": 0, "declared_components": 10, "independent_test_parents_created": 0, "mixed_corpus_AI_rows_without_explicit_generator_field": 1179, "model_scores_created": 0, "parents": 12525, "pixels_read": 0, "stored_identity_links": {"body": {"cross_component_groups": 0, "cross_fold_groups": 0, "cross_label_groups": 0, "cross_source_groups": 0, "parents_in_repeated_groups": 0, "repeated_identity_groups": 0}, "declared_scene": {"cross_component_groups": 0, "cross_fold_groups": 0, "cross_label_groups": 0, "cross_source_groups": 0, "parents_in_repeated_groups": 1000, "repeated_identity_groups": 114}, "pixel": {"cross_component_groups": 0, "cross_fold_groups": 0, "cross_label_groups": 0, "cross_source_groups": 0, "parents_in_repeated_groups": 0, "repeated_identity_groups": 0}}}
+
+Full report: evidence/e139_provenance_audit.json. No new independent test or serving change.
+
+## E139 interpretation and offline demo recovery plan — 2026-09-16
+
+All12525 active parents remain TRAIN (7930 REAL,4595 AI). Stored body identities cover
+all parents; stored pixel digests cover only895 REAL parents. No repeated body or pixel
+identity was found in the covered fields.114 repeated declared-scene groups span1000
+parents, with zero cross-component/fold links. All10 declared components stay inside
+their outer fold, with only3 AI-bearing components. These checks neither rehash images
+nor test perceptual/semantic duplicates; zero collisions is not independence certification.
+
+The active manifest retains explicit model_name values for500 CommunityForensics AI
+rows.69 other CommunityForensics rows and1110 RR AI rows lack an explicit generator/model
+field:1179 mixed-corpus AI rows in total. Other source names themselves identify declared
+generators, so empty fields must not be interpreted as absence of all upstream provenance.
+No AI row stores a prompt/prompt_id/prompt_sha256 in this active manifest. Known shared
+prompt batches remain conservatively grouped. Upstream manifests may recover additional
+metadata; no family-independent fold or new test is certified here.
+
+Historical aggregate records describe MNW300 AI and HDR+100 REAL as protected, unscored
+reserves at their audit checkpoints; both have balanced_final_admitted:false. They are
+not automatically a new balanced final test, not300/100 certified independent scenes,
+and not available for adaptive tuning. The MNW screen names11630 then-current TRAIN
+parents; extending its assurance to today's12525 requires following later admission
+checks, not assuming either leakage or safety. No individual reserve identities or
+pixels were opened during E139.
+
+Add ml/tools/serve_local_demo.py for explicit external-root preflight, offline flags,
+port3002 CORS, exact E92/policy readiness and non-destructive existing-listener handling.
+It starts only the local API; the existing web server stays separate. Check-only succeeded
+against the running E92. Next engineering check: stop only the verified existing E92
+process, launch via this wrapper, and use invalid uploads plus an undersized synthetic
+PNG to verify HTTP handling without detector inference. No accuracy estimate or model
+selection follows, and no frozen scientific module or serving policy is changed.
+
+## Offline demo recovery and readable Model1 failure map — 2026-09-16
+
+The verified E92 listener was stopped once and restarted using serve_local_demo.py.
+Exact artifact/guard/display policy and port3002 CORS returned ready. The existing web
+server returns HTTP200. Live engineering checks passed: unsupported MIME415, malformed
+image415, oversized declared body413, undersized32x32 synthetic PNG200/uncertain with
+no model score and guard not_run, then CORS preflight200. Error cases did not leave the
+analysis slot blocked. No actual photograph or native model inference was used.
+The first manual malformed-image check incorrectly expected400; the existing API/test
+contract specifies415. Corrected that test expectation, not the API, and retained the
+initial mismatch in evidence/local_demo_recovery_20260916.json.
+
+Reproducible local API launch (existing virtualenv/dependencies; no installer):
+`ml/.venv/bin/python ml/tools/serve_local_demo.py --data-root /Volumes/LaCie/pixelproof-datasets`
+Add `--check-only` for preflight/readiness without starting anything. This starts/reuses
+only the API; the existing frontend at localhost:3002 runs separately. A foreign or
+wrong-identity listener is never stopped. Missing data files fail without downloads;
+actual model loading retains E92's hash verification. Leave the launcher running; Ctrl-C
+stops only its own child. The successful launch is still running at this checkpoint.
+
+Historical measured error map, with no new scoring in this review:
+
+| Model and population | Condition | AI caught | REAL alerts | Meaning/limit |
+| --- | --- | --- | --- | --- |
+| E92 consumed DEV | Original |159/160 |0/160 | Limited familiar sources; REAL observations share10 scenes |
+| E92 consumed DEV | Social-Q75 |159/160 |14/160 | Compression/resizing sensitivity remains |
+| E92 E65 REAL-only diagnostic | Original |Not measured |2/83 | Raw scientific threshold scores across WIFD/RawNIND; consumed, not independent final |
+| E92 E65 REAL-only diagnostic | Social-Q75 |Not measured |1/83 | No AI-retention evidence; not the current UI result count or an API-eligible subset |
+| E131/E137/E138 separate research heads | Excluded-source diagnostics |See locked reports |Substantial source shift | Not serving-E92 accuracy; inspected repeatedly, no universal claim |
+
+E65 figures are copied from the existing E93 raw_conditions summary, not rerun. Its
+older guarded display differs from today's preserve-alerts UI and is not substituted
+for raw E92 metrics. This distinction prevents a lower guarded-alert count from hiding
+original AI alerts or turning abstentions into correct predictions.
+
+Validation:1140 Python tests passed in22.19seconds; one existing upstream Starlette/httpx
+warning. No web source change or fresh local web build was needed. Metadata audit and
+runtime engineering receipts are separate from model quality. No download, training,
+threshold change, reserve opening or Model2 work. Next: trace later TRAIN-admission
+checks against protected reserves and recover upstream prompt/generator-family metadata
+where already stored before registering any new independent evaluation.

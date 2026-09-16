@@ -1,0 +1,1233 @@
+{
+  "contract_sha256": "d7099cb6440ec96aecf4de898ac55dbd3c5021afb3925a9246af33b0b54bca18",
+  "downloads": 0,
+  "historical_reserve_records": {
+    "e54_hdrplus_manifest.json": {
+      "balanced_final_admitted": false,
+      "limits": [
+        "Older Nexus/Pixel computational photographs, not new phones or untouched sensor JPEGs.",
+        "One burst is one parent; same-day/session names do not prove scene independence.",
+        "Reserve entire publisher; no TRAIN/CAL split or threshold tuning."
+      ],
+      "model_scores_created": 0,
+      "parents": 100,
+      "state": "HDRPLUS_reserve_frozen_before_images",
+      "training_allowed_by_project": false
+    },
+    "e54_hdrplus_overlap.json": {
+      "balanced_final_admitted": false,
+      "limits": [
+        "All HDR+ publisher derivatives stay reserved; heuristic screening is not exhaustive semantic deduplication.",
+        "Capture-session/day proxy does not guarantee independent scenes; unknown camera ids cannot be invented.",
+        "Small older-phone, one-publisher reserve does not prove modern-device or final E52 coverage.",
+        "Unavailable historical metadata-only bodies cannot receive pixel comparisons."
+      ],
+      "model_scores_created": 0,
+      "query_parents": 100,
+      "state": "HDRPLUS_blind_screen_complete_unscored_reserve",
+      "training_allowed_by_project": false
+    },
+    "e54_mnw_overlap.json": {
+      "balanced_final_admitted": false,
+      "current_train_parents_covered": 11630,
+      "limits": [
+        "Exact RGB/byte plus radius-4 dHash/pHash screening is not exhaustive semantic deduplication.",
+        "Unknown shared prompts: reserve entire publisher, not 300 independent prompt groups.",
+        "Unavailable historical metadata-only bodies cannot receive pixel comparisons.",
+        "AI-only reserve cannot measure REAL safety or pass balanced E52.",
+        "Future TRAIN admission must protect this manifest and overlap report as well as old registries."
+      ],
+      "model_scores_created": 0,
+      "query_parents": 300,
+      "state": "MNW_identity_screen_complete_still_unscored_reserve",
+      "training_allowed": false
+    },
+    "e54_mnw_reserve_manifest.json": {
+      "balanced_final_admitted": false,
+      "model_scores_created": 0,
+      "parents": 300,
+      "state": "MNW_exact_reserve_frozen_before_images",
+      "threshold_calibration_allowed": false,
+      "training_allowed": false
+    }
+  },
+  "new_model_scores": 0,
+  "promotion_allowed": false,
+  "reserve_conclusion": "Existing MNW300 AI and HDR+100 REAL reserves are protected and not admitted as a balanced final test in these records. No automatic combination, tuning or current independence certification follows. Follow-up source-admission audits are needed to extend older reference coverage; no protected pixels or individual reserve identities opened.",
+  "state": "E139_metadata_audit_complete",
+  "training": {
+    "AI_bearing_components": 3,
+    "classes": {
+      "0": {
+        "labels": {
+          "0": 7930
+        },
+        "parents": 7930,
+        "populated_fields": {
+          "camera": 128,
+          "device": 4700,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 128,
+          "parent_group": 3000,
+          "pixel_sha256": 895,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 2335,
+          "record_id": 3000,
+          "scene_group": 1895,
+          "sensor": 895,
+          "sha256": 7930,
+          "source_id": 3000
+        },
+        "scene_independence_verified": 0
+      },
+      "1": {
+        "labels": {
+          "1": 4595
+        },
+        "parents": 4595,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 500,
+          "original_sha256": 0,
+          "parent_group": 2652,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 1943,
+          "record_id": 2652,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 4595,
+          "source_id": 2652
+        },
+        "scene_independence_verified": 0
+      }
+    },
+    "components_crossing_folds": 0,
+    "declared_components": 10,
+    "independent_test_parents_created": 0,
+    "limits": "Field population is not verified provenance. Stored body hashes are not rehashed image bytes; pixels only where stored. Scene links follow declared identifiers, not a fresh semantic/near-duplicate audit. Zero observed collisions does not certify independence. All rows remain consumed TRAIN; no reserve scoring or role promotion.",
+    "mixed_corpus_AI_rows_without_explicit_generator_field": 1179,
+    "model_scores_created": 0,
+    "parents": 12525,
+    "pixels_read": 0,
+    "sources": {
+      "MIDD:Hynix_SL846": {
+        "labels": {
+          "0": 127
+        },
+        "parents": 127,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 127,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 127,
+          "sensor": 127,
+          "sha256": 127,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "MIDD:ISOCELL_3P9": {
+        "labels": {
+          "0": 128
+        },
+        "parents": 128,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 128,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 128,
+          "sensor": 128,
+          "sha256": 128,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "MIDD:ISOCELL_GN1": {
+        "labels": {
+          "0": 64
+        },
+        "parents": 64,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 64,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 64,
+          "sensor": 64,
+          "sha256": 64,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "MIDD:ISOCELL_HM3": {
+        "labels": {
+          "0": 64
+        },
+        "parents": 64,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 64,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 64,
+          "sensor": 64,
+          "sha256": 64,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "MIDD:OmniVision_OV32A": {
+        "labels": {
+          "0": 128
+        },
+        "parents": 128,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 128,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 128,
+          "sensor": 128,
+          "sha256": 128,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "MIDD:OmniVision_OV64B": {
+        "labels": {
+          "0": 64
+        },
+        "parents": 64,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 64,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 64,
+          "sensor": 64,
+          "sha256": 64,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "MIDD:Sony_IMX258": {
+        "labels": {
+          "0": 128
+        },
+        "parents": 128,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 128,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 128,
+          "sensor": 128,
+          "sha256": 128,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "MIDD:Sony_IMX766": {
+        "labels": {
+          "0": 64
+        },
+        "parents": 64,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 64,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 64,
+          "sensor": 64,
+          "sha256": 64,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "SCIMD-17": {
+        "labels": {
+          "0": 1700
+        },
+        "parents": 1700,
+        "populated_fields": {
+          "camera": 0,
+          "device": 1700,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 1700,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "SID:Fuji": {
+        "labels": {
+          "0": 64
+        },
+        "parents": 64,
+        "populated_fields": {
+          "camera": 64,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 64,
+          "parent_group": 0,
+          "pixel_sha256": 64,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 64,
+          "sensor": 64,
+          "sha256": 64,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "SID:Sony": {
+        "labels": {
+          "0": 64
+        },
+        "parents": 64,
+        "populated_fields": {
+          "camera": 64,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 64,
+          "parent_group": 0,
+          "pixel_sha256": 64,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 0,
+          "record_id": 0,
+          "scene_group": 64,
+          "sensor": 64,
+          "sha256": 64,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:communityforensics-ai-local": {
+        "labels": {
+          "1": 569
+        },
+        "parents": 569,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 500,
+          "original_sha256": 0,
+          "parent_group": 500,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 69,
+          "record_id": 500,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 569,
+          "source_id": 500
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:csafe-mcsidb-iphone14": {
+        "labels": {
+          "0": 160
+        },
+        "parents": 160,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 160,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 160,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:csafe-mcsidb-s21": {
+        "labels": {
+          "0": 1160
+        },
+        "parents": 1160,
+        "populated_fields": {
+          "camera": 0,
+          "device": 1000,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 1000,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 160,
+          "record_id": 1000,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 1160,
+          "source_id": 1000
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:flux2-klein-9b": {
+        "labels": {
+          "1": 569
+        },
+        "parents": 569,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 500,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 69,
+          "record_id": 500,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 569,
+          "source_id": 500
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:forchheim-fodb": {
+        "labels": {
+          "0": 1154
+        },
+        "parents": 1154,
+        "populated_fields": {
+          "camera": 0,
+          "device": 1000,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 1000,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 154,
+          "record_id": 1000,
+          "scene_group": 1000,
+          "sensor": 0,
+          "sha256": 1154,
+          "source_id": 1000
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:gpt-image-1": {
+        "labels": {
+          "1": 569
+        },
+        "parents": 569,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 500,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 69,
+          "record_id": 500,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 569,
+          "source_id": 500
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:nano-banana-local": {
+        "labels": {
+          "1": 569
+        },
+        "parents": 569,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 500,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 69,
+          "record_id": 500,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 569,
+          "source_id": 500
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:nano-banana-pro-ash-local": {
+        "labels": {
+          "1": 160
+        },
+        "parents": 160,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 152,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 8,
+          "record_id": 152,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 160,
+          "source_id": 152
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:qwen-image-2512": {
+        "labels": {
+          "1": 569
+        },
+        "parents": 569,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 500,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 69,
+          "record_id": 500,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 569,
+          "source_id": 500
+        },
+        "scene_independence_verified": 0
+      },
+      "e32:vision-base-native": {
+        "labels": {
+          "0": 1140
+        },
+        "parents": 1140,
+        "populated_fields": {
+          "camera": 0,
+          "device": 1000,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 1000,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 140,
+          "record_id": 1000,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 1140,
+          "source_id": 1000
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:FLUX.2_max": {
+        "labels": {
+          "1": 80
+        },
+        "parents": 80,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 80,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 80,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:GLM-Image": {
+        "labels": {
+          "1": 80
+        },
+        "parents": 80,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 80,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 80,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:Qwen-Image-2.0-pro": {
+        "labels": {
+          "1": 80
+        },
+        "parents": 80,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 80,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 80,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:Seedream-5.0": {
+        "labels": {
+          "1": 80
+        },
+        "parents": 80,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 80,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 80,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:device_001": {
+        "labels": {
+          "0": 100
+        },
+        "parents": 100,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 100,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 100,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:device_002": {
+        "labels": {
+          "0": 100
+        },
+        "parents": 100,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 100,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 100,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:device_003": {
+        "labels": {
+          "0": 100
+        },
+        "parents": 100,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 100,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 100,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:device_005": {
+        "labels": {
+          "0": 100
+        },
+        "parents": 100,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 100,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 100,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:device_009": {
+        "labels": {
+          "0": 71
+        },
+        "parents": 71,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 71,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 71,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:gpt-image-2": {
+        "labels": {
+          "1": 80
+        },
+        "parents": 80,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 80,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 80,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "e36:nano-banana-2.0": {
+        "labels": {
+          "1": 80
+        },
+        "parents": 80,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 80,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 80,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "rr:culture_and_religion": {
+        "labels": {
+          "1": 105
+        },
+        "parents": 105,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 105,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 105,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "rr:everyday_life": {
+        "labels": {
+          "1": 459
+        },
+        "parents": 459,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 459,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 459,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "rr:labor_and_production": {
+        "labels": {
+          "1": 114
+        },
+        "parents": 114,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 114,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 114,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "rr:medical_and_public_health": {
+        "labels": {
+          "1": 102
+        },
+        "parents": 102,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 102,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 102,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "rr:natural_disasters_and_accidents": {
+        "labels": {
+          "1": 113
+        },
+        "parents": 113,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 113,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 113,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "rr:political_and_social_events": {
+        "labels": {
+          "1": 93
+        },
+        "parents": 93,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 93,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 93,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "rr:rrdataset_real_pool": {
+        "labels": {
+          "0": 1250
+        },
+        "parents": 1250,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 1250,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 1250,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      },
+      "rr:war_and_conflict": {
+        "labels": {
+          "1": 124
+        },
+        "parents": 124,
+        "populated_fields": {
+          "camera": 0,
+          "device": 0,
+          "generator": 0,
+          "generator_id": 0,
+          "generator_revision": 0,
+          "model_name": 0,
+          "original_sha256": 0,
+          "parent_group": 0,
+          "pixel_sha256": 0,
+          "prompt": 0,
+          "prompt_id": 0,
+          "prompt_sha256": 0,
+          "provenance": 124,
+          "record_id": 0,
+          "scene_group": 0,
+          "sensor": 0,
+          "sha256": 124,
+          "source_id": 0
+        },
+        "scene_independence_verified": 0
+      }
+    },
+    "stored_identity_links": {
+      "body": {
+        "cross_component_groups": 0,
+        "cross_fold_groups": 0,
+        "cross_label_groups": 0,
+        "cross_source_groups": 0,
+        "parents_in_repeated_groups": 0,
+        "repeated_identity_groups": 0
+      },
+      "declared_scene": {
+        "cross_component_groups": 0,
+        "cross_fold_groups": 0,
+        "cross_label_groups": 0,
+        "cross_source_groups": 0,
+        "parents_in_repeated_groups": 1000,
+        "repeated_identity_groups": 114
+      },
+      "pixel": {
+        "cross_component_groups": 0,
+        "cross_fold_groups": 0,
+        "cross_label_groups": 0,
+        "cross_source_groups": 0,
+        "parents_in_repeated_groups": 0,
+        "repeated_identity_groups": 0
+      }
+    }
+  }
+}

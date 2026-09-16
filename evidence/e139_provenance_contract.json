@@ -1,0 +1,9 @@
+{
+  "checks": "Count populated lineage fields by source/class; exact stored body/pixel links, declared scene links and component/fold crossings. Distinguish declared identifiers from verified independence. Reserve records remain historical snapshots, not newly certified current eligibility.",
+  "contract_sha256": "d7099cb6440ec96aecf4de898ac55dbd3c5021afb3925a9246af33b0b54bca18",
+  "downloads": 0,
+  "independent_final": false,
+  "promotion_allowed": false,
+  "scope": "Active E131 TRAIN metadata and four existing public E54 reserve summaries only. No image/feature/weight reads, new hashes of image bodies, scoring, fitting, downloads or directory-wide reserve traversal.",
+  "state": "E139_metadata_audit_registered"
+}

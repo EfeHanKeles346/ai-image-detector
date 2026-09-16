@@ -5,6 +5,14 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Current network constraint — mobile data (2026-09-16)
+
+The user is back on mobile data with the external disk connected. This supersedes the
+home-network download permission below until the user changes the constraint. Do not
+start dataset, weight or package downloads. Prioritize local provenance/duplicate audits,
+existing-data evaluation design and reproducible internship-demo checks. Model1 remains
+the priority; Model2 stays visibly experimental. Offline metadata auditing and engineering checks are permitted; no new fitting or reserve scoring follows from this constraint.
+
 ## Documentation and acquisition rule — home-network update (2026-09-14)
 
 The user is now at home and explicitly permits dataset downloads. This supersedes the
@@ -52,8 +60,10 @@ Next Model1 sequence, updated after E137/E138:
 2. Prioritize per-file generator/prompt/scene provenance from release manifests and audit
    candidate coverage before more training. Conservatively join unknown upstream overlap;
    separate development acquisition from an unopened confirmation reserve before admission
-   or scoring, documenting purpose and rights in DATASETS.md. No E139 run or acquisition
-   has been started at this checkpoint.
+   or scoring, documenting purpose and rights in DATASETS.md. E139 completed the metadata-only audit: no stored identity/fold crossings, but ancestry
+   remains incomplete. Follow the later admission-audit chain before extending older
+   reserve-screen assurances to all12525 current TRAIN parents. Recover already-stored
+   upstream metadata first; no acquisition or protected-reserve scoring has occurred.
 3. Design the next representation/training intervention around the verified coverage gap.
    Once a complete candidate is fixed, apply AI-retention/REAL-error gates and genuinely
    withheld-source/processing evaluation with source-level uncertainty. Any UI probability
@@ -75,6 +85,22 @@ AI recall and increased REAL false alerts. Full-frame social recall77.74% →74.
 FPR16.39% →17.06%; all individual screens fail. Exact E92 restored. No coefficient sweep,
 serving change or new Model2 work. See EXPERIMENTS for complete interpretation and limits.
 
+### E139 and local demo recovery — 2026-09-16
+
+Metadata audit complete:12525 TRAIN parents,10 declared components (3 with AI), no stored
+body/pixel collisions or scene/component fold crossings. Pixel digests cover only895
+parents; this is not a new visual duplicate search.500 CommunityForensics rows retain
+240 model names, but1179 mixed-corpus AI rows lack explicit generator/model fields.
+No active AI row stores prompt IDs/text; known shared prompt groups remain connected.
+Protected MNW300 AI/HDR+100 REAL summaries do not establish an admitted balanced final.
+
+Exact E92 was restarted successfully with the offline local launcher; HTTP/CORS, invalid
+uploads and below-minimum-image handling passed without inference. Existing frontend is
+available at localhost:3002. Run the API with:
+`ml/.venv/bin/python ml/tools/serve_local_demo.py --data-root /Volumes/LaCie/pixelproof-datasets`
+The frontend remains a separate process. Append `--check-only` for a non-starting check.
+Detailed historical Model1 error map and limits are in the latest EXPERIMENTS entry.
+
 ## Current execution checkpoint — 2026-09-16
 
 This overview is current; the dated sections below preserve how the plan evolved.
@@ -95,11 +121,12 @@ E92 remains the serving reference and is restored between registered heavy stage
 | E134 source-score audit | Complete:88 descriptive summaries | RR REAL shift is broad; processing loses177 net E32/E36 AI detections in diagnostic head |
 | E132 paired patch learning | Complete:8 source components | Composite AUC0.742/0.734, below center0.798; authentic flagged area17%; not deployable |
 | E131 internal publisher-group transfer | Complete: substantial publisher-transfer failures | Full-frame clean AUC0.92284, REAL FPR15.01%; RR REAL FPR80.80%; not deployed-E92 evaluation |
+| E139 provenance audit + demo recovery | Complete offline | Metadata gaps quantified; protected reserves retained; exact E92 restart and input handling verified |
 | E137 Model1 expert ablation | Complete; all eight configurations fail individual non-regression | No single omission fixes transfer; removing context loses AI recall; E92 retained |
 | E138 Model1 source-risk fit | Complete; both geometries rejected | Lower training risk but worse held-out clean/social AI and REAL rates; E92 retained |
 | E136 Model1 processing consistency | Complete; both geometries fail individual non-regression | Reduced score variation and net social errors, but new AI misses/REAL alerts; E92 retained |
 
-Latest local code validation:1134 Python tests passed after E138; compilation and diff
+Latest local code validation:1140 Python tests passed after E139/launcher work; compilation and diff
 checks passed. Web source was unchanged this turn; prior13 web tests, lint/typecheck and
 Sites build helper passed in the preceding E136 turn. Model1 is labelled active and Model2
 test-stage in the existing local demo; Model2 does not participate in its decision.

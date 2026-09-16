@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "case": "unsupported_type",
+      "status": 415
+    },
+    {
+      "case": "invalid_image",
+      "status": 415
+    },
+    {
+      "case": "oversize_declared",
+      "status": 413
+    },
+    {
+      "case": "small_synthetic_after_errors",
+      "inference_run": false,
+      "outcome": "uncertain",
+      "status": 200
+    },
+    {
+      "case": "browser_preflight",
+      "status": 200
+    }
+  ],
+  "datasets_downloaded": 0,
+  "frontend_http": 200,
+  "health": {
+    "_cors_ok": true,
+    "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+    "display_policy": "e92-preserve-alerts-v1",
+    "downloads_allowed": false,
+    "guard_id": "e92-stability-v1",
+    "model_id": "E92",
+    "research_only": true,
+    "status": "ready"
+  },
+  "images_from_disk_read": 0,
+  "initial_check_correction": {
+    "basis": "Existing test_internship_serve.py garbage-input contract; no API change",
+    "case": "invalid_image",
+    "corrected_expected_status": 415,
+    "mistaken_expected_status": 400,
+    "observed_status": 415
+  },
+  "launcher_sha256": "4f0013ef84f09af8f90266590c988c163c162220e7fc64547055f3cfd02e7426",
+  "limits": "Engineering checks only: exact E92 readiness, frontend HTTP, CORS, rejection/recovery and below-minimum synthetic image. No native prediction/latency/accuracy or unseen-data claim.",
+  "model_inferences": 0,
+  "state": "local_E92_restart_and_input_checks_passed"
+}

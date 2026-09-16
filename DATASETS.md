@@ -3187,3 +3187,24 @@ logs remain under external-volume e137/e138 and pipeline directories. Small sour
 summaries and contracts are retained in evidence/; no raw images, weights, private gallery
 or parent-level scores are committed. Next: provenance/coverage audit before a new dataset
 admission; no acquisition is currently running and no new dataset is declared qualified.
+
+## E139 offline audit plan — 2026-09-16
+
+No acquisition. Inspect active TRAIN metadata and existing aggregate MNW/HDR+ reserve records only; no image/feature/weight reads, scores, role changes or new independent parents.
+
+### E139 metadata audit result
+
+{"AI_bearing_components": 3, "components_crossing_folds": 0, "declared_components": 10, "independent_test_parents_created": 0, "mixed_corpus_AI_rows_without_explicit_generator_field": 1179, "model_scores_created": 0, "parents": 12525, "pixels_read": 0, "stored_identity_links": {"body": {"cross_component_groups": 0, "cross_fold_groups": 0, "cross_label_groups": 0, "cross_source_groups": 0, "parents_in_repeated_groups": 0, "repeated_identity_groups": 0}, "declared_scene": {"cross_component_groups": 0, "cross_fold_groups": 0, "cross_label_groups": 0, "cross_source_groups": 0, "parents_in_repeated_groups": 1000, "repeated_identity_groups": 114}, "pixel": {"cross_component_groups": 0, "cross_fold_groups": 0, "cross_label_groups": 0, "cross_source_groups": 0, "parents_in_repeated_groups": 0, "repeated_identity_groups": 0}}}
+
+Full report: evidence/e139_provenance_audit.json. No new independent test or serving change.
+
+## E139 and offline runtime closeout — 2026-09-16
+
+No dataset/package/model-weight download and no role admission. E139 read only the active
+TRAIN contract and aggregate reserve metadata: no image bodies, feature arrays, weights
+or protected parent lists. The separate demo restart loaded existing local model assets;
+HTTP input checks used invalid bytes and one in-memory32x32 synthetic PNG, not a dataset
+or detector evaluation. E139 found no stored identity collisions; only895 parents had
+stored pixel hashes, so do not claim12525 fresh pixel comparisons. Preserve1179 missing
+mixed-corpus generator/model fields as gaps, and the500 CommunityForensics model-name
+records as partial provenance rather than240 proven independent generator families.
