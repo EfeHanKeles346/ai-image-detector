@@ -1,0 +1,11 @@
+{
+  "checks": "Reject role/class/source/body/declared-model conflicts and ambiguous keys. Recover stored model names, dataset revisions, declared families and nonempty prompt hashes. Count exact prompt links across frozen components/folds. No substring family inference.",
+  "contract_sha256": "ee668f66549618d6c3a9251c56db33c3195a363fdfbfb5df833ae45695a2653b",
+  "downloads": 0,
+  "fits": 0,
+  "limits": "Metadata schema exploration preceded registration. This is a reproducible metadata recovery, not a blind experiment or model-quality evaluation. Historical manifests include consumed non-target rows; only current E32 AI TRAIN parents join to the output. No protected reserve documents, images, features, scores or weights are read.",
+  "model_scores": 0,
+  "promotion_allowed": false,
+  "scope": "Bind active E32 AI TRAIN parent IDs to original c3 TRAIN rows, native or processed receipt body identities, then exact source-key/native-body realization metadata. Write separate private overlay and public aggregate coverage; do not modify inherited rows/folds.",
+  "state": "E141_lineage_recovery_registered"
+}

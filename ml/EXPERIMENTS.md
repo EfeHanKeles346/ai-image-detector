@@ -9018,3 +9018,78 @@ Validation: Sites build, all14 web tests, TypeScript check, ESLint and git diff
 checks passed. The retained localhost:3002 route returned HTTP200, and the API health
 reported the same exact E92 artifact ready with downloads disabled. No browser
 interaction/visual test or second successful photo inference was performed.
+
+
+## E141 plan — recover existing TRAIN lineage (2026-09-16)
+
+Recover E32 AI metadata already stored on the external disk into an additive overlay.
+Bind current parent ID/source/class to original c3 TRAIN records and native body SHA;
+processed inputs also require the original R0 input receipt SHA. Bind each original
+source key/body to its realization audit, already referenced by eligibility metadata.
+Recover declared model names, source-family declarations, dataset revisions and stored
+prompt hashes. Exclude the empty-string hash from prompt links. Reject conflicting or
+ambiguous identities; do not guess generator ancestry from model names. Report source
+coverage and prompt links across current components/folds, without changing those folds.
+
+Only active E32 AI TRAIN rows join to the private output. No photos, features, weights,
+model scores, protected reserve records or new data are opened. Schema/role exploration
+preceded registration and is not a blind experiment. Roles, serving E92 and Model2 stay
+unchanged. No downloads, training or threshold search. The scientific purpose is to find
+missing provenance and possible evaluation dependence before further candidate fitting.
+
+
+## E141 result — recoverable lineage and remaining coverage gaps (2026-09-16)
+
+Contract SHA: ee668f66549618d6c3a9251c56db33c3195a363fdfbfb5df833ae45695a2653b.
+All3005 active E32 AI parents joined without identity conflict through the historical
+c3 TRAIN/native-body/processed-receipt/audit chain. The separate overlay is stored only
+on the external volume at e141/train_lineage_overlay.json; its SHA is
+ d0d636ec405eb0ecee77437cdc8036b84f736e9f544446249b9c89fcd08d5e1e.
+No old manifest, fold assignment, artifact or guard was edited.
+
+| Declared source | Active AI parents | Recovered prompt hashes | Declared model identity |
+| --- | ---: | ---: | --- |
+| CommunityForensics |569|569|569 populated rows,240 distinct names;69 previously omitted names recovered |
+| FLUX.2 Klein 9B Base |569|569|Source declaration only |
+| GPT Image1 |569|569|Source declaration only |
+| Qwen Image2512 |569|569|Source declaration only |
+| Gemini2.5 Flash Image Preview / Nano Banana |569|0|Source declaration only |
+| Nano Banana Pro |160|0|Source declaration only |
+| E36 consumed TRAIN AI |480|Not recovered in this stage|Six declared source labels; scope does not inspect their upstream records |
+| RR TRAIN AI |1110|Not recovered in this stage|Per-file generator ancestry remains unresolved |
+
+Recovered2276 nonempty stored prompt hashes among4595 active AI parents.2319 remain
+without a recovered hash in this overlay, not necessarily absent upstream.418 repeated
+hash groups involve1050 parents;380 groups cross source labels. None crosses the current
+frozen E131 component or fold. Existing conservative grouping covers these observed
+links. Different hashes do not establish different semantics; preprocessing/normalization
+may differ, and the check does not audit all hidden common training ancestry.
+
+The4026 rows without a recovered explicit model_name field are NOT4026 wholly unknown
+generators: many have explicit source-level declarations shown above. Conversely, the240
+CommunityForensics names are NOT240 verified independent base-generator families. Dataset
+revision fields refer to release metadata, not model weight revisions. CF's historical
+revision is a local E31-pinned description, not a recovered upstream commit in this stage.
+
+Interpretation: E139's claim that no prompt IDs were stored applies to the old active
+manifest. E141 recovers metadata from upstream records without rewriting that evidence.
+This closes69 missing CommunityForensics name fields and quantifies known prompt links;
+it does not improve AI recall, REAL false positives, abstention coverage or calibration.
+The mixed-corpus explicit-model gap is now1110 RR AI parents in the new overlay, down
+from1179 when the69 older CF rows lacked names. No independent test parents created.
+
+Next: inspect eligible E36 consumed-TRAIN metadata for the remaining480 known-source AI
+parents and document whether local RR metadata can map the1110 mixed-generator parents.
+Keep unavailable prompt/model ancestry explicit. A later candidate/evaluation design must
+use this coverage evidence and independent groups; do not run another adaptive sweep on
+the consumed source folds or score the protected reserve to fill a dashboard.
+
+Downloads, fits, model scores and image reads:0. All existing source roles and licences
+are retained; no acquisition/admission or additional use rights are implied. E92 stays
+serving with unchanged thresholds, and Model2 remains experimental. The prior UI commit
+85590ea61410d8695d64ed48d6278b92866175ad passed GitHub CI run35072884465.
+
+Validation: all1160 Python tests passed in21.05seconds (one existing upstream
+Starlette/httpx deprecation warning); compileall and diff checks passed. No frontend
+or inference code changed in E141. These checks establish implementation integrity,
+not improved detection performance.

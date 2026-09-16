@@ -1,0 +1,216 @@
+{
+  "AI_parents_without_recovered_model_name": 4026,
+  "AI_parents_without_recovered_prompt_hash": 2319,
+  "active_AI_parents": 4595,
+  "active_parents": 12525,
+  "contract_sha256": "ee668f66549618d6c3a9251c56db33c3195a363fdfbfb5df833ae45695a2653b",
+  "coverage": {
+    "e32:communityforensics-ai-local": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 569,
+      "distinct_declared_model_names": 240,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 500,
+      "parents": 569,
+      "recovered_model_names_populated": 569,
+      "recovered_prompt_hashes": 569
+    },
+    "e32:flux2-klein-9b": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 569,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 569,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 569
+    },
+    "e32:gpt-image-1": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 569,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 569,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 569
+    },
+    "e32:nano-banana-local": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 569,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 569,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "e32:nano-banana-pro-ash-local": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 160,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 160,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "e32:qwen-image-2512": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 569,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 569,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 569
+    },
+    "e36:FLUX.2_max": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 80,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "e36:GLM-Image": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 80,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "e36:Qwen-Image-2.0-pro": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 80,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "e36:Seedream-5.0": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 80,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "e36:gpt-image-2": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 80,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "e36:nano-banana-2.0": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 80,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "rr:culture_and_religion": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 105,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "rr:everyday_life": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 459,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "rr:labor_and_production": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 114,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "rr:medical_and_public_health": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 102,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "rr:natural_disasters_and_accidents": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 113,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "rr:political_and_social_events": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 93,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    },
+    "rr:war_and_conflict": {
+      "base_generator_ancestry_verified": false,
+      "bound_recovered_parents": 0,
+      "distinct_declared_model_names": 0,
+      "empty_prompt_sentinels": 0,
+      "original_model_names_populated": 0,
+      "parents": 124,
+      "recovered_model_names_populated": 0,
+      "recovered_prompt_hashes": 0
+    }
+  },
+  "downloads": 0,
+  "fits": 0,
+  "limits": "Stored metadata overlay only. Source family and model name are declarations, not verified base-generator ancestry. Dataset revision is not model revision. Prompt hashes retain upstream normalization; equality flags possible shared prompts, inequality does not establish semantic independence. Empty prompt digests are excluded. No image rehash, semantic deduplication, score, fit, role/fold modification or independent evaluation.",
+  "model_scores": 0,
+  "new_independent_test_parents": 0,
+  "overlay_sha256": "d0d636ec405eb0ecee77437cdc8036b84f736e9f544446249b9c89fcd08d5e1e",
+  "promotion_allowed": false,
+  "prompt_links": {
+    "cross_component_groups": 0,
+    "cross_fold_groups": 0,
+    "cross_source_groups": 380,
+    "parents_in_repeated_prompt_groups": 1050,
+    "repeated_prompt_hash_groups": 418
+  },
+  "recovered_E32_AI_parents": 3005,
+  "recovered_nonempty_prompt_hash_parents": 2276,
+  "state": "E141_lineage_recovery_complete"
+}

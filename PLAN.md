@@ -73,13 +73,23 @@ Next Model1 sequence, updated after E137/E138:
    or scoring, documenting purpose and rights in DATASETS.md. E139 completed the metadata-only audit: no stored identity/fold crossings, but ancestry
    remains incomplete. E140 verified all895 later admissions against both protected reserve references and
    reconciled all12525 current parents. That specific coverage-chain gap is closed.
-   Next recover already-stored per-file generator/prompt/base-family metadata and produce
-   an explicit coverage matrix. Unknown ancestry remains unknown; no acquisition or
+   E141 recovered E32 metadata and produced a coverage matrix.
+   Next inspect eligible E36/RR records for remaining per-file provenance gaps. Unknown ancestry remains unknown; no acquisition or
    protected-reserve scoring has occurred.
 3. Design the next representation/training intervention around the verified coverage gap.
    Once a complete candidate is fixed, apply AI-retention/REAL-error gates and genuinely
    withheld-source/processing evaluation with source-level uncertainty. Any UI probability
    calibration requires separate source-disjoint evidence; current scores are uncalibrated.
+
+### E141 lineage recovery — 2026-09-16
+
+Complete: all3005 E32 AI TRAIN parents bind to original records;2276 stored prompt
+hashes recovered, plus69 previously omitted CF model names.380 prompt groups cross
+source labels, but none crosses the registered component/fold. Source declarations
+and240 CF model names do not certify base-generator independence.2319/4595 AI parents
+still lack recovered prompt hashes in the new overlay (including out-of-scope E36/RR).
+Next: recover eligible E36 TRAIN metadata, then assess local RR per-file ancestry
+availability. Preserve unknowns and frozen folds; no automatic training or reserve use.
 
 ### E137 execution — 2026-09-16
 
@@ -124,7 +134,8 @@ metadata-chain verification, not fresh semantic decontamination or detection imp
 Final readiness remains separate: partial ancestry, consumed development evidence and
 MNW300 AI/HDR+100 REAL do not satisfy the existing >=2000-parent balanced multi-source
 E52 protocol. Preserve the reserves. Next: eligible TRAIN metadata recovery/coverage
-matrix before new candidate or evaluation registration. No E141/scoring/download started.
+matrix before new candidate or evaluation registration. E141 completed E32 TRAIN metadata recovery into a separate overlay; no scoring, fitting
+or download occurred. E36/RR provenance coverage remains the next local step.
 
 ## Current execution checkpoint — 2026-09-16
 
