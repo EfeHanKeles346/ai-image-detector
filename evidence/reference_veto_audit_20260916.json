@@ -1,0 +1,73 @@
+{
+  "ai_cut": 0.07940196245908739,
+  "code_sha256": {
+    "ml/src/pixelproof/demo_policy.py": "97977fa53ea07310ccc7f181a7ed00c1f6e600b8a3272abbdf836548aad83774",
+    "ml/src/pixelproof/e92_demo.py": "085135af9ce4ace039d3d6baee55a2d09ea4ab7da4e6f71998bd6c0394c7b875"
+  },
+  "limits": "Post-hoc descriptive comparison on consumed scores. No independent test, no calibration, no API eligibility or gallery inference. Removing the reference veto does not alter raw E92 AI alerts, but may turn missed AI into no-clear-signal. No universal optimality claim.",
+  "low_signal_cut": 0.011505939625203613,
+  "new_inference": 0,
+  "populations": {
+    "consumed_e65_REAL_only": {
+      "by_label": {
+        "0": {
+          "changed_AI_alerts": 0,
+          "current": {
+            "ai_signal": 2,
+            "no_clear_signal": 58,
+            "uncertain": 23
+          },
+          "parents": 83,
+          "reference_only_abstentions": 20,
+          "without_reference_veto": {
+            "ai_signal": 2,
+            "no_clear_signal": 78,
+            "uncertain": 3
+          }
+        },
+        "1": {
+          "changed_AI_alerts": 0,
+          "current": {},
+          "parents": 0,
+          "reference_only_abstentions": 0,
+          "without_reference_veto": {}
+        }
+      },
+      "scores_sha256": "83d387d181e2f1d77ed1d174a8310b2ded3205da637054577191d6312c66d95e"
+    },
+    "consumed_e66": {
+      "by_label": {
+        "0": {
+          "changed_AI_alerts": 0,
+          "current": {
+            "no_clear_signal": 71,
+            "uncertain": 89
+          },
+          "parents": 160,
+          "reference_only_abstentions": 68,
+          "without_reference_veto": {
+            "no_clear_signal": 139,
+            "uncertain": 21
+          }
+        },
+        "1": {
+          "changed_AI_alerts": 0,
+          "current": {
+            "ai_signal": 159,
+            "uncertain": 1
+          },
+          "parents": 160,
+          "reference_only_abstentions": 0,
+          "without_reference_veto": {
+            "ai_signal": 159,
+            "uncertain": 1
+          }
+        }
+      },
+      "scores_sha256": "8de19298e0e62d982a6bae04ef7e922bcb12748cd68056b510ab832d49bb77ae"
+    }
+  },
+  "serving_changed": false,
+  "state": "existing_score_reference_veto_audit",
+  "threshold_search": false
+}

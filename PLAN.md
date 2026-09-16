@@ -13,15 +13,18 @@ start dataset, weight or package downloads. Prioritize local provenance/duplicat
 existing-data evaluation design and reproducible internship-demo checks. Model1 remains
 the priority; Model2 stays visibly experimental. Offline metadata auditing and engineering checks are permitted; no new fitting or reserve scoring follows from this constraint.
 
-## Local demo case follow-up (2026-09-16)
+## Local demo decision-policy follow-up (2026-09-16)
 
-Cause-specific uncertainty explanations now appear in the main result, alongside
-input filename/dimensions. A user-photo replay returned no_clear_signal whereas the
-provided screenshot showed uncertain; the input path disappeared before a repeat.
-The discrepancy is not resolved and is not evidence of improved model accuracy.
-When the same original input is available again, compare exact bytes and the current
-UI/API result before attributing a stale result or preprocessing problem. Preserve
-E92 thresholds/reference guard and do not tune on this consumed private diagnostic.
+The new screenshot names a different image from the earlier desktop replay. Those
+results are not same-file repeatability evidence. E92 low paired scores can be vetoed
+by E43; separate the main score from this additional display policy in explanations.
+The isolated reference-veto audit on consumed scores adds68/160 E66 REAL and20/83 E65
+REAL abstentions while adding zero AI protection in E66; its sole missed AI remains
+uncertain through compression alone. This is limited post-hoc evidence, not fresh OOD
+qualification. Proposed next display-policy candidate: E92 paired result primary,
+reference disagreement advisory; preserve all original AI alerts and compression/
+borderline uncertainty. Register/compare explicitly before adoption. No serving change
+or threshold tuning occurred. The inherited7.94% cut is not a verified E92 optimum.
 
 ## Documentation and acquisition rule — home-network update (2026-09-14)
 

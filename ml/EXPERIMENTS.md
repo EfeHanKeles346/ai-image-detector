@@ -9093,3 +9093,56 @@ Validation: all1160 Python tests passed in21.05seconds (one existing upstream
 Starlette/httpx deprecation warning); compileall and diff checks passed. No frontend
 or inference code changed in E141. These checks establish implementation integrity,
 not improved detection performance.
+
+
+## E92 threshold origin and isolated reference-veto audit (2026-09-16)
+
+The user questioned why E92's low paired scores can still show uncertainty. The newly
+provided screenshot identifies a different input from the previously replayed desktop
+file. The previous same-input comparison was unsupported; the displayed filename now
+explains why those two results must not be compared as repeatability evidence. No image
+identity/hash or new inference was obtained here, and screenshot provenance is not proved
+beyond its visible filename. Do not keep describing those two different filenames as a
+confirmed same-file contradiction. No private filenames or screenshot pixels enter Git.
+
+Threshold trace: E48's bounded raw-E43 diagnosis selected0.07940196245908739 using the
+lowest CAL threshold satisfying pooled REAL FP<=10% and worst-camera FP<=20%.
+E50 then froze that threshold for its development evaluation. E49's low-score cutoff
+0.011505939625203613 was chosen from consumed CAL/DEVELOPMENT selective-policy analysis.
+E64 and the subsequent E92 correction preserved these constants. Neither cutoff is a
+calibrated probability or a proven universal/E92-specific optimum. The old safety budgets
+are historical selection criteria, not promises about future photos or desired current
+product error rates. E92 itself is an E43 logit plus learned feature correction, not a
+wholly independent detector; the separate E43 veto is an additional presentation rule.
+
+The E93/E94 notes motivate guarding original negatives because E92 missed a known AI
+that E43 detected. A new read-only comparison isolates the reference veto from the paired
+compression guard, using exactly bound, previously consumed E92/E93 scores. Both policies
+preserve every original E92 positive and require both E92 views below the low-score cut
+for no-clear-signal. Only the E43-negative requirement is removed in the counterfactual.
+
+| Population | Current uncertain | Uncertain without reference veto | Extra reference-only abstentions | AI indications before/after |
+| --- | ---: | ---: | ---: | ---: |
+| Consumed E66 REAL160 |89|21|68|0/0 |
+| Consumed E66 AI160 |1|1|0|159/159 |
+| Consumed E65 REAL83 |23|3|20|2/2 |
+
+The known missed AI has E92 original score0.00857941528582679 and social-Q75 score
+0.6113029556660701; it therefore remains uncertain from the compression guard alone.
+The earlier verbal rationale must not imply the E43 veto uniquely protected this case.
+Observed additional AI protection from the reference-only veto is zero in these limited
+consumed populations. Reference-only abstention costs are42.5% of E66 REAL and24.10% of
+E65 REAL. These are not overall app uncertainty rates: the populations are dependent,
+consumed, source-limited and not filtered by current API eligibility. E65 has no AI.
+Absence of observed incremental benefit does not prove the veto is useless on all OOD.
+
+Aggregate evidence: evidence/reference_veto_audit_20260916.json, with exact input-score
+and policy-code hashes. No new inference, fit, acquisition, threshold search or serving
+change. Model1's score and its UI review policy remain distinct. Recommended next product
+candidate: E92 paired result as primary, reference disagreement as a separate advisory
+rather than an automatic veto. Register and compare that display policy explicitly before
+adoption, preserving original AI alerts and compression/borderline uncertainty. Any future
+threshold/probability calibration requires a separate source-disjoint calibration design
+and locked independent evaluation; do not optimize on this private photo or consumed tests.
+
+E141 commit5ee957682767e9906ecbcc14f7d39d602be34666 passed GitHub CI run35073605408.
