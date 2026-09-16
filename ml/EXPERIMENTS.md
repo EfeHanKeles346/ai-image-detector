@@ -9613,3 +9613,88 @@ score, proving error-path slot release without running detector inference. Front
 localhost:3002 returns200. Receipt: evidence/project_audit_runtime_20260916.json.
 No ML experiment is running; the next weighted-representation control is planned, not
 trained. The local E92 site remains running and Model2 remains experimental.
+
+
+## E147 registration — FIT-weighted representation control (2026-09-16)
+
+Hypothesis: E131's unweighted normalization/PCA may preserve the largest source/class
+population disproportionately even though its classifier loss is balanced. The audit
+found REAL PCA row mass76.49%/59.19%/57.02% versus50% loss mass. This motivates a control,
+not a causal finding. E147 changes only the FIT representation weighting bundle: weighted
+population mean/std and covariance PCA use the existing class/component/parent/view
+weights. Covariance divides by1-sum(w²), recovering the original sample convention for
+uniform weights; this is not a claim that related views are statistically independent.
+
+Before fitting, freeze all12525 existing TRAIN parents, four conditions, three E131
+source folds, cache/artifact/code hashes, seed131, ranks64/64/64/128, whitening floors,
+randomized SVD power3/oversamples10 and the unchanged weighted convex classifier objective,
+solver and fixed0.5 diagnostic cut. Six fits only; no cut/rank/weight search. Replay old
+E131 held-out predictions and new serialized shared/branch maps plus heads within1e-10
+with identical decisions. Lock complete predictions before metrics. Report every
+condition/fold/component, worst groups and paired new/rescued errors. Both zero new AI
+misses and zero new REAL alerts across all conditions are required for individual
+nonregression; even a pass does not authorize deployment.
+
+Use existing caches only, CPU2threads,7200-second budget, AC/disk guards and denied network
+connections. No dataset/weight/package downloads, image-pixel extraction, gallery/DEV or
+protected-reserve scoring. Six targeted synthetic checks passed before registration,
+including direct weighted-covariance eigenvalues, uniform-weight parity and held-out
+perturbation proving fitted-map isolation. These are implementation checks, not model
+quality results. E92 serving stays unchanged. This adaptive internal control still has
+only three AI-bearing components and unresolved upstream/pretraining overlap; it cannot
+prove universality. Public evidence will contain aggregates only; private artifacts stay
+under the external disk's e147 directory.
+
+
+## E147 result — weighted PCA does not pass preservation (2026-09-16)
+
+Completed all six registered fits on12525 TRAIN parents (7930 REAL/4595 AI), four views
+and three existing source folds in46.34 seconds after input verification. All old E131
+and new serialized-map/head replays have maximum score difference0 and zero decision
+changes. Every FIT representation now has exactly50% REAL weight. Both branches fail
+individual nonregression; no weights, thresholds or serving policies were promoted.
+
+Percentages below describe fresh research heads pooled across three different outer-fold
+models, not the active E92 model. Counts are paired per-condition errors, not independent
+images across views. The diagnostic cutoff remains0.5.
+
+| Branch / condition | REAL FPR old → new | AI recall old → new | New / rescued REAL errors | New / rescued AI misses |
+|---|---:|---:|---:|---:|
+| center_control / clean | 14.74% → 15.42% | 80.04% → 81.35% | 82 / 28 | 62 / 122 |
+| center_control / assigned_transport | 15.78% → 16.28% | 79.04% → 80.61% | 88 / 48 | 81 / 153 |
+| center_control / q75 | 14.87% → 15.37% | 75.73% → 77.65% | 68 / 28 | 71 / 159 |
+| center_control / social_q75 | 16.20% → 16.81% | 75.91% → 77.61% | 80 / 32 | 71 / 149 |
+| full_frame / clean | 15.01% → 16.05% | 81.37% → 82.05% | 99 / 16 | 80 / 111 |
+| full_frame / assigned_transport | 15.85% → 16.75% | 80.89% → 80.54% | 116 / 45 | 119 / 103 |
+| full_frame / q75 | 15.26% → 16.05% | 77.71% → 78.72% | 84 / 21 | 81 / 127 |
+| full_frame / social_q75 | 16.39% → 17.33% | 77.74% → 78.52% | 101 / 27 | 87 / 123 |
+
+Interpretation: the center branch increases pooled AI recall in every condition but
+increases REAL false alarms in every condition and introduces new AI misses. The full-
+frame branch also loses pooled AI recall on assigned transport. Balancing PCA is therefore
+not a free correction for source shift. This rejects this fixed weighting bundle under
+our acceptance requirements; it neither proves PCA weighting useless generally nor
+isolates normalization versus eigenspace effects.
+
+The RR component remains the worst REAL source group: clean FPR79.76%→82.96% for center
+and80.80%→84.72% for full-frame. These are within-group REAL denominators, not all2360
+RR component parents (which include AI). Do not hide this under pooled improvement.
+Three AI-bearing components, adaptively consumed TRAIN folds, unknown RR/CF ancestry and
+unknown frozen-encoder pretraining overlap prevent independent universality claims.
+
+Historical-mechanism review before the next representation proposal: E31 forensic68
+features had weak AI recall and ensemble tradeoffs; E51 residual/DCT32 additions did not
+solve cross-source transfer (CAL-selected A had no residual branch); E53 mean-only/native
+and transform controls lost individual sources; E69 fixed28px shuffled DINO crops missed
+the TRAIN FPR ceiling. None justifies renaming another transform or cutoff sweep as a
+new method. Next prepare a genuinely distinct native-scale processing/residual control,
+first confirming source-native versus already-resized body coverage without score-based
+selection. Freeze extraction, matched class processing, source folds and all acceptance
+rules before fitting. Current data cannot supply independent new-family proof by itself.
+
+Evidence: evidence/e147_weighted_representation_contract.json and
+evidence/e147_weighted_representation.json. Contract SHA256
+6d046984df6ff82fd0d387e770673f27db8719da5a695e638ce96c413715a24d. Private maps/heads/scores stay on LaCie.
+Validation:1195 Python tests passed in21.18s (one existing Starlette/httpx warning);
+live frontend HTTP200 and API ready with E92/schema4/current pinned-manifest policy.
+Zero downloads, new image pixels, DEV/gallery or protected-reserve scores.

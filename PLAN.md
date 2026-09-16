@@ -12,14 +12,22 @@ HISTORY.md and ml/EXPERIMENTS.md and evidence/project_audit_20260916.json.
 Fixed the active API's cancelled-decoder admission race and pinned the verification
 manifest itself before E92 deserialization. Keep the original E92 weights/cuts/policy.
 
-The next narrow Model1 research control supersedes the residual-feature-first sequence
-below: compare FIT-only class/component-weighted normalization and covariance PCA with
-E131's unweighted maps, retaining ranks, outer source folds, objective, regularization,
-cutoff and all individual AI/REAL acceptance gates. The audit measured REAL PCA row mass
-76.49%/59.19%/57.02% versus50% classifier loss mass; this difference is not causal proof.
-Freeze the complete control before fitting; do not select weights from held-out results.
-No weighted candidate has been trained or accepted yet. Keep all consumed-source and
-unknown-family limitations explicit. No new downloads while on mobile data.
+E147 FIT-weighted normalization/PCA completed: six fresh heads, both geometries rejected.
+All old/new saved-model replays were exact. Center clean AI recall80.04%→81.35%, but REAL
+FPR14.74%→15.42%, with62 newly missed AI and82 new REAL alerts. These are internal source-
+fold research models, not E92 measurements. All four conditions and the other branch are
+reported in evidence/e147_weighted_representation.json; do not select only the gains.
+No PCA-weight/rank/cut sweep on these consumed scores. No serving promotion.
+
+Next Model1 work: prepare the native-scale processing/residual control only after a
+score-blind inventory confirms which eligible TRAIN bodies retain native resolution and
+which are publisher/transport derivatives. Read the E31/E51/E53/E69 negative controls
+(recorded in the E147 result) to avoid repeating their mechanism. Predeclare exact native
+feature geometry, matched class processing, FIT-only maps, resource budget and individual
+AI/REAL acceptance before extraction/fit. Generic recompression cannot erase original
+processing history. Keep the same conservative source components, protected reserves and
+unknown-family limitations. No new downloads while on mobile data. E92 remains the demo;
+Model2 stays experimental. E147 now supersedes the earlier PCA-first proposal.
 
 ## Current checkpoint — E146 completed (2026-09-16)
 

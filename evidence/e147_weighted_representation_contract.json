@@ -1,0 +1,27 @@
+{
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "change": "FIT-only weighted normalization and PCA using exactly the classifier class/component/parent/view weights. Weighted population mean/variance; covariance denominator 1-sum(w*w) recovers n-1 sample convention for uniform weights, not a claim of independent views.",
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "6d046984df6ff82fd0d387e770673f27db8719da5a695e638ce96c413715a24d",
+  "downloads": 0,
+  "evaluation": "Lock all12525x4 scores for both branches before any candidate metrics. Report each condition/fold/component, pooled different-head metrics, worst groups and paired new/rescued errors. Require zero new AI misses and zero new REAL alerts in every condition for individual nonregression. No automatic promotion even on an internal pass.",
+  "external_DEV_or_gallery_reads": 0,
+  "fixed": "E131 source folds, all four conditions, DINO/CLIP/DEAR64 PCs each and branch128 PCs, whitening floors, randomized SVD seed131/power3/oversamples10. Same zero-start weighted BCE+.005||w||^2, unpenalized intercept, L-BFGS500/ftol1e-12/gtol1e-7, gradient<=1e-5. Six heads, no rank/weight/cut search. Fixed0.5 diagnostic cut, not E92 serving cuts.",
+  "folds": 3,
+  "generator_family_holdout_supported": false,
+  "limits": "Consumed internal TRAIN diagnostic, three AI-bearing components only. Known-family/prompt links are grouped, unknown RR/community-generator or semantic ancestry can remain. Frozen encoder pretraining is not audited by this split. Each held-out fold uses a different fresh head; this is not one deployable candidate or independent final evidence. Adaptive control chosen after E146 and the representation audit; all folds are consumed development data. This is a weighted representation bundle, not separate attribution to scaling versus PCA. Unknown corpus ancestry remains; this is not E92 accuracy or independent unseen-family evidence.",
+  "max_seconds": 7200,
+  "new_pixels_read": 0,
+  "parents": 12525,
+  "promotion_allowed": false,
+  "replay": "Replay old saved maps/heads against every E131 held-out score and replay new saved shared/branch maps and heads; max error<=1e-10 and identical0.5 decisions.",
+  "state": "E147_weighted_representation_registered"
+}

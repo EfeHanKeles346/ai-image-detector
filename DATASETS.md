@@ -3418,3 +3418,20 @@ and320 DEV, so differently encoded copies remain incompletely covered. No indepe
 reserve was opened, no roles changed and no acquisition occurred. Four synthetic images
 were generated in memory only for preprocessing parity, not admitted as training/test
 examples or scored for detector quality. Raw per-parent records remain outside Git.
+
+
+### E147 planned reuse — 2026-09-16
+
+Reuse the exact E13112525-parent TRAIN feature caches and four existing views to isolate
+representation weighting without changing data. No acquisitions or raw-pixel extraction;
+no source role changes, DEV/gallery/reserve access or new dataset provenance claims.
+Private contracts/maps/heads/scores remain under /Volumes/LaCie/pixelproof-datasets/e147.
+
+
+### E147 completed reuse — 2026-09-16
+
+All12525 existing TRAIN parents were reused (exactly50100 cached views per feature
+branch); no new image bodies or pixels were read. No acquisition, role change,
+DEV/gallery/reserve scoring or new ancestry claim. Six private fitted heads plus their
+maps and scores live in e147 on LaCie. Public receipts contain aggregate source/condition
+metrics and integrity hashes only. Both branches failed nonregression; E92 is unchanged.
