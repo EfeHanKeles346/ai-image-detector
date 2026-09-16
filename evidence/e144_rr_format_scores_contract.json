@@ -1,0 +1,23 @@
+{
+  "branches": [
+    "center_control",
+    "full_frame"
+  ],
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "65b619fec1272f1d1cad209c803cc2b59a7e71530a16c7dcf89a7bb6469cbc10",
+  "cut": 0.5,
+  "downloads": 0,
+  "limits": "Retrospective consumed E131 TRAIN source-held-out scores, not E92 serving performance or fresh independent validation. Only one REAL PNG. Container, publisher, generator and content are confounded; this cannot identify causal codec reliance. Models receive decoded pixels, not filename extensions. No fitting, cutoff search, calibration, family reassignment or promotion.",
+  "new_fits": 0,
+  "new_image_reads": 0,
+  "new_inferences": 0,
+  "parents": 2360,
+  "promotion_allowed": false,
+  "scope": "Every RR class/container stratum, both branches and all four existing conditions; fixed-cut alert rates, raw-score distributions and paired clean-to-processed new/rescued errors. No subgroup selection.",
+  "state": "E144_RR_format_score_audit_registered"
+}

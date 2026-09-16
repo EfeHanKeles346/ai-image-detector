@@ -3334,3 +3334,59 @@ source parents and1110 RR parents. Base-generator ancestry remains unverified. N
 local RR per-file metadata availability, without inferring model families from filenames
 or consuming protected test reserves. No images, fits, scores or downloads in E142;
 Model2 remains experimental and E92 stays serving under the new display-only policy.
+
+
+## E143 plan — local RR TRAIN metadata availability (2026-09-16)
+
+Resume Model1 work after the site update. Existing RR train/validation inventory records
+3000 images and no non-image sidecars; this is a historical inventory, not a new archive
+scan. Verify its acquisition/extraction metadata chain and bind only currently active
+RR TRAIN parents to their original train member/source/class/body identities. Read those
+bounded local bodies to recheck SHA/size, then inspect lazy image headers and EXIF already
+present in the header. No pixel decoding, model/feature extraction, gallery, official
+validation/test image or protected reserve access. Use a separate private record file;
+only counts/hashes reach Git. No datasets, weights or packages downloaded.
+
+Selected PNG text keys and EXIF software/camera/description fields are untrusted
+self-declarations. A camera Model tag is not an AI generator. Empty/missing metadata
+cannot certify authenticity, and header-only inspection may miss later container fields
+such as PNG post-IDAT text. Count failures without removing parents. Freeze code and
+input metadata before this image-header pass; do not modify TRAIN roles/folds or infer
+generator families from topic/filename strings. This audit must lead to an explicit
+local-provenance availability conclusion, not repeated unbounded searches or a new
+claim of unseen-generator evaluation.
+
+
+## E143 completed — RR local provenance availability (2026-09-16)
+
+Verified all2360 active RR TRAIN bodies (1250 REAL,1110 AI), totaling1,721,292,228
+bytes, against their original extraction/acquisition identities. Header/EXIF parse
+errors:0. Selected fields occur in525 REAL and135 AI parents. The original containers
+are REAL:1249 JPEG/1 PNG; AI:113 JPEG/997 PNG. These strongly unequal distributions
+motivate a bounded processing-confound diagnostic; they do not prove that a model uses
+container identity or that generator/content differences are unimportant.
+
+A separately recorded post-hoc parser finds110 exact DALL-E producer declarations and
+one model-name declaration in generation settings. These111 strings remain unverified
+file self-declarations;999 RR AI parents lack either parsed convention. Camera and
+Matplotlib software tags are not generator identities. No verified checkpoint/base-family
+ancestry was recovered, no folds/labels changed, and1839 active AI parents still lack a
+recovered prompt hash or publisher-scoped prompt ID. Header-only inspection can miss
+later container fields; this closes the bounded local-header availability question,
+not all provenance uncertainty. Do not repeat unconstrained metadata searches.
+
+Public aggregate receipts: evidence/e143_rr_metadata.json and
+ evidence/rr_header_declarations_20260916.json. The frozen E143 contract SHA256 is
+9bb8135d43ef4c5c0848f689406fc55e27a982717aa9fa649b2335d85eddb4f6.
+Raw metadata text and per-parent overlays remain on the external disk, outside Git.
+No downloads, pixel decoding, model scoring, fits, protected-image access or promotion.
+E92 remains the live primary demo; Model2 remains experimental. The preceding site/code
+commit b1ac736 passed GitHub CI35076273276.
+
+
+### E144 acquisition/role accounting — 2026-09-16
+
+Joined the already recorded2360 RR TRAIN header formats to locked E131 scores; no new
+image access, download, data admission or role/fold changes. Per-parent metadata stays
+private. Only aggregate32-stratum measurements are published. Container labels do not
+become authenticity or generator-family labels; protected reserves remain unopened.

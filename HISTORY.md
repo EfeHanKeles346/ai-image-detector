@@ -10326,3 +10326,115 @@ Starlette/httpx warning);14 web tests, Sites build, TypeScript, ESLint, compilea
 diff checks passed. Actual schema4 photo response passed the frontend parser and the
 old schema3 response was rejected. The retained frontend returned HTTP200; the local
 launcher confirms exact E92 and the current advisory policy with downloads disabled.
+
+
+## E143 plan — local RR TRAIN metadata availability (2026-09-16)
+
+Resume Model1 work after the site update. Existing RR train/validation inventory records
+3000 images and no non-image sidecars; this is a historical inventory, not a new archive
+scan. Verify its acquisition/extraction metadata chain and bind only currently active
+RR TRAIN parents to their original train member/source/class/body identities. Read those
+bounded local bodies to recheck SHA/size, then inspect lazy image headers and EXIF already
+present in the header. No pixel decoding, model/feature extraction, gallery, official
+validation/test image or protected reserve access. Use a separate private record file;
+only counts/hashes reach Git. No datasets, weights or packages downloaded.
+
+Selected PNG text keys and EXIF software/camera/description fields are untrusted
+self-declarations. A camera Model tag is not an AI generator. Empty/missing metadata
+cannot certify authenticity, and header-only inspection may miss later container fields
+such as PNG post-IDAT text. Count failures without removing parents. Freeze code and
+input metadata before this image-header pass; do not modify TRAIN roles/folds or infer
+generator families from topic/filename strings. This audit must lead to an explicit
+local-provenance availability conclusion, not repeated unbounded searches or a new
+claim of unseen-generator evaluation.
+
+
+## E143 completed — RR local provenance availability (2026-09-16)
+
+Verified all2360 active RR TRAIN bodies (1250 REAL,1110 AI), totaling1,721,292,228
+bytes, against their original extraction/acquisition identities. Header/EXIF parse
+errors:0. Selected fields occur in525 REAL and135 AI parents. The original containers
+are REAL:1249 JPEG/1 PNG; AI:113 JPEG/997 PNG. These strongly unequal distributions
+motivate a bounded processing-confound diagnostic; they do not prove that a model uses
+container identity or that generator/content differences are unimportant.
+
+A separately recorded post-hoc parser finds110 exact DALL-E producer declarations and
+one model-name declaration in generation settings. These111 strings remain unverified
+file self-declarations;999 RR AI parents lack either parsed convention. Camera and
+Matplotlib software tags are not generator identities. No verified checkpoint/base-family
+ancestry was recovered, no folds/labels changed, and1839 active AI parents still lack a
+recovered prompt hash or publisher-scoped prompt ID. Header-only inspection can miss
+later container fields; this closes the bounded local-header availability question,
+not all provenance uncertainty. Do not repeat unconstrained metadata searches.
+
+Public aggregate receipts: evidence/e143_rr_metadata.json and
+ evidence/rr_header_declarations_20260916.json. The frozen E143 contract SHA256 is
+9bb8135d43ef4c5c0848f689406fc55e27a982717aa9fa649b2335d85eddb4f6.
+Raw metadata text and per-parent overlays remain on the external disk, outside Git.
+No downloads, pixel decoding, model scoring, fits, protected-image access or promotion.
+E92 remains the live primary demo; Model2 remains experimental. The preceding site/code
+commit b1ac736 passed GitHub CI35076273276.
+
+
+## E144 plan — container strata in locked RR source-held-out scores (2026-09-16)
+
+Before viewing subgroup scores, register a bounded diagnostic joining all2360 E143 RR
+TRAIN header identities to the already locked E131 predictions. Preserve complete parent,
+class, source, fold, condition and score hashes. Report every JPEG/PNG x REAL/AI stratum,
+both center-control/full-frame branches and all four existing processing conditions.
+Use E131's fixed0.5 diagnostic cut and complete raw-score distributions, denominators,
+error counts and paired clean-to-processed new/rescued errors. No subgroup selection,
+threshold search, inference, pixels, fits, downloads or protected-reserve access.
+
+This is retrospective internal TRAIN evidence, not deployed E92 performance. E92's
+7.94% warning cutoff is unrelated to this head's0.5 cut. Only one REAL PNG prevents a
+meaningful balanced within-PNG comparison. Container, content and generator are
+confounded; existing decoded-pixel scores cannot establish causal extension reliance.
+Use the result to specify a later matched processing intervention, not to promote a
+classifier or infer authenticity from metadata/file format.
+
+
+## E144 completed — format does not explain away RR false alarms (2026-09-16)
+
+Contract65b619fec1272f1d1cad209c803cc2b59a7e71530a16c7dcf89a7bb6469cbc10 froze the
+complete2360-parent join before subgroup metrics. All32 branch/class/format/condition
+summaries are retained in evidence/e144_rr_format_scores.json. No missing parents,
+new image reads, inference, fits, downloads, cutoff changes or serving promotion.
+
+Full-frame E131, fixed0.5 diagnostic cut:
+
+| Original class/container | Parents | Clean AI-alert count/rate | Social-Q75 AI-alert count/rate |
+| --- | ---: | ---: | ---: |
+| REAL JPEG | 1249 | 1009 /80.78% | 1058 /84.71% |
+| REAL PNG | 1 | 1 /100% | 1 /100% |
+| AI JPEG | 113 | 111 /98.23% | 111 /98.23% |
+| AI PNG | 997 | 927 /92.98% | 941 /94.38% |
+
+For REAL, an AI alert is a false positive; for AI it is a true positive. The center-control
+branch also has severe REAL JPEG FPR79.74% clean and84.31% social. Full-frame social
+processing introduces67 new REAL JPEG false alarms and rescues18; AI PNG processing
+introduces5 misses and rescues19. AI JPEG has one new miss and one rescue despite the
+unchanged aggregate count. Thus aggregate gains can conceal individual regressions.
+
+The simple claim that this held-out head merely calls original PNG AI and original JPEG
+REAL is inconsistent with these predictions: most REAL JPEGs are also called AI. A
+broader source-dependent score shift remains the actionable problem. This does NOT
+rule out visual codec/processing-history shortcuts or prove a causal mechanism; generator,
+content and processing remain confounded. Only one REAL PNG makes that row descriptive,
+not a reliable population-rate estimate. One already consumed RR component cannot
+support source-general confidence intervals or unseen-generator claims.
+
+These are E131 source-excluding research heads, not E92 serving measurements. No new
+candidate has passed qualification and no detector-accuracy improvement is claimed.
+Keep E92 and the updated primary/advisory demo policy unchanged.
+
+
+### E143–E144 implementation verification — 2026-09-16
+
+All1178 Python tests passed in21.26seconds, with one pre-existing upstream
+Starlette/httpx deprecation warning. The nine new tests cover bounded lazy header
+inspection, untrusted declaration parsing and strict TRAIN/header identity joins.
+Compilation and whitespace checks passed. The local launcher confirms the exact E92
+artifact and current primary/advisory policy with downloads disabled; localhost:3002
+returns HTTP200. No web source changed in this work, so the prior successful web build
+is retained. These checks validate software/identity handling, not universal detection.

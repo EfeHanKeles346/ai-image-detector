@@ -1,0 +1,21 @@
+{
+  "code_sha256": "02e3ea09345874d676bc63a3a907ac5c1dd20b26aced6cd9cddf41ace5f70beb",
+  "declarations_by_class": {
+    "0": {},
+    "1": {
+      "OpenAI DALL-E": 110,
+      "duchaitenAiartSDXL_v10": 1
+    }
+  },
+  "downloads": 0,
+  "limits": "Post-hoc interpretation of two exact observed field conventions, not blind discovery or certified generator labels. Metadata can be copied/edited; no version/checkpoint/base-family proof. Matplotlib/software/camera tags are not generator identities. Preserve original labels, source folds and unknowns; no automatic corpus/family merge or training admission.",
+  "metadata_record_sha256": "8ebe14bd3d83b21fd273df2449dbf463573e8042705013be7a234a821217fa45",
+  "model_scores": 0,
+  "new_image_reads": 0,
+  "parents_with_AI_declaration": 111,
+  "parser_sha256": "70d04515ac3a1c2793bf397e3bdb09cade3731e2817a57c856982f88bc81de8d",
+  "private_declarations_sha256": "8812349261a5982ac2ed422c4c9d34a69dc4febafde8dc79ab4360fa439de7bc",
+  "remaining_RR_AI_without_parsed_declaration": 999,
+  "state": "RR_embedded_declarations_interpreted",
+  "verified_generator_identities": 0
+}

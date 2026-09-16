@@ -1,0 +1,15 @@
+{
+  "class_counts": {
+    "0": 1250,
+    "1": 1110
+  },
+  "contract_sha256": "9bb8135d43ef4c5c0848f689406fc55e27a982717aa9fa649b2335d85eddb4f6",
+  "downloads": 0,
+  "fits": 0,
+  "limits": "Header-only metadata availability; PNG post-IDAT fields and other container sections can remain unread. Missing fields do not prove no embedded metadata anywhere. Text is untrusted and never establishes generator/authenticity labels.",
+  "model_scores": 0,
+  "parents": 2360,
+  "promotion_allowed": false,
+  "scope": "Read only bound active RR TRAIN image bodies, verify complete body SHA/size, then inspect lazy PNG/JPEG/WEBP header info and already-present EXIF. No pixel decode, feature extraction, model, gallery, validation/test archive or protected reserve access.",
+  "state": "E143_RR_TRAIN_header_audit_registered"
+}

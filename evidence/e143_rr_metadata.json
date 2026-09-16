@@ -1,0 +1,51 @@
+{
+  "active_RR_components": 1,
+  "active_RR_folds": 1,
+  "by_class": {
+    "0": {
+      "exif_parse_errors": 0,
+      "field_counts": {
+        "comment": 328,
+        "exif_camera_model": 150,
+        "exif_description": 64,
+        "exif_make": 154,
+        "exif_software": 190
+      },
+      "formats": {
+        "JPEG": 1249,
+        "PNG": 1
+      },
+      "header_errors": 0,
+      "parents": 1250,
+      "parents_with_selected_fields": 525
+    },
+    "1": {
+      "exif_parse_errors": 0,
+      "field_counts": {
+        "exif_user_comment": 110,
+        "parameters": 1,
+        "software": 24
+      },
+      "formats": {
+        "JPEG": 113,
+        "PNG": 997
+      },
+      "header_errors": 0,
+      "parents": 1110,
+      "parents_with_selected_fields": 135
+    }
+  },
+  "contract_sha256": "9bb8135d43ef4c5c0848f689406fc55e27a982717aa9fa649b2335d85eddb4f6",
+  "downloads": 0,
+  "fits": 0,
+  "historical_archive_nonimage_files": [],
+  "historical_inventory_not_fresh_archive_scan": true,
+  "limits": "Header-only metadata availability; PNG post-IDAT fields and other container sections can remain unread. Missing fields do not prove no embedded metadata anywhere. Text is untrusted and never establishes generator/authenticity labels.",
+  "model_scores": 0,
+  "parents": 2360,
+  "pixel_decodes": 0,
+  "private_records_sha256": "8ebe14bd3d83b21fd273df2449dbf463573e8042705013be7a234a821217fa45",
+  "promotion_allowed": false,
+  "state": "E143_RR_TRAIN_header_audit_complete",
+  "verified_body_bytes": 1721292228
+}

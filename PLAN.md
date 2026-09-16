@@ -81,8 +81,11 @@ Next Model1 sequence, updated after E137/E138:
    reconciled all12525 current parents. That specific coverage-chain gap is closed.
    E141 recovered E32 metadata and produced a coverage matrix.
    E142 additionally recovered480 E36 publisher-scoped prompt IDs.
-   Next inspect local RR records for remaining per-file provenance gaps. Unknown ancestry remains unknown; no acquisition or
-   protected-reserve scoring has occurred.
+   E143 completed all2360 bound RR TRAIN header checks with no body/parse failures.
+   It recovered111 unverified producer/model declarations, not verified generator ancestry.
+   E144 completed all32 locked-score strata. REAL JPEG FPR remains80.78% clean
+   and84.71% social in the full-frame research head; original container alone cannot
+   explain away the failure. No new fit/inference, acquisition or reserve scoring.
 3. Design the next representation/training intervention around the verified coverage gap.
    Once a complete candidate is fixed, apply AI-retention/REAL-error gates and genuinely
    withheld-source/processing evaluation with source-level uncertainty. Any UI probability
@@ -7177,3 +7180,47 @@ The penalty is0.5*0.1*sum_i w_i*(z_i-mean_parent(z))², where the original E131 
 Lock all candidate held-out scores before computing metrics. Report source/condition REAL FPR, AI recall, AUC, worst-group rates, per-image new/rescued errors versus E131 and changes in within-parent score range. Explicitly check zero new AI misses and zero new REAL false alarms in every condition; aggregate improvements cannot replace those checks. No E92/full-TRAIN candidate, consumed-DEV/gallery step or deployment follows automatically. This is adaptive internal TRAIN analysis; three AI-bearing components with unresolved corpus-level family overlap do not provide fresh unseen-generator evidence.
 
 Research context: [Sagawa et al., ICLR2020](https://arxiv.org/abs/1911.08731) show that low worst-group TRAIN loss alone does not establish group generalization and study regularization. The indexed official abstract of [Li et al., CVPR2026](https://openaccess.thecvf.com/content/CVPR2026/html/Li_Detecting_Compressed_AI-Generated_Images_via_Phase_Spectrum_Robustness_CVPR_2026_paper.html) includes consistency learning for compressed AI images. Direct page fetching returned403; only the indexed abstract was used. E136 is our simple convex paired-logit experiment, not a reproduction of its phase-spectrum architecture or difficulty-aware loss. No paper-reported improvement is transferred to our model.
+
+
+## E144 plan — container strata in locked RR source-held-out scores (2026-09-16)
+
+Before viewing subgroup scores, register a bounded diagnostic joining all2360 E143 RR
+TRAIN header identities to the already locked E131 predictions. Preserve complete parent,
+class, source, fold, condition and score hashes. Report every JPEG/PNG x REAL/AI stratum,
+both center-control/full-frame branches and all four existing processing conditions.
+Use E131's fixed0.5 diagnostic cut and complete raw-score distributions, denominators,
+error counts and paired clean-to-processed new/rescued errors. No subgroup selection,
+threshold search, inference, pixels, fits, downloads or protected-reserve access.
+
+This is retrospective internal TRAIN evidence, not deployed E92 performance. E92's
+7.94% warning cutoff is unrelated to this head's0.5 cut. Only one REAL PNG prevents a
+meaningful balanced within-PNG comparison. Container, content and generator are
+confounded; existing decoded-pixel scores cannot establish causal extension reliance.
+Use the result to specify a later matched processing intervention, not to promote a
+classifier or infer authenticity from metadata/file format.
+
+
+### Next Model1 intervention after E144 — source-separated calibration feasibility
+
+Stop metadata hunting and post-hoc cut sweeps. The local RR header question is closed
+within its stated scope. The observed failure is a broad held-out REAL score shift;
+format-specific heuristics and threshold fitting on this consumed RR fold are not an
+acceptable fix. Keep E92 serving and Model2 experimental.
+
+Next perform a metadata-only feasibility check for nested source-separated FIT/CAL/EVAL
+roles on the current TRAIN components before any new fit. Retain each parent's processing
+variants and known prompt/ancestry links together. With only three AI-bearing components,
+holding one out leaves only two for FIT/CAL; explicitly report class/source support and
+unknown corpus-level overlaps for each assignment. Reject an assignment without both
+classes in calibration/evaluation, or one that splits a declared component. No cutoff may
+use outer held-out scores. A feasible internal split is still development-only evidence;
+unknown family overlap and repeatedly exposed sources prevent independent validation.
+
+If feasible, register one bounded calibration comparison with a prespecified REAL false-
+alert budget and AI-retention requirement before new scores. Report the operating point,
+coverage, all source-wise errors and individual new/rescued mistakes. A calibration gain
+must not be called representation improvement. If this calibration design lacks adequate
+source support, record that limitation and design a matched class-balanced processing
+intervention using existing TRAIN pixels instead. Do not launch another coefficient sweep
+or consume protected reserves to make results look better. Any proposed new candidate
+still requires its own fixed qualification and genuinely withheld confirmation protocol.
