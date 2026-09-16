@@ -1,5 +1,9 @@
 # PixelProof — staj sunumu kanıt paketi
 
+> Historical E20–E31 presentation snapshot, not current E92 evidence (clarified2026-09-16).
+> For the current demo and research status, use PLAN.md, HISTORY.md and ml/EXPERIMENTS.md.
+> The historical rates and launch commands below must not be attributed to E92.
+
 Bu dosya sunum ve staj raporu için güncel, izlenebilir özet kaynaktır. `rapor/` klasörü E26 sonu
 tarihsel teslim anını korur; M1–M6 ile gelen çalışabilir proje-modeli kilometre taşı burada eklenir.
 

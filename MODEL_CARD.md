@@ -1,5 +1,12 @@
 # PixelProof E20 project model — model card
 
+**Historical model card.** This file records E20 and earlier successor decisions;
+it is not the identity or performance card of the current E92 internship demo.
+As of2026-09-16, the local demo uses E92 with schema4 and the primary/advisory policy
+documented in `ml/SERVING.md`. Current scientific results and limitations are maintained
+in `PLAN.md`, `HISTORY.md` and `ml/EXPERIMENTS.md`. E131–E146 source-held-out research
+heads are separate from E92; their metrics must not be presented as live-demo accuracy.
+
 **Version:** E20-v2, deployed training seed 2024
 
 **Status:** runnable research model; not an authenticity authority

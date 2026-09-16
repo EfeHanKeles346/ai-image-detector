@@ -1,0 +1,128 @@
+{
+  "assignments": [
+    {
+      "CAL": 1,
+      "EVAL": 2,
+      "FIT": 0
+    },
+    {
+      "CAL": 2,
+      "EVAL": 1,
+      "FIT": 0
+    },
+    {
+      "CAL": 0,
+      "EVAL": 2,
+      "FIT": 1
+    },
+    {
+      "CAL": 2,
+      "EVAL": 0,
+      "FIT": 1
+    },
+    {
+      "CAL": 0,
+      "EVAL": 1,
+      "FIT": 2
+    },
+    {
+      "CAL": 1,
+      "EVAL": 0,
+      "FIT": 2
+    }
+  ],
+  "code_sha256": "7abf94c9ab71ab46766f8d8ff9ea4b95d62efeee74eab4b27bcadd682b1bacf3",
+  "downloads": 0,
+  "engineering_feasible": true,
+  "fold_support": {
+    "0": {
+      "class_components": {
+        "0": 2,
+        "1": 1
+      },
+      "class_counts": {
+        "0": 2467,
+        "1": 2916
+      },
+      "parents": 5383,
+      "sources": [
+        "MIDD:Hynix_SL846",
+        "MIDD:ISOCELL_3P9",
+        "MIDD:ISOCELL_GN1",
+        "MIDD:ISOCELL_HM3",
+        "MIDD:OmniVision_OV32A",
+        "MIDD:OmniVision_OV64B",
+        "MIDD:Sony_IMX258",
+        "MIDD:Sony_IMX766",
+        "SCIMD-17",
+        "e32:flux2-klein-9b",
+        "e32:gpt-image-1",
+        "e32:nano-banana-local",
+        "e32:nano-banana-pro-ash-local",
+        "e32:qwen-image-2512",
+        "e36:FLUX.2_max",
+        "e36:GLM-Image",
+        "e36:Qwen-Image-2.0-pro",
+        "e36:Seedream-5.0",
+        "e36:gpt-image-2",
+        "e36:nano-banana-2.0"
+      ]
+    },
+    "1": {
+      "class_components": {
+        "0": 3,
+        "1": 1
+      },
+      "class_counts": {
+        "0": 2875,
+        "1": 1110
+      },
+      "parents": 3985,
+      "sources": [
+        "e32:forchheim-fodb",
+        "e36:device_001",
+        "e36:device_002",
+        "e36:device_003",
+        "e36:device_005",
+        "e36:device_009",
+        "rr:culture_and_religion",
+        "rr:everyday_life",
+        "rr:labor_and_production",
+        "rr:medical_and_public_health",
+        "rr:natural_disasters_and_accidents",
+        "rr:political_and_social_events",
+        "rr:rrdataset_real_pool",
+        "rr:war_and_conflict"
+      ]
+    },
+    "2": {
+      "class_components": {
+        "0": 3,
+        "1": 1
+      },
+      "class_counts": {
+        "0": 2588,
+        "1": 569
+      },
+      "parents": 3157,
+      "sources": [
+        "SID:Fuji",
+        "SID:Sony",
+        "e32:communityforensics-ai-local",
+        "e32:csafe-mcsidb-iphone14",
+        "e32:csafe-mcsidb-s21",
+        "e32:vision-base-native"
+      ]
+    }
+  },
+  "generator_family_holdout_supported": false,
+  "helper_sha256": "0bb21f1ca70ef6dffe7617ffb12a04c005f3414b0c820c2ee9e38d2187b77dd4",
+  "independent_validation_supported": false,
+  "limits": "Six ordered FIT/CAL/EVAL assignments, three distinct FIT folds. Both classes in every role, but only one AI-bearing component in each role. Unknown RR/CF ancestry and consumed source groups remain. Feasible internal development diagnostic, not reliable independent source-general calibration.",
+  "new_fits": 0,
+  "new_image_reads": 0,
+  "parents": 12525,
+  "prior_contract_sha256": "6db23ea917a7428d015e0453efe99b16bbcbe3fa2822e6b540e8c31b645ea421",
+  "scores_read": 0,
+  "state": "E145_nested_split_feasibility_complete"
+}

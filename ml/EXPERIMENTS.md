@@ -9357,3 +9357,128 @@ Compilation and whitespace checks passed. The local launcher confirms the exact 
 artifact and current primary/advisory policy with downloads disabled; localhost:3002
 returns HTTP200. No web source changed in this work, so the prior successful web build
 is retained. These checks validate software/identity handling, not universal detection.
+
+
+## E145 plan — nested source-split feasibility (2026-09-16)
+
+Inspect only the current bound E131 TRAIN roster and declared components/folds. Enumerate
+all six ordered assignments of the existing three folds to FIT/CAL/EVAL. Require unique
+TRAIN parents, both classes in every role and no component crossing; preserve all four
+views of each parent. Publish class/component support and source names, never parent IDs.
+No score, image, fit, download or reserve access. This tests engineering feasibility;
+three AI-bearing components and unknown RR/CF ancestry cannot support independent
+unseen-generator calibration. The available sources are already development-consumed.
+
+
+## E145 result and E146 registered design — 2026-09-16
+
+The E145 metadata-only check finds all six ordered FIT/CAL/EVAL assignments structurally
+feasible. Existing folds0/1/2 contain5383/3985/3157 parents: REAL2467/2875/2588 and
+AI2916/1110/569. Each has one AI-bearing component; REAL component counts are2/3/3.
+Known components remain intact. These small source counts and unknown RR/CF ancestry
+limit the experiment to adaptive internal development; no independent validation claim.
+
+Proceed with one bounded E146 experiment using existing raw feature caches only. Fit
+three fresh full-frame heads, one on each FIT fold. Refit every standardizer and PCA on
+that FIT fold exclusively; never reuse the E131 maps that included the new CAL fold.
+Retain E131's DINO/CLIP/DEAR64 PCs each plus full-frame128 PCs, whitening seed131,
+class/component/parent/view weights, logistic L2 .01 and convergence guards. Three fits,
+no hyperparameter search; all four processing views stay with their parent/source.
+
+For each of six assignments, select one common CAL cutoff meeting pooled REAL FPR<=10%
+and each REAL-component FPR<=20% in every condition. These are fixed empirical diagnostic
+budgets, not a claim of acceptable product risk or statistical guarantees. Choose the
+smallest feasible value by exact order statistics, handling >=cut ties with nextafter.
+Reject it if any condition loses a .5-caught CAL AI or falls below95% CAL AI recall.
+Increasing the cutoff cannot repair those failures; no EVAL-driven fallback or retuning.
+
+Lock all three non-FIT prediction arrays before CAL selection, then all six selections
+before EVAL metrics. Retain every assignment, including rejected CAL cuts, and compare
+accepted cuts with the same fresh head's .5 baseline. Report per-condition/component
+counts, AI recall, REAL FPR and individual new/rescued errors. EVAL acceptance requires
+the same absolute budgets/recall plus zero new AI misses and zero new REAL alerts in
+all conditions. Do not pool repeated parents from the six assignments. Less FIT data
+than E131 means comparing its earlier heads would conflate training size and cutoff.
+
+No downloads, new image pixels, protected-reserve reads, gallery/DEV access or E92
+serving change. Local AC power and external disk reserve are available. Raw artifacts
+remain external; only aggregate evidence/code enter Git. Maximum run3600seconds,
+CPU thread limit2, no GPU encoder allocation. Model2 remains experimental.
+
+
+### Current-versus-historical runtime review — 2026-09-16
+
+Inspection found that MODEL_CARD.md, ml/SERVING.md and PRESENTATION_EVIDENCE.md could
+still be read as current E20/E26/E31 guidance. Added explicit historical notices and the
+actual E92 local launch/health/API contract; retained their historical results unchanged.
+No new presentation/report is claimed. Canonical ongoing records remain PLAN.md,
+HISTORY.md, ml/EXPERIMENTS.md and DATASETS.md. Frozen scientific reference implementations
+and their historical receipts remain untouched.
+
+Also closed a launcher readiness gap: exact artifact/policy/CORS checks now additionally
+require schema_version4. A listener with old schema3 cannot be reused as the current
+frontend-compatible service. This does not alter scores or model weights. The focused
+three launcher tests and actual --check-only pass; the existing E92 process was reused.
+
+Pre-run/full implementation verification:1183 Python tests passed in21.75seconds with
+one pre-existing Starlette/httpx warning. The five new nested-calibration tests include
+synthetic end-to-end checks that all12 PCA fits see only one FIT fold, no FIT predictions
+are emitted, every role permutation is retained and EVAL metrics follow both locks.
+Cutoff tests cover ties, infeasible AI-retention constraints, worst-source constraints
+and every processing condition. The previous b86ccab GitHub CI35078418953 passed.
+E146 is registered under contract2786f38e8404e94d2e7c26c6d3fe1b93f4ad663f0211bd517489acab03fc843d;
+execution is in progress and no measured detector improvement is yet claimed.
+
+
+## E146 result — CAL-only thresholds fail source transfer (2026-09-16)
+
+Completed three fresh full-frame heads in39.306seconds after input verification. All
+three saved-artifact score replays are exact0; solvers converge in21/29/24 iterations.
+Each standardizer/PCA/head used only its FIT fold; all non-FIT predictions were locked
+before all six CAL selections, and those selections were locked before EVAL metrics.
+Contract2786f38e8404e94d2e7c26c6d3fe1b93f4ad663f0211bd517489acab03fc843d;
+full aggregate evidence: evidence/e146_nested_calibration.json.
+
+Three of six CAL assignments are accepted, but zero of six assignments pass the complete
+EVAL gate. The three rejected CAL cuts are not applied to EVAL. At FIT0/CAL1 the necessary
+REAL-budget cut0.97347 loses255/383/307/309 previously detected AI views (by condition);
+FIT2/CAL1 cut0.81802 also loses AI. FIT1/CAL0 cannot reach95% AI recall while meeting the
+REAL budgets. These are separate condition counts, not independent unique-parent totals.
+
+Accepted CAL assignments, evaluated only on the remaining source fold:
+
+| FIT/CAL/EVAL | CAL cut | EVAL clean REAL FPR, baseline -> cut | EVAL clean AI recall, baseline -> cut | New clean REAL alerts |
+| --- | ---: | ---: | ---: | ---: |
+| 0/2/1 | 0.471254 | 49.67% ->51.17% | 95.68% ->96.04% | 43 |
+| 1/2/0 | 0.250869 | 8.67% ->20.31% | 65.05% ->78.19% | 287 |
+| 2/0/1 | 0.261082 | 20.24% ->31.62% | 91.35% ->96.58% | 327 |
+
+All three accepted CAL cuts are below the same-head0.5 baseline, so they preserve caught
+AI while adding REAL alerts. Social-Q75 REAL FPR becomes51.83%,20.75%,37.11%, respectively.
+Every condition/component and transition is retained, including the failures. Results
+from repeated EVAL parents under different heads are not pooled into one accuracy.
+
+Interpretation: the registered lowest-budget-feasible CAL rule fails to transfer in these
+six development assignments. The rule prioritizes recall subject to a REAL budget; this
+is not proof that every possible threshold-selection objective is impossible. It does
+show that success on one calibration source cannot be treated as a new-source guarantee.
+Do not retrospectively choose a different cut from these exposed EVAL scores, present
+this as independent validation, or replace E92. The next scientific change should target
+representation/coverage, with a separately specified control, rather than another cut
+sweep on these folds. The one-AI-component-per-role limitation remains fundamental.
+
+No downloads, new image pixels, new data admission, protected reserve access, serving
+weights or UI decision changes. E92 remains live; Model2 remains experimental. This is
+an implemented and falsified calibration proposal, not a detector-accuracy improvement.
+
+
+### E146 independent receipt/count verification — 2026-09-16
+
+Verified public/private report equality, locked-score receipt/NPZ hashes, locked CAL
+receipt hash, complete parent order and TRAIN role. An independent direct Boolean recount
+of60 condition records (24 CAL,24 baseline EVAL,12 accepted-cut EVAL) matches every REAL
+FP, AI TP, newly missed AI and new REAL alert count. No new inference or image read.
+Compilation and whitespace checks passed. After the launcher schema fix, all three
+focused launcher tests passed; exact E92 --check-only succeeds and localhost:3002 returns
+HTTP200. The full1183-test run preceded only that one readiness check change, which the
+focused tests cover. No experiment is still running and no candidate was promoted.

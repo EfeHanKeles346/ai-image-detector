@@ -5,6 +5,32 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Current checkpoint — E146 completed (2026-09-16)
+
+E145 source-separated FIT/CAL/EVAL feasibility and E146 three-head calibration trial
+are complete. Three of six CAL assignments passed their local constraints; zero passed
+all EVAL acceptance conditions. E92 remains the live research demo, with no weight/cut
+change. See the dated E146 result in HISTORY.md and ml/EXPERIMENTS.md and the complete
+aggregate evidence/e146_nested_calibration.json. Prior E145/E146 “next/run” instructions
+below are historical registrations and are superseded by this checkpoint.
+
+Next Model1 work:
+1. Stop further cutoff selection on the consumed E146 evaluations. The lowest-feasible
+   CAL rule failed source transfer; this does not prove all calibration is impossible.
+2. Prepare one representation control around native-scale residual/processing evidence,
+   using existing eligible TRAIN images and matched class processing. Review earlier
+   E31/E53/E69 controls first to avoid repeating a failed mechanism under a new name.
+   Specify exact features, original-versus-derived handling, source grouping, FIT-only
+   normalization, resource budget and per-image AI/REAL acceptance before extraction/fit.
+   A generic codec augmentation must not be called removal of original codec history.
+3. Preserve the known provenance gap: only three AI-bearing components and unresolved
+   RR/CF ancestry. Neither another internal fit nor metadata self-declarations supply
+   independent unseen-family evidence. Do not open the protected reserves to select a
+   representation or threshold. No new data downloads while on mobile data.
+4. Keep Model2 experimental and the existing E92 site available. The launcher now also
+   verifies response schema4; historical model/serving/presentation documents are marked
+   explicitly to prevent E20/E31 metrics and commands being attributed to E92.
+
 ## Current network constraint — mobile data (2026-09-16)
 
 The user is back on mobile data with the external disk connected. This supersedes the
@@ -7224,3 +7250,50 @@ source support, record that limitation and design a matched class-balanced proce
 intervention using existing TRAIN pixels instead. Do not launch another coefficient sweep
 or consume protected reserves to make results look better. Any proposed new candidate
 still requires its own fixed qualification and genuinely withheld confirmation protocol.
+
+
+## E145 plan — nested source-split feasibility (2026-09-16)
+
+Inspect only the current bound E131 TRAIN roster and declared components/folds. Enumerate
+all six ordered assignments of the existing three folds to FIT/CAL/EVAL. Require unique
+TRAIN parents, both classes in every role and no component crossing; preserve all four
+views of each parent. Publish class/component support and source names, never parent IDs.
+No score, image, fit, download or reserve access. This tests engineering feasibility;
+three AI-bearing components and unknown RR/CF ancestry cannot support independent
+unseen-generator calibration. The available sources are already development-consumed.
+
+
+## E145 result and E146 registered design — 2026-09-16
+
+The E145 metadata-only check finds all six ordered FIT/CAL/EVAL assignments structurally
+feasible. Existing folds0/1/2 contain5383/3985/3157 parents: REAL2467/2875/2588 and
+AI2916/1110/569. Each has one AI-bearing component; REAL component counts are2/3/3.
+Known components remain intact. These small source counts and unknown RR/CF ancestry
+limit the experiment to adaptive internal development; no independent validation claim.
+
+Proceed with one bounded E146 experiment using existing raw feature caches only. Fit
+three fresh full-frame heads, one on each FIT fold. Refit every standardizer and PCA on
+that FIT fold exclusively; never reuse the E131 maps that included the new CAL fold.
+Retain E131's DINO/CLIP/DEAR64 PCs each plus full-frame128 PCs, whitening seed131,
+class/component/parent/view weights, logistic L2 .01 and convergence guards. Three fits,
+no hyperparameter search; all four processing views stay with their parent/source.
+
+For each of six assignments, select one common CAL cutoff meeting pooled REAL FPR<=10%
+and each REAL-component FPR<=20% in every condition. These are fixed empirical diagnostic
+budgets, not a claim of acceptable product risk or statistical guarantees. Choose the
+smallest feasible value by exact order statistics, handling >=cut ties with nextafter.
+Reject it if any condition loses a .5-caught CAL AI or falls below95% CAL AI recall.
+Increasing the cutoff cannot repair those failures; no EVAL-driven fallback or retuning.
+
+Lock all three non-FIT prediction arrays before CAL selection, then all six selections
+before EVAL metrics. Retain every assignment, including rejected CAL cuts, and compare
+accepted cuts with the same fresh head's .5 baseline. Report per-condition/component
+counts, AI recall, REAL FPR and individual new/rescued errors. EVAL acceptance requires
+the same absolute budgets/recall plus zero new AI misses and zero new REAL alerts in
+all conditions. Do not pool repeated parents from the six assignments. Less FIT data
+than E131 means comparing its earlier heads would conflate training size and cutoff.
+
+No downloads, new image pixels, protected-reserve reads, gallery/DEV access or E92
+serving change. Local AC power and external disk reserve are available. Raw artifacts
+remain external; only aggregate evidence/code enter Git. Maximum run3600seconds,
+CPU thread limit2, no GPU encoder allocation. Model2 remains experimental.

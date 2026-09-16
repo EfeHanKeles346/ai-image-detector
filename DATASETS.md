@@ -3390,3 +3390,20 @@ Joined the already recorded2360 RR TRAIN header formats to locked E131 scores; n
 image access, download, data admission or role/fold changes. Per-parent metadata stays
 private. Only aggregate32-stratum measurements are published. Container labels do not
 become authenticity or generator-family labels; protected reserves remain unopened.
+
+
+## E145/E146 data accounting — 2026-09-16
+
+E145 reads only current TRAIN metadata; E146 reuses exactly12525 TRAIN parents and
+four existing cached processing views. No acquisition, raw image read, role admission,
+new independent sample or protected-reserve access. FIT/CAL/EVAL are internal roles
+within existing research TRAIN, not a relabeling of the project-wide final reserve.
+Preserve all known source/prompt components and unresolved upstream ancestry.
+
+
+### E146 completed reuse — 2026-09-16
+
+Three heads reused existing12525-parent/four-view TRAIN caches; no image bytes or new
+samples were acquired. Six internal role permutations preserve every declared component.
+All artifacts and per-parent predictions remain on the external disk under e146; public
+receipts contain aggregate metrics/hashes only. No admission or protected-reserve change.

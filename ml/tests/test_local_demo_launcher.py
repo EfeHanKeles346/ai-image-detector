@@ -27,12 +27,13 @@ def test_reuse_requires_exact_identity_policy_and_cors():
     m = load()
     correct = dict(status='ready', model_id='E92', artifact_sha256=m.EXPECTED_SHA,
         guard_id='e92-paired-v2', display_policy='e92-primary-reference-advisory-v2', research_only=True,
-        downloads_allowed=False, _cors_ok=True)
+        downloads_allowed=False, _cors_ok=True, schema_version=4)
     assert m.ready(correct)
     for k in correct:
         wrong = dict(correct); wrong.pop(k)
         assert not m.ready(wrong)
     assert not m.ready(None)
+    assert not m.ready({**correct, 'schema_version': 3})
 
 
 def test_unrelated_listener_is_not_replaced(monkeypatch):

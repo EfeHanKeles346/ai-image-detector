@@ -1,0 +1,71 @@
+{
+  "assignments": [
+    {
+      "CAL": 1,
+      "EVAL": 2,
+      "FIT": 0
+    },
+    {
+      "CAL": 2,
+      "EVAL": 1,
+      "FIT": 0
+    },
+    {
+      "CAL": 0,
+      "EVAL": 2,
+      "FIT": 1
+    },
+    {
+      "CAL": 2,
+      "EVAL": 0,
+      "FIT": 1
+    },
+    {
+      "CAL": 0,
+      "EVAL": 1,
+      "FIT": 2
+    },
+    {
+      "CAL": 1,
+      "EVAL": 0,
+      "FIT": 2
+    }
+  ],
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "2786f38e8404e94d2e7c26c6d3fe1b93f4ad663f0211bd517489acab03fc843d",
+  "downloads": 0,
+  "evaluation": "Lock all three non-FIT score arrays, then all six CAL selections before any EVAL metric. Report each assignment separately (no pooling repeated parents), .5 baseline, CAL feasibility, accepted-cut EVAL component/condition metrics and paired individual errors. Require EVAL budgets, >=95% AI recall, zero new AI misses and zero new REAL alerts in every condition. Failing assignments stay in the report. No full-TRAIN or serving candidate.",
+  "features": [
+    [
+      "dino",
+      64
+    ],
+    [
+      "clip",
+      64
+    ],
+    [
+      "dear",
+      64
+    ],
+    [
+      "full_frame",
+      128
+    ]
+  ],
+  "fits": 3,
+  "limits": "Adaptive consumed TRAIN development. One AI-bearing component per role and unresolved RR/CF upstream overlap; no unseen-family or independent validation claim. Less FIT data than E131; only same-new-head .5 vs CAL-cut comparisons isolate cutoff changes. Baseline heads are distinct from E92. Empirical CAL budgets are not statistical guarantees for new sources.",
+  "max_seconds": 3600,
+  "method": "For each existing FIT fold, refit every raw-feature standardizer/PCA and fresh weighted logistic head on that fold only. Same E131 ranks, whitening seed131, L2 .01, optimizer and four views. Three fresh full-frame heads; six ordered FIT/CAL/EVAL assignments. Reuse no learned E131 transform/head. Bound prior raw caches; legacy loaded reference is discarded and never used as an input feature/coefficient.",
+  "new_pixels_read": 0,
+  "parents": 12525,
+  "promotion_allowed": false,
+  "protected_reserve_reads": 0,
+  "selection": "One common CAL-only cutoff across four conditions. Smallest cut meeting REAL FPR<=10% pooled and<=20% each declared REAL component in every condition, by exact tied-score order statistics. Require >=95% AI recall and zero lost .5-caught CAL AI in every condition; otherwise reject the cut without applying it to EVAL. No grid, hyperparameter or outer-score search.",
+  "state": "E146_source_separated_calibration_registered"
+}

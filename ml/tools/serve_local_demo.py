@@ -51,6 +51,7 @@ def health():
 
 def ready(data):
     return isinstance(data, dict) and data.get('status') == 'ready' and data.get('model_id') == 'E92' and \
+        data.get('schema_version') == 4 and \
         data.get('artifact_sha256') == EXPECTED_SHA and data.get('guard_id') == 'e92-paired-v2' and \
         data.get('display_policy') == 'e92-primary-reference-advisory-v2' and data.get('research_only') is True and \
         data.get('downloads_allowed') is False and data.get('_cors_ok') is True

@@ -1,5 +1,30 @@
 # Serving boundary
 
+## Current local internship demo — 2026-09-16
+
+The active demo is E92 via `pixelproof.internship_serve:app`, port8800, with
+frontend localhost:3002. Start/check it from the repository root using the existing
+environment and attached dataset disk:
+
+```bash
+ml/.venv/bin/python ml/tools/serve_local_demo.py --data-root /Volumes/LaCie/pixelproof-datasets
+ml/.venv/bin/python ml/tools/serve_local_demo.py --data-root /Volumes/LaCie/pixelproof-datasets --check-only
+```
+
+Current `/health` identifies schema4, `e92-paired-v2` and
+`e92-primary-reference-advisory-v2`. `POST /analyze` accepts raw JPG/PNG/WEBP bodies,
+not the historical `/predict` multipart contract. The photo limit is12MiB/32MP.
+E92's original-image AI alert is retained; both low E92 views produce no-clear-signal;
+borderline/processing disagreement requires review. E43 is a separate advisory and
+does not veto the E92 result. Scores are not calibrated probabilities or authenticity
+certificates. This remains a local research demo; Model2 is experimental.
+
+The sections below preserve the earlier E20/E26 runtime. They are **historical** and
+must not be used to identify or restart the current E92 demo. Current decisions and
+experimental evidence live in `../PLAN.md`, `../HISTORY.md` and `EXPERIMENTS.md`.
+
+## Historical E20/E26 worker
+
 PixelProof's FastAPI process is a model worker, not a public internet edge. It accepts
 multipart image data and performs CPU/GPU-heavy inference, so a non-local deployment must
 put an authenticated, rate-limited reverse proxy or API gateway in front of it. CORS is a
