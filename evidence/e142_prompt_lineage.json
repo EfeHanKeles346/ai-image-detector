@@ -1,0 +1,29 @@
+{
+  "contract_sha256": "d183adbda1fa99e989300859b06d12179915a7f6e2330a3240f5eddfea627511",
+  "cross_component_groups": 0,
+  "cross_fold_groups": 0,
+  "declared_prompt_groups": 100,
+  "downloads": 0,
+  "fits": 0,
+  "group_size_counts": {
+    "2": 2,
+    "3": 9,
+    "4": 24,
+    "5": 37,
+    "6": 28
+  },
+  "independent_test_created": false,
+  "limits": "Declared prompt IDs within one historical publisher namespace. No prompt text/hash recovery, semantic matching across corpora, verified base-generator ancestry, new training admission or score. Current consumed TRAIN only; no final reserve opened.",
+  "model_scores": 0,
+  "overlay_sha256": "a349aca026ec85e14c9a658be51689424de6b4713da56841a9195f43c7040895",
+  "parents": 480,
+  "source_counts": {
+    "e36:FLUX.2_max": 80,
+    "e36:GLM-Image": 80,
+    "e36:Qwen-Image-2.0-pro": 80,
+    "e36:Seedream-5.0": 80,
+    "e36:gpt-image-2": 80,
+    "e36:nano-banana-2.0": 80
+  },
+  "state": "E142_prompt_lineage_complete"
+}

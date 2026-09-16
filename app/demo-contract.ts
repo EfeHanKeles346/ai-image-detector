@@ -18,14 +18,15 @@ export function scorePercent(score: number): string {
 }
 
 export type DemoAnalysis = {
-  schema_version: 3;
+  schema_version: 4;
   model_id: 'E92';
-  guard_id: 'e92-stability-v1';
+  guard_id: 'e92-paired-v2';
   artifact_sha256: string;
   research_only: true;
-  display_policy: 'e92-preserve-alerts-v1';
+  display_policy: 'e92-primary-reference-advisory-v2';
   guard_outcome: 'ai_signal' | 'no_clear_signal' | 'uncertain' | 'not_run';
   review_required: boolean;
+  reference_ai_warning: boolean | null;
   outcome: 'ai_signal' | 'no_clear_signal' | 'uncertain';
   reason: 'stable_signal' | 'limited_negative_evidence' | 'inconsistent_or_borderline' | 'image_too_small';
   width: number;
@@ -37,7 +38,6 @@ export function uncertaintyExplanation(analysis: DemoAnalysis): string | null {
   const s = analysis.model_score;
   if (!s || analysis.outcome !== 'uncertain') return null;
   if (s.social_q75 >= AI_CUT) return 'Asıl fotoğraf AI uyarısı vermedi; sıkıştırılmış kopyası verdi. Bu yüzden kesin bir sonuç söyleyemiyoruz.';
-  if (Math.max(s.original, s.social_q75) < REAL_CUT) return 'Bu modelin iki puanı da düşük, ancak karşılaştırdığımız önceki model uyarı verdi. Bu görüş ayrılığı nedeniyle karar veremiyoruz.';
   return 'AI uyarı sınırı aşılmadı, ancak puanlar belirgin iz yok demek için yeterince düşük değil. Bu yüzden sonuç belirsiz.';
 }
 
@@ -63,15 +63,17 @@ export function parseDemoAnalysis(value: unknown): DemoAnalysis {
     (r.outcome === 'uncertain' && ['inconsistent_or_borderline', 'image_too_small'].includes(String(r.reason)));
   const s = r.model_score as Record<string, unknown> | null | undefined;
   const bounded = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n) && n >= 0 && n <= 1;
-  const scoreMatches = r.reason === 'image_too_small' ? s === null :
+  const scoreMatches = r.reason === 'image_too_small' ? s === null && r.reference_ai_warning === null && r.outcome === 'uncertain' :
+    typeof r.reference_ai_warning === 'boolean' &&
     s != null && s.kind === 'raw_e92_score' && s.calibrated === false && s.ai_cut === AI_CUT &&
     bounded(s.original) && bounded(s.social_q75) &&
     (r.outcome === 'ai_signal') === (s.original >= AI_CUT) &&
     (r.guard_outcome === 'ai_signal') === (Math.min(s.original, s.social_q75) >= AI_CUT) &&
-    (r.guard_outcome !== 'no_clear_signal' || Math.max(s.original, s.social_q75) < REAL_CUT);
-  if (r.schema_version !== 3 || !scoreMatches || r.model_id !== 'E92' || r.guard_id !== 'e92-stability-v1' ||
+    (r.guard_outcome === 'no_clear_signal') === (Math.max(s.original, s.social_q75) < REAL_CUT) &&
+    (r.outcome === 'no_clear_signal') === (r.guard_outcome === 'no_clear_signal');
+  if (r.schema_version !== 4 || !scoreMatches || r.model_id !== 'E92' || r.guard_id !== 'e92-paired-v2' ||
       r.artifact_sha256 !== E92_SHA || r.research_only !== true || !reasonMatches ||
-      r.display_policy !== 'e92-preserve-alerts-v1' ||
+      r.display_policy !== 'e92-primary-reference-advisory-v2' ||
       !['ai_signal', 'no_clear_signal', 'uncertain', 'not_run'].includes(String(r.guard_outcome)) ||
       r.review_required !== ['uncertain', 'not_run'].includes(String(r.guard_outcome)) ||
       (r.reason === 'stable_signal' && r.guard_outcome !== 'ai_signal') ||
@@ -80,7 +82,7 @@ export function parseDemoAnalysis(value: unknown): DemoAnalysis {
       (r.reason === 'image_too_small' && r.guard_outcome !== 'not_run') ||
       !Number.isInteger(r.width) || !Number.isInteger(r.height) ||
       Number(r.width) <= 0 || Number(r.height) <= 0 || Number(r.width) * Number(r.height) > 32_000_000) {
-    throw new AnalysisResponseError('Bu yanıt güncel modelle doğrulanamadı. Lütfen yeniden deneyin.');
+    throw new AnalysisResponseError('Bu yanıt güncel modelle doğrulanamadı. Sayfayı yenileyip tekrar deneyin.');
   }
   return r as DemoAnalysis;
 }

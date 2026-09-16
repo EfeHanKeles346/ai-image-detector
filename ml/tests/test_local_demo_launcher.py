@@ -26,7 +26,7 @@ def test_preflight_fails_without_assets_and_sets_offline_cors(tmp_path, monkeypa
 def test_reuse_requires_exact_identity_policy_and_cors():
     m = load()
     correct = dict(status='ready', model_id='E92', artifact_sha256=m.EXPECTED_SHA,
-        guard_id='e92-stability-v1', display_policy='e92-preserve-alerts-v1', research_only=True,
+        guard_id='e92-paired-v2', display_policy='e92-primary-reference-advisory-v2', research_only=True,
         downloads_allowed=False, _cors_ok=True)
     assert m.ready(correct)
     for k in correct:

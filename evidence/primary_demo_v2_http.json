@@ -1,0 +1,19 @@
+{
+  "state": "same_byte_private_photo_HTTP_replay_passed",
+  "before": "uncertain",
+  "after": "no_clear_signal",
+  "scores_identical": true,
+  "model_score": {
+    "kind": "raw_e92_score",
+    "calibrated": false,
+    "original": 0.0001069483959563185,
+    "social_q75": 0.003934696542018971,
+    "ai_cut": 0.07940196245908739
+  },
+  "reference_ai_warning": true,
+  "display_policy": "e92-primary-reference-advisory-v2",
+  "schema_version": 4,
+  "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+  "cors_passed": true,
+  "limits": "One consumed private diagnostic, not authenticity ground truth or accuracy evidence. Image, filename and input hash remain outside Git."
+}

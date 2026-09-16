@@ -10227,3 +10227,102 @@ threshold/probability calibration requires a separate source-disjoint calibratio
 and locked independent evaluation; do not optimize on this private photo or consumed tests.
 
 E141 commit5ee957682767e9906ecbcc14f7d39d602be34666 passed GitHub CI run35073605408.
+
+
+## E92 primary display v2 implementation plan — 2026-09-16
+
+The user explicitly authorizes making the demo use E92 as primary with the E43
+reference warning advisory, and requests a report. Preserve the frozen weights,
+preprocessing, cutoffs and historical E93/E94 policies. Add a new versioned display
+adapter: original E92 >=AI_CUT stays an AI indication; both E92 views <REAL_CUT yield
+no_clear_signal regardless of reference; all other original-negative combinations
+stay uncertain. E43 >=AI_CUT on either view yields a separate reference_ai_warning.
+Original positives with compression disagreement keep their review warning.
+
+Bump the live API/client to schema4 and e92-primary-reference-advisory-v2 with
+paired guard e92-paired-v2. Reject stale schema/policy payloads. Keep missing/invalid
+inputs and failed inference fail-closed. Test cut boundaries and advisory invariance,
+replay all403 bound consumed pairs, then restart only the verified E92 listener and
+perform loopback integration. The now-available user-named screenshot input can be
+replayed before/after with a private byte-hash binding; publish aggregate results only.
+The site remains local-only; no data/package/weight acquisition or publication.
+
+
+## E142 plan — E36 TRAIN prompt identity recovery (2026-09-16)
+
+After making the demo current, resume Model1 provenance work without downloads.
+Existing E36 consumed CAL metadata retains prompt_id fields omitted by the current
+TRAIN manifest. Register a source/parent/body join restricted to currently active E36
+AI TRAIN rows. Recover local declared prompt IDs and count cross-component/fold links.
+Reject role/body/ID mismatches and duplicate keys. A shared numeric prompt ID is only
+meaningful within this publisher namespace, not proof of identical text across corpora.
+Do not open E36 FINAL, protected reserves, pixels, model scores or weights. Preserve all
+frozen manifests and create only a separate private overlay and aggregate public report.
+
+
+## E92 primary display v2 — implemented and running locally (2026-09-16)
+
+The user-approved display policy is now e92-primary-reference-advisory-v2, schema4,
+paired guard e92-paired-v2. The new primary_demo_policy adapter leaves historical
+E93/E94/demo_policy/demo_scores code intact. E92's model artifact, native preprocessing,
+raw scores and AI/low-signal cutoffs are unchanged. E43 disagreement appears as a
+separate advisory and cannot veto the E92 paired decision. Positive instability and
+borderline/compression uncertainty remain. The frontend rejects old schemas, and a hot
+update hides retained results from the previous policy until a new analysis completes.
+The launcher requires the new policy before reporting readiness. Legacy frozen smoke
+scripts remain historical and must not be used to assert the live schema4 contract.
+
+Replay on all403 previously locked consumed pairs (primary_demo_v2_replay.json):
+
+| Population | Before uncertain | After uncertain | Before/after AI indications |
+| --- | ---: | ---: | --- |
+| E66 REAL160 |89|21|0 /0 |
+| E66 AI160 |1|1|159 /159 |
+| E65 REAL83 |23|3|2 /2 |
+
+All88 changed results are reference-veto uncertainty becoming no_clear_signal with a
+separate advisory. No score or original E92 AI indication changes. These are dependent,
+consumed diagnostic populations, not new OOD evidence, current app-wide coverage or an
+increase in classifier accuracy. The two E65 false AI indications remain false alerts.
+
+Same-byte private-photo loopback check: the screenshot input is now available. Under
+schema3 it reproduces uncertain with scores0.0001069483959563185 and0.003934696542018971.
+After restarting only the verified port8800 E92 API, schema4 returns no_clear_signal
+and reference_ai_warning=true, review_required=false, with exactly identical scores
+and artifact identity. The UI formats these as0.01% /0.39%. CORS for localhost:3002
+passes. The actual HTTP payload passes the TypeScript parser; its old response is
+rejected. The input hash and detailed private responses stay on the external disk;
+only sanitized outcome evidence is committed in primary_demo_v2_http.json. This is
+engineering verification, not proof of the photograph's authenticity.
+
+The frontend remains at localhost:3002 and the API is ready on127.0.0.1:8800. No public
+hosting, dependencies, datasets or weights were downloaded. Browser interaction/visual
+QA was not performed; built SSR, HTTP and response-contract checks are reported instead.
+
+
+## E142 result — remaining E36 prompt metadata recovered (2026-09-16)
+
+Main Model1 work resumed after the demo update. Contract SHA
+ d183adbda1fa99e989300859b06d12179915a7f6e2330a3240f5eddfea627511 binds current E131
+TRAIN and historical E36 CAL metadata.480 existing AI TRAIN parents (80 per each of
+six declared sources) match source/parent/body/old-role identities. Recovered100
+publisher-scoped prompt groups:28 groups have6 parents,37 have5,24 have4,9 have3,
+and2 have2. No group crosses a registered component or fold. The private overlay SHA
+is a349aca026ec85e14c9a658be51689424de6b4713da56841a9195f43c7040895; no inherited
+manifest or role was rewritten. The original consumed-CAL role is historical; eligibility
+comes only from the current TRAIN contract, not a new admission made by this audit.
+
+Together with E141,2276 active AI parents now have recovered stored prompt hashes and
+another480 have publisher-scoped prompt IDs. These are different kinds of evidence and
+cannot be compared across namespaces without prompt text or authoritative mappings.
+1839 active AI parents remain without either recovered link in these overlays:729 Nano
+source parents and1110 RR parents. Base-generator ancestry remains unverified. Next is
+local RR per-file metadata availability, without inferring model families from filenames
+or consuming protected test reserves. No images, fits, scores or downloads in E142;
+Model2 remains experimental and E92 stays serving under the new display-only policy.
+
+Validation: final1169 Python tests passed in21.12seconds (one existing upstream
+Starlette/httpx warning);14 web tests, Sites build, TypeScript, ESLint, compileall and
+diff checks passed. Actual schema4 photo response passed the frontend parser and the
+old schema3 response was rejected. The retained frontend returned HTTP200; the local
+launcher confirms exact E92 and the current advisory policy with downloads disabled.

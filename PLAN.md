@@ -13,18 +13,21 @@ start dataset, weight or package downloads. Prioritize local provenance/duplicat
 existing-data evaluation design and reproducible internship-demo checks. Model1 remains
 the priority; Model2 stays visibly experimental. Offline metadata auditing and engineering checks are permitted; no new fitting or reserve scoring follows from this constraint.
 
-## Local demo decision-policy follow-up (2026-09-16)
+## Current local demo — E92 primary policy v2 (2026-09-16)
 
-The new screenshot names a different image from the earlier desktop replay. Those
-results are not same-file repeatability evidence. E92 low paired scores can be vetoed
-by E43; separate the main score from this additional display policy in explanations.
-The isolated reference-veto audit on consumed scores adds68/160 E66 REAL and20/83 E65
-REAL abstentions while adding zero AI protection in E66; its sole missed AI remains
-uncertain through compression alone. This is limited post-hoc evidence, not fresh OOD
-qualification. Proposed next display-policy candidate: E92 paired result primary,
-reference disagreement advisory; preserve all original AI alerts and compression/
-borderline uncertainty. Register/compare explicitly before adoption. No serving change
-or threshold tuning occurred. The inherited7.94% cut is not a verified E92 optimum.
+Implemented at the user's request: schema4, e92-primary-reference-advisory-v2,
+e92-paired-v2. E92 original AI alerts stay visible; both low E92 views yield no-clear,
+compression/borderline disagreements remain uncertain. E43 is a separate advisory,
+not a veto. Weights, transforms and cutoffs are unchanged. Same-byte private-photo HTTP
+replay confirms identical0.01% /0.39% displayed scores, uncertain -> no-clear with the
+reference advisory. Existing403-pair replay retains every original AI alert and removes
+88 reference-only abstentions. This is display behavior, not a new accuracy claim.
+
+Local frontend localhost:3002 and offline API127.0.0.1:8800 are current. Preserve the new
+policy on future restarts; the local launcher checks it. Historical E93/E94 adapters and
+smoke scripts are frozen; current schema4 checks must not reuse old expected outcomes.
+Do not calibrate the inherited7.94% cutoff on gallery/consumed scores. Separate source-
+disjoint calibration and locked evaluation remain needed before any optimum claim.
 
 ## Documentation and acquisition rule — home-network update (2026-09-14)
 
@@ -77,7 +80,8 @@ Next Model1 sequence, updated after E137/E138:
    remains incomplete. E140 verified all895 later admissions against both protected reserve references and
    reconciled all12525 current parents. That specific coverage-chain gap is closed.
    E141 recovered E32 metadata and produced a coverage matrix.
-   Next inspect eligible E36/RR records for remaining per-file provenance gaps. Unknown ancestry remains unknown; no acquisition or
+   E142 additionally recovered480 E36 publisher-scoped prompt IDs.
+   Next inspect local RR records for remaining per-file provenance gaps. Unknown ancestry remains unknown; no acquisition or
    protected-reserve scoring has occurred.
 3. Design the next representation/training intervention around the verified coverage gap.
    Once a complete candidate is fixed, apply AI-retention/REAL-error gates and genuinely
@@ -91,8 +95,8 @@ hashes recovered, plus69 previously omitted CF model names.380 prompt groups cro
 source labels, but none crosses the registered component/fold. Source declarations
 and240 CF model names do not certify base-generator independence.2319/4595 AI parents
 still lack recovered prompt hashes in the new overlay (including out-of-scope E36/RR).
-Next: recover eligible E36 TRAIN metadata, then assess local RR per-file ancestry
-availability. Preserve unknowns and frozen folds; no automatic training or reserve use.
+E142 recovered all480 eligible E36 TRAIN prompt IDs into100 within-publisher groups
+with no fold crossings. Next: assess local RR per-file ancestry availability. Preserve unknowns and frozen folds; no automatic training or reserve use.
 
 ### E137 execution — 2026-09-16
 
@@ -138,7 +142,7 @@ Final readiness remains separate: partial ancestry, consumed development evidenc
 MNW300 AI/HDR+100 REAL do not satisfy the existing >=2000-parent balanced multi-source
 E52 protocol. Preserve the reserves. Next: eligible TRAIN metadata recovery/coverage
 matrix before new candidate or evaluation registration. E141 completed E32 TRAIN metadata recovery into a separate overlay; no scoring, fitting
-or download occurred. E36/RR provenance coverage remains the next local step.
+or download occurred. E142 has now completed E36 prompt-ID recovery; RR provenance availability is next.
 
 ## Current execution checkpoint — 2026-09-16
 

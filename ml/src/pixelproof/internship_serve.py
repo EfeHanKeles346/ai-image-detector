@@ -20,10 +20,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, model_validator
 from starlette.concurrency import run_in_threadpool
 
-from pixelproof.e92_demo import AI_CUT, REAL_CUT, CANDIDATE_SHA, GUARD_ID, MODEL_ID
+from pixelproof.e92_demo import AI_CUT, REAL_CUT, CANDIDATE_SHA, MODEL_ID
 from pixelproof.image_input import ImagePolicyError
 from pixelproof.demo_image_input import PHOTO_LIMITS, decode_photo
-from pixelproof.demo_scores import ScoredDemoEngine
+from pixelproof.primary_demo_policy import PrimaryDemoEngine, DISPLAY_POLICY, GUARD_ID
 
 logger = logging.getLogger(__name__)
 
@@ -37,16 +37,17 @@ class ModelScore(BaseModel):
 
 
 class DemoResult(BaseModel):
-    schema_version: Literal[3] = 3
+    schema_version: Literal[4] = 4
     model_id: Literal['E92'] = MODEL_ID
-    guard_id: Literal['e92-stability-v1'] = GUARD_ID
+    guard_id: Literal['e92-paired-v2'] = GUARD_ID
     artifact_sha256: Literal[CANDIDATE_SHA] = CANDIDATE_SHA
     research_only: Literal[True] = True
     outcome: Literal['ai_signal', 'no_clear_signal', 'uncertain']
     reason: Literal['stable_signal', 'limited_negative_evidence', 'inconsistent_or_borderline', 'image_too_small']
-    display_policy: Literal['e92-preserve-alerts-v1'] = 'e92-preserve-alerts-v1'
+    display_policy: Literal['e92-primary-reference-advisory-v2'] = DISPLAY_POLICY
     guard_outcome: Literal['ai_signal', 'no_clear_signal', 'uncertain', 'not_run']
     review_required: bool
+    reference_ai_warning: bool | None = None
     width: int
     height: int
     model_score: ModelScore | None = None
@@ -54,22 +55,28 @@ class DemoResult(BaseModel):
     @model_validator(mode='after')
     def score_matches_decision(self):
         if self.reason == 'image_too_small':
-            if self.model_score is not None or self.guard_outcome != 'not_run':
+            if self.model_score is not None or self.guard_outcome != 'not_run' or self.outcome != 'uncertain' or not self.review_required or self.reference_ai_warning is not None:
                 raise ValueError('Unscored image must have no score')
             return self
         s = self.model_score
-        if s is None:
+        if s is None or self.reference_ai_warning is None:
             raise ValueError('Inferred result requires measured scores')
         if (self.outcome == 'ai_signal') != (s.original >= AI_CUT):
             raise ValueError('Original AI alert must be preserved')
         if (self.guard_outcome == 'ai_signal') != (min(s.original, s.social_q75) >= AI_CUT):
             raise ValueError('Stable AI requires both measured views')
-        if self.guard_outcome == 'no_clear_signal' and max(s.original, s.social_q75) >= REAL_CUT:
-            raise ValueError('Low-signal guard requires both low scores')
+        expected_guard = ('ai_signal' if min(s.original, s.social_q75) >= AI_CUT else
+                          'no_clear_signal' if max(s.original, s.social_q75) < REAL_CUT else 'uncertain')
+        expected_reason = {'ai_signal': 'stable_signal', 'no_clear_signal': 'limited_negative_evidence',
+                           'uncertain': 'inconsistent_or_borderline'}[expected_guard]
+        if self.guard_outcome != expected_guard or self.reason != expected_reason or self.review_required != (expected_guard == 'uncertain'):
+            raise ValueError('Paired E92 decision must not be vetoed by reference')
+        if self.outcome != ('ai_signal' if s.original >= AI_CUT else expected_guard):
+            raise ValueError('Primary E92 outcome mismatch')
         return self
 
 
-def create_app(engine_factory=ScoredDemoEngine, *, inference_timeout=90.0, upload_timeout=30.0):
+def create_app(engine_factory=PrimaryDemoEngine, *, inference_timeout=90.0, upload_timeout=30.0):
     slot = threading.BoundedSemaphore(1)
     state = {'engine': None}
 
@@ -94,7 +101,8 @@ def create_app(engine_factory=ScoredDemoEngine, *, inference_timeout=90.0, uploa
     def health():
         return {'status': 'ready' if state['engine'] is not None else 'unavailable',
                 'model_id': MODEL_ID, 'guard_id': GUARD_ID, 'artifact_sha256': CANDIDATE_SHA,
-                'research_only': True, 'downloads_allowed': False, 'display_policy': 'e92-preserve-alerts-v1'}
+                'research_only': True, 'downloads_allowed': False, 'display_policy': DISPLAY_POLICY,
+                'schema_version': 4}
 
     @api.post('/analyze', response_model=DemoResult)
     async def analyze(request: Request):

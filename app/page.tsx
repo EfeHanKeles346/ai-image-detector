@@ -26,7 +26,10 @@ export default function Home() {
   const [preview, setPreview] = useState<Preview | null>(null);
   const [dragging, setDragging] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [analysis, setAnalysis] = useState<DemoAnalysis | null>(null);
+  const [storedAnalysis, setAnalysis] = useState<DemoAnalysis | null>(null);
+  // A hot update must not render a retained response from the previous policy.
+  const analysis = storedAnalysis?.schema_version === 4 &&
+    storedAnalysis.display_policy === 'e92-primary-reference-advisory-v2' ? storedAnalysis : null;
   const [error, setError] = useState<string | null>(null);
   const resultCopy = analysis ? demoResultCopy(analysis) : null;
 
@@ -195,7 +198,7 @@ export default function Home() {
           <div className="panel result-panel">
             <div className="panel-title">
               <h2>İnceleme sonucu</h2>
-              <p>E92 · ek kontrol ile</p>
+              <p>E92 · sıkıştırma kontrolü ile</p>
             </div>
 
             {!analysis ? (
@@ -225,6 +228,12 @@ export default function Home() {
                       ve kaynağını kontrol etmeden bir yargıya varmayın.</p>}
                   <p className="demo-next">{resultCopy?.next}</p>
                 </section>
+                {analysis.reference_ai_warning && analysis.outcome !== "ai_signal" &&
+                  <aside className="reference-advisory">
+                    <strong>Ek model notu — ana sonucu değiştirmez</strong>
+                    <p>Eski referans model AI uyarısı verdi. Yukarıdaki sonuç E92 ve sıkıştırma
+                      kontrolüne aittir; bu ek görüş tek başına sonucu belirsiz yapmaz.</p>
+                  </aside>}
                 {analysis.model_score && <section className="score-panel" aria-label="Model puanları">
                   <h4>Ana modelin AI izi puanı</h4>
                   <p>Bu yüzdeler, fotoğrafın AI olma ihtimali veya sonucun doğruluk oranı değildir.
@@ -234,7 +243,10 @@ export default function Home() {
                     <div><dt>Sıkıştırılmış kopya</dt><dd>{scorePercent(analysis.model_score.social_q75)}</dd></div>
                   </dl>
                   <p>Bu modelde ilk AI uyarısı {scorePercent(analysis.model_score.ai_cut)} eşiğinde başlar.
-                    Sınır %50 değildir. Puanlar iki ondalığa yuvarlanır; karar yuvarlanmamış puanla verilir.</p>
+                    Bu, AI olma ihtimali değil, önceden belirlenmiş puan sınırıdır. Sınır %50 değildir. Puanlar iki ondalığa yuvarlanır; karar yuvarlanmamış puanla verilir.</p>
+                  <p>İki puan da %1,15’in altındaysa belirgin iz bulunamadı denir. Asıl fotoğraf AI
+                    eşiğini geçmiyorsa ve bu düşük puan şartı sağlanmıyorsa sonuç belirsiz kalır.
+                    Eşikler önceki deneylerden korunmuştur; her veri kaynağı için en iyi oldukları kanıtlanmış değildir.</p>
                   <p>İki puan birbirinden farklıysa görüntünün işlenmesi sonucu etkiliyor olabilir.
                     Puanlar ortalanmaz; aynı çıkmaları da sonucun doğru olduğunu kanıtlamaz.</p>
                 </section>}
@@ -242,8 +254,8 @@ export default function Home() {
                   <summary>Bu sonuç ne anlama geliyor?</summary>
                   <p>Bu staj projesi, görselin bütünündeki üretim izlerini araştırıyor.
                     Küçük bir bölgenin değiştirilip değiştirilmediğini veya nerede değiştirildiğini henüz göstermez.</p>
-                  <p>Tablodaki iki puan ana modele aittir. Ek kontrol, sıkıştırılmış kopyayı ve
-                    önceki referans modelin uyarısını da değerlendirir. İlk incelemede AI
+                  <p>Tablodaki iki puan E92’ye aittir. Ana sonuç, asıl fotoğrafı ve sıkıştırılmış
+                    kopyasını değerlendirir. Eski referans model yalnız ayrı bir not sağlar. İlk incelemede AI
                     işareti bulunduysa gösterilir; sonuç değişirse ayrıca uyarı eklenir. Belirsiz negatif
                     sonuçlarda karar verilmez. İki kontrolde de aynı hatanın yapılması mümkündür. Bu araç bir gerçeklik sertifikası değildir.</p>
                   <p>Model sürümü: {analysis.model_id}. Görsel boyutu: {analysis.width} × {analysis.height}.</p>

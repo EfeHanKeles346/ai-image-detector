@@ -3,7 +3,7 @@ import math
 import pytest
 from pydantic import ValidationError
 
-from pixelproof.demo_scores import scored_display_result
+from pixelproof.primary_demo_policy import primary_result as scored_display_result
 from pixelproof.internship_serve import DemoResult
 from pixelproof.e92_demo import AI_CUT, REAL_CUT
 
@@ -11,14 +11,14 @@ from pixelproof.e92_demo import AI_CUT, REAL_CUT
 @pytest.mark.parametrize('scores,reference,outcome', [
     ([AI_CUT, 0], [0, 0], 'ai_signal'),
     ([math.nextafter(AI_CUT, 0), AI_CUT], [0, 0], 'uncertain'),
-    ([0, 0], [AI_CUT, 0], 'uncertain'),
+    ([0, 0], [AI_CUT, 0], 'no_clear_signal'),
     ([REAL_CUT, 0], [0, 0], 'uncertain'),
     ([0, 0], [0, 0], 'no_clear_signal'),
     ([1, 1], [1, 1], 'ai_signal'),
 ])
 def test_presentation_preserves_boundaries_without_averaging(scores, reference, outcome):
     result = DemoResult(**scored_display_result(scores, reference), width=256, height=256)
-    assert result.schema_version == 3
+    assert result.schema_version == 4
     assert result.outcome == outcome
     assert result.model_score.original == scores[0]
     assert result.model_score.social_q75 == scores[1]

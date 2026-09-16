@@ -9,7 +9,7 @@ from PIL import Image
 
 from pixelproof.e92_demo import AI_CUT
 from pixelproof.internship_serve import create_app
-from pixelproof.demo_scores import scored_display_result as display_result
+from pixelproof.primary_demo_policy import primary_result as display_result
 
 
 def photo(size=(256, 256), mode='RGB', color=128, **options):

@@ -1,0 +1,9 @@
+{
+  "contract_sha256": "d183adbda1fa99e989300859b06d12179915a7f6e2330a3240f5eddfea627511",
+  "downloads": 0,
+  "fits": 0,
+  "independent_test_created": false,
+  "model_scores": 0,
+  "scope": "Only current E131 E36 AI TRAIN rows join to E36 consumed CAL metadata by source/parent/body. Read no E36 FINAL or protected reserve records, images, scores, features or weights. Recover declared local prompt IDs, not prompt text or model ancestry. Preserve all old roles/folds.",
+  "state": "E142_prompt_lineage_registered"
+}

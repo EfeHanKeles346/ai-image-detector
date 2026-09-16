@@ -2,8 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { E92_SHA, demoFileError, demoResultCopy, parseDemoAnalysis, OUTCOME_COPY, AI_CUT, scorePercent, uncertaintyExplanation } from '../app/demo-contract.ts';
 
-const response = {schema_version: 3, model_id: 'E92', guard_id: 'e92-stability-v1', artifact_sha256: E92_SHA,
-  research_only: true, display_policy: 'e92-preserve-alerts-v1', guard_outcome: 'uncertain', review_required: true, outcome: 'uncertain', reason: 'inconsistent_or_borderline', width: 1024, height: 768,
+const response = {schema_version: 4, model_id: 'E92', guard_id: 'e92-paired-v2', artifact_sha256: E92_SHA,
+  research_only: true, display_policy: 'e92-primary-reference-advisory-v2', guard_outcome: 'uncertain', review_required: true, reference_ai_warning: false, outcome: 'uncertain', reason: 'inconsistent_or_borderline', width: 1024, height: 768,
   model_score: {kind: 'raw_e92_score', calibrated: false, original: .02, social_q75: .03, ai_cut: AI_CUT}};
 
 test('only the exact E92 response and a consistent outcome reach the page', () => {
@@ -49,7 +49,7 @@ test('raw score presentation rejects uncalibrated claims, missing scores and dec
     assert.throws(() => parseDemoAnalysis({...response, model_score}));
   }
   assert.throws(() => parseDemoAnalysis({...response, schema_version: 2}));
-  const small = {...response, reason: 'image_too_small', guard_outcome: 'not_run', model_score: null};
+  const small = {...response, reason: 'image_too_small', guard_outcome: 'not_run', reference_ai_warning: null, model_score: null};
   assert.equal(parseDemoAnalysis(small).model_score, null);
   assert.throws(() => parseDemoAnalysis({...small, model_score: response.model_score}));
   assert.equal(scorePercent(.125), '%12,50');
@@ -60,20 +60,22 @@ test('raw score presentation rejects uncalibrated claims, missing scores and dec
 });
 
 
-test('uncertainty explains transformed crossing, reference veto and borderline separately', () => {
+test('uncertainty explains E92 transformed crossing and borderline separately', () => {
   const result = parseDemoAnalysis(response);
   assert.match(uncertaintyExplanation(result)!, /yeterince düşük değil/);
-  assert.match(uncertaintyExplanation({...result, model_score: {...result.model_score!, original: 0, social_q75: 0}})!, /önceki model/);
   assert.match(uncertaintyExplanation({...result, model_score: {...result.model_score!, social_q75: AI_CUT}})!, /kopyası verdi/);
   assert.equal(uncertaintyExplanation({...result, model_score: null}), null);
 });
 
 test('the primary result explains the cause without treating low scores as proof', () => {
-  const low = parseDemoAnalysis({...response, model_score: {...response.model_score, original: .0001, social_q75: .0039}});
+  const low = parseDemoAnalysis({...response, outcome: 'no_clear_signal', guard_outcome: 'no_clear_signal', reason: 'limited_negative_evidence', review_required: false, reference_ai_warning: true, model_score: {...response.model_score, original: .0001, social_q75: .0039}});
   const before = structuredClone(low);
-  assert.equal(demoResultCopy(low).title, 'Sonuç belirsiz');
-  assert.match(demoResultCopy(low).text, /önceki model uyarı verdi/);
-  assert.match(demoResultCopy(low).next, /tek başına gerçek fotoğraf anlamına gelmez/);
+  assert.equal(demoResultCopy(low).title, 'Belirgin bir iz bulunamadı');
+  assert.match(demoResultCopy(low).text, /gerçek olduğunu kanıtlamaz/);
+  assert.equal(low.reference_ai_warning, true);
+  assert.throws(() => parseDemoAnalysis({...low, outcome: 'uncertain'}));
+  assert.throws(() => parseDemoAnalysis({...low, reference_ai_warning: undefined}));
+  assert.throws(() => parseDemoAnalysis({...low, schema_version: 3}));
   assert.deepEqual(low, before);
   assert.match(demoResultCopy(parseDemoAnalysis(response)).text, /yeterince düşük değil/);
   const crossing = parseDemoAnalysis({...response, model_score: {...response.model_score, social_q75: AI_CUT}});
@@ -82,7 +84,7 @@ test('the primary result explains the cause without treating low scores as proof
   assert.equal(demoResultCopy(negative), OUTCOME_COPY.no_clear_signal);
   const alert = parseDemoAnalysis({...response, outcome: 'ai_signal', model_score: {...response.model_score, original: AI_CUT}});
   assert.equal(demoResultCopy(alert), OUTCOME_COPY.ai_signal);
-  const small = parseDemoAnalysis({...response, reason: 'image_too_small', guard_outcome: 'not_run', model_score: null});
+  const small = parseDemoAnalysis({...response, reason: 'image_too_small', guard_outcome: 'not_run', reference_ai_warning: null, model_score: null});
   assert.match(demoResultCopy(small).text, /puanı hesaplanmadı/);
   assert.match(demoResultCopy(small).next, /224 piksel/);
 });

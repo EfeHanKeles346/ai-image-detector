@@ -1,0 +1,71 @@
+{
+  "code_sha256": {
+    "ml/src/pixelproof/primary_demo_policy.py": "b5f5c38df534aef7c73bf78492679ae7c427ab99f89c5a78a73688d1cb7cbbb5",
+    "ml/tools/audit_primary_demo.py": "d99e127e7a1627c687bfedc924e206037ff52fb749f6e6f9cb28d0d5df40f911"
+  },
+  "display_policy": "e92-primary-reference-advisory-v2",
+  "limits": "Consumed, dependent, source-limited diagnostic replay. Not fresh accuracy or current API eligibility. Unchanged raw AI alerts are a display invariant, not proof of unseen-AI safety.",
+  "new_inference": 0,
+  "populations": {
+    "consumed_e65_REAL_only": {
+      "by_label": {
+        "0": {
+          "after": {
+            "ai_signal": 2,
+            "no_clear_signal": 78,
+            "uncertain": 3
+          },
+          "before": {
+            "ai_signal": 2,
+            "no_clear_signal": 58,
+            "uncertain": 23
+          },
+          "changed_AI_alerts": 0,
+          "parents": 83,
+          "reference_only_changes": 20
+        },
+        "1": {
+          "after": {},
+          "before": {},
+          "changed_AI_alerts": 0,
+          "parents": 0,
+          "reference_only_changes": 0
+        }
+      },
+      "scores_sha256": "83d387d181e2f1d77ed1d174a8310b2ded3205da637054577191d6312c66d95e"
+    },
+    "consumed_e66": {
+      "by_label": {
+        "0": {
+          "after": {
+            "no_clear_signal": 139,
+            "uncertain": 21
+          },
+          "before": {
+            "no_clear_signal": 71,
+            "uncertain": 89
+          },
+          "changed_AI_alerts": 0,
+          "parents": 160,
+          "reference_only_changes": 68
+        },
+        "1": {
+          "after": {
+            "ai_signal": 159,
+            "uncertain": 1
+          },
+          "before": {
+            "ai_signal": 159,
+            "uncertain": 1
+          },
+          "changed_AI_alerts": 0,
+          "parents": 160,
+          "reference_only_changes": 0
+        }
+      },
+      "scores_sha256": "8de19298e0e62d982a6bae04ef7e922bcb12748cd68056b510ab832d49bb77ae"
+    }
+  },
+  "thresholds_changed": false,
+  "weights_changed": false
+}

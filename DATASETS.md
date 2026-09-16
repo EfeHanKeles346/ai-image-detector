@@ -3300,3 +3300,37 @@ Validation: all1160 Python tests passed in21.05seconds (one existing upstream
 Starlette/httpx deprecation warning); compileall and diff checks passed. No frontend
 or inference code changed in E141. These checks establish implementation integrity,
 not improved detection performance.
+
+
+## E142 plan — E36 TRAIN prompt identity recovery (2026-09-16)
+
+After making the demo current, resume Model1 provenance work without downloads.
+Existing E36 consumed CAL metadata retains prompt_id fields omitted by the current
+TRAIN manifest. Register a source/parent/body join restricted to currently active E36
+AI TRAIN rows. Recover local declared prompt IDs and count cross-component/fold links.
+Reject role/body/ID mismatches and duplicate keys. A shared numeric prompt ID is only
+meaningful within this publisher namespace, not proof of identical text across corpora.
+Do not open E36 FINAL, protected reserves, pixels, model scores or weights. Preserve all
+frozen manifests and create only a separate private overlay and aggregate public report.
+
+
+## E142 result — remaining E36 prompt metadata recovered (2026-09-16)
+
+Main Model1 work resumed after the demo update. Contract SHA
+ d183adbda1fa99e989300859b06d12179915a7f6e2330a3240f5eddfea627511 binds current E131
+TRAIN and historical E36 CAL metadata.480 existing AI TRAIN parents (80 per each of
+six declared sources) match source/parent/body/old-role identities. Recovered100
+publisher-scoped prompt groups:28 groups have6 parents,37 have5,24 have4,9 have3,
+and2 have2. No group crosses a registered component or fold. The private overlay SHA
+is a349aca026ec85e14c9a658be51689424de6b4713da56841a9195f43c7040895; no inherited
+manifest or role was rewritten. The original consumed-CAL role is historical; eligibility
+comes only from the current TRAIN contract, not a new admission made by this audit.
+
+Together with E141,2276 active AI parents now have recovered stored prompt hashes and
+another480 have publisher-scoped prompt IDs. These are different kinds of evidence and
+cannot be compared across namespaces without prompt text or authoritative mappings.
+1839 active AI parents remain without either recovered link in these overlays:729 Nano
+source parents and1110 RR parents. Base-generator ancestry remains unverified. Next is
+local RR per-file metadata availability, without inferring model families from filenames
+or consuming protected test reserves. No images, fits, scores or downloads in E142;
+Model2 remains experimental and E92 stays serving under the new display-only policy.
