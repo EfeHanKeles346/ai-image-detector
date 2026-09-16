@@ -10779,3 +10779,90 @@ evidence/e147_weighted_representation.json. Contract SHA256
 Validation:1195 Python tests passed in21.18s (one existing Starlette/httpx warning);
 live frontend HTTP200 and API ready with E92/schema4/current pinned-manifest policy.
 Zero downloads, new image pixels, DEV/gallery or protected-reserve scores.
+
+
+## E148 registration — source-body geometry and processing inventory (2026-09-16)
+
+After E147's rejected weighted maps, inspect whether a native-scale residual proposal is
+actually supported by the current inputs. Code review establishes that E54's native flag
+identifies its expansion cohort; false does not mean resized and true does not certify
+untouched camera/generator pixels. Explicit SCIMD publisher-224-resize and E32 fixed-replay
+provenance mark known224 derivatives; SID path/original-hash/decode records mark local RAW
+renders. All other admitted source bodies retain unknown upstream processing history.
+
+Freeze all12525 E131 TRAIN parents before the audit. Verify every full body SHA256 and
+available recorded size, then inspect only lazy format/dimensions and already-present
+EXIF orientation. Do not decode pixels, extract metadata text, infer labels/generators,
+read feature/prediction archives, score models or touch gallery/CAL/DEV/protected reserves.
+Report each class/source/fold, known processing groups, header errors, declared-dimension
+mismatches,224/256/512/1024 source-pixel crop capacity and how many exceed the existing
+2048px local-texture cap. Small/derived/error cases remain counted, not dropped. Capacity
+is geometry only, not proof of native upstream resolution. No fitting or promotion.
+
+The preliminary stat-only inventory covers27.09GiB, maximum52.45MiB/body;5652 inherited
+records have no bytes field but all have a bound body SHA. The registered run allows at
+most100MiB/body,100MP/header,1800seconds, requires AC/disk reserve, and denies network
+connections. Source historical code snapshots are hash-bound; where E131 already pins a
+source-code digest it must still match. This inventories recorded provenance, not a new
+independent upstream certification. Six synthetic checks passed before freeze: no pixel
+load, no PNG post-IDAT EXIF scan, restored parser limits, honest unknown-state treatment,
+complete error denominators and local TRAIN-only admission. JPEG may internally parse its
+already-present EXIF for DPI during lazy open; no metadata text is retained.
+
+
+## E148 complete — processing and class imbalance exposed (2026-09-16)
+
+Verified all12525 active TRAIN bodies,29,083,486,690 encoded bytes (27.09GiB), in443.84s.
+All body SHAs matched; no available size mismatch, header error, EXIF parse error,
+declared-geometry mismatch or explicit processing/geometry conflict. Full pixel decoding
+was not performed, so successful headers do not certify a complete decode. No training,
+feature extraction, detector scores, acquisition or serving change occurred.
+
+| Observable property | REAL (7930) | AI (4595) |
+|---|---:|---:|
+| Known224 derived inputs | 2314 (29.18%) | 353 (7.68%) |
+| Long side over existing2048px cap | 4413 (55.65%) | 1 (0.02%) |
+| JPEG bodies | 7801 (98.37%) | 786 (17.11%) |
+| PNG bodies | 129 (1.63%) | 3809 (82.89%) |
+
+Known224 inputs comprise1700 publisher-resized SCIMD images and967 local E32 JPEG90
+replays. Another128 SID images are explicitly recorded full-resolution RAW renders.
+The remaining9730 are admitted source bodies whose upstream processing is unverified,
+not certified untouched originals. This does not overturn their publisher class labels.
+E54 native=True/False only records expansion versus base cohort:5652/5978 parents, with
+895 newer parents lacking that field. Do not infer original/derived from this flag.
+
+The clean E42 path already caps the long side at2048 before texture crops. Consequently
+4413 REAL but only1 AI source body requires this downsampling. Combined with JPEG/PNG
+and224-derivative imbalance, this is a plausible processing shortcut and an experimental
+confound, not proof that a detector learned it or that it caused RR errors. Matched new
+JPEG encoding cannot erase upstream resize/codec history. E143/E144 remain valid prior
+RR-only observations; this inventory adds whole-TRAIN coverage without score reuse.
+
+Source-pixel crop capacity:12524 parents support224,9855 support256,9513 support512 and
+7685 support1024. One RR REAL body is500x183. A universal224 crop would require explicit
+padding/upsampling or exclusion, so it must not silently claim native-pixel coverage.
+The recorded and verified minimum short side is183; a proposed128 source-pixel probe
+can preserve clean-body membership. This alone does not establish all transported-view
+geometry; check those before any full four-condition extraction.
+
+Next freeze a score-blind engineering probe across source/class/processing strata:
+center128 source pixels and a downsample64/upsample128 control of exactly the same patch,
+using adjacent quantized residual-pair distributions. This differs from E31 scalar68
+forensic and E51 DCT/residual32 summaries, but is currently a proposal, not an implemented
+or validated representation. Fix filters, quantization, selection and budgets before
+pixel reads. No classifier, threshold selection or small-image exclusions at the probe.
+Do not silently substitute larger ancestors for E32 replays: that would change admitted
+body identities and require a separate ancestry/protected-overlap audit. Keep E92 intact.
+
+Historical features.py comments about generated images lacking sensor/CFA behavior are
+mechanistic hypotheses, not universal authenticity guarantees. Do not attribute such
+guarantees to the active model or rewrite hash-bound historical feature code.
+
+Validation:1201 Python tests passed in21.52s; compilation and pip check passed. Existing
+Starlette/httpx deprecation warning only. Local frontend HTTP200; E92 API ready with
+schema4/current display policy/pinned runtime manifest. Public aggregate receipts:
+evidence/e148_processing_inventory_contract.json and evidence/e148_processing_inventory.json.
+Private per-parent geometry records stay under e148 on LaCie; no paths, metadata text,
+image bytes or parent records were added to Git. Contract SHA256
+e1de07735818604f10310dae60e121d0dfd1d6534cac908843663dbec3c5873a.

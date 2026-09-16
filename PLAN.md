@@ -29,6 +29,30 @@ processing history. Keep the same conservative source components, protected rese
 unknown-family limitations. No new downloads while on mobile data. E92 remains the demo;
 Model2 stays experimental. E147 now supersedes the earlier PCA-first proposal.
 
+## E148 complete / next processing probe — 2026-09-16
+
+E148 verified all12525 TRAIN bodies and lazy headers with zero mismatches/errors. Known
+224 derivatives:2314/7930 REAL (29.18%) versus353/4595 AI (7.68%). The2048px clean-input
+cap affects4413 REAL (55.65%) versus1 AI (0.02%). These are potential shortcuts, not
+proof of model causality. Full results: evidence/e148_processing_inventory.json. Keep
+processing history separate from E54's native cohort flag. No inference/training occurred.
+One source body is500x183; do not silently drop or upscale it for a224px experiment.
+The earlier inventory-first requirement is now complete. No new downloads.
+
+Next bounded engineering probe (not yet implemented or frozen): score-blind source /
+class / processing-history representatives; a source-pixel center128 patch without resize
+or texture-based selection, plus a fixed downsample64/upsample128 version of the exact
+same field of view. Test adjacent quantized residual-pair distributions, not another copy
+of E31's scalar forensic68 or E51's DCT/residual32. This is a proposed implementation
+probe, not a trained candidate or reproduction of a published detector. Freeze exact
+filters/quantization, source selection, geometry, runtime and repeatability requirements
+before pixels; no classifier or thresholds. Record all cases and costs. Any later full
+four-condition extraction must preserve every parent, explicitly handle undersized
+transport views without silent upsampling/exclusion, and retain the existing source
+folds and original AI/REAL acceptance gates. Processing metadata must not become an
+inference feature or a photo-authenticity rule. Do not replace224 replay bodies with
+larger ancestors without a separate ancestry/protected-overlap admission check.
+
 ## Current checkpoint — E146 completed (2026-09-16)
 
 E145 source-separated FIT/CAL/EVAL feasibility and E146 three-head calibration trial

@@ -1,0 +1,1345 @@
+{
+  "by_class": {
+    "0": {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 7801,
+        "PNG": 129
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 2314,
+      "larger_than_existing_2048_cap": 4413,
+      "legacy_native_flag": {
+        "False": 4035,
+        "None": 895,
+        "True": 3000
+      },
+      "parents": 7930,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 5488,
+        "local_224_jpeg90_replay": 614,
+        "local_full_resolution_RAW_render": 128,
+        "publisher_224_resize": 1700
+      },
+      "source_pixel_crop_capacity": {
+        "1024": 4666,
+        "224": 7929,
+        "256": 5614,
+        "512": 5547
+      }
+    },
+    "1": {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 786,
+        "PNG": 3809
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 353,
+      "larger_than_existing_2048_cap": 1,
+      "legacy_native_flag": {
+        "False": 1943,
+        "True": 2652
+      },
+      "parents": 4595,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 4242,
+        "local_224_jpeg90_replay": 353
+      },
+      "source_pixel_crop_capacity": {
+        "1024": 3019,
+        "224": 4595,
+        "256": 4241,
+        "512": 3966
+      }
+    }
+  },
+  "by_fold_class": [
+    {
+      "exif_parse_errors": 0,
+      "fold": 0,
+      "formats": {
+        "JPEG": 2467
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 1700,
+      "label": 0,
+      "larger_than_existing_2048_cap": 767,
+      "legacy_native_flag": {
+        "False": 1700,
+        "None": 767
+      },
+      "parents": 2467,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 767,
+        "publisher_224_resize": 1700
+      },
+      "source_pixel_crop_capacity": {
+        "1024": 767,
+        "224": 2467,
+        "256": 767,
+        "512": 767
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "fold": 0,
+      "formats": {
+        "JPEG": 604,
+        "PNG": 2312
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 284,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 764,
+        "True": 2152
+      },
+      "parents": 2916,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 2632,
+        "local_224_jpeg90_replay": 284
+      },
+      "source_pixel_crop_capacity": {
+        "1024": 2632,
+        "224": 2916,
+        "256": 2632,
+        "512": 2632
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "fold": 1,
+      "formats": {
+        "JPEG": 2874,
+        "PNG": 1
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 154,
+      "label": 0,
+      "larger_than_existing_2048_cap": 1518,
+      "legacy_native_flag": {
+        "False": 1875,
+        "True": 1000
+      },
+      "parents": 2875,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 2721,
+        "local_224_jpeg90_replay": 154
+      },
+      "source_pixel_crop_capacity": {
+        "1024": 1771,
+        "224": 2874,
+        "256": 2719,
+        "512": 2652
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "fold": 1,
+      "formats": {
+        "JPEG": 113,
+        "PNG": 997
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 1,
+      "legacy_native_flag": {
+        "False": 1110
+      },
+      "parents": 1110,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 1110
+      },
+      "source_pixel_crop_capacity": {
+        "1024": 387,
+        "224": 1110,
+        "256": 1109,
+        "512": 834
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "fold": 2,
+      "formats": {
+        "JPEG": 2460,
+        "PNG": 128
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 460,
+      "label": 0,
+      "larger_than_existing_2048_cap": 2128,
+      "legacy_native_flag": {
+        "False": 460,
+        "None": 128,
+        "True": 2000
+      },
+      "parents": 2588,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 2000,
+        "local_224_jpeg90_replay": 460,
+        "local_full_resolution_RAW_render": 128
+      },
+      "source_pixel_crop_capacity": {
+        "1024": 2128,
+        "224": 2588,
+        "256": 2128,
+        "512": 2128
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "fold": 2,
+      "formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 69,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 69,
+        "True": 500
+      },
+      "parents": 569,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 500,
+        "local_224_jpeg90_replay": 69
+      },
+      "source_pixel_crop_capacity": {
+        "1024": 0,
+        "224": 569,
+        "256": 500,
+        "512": 500
+      }
+    }
+  ],
+  "by_source_class": [
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 127
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 127,
+      "legacy_native_flag": {
+        "None": 127
+      },
+      "parents": 127,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 127
+      },
+      "source": "MIDD:Hynix_SL846",
+      "source_pixel_crop_capacity": {
+        "1024": 127,
+        "224": 127,
+        "256": 127,
+        "512": 127
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 128
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 128,
+      "legacy_native_flag": {
+        "None": 128
+      },
+      "parents": 128,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 128
+      },
+      "source": "MIDD:ISOCELL_3P9",
+      "source_pixel_crop_capacity": {
+        "1024": 128,
+        "224": 128,
+        "256": 128,
+        "512": 128
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 64
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 64,
+      "legacy_native_flag": {
+        "None": 64
+      },
+      "parents": 64,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 64
+      },
+      "source": "MIDD:ISOCELL_GN1",
+      "source_pixel_crop_capacity": {
+        "1024": 64,
+        "224": 64,
+        "256": 64,
+        "512": 64
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 64
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 64,
+      "legacy_native_flag": {
+        "None": 64
+      },
+      "parents": 64,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 64
+      },
+      "source": "MIDD:ISOCELL_HM3",
+      "source_pixel_crop_capacity": {
+        "1024": 64,
+        "224": 64,
+        "256": 64,
+        "512": 64
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 128
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 128,
+      "legacy_native_flag": {
+        "None": 128
+      },
+      "parents": 128,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 128
+      },
+      "source": "MIDD:OmniVision_OV32A",
+      "source_pixel_crop_capacity": {
+        "1024": 128,
+        "224": 128,
+        "256": 128,
+        "512": 128
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 64
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 64,
+      "legacy_native_flag": {
+        "None": 64
+      },
+      "parents": 64,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 64
+      },
+      "source": "MIDD:OmniVision_OV64B",
+      "source_pixel_crop_capacity": {
+        "1024": 64,
+        "224": 64,
+        "256": 64,
+        "512": 64
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 128
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 128,
+      "legacy_native_flag": {
+        "None": 128
+      },
+      "parents": 128,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 128
+      },
+      "source": "MIDD:Sony_IMX258",
+      "source_pixel_crop_capacity": {
+        "1024": 128,
+        "224": 128,
+        "256": 128,
+        "512": 128
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 64
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 64,
+      "legacy_native_flag": {
+        "None": 64
+      },
+      "parents": 64,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 64
+      },
+      "source": "MIDD:Sony_IMX766",
+      "source_pixel_crop_capacity": {
+        "1024": 64,
+        "224": 64,
+        "256": 64,
+        "512": 64
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 1700
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 1700,
+      "label": 0,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 1700
+      },
+      "parents": 1700,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "publisher_224_resize": 1700
+      },
+      "source": "SCIMD-17",
+      "source_pixel_crop_capacity": {
+        "1024": 0,
+        "224": 1700,
+        "256": 0,
+        "512": 0
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 64
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 64,
+      "legacy_native_flag": {
+        "None": 64
+      },
+      "parents": 64,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "local_full_resolution_RAW_render": 64
+      },
+      "source": "SID:Fuji",
+      "source_pixel_crop_capacity": {
+        "1024": 64,
+        "224": 64,
+        "256": 64,
+        "512": 64
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 64
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 64,
+      "legacy_native_flag": {
+        "None": 64
+      },
+      "parents": 64,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "local_full_resolution_RAW_render": 64
+      },
+      "source": "SID:Sony",
+      "source_pixel_crop_capacity": {
+        "1024": 64,
+        "224": 64,
+        "256": 64,
+        "512": 64
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 69,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 69,
+        "True": 500
+      },
+      "parents": 569,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 500,
+        "local_224_jpeg90_replay": 69
+      },
+      "source": "e32:communityforensics-ai-local",
+      "source_pixel_crop_capacity": {
+        "1024": 0,
+        "224": 569,
+        "256": 500,
+        "512": 500
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 160
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 160,
+      "label": 0,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 160
+      },
+      "parents": 160,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "local_224_jpeg90_replay": 160
+      },
+      "source": "e32:csafe-mcsidb-iphone14",
+      "source_pixel_crop_capacity": {
+        "1024": 0,
+        "224": 160,
+        "256": 0,
+        "512": 0
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 1160
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 160,
+      "label": 0,
+      "larger_than_existing_2048_cap": 1000,
+      "legacy_native_flag": {
+        "False": 160,
+        "True": 1000
+      },
+      "parents": 1160,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 1000,
+        "local_224_jpeg90_replay": 160
+      },
+      "source": "e32:csafe-mcsidb-s21",
+      "source_pixel_crop_capacity": {
+        "1024": 1000,
+        "224": 1160,
+        "256": 1000,
+        "512": 1000
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 69,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 69,
+        "True": 500
+      },
+      "parents": 569,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 500,
+        "local_224_jpeg90_replay": 69
+      },
+      "source": "e32:flux2-klein-9b",
+      "source_pixel_crop_capacity": {
+        "1024": 500,
+        "224": 569,
+        "256": 500,
+        "512": 500
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 1154
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 154,
+      "label": 0,
+      "larger_than_existing_2048_cap": 934,
+      "legacy_native_flag": {
+        "False": 154,
+        "True": 1000
+      },
+      "parents": 1154,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 1000,
+        "local_224_jpeg90_replay": 154
+      },
+      "source": "e32:forchheim-fodb",
+      "source_pixel_crop_capacity": {
+        "1024": 1000,
+        "224": 1154,
+        "256": 1000,
+        "512": 1000
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 69,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 69,
+        "True": 500
+      },
+      "parents": 569,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 500,
+        "local_224_jpeg90_replay": 69
+      },
+      "source": "e32:gpt-image-1",
+      "source_pixel_crop_capacity": {
+        "1024": 500,
+        "224": 569,
+        "256": 500,
+        "512": 500
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 69,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 69,
+        "True": 500
+      },
+      "parents": 569,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 500,
+        "local_224_jpeg90_replay": 69
+      },
+      "source": "e32:nano-banana-local",
+      "source_pixel_crop_capacity": {
+        "1024": 500,
+        "224": 569,
+        "256": 500,
+        "512": 500
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 8,
+        "PNG": 152
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 8,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 8,
+        "True": 152
+      },
+      "parents": 160,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 152,
+        "local_224_jpeg90_replay": 8
+      },
+      "source": "e32:nano-banana-pro-ash-local",
+      "source_pixel_crop_capacity": {
+        "1024": 152,
+        "224": 160,
+        "256": 152,
+        "512": 152
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 69,
+        "PNG": 500
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 69,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 69,
+        "True": 500
+      },
+      "parents": 569,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 500,
+        "local_224_jpeg90_replay": 69
+      },
+      "source": "e32:qwen-image-2512",
+      "source_pixel_crop_capacity": {
+        "1024": 500,
+        "224": 569,
+        "256": 500,
+        "512": 500
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 1140
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 140,
+      "label": 0,
+      "larger_than_existing_2048_cap": 1000,
+      "legacy_native_flag": {
+        "False": 140,
+        "True": 1000
+      },
+      "parents": 1140,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 1000,
+        "local_224_jpeg90_replay": 140
+      },
+      "source": "e32:vision-base-native",
+      "source_pixel_crop_capacity": {
+        "1024": 1000,
+        "224": 1140,
+        "256": 1000,
+        "512": 1000
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 80
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 80
+      },
+      "parents": 80,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 80
+      },
+      "source": "e36:FLUX.2_max",
+      "source_pixel_crop_capacity": {
+        "1024": 80,
+        "224": 80,
+        "256": 80,
+        "512": 80
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 80
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 80
+      },
+      "parents": 80,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 80
+      },
+      "source": "e36:GLM-Image",
+      "source_pixel_crop_capacity": {
+        "1024": 80,
+        "224": 80,
+        "256": 80,
+        "512": 80
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 80
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 80
+      },
+      "parents": 80,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 80
+      },
+      "source": "e36:Qwen-Image-2.0-pro",
+      "source_pixel_crop_capacity": {
+        "1024": 80,
+        "224": 80,
+        "256": 80,
+        "512": 80
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 80
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 80
+      },
+      "parents": 80,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 80
+      },
+      "source": "e36:Seedream-5.0",
+      "source_pixel_crop_capacity": {
+        "1024": 80,
+        "224": 80,
+        "256": 80,
+        "512": 80
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 100
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 100,
+      "legacy_native_flag": {
+        "False": 100
+      },
+      "parents": 100,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 100
+      },
+      "source": "e36:device_001",
+      "source_pixel_crop_capacity": {
+        "1024": 100,
+        "224": 100,
+        "256": 100,
+        "512": 100
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 100
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 100,
+      "legacy_native_flag": {
+        "False": 100
+      },
+      "parents": 100,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 100
+      },
+      "source": "e36:device_002",
+      "source_pixel_crop_capacity": {
+        "1024": 100,
+        "224": 100,
+        "256": 100,
+        "512": 100
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 100
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 99,
+      "legacy_native_flag": {
+        "False": 100
+      },
+      "parents": 100,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 100
+      },
+      "source": "e36:device_003",
+      "source_pixel_crop_capacity": {
+        "1024": 100,
+        "224": 100,
+        "256": 100,
+        "512": 100
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 100
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 100,
+      "legacy_native_flag": {
+        "False": 100
+      },
+      "parents": 100,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 100
+      },
+      "source": "e36:device_005",
+      "source_pixel_crop_capacity": {
+        "1024": 100,
+        "224": 100,
+        "256": 100,
+        "512": 100
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 71
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 71,
+      "legacy_native_flag": {
+        "False": 71
+      },
+      "parents": 71,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 71
+      },
+      "source": "e36:device_009",
+      "source_pixel_crop_capacity": {
+        "1024": 71,
+        "224": 71,
+        "256": 71,
+        "512": 71
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 80
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 80
+      },
+      "parents": 80,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 80
+      },
+      "source": "e36:gpt-image-2",
+      "source_pixel_crop_capacity": {
+        "1024": 80,
+        "224": 80,
+        "256": 80,
+        "512": 80
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 80
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 80
+      },
+      "parents": 80,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 80
+      },
+      "source": "e36:nano-banana-2.0",
+      "source_pixel_crop_capacity": {
+        "1024": 80,
+        "224": 80,
+        "256": 80,
+        "512": 80
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 105
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 105
+      },
+      "parents": 105,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 105
+      },
+      "source": "rr:culture_and_religion",
+      "source_pixel_crop_capacity": {
+        "1024": 46,
+        "224": 105,
+        "256": 105,
+        "512": 105
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 113,
+        "PNG": 346
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 1,
+      "legacy_native_flag": {
+        "False": 459
+      },
+      "parents": 459,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 459
+      },
+      "source": "rr:everyday_life",
+      "source_pixel_crop_capacity": {
+        "1024": 69,
+        "224": 459,
+        "256": 458,
+        "512": 183
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 114
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 114
+      },
+      "parents": 114,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 114
+      },
+      "source": "rr:labor_and_production",
+      "source_pixel_crop_capacity": {
+        "1024": 55,
+        "224": 114,
+        "256": 114,
+        "512": 114
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 102
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 102
+      },
+      "parents": 102,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 102
+      },
+      "source": "rr:medical_and_public_health",
+      "source_pixel_crop_capacity": {
+        "1024": 50,
+        "224": 102,
+        "256": 102,
+        "512": 102
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 113
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 113
+      },
+      "parents": 113,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 113
+      },
+      "source": "rr:natural_disasters_and_accidents",
+      "source_pixel_crop_capacity": {
+        "1024": 49,
+        "224": 113,
+        "256": 113,
+        "512": 113
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 93
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 93
+      },
+      "parents": 93,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 93
+      },
+      "source": "rr:political_and_social_events",
+      "source_pixel_crop_capacity": {
+        "1024": 50,
+        "224": 93,
+        "256": 93,
+        "512": 93
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "JPEG": 1249,
+        "PNG": 1
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 0,
+      "larger_than_existing_2048_cap": 114,
+      "legacy_native_flag": {
+        "False": 1250
+      },
+      "parents": 1250,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 1250
+      },
+      "source": "rr:rrdataset_real_pool",
+      "source_pixel_crop_capacity": {
+        "1024": 300,
+        "224": 1249,
+        "256": 1248,
+        "512": 1181
+      }
+    },
+    {
+      "exif_parse_errors": 0,
+      "formats": {
+        "PNG": 124
+      },
+      "geometry_mismatches": 0,
+      "header_errors": 0,
+      "known_224_derivatives": 0,
+      "label": 1,
+      "larger_than_existing_2048_cap": 0,
+      "legacy_native_flag": {
+        "False": 124
+      },
+      "parents": 124,
+      "processing_geometry_conflicts": 0,
+      "processing_history": {
+        "admitted_source_body_upstream_history_unverified": 124
+      },
+      "source": "rr:war_and_conflict",
+      "source_pixel_crop_capacity": {
+        "1024": 68,
+        "224": 124,
+        "256": 124,
+        "512": 124
+      }
+    }
+  ],
+  "contract_sha256": "e1de07735818604f10310dae60e121d0dfd1d6534cac908843663dbec3c5873a",
+  "downloads": 0,
+  "fits": 0,
+  "limits": "Aggregate by label, source+label and existing source fold+label; no detector scores or outcome-based selections. Do not remove small or derived images or change roles. Header reads cannot certify a complete decode or original processing history. Large source files and native=True do not certify native sensor/generator pixels. No independent-source admission or model-quality improvement claim.",
+  "model_scores": 0,
+  "pixel_decodes": 0,
+  "private_records_sha256": "f44e36d40d0709219b8598aa58b5396a620a851f981b5f3ac9aeb393d45ba76b",
+  "promotion_allowed": false,
+  "seconds": 443.84123449993785,
+  "state": "E148_processing_inventory_complete",
+  "total": {
+    "exif_parse_errors": 0,
+    "formats": {
+      "JPEG": 8587,
+      "PNG": 3938
+    },
+    "geometry_mismatches": 0,
+    "header_errors": 0,
+    "known_224_derivatives": 2667,
+    "larger_than_existing_2048_cap": 4414,
+    "legacy_native_flag": {
+      "False": 5978,
+      "None": 895,
+      "True": 5652
+    },
+    "parents": 12525,
+    "processing_geometry_conflicts": 0,
+    "processing_history": {
+      "admitted_source_body_upstream_history_unverified": 9730,
+      "local_224_jpeg90_replay": 967,
+      "local_full_resolution_RAW_render": 128,
+      "publisher_224_resize": 1700
+    },
+    "source_pixel_crop_capacity": {
+      "1024": 7685,
+      "224": 12524,
+      "256": 9855,
+      "512": 9513
+    }
+  },
+  "verified_body_bytes": 29083486690
+}

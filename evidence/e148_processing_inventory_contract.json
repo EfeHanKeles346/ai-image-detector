@@ -1,0 +1,16 @@
+{
+  "contract_sha256": "e1de07735818604f10310dae60e121d0dfd1d6534cac908843663dbec3c5873a",
+  "downloads": 0,
+  "fits": 0,
+  "geometry": "Report format, width/height, header-only orientation, match to recorded raw or oriented dimensions and source-pixel224/256/512/1024 crop capacity. Capacity is not proof of original camera/generator resolution. Record header errors without excluding parents. SHA/size/role mismatch aborts.",
+  "max_body_bytes": 104857600,
+  "max_seconds": 1800,
+  "metrics": "Aggregate by label, source+label and existing source fold+label; no detector scores or outcome-based selections. Do not remove small or derived images or change roles. Header reads cannot certify a complete decode or original processing history.",
+  "model_scores": 0,
+  "operation": "All existing12525 TRAIN source bodies, full SHA256 verification and lazy geometry/container headers. No image pixels, metadata text, EXIF camera/GPS/serials, model, feature caches, predictions, gallery, CAL/DEV or protected reserves.",
+  "parents": 12525,
+  "pixel_decodes": 0,
+  "processing": "Classify only explicit publisher-224-resize, e32_fixed_replay and SID original-hash/RAW-render records. All others remain admitted source bodies with unverified upstream processing. E54 native boolean is reported solely as a historical cohort flag.",
+  "promotion_allowed": false,
+  "state": "E148_processing_inventory_registered"
+}

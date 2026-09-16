@@ -3435,3 +3435,26 @@ branch); no new image bodies or pixels were read. No acquisition, role change,
 DEV/gallery/reserve scoring or new ancestry claim. Six private fitted heads plus their
 maps and scores live in e147 on LaCie. Public receipts contain aggregate source/condition
 metrics and integrity hashes only. Both branches failed nonregression; E92 is unchanged.
+
+
+### E148 planned local verification — 2026-09-16
+
+No acquisition. Reuse the12525 admitted E131 TRAIN source paths; hash27.09GiB of already-
+local encoded bodies and inspect lazy headers only. The audit distinguishes declared224
+resizes/replays and local SID RAW rendering from unknown upstream processing. E54 native
+is a cohort flag, not an original-pixel certificate. No roles, labels or images change;
+no replacement originals are admitted. Private per-parent records remain on LaCie.
+
+
+### E148 completed local inventory — 2026-09-16
+
+All12525 existing TRAIN bodies verified against their recorded SHA256;29,083,486,690
+local encoded bytes read, zero mismatches or lazy-header errors, zero pixel decodes and
+zero downloads. Categories:1700 publisher224 resizes,967 local224 JPEG90 replays,128
+explicit SID RAW renders,9730 source bodies with unverified upstream processing. The
+native flag is a historical cohort marker; no original-pixel certificate is inferred.
+Formats:8587 JPEG/3938 PNG. Do not infer class from format, geometry or metadata. Class-
+conditional preparation differences and crop capacity are in the public E148 aggregate
+receipt; per-parent records remain private. No source labels/roles, admission or protected
+reserve changed. Larger ancestors are not automatically interchangeable with admitted
+224 derivatives. The proposed source-pixel probe requires separate registration.
