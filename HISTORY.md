@@ -10866,3 +10866,80 @@ evidence/e148_processing_inventory_contract.json and evidence/e148_processing_in
 Private per-parent geometry records stay under e148 on LaCie; no paths, metadata text,
 image bytes or parent records were added to Git. Contract SHA256
 e1de07735818604f10310dae60e121d0dfd1d6534cac908843663dbec3c5873a.
+
+
+## E149 registration — source-pixel residual/processing probe (2026-09-16)
+
+Implement the bounded E148 follow-up before extracting pixels. Select one hash-ranked
+parent per source/class/recorded-processing stratum (49 strata), plus hash-ranked mode
+representatives (RGB/L/RGBA), the minimum-short-side and maximum-pixel-area cases. Deduplicate
+only identities; no score selection or replacements. All are existing admitted TRAIN
+source bodies. Preserve publisher224 derivatives and the500x183 REAL boundary case.
+
+The new source_pixel_residual helper reads an EXIF-oriented center128x128 patch at source
+pixel scale without resize, padding or texture selection, then uses the existing RGB
+conversion convention (alpha discarded, not composited). The control applies LANCZOS
+128→64→128 to that exact patch, changing processing without changing its field of view.
+This is a local perturbation, not reproduction of full-image2048 capping or erasure of
+upstream processing. No original-pixel authenticity claim for previously derived inputs.
+
+Fixed300-dimensional statistics per view: channels R/G/B, difference orders1/2, axes y/x;
+signed int16 differences, nearest-even quantization step4, clipping[-2,2], normalized5x5
+joint counts of adjacent quantized residuals along the derivative axis. Save both views;
+no filters/ranks/quantization sweep, learned head, weights or thresholds. This is a new
+engineering hypothesis, not a reproduction or claimed improvement of a published detector.
+
+Pin source manifest, completed E148 records/report, code, NumPy/Pillow/Python versions and
+selected identities before pixel reads. Every source SHA must match; require exact second-
+decode patch/features and saved-array replay, normalized finite nonnegative histograms,
+<=1024MiB peak process RSS,<=900seconds, AC and20GiB disk reserve. Abort on any selected
+failure without replacement. Report every response including zero; nonzero response is
+not a quality gate. Per-parent vectors/hashes stay private; no patch images written.
+Network denied; no downloads, models/encoders, gallery/DEV/protected-reserve access or fits.
+
+Seven synthetic tests passed before freeze: pixel-exact crop without resize, EXIF-before-
+crop order, flat histograms, independent scalar joint-count reference preventing uint8
+wraparound, same-field control isolation, RGB mode convention and deterministic selection
+covering strata/modes/geometry extremes. Full four-condition extraction and classification
+remain separately gated; this probe cannot establish AI recall, REAL FPR or universality.
+
+
+## E149 complete — local residual probe is reproducible (2026-09-16)
+
+Completed53 fixed TRAIN parents (27 REAL/26 AI) covering all49 source/class/processing
+strata plus mode and geometry stress cases:51 RGB,1 L,1 RGBA. All selected sources passed
+body verification and extraction without substitutions. Created106 unique paired feature
+views,300 coordinates each;106 source decodes include the exact repeatability pass.
+Every crop and feature vector replayed bitwise; saved arrays and identity bindings matched.
+No raw/crop images were written. Private features/patch hashes remain on LaCie under e149.
+
+Elapsed8.37s including repeat checks; first-pass read/hash/decode/extract total5.59s;
+193,938,356 local encoded bytes read; peak process RSS804.52MiB, below1024MiB. All registered
+engineering gates passed. All53 source/control pairs differed (mean-absolute feature
+response range0.00260374–0.06000474); these values are feature distances, not probabilities,
+accuracy or evidence of class separability. Resampling is expected to alter residuals;
+this does not show that E92 used the processing imbalance or that the new features help.
+The stratified pilot includes stress cases and warm-cache effects; its duration must not
+be advertised as a guaranteed full-dataset or four-condition extraction time.
+
+This stage implements a candidate feature mechanism and verifies engineering feasibility,
+not a new detector. No encoder/classifier/threshold fitting, DEV/gallery/reserve scoring,
+downloads, source-role changes or serving promotion occurred. E92 weights/cuts remain
+unchanged and Model2 remains experimental. Do not reuse these53 cases as independent
+quality evidence or select quantization/crops/ranks from their feature responses.
+
+Next: separately register all-parent four-condition geometry and the exact transform
+contract, then a bounded four-condition cost/memory probe before full immutable extraction.
+Keep every parent; explicitly handle any transported view below128 without silently
+upsampling or excluding it. Existing semantic features remain frozen. A later fixed
+E131-comparator head experiment may append a FIT-only64-PC map of source300 plus paired
+control-minus-source300 coordinates, retaining source folds, loss,0.5 diagnostic cutoff
+and all individual AI/REAL gates. Freeze the complete recipe before full extraction;
+no sweep, protected reserve opening or automatic demo update follows from this pilot.
+
+Validation:1208 Python tests passed in21.93s, compilation and pip check passed (existing
+Starlette/httpx deprecation warning). Frontend HTTP200; E92 API ready with schema4/current
+display policy and pinned manifest. Rechecked every contract/code/artifact/public-private
+report binding. Public evidence/e149_source_pixel_probe_contract.json and
+ evidence/e149_source_pixel_probe.json retain the complete aggregate results.
+Contract SHA256 bd5d69af514eaca57976141baa273c49bf1c66ea02bff689139d0a66b56b0e7f.

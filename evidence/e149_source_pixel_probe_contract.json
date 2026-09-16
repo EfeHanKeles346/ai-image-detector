@@ -1,0 +1,24 @@
+{
+  "acceptance": "Every selected body verifies and completes; exact feature and crop replay on a second decode; exact saved numeric array replay, finite nonnegative histograms each summing to1 within1e-6, peak RSS<=1024MiB, total<=900s. Report all responses including zeros; changed features are not a quality gate or detection gain.",
+  "contract_sha256": "bd5d69af514eaca57976141baa273c49bf1c66ea02bff689139d0a66b56b0e7f",
+  "downloads": 0,
+  "fits": 0,
+  "geometry": "Existing source bytes only; EXIF orient, center128 crop at source-pixel scale, then RGB conversion (alpha discarded as in existing code). No resampling, texture selection or padding on source branch. Control downsamples the same RGB patch to64 then upsamples to128 using Pillow LANCZOS. Not reproduction of whole-image2048 capping or earlier processing history.",
+  "limits": "Consumed TRAIN engineering pilot; no class separability, calibration, AI recall, false-positive, independent-source or universality claim. RGB conversion and prior source processing remain. No DEV/gallery/reserves, learned encoders or classifiers loaded. Later four-condition extraction requires a separate full-population geometry/protocol freeze.",
+  "max_body_bytes": 104857600,
+  "max_rss_MiB": 1024,
+  "max_seconds": 900,
+  "model_scores": 0,
+  "parents": 53,
+  "promotion_allowed": false,
+  "reporting": "Aggregate timing and mean-absolute paired feature response by class/source/processing/mode; private parent features/patch hashes remain on disk, no patch image written. Timing is a small stratified warm-cache pilot, not guaranteed full extraction cost.",
+  "representation": "RGB, derivative orders1/2, axes y/x; int16 differences, nearest-even quantization at step4, clip[-2,2]. Joint histogram of adjacent quantized residuals along the derivative axis,25 normalized bins. Channel/order/axis order,300float32 coordinates per view; two views. No rank/step/filter/crop sweep.",
+  "selection": "One SHA256(E149|parent)-first parent per source/class/recorded-processing stratum, one per RGB/L/RGBA mode, global smallest-short-side and largest-pixel-area stress cases; deduplicate, no replacements or scores.",
+  "state": "E149_source_pixel_probe_registered",
+  "strata": 49,
+  "versions": {
+    "numpy": "2.5.1",
+    "pillow": "12.3.0",
+    "python": "3.13.5"
+  }
+}

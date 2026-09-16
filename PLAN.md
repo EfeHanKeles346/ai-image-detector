@@ -39,19 +39,30 @@ processing history separate from E54's native cohort flag. No inference/training
 One source body is500x183; do not silently drop or upscale it for a224px experiment.
 The earlier inventory-first requirement is now complete. No new downloads.
 
-Next bounded engineering probe (not yet implemented or frozen): score-blind source /
-class / processing-history representatives; a source-pixel center128 patch without resize
-or texture-based selection, plus a fixed downsample64/upsample128 version of the exact
-same field of view. Test adjacent quantized residual-pair distributions, not another copy
-of E31's scalar forensic68 or E51's DCT/residual32. This is a proposed implementation
-probe, not a trained candidate or reproduction of a published detector. Freeze exact
-filters/quantization, source selection, geometry, runtime and repeatability requirements
-before pixels; no classifier or thresholds. Record all cases and costs. Any later full
-four-condition extraction must preserve every parent, explicitly handle undersized
-transport views without silent upsampling/exclusion, and retain the existing source
-folds and original AI/REAL acceptance gates. Processing metadata must not become an
-inference feature or a photo-authenticity rule. Do not replace224 replay bodies with
-larger ancestors without a separate ancestry/protected-overlap admission check.
+E149 now completed:53 fixed TRAIN parents/49 source-class-processing strata,106 paired
+views, exact crop/feature/serialization replay,8.37s and804.52MiB peak RSS. Every processing
+response was nonzero, but no classifier or detection-quality result exists. The feature
+mechanism is implemented; do not rerun/sweep the completed probe or promote it.
+
+Next E150/full-feature work:
+1. Freeze all12525 parents, existing four conditions and exact source-pixel branch
+   transforms. Explicitly distinguish encoder-internal2048 capping from input transport;
+   keep historical semantic caches immutable. Audit derived dimensions before extraction.
+   Every parent stays present; do not silently upsample/drop a transported view below128.
+2. Register a bounded four-condition timing/memory/replay probe on the fixed E149 selection,
+   including smallest/largest inputs and all modes. Freeze resource limits before pixels;
+   only a complete passing probe permits separately bound immutable full extraction.
+   Continue offline with AC/disk guards and private per-parent arrays on LaCie.
+3. Predeclare one later E131-comparator recipe before full extraction: existing FIT-only
+   semantic maps plus one new FIT-only64-PC map of [source300, control-minus-source300]
+   coordinates; same ranks/seed/solver conventions, class/component/parent/view weighted
+   loss and0.5 diagnostic cut. Three folds/two existing geometries, six heads, no rank,
+   quantization or cut sweep. Replay E131, lock all predictions, report per-condition/
+   source/fold and paired new/rescued errors. Require no new AI misses or REAL alerts;
+   even an internal pass does not authorize promotion or claim independent universality.
+4. Recorded geometry/format/history may guide audit coverage only, never the authenticity
+   decision. No ancestor substitution for224 replays without separate admission. No
+   protected reserves, gallery or fresh DEV used for this research. E92 stays the demo.
 
 ## Current checkpoint — E146 completed (2026-09-16)
 

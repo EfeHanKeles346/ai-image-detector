@@ -3458,3 +3458,24 @@ conditional preparation differences and crop capacity are in the public E148 agg
 receipt; per-parent records remain private. No source labels/roles, admission or protected
 reserve changed. Larger ancestors are not automatically interchangeable with admitted
 224 derivatives. The proposed source-pixel probe requires separate registration.
+
+
+### E149 planned reuse — 2026-09-16
+
+Reuse existing E131 TRAIN bodies selected by a fixed source/class/processing-stratum hash
+rule plus mode and geometry stress cases. No acquisition, role change or ancestor-body
+replacement. Decode selected bodies twice only for exact feature/patch repeatability;
+keep vectors and patch hashes private on LaCie, write no crop images. No gallery, DEV or
+protected-reserve access. Full-population extraction is not authorized by a probe result
+alone; it requires a separately frozen geometry and resource contract.
+
+
+### E149 completed local pixel reuse — 2026-09-16
+
+Used53 existing admitted TRAIN bodies (27 REAL/26 AI),193,938,356 bytes read locally,
+covering49 source/class/recorded-processing strata plus mode and geometry extremes.
+Decoded each body twice for exact reproducibility; generated only in-memory source128
+and same-field128→64→128 patches. Wrote private numeric features and patch hashes, no
+image crops. No downloads, new labels/roles, ancestor substitutions, gallery/DEV/reserve
+access or classifier scores. Pilot response is not new independent evidence. Full
+four-condition pixel extraction still needs its own frozen geometry/resource contract.

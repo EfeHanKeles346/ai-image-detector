@@ -1,0 +1,483 @@
+{
+  "all_engineering_gates_passed": true,
+  "by_stratum": [
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.021421946585178375,
+      "mean_first_seconds": 0.15007566602434963,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "MIDD:Hynix_SL846"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.030530696734786034,
+      "mean_first_seconds": 0.13116391701623797,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "MIDD:ISOCELL_3P9"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.01641625165939331,
+      "mean_first_seconds": 0.38160170894116163,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "MIDD:ISOCELL_GN1"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.031889818608760834,
+      "mean_first_seconds": 0.5725352088920772,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "MIDD:ISOCELL_HM3"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.03240597993135452,
+      "mean_first_seconds": 0.2035227919695899,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "MIDD:OmniVision_OV32A"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.039341118186712265,
+      "mean_first_seconds": 0.18326425005216151,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "MIDD:OmniVision_OV64B"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.029831968247890472,
+      "mean_first_seconds": 0.251495708944276,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "MIDD:Sony_IMX258"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.03257164731621742,
+      "mean_first_seconds": 0.3126053750747815,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "MIDD:Sony_IMX766"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.023179374635219574,
+      "mean_first_seconds": 0.01720795896835625,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "publisher_224_resize",
+      "source": "SCIMD-17"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.019126908853650093,
+      "mean_first_seconds": 0.6411395829636604,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_full_resolution_RAW_render",
+      "source": "SID:Fuji"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.010037463158369064,
+      "mean_first_seconds": 0.3165912920376286,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_full_resolution_RAW_render",
+      "source": "SID:Sony"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.030068527907133102,
+      "mean_first_seconds": 0.023939832928590477,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:communityforensics-ai-local"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.01582210883498192,
+      "mean_first_seconds": 0.033109000069089234,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:communityforensics-ai-local"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.009182106703519821,
+      "mean_first_seconds": 0.02292666700668633,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:csafe-mcsidb-iphone14"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.03285934403538704,
+      "mean_first_seconds": 0.10709049995057285,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:csafe-mcsidb-s21"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.01447305828332901,
+      "mean_first_seconds": 0.018685749964788556,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:csafe-mcsidb-s21"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.02931964583694935,
+      "mean_first_seconds": 0.052000500028952956,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:flux2-klein-9b"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.018245892599225044,
+      "mean_first_seconds": 0.01841587503440678,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:flux2-klein-9b"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.01587105728685856,
+      "mean_first_seconds": 0.11382358393166214,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:forchheim-fodb"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.021873731166124344,
+      "mean_first_seconds": 0.015134082990698516,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:forchheim-fodb"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.025503315031528473,
+      "mean_first_seconds": 0.058596457936801016,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:gpt-image-1"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.02192413993179798,
+      "mean_first_seconds": 0.02191108395345509,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:gpt-image-1"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.018640387803316116,
+      "mean_first_seconds": 0.05565358395688236,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:nano-banana-local"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.02771429717540741,
+      "mean_first_seconds": 0.02206025004852563,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:nano-banana-local"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.03570113703608513,
+      "mean_first_seconds": 0.05508908396586776,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:nano-banana-pro-ash-local"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.024080902338027954,
+      "mean_first_seconds": 0.04970883298665285,
+      "mode": "RGBA",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:nano-banana-pro-ash-local"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.015036910772323608,
+      "mean_first_seconds": 0.010045249946415424,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:nano-banana-pro-ash-local"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.009741994552314281,
+      "mean_first_seconds": 0.052922500064596534,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:qwen-image-2512"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.015880174934864044,
+      "mean_first_seconds": 0.012896165950223804,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:qwen-image-2512"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.018502473831176758,
+      "mean_first_seconds": 0.12913016695529222,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e32:vision-base-native"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.033024583011865616,
+      "mean_first_seconds": 0.022170583019033074,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "local_224_jpeg90_replay",
+      "source": "e32:vision-base-native"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.03013947233557701,
+      "mean_first_seconds": 0.019932332914322615,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:FLUX.2_max"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.016365988180041313,
+      "mean_first_seconds": 0.016382333007641137,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:GLM-Image"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.019236765801906586,
+      "mean_first_seconds": 0.03654275008011609,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:Qwen-Image-2.0-pro"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.030806299299001694,
+      "mean_first_seconds": 0.01579325005877763,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:Seedream-5.0"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.002603736240416765,
+      "mean_first_seconds": 0.09890683297999203,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:device_001"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.0037715311627835035,
+      "mean_first_seconds": 0.0865250420756638,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:device_002"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.013774903491139412,
+      "mean_first_seconds": 0.12394645903259516,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:device_003"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.018882334232330322,
+      "mean_first_seconds": 0.09012654202524573,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:device_005"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.032938163727521896,
+      "mean_first_seconds": 0.0964213750557974,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:device_009"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.011679867282509804,
+      "mean_first_seconds": 0.043534541968256235,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:gpt-image-2"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.02928909845650196,
+      "mean_first_seconds": 0.021518041961826384,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "e36:nano-banana-2.0"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.010500621981918812,
+      "mean_first_seconds": 0.041761916945688426,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:culture_and_religion"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.060004737228155136,
+      "mean_first_seconds": 0.03180854208767414,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:everyday_life"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.007128723431378603,
+      "mean_first_seconds": 0.0166046250378713,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:labor_and_production"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.007200566120445728,
+      "mean_first_seconds": 0.01851770794019103,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:medical_and_public_health"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.02027118019759655,
+      "mean_first_seconds": 0.03998775000218302,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:natural_disasters_and_accidents"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.00724533386528492,
+      "mean_first_seconds": 0.02582616696599871,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:political_and_social_events"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.018046019598841667,
+      "mean_first_seconds": 0.01851249998435378,
+      "mode": "L",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "label": 0,
+      "mean_absolute_paired_feature_response": 0.02439863079537948,
+      "mean_first_seconds": 0.2217834166561564,
+      "mode": "RGB",
+      "parents": 3,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:rrdataset_real_pool"
+    },
+    {
+      "label": 1,
+      "mean_absolute_paired_feature_response": 0.01669461466372013,
+      "mean_first_seconds": 0.023983041988685727,
+      "mode": "RGB",
+      "parents": 1,
+      "processing_history": "admitted_source_body_upstream_history_unverified",
+      "source": "rr:war_and_conflict"
+    }
+  ],
+  "contract_sha256": "bd5d69af514eaca57976141baa273c49bf1c66ea02bff689139d0a66b56b0e7f",
+  "downloads": 0,
+  "exact_repeat_and_serialization_replay": true,
+  "feature_dimensions": 300,
+  "features_sha256": "df113fa0b8e10f187e15ca38555d936a727f476bdbdc7a6362c97c7a0b5f8c25",
+  "first_pass_seconds": 5.588495213654824,
+  "fits": 0,
+  "limits": "Consumed TRAIN engineering pilot; no class separability, calibration, AI recall, false-positive, independent-source or universality claim. RGB conversion and prior source processing remain. No DEV/gallery/reserves, learned encoders or classifiers loaded. Later four-condition extraction requires a separate full-population geometry/protocol freeze.",
+  "model_scores": 0,
+  "parents": 53,
+  "parents_with_nonzero_paired_feature_response": 53,
+  "peak_RSS_MiB": 804.515625,
+  "pixel_decodes": 106,
+  "private_records_sha256": "e8f316bb151ae7069471bdd3d2c2a72f7e31ce0ee8360b8fa57b14d85c4320cf",
+  "promotion_allowed": false,
+  "seconds": 8.368700332939625,
+  "source_bytes_read": 193938356,
+  "state": "E149_source_pixel_probe_complete",
+  "views": 106
+}
