@@ -8922,3 +8922,60 @@ runtime engineering receipts are separate from model quality. No download, train
 threshold change, reserve opening or Model2 work. Next: trace later TRAIN-admission
 checks against protected reserves and recover upstream prompt/generator-family metadata
 where already stored before registering any new independent evaluation.
+
+## E140 plan — later-admission reference-chain reconciliation (2026-09-16)
+
+Follow the preliminary E139 metadata review by reproducing the admission evidence chain.
+Bind the current E131 TRAIN contract, E54 base contract, E72/E88/E100 contracts/audits/
+TRAIN manifests and public receipts. Hash their declared reference JSON documents as
+opaque metadata; do not parse individual protected identities, images, features or scores.
+Verify each stage references the exact MNW/HDR+ receipt identities, accepted rows agree
+with its report and active TRAIN identities, and all current parents are accounted for
+once. Fail on missing references, identity/role drift, overlap or uncovered membership.
+
+The preliminary review found511 MIDD +128 SID +256 later MIDD admissions, whose contracts
+name both protected reserves. E140 tests those bindings rather than treating their mention
+as sufficient. This is retrospective metadata verification, not a blind performance test
+or a new pixel/perceptual audit. A complete chain still cannot prove semantic scene or
+base-generator independence, balance the protected evaluation automatically or authorize
+score-driven reserve use. Mobile-data constraint remains: no downloads, fit, scoring,
+threshold change, Model2 work or runtime interruption.
+
+### E140 admission-chain audit result
+
+{"active_parents": 12525, "balanced_final_admitted": false, "base_parents": 11630, "contract_sha256": "c0c121dfb96ac82ed65588e6cd30fab45aeec09bf60ee1611dd406ef4877dfe0", "downloads": 0, "generator_independence_proven": false, "historical_admission_coverage_complete": true, "image_reads": 0, "later_admitted_parents": 895, "limits": "Historical exact/perceptual screening lineage, not fresh pixel comparison, semantic deduplication, generator independence, balanced final admission or accuracy evaluation.", "model_scores": 0, "new_independent_test_admitted": false, "next": "Membership/reference gap for the895 later additions is closed under stored admission policy. Prompt/scene/base-generator ancestry, protected evaluation protocol and candidate gates remain separate; do not score/tune on reserves automatically.", "stages": {"e100": {"admitted": 256, "historical_cross_matches": 0, "protected_reserves_bound": 2, "reference_documents": 8}, "e72": {"admitted": 511, "historical_cross_matches": 0, "protected_reserves_bound": 2, "reference_documents": 6}, "e88": {"admitted": 128, "historical_cross_matches": 0, "protected_reserves_bound": 2, "reference_documents": 7}}, "state": "E140_admission_chain_complete", "verified_metadata_files": 32}
+
+## E140 interpretation — admission coverage closed, final readiness still separate (2026-09-16)
+
+Verified32 metadata files and joined all12525 current TRAIN parents exactly to the11630
+E54 base plus511 E72 MIDD,128 E88 SID and256 E100 MIDD admissions. Each later contract
+binds the same protected MNW/HDR+ receipt identities. Its accepted manifest agrees with
+its audit and the current parent/body/pixel-original/source/class identities. Historical
+reference JSON hashes still match, and the recorded cross-match lists are empty. No
+uncovered, duplicated-cohort or identity-drift parent was found. This closes the specific
+895-parent admission-chain question raised in E139; it does not newly compare image bytes
+or prove semantic non-overlap. Protected reference documents were hashed without parsing
+individual records. No scores, images, feature arrays or model weights were read.
+
+Current evaluation-readiness distinctions:
+
+| Requirement | Status | Consequence |
+| --- | --- | --- |
+| Later TRAIN additions include both protected reserves | Verified through E140 receipt/reference chain | No longer an unresolved895-parent membership/reference gap |
+| Stored exact/perceptual screens | Recorded and hash-bound, with no reported overlap | Historical heuristic assurance; not exhaustive scene/prompt deduplication |
+| Per-file upstream generator/prompt ancestry | Partial; E139 gaps remain | Six MNW folder names are not six certified unseen generator families; FLUX/OpenAI families already occur in TRAIN |
+| Balanced multi-source E52 final | Not admitted | MNW300 AI +HDR+100 REAL is not the existing >=2000-parent balanced multi-source protocol; do not silently substitute it |
+| Fresh candidate qualification and frozen one-time evaluation | Pending | Serving E92/consumed DEV success does not automatically authorize adaptive reserve use |
+
+Next local work is upstream metadata recovery for eligible TRAIN records and a concrete
+coverage matrix separating declared model names from verified base-family/prompt lineage.
+Keep unknowns explicit; no model-name substring heuristic may certify family independence.
+No additional download, fit or scoring job was started here. Model2 stays secondary and
+E92's serving artifact/cutoffs are unchanged. The existing reserve bodies need not be
+re-downloaded. Any future independent evaluation requires its own candidate/protocol and
+admission review, preserving the established gates or explicitly documenting a different
+research question without calling it an E52 pass.
+
+Validation:1148 Python tests passed in22.20seconds with the existing upstream warning;
+compilation and diff checks passed. No web/model-serving source changed. All E140 output
+is evidence of record integrity and coverage, not an accuracy improvement.

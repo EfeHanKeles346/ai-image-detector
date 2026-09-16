@@ -1,0 +1,10 @@
+{
+  "contract_sha256": "c0c121dfb96ac82ed65588e6cd30fab45aeec09bf60ee1611dd406ef4877dfe0",
+  "downloads": 0,
+  "limits": "Historical exact/perceptual screening lineage, not fresh pixel comparison, semantic deduplication, generator independence, balanced final admission or accuracy evaluation.",
+  "metadata_files": 32,
+  "model_scores": 0,
+  "promotion_allowed": false,
+  "scope": "Reproduce metadata-chain checks after preliminary review. Join E54 base11630 and E72/E88/E100 admissions to current E131 TRAIN; verify receipt/reference hashes and accepted identities. Protected reference JSON files hashed only, not parsed.",
+  "state": "E140_admission_chain_audit_registered"
+}

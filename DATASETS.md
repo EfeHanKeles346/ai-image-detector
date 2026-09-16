@@ -3208,3 +3208,20 @@ or detector evaluation. E139 found no stored identity collisions; only895 parent
 stored pixel hashes, so do not claim12525 fresh pixel comparisons. Preserve1179 missing
 mixed-corpus generator/model fields as gaps, and the500 CommunityForensics model-name
 records as partial provenance rather than240 proven independent generator families.
+
+## E140 offline acquisition status — 2026-09-16
+
+Zero acquisition or role change. Verify metadata hashes and admitted TRAIN membership for the895 post-E54 additions; protected reference JSONs are hashed without parsing their records. No image, weight, feature or score reads.
+
+### E140 admission-chain audit result
+
+{"active_parents": 12525, "balanced_final_admitted": false, "base_parents": 11630, "contract_sha256": "c0c121dfb96ac82ed65588e6cd30fab45aeec09bf60ee1611dd406ef4877dfe0", "downloads": 0, "generator_independence_proven": false, "historical_admission_coverage_complete": true, "image_reads": 0, "later_admitted_parents": 895, "limits": "Historical exact/perceptual screening lineage, not fresh pixel comparison, semantic deduplication, generator independence, balanced final admission or accuracy evaluation.", "model_scores": 0, "new_independent_test_admitted": false, "next": "Membership/reference gap for the895 later additions is closed under stored admission policy. Prompt/scene/base-generator ancestry, protected evaluation protocol and candidate gates remain separate; do not score/tune on reserves automatically.", "stages": {"e100": {"admitted": 256, "historical_cross_matches": 0, "protected_reserves_bound": 2, "reference_documents": 8}, "e72": {"admitted": 511, "historical_cross_matches": 0, "protected_reserves_bound": 2, "reference_documents": 6}, "e88": {"admitted": 128, "historical_cross_matches": 0, "protected_reserves_bound": 2, "reference_documents": 7}}, "state": "E140_admission_chain_complete", "verified_metadata_files": 32}
+
+## E140 acquisition closeout — 2026-09-16
+
+No downloads or role changes. Verified32 metadata files; all895 post-E54 TRAIN parents
+are covered by admissions binding both existing protected reserve receipts. Historical
+reference documents were hashed only, never parsed as individual protected records.
+The reserve coverage-chain question is closed under the recorded fingerprint policy;
+semantic/scene/base-generator independence and balanced final admission remain unproven.
+MNW/HDR+ already exist locally; do not redownload them or repurpose them for tuning.
