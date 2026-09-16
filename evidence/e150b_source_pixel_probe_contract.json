@@ -1,0 +1,56 @@
+{
+  "chunk_parents": 64,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "e74699cf387630d56eaf35495abcf37dfc6d7eec94df165fc14d29b93b28fb8c",
+  "cpu_threads": 2,
+  "downloads": 0,
+  "features": "Frozen E149 center128 source-pixel crop and128->64->128 same-patch LANCZOS control; two300-coordinate residual histograms per condition. RGB convention including alpha discard unchanged. No padding, source replacement, quantization or crop search.",
+  "fits": 0,
+  "full": "Separately frozen after passing probe. All12525 parents/four views, immutable64-parent chunks, body/parent/condition/binding receipts and finite normalized arrays. Resume only receipted valid chunks; orphan chunks fail closed. CPU2, AC/20GiB reserve,7200s each execution,1536MiB peak. Preserve all failures; no replacement/drop.",
+  "full_budget_seconds": 7200,
+  "geometry": {
+    "assigned_transport": {
+      "minimum_short_side": 146,
+      "parents": 12525,
+      "unsupported": 0
+    },
+    "clean": {
+      "minimum_short_side": 183,
+      "parents": 12525,
+      "unsupported": 0
+    },
+    "q75": {
+      "minimum_short_side": 183,
+      "parents": 12525,
+      "unsupported": 0
+    },
+    "social_q75": {
+      "minimum_short_side": 183,
+      "parents": 12525,
+      "unsupported": 0
+    }
+  },
+  "implementation": "Exact frozen E150 pixels/features, but in-place EXIF on the private source, no repeated full-RGB copies for128 crops, directly retain loaded RGB JPEG frames. Memory guard remains1536MiB; no threshold or feature change.",
+  "later_fit": "One E131 comparator recipe: append FIT-only unweighted standardizer/whitened PCA64 of[source300,control-minus-source300] to frozen E131320-coordinate maps, seed131/power3 and existing floors. Three folds/two geometries,six zero-start balanced BCE+.005||w||^2 heads, existing solver tolerances, fixed0.5 diagnostic cut. Replay E131 then lock all new predictions before all-condition/source/fold and paired new/rescued errors. Require zero new AI misses and REAL alerts. No sweep or promotion.",
+  "limits": "Consumed TRAIN engineering/representation work, not an E92 improvement or independent unseen-family evidence. Only three AI-bearing components and unknown upstream/pretraining overlap. No gallery/DEV/protected-reserve scoring or ancestor substitution.",
+  "max_body_bytes": 104857600,
+  "max_rss_MiB": 1536,
+  "max_seconds": 900,
+  "model_scores": 0,
+  "parents": 12525,
+  "probe": "Same53 E149 parents; complete four views twice, exact numeric replay and exact E149 clean-feature replay. Pin serialized features. Every stratum completes; measure process peak RSS and first-pass read/hash/extract times. Forecast full time by source/class/history-stratum counts times mean measured cost; require2x forecast<=7200s and all other guards before separate full registration. Forecast is not a guarantee.",
+  "probe_parents": 53,
+  "promotion_allowed": false,
+  "state": "E150B_four_condition_probe_registered",
+  "transforms": "EXIF-oriented RGB. clean retains source resolution; q75 is full-resolution JPEG75/subsampling2 before semantic2048 cap. assigned_transport reproduces E42 hash choice/cap2048 then JPEG55,WEBP60,resize.65/JPEG65 or blur.8. social_q75 cap1080 then JPEG75/subsampling2. Only the new source-pixel branch bypasses encoder-internal capping on clean/Q75. Existing semantic caches stay unchanged.",
+  "versions": {
+    "numpy": "2.5.1",
+    "pillow": "12.3.0",
+    "python": "3.13.5"
+  }
+}

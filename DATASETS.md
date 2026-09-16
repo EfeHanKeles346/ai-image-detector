@@ -3479,3 +3479,29 @@ and same-field128→64→128 patches. Wrote private numeric features and patch h
 image crops. No downloads, new labels/roles, ancestor substitutions, gallery/DEV/reserve
 access or classifier scores. Pilot response is not new independent evidence. Full
 four-condition pixel extraction still needs its own frozen geometry/resource contract.
+
+
+### E150 planned existing-body reuse — 2026-09-16
+
+Same12525 admitted TRAIN bodies and four conditions, no acquisition or ancestor changes.
+All50100 planned source-pixel views support128 geometry under the fixed transform policy.
+Probe reuses E149's53 fixed identities. Full extraction requires separate passing-probe
+registration and writes only private numeric chunks/receipts on LaCie. Source JPEG75 is
+encoded before semantic2048 capping; metadata is for identity/coverage checks, not inputs
+to the authenticity classifier. No gallery, DEV or protected reserve access.
+
+
+### E150 failure / E150B planned reuse — 2026-09-16
+
+E150 stopped on the fixed memory ceiling; no full feature archive was produced. E150B
+reuses the exact same53 admitted local TRAIN bodies for a parity/resource probe with
+fewer full-image copies. Original data, conditions, roles and full admission gates stay
+unchanged. No new acquisition, image export or ancestor replacement.
+
+
+### E150B probe complete / full local reuse admitted — 2026-09-16
+
+The fixed53-parent/four-view probe passed exact replay and resource gates; full12525-parent
+extraction is separately frozen and started. Reuse only admitted TRAIN bodies; write private
+features and immutable chunk receipts on LaCie. E151 will use these numeric features and
+existing semantic caches, not reread photographs. Downloads remain zero.

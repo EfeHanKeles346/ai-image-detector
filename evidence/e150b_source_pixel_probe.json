@@ -1,0 +1,18 @@
+{
+  "contract_sha256": "e74699cf387630d56eaf35495abcf37dfc6d7eec94df165fc14d29b93b28fb8c",
+  "downloads": 0,
+  "exact_E149_clean_replay": true,
+  "exact_replay": true,
+  "features_sha256": "ce710169be360af88547b47196e1b7d096e6329602330c4360553de88854ba2a",
+  "fits": 0,
+  "forecast_full_seconds": 3125.4347761428216,
+  "forecast_with_2x_margin_seconds": 6250.869552285643,
+  "limits": "Consumed TRAIN engineering/representation work, not an E92 improvement or independent unseen-family evidence. Only three AI-bearing components and unknown upstream/pretraining overlap. No gallery/DEV/protected-reserve scoring or ancestor substitution.",
+  "model_scores": 0,
+  "parents": 53,
+  "passes_full_resource_gate": true,
+  "peak_RSS_MiB": 861.96875,
+  "promotion_allowed": false,
+  "seconds": 24.70472062495537,
+  "state": "E150B_four_condition_probe_complete"
+}

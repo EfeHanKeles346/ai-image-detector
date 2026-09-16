@@ -1,0 +1,21 @@
+{
+  "chunk_parents": 64,
+  "conditions": [
+    "clean",
+    "assigned_transport",
+    "q75",
+    "social_q75"
+  ],
+  "contract_sha256": "c0a6ed8ebf0beec3e8b4fb2ba31a7653ef2b244c7504c2cc569bd60055fea2f3",
+  "downloads": 0,
+  "later_fit": "One E131 comparator recipe: append FIT-only unweighted standardizer/whitened PCA64 of[source300,control-minus-source300] to frozen E131320-coordinate maps, seed131/power3 and existing floors. Three folds/two geometries,six zero-start balanced BCE+.005||w||^2 heads, existing solver tolerances, fixed0.5 diagnostic cut. Replay E131 then lock all new predictions before all-condition/source/fold and paired new/rescued errors. Require zero new AI misses and REAL alerts. No sweep or promotion.",
+  "max_rss_MiB": 1536,
+  "max_seconds": 7200,
+  "model_scores": 0,
+  "parents": 12525,
+  "probe_contract_sha256": "e74699cf387630d56eaf35495abcf37dfc6d7eec94df165fc14d29b93b28fb8c",
+  "probe_features_sha256": "ce710169be360af88547b47196e1b7d096e6329602330c4360553de88854ba2a",
+  "probe_report_sha256": "36ddc74c33b8d8b099ad03277ccef3ff0d7c62d7db94f7478ad242a4a8f137ee",
+  "promotion_allowed": false,
+  "state": "E150B_full_source_pixel_features_registered"
+}

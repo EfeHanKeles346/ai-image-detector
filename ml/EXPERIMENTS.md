@@ -9862,3 +9862,85 @@ display policy and pinned manifest. Rechecked every contract/code/artifact/publi
 report binding. Public evidence/e149_source_pixel_probe_contract.json and
  evidence/e149_source_pixel_probe.json retain the complete aggregate results.
 Contract SHA256 bd5d69af514eaca57976141baa273c49bf1c66ea02bff689139d0a66b56b0e7f.
+
+
+## E150 registration — four-condition source-pixel features (2026-09-16)
+
+Extend frozen E149 histograms to all existing conditions, keeping semantic caches and
+serving unchanged. The new branch uses original-resolution EXIF-oriented RGB for clean,
+and full-resolution JPEG75/subsampling2 for Q75 before the semantic encoder's2048 cap.
+Assigned transport reproduces the E42 parent hash and2048 cap followed by JPEG55/WEBP60/
+resize0.65+JPEG65/blur0.8. Social uses1080 cap then JPEG75. Every condition contributes
+center128 source-pixel and same-patch128→64→128 features; no texture selection or padding.
+This is a new branch's geometry, not a rewrite of historical model preprocessing.
+
+Metadata-only preflight on all12525 parents/50100 views found no view below128 pixels.
+Freeze the executable all-parent geometry inventory before the53-parent four-condition
+probe. Require exact second-pass numeric/geometry replay, exact frozen E149 clean features,
+normalized finite histograms, saved-array replay,<=1536MiB process RSS,<=900seconds and
+all source/class/history strata. Forecast full extraction by stratum population times
+mean measured first-pass cost; require a2x margin within7200seconds before separately
+registering the full run. Timing remains a small warm-cache estimate, not a guarantee.
+
+Only a passing frozen probe permits full registration: all12525 parents, four conditions,
+immutable64-parent chunks with source hashes/order/conditions/binding/array validation;
+resume only complete receipted chunks, fail closed on orphan chunks. CPU2, AC and20GiB
+reserve,1536MiB memory and7200seconds per execution. No silent row drops/replacements.
+Full/probe and saved full-array replay must be exact. Keep all numeric arrays private.
+
+Freeze the later comparison recipe now, before full pixels: append a FIT-only unweighted
+standardizer/whitened PCA64 of[source300,control-minus-source300] to the existing E131320
+maps. Same source folds,seed131/power3/floors, balanced BCE+.005||w||² and unpenalized
+intercept, solver/tolerances and fixed0.5 diagnostic cutoff; three folds/two geometries,
+six heads. Replay E131, lock complete predictions, report all conditions/groups/paired
+new and rescued errors. Zero new AI misses and REAL alerts required; no sweep or promotion.
+
+Five targeted tests passed before freeze, including bitwise historical assigned/social
+pixel parity, Q75-before-cap and E149 clean parity, EXIF geometry, fail-closed undersized
+transport, and corrupt/wrong-parent/body/condition chunk rejection. No downloads, new
+roles, ancestor substitutions or gallery/DEV/protected scoring. This research cannot
+resolve the three-AI-component or unknown upstream/pretraining ancestry limitations.
+
+
+## E150 failure and E150B amendment registration — 2026-09-16
+
+The frozen E150 four-condition probe stopped at its1536MiB peak-memory guard, after
+at least40 of53 parents completed. The exception did not retain the exact peak or failing
+identity; do not invent either. No full extraction, scores or fits were admitted. Preserve
+its code, contract and evidence/e150_source_pixel_probe_failure.json unchanged.
+
+E150B is a separate implementation amendment with the same pixels, feature definitions,
+53 probe parents, budgets and later six-head recipe. Use in-place EXIF on the private
+source image, crop already-oriented RGB directly, and retain loaded RGB JPEG frames
+without redundant full-image copies. Keep the1536MiB ceiling. Eleven parity cases pass:
+all eight EXIF orientations and RGB/L/RGBA inputs with all four assigned transports;
+every condition and feature equals frozen E150 exactly. All1213 pre-amendment Python
+tests also passed. Freeze the amended code and repeat only its engineering probe. Full
+registration still requires every original gate; no detection claim follows from parity.
+No downloads or scoring of gallery, DEV or protected reserves; E92 serving is unchanged.
+
+
+## E150B probe passed / full extraction admitted — 2026-09-16
+
+All53 fixed parents completed four views twice with exact E149 clean and serialized
+feature replay. Elapsed24.70s; peak861.97MiB below the unchanged1536MiB ceiling. Estimated
+full extraction3125.43s;2x margin6250.87s below7200s. The full contract is now separately
+frozen and full extraction started. The estimate is not an elapsed-time guarantee. No
+fit or detection scores exist yet. Probe contract SHA256:
+e74699cf387630d56eaf35495abcf37dfc6d7eec94df165fc14d29b93b28fb8c.
+
+E151 implementation follows the already fixed comparison recipe. Three new FIT-only64-PC
+maps of[source300,control-minus-source300]; append to frozen E131320 maps and refit six
+fresh weighted convex heads. Fixed0.5 diagnostic cutoff; no E92 serving cut reuse. Replay
+old heads and saved new heads/maps, then lock all predictions before metrics. Report all
+conditions, source components, folds and recorded processing-history strata, including
+paired new/rescued errors. Processing strata are descriptive and confounded; they cannot
+establish causal shortcut use. Freeze E151 only after the complete admitted E150B archive
+exists and input/FIT-isolation tests pass. No sweep or automatic serving promotion.
+
+
+E150/E150B/E151 implementation validation:1235 Python tests passed in30.77s (one existing
+Starlette/httpx deprecation warning); compileall and pip check passed. Eleven E151 tests
+cover held-out isolation, exact source/control-difference ordering and rejection of wrong
+roles/parents/conditions/bindings/nonfinite or unnormalized histograms. The E151 contract
+also pins Python/NumPy/Pillow/SciPy/scikit-learn versions before any fit.

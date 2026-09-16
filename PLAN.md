@@ -5,6 +5,15 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Active checkpoint — E150B (2026-09-16)
+
+E150 hit its1536MiB memory guard and is closed as a failed engineering probe. E150B
+removes redundant image copies while preserving exact pixels/features (11 parity tests).
+The same53-parent probe passed:24.70s/861.97MiB, exact replay; full extraction is
+separately registered and running. Complete it, then freeze/run one preregistered six-head
+E131 comparison with the new FIT-only64-PC residual branch. No hyperparameter/cut sweep,
+new downloads or E92 promotion. This checkpoint supersedes the E150 execution step below.
+
 ## Current audit priority — 2026-09-16
 
 The requested broad internal review completed; see the dated deep-audit results in
@@ -44,7 +53,12 @@ views, exact crop/feature/serialization replay,8.37s and804.52MiB peak RSS. Ever
 response was nonzero, but no classifier or detection-quality result exists. The feature
 mechanism is implemented; do not rerun/sweep the completed probe or promote it.
 
-Next E150/full-feature work:
+E150 is implemented and preregistered. Five transform/chunk tests pass. Freeze and run
+the53-parent four-condition probe; only passing geometry/resource/replay checks permit
+separate full registration and extraction. The full-population metadata preflight supports
+all50100 center128 views without padding or exclusions. No accuracy claim yet.
+
+Current E150/full-feature work:
 1. Freeze all12525 parents, existing four conditions and exact source-pixel branch
    transforms. Explicitly distinguish encoder-internal2048 capping from input transport;
    keep historical semantic caches immutable. Audit derived dimensions before extraction.

@@ -1,0 +1,13 @@
+{
+  "at_least_completed_parents": 40,
+  "contract_sha256": "5cbfaa5bbf86580144a4c01a8bdd552ed3b63b8d583f0bc9976e88d93e9053b0",
+  "downloads": 0,
+  "exact_peak_not_captured": true,
+  "full_extraction_registered": false,
+  "model_scores": 0,
+  "observed_peak_exceeded_limit": true,
+  "promotion_allowed": false,
+  "reason": "RuntimeError: Feature memory ceiling exceeded",
+  "registered_memory_limit_MiB": 1536,
+  "state": "E150_four_condition_probe_failed_memory_guard"
+}
