@@ -8979,3 +8979,42 @@ research question without calling it an E52 pass.
 Validation:1148 Python tests passed in22.20seconds with the existing upstream warning;
 compilation and diff checks passed. No web/model-serving source changed. All E140 output
 is evidence of record integrity and coverage, not an accuracy improvement.
+
+
+## Local demo uncertainty explanation and private-photo replay (2026-09-16)
+
+The user reported an uncertain result with displayed E92 scores of approximately
+0.01% / 0.39%. Under the frozen policy, two E92 scores below REAL_CUT can still be
+uncertain when at least one E43 reference score reaches AI_CUT. The screenshot's
+explanation describes this branch; the displayed percentages omit the reference
+scores and are not calibrated probabilities. No actual reference values were returned
+by the API, so none are invented here.
+
+One raw-byte replay of the user-named desktop JPEG against the existing loopback
+E92 API returned no_clear_signal / limited_negative_evidence, review_required=false,
+and raw scores 0.00041586352881194593 / 0.00012823884321173178 (0.04% / 0.01%).
+Artifact SHA remained 3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35.
+The replay did not reproduce the screenshot. The supplied path disappeared before
+an attempted second replay, which failed before sending any bytes. No duplicate
+input identity, deterministic repeat, screenshot-input identity, stale-browser bug,
+or authenticity ground truth has been established. Keep this discrepancy open;
+a future exact-byte replay requires the original available input. Do not describe
+this as a repaired model error or an accuracy improvement.
+
+Presentation changes: the primary result now explains the specific uncertainty
+cause rather than burying it below the scores; its title is "Sonuç belirsiz".
+The result identifies the selected filename and decoded dimensions, and the score
+panel explicitly identifies the main model. Details describe both the compression
+check and the reference-model check. Small unscored images have separate guidance.
+Original AI alerts, guard rules, thresholds, weights, percentages and response schema
+are unchanged. This is a consumed user diagnostic, not a benchmark or new training
+admission. No photo, filename, body hash, metadata or image-derived feature is added
+to Git. No datasets, weights or packages were downloaded; local-only demo scope stays.
+
+The preceding E140 commit 21989ea474fa11eee510dc6eeccce4caea25f914 passed GitHub CI
+run35072285478. New UI validation is recorded below when complete.
+
+Validation: Sites build, all14 web tests, TypeScript check, ESLint and git diff
+checks passed. The retained localhost:3002 route returned HTTP200, and the API health
+reported the same exact E92 artifact ready with downloads disabled. No browser
+interaction/visual test or second successful photo inference was performed.

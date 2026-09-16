@@ -41,6 +41,20 @@ export function uncertaintyExplanation(analysis: DemoAnalysis): string | null {
   return 'AI uyarı sınırı aşılmadı, ancak puanlar belirgin iz yok demek için yeterince düşük değil. Bu yüzden sonuç belirsiz.';
 }
 
+export function demoResultCopy(analysis: DemoAnalysis): { title: string; text: string; next: string } {
+  if (analysis.reason === 'image_too_small') return {
+    title: 'Fotoğrafın ayrıntısı yetersiz',
+    text: 'Görsel çok küçük olduğu için model puanı hesaplanmadı.',
+    next: 'Her iki kenarı da en az 224 piksel olan asıl dosyayı deneyin.',
+  };
+  if (analysis.outcome === 'uncertain') return {
+    title: 'Sonuç belirsiz',
+    text: uncertaintyExplanation(analysis) ?? OUTCOME_COPY.uncertain.text,
+    next: 'Düşük puan tek başına gerçek fotoğraf anlamına gelmez. Görselin kaynağını kontrol edin; varsa asıl dosyayla karşılaştırın.',
+  };
+  return OUTCOME_COPY[analysis.outcome];
+}
+
 export function parseDemoAnalysis(value: unknown): DemoAnalysis {
   if (!value || typeof value !== 'object') throw new AnalysisResponseError();
   const r = value as Record<string, unknown>;

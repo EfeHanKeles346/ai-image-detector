@@ -8,7 +8,7 @@ import {
   analysisErrorMessage,
   resolveApiOrigin,
 } from "./analysis-contract";
-import { demoFileError, OUTCOME_COPY, parseDemoAnalysis, scorePercent, uncertaintyExplanation, type DemoAnalysis } from "./demo-contract";
+import { demoFileError, demoResultCopy, parseDemoAnalysis, scorePercent, type DemoAnalysis } from "./demo-contract";
 
 type Preview = { name: string; url: string; size: string; file: File };
 
@@ -28,6 +28,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<DemoAnalysis | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const resultCopy = analysis ? demoResultCopy(analysis) : null;
 
   useEffect(() => () => {
     requestGateRef.current.cancel();
@@ -215,25 +216,23 @@ export default function Home() {
               <div className="result result-stack" aria-live="polite" aria-busy={loading}>
                 <section className={`demo-verdict demo-${analysis.outcome}`}>
                   <span className="section-kicker">İnceleme tamamlandı</span>
-                  <h3>{OUTCOME_COPY[analysis.outcome].title}</h3>
-                  <p>{analysis.reason === "image_too_small"
-                    ? "Fotoğraf yeterli ayrıntı taşımıyor. Her iki kenarı da en az 224 piksel olan asıl dosyayı deneyin."
-                    : OUTCOME_COPY[analysis.outcome].text}</p>
+                  <p className="analyzed-file">İncelenen dosya: {preview?.name} · {analysis.width} × {analysis.height}</p>
+                  <h3>{resultCopy?.title}</h3>
+                  <p>{resultCopy?.text}</p>
                   {analysis.outcome === "ai_signal" && analysis.review_required &&
                     <p className="review-warning"><strong>Ek kontrolde sonuç değişti.</strong> Modelin ilk
                       işaretini gösteriyoruz, ancak bu fotoğraf için sonuç tutarlı değil. Asıl dosyayı
                       ve kaynağını kontrol etmeden bir yargıya varmayın.</p>}
-                  <p className="demo-next">{OUTCOME_COPY[analysis.outcome].next}</p>
+                  <p className="demo-next">{resultCopy?.next}</p>
                 </section>
                 {analysis.model_score && <section className="score-panel" aria-label="Model puanları">
-                  <h4>Model puanı</h4>
+                  <h4>Ana modelin AI izi puanı</h4>
                   <p>Bu yüzdeler, fotoğrafın AI olma ihtimali veya sonucun doğruluk oranı değildir.
                     Modelin bulduğu üretim izlerini puanlamasını gösterir.</p>
                   <dl className="score-values">
                     <div><dt>Asıl fotoğraf</dt><dd>{scorePercent(analysis.model_score.original)}</dd></div>
                     <div><dt>Sıkıştırılmış kopya</dt><dd>{scorePercent(analysis.model_score.social_q75)}</dd></div>
                   </dl>
-                  {uncertaintyExplanation(analysis) && <p><strong>Neden belirsiz?</strong> {uncertaintyExplanation(analysis)}</p>}
                   <p>Bu modelde ilk AI uyarısı {scorePercent(analysis.model_score.ai_cut)} eşiğinde başlar.
                     Sınır %50 değildir. Puanlar iki ondalığa yuvarlanır; karar yuvarlanmamış puanla verilir.</p>
                   <p>İki puan birbirinden farklıysa görüntünün işlenmesi sonucu etkiliyor olabilir.
@@ -243,7 +242,8 @@ export default function Home() {
                   <summary>Bu sonuç ne anlama geliyor?</summary>
                   <p>Bu staj projesi, görselin bütünündeki üretim izlerini araştırıyor.
                     Küçük bir bölgenin değiştirilip değiştirilmediğini veya nerede değiştirildiğini henüz göstermez.</p>
-                  <p>Ek kontrol, sıkıştırma sonrası sonucu yeniden inceler. İlk incelemede AI
+                  <p>Tablodaki iki puan ana modele aittir. Ek kontrol, sıkıştırılmış kopyayı ve
+                    önceki referans modelin uyarısını da değerlendirir. İlk incelemede AI
                     işareti bulunduysa gösterilir; sonuç değişirse ayrıca uyarı eklenir. Belirsiz negatif
                     sonuçlarda karar verilmez. İki kontrolde de aynı hatanın yapılması mümkündür. Bu araç bir gerçeklik sertifikası değildir.</p>
                   <p>Model sürümü: {analysis.model_id}. Görsel boyutu: {analysis.width} × {analysis.height}.</p>

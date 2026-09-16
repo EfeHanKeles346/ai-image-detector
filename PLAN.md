@@ -13,6 +13,16 @@ start dataset, weight or package downloads. Prioritize local provenance/duplicat
 existing-data evaluation design and reproducible internship-demo checks. Model1 remains
 the priority; Model2 stays visibly experimental. Offline metadata auditing and engineering checks are permitted; no new fitting or reserve scoring follows from this constraint.
 
+## Local demo case follow-up (2026-09-16)
+
+Cause-specific uncertainty explanations now appear in the main result, alongside
+input filename/dimensions. A user-photo replay returned no_clear_signal whereas the
+provided screenshot showed uncertain; the input path disappeared before a repeat.
+The discrepancy is not resolved and is not evidence of improved model accuracy.
+When the same original input is available again, compare exact bytes and the current
+UI/API result before attributing a stale result or preprocessing problem. Preserve
+E92 thresholds/reference guard and do not tune on this consumed private diagnostic.
+
 ## Documentation and acquisition rule — home-network update (2026-09-14)
 
 The user is now at home and explicitly permits dataset downloads. This supersedes the
