@@ -5,6 +5,22 @@ Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTO
 log). This file holds
 only what is *next*, so there is exactly one place to look and one place to update.
 
+## Current audit priority — 2026-09-16
+
+The requested broad internal review completed; see the dated deep-audit results in
+HISTORY.md and ml/EXPERIMENTS.md and evidence/project_audit_20260916.json.
+Fixed the active API's cancelled-decoder admission race and pinned the verification
+manifest itself before E92 deserialization. Keep the original E92 weights/cuts/policy.
+
+The next narrow Model1 research control supersedes the residual-feature-first sequence
+below: compare FIT-only class/component-weighted normalization and covariance PCA with
+E131's unweighted maps, retaining ranks, outer source folds, objective, regularization,
+cutoff and all individual AI/REAL acceptance gates. The audit measured REAL PCA row mass
+76.49%/59.19%/57.02% versus50% classifier loss mass; this difference is not causal proof.
+Freeze the complete control before fitting; do not select weights from held-out results.
+No weighted candidate has been trained or accepted yet. Keep all consumed-source and
+unknown-family limitations explicit. No new downloads while on mobile data.
+
 ## Current checkpoint — E146 completed (2026-09-16)
 
 E145 source-separated FIT/CAL/EVAL feasibility and E146 three-head calibration trial
@@ -7297,3 +7313,36 @@ No downloads, new image pixels, protected-reserve reads, gallery/DEV access or E
 serving change. Local AC power and external disk reserve are available. Raw artifacts
 remain external; only aggregate evidence/code enter Git. Maximum run3600seconds,
 CPU thread limit2, no GPU encoder allocation. Model2 remains experimental.
+
+
+## Deep project audit — scope and reproduced failures (2026-09-16)
+
+User requested a broad internal search for overlooked weaknesses before more model
+changes. Review covers current serving/input lifecycle, artifact identity, frontend result
+binding, training/DEV parent separation, source-fold normalization, metric/retention
+counting, preprocessing parity and the distinction between numerical gates and independent
+validation. No new fitting, data download or protected-reserve access is authorized by
+this audit plan; existing user-authorized development continues locally.
+
+Confirmed failure1: cancellation while awaiting decode_photo released the API semaphore
+although the decoder thread was still running. A deterministic synthetic ASGI cancellation
+regression reproduced a second HTTP200 while the first decoder remained blocked, instead
+of429. Repair makes a single shielded worker own decode plus inference and release the
+slot only on completion; timeout/validation/error paths preserve release semantics.
+
+Confirmed failure2: the historical E92 loader verified files against a mutable manifest
+without pinning the manifest itself. An empty altered manifest reached the weight
+loader, bypassing the intended identity checks. This does not show that installed weights
+were actually altered; it demonstrates a reproducibility/integrity gap. Add a separate
+VerifiedE92Engine wrapper with the original manifest SHA pinned before deserialization.
+Preserve the historical loader/receipts. The active primary engine uses the wrapper;
+health and launcher require the verification revision and manifest digest.
+
+Next bounded read-only check: verify264 manifest-bound code files and five data artifacts,
+reconstruct12269 historical E92 TRAIN parents from bound manifests, compare them and all
+12525 current TRAIN parents against320 consumed E66 DEV parent/body/pixel identities,
+then recount the640 locked DEV views and current paired-policy outcomes. Report missing
+hash coverage explicitly. Compare historical/runtime social processing on four synthetic
+JPEG inputs including EXIF rotations, a high-resolution image and a narrow aspect ratio.
+No classifier inference or dataset image pixels; raw metadata/parent details stay outside
+Git. This is an engineering/scientific audit, not another independent benchmark.

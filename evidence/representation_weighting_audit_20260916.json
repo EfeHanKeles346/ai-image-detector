@@ -1,0 +1,295 @@
+{
+  "E131_contract_sha256": "6db23ea917a7428d015e0453efe99b16bbcbe3fa2822e6b540e8c31b645ea421",
+  "candidate_trained": false,
+  "causal_explanation_proven": false,
+  "code_basis": "holdout_linear.fit_map uses unweighted mean/std and sklearn PCA.fit; source_holdout.balanced_weights is applied only to the final classifier objective.",
+  "code_sha256": "9e288b5350ea7a9c67badc5a2b314e3c3430de54db3e0eeea89471e040130710",
+  "consequence": "Equal class/component loss weight does not imply equally weighted normalization or PCA. E136-E138 retain these maps; E146 refits them but still uses uniform row mass.",
+  "downloads": 0,
+  "model_scores_read": 0,
+  "new_image_reads": 0,
+  "next_control": "One separately registered FIT-only weighted normalization/covariance PCA comparison at unchanged ranks, folds, head objective and cutoff. Preserve the unweighted control and individual AI/REAL gates; no performance gain is inferred from this mass audit.",
+  "rows": [
+    {
+      "FIT_parents": 7142,
+      "PCA_REAL_mass": 0.7649117894147298,
+      "class_component_cells": [
+        {
+          "PCA_uniform_row_mass": 0.01792215065807897,
+          "head_loss_mass": 0.08333333333333333,
+          "label": 0,
+          "parents": 128,
+          "sources": [
+            "SID:Fuji",
+            "SID:Sony"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.16157938952674322,
+          "head_loss_mass": 0.08333333333333333,
+          "label": 0,
+          "parents": 1154,
+          "sources": [
+            "e32:forchheim-fodb"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.18482217866143938,
+          "head_loss_mass": 0.08333333333333333,
+          "label": 0,
+          "parents": 1320,
+          "sources": [
+            "e32:csafe-mcsidb-iphone14",
+            "e32:csafe-mcsidb-s21"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.1596191542985158,
+          "head_loss_mass": 0.08333333333333333,
+          "label": 0,
+          "parents": 1140,
+          "sources": [
+            "e32:vision-base-native"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.06594791374964996,
+          "head_loss_mass": 0.08333333333333333,
+          "label": 0,
+          "parents": 471,
+          "sources": [
+            "e36:device_001",
+            "e36:device_002",
+            "e36:device_003",
+            "e36:device_005",
+            "e36:device_009"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.17502100252030245,
+          "head_loss_mass": 0.08333333333333333,
+          "label": 0,
+          "parents": 1250,
+          "sources": [
+            "rr:rrdataset_real_pool"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.07966956034724167,
+          "head_loss_mass": 0.25,
+          "label": 1,
+          "parents": 569,
+          "sources": [
+            "e32:communityforensics-ai-local"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.15541865023802856,
+          "head_loss_mass": 0.25,
+          "label": 1,
+          "parents": 1110,
+          "sources": [
+            "rr:culture_and_religion",
+            "rr:everyday_life",
+            "rr:labor_and_production",
+            "rr:medical_and_public_health",
+            "rr:natural_disasters_and_accidents",
+            "rr:political_and_social_events",
+            "rr:war_and_conflict"
+          ]
+        }
+      ],
+      "excluded_fold": 0,
+      "head_REAL_mass": 0.49999999999999994
+    },
+    {
+      "FIT_parents": 8540,
+      "PCA_REAL_mass": 0.59192037470726,
+      "class_component_cells": [
+        {
+          "PCA_uniform_row_mass": 0.08981264637002342,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 767,
+          "sources": [
+            "MIDD:Hynix_SL846",
+            "MIDD:ISOCELL_3P9",
+            "MIDD:ISOCELL_GN1",
+            "MIDD:ISOCELL_HM3",
+            "MIDD:OmniVision_OV32A",
+            "MIDD:OmniVision_OV64B",
+            "MIDD:Sony_IMX258",
+            "MIDD:Sony_IMX766"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.014988290398126464,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 128,
+          "sources": [
+            "SID:Fuji",
+            "SID:Sony"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.15456674473067916,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 1320,
+          "sources": [
+            "e32:csafe-mcsidb-iphone14",
+            "e32:csafe-mcsidb-s21"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.13348946135831383,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 1140,
+          "sources": [
+            "e32:vision-base-native"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.1990632318501171,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 1700,
+          "sources": [
+            "SCIMD-17"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.3414519906323185,
+          "head_loss_mass": 0.25,
+          "label": 1,
+          "parents": 2916,
+          "sources": [
+            "e32:flux2-klein-9b",
+            "e32:gpt-image-1",
+            "e32:nano-banana-local",
+            "e32:nano-banana-pro-ash-local",
+            "e32:qwen-image-2512",
+            "e36:FLUX.2_max",
+            "e36:GLM-Image",
+            "e36:Qwen-Image-2.0-pro",
+            "e36:Seedream-5.0",
+            "e36:gpt-image-2",
+            "e36:nano-banana-2.0"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.06662763466042154,
+          "head_loss_mass": 0.25,
+          "label": 1,
+          "parents": 569,
+          "sources": [
+            "e32:communityforensics-ai-local"
+          ]
+        }
+      ],
+      "excluded_fold": 1,
+      "head_REAL_mass": 0.5
+    },
+    {
+      "FIT_parents": 9368,
+      "PCA_REAL_mass": 0.5702391118701964,
+      "class_component_cells": [
+        {
+          "PCA_uniform_row_mass": 0.08187446626814689,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 767,
+          "sources": [
+            "MIDD:Hynix_SL846",
+            "MIDD:ISOCELL_3P9",
+            "MIDD:ISOCELL_GN1",
+            "MIDD:ISOCELL_HM3",
+            "MIDD:OmniVision_OV32A",
+            "MIDD:OmniVision_OV64B",
+            "MIDD:Sony_IMX258",
+            "MIDD:Sony_IMX766"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.12318531169940222,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 1154,
+          "sources": [
+            "e32:forchheim-fodb"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.05027754056362084,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 471,
+          "sources": [
+            "e36:device_001",
+            "e36:device_002",
+            "e36:device_003",
+            "e36:device_005",
+            "e36:device_009"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.1334329632792485,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 1250,
+          "sources": [
+            "rr:rrdataset_real_pool"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.18146883005977796,
+          "head_loss_mass": 0.1,
+          "label": 0,
+          "parents": 1700,
+          "sources": [
+            "SCIMD-17"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.3112724167378309,
+          "head_loss_mass": 0.25,
+          "label": 1,
+          "parents": 2916,
+          "sources": [
+            "e32:flux2-klein-9b",
+            "e32:gpt-image-1",
+            "e32:nano-banana-local",
+            "e32:nano-banana-pro-ash-local",
+            "e32:qwen-image-2512",
+            "e36:FLUX.2_max",
+            "e36:GLM-Image",
+            "e36:Qwen-Image-2.0-pro",
+            "e36:Seedream-5.0",
+            "e36:gpt-image-2",
+            "e36:nano-banana-2.0"
+          ]
+        },
+        {
+          "PCA_uniform_row_mass": 0.11848847139197267,
+          "head_loss_mass": 0.25,
+          "label": 1,
+          "parents": 1110,
+          "sources": [
+            "rr:culture_and_religion",
+            "rr:everyday_life",
+            "rr:labor_and_production",
+            "rr:medical_and_public_health",
+            "rr:natural_disasters_and_accidents",
+            "rr:political_and_social_events",
+            "rr:war_and_conflict"
+          ]
+        }
+      ],
+      "excluded_fold": 2,
+      "head_REAL_mass": 0.49999999999999994
+    }
+  ],
+  "state": "representation_weighting_audit_complete"
+}

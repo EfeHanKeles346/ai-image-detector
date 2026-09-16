@@ -5,6 +5,7 @@ demo_policy/demo_scores adapters remain available for reproducing old reports.
 """
 from pixelproof.demo_scores import ScoredDemoEngine, scored_display_result
 from pixelproof.e92_demo import AI_CUT, guarded_outcome, social_view
+from pixelproof.verified_demo_runtime import VerifiedE92Engine
 
 DISPLAY_POLICY = 'e92-primary-reference-advisory-v2'
 GUARD_ID = 'e92-paired-v2'
@@ -21,6 +22,9 @@ def primary_result(scores, reference):
 
 
 class PrimaryDemoEngine(ScoredDemoEngine):
+    def __init__(self):
+        self.engine = VerifiedE92Engine()
+
     def analyze(self, image):
         scores, reference = self.engine.score_views([image, social_view(image)])
         return primary_result(scores, reference)

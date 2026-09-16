@@ -19,6 +19,13 @@ borderline/processing disagreement requires review. E43 is a separate advisory a
 does not veto the E92 result. Scores are not calibrated probabilities or authenticity
 certificates. This remains a local research demo; Model2 is experimental.
 
+The active runtime additionally reports `e92-manifest-pinned-v1` and the pinned manifest
+digest. The launcher requires these fields before reusing a listener. The manifest is
+verified before deserializing weights; historical inference helpers remain unchanged.
+Upload admission and the decode/inference worker share one slot. Cancellation or the
+90-second decode/inference response timeout keeps that slot occupied until the worker
+actually finishes; a second analysis receives429 instead of starting concurrently.
+
 The sections below preserve the earlier E20/E26 runtime. They are **historical** and
 must not be used to identify or restart the current E92 demo. Current decisions and
 experimental evidence live in `../PLAN.md`, `../HISTORY.md` and `EXPERIMENTS.md`.

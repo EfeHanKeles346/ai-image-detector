@@ -17,11 +17,15 @@ import urllib.request
 
 REPO = Path(__file__).resolve().parents[2]
 EXPECTED_SHA = '3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35'
+EXPECTED_MANIFEST_SHA = '6bf3e29c8c4bada93d975513f31e8acf8b615d6076b52a53239ccbe06d48a553'
 ORIGINS = 'http://localhost:3002,http://127.0.0.1:3002'
 
 
 def environment(data_root):
     root = Path(data_root).expanduser().resolve()
+    import hashlib
+    if hashlib.sha256((REPO / 'evidence/e93_runtime_manifest.json').read_bytes()).hexdigest() != EXPECTED_MANIFEST_SHA:
+        raise ValueError('E92 model doğrulama listesi değişmiş; servis başlatılmadı.')
     manifest = json.loads((REPO / 'evidence/e93_runtime_manifest.json').read_text())
     missing = [str(root / name) for name in manifest['data_files'] if not (root / name).is_file()]
     if not root.is_dir() or missing:
@@ -52,6 +56,8 @@ def health():
 def ready(data):
     return isinstance(data, dict) and data.get('status') == 'ready' and data.get('model_id') == 'E92' and \
         data.get('schema_version') == 4 and \
+        data.get('runtime_verification') == 'e92-manifest-pinned-v1' and \
+        data.get('runtime_manifest_sha256') == EXPECTED_MANIFEST_SHA and \
         data.get('artifact_sha256') == EXPECTED_SHA and data.get('guard_id') == 'e92-paired-v2' and \
         data.get('display_policy') == 'e92-primary-reference-advisory-v2' and data.get('research_only') is True and \
         data.get('downloads_allowed') is False and data.get('_cors_ok') is True

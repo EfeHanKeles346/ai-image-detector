@@ -24,6 +24,7 @@ from pixelproof.e92_demo import AI_CUT, REAL_CUT, CANDIDATE_SHA, MODEL_ID
 from pixelproof.image_input import ImagePolicyError
 from pixelproof.demo_image_input import PHOTO_LIMITS, decode_photo
 from pixelproof.primary_demo_policy import PrimaryDemoEngine, DISPLAY_POLICY, GUARD_ID
+from pixelproof.verified_demo_runtime import VERIFICATION_ID, MANIFEST_SHA256
 
 logger = logging.getLogger(__name__)
 
@@ -102,7 +103,8 @@ def create_app(engine_factory=PrimaryDemoEngine, *, inference_timeout=90.0, uplo
         return {'status': 'ready' if state['engine'] is not None else 'unavailable',
                 'model_id': MODEL_ID, 'guard_id': GUARD_ID, 'artifact_sha256': CANDIDATE_SHA,
                 'research_only': True, 'downloads_allowed': False, 'display_policy': DISPLAY_POLICY,
-                'schema_version': 4}
+                'schema_version': 4, 'runtime_verification': VERIFICATION_ID,
+                'runtime_manifest_sha256': MANIFEST_SHA256}
 
     @api.post('/analyze', response_model=DemoResult)
     async def analyze(request: Request):
@@ -137,19 +139,21 @@ def create_app(engine_factory=PrimaryDemoEngine, *, inference_timeout=90.0, uplo
                 raw = await asyncio.wait_for(read_bounded(), timeout=upload_timeout)
             except TimeoutError:
                 raise HTTPException(408, 'Dosya aktarımı zamanında tamamlanamadı.') from None
-            try:
-                image = await run_in_threadpool(decode_photo, raw)
-            except ImagePolicyError as exc:
-                raise HTTPException(exc.status_code, exc.detail) from None
-            del raw
-            if min(image.size) < 224:
-                return DemoResult(outcome='uncertain', reason='image_too_small', guard_outcome='not_run', review_required=True, width=image.width, height=image.height)
             engine = state['engine']
-            if engine is None:
-                raise HTTPException(503, 'Model henüz hazır değil. Biraz sonra yeniden deneyin.')
 
             def infer():
                 try:
+                    # Decoding also allocates substantial memory and cannot be stopped
+                    # by cancelling the HTTP task. One worker owns the slot for both
+                    # decode and inference, including validation failures and tiny images.
+                    try:
+                        image = decode_photo(raw)
+                    except ImagePolicyError as exc:
+                        raise HTTPException(exc.status_code, exc.detail) from None
+                    if min(image.size) < 224:
+                        return DemoResult(outcome='uncertain', reason='image_too_small', guard_outcome='not_run', review_required=True, width=image.width, height=image.height)
+                    if engine is None:
+                        raise HTTPException(503, 'Model henüz hazır değil. Biraz sonra yeniden deneyin.')
                     result = engine.analyze(image)
                     return DemoResult(**result, width=image.width, height=image.height)
                 finally:
@@ -164,6 +168,8 @@ def create_app(engine_factory=PrimaryDemoEngine, *, inference_timeout=90.0, uplo
                 return await asyncio.wait_for(asyncio.shield(task), timeout=inference_timeout)
             except TimeoutError:
                 raise HTTPException(504, 'İnceleme çok uzun sürdü. Biraz bekleyip yeniden deneyin.') from None
+            except HTTPException:
+                raise
             except Exception:
                 logger.exception('E92 inference failed; no result returned')
                 raise HTTPException(503, 'İnceleme tamamlanamadı. Lütfen yeniden deneyin.') from None

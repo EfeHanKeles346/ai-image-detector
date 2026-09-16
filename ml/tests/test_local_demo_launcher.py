@@ -15,6 +15,8 @@ def test_preflight_fails_without_assets_and_sets_offline_cors(tmp_path, monkeypa
     m = load(); monkeypatch.setattr(m, 'REPO', tmp_path)
     (tmp_path / 'evidence').mkdir(); data = tmp_path / 'data'; data.mkdir()
     (tmp_path / 'evidence/e93_runtime_manifest.json').write_text(json.dumps({'data_files':{'weight':'sha'}}))
+    import hashlib
+    monkeypatch.setattr(m, 'EXPECTED_MANIFEST_SHA', hashlib.sha256((tmp_path / 'evidence/e93_runtime_manifest.json').read_bytes()).hexdigest())
     with pytest.raises(ValueError): m.environment(data)
     (data / 'weight').write_bytes(b'fixture')
     env = m.environment(data)
@@ -27,7 +29,8 @@ def test_reuse_requires_exact_identity_policy_and_cors():
     m = load()
     correct = dict(status='ready', model_id='E92', artifact_sha256=m.EXPECTED_SHA,
         guard_id='e92-paired-v2', display_policy='e92-primary-reference-advisory-v2', research_only=True,
-        downloads_allowed=False, _cors_ok=True, schema_version=4)
+        downloads_allowed=False, _cors_ok=True, schema_version=4,
+        runtime_verification='e92-manifest-pinned-v1', runtime_manifest_sha256=m.EXPECTED_MANIFEST_SHA)
     assert m.ready(correct)
     for k in correct:
         wrong = dict(correct); wrong.pop(k)

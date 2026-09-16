@@ -1,0 +1,158 @@
+{
+  "E92_consumed_DEV_recount": {
+    "publisher_original": {
+      "AI_detected": 159,
+      "AI_parents": 160,
+      "REAL_false_alerts": 0,
+      "REAL_parents": 160,
+      "newly_missed_reference_AI": 1,
+      "numeric_checks_passed": 10,
+      "numeric_checks_total": 10
+    },
+    "social_q75": {
+      "AI_detected": 159,
+      "AI_parents": 160,
+      "REAL_false_alerts": 14,
+      "REAL_parents": 160,
+      "newly_missed_reference_AI": 0,
+      "numeric_checks_passed": 10,
+      "numeric_checks_total": 10
+    }
+  },
+  "code_sha256": "9d05bc8748edf4942f94cfcf1515f9399f578302b5285bcb12b0ab9ab9340c0b",
+  "current_policy_counts": {
+    "0": {
+      "no_clear_signal": 139,
+      "uncertain": 21
+    },
+    "1": {
+      "ai_signal": 159,
+      "uncertain": 1
+    }
+  },
+  "dataset_image_reads": 0,
+  "downloads": 0,
+  "historical_metric_replay_exact": true,
+  "limits": "No complete semantic/perceptual or pretrained-corpus overlap audit. Partial stored pixel-hash coverage only. E66 is consumed DEV, not an independent final. Numeric gates and repeated sources cannot establish universal reliability. Runtime fixes address integrity/concurrency, not detector accuracy.",
+  "model_promotion": false,
+  "new_model_scores": 0,
+  "overlap": {
+    "E92_TRAIN_vs_consumed_DEV": {
+      "left": {
+        "body_parents": 12269,
+        "parents": 12269,
+        "pixel_parents": 639
+      },
+      "limits": "Stored body/pixel/parent identities only; no fresh image hashing, semantic matching or pretrained-corpus audit. Missing pixel hashes leave comparisons uncovered; zero observed intersections does not prove independence.",
+      "matches": {
+        "body": {
+          "left_parents": 0,
+          "right_parents": 0,
+          "shared_identity_values": 0
+        },
+        "parent": {
+          "left_parents": 0,
+          "right_parents": 0,
+          "shared_identity_values": 0
+        },
+        "pixel": {
+          "left_parents": 0,
+          "right_parents": 0,
+          "shared_identity_values": 0
+        }
+      },
+      "right": {
+        "body_parents": 320,
+        "parents": 320,
+        "pixel_parents": 320
+      },
+      "stored_identity_disjoint": true
+    },
+    "current_TRAIN_vs_consumed_DEV": {
+      "left": {
+        "body_parents": 12525,
+        "parents": 12525,
+        "pixel_parents": 895
+      },
+      "limits": "Stored body/pixel/parent identities only; no fresh image hashing, semantic matching or pretrained-corpus audit. Missing pixel hashes leave comparisons uncovered; zero observed intersections does not prove independence.",
+      "matches": {
+        "body": {
+          "left_parents": 0,
+          "right_parents": 0,
+          "shared_identity_values": 0
+        },
+        "parent": {
+          "left_parents": 0,
+          "right_parents": 0,
+          "shared_identity_values": 0
+        },
+        "pixel": {
+          "left_parents": 0,
+          "right_parents": 0,
+          "shared_identity_values": 0
+        }
+      },
+      "right": {
+        "body_parents": 320,
+        "parents": 320,
+        "pixel_parents": 320
+      },
+      "stored_identity_disjoint": true
+    }
+  },
+  "private_input_bindings_sha256": "cb058b4fa9ec5ccbbc6e166a730669269fb031d92d0c7c75b3de7d1203120364",
+  "protected_reserve_reads": 0,
+  "runtime_manifest_sha256": "6bf3e29c8c4bada93d975513f31e8acf8b615d6076b52a53239ccbe06d48a553",
+  "state": "project_audit_20260916_complete",
+  "synthetic_inputs": 4,
+  "synthetic_transport_parity": [
+    {
+      "exact_pixel_match": true,
+      "exif_orientation": 1,
+      "height": 224,
+      "output_shape": [
+        224,
+        224,
+        3
+      ],
+      "width": 224
+    },
+    {
+      "exact_pixel_match": true,
+      "exif_orientation": 6,
+      "height": 1200,
+      "output_shape": [
+        1080,
+        762,
+        3
+      ],
+      "width": 1700
+    },
+    {
+      "exact_pixel_match": true,
+      "exif_orientation": 8,
+      "height": 2600,
+      "output_shape": [
+        1080,
+        936,
+        3
+      ],
+      "width": 3000
+    },
+    {
+      "exact_pixel_match": true,
+      "exif_orientation": 1,
+      "height": 4100,
+      "output_shape": [
+        1080,
+        59,
+        3
+      ],
+      "width": 224
+    }
+  ],
+  "verified_runtime_files": {
+    "code_files": 264,
+    "data_files": 5
+  }
+}

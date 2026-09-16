@@ -9482,3 +9482,134 @@ Compilation and whitespace checks passed. After the launcher schema fix, all thr
 focused launcher tests passed; exact E92 --check-only succeeds and localhost:3002 returns
 HTTP200. The full1183-test run preceded only that one readiness check change, which the
 focused tests cover. No experiment is still running and no candidate was promoted.
+
+
+## Deep project audit — scope and reproduced failures (2026-09-16)
+
+User requested a broad internal search for overlooked weaknesses before more model
+changes. Review covers current serving/input lifecycle, artifact identity, frontend result
+binding, training/DEV parent separation, source-fold normalization, metric/retention
+counting, preprocessing parity and the distinction between numerical gates and independent
+validation. No new fitting, data download or protected-reserve access is authorized by
+this audit plan; existing user-authorized development continues locally.
+
+Confirmed failure1: cancellation while awaiting decode_photo released the API semaphore
+although the decoder thread was still running. A deterministic synthetic ASGI cancellation
+regression reproduced a second HTTP200 while the first decoder remained blocked, instead
+of429. Repair makes a single shielded worker own decode plus inference and release the
+slot only on completion; timeout/validation/error paths preserve release semantics.
+
+Confirmed failure2: the historical E92 loader verified files against a mutable manifest
+without pinning the manifest itself. An empty altered manifest reached the weight
+loader, bypassing the intended identity checks. This does not show that installed weights
+were actually altered; it demonstrates a reproducibility/integrity gap. Add a separate
+VerifiedE92Engine wrapper with the original manifest SHA pinned before deserialization.
+Preserve the historical loader/receipts. The active primary engine uses the wrapper;
+health and launcher require the verification revision and manifest digest.
+
+Next bounded read-only check: verify264 manifest-bound code files and five data artifacts,
+reconstruct12269 historical E92 TRAIN parents from bound manifests, compare them and all
+12525 current TRAIN parents against320 consumed E66 DEV parent/body/pixel identities,
+then recount the640 locked DEV views and current paired-policy outcomes. Report missing
+hash coverage explicitly. Compare historical/runtime social processing on four synthetic
+JPEG inputs including EXIF rotations, a high-resolution image and a narrow aspect ratio.
+No classifier inference or dataset image pixels; raw metadata/parent details stay outside
+Git. This is an engineering/scientific audit, not another independent benchmark.
+
+
+## Deep project audit — results and development priorities (2026-09-16)
+
+Aggregate evidence: evidence/project_audit_20260916.json and
+ evidence/representation_weighting_audit_20260916.json. No new detector training,
+dataset download, protected-reserve access or model promotion in this review.
+
+### Confirmed current-runtime defects, fixed
+
+1. Cancellation during image decoding prematurely released the one-worker admission slot.
+   Reproduced before repair: the second request received200 while the cancelled request's
+   decoder remained blocked. Decode and inference now share one shielded worker/slot;
+   cancellation or response timeout cannot admit another heavy job until it finishes.
+   Normal decode errors still return their original4xx status and free the slot.
+2. E92's historical loader trusted the identity manifest's own expected hashes. Replacing
+   its file lists with empty dictionaries reached deserialization without verification.
+   No installed weight corruption was found. The active wrapper now pins the original
+   manifest SHA6bf3e29c8c4bada93d975513f31e8acf8b615d6076b52a53239ccbe06d48a553
+   before invoking the unchanged historical loader. Health/launcher identify and require
+   e92-manifest-pinned-v1. This closes accidental/self-declared manifest substitution;
+   it is not a security boundary against someone who can rewrite trusted application code.
+
+### Newly quantified research assumption, not a proven cause
+
+E131's classifier balances classes/components in its loss, but holdout_linear.fit_map
+uses unweighted mean/std and unweighted PCA. The REAL fraction entering those maps is
+76.49%,59.19%,57.02% across the three outer-FIT populations, versus50% REAL loss mass in
+every fitted head. Individual source/component masses also differ. E136-E138 reused
+these maps; E146 refitted maps but retained uniform row weighting. Consequently, their
+loss reweighting experiments did not test source-balanced representation fitting.
+
+This is consistent with the frozen implementation and protocol, not test leakage or a
+newly discovered arithmetic error. It is a plausible representation bottleneck to isolate,
+not proof that majority-source variance caused the failures. Next priority is one fixed
+FIT-only weighted normalization/covariance-PCA control at unchanged dimensions, folds,
+classifier objective and cutoff, with the original unweighted baseline and per-image
+AI/REAL non-regression checks. Do not change historical maps, choose weights from held-out
+results or promise improved accuracy. This control takes priority over an additional
+native-residual feature extraction until its narrower hypothesis has been tested.
+
+### Integrity/measurement checks that passed, with coverage limits
+
+-264 frozen code files and five E92 data artifacts match the pinned runtime manifest;
+  the current fitted artifact matches the declared E92 SHA. This is actual-file hashing,
+  not a successful health response alone.
+-Reconstructed all12269 E92 TRAIN parents and matched their source/label/body identities
+  to the current12525-parent roster. Neither TRAIN population intersects the320 consumed
+  E66 DEV parents by stored parent IDs or body digests. Stored pixel digests also show no
+  intersection, but only639 E92 TRAIN /895 current TRAIN parents have them, compared with
+  all320 DEV parents. Most TRAIN encodings therefore lack that comparison. No fresh image
+  hashing, semantic/perceptual matching or pretrained-corpus audit was performed. Do not
+  turn this into a complete decontamination or independence claim.
+-All640 stored E92 DEV views reproduce the published metrics exactly. The20 numeric
+  gates still pass; the separate original-view E43 AI-retention guard still fails on
+  one parent. Originals:0/160 REAL false alerts,159/160 AI detected. Social-Q75 alone:
+  14/160 REAL false alerts,159/160 AI detected. Those are per-view score measurements,
+  not the paired web verdict. Current paired UI: REAL139 no-clear/21 uncertain/0 AI;
+  AI159 AI/1 uncertain/0 no-clear. These are consumed development observations, not an
+  independent success rate.20 gates are20 conditions, not20 independent datasets.
+-Four synthetic JPEG inputs, including EXIF6/8 rotation,3000x2600 resolution and224x4100
+  narrow geometry, give exact historical/runtime social-transform pixel parity. This
+  finds no skew for these cases, not all formats or inputs. The narrow image becomes
+  59x1080 after social resizing: derived-view upsampling/limited detail remains a support
+  caveat for future robustness tests, not evidence of a transformation mismatch.
+-Reviewed current client request gating, stale-schema rejection, paired decision checks,
+  upload bounds, failed-inference handling and FIT-only maps. No new confirmed failure
+  was found in those inspected paths beyond the two runtime defects above. This is a
+  scoped code audit, not a claim that all code is bug-free.
+
+Known unresolved scientific limits remain: repeated development-source use, only three
+AI-bearing source components, unverified mixed-corpus generator ancestry, and no independent
+balanced final pass. Model2 remains experimental. E92 weights/cuts/decision policy remain
+unchanged; the repairs improve correctness and reproducibility, not measured detection.
+
+
+### Audit completion, Model2 scope and live verification — 2026-09-16
+
+Reviewed the Model2 patch split/weighting and spatial evaluation helpers as well:
+source/scene/body components remain together, masks are supervised targets/evaluation
+inputs rather than inference inputs, classical edits are AI-negative, and unavailable
+positive/interior endpoints remain explicit. Existing small-parent/single-editor/location
+failures remain unresolved; no new localization success or candidate is claimed.
+
+All1189 Python tests passed in20.44seconds (one existing Starlette/httpx deprecation
+warning); compilation and whitespace checks passed. Six added tests cover cancelled and
+timed-out decoders, manifest substitution before deserialization, exact manifest acceptance,
+cross-encoding body/pixel overlaps and missing identity coverage. Prior CI35079701049
+for80ea13c is successful. No web source changed in this audit.
+
+Restarted only the verified local E92 worker to activate the fixes. The new worker loads
+the exact unchanged artifact, serves schema4 and e92-manifest-pinned-v1 with the pinned
+manifest digest, and passes launcher/CORS checks. Real loopback requests give415 for a
+malformed body followed by200 for a223x224 synthetic PNG with image_too_small and no
+score, proving error-path slot release without running detector inference. Frontend
+localhost:3002 returns200. Receipt: evidence/project_audit_runtime_20260916.json.
+No ML experiment is running; the next weighted-representation control is planned, not
+trained. The local E92 site remains running and Model2 remains experimental.

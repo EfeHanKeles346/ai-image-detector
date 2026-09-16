@@ -1,0 +1,23 @@
+{
+  "CORS": "http://localhost:3002",
+  "dataset_image_reads": 0,
+  "downloads": 0,
+  "health": {
+    "artifact_sha256": "3a68c50d7cabd17d74c90bdcaf3b74aaacbc6c07e0bf28e332b1b91f99c9ef35",
+    "display_policy": "e92-primary-reference-advisory-v2",
+    "downloads_allowed": false,
+    "guard_id": "e92-paired-v2",
+    "model_id": "E92",
+    "research_only": true,
+    "runtime_manifest_sha256": "6bf3e29c8c4bada93d975513f31e8acf8b615d6076b52a53239ccbe06d48a553",
+    "runtime_verification": "e92-manifest-pinned-v1",
+    "schema_version": 4,
+    "status": "ready"
+  },
+  "invalid_then_tiny_statuses": [
+    415,
+    200
+  ],
+  "model_inferences": 0,
+  "synthetic_requests": 2
+}

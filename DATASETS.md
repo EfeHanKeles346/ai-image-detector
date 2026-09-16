@@ -3407,3 +3407,14 @@ Three heads reused existing12525-parent/four-view TRAIN caches; no image bytes o
 samples were acquired. Six internal role permutations preserve every declared component.
 All artifacts and per-parent predictions remain on the external disk under e146; public
 receipts contain aggregate metrics/hashes only. No admission or protected-reserve change.
+
+
+## Deep project audit — data accounting (2026-09-16)
+
+Read bound TRAIN and consumed E66 DEV metadata and locked prediction records, not dataset
+image pixels. Checked stored body/pixel identities for12269 historical/12525 current
+TRAIN versus320 DEV parents. Zero observed intersections; pixel coverage is639/895 TRAIN
+and320 DEV, so differently encoded copies remain incompletely covered. No independent
+reserve was opened, no roles changed and no acquisition occurred. Four synthetic images
+were generated in memory only for preprocessing parity, not admitted as training/test
+examples or scored for detector quality. Raw per-parent records remain outside Git.
