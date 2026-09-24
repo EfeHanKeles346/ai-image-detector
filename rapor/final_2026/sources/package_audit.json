@@ -1,0 +1,2475 @@
+{
+  "state": "pass_with_student_deferred_fields",
+  "report_pages": 28,
+  "report_headings": 35,
+  "figures": 3,
+  "tables": 6,
+  "references": 13,
+  "checks_passed": 608,
+  "checks": [
+    {
+      "name": "report_28_pages",
+      "passed": true
+    },
+    {
+      "name": "abstract_at_most_250_words",
+      "passed": true
+    },
+    {
+      "name": "references_13_including_10_scholarly",
+      "passed": true
+    },
+    {
+      "name": "figures_3_tables_6",
+      "passed": true
+    },
+    {
+      "name": "one_inch_margins",
+      "passed": true
+    },
+    {
+      "name": "word/document.xml:black_text",
+      "passed": true
+    },
+    {
+      "name": "word/styles.xml:black_text",
+      "passed": true
+    },
+    {
+      "name": "word/header1.xml:black_text",
+      "passed": true
+    },
+    {
+      "name": "word/footer1.xml:black_text",
+      "passed": true
+    },
+    {
+      "name": "no_sentence_lists",
+      "passed": true
+    },
+    {
+      "name": "no_explicit_nonzero_indentation",
+      "passed": true
+    },
+    {
+      "name": "toc_field_present",
+      "passed": true
+    },
+    {
+      "name": "encoded_runs_12pt",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "all_35_toc_pages_match_render",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:1. Introduction",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:2. Company information",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:2.1 Corporate profile and services",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:2.2 Organization and internship context",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:3. Project background",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:3.1 Department information",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:3.2 Initial project status",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:3.3 Motivation and problem definition",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:3.4 Related literature",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4. Internship project",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.1 Project objective and scope",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.2 My responsibilities",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.3 Methodology and tools",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.4 Expected outcomes and deliverables",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5 Project details",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5.1 Early models and the first transfer failures",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5.2 Data integrity and corrected conclusions",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5.3 Data roles and processing conditions",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5.4 E92 representation and learning",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5.5 Development improvement and acceptance limits",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5.6 Honest scores and the web demonstration",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5.7 Broader checks and rejected improvements",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.5.8 Model2 localization and its limits",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:4.6 Results",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:5. Internship experience",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:5.1 Learning",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:5.2 Relation to undergraduate education",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:5.3 Major difficulties",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:5.4 A typical day",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:6. Conclusions",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:7. Recommendations",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:8. References",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:9. Appendices",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:9.1 Development criteria",
+      "passed": true
+    },
+    {
+      "name": "toc_entry:9.2 Evidence and reproduction map",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "numbered_left_heading",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Figure 1",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Figure 1",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Figure 1",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Table 1",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Table 1",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Table 1",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Table 2",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Table 2",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Table 2",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Figure 2",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Figure 2",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Figure 2",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Figure 3",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Figure 3",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Figure 3",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Table 3",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Table 3",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Table 3",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Table 4",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Table 4",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Table 4",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Table 5",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Table 5",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Table 5",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "nearby_preceding_citation:Table 6",
+      "passed": true
+    },
+    {
+      "name": "centered_caption:Table 6",
+      "passed": true
+    },
+    {
+      "name": "caption_placement:Table 6",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "centered_table",
+      "passed": true
+    },
+    {
+      "name": "centered_table",
+      "passed": true
+    },
+    {
+      "name": "centered_table",
+      "passed": true
+    },
+    {
+      "name": "centered_table",
+      "passed": true
+    },
+    {
+      "name": "centered_table",
+      "passed": true
+    },
+    {
+      "name": "centered_table",
+      "passed": true
+    },
+    {
+      "name": "no_relative_or_lowercase_figure_citations",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Abdelhamed",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Abdelhamed",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Chen",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Chen",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Dwork",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Dwork",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Grommelt",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Grommelt",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Guo",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Guo",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Keleş",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Keleş",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Kim",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Kim",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Ojha",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Ojha",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Oquab",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Oquab",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Radford",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Radford",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Türk Telekom a",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Türk Telekom a",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Türk Telekom b",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Türk Telekom b",
+      "passed": true
+    },
+    {
+      "name": "reference_cited:Wang",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Wang",
+      "passed": true
+    },
+    {
+      "name": "company_at_most_3_pages",
+      "passed": true
+    },
+    {
+      "name": "literature_at_most_3_pages",
+      "passed": true
+    },
+    {
+      "name": "details_at_most_10_pages",
+      "passed": true
+    },
+    {
+      "name": "results_one_page",
+      "passed": true
+    },
+    {
+      "name": "experience_at_most_3_pages",
+      "passed": true
+    },
+    {
+      "name": "conclusions_one_page",
+      "passed": true
+    },
+    {
+      "name": "recommendations_one_page",
+      "passed": true
+    },
+    {
+      "name": "E92_confusion:publisher_original",
+      "passed": true
+    },
+    {
+      "name": "E92_numeric_gates:publisher_original",
+      "passed": true
+    },
+    {
+      "name": "E92_confusion:social_q75",
+      "passed": true
+    },
+    {
+      "name": "E92_numeric_gates:social_q75",
+      "passed": true
+    },
+    {
+      "name": "E92_full_acceptance_failed",
+      "passed": true
+    },
+    {
+      "name": "model2_not_promoted",
+      "passed": true
+    },
+    {
+      "name": "Presentation:slide_count",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Presentation:font",
+      "passed": true
+    },
+    {
+      "name": "Presentation:native_tables_charts",
+      "passed": true
+    },
+    {
+      "name": "Presentation:speaker_notes",
+      "passed": true
+    },
+    {
+      "name": "Presentation:pdf_pages",
+      "passed": true
+    },
+    {
+      "name": "Digest:slide_count",
+      "passed": true
+    },
+    {
+      "name": "Digest:black_run_colors",
+      "passed": true
+    },
+    {
+      "name": "Digest:font",
+      "passed": true
+    },
+    {
+      "name": "Digest:native_tables_charts",
+      "passed": true
+    },
+    {
+      "name": "Digest:speaker_notes",
+      "passed": true
+    },
+    {
+      "name": "Digest:pdf_pages",
+      "passed": true
+    },
+    {
+      "name": "planned_timing_10_to_15_minutes",
+      "passed": true
+    },
+    {
+      "name": "under_10MB:CS395_Digest_EfeHan_Keles_25September2026.pdf",
+      "passed": true
+    },
+    {
+      "name": "under_10MB:CS395_Digest_EfeHan_Keles_25September2026.pptx",
+      "passed": true
+    },
+    {
+      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_25September2026.doc",
+      "passed": true
+    },
+    {
+      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_25September2026.docx",
+      "passed": true
+    },
+    {
+      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_25September2026.pdf",
+      "passed": true
+    },
+    {
+      "name": "under_10MB:CS395_Presentation_EfeHan_Keles_25September2026.pdf",
+      "passed": true
+    },
+    {
+      "name": "under_10MB:CS395_Presentation_EfeHan_Keles_25September2026.pptx",
+      "passed": true
+    },
+    {
+      "name": "seven_primary_files",
+      "passed": true
+    }
+  ],
+  "files": {
+    "CS395_Digest_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 69382,
+      "sha256": "debea8c3d5ab36668b4f233bc22f06a7b2443fe1702a21a2452df51ba2ba4ba5"
+    },
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
+      "bytes": 13180,
+      "sha256": "034905cb267aa0beaecd3b8a3b4447b632206e4d7835cb5bfc6074bb9993c4e8"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
+      "bytes": 277504,
+      "sha256": "800c14905bba9eb1eb717f9d3400dc0c623245951e4527336c085d754759fcd6"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
+      "bytes": 179838,
+      "sha256": "9715a46d00b82259a5b6e698fc82adafe5fc2ada7eda4771524a6cac9a786bb6"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 363201,
+      "sha256": "9561b60e8816f7feb9bf113500f42492029e7a7e3878c98c01e63639cc420917"
+    },
+    "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 265392,
+      "sha256": "b711980aa6932b1a0e2ef030064d07c10be7005b515dd809e0babac535234322"
+    },
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
+      "bytes": 62860,
+      "sha256": "92bea4b5a61188b2d270b6f1daf0e3212449efc0e42a52bb2b73c45d815daea4"
+    }
+  },
+  "unresolved_fields": 10,
+  "claim_boundary": "Formatting and selected evidence assertions; not scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing."
+}

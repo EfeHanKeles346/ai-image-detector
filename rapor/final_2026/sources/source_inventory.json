@@ -1,0 +1,191 @@
+{
+  "source_commit": "497d45c",
+  "markdown_inventory": [
+    {
+      "path": "DATASETS.md",
+      "sha256": "b42b4c5ab0e27ca1c00994184c5d1627d681f37dba2af3e5807f0a23d3b05abe",
+      "lines": 3535,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "HISTORY.md",
+      "sha256": "627aea27b85535cbef19cab452915cc48e8faaa529240f749899d77b972b8c72",
+      "lines": 11171,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "IMAGE_FORENSICS_REFERENCE.md",
+      "sha256": "b0b88e8f4f4490e5a5ca3a34461349330a97d6ed34801f9cc6620109debf82c8",
+      "lines": 689,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "IMAGE_STRUCTURE_NOTES.md",
+      "sha256": "ee232fa480133e7c670dfc43ccab62783f1cec3f0b359cddd678493326c71418",
+      "lines": 215,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "7e094b84e94b40033a8d63d3e2f1aadeb3bbd3c7ee3721c2258b6b7d4e8acc86",
+      "lines": 19,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "sha256": "28d260189e29438fcc4d8b45edf11c821da3b0b3f15acc07b3ceb4e7ac4a98f4",
+      "lines": 496,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "PLAN.md",
+      "sha256": "83d08c29d5d546e28c5dc3b40429374fd73e8da59204075e3afe9ee563e748ce",
+      "lines": 7421,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "PRESENTATION_EVIDENCE.md",
+      "sha256": "348aced15bc71e5418e9d9525f11c1e64748cdb5aa8a3a9d024b994fbc4dc1c7",
+      "lines": 107,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "README.md",
+      "sha256": "950fd85e953aec0463330f9a83301a483e4d510288b84bb01d982a4c0250b2da",
+      "lines": 294,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "evidence/e65_diagnostic.md",
+      "sha256": "2ad8b667c826549771a03f20bebf301e375bee4a391659613b3fcbeb2a30da10",
+      "lines": 75,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "evidence/overnight_2026-09-13.md",
+      "sha256": "5287f378297fdc3a34d04434283361f06efb5a0a2cd87b4aa116df651d2b8f5f",
+      "lines": 761,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "ml/ARTIFACTS.md",
+      "sha256": "dcdfb715600fa114545556000eb7cf3d8628a0e4b53008aca7ec724075b7bf2a",
+      "lines": 429,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "ml/EXPERIMENTS.md",
+      "sha256": "4d0da5afa83d13f70bc4e767312fbd5894ff04a4ef4a18e69a458babbdc7ba20",
+      "lines": 10090,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "ml/RINE_FEASIBILITY.md",
+      "sha256": "e91ada8e4b1f3ac13c49290294f53085be17745f4a8e311c633d7a00bb7ad94d",
+      "lines": 68,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "ml/SERVING.md",
+      "sha256": "221e843bf912bcb80991964584333f28652143b751e642e6daf55f2d5b65f722",
+      "lines": 116,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "ml/experiments/README.md",
+      "sha256": "0064f72e83e19cabcc356780ada5ff9a9a8a9cab3476697be69b195d7fe92de5",
+      "lines": 156,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "ml/experiments/archive/README.md",
+      "sha256": "8ecc7347cd1976c7e0317d992528358adf0cff98b0a0edf5d93a39bc949c1862",
+      "lines": 27,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "ml/tools/README.md",
+      "sha256": "12a9100d4809227594c62ff27d76ce08ea58ae86a657ab19255b81e37e005b5a",
+      "lines": 124,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "rapor/README.md",
+      "sha256": "70f152196952d1af01362aec084f6a7bd9d855cabbc26f916d4b6fd60325deae",
+      "lines": 19,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "rapor/STAJ_RAPORU.md",
+      "sha256": "7b0955b537744826b207fad640f71c5a992f5291b087b3f3afb21685cc46ae18",
+      "lines": 327,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    },
+    {
+      "path": "rapor/SUNUS_METNI.md",
+      "sha256": "91d667ea285f65006a0bf8b72390ba068f1a26a43b332e781325a6033cf6fe3f",
+      "lines": 173,
+      "inventory_only_not_a_line_by_line_review_claim": true
+    }
+  ],
+  "principal_receipts": [
+    {
+      "path": "evidence/e92_development.json",
+      "sha256": "ae3541587a7d2febc60dd29dc41ebe1ee001562a2ffccf5f5436732202d23d37"
+    },
+    {
+      "path": "evidence/e92_fit.json",
+      "sha256": "352542408326ac7c7fa0ff49a39f5549c73a4cd11049426e4973a08cfa3d01a0"
+    },
+    {
+      "path": "evidence/e92_dev_contract.json",
+      "sha256": "98e2df85b657247b6482b739092474b31a46b2f6a329e5a5138d7c17ea6ba281"
+    },
+    {
+      "path": "evidence/e92_readiness_audit_2026-09-14.json",
+      "sha256": "eb664f321fc3296643a95bf37bef98cf40e0babb22f02e8f02006db95182f09d"
+    },
+    {
+      "path": "evidence/project_audit_20260916.json",
+      "sha256": "c63816e0a3ba07ab334c054d117aa5a6ab56be7ed84c35143a5dd8f7cf9d4bab"
+    },
+    {
+      "path": "evidence/project_audit_runtime_20260916.json",
+      "sha256": "2a356ae728d437e18f8c7a8d1e2e0e77a4a2df77352627faa80193835bf461cc"
+    },
+    {
+      "path": "evidence/e95_gallery_report.json",
+      "sha256": "282ad3a60305f71c319b86a82157e418d460890d4d8278d302c5f7cb26ffd9a7"
+    },
+    {
+      "path": "evidence/e132_patch_learning.json",
+      "sha256": "2c8ae279340d98547368073a83b503ea41c661ccfafb716ffe25d9eb001732a2"
+    },
+    {
+      "path": "evidence/e133_mask_location.json",
+      "sha256": "d9ebfa5bbac343bbbecbd6158876ca05327ccb97024c1624a2fc06a9698ea5e4"
+    },
+    {
+      "path": "evidence/e135_location_learning.json",
+      "sha256": "29a8aad2a8fc5e838c83a150a22b40322a8cac66b92d9b82c5828972ae57543e"
+    },
+    {
+      "path": "evidence/e146_nested_calibration.json",
+      "sha256": "ade9644ae791e07f7af0e7a5c7764eb85fbb286aa114e6055c8378a9dd6b63e7"
+    },
+    {
+      "path": "evidence/e148_processing_inventory.json",
+      "sha256": "cea80d374ba056a44a77aa748996e74db639641feabf25eff041cc45e2afd60a"
+    },
+    {
+      "path": "evidence/e151_source_pixel_comparison.json",
+      "sha256": "01e219d90b8b1e6e22ed366a19c440efbcea2c0fedd7b63546c251aae3430459"
+    },
+    {
+      "path": "evidence/e152_logit_decomposition.json",
+      "sha256": "545b05eb632887fc1b9cc90098d61654bb45a74fb55902bf7161b9b1f42bccdd"
+    }
+  ],
+  "supplied_guideline_sha256": "30d150d0a5b395474f1b72d24e04f32ad4adfcb2a9986bb9ac60107992886aa1",
+  "instruction_precedence": "professor message, then supplied office PDF; student defers missing metadata"
+}

@@ -1,5 +1,10 @@
 # Rapor ve sunum kaynakları
 
+**Güncel CS395 paketi (25 Eylül 2026):** [final_2026/README.md](final_2026/README.md).
+E1–E152 kaydını kapsayan İngilizce rapor, sunum, tek slaytlık digest ve Türkçe çalışma
+rehberi burada. Eksik kişisel/kurumsal alanlar kullanıcının isteğiyle daha sonra
+doldurulacak. Aşağıdaki E26 dosyaları tarihsel sürümlerdir.
+
 > **Sınır notu (2026-08-24):** Bu klasördeki rapor ve konuşma metni E26 sonundaki tarihsel
 > teslim anını korur; güncel runtime veya yeniden üretim kılavuzu değildir. E27'nin ilk
 > “integrated” sonucu 2026-08-24'te calibration/evaluation sızıntısı nedeniyle yeniden

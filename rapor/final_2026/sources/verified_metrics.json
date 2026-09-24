@@ -1,0 +1,72 @@
+{
+  "publisher_original": {
+    "old": {
+      "confusion": {
+        "fn": 4,
+        "fp": 68,
+        "tn": 92,
+        "tp": 156
+      },
+      "ai_recall": 0.975,
+      "real_false_positive_rate": 0.425,
+      "balanced_accuracy": 0.7749999999999999
+    },
+    "E86_predecessor": {
+      "confusion": {
+        "fn": 1,
+        "fp": 1,
+        "tn": 159,
+        "tp": 159
+      },
+      "ai_recall": 0.99375,
+      "real_false_positive_rate": 0.00625,
+      "balanced_accuracy": 0.99375
+    },
+    "new": {
+      "confusion": {
+        "fn": 1,
+        "fp": 0,
+        "tn": 160,
+        "tp": 159
+      },
+      "ai_recall": 0.99375,
+      "real_false_positive_rate": 0.0,
+      "balanced_accuracy": 0.996875
+    }
+  },
+  "social_q75": {
+    "old": {
+      "confusion": {
+        "fn": 6,
+        "fp": 68,
+        "tn": 92,
+        "tp": 154
+      },
+      "ai_recall": 0.9625,
+      "real_false_positive_rate": 0.425,
+      "balanced_accuracy": 0.76875
+    },
+    "E86_predecessor": {
+      "confusion": {
+        "fn": 1,
+        "fp": 17,
+        "tn": 143,
+        "tp": 159
+      },
+      "ai_recall": 0.99375,
+      "real_false_positive_rate": 0.10625,
+      "balanced_accuracy": 0.9437500000000001
+    },
+    "new": {
+      "confusion": {
+        "fn": 1,
+        "fp": 14,
+        "tn": 146,
+        "tp": 159
+      },
+      "ai_recall": 0.99375,
+      "real_false_positive_rate": 0.0875,
+      "balanced_accuracy": 0.953125
+    }
+  }
+}

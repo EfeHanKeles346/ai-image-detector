@@ -1,0 +1,24 @@
+{
+  "Presentation": {
+    "sha256": "92bea4b5a61188b2d270b6f1daf0e3212449efc0e42a52bb2b73c45d815daea4",
+    "package_integrity": "pass",
+    "layout_findings": 0,
+    "layout_warnings": [],
+    "font_families": [
+      "Times New Roman"
+    ],
+    "first_party_import_passed": true,
+    "native_chart_passed": true
+  },
+  "Digest": {
+    "sha256": "034905cb267aa0beaecd3b8a3b4447b632206e4d7835cb5bfc6074bb9993c4e8",
+    "package_integrity": "pass",
+    "layout_findings": 0,
+    "layout_warnings": [],
+    "font_families": [
+      "Times New Roman"
+    ],
+    "first_party_import_passed": true,
+    "native_chart_passed": true
+  }
+}

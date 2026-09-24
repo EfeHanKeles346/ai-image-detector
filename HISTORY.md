@@ -11169,3 +11169,34 @@ Starlette/httpx warning). E152 targeted tests cover both class signs, changed/ne
 cohorts, ties, paired intercept cancellation and invalid shape/label/nonfinite inputs.
 Contract SHA256 0f393ed714ec85a16f3f6a68a5b06cbb77572a77da391724fb61c67b1e52211e.
 Aggregate receipt: evidence/e152_logit_decomposition.json; per-parent arrays stay private.
+
+## 2026-09-25 — CS395 report, presentation and digest package
+
+Prepared `rapor/final_2026/` from the research snapshot at `497d45c` and the student's
+instructor message/FENS report guidelines. Reviewed the major E1–E152 development,
+audit, demo and localization milestones; preserved the older E26 report as a historical
+snapshot. The current package includes an English 28-page report (DOCX/PDF plus legacy
+DOC), a 15-slide editable deck (13 spoken slides and 2 reference slides, with notes),
+a separate one-slide digest, PDF copies, a Turkish study guide and English speaking notes.
+
+The narrative distinguishes E92's 20/20 numerical DEVELOPMENT milestone from failed full
+acceptance: one original E43-detected AI image became a miss. Original/processed false
+alerts 0/160 and 14/160, AI recall 159/160 per view, limited SIDD scene coverage, adaptive
+reuse, gallery failures, rejected source-fold/source-pixel candidates and Model2's
+placement trade-off remain explicit. No universal, production, company-impact or
+calibrated-probability claim was added. AI coding assistance is disclosed.
+
+All 28 report pages and 16 total deck/digest slides were rendered and visually reviewed.
+The 35-entry contents cache matches actual pages. Caption placement, citations, fonts,
+spacing, margins, section limits, native slide charts/tables and under 10 MB file limits
+were checked. Final presentation validation reports zero layout findings/warnings.
+The legacy DOC round-trip retains 28 pages; its four visually changed pages were checked.
+Machine-readable output hashes and scoped checks are in sources/package_audit.json.
+These are document checks, not another model-accuracy experiment or rerun of the prior
+1,245-test engineering checkpoint.
+
+Student explicitly deferred student ID, department, office, supervisor title and team
+fields; they remain visible with personal reflection/course/day confirmations in
+HANDOFF_TR.md. Therefore the package is a submission draft pending those edits. No school
+upload/email, new dataset/weights download, fitting, protected-reserve access or serving
+change occurred. Official company-reference research was used only for report context.

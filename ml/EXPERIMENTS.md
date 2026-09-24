@@ -10088,3 +10088,19 @@ Starlette/httpx warning). E152 targeted tests cover both class signs, changed/ne
 cohorts, ties, paired intercept cancellation and invalid shape/label/nonfinite inputs.
 Contract SHA256 0f393ed714ec85a16f3f6a68a5b06cbb77572a77da391724fb61c67b1e52211e.
 Aggregate receipt: evidence/e152_logit_decomposition.json; per-parent arrays stay private.
+
+## Report-production audit — 2026-09-25 (not a new ML experiment)
+
+Reconciled the current E1–E152 record for the CS395 submission package in
+`rapor/final_2026/`. Generated Figure 3 directly from e92_development.json confusion counts
+and checked E92 numeric gates, failed E43-relative retention, distinct training/research
+parent counts, current paired-policy semantics and Model2 nonpromotion. The report
+preserves false alarms, label-direction corrections, E27 calibration leakage repair,
+adaptive development reuse, E146 source-transfer failure and E151/E152 rejection.
+
+No data split, candidate, threshold, model artifact or result receipt was changed. No
+new classifier scores, dataset image reads, image-data downloads, fitting or reserve evaluation
+were needed. E153 remains a prospective research step, not a completed report result.
+Documentation/package validation is recorded separately from scientific acceptance;
+20/20 is not rewritten as full acceptance or independent validation. Deferred personal
+and company metadata remain explicitly marked at the student's request.

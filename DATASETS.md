@@ -3533,3 +3533,13 @@ all12525 admitted TRAIN parents. It created private12525x4x5 logit-decomposition
 per branch and public aggregates; no new fit, pixel read, download or role change. E153
 may reuse the same frozen artifacts to separate source/control-difference contributions
 after its own registration. Error subsets remain post-hoc consumed-data diagnostics.
+
+## 2026-09-25 — Report-only source research; no image-data acquisition
+
+CS395 report production used the existing aggregate evidence and dataset provenance
+records. No image dataset, private gallery pixels, model weights or protected reserve
+was downloaded/opened for the report. The official Türk Telekom 2025 annual report was
+downloaded to a private temporary build directory to verify organization/company context;
+it is a bibliographic reference, not TRAIN/CAL/DEV/FINAL data, and is not committed.
+Primary scholarly source pages were consulted for complete report citations. Source
+roles, ancestry limitations and all admission decisions remain unchanged.
