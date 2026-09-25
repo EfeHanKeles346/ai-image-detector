@@ -131,3 +131,31 @@ The third risk is repagination after final edits. Rebuild PDF/DOC after completi
 refresh the contents and repeat the page-limit/caption checks. Presentation duration
 must be confirmed by rehearsal. No guaranteed grade, school submission or supervisor
 approval is represented here.
+
+
+## Recheck against the reattached office guideline — 25 September 2026
+
+The reattached Summer 2026 guideline is byte-identical to the earlier supplied PDF.
+All nine pages were read again against the instructor message, with the instructor
+controlling conflicting report formatting. The unchanged deliverables again pass 638
+scoped checks. The 30-page report, 15-slide presentation and one-slide digest were freshly
+rendered for visual review. All three Desktop submission files match repository copies.
+A fresh conversion of the actual Desktop DOC retains 30 pages and the same per-page
+word multisets as the current report PDF. Native Microsoft Office was not tested.
+
+The report has the required section structure, a 228-word abstract, 35 body headings
+represented in the contents, 3 figures, 6 tables and 14 cited references. Caption placement,
+centering, first mentions, black text, font, margins, paragraph alignment and section
+page limits passed the scoped checks and visual review. Cover, abstract and contents
+remain front matter before numbered section 1, following the office template.
+The instructor message concerns report formatting; the presentation and digest were
+also checked against their distinct requirements on guideline pages 8 and 9.
+
+The presentation covers motivation, objectives, methods/tools, deliverables and results
+in English with Times New Roman. Its 795-second timing is a plan, not a completed
+rehearsal. The digest contains the required one-slide summary but its actual office
+address remains a placeholder. The report still needs the deferred identity, host,
+team and firsthand experience fields listed in HANDOFF_TR.md. Consequently, neither
+report nor digest is unconditionally ready to submit. Filling these fields requires
+refreshing all affected formats and checking pagination again. No submission content
+was changed or uploaded during this recheck.

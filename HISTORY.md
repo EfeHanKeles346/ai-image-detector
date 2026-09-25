@@ -11242,3 +11242,14 @@ notes in `~/Documents/PixelProof_Submission_Support_2026/2026-09-25/`; all seven
 deliverables remain unchanged. This supersedes the earlier seven-file Desktop arrangement,
 not the earlier content audit. Deferred personal/company fields still require completion.
 No new experiment, document content revision, model change or school submission occurred.
+
+
+## 2026-09-25 — Reattached guideline and three-artifact compliance recheck
+
+Verified that the new guideline attachment is byte-identical to the previously supplied
+Summer 2026 PDF. Reread all nine pages, reran the 638 scoped package checks and inspected
+fresh renders of the 30-page report, 15-slide presentation and single-slide digest.
+Checked the three Desktop hashes and converted the actual Desktop DOC to a private PDF:
+all 30 page word multisets match the current report PDF. CRITICAL_REVIEW.md records
+the conditional compliance conclusion. Deferred personal/host fields and presentation
+rehearsal remain open. No deliverable content, model, experiment or dataset was changed.
