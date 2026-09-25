@@ -98,7 +98,7 @@ def paragraph(t,style=None):
 for t in ['Sabancı University','Faculty of Engineering and Natural Sciences','Computer Science and Engineering']:paragraph(t)
 p=paragraph(c.TITLE,'Title');p.paragraph_format.space_before=Pt(54);p.paragraph_format.space_after=Pt(36)
 paragraph('CS395 Internship Final Report')
-paragraph('Efe Han Keleş');paragraph('Student ID: [TO COMPLETE]')
+paragraph('Efe Han Keleş');paragraph('Student ID: 31994')
 for t in ['Company: Türk Telekomünikasyon A.Ş.','Supervisor: Önder Çelebi','Supervisor title: [TO COMPLETE]']:paragraph(t)
 for t in ['Internship: 20 July–18 September 2026','Approved duration: 40 internship days','Format: Hybrid']:paragraph(t)
 paragraph('Submission date: 25 September 2026')

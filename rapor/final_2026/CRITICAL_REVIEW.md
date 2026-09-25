@@ -1,5 +1,12 @@
 # Critical report review — 25 September 2026
 
+**Latest completion update, 25 September:** the student has now supplied identity,
+unit name, office address, individual/advisory roles, personal learning, career,
+course connections and daily routine. The deferred-field statuses in the original
+review below describe the earlier draft. See HANDOFF_TR.md and the completion addendum
+at the end for the current five remaining information groups. The technical critique
+and evidence limits remain unchanged.
+
 ## Decision and scoring boundary
 
 The completed technical narrative and editorial treatment receive a subjective **9.2/10**
@@ -159,3 +166,29 @@ team and firsthand experience fields listed in HANDOFF_TR.md. Consequently, neit
 report nor digest is unconditionally ready to submit. Filling these fields requires
 refreshing all affected formats and checking pagination again. No submission content
 was changed or uploaded during this recheck.
+
+
+## Student-confirmed completion addendum — 25 September 2026
+
+Incorporated the student's answers in the cover and Sections 2.1, 2.2, 3.1, 4.2,
+5.1, 5.2 and 5.4. The report now explains individual ownership with supervisor/mentor
+consultation, long-project management, reducing scope and learning through experiments.
+The course section uses only CS412, PROJ201 and DSA210 because the guideline caps this
+at three connections. The earlier YOLOv11 project and group placing are explicitly the
+student's own account, not newly verified external achievements. The daily routine
+includes arrival at 7:30 a.m. and short breaks without inventing exact lunch or exit times.
+
+The report remains 30 pages with unchanged contents page numbers and 638 passing scoped
+checks. Eight changed pages were visually inspected; the other 22 rendered pages are
+pixel-identical to the prior reviewed final render. A fresh DOC conversion preserves
+all 30 per-page word multisets. The digest now contains the confirmed office address,
+passes the presentation finalizer with no layout warnings and has no placeholders.
+The main presentation is byte-identical to its previous version.
+
+Five information groups remain: supervisor title (explicitly deferred), unit reporting
+line, unit responsibilities, mentor identities/titles/emails, and confirmed main
+competitor/supplier names. The supervisor title occurs twice, so six report placeholders
+remain. The audit now counts literal placeholders in the actual DOCX rather than adding
+a fixed count for cover fields. HANDOFF_TR.md cites guideline pages for each requirement.
+Desktop DOC and digest PPTX were refreshed; the open presentation and its Office lock
+were preserved. No final submission or new scientific experiment occurred.

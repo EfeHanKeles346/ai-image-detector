@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-25",
+  "authority": "Student answers in this conversation; personal and host information is self-reported, not independently verified.",
+  "guideline_sha256": "30d150d0a5b395474f1b72d24e04f32ad4adfcb2a9986bb9ac60107992886aa1",
+  "updated_report_sections": [
+    "cover",
+    "2.1",
+    "2.2",
+    "3.1",
+    "4.2",
+    "5.1",
+    "5.2",
+    "5.4"
+  ],
+  "course_connections": [
+    "CS412",
+    "PROJ201",
+    "DSA210"
+  ],
+  "report_pages": 30,
+  "changed_rendered_pages": [
+    1,
+    6,
+    7,
+    8,
+    11,
+    12,
+    23,
+    24
+  ],
+  "unchanged_rendered_pages": 22,
+  "changed_pages_visually_reviewed": true,
+  "legacy_doc_same_per_page_words": true,
+  "digest_slides": 1,
+  "digest_placeholders": 0,
+  "presentation_unchanged": true,
+  "remaining_report_placeholder_occurrences": 6,
+  "remaining_information_groups": [
+    "supervisor title",
+    "department reporting line",
+    "department responsibilities",
+    "mentor names titles and work emails",
+    "main competitors and major suppliers"
+  ],
+  "desktop_files": {
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": "2fcceeded481a748fb4772900b9450cfaad2b9ddde06c25cc0d7cb53d42d5f29",
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": "1cc31bed60c3bb5881003681a05f8e66521b279e307a8cae3a32c52353ca383a",
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": "9b53dc6562dc4828692fc6b923bd46349b01444ef0cebc1dc97dec2bf430d6e1"
+  },
+  "desktop_office_lock_preserved": true,
+  "school_submission": false
+}

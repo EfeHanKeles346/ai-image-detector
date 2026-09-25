@@ -12,10 +12,12 @@ The exhaustive 28-file Markdown review and technical/editorial revision are comp
 Current files are in `rapor/final_2026/deliverables/` and the Desktop folder
 `CS395_PixelProof_Submission_2026`. Report: 30 pages, 14 references, 638 scoped checks.
 The critical review rates the technical draft 9.2/10 subjectively; this is not a grade.
-Next submission work is student-dependent: fill the explicitly deferred identity,
-actual company/department/role and personal-reflection fields in HANDOFF_TR.md, regenerate
-all affected formats, recheck pagination and rehearse the 13:15 presentation. No final
-school upload is authorized or claimed. E153 remains a separate unexecuted research plan.
+Student-confirmed identity, unit name, office address, individual/advisory roles, learning,
+career, three course connections and daily routine are now incorporated. Remaining work:
+confirm supervisor title, unit responsibilities/reporting line, mentor identities and
+relevant competitor/supplier names; then refresh affected formats and rehearse the 13:15
+presentation. HANDOFF_TR.md links each field to its guideline section. No final school
+upload is authorized or claimed. E153 remains a separate unexecuted research plan.
 
 ## Active checkpoint — E152 complete; E153 paired-control audit next (2026-09-16)
 

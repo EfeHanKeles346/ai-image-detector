@@ -102,7 +102,7 @@ files={}
 for p in sorted(OUT.iterdir()):
  check('under_10MB:'+p.name,p.stat().st_size<10_000_000);files[p.name]={'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
 check('seven_primary_files',len(files)==7)
-placeholders=[{'heading_context':b.get('type'),'text':b.get('text')} for b in c.B if '[TO COMPLETE' in b.get('text','')]
-result={'state':'pass_with_student_deferred_fields','report_pages':len(r.pages),'report_headings':35,'figures':3,'tables':6,'references':14,'checks_passed':len(checks),'checks':checks,'files':files,'unresolved_fields':len(placeholders)+2,'claim_boundary':'Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing.'}
+placeholders=[match for p in d.paragraphs for match in re.findall(r'\[TO COMPLETE[^\]]*\]',p.text)]
+result={'state':'pass_with_student_deferred_fields','report_pages':len(r.pages),'report_headings':35,'figures':3,'tables':6,'references':14,'checks_passed':len(checks),'checks':checks,'files':files,'unresolved_fields':len(placeholders),'unresolved_placeholders':placeholders,'claim_boundary':'Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing.'}
 (ROOT/'sources/package_audit.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
 print(json.dumps({k:result[k] for k in ['state','report_pages','checks_passed','unresolved_fields']},indent=2))

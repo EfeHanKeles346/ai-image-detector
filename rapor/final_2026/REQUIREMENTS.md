@@ -31,11 +31,14 @@ facilities, ownership/subsidiaries, market, products, customers/suppliers, emplo
 and organization. No invented internship unit, personnel role, business deployment,
 meetings or first-person recollection.
 
-The student explicitly deferred department, office, supervisor title, student ID and
-team-member details for later completion. Mark these visibly and track them in a separate
-handoff note. Do not call the file ready for submission until they are completed. Personal
-learning/day text is a draft for student review. Submission date defaults to build date
-and must change with an actual later submission.
+The student supplied ID, unit name, actual office address, individual contribution/advisory
+roles, personal learning/career experience, course connections and daily routine on
+25 September. The supervisor title remains explicitly deferred. Unit responsibilities
+and reporting line, mentor identities/titles/emails, and specific competitor/supplier
+names still require confirmation. HANDOFF_TR.md maps these remaining fields to the
+exact guideline pages. Do not infer them from the unit name or general market knowledge.
+The course section uses CS412, PROJ201 and DSA210 to respect the three-connection limit.
+Submission date defaults to build date and must change with an actual later submission.
 
 Presentation: English, Times New Roman, about 10–15 minutes, clear explanation of problem,
 objective, methods/tools, deliverables, results and limitations. Produce editable PPTX

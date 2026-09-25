@@ -119,17 +119,19 @@ speak(s,15,'References B',0,'Backup slide. Pretrained components do not transfer
 const d=Presentation.create({slideSize:{width:1280,height:720}});
 s=base(d,1,'PixelProof: AI Image Detection','CS395 digest · source snapshot 497d45c · research prototype');
 txt(s,'Türk Telekom · Efe Han Keleş · Computer Science and Engineering',72,147,1136,55,29,true);
-txt(s,'20 July–18 September 2026 · 40 approved internship days\nInternship office/address: [TO COMPLETE]',72,211,1136,90,27);
+txt(s,'20 July–18 September 2026 · 40 approved internship days',72,211,1136,38,27);
+txt(s,'Internship office: Fatih Sultan Mehmet Mah., Balkan Cad. No:49,\n34771 Ümraniye / İstanbul',72,255,1136,65,24);
 txt(s,'Objective',72,328,260,50,30,true);
 txt(s,'Detect AI-image evidence while reducing false alerts;\nexplore localization of AI edits.',360,328,845,90,29);
 txt(s,'Deliverables',72,445,260,50,30,true);
 txt(s,'E92 research model, guarded local demo and traceable records.\nExperimental Model2 evaluator.',360,445,845,90,29);
 txt(s,'Measured result',72,553,260,50,30,true);
 txt(s,'159/160 AI detected in each development view; real false alerts 0/160\nand 14/160. Numeric checks 20/20; full acceptance failed. Not universal.',360,553,845,95,25);
-s.speakerNotes.textFrame.setText('Standalone internship digest. Original and social-style views use the same 320 development parents: 160 real and 160 AI. Social-style means long-side cap 1080 followed by JPEG75. E92 newly missed one original AI image caught by E43, so full acceptance failed despite the numeric milestone. Model2 remains experimental. The actual internship office/address is intentionally deferred by the student. Supervisor: Önder Çelebi. Full sources and limitations are in the report.');
+s.speakerNotes.textFrame.setText('Standalone internship digest. Original and social-style views use the same 320 development parents: 160 real and 160 AI. Social-style means long-side cap 1080 followed by JPEG75. E92 newly missed one original AI image caught by E43, so full acceptance failed despite the numeric milestone. Model2 remains experimental. The student confirmed the internship office as Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye / İstanbul on 25 September 2026. Supervisor: Önder Çelebi. Full sources and limitations are in the report.');
 await fs.mkdir(WORK,{recursive:true});
-await fs.writeFile(path.join(ROOT,'sources/presentation_notes.json'),JSON.stringify(notes,null,2)+'\n');
+if(process.env.PRESENTATION_KIND!=='Digest') await fs.writeFile(path.join(ROOT,'sources/presentation_notes.json'),JSON.stringify(notes,null,2)+'\n');
 for(const [kind,pres,count,tables,charts] of [['Presentation',p,15,[3,7,8,10,12],[6]],['Digest',d,1,[],[]]]){
+ if(process.env.PRESENTATION_KIND && process.env.PRESENTATION_KIND!==kind) continue;
  const wd=path.join(WORK,kind);await fs.mkdir(path.join(wd,'.codex-finalizer'),{recursive:true});
  const candidate=path.join(wd,'.codex-finalizer/candidate.pptx');await(await PresentationFile.exportPptx(pres)).save(candidate);
  await fs.mkdir(path.join(wd,'output'),{recursive:true});

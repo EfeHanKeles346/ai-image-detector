@@ -17,28 +17,28 @@ Section 2 introduces the host organization. Section 3 explains the problem and r
 
 ## 2.1 Corporate profile and services
 
-The host organization is Türk Telekomünikasyon A.Ş. Its registered office is Turgut Özal Bulvarı, 06103 Aydınlıkevler, Ankara. The corporate website is https://www.turktelekom.com.tr. The internship contact supplied in the approved record is +90 312 555 93 92. The actual internship office address remains [TO COMPLETE: internship office], which must not be confused with the registered headquarters (Türk Telekom, 2026a).
+The host organization is Türk Telekomünikasyon A.Ş. Its registered office is Turgut Özal Bulvarı, 06103 Aydınlıkevler, Ankara (Türk Telekom, 2026a). I completed my internship at Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye, İstanbul. This is the internship office, distinct from the registered headquarters. The corporate website is https://www.turktelekom.com.tr. The internship contact supplied in the approved record is +90 312 555 93 92.
 
 Türk Telekom has a history extending over 185 years. It adopted an integrated operating structure in 2015 and brought mobile, internet, telephone and television services under one brand in 2016. Its facilities are communications infrastructure, service operations and offices rather than a manufacturing plant. The corporate profile reports operations in 81 provinces and 31,756 employees alongside its 30 June 2026 operating figures (Türk Telekom, 2026b).
 
 The group supplies fixed access, broadband, mobile, television and corporate data services. Customers include households, businesses and wholesale operators. Group companies include TT Mobil, TTNET, Argela, İnnova, SEBİT, AssisTT and Türk Telekom International. The disclosed ownership structure allocates 60% to Türkiye Wealth Fund, 25% to the Ministry of Treasury and Finance and 15% to publicly traded shares. The fund also holds 1.68% within the publicly traded portion; that holding must not be added to the 100% ownership total (Türk Telekom, 2026a, 2026b).
 
-The company operates in the telecommunications market, with competition across mobile and fixed connectivity. A host-confirmed account of the main competitors and major suppliers relevant to the internship unit remains [TO COMPLETE: relevant competitors and suppliers]. No supplier ranking or customer account has been inferred from the project. PixelProof used research datasets and public pretrained components, not customer telecommunications records.
+The company operates in the telecommunications market, with competition across mobile and fixed connectivity. Competitors and suppliers were mentioned during my internship, but we did not discuss them in detail. The main competitors and major suppliers relevant to the unit remain [TO COMPLETE: confirmed competitor and supplier names]. I have not inferred a supplier ranking from these brief discussions. PixelProof used research datasets and public pretrained components, not customer telecommunications records.
 
 ## 2.2 Organization and internship context
 
-Figure 1 summarizes the corporate reporting structure published in the 2025 Annual Report. It retains the distinction between functions reporting to the general manager and internal audit reporting to the board. Functional descriptions are summarized from the published department titles. The diagram is corporate context and does not assign my internship to an unconfirmed unit (Türk Telekom, 2026a, p. 33).
+Figure 1 summarizes the corporate reporting structure published in the 2025 Annual Report. It retains the distinction between functions reporting to the general manager and internal audit reporting to the board. Functional descriptions are summarized from the published department titles. The diagram provides corporate context; the reporting line of my host unit still requires confirmation (Türk Telekom, 2026a, p. 33).
 
 ![Figure 1](figures/organization.png)
 Figure 1. Simplified corporate reporting structure from the 2025 Annual Report.
 
-Network and IT cover communications infrastructure and information systems. Commercial functions include customer experience, consumer sales, corporate sales and wholesale services. Support functions include finance, people operations, procurement, legal compliance and risk. Regional directorates coordinate local operations. The specific host unit and its place in this structure remain [TO COMPLETE: department and reporting line].
+Network and IT cover communications infrastructure and information systems. Commercial functions include customer experience, consumer sales, corporate sales and wholesale services. Support functions include finance, people operations, procurement, legal compliance and risk. Regional directorates coordinate local operations. My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate). Its formal reporting line remains [TO COMPLETE: department reporting line].
 
 # 3. Project background
 
 ## 3.1 Department information
 
-The approved company supervisor is Önder Çelebi. The supplied contact is onder.celebi@turktelekom.com.tr. His title is [TO COMPLETE: supervisor title]. The department is [TO COMPLETE: department name and responsibilities]. Other close collaborators, their titles and work email addresses are [TO COMPLETE: collaborators, or confirm none]. These fields have deliberately been left open pending confirmation.
+My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate). Its specific responsibilities remain [TO COMPLETE: department responsibilities]. My supervisor was Önder Çelebi, whose supplied contact is onder.celebi@turktelekom.com.tr. His title remains [TO COMPLETE: supervisor title]. I also consulted mentors, whose names, titles and work email addresses remain [TO COMPLETE: mentor details]. These consultations supported an individually conducted project.
 
 The approved arrangement was hybrid, with Monday through Thursday on site and Friday remote. The project record concerns a student research prototype. It does not establish that Türk Telekom already operated this detector, requested a particular production deployment, or used its outputs in customer decisions. Any department-specific business process description requires confirmation before submission.
 
@@ -82,7 +82,7 @@ The scope included source auditing, training and comparison of candidate models,
 
 My project responsibilities covered defining the objectives, directing the experiment sequence, organizing the research material and reviewing the recorded results. The development process used AI coding assistance for implementation, analysis and documentation. Reproducible scripts, source checks and tests were used to verify outputs rather than treating generated explanations as evidence. The report distinguishes those engineering checks from proof that a model generalizes.
 
-The project work included dataset acquisition and admission records, label mapping, duplicate and ancestry checks, model experiments, API and interface development, and maintenance of PLAN.md, HISTORY.md, ml/EXPERIMENTS.md and DATASETS.md. Responsibilities of other people remain [TO COMPLETE: confirmed team roles]. Public pretrained encoders and external datasets are acknowledged separately from the project-owned adaptation and application code.
+I carried out the project individually. I consulted my supervisor and mentors when I needed guidance, but generally made the project decisions myself. They explained evaluation concepts such as true positives and false negatives. Their role was advisory rather than shared implementation. My work covered dataset acquisition and admission records, label mapping, duplicate and ancestry checks, model experiments, API and interface development, and maintenance of PLAN.md, HISTORY.md, ml/EXPERIMENTS.md and DATASETS.md. Public pretrained encoders and external datasets are acknowledged separately from the project-owned adaptation and application code.
 
 ## 4.3 Methodology and tools
 
@@ -229,13 +229,13 @@ The 20 numerical checks passed, but full acceptance failed because of the one ne
 
 The most useful lesson from the work is to ask what a good score actually proves. The first high accuracy values encouraged further development, but errors on new sources changed the priority. The project then needed better data checks and comparisons, not just a larger model. The reversed-label incident is the clearest example: checking the inputs overturned an explanation that had sounded convincing.
 
-The work also provided practice in reading research papers critically, separating a method from its published performance claim, and maintaining reproducible records. Cached features made repeated analysis possible within local hardware limits. User-facing uncertainty required careful wording because a raw score can easily be misunderstood as confidence. [TO COMPLETE: personal learning reflection and whether this experience changed career plans.]
+I learned how to sustain a long project on my own and reduce its scope when the work became too complex. Asking focused questions helped me communicate problems and use advice while remaining responsible for my decisions. Running my own experiments made machine learning concepts more concrete. I was already interested in this field before the internship; applying it in a substantial project strengthened that interest and gave me a clearer understanding of the work involved.
 
 ## 5.2 Relation to undergraduate education
 
-Three undergraduate foundations connect directly to the technical work. Probability and statistics support conditional error rates, sample dependence and interpretation of uncertainty. Linear algebra and optimization support feature vectors, projections, principal components and fitted classification heads. Software engineering supports modular interfaces, tests, version control and reproducible builds. These connections explain the methods used without claiming that a particular course covered every advanced technique.
+CS412 Machine Learning gave me the concepts I used to start this project and develop the initial experiments. PROJ201 had introduced me to applied machine learning through a team project for an application intended to guide visually impaired users. We trained YOLOv11 on a custom dataset and integrated it into the application; our team placed first in our group. That experience gave me an initial understanding of model training and application integration. DSA210 provided my early foundations in data science, which helped me approach the data preparation and analysis in this internship.
 
-More preparation in experimental design and data provenance would have been particularly useful. A dataset can contain valid files but inconsistent meanings, and a test can contain different files while still sharing scenes or generation ancestry. [TO COMPLETE: confirm the three course connections and personal preparation needs against actual coursework.]
+The internship exposed preparation needs beyond the initial model fit. Experimental design and data provenance required particular attention: valid image files could still have inconsistent labels, and different files could share scenes or generation ancestry. These issues became clearer through the project’s failed experiments and corrections.
 
 ## 5.3 Major difficulties
 
@@ -247,9 +247,9 @@ The third difficulty was running a multi-component research system within local 
 
 ## 5.4 A typical day
 
-The approved schedule was Monday through Thursday on site and Friday remote. The documented work cycle was to review the plan, audit or implement a change, run a bounded experiment, interpret results and update the records.
+The approved schedule was Monday through Thursday on site and Friday remote. On office days, I usually arrived at 7:30 a.m. After breakfast, I worked through the morning until around noon or early afternoon. I continued working afterwards, with occasional short tea or coffee breaks.
 
-[TO COMPLETE: add a personally verified account of a typical on-site day and team communication. The repository establishes the technical workflow, not actual meetings or attendance hours.]
+My tasks followed the stage of the project: reviewing the plan, implementing a change, running experiments, interpreting results and updating the records. When a question arose, I consulted my supervisor or mentors for clarification and then decided how to proceed. This routine helped me maintain progress during a long individual project.
 
 # 6. Conclusions
 
