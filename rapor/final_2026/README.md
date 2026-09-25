@@ -17,6 +17,10 @@ This is the current E1–E152 submission draft. It supersedes the old E26 report
 
 The deck has 13 spoken slides and two reference slides. Suggested timing is 795 seconds, subject to actual rehearsal. The report has 30 pages including front matter, 3 figures, 6 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
 
+## Desktop submission folder
+
+Guideline page 1 explicitly names a `.doc` report and `.pptx` presentation and digest. The Desktop folder `CS395_PixelProof_Submission_2026` now contains only those three current files, verified against the repository copies. PDF/DOCX reading and editing copies remain in `deliverables/`; the former Desktop support files are preserved under `~/Documents/PixelProof_Submission_Support_2026/2026-09-25/`. This file organization does not resolve the deferred personal/company fields.
+
 ## Evidence and claims
 
 The frozen research source is commit `497d45c`. The later documentation-review baseline is `16e03d8`; [MD_CONSISTENCY_AUDIT.md](MD_CONSISTENCY_AUDIT.md) records the completed sequential reading of all 28 baseline Markdown files and the subsequent reconciliation. [REQUIREMENTS.md](REQUIREMENTS.md) records the instructor/office precedence. [EVIDENCE_REVIEW.md](EVIDENCE_REVIEW.md) maps the major project areas. The output audit checks formatting and selected data assertions; it does not establish detector generalization. The 20/20 milestone means numerical checks on reused development data. E92 still failed the separate E43 retention rule. Model2 remains experimental.

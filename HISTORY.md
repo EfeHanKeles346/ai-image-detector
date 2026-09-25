@@ -11230,3 +11230,15 @@ map and a subjective 9.2/10 technical/editorial rating. It is explicitly not an 
 review or grade prediction. Full submission readiness is still blocked by user-deferred
 personal and host-specific fields; no fake day, role or experience was written. No school
 submission occurred. Git records this documentation revision separately from E153 research.
+
+
+## 2026-09-25 — Submission formats reconfirmed and Desktop folder simplified
+
+Re-read page 1 of the supplied Summer 2026 office guideline: the report filename ends
+in `.doc`; presentation and digest filenames end in `.pptx`. Retained only these three
+current artifacts in the Desktop submission folder and verified their SHA-256 hashes
+against repository deliverables. Preserved the former Desktop PDF/DOCX copies and support
+notes in `~/Documents/PixelProof_Submission_Support_2026/2026-09-25/`; all seven repository
+deliverables remain unchanged. This supersedes the earlier seven-file Desktop arrangement,
+not the earlier content audit. Deferred personal/company fields still require completion.
+No new experiment, document content revision, model change or school submission occurred.
