@@ -15,11 +15,11 @@ This is the current E1–E152 submission draft. It supersedes the old E26 report
 | Digest, reading copy | [PDF](deliverables/CS395_Digest_EfeHan_Keles_25September2026.pdf) |
 | Study material | [Turkish guide](STUDY_GUIDE_TR.md), [English speaking notes](SPEAKER_NOTES_EN.md) |
 
-The deck has 13 spoken slides and two reference slides. Suggested timing is 765 seconds, subject to actual rehearsal. The report has 28 pages including front matter, 3 figures, 6 tables and 13 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
+The deck has 13 spoken slides and two reference slides. Suggested timing is 795 seconds, subject to actual rehearsal. The report has 30 pages including front matter, 3 figures, 6 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
 
 ## Evidence and claims
 
-The frozen research source is commit `497d45c`. [REQUIREMENTS.md](REQUIREMENTS.md) records the instructor/office precedence. [EVIDENCE_REVIEW.md](EVIDENCE_REVIEW.md) maps the major project areas. The output audit checks formatting and selected data assertions; it does not establish detector generalization. The 20/20 milestone means numerical checks on reused development data. E92 still failed the separate E43 retention rule. Model2 remains experimental.
+The frozen research source is commit `497d45c`. The later documentation-review baseline is `16e03d8`; [MD_CONSISTENCY_AUDIT.md](MD_CONSISTENCY_AUDIT.md) records the completed sequential reading of all 28 baseline Markdown files and the subsequent reconciliation. [REQUIREMENTS.md](REQUIREMENTS.md) records the instructor/office precedence. [EVIDENCE_REVIEW.md](EVIDENCE_REVIEW.md) maps the major project areas. The output audit checks formatting and selected data assertions; it does not establish detector generalization. The 20/20 milestone means numerical checks on reused development data. E92 still failed the separate E43 retention rule. Model2 remains experimental.
 
 Private gallery pixels, raw datasets, model weights, the student's transcript and the supplied administrative screenshot are excluded. The annual report used as a company reference is not committed. The package contains aggregate project evidence and original explanatory diagrams only.
 
@@ -32,3 +32,5 @@ Run `tools/build_report.py` with bundled Python. Render the resulting DOCX using
 Copy `tools/build_presentations.mjs` into a private build directory with a `node_modules` link to the bundled packages. Set absolute `REPORT_ROOT`, `PRESENTATION_BUILD`, `PRESENTATION_SKILL`, `RUNTIME_NODE_MODULES` and `RUNTIME_PYTHON`. Run with bundled Node. Use a fresh build directory for each finalized revision. The finalizer checks native tables, native chart/workbook data, encoded Times New Roman, package structure and first-party import. Use bundled `soffice` to export PDFs and the legacy DOC. Never replace source documents with converted temporary copies.
 
 Run `tools/audit_package.py` after the final PDFs exist. Inspect every page and slide visually as well: XML checks cannot establish visual correctness. Desktop copies must match final repository artifact hashes. Rebuild all affected formats after filling the deferred fields.
+
+The final editorial critique and item-by-item guideline map are in [CRITICAL_REVIEW.md](CRITICAL_REVIEW.md). The technical/editorial assessment is 9.2/10, not a predicted academic grade. Submission readiness remains blocked by the explicitly deferred fields.

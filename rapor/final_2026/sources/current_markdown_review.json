@@ -1,0 +1,158 @@
+{
+  "date": "2026-09-25",
+  "baseline": "16e03d832c57cea2cea8806807660e1389fe9f1e",
+  "baseline_review": "markdown_read_progress.json",
+  "current_revision_review": "Changed/generated/added Markdown reviewed after baseline sequential reading; append-only historical statements interpreted using later corrections.",
+  "files": [
+    {
+      "path": "DATASETS.md",
+      "sha256": "f670b4dc34c6ba03ece5db56475b3a16c014f4dad636f5852fb81ec7d6f4a725",
+      "lines": 3556
+    },
+    {
+      "path": "HISTORY.md",
+      "sha256": "91d2db08e23ee1e4cb8d285e045df05e715afc1c19e975460f14cd5ccbbe1954",
+      "lines": 11232
+    },
+    {
+      "path": "IMAGE_FORENSICS_REFERENCE.md",
+      "sha256": "b0b88e8f4f4490e5a5ca3a34461349330a97d6ed34801f9cc6620109debf82c8",
+      "lines": 689
+    },
+    {
+      "path": "IMAGE_STRUCTURE_NOTES.md",
+      "sha256": "ee232fa480133e7c670dfc43ccab62783f1cec3f0b359cddd678493326c71418",
+      "lines": 215
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "7e094b84e94b40033a8d63d3e2f1aadeb3bbd3c7ee3721c2258b6b7d4e8acc86",
+      "lines": 19
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "sha256": "28d260189e29438fcc4d8b45edf11c821da3b0b3f15acc07b3ceb4e7ac4a98f4",
+      "lines": 496
+    },
+    {
+      "path": "PLAN.md",
+      "sha256": "e29fde5f0fdf0c3739713d55406a4f116ef7de289191db0a84b6c33b403a8b96",
+      "lines": 7457
+    },
+    {
+      "path": "PRESENTATION_EVIDENCE.md",
+      "sha256": "d1ca2da6581c25b3a3d72b5be0d9f69a7be600b455bd6773f09cdd44d9af9b5f",
+      "lines": 107
+    },
+    {
+      "path": "README.md",
+      "sha256": "4f37ccb7268b246d60bc1bff077757454564d335bb5f53d4deeb6df26f72faa1",
+      "lines": 302
+    },
+    {
+      "path": "evidence/e65_diagnostic.md",
+      "sha256": "2ad8b667c826549771a03f20bebf301e375bee4a391659613b3fcbeb2a30da10",
+      "lines": 75
+    },
+    {
+      "path": "evidence/overnight_2026-09-13.md",
+      "sha256": "5287f378297fdc3a34d04434283361f06efb5a0a2cd87b4aa116df651d2b8f5f",
+      "lines": 761
+    },
+    {
+      "path": "ml/ARTIFACTS.md",
+      "sha256": "867041ebf0d917f09c1c6d2a871e668f3ae67eddbf3a46aef7c754edb6eeb737",
+      "lines": 436
+    },
+    {
+      "path": "ml/EXPERIMENTS.md",
+      "sha256": "e400b246c8c6c479005718287a0d3bb414c9546e4b10a88b1539cf3e70893c43",
+      "lines": 10130
+    },
+    {
+      "path": "ml/RINE_FEASIBILITY.md",
+      "sha256": "e91ada8e4b1f3ac13c49290294f53085be17745f4a8e311c633d7a00bb7ad94d",
+      "lines": 68
+    },
+    {
+      "path": "ml/SERVING.md",
+      "sha256": "221e843bf912bcb80991964584333f28652143b751e642e6daf55f2d5b65f722",
+      "lines": 116
+    },
+    {
+      "path": "ml/experiments/README.md",
+      "sha256": "e6e89ee4eaf4915c3aa3a6e0c782c5830d9616c6eacf1ef6c9e85c721656f3d9",
+      "lines": 164
+    },
+    {
+      "path": "ml/experiments/archive/README.md",
+      "sha256": "f376cf163087ad2a769e40b293af6b3b8fb36a9e5e8ff4e0e0ac6681366e33cf",
+      "lines": 34
+    },
+    {
+      "path": "ml/tools/README.md",
+      "sha256": "883b8f638bb79814cf81a735261d74a7fb41a852170888f32224e80467e34d53",
+      "lines": 130
+    },
+    {
+      "path": "rapor/README.md",
+      "sha256": "9c5cd1437bb00b017f009dc2350d9a695f3cfa6260e0d13b6944c09846734266",
+      "lines": 24
+    },
+    {
+      "path": "rapor/STAJ_RAPORU.md",
+      "sha256": "01c899461e8d83ecabe5fa519ca8e8c088bb95d92da7f3f10989b2160f7820bc",
+      "lines": 331
+    },
+    {
+      "path": "rapor/SUNUS_METNI.md",
+      "sha256": "c1cf4ac55bc7c03c26ab3a7382c7998b93e6713f0055f08d848c65eb5d56ea65",
+      "lines": 177
+    },
+    {
+      "path": "rapor/final_2026/CRITICAL_REVIEW.md",
+      "sha256": "fd99e0cbdc053c58b3f3880fd32afd0c04baee33a848fd61fdc96cd6bca8afed",
+      "lines": 133
+    },
+    {
+      "path": "rapor/final_2026/EVIDENCE_REVIEW.md",
+      "sha256": "40745c686b9160775c11dd219ccf6d26b04d6b5c80455362bd4248f6e7bd0605",
+      "lines": 103
+    },
+    {
+      "path": "rapor/final_2026/HANDOFF_TR.md",
+      "sha256": "a2fbec63a2edf0e1d7d3ee2afd986fc8a0a2c59e0042ea5c5b165956828b1b2d",
+      "lines": 27
+    },
+    {
+      "path": "rapor/final_2026/MD_CONSISTENCY_AUDIT.md",
+      "sha256": "958d79d07ba22d899e8d60d9b59f689737ed7650e3012b7f9139738fd2bac76d",
+      "lines": 68
+    },
+    {
+      "path": "rapor/final_2026/README.md",
+      "sha256": "17c356450f9fbb95b96e9fd240daa4fc89d68df668ad5af588347fc0e073bfe8",
+      "lines": 36
+    },
+    {
+      "path": "rapor/final_2026/REPORT_EN.md",
+      "sha256": "0e2c0493572f775bdeceb545c0af1df59020216db92eb70c85692f84fb2ee4f7",
+      "lines": 338
+    },
+    {
+      "path": "rapor/final_2026/REQUIREMENTS.md",
+      "sha256": "395e73f070095b7d4ab41b3f22aeec5e565ba2852cd3f0dafcf21b653c44485c",
+      "lines": 55
+    },
+    {
+      "path": "rapor/final_2026/SPEAKER_NOTES_EN.md",
+      "sha256": "f4bb168142105538decdf51b15959e17dae70c4bd5ac147183281561e031eb6b",
+      "lines": 63
+    },
+    {
+      "path": "rapor/final_2026/STUDY_GUIDE_TR.md",
+      "sha256": "230c3d24cc039bd92b8c2c485b5bf9c5aaecea8a34b19ccde9cafd104df59b86",
+      "lines": 114
+    }
+  ]
+}

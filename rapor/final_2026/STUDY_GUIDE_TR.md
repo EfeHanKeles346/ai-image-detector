@@ -10,7 +10,7 @@ Projenin hikâyesi yalnızca “model eğittik, skor yükseldi” değil. Başla
 
 ## Sunumu nasıl çalışmalısın?
 
-Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 12 dakika 45 saniye; bu gerçek prova ölçümü değildir. PowerPoint’in konuşmacı notlarında İngilizce anlatım bulunuyor. Önce Türkçe anlamını kendi cümlelerinle anlat, sonra İngilizce notları çalış. Notları kelimesi kelimesine ezberlemek yerine slaytın tek ana fikrini öğren.
+Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 13 dakika 15 saniye; bu gerçek prova ölçümü değildir. PowerPoint’in konuşmacı notlarında İngilizce anlatım bulunuyor. Önce Türkçe anlamını kendi cümlelerinle anlat, sonra İngilizce notları çalış. Notları kelimesi kelimesine ezberlemek yerine slaytın tek ana fikrini öğren.
 
 | Slayt | Süre | Anlatacağın ana fikir |
 |---|---:|---|
@@ -22,7 +22,7 @@ Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 12 d
 | 6 | 75 sn | Aynı gerçek fotoğraflarda yanlış alarmlar 68’den 0’a / 14’e indi |
 | 7 | 65 sn | 20 sayısal koşul geçti, ayrı koruma koşulu geçmedi |
 | 8 | 65 sn | Model puanı olasılık değil; iki eşik ve iki görünüm kullanılıyor |
-| 9 | 60 sn | Galeri ve sonraki tanılama deneyleri hâlâ hata gösteriyor |
+| 9 | 90 sn | Önceki kapsamlı final, galeri ve sonraki adaylar hâlâ hata gösteriyor |
 | 10 | 65 sn | Model2 başka konumlara yeterince genellenemedi |
 | 11 | 55 sn | Kod, demo, kayıtlar ve yazılım kontrolleri tamamlanan çıktılar |
 | 12 | 55 sn | Başarı ile henüz kanıtlanmamış iddiaları ayrı tutuyoruz |
@@ -55,9 +55,17 @@ On sayısal koşul iki işleme durumu için kontrol edildi. Bunlar örneğin AI 
 
 Ayrıca “E43’ün yakaladığı hiçbir AI fotoğrafını yeni model kaçırmasın” koşulu vardı. E92, E43’ün yakaladığı bir orijinal AI görüntüsünü kaçırdı. Toplamda daha fazla AI yakalasa da bu özel koşul başarısız. Dolayısıyla doğru ifade: “Yirmi sayısal geliştirme kontrolü geçti, fakat tam kabul sözleşmesi geçmedi.”
 
+## Önceki büyük test ve E102 neden önemli?
+
+E43 daha önce 1.000 gerçek ve 1.000 AI ana görüntülü E49-C testine girdi. Gerçeklerde 391 orijinale ve 490 işlenmiş kopyaya yanlış AI dedi; 20 koşulun 11’ini geçti. Bunlar E43’ün başka bir veri kümesindeki sonuçları. E92’nin 160 gerçek üzerindeki başarısını bu büyük finali geçti şeklinde anlatamayız: E92 gerekli kabul kapısını geçemediği için kendi E49 tekrar karşılaştırması açılmadı.
+
+E102 ise aynı geliştirme verisinde işlenmiş gerçek yanlış alarmını 14’ten 12’ye indirdi ve E92’nin yakaladığı AI’ları korudu. Ama E43’e karşı kalan aynı bir AI kaybını çözemedi. Bu nedenle yeni aday servise alınmadı. E92 güncel demo sürümü; her tabloda en düşük hatayı veren son deney demek değil.
+
+Korunan 300 AI MNW ve 100 gerçek HDR+ görüntüsü hâlâ skorlanmamıştı. Bunları toplamak kendiliğinden bağımsız ve dengeli bir final testi oluşturmaz. Kaynak, akrabalık ve kapsam denetimleri gerekiyor.
+
 ## Ekrandaki yüzde ve belirsizlik
 
-Arayüzde puanın 100 ile çarpılması onu olasılık yapmaz. Örneğin 7,94 eşiği “%7,94 AI ihtimalinde suçluyoruz” anlamına gelmiyor. Bu modelin deneysel puan ölçeğinde seçilmiş çalışma sınırı. Bir başka modelin 50 puanı ile karşılaştırılamaz.
+Arayüzde puanın 100 ile çarpılması onu olasılık yapmaz. Örneğin 7,94 eşiği “%7,94 AI ihtimalinde suçluyoruz” anlamına gelmiyor. Bu modelin deneysel puan ölçeğinde seçilmiş çalışma sınırı. Üst eşik eski E48 kalibrasyonundan, alt eşik tüketilmiş E49 kalibrasyon/geliştirme incelemesinden geliyor; E92 için yeni ve bağımsız bir olasılık kalibrasyonu yapılmış değil. Bir başka modelin 50 puanı ile karşılaştırılamaz.
 
 Orijinal görünüm üst eşik olan yaklaşık 7,94’e ulaşıyorsa AI sinyali görünür kalır. E92’nin iki görünümü de alt eşik olan yaklaşık 1,15’in altındaysa “belirgin AI izi bulunamadı” sonucu çıkar. Kalan durumlarda belirsizlik gerekir. Görünümler anlaşmazsa uyarı da gösterilebilir. Karar yuvarlanmış sayılara değil tam puanlara dayanır.
 
@@ -92,3 +100,15 @@ Piksel AUC 0,742’den yeni konumda 0,566’ya düştü; yeni uyarlama bunu 0,63
 Önce raporun özeti, 4.6 sonuçlar ve 6. sonuç bölümünü oku. Sonra slayt 6–8’i kendi cümlelerinle anlat. Ardından 4.5 bölümündeki gelişim öyküsüne dön. Bilmediğin terimi ezberleyip geçme; örnek üzerinden anlamlandır.
 
 Son bir provada saati açıp on üç ana slaytı anlat. On beş dakikayı geçersen başarısız deneylerin teknik ayrıntılarını kısalt; sayıların sınırlamalarını çıkartma. Kendi deneyimini, şirket birimini ve kişisel öğrenme paragraflarını tamamladıktan sonra rapordaki yer tutucuları kaldır. Canlı demoyu göstereceksen önceden aynı dosyalarla kontrol et; sonucu kesin gerçek/AI belgesi gibi sunma.
+
+## Tarihçeden eklenen önemli ara aşamalar
+
+E33–E41 sırasında yalnızca eşik değiştirmek veya kaynakları dengelemek farklı kamera
+ve üreticilere güvenilir aktarım sağlamadı. E42'nin RR testi 16.953 ana görüntü ve
+bunların 50.858 bağlantılı görünümünü içeriyordu; tüm kabul koşulları geçilmedi.
+E43'ün içerikleri eşleştirilmiş rekonstrüksiyon testinde de ciddi zayıflığı vardı.
+E44–E48'de uzman modelleri birleştirmek bazı AI türlerini yakalarken gerçek fotoğraf
+hatalarını artırabildi; başka bir veri kümesinde GAN görüntüleri kaçırıldı. Bu yüzden
+sonraki geliştirmelerde hem yanlış alarmı azaltmak hem önce yakalanan AI'ları korumak
+ayrı koşullar olarak izlendi. Bu farklı testleri E92'nin 320 ana görüntülük geliştirme
+karşılaştırmasıyla aynı başarı oranında birleştirme.

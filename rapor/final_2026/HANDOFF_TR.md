@@ -1,6 +1,6 @@
 # Teslimden önce tamamlanacak bilgiler
 
-Bu paket teknik içerik, biçim ve kanıt incelemesi tamamlanmış bir **teslim taslağıdır**. Kişisel/kurumsal eksikler senin isteğinle şimdilik açık bırakıldı. Hiçbir dosya okula ya da şirkete gönderilmedi. Dosya adındaki 25 September 2026 hazırlama tarihi; gerçek teslim tarihi farklıysa kapakla birlikte değişmeli.
+Bu paket teknik içeriği ve biçimi kontrol edilmiş bir **teslim taslağıdır**. Başlangıçtaki 28 proje MD dosyasının 37.073 satırlık sıralı okuması ve raporla karşılaştırması tamamlandı; kapsam `MD_CONSISTENCY_AUDIT.md` içinde kayıtlı. Kişisel/kurumsal eksikler senin isteğinle şimdilik açık bırakıldı. Hiçbir dosya okula ya da şirkete gönderilmedi. Dosya adındaki 25 September 2026 hazırlama tarihi; gerçek teslim tarihi farklıysa kapakla birlikte değişmeli.
 
 | Alan | Nerede? | Yapılacak |
 |---|---|---|
@@ -20,6 +20,8 @@ Bu yer tutucular kaldırılmadan dosyayı teslim etme. Birim/kimlik alanlarını
 
 Düzenleme sonrasında içindekiler sayfalarını, sayfa sınırlarını ve tablo/şekil konumlarını yeniden kontrol et. Word veya PowerPoint sürümleri satır kırılımlarını değiştirebilir; teslim edeceğin cihazda son PDF’yi gözle kontrol et. Kapaktaki bilgiler büyürse sonraki sayfalar kayabilir. En son PDF ile DOCX aynı içerikte olmalı.
 
-Sunumdaki 12 dakika 45 saniye, planlanan konuşma süresidir. Gerçek bir prova yapılarak doğrulanmalıdır. Canlı demo gösterimi bu süreye dahil değildir. Çalıştırılmadan seçilmiş ekran görüntülerine başarı sonucu yüklenmedi; özel galeri fotoğrafları dosyalara konmadı.
+Sunumdaki 13 dakika 15 saniye, planlanan konuşma süresidir. Gerçek bir prova yapılarak doğrulanmalıdır. Canlı demo gösterimi bu süreye dahil değildir. Çalıştırılmadan seçilmiş ekran görüntülerine başarı sonucu yüklenmedi; özel galeri fotoğrafları dosyalara konmadı.
 
 Raporda AI kodlama desteği açıkça belirtildi. Yazdıklarını anlaman, kişisel katkılarını doğrulaman ve kendi öğrenme bölümünü sahiplenmen gerekir. Not veya kabul garantisi verilmiyor; değerlendirme hocana aittir.
+
+Son eleştirel inceleme `CRITICAL_REVIEW.md` içinde. Teknik içerik ve anlatım için öznel değerlendirme 9,2/10; bu bir hoca notu tahmini değil. Yukarıdaki eksikler tamamlanmadan bütün teslimin 9/10 üzerinde veya yüzde yüz kurallara uygun olduğu iddia edilmiyor.

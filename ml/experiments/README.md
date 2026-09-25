@@ -1,5 +1,13 @@
 # Runnable experiment index
 
+**Historical index, clarified 25 September 2026.** Entries below retain their dated
+E20–E90 status and are not a live job list. Later completion/rejection entries in
+[EXPERIMENTS.md](../EXPERIMENTS.md) and the active checkpoint in [PLAN.md](../../PLAN.md)
+take precedence. E152 is the latest completed research checkpoint; E153 remains planned.
+The local demo uses E92, as documented in [SERVING.md](../SERVING.md). E20 is the
+historical worker's canonical artifact, not the current E92 demo model.
+
+
 These scripts are the reproducible protocol surface. E7–E18 are frozen under `archive/`; E20–E32
 remain runnable because later decisions reuse their receipts, cached scores and source-wise splits.
 Runnable means reproducible research, not served or scientifically accepted.

@@ -1,0 +1,344 @@
+{
+  "snapshot": "16e03d832c57cea2cea8806807660e1389fe9f1e",
+  "semantic_review_complete": true,
+  "boundary": "All baseline Markdown passages were sequentially reviewed. Exact duplicate paragraphs were cross-referenced only after the same text had been exposed. Current edits receive a separate diff/content review. This is a document reconciliation, not independent replication of every experiment.",
+  "files": [
+    {
+      "path": "DATASETS.md",
+      "total_lines": 3545,
+      "sequentially_read_through": 3545,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          3545
+        ]
+      ]
+    },
+    {
+      "path": "HISTORY.md",
+      "total_lines": 11202,
+      "sequentially_read_through": 11202,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          11202
+        ]
+      ]
+    },
+    {
+      "path": "IMAGE_FORENSICS_REFERENCE.md",
+      "total_lines": 689,
+      "sequentially_read_through": 689,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          689
+        ]
+      ]
+    },
+    {
+      "path": "IMAGE_STRUCTURE_NOTES.md",
+      "total_lines": 215,
+      "sequentially_read_through": 215,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          215
+        ]
+      ]
+    },
+    {
+      "path": "LICENSE.md",
+      "total_lines": 19,
+      "sequentially_read_through": 19,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          19
+        ]
+      ]
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "total_lines": 496,
+      "sequentially_read_through": 496,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          496
+        ]
+      ]
+    },
+    {
+      "path": "PLAN.md",
+      "total_lines": 7445,
+      "sequentially_read_through": 7445,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          7445
+        ]
+      ]
+    },
+    {
+      "path": "PRESENTATION_EVIDENCE.md",
+      "total_lines": 107,
+      "sequentially_read_through": 107,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          107
+        ]
+      ]
+    },
+    {
+      "path": "README.md",
+      "total_lines": 294,
+      "sequentially_read_through": 294,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          294
+        ]
+      ]
+    },
+    {
+      "path": "evidence/e65_diagnostic.md",
+      "total_lines": 75,
+      "sequentially_read_through": 75,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          75
+        ]
+      ]
+    },
+    {
+      "path": "evidence/overnight_2026-09-13.md",
+      "total_lines": 761,
+      "sequentially_read_through": 761,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          761
+        ]
+      ]
+    },
+    {
+      "path": "ml/ARTIFACTS.md",
+      "total_lines": 429,
+      "sequentially_read_through": 429,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          429
+        ]
+      ]
+    },
+    {
+      "path": "ml/EXPERIMENTS.md",
+      "total_lines": 10106,
+      "sequentially_read_through": 10106,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          10106
+        ]
+      ]
+    },
+    {
+      "path": "ml/RINE_FEASIBILITY.md",
+      "total_lines": 68,
+      "sequentially_read_through": 68,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          68
+        ]
+      ]
+    },
+    {
+      "path": "ml/SERVING.md",
+      "total_lines": 116,
+      "sequentially_read_through": 116,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          116
+        ]
+      ]
+    },
+    {
+      "path": "ml/experiments/README.md",
+      "total_lines": 156,
+      "sequentially_read_through": 156,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          156
+        ]
+      ]
+    },
+    {
+      "path": "ml/experiments/archive/README.md",
+      "total_lines": 27,
+      "sequentially_read_through": 27,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          27
+        ]
+      ]
+    },
+    {
+      "path": "ml/tools/README.md",
+      "total_lines": 124,
+      "sequentially_read_through": 124,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          124
+        ]
+      ]
+    },
+    {
+      "path": "rapor/README.md",
+      "total_lines": 24,
+      "sequentially_read_through": 24,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          24
+        ]
+      ]
+    },
+    {
+      "path": "rapor/STAJ_RAPORU.md",
+      "total_lines": 327,
+      "sequentially_read_through": 327,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          327
+        ]
+      ]
+    },
+    {
+      "path": "rapor/SUNUS_METNI.md",
+      "total_lines": 173,
+      "sequentially_read_through": 173,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          173
+        ]
+      ]
+    },
+    {
+      "path": "rapor/final_2026/EVIDENCE_REVIEW.md",
+      "total_lines": 86,
+      "sequentially_read_through": 86,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          86
+        ]
+      ]
+    },
+    {
+      "path": "rapor/final_2026/HANDOFF_TR.md",
+      "total_lines": 25,
+      "sequentially_read_through": 25,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          25
+        ]
+      ]
+    },
+    {
+      "path": "rapor/final_2026/README.md",
+      "total_lines": 34,
+      "sequentially_read_through": 34,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          34
+        ]
+      ]
+    },
+    {
+      "path": "rapor/final_2026/REPORT_EN.md",
+      "total_lines": 318,
+      "sequentially_read_through": 318,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          318
+        ]
+      ]
+    },
+    {
+      "path": "rapor/final_2026/REQUIREMENTS.md",
+      "total_lines": 55,
+      "sequentially_read_through": 55,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          55
+        ]
+      ]
+    },
+    {
+      "path": "rapor/final_2026/SPEAKER_NOTES_EN.md",
+      "total_lines": 63,
+      "sequentially_read_through": 63,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          63
+        ]
+      ]
+    },
+    {
+      "path": "rapor/final_2026/STUDY_GUIDE_TR.md",
+      "total_lines": 94,
+      "sequentially_read_through": 94,
+      "sequential_complete": true,
+      "read_ranges": [
+        [
+          1,
+          94
+        ]
+      ]
+    }
+  ],
+  "sequential_batches": 69
+}

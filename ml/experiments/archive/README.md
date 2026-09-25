@@ -1,5 +1,12 @@
 # Archived experiment scripts — frozen evidence
 
+**Interpretation note, 25 September 2026.** The table preserves original conclusions.
+Claims of resize-pipeline immunity, automatic tile safety and validated localization
+must be read with E19c and the later corrections in EXPERIMENTS.md and
+[IMAGE_FORENSICS_REFERENCE.md](../../../IMAGE_FORENSICS_REFERENCE.md).
+An archived result is not current evidence of universal detection or causal mechanism.
+
+
 `e60_audit_v1.py` is separately archived on 2026-09-10: an aborted pre-score engineering
 audit whose strict uppercase TRAIN check rejected inherited lowercase train metadata. It is
 preserved for the original contract hash, not a completed model experiment or executable restart.

@@ -1,5 +1,12 @@
 # Runtime artifacts
 
+**Scope clarification, 25 September 2026.** The installation instructions below begin
+with the historical E20/E26 worker and then record research artifacts chronologically.
+They are not a complete E92 setup recipe. For the current local E92 demo, follow
+[SERVING.md](SERVING.md) and the pinned manifest checked by `serve_local_demo.py`.
+For report claims, use [the current submission package](../rapor/final_2026/README.md).
+
+
 The Git repository intentionally does not contain model weights. Runtime identity is instead
 frozen in `artifacts.manifest.json`: origin, licence, revision, expected path, SHA-256 and the
 model/feature schema are recorded together.

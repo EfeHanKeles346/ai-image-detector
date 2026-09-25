@@ -11200,3 +11200,33 @@ fields; they remain visible with personal reflection/course/day confirmations in
 HANDOFF_TR.md. Therefore the package is a submission draft pending those edits. No school
 upload/email, new dataset/weights download, fitting, protected-reserve access or serving
 change occurred. Official company-reference research was used only for report context.
+
+## 2026-09-25 — Exhaustive Markdown reconciliation and critical submission review
+
+Sequentially reviewed all 28 tracked Markdown files at documentation baseline 16e03d8:
+37,073 lines and 1,761 sections. The durable read ledger records complete ranges; exact
+duplicate paragraphs were referenced only after prior exposure. Reviewed current edits
+separately. This closes the earlier open reading task, not an independent replication
+of every model experiment. Later corrections supersede historical overclaims.
+
+Revised the report to include the E20–E50 transfer/fusion failures, E51–E92 development
+bridge, E43's distinct failed E49-C final (11/20), unpromoted E102 successor, threshold
+origins, gallery dependence, limited source ancestry, reserve status and Model2's
+CocoGlide/COCO/placement limits. Added plain explanations of data roles and the documentation
+to decision workflow. Corrected historical index scope and an early SCIMD licence/count
+statement. The main model, data roles, thresholds and serving policy did not change.
+
+The current English report has 30 pages, 35 numbered headings, 3 figures, 6 tables and
+14 full references (10 scholarly). The abstract is 228 words. The final editorial pass
+rechecked all 16 changed rendered pages; 14 unchanged pages matched reviewed images.
+Legacy DOC round-trip preserves every page's word multiset and all 30 pages; five image
+rendering differences were inspected. Package audit passes 638 scoped checks. The existing
+15-slide presentation and one-slide digest retain their reviewed editable native content;
+planned speech is 795 seconds. Seven deliverables and support notes are copied to the
+Desktop submission folder with matching hashes.
+
+CRITICAL_REVIEW.md records the final skeptical critique, the instructor/office requirement
+map and a subjective 9.2/10 technical/editorial rating. It is explicitly not an independent
+review or grade prediction. Full submission readiness is still blocked by user-deferred
+personal and host-specific fields; no fake day, role or experience was written. No school
+submission occurred. Git records this documentation revision separately from E153 research.

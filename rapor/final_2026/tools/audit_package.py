@@ -15,9 +15,9 @@ def check(name,ok):
  if not ok:raise AssertionError(name)
 name='CS395_FinalReport_EfeHan_Keles_25September2026'
 d=Document(OUT/(name+'.docx'));r=PdfReader(OUT/(name+'.pdf'))
-check('report_28_pages',len(r.pages)==28)
+check('report_30_pages',len(r.pages)==30)
 check('abstract_at_most_250_words',len(c.ABSTRACT.split())<=250)
-check('references_13_including_10_scholarly',len(c.REFS)==13)
+check('references_14_including_10_scholarly',len(c.REFS)==14)
 check('figures_3_tables_6',len(d.inline_shapes)==3 and len(d.tables)==6)
 for sec in d.sections:check('one_inch_margins',all(abs(x.inches-1)<.0001 for x in [sec.top_margin,sec.bottom_margin,sec.left_margin,sec.right_margin]))
 ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
@@ -58,7 +58,7 @@ check('no_relative_or_lowercase_figure_citations',not re.search(r'\bthe (Figure|
 for key,txt in c.REFS:
  author='Türk Telekom' if key.startswith('Türk') else key
  check('reference_cited:'+key,author in body)
- check('reference_has_full_entry:'+key,'Retrieved September 25, 2026, from https://' in txt and len(txt.split())>15)
+ check('reference_has_full_entry:'+key,'Retrieved September 25, 2026, from https://' in txt and bool(re.search(r'\((?:\d{4}[ab]?|n\.d\.)\)\.',txt)) and len(txt.split('Retrieved')[0].split())>=7)
 # Page-span checks use the rendered body, not estimated word counts.
 check('company_at_most_3_pages',m['3. Project background']-m['2. Company information']<=3)
 check('literature_at_most_3_pages',m['4. Internship project']-m['3.4 Related literature']<=3)
@@ -72,6 +72,16 @@ for cond,fp in [('publisher_original',0),('social_q75',14)]:
  b=e['reports'][cond]['new']['binary_metrics'];check('E92_confusion:'+cond,b['confusion']['tp']==159 and b['confusion']['fn']==1 and b['confusion']['fp']==fp)
  check('E92_numeric_gates:'+cond,e['checks'][cond]['absolute_gates_passed'])
 check('E92_full_acceptance_failed',not e['passes_limited_dev_screen'] and not e['checks']['publisher_original']['zero_new_ai_misses'] and not e['independent_final_passed'])
+rr=json.loads((REPO/'evidence/e42_rr_result.json').read_text())
+check('E42_RR_distinct_parents_and_views',rr['by_condition']['original']['metrics']['counts']['total']==16953 and sum(v['metrics']['counts']['total'] for v in rr['by_condition'].values())==50858)
+check('E42_RR_original_false_alerts',rr['by_condition']['original']['metrics']['confusion']['fp']==2052)
+final=json.loads((REPO/'evidence/e49_final_result.json').read_text())
+check('E49_comprehensive_failed_11_of_20',final['parent_count']==2000 and final['observation_count']==4000 and final['gate']=={'passed':False,'passed_checks':11,'total_checks':20})
+for cond,fp,tp in [('publisher_original',391,943),('social_q75',490,955)]:
+ check('E49_confusion:'+cond,final['conditions'][cond]['binary_metrics']['confusion']['fp']==fp and final['conditions'][cond]['binary_metrics']['confusion']['tp']==tp)
+later=json.loads((REPO/'evidence/e102_development.json').read_text())
+check('E102_social_false_alerts_12',later['reports']['social_q75']['new']['binary_metrics']['confusion']['fp']==12)
+check('E102_full_acceptance_failed',not later['passes_limited_dev_screen'] and not later['independent_final_passed'])
 check('model2_not_promoted',not json.loads((REPO/'evidence/e135_location_learning.json').read_text())['promotion_allowed'])
 a={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
 for kind,count,table_count,chart_count in [('Presentation',15,5,1),('Digest',1,0,0)]:
@@ -93,6 +103,6 @@ for p in sorted(OUT.iterdir()):
  check('under_10MB:'+p.name,p.stat().st_size<10_000_000);files[p.name]={'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
 check('seven_primary_files',len(files)==7)
 placeholders=[{'heading_context':b.get('type'),'text':b.get('text')} for b in c.B if '[TO COMPLETE' in b.get('text','')]
-result={'state':'pass_with_student_deferred_fields','report_pages':28,'report_headings':35,'figures':3,'tables':6,'references':13,'checks_passed':len(checks),'checks':checks,'files':files,'unresolved_fields':len(placeholders)+2,'claim_boundary':'Formatting and selected evidence assertions; not scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing.'}
+result={'state':'pass_with_student_deferred_fields','report_pages':len(r.pages),'report_headings':35,'figures':3,'tables':6,'references':14,'checks_passed':len(checks),'checks':checks,'files':files,'unresolved_fields':len(placeholders)+2,'claim_boundary':'Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing.'}
 (ROOT/'sources/package_audit.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
 print(json.dumps({k:result[k] for k in ['state','report_pages','checks_passed','unresolved_fields']},indent=2))

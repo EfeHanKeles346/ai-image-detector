@@ -1,14 +1,14 @@
 {
   "state": "pass_with_student_deferred_fields",
-  "report_pages": 28,
+  "report_pages": 30,
   "report_headings": 35,
   "figures": 3,
   "tables": 6,
-  "references": 13,
-  "checks_passed": 608,
+  "references": 14,
+  "checks_passed": 638,
   "checks": [
     {
-      "name": "report_28_pages",
+      "name": "report_30_pages",
       "passed": true
     },
     {
@@ -16,7 +16,7 @@
       "passed": true
     },
     {
-      "name": "references_13_including_10_scholarly",
+      "name": "references_14_including_10_scholarly",
       "passed": true
     },
     {
@@ -57,6 +57,58 @@
     },
     {
       "name": "encoded_runs_12pt",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
       "passed": true
     },
     {
@@ -1776,6 +1828,14 @@
       "passed": true
     },
     {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
       "name": "nearby_preceding_citation:Table 1",
       "passed": true
     },
@@ -1785,6 +1845,14 @@
     },
     {
       "name": "caption_placement:Table 1",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
       "passed": true
     },
     {
@@ -1848,6 +1916,14 @@
       "passed": true
     },
     {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
       "name": "nearby_preceding_citation:Figure 2",
       "passed": true
     },
@@ -1877,6 +1953,14 @@
     },
     {
       "name": "caption_placement:Figure 3",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
+      "passed": true
+    },
+    {
+      "name": "body_double_justified",
       "passed": true
     },
     {
@@ -2096,6 +2180,14 @@
       "passed": true
     },
     {
+      "name": "reference_cited:Adobe",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Adobe",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Chen",
       "passed": true
     },
@@ -2237,6 +2329,34 @@
     },
     {
       "name": "E92_full_acceptance_failed",
+      "passed": true
+    },
+    {
+      "name": "E42_RR_distinct_parents_and_views",
+      "passed": true
+    },
+    {
+      "name": "E42_RR_original_false_alerts",
+      "passed": true
+    },
+    {
+      "name": "E49_comprehensive_failed_11_of_20",
+      "passed": true
+    },
+    {
+      "name": "E49_confusion:publisher_original",
+      "passed": true
+    },
+    {
+      "name": "E49_confusion:social_q75",
+      "passed": true
+    },
+    {
+      "name": "E102_social_false_alerts_12",
+      "passed": true
+    },
+    {
+      "name": "E102_full_acceptance_failed",
       "passed": true
     },
     {
@@ -2443,33 +2563,33 @@
   "files": {
     "CS395_Digest_EfeHan_Keles_25September2026.pdf": {
       "bytes": 69382,
-      "sha256": "debea8c3d5ab36668b4f233bc22f06a7b2443fe1702a21a2452df51ba2ba4ba5"
+      "sha256": "0599ab9aa4ed3c713525cca7522c276ecc2b8bba3bcf8e6ee67c44d8bd24f824"
     },
     "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 13180,
-      "sha256": "034905cb267aa0beaecd3b8a3b4447b632206e4d7835cb5bfc6074bb9993c4e8"
+      "bytes": 13176,
+      "sha256": "29ed9115dbc5f978a88e9d70d2b3e32f220f2b487acb705689bdf63fe36b53d6"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
-      "bytes": 277504,
-      "sha256": "800c14905bba9eb1eb717f9d3400dc0c623245951e4527336c085d754759fcd6"
+      "bytes": 288256,
+      "sha256": "58a20bf8b9c9061dc7cb818c7e5857289a0b892d3f12fab0e7c782d876964243"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
-      "bytes": 179838,
-      "sha256": "9715a46d00b82259a5b6e698fc82adafe5fc2ada7eda4771524a6cac9a786bb6"
+      "bytes": 181724,
+      "sha256": "51a1040d299466fdccbfbbe64d83eca27ed6eb83b9b95f05d5b195dbf52968a9"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 363201,
-      "sha256": "9561b60e8816f7feb9bf113500f42492029e7a7e3878c98c01e63639cc420917"
+      "bytes": 375018,
+      "sha256": "f27b88bba6b2cd1af75dbbeb4ec9505fc19b305f9ede087af6c4a82674ed5f0c"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 265392,
-      "sha256": "b711980aa6932b1a0e2ef030064d07c10be7005b515dd809e0babac535234322"
+      "bytes": 270809,
+      "sha256": "6f23abf89f2263e1e22575ee595ecde8185578bdabc1213847e9d70885cf95c8"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 62860,
-      "sha256": "92bea4b5a61188b2d270b6f1daf0e3212449efc0e42a52bb2b73c45d815daea4"
+      "bytes": 63139,
+      "sha256": "9b53dc6562dc4828692fc6b923bd46349b01444ef0cebc1dc97dec2bf430d6e1"
     }
   },
   "unresolved_fields": 10,
-  "claim_boundary": "Formatting and selected evidence assertions; not scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing."
+  "claim_boundary": "Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing."
 }

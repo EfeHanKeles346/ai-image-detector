@@ -1,5 +1,11 @@
 # Dataset tools
 
+**Scope note, 25 September 2026.** This index starts with historical acquisition tools;
+its 255 GB figure describes the July acquisition, not a current total or an instruction
+to download. Current authorization and registered roles in PLAN.md and DATASETS.md take
+precedence. The current E92 demo launcher is documented in [SERVING.md](../SERVING.md).
+
+
 Acquisition and auditing for the 255 GB of evaluation data described in `HISTORY.md` §1c.
 These live in the repo rather than beside the data, because the *auditing rule* is part of the
 method — see `HISTORY.md` §1b for why.

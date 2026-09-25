@@ -14,6 +14,14 @@ Engineering history is in [HISTORY.md](HISTORY.md), scientific protocols/results
 [ml/EXPERIMENTS.md](ml/EXPERIMENTS.md), and acquisition/provenance records in
 [DATASETS.md](DATASETS.md). These are the authoritative ongoing records.
 
+## Current demo and submission files
+
+Use [ml/SERVING.md](ml/SERVING.md) for the E92 launcher and `/analyze` contract.
+The current English report, presentation and digest are in
+[rapor/final_2026](rapor/final_2026/README.md). Deferred personal/company fields are
+listed in its handoff note. The old E20 model card and E26 talk are historical evidence,
+not the current submission files.
+
 The sections below preserve the earlier E20–E32 architecture, commands and results as
 legacy developer reference. They do not identify the current E92 demo entrypoint or
 establish its acceptance. Experimental models, failed candidates and current serving

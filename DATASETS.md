@@ -3,14 +3,23 @@
 What we hold, what each set is good for, and which module it feeds. Replaces the
 former `STATUS.md`, whose content is now covered in more detail by `HISTORY.md` §2b.
 
-**The rule that governs everything here** (`HISTORY.md` §1b): a dataset flaw is a
+**Historical early rule, qualified by the later audits below** (`HISTORY.md` §1b): a dataset flaw is a
 *usage condition*, not a disqualification. A shortcut only exists if the model can
 perceive it. Whole-image training can see image dimensions; tile training cannot,
 because every tile arrives at 128×128 regardless of where it came from.
 
 ---
 
-## Current acquisition policy — 2026-09-14 home-network update
+## Reading the dated acquisition record
+
+The September 14 home-network authorization below is historical. The September 16
+mobile-data constraint in PLAN.md is the latest recorded network restriction before
+report production. The September 25 report work acquires no image data or weights.
+Earlier "tile-safe" wording is also historical: fixed crop dimensions do not eliminate
+processing, content or source shortcuts. Read the dated corrections in
+IMAGE_FORENSICS_REFERENCE.md and E148 rather than treating crop size as a safety proof.
+
+## Historical acquisition policy — 2026-09-14 home-network update
 
 Dataset downloads are authorized again. This record is explicitly reactivated by the
 user alongside PLAN/HISTORY/EXPERIMENTS. Every acquisition must identify what and why,
@@ -406,6 +415,8 @@ Every parent receives two paired conditions: `publisher_original` and determinis
 (EXIF transpose, RGB, long side <=1080, JPEG q75, 4:2:0, metadata stripped). The conditions are
 reported separately and never counted as 4,000 independent samples. A source/label-stratified,
 parent-level 10,000-bootstrap contract protects confidence intervals from derived-copy inflation.
+
+**25 September reconciliation note:** The early SCIMD sentence below has an incorrect licence and approximate count/size. The later publisher audit and E51 receipt supersede it: CC BY 4.0, 174,438,734 archive bytes and 17,620 image files in the archive. Its 224-pixel resized-real restriction remains. This is a documentation correction, not a new acquisition.
 
 Rejected alternatives are part of the registry, not forgotten research. SCIMD-17 is only 177 MB,
 Apache-2.0 and genuinely camera-captured, but the publisher resized all 17,000 images to 224 x 224;

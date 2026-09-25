@@ -2,8 +2,20 @@
 
 Everything that was decided, measured or abandoned lives in [`HISTORY.md`](HISTORY.md)
 (append-only project archive) and [`ml/EXPERIMENTS.md`](ml/EXPERIMENTS.md) (append-only scientific
-log). This file holds
-only what is *next*, so there is exactly one place to look and one place to update.
+log). The current checkpoint and priorities are at the top. Older dated plans below
+preserve their original decisions; later completion/rejection records supersede them.
+They are not a queue of all experiments that should still be run.
+
+## Submission checkpoint — 2026-09-25
+
+The exhaustive 28-file Markdown review and technical/editorial revision are complete.
+Current files are in `rapor/final_2026/deliverables/` and the Desktop folder
+`CS395_PixelProof_Submission_2026`. Report: 30 pages, 14 references, 638 scoped checks.
+The critical review rates the technical draft 9.2/10 subjectively; this is not a grade.
+Next submission work is student-dependent: fill the explicitly deferred identity,
+actual company/department/role and personal-reflection fields in HANDOFF_TR.md, regenerate
+all affected formats, recheck pagination and rehearse the 13:15 presentation. No final
+school upload is authorized or claimed. E153 remains a separate unexecuted research plan.
 
 ## Active checkpoint — E152 complete; E153 paired-control audit next (2026-09-16)
 

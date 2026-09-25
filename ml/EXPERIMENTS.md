@@ -1,5 +1,13 @@
 # Experiment Log
 
+**Reading guide (25 September 2026).** This is an append-only chronology. Early
+explanations and plans must be read with their later corrections, particularly E19b/E19c,
+E27 and the E92 readiness review. A planned/fitted candidate is not a served or accepted
+model, and the newest experiment number is not the demo version. The local demo remains
+E92; E152 is the latest completed research checkpoint and E153 is planned. The current
+report package and the scope of its completed Markdown reconciliation are in
+[`rapor/final_2026`](../rapor/final_2026/README.md).
+
 One entry per experiment: date, config, seed, metrics, conclusion. Rule from
 the methodology section of the roadmap: a single seed is a number, not
 evidence — key comparisons get ≥3 seeds.
@@ -10104,3 +10112,19 @@ were needed. E153 remains a prospective research step, not a completed report re
 Documentation/package validation is recorded separately from scientific acceptance;
 20/20 is not rewritten as full acceptance or independent validation. Deferred personal
 and company metadata remain explicitly marked at the student's request.
+
+## Documentation reconciliation closure — 2026-09-25 (no new experiment)
+
+Completed the baseline 28-file/37,073-line sequential Markdown review and compared the
+major E1–E152 chronology with the submission narrative. Distinct E49 and E66 populations,
+E92's failed reference-retention rule, E102 nonpromotion, transformed-view dependence,
+gallery history and source-fold limitations remain explicit. Model2 includes the early
+mask-size problem, full CocoGlide control and shared COCO origins before E132–E135.
+
+The revised report is 30 pages with 14 references; 638 artifact/evidence checks pass.
+Rendered PDF/DOCX/DOC and presentation/digest consistency were checked. A separate critical
+rubric rates technical/editorial quality 9.2/10 subjectively and keeps deferred identity,
+company and personal-experience fields as submission blockers. This is not new model
+accuracy, independent validation, a grade guarantee or a rerun of 1,245 software tests.
+No fitting, protected scoring, dataset download, artifact replacement or serving change.
+E153 remains planned. See rapor/final_2026/MD_CONSISTENCY_AUDIT.md and CRITICAL_REVIEW.md.

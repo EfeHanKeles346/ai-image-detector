@@ -4,7 +4,7 @@
 > For the current demo and research status, use PLAN.md, HISTORY.md and ml/EXPERIMENTS.md.
 > The historical rates and launch commands below must not be attributed to E92.
 
-Bu dosya sunum ve staj raporu için güncel, izlenebilir özet kaynaktır. `rapor/` klasörü E26 sonu
+Bu dosya E20–E31 döneminin tarihsel kanıt özetidir. Güncel teslim paketi [rapor/final_2026](rapor/final_2026/README.md) içindedir. `rapor/` klasörü E26 sonu
 tarihsel teslim anını korur; M1–M6 ile gelen çalışabilir proje-modeli kilometre taşı burada eklenir.
 
 ## Tek cümlelik sonuç

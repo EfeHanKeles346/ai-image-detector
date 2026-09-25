@@ -1,4 +1,8 @@
 # PixelProof — Staj Bitirme Sunumu Konuşma Metni
+
+> **Tarihsel E26 taslağı; teslim için kullanma.** Bu metnin tarihleri, model adları,
+> oranları ve sunum süresi kendi dönemine aittir. Güncel İngilizce teslim dosyaları
+> [final_2026/README.md](final_2026/README.md) içindedir. Eski metin korunmuştur.
 *(45 slayt · hedef ~20 dakika · konuşma dili)*
 
 ---
