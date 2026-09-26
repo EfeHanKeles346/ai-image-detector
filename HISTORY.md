@@ -11288,3 +11288,20 @@ Report: 30 pages, unchanged heading-page map, pages 1 and 8 visually reviewed, 2
 pages identical to the prior render. Presentation: updated cover reviewed, 14 other slides
 identical to the prior render. Digest inspected; both PPTX finalizers pass without layout
 warnings. All 638 package checks pass. No new model experiment or school submission.
+
+
+## 2026-09-26 — Peer-cover compatibility and strict format recheck
+
+Compared the student's peer-cover screenshot with the office cover checklist and the
+instructor message. The office does not prescribe the peer's centered composition;
+its 12-point report rule and the instructor's left-heading rule contain no explicit
+cover exception. Retained the existing cover because the requested enlargement and
+centering were conditional on having no compliance concern. Recorded this interpretation
+in REQUIREMENTS.md, without inventing a new institutional rule.
+
+Reran all 638 scoped artifact checks and verified that the three Desktop files match
+the previously rendered and inspected final hashes. Five report fields remain: submission
+date, relevant competitors/suppliers, department reporting line, department duties and
+mentor identities/titles/emails. Presentation and digest each retain only the requested
+date placeholder. Digest is one-slide PPTX, as stated on guideline pages 1 and 9. No
+submission artifact, model or experiment was changed by this read-only compliance review.

@@ -58,3 +58,19 @@ E131/E146/E151 are separate diagnostic heads, never active E92 accuracy. Model2 
 experimental. Old rapor files and PRESENTATION_EVIDENCE.md are historical snapshots.
 Commit only project-derived aggregate evidence, narrative, builders and deliverables;
 no private gallery pixels, raw datasets, model weights, transcript or supplied screenshot.
+
+
+## Cover interpretation reconfirmed — 26 September 2026
+
+The student's peer cover is a visual reference, not an official prescribed template.
+Guideline pages 1–2 list required cover information without prescribing a centered
+composition or larger title. Page 6 specifies Times New Roman, 12 point. The instructor
+requires left-aligned headings and justified text with no explicit cover exception.
+Because the request to imitate the peer is conditional on compatibility, retain the
+12-point, black, bold, left-aligned report title and existing cover alignment. Do not
+claim the peer cover is forbidden in every interpretation or certified acceptable.
+Presentation and digest font-size variation is explicitly permitted on pages 8–9.
+
+Submission formats on page 1 remain report .doc, presentation .pptx, digest .pptx.
+Page 9 explicitly requires a one-slide PowerPoint digest. PDF/DOCX are supporting
+reading/editing formats, not substitutes for the guideline's named submission files.
