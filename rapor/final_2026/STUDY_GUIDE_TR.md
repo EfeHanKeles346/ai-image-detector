@@ -10,7 +10,7 @@ Projenin hikâyesi yalnızca “model eğittik, skor yükseldi” değil. Başla
 
 ## Sunumu nasıl çalışmalısın?
 
-Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 13 dakika 15 saniye; bu gerçek prova ölçümü değildir. PowerPoint’in konuşmacı notlarında İngilizce anlatım bulunuyor. Önce Türkçe anlamını kendi cümlelerinle anlat, sonra İngilizce notları çalış. Notları kelimesi kelimesine ezberlemek yerine slaytın tek ana fikrini öğren.
+Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 13 dakika 35 saniye; bu gerçek prova ölçümü değildir. PowerPoint’in konuşmacı notlarında İngilizce anlatım bulunuyor. Önce Türkçe anlamını kendi cümlelerinle anlat, sonra İngilizce notları çalış. Notları kelimesi kelimesine ezberlemek yerine slaytın tek ana fikrini öğren.
 
 | Slayt | Süre | Anlatacağın ana fikir |
 |---|---:|---|
@@ -21,7 +21,7 @@ Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 13 d
 | 5 | 65 sn | Hazır görsel temsillerin üzerine projeye ait uyarlama ve uygulama kurduk |
 | 6 | 75 sn | Aynı gerçek fotoğraflarda yanlış alarmlar 68’den 0’a / 14’e indi |
 | 7 | 65 sn | 20 sayısal koşul geçti, ayrı koruma koşulu geçmedi |
-| 8 | 65 sn | Model puanı olasılık değil; iki eşik ve iki görünüm kullanılıyor |
+| 8 | 85 sn | Model puanı olasılık değil; iki eşik ve iki görünüm kullanılıyor |
 | 9 | 90 sn | Önceki kapsamlı final, galeri ve sonraki adaylar hâlâ hata gösteriyor |
 | 10 | 65 sn | Model2 başka konumlara yeterince genellenemedi |
 | 11 | 55 sn | Kod, demo, kayıtlar ve yazılım kontrolleri tamamlanan çıktılar |
@@ -71,6 +71,8 @@ Orijinal görünüm üst eşik olan yaklaşık 7,94’e ulaşıyorsa AI sinyali 
 
 Eski E43 artık iki düşük E92 puanını otomatik olarak belirsize çevirmiyor; danışma niteliğinde ayrı bilgi. “İz bulamadım” yine de “kesin gerçek” değildir. Daha önce görülmemiş bir üretici de düşük puan üretebilir. Eşiği sırf bir fotoğrafta karar almak için keyfî ±5 oynatmak bu sorunu çözmez; başka fotoğraflardaki hataları gizleyebilir.
 
+Sitenin iki puanı birleştirdiği kararda, aynı 160 gerçek görüntünün 139’unda belirgin AI izi bulunmadı, 21’inde sonuç belirsiz kaldı; hiçbirine AI uyarısı verilmedi. 160 AI görüntüsünün 159’unda AI uyarısı, birinde belirsiz sonuç çıktı. İşlenmiş görüntülerdeki 14 yanlış alarm ile sitedeki sıfır yanlış AI uyarısı bu yüzden çelişmiyor: ölçülen karar kuralları farklı. Belirsiz bırakılan gerçek fotoğrafları doğru sınıflandırılmış gibi saymamalıyız.
+
 ## Model2 neden bitmedi?
 
 Model2 için bütün görüntüye AI demek yetmiyor; hangi piksellerin düzenlendiğini bulmak gerekiyor. On altı ana görüntülü, tek düzenleyicili pilotta düzenleme farklı konumlara taşınınca piksel sıralama başarısı düştü. İki konumla öğrenme bazı kayıpları düzeltti ama önceki konumdaki sonucu bozdu ve gerçek görüntülerde yanlış işaretlenen alanı artırdı.
@@ -99,7 +101,7 @@ Piksel AUC 0,742’den yeni konumda 0,566’ya düştü; yeni uyarlama bunu 0,63
 
 Önce raporun özeti, 4.6 sonuçlar ve 6. sonuç bölümünü oku. Sonra slayt 6–8’i kendi cümlelerinle anlat. Ardından 4.5 bölümündeki gelişim öyküsüne dön. Bilmediğin terimi ezberleyip geçme; örnek üzerinden anlamlandır.
 
-Son bir provada saati açıp on üç ana slaytı anlat. On beş dakikayı geçersen başarısız deneylerin teknik ayrıntılarını kısalt; sayıların sınırlamalarını çıkartma. Kendi deneyimini, şirket birimini ve kişisel öğrenme paragraflarını tamamladıktan sonra rapordaki yer tutucuları kaldır. Canlı demoyu göstereceksen önceden aynı dosyalarla kontrol et; sonucu kesin gerçek/AI belgesi gibi sunma.
+Son bir provada saati açıp on üç ana slaytı anlat. On beş dakikayı geçersen başarısız deneylerin teknik ayrıntılarını kısalt; sayıların sınırlamalarını çıkartma. Kendi deneyimin ve öğrenme paragrafların yanıtlarınla işlendi. HANDOFF_TR.md’de kalan beş bilgi grubunu tamamladıktan sonra ilgili yer tutucuları kaldır. Canlı demoyu göstereceksen önceden aynı dosyalarla kontrol et; sonucu kesin gerçek/AI belgesi gibi sunma.
 
 ## Tarihçeden eklenen önemli ara aşamalar
 

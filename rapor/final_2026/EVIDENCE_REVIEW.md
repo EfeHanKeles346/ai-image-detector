@@ -25,7 +25,7 @@ remain preserved; later corrections govern current claims.
 | Localization | E17 controls; E107/E115–E117; E132–E135 receipts/contracts | Different task, 16 consumed parents, placement trade-off, rejected candidate |
 | Provenance and resources | DATASETS, ARTIFACTS, LICENSE, PLAN | Roles, ancestry, caching, memory correction, no unverified independent reserve claim |
 | Scientific background | 10 primary scholarly references and Adobe industry example | Methods, bias, calibration and adaptive reuse; external results not inherited |
-| Organization | Official corporate profile and 2025 annual report | Verified corporate context; actual internship unit/address explicitly deferred |
+| Organization | Official corporate profile and 2025 annual report | Verified corporate context; student-confirmed unit/address/title; remaining host details in HANDOFF_TR.md |
 
 ## Important reconciliations
 
@@ -41,7 +41,7 @@ The current UI's no-clear outcome is not a certificate of authenticity. The 7.94
 source-fold diagnostic heads do not supply an updated active-E92 accuracy estimate.
 The last recorded 1,245 Python tests are software checks, not image classifications.
 
-## Output validation
+## Earlier output validation — 25 September 2026
 
 The report was rendered from DOCX with the bundled document renderer and all 30 pages
 were visually inspected after the current revision. A two-pass contents cache matches all 35 rendered headings.
@@ -77,15 +77,15 @@ section limits, selected E42/E49/E92/E102 assertions, Model2 nonpromotion, nativ
 notes, duration and file size. `sources/package_audit.json` records artifact hashes and
 results. These checks do not imply detector generalization or a guaranteed grade.
 
-## Deferred completion
+## Current completion status — 26 September 2026
 
-The user explicitly deferred identity and company-role details. These remain visible,
-with personal reflection/course/day confirmations in HANDOFF_TR.md. No attendance,
-meetings, team responsibilities or commercial impact was invented. The package is a
-submission draft until those fields are completed. No email or school upload occurred.
-No new image dataset, weights, software package, final-reserve access or detector fit was
-needed. The only downloaded report-production reference was the official company annual
-report; it stayed outside Git.
+The student has supplied identity, unit, office address, supervisor title, individual/advisory
+roles, personal reflection, three course connections and the typical-day account. Five
+information groups remain: submission date, department reporting line, department duties,
+mentor details and relevant competitor/supplier names. The date is intentionally open.
+HANDOFF_TR.md is the current field list. Earlier validation paragraphs record their dated
+builds; the latest artifact audit and end-to-end review receipt govern current outputs.
+No new dataset, model fit, reserve access, email or school upload occurred.
 
 ## 25 September reconciliation additions
 
@@ -101,3 +101,40 @@ reviewed renders exactly. The latest legacy conversion again preserves per-page 
 and page count, with its five image-rendering differences inspected. A local macOS
 English spelling check was run; flagged names, URLs, research terms and valid US/UK
 variants were reviewed. No external grammar service received the report.
+
+## End-to-end consistency and readability review — 26 September 2026
+
+Read the complete current report, all presentation text and notes, digest and Turkish
+study guide against the completed Markdown review. A hash comparison found 22 of the
+30 files in the prior review receipt unchanged, including the scientific experiment and
+dataset records. The eight changed files concerned report metadata, handoff and history;
+their changes were reviewed. This is a delta reconciliation of the earlier full reading,
+not a claim that every research line was newly reread or every experiment reproduced.
+
+Clarified the difference between per-view measurements and the website's combined
+result in Sections 4.5.6 and 9.1. The 14 processed false alerts must not be presented as
+14 final website AI warnings. The paired rule yielded 139 no-clear and 21 uncertain real
+images, plus 159 AI alerts and one uncertain AI image, on the same reused collection.
+The speaking notes and Turkish guide now explain this distinction. The digest explicitly
+labels original and processed real-image errors and explains that one newly missed AI
+image prevented full acceptance. Model2 slide precision now matches the report's table.
+Removed the administrative submission-date reminder from the spoken introduction.
+
+Corrected stale completion statements in the current review and evidence summary.
+Historical addenda retain their original dates and are clearly labelled as old states.
+Scientific conclusions, data, model and serving policy did not change. No broad reliability
+claim, new final test or grade guarantee follows from these editorial improvements.
+
+All seven export files were regenerated. The report remains 30 pages with the same
+35 contents entries, 228-word abstract, three figures, six tables and 14 references.
+Pages 5, 19 and 29 changed and were inspected at full size; the other 27 are pixel-identical
+to the previously reviewed final render. Presentation slides 9 and 10 and the digest
+changed visually and were inspected; the other 13 slides are pixel-identical. Notes changed
+on additional slides. Both PPTX finalizers report zero layout warnings. Speaking time is
+815 seconds (13:35), planned rather than rehearsed. All 641 scoped checks pass.
+The legacy DOC round-trip keeps every page's word multiset and all 30 pages; its five
+rasterization/TOC differences were visually checked. Native Microsoft Office was not tested.
+
+Five information groups remain in HANDOFF_TR.md, including the intentionally blank
+submission date. The three Desktop submission files were refreshed only after verifying
+that their pre-edit bytes matched the saved repository versions. No school upload occurred.

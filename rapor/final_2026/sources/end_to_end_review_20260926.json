@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-26",
+  "source_commit": "497d45c",
+  "pre_edit_commit": "1f723a6",
+  "prior_full_reading": "markdown_read_progress.json",
+  "markdown_delta": {
+    "unchanged": [
+      "DATASETS.md",
+      "IMAGE_FORENSICS_REFERENCE.md",
+      "IMAGE_STRUCTURE_NOTES.md",
+      "LICENSE.md",
+      "MODEL_CARD.md",
+      "PRESENTATION_EVIDENCE.md",
+      "README.md",
+      "evidence/e65_diagnostic.md",
+      "evidence/overnight_2026-09-13.md",
+      "ml/ARTIFACTS.md",
+      "ml/EXPERIMENTS.md",
+      "ml/RINE_FEASIBILITY.md",
+      "ml/SERVING.md",
+      "ml/experiments/README.md",
+      "ml/experiments/archive/README.md",
+      "ml/tools/README.md",
+      "rapor/README.md",
+      "rapor/STAJ_RAPORU.md",
+      "rapor/SUNUS_METNI.md",
+      "rapor/final_2026/EVIDENCE_REVIEW.md",
+      "rapor/final_2026/MD_CONSISTENCY_AUDIT.md",
+      "rapor/final_2026/STUDY_GUIDE_TR.md"
+    ],
+    "changed": [
+      "HISTORY.md",
+      "PLAN.md",
+      "rapor/final_2026/CRITICAL_REVIEW.md",
+      "rapor/final_2026/HANDOFF_TR.md",
+      "rapor/final_2026/README.md",
+      "rapor/final_2026/REPORT_EN.md",
+      "rapor/final_2026/REQUIREMENTS.md",
+      "rapor/final_2026/SPEAKER_NOTES_EN.md"
+    ]
+  },
+  "scope": "Complete current report, all slide text/notes, digest, study guide; changed Markdown reviewed using prior full reading. No new exhaustive reread of unchanged research logs or experiment replication.",
+  "report_changed_pages": [
+    5,
+    19,
+    29
+  ],
+  "report_pixel_identical_pages": 27,
+  "presentation_changed_slides": [
+    9,
+    10
+  ],
+  "presentation_pixel_identical_slides": 13,
+  "digest_changed_slides": [
+    1
+  ],
+  "notes_seconds": 815,
+  "package_checks": 641,
+  "native_office_tested": false,
+  "legacy_doc_roundtrip_per_page_words_equal": true,
+  "legacy_visual_differences_reviewed": [
+    3,
+    4,
+    7,
+    17,
+    18
+  ],
+  "remaining_information_groups": 5,
+  "files": {
+    "CS395_Digest_EfeHan_Keles_25September2026.pdf": "fcfa68bae798a83d336e6676a5cc33de2e4b889992dfde3fadc6d09ab9237310",
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": "a43c3c5f30ea24bf0c2fe00d291522db2d43e5d60f2c4ba2d6082ae53eb5a6e3",
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": "eeddb7cfb901c8954e160baadb12f5d650632f56be24e8652cfb1b82741d2132",
+    "CS395_FinalReport_EfeHan_Keles_25September2026.docx": "2528401810a7a57f3f404364dd4fc3eb805e9c0ce810f706797b96b484e28889",
+    "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": "69a8a1689d3cd9d83ac5a49b48448050666ae76dd266b762252ba805d47a41c2",
+    "CS395_Presentation_EfeHan_Keles_25September2026.pdf": "25e40649319541ab15200e4d0c8cc34bb0c08998c9b1bd72b729167774b6b546",
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": "6ec251025365f6e113253fa5758918ec1bf7d7b31ed95b7a2c1d59af89903059"
+  },
+  "desktop_files": {
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": "eeddb7cfb901c8954e160baadb12f5d650632f56be24e8652cfb1b82741d2132",
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": "6ec251025365f6e113253fa5758918ec1bf7d7b31ed95b7a2c1d59af89903059",
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": "a43c3c5f30ea24bf0c2fe00d291522db2d43e5d60f2c4ba2d6082ae53eb5a6e3"
+  }
+}

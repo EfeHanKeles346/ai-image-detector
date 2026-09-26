@@ -66,3 +66,13 @@ An early DATASETS SCIMD licence/count statement was explicitly corrected against
 later publisher audit and acquisition receipt. Historical gallery calibration is not
 erased by later exclusion rules: the report calls the gallery reused diagnostic data.
 The critical rubric and full guideline-to-section map are in `CRITICAL_REVIEW.md`.
+
+## 26 September follow-up
+
+The complete current report, presentation/notes and digest were reviewed again. The
+prior current-Markdown receipt yielded 22 unchanged files and eight changed files;
+scientific records were unchanged. Deltas and current artifact text were reconciled,
+with per-view versus paired-policy clarification and outdated handoff states corrected.
+See `sources/end_to_end_review_20260926.json` for this follow-up scope and output hashes.
+Earlier counts and missing-field descriptions above are dated snapshots; current fields
+are in HANDOFF_TR.md. No fresh independent detector experiment was performed.

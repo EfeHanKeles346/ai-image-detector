@@ -82,6 +82,10 @@ for cond,fp,tp in [('publisher_original',391,943),('social_q75',490,955)]:
 later=json.loads((REPO/'evidence/e102_development.json').read_text())
 check('E102_social_false_alerts_12',later['reports']['social_q75']['new']['binary_metrics']['confusion']['fp']==12)
 check('E102_full_acceptance_failed',not later['passes_limited_dev_screen'] and not later['independent_final_passed'])
+policy=json.loads((REPO/'evidence/project_audit_20260916.json').read_text())['current_policy_counts']
+check('paired_UI_REAL_139_clear_21_uncertain',policy['0']=={'no_clear_signal':139,'uncertain':21})
+check('paired_UI_AI_159_alert_1_uncertain',policy['1']=={'ai_signal':159,'uncertain':1})
+check('report_distinguishes_per_view_from_paired_UI','not the paired website outcomes in Section 4.5.6' in body)
 check('model2_not_promoted',not json.loads((REPO/'evidence/e135_location_learning.json').read_text())['promotion_allowed'])
 a={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
 for kind,count,table_count,chart_count in [('Presentation',15,5,1),('Digest',1,0,0)]:

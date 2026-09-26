@@ -15,7 +15,7 @@ This is the current E1–E152 submission draft. It supersedes the old E26 report
 | Digest, reading copy | [PDF](deliverables/CS395_Digest_EfeHan_Keles_25September2026.pdf) |
 | Study material | [Turkish guide](STUDY_GUIDE_TR.md), [English speaking notes](SPEAKER_NOTES_EN.md) |
 
-The deck has 13 spoken slides and two reference slides. Suggested timing is 795 seconds, subject to actual rehearsal. The report has 30 pages including front matter, 3 figures, 6 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
+The deck has 13 spoken slides and two reference slides. Suggested timing is 815 seconds, subject to actual rehearsal. The report has 30 pages including front matter, 3 figures, 6 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
 
 ## Desktop submission folder
 

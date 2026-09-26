@@ -9,7 +9,7 @@ PixelProof addresses a practical question: can a system identify evidence of AI 
 
 The internship ran from 20 July to 18 September 2026 under the approved 40-day CS395 arrangement at Türk Telekom. This report covers the technical record through 16 September, the latest completed research checkpoint before the end of that period. Report preparation took place afterwards. Experiment identifiers refer to recorded protocols and findings, rather than a count of independent trials. The implementation and append-only records provide the primary evidence for project-specific claims (Keleş, 2026).
 
-The main achievement is a functioning research system with measurable development improvements, a usable local interface and an evaluation process that also records failures. The current local demonstration uses E92. Its success is qualified: it satisfies 20 numerical checks on reused development observations, but fails a separate rule that protects previously detected AI examples. Independent universal reliability remains unproven.
+The main achievement is a functioning research system with measurable development improvements, a usable local interface and an evaluation process that also records failures. The current local demonstration uses E92. It passes 20 numerical checks on reused development images, but newly misses one AI image caught by the reference model. That new miss breaks a separate acceptance rule. Independent universal reliability remains unproven.
 
 Section 2 introduces the host organization. Section 3 explains the problem and relevant literature. Section 4 describes responsibilities, methods, implementation, representative experiments and results. Section 5 discusses learning and difficulties. Sections 6 and 7 give conclusions and recommendations. References and a compact evidence appendix support the main account without reproducing every experiment or implementation detail.
 
@@ -177,7 +177,7 @@ The local demonstration reports AI evidence, no clear AI evidence or uncertainty
 
 An original score at or above the upper cut keeps an AI alert visible. If both E92 views are below the lower cut, the interface reports no clear signal. Other cases need uncertainty handling. An original AI alert with disagreement can carry a review warning. E43 supplies a separate advisory and no longer vetoes two low E92 scores. Thus the final paired display cannot be reconstructed from one displayed percentage or from an assumed 50% boundary.
 
-The final interface rule was also checked on the same 320 development images. Of 160 real images, 139 received no clear AI evidence and 21 remained uncertain; none received an AI alert. Of 160 AI images, 159 received an AI alert and one remained uncertain. These counts combine two views into one user result. They differ from the separate-view rates reported earlier, and they do not predict the outcome of every future upload (Keleş, 2026, current-policy audit).
+The final interface rule was also checked on the same 320 development images. Of 160 real images, 139 received no clear AI evidence and 21 remained uncertain; none received an AI alert. Of 160 AI images, 159 received an AI alert and one remained uncertain. These counts combine two views into one user result. Thus 14 processed-view false alerts do not mean 14 final AI warnings: a low original score can instead leave the result uncertain. These development counts cannot predict every future upload (Keleş, 2026, current-policy audit).
 
 The service rejects unsupported or oversized uploads and gives an explicit error when the model is unavailable. It checks the saved model files before loading them. Cancellation handling prevents a second heavy inference job from starting while an earlier one still runs. The browser checks the response format before showing a result. These repairs make the demo more dependable to use; they do not increase the model’s measured accuracy.
 
@@ -301,7 +301,7 @@ Wang, S.-Y., Wang, O., Zhang, R., Owens, A., & Efros, A. A. (2020). CNN-generate
 
 ## 9.1 Development criteria
 
-Table 5 lists the ten inherited numerical criteria, applied separately to original and social-style views. They are project-defined requirements, not an external certification standard. Automatic coverage and uncertainty are complementary, and several other metrics are correlated. The extra zero-new-reference-AI-miss requirement remains separate and failed for E92.
+Table 5 lists the ten inherited numerical criteria, applied separately to original and social-style views. They are project-defined requirements, not an external certification standard. Automatic coverage and uncertainty are complementary, and several other metrics are correlated. The separate rule against newly missing any reference-detected AI image failed for E92. Coverage and uncertainty here describe each view separately; they are not the paired website outcomes in Section 4.5.6.
 
 Table 5. E92 numerical development checks and their measured values.
 Criterion | Requirement | Original | Social

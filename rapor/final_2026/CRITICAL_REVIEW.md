@@ -1,16 +1,9 @@
 # Critical report review — 25 September 2026
 
-**26 September metadata update:** the student confirmed the supervisor's title as
-Director. Submission dates are now intentionally [TO COMPLETE] in all three documents.
-This supersedes earlier deferred-title/no-digest-placeholder statements. See HANDOFF_TR.md
-for the current pending fields.
-
-**Latest completion update, 25 September:** the student has now supplied identity,
-unit name, office address, individual/advisory roles, personal learning, career,
-course connections and daily routine. The deferred-field statuses in the original
-review below describe the earlier draft. See HANDOFF_TR.md and the completion addendum
-at the end for the current five remaining information groups. The technical critique
-and evidence limits remain unchanged.
+Current review: **26 September 2026**. The report, digest, presentation and speaking
+notes were read end to end against the previously reviewed project records and their
+subsequent changes. No experiment was rerun. HANDOFF_TR.md lists the five remaining
+information groups; historical addenda later in this file describe older drafts.
 
 ## Decision and scoring boundary
 
@@ -19,11 +12,11 @@ in this review. This exceeds the requested editorial target, but is neither an i
 assessment nor a prediction of the instructor's grade. The authoring assistant also
 performed this critique; no external reviewer or student rehearsal is claimed.
 
-**The entire submission is not certified complete.** Student identity, actual department,
-role and office information, personal reflection and a typical working day remain deferred
-at the student's explicit request. Required fields cannot be replaced with plausible
-inventions. These are submission blockers regardless of the technical score. The technical
-revision is closed; student-dependent completion remains open in HANDOFF_TR.md.
+**The entire submission is not certified complete.** Submission date, department
+reporting line and duties, mentor details, and relevant competitor/supplier names remain
+open. Identity, office, supervisor title and firsthand experience are now supplied. The
+student still needs to rehearse and check the final files in the submission application.
+A subjective editorial score cannot compensate for missing required information.
 
 ## Rubric
 
@@ -34,7 +27,7 @@ Scores are editorial judgments grounded in the final artifacts, not calibrated m
 | Scientific accuracy and limits | 25% | 9.5 | Distinguishes E49 from E66, 20 checks from full acceptance, views from parents, software tests from image outcomes. Existing project evidence was checked, not independently replicated. |
 | Development record and traceability | 20% | 9.5 | Full baseline MD review; major E1–E152 phases and corrections mapped to report sections and receipts. The report intentionally samples representative experiments. |
 | Plain explanation and structure | 20% | 9.0 | Defines data roles, errors and parent images; explains why failed attempts changed direction. E identifiers and some source terminology still require attention. |
-| Credible student voice and contribution | 15% | 8.5 | Concrete repairs and decisions replace inflated success language; AI assistance is disclosed. Personal learning and workplace experience still need the student's own account and confirmation. |
+| Credible student voice and contribution | 15% | 8.5 | Concrete repairs and decisions replace inflated success language; AI assistance is disclosed. The student’s own learning and workplace account is incorporated; oral explanation still needs rehearsal. |
 | Artifact formatting and visual quality | 15% | 9.5 | Rendered pages, captions, contents, fonts, section limits, editable formats and file sizes checked. Native Microsoft Office and final post-placeholder layout remain untested. |
 | Presentation and learning support | 5% | 9.0 | Main question, methods, improvement and failures fit 13 spoken slides; Turkish guide and English notes provided. Timing is planned, not rehearsed. |
 
@@ -90,27 +83,27 @@ reference list nor this checklist supplies missing experience.
 
 | Requirement | Location or verification | Status |
 |---|---|---|
-| Prescribed filename, program and date | Seven named deliverables; CS395, EfeHan_Keles, 25September2026 | PASS; change date if submitting later |
+| Prescribed filename, program and date | Seven named deliverables; CS395, EfeHan_Keles, 25September2026 | DRAFT; replace filename date with actual submission date |
 | Each file below 10 MB | Artifact audit; all seven files checked | PASS |
-| Cover, header/running head, title, name, ID, dates, host, supervisor, university/program | Report page 1 | DEFERRED ID and supervisor title |
+| Cover, header/running head, title, name, ID, dates, host, supervisor, university/program | Report page 1 | PASS metadata; submission date intentionally deferred |
 | Separate abstract, at most 250 words; company, project, analysis, recommendations | Page 2; 228 words | PASS |
 | Separate contents with every main/subheading and actual pages | Pages 3–4; 35 matching entries; Word headings and TOC field | PASS |
 | Introduction: importance and structure | Section 1 | PASS |
 | Company title/contact/history/facilities/ownership/products/customers/employees/organization chart | Section 2; official company sources; Figure 1 | PASS for verified corporate context |
-| Actual office, relevant main competitors and suppliers, actual department placement | Sections 2.1–2.2 and handoff | DEFERRED host-specific confirmation |
-| Department detail and close colleagues' names/emails/titles | Section 3.1 | DEFERRED actual department and personnel roles |
+| Actual office, relevant main competitors and suppliers, actual department placement | Sections 2.1–2.2 and handoff | Office confirmed; competitors/suppliers and reporting line deferred |
+| Department detail and close colleagues' names/emails/titles | Section 3.1 | Unit/title confirmed; duties and mentor details deferred |
 | Initial status, relevant process and information flow | Section 3.2 | PASS for research workflow; no fabricated company production workflow |
 | Motivation and problem definition | Section 3.3 | PASS |
 | Academic methods and industry example | Section 3.4, 14 full references | PASS |
 | Objectives and explicit scope | Section 4.1 | PASS |
-| Student responsibilities and team roles | Section 4.2; AI coding assistance disclosed | PASS technical scope; DEFERRED confirmed team roles |
+| Student responsibilities and team roles | Section 4.2; AI coding assistance disclosed | PASS; student-confirmed individual work and advisory roles |
 | Methodology/tools and expected deliverables | Sections 4.3–4.4, Table 1 | PASS |
 | Structured details, representative repetitive work, understandable method | Section 4.5, Figures 2–3, Tables 2–3 | PASS |
 | Quantified outcome, completion, deployment and impact | Section 4.6, Table 4; research-only and no measured company impact | PASS |
-| Learning and career influence | Section 5.1 | DEFERRED personal reflection |
-| At most three undergraduate connections and preparation needs | Section 5.2 | Draft present; DEFERRED student confirmation |
+| Learning and career influence | Section 5.1 | PASS; student-confirmed reflection |
+| At most three undergraduate connections and preparation needs | Section 5.2 | PASS; three student-confirmed connections |
 | Three major difficulties and responses | Section 5.3 | PASS |
-| Typical day for hybrid internship | Section 5.4 | DEFERRED firsthand account; not omitted as if entirely online |
+| Typical day for hybrid internship | Section 5.4 | PASS; student-confirmed hybrid routine |
 | Conclusions without new results; recommendations and work culture | Sections 6–7 | PASS |
 | Page limits: company 3, department/status/motivation 1 each, literature 3 | Actual section locations; company 2, literature 2; each short subsection within one page | PASS |
 | Page limits: details 10, results 1, experience 3, typical day 1, conclusions/recommendations 1 each | Details 9, results 1, experience 2, typical-day within page 24, conclusions 1, recommendations 1 | PASS |
@@ -124,8 +117,8 @@ reference list nor this checklist supplies missing experience.
 | Alphabetic references, single spacing/blank separation, journal/series italics, retrieval dates | Section 8; instructor overrides hanging indent and centered heading | PASS |
 | Page numbering, formal structure, consistent terms, spelling and print-preview review | All pages rendered; local spelling flags reviewed; no external grammar upload | PASS |
 | Useful appendices only | Criteria and evidence/metric map in Section 9 | PASS |
-| English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 15 slides, 13 spoken, 795 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
-| One-slide digest with project/company/address/duration/name/program/objectives/outcomes | Separate PPTX/PDF | PASS layout/content; DEFERRED actual office address |
+| English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 15 slides, 13 spoken, 815 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
+| One-slide digest with project/company/address/duration/name/program/objectives/outcomes | Separate PPTX/PDF | PASS layout/content; submission date intentionally deferred |
 | Final check on submission device | LibreOffice renders and PPTX import checked | Native Office and post-completion review still open |
 
 ## Remaining risks before submission
@@ -145,7 +138,50 @@ must be confirmed by rehearsal. No guaranteed grade, school submission or superv
 approval is represented here.
 
 
-## Recheck against the reattached office guideline — 25 September 2026
+
+## End-to-end consistency and readability review — 26 September 2026
+
+Read the complete current report, all presentation text and notes, digest and Turkish
+study guide against the completed Markdown review. A hash comparison found 22 of the
+30 files in the prior review receipt unchanged, including the scientific experiment and
+dataset records. The eight changed files concerned report metadata, handoff and history;
+their changes were reviewed. This is a delta reconciliation of the earlier full reading,
+not a claim that every research line was newly reread or every experiment reproduced.
+
+Clarified the difference between per-view measurements and the website's combined
+result in Sections 4.5.6 and 9.1. The 14 processed false alerts must not be presented as
+14 final website AI warnings. The paired rule yielded 139 no-clear and 21 uncertain real
+images, plus 159 AI alerts and one uncertain AI image, on the same reused collection.
+The speaking notes and Turkish guide now explain this distinction. The digest explicitly
+labels original and processed real-image errors and explains that one newly missed AI
+image prevented full acceptance. Model2 slide precision now matches the report's table.
+Removed the administrative submission-date reminder from the spoken introduction.
+
+Corrected stale completion statements in the current review and evidence summary.
+Historical addenda retain their original dates and are clearly labelled as old states.
+Scientific conclusions, data, model and serving policy did not change. No broad reliability
+claim, new final test or grade guarantee follows from these editorial improvements.
+
+All seven export files were regenerated. The report remains 30 pages with the same
+35 contents entries, 228-word abstract, three figures, six tables and 14 references.
+Pages 5, 19 and 29 changed and were inspected at full size; the other 27 are pixel-identical
+to the previously reviewed final render. Presentation slides 9 and 10 and the digest
+changed visually and were inspected; the other 13 slides are pixel-identical. Notes changed
+on additional slides. Both PPTX finalizers report zero layout warnings. Speaking time is
+815 seconds (13:35), planned rather than rehearsed. All 641 scoped checks pass.
+The legacy DOC round-trip keeps every page's word multiset and all 30 pages; its five
+rasterization/TOC differences were visually checked. Native Microsoft Office was not tested.
+
+Five information groups remain in HANDOFF_TR.md, including the intentionally blank
+submission date. The three Desktop submission files were refreshed only after verifying
+that their pre-edit bytes matched the saved repository versions. No school upload occurred.
+
+## Historical build reviews (superseded completion states)
+
+The dated entries below preserve earlier checks. Their placeholder counts, timing and
+completion statements are historical, not the current handoff.
+
+### Recheck against the reattached office guideline — 25 September 2026
 
 The reattached Summer 2026 guideline is byte-identical to the earlier supplied PDF.
 All nine pages were read again against the instructor message, with the instructor
@@ -173,7 +209,7 @@ refreshing all affected formats and checking pagination again. No submission con
 was changed or uploaded during this recheck.
 
 
-## Student-confirmed completion addendum — 25 September 2026
+### Student-confirmed completion addendum — 25 September 2026
 
 Incorporated the student's answers in the cover and Sections 2.1, 2.2, 3.1, 4.2,
 5.1, 5.2 and 5.4. The report now explains individual ownership with supervisor/mentor
@@ -199,7 +235,7 @@ Desktop DOC and digest PPTX were refreshed; the open presentation and its Office
 were preserved. No final submission or new scientific experiment occurred.
 
 
-## Supervisor title and submission-date revision — 26 September 2026
+### Supervisor title and submission-date revision — 26 September 2026
 
 Applied the student's confirmation that Önder Çelebi directs the Planning and Development
 Directorate. The report cover uses Director and Section 3.1 explains his role in the named

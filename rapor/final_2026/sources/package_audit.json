@@ -5,7 +5,7 @@
   "figures": 3,
   "tables": 6,
   "references": 14,
-  "checks_passed": 638,
+  "checks_passed": 641,
   "checks": [
     {
       "name": "report_30_pages",
@@ -2360,6 +2360,18 @@
       "passed": true
     },
     {
+      "name": "paired_UI_REAL_139_clear_21_uncertain",
+      "passed": true
+    },
+    {
+      "name": "paired_UI_AI_159_alert_1_uncertain",
+      "passed": true
+    },
+    {
+      "name": "report_distinguishes_per_view_from_paired_UI",
+      "passed": true
+    },
+    {
       "name": "model2_not_promoted",
       "passed": true
     },
@@ -2562,32 +2574,32 @@
   ],
   "files": {
     "CS395_Digest_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 87248,
-      "sha256": "21ebad2379b64c0c4fa40f5140af328c4450a0141ca2dc0ef96701b5d5592d6b"
+      "bytes": 88389,
+      "sha256": "fcfa68bae798a83d336e6676a5cc33de2e4b889992dfde3fadc6d09ab9237310"
     },
     "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 13530,
-      "sha256": "95890b52dae55d10ace25cad59cf0f08e62b70cc10735d60fa3c1bc7ee6d9eee"
+      "bytes": 13561,
+      "sha256": "a43c3c5f30ea24bf0c2fe00d291522db2d43e5d60f2c4ba2d6082ae53eb5a6e3"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
-      "bytes": 289280,
-      "sha256": "bc13e74452526c06c173e72711aad89bd6d0d915139d3fd9c56477595a8679e7"
+      "bytes": 289792,
+      "sha256": "eeddb7cfb901c8954e160baadb12f5d650632f56be24e8652cfb1b82741d2132"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
-      "bytes": 182068,
-      "sha256": "8c32cbef6a4dc88f67d9bc17590047ea8327b3197d7a034d3e5d21c69324ae6d"
+      "bytes": 182232,
+      "sha256": "2528401810a7a57f3f404364dd4fc3eb805e9c0ce810f706797b96b484e28889"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 376275,
-      "sha256": "83c3800d7f02b0188b1cfd2e5e1432d99d837442bf41552168d0ca540e39da58"
+      "bytes": 376569,
+      "sha256": "69a8a1689d3cd9d83ac5a49b48448050666ae76dd266b762252ba805d47a41c2"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 279276,
-      "sha256": "960437531147812f868a61faba8c5b450ea605e2054bcd243d5886fcdd0703de"
+      "bytes": 279842,
+      "sha256": "25e40649319541ab15200e4d0c8cc34bb0c08998c9b1bd72b729167774b6b546"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 63333,
-      "sha256": "d60a4100aeb06be1cfada2c499805692da26e81c0d8a062df91b126ad7038f08"
+      "bytes": 63440,
+      "sha256": "6ec251025365f6e113253fa5758918ec1bf7d7b31ed95b7a2c1d59af89903059"
     }
   },
   "unresolved_fields": 5,

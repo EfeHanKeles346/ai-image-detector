@@ -11305,3 +11305,24 @@ date, relevant competitors/suppliers, department reporting line, department duti
 mentor identities/titles/emails. Presentation and digest each retain only the requested
 date placeholder. Digest is one-slide PPTX, as stated on guideline pages 1 and 9. No
 submission artifact, model or experiment was changed by this read-only compliance review.
+
+
+## 2026-09-26 — End-to-end report, presentation and digest refinement
+
+Reconciled the complete current narratives with the prior exhaustive Markdown review
+and subsequent changes. Twenty-two of thirty files in the prior current-review receipt
+were unchanged, including research logs; eight documentation deltas were reviewed.
+Clarified per-view versus paired-UI measurements in the report, speaking notes and Turkish
+guide. Digest now identifies original/processed false alerts and the newly missed AI
+image behind failed full acceptance. Rounded Model2 slide AUC consistently and removed
+a nonspoken administrative reminder. Updated stale current completion summaries while
+retaining dated historical checks.
+
+Regenerated seven artifacts: report 30 pages with unchanged TOC, presentation 15 slides
+with 815 seconds planned speech, digest one slide. Changed report pages 5/19/29, slides
+9/10 and digest were inspected; unchanged renders match the previous reviewed finals.
+Both PPTX finalizers pass without warnings. The legacy DOC preserves all per-page words;
+its conversion differences were inspected. All 641 scoped checks pass, including new
+assertions against the paired-policy receipt. Desktop keeps only the three current
+submission files (plus any existing Office lock). Five completion fields remain. No model
+experiment, download, reserve access or school submission occurred.
