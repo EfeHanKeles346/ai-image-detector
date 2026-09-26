@@ -2562,41 +2562,40 @@
   ],
   "files": {
     "CS395_Digest_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 77668,
-      "sha256": "a5a1213fbafe73e97d8c3a0e27556f2eaf7a919ec908c2df0e2d8a66db6e5c87"
+      "bytes": 87248,
+      "sha256": "21ebad2379b64c0c4fa40f5140af328c4450a0141ca2dc0ef96701b5d5592d6b"
     },
     "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 13345,
-      "sha256": "2fcceeded481a748fb4772900b9450cfaad2b9ddde06c25cc0d7cb53d42d5f29"
+      "bytes": 13530,
+      "sha256": "95890b52dae55d10ace25cad59cf0f08e62b70cc10735d60fa3c1bc7ee6d9eee"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
       "bytes": 289280,
-      "sha256": "1cc31bed60c3bb5881003681a05f8e66521b279e307a8cae3a32c52353ca383a"
+      "sha256": "bc13e74452526c06c173e72711aad89bd6d0d915139d3fd9c56477595a8679e7"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
-      "bytes": 182067,
-      "sha256": "be41e66524ef32bdf7f0aaaabfc6df4b856a12e4c26521931588fa1c52fef08d"
+      "bytes": 182068,
+      "sha256": "8c32cbef6a4dc88f67d9bc17590047ea8327b3197d7a034d3e5d21c69324ae6d"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 376306,
-      "sha256": "5e2d8b87e3f81e2819de7fc2f903b96438fe83f0c799c4c4d876f04467122307"
+      "bytes": 376275,
+      "sha256": "83c3800d7f02b0188b1cfd2e5e1432d99d837442bf41552168d0ca540e39da58"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 270809,
-      "sha256": "6f23abf89f2263e1e22575ee595ecde8185578bdabc1213847e9d70885cf95c8"
+      "bytes": 279276,
+      "sha256": "960437531147812f868a61faba8c5b450ea605e2054bcd243d5886fcdd0703de"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 63139,
-      "sha256": "9b53dc6562dc4828692fc6b923bd46349b01444ef0cebc1dc97dec2bf430d6e1"
+      "bytes": 63333,
+      "sha256": "d60a4100aeb06be1cfada2c499805692da26e81c0d8a062df91b126ad7038f08"
     }
   },
-  "unresolved_fields": 6,
+  "unresolved_fields": 5,
   "unresolved_placeholders": [
     "[TO COMPLETE]",
     "[TO COMPLETE: confirmed competitor and supplier names]",
     "[TO COMPLETE: department reporting line]",
     "[TO COMPLETE: department responsibilities]",
-    "[TO COMPLETE: supervisor title]",
     "[TO COMPLETE: mentor details]"
   ],
   "claim_boundary": "Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing."

@@ -4,7 +4,7 @@ Suggested timing: 13 minutes 15 seconds for slides 1–13. Slides 14–15 are re
 
 ## 1. Purpose (40 seconds)
 
-My internship project was PixelProof, a research prototype for detecting evidence of AI generation in images. I will explain the problem, how the project changed after failures, what the current demo model achieved, and what remains unresolved. The main result is a working local demonstration with substantial improvement on a defined development collection. It is not a universally reliable authenticity detector. The approved internship lasted forty working days. This presentation covers the technical record available before the end of the internship.
+My supervisor was Önder Çelebi, Director of the Planning and Development Directorate. The submission date remains to be completed. My internship project was PixelProof, a research prototype for detecting evidence of AI generation in images. I will explain the problem, how the project changed after failures, what the current demo model achieved, and what remains unresolved. The main result is a working local demonstration with substantial improvement on a defined development collection. It is not a universally reliable authenticity detector. The approved internship lasted forty working days. This presentation covers the technical record available before the end of the internship.
 
 ## 2. Two tasks (50 seconds)
 

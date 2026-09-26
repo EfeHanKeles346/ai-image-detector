@@ -38,7 +38,7 @@ Network and IT cover communications infrastructure and information systems. Comm
 
 ## 3.1 Department information
 
-My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate). Its specific responsibilities remain [TO COMPLETE: department responsibilities]. My supervisor was Önder Çelebi, whose supplied contact is onder.celebi@turktelekom.com.tr. His title remains [TO COMPLETE: supervisor title]. I also consulted mentors, whose names, titles and work email addresses remain [TO COMPLETE: mentor details]. These consultations supported an individually conducted project.
+My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate). Its specific responsibilities remain [TO COMPLETE: department responsibilities]. My supervisor was Önder Çelebi, whose supplied contact is onder.celebi@turktelekom.com.tr. He is the Director of this unit. I also consulted mentors, whose names, titles and work email addresses remain [TO COMPLETE: mentor details]. These consultations supported an individually conducted project.
 
 The approved arrangement was hybrid, with Monday through Thursday on site and Friday remote. The project record concerns a student research prototype. It does not establish that Türk Telekom already operated this detector, requested a particular production deployment, or used its outputs in customer decisions. Any department-specific business process description requires confirmation before submission.
 

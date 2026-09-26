@@ -1,5 +1,10 @@
 # Critical report review — 25 September 2026
 
+**26 September metadata update:** the student confirmed the supervisor's title as
+Director. Submission dates are now intentionally [TO COMPLETE] in all three documents.
+This supersedes earlier deferred-title/no-digest-placeholder statements. See HANDOFF_TR.md
+for the current pending fields.
+
 **Latest completion update, 25 September:** the student has now supplied identity,
 unit name, office address, individual/advisory roles, personal learning, career,
 course connections and daily routine. The deferred-field statuses in the original
@@ -192,3 +197,20 @@ remain. The audit now counts literal placeholders in the actual DOCX rather than
 a fixed count for cover fields. HANDOFF_TR.md cites guideline pages for each requirement.
 Desktop DOC and digest PPTX were refreshed; the open presentation and its Office lock
 were preserved. No final submission or new scientific experiment occurred.
+
+
+## Supervisor title and submission-date revision — 26 September 2026
+
+Applied the student's confirmation that Önder Çelebi directs the Planning and Development
+Directorate. The report cover uses Director and Section 3.1 explains his role in the named
+unit. The presentation cover and digest include the title. Submission date is [TO COMPLETE]
+in report, presentation and digest, including all current export formats. Historic research,
+internship and reference-retrieval dates remain factual dates. Draft filenames retain their
+original date until the actual submission date is known; the handoff explicitly requires
+updating both filename dates and visible dates before upload.
+
+The 30-page report retains all contents-page numbers. Report pages 1 and 8 changed and
+were reviewed; the other 28 match the prior render. Presentation slide 1 and the digest
+were reviewed; the other 14 presentation slides match the prior render. Both PPTX
+finalizers have no remaining layout warnings. All 638 scoped package checks pass.
+Five report placeholders remain, with one date placeholder in each PPTX.

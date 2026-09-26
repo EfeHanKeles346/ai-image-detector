@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-26",
+  "authority": "User-confirmed title; user-requested submission date placeholder",
+  "supervisor_title": "Director",
+  "submission_date": "[TO COMPLETE]",
+  "filename_date": "25September2026 retained as original draft identifier; replace on actual submission",
+  "report_pages": 30,
+  "changed_report_pages": [
+    1,
+    8
+  ],
+  "unchanged_report_pages": 28,
+  "changed_presentation_slides": [
+    1
+  ],
+  "unchanged_presentation_slides": 14,
+  "digest_reviewed": true,
+  "pptx_finalizers_no_warnings": true,
+  "package_checks": 638,
+  "doc_roundtrip_page_words_match": true,
+  "remaining_report_placeholders": 5,
+  "desktop_files": {
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": "bc13e74452526c06c173e72711aad89bd6d0d915139d3fd9c56477595a8679e7",
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": "d60a4100aeb06be1cfada2c499805692da26e81c0d8a062df91b126ad7038f08",
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": "95890b52dae55d10ace25cad59cf0f08e62b70cc10735d60fa3c1bc7ee6d9eee"
+  },
+  "school_submission": false
+}

@@ -35,8 +35,9 @@ let s=base(p,1,'PixelProof: AI image detection');
 txt(s,'A working prototype, measured improvements\nand the limits of generalization',72,195,1136,130,40);
 txt(s,'Efe Han Keleş · CS395 · Türk Telekom',72,365,1136,65,30,true);
 txt(s,'20 July–18 September 2026 · 40 approved internship days',72,440,1136,55,28);
-txt(s,'Supervisor: Önder Çelebi\nComputer Science and Engineering · Sabancı University',72,515,1136,95,26);
-speak(s,1,'Purpose',40,'My internship project was PixelProof, a research prototype for detecting evidence of AI generation in images. I will explain the problem, how the project changed after failures, what the current demo model achieved, and what remains unresolved. The main result is a working local demonstration with substantial improvement on a defined development collection. It is not a universally reliable authenticity detector. The approved internship lasted forty working days. This presentation covers the technical record available before the end of the internship.');
+txt(s,'Supervisor: Önder Çelebi, Director\nPlanning and Development Directorate\nComputer Science and Engineering · Sabancı University',72,495,1136,115,26);
+txt(s,'Submission date: [TO COMPLETE]',72,618,1136,32,22);
+speak(s,1,'Purpose',40,'My supervisor was Önder Çelebi, Director of the Planning and Development Directorate. The submission date remains to be completed. My internship project was PixelProof, a research prototype for detecting evidence of AI generation in images. I will explain the problem, how the project changed after failures, what the current demo model achieved, and what remains unresolved. The main result is a working local demonstration with substantial improvement on a defined development collection. It is not a universally reliable authenticity detector. The approved internship lasted forty working days. This presentation covers the technical record available before the end of the internship.');
 s=base(p,2,'Two tasks, two kinds of evidence');
 txt(s,'Model1: Does this image contain AI-generation evidence?',72,185,1136,85,32,true);
 txt(s,'False alert: a real photograph receives an AI warning.\nMiss: an AI image escapes detection.',72,287,1136,105,30);
@@ -126,8 +127,9 @@ txt(s,'Detect AI-image evidence while reducing false alerts;\nexplore localizati
 txt(s,'Deliverables',72,445,260,50,30,true);
 txt(s,'E92 research model, guarded local demo and traceable records.\nExperimental Model2 evaluator.',360,445,845,90,29);
 txt(s,'Measured result',72,553,260,50,30,true);
-txt(s,'159/160 AI detected in each development view; real false alerts 0/160\nand 14/160. Numeric checks 20/20; full acceptance failed. Not universal.',360,553,845,95,25);
-s.speakerNotes.textFrame.setText('Standalone internship digest. Original and social-style views use the same 320 development parents: 160 real and 160 AI. Social-style means long-side cap 1080 followed by JPEG75. E92 newly missed one original AI image caught by E43, so full acceptance failed despite the numeric milestone. Model2 remains experimental. The student confirmed the internship office as Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye / İstanbul on 25 September 2026. Supervisor: Önder Çelebi. Full sources and limitations are in the report.');
+txt(s,'159/160 AI detected in each development view; real false alerts 0/160\nand 14/160. Numeric checks 20/20; full acceptance failed. Not universal.',360,553,845,70,25);
+txt(s,'Supervisor: Önder Çelebi, Director · Submission date: [TO COMPLETE]',72,628,1136,28,20);
+s.speakerNotes.textFrame.setText('Standalone internship digest. Original and social-style views use the same 320 development parents: 160 real and 160 AI. Social-style means long-side cap 1080 followed by JPEG75. E92 newly missed one original AI image caught by E43, so full acceptance failed despite the numeric milestone. Model2 remains experimental. The student confirmed the internship office as Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye / İstanbul on 25 September 2026. Supervisor: Önder Çelebi, Director of the Planning and Development Directorate. Submission date: [TO COMPLETE]. Full sources and limitations are in the report.');
 await fs.mkdir(WORK,{recursive:true});
 if(process.env.PRESENTATION_KIND!=='Digest') await fs.writeFile(path.join(ROOT,'sources/presentation_notes.json'),JSON.stringify(notes,null,2)+'\n');
 for(const [kind,pres,count,tables,charts] of [['Presentation',p,15,[3,7,8,10,12],[6]],['Digest',d,1,[],[]]]){

@@ -1,6 +1,6 @@
 # CS395 internship report package — 25 September 2026
 
-This is the current E1–E152 submission draft. It supersedes the old E26 report **for presentation of the current project**, without rewriting historical records. The student’s confirmed metadata and personal account have been incorporated. Remaining host-specific fields are visibly marked. See [the Turkish handoff](HANDOFF_TR.md) before submission.
+This is the current E1–E152 submission draft. It supersedes the old E26 report **for presentation of the current project**, without rewriting historical records. The student’s confirmed metadata and personal account have been incorporated. Remaining host-specific fields are visibly marked. The supervisor title is now Director, as confirmed by the student on 26 September. All three documents show `Submission date: [TO COMPLETE]`; filenames retain the original draft date until submission. See [the Turkish handoff](HANDOFF_TR.md) before submission.
 
 ## Deliverables
 

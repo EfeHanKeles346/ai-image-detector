@@ -11273,3 +11273,18 @@ information groups. Updated HANDOFF_TR.md with exact guideline-page citations an
 sources/student_completion_20260925.json. Desktop submission files match current outputs;
 an active presentation lock was preserved. No dataset, model, experiment or school
 submission changed.
+
+
+## 2026-09-26 — Supervisor title confirmed and submission dates left open
+
+The student confirmed Önder Çelebi as Director of the Planning and Development Directorate
+and requested [TO COMPLETE] for submission dates in all current documents. Updated report
+DOCX/DOC/PDF, presentation PPTX/PDF and digest PPTX/PDF, plus source builders and current
+handoff/requirements. Research dates and reference retrieval dates were not rewritten.
+Original dated draft filenames are retained until actual submission; the handoff requires
+replacing their dates together with the visible placeholders.
+
+Report: 30 pages, unchanged heading-page map, pages 1 and 8 visually reviewed, 28 other
+pages identical to the prior render. Presentation: updated cover reviewed, 14 other slides
+identical to the prior render. Digest inspected; both PPTX finalizers pass without layout
+warnings. All 638 package checks pass. No new model experiment or school submission.

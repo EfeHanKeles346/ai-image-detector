@@ -33,12 +33,14 @@ meetings or first-person recollection.
 
 The student supplied ID, unit name, actual office address, individual contribution/advisory
 roles, personal learning/career experience, course connections and daily routine on
-25 September. The supervisor title remains explicitly deferred. Unit responsibilities
+25 September. On 26 September the student confirmed the supervisor title as Director. Unit responsibilities
 and reporting line, mentor identities/titles/emails, and specific competitor/supplier
 names still require confirmation. HANDOFF_TR.md maps these remaining fields to the
 exact guideline pages. Do not infer them from the unit name or general market knowledge.
 The course section uses CS412, PROJ201 and DSA210 to respect the three-connection limit.
-Submission date defaults to build date and must change with an actual later submission.
+Submission date must stay [TO COMPLETE] in all current documents at the student’s request
+on 26 September. The filenames retain the original draft date until actual submission;
+replace their date suffix and the visible placeholders together before uploading.
 
 Presentation: English, Times New Roman, about 10–15 minutes, clear explanation of problem,
 objective, methods/tools, deliverables, results and limitations. Produce editable PPTX

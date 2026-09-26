@@ -14,7 +14,7 @@ Current files are in `rapor/final_2026/deliverables/` and the Desktop folder
 The critical review rates the technical draft 9.2/10 subjectively; this is not a grade.
 Student-confirmed identity, unit name, office address, individual/advisory roles, learning,
 career, three course connections and daily routine are now incorporated. Remaining work:
-confirm supervisor title, unit responsibilities/reporting line, mentor identities and
+fill the actual submission date, unit responsibilities/reporting line, mentor identities and
 relevant competitor/supplier names; then refresh affected formats and rehearse the 13:15
 presentation. HANDOFF_TR.md links each field to its guideline section. No final school
 upload is authorized or claimed. E153 remains a separate unexecuted research plan.

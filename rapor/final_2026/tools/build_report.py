@@ -99,9 +99,9 @@ for t in ['Sabancı University','Faculty of Engineering and Natural Sciences','C
 p=paragraph(c.TITLE,'Title');p.paragraph_format.space_before=Pt(54);p.paragraph_format.space_after=Pt(36)
 paragraph('CS395 Internship Final Report')
 paragraph('Efe Han Keleş');paragraph('Student ID: 31994')
-for t in ['Company: Türk Telekomünikasyon A.Ş.','Supervisor: Önder Çelebi','Supervisor title: [TO COMPLETE]']:paragraph(t)
+for t in ['Company: Türk Telekomünikasyon A.Ş.','Supervisor: Önder Çelebi','Supervisor title: Director']:paragraph(t)
 for t in ['Internship: 20 July–18 September 2026','Approved duration: 40 internship days','Format: Hybrid']:paragraph(t)
-paragraph('Submission date: 25 September 2026')
+paragraph('Submission date: [TO COMPLETE]')
 d.add_page_break();paragraph('Abstract','Title');paragraph(c.ABSTRACT)
 # Two fixed TOC pages with a genuine Word TOC field and populated cache.
 heads=[b for b in c.B if b['type']=='heading'];page_map={}

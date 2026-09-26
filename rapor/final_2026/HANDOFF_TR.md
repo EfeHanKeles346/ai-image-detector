@@ -1,18 +1,18 @@
 # Teslimden önce tamamlanacak bilgiler
 
-Bu paket teknik içeriği ve biçimi kontrol edilmiş bir **teslim taslağıdır**. Başlangıçtaki 28 proje MD dosyasının 37.073 satırlık sıralı okuması ve raporla karşılaştırması tamamlandı; kapsam `MD_CONSISTENCY_AUDIT.md` içinde kayıtlı. Kişisel/kurumsal bilgiler son yanıtlarınla güncellendi; kalan eksikler aşağıda listeli. Hiçbir dosya okula ya da şirkete gönderilmedi. Dosya adındaki 25 September 2026 hazırlama tarihi; gerçek teslim tarihi farklıysa kapakla birlikte değişmeli.
+Bu paket teknik içeriği ve biçimi kontrol edilmiş bir **teslim taslağıdır**. Başlangıçtaki 28 proje MD dosyasının 37.073 satırlık sıralı okuması ve raporla karşılaştırması tamamlandı; kapsam `MD_CONSISTENCY_AUDIT.md` içinde kayıtlı. Kişisel/kurumsal bilgiler son yanıtlarınla güncellendi; kalan eksikler aşağıda listeli. Hiçbir dosya okula ya da şirkete gönderilmedi. Dosya adındaki 25 September 2026 ilk hazırlama tarihidir. İçerikte teslim tarihi `[TO COMPLETE]` olarak bırakıldı; gerçek teslimde tarih ve dosya adları birlikte güncellenmeli.
 
-25 Eylül tarihli yanıtların işlendi: öğrenci numarası 31994, Planlama ve Geliştirme Müdürlüğü, Ümraniye ofis adresi, bireysel çalışma ve danışmanlık ilişkisi, öğrenme/kariyer değerlendirmesi, CS412–PROJ201–DSA210 bağlantıları ve günlük rutin. Digest adresi de tamamlandı. Önder Çelebi’nin unvanı son isteğinle açık bırakıldı.
+25 Eylül tarihli yanıtların işlendi: öğrenci numarası 31994, Planlama ve Geliştirme Müdürlüğü, Ümraniye ofis adresi, bireysel çalışma ve danışmanlık ilişkisi, öğrenme/kariyer değerlendirmesi, CS412–PROJ201–DSA210 bağlantıları ve günlük rutin. Digest adresi de tamamlandı. 26 Eylül yanıtınla Önder Çelebi’nin unvanı Director olarak tamamlandı; teslim tarihi tüm güncel belgelerde isteğinle `[TO COMPLETE]` yapıldı.
 
 | Kalan bilgi | Rapordaki yeri | Durum |
 |---|---|---|
-| Önder Çelebi’nin unvanı | Kapak, 3.1 | Kullanıcı açık bırakılmasını istedi |
+| Gerçek teslim tarihi | Rapor kapağı, sunum kapağı, digest | Kullanıcı açık bırakılmasını istedi |
 | Müdürlüğün bağlı olduğu üst birim | 2.2 | Birim adı belli; raporlama ilişkisi verilmedi |
 | Müdürlüğün somut görevleri | 3.1 | İsimden görev tanımı çıkarılmadı |
 | Danışılan mentorların adları, unvanları, iş e-postaları | 3.1 | Bireysel proje olduğu belli; danışılan kişiler henüz isimlendirilmedi |
 | İlgili ana rakipler ve başlıca tedarikçiler | 2.1 | Konuşulduğu belirtildi; isimler verilmedi |
 
-Bunlar beş bilgi grubu; danışman unvanının kapakta ve 3.1’de tekrarıyla raporda altı yer tutucu var. Digest’te yer tutucu kalmadı. Yukarıdaki alanlar tamamlanmadan raporu eksiksiz teslim diye değerlendirme. Mentorların katkısı teknik danışmanlık olarak yazıldı; ortak geliştirme, özel toplantı programı veya bilinmeyen görevler uydurulmadı. Sabah 07.30 gelişi ve çay/kahve araları aktarıldı; kesin öğle arası veya çıkış saati eklenmedi.
+Bunlar beş bilgi grubu. Raporda beş yer tutucu var; sunum ve digest’te birer teslim tarihi yer tutucusu bulunuyor. Yukarıdaki alanlar tamamlanmadan raporu eksiksiz teslim diye değerlendirme. Mentorların katkısı teknik danışmanlık olarak yazıldı; ortak geliştirme, özel toplantı programı veya bilinmeyen görevler uydurulmadı. Sabah 07.30 gelişi ve çay/kahve araları aktarıldı; kesin öğle arası veya çıkış saati eklenmedi.
 
 ## Bu bilgileri kılavuz nerede istiyor?
 
