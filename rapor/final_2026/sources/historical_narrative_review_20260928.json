@@ -1,0 +1,306 @@
+{
+  "date": "2026-09-28",
+  "frozen_research_commit": "497d45c",
+  "pre_edit_commit": "dcc4cac802041802673ccccb2d290bf850947a2f",
+  "scope": "Prior full 28-file sequential Markdown review plus current hash reconciliation and targeted chronological rereading. No claim that every line was freshly reread in this follow-up; no independent reproduction of experiments.",
+  "prior_full_review": "markdown_read_progress.json",
+  "prior_current_receipt": "current_markdown_review.json",
+  "input_markdown_hash_comparison": [
+    {
+      "path": "DATASETS.md",
+      "matches_prior_review": true,
+      "current_sha256": "f670b4dc34c6ba03ece5db56475b3a16c014f4dad636f5852fb81ec7d6f4a725"
+    },
+    {
+      "path": "HISTORY.md",
+      "matches_prior_review": false,
+      "current_sha256": "d9922b0c2ab4e5dd37aa84e491cddb6713c3db9f60af2e8dad3a2dc830d70008"
+    },
+    {
+      "path": "IMAGE_FORENSICS_REFERENCE.md",
+      "matches_prior_review": true,
+      "current_sha256": "b0b88e8f4f4490e5a5ca3a34461349330a97d6ed34801f9cc6620109debf82c8"
+    },
+    {
+      "path": "IMAGE_STRUCTURE_NOTES.md",
+      "matches_prior_review": true,
+      "current_sha256": "ee232fa480133e7c670dfc43ccab62783f1cec3f0b359cddd678493326c71418"
+    },
+    {
+      "path": "LICENSE.md",
+      "matches_prior_review": true,
+      "current_sha256": "7e094b84e94b40033a8d63d3e2f1aadeb3bbd3c7ee3721c2258b6b7d4e8acc86"
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "matches_prior_review": true,
+      "current_sha256": "28d260189e29438fcc4d8b45edf11c821da3b0b3f15acc07b3ceb4e7ac4a98f4"
+    },
+    {
+      "path": "PLAN.md",
+      "matches_prior_review": false,
+      "current_sha256": "a0799320a4eddc1d7d825556afde16eea2250e555cb40ce9e2f9c6a3e2c7f281"
+    },
+    {
+      "path": "PRESENTATION_EVIDENCE.md",
+      "matches_prior_review": true,
+      "current_sha256": "d1ca2da6581c25b3a3d72b5be0d9f69a7be600b455bd6773f09cdd44d9af9b5f"
+    },
+    {
+      "path": "README.md",
+      "matches_prior_review": true,
+      "current_sha256": "4f37ccb7268b246d60bc1bff077757454564d335bb5f53d4deeb6df26f72faa1"
+    },
+    {
+      "path": "evidence/e65_diagnostic.md",
+      "matches_prior_review": true,
+      "current_sha256": "2ad8b667c826549771a03f20bebf301e375bee4a391659613b3fcbeb2a30da10"
+    },
+    {
+      "path": "evidence/overnight_2026-09-13.md",
+      "matches_prior_review": true,
+      "current_sha256": "5287f378297fdc3a34d04434283361f06efb5a0a2cd87b4aa116df651d2b8f5f"
+    },
+    {
+      "path": "ml/ARTIFACTS.md",
+      "matches_prior_review": true,
+      "current_sha256": "867041ebf0d917f09c1c6d2a871e668f3ae67eddbf3a46aef7c754edb6eeb737"
+    },
+    {
+      "path": "ml/EXPERIMENTS.md",
+      "matches_prior_review": true,
+      "current_sha256": "e400b246c8c6c479005718287a0d3bb414c9546e4b10a88b1539cf3e70893c43"
+    },
+    {
+      "path": "ml/RINE_FEASIBILITY.md",
+      "matches_prior_review": true,
+      "current_sha256": "e91ada8e4b1f3ac13c49290294f53085be17745f4a8e311c633d7a00bb7ad94d"
+    },
+    {
+      "path": "ml/SERVING.md",
+      "matches_prior_review": true,
+      "current_sha256": "221e843bf912bcb80991964584333f28652143b751e642e6daf55f2d5b65f722"
+    },
+    {
+      "path": "ml/experiments/README.md",
+      "matches_prior_review": true,
+      "current_sha256": "e6e89ee4eaf4915c3aa3a6e0c782c5830d9616c6eacf1ef6c9e85c721656f3d9"
+    },
+    {
+      "path": "ml/experiments/archive/README.md",
+      "matches_prior_review": true,
+      "current_sha256": "f376cf163087ad2a769e40b293af6b3b8fb36a9e5e8ff4e0e0ac6681366e33cf"
+    },
+    {
+      "path": "ml/tools/README.md",
+      "matches_prior_review": true,
+      "current_sha256": "883b8f638bb79814cf81a735261d74a7fb41a852170888f32224e80467e34d53"
+    },
+    {
+      "path": "rapor/README.md",
+      "matches_prior_review": true,
+      "current_sha256": "9c5cd1437bb00b017f009dc2350d9a695f3cfa6260e0d13b6944c09846734266"
+    },
+    {
+      "path": "rapor/STAJ_RAPORU.md",
+      "matches_prior_review": true,
+      "current_sha256": "01c899461e8d83ecabe5fa519ca8e8c088bb95d92da7f3f10989b2160f7820bc"
+    },
+    {
+      "path": "rapor/SUNUS_METNI.md",
+      "matches_prior_review": true,
+      "current_sha256": "c1cf4ac55bc7c03c26ab3a7382c7998b93e6713f0055f08d848c65eb5d56ea65"
+    },
+    {
+      "path": "rapor/final_2026/CRITICAL_REVIEW.md",
+      "matches_prior_review": false,
+      "current_sha256": "55ee38dd0faee2d59e298c93fcf1b651d83f799f91e08ff1d5a70948402b787d"
+    },
+    {
+      "path": "rapor/final_2026/EVIDENCE_REVIEW.md",
+      "matches_prior_review": false,
+      "current_sha256": "b0b89bcf13dedbb07fb234cce3e652a74273fb9957e1f70cab33d680478e7719"
+    },
+    {
+      "path": "rapor/final_2026/HANDOFF_TR.md",
+      "matches_prior_review": false,
+      "current_sha256": "43e9ae0d5764462e316b39c37345c4192953224e8954fc446f7240ac3e252557"
+    },
+    {
+      "path": "rapor/final_2026/MD_CONSISTENCY_AUDIT.md",
+      "matches_prior_review": false,
+      "current_sha256": "5abfe48d11b76e99e2360589bbc1920225933721287fcd69beab66656dc24374"
+    },
+    {
+      "path": "rapor/final_2026/README.md",
+      "matches_prior_review": false,
+      "current_sha256": "731e6cafb6d349fa0c1b99d2dd5b6bab1196707c2250cc99cc8a4db031908d78"
+    },
+    {
+      "path": "rapor/final_2026/REPORT_EN.md",
+      "matches_prior_review": false,
+      "current_sha256": "48fa5e2a88bc7a1bfb81414a135cd1138a7bafd2ff7851568519adbac028822a"
+    },
+    {
+      "path": "rapor/final_2026/REQUIREMENTS.md",
+      "matches_prior_review": false,
+      "current_sha256": "143b0b0ae02781ffe9206fe53c44549de8f951f586b84282c02a6779d6260b18"
+    },
+    {
+      "path": "rapor/final_2026/SPEAKER_NOTES_EN.md",
+      "matches_prior_review": false,
+      "current_sha256": "902c31758342e794dc9367823bbc93506896369fad00babf709c72ef73db9420"
+    },
+    {
+      "path": "rapor/final_2026/STUDY_GUIDE_TR.md",
+      "matches_prior_review": false,
+      "current_sha256": "2282f0212edcb4c7c6f03609242c2a844e9c5ac9e15b69f5632c7ae0c1dc53f8"
+    }
+  ],
+  "focused_historical_passages": {
+    "HISTORY.md": [
+      "initial chronology and acquisition, lines 1–425",
+      "subsequent report-production changes"
+    ],
+    "ml/EXPERIMENTS.md": [
+      "E1–E6 early benchmark and split counts",
+      "E19b/E19c reversed-label repair and withdrawn interpretations",
+      "E27 evaluation-dependent calibration correction",
+      "E32 and E39–E46 source-transfer failures and admission",
+      "E62–E64 unsuccessful approaches",
+      "E91/E92 fit and development",
+      "E102/E103 retention and nonpromotion",
+      "E151/E152 rejected transport features and decomposition"
+    ],
+    "DATASETS.md": [
+      "acquisition versus admitted-role distinctions",
+      "E66 provenance and processing",
+      "E148 admitted TRAIN inventory"
+    ],
+    "reference_notes": [
+      "fixed-crop and camera-noise causal qualifications"
+    ],
+    "current_package": [
+      "report narrative and contents",
+      "presentation text and notes, digest",
+      "requirements, handoff, critical review and Turkish guide"
+    ]
+  },
+  "narrative_changes": [
+    "217-word abstract covers iterative development and recordkeeping",
+    "E92 TRAIN 12269 parents / 49076 views distinguished from 160 REAL plus 160 AI DEV",
+    "Early CIFAKE 90000/10000/20000 and larger E42/E49 evaluations assigned to their own models",
+    "Table 1 maps findings to decisions; Table 2 separates population roles",
+    "E19b/E19c repair explains withdrawn feature and volume interpretations",
+    "No unsupported 600 GB total or whole-archive training assertion",
+    "Acceptance failures and repeated-DEV limits retained"
+  ],
+  "outputs": {
+    "report_pages": 30,
+    "abstract_words": 217,
+    "headings": 35,
+    "figures": 3,
+    "tables": 6,
+    "references": 14,
+    "presentation_slides": 15,
+    "planned_speech_seconds": 835,
+    "digest_slides": 1,
+    "checks_passed": 649,
+    "unresolved_information_groups": 5
+  },
+  "visual_review": {
+    "reference": "/private/tmp/pixelproof-full-review-20260926",
+    "report_changed_and_inspected": [
+      2,
+      3,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      25
+    ],
+    "report_other_pages_pixel_identical": 19,
+    "presentation_changed_and_inspected": [
+      5
+    ],
+    "presentation_other_slides_pixel_identical": 14,
+    "digest_inspected": true,
+    "legacy_doc": {
+      "pages": 30,
+      "per_page_word_multisets_match": true,
+      "matched_72dpi_changed_pages_inspected": [
+        3,
+        4,
+        7,
+        17,
+        18
+      ],
+      "other_pages_pixel_identical": 25
+    },
+    "native_Microsoft_Office_tested": false
+  },
+  "artifacts": {
+    "CS395_Digest_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 89474,
+      "sha256": "c53e4750dd06dd3955e9bc5b77675fa9afaec2e454675c36047986b9abd4a6a0"
+    },
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
+      "bytes": 13678,
+      "sha256": "c34ea98f20207a4862cee0b881523034fa47c58c30088ada273d6961786e06d9"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
+      "bytes": 290816,
+      "sha256": "108b365de2ade0553e47ab3829a0e8e368ca4b1de2a416474c3f5b2316a133a4"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
+      "bytes": 182223,
+      "sha256": "92f7f99c886cfcf7f63b41ffe0d8f0d4d5e23ef962d96b96a6daeea429c6dc53"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 379434,
+      "sha256": "3a22bc48f9aae07a5fef80efe5529b1dc2c8bcd4b848057af59400ab43d98def"
+    },
+    "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 281841,
+      "sha256": "f99d5c4eac5e01d85dfd60c8873ee2db64e6c27b156b68069ba9f6f2551a32bc"
+    },
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
+      "bytes": 63614,
+      "sha256": "10a7655d23f0bbc2b42b97358a65d75ceaeb7601a1ae97f5488a4bc827819907"
+    }
+  },
+  "desktop": {
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
+      "sha256": "10a7655d23f0bbc2b42b97358a65d75ceaeb7601a1ae97f5488a4bc827819907",
+      "matched_before_refresh": true,
+      "matches_repository": true
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
+      "sha256": "108b365de2ade0553e47ab3829a0e8e368ca4b1de2a416474c3f5b2316a133a4",
+      "matched_before_refresh": true,
+      "matches_repository": true
+    },
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
+      "sha256": "c34ea98f20207a4862cee0b881523034fa47c58c30088ada273d6961786e06d9",
+      "matched_before_refresh": true,
+      "matches_repository": true
+    }
+  },
+  "presentation_finalizers": {
+    "Presentation": {
+      "sha256": "10a7655d23f0bbc2b42b97358a65d75ceaeb7601a1ae97f5488a4bc827819907",
+      "package_status": "pass",
+      "layout_findings": 0
+    },
+    "Digest": {
+      "sha256": "c34ea98f20207a4862cee0b881523034fa47c58c30088ada273d6961786e06d9",
+      "package_status": "pass",
+      "layout_findings": 0
+    }
+  },
+  "claim_boundary": "Formatting and selected evidence checks; not universal model reliability, independent review, grade prediction, oral rehearsal or complete administrative submission. No model changes, data downloads, protected-reserve scoring or school upload."
+}

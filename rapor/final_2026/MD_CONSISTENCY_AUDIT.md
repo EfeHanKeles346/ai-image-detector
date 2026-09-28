@@ -76,3 +76,23 @@ with per-view versus paired-policy clarification and outdated handoff states cor
 See `sources/end_to_end_review_20260926.json` for this follow-up scope and output hashes.
 Earlier counts and missing-field descriptions above are dated snapshots; current fields
 are in HANDOFF_TR.md. No fresh independent detector experiment was performed.
+
+
+## 28 September historical narrative follow-up
+
+The prior full baseline reading remains the foundation. This follow-up compared hashes
+against the later current-review receipt (19 unchanged, 11 changed) and revisited the
+chronology and corrected interpretations rather than treating old entries as current
+truth. The detailed scope is in `sources/historical_narrative_review_20260928.json`.
+
+| Historical question | Report treatment |
+|---|---|
+| Was all work based on 320 images? | Earlier CIFAKE training/test sizes and E42/E49 evaluations retained with their own model versions |
+| Does archive size equal E92 training? | Acquisition, admitted TRAIN, transformed views and evaluation populations separated |
+| Did labels change scientific conclusions? | E19b/E19c mapping repair, DINOv2 AUC correction and revised training-volume interpretation |
+| Did records affect decisions? | Section 4.3 and Table 1 trace findings through repairs, rejection and next questions |
+| Does 20/20 mean final acceptance? | One new reference-relative AI miss and repeated DEV use remain explicit |
+| Did later models prove universality? | E102, source-fold diagnostics, E151/E152 and Model2 retain their distinct limits |
+
+The abstract, Table 1, Table 2, conclusion, slide 5, digest and study guide were aligned.
+Raw historical research logs were preserved. No new scientific result was generated.

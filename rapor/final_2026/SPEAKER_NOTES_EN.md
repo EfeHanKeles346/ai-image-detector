@@ -1,6 +1,6 @@
 # English speaking notes
 
-Suggested timing: 13 minutes 35 seconds for slides 1–13. Slides 14–15 are references. Rehearse; this is not measured speaking time.
+Suggested timing: 13 minutes 55 seconds for slides 1–13. Slides 14–15 are references. Rehearse; this is not measured speaking time.
 
 ## 1. Purpose (40 seconds)
 
@@ -18,9 +18,9 @@ Table 1 shows why a high internal score was not enough. The early small CNN achi
 
 Two corrections changed the interpretation of earlier work. Some datasets encoded real and AI labels in the opposite direction. We added explicit mappings and reran affected experiments. One DINOv2 result changed from near chance to useful discrimination, so the original explanation was withdrawn. Another audit found that threshold selection could consult evaluation data. Correcting it to use calibration only caused the candidate to fail its admission rule. We retained these failures in the record. Training, calibration, development and final evaluation have different permitted uses. Different files are not automatically independent when they share scenes, prompts or generation ancestry. Sources: E19b, E19c and E27.
 
-## 5. Method (65 seconds)
+## 5. Method (85 seconds)
 
-The project did not train a foundation model from scratch. Frozen encoders turn an image into numerical descriptions. PixelProof fits additional components and a constrained correction around these features. E92 used twelve thousand two hundred sixty-nine training parent images, with four processing views per parent. More views test processing robustness, but do not create independent photographs. The demo checks the upload, computes original and processed scores, and applies a documented display rule. My responsibilities included directing experiments, organizing sources and reviewing evidence, with AI coding assistance used for implementation and documentation. Research references: Radford et al. 2021, Oquab et al. 2024, Kim et al. 2026 and Ojha et al. 2023.
+The project did not train a foundation model from scratch. Frozen encoders turn an image into numerical descriptions. PixelProof fits additional components and a constrained correction around these features. E92 used twelve thousand two hundred sixty-nine training parent images, with four processing views per parent. More views test processing robustness, but do not create independent photographs. These training counts are separate from the three hundred twenty development images discussed next. The plan recorded a question and acceptance rules. The experiment log retained measurements, the history explained the resulting decision and the dataset register recorded which data could be used. Corrected conclusions stayed visible, so a failed experiment could guide the next one. The demo applies the resulting model through a documented display rule. My responsibilities included directing experiments, organizing sources and reviewing evidence, with AI coding assistance used for implementation and documentation. Research references: Radford et al. 2021, Oquab et al. 2024, Kim et al. 2026 and Ojha et al. 2023.
 
 ## 6. Main improvement (75 seconds)
 

@@ -1,7 +1,7 @@
 # PixelProof AI Image Detection and Reliability Evaluation
 
 ## Abstract
-Türk Telekom provides telecommunications and digital services across Türkiye. During my CS395 internship, I developed PixelProof as a research prototype for examining whether an image contains evidence of AI generation. A second, experimental module investigated where a local AI edit might occur. The work combined dataset auditing, machine learning experiments and a local web demonstration. Early models performed well on familiar data but failed on different image sources. Subsequent work therefore emphasized correct labels, separated data roles, processing robustness and reproducible evaluation. The E92 model detected 159 of 160 AI images in each of two conditions on a repeatedly used development set. False alerts on 160 real images decreased from 68 to zero for original inputs and from 68 to 14 after a fixed resizing and JPEG transformation, compared with the E43 reference. E92 met all 20 numerical development criteria but still missed one original AI image previously detected by E43, so it failed the complete acceptance contract. Later source-separated diagnostics and localization experiments exposed additional limitations. The completed deliverables include trained research artifacts, a guarded web demo, experiment and dataset records, and automated software checks. The project demonstrates a working, traceable prototype and substantial improvement on a defined development collection. It does not establish universal detection or production readiness. Future work should prioritize genuinely independent sources, calibration separated from evaluation and broader localization tests before stronger claims.
+Türk Telekom provides telecommunications and digital services across Türkiye. During my CS395 internship, I developed PixelProof to investigate AI-generated image detection while reducing false alerts on real photographs. A second experimental module explored locating AI-edited regions. Development followed an iterative process: inspect errors, define the next experiment, measure the result and record the decision. Dataset records tracked acquisition and permitted use, while experiment and history logs retained both improvements and failed approaches. Early transfer failures and label errors shifted the focus toward data quality and reliable evaluation. E92's learned components used 12,269 training images represented under four processing conditions, producing 49,076 training views. A separate but repeatedly used development collection contained 160 real and 160 AI images. E92 detected 159 AI images in each of two evaluation conditions. Compared with E43, false alerts fell from 68 to zero on real originals and from 68 to 14 after resizing and JPEG compression. All 20 numerical checks passed, but one newly missed reference-detected AI image prevented full acceptance. The deliverables include trained research components, a local web demonstration and reproducible records. Model2 remains experimental. The project demonstrates improvement on a defined development collection, rather than universal detection or production readiness. Further work should use independent, diverse evaluation sources, keep calibration separate from evaluation and test localization with more editors.
 
 # 1. Introduction
 
@@ -86,20 +86,20 @@ I carried out the project individually. I consulted my supervisor and mentors wh
 
 ## 4.3 Methodology and tools
 
-The workflow became more disciplined as problems emerged. Before a later experiment, the plan stated the question, data and acceptance rules. After the run, the experiment log recorded results and failures, and the history explained the decision. The dataset register recorded what was acquired and why it could be used. For example, correcting reversed labels required rerunning affected experiments and withdrawing an earlier conclusion. These records show how a result changed the next step; they are not simply a collection of successful scores.
+The workflow became more disciplined as problems emerged. In later experiments, PLAN.md stated the question, allowed data and acceptance rules before a run. The experiment log recorded the settings and measurements, including failures. HISTORY.md explained what those results changed, while DATASETS.md recorded acquisition, source checks and permitted use. Earlier entries were retained when a later audit corrected them. This made it possible to trace an idea from its original motivation through its test to the decision that followed.
 
 Training data taught the model. Calibration data helped choose the score threshold. Development data revealed weaknesses and guided further changes. Final evaluation required data that had not influenced these decisions. Repeatedly checking the same collection makes it development evidence, even when each new run has fixed settings. The main error measures were AI detection rate and false alerts on real photographs. AUC measured ranking across thresholds; it did not establish that a particular decision rule was safe.
 
-Python, PyTorch, NumPy, SciPy and scikit-learn supported modelling and analysis. The local interface used React and TypeScript with a FastAPI inference service. Git preserved implementation history, while automated Python and web checks supported reproducibility. Model artifacts and important input records were bound to cryptographic hashes. Table 1 distinguishes these components by purpose.
+Python, PyTorch, NumPy, SciPy and scikit-learn supported modelling and analysis. React and TypeScript provided the interface, with FastAPI serving inference. Git preserved changes and automated checks tested the software. Saved models and key inputs were identified by file hashes so that later comparisons could use the intended versions. Table 1 gives representative decisions recorded during this workflow (Keleş, 2026).
 
-Table 1. Main tools and their roles in the project.
-Component | Purpose
+Table 1. How recorded findings changed development.
+Finding | Recorded response
 --- | ---
-PyTorch and pretrained encoders | Visual features and learned adaptation
-NumPy, SciPy and scikit-learn | Feature transforms, optimization and metrics
-FastAPI | Validated local inference requests
-React and TypeScript | Uploads and understandable result display
-Git and GitHub Actions | Version history and automated checks
+Weak transfer to new image sources | Compare sources and processing conditions
+Reversed source labels in E19b | Remap labels and rerun affected experiments
+Evaluation used in E27 threshold selection | Recompute using calibration data only
+E92 reduced false alerts but added an AI miss | Retain the failed acceptance result
+E151 features harmed processed-image detection | Reject the candidate and investigate its errors
 
 ## 4.4 Expected outcomes and deliverables
 
@@ -109,35 +109,37 @@ The intended outcome was a demonstrable image-screening workflow supported by tr
 
 ### 4.5.1 Early models and the first transfer failures
 
-The first phase compared a small CNN, classifiers on frozen embeddings and a pretrained ResNet-18. On the familiar CIFAKE test, the ResNet result improved to 97.66%, yet its accuracy on the 995-image external collection fell to 25.2%. A control that reproduced the training resolution bottleneck recovered much of the loss. This showed that a stronger architecture could still fail when image preparation changed (Keleş, 2026, E1–E6).
+The first phase compared a small CNN, classifiers on frozen embeddings and a pretrained ResNet-18. The CNN used 90,000 CIFAKE training images and 10,000 validation images; its familiar test contained 20,000 images. ResNet improved familiar-test accuracy to 97.66%, yet accuracy on the separate 995-image collection fell to 25.2%. Reproducing the training resolution bottleneck recovered much of that loss. These comparisons showed why a larger familiar dataset and a stronger architecture did not establish reliable transfer (Keleş, 2026, E1–E6).
 
-Later experiments used native-resolution data, image statistics and tile-based features. The goal was to retain fine detail without allowing dimensions or processing history to dominate the decision. Some specialist methods helped particular sources but harmed others. Simple averaging of model scores did not supply a consistently better detector. These comparisons redirected the work toward source coverage and evaluation design rather than selecting the most impressive isolated score.
+Native-resolution data, image statistics and tile features were then tested to retain fine detail. Some methods helped particular sources but harmed others. Averaging their scores did not consistently improve detection, so attention shifted toward source coverage and evaluation design.
 
-The early conclusions also required correction. Fixed-size crops do not automatically make a biased dataset safe, and a plausible physical explanation does not prove what a learned model uses. Later notes explicitly qualified the original camera-noise and preprocessing assumptions. The report follows those corrections rather than repeating the strongest early wording.
+Later audits qualified the early explanations. Fixed-size crops do not remove every dataset shortcut, and plausible camera-noise arguments do not establish what a model learned. These were hypotheses to test, not universal rules.
 
-The next phase compared the project-trained E20 tile model with frozen Community-Forensics and B-Free detectors. External representations improved some results, but each still produced severe false alerts on particular real-image sources. The E26 comparison used a union of source-calibrated alerts, while later modern-generator probes exposed remaining blind spots. E31 and E32 then showed that strong internal results could collapse on new real-image sources. These stages explain why the project continued beyond its first working demo (Keleş, 2026, E20–E32).
+The E20 tile model was compared with frozen Community-Forensics and B-Free detectors. Each still falsely flagged particular real-image sources. E26 combined source-calibrated alerts, but modern-generator probes found blind spots. E31 and E32 also lost performance on new real sources, showing why the first working demo required further research (Keleş, 2026, E20–E32).
 
-Threshold changes and more balanced training sources did not consistently solve transfer failures. E42 still failed a larger RR evaluation covering 16,953 original images and 50,858 linked versions. Its successor, E43, improved on familiar RR data but struggled with reconstructed images. Combining specialist detectors then exposed two opposing problems: false alerts on real photographs and missed GAN-generated images. The next phase therefore aimed to correct real-photo errors while retaining AI detections already made by the reference (Keleş, 2026, E33–E50).
+Threshold changes and balanced sources did not consistently solve transfer. E42 failed an RR evaluation of 16,953 images and 50,858 linked views. E43 improved familiar RR results but struggled with reconstructed images. Specialist combinations also missed GAN images or raised real-photo errors. Later correction models therefore had to reduce false alerts while protecting previously detected AI examples (Keleş, 2026, E33–E50).
 
 ### 4.5.2 Data integrity and corrected conclusions
 
 A major audit found that two source datasets used the opposite numeric label convention from the project. PixelProof defines 0 as real and 1 as AI, but raw source labels had entered a shared pool without translation. The error affected several earlier experiments. The remedy was an explicit source-to-project label mapping, checks against declared label names, rebuilt indices and reruns of affected experiments (Keleş, 2026, E19b–E19c).
 
-One consequence was especially instructive: a DINOv2 result previously interpreted as near chance on Defactify changed from AUC 0.480 to 0.764 after label correction. The original explanation for failure was therefore withdrawn. This was a data-semantics error, not an architectural discovery. The record preserves the mistake and the correction so later conclusions do not silently inherit invalid evidence.
+The corrected labels changed which methods were worth pursuing. DINOv2 had scored AUC 0.480 on Defactify, leading to an explanation that its features were unsuitable. After correction, AUC rose to 0.764 and that explanation was withdrawn. The claim that a larger training pool brought little benefit also needed revision: it reduced false alerts more than first reported, although performance still varied by source. The correction changed both the measurements and the next research direction (Keleş, 2026, E19c).
 
 A separate E27 audit found that a threshold-selection procedure could consult evaluation data. The corrected procedure used only calibration data before evaluation. The revised candidate then failed its admission requirement and was removed from the serving path. These corrections establish why the provenance of a score matters as much as its size.
 
 ### 4.5.3 Data roles and processing conditions
 
-The dataset register recorded each source, its licence, intended use and integrity checks. Downloading a collection did not make it training data. The audit checked identical files, similar images and known shared scenes or prompts. Where the original source could not be established, the report keeps that uncertainty. A parent image means the original observation before this project creates resized or compressed versions of it.
+The dataset register recorded each source, its licence, intended use and integrity checks. Acquired archives, selected training images and evaluation images were distinct populations. Download size therefore did not measure how many examples trained E92 or how reliable it was. The audit checked identical files, similar images and known shared scenes or prompts. Where origins remained unknown, that uncertainty was retained. A parent image means an original observation before this project creates resized or compressed versions of it.
 
-E92 used 12,269 training parent images, comprising 7,674 real and 4,595 AI examples. Four processing conditions produced 49,076 views. Later research expanded the real population to 7,930, giving 12,525 parents and 50,100 views. These later counts must not be attributed to the earlier E92 fit. Table 2 separates the main populations (Keleş, 2026, E92 and E139).
+E92 used 12,269 training parent images: 7,674 real and 4,595 AI. Four processing conditions produced 49,076 views. Later research added real images, giving 12,525 parents and 50,100 views; these were not the earlier E92 training counts. Table 2 places the E92 comparison alongside larger earlier evaluations. Each row describes a different model or data role, and the rows must not be summed into one independent test (Keleş, 2026, E42, E49, E92 and E139).
 
-Table 2. Distinct populations and their permissible interpretation.
+Table 2. Training and evaluation populations at different project stages.
 Population | Parents | Views | Role
 --- | --- | --- | ---
+E42 RR evaluation | 16,953 | 50,858 | Earlier model; failed acceptance
+E43 on E49-C | 2,000 | 4,000 | Earlier final; failed acceptance
 E92 training | 12,269 | 49,076 | Training
-E66 comparison | 320 | 640 | Reused development
+E92 on E66 | 320 | 640 | Reused development
 Later source-fold research | 12,525 | 50,100 | Internal diagnostics
 Model2 controlled pilot | 16 | 192 in E135 | Adaptive development
 
@@ -165,7 +167,7 @@ Figure 3 compares false alerts on exactly the same real development images. E92 
 ![Figure 3](figures/false_alerts.png)
 Figure 3. Real-image false alerts on the reused development set, with 160 real images per condition.
 
-E92 detected 159 of 160 AI images in each condition. It passed ten numerical requirements for originals and the same ten for processed views. However, it newly missed one original AI image that E43 had caught. Other recovered AI images could not cancel that loss under the predeclared retention rule. Consequently, the complete acceptance contract failed despite the 20/20 numerical milestone.
+E92 detected 159 of 160 AI images in each condition. It passed ten numerical requirements for originals and the same ten for processed views. However, it newly missed one original AI image that E43 had caught. Other recovered AI images could not cancel that loss under the predeclared retention rule. Consequently, the full set of acceptance requirements failed despite the 20/20 numerical milestone.
 
 The development collection contains 160 real observations from only ten SIDD scenes and 160 AI images from two previously seen families. Repeated use influenced later research choices. The result therefore supports progress on this collection, while leaving adaptive selection bias and unseen-source reliability unresolved. Thirteen of the fourteen processed real false alerts concentrate in two scenes, which also shows why a pooled rate can conceal weaknesses.
 
@@ -173,13 +175,13 @@ The later E102 candidate reduced processed-view real false alerts further, from 
 
 ### 4.5.6 Honest scores and the web demonstration
 
-The local demonstration reports AI evidence, no clear AI evidence or uncertainty. It does not certify a photograph as real. On the displayed 0–100 score scale, the upper threshold is about 7.94 and the lower threshold about 1.15. The upper threshold came from earlier E48 calibration with limits on real-photo false alerts. The lower one came from E49 analysis of already-used calibration and development data. Neither is a probability or a universal optimum. Exact values are preserved in the project records.
+The demo reports AI evidence, no clear AI evidence or uncertainty. It cannot certify authenticity. On its 0–100 score scale, the upper threshold is about 7.94 and the lower about 1.15. The upper came from E48 calibration with real-photo false-alert limits; the lower came from E49 analysis of already-used calibration and development data. These are experimental operating points, not probabilities or universal optima.
 
-An original score at or above the upper cut keeps an AI alert visible. If both E92 views are below the lower cut, the interface reports no clear signal. Other cases need uncertainty handling. An original AI alert with disagreement can carry a review warning. E43 supplies a separate advisory and no longer vetoes two low E92 scores. Thus the final paired display cannot be reconstructed from one displayed percentage or from an assumed 50% boundary.
+An original score at or above the upper threshold keeps an AI alert visible, with a review warning if needed. Both E92 views below the lower threshold yield no clear AI evidence; remaining cases are uncertain. E43 provides a separate advisory and cannot veto two low E92 scores. Decisions use unrounded scores rather than a 50% boundary.
 
-The final interface rule was also checked on the same 320 development images. Of 160 real images, 139 received no clear AI evidence and 21 remained uncertain; none received an AI alert. Of 160 AI images, 159 received an AI alert and one remained uncertain. These counts combine two views into one user result. Thus 14 processed-view false alerts do not mean 14 final AI warnings: a low original score can instead leave the result uncertain. These development counts cannot predict every future upload (Keleş, 2026, current-policy audit).
+The combined rule was checked on the same 320 development images. Among 160 real images, 139 received no clear AI evidence, 21 were uncertain and none received an AI alert. Among 160 AI images, 159 received an alert and one was uncertain. Thus 14 processed-view false alerts do not mean 14 final website warnings: a low original score can leave the combined result uncertain. These reused observations do not predict every future upload (Keleş, 2026, current-policy audit).
 
-The service rejects unsupported or oversized uploads and gives an explicit error when the model is unavailable. It checks the saved model files before loading them. Cancellation handling prevents a second heavy inference job from starting while an earlier one still runs. The browser checks the response format before showing a result. These repairs make the demo more dependable to use; they do not increase the model’s measured accuracy.
+The service rejects unsupported or oversized uploads, checks model files before loading and reports unavailable models explicitly. Cancellation handling prevents overlapping heavy inference jobs, and the browser validates response fields. These repairs improve reliable operation; they do not increase measured detection accuracy.
 
 ### 4.5.7 Broader checks and rejected improvements
 
@@ -255,7 +257,7 @@ My tasks followed the stage of the project: reviewing the plan, implementing a c
 
 PixelProof progressed from early classifiers with large source-transfer failures to a working research demo with strong results on a defined development collection. E92 reduced real-image false alerts while maintaining high aggregate AI detection in that collection. The interface now distinguishes a model signal from an authenticity claim and separates the main model from an advisory reference.
 
-The main result has a clear limit. The 20 numerical checks passed, but one AI image caught by the reference became a new miss. Repeated use of the development data also restricts how far the result can be generalized. Later source tests and the Model2 pilot found further weaknesses. These findings explain why the system remains a research prototype.
+The main result has a clear limit. All 20 numerical checks passed, but one AI image caught by the reference became a new miss. Reusing the development collection also limits claims about new sources. Later source tests and the Model2 pilot exposed other weaknesses. Keeping these failures in the records helped explain why candidates were rejected and why the demo remained a research prototype.
 
 The durable outcome is both an implemented prototype and a traceable method of evaluating it. Data corrections, rejected hypotheses and runtime repairs are part of that outcome. They support a credible student engineering project while identifying exactly which claims need further evidence.
 

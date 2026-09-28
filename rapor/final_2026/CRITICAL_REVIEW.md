@@ -1,6 +1,6 @@
 # Critical report review — 25 September 2026
 
-Current review: **26 September 2026**. The report, digest, presentation and speaking
+Current review: **28 September 2026**. The report, digest, presentation and speaking
 notes were read end to end against the previously reviewed project records and their
 subsequent changes. No experiment was rerun. HANDOFF_TR.md lists the five remaining
 information groups; historical addenda later in this file describe older drafts.
@@ -86,7 +86,7 @@ reference list nor this checklist supplies missing experience.
 | Prescribed filename, program and date | Seven named deliverables; CS395, EfeHan_Keles, 25September2026 | DRAFT; replace filename date with actual submission date |
 | Each file below 10 MB | Artifact audit; all seven files checked | PASS |
 | Cover, header/running head, title, name, ID, dates, host, supervisor, university/program | Report page 1 | PASS metadata; submission date intentionally deferred |
-| Separate abstract, at most 250 words; company, project, analysis, recommendations | Page 2; 228 words | PASS |
+| Separate abstract, at most 250 words; company, project, analysis, recommendations | Page 2; 217 words | PASS |
 | Separate contents with every main/subheading and actual pages | Pages 3–4; 35 matching entries; Word headings and TOC field | PASS |
 | Introduction: importance and structure | Section 1 | PASS |
 | Company title/contact/history/facilities/ownership/products/customers/employees/organization chart | Section 2; official company sources; Figure 1 | PASS for verified corporate context |
@@ -117,7 +117,7 @@ reference list nor this checklist supplies missing experience.
 | Alphabetic references, single spacing/blank separation, journal/series italics, retrieval dates | Section 8; instructor overrides hanging indent and centered heading | PASS |
 | Page numbering, formal structure, consistent terms, spelling and print-preview review | All pages rendered; local spelling flags reviewed; no external grammar upload | PASS |
 | Useful appendices only | Criteria and evidence/metric map in Section 9 | PASS |
-| English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 15 slides, 13 spoken, 815 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
+| English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 15 slides, 13 spoken, 835 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
 | One-slide digest with project/company/address/duration/name/program/objectives/outcomes | Separate PPTX/PDF | PASS layout/content; submission date intentionally deferred |
 | Final check on submission device | LibreOffice renders and PPTX import checked | Native Office and post-completion review still open |
 
@@ -250,3 +250,40 @@ were reviewed; the other 28 match the prior render. Presentation slide 1 and the
 were reviewed; the other 14 presentation slides match the prior render. Both PPTX
 finalizers have no remaining layout warnings. All 638 scoped package checks pass.
 Five report placeholders remain, with one date placeholder in each PPTX.
+
+
+## Historical narrative refinement — 28 September 2026
+
+Reconciled the earlier complete Markdown reading with the current files, then revisited
+representative historical passages from the initial CNN work through E152. Nineteen of
+thirty files in the previous current-review receipt were unchanged; eleven differed.
+Research logs and dataset records were unchanged. This is a targeted chronological
+rereading plus reconciliation, not a new claim to have reread every line of all files.
+The exact scope and hashes are in `sources/historical_narrative_review_20260928.json`.
+
+The abstract now has 217 words and explains the experiment-to-decision workflow. It
+separates 12,269 E92 training parents / 49,076 views from 160 real plus 160 AI reused
+development images. No unsupported cumulative download size is presented as training.
+The report includes the earlier 90,000/10,000/20,000 CIFAKE split and places E42's 16,953
+parents / 50,858 views and E43's 2,000-parent E49 evaluation beside, not inside, E92's
+reported evidence. These populations must not be added into one independent test.
+Table 1 connects findings to subsequent actions. The corrected-label account now explains
+why the earlier DINOv2 and training-volume interpretations changed. Failures, adaptive
+reuse, the additional retention failure and Model2 limitations remain explicit.
+
+All seven artifacts were regenerated. The final report has 30 pages, 35 verified contents
+entries, three figures, six tables and 14 references. Eleven changed report pages were
+inspected; nineteen match the previous reviewed render exactly. Slide 5 and the digest
+were inspected, while the other fourteen slides match the previous render. Both PPTX
+finalizers report zero layout warnings. Planned speech is 835 seconds (13:55), not a
+rehearsal measurement. All 649 scoped checks pass; the count includes repeated per-run
+font checks and is not a count of distinct institutional requirements.
+
+Legacy DOC conversion preserves all 30 per-page word multisets. At matched 72 dpi,
+25 pages match the DOCX PDF; the five differing contents/figure pages were inspected.
+No clipping or changed pagination was found. Native Microsoft Office was not tested.
+The editorial assessment remains 9.2/10 for technical narrative only. The strongest
+improvement is clearer reasoning from observations to decisions. Remaining weaknesses
+are the E identifiers that require explanation, untested oral timing, and five deferred
+personal/company information groups. The entire submission is still incomplete until
+those fields are supplied. No classifier experiment, download or school upload occurred.

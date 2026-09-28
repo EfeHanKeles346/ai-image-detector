@@ -5,7 +5,7 @@
   "figures": 3,
   "tables": 6,
   "references": 14,
-  "checks_passed": 641,
+  "checks_passed": 649,
   "checks": [
     {
       "name": "report_30_pages",
@@ -57,6 +57,38 @@
     },
     {
       "name": "encoded_runs_12pt",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
       "passed": true
     },
     {
@@ -2574,32 +2606,32 @@
   ],
   "files": {
     "CS395_Digest_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 88389,
-      "sha256": "fcfa68bae798a83d336e6676a5cc33de2e4b889992dfde3fadc6d09ab9237310"
+      "bytes": 89474,
+      "sha256": "c53e4750dd06dd3955e9bc5b77675fa9afaec2e454675c36047986b9abd4a6a0"
     },
     "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 13561,
-      "sha256": "a43c3c5f30ea24bf0c2fe00d291522db2d43e5d60f2c4ba2d6082ae53eb5a6e3"
+      "bytes": 13678,
+      "sha256": "c34ea98f20207a4862cee0b881523034fa47c58c30088ada273d6961786e06d9"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
-      "bytes": 289792,
-      "sha256": "eeddb7cfb901c8954e160baadb12f5d650632f56be24e8652cfb1b82741d2132"
+      "bytes": 290816,
+      "sha256": "108b365de2ade0553e47ab3829a0e8e368ca4b1de2a416474c3f5b2316a133a4"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
-      "bytes": 182232,
-      "sha256": "2528401810a7a57f3f404364dd4fc3eb805e9c0ce810f706797b96b484e28889"
+      "bytes": 182223,
+      "sha256": "92f7f99c886cfcf7f63b41ffe0d8f0d4d5e23ef962d96b96a6daeea429c6dc53"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 376569,
-      "sha256": "69a8a1689d3cd9d83ac5a49b48448050666ae76dd266b762252ba805d47a41c2"
+      "bytes": 379434,
+      "sha256": "3a22bc48f9aae07a5fef80efe5529b1dc2c8bcd4b848057af59400ab43d98def"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 279842,
-      "sha256": "25e40649319541ab15200e4d0c8cc34bb0c08998c9b1bd72b729167774b6b546"
+      "bytes": 281841,
+      "sha256": "f99d5c4eac5e01d85dfd60c8873ee2db64e6c27b156b68069ba9f6f2551a32bc"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 63440,
-      "sha256": "6ec251025365f6e113253fa5758918ec1bf7d7b31ed95b7a2c1d59af89903059"
+      "bytes": 63614,
+      "sha256": "10a7655d23f0bbc2b42b97358a65d75ceaeb7601a1ae97f5488a4bc827819907"
     }
   },
   "unresolved_fields": 5,

@@ -11326,3 +11326,24 @@ its conversion differences were inspected. All 641 scoped checks pass, including
 assertions against the paired-policy receipt. Desktop keeps only the three current
 submission files (plus any existing Office lock). Five completion fields remain. No model
 experiment, download, reserve access or school submission occurred.
+
+
+## 2026-09-28 — Historical narrative and training/evaluation clarification
+
+Reconciled the prior complete Markdown review with current hashes and revisited key
+historical experiments and corrections. Rewrote the abstract around the iterative
+workflow and verified training/evaluation roles: 12,269 E92 TRAIN parents, 49,076 views,
+versus reused DEV containing 160 REAL plus 160 AI. Earlier CIFAKE and E42/E49 populations
+are explained with their own model versions. No unverified cumulative download size is
+claimed as training volume. Table 1 now connects findings to actions; Table 2 separates
+the different populations. Expanded the corrected-label case to explain the withdrawn
+DINOv2 and training-volume interpretations. Preserved all scientific failures and limits.
+
+Updated report, presentation, digest and learning notes. Report stays 30 pages with a
+217-word abstract, 35 verified contents entries, three figures, six tables and 14 references.
+Presentation remains 15 slides, with 835 seconds planned speech; digest remains one slide.
+Eleven changed report pages, slide 5 and digest were visually inspected, with unchanged
+pages/slides matching prior reviewed renders. Legacy DOC retains every page's word
+multiset; its five raster differences were inspected. Both PPTX finalizers have zero
+warnings and 649 scoped artifact checks pass. Research data, experiments and E92 serving
+are unchanged. Five deferred information groups remain; no school submission occurred.

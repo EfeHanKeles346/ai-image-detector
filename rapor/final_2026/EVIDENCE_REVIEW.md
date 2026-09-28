@@ -77,7 +77,7 @@ section limits, selected E42/E49/E92/E102 assertions, Model2 nonpromotion, nativ
 notes, duration and file size. `sources/package_audit.json` records artifact hashes and
 results. These checks do not imply detector generalization or a guaranteed grade.
 
-## Current completion status — 26 September 2026
+## Current completion status — 28 September 2026
 
 The student has supplied identity, unit, office address, supervisor title, individual/advisory
 roles, personal reflection, three course connections and the typical-day account. Five
@@ -138,3 +138,40 @@ rasterization/TOC differences were visually checked. Native Microsoft Office was
 Five information groups remain in HANDOFF_TR.md, including the intentionally blank
 submission date. The three Desktop submission files were refreshed only after verifying
 that their pre-edit bytes matched the saved repository versions. No school upload occurred.
+
+
+## Historical narrative refinement — 28 September 2026
+
+Reconciled the earlier complete Markdown reading with the current files, then revisited
+representative historical passages from the initial CNN work through E152. Nineteen of
+thirty files in the previous current-review receipt were unchanged; eleven differed.
+Research logs and dataset records were unchanged. This is a targeted chronological
+rereading plus reconciliation, not a new claim to have reread every line of all files.
+The exact scope and hashes are in `sources/historical_narrative_review_20260928.json`.
+
+The abstract now has 217 words and explains the experiment-to-decision workflow. It
+separates 12,269 E92 training parents / 49,076 views from 160 real plus 160 AI reused
+development images. No unsupported cumulative download size is presented as training.
+The report includes the earlier 90,000/10,000/20,000 CIFAKE split and places E42's 16,953
+parents / 50,858 views and E43's 2,000-parent E49 evaluation beside, not inside, E92's
+reported evidence. These populations must not be added into one independent test.
+Table 1 connects findings to subsequent actions. The corrected-label account now explains
+why the earlier DINOv2 and training-volume interpretations changed. Failures, adaptive
+reuse, the additional retention failure and Model2 limitations remain explicit.
+
+All seven artifacts were regenerated. The final report has 30 pages, 35 verified contents
+entries, three figures, six tables and 14 references. Eleven changed report pages were
+inspected; nineteen match the previous reviewed render exactly. Slide 5 and the digest
+were inspected, while the other fourteen slides match the previous render. Both PPTX
+finalizers report zero layout warnings. Planned speech is 835 seconds (13:55), not a
+rehearsal measurement. All 649 scoped checks pass; the count includes repeated per-run
+font checks and is not a count of distinct institutional requirements.
+
+Legacy DOC conversion preserves all 30 per-page word multisets. At matched 72 dpi,
+25 pages match the DOCX PDF; the five differing contents/figure pages were inspected.
+No clipping or changed pagination was found. Native Microsoft Office was not tested.
+The editorial assessment remains 9.2/10 for technical narrative only. The strongest
+improvement is clearer reasoning from observations to decisions. Remaining weaknesses
+are the E identifiers that require explanation, untested oral timing, and five deferred
+personal/company information groups. The entire submission is still incomplete until
+those fields are supplied. No classifier experiment, download or school upload occurred.

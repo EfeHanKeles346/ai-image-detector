@@ -10,7 +10,7 @@ Projenin hikâyesi yalnızca “model eğittik, skor yükseldi” değil. Başla
 
 ## Sunumu nasıl çalışmalısın?
 
-Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 13 dakika 35 saniye; bu gerçek prova ölçümü değildir. PowerPoint’in konuşmacı notlarında İngilizce anlatım bulunuyor. Önce Türkçe anlamını kendi cümlelerinle anlat, sonra İngilizce notları çalış. Notları kelimesi kelimesine ezberlemek yerine slaytın tek ana fikrini öğren.
+Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 13 dakika 55 saniye; bu gerçek prova ölçümü değildir. PowerPoint’in konuşmacı notlarında İngilizce anlatım bulunuyor. Önce Türkçe anlamını kendi cümlelerinle anlat, sonra İngilizce notları çalış. Notları kelimesi kelimesine ezberlemek yerine slaytın tek ana fikrini öğren.
 
 | Slayt | Süre | Anlatacağın ana fikir |
 |---|---:|---|
@@ -18,7 +18,7 @@ Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 13 d
 | 2 | 50 sn | Bütün görüntüyü sınıflandırmak ile düzenlenen alanı bulmak farklı işler |
 | 3 | 60 sn | Tanıdık veride iyi skor, yeni kaynakta başarının garantisi değil |
 | 4 | 65 sn | Etiketler ve değerlendirme yöntemi yanlışsa sonuç da yanlış yorumlanır |
-| 5 | 65 sn | Hazır görsel temsillerin üzerine projeye ait uyarlama ve uygulama kurduk |
+| 5 | 85 sn | Hazır temsiller, 12.269 eğitim görüntüsü ve deneyden karara uzanan kayıt düzeni |
 | 6 | 75 sn | Aynı gerçek fotoğraflarda yanlış alarmlar 68’den 0’a / 14’e indi |
 | 7 | 65 sn | 20 sayısal koşul geçti, ayrı koruma koşulu geçmedi |
 | 8 | 85 sn | Model puanı olasılık değil; iki eşik ve iki görünüm kullanılıyor |
@@ -114,3 +114,10 @@ hatalarını artırabildi; başka bir veri kümesinde GAN görüntüleri kaçır
 sonraki geliştirmelerde hem yanlış alarmı azaltmak hem önce yakalanan AI'ları korumak
 ayrı koşullar olarak izlendi. Bu farklı testleri E92'nin 320 ana görüntülük geliştirme
 karşılaştırmasıyla aynı başarı oranında birleştirme.
+
+
+## Eğitim, indirme ve son karşılaştırma neden farklı sayılar?
+
+İndirilen arşiv, içinden eğitime kabul edilen görüntüler ve sonucu ölçtüğümüz görüntüler aynı şey değil. Bu nedenle indirme boyutunu E92 eğitim büyüklüğü diye anlatmıyoruz. E92 için doğrulanmış sayı 12.269 ana görüntü ve dört koşulda 49.076 görünüm. Son karşılaştırmanın 160 gerçek + 160 AI olması, bütün projenin yalnızca 320 görüntüyle yapıldığı anlamına gelmiyor. İlk CNN aşamasında 90.000 eğitim, 10.000 doğrulama ve 20.000 tanıdık test görüntüsü vardı. Daha sonraki büyük testler başka model sürümlerini ölçtü; onların sonuçlarını E92'nin başarısına ekleyemeyiz.
+
+Kayıt mantığını şöyle anlatabilirsin: Önce soruyu ve kabul koşullarını yazdım, deneyi çalıştırdım, hataları inceledim ve bir sonraki adımı buna göre seçtim. PLAN soruyu, EXPERIMENTS ölçümü, HISTORY kararı, DATASETS ise verinin kaynağını ve kullanımını tuttu. Örneğin ters etiketler düzeltilince DINOv2 için önceki başarısızlık açıklaması geri çekildi. Daha büyük eğitim havuzunun yararı hakkındaki eski kötümser yorum da değişti. Bu, her eski notun bugün geçerli olmadığını ve düzeltmeleri birlikte okumamız gerektiğini gösteriyor.
