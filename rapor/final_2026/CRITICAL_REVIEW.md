@@ -1,9 +1,6 @@
 # Critical report review — 25 September 2026
 
-Current review: **29 September 2026**. The report was shortened and its references
-reviewed against primary sources. The earlier end-to-end package and project-record review
-remains the evidence baseline; presentation and digest are unchanged. No experiment was rerun. HANDOFF_TR.md lists the five remaining
-information groups; historical addenda later in this file describe older drafts.
+Current review: **29 September 2026**. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md lists the five remaining information groups. Dated addenda preserve older drafts.
 
 ## Decision and scoring boundary
 
@@ -29,7 +26,7 @@ Scores are editorial judgments grounded in the final artifacts, not calibrated m
 | Plain explanation and structure | 20% | 9.0 | Defines data roles, errors and parent images; explains why failed attempts changed direction. E identifiers and some source terminology still require attention. |
 | Credible student voice and contribution | 15% | 8.5 | Concrete repairs and decisions replace inflated success language; AI assistance is disclosed. The student’s own learning and workplace account is incorporated; oral explanation still needs rehearsal. |
 | Artifact formatting and visual quality | 15% | 9.5 | Rendered pages, captions, contents, fonts, section limits, editable formats and file sizes checked. Native Microsoft Office and final post-placeholder layout remain untested. |
-| Presentation and learning support | 5% | 9.0 | Main question, methods, improvement and failures fit 13 spoken slides; Turkish guide and English notes provided. Timing is planned, not rehearsed. |
+| Presentation and learning support | 5% | 9.0 | Main question, methods, improvement and failures fit 10 spoken slides; Turkish guide and English notes provided. Timing is planned, not rehearsed. |
 
 Weighted result: 9.225, reported as 9.2. This rubric rates the prepared technical/editorial
 work only. It must not be used to average away missing mandatory submission information.
@@ -106,7 +103,7 @@ reference list nor this checklist supplies missing experience.
 | Typical day for hybrid internship | Section 5.4 | PASS; student-confirmed hybrid routine |
 | Conclusions without new results; recommendations and work culture | Sections 6–7 | PASS |
 | Page limits: company 3, department/status/motivation 1 each, literature 3 | Actual section locations; company 2, literature 2; each short subsection within one page | PASS |
-| Page limits: details 10, results 1, experience 3, typical day 1, conclusions/recommendations 1 each | Details 6, results 1, experience 2, typical-day within page 14, conclusions 1, recommendations 1 | PASS |
+| Page limits: details 10, results 1, experience 3, typical day 1, conclusions/recommendations 1 each | Details 7, results 1, experience 2, typical-day within page 17, conclusions 1, recommendations 1 | PASS |
 | Times New Roman 12, one-inch margins, black text, double body spacing, no extra paragraph spacing | DOCX properties and rendered PDF | PASS |
 | No indentation, justified text, left hierarchical headings | Instructor overrides office indent/heading alternatives | PASS |
 | No full-sentence numbered/bulleted lists | Report has no numbered-list paragraph properties; prose reviewed | PASS |
@@ -117,7 +114,7 @@ reference list nor this checklist supplies missing experience.
 | Alphabetic references, single spacing/blank separation, journal/series italics, retrieval dates | Section 8; instructor overrides hanging indent and centered heading | PASS |
 | Page numbering, formal structure, consistent terms, spelling and print-preview review | All pages rendered; local spelling flags reviewed; no external grammar upload | PASS |
 | Useful appendices only | Criteria table and brief repository pointer in Section 9 | PASS |
-| English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 15 slides, 13 spoken, 835 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
+| English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 12 slides, 10 spoken, 600 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
 | One-slide digest with project/company/address/duration/name/program/objectives/outcomes | Separate PPTX/PDF | PASS layout/content; submission date intentionally deferred |
 | Final check on submission device | LibreOffice renders and PPTX import checked | Native Office and post-completion review still open |
 
@@ -317,3 +314,27 @@ multiset. Four raster-different pages were inspected. The Desktop DOC was refres
 after checking it still matched the preceding draft. Presentation and digest exports are
 byte-identical to the prior versions. Five deferred information groups remain; native Office,
 Turnitin and actual submission were not performed. Receipt: sources/concise_report_review_20260929.json.
+
+## Clear 21-page report and 10-minute presentation — 29 September 2026
+
+The student requested 20–25 pages and an easy ten-minute talk. The report now has 21
+pages, with 3,144 paragraph words and the company section still at 191 words. Added plain
+explanations of transfer learning, parent/view dependence, label repairs, retention failures
+and independent evaluation. All 35 numbered headings, the 217-word abstract, three figures,
+five tables and fourteen substantively used references remain. SIDD/SID conference page
+ranges were completed; the DINOv2 primary PDF directly confirms the 2024 journal year.
+
+The deck now has ten main slides and two reference slides. Its 908-word spoken script has
+a 600-second plan, not a measured rehearsal. The main talk removes detailed thresholds and
+excess experiment identifiers while preserving the failure of full acceptance. The digest,
+English notes and Turkish guide match. The main message is reduced false alerts on reused
+development data, with universal reliability unproven and Model2 still experimental.
+
+All 21 report pages, 12 presentation slides and the digest were visually reviewed. Both
+PPTX finalizers report zero layout warnings and successful import. All 551 scoped artifact
+checks pass; this includes repeated formatting checks, not 551 institutional requirements.
+The legacy DOC round-trip preserves 21 pages and every page's word multiset; its three
+raster differences (3, 5 and 12) were visually checked. Native Microsoft Office and actual
+oral timing remain untested. Five deferred information groups remain. No model training,
+data download, scientific measurement or school submission occurred. The current receipt
+is sources/clear_package_review_20260929.json. Earlier dated reviews preserve old states.

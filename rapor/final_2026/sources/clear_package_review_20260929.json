@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-29",
+  "baseline_commit": "ebe2982c1075b94f5ee057e989911b732085f2aa",
+  "scope": "Requested 20–25-page report, simple ten-minute presentation, matching digest, reference metadata and relevant-claim recheck.",
+  "pages_before": 18,
+  "pages_after": 21,
+  "before": {
+    "paragraph_words": 2378,
+    "company_paragraph_words": 191
+  },
+  "after": {
+    "paragraph_words": 3144,
+    "company_paragraph_words": 191
+  },
+  "legacy_pages": 21,
+  "legacy_per_page_word_multisets_equal": true,
+  "legacy_raster_difference_pages": [
+    3,
+    5,
+    12
+  ],
+  "paragraph_word_count_definition": "Whitespace-separated paragraph blocks; excludes abstract, headings, captions, table cells and references.",
+  "presentation": {
+    "main_slides": 10,
+    "reference_slides": 2,
+    "planned_seconds": 600,
+    "spoken_words": 908,
+    "native_tables": 4,
+    "native_charts": 1,
+    "actual_rehearsal": false
+  },
+  "digest_slides": 1,
+  "report_figures": 3,
+  "report_tables": 5,
+  "references": 14,
+  "scholarly_references": 10,
+  "references_review": "REFERENCE_REVIEW.md",
+  "heading_pages_verified": 35,
+  "abstract_words": 217,
+  "checks_passed": 551,
+  "unresolved_information_groups": 5,
+  "visual_review": "All 21 final report pages, 12 presentation slides and one digest inspected; legacy raster differences 3, 5, 12 inspected. No clipping or changed pagination found.",
+  "desktop_files": {
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": "391437ac93e1ec9ad24e0fe8a4ea9b3e56645915f4b531f49656a255ac9bab89",
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": "927b652b211a3451868604a5f6c35b631099d209faa25211a569c68955c77f4a",
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": "c5e3dc875f194e9520c270c47787fdf1eeccb956d83c4a91071683762bd99168"
+  },
+  "files": {
+    "CS395_Digest_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 75277,
+      "sha256": "e59c3c6f75013bfe8bf4349c2f6996048b2658537e87d1674a39ae03029ab7d1"
+    },
+    "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
+      "bytes": 13517,
+      "sha256": "c5e3dc875f194e9520c270c47787fdf1eeccb956d83c4a91071683762bd99168"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
+      "bytes": 254976,
+      "sha256": "927b652b211a3451868604a5f6c35b631099d209faa25211a569c68955c77f4a"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
+      "bytes": 175790,
+      "sha256": "2f76ae41691daa75c295d234144065d9830e9223240c0222a95636f3f1b0545b"
+    },
+    "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 332929,
+      "sha256": "88ef7edee3c8bd2d2014ad664a574112829d1ea4274fed335409ed19e338cebf"
+    },
+    "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
+      "bytes": 255165,
+      "sha256": "6d23c9c41d7468ff18306473b529dd7719a7433e10dd3ed7c97abeef507ab247"
+    },
+    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
+      "bytes": 52716,
+      "sha256": "391437ac93e1ec9ad24e0fe8a4ea9b3e56645915f4b531f49656a255ac9bab89"
+    }
+  },
+  "limits": "No new experiment, exhaustive new MD rereading, native Microsoft Office test, Turnitin test, oral rehearsal, grade guarantee or school submission. Five user-deferred information groups remain."
+}

@@ -15,7 +15,7 @@ def check(name,ok):
  if not ok:raise AssertionError(name)
 name='CS395_FinalReport_EfeHan_Keles_25September2026'
 d=Document(OUT/(name+'.docx'));r=PdfReader(OUT/(name+'.pdf'))
-check('report_18_pages',len(r.pages)==18)
+check('report_within_requested_20_to_25_pages',20<=len(r.pages)<=25)
 check('abstract_at_most_250_words',len(c.ABSTRACT.split())<=250)
 check('references_14_including_10_scholarly',len(c.REFS)==14)
 check('figures_3_tables_5',len(d.inline_shapes)==3 and len(d.tables)==5)
@@ -97,7 +97,7 @@ check('paired_UI_AI_159_alert_1_uncertain',policy['1']=={'ai_signal':159,'uncert
 check('report_distinguishes_per_view_from_paired_UI','not the paired website outcomes in Section 4.5.6' in body)
 check('model2_not_promoted',not json.loads((REPO/'evidence/e135_location_learning.json').read_text())['promotion_allowed'])
 a={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
-for kind,count,table_count,chart_count in [('Presentation',15,5,1),('Digest',1,0,0)]:
+for kind,count,table_count,chart_count in [('Presentation',12,4,1),('Digest',1,0,0)]:
  path=OUT/f'CS395_{kind}_EfeHan_Keles_25September2026.pptx'
  with zipfile.ZipFile(path) as z:
   parts=[n for n in z.namelist() if re.fullmatch('ppt/slides/slide[0-9]+.xml',n)]
@@ -110,7 +110,9 @@ for kind,count,table_count,chart_count in [('Presentation',15,5,1),('Digest',1,0
   check(kind+':native_tables_charts',tables==table_count and charts==chart_count)
   check(kind+':speaker_notes',len([n for n in z.namelist() if re.fullmatch('ppt/notesSlides/notesSlide[0-9]+.xml',n)])==count)
  check(kind+':pdf_pages',len(PdfReader(path.with_suffix('.pdf')).pages)==count)
-notes=json.loads((ROOT/'sources/presentation_notes.json').read_text());check('planned_timing_10_to_15_minutes',600<=sum(x['seconds'] for x in notes)<=900)
+notes=json.loads((ROOT/'sources/presentation_notes.json').read_text())
+check('planned_timing_10_minutes',sum(x['seconds'] for x in notes)==600)
+check('ten_spoken_slides_two_reference_slides',len(notes)==12 and all(x['seconds']>0 for x in notes[:10]) and all(x['seconds']==0 for x in notes[10:]))
 files={}
 for p in sorted(OUT.iterdir()):
  check('under_10MB:'+p.name,p.stat().st_size<10_000_000);files[p.name]={'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}

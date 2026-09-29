@@ -40,6 +40,8 @@ The initial workflow was to prepare labelled images, train a small CNN on CIFAKE
 
 A false positive flags a real photograph as AI; a false negative misses an AI image. Improving one error can worsen the other. The main difficulty was distribution shift: a new camera, generator or processing method could change performance. Model1 addressed whole-image detection, while Model2 investigated edited regions using pixel masks. A low detection score cannot prove authenticity.
 
+In this report, generalization means working on image sources that were not used to guide development. A detector may learn a camera or compression pattern instead of a reliable sign of generation. If that pattern changes, its predictions can change even when the image still looks similar to a person. This is why the project compared sources and processing conditions separately.
+
 ## 3.4 Related literature
 
 Wang et al. (2020) investigated detection across different image generators. Ojha et al. (2023) showed that pretrained visual features can support broader detection through simple classifiers. CLIP learns from image–text pairs (Radford et al., 2021), while DINOv2 learns reusable features without task-specific labels (Oquab et al., 2024). These works motivated feature-based transfer learning in PixelProof.
@@ -49,6 +51,8 @@ Compression and image-size differences can become misleading dataset shortcuts (
 SIDD provides smartphone images from ten scenes and five cameras (Abdelhamed et al., 2018); SID provides short- and long-exposure low-light raw pairs (Chen et al., 2018). These sources supported real-image coverage, with limited scene diversity and processing conditions that differ from ordinary camera JPEGs.
 
 Guo et al. (2017) explain why classifier scores need calibration before interpretation as confidence. Dwork et al. (2015) show the risks of repeatedly adapting to holdout results. Both issues shaped our evaluation and interface. As an industry comparison, Adobe Content Credentials records origin and editing information (Adobe, 2026). PixelProof estimates evidence from pixels; credential verification was not implemented.
+
+The literature suggested useful starting points, but it could not settle the project question. A method that performs well in its own paper may use different generators, cameras or decision rules. I therefore used these studies to choose experiments and explain possible failures. The report separates published findings from measurements made in PixelProof, so that the reputation of a pretrained model does not stand in for local evidence.
 
 # 4. Internship project
 
@@ -73,6 +77,8 @@ Better average but new AI misses | Reject the candidate
 
 Training fitted the model; calibration selected thresholds; development comparisons guided changes. Final evaluation required data uninvolved in those decisions. I tracked AI recall, real-image false alerts and AUC, which measures ranking across thresholds. Python, PyTorch, NumPy, SciPy and scikit-learn supported modelling; React, TypeScript and FastAPI supported the demo. Git, saved scores, artifact hashes and automated checks made changes traceable.
 
+For each candidate, the practical question was whether the change solved a known problem without creating an unacceptable one elsewhere. A lower total error count was insufficient if the model newly missed an AI image that the reference had detected. Keeping the failed candidates in the records helped explain why a newer experiment did not automatically replace the current demo model.
+
 ## 4.4 Expected outcomes and deliverables
 
 The deliverables were trained research components, a local upload demo, reproducible experiment scripts and documented data and results. Model2 contributed an experimental localization evaluator. The prototype was intended for demonstration and further study.
@@ -85,9 +91,13 @@ The first CNN used 90,000 CIFAKE training images, 10,000 validation images and a
 
 Native-resolution statistics, tile features, external detectors and combined scores were then compared. Gains on particular sources often came with new real-photo errors or missed AI types. Fixed crops and camera-noise explanations also needed controls rather than being assumed reliable. These failures shifted attention toward data quality, source coverage and explicit acceptance rules (Keleş, 2026, E8–E50).
 
+I treated the familiar test as a check that the training procedure worked on similar data. The external collection asked a harder question about transfer to other sources. The large gap between them showed why one accuracy number was not enough. It also motivated checking input preparation before making a more expensive model change.
+
 ### 4.5.2 Data integrity and corrected conclusions
 
 Two datasets used numeric labels opposite to our convention of 0 for real and 1 for AI. Explicit mapping and reruns corrected affected experiments. DINOv2’s Defactify AUC changed from 0.480 to 0.764, invalidating an earlier explanation that its features were unsuitable. The larger training pool also reduced false alerts more than first reported. A separate threshold-selection procedure was repaired because it could consult evaluation data; the corrected candidate failed admission and was removed (Keleş, 2026, E19b–E19c and E27).
+
+A label is the answer supplied during learning or evaluation. Reversing its meaning can make a useful model appear poor and can teach a new model the wrong relationship. The repair therefore required more than changing a chart caption. Affected measurements had to be rerun, and the earlier explanation had to be corrected in the written record.
 
 ### 4.5.3 Data roles and processing conditions
 
@@ -104,6 +114,8 @@ E92 training | 12,269 | 49,076 | Training
 E92 on E66 | 320 | 640 | Reused development
 Later research | 12,525 | 50,100 | Internal diagnostics
 
+The same photograph can appear at several sizes or compression levels. These versions help reveal sensitivity to processing, but they still come from one parent. Similarly, different photographs of the same scene may share useful clues. Counting views, files or downloaded gigabytes as independent examples would overstate the strength of the evidence. The useful question is which sources, scenes and generators a measurement actually covers.
+
 ### 4.5.4 E92 representation and learning
 
 Fine-tuning, grayscale inputs and early score corrections failed the full requirements. Later work added CLIP and DEAR features and learned adaptation; E83 and E86 passed 17/20 development checks before E92 reached 20/20. This sequence alone does not isolate which addition caused improvement (Keleş, 2026, E51–E92).
@@ -112,6 +124,8 @@ E92 uses feature-based transfer learning. Pretrained DINOv2, CLIP and DEAR compo
 
 ![Figure 2](figures/pipeline.png)
 Figure 2. PixelProof inference flow from upload to displayed evidence.
+
+Transfer learning reuses knowledge learned before this project. Here, an encoder converts pixels into a numerical description of the image. Keeping the encoder fixed means its pretrained weights stay unchanged while smaller project components learn from those descriptions. This made adaptation practical on the available computer. It also means that our contribution is the adaptation, evaluation and application around the existing representations, rather than the creation of DINOv2, CLIP or DEAR.
 
 ### 4.5.5 Development improvement and acceptance limits
 
@@ -122,17 +136,23 @@ Figure 3. False alerts among 160 real development images per condition.
 
 This reused collection contains only ten real SIDD scenes and two previously seen AI families. Thirteen of the fourteen processed real errors cluster in two scenes. Repeated use influenced later decisions, limiting generalization claims. E102 lowered processed false alerts to 12/160 but retained the same reference-relative AI miss, so it was not promoted (Keleş, 2026, E92 and E102).
 
+The comparison asks both how many errors occurred and which images caused them. Two models can detect the same number of AI images while missing different examples. Under the retention rule, recovering one example cannot compensate for newly missing another. This explains how E92 could improve the overall measurements and still fail the full decision rule. It also keeps the report from treating 20/20 as proof of perfect classification.
+
 ### 4.5.6 Honest scores and the web demonstration
 
 The demo’s 0–100 scale is a model score, not an AI probability. Its upper threshold is about 7.94, inherited from E48 calibration; its lower threshold is about 1.15, from already-used E49 calibration/development analysis. An original score at or above the upper threshold retains an AI alert. Two E92 scores below the lower threshold yield no clear AI evidence; other cases are uncertain. E43 provides advice without vetoing two low E92 scores. Decisions use unrounded values.
 
 On the same development collection, the combined rule gave 139 real images no clear AI evidence and left 21 uncertain, with zero real AI alerts. It alerted on 159 AI images and left one uncertain. Thus per-view false alerts and final website warnings are different measurements. Upload validation, artifact checks and cancellation handling improve software operation, not measured detection accuracy (Keleş, 2026, current-policy audit).
 
+The second processed view acts as a consistency check. When ordinary resizing and compression change the response, the user needs to know that the evidence is unstable. The interface therefore has an uncertain outcome instead of forcing every upload into a real-or-AI answer. Even the no-clear-evidence result only describes what the detector found. Establishing where a photograph came from requires additional information about its source.
+
 ### 4.5.7 Broader checks and rejected improvements
 
 The owner gallery produced 9 false alerts among 206 real originals and 18 after processing. Mostly one phone and related scenes, it had already influenced development and was not independent. Separate source-fold research models also failed full acceptance; their results do not measure active E92 performance (Keleş, 2026, E95 and E146).
 
 A processing audit found known 224-pixel derivatives in 29.18% of real training images versus 7.68% of AI images. Added source-pixel features slightly improved clean averages but harmed processed AI detection; one JPEG75 result fell from 75.73% to 74.15%. Follow-up decomposition identified harmful score contributions, without proving a physical cause. The candidate was rejected. Unscored reserves remained, but no balanced, independent final test was established (Keleş, 2026, E148–E152).
+
+These checks changed the next development priority. Adding another feature was less useful than learning whether the apparent improvement survived a change in source or processing. A suitable final evaluation must therefore be planned before inspecting its results. Its images should not have influenced training, threshold selection or decisions about which candidate to keep. More files from the same familiar sources would not resolve this problem by themselves.
 
 ### 4.5.8 Model2 localization and its limits
 
@@ -146,6 +166,8 @@ Endpoint | Earlier head | Two-placement head
 Original-placement pixel AUC | 0.74 | 0.70
 New-placement pixel AUC | 0.57 | 0.64
 Authentic falsely flagged area | 17.11% | 25.74%
+
+A localization map gives a score at each location. To assess it, we need a mask identifying the edited pixels and authentic images that should not contain an edited region. Pixel AUC measures how well scores rank edited pixels above authentic ones across thresholds. It is not the percentage of an edit correctly outlined. False markings on authentic images provide a separate practical check.
 
 ## 4.6 Results
 
@@ -167,6 +189,8 @@ The numerical improvement did not meet full acceptance or prove universal reliab
 ## 5.1 Learning
 
 I learned to ask what a good score actually proves. Early accuracy looked promising, but failures on new sources and the label correction changed my conclusions. I also learned to sustain an individual project, reduce scope when it became too complex and ask focused questions. Practical experiments made machine learning concepts clearer and strengthened my existing interest in the field.
+
+The records also helped me manage the work. After a run, I needed to explain what changed, what the result supported and what should happen next. Writing that decision made it easier to return to the project after an interruption and avoid repeating a rejected approach. I learned that narrowing a claim can be more useful than defending an attractive but weak result.
 
 ## 5.2 Relation to undergraduate education
 
@@ -190,11 +214,11 @@ Future work should establish an independent evaluation with diverse cameras and 
 
 # 8. References
 
-Abdelhamed, A., Lin, S., & Brown, M. S. (2018). A high-quality denoising dataset for smartphone cameras. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. Retrieved September 25, 2026, from https://abdokamel.github.io/sidd/
+Abdelhamed, A., Lin, S., & Brown, M. S. (2018). A high-quality denoising dataset for smartphone cameras. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 1692–1700. Retrieved September 29, 2026, from https://abdokamel.github.io/sidd/
 
 Adobe. (2026, August 25). Content Credentials overview. Adobe Help Center. Retrieved September 29, 2026, from https://helpx.adobe.com/creative-cloud/apps/adobe-content-authenticity/content-credentials/overview.html
 
-Chen, C., Chen, Q., Xu, J., & Koltun, V. (2018). Learning to see in the dark. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. Retrieved September 25, 2026, from https://cchen156.github.io/SID.html
+Chen, C., Chen, Q., Xu, J., & Koltun, V. (2018). Learning to see in the dark. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 3291–3300. Retrieved September 29, 2026, from https://cchen156.github.io/SID.html
 
 Dwork, C., Feldman, V., Hardt, M., Pitassi, T., Reingold, O., & Roth, A. (2015). Generalization in adaptive data analysis and holdout reuse. Advances in Neural Information Processing Systems, 28. Retrieved September 25, 2026, from https://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html
 

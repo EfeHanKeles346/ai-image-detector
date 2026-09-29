@@ -10,23 +10,22 @@ Projenin hikâyesi yalnızca “model eğittik, skor yükseldi” değil. Başla
 
 ## Sunumu nasıl çalışmalısın?
 
-Sunumda 13 anlatım slaytı ve 2 kaynak slaytı var. Önerilen süre toplam 13 dakika 55 saniye; bu gerçek prova ölçümü değildir. PowerPoint’in konuşmacı notlarında İngilizce anlatım bulunuyor. Önce Türkçe anlamını kendi cümlelerinle anlat, sonra İngilizce notları çalış. Notları kelimesi kelimesine ezberlemek yerine slaytın tek ana fikrini öğren.
+Sunumda 10 ana slayt ve 2 kaynak slaytı var. Planlanan süre 10 dakika. İngilizce konuşma metni 908 kelime; bu, rakamları açıklamak ve kısa duraklamalar için alan bırakıyor. Gerçek süreyi bir prova ile kontrol et. Kaynakları ve notların “optional detail” kısmını ana konuşmada okuma. Canlı demo veya sorular bu süreye dahil değil.
 
-| Slayt | Süre | Anlatacağın ana fikir |
-|---|---:|---|
-| 1 | 40 sn | Çalışan ama evrenselliği kanıtlanmamış araştırma prototipi |
-| 2 | 50 sn | Bütün görüntüyü sınıflandırmak ile düzenlenen alanı bulmak farklı işler |
-| 3 | 60 sn | Tanıdık veride iyi skor, yeni kaynakta başarının garantisi değil |
-| 4 | 65 sn | Etiketler ve değerlendirme yöntemi yanlışsa sonuç da yanlış yorumlanır |
-| 5 | 85 sn | Hazır temsiller, 12.269 eğitim görüntüsü ve deneyden karara uzanan kayıt düzeni |
-| 6 | 75 sn | Aynı gerçek fotoğraflarda yanlış alarmlar 68’den 0’a / 14’e indi |
-| 7 | 65 sn | 20 sayısal koşul geçti, ayrı koruma koşulu geçmedi |
-| 8 | 85 sn | Model puanı olasılık değil; iki eşik ve iki görünüm kullanılıyor |
-| 9 | 90 sn | Önceki kapsamlı final, galeri ve sonraki adaylar hâlâ hata gösteriyor |
-| 10 | 65 sn | Model2 başka konumlara yeterince genellenemedi |
-| 11 | 55 sn | Kod, demo, kayıtlar ve yazılım kontrolleri tamamlanan çıktılar |
-| 12 | 55 sn | Başarı ile henüz kanıtlanmamış iddiaları ayrı tutuyoruz |
-| 13 | 45 sn | Sonraki hedef bağımsız ve daha çeşitli değerlendirme |
+| Slayt | Süre | Birikimli süre | Tek ana fikir |
+|---|---:|---:|---|
+| 1 | 35 sn | 0:35 | Türk Telekom stajında çalışan araştırma prototipi geliştirdim. |
+| 2 | 50 sn | 1:25 | Gerçeğe yanlış AI demek ile AI’ı kaçırmak ayrı hatalar. |
+| 3 | 65 sn | 2:30 | İlk yüksek skor başka kaynaklara taşınmadı; ölçümü denetledim. |
+| 4 | 75 sn | 3:45 | Hazır modellerin özelliklerini kullanıp kendi uyarlamamızı eğittik. |
+| 5 | 60 sn | 4:45 | 12.269 eğitim görüntüsü ile 320 geliştirme görüntüsü ayrı amaçlara hizmet ediyor. |
+| 6 | 80 sn | 6:05 | Aynı gerçek görüntülerde yanlış uyarılar 68’den 0’a / 14’e indi. |
+| 7 | 60 sn | 7:05 | 20 sayısal kontrol geçti ama yeni bir AI kaybı tam kabulü engelledi. |
+| 8 | 55 sn | 8:00 | Demo puan ve belirsizliği gösteriyor; gerçeklik belgesi vermiyor. |
+| 9 | 60 sn | 9:00 | Model2 küçük bir pilotta kaldı; yanlış işaretlemeler yüzünden aday reddedildi. |
+| 10 | 60 sn | 10:00 | Prototip ve kayıtlar tamamlandı; sonraki ihtiyaç bağımsız değerlendirme. |
+
+Hocaya kalmasını istediğin mesaj şu: “Çalışan bir prototip geliştirdim ve belirli veride yanlış uyarıları azalttım. Deneyleri incelerken ölçüm hatalarını düzelttim. Hangi başarının kanıtlandığını ve hangi sınırların kaldığını biliyorum.”
 
 ## Modelin içini basitçe anlamak
 
@@ -101,7 +100,7 @@ Piksel AUC 0,742’den yeni konumda 0,566’ya düştü; yeni uyarlama bunu 0,63
 
 Önce raporun özeti, 4.6 sonuçlar ve 6. sonuç bölümünü oku. Sonra slayt 6–8’i kendi cümlelerinle anlat. Ardından 4.5 bölümündeki gelişim öyküsüne dön. Bilmediğin terimi ezberleyip geçme; örnek üzerinden anlamlandır.
 
-Son bir provada saati açıp on üç ana slaytı anlat. On beş dakikayı geçersen başarısız deneylerin teknik ayrıntılarını kısalt; sayıların sınırlamalarını çıkartma. Kendi deneyimin ve öğrenme paragrafların yanıtlarınla işlendi. HANDOFF_TR.md’de kalan beş bilgi grubunu tamamladıktan sonra ilgili yer tutucuları kaldır. Canlı demoyu göstereceksen önceden aynı dosyalarla kontrol et; sonucu kesin gerçek/AI belgesi gibi sunma.
+Son bir provada saati açıp on ana slaytı anlat. Yaklaşık on dakikayı hedefle. Süre uzarsa isteğe bağlı teknik notları ana anlatıma katma; başarıların sınırlarını çıkartma. Her sayıyı uzun uzun okumak yerine grafikteki değişimi anlat. Kendi deneyimin ve öğrenme paragrafların yanıtlarınla işlendi. HANDOFF_TR.md’de kalan beş bilgi grubunu tamamladıktan sonra ilgili yer tutucuları kaldır. Canlı demoyu göstereceksen önceden aynı dosyalarla kontrol et; sonucu kesin gerçek/AI belgesi gibi sunma.
 
 ## Tarihçeden eklenen önemli ara aşamalar
 

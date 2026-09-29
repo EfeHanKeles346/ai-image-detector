@@ -1,63 +1,81 @@
 # English speaking notes
 
-Suggested timing: 13 minutes 55 seconds for slides 1–13. Slides 14–15 are references. Rehearse; this is not measured speaking time.
+Slides 1–10 form a planned 10-minute talk. Slides 11–12 are reference material for questions. The spoken script has 908 words; the schedule allows pauses and time to explain the chart. Timing is a plan, not a rehearsal measurement. Speak naturally and check the duration yourself. A live demo and questions are outside this schedule.
 
-## 1. Purpose (40 seconds)
+## 1. Project purpose (35 seconds)
 
-My supervisor was Önder Çelebi, Director of the Planning and Development Directorate. My internship project was PixelProof, a research prototype for detecting evidence of AI generation in images. I will explain the problem, how the project changed after failures, what the current demo model achieved, and what remains unresolved. The main result is a working local demonstration with substantial improvement on a defined development collection. It is not a universally reliable authenticity detector. The approved internship lasted forty working days. This presentation covers the technical record available before the end of the internship.
+My internship project was PixelProof, a research prototype for AI image detection. I worked individually at Türk Telekom and asked my supervisor and mentors for advice. The main goal was to reduce false AI warnings on real photographs while keeping useful AI detection. I built a local demonstration and recorded both improvements and failed experiments. I will explain the method, the main result and the limits of that result.
 
-## 2. Two tasks (50 seconds)
+Source or optional detail, not part of the spoken script: Student-confirmed internship information. Report Sections 1, 3.1 and 4.2.
 
-There are two related but different tasks. Model1 evaluates a whole image. We want it to find AI images while avoiding false accusations against real photographs. A false alert and a missed AI image are different errors, and improving one can worsen the other. Model2 tries to localize an edited region. A convincing heatmap is not enough; it must agree with independent edit masks and avoid highlighting authentic regions. We therefore kept localization experimental rather than presenting it as a completed service.
+## 2. Problem and objective (50 seconds)
 
-## 3. Early failures (60 seconds)
+The project has two important errors. A false positive means that a real photograph receives an AI warning. A false negative means that an AI image escapes detection. Lowering one error can increase the other, so I measured both. The harder question was whether the detector could work when the camera, generator or image processing changed. That is generalization. Model1 deals with the whole image. A smaller second module, Model2, explores where a local AI edit might be.
 
-Table 1 shows why a high internal score was not enough. The early small CNN achieved about ninety-seven percent on familiar images, but performance fell on an external collection. ResNet improved the familiar score and did much worse externally. A resolution control recovered much of that loss, showing that image preparation mattered. These are historical diagnostics, not final certified results: later auditing also found confounds in the external collection. The important lesson was to investigate what changed before blaming or praising the architecture. Sources: project experiments E1 to E6 and E10.
+Source or optional detail, not part of the spoken script: Report Sections 3.3 and 4.1.
 
-## 4. Measurement repairs (65 seconds)
+## 3. What changed our approach (65 seconds)
 
-Two corrections changed the interpretation of earlier work. Some datasets encoded real and AI labels in the opposite direction. We added explicit mappings and reran affected experiments. One DINOv2 result changed from near chance to useful discrimination, so the original explanation was withdrawn. Another audit found that threshold selection could consult evaluation data. Correcting it to use calibration only caused the candidate to fail its admission rule. We retained these failures in the record. Training, calibration, development and final evaluation have different permitted uses. Different files are not automatically independent when they share scenes, prompts or generation ancestry. Sources: E19b, E19c and E27.
+At first, a pretrained ResNet model reached almost ninety-eight percent accuracy on familiar test images. But its accuracy fell to about twenty-five percent on a separate collection. These are historical results, and later auditing found problems in that external benchmark too. The lesson was still clear: one high score was not enough. I checked input resolution, found reversed labels in later datasets and repaired a procedure that used evaluation data to choose a threshold. These corrections changed some earlier conclusions. I kept the corrections in the records instead of reporting only the best numbers.
 
-## 5. Method (85 seconds)
+Source or optional detail, not part of the spoken script: Keleş (2026), E1–E6, E10, E19b–E19c and E27. No independent final-performance claim from Table 1.
 
-The project did not train a foundation model from scratch. Frozen encoders turn an image into numerical descriptions. PixelProof fits additional components and a constrained correction around these features. E92 used twelve thousand two hundred sixty-nine training parent images, with four processing views per parent. More views test processing robustness, but do not create independent photographs. These training counts are separate from the three hundred twenty development images discussed next. The plan recorded a question and acceptance rules. The experiment log retained measurements, the history explained the resulting decision and the dataset register recorded which data could be used. Corrected conclusions stayed visible, so a failed experiment could guide the next one. The demo applies the resulting model through a documented display rule. My responsibilities included directing experiments, organizing sources and reviewing evidence, with AI coding assistance used for implementation and documentation. Research references: Radford et al. 2021, Oquab et al. 2024, Kim et al. 2026 and Ojha et al. 2023.
+## 4. Method and contribution (75 seconds)
 
-## 6. Main improvement (75 seconds)
+I used transfer learning, which means reusing knowledge from existing models. The pretrained components convert the image into numerical descriptions called features. Their weights remain fixed. The project trains smaller components to use those features and adjust the detection score. This is more practical than training a large visual model from the beginning. The current demo model is called E92. My work covered choosing experiments, organizing data, reviewing results and building the application. I used AI coding assistance for implementation and documentation. After each experiment, the plan and logs recorded what worked, what failed and the next decision.
 
-Figure 1 is the clearest development improvement. All three models are compared on the same real-image parents. For original images, false AI alerts fell from sixty-eight out of one hundred sixty to zero. For the fixed social-style transformation, they fell from sixty-eight to fourteen. That transformation caps the long side at 1080 pixels and applies JPEG quality seventy-five. E92 detected one hundred fifty-nine of one hundred sixty AI images in each condition. This is strong progress on this collection, but zero observed original false alerts does not mean zero future risk. The real images come from only ten SIDD scenes, and these development observations were repeatedly used. Source: evidence/e92_development.json.
+Source or optional detail, not part of the spoken script: Radford et al. (2021), https://proceedings.mlr.press/v139/radford21a.html; Oquab et al. (2024), https://arxiv.org/abs/2304.07193; Kim et al. (2026), https://arxiv.org/abs/2606.10309v2; Keleş (2026), E51–E92. Published component benchmarks are not PixelProof guarantees.
 
-## 7. Acceptance (65 seconds)
+## 5. Understanding the data (60 seconds)
 
-Twenty out of twenty meant ten numerical requirements checked twice. The requirements covered false alerts, AI recall, balanced accuracy, ranking, coverage and uncertainty. They were project-defined, correlated checks, not an external universal standard. A separate retention rule required that no AI image caught by E43 become a new miss. E92 missed one original AI example that E43 had detected. Recovering other examples did not cancel that loss under the rule. Therefore numerical success and complete acceptance are different conclusions. We should celebrate the improvement without saying the full contract passed.
+E92 learned from twelve thousand two hundred sixty-nine training images. Each image had four processing versions, giving forty-nine thousand seventy-six training views. A compressed copy is still related to its original, so views are not independent photographs. The development collection was separate from training and contained one hundred sixty real images and one hundred sixty AI images. We used it repeatedly to compare candidates. That makes it useful for development, but limits its value as a final test. The downloaded archive size is also different from the number of images actually admitted to a particular experiment.
 
-## 8. Scores and demo (85 seconds)
+Source or optional detail, not part of the spoken script: Keleş (2026), E92 training and E66 development records. Report Section 4.5.3. The real development images cover ten SIDD scenes; the AI groups are two previously seen families.
 
-The displayed number caused understandable confusion. It is a raw model score multiplied by one hundred, not a probability that a photograph is AI. There is no reason to impose a fifty-percent boundary. The inherited upper cut is approximately seven point nine four; the lower cut is approximately one point one five. An original score above the upper cut keeps an AI alert visible. Two low E92 views produce no clear AI evidence. Other cases remain uncertain, and disagreement can require review. The older reference is advisory and no longer vetoes two low E92 scores. The upper cut came from earlier calibration; the lower cut used previously inspected calibration and development images. They are not fresh E92 calibration or universally optimal values. On the reused development set, the combined website rule left twenty-one real images uncertain and gave no real image an AI alert. It alerted on one hundred fifty-nine AI images and left one uncertain. These are one-result-per-upload counts, unlike the separate-view scores in Figure 1. Guo et al. explain why calibration is a separate question.
+## 6. Main result (80 seconds)
 
-## 9. Broader reliability (90 seconds)
+Figure 1 shows the main improvement. For real original images, false warnings fell from sixty-eight to zero out of one hundred sixty. After resizing and JPEG compression, they fell from sixty-eight to fourteen. The current model detected one hundred fifty-nine of one hundred sixty AI images in each condition. This is a useful improvement on these images. It does not mean that every new photograph will work. The comparisons use the same development images, and the real photographs come from only ten scenes. Also, these are results for each view separately. The website combines two views into one displayed outcome, which I will explain shortly.
 
-The earlier comprehensive E49 test had one thousand real and one thousand AI parents. E43 falsely flagged three hundred ninety-one real originals and four hundred ninety processed views, passing only eleven of twenty checks. Those are E43 results on a different population, not E92 accuracy. E92 did not pass the gate needed to open its E49 regression. Its twenty-out-of-twenty development milestone therefore does not repair or replace that final test. On the owner gallery, E92 produced nine false alerts in two hundred six unique real originals and eighteen after processing. This previously used collection mostly represents one phone. Later E102 reduced development processed false alerts from fourteen to twelve, preserving E92 detections, but retained the same E43-relative miss. It was not promoted. Separate source-fold calibration and source-pixel candidates also failed their requirements. The protected reserves remain unscored, without a verified balanced-final admission. Sources: evidence/e49_final_result.json, E92, E95, E102, E139, E146 and E151.
+Source or optional detail, not part of the spoken script: Keleş (2026), evidence/e92_development.json. Transformation: long-side cap 1080 followed by JPEG quality 75. SIDD scene diversity: Abdelhamed et al. (2018), https://abdokamel.github.io/sidd/.
 
-## 10. Localization (65 seconds)
+## 7. What the result proves (60 seconds)
 
-Model2 illustrates another generalization failure. The earlier head ranked edited pixels reasonably on the original placement, with pixel AUC around zero point seven four. When edits moved, that fell to about zero point five seven. Training on two placements partly recovered performance at the new location, but harmed the original location and increased the area wrongly highlighted in authentic images. Only sixteen previously used original images and one editor were involved. The many transformed maps are not independent samples. Moving an edit also changes its content and generated output, so this is not a pure causal location experiment. Model2 remains separate from the active demo. Sources: E132 through E135.
+Twenty out of twenty means ten numerical checks applied to two processing conditions. It does not mean twenty independent datasets or perfect classification. A separate rule required us to keep every AI image that the earlier model had detected. E92 newly missed one of those original AI images. Therefore it did not pass full acceptance, even though the overall numbers improved. We also reused the development set while making decisions. A stronger claim would need a final evaluation that had not influenced those decisions. This is why I describe E92 as a research prototype.
 
-## 11. Deliverables (55 seconds)
+Source or optional detail, not part of the spoken script: Keleş (2026), E92 acceptance report. Dwork et al. (2015), https://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html. The 20 criteria are project-defined and correlated.
 
-The outcome includes a trained research system, a local upload interface, experiment commands, aggregate result files and documentation. Software guards handle invalid images, unavailable dependencies, response schema mismatches and cancellation around the heavy inference worker. The artifact manifest is checked before loading the model. The latest recorded checkpoint passed one thousand two hundred forty-five Python tests. These are software assertions, not successful classifications of that many images. No production rollout or company business impact was measured. A reproducible negative result is also a deliverable because it prevents repeating an unsupported claim.
+## 8. Demo and uncertainty (55 seconds)
 
-## 12. Outcome (55 seconds)
+The demo lets a user upload an image and read a simple result. It can report AI evidence, no clear AI evidence or uncertainty. The displayed score describes the detector response. It is not a verified probability that the image is AI. A low score therefore cannot prove that the photograph is authentic. Comparing the original with a processed copy helps reveal unstable responses. The software also validates uploads and checks model artifacts. These guards improve application behavior, while detection reliability still needs separate evaluation.
 
-The prototype is a meaningful student engineering result. It integrates modelling, data handling, software and evaluation. Its strongest improvement is real and reproducible for the specified development population. The equally important limitation is that we have not proved universal detection. Reused data, limited camera scenes, previously seen generator families and unknown pretraining overlap restrict the claim. Model2 also needs much broader evidence. Table 5 is the distinction I would want a reader to remember: building a working system and proving broad reliability are separate achievements.
+Source or optional detail, not part of the spoken script: Report Section 4.5.6 and current-policy audit. Guo et al. (2017), https://proceedings.mlr.press/v70/guo17a.html. Optional Q&A: upper score cut ~7.94; lower ~1.15. Original ≥ upper retains AI alert, both E92 views < lower give no clear evidence, other cases uncertain. E43 is advisory. Paired development outcomes: real 139 clear/21 uncertain/0 AI; AI 159 alerts/1 uncertain.
 
-## 13. Conclusion (45 seconds)
+## 9. The second model (60 seconds)
 
-The next priority is an independent evaluation design rather than another impressive number on familiar data. It needs separated sources and ancestry, more cameras and generators, fixed operating costs and calibration that cannot see evaluation outcomes. Localization also needs more editors and authentic controls. My central technical lesson is to verify what a score actually proves. We built a functioning prototype, improved a defined benchmark, corrected mistakes and identified the evidence still missing. Thank you. The following two slides contain references for questions; the full bibliography is in the report.
+Model2 explores a different question: where an AI edit might be located. It needs masks that show the true edited region, as well as authentic images for false-alarm checks. In a small pilot, moving edits reduced performance. Training on two placements helped the new placement, but harmed the original placement and highlighted more authentic image area incorrectly. The pilot used only sixteen previously used images and one editor. I rejected that candidate and kept Model2 experimental. It needs more independent images and editors before a useful reliability claim is possible.
 
-## 14. References A (0 seconds)
+Source or optional detail, not part of the spoken script: Keleş (2026), E132–E135 and evidence/e135_location_learning.json. Optional Q&A: original-placement pixel AUC .74 to .70; new-placement .57 to .64; authentic false area 17.11% to 25.74%. Moving edits also changes content, so this does not isolate location as the sole cause.
 
-Backup slide. Full author lists, retrieval dates and direct source links are provided in Section 8 of the report. Project findings are traceable to the evidence map in Appendix 9.2.
+## 10. Conclusion (60 seconds)
 
-## 15. References B (0 seconds)
+The internship produced a working local prototype, trained adaptation components and a record of experiments and corrections. The strongest measured gain was fewer false warnings on the defined development collection. Broader reliability remains unresolved. For example, the owner gallery still produced false warnings and had already influenced development. The next step is evaluation on independent sources with fixed decision rules. Model2 needs broader controls too. Personally, I learned how to manage an individual project, narrow its scope and explain what the evidence supports. Building a working demo was useful, but understanding its limits was just as important. Thank you.
 
-Backup slide. Pretrained components do not transfer their published benchmark guarantees to our system. Calibration and adaptive data reuse are separate evaluation problems. Corporate context comes from official Türk Telekom sources.
+Source or optional detail, not part of the spoken script: Keleş (2026), E95, E139, E146–E152. Optional Q&A: E92 gallery false alerts 9/206 originals, 18/206 processed. Earlier E43 comprehensive E49 test failed 11/20 on 2,000 parents; it is not E92 final performance. No production rollout or measured company impact.
+
+## 11. Method references (0 seconds)
+
+Reference appendix. The report provides the full bibliography.
+
+Source or optional detail, not part of the spoken script: https://proceedings.mlr.press/v139/radford21a.html
+https://arxiv.org/abs/2304.07193
+https://arxiv.org/abs/2606.10309v2
+https://arxiv.org/abs/2302.10174
+
+## 12. Data and evaluation references (0 seconds)
+
+Reference appendix. The report gives fourteen full entries. These slides list the sources most relevant to the short talk.
+
+Source or optional detail, not part of the spoken script: https://abdokamel.github.io/sidd/
+https://proceedings.mlr.press/v70/guo17a.html
+https://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html
+https://github.com/EfeHanKeles346/ai-image-detector/tree/497d45c

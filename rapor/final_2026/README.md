@@ -15,7 +15,7 @@ This is the current E1–E152 submission draft. It supersedes the old E26 report
 | Digest, reading copy | [PDF](deliverables/CS395_Digest_EfeHan_Keles_25September2026.pdf) |
 | Study material | [Turkish guide](STUDY_GUIDE_TR.md), [English speaking notes](SPEAKER_NOTES_EN.md) |
 
-The deck has 13 spoken slides and two reference slides. Suggested timing is 835 seconds (13:55), subject to actual rehearsal. The report has 18 pages including front matter, 3 figures, 5 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
+The deck has 10 spoken slides and two reference slides. Suggested timing is 600 seconds (10:00), with 908 spoken words and pauses for the figures; actual timing requires rehearsal. The report has 21 pages including front matter, 3 figures, 5 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
 
 ## Desktop submission folder
 
@@ -23,7 +23,7 @@ Guideline page 1 explicitly names a `.doc` report and `.pptx` presentation and d
 
 ## Latest revision — 29 September 2026
 
-The report was shortened from 30 to 18 pages, with paragraph prose reduced from 5,100 to 2,378 words and company prose from 401 to 191 words. Required structure, important successes and failures, data roles and scientific limits remain. Transfer learning is explicitly named. The redundant evidence-map table was removed; three figures and five tables remain. All fourteen references have a specific use; [REFERENCE_REVIEW.md](REFERENCE_REVIEW.md) records metadata checks, the Adobe date correction and access limitations. All 532 scoped artifact checks pass; the five deferred information groups remain. The receipt is `sources/concise_report_review_20260929.json`. Presentation and digest exports are unchanged.
+Following the requested 20–25-page range, the report is now 21 pages. Its 3,144 words of paragraph prose explain transfer learning, data roles, corrections, results and limits in plain language; company prose stays at 191 words. The presentation was reduced to 10 main slides plus two reference slides, and the digest uses the same concise outcome and limitation. All 14 references remain substantively used; missing SIDD/SID page ranges were added and the DINOv2 journal year was directly verified. All 551 scoped artifact checks pass. The five deferred information groups remain. See `sources/clear_package_review_20260929.json` and [REFERENCE_REVIEW.md](REFERENCE_REVIEW.md).
 
 ## Evidence and claims
 

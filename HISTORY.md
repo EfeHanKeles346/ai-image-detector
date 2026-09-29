@@ -11377,3 +11377,27 @@ multiset. Four raster-different pages were inspected. The Desktop DOC was refres
 after checking it still matched the preceding draft. Presentation and digest exports are
 byte-identical to the prior versions. Five deferred information groups remain; native Office,
 Turnitin and actual submission were not performed. Receipt: sources/concise_report_review_20260929.json.
+
+## Clear 21-page report and 10-minute presentation — 29 September 2026
+
+The student requested 20–25 pages and an easy ten-minute talk. The report now has 21
+pages, with 3,144 paragraph words and the company section still at 191 words. Added plain
+explanations of transfer learning, parent/view dependence, label repairs, retention failures
+and independent evaluation. All 35 numbered headings, the 217-word abstract, three figures,
+five tables and fourteen substantively used references remain. SIDD/SID conference page
+ranges were completed; the DINOv2 primary PDF directly confirms the 2024 journal year.
+
+The deck now has ten main slides and two reference slides. Its 908-word spoken script has
+a 600-second plan, not a measured rehearsal. The main talk removes detailed thresholds and
+excess experiment identifiers while preserving the failure of full acceptance. The digest,
+English notes and Turkish guide match. The main message is reduced false alerts on reused
+development data, with universal reliability unproven and Model2 still experimental.
+
+All 21 report pages, 12 presentation slides and the digest were visually reviewed. Both
+PPTX finalizers report zero layout warnings and successful import. All 551 scoped artifact
+checks pass; this includes repeated formatting checks, not 551 institutional requirements.
+The legacy DOC round-trip preserves 21 pages and every page's word multiset; its three
+raster differences (3, 5 and 12) were visually checked. Native Microsoft Office and actual
+oral timing remain untested. Five deferred information groups remain. No model training,
+data download, scientific measurement or school submission occurred. The current receipt
+is sources/clear_package_review_20260929.json. Earlier dated reviews preserve old states.

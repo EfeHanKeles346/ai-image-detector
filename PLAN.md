@@ -12,15 +12,16 @@ The prior exhaustive 28-file Markdown review is complete. The 28 September histo
 narrative refinement reconciles that reading with current documentation and representative
 chronological rereading; see the new review receipt in rapor/final_2026/sources/.
 Current files are in `rapor/final_2026/deliverables/` and the Desktop folder
-`CS395_PixelProof_Submission_2026`. Report: 18 pages, 14 references, 532 scoped checks.
-The 29 September shortening and reference review retains mandatory sections and scientific
-limits; see concise_report_review_20260929.json and REFERENCE_REVIEW.md.
+`CS395_PixelProof_Submission_2026`. Report: 21 pages, 14 references, 551 scoped checks.
+The latest 29 September revision meets the requested 20–25-page range with simpler
+explanations, a 10-minute presentation and matching digest; see
+clear_package_review_20260929.json and REFERENCE_REVIEW.md.
 The critical review rates the technical draft 9.2/10 subjectively; this is not a grade.
 Student-confirmed identity, unit name, office address, individual/advisory roles, learning,
 career, three course connections and daily routine are now incorporated. Remaining work:
 fill the actual submission date, unit responsibilities/reporting line, mentor identities and
-relevant competitor/supplier names; then refresh affected formats and rehearse the 13:55
-presentation. HANDOFF_TR.md links each field to its guideline section. No final school
+relevant competitor/supplier names; then refresh affected formats and rehearse the 10:00
+presentation (10 main slides plus two reference slides). HANDOFF_TR.md links each field to its guideline section. No final school
 upload is authorized or claimed. E153 remains a separate unexecuted research plan.
 
 ## Active checkpoint — E152 complete; E153 paired-control audit next (2026-09-16)
