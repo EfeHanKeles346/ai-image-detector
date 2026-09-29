@@ -11465,3 +11465,8 @@ controlled learning pilot did exist. Report Section 4.5.8 now makes this distinc
 
 
 Model2 report revision completed: Section 4.5.8 and slide 9 updated; 21-page report and 10-minute presentation plan retained. All 563 scoped artifact checks pass; DOC round-trip and changed render pages were inspected. Three administrative placeholders remain. No model experiment or download occurred. Current submission DOC/PPTX copies were synchronized to the Desktop folder with byte verification. See rapor/final_2026/sources/model2_scope_review_20260929.json.
+
+
+### Model2 presentation explanation — 2026-09-29
+
+Documentation-only follow-up: slide 9 now visibly explains background pixel changes in the SD1.5 pilot, dataset source overlap/mask ambiguity and the limited 16-parent, one-editor learning pilot. Updated the spoken script and Turkish rehearsal note. The deck retains 10 main slides plus two references and a 600-second plan (915 spoken words). No new measurement, training, data download or promotion. The report/digest are unchanged. QA and output hashes: rapor/final_2026/sources/model2_slide_review_20260929.json.

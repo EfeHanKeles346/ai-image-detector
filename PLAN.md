@@ -7469,3 +7469,8 @@ This documentation task does not promote E92 or Model2 and does not advance E153
 ### Model2 report clarification completed — 2026-09-29
 
 Reconciled the remembered editing-scope claim with E109/E117/E127/E129–E135 receipts and primary OpenAI documentation. Updated report Section 4.5.8, slide 9 and study notes without promoting Model2. Report remains 21 pages; digest unchanged; 563 scoped artifact checks pass. A future research plan still needs source-disjoint, diverse-editor pairs with explicit mask semantics and matched authentic/classical controls. This documentation work does not advance E153 or establish universal localization.
+
+
+### Model2 presentation explanation — 2026-09-29
+
+Documentation-only follow-up: slide 9 now visibly explains background pixel changes in the SD1.5 pilot, dataset source overlap/mask ambiguity and the limited 16-parent, one-editor learning pilot. Updated the spoken script and Turkish rehearsal note. The deck retains 10 main slides plus two references and a 600-second plan (915 spoken words). No new measurement, training, data download or promotion. The report/digest are unchanged. QA and output hashes: rapor/final_2026/sources/model2_slide_review_20260929.json.

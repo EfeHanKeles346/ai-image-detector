@@ -10,7 +10,7 @@ Projenin hikâyesi yalnızca “model eğittik, skor yükseldi” değil. Başla
 
 ## Sunumu nasıl çalışmalısın?
 
-Sunumda 10 ana slayt ve 2 kaynak slaytı var. Planlanan süre 10 dakika. İngilizce konuşma metni 916 kelime; bu, rakamları açıklamak ve kısa duraklamalar için alan bırakıyor. Gerçek süreyi bir prova ile kontrol et. Kaynakları ve notların “optional detail” kısmını ana konuşmada okuma. Canlı demo veya sorular bu süreye dahil değil.
+Sunumda 10 ana slayt ve 2 kaynak slaytı var. Planlanan süre 10 dakika. İngilizce konuşma metni 915 kelime; bu, rakamları açıklamak ve kısa duraklamalar için alan bırakıyor. Gerçek süreyi bir prova ile kontrol et. Kaynakları ve notların “optional detail” kısmını ana konuşmada okuma. Canlı demo veya sorular bu süreye dahil değil.
 
 | Slayt | Süre | Birikimli süre | Tek ana fikir |
 |---|---:|---:|---|
@@ -126,3 +126,8 @@ karşılaştırmasıyla aynı başarı oranında birleştirme.
 İndirilen arşiv, içinden eğitime kabul edilen görüntüler ve sonucu ölçtüğümüz görüntüler aynı şey değil. Bu nedenle indirme boyutunu E92 eğitim büyüklüğü diye anlatmıyoruz. E92 için doğrulanmış sayı 12.269 ana görüntü ve dört koşulda 49.076 görünüm. Son karşılaştırmanın 160 gerçek + 160 AI olması, bütün projenin yalnızca 320 görüntüyle yapıldığı anlamına gelmiyor. İlk CNN aşamasında 90.000 eğitim, 10.000 doğrulama ve 20.000 tanıdık test görüntüsü vardı. Daha sonraki büyük testler başka model sürümlerini ölçtü; onların sonuçlarını E92'nin başarısına ekleyemeyiz.
 
 Kayıt mantığını şöyle anlatabilirsin: Önce soruyu ve kabul koşullarını yazdım, deneyi çalıştırdım, hataları inceledim ve bir sonraki adımı buna göre seçtim. PLAN soruyu, EXPERIMENTS ölçümü, HISTORY kararı, DATASETS ise verinin kaynağını ve kullanımını tuttu. Örneğin ters etiketler düzeltilince DINOv2 için önceki başarısızlık açıklaması geri çekildi. Daha büyük eğitim havuzunun yararı hakkındaki eski kötümser yorum da değişti. Bu, her eski notun bugün geçerli olmadığını ve düzeltmeleri birlikte okumamız gerektiğini gösteriyor.
+
+
+### Slayt 9 için kısa Türkçe anlatım
+
+Model2 ile AI düzenlemesinin yerini bulmaya çalıştık. Stable Diffusion pilotumuzda sadece bir bölgeyi değiştirmesini istemek, arka plan piksellerini de etkileyebiliyordu. Bu yüzden üretilen bölgeyi orijinale yapıştırarak arka planı koruduk. Veri bulduk, ancak aynı kaynak görüntülerin farklı veri bölümlerinde bulunması ve düzenleme maskelerinin belirsizliği eğitimde kullanımı sınırladı. Tek üreticiyle, daha önce kullandığımız 16 görüntülük kontrollü bir pilot yaptık. Sonraki eğitim bir düzenleme konumunu iyileştirirken diğerini kötüleştirdi ve gerçek fotoğraflarda yanlış işaretlemeleri artırdı. Bu adayı reddettim; Model2 deneysel kaldı. Bu gözlem bizim Stable Diffusion pilotumuza ait.

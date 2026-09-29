@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-29",
+  "baseline": "93e0547",
+  "scope": "Make Model2 data and editing limits explicit on slide 9 and in the spoken script",
+  "changed_slides": [
+    9
+  ],
+  "other_11_slides_raster_identical_at_100dpi": true,
+  "visual_review": "Slide 9 inspected at full size, no clipping or overlap",
+  "total_slides": 12,
+  "spoken_slides": 10,
+  "planned_seconds": 600,
+  "spoken_words": 915,
+  "slide9_words": 97,
+  "layout_findings": 0,
+  "layout_warnings": 0,
+  "artifact_import_passed": true,
+  "files": {
+    "pptx": "cea4ded5368e658a386a3fe93c7fab7123f759d1ac4cdefcbf1174381a52a519",
+    "pdf": "229d63b338c5e2193465ec9a794e48ecaf451accc0eb912222e8c99a4d5f409e"
+  },
+  "desktop_copy_verified": true,
+  "claim_boundary": "SD1.5 pilot observation, not a ChatGPT experiment or universal editing behavior. No new model evaluation. Timing still requires rehearsal."
+}

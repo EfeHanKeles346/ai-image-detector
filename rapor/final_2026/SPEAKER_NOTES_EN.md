@@ -1,6 +1,6 @@
 # English speaking notes
 
-Slides 1–10 form a planned 10-minute talk. Slides 11–12 are reference material for questions. The spoken script has 916 words; the schedule allows pauses and time to explain the chart. Timing is a plan, not a rehearsal measurement. A live demo and questions are outside this schedule.
+Slides 1–10 form a planned 10-minute talk. Slides 11–12 are reference material for questions. The spoken script has 915 words; the schedule allows pauses and time to explain the chart. Timing is a plan, not a rehearsal measurement. A live demo and questions are outside this schedule.
 
 ## 1. Project purpose (35 seconds)
 
@@ -50,9 +50,9 @@ The demo lets a user upload an image and read a simple result. It can report AI 
 
 Source or optional detail, not part of the spoken script: Report Section 4.5.6 and current-policy audit. Guo et al. (2017), https://proceedings.mlr.press/v70/guo17a.html. Optional Q&A: upper score cut ~7.94; lower ~1.15. Original ≥ upper retains AI alert, both E92 views < lower give no clear evidence, other cases uncertain. E43 is advisory. Paired development outcomes: real 139 clear/21 uncertain/0 AI; AI 159 alerts/1 uncertain.
 
-## 9. The second model (60 seconds)
+## 9. Model2 data and editing limits (60 seconds)
 
-Model2 asks where an AI edit is located. We found datasets, but source overlap and unclear masks prevented building a broad, validated training set. In our Stable Diffusion pilot, asking for a local edit also changed pixels outside the selected region. We therefore pasted only the generated region into the original and kept comparison controls. This gave us sixteen controlled examples from one editor, not broad coverage. Later training helped a new edit placement but harmed the original placement and increased false markings on real images. I rejected that candidate. These data and evaluation limits kept Model2 experimental.
+Model2 tries to locate an AI edit. Our Stable Diffusion pilot showed that a local edit request could also change background pixels. We preserved the original background by pasting only the generated region into it. Suitable training data were another difficulty. We found datasets, but shared source images and unclear masks limited their use. We therefore ran a controlled pilot with sixteen reused images from one editor. Later training improved one edit placement but harmed another and increased false markings on real images. I rejected that candidate. Model2 remains experimental, with limited data and unresolved evaluation problems.
 
 Source or optional detail, not part of the spoken script: Keleş (2026), E105/E109/E117, E122/E127 and E129–E135. Optional Q&A: 506/512 CocoGlide originals overlap protected ancestry; not proof of historical weight contamination. DiffSeg30k: 201 partial, 224 full-positive and 87 empty masks. E127: 11 accepted of 16 attempts, mean 99.9417% outside pixels changed and outside MAE 9.79/255; pixel change is not semantic change. Exact composites preserve outside pixels but introduce possible seam cues. E129 later passed all 16 engineering checks. E135 original/new-placement AUC .74→.70 / .57→.64; authentic false area 17.11%→25.74%. No ChatGPT pixel experiment or universal impossibility claim.
 

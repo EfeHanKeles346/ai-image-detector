@@ -2282,12 +2282,12 @@
       "sha256": "a5997f673fbe052b21eac75cd70afdff6fa93de38085b76f2f07435cb113e818"
     },
     "CS395_Presentation_EfeHan_Keles_29September2026.pdf": {
-      "bytes": 254872,
-      "sha256": "a274d7eb9e737b1ec46152d42549d2fa863026a5a869b1574683452f6a1c13c4"
+      "bytes": 257058,
+      "sha256": "229d63b338c5e2193465ec9a794e48ecaf451accc0eb912222e8c99a4d5f409e"
     },
     "CS395_Presentation_EfeHan_Keles_29September2026.pptx": {
-      "bytes": 52945,
-      "sha256": "9735d6152aa0c1a93a3f88ace7cd8a534fe7e3665311cdfd5b00a7a766c3cc4c"
+      "bytes": 53101,
+      "sha256": "cea4ded5368e658a386a3fe93c7fab7123f759d1ac4cdefcbf1174381a52a519"
     }
   },
   "unresolved_fields": 3,

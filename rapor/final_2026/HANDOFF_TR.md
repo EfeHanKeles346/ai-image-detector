@@ -35,7 +35,7 @@ Kılavuzun 8. sayfasındaki sunum şartları problem, amaç, yöntem/araç, çı
 
 Düzenleme sonrasında içindekiler sayfalarını, sayfa sınırlarını ve tablo/şekil konumlarını yeniden kontrol et. Word veya PowerPoint sürümleri satır kırılımlarını değiştirebilir; teslim edeceğin cihazda son PDF’yi gözle kontrol et. Kapaktaki bilgiler büyürse sonraki sayfalar kayabilir. En son PDF ile DOCX aynı içerikte olmalı.
 
-Sunumdaki 10 dakika, 10 ana slayt ve 916 kelimelik not için planlanan konuşma süresidir. İki kaynak slaytı ana anlatımın dışındadır. Gerçek bir prova yapılarak doğrulanmalıdır. Canlı demo gösterimi bu süreye dahil değildir. Çalıştırılmadan seçilmiş ekran görüntülerine başarı sonucu yüklenmedi; özel galeri fotoğrafları dosyalara konmadı.
+Sunumdaki 10 dakika, 10 ana slayt ve 915 kelimelik not için planlanan konuşma süresidir. İki kaynak slaytı ana anlatımın dışındadır. Gerçek bir prova yapılarak doğrulanmalıdır. Canlı demo gösterimi bu süreye dahil değildir. Çalıştırılmadan seçilmiş ekran görüntülerine başarı sonucu yüklenmedi; özel galeri fotoğrafları dosyalara konmadı.
 
 Raporda AI kodlama desteği açıkça belirtildi. Yazdıklarını anlaman, kişisel katkılarını doğrulaman ve kendi öğrenme bölümünü sahiplenmen gerekir. Not veya kabul garantisi verilmiyor; değerlendirme hocana aittir.
 
