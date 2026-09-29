@@ -7464,3 +7464,8 @@ Remaining submission work is intentionally student-dependent: deferred identity/
 office/title/team fields, personally verified learning/course/day text, actual submission
 date and a spoken timing rehearsal. Rebuild/recheck all formats after filling these.
 This documentation task does not promote E92 or Model2 and does not advance E153.
+
+
+### Model2 report clarification completed — 2026-09-29
+
+Reconciled the remembered editing-scope claim with E109/E117/E127/E129–E135 receipts and primary OpenAI documentation. Updated report Section 4.5.8, slide 9 and study notes without promoting Model2. Report remains 21 pages; digest unchanged; 563 scoped artifact checks pass. A future research plan still needs source-disjoint, diverse-editor pairs with explicit mask semantics and matched authentic/classical controls. This documentation work does not advance E153 or establish universal localization.

@@ -96,6 +96,17 @@ check('paired_UI_REAL_139_clear_21_uncertain',policy['0']=={'no_clear_signal':13
 check('paired_UI_AI_159_alert_1_uncertain',policy['1']=={'ai_signal':159,'uncertain':1})
 check('report_distinguishes_per_view_from_paired_UI','not the paired website outcomes in Section 4.5.6' in body)
 check('model2_not_promoted',not json.loads((REPO/'evidence/e135_location_learning.json').read_text())['promotion_allowed'])
+lineage=json.loads((REPO/'evidence/e117_coco_ancestry.json').read_text())
+check('model2_506_of_512_protected_parent_overlap',lineage['author_parents']==512 and lineage['matched_original_parents']==506 and not lineage['training_allowed'])
+masks=json.loads((REPO/'evidence/e109_diffseg_audit.json').read_text())
+check('model2_diffseg_mask_strata',masks['decoded_pairs']==512 and masks['nondegenerate_pairs']==201 and masks['problems']=={'empty_edit_mask_origin_unresolved':87,'full_image_edit_mask':224} and not masks['training_allowed'])
+pixels=json.loads((REPO/'evidence/e127_pixel_audit.json').read_text())
+raw=pixels['matched_accepted_subset']['raw']
+check('model2_e127_11_of_16_scope',pixels['parents_accounted']==16 and pixels['accepted_output_pairs']==11 and pixels['excluded_attempts']==5)
+check('model2_e127_pixel_change_and_magnitude',round(raw['outside_changed_pixel_fraction']['mean']*100,2)==99.94 and round(raw['outside_mae']['mean']*255,2)==9.79)
+check('model2_composite_preserves_background',pixels['matched_accepted_subset']['composite']['outside_mae']['max']==0)
+check('model2_later_16_generation_gate',json.loads((REPO/'evidence/e129_context_replay.json').read_text())['comparison']['context_passed']==16)
+
 a={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
 for kind,count,table_count,chart_count in [('Presentation',12,4,1),('Digest',1,0,0)]:
  path=OUT/f'CS395_{kind}_EfeHan_Keles_29September2026.pptx'

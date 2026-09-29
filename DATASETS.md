@@ -3554,3 +3554,8 @@ downloaded to a private temporary build directory to verify organization/company
 it is a bibliographic reference, not TRAIN/CAL/DEV/FINAL data, and is not committed.
 Primary scholarly source pages were consulted for complete report citations. Source
 roles, ancestry limitations and all admission decisions remain unchanged.
+
+
+## Model2 reporting clarification — 2026-09-29
+
+No new data were downloaded in this review. E117's 506/512 protected-parent matches and E109's 201 partial, 224 full-positive and 87 empty masks explain why available files did not establish a broad, validated training corpus. Full/empty masks are not automatically corrupt or authentic negatives. E129–E135 did use a controlled 16-parent, one-editor learning pilot; do not describe Model2 as having no training data or no training. Intended edit masks, pixel-difference masks and semantic-change masks are distinct. E127's 99.94% outside-mask changed pixels refers to 11 accepted SD1.5 outputs, excluding five rejected attempts, not a ChatGPT experiment. See IMAGE_FORENSICS_REFERENCE.md's dated correction and rapor/final_2026/sources/model2_scope_review_20260929.json.

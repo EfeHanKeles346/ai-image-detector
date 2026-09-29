@@ -156,7 +156,13 @@ These checks changed the next development priority. Adding another feature was l
 
 ### 4.5.8 Model2 localization and its limits
 
-Model2 predicts edited regions and checks authentic images for false alarms. An early overlap evaluation improperly used true mask size to choose predicted area. Later, a central-region baseline outperformed the detector on 120 CocoGlide images; shared COCO origins also limited independence. These findings motivated a placement test using sixteen reused parents and one Stable Diffusion 1.5 editor (Keleş, 2026, E17 and E107–E135).
+Model2 predicts edited regions and checks authentic images for false alarms. An early overlap evaluation improperly used true mask size to choose predicted area. A corrected test on 120 CocoGlide images performed worse than a central-region baseline (Keleş, 2026, E17 and E107).
+
+Finding data was not the same as finding suitable training evidence. Of 512 CocoGlide originals, 506 shared source identities with protected project data, preventing new training admission under our split policy. The 512 downloaded DiffSeg30k pairs included 201 partial, 224 full-image and 87 empty masks; original-image ancestry and mask interpretation remained unresolved. They were kept out of training. Thus the project lacked a broad, validated local-edit dataset, despite having image files and masks (Keleş, 2026, E105, E109 and E117).
+
+A local editing request also did not guarantee an unchanged background. In our Stable Diffusion 1.5 pilot, the 11 accepted outputs from 16 attempts changed an average of 99.94% of pixels outside the intended mask. Mean absolute channel change was about 9.79 on a 0–255 scale. Pixel differences do not mean that the scene changed semantically, but the raw background could not be labelled untouched. Explicit composites restored original pixels outside the mask; their boundaries still needed controls (Keleş, 2026, E122 and E127).
+
+Revised input preparation later passed all 16 generation checks. We used these controlled composites, authentic images and conventional-edit controls for a small learning pilot. The masks defined the pasted region, not a verified semantic-change boundary. One editor and sixteen reused parents could not establish broad reliability (Keleş, 2026, E129–E135).
 
 Table 3 shows that training on two edit placements improved the new placement but harmed the original placement and increased false markings on authentic images. The candidate was rejected. Moving edits also changes content, so the result does not isolate location as the sole cause. Model2 remains experimental.
 

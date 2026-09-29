@@ -255,3 +255,24 @@ verified superseded copies were removed from that folder; Office lock files were
 Receipt: sources/metadata_completion_20260929.json. No school submission, model experiment
 or change to scientific results occurred. The report remains incomplete in the three
 explicitly unconfirmed administrative fields; native Office and oral rehearsal are untested.
+
+
+## Model2 scope and data review — 29 September 2026
+
+Report Section 4.5.8 and presentation slide 9 now explain the distinction between finding
+image files and establishing a broad, validated local-edit training set. E117 source overlap,
+E109 mask strata, E127 outside-mask pixel changes and E129–E135 controlled pilot evidence
+were checked against saved aggregate receipts. The earlier categorical ChatGPT statement
+was corrected explicitly in IMAGE_FORENSICS_REFERENCE.md, HISTORY.md and ml/EXPERIMENTS.md.
+The numerical pixel result concerns 11 accepted SD1.5 outputs, not ChatGPT or semantic change.
+No new experiment, dataset acquisition, model promotion or reserve access occurred.
+
+The report remains 21 pages; all 35 contents page numbers remain unchanged. Render comparison
+against 3a1d353 found changes only on report pages 14–17 and presentation slide 9; these
+pages were inspected visually. Other pages/slides are pixel-identical at comparison resolution.
+The DOC round-trip retains 21 pages and every page's word multiset; its minor visual differences
+on pages 3, 5 and 12 were inspected. All 563 scoped artifact checks pass, including six new
+Model2 evidence checks; these are not 563 separate school requirements. The presentation
+finalizer reports zero layout findings/warnings and successful import. Its 916 spoken words
+remain planned for 600 seconds, subject to rehearsal. The digest is byte-identical.
+The same three deferred administrative fields remain. See sources/model2_scope_review_20260929.json.

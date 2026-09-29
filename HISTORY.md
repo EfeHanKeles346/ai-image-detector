@@ -11427,3 +11427,41 @@ verified superseded copies were removed from that folder; Office lock files were
 Receipt: sources/metadata_completion_20260929.json. No school submission, model experiment
 or change to scientific results occurred. The report remains incomplete in the three
 explicitly unconfirmed administrative fields; native Office and oral rehearsal are untested.
+
+## Model2 editing-scope correction — 29 September 2026
+
+This retrospective review supersedes the categorical ChatGPT and localization statements
+in Sections 3.2 and 4.2 and their historical summary in HISTORY.md. Those statements were
+operational assumptions and literature interpretations, not a local ChatGPT experiment.
+Do not claim that every ChatGPT-family editor uses diffusion, rewrites every pixel or
+makes semantic edit localization impossible. The [25 March 2025 GPT-4o system-card
+addendum](https://cdn.openai.com/11998be9-5319-4302-bfbf-1167e093f1fb/Native_Image_Generation_System_Card.pdf)
+describes that specific image model as autoregressive. The [official editing help](https://help.openai.com/en/articles/11084440-images-in-chatgpt)
+says edits may extend beyond the selected area; this does not assert that every pixel
+always changes or identify a mechanism for all versions. Both were checked on 29 September.
+
+The project's direct evidence is narrower and stronger: E127 audited 11 accepted outputs
+from 16 E122 SD1.5 inpainting attempts. Mean outside-mask changed-pixel fraction was
+0.9994174467463207, and outside channel MAE was 0.038380957000578114 in [0,1], about
+9.79/255. Five rejected outputs were excluded from these content statistics. A changed
+pixel is not evidence of semantic change. Exact composites restored original background
+pixels; seam controls were still necessary. E129 later passed 16/16 engineering attempts
+after changing input preparation; the later E132–E135 learning pilot is not the failed
+11/16 attempt. No new pixel or model measurement was made in this review.
+
+A desired edit mask, an actual numerical pixel-difference mask and a semantic-change
+annotation are different targets. Whole-image decoding can weaken a local forensic
+contrast without proving that localization is impossible. A low localization result also
+cannot be attributed to this mechanism alone: source dependence, masks, positional
+shortcuts and insufficient editor coverage remain competing explanations.
+
+The data constraint is not an absence of datasets. E117 recovered 506/512 CocoGlide parents
+shared with a protected source manifest, preventing new TRAIN/CAL admission under project
+policy; that does not prove historical weight contamination. E109 audited 512 DiffSeg30k
+pairs: 201 partial, 224 full-positive and 87 empty masks. Full/empty masks are not automatically
+corruption or authentic negatives; ancestry and mask interpretation remained unresolved.
+The broad, validated local-edit corpus was missing, while a limited 16-parent, one-editor
+controlled learning pilot did exist. Report Section 4.5.8 now makes this distinction.
+
+
+Model2 report revision completed: Section 4.5.8 and slide 9 updated; 21-page report and 10-minute presentation plan retained. All 563 scoped artifact checks pass; DOC round-trip and changed render pages were inspected. Three administrative placeholders remain. No model experiment or download occurred. Current submission DOC/PPTX copies were synchronized to the Desktop folder with byte verification. See rapor/final_2026/sources/model2_scope_review_20260929.json.

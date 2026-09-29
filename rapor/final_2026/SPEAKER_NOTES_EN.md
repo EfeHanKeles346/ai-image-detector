@@ -1,6 +1,6 @@
 # English speaking notes
 
-Slides 1–10 form a planned 10-minute talk. Slides 11–12 are reference material for questions. The spoken script has 908 words; the schedule allows pauses and time to explain the chart. Timing is a plan, not a rehearsal measurement. Speak naturally and check the duration yourself. A live demo and questions are outside this schedule.
+Slides 1–10 form a planned 10-minute talk. Slides 11–12 are reference material for questions. The spoken script has 916 words; the schedule allows pauses and time to explain the chart. Timing is a plan, not a rehearsal measurement. A live demo and questions are outside this schedule.
 
 ## 1. Project purpose (35 seconds)
 
@@ -52,9 +52,9 @@ Source or optional detail, not part of the spoken script: Report Section 4.5.6 a
 
 ## 9. The second model (60 seconds)
 
-Model2 explores a different question: where an AI edit might be located. It needs masks that show the true edited region, as well as authentic images for false-alarm checks. In a small pilot, moving edits reduced performance. Training on two placements helped the new placement, but harmed the original placement and highlighted more authentic image area incorrectly. The pilot used only sixteen previously used images and one editor. I rejected that candidate and kept Model2 experimental. It needs more independent images and editors before a useful reliability claim is possible.
+Model2 asks where an AI edit is located. We found datasets, but source overlap and unclear masks prevented building a broad, validated training set. In our Stable Diffusion pilot, asking for a local edit also changed pixels outside the selected region. We therefore pasted only the generated region into the original and kept comparison controls. This gave us sixteen controlled examples from one editor, not broad coverage. Later training helped a new edit placement but harmed the original placement and increased false markings on real images. I rejected that candidate. These data and evaluation limits kept Model2 experimental.
 
-Source or optional detail, not part of the spoken script: Keleş (2026), E132–E135 and evidence/e135_location_learning.json. Optional Q&A: original-placement pixel AUC .74 to .70; new-placement .57 to .64; authentic false area 17.11% to 25.74%. Moving edits also changes content, so this does not isolate location as the sole cause.
+Source or optional detail, not part of the spoken script: Keleş (2026), E105/E109/E117, E122/E127 and E129–E135. Optional Q&A: 506/512 CocoGlide originals overlap protected ancestry; not proof of historical weight contamination. DiffSeg30k: 201 partial, 224 full-positive and 87 empty masks. E127: 11 accepted of 16 attempts, mean 99.9417% outside pixels changed and outside MAE 9.79/255; pixel change is not semantic change. Exact composites preserve outside pixels but introduce possible seam cues. E129 later passed all 16 engineering checks. E135 original/new-placement AUC .74→.70 / .57→.64; authentic false area 17.11%→25.74%. No ChatGPT pixel experiment or universal impossibility claim.
 
 ## 10. Conclusion (60 seconds)
 

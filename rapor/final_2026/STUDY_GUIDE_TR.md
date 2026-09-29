@@ -10,7 +10,7 @@ Projenin hikâyesi yalnızca “model eğittik, skor yükseldi” değil. Başla
 
 ## Sunumu nasıl çalışmalısın?
 
-Sunumda 10 ana slayt ve 2 kaynak slaytı var. Planlanan süre 10 dakika. İngilizce konuşma metni 908 kelime; bu, rakamları açıklamak ve kısa duraklamalar için alan bırakıyor. Gerçek süreyi bir prova ile kontrol et. Kaynakları ve notların “optional detail” kısmını ana konuşmada okuma. Canlı demo veya sorular bu süreye dahil değil.
+Sunumda 10 ana slayt ve 2 kaynak slaytı var. Planlanan süre 10 dakika. İngilizce konuşma metni 916 kelime; bu, rakamları açıklamak ve kısa duraklamalar için alan bırakıyor. Gerçek süreyi bir prova ile kontrol et. Kaynakları ve notların “optional detail” kısmını ana konuşmada okuma. Canlı demo veya sorular bu süreye dahil değil.
 
 | Slayt | Süre | Birikimli süre | Tek ana fikir |
 |---|---:|---:|---|
@@ -22,7 +22,7 @@ Sunumda 10 ana slayt ve 2 kaynak slaytı var. Planlanan süre 10 dakika. İngili
 | 6 | 80 sn | 6:05 | Aynı gerçek görüntülerde yanlış uyarılar 68’den 0’a / 14’e indi. |
 | 7 | 60 sn | 7:05 | 20 sayısal kontrol geçti ama yeni bir AI kaybı tam kabulü engelledi. |
 | 8 | 55 sn | 8:00 | Demo puan ve belirsizliği gösteriyor; gerçeklik belgesi vermiyor. |
-| 9 | 60 sn | 9:00 | Model2 küçük bir pilotta kaldı; yanlış işaretlemeler yüzünden aday reddedildi. |
+| 9 | 60 sn | 9:00 | Veri ve maske sorunları küçük pilotla ele alındı; model hâlâ deneysel. |
 | 10 | 60 sn | 10:00 | Prototip ve kayıtlar tamamlandı; sonraki ihtiyaç bağımsız değerlendirme. |
 
 Hocaya kalmasını istediğin mesaj şu: “Çalışan bir prototip geliştirdim ve belirli veride yanlış uyarıları azalttım. Deneyleri incelerken ölçüm hatalarını düzelttim. Hangi başarının kanıtlandığını ve hangi sınırların kaldığını biliyorum.”
@@ -77,6 +77,12 @@ Sitenin iki puanı birleştirdiği kararda, aynı 160 gerçek görüntünün 139
 Model2 için bütün görüntüye AI demek yetmiyor; hangi piksellerin düzenlendiğini bulmak gerekiyor. On altı ana görüntülü, tek düzenleyicili pilotta düzenleme farklı konumlara taşınınca piksel sıralama başarısı düştü. İki konumla öğrenme bazı kayıpları düzeltti ama önceki konumdaki sonucu bozdu ve gerçek görüntülerde yanlış işaretlenen alanı artırdı.
 
 Piksel AUC 0,742’den yeni konumda 0,566’ya düştü; yeni uyarlama bunu 0,638’e çıkardı. Ancak gerçek fotoğraflarda yanlış işaretlenen alan %17,11’den %25,74’e yükseldi. Bu nedenle aday reddedildi. Bu sayıların hiçbiri “fotoğrafların %74’ünde düzenlemeyi kesin bulduk” demek değildir.
+
+Veri bulunmuştu; fakat kullanıma uygunluğu ayrı bir sorundu. CocoGlide’ın 512 orijinalinin 506’sı korunan verilerle aynı kaynak görüntülerden geliyordu. DiffSeg30k’ta kısmi, tüm görüntüyü kapsayan ve boş maskeler birlikte vardı; kaynak kökeni ve maskelerin anlamı tam netleşmemişti. Bu nedenle “hiç dataset bulamadık” yerine “geniş, doğrulanmış ve bölünmelere uygun bir yerel düzenleme veri seti oluşturamadık” demelisin.
+
+İkinci sorun, istenen bölge ile gerçekten değişen piksellerin aynı olmamasıydı. SD1.5 pilotundaki 16 denemenin kabul edilen 11 çıktısında maske dışı piksellerin ortalama %99,94’ü sayısal olarak değişti. Ortalama kanal farkı 255 üzerinden yaklaşık 9,79’du. Bu, sahnenin anlamının tamamen değiştiği anlamına gelmez. Arka planı birebir korumak için sadece üretilen bölgeyi orijinale yapıştırdık; bunun oluşturabileceği sınır izlerini de kontrol ettik. Daha sonra giriş hazırlığı düzeltilince 16/16 üretim kontrolü geçti ve küçük öğrenme pilotu yapıldı.
+
+Bu ölçüm ChatGPT üzerinde yapılmadı. Eski nottaki “bütün ChatGPT düzenlemeleri her pikseli yeniden üretir” cümlesi fazla kesindi ve düzeltme kaydı eklendi. Belirli bir üretim yöntemiyle gözlenen arka plan değişimi, her modelde aynı mekanizma olduğunu veya yerel düzenlemeyi bulmanın imkânsızlığını kanıtlamaz. İstenen düzenleme bölgesi, piksel farkı ve anlamlı içerik değişimi ayrı kavramlar.
 
 ## Hocanın sorabileceği sorular
 

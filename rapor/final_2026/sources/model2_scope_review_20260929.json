@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-29",
+  "baseline": "3a1d353a7d65b4f1313941fefa7ea826efa767b9",
+  "scope": "Targeted historical Model2 review, not a new complete MD audit or model experiment",
+  "reviewed_records": [
+    "IMAGE_FORENSICS_REFERENCE.md Sections 3.2 and 4.2",
+    "HISTORY.md early ChatGPT claim and Model2 milestones",
+    "DATASETS.md E105/E109/E117/E122/E127/E129",
+    "ml/EXPERIMENTS.md E17/E107/E109/E117/E122/E127/E129–E135",
+    "PLAN.md Model2 data/evaluation policy"
+  ],
+  "primary_external_sources": [
+    "https://cdn.openai.com/11998be9-5319-4302-bfbf-1167e093f1fb/Native_Image_Generation_System_Card.pdf",
+    "https://help.openai.com/en/articles/11084440-images-in-chatgpt"
+  ],
+  "evidence_sha256": {
+    "e109_diffseg_audit.json": "7281532e6ef4a34e3c94345d097b3fe8f5f95680578f067282ff205bf9c56553",
+    "e117_coco_ancestry.json": "0bfbd2f556fd98c1dbaa51f4dad55c75b7fbdba769c73f82523c216f74576d44",
+    "e127_pixel_audit.json": "f8698901dd4d35e006f383b8f5eecb5390820e11ab1fb5d19f9a4199ef9ca372",
+    "e129_context_replay.json": "275a44c0d769fdcbf4126432f859fb0ef9ef1824b5ecdfd88dadeef58a976fc9",
+    "e135_location_learning.json": "29a8aad2a8fc5e838c83a150a22b40322a8cac66b92d9b82c5828972ae57543e"
+  },
+  "corrections": [
+    "Do not generalize every ChatGPT image model as diffusion or every edit as changing all pixels.",
+    "E127 measures 11 accepted SD1.5 outputs of 16 attempts; pixel differences are not semantic edits.",
+    "Datasets existed, but ancestry and masks limited admission; a small 16-parent one-editor learning pilot existed.",
+    "Background changes are one data/label difficulty, not a proven sole cause of poor localization."
+  ],
+  "report_pages": 21,
+  "paragraph_words": 3351,
+  "abstract_words": 217,
+  "formal_references": 14,
+  "presentation_spoken_words": 916,
+  "planned_seconds": 600,
+  "checks_passed": 563,
+  "changed_report_pages": [
+    14,
+    15,
+    16,
+    17
+  ],
+  "changed_slides": [
+    9
+  ],
+  "visual_qa": "Changed report pages and slide 9 inspected; other pages/slides raster-identical to baseline at 80/100 dpi. DOC roundtrip visual differences pages 3,5,12 inspected.",
+  "doc_roundtrip_page_tokens_match": true,
+  "digest_unchanged": true,
+  "remaining_fields": [
+    "[TO COMPLETE: confirmed supplier names]",
+    "[TO COMPLETE: department reporting line]",
+    "[TO COMPLETE: Hasan Çontuk’s job title]"
+  ],
+  "desktop_sha256": {
+    "CS395_FinalReport_EfeHan_Keles_29September2026.doc": "dcc216e49e4596b68b9e9baaf81d49bc198877a74d8939df02d30de86440f781",
+    "CS395_Presentation_EfeHan_Keles_29September2026.pptx": "9735d6152aa0c1a93a3f88ace7cd8a534fe7e3665311cdfd5b00a7a766c3cc4c",
+    "CS395_Digest_EfeHan_Keles_29September2026.pptx": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea"
+  },
+  "outputs": {
+    "CS395_Digest_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 74672,
+      "sha256": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31"
+    },
+    "CS395_Digest_EfeHan_Keles_29September2026.pptx": {
+      "bytes": 13490,
+      "sha256": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea"
+    },
+    "CS395_FinalReport_EfeHan_Keles_29September2026.doc": {
+      "bytes": 257536,
+      "sha256": "dcc216e49e4596b68b9e9baaf81d49bc198877a74d8939df02d30de86440f781"
+    },
+    "CS395_FinalReport_EfeHan_Keles_29September2026.docx": {
+      "bytes": 176371,
+      "sha256": "c452ce5557de4ce6976b6148adff0e61835eef197f3fed3e35e5d016e51a352b"
+    },
+    "CS395_FinalReport_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 335477,
+      "sha256": "a5997f673fbe052b21eac75cd70afdff6fa93de38085b76f2f07435cb113e818"
+    },
+    "CS395_Presentation_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 254872,
+      "sha256": "a274d7eb9e737b1ec46152d42549d2fa863026a5a869b1574683452f6a1c13c4"
+    },
+    "CS395_Presentation_EfeHan_Keles_29September2026.pptx": {
+      "bytes": 52945,
+      "sha256": "9735d6152aa0c1a93a3f88ace7cd8a534fe7e3665311cdfd5b00a7a766c3cc4c"
+    }
+  },
+  "limitations": "No native Microsoft Office execution or speech rehearsal. No academic grade, independent generalization, or exhaustive scientific correctness guarantee."
+}
