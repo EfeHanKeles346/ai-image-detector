@@ -118,7 +118,7 @@ for(const [kind,pres,count,tables,charts] of [['Presentation',p,12,[3,5,8,10],[6
  const wd=path.join(WORK,kind);await fs.mkdir(path.join(wd,'.codex-finalizer'),{recursive:true});
  const candidate=path.join(wd,'.codex-finalizer/candidate.pptx');await(await PresentationFile.exportPptx(pres)).save(candidate);
  await fs.mkdir(path.join(wd,'output'),{recursive:true});
- const final=path.join(wd,'output',`CS395_${kind}_EfeHan_Keles_29September2026.pptx`);
+ const final=path.join(wd,'output',`CS395_${kind}_Efe_Han_Keleş_29September2026.pptx`);
  const result=await finalizePresentation({workspaceDir:wd,candidatePath:candidate,finalPath:final,pythonExecutable:PY,integrityValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit',...tables.flatMap(n=>['--require-native-table-slide',String(n)])],requiredNativeTableOwnerSlides:tables,requiredNativeChartOwnerSlides:charts,explicitTotalSlideCount:count,fontPolicy:{basis:'user_request',families:[FONT]},materializeLiteralChartWorkbooks:true,verifyArtifactToolImport:true,receiptPath:path.join(wd,'.codex-finalizer/validation.json')});
  console.log(kind,JSON.stringify({finalPath:result.finalPath,sha256:result.finalSha256,warnings:result.presentationLayout?.warnings}));
  await fs.copyFile(final,path.join(ROOT,'deliverables',path.basename(final)));

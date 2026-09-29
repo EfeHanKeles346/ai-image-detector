@@ -1,0 +1,66 @@
+{
+  "reason": "Student correction: Efe and Han are separate names; surname uses ş.",
+  "content_changed": false,
+  "renames": [
+    {
+      "directory": "rapor/final_2026/deliverables",
+      "old": "CS395_Presentation_EfeHan_Keles_29September2026.pdf",
+      "new": "CS395_Presentation_Efe_Han_Keleş_29September2026.pdf",
+      "sha256": "229d63b338c5e2193465ec9a794e48ecaf451accc0eb912222e8c99a4d5f409e"
+    },
+    {
+      "directory": "rapor/final_2026/deliverables",
+      "old": "CS395_Digest_EfeHan_Keles_29September2026.pptx",
+      "new": "CS395_Digest_Efe_Han_Keleş_29September2026.pptx",
+      "sha256": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea"
+    },
+    {
+      "directory": "rapor/final_2026/deliverables",
+      "old": "CS395_FinalReport_EfeHan_Keles_29September2026.doc",
+      "new": "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc",
+      "sha256": "974154b8dfa3d2ec1b4b99c61e2d6b392b687675de43f0f6c2b4e7ee3573c375"
+    },
+    {
+      "directory": "rapor/final_2026/deliverables",
+      "old": "CS395_FinalReport_EfeHan_Keles_29September2026.pdf",
+      "new": "CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf",
+      "sha256": "2e1fdd32fea4aee01803d9bcba9d2458aabc99c28e47f39b543cf8696ea7856f"
+    },
+    {
+      "directory": "rapor/final_2026/deliverables",
+      "old": "CS395_Presentation_EfeHan_Keles_29September2026.pptx",
+      "new": "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx",
+      "sha256": "c2dd24f97ca06a1f89339036a60602067405150b0e461cea5ecc20bffac7d6fd"
+    },
+    {
+      "directory": "rapor/final_2026/deliverables",
+      "old": "CS395_Digest_EfeHan_Keles_29September2026.pdf",
+      "new": "CS395_Digest_Efe_Han_Keleş_29September2026.pdf",
+      "sha256": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31"
+    },
+    {
+      "directory": "rapor/final_2026/deliverables",
+      "old": "CS395_FinalReport_EfeHan_Keles_29September2026.docx",
+      "new": "CS395_FinalReport_Efe_Han_Keleş_29September2026.docx",
+      "sha256": "241ed0fc14f5cc38cc1057e217b22af8790fd32118d3a78c6a4b5638d8d5486f"
+    },
+    {
+      "directory": "/Users/efehankeles/Desktop/CS395_PixelProof_Submission_2026",
+      "old": "CS395_FinalReport_EfeHan_Keles_29September2026.doc",
+      "new": "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc",
+      "sha256": "974154b8dfa3d2ec1b4b99c61e2d6b392b687675de43f0f6c2b4e7ee3573c375"
+    },
+    {
+      "directory": "/Users/efehankeles/Desktop/CS395_PixelProof_Submission_2026",
+      "old": "CS395_Presentation_EfeHan_Keles_29September2026.pptx",
+      "new": "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx",
+      "sha256": "c2dd24f97ca06a1f89339036a60602067405150b0e461cea5ecc20bffac7d6fd"
+    },
+    {
+      "directory": "/Users/efehankeles/Desktop/CS395_PixelProof_Submission_2026",
+      "old": "CS395_Digest_EfeHan_Keles_29September2026.pdf",
+      "new": "CS395_Digest_Efe_Han_Keleş_29September2026.pdf",
+      "sha256": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31"
+    }
+  ]
+}

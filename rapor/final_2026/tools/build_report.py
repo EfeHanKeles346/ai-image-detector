@@ -20,7 +20,7 @@ ROOT=Path(__file__).resolve().parents[1]; REPO=ROOT.parents[1]
 spec=importlib.util.spec_from_file_location('content',ROOT/'sources/report_content.py');c=importlib.util.module_from_spec(spec);spec.loader.exec_module(c)
 OUT=ROOT/'deliverables';OUT.mkdir(exist_ok=True)
 BUILD=Path('/private/tmp/pixelproof-internship-20260925');BUILD.mkdir(exist_ok=True)
-NAME='CS395_FinalReport_EfeHan_Keles_29September2026'
+NAME='CS395_FinalReport_Efe_Han_Keleş_29September2026'
 pdfmetrics.registerFont(TTFont('TNR','/System/Library/Fonts/Supplemental/Times New Roman.ttf'))
 e92=json.loads((REPO/'evidence/e92_development.json').read_text())
 def surface(name,w,h):

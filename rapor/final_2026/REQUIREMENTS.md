@@ -100,3 +100,8 @@ Receipt: sources/final_fields_review_20260929.json. Prior dated records retain h
 ### Digest submission format corrected — 2026-09-29
 
 The student supplied the current portal format list and explicitly requested only the digest as PDF. Copied the existing validated one-page digest PDF into the Desktop submission folder and removed its byte-matched PPTX copy from that folder. The editable PPTX remains preserved in the repository. Report DOC and presentation PPTX unchanged. Desktop now contains three submission files: DOC, PPTX and PDF. No content change or school upload. This supersedes the earlier guideline-based digest format choice for the portal.
+
+
+### Submission filenames corrected — 2026-09-29
+
+Student explicitly corrected the name component to `Efe_Han_Keleş`. Renamed all seven current repository artifacts and the three Desktop submission files from `EfeHan_Keles_29September2026` to `Efe_Han_Keleş_29September2026`. Updated builders, audit paths and current links. File contents and hashes are unchanged. Prior dated receipts retain historical names. No school upload.

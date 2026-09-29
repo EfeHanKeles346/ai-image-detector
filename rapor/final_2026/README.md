@@ -6,13 +6,13 @@ This is the current E1–E152 submission draft. It supersedes the old E26 report
 
 | Artifact | File |
 |---|---|
-| Report, editable | [DOCX](deliverables/CS395_FinalReport_EfeHan_Keles_29September2026.docx) |
-| Report, reading copy | [PDF](deliverables/CS395_FinalReport_EfeHan_Keles_29September2026.pdf) |
-| Report, office legacy format | [DOC](deliverables/CS395_FinalReport_EfeHan_Keles_29September2026.doc) |
-| Presentation, editable and with notes | [PPTX](deliverables/CS395_Presentation_EfeHan_Keles_29September2026.pptx) |
-| Presentation, reading copy | [PDF](deliverables/CS395_Presentation_EfeHan_Keles_29September2026.pdf) |
-| One-slide digest | [PPTX](deliverables/CS395_Digest_EfeHan_Keles_29September2026.pptx) |
-| Digest, reading copy | [PDF](deliverables/CS395_Digest_EfeHan_Keles_29September2026.pdf) |
+| Report, editable | [DOCX](deliverables/CS395_FinalReport_Efe_Han_Keleş_29September2026.docx) |
+| Report, reading copy | [PDF](deliverables/CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf) |
+| Report, office legacy format | [DOC](deliverables/CS395_FinalReport_Efe_Han_Keleş_29September2026.doc) |
+| Presentation, editable and with notes | [PPTX](deliverables/CS395_Presentation_Efe_Han_Keleş_29September2026.pptx) |
+| Presentation, reading copy | [PDF](deliverables/CS395_Presentation_Efe_Han_Keleş_29September2026.pdf) |
+| One-slide digest | [PPTX](deliverables/CS395_Digest_Efe_Han_Keleş_29September2026.pptx) |
+| Digest, reading copy | [PDF](deliverables/CS395_Digest_Efe_Han_Keleş_29September2026.pdf) |
 | Study material | [Turkish guide](STUDY_GUIDE_TR.md), [English speaking notes](SPEAKER_NOTES_EN.md) |
 
 The deck has 10 spoken slides and two reference slides. Suggested timing is 600 seconds (10:00), with 915 spoken words and pauses for the figures; actual timing requires rehearsal. The report has 21 pages including front matter, 3 figures, 5 tables and 15 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.

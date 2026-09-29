@@ -35,3 +35,8 @@ Son eleştirel inceleme `CRITICAL_REVIEW.md` içinde. Teknik içerik ve anlatım
 
 
 Model2 açıklaması güncellendi: 4.5.8 ve sunumun 9. slaytı veri uygunluğu ve maske dışındaki piksel değişimini ayrı ayrı anlatıyor. Bu ölçüm Stable Diffusion pilotuna ait; ChatGPT için yapılmış deney gibi sunulmuyor. Rapor 21 sayfa; Bu önceki sürümde 563 sınırlı kapsamlı belge/kanıt kontrolü geçmişti; güncel sayı 566. Digest değişmedi.
+
+
+### Submission filenames corrected — 2026-09-29
+
+Student explicitly corrected the name component to `Efe_Han_Keleş`. Renamed all seven current repository artifacts and the three Desktop submission files from `EfeHan_Keles_29September2026` to `Efe_Han_Keleş_29September2026`. Updated builders, audit paths and current links. File contents and hashes are unchanged. Prior dated receipts retain historical names. No school upload.

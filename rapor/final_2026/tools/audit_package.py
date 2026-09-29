@@ -13,7 +13,7 @@ checks=[]
 def check(name,ok):
  checks.append({'name':name,'passed':bool(ok)})
  if not ok:raise AssertionError(name)
-name='CS395_FinalReport_EfeHan_Keles_29September2026'
+name='CS395_FinalReport_Efe_Han_Keleş_29September2026'
 d=Document(OUT/(name+'.docx'));r=PdfReader(OUT/(name+'.pdf'))
 check('report_within_requested_20_to_25_pages',20<=len(r.pages)<=25)
 check('abstract_at_most_250_words',len(c.ABSTRACT.split())<=250)
@@ -109,7 +109,7 @@ check('model2_later_16_generation_gate',json.loads((REPO/'evidence/e129_context_
 
 a={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
 for kind,count,table_count,chart_count in [('Presentation',12,4,1),('Digest',1,0,0)]:
- path=OUT/f'CS395_{kind}_EfeHan_Keles_29September2026.pptx'
+ path=OUT/f'CS395_{kind}_Efe_Han_Keleş_29September2026.pptx'
  with zipfile.ZipFile(path) as z:
   parts=[n for n in z.namelist() if re.fullmatch('ppt/slides/slide[0-9]+.xml',n)]
   check(kind+':slide_count',len(parts)==count)
