@@ -95,3 +95,8 @@ Presentation slides are visually unchanged; a reference-note count was made gene
 Digest is byte-identical. The package audit passes 566 scoped checks with zero completion
 placeholders. Current Desktop files match repository copies. No upload to school occurred.
 Receipt: sources/final_fields_review_20260929.json. Prior dated records retain historical counts.
+
+
+### Digest submission format corrected — 2026-09-29
+
+The student supplied the current portal format list and explicitly requested only the digest as PDF. Copied the existing validated one-page digest PDF into the Desktop submission folder and removed its byte-matched PPTX copy from that folder. The editable PPTX remains preserved in the repository. Report DOC and presentation PPTX unchanged. Desktop now contains three submission files: DOC, PPTX and PDF. No content change or school upload. This supersedes the earlier guideline-based digest format choice for the portal.

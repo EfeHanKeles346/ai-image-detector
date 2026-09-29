@@ -19,7 +19,7 @@ The deck has 10 spoken slides and two reference slides. Suggested timing is 600 
 
 ## Desktop submission folder
 
-Guideline page 1 explicitly names a `.doc` report and `.pptx` presentation and digest. The Desktop folder `CS395_PixelProof_Submission_2026` now contains only those three current files, verified against the repository copies. PDF/DOCX reading and editing copies remain in `deliverables/`; the former Desktop support files are preserved under `~/Documents/PixelProof_Submission_Support_2026/2026-09-25/`. The three earlier completion fields were resolved by student role clarification, a primary supplier source and removal of an unnecessarily inferred reporting-line requirement.
+The current submission portal screenshot requires the digest as PDF; the student explicitly requested this format on 29 September. The Desktop folder `CS395_PixelProof_Submission_2026` contains the report DOC, presentation PPTX and one-slide digest PDF, verified against repository copies. The editable digest PPTX remains in `deliverables/` only. This portal-specific format supersedes the earlier Desktop digest PPTX choice based on the guideline. Historical receipts retain their original file lists.
 
 ## Latest revision — 29 September 2026
 

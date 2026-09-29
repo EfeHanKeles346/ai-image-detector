@@ -7479,3 +7479,8 @@ Documentation-only follow-up: slide 9 now visibly explains background pixel chan
 ### Final report company fields resolved — 2026-09-29
 
 Re-read FENS guideline page 3. Major suppliers are explicitly required; a separately named unit reporting line is not. Removed that inferred placeholder, stated Hasan Çontuk’s student-confirmed mentoring role on Önder Çelebi’s team, and added Nokia as a group-level network equipment/services supplier with Finnvera’s primary 2025 transaction record and full reference. No corporate title or unit procurement tie was invented. Report remains 21 pages, 15 references, zero TO COMPLETE fields; 566 scoped checks pass. Desktop DOC/PPTX files synchronized. No ML experiment or school submission occurred. See rapor/final_2026/sources/final_fields_review_20260929.json.
+
+
+### Digest submission format corrected — 2026-09-29
+
+The student supplied the current portal format list and explicitly requested only the digest as PDF. Copied the existing validated one-page digest PDF into the Desktop submission folder and removed its byte-matched PPTX copy from that folder. The editable PPTX remains preserved in the repository. Report DOC and presentation PPTX unchanged. Desktop now contains three submission files: DOC, PPTX and PDF. No content change or school upload. This supersedes the earlier guideline-based digest format choice for the portal.

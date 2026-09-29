@@ -1,6 +1,6 @@
 # Güncel teslim durumu
 
-29 Eylül 2026: Masaüstündeki `CS395_PixelProof_Submission_2026` klasöründe güncel DOC raporu, sunum PPTX ve tek slayt digest PPTX bulunur. Rapor 21 sayfa, 15 kaynak; sunum 10 ana ve iki kaynak slaytıyla 10 dakika için planlandı. Belgelerde TO COMPLETE alanı kalmadı. Dosyalar okula gönderilmedi.
+29 Eylül 2026: Masaüstündeki `CS395_PixelProof_Submission_2026` klasöründe güncel DOC raporu, sunum PPTX ve tek slayt digest PDF bulunur. Rapor 21 sayfa, 15 kaynak; sunum 10 ana ve iki kaynak slaytıyla 10 dakika için planlandı. Belgelerde TO COMPLETE alanı kalmadı. Dosyalar okula gönderilmedi.
 
 Hasan Çontuk, son açıklamana göre mentörün ve Önder Çelebi’nin ekip üyesi olarak yazıldı. Mühendis/uzman gibi bilinmeyen resmî bir unvan uydurulmadı. Kılavuz çalışanların unvanlarını ister; burada doğruladığın proje rolü belirtiliyor. Bölümün üst raporlama birimini ayrıca yazma zorunluluğu kılavuzda yok; bu yer tutucu önceki aşamada gereğinden katı bir yorumla eklenmişti ve kaldırıldı. Bu düzeltme, Türk Telekom’da daha üst yönetim olmadığı anlamına gelmez.
 
@@ -23,7 +23,7 @@ Sayfalar dokuz sayfalık FENS Summer 2026 kılavuzunun sayfalarıdır, raporun s
 
 Kılavuzun 8. sayfasındaki sunum şartları problem, amaç, yöntem/araç, çıktı ve sonuç özetidir. Bu kişisel ayrıntıların hepsini sunuma eklemek şart değil; teknik sunum korundu. Üç ders sınırı nedeniyle CS308 ve CS310 ayrı dördüncü/beşinci ders olarak eklenmedi. Ofis adresi digest örneğinde açıkça yer alıyor; tipik gün bölümü ise yalnızca tamamen çevrim içi stajda atlanabiliyor, bizim hibrit stajda korunuyor.
 
-İngilizce ana dosyalar `deliverables/` içinde. Raporun düzenlenebilir kaynağı DOCX, aynı sürümün okunabilir kopyası PDF; ofisin istediği eski DOC biçimi de sağlandı. Sunum ve tek slaytlık digest hem PPTX hem PDF. Sunumun PPTX sürümünde konuşmacı notları var. `STUDY_GUIDE_TR.md` öğrenme rehberi, `SPEAKER_NOTES_EN.md` konuşma taslağıdır; bu iki destek dosyası hocanın raporu yerine kullanılmamalı.
+İngilizce ana dosyalar `deliverables/` içinde. Raporun düzenlenebilir kaynağı DOCX, aynı sürümün okunabilir kopyası PDF; ofisin istediği eski DOC biçimi de sağlandı. Depoda sunum ve tek slaytlık digest hem PPTX hem PDF. Portalın güncel format isteğine göre masaüstündeki teslim klasöründe digest yalnızca PDF. Sunumun PPTX sürümünde konuşmacı notları var. `STUDY_GUIDE_TR.md` öğrenme rehberi, `SPEAKER_NOTES_EN.md` konuşma taslağıdır; bu iki destek dosyası hocanın raporu yerine kullanılmamalı.
 
 Düzenleme sonrasında içindekiler sayfalarını, sayfa sınırlarını ve tablo/şekil konumlarını yeniden kontrol et. Word veya PowerPoint sürümleri satır kırılımlarını değiştirebilir; teslim edeceğin cihazda son PDF’yi gözle kontrol et. Kapaktaki bilgiler büyürse sonraki sayfalar kayabilir. En son PDF ile DOCX aynı içerikte olmalı.
 
