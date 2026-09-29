@@ -17,10 +17,12 @@ The latest 29 September revision meets the requested 20–25-page range with sim
 explanations, a 10-minute presentation and matching digest; see
 clear_package_review_20260929.json and REFERENCE_REVIEW.md.
 The critical review rates the technical draft 9.2/10 subjectively; this is not a grade.
+Submission date is now 29 September 2026; Tivibu duties, Hasan Çontuk’s name/email
+and Turkcell as competitor are incorporated. Three fields remain unconfirmed.
 Student-confirmed identity, unit name, office address, individual/advisory roles, learning,
 career, three course connections and daily routine are now incorporated. Remaining work:
-fill the actual submission date, unit responsibilities/reporting line, mentor identities and
-relevant competitor/supplier names; then refresh affected formats and rehearse the 10:00
+confirm the unit reporting line, Hasan Çontuk’s formal title and relevant supplier names;
+then refresh affected formats and rehearse the 10:00
 presentation (10 main slides plus two reference slides). HANDOFF_TR.md links each field to its guideline section. No final school
 upload is authorized or claimed. E153 remains a separate unexecuted research plan.
 

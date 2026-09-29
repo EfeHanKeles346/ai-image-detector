@@ -2180,31 +2180,31 @@
       "passed": true
     },
     {
-      "name": "under_10MB:CS395_Digest_EfeHan_Keles_25September2026.pdf",
+      "name": "under_10MB:CS395_Digest_EfeHan_Keles_29September2026.pdf",
       "passed": true
     },
     {
-      "name": "under_10MB:CS395_Digest_EfeHan_Keles_25September2026.pptx",
+      "name": "under_10MB:CS395_Digest_EfeHan_Keles_29September2026.pptx",
       "passed": true
     },
     {
-      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_25September2026.doc",
+      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_29September2026.doc",
       "passed": true
     },
     {
-      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_25September2026.docx",
+      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_29September2026.docx",
       "passed": true
     },
     {
-      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_25September2026.pdf",
+      "name": "under_10MB:CS395_FinalReport_EfeHan_Keles_29September2026.pdf",
       "passed": true
     },
     {
-      "name": "under_10MB:CS395_Presentation_EfeHan_Keles_25September2026.pdf",
+      "name": "under_10MB:CS395_Presentation_EfeHan_Keles_29September2026.pdf",
       "passed": true
     },
     {
-      "name": "under_10MB:CS395_Presentation_EfeHan_Keles_25September2026.pptx",
+      "name": "under_10MB:CS395_Presentation_EfeHan_Keles_29September2026.pptx",
       "passed": true
     },
     {
@@ -2213,42 +2213,40 @@
     }
   ],
   "files": {
-    "CS395_Digest_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 75277,
-      "sha256": "e59c3c6f75013bfe8bf4349c2f6996048b2658537e87d1674a39ae03029ab7d1"
+    "CS395_Digest_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 74672,
+      "sha256": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31"
     },
-    "CS395_Digest_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 13517,
-      "sha256": "c5e3dc875f194e9520c270c47787fdf1eeccb956d83c4a91071683762bd99168"
+    "CS395_Digest_EfeHan_Keles_29September2026.pptx": {
+      "bytes": 13490,
+      "sha256": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea"
     },
-    "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
+    "CS395_FinalReport_EfeHan_Keles_29September2026.doc": {
       "bytes": 254976,
-      "sha256": "927b652b211a3451868604a5f6c35b631099d209faa25211a569c68955c77f4a"
+      "sha256": "dd952932725a3edba17718109f6eae581537dedbeb5b8f0f02175db94f7a7f8d"
     },
-    "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
-      "bytes": 175790,
-      "sha256": "2f76ae41691daa75c295d234144065d9830e9223240c0222a95636f3f1b0545b"
+    "CS395_FinalReport_EfeHan_Keles_29September2026.docx": {
+      "bytes": 175842,
+      "sha256": "9773f962519d95821f1a8632134880e28a491f8c2e68985e2a6c01a5d5499d9b"
     },
-    "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 332929,
-      "sha256": "88ef7edee3c8bd2d2014ad664a574112829d1ea4274fed335409ed19e338cebf"
+    "CS395_FinalReport_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 333001,
+      "sha256": "85139e1e2fc47694c1e6a09384710e3b11265c02103eb20eb0d1b81237408f5f"
     },
-    "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 255165,
-      "sha256": "6d23c9c41d7468ff18306473b529dd7719a7433e10dd3ed7c97abeef507ab247"
+    "CS395_Presentation_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 254595,
+      "sha256": "50467cf8fcb7dc25af4b64e8a6af189369996d236527804396969c4d28eccc22"
     },
-    "CS395_Presentation_EfeHan_Keles_25September2026.pptx": {
-      "bytes": 52716,
-      "sha256": "391437ac93e1ec9ad24e0fe8a4ea9b3e56645915f4b531f49656a255ac9bab89"
+    "CS395_Presentation_EfeHan_Keles_29September2026.pptx": {
+      "bytes": 52705,
+      "sha256": "a726a8fe2dcb7b2a94e9b2289888a789625cadd5f6bbe4f764a5aa6041aab3fc"
     }
   },
-  "unresolved_fields": 5,
+  "unresolved_fields": 3,
   "unresolved_placeholders": [
-    "[TO COMPLETE]",
-    "[TO COMPLETE: confirmed competitor and supplier names]",
+    "[TO COMPLETE: confirmed supplier names]",
     "[TO COMPLETE: department reporting line]",
-    "[TO COMPLETE: department responsibilities]",
-    "[TO COMPLETE: mentor details]"
+    "[TO COMPLETE: Hasan Çontuk’s job title]"
   ],
   "claim_boundary": "Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing."
 }

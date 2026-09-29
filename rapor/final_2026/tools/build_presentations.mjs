@@ -36,7 +36,7 @@ txt(s,'Reducing false AI warnings on real photographs',72,198,1136,95,40,true);
 txt(s,'Efe Han Keleş\nCS395 internship at Türk Telekom',72,335,1136,95,32);
 txt(s,'20 July–18 September 2026\n40 approved internship days',72,452,1136,80,28);
 txt(s,'Supervisor: Önder Çelebi, Director\nPlanning and Development Directorate',72,548,1136,68,25);
-txt(s,'Submission date: [TO COMPLETE]',72,622,1136,30,22);
+txt(s,'Submission date: 29 September 2026',72,622,1136,30,22);
 speak(s,1,'Project purpose',35,'My internship project was PixelProof, a research prototype for AI image detection. I worked individually at Türk Telekom and asked my supervisor and mentors for advice. The main goal was to reduce false AI warnings on real photographs while keeping useful AI detection. I built a local demonstration and recorded both improvements and failed experiments. I will explain the method, the main result and the limits of that result.','Student-confirmed internship information. Report Sections 1, 3.1 and 4.2.');
 s=base(p,2,'The problem and objective');
 txt(s,'A real photograph can receive a false AI warning.',72,180,1136,90,36,true);
@@ -107,8 +107,8 @@ txt(s,'Outcome',72,438,250,48,31,true);
 txt(s,'Working local demo and documented experiments.\nOn reused development data: 159/160 AI detected per condition.\nReal false warnings: 0/160 original, 14/160 after processing.',345,438,865,118,27);
 txt(s,'Limit',72,570,250,45,31,true);
 txt(s,'One new AI miss prevented full acceptance.\nBroader reliability and Model2 remain unproven.',345,570,865,72,27);
-s.speakerNotes.textFrame.setText('Submission date: [TO COMPLETE]. Supervisor: Önder Çelebi, Director of the Planning and Development Directorate. E92 used 12,269 training parents, four views each (49,076 views). The separate but reused development set contains 160 real and 160 AI parents. Processed condition means long-side cap 1080 then JPEG75. Twenty numerical development checks passed, but E92 newly missed one original AI image detected by E43. No independent final-test success or production deployment is claimed. Model2 remains experimental. Sources: Keleş (2026), https://github.com/EfeHanKeles346/ai-image-detector/tree/497d45c, E92 evidence and E135 localization result. Student-confirmed internship information. Full sources in report Section 8.');
-txt(s,'Supervisor: Önder Çelebi, Director   Submission date: [TO COMPLETE]',72,670,1136,26,19);
+s.speakerNotes.textFrame.setText('Submission date: 29 September 2026. Supervisor: Önder Çelebi, Director of the Planning and Development Directorate. E92 used 12,269 training parents, four views each (49,076 views). The separate but reused development set contains 160 real and 160 AI parents. Processed condition means long-side cap 1080 then JPEG75. Twenty numerical development checks passed, but E92 newly missed one original AI image detected by E43. No independent final-test success or production deployment is claimed. Model2 remains experimental. Sources: Keleş (2026), https://github.com/EfeHanKeles346/ai-image-detector/tree/497d45c, E92 evidence and E135 localization result. Student-confirmed internship information. Full sources in report Section 8.');
+txt(s,'Supervisor: Önder Çelebi, Director   Submission date: 29 September 2026',72,670,1136,26,19);
 await fs.mkdir(WORK,{recursive:true});
 if(process.env.PRESENTATION_KIND!=='Digest') await fs.writeFile(path.join(ROOT,'sources/presentation_notes.json'),JSON.stringify(notes,null,2)+'\n');
 for(const [kind,pres,count,tables,charts] of [['Presentation',p,12,[3,5,8,10],[6]],['Digest',d,1,[],[]]]){
@@ -116,7 +116,7 @@ for(const [kind,pres,count,tables,charts] of [['Presentation',p,12,[3,5,8,10],[6
  const wd=path.join(WORK,kind);await fs.mkdir(path.join(wd,'.codex-finalizer'),{recursive:true});
  const candidate=path.join(wd,'.codex-finalizer/candidate.pptx');await(await PresentationFile.exportPptx(pres)).save(candidate);
  await fs.mkdir(path.join(wd,'output'),{recursive:true});
- const final=path.join(wd,'output',`CS395_${kind}_EfeHan_Keles_25September2026.pptx`);
+ const final=path.join(wd,'output',`CS395_${kind}_EfeHan_Keles_29September2026.pptx`);
  const result=await finalizePresentation({workspaceDir:wd,candidatePath:candidate,finalPath:final,pythonExecutable:PY,integrityValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit',...tables.flatMap(n=>['--require-native-table-slide',String(n)])],requiredNativeTableOwnerSlides:tables,requiredNativeChartOwnerSlides:charts,explicitTotalSlideCount:count,fontPolicy:{basis:'user_request',families:[FONT]},materializeLiteralChartWorkbooks:true,verifyArtifactToolImport:true,receiptPath:path.join(wd,'.codex-finalizer/validation.json')});
  console.log(kind,JSON.stringify({finalPath:result.finalPath,sha256:result.finalSha256,warnings:result.presentationLayout?.warnings}));
  await fs.copyFile(final,path.join(ROOT,'deliverables',path.basename(final)));

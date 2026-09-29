@@ -11401,3 +11401,29 @@ raster differences (3, 5 and 12) were visually checked. Native Microsoft Office 
 oral timing remain untested. Five deferred information groups remain. No model training,
 data download, scientific measurement or school submission occurred. The current receipt
 is sources/clear_package_review_20260929.json. Earlier dated reviews preserve old states.
+
+## Student metadata completion — 29 September 2026
+
+The student confirmed 29 September as the submission date, Tivibu software/hardware as
+the host unit's work, Hasan Çontuk and his work email as a consulted employee under Önder
+Çelebi, and Turkcell as a relevant competitor. These facts were incorporated without
+inventing a formal mentor title or more detailed department duties. The student's separate
+one-month voluntary Turkcell internship was not merged into the 40-day mandatory placement.
+
+The student does not know the department reporting line, Hasan Çontuk's formal title or
+the relevant suppliers. These three report placeholders remain. Muud was checked against
+Türk Telekom's official media page and identified as its digital music platform; this
+does not establish an external supplier relationship, so it was not entered as a supplier.
+Source: https://medya.turktelekom.com.tr/dijital-muezik-platformu-muud-sahne-projesi-ile-gelecegin-muezisyenlerini-kesfediyor/
+
+The visible date and all seven final filenames now use 29 September 2026. The report stays
+at 21 pages with unchanged contents locations. Report pages 1 and 5, presentation slide 1
+and the digest were visually reviewed; all other rendered pages/slides are pixel-identical
+to the previously reviewed version. The DOC round-trip preserves all 21 per-page word
+multisets; its three raster-different pages were inspected. Both PPTX finalizers have no
+layout warnings and 551 scoped package checks pass. Presentation/digest have no placeholders.
+The three Desktop submission files were refreshed after checking their old bytes, and
+verified superseded copies were removed from that folder; Office lock files were untouched.
+Receipt: sources/metadata_completion_20260929.json. No school submission, model experiment
+or change to scientific results occurred. The report remains incomplete in the three
+explicitly unconfirmed administrative fields; native Office and oral rehearsal are untested.

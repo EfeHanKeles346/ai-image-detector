@@ -1,18 +1,18 @@
-# CS395 internship report package — 25 September 2026
+# CS395 internship report package — 29 September 2026
 
-This is the current E1–E152 submission draft. It supersedes the old E26 report **for presentation of the current project**, without rewriting historical records. The student’s confirmed metadata and personal account have been incorporated. Remaining host-specific fields are visibly marked. The supervisor title is now Director, as confirmed by the student on 26 September. All three documents show `Submission date: [TO COMPLETE]`; filenames retain the original draft date until submission. See [the Turkish handoff](HANDOFF_TR.md) before submission.
+This is the current E1–E152 submission draft. It supersedes the old E26 report **for presentation of the current project**, without rewriting historical records. The student’s confirmed metadata and personal account have been incorporated. Remaining host-specific fields are visibly marked. Submission date is 29 September 2026 in all three artifacts and their filenames. The unit works on Tivibu software and hardware; Hasan Çontuk is identified as a consulted employee under Önder Çelebi, without an invented formal title. See [the Turkish handoff](HANDOFF_TR.md) before submission.
 
 ## Deliverables
 
 | Artifact | File |
 |---|---|
-| Report, editable | [DOCX](deliverables/CS395_FinalReport_EfeHan_Keles_25September2026.docx) |
-| Report, reading copy | [PDF](deliverables/CS395_FinalReport_EfeHan_Keles_25September2026.pdf) |
-| Report, office legacy format | [DOC](deliverables/CS395_FinalReport_EfeHan_Keles_25September2026.doc) |
-| Presentation, editable and with notes | [PPTX](deliverables/CS395_Presentation_EfeHan_Keles_25September2026.pptx) |
-| Presentation, reading copy | [PDF](deliverables/CS395_Presentation_EfeHan_Keles_25September2026.pdf) |
-| One-slide digest | [PPTX](deliverables/CS395_Digest_EfeHan_Keles_25September2026.pptx) |
-| Digest, reading copy | [PDF](deliverables/CS395_Digest_EfeHan_Keles_25September2026.pdf) |
+| Report, editable | [DOCX](deliverables/CS395_FinalReport_EfeHan_Keles_29September2026.docx) |
+| Report, reading copy | [PDF](deliverables/CS395_FinalReport_EfeHan_Keles_29September2026.pdf) |
+| Report, office legacy format | [DOC](deliverables/CS395_FinalReport_EfeHan_Keles_29September2026.doc) |
+| Presentation, editable and with notes | [PPTX](deliverables/CS395_Presentation_EfeHan_Keles_29September2026.pptx) |
+| Presentation, reading copy | [PDF](deliverables/CS395_Presentation_EfeHan_Keles_29September2026.pdf) |
+| One-slide digest | [PPTX](deliverables/CS395_Digest_EfeHan_Keles_29September2026.pptx) |
+| Digest, reading copy | [PDF](deliverables/CS395_Digest_EfeHan_Keles_29September2026.pdf) |
 | Study material | [Turkish guide](STUDY_GUIDE_TR.md), [English speaking notes](SPEAKER_NOTES_EN.md) |
 
 The deck has 10 spoken slides and two reference slides. Suggested timing is 600 seconds (10:00), with 908 spoken words and pauses for the figures; actual timing requires rehearsal. The report has 21 pages including front matter, 3 figures, 5 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
@@ -23,7 +23,7 @@ Guideline page 1 explicitly names a `.doc` report and `.pptx` presentation and d
 
 ## Latest revision — 29 September 2026
 
-Following the requested 20–25-page range, the report is now 21 pages. Its 3,144 words of paragraph prose explain transfer learning, data roles, corrections, results and limits in plain language; company prose stays at 191 words. The presentation was reduced to 10 main slides plus two reference slides, and the digest uses the same concise outcome and limitation. All 14 references remain substantively used; missing SIDD/SID page ranges were added and the DINOv2 journal year was directly verified. All 551 scoped artifact checks pass. The five deferred information groups remain. See `sources/clear_package_review_20260929.json` and [REFERENCE_REVIEW.md](REFERENCE_REVIEW.md).
+Following the requested 20–25-page range, the report is now 21 pages. Its 3,160 words of paragraph prose explain transfer learning, data roles, corrections, results and limits in plain language; company prose stays at 190 words. The presentation was reduced to 10 main slides plus two reference slides, and the digest uses the same concise outcome and limitation. All 14 references remain substantively used; missing SIDD/SID page ranges were added and the DINOv2 journal year was directly verified. All 551 scoped artifact checks pass. Three unconfirmed fields remain: department reporting line, Hasan Çontuk’s formal title and relevant suppliers. The metadata completion is recorded in `sources/metadata_completion_20260929.json`; the prior clarity review is `sources/clear_package_review_20260929.json`. See [REFERENCE_REVIEW.md](REFERENCE_REVIEW.md).
 
 ## Evidence and claims
 

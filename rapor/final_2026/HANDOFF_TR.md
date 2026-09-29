@@ -1,18 +1,18 @@
 # Teslimden önce tamamlanacak bilgiler
 
-Bu paket teknik içeriği ve biçimi kontrol edilmiş bir **teslim taslağıdır**. Başlangıçtaki 28 proje MD dosyasının 37.073 satırlık sıralı okuması ve raporla karşılaştırması tamamlandı; kapsam `MD_CONSISTENCY_AUDIT.md` içinde kayıtlı. Kişisel/kurumsal bilgiler son yanıtlarınla güncellendi; kalan eksikler aşağıda listeli. Hiçbir dosya okula ya da şirkete gönderilmedi. Dosya adındaki 25 September 2026 ilk hazırlama tarihidir. İçerikte teslim tarihi `[TO COMPLETE]` olarak bırakıldı; gerçek teslimde tarih ve dosya adları birlikte güncellenmeli.
+29 Eylül 2026 yanıtların işlendi. Teslim tarihi bütün güncel belgelerde **29 September 2026**; dosya adları da `29September2026` olarak güncellendi. Masaüstündeki `CS395_PixelProof_Submission_2026` klasöründe güncel DOC raporu ve iki PPTX bulunur. Rapor 21 sayfa; sunum 10 ana ve iki kaynak slaytıyla 10 dakika için planlandı. Dosyalar okula gönderilmedi.
 
-25 Eylül tarihli yanıtların işlendi: öğrenci numarası 31994, Planlama ve Geliştirme Müdürlüğü, Ümraniye ofis adresi, bireysel çalışma ve danışmanlık ilişkisi, öğrenme/kariyer değerlendirmesi, CS412–PROJ201–DSA210 bağlantıları ve günlük rutin. Digest adresi de tamamlandı. 26 Eylül yanıtınla Önder Çelebi’nin unvanı Director olarak tamamlandı; teslim tarihi tüm güncel belgelerde isteğinle `[TO COMPLETE]` yapıldı.
+Birim, verdiğin bilgiye dayanarak Tivibu yazılım ve donanımı üzerinde çalışan Planlama ve Geliştirme Müdürlüğü olarak anlatıldı. Hasan Çontuk (hasan.contuk@turktelekom.com.tr), Önder Çelebi’ye bağlı çalışan ve danıştığın kişi olarak eklendi. Resmî unvanını bilmediğin için mühendis/uzman gibi bir unvan atanmadı. Turkcell ilgili rakip olarak eklendi. Oradaki bir aylık gönüllü staj, Türk Telekom’daki 40 günlük zorunlu staja dahil edilmedi.
+
+Muud, Türk Telekom’un dijital müzik platformudur; tedarikçi adı olarak eklenmedi. [Türk Telekom’un resmî açıklaması](https://medya.turktelekom.com.tr/dijital-muezik-platformu-muud-sahne-projesi-ile-gelecegin-muezisyenlerini-kesfediyor/) bu ilişkiyi doğrular. Ortak veya tedarikçi ilişkisi varsayılmadı.
 
 | Kalan bilgi | Rapordaki yeri | Durum |
 |---|---|---|
-| Gerçek teslim tarihi | Rapor kapağı, sunum kapağı, digest | Kullanıcı açık bırakılmasını istedi |
-| Müdürlüğün bağlı olduğu üst birim | 2.2 | Birim adı belli; raporlama ilişkisi verilmedi |
-| Müdürlüğün somut görevleri | 3.1 | İsimden görev tanımı çıkarılmadı |
-| Danışılan mentorların adları, unvanları, iş e-postaları | 3.1 | Bireysel proje olduğu belli; danışılan kişiler henüz isimlendirilmedi |
-| İlgili ana rakipler ve başlıca tedarikçiler | 2.1 | Konuşulduğu belirtildi; isimler verilmedi |
+| Müdürlüğün bağlı olduğu üst birim | 2.2 | Kullanıcı bilmiyor; resmî raporlama ilişkisi doğrulanmadı |
+| Hasan Çontuk’un resmî unvanı | 3.1 | Adı, e-postası ve Önder Çelebi’ye bağlı çalıştığı doğrulandı; unvan bilinmiyor |
+| İlgili başlıca tedarikçilerin isimleri | 2.1 | Kullanıcı bilmiyor; isim uydurulmadı |
 
-Bunlar beş bilgi grubu. Raporda beş yer tutucu var; sunum ve digest’te birer teslim tarihi yer tutucusu bulunuyor. Yukarıdaki alanlar tamamlanmadan raporu eksiksiz teslim diye değerlendirme. Mentorların katkısı teknik danışmanlık olarak yazıldı; ortak geliştirme, özel toplantı programı veya bilinmeyen görevler uydurulmadı. Sabah 07.30 gelişi ve çay/kahve araları aktarıldı; kesin öğle arası veya çıkış saati eklenmedi.
+Raporda **üç yer tutucu** kaldı. Sunum ve digest’te yer tutucu yok. Bu alanlar tamamlanmadan raporun tüm zorunlu bilgileri içerdiği söylenemez. Kimlik, ofis, süpervizör unvanı, çalışma biçimi, ders bağlantıları ve kişisel öğrenme bilgileri önceki yanıtlarınla tamamlandı. Başlangıçtaki 28 MD dosyasının sıralı okuması ve sonraki değişiklik karşılaştırmaları `MD_CONSISTENCY_AUDIT.md` içinde kayıtlı; bu turda yeni bir kapsamlı proje okuması yapılmadı.
 
 ## Bu bilgileri kılavuz nerede istiyor?
 

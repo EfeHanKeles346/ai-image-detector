@@ -1,6 +1,6 @@
 # Critical report review — 25 September 2026
 
-Current review: **29 September 2026**. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md lists the five remaining information groups. Dated addenda preserve older drafts.
+Current review: **29 September 2026**. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md lists the three remaining unconfirmed fields. Dated addenda preserve older drafts.
 
 ## Decision and scoring boundary
 
@@ -9,9 +9,9 @@ in this review. This exceeds the requested editorial target, but is neither an i
 assessment nor a prediction of the instructor's grade. The authoring assistant also
 performed this critique; no external reviewer or student rehearsal is claimed.
 
-**The entire submission is not certified complete.** Submission date, department
-reporting line and duties, mentor details, and relevant competitor/supplier names remain
-open. Identity, office, supervisor title and firsthand experience are now supplied. The
+**The entire submission is not certified complete.** Department reporting line, Hasan
+Çontuk’s formal title and relevant supplier names remain open. Submission date, Tivibu
+software/hardware duties, the mentor’s name/email and Turkcell as competitor are supplied. The
 student still needs to rehearse and check the final files in the submission application.
 A subjective editorial score cannot compensate for missing required information.
 
@@ -80,15 +80,15 @@ reference list nor this checklist supplies missing experience.
 
 | Requirement | Location or verification | Status |
 |---|---|---|
-| Prescribed filename, program and date | Seven named deliverables; CS395, EfeHan_Keles, 25September2026 | DRAFT; replace filename date with actual submission date |
+| Prescribed filename, program and date | Seven named deliverables; CS395, EfeHan_Keles, 29September2026 | PASS; 29 September 2026 supplied by student |
 | Each file below 10 MB | Artifact audit; all seven files checked | PASS |
-| Cover, header/running head, title, name, ID, dates, host, supervisor, university/program | Report page 1 | PASS metadata; submission date intentionally deferred |
+| Cover, header/running head, title, name, ID, dates, host, supervisor, university/program | Report page 1 | PASS; submission date supplied |
 | Separate abstract, at most 250 words; company, project, analysis, recommendations | Page 2; 217 words | PASS |
 | Separate contents with every main/subheading and actual pages | Page 3; 35 matching entries; Word headings and TOC field | PASS |
 | Introduction: importance and structure | Section 1 | PASS |
 | Company title/contact/history/facilities/ownership/products/customers/employees/organization chart | Section 2; official company sources; Figure 1 | PASS for verified corporate context |
-| Actual office, relevant main competitors and suppliers, actual department placement | Sections 2.1–2.2 and handoff | Office confirmed; competitors/suppliers and reporting line deferred |
-| Department detail and close colleagues' names/emails/titles | Section 3.1 | Unit/title confirmed; duties and mentor details deferred |
+| Actual office, relevant main competitors and suppliers, actual department placement | Sections 2.1–2.2 and handoff | Office and Turkcell confirmed; suppliers and reporting line unknown |
+| Department detail and close colleagues' names/emails/titles | Section 3.1 | Tivibu duties and mentor name/email confirmed; mentor title unknown |
 | Initial status, relevant process and information flow | Section 3.2 | PASS for research workflow; no fabricated company production workflow |
 | Motivation and problem definition | Section 3.3 | PASS |
 | Academic methods and industry example | Section 3.4, 14 full references | PASS |
@@ -115,7 +115,7 @@ reference list nor this checklist supplies missing experience.
 | Page numbering, formal structure, consistent terms, spelling and print-preview review | All pages rendered; local spelling flags reviewed; no external grammar upload | PASS |
 | Useful appendices only | Criteria table and brief repository pointer in Section 9 | PASS |
 | English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 12 slides, 10 spoken, 600 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
-| One-slide digest with project/company/address/duration/name/program/objectives/outcomes | Separate PPTX/PDF | PASS layout/content; submission date intentionally deferred |
+| One-slide digest with project/company/address/duration/name/program/objectives/outcomes | Separate PPTX/PDF | PASS layout/content; submission date supplied |
 | Final check on submission device | LibreOffice renders and PPTX import checked | Native Office and post-completion review still open |
 
 ## Remaining risks before submission
@@ -338,3 +338,29 @@ raster differences (3, 5 and 12) were visually checked. Native Microsoft Office 
 oral timing remain untested. Five deferred information groups remain. No model training,
 data download, scientific measurement or school submission occurred. The current receipt
 is sources/clear_package_review_20260929.json. Earlier dated reviews preserve old states.
+
+## Student metadata completion — 29 September 2026
+
+The student confirmed 29 September as the submission date, Tivibu software/hardware as
+the host unit's work, Hasan Çontuk and his work email as a consulted employee under Önder
+Çelebi, and Turkcell as a relevant competitor. These facts were incorporated without
+inventing a formal mentor title or more detailed department duties. The student's separate
+one-month voluntary Turkcell internship was not merged into the 40-day mandatory placement.
+
+The student does not know the department reporting line, Hasan Çontuk's formal title or
+the relevant suppliers. These three report placeholders remain. Muud was checked against
+Türk Telekom's official media page and identified as its digital music platform; this
+does not establish an external supplier relationship, so it was not entered as a supplier.
+Source: https://medya.turktelekom.com.tr/dijital-muezik-platformu-muud-sahne-projesi-ile-gelecegin-muezisyenlerini-kesfediyor/
+
+The visible date and all seven final filenames now use 29 September 2026. The report stays
+at 21 pages with unchanged contents locations. Report pages 1 and 5, presentation slide 1
+and the digest were visually reviewed; all other rendered pages/slides are pixel-identical
+to the previously reviewed version. The DOC round-trip preserves all 21 per-page word
+multisets; its three raster-different pages were inspected. Both PPTX finalizers have no
+layout warnings and 551 scoped package checks pass. Presentation/digest have no placeholders.
+The three Desktop submission files were refreshed after checking their old bytes, and
+verified superseded copies were removed from that folder; Office lock files were untouched.
+Receipt: sources/metadata_completion_20260929.json. No school submission, model experiment
+or change to scientific results occurred. The report remains incomplete in the three
+explicitly unconfirmed administrative fields; native Office and oral rehearsal are untested.

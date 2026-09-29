@@ -13,7 +13,7 @@ checks=[]
 def check(name,ok):
  checks.append({'name':name,'passed':bool(ok)})
  if not ok:raise AssertionError(name)
-name='CS395_FinalReport_EfeHan_Keles_25September2026'
+name='CS395_FinalReport_EfeHan_Keles_29September2026'
 d=Document(OUT/(name+'.docx'));r=PdfReader(OUT/(name+'.pdf'))
 check('report_within_requested_20_to_25_pages',20<=len(r.pages)<=25)
 check('abstract_at_most_250_words',len(c.ABSTRACT.split())<=250)
@@ -98,7 +98,7 @@ check('report_distinguishes_per_view_from_paired_UI','not the paired website out
 check('model2_not_promoted',not json.loads((REPO/'evidence/e135_location_learning.json').read_text())['promotion_allowed'])
 a={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','p':'http://schemas.openxmlformats.org/presentationml/2006/main'}
 for kind,count,table_count,chart_count in [('Presentation',12,4,1),('Digest',1,0,0)]:
- path=OUT/f'CS395_{kind}_EfeHan_Keles_25September2026.pptx'
+ path=OUT/f'CS395_{kind}_EfeHan_Keles_29September2026.pptx'
  with zipfile.ZipFile(path) as z:
   parts=[n for n in z.namelist() if re.fullmatch('ppt/slides/slide[0-9]+.xml',n)]
   check(kind+':slide_count',len(parts)==count)

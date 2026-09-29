@@ -20,7 +20,7 @@ ROOT=Path(__file__).resolve().parents[1]; REPO=ROOT.parents[1]
 spec=importlib.util.spec_from_file_location('content',ROOT/'sources/report_content.py');c=importlib.util.module_from_spec(spec);spec.loader.exec_module(c)
 OUT=ROOT/'deliverables';OUT.mkdir(exist_ok=True)
 BUILD=Path('/private/tmp/pixelproof-internship-20260925');BUILD.mkdir(exist_ok=True)
-NAME='CS395_FinalReport_EfeHan_Keles_25September2026'
+NAME='CS395_FinalReport_EfeHan_Keles_29September2026'
 pdfmetrics.registerFont(TTFont('TNR','/System/Library/Fonts/Supplemental/Times New Roman.ttf'))
 e92=json.loads((REPO/'evidence/e92_development.json').read_text())
 def surface(name,w,h):
@@ -101,7 +101,7 @@ paragraph('CS395 Internship Final Report')
 paragraph('Efe Han Keleş');paragraph('Student ID: 31994')
 for t in ['Company: Türk Telekomünikasyon A.Ş.','Supervisor: Önder Çelebi','Supervisor title: Director']:paragraph(t)
 for t in ['Internship: 20 July–18 September 2026','Approved duration: 40 internship days','Format: Hybrid']:paragraph(t)
-paragraph('Submission date: [TO COMPLETE]')
+paragraph('Submission date: 29 September 2026')
 d.add_page_break();paragraph('Abstract','Title');paragraph(c.ABSTRACT)
 # Compact TOC with a genuine Word field and verified page cache.
 heads=[b for b in c.B if b['type']=='heading'];page_map={}

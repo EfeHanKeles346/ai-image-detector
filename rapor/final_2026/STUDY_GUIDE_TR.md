@@ -100,7 +100,7 @@ Piksel AUC 0,742’den yeni konumda 0,566’ya düştü; yeni uyarlama bunu 0,63
 
 Önce raporun özeti, 4.6 sonuçlar ve 6. sonuç bölümünü oku. Sonra slayt 6–8’i kendi cümlelerinle anlat. Ardından 4.5 bölümündeki gelişim öyküsüne dön. Bilmediğin terimi ezberleyip geçme; örnek üzerinden anlamlandır.
 
-Son bir provada saati açıp on ana slaytı anlat. Yaklaşık on dakikayı hedefle. Süre uzarsa isteğe bağlı teknik notları ana anlatıma katma; başarıların sınırlarını çıkartma. Her sayıyı uzun uzun okumak yerine grafikteki değişimi anlat. Kendi deneyimin ve öğrenme paragrafların yanıtlarınla işlendi. HANDOFF_TR.md’de kalan beş bilgi grubunu tamamladıktan sonra ilgili yer tutucuları kaldır. Canlı demoyu göstereceksen önceden aynı dosyalarla kontrol et; sonucu kesin gerçek/AI belgesi gibi sunma.
+Son bir provada saati açıp on ana slaytı anlat. Yaklaşık on dakikayı hedefle. Süre uzarsa isteğe bağlı teknik notları ana anlatıma katma; başarıların sınırlarını çıkartma. Her sayıyı uzun uzun okumak yerine grafikteki değişimi anlat. Kendi deneyimin ve öğrenme paragrafların yanıtlarınla işlendi. HANDOFF_TR.md’de kalan üç bilgi grubunu tamamladıktan sonra ilgili yer tutucuları kaldır. Canlı demoyu göstereceksen önceden aynı dosyalarla kontrol et; sonucu kesin gerçek/AI belgesi gibi sunma.
 
 ## Tarihçeden eklenen önemli ara aşamalar
 

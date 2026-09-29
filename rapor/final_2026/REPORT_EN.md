@@ -17,7 +17,7 @@ Türk Telekomünikasyon A.Ş. provides fixed, mobile, broadband, television and 
 
 Its registered address is Turgut Özal Bulvarı, 06103 Aydınlıkevler, Ankara. My internship office was Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye, İstanbul. The website is https://www.turktelekom.com.tr; the supplied internship contact number is +90 312 555 93 92. Ownership is 60% Türkiye Wealth Fund, 25% Treasury and Finance Ministry and 15% publicly traded shares. Subsidiaries include TT Mobil, TTNET, Argela, İnnova, SEBİT and AssisTT (Türk Telekom, 2026a).
 
-Relevant main competitors and suppliers were discussed briefly during the internship; their names remain [TO COMPLETE: confirmed competitor and supplier names].
+Turkcell was a relevant competitor discussed during the internship. The names of relevant suppliers remain [TO COMPLETE: confirmed supplier names].
 
 ## 2.2 Organization and internship context
 
@@ -30,7 +30,7 @@ Figure 1. Simplified corporate reporting structure from the 2025 Annual Report.
 
 ## 3.1 Department information
 
-The Planning and Development Directorate’s responsibilities remain [TO COMPLETE: department responsibilities]. My supervisor was Önder Çelebi, Director, at onder.celebi@turktelekom.com.tr. I also consulted mentors: [TO COMPLETE: mentor details]. I worked individually under a hybrid arrangement, Monday–Thursday on site and Friday remote. PixelProof was a student prototype using research data, with no documented company production deployment.
+My host unit, the Planning and Development Directorate, worked on Tivibu software and hardware. My supervisor was Önder Çelebi, Director, at onder.celebi@turktelekom.com.tr. I also consulted Hasan Çontuk (hasan.contuk@turktelekom.com.tr), who worked under Önder Çelebi. His formal job title remains [TO COMPLETE: Hasan Çontuk’s job title]. I worked individually under a hybrid arrangement, Monday–Thursday on site and Friday remote. PixelProof was a student prototype using research data, with no documented company production deployment.
 
 ## 3.2 Initial project status
 
