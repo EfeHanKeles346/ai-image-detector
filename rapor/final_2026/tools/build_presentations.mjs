@@ -98,7 +98,7 @@ speak(s,11,'Method references',0,'Reference appendix. The report provides the fu
 s=base(p,12,'References for data and evaluation','Reference appendix');
 const refs2=[['Abdelhamed et al. (2018)','A high-quality denoising dataset for smartphone cameras. CVPR.'],['Guo et al. (2017)','On calibration of modern neural networks. PMLR 70.'],['Dwork et al. (2015)','Generalization in adaptive data analysis and holdout reuse. NeurIPS 28.'],['Keleş (2026)','PixelProof experiment, history and dataset records. GitHub, commit 497d45c.']];
 refs2.forEach(([a,b],i)=>{txt(s,a,72,175+i*112,1136,38,29,true);txt(s,b,72,218+i*112,1136,64,26);});
-speak(s,12,'Data and evaluation references',0,'Reference appendix. The report gives fourteen full entries. These slides list the sources most relevant to the short talk.','https://abdokamel.github.io/sidd/\nhttps://proceedings.mlr.press/v70/guo17a.html\nhttps://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html\nhttps://github.com/EfeHanKeles346/ai-image-detector/tree/497d45c');
+speak(s,12,'Data and evaluation references',0,'Reference appendix. The report provides the full bibliography. These slides list the sources most relevant to the short talk.','https://abdokamel.github.io/sidd/\nhttps://proceedings.mlr.press/v70/guo17a.html\nhttps://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html\nhttps://github.com/EfeHanKeles346/ai-image-detector/tree/497d45c');
 const d=Presentation.create({slideSize:{width:1280,height:720}});
 s=base(d,1,'PixelProof AI image detection','');
 txt(s,'Türk Telekom\nEfe Han Keleş, Computer Science and Engineering',72,143,1136,82,29,true);

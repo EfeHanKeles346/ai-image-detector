@@ -73,7 +73,7 @@ https://arxiv.org/abs/2302.10174
 
 ## 12. Data and evaluation references (0 seconds)
 
-Reference appendix. The report gives fourteen full entries. These slides list the sources most relevant to the short talk.
+Reference appendix. The report provides the full bibliography. These slides list the sources most relevant to the short talk.
 
 Source or optional detail, not part of the spoken script: https://abdokamel.github.io/sidd/
 https://proceedings.mlr.press/v70/guo17a.html

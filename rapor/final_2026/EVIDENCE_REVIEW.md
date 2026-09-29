@@ -276,3 +276,24 @@ Model2 evidence checks; these are not 563 separate school requirements. The pres
 finalizer reports zero layout findings/warnings and successful import. Its 916 spoken words
 remain planned for 600 seconds, subject to rehearsal. The digest is byte-identical.
 The same three deferred administrative fields remain. See sources/model2_scope_review_20260929.json.
+
+
+## Final company-field reconciliation — 29 September 2026
+
+The FENS guideline was re-read directly: page 3 explicitly requests "Major suppliers"
+under company information, plus names, emails and titles under Section 3.1. It does not
+explicitly require a separately identified parent reporting line for the internship unit.
+The earlier reporting-line placeholder was an overinterpretation and is removed. The
+student identifies Hasan Çontuk as a mentor on Önder Çelebi’s team, now stated as a project
+role without inventing a formal corporate title. Nokia is the company-level supplier
+example, supported by Finnvera’s 23 October 2025 transaction record. No unit-specific
+procurement relationship or supplier ranking is inferred.
+
+Report Section 2.1 cites Finnvera (2025), with a complete alphabetical reference entry.
+All 15 references are cited. The report retains 21 pages and unchanged contents locations.
+Only pages 5, 19 and 20 changed visually; these were inspected. DOC round-trip page tokens
+match on all 21 pages; small render differences on pages 3, 5 and 12 were inspected.
+Presentation slides are visually unchanged; a reference-note count was made generic.
+Digest is byte-identical. The package audit passes 566 scoped checks with zero completion
+placeholders. Current Desktop files match repository copies. No upload to school occurred.
+Receipt: sources/final_fields_review_20260929.json. Prior dated records retain historical counts.

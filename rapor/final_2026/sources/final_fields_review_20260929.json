@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-29",
+  "baseline": "65acb44",
+  "guideline": "FENS Internship Project (XX 395) Report, Presentation and Digest Guidelines Summer 2026 (1).pdf",
+  "guideline_page": 3,
+  "explicit_requirements": [
+    "Major suppliers",
+    "Names, emails and titles of close collaborators",
+    "Organizational chart and department functions"
+  ],
+  "correction": "Parent reporting line was an inferred completion requirement, not an explicit separate guideline item. Removed without asserting absence of higher management.",
+  "student_clarification": "Hasan Çontuk is the student’s mentor and a member of Önder Çelebi’s team. Formal corporate title remains unknown and is not invented.",
+  "supplier_source": {
+    "url": "https://www.finnvera.fi/eng/export-and-internationalisation/finnvera-as-an-export-finance-provider/guaranteed-transactions/finnvera-guarantees-nokias-deliveries-to-turk-telekom",
+    "publication_date": "2025-10-23",
+    "agreement_date": "2025-09-29",
+    "supplier": "Nokia Corporation and/or subsidiaries",
+    "buyer": "Türk Telekomünikasyon A.Ş., TT Mobil and group subsidiaries",
+    "goods": "Fixed/mobile network equipment and related services",
+    "scope": "Company group, not a proven internship-unit procurement tie"
+  },
+  "report_pages": 21,
+  "paragraph_words": 3353,
+  "company_prose_words": 191,
+  "references": 15,
+  "checks_passed": 566,
+  "placeholders": 0,
+  "changed_report_pages": [
+    5,
+    19,
+    20
+  ],
+  "other_report_pages_raster_identical": true,
+  "doc_roundtrip_page_tokens_identical": true,
+  "doc_roundtrip_render_differences_inspected": [
+    3,
+    5,
+    12
+  ],
+  "presentation_pages_visually_identical": true,
+  "digest_unchanged": true,
+  "desktop_sha256": {
+    "CS395_FinalReport_EfeHan_Keles_29September2026.doc": "974154b8dfa3d2ec1b4b99c61e2d6b392b687675de43f0f6c2b4e7ee3573c375",
+    "CS395_Presentation_EfeHan_Keles_29September2026.pptx": "c2dd24f97ca06a1f89339036a60602067405150b0e461cea5ecc20bffac7d6fd",
+    "CS395_Digest_EfeHan_Keles_29September2026.pptx": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea"
+  },
+  "outputs": {
+    "CS395_Digest_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 74672,
+      "sha256": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31"
+    },
+    "CS395_Digest_EfeHan_Keles_29September2026.pptx": {
+      "bytes": 13490,
+      "sha256": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea"
+    },
+    "CS395_FinalReport_EfeHan_Keles_29September2026.doc": {
+      "bytes": 258048,
+      "sha256": "974154b8dfa3d2ec1b4b99c61e2d6b392b687675de43f0f6c2b4e7ee3573c375"
+    },
+    "CS395_FinalReport_EfeHan_Keles_29September2026.docx": {
+      "bytes": 176516,
+      "sha256": "241ed0fc14f5cc38cc1057e217b22af8790fd32118d3a78c6a4b5638d8d5486f"
+    },
+    "CS395_FinalReport_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 336028,
+      "sha256": "2e1fdd32fea4aee01803d9bcba9d2458aabc99c28e47f39b543cf8696ea7856f"
+    },
+    "CS395_Presentation_EfeHan_Keles_29September2026.pdf": {
+      "bytes": 257058,
+      "sha256": "229d63b338c5e2193465ec9a794e48ecaf451accc0eb912222e8c99a4d5f409e"
+    },
+    "CS395_Presentation_EfeHan_Keles_29September2026.pptx": {
+      "bytes": 53082,
+      "sha256": "c2dd24f97ca06a1f89339036a60602067405150b0e461cea5ecc20bffac7d6fd"
+    }
+  },
+  "limits": "No native Microsoft Office test, portal submission, speech rehearsal, or instructor acceptance guarantee."
+}

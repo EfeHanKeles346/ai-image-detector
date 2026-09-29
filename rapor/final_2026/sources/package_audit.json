@@ -1,11 +1,11 @@
 {
-  "state": "pass_with_student_deferred_fields",
+  "state": "pass",
   "report_pages": 21,
   "report_headings": 35,
   "figures": 3,
   "tables": 5,
-  "references": 14,
-  "checks_passed": 563,
+  "references": 15,
+  "checks_passed": 566,
   "checks": [
     {
       "name": "report_within_requested_20_to_25_pages",
@@ -16,7 +16,7 @@
       "passed": true
     },
     {
-      "name": "references_14_including_10_scholarly",
+      "name": "references_15_including_10_scholarly",
       "passed": true
     },
     {
@@ -57,6 +57,10 @@
     },
     {
       "name": "encoded_runs_12pt",
+      "passed": true
+    },
+    {
+      "name": "encoded_run_Times_New_Roman",
       "passed": true
     },
     {
@@ -1888,6 +1892,14 @@
       "passed": true
     },
     {
+      "name": "reference_cited:Finnvera",
+      "passed": true
+    },
+    {
+      "name": "reference_has_full_entry:Finnvera",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Grommelt",
       "passed": true
     },
@@ -2270,31 +2282,27 @@
       "sha256": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea"
     },
     "CS395_FinalReport_EfeHan_Keles_29September2026.doc": {
-      "bytes": 257536,
-      "sha256": "dcc216e49e4596b68b9e9baaf81d49bc198877a74d8939df02d30de86440f781"
+      "bytes": 258048,
+      "sha256": "974154b8dfa3d2ec1b4b99c61e2d6b392b687675de43f0f6c2b4e7ee3573c375"
     },
     "CS395_FinalReport_EfeHan_Keles_29September2026.docx": {
-      "bytes": 176371,
-      "sha256": "c452ce5557de4ce6976b6148adff0e61835eef197f3fed3e35e5d016e51a352b"
+      "bytes": 176516,
+      "sha256": "241ed0fc14f5cc38cc1057e217b22af8790fd32118d3a78c6a4b5638d8d5486f"
     },
     "CS395_FinalReport_EfeHan_Keles_29September2026.pdf": {
-      "bytes": 335477,
-      "sha256": "a5997f673fbe052b21eac75cd70afdff6fa93de38085b76f2f07435cb113e818"
+      "bytes": 336028,
+      "sha256": "2e1fdd32fea4aee01803d9bcba9d2458aabc99c28e47f39b543cf8696ea7856f"
     },
     "CS395_Presentation_EfeHan_Keles_29September2026.pdf": {
       "bytes": 257058,
       "sha256": "229d63b338c5e2193465ec9a794e48ecaf451accc0eb912222e8c99a4d5f409e"
     },
     "CS395_Presentation_EfeHan_Keles_29September2026.pptx": {
-      "bytes": 53101,
-      "sha256": "cea4ded5368e658a386a3fe93c7fab7123f759d1ac4cdefcbf1174381a52a519"
+      "bytes": 53082,
+      "sha256": "c2dd24f97ca06a1f89339036a60602067405150b0e461cea5ecc20bffac7d6fd"
     }
   },
-  "unresolved_fields": 3,
-  "unresolved_placeholders": [
-    "[TO COMPLETE: confirmed supplier names]",
-    "[TO COMPLETE: department reporting line]",
-    "[TO COMPLETE: Hasan Çontuk’s job title]"
-  ],
+  "unresolved_fields": 0,
+  "unresolved_placeholders": [],
   "claim_boundary": "Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing."
 }

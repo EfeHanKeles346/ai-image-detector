@@ -1,6 +1,6 @@
 # Critical report review — 25 September 2026
 
-Current review: **29 September 2026**. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md lists the three remaining unconfirmed fields. Dated addenda preserve older drafts.
+Current review: **29 September 2026**. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md explains how the three earlier completion fields were resolved. Dated addenda preserve older drafts.
 
 ## Decision and scoring boundary
 
@@ -9,11 +9,13 @@ in this review. This exceeds the requested editorial target, but is neither an i
 assessment nor a prediction of the instructor's grade. The authoring assistant also
 performed this critique; no external reviewer or student rehearsal is claimed.
 
-**The entire submission is not certified complete.** Department reporting line, Hasan
-Çontuk’s formal title and relevant supplier names remain open. Submission date, Tivibu
-software/hardware duties, the mentor’s name/email and Turkcell as competitor are supplied. The
-student still needs to rehearse and check the final files in the submission application.
-A subjective editorial score cannot compensate for missing required information.
+The former completion placeholders are resolved. A primary Finnvera transaction record
+supports Nokia as a company-level supplier. Hasan Çontuk is described by his confirmed
+mentoring role, not an invented formal job title. The previously demanded parent reporting
+line was an overinterpretation: the guideline asks for departmental information and an
+organization chart, not a separately named parent unit. There is no claim that Türk Telekom
+has no higher management. The student still needs to rehearse; portal acceptance and the
+instructor’s judgment remain outside this review.
 
 ## Rubric
 
@@ -25,7 +27,7 @@ Scores are editorial judgments grounded in the final artifacts, not calibrated m
 | Development record and traceability | 20% | 9.5 | Full baseline MD review; major E1–E152 phases and corrections mapped to report sections and receipts. The report intentionally samples representative experiments. |
 | Plain explanation and structure | 20% | 9.0 | Defines data roles, errors and parent images; explains why failed attempts changed direction. E identifiers and some source terminology still require attention. |
 | Credible student voice and contribution | 15% | 8.5 | Concrete repairs and decisions replace inflated success language; AI assistance is disclosed. The student’s own learning and workplace account is incorporated; oral explanation still needs rehearsal. |
-| Artifact formatting and visual quality | 15% | 9.5 | Rendered pages, captions, contents, fonts, section limits, editable formats and file sizes checked. Native Microsoft Office and final post-placeholder layout remain untested. |
+| Artifact formatting and visual quality | 15% | 9.5 | Rendered pages, captions, contents, fonts, section limits, editable formats and file sizes checked. Final layout after placeholder resolution was rendered; native Microsoft Office remains untested. |
 | Presentation and learning support | 5% | 9.0 | Main question, methods, improvement and failures fit 10 spoken slides; Turkish guide and English notes provided. Timing is planned, not rehearsed. |
 
 Weighted result: 9.225, reported as 9.2. This rubric rates the prepared technical/editorial
@@ -385,3 +387,24 @@ Model2 evidence checks; these are not 563 separate school requirements. The pres
 finalizer reports zero layout findings/warnings and successful import. Its 916 spoken words
 remain planned for 600 seconds, subject to rehearsal. The digest is byte-identical.
 The same three deferred administrative fields remain. See sources/model2_scope_review_20260929.json.
+
+
+## Final company-field reconciliation — 29 September 2026
+
+The FENS guideline was re-read directly: page 3 explicitly requests "Major suppliers"
+under company information, plus names, emails and titles under Section 3.1. It does not
+explicitly require a separately identified parent reporting line for the internship unit.
+The earlier reporting-line placeholder was an overinterpretation and is removed. The
+student identifies Hasan Çontuk as a mentor on Önder Çelebi’s team, now stated as a project
+role without inventing a formal corporate title. Nokia is the company-level supplier
+example, supported by Finnvera’s 23 October 2025 transaction record. No unit-specific
+procurement relationship or supplier ranking is inferred.
+
+Report Section 2.1 cites Finnvera (2025), with a complete alphabetical reference entry.
+All 15 references are cited. The report retains 21 pages and unchanged contents locations.
+Only pages 5, 19 and 20 changed visually; these were inspected. DOC round-trip page tokens
+match on all 21 pages; small render differences on pages 3, 5 and 12 were inspected.
+Presentation slides are visually unchanged; a reference-note count was made generic.
+Digest is byte-identical. The package audit passes 566 scoped checks with zero completion
+placeholders. Current Desktop files match repository copies. No upload to school occurred.
+Receipt: sources/final_fields_review_20260929.json. Prior dated records retain historical counts.

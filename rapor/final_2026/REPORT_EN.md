@@ -17,11 +17,11 @@ Türk Telekomünikasyon A.Ş. provides fixed, mobile, broadband, television and 
 
 Its registered address is Turgut Özal Bulvarı, 06103 Aydınlıkevler, Ankara. My internship office was Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye, İstanbul. The website is https://www.turktelekom.com.tr; the supplied internship contact number is +90 312 555 93 92. Ownership is 60% Türkiye Wealth Fund, 25% Treasury and Finance Ministry and 15% publicly traded shares. Subsidiaries include TT Mobil, TTNET, Argela, İnnova, SEBİT and AssisTT (Türk Telekom, 2026a).
 
-Turkcell was a relevant competitor discussed during the internship. The names of relevant suppliers remain [TO COMPLETE: confirmed supplier names].
+Turkcell was a relevant competitor discussed during the internship. Nokia supplies fixed and mobile network equipment and related services to the Türk Telekom group (Finnvera, 2025).
 
 ## 2.2 Organization and internship context
 
-Figure 1 summarizes the published corporate structure: network and IT support infrastructure, commercial units serve customers, and support units cover finance, staff and coordination (Türk Telekom, 2026a, p. 33). My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate); its reporting line remains [TO COMPLETE: department reporting line].
+Figure 1 summarizes the published corporate structure: network and IT support infrastructure, commercial units serve customers, and support units cover finance, staff and coordination (Türk Telekom, 2026a, p. 33). My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate), led by Önder Çelebi.
 
 ![Figure 1](figures/organization.png)
 Figure 1. Simplified corporate reporting structure from the 2025 Annual Report.
@@ -30,7 +30,7 @@ Figure 1. Simplified corporate reporting structure from the 2025 Annual Report.
 
 ## 3.1 Department information
 
-My host unit, the Planning and Development Directorate, worked on Tivibu software and hardware. My supervisor was Önder Çelebi, Director, at onder.celebi@turktelekom.com.tr. I also consulted Hasan Çontuk (hasan.contuk@turktelekom.com.tr), who worked under Önder Çelebi. His formal job title remains [TO COMPLETE: Hasan Çontuk’s job title]. I worked individually under a hybrid arrangement, Monday–Thursday on site and Friday remote. PixelProof was a student prototype using research data, with no documented company production deployment.
+My host unit, the Planning and Development Directorate, worked on Tivibu software and hardware. My supervisor was Önder Çelebi, Director, at onder.celebi@turktelekom.com.tr. Hasan Çontuk (hasan.contuk@turktelekom.com.tr), a member of Önder Çelebi’s team, was my mentor. I consulted him for guidance while making the project decisions myself. I worked individually under a hybrid arrangement, Monday–Thursday on site and Friday remote. PixelProof was a student prototype using research data, with no documented company production deployment.
 
 ## 3.2 Initial project status
 
@@ -227,6 +227,8 @@ Adobe. (2026, August 25). Content Credentials overview. Adobe Help Center. Retri
 Chen, C., Chen, Q., Xu, J., & Koltun, V. (2018). Learning to see in the dark. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 3291–3300. Retrieved September 29, 2026, from https://cchen156.github.io/SID.html
 
 Dwork, C., Feldman, V., Hardt, M., Pitassi, T., Reingold, O., & Roth, A. (2015). Generalization in adaptive data analysis and holdout reuse. Advances in Neural Information Processing Systems, 28. Retrieved September 25, 2026, from https://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-Abstract.html
+
+Finnvera. (2025, October 23). Finnvera guarantees Nokia’s deliveries to Türk Telekom. Retrieved September 29, 2026, from https://www.finnvera.fi/eng/export-and-internationalisation/finnvera-as-an-export-finance-provider/guaranteed-transactions/finnvera-guarantees-nokias-deliveries-to-turk-telekom
 
 Grommelt, P., Weiss, L., Pfreundt, F.-J., & Keuper, J. (2024). Fake or JPEG? Revealing common biases in generated image detection datasets. arXiv:2403.17608. Retrieved September 25, 2026, from https://arxiv.org/abs/2403.17608
 

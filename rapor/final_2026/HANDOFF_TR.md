@@ -1,18 +1,10 @@
-# Teslimden önce tamamlanacak bilgiler
+# Güncel teslim durumu
 
-29 Eylül 2026 yanıtların işlendi. Teslim tarihi bütün güncel belgelerde **29 September 2026**; dosya adları da `29September2026` olarak güncellendi. Masaüstündeki `CS395_PixelProof_Submission_2026` klasöründe güncel DOC raporu ve iki PPTX bulunur. Rapor 21 sayfa; sunum 10 ana ve iki kaynak slaytıyla 10 dakika için planlandı. Dosyalar okula gönderilmedi.
+29 Eylül 2026: Masaüstündeki `CS395_PixelProof_Submission_2026` klasöründe güncel DOC raporu, sunum PPTX ve tek slayt digest PPTX bulunur. Rapor 21 sayfa, 15 kaynak; sunum 10 ana ve iki kaynak slaytıyla 10 dakika için planlandı. Belgelerde TO COMPLETE alanı kalmadı. Dosyalar okula gönderilmedi.
 
-Birim, verdiğin bilgiye dayanarak Tivibu yazılım ve donanımı üzerinde çalışan Planlama ve Geliştirme Müdürlüğü olarak anlatıldı. Hasan Çontuk (hasan.contuk@turktelekom.com.tr), Önder Çelebi’ye bağlı çalışan ve danıştığın kişi olarak eklendi. Resmî unvanını bilmediğin için mühendis/uzman gibi bir unvan atanmadı. Turkcell ilgili rakip olarak eklendi. Oradaki bir aylık gönüllü staj, Türk Telekom’daki 40 günlük zorunlu staja dahil edilmedi.
+Hasan Çontuk, son açıklamana göre mentörün ve Önder Çelebi’nin ekip üyesi olarak yazıldı. Mühendis/uzman gibi bilinmeyen resmî bir unvan uydurulmadı. Kılavuz çalışanların unvanlarını ister; burada doğruladığın proje rolü belirtiliyor. Bölümün üst raporlama birimini ayrıca yazma zorunluluğu kılavuzda yok; bu yer tutucu önceki aşamada gereğinden katı bir yorumla eklenmişti ve kaldırıldı. Bu düzeltme, Türk Telekom’da daha üst yönetim olmadığı anlamına gelmez.
 
-Muud, Türk Telekom’un dijital müzik platformudur; tedarikçi adı olarak eklenmedi. [Türk Telekom’un resmî açıklaması](https://medya.turktelekom.com.tr/dijital-muezik-platformu-muud-sahne-projesi-ile-gelecegin-muezisyenlerini-kesfediyor/) bu ilişkiyi doğrular. Ortak veya tedarikçi ilişkisi varsayılmadı.
-
-| Kalan bilgi | Rapordaki yeri | Durum |
-|---|---|---|
-| Müdürlüğün bağlı olduğu üst birim | 2.2 | Kullanıcı bilmiyor; resmî raporlama ilişkisi doğrulanmadı |
-| Hasan Çontuk’un resmî unvanı | 3.1 | Adı, e-postası ve Önder Çelebi’ye bağlı çalıştığı doğrulandı; unvan bilinmiyor |
-| İlgili başlıca tedarikçilerin isimleri | 2.1 | Kullanıcı bilmiyor; isim uydurulmadı |
-
-Raporda **üç yer tutucu** kaldı. Sunum ve digest’te yer tutucu yok. Bu alanlar tamamlanmadan raporun tüm zorunlu bilgileri içerdiği söylenemez. Kimlik, ofis, süpervizör unvanı, çalışma biçimi, ders bağlantıları ve kişisel öğrenme bilgileri önceki yanıtlarınla tamamlandı. Başlangıçtaki 28 MD dosyasının sıralı okuması ve sonraki değişiklik karşılaştırmaları `MD_CONSISTENCY_AUDIT.md` içinde kayıtlı; bu turda yeni bir kapsamlı proje okuması yapılmadı.
+Kılavuzun 3. sayfasındaki “Major suppliers” maddesi için Nokia eklendi. Finnvera’nın 23 Ekim 2025 tarihli resmî kaydı, Nokia’nın Türk Telekom grubuna sabit/mobil şebeke ekipmanı ve ilgili hizmetleri sağladığını gösteriyor. Bu, genel şirket bilgisidir; staj biriminin Nokia ile doğrudan çalıştığı iddia edilmiyor. Muud tedarikçi olarak yazılmadı. Rapor 2.1, 2.2 ve 3.1 ile kaynakça güncellendi. 566 sınırlı kapsamlı belge/kanıt kontrolü geçti.
 
 ## Bu bilgileri kılavuz nerede istiyor?
 
@@ -39,7 +31,7 @@ Sunumdaki 10 dakika, 10 ana slayt ve 915 kelimelik not için planlanan konuşma 
 
 Raporda AI kodlama desteği açıkça belirtildi. Yazdıklarını anlaman, kişisel katkılarını doğrulaman ve kendi öğrenme bölümünü sahiplenmen gerekir. Not veya kabul garantisi verilmiyor; değerlendirme hocana aittir.
 
-Son eleştirel inceleme `CRITICAL_REVIEW.md` içinde. Teknik içerik ve anlatım için öznel değerlendirme 9,2/10; bu bir hoca notu tahmini değil. Yukarıdaki eksikler tamamlanmadan bütün teslimin 9/10 üzerinde veya yüzde yüz kurallara uygun olduğu iddia edilmiyor.
+Son eleştirel inceleme `CRITICAL_REVIEW.md` içinde. Teknik içerik ve anlatım için öznel değerlendirme 9,2/10; bu bir hoca notu tahmini değil. Bu değerlendirme hoca notu veya yüzde yüz kabul garantisi değildir.
 
 
-Model2 açıklaması güncellendi: 4.5.8 ve sunumun 9. slaytı veri uygunluğu ve maske dışındaki piksel değişimini ayrı ayrı anlatıyor. Bu ölçüm Stable Diffusion pilotuna ait; ChatGPT için yapılmış deney gibi sunulmuyor. Rapor 21 sayfa; 563 kapsamlı olmayan belge/kanıt kontrolü geçti. Digest değişmedi.
+Model2 açıklaması güncellendi: 4.5.8 ve sunumun 9. slaytı veri uygunluğu ve maske dışındaki piksel değişimini ayrı ayrı anlatıyor. Bu ölçüm Stable Diffusion pilotuna ait; ChatGPT için yapılmış deney gibi sunulmuyor. Rapor 21 sayfa; Bu önceki sürümde 563 sınırlı kapsamlı belge/kanıt kontrolü geçmişti; güncel sayı 566. Digest değişmedi.

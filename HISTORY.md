@@ -11470,3 +11470,8 @@ Model2 report revision completed: Section 4.5.8 and slide 9 updated; 21-page rep
 ### Model2 presentation explanation — 2026-09-29
 
 Documentation-only follow-up: slide 9 now visibly explains background pixel changes in the SD1.5 pilot, dataset source overlap/mask ambiguity and the limited 16-parent, one-editor learning pilot. Updated the spoken script and Turkish rehearsal note. The deck retains 10 main slides plus two references and a 600-second plan (915 spoken words). No new measurement, training, data download or promotion. The report/digest are unchanged. QA and output hashes: rapor/final_2026/sources/model2_slide_review_20260929.json.
+
+
+### Final report company fields resolved — 2026-09-29
+
+Re-read FENS guideline page 3. Major suppliers are explicitly required; a separately named unit reporting line is not. Removed that inferred placeholder, stated Hasan Çontuk’s student-confirmed mentoring role on Önder Çelebi’s team, and added Nokia as a group-level network equipment/services supplier with Finnvera’s primary 2025 transaction record and full reference. No corporate title or unit procurement tie was invented. Report remains 21 pages, 15 references, zero TO COMPLETE fields; 566 scoped checks pass. Desktop DOC/PPTX files synchronized. No ML experiment or school submission occurred. See rapor/final_2026/sources/final_fields_review_20260929.json.

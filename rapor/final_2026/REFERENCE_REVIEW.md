@@ -37,3 +37,27 @@ Additional primary records: [SIDD proceedings](https://openaccess.thecvf.com/con
 ## Model2 clarification — 29 September 2026
 
 The report's additional dataset/pixel claims cite the existing Keleş (2026) project record and exact E105/E109/E117/E122/E127/E129–E135 entries. All 14 formal references remain cited. The external GPT-4o system-card addendum and ChatGPT editing help were consulted to correct the research notes, not to assert an unmeasured ChatGPT result in the report. The report describes the measured SD1.5 pilot only. URLs and scope are recorded in IMAGE_FORENSICS_REFERENCE.md's dated correction.
+
+
+## Final company-field reconciliation — 29 September 2026
+
+The FENS guideline was re-read directly: page 3 explicitly requests "Major suppliers"
+under company information, plus names, emails and titles under Section 3.1. It does not
+explicitly require a separately identified parent reporting line for the internship unit.
+The earlier reporting-line placeholder was an overinterpretation and is removed. The
+student identifies Hasan Çontuk as a mentor on Önder Çelebi’s team, now stated as a project
+role without inventing a formal corporate title. Nokia is the company-level supplier
+example, supported by Finnvera’s 23 October 2025 transaction record. No unit-specific
+procurement relationship or supplier ranking is inferred.
+
+Report Section 2.1 cites Finnvera (2025), with a complete alphabetical reference entry.
+All 15 references are cited. The report retains 21 pages and unchanged contents locations.
+Only pages 5, 19 and 20 changed visually; these were inspected. DOC round-trip page tokens
+match on all 21 pages; small render differences on pages 3, 5 and 12 were inspected.
+Presentation slides are visually unchanged; a reference-note count was made generic.
+Digest is byte-identical. The package audit passes 566 scoped checks with zero completion
+placeholders. Current Desktop files match repository copies. No upload to school occurred.
+Receipt: sources/final_fields_review_20260929.json. Prior dated records retain historical counts.
+
+Primary source: https://www.finnvera.fi/eng/export-and-internationalisation/finnvera-as-an-export-finance-provider/guaranteed-transactions/finnvera-guarantees-nokias-deliveries-to-turk-telekom
+Publication: 23 October 2025. Guarantee agreement: 29 September 2025. Exporter: Nokia Corporation/subsidiaries. Buyer: Türk Telekomünikasyon A.Ş., TT Mobil and group subsidiaries. Goods: fixed/mobile network equipment and related services. Checked 29 September 2026.
