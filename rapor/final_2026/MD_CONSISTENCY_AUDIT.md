@@ -96,3 +96,33 @@ truth. The detailed scope is in `sources/historical_narrative_review_20260928.js
 
 The abstract, Table 1, Table 2, conclusion, slide 5, digest and study guide were aligned.
 Raw historical research logs were preserved. No new scientific result was generated.
+
+## Concise report and reference review — 29 September 2026
+
+At the student's request, the report was shortened from 30 to 18 pages. Paragraph prose
+fell from 5,100 to 2,378 words (excluding abstract, headings, captions, tables and references);
+company prose fell from 401 to 191 words. Repetition, dense implementation catalogues and
+the redundant evidence-map table were removed. The report retains all 35 numbered headings,
+three figures, five tables, a 217-word abstract and fourteen cited references, including ten
+scholarly works. The one-page contents uses verified page numbers. Body font, margins and
+double spacing were not reduced to achieve the shorter length.
+
+Transfer learning is now explicitly named in Sections 3.4 and 4.5.4. Training versus reused
+development data, the E92 retention failure, larger earlier failed evaluations, calibration
+and label repairs, Model2's rejected trade-off and the later source/processing failures remain.
+The chapter narrative uses representative experiments; full settings remain in project logs.
+No empirical result or model was changed.
+
+REFERENCE_REVIEW.md records each source's role, primary verification and access limitations.
+Adobe's undated reference was corrected to 25 August 2026. All fourteen references have a
+remaining substantive use; none was removed solely to reduce the count. Author/year checks
+now distinguish both corporate sources. The annual-report citation no longer appears to
+support the user's unconfirmed department reporting line.
+
+All 18 pages were visually checked, the 35-entry contents agrees with the PDF, and 532 scoped
+artifact checks pass. The lower check count reflects fewer text runs/paragraphs and one less
+table; evidence assertions remain. Legacy DOC retains all 18 pages and each page's word
+multiset. Four raster-different pages were inspected. The Desktop DOC was refreshed only
+after checking it still matched the preceding draft. Presentation and digest exports are
+byte-identical to the prior versions. Five deferred information groups remain; native Office,
+Turnitin and actual submission were not performed. Receipt: sources/concise_report_review_20260929.json.

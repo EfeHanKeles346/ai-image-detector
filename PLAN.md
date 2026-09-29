@@ -6,13 +6,15 @@ log). The current checkpoint and priorities are at the top. Older dated plans be
 preserve their original decisions; later completion/rejection records supersede them.
 They are not a queue of all experiments that should still be run.
 
-## Submission checkpoint — 2026-09-28
+## Submission checkpoint — 2026-09-29
 
 The prior exhaustive 28-file Markdown review is complete. The 28 September historical
 narrative refinement reconciles that reading with current documentation and representative
 chronological rereading; see the new review receipt in rapor/final_2026/sources/.
 Current files are in `rapor/final_2026/deliverables/` and the Desktop folder
-`CS395_PixelProof_Submission_2026`. Report: 30 pages, 14 references, 649 scoped checks.
+`CS395_PixelProof_Submission_2026`. Report: 18 pages, 14 references, 532 scoped checks.
+The 29 September shortening and reference review retains mandatory sections and scientific
+limits; see concise_report_review_20260929.json and REFERENCE_REVIEW.md.
 The critical review rates the technical draft 9.2/10 subjectively; this is not a grade.
 Student-confirmed identity, unit name, office address, individual/advisory roles, learning,
 career, three course connections and daily routine are now incorporated. Remaining work:

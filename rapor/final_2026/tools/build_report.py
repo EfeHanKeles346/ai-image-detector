@@ -103,7 +103,7 @@ for t in ['Company: Türk Telekomünikasyon A.Ş.','Supervisor: Önder Çelebi',
 for t in ['Internship: 20 July–18 September 2026','Approved duration: 40 internship days','Format: Hybrid']:paragraph(t)
 paragraph('Submission date: [TO COMPLETE]')
 d.add_page_break();paragraph('Abstract','Title');paragraph(c.ABSTRACT)
-# Two fixed TOC pages with a genuine Word TOC field and populated cache.
+# Compact TOC with a genuine Word field and verified page cache.
 heads=[b for b in c.B if b['type']=='heading'];page_map={}
 mp=ROOT/'sources/heading_pages.json'
 if mp.exists():page_map=json.loads(mp.read_text())
@@ -113,8 +113,7 @@ r=start.add_run();e=OxmlElement('w:instrText');e.set(qn('xml:space'),'preserve')
 r=start.add_run();e=OxmlElement('w:fldChar');e.set(qn('w:fldCharType'),'separate');r._r.append(e)
 start.paragraph_format.line_spacing=1;start.paragraph_format.space_after=Pt(0);start.paragraph_format.space_before=Pt(0)
 for i,b in enumerate(heads):
- if i==23:d.add_page_break();paragraph('Table of Contents continued','Title')
- p=d.add_paragraph();p.paragraph_format.line_spacing=1.45;p.paragraph_format.tab_stops.add_tab_stop(Inches(6.27),WD_TAB_ALIGNMENT.RIGHT,WD_TAB_LEADER.DOTS)
+ p=d.add_paragraph();p.paragraph_format.line_spacing=1.1;p.paragraph_format.tab_stops.add_tab_stop(Inches(6.27),WD_TAB_ALIGNMENT.RIGHT,WD_TAB_LEADER.DOTS)
  p.alignment=WD_ALIGN_PARAGRAPH.LEFT
  p.add_run(b['text']+'\t'+str(page_map.get(b['text'],'…')))
 r=d.paragraphs[-1].add_run();e=OxmlElement('w:fldChar');e.set(qn('w:fldCharType'),'end');r._r.append(e)

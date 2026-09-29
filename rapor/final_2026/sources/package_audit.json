@@ -1,14 +1,14 @@
 {
   "state": "pass_with_student_deferred_fields",
-  "report_pages": 30,
+  "report_pages": 18,
   "report_headings": 35,
   "figures": 3,
-  "tables": 6,
+  "tables": 5,
   "references": 14,
-  "checks_passed": 649,
+  "checks_passed": 532,
   "checks": [
     {
-      "name": "report_30_pages",
+      "name": "report_18_pages",
       "passed": true
     },
     {
@@ -20,7 +20,7 @@
       "passed": true
     },
     {
-      "name": "figures_3_tables_6",
+      "name": "figures_3_tables_5",
       "passed": true
     },
     {
@@ -57,298 +57,6 @@
     },
     {
       "name": "encoded_runs_12pt",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
-      "passed": true
-    },
-    {
-      "name": "encoded_run_Times_New_Roman",
       "passed": true
     },
     {
@@ -1760,18 +1468,6 @@
       "passed": true
     },
     {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
       "name": "nearby_preceding_citation:Figure 1",
       "passed": true
     },
@@ -1781,50 +1477,6 @@
     },
     {
       "name": "caption_placement:Figure 1",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
       "passed": true
     },
     {
@@ -1908,22 +1560,6 @@
       "passed": true
     },
     {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
       "name": "nearby_preceding_citation:Table 2",
       "passed": true
     },
@@ -1944,18 +1580,6 @@
       "passed": true
     },
     {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
       "name": "nearby_preceding_citation:Figure 2",
       "passed": true
     },
@@ -1965,10 +1589,6 @@
     },
     {
       "name": "caption_placement:Figure 2",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
       "passed": true
     },
     {
@@ -2016,34 +1636,6 @@
       "passed": true
     },
     {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
       "name": "nearby_preceding_citation:Table 3",
       "passed": true
     },
@@ -2053,10 +1645,6 @@
     },
     {
       "name": "caption_placement:Table 3",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
       "passed": true
     },
     {
@@ -2108,42 +1696,6 @@
       "passed": true
     },
     {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
       "name": "nearby_preceding_citation:Table 5",
       "passed": true
     },
@@ -2157,26 +1709,6 @@
     },
     {
       "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "nearby_preceding_citation:Table 6",
-      "passed": true
-    },
-    {
-      "name": "centered_caption:Table 6",
-      "passed": true
-    },
-    {
-      "name": "caption_placement:Table 6",
-      "passed": true
-    },
-    {
-      "name": "body_double_justified",
-      "passed": true
-    },
-    {
-      "name": "centered_table",
       "passed": true
     },
     {
@@ -2614,16 +2146,16 @@
       "sha256": "c34ea98f20207a4862cee0b881523034fa47c58c30088ada273d6961786e06d9"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.doc": {
-      "bytes": 290816,
-      "sha256": "108b365de2ade0553e47ab3829a0e8e368ca4b1de2a416474c3f5b2316a133a4"
+      "bytes": 245248,
+      "sha256": "0beefaad4c9c05b0ff2f66b755c1a0fbb320ee4d119ad7ed739d5a7c47e5a089"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.docx": {
-      "bytes": 182223,
-      "sha256": "92f7f99c886cfcf7f63b41ffe0d8f0d4d5e23ef962d96b96a6daeea429c6dc53"
+      "bytes": 173706,
+      "sha256": "240920cb401d342a3bf28763a7456a303c82caac986619f890df70fdc6df89f1"
     },
     "CS395_FinalReport_EfeHan_Keles_25September2026.pdf": {
-      "bytes": 379434,
-      "sha256": "3a22bc48f9aae07a5fef80efe5529b1dc2c8bcd4b848057af59400ab43d98def"
+      "bytes": 321460,
+      "sha256": "dcf73feccdc33ae5afafc83783cb8fc2c38dc03075e95ad3b64bf5f019cbb067"
     },
     "CS395_Presentation_EfeHan_Keles_25September2026.pdf": {
       "bytes": 281841,

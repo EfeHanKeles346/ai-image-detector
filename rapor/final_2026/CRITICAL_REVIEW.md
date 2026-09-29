@@ -1,8 +1,8 @@
 # Critical report review — 25 September 2026
 
-Current review: **28 September 2026**. The report, digest, presentation and speaking
-notes were read end to end against the previously reviewed project records and their
-subsequent changes. No experiment was rerun. HANDOFF_TR.md lists the five remaining
+Current review: **29 September 2026**. The report was shortened and its references
+reviewed against primary sources. The earlier end-to-end package and project-record review
+remains the evidence baseline; presentation and digest are unchanged. No experiment was rerun. HANDOFF_TR.md lists the five remaining
 information groups; historical addenda later in this file describe older drafts.
 
 ## Decision and scoring boundary
@@ -87,7 +87,7 @@ reference list nor this checklist supplies missing experience.
 | Each file below 10 MB | Artifact audit; all seven files checked | PASS |
 | Cover, header/running head, title, name, ID, dates, host, supervisor, university/program | Report page 1 | PASS metadata; submission date intentionally deferred |
 | Separate abstract, at most 250 words; company, project, analysis, recommendations | Page 2; 217 words | PASS |
-| Separate contents with every main/subheading and actual pages | Pages 3–4; 35 matching entries; Word headings and TOC field | PASS |
+| Separate contents with every main/subheading and actual pages | Page 3; 35 matching entries; Word headings and TOC field | PASS |
 | Introduction: importance and structure | Section 1 | PASS |
 | Company title/contact/history/facilities/ownership/products/customers/employees/organization chart | Section 2; official company sources; Figure 1 | PASS for verified corporate context |
 | Actual office, relevant main competitors and suppliers, actual department placement | Sections 2.1–2.2 and handoff | Office confirmed; competitors/suppliers and reporting line deferred |
@@ -106,17 +106,17 @@ reference list nor this checklist supplies missing experience.
 | Typical day for hybrid internship | Section 5.4 | PASS; student-confirmed hybrid routine |
 | Conclusions without new results; recommendations and work culture | Sections 6–7 | PASS |
 | Page limits: company 3, department/status/motivation 1 each, literature 3 | Actual section locations; company 2, literature 2; each short subsection within one page | PASS |
-| Page limits: details 10, results 1, experience 3, typical day 1, conclusions/recommendations 1 each | Details 9, results 1, experience 2, typical-day within page 24, conclusions 1, recommendations 1 | PASS |
+| Page limits: details 10, results 1, experience 3, typical day 1, conclusions/recommendations 1 each | Details 6, results 1, experience 2, typical-day within page 14, conclusions 1, recommendations 1 | PASS |
 | Times New Roman 12, one-inch margins, black text, double body spacing, no extra paragraph spacing | DOCX properties and rendered PDF | PASS |
 | No indentation, justified text, left hierarchical headings | Instructor overrides office indent/heading alternatives | PASS |
 | No full-sentence numbered/bulleted lists | Report has no numbered-list paragraph properties; prose reviewed | PASS |
-| Figures/tables mandatory, numbered captions, figure captions below/table captions above | Three figures, six tables; positions checked | PASS |
+| Figures/tables mandatory, numbered captions, figure captions below/table captions above | Three figures, five tables; positions checked | PASS |
 | Figures/tables/captions centered, within margins, close to first reference | Render and XML review; adjacent-page placements only where needed | PASS |
 | Capitalized Figure/Table citations, no preceding “the”, no relative-position citation | Text audit and reading | PASS |
 | At least 5 development or 10 academic references; full entries; every entry cited | Fourteen entries, ten scholarly, in-text citations checked | PASS |
 | Alphabetic references, single spacing/blank separation, journal/series italics, retrieval dates | Section 8; instructor overrides hanging indent and centered heading | PASS |
 | Page numbering, formal structure, consistent terms, spelling and print-preview review | All pages rendered; local spelling flags reviewed; no external grammar upload | PASS |
-| Useful appendices only | Criteria and evidence/metric map in Section 9 | PASS |
+| Useful appendices only | Criteria table and brief repository pointer in Section 9 | PASS |
 | English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 15 slides, 13 spoken, 835 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
 | One-slide digest with project/company/address/duration/name/program/objectives/outcomes | Separate PPTX/PDF | PASS layout/content; submission date intentionally deferred |
 | Final check on submission device | LibreOffice renders and PPTX import checked | Native Office and post-completion review still open |
@@ -287,3 +287,33 @@ improvement is clearer reasoning from observations to decisions. Remaining weakn
 are the E identifiers that require explanation, untested oral timing, and five deferred
 personal/company information groups. The entire submission is still incomplete until
 those fields are supplied. No classifier experiment, download or school upload occurred.
+
+## Concise report and reference review — 29 September 2026
+
+At the student's request, the report was shortened from 30 to 18 pages. Paragraph prose
+fell from 5,100 to 2,378 words (excluding abstract, headings, captions, tables and references);
+company prose fell from 401 to 191 words. Repetition, dense implementation catalogues and
+the redundant evidence-map table were removed. The report retains all 35 numbered headings,
+three figures, five tables, a 217-word abstract and fourteen cited references, including ten
+scholarly works. The one-page contents uses verified page numbers. Body font, margins and
+double spacing were not reduced to achieve the shorter length.
+
+Transfer learning is now explicitly named in Sections 3.4 and 4.5.4. Training versus reused
+development data, the E92 retention failure, larger earlier failed evaluations, calibration
+and label repairs, Model2's rejected trade-off and the later source/processing failures remain.
+The chapter narrative uses representative experiments; full settings remain in project logs.
+No empirical result or model was changed.
+
+REFERENCE_REVIEW.md records each source's role, primary verification and access limitations.
+Adobe's undated reference was corrected to 25 August 2026. All fourteen references have a
+remaining substantive use; none was removed solely to reduce the count. Author/year checks
+now distinguish both corporate sources. The annual-report citation no longer appears to
+support the user's unconfirmed department reporting line.
+
+All 18 pages were visually checked, the 35-entry contents agrees with the PDF, and 532 scoped
+artifact checks pass. The lower check count reflects fewer text runs/paragraphs and one less
+table; evidence assertions remain. Legacy DOC retains all 18 pages and each page's word
+multiset. Four raster-different pages were inspected. The Desktop DOC was refreshed only
+after checking it still matched the preceding draft. Presentation and digest exports are
+byte-identical to the prior versions. Five deferred information groups remain; native Office,
+Turnitin and actual submission were not performed. Receipt: sources/concise_report_review_20260929.json.

@@ -5,216 +5,153 @@ Türk Telekom provides telecommunications and digital services across Türkiye. 
 
 # 1. Introduction
 
-PixelProof addresses a practical question: can a system identify evidence of AI generation without routinely accusing genuine photographs? Visually convincing generated images make this task difficult, while resizing and compression can change the signals available to a detector. The project also explored a related question: can a model locate a small AI-edited region inside an otherwise genuine photograph? These are different tasks and require different evidence.
+PixelProof investigates whether a photograph contains evidence of AI generation while limiting false accusations against real images. It also explores locating AI-edited regions. The main result is a working research demo with improved detection on a defined development collection; reliable performance across all image sources remains unproven.
 
-The internship ran from 20 July to 18 September 2026 under the approved 40-day CS395 arrangement at Türk Telekom. This report covers the technical record through 16 September, the latest completed research checkpoint before the end of that period. Report preparation took place afterwards. Experiment identifiers refer to recorded protocols and findings, rather than a count of independent trials. The implementation and append-only records provide the primary evidence for project-specific claims (Keleş, 2026).
-
-The main achievement is a functioning research system with measurable development improvements, a usable local interface and an evaluation process that also records failures. The current local demonstration uses E92. It passes 20 numerical checks on reused development images, but newly misses one AI image caught by the reference model. That new miss breaks a separate acceptance rule. Independent universal reliability remains unproven.
-
-Section 2 introduces the host organization. Section 3 explains the problem and relevant literature. Section 4 describes responsibilities, methods, implementation, representative experiments and results. Section 5 discusses learning and difficulties. Sections 6 and 7 give conclusions and recommendations. References and a compact evidence appendix support the main account without reproducing every experiment or implementation detail.
+My CS395 internship at Türk Telekom ran from 20 July to 18 September 2026 under an approved 40-day arrangement. This report covers completed research through 16 September. Experiment identifiers refer to protocols in the project records, not independent tests (Keleş, 2026). Sections 2 and 3 introduce the company and problem; Section 4 explains development and results; Sections 5–7 cover experience, conclusions and recommendations. References and an appendix support the account.
 
 # 2. Company information
 
 ## 2.1 Corporate profile and services
 
-The host organization is Türk Telekomünikasyon A.Ş. Its registered office is Turgut Özal Bulvarı, 06103 Aydınlıkevler, Ankara (Türk Telekom, 2026a). I completed my internship at Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye, İstanbul. This is the internship office, distinct from the registered headquarters. The corporate website is https://www.turktelekom.com.tr. The internship contact supplied in the approved record is +90 312 555 93 92.
+Türk Telekomünikasyon A.Ş. provides fixed, mobile, broadband, television and corporate data services to households, businesses and wholesale operators. Its history exceeds 185 years; its services were brought under one brand in 2016. It operates offices and communications infrastructure across 81 provinces, with 31,756 employees reported alongside June 2026 figures (Türk Telekom, 2026b).
 
-Türk Telekom has a history extending over 185 years. It adopted an integrated operating structure in 2015 and brought mobile, internet, telephone and television services under one brand in 2016. Its facilities are communications infrastructure, service operations and offices rather than a manufacturing plant. The corporate profile reports operations in 81 provinces and 31,756 employees alongside its 30 June 2026 operating figures (Türk Telekom, 2026b).
+Its registered address is Turgut Özal Bulvarı, 06103 Aydınlıkevler, Ankara. My internship office was Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye, İstanbul. The website is https://www.turktelekom.com.tr; the supplied internship contact number is +90 312 555 93 92. Ownership is 60% Türkiye Wealth Fund, 25% Treasury and Finance Ministry and 15% publicly traded shares. Subsidiaries include TT Mobil, TTNET, Argela, İnnova, SEBİT and AssisTT (Türk Telekom, 2026a).
 
-The group supplies fixed access, broadband, mobile, television and corporate data services. Customers include households, businesses and wholesale operators. Group companies include TT Mobil, TTNET, Argela, İnnova, SEBİT, AssisTT and Türk Telekom International. The disclosed ownership structure allocates 60% to Türkiye Wealth Fund, 25% to the Ministry of Treasury and Finance and 15% to publicly traded shares. The fund also holds 1.68% within the publicly traded portion; that holding must not be added to the 100% ownership total (Türk Telekom, 2026a, 2026b).
-
-The company operates in the telecommunications market, with competition across mobile and fixed connectivity. Competitors and suppliers were mentioned during my internship, but we did not discuss them in detail. The main competitors and major suppliers relevant to the unit remain [TO COMPLETE: confirmed competitor and supplier names]. I have not inferred a supplier ranking from these brief discussions. PixelProof used research datasets and public pretrained components, not customer telecommunications records.
+Relevant main competitors and suppliers were discussed briefly during the internship; their names remain [TO COMPLETE: confirmed competitor and supplier names].
 
 ## 2.2 Organization and internship context
 
-Figure 1 summarizes the corporate reporting structure published in the 2025 Annual Report. It retains the distinction between functions reporting to the general manager and internal audit reporting to the board. Functional descriptions are summarized from the published department titles. The diagram provides corporate context; the reporting line of my host unit still requires confirmation (Türk Telekom, 2026a, p. 33).
+Figure 1 summarizes the published corporate structure: network and IT support infrastructure, commercial units serve customers, and support units cover finance, staff and coordination (Türk Telekom, 2026a, p. 33). My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate); its reporting line remains [TO COMPLETE: department reporting line].
 
 ![Figure 1](figures/organization.png)
 Figure 1. Simplified corporate reporting structure from the 2025 Annual Report.
-
-Network and IT cover communications infrastructure and information systems. Commercial functions include customer experience, consumer sales, corporate sales and wholesale services. Support functions include finance, people operations, procurement, legal compliance and risk. Regional directorates coordinate local operations. My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate). Its formal reporting line remains [TO COMPLETE: department reporting line].
 
 # 3. Project background
 
 ## 3.1 Department information
 
-My host unit was Planlama ve Geliştirme Müdürlüğü (Planning and Development Directorate). Its specific responsibilities remain [TO COMPLETE: department responsibilities]. My supervisor was Önder Çelebi, whose supplied contact is onder.celebi@turktelekom.com.tr. He is the Director of this unit. I also consulted mentors, whose names, titles and work email addresses remain [TO COMPLETE: mentor details]. These consultations supported an individually conducted project.
-
-The approved arrangement was hybrid, with Monday through Thursday on site and Friday remote. The project record concerns a student research prototype. It does not establish that Türk Telekom already operated this detector, requested a particular production deployment, or used its outputs in customer decisions. Any department-specific business process description requires confirmation before submission.
+The Planning and Development Directorate’s responsibilities remain [TO COMPLETE: department responsibilities]. My supervisor was Önder Çelebi, Director, at onder.celebi@turktelekom.com.tr. I also consulted mentors: [TO COMPLETE: mentor details]. I worked individually under a hybrid arrangement, Monday–Thursday on site and Friday remote. PixelProof was a student prototype using research data, with no documented company production deployment.
 
 ## 3.2 Initial project status
 
-The first recorded experiment on 20 July used a small convolutional neural network trained on CIFAKE. The initial workflow was conventional: prepare labelled images, train a classifier, evaluate it and inspect mistakes. A 96.75% result on the familiar test collection initially looked promising, but accuracy fell to 77.1% on a separate 995-image collection. Later auditing also exposed confounds in that external collection. These historical values describe early diagnostics, not a certified deployment benchmark (Keleş, 2026, E1 and E10).
-
-Information flowed from dataset sources to local preparation and training scripts, then to saved scores, error analysis and experimental decisions. The work evolved from improving a single accuracy number into controlling what data meant, which populations could influence learning, and how results should reach a user. There was no verified production decision process to replace.
+The initial workflow was to prepare labelled images, train a small CNN on CIFAKE and inspect classification errors. Its 96.75% familiar-test accuracy fell to 77.1% on a separate 995-image collection. Later audits found confounds in that collection, so these remain historical diagnostics. Data flowed through local preparation and training scripts to saved scores, error analysis and the next experiment (Keleş, 2026, E1 and E10).
 
 ## 3.3 Motivation and problem definition
 
-The objective was to build and evaluate an image-screening prototype that could find AI-related evidence while limiting false alarms on real photographs. A false positive labels a real image as AI. A false negative misses an AI image. Reducing only one of these errors can make the other worse, so both must remain visible.
-
-The central technical problem was distribution shift: images from a new camera, generator or processing pipeline could behave very differently from the training examples. A separate localization objective required pixel-level evidence about edited regions. An image-level score alone cannot establish that a highlighted area was edited, and a low score cannot prove that an image is authentic.
+A false positive flags a real photograph as AI; a false negative misses an AI image. Improving one error can worsen the other. The main difficulty was distribution shift: a new camera, generator or processing method could change performance. Model1 addressed whole-image detection, while Model2 investigated edited regions using pixel masks. A low detection score cannot prove authenticity.
 
 ## 3.4 Related literature
 
-Wang et al. (2020) studied transfer from a detector trained on one generator to several other synthesis methods. Ojha et al. (2023) showed that pretrained visual representations can support broader fake-image detection with simple classifiers. These studies motivated comparison of learned representations with the early convolutional and handcrafted baselines. Their published results belong to their own protocols and are not PixelProof measurements.
+Wang et al. (2020) investigated detection across different image generators. Ojha et al. (2023) showed that pretrained visual features can support broader detection through simple classifiers. CLIP learns from image–text pairs (Radford et al., 2021), while DINOv2 learns reusable features without task-specific labels (Oquab et al., 2024). These works motivated feature-based transfer learning in PixelProof.
 
-CLIP learns visual representations from image-text supervision (Radford et al., 2021). DINOv2 learns reusable visual features without task-specific labels (Oquab et al., 2024). PixelProof used such pretrained representations and trained adaptation components around them. The contribution is therefore not training an entire foundation model from scratch. It lies in data preparation, learned adaptation, evaluation and integration.
+Compression and image-size differences can become misleading dataset shortcuts (Grommelt et al., 2024). DEAR prunes features using inpainting-based analysis to improve robustness (Kim et al., 2026). PixelProof used a pretrained DEAR component, but its published benchmark results do not establish our system’s performance.
 
-Grommelt et al. (2024) show how compression and image-size differences can become shortcuts in generated-image detection datasets. This matters because matching file extensions or resizing every image does not erase previous processing. PixelProof investigated processing history and matched transformations, while avoiding claims that cropping automatically removes source bias.
+SIDD provides smartphone images from ten scenes and five cameras (Abdelhamed et al., 2018); SID provides short- and long-exposure low-light raw pairs (Chen et al., 2018). These sources supported real-image coverage, with limited scene diversity and processing conditions that differ from ordinary camera JPEGs.
 
-Kim et al. (2026) introduce DEAR, using inpainting-related analysis to prune features that are less robust to processing. PixelProof incorporated a pinned pretrained DEAR component alongside other visual features. A published claim about unseen-generator robustness cannot be inherited merely by loading those weights. Local data lineage and task-specific evaluation remain necessary.
-
-SIDD supplies smartphone denoising data from ten scenes and five cameras (Abdelhamed et al., 2018). SID supplies paired short- and long-exposure low-light raw images (Chen et al., 2018). They provided documented real-image coverage, but neither is a survey of all current phone photography. Multiple observations from a scene remain dependent, and a research raw rendering need not match a consumer camera JPEG.
-
-Guo et al. (2017) distinguish classifier outputs from well-calibrated confidence estimates. That distinction informs the interface: multiplying a score by 100 does not make it a probability of AI generation. Dwork et al. (2015) explain the risk of adaptively reusing holdout data. PixelProof therefore identifies previously inspected collections as development evidence even when individual runs freeze their settings before scoring.
-
-An industry example addresses the same trust problem through a different form of evidence. Adobe Content Credentials can record a file’s origin, edits and use of generative AI (Adobe, n.d.). PixelProof instead estimates a signal from image pixels. These approaches could complement each other, but this project did not implement credential verification. The comparison helps explain why a detector score alone should not be presented as proof of authenticity.
+Guo et al. (2017) explain why classifier scores need calibration before interpretation as confidence. Dwork et al. (2015) show the risks of repeatedly adapting to holdout results. Both issues shaped our evaluation and interface. As an industry comparison, Adobe Content Credentials records origin and editing information (Adobe, 2026). PixelProof estimates evidence from pixels; credential verification was not implemented.
 
 # 4. Internship project
 
 ## 4.1 Project objective and scope
 
-Model1 aimed to detect image-level AI evidence across a wider range of real and generated photographs while preserving detection of AI images already caught by a reference model. Model2 investigated localization of AI edits with ground-truth masks. The practical deliverable was a local student demonstration with clear uncertainty handling, backed by reproducible research records.
-
-The scope included source auditing, training and comparison of candidate models, original-versus-processed evaluation, software validation and readable outputs. It excluded certification of authenticity, unrestricted commercial deployment and a guarantee against all future generators. Classical splicing, generative editing and full-image generation were not treated as interchangeable labels.
+Model1 aimed to reduce real-photo false alerts while preserving AI detections already made by a reference model. Model2 explored edit localization. The scope covered data auditing, learned adaptation, evaluation and a local web demo with uncertainty handling. Universal detection and production readiness were longer-term goals, not achieved outcomes.
 
 ## 4.2 My responsibilities
 
-My project responsibilities covered defining the objectives, directing the experiment sequence, organizing the research material and reviewing the recorded results. The development process used AI coding assistance for implementation, analysis and documentation. Reproducible scripts, source checks and tests were used to verify outputs rather than treating generated explanations as evidence. The report distinguishes those engineering checks from proof that a model generalizes.
-
-I carried out the project individually. I consulted my supervisor and mentors when I needed guidance, but generally made the project decisions myself. They explained evaluation concepts such as true positives and false negatives. Their role was advisory rather than shared implementation. My work covered dataset acquisition and admission records, label mapping, duplicate and ancestry checks, model experiments, API and interface development, and maintenance of PLAN.md, HISTORY.md, ml/EXPERIMENTS.md and DATASETS.md. Public pretrained encoders and external datasets are acknowledged separately from the project-owned adaptation and application code.
+I directed the experiments, organized data, reviewed results and generally made project decisions, consulting my supervisor and mentors for advice. They explained concepts such as true positives and false negatives. My work covered dataset checks, model adaptation, the API, interface and research records. AI coding assistance supported implementation, analysis and documentation; scripts and tests checked outputs. Pretrained models and external datasets are credited separately from our adaptation and application work.
 
 ## 4.3 Methodology and tools
 
-The workflow became more disciplined as problems emerged. In later experiments, PLAN.md stated the question, allowed data and acceptance rules before a run. The experiment log recorded the settings and measurements, including failures. HISTORY.md explained what those results changed, while DATASETS.md recorded acquisition, source checks and permitted use. Earlier entries were retained when a later audit corrected them. This made it possible to trace an idea from its original motivation through its test to the decision that followed.
+In later experiments, PLAN.md recorded the question and acceptance rules before a run. ml/EXPERIMENTS.md retained measurements, HISTORY.md explained decisions and DATASETS.md recorded sources and permitted use. Corrections remained alongside earlier entries. Table 1 shows how findings changed the next step (Keleş, 2026).
 
-Training data taught the model. Calibration data helped choose the score threshold. Development data revealed weaknesses and guided further changes. Final evaluation required data that had not influenced these decisions. Repeatedly checking the same collection makes it development evidence, even when each new run has fixed settings. The main error measures were AI detection rate and false alerts on real photographs. AUC measured ranking across thresholds; it did not establish that a particular decision rule was safe.
-
-Python, PyTorch, NumPy, SciPy and scikit-learn supported modelling and analysis. React and TypeScript provided the interface, with FastAPI serving inference. Git preserved changes and automated checks tested the software. Saved models and key inputs were identified by file hashes so that later comparisons could use the intended versions. Table 1 gives representative decisions recorded during this workflow (Keleş, 2026).
-
-Table 1. How recorded findings changed development.
-Finding | Recorded response
+Table 1. Examples of findings that changed development.
+Finding | Response
 --- | ---
-Weak transfer to new image sources | Compare sources and processing conditions
-Reversed source labels in E19b | Remap labels and rerun affected experiments
-Evaluation used in E27 threshold selection | Recompute using calibration data only
-E92 reduced false alerts but added an AI miss | Retain the failed acceptance result
-E151 features harmed processed-image detection | Reject the candidate and investigate its errors
+Reversed source labels | Remap labels and rerun experiments
+Evaluation-dependent threshold | Use calibration data only
+Better average but new AI misses | Reject the candidate
+
+Training fitted the model; calibration selected thresholds; development comparisons guided changes. Final evaluation required data uninvolved in those decisions. I tracked AI recall, real-image false alerts and AUC, which measures ranking across thresholds. Python, PyTorch, NumPy, SciPy and scikit-learn supported modelling; React, TypeScript and FastAPI supported the demo. Git, saved scores, artifact hashes and automated checks made changes traceable.
 
 ## 4.4 Expected outcomes and deliverables
 
-The intended outcome was a demonstrable image-screening workflow supported by traceable measurements. Deliverables include trained research artifacts, command-line experiments, a local web demo, dataset provenance records and aggregate evidence files. Model2 contributes an experimental localization evaluator and controlled tests. A production-ready universal detector was an aspiration, not a completed deliverable.
+The deliverables were trained research components, a local upload demo, reproducible experiment scripts and documented data and results. Model2 contributed an experimental localization evaluator. The prototype was intended for demonstration and further study.
 
 ## 4.5 Project details
 
 ### 4.5.1 Early models and the first transfer failures
 
-The first phase compared a small CNN, classifiers on frozen embeddings and a pretrained ResNet-18. The CNN used 90,000 CIFAKE training images and 10,000 validation images; its familiar test contained 20,000 images. ResNet improved familiar-test accuracy to 97.66%, yet accuracy on the separate 995-image collection fell to 25.2%. Reproducing the training resolution bottleneck recovered much of that loss. These comparisons showed why a larger familiar dataset and a stronger architecture did not establish reliable transfer (Keleş, 2026, E1–E6).
+The first CNN used 90,000 CIFAKE training images, 10,000 validation images and a 20,000-image familiar test. A pretrained ResNet-18 reached 97.66% on the familiar test but only 25.2% on the separate 995-image collection. Matching the training resolution recovered much of this loss. A stronger architecture alone had not solved source transfer (Keleş, 2026, E1–E6).
 
-Native-resolution data, image statistics and tile features were then tested to retain fine detail. Some methods helped particular sources but harmed others. Averaging their scores did not consistently improve detection, so attention shifted toward source coverage and evaluation design.
-
-Later audits qualified the early explanations. Fixed-size crops do not remove every dataset shortcut, and plausible camera-noise arguments do not establish what a model learned. These were hypotheses to test, not universal rules.
-
-The E20 tile model was compared with frozen Community-Forensics and B-Free detectors. Each still falsely flagged particular real-image sources. E26 combined source-calibrated alerts, but modern-generator probes found blind spots. E31 and E32 also lost performance on new real sources, showing why the first working demo required further research (Keleş, 2026, E20–E32).
-
-Threshold changes and balanced sources did not consistently solve transfer. E42 failed an RR evaluation of 16,953 images and 50,858 linked views. E43 improved familiar RR results but struggled with reconstructed images. Specialist combinations also missed GAN images or raised real-photo errors. Later correction models therefore had to reduce false alerts while protecting previously detected AI examples (Keleş, 2026, E33–E50).
+Native-resolution statistics, tile features, external detectors and combined scores were then compared. Gains on particular sources often came with new real-photo errors or missed AI types. Fixed crops and camera-noise explanations also needed controls rather than being assumed reliable. These failures shifted attention toward data quality, source coverage and explicit acceptance rules (Keleş, 2026, E8–E50).
 
 ### 4.5.2 Data integrity and corrected conclusions
 
-A major audit found that two source datasets used the opposite numeric label convention from the project. PixelProof defines 0 as real and 1 as AI, but raw source labels had entered a shared pool without translation. The error affected several earlier experiments. The remedy was an explicit source-to-project label mapping, checks against declared label names, rebuilt indices and reruns of affected experiments (Keleş, 2026, E19b–E19c).
-
-The corrected labels changed which methods were worth pursuing. DINOv2 had scored AUC 0.480 on Defactify, leading to an explanation that its features were unsuitable. After correction, AUC rose to 0.764 and that explanation was withdrawn. The claim that a larger training pool brought little benefit also needed revision: it reduced false alerts more than first reported, although performance still varied by source. The correction changed both the measurements and the next research direction (Keleş, 2026, E19c).
-
-A separate E27 audit found that a threshold-selection procedure could consult evaluation data. The corrected procedure used only calibration data before evaluation. The revised candidate then failed its admission requirement and was removed from the serving path. These corrections establish why the provenance of a score matters as much as its size.
+Two datasets used numeric labels opposite to our convention of 0 for real and 1 for AI. Explicit mapping and reruns corrected affected experiments. DINOv2’s Defactify AUC changed from 0.480 to 0.764, invalidating an earlier explanation that its features were unsuitable. The larger training pool also reduced false alerts more than first reported. A separate threshold-selection procedure was repaired because it could consult evaluation data; the corrected candidate failed admission and was removed (Keleş, 2026, E19b–E19c and E27).
 
 ### 4.5.3 Data roles and processing conditions
 
-The dataset register recorded each source, its licence, intended use and integrity checks. Acquired archives, selected training images and evaluation images were distinct populations. Download size therefore did not measure how many examples trained E92 or how reliable it was. The audit checked identical files, similar images and known shared scenes or prompts. Where origins remained unknown, that uncertainty was retained. A parent image means an original observation before this project creates resized or compressed versions of it.
+A parent is one image before project-created transformations. E92 training used 12,269 parents: 7,674 real and 4,595 AI. Four processing conditions produced 49,076 views. These comprised clean input, an assigned transport transformation, JPEG75 and a social-style view capped at 1080 pixels before JPEG75 encoding. Downloaded archive size, selected training data and evaluation size are different quantities. Source, licence, duplicate and known ancestry checks governed admission.
 
-E92 used 12,269 training parent images: 7,674 real and 4,595 AI. Four processing conditions produced 49,076 views. Later research added real images, giving 12,525 parents and 50,100 views; these were not the earlier E92 training counts. Table 2 places the E92 comparison alongside larger earlier evaluations. Each row describes a different model or data role, and the rows must not be summed into one independent test (Keleş, 2026, E42, E49, E92 and E139).
+Table 2 separates the major populations; its rows are not additive independent evidence. Earlier E42 and E43 evaluations failed acceptance. E43 passed 11/20 checks on 1,000 real plus 1,000 AI images, with 391 original and 490 processed real false alerts. E92 never reached that final stage because its preceding acceptance rule failed (Keleş, 2026, E42, E49, E92 and E139).
 
-Table 2. Training and evaluation populations at different project stages.
+Table 2. Training and evaluation populations at different stages.
 Population | Parents | Views | Role
 --- | --- | --- | ---
-E42 RR evaluation | 16,953 | 50,858 | Earlier model; failed acceptance
-E43 on E49-C | 2,000 | 4,000 | Earlier final; failed acceptance
+E42 evaluation | 16,953 | 50,858 | Earlier model evaluation
+E43 on E49-C | 2,000 | 4,000 | Earlier final evaluation
 E92 training | 12,269 | 49,076 | Training
 E92 on E66 | 320 | 640 | Reused development
-Later source-fold research | 12,525 | 50,100 | Internal diagnostics
-Model2 controlled pilot | 16 | 192 in E135 | Adaptive development
-
-The four training conditions were clean input, an assigned transport transformation, JPEG quality 75 and a social-style transformation that limited the longest side to 1080 pixels before JPEG quality 75 encoding. The development comparison used original and social-style views of the same 320 parents. More transformed views improve coverage of a processing question, but do not create more independent photographs.
-
-An earlier, larger E49-C test contained 1,000 real and 1,000 AI parent images. E43 falsely flagged 391 real originals and 490 processed copies, while detecting 943 and 955 AI images respectively. It passed 11 of 20 checks. After inspection, these results could guide research but no longer serve as an untouched final test. E92 was not evaluated on this collection because it failed the earlier acceptance stage. Its later 20/20 development result therefore cannot be reported as passing E49-C (Keleş, 2026, E49 and E92).
+Later research | 12,525 | 50,100 | Internal diagnostics
 
 ### 4.5.4 E92 representation and learning
 
-The route to E92 involved several rejected alternatives. Broader real-image coverage reduced false alerts but sometimes lost AI detections. Fine-tuning, grayscale input and small score corrections did not meet the full requirements. Later work added CLIP and DEAR features, a learned representation, and processing conditions closer to web use. E83 and E86 each passed 17 of 20 development checks. Additional training coverage preceded E92, although this sequence alone does not prove which added source caused the improvement (Keleş, 2026, E51–E92).
+Fine-tuning, grayscale inputs and early score corrections failed the full requirements. Later work added CLIP and DEAR features and learned adaptation; E83 and E86 passed 17/20 development checks before E92 reached 20/20. This sequence alone does not isolate which addition caused improvement (Keleş, 2026, E51–E92).
 
-E92 uses pretrained DINOv2, CLIP and DEAR components to turn images into numerical features. Their weights stay fixed. Project-trained components then learn how to use those features, and a correction adjusts the reference score. The correction was constrained to protect AI responses on training examples while reducing errors on difficult real-image sources. This protection had to be checked again on development images; a training constraint alone could not guarantee it.
-
-Figure 2 shows the application-level information flow. It deliberately separates frozen pretrained components, project adaptation and the interface decision. The browser receives a validated response rather than fitting a model. The local service verifies required artifacts and uses the original image plus a fixed processed view. No file name or camera declaration is an automatic authenticity rule.
+E92 uses feature-based transfer learning. Pretrained DINOv2, CLIP and DEAR components remain fixed, while project-trained components learn to use their features. A constrained correction adjusts the reference score to reduce real-image errors while protecting AI responses on training examples. That protection still needs evaluation on other images. Figure 2 shows how the learned system connects to the interface.
 
 ![Figure 2](figures/pipeline.png)
-Figure 2. PixelProof inference flow and separation of model evidence from display policy.
-
-This architecture is a composite research system. Referring to it as one downloadable universal model would conceal its dependencies, provenance limits and licensing conditions. E92 is the identifier of a frozen candidate, not a percentage score or a count of training epochs.
+Figure 2. PixelProof inference flow from upload to displayed evidence.
 
 ### 4.5.5 Development improvement and acceptance limits
 
-Figure 3 compares false alerts on exactly the same real development images. E92 reduced original-view false alerts from 68 of 160 for E43 to zero, and processed-view false alerts from 68 to 14. E86 was the preceding intermediate candidate. The comparison is paired and descriptive; it is not an independent estimate for all future photographs.
+Figure 3 compares the same 160 real development images. False alerts fell from 68 to zero for originals and from 68 to 14 for processed views. E92 detected 159 of 160 AI images in each condition. Ten numerical requirements per condition passed, but one original AI image previously detected by E43 became a new miss. The separate retention rule therefore failed.
 
 ![Figure 3](figures/false_alerts.png)
-Figure 3. Real-image false alerts on the reused development set, with 160 real images per condition.
+Figure 3. False alerts among 160 real development images per condition.
 
-E92 detected 159 of 160 AI images in each condition. It passed ten numerical requirements for originals and the same ten for processed views. However, it newly missed one original AI image that E43 had caught. Other recovered AI images could not cancel that loss under the predeclared retention rule. Consequently, the full set of acceptance requirements failed despite the 20/20 numerical milestone.
-
-The development collection contains 160 real observations from only ten SIDD scenes and 160 AI images from two previously seen families. Repeated use influenced later research choices. The result therefore supports progress on this collection, while leaving adaptive selection bias and unseen-source reliability unresolved. Thirteen of the fourteen processed real false alerts concentrate in two scenes, which also shows why a pooled rate can conceal weaknesses.
-
-The later E102 candidate reduced processed-view real false alerts further, from 14 to 12 of 160, and retained every E92-detected AI image. Nevertheless, it still missed the same E43-detected original AI example and failed complete acceptance. It was not promoted, and its gallery and E49 evaluations were not opened. E92 therefore identifies the current demo version, not the lowest value ever recorded in a development table (Keleş, 2026, E102).
+This reused collection contains only ten real SIDD scenes and two previously seen AI families. Thirteen of the fourteen processed real errors cluster in two scenes. Repeated use influenced later decisions, limiting generalization claims. E102 lowered processed false alerts to 12/160 but retained the same reference-relative AI miss, so it was not promoted (Keleş, 2026, E92 and E102).
 
 ### 4.5.6 Honest scores and the web demonstration
 
-The demo reports AI evidence, no clear AI evidence or uncertainty. It cannot certify authenticity. On its 0–100 score scale, the upper threshold is about 7.94 and the lower about 1.15. The upper came from E48 calibration with real-photo false-alert limits; the lower came from E49 analysis of already-used calibration and development data. These are experimental operating points, not probabilities or universal optima.
+The demo’s 0–100 scale is a model score, not an AI probability. Its upper threshold is about 7.94, inherited from E48 calibration; its lower threshold is about 1.15, from already-used E49 calibration/development analysis. An original score at or above the upper threshold retains an AI alert. Two E92 scores below the lower threshold yield no clear AI evidence; other cases are uncertain. E43 provides advice without vetoing two low E92 scores. Decisions use unrounded values.
 
-An original score at or above the upper threshold keeps an AI alert visible, with a review warning if needed. Both E92 views below the lower threshold yield no clear AI evidence; remaining cases are uncertain. E43 provides a separate advisory and cannot veto two low E92 scores. Decisions use unrounded scores rather than a 50% boundary.
-
-The combined rule was checked on the same 320 development images. Among 160 real images, 139 received no clear AI evidence, 21 were uncertain and none received an AI alert. Among 160 AI images, 159 received an alert and one was uncertain. Thus 14 processed-view false alerts do not mean 14 final website warnings: a low original score can leave the combined result uncertain. These reused observations do not predict every future upload (Keleş, 2026, current-policy audit).
-
-The service rejects unsupported or oversized uploads, checks model files before loading and reports unavailable models explicitly. Cancellation handling prevents overlapping heavy inference jobs, and the browser validates response fields. These repairs improve reliable operation; they do not increase measured detection accuracy.
+On the same development collection, the combined rule gave 139 real images no clear AI evidence and left 21 uncertain, with zero real AI alerts. It alerted on 159 AI images and left one uncertain. Thus per-view false alerts and final website warnings are different measurements. Upload validation, artifact checks and cancellation handling improve software operation, not measured detection accuracy (Keleş, 2026, current-policy audit).
 
 ### 4.5.7 Broader checks and rejected improvements
 
-The owner-gallery check found 9 false AI alerts among 206 distinct original real-image files, rising to 18 after social-style processing: 4.37% and 8.74%. The gallery mostly represents one phone and related scenes. It had already influenced earlier development and calibration decisions, so it is not an independent test. It nevertheless shows practical mistakes that the main development result could hide. Private photographs and individual file identifiers are excluded from this report (Keleş, 2026, E95).
+The owner gallery produced 9 false alerts among 206 real originals and 18 after processing. Mostly one phone and related scenes, it had already influenced development and was not independent. Separate source-fold research models also failed full acceptance; their results do not measure active E92 performance (Keleş, 2026, E95 and E146).
 
-Later research compared fresh diagnostic heads using source-separated folds. E146 tested calibration on one source fold and evaluation on another. Three of six calibration assignments were feasible, but no assignment met the full evaluation conditions. These were separate diagnostic models, not changes to E92. The result rejects that tested calibration recipe rather than proving that all calibration is impossible.
-
-E148 found a processing imbalance in the existing training collection: known 224-pixel derivatives represented 29.18% of real images and 7.68% of AI images. Such differences are possible shortcuts, not evidence of a specific causal mechanism. E150B successfully extracted new source-pixel features for all 12,525 parents after a memory-safe implementation amendment.
-
-The added features slightly improved clean-image averages but reduced AI detection after all three tested processing conditions. In one JPEG75 comparison, detection fell from 75.73% to 74.15%. A follow-up analysis examined 131 newly missed AI views. The added residual feature term was the largest harmful score change in 94 cases. This helped locate a weakness, but did not prove that removing the term would fix it. The candidate was rejected (Keleş, 2026, E151–E152).
-
-The later training audit could form only three AI-bearing groups under the known source relationships. Some shared origins and prompts remained unknown. Another 300 AI images in MNW and 100 real images in HDR+ remained unscored, but they had not been approved together as a balanced, independent final test. Unused data are useful only if their coverage and independence answer the intended question (Keleş, 2026, E139–E146).
+A processing audit found known 224-pixel derivatives in 29.18% of real training images versus 7.68% of AI images. Added source-pixel features slightly improved clean averages but harmed processed AI detection; one JPEG75 result fell from 75.73% to 74.15%. Follow-up decomposition identified harmful score contributions, without proving a physical cause. The candidate was rejected. Unscored reserves remained, but no balanced, independent final test was established (Keleş, 2026, E148–E152).
 
 ### 4.5.8 Model2 localization and its limits
 
-Model2 compares predicted edit regions with reference masks and checks authentic images for false alarms. Early tests used the true mask size to choose the predicted area, which made their overlap scores misleading. In the later 120-image CocoGlide evaluation, a simple central-region baseline still outperformed the detector. This prompted tests with edits placed elsewhere. A separate audit also found shared COCO image origins, limiting claims of independent data (Keleş, 2026, E17, E107 and E115–E117).
+Model2 predicts edited regions and checks authentic images for false alarms. An early overlap evaluation improperly used true mask size to choose predicted area. Later, a central-region baseline outperformed the detector on 120 CocoGlide images; shared COCO origins also limited independence. These findings motivated a placement test using sixteen reused parents and one Stable Diffusion 1.5 editor (Keleş, 2026, E17 and E107–E135).
 
-The controlled pilot used sixteen previously inspected images and one Stable Diffusion 1.5 editor. Moving edits reduced the earlier model’s pixel AUC from 0.742 to 0.566. Training on both placements partly recovered new-placement performance, but harmed original-placement performance and highlighted more authentic pixels incorrectly. Table 3 summarizes these trade-offs, with AUC rounded to two decimals (Keleş, 2026, E132–E135).
+Table 3 shows that training on two edit placements improved the new placement but harmed the original placement and increased false markings on authentic images. The candidate was rejected. Moving edits also changes content, so the result does not isolate location as the sole cause. Model2 remains experimental.
 
-Table 3. Model2 placement sensitivity on sixteen reused parents, original-image condition.
+Table 3. Model2 trade-offs on sixteen reused parents, original-image condition.
 Endpoint | Earlier head | Two-placement head
 --- | --- | ---
 Original-placement pixel AUC | 0.74 | 0.70
 New-placement pixel AUC | 0.57 | 0.64
 Authentic falsely flagged area | 17.11% | 25.74%
 
-The candidate was rejected because improvements introduced other errors. Moving masks also changes edited content, so this is not pure causal proof of location bias. Model2 remains experimental and needs independent parents and more editors.
-
 ## 4.6 Results
 
-The project delivered a trained E92 research system, a local web demonstration and a reproducible record of model development and rejection. Table 4 reports the central E92 per-view outcome at the fixed upper cut. The parent collection is reused development data, with 160 real and 160 AI images per condition. These rates do not describe the paired interface policy.
+The completed outcome is an E92 research system, local demo and reproducible development record. Table 4 summarizes per-view results on 160 real plus 160 AI development images, not the paired website outcomes in Section 4.5.6.
 
-Table 4. E92 per-view results on the reused E66 development collection.
+Table 4. E92 per-view results on the reused development collection.
 Measure | Original | Social-style
 --- | --- | ---
 AI detection | 159/160 (99.38%) | 159/160 (99.38%)
@@ -223,57 +160,39 @@ Balanced accuracy | 99.69% | 95.31%
 Numerical criteria | 10/10 | 10/10
 New AI misses versus E43 | 1 | 0
 
-The 20 numerical checks passed, but full acceptance failed because of the one new original AI miss. Universal reliability and independent final-test success were not achieved. Model2 did not qualify as a reliable localization service. The latest recorded engineering checkpoint passed 1,245 Python tests; this measures software checks, not 1,245 successful image classifications. There is no measured company deployment impact or production rollout commitment. The completed outcome is a student research prototype with documented limitations (Keleş, 2026).
+The numerical improvement did not meet full acceptance or prove universal reliability. Model2 also remained experimental. The engineering checkpoint passed 1,245 Python tests, which check software behavior rather than image accuracy. No production rollout or company deployment impact was measured (Keleş, 2026).
 
 # 5. Internship experience
 
 ## 5.1 Learning
 
-The most useful lesson from the work is to ask what a good score actually proves. The first high accuracy values encouraged further development, but errors on new sources changed the priority. The project then needed better data checks and comparisons, not just a larger model. The reversed-label incident is the clearest example: checking the inputs overturned an explanation that had sounded convincing.
-
-I learned how to sustain a long project on my own and reduce its scope when the work became too complex. Asking focused questions helped me communicate problems and use advice while remaining responsible for my decisions. Running my own experiments made machine learning concepts more concrete. I was already interested in this field before the internship; applying it in a substantial project strengthened that interest and gave me a clearer understanding of the work involved.
+I learned to ask what a good score actually proves. Early accuracy looked promising, but failures on new sources and the label correction changed my conclusions. I also learned to sustain an individual project, reduce scope when it became too complex and ask focused questions. Practical experiments made machine learning concepts clearer and strengthened my existing interest in the field.
 
 ## 5.2 Relation to undergraduate education
 
-CS412 Machine Learning gave me the concepts I used to start this project and develop the initial experiments. PROJ201 had introduced me to applied machine learning through a team project for an application intended to guide visually impaired users. We trained YOLOv11 on a custom dataset and integrated it into the application; our team placed first in our group. That experience gave me an initial understanding of model training and application integration. DSA210 provided my early foundations in data science, which helped me approach the data preparation and analysis in this internship.
-
-The internship exposed preparation needs beyond the initial model fit. Experimental design and data provenance required particular attention: valid image files could still have inconsistent labels, and different files could share scenes or generation ancestry. These issues became clearer through the project’s failed experiments and corrections.
+CS412 Machine Learning provided the concepts for the first experiments. In PROJ201, our team trained YOLOv11 on a custom dataset and integrated it into an application intended to guide visually impaired users; we placed first in our group. DSA210 provided foundations in data science. The internship showed that I also needed stronger preparation in experimental design and data provenance, especially label consistency and shared image origins.
 
 ## 5.3 Major difficulties
 
-The first difficulty was unreliable transfer across sources. Strong internal scores did not prevent false alarms on unfamiliar real photographs. The response was to expand documented source coverage, report errors by group and distinguish training, calibration and evaluation. The generalization problem remains partly unresolved, so the report records the response without claiming a complete solution.
-
-The second difficulty was trustworthy measurement. Reversed source labels and an evaluation-dependent threshold procedure changed the meaning of earlier results. Explicit label mapping, isolated calibration and reruns corrected the affected evidence. The history retained both original and corrected conclusions, making the correction auditable.
-
-The third difficulty was running a multi-component research system within local resource and reliability limits. Feature caching, bounded batches and resource guards helped. An E150 memory failure led to a separately recorded, pixel-equivalent implementation amendment, E150B. Runtime checks addressed cancellation and artifact-manifest handling without changing the scientific model. These are concrete engineering repairs rather than proof of better detection.
+The first difficulty was source transfer. Expanding documented coverage and inspecting group-level errors helped, but generalization remains unresolved. The second was measurement integrity: explicit label mapping, isolated calibration and reruns corrected misleading results. The third was local resource and runtime limits. Feature caching and bounded batches helped; a memory failure required a separately recorded implementation repair. Cancellation and artifact checks improved operation without changing the model.
 
 ## 5.4 A typical day
 
-The approved schedule was Monday through Thursday on site and Friday remote. On office days, I usually arrived at 7:30 a.m. After breakfast, I worked through the morning until around noon or early afternoon. I continued working afterwards, with occasional short tea or coffee breaks.
-
-My tasks followed the stage of the project: reviewing the plan, implementing a change, running experiments, interpreting results and updating the records. When a question arose, I consulted my supervisor or mentors for clarification and then decided how to proceed. This routine helped me maintain progress during a long individual project.
+On office days, I usually arrived at 7:30 a.m. After breakfast, I worked through the morning until around noon or early afternoon, then continued with occasional tea or coffee breaks. Work involved reviewing the plan, implementation, experiments, interpretation and updating records. I asked my supervisor or mentors for clarification when needed and then decided how to proceed. Fridays were remote.
 
 # 6. Conclusions
 
-PixelProof progressed from early classifiers with large source-transfer failures to a working research demo with strong results on a defined development collection. E92 reduced real-image false alerts while maintaining high aggregate AI detection in that collection. The interface now distinguishes a model signal from an authenticity claim and separates the main model from an advisory reference.
-
-The main result has a clear limit. All 20 numerical checks passed, but one AI image caught by the reference became a new miss. Reusing the development collection also limits claims about new sources. Later source tests and the Model2 pilot exposed other weaknesses. Keeping these failures in the records helped explain why candidates were rejected and why the demo remained a research prototype.
-
-The durable outcome is both an implemented prototype and a traceable method of evaluating it. Data corrections, rejected hypotheses and runtime repairs are part of that outcome. They support a credible student engineering project while identifying exactly which claims need further evidence.
+PixelProof became a working research prototype that substantially reduced real-image false alerts on a defined development collection. Its value also lies in the record of corrections and rejected ideas. The remaining reference-relative AI miss, repeated development-data use and later source failures prevent a claim of universal reliability. Model2 needs broader evidence before use beyond experiments.
 
 # 7. Recommendations
 
-Future internship students should establish dataset meanings, permissible data roles and error metrics before a long training run. They should learn to reproduce a saved result and inspect individual changes, since a better average can hide newly harmed examples. Basic familiarity with version control, Python testing and the host organization’s data rules would reduce avoidable delays.
-
-For this project, the next research priority is an explicitly independent and sufficiently diverse evaluation design. Source ancestry, scene dependence and generator coverage should be resolved before claiming independence. Calibration must remain separate from evaluation, and operating costs should determine a prospectively chosen decision policy. Model2 needs more independent parents and editors together with authentic and conventional-edit controls.
-
-In the workplace, students should agree on scope and review expectations with their supervisor, record incomplete work honestly and protect personal or restricted data. Results should be communicated in plain language: what changed, which population supports the finding and what still fails. AI coding assistance can accelerate work, but the student must understand and verify what will be submitted and presented.
+Future work should establish an independent evaluation with diverse cameras and generators, verified source ancestry and calibration separated from evaluation. Model2 needs more independent parents and editors, including authentic and conventional-edit controls. Future interns should agree on scope early, learn to reproduce saved results, keep failures in the record and communicate what the evidence supports. AI assistance requires checking its output and understanding the work personally.
 
 # 8. References
 
 Abdelhamed, A., Lin, S., & Brown, M. S. (2018). A high-quality denoising dataset for smartphone cameras. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. Retrieved September 25, 2026, from https://abdokamel.github.io/sidd/
 
-Adobe. (n.d.). Content Credentials overview. Adobe Help Center. Retrieved September 25, 2026, from https://helpx.adobe.com/creative-cloud/apps/adobe-content-authenticity/content-credentials/overview.html
+Adobe. (2026, August 25). Content Credentials overview. Adobe Help Center. Retrieved September 29, 2026, from https://helpx.adobe.com/creative-cloud/apps/adobe-content-authenticity/content-credentials/overview.html
 
 Chen, C., Chen, Q., Xu, J., & Koltun, V. (2018). Learning to see in the dark. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. Retrieved September 25, 2026, from https://cchen156.github.io/SID.html
 
@@ -321,20 +240,4 @@ Uncertain fraction | ≤20% | 1.25% | 1.56%
 
 ## 9.2 Evidence and reproduction map
 
-Table 6 maps the principal findings to compact repository evidence. The source snapshot is commit 497d45c. Large weights, datasets and private predictions remain outside Git. Reproducing an existing receipt is distinct from training a new candidate or opening a protected final collection.
-
-Table 6. Primary project evidence for the report.
-Finding | Repository evidence
---- | ---
-Earlier comprehensive-final failure | evidence/e49_final_result.json
-E92 numerical result and failed retention | evidence/e92_development.json
-Unpromoted E102 successor | evidence/e102_development.json
-Bias and readiness audit | evidence/e92_readiness_audit_2026-09-14.json
-Current paired interface policy | evidence/project_audit_20260916.json
-Owner-gallery aggregate results | evidence/e95_gallery_report.json
-Model2 placement comparison | evidence/e135_location_learning.json
-Processing imbalance | evidence/e148_processing_inventory.json
-Residual-feature rejection | evidence/e151_source_pixel_comparison.json
-Fixed-model score decomposition | evidence/e152_logit_decomposition.json
-
-AI recall is TP divided by TP plus FN. Real false-positive rate is FP divided by FP plus TN. Balanced accuracy averages AI recall and real specificity. Automatic coverage is the fraction receiving an automatic decision; accuracy among those decisions excludes abstentions from its denominator. Pixel AUC ranks edited against unedited locations, while intersection-over-union measures overlap at a chosen map threshold. These quantities answer different questions and should not be exchanged.
+Full experiment settings, corrections and aggregate evidence remain in the repository snapshot cited as Keleş (2026). Private images and large weights are excluded from Git.

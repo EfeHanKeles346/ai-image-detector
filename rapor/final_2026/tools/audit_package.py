@@ -15,10 +15,10 @@ def check(name,ok):
  if not ok:raise AssertionError(name)
 name='CS395_FinalReport_EfeHan_Keles_25September2026'
 d=Document(OUT/(name+'.docx'));r=PdfReader(OUT/(name+'.pdf'))
-check('report_30_pages',len(r.pages)==30)
+check('report_18_pages',len(r.pages)==18)
 check('abstract_at_most_250_words',len(c.ABSTRACT.split())<=250)
 check('references_14_including_10_scholarly',len(c.REFS)==14)
-check('figures_3_tables_6',len(d.inline_shapes)==3 and len(d.tables)==6)
+check('figures_3_tables_5',len(d.inline_shapes)==3 and len(d.tables)==5)
 for sec in d.sections:check('one_inch_margins',all(abs(x.inches-1)<.0001 for x in [sec.top_margin,sec.bottom_margin,sec.left_margin,sec.right_margin]))
 ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
 with zipfile.ZipFile(OUT/(name+'.docx')) as z:
@@ -34,11 +34,11 @@ with zipfile.ZipFile(OUT/(name+'.docx')) as z:
 headings=[b['text'] for b in c.B if b['type']=='heading'];m=json.loads((ROOT/'sources/heading_pages.json').read_text());actual={}
 for i,page in enumerate(r.pages):
  text=' '.join(page.extract_text().split())
- if i>=4:
+ if i>=3:
   for h in headings:
    if h in text:actual[h]=i+1
 check('all_35_toc_pages_match_render',len(actual)==35 and actual==m)
-toc=' '.join(' '.join(p.extract_text().split()) for p in r.pages[2:4])
+toc=' '.join(' '.join(p.extract_text().split()) for p in r.pages[2:3])
 for h in headings:check('toc_entry:'+h,bool(re.search(re.escape(h)+r'\.*\s*'+str(m[h])+r'\b',toc)))
 for p in d.paragraphs:
  if p.style.name.startswith('Heading'):
@@ -57,16 +57,25 @@ body=' '.join(b.get('text','') for b in c.B if b['type']=='paragraph')
 check('no_relative_or_lowercase_figure_citations',not re.search(r'\bthe (Figure|Table) \d|\b(figure|table) \d|\b(Figure|Table) \d (above|below)',body))
 for key,txt in c.REFS:
  author='Türk Telekom' if key.startswith('Türk') else key
- check('reference_cited:'+key,author in body)
- check('reference_has_full_entry:'+key,'Retrieved September 25, 2026, from https://' in txt and bool(re.search(r'\((?:\d{4}[ab]?|n\.d\.)\)\.',txt)) and len(txt.split('Retrieved')[0].split())>=7)
+ year=re.search(r'\((\d{4}[ab]?)',txt).group(1)
+ check('reference_cited:'+key,bool(re.search(re.escape(author)+r'(?: et al\.)?(?: \(|, )'+year,body)))
+ check('reference_has_full_entry:'+key,bool(re.search(r'Retrieved September (?:25|29), 2026, from https://',txt)) and bool(re.search(r'\(\d{4}[ab]?(?:, [A-Za-z]+ \d{1,2})?\)\.',txt)) and len(txt.split('Retrieved')[0].split())>=7)
 # Page-span checks use the rendered body, not estimated word counts.
+def section_span(heading):
+ start=next(i for i,b in enumerate(c.B) if b.get('text')==heading)
+ end=next(i for i in range(start+1,len(c.B)) if c.B[i]['type']=='heading')
+ last=next(b['text'] for b in reversed(c.B[start+1:end]) if b['type']=='paragraph')
+ suffix=' '.join(last.split()[-12:])
+ pages=[i+1 for i,p in enumerate(r.pages) if suffix in ' '.join(p.extract_text().split())]
+ if len(pages)!=1: raise AssertionError('Ambiguous section ending: '+heading)
+ return pages[0]-m[heading]+1
 check('company_at_most_3_pages',m['3. Project background']-m['2. Company information']<=3)
 check('literature_at_most_3_pages',m['4. Internship project']-m['3.4 Related literature']<=3)
 check('details_at_most_10_pages',m['4.6 Results']-m['4.5 Project details']<=10)
-check('results_one_page',m['5. Internship experience']-m['4.6 Results']==1)
+check('results_one_page',section_span('4.6 Results')==1)
 check('experience_at_most_3_pages',m['6. Conclusions']-m['5. Internship experience']<=3)
-check('conclusions_one_page',m['7. Recommendations']-m['6. Conclusions']==1)
-check('recommendations_one_page',m['8. References']-m['7. Recommendations']==1)
+check('conclusions_one_page',section_span('6. Conclusions')==1)
+check('recommendations_one_page',section_span('7. Recommendations')==1)
 e=json.loads((REPO/'evidence/e92_development.json').read_text())
 for cond,fp in [('publisher_original',0),('social_q75',14)]:
  b=e['reports'][cond]['new']['binary_metrics'];check('E92_confusion:'+cond,b['confusion']['tp']==159 and b['confusion']['fn']==1 and b['confusion']['fp']==fp)
@@ -107,6 +116,6 @@ for p in sorted(OUT.iterdir()):
  check('under_10MB:'+p.name,p.stat().st_size<10_000_000);files[p.name]={'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
 check('seven_primary_files',len(files)==7)
 placeholders=[match for p in d.paragraphs for match in re.findall(r'\[TO COMPLETE[^\]]*\]',p.text)]
-result={'state':'pass_with_student_deferred_fields','report_pages':len(r.pages),'report_headings':35,'figures':3,'tables':6,'references':14,'checks_passed':len(checks),'checks':checks,'files':files,'unresolved_fields':len(placeholders),'unresolved_placeholders':placeholders,'claim_boundary':'Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing.'}
+result={'state':'pass_with_student_deferred_fields','report_pages':len(r.pages),'report_headings':35,'figures':3,'tables':5,'references':14,'checks_passed':len(checks),'checks':checks,'files':files,'unresolved_fields':len(placeholders),'unresolved_placeholders':placeholders,'claim_boundary':'Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing.'}
 (ROOT/'sources/package_audit.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n')
 print(json.dumps({k:result[k] for k in ['state','report_pages','checks_passed','unresolved_fields']},indent=2))

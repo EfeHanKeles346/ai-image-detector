@@ -15,15 +15,15 @@ This is the current E1–E152 submission draft. It supersedes the old E26 report
 | Digest, reading copy | [PDF](deliverables/CS395_Digest_EfeHan_Keles_25September2026.pdf) |
 | Study material | [Turkish guide](STUDY_GUIDE_TR.md), [English speaking notes](SPEAKER_NOTES_EN.md) |
 
-The deck has 13 spoken slides and two reference slides. Suggested timing is 835 seconds (13:55), subject to actual rehearsal. The report has 30 pages including front matter, 3 figures, 6 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
+The deck has 13 spoken slides and two reference slides. Suggested timing is 835 seconds (13:55), subject to actual rehearsal. The report has 18 pages including front matter, 3 figures, 5 tables and 14 references, of which 10 are scholarly works. No new classifier experiment, dataset download, final-reserve opening or serving change occurred during report production.
 
 ## Desktop submission folder
 
 Guideline page 1 explicitly names a `.doc` report and `.pptx` presentation and digest. The Desktop folder `CS395_PixelProof_Submission_2026` now contains only those three current files, verified against the repository copies. PDF/DOCX reading and editing copies remain in `deliverables/`; the former Desktop support files are preserved under `~/Documents/PixelProof_Submission_Support_2026/2026-09-25/`. This file organization does not resolve the deferred personal/company fields.
 
-## Latest narrative revision — 28 September 2026
+## Latest revision — 29 September 2026
 
-The 217-word abstract now includes the experiment-to-decision workflow and distinguishes E92 training from reused development evaluation. Table 1 traces representative findings to the next action; Table 2 separates earlier larger evaluations, E92 training and later diagnostic populations. The source receipts, review scope and final checks are recorded in `sources/historical_narrative_review_20260928.json`. All 649 scoped artifact checks pass; the five deferred information groups remain.
+The report was shortened from 30 to 18 pages, with paragraph prose reduced from 5,100 to 2,378 words and company prose from 401 to 191 words. Required structure, important successes and failures, data roles and scientific limits remain. Transfer learning is explicitly named. The redundant evidence-map table was removed; three figures and five tables remain. All fourteen references have a specific use; [REFERENCE_REVIEW.md](REFERENCE_REVIEW.md) records metadata checks, the Adobe date correction and access limitations. All 532 scoped artifact checks pass; the five deferred information groups remain. The receipt is `sources/concise_report_review_20260929.json`. Presentation and digest exports are unchanged.
 
 ## Evidence and claims
 
