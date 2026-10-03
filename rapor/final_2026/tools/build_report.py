@@ -139,7 +139,12 @@ for idx,b in enumerate(c.B):
     a,z=b['text'].split(token,1);p.clear();p.add_run(a);p.add_run(token).italic=True;p.add_run(z);break
  elif typ=='figure':
   p=d.add_paragraph();p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.keep_with_next=True;p.paragraph_format.line_spacing=1
-  p.add_run().add_picture(str(ROOT/'figures'/b['file']),width=Inches(6.27))
+  shape=p.add_run().add_picture(str(ROOT/'figures'/b['file']),width=Inches(6.27))
+  # Explicit drawing extents prevent the exporter from adding a horizontal offset.
+  for attr in ['distT','distB','distL','distR']:shape._inline.set(attr,'0')
+  extent=OxmlElement('wp:effectExtent')
+  for attr in ['l','t','r','b']:extent.set(attr,'0')
+  shape._inline.insert(1,extent)
   p=paragraph(f"Figure {b['number']}. {b['title']}",'Caption');p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.keep_with_next=False;p.paragraph_format.keep_together=True
  elif typ=='table':
   p=paragraph(f"Table {b['number']}. {b['title']}",'Caption');p.alignment=WD_ALIGN_PARAGRAPH.CENTER;p.paragraph_format.keep_with_next=True

@@ -121,3 +121,8 @@ The newly supplied aa.pdf is another copy of the six-page general internship rul
 ## Exported font verification — 3 October 2026
 
 Times New Roman must be present in the actual PDF, not merely named in editable-document XML. The second audit caught Liberation Serif substitution in all three PDFs. `tools/fonts.conf` supplies local installed fonts for rendering, and `tools/pdf_fonts.py` checks font names and embedding, including form resources. All three repaired PDFs pass; unchanged editable files and Desktop synchronization were also checked. See `sources/font_render_review_20261003.json`.
+
+
+## Rendered figure alignment — 3 October 2026
+
+The centered-figures requirement applies to actual image bounds, not only the source paragraph setting. Three 9.123 pt horizontal offsets were corrected with explicit zero drawing distances/effect extents. The rendered center error is now 0.073 pt and all figures remain inside the text width. Geometry checks are included in the package audit.

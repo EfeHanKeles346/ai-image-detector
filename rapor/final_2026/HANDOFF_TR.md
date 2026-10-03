@@ -1,5 +1,7 @@
 # Güncel teslim durumu
 
+**3 Ekim üçüncü kontrol:** Rapordaki üç şeklin PDF’de yaklaşık 3,22 mm sağa kaydığını ölçerek bulduk ve düzelttik. Word’de ortalı ayarı bulunması, çıktıda tam ortalamayı garanti etmemiş. Şimdi merkez farkı 0,03 mm’den küçük. DOCX/PDF/DOC ve masaüstündeki DOC güncellendi. Yalnızca 5 ve 12. sayfanın görsel yerleşimi değişti; metin, 21 sayfa ve içindekiler korunuyor. Güncel otomatik kontrol sayısı 605. Sunum ve digest değişmedi.
+
 **3 Ekim ek kontrolü:** PDF dönüşümünde Times New Roman yerine Liberation Serif kullanıldığını bulduk. Rapor, sunum ve digest PDF’leri gerçek Times New Roman gömülerek yenilendi; 21 + 12 + 1 sayfanın tamamı görsel olarak incelendi. Güncel kontrol sayısı 598. Masaüstündeki digest PDF yenilendi; DOC ve PPTX zaten doğru fontu belirttiğinden değişmedi. Üç teslim dosyasının depodaki sürümlerle eşleşmesi doğrulandı. Önceki tarihli notlar kendi kontrol anını anlatır.
 
 **3 Ekim düzeltmesi:** Alperen’in geri bildirimine göre kaynakça başlığı ortalandı, her kaynağın ikinci ve sonraki satırlarına beş boşluk karşılığı asılı girinti uygulandı. Raporun 19–20. sayfaları değişti; toplam 21 sayfa ve içindekiler korunuyor. Masaüstündeki DOC güncel. İlk teslimin 29 Eylül tarihi dosya adında ve kapakta korundu. Yeniden yükleme son tarihi 4 Ekim 2026; dosya henüz portala yüklenmedi. Kaynakçaya da genel “girinti yok” kuralını uygulayan önceki yorum bu özel geri bildirimle düzeltildi.

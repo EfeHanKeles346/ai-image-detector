@@ -5,7 +5,7 @@
   "figures": 3,
   "tables": 5,
   "references": 15,
-  "checks_passed": 598,
+  "checks_passed": 605,
   "checks": [
     {
       "name": "report_within_requested_20_to_25_pages",
@@ -21,6 +21,34 @@
     },
     {
       "name": "figures_3_tables_5",
+      "passed": true
+    },
+    {
+      "name": "three_rendered_figures",
+      "passed": true
+    },
+    {
+      "name": "rendered_figure_centered:1",
+      "passed": true
+    },
+    {
+      "name": "rendered_figure_within_text_width:1",
+      "passed": true
+    },
+    {
+      "name": "rendered_figure_centered:2",
+      "passed": true
+    },
+    {
+      "name": "rendered_figure_within_text_width:2",
+      "passed": true
+    },
+    {
+      "name": "rendered_figure_centered:3",
+      "passed": true
+    },
+    {
+      "name": "rendered_figure_within_text_width:3",
       "passed": true
     },
     {
@@ -2411,15 +2439,15 @@
     },
     "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc": {
       "bytes": 258048,
-      "sha256": "c90e909debb0d1ce28a26efa5ce945bdecb499d189e5bad5561dddf4975a1b33"
+      "sha256": "239cf19ab37561ce825a32fb9f7dd17db2bb28e75a9edab8aa10e9d98d3e471f"
     },
     "CS395_FinalReport_Efe_Han_Keleş_29September2026.docx": {
-      "bytes": 176548,
-      "sha256": "5eacae5a84065bd34755ec71c1e564abc18f8417b7d40541e6ccc44f6603140e"
+      "bytes": 176736,
+      "sha256": "71da5780554a822b28cb973ee7f4e5055e4ff3b639de7e05637ae871d2ab243b"
     },
     "CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf": {
-      "bytes": 394395,
-      "sha256": "706d2ffc9bfd6f359edc6b312216e9e8564ef57f0955c35e05e27f17478eb26c"
+      "bytes": 394380,
+      "sha256": "f15c648178ac131af7e09da9f71986213653b44fe99e1305a684450b815ced99"
     },
     "CS395_Presentation_Efe_Han_Keleş_29September2026.pdf": {
       "bytes": 607367,

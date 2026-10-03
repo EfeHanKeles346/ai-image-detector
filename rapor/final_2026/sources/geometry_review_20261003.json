@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-03",
+  "baseline": "85fbcf4",
+  "finding": "Three report figures were shifted right in the actual PDF although their paragraphs were centered.",
+  "before_center_offset_pt": [
+    9.123031,
+    9.123031,
+    9.123031
+  ],
+  "after_center_offset_pt": [
+    0.073031,
+    0.073031,
+    0.073031
+  ],
+  "fix": "Explicit zero distances and effect extents on inline drawings; source builder and all report formats updated.",
+  "regression_old_fails_new_passes": true,
+  "diff": {
+    "pages": 21,
+    "changed_pages": [
+      5,
+      12
+    ],
+    "unchanged_pages": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "page_text_unchanged": true
+  },
+  "independent_checks": {
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": {
+      "pages": 1,
+      "font_program_names": [
+        "TimesNewRomanPS-BoldMT",
+        "TimesNewRomanPSMT"
+      ],
+      "font_programs_checked": 8,
+      "colors": [
+        "(0.0, 0.0, 0.0)"
+      ],
+      "out_of_page_chars": 0,
+      "control_glyphs": [],
+      "placeholder_hits": []
+    },
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf": {
+      "pages": 21,
+      "font_program_names": [
+        "TimesNewRomanPS-BoldMT",
+        "TimesNewRomanPS-ItalicMT",
+        "TimesNewRomanPSMT"
+      ],
+      "font_programs_checked": 63,
+      "colors": [
+        "(0.0, 0.0, 0.0)"
+      ],
+      "out_of_page_chars": 0,
+      "control_glyphs": [],
+      "placeholder_hits": [],
+      "footer_sequence": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21"
+      ],
+      "table_pages": {
+        "1": 8,
+        "2": 11,
+        "3": 15,
+        "4": 16,
+        "5": 21
+      },
+      "figure_pages": {
+        "1": 5,
+        "2": 12,
+        "3": 12
+      }
+    },
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pdf": {
+      "pages": 12,
+      "font_program_names": [
+        "TimesNewRomanPS-BoldMT",
+        "TimesNewRomanPSMT"
+      ],
+      "font_programs_checked": 264,
+      "colors": [
+        "(0.0, 0.0, 0.0)"
+      ],
+      "out_of_page_chars": 0,
+      "control_glyphs": [],
+      "placeholder_hits": []
+    },
+    "legacy_doc_reference_roundtrip": {
+      "entries": 15,
+      "reference_text_unchanged": true,
+      "hanging_indent_pt": 15,
+      "single_spacing": true,
+      "space_after_pt": 12,
+      "heading_centered": true
+    },
+    "desktop_hash_matches": {
+      "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": true,
+      "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc": true,
+      "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx": true
+    }
+  },
+  "legacy_pdf_geometry_and_spatial_page_text_match": true,
+  "visual_review": "Changed pages 5 and 12 inspected at full page size. Other 19 pages are pixel-identical at 80 dpi to the fully inspected prior render. Presentation and digest bytes unchanged.",
+  "files": {
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.docx": "71da5780554a822b28cb973ee7f4e5055e4ff3b639de7e05637ae871d2ab243b",
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": "a19976aeceacf81aabc254f897976d37541b5bbf18c9460f53f6a58336f2d212",
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf": "f15c648178ac131af7e09da9f71986213653b44fe99e1305a684450b815ced99",
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pptx": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea",
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pdf": "462b10064918fe3fe841f2ba964539e011e8ab0f0d571c7488ae4a61af9574a3",
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc": "239cf19ab37561ce825a32fb9f7dd17db2bb28e75a9edab8aa10e9d98d3e471f",
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx": "c2dd24f97ca06a1f89339036a60602067405150b0e461cea5ecc20bffac7d6fd"
+  },
+  "limits": "No native Microsoft Office check, Turnitin assessment, school upload or acceptance guarantee."
+}

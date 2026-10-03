@@ -7,6 +7,7 @@ from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from pypdf import PdfReader
+import pdfplumber
 from pdf_fonts import uses_embedded_times_new_roman
 ROOT=Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];OUT=ROOT/'deliverables'
 spec=importlib.util.spec_from_file_location('c',ROOT/'sources/report_content.py');c=importlib.util.module_from_spec(spec);spec.loader.exec_module(c)
@@ -20,6 +21,12 @@ check('report_within_requested_20_to_25_pages',20<=len(r.pages)<=25)
 check('abstract_at_most_250_words',len(c.ABSTRACT.split())<=250)
 check('references_count_15',len(c.REFS)==15)
 check('figures_3_tables_5',len(d.inline_shapes)==3 and len(d.tables)==5)
+with pdfplumber.open(OUT/(name+'.pdf')) as rendered:
+ figures=[(page,img) for page in rendered.pages for img in page.images]
+ check('three_rendered_figures',len(figures)==3)
+ for i,(page,img) in enumerate(figures,1):
+  check('rendered_figure_centered:'+str(i),abs((img['x0']+img['x1']-page.width)/2)<.5)
+  check('rendered_figure_within_text_width:'+str(i),img['x0']>=71.5 and img['x1']<=page.width-71.5)
 for sec in d.sections:check('one_inch_margins',all(abs(x.inches-1)<.0001 for x in [sec.top_margin,sec.bottom_margin,sec.left_margin,sec.right_margin]))
 ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
 with zipfile.ZipFile(OUT/(name+'.docx')) as z:
