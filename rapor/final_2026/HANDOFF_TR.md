@@ -1,5 +1,7 @@
 # Güncel teslim durumu
 
+**3 Ekim ek kontrolü:** PDF dönüşümünde Times New Roman yerine Liberation Serif kullanıldığını bulduk. Rapor, sunum ve digest PDF’leri gerçek Times New Roman gömülerek yenilendi; 21 + 12 + 1 sayfanın tamamı görsel olarak incelendi. Güncel kontrol sayısı 598. Masaüstündeki digest PDF yenilendi; DOC ve PPTX zaten doğru fontu belirttiğinden değişmedi. Üç teslim dosyasının depodaki sürümlerle eşleşmesi doğrulandı. Önceki tarihli notlar kendi kontrol anını anlatır.
+
 **3 Ekim düzeltmesi:** Alperen’in geri bildirimine göre kaynakça başlığı ortalandı, her kaynağın ikinci ve sonraki satırlarına beş boşluk karşılığı asılı girinti uygulandı. Raporun 19–20. sayfaları değişti; toplam 21 sayfa ve içindekiler korunuyor. Masaüstündeki DOC güncel. İlk teslimin 29 Eylül tarihi dosya adında ve kapakta korundu. Yeniden yükleme son tarihi 4 Ekim 2026; dosya henüz portala yüklenmedi. Kaynakçaya da genel “girinti yok” kuralını uygulayan önceki yorum bu özel geri bildirimle düzeltildi.
 
 

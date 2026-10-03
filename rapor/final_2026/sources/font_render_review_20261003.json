@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-03",
+  "baseline": "89e4ded",
+  "finding": "PDF export silently substituted Liberation Serif despite Times New Roman in OOXML. Previous audit did not inspect actual PDF fonts.",
+  "repair": "Explicit FONTCONFIG_FILE using installed Times New Roman; audit now rejects substituted or unembedded PDF fonts.",
+  "files": {
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": {
+      "before_sha256": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31",
+      "after_sha256": "a19976aeceacf81aabc254f897976d37541b5bbf18c9460f53f6a58336f2d212",
+      "pages": 1,
+      "page_text_sequence_unchanged_ignoring_whitespace": true,
+      "old_rejected_by_new_check": true,
+      "new_passes": true,
+      "fonts": [
+        "TimesNewRomanPS-BoldMT",
+        "TimesNewRomanPSMT"
+      ]
+    },
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf": {
+      "before_sha256": "c18fc302dbad41c0ff925b19078f8027c261cafa833853f184d8c71d216b4298",
+      "after_sha256": "706d2ffc9bfd6f359edc6b312216e9e8564ef57f0955c35e05e27f17478eb26c",
+      "pages": 21,
+      "page_text_sequence_unchanged_ignoring_whitespace": true,
+      "old_rejected_by_new_check": true,
+      "new_passes": true,
+      "fonts": [
+        "TimesNewRomanPS-BoldMT",
+        "TimesNewRomanPS-ItalicMT",
+        "TimesNewRomanPSMT"
+      ]
+    },
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pdf": {
+      "before_sha256": "229d63b338c5e2193465ec9a794e48ecaf451accc0eb912222e8c99a4d5f409e",
+      "after_sha256": "462b10064918fe3fe841f2ba964539e011e8ab0f0d571c7488ae4a61af9574a3",
+      "pages": 12,
+      "page_text_sequence_unchanged_ignoring_whitespace": true,
+      "old_rejected_by_new_check": true,
+      "new_passes": true,
+      "fonts": [
+        "TimesNewRomanPS-BoldMT",
+        "TimesNewRomanPSMT"
+      ]
+    }
+  },
+  "desktop_doc_roundtrip_pages": 21,
+  "desktop_doc_roundtrip_spatial_text_sequence_matches": true,
+  "references": {
+    "first_lines_at_left_margin": 15,
+    "continuation_lines_indented_15pt": 42,
+    "heading_center_error_pt": 0.0960314960630626
+  },
+  "pdf_text_black": true,
+  "desktop_submission_matches": {
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": true,
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc": true,
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx": true
+  },
+  "visual_review": {
+    "report_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "presentation_slides": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "digest_pages": [
+      1
+    ],
+    "result": "No clipping, overlapping text or broken glyphs observed after font repair."
+  },
+  "limits": "Formatting and selected evidence checks; not a grade guarantee, Turnitin assessment, native Microsoft Office test or school submission.",
+  "independent_source_checks": {
+    "nonzero_inherited_indentation_only_in_15_references": true,
+    "review_markup": {
+      "ins": 0,
+      "del": 0,
+      "commentRangeStart": 0,
+      "vanish": 0,
+      "webHidden": 0
+    },
+    "constrained_section_spans_before_font_repair": {
+      "3.1 Department information": [
+        [
+          5
+        ],
+        [
+          5
+        ]
+      ],
+      "3.2 Initial project status": [
+        [
+          6
+        ],
+        [
+          6
+        ]
+      ],
+      "3.3 Motivation and problem definition": [
+        [
+          6
+        ],
+        [
+          6
+        ]
+      ],
+      "3.4 Related literature": [
+        [
+          6
+        ],
+        [
+          7
+        ]
+      ],
+      "4.6 Results": [
+        [
+          16
+        ],
+        [
+          16
+        ]
+      ],
+      "5.4 A typical day": [
+        [
+          17
+        ],
+        [
+          17
+        ]
+      ],
+      "6. Conclusions": [
+        [
+          18
+        ],
+        [
+          18
+        ]
+      ],
+      "7. Recommendations": [
+        [
+          18
+        ],
+        [
+          18
+        ]
+      ]
+    }
+  }
+}

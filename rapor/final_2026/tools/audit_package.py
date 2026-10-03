@@ -7,6 +7,7 @@ from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from pypdf import PdfReader
+from pdf_fonts import uses_embedded_times_new_roman
 ROOT=Path(__file__).resolve().parents[1];REPO=ROOT.parents[1];OUT=ROOT/'deliverables'
 spec=importlib.util.spec_from_file_location('c',ROOT/'sources/report_content.py');c=importlib.util.module_from_spec(spec);spec.loader.exec_module(c)
 checks=[]
@@ -17,7 +18,7 @@ name='CS395_FinalReport_Efe_Han_Keleş_29September2026'
 d=Document(OUT/(name+'.docx'));r=PdfReader(OUT/(name+'.pdf'))
 check('report_within_requested_20_to_25_pages',20<=len(r.pages)<=25)
 check('abstract_at_most_250_words',len(c.ABSTRACT.split())<=250)
-check('references_15_including_10_scholarly',len(c.REFS)==15)
+check('references_count_15',len(c.REFS)==15)
 check('figures_3_tables_5',len(d.inline_shapes)==3 and len(d.tables)==5)
 for sec in d.sections:check('one_inch_margins',all(abs(x.inches-1)<.0001 for x in [sec.top_margin,sec.bottom_margin,sec.left_margin,sec.right_margin]))
 ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
@@ -136,6 +137,7 @@ check('ten_spoken_slides_two_reference_slides',len(notes)==12 and all(x['seconds
 files={}
 for p in sorted(OUT.iterdir()):
  check('under_10MB:'+p.name,p.stat().st_size<10_000_000);files[p.name]={'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+ if p.suffix=='.pdf':check('actual_pdf_fonts_embedded_Times_New_Roman:'+p.name,uses_embedded_times_new_roman(p))
 check('seven_primary_files',len(files)==7)
 placeholders=[match for p in d.paragraphs for match in re.findall(r'\[TO COMPLETE[^\]]*\]',p.text)]
 result={'state':'pass_with_student_deferred_fields' if placeholders else 'pass','report_pages':len(r.pages),'report_headings':35,'figures':3,'tables':5,'references':len(c.REFS),'checks_passed':len(checks),'checks':checks,'files':files,'unresolved_fields':len(placeholders),'unresolved_placeholders':placeholders,'claim_boundary':'Formatting and selected evidence assertions; not exhaustive Markdown semantic review, scientific generalization, personal reflection verification, grade guarantee or native Microsoft Office testing.'}

@@ -5,7 +5,7 @@
   "figures": 3,
   "tables": 5,
   "references": 15,
-  "checks_passed": 595,
+  "checks_passed": 598,
   "checks": [
     {
       "name": "report_within_requested_20_to_25_pages",
@@ -16,7 +16,7 @@
       "passed": true
     },
     {
-      "name": "references_15_including_10_scholarly",
+      "name": "references_count_15",
       "passed": true
     },
     {
@@ -2360,6 +2360,10 @@
       "passed": true
     },
     {
+      "name": "actual_pdf_fonts_embedded_Times_New_Roman:CS395_Digest_Efe_Han_Keleş_29September2026.pdf",
+      "passed": true
+    },
+    {
       "name": "under_10MB:CS395_Digest_Efe_Han_Keleş_29September2026.pptx",
       "passed": true
     },
@@ -2376,7 +2380,15 @@
       "passed": true
     },
     {
+      "name": "actual_pdf_fonts_embedded_Times_New_Roman:CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf",
+      "passed": true
+    },
+    {
       "name": "under_10MB:CS395_Presentation_Efe_Han_Keleş_29September2026.pdf",
+      "passed": true
+    },
+    {
+      "name": "actual_pdf_fonts_embedded_Times_New_Roman:CS395_Presentation_Efe_Han_Keleş_29September2026.pdf",
       "passed": true
     },
     {
@@ -2390,8 +2402,8 @@
   ],
   "files": {
     "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": {
-      "bytes": 74672,
-      "sha256": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31"
+      "bytes": 187799,
+      "sha256": "a19976aeceacf81aabc254f897976d37541b5bbf18c9460f53f6a58336f2d212"
     },
     "CS395_Digest_Efe_Han_Keleş_29September2026.pptx": {
       "bytes": 13490,
@@ -2406,12 +2418,12 @@
       "sha256": "5eacae5a84065bd34755ec71c1e564abc18f8417b7d40541e6ccc44f6603140e"
     },
     "CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf": {
-      "bytes": 336416,
-      "sha256": "c18fc302dbad41c0ff925b19078f8027c261cafa833853f184d8c71d216b4298"
+      "bytes": 394395,
+      "sha256": "706d2ffc9bfd6f359edc6b312216e9e8564ef57f0955c35e05e27f17478eb26c"
     },
     "CS395_Presentation_Efe_Han_Keleş_29September2026.pdf": {
-      "bytes": 257058,
-      "sha256": "229d63b338c5e2193465ec9a794e48ecaf451accc0eb912222e8c99a4d5f409e"
+      "bytes": 607367,
+      "sha256": "462b10064918fe3fe841f2ba964539e011e8ab0f0d571c7488ae4a61af9574a3"
     },
     "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx": {
       "bytes": 53082,

@@ -116,3 +116,8 @@ Alperen’s specific correction request (resubmission deadline 4 October 2026) r
 DOCX, PDF and legacy DOC were regenerated. All 21 pages retain their previous content and heading locations; only reference pages 19–20 changed visually. The 15 reference first lines start at 72 pt; all 42 continuation lines start at 87 pt. Heading centering error is under 0.1 pt. The same geometry survives DOC-to-PDF conversion, with all page token counts preserved. Minor legacy rendering differences on pages 3, 5 and 12 were inspected. All 595 scoped artifact checks pass, with zero completion fields. Presentation and digest bytes are unchanged. The Desktop report DOC matches the corrected repository copy. The initial 29 September submission date/name is preserved for this formatting-only revision; the review date and deadline are recorded here. No school upload or external acceptance is claimed.
 
 The newly supplied aa.pdf is another copy of the six-page general internship rules, not the student report. The report-specific nine-page guideline is the source of the reference rules. See `sources/reference_format_review_20261003.json`.
+
+
+## Exported font verification — 3 October 2026
+
+Times New Roman must be present in the actual PDF, not merely named in editable-document XML. The second audit caught Liberation Serif substitution in all three PDFs. `tools/fonts.conf` supplies local installed fonts for rendering, and `tools/pdf_fonts.py` checks font names and embedding, including form resources. All three repaired PDFs pass; unchanged editable files and Desktop synchronization were also checked. See `sources/font_render_review_20261003.json`.

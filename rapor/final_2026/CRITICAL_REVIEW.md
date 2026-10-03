@@ -1,6 +1,6 @@
 # Critical report review — 25 September 2026
 
-Current review: **3 October 2026**. The reference formatting has been corrected following specific reviewer feedback. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md explains how the three earlier completion fields were resolved. Dated addenda preserve older drafts.
+Current review: **3 October 2026**. A second audit found that the PDF renderer had substituted Liberation Serif for the required Times New Roman. All three PDFs were corrected and all 34 pages/slides inspected. The prior font assessment was incomplete because it checked source settings rather than exported fonts; current validation includes embedded PDF resources. The reference formatting has been corrected following specific reviewer feedback. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md explains how the three earlier completion fields were resolved. Dated addenda preserve older drafts.
 
 ## Decision and scoring boundary
 
