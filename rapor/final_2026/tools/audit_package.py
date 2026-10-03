@@ -59,7 +59,10 @@ for p in d.paragraphs:
   check('numbered_heading_alignment:'+p.text,bool(re.match(r'^\d+(?:\.\d+)*\.? ',p.text)) and alignment==expected)
 for idx,b in enumerate(c.B):
  if b['type']=='paragraph':
-  ps=[p for p in d.paragraphs if p.text==b['text']];check('body_double_justified',len(ps)==1 and ps[0].paragraph_format.line_spacing==2 and (ps[0].alignment or ps[0].style.paragraph_format.alignment)==WD_ALIGN_PARAGRAPH.JUSTIFY)
+  ps=[p for p in d.paragraphs if p.text==b['text']]
+  # LEFT is enum value 0: boolean fallback would hide an explicit left alignment.
+  alignment=(ps[0].alignment if ps[0].alignment is not None else ps[0].style.paragraph_format.alignment) if len(ps)==1 else None
+  check('body_double_justified',len(ps)==1 and ps[0].paragraph_format.line_spacing==2 and alignment==WD_ALIGN_PARAGRAPH.JUSTIFY)
  if b['type'] in ['figure','table']:
   label=b['type'].capitalize()+' '+str(b['number'])
   check('nearby_preceding_citation:'+label,any(label in x.get('text','') for x in c.B[max(0,idx-2):idx] if x['type']=='paragraph'))
