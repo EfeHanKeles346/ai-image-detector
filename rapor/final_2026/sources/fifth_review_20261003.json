@@ -1,0 +1,183 @@
+{
+  "review_date": "2026-10-03",
+  "checkpoint": "0bc0fce",
+  "new_artifact_defects": [],
+  "deliverables_changed": false,
+  "scope": "Fifth review: guideline pages 5–6, report page boundaries, reference ordering and entry integrity, paragraph spacing, table bounds, hidden revision/comment markup, Desktop consistency.",
+  "heading_locations_and_following_lines": {
+    "1. Introduction": {
+      "page": 4,
+      "following_lines_on_page": 23
+    },
+    "2. Company information": {
+      "page": 4,
+      "following_lines_on_page": 12
+    },
+    "2.1 Corporate profile and services": {
+      "page": 4,
+      "following_lines_on_page": 11
+    },
+    "2.2 Organization and internship context": {
+      "page": 5,
+      "following_lines_on_page": 14
+    },
+    "3. Project background": {
+      "page": 5,
+      "following_lines_on_page": 8
+    },
+    "3.1 Department information": {
+      "page": 5,
+      "following_lines_on_page": 7
+    },
+    "3.2 Initial project status": {
+      "page": 6,
+      "following_lines_on_page": 24
+    },
+    "3.3 Motivation and problem definition": {
+      "page": 6,
+      "following_lines_on_page": 18
+    },
+    "3.4 Related literature": {
+      "page": 6,
+      "following_lines_on_page": 7
+    },
+    "4. Internship project": {
+      "page": 7,
+      "following_lines_on_page": 8
+    },
+    "4.1 Project objective and scope": {
+      "page": 7,
+      "following_lines_on_page": 7
+    },
+    "4.2 My responsibilities": {
+      "page": 7,
+      "following_lines_on_page": 2
+    },
+    "4.3 Methodology and tools": {
+      "page": 8,
+      "following_lines_on_page": 20
+    },
+    "4.4 Expected outcomes and deliverables": {
+      "page": 9,
+      "following_lines_on_page": 24
+    },
+    "4.5 Project details": {
+      "page": 9,
+      "following_lines_on_page": 20
+    },
+    "4.5.1 Early models and the first transfer failures": {
+      "page": 9,
+      "following_lines_on_page": 19
+    },
+    "4.5.2 Data integrity and corrected conclusions": {
+      "page": 9,
+      "following_lines_on_page": 4
+    },
+    "4.5.3 Data roles and processing conditions": {
+      "page": 10,
+      "following_lines_on_page": 11
+    },
+    "4.5.4 E92 representation and learning": {
+      "page": 11,
+      "following_lines_on_page": 9
+    },
+    "4.5.5 Development improvement and acceptance limits": {
+      "page": 12,
+      "following_lines_on_page": 7
+    },
+    "4.5.6 Honest scores and the web demonstration": {
+      "page": 13,
+      "following_lines_on_page": 16
+    },
+    "4.5.7 Broader checks and rejected improvements": {
+      "page": 14,
+      "following_lines_on_page": 24
+    },
+    "4.5.8 Model2 localization and its limits": {
+      "page": 14,
+      "following_lines_on_page": 7
+    },
+    "4.6 Results": {
+      "page": 16,
+      "following_lines_on_page": 19
+    },
+    "5. Internship experience": {
+      "page": 16,
+      "following_lines_on_page": 4
+    },
+    "5.1 Learning": {
+      "page": 16,
+      "following_lines_on_page": 3
+    },
+    "5.2 Relation to undergraduate education": {
+      "page": 17,
+      "following_lines_on_page": 18
+    },
+    "5.3 Major difficulties": {
+      "page": 17,
+      "following_lines_on_page": 12
+    },
+    "5.4 A typical day": {
+      "page": 17,
+      "following_lines_on_page": 5
+    },
+    "6. Conclusions": {
+      "page": 18,
+      "following_lines_on_page": 12
+    },
+    "7. Recommendations": {
+      "page": 18,
+      "following_lines_on_page": 6
+    },
+    "8. References": {
+      "page": 19,
+      "following_lines_on_page": 36
+    },
+    "9. Appendices": {
+      "page": 21,
+      "following_lines_on_page": 22
+    },
+    "9.1 Development criteria": {
+      "page": 21,
+      "following_lines_on_page": 21
+    },
+    "9.2 Evidence and reproduction map": {
+      "page": 21,
+      "following_lines_on_page": 2
+    }
+  },
+  "orphan_headings": [],
+  "reference_pages": {
+    "Abdelhamed": 19,
+    "Adobe": 19,
+    "Chen": 19,
+    "Dwork": 19,
+    "Finnvera": 19,
+    "Grommelt": 19,
+    "Guo": 19,
+    "Keleş": 19,
+    "Kim": 19,
+    "Ojha": 19,
+    "Oquab": 20,
+    "Radford": 20,
+    "Türk Telekom a": 20,
+    "Türk Telekom b": 20,
+    "Wang": 20
+  },
+  "references_alphabetical": true,
+  "reference_entries_split_across_pages": 0,
+  "body_paragraphs_without_extra_spacing": 58,
+  "tables_inside_one_inch_margins": true,
+  "no_empty_report_pages_or_out_of_page_text": true,
+  "no_document_revision_comment_or_hidden_run_markup": true,
+  "desktop_hash_matches": {
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": true,
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc": true,
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx": true
+  },
+  "all_seven_deliverables_match_previous_review": true,
+  "visual_review": "Guideline pages 5–6 and unchanged report pages 18–21 rendered and inspected. Complete report page beginnings/endings reviewed as extracted text; remaining pages not visually re-reviewed in this turn.",
+  "limitations": "No external bibliography fact-check, native Microsoft Office test, Turnitin result or academic acceptance guarantee. No school upload.",
+  "package_checks_passed": 605,
+  "unresolved_fields": 0
+}
