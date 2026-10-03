@@ -27,7 +27,11 @@ with zipfile.ZipFile(OUT/(name+'.docx')) as z:
   check(part+':black_text',all(x.get('{'+ns['w']+'}val')=='000000' for x in tree.xpath('//w:color',namespaces=ns)))
  tree=E.fromstring(z.read('word/document.xml'))
  check('no_sentence_lists',not tree.xpath('//w:numPr',namespaces=ns))
- check('no_explicit_nonzero_indentation',all(v=='0' for x in tree.xpath('//w:ind',namespaces=ns) for k,v in x.attrib.items()))
+ reference_texts={txt for _,txt in c.REFS}
+ for paragraph in tree.xpath('//w:p[w:pPr/w:ind]',namespaces=ns):
+  paragraph_text=''.join(paragraph.xpath('.//w:t/text()',namespaces=ns))
+  if paragraph_text in reference_texts:continue
+  check('non_reference_no_explicit_indentation',all(v=='0' for x in paragraph.xpath('./w:pPr/w:ind',namespaces=ns) for v in x.attrib.values()))
  check('toc_field_present',any('TOC' in (x.text or '') for x in tree.xpath('//w:instrText',namespaces=ns)))
  check('encoded_runs_12pt',all(x.get('{'+ns['w']+'}val')=='24' for x in tree.xpath('//w:sz',namespaces=ns)))
  for x in tree.xpath('//w:rFonts',namespaces=ns):check('encoded_run_Times_New_Roman',all(v=='Times New Roman' for v in x.attrib.values()))
@@ -42,7 +46,9 @@ toc=' '.join(' '.join(p.extract_text().split()) for p in r.pages[2:3])
 for h in headings:check('toc_entry:'+h,bool(re.search(re.escape(h)+r'\.*\s*'+str(m[h])+r'\b',toc)))
 for p in d.paragraphs:
  if p.style.name.startswith('Heading'):
-  check('numbered_left_heading',bool(re.match(r'^\d+(?:\.\d+)*\.? ',p.text)) and p.style.paragraph_format.alignment==WD_ALIGN_PARAGRAPH.LEFT)
+  alignment=p.alignment if p.alignment is not None else p.style.paragraph_format.alignment
+  expected=WD_ALIGN_PARAGRAPH.CENTER if p.text=='8. References' else WD_ALIGN_PARAGRAPH.LEFT
+  check('numbered_heading_alignment:'+p.text,bool(re.match(r'^\d+(?:\.\d+)*\.? ',p.text)) and alignment==expected)
 for idx,b in enumerate(c.B):
  if b['type']=='paragraph':
   ps=[p for p in d.paragraphs if p.text==b['text']];check('body_double_justified',len(ps)==1 and ps[0].paragraph_format.line_spacing==2 and (ps[0].alignment or ps[0].style.paragraph_format.alignment)==WD_ALIGN_PARAGRAPH.JUSTIFY)
@@ -56,6 +62,9 @@ for t in d.tables:check('centered_table',t.alignment==WD_TABLE_ALIGNMENT.CENTER)
 body=' '.join(b.get('text','') for b in c.B if b['type']=='paragraph')
 check('no_relative_or_lowercase_figure_citations',not re.search(r'\bthe (Figure|Table) \d|\b(figure|table) \d|\b(Figure|Table) \d (above|below)',body))
 for key,txt in c.REFS:
+ reference=next(p for p in d.paragraphs if p.text==txt);fmt=reference.paragraph_format
+ check('reference_five_space_hanging_indent:'+key,fmt.left_indent is not None and fmt.first_line_indent is not None and abs(fmt.left_indent.pt-15)<.01 and abs(fmt.first_line_indent.pt+15)<.01 and fmt.right_indent==0)
+ check('reference_single_spacing_and_blank_line:'+key,fmt.line_spacing==1 and fmt.space_after.pt==12 and fmt.keep_together)
  author='Türk Telekom' if key.startswith('Türk') else key
  year=re.search(r'\((\d{4}[ab]?)',txt).group(1)
  check('reference_cited:'+key,bool(re.search(re.escape(author)+r'(?: et al\.)?(?: \(|, )'+year,body)))

@@ -122,9 +122,16 @@ for idx,b in enumerate(c.B):
  if typ=='heading':
   p=paragraph(b['text'],f"Heading {b['level']}")
   if b.get('break'):p.paragraph_format.page_break_before=True
+  # Specific October reviewer feedback overrides general left-heading guidance here.
+  if b['text']=='8. References':p.alignment=WD_ALIGN_PARAGRAPH.CENTER
  elif typ=='paragraph':paragraph(b['text'])
  elif typ=='reference':
   p=paragraph(b['text']);p.paragraph_format.line_spacing=1;p.paragraph_format.space_after=Pt(12);p.paragraph_format.keep_together=True
+  # FENS p.5: first line flush left, continuation lines indented five spaces.
+  # Five Times New Roman 12-point spaces measure 15 points (300 twips).
+  indent=pdfmetrics.stringWidth('     ','TNR',12)
+  p.paragraph_format.left_indent=Pt(indent);p.paragraph_format.first_line_indent=Pt(-indent)
+  p.paragraph_format.right_indent=Pt(0)
   # Journal/series titles in italics as required by the office reference guidance.
   italics=['Advances in Neural Information Processing Systems','Proceedings of Machine Learning Research','Transactions on Machine Learning Research']
   for token in italics:

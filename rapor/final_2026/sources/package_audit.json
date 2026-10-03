@@ -5,7 +5,7 @@
   "figures": 3,
   "tables": 5,
   "references": 15,
-  "checks_passed": 566,
+  "checks_passed": 595,
   "checks": [
     {
       "name": "report_within_requested_20_to_25_pages",
@@ -45,10 +45,6 @@
     },
     {
       "name": "no_sentence_lists",
-      "passed": true
-    },
-    {
-      "name": "no_explicit_nonzero_indentation",
       "passed": true
     },
     {
@@ -1368,143 +1364,143 @@
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:1. Introduction",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:2. Company information",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:2.1 Corporate profile and services",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:2.2 Organization and internship context",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:3. Project background",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:3.1 Department information",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:3.2 Initial project status",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:3.3 Motivation and problem definition",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:3.4 Related literature",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4. Internship project",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.1 Project objective and scope",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.2 My responsibilities",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.3 Methodology and tools",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.4 Expected outcomes and deliverables",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5 Project details",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5.1 Early models and the first transfer failures",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5.2 Data integrity and corrected conclusions",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5.3 Data roles and processing conditions",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5.4 E92 representation and learning",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5.5 Development improvement and acceptance limits",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5.6 Honest scores and the web demonstration",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5.7 Broader checks and rejected improvements",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.5.8 Model2 localization and its limits",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:4.6 Results",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:5. Internship experience",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:5.1 Learning",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:5.2 Relation to undergraduate education",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:5.3 Major difficulties",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:5.4 A typical day",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:6. Conclusions",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:7. Recommendations",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:8. References",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:9. Appendices",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:9.1 Development criteria",
       "passed": true
     },
     {
-      "name": "numbered_left_heading",
+      "name": "numbered_heading_alignment:9.2 Evidence and reproduction map",
       "passed": true
     },
     {
@@ -1860,11 +1856,27 @@
       "passed": true
     },
     {
+      "name": "reference_five_space_hanging_indent:Abdelhamed",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Abdelhamed",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Abdelhamed",
       "passed": true
     },
     {
       "name": "reference_has_full_entry:Abdelhamed",
+      "passed": true
+    },
+    {
+      "name": "reference_five_space_hanging_indent:Adobe",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Adobe",
       "passed": true
     },
     {
@@ -1876,11 +1888,27 @@
       "passed": true
     },
     {
+      "name": "reference_five_space_hanging_indent:Chen",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Chen",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Chen",
       "passed": true
     },
     {
       "name": "reference_has_full_entry:Chen",
+      "passed": true
+    },
+    {
+      "name": "reference_five_space_hanging_indent:Dwork",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Dwork",
       "passed": true
     },
     {
@@ -1892,11 +1920,27 @@
       "passed": true
     },
     {
+      "name": "reference_five_space_hanging_indent:Finnvera",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Finnvera",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Finnvera",
       "passed": true
     },
     {
       "name": "reference_has_full_entry:Finnvera",
+      "passed": true
+    },
+    {
+      "name": "reference_five_space_hanging_indent:Grommelt",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Grommelt",
       "passed": true
     },
     {
@@ -1908,11 +1952,27 @@
       "passed": true
     },
     {
+      "name": "reference_five_space_hanging_indent:Guo",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Guo",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Guo",
       "passed": true
     },
     {
       "name": "reference_has_full_entry:Guo",
+      "passed": true
+    },
+    {
+      "name": "reference_five_space_hanging_indent:Keleş",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Keleş",
       "passed": true
     },
     {
@@ -1924,11 +1984,27 @@
       "passed": true
     },
     {
+      "name": "reference_five_space_hanging_indent:Kim",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Kim",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Kim",
       "passed": true
     },
     {
       "name": "reference_has_full_entry:Kim",
+      "passed": true
+    },
+    {
+      "name": "reference_five_space_hanging_indent:Ojha",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Ojha",
       "passed": true
     },
     {
@@ -1940,11 +2016,27 @@
       "passed": true
     },
     {
+      "name": "reference_five_space_hanging_indent:Oquab",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Oquab",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Oquab",
       "passed": true
     },
     {
       "name": "reference_has_full_entry:Oquab",
+      "passed": true
+    },
+    {
+      "name": "reference_five_space_hanging_indent:Radford",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Radford",
       "passed": true
     },
     {
@@ -1956,6 +2048,14 @@
       "passed": true
     },
     {
+      "name": "reference_five_space_hanging_indent:Türk Telekom a",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Türk Telekom a",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Türk Telekom a",
       "passed": true
     },
@@ -1964,11 +2064,27 @@
       "passed": true
     },
     {
+      "name": "reference_five_space_hanging_indent:Türk Telekom b",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Türk Telekom b",
+      "passed": true
+    },
+    {
       "name": "reference_cited:Türk Telekom b",
       "passed": true
     },
     {
       "name": "reference_has_full_entry:Türk Telekom b",
+      "passed": true
+    },
+    {
+      "name": "reference_five_space_hanging_indent:Wang",
+      "passed": true
+    },
+    {
+      "name": "reference_single_spacing_and_blank_line:Wang",
       "passed": true
     },
     {
@@ -2283,15 +2399,15 @@
     },
     "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc": {
       "bytes": 258048,
-      "sha256": "974154b8dfa3d2ec1b4b99c61e2d6b392b687675de43f0f6c2b4e7ee3573c375"
+      "sha256": "c90e909debb0d1ce28a26efa5ce945bdecb499d189e5bad5561dddf4975a1b33"
     },
     "CS395_FinalReport_Efe_Han_Keleş_29September2026.docx": {
-      "bytes": 176516,
-      "sha256": "241ed0fc14f5cc38cc1057e217b22af8790fd32118d3a78c6a4b5638d8d5486f"
+      "bytes": 176548,
+      "sha256": "5eacae5a84065bd34755ec71c1e564abc18f8417b7d40541e6ccc44f6603140e"
     },
     "CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf": {
-      "bytes": 336028,
-      "sha256": "2e1fdd32fea4aee01803d9bcba9d2458aabc99c28e47f39b543cf8696ea7856f"
+      "bytes": 336416,
+      "sha256": "c18fc302dbad41c0ff925b19078f8027c261cafa833853f184d8c71d216b4298"
     },
     "CS395_Presentation_Efe_Han_Keleş_29September2026.pdf": {
       "bytes": 257058,

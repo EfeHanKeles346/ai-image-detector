@@ -7,8 +7,9 @@ approved 20 July–18 September 2026 period, 40 internship days, hybrid attendan
 supervisor Önder Çelebi. Do not recalculate or silently change the approved duration.
 
 Report: English; Times New Roman 12 pt; 1-inch margins; double-spaced body with no extra
-paragraph spacing; no indentation; justified paragraphs; black text throughout. All
-main/subheadings use Word heading styles, hierarchical numbering and left alignment.
+paragraph spacing; no body indentation; justified paragraphs; black text throughout.
+Main/subheadings use Word heading styles, hierarchical numbering and left alignment,
+except the centered reference heading required by the October reviewer correction.
 Cover, abstract (at most 250 words), contents and references begin on separate pages.
 Contents includes every main/subheading and actual page numbers. Page numbers required.
 Tables and their captions are centered, captions above tables; figures and captions
@@ -16,8 +17,9 @@ centered, captions below figures. Every item has a numbered descriptive caption 
 nearby first textual citation as Figure N or Table N, never relative positioning or
 "the Figure/Table". No sentence lists. Reference entries alphabetical, single-spaced
 with a blank line equivalent between entries, author/title/year/venue and retrieval date
-for web sources. The instructor's no-indent and left-aligned heading instructions
-supersede hanging references and the office's centered reference heading. At least ten
+for web sources. The October specific reviewer correction requires the office reference
+format: centered heading and five-space hanging indents. This supersedes the earlier
+interpretation that applied general body rules to references. At least ten
 substantive references are targeted to satisfy either development or academic threshold.
 
 Required sections: 1 Introduction; 2 Company information (<=3 pages); 3 Project background
@@ -105,3 +107,12 @@ The student supplied the current portal format list and explicitly requested onl
 ### Submission filenames corrected — 2026-09-29
 
 Student explicitly corrected the name component to `Efe_Han_Keleş`. Renamed all seven current repository artifacts and the three Desktop submission files from `EfeHan_Keles_29September2026` to `Efe_Han_Keleş_29September2026`. Updated builders, audit paths and current links. File contents and hashes are unchanged. Prior dated receipts retain historical names. No school upload.
+
+
+## Reviewer-requested reference formatting — 3 October 2026
+
+Alperen’s specific correction request (resubmission deadline 4 October 2026) resolves the reference-section formatting exception. FENS Report, Presentation and Digest Guidelines p.5 requires a centered References heading, a flush-left first line and subsequent lines indented five spaces. The earlier decision to apply the instructor’s general no-indent/left-heading rule to references is superseded. The numbered heading `8. References` now has centered paragraph alignment while remaining Heading 1 and retaining its contents entry. Each reference uses a real hanging indent, not typed spaces: five Times New Roman 12-point spaces measure 15 pt, so paragraph left indent is 15 pt and first-line offset is −15 pt. Single line spacing within entries and 12 pt separation remain; body text stays justified and unindented. Other headings stay left aligned.
+
+DOCX, PDF and legacy DOC were regenerated. All 21 pages retain their previous content and heading locations; only reference pages 19–20 changed visually. The 15 reference first lines start at 72 pt; all 42 continuation lines start at 87 pt. Heading centering error is under 0.1 pt. The same geometry survives DOC-to-PDF conversion, with all page token counts preserved. Minor legacy rendering differences on pages 3, 5 and 12 were inspected. All 595 scoped artifact checks pass, with zero completion fields. Presentation and digest bytes are unchanged. The Desktop report DOC matches the corrected repository copy. The initial 29 September submission date/name is preserved for this formatting-only revision; the review date and deadline are recorded here. No school upload or external acceptance is claimed.
+
+The newly supplied aa.pdf is another copy of the six-page general internship rules, not the student report. The report-specific nine-page guideline is the source of the reference rules. See `sources/reference_format_review_20261003.json`.

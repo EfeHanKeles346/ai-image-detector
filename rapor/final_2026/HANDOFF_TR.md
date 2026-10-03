@@ -1,5 +1,8 @@
 # Güncel teslim durumu
 
+**3 Ekim düzeltmesi:** Alperen’in geri bildirimine göre kaynakça başlığı ortalandı, her kaynağın ikinci ve sonraki satırlarına beş boşluk karşılığı asılı girinti uygulandı. Raporun 19–20. sayfaları değişti; toplam 21 sayfa ve içindekiler korunuyor. Masaüstündeki DOC güncel. İlk teslimin 29 Eylül tarihi dosya adında ve kapakta korundu. Yeniden yükleme son tarihi 4 Ekim 2026; dosya henüz portala yüklenmedi. Kaynakçaya da genel “girinti yok” kuralını uygulayan önceki yorum bu özel geri bildirimle düzeltildi.
+
+
 29 Eylül 2026: Masaüstündeki `CS395_PixelProof_Submission_2026` klasöründe güncel DOC raporu, sunum PPTX ve tek slayt digest PDF bulunur. Rapor 21 sayfa, 15 kaynak; sunum 10 ana ve iki kaynak slaytıyla 10 dakika için planlandı. Belgelerde TO COMPLETE alanı kalmadı. Dosyalar okula gönderilmedi.
 
 Hasan Çontuk, son açıklamana göre mentörün ve Önder Çelebi’nin ekip üyesi olarak yazıldı. Mühendis/uzman gibi bilinmeyen resmî bir unvan uydurulmadı. Kılavuz çalışanların unvanlarını ister; burada doğruladığın proje rolü belirtiliyor. Bölümün üst raporlama birimini ayrıca yazma zorunluluğu kılavuzda yok; bu yer tutucu önceki aşamada gereğinden katı bir yorumla eklenmişti ve kaldırıldı. Bu düzeltme, Türk Telekom’da daha üst yönetim olmadığı anlamına gelmez.

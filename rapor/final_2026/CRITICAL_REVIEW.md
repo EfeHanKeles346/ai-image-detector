@@ -1,6 +1,6 @@
 # Critical report review — 25 September 2026
 
-Current review: **29 September 2026**. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md explains how the three earlier completion fields were resolved. Dated addenda preserve older drafts.
+Current review: **3 October 2026**. The reference formatting has been corrected following specific reviewer feedback. The report now has 21 pages, within the requested 20–25 range. The presentation has 10 main slides plus two reference slides with a 10-minute plan; the one-slide digest matches. References were checked against primary sources. The earlier project-record review remains the evidence baseline; no experiment was rerun. HANDOFF_TR.md explains how the three earlier completion fields were resolved. Dated addenda preserve older drafts.
 
 ## Decision and scoring boundary
 
@@ -107,13 +107,13 @@ reference list nor this checklist supplies missing experience.
 | Page limits: company 3, department/status/motivation 1 each, literature 3 | Actual section locations; company 2, literature 2; each short subsection within one page | PASS |
 | Page limits: details 10, results 1, experience 3, typical day 1, conclusions/recommendations 1 each | Details 7, results 1, experience 2, typical-day within page 17, conclusions 1, recommendations 1 | PASS |
 | Times New Roman 12, one-inch margins, black text, double body spacing, no extra paragraph spacing | DOCX properties and rendered PDF | PASS |
-| No indentation, justified text, left hierarchical headings | Instructor overrides office indent/heading alternatives | PASS |
+| Unindented justified body, left hierarchical headings except References | General instructor rules; specific October reference exception | PASS |
 | No full-sentence numbered/bulleted lists | Report has no numbered-list paragraph properties; prose reviewed | PASS |
 | Figures/tables mandatory, numbered captions, figure captions below/table captions above | Three figures, five tables; positions checked | PASS |
 | Figures/tables/captions centered, within margins, close to first reference | Render and XML review; adjacent-page placements only where needed | PASS |
 | Capitalized Figure/Table citations, no preceding “the”, no relative-position citation | Text audit and reading | PASS |
 | At least 5 development or 10 academic references; full entries; every entry cited | Fourteen entries, ten scholarly, in-text citations checked | PASS |
-| Alphabetic references, single spacing/blank separation, journal/series italics, retrieval dates | Section 8; instructor overrides hanging indent and centered heading | PASS |
+| Alphabetic references, single spacing/blank separation, journal/series italics, retrieval dates | Section 8; October reviewer correction requires hanging indents and a centered heading | PASS |
 | Page numbering, formal structure, consistent terms, spelling and print-preview review | All pages rendered; local spelling flags reviewed; no external grammar upload | PASS |
 | Useful appendices only | Criteria table and brief repository pointer in Section 9 | PASS |
 | English presentation, TNR, 10–15 minutes, problem/objective/method/results/deliverables | 12 slides, 10 spoken, 600 seconds planned, editable tables/chart/notes | PASS format/content; rehearsal open |
@@ -408,3 +408,12 @@ Presentation slides are visually unchanged; a reference-note count was made gene
 Digest is byte-identical. The package audit passes 566 scoped checks with zero completion
 placeholders. Current Desktop files match repository copies. No upload to school occurred.
 Receipt: sources/final_fields_review_20260929.json. Prior dated records retain historical counts.
+
+
+## Reviewer-requested reference formatting — 3 October 2026
+
+Alperen’s specific correction request (resubmission deadline 4 October 2026) resolves the reference-section formatting exception. FENS Report, Presentation and Digest Guidelines p.5 requires a centered References heading, a flush-left first line and subsequent lines indented five spaces. The earlier decision to apply the instructor’s general no-indent/left-heading rule to references is superseded. The numbered heading `8. References` now has centered paragraph alignment while remaining Heading 1 and retaining its contents entry. Each reference uses a real hanging indent, not typed spaces: five Times New Roman 12-point spaces measure 15 pt, so paragraph left indent is 15 pt and first-line offset is −15 pt. Single line spacing within entries and 12 pt separation remain; body text stays justified and unindented. Other headings stay left aligned.
+
+DOCX, PDF and legacy DOC were regenerated. All 21 pages retain their previous content and heading locations; only reference pages 19–20 changed visually. The 15 reference first lines start at 72 pt; all 42 continuation lines start at 87 pt. Heading centering error is under 0.1 pt. The same geometry survives DOC-to-PDF conversion, with all page token counts preserved. Minor legacy rendering differences on pages 3, 5 and 12 were inspected. All 595 scoped artifact checks pass, with zero completion fields. Presentation and digest bytes are unchanged. The Desktop report DOC matches the corrected repository copy. The initial 29 September submission date/name is preserved for this formatting-only revision; the review date and deadline are recorded here. No school upload or external acceptance is claimed.
+
+The newly supplied aa.pdf is another copy of the six-page general internship rules, not the student report. The report-specific nine-page guideline is the source of the reference rules. See `sources/reference_format_review_20261003.json`.

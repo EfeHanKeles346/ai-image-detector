@@ -218,3 +218,12 @@ Presentation slides are visually unchanged; a reference-note count was made gene
 Digest is byte-identical. The package audit passes 566 scoped checks with zero completion
 placeholders. Current Desktop files match repository copies. No upload to school occurred.
 Receipt: sources/final_fields_review_20260929.json. Prior dated records retain historical counts.
+
+
+## Reviewer-requested reference formatting — 3 October 2026
+
+Alperen’s specific correction request (resubmission deadline 4 October 2026) resolves the reference-section formatting exception. FENS Report, Presentation and Digest Guidelines p.5 requires a centered References heading, a flush-left first line and subsequent lines indented five spaces. The earlier decision to apply the instructor’s general no-indent/left-heading rule to references is superseded. The numbered heading `8. References` now has centered paragraph alignment while remaining Heading 1 and retaining its contents entry. Each reference uses a real hanging indent, not typed spaces: five Times New Roman 12-point spaces measure 15 pt, so paragraph left indent is 15 pt and first-line offset is −15 pt. Single line spacing within entries and 12 pt separation remain; body text stays justified and unindented. Other headings stay left aligned.
+
+DOCX, PDF and legacy DOC were regenerated. All 21 pages retain their previous content and heading locations; only reference pages 19–20 changed visually. The 15 reference first lines start at 72 pt; all 42 continuation lines start at 87 pt. Heading centering error is under 0.1 pt. The same geometry survives DOC-to-PDF conversion, with all page token counts preserved. Minor legacy rendering differences on pages 3, 5 and 12 were inspected. All 595 scoped artifact checks pass, with zero completion fields. Presentation and digest bytes are unchanged. The Desktop report DOC matches the corrected repository copy. The initial 29 September submission date/name is preserved for this formatting-only revision; the review date and deadline are recorded here. No school upload or external acceptance is claimed.
+
+The newly supplied aa.pdf is another copy of the six-page general internship rules, not the student report. The report-specific nine-page guideline is the source of the reference rules. See `sources/reference_format_review_20261003.json`.

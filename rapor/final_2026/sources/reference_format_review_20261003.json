@@ -1,0 +1,672 @@
+{
+  "review_date": "2026-10-03",
+  "deadline": "2026-10-04",
+  "baseline": "e952daa",
+  "scope": "Reviewer-specific reference formatting correction; report text unchanged",
+  "authority": {
+    "reviewer_feedback": [
+      "References heading should be centered",
+      "Indentation of references are not correct"
+    ],
+    "guideline_page": 5,
+    "interpretation": "Specific later correction applies the school reference format, superseding earlier application of general body rules to references."
+  },
+  "inputs_sha256": {
+    "/Users/efehankeles/Downloads/FENS Internship Project (XX 395) Report, Presentation and Digest Guidelines Summer 2026 .pdf": "30d150d0a5b395474f1b72d24e04f32ad4adfcb2a9986bb9ac60107992886aa1",
+    "/Users/efehankeles/Downloads/FENS Summer Internship Project Rules and Guidelines .pdf": "a697e947d8bb5201b32c19b5f19a02ee15298cbd23b9f104d3df8cd644d89b34",
+    "/Users/efehankeles/Desktop/aa.pdf": "a697e947d8bb5201b32c19b5f19a02ee15298cbd23b9f104d3df8cd644d89b34"
+  },
+  "aa_pdf_role": "General internship rules, not student report",
+  "format": {
+    "reference_heading": "8. References",
+    "alignment": "center",
+    "retained_heading_style": "Heading 1",
+    "font": "Times New Roman",
+    "size_pt": 12,
+    "five_space_width_pt": 15,
+    "left_indent_pt": 15,
+    "first_line_indent_pt": -15,
+    "within_reference_line_spacing": 1,
+    "after_reference_pt": 12
+  },
+  "geometry": {
+    "report": {
+      "reference_first_lines_at_72pt": 15,
+      "continuation_lines_at_87pt": 42,
+      "heading_center_error_pt": 0.0960314960630626,
+      "lines": [
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Abdelhamed, A., Lin, S., & Brown, M. S. (2018). A high-quality denoising dataset for"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "smartphone cameras. Proceedings of the IEEE Conference on Computer Vision and"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Pattern Recognition, 1692–1700. Retrieved September 29, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://abdokamel.github.io/sidd/"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Adobe. (2026, August 25). Content Credentials overview. Adobe Help Center. Retrieved"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "September 29, 2026, from https://helpx.adobe.com/creative-cloud/apps/adobe-content-"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "authenticity/content-credentials/overview.html"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Chen, C., Chen, Q., Xu, J., & Koltun, V. (2018). Learning to see in the dark. Proceedings of"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "the IEEE Conference on Computer Vision and Pattern Recognition, 3291–3300. Retrieved"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "September 29, 2026, from https://cchen156.github.io/SID.html"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Dwork, C., Feldman, V., Hardt, M., Pitassi, T., Reingold, O., & Roth, A. (2015)."
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Generalization in adaptive data analysis and holdout reuse. Advances in Neural"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Information Processing Systems, 28. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Abstract.html"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Finnvera. (2025, October 23). Finnvera guarantees Nokia’s deliveries to Türk Telekom."
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Retrieved September 29, 2026, from https://www.finnvera.fi/eng/export-and-"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "internationalisation/finnvera-as-an-export-finance-provider/guaranteed-transactions/"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "finnvera-guarantees-nokias-deliveries-to-turk-telekom"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Grommelt, P., Weiss, L., Pfreundt, F.-J., & Keuper, J. (2024). Fake or JPEG? Revealing"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "common biases in generated image detection datasets. arXiv:2403.17608. Retrieved"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "September 25, 2026, from https://arxiv.org/abs/2403.17608"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017). On calibration of modern neural"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "networks. Proceedings of Machine Learning Research, 70, 1321–1330. Retrieved"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "September 25, 2026, from https://proceedings.mlr.press/v70/guo17a.html"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Keleş, E. H. (2026). PixelProof experiment, history and dataset records [Software and"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "research records, commit 497d45c]. GitHub. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://github.com/EfeHanKeles346/ai-image-detector/tree/497d45c"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Kim, D., Choi, J., Seong, H. S., Kim, S., Lee, D., Yi, S., & Choi, J.-H. (2026). Dissect and"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "prune: Enhancing robustness in AI-generated image detection. ICML 2026;"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "arXiv:2606.10309, version 2. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://arxiv.org/abs/2606.10309v2"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Ojha, U., Li, Y., & Lee, Y. J. (2023). Towards universal fake image detectors that generalize"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "across generative models. Proceedings of the IEEE/CVF Conference on Computer Vision"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "and Pattern Recognition, 24480–24489. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://arxiv.org/abs/2302.10174"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Oquab, M., Darcet, T., Moutakanni, T., Vo, H., Szafraniec, M., Khalidov, V., Fernandez, P.,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Haziza, D., Massa, F., El-Nouby, A., Assran, M., Ballas, N., Galuba, W., Howes, R.,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Huang, P.-Y., Li, S.-W., Misra, I., Rabbat, M., Sharma, V., Synnaeve, G., Xu, H., Jégou,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "H., Mairal, J., Labatut, P., Joulin, A., & Bojanowski, P. (2024). DINOv2: Learning robust"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "visual features without supervision. Transactions on Machine Learning Research."
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Retrieved September 25, 2026, from https://arxiv.org/abs/2304.07193"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "A., Mishkin, P., Clark, J., Krueger, G., & Sutskever, I. (2021). Learning transferable"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "visual models from natural language supervision. Proceedings of Machine Learning"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Research, 139, 8748–8763. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "https://proceedings.mlr.press/v139/radford21a.html"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Türk Telekom. (2026a). 2025 annual report. Türk Telekom Investor Relations. Retrieved"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "September 25, 2026, from https://www.ttyatirimciiliskileri.com.tr/media/dqsjlvxo/2025-"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "annual-report.pdf"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Türk Telekom. (2026b). Hakkımızda [About us; operating figures at June 30, 2026]."
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Retrieved September 25, 2026, from https://www.turktelekom.com.tr/hakkimizda/detay?"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "p=tab3"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Wang, S.-Y., Wang, O., Zhang, R., Owens, A., & Efros, A. A. (2020). CNN-generated"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "images are surprisingly easy to spot... for now. Proceedings of the IEEE/CVF Conference"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "on Computer Vision and Pattern Recognition, 8695–8704. Retrieved September 25, 2026,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "from https://arxiv.org/abs/1912.11035"
+        }
+      ]
+    },
+    "round": {
+      "reference_first_lines_at_72pt": 15,
+      "continuation_lines_at_87pt": 42,
+      "heading_center_error_pt": 0.0960314960630626,
+      "lines": [
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Abdelhamed, A., Lin, S., & Brown, M. S. (2018). A high-quality denoising dataset for"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "smartphone cameras. Proceedings of the IEEE Conference on Computer Vision and"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Pattern Recognition, 1692–1700. Retrieved September 29, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://abdokamel.github.io/sidd/"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Adobe. (2026, August 25). Content Credentials overview. Adobe Help Center. Retrieved"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "September 29, 2026, from https://helpx.adobe.com/creative-cloud/apps/adobe-content-"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "authenticity/content-credentials/overview.html"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Chen, C., Chen, Q., Xu, J., & Koltun, V. (2018). Learning to see in the dark. Proceedings of"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "the IEEE Conference on Computer Vision and Pattern Recognition, 3291–3300. Retrieved"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "September 29, 2026, from https://cchen156.github.io/SID.html"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Dwork, C., Feldman, V., Hardt, M., Pitassi, T., Reingold, O., & Roth, A. (2015)."
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Generalization in adaptive data analysis and holdout reuse. Advances in Neural"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Information Processing Systems, 28. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://proceedings.neurips.cc/paper/2015/hash/bad5f33780c42f2588878a9d07405083-"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Abstract.html"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Finnvera. (2025, October 23). Finnvera guarantees Nokia’s deliveries to Türk Telekom."
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "Retrieved September 29, 2026, from https://www.finnvera.fi/eng/export-and-"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "internationalisation/finnvera-as-an-export-finance-provider/guaranteed-transactions/"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "finnvera-guarantees-nokias-deliveries-to-turk-telekom"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Grommelt, P., Weiss, L., Pfreundt, F.-J., & Keuper, J. (2024). Fake or JPEG? Revealing"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "common biases in generated image detection datasets. arXiv:2403.17608. Retrieved"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "September 25, 2026, from https://arxiv.org/abs/2403.17608"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Guo, C., Pleiss, G., Sun, Y., & Weinberger, K. Q. (2017). On calibration of modern neural"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "networks. Proceedings of Machine Learning Research, 70, 1321–1330. Retrieved"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "September 25, 2026, from https://proceedings.mlr.press/v70/guo17a.html"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Keleş, E. H. (2026). PixelProof experiment, history and dataset records [Software and"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "research records, commit 497d45c]. GitHub. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://github.com/EfeHanKeles346/ai-image-detector/tree/497d45c"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Kim, D., Choi, J., Seong, H. S., Kim, S., Lee, D., Yi, S., & Choi, J.-H. (2026). Dissect and"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "prune: Enhancing robustness in AI-generated image detection. ICML 2026;"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "arXiv:2606.10309, version 2. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://arxiv.org/abs/2606.10309v2"
+        },
+        {
+          "page": 19,
+          "x0": 72.1,
+          "text": "Ojha, U., Li, Y., & Lee, Y. J. (2023). Towards universal fake image detectors that generalize"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "across generative models. Proceedings of the IEEE/CVF Conference on Computer Vision"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "and Pattern Recognition, 24480–24489. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 19,
+          "x0": 87.1,
+          "text": "https://arxiv.org/abs/2302.10174"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Oquab, M., Darcet, T., Moutakanni, T., Vo, H., Szafraniec, M., Khalidov, V., Fernandez, P.,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Haziza, D., Massa, F., El-Nouby, A., Assran, M., Ballas, N., Galuba, W., Howes, R.,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Huang, P.-Y., Li, S.-W., Misra, I., Rabbat, M., Sharma, V., Synnaeve, G., Xu, H., Jégou,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "H., Mairal, J., Labatut, P., Joulin, A., & Bojanowski, P. (2024). DINOv2: Learning robust"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "visual features without supervision. Transactions on Machine Learning Research."
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Retrieved September 25, 2026, from https://arxiv.org/abs/2304.07193"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "A., Mishkin, P., Clark, J., Krueger, G., & Sutskever, I. (2021). Learning transferable"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "visual models from natural language supervision. Proceedings of Machine Learning"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Research, 139, 8748–8763. Retrieved September 25, 2026, from"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "https://proceedings.mlr.press/v139/radford21a.html"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Türk Telekom. (2026a). 2025 annual report. Türk Telekom Investor Relations. Retrieved"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "September 25, 2026, from https://www.ttyatirimciiliskileri.com.tr/media/dqsjlvxo/2025-"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "annual-report.pdf"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Türk Telekom. (2026b). Hakkımızda [About us; operating figures at June 30, 2026]."
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "Retrieved September 25, 2026, from https://www.turktelekom.com.tr/hakkimizda/detay?"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "p=tab3"
+        },
+        {
+          "page": 20,
+          "x0": 72.1,
+          "text": "Wang, S.-Y., Wang, O., Zhang, R., Owens, A., & Efros, A. A. (2020). CNN-generated"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "images are surprisingly easy to spot... for now. Proceedings of the IEEE/CVF Conference"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "on Computer Vision and Pattern Recognition, 8695–8704. Retrieved September 25, 2026,"
+        },
+        {
+          "page": 20,
+          "x0": 87.1,
+          "text": "from https://arxiv.org/abs/1912.11035"
+        }
+      ]
+    }
+  },
+  "report_pages": 21,
+  "content_unchanged": true,
+  "changed_pages": [
+    19,
+    20
+  ],
+  "other_pages_raster_identical_at_80dpi": true,
+  "toc_entries_verified": 35,
+  "legacy_roundtrip_page_tokens_match": true,
+  "legacy_render_differences_inspected": [
+    3,
+    5,
+    12
+  ],
+  "checks_passed": 595,
+  "unresolved_fields": 0,
+  "desktop_sha256": {
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31",
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc": "c90e909debb0d1ce28a26efa5ce945bdecb499d189e5bad5561dddf4975a1b33",
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx": "c2dd24f97ca06a1f89339036a60602067405150b0e461cea5ecc20bffac7d6fd"
+  },
+  "outputs": {
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pdf": {
+      "bytes": 74672,
+      "sha256": "b0cd1ebb4aed50f75434c7ef7b677a073261ef80ce66d96f086019bbd8355e31"
+    },
+    "CS395_Digest_Efe_Han_Keleş_29September2026.pptx": {
+      "bytes": 13490,
+      "sha256": "3486a66895f9032647d5fe7604154502acb03ef759c0e222c96df7726fab0cea"
+    },
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.doc": {
+      "bytes": 258048,
+      "sha256": "c90e909debb0d1ce28a26efa5ce945bdecb499d189e5bad5561dddf4975a1b33"
+    },
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.docx": {
+      "bytes": 176548,
+      "sha256": "5eacae5a84065bd34755ec71c1e564abc18f8417b7d40541e6ccc44f6603140e"
+    },
+    "CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf": {
+      "bytes": 336416,
+      "sha256": "c18fc302dbad41c0ff925b19078f8027c261cafa833853f184d8c71d216b4298"
+    },
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pdf": {
+      "bytes": 257058,
+      "sha256": "229d63b338c5e2193465ec9a794e48ecaf451accc0eb912222e8c99a4d5f409e"
+    },
+    "CS395_Presentation_Efe_Han_Keleş_29September2026.pptx": {
+      "bytes": 53082,
+      "sha256": "c2dd24f97ca06a1f89339036a60602067405150b0e461cea5ecc20bffac7d6fd"
+    }
+  },
+  "presentation_digest_unchanged": true,
+  "original_submission_date_preserved": "2026-09-29",
+  "limitations": "No native Microsoft Office or portal execution. Render/XML checks do not guarantee instructor acceptance."
+}
