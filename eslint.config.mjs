@@ -17,6 +17,8 @@ const eslintConfig = defineConfig([
     "ml/external/**",
     "out/**",
     "build/**",
+    // Vendored upstream CommonJS; reviewed patch and regression tests live separately.
+    "vendor/braces/**",
     "next-env.d.ts",
   ]),
 ]);
