@@ -1,14 +1,14 @@
-# CS395 internship report package — 29 September 2026
+# CS395 internship report package — report revised 4 October 2026
 
-This is the current E1–E152 submission draft. It supersedes the old E26 report **for presentation of the current project**, without rewriting historical records. The student’s confirmed metadata and personal account have been incorporated. No visible completion placeholders remain. Submission date is 29 September 2026 in all three artifacts and their filenames. The unit works on Tivibu software and hardware; Hasan Çontuk is identified as the student’s mentor and a member of Önder Çelebi’s team, without an invented formal title. See [the Turkish handoff](HANDOFF_TR.md) before submission.
+This is the current E1–E152 submission draft. It supersedes the old E26 report **for presentation of the current project**, without rewriting historical records. The student’s confirmed metadata and personal account have been incorporated. No visible completion placeholders remain. The report submission date and its three filenames are now 4 October 2026, as requested for resubmission. Presentation and digest retain their 29 September 2026 date. The unit works on Tivibu software and hardware; Hasan Çontuk is identified as the student’s mentor and a member of Önder Çelebi’s team, without an invented formal title. See [the Turkish handoff](HANDOFF_TR.md) before submission.
 
 ## Deliverables
 
 | Artifact | File |
 |---|---|
-| Report, editable | [DOCX](deliverables/CS395_FinalReport_Efe_Han_Keleş_29September2026.docx) |
-| Report, reading copy | [PDF](deliverables/CS395_FinalReport_Efe_Han_Keleş_29September2026.pdf) |
-| Report, office legacy format | [DOC](deliverables/CS395_FinalReport_Efe_Han_Keleş_29September2026.doc) |
+| Report, editable | [DOCX](deliverables/CS395_FinalReport_Efe_Han_Keleş_4October2026.docx) |
+| Report, reading copy | [PDF](deliverables/CS395_FinalReport_Efe_Han_Keleş_4October2026.pdf) |
+| Report, office legacy format | [DOC](deliverables/CS395_FinalReport_Efe_Han_Keleş_4October2026.doc) |
 | Presentation, editable and with notes | [PPTX](deliverables/CS395_Presentation_Efe_Han_Keleş_29September2026.pptx) |
 | Presentation, reading copy | [PDF](deliverables/CS395_Presentation_Efe_Han_Keleş_29September2026.pdf) |
 | One-slide digest | [PPTX](deliverables/CS395_Digest_Efe_Han_Keleş_29September2026.pptx) |
@@ -23,7 +23,7 @@ The current submission portal screenshot requires the digest as PDF; the student
 
 ## Latest revision — 3 October 2026
 
-Reviewer feedback was applied to the reference section: centered numbered heading and five-space hanging indents, checked in both PDF and legacy DOC rendering. Report remains 21 pages with unchanged text and contents locations. The Desktop DOC is the corrected copy. The original submission date and filenames remain 29 September 2026. Details: `sources/reference_format_review_20261003.json`. A subsequent deeper check found Liberation Serif substituted in all three PDFs; these were re-exported with embedded Times New Roman. See `sources/font_render_review_20261003.json`. Source DOCX/DOC/PPTX bytes did not change in this second correction. A third review then corrected a 3.22 mm horizontal displacement of all three report figures; report DOCX/PDF/DOC and the Desktop DOC are now updated. Only report pages 5 and 12 changed in that step. See `sources/geometry_review_20261003.json`.
+Reviewer feedback was applied to the reference section: centered numbered heading and five-space hanging indents, checked in both PDF and legacy DOC rendering. Report remains 21 pages with unchanged text and contents locations. The Desktop DOC is the corrected copy. At that review checkpoint, the original 29 September date was preserved. The student subsequently requested 4 October 2026 for the report only; see `sources/resubmission_date_20261004.json`. Details: `sources/reference_format_review_20261003.json`. A subsequent deeper check found Liberation Serif substituted in all three PDFs; these were re-exported with embedded Times New Roman. See `sources/font_render_review_20261003.json`. Source DOCX/DOC/PPTX bytes did not change in this second correction. A third review then corrected a 3.22 mm horizontal displacement of all three report figures; report DOCX/PDF/DOC and the Desktop DOC are now updated. Only report pages 5 and 12 changed in that step. See `sources/geometry_review_20261003.json`.
 
 Following the requested 20–25-page range, the report is now 21 pages. Its 3,353 words of paragraph prose explain transfer learning, data roles, corrections, results and limits in plain language; company prose stays at 191 words. The presentation was reduced to 10 main slides plus two reference slides, and the digest uses the same concise outcome and limitation. All 15 references remain substantively used; missing SIDD/SID page ranges were added and the DINOv2 journal year was directly verified. All 605 scoped artifact checks pass. The company supplier example is Nokia, sourced to Finnvera (2025). Hasan is described by his confirmed mentoring role, without inventing a corporate job title. The guideline does not separately demand the unit’s parent reporting line. See `sources/final_fields_review_20260929.json`. Model2 data suitability and editing-scope claims were subsequently reconciled in `sources/model2_scope_review_20260929.json`. The metadata completion is recorded in `sources/metadata_completion_20260929.json`; the prior clarity review is `sources/clear_package_review_20260929.json`. See [REFERENCE_REVIEW.md](REFERENCE_REVIEW.md).
 
@@ -46,3 +46,7 @@ Copy `tools/build_presentations.mjs` into a private build directory with a `node
 Run `tools/audit_package.py` after the final PDFs exist. Inspect every page and slide visually as well: XML checks cannot establish visual correctness. Desktop copies must match final repository artifact hashes. Rebuild all affected formats after filling the deferred fields.
 
 The final editorial critique and item-by-item guideline map are in [CRITICAL_REVIEW.md](CRITICAL_REVIEW.md). The technical/editorial assessment is 9.2/10, not a predicted academic grade. The former placeholder blockers are resolved; portal acceptance and an instructor grade are not certified.
+
+## Report resubmission — 4 October 2026
+
+The current DOC is also copied directly to the Desktop as `CS395_FinalReport_Efe_Han_Keleş_4October2026.doc`; the report inside the existing submission folder is synchronized. Only the cover date changed. Report remains 21 pages; all 605 package assertions pass. Presentation and digest bytes are unchanged. No school upload.

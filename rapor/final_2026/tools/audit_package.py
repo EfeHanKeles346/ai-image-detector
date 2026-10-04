@@ -15,7 +15,7 @@ checks=[]
 def check(name,ok):
  checks.append({'name':name,'passed':bool(ok)})
  if not ok:raise AssertionError(name)
-name='CS395_FinalReport_Efe_Han_Keleş_29September2026'
+name='CS395_FinalReport_Efe_Han_Keleş_4October2026'
 d=Document(OUT/(name+'.docx'));r=PdfReader(OUT/(name+'.pdf'))
 check('report_within_requested_20_to_25_pages',20<=len(r.pages)<=25)
 check('abstract_at_most_250_words',len(c.ABSTRACT.split())<=250)

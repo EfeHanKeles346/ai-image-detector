@@ -1,5 +1,7 @@
 # Güncel teslim durumu
 
+**4 Ekim tarih güncellemesi:** İsteğin üzerine yalnızca rapor kapağındaki teslim tarihi `4 October 2026` yapıldı. Güncel DOC doğrudan masaüstünde: `CS395_FinalReport_Efe_Han_Keleş_4October2026.doc`. Teslim klasöründeki rapor da aynı dosyayla güncellendi. Sunum ve digest değişmedi. Rapor 21 sayfa; 605 kontrol geçti. Aşağıdaki 3 Ekim notları geçmiş kontrolleri anlatır.
+
 **3 Ekim üçüncü kontrol:** Rapordaki üç şeklin PDF’de yaklaşık 3,22 mm sağa kaydığını ölçerek bulduk ve düzelttik. Word’de ortalı ayarı bulunması, çıktıda tam ortalamayı garanti etmemiş. Şimdi merkez farkı 0,03 mm’den küçük. DOCX/PDF/DOC ve masaüstündeki DOC güncellendi. Yalnızca 5 ve 12. sayfanın görsel yerleşimi değişti; metin, 21 sayfa ve içindekiler korunuyor. Güncel otomatik kontrol sayısı 605. Sunum ve digest değişmedi.
 
 **3 Ekim ek kontrolü:** PDF dönüşümünde Times New Roman yerine Liberation Serif kullanıldığını bulduk. Rapor, sunum ve digest PDF’leri gerçek Times New Roman gömülerek yenilendi; 21 + 12 + 1 sayfanın tamamı görsel olarak incelendi. Güncel kontrol sayısı 598. Masaüstündeki digest PDF yenilendi; DOC ve PPTX zaten doğru fontu belirttiğinden değişmedi. Üç teslim dosyasının depodaki sürümlerle eşleşmesi doğrulandı. Önceki tarihli notlar kendi kontrol anını anlatır.

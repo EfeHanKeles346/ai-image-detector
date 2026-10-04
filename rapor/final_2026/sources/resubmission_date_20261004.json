@@ -1,0 +1,28 @@
+{
+  "revision_date": "2026-10-04",
+  "scope": "User-requested report-only submission date change and direct Desktop DOC copy.",
+  "submission_date": "4 October 2026",
+  "previous_submission_date": "29 September 2026",
+  "report_pages": 21,
+  "docx_change": "Only word/document.xml changes; exactly one cover date replacement, all other ZIP member bytes unchanged.",
+  "render_review": "All 21 DOCX-rendered page PNGs visually inspected. Per-page PDF text matches previous version except the cover date. Legacy DOC spatial PDF text matches current DOCX rendering on every page.",
+  "package_checks_passed": 605,
+  "presentation_digest_unchanged": true,
+  "desktop_report": "/Users/efehankeles/Desktop/CS395_FinalReport_Efe_Han_Keleş_4October2026.doc",
+  "desktop_folder_report_synchronized": true,
+  "files": {
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.docx": {
+      "bytes": 176740,
+      "sha256": "7c9bd698c6c85dbc793058c23255468ff798b455b62971c826256a7845f6082f"
+    },
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.doc": {
+      "bytes": 258048,
+      "sha256": "096d3f7796ca21b0dec33c09137467ada7fa86564dd8d7240e5476a45ea84845"
+    },
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.pdf": {
+      "bytes": 394380,
+      "sha256": "b713f5e6987da97662e3a672d12abe7be3c6c691e6891f328436cdc1b5915f82"
+    }
+  },
+  "school_upload_performed": false
+}
