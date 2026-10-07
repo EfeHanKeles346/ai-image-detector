@@ -1,0 +1,1092 @@
+{
+  "state": "formatting_checks_passed_content_review_pending",
+  "checks": [
+    {
+      "check": "all_242_nonempty_text_paragraphs_preserved",
+      "passed": true
+    },
+    {
+      "check": "3_figures_5_tables",
+      "passed": true
+    },
+    {
+      "check": "no_sentence_lists",
+      "passed": true
+    },
+    {
+      "check": "all_margins_one_inch",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:1",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:2",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:3",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:4",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:5",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:6",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:7",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:8",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:9",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:10",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:11",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:12",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:13",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:14",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:1. Introduction",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:1. Introduction",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:15",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:16",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:2. Company information",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:2. Company information",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:2.1 Corporate profile and services",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:2.1 Corporate profile and services",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:17",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:18",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:19",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:2.2 Organization and internship context",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:2.2 Organization and internship context",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:20",
+      "passed": true
+    },
+    {
+      "check": "centered_caption:Figure 1. ",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Figure 1. ",
+      "passed": true
+    },
+    {
+      "check": "caption_has_prior_body_citation:Figure 1",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3. Project background",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:3. Project background",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3.1 Department information",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:3.1 Department information",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:21",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3.2 Initial project status",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:3.2 Initial project status",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:22",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3.3 Motivation and problem definition",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:3.3 Motivation and problem definition",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:23",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:24",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3.4 Related literature",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:3.4 Related literature",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:25",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:26",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:27",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:28",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:29",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4. Internship project",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4. Internship project",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.1 Project objective and scope",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.1 Project objective and scope",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:30",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.2 My responsibilities",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.2 My responsibilities",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:31",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.3 Methodology and tools",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.3 Methodology and tools",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:32",
+      "passed": true
+    },
+    {
+      "check": "centered_caption:Table 1. E",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 1. E",
+      "passed": true
+    },
+    {
+      "check": "caption_has_prior_body_citation:Table 1",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:33",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:34",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.4 Expected outcomes and deliverables",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.4 Expected outcomes and deliverables",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:35",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5 Project details",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5 Project details",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.1 Early models and the first transfer failures",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5.1 Early models and the first transfer failures",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:36",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:37",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:38",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.2 Data integrity and corrected conclusions",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5.2 Data integrity and corrected conclusions",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:39",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:40",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.3 Data roles and processing conditions",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5.3 Data roles and processing conditions",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:41",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:42",
+      "passed": true
+    },
+    {
+      "check": "centered_caption:Table 2. T",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 2. T",
+      "passed": true
+    },
+    {
+      "check": "caption_has_prior_body_citation:Table 2",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:43",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.4 E92 representation and learning",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5.4 E92 representation and learning",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:44",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:45",
+      "passed": true
+    },
+    {
+      "check": "centered_caption:Figure 2. ",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Figure 2. ",
+      "passed": true
+    },
+    {
+      "check": "caption_has_prior_body_citation:Figure 2",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:46",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.5 Development improvement and acceptance limits",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5.5 Development improvement and acceptance limits",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:47",
+      "passed": true
+    },
+    {
+      "check": "centered_caption:Figure 3. ",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Figure 3. ",
+      "passed": true
+    },
+    {
+      "check": "caption_has_prior_body_citation:Figure 3",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:48",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:49",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.6 Honest scores and the web demonstration",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5.6 Honest scores and the web demonstration",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:50",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:51",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:52",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.7 Broader checks and rejected improvements",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5.7 Broader checks and rejected improvements",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:53",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:54",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:55",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.8 Model2 localization and its limits",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.5.8 Model2 localization and its limits",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:56",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:57",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:58",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:59",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:60",
+      "passed": true
+    },
+    {
+      "check": "centered_caption:Table 3. M",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 3. M",
+      "passed": true
+    },
+    {
+      "check": "caption_has_prior_body_citation:Table 3",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:61",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.6 Results",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:4.6 Results",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:62",
+      "passed": true
+    },
+    {
+      "check": "centered_caption:Table 4. E",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 4. E",
+      "passed": true
+    },
+    {
+      "check": "caption_has_prior_body_citation:Table 4",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:63",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5. Internship experience",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:5. Internship experience",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.1 Learning",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:5.1 Learning",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:64",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:65",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.2 Relation to undergraduate education",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:5.2 Relation to undergraduate education",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:66",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.3 Major difficulties",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:5.3 Major difficulties",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:67",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:68",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:69",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.4 A typical day",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:5.4 A typical day",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:70",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:6. Conclusions",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:6. Conclusions",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:71",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:7. Recommendations",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:7. Recommendations",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:72",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:73",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:8. References",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:8. References",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Abdelhamed, A., Lin, S., ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Adobe. (2026, August 25).",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Chen, C., Chen, Q., Xu, J",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Dwork, C., Feldman, V., H",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Finnvera. (2025, October ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Grommelt, P., Weiss, L., ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Guo, C., Pleiss, G., Sun,",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Keleş, E. H. (2026). Pixe",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Kim, D., Choi, J., Seong,",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Ojha, U., Li, Y., & Lee, ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Oquab, M., Darcet, T., Mo",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Radford, A., Kim, J. W., ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Türk Telekom. (2026a). 20",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Türk Telekom. (2026b). Ha",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Wang, S.-Y., Wang, O., Zh",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:9. Appendices",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:9. Appendices",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:9.1 Development criteria",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:9.1 Development criteria",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:74",
+      "passed": true
+    },
+    {
+      "check": "centered_caption:Table 5. E",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 5. E",
+      "passed": true
+    },
+    {
+      "check": "caption_has_prior_body_citation:Table 5",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:9.2 Evidence and reproduction map",
+      "passed": true
+    },
+    {
+      "check": "heading_numbered:9.2 Evidence and reproduction map",
+      "passed": true
+    },
+    {
+      "check": "body_justified_double_zero_indent:75",
+      "passed": true
+    },
+    {
+      "check": "table_centered",
+      "passed": true
+    },
+    {
+      "check": "table_centered",
+      "passed": true
+    },
+    {
+      "check": "table_centered",
+      "passed": true
+    },
+    {
+      "check": "table_centered",
+      "passed": true
+    },
+    {
+      "check": "table_centered",
+      "passed": true
+    },
+    {
+      "check": "all_15_references_unchanged",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Abdelhamed",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Adobe",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Chen",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Dwork",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Finnvera",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Grommelt",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Guo",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Keleş",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Kim",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Ojha",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Oquab",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Radford",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Türk Telekom a",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Türk Telekom b",
+      "passed": true
+    },
+    {
+      "check": "reference_cited:Wang",
+      "passed": true
+    },
+    {
+      "check": "proper_figure_table_citations",
+      "passed": true
+    },
+    {
+      "check": "black_xml_colors",
+      "passed": true
+    },
+    {
+      "check": "12pt_xml_sizes",
+      "passed": true
+    },
+    {
+      "check": "black_xml_colors",
+      "passed": true
+    },
+    {
+      "check": "12pt_xml_sizes",
+      "passed": true
+    },
+    {
+      "check": "black_xml_colors",
+      "passed": true
+    },
+    {
+      "check": "12pt_xml_sizes",
+      "passed": true
+    },
+    {
+      "check": "black_xml_colors",
+      "passed": true
+    },
+    {
+      "check": "12pt_xml_sizes",
+      "passed": true
+    },
+    {
+      "check": "toc_field_present",
+      "passed": true
+    },
+    {
+      "check": "all_35_toc_page_numbers_current",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:1. Introduction",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:2. Company information",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:2.1 Corporate profile and services",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:2.2 Organization and internship context",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:3. Project background",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:3.1 Department information",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:3.2 Initial project status",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:3.3 Motivation and problem definition",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:3.4 Related literature",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4. Internship project",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.1 Project objective and scope",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.2 My responsibilities",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.3 Methodology and tools",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.4 Expected outcomes and deliverables",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5 Project details",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5.1 Early models and the first transfer failures",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5.2 Data integrity and corrected conclusions",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5.3 Data roles and processing conditions",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5.4 E92 representation and learning",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5.5 Development improvement and acceptance limits",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5.6 Honest scores and the web demonstration",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5.7 Broader checks and rejected improvements",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.5.8 Model2 localization and its limits",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:4.6 Results",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:5. Internship experience",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:5.1 Learning",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:5.2 Relation to undergraduate education",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:5.3 Major difficulties",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:5.4 A typical day",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:6. Conclusions",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:7. Recommendations",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:8. References",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:9. Appendices",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:9.1 Development criteria",
+      "passed": true
+    },
+    {
+      "check": "toc_entry:9.2 Evidence and reproduction map",
+      "passed": true
+    },
+    {
+      "check": "25_pages_within_requested_range",
+      "passed": true
+    },
+    {
+      "check": "legacy_doc_roundtrip_same_pages_and_spatial_text",
+      "passed": true
+    },
+    {
+      "check": "legacy_doc_roundtrip_same_word_positions",
+      "passed": true
+    },
+    {
+      "check": "actual_pdf_Times_New_Roman",
+      "passed": true
+    },
+    {
+      "check": "actual_pdf_black_text",
+      "passed": true
+    },
+    {
+      "check": "three_actual_figures",
+      "passed": true
+    },
+    {
+      "check": "actual_figure_centers",
+      "passed": true
+    },
+    {
+      "check": "actual_body_within_margins",
+      "passed": true
+    },
+    {
+      "check": "no_empty_pages",
+      "passed": true
+    },
+    {
+      "check": "experience_three_pages",
+      "passed": true
+    },
+    {
+      "check": "company_within_three_pages",
+      "passed": true
+    },
+    {
+      "check": "details_within_ten_pages",
+      "passed": true
+    },
+    {
+      "check": "literature_within_three_pages",
+      "passed": true
+    },
+    {
+      "check": "results_on_single_page",
+      "passed": true
+    }
+  ],
+  "check_count": 269,
+  "text_preserved": true,
+  "pages": 25,
+  "input_docx_sha256": "94698fed16c5a41e75b9e4b6eb841f8b914567bdcc0bcd204c8878d2a220606a",
+  "files": {
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.docx": "04606fc5ac7b5016f3b90f10bf3c1776827cc69e92769884508a5f81b38a7475",
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.doc": "a572ed7b9e76079bf45ed6da0b7f96ae72f1170d1fa5f33acd9814eac57083b0",
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.pdf": "7748eabc4764445c343fc3bbad06e0a5fcc130c5353eb9fa0523c41577bbb880"
+  },
+  "visual_review": "All 25 rendered pages inspected; pages 1 and 2 byte-identical to previously inspected first render. No clipping, lost figures or broken tables observed.",
+  "limitations": "Formatting and comparison, not a new Turnitin score, guaranteed policy acceptance, external bibliographic re-verification or native Word rendering. Student language and factual questions remain separately listed."
+}

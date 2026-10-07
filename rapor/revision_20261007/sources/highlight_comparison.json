@@ -1,0 +1,657 @@
+[
+  {
+    "section": "Abstract",
+    "match": true,
+    "report_pages": [
+      2
+    ],
+    "highlighted_characters": 1356,
+    "characters": 1382,
+    "marking": "fully_or_mostly_marked",
+    "start": "Türk Telekom provides telecommunications and digital services across Türkiye. During my CS"
+  },
+  {
+    "section": "1. Introduction",
+    "match": true,
+    "report_pages": [
+      4
+    ],
+    "highlighted_characters": 300,
+    "characters": 300,
+    "marking": "fully_or_mostly_marked",
+    "start": "PixelProof investigates whether a photograph contains evidence of AI generation while limi"
+  },
+  {
+    "section": "1. Introduction",
+    "match": true,
+    "report_pages": [
+      4
+    ],
+    "highlighted_characters": 413,
+    "characters": 413,
+    "marking": "fully_or_mostly_marked",
+    "start": "My CS395 internship at Türk Telekom ran from 20 July to 18 September 2026 under an approve"
+  },
+  {
+    "section": "2.1 Corporate profile and services",
+    "match": true,
+    "report_pages": [
+      4
+    ],
+    "highlighted_characters": 315,
+    "characters": 339,
+    "marking": "fully_or_mostly_marked",
+    "start": "Türk Telekomünikasyon A.Ş. provides fixed, mobile, broadband, television and corporate dat"
+  },
+  {
+    "section": "2.1 Corporate profile and services",
+    "match": true,
+    "report_pages": [
+      4
+    ],
+    "highlighted_characters": 382,
+    "characters": 411,
+    "marking": "fully_or_mostly_marked",
+    "start": "Its registered address is Turgut Özal Bulvarı, 06103 Aydınlıkevler, Ankara. My internship "
+  },
+  {
+    "section": "2.1 Corporate profile and services",
+    "match": true,
+    "report_pages": [
+      5
+    ],
+    "highlighted_characters": 157,
+    "characters": 157,
+    "marking": "fully_or_mostly_marked",
+    "start": "Turkcell was a relevant competitor discussed during the internship. Nokia supplies fixed a"
+  },
+  {
+    "section": "2.2 Organization and internship context",
+    "match": true,
+    "report_pages": [
+      5
+    ],
+    "highlighted_characters": 280,
+    "characters": 280,
+    "marking": "fully_or_mostly_marked",
+    "start": "Figure 1 summarizes the published corporate structure: network and IT support infrastructu"
+  },
+  {
+    "section": "3.1 Department information",
+    "match": true,
+    "report_pages": [
+      5
+    ],
+    "highlighted_characters": 469,
+    "characters": 469,
+    "marking": "fully_or_mostly_marked",
+    "start": "My host unit, the Planning and Development Directorate, worked on Tivibu software and hard"
+  },
+  {
+    "section": "3.2 Initial project status",
+    "match": true,
+    "report_pages": [
+      6
+    ],
+    "highlighted_characters": 367,
+    "characters": 367,
+    "marking": "fully_or_mostly_marked",
+    "start": "The initial workflow was to prepare labelled images, train a small CNN on CIFAKE and inspe"
+  },
+  {
+    "section": "3.3 Motivation and problem definition",
+    "match": true,
+    "report_pages": [
+      6
+    ],
+    "highlighted_characters": 333,
+    "characters": 333,
+    "marking": "fully_or_mostly_marked",
+    "start": "A false positive flags a real photograph as AI; a false negative misses an AI image. Impro"
+  },
+  {
+    "section": "3.3 Motivation and problem definition",
+    "match": true,
+    "report_pages": [
+      6
+    ],
+    "highlighted_characters": 321,
+    "characters": 321,
+    "marking": "fully_or_mostly_marked",
+    "start": "In this report, generalization means working on image sources that were not used to guide "
+  },
+  {
+    "section": "3.4 Related literature",
+    "match": true,
+    "report_pages": [
+      6
+    ],
+    "highlighted_characters": 354,
+    "characters": 354,
+    "marking": "fully_or_mostly_marked",
+    "start": "Wang et al. (2020) investigated detection across different image generators. Ojha et al. ("
+  },
+  {
+    "section": "3.4 Related literature",
+    "match": true,
+    "report_pages": [
+      6,
+      7
+    ],
+    "highlighted_characters": 264,
+    "characters": 280,
+    "marking": "fully_or_mostly_marked",
+    "start": "Compression and image-size differences can become misleading dataset shortcuts (Grommelt e"
+  },
+  {
+    "section": "3.4 Related literature",
+    "match": true,
+    "report_pages": [
+      7
+    ],
+    "highlighted_characters": 267,
+    "characters": 267,
+    "marking": "fully_or_mostly_marked",
+    "start": "SIDD provides smartphone images from ten scenes and five cameras (Abdelhamed et al., 2018)"
+  },
+  {
+    "section": "3.4 Related literature",
+    "match": true,
+    "report_pages": [
+      7
+    ],
+    "highlighted_characters": 366,
+    "characters": 366,
+    "marking": "fully_or_mostly_marked",
+    "start": "Guo et al. (2017) explain why classifier scores need calibration before interpretation as "
+  },
+  {
+    "section": "3.4 Related literature",
+    "match": true,
+    "report_pages": [
+      7
+    ],
+    "highlighted_characters": 374,
+    "characters": 374,
+    "marking": "fully_or_mostly_marked",
+    "start": "The literature suggested useful starting points, but it could not settle the project quest"
+  },
+  {
+    "section": "4.1 Project objective and scope",
+    "match": true,
+    "report_pages": [
+      7
+    ],
+    "highlighted_characters": 304,
+    "characters": 304,
+    "marking": "fully_or_mostly_marked",
+    "start": "Model1 aimed to reduce real-photo false alerts while preserving AI detections already made"
+  },
+  {
+    "section": "4.2 My responsibilities",
+    "match": true,
+    "report_pages": [
+      7,
+      8
+    ],
+    "highlighted_characters": 422,
+    "characters": 453,
+    "marking": "fully_or_mostly_marked",
+    "start": "I directed the experiments, organized data, reviewed results and generally made project de"
+  },
+  {
+    "section": "4.3 Methodology and tools",
+    "match": true,
+    "report_pages": [
+      8
+    ],
+    "highlighted_characters": 281,
+    "characters": 281,
+    "marking": "fully_or_mostly_marked",
+    "start": "In later experiments, PLAN.md recorded the question and acceptance rules before a run. ml/"
+  },
+  {
+    "section": "4.3 Methodology and tools",
+    "match": true,
+    "report_pages": [
+      8
+    ],
+    "highlighted_characters": 225,
+    "characters": 397,
+    "marking": "partly_marked",
+    "start": "Training fitted the model; calibration selected thresholds; development comparisons guided"
+  },
+  {
+    "section": "4.3 Methodology and tools",
+    "match": true,
+    "report_pages": [
+      8
+    ],
+    "highlighted_characters": 0,
+    "characters": 327,
+    "marking": "unmarked",
+    "start": "For each candidate, the practical question was whether the change solved a known problem w"
+  },
+  {
+    "section": "4.4 Expected outcomes and deliverables",
+    "match": true,
+    "report_pages": [
+      9
+    ],
+    "highlighted_characters": 0,
+    "characters": 227,
+    "marking": "unmarked",
+    "start": "The deliverables were trained research components, a local upload demo, reproducible exper"
+  },
+  {
+    "section": "4.5.1 Early models and the first transfer failures",
+    "match": true,
+    "report_pages": [
+      9
+    ],
+    "highlighted_characters": 0,
+    "characters": 312,
+    "marking": "unmarked",
+    "start": "The first CNN used 90,000 CIFAKE training images, 10,000 validation images and a 20,000-im"
+  },
+  {
+    "section": "4.5.1 Early models and the first transfer failures",
+    "match": true,
+    "report_pages": [
+      9
+    ],
+    "highlighted_characters": 0,
+    "characters": 357,
+    "marking": "unmarked",
+    "start": "Native-resolution statistics, tile features, external detectors and combined scores were t"
+  },
+  {
+    "section": "4.5.1 Early models and the first transfer failures",
+    "match": true,
+    "report_pages": [
+      9
+    ],
+    "highlighted_characters": 282,
+    "characters": 282,
+    "marking": "fully_or_mostly_marked",
+    "start": "I treated the familiar test as a check that the training procedure worked on similar data."
+  },
+  {
+    "section": "4.5.2 Data integrity and corrected conclusions",
+    "match": true,
+    "report_pages": [
+      9,
+      10
+    ],
+    "highlighted_characters": 296,
+    "characters": 457,
+    "marking": "partly_marked",
+    "start": "Two datasets used numeric labels opposite to our convention of 0 for real and 1 for AI. Ex"
+  },
+  {
+    "section": "4.5.2 Data integrity and corrected conclusions",
+    "match": true,
+    "report_pages": [
+      10
+    ],
+    "highlighted_characters": 289,
+    "characters": 289,
+    "marking": "fully_or_mostly_marked",
+    "start": "A label is the answer supplied during learning or evaluation. Reversing its meaning can ma"
+  },
+  {
+    "section": "4.5.3 Data roles and processing conditions",
+    "match": true,
+    "report_pages": [
+      10
+    ],
+    "highlighted_characters": 417,
+    "characters": 417,
+    "marking": "fully_or_mostly_marked",
+    "start": "A parent is one image before project-created transformations. E92 training used 12,269 par"
+  },
+  {
+    "section": "4.5.3 Data roles and processing conditions",
+    "match": true,
+    "report_pages": [
+      10
+    ],
+    "highlighted_characters": 315,
+    "characters": 315,
+    "marking": "fully_or_mostly_marked",
+    "start": "Table 2 separates the major populations; its rows are not additive independent evidence. E"
+  },
+  {
+    "section": "4.5.3 Data roles and processing conditions",
+    "match": true,
+    "report_pages": [
+      11
+    ],
+    "highlighted_characters": 379,
+    "characters": 379,
+    "marking": "fully_or_mostly_marked",
+    "start": "The same photograph can appear at several sizes or compression levels. These versions help"
+  },
+  {
+    "section": "4.5.4 E92 representation and learning",
+    "match": true,
+    "report_pages": [
+      11
+    ],
+    "highlighted_characters": 190,
+    "characters": 272,
+    "marking": "partly_marked",
+    "start": "Fine-tuning, grayscale inputs and early score corrections failed the full requirements. La"
+  },
+  {
+    "section": "4.5.4 E92 representation and learning",
+    "match": true,
+    "report_pages": [
+      11
+    ],
+    "highlighted_characters": 0,
+    "characters": 358,
+    "marking": "unmarked",
+    "start": "E92 uses feature-based transfer learning. Pretrained DINOv2, CLIP and DEAR components rema"
+  },
+  {
+    "section": "4.5.4 E92 representation and learning",
+    "match": true,
+    "report_pages": [
+      12
+    ],
+    "highlighted_characters": 0,
+    "characters": 430,
+    "marking": "unmarked",
+    "start": "Transfer learning reuses knowledge learned before this project. Here, an encoder converts "
+  },
+  {
+    "section": "4.5.5 Development improvement and acceptance limits",
+    "match": true,
+    "report_pages": [
+      12
+    ],
+    "highlighted_characters": 0,
+    "characters": 302,
+    "marking": "unmarked",
+    "start": "Figure 3 compares the same 160 real development images. False alerts fell from 68 to zero "
+  },
+  {
+    "section": "4.5.5 Development improvement and acceptance limits",
+    "match": true,
+    "report_pages": [
+      12,
+      13
+    ],
+    "highlighted_characters": 237,
+    "characters": 328,
+    "marking": "partly_marked",
+    "start": "This reused collection contains only ten real SIDD scenes and two previously seen AI famil"
+  },
+  {
+    "section": "4.5.5 Development improvement and acceptance limits",
+    "match": true,
+    "report_pages": [
+      13
+    ],
+    "highlighted_characters": 371,
+    "characters": 371,
+    "marking": "fully_or_mostly_marked",
+    "start": "The comparison asks both how many errors occurred and which images caused them. Two models"
+  },
+  {
+    "section": "4.5.6 Honest scores and the web demonstration",
+    "match": true,
+    "report_pages": [
+      13
+    ],
+    "highlighted_characters": 402,
+    "characters": 402,
+    "marking": "fully_or_mostly_marked",
+    "start": "The demo’s 0–100 scale is a model score, not an AI probability. Its upper threshold is abo"
+  },
+  {
+    "section": "4.5.6 Honest scores and the web demonstration",
+    "match": true,
+    "report_pages": [
+      13
+    ],
+    "highlighted_characters": 373,
+    "characters": 373,
+    "marking": "fully_or_mostly_marked",
+    "start": "On the same development collection, the combined rule gave 139 real images no clear AI evi"
+  },
+  {
+    "section": "4.5.6 Honest scores and the web demonstration",
+    "match": true,
+    "report_pages": [
+      13
+    ],
+    "highlighted_characters": 377,
+    "characters": 377,
+    "marking": "fully_or_mostly_marked",
+    "start": "The second processed view acts as a consistency check. When ordinary resizing and compress"
+  },
+  {
+    "section": "4.5.7 Broader checks and rejected improvements",
+    "match": true,
+    "report_pages": [
+      14
+    ],
+    "highlighted_characters": 77,
+    "characters": 288,
+    "marking": "partly_marked",
+    "start": "The owner gallery produced 9 false alerts among 206 real originals and 18 after processing"
+  },
+  {
+    "section": "4.5.7 Broader checks and rejected improvements",
+    "match": true,
+    "report_pages": [
+      14
+    ],
+    "highlighted_characters": 0,
+    "characters": 425,
+    "marking": "unmarked",
+    "start": "A processing audit found known 224-pixel derivatives in 29.18% of real training images ver"
+  },
+  {
+    "section": "4.5.7 Broader checks and rejected improvements",
+    "match": true,
+    "report_pages": [
+      14
+    ],
+    "highlighted_characters": 0,
+    "characters": 398,
+    "marking": "unmarked",
+    "start": "These checks changed the next development priority. Adding another feature was less useful"
+  },
+  {
+    "section": "4.5.8 Model2 localization and its limits",
+    "match": true,
+    "report_pages": [
+      14
+    ],
+    "highlighted_characters": 0,
+    "characters": 237,
+    "marking": "unmarked",
+    "start": "Model2 predicts edited regions and checks authentic images for false alarms. An early over"
+  },
+  {
+    "section": "4.5.8 Model2 localization and its limits",
+    "match": true,
+    "report_pages": [
+      14,
+      15
+    ],
+    "highlighted_characters": 0,
+    "characters": 464,
+    "marking": "unmarked",
+    "start": "Finding data was not the same as finding suitable training evidence. Of 512 CocoGlide orig"
+  },
+  {
+    "section": "4.5.8 Model2 localization and its limits",
+    "match": true,
+    "report_pages": [
+      15
+    ],
+    "highlighted_characters": 0,
+    "characters": 448,
+    "marking": "unmarked",
+    "start": "A local editing request also did not guarantee an unchanged background. In our Stable Diff"
+  },
+  {
+    "section": "4.5.8 Model2 localization and its limits",
+    "match": true,
+    "report_pages": [
+      15
+    ],
+    "highlighted_characters": 0,
+    "characters": 309,
+    "marking": "unmarked",
+    "start": "Revised input preparation later passed all 16 generation checks. We used these controlled "
+  },
+  {
+    "section": "4.5.8 Model2 localization and its limits",
+    "match": true,
+    "report_pages": [
+      15
+    ],
+    "highlighted_characters": 0,
+    "characters": 265,
+    "marking": "unmarked",
+    "start": "Table 3 shows that training on two edit placements improved the new placement but harmed t"
+  },
+  {
+    "section": "4.5.8 Model2 localization and its limits",
+    "match": true,
+    "report_pages": [
+      16
+    ],
+    "highlighted_characters": 0,
+    "characters": 330,
+    "marking": "unmarked",
+    "start": "A localization map gives a score at each location. To assess it, we need a mask identifyin"
+  },
+  {
+    "section": "4.6 Results",
+    "match": true,
+    "report_pages": [
+      16
+    ],
+    "highlighted_characters": 0,
+    "characters": 192,
+    "marking": "unmarked",
+    "start": "The completed outcome is an E92 research system, local demo and reproducible development r"
+  },
+  {
+    "section": "4.6 Results",
+    "match": true,
+    "report_pages": [
+      16
+    ],
+    "highlighted_characters": 165,
+    "characters": 271,
+    "marking": "partly_marked",
+    "start": "The numerical improvement did not meet full acceptance or prove universal reliability. Mod"
+  },
+  {
+    "section": "5.1 Learning",
+    "match": true,
+    "report_pages": [
+      16,
+      17
+    ],
+    "highlighted_characters": 321,
+    "characters": 331,
+    "marking": "fully_or_mostly_marked",
+    "start": "I learned to ask what a good score actually proves. Early accuracy looked promising, but f"
+  },
+  {
+    "section": "5.1 Learning",
+    "match": true,
+    "report_pages": [
+      17
+    ],
+    "highlighted_characters": 306,
+    "characters": 306,
+    "marking": "fully_or_mostly_marked",
+    "start": "The records also helped me manage the work. After a run, I needed to explain what changed,"
+  },
+  {
+    "section": "5.2 Relation to undergraduate education",
+    "match": true,
+    "report_pages": [
+      17
+    ],
+    "highlighted_characters": 380,
+    "characters": 380,
+    "marking": "fully_or_mostly_marked",
+    "start": "CS412 Machine Learning provided the concepts for the first experiments. In PROJ201, our te"
+  },
+  {
+    "section": "5.3 Major difficulties",
+    "match": true,
+    "report_pages": [
+      17
+    ],
+    "highlighted_characters": 455,
+    "characters": 455,
+    "marking": "fully_or_mostly_marked",
+    "start": "The first difficulty was source transfer. Expanding documented coverage and inspecting gro"
+  },
+  {
+    "section": "5.4 A typical day",
+    "match": true,
+    "report_pages": [
+      17
+    ],
+    "highlighted_characters": 341,
+    "characters": 341,
+    "marking": "fully_or_mostly_marked",
+    "start": "On office days, I usually arrived at 7:30 a.m. After breakfast, I worked through the morni"
+  },
+  {
+    "section": "6. Conclusions",
+    "match": true,
+    "report_pages": [
+      18
+    ],
+    "highlighted_characters": 350,
+    "characters": 350,
+    "marking": "fully_or_mostly_marked",
+    "start": "PixelProof became a working research prototype that substantially reduced real-image false"
+  },
+  {
+    "section": "7. Recommendations",
+    "match": true,
+    "report_pages": [
+      18
+    ],
+    "highlighted_characters": 429,
+    "characters": 429,
+    "marking": "fully_or_mostly_marked",
+    "start": "Future work should establish an independent evaluation with diverse cameras and generators"
+  },
+  {
+    "section": "9.1 Development criteria",
+    "match": true,
+    "report_pages": [
+      21
+    ],
+    "highlighted_characters": 423,
+    "characters": 423,
+    "marking": "fully_or_mostly_marked",
+    "start": "Table 5 lists the ten inherited numerical criteria, applied separately to original and soc"
+  },
+  {
+    "section": "9.2 Evidence and reproduction map",
+    "match": true,
+    "report_pages": [
+      21
+    ],
+    "highlighted_characters": 149,
+    "characters": 149,
+    "marking": "fully_or_mostly_marked",
+    "start": "Full experiment settings, corrections and aggregate evidence remain in the repository snap"
+  }
+]

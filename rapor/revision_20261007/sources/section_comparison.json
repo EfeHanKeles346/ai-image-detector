@@ -1,0 +1,212 @@
+[
+  {
+    "section": "1. Introduction",
+    "text_changed": true,
+    "previous_paragraph_count": 2,
+    "current_paragraph_count": 2
+  },
+  {
+    "section": "2. Company information",
+    "text_changed": false,
+    "previous_paragraph_count": 0,
+    "current_paragraph_count": 0
+  },
+  {
+    "section": "2.1 Corporate profile and services",
+    "text_changed": false,
+    "previous_paragraph_count": 3,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "2.2 Organization and internship context",
+    "text_changed": false,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "3. Project background",
+    "text_changed": false,
+    "previous_paragraph_count": 0,
+    "current_paragraph_count": 0
+  },
+  {
+    "section": "3.1 Department information",
+    "text_changed": true,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "3.2 Initial project status",
+    "text_changed": true,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "3.3 Motivation and problem definition",
+    "text_changed": true,
+    "previous_paragraph_count": 2,
+    "current_paragraph_count": 2
+  },
+  {
+    "section": "3.4 Related literature",
+    "text_changed": false,
+    "previous_paragraph_count": 5,
+    "current_paragraph_count": 5
+  },
+  {
+    "section": "4. Internship project",
+    "text_changed": false,
+    "previous_paragraph_count": 0,
+    "current_paragraph_count": 0
+  },
+  {
+    "section": "4.1 Project objective and scope",
+    "text_changed": false,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "4.2 My responsibilities",
+    "text_changed": false,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "4.3 Methodology and tools",
+    "text_changed": false,
+    "previous_paragraph_count": 3,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "4.4 Expected outcomes and deliverables",
+    "text_changed": false,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "4.5 Project details",
+    "text_changed": false,
+    "previous_paragraph_count": 0,
+    "current_paragraph_count": 0
+  },
+  {
+    "section": "4.5.1 Early models and the first transfer failures",
+    "text_changed": false,
+    "previous_paragraph_count": 3,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "4.5.2 Data integrity and corrected conclusions",
+    "text_changed": false,
+    "previous_paragraph_count": 2,
+    "current_paragraph_count": 2
+  },
+  {
+    "section": "4.5.3 Data roles and processing conditions",
+    "text_changed": false,
+    "previous_paragraph_count": 3,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "4.5.4 E92 representation and learning",
+    "text_changed": false,
+    "previous_paragraph_count": 3,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "4.5.5 Development improvement and acceptance limits",
+    "text_changed": false,
+    "previous_paragraph_count": 3,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "4.5.6 Honest scores and the web demonstration",
+    "text_changed": false,
+    "previous_paragraph_count": 3,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "4.5.7 Broader checks and rejected improvements",
+    "text_changed": false,
+    "previous_paragraph_count": 3,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "4.5.8 Model2 localization and its limits",
+    "text_changed": false,
+    "previous_paragraph_count": 6,
+    "current_paragraph_count": 6
+  },
+  {
+    "section": "4.6 Results",
+    "text_changed": false,
+    "previous_paragraph_count": 2,
+    "current_paragraph_count": 2
+  },
+  {
+    "section": "5. Internship experience",
+    "text_changed": false,
+    "previous_paragraph_count": 0,
+    "current_paragraph_count": 0
+  },
+  {
+    "section": "5.1 Learning",
+    "text_changed": true,
+    "previous_paragraph_count": 2,
+    "current_paragraph_count": 2
+  },
+  {
+    "section": "5.2 Relation to undergraduate education",
+    "text_changed": true,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "5.3 Major difficulties",
+    "text_changed": true,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 3
+  },
+  {
+    "section": "5.4 A typical day",
+    "text_changed": true,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "6. Conclusions",
+    "text_changed": true,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "7. Recommendations",
+    "text_changed": true,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 2
+  },
+  {
+    "section": "8. References",
+    "text_changed": false,
+    "previous_paragraph_count": 15,
+    "current_paragraph_count": 15
+  },
+  {
+    "section": "9. Appendices",
+    "text_changed": false,
+    "previous_paragraph_count": 0,
+    "current_paragraph_count": 0
+  },
+  {
+    "section": "9.1 Development criteria",
+    "text_changed": true,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  },
+  {
+    "section": "9.2 Evidence and reproduction map",
+    "text_changed": false,
+    "previous_paragraph_count": 1,
+    "current_paragraph_count": 1
+  }
+]
