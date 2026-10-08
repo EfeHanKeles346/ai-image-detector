@@ -12,6 +12,8 @@ from docx.enum.table import WD_TABLE_ALIGNMENT
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT.parent/'revision_20261007/deliverables/CS395_FinalReport_Efe_Han_Keleş_4October2026.docx'
 OUT=ROOT/'deliverables/CS395_FinalReport_Efe_Han_Keleş_4October2026.docx'
+if (ROOT/'sources/saved_student_revision/student_saved.docx').exists():
+ raise SystemExit('Archived initial-input builder: use apply_minimal_edits.py, format_saved_report.py and refresh_saved_toc.py to preserve the saved student revision.')
 raw=(ROOT/'sources/student_input.txt').read_text()
 old=Document(BASE);d=Document(BASE)
 # Preserve the previous report's cover, relationships, images, reference runs and tables.

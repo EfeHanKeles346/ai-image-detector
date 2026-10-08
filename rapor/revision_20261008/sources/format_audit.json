@@ -1,7 +1,7 @@
 {
   "checks": [
     {
-      "check": "all_56_supplied_body_paragraphs_exact_after_authorized_numbering_and_layout",
+      "check": "saved_student_body_preserved_after_four_authorized_edits",
       "passed": true
     },
     {
@@ -85,7 +85,7 @@
       "passed": true
     },
     {
-      "check": "body_format:My Internship was from 20 Ju",
+      "check": "body_format:My internship was from 20 Ju",
       "passed": true
     },
     {
@@ -101,7 +101,7 @@
       "passed": true
     },
     {
-      "check": "body_format:ddress of the company regist",
+      "check": "body_format:Address of the company regis",
       "passed": true
     },
     {
@@ -165,15 +165,15 @@
       "passed": true
     },
     {
-      "check": "body_format:The main motiviation of this",
+      "check": "body_format:The main motivation of this ",
       "passed": true
     },
     {
-      "check": "heading_alignment:3.4 Related Litarature:",
+      "check": "heading_alignment:3.4 Related Literature:",
       "passed": true
     },
     {
-      "check": "numbered_heading:3.4 Related Litarature:",
+      "check": "numbered_heading:3.4 Related Literature:",
       "passed": true
     },
     {
@@ -217,11 +217,7 @@
       "passed": true
     },
     {
-      "check": "body_format:Guo et al. (2017) explain th",
-      "passed": true
-    },
-    {
-      "check": "body_format:Dwork et al. (2015) explain ",
+      "check": "body_format:Dwork et al. (2015) explains",
       "passed": true
     },
     {
@@ -249,7 +245,7 @@
       "passed": true
     },
     {
-      "check": "body_format:The scope consist of several",
+      "check": "body_format:The scope consists of severa",
       "passed": true
     },
     {
@@ -261,15 +257,15 @@
       "passed": true
     },
     {
-      "check": "body_format:My Responsibilities were; Di",
+      "check": "body_format:My Responsibilities were Dir",
       "passed": true
     },
     {
-      "check": "heading_alignment:4.3 Metholody and tools:",
+      "check": "heading_alignment:4.3 Methodology and tools:",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.3 Metholody and tools:",
+      "check": "numbered_heading:4.3 Methodology and tools:",
       "passed": true
     },
     {
@@ -385,7 +381,7 @@
       "passed": true
     },
     {
-      "check": "body_format:Firstly several methods trie",
+      "check": "body_format:Firstly, several methods tri",
       "passed": true
     },
     {
@@ -409,7 +405,7 @@
       "passed": true
     },
     {
-      "check": "body_format:This table 3 shows the scors",
+      "check": "body_format:This table 3 shows the score",
       "passed": true
     },
     {
@@ -469,7 +465,7 @@
       "passed": true
     },
     {
-      "check": "body_format:Photographs that comes from ",
+      "check": "body_format:Photographs that come from m",
       "passed": true
     },
     {
@@ -541,11 +537,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:5.2 Relation tı undergradute education:",
+      "check": "heading_alignment:5.2 Relation to undergraduate education:",
       "passed": true
     },
     {
-      "check": "numbered_heading:5.2 Relation tı undergradute education:",
+      "check": "numbered_heading:5.2 Relation to undergraduate education:",
       "passed": true
     },
     {
@@ -553,11 +549,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:5.3 Major Difficultes:",
+      "check": "heading_alignment:5.3 Major Difficulties:",
       "passed": true
     },
     {
-      "check": "numbered_heading:5.3 Major Difficultes:",
+      "check": "numbered_heading:5.3 Major Difficulties:",
       "passed": true
     },
     {
@@ -573,7 +569,7 @@
       "passed": true
     },
     {
-      "check": "body_format:I used to go office 7.30 a.m",
+      "check": "body_format:I used to go to office 7.30 ",
       "passed": true
     },
     {
@@ -717,7 +713,7 @@
       "passed": true
     },
     {
-      "check": "TOC:3.4 Related Litarature:",
+      "check": "TOC:3.4 Related Literature:",
       "passed": true
     },
     {
@@ -733,7 +729,7 @@
       "passed": true
     },
     {
-      "check": "TOC:4.3 Metholody and tools:",
+      "check": "TOC:4.3 Methodology and tools:",
       "passed": true
     },
     {
@@ -793,11 +789,11 @@
       "passed": true
     },
     {
-      "check": "TOC:5.2 Relation tı undergradute education:",
+      "check": "TOC:5.2 Relation to undergraduate education:",
       "passed": true
     },
     {
-      "check": "TOC:5.3 Major Difficultes:",
+      "check": "TOC:5.3 Major Difficulties:",
       "passed": true
     },
     {
@@ -841,7 +837,7 @@
       "passed": true
     }
   ],
-  "passed": 210,
+  "passed": 209,
   "pages": 24,
   "prose_preserved": true,
   "content_issues": [
@@ -849,49 +845,19 @@
     "Introduction still says Section 9 contains appendices. Removing that clause would change prose, so it remains pending after the authorized relocation.",
     "The criteria paragraph still says lowercase \"table 3\". Albert requires \"Table 3\"; capitalization was not authorized.",
     "Finnvera (2025) remains in the preserved bibliography but is no longer cited. Nokia statement is attached to the company annual-report citation instead.",
-    "Radford citation in 3.4 lacks an opening parenthesis, and the Guo discussion is duplicated. Neither punctuation nor duplicate words were removed.",
-    "5.2 omits the required skill the student wishes university had taught; 5.3 describes two difficulties instead of the requested three; 5.1 does not explicitly state career-plan impact.",
-    "4.5.2 writes AUC 0.480% instead of 0.480. 4.6 says the previous model missed the image, whereas the missed reference-detected image belongs to E92.",
-    "4.3 states that a new dataset was added in every experiment; project history does not support that statement. 4.5.1 claims resolution was the sole cause and contrasts data quality with camera features.",
+    "Radford citation repaired and repeated Guo paragraph removed with authorization.",
+    "Student added a third difficulty in 5.3. Explicit career-plan impact in 5.1 and a wished-for preparation skill in 5.2 remain absent.",
+    "Student corrected AUC 0.480; authorized previous-to-current edit fixes E92 miss direction in 4.6.",
+    "4.3 now says some experiments. Sole-cause wording in 4.5.1 and threshold-versus-data example in 3.3 remain pending.",
     "4.6 population wording repeats AI images and can confuse unique parents with versions; the 160 real plus 160 AI parents are evaluated under two conditions.",
     "3.1 supplied mentor address uses Hasan.çontuk whereas prior confirmed contact was hasan.contuk; not corrected without authorization.",
     "Raw author note \"(abstact 3.2)\" was kept in the archived input and excluded as a non-report editing note. Markdown links were displayed as their labels; all prose characters otherwise preserved except approved table numbers.",
-    "Pending prose may change pagination. Current formatted draft is not submission-ready and no AI score or grade is predicted.",
-    "Figure 3 includes E43, E86 and E92; the body describes two models. See the detailed comparison for all section-specific recommendations."
+    "Pending prose may change pagination. Current formatted draft is not submission-ready and no AI score or grade is predicted."
   ],
-  "visual_review": {
-    "status": "complete",
-    "pages": [
-      1,
-      2,
-      3,
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24
-    ],
-    "notes": "All 24 rendered pages reviewed. Pages 1–4 are byte-identical PNGs to the initial inspected render. Two intentional pending sections; no clipping, detached captions or overflowing tables observed."
-  },
-  "body_vs_commit_54ae88b": "All 56 paragraph texts identical, including punctuation.",
-  "deliverable_sha256": {
-    "CS395_FinalReport_Efe_Han_Keleş_4October2026.docx": "f2c1a6cc4a8c107407dd0700034c0695fe216934b3fa6e4eada2304a7b7d44d3",
-    "CS395_FinalReport_Efe_Han_Keleş_4October2026.pdf": "0bae5b446ff980c1717b17782c8ad6ba694f1e4cfb3060ac5f7cfb77e53c10f2"
+  "visual_review": "All 24 pages inspected in page composites; pages 7, 10, 19 and 21 additionally inspected individually. No clipping, missing figures or extra blank pages observed.",
+  "saved_author_revision_preserved": true,
+  "artifact_sha256": {
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.docx": "c02eaa4a400277ad26fd3b96a5530072e3f320715405832332205e11bb6a55a9",
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.pdf": "fe2eb13773f50cb2bc64545540bcf20808d3289170553a5c393aba4411836fae"
   }
 }

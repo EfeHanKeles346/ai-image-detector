@@ -14,9 +14,9 @@ expected=json.loads((R/'sources/expected_prose.json').read_text());actual=[];cur
 for p in d.paragraphs:
  if p.style.name.startswith('Heading'):current=p.text
  elif current and current!='8 REFERENCES' and p.style.name=='Normal' and p.text and p.text!='[TO COMPLETE]':actual.append({'section':current,'text':p.text})
-ck('all_56_supplied_body_paragraphs_exact_after_authorized_numbering_and_layout',actual==expected)
+ck('saved_student_body_preserved_after_four_authorized_edits',actual==expected)
 ck('two_visible_completion_markers',sum(p.text=='[TO COMPLETE]' for p in d.paragraphs)==2)
-ck('figures_and_tables_retained',len(d.inline_shapes)==3 and len(d.tables)==5)
+ck('figures_and_tables_retained',len(d.inline_shapes)+len(d.element.xpath(".//w:pict"))==3 and len(d.tables)==5)
 ck('margins',all(abs(m.inches-1)<.001 for s in d.sections for m in [s.left_margin,s.right_margin,s.top_margin,s.bottom_margin]))
 refs=False;hs=[]
 for p in d.paragraphs:
@@ -27,11 +27,11 @@ for p in d.paragraphs:
   ck('numbered_heading:'+t,bool(re.match(r'^\d+(?:\.\d+)*',t)))
  elif refs and t:
   ck('hanging_reference:'+t[:25],f.left_indent.pt==15 and f.first_line_indent.pt==-15 and f.line_spacing==1 and f.space_after.pt==12)
- elif t and p.style.name=='Normal':
+ elif t and p.style.name=='Normal' and not ('\t' in t and t[0].isdigit()):
   ck('body_format:'+t[:28],p.alignment==A.JUSTIFY and f.line_spacing==2 and all(v.pt==0 for v in [f.left_indent,f.right_indent,f.first_line_indent,f.space_before,f.space_after]))
  elif p.style.name=='Caption':
   ck('caption_centered:'+t[:9],p.alignment==A.CENTER)
-  ck('caption_placement:'+t[:9],bool(p._p.getprevious().xpath('.//w:drawing')) if t.startswith('Figure') else p._p.getnext().tag==qn('w:tbl'))
+  ck('caption_placement:'+t[:9],bool(p._p.getprevious().xpath('.//w:drawing | .//w:pict')) if t.startswith('Figure') else p._p.getnext().tag==qn('w:tbl'))
 old=Document(R.parent/'revision_20261007/deliverables'/(N+'.docx'))
 oldrefs=[p.text for p in old.paragraphs if p.text.startswith(('Abdelhamed,','Adobe. (','Chen, C.','Dwork, C.','Finnvera.','Grommelt,','Guo, C.','Keleş, E.','Kim, D.','Ojha, U.','Oquab, M.','Radford, A.','Türk Telekom.','Wang, S.'))]
 newrefs=[p.text for p in d.paragraphs[d.paragraphs.index(next(p for p in d.paragraphs if p.text=='8 REFERENCES'))+1:]] if False else []
@@ -65,10 +65,10 @@ issues=[
 'Introduction still says Section 9 contains appendices. Removing that clause would change prose, so it remains pending after the authorized relocation.',
 'The criteria paragraph still says lowercase "table 3". Albert requires "Table 3"; capitalization was not authorized.',
 'Finnvera (2025) remains in the preserved bibliography but is no longer cited. Nokia statement is attached to the company annual-report citation instead.',
-'Radford citation in 3.4 lacks an opening parenthesis, and the Guo discussion is duplicated. Neither punctuation nor duplicate words were removed.',
-'5.2 omits the required skill the student wishes university had taught; 5.3 describes two difficulties instead of the requested three; 5.1 does not explicitly state career-plan impact.',
-'4.5.2 writes AUC 0.480% instead of 0.480. 4.6 says the previous model missed the image, whereas the missed reference-detected image belongs to E92.',
-'4.3 states that a new dataset was added in every experiment; project history does not support that statement. 4.5.1 claims resolution was the sole cause and contrasts data quality with camera features.',
+'Radford citation repaired and repeated Guo paragraph removed with authorization.',
+'Student added a third difficulty in 5.3. Explicit career-plan impact in 5.1 and a wished-for preparation skill in 5.2 remain absent.',
+'Student corrected AUC 0.480; authorized previous-to-current edit fixes E92 miss direction in 4.6.',
+'4.3 now says some experiments. Sole-cause wording in 4.5.1 and threshold-versus-data example in 3.3 remain pending.',
 '4.6 population wording repeats AI images and can confuse unique parents with versions; the 160 real plus 160 AI parents are evaluated under two conditions.',
 '3.1 supplied mentor address uses Hasan.çontuk whereas prior confirmed contact was hasan.contuk; not corrected without authorization.',
 'Raw author note "(abstact 3.2)" was kept in the archived input and excluded as a non-report editing note. Markdown links were displayed as their labels; all prose characters otherwise preserved except approved table numbers.',

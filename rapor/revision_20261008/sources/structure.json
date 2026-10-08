@@ -6,11 +6,11 @@
     "3.1 Department information:",
     "3.2 Initial project status:",
     "3.3 Motivation and problem definition:",
-    "3.4 Related Litarature:",
+    "3.4 Related Literature:",
     "4.Intership project:",
     "4.1 Project objective and scope:",
     "4.2 My Responsibilities:",
-    "4.3 Metholody and tools:",
+    "4.3 Methodology and tools:",
     "4.4 Expected outcomes and deliverables:",
     "4.5 Project details:",
     "4.5.1 First models and early tests",
@@ -25,8 +25,8 @@
     "4.6 Results",
     "5.Internship experience",
     "5.1 Learning:",
-    "5.2 Relation tı undergradute education:",
-    "5.3 Major Difficultes:",
+    "5.2 Relation to undergraduate education:",
+    "5.3 Major Difficulties:",
     "5.4 A typical day",
     "6.Conclusion",
     "7.Recomandations",
@@ -52,5 +52,6 @@
     "4.5.9 Model2 (previously 4.5.8)"
   ],
   "source_sha256": "f24a7a2da10e2d7becf7dc254d15b0fb305c65abcace285a10c7cc62d84b16b4",
-  "prose_paragraphs": 56
+  "prose_paragraphs": 55,
+  "saved_student_revision_sha256": "9901f151daa1fb36cdf8e1e4df5475205a3492b6b0fc73eec8ba1f5c686725c5"
 }

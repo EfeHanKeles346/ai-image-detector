@@ -1,0 +1,22 @@
+{
+  "source": "rapor/revision_20261008/sources/saved_student_revision/student_saved.docx",
+  "source_sha256": "9901f151daa1fb36cdf8e1e4df5475205a3492b6b0fc73eec8ba1f5c686725c5",
+  "changes": [
+    {
+      "before": "CLIP could be considered as a feature extractor from images. Radford et al., 2021). The Project used these extracted features to detect AI generated images.",
+      "after": "CLIP could be considered as a feature extractor from images. (Radford et al., 2021). The Project used these extracted features to detect AI generated images."
+    },
+    {
+      "before": "Dataset used to train model. Results of experiments allowed to find when and in which data the model make false detections. While doing this concept called AUC helped to evaluate model performance. Development of model performance did not mean fully reliable results. Therefore, in every experiment new dataset added to library to train or evaluate.  Also, threshold values are determined by calibration values.",
+      "after": "Dataset used to train model. Results of experiments allowed to find when and in which data the model make false detections. While doing this concept called AUC helped to evaluate model performance. Development of model performance did not mean fully reliable results. Therefore, in some experiments new dataset added to library to train or evaluate.  Also, threshold values are determined by calibration values."
+    },
+    {
+      "before": "Performance of E92 got better but previous model missed an AI generated image, so this is not a proof for reliable result for every images. Model2 remains experimental. 1.245 pyhton test executed successfully however this checks the code flow in the system not a measurement of image detection. this system did not used for company use and did not measured impact on the company (Keleş 2026).",
+      "after": "Performance of E92 got better but current model missed an AI generated image, so this is not a proof for reliable result for every images. Model2 remains experimental. 1.245 pyhton test executed successfully however this checks the code flow in the system not a measurement of image detection. this system did not used for company use and did not measured impact on the company (Keleş 2026)."
+    },
+    {
+      "before": "Guo et al. (2017) explain that a high model score does not always mean a high chance of being correct. Calibration helps confidence scores match actual accuracy better. In our web demo, the score is not shown as the probability of an image being AI generated. Choosing a threshold does not turn the score into a probability.",
+      "after": null
+    }
+  ]
+}

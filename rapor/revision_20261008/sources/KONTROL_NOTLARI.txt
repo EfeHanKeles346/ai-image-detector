@@ -1,3 +1,11 @@
+8 Ekim 2026 — SON DÜZELTME NOTU
+Bu notun altındaki önceki karşılaştırma tarihsel kayıttır. Word'de kaydedilen son öğrenci metni esas alındı; 4.5.2 ve 5 dahil öğrencinin değişiklikleri korundu.
+Uygulananlar: 3.4 Radford atıfının açılış parantezi düzeltildi; ikinci Guo açıklaması silindi. 4.3 "in every experiment" yerine "in some experiments" yazıldı ("mostly" çoğu deneyi iddia edecekti). 4.6 "previous model" yerine "current model" yazıldı.
+Öğrenci AUC değerini 0.480 olarak düzeltti ve 5.3'e üçüncü zorluk ekledi. 3.3 için öneri sohbetten verildi; metne uygulanmadı. 5.1'de kariyer planına etkisi ve 5.2'de önceden edinilmiş olması istenen beceri hâlâ açıkça anlatılmıyor.
+Abstract ve yeniden numaralandırılmış 4.5.9 tamamlanmayı bekliyor. Diğer içerik sorunları format_audit.json içinde kayıtlıdır. 24 sayfa, 209 kapsamlı olmayan hedefli kontrol geçti; bu sayı içerik tamamlığı veya not garantisi değildir.
+
+--- ÖNCEKİ KAYIT ---
+
 8 Ekim ek güncelleme: Dokuz 4.5.x başlığı sadeleştirildi; Abstract ve yeni 4.5.9 Model2 [TO COMPLETE] olarak işaretlendi. Ayrıntılı bölüm karşılaştırması: BOLUM_KARSILASTIRMASI.txt. Gövde cümlelerine bu tur dokunulmadı.
 
 8 EKİM 2026 — BİÇİMLENDİRİLMİŞ ÇALIŞMA KOPYASI
