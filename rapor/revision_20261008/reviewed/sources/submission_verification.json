@@ -1,0 +1,355 @@
+{
+  "checks": [
+    {
+      "check": "author_words_preserved_in_5_1_and_5_2",
+      "passed": true
+    },
+    {
+      "check": "career_response_under_5_1",
+      "passed": true
+    },
+    {
+      "check": "prior_preparation_response_under_5_2",
+      "passed": true
+    },
+    {
+      "check": "reference_texts_preserved",
+      "passed": true
+    },
+    {
+      "check": "table_values_preserved",
+      "passed": true
+    },
+    {
+      "check": "three_figures_preserved",
+      "passed": true
+    },
+    {
+      "check": "all_heading_pages",
+      "passed": true
+    },
+    {
+      "check": "TOC_1. Introduction:",
+      "passed": true
+    },
+    {
+      "check": "TOC_2. Company information:",
+      "passed": true
+    },
+    {
+      "check": "TOC_3 Project Background:",
+      "passed": true
+    },
+    {
+      "check": "TOC_3.1 Department information:",
+      "passed": true
+    },
+    {
+      "check": "TOC_3.2 Initial project status:",
+      "passed": true
+    },
+    {
+      "check": "TOC_3.3 Motivation and problem definition:",
+      "passed": true
+    },
+    {
+      "check": "TOC_3.4 Related Literature:",
+      "passed": true
+    },
+    {
+      "check": "TOC_4. Internship project:",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.1 Project objective and scope:",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.2 My Responsibilities:",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.3 Methodology and tools:",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.4 Expected outcomes and deliverables:",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5 Project details:",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.1 First models and early tests",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.2 Finding and correcting errors",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.3 Preparing the images",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.4 How E92 works",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.5 How we checked model performance",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.6 E92 results and remaining problems",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.7 How the web demo makes decisions",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.8 Further tests and unsuccessful changes",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.5.9 Detecting edited areas with Model2",
+      "passed": true
+    },
+    {
+      "check": "TOC_4.6 Results",
+      "passed": true
+    },
+    {
+      "check": "TOC_5. Internship experience",
+      "passed": true
+    },
+    {
+      "check": "TOC_5.1 Learning:",
+      "passed": true
+    },
+    {
+      "check": "TOC_5.2 Relation to undergraduate education:",
+      "passed": true
+    },
+    {
+      "check": "TOC_5.3 Major Difficulties:",
+      "passed": true
+    },
+    {
+      "check": "TOC_5.4 A typical day",
+      "passed": true
+    },
+    {
+      "check": "TOC_6. Conclusion",
+      "passed": true
+    },
+    {
+      "check": "TOC_7. Recommendations",
+      "passed": true
+    },
+    {
+      "check": "TOC_8 REFERENCES",
+      "passed": true
+    },
+    {
+      "check": "25_pages",
+      "passed": true
+    },
+    {
+      "check": "abstract_under_250_words",
+      "passed": true
+    },
+    {
+      "check": "no_obsolete_roadmap",
+      "passed": true
+    },
+    {
+      "check": "no_relative_table_reference",
+      "passed": true
+    },
+    {
+      "check": "requested_previous_findings",
+      "passed": true
+    },
+    {
+      "check": "all_sources_cited",
+      "passed": true
+    },
+    {
+      "check": "caption_center_Figure 1.",
+      "passed": true
+    },
+    {
+      "check": "caption_position_Figure 1.",
+      "passed": true
+    },
+    {
+      "check": "caption_center_Table 1. ",
+      "passed": true
+    },
+    {
+      "check": "caption_position_Table 1. ",
+      "passed": true
+    },
+    {
+      "check": "caption_center_Table 2. ",
+      "passed": true
+    },
+    {
+      "check": "caption_position_Table 2. ",
+      "passed": true
+    },
+    {
+      "check": "caption_center_Figure 2.",
+      "passed": true
+    },
+    {
+      "check": "caption_position_Figure 2.",
+      "passed": true
+    },
+    {
+      "check": "caption_center_Table 3. ",
+      "passed": true
+    },
+    {
+      "check": "caption_position_Table 3. ",
+      "passed": true
+    },
+    {
+      "check": "caption_center_Figure 3.",
+      "passed": true
+    },
+    {
+      "check": "caption_position_Figure 3.",
+      "passed": true
+    },
+    {
+      "check": "caption_center_Table 4. ",
+      "passed": true
+    },
+    {
+      "check": "caption_position_Table 4. ",
+      "passed": true
+    },
+    {
+      "check": "caption_center_Table 5. ",
+      "passed": true
+    },
+    {
+      "check": "caption_position_Table 5. ",
+      "passed": true
+    },
+    {
+      "check": "references_heading_centered",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Abdelhamed, ",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Adobe. (2026",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Chen, C., Ch",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Dwork, C., F",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Finnvera. (2",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Grommelt, P.",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Guo, C., Ple",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Keleş, E. H.",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Kim, D., Cho",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Ojha, U., Li",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Oquab, M., D",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Radford, A.,",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Türk Telekom",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Türk Telekom",
+      "passed": true
+    },
+    {
+      "check": "reference_indent_Wang, S.-Y.,",
+      "passed": true
+    },
+    {
+      "check": "no_lists",
+      "passed": true
+    },
+    {
+      "check": "no_markers",
+      "passed": true
+    },
+    {
+      "check": "black_text",
+      "passed": true
+    },
+    {
+      "check": "TNR12",
+      "passed": true
+    },
+    {
+      "check": "no_margin_overflow",
+      "passed": true
+    },
+    {
+      "check": "figures_centered",
+      "passed": true
+    },
+    {
+      "check": "results_fit_one_page",
+      "passed": true
+    },
+    {
+      "check": "section5_under3pages",
+      "passed": true
+    },
+    {
+      "check": "source_desktop_unmodified",
+      "passed": true
+    }
+  ],
+  "passed": 85,
+  "pages": 25,
+  "abstract_words": 208,
+  "pending": [],
+  "scope": "Mandatory format and required section coverage; semantic and stylistic review excluded by user. Mentor role given as mentor; formal HR job title and late-submission authorization not verified.",
+  "visual_review": "All 25 rendered pages reviewed; final changed pages 3, 22, 23 rechecked. No clipping or blank pages.",
+  "sha256": {
+    "CS395_FinalReport_Efe_Han_Keleş_8October2026.docx": "dae17e546939f327f3dbc27fcdf5be0bcde2525a6a55844de8dadf4722a49888",
+    "CS395_FinalReport_Efe_Han_Keleş_8October2026.pdf": "d9e7cc1795d4ba29fb8edee423e61ada4480731f3014502a32d6e15966d965ca"
+  },
+  "author_text_change": "Career-plan sentences moved verbatim from 5.2 to 5.1; no words altered. Removed empty paragraph. Updated TOC page numbers and Recommendations page break."
+}

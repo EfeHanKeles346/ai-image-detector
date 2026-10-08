@@ -7572,3 +7572,7 @@ The newest author source is Desktop SON RAPOR.docx (hash recorded in revision_20
 ## Merge author additions next — 8 October 2026
 
 Prepared corrected manuscript: revision_20261008/reviewed/deliverables/CS395_FinalReport_Efe_Han_Keleş_8October2026.docx, also Desktop SON_RAPOR_DUZELTILMIS/SON RAPOR.docx. Original Desktop SON RAPOR.docx was deliberately not overwritten. When the student supplies or saves 5.1/5.2, compare against reviewed/sources/author_before_corrections.docx and merge the new author text into the corrected manuscript without losing concurrent edits. Then re-render, update all TOC page values, ensure Section 5 remains at most three pages and perform final checks before replacing any working file. Do not represent current formatting checks as final submission approval while those additions remain pending.
+
+## Final report handoff — 8 October 2026
+
+The author additions are incorporated and the final 25-page report is in revision_20261008/reviewed/deliverables and Desktop SON_RAPOR_DUZELTILMIS. Use the October 8 submission-named PDF for the current handoff. The former pending 5.1/5.2 work is complete. Validate using reviewed/tools/verify_submission.py; verify_report.py is the historical 24-page pre-addition checkpoint and must not rebuild the latest manuscript. The source snapshot is author_with_personal_additions.docx. All author words remain preserved, with the career response moved to 5.1. Submission itself stays with the student. Formal mentor title and deadline authorization are not inferred.
