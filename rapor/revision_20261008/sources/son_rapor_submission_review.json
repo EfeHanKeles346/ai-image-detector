@@ -1,0 +1,299 @@
+{
+  "review_date": "2026-10-08",
+  "source": "/Users/efehankeles/Desktop/SON RAPOR.docx",
+  "sha256": "d201d49ad5f9a08c367128a221442adb25a40322cedb016d2ff39f40ff349ac4",
+  "source_modified": false,
+  "pages": 24,
+  "verdict": "NOT_READY",
+  "checks": [
+    {
+      "check": "report_under_10_MB",
+      "passed": true,
+      "evidence": 187824
+    },
+    {
+      "check": "abstract_max_250_words",
+      "passed": true,
+      "evidence": 227
+    },
+    {
+      "check": "no_incomplete_marker",
+      "passed": true,
+      "evidence": "Abstract and Model2 now contain author prose."
+    },
+    {
+      "check": "report_has_figures_and_tables",
+      "passed": true,
+      "evidence": "3 figures; 5 tables"
+    },
+    {
+      "check": "no_sentence_lists",
+      "passed": true,
+      "evidence": "No numbered/bulleted paragraph structures."
+    },
+    {
+      "check": "no_tracked_changes_or_comments",
+      "passed": true,
+      "evidence": "OOXML checked"
+    },
+    {
+      "check": "margins_one_inch",
+      "passed": true,
+      "evidence": "All four margins 1 inch"
+    },
+    {
+      "check": "references_heading_centered",
+      "passed": true,
+      "evidence": "Page 23; overrides generic left-heading rule per specific feedback."
+    },
+    {
+      "check": "references_hanging_indent",
+      "passed": true,
+      "evidence": "15 pt = five Times New Roman 12 pt spaces; continuation x=87.1 vs first x=72.1 pt in PDF."
+    },
+    {
+      "check": "reference_spacing",
+      "passed": true,
+      "evidence": "Single within each entry, 12 pt separation."
+    },
+    {
+      "check": "reference_count",
+      "passed": true,
+      "evidence": 15
+    },
+    {
+      "check": "all_references_have_descriptive_metadata",
+      "passed": true,
+      "evidence": "All 15 contain author/date/title and retrieval data; not a fresh online source verification."
+    },
+    {
+      "check": "all_references_cited",
+      "passed": false,
+      "evidence": "FAIL: Finnvera (2025) is in bibliography but absent from body."
+    },
+    {
+      "check": "caption_placement_Figure 1",
+      "passed": true,
+      "evidence": "Figure 1. Simplified corporate reporting structure from the 2025 Annual Report."
+    },
+    {
+      "check": "caption_center_Figure 1",
+      "passed": true,
+      "evidence": "Figure 1. Simplified corporate reporting structure from the 2025 Annual Report."
+    },
+    {
+      "check": "caption_placement_Table 1",
+      "passed": true,
+      "evidence": "Table 1. Examples of findings that changed development."
+    },
+    {
+      "check": "caption_center_Table 1",
+      "passed": true,
+      "evidence": "Table 1. Examples of findings that changed development."
+    },
+    {
+      "check": "caption_placement_Table 2",
+      "passed": true,
+      "evidence": "Table 2. Training and evaluation populations at different stages."
+    },
+    {
+      "check": "caption_center_Table 2",
+      "passed": true,
+      "evidence": "Table 2. Training and evaluation populations at different stages."
+    },
+    {
+      "check": "caption_placement_Figure 2",
+      "passed": true,
+      "evidence": "Figure 2. PixelProof inference flow from upload to displayed evidence."
+    },
+    {
+      "check": "caption_center_Figure 2",
+      "passed": true,
+      "evidence": "Figure 2. PixelProof inference flow from upload to displayed evidence."
+    },
+    {
+      "check": "caption_placement_Table 3",
+      "passed": true,
+      "evidence": "Table 3. E92 numerical development checks and their measured values."
+    },
+    {
+      "check": "caption_center_Table 3",
+      "passed": true,
+      "evidence": "Table 3. E92 numerical development checks and their measured values."
+    },
+    {
+      "check": "caption_placement_Figure 3",
+      "passed": true,
+      "evidence": "Figure 3. False alerts among 160 real development images per condition."
+    },
+    {
+      "check": "caption_center_Figure 3",
+      "passed": true,
+      "evidence": "Figure 3. False alerts among 160 real development images per condition."
+    },
+    {
+      "check": "caption_placement_Table 4",
+      "passed": true,
+      "evidence": "Table 4. Model2 trade-offs on sixteen reused parents, original-image condition."
+    },
+    {
+      "check": "caption_center_Table 4",
+      "passed": true,
+      "evidence": "Table 4. Model2 trade-offs on sixteen reused parents, original-image condition."
+    },
+    {
+      "check": "caption_placement_Table 5",
+      "passed": true,
+      "evidence": "Table 5. E92 per-view results on the reused development collection."
+    },
+    {
+      "check": "caption_center_Table 5",
+      "passed": true,
+      "evidence": "Table 5. E92 per-view results on the reused development collection."
+    },
+    {
+      "check": "all_tables_centered",
+      "passed": true,
+      "evidence": "Table OOXML checked."
+    },
+    {
+      "check": "capitalized_table_references",
+      "passed": false,
+      "evidence": "FAIL: lowercase table 3 in 4.5.5 and table 4 in 4.5.9."
+    },
+    {
+      "check": "numbered_not_relative_table_reference",
+      "passed": false,
+      "evidence": "FAIL: 4.5.7 says previous table; refer explicitly to Table 3 and/or Table 5 according to intended comparison."
+    },
+    {
+      "check": "roadmap_consistency",
+      "passed": false,
+      "evidence": "FAIL: introduction promises a removed optional appendix section."
+    },
+    {
+      "check": "submission_filename",
+      "passed": false,
+      "evidence": "SON RAPOR is a working filename; school prescribes course/report/name/date."
+    },
+    {
+      "check": "career_impact_answer",
+      "passed": false,
+      "evidence": "5.1 describes learning but does not answer whether this internship affected career plans."
+    },
+    {
+      "check": "desired_university_skill_answer",
+      "passed": false,
+      "evidence": "5.2 discusses three courses but not a skill the author wishes university had taught."
+    },
+    {
+      "check": "TOC_all_31_pages",
+      "passed": true,
+      "evidence": "All 31 heading page numbers match the current 24-page render."
+    },
+    {
+      "check": "black_text",
+      "passed": true,
+      "evidence": "All PDF text black; raster figures visually grayscale."
+    },
+    {
+      "check": "TNR_12_text",
+      "passed": true,
+      "evidence": "PDF body, headings, captions, tables, references; figure-internal labels are raster artwork."
+    },
+    {
+      "check": "figures_centered",
+      "passed": true,
+      "evidence": "All image centers within 0.5 pt of page center."
+    },
+    {
+      "check": "no_text_margin_overflow",
+      "passed": true,
+      "evidence": "Headers/footers excluded from body margin check."
+    },
+    {
+      "check": "section_length_limits",
+      "passed": true,
+      "evidence": "Company within 2 pages <=3; 3.1/3.2/3.3 each less than one page worth of text; literature spans parts of 7-9 <=3; 4.5 pages11-18 <=10;4.6 page19 <=1;5 pages20-21 <=3;6 and7 page22 <=1 each."
+    }
+  ],
+  "content_and_consistency_issues": [
+    {
+      "section": "Abstract",
+      "page": 2,
+      "issue": "The saved text is not the last corrected chat version: recored, does not indicates, feature development, data.However remain. Content covers the four required themes and is 227 words."
+    },
+    {
+      "section": "3.1",
+      "page": 6,
+      "issue": "Mentor email is Hasan.çontuk@turktelekom.com.tr; user previously supplied hasan.contuk@turktelekom.com.tr. Oner should be Önder. Mentor official job title remains unknown; do not invent it."
+    },
+    {
+      "section": "3.2",
+      "page": 6,
+      "issue": "The formatting/compression explanation is presented as a causal conclusion, while E10 controls did not show reduced AUC after common-format/square controls. Clarify the diagnostic, not a proven universal cause."
+    },
+    {
+      "section": "3.3",
+      "page": 7,
+      "issue": "Tradeoff example still says adding AI images; distinguish changing classification decisions from adding training examples. Earlier suggested correction was not applied."
+    },
+    {
+      "section": "3.4",
+      "page": 7,
+      "issue": "Radford parenthesis is closed correctly but citation is isolated between periods: images. (Radford...). Attach before the preceding sentence period."
+    },
+    {
+      "section": "4.1",
+      "page": 9,
+      "issue": "Scope includes work performed but lacks an explicit out-of-scope sentence requested by the school; credential verification and production rollout exclusions elsewhere can be summarized here."
+    },
+    {
+      "section": "4.3",
+      "page": 9,
+      "issue": "Dataset record filename is DATASETS.md, not DATASET.md; calibration values would be clearer as calibration data. No silent correction."
+    },
+    {
+      "section": "4.5.6",
+      "page": 15,
+      "issue": "Narrative says two models but Figure 3 shows E43, E86 and E92. The prose can say it compares E43 and E92 within the figure."
+    },
+    {
+      "section": "4.5.9",
+      "page": 18,
+      "issue": "Model2 paragraph has no local experiment citation; add relevant Keleş records for traceability. New-placement versus original-placement meaning should remain explicit. An empty paragraph separates body and caption."
+    },
+    {
+      "section": "4.6",
+      "page": 19,
+      "issue": "Population paragraph repeats AI image counts ambiguously. State 160 real+160 AI parents, two views each, 320 parents/640 views; same parents not independent duplicates. 1.245 Pyhton should be 1,245 Python."
+    },
+    {
+      "section": "4.6",
+      "page": 19,
+      "issue": "No company deployment is stated, but reason for non-deployment is not explicit as requested by school 4.6."
+    },
+    {
+      "section": "5.3",
+      "page": 21,
+      "issue": "Third difficulty is now present, but response to dataset-selection difficulty is less explicit than first two; describe actual checks/admission decisions already documented."
+    },
+    {
+      "section": "6",
+      "page": 22,
+      "issue": "statically consistent results is unclear; statistical consistency is not established. Prefer a limited statement about measured development-data improvement."
+    },
+    {
+      "section": "Headings and language",
+      "page": null,
+      "issue": "Intership, Recomandations, feature students, inserts and other grammar/spacing errors remain. School expressly requests spelling and writing-consistency checks."
+    },
+    {
+      "section": "Dates and upload",
+      "page": 1,
+      "issue": "Cover says 8 October 2026; quoted correction deadline was 4 October. A later extension or portal acceptance is not established by this review. Earlier user portal screenshot accepted report PDF or DOC; do not assume DOCX upload is accepted."
+    }
+  ],
+  "visual_review": "All 24 pages read and reviewed as contact sheets; Abstract, Model2 and both references pages additionally inspected individually. No clipping or overlap observed. Some visuals continue immediately on next page after citation; captions stay with visuals.",
+  "scope": "Report only. School report guideline and general internship rules read in full; professor and specific correction email applied. No new online verification of individual research sources, no Turnitin prediction and no guarantee of institutional approval."
+}
