@@ -1,0 +1,116 @@
+PIXELPROOF — BÖLÜM BÖLÜM KARŞILAŞTIRMA — 8 EKİM 2026
+
+Karşılaştırılan eski belge: revision_20261007/deliverables içindeki 25 sayfalık, 4 October 2026 adlı rapor.
+Yeni belge: revision_20261008/deliverables içindeki öğrenci metni, 24 sayfa.
+Eski raporun bazı bölümleri zaten öğrencinin önceki yeniden yazımını içeriyordu. Bu karşılaştırma, eski teknik anlatımı doğrulanmış mutlak gerçek olarak kabul etmez; korunmuş anlamı, değişen iddiaları ve açık tutarsızlıkları ayırır. Bu tur yeni bir çevrimiçi kaynak doğrulaması yapılmadı.
+
+BU TUR NE DEĞİŞTİ?
+Yalnızca dokuz 4.5.x başlığı sadeleştirildi, Abstract ve Model2 altına siyah ve kalın [TO COMPLETE] eklendi, içindekiler güncellendi. Gövde kelimeleri ve noktalama değiştirilmedi. Tablo değerleri, şekiller ve kaynakça metinleri korundu. Aşağıdaki öneriler rapora uygulanmış değişiklikler değildir.
+Önceki onaylı taşıma nedeniyle eski Model2 4.5.8 artık 4.5.9'dur. Yeni 4.5.8, ek testleri anlatan tamamlanmış bölümdür; yanlışlıkla eksik işaretlenmedi.
+
+YENİ BAŞLIKLAR
+4.5.1 First models and early tests
+4.5.2 Finding and correcting errors
+4.5.3 Preparing the images
+4.5.4 How E92 works
+4.5.5 How we checked model performance
+4.5.6 E92 results and remaining problems
+4.5.7 How the web demo makes decisions
+4.5.8 Further tests and unsuccessful changes
+4.5.9 Detecting edited areas with Model2
+
+BİÇİM KARŞILAŞTIRMASI
+Her iki belgede A4, 1 inç kenar boşlukları, siyah 12 punto Times New Roman, iki yana yaslı ve girintisiz çift aralıklı gövde korunuyor. Numaralı başlıklar solda; Alperen'in özel geri bildirimi uyarınca References ortada. Kaynaklarda 15 punto asılı girinti, kayıt içinde tek aralık ve kayıtlar arasında boşluk korunuyor. Üç şekil ve beş tablo mevcut; şekil açıklamaları altta, tablo açıklamaları üstte ve ortalanmış. İçindekiler sayfa numaraları yeni başlıklara göre kontrol ediliyor.
+Eski 35 numaralı başlık yeni yapıda 31 oldu: şirket alt başlıkları birleştirildi, eski 9.1 taşındı, ayrı 9/9.2 kaldırıldı. Bu yapısal değişiklikler önceden onaylanmıştı. Sadece sayfa sayısının azalması daha iyi rapor anlamına gelmiyor: Abstract ve Model2 henüz yazılmadı.
+Metin kaynaklı biçim eksikleri devam ediyor: küçük harfle “table 3”, numara yerine “previous table”, Model2 tablosunun henüz metin içi atfının bulunmaması, bozuk Radford atfı ve kullanılmayan Finnvera kaydı. Dolayısıyla raporun tamamı kurallara uygundur veya teslim hazırdır denemez. Diğer başlıklardaki yazım hataları bu tur kapsamına alınmadı.
+
+ABSTRACT
+Eski sürümde vardı; yeni öğrenci metni bekleniyor. [TO COMPLETE] olarak işaretlendi. Amaç, temel yöntem, sınırlı geliştirme başarısı, web demo ve bağımsız değerlendirme eksikliği kısa biçimde özetlenmeli; okul sınırı 250 kelime.
+
+1. INTRODUCTION
+Ana amaç, iki modül, gerçek fotoğraflara yanlış AI demeyi azaltma hedefi ve web demo korunuyor. Yeni anlatım daha kişisel ve anlaşılır. Ancak “E92 refers to the number of experiments” ifadesi deney kimliği ile toplam deney sayısını karıştırıyor. Ayrıca artık bulunmayan Section 9 hâlâ bölüm planında geçiyor. Bunlar düzeltilmeli. Yıl gövdeden çıkmış ama kapakta 2026 mevcut.
+
+2. COMPANY INFORMATION
+Şirketin adı, hizmetleri, müşterileri, adresleri, çalışan sayısı, ortakları, iştirakleri ve şema korunuyor. Tek başlık altında üç paragraf akışı uygun. 2016'da tek marka altında birleşme bilgisi çıkarılmış; büyük bir anlam kaybı değil. Nokia için eski metin Finnvera (2025) kullanıyordu; yenisi iddiayı Türk Telekom (2026a)'ya bağlamış ve “main” ifadesiyle güçlendirmiş. Bu atıf değiştirilmiş iddiayı destekliyor varsayılmamalı. Kaynak ve ifade birlikte kontrol edilmeli. “ddress” gibi yazım hataları da aynen duruyor.
+
+3.1 DEPARTMENT INFORMATION
+Tivibu alanı, danışılan kişiler, bireysel çalışma ve kararları öğrencinin vermesi korunmuş. Yeni metin sorumluluk paylaşımını daha açık anlatıyor. Mentör e-postası “Hasan.çontuk” olarak yazılmış; kullanıcının önceden verdiği adres “hasan.contuk” idi. “Oner çelebi” yazımı da farklı. Bunlar iletişim ve isim doğruluğu açısından düzeltilmeli. Hibrit günler burada yok ama 5.4'te var.
+
+3.2 INITIAL PROJECT STATUS
+CIFAKE, küçük CNN, %96.75 ve %77.1 karşılaştırması korunuyor. Yeni metin format, sıkıştırma ve boyutu düşüşün kanıtlanmış nedeni gibi sunuyor; eski rapor sonraki denetimlerin ölçümü karıştıran etkenler bulduğunu söylüyordu. Tek neden sonucuna geçilmemeli. JPEG kontrolünde incelenen AUC ile ilk doğruluk oranı aynı ölçüm değil. “No clear drop” ifadesi önceki %77.1'in doğrudan yeniden ölçümü veya bütün yanlılığın giderilmesi şeklinde anlaşılmamalı. 995 sayısı burada çıkarılmış ama 4.5.1'de mevcut.
+
+3.3 MOTIVATION AND PROBLEM DEFINITION
+Yanlış alarm ve AI kaçırma tanımları, kullanıcı ihtiyacı ve demo amacı korunuyor. Ancak daha fazla görüntüye AI kararı verme ile eğitime daha fazla AI görüntüsü ekleme aynı şey değil. Eski karar eşiği örneği yeni metinde eğitim verisi örneğine dönüşmüş. Yeni veri eklemek zorunlu olarak gerçek fotoğraf başarısını azaltmaz. Distribution shift, farklı kameralar ve üreticiler anlatımı da zayıflamış. Formatı düzenlemek bütün yeni kaynak sorununu çözmez. Bu paragraftaki anlam kayması önemli.
+
+3.4 RELATED LITERATURE
+Literatürün ana kaynakları korunuyor; her çalışmanın projeyle ilişkisini açıklaman daha anlaşılır. Ancak Guo iki kez neredeyse aynı fikirle anlatılıyor; biri yeterli. Radford atfının açılış parantezi eksik. CLIP'in görüntü–metin eğitimi ve SID'in kısa/uzun pozlama eşleşmesi gibi ayrıntılar azaltılmış; kısa literatür için bunların hepsini geri getirmek şart değil. DEAR'ın yayındaki başarısının projeye otomatik taşınmadığı uyarısı değerli. Bölüm şu an eski kısa anlatımdan daha uzun ve tekrar içeriyor.
+
+4.1 PROJECT OBJECTIVE AND SCOPE
+İki hedef korunuyor. Kapsamı açıklaman iyi, fakat veri denetimi yalnızca boyut/format normalizasyonu değildir; etiket doğruluğu, veri kaynağı ve tekrar kontrolleri de projede önemliydi. Evrensel başarı iddiası yapılmaması diğer bölümlerde korunuyor.
+
+4.2 MY RESPONSIBILITIES
+Deney yönetimi, veri hazırlama, danışma, sonuç kaydı ve arayüz çalışması korunuyor. AI yardımı burada çıkarılmış olsa da 4.3'te açıkça yer aldığı için rapordan saklanmış değil. İçerik açısından büyük eksik yok; dil ve noktalama daha sonra sınırlı biçimde düzeltilebilir.
+
+4.3 METHODOLOGY AND TOOLS
+MD düzenini kendi sözlerinle açıklaman iyi bir gelişme. Eski 9.2'deki kayıt/repo bilgisi burada bulunduğu için ayrı başlık gerekli değil. Ancak “her deneyde yeni veri seti eklendi” proje sürecini doğru yansıtmıyor; bazı deneyler aynı veriyle yürütüldü. DATASET.md yerine gerçek dosya adı DATASETS.md. “Calibration values” veri ile karar eşiğini karıştırabiliyor. AUC'nin performans ölçümü olduğu korunuyor. Aday reddetme örneği eski kesin kabul kuralından daha genel; kesin kural 4.5.6'da bulunduğu için bütünden kaybolmamış.
+
+4.4 EXPECTED OUTCOMES AND DELIVERABLES
+Demo, yeniden yürütülebilir deneyler, kayıtlar ve deneysel Model2 korunmuş. Kısa bir cümle parçası gibi yazılmış; içerik yeterli, kapsamlı yeniden yazım gerekmiyor.
+
+4.5.1 FIRST MODELS AND EARLY TESTS
+Eğitim sayıları, ResNet-18 sonuçları ve 995 görüntülük test korunmuş. Çözünürlüğü tek ve kesin neden gösteren cümle fazla güçlü. Eski anlatım, girdiyi eşleştirmenin performansın önemli kısmını geri getirdiğini söylüyordu. “Rather than looking camera noise” ifadesi kamera ipuçlarının tamamen bırakıldığını düşündürebilir; asıl ders bu açıklamaların kontrol deneyleriyle sınanmasıydı.
+
+4.5.2 FINDING AND CORRECTING ERRORS
+Ters etiket, yeniden ölçüm ve değerlendirme verisinden eşik seçme hatası korunuyor. Kritik sayı yazımı: 0.480% değil 0.480 AUC olmalı; 0.764 de aynı 0–1 ölçeğinde. Defactify adı çıkarıldığı için ölçümün hangi veri setine ait olduğu daha az açık. Sınav sorusu benzetmesi hatayı anlaşılır anlatıyor.
+
+4.5.3 PREPARING THE IMAGES
+12,269 başlangıç görüntüsü, 7,674 gerçek, 4,595 AI ve 49,076 görünüm doğru şekilde aktarılmış. Aynı görüntünün dört sürümünün bağımsız dört örnek olmadığı açıklanıyor. E43'ün 11/20 sonucu ve 391/490 yanlış alarmları korunuyor. Lisans, tekrar ve kaynak geçmişi kontrolleri metinden çıkmış; veri kalitesini anlatırken bunlara tek kısa cümle ayrılması faydalı olabilir.
+
+4.5.4 HOW E92 WORKS
+Önceden eğitilmiş modellerin sabit tutulması ve küçük bileşenlerin eğitilmesi korunuyor; kendi katkının DINOv2/CLIP/DEAR'ı icat etmek olmadığı açık. “Little pieces” anlaşılır ama hangi işi yaptıklarını kısaca söylemek daha net olur. Referans skoruna sınırlı düzeltme yöntemi ve eğitim örneklerini koruma sınırı eski metinde daha açık. E51–E92 deney atfı yeni paragrafta bulunmuyor. Birden çok değişiklikten hangi katkının etkili olduğunun ayrı deney olmadan belirlenemeyeceği uyarısı doğru; “her aşamada” ifadesi gereğinden geniş.
+
+4.5.5 HOW WE CHECKED MODEL PERFORMANCE
+Eski 9.1 burada; yöntem ile sonuç arasına gelmesi akışı iyileştirdi. Projeye özel 20 kontrolün evrensel standart olmadığı ve tam kabul anlamına gelmediği korunuyor. Coverage ve uncertainty terimlerinin açıklaması kısalmış; tabloyu ilk kez gören için tanımlar faydalı. “This table 3” içindeki Table büyük yazılmalı. Sayısal tablo değişmedi.
+
+4.5.6 E92 RESULTS AND REMAINING PROBLEMS
+68→0 ve 68→14, 159/160, 20/20 sayısal kontrol ve ayrı AI koruma kuralının başarısızlığı korunmuş. Burası raporun güçlü ve dürüst kısmı. Metin Figure 3 için iki model diyor; korunmuş grafikte E43, E86 ve E92 olmak üzere üç model var. İki modelin karşılaştırmasına odaklanıldığı açıklanmalı veya model sayısı düzeltilmeli. E102'de 14'ten 12'ye inen hataların işlenmiş gerçek görüntülerde olduğu açık yazılmalı. “Two different families” ifadesinde AI üretici aileleri kastedildiği belirsiz. Tekrar kullanılan veri açıklaması var; 14 hatanın 13'ünün iki sahnede toplandığı ayrıntının çıkarılması ana sonucu tersine çevirmiyor. E92/E102 deney atıfları geri eklenmeli.
+
+4.5.7 HOW THE WEB DEMO MAKES DECISIONS
+Skorun olasılık olmadığı, iki eşik, iki görünüm ve 139/21 ile 159/1 sonuçları korunuyor. “No clear signs” gerçeklik kanıtı olarak sunulmuyor; önemli ve doğru. Eski metindeki yuvarlanmamış değerlerle karar verilmesi ve E43'ün danışma rolü çıkarılmış. Sayısal eşiğin yaklaşık gösterildiğini belirtmek yararlı. “Previous table” hocanın numaralı atıf kuralına uygun değil; ayrıca taşıma sonrası önceki tablo kriter tablosu. Burada sürüm bazlı sonuçlar kastediliyorsa açık Table 5 atfı kullanılmalı. Yazılım kontrolleri ile model doğruluğu ayrımı korunmuş.
+
+4.5.8 FURTHER TESTS AND UNSUCCESSFUL CHANGES
+206 gerçek fotoğrafta 9/18 hata ve galerinin bağımsız olmaması korunuyor. %29.18/%7.68 ve JPEG75'te %75.73→%74.15 ölçümleri de korunuyor; son sayının yüzde işareti eksik. Zararlı skor katkısını bulmak ile fiziksel nedeni kanıtlamak ayrımı yeni dilde zor okunuyor. Eski E146 araştırma modellerinin aktif E92 olmadığı uyarısı çıkarılmış; o sonuçlar da aktarılmadığı için doğrudan bir çelişki yok. Bağımsız son test ihtiyacı hâlâ belirtiliyor.
+
+4.5.9 DETECTING EDITED AREAS WITH MODEL2
+Eski 4.5.8 burada. [TO COMPLETE] işaretlendi. Önceki Model2 tablosu korundu; metin ve tablonun metin içi atfı eksik. Yazarken temel nedenler korunmalı: yanlış değerlendirme düzeltildiğinde zayıf başarı, dosya bulmanın uygun/bağımsız eğitim verisi bulmak olmadığı, yerel düzenlemede maskenin dışının da değişmesi, küçük kontrollü denemenin geniş güvenilirlik kanıtlamaması. Eski bütün sayıları geri koymak zorunlu değil; seçilen sayılar neyi ölçtüğünü kaybetmemeli.
+
+4.6 RESULTS
+Tablo sayıları ve yazılım testlerinin model doğruluğu olmadığı ayrımı korunuyor. Ancak “previous model missed” bilimsel anlamı ters çeviriyor: E43'ün yakaladığı bir görüntüyü E92 kaçırmıştı. 160 gerçek + 160 AI = 320 başlangıç görüntüsü; iki görünümle toplam 640 görünüm. Aynı görüntülerin sürümleri bağımsız yeni fotoğraflar değildir. Mevcut paragrafın AI sayılarını tekrar etmesi karıştırıyor. 1.245 yerine İngilizce binlik gösterimi 1,245 olmalı. Şirkette kullanılmadığı açıkça korunmuş.
+
+5.1 LEARNING
+Yeni metin daha kişisel: bireysel proje yönetimi, soru sorma, disiplin ve iş ilişkileri belirgin. Eski ölçüm güvenilirliği ve kayıt tutma dersi daha az görünür ama teknik bölümlerde açıklanmış. Okulun istediği gelecek eğitim/kariyer planına etkisi açık bir cümleyle tamamlanmalı; bunu öğrenci kendi deneyimine göre yazmalı.
+
+5.2 RELATION TO UNDERGRADUATE EDUCATION
+CS412, DSA210 ve PROJ201 bağlantıları korunuyor; en fazla üç ders sınırına uyuyor. Önceki kısa anlatımdan daha kişisel. Ancak okulun istediği “önceden öğrenmiş olmayı istediğin bilgi/beceri” yanıtı eksik. Başarı kapsamı ve tarih gibi kişisel bilgiler öğrenci tarafından teyit edilmeli; bu değerlendirme bunları dış kaynaktan doğrulamıyor.
+
+5.3 MAJOR DIFFICULTIES
+Yeni sürümde veri setleri arasında başarı düşüşü ve işe ulaşım olmak üzere iki zorluk var. Eski metinde üç teknik zorluk vardı. Ulaşım deneyimi yazılabilir, fakat okul üç zorluk istiyor; üçüncü tamamlanmalı. Örneğin gerçekten yaşanan etiket kontrolü veya donanım sınırı kendi sözlerinle eklenebilir. Sırf sayıyı tamamlamak için deneyim uydurulmamalı.
+
+5.4 A TYPICAL DAY
+7.30 başlangıç, öğle, molalar, 16.00 bitiş ve cuma uzaktan çalışma korunuyor. “After lunch I worked 4 p.m.” ifadesi 16.00'a kadar çalışmayı net anlatmıyor; küçük dil düzeltmesi yeterli.
+
+6. CONCLUSION
+Başarısız deneylerden öğrenme daha görünür ve kişisel. Tam güvenilirlik garantisi verilmemesi korunmuş. Buna karşılık “statically consistant results” ifadesi istatistiksel güvenilirlik kanıtı gibi okunabilir; mevcut tekrar kullanılan veri bunu tek başına sağlamıyor. Sonuç, tanımlı geliştirme verisinde iyileşme düzeyinde tutulmalı. Model2'nin deneysel kaldığı diğer bölümlerde var, burada da tek cümleyle hatırlatılabilir.
+
+7. RECOMMENDATIONS
+İlgi alanını paylaşma, hazırlık, iletişim ve çalışma düzenine uyum okulun beklentisine uygun. Önceki metindeki çalışma saati dışı iletişim çağrışımı artık yok. Büyük içerik eksiği yok; dil daha sonra sınırlı düzeltilmeli.
+
+8. REFERENCES
+15 kaynak kaydı önceki raporla kelimesi kelimesine aynı; başlık ortalı ve asılı girinti korunmuş. Yine de kaynakça biçiminin doğru olması metin içi kullanımın tamam olduğu anlamına gelmez: Finnvera artık atıfsız, Radford atfı bozuk. Nokia iddiasının kaynağı gözden geçirilmeli. Bu tur kaynakların hepsi internetten tekrar doğrulanmadı.
+
+ESKİ 9. APPENDICES
+9.1 yeni 4.5.5'e taşındı. 9.2'nin kayıt bilgisi 4.3'te mevcut. Okulda ekler isteğe bağlı olduğundan boş bir 9 başlığı tutmak gerekmiyor. Introduction'daki eski yönlendirme kaldırılmayı bekliyor.
+
+GENEL YORUM
+Yeni rapor öğrencinin ne yaptığını ve ne öğrendiğini daha görünür kılıyor. Sade başlıklar ve kriterlerin sonuçlardan önce gelmesi okumayı kolaylaştırıyor. Önceki rapor ise ölçüm kapsamı, kaynaklar ve sınırlamalar bakımından daha kesin yazılmıştı. En iyi sonraki adım eski teknik dili bütünüyle geri getirmek değil, yeni cümlelerdeki sınırlı fakat önemli anlam hatalarını düzeltmek.
+Mevcut belgeyi henüz teslim hazır bulmuyorum. Öncelik: Abstract ve Model2; E92 kaçırma yönü; AUC yüzde hatası; 320 başlangıç/640 görünüm ayrımı; her deneyde yeni veri iddiası; eşik örneği ile veri ekleme ayrımı; kaynak/tablo atıfları; okulun üç kişisel yanıtı (kariyer etkisi, eksik hazırlık becerisi, üçüncü zorluk). Bunlar çözülünce yalnızca gerekli dil düzeltmeleri yapılabilir. Puan veya AI tespit yüzdesi tahmini bu incelemenin sonucu değildir.

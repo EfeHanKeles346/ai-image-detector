@@ -1,3 +1,5 @@
+8 Ekim ek güncelleme: Dokuz 4.5.x başlığı sadeleştirildi; Abstract ve yeni 4.5.9 Model2 [TO COMPLETE] olarak işaretlendi. Ayrıntılı bölüm karşılaştırması: BOLUM_KARSILASTIRMASI.txt. Gövde cümlelerine bu tur dokunulmadı.
+
 8 EKİM 2026 — BİÇİMLENDİRİLMİŞ ÇALIŞMA KOPYASI
 
 Bu sürüm teslim hazır değildir. Abstract ve Model2 metni henüz yazılmadı.

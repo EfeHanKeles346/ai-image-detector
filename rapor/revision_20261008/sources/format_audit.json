@@ -5,6 +5,10 @@
       "passed": true
     },
     {
+      "check": "two_visible_completion_markers",
+      "passed": true
+    },
+    {
       "check": "figures_and_tables_retained",
       "passed": true
     },
@@ -62,6 +66,10 @@
     },
     {
       "check": "body_format:Submission date: 4 October 2",
+      "passed": true
+    },
+    {
+      "check": "body_format:[TO COMPLETE]",
       "passed": true
     },
     {
@@ -309,11 +317,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.1 Early models and the first transfer failures:",
+      "check": "heading_alignment:4.5.1 First models and early tests",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.1 Early models and the first transfer failures:",
+      "check": "numbered_heading:4.5.1 First models and early tests",
       "passed": true
     },
     {
@@ -329,11 +337,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.2 Data integrity and corrected conclusions",
+      "check": "heading_alignment:4.5.2 Finding and correcting errors",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.2 Data integrity and corrected conclusions",
+      "check": "numbered_heading:4.5.2 Finding and correcting errors",
       "passed": true
     },
     {
@@ -345,11 +353,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.3 Data roles and processinf conditions",
+      "check": "heading_alignment:4.5.3 Preparing the images",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.3 Data roles and processinf conditions",
+      "check": "numbered_heading:4.5.3 Preparing the images",
       "passed": true
     },
     {
@@ -369,11 +377,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.4 E92 representations and learning",
+      "check": "heading_alignment:4.5.4 How E92 works",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.4 E92 representations and learning",
+      "check": "numbered_heading:4.5.4 How E92 works",
       "passed": true
     },
     {
@@ -393,11 +401,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.5 Development criteria",
+      "check": "heading_alignment:4.5.5 How we checked model performance",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.5 Development criteria",
+      "check": "numbered_heading:4.5.5 How we checked model performance",
       "passed": true
     },
     {
@@ -413,11 +421,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.6 Development improvement and accaptance limits",
+      "check": "heading_alignment:4.5.6 E92 results and remaining problems",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.6 Development improvement and accaptance limits",
+      "check": "numbered_heading:4.5.6 E92 results and remaining problems",
       "passed": true
     },
     {
@@ -437,11 +445,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.7 Honest scores and the web demostration",
+      "check": "heading_alignment:4.5.7 How the web demo makes decisions",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.7 Honest scores and the web demostration",
+      "check": "numbered_heading:4.5.7 How the web demo makes decisions",
       "passed": true
     },
     {
@@ -453,11 +461,11 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.8 broader checks and rejected improvements",
+      "check": "heading_alignment:4.5.8 Further tests and unsuccessful changes",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.8 broader checks and rejected improvements",
+      "check": "numbered_heading:4.5.8 Further tests and unsuccessful changes",
       "passed": true
     },
     {
@@ -469,11 +477,15 @@
       "passed": true
     },
     {
-      "check": "heading_alignment:4.5.9 Model2 Localization and its limits",
+      "check": "heading_alignment:4.5.9 Detecting edited areas with Model2",
       "passed": true
     },
     {
-      "check": "numbered_heading:4.5.9 Model2 Localization and its limits",
+      "check": "numbered_heading:4.5.9 Detecting edited areas with Model2",
+      "passed": true
+    },
+    {
+      "check": "body_format:[TO COMPLETE]",
       "passed": true
     },
     {
@@ -733,39 +745,39 @@
       "passed": true
     },
     {
-      "check": "TOC:4.5.1 Early models and the first transfer failures:",
+      "check": "TOC:4.5.1 First models and early tests",
       "passed": true
     },
     {
-      "check": "TOC:4.5.2 Data integrity and corrected conclusions",
+      "check": "TOC:4.5.2 Finding and correcting errors",
       "passed": true
     },
     {
-      "check": "TOC:4.5.3 Data roles and processinf conditions",
+      "check": "TOC:4.5.3 Preparing the images",
       "passed": true
     },
     {
-      "check": "TOC:4.5.4 E92 representations and learning",
+      "check": "TOC:4.5.4 How E92 works",
       "passed": true
     },
     {
-      "check": "TOC:4.5.5 Development criteria",
+      "check": "TOC:4.5.5 How we checked model performance",
       "passed": true
     },
     {
-      "check": "TOC:4.5.6 Development improvement and accaptance limits",
+      "check": "TOC:4.5.6 E92 results and remaining problems",
       "passed": true
     },
     {
-      "check": "TOC:4.5.7 Honest scores and the web demostration",
+      "check": "TOC:4.5.7 How the web demo makes decisions",
       "passed": true
     },
     {
-      "check": "TOC:4.5.8 broader checks and rejected improvements",
+      "check": "TOC:4.5.8 Further tests and unsuccessful changes",
       "passed": true
     },
     {
-      "check": "TOC:4.5.9 Model2 Localization and its limits",
+      "check": "TOC:4.5.9 Detecting edited areas with Model2",
       "passed": true
     },
     {
@@ -829,11 +841,11 @@
       "passed": true
     }
   ],
-  "passed": 207,
+  "passed": 210,
   "pages": 24,
   "prose_preserved": true,
   "content_issues": [
-    "Abstract is intentionally blank; Model2 prose is pending under renumbered 4.5.9. Its preserved Table 4 has no body citation yet.",
+    "Abstract has a completion marker; Model2 prose is pending under renumbered 4.5.9. Its preserved Table 4 has no body citation yet.",
     "Introduction still says Section 9 contains appendices. Removing that clause would change prose, so it remains pending after the authorized relocation.",
     "The criteria paragraph still says lowercase \"table 3\". Albert requires \"Table 3\"; capitalization was not authorized.",
     "Finnvera (2025) remains in the preserved bibliography but is no longer cited. Nokia statement is attached to the company annual-report citation instead.",
@@ -845,11 +857,41 @@
     "3.1 supplied mentor address uses Hasan.çontuk whereas prior confirmed contact was hasan.contuk; not corrected without authorization.",
     "Raw author note \"(abstact 3.2)\" was kept in the archived input and excluded as a non-report editing note. Markdown links were displayed as their labels; all prose characters otherwise preserved except approved table numbers.",
     "Pending prose may change pagination. Current formatted draft is not submission-ready and no AI score or grade is predicted.",
-    "Renumbered 4.5.7 uses \"previous table\", contrary to the required numbered figure/table references; source wording preserved."
+    "Figure 3 includes E43, E86 and E92; the body describes two models. See the detailed comparison for all section-specific recommendations."
   ],
-  "visual_review": "All 24 rendered pages inspected. No clipped text, overlaps, broken tables or missing figures found. Abstract page intentionally blank and Model2 prose pending; not a submission-ready document.",
-  "files": {
-    "CS395_FinalReport_Efe_Han_Keleş_4October2026.docx": "5d011627afeb56f1b086a1290282f06c29f9b50e985630e1bdffff0245184e2c",
-    "CS395_FinalReport_Efe_Han_Keleş_4October2026.pdf": "d462e905c92a7ba0d66690d7eeaa3442a478d6045a2c9b9ef8a748c45501c1e3"
+  "visual_review": {
+    "status": "complete",
+    "pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "notes": "All 24 rendered pages reviewed. Pages 1–4 are byte-identical PNGs to the initial inspected render. Two intentional pending sections; no clipping, detached captions or overflowing tables observed."
+  },
+  "body_vs_commit_54ae88b": "All 56 paragraph texts identical, including punctuation.",
+  "deliverable_sha256": {
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.docx": "f2c1a6cc4a8c107407dd0700034c0695fe216934b3fa6e4eada2304a7b7d44d3",
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.pdf": "0bae5b446ff980c1717b17782c8ad6ba694f1e4cfb3060ac5f7cfb77e53c10f2"
   }
 }

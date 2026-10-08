@@ -13,8 +13,9 @@ def ck(n,v):
 expected=json.loads((R/'sources/expected_prose.json').read_text());actual=[];current=None
 for p in d.paragraphs:
  if p.style.name.startswith('Heading'):current=p.text
- elif current and current!='8 REFERENCES' and p.style.name=='Normal' and p.text:actual.append({'section':current,'text':p.text})
+ elif current and current!='8 REFERENCES' and p.style.name=='Normal' and p.text and p.text!='[TO COMPLETE]':actual.append({'section':current,'text':p.text})
 ck('all_56_supplied_body_paragraphs_exact_after_authorized_numbering_and_layout',actual==expected)
+ck('two_visible_completion_markers',sum(p.text=='[TO COMPLETE]' for p in d.paragraphs)==2)
 ck('figures_and_tables_retained',len(d.inline_shapes)==3 and len(d.tables)==5)
 ck('margins',all(abs(m.inches-1)<.001 for s in d.sections for m in [s.left_margin,s.right_margin,s.top_margin,s.bottom_margin]))
 refs=False;hs=[]
@@ -60,7 +61,7 @@ with pdfplumber.open(R/'deliverables'/(N+'.pdf')) as pdf:
 ck('results_one_page',all(' '.join(x['text'].split()) in ' '.join(r.pages[18].extract_text().split()) for x in expected if x['section']=='4.6 Results'))
 # Evidence of manuscript issues is reported, never silently fixed.
 issues=[
-'Abstract is intentionally blank; Model2 prose is pending under renumbered 4.5.9. Its preserved Table 4 has no body citation yet.',
+'Abstract has a completion marker; Model2 prose is pending under renumbered 4.5.9. Its preserved Table 4 has no body citation yet.',
 'Introduction still says Section 9 contains appendices. Removing that clause would change prose, so it remains pending after the authorized relocation.',
 'The criteria paragraph still says lowercase "table 3". Albert requires "Table 3"; capitalization was not authorized.',
 'Finnvera (2025) remains in the preserved bibliography but is no longer cited. Nokia statement is attached to the company annual-report citation instead.',

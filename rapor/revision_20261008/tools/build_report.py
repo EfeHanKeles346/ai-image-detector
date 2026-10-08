@@ -43,6 +43,7 @@ order=[s['old'] for s in sections if s['old'] not in ('9','9.1')]
 order.insert(order.index('4.5.5'),'9.1')
 num_map={'9.1':'4.5.5',**{f'4.5.{i}':f'4.5.{i+1}' for i in range(5,9)}}
 tab_map={3:4,4:5,5:3}
+simple_headings={'4.5.1': 'First models and early tests', '4.5.2': 'Finding and correcting errors', '4.5.3': 'Preparing the images', '4.5.4': 'How E92 works', '4.5.5': 'How we checked model performance', '4.5.6': 'E92 results and remaining problems', '4.5.7': 'How the web demo makes decisions', '4.5.8': 'Further tests and unsuccessful changes', '4.5.9': 'Detecting edited areas with Model2'}
 page_map=json.loads((ROOT/'sources/heading_pages.json').read_text()) if (ROOT/'sources/heading_pages.json').exists() else {}
 # Body rebuild starts at abstract; cover source paragraphs preserved.
 body=d.element.body
@@ -59,6 +60,7 @@ def display(t):
  # Markdown link syntax is formatting, not manuscript prose; keep exact displayed label.
  return re.sub(r'\[([^\]]+)\]\(([^)]+)\)',r'\1',t)
 addp('Abstract','Title').paragraph_format.page_break_before=True
+addp('[TO COMPLETE]').runs[0].bold=True
 addp('Table of Contents','Title').paragraph_format.page_break_before=True
 # Cached, editable Word TOC. Values are refreshed deterministically from rendered pages.
 sdt=OxmlElement('w:sdt');content=OxmlElement('w:sdtContent');sdt.append(content)
@@ -66,6 +68,7 @@ headers=[]
 for key in order:
  s=by[key];h=s['heading']
  if key in num_map:h=re.sub(r'^'+re.escape(key),num_map[key],h, count=1)
+ if num_map.get(key,key) in simple_headings:h=num_map.get(key,key)+' '+simple_headings[num_map.get(key,key)]
  headers.append(h)
 for i,h in enumerate(headers):
  p=OxmlElement('w:p');pr=OxmlElement('w:pPr');p.append(pr)
@@ -113,7 +116,9 @@ for key,h in zip(order,headers):
   if key=='4.5.5' and 'Figure 3' in t:asset('Figure',3)
   if key=='4.6' and 'Table 5' in t:asset('Table',4)
   if key=='9.1' and 'table 3' in t.lower():asset('Table',5)
- if key=='4.5.8':asset('Table',3) # Existing evidence preserved; student prose and citation pending.
+ if key=='4.5.8':
+  addp('[TO COMPLETE]').runs[0].bold=True
+  asset('Table',3) # Existing evidence preserved; student prose and citation pending.
 # Typography: professor rules override general skill/template recommendations.
 for sec in d.sections:
  sec.top_margin=sec.bottom_margin=sec.left_margin=sec.right_margin=Inches(1)
@@ -124,6 +129,7 @@ for p in d.paragraphs:
  f=p.paragraph_format;t=p.text
  f.left_indent=f.right_indent=f.first_line_indent=Pt(0);f.space_before=f.space_after=Pt(0);f.line_spacing=2;f.widow_control=True
  p.alignment=A.JUSTIFY
+ if t=='[TO COMPLETE]':f.keep_with_next=True
  if p.style.name.startswith('Heading'):
   refs_mode=t=='8 REFERENCES' if p.style.name=='Heading 1' else refs_mode
   p.alignment=A.CENTER if refs_mode else A.LEFT
