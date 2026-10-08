@@ -1,0 +1,855 @@
+{
+  "checks": [
+    {
+      "check": "all_56_supplied_body_paragraphs_exact_after_authorized_numbering_and_layout",
+      "passed": true
+    },
+    {
+      "check": "figures_and_tables_retained",
+      "passed": true
+    },
+    {
+      "check": "margins",
+      "passed": true
+    },
+    {
+      "check": "body_format:Sabancı University",
+      "passed": true
+    },
+    {
+      "check": "body_format:Faculty of Engineering and N",
+      "passed": true
+    },
+    {
+      "check": "body_format:Computer Science and Enginee",
+      "passed": true
+    },
+    {
+      "check": "body_format:CS395 Internship Final Repor",
+      "passed": true
+    },
+    {
+      "check": "body_format:Efe Han Keleş",
+      "passed": true
+    },
+    {
+      "check": "body_format:Student ID: 31994",
+      "passed": true
+    },
+    {
+      "check": "body_format:Company: Türk Telekomünikasy",
+      "passed": true
+    },
+    {
+      "check": "body_format:Supervisor: Önder Çelebi",
+      "passed": true
+    },
+    {
+      "check": "body_format:Supervisor title: Director",
+      "passed": true
+    },
+    {
+      "check": "body_format:Internship: 20 July–18 Septe",
+      "passed": true
+    },
+    {
+      "check": "body_format:Approved duration: 40 intern",
+      "passed": true
+    },
+    {
+      "check": "body_format:Format: Hybrid",
+      "passed": true
+    },
+    {
+      "check": "body_format:Submission date: 4 October 2",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:1.Introduction:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:1.Introduction:",
+      "passed": true
+    },
+    {
+      "check": "body_format:The main purpose of this Int",
+      "passed": true
+    },
+    {
+      "check": "body_format:My Internship was from 20 Ju",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:2.Company information:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:2.Company information:",
+      "passed": true
+    },
+    {
+      "check": "body_format:Türk Telekomünikasyon A.Ş. h",
+      "passed": true
+    },
+    {
+      "check": "body_format:ddress of the company regist",
+      "passed": true
+    },
+    {
+      "check": "body_format:The various departments and ",
+      "passed": true
+    },
+    {
+      "check": "caption_centered:Figure 1.",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Figure 1.",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3 Project Background:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:3 Project Background:",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3.1 Department information:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:3.1 Department information:",
+      "passed": true
+    },
+    {
+      "check": "body_format:My working unit was the Plan",
+      "passed": true
+    },
+    {
+      "check": "body_format:This project was developed i",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3.2 Initial project status:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:3.2 Initial project status:",
+      "passed": true
+    },
+    {
+      "check": "body_format:Initial step was to prepare ",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3.3 Motivation and problem definition:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:3.3 Motivation and problem definition:",
+      "passed": true
+    },
+    {
+      "check": "body_format:One of the main problems of ",
+      "passed": true
+    },
+    {
+      "check": "body_format:The main motiviation of this",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:3.4 Related Litarature:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:3.4 Related Litarature:",
+      "passed": true
+    },
+    {
+      "check": "body_format:There are several related li",
+      "passed": true
+    },
+    {
+      "check": "body_format:Wang et al. (2020) explored ",
+      "passed": true
+    },
+    {
+      "check": "body_format:Ojha et al. (2023) studied h",
+      "passed": true
+    },
+    {
+      "check": "body_format:CLIP could be considered as ",
+      "passed": true
+    },
+    {
+      "check": "body_format:DINOv2 is a pretrained model",
+      "passed": true
+    },
+    {
+      "check": "body_format:According to Grommelt et al.",
+      "passed": true
+    },
+    {
+      "check": "body_format:DEAR uses inpainting of a sp",
+      "passed": true
+    },
+    {
+      "check": "body_format:SIDD is a dataset which cont",
+      "passed": true
+    },
+    {
+      "check": "body_format:The SID dataset has paired i",
+      "passed": true
+    },
+    {
+      "check": "body_format:High score of the model does",
+      "passed": true
+    },
+    {
+      "check": "body_format:Guo et al. (2017) explain th",
+      "passed": true
+    },
+    {
+      "check": "body_format:Dwork et al. (2015) explain ",
+      "passed": true
+    },
+    {
+      "check": "body_format:Adobe Content Credentials re",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.Intership project:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.Intership project:",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.1 Project objective and scope:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.1 Project objective and scope:",
+      "passed": true
+    },
+    {
+      "check": "body_format:This project has two modules",
+      "passed": true
+    },
+    {
+      "check": "body_format:The scope consist of several",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.2 My Responsibilities:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.2 My Responsibilities:",
+      "passed": true
+    },
+    {
+      "check": "body_format:My Responsibilities were; Di",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.3 Metholody and tools:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.3 Metholody and tools:",
+      "passed": true
+    },
+    {
+      "check": "body_format:There were several main docu",
+      "passed": true
+    },
+    {
+      "check": "caption_centered:Table 1. ",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 1. ",
+      "passed": true
+    },
+    {
+      "check": "body_format:Dataset used to train model.",
+      "passed": true
+    },
+    {
+      "check": "body_format:Some tools that used in this",
+      "passed": true
+    },
+    {
+      "check": "body_format:In every new model, if fixin",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.4 Expected outcomes and deliverables:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.4 Expected outcomes and deliverables:",
+      "passed": true
+    },
+    {
+      "check": "body_format:A model that trained which i",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5 Project details:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5 Project details:",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.1 Early models and the first transfer failures:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.1 Early models and the first transfer failures:",
+      "passed": true
+    },
+    {
+      "check": "body_format:The first model called small",
+      "passed": true
+    },
+    {
+      "check": "body_format:After training the first mod",
+      "passed": true
+    },
+    {
+      "check": "body_format:It turns out that before mak",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.2 Data integrity and corrected conclusions",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.2 Data integrity and corrected conclusions",
+      "passed": true
+    },
+    {
+      "check": "body_format:Noticing reverse labeling in",
+      "passed": true
+    },
+    {
+      "check": "body_format:Reverse labeling may cause a",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.3 Data roles and processinf conditions",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.3 Data roles and processinf conditions",
+      "passed": true
+    },
+    {
+      "check": "body_format:Parent means that initial im",
+      "passed": true
+    },
+    {
+      "check": "body_format:Table 2 shows the datasets t",
+      "passed": true
+    },
+    {
+      "check": "caption_centered:Table 2. ",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 2. ",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.4 E92 representations and learning",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.4 E92 representations and learning",
+      "passed": true
+    },
+    {
+      "check": "body_format:Firstly several methods trie",
+      "passed": true
+    },
+    {
+      "check": "caption_centered:Figure 2.",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Figure 2.",
+      "passed": true
+    },
+    {
+      "check": "body_format:Transfer learning means usin",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.5 Development criteria",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.5 Development criteria",
+      "passed": true
+    },
+    {
+      "check": "body_format:This table 3 shows the scors",
+      "passed": true
+    },
+    {
+      "check": "caption_centered:Table 3. ",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 3. ",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.6 Development improvement and accaptance limits",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.6 Development improvement and accaptance limits",
+      "passed": true
+    },
+    {
+      "check": "body_format:Figure 3 shows that compare ",
+      "passed": true
+    },
+    {
+      "check": "caption_centered:Figure 3.",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Figure 3.",
+      "passed": true
+    },
+    {
+      "check": "body_format:This set have been used few ",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.7 Honest scores and the web demostration",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.7 Honest scores and the web demostration",
+      "passed": true
+    },
+    {
+      "check": "body_format:In the web demo 0-100 does n",
+      "passed": true
+    },
+    {
+      "check": "body_format:In the same development data",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.8 broader checks and rejected improvements",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.8 broader checks and rejected improvements",
+      "passed": true
+    },
+    {
+      "check": "body_format:Photographs that comes from ",
+      "passed": true
+    },
+    {
+      "check": "body_format:While checking the training ",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.5.9 Model2 Localization and its limits",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.5.9 Model2 Localization and its limits",
+      "passed": true
+    },
+    {
+      "check": "caption_centered:Table 4. ",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 4. ",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:4.6 Results",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:4.6 Results",
+      "passed": true
+    },
+    {
+      "check": "body_format:Result of this all experimen",
+      "passed": true
+    },
+    {
+      "check": "caption_centered:Table 5. ",
+      "passed": true
+    },
+    {
+      "check": "caption_placement:Table 5. ",
+      "passed": true
+    },
+    {
+      "check": "body_format:Performance of E92 got bette",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.Internship experience",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:5.Internship experience",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.1 Learning:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:5.1 Learning:",
+      "passed": true
+    },
+    {
+      "check": "body_format:There are several things tha",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.2 Relation tı undergradute education:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:5.2 Relation tı undergradute education:",
+      "passed": true
+    },
+    {
+      "check": "body_format:There are many courses that ",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.3 Major Difficultes:",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:5.3 Major Difficultes:",
+      "passed": true
+    },
+    {
+      "check": "body_format:There were several technical",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:5.4 A typical day",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:5.4 A typical day",
+      "passed": true
+    },
+    {
+      "check": "body_format:I used to go office 7.30 a.m",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:6.Conclusion",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:6.Conclusion",
+      "passed": true
+    },
+    {
+      "check": "body_format:Result of this project is a ",
+      "passed": true
+    },
+    {
+      "check": "body_format:Main topic for this project ",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:7.Recomandations",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:7.Recomandations",
+      "passed": true
+    },
+    {
+      "check": "body_format:For feature students that wi",
+      "passed": true
+    },
+    {
+      "check": "heading_alignment:8 REFERENCES",
+      "passed": true
+    },
+    {
+      "check": "numbered_heading:8 REFERENCES",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Abdelhamed, A., Lin, S., ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Adobe. (2026, August 25).",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Chen, C., Chen, Q., Xu, J",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Dwork, C., Feldman, V., H",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Finnvera. (2025, October ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Grommelt, P., Weiss, L., ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Guo, C., Pleiss, G., Sun,",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Keleş, E. H. (2026). Pixe",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Kim, D., Choi, J., Seong,",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Ojha, U., Li, Y., & Lee, ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Oquab, M., Darcet, T., Mo",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Radford, A., Kim, J. W., ",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Türk Telekom. (2026a). 20",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Türk Telekom. (2026b). Ha",
+      "passed": true
+    },
+    {
+      "check": "hanging_reference:Wang, S.-Y., Wang, O., Zh",
+      "passed": true
+    },
+    {
+      "check": "15_reference_texts_preserved",
+      "passed": true
+    },
+    {
+      "check": "all_table_values_preserved",
+      "passed": true
+    },
+    {
+      "check": "no_sentence_lists",
+      "passed": true
+    },
+    {
+      "check": "word_TOC_field",
+      "passed": true
+    },
+    {
+      "check": "all_31_heading_pages_verified",
+      "passed": true
+    },
+    {
+      "check": "TOC:1.Introduction:",
+      "passed": true
+    },
+    {
+      "check": "TOC:2.Company information:",
+      "passed": true
+    },
+    {
+      "check": "TOC:3 Project Background:",
+      "passed": true
+    },
+    {
+      "check": "TOC:3.1 Department information:",
+      "passed": true
+    },
+    {
+      "check": "TOC:3.2 Initial project status:",
+      "passed": true
+    },
+    {
+      "check": "TOC:3.3 Motivation and problem definition:",
+      "passed": true
+    },
+    {
+      "check": "TOC:3.4 Related Litarature:",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.Intership project:",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.1 Project objective and scope:",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.2 My Responsibilities:",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.3 Metholody and tools:",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.4 Expected outcomes and deliverables:",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5 Project details:",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.1 Early models and the first transfer failures:",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.2 Data integrity and corrected conclusions",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.3 Data roles and processinf conditions",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.4 E92 representations and learning",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.5 Development criteria",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.6 Development improvement and accaptance limits",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.7 Honest scores and the web demostration",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.8 broader checks and rejected improvements",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.5.9 Model2 Localization and its limits",
+      "passed": true
+    },
+    {
+      "check": "TOC:4.6 Results",
+      "passed": true
+    },
+    {
+      "check": "TOC:5.Internship experience",
+      "passed": true
+    },
+    {
+      "check": "TOC:5.1 Learning:",
+      "passed": true
+    },
+    {
+      "check": "TOC:5.2 Relation tı undergradute education:",
+      "passed": true
+    },
+    {
+      "check": "TOC:5.3 Major Difficultes:",
+      "passed": true
+    },
+    {
+      "check": "TOC:5.4 A typical day",
+      "passed": true
+    },
+    {
+      "check": "TOC:6.Conclusion",
+      "passed": true
+    },
+    {
+      "check": "TOC:7.Recomandations",
+      "passed": true
+    },
+    {
+      "check": "TOC:8 REFERENCES",
+      "passed": true
+    },
+    {
+      "check": "24_pages",
+      "passed": true
+    },
+    {
+      "check": "black_text",
+      "passed": true
+    },
+    {
+      "check": "Times_New_Roman_12pt",
+      "passed": true
+    },
+    {
+      "check": "within_margins",
+      "passed": true
+    },
+    {
+      "check": "figures_centered",
+      "passed": true
+    },
+    {
+      "check": "results_one_page",
+      "passed": true
+    }
+  ],
+  "passed": 207,
+  "pages": 24,
+  "prose_preserved": true,
+  "content_issues": [
+    "Abstract is intentionally blank; Model2 prose is pending under renumbered 4.5.9. Its preserved Table 4 has no body citation yet.",
+    "Introduction still says Section 9 contains appendices. Removing that clause would change prose, so it remains pending after the authorized relocation.",
+    "The criteria paragraph still says lowercase \"table 3\". Albert requires \"Table 3\"; capitalization was not authorized.",
+    "Finnvera (2025) remains in the preserved bibliography but is no longer cited. Nokia statement is attached to the company annual-report citation instead.",
+    "Radford citation in 3.4 lacks an opening parenthesis, and the Guo discussion is duplicated. Neither punctuation nor duplicate words were removed.",
+    "5.2 omits the required skill the student wishes university had taught; 5.3 describes two difficulties instead of the requested three; 5.1 does not explicitly state career-plan impact.",
+    "4.5.2 writes AUC 0.480% instead of 0.480. 4.6 says the previous model missed the image, whereas the missed reference-detected image belongs to E92.",
+    "4.3 states that a new dataset was added in every experiment; project history does not support that statement. 4.5.1 claims resolution was the sole cause and contrasts data quality with camera features.",
+    "4.6 population wording repeats AI images and can confuse unique parents with versions; the 160 real plus 160 AI parents are evaluated under two conditions.",
+    "3.1 supplied mentor address uses Hasan.çontuk whereas prior confirmed contact was hasan.contuk; not corrected without authorization.",
+    "Raw author note \"(abstact 3.2)\" was kept in the archived input and excluded as a non-report editing note. Markdown links were displayed as their labels; all prose characters otherwise preserved except approved table numbers.",
+    "Pending prose may change pagination. Current formatted draft is not submission-ready and no AI score or grade is predicted.",
+    "Renumbered 4.5.7 uses \"previous table\", contrary to the required numbered figure/table references; source wording preserved."
+  ],
+  "visual_review": "All 24 rendered pages inspected. No clipped text, overlaps, broken tables or missing figures found. Abstract page intentionally blank and Model2 prose pending; not a submission-ready document.",
+  "files": {
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.docx": "5d011627afeb56f1b086a1290282f06c29f9b50e985630e1bdffff0245184e2c",
+    "CS395_FinalReport_Efe_Han_Keleş_4October2026.pdf": "d462e905c92a7ba0d66690d7eeaa3442a478d6045a2c9b9ef8a748c45501c1e3"
+  }
+}

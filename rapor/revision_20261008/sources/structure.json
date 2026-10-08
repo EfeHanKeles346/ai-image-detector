@@ -1,0 +1,56 @@
+{
+  "headings": [
+    "1.Introduction:",
+    "2.Company information:",
+    "3 Project Background:",
+    "3.1 Department information:",
+    "3.2 Initial project status:",
+    "3.3 Motivation and problem definition:",
+    "3.4 Related Litarature:",
+    "4.Intership project:",
+    "4.1 Project objective and scope:",
+    "4.2 My Responsibilities:",
+    "4.3 Metholody and tools:",
+    "4.4 Expected outcomes and deliverables:",
+    "4.5 Project details:",
+    "4.5.1 Early models and the first transfer failures:",
+    "4.5.2 Data integrity and corrected conclusions",
+    "4.5.3 Data roles and processinf conditions",
+    "4.5.4 E92 representations and learning",
+    "4.5.5 Development criteria",
+    "4.5.6 Development improvement and accaptance limits",
+    "4.5.7 Honest scores and the web demostration",
+    "4.5.8 broader checks and rejected improvements",
+    "4.5.9 Model2 Localization and its limits",
+    "4.6 Results",
+    "5.Internship experience",
+    "5.1 Learning:",
+    "5.2 Relation tı undergradute education:",
+    "5.3 Major Difficultes:",
+    "5.4 A typical day",
+    "6.Conclusion",
+    "7.Recomandations",
+    "8 REFERENCES"
+  ],
+  "section_number_changes": {
+    "9.1": "4.5.5",
+    "4.5.5": "4.5.6",
+    "4.5.6": "4.5.7",
+    "4.5.7": "4.5.8",
+    "4.5.8": "4.5.9"
+  },
+  "table_number_changes": {
+    "3": 4,
+    "4": 5,
+    "5": 3
+  },
+  "nonreport_note_excluded": [
+    "(abstact 3.2)"
+  ],
+  "pending": [
+    "Abstract",
+    "4.5.9 Model2 (previously 4.5.8)"
+  ],
+  "source_sha256": "f24a7a2da10e2d7becf7dc254d15b0fb305c65abcace285a10c7cc62d84b16b4",
+  "prose_paragraphs": 56
+}

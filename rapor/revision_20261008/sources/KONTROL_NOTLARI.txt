@@ -1,0 +1,36 @@
+8 EKİM 2026 — BİÇİMLENDİRİLMİŞ ÇALIŞMA KOPYASI
+
+Bu sürüm teslim hazır değildir. Abstract ve Model2 metni henüz yazılmadı.
+Sadece biçim düzenlendi. Gönderilen gövde metnindeki kelimeler ve noktalama değiştirilmedi. Yazım hataları, tekrarlar ve aşağıdaki içerik sorunları özellikle korundu.
+Onay verilen istisna: bölüm ve tablo numaraları güncellendi. Markdown bağlantıları metin etiketleri olarak gösterildi. Literatür metnine paragraf ayrımları uygulandı. Rapora ait olmayan '(abstact 3.2)' düzenleme notu kaynak dosyada saklandı; rapora eklenmedi.
+
+YAPILANLAR
+- 9.1 Development criteria yeni 4.5.5 oldu. Önceki 4.5.5–4.5.8, 4.5.6–4.5.9 oldu.
+- Önceki Table 5 yeni Table 3, Model2 Table 3 yeni Table 4, sonuç Table 4 yeni Table 5 oldu.
+- 9. bölüm kaldırıldı. Önceki 9.2 açıklaması gönderdiğin metinde zaten 4.3 içindeydi; tekrar eklenmedi.
+- Şirket bilgileri tek 2. bölüm altında toplandı.
+- 12 punto siyah Times New Roman, bir inç kenar boşlukları, gövde çift satır aralığı, iki yana yaslama ve sıfır girinti uygulandı.
+- Başlıklar sola, REFERENCES başlığı ortaya hizalandı. Kaynakça devam satırlarında 15 punto asılı girinti, kaynak içinde tek satır ve kaynaklar arasında 12 punto boşluk korundu.
+- Üç şekil, beş tablo ve 15 kaynak önceki dosyadan korundu; tablo açıklamaları üstte, şekil açıklamaları altta ve ortalı.
+- 24 sayfanın tamamı görsel olarak incelendi. Metin koruma ve biçim dahil 207 kontrol geçti. 31 içindekiler satırının sayfası doğrulandı.
+- Sayfa 2 Abstract için, sayfa 18 Model2 metni için eksik durumdadır. Model2 tablosu yerinde korunmuştur.
+- Kapaktaki teslim tarihi 4 October 2026 olarak korundu; dosya adı da bu tarihi kullanıyor. Bu çalışma kopyası 8 Ekim'de hazırlandı.
+
+SENİNLE TAMAMLANACAKLAR — METNE DOKUNULMADI
+1. Abstract ve yeni 4.5.9 (önceki 4.5.8) Model2 metni yazılacak. Model2 tablosuna artık Table 4 olarak atıf yapılmalı.
+2. Giriş hâlâ Section 9 includes appendices diyor; artık 9. bölüm yok. Cümleden bu kısmı çıkarmak için metin değişikliği gerekiyor.
+3. Yeni 4.5.5'te 'This table 3' yazıyor. Hoca 'Table 3' biçiminde büyük T istiyor. Harf değişikliği yapmadım.
+4. Yeni 4.5.7'de 'In the previous table' var. Hoca konuma göre değil numarayla atıf istiyor; doğru tablonun numarası belirtilmeli.
+5. Finnvera (2025) kaynakçada var ama yeni metinde atfı yok. Nokia cümlesi artık Türk Telekom (2026a) atfına bağlanmış. İlgili kaynak eşleştirmesi düzeltilmeli.
+6. 3.4'te Radford atfının açılış parantezi eksik; Guo/kalibrasyon açıklaması iki kez var. Noktalama eklenmedi ve tekrar silinmedi.
+7. Okulun 5.2'de istediği 'üniversitede önceden öğrenmiş olmayı dilediğin beceri' yanıtı yok. 5.3'te istenen üç zorluk yerine iki zorluk var. 5.1'de stajın kariyer planına etkisi açıkça belirtilmiyor.
+8. 4.5.2'de AUC '0.480%' yazılmış; proje kaydındaki değer 0.480, yüzde değil.
+9. 4.6'da 'previous model missed an AI generated image' yazıyor. Buradaki kritik olay E43'ün yakaladığı görüntüyü E92'nin kaçırmasıydı; mevcut cümle ters anlatıyor.
+10. 4.6'da 160 gerçek + 160 AI başlangıç görüntüsü ve bunların iki sürümü anlatımı karışıyor; 320 başlangıç görüntüsü, 640 sürüm/değerlendirme girdisi ayrımı netleştirilmeli. '1.245' İngilizcede ondalık gibi okunabilir; test sayısı 1,245.
+11. 4.3'te 'in every experiment new dataset added' var; her deneyde yeni veri eklenmedi. 4.5.1 çözünürlüğü tek neden gibi gösteriyor ve kamera özelliklerini incelemeyi bırakmışız izlenimi veriyor. Kayıtlarla uyumu daha önce konuştuğumuz biçimde düzeltmek gerekiyor.
+12. Yeni 4.5.6'da 14 → 12 yanlış alarmın işlenmiş gerçek görüntülerde olduğu ve AI ailelerinin daha önce görüldüğü daha açık yazılmalı; E92/E102 kaynak atfı da bu gönderide yok.
+13. 3.1'de mentor e-postası Hasan.çontuk biçiminde. Daha önce verdiğin adres hasan.contuk@turktelekom.com.tr idi. Gönderilen metne dokunmadım.
+14. E92 bir deney kimliği; girişteki 'number of experiments' ifadesi deney sayısı gibi okunuyor. 3.2'de JPEG/kırpma kontrolüyle ilgili sonuç AUC ölçümüdür; 77.1% ilk doğruluk ölçümüdür. İkisi aynı ölçüm gibi sunulmamalı.
+15. Bazı başlıklarda ve gövdede yazım/gramer sorunları korunuyor. Bunların varlığı bu biçim çalışmasının hatası değil, metni değiştirmeme talimatının sonucudur. Sonuçtaki 'statically consistant' ifadesinin de kanıtlanmış evrensel istatistiksel tutarlılık iddiasına dönüşmemesi gerekir.
+
+207 kontrol; kaynakların yeniden çevrimiçi doğrulandığı, okulun tüm içerik şartlarının karşılandığı veya yeni Turnitin/AI skoru alındığı anlamına gelmez. Son iki metin geldiğinde sayfa numaraları tekrar güncellenecek. Önceki rapor ve eski teslim klasörü değiştirilmedi.

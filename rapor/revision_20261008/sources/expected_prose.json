@@ -1,0 +1,226 @@
+[
+  {
+    "section": "1.Introduction:",
+    "text": "The main purpose of this Internship project called PixelProof is whether or not the detected photograph is AI generated or AI manipulated. This project contains two modules. First one is Module1. This module simply looks at the whole image and classifies this image as AI generated or real photograph. Second one is Module2. This module looks at spesific areas of the image and tries to detect AI touched areas but this module remains experimental. One of the major goals of this project is to avoid incorrect labeling, such as labeling real image as an AI generated image. Results of the project improved on the development data however, there are no gurantees that the result is fully trustworthy. The main result is a web demo which allows users to upload images supported by user friendly interface."
+  },
+  {
+    "section": "1.Introduction:",
+    "text": "My Internship was from 20 July to 18 September, and there were 40 working days. This report will show you the process of the development of the project and the experiment, decision-making process. The sections in this report refer to different contents. For instance, section 2 is about Company introduction, section 3 gives information about the background of the project and problem description, section 4 discusses development of the project and its results, section 5 gives information about Internship experience, section 6 and section 7 are about conclusion and recommendations, section 8 contains references and section 9 includes appendices. Additionally, E92 refers to the number of experiments, and experiments are not conducted independently (Keleş, 2026)."
+  },
+  {
+    "section": "2.Company information:",
+    "text": "Türk Telekomünikasyon A.Ş. has a deep rooted history of over 185 years. The company has various technological services such as fixed phone, mobile services, television, broadband and data services for households and businesses. Clients of this company are individual users, businesses and other telecommunication operators (Türk Telekom, 2026b)."
+  },
+  {
+    "section": "2.Company information:",
+    "text": "ddress of the company registered at Turgut Özal Bulvarı, 06103 Aydınlıkevler, Ankara. However, my internship period contuniued at Fatih Sultan Mehmet Mah., Balkan Cad. No:49, 34771 Ümraniye, İstanbul. According a report from June 2026 company has offices in each province in Turkey and has 31,756 employees (Türk Telekom, 2026b). Company's official web site is https://www.turktelekom.com.tr and internship contact number is +90 312 555 93 92. Ownership is 60% Türkiye Wealth Fund, 25% Treasury and Finance Ministry and 15% publicly traded shares. Subsidiaries include TT Mobil, TTNET, Argela, İnnova, SEBİT and AssisTT, and one of the main suplly is nokia (Türk Telekom, 2026a). In addtion one of the main competitor mentioned in my intership period was Turkcell."
+  },
+  {
+    "section": "2.Company information:",
+    "text": "The various departments and their responsibilities are illustrated in Figure 1. Network and IT departments take care of infrastructure, commercial departments deal with customers, and financial, human resources, and coordination duties are managed by support departments (Türk Telekom, 2026a, p. 33). The department I worked for was Planning and Development Directorate, whose responsibility is Tivibu software and hardware. The head of this department was Önder Çelebi."
+  },
+  {
+    "section": "3.1 Department information:",
+    "text": "My working unit was the Planing and Development Directorate which focuses on the development of Tivibu software and hardware, my supervisors name was Önder Çelebi (onder.celebi@turktelekom.com.tr) who is the directior of this unit. My mentors name was Hasan Çontuk (Hasan.çontuk@turktelekom.com.tr) , who works for Oner çelebi’s team."
+  },
+  {
+    "section": "3.1 Department information:",
+    "text": "This project was developed individually, there were no group members. I asked help for my project from my supervisor and my mentor time to time. Most decisions of the project were decided by me."
+  },
+  {
+    "section": "3.2 Initial project status:",
+    "text": "Initial step was to prepare dataset which includes AI generated images and real images named CIFAKE. The dataset seperated into 3 groups train , validation, test. Next step was to train a CNN model (small CNN) and investigate the results. This model showed good performance in the test set and accuracy was 96,75% , but in a different dataset which does not include CIFAKE images, the performance of the model dropped and accurracy decreased to 77.1%. These experiments result indicate that different types of datasets, changes the model performance due to format, compression levels and size. After this inference, images were transformed into common format named JPEG and the test was conducted again. There was no clear drop in new test (Keleş 2026)."
+  },
+  {
+    "section": "3.3 Motivation and problem definition:",
+    "text": "One of the main problems of this project was missclarification. This missclarfication includes two types. The first type is false positive which means that a real image is considered as AI generated . The second type is false negative which means AI generated images do not get regocnized by the model. There are some possible solutions , but there might be performance drop in other metrics. For instance, when more AI generated images are added and labled as ai generated, there might be performance increase in AI detection. However, detection of real images performance might drop down. An other factor is image features such as format, size, compression level. These factor may leed the model make mistakes. Therefore, these image features should optimized"
+  },
+  {
+    "section": "3.3 Motivation and problem definition:",
+    "text": "The main motiviation of this project to build a system that help users to diffirentiate AI generated images from real images. Therefore, reducing the error rates was curricial. Optimization of the features is necessary. Also, the system has a web demo with user friendly UI"
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "There are several related litarture that this project took advantage and these litaratures will be explained and they are realated for this project will be disscused."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "Wang et al. (2020) explored that a model that learned images that generated from certain AI generator could detect other images that generated from different generaotrs this resarch is related since this project tries to detect images from various generators."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "Ojha et al. (2023) studied how a pretrained vision model’s features could be used to detect AI generated images by adding a simple classifier. This is related to this project because some methods follow similar approaches."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "CLIP could be considered as a feature extractor from images. Radford et al., 2021) . The Project used these extracted features to detect AI generated images."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "DINOv2 is a pretrained model that learns features that could be used in different tasks, and this model does not need hand made class labels while learning (Oquab et al., 2024). Its relationship with this project is that features extracted from images by DINOv2 were used in training models that differentiate real and AI generated images."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "According to Grommelt et al. (2024) model could learn image size or compress methods instead of AI traces. Therefore, this might produce misleading results. Relationship between this project is there are some findings that patterns of image size and compression methods could affect performance."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "DEAR uses inpainting of a specific region of an image to examine the features and disscards some featurs in order to have stronger results (Kim et al., 2026). In this project this model should be examined carefully since capabilities of this model does not mean that these capabilities could help to solve our problem or enhance our results."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "SIDD is a dataset which contains images from 10 different scenes taken with 5 different smartphone cameras. This might be valuable for this project because of camera diversity. However, this does not mean that there is a wide variety of scenes; on the contrary, scene diversity is limited (Abdelhamed et al., 2018)."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "The SID dataset has paired images that were captured using low light conditions RAW images (Chen et al., 2018). The use of SID in the current project made it possible to incorporate actual images captured in low light situations. Nevertheless, RAW images are processed under different conditions compared to JPEG images."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "High score of the model does not mean that the result will have the same accuracy rate. Scores need to be examined carefully and some methods like calibration can make scores match actual accuracy better (Guo et al., 2017). In our web demo we cannot demonstrate the score as the probability of being AI generated. Also, choosing a threshold value does not mean transforming the score into a probability."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "Guo et al. (2017) explain that a high model score does not always mean a high chance of being correct. Calibration helps confidence scores match actual accuracy better. In our web demo, the score is not shown as the probability of an image being AI generated. Choosing a threshold does not turn the score into a probability."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "Dwork et al. (2015) explain that repeatedly using the same evaluation results to make changes can make those results less reliable as evidence of performance on new data. This is related to our project because some datasets were used several times during development. Therefore, an independent final test was still needed."
+  },
+  {
+    "section": "3.4 Related Litarature:",
+    "text": "Adobe Content Credentials records information about where content comes from and how it was edited (Adobe, 2026). PixelProof follows a different approach by examining image pixels for AI traces. Checking Content Credentials was not implemented in this project."
+  },
+  {
+    "section": "4.1 Project objective and scope:",
+    "text": "This project has two modules. First module name Modul1 aims to reduce false alerts while preserving rates of AI detection. Second module named Modul2 aims to detect spesific areas that are manipluted by an AI generator. These are the main objectives that project considers."
+  },
+  {
+    "section": "4.1 Project objective and scope:",
+    "text": "The scope consist of several consepts. First one is data auditing which means investigate the data and find abnormal features such as format, size , compression and normalize. Second one is model adaption that allows already trained model to solve your problem. Third one is evaluate the results and take an action according the results."
+  },
+  {
+    "section": "4.2 My Responsibilities:",
+    "text": "My Responsibilities were; Directing the experiments and take actions accoriding to results and saving experiment results for feature experiments. Another one is  organization and normalization of the data and that includes tasks such as find suitable dataset, normalize the features or change the format of the images. Another one is asking questions to my supervisor and mentor and learn new concepts or rewiew concepts that I already knew and give reports on what I achived and what decsion I made. Also, my work includes designing user friendly interface, model training."
+  },
+  {
+    "section": "4.3 Metholody and tools:",
+    "text": "There were several main documents that recorded named as PLAN.md , EXPERIMENTS.md , HISTORY.md , DATASET.md. First one is planning the action that the next step will execute. In this document rules, restrictions, and order of the steps were written. Second one is recording results of the experiments that conducted. Third one is important took records of why and how the decesions made, forth one is the record of dataset that used in the project and small information about the why this dataset selected and mostly numerical information about what the dataset includes. Table 1 shows how theese records used and what changed in the next step (Keleş, 2026)."
+  },
+  {
+    "section": "4.3 Metholody and tools:",
+    "text": "Dataset used to train model. Results of experiments allowed to find when and in which data the model make false detections. While doing this concept called AUC helped to evaluate model performance.Development of model performance did not mean fully reliable results. Therefore in every experiment new dataset added to liblary to train or evaluate.  Also, threshold values are determined by calibration values."
+  },
+  {
+    "section": "4.3 Metholody and tools:",
+    "text": "Some tools that used in this project were: AI tools for implementig code, documenting records, Python, PyTorch, NumPy, SciPy and scikit-learn supported modelling; React, TypeScript and FastAPI supported the demo. Git, saved scores, artifact hashes and automated checks made changes traceable.Full experiment settings, corrections and aggregate evidence remain in the repository snapshot cited as Keleş (2026). Private images and large weights are excluded from Git."
+  },
+  {
+    "section": "4.3 Metholody and tools:",
+    "text": "In every new model, if fixing a mistake cause anthor mistake such as, AI detections rate increased but, real image detection rate decresed did not count as a valid development. However, theese developments were recorded even if they are count as unscuccessful. Thats why it is understandable that a new model developed but web demo does not updated."
+  },
+  {
+    "section": "4.4 Expected outcomes and deliverables:",
+    "text": "A model that trained which is integrated in a web demo, reproducible experiments, records that are includes whole project timeline, an experimental Model2, but needs further resarch and experiments."
+  },
+  {
+    "section": "4.5.1 Early models and the first transfer failures:",
+    "text": "The first model called small CNN trained with CIFAKE dataset which includes 90,000 training images, 10,000 validation images and 20,000 test images. Other model called ResNet-18 which is a pretrained model performed similar 97.66%. However, when dataset seperate data set which is consist of 995 images model performance drop down to 25.2%. The reason behind this was resolution problem. After fixing this problem performance largely regained.(Keleş, 2026, E1-E6)."
+  },
+  {
+    "section": "4.5.1 Early models and the first transfer failures:",
+    "text": "After training the first models, next step fallowed by comparing several methods. Such as analyzing images in their original resolution, utilized features extracted from smaller image patches, use already trained detectors and combining model outputs. Some of these methods achived higher scores on certain datasets than others. However, in some cases error rates increased in both cases such as detecting real or genereted image. These controlled experiments leads us to give more importance to quality of the data and diversity and determining the creteria for models rather than looking camera noise or other features of image (Keleş 2026, E8-E50)"
+  },
+  {
+    "section": "4.5.1 Early models and the first transfer failures:",
+    "text": "It turns out that before making a expensive change in a model data quality and status should be examined more comprehensively."
+  },
+  {
+    "section": "4.5.2 Data integrity and corrected conclusions",
+    "text": "Noticing reverse labeling in two dataset which means real and AI generated images labelled opposite after correcting this labeling and repeating experiments scores of AUC of DINOv2 increased 0.480% to 0.764. Therefore, interpretation of unsuitableness of the model was wrong and using more training data decreased the false alerts compared to first calculations\nIn a different experiment, the threshold selection procedure can employ test data. This is similar to having access to the exam questions before sitting for the exam. Once this issue was fixed, the candidate model no longer satisfied the acceptance criteria and thus failed (Keleş, 2026, E19b-E19c and E27)."
+  },
+  {
+    "section": "4.5.2 Data integrity and corrected conclusions",
+    "text": "Reverse labeling may cause a model perfom bad in the task, therefore after correction experiments repated and recorded."
+  },
+  {
+    "section": "4.5.3 Data roles and processinf conditions",
+    "text": "Parent means that initial image that there was no process applied by us. In E92 there were 7,674 real and 4,595 AI generated images in total 12,269. For each image 4 versions were created. First one is clear version, second one is imitating transport version, third one is compressed version JPEG with quality 75, fourth is reduced version with the longest edge at most 1080 pixels and compressed with JPEG quality 75. Therefore 49,076 image versions were obtained from 12,269 initial images."
+  },
+  {
+    "section": "4.5.3 Data roles and processinf conditions",
+    "text": "Table 2 shows the datasets that were used in separate processes. The sum of the images cannot be represented as independent images because groups might overlap. Experiments E42 and E43 did not meet the conditions. E43 passed 11 out of 20 conditions in the test where 1,000 real and 1,000 AI generated images were used. There were 391 false alerts in original versions of real images and 490 false alerts in processed real images. E92 did not meet the acceptance rule and therefore did not reach the last evaluation phase. So, development results should not be confused with the last test phase (Keleş, 2026, E42,E49, E92 and E139)."
+  },
+  {
+    "section": "4.5.4 E92 representations and learning",
+    "text": "Firstly several methods tried such as retraining all ready trained model (fine tunning) or change image tones to grey or making modifications on model scores. However, all the conditions were not met. After adding features of CLIP and DEAR and developing new pices that can learn from these features, E83 and E86 passed 17 out of 20 controls. E92 passed 20 of them. However, understanding and explaining explicitly what change made the model passed the controls cannot be determined. Because in every phase there were more than one changes. In addition passing 20 controls does not mean rule of detecting AI generated images also passed. In E92 weights of DINOv2, CLIP and DEAR weights did not changed only training the little pieces with the information that these models extract from image. The main goal was preserving AI detection rates while reducing the false alerts on real images. However, this needs to be tried on other datasets. Figure 2 shows that how the learned system connected the web demo."
+  },
+  {
+    "section": "4.5.4 E92 representations and learning",
+    "text": "Transfer learning means using what trained models learned previously and benefiting from them. Encoder transforms images into numerical information. This information was used to train little pieces. In addition weights of the encoder did not changed. Therefore, this method resulted in a more suitable workflow on this computer. DINOv2, CLIP or DEAR were not developed in this project. Only the information that these models extract from images was used to train little pieces. The system resulting from this method was evaluated and modified."
+  },
+  {
+    "section": "4.5.5 Development criteria",
+    "text": "This table 3 shows the scorse that E92 got and includes 10 numerical condition for both image versions such as original image and processed image, so in total there are 20 conditions. This list created for this project these conditions are not mean universal standarts for image detection model.Some of the conditions are related to each other. Even if E92 passed all the conditions, but missed an AI genereted image which was detected by previous model. Therefore, passing all condtions does not mean full acceptance."
+  },
+  {
+    "section": "4.5.6 Development improvement and accaptance limits",
+    "text": "Figure 3 shows that compare results of two models in 160 real images. There are three key findings. First one is false alert on real images were dropped down 68 to 0. Second one is false alert of processed image dropped down 68 to 14. Third one is E92 detected 159 out of 160 in both original version and processed version of AI generated images. For both versions, 10 numerical conditions were determined, making 20 in total, and all were passed. However, E92 missed one original AI image which E43 had detected. In addition, there was a rule that a new model should not miss an AI image detected by the reference model. Therefore, E92 passed all 20 numerical conditions, but did not meet all the acceptance conditions."
+  },
+  {
+    "section": "4.5.6 Development improvement and accaptance limits",
+    "text": "This set have been used few times in separate experiments. This set includes ten real SIDD scenes and two different families. In addition, E102 performed 12 out of 160 false alerts in images which indicates that better performance than E92. Since E92 performed 14 out of 160 in false alerts in real images. However, E102 missed same AI generated image, so the model cannot be accapted."
+  },
+  {
+    "section": "4.5.7 Honest scores and the web demostration",
+    "text": "In the web demo 0-100 does not demonstrate that the probability of an image being AI generated. There are two thershold values that come from previous experiments. The first one is the upper bound which comes from E48 calibration. If the original images's score exceeds 7.94 or at this score demo gives AI alert. The second one is lower bound which comes from E49 calibration and development analysis. If both version of image ,original and processed, are below approximately 1.15 demo indicates that there are no clear signs to label as AI generated. Otherwise, the result is ambigous, which means demo cannot classify the image AI or real image. However, this is not mean that an image with no clear AI signs is definitely real"
+  },
+  {
+    "section": "4.5.7 Honest scores and the web demostration",
+    "text": "In the same development dataset, out of 160 real images, 139 had no clear signs of being AI generated and 21 images were uncertain. There were no AI alerts on real images. Out of 160 AI generated images, the demo gave 159 AI generation alerts, but one image was uncertain. These results came from the web demo, which considered two versions of each image, original and processed. In the previous table, evaluation was done separately for both versions of the images. In addition, there were some controls that checked the uploading process and code flow. These controls checked software operation, not image detection accuracy (Keleş, 2026)."
+  },
+  {
+    "section": "4.5.8 broader checks and rejected improvements",
+    "text": "Photographs that comes from mostly same mobile phone and contains similar sceens were selected from my galary. And number of photoprahps were 206 and real image. Then conducting a test scores were like this. 9 fasle alerts in original version of image and there were 18 false alerts in processed version. In addition to this, this set cannot be considered as independent test and the last one since this development set used in development phase. (Keleş, 2026, E95)."
+  },
+  {
+    "section": "4.5.8 broader checks and rejected improvements",
+    "text": "While checking the training data there were reduced images to 224 pixel which are percentages were 29.18 for real , 7.68 for AI generated images. This encourged to think if these difference affecting model performance. However, no clear proof by selft. Then new candidate model which uses pixel structure features added. Results were better in non processed images but worse in processed images. In JPEG75 test AI detection rate reduced 75.73% to 74.15 therefore this rejected. After these experiments there was no enlighting answer that why model performance dropped down. However, the method dropped down the performance indendified. (Keleş, 2026, E148–E152). There is need to be conduct indepenedt test for this."
+  },
+  {
+    "section": "4.6 Results",
+    "text": "Result of this all experiments and development phase a web demo and reconductable experiment system. Table 5 indicates the meausrments that E92 performed in particular dataset which has two version of datasets which are original, and processed images and dataset split in terms of real and AI generated. Number of real and AI generated images are 160 for orginal version and 160 for processed version, so in total 320 images for each version. Same stutiuation is valid for AI generated images. In addition, these are not the results that web demo gave."
+  },
+  {
+    "section": "4.6 Results",
+    "text": "Performance of E92 got better but previous model missed an AI generated image, so this is not a proof for reliable result for every images. Model2 remains experimental. 1.245 pyhton test executed succesfully however this checks the code flow in the system not a measurement of image detection. this system did not used for company use and did not mesured impact on the company(Keleş 2026)."
+  },
+  {
+    "section": "5.1 Learning:",
+    "text": "There are several things that I learned through this internship period. One of them is learning how to manage long term and complex project. This is important since, this period improved my perspective in terms of how I treat a problem in complex problem such as, asking spot on questions. this is important since loosing yourself in this type of long term and complex project possible. Another one is gaining technical experience and technical information in my project topic. I conducted many experiments, searching academic sources and making comparing my ideas with academic sources to solve my problem. In addition to this, I learned many new machine learning concepts. An other one is working experience. This experience consist of many things such as dicipline of going every morning to work with no excuses, making good relationship with your work colluges, understanding the working hiearchy, asking questions about my project without hesitation."
+  },
+  {
+    "section": "5.2 Relation tı undergradute education:",
+    "text": "There are many courses that have very high relationship with my internship project. One of them is CS 412 Machine Learning course. This course made me familier with the machine learnin concepts, thaught me the fundemental concepts that I used early stages in my project such as CNN models. Also, I benefit the looking machine learning perpective. An otherone is, DSA 210 this course helped me to understand the data. In this project I treat the data like what I learned in the DSA 210. Therefore, that was curical because in my project data is important. An otherone is PROJ 201. In this course in first time I met with model training. My interest machine learning interset start because of this course. Course include dataset creation, model training,evaluating performance of the model. We made a mobile app that navigates FENS first floor that uses our model. Project name was Mobile App for the Visually Impaired and our group came first place in end of the semester 2025."
+  },
+  {
+    "section": "5.3 Major Difficultes:",
+    "text": "There were several technical and non-technical difficulties that I faced during internsip period. One of them is understanding why performance of the model drops in certain datasets. In order to solve this problem I conducted many experiments and record them and found out the possible resons. After that I planned actions according to resons to solve these problems. Sometimes these plans worked,but sometimes did not worked well. Therefore, it turns out that my experiment method was wrong or there were need more experiments to conduct. Another one is the transportation to the office. My work time start early compared to other start times, so I need to wake up early and tried to do not miss the transportation times. I solve this problem with adapting myself to routine lifestyle, so my sleeping time and waking time always is the same."
+  },
+  {
+    "section": "5.4 A typical day",
+    "text": "I used to go office 7.30 a.m. After breakfast I used to worked unitl lunch time and take 1 or 2 brakes for personal needs or to dirnk coffe or tea. After lunch I worked 4 p.m. and take 1 or 2 breaks. This period repeated in Monday to Thursday. Friday was remote, but there was a similar stuitation."
+  },
+  {
+    "section": "6.Conclusion",
+    "text": "Result of this project is a web demo with user friendly interface  that allows users to upload try the system that I build during this period. This system benefit from all the test that I conducted even if the test is unsucessfull. In my perspective main power of this project was learning from unsucessfull test since in every test I found new findings or search topics to integrate to system."
+  },
+  {
+    "section": "6.Conclusion",
+    "text": "Main topic for this project was finding a way that how to classify AI generated images and real images without making false alerts. Thanks to experiments that I conducted even if tests were unsucsesfull I manage to come a point in this problem. Connot solved this problem fully or do not gurantee a fully thrustworty result, but it gives statically consistant results."
+  },
+  {
+    "section": "7.Recomandations",
+    "text": "For feature students that will take this intership course I might give several adives that enhance their intership experince. One of them is the comminication between their supervisor and mentors in order to experess themselves and get a project that in the line with their insterst. This is important, since in my experience I felt like need to learn not like I have to. Another advice is try to learn the concepts related to their project before intership period start becouse it allows students being ready for project. Another one is students must arrange their lifestyle according to intership conditions. This allows students to overcome easier than usual lifestyle."
+  }
+]
